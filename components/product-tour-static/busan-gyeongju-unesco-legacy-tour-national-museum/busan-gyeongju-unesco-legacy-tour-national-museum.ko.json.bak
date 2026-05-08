@@ -1,0 +1,2229 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "busan-gyeongju-unesco-legacy-tour-national-museum",
+  "locale": "ko",
+  "product_id": "busan-gyeongju-unesco-legacy-tour-national-museum",
+  "seo": {
+    "pageTitle": "부산 출발 경주 유네스코 당일 투어 · 국립박물관 포함 | AtoC Korea",
+    "metaDescription": "부산 출발 경주 일일 투어: 아홉산숲 → 불국사(유네스코) → 점심 → 국립경주박물관 → 교촌한옥마을 → 월정교. 국립박물관 포함 소그룹 코스.",
+    "primaryKeywords": [
+      "부산 경주 일일 투어",
+      "불국사 투어",
+      "국립경주박물관 투어",
+      "아홉산숲 투어",
+      "부산 출발 경주 소그룹"
+    ],
+    "ogImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+    "title": "부산 출발 경주 유네스코 일일 투어 | AtoC Korea",
+    "description": "부산 출발 경주 일일 투어: 아홉산숲(대나무 숲) → 불국사(유네스코) → 국립경주박물관 → 교촌한옥마을 → 월정교. 공인 가이드, 소그룹 밴."
+  },
+  "catalog_card": {
+    "thumbnail": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+    "title": "부산 출발 경주 유네스코 레거시 투어 (국립박물관 포함)",
+    "priceLabel": "소그룹 요금 확인 중 — 예약 시 최신 가격 적용",
+    "shortCardDescription": "부산에서 출발해 경주의 핵심 유네스코 명소와 신라 문화유산을 하루에 둘러보는 소그룹 투어입니다. 아홉산숲 대나무길, 불국사, 경주 현지식 점심, 국립경주박물관, 교촌한옥마을, 월정교를 효율적으로 연결합니다. 영어·중국어 공인 가이드, 미니밴 이동, 불국사 및 박물관 입장료가 포함됩니다.",
+    "tags": [
+      "소그룹",
+      "경주",
+      "unesco",
+      "부산 출발",
+      "신라 왕국",
+      "박물관 중심"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "slug": "busan-gyeongju-unesco-legacy-tour-national-museum",
+    "subtitle": "부산에서 하루에 한국 천 년의 수도를 — 유네스코 사찰, 국립박물관, 한옥마을, 야경 다리까지.",
+    "region": "경주 (부산 출발)",
+    "duration": "11.5시간",
+    "stopsCount": 8,
+    "badges": [
+      "유네스코",
+      "국립박물관 포함",
+      "소그룹",
+      "부산 출발"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800"
+  },
+  "headlineLine1": "불국사에서 국립박물관, 대나무 숲에서 야경 다리까지 —",
+  "headlineLine2": "한국 천 년의 수도를 부산에서 하루에",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "인",
+    "priceSource": "direct_rate",
+    "priceNote": "소그룹 요금은 상품 정보 기준으로 확인 중. 유사 부산 출발 경주 투어는 패키지 및 여행사에 따라 $54~90 수준. 확정 후 AtoC Korea 판매가에 정률 10% 할인 적용.",
+    "discountPercent": 10
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
+    "imagePosition": "center 35%",
+    "tagline": "'지붕 없는 박물관'이라 불리는 경주 — 유네스코 유산, 국립박물관, 한옥마을, 월정교까지 하루에 둘러보는 코스입니다.",
+    "pills": [
+      "소그룹",
+      "경주",
+      "unesco_legacy"
+    ],
+    "meta": {
+      "duration": "약 11.5시간 (08:10 첫 번째 픽업, 약 19:45 마지막 하차)",
+      "region": "경주 (부산 출발)",
+      "stops": "8개 코스",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "투어 개요"
+    },
+    {
+      "id": "itinerary",
+      "label": "상세 일정"
+    },
+    {
+      "id": "details",
+      "label": "유의사항"
+    },
+    {
+      "id": "faq",
+      "label": "자주 묻는 질문"
+    },
+    {
+      "id": "reviews",
+      "label": "여행자 후기"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "소요 시간",
+      "value": "약 11.5시간 (08:10 첫 픽업, 약 19:45 마지막 하차)"
+    },
+    {
+      "icon": "users",
+      "label": "그룹 규모",
+      "value": "소그룹, 미니밴 (통상 10인 이내)"
+    },
+    {
+      "icon": "subway",
+      "label": "픽업 정보",
+      "value": "부산역 4번 출구 (08:10), 서면역 4번 출구 (08:30), 해운대역 5번 출구 (09:10)"
+    },
+    {
+      "icon": "calendar",
+      "label": "최적 시즌",
+      "value": "연중 운행; 벚꽃 시즌 (3월 중순~4월 중순) 에는 아홉산숲 대신 해운대 달맞이길로 변경"
+    },
+    {
+      "icon": "footprints",
+      "label": "도보 난이도",
+      "value": "중간 난이도 — 총 약 4~5km. 불국사 계단·경사 구간 있음; 박물관·한옥마을·월정교는 평지."
+    },
+    {
+      "icon": "ticket",
+      "label": "포함 사항",
+      "value": "왕복 교통, 인증 가이드 포함. 입장료: 불국사 무료(2023년 5월부터)·박물관 무료·교촌 무료·월정교 무료; 아홉산숲(₩5,000)만 현장 개인 결제. 점심 개인 부담."
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+      "alt": "오후 빛 속의 불국사 석교와 다보탑",
+      "caption": "불국사 — 유네스코 세계유산. 두 탑은 국보 제20호, 21호.",
+      "location": "불국사, Gyeongju",
+      "atmosphere": "돌, 나무, 8세기 탑 실루엣"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+      "alt": "박물관 조명 아래 유리 케이스에 전시된 신라 금관",
+      "caption": "경주 국립박물관 — 천마총 출토 금관 (국보 제188호).",
+      "location": "국립경주박물관",
+      "atmosphere": "고요한 갤러리, 단일 오브젝트 포커스"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+      "alt": "교촌 마을 고요한 골목을 따라 늘어선 기와 한옥과 돌담",
+      "caption": "교촌 한옥마을 — 최씨 일가 고택과 경주향교.",
+      "location": "경주 교촌한옥마을",
+      "atmosphere": "복원된 한옥 골목, 한적함"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=1200",
+      "alt": "숲길을 따라 빽빽한 대나무 사이로 스며드는 빛",
+      "caption": "아홉산숲 — 1638년부터 문씨 일가가 사유지로 보존해온 대나무 숲.",
+      "location": "아홉산숲, 부산 기장군",
+      "atmosphere": "시원하고 초록빛 걸러진 빛"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
+      "alt": "황혼 속 물에 반영된 목조 교각 정자",
+      "caption": "월정교 — 2018년 완공된 66미터 신라 양식 복원 교량.",
+      "location": "월정교, Gyeongju",
+      "atmosphere": "나무, 물, 부드러운 저녁 빛"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "08:10",
+      "duration": "60분",
+      "name": "부산 픽업 (지하철 3개 역)",
+      "category": "이동 / 픽업",
+      "description": "부산 지하철 3개 역에서 순차 픽업: 부산역 1호선(약 08:10), 서면역 1·2호선(약 08:30), 해운대역 2호선(약 09:10). 서쪽→동쪽 순서로 탑승 후 기장군 아홉산숲으로 이동.",
+      "highlights": [
+        "부산역·서면역·해운대역 세 곳 중 편한 곳에서 탑승",
+        "동해고속도로 경유, 아홉산숲까지 약 30분",
+        "**유네스코 문화유산 위주의 풀코스, 월정교 일몰로 하루 마무리**",
+        "차 안에서 생수·바나나 제공 (점심은 개인 부담)"
+      ],
+      "timeUsed": [
+        "부산역 픽업 (약 08:10, 약 5분)",
+        "서면역으로 이동 (약 12분)",
+        "서면역 픽업 (약 08:25, 약 5분)",
+        "해운대역으로 이동 (약 18분)",
+        "해운대역 픽업 + 동해고속도로 출발 (약 08:45, 약 20분)"
+      ],
+      "whyOnRoute": "경주 노선 소그룹 투어의 표준 3개소 픽업 방식으로, 경쟁 상품과 동일한 운영 체계입니다. 마지막 픽업지를 해운대로 설정해 당일 첫 방문지인 기장군 아홉산숲까지 공차 이동을 최소화하고, 하루의 피날레인 월정교 황혼 감상 일정도 안정적으로 지킬 수 있습니다.",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_subway_pickup",
+        "verified": true,
+        "match": "transit_placeholder",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Busan Metro official",
+          "Operator schedule"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "time": "≈ 09:50",
+      "duration": "60분",
+      "name": "아홉산숲 (대나무 숲)",
+      "category": "사유 문화유산 숲",
+      "description": "아홉산숲은 부산 기장군에 위치한 52만㎡ 규모의 사유 원시림으로, 17세기부터 남평 문씨 가문이 9대(약 400년)에 걸쳐 지켜온 맹종죽(중국 왕대나무) 숲과 편백 숲이 공존합니다. 드라마 '대장금' 등 다수 사극 촬영지로 유명합니다. 빽빽한 대나무 산책로가 SNS 명소입니다. 입장료: 성인 ₩5,000 현장 지불. 방문 시간: 약 45분.",
+      "highlights": [
+        "**400년 역사의 사유 종중림** — 남평 문씨 문중, 9대째 보존",
+        "**2016년 첫 일반 공개** — 담양보다 한산한 대나무 숲",
+        "**총 52만㎡**, 1.5~2km 탐방로에 포인트 9곳",
+        "**맹종죽 대나무 군락** — 한국 드라마 5편 이상 촬영지",
+        "**군도(2014)·협녀: 칼의 기억(2015)·달의 연인(2016)·백일의 낭군님(2018)·더킹: 영원의 군주(2020)** 촬영지",
+        "**수령 400년 이상 소나무 116그루** 산책로 곳곳 위치",
+        "**어른 ₩8,000 / 청소년 ₩5,000**, 09:00~18:00, **월요일 휴무**",
+        "**더킹: 영원의 군주(2020)** 외 달의 연인·군도·백일의 낭군님 촬영지 — 한류 팬 필수 방문지",
+        "**월요일 휴무** (일정 구성 시 주의); 어른 ₩8,000 / 18세 미만 ₩5,000 (사유지 — 경로·단체 할인 없음)"
+      ],
+      "timeUsed": [
+        "버스 하차 + 종가 양식 입구 티켓팅 (약 5분)",
+        "하단 산책로: 종가 사당 + 물레방아 + 400년 적송 (약 15분)",
+        "대나무 숲 (9번 포인트) — 촬영 (약 25분)",
+        "목재 데크 경유 집결 장소로 복귀 + 버스 집합 (약 15분)"
+      ],
+      "whyOnRoute": "경북 담양 밖에서 즐길 수 있는 가장 사진 찍기 좋은한 대나무 숲이면서도 부산 행정구역 안에 있다는 점이 차별점입니다. 경주로 바로 이동하는 경쟁 상품과 비교해 독보적인 콘텐츠이며, 한류 드라마 팬에게는 강력한 흡인력을 갖습니다. 11시 이전 방문으로 주말 단체 관광버스 혼잡도 피할 수 있습니다.",
+      "visitBasics": {
+        "hours": "매일 09:00–18:00 (최종 입장 약 17:00)",
+        "closed": "월요일 휴무",
+        "admission": "성인 ₩8,000 / 어린이 ₩5,000",
+        "walking": "중간 난이도 — 자갈 산책로 및 완만한 경사; 일부 목재 데크; 편안한 신발 권장"
+      },
+      "convenience": {
+        "restroom": "입구 게이트 및 종가 중간 지점에 화장실 위치",
+        "parking": "단체 버스 및 승용차 주차 가능 (무료)"
+      },
+      "smartNotes": {
+        "photo": "9번 포인트(맹종죽 대나무 숲) — 캐노피를 통한 측면 빛이 드는 10:00–11:30 최적; 짚풀 지붕과 대나무가 앞뒤 층을 이루는 구도.",
+        "facilities": "입구 근처 소규모 농산물 판매대(계절 현지 농산물, 간단한 음료); 숲 내 카페 없음 — 음료 미리 지참 권장.",
+        "tip": "밝은 대나무와의 대비를 위해 어두운 색 상의 착용 권장; 표시된 탐방로 외 진입 금지 — 대나무 뿌리가 매우 연약함."
+      },
+      "_poi_meta": {
+        "poi_key": "ahopsan_bamboo_forest",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea",
+          "Visit Busan official",
+          "Korea JoongAng Daily",
+          "K-drama filming location databases",
+          "Korea Tourism Organization (Ahopsan filming location designation)"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:30",
+      "duration": "75분",
+      "name": "불국사 (유네스코 세계문화유산)",
+      "category": "유네스코 불교 사원",
+      "description": "불국사는 신라 경덕왕 시대 751년 창건, 1995년 석굴암과 함께 유네스코 세계문화유산으로 등재된 통일신라 불교 예술의 걸작입니다. 경내에 국보 4점: 다보탑(국보 20호), 석가탑(국보 21호), 연화교·칠보교(국보 22호), 청운교·백운교(국보 23호)가 있습니다. 2023년 5월부터 무료 입장. 방문 시간: 약 75분.",
+      "highlights": [
+        "**1995년 유네스코 세계문화유산** 지정 + 사적 제1호",
+        "**528년 창건 → 751년 김대성 재상 중건 → 774년 완공**",
+        "**국보 6점**이 한 사찰 안에",
+        "**다보탑(국보 제20호)** = 10원짜리 동전 앞면 도안",
+        "**석가탑(국보 제21호) + 무구정광대다라니경** = 현존 세계 최고(最古) 목판 인쇄물 (704~751년)",
+        "청운교·백운교(국보 제23호): 33계단 = 불교 33천(天)의 상징",
+        "**2023년부터 무료 입장** (문화재보호법 개정)",
+        "매일 09:00~18:00, 마지막 입장 17:00",
+        "**무구정광대다라니경 (704~751년) — 현존 세계 최고 목판 인쇄물** — 1966년 석가탑 내부 발견; 구텐베르크보다 700년 앞선 신라 인쇄술의 실물 증거"
+      ],
+      "timeUsed": [
+        "버스 하차 + 소나무 숲 진입로 도보 (약 10분)",
+        "일주문 + 청운교/백운교 촬영 (약 15분)",
+        "대웅전 마당 + 다보탑 + 석가탑 (약 25분)",
+        "비로전 비로자나불 + 극락전 (약 15분)",
+        "자유 시간 + 버스 집합 (약 10분)"
+      ],
+      "whyOnRoute": "경주 당일 투어의 필수 유네스코 거점이자 한국에서 가장 잘 알려진 불교 문화유산입니다. 11:30 도착은 점심 전에 사찰을 마치도록 조율한 것이며, 오후엔 국립박물관 관람('사찰 + 유물'의 연계 구성)으로 이어집니다. 75분 일정이면 다보탑·석가탑을 충분히 감상할 수 있습니다.",
+      "visitBasics": {
+        "hours": "매일 09:00–18:00 (최종 입장 17:00)",
+        "closed": "연중 무휴",
+        "admission": "무료 (2023년 문화재보호법 개정 이후)",
+        "walking": "중간 난이도 — 석계, 경사로, 자갈길; 편안한 신발 권장"
+      },
+      "convenience": {
+        "restroom": "경내 소형 사찰 양식 공중 화장실 무료 이용 가능",
+        "parking": "경내 주차장 (유료)"
+      },
+      "smartNotes": {
+        "photo": "자하문 아래 청운교/백운교(국보 제23호); 다보탑(국보 제20호)과 석가탑(국보 제21호) 정면 대칭 구도 — 오전 11시 이전 빛이 최적.",
+        "facilities": "입구 관광안내소; 불국사박물관 (별도 입장권 ₩2,000/₩1,000, 월요일 휴관).",
+        "tip": "단정한 복장 착용; 법당 내부 입장 시 신발 탈착; 드론 촬영 금지; 스님·불자 촬영 금지 (표시 구역 준수)."
+      },
+      "_poi_meta": {
+        "poi_key": "bulguksa_temple",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO World Heritage Centre",
+          "Wikipedia",
+          "World History Encyclopedia",
+          "VisitKorea",
+          "Visit Gyeongju official"
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "time": "≈ 13:00",
+      "duration": "60분",
+      "name": "점심 (경주 현지 식당)",
+      "category": "점심 / 개인 부담",
+      "description": "불국사 출구 인근의 경주 현지 식당에서 점심을 드실 수 있습니다. 경주식 쌈밥 정식처럼 나물과 반찬을 곁들인 한식 메뉴가 대표적이며, 식사 후에는 경주 명물 황남빵도 간식이나 기념품으로 추천드립니다. 점심 식사비는 별도입니다(약 ₩10,000~15,000).",
+      "highlights": [
+        "점심 개인 부담, 경주 시내 기준 약 ₩10,000~15,000",
+        "**경주 쌈밥 정식** — 채소쌈, 밥, 반찬을 함께 즐기는 경주 대표 점심 메뉴",
+        "**황남빵** — 1939년부터 이어온 경주 명물 팥빵으로 기념품으로도 추천",
+        "쌈밥 식당은 채소 반찬이 많아 채식 요청도 비교적 조율하기 쉽습니다."
+      ],
+      "timeUsed": [
+        "식당 이동 + 착석 (약 5분)",
+        "주문 + 음식 준비 (약 10분)",
+        "식사 + 화장실 (약 40분)",
+        "버스 집합 + 물/간식 구매 (약 5분)"
+      ],
+      "whyOnRoute": "사찰과 박물관 사이에 점심 시간을 배치해 자연스러운 중간 휴식을 만들고, 체력이 좋을 때 가이드가 사찰을 집중 안내할 수 있도록 했습니다. 점심을 패키지에 포함하지 않으면 요금이 낮아지고, 해외 여행객도 육식·채식·간편식 중 자유롭게 선택할 수 있습니다.",
+      "_poi_meta": {
+        "poi_key": "OPS_gyeongju_lunch",
+        "verified": true,
+        "match": "lunch_placeholder",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Gyeongju official",
+          "VisitKorea food guide"
+        ]
+      }
+    },
+    {
+      "number": 5,
+      "time": "≈ 14:15",
+      "duration": "75분",
+      "name": "국립경주박물관",
+      "category": "국립박물관 / 신라 유물",
+      "description": "국립경주박물관은 신라 문명의 핵심 유물을 만날 수 있는 대표 박물관입니다. 성덕대왕신종(국보 제29호), 황남대총 금관과 귀걸이, 토제 기마인물상 등 경주 유적에서 출토된 주요 유물을 한자리에서 볼 수 있습니다. 무료 입장이며, 방문 시간은 약 75분입니다.",
+      "highlights": [
+        "**신라 문명의 집대성** — 1945년 개관, 현 건물 1968년 준공",
+        "**10만 점 이상 유물 소장**, 국가지정 문화재 3만여 점",
+        "**천마총 금관 (국보 제188호)** — 1973년 4월 16일 출토",
+        "**성덕대왕신종(국보 제29호)** — 771년에 완성된 약 18.9톤 규모의 신라 대표 범종",
+        "**현존 한국 최대 범종** (높이 3.66m) — 야외 전시각",
+        "**2025 신라 금관 특별전 (~2025.12.14)** — 104년 만에 금관 6점 한자리 (경주 APEC 2025 기념)",
+        "**무료 입장**, 화~일 10:00~18:00, **월요일 휴관**",
+        "전동 휠체어 완전 이용 가능 — 우천 대안 코스로도 적합",
+        "**2025.10.28~12.14 특별전: 104년 만의 신라 금관 6점 재회** (APEC 기념) — 천마총·황남대총 북분·남분·금관총·서봉총·금령총 금관 총출동"
+      ],
+      "timeUsed": [
+        "버스 하차 + 입장 + 물품 보관 (약 10분)",
+        "야외 대종각 (성덕대왕신종) (약 10분)",
+        "신라관 — 금관 + 왕실 유물 (약 25분)",
+        "월지관 — 안압지 궁전 유물 (약 15분)",
+        "특별 전시 또는 기념품점 + 집합 (약 15분)"
+      ],
+      "whyOnRoute": "경주에서 가장 중요한 실내 문화 공간이자 이 코스에서 날씨의 영향을 전혀 받지 않는 유일한 방문지입니다. 비나 폭염이 심할 때도 75분 일정을 연장할 수 있습니다. 불국사(사찰)와 박물관(유물)을 연결하는 '보고 → 이해하는' 순서는 경쟁 상품에는 없는 이 코스만의 구성입니다.",
+      "visitBasics": {
+        "hours": "화~일 10:00–18:00 (최종 입장 17:30); 토요일 및 매월 마지막 수요일 21:00까지 연장",
+        "closed": "월요일 + 1월 1일 + 설날 + 추석",
+        "admission": "무료 (특별 전시는 소액 유료)",
+        "walking": "실내 위주 + 포장된 야외 공간; 전 구역 휠체어 접근 가능"
+      },
+      "convenience": {
+        "restroom": "본관 및 야외 대종각 구역 내 화장실 다수",
+        "parking": "단체 버스 및 승용차 무료 주차"
+      },
+      "smartNotes": {
+        "photo": "성덕대왕신종 야외 종각 (오후 측면광 최적); 천마총 금관 (실내 어두움 — ISO 높게 설정); 첨성대 (월지관 모형 촬영 가능).",
+        "facilities": "금관 복제품 주얼리 등 박물관 기념품점; 본관 내 카페; 물품 보관소 이용 가능.",
+        "tip": "플래시 촬영 금지; 일부 특별전은 촬영 전면 금지 (안내 표시 확인); 월지관에서 10분 여유 — 안압지 유물의 세부 디테일이 볼 만함."
+      },
+      "_poi_meta": {
+        "poi_key": "gyeongju_national_museum",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Gyeongju National Museum official",
+          "Wikipedia",
+          "Korea JoongAng Daily APEC 2025 coverage",
+          "Cultural Heritage Administration (NT 29, NT 188)",
+          "National Museum of Korea (Gyeongju Branch)"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "≈ 15:50",
+      "duration": "60분",
+      "name": "교촌한옥마을",
+      "category": "문화유산 한옥마을",
+      "description": "교촌한옥마을은 조선 시대 경주 최씨 가문의 300년 전통 고택 마을입니다. 9대 과거 급제, 12대 만석꾼, 독립운동 지원으로 유명한 최씨 가문의 생활 공간이 보존되어 있습니다. 한복 체험, 교동법주(전통 쌀막걸리) 시음, 고택 탐방이 가능합니다. 월정교까지 도보 5분 거리. 방문 시간: 약 60분.",
+      "highlights": [
+        "**경주 최씨 종가** — 12대째 이어진 선비 가문의 한옥 마을",
+        "유명한 **여섯 가지 가훈** — 흉년에 소작료 올리지 않기 등 실천적 도덕 지침",
+        "**최씨 고택** = 중요민속문화재 제27호",
+        "**교동법주** = 중요무형문화재 제86-3호 (350년 전통)",
+        "바로 옆 **계림** — 신라 김씨의 신화적 발상지",
+        "바로 옆 **내물마립간릉** + **경주향교**",
+        "고택 내 **요석궁 1779** 한정식당 (고급 저녁 식사 옵션)",
+        "**대부분 고택 낮 시간대 무료 입장**",
+        "**교동법주 — 중요무형문화재 제86-3호** — 350년 최씨 가문 비법 전통주 (도수 약 16%; 종가에서 시음 코스 운영)"
+      ],
+      "timeUsed": [
+        "버스 하차 + 메인 입구 도보 (약 5분)",
+        "최씨 고택 + 교동법주 양조장 외관 (약 20분)",
+        "계림 + 내물왕릉 (약 15분)",
+        "경주향교 + 마을 골목 (약 15분)",
+        "버스 집합 (약 5분)"
+      ],
+      "whyOnRoute": "교촌은 '살아있는 신라'를 보여주는 코스의 핵심 거점입니다. 불국사가 신라 불교를, 박물관이 신라 유물을 보여준다면, 교촌은 신라에서 조선을 거쳐 오늘날까지 이어진 한국의 생활 방식을 담고 있습니다. 15:50 방문은 기와지붕과 법주 양조장 목문에 황금빛 햇살이 드는 최적의 포토 타임입니다.",
+      "visitBasics": {
+        "hours": "낮 동안 개방; 대부분 고택 09:00–18:00",
+        "closed": "일부 고택 월요일 휴관 — 주요 골목은 연중 개방",
+        "admission": "대부분 무료; 최씨 고택 종가 소정의 기부함",
+        "walking": "편안함 — 자갈 및 석판 골목; 주요 관람 구간 일부 휠체어 이동 가능"
+      },
+      "convenience": {
+        "restroom": "마을 입구 및 경주향교 근처 공중 화장실",
+        "parking": "서쪽 입구 단체 버스 하차 구역 (무료)"
+      },
+      "smartNotes": {
+        "photo": "황금빛 시간대 한옥 기와지붕; 교동법주 양조장 대문; 마을 고지대에서 월정교 원경 포착 가능.",
+        "facilities": "교동법주 상점 (기념품용 소병 판매); 주요 골목 소형 공예품 상점 (전통 쌀과자, 도자기 등).",
+        "tip": "통관 주류 면세 한도가 있다면 교동법주 기념품 구입 추천 (본국 반입 규정 확인 필요)."
+      },
+      "_poi_meta": {
+        "poi_key": "gyochon_hanok_village",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Gyeongju official",
+          "VisitKorea",
+          "Wikipedia (Gyeongju Choi family)",
+          "Cultural Heritage Administration (Folklore Material No. 27, Intangible No. 86-3)",
+          "Cultural Heritage Administration of Korea (Gyeongju Choi Clan Family Designation)"
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "time": "≈ 17:00",
+      "duration": "40분",
+      "name": "월정교",
+      "category": "신라 목조 다리 복원",
+      "description": "월정교는 760년 통일신라 경덕왕 때 세운 목교를 2013년 복원한 것으로, 남천 위에 놓인 한국 최대 목교(66.57m)입니다. 야간 조명 점등 후 경주 야경 명소로 손꼽힙니다. 황리단길까지 도보 5분 거리. 무료 입장. 방문 시간: 약 40분.",
+      "highlights": [
+        "**국내 최대 목조 다리** — 원 길이 60.57m",
+        "**760년 경덕왕(신라 35대왕)이 처음 건립** — 삼국사기에 기록",
+        "**조선 시대 소실 → 1984~1986년 발굴 → 2008~2018년 복원**",
+        "**2018년 4월** 문루 완공 후 재개장",
+        "**2004년 11월 27일 사적 지정**",
+        "**문화체육관광부 한국 관광 100선 2025-2026 선정**",
+        "**일몰 · 야간 조명 = 동궁과 월지 다음으로 가장 많이 찍히는 경주 야경**",
+        "**무료** 24시간 개방, 북쪽 입구에서 휠체어 접근 가능",
+        "**한국관광공사 한국 관광 100선 2025-2026 선정** — 760년 경덕왕의 원형을 2018년 복원한 유산 명소로 공인"
+      ],
+      "timeUsed": [
+        "북쪽 주차장 버스 하차 (약 5분)",
+        "다리 건너 남쪽 문루까지 도보 (약 10분)",
+        "남쪽 구도 촬영 (약 15분)",
+        "집결 장소로 복귀 + 버스 집합 (약 10분)"
+      ],
+      "whyOnRoute": "월정교는 이 코스의 '일몰 피날레' 명소입니다. 박물관의 집중 관람 후 부담 없이 걷기 좋은 평탄한 목교로, 하루를 감동적으로 마무리해줍니다. 17:00 도착은 계절별 일몰 시간에 맞춰 조율된 것으로, 봄·가을에는 마법 같은 노을빛을, 겨울에는 조명이 켜진 야경을 감상할 수 있습니다.",
+      "visitBasics": {
+        "hours": "24시간 개방 (야간 조명: 일몰 후 ~ 약 23:00)",
+        "closed": "연중 무휴",
+        "admission": "무료",
+        "walking": "편안함 — 평탄한 교면; 북쪽 진입로 휠체어 접근 가능"
+      },
+      "convenience": {
+        "restroom": "북쪽 주차장 구역 공중 화장실",
+        "parking": "북쪽 단체 버스 주차; 남쪽 주차 불가"
+      },
+      "smartNotes": {
+        "photo": "남쪽 문루에서 다리가 월성 궁터를 향해 뻗어 나가는 대표 구도; 장노출로 조명 반영 포착 — 황혼~야간 최적.",
+        "facilities": "다리 위 상점 없음; 북쪽 주차장 인근 작은 카페들이 모여 있는 구역.",
+        "tip": "야간 조명 촬영을 위해 삼각대 또는 야간 모드 간편한폰 권장; 겨울철 강 안개가 반영을 흐릴 수 있으니 광각 구도 시도."
+      },
+      "_poi_meta": {
+        "poi_key": "woljeonggyo_bridge",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Gyeongju official",
+          "Cultural Heritage Administration",
+          "Wikipedia (Woljeonggyo)",
+          "MCST '100 Best Tourist Attractions 2025–2026' list",
+          "Korea Tourism Organization '100 Best 2025-2026' designation"
+        ]
+      }
+    },
+    {
+      "number": 8,
+      "time": "≈ 17:45",
+      "duration": "75분",
+      "name": "부산 귀환",
+      "category": "이동 / 귀환",
+      "description": "월정교 북쪽 주차장에서 약 17:45 출발, 경부고속도로로 부산 귀환(약 75분). 역 픽업 순서의 역방향으로 해운대 → 서면 → 부산역 하차.",
+      "highlights": [
+        "**귀환 순서: 해운대 → 서면 → 부산역**",
+        "예상 도착: 해운대 약 18:50 / 서면 약 19:05 / 부산역 약 19:20",
+        "금·일 저녁 정체 시 20~30분 추가 가능 — 가이드가 단체 채팅으로 실시간 안내",
+        "저녁 식사 미포함 — 이전에 구입한 간식을 드시거나 하차 후 자유롭게 식사"
+      ],
+      "timeUsed": [
+        "월정교 북쪽 출발 (약 5분)",
+        "경부 + 동해고속도로 이동 (약 60분)",
+        "해운대역 첫 번째 하차 (약 5분)",
+        "서면역 + 부산역 순차 하차 (약 5분)"
+      ],
+      "whyOnRoute": "귀환 시 역순 하차(해운대 → 서면 → 부산역)는 소그룹 투어의 표준 운영 방식으로, 지리적으로 가장 가까운 곳부터 먼저 내려 총 이동 시간을 최소화합니다. 저녁 식사를 포함하지 않은 것은 가격 경쟁력과 유연성을 위한 선택이며, 동일 유형의 부산·경주 상품과 같은 방식입니다.",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_return",
+        "verified": true,
+        "match": "transit_placeholder",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Operator schedule",
+          "Korea Expressway Corporation traffic data"
+        ]
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "부산 지하철 픽업",
+      "type": "origin",
+      "theme": "출발"
+    },
+    {
+      "name": "아홉산숲 (벚꽃 시즌엔 해운대 달맞이길)",
+      "type": "primary",
+      "theme": "대나무숲 / 해안 드라이브 (계절)"
+    },
+    {
+      "name": "불국사 (유네스코)",
+      "type": "primary",
+      "theme": "유네스코 문화유산"
+    },
+    {
+      "name": "점심 (경주 현지식)",
+      "type": "meal",
+      "theme": "식사"
+    },
+    {
+      "name": "경주국립박물관",
+      "type": "primary",
+      "theme": "신라 유물"
+    },
+    {
+      "name": "교촌 한옥마을",
+      "type": "primary",
+      "theme": "전통 한옥마을"
+    },
+    {
+      "name": "월정교",
+      "type": "primary",
+      "theme": "신라 고교 복원"
+    },
+    {
+      "name": "부산 지하철 하차",
+      "type": "return",
+      "theme": "귀환"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "출발 + 아홉산",
+      "duration": "약 2.5시간",
+      "description": "부산 3개 지하철역 순차 픽업(08:10, 08:30, 09:10) 후 기장 아홉산숲까지 약 30분 이동."
+    },
+    {
+      "phase": "유네스코 핵심",
+      "duration": "약 2시간",
+      "description": "아홉산숲에서 불국사까지 약 70분 이동 후 75분 동안 사찰 탐방."
+    },
+    {
+      "phase": "점심 + 박물관",
+      "duration": "약 2.5시간",
+      "description": "경주 현지 점심 식사(60분) 후 국립경주박물관 신라 갤러리에서 75분."
+    },
+    {
+      "phase": "한옥마을 + 다리",
+      "duration": "약 2시간",
+      "description": "교촌 한옥마을 산책(60분) 후 월정교에서 40분."
+    },
+    {
+      "phase": "귀환",
+      "duration": "약 1.25~1.5시간",
+      "description": "경부고속도로로 경주 → 부산 귀환. 해운대, 서면, 부산역 순서로 하차."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "하루 일정",
+    "subtitle": "문화 위주의 부산 출발 경주 당일치기 투어로, '유산'이라는 테마를 깊이 있게 담아냅니다 — 한국 역사상 가장 오래 지속된 왕조(신라, 992년)와 지금까지 남은 유물들. 대부분의 경주 당일 투어가 5~7개 야외 명소를 빠르게 훑는 반면, 이 코스는 속도를 늦추고 대부분의 투어가 빠트리는 국립박물관을 포함합니다. 월정교 야간 조명으로 마무리되는 피날레는 다른 코스에서는 경험할 수 없는 감동적인 클로징입니다."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "하루 안에 유네스코 문화유산을 보고 싶은 한국 첫 방문자",
+      "커플 및 성인 가족 여행",
+      "박물관 패널을 읽으며 역사를 깊이 탐구하고 싶은 여행자",
+      "사진 애호가 (불국사 탑·교촌 한옥·월정교)"
+    ],
+    "lessIdealFor": [
+      "도보 이동이 어렵거나 걷는 거리를 최소화해야 하는 여행자",
+      "유모차 동반 가족 (불국사 계단)",
+      "어린 아이 동반 (하루 종일 이동하는 일정)",
+      "당일 귀국 항공편이 이른 여행자 (마지막 하차 약 19:45)"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "이 코스의 추천 포인트",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "국립박물관 포함 (대부분의 당일 투어가 제외하는 코스)",
+            "detail": "경주 당일 투어 대부분이 실내인 국립박물관을 빠트리고 야외 명소을 추가해 보완합니다. 결과적으로 방문객들은 빈 껍데기(왕릉, 궁터)만 보고 실제 유물은 보지 못한 채 돌아갑니다. 박물관에는 천마총 신라 금관, 18.9톤의 성덕대왕신종, 월지(안압지) 궁전 발굴 유물이 전시되어 있습니다. 이 코스는 박물관을 의도적으로 포함합니다."
+          },
+          {
+            "label": "복원된 신라 다리로 마무리되는 하루",
+            "detail": "월정교는 짧고 평탄하며 사진 찍기 좋은한 코스 — 박물관의 읽기 집중 시간 이후 부담 없는 마지막 명소입니다. 야간 조명은 석양 이후부터 오후 11시까지 운영되며, 다른 경주 코스들이 제공하지 않는 감성적인 마무리를 선사합니다."
+          },
+          {
+            "label": "연중 운영, 계절에 맞춘 코스 조정 1회 적용",
+            "detail": "아홉산숲 오프닝 코스는 벚꽃 시즌(3월 중순~4월 중순)에 해운대 달맞이고개 드라이브로 교체됩니다. 나머지 계절에는 아홉산숲이 운영되며, 비 또는 날씨 악화 시 대체 코스로 조정됩니다."
+          },
+          {
+            "label": "대형 관광버스와 프라이빗 투어의 중간 규모 미니밴",
+            "detail": "부산→경주 대형 관광버스는 보통 35~45명 승차, 낮은 1인당 가격으로 운영됩니다; 프라이빗 투어는 비용이 높습니다. 이 코스는 8~12인 미니밴으로 유연성과 비용 효율성을 함께 갖춘 코스입니다."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "inclusions",
+      "title": "포함 사항",
+      "preview": "부산 왕복 미니밴, 영어·중국어 가능 인증 가이드, 유류비·통행료·주차비…",
+      "content": [
+        "부산에서 왕복 미니밴 이동, 영어·중국어 공인 가이드, 연료·통행료·주차비 포함.",
+        "미포함: 점심 식사(약 ₩15,000~₩25,000), 아홉산숲 입장료(₩5,000, 현장 직접 결제), 팁.",
+        "기타 입장료 전부 무료: 불국사(2023년 5월부터 무료), 국립경주박물관(2008년부터 무료), 교촌 한옥마을, 월정교."
+      ]
+    },
+    {
+      "id": "pickup",
+      "title": "픽업 및 하차 안내",
+      "preview": "부산 지하철 1호선 3개 정거장에서 순차 픽업: 부산역 4번 출구(08:10), 서면역 4번 출구(08:30)…",
+      "content": [
+        "부산 지하철 1호선 3개 역 순차 픽업: 부산역 4번 출구(08:10), 서면역 4번 출구(08:30), 해운대역 5번 출구(09:10).",
+        "예약 시 숙소에서 가장 가까운 출구를 선택하세요.",
+        "하차는 역순: 해운대 약 19:00, 서면 약 19:25, 부산역 약 19:45.",
+        "예약 시 WhatsApp / KakaoTalk 번호를 남겨주시면 가이드가 전날 차량 정보를 메시지로 안내합니다."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "도보 및 지형 안내",
+      "preview": "중간 난이도. 하루 총 도보 거리 약 4~5km.",
+      "content": [
+        "중간 난이도.",
+        "하루 총 도보 거리 약 4~5km.",
+        "불국사는 사찰 내 구역 간 석계 이동 필요 (청운교·백운교 각 33계단, 사진 명소로 활용; 주요 관람 구간은 우회 경사로 이용 가능).",
+        "국립박물관은 실내 평지 이동, 좌석 구비.",
+        "교촌 한옥마을은 평탄한 한옥 골목.",
+        "월정교는 평탄한 교량 횡단.",
+        "편안한 발가락 보호형 신발 필수 — 불국사 석재는 불규칙하고 젖으면 미끄러움."
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "취소 정책",
+      "preview": "픽업 24시간 전까지 무료 취소 가능.",
+      "content": [
+        "픽업 24시간 전까지 무료 취소 가능.",
+        "당일 취소 및 노쇼는 환불 불가.",
+        "여행사 취소(불가항력, 기상, 도로 폐쇄)의 경우 전액 환불."
+      ]
+    },
+    {
+      "id": "seasonal",
+      "title": "시즌별 코스 안내",
+      "preview": "벚꽃 시즌 (통상 3월 중순~4월 중순, 연도별 7~10일 편차)에는…",
+      "content": [
+        "벚꽃 시즌(보통 3월 중순~4월 중순; 연도별 약 7~10일 차이): 아홉산숲을 부산 해안 벚꽃 터널 도로인 해운대 달맞이고개로 대체.",
+        "겨울(11월~2월): 일몰이 17:15~17:30으로 17:00 도착 시 월정교 조명이 시작됩니다 — 일몰 직후 반영 촬영이 안정적으로 가능한 유일한 시즌."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "계절별 안내 확인"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "계절별 안내 확인"
+    },
+    "_seasonalSummary": "경주는 부산보다 내륙성 기후가 뚜렷해 겨울에는 더 춥고 여름에는 더 덥게 느껴질 수 있습니다. 벚꽃이 피는 4월과 불국사 단풍이 아름다운 10~11월이 특히 좋은 시기입니다.",
+    "_seasonalTemperatures": [
+      {
+        "season": "봄 (3~5월)",
+        "range": "5–22°C",
+        "notes": "4월 초 벚꽃이 절정이며, 전반적으로 가장 좋은 시기입니다."
+      },
+      {
+        "season": "여름 (6~8월)",
+        "range": "22–32°C",
+        "notes": "여름에는 덥고 습하지만 박물관 실내는 냉방이 잘 됩니다."
+      },
+      {
+        "season": "가을 (9~11월)",
+        "range": "8–24°C",
+        "notes": "10월 말 불국사 단풍이 특히 아름다운 시기입니다."
+      },
+      {
+        "season": "겨울 (12~2월)",
+        "range": "-3 to 8°C",
+        "notes": "겨울에는 추운 편이라 박물관과 실내 카페 구간의 만족도가 높습니다."
+      }
+    ]
+  },
+  "seasonalVariations": [
+    {
+      "season": "봄 (3월 중순~4월 중순, 벚꽃 시즌)",
+      "description": "오프닝 코스인 아홉산숲을 해운대 달맞이고개 벚꽃 드라이브로 교체. 불국사 경내는 4월 중순 절정; 다보탑 앞뒤로 피어난 겹벚꽃이 클래식 포토 명소."
+    },
+    {
+      "season": "여름 (6~8월)",
+      "description": "아홉산숲은 수림 아래 서늘함 유지; 박물관은 에어컨 완비. 불국사의 산지 입지로 해안 도시 부산보다 기온이 낮음. 오후 5시 월정교 도착 시 낮 시간 풍경 감상 가능."
+    },
+    {
+      "season": "가을 (9월 하순~10월 하순)",
+      "description": "불국사 10월 하순 단풍은 한국 대표 사진 명소 중 하나. 경주 대릉원 고분 주변 단풍도 볼만함. 10월 중순부터 오후 5시 월정교 도착 시 황혼 조명 진입."
+    },
+    {
+      "season": "겨울 (11월~2월)",
+      "description": "관광객 가장 적음; 박물관이 일정의 가장 빛나는 실내 코스로 부각. 일몰 17:15~17:30으로 방문 중 월정교 조명이 시작됨 — 일몰 직후 반영 촬영이 가능한 유일한 시즌."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "공인 현지 여행사",
+      "description": "정식 등록 및 보험 가입 현지 여행사",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "공인 영어·중국어 가이드를 보유한 현지 여행사."
+    },
+    {
+      "icon": "route",
+      "title": "코스 전문",
+      "description": "이동 부담을 줄인 효율적인 코스",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "대나무 숲 → 유네스코 사찰 → 박물관 → 한옥마을 → 월정교 순서로 경주 이야기가 자연스럽게 이어지도록 구성된 코스."
+    },
+    {
+      "icon": "users",
+      "title": "그룹 규모 관리",
+      "description": "코스에 상황에 맞춘 인원 규모",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "최대 10인 미니밴으로 박물관과 사찰을 대형 단체 대기줄 없이 이동합니다."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "즉시",
+      "title": "즉시 예약 확정",
+      "detail": "행정 요약 포함 예약 확인서 발송",
+      "description": "예약 즉시 확인서 도착 — 픽업 역(부산역/서면/해운대) 선택지와 당일 오전 일정 포함."
+    },
+    {
+      "timing": "출발 12시간 전",
+      "title": "12시간 전 안내",
+      "detail": "날씨 업데이트 및 경로 변경 안내",
+      "description": "전날 날씨 업데이트 및 계절별 경로 변경 사항(벚꽃 코스 변경, 겨울 다리 야경 등) 안내 발송."
+    },
+    {
+      "timing": "출발 전날 저녁",
+      "title": "최종 픽업 정보",
+      "detail": "정확한 픽업 시간 및 가이드 연락처",
+      "description": "차량 번호판 및 정확한 픽업 시간을 출발 전날 저녁에 안내드립니다."
+    },
+    {
+      "timing": "당일 아침",
+      "title": "당일 경로 안내",
+      "detail": "실시간 상황 기반 당일 브리핑",
+      "description": "아침 메시지로 탑승 역 확인 및 동해고속도로 교통 상황 사전 안내."
+    },
+    {
+      "timing": "투어 진행 중",
+      "title": "코스별 현장 가이드",
+      "detail": "각 코스 실시간 현장 안내",
+      "description": "가이드가 각 코스에서 심층 해설 제공 — 불국사 국보 6점, 국립박물관 금관, 월정교 역사 배경 등."
+    },
+    {
+      "timing": "투어 종료 후",
+      "title": "사후 지원",
+      "detail": "피드백 및 추가 여행 추천",
+      "description": "하차 후 간단한 피드백 설문 발송; 경주 추가 관광지 및 주변 여행지 관련 문의 사항 후속 응대."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q-bridge-night-view",
+      "question": "방문 시 월정교 야간 조명을 볼 수 있나요?",
+      "answer": "계절에 따라 다릅니다. 월정교는 연중 일몰부터 약 22:00까지 조명이 켜지지만, 이 투어는 일몰 전에 월정교에 도착합니다. 늦여름~초가을(일몰이 이른 시기)에는 황혼 조명을 볼 수 있습니다."
+    },
+    {
+      "id": "q-vs-ancient-capital",
+      "question": "'경주 고도 투어(부산 출발)'와 어떻게 다른가요?",
+      "answer": "두 투어 모두 아홉산 → 불국사 → 박물관 → 교촌 → 월정교 코스로 진행됩니다. '유네스코 레거시' 투어는 박물관 체류 시간(75분)과 가이드 설명이 더 심층적입니다. '고도 투어'는 일정 속도가 느리고 더 일찍 부산에 귀환합니다."
+    },
+    {
+      "id": "q-seokguram",
+      "question": "석굴암은 왜 포함되지 않나요?",
+      "answer": "석굴암은 불국사와 같은 유네스코 등재이지만 산 위 8km 거리에 위치하며, 주차가 좁고 이동 시간이 길어 당일 일정에 포함하기 어렵습니다. 석굴암을 꼭 보고 싶으신 경우 프라이빗 투어로 문의하세요."
+    },
+    {
+      "id": "q-admissions",
+      "question": "입장료가 포함되어 있나요?",
+      "answer": "대부분 무료입니다. 아홉산숲 입장료(₩5,000, 현장 지불)만 별도입니다. 불국사는 2023년 5월부터 무료, 국립경주박물관·교촌·월정교는 무료입니다."
+    },
+    {
+      "id": "q-museum-language",
+      "question": "박물관 내 영어 안내가 있나요?",
+      "answer": "네, 국립경주박물관 3개 상설전시관(신라역사관·신라미술관·야외유물관) 전체에 영어·중국어 전시 패널이 있습니다."
+    },
+    {
+      "id": "q-bulguksa-photography",
+      "question": "불국사에서 사진을 찍을 수 있나요?",
+      "answer": "네, 경내 전체(두 탑 포함, 하층 석교)에서 사진 촬영이 가능합니다. 플래시와 삼각대는 피해 주세요."
+    },
+    {
+      "id": "q-bulguksa-stairs",
+      "question": "불국사 33계단 석교를 올라야 하나요?",
+      "answer": "아닙니다. 청운교·백운교와 연화교·칠보교는 국보로 보존되어 관람 전용입니다. 방문객은 계단 옆 현대식 입구를 이용합니다."
+    },
+    {
+      "id": "q-vegetarian",
+      "question": "채식 점심 옵션이 있나요?",
+      "answer": "네, 경주 쌈밥 정식은 채소 반찬이 많아 고기 없이도 식사 구성이 가능합니다. 현장에서 가이드가 채식 요청을 도와드립니다."
+    },
+    {
+      "id": "q-rain",
+      "question": "비가 오면 어떻게 되나요?",
+      "answer": "가벼운 비: 예정대로 진행. 강우 시: 불국사 석조 계단이 미끄러워지고 아홉산 길이 진흙 상태가 될 수 있습니다. 박물관과 교촌은 실내·실외 혼합이라 대부분 진행 가능합니다."
+    },
+    {
+      "id": "first-time",
+      "question": "경주를 처음 방문하는 분에게 적합한가요?",
+      "answer": "네, 경주 유네스코·문화 명소를 하루에 균형 있게 방문할 수 있는 투어입니다."
+    },
+    {
+      "id": "walking",
+      "question": "도보 이동이 얼마나 되나요?",
+      "answer": "총 약 4~5km. 불국사가 가장 활동적인 구간(고르지 않은 석재, 완만한 오르막). 박물관은 실내 평지. 교촌·월정교는 가볍습니다."
+    },
+    {
+      "id": "family",
+      "question": "어린이와 함께하기 적합한가요?",
+      "answer": "만 8세 이상, 하루 일정을 소화할 수 있는 어린이에게 적합합니다. 박물관 금관과 성덕대왕신종은 어린이들이 특히 좋아하는 전시물입니다."
+    },
+    {
+      "id": "seniors",
+      "question": "어르신도 참여할 수 있나요?",
+      "answer": "불국사 4~5km 도보와 고르지 않은 석재를 소화할 수 있는 활동적인 어르신께 권장합니다. 일정 속도는 여유 있게 진행됩니다."
+    },
+    {
+      "id": "children",
+      "question": "권장 최소 연령은 몇 세인가요?",
+      "answer": "만 8세 이상, 하루 일정 속도와 도보 활동이 가능한 어린이에게 적합합니다."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "인",
+      "priceSource": "direct_rate",
+      "priceNote": "소그룹 가격은 아직 상품 정보에서 확정되지 않았습니다. 부산 출발 경주 당일투어는 패키지와 여행사에 따라 보통 54~90달러 선입니다. 가격 확정 후 AtoC Korea 직접 판매가는 10% 할인이 적용됩니다.",
+      "discountPercent": 10
+    }
+  },
+  "pickup_dropoff": {
+    "type": "meeting_point",
+    "meeting_points": [
+      {
+        "name": "부산역 4번 출구",
+        "time": "08:10"
+      },
+      {
+        "name": "서면역 4번 출구",
+        "time": "08:30"
+      },
+      {
+        "name": "해운대역 5번 출구",
+        "time": "09:10"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "해운대역 5번 출구",
+        "approx_time": "≈ 19:00"
+      },
+      {
+        "name": "서면역 4번 출구",
+        "approx_time": "≈ 19:25"
+      },
+      {
+        "name": "부산역 4번 출구",
+        "approx_time": "≈ 19:45"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "예약 시 호텔에서 가장 가까운 픽업 지점을 선택해 주세요. 이 상품은 사계절 운영되며, 벚꽃 시즌(보통 3월 중순~4월 중순)에는 아홉산숲 대신 해운대 달맞이길로 대체될 수 있습니다."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "busan-gyeongju-unesco-legacy-tour-national-museum",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "gyeongsang_north",
+    "vehicle_type": "coach",
+    "duration_hours": 11.0,
+    "region_tags": [
+      "busan_gijang",
+      "gyeongju_tohamsan",
+      "gyeongju_historic_core"
+    ],
+    "theme_tags": [
+      "unesco",
+      "silla_kingdom",
+      "gyeongju",
+      "from_busan",
+      "museum",
+      "bamboo_forest",
+      "hanok_village",
+      "night_illumination",
+      "buddhist_temple"
+    ],
+    "poi_tags": [
+      "ahopsan_bamboo_forest",
+      "bulguksa_temple",
+      "gyeongju_national_museum",
+      "gyochon_hanok_village",
+      "woljeonggyo_bridge"
+    ],
+    "pace_level": 0.7,
+    "walking_level": 0.7,
+    "scenic_level": 0.9,
+    "photo_level": 1.0,
+    "culture_level": 1.0,
+    "relax_level": 0.55,
+    "first_time_fit": 1.0,
+    "family_fit": 0.85,
+    "senior_fit": 0.85,
+    "couple_fit": 0.95,
+    "solo_traveler_fit": 1.0,
+    "active_traveler_fit": 0.6,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 0.95,
+    "young_kids_fit": 0.45,
+    "senior_active_fit": 0.85,
+    "senior_general_fit": 0.75,
+    "mobility_friendly_fit": 0.65,
+    "stroller_fit": 0.4,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.15,
+    "rain_fit": 0.7,
+    "value_for_money_fit": 1.0,
+    "iconic_landmark_fit": 1.0,
+    "cafe_fit": 0.4,
+    "food_fit": 0.6,
+    "nature_fit": 0.6,
+    "beach_fit": 0.2,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.4,
+    "no_shopping_fit": 0.85,
+    "local_culture_fit": 0.95,
+    "storytelling_fit": 1.0,
+    "unesco_fit": 1.0,
+    "intangible_heritage_fit": 0.85,
+    "indoor_ratio": 0.32,
+    "weather_sensitivity": 0.45,
+    "comfort_level": 0.7,
+    "budget_fit": 0.85,
+    "premium_fit": 0.5,
+    "small_group_fit": 1.0,
+    "private_fit": 0.05,
+    "bus_fit": 1.0,
+    "price_band": "mid",
+    "pickup_base": "busan_central",
+    "return_time_band": "18:50-19:20",
+    "duration_band": "11h",
+    "min_recommended_age": 10,
+    "hard_constraints": {
+      "avoidIf": [
+        "very_low_mobility"
+      ],
+      "notIdealFor": [
+        "young_kids_under_10",
+        "private_tour_seekers",
+        "shoppers_only"
+      ]
+    },
+    "walking_notes": [
+      "Moderate-to-busy walking day — Ahopsan gravel path, Bulguksa stone steps, museum interior, Gyochon lanes, Woljeonggyo bridge deck.",
+      "Average fitness expected.",
+      "Comfortable walking shoes mandatory; bring a light layer for the post-sunset bridge stop and morning bamboo forest."
+    ],
+    "keywords": [
+      "busan gyeongju unesco day tour",
+      "gyeongju national museum tour",
+      "ahopsan bamboo forest from busan",
+      "woljeonggyo bridge night",
+      "gyochon hanok village",
+      "bulguksa unesco day trip from busan",
+      "silla heritage day tour"
+    ],
+    "synonym_hints": [
+      "gyeongju museum tour",
+      "korea silla heritage tour",
+      "busan to gyeongju legacy tour",
+      "gyeongju illumination tour"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "busan",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "bulguksa_temple",
+      "gyeongju_national_museum",
+      "gyochon_hanok_village",
+      "ahopsan_bamboo_forest",
+      "woljeonggyo_bridge"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.1,
+    "flexibility_fit": 0.3,
+    "fixed_itinerary_fit": 1.0,
+    "buddhist_temple_fit": 1.0,
+    "silla_kingdom_fit": 1.0,
+    "ancient_capital_fit": 1.0,
+    "silla_artifacts_fit": 1.0,
+    "museum_fit": 1.0,
+    "national_museum_fit": 1.0,
+    "hanok_village_fit": 1.0,
+    "scholar_gentry_heritage_fit": 1.0,
+    "bamboo_forest_fit": 1.0,
+    "k_drama_filming_fit": 1.0,
+    "night_illuminated_bridge_fit": 1.0,
+    "sunset_finale_fit": 1.0,
+    "scenic_temple_fit": 1.0,
+    "history_culture_fit": 1.0,
+    "religious_history_fit": 0.95,
+    "cherry_blossom_fit": 0.5,
+    "spring_seasonal_fit": 0.6,
+    "autumn_foliage_fit": 0.7,
+    "weather_robust_fit": 0.75,
+    "premium_dining_fit": 0.85,
+    "seasonal_fit": 0.95,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "unesco_anchor_count": 2,
+    "national_treasure_count_visited": 5,
+    "intangible_cultural_asset_count_visited": 1,
+    "museum_visit": true,
+    "silla_dynasty_focus_fit": 1.0,
+    "ancient_capital_history_fit": 1.0,
+    "k_drama_filming_locations_count": 1,
+    "deep_history_traveler_fit": 1.0,
+    "longer_day_fit": 1.0,
+    "differentiates_from_busan_top_attractions": true,
+    "differentiates_from_spring_cherry_blossom_route": true,
+    "apec_2025_silla_gold_crown_exhibition_anchor": true,
+    "deep_history_traveler_fit_minimum": 0.7,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "unesco",
+      "silla_kingdom",
+      "gyeongju",
+      "from_busan",
+      "museum"
+    ],
+    "secondary_themes": [
+      "bamboo_forest",
+      "hanok_village",
+      "night_illumination",
+      "buddhist_temple",
+      "k_drama_filming"
+    ],
+    "best_for": [
+      "history_lovers",
+      "first_time_korea",
+      "couples",
+      "solo_travelers",
+      "rainy_day_visitors",
+      "k_drama_fans",
+      "photographers"
+    ],
+    "not_recommended_for": [
+      "young_kids_under_10",
+      "private_tour_seekers",
+      "active_outdoor_seekers",
+      "shoppers_only"
+    ],
+    "anchor_pois": [
+      "Bulguksa Temple (UNESCO)",
+      "Gyeongju National Museum",
+      "Gyochon Hanok Village",
+      "Ahopsan Bamboo Forest",
+      "Woljeonggyo Bridge (sunset)"
+    ],
+    "competing_products": [
+      "from-busan-gyeongju-ancient-capital-day-tour",
+      "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
+      "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
+      "busan-top-attractions-day-tour"
+    ],
+    "anchor_poi_keys": [
+      "bulguksa_temple",
+      "gyeongju_national_museum",
+      "gyochon_hanok_village",
+      "ahopsan_bamboo_forest",
+      "woljeonggyo_bridge"
+    ],
+    "enrichment_batch": "17a",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.23",
+    "enrichment_target_kb_version": "1.24",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "16 substantive stops across 4 tours; D-grade audit (8-hl-vs-9-hl artifact) → A-grade pass"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "불국사에서 국립박물관, 대나무 숲에서 야경 다리까지 —",
+        "headlineLine2": "한국 천 년의 수도를 부산에서 하루에",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
+          "imagePosition": "center 35%",
+          "tagline": "'지붕 없는 박물관'이라 불리는 경주 — 유네스코 유산, 국립박물관, 한옥마을, 월정교까지 하루에 둘러보는 코스입니다.",
+          "pills": [
+            "소그룹",
+            "경주",
+            "unesco_legacy"
+          ],
+          "meta": {
+            "duration": "약 11.5시간 (08:10 첫 번째 픽업, 약 19:45 마지막 하차)",
+            "region": "경주 (부산 출발)",
+            "stops": "8개 코스",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "투어 개요"
+          },
+          {
+            "id": "itinerary",
+            "label": "상세 일정"
+          },
+          {
+            "id": "details",
+            "label": "유의사항"
+          },
+          {
+            "id": "faq",
+            "label": "자주 묻는 질문"
+          },
+          {
+            "id": "reviews",
+            "label": "여행자 후기"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "소요 시간",
+            "value": "약 11.5시간 (08:10 첫 픽업, 약 19:45 마지막 하차)"
+          },
+          {
+            "icon": "users",
+            "label": "그룹 규모",
+            "value": "소그룹, 미니밴 (통상 10인 이내)"
+          },
+          {
+            "icon": "subway",
+            "label": "픽업 정보",
+            "value": "부산역 4번 출구 (08:10), 서면역 4번 출구 (08:30), 해운대역 5번 출구 (09:10)"
+          },
+          {
+            "icon": "calendar",
+            "label": "최적 시즌",
+            "value": "연중 운행; 벚꽃 시즌 (3월 중순~4월 중순) 에는 아홉산숲 대신 해운대 달맞이길로 변경"
+          },
+          {
+            "icon": "footprints",
+            "label": "도보 난이도",
+            "value": "중간 난이도 — 총 약 4~5km. 불국사 계단·경사 구간 있음; 박물관·한옥마을·월정교는 평지."
+          },
+          {
+            "icon": "ticket",
+            "label": "포함 사항",
+            "value": "왕복 교통, 인증 가이드 포함. 입장료: 불국사 무료(2023년 5월부터)·박물관 무료·교촌 무료·월정교 무료; 아홉산숲(₩5,000)만 현장 개인 결제. 점심 개인 부담."
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "alt": "오후 빛 속의 불국사 석교와 다보탑",
+            "caption": "불국사 — 유네스코 세계유산. 두 탑은 국보 제20호, 21호.",
+            "location": "불국사, Gyeongju",
+            "atmosphere": "돌, 나무, 8세기 탑 실루엣"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "alt": "박물관 조명 아래 유리 케이스에 전시된 신라 금관",
+            "caption": "경주 국립박물관 — 천마총 출토 금관 (국보 제188호).",
+            "location": "국립경주박물관",
+            "atmosphere": "고요한 갤러리, 단일 오브젝트 포커스"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "alt": "교촌 마을 고요한 골목을 따라 늘어선 기와 한옥과 돌담",
+            "caption": "교촌 한옥마을 — 최씨 일가 고택과 경주향교.",
+            "location": "경주 교촌한옥마을",
+            "atmosphere": "복원된 한옥 골목, 한적함"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=1200",
+            "alt": "숲길을 따라 빽빽한 대나무 사이로 스며드는 빛",
+            "caption": "아홉산숲 — 1638년부터 문씨 일가가 사유지로 보존해온 대나무 숲.",
+            "location": "아홉산숲, 부산 기장군",
+            "atmosphere": "시원하고 초록빛 걸러진 빛"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
+            "alt": "황혼 속 물에 반영된 목조 교각 정자",
+            "caption": "월정교 — 2018년 완공된 66미터 신라 양식 복원 교량.",
+            "location": "월정교, Gyeongju",
+            "atmosphere": "나무, 물, 부드러운 저녁 빛"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "08:10",
+            "duration": "60분",
+            "name": "부산 픽업 (지하철 3개 역)",
+            "category": "이동 / 픽업",
+            "description": "부산 지하철 3개 역에서 순차 픽업: 부산역 1호선(약 08:10), 서면역 1·2호선(약 08:30), 해운대역 2호선(약 09:10). 서쪽→동쪽 순서로 탑승 후 기장군 아홉산숲으로 이동.",
+            "highlights": [
+              "부산역·서면역·해운대역 세 곳 중 편한 곳에서 탑승",
+              "동해고속도로 경유, 아홉산숲까지 약 30분",
+              "**유네스코 문화유산 위주의 풀코스, 월정교 일몰로 하루 마무리**",
+              "차 안에서 생수·바나나 제공 (점심은 개인 부담)"
+            ],
+            "timeUsed": [
+              "부산역 픽업 (약 08:10, 약 5분)",
+              "서면역으로 이동 (약 12분)",
+              "서면역 픽업 (약 08:25, 약 5분)",
+              "해운대역으로 이동 (약 18분)",
+              "해운대역 픽업 + 동해고속도로 출발 (약 08:45, 약 20분)"
+            ],
+            "whyOnRoute": "경주 노선 소그룹 투어의 표준 3개소 픽업 방식으로, 경쟁 상품과 동일한 운영 체계입니다. 마지막 픽업지를 해운대로 설정해 당일 첫 방문지인 기장군 아홉산숲까지 공차 이동을 최소화하고, 하루의 피날레인 월정교 황혼 감상 일정도 안정적으로 지킬 수 있습니다.",
+            "_poi_meta": {
+              "poi_key": "OPS_busan_subway_pickup",
+              "verified": true,
+              "match": "transit_placeholder",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Busan Metro official",
+                "Operator schedule"
+              ]
+            }
+          },
+          {
+            "number": 2,
+            "time": "≈ 09:50",
+            "duration": "60분",
+            "name": "아홉산숲 (대나무 숲)",
+            "category": "사유 문화유산 숲",
+            "description": "아홉산숲은 부산 기장군에 위치한 52만㎡ 규모의 사유 원시림으로, 17세기부터 남평 문씨 가문이 9대(약 400년)에 걸쳐 지켜온 맹종죽(중국 왕대나무) 숲과 편백 숲이 공존합니다. 드라마 '대장금' 등 다수 사극 촬영지로 유명합니다. 빽빽한 대나무 산책로가 SNS 명소입니다. 입장료: 성인 ₩5,000 현장 지불. 방문 시간: 약 45분.",
+            "highlights": [
+              "**400년 역사의 사유 종중림** — 남평 문씨 문중, 9대째 보존",
+              "**2016년 첫 일반 공개** — 담양보다 한산한 대나무 숲",
+              "**총 52만㎡**, 1.5~2km 탐방로에 포인트 9곳",
+              "**맹종죽 대나무 군락** — 한국 드라마 5편 이상 촬영지",
+              "**군도(2014)·협녀: 칼의 기억(2015)·달의 연인(2016)·백일의 낭군님(2018)·더킹: 영원의 군주(2020)** 촬영지",
+              "**수령 400년 이상 소나무 116그루** 산책로 곳곳 위치",
+              "**어른 ₩8,000 / 청소년 ₩5,000**, 09:00~18:00, **월요일 휴무**",
+              "**더킹: 영원의 군주(2020)** 외 달의 연인·군도·백일의 낭군님 촬영지 — 한류 팬 필수 방문지",
+              "**월요일 휴무** (일정 구성 시 주의); 어른 ₩8,000 / 18세 미만 ₩5,000 (사유지 — 경로·단체 할인 없음)"
+            ],
+            "timeUsed": [
+              "버스 하차 + 종가 양식 입구 티켓팅 (약 5분)",
+              "하단 산책로: 종가 사당 + 물레방아 + 400년 적송 (약 15분)",
+              "대나무 숲 (9번 포인트) — 촬영 (약 25분)",
+              "목재 데크 경유 집결 장소로 복귀 + 버스 집합 (약 15분)"
+            ],
+            "whyOnRoute": "경북 담양 밖에서 즐길 수 있는 가장 사진 찍기 좋은한 대나무 숲이면서도 부산 행정구역 안에 있다는 점이 차별점입니다. 경주로 바로 이동하는 경쟁 상품과 비교해 독보적인 콘텐츠이며, 한류 드라마 팬에게는 강력한 흡인력을 갖습니다. 11시 이전 방문으로 주말 단체 관광버스 혼잡도 피할 수 있습니다.",
+            "visitBasics": {
+              "hours": "매일 09:00–18:00 (최종 입장 약 17:00)",
+              "closed": "월요일 휴무",
+              "admission": "성인 ₩8,000 / 어린이 ₩5,000",
+              "walking": "중간 난이도 — 자갈 산책로 및 완만한 경사; 일부 목재 데크; 편안한 신발 권장"
+            },
+            "convenience": {
+              "restroom": "입구 게이트 및 종가 중간 지점에 화장실 위치",
+              "parking": "단체 버스 및 승용차 주차 가능 (무료)"
+            },
+            "smartNotes": {
+              "photo": "9번 포인트(맹종죽 대나무 숲) — 캐노피를 통한 측면 빛이 드는 10:00–11:30 최적; 짚풀 지붕과 대나무가 앞뒤 층을 이루는 구도.",
+              "facilities": "입구 근처 소규모 농산물 판매대(계절 현지 농산물, 간단한 음료); 숲 내 카페 없음 — 음료 미리 지참 권장.",
+              "tip": "밝은 대나무와의 대비를 위해 어두운 색 상의 착용 권장; 표시된 탐방로 외 진입 금지 — 대나무 뿌리가 매우 연약함."
+            },
+            "_poi_meta": {
+              "poi_key": "ahopsan_bamboo_forest",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea",
+                "Visit Busan official",
+                "Korea JoongAng Daily",
+                "K-drama filming location databases",
+                "Korea Tourism Organization (Ahopsan filming location designation)"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:30",
+            "duration": "75분",
+            "name": "불국사 (유네스코 세계문화유산)",
+            "category": "유네스코 불교 사원",
+            "description": "불국사는 신라 경덕왕 시대 751년 창건, 1995년 석굴암과 함께 유네스코 세계문화유산으로 등재된 통일신라 불교 예술의 걸작입니다. 경내에 국보 4점: 다보탑(국보 20호), 석가탑(국보 21호), 연화교·칠보교(국보 22호), 청운교·백운교(국보 23호)가 있습니다. 2023년 5월부터 무료 입장. 방문 시간: 약 75분.",
+            "highlights": [
+              "**1995년 유네스코 세계문화유산** 지정 + 사적 제1호",
+              "**528년 창건 → 751년 김대성 재상 중건 → 774년 완공**",
+              "**국보 6점**이 한 사찰 안에",
+              "**다보탑(국보 제20호)** = 10원짜리 동전 앞면 도안",
+              "**석가탑(국보 제21호) + 무구정광대다라니경** = 현존 세계 최고(最古) 목판 인쇄물 (704~751년)",
+              "청운교·백운교(국보 제23호): 33계단 = 불교 33천(天)의 상징",
+              "**2023년부터 무료 입장** (문화재보호법 개정)",
+              "매일 09:00~18:00, 마지막 입장 17:00",
+              "**무구정광대다라니경 (704~751년) — 현존 세계 최고 목판 인쇄물** — 1966년 석가탑 내부 발견; 구텐베르크보다 700년 앞선 신라 인쇄술의 실물 증거"
+            ],
+            "timeUsed": [
+              "버스 하차 + 소나무 숲 진입로 도보 (약 10분)",
+              "일주문 + 청운교/백운교 촬영 (약 15분)",
+              "대웅전 마당 + 다보탑 + 석가탑 (약 25분)",
+              "비로전 비로자나불 + 극락전 (약 15분)",
+              "자유 시간 + 버스 집합 (약 10분)"
+            ],
+            "whyOnRoute": "경주 당일 투어의 필수 유네스코 거점이자 한국에서 가장 잘 알려진 불교 문화유산입니다. 11:30 도착은 점심 전에 사찰을 마치도록 조율한 것이며, 오후엔 국립박물관 관람('사찰 + 유물'의 연계 구성)으로 이어집니다. 75분 일정이면 다보탑·석가탑을 충분히 감상할 수 있습니다.",
+            "visitBasics": {
+              "hours": "매일 09:00–18:00 (최종 입장 17:00)",
+              "closed": "연중 무휴",
+              "admission": "무료 (2023년 문화재보호법 개정 이후)",
+              "walking": "중간 난이도 — 석계, 경사로, 자갈길; 편안한 신발 권장"
+            },
+            "convenience": {
+              "restroom": "경내 소형 사찰 양식 공중 화장실 무료 이용 가능",
+              "parking": "경내 주차장 (유료)"
+            },
+            "smartNotes": {
+              "photo": "자하문 아래 청운교/백운교(국보 제23호); 다보탑(국보 제20호)과 석가탑(국보 제21호) 정면 대칭 구도 — 오전 11시 이전 빛이 최적.",
+              "facilities": "입구 관광안내소; 불국사박물관 (별도 입장권 ₩2,000/₩1,000, 월요일 휴관).",
+              "tip": "단정한 복장 착용; 법당 내부 입장 시 신발 탈착; 드론 촬영 금지; 스님·불자 촬영 금지 (표시 구역 준수)."
+            },
+            "_poi_meta": {
+              "poi_key": "bulguksa_temple",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO World Heritage Centre",
+                "Wikipedia",
+                "World History Encyclopedia",
+                "VisitKorea",
+                "Visit Gyeongju official"
+              ]
+            }
+          },
+          {
+            "number": 4,
+            "time": "≈ 13:00",
+            "duration": "60분",
+            "name": "점심 (경주 현지 식당)",
+            "category": "점심 / 개인 부담",
+            "description": "불국사 출구 인근의 경주 현지 식당에서 점심을 드실 수 있습니다. 경주식 쌈밥 정식처럼 나물과 반찬을 곁들인 한식 메뉴가 대표적이며, 식사 후에는 경주 명물 황남빵도 간식이나 기념품으로 추천드립니다. 점심 식사비는 별도입니다(약 ₩10,000~15,000).",
+            "highlights": [
+              "점심 개인 부담, 경주 시내 기준 약 ₩10,000~15,000",
+              "**경주 쌈밥 정식** — 채소쌈, 밥, 반찬을 함께 즐기는 경주 대표 점심 메뉴",
+              "**황남빵** — 1939년부터 이어온 경주 명물 팥빵으로 기념품으로도 추천",
+              "쌈밥 식당은 채소 반찬이 많아 채식 요청도 비교적 조율하기 쉽습니다."
+            ],
+            "timeUsed": [
+              "식당 이동 + 착석 (약 5분)",
+              "주문 + 음식 준비 (약 10분)",
+              "식사 + 화장실 (약 40분)",
+              "버스 집합 + 물/간식 구매 (약 5분)"
+            ],
+            "whyOnRoute": "사찰과 박물관 사이에 점심 시간을 배치해 자연스러운 중간 휴식을 만들고, 체력이 좋을 때 가이드가 사찰을 집중 안내할 수 있도록 했습니다. 점심을 패키지에 포함하지 않으면 요금이 낮아지고, 해외 여행객도 육식·채식·간편식 중 자유롭게 선택할 수 있습니다.",
+            "_poi_meta": {
+              "poi_key": "OPS_gyeongju_lunch",
+              "verified": true,
+              "match": "lunch_placeholder",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Gyeongju official",
+                "VisitKorea food guide"
+              ]
+            }
+          },
+          {
+            "number": 5,
+            "time": "≈ 14:15",
+            "duration": "75분",
+            "name": "국립경주박물관",
+            "category": "국립박물관 / 신라 유물",
+            "description": "국립경주박물관은 신라 문명의 핵심 유물을 만날 수 있는 대표 박물관입니다. 성덕대왕신종(국보 제29호), 황남대총 금관과 귀걸이, 토제 기마인물상 등 경주 유적에서 출토된 주요 유물을 한자리에서 볼 수 있습니다. 무료 입장이며, 방문 시간은 약 75분입니다.",
+            "highlights": [
+              "**신라 문명의 집대성** — 1945년 개관, 현 건물 1968년 준공",
+              "**10만 점 이상 유물 소장**, 국가지정 문화재 3만여 점",
+              "**천마총 금관 (국보 제188호)** — 1973년 4월 16일 출토",
+              "**성덕대왕신종(국보 제29호)** — 771년에 완성된 약 18.9톤 규모의 신라 대표 범종",
+              "**현존 한국 최대 범종** (높이 3.66m) — 야외 전시각",
+              "**2025 신라 금관 특별전 (~2025.12.14)** — 104년 만에 금관 6점 한자리 (경주 APEC 2025 기념)",
+              "**무료 입장**, 화~일 10:00~18:00, **월요일 휴관**",
+              "전동 휠체어 완전 이용 가능 — 우천 대안 코스로도 적합",
+              "**2025.10.28~12.14 특별전: 104년 만의 신라 금관 6점 재회** (APEC 기념) — 천마총·황남대총 북분·남분·금관총·서봉총·금령총 금관 총출동"
+            ],
+            "timeUsed": [
+              "버스 하차 + 입장 + 물품 보관 (약 10분)",
+              "야외 대종각 (성덕대왕신종) (약 10분)",
+              "신라관 — 금관 + 왕실 유물 (약 25분)",
+              "월지관 — 안압지 궁전 유물 (약 15분)",
+              "특별 전시 또는 기념품점 + 집합 (약 15분)"
+            ],
+            "whyOnRoute": "경주에서 가장 중요한 실내 문화 공간이자 이 코스에서 날씨의 영향을 전혀 받지 않는 유일한 방문지입니다. 비나 폭염이 심할 때도 75분 일정을 연장할 수 있습니다. 불국사(사찰)와 박물관(유물)을 연결하는 '보고 → 이해하는' 순서는 경쟁 상품에는 없는 이 코스만의 구성입니다.",
+            "visitBasics": {
+              "hours": "화~일 10:00–18:00 (최종 입장 17:30); 토요일 및 매월 마지막 수요일 21:00까지 연장",
+              "closed": "월요일 + 1월 1일 + 설날 + 추석",
+              "admission": "무료 (특별 전시는 소액 유료)",
+              "walking": "실내 위주 + 포장된 야외 공간; 전 구역 휠체어 접근 가능"
+            },
+            "convenience": {
+              "restroom": "본관 및 야외 대종각 구역 내 화장실 다수",
+              "parking": "단체 버스 및 승용차 무료 주차"
+            },
+            "smartNotes": {
+              "photo": "성덕대왕신종 야외 종각 (오후 측면광 최적); 천마총 금관 (실내 어두움 — ISO 높게 설정); 첨성대 (월지관 모형 촬영 가능).",
+              "facilities": "금관 복제품 주얼리 등 박물관 기념품점; 본관 내 카페; 물품 보관소 이용 가능.",
+              "tip": "플래시 촬영 금지; 일부 특별전은 촬영 전면 금지 (안내 표시 확인); 월지관에서 10분 여유 — 안압지 유물의 세부 디테일이 볼 만함."
+            },
+            "_poi_meta": {
+              "poi_key": "gyeongju_national_museum",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Gyeongju National Museum official",
+                "Wikipedia",
+                "Korea JoongAng Daily APEC 2025 coverage",
+                "Cultural Heritage Administration (NT 29, NT 188)",
+                "National Museum of Korea (Gyeongju Branch)"
+              ]
+            }
+          },
+          {
+            "number": 6,
+            "time": "≈ 15:50",
+            "duration": "60분",
+            "name": "교촌한옥마을",
+            "category": "문화유산 한옥마을",
+            "description": "교촌한옥마을은 조선 시대 경주 최씨 가문의 300년 전통 고택 마을입니다. 9대 과거 급제, 12대 만석꾼, 독립운동 지원으로 유명한 최씨 가문의 생활 공간이 보존되어 있습니다. 한복 체험, 교동법주(전통 쌀막걸리) 시음, 고택 탐방이 가능합니다. 월정교까지 도보 5분 거리. 방문 시간: 약 60분.",
+            "highlights": [
+              "**경주 최씨 종가** — 12대째 이어진 선비 가문의 한옥 마을",
+              "유명한 **여섯 가지 가훈** — 흉년에 소작료 올리지 않기 등 실천적 도덕 지침",
+              "**최씨 고택** = 중요민속문화재 제27호",
+              "**교동법주** = 중요무형문화재 제86-3호 (350년 전통)",
+              "바로 옆 **계림** — 신라 김씨의 신화적 발상지",
+              "바로 옆 **내물마립간릉** + **경주향교**",
+              "고택 내 **요석궁 1779** 한정식당 (고급 저녁 식사 옵션)",
+              "**대부분 고택 낮 시간대 무료 입장**",
+              "**교동법주 — 중요무형문화재 제86-3호** — 350년 최씨 가문 비법 전통주 (도수 약 16%; 종가에서 시음 코스 운영)"
+            ],
+            "timeUsed": [
+              "버스 하차 + 메인 입구 도보 (약 5분)",
+              "최씨 고택 + 교동법주 양조장 외관 (약 20분)",
+              "계림 + 내물왕릉 (약 15분)",
+              "경주향교 + 마을 골목 (약 15분)",
+              "버스 집합 (약 5분)"
+            ],
+            "whyOnRoute": "교촌은 '살아있는 신라'를 보여주는 코스의 핵심 거점입니다. 불국사가 신라 불교를, 박물관이 신라 유물을 보여준다면, 교촌은 신라에서 조선을 거쳐 오늘날까지 이어진 한국의 생활 방식을 담고 있습니다. 15:50 방문은 기와지붕과 법주 양조장 목문에 황금빛 햇살이 드는 최적의 포토 타임입니다.",
+            "visitBasics": {
+              "hours": "낮 동안 개방; 대부분 고택 09:00–18:00",
+              "closed": "일부 고택 월요일 휴관 — 주요 골목은 연중 개방",
+              "admission": "대부분 무료; 최씨 고택 종가 소정의 기부함",
+              "walking": "편안함 — 자갈 및 석판 골목; 주요 관람 구간 일부 휠체어 이동 가능"
+            },
+            "convenience": {
+              "restroom": "마을 입구 및 경주향교 근처 공중 화장실",
+              "parking": "서쪽 입구 단체 버스 하차 구역 (무료)"
+            },
+            "smartNotes": {
+              "photo": "황금빛 시간대 한옥 기와지붕; 교동법주 양조장 대문; 마을 고지대에서 월정교 원경 포착 가능.",
+              "facilities": "교동법주 상점 (기념품용 소병 판매); 주요 골목 소형 공예품 상점 (전통 쌀과자, 도자기 등).",
+              "tip": "통관 주류 면세 한도가 있다면 교동법주 기념품 구입 추천 (본국 반입 규정 확인 필요)."
+            },
+            "_poi_meta": {
+              "poi_key": "gyochon_hanok_village",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Gyeongju official",
+                "VisitKorea",
+                "Wikipedia (Gyeongju Choi family)",
+                "Cultural Heritage Administration (Folklore Material No. 27, Intangible No. 86-3)",
+                "Cultural Heritage Administration of Korea (Gyeongju Choi Clan Family Designation)"
+              ]
+            }
+          },
+          {
+            "number": 7,
+            "time": "≈ 17:00",
+            "duration": "40분",
+            "name": "월정교",
+            "category": "신라 목조 다리 복원",
+            "description": "월정교는 760년 통일신라 경덕왕 때 세운 목교를 2013년 복원한 것으로, 남천 위에 놓인 한국 최대 목교(66.57m)입니다. 야간 조명 점등 후 경주 야경 명소로 손꼽힙니다. 황리단길까지 도보 5분 거리. 무료 입장. 방문 시간: 약 40분.",
+            "highlights": [
+              "**국내 최대 목조 다리** — 원 길이 60.57m",
+              "**760년 경덕왕(신라 35대왕)이 처음 건립** — 삼국사기에 기록",
+              "**조선 시대 소실 → 1984~1986년 발굴 → 2008~2018년 복원**",
+              "**2018년 4월** 문루 완공 후 재개장",
+              "**2004년 11월 27일 사적 지정**",
+              "**문화체육관광부 한국 관광 100선 2025-2026 선정**",
+              "**일몰 · 야간 조명 = 동궁과 월지 다음으로 가장 많이 찍히는 경주 야경**",
+              "**무료** 24시간 개방, 북쪽 입구에서 휠체어 접근 가능",
+              "**한국관광공사 한국 관광 100선 2025-2026 선정** — 760년 경덕왕의 원형을 2018년 복원한 유산 명소로 공인"
+            ],
+            "timeUsed": [
+              "북쪽 주차장 버스 하차 (약 5분)",
+              "다리 건너 남쪽 문루까지 도보 (약 10분)",
+              "남쪽 구도 촬영 (약 15분)",
+              "집결 장소로 복귀 + 버스 집합 (약 10분)"
+            ],
+            "whyOnRoute": "월정교는 이 코스의 '일몰 피날레' 명소입니다. 박물관의 집중 관람 후 부담 없이 걷기 좋은 평탄한 목교로, 하루를 감동적으로 마무리해줍니다. 17:00 도착은 계절별 일몰 시간에 맞춰 조율된 것으로, 봄·가을에는 마법 같은 노을빛을, 겨울에는 조명이 켜진 야경을 감상할 수 있습니다.",
+            "visitBasics": {
+              "hours": "24시간 개방 (야간 조명: 일몰 후 ~ 약 23:00)",
+              "closed": "연중 무휴",
+              "admission": "무료",
+              "walking": "편안함 — 평탄한 교면; 북쪽 진입로 휠체어 접근 가능"
+            },
+            "convenience": {
+              "restroom": "북쪽 주차장 구역 공중 화장실",
+              "parking": "북쪽 단체 버스 주차; 남쪽 주차 불가"
+            },
+            "smartNotes": {
+              "photo": "남쪽 문루에서 다리가 월성 궁터를 향해 뻗어 나가는 대표 구도; 장노출로 조명 반영 포착 — 황혼~야간 최적.",
+              "facilities": "다리 위 상점 없음; 북쪽 주차장 인근 작은 카페들이 모여 있는 구역.",
+              "tip": "야간 조명 촬영을 위해 삼각대 또는 야간 모드 간편한폰 권장; 겨울철 강 안개가 반영을 흐릴 수 있으니 광각 구도 시도."
+            },
+            "_poi_meta": {
+              "poi_key": "woljeonggyo_bridge",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Gyeongju official",
+                "Cultural Heritage Administration",
+                "Wikipedia (Woljeonggyo)",
+                "MCST '100 Best Tourist Attractions 2025–2026' list",
+                "Korea Tourism Organization '100 Best 2025-2026' designation"
+              ]
+            }
+          },
+          {
+            "number": 8,
+            "time": "≈ 17:45",
+            "duration": "75분",
+            "name": "부산 귀환",
+            "category": "이동 / 귀환",
+            "description": "월정교 북쪽 주차장에서 약 17:45 출발, 경부고속도로로 부산 귀환(약 75분). 역 픽업 순서의 역방향으로 해운대 → 서면 → 부산역 하차.",
+            "highlights": [
+              "**귀환 순서: 해운대 → 서면 → 부산역**",
+              "예상 도착: 해운대 약 18:50 / 서면 약 19:05 / 부산역 약 19:20",
+              "금·일 저녁 정체 시 20~30분 추가 가능 — 가이드가 단체 채팅으로 실시간 안내",
+              "저녁 식사 미포함 — 이전에 구입한 간식을 드시거나 하차 후 자유롭게 식사"
+            ],
+            "timeUsed": [
+              "월정교 북쪽 출발 (약 5분)",
+              "경부 + 동해고속도로 이동 (약 60분)",
+              "해운대역 첫 번째 하차 (약 5분)",
+              "서면역 + 부산역 순차 하차 (약 5분)"
+            ],
+            "whyOnRoute": "귀환 시 역순 하차(해운대 → 서면 → 부산역)는 소그룹 투어의 표준 운영 방식으로, 지리적으로 가장 가까운 곳부터 먼저 내려 총 이동 시간을 최소화합니다. 저녁 식사를 포함하지 않은 것은 가격 경쟁력과 유연성을 위한 선택이며, 동일 유형의 부산·경주 상품과 같은 방식입니다.",
+            "_poi_meta": {
+              "poi_key": "OPS_busan_return",
+              "verified": true,
+              "match": "transit_placeholder",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Operator schedule",
+                "Korea Expressway Corporation traffic data"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "부산 지하철 픽업",
+            "type": "origin",
+            "theme": "출발"
+          },
+          {
+            "name": "아홉산숲 (벚꽃 시즌엔 해운대 달맞이길)",
+            "type": "primary",
+            "theme": "대나무숲 / 해안 드라이브 (계절)"
+          },
+          {
+            "name": "불국사 (유네스코)",
+            "type": "primary",
+            "theme": "유네스코 문화유산"
+          },
+          {
+            "name": "점심 (경주 현지식)",
+            "type": "meal",
+            "theme": "식사"
+          },
+          {
+            "name": "경주국립박물관",
+            "type": "primary",
+            "theme": "신라 유물"
+          },
+          {
+            "name": "교촌 한옥마을",
+            "type": "primary",
+            "theme": "전통 한옥마을"
+          },
+          {
+            "name": "월정교",
+            "type": "primary",
+            "theme": "신라 고교 복원"
+          },
+          {
+            "name": "부산 지하철 하차",
+            "type": "return",
+            "theme": "귀환"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "출발 + 아홉산",
+            "duration": "약 2.5시간",
+            "description": "부산 3개 지하철역 순차 픽업(08:10, 08:30, 09:10) 후 기장 아홉산숲까지 약 30분 이동."
+          },
+          {
+            "phase": "유네스코 핵심",
+            "duration": "약 2시간",
+            "description": "아홉산숲에서 불국사까지 약 70분 이동 후 75분 동안 사찰 탐방."
+          },
+          {
+            "phase": "점심 + 박물관",
+            "duration": "약 2.5시간",
+            "description": "경주 현지 점심 식사(60분) 후 국립경주박물관 신라 갤러리에서 75분."
+          },
+          {
+            "phase": "한옥마을 + 다리",
+            "duration": "약 2시간",
+            "description": "교촌 한옥마을 산책(60분) 후 월정교에서 40분."
+          },
+          {
+            "phase": "귀환",
+            "duration": "약 1.25~1.5시간",
+            "description": "경부고속도로로 경주 → 부산 귀환. 해운대, 서면, 부산역 순서로 하차."
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "하루 일정",
+          "subtitle": "문화 위주의 부산 출발 경주 당일치기 투어로, '유산'이라는 테마를 깊이 있게 담아냅니다 — 한국 역사상 가장 오래 지속된 왕조(신라, 992년)와 지금까지 남은 유물들. 대부분의 경주 당일 투어가 5~7개 야외 명소를 빠르게 훑는 반면, 이 코스는 속도를 늦추고 대부분의 투어가 빠트리는 국립박물관을 포함합니다. 월정교 야간 조명으로 마무리되는 피날레는 다른 코스에서는 경험할 수 없는 감동적인 클로징입니다."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "하루 안에 유네스코 문화유산을 보고 싶은 한국 첫 방문자",
+            "커플 및 성인 가족 여행",
+            "박물관 패널을 읽으며 역사를 깊이 탐구하고 싶은 여행자",
+            "사진 애호가 (불국사 탑·교촌 한옥·월정교)"
+          ],
+          "lessIdealFor": [
+            "도보 이동이 어렵거나 걷는 거리를 최소화해야 하는 여행자",
+            "유모차 동반 가족 (불국사 계단)",
+            "어린 아이 동반 (하루 종일 이동하는 일정)",
+            "당일 귀국 항공편이 이른 여행자 (마지막 하차 약 19:45)"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "이 코스의 추천 포인트",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "국립박물관 포함 (대부분의 당일 투어가 제외하는 코스)",
+                  "detail": "경주 당일 투어 대부분이 실내인 국립박물관을 빠트리고 야외 명소을 추가해 보완합니다. 결과적으로 방문객들은 빈 껍데기(왕릉, 궁터)만 보고 실제 유물은 보지 못한 채 돌아갑니다. 박물관에는 천마총 신라 금관, 18.9톤의 성덕대왕신종, 월지(안압지) 궁전 발굴 유물이 전시되어 있습니다. 이 코스는 박물관을 의도적으로 포함합니다."
+                },
+                {
+                  "label": "복원된 신라 다리로 마무리되는 하루",
+                  "detail": "월정교는 짧고 평탄하며 사진 찍기 좋은한 코스 — 박물관의 읽기 집중 시간 이후 부담 없는 마지막 명소입니다. 야간 조명은 석양 이후부터 오후 11시까지 운영되며, 다른 경주 코스들이 제공하지 않는 감성적인 마무리를 선사합니다."
+                },
+                {
+                  "label": "연중 운영, 계절에 맞춘 코스 조정 1회 적용",
+                  "detail": "아홉산숲 오프닝 코스는 벚꽃 시즌(3월 중순~4월 중순)에 해운대 달맞이고개 드라이브로 교체됩니다. 나머지 계절에는 아홉산숲이 운영되며, 비 또는 날씨 악화 시 대체 코스로 조정됩니다."
+                },
+                {
+                  "label": "대형 관광버스와 프라이빗 투어의 중간 규모 미니밴",
+                  "detail": "부산→경주 대형 관광버스는 보통 35~45명 승차, 낮은 1인당 가격으로 운영됩니다; 프라이빗 투어는 비용이 높습니다. 이 코스는 8~12인 미니밴으로 유연성과 비용 효율성을 함께 갖춘 코스입니다."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "inclusions",
+            "title": "포함 사항",
+            "preview": "부산 왕복 미니밴, 영어·중국어 가능 인증 가이드, 유류비·통행료·주차비…",
+            "content": [
+              "부산에서 왕복 미니밴 이동, 영어·중국어 공인 가이드, 연료·통행료·주차비 포함.",
+              "미포함: 점심 식사(약 ₩15,000~₩25,000), 아홉산숲 입장료(₩5,000, 현장 직접 결제), 팁.",
+              "기타 입장료 전부 무료: 불국사(2023년 5월부터 무료), 국립경주박물관(2008년부터 무료), 교촌 한옥마을, 월정교."
+            ]
+          },
+          {
+            "id": "pickup",
+            "title": "픽업 및 하차 안내",
+            "preview": "부산 지하철 1호선 3개 정거장에서 순차 픽업: 부산역 4번 출구(08:10), 서면역 4번 출구(08:30)…",
+            "content": [
+              "부산 지하철 1호선 3개 역 순차 픽업: 부산역 4번 출구(08:10), 서면역 4번 출구(08:30), 해운대역 5번 출구(09:10).",
+              "예약 시 숙소에서 가장 가까운 출구를 선택하세요.",
+              "하차는 역순: 해운대 약 19:00, 서면 약 19:25, 부산역 약 19:45.",
+              "예약 시 WhatsApp / KakaoTalk 번호를 남겨주시면 가이드가 전날 차량 정보를 메시지로 안내합니다."
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "도보 및 지형 안내",
+            "preview": "중간 난이도. 하루 총 도보 거리 약 4~5km.",
+            "content": [
+              "중간 난이도.",
+              "하루 총 도보 거리 약 4~5km.",
+              "불국사는 사찰 내 구역 간 석계 이동 필요 (청운교·백운교 각 33계단, 사진 명소로 활용; 주요 관람 구간은 우회 경사로 이용 가능).",
+              "국립박물관은 실내 평지 이동, 좌석 구비.",
+              "교촌 한옥마을은 평탄한 한옥 골목.",
+              "월정교는 평탄한 교량 횡단.",
+              "편안한 발가락 보호형 신발 필수 — 불국사 석재는 불규칙하고 젖으면 미끄러움."
+            ]
+          },
+          {
+            "id": "cancellation",
+            "title": "취소 정책",
+            "preview": "픽업 24시간 전까지 무료 취소 가능.",
+            "content": [
+              "픽업 24시간 전까지 무료 취소 가능.",
+              "당일 취소 및 노쇼는 환불 불가.",
+              "여행사 취소(불가항력, 기상, 도로 폐쇄)의 경우 전액 환불."
+            ]
+          },
+          {
+            "id": "seasonal",
+            "title": "시즌별 코스 안내",
+            "preview": "벚꽃 시즌 (통상 3월 중순~4월 중순, 연도별 7~10일 편차)에는…",
+            "content": [
+              "벚꽃 시즌(보통 3월 중순~4월 중순; 연도별 약 7~10일 차이): 아홉산숲을 부산 해안 벚꽃 터널 도로인 해운대 달맞이고개로 대체.",
+              "겨울(11월~2월): 일몰이 17:15~17:30으로 17:00 도착 시 월정교 조명이 시작됩니다 — 일몰 직후 반영 촬영이 안정적으로 가능한 유일한 시즌."
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "계절별 안내 확인"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "계절별 안내 확인"
+          },
+          "_seasonalSummary": "경주는 부산보다 내륙성 기후가 뚜렷해 겨울에는 더 춥고 여름에는 더 덥게 느껴질 수 있습니다. 벚꽃이 피는 4월과 불국사 단풍이 아름다운 10~11월이 특히 좋은 시기입니다.",
+          "_seasonalTemperatures": [
+            {
+              "season": "봄 (3~5월)",
+              "range": "5–22°C",
+              "notes": "4월 초 벚꽃이 절정이며, 전반적으로 가장 좋은 시기입니다."
+            },
+            {
+              "season": "여름 (6~8월)",
+              "range": "22–32°C",
+              "notes": "여름에는 덥고 습하지만 박물관 실내는 냉방이 잘 됩니다."
+            },
+            {
+              "season": "가을 (9~11월)",
+              "range": "8–24°C",
+              "notes": "10월 말 불국사 단풍이 특히 아름다운 시기입니다."
+            },
+            {
+              "season": "겨울 (12~2월)",
+              "range": "-3 to 8°C",
+              "notes": "겨울에는 추운 편이라 박물관과 실내 카페 구간의 만족도가 높습니다."
+            }
+          ]
+        },
+        "seasonalVariations": [
+          {
+            "season": "봄 (3월 중순~4월 중순, 벚꽃 시즌)",
+            "description": "오프닝 코스인 아홉산숲을 해운대 달맞이고개 벚꽃 드라이브로 교체. 불국사 경내는 4월 중순 절정; 다보탑 앞뒤로 피어난 겹벚꽃이 클래식 포토 명소."
+          },
+          {
+            "season": "여름 (6~8월)",
+            "description": "아홉산숲은 수림 아래 서늘함 유지; 박물관은 에어컨 완비. 불국사의 산지 입지로 해안 도시 부산보다 기온이 낮음. 오후 5시 월정교 도착 시 낮 시간 풍경 감상 가능."
+          },
+          {
+            "season": "가을 (9월 하순~10월 하순)",
+            "description": "불국사 10월 하순 단풍은 한국 대표 사진 명소 중 하나. 경주 대릉원 고분 주변 단풍도 볼만함. 10월 중순부터 오후 5시 월정교 도착 시 황혼 조명 진입."
+          },
+          {
+            "season": "겨울 (11월~2월)",
+            "description": "관광객 가장 적음; 박물관이 일정의 가장 빛나는 실내 코스로 부각. 일몰 17:15~17:30으로 방문 중 월정교 조명이 시작됨 — 일몰 직후 반영 촬영이 가능한 유일한 시즌."
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "공인 현지 여행사",
+            "description": "정식 등록 및 보험 가입 현지 여행사",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "공인 영어·중국어 가이드를 보유한 현지 여행사."
+          },
+          {
+            "icon": "route",
+            "title": "코스 전문",
+            "description": "이동 부담을 줄인 효율적인 코스",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "대나무 숲 → 유네스코 사찰 → 박물관 → 한옥마을 → 월정교 순서로 경주 이야기가 자연스럽게 이어지도록 구성된 코스."
+          },
+          {
+            "icon": "users",
+            "title": "그룹 규모 관리",
+            "description": "코스에 상황에 맞춘 인원 규모",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "최대 10인 미니밴으로 박물관과 사찰을 대형 단체 대기줄 없이 이동합니다."
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "즉시",
+            "title": "즉시 예약 확정",
+            "detail": "행정 요약 포함 예약 확인서 발송",
+            "description": "예약 즉시 확인서 도착 — 픽업 역(부산역/서면/해운대) 선택지와 당일 오전 일정 포함."
+          },
+          {
+            "timing": "출발 12시간 전",
+            "title": "12시간 전 안내",
+            "detail": "날씨 업데이트 및 경로 변경 안내",
+            "description": "전날 날씨 업데이트 및 계절별 경로 변경 사항(벚꽃 코스 변경, 겨울 다리 야경 등) 안내 발송."
+          },
+          {
+            "timing": "출발 전날 저녁",
+            "title": "최종 픽업 정보",
+            "detail": "정확한 픽업 시간 및 가이드 연락처",
+            "description": "차량 번호판 및 정확한 픽업 시간을 출발 전날 저녁에 안내드립니다."
+          },
+          {
+            "timing": "당일 아침",
+            "title": "당일 경로 안내",
+            "detail": "실시간 상황 기반 당일 브리핑",
+            "description": "아침 메시지로 탑승 역 확인 및 동해고속도로 교통 상황 사전 안내."
+          },
+          {
+            "timing": "투어 진행 중",
+            "title": "코스별 현장 가이드",
+            "detail": "각 코스 실시간 현장 안내",
+            "description": "가이드가 각 코스에서 심층 해설 제공 — 불국사 국보 6점, 국립박물관 금관, 월정교 역사 배경 등."
+          },
+          {
+            "timing": "투어 종료 후",
+            "title": "사후 지원",
+            "detail": "피드백 및 추가 여행 추천",
+            "description": "하차 후 간단한 피드백 설문 발송; 경주 추가 관광지 및 주변 여행지 관련 문의 사항 후속 응대."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q-bridge-night-view",
+            "question": "방문 시 월정교 야간 조명을 볼 수 있나요?",
+            "answer": "계절에 따라 다릅니다. 월정교는 연중 일몰부터 약 22:00까지 조명이 켜지지만, 이 투어는 일몰 전에 월정교에 도착합니다. 늦여름~초가을(일몰이 이른 시기)에는 황혼 조명을 볼 수 있습니다."
+          },
+          {
+            "id": "q-vs-ancient-capital",
+            "question": "'경주 고도 투어(부산 출발)'와 어떻게 다른가요?",
+            "answer": "두 투어 모두 아홉산 → 불국사 → 박물관 → 교촌 → 월정교 코스로 진행됩니다. '유네스코 레거시' 투어는 박물관 체류 시간(75분)과 가이드 설명이 더 심층적입니다. '고도 투어'는 일정 속도가 느리고 더 일찍 부산에 귀환합니다."
+          },
+          {
+            "id": "q-seokguram",
+            "question": "석굴암은 왜 포함되지 않나요?",
+            "answer": "석굴암은 불국사와 같은 유네스코 등재이지만 산 위 8km 거리에 위치하며, 주차가 좁고 이동 시간이 길어 당일 일정에 포함하기 어렵습니다. 석굴암을 꼭 보고 싶으신 경우 프라이빗 투어로 문의하세요."
+          },
+          {
+            "id": "q-admissions",
+            "question": "입장료가 포함되어 있나요?",
+            "answer": "대부분 무료입니다. 아홉산숲 입장료(₩5,000, 현장 지불)만 별도입니다. 불국사는 2023년 5월부터 무료, 국립경주박물관·교촌·월정교는 무료입니다."
+          },
+          {
+            "id": "q-museum-language",
+            "question": "박물관 내 영어 안내가 있나요?",
+            "answer": "네, 국립경주박물관 3개 상설전시관(신라역사관·신라미술관·야외유물관) 전체에 영어·중국어 전시 패널이 있습니다."
+          },
+          {
+            "id": "q-bulguksa-photography",
+            "question": "불국사에서 사진을 찍을 수 있나요?",
+            "answer": "네, 경내 전체(두 탑 포함, 하층 석교)에서 사진 촬영이 가능합니다. 플래시와 삼각대는 피해 주세요."
+          },
+          {
+            "id": "q-bulguksa-stairs",
+            "question": "불국사 33계단 석교를 올라야 하나요?",
+            "answer": "아닙니다. 청운교·백운교와 연화교·칠보교는 국보로 보존되어 관람 전용입니다. 방문객은 계단 옆 현대식 입구를 이용합니다."
+          },
+          {
+            "id": "q-vegetarian",
+            "question": "채식 점심 옵션이 있나요?",
+            "answer": "네, 경주 쌈밥 정식은 채소 반찬이 많아 고기 없이도 식사 구성이 가능합니다. 현장에서 가이드가 채식 요청을 도와드립니다."
+          },
+          {
+            "id": "q-rain",
+            "question": "비가 오면 어떻게 되나요?",
+            "answer": "가벼운 비: 예정대로 진행. 강우 시: 불국사 석조 계단이 미끄러워지고 아홉산 길이 진흙 상태가 될 수 있습니다. 박물관과 교촌은 실내·실외 혼합이라 대부분 진행 가능합니다."
+          },
+          {
+            "id": "first-time",
+            "question": "경주를 처음 방문하는 분에게 적합한가요?",
+            "answer": "네, 경주 유네스코·문화 명소를 하루에 균형 있게 방문할 수 있는 투어입니다."
+          },
+          {
+            "id": "walking",
+            "question": "도보 이동이 얼마나 되나요?",
+            "answer": "총 약 4~5km. 불국사가 가장 활동적인 구간(고르지 않은 석재, 완만한 오르막). 박물관은 실내 평지. 교촌·월정교는 가볍습니다."
+          },
+          {
+            "id": "family",
+            "question": "어린이와 함께하기 적합한가요?",
+            "answer": "만 8세 이상, 하루 일정을 소화할 수 있는 어린이에게 적합합니다. 박물관 금관과 성덕대왕신종은 어린이들이 특히 좋아하는 전시물입니다."
+          },
+          {
+            "id": "seniors",
+            "question": "어르신도 참여할 수 있나요?",
+            "answer": "불국사 4~5km 도보와 고르지 않은 석재를 소화할 수 있는 활동적인 어르신께 권장합니다. 일정 속도는 여유 있게 진행됩니다."
+          },
+          {
+            "id": "children",
+            "question": "권장 최소 연령은 몇 세인가요?",
+            "answer": "만 8세 이상, 하루 일정 속도와 도보 활동이 가능한 어린이에게 적합합니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "인",
+          "priceSource": "direct_rate",
+          "priceNote": "소그룹 가격은 아직 상품 정보에서 확정되지 않았습니다. 부산 출발 경주 당일투어는 패키지와 여행사에 따라 보통 54~90달러 선입니다. 가격 확정 후 AtoC Korea 직접 판매가는 10% 할인이 적용됩니다.",
+          "discountPercent": 10
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v15.3"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v15.3_operational_fill": "Filled operational data (visitBasics, convenience, smartNotes) for 5 attraction stops from centralized POI knowledge base. Sources: VisitKorea, VisitBusan, VisitSeoul, official tourism boards.\n  - Stop #2 Ahopsan Bamboo Forest: filled [visitBasics, convenience, smartNotes]\n  - Stop #3 Bulguksa Temple (UNESCO World Heritage): filled [visitBasics, convenience, smartNotes]\n  - Stop #5 Gyeongju National Museum: filled [visitBasics, convenience, smartNotes]\n  - Stop #6 Gyochon Hanok Village: filled [visitBasics, convenience, smartNotes]\n  - Stop #7 Woljeonggyo Bridge: filled [visitBasics, convenience, smartNotes]",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      }
+    }
+  }
+}

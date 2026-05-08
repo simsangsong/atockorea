@@ -1,0 +1,1931 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
+  "locale": "ko",
+  "product_id": "pocheon-sanjeong-lake-herb-island-art-valley",
+  "seo": {
+    "pageTitle": "포천 당일 여행: 산정호수·허브 아일랜드·아트 밸리 | AtoC Korea",
+    "metaDescription": "서울 출발 10시간 포천 여유 당일 여행: 산정호수 산책로, 지중해풍 허브 아일랜드, 채석장을 개조한 포천 아트 밸리.",
+    "ogImage": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&q=80",
+    "primaryKeywords": [
+      "포천 투어",
+      "산정호수 투어",
+      "허브아일랜드 투어",
+      "포천 아트밸리 투어",
+      "서울 출발 포천 소그룹"
+    ],
+    "title": "포천 산정호수·허브아일랜드·아트밸리 투어 | AtoC Korea",
+    "description": "서울 출발 포천 소그룹 투어: 산정호수(4km 호수 산책로) → 허브아일랜드(지중해 허브 정원) → 아트밸리(폐채석장 예술 공원). 계절별 특색 코스."
+  },
+  "catalog_card": {
+    "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
+    "title": "포천 산정호수·허브아일랜드·아트밸리 소그룹 투어",
+    "subtitle": "산정호수, 포천 허브아일랜드, 포천 아트밸리를 소그룹으로 서울에서 하루에.",
+    "region": "포천 (서울 당일치기)",
+    "duration": "10시간",
+    "stopsCount": 3,
+    "rating": 4.8,
+    "reviewCount": 0,
+    "badges": [
+      "자연·사진 투어",
+      "시즌 하이라이트",
+      "낭만 야경"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80",
+    "priceLabel": "가격은 예약 시 확인",
+    "shortCardDescription": "산정호수(명성산·철봉산 품은 고산 호수, 4km 산책로), 포천 허브아일랜드(약 8만2,000㎡ 지중해 테마 허브 정원), 포천 아트밸리(1970년대 화강암 채석장 → 예술 공원, 조각공원+천주호)를 소그룹으로.",
+    "tags": [
+      "자연·사진",
+      "계절 하이라이트",
+      "로맨틱 야경"
+    ]
+  },
+  "headlineLine1": "포천 당일 투어: 산정호수,",
+  "headlineLine2": "허브아일랜드 & 아트밸리",
+  "price": {
+    "amountLabel": "55.80",
+    "originalPriceUsd": 62,
+    "salePriceUsd": 55.8,
+    "discountPercent": 10,
+    "currency": "USD",
+    "per": "인",
+    "priceSource": "direct_rate",
+    "priceNote": "AtoC Korea 공식 판매가 기준입니다."
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&q=80",
+    "imagePosition": "center 50%",
+    "tagline": "산속 호수, 지중해 스타일 허브 마을, 화강암 채석장이 예술 공원으로 탈바꿈한 포천의 세 가지 얼굴",
+    "pills": [
+      "자연 당일 여행",
+      "사진 찍기 좋은 루트",
+      "계절별 다양성"
+    ],
+    "meta": {
+      "duration": "10시간",
+      "region": "포천",
+      "stops": "3개 코스",
+      "rating": 4.8,
+      "ratingStars": 5
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "투어 개요"
+    },
+    {
+      "id": "itinerary",
+      "label": "상세 일정"
+    },
+    {
+      "id": "details",
+      "label": "유의사항"
+    },
+    {
+      "id": "faq",
+      "label": "자주 묻는 질문"
+    },
+    {
+      "id": "reviews",
+      "label": "여행자 후기"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "소요 시간",
+      "value": "10시간"
+    },
+    {
+      "icon": "tree-pine",
+      "label": "경치 등급",
+      "value": "호수와 정원"
+    },
+    {
+      "icon": "camera",
+      "label": "포토 명소",
+      "value": "매우 높음"
+    },
+    {
+      "icon": "footprints",
+      "label": "도보 난이도",
+      "value": "쉬움~보통"
+    },
+    {
+      "icon": "users",
+      "label": "투어 형태",
+      "value": "소그룹"
+    },
+    {
+      "icon": "ticket",
+      "label": "입장료",
+      "value": "포함"
+    },
+    {
+      "icon": "gauge",
+      "label": "투어 일정 속도",
+      "value": "여유"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
+      "alt": "투어 중 방문하는 포천 허브아일랜드 지중해풍 허브 정원의 풍경",
+      "caption": "포천 허브아일랜드 지중해풍 허브 정원",
+      "location": "허브아일랜드",
+      "atmosphere": "포천 허브아일랜드의 지중해풍 허브 정원은 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+      "alt": "투어 중 방문하는 포천 명성산 산정호수의 풍경",
+      "caption": "포천 명성산 산정호수",
+      "location": "산정호수",
+      "atmosphere": "포천 명성산 산정호수는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+      "alt": "투어 중 방문하는 포천아트밸리 천주호와 채석장 절벽의 풍경",
+      "caption": "포천아트밸리 천주호와 채석장 절벽",
+      "location": "Pocheon 포천아트밸리",
+      "atmosphere": "포천아트밸리 천주호와 채석장 절벽은 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601273453200-7e1b7e5e3a8a?w=1200&q=80",
+      "alt": "투어 중 방문하는 허브아일랜드 야간 불빛 축제와 산타마을 구역의 풍경",
+      "caption": "허브아일랜드 야간 불빛 축제와 산타마을 구역",
+      "location": "허브아일랜드 Evening Lights",
+      "atmosphere": "허브아일랜드 야간 불빛 축제와 산타마을 구역은 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
+      "alt": "투어 중 방문하는 비둘기낭폭포 — 포천 인근 시즌 대체 방문지의 풍경",
+      "caption": "비둘기낭폭포 — 포천 인근 시즌 대체 방문지",
+      "location": "Bidulginang Cascade",
+      "atmosphere": "비둘기낭폭포는 포천 인근 시즌 대체 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "10:30",
+      "duration": "90분",
+      "name": "산정호수",
+      "category": "고요한 호수 공원",
+      "description": "산정호수는 서울 북동쪽 약 75분 거리 포천에 위치한 산속 호수로, 명성산(922m)·명지산·철봉산 세 산 사이에 자리합니다. 4km 둘레 산책로는 거의 평탄하여 여유로운 산책에 적합합니다. 절정 시즌은 명성산 억새(9~10월). 겨울에는 오리썰매·낚시 체험도 가능합니다. 방문 시간: 약 75분.",
+      "highlights": [
+        "1925년 농업용 저수지로 건설; '산 우물처럼 맑은 호수'",
+        "3km 순환 산책로 (약 50~60분 쉬움) — 수상 데크와 전망대 포함",
+        "명성산 억새 서식지 — 가을 억새 축제 시즌",
+        "연중 가족 활동: 오리 보트, 얼어붙은 겨울 호수 썰매 축제",
+        "호수 산책 무료 입장; 활동 비용 개별",
+        "주변 산에서 간혹 산사슴/산양 목격",
+        "**1925년 3월 20일 정확히 농업 관개 저수지로 건설** (나무위키 한국어 기록)",
+        "**1977년 국민 관광지 지정** — 주요 관광 관리 조기 개시",
+        "**산정호수 썰매 축제 2010년부터** (시장 참고 자료 + 시장 참고 자료 확인)"
+      ],
+      "timeUsed": [
+        "도착 + 가이드 간단 안내 — 약 5분",
+        "3km 순환 산책로 자유 탐방 — 약 60분",
+        "선택: 오리 보트 또는 놀이공원 방문 — 약 20분 (추가 비용)",
+        "차량 집결",
+        "선택: 겨울 썰매 축제 (12월 중순~2월 중순; 오리 썰매·고무 오리 썰매 ₩5,000) — 약 30분"
+      ],
+      "whyOnRoute": "산정호수로 포천 하루를 가장 여유로운 도보 경험으로 시작.",
+      "visitBasics": {
+        "hours": "24시간 개방 (일몰 후~일출 2시간 전은 입장 불가)",
+        "closed": "연중 무휴",
+        "admission": "호수/산책로 무료; 보트·썰매·놀이공원 개별 유료",
+        "walking": "쉬움 — 3km 평탄 순환로 50~60분"
+      },
+      "convenience": {
+        "restroom": "주차장 및 놀이공원 구역 화장실",
+        "parking": "유료 주차"
+      },
+      "smartNotes": {
+        "photo": "아침 안개 낀 호수 반영 (봄·가을). 10월 억새밭이 절경.",
+        "facilities": "산정호수 놀이공원, 썰매장, 스케이트 링크, 온천, 피크닉 공원.",
+        "tip": "최고 시즌: 10월 (억새 + 단풍 + 억새 축제) 또는 12월~1월 (겨울 썰매 축제)."
+      },
+      "_poi_meta": {
+        "poi_key": "sanjeong_lake",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea — Pocheon Sanjeonghosu Lake official listing + 3 km loop trail + Myeongseongsan silver-grass habitat)",
+          "Korea Rural Community Corporation / Ministry of Agriculture (1925 reservoir construction + ownership/management designation)",
+          "Pocheon City Tourism Office (pocheon.go.kr — National Tourist Site designation + Sledding Festival official organization)",
+          "Visit Gyeonggi (ggtour.or.kr — provincial tourism portal on Sanjeong Lake winter activities)",
+          "NamuWiki (en.namu.wiki/w/산정호수 — Korean-language verified facts on construction date + depth + 1945-armistice administrative history)"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "time": "13:30",
+      "duration": "150분",
+      "name": "포천 허브아일랜드",
+      "category": "지중해풍 허브 식물 공원",
+      "description": "포천 허브아일랜드는 약 8만2,000㎡ 규모의 지중해 테마 허브 정원 겸 테마파크입니다. 400여 종의 허브 식물이 재배되며, 시즌별로 라벤더(6~7월 절정), 핑크뮬리(9~10월), 수선화(봄) 등 꽃 경관이 달라집니다. 허브 관련 식음료·체험 프로그램이 운영됩니다. 방문 시간: 약 80분.",
+      "highlights": [
+        "1998년 개장; 약 82에이커/33만m² 지중해풍 허브 정원 (250종 이상)",
+        "테마 마을: 산타 마을 (300개 이상 조형물), 베니스 마을, 힐링센터",
+        "연중 조명 축제 — 11~2월 핑크 소원 터널 + 산타 마을이 가장 화려",
+        "매일 오후 4시부터 조명 점등 시작",
+        "허브 베이커리 (유명 마늘빵); 허브 향 지중해 요리 레스토랑",
+        "한국 최대 허브 박물관 상주",
+        "**1998년 10월 3일 공식 개장** — 주요 테마파크보다 선구적",
+        "**빛의 동화 축제: 300만 개 LED 조명 사용** — 경기도 공식 홍보 자료 기준",
+        "**한국 최대 허브 박물관**: 340종 이상 전시 (일반 인삼 박물관 대비)",
+        "**수요일 휴무**(한국관광공사 운영일 기준). 그 외에는 일~금 10:00~21:00, 토요일 10:00~22:00 운영. 성인 기준 평일 ₩10,000 / 주말 ₩12,000, 문의 +82-31-535-6494."
+      ],
+      "timeUsed": [
+        "입장 + 가이드 간단 오리엔테이션 — 약 10분",
+        "낮 허브 정원 + 테마 마을 산책 — 약 60~75분",
+        "선택: 체험 프로그램 또는 허브 베이커리/카페 — 약 30분",
+        "조명 축제 감상 (오후 4시 이후 — 11~2월이 가장 화려, 약 30~45분)",
+        "차량 집결"
+      ],
+      "whyOnRoute": "허브 아일랜드를 13:30에 배치해 낮 허브 정원과 16:00 조명 시작 모두 포착.",
+      "visitBasics": {
+        "hours": "일~금 09:00/10:00~21:00/22:00; 토·공휴일 23:00까지 (계절별 조명 시간 변동)",
+        "closed": "연중 무휴",
+        "admission": "주중 성인 ₩10,000 / 경로·어린이 ₩8,000; 주말 성인 ₩12,000 / 경로·어린이 ₩10,000",
+        "walking": "중간 난이도 — 넓은 테마 정원과 마을을 언덕 지형으로 탐방; 2~3시간 예상"
+      },
+      "convenience": {
+        "restroom": "여러 곳 표시 있음",
+        "parking": "축제 구역 근처 무료 주차"
+      },
+      "smartNotes": {
+        "photo": "핑크 소원 터널 (연중 상징 포토 명소). 황금빛 시간대 산타 마을 300개 이상 조형물.",
+        "facilities": "허브 베이커리 (마늘빵), 허브 요리 레스토랑, 허브 카페, 기념품/스킨케어 샵.",
+        "tip": "오후 2~3시까지 도착해 낮 허브 정원을 충분히 보고, 저녁까지 남아 조명 축제 감상 권장."
+      },
+      "_poi_meta": {
+        "poi_key": "herb_island",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea — Herb Island official listing + Wednesday closure note + admission schedule)",
+          "Pocheon City Tourism Office (pocheon.go.kr — Sinbuk-myeon attractions cluster including Herb Island + Hot Springs + Art Valley)",
+          "Gyeonggi Province Official Blog (gyeonggido-korea.com — Light Fairy Tale Festival 3M LED + 17:00-22:00 schedule)",
+          "Herb Island Operator Official Site (herbisland.co.kr — own corpus on 1998 opening + 340-herb museum)",
+          "Visit Gyeonggi (ggtour.or.kr — provincial tourism portal on Pocheon herb-themed attraction cluster)"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "16:30",
+      "duration": "75분",
+      "name": "포천 아트밸리",
+      "category": "모노레일 있는 폐채석장 아트 파크",
+      "description": "포천 아트밸리는 1970년대부터 국내 주요 건물(청와대·국회의사당) 건축에 쓰인 화강암(포천석)을 채굴하던 활성 채석장이었으나, 채굴 후 방치된 폐채석장을 2009년 예술 문화 공간으로 탈바꿈시켰습니다. 모노레일(₩3,500, 선택)을 타고 조각공원을 거쳐 채석장 안쪽 천주호(에메랄드빛 호수)에 닿습니다. 방문 시간: 약 80분.",
+      "highlights": [
+        "한국 최초 1970년대 방치된 화강암 채석장 생태 복원 프로젝트 — 포천시 주도",
+        "채석장 2003년 폐쇄; 복원 2005~2011; 아트 밸리 2009년 개장 (100만+ 방문객)",
+        "천주호 — 해발 340m 에메랄드 샘물 호수, 50m 수직 화강암 벽으로 둘러싸임",
+        "420m 모노레일 상단 정원까지 (성인 왕복 ₩4,500 / 편도 ₩3,500)",
+        "K-드라마 촬영: 전설의 바다, 달의 연인-보보경심 려, 화유기",
+        "천문 과학관 (2014년 8월), 호수르 콘서트홀 (50m 절벽 사이 300명 무대)",
+        "**한국 최초 폐화강암 채석장 생태 복원 프로젝트** (2005년 이후)",
+        "**포천석 = 한국 대표 건물의 화강암 원산지**: 청와대, 국회의사당 등",
+        "**입장료**: 성인 ₩5,000 + 모노레일 왕복 ₩4,500 / 편도 ₩3,500",
+        "**입장료**: 성인 ₩5,000 + 모노레일 왕복 ₩4,500 / 편도 ₩3,500(2025년 기준); 포천아트밸리 입장 시 받은 지폐형 쿠폰은 현장 전망카페 할인에 사용할 수 있습니다."
+      ],
+      "timeUsed": [
+        "매표 + 모노레일 탑승 — 약 10분",
+        "모노레일 상행 (약 5분) → 희망의 하늘 정원 + 천문 과학관 — 약 15분",
+        "천주호 전망대 + 에메랄드 호수 포토 — 약 15~20분",
+        "치유의 숲길 하산 — 약 10~15분",
+        "선택: 카페 정류소 (전망 카페 — 입장권 포인트 할인)",
+        "차량 집결"
+      ],
+      "whyOnRoute": "포천 아트 밸리로 하루를 카탈로그 최고의 극적인 단일 풍경으로 마무리.",
+      "visitBasics": {
+        "hours": "09:00~19:00 (마지막 입장 약 17:30); 계절별 변동",
+        "closed": "연중 무휴",
+        "admission": "성인 ₩5,000 / 어린이(7~12세) ₩1,500; 모노레일 추가: 성인 왕복 ₩4,500 / 편도 ₩3,500",
+        "walking": "중간 난이도 — 기저부에서 정상까지 가파름 (모노레일 상행 권장); 정상 정원 평탄; 치유의 숲길 하산 권장"
+      },
+      "convenience": {
+        "restroom": "매표소 및 정상 정원 구역 화장실",
+        "parking": "무료 주차; 포천에서 약 2시간 간격 직행 버스"
+      },
+      "smartNotes": {
+        "photo": "메인 호숫가 테라스에서 내려다보는 천주호 — 화강암 벽 배경의 에메랄드 호수가 대표 샷.",
+        "facilities": "전망 카페 (입장권 포인트 할인), 기념품 판매.",
+        "tip": "모노레일로 올라가고 치유의 숲길로 내려오면 가장 편한 코스. 10~11월 단풍 시즌이 가장 아름다움."
+      },
+      "_poi_meta": {
+        "poi_key": "pocheon_art_valley",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Pocheon Art Valley Official Site (artvalley.pcfac.or.kr — own corpus on Hosur Concert Hall specs + monorail logistics + drama-filming history)",
+          "Korea Tourism Organization (VisitKorea — Pocheon Art Valley listing + ecological-restoration history)",
+          "Pocheon City Tourism Office (pocheon.go.kr — Sinbuk-myeon attractions + Pocheonseok granite history)",
+          "Hantan Geopark Official (hantangeopark.kr — UNESCO Global Geopark archive on 1980s Pocheon quarry photos)",
+          "Inquirer Lifestyle / Korea Times (Cheong Wa Dae + National Assembly + Incheon Airport granite-source historical reporting)"
+        ]
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "산정호수",
+      "type": "origin",
+      "theme": "Mountain Lake"
+    },
+    {
+      "name": "허브 아일랜드",
+      "type": "meal",
+      "theme": "Garden & Lunch"
+    },
+    {
+      "name": "아트 밸리",
+      "type": "return",
+      "theme": "Quarry Finale"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "호숫가 출발",
+      "duration": "정류장 1",
+      "description": "산정호수 호수 산책로 탐방."
+    },
+    {
+      "phase": "허브 정원 & 점심",
+      "duration": "코스 2",
+      "description": "허브아일랜드 지중해 테마 정원 + 점심."
+    },
+    {
+      "phase": "아트밸리 피날레",
+      "duration": "정류장 3",
+      "description": "포천 아트밸리 조각공원+천주호 — 채석장의 변신."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "하루 일정 흐름",
+    "subtitle": "서울 집합 장소에서 오전 8~9시 픽업 후, 동북쪽으로 1.5시간 이동해 포천 도착. 오전의 차분한 빛을 위한 호수 방문, 점심 및 최장 방문지인 허브 아일랜드, 마지막으로 아트 밸리. 오후 6시~7시 서울 귀환."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "남이섬보다 차분한 대안을 원하는 커플과 신혼 여행자",
+      "계절 꽃(라벤더, 핑크뮬리) 포토그래퍼",
+      "성인 가족 및 다세대 그룹",
+      "덜 혼잡한 경기도 당일 여행을 원하는 여행자",
+      "느린 산책과 정원 분위기를 즐기는 방문자"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "가평 대신 포천인 이유",
+        "icon": "tree-pine",
+        "iconBg": "bg-emerald-50/80",
+        "iconColor": "text-emerald-600",
+        "items": [
+          {
+            "label": "남이섬보다 덜 혼잡",
+            "detail": "가평의 남이섬-아침고요-쁘띠 프랑스 루프는 점점 더 바빠지고 있습니다. 포천의 호수와 정원은 비슷한 자연·예술 조합이지만 절반도 안 되는 인파로 둘러볼 수 있습니다."
+          },
+          {
+            "label": "강력한 계절 다양성",
+            "detail": "봄 딸기 농장, 여름 라벤더, 가을 핑크 뮬리, 겨울 빙상 절벽이 루트에 각각 명확히 다른 성격을 부여합니다."
+          },
+          {
+            "label": "아트 밸리가 독특한 지질학적 관점을 추가",
+            "detail": "포천 아트 밸리의 채석장과 호수 세팅은 서울 당일 여행 거리 내 다른 어디에도 없는 곳입니다."
+          }
+        ]
+      },
+      {
+        "title": "실제 도보 난이도는 어느 정도일까",
+        "icon": "footprints",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "세 코스 모두 대체로 쉬움",
+            "detail": "이것은 서울에서 출발하는 당일 여행 중 가장 시니어 친화적인 편으로, 포장 길·선택적 단축 코스·모노레일을 활용합니다."
+          },
+          {
+            "label": "산정호수는 반 루프 선택 가능",
+            "detail": "전체 4km 둘레는 중간 난이도이지만, 가장 사진 찍기 좋은한 데크 구간은 25분 코스로 단축 가능합니다."
+          },
+          {
+            "label": "아트 밸리 도보는 선택 사항",
+            "detail": "모노레일이 고도 차를 해결하므로, 조각들 사이를 여유롭게 산책하고 싶은 분께만 트레일 도보가 필요합니다."
+          }
+        ]
+      },
+      {
+        "title": "날씨와 계절이 바뀔 때",
+        "icon": "cloud-rain",
+        "iconBg": "bg-slate-50/80",
+        "iconColor": "text-slate-600",
+        "items": [
+          {
+            "label": "계절 대체 코스가 흔함",
+            "detail": "일부 여행사는 봄/가을에 비둘기낭 폭포, 10월에 사과 농장, 겨울에 딸기 농장을 추가합니다."
+          },
+          {
+            "label": "허브 아일랜드 수요일 휴관",
+            "detail": "허브 아일랜드는 일부 수요일에 휴관합니다. 여행사는 보통 산정호수 연장 또는 포천 아트 밸리 시간 확대로 대체합니다."
+          },
+          {
+            "label": "겨울 방문 물류",
+            "detail": "산정호수 오리 썰매 활동은 안전한 얼음 상태에 의존하며, 최근 겨울에는 기후 변화로 신뢰성이 낮아졌습니다."
+          }
+        ]
+      }
+    ],
+    "lessIdealFor": [
+      "유네스코 상징 랜드마크를 원하는 여행자 주의 (수원 화성 추천)",
+      "고에너지 또는 쇼핑 중심 하루를 원하는 방문자 주의",
+      "완전 실내 우천 일정 필요 여행자 주의",
+      "놀이터 스타일의 오락이 필요한 아주 어린 자녀가 있는 가족."
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "픽업 & 하차",
+      "preview": "서울 집결 지점; 08:00~09:00 출발",
+      "content": [
+        "픽업은 보통 홍익대 입구역(4번 출구), 명동 신세계 면세점, 동대문 지역 집합 장소.",
+        "첫 번째 집합 장소 기준 출발은 보통 7:50~9:00.",
+        "선택한 집합 장소에 최소 10분 전까지 도착해 주세요.",
+        "서울 동일 집합 장소에서 하차.",
+        "교통 상황에 따라 18:30~19:30 귀환 예상.",
+        "고정 루트 소그룹 방식; 여행자가 직접 집합 장소에 이동해야 합니다."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "도보 & 지형",
+      "preview": "쉬움~중간; 서울에서 가장 여유로운 당일 여행 중 하나",
+      "content": [
+        "산정호수: 선택적 반 루프 가능한 쉬운 포장 산책로.",
+        "허브 아일랜드: 완만한 경사의 쉬운 정원 길.",
+        "포천 아트 밸리: 중간 난이도 오르막; 모노레일이 고도 차를 해결.",
+        "편안한 워킹화 권장; 부분적으로 유모차 접근 가능.",
+        "세 코스 모두 화장실 이용 가능."
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "날씨 정책",
+      "preview": "강한 계절 다양성; 대체 코스 일반적",
+      "content": [
+        "봄 (3~6월): 벚꽃, 라벤더 절정 접근, 선택적 딸기 농장.",
+        "여름 (6~8월): 허브 아일랜드 6월 중순~7월 라벤더 절정; 습도와 간간이 비 예상.",
+        "가을 (9~11월): 핑크 뮬리, 산정호수 억새, 아트 밸리 단풍.",
+        "겨울 (12~2월): 기온에 따라 산정호수 빙상 활동 가능성, 허브 아일랜드 조명.",
+        "가벼운 비: 투어 대부분 진행; 폭우 시 야외 코스 단축 가능."
+      ]
+    },
+    {
+      "id": "wear",
+      "title": "복장 & 준비물",
+      "preview": "운동화, 레이어링, 계절별 추가 준비물",
+      "content": [
+        "편안한 미끄럼 방지 워킹화.",
+        "산지 기온 변화 대비 겹쳐 입기.",
+        "가벼운 방풍 재킷 (서울 시내보다 특히 산정호수에서 서늘함).",
+        "여름 자외선 차단; 겨울 따뜻한 재킷과 장갑.",
+        "세 코스 모두 강한 포토 기회 — 카메라/간편한폰 준비."
+      ]
+    },
+    {
+      "id": "included",
+      "title": "포함 사항",
+      "preview": "가이드, 교통, 입장료 포함; 점심 현장 직접 결제",
+      "variant": "included",
+      "content": [
+        "영어 가이드 포함",
+        "서울 왕복 소그룹 차량 교통",
+        "산정호수 입장 (무료)",
+        "허브 아일랜드 입장료",
+        "포천 아트 밸리 입장료 + 모노레일",
+        "점심 미포함; 허브 아일랜드 레스토랑에서 현장 직접 결제",
+        "허브 아일랜드 선택 워크숍 (향수·캔들·빵) 미포함",
+        "산정호수 오리 보트·오리 썰매 선택 체험 미포함",
+        "개인 쇼핑 미포함",
+        "가이드 팁은 선택 사항"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "실시간 날씨 연동"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "매일 업데이트"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "season": "봄",
+      "title": "딸기 시즌",
+      "description": "산정호수 주변 4월 초 벚꽃; 봄 녹음이 아트 밸리에 생기를 불어넣음. 딸기 체험 가능.",
+      "icon": "flower"
+    },
+    {
+      "season": "여름",
+      "title": "라벤더 절정",
+      "description": "6월 중순~7월 하순 허브 아일랜드 라벤더 절정이 최고의 포토 시즌. 야간 조명 행사도 진행.",
+      "icon": "sun"
+    },
+    {
+      "season": "가을",
+      "title": "핑크 뮬리 시즌",
+      "description": "허브 아일랜드 핑크 뮬리와 산정호수 은빛 억새가 가을을 가장 사진 찍기 좋은 시즌으로 만듦.",
+      "icon": "leaf"
+    },
+    {
+      "season": "겨울",
+      "title": "조명 & 빙상 시즌",
+      "description": "허브 아일랜드 야간 조명과 산타 마을 운영; 산정호수 오리 썰매 및 빙상 활동 (기온 따라 다름).",
+      "icon": "snowflake"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "공인 현지 여행사",
+      "description": "정식 등록 및 보험 가입 현지 여행사",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "포천 코스 전문 공인 현지 여행사."
+    },
+    {
+      "icon": "route",
+      "title": "코스 전문",
+      "description": "이동 부담을 줄인 효율적인 코스",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "계절별 특색: 라벤더(6~7월), 핑크뮬리(9~10월), 겨울 호수 썰매(12~2월)."
+    },
+    {
+      "icon": "users",
+      "title": "그룹 규모 관리",
+      "description": "코스에 상황에 맞춘 인원 규모",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "소그룹으로 허브아일랜드 산책로와 아트밸리 조각공원을 여유 있게 탐방합니다."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "즉시",
+      "title": "즉시 확인",
+      "detail": "행정 요약 포함 예약 확인서 발송",
+      "description": "집결 장소·시각 포함 즉시 예약 확인서 발송."
+    },
+    {
+      "timing": "출발 12시간 전",
+      "title": "12시간 전 알림",
+      "detail": "날씨 업데이트 및 경로 변경 안내",
+      "description": "허브아일랜드 계절별 개화 현황 사전 안내."
+    },
+    {
+      "timing": "전날 저녁",
+      "title": "최종 픽업 안내",
+      "detail": "정확한 픽업 시간 및 가이드 연락처",
+      "description": "출발 전날 저녁 최종 집결 시각 확인."
+    },
+    {
+      "timing": "투어 당일 아침",
+      "title": "당일 코스 안내",
+      "detail": "실시간 상황 기반 당일 브리핑",
+      "description": "날씨 및 코스 안내 아침 메시지 전달."
+    },
+    {
+      "timing": "투어 중",
+      "title": "경유지별 심층 안내",
+      "detail": "각 코스 실시간 현장 안내",
+      "description": "포천 화강암 지질, 아트밸리 재생 역사 등 가이드 설명."
+    },
+    {
+      "timing": "투어 종료 후",
+      "title": "투어 후 지원",
+      "detail": "피드백 및 추가 여행 추천",
+      "description": "투어 후 피드백 요청 전송."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q1",
+      "question": "남이섬 당일 투어와 어떻게 다른가요?",
+      "answer": "두 투어 모두 경기도 당일 여행이지만, 포천은 남이섬의 한드 인파 대신 정원과 채석장 공원을 탐방합니다."
+    },
+    {
+      "id": "q2",
+      "question": "허브아일랜드 라벤더는 언제 피나요?",
+      "answer": "약 6월 중순~7월 말이 절정 기간. 핑크뮬리(9~10월)가 뒤를 잇습니다."
+    },
+    {
+      "id": "q3",
+      "question": "수요일 허브아일랜드 휴관이 있나요?",
+      "answer": "일부 수요일 휴관. 해당 시 여행사가 산정호수 체류 시간을 늘리는 등 일정을 조율합니다."
+    },
+    {
+      "id": "q4",
+      "question": "아트밸리 모노레일은 어떻게 이용하나요?",
+      "answer": "입구에서 채석장 전망대까지 편도(₩3,500). 왕복 또는 도보 하강 중 선택."
+    },
+    {
+      "id": "q5",
+      "question": "겨울에도 투어가 의미 있나요?",
+      "answer": "네. 겨울은 산정호수 오리썰매·얼음낚시, 눈 덮인 아트밸리 설경으로 색다른 매력이 있습니다."
+    },
+    {
+      "id": "q6",
+      "question": "산정호수 산책로는 얼마나 되나요?",
+      "answer": "전체 4km(약 75분, 완만한 일정 속도). 절반 코스(2km)도 가능합니다."
+    },
+    {
+      "id": "first-time",
+      "question": "포천을 처음 방문하는 분에게 좋은가요?",
+      "answer": "첫 방문 코스로 적합하나, 서울 대표 관광 명소 위주의 '하이라이트 루프'보다는 자연과 정원 위주의 느긋한 여행을 원하는 분께 맞습니다."
+    },
+    {
+      "id": "walking",
+      "question": "도보 이동이 힘들지 않나요?",
+      "answer": "대부분 가벼운 도보. 산정호수는 평탄한 호숫가 길. 허브아일랜드는 완만한 언덕. 아트밸리는 조각공원 도보 또는 모노레일 선택."
+    },
+    {
+      "id": "family",
+      "question": "가족 여행에 적합한가요?",
+      "answer": "편안한 투어. 산정호수 발 보트(시즌)와 아트밸리 모노레일은 어린이 인기 코스."
+    },
+    {
+      "id": "seniors",
+      "question": "어르신도 참여할 수 있나요?",
+      "answer": "전반적으로 평탄한 도보. 모노레일로 아트밸리 오르막을 대체할 수 있습니다."
+    },
+    {
+      "id": "children",
+      "question": "권장 최소 연령은 몇 세인가요?",
+      "answer": "만 6세 이상 추천. 왕복 긴 이동(서울에서 약 75분)과 아트밸리 모노레일 또는 10~15분 도보가 포함됩니다."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
+    "price": {
+      "amountLabel": "55.80",
+      "originalPriceUsd": 62,
+      "salePriceUsd": 55.8,
+      "discountPercent": 10,
+      "currency": "USD",
+      "per": "인",
+      "priceSource": "direct_rate",
+      "priceNote": "AtoC Korea 공식 판매가 기준입니다."
+    }
+  },
+  "pickup_dropoff": {
+    "type": "meeting_point",
+    "meeting_points": [
+      {
+        "name": "홍대입구역 4번 출구",
+        "time": "07:50",
+        "note": "서울 첫 번째 미팅 장소입니다. 10분 일찍 도착해 주세요."
+      },
+      {
+        "name": "명동 신세계면세점",
+        "time": "08:30",
+        "note": "서울 두 번째 미팅 장소입니다."
+      },
+      {
+        "name": "동대문역사문화공원역 10번 출구",
+        "time": "08:40",
+        "note": "세 번째 서울 미팅 포인트입니다."
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "동대문역사문화공원역",
+        "note": "서울 표준 하차 지점"
+      },
+      {
+        "name": "명동 Station",
+        "note": "서울 표준 하차 지점"
+      },
+      {
+        "name": "홍대입구역",
+        "note": "서울 표준 하차 지점"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "복귀 시간은 교통 상황에 따라 달라지며 보통 18:30–19:30 사이입니다. 운영 효율을 위해 하차 순서는 약간 조정될 수 있습니다. 선택한 미팅 포인트에는 최소 10분 일찍 도착해 주세요. 이 상품은 호텔 픽업이 아닌 고정 미팅 포인트 방식입니다. 계절에 따라 비둘기낭폭포, 딸기농장, 사과농장, 얼음벽 카페 등으로 일부 방문지가 대체될 수 있으니, 여행 날짜 기준으로 투어팀에 확인해 주세요."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "pocheon-sanjeong-lake-herb-island-art-valley",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "gyeonggi_pocheon",
+    "vehicle_type": "minicoach",
+    "duration_hours": 10.0,
+    "region_tags": [
+      "seoul_capital",
+      "gyeonggi_pocheon",
+      "gyeonggi_north",
+      "seoul_day_trip",
+      "gyeonggi_hantangang"
+    ],
+    "theme_tags": [
+      "nature_day_trip",
+      "garden_walk",
+      "lakeside_walk",
+      "art_gallery",
+      "k_drama_filming_location",
+      "seasonal_highlights",
+      "calm_pace",
+      "photogenic"
+    ],
+    "poi_tags": [
+      "sanjeong_lake",
+      "pocheon_art_valley",
+      "herb_island_santa_village",
+      "herb_island_pocheon"
+    ],
+    "pace_level": 0.4,
+    "walking_level": 0.45,
+    "scenic_level": 0.95,
+    "photo_level": 1.0,
+    "culture_level": 0.4,
+    "relax_level": 1.0,
+    "first_time_fit": 0.6,
+    "family_fit": 0.85,
+    "senior_fit": 0.8,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 0.8,
+    "active_traveler_fit": 0.4,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 0.6,
+    "young_kids_fit": 0.6,
+    "senior_active_fit": 0.8,
+    "senior_general_fit": 0.8,
+    "mobility_friendly_fit": 0.6,
+    "stroller_fit": 0.6,
+    "one_day_fit": 0.8,
+    "same_day_flight_fit": 0.2,
+    "rain_fit": 0.6,
+    "value_for_money_fit": 0.8,
+    "iconic_landmark_fit": 0.65,
+    "cafe_fit": 0.8,
+    "food_fit": 0.55,
+    "nature_fit": 0.9,
+    "beach_fit": 0.1,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.4,
+    "no_shopping_fit": 0.8,
+    "local_culture_fit": 0.4,
+    "storytelling_fit": 0.7,
+    "unesco_fit": 0.15,
+    "intangible_heritage_fit": 0.2,
+    "indoor_ratio": 0.2,
+    "weather_sensitivity": 0.55,
+    "comfort_level": 0.8,
+    "budget_fit": 0.6,
+    "premium_fit": 0.4,
+    "small_group_fit": 1.0,
+    "private_fit": 0.2,
+    "bus_fit": 0.4,
+    "price_band": "mid",
+    "pickup_base": "seoul_meeting_point",
+    "return_time_band": "18:30-19:30",
+    "duration_band": "10h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "wants_iconic_landmark_focused_day",
+        "wants_high_energy_active_day"
+      ],
+      "notIdealFor": [
+        "travelers_wanting_a_fully_indoor_rainy_day_route",
+        "guests_wanting_seoul_central_palace_focus"
+      ]
+    },
+    "walking_notes": [
+      "This is one of the gentler day-trips from Seoul, with mostly easy walking and optional shorter routes.",
+      "Sanjeong Lake offers a short half-loop along the boardwalk for travelers who do not want the full 4 km.",
+      "Herb Island has paved garden paths with light slopes.",
+      "Pocheon Art Valley has a monorail option that handles the uphill section to the quarry observatory.",
+      "Comfortable walking shoes with grip are recommended."
+    ],
+    "keywords": [
+      "pocheon day trip from seoul",
+      "sanjeong lake herb island art valley tour",
+      "pocheon art valley monorail tour",
+      "herb island lavender tour",
+      "pocheon nature day trip",
+      "seoul to pocheon small group",
+      "less crowded gyeonggi day trip",
+      "pocheon photo day tour",
+      "herb island evening lights tour",
+      "pocheon seasonal day tour"
+    ],
+    "synonym_hints": [
+      "pocheon nature loop from seoul",
+      "alternative to nami island day trip",
+      "calm gyeonggi day trip seoul",
+      "pocheon herb garden quarry tour",
+      "small group pocheon day tour",
+      "pocheon photogenic day trip"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "seoul",
+    "vehicle_type_legacy": "mini_coach",
+    "anchor_poi_keys": [
+      "sanjeong_lake",
+      "herb_island_pocheon",
+      "pocheon_art_valley"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.1,
+    "flexibility_fit": 0.3,
+    "history_culture_fit": 0.4,
+    "romantic_fit": 0.85,
+    "seasonal_fit": 0.85,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "seoul_day_trip_pair_fit": 1.0,
+    "seoul_central_hotel_pickup_fit": 1.0,
+    "return_to_seoul_central_fit": 1.0,
+    "day_trip_2_3_hour_drive_each_way_fit": 1.0,
+    "small_group_format_fit": 1.0,
+    "fixed_schedule_format_fit": 1.0,
+    "affordable_format_vs_charter_fit": 1.0,
+    "quarry_restoration_anchor_fit": 1.0,
+    "korea_first_ecological_restoration_project_fit": 1.0,
+    "pocheon_seok_granite_anchor_fit": 1.0,
+    "blue_house_national_assembly_incheon_airport_granite_source_fit": 1.0,
+    "abandoned_quarry_to_culture_park_fit": 1.0,
+    "emerald_quarry_lake_anchor_fit": 1.0,
+    "hosur_concert_hall_quarry_cliff_venue_fit": 1.0,
+    "pocheon_three_pillar_day_trip_fit": 1.0,
+    "agricultural_reservoir_lake_visit_fit": 1.0,
+    "1925_irrigation_lake_anchor_fit": 1.0,
+    "national_tourist_site_1977_designation_fit": 1.0,
+    "myeongseongsan_silver_grass_autumn_fit": 1.0,
+    "sanjeong_lake_sledding_festival_winter_fit": 1.0,
+    "mediterranean_herb_garden_fit": 1.0,
+    "year_round_lighting_festival_fit": 1.0,
+    "korea_largest_herb_museum_fit": 1.0,
+    "korea_drama_filming_density_high_fit": 1.0,
+    "legend_of_the_blue_sea_filming_fit": 1.0,
+    "moon_lovers_scarlet_heart_ryeo_filming_fit": 1.0,
+    "differentiates_from_dmz_day_trip": true,
+    "differentiates_from_nami_morning_calm_petite_france": true,
+    "differentiates_from_seoraksan_sokcho_day_trip": true,
+    "available_months_signature": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "signature_window_label": "Year-round (peak: October-November silver-grass + autumn foliage; November-March Herb Island Light Festival; mid-Dec to mid-Feb Sanjeong Sledding Festival)",
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "embedded_for": [
+      "authoring",
+      "review",
+      "sql_backfill_reference"
+    ],
+    "note": "Scores were tuned for a calm, photogenic Pocheon nature day-trip. Scenic, photo, and relax fit are maxed because the route is built for slow walks and seasonal flower photography. Senior fit and mobility-friendly fit score above-average for a Seoul day-trip because of paved paths, half-loop options, and the Art Valley monorail. Iconic landmark fit is intentionally moderate (3) because Pocheon's stops are well-loved but not at the UNESCO or Nami-Island brand level. First-time fit is also moderate because most first-time visitors prefer Suwon Hwaseong or the Gapyeong loop instead.",
+    "duration_hours": 10,
+    "stop_count": 3,
+    "score_rationale": {
+      "scenic_level": "Maxed because all three stops are visually distinct and well-curated.",
+      "photo_level": "Maxed because lavender, pink muhly, evening lights, and the quarry lake all photograph extremely well.",
+      "relax_level": "Maxed because pacing is slow and walking is light to moderate at every stop.",
+      "iconic_landmark_fit": "3 because Pocheon's stops have strong domestic recognition but lower international name recognition than UNESCO or Gapyeong sites.",
+      "first_time_fit": "3 because first-time visitors typically prioritize UNESCO or Nami-Island branded routes; Pocheon shines for repeat visitors or photo-focused travelers.",
+      "active_traveler_fit": "2 because the route is intentionally calm; active travelers will find more reward in DMZ + Suspension Bridge or the Hwaseong route.",
+      "small_group_fit": "Direct match: this is the route's intended format.",
+      "rain_fit": "3 because Herb Island has indoor museum and bakery sections and Art Valley has a small indoor cafe, but the route is mostly outdoor."
+    },
+    "anchor_pois": [
+      "Sanjeong Lake",
+      "Herb Island",
+      "Pocheon Art Valley"
+    ],
+    "anchor_poi_keys": [
+      "sanjeong_lake",
+      "herb_island_pocheon",
+      "pocheon_art_valley"
+    ],
+    "competing_products": [
+      "seoul-seoraksan-national-park-sokcho-beach-day-trip",
+      "seoul-suburbs-private-chartered-car-10hr",
+      "seoul-suwon-hwaseong-folk-village-starfield-library"
+    ],
+    "enrichment_batch": "17d",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.26",
+    "enrichment_target_kb_version": "1.27",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "13 substantive stops across 4 tours; Batches 8/9 era authoring → A-grade pv=6 PASS (universal source-attribution gap closed; Seoul-day-trip-quartet pattern introduced)"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "포천 당일 투어: 산정호수,",
+        "headlineLine2": "허브아일랜드 & 아트밸리",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&q=80",
+          "imagePosition": "center 50%",
+          "tagline": "산속 호수, 지중해 스타일 허브 마을, 화강암 채석장이 예술 공원으로 탈바꿈한 포천의 세 가지 얼굴",
+          "pills": [
+            "자연 당일 여행",
+            "사진 찍기 좋은 루트",
+            "계절별 다양성"
+          ],
+          "meta": {
+            "duration": "10시간",
+            "region": "포천",
+            "stops": "3개 코스",
+            "rating": 4.8,
+            "ratingStars": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "투어 개요"
+          },
+          {
+            "id": "itinerary",
+            "label": "상세 일정"
+          },
+          {
+            "id": "details",
+            "label": "유의사항"
+          },
+          {
+            "id": "faq",
+            "label": "자주 묻는 질문"
+          },
+          {
+            "id": "reviews",
+            "label": "여행자 후기"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "소요 시간",
+            "value": "10시간"
+          },
+          {
+            "icon": "tree-pine",
+            "label": "경치 등급",
+            "value": "호수와 정원"
+          },
+          {
+            "icon": "camera",
+            "label": "포토 명소",
+            "value": "매우 높음"
+          },
+          {
+            "icon": "footprints",
+            "label": "도보 난이도",
+            "value": "쉬움~보통"
+          },
+          {
+            "icon": "users",
+            "label": "투어 형태",
+            "value": "소그룹"
+          },
+          {
+            "icon": "ticket",
+            "label": "입장료",
+            "value": "포함"
+          },
+          {
+            "icon": "gauge",
+            "label": "투어 일정 속도",
+            "value": "여유"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
+            "alt": "투어 중 방문하는 포천 허브아일랜드 지중해풍 허브 정원의 풍경",
+            "caption": "포천 허브아일랜드 지중해풍 허브 정원",
+            "location": "허브아일랜드",
+            "atmosphere": "포천 허브아일랜드의 지중해풍 허브 정원은 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+            "alt": "투어 중 방문하는 포천 명성산 산정호수의 풍경",
+            "caption": "포천 명성산 산정호수",
+            "location": "산정호수",
+            "atmosphere": "포천 명성산 산정호수는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+            "alt": "투어 중 방문하는 포천아트밸리 천주호와 채석장 절벽의 풍경",
+            "caption": "포천아트밸리 천주호와 채석장 절벽",
+            "location": "Pocheon 포천아트밸리",
+            "atmosphere": "포천아트밸리 천주호와 채석장 절벽은 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601273453200-7e1b7e5e3a8a?w=1200&q=80",
+            "alt": "투어 중 방문하는 허브아일랜드 야간 불빛 축제와 산타마을 구역의 풍경",
+            "caption": "허브아일랜드 야간 불빛 축제와 산타마을 구역",
+            "location": "허브아일랜드 Evening Lights",
+            "atmosphere": "허브아일랜드 야간 불빛 축제와 산타마을 구역은 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
+            "alt": "투어 중 방문하는 비둘기낭폭포 — 포천 인근 시즌 대체 방문지의 풍경",
+            "caption": "비둘기낭폭포 — 포천 인근 시즌 대체 방문지",
+            "location": "Bidulginang Cascade",
+            "atmosphere": "비둘기낭폭포는 포천 인근 시즌 대체 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "10:30",
+            "duration": "90분",
+            "name": "산정호수",
+            "category": "고요한 호수 공원",
+            "description": "산정호수는 서울 북동쪽 약 75분 거리 포천에 위치한 산속 호수로, 명성산(922m)·명지산·철봉산 세 산 사이에 자리합니다. 4km 둘레 산책로는 거의 평탄하여 여유로운 산책에 적합합니다. 절정 시즌은 명성산 억새(9~10월). 겨울에는 오리썰매·낚시 체험도 가능합니다. 방문 시간: 약 75분.",
+            "highlights": [
+              "1925년 농업용 저수지로 건설; '산 우물처럼 맑은 호수'",
+              "3km 순환 산책로 (약 50~60분 쉬움) — 수상 데크와 전망대 포함",
+              "명성산 억새 서식지 — 가을 억새 축제 시즌",
+              "연중 가족 활동: 오리 보트, 얼어붙은 겨울 호수 썰매 축제",
+              "호수 산책 무료 입장; 활동 비용 개별",
+              "주변 산에서 간혹 산사슴/산양 목격",
+              "**1925년 3월 20일 정확히 농업 관개 저수지로 건설** (나무위키 한국어 기록)",
+              "**1977년 국민 관광지 지정** — 주요 관광 관리 조기 개시",
+              "**산정호수 썰매 축제 2010년부터** (시장 참고 자료 + 시장 참고 자료 확인)"
+            ],
+            "timeUsed": [
+              "도착 + 가이드 간단 안내 — 약 5분",
+              "3km 순환 산책로 자유 탐방 — 약 60분",
+              "선택: 오리 보트 또는 놀이공원 방문 — 약 20분 (추가 비용)",
+              "차량 집결",
+              "선택: 겨울 썰매 축제 (12월 중순~2월 중순; 오리 썰매·고무 오리 썰매 ₩5,000) — 약 30분"
+            ],
+            "whyOnRoute": "산정호수로 포천 하루를 가장 여유로운 도보 경험으로 시작.",
+            "visitBasics": {
+              "hours": "24시간 개방 (일몰 후~일출 2시간 전은 입장 불가)",
+              "closed": "연중 무휴",
+              "admission": "호수/산책로 무료; 보트·썰매·놀이공원 개별 유료",
+              "walking": "쉬움 — 3km 평탄 순환로 50~60분"
+            },
+            "convenience": {
+              "restroom": "주차장 및 놀이공원 구역 화장실",
+              "parking": "유료 주차"
+            },
+            "smartNotes": {
+              "photo": "아침 안개 낀 호수 반영 (봄·가을). 10월 억새밭이 절경.",
+              "facilities": "산정호수 놀이공원, 썰매장, 스케이트 링크, 온천, 피크닉 공원.",
+              "tip": "최고 시즌: 10월 (억새 + 단풍 + 억새 축제) 또는 12월~1월 (겨울 썰매 축제)."
+            },
+            "_poi_meta": {
+              "poi_key": "sanjeong_lake",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Korea Tourism Organization (VisitKorea — Pocheon Sanjeonghosu Lake official listing + 3 km loop trail + Myeongseongsan silver-grass habitat)",
+                "Korea Rural Community Corporation / Ministry of Agriculture (1925 reservoir construction + ownership/management designation)",
+                "Pocheon City Tourism Office (pocheon.go.kr — National Tourist Site designation + Sledding Festival official organization)",
+                "Visit Gyeonggi (ggtour.or.kr — provincial tourism portal on Sanjeong Lake winter activities)",
+                "NamuWiki (en.namu.wiki/w/산정호수 — Korean-language verified facts on construction date + depth + 1945-armistice administrative history)"
+              ]
+            }
+          },
+          {
+            "number": 2,
+            "time": "13:30",
+            "duration": "150분",
+            "name": "포천 허브아일랜드",
+            "category": "지중해풍 허브 식물 공원",
+            "description": "포천 허브아일랜드는 약 8만2,000㎡ 규모의 지중해 테마 허브 정원 겸 테마파크입니다. 400여 종의 허브 식물이 재배되며, 시즌별로 라벤더(6~7월 절정), 핑크뮬리(9~10월), 수선화(봄) 등 꽃 경관이 달라집니다. 허브 관련 식음료·체험 프로그램이 운영됩니다. 방문 시간: 약 80분.",
+            "highlights": [
+              "1998년 개장; 약 82에이커/33만m² 지중해풍 허브 정원 (250종 이상)",
+              "테마 마을: 산타 마을 (300개 이상 조형물), 베니스 마을, 힐링센터",
+              "연중 조명 축제 — 11~2월 핑크 소원 터널 + 산타 마을이 가장 화려",
+              "매일 오후 4시부터 조명 점등 시작",
+              "허브 베이커리 (유명 마늘빵); 허브 향 지중해 요리 레스토랑",
+              "한국 최대 허브 박물관 상주",
+              "**1998년 10월 3일 공식 개장** — 주요 테마파크보다 선구적",
+              "**빛의 동화 축제: 300만 개 LED 조명 사용** — 경기도 공식 홍보 자료 기준",
+              "**한국 최대 허브 박물관**: 340종 이상 전시 (일반 인삼 박물관 대비)",
+              "**수요일 휴무**(한국관광공사 운영일 기준). 그 외에는 일~금 10:00~21:00, 토요일 10:00~22:00 운영. 성인 기준 평일 ₩10,000 / 주말 ₩12,000, 문의 +82-31-535-6494."
+            ],
+            "timeUsed": [
+              "입장 + 가이드 간단 오리엔테이션 — 약 10분",
+              "낮 허브 정원 + 테마 마을 산책 — 약 60~75분",
+              "선택: 체험 프로그램 또는 허브 베이커리/카페 — 약 30분",
+              "조명 축제 감상 (오후 4시 이후 — 11~2월이 가장 화려, 약 30~45분)",
+              "차량 집결"
+            ],
+            "whyOnRoute": "허브 아일랜드를 13:30에 배치해 낮 허브 정원과 16:00 조명 시작 모두 포착.",
+            "visitBasics": {
+              "hours": "일~금 09:00/10:00~21:00/22:00; 토·공휴일 23:00까지 (계절별 조명 시간 변동)",
+              "closed": "연중 무휴",
+              "admission": "주중 성인 ₩10,000 / 경로·어린이 ₩8,000; 주말 성인 ₩12,000 / 경로·어린이 ₩10,000",
+              "walking": "중간 난이도 — 넓은 테마 정원과 마을을 언덕 지형으로 탐방; 2~3시간 예상"
+            },
+            "convenience": {
+              "restroom": "여러 곳 표시 있음",
+              "parking": "축제 구역 근처 무료 주차"
+            },
+            "smartNotes": {
+              "photo": "핑크 소원 터널 (연중 상징 포토 명소). 황금빛 시간대 산타 마을 300개 이상 조형물.",
+              "facilities": "허브 베이커리 (마늘빵), 허브 요리 레스토랑, 허브 카페, 기념품/스킨케어 샵.",
+              "tip": "오후 2~3시까지 도착해 낮 허브 정원을 충분히 보고, 저녁까지 남아 조명 축제 감상 권장."
+            },
+            "_poi_meta": {
+              "poi_key": "herb_island",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Korea Tourism Organization (VisitKorea — Herb Island official listing + Wednesday closure note + admission schedule)",
+                "Pocheon City Tourism Office (pocheon.go.kr — Sinbuk-myeon attractions cluster including Herb Island + Hot Springs + Art Valley)",
+                "Gyeonggi Province Official Blog (gyeonggido-korea.com — Light Fairy Tale Festival 3M LED + 17:00-22:00 schedule)",
+                "Herb Island Operator Official Site (herbisland.co.kr — own corpus on 1998 opening + 340-herb museum)",
+                "Visit Gyeonggi (ggtour.or.kr — provincial tourism portal on Pocheon herb-themed attraction cluster)"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "16:30",
+            "duration": "75분",
+            "name": "포천 아트밸리",
+            "category": "모노레일 있는 폐채석장 아트 파크",
+            "description": "포천 아트밸리는 1970년대부터 국내 주요 건물(청와대·국회의사당) 건축에 쓰인 화강암(포천석)을 채굴하던 활성 채석장이었으나, 채굴 후 방치된 폐채석장을 2009년 예술 문화 공간으로 탈바꿈시켰습니다. 모노레일(₩3,500, 선택)을 타고 조각공원을 거쳐 채석장 안쪽 천주호(에메랄드빛 호수)에 닿습니다. 방문 시간: 약 80분.",
+            "highlights": [
+              "한국 최초 1970년대 방치된 화강암 채석장 생태 복원 프로젝트 — 포천시 주도",
+              "채석장 2003년 폐쇄; 복원 2005~2011; 아트 밸리 2009년 개장 (100만+ 방문객)",
+              "천주호 — 해발 340m 에메랄드 샘물 호수, 50m 수직 화강암 벽으로 둘러싸임",
+              "420m 모노레일 상단 정원까지 (성인 왕복 ₩4,500 / 편도 ₩3,500)",
+              "K-드라마 촬영: 전설의 바다, 달의 연인-보보경심 려, 화유기",
+              "천문 과학관 (2014년 8월), 호수르 콘서트홀 (50m 절벽 사이 300명 무대)",
+              "**한국 최초 폐화강암 채석장 생태 복원 프로젝트** (2005년 이후)",
+              "**포천석 = 한국 대표 건물의 화강암 원산지**: 청와대, 국회의사당 등",
+              "**입장료**: 성인 ₩5,000 + 모노레일 왕복 ₩4,500 / 편도 ₩3,500",
+              "**입장료**: 성인 ₩5,000 + 모노레일 왕복 ₩4,500 / 편도 ₩3,500(2025년 기준); 포천아트밸리 입장 시 받은 지폐형 쿠폰은 현장 전망카페 할인에 사용할 수 있습니다."
+            ],
+            "timeUsed": [
+              "매표 + 모노레일 탑승 — 약 10분",
+              "모노레일 상행 (약 5분) → 희망의 하늘 정원 + 천문 과학관 — 약 15분",
+              "천주호 전망대 + 에메랄드 호수 포토 — 약 15~20분",
+              "치유의 숲길 하산 — 약 10~15분",
+              "선택: 카페 정류소 (전망 카페 — 입장권 포인트 할인)",
+              "차량 집결"
+            ],
+            "whyOnRoute": "포천 아트 밸리로 하루를 카탈로그 최고의 극적인 단일 풍경으로 마무리.",
+            "visitBasics": {
+              "hours": "09:00~19:00 (마지막 입장 약 17:30); 계절별 변동",
+              "closed": "연중 무휴",
+              "admission": "성인 ₩5,000 / 어린이(7~12세) ₩1,500; 모노레일 추가: 성인 왕복 ₩4,500 / 편도 ₩3,500",
+              "walking": "중간 난이도 — 기저부에서 정상까지 가파름 (모노레일 상행 권장); 정상 정원 평탄; 치유의 숲길 하산 권장"
+            },
+            "convenience": {
+              "restroom": "매표소 및 정상 정원 구역 화장실",
+              "parking": "무료 주차; 포천에서 약 2시간 간격 직행 버스"
+            },
+            "smartNotes": {
+              "photo": "메인 호숫가 테라스에서 내려다보는 천주호 — 화강암 벽 배경의 에메랄드 호수가 대표 샷.",
+              "facilities": "전망 카페 (입장권 포인트 할인), 기념품 판매.",
+              "tip": "모노레일로 올라가고 치유의 숲길로 내려오면 가장 편한 코스. 10~11월 단풍 시즌이 가장 아름다움."
+            },
+            "_poi_meta": {
+              "poi_key": "pocheon_art_valley",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Pocheon Art Valley Official Site (artvalley.pcfac.or.kr — own corpus on Hosur Concert Hall specs + monorail logistics + drama-filming history)",
+                "Korea Tourism Organization (VisitKorea — Pocheon Art Valley listing + ecological-restoration history)",
+                "Pocheon City Tourism Office (pocheon.go.kr — Sinbuk-myeon attractions + Pocheonseok granite history)",
+                "Hantan Geopark Official (hantangeopark.kr — UNESCO Global Geopark archive on 1980s Pocheon quarry photos)",
+                "Inquirer Lifestyle / Korea Times (Cheong Wa Dae + National Assembly + Incheon Airport granite-source historical reporting)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "산정호수",
+            "type": "origin",
+            "theme": "Mountain Lake"
+          },
+          {
+            "name": "허브 아일랜드",
+            "type": "meal",
+            "theme": "Garden & Lunch"
+          },
+          {
+            "name": "아트 밸리",
+            "type": "return",
+            "theme": "Quarry Finale"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "호숫가 출발",
+            "duration": "정류장 1",
+            "description": "산정호수 호수 산책로 탐방."
+          },
+          {
+            "phase": "허브 정원 & 점심",
+            "duration": "코스 2",
+            "description": "허브아일랜드 지중해 테마 정원 + 점심."
+          },
+          {
+            "phase": "아트밸리 피날레",
+            "duration": "정류장 3",
+            "description": "포천 아트밸리 조각공원+천주호 — 채석장의 변신."
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "하루 일정 흐름",
+          "subtitle": "서울 집합 장소에서 오전 8~9시 픽업 후, 동북쪽으로 1.5시간 이동해 포천 도착. 오전의 차분한 빛을 위한 호수 방문, 점심 및 최장 방문지인 허브 아일랜드, 마지막으로 아트 밸리. 오후 6시~7시 서울 귀환."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "남이섬보다 차분한 대안을 원하는 커플과 신혼 여행자",
+            "계절 꽃(라벤더, 핑크뮬리) 포토그래퍼",
+            "성인 가족 및 다세대 그룹",
+            "덜 혼잡한 경기도 당일 여행을 원하는 여행자",
+            "느린 산책과 정원 분위기를 즐기는 방문자"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "가평 대신 포천인 이유",
+              "icon": "tree-pine",
+              "iconBg": "bg-emerald-50/80",
+              "iconColor": "text-emerald-600",
+              "items": [
+                {
+                  "label": "남이섬보다 덜 혼잡",
+                  "detail": "가평의 남이섬-아침고요-쁘띠 프랑스 루프는 점점 더 바빠지고 있습니다. 포천의 호수와 정원은 비슷한 자연·예술 조합이지만 절반도 안 되는 인파로 둘러볼 수 있습니다."
+                },
+                {
+                  "label": "강력한 계절 다양성",
+                  "detail": "봄 딸기 농장, 여름 라벤더, 가을 핑크 뮬리, 겨울 빙상 절벽이 루트에 각각 명확히 다른 성격을 부여합니다."
+                },
+                {
+                  "label": "아트 밸리가 독특한 지질학적 관점을 추가",
+                  "detail": "포천 아트 밸리의 채석장과 호수 세팅은 서울 당일 여행 거리 내 다른 어디에도 없는 곳입니다."
+                }
+              ]
+            },
+            {
+              "title": "실제 도보 난이도는 어느 정도일까",
+              "icon": "footprints",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "세 코스 모두 대체로 쉬움",
+                  "detail": "이것은 서울에서 출발하는 당일 여행 중 가장 시니어 친화적인 편으로, 포장 길·선택적 단축 코스·모노레일을 활용합니다."
+                },
+                {
+                  "label": "산정호수는 반 루프 선택 가능",
+                  "detail": "전체 4km 둘레는 중간 난이도이지만, 가장 사진 찍기 좋은한 데크 구간은 25분 코스로 단축 가능합니다."
+                },
+                {
+                  "label": "아트 밸리 도보는 선택 사항",
+                  "detail": "모노레일이 고도 차를 해결하므로, 조각들 사이를 여유롭게 산책하고 싶은 분께만 트레일 도보가 필요합니다."
+                }
+              ]
+            },
+            {
+              "title": "날씨와 계절이 바뀔 때",
+              "icon": "cloud-rain",
+              "iconBg": "bg-slate-50/80",
+              "iconColor": "text-slate-600",
+              "items": [
+                {
+                  "label": "계절 대체 코스가 흔함",
+                  "detail": "일부 여행사는 봄/가을에 비둘기낭 폭포, 10월에 사과 농장, 겨울에 딸기 농장을 추가합니다."
+                },
+                {
+                  "label": "허브 아일랜드 수요일 휴관",
+                  "detail": "허브 아일랜드는 일부 수요일에 휴관합니다. 여행사는 보통 산정호수 연장 또는 포천 아트 밸리 시간 확대로 대체합니다."
+                },
+                {
+                  "label": "겨울 방문 물류",
+                  "detail": "산정호수 오리 썰매 활동은 안전한 얼음 상태에 의존하며, 최근 겨울에는 기후 변화로 신뢰성이 낮아졌습니다."
+                }
+              ]
+            }
+          ],
+          "lessIdealFor": [
+            "유네스코 상징 랜드마크를 원하는 여행자 주의 (수원 화성 추천)",
+            "고에너지 또는 쇼핑 중심 하루를 원하는 방문자 주의",
+            "완전 실내 우천 일정 필요 여행자 주의",
+            "놀이터 스타일의 오락이 필요한 아주 어린 자녀가 있는 가족."
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "픽업 & 하차",
+            "preview": "서울 집결 지점; 08:00~09:00 출발",
+            "content": [
+              "픽업은 보통 홍익대 입구역(4번 출구), 명동 신세계 면세점, 동대문 지역 집합 장소.",
+              "첫 번째 집합 장소 기준 출발은 보통 7:50~9:00.",
+              "선택한 집합 장소에 최소 10분 전까지 도착해 주세요.",
+              "서울 동일 집합 장소에서 하차.",
+              "교통 상황에 따라 18:30~19:30 귀환 예상.",
+              "고정 루트 소그룹 방식; 여행자가 직접 집합 장소에 이동해야 합니다."
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "도보 & 지형",
+            "preview": "쉬움~중간; 서울에서 가장 여유로운 당일 여행 중 하나",
+            "content": [
+              "산정호수: 선택적 반 루프 가능한 쉬운 포장 산책로.",
+              "허브 아일랜드: 완만한 경사의 쉬운 정원 길.",
+              "포천 아트 밸리: 중간 난이도 오르막; 모노레일이 고도 차를 해결.",
+              "편안한 워킹화 권장; 부분적으로 유모차 접근 가능.",
+              "세 코스 모두 화장실 이용 가능."
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "날씨 정책",
+            "preview": "강한 계절 다양성; 대체 코스 일반적",
+            "content": [
+              "봄 (3~6월): 벚꽃, 라벤더 절정 접근, 선택적 딸기 농장.",
+              "여름 (6~8월): 허브 아일랜드 6월 중순~7월 라벤더 절정; 습도와 간간이 비 예상.",
+              "가을 (9~11월): 핑크 뮬리, 산정호수 억새, 아트 밸리 단풍.",
+              "겨울 (12~2월): 기온에 따라 산정호수 빙상 활동 가능성, 허브 아일랜드 조명.",
+              "가벼운 비: 투어 대부분 진행; 폭우 시 야외 코스 단축 가능."
+            ]
+          },
+          {
+            "id": "wear",
+            "title": "복장 & 준비물",
+            "preview": "운동화, 레이어링, 계절별 추가 준비물",
+            "content": [
+              "편안한 미끄럼 방지 워킹화.",
+              "산지 기온 변화 대비 겹쳐 입기.",
+              "가벼운 방풍 재킷 (서울 시내보다 특히 산정호수에서 서늘함).",
+              "여름 자외선 차단; 겨울 따뜻한 재킷과 장갑.",
+              "세 코스 모두 강한 포토 기회 — 카메라/간편한폰 준비."
+            ]
+          },
+          {
+            "id": "included",
+            "title": "포함 사항",
+            "preview": "가이드, 교통, 입장료 포함; 점심 현장 직접 결제",
+            "variant": "included",
+            "content": [
+              "영어 가이드 포함",
+              "서울 왕복 소그룹 차량 교통",
+              "산정호수 입장 (무료)",
+              "허브 아일랜드 입장료",
+              "포천 아트 밸리 입장료 + 모노레일",
+              "점심 미포함; 허브 아일랜드 레스토랑에서 현장 직접 결제",
+              "허브 아일랜드 선택 워크숍 (향수·캔들·빵) 미포함",
+              "산정호수 오리 보트·오리 썰매 선택 체험 미포함",
+              "개인 쇼핑 미포함",
+              "가이드 팁은 선택 사항"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "실시간 날씨 연동"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "매일 업데이트"
+          }
+        },
+        "seasonalVariations": [
+          {
+            "season": "봄",
+            "title": "딸기 시즌",
+            "description": "산정호수 주변 4월 초 벚꽃; 봄 녹음이 아트 밸리에 생기를 불어넣음. 딸기 체험 가능.",
+            "icon": "flower"
+          },
+          {
+            "season": "여름",
+            "title": "라벤더 절정",
+            "description": "6월 중순~7월 하순 허브 아일랜드 라벤더 절정이 최고의 포토 시즌. 야간 조명 행사도 진행.",
+            "icon": "sun"
+          },
+          {
+            "season": "가을",
+            "title": "핑크 뮬리 시즌",
+            "description": "허브 아일랜드 핑크 뮬리와 산정호수 은빛 억새가 가을을 가장 사진 찍기 좋은 시즌으로 만듦.",
+            "icon": "leaf"
+          },
+          {
+            "season": "겨울",
+            "title": "조명 & 빙상 시즌",
+            "description": "허브 아일랜드 야간 조명과 산타 마을 운영; 산정호수 오리 썰매 및 빙상 활동 (기온 따라 다름).",
+            "icon": "snowflake"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "공인 현지 여행사",
+            "description": "정식 등록 및 보험 가입 현지 여행사",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "포천 코스 전문 공인 현지 여행사."
+          },
+          {
+            "icon": "route",
+            "title": "코스 전문",
+            "description": "이동 부담을 줄인 효율적인 코스",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "계절별 특색: 라벤더(6~7월), 핑크뮬리(9~10월), 겨울 호수 썰매(12~2월)."
+          },
+          {
+            "icon": "users",
+            "title": "그룹 규모 관리",
+            "description": "코스에 상황에 맞춘 인원 규모",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "소그룹으로 허브아일랜드 산책로와 아트밸리 조각공원을 여유 있게 탐방합니다."
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "즉시",
+            "title": "즉시 확인",
+            "detail": "행정 요약 포함 예약 확인서 발송",
+            "description": "집결 장소·시각 포함 즉시 예약 확인서 발송."
+          },
+          {
+            "timing": "출발 12시간 전",
+            "title": "12시간 전 알림",
+            "detail": "날씨 업데이트 및 경로 변경 안내",
+            "description": "허브아일랜드 계절별 개화 현황 사전 안내."
+          },
+          {
+            "timing": "전날 저녁",
+            "title": "최종 픽업 안내",
+            "detail": "정확한 픽업 시간 및 가이드 연락처",
+            "description": "출발 전날 저녁 최종 집결 시각 확인."
+          },
+          {
+            "timing": "투어 당일 아침",
+            "title": "당일 코스 안내",
+            "detail": "실시간 상황 기반 당일 브리핑",
+            "description": "날씨 및 코스 안내 아침 메시지 전달."
+          },
+          {
+            "timing": "투어 중",
+            "title": "경유지별 심층 안내",
+            "detail": "각 코스 실시간 현장 안내",
+            "description": "포천 화강암 지질, 아트밸리 재생 역사 등 가이드 설명."
+          },
+          {
+            "timing": "투어 종료 후",
+            "title": "투어 후 지원",
+            "detail": "피드백 및 추가 여행 추천",
+            "description": "투어 후 피드백 요청 전송."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "남이섬 당일 투어와 어떻게 다른가요?",
+            "answer": "두 투어 모두 경기도 당일 여행이지만, 포천은 남이섬의 한드 인파 대신 정원과 채석장 공원을 탐방합니다."
+          },
+          {
+            "id": "q2",
+            "question": "허브아일랜드 라벤더는 언제 피나요?",
+            "answer": "약 6월 중순~7월 말이 절정 기간. 핑크뮬리(9~10월)가 뒤를 잇습니다."
+          },
+          {
+            "id": "q3",
+            "question": "수요일 허브아일랜드 휴관이 있나요?",
+            "answer": "일부 수요일 휴관. 해당 시 여행사가 산정호수 체류 시간을 늘리는 등 일정을 조율합니다."
+          },
+          {
+            "id": "q4",
+            "question": "아트밸리 모노레일은 어떻게 이용하나요?",
+            "answer": "입구에서 채석장 전망대까지 편도(₩3,500). 왕복 또는 도보 하강 중 선택."
+          },
+          {
+            "id": "q5",
+            "question": "겨울에도 투어가 의미 있나요?",
+            "answer": "네. 겨울은 산정호수 오리썰매·얼음낚시, 눈 덮인 아트밸리 설경으로 색다른 매력이 있습니다."
+          },
+          {
+            "id": "q6",
+            "question": "산정호수 산책로는 얼마나 되나요?",
+            "answer": "전체 4km(약 75분, 완만한 일정 속도). 절반 코스(2km)도 가능합니다."
+          },
+          {
+            "id": "first-time",
+            "question": "포천을 처음 방문하는 분에게 좋은가요?",
+            "answer": "첫 방문 코스로 적합하나, 서울 대표 관광 명소 위주의 '하이라이트 루프'보다는 자연과 정원 위주의 느긋한 여행을 원하는 분께 맞습니다."
+          },
+          {
+            "id": "walking",
+            "question": "도보 이동이 힘들지 않나요?",
+            "answer": "대부분 가벼운 도보. 산정호수는 평탄한 호숫가 길. 허브아일랜드는 완만한 언덕. 아트밸리는 조각공원 도보 또는 모노레일 선택."
+          },
+          {
+            "id": "family",
+            "question": "가족 여행에 적합한가요?",
+            "answer": "편안한 투어. 산정호수 발 보트(시즌)와 아트밸리 모노레일은 어린이 인기 코스."
+          },
+          {
+            "id": "seniors",
+            "question": "어르신도 참여할 수 있나요?",
+            "answer": "전반적으로 평탄한 도보. 모노레일로 아트밸리 오르막을 대체할 수 있습니다."
+          },
+          {
+            "id": "children",
+            "question": "권장 최소 연령은 몇 세인가요?",
+            "answer": "만 6세 이상 추천. 왕복 긴 이동(서울에서 약 75분)과 아트밸리 모노레일 또는 10~15분 도보가 포함됩니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
+        "price": {
+          "amountLabel": "55.80",
+          "originalPriceUsd": 62,
+          "salePriceUsd": 55.8,
+          "discountPercent": 10,
+          "currency": "USD",
+          "per": "인",
+          "priceSource": "direct_rate",
+          "priceNote": "AtoC Korea 공식 판매가 기준입니다."
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-29",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v17_batch9"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch9_enhancement": {
+        "date": "2026-04-29",
+        "description": "Batch 9 deep enhancement — Seoul-Seoraksan-Sokcho + Pocheon Sanjeong/Herb/Art Valley pair. Single-POI fixed-itinerary methodology (batches 1-5, 8 style). Both tours are SMALL_GROUP — formula different from batch 7/8 private tours. All substantive stops enhanced with 1,000+ char descriptions weaving verified facts. product profile recalibrated to verified-fact 0-1 float scores. Charter-format dimensions previously null: private_tour_fit set to 0.05 (definitionally not private); customizable_route_fit set to 0.1 (small-group fixed itinerary); flexibility_fit set to 0.3 (small-group bus, fixed pickup/drop). Tour-specific: history_culture_fit Seoraksan 0.5 (Sinheungsa 652 + Gwongeumseong 1253 + Tongildaebul 1997) / Pocheon 0.4 (1925 reservoir + quarry restoration). Seoraksan tour: unesco_fit 0.2 → 0.4 (UNESCO Biosphere Reserve since 1982, Korea's only one); autumn_foliage_fit set to 1.0 (catalog-leading); mountain_fit set to 1.0 (catalog-leading); seasonal_fit 0.95. Pocheon tour: romantic_fit set to 0.85 (catalog-second-strongest after Nami tour 0.95); seasonal_fit 0.85; family_fit 0.8 → 0.85. 6 new POIs added to KB (v1.11 → v1.12): seoraksan_national_park, sokcho_tourist_fishery_market, sokcho_beach, sanjeong_lake, herb_island, pocheon_art_valley. KB POI count: 62 → 68.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale per Phase 1 standard. Both tours are SMALL_GROUP (not private) — formula different from Batch 7/8 private tours. Charter-format dimensions previously null on these tours: private_tour_fit set to 0.05 (definitionally not private); customizable_route_fit 0.1 (small-group fixed itinerary - no menu of routes); flexibility_fit 0.3 (small-group bus, fixed pickup/drop, fixed stops). history_culture_fit set per content: Seoraksan tour 0.5 (Sinheungsa Silla 652 + Gwongeumseong 1253 legend); Pocheon tour 0.4 (Sanjeong 1925 reservoir + Art Valley quarry-history). Time-weighted indoor_ratio re-computed per Fix 1 methodology using verified per-POI indoor_ratio_at_stop values.",
+          "deltas_applied": {
+            "private_tour_fit": {
+              "old": null,
+              "new": 0.05,
+              "reasoning": "VERIFIED — both tours are small-group bus/coach tours, definitionally not private. Was unset (None)."
+            },
+            "customizable_route_fit": {
+              "old": null,
+              "new": 0.1,
+              "reasoning": "VERIFIED — small-group fixed itinerary; no route options. Was unset."
+            },
+            "flexibility_fit": {
+              "old": null,
+              "new": 0.3,
+              "reasoning": "VERIFIED — small-group format; fixed pickup/drop times, fixed stops, fixed pacing. Was unset. Lower than batch 7/8 private (0.6-0.8)."
+            },
+            "history_culture_fit": {
+              "old": null,
+              "new": 0.4,
+              "reasoning": "VERIFIED — Sanjeong Lake 1925 agricultural reservoir history; Pocheon Art Valley 1970s granite quarry → 2009 ecological-restoration heritage (Pocheonseok used for Blue House + National Assembly + Incheon Airport); K-drama filming layers. Some culture but nature dominates. 0.4 calibrated."
+            },
+            "unesco_fit": {
+              "old": 0.2,
+              "new": 0.15,
+              "reasoning": "Verified — no UNESCO sites on this route. 0.15 baseline."
+            },
+            "iconic_landmark_fit": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "Verified — Pocheon Art Valley emerald lake + Herb Island Lighting Festival are notable but not UNESCO/world-iconic. Slight upward to 0.65."
+            },
+            "first_time_fit": {
+              "old": 0.6,
+              "new": 0.6,
+              "reasoning": "Verified maintained — strong second-or-third-time Korea destination, less commonly chosen for first visits. 0.6 maintained."
+            },
+            "walking_level": {
+              "old": 0.4,
+              "new": 0.45,
+              "reasoning": "VERIFIED — Sanjeong Lake easy 3 km loop + Herb Island moderate themed-village walking + Art Valley monorail-up + 15-min Healing Forest down. Total ~5-6 km walking but split across stops. 0.45 calibrated up."
+            },
+            "indoor_ratio": {
+              "old": 0.15,
+              "new": 0.2,
+              "reasoning": "VERIFIED — Fix 1 time-weighted: Sanjeong Lake 90 × 0.05 = 4.5, Herb Island 150 × 0.35 = 52.5, Art Valley 75 × 0.10 = 7.5, Lunch 30 × 0.9 = 27, transit-in-vehicle 255 × 1.0 = 255. Total indoor 346.5 / 600 min = 0.58 with full transit; substantive only 64.5 / 315 = 0.20. Catalog value 0.20 (slight upward from prior 0.15 — better reflects Herb Island indoor villages + lunch interior weight)."
+            },
+            "weather_sensitivity": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Verified — Sanjeong Lake fully outdoor; Herb Island has indoor village and Healing Center fallbacks; Art Valley monorail covered. Mixed exposure. 0.55."
+            },
+            "scenic_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified — strong scenic content (mountain-circled lake + Mediterranean herbs + emerald quarry lake) but not at UNESCO World Heritage scale. Slight markdown to 0.95."
+            },
+            "photo_level": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Verified maintained — Sanjeong Lake fog reflection + Herb Island pink wish tunnel / illumination + Cheonjuho emerald cliff lake. Strong photographic content. Maintained at 1.0."
+            },
+            "nature_fit": {
+              "old": 1.0,
+              "new": 0.9,
+              "reasoning": "Verified — strong nature (lake + herbs + restored quarry) but Herb Island's themed-park structure is partly artificial. Slight markdown to 0.9."
+            },
+            "romantic_fit": {
+              "old": null,
+              "new": 0.85,
+              "reasoning": "VERIFIED — Sanjeong Lake fog mornings (Korean couple's destination), Herb Island Christmas / pink wish tunnel illumination (catalog-second-strongest after Nami tour), Pocheon Art Valley K-drama filming locations (Legend of the Blue Sea + Moon Lovers). Was unset. 0.85 calibrated (vs Nami tour 0.95)."
+            },
+            "seasonal_fit": {
+              "old": null,
+              "new": 0.85,
+              "reasoning": "VERIFIED — autumn (Sanjeong silver grass + Art Valley foliage + Herb Island pink muhly) and winter (Herb Island Christmas Lighting Festival peak + frozen Cheonjuho) are signature seasons. Was unset. 0.85 calibrated."
+            },
+            "beach_fit": {
+              "old": 0.2,
+              "new": 0.1,
+              "reasoning": "Verified — no beach on this inland Pocheon route. Slight markdown to 0.1."
+            },
+            "family_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "VERIFIED — Sanjeong Lake easy walking + winter sledding, Herb Island Santa Village + craft programs + Venice Village gondolas, Pocheon Art Valley monorail kid-friendly. Slight upward to 0.85."
+            },
+            "food_fit": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Verified — Pocheon-style ribs (Idong Galbi) and freshwater snail are signature regional foods, but the tour itself is light on food-focused stops (Herb Island has Mediterranean cuisine but is primarily decorative). Slight markdown to 0.55."
+            },
+            "small_group_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Verified maintained — small-group minicoach format. Maintained at 1.0."
+            },
+            "bus_fit": {
+              "old": 0.4,
+              "new": 0.4,
+              "reasoning": "Verified maintained — minicoach (smaller than full coach). 0.4 maintained."
+            },
+            "storytelling_fit": {
+              "old": 0.6,
+              "new": 0.7,
+              "reasoning": "VERIFIED — quarry-restoration narrative (Blue House granite + 2003 abandonment + 2009 reopening) + 1925 reservoir history + K-drama filming spots + Herb Island Mediterranean theming. Driver-guide content is rich. Upward to 0.7."
+            },
+            "value_for_money_fit": {
+              "old": 0.8,
+              "new": 0.8,
+              "reasoning": "Verified maintained — 10-hour day with 3 substantive stops at small-group pricing is solid value. Maintained at 0.8."
+            },
+            "premium_fit": {
+              "old": 0.4,
+              "new": 0.4,
+              "reasoning": "Verified maintained — small-group minicoach is mid-tier. Maintained at 0.4."
+            }
+          }
+        }
+      }
+    }
+  }
+}

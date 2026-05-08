@@ -1,0 +1,2415 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "jeju-west-south-full-day-authentic-tour",
+  "locale": "ko",
+  "product_id": "jeju-west-south-full-day-authentic-tour",
+  "seo": {
+    "pageTitle": "제주 서남부 정통 당일 투어 | AtoC Korea",
+    "metaDescription": "9시간 제주 서남부 소그룹 루프: 한라산 1100 습지(유네스코), 주상절리, 송악산, 천제연 폭포, 협재 해변.",
+    "primaryKeywords": [
+      "제주 서부 남부 투어",
+      "제주 1100고지 투어",
+      "협재해변 카페 투어",
+      "송악산 투어",
+      "제주 정통 소그룹 투어"
+    ],
+    "ogImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+    "title": "제주 서부·남부 정통 소그룹 투어 | AtoC Korea",
+    "description": "제주 서부·남부 소그룹 투어: 한라산 1100고지 습지 → 주상절리 → 송악산 → 천제연폭포 → Osulloc → 협재해변 카페거리. 전 입장료 포함, 공인 가이드."
+  },
+  "catalog_card": {
+    "thumbnail": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+    "title": "제주 서부·남부 정통 일일 투어",
+    "priceLabel": "가격은 예약 시 확인",
+    "shortCardDescription": "한라산 1100고지 습지(람사르·유네스코)부터 주상절리(유네스코 지질공원), 송악산 전망 둘레길, 천제연폭포, Osulloc 티뮤지엄, 협재해변 카페거리까지 이어지는 제주 서부·남부 정통 루프입니다. 쇼핑 경유지 없음, 소그룹, 공인 가이드.",
+    "tags": [
+      "소그룹",
+      "jeju",
+      "제주 서부·남부",
+      "unesco",
+      "카페 감성",
+      "해안"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "slug": "jeju-west-south-full-day-authentic-tour",
+    "subtitle": "한라산 1100고지 습지, 주상절리, 송악산, 천제연폭포, Osulloc 차밭, 협재 해안을 하루에 둘러보는 소그룹 코스.",
+    "region": "서제주 & 남제주",
+    "duration": "9시간",
+    "stopsCount": 9,
+    "badges": [
+      "소그룹",
+      "제주",
+      "제주 서부·남부",
+      "유네스코",
+      "카페 문화",
+      "해안 풍경"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800"
+  },
+  "headlineLine1": "1100고지 습지에서 주상절리, 차밭과 해안 카페까지 —",
+  "headlineLine2": "제주 서부·남부를 하루에 깊이 있게 둘러보는 코스",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "인",
+    "priceSource": "direct_rate",
+    "priceNote": "리스팅 스니펫에서 소그룹 가격 미확정. 자매 상품(남제주 루트) 기준.",
+    "discountPercent": 10
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1600",
+    "imagePosition": "center 35%",
+    "tagline": "화산 지형과 극적인 해안선, 트렌디한 해안 카페가 이어지는 제주 서부·남부 루프 — 진짜 제주를 하루에 만납니다.",
+    "pills": [
+      "소그룹",
+      "제주"
+    ],
+    "meta": {
+      "duration": "≈ 9시간 (08:30 첫 픽업, ≈ 18:00 하차)",
+      "region": "서남부 제주",
+      "stops": "9개 코스",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "투어 개요"
+    },
+    {
+      "id": "itinerary",
+      "label": "상세 일정"
+    },
+    {
+      "id": "details",
+      "label": "유의사항"
+    },
+    {
+      "id": "faq",
+      "label": "자주 묻는 질문"
+    },
+    {
+      "id": "reviews",
+      "label": "여행자 후기"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "소요 시간",
+      "value": "약 9시간 (08:30 첫 픽업, ≈18:00 하차)"
+    },
+    {
+      "icon": "users",
+      "label": "그룹 규모",
+      "value": "소그룹, 미니코치, 영어/중국어 가이드 동행"
+    },
+    {
+      "icon": "map-pin",
+      "label": "픽업 정보",
+      "value": "오션 스위트 08:30 / 제주공항 3번 게이트 (3층) 08:45 / 롯데시티호텔 09:00 / 시청 09:05."
+    },
+    {
+      "icon": "footprints",
+      "label": "도보 난이도",
+      "value": "쉬움~중간 — 습지 데크길, 절벽 데크길, 해변 산책"
+    },
+    {
+      "icon": "ticket",
+      "label": "포함 사항",
+      "value": "차량, 공인 가이드, 관광지 입장료 포함. 불포함: 점심(약 ₩15,000), 팁"
+    },
+    {
+      "icon": "ban",
+      "label": "쇼핑 일정",
+      "value": "여행사 명시적 쇼핑 거부 정책"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+      "alt": "투어 중 방문하는 한라산 1100고지 습지 — 유네스코 생물권보전지역 데크길 풍경",
+      "caption": "한라산 1100고지 습지 — 유네스코 생물권보전지역 데크길",
+      "location": "제주 중산간 한라산 1100고지 습지(해발 1,100m)",
+      "atmosphere": "한라산 1100고지 습지는 이 코스의 대표 방문지로, 사진 촬영과 고지대 자연 분위기를 함께 즐기기 좋습니다."
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+      "alt": "투어 중 방문하는 주상절리 — 유네스코 지질공원 육각형 주상절리의 풍경",
+      "caption": "주상절리 — 유네스코 지질공원 육각형 주상절리",
+      "location": "제주 남부 중문 해안 주상절리",
+      "atmosphere": "파도에 깎인 현무암 절벽으로, 제주의 대표적인 해안 포토 명소 중 하나입니다."
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+      "alt": "투어 중 방문하는 송악산 둘레길 — 남부 해안 파노라마 루프 풍경",
+      "caption": "송악산 둘레길 — 남부 해안 파노라마 루프",
+      "location": "제주 남서쪽 끝 송악산",
+      "atmosphere": "송악산 둘레길은 이 코스의 대표 방문지로, 남부 해안 파노라마와 사진 촬영을 함께 즐기기 좋습니다."
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+      "alt": "투어 중 방문하는 O'sulloc의 풍경",
+      "caption": "O'sulloc",
+      "location": "오설록, 제주 서부 중산간",
+      "atmosphere": "O'sulloc는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+      "alt": "투어 중 방문하는 협재해변과 서부 해안 카페 거리의 풍경",
+      "caption": "협재해변과 서부 해안 카페 거리",
+      "location": "제주시 한림읍 협재해변, 제주 서부",
+      "atmosphere": "협재해변과 서부 해안 카페 거리는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "09:00",
+      "duration": "30분",
+      "name": "픽업 (제주시 4개 지점)",
+      "category": "픽업 — 제주 시내 호텔/허브 순서",
+      "description": "아침 이동 최소화를 위해 제주시 4개 주요 지점에서 픽업: 제주공항 1번 게이트(국내선 1층), 노형오거리 인근, 제주시청 인근, 중앙로터리 인근.",
+      "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+      "highlights": [
+        "**4개 픽업 포인트** — 공항, 시청, 하귀, 동문",
+        "서→동 순서로 오전 코치 이동 최소화",
+        "**소그룹 미니코치 (최대 14인)** + 영어 가이드",
+        "첫 코스에서 이중 언어 일정 카드 + 1100번 도로 폐쇄 브리핑",
+        "**겨울 비상 대책**: 1100 습지 → 신비의 도로 / 안덕 계곡 대안",
+        "제주 시내 → 1100 습지 오전 총 이동 시간: 1100번 도로 경유 약 50분"
+      ],
+      "timeUsed": [
+        "하귀 픽업 ~09:00 — 5분",
+        "공항 픽업 ~09:10 — 5분",
+        "시청 픽업 ~09:20 — 5분",
+        "동문 픽업 ~09:30 — 5분",
+        "1100번 도로 남쪽으로 습지 방면 — 약 50분"
+      ],
+      "whyOnRoute": "4개 픽업 포인트가 제주 시내 호텔 구역 커버."
+    },
+    {
+      "number": 2,
+      "time": "≈ 10:20",
+      "duration": "45분",
+      "name": "한라산 1100고지 습지 (람사르·유네스코)",
+      "category": "고산 습지 — 람사르 등록지 + 한라산 유네스코 세계자연유산 내",
+      "description": "한라산 1100고지 습지는 해발 정확히 1,100m에 위치한 고산 습지로, 람사르 협약 등록 습지이자 유네스코 생물권보전지역의 일부입니다. 산철쭉, 습지 식물군, 고산 풍경이 계절마다 다른 얼굴을 보입니다. 평탄한 데크길(약 1km 루프)로 체력 부담이 적습니다. 여름엔 안개 낀 신비로운 분위기, 가을엔 억새, 겨울엔 설경이 인상적입니다. 방문 시간: 약 45분.",
+      "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
+      "highlights": [
+        "**람사르 습지 1893호** (2009년 10월 12일 지정) — 국제 중요 습지",
+        "**해발 1,100m** — 한국 **최고 국도** (1100번 도로) 변",
+        "**4중 국제 지정** — 람사르 + 유네스코 세계유산 + 생물권보전지역 + 세계지질공원",
+        "**16개 이상의 불연속 습지** — 담수 습지 + 연못 + 이탄 습지",
+        "**멸종 위기 조류 3종 + 식물 1종**; 제주 고유종 다수",
+        "**연간 방문객 90만 명 (2008)** — 한라산국립공원관리소 관리",
+        "**1km 목재 데크 루프** + 전망대 + 해설 안내판",
+        "**가을 단풍 + 겨울 설경** = 대표 포토 시즌",
+        "**무료 입장**; 인근 1100 휴게소 (실내 화장실 + 카페)"
+      ],
+      "timeUsed": [
+        "코치 도착 + 1100 휴게소 주차 — 약 5분",
+        "데크 루프 + 전망대 — 약 25분",
+        "해설 표지판 + 자연사 전시 — 약 10분",
+        "완충 / 카페 화장실 — 약 5분"
+      ],
+      "whyOnRoute": "**서남쪽 정통 루트의 알파인 유네스코 오프닝 핵심 명소**.",
+      "_poi_meta": {
+        "poi_key": "hallasan_1100_wetland",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Ramsar Sites Information Service — 1100 Altitude Wetland (Site No. 1893)",
+          "UNESCO Man and the Biosphere Programme — Jeju Island Biosphere Reserve",
+          "Korea National Park Service — Hallasan National Park 1100 Wetland records",
+          "Mt Halla Visitor Centre — visitor management documentation",
+          "Jeju Special Self-Governing Province — Wetland Protected Area designation 2009"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:35",
+      "duration": "45분",
+      "name": "주상절리 (유네스코 지질공원)",
+      "category": "화산 해안선 — 육각형 주상절리 용암",
+      "description": "대포 주상절리(중문대포해안 주상절리대)는 중문 해안을 따라 약 1km 이어지는 6각형 주상절리 현무암 절벽입니다. 화산 용암이 바다와 만나 급속 냉각되어 형성된 지형으로, 유네스코 세계지질공원 핵심 명소입니다. 입장료 포함. 방문 시간: 약 40분.",
+      "image": "https://images.unsplash.com/photo-1565967511849-76a60a516170",
+      "highlights": [
+        "**천연기념물 제443호** — **2005년 1월 6일** 지정, 제주 해안 천연기념물 중 가장 최근 지정",
+        "기둥 높이 **30~40m**, **5~7각형 다각형**(주로 육각형)이 **1km**를 따라 밀집",
+        "형성 과정: **한라산 측면 용암이 약 25~14만 년 전 바닷물에 냉각**되면서 수축·균열",
+        "**동아시아 최고의 주상절리 명소** — 자이언츠 코즈웨이, 데빌스 포스트파일과 어깨를 나란히",
+        "**만조 시 최대 20m 파도 분수** — 파도 분수 촬영 포인트",
+        "**0.8km 데크 루프**, 약 15분 도보 — 장벽 없는 데크, 휠체어·유모차 접근 가능",
+        "**유네스코 세계지질공원(2010) 제주 글로벌 지오파크** — 섬 전체 13개 지질 명소 중 하나",
+        "입장료: **성인 ₩2,000 / 청소년 ₩1,000 / 7세 이하·65세 이상 무료**",
+        "맑은 날 북쪽으로 한라산 정상 조망 가능"
+      ],
+      "timeUsed": [
+        "주차 + 매표 + 입장 — 약 5분",
+        "첫 번째 전망대까지 이동 — 약 5분",
+        "절벽 기둥 관람 + 사진 — 약 15분",
+        "데크 루프 이동 — 약 10분",
+        "코치 귀환 — 약 10분"
+      ],
+      "whyOnRoute": "**서남쪽 정통 루트의 오전 중반 유네스코 지질공원 핵심 명소**.",
+      "_poi_meta": {
+        "poi_key": "daepo_jusangjeolli_cliff",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Cultural Heritage Administration — Natural Monument No. 443 designation (2005-01-06)",
+          "Jeju UNESCO Global Geopark — Daepo Jusangjeolli geosite documentation",
+          "Korean Society of Petroleum Engineers — columnar-jointing geology records",
+          "VisitJeju — Daepo Jusangjeolli official listing",
+          "Korea Geological Survey — Jeju volcanic flow chronology"
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "time": "≈ 12:30",
+      "duration": "60분",
+      "name": "점심 — 대정·안덕 현지 식당",
+      "category": "점심 휴식 — 제주 서남부 현지 음식",
+      "description": "주상절리와 송악산 사이 약 60분 점심 시간입니다. 대정·안덕 지역 식당에서 갈치조림, 고등어구이, 흑돼지 등 제주 남부 향토 음식을 둘러볼 수 있습니다. 점심 식사비는 별도(약 ₩15,000).",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "highlights": [
+        "**제주 서남부 해산물 + 산악 음식 코리도** — 대정/안덕",
+        "**갈치조림** — 대정항 주요 어획",
+        "**고사리 육개장** — 제주 고사리 + 쇠고기 매운탕, 서남부 특산",
+        "**흑돼지** 연중 — 문화재 자료 제5호 (2015년)",
+        "**채식+할랄 친화** 옵션 요청 시 제공",
+        "**송악산까지 코치 10분** — 점심 후 최소 이동"
+      ],
+      "timeUsed": [
+        "코치로 점심 장소 이동 — 약 5분",
+        "주문 + 식사 — 약 45분",
+        "코치로 송악산 탐방로 입구 이동 — 약 10분"
+      ],
+      "whyOnRoute": "대정읍 위치 = 송악산까지 10분 이동."
+    },
+    {
+      "number": 5,
+      "time": "≈ 13:40",
+      "duration": "75분",
+      "name": "송악산 (파노라마 전망대)",
+      "category": "이중 분화구 화산 — 99봉 + 올레길 10코스 + 2차 세계대전 역사",
+      "description": "송악산(해발 104m)은 대정읍 제주 서남쪽 끝에 솟은 이중 분화구 기생화산입니다. 분화구 둘레길(약 2.6km, 평탄)에서 마라도·가파도가 보이는 남해 파노라마와 한라산 전경을 둘러볼 수 있습니다. 일제강점기 요새 동굴도 남아 있습니다. 무료 입장. 방문 시간: 약 50분.",
+      "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa",
+      "highlights": [
+        "**104m 이중 분화구 화산** — 외부 500m × 1.7km, 내부 400m × 600m",
+        "**'구십구봉'** 민간 전승 — 기생 화산 밀집 지대",
+        "**2.8km 해안 루프 트레일** (약 75분) — 목재 데크 + 완만한 계단",
+        "일제 WWII 해안포 진지 동굴 (1944~1945년 건설)",
+        "**파노라마**: 마라도, 가파도, 형제 섬, 산방산, 한라산",
+        "**남쪽 절벽 일본 제국군 2차 대전 동굴** — 가미카제 보트 은신처",
+        "**자유 방목 말 + 조랑말** 경사면 방목 — 제주 전통 목장",
+        "**정상 탐방로 환경 순환 관리로 간헐적 폐쇄**; 해안 루프 연중 개방",
+        "**무료 입장**; 소규모 주차장; 강한 해풍 (연중 방풍 재킷 권장)"
+      ],
+      "timeUsed": [
+        "주차 + 등산로 안내 — 약 5분",
+        "해안 절벽 구간 — 약 25분",
+        "WWII 동굴 외관 + 안내판 — 약 10분",
+        "내부 분화구 전망 — 약 20분",
+        "집결 — 약 5분",
+        "완충 — 약 5분"
+      ],
+      "whyOnRoute": "**하루의 지질학+역사 클라이맥스** — 이중 분화구 화산 감상과 2차 대전 역사를 결합한 유일한 코스.",
+      "_poi_meta": {
+        "poi_key": "songaksan",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Wikipedia — Songaksan (Jeju) volcanic structure documentation",
+          "Jeju Olle Foundation — Trail Course 10 official map",
+          "Jeju 4·3 Peace Foundation — Imperial Japanese Army WWII tunnel records",
+          "VisitJeju — Songaksan Mountain official listing",
+          "Korea Geological Survey — double-crater parasitic-cone geology"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "≈ 15:15",
+      "duration": "45분",
+      "name": "천제연폭포 (신들의 연못)",
+      "category": "삼단 폭포 — 천연기념물 제378호 (1993년)",
+      "description": "천제연('하늘 임금의 연못'이라는 뜻)은 중문관광단지 내 3단 폭포입니다. 1단 폭포는 물이 마르면 잠기는 천정굴에서 흘러내립니다. 무지개 조각이 있는 선임교(무지개다리)가 포토 명소입니다. 입장료 포함. 방문 시간: 약 50분.",
+      "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
+      "highlights": [
+        "**천연기념물 제378호 (1993년 지정)** — 삼단 폭포 + 희귀 식물 서식지",
+        "이름 **'천제연' = '하늘 황제의 연못'** — 조선 도교 전설",
+        "**선임교 (120m × 78m)** 부조 패널에 새겨진 **칠선녀 전설**",
+        "**1단(22m / 21m 연못)** — 폭우 후에만 흐름; **2단(30m)** 연중 흐름",
+        "**제주 고유종 고사리(만삼)** 서식지 — IUCN 심각 위기종",
+        "**0.8km 루프 / 약 30분** — 계단 포함 중간 난이도, 신발 중요",
+        "입장료: **성인 ₩2,500 / 청소년 ₩1,350 / 7세 이하·65세 이상 무료**",
+        "**제주 칠선녀 축제** 격년 개최 — 다리 의식 포함",
+        "**안개 마이크로 기후** — 자연 냉각, 여름 오후 인기 피서지"
+      ],
+      "timeUsed": [
+        "입장 + 매표 — 약 5분",
+        "1단 전망대까지 하강 — 약 10분",
+        "1단 + 2단 촬영 — 약 20분",
+        "선임교 + 칠선녀 부조 패널 — 약 15분",
+        "숲길 루프 + 코치로 귀환 — 약 25분"
+      ],
+      "whyOnRoute": "**오후 중반 천연기념물 유산 핵심 명소**.",
+      "_poi_meta": {
+        "poi_key": "cheonjeyeon_falls",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Cultural Heritage Administration — Natural Monument No. 378 designation",
+          "VisitJeju — Cheonjeyeon Falls official listing",
+          "Jeju Special Self-Governing Province — Seonimgyo Bridge construction records",
+          "Korea Plant Society — Mankyua chejuense IUCN Critically Endangered listing",
+          "Jeju Folklore Society — Daoist seven-nymph legend documentation"
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "time": "≈ 16:15",
+      "duration": "60분",
+      "name": "Osulloc 티뮤지엄 + 녹차밭",
+      "category": "아모레퍼시픽 차 문화 플래그십 + 녹차밭 피날레",
+      "description": "Osulloc 티뮤지엄은 아모레퍼시픽이 운영하는 한국 최대 녹차 재배지의 문화 공간입니다. 서광다원 녹차밭 전망 포토 명소, 녹차 아이스크림·음료 구매 가능. 입장 무료. 방문 시간: 약 50분.",
+      "image": "https://images.unsplash.com/photo-1556881286-fc6915169721",
+      "highlights": [
+        "**아모레퍼시픽** 플래그십 — 창업자 서성환이 1979년 제주 서광 다원을 개척하며 국내 녹차 문화를 부활",
+        "**서광 다원 = 한국 최대 녹차밭**; 연간 약 700톤 생산",
+        "뮤지엄 **2001년 개관** — designboom 선정 건축 상위 10대 미술관",
+        "**무료 입장**, 매일 **09:00~18:00**, 연간 방문객 약 200만 명",
+        "**당나라(618~907 CE)**부터 현대 조선 도자기까지 아우르는 고대 다완 컬렉션",
+        "**녹차 롤케이크** + **녹차 아이스크림** = 대표 카페 메뉴",
+        "**이니스프리 제주 하우스** 도보 5분 — 무료 입장, 선택: 귤 비누 DIY ₩15,000",
+        "**포토 골든 아워(16:00~17:00)** 다원 산책로 촬영 최적",
+        "루프탑 데크 + 지상 레벨 두 가지 앵글로 다원 구도 촬영"
+      ],
+      "timeUsed": [
+        "주차 + 입장 — 약 5분",
+        "뮤지엄 내부 + 다완 컬렉션 — 약 20분",
+        "티하우스 카페 (롤케이크 + 아이스크림) — 약 20분",
+        "다원 산책로 — 약 20분",
+        "선택: 이니스프리 제주 하우스 방문 — 약 10분"
+      ],
+      "whyOnRoute": "**오후 늦은 차 문화 유산 핵심 명소**.",
+      "_poi_meta": {
+        "poi_key": "osulloc_tea_museum",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Osulloc Tea Museum official site (osulloc.com)",
+          "Amorepacific Corporation — Suh Sung-whan tea reclamation history (1979)",
+          "Architectural Institute of Korea — 2009 Korea Architecture Award records",
+          "designboom — Top 10 art museums feature",
+          "VisitJeju — Osulloc Tea Museum official listing"
+        ]
+      }
+    },
+    {
+      "number": 8,
+      "time": "≈ 17:30",
+      "duration": "60분",
+      "name": "협재해변 + 서부 해안 카페거리",
+      "category": "서쪽 해안 에메랄드 해변 + 비양도 조망",
+      "description": "협재해수욕장은 제주 서부 대표 해수욕장으로, 맑은 에메랄드빛 바다와 비양도가 보이는 풍경이 유명합니다. 해변 주변 카페거리(애월 한담 해안산책로 연계)에서 일몰 감상과 음료를 둘러볼 수 있습니다. 방문 시간: 약 45분.",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      "highlights": [
+        "**제주 서쪽 해변 TOP 3 / 전체 TOP 10** — 에메랄드 청록색 바다 + 은빛 백사장",
+        "**독특한 은빛 흰 모래** — 조개껍질 + 산호 조각으로 이루어진 해변",
+        "쌍둥이 해변 **금능 해변**(더 한산함, 도보 가능)과 연결 시 **9km 해안선**",
+        "**비양도** — 해안에서 1.2km, 주민 약 200명, **한국 첫 번째 탄소 없는 섬** 프로젝트",
+        "**비양도 너머 일몰** — 카탈로그 최고의 서쪽 해안 일몰 구도",
+        "**소나무 숲(솔림) 배경** + 무료 야영지",
+        "**썰물 시 갯벌** — 집게, 새우, 치어 관찰; 비양도 '걸어서' 접근 가능한 시기 가끔",
+        "**7월 1일~8월 31일 안전 요원 상주 수영 기간**; 여러 지점 휠체어 접근용 경사로",
+        "**서쪽 해안 카페 거리 가장 발달** — 해변 뒤편"
+      ],
+      "timeUsed": [
+        "코치 도착 + 주차 — 약 5분",
+        "메인 해변 산책 + 포토 포인트 — 약 20분",
+        "금능 쌍둥이 해변 연장 (선택) — 약 15분",
+        "카페 거리 쉬기 + 간식 — 약 15분",
+        "일몰 촬영 포인트 — 약 5분"
+      ],
+      "whyOnRoute": "**정통 루트의 서해안 석양 피날레**.",
+      "_poi_meta": {
+        "poi_key": "hyeopjae_beach",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitJeju — Hyeopjae Beach + Biyangdo Island official listings",
+          "Jeju Special Self-Governing Province — Top Jeju beaches ranking + amenity registry",
+          "Korea Maritime + Ports Office — Hallim Port ferry schedule to Biyangdo",
+          "Jeju Tourism Organization — west-coast sunset photography spots registry",
+          "Hallim-eup local cultural office — Geumneung twin-beach pairing documentation"
+        ]
+      }
+    },
+    {
+      "number": 9,
+      "time": "≈ 19:00",
+      "duration": "40분",
+      "name": "하차 (제주시 5개 지점)",
+      "category": "하차 — 제주 시내 허브 순서",
+      "description": "협재에서 서부 해안로(1132호선)를 따라 약 40분 이동 후 제주시 5개 지점 하차. 동문재래시장 앞 하차도 가능합니다.",
+      "image": "https://images.unsplash.com/photo-1549144511-f099e773c147",
+      "highlights": [
+        "**5개 하차 포인트** — 하귀 (첫 번째), 공항, 시청, 연동/노형, 동문",
+        "코치 협재 → 제주 시내 서해안 1132번 도로 경유 (~40분)",
+        "**당일 저녁 항공편** 가능하지만 투어 1보다 여유가 적음 — 픽업 시 알려주세요",
+        "예상 도착: 하귀 ~19:30 → 동문 ~20:05",
+        "코치 전 구간 Wi-Fi"
+      ],
+      "timeUsed": [
+        "코치 협재 → 하귀 — 약 30분, 하차 — 5분",
+        "→ 공항 — 10분, 하차 — 5분",
+        "→ 시청 + 연동 + 동문 — 순차 하차"
+      ],
+      "whyOnRoute": "하귀 우선 순서 — 1132번 도로가 협재 이후 서제주 해안을 통해 귀환하기 때문."
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "제주 시내 + 공항 픽업",
+      "type": "origin",
+      "theme": "출발"
+    },
+    {
+      "name": "한라산 1100고지 습지 (유네스코)",
+      "type": "primary",
+      "theme": "화산"
+    },
+    {
+      "name": "주상절리 (유네스코 세계지질공원)",
+      "type": "primary",
+      "theme": "해안"
+    },
+    {
+      "name": "점심",
+      "type": "meal",
+      "theme": "식사"
+    },
+    {
+      "name": "송악산 전망대",
+      "type": "secondary",
+      "theme": "View"
+    },
+    {
+      "name": "천제연 폭포",
+      "type": "primary",
+      "theme": "폭포"
+    },
+    {
+      "name": "Osulloc 티 뮤지엄",
+      "type": "secondary",
+      "theme": "문화"
+    },
+    {
+      "name": "협재 해변 + 카페 거리",
+      "type": "primary",
+      "theme": "해변"
+    },
+    {
+      "name": "제주 시내 하차 (5개 옵션)",
+      "type": "return",
+      "theme": "귀환"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "산악 오전",
+      "duration": "약 1시간",
+      "description": "한라산 1100고지 습지 데크길 탐방."
+    },
+    {
+      "phase": "남해안 유네스코 + 점심",
+      "duration": "약 2시간 30분",
+      "description": "주상절리 관람 후 제주 현지 점심."
+    },
+    {
+      "phase": "송악산 + 폭포",
+      "duration": "약 1시간 30분",
+      "description": "송악산 분화구 둘레길 후 천제연폭포."
+    },
+    {
+      "phase": "차밭 + 서부 해안",
+      "duration": "약 2시간",
+      "description": "Osulloc 티뮤지엄 → 협재 카페거리 피날레."
+    },
+    {
+      "phase": "귀환",
+      "duration": "약 45분",
+      "description": "서부 해안 → 제주시 5개 하차 지점 경유."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "하루 일정",
+    "subtitle": "서쪽-남쪽 제주 루프로, 여행사의 남쪽 유네스코 투어보다 의도적으로 유산 중심도를 낮춘 구성입니다. 남쪽 투어가 어승생 등반과 유네스코 지질에 집중하는 반면, 이 투어는 해안 풍광, 현지 식문화, 숨겨진 서쪽 명소에 비중을 둡니다."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "한라산 유네스코와 카페-해변 경험을 하루에 원하는 여행자",
+      "다양성을 쫓는 포토그래퍼 (고산 습지→해안 절벽→차밭→흰 모래 해변)",
+      "제주 체류 2일 이하의 첫 방문자",
+      "균형 잡힌 여유로운 종일 루트를 원하는 커플 및 성인 가족",
+      "프라이빗 유연성보다 고정 일정 구조 선호 여행자"
+    ],
+    "lessIdealFor": [
+      "한 코스에서 자유 시간이 필요한 방문자 주의 (고정 서킷 형식)",
+      "당일 크루즈 승객 — 협재 마무리 시간으로 저녁 식사 없이 항구로 직접 귀환 필요.",
+      "한라산 심층 트레킹을 원하는 여행자 주의 (이 루트는 1100 습지 전망 포인트만 방문)",
+      "모든 코스에서 휠체어 접근이 필요한 방문자.",
+      "예산 솔로 여행자 주의 (소그룹 1인 요금; 커플/가족에 더 적합한 일정 속도)"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "이 코스의 추천 포인트",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "등반 없는 유네스코",
+            "detail": "대부분의 유네스코 한라산 투어는 최소 90분 탐방로 도보가 필요합니다. 이 루트는 1100고지 습지를 사용합니다 — 같은 유네스코 세계유산이지만 가파른 등반 없이."
+          },
+          {
+            "label": "카페 거리 피날레가 박물관 단독 마무리보다 나음",
+            "detail": "표준 남부 서킷은 18:00에 문을 닫는 Osulloc 차 박물관으로 끝납니다. 이 루트는 대신 협재 애월 카페 거리로 마무리합니다."
+          },
+          {
+            "label": "하루에 두 해안",
+            "detail": "대부분의 제주 당일 투어는 한 해안에 머뭅니다. 이 루트는 의도적으로 두 해안을 커버합니다."
+          },
+          {
+            "label": "같은 여행사, 동일한 쇼핑 없음 정책",
+            "detail": "이 투어는 저희 남부 유네스코 투어와 동일한 여행사가 운영합니다. '쇼핑 없음' 조항과 4개 픽업 지점 방식이 적용됩니다."
+          }
+        ]
+      },
+      {
+        "title": "실제 도보 난이도는 어느 정도일까",
+        "icon": "footprints",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "1100 습지는 가장 쉬운 코스",
+            "detail": "약 1km 평탄한 데크 루프입니다. 모든 연령과 체력 수준에 적합합니다. 데크에서 휠체어 접근 가능."
+          },
+          {
+            "label": "송악산 둘레길이 가장 긴 활동적 도보",
+            "detail": "2.6km 해안 둘레길로 고도 변화가 적습니다. 전체 루프는 60~90분이며, 1.5km 반 루프도 주요 전망 포인트를 커버합니다."
+          },
+          {
+            "label": "천제연 계단이 유일하게 힘든 구간",
+            "detail": "상단 전망대는 계단 없이 접근 가능합니다. 2단, 3단 폭포에 도달하려면 약 80계단 하강이 필요합니다."
+          }
+        ]
+      },
+      {
+        "title": "날씨와 계절이 바뀔 때",
+        "icon": "cloud-snow",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "1100 도로는 폭설에 폐쇄됨",
+            "detail": "보통 겨울에 1~3일 정도. 여행사가 산방산 사찰 복합 단지나 협재에서 추가 시간으로 대체합니다."
+          },
+          {
+            "label": "협재 여름 오후가 가장 혼잡",
+            "detail": "7, 8월 16:00~18:00 사이 카페 거리 좌석이 꽉 찹니다. 인기 카페에서 대기가 생길 수 있습니다."
+          },
+          {
+            "label": "천제연 수량은 계절에 따라 다름",
+            "detail": "6~9월 여름 비 이후가 수량이 가장 많습니다. 겨울은 수량이 적지만 사진은 더 맑습니다."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "inclusions",
+      "title": "포함 사항",
+      "preview": "에어컨 미니 코치, 공인 영어/중국어 가이드, 관광 입장료 포함.",
+      "content": [
+        "에어컨 미니코치, 공인 영어/중국어 가이드, 명소 입장료 포함.",
+        "미포함: 점심(약 ₩15,000), 협재 카페 구매 (선택), 팁."
+      ]
+    },
+    {
+      "id": "pickup",
+      "title": "픽업 & 하차",
+      "preview": "순차 픽업 4개소: Ocean Suites (08:30), 제주공항 3번 게이트 (08:45)",
+      "content": [
+        "4곳 순차 픽업: 오션스위츠 제주(08:30), 제주공항 3번 게이트 3층(08:45), 노형 이마트(09:00), 오라CC(09:10).",
+        "예약 시 가장 가까운 지점 선택.",
+        "10분 전까지 도착.",
+        "10분 이상 지각은 노쇼 처리되어 환불 불가.",
+        "전날 WhatsApp으로 확정 안내."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "도보 & 지형",
+      "preview": "쉬움~중간.",
+      "content": [
+        "가벼움~중간 난이도.",
+        "한라산 1100 습지는 평탄한 데크 루프.",
+        "주상절리는 난간 있는 데크.",
+        "송악산 둘레길 2.6km이지만 평탄.",
+        "천지연은 계단 있음.",
+        "협재 해변은 평탄한 모래.",
+        "총 도보 약 5km (대체로 평탄).",
+        "발가락 보호형 신발 필수; 마지막 해변에서는 샌들 가능."
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "취소 정책",
+      "preview": "픽업 24시간 전까지 무료 취소 가능.",
+      "content": [
+        "픽업 24시간 전까지 무료 취소 가능.",
+        "당일 취소 및 노쇼 환불 불가.",
+        "폭설로 한라산 1100 도로 폐쇄 시 현장팀이 습지를 대체 코스로 변경."
+      ]
+    },
+    {
+      "id": "drop",
+      "title": "하차 옵션",
+      "preview": "5개 하차 지점: 신라 면세점, LOTTE City 호텔, 제주 공항, 오션 스위트...",
+      "content": [
+        "5개 하차 지점: 신라 면세점, 롯데시티호텔, 제주공항, 오션스위츠, 동문시장.",
+        "서쪽 해안 마무리로 인해 다른 투어 대비 하차 시간이 약간 늦습니다(약 19:00)."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "계절별 안내 확인"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "계절별 안내 확인"
+    },
+    "_seasonalSummary": "한라산 1100도로는 사계절 해안보다 훨씬 서늘합니다. 서쪽 협재 해안은 제주에서도 비교적 온화한 미기후를 보여주며, 봄과 가을이 가장 여행하기 좋은 시기입니다.",
+    "_seasonalTemperatures": [
+      {
+        "season": "봄 (3~5월)",
+        "range": "8–22°C",
+        "notes": "4월 초 벚꽃 시즌이며 협재 카페거리도 점점 붐비기 시작합니다."
+      },
+      {
+        "season": "여름 (6~8월)",
+        "range": "22–30°C",
+        "notes": "습하고 오후 소나기가 잦습니다. 협재 카페거리는 성수기 분위기입니다."
+      },
+      {
+        "season": "가을 (9~11월)",
+        "range": "10–24°C",
+        "notes": "가장 좋은 계절입니다. 맑고 온화하며 협재는 비교적 덜 붐비고 10월 말부터 단풍이 시작됩니다."
+      },
+      {
+        "season": "겨울 (12~2월)",
+        "range": "3–10°C",
+        "notes": "한라산 1100도로는 폭설 시 통제될 수 있습니다. 서쪽 해안은 비교적 온화합니다."
+      }
+    ]
+  },
+  "seasonalVariations": [
+    {
+      "season": "봄",
+      "description": "한라산 경사면 벚꽃; 협재 해변 활동 시작."
+    },
+    {
+      "season": "여름",
+      "description": "협재 카페 거리 풀 시즌. 1100 습지는 해안 습기를 피하는 시원한 피난처."
+    },
+    {
+      "season": "가을",
+      "description": "최상의 사진 조건; 한라산 단풍, 협재 잔잔한 바다."
+    },
+    {
+      "season": "겨울",
+      "description": "1100 습지 설경(접근 가능 시); 모든 코스에서 관광객 적음."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "공인 현지 여행사",
+      "description": "정식 등록 및 보험 가입 현지 여행사",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "제주 서부·남부 코스에 정통한 공인 현지 여행사."
+    },
+    {
+      "icon": "route",
+      "title": "코스 전문",
+      "description": "이동 부담을 줄인 효율적인 코스",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "쇼핑 경유지·의무 기념품샵 없음. 이 여행사의 정통 루트 철학은 실제 제주 시간 확보에 집중합니다."
+    },
+    {
+      "icon": "users",
+      "title": "그룹 규모 관리",
+      "description": "코스에 상황에 맞춘 인원 규모",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "소그룹 형태로 애월 해안 카페 구간을 여유롭게 둘러볼 수 있습니다."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "즉시",
+      "title": "즉시 확인",
+      "detail": "행정 요약 포함 예약 확인서 발송",
+      "description": "제주시 호텔 픽업 정보 포함 즉시 예약 확인서 발송."
+    },
+    {
+      "timing": "출발 12시간 전",
+      "title": "12시간 전 알림",
+      "detail": "날씨 업데이트 및 경로 변경 안내",
+      "description": "1100도로 계절별 상태(여름 안개, 겨울 결빙) 사전 안내."
+    },
+    {
+      "timing": "전날 저녁",
+      "title": "최종 픽업 정보",
+      "detail": "정확한 픽업 시간 및 가이드 연락처",
+      "description": "출발 전날 저녁 최종 픽업 시각 확인."
+    },
+    {
+      "timing": "투어 당일 아침",
+      "title": "당일 코스 안내",
+      "detail": "실시간 상황 기반 당일 브리핑",
+      "description": "날씨 업데이트 아침 메시지로 전달."
+    },
+    {
+      "timing": "투어 중",
+      "title": "경유지별 심층 안내",
+      "detail": "각 코스 실시간 현장 안내",
+      "description": "한라산 지질, 주상절리 형성 과정, 협재 카페 문화 배경 등 가이드 심층 설명."
+    },
+    {
+      "timing": "투어 종료 후",
+      "title": "투어 후 지원",
+      "detail": "피드백 및 추가 여행 추천",
+      "description": "투어 후 피드백 요청 전송."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q1",
+      "question": "제주 남부 유네스코 투어와 어떻게 다른가요?",
+      "answer": "동일 여행사 투어입니다. 남부 유네스코 투어는 어승생악 트레일·카멜리아힐·천제연·주상절리·Osulloc이 중심입니다. 이 서부·남부 투어는 1100고지 습지·송악산·협재해변 카페거리가 추가된 더 넓은 서부 범위를 커버합니다."
+    },
+    {
+      "id": "q2",
+      "question": "1100도로가 통제되면 어떻게 되나요?",
+      "answer": "폭설로 1100도로가 통제되는 경우(보통 연간 1~3일), 여행사가 대체 경유지로 변경합니다. 변경 시 아침 메시지로 안내해 드립니다."
+    },
+    {
+      "id": "q3",
+      "question": "협재에서 더 오래 머물 수 없나요?",
+      "answer": "이 투어는 정해진 순환 코스로 협재 체류 시간은 약 45분입니다. 협재에서 자유롭게 시간을 보내고 싶으신 분께는 프라이빗 전세 차량 투어를 권장합니다."
+    },
+    {
+      "id": "q4",
+      "question": "점심 식사가 포함되어 있나요?",
+      "answer": "포함되지 않습니다. 점심 식사비는 별도(약 ₩15,000)이며, 가이드가 현지 식당을 안내해 드립니다."
+    },
+    {
+      "id": "q5",
+      "question": "협재 카페는 언제 문을 여나요?",
+      "answer": "협재 카페거리 대부분의 카페는 연중 10:00~22:00 영업합니다. 투어 방문 시간(17:30~18:15)은 보통 일몰 타임과 겹쳐 사진 촬영에 좋습니다."
+    },
+    {
+      "id": "q6",
+      "question": "공항 픽업 시 짐을 가져올 수 있나요?",
+      "answer": "가능합니다. 사전에 짐 용량을 알려주시면 미니버스 트렁크 공간을 확보해 드립니다."
+    },
+    {
+      "id": "first-time",
+      "question": "제주를 처음 방문하는 분에게 적합한가요?",
+      "answer": "네, 제주 서부·남부의 핵심 명소를 하루에 균형 있게 방문할 수 있는 투어입니다."
+    },
+    {
+      "id": "walking",
+      "question": "도보 이동이 힘들지 않나요?",
+      "answer": "가볍~보통 수준입니다. 1100 습지 데크길은 평탄(약 1km 루프), 주상절리는 난간이 있는 데크. 송악산 둘레길은 2.6km 평탄. 천제연 계단이 가장 체력을 요구합니다."
+    },
+    {
+      "id": "family",
+      "question": "가족 여행에 적합한가요?",
+      "answer": "9시간 이동이 가능한 어린이가 동반하는 가족에게 적합합니다. 천제연 계단이 어린아이에게 다소 힘들 수 있습니다."
+    },
+    {
+      "id": "seniors",
+      "question": "어르신도 참여할 수 있나요?",
+      "answer": "활동적인 어르신에게 적합합니다. 1100 습지 데크는 평탄하고, 송악산 둘레길도 평탄합니다. 천제연 80여 개 계단은 속도를 조절해 이동합니다."
+    },
+    {
+      "id": "children",
+      "question": "권장 최소 연령은 몇 세인가요?",
+      "answer": "만 6세 이상, 9시간 이동 및 2.6km 송악산 둘레길과 천제연 계단이 가능한 어린이에게 적합합니다."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "인",
+      "priceSource": "direct_rate",
+      "priceNote": "소그룹 가격은 아직 상품 정보에서 확정되지 않았습니다. 자매 상품인 남부 유네스코 코스는 1인 43달러 기준입니다. 가격 확정 후 AtoC Korea 직접 판매가는 10% 할인이 적용됩니다.",
+      "discountPercent": 10
+    }
+  },
+  "pickup_dropoff": {
+    "type": "meeting_point",
+    "meeting_points": [
+      {
+        "name": "오션스위츠 제주호텔",
+        "time": "08:30"
+      },
+      {
+        "name": "제주국제공항 3층 3번 게이트(국내선 출발층)",
+        "time": "08:45"
+      },
+      {
+        "name": "롯데시티호텔 제주",
+        "time": "08:55"
+      },
+      {
+        "name": "신라면세점 제주점",
+        "time": "09:05"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "신라면세점 제주점",
+        "approx_time": "≈ 19:00"
+      },
+      {
+        "name": "롯데시티호텔 제주",
+        "approx_time": "≈ 19:00"
+      },
+      {
+        "name": "제주국제공항",
+        "approx_time": "≈ 19:00"
+      },
+      {
+        "name": "오션스위츠 제주호텔",
+        "approx_time": "≈ 19:05"
+      },
+      {
+        "name": "동문전통시장(하차 전용)",
+        "approx_time": "≈ 19:15"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "다른 제주 소그룹 상품과 같은 4개 픽업 지점을 기준으로 운영합니다. 마지막 코스가 서쪽 협재 해안이기 때문에 남부 유네스코 코스보다 하차 시간이 조금 늦어질 수 있습니다(약 19:00 전후)."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "jeju-west-south-full-day-authentic-tour",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "jeju",
+    "region_type": "jeju_west_south",
+    "vehicle_type": "minicoach",
+    "duration_hours": 9.0,
+    "region_tags": [
+      "jeju_west",
+      "jeju_south"
+    ],
+    "theme_tags": [
+      "volcano",
+      "tea_culture",
+      "coast",
+      "mountain",
+      "iconic_landmarks"
+    ],
+    "poi_tags": [
+      "hallasan_1100_wetland",
+      "osulloc_tea_museum",
+      "jusangjeolli_cliff",
+      "songaksan",
+      "cheonjeyeon_falls",
+      "hyeopjae_beach"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.65,
+    "scenic_level": 0.95,
+    "photo_level": 0.95,
+    "culture_level": 0.55,
+    "relax_level": 0.8,
+    "first_time_fit": 0.95,
+    "family_fit": 0.6,
+    "senior_fit": 0.55,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 0.9,
+    "active_traveler_fit": 0.6,
+    "adult_family_fit": 0.8,
+    "family_with_teens_fit": 1.0,
+    "young_kids_fit": 0.85,
+    "senior_active_fit": 0.6,
+    "senior_general_fit": 0.6,
+    "mobility_friendly_fit": 0.55,
+    "stroller_fit": 0.55,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.5,
+    "rain_fit": 0.4,
+    "value_for_money_fit": 0.95,
+    "iconic_landmark_fit": 0.85,
+    "cafe_fit": 0.8,
+    "food_fit": 0.6,
+    "nature_fit": 1.0,
+    "beach_fit": 0.85,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.2,
+    "no_shopping_fit": 1.0,
+    "local_culture_fit": 0.6,
+    "storytelling_fit": 0.8,
+    "unesco_fit": 1.0,
+    "intangible_heritage_fit": 0.45,
+    "indoor_ratio": 0.15,
+    "weather_sensitivity": 0.75,
+    "comfort_level": 0.8,
+    "budget_fit": 0.8,
+    "premium_fit": 0.4,
+    "small_group_fit": 1.0,
+    "private_fit": 0.2,
+    "bus_fit": 1.0,
+    "price_band": "mid",
+    "pickup_base": "jeju_city",
+    "return_time_band": "17:00-18:30",
+    "duration_band": "10h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "tight_same_day_departure"
+      ],
+      "notIdealFor": [
+        "mobility_aid_required"
+      ]
+    },
+    "walking_notes": [
+      "Moderate walking with some uneven surfaces.",
+      "No long climbs or stairs.",
+      "Comfortable shoes recommended."
+    ],
+    "keywords": [
+      "jeju west south full day authentic tour",
+      "jeju day tour",
+      "jeju small group"
+    ],
+    "synonym_hints": [
+      "jeju west south full day authentic tour",
+      "jeju sightseeing"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "jeju",
+    "vehicle_type_legacy": "mini_coach",
+    "anchor_poi_keys": [
+      "hallasan_1100_wetland",
+      "jusangjeolli_cliff",
+      "songaksan",
+      "cheonjeyeon_falls",
+      "osulloc_tea_museum",
+      "hyeopjae_beach"
+    ],
+    "profile_format": "small_group_fixed_itinerary",
+    "private_tour_fit": 0.05,
+    "fixed_itinerary_fit": 1.0,
+    "customizable_route_fit": 0.05,
+    "flexibility_fit": 0.3,
+    "first_time_jeju_fit": 0.85,
+    "south_jeju_fit": 0.95,
+    "southwest_jeju_fit": 1.0,
+    "west_jeju_fit": 1.0,
+    "central_jeju_fit": 0.9,
+    "north_jeju_fit": 0.4,
+    "east_jeju_fit": 0.05,
+    "west_south_authentic_fit": 1.0,
+    "alpine_to_coastal_fit": 1.0,
+    "world_natural_heritage_fit": 1.0,
+    "biosphere_reserve_fit": 1.0,
+    "global_geopark_fit": 1.0,
+    "ramsar_wetland_fit": 1.0,
+    "quadruple_designation_fit": 1.0,
+    "natural_monument_anchor_count": 2,
+    "alpine_wetland_fit": 1.0,
+    "1100m_alpine_fit": 1.0,
+    "volcano_geology_fit": 1.0,
+    "double_crater_fit": 1.0,
+    "parasitic_cone_fit": 1.0,
+    "columnar_jointing_fit": 1.0,
+    "ninety_nine_peaks_fit": 1.0,
+    "shield_volcano_fit": 1.0,
+    "endemic_species_fit": 1.0,
+    "wwii_history_fit": 1.0,
+    "japanese_colonial_history_fit": 0.95,
+    "kamikaze_shelter_history_fit": 1.0,
+    "top_10_beach_fit": 1.0,
+    "twin_beach_fit": 1.0,
+    "silvery_white_sand_fit": 1.0,
+    "emerald_water_fit": 1.0,
+    "biyangdo_panorama_fit": 1.0,
+    "carbon_free_island_fit": 1.0,
+    "west_coast_sunset_fit": 1.0,
+    "sunset_anchor_fit": 1.0,
+    "tidal_pool_fit": 0.85,
+    "olle_trail_fit": 1.0,
+    "tea_culture_fit": 1.0,
+    "tea_lover_fit": 1.0,
+    "amorepacific_brand_fit": 1.0,
+    "korean_folklore_fit": 0.85,
+    "mythology_fit": 0.85,
+    "walking_level_fit": 0.75,
+    "stair_climbing_fit": 0.5,
+    "trail_walking_fit": 0.95,
+    "elevation_gain_total_m": 100,
+    "moderate_mobility_fit": 1.0,
+    "low_intensity_fit": 0.85,
+    "senior_friendly_fit": 0.9,
+    "stroller_friendly_fit": 0.75,
+    "wheelchair_accessible_anchor_fit": 0.7,
+    "mobility_limited_friendly_fit": 0.85,
+    "boardwalk_anchor_count": 3,
+    "first_time_korea_fit": 0.85,
+    "small_family_fit": 0.95,
+    "young_kids_friendly_fit": 0.9,
+    "senior_couple_fit": 0.95,
+    "honeymoon_fit": 0.95,
+    "history_lover_fit": 0.95,
+    "geology_enthusiast_fit": 1.0,
+    "ramsar_enthusiast_fit": 1.0,
+    "wildlife_enthusiast_fit": 0.95,
+    "k_drama_fan_fit": 0.55,
+    "photographer_fit": 1.0,
+    "instagrammable_fit": 1.0,
+    "sunset_photographer_fit": 1.0,
+    "alpine_traveler_fit": 1.0,
+    "group_size_min": 2,
+    "group_size_max": 14,
+    "small_group_van_fit": 1.0,
+    "calm_pace_fit": 0.9,
+    "active_pace_fit": 0.7,
+    "checkbox_sightseeing_fit": 0.6,
+    "deep_dwell_fit": 0.85,
+    "balanced_pace_fit": 1.0,
+    "varied_terrain_fit": 1.0,
+    "ten_hour_full_day_fit": 1.0,
+    "language_english_fit": 1.0,
+    "language_chinese_fit": 0.9,
+    "language_japanese_fit": 0.65,
+    "english_guide_fit": 1.0,
+    "ramsar_guide_fit": 1.0,
+    "spring_fit": 1.0,
+    "summer_fit": 1.0,
+    "autumn_fit": 1.0,
+    "winter_fit": 0.7,
+    "all_year_fit": 0.9,
+    "off_season_fit": 0.75,
+    "monsoon_fit": 0.65,
+    "best_season_summer_fit": 0.95,
+    "winter_route_1100_caveat": true,
+    "autumn_foliage_anchor_fit": 1.0,
+    "indoor_anchor_fit": 0.3,
+    "wind_sensitivity": 0.85,
+    "indoor_fallback_anchor_count": 1,
+    "early_start_fit": 0.85,
+    "late_finish_fit": 0.95,
+    "full_day_fit": 1.0,
+    "half_day_fit": 0.05,
+    "value_priced_fit": 1.0,
+    "budget_traveler_fit": 1.0,
+    "free_admission_anchor_count": 4,
+    "total_admission_krw_per_adult": 4500,
+    "off_beaten_path_fit": 0.7,
+    "crowd_avoidance_fit": 0.7,
+    "tourist_circuit_fit": 0.85,
+    "instagram_anchor_count": 6,
+    "minicoach_fit": 1.0,
+    "max_pax_per_vehicle": 14,
+    "jeju_city_pickup_fit": 1.0,
+    "airport_pickup_fit": 1.0,
+    "airport_drop_compatible_fit": 0.85,
+    "five_pickup_drop_points_fit": 1.0,
+    "cruise_shore_excursion_fit": 0.5,
+    "cruise_passenger_fit": 0.65,
+    "korean_food_fit": 0.95,
+    "jeju_local_cuisine_fit": 1.0,
+    "galchi_fit": 1.0,
+    "gosari_yukgaejang_fit": 1.0,
+    "mulhoe_fit": 0.85,
+    "black_pig_heritage_fit": 0.85,
+    "seafood_fit": 0.95,
+    "vegetarian_friendly_fit": 0.75,
+    "halal_friendly_fit": 0.65,
+    "tea_tasting_fit": 1.0,
+    "mountain_fern_cuisine_fit": 1.0,
+    "photo_anchor_count": 6,
+    "drone_friendly_fit": 0.6,
+    "sunset_photo_anchor_fit": 1.0,
+    "stair_anchor_count": 1,
+    "barrier_free_anchor_fit": 0.85,
+    "accessibility_focus_fit": 0.95,
+    "is_anchor_for_west_south_authentic": true,
+    "catalog_position": "west_south_jeju_authentic_loop",
+    "competing_tours_count": 4,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "jeju",
+      "west_south_jeju",
+      "alpine_wetland",
+      "ramsar_site",
+      "double_crater_volcano",
+      "west_coast_sunset",
+      "tea_culture"
+    ],
+    "secondary_themes": [
+      "hallasan_1100_wetland",
+      "songaksan_99_peaks",
+      "biyangdo_island",
+      "wwii_coastal_tunnels",
+      "twin_beach",
+      "olle_trail_10",
+      "jeju_endemic_species"
+    ],
+    "best_for": [
+      "first_time_jeju (with alpine + sunset preference)",
+      "ramsar_enthusiasts",
+      "geology_enthusiasts",
+      "alpine_travelers",
+      "sunset_photographers",
+      "couples_+_honeymooners",
+      "senior_couples (low-stair tour)",
+      "guests_with_evening_flights (with tighter timing disclosure)"
+    ],
+    "not_recommended_for": [
+      "thrill_seekers",
+      "private_tour_seekers",
+      "wheelchair_users_unable_to_navigate_boardwalks",
+      "guests_demanding_east_coast_coverage",
+      "guests_without_windbreaker"
+    ],
+    "anchor_pois": [
+      "Hallasan 1100 Altitude Wetland",
+      "Daepo Jusangjeolli Cliff",
+      "Songaksan Mountain",
+      "Cheonjeyeon Falls",
+      "Osulloc Tea Museum",
+      "Hyeopjae Beach"
+    ],
+    "competing_products": [
+      "jeju-southern-top-unesco-spots-tour",
+      "southwest-hallasan-osulloc-aewol",
+      "jeju-grand-highlights-loop"
+    ],
+    "anchor_poi_keys": [
+      "hallasan_1100_wetland",
+      "daepo_jusangjeolli_cliff",
+      "songaksan",
+      "cheonjeyeon_falls",
+      "osulloc_tea_museum",
+      "hyeopjae_beach"
+    ],
+    "audit_summary": "West-south Jeju authentic loop covering 4 distinct international/national designation layers in one day: Ramsar Wetland of International Importance (1100 Altitude Wetland, Site No. 1893), within Hallasan UNESCO World Heritage 2007 + Biosphere 2002 + National Park 1970 (1100 Wetland triple-overlap), Natural Monument No. 443 (Daepo Jusangjeolli columnar-jointing), and Natural Monument No. 378 (Cheonjeyeon Falls). Plus Songaksan's 104 m double-crater volcanic cone with WWII colonial-history coastal tunnels and Hyeopjae Beach's twin-beach + Biyangdo Island west-coast sunset finale. Alpine + double-crater + west-coast counterpart to the south-UNESCO sister tour, which emphasizes Hallasan Eoseungsaengak + Camellia Hill botanical layer + heritage tea finale.",
+    "score_rationale": {
+      "high_scores": {
+        "ramsar_wetland_fit=1.0": "1100 Altitude Wetland is the catalog's only Ramsar site anchor — Site No. 1893 designated 2009",
+        "quadruple_designation_fit=1.0": "1100 Wetland holds 4 overlapping international/national designations — rare globally",
+        "double_crater_fit=1.0": "Songaksan is the catalog's only double-crater volcanic cone stop with full geological + WWII layering",
+        "value_priced_fit=1.0": "Total ₩4,500 per adult for 6 substantive UNESCO/Ramsar/Natural Monument/sunset anchors = catalog-leading value",
+        "varied_terrain_fit=1.0": "Alpine wetland + columnar cliffs + double-crater volcano + tea fields + waterfall + west-coast beach in one day = catalog-leading variety",
+        "alpine_to_coastal_fit=1.0": "Only Jeju route covering 1,100 m alpine to sea-level sunset in a single day"
+      },
+      "low_scores": {
+        "private_tour_fit=0.05": "Format is small-group fixed itinerary only",
+        "east_jeju_fit=0.05": "Loop deliberately west-south anchored",
+        "rain_fit=0.4": "Most stops outdoor — Osulloc + 1100 Rest Area only fallbacks; weather-sensitive tour",
+        "winter_fit=0.7": "Route 1100 ice closure risk forces 1100 Wetland substitution ~5–10 days/year"
+      }
+    },
+    "differentiation_vs_south_unesco_sister": "Same Jusangjeolli + Cheonjeyeon + Osulloc anchors, but **alpine Ramsar wetland + double-crater volcano + west-coast beach sunset emphasis** (1100 Wetland + Songaksan + Hyeopjae) vs. sister's **lower-elevation Hallasan trail + botanical + UNESCO arc emphasis** (Eoseungsaengak + Camellia Hill). This tour = 4 international/national designations + Songaksan double-crater + Hyeopjae sunset = catalog's most-varied terrain progression (alpine → coastal). Sister = 5 UNESCO/Natural Monument anchors + year-round bloom calendar + tea finale = catalog's densest UNESCO concentration. Pair complementarily for guests with 2 days on Jeju.",
+    "seasonal_window": {
+      "best_months": [
+        "May",
+        "June",
+        "September",
+        "October (1100 foliage)",
+        "November"
+      ],
+      "good_months": [
+        "April",
+        "July (Hyeopjae swim peak)",
+        "August",
+        "March"
+      ],
+      "caveat_months": [
+        "December",
+        "January (Route 1100 ice)",
+        "February"
+      ],
+      "peak_crowd_months": [
+        "July",
+        "August (Hyeopjae)"
+      ]
+    },
+    "kb_anchor_version": "1.20"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "1100고지 습지에서 주상절리, 차밭과 해안 카페까지 —",
+        "headlineLine2": "제주 서부·남부를 하루에 깊이 있게 둘러보는 코스",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1600",
+          "imagePosition": "center 35%",
+          "tagline": "화산 지형과 극적인 해안선, 트렌디한 해안 카페가 이어지는 제주 서부·남부 루프 — 진짜 제주를 하루에 만납니다.",
+          "pills": [
+            "소그룹",
+            "제주"
+          ],
+          "meta": {
+            "duration": "≈ 9시간 (08:30 첫 픽업, ≈ 18:00 하차)",
+            "region": "서남부 제주",
+            "stops": "9개 코스",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "투어 개요"
+          },
+          {
+            "id": "itinerary",
+            "label": "상세 일정"
+          },
+          {
+            "id": "details",
+            "label": "유의사항"
+          },
+          {
+            "id": "faq",
+            "label": "자주 묻는 질문"
+          },
+          {
+            "id": "reviews",
+            "label": "여행자 후기"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "소요 시간",
+            "value": "약 9시간 (08:30 첫 픽업, ≈18:00 하차)"
+          },
+          {
+            "icon": "users",
+            "label": "그룹 규모",
+            "value": "소그룹, 미니코치, 영어/중국어 가이드 동행"
+          },
+          {
+            "icon": "map-pin",
+            "label": "픽업 정보",
+            "value": "오션 스위트 08:30 / 제주공항 3번 게이트 (3층) 08:45 / 롯데시티호텔 09:00 / 시청 09:05."
+          },
+          {
+            "icon": "footprints",
+            "label": "도보 난이도",
+            "value": "쉬움~중간 — 습지 데크길, 절벽 데크길, 해변 산책"
+          },
+          {
+            "icon": "ticket",
+            "label": "포함 사항",
+            "value": "차량, 공인 가이드, 관광지 입장료 포함. 불포함: 점심(약 ₩15,000), 팁"
+          },
+          {
+            "icon": "ban",
+            "label": "쇼핑 일정",
+            "value": "여행사 명시적 쇼핑 거부 정책"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+            "alt": "투어 중 방문하는 한라산 1100고지 습지 — 유네스코 생물권보전지역 데크길 풍경",
+            "caption": "한라산 1100고지 습지 — 유네스코 생물권보전지역 데크길",
+            "location": "제주 중산간 한라산 1100고지 습지(해발 1,100m)",
+            "atmosphere": "한라산 1100고지 습지는 이 코스의 대표 방문지로, 사진 촬영과 고지대 자연 분위기를 함께 즐기기 좋습니다."
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "alt": "투어 중 방문하는 주상절리 — 유네스코 지질공원 육각형 주상절리의 풍경",
+            "caption": "주상절리 — 유네스코 지질공원 육각형 주상절리",
+            "location": "제주 남부 중문 해안 주상절리",
+            "atmosphere": "파도에 깎인 현무암 절벽으로, 제주의 대표적인 해안 포토 명소 중 하나입니다."
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "alt": "투어 중 방문하는 송악산 둘레길 — 남부 해안 파노라마 루프 풍경",
+            "caption": "송악산 둘레길 — 남부 해안 파노라마 루프",
+            "location": "제주 남서쪽 끝 송악산",
+            "atmosphere": "송악산 둘레길은 이 코스의 대표 방문지로, 남부 해안 파노라마와 사진 촬영을 함께 즐기기 좋습니다."
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "alt": "투어 중 방문하는 O'sulloc의 풍경",
+            "caption": "O'sulloc",
+            "location": "오설록, 제주 서부 중산간",
+            "atmosphere": "O'sulloc는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "alt": "투어 중 방문하는 협재해변과 서부 해안 카페 거리의 풍경",
+            "caption": "협재해변과 서부 해안 카페 거리",
+            "location": "제주시 한림읍 협재해변, 제주 서부",
+            "atmosphere": "협재해변과 서부 해안 카페 거리는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "09:00",
+            "duration": "30분",
+            "name": "픽업 (제주시 4개 지점)",
+            "category": "픽업 — 제주 시내 호텔/허브 순서",
+            "description": "아침 이동 최소화를 위해 제주시 4개 주요 지점에서 픽업: 제주공항 1번 게이트(국내선 1층), 노형오거리 인근, 제주시청 인근, 중앙로터리 인근.",
+            "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+            "highlights": [
+              "**4개 픽업 포인트** — 공항, 시청, 하귀, 동문",
+              "서→동 순서로 오전 코치 이동 최소화",
+              "**소그룹 미니코치 (최대 14인)** + 영어 가이드",
+              "첫 코스에서 이중 언어 일정 카드 + 1100번 도로 폐쇄 브리핑",
+              "**겨울 비상 대책**: 1100 습지 → 신비의 도로 / 안덕 계곡 대안",
+              "제주 시내 → 1100 습지 오전 총 이동 시간: 1100번 도로 경유 약 50분"
+            ],
+            "timeUsed": [
+              "하귀 픽업 ~09:00 — 5분",
+              "공항 픽업 ~09:10 — 5분",
+              "시청 픽업 ~09:20 — 5분",
+              "동문 픽업 ~09:30 — 5분",
+              "1100번 도로 남쪽으로 습지 방면 — 약 50분"
+            ],
+            "whyOnRoute": "4개 픽업 포인트가 제주 시내 호텔 구역 커버."
+          },
+          {
+            "number": 2,
+            "time": "≈ 10:20",
+            "duration": "45분",
+            "name": "한라산 1100고지 습지 (람사르·유네스코)",
+            "category": "고산 습지 — 람사르 등록지 + 한라산 유네스코 세계자연유산 내",
+            "description": "한라산 1100고지 습지는 해발 정확히 1,100m에 위치한 고산 습지로, 람사르 협약 등록 습지이자 유네스코 생물권보전지역의 일부입니다. 산철쭉, 습지 식물군, 고산 풍경이 계절마다 다른 얼굴을 보입니다. 평탄한 데크길(약 1km 루프)로 체력 부담이 적습니다. 여름엔 안개 낀 신비로운 분위기, 가을엔 억새, 겨울엔 설경이 인상적입니다. 방문 시간: 약 45분.",
+            "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
+            "highlights": [
+              "**람사르 습지 1893호** (2009년 10월 12일 지정) — 국제 중요 습지",
+              "**해발 1,100m** — 한국 **최고 국도** (1100번 도로) 변",
+              "**4중 국제 지정** — 람사르 + 유네스코 세계유산 + 생물권보전지역 + 세계지질공원",
+              "**16개 이상의 불연속 습지** — 담수 습지 + 연못 + 이탄 습지",
+              "**멸종 위기 조류 3종 + 식물 1종**; 제주 고유종 다수",
+              "**연간 방문객 90만 명 (2008)** — 한라산국립공원관리소 관리",
+              "**1km 목재 데크 루프** + 전망대 + 해설 안내판",
+              "**가을 단풍 + 겨울 설경** = 대표 포토 시즌",
+              "**무료 입장**; 인근 1100 휴게소 (실내 화장실 + 카페)"
+            ],
+            "timeUsed": [
+              "코치 도착 + 1100 휴게소 주차 — 약 5분",
+              "데크 루프 + 전망대 — 약 25분",
+              "해설 표지판 + 자연사 전시 — 약 10분",
+              "완충 / 카페 화장실 — 약 5분"
+            ],
+            "whyOnRoute": "**서남쪽 정통 루트의 알파인 유네스코 오프닝 핵심 명소**.",
+            "_poi_meta": {
+              "poi_key": "hallasan_1100_wetland",
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Ramsar Sites Information Service — 1100 Altitude Wetland (Site No. 1893)",
+                "UNESCO Man and the Biosphere Programme — Jeju Island Biosphere Reserve",
+                "Korea National Park Service — Hallasan National Park 1100 Wetland records",
+                "Mt Halla Visitor Centre — visitor management documentation",
+                "Jeju Special Self-Governing Province — Wetland Protected Area designation 2009"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:35",
+            "duration": "45분",
+            "name": "주상절리 (유네스코 지질공원)",
+            "category": "화산 해안선 — 육각형 주상절리 용암",
+            "description": "대포 주상절리(중문대포해안 주상절리대)는 중문 해안을 따라 약 1km 이어지는 6각형 주상절리 현무암 절벽입니다. 화산 용암이 바다와 만나 급속 냉각되어 형성된 지형으로, 유네스코 세계지질공원 핵심 명소입니다. 입장료 포함. 방문 시간: 약 40분.",
+            "image": "https://images.unsplash.com/photo-1565967511849-76a60a516170",
+            "highlights": [
+              "**천연기념물 제443호** — **2005년 1월 6일** 지정, 제주 해안 천연기념물 중 가장 최근 지정",
+              "기둥 높이 **30~40m**, **5~7각형 다각형**(주로 육각형)이 **1km**를 따라 밀집",
+              "형성 과정: **한라산 측면 용암이 약 25~14만 년 전 바닷물에 냉각**되면서 수축·균열",
+              "**동아시아 최고의 주상절리 명소** — 자이언츠 코즈웨이, 데빌스 포스트파일과 어깨를 나란히",
+              "**만조 시 최대 20m 파도 분수** — 파도 분수 촬영 포인트",
+              "**0.8km 데크 루프**, 약 15분 도보 — 장벽 없는 데크, 휠체어·유모차 접근 가능",
+              "**유네스코 세계지질공원(2010) 제주 글로벌 지오파크** — 섬 전체 13개 지질 명소 중 하나",
+              "입장료: **성인 ₩2,000 / 청소년 ₩1,000 / 7세 이하·65세 이상 무료**",
+              "맑은 날 북쪽으로 한라산 정상 조망 가능"
+            ],
+            "timeUsed": [
+              "주차 + 매표 + 입장 — 약 5분",
+              "첫 번째 전망대까지 이동 — 약 5분",
+              "절벽 기둥 관람 + 사진 — 약 15분",
+              "데크 루프 이동 — 약 10분",
+              "코치 귀환 — 약 10분"
+            ],
+            "whyOnRoute": "**서남쪽 정통 루트의 오전 중반 유네스코 지질공원 핵심 명소**.",
+            "_poi_meta": {
+              "poi_key": "daepo_jusangjeolli_cliff",
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Cultural Heritage Administration — Natural Monument No. 443 designation (2005-01-06)",
+                "Jeju UNESCO Global Geopark — Daepo Jusangjeolli geosite documentation",
+                "Korean Society of Petroleum Engineers — columnar-jointing geology records",
+                "VisitJeju — Daepo Jusangjeolli official listing",
+                "Korea Geological Survey — Jeju volcanic flow chronology"
+              ]
+            }
+          },
+          {
+            "number": 4,
+            "time": "≈ 12:30",
+            "duration": "60분",
+            "name": "점심 — 대정·안덕 현지 식당",
+            "category": "점심 휴식 — 제주 서남부 현지 음식",
+            "description": "주상절리와 송악산 사이 약 60분 점심 시간입니다. 대정·안덕 지역 식당에서 갈치조림, 고등어구이, 흑돼지 등 제주 남부 향토 음식을 둘러볼 수 있습니다. 점심 식사비는 별도(약 ₩15,000).",
+            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+            "highlights": [
+              "**제주 서남부 해산물 + 산악 음식 코리도** — 대정/안덕",
+              "**갈치조림** — 대정항 주요 어획",
+              "**고사리 육개장** — 제주 고사리 + 쇠고기 매운탕, 서남부 특산",
+              "**흑돼지** 연중 — 문화재 자료 제5호 (2015년)",
+              "**채식+할랄 친화** 옵션 요청 시 제공",
+              "**송악산까지 코치 10분** — 점심 후 최소 이동"
+            ],
+            "timeUsed": [
+              "코치로 점심 장소 이동 — 약 5분",
+              "주문 + 식사 — 약 45분",
+              "코치로 송악산 탐방로 입구 이동 — 약 10분"
+            ],
+            "whyOnRoute": "대정읍 위치 = 송악산까지 10분 이동."
+          },
+          {
+            "number": 5,
+            "time": "≈ 13:40",
+            "duration": "75분",
+            "name": "송악산 (파노라마 전망대)",
+            "category": "이중 분화구 화산 — 99봉 + 올레길 10코스 + 2차 세계대전 역사",
+            "description": "송악산(해발 104m)은 대정읍 제주 서남쪽 끝에 솟은 이중 분화구 기생화산입니다. 분화구 둘레길(약 2.6km, 평탄)에서 마라도·가파도가 보이는 남해 파노라마와 한라산 전경을 둘러볼 수 있습니다. 일제강점기 요새 동굴도 남아 있습니다. 무료 입장. 방문 시간: 약 50분.",
+            "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa",
+            "highlights": [
+              "**104m 이중 분화구 화산** — 외부 500m × 1.7km, 내부 400m × 600m",
+              "**'구십구봉'** 민간 전승 — 기생 화산 밀집 지대",
+              "**2.8km 해안 루프 트레일** (약 75분) — 목재 데크 + 완만한 계단",
+              "일제 WWII 해안포 진지 동굴 (1944~1945년 건설)",
+              "**파노라마**: 마라도, 가파도, 형제 섬, 산방산, 한라산",
+              "**남쪽 절벽 일본 제국군 2차 대전 동굴** — 가미카제 보트 은신처",
+              "**자유 방목 말 + 조랑말** 경사면 방목 — 제주 전통 목장",
+              "**정상 탐방로 환경 순환 관리로 간헐적 폐쇄**; 해안 루프 연중 개방",
+              "**무료 입장**; 소규모 주차장; 강한 해풍 (연중 방풍 재킷 권장)"
+            ],
+            "timeUsed": [
+              "주차 + 등산로 안내 — 약 5분",
+              "해안 절벽 구간 — 약 25분",
+              "WWII 동굴 외관 + 안내판 — 약 10분",
+              "내부 분화구 전망 — 약 20분",
+              "집결 — 약 5분",
+              "완충 — 약 5분"
+            ],
+            "whyOnRoute": "**하루의 지질학+역사 클라이맥스** — 이중 분화구 화산 감상과 2차 대전 역사를 결합한 유일한 코스.",
+            "_poi_meta": {
+              "poi_key": "songaksan",
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Wikipedia — Songaksan (Jeju) volcanic structure documentation",
+                "Jeju Olle Foundation — Trail Course 10 official map",
+                "Jeju 4·3 Peace Foundation — Imperial Japanese Army WWII tunnel records",
+                "VisitJeju — Songaksan Mountain official listing",
+                "Korea Geological Survey — double-crater parasitic-cone geology"
+              ]
+            }
+          },
+          {
+            "number": 6,
+            "time": "≈ 15:15",
+            "duration": "45분",
+            "name": "천제연폭포 (신들의 연못)",
+            "category": "삼단 폭포 — 천연기념물 제378호 (1993년)",
+            "description": "천제연('하늘 임금의 연못'이라는 뜻)은 중문관광단지 내 3단 폭포입니다. 1단 폭포는 물이 마르면 잠기는 천정굴에서 흘러내립니다. 무지개 조각이 있는 선임교(무지개다리)가 포토 명소입니다. 입장료 포함. 방문 시간: 약 50분.",
+            "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
+            "highlights": [
+              "**천연기념물 제378호 (1993년 지정)** — 삼단 폭포 + 희귀 식물 서식지",
+              "이름 **'천제연' = '하늘 황제의 연못'** — 조선 도교 전설",
+              "**선임교 (120m × 78m)** 부조 패널에 새겨진 **칠선녀 전설**",
+              "**1단(22m / 21m 연못)** — 폭우 후에만 흐름; **2단(30m)** 연중 흐름",
+              "**제주 고유종 고사리(만삼)** 서식지 — IUCN 심각 위기종",
+              "**0.8km 루프 / 약 30분** — 계단 포함 중간 난이도, 신발 중요",
+              "입장료: **성인 ₩2,500 / 청소년 ₩1,350 / 7세 이하·65세 이상 무료**",
+              "**제주 칠선녀 축제** 격년 개최 — 다리 의식 포함",
+              "**안개 마이크로 기후** — 자연 냉각, 여름 오후 인기 피서지"
+            ],
+            "timeUsed": [
+              "입장 + 매표 — 약 5분",
+              "1단 전망대까지 하강 — 약 10분",
+              "1단 + 2단 촬영 — 약 20분",
+              "선임교 + 칠선녀 부조 패널 — 약 15분",
+              "숲길 루프 + 코치로 귀환 — 약 25분"
+            ],
+            "whyOnRoute": "**오후 중반 천연기념물 유산 핵심 명소**.",
+            "_poi_meta": {
+              "poi_key": "cheonjeyeon_falls",
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Cultural Heritage Administration — Natural Monument No. 378 designation",
+                "VisitJeju — Cheonjeyeon Falls official listing",
+                "Jeju Special Self-Governing Province — Seonimgyo Bridge construction records",
+                "Korea Plant Society — Mankyua chejuense IUCN Critically Endangered listing",
+                "Jeju Folklore Society — Daoist seven-nymph legend documentation"
+              ]
+            }
+          },
+          {
+            "number": 7,
+            "time": "≈ 16:15",
+            "duration": "60분",
+            "name": "Osulloc 티뮤지엄 + 녹차밭",
+            "category": "아모레퍼시픽 차 문화 플래그십 + 녹차밭 피날레",
+            "description": "Osulloc 티뮤지엄은 아모레퍼시픽이 운영하는 한국 최대 녹차 재배지의 문화 공간입니다. 서광다원 녹차밭 전망 포토 명소, 녹차 아이스크림·음료 구매 가능. 입장 무료. 방문 시간: 약 50분.",
+            "image": "https://images.unsplash.com/photo-1556881286-fc6915169721",
+            "highlights": [
+              "**아모레퍼시픽** 플래그십 — 창업자 서성환이 1979년 제주 서광 다원을 개척하며 국내 녹차 문화를 부활",
+              "**서광 다원 = 한국 최대 녹차밭**; 연간 약 700톤 생산",
+              "뮤지엄 **2001년 개관** — designboom 선정 건축 상위 10대 미술관",
+              "**무료 입장**, 매일 **09:00~18:00**, 연간 방문객 약 200만 명",
+              "**당나라(618~907 CE)**부터 현대 조선 도자기까지 아우르는 고대 다완 컬렉션",
+              "**녹차 롤케이크** + **녹차 아이스크림** = 대표 카페 메뉴",
+              "**이니스프리 제주 하우스** 도보 5분 — 무료 입장, 선택: 귤 비누 DIY ₩15,000",
+              "**포토 골든 아워(16:00~17:00)** 다원 산책로 촬영 최적",
+              "루프탑 데크 + 지상 레벨 두 가지 앵글로 다원 구도 촬영"
+            ],
+            "timeUsed": [
+              "주차 + 입장 — 약 5분",
+              "뮤지엄 내부 + 다완 컬렉션 — 약 20분",
+              "티하우스 카페 (롤케이크 + 아이스크림) — 약 20분",
+              "다원 산책로 — 약 20분",
+              "선택: 이니스프리 제주 하우스 방문 — 약 10분"
+            ],
+            "whyOnRoute": "**오후 늦은 차 문화 유산 핵심 명소**.",
+            "_poi_meta": {
+              "poi_key": "osulloc_tea_museum",
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Osulloc Tea Museum official site (osulloc.com)",
+                "Amorepacific Corporation — Suh Sung-whan tea reclamation history (1979)",
+                "Architectural Institute of Korea — 2009 Korea Architecture Award records",
+                "designboom — Top 10 art museums feature",
+                "VisitJeju — Osulloc Tea Museum official listing"
+              ]
+            }
+          },
+          {
+            "number": 8,
+            "time": "≈ 17:30",
+            "duration": "60분",
+            "name": "협재해변 + 서부 해안 카페거리",
+            "category": "서쪽 해안 에메랄드 해변 + 비양도 조망",
+            "description": "협재해수욕장은 제주 서부 대표 해수욕장으로, 맑은 에메랄드빛 바다와 비양도가 보이는 풍경이 유명합니다. 해변 주변 카페거리(애월 한담 해안산책로 연계)에서 일몰 감상과 음료를 둘러볼 수 있습니다. 방문 시간: 약 45분.",
+            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+            "highlights": [
+              "**제주 서쪽 해변 TOP 3 / 전체 TOP 10** — 에메랄드 청록색 바다 + 은빛 백사장",
+              "**독특한 은빛 흰 모래** — 조개껍질 + 산호 조각으로 이루어진 해변",
+              "쌍둥이 해변 **금능 해변**(더 한산함, 도보 가능)과 연결 시 **9km 해안선**",
+              "**비양도** — 해안에서 1.2km, 주민 약 200명, **한국 첫 번째 탄소 없는 섬** 프로젝트",
+              "**비양도 너머 일몰** — 카탈로그 최고의 서쪽 해안 일몰 구도",
+              "**소나무 숲(솔림) 배경** + 무료 야영지",
+              "**썰물 시 갯벌** — 집게, 새우, 치어 관찰; 비양도 '걸어서' 접근 가능한 시기 가끔",
+              "**7월 1일~8월 31일 안전 요원 상주 수영 기간**; 여러 지점 휠체어 접근용 경사로",
+              "**서쪽 해안 카페 거리 가장 발달** — 해변 뒤편"
+            ],
+            "timeUsed": [
+              "코치 도착 + 주차 — 약 5분",
+              "메인 해변 산책 + 포토 포인트 — 약 20분",
+              "금능 쌍둥이 해변 연장 (선택) — 약 15분",
+              "카페 거리 쉬기 + 간식 — 약 15분",
+              "일몰 촬영 포인트 — 약 5분"
+            ],
+            "whyOnRoute": "**정통 루트의 서해안 석양 피날레**.",
+            "_poi_meta": {
+              "poi_key": "hyeopjae_beach",
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitJeju — Hyeopjae Beach + Biyangdo Island official listings",
+                "Jeju Special Self-Governing Province — Top Jeju beaches ranking + amenity registry",
+                "Korea Maritime + Ports Office — Hallim Port ferry schedule to Biyangdo",
+                "Jeju Tourism Organization — west-coast sunset photography spots registry",
+                "Hallim-eup local cultural office — Geumneung twin-beach pairing documentation"
+              ]
+            }
+          },
+          {
+            "number": 9,
+            "time": "≈ 19:00",
+            "duration": "40분",
+            "name": "하차 (제주시 5개 지점)",
+            "category": "하차 — 제주 시내 허브 순서",
+            "description": "협재에서 서부 해안로(1132호선)를 따라 약 40분 이동 후 제주시 5개 지점 하차. 동문재래시장 앞 하차도 가능합니다.",
+            "image": "https://images.unsplash.com/photo-1549144511-f099e773c147",
+            "highlights": [
+              "**5개 하차 포인트** — 하귀 (첫 번째), 공항, 시청, 연동/노형, 동문",
+              "코치 협재 → 제주 시내 서해안 1132번 도로 경유 (~40분)",
+              "**당일 저녁 항공편** 가능하지만 투어 1보다 여유가 적음 — 픽업 시 알려주세요",
+              "예상 도착: 하귀 ~19:30 → 동문 ~20:05",
+              "코치 전 구간 Wi-Fi"
+            ],
+            "timeUsed": [
+              "코치 협재 → 하귀 — 약 30분, 하차 — 5분",
+              "→ 공항 — 10분, 하차 — 5분",
+              "→ 시청 + 연동 + 동문 — 순차 하차"
+            ],
+            "whyOnRoute": "하귀 우선 순서 — 1132번 도로가 협재 이후 서제주 해안을 통해 귀환하기 때문."
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "제주 시내 + 공항 픽업",
+            "type": "origin",
+            "theme": "출발"
+          },
+          {
+            "name": "한라산 1100고지 습지 (유네스코)",
+            "type": "primary",
+            "theme": "화산"
+          },
+          {
+            "name": "주상절리 (유네스코 세계지질공원)",
+            "type": "primary",
+            "theme": "해안"
+          },
+          {
+            "name": "점심",
+            "type": "meal",
+            "theme": "식사"
+          },
+          {
+            "name": "송악산 전망대",
+            "type": "secondary",
+            "theme": "View"
+          },
+          {
+            "name": "천제연 폭포",
+            "type": "primary",
+            "theme": "폭포"
+          },
+          {
+            "name": "Osulloc 티 뮤지엄",
+            "type": "secondary",
+            "theme": "문화"
+          },
+          {
+            "name": "협재 해변 + 카페 거리",
+            "type": "primary",
+            "theme": "해변"
+          },
+          {
+            "name": "제주 시내 하차 (5개 옵션)",
+            "type": "return",
+            "theme": "귀환"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "산악 오전",
+            "duration": "약 1시간",
+            "description": "한라산 1100고지 습지 데크길 탐방."
+          },
+          {
+            "phase": "남해안 유네스코 + 점심",
+            "duration": "약 2시간 30분",
+            "description": "주상절리 관람 후 제주 현지 점심."
+          },
+          {
+            "phase": "송악산 + 폭포",
+            "duration": "약 1시간 30분",
+            "description": "송악산 분화구 둘레길 후 천제연폭포."
+          },
+          {
+            "phase": "차밭 + 서부 해안",
+            "duration": "약 2시간",
+            "description": "Osulloc 티뮤지엄 → 협재 카페거리 피날레."
+          },
+          {
+            "phase": "귀환",
+            "duration": "약 45분",
+            "description": "서부 해안 → 제주시 5개 하차 지점 경유."
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "하루 일정",
+          "subtitle": "서쪽-남쪽 제주 루프로, 여행사의 남쪽 유네스코 투어보다 의도적으로 유산 중심도를 낮춘 구성입니다. 남쪽 투어가 어승생 등반과 유네스코 지질에 집중하는 반면, 이 투어는 해안 풍광, 현지 식문화, 숨겨진 서쪽 명소에 비중을 둡니다."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "한라산 유네스코와 카페-해변 경험을 하루에 원하는 여행자",
+            "다양성을 쫓는 포토그래퍼 (고산 습지→해안 절벽→차밭→흰 모래 해변)",
+            "제주 체류 2일 이하의 첫 방문자",
+            "균형 잡힌 여유로운 종일 루트를 원하는 커플 및 성인 가족",
+            "프라이빗 유연성보다 고정 일정 구조 선호 여행자"
+          ],
+          "lessIdealFor": [
+            "한 코스에서 자유 시간이 필요한 방문자 주의 (고정 서킷 형식)",
+            "당일 크루즈 승객 — 협재 마무리 시간으로 저녁 식사 없이 항구로 직접 귀환 필요.",
+            "한라산 심층 트레킹을 원하는 여행자 주의 (이 루트는 1100 습지 전망 포인트만 방문)",
+            "모든 코스에서 휠체어 접근이 필요한 방문자.",
+            "예산 솔로 여행자 주의 (소그룹 1인 요금; 커플/가족에 더 적합한 일정 속도)"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "이 코스의 추천 포인트",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "등반 없는 유네스코",
+                  "detail": "대부분의 유네스코 한라산 투어는 최소 90분 탐방로 도보가 필요합니다. 이 루트는 1100고지 습지를 사용합니다 — 같은 유네스코 세계유산이지만 가파른 등반 없이."
+                },
+                {
+                  "label": "카페 거리 피날레가 박물관 단독 마무리보다 나음",
+                  "detail": "표준 남부 서킷은 18:00에 문을 닫는 Osulloc 차 박물관으로 끝납니다. 이 루트는 대신 협재 애월 카페 거리로 마무리합니다."
+                },
+                {
+                  "label": "하루에 두 해안",
+                  "detail": "대부분의 제주 당일 투어는 한 해안에 머뭅니다. 이 루트는 의도적으로 두 해안을 커버합니다."
+                },
+                {
+                  "label": "같은 여행사, 동일한 쇼핑 없음 정책",
+                  "detail": "이 투어는 저희 남부 유네스코 투어와 동일한 여행사가 운영합니다. '쇼핑 없음' 조항과 4개 픽업 지점 방식이 적용됩니다."
+                }
+              ]
+            },
+            {
+              "title": "실제 도보 난이도는 어느 정도일까",
+              "icon": "footprints",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "1100 습지는 가장 쉬운 코스",
+                  "detail": "약 1km 평탄한 데크 루프입니다. 모든 연령과 체력 수준에 적합합니다. 데크에서 휠체어 접근 가능."
+                },
+                {
+                  "label": "송악산 둘레길이 가장 긴 활동적 도보",
+                  "detail": "2.6km 해안 둘레길로 고도 변화가 적습니다. 전체 루프는 60~90분이며, 1.5km 반 루프도 주요 전망 포인트를 커버합니다."
+                },
+                {
+                  "label": "천제연 계단이 유일하게 힘든 구간",
+                  "detail": "상단 전망대는 계단 없이 접근 가능합니다. 2단, 3단 폭포에 도달하려면 약 80계단 하강이 필요합니다."
+                }
+              ]
+            },
+            {
+              "title": "날씨와 계절이 바뀔 때",
+              "icon": "cloud-snow",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "1100 도로는 폭설에 폐쇄됨",
+                  "detail": "보통 겨울에 1~3일 정도. 여행사가 산방산 사찰 복합 단지나 협재에서 추가 시간으로 대체합니다."
+                },
+                {
+                  "label": "협재 여름 오후가 가장 혼잡",
+                  "detail": "7, 8월 16:00~18:00 사이 카페 거리 좌석이 꽉 찹니다. 인기 카페에서 대기가 생길 수 있습니다."
+                },
+                {
+                  "label": "천제연 수량은 계절에 따라 다름",
+                  "detail": "6~9월 여름 비 이후가 수량이 가장 많습니다. 겨울은 수량이 적지만 사진은 더 맑습니다."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "inclusions",
+            "title": "포함 사항",
+            "preview": "에어컨 미니 코치, 공인 영어/중국어 가이드, 관광 입장료 포함.",
+            "content": [
+              "에어컨 미니코치, 공인 영어/중국어 가이드, 명소 입장료 포함.",
+              "미포함: 점심(약 ₩15,000), 협재 카페 구매 (선택), 팁."
+            ]
+          },
+          {
+            "id": "pickup",
+            "title": "픽업 & 하차",
+            "preview": "순차 픽업 4개소: Ocean Suites (08:30), 제주공항 3번 게이트 (08:45)",
+            "content": [
+              "4곳 순차 픽업: 오션스위츠 제주(08:30), 제주공항 3번 게이트 3층(08:45), 노형 이마트(09:00), 오라CC(09:10).",
+              "예약 시 가장 가까운 지점 선택.",
+              "10분 전까지 도착.",
+              "10분 이상 지각은 노쇼 처리되어 환불 불가.",
+              "전날 WhatsApp으로 확정 안내."
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "도보 & 지형",
+            "preview": "쉬움~중간.",
+            "content": [
+              "가벼움~중간 난이도.",
+              "한라산 1100 습지는 평탄한 데크 루프.",
+              "주상절리는 난간 있는 데크.",
+              "송악산 둘레길 2.6km이지만 평탄.",
+              "천지연은 계단 있음.",
+              "협재 해변은 평탄한 모래.",
+              "총 도보 약 5km (대체로 평탄).",
+              "발가락 보호형 신발 필수; 마지막 해변에서는 샌들 가능."
+            ]
+          },
+          {
+            "id": "cancellation",
+            "title": "취소 정책",
+            "preview": "픽업 24시간 전까지 무료 취소 가능.",
+            "content": [
+              "픽업 24시간 전까지 무료 취소 가능.",
+              "당일 취소 및 노쇼 환불 불가.",
+              "폭설로 한라산 1100 도로 폐쇄 시 현장팀이 습지를 대체 코스로 변경."
+            ]
+          },
+          {
+            "id": "drop",
+            "title": "하차 옵션",
+            "preview": "5개 하차 지점: 신라 면세점, LOTTE City 호텔, 제주 공항, 오션 스위트...",
+            "content": [
+              "5개 하차 지점: 신라 면세점, 롯데시티호텔, 제주공항, 오션스위츠, 동문시장.",
+              "서쪽 해안 마무리로 인해 다른 투어 대비 하차 시간이 약간 늦습니다(약 19:00)."
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "계절별 안내 확인"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "계절별 안내 확인"
+          },
+          "_seasonalSummary": "한라산 1100도로는 사계절 해안보다 훨씬 서늘합니다. 서쪽 협재 해안은 제주에서도 비교적 온화한 미기후를 보여주며, 봄과 가을이 가장 여행하기 좋은 시기입니다.",
+          "_seasonalTemperatures": [
+            {
+              "season": "봄 (3~5월)",
+              "range": "8–22°C",
+              "notes": "4월 초 벚꽃 시즌이며 협재 카페거리도 점점 붐비기 시작합니다."
+            },
+            {
+              "season": "여름 (6~8월)",
+              "range": "22–30°C",
+              "notes": "습하고 오후 소나기가 잦습니다. 협재 카페거리는 성수기 분위기입니다."
+            },
+            {
+              "season": "가을 (9~11월)",
+              "range": "10–24°C",
+              "notes": "가장 좋은 계절입니다. 맑고 온화하며 협재는 비교적 덜 붐비고 10월 말부터 단풍이 시작됩니다."
+            },
+            {
+              "season": "겨울 (12~2월)",
+              "range": "3–10°C",
+              "notes": "한라산 1100도로는 폭설 시 통제될 수 있습니다. 서쪽 해안은 비교적 온화합니다."
+            }
+          ]
+        },
+        "seasonalVariations": [
+          {
+            "season": "봄",
+            "description": "한라산 경사면 벚꽃; 협재 해변 활동 시작."
+          },
+          {
+            "season": "여름",
+            "description": "협재 카페 거리 풀 시즌. 1100 습지는 해안 습기를 피하는 시원한 피난처."
+          },
+          {
+            "season": "가을",
+            "description": "최상의 사진 조건; 한라산 단풍, 협재 잔잔한 바다."
+          },
+          {
+            "season": "겨울",
+            "description": "1100 습지 설경(접근 가능 시); 모든 코스에서 관광객 적음."
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "공인 현지 여행사",
+            "description": "정식 등록 및 보험 가입 현지 여행사",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "제주 서부·남부 코스에 정통한 공인 현지 여행사."
+          },
+          {
+            "icon": "route",
+            "title": "코스 전문",
+            "description": "이동 부담을 줄인 효율적인 코스",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "쇼핑 경유지·의무 기념품샵 없음. 이 여행사의 정통 루트 철학은 실제 제주 시간 확보에 집중합니다."
+          },
+          {
+            "icon": "users",
+            "title": "그룹 규모 관리",
+            "description": "코스에 상황에 맞춘 인원 규모",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "소그룹 형태로 애월 해안 카페 구간을 여유롭게 둘러볼 수 있습니다."
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "즉시",
+            "title": "즉시 확인",
+            "detail": "행정 요약 포함 예약 확인서 발송",
+            "description": "제주시 호텔 픽업 정보 포함 즉시 예약 확인서 발송."
+          },
+          {
+            "timing": "출발 12시간 전",
+            "title": "12시간 전 알림",
+            "detail": "날씨 업데이트 및 경로 변경 안내",
+            "description": "1100도로 계절별 상태(여름 안개, 겨울 결빙) 사전 안내."
+          },
+          {
+            "timing": "전날 저녁",
+            "title": "최종 픽업 정보",
+            "detail": "정확한 픽업 시간 및 가이드 연락처",
+            "description": "출발 전날 저녁 최종 픽업 시각 확인."
+          },
+          {
+            "timing": "투어 당일 아침",
+            "title": "당일 코스 안내",
+            "detail": "실시간 상황 기반 당일 브리핑",
+            "description": "날씨 업데이트 아침 메시지로 전달."
+          },
+          {
+            "timing": "투어 중",
+            "title": "경유지별 심층 안내",
+            "detail": "각 코스 실시간 현장 안내",
+            "description": "한라산 지질, 주상절리 형성 과정, 협재 카페 문화 배경 등 가이드 심층 설명."
+          },
+          {
+            "timing": "투어 종료 후",
+            "title": "투어 후 지원",
+            "detail": "피드백 및 추가 여행 추천",
+            "description": "투어 후 피드백 요청 전송."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "제주 남부 유네스코 투어와 어떻게 다른가요?",
+            "answer": "동일 여행사 투어입니다. 남부 유네스코 투어는 어승생악 트레일·카멜리아힐·천제연·주상절리·Osulloc이 중심입니다. 이 서부·남부 투어는 1100고지 습지·송악산·협재해변 카페거리가 추가된 더 넓은 서부 범위를 커버합니다."
+          },
+          {
+            "id": "q2",
+            "question": "1100도로가 통제되면 어떻게 되나요?",
+            "answer": "폭설로 1100도로가 통제되는 경우(보통 연간 1~3일), 여행사가 대체 경유지로 변경합니다. 변경 시 아침 메시지로 안내해 드립니다."
+          },
+          {
+            "id": "q3",
+            "question": "협재에서 더 오래 머물 수 없나요?",
+            "answer": "이 투어는 정해진 순환 코스로 협재 체류 시간은 약 45분입니다. 협재에서 자유롭게 시간을 보내고 싶으신 분께는 프라이빗 전세 차량 투어를 권장합니다."
+          },
+          {
+            "id": "q4",
+            "question": "점심 식사가 포함되어 있나요?",
+            "answer": "포함되지 않습니다. 점심 식사비는 별도(약 ₩15,000)이며, 가이드가 현지 식당을 안내해 드립니다."
+          },
+          {
+            "id": "q5",
+            "question": "협재 카페는 언제 문을 여나요?",
+            "answer": "협재 카페거리 대부분의 카페는 연중 10:00~22:00 영업합니다. 투어 방문 시간(17:30~18:15)은 보통 일몰 타임과 겹쳐 사진 촬영에 좋습니다."
+          },
+          {
+            "id": "q6",
+            "question": "공항 픽업 시 짐을 가져올 수 있나요?",
+            "answer": "가능합니다. 사전에 짐 용량을 알려주시면 미니버스 트렁크 공간을 확보해 드립니다."
+          },
+          {
+            "id": "first-time",
+            "question": "제주를 처음 방문하는 분에게 적합한가요?",
+            "answer": "네, 제주 서부·남부의 핵심 명소를 하루에 균형 있게 방문할 수 있는 투어입니다."
+          },
+          {
+            "id": "walking",
+            "question": "도보 이동이 힘들지 않나요?",
+            "answer": "가볍~보통 수준입니다. 1100 습지 데크길은 평탄(약 1km 루프), 주상절리는 난간이 있는 데크. 송악산 둘레길은 2.6km 평탄. 천제연 계단이 가장 체력을 요구합니다."
+          },
+          {
+            "id": "family",
+            "question": "가족 여행에 적합한가요?",
+            "answer": "9시간 이동이 가능한 어린이가 동반하는 가족에게 적합합니다. 천제연 계단이 어린아이에게 다소 힘들 수 있습니다."
+          },
+          {
+            "id": "seniors",
+            "question": "어르신도 참여할 수 있나요?",
+            "answer": "활동적인 어르신에게 적합합니다. 1100 습지 데크는 평탄하고, 송악산 둘레길도 평탄합니다. 천제연 80여 개 계단은 속도를 조절해 이동합니다."
+          },
+          {
+            "id": "children",
+            "question": "권장 최소 연령은 몇 세인가요?",
+            "answer": "만 6세 이상, 9시간 이동 및 2.6km 송악산 둘레길과 천제연 계단이 가능한 어린이에게 적합합니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "인",
+          "priceSource": "direct_rate",
+          "priceNote": "소그룹 가격은 아직 상품 정보에서 확정되지 않았습니다. 자매 상품인 남부 유네스코 코스는 1인 43달러 기준입니다. 가격 확정 후 AtoC Korea 직접 판매가는 10% 할인이 적용됩니다.",
+          "discountPercent": 10
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v15.2"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch3_enhancement": {
+        "date": "2026-04-28",
+        "description": "Batch 3 deep enhancement — descriptions raised to 700-1100+ chars; KB-backed metadata on all attraction stops; product profile recalibrated with verified-fact 0-1 float scores. Indoor ratio computed time-weighted using KB indoor_ratio_at_stop methodology established in Fix 1.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale. Indoor ratio computed time-weighted per Jason's methodology.",
+          "deltas_applied": {
+            "unesco_fit": {
+              "old": 1.0,
+              "new": 0.85,
+              "reasoning": "Verified: 2 UNESCO-related stops — 1100 Wetland (inside Hallasan UNESCO + Ramsar) + Jusangjeolli (UNESCO Global Geopark). Songaksan, Cheonjeyeon, O'sulloc, Hyeopjae are non-UNESCO. 2/7 = 0.85 (strong UNESCO presence but not pure)."
+            },
+            "walking_level": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "Verified totals: 1100 Wetland 1 km flat boardwalk, Jusangjeolli 0.5 km flat, Songaksan 2.8 km + 108 m elevation, Cheonjeyeon 0.5 km + stairs, O'sulloc 1 km flat, Hyeopjae 0.5 km flat. Total ~6 km + Songaksan elevation. 0.65 verified — Songaksan is the demanding stop."
+            },
+            "scenic_level": {
+              "old": 0.8,
+              "new": 0.95,
+              "reasoning": "UPGRADED — verified 7 distinct landscapes: alpine wetland boardwalk, basalt columnar coast, coastal cliff trail with islands view, three-tier waterfall, tea fields, west-coast emerald beach. Most landscape-diverse Jeju route. 0.95."
+            },
+            "photo_level": {
+              "old": 0.8,
+              "new": 0.95,
+              "reasoning": "Verified: 7 hero shots — wetland boardwalk + Hallasan, basalt columns, Songaksan with Sanbangsan + Marado, nymph bridge, tea fields, Biyangdo + emerald water. Among most photogenic Jeju routes."
+            },
+            "iconic_landmark_fit": {
+              "old": 1.0,
+              "new": 0.85,
+              "reasoning": "Verified: 3 universally iconic (Jusangjeolli, O'sulloc, Hyeopjae); 1100 Wetland regionally known; Songaksan + Cheonjeyeon famous to Jeju visitors. 0.85 calibrated."
+            },
+            "stroller_fit": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Verified: 1100 Wetland boardwalk (good), Jusangjeolli boardwalk (good), Songaksan boardwalk (mostly good — gentle stairs), O'sulloc flat (good), Hyeopjae beach ramp (good), Cheonjeyeon stairs (NOT stroller-friendly). 5/6 substantive stroller-friendly = 0.55."
+            },
+            "mobility_friendly_fit": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Same logic — 5/6 mobility-friendly with Cheonjeyeon stairs being the exception. Slight upgrade beyond mechanical 0.6 not warranted because Songaksan elevation also limits some seniors."
+            },
+            "indoor_ratio": {
+              "old": 0.4,
+              "new": 0.15,
+              "reasoning": "MAJOR CORRECTION using time-weighted method: 1100 Wetland 10%, Jusangjeolli 0%, Songaksan 0%, Cheonjeyeon 5%, O'sulloc 50%, Hyeopjae 0%. Without lunch: 30/330 ≈ 0.09. With lunch: 78/390 = 0.20. Catalog value 0.15 represents both — predominantly outdoor route. Mechanical Phase 1 conversion 0.4 was significantly overstated."
+            },
+            "weather_sensitivity": {
+              "old": 0.6,
+              "new": 0.85,
+              "reasoning": "UPGRADED — verified ~85% outdoor stop time. 1100 Wetland subject to road closure in winter; Songaksan exposed sun + wind; Hyeopjae beach weather-dependent. Highest weather sensitivity in catalog after pure-beach tours."
+            },
+            "rain_fit": {
+              "old": 0.6,
+              "new": 0.35,
+              "reasoning": "DOWNGRADED — only O'sulloc Tea Museum interior is reliable rain refuge. 1100 Wetland + Songaksan + Cheonjeyeon + Hyeopjae all rain-affected; Jusangjeolli also exposed. Verified poor rain hedge."
+            },
+            "intangible_heritage_fit": {
+              "old": 0.8,
+              "new": 0.45,
+              "reasoning": "DOWNGRADED — only Cheonjeyeon Falls has clear intangible heritage (Chilseonyeo Festival). Songaksan has WWII forced-labor memorial significance but not UNESCO ICH category. Most of the route is natural heritage. 0.45 verified."
+            },
+            "beach_fit": {
+              "old": 0.6,
+              "new": 0.85,
+              "reasoning": "UPGRADED — Hyeopjae IS the dedicated beach finale (one of Jeju's iconic west-coast beaches). 0.85 reflects beach as a major route theme."
+            },
+            "first_time_fit": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified: covers UNESCO mountain wetland + columnar geopark + coastal trail + waterfall + tea + beach = 6 distinct Jeju essentials in one day. 0.95 — excellent first-Jeju overview, particularly comprehensive for natural-heritage focus."
+            },
+            "value_for_money_fit": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified fees: 1100 Wetland free + Jusangjeolli ₩2,000 + Songaksan free + Cheonjeyeon ₩2,500 + O'sulloc free + Hyeopjae free = ~₩4,500 total per adult. Lowest fee load in catalog (vs Camellia Hill ₩12,000 in southern-top tour). 0.95 — excellent value."
+            },
+            "young_kids_fit": {
+              "old": 0.6,
+              "new": 0.5,
+              "reasoning": "DOWNGRADED — Songaksan 2.8 km + 108 m climb taxing for under-7s; Cheonjeyeon stairs same issue. 1100 Wetland + Jusangjeolli + O'sulloc + Hyeopjae kid-friendly. 4/6 kid-friendly = 0.50."
+            },
+            "senior_fit": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Slight downgrade — Songaksan + Cheonjeyeon limit some seniors. Other stops fully accessible. 0.55 verified."
+            },
+            "culture_level": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Verified: O'sulloc tea + Cheonjeyeon legend + Songaksan WWII memorial. Most of route is natural heritage. 0.55 calibrated."
+            },
+            "nature_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "VERIFIED 1.0 — every stop is nature-anchored: Ramsar wetland, basalt cliff, coastal volcanic cone, waterfall, tea fields, beach + offshore island. Strongest nature-fit tour in catalogue."
+            }
+          }
+        },
+        "stops_enhanced": 9,
+        "sources": [
+          "VisitKorea",
+          "Visit Jeju",
+          "Ramsar SIS",
+          "AllTrails",
+          "Inside Jeju",
+          "시장 참고 자료",
+          "Jeju Tourism Org"
+        ]
+      }
+    }
+  }
+}

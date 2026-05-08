@@ -1,0 +1,2708 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "jeju-cruise-shore-excursion-bus-tour",
+  "locale": "ja",
+  "product_id": "jeju-cruise-shore-excursion-bus-tour",
+  "seo": {
+    "pageTitle": "済州クルーズ寄港地観光・大型コーチ | AtoC Korea",
+    "metaDescription": "済州クルーズ寄港地観光8時間：済州港（北）発→城山日出峰・ソプチコジ・城邑民俗村、または江汀港（南）発→漢拏山湿地・オルレ市場。英語ガイド付き大型コーチ。",
+    "ogImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "primaryKeywords": [
+      "済州クルーズ寄港地観光",
+      "済州クルーズツアー",
+      "済州港バスツアー",
+      "済州城山クルーズ",
+      "済州コーチツアー"
+    ],
+    "title": "済州クルーズ寄港地観光・大型コーチ | AtoC",
+    "description": "済州クルーズ寄港地観光2ルート：済州港（北）発→城山日出峰・ソプチコジ・城邑民俗村、または江汀港（南）発→漢拏山1100湿地・オルレ市場。8時間、英語ガイド付き。"
+  },
+  "catalog_card": {
+    "slug": "jeju-cruise-shore-excursion-bus-tour",
+    "title": "済州クルーズ寄港地観光バスツアー（大型コーチ）",
+    "subtitle": "寄港地対応クルーズ日帰りツアー — 済州港と江汀港の2つのコース",
+    "region": "済州全域（クルーズ対応）",
+    "duration": "8時間",
+    "stopsCount": 6,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "クルーズ寄港地",
+      "済州",
+      "大型コーチ",
+      "ユネスコ",
+      "ターミナル発着"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
+    "priceLabel": "料金は予約時にご確認ください",
+    "shortCardDescription": "寄港地に合わせて選べる済州日帰りツアーです。済州港（北）発は東部ユネスコルート（城山日出峰・ソプチコジ・城邑民俗村）、江汀港（南）発は漢拏山高地＋オルレ市場ルート。クルーズの停泊時間に合わせた8時間構成です。",
+    "tags": [
+      "クルーズ寄港地観光",
+      "寄港港に合わせた行程づくり",
+      "お手頃クルーズ",
+      "大型バス"
+    ]
+  },
+  "headlineLine1": "済州クルーズ寄港地観光 — バスツアー（大型コーチ）",
+  "headlineLine2": "2つのコース — ご利用のクルーズ港に合わせて選択",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "人"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "imagePosition": "center 35%",
+    "tagline": "クルーズ寄港地から出発する大型コーチバスツアー — 済州港と江汀港の2ルート対応",
+    "pills": [
+      "クルーズ寄港地",
+      "大型コーチ",
+      "済州"
+    ],
+    "meta": {
+      "duration": "≈ 8時間（クルーズターミナル発着）",
+      "region": "済州全域",
+      "stops": "6見どころ",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "概要"
+    },
+    {
+      "id": "itinerary",
+      "label": "行程"
+    },
+    {
+      "id": "details",
+      "label": "詳細情報"
+    },
+    {
+      "id": "faq",
+      "label": "よくある質問"
+    },
+    {
+      "id": "reviews",
+      "label": "クチコミ"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "所要時間",
+      "value": "8時間"
+    },
+    {
+      "icon": "camera",
+      "label": "写真価値",
+      "value": "非常に高い"
+    },
+    {
+      "icon": "mountain",
+      "label": "景観",
+      "value": "非常に高い"
+    },
+    {
+      "icon": "footprints",
+      "label": "歩行",
+      "value": "中程度"
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "雨天適応度",
+      "value": "中程度"
+    },
+    {
+      "icon": "users",
+      "label": "ファミリー適性",
+      "value": "中程度"
+    },
+    {
+      "icon": "gauge",
+      "label": "ペース",
+      "value": "バランス良好"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+      "alt": "城山日出峰の99岩の火口縁から望む日の出と東シナ海",
+      "caption": "城山日出峰 — ユネスコ世界自然遺産の旗艦見どころ",
+      "location": "城山日出峰（ソンサン・イルチュルボン）、済州東部",
+      "atmosphere": "5,000年前の水成火山の山頂。ユネスコトリプル指定"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+      "alt": "済州の東岬、ソプチコジの断崖縁トレイルと沖合の城山日出峰",
+      "caption": "ソプチコジ（セプジコジ）— 城山を望む東岬",
+      "location": "ソプチコジ、済州東部海岸",
+      "atmosphere": "Kドラマロケ地で有名な2.1kmの断崖トレイル。城山パノラマ"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+      "alt": "石垣と茅葺き屋根が並ぶ城邑民俗村の朝鮮時代の風景",
+      "caption": "城邑民俗村 — 朝鮮時代の生きた古城郭都市",
+      "location": "城邑民俗村（ソンウプ）、済州東部",
+      "atmosphere": "1423年創建の現存する朝鮮時代の城郭都市。済州の伝統生活を今に伝える"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+      "alt": "漢拏山1100高地湿地の木製遊歩道と稜線",
+      "caption": "漢拏山1100高地湿地 — 南ルートのユネスコ見どころ",
+      "location": "漢拏山1100湿地、標高1,100m",
+      "atmosphere": "ラムサール条約湿地。4重の国際指定を持つ済州の高山生態系"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      "alt": "大浦柱状節理の断崖の六角形玄武岩柱",
+      "caption": "天池淵の滝",
+      "location": "韓国",
+      "atmosphere": "韓国の美しい景観"
+    },
+    {
+      "id": "g6",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+      "alt": "ツアーで訪れるオルレ毎日市場の風景",
+      "caption": "オルレ毎日市場",
+      "location": "韓国",
+      "atmosphere": "韓国の美しい景観"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "name": "済州クルーズターミナルでのピックアップ（済州港 — 北）",
+      "category": "出発 — 済州国際旅客ターミナル",
+      "description": "ドライバーと英語対応ガイドが**済州国際旅客ターミナル**にてお出迎え。ガイドはターミナル出口エリアで**AtoC Koreaのサインボード**を掲げて待機します。大型コーチは最大45〜50名収容。**出航前の帰船時間を必ずご確認ください** — このツアーはクルーズスケジュールに合わせ、帰船時間の90〜120分前にはターミナルへ帰着します。",
+      "highlights": [
+        "済州国際旅客ターミナル（済州港北）でピックアップ",
+        "AtoC Koreaのサインボードを持ったガイドが出口エリアで待機",
+        "大型コーチ（最大45〜50名）",
+        "帰船時間の90〜120分前にターミナルへ帰着できるようにしています"
+      ],
+      "_poi_meta": {
+        "poi_key": "jeju_cruise_port",
+        "kb_version": "1.21",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities + 100-bus parking)",
+          "South Korea Ministry of Oceans & Fisheries (terminal opening 2015; berth specifications)",
+          "Korea Cruise Port Sales / k-cruiseinfo.com (berth depths, tonnage capacity)",
+          "Ministry of Culture, Sports & Tourism (2024 cruise volume: 810,000 pax / 414 ships)",
+          "Jeju Provincial Government (Imhang-ro address, Geonip-dong; UN/LOCODE KRCHA)"
+        ]
+      },
+      "number": 1,
+      "time": "クルーズ到着後約30分",
+      "duration": "30分",
+      "whyOnRoute": "済州港（北）からの出発は東部ユネスコルートの始発に最適。ターミナルから直接出発するため乗り換え不要。",
+      "timeUsed": [
+        "ターミナルでの集合＋コーチ乗車 — 約10〜15分",
+        "東済州（城山）への移動 — 約60分"
+      ]
+    },
+    {
+      "number": 2,
+      "time": "≈ 09:00",
+      "duration": "75分",
+      "name": "城山日出峰（ソンサン・イルチュルボン）",
+      "category": "ユネスコ世界自然遺産 — スルツェイ式水成火山錐",
+      "description": "**城山日出峰**は5,000年前のスルツェイ式水成火山凝灰岩錐 — 水中の玄武岩噴火が海面を突き破り、溶岩が海水と急速に冷却・粉砕されて高い岸壁と99の岩峰を持つ独特の火口縁を形成した稀有な地形。**ユネスコ世界自然遺産2007年＋バイオスフィアリザーブ＋グローバルジオパーク**という3重ユネスコ指定を持つ済州の旗艦見どころ。山頂火口縁への往復は約30〜40分、頂上からは東シナ海・城山漁村・牛島が一望できます。入場料：**大人₩5,000**。毎月**第1月曜閉鎖**（環境保護輪番制）。",
+      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+      "highlights": [
+        "**ユネスコトリプル指定**（世界自然遺産2007＋バイオスフィア＋グローバルジオパーク）",
+        "99の岩峰を持つ5,000年前の水成火山の山頂火口縁",
+        "往復**約30〜40分**の山頂登山。頂上から東シナ海・牛島を一望",
+        "入場料 **大人₩5,000** / 青少年₩2,500",
+        "毎月**第1月曜閉鎖**（環境保護輪番制）"
+      ],
+      "timeUsed": [
+        "コーチ到着＋チケット＋入場 — 約10分",
+        "山頂往復 — 約35〜45分",
+        "頂上展望＋写真 — 約15分",
+        "バスに戻る — 約15分"
+      ],
+      "whyOnRoute": "クルーズ乗客に済州の3重ユネスコ旗艦見どころを最も効率よく体験させるオープニング見どころ。エネルギーが高い午前中に最もアクティブな登山を配置。",
+      "_poi_meta": {
+        "poi_key": "seongsan_ilchulbong",
+        "kb_version": "1.18",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
+          "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
+          "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
+          "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
+          "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:15",
+      "duration": "60分",
+      "name": "ソプチコジ（セプジコジ — 東岬）",
+      "category": "海岸の岬 — Kドラマロケ地・城山パノラマ",
+      "description": "**ソプチコジ**は、済州東海岸に細長く突き出た火山性の岬です。地名は「ソプチ（狭い土地、またはこの地域の古い地名）」と、「コジ（岬を意味する済州方言）」に由来すると説明されます。海岸遊歩道からは城山日出峰を正面に望み、黒い玄武岩の崖と青い海が続きます。ドラマ『オールイン』などのロケ地としても知られ、岬の先には灯台と朝鮮時代の烽火台跡があります。海風が強いことが多いため、歩きやすい靴と羽織ものをご用意ください。",
+      "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+      "highlights": [
+        "**2.1kmの断崖縁トレイル**（約30分）— 城山日出峰の正面パノラマ",
+        "**Kドラマロケ地** — 『オールイン（2003年）』『愛の不時着（2019年）』",
+        "岬先端の**済州伝統灯台**と光吉海岸の展望",
+        "強い海風 — **防風ジャケット必須**"
+      ],
+      "timeUsed": [
+        "コーチ到着＋入口 — 約5分",
+        "断崖縁トレイル往復 — 約30〜35分",
+        "城山パノラマ撮影 — 約10分",
+        "バスに戻る — 約5分"
+      ],
+      "whyOnRoute": "城山から10分の近さで全く異なる体験を提供。城山日出峰を別の角度から眺めることで地質学的理解が深まる。Kドラマファンには必須見どころ。",
+      "_poi_meta": {
+        "poi_key": "seopjikoji",
+        "kb_version": "1.19",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Jeju Provincial Cultural Heritage — Special Monument No. 23-2 designation",
+          "VisitJeju — Seopjikoji official listing",
+          "Korea Lighthouse Service — Bangdupo Lighthouse operation records",
+          "Tadao Ando Architect & Associates — Phoenix Island project documentation",
+          "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
+        ]
+      }
+    },
+    {
+      "name": "昼食 — 東済州（地元海産物または黒豚）",
+      "category": "昼食休憩 — 城山/城邑/表善エリア",
+      "description": "東済州の昼食ストップ（城山/城邑/表善エリア）でクルーズ日帰り旅行のタイミングに合わせたガイド推薦の地元レストラン。**2つの典型的なオプション**：**(1) 海産物ランチ** — アワビ・刺身・タチウオの辛煮。**(2) 黒豚BBQ** — 済州固有の黒豚焼き（文化財物質第5号）。**ベジタリアン・ハラール対応**は事前申込で可能。昼食後は城邑民俗村まで約15分。",
+      "highlights": [
+        "**城山/城邑/表善エリア**のガイド推薦店",
+        "**海産物ランチ**（アワビ・刺身・タチウオの辛煮）または**黒豚BBQ**",
+        "**ベジタリアン・ハラール対応**（事前申込）"
+      ],
+      "_poi_meta": {
+        "poi_key": "OPS_lunch_east_jeju",
+        "kb_version": "1.21",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Jeju Black Pig Natural Monument designation (2015, Cultural Heritage Administration)",
+          "Visit Jeju (eastern Jeju cuisine — galchi, heukdwaeji)",
+          "AtoC Korea operations notes (cruise tour lunch venue rotation)"
+        ]
+      },
+      "number": 4,
+      "time": "≈ 12:30",
+      "duration": "60分",
+      "whyOnRoute": "城山・ソプチコジの午前のアクティブな観光後の自然な休憩。クルーズ帰船時間を逆算した戦略的な配置。",
+      "timeUsed": [
+        "コーチで昼食会場へ — 約10分",
+        "注文＋食事 — 約45分",
+        "コーチで城邑へ — 約15分"
+      ]
+    },
+    {
+      "number": 5,
+      "time": "≈ 13:45",
+      "duration": "60分",
+      "name": "城邑民俗村（ソンウプ・ミンソクマウル）",
+      "category": "朝鮮時代の生きた古城郭都市 — 世宗大王時代創建（1423年）",
+      "description": "**城邑民俗村**は**世宗大王の治世（1423年）に鄭義縣として建設された朝鮮時代の城郭都市** — 済州の三行政区の一つ。韓国でほぼ唯一の**現存する朝鮮時代の城郭都市**で、住民が現在も実際に居住する「生きた民俗村」。石の城壁・茅葺き屋根の家・**700〜1,000年の樹齢のエノキ**（天然記念物）・伝統的な石橋が現存。地元のガイドが済州のトルハルバン（石のおじいさん像）伝説と村の歴史を解説。**入場無料**。",
+      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+      "highlights": [
+        "**1423年創建**の現存する朝鮮時代の城郭都市、住民が今も生活",
+        "**700〜1,000年のエノキ**（天然記念物）が村の入口に",
+        "石の城壁・茅葺き屋根・伝統的な石橋が現存",
+        "**トルハルバン伝説**と済州の三多の解説",
+        "**入場無料**"
+      ],
+      "timeUsed": [
+        "コーチ到着 — 約5分",
+        "石の城壁・エノキ・茅葺きゾーン散策 — 約30分",
+        "ガイド解説＋トルハルバン — 約15分",
+        "自由時間＋写真 — 約10分",
+        "バスに戻る — 約5分"
+      ],
+      "whyOnRoute": "自然遺産（城山）・地質（ソプチコジ）の後、文化・歴史のレイヤーを加えることで午前と午後のテーマコントラストが生まれる。帰路に近いため帰船時間の時間の余裕も確保。",
+      "_poi_meta": {
+        "poi_key": "seongeup_folk_village",
+        "kb_version": "1.19",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Cultural Heritage Administration — Important Folklore Cultural Heritage designation",
+          "Korea Cultural Heritage Foundation — Seongeup Folk Village historical records",
+          "VisitJeju — Seongeup Minsok Maeul",
+          "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
+          "Jeju Folklore Society — Omegisul brewing tradition documentation"
+        ]
+      }
+    },
+    {
+      "name": "済州クルーズターミナルへ帰着（済州港 — 北）",
+      "category": "帰着 — 済州国際旅客ターミナル",
+      "description": "東済州（城山/城邑エリア）から**済州国際旅客ターミナル**への帰路、国道1132号線経由で**約70〜80分**。コーチは**出航時間の90〜120分前**にターミナルへ到着できるようにしています。緊急時や渋滞時はガイドが休憩をスキップして帰船時間を優先します。**当日の出航時刻は予約確認時に必ずお知らせください。**",
+      "highlights": [
+        "東済州→済州市ターミナルへ **約70〜80分**",
+        "**出航時間の90〜120分前**にターミナル到着できるようにしています",
+        "緊急時はガイドが休憩をスキップして帰船を優先",
+        "**出航時刻は予約時に必ず通知**してください"
+      ],
+      "_poi_meta": {
+        "poi_key": "jeju_cruise_port",
+        "kb_version": "1.21",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities)",
+          "Jeju Bus Information System (Bus #100 airport connection)",
+          "Korea Cruise Port Sales (terminal layout + drop-off zones)",
+          "VisitJeju.net (Dongmun Market free shuttle)",
+          "Cruise industry standard (60-min all-aboard buffer)"
+        ]
+      },
+      "number": 6,
+      "time": "約15:30出発 → 約16:45港到着",
+      "duration": "75分のドライブ＋60分の時間の余裕",
+      "whyOnRoute": "クルーズツアーの最優先は帰船時間の厳守。東済州からの帰路が最長（70〜80分）のため、城邑が最後の見どころとして最適。",
+      "timeUsed": [
+        "コーチ 城邑→済州市ターミナル — 約70〜80分",
+        "ターミナル到着＋乗船 — 約10〜15分"
+      ]
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "クルーズターミナル",
+      "type": "origin",
+      "theme": "出発"
+    },
+    {
+      "name": "日出峰",
+      "type": "primary",
+      "theme": "火山"
+    },
+    {
+      "name": "ソプチコジ",
+      "type": "primary",
+      "theme": "海岸"
+    },
+    {
+      "name": "昼食",
+      "type": "meal",
+      "theme": "食事"
+    },
+    {
+      "name": "民俗村",
+      "type": "primary",
+      "theme": "文化"
+    },
+    {
+      "name": "クルーズターミナル",
+      "type": "return",
+      "theme": "帰着"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "ユネスコ火山＋海岸",
+      "duration": "停留所1–3",
+      "description": "城山日出峰（ユネスコ）の山頂登山、続いてソプチコジの断崖縁トレイル。"
+    },
+    {
+      "phase": "昼食",
+      "duration": "停留所4",
+      "description": "東済州の地元レストランで昼食休憩。"
+    },
+    {
+      "phase": "民俗文化＋帰着",
+      "duration": "停留所5–6",
+      "description": "城邑民俗村（朝鮮時代の城郭都市）訪問後、済州クルーズターミナルへ帰着。"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "この一日の流れ",
+    "subtitle": "ルートはご利用のクルーズ港によって異なります。済州港（北）発は東部ユネスコルート。江汀港（南）発は漢拏山高地＋オルレ市場ルート。"
+  },
+  "itinerary_variants": [
+    {
+      "port_id": "jeju_port",
+      "port_label": "済州港（北部ターミナル）",
+      "port_label_short": "済州港",
+      "route_focus": "東海岸のユネスコランドマーク＋民俗文化",
+      "pickup_base": "jeju_port",
+      "duration_band": "8h",
+      "return_time_band": "17:00–17:30",
+      "poi_tags_in_variant": [
+        "seongsan_ilchulbong",
+        "seopjikoji",
+        "seongeup_folk_village"
+      ],
+      "theme_tags_in_variant": [
+        "volcano",
+        "coast",
+        "culture",
+        "iconic_landmarks",
+        "first_time_friendly"
+      ],
+      "scenic_level_in_variant": 1.0,
+      "walking_level_in_variant": 0.6,
+      "indoor_ratio_in_variant": 0.15,
+      "weather_sensitivity_in_variant": 0.8,
+      "stops": [
+        {
+          "name": "済州クルーズターミナル乗車（済州港・北側）",
+          "category": "乗船＆クルーズ案内",
+          "description": "ドライバーと英語ガイドが**済州国際旅客ターミナル**の到着ホールでネームプレートを持ってお出迎えします。",
+          "highlights": [
+            "**船の通関後30分にピックアップ** — 入国審査の遅延を吸収する時間の余裕",
+            "ドライバー＋英語ガイドがネームプレートを持って到着ホールで待機",
+            "**メインバース360m×12m/14万トン収容**（1隻同時）",
+            "ターミナル隣接の**バス100台駐車スペース** — 素早い乗車が可能",
+            "ターミナル内に観光案内所、済州銀行の外貨両替、ATM、無料Wi-Fi",
+            "緊急時のタクシー利用に備えた韓国語住所カードを提供"
+          ],
+          "_poi_meta": {
+            "poi_key": "jeju_cruise_port",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities + 100-bus parking)",
+              "South Korea Ministry of Oceans & Fisheries (terminal opening 2015; berth specifications)",
+              "Korea Cruise Port Sales / k-cruiseinfo.com (berth depths, tonnage capacity)",
+              "Ministry of Culture, Sports & Tourism (2024 cruise volume: 810,000 pax / 414 ships)",
+              "Jeju Provincial Government (Imhang-ro address, Geonip-dong; UN/LOCODE KRCHA)"
+            ]
+          },
+          "number": 1,
+          "time": "クルーズ入港後30分",
+          "duration": "30分",
+          "whyOnRoute": "**済州港（北側）は14万GT以下の船の主要クルーズ港** — 東海岸ルートの自然な出発地です。"
+        },
+        {
+          "number": 2,
+          "time": "≈ 09:00",
+          "duration": "75分",
+          "name": "城山日出峰",
+          "category": "ユネスコ凝灰岩コーン—日出峰（ユネスコ三重指定）",
+          "description": "**城山日出峰**は**5,000年前に形成されたスルツェイ式水蒸気噴火凝灰岩コーン** — ユネスコ世界自然遺産の基盤となる希少な火山地形です。",
+          "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+          "highlights": [
+            "**トリプルユネスコ**：世界遺産2007年7月2日＋生物圏保護区2002年＋世界ジオパーク2010年",
+            "**5,000年前**の火山 — スルツェイ式水蒸気噴火、マグマが海水と接触",
+            "クレーターは**直径600m×深さ90m**、**99の尖った縁の岩**（「石の王冠」）に囲まれる",
+            "**海抜182m** — 0.8km/約140mの石段トレイル、往復60分",
+            "**旧日本軍の洞窟18箇所** — 1945年の特攻自殺ボートのシェルター",
+            "**海女の実演は毎日13:30と15:00** — ユネスコ無形文化遺産",
+            "**2025年4月更新の入場料**：大人₩5,000/青少年₩2,500/7歳以下＋65歳以上無料",
+            "春/秋の営業時間 **05:00〜19:00**（最終入場18:20）",
+            "**毎月第1月曜日休業**（臨時休業日）"
+          ],
+          "timeUsed": [
+            "駐車場＋チケット＋入口での案内 — 約10分",
+            "山頂デッキへの登頂（0.8km/140m）— 約30分",
+            "山頂の眺め＋クレーターの縁の写真撮影 — 約20分",
+            "下山 — 約20分",
+            "麓での海女パフォーマンス観覧（15:00公演） — 約10分（オプション）"
+          ],
+          "whyOnRoute": "**城山日出峰のユネスコ三重指定** (世界遺産2007+生物圏保護区2002+ジオパーク2010)がこのクレーターを東海岸ルートの最強の見どころにしています。",
+          "_poi_meta": {
+            "poi_key": "seongsan_ilchulbong",
+            "kb_version": "1.18",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
+              "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
+              "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
+              "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
+              "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
+            ]
+          }
+        },
+        {
+          "number": 3,
+          "time": "≈ 11:15",
+          "duration": "60分",
+          "name": "ソプチコジ（東ケープ）",
+          "category": "火山岬—安藤忠雄建築＋防頭浦灯台＋ドラマ撮影地",
+          "description": "**ソプチコジ**は、済州東海岸に細長く突き出た火山性の岬です。地名は「ソプチ（狭い土地、またはこの地域の古い地名）」と、「コジ（岬を意味する済州方言）」に由来すると説明されます。海岸遊歩道からは城山日出峰を正面に望み、黒い玄武岩の崖と青い海が続きます。ドラマ『オールイン』などのロケ地としても知られ、岬の先には灯台と朝鮮時代の烽火台跡があります。海風が強いことが多いため、歩きやすい靴と羽織ものをご用意ください。",
+          "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+          "highlights": [
+            "**2.1kmの岬の散策路**（約30分、標高差わずか14m） — 車椅子/ベビーカー対応",
+            "**バンドゥポ灯台** — 八角形、**4秒ごとに点滅**、赤い火山丘の上",
+            "**狼煙台** — 4m×9mの朝鮮時代の狼煙台、**特別記念物**",
+            "**安藤忠雄建築** — グラスハウスレストラン＋有民アートギャラリー（フェニックス島）",
+            "**ソンバウィ（ソン岩）** — 10m沖合の火山岩頸、龍王の末子の伝説",
+            "**ドラマロケ地**：「オール・イン」（2003年）、「マイ・ガール」（2005年）など",
+            "**菜の花シーズン3〜4月**（黄色い斜面）。**紫陽花 6月**（青/紫）",
+            "**岬の入場は無料**。有民アートギャラリー＋グラスハウスは別途",
+            "岬の先端から**城山日出峰が4km北に**はっきり見える"
+          ],
+          "timeUsed": [
+            "駐車場＋入口 — 約5分",
+            "岬の散策路 — 約25分",
+            "灯台＋狼煙台の写真撮影 — 約10分",
+            "安藤忠雄建築の外観見学 — 約10分",
+            "バスに戻る＋余裕 — 約10分"
+          ],
+          "whyOnRoute": "**ソプチコジの安藤忠雄建築**（グラスハウスレストラン＋有民アートギャラリー）はバスツアールートの見どころです。",
+          "_poi_meta": {
+            "poi_key": "seopjikoji",
+            "kb_version": "1.19",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Jeju Provincial Cultural Heritage — Special Monument No. 23-2 designation",
+              "VisitJeju — Seopjikoji official listing",
+              "Korea Lighthouse Service — Bangdupo Lighthouse operation records",
+              "Tadao Ando Architect & Associates — Phoenix Island project documentation",
+              "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
+            ]
+          }
+        },
+        {
+          "name": "ランチ（東済州—地元海鮮または黒豚）",
+          "category": "昼食",
+          "description": "城山/城邑/表善エリアのガイド選び抜いたの地元レストランで**東済州のランチ**をお楽しみください。",
+          "highlights": [
+            "ガイド選び抜いたの東済州レストラン——城山/城邑/表善エリア",
+            "**済州黒豚BBQ**（天然記念物2015年）または**ガルチ煮込み**（タチウオ煮）",
+            "約60分——クルーズ日帰り旅行のスケジュールに適合",
+            "英中バイリンガルフォトメニュー、カード＋現金可",
+            "事前連絡でベジタリアン対応可",
+            "**ランチは含まれません** — 現地払い₩15,000〜25,000/人"
+          ],
+          "_poi_meta": {
+            "poi_key": "OPS_lunch_east_jeju",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Jeju Black Pig Natural Monument designation (2015, Cultural Heritage Administration)",
+              "Visit Jeju (eastern Jeju cuisine — galchi, heukdwaeji)",
+              "AtoC Korea operations notes (cruise tour lunch venue rotation)"
+            ]
+          },
+          "number": 4,
+          "time": "≈ 12:30",
+          "duration": "60分",
+          "whyOnRoute": "**ランチはルートの地理的中間点に配置**され、午前中の遅延を吸収しながら午後の見学時間を確保します。"
+        },
+        {
+          "number": 5,
+          "time": "≈ 13:45",
+          "duration": "60分",
+          "name": "城邑民俗村",
+          "category": "朝鮮時代の城塞都市—重要民俗文化財（1423年創建）",
+          "description": "**城邑民俗村**は**世宗大王が1423年に創建した生きた朝鮮時代の城塞町**です。",
+          "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+          "highlights": [
+            "**1423年創建** — 世宗大王による行政センター、**1914年まで（約500年間）**",
+            "原来の邑城城塞内に**110棟の伝統的建造物**",
+            "**重要民俗文化財**（村全体＋複数の建造物）",
+            "中心に**樹齢約600年の2本の木**：欅＋椋木 — **天然記念物**",
+            "**朝鮮の風水（地理）の原則**に基づく構成 — 典型的な郡内行政の形式",
+            "**「大長今」（MBC 2003-2004）**のロケ地",
+            "**オメギスル** — 単一家族が代々醸造する米ベースの済州酒",
+            "歴史的傷跡：**1826年の火事**で約80棟が焼失。**1948年済州四・三事件**",
+            "**無料入場** — 約250世帯が伝統を守りながら今も暮らす村"
+          ],
+          "timeUsed": [
+            "駐車場＋村の解説員による歓迎案内 — 約10分",
+            "古木＋村の中心地まで歩く — 約10分",
+            "韓屋内部見学（代表的な民家2〜3軒） — 約15分",
+            "オメギスル醸造所の無料試飲 — 約10分",
+            "オルレ路地散策＋写真撮影 — 約10分",
+            "余裕 — 約5分"
+          ],
+          "whyOnRoute": "**城邑民俗村**（世宗大王が**1423年に創建**、1914年まで約500年間行政機能）は東ルートの深い文化的見どころです。",
+          "_poi_meta": {
+            "poi_key": "seongeup_folk_village",
+            "kb_version": "1.19",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Cultural Heritage Administration — Important Folklore Cultural Heritage designation",
+              "Korea Cultural Heritage Foundation — Seongeup Folk Village historical records",
+              "VisitJeju — Seongeup Minsok Maeul",
+              "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
+              "Jeju Folklore Society — Omegisul brewing tradition documentation"
+            ]
+          }
+        },
+        {
+          "name": "済州クルーズターミナルへ帰着（済州港・北側）",
+          "category": "クルーズ帰還＆最終乗船",
+          "description": "済州市北海岸の**済州国際旅客ターミナル**への帰路ドライブ。城邑から高速道路1132号＋ルート16経由で約70〜80分。",
+          "highlights": [
+            "**最終乗船の60分以上前に降車** — クルーズ標準の乗船時間の余裕",
+            "東済州から高速道路1132号＋ルート16経由約70〜80分（1回トイレ休憩あり）",
+            "ターミナル入口での荷物お手伝い",
+            "**100番バス**でターミナルから**済州国際空港**へ直通（当日フライトの方に）",
+            "免税店、済州銀行ATM、外貨両替、Wi-Fiレンタルあり",
+            "最終乗船前に時間があれば**東門伝統市場**への無料シャトル（約10分）"
+          ],
+          "_poi_meta": {
+            "poi_key": "jeju_cruise_port",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities)",
+              "Jeju Bus Information System (Bus #100 airport connection)",
+              "Korea Cruise Port Sales (terminal layout + drop-off zones)",
+              "VisitJeju.net (Dongmun Market free shuttle)",
+              "Cruise industry standard (60-min all-aboard buffer)"
+            ]
+          },
+          "number": 6,
+          "time": "≈ 15:30 → 港到着≈16:45",
+          "duration": "車移動75分＋帰船前時間の余裕60分",
+          "whyOnRoute": "**帰路は1日で最も長い単一移動ブロック**（約70〜80分）で、最終乗船時刻の60分以上前に到着するよう組まれています。"
+        }
+      ],
+      "routeFlowStops": [
+        {
+          "id": "01",
+          "name": "クルーズターミナル",
+          "theme": "出発"
+        },
+        {
+          "id": "02",
+          "name": "日出峰",
+          "theme": "火山"
+        },
+        {
+          "id": "03",
+          "name": "ソプチコジ",
+          "theme": "海岸"
+        },
+        {
+          "id": "04",
+          "name": "昼食",
+          "theme": "食事"
+        },
+        {
+          "id": "05",
+          "name": "民俗村",
+          "theme": "文化"
+        },
+        {
+          "id": "06",
+          "name": "クルーズターミナル",
+          "theme": "帰着"
+        }
+      ],
+      "routePhases": [
+        {
+          "label": "午前",
+          "range": "1-3",
+          "theme": "ユネスコ火山と海岸",
+          "bgClass": "bg-sky-50/70",
+          "textClass": "text-sky-700",
+          "dotClass": "bg-sky-500"
+        },
+        {
+          "label": "昼",
+          "range": "4",
+          "theme": "昼食",
+          "bgClass": "bg-amber-50/70",
+          "textClass": "text-amber-700",
+          "dotClass": "bg-amber-500"
+        },
+        {
+          "label": "午後",
+          "range": "5-6",
+          "theme": "民俗文化と帰路",
+          "bgClass": "bg-emerald-50/70",
+          "textClass": "text-emerald-700",
+          "dotClass": "bg-emerald-500"
+        }
+      ]
+    },
+    {
+      "port_id": "gangjeong_port",
+      "port_label": "江汀港（西帰浦ターミナル）",
+      "port_label_short": "江汀港",
+      "route_focus": "漢拿山高山地帯＋西南海岸地質＋市場",
+      "pickup_base": "gangjeong_port",
+      "duration_band": "8h",
+      "return_time_band": "16:30-17:00",
+      "poi_tags_in_variant": [
+        "hallasan_1100",
+        "jusangjeolli_cliff",
+        "cheonjiyeon_falls",
+        "olle_maeil_market"
+      ],
+      "theme_tags_in_variant": [
+        "volcano",
+        "alpine",
+        "geology",
+        "滝",
+        "market",
+        "shopping"
+      ],
+      "scenic_level_in_variant": 1.0,
+      "walking_level_in_variant": 0.6,
+      "indoor_ratio_in_variant": 0.25,
+      "weather_sensitivity_in_variant": 0.6,
+      "stops": [
+        {
+          "name": "江汀クルーズターミナル乗車（西帰浦・南側）",
+          "category": "乗船＆クルーズ案内",
+          "description": "ドライバーと英語ガイドが**江汀港クルーズターミナル**の到着ホールでネームプレートを持って待機しています。",
+          "highlights": [
+            "**2バース×22万トン収容** — 2隻のクルーズ船を同時処理",
+            "通関後30分ピックアップ。英語ガイド＋ネームプレートで到着ホール待機",
+            "公式名称**「美しい観光のための軍民複合港」** — 2016年2月開港",
+            "**53台の屋外バス駐車スペース** — 2隻同時接岸の日は早く埋まる",
+            "済州港（北側）より**バリアフリー性能が高い** — フラットな内部、エレベーター",
+            "**アドラ・マジックシティが2025年5月1日よりセミホームポート** — 33往復予定",
+            "城山まで片道70分以上のため、南側ルートはこの港では必須"
+          ],
+          "_poi_meta": {
+            "poi_key": "gangjeong_cruise_port",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (Gangjeong terminal facilities + 53-bus parking)",
+              "South Korea Ministry of Oceans & Fisheries (port history, civilian-military designation)",
+              "Korea Cruise Port Sales / k-cruiseinfo.com (berth specifications, tonnage)",
+              "CruiseMapper (Adora Magic City semi-homeporting May 2025; berth assignments)",
+              "South Korean Supreme Court ruling July 2012 (construction lawful; opened Feb 2016)"
+            ]
+          },
+          "number": 1,
+          "time": "クルーズ入港後30分",
+          "duration": "30分",
+          "whyOnRoute": "**江汀港は南ルートの唯一の出発地** — デュアルバース22万トン収容の港は大型クルーズ船のゲートウェイです。"
+        },
+        {
+          "number": 2,
+          "time": "≈ 09:30",
+          "duration": "60分",
+          "name": "漢拿山1100高地湿地（ラムサール＋ユネスコ）",
+          "category": "高山湿地—ラムサール条約湿地＋漢拿山ユネスコ世界遺産範囲内",
+          "description": "**漢拏山1100高地湿原**は漢拏山高原の高標高アルパイン湿地系、海抜約1,100mに位置します。",
+          "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
+          "highlights": [
+            "**ラムサール第1893号**（2009年10月12日指定） — 国際的に重要な湿地",
+            "**標高1,100m** — 韓国で**最も高い国道**（1100道路）上",
+            "**四重国際指定** — ラムサール＋ユネスコ世界遺産＋生物圏保護区＋ジオパーク",
+            "**16か所以上の不連続湿地** — 淡水湿地＋池＋泥炭沼",
+            "**絶滅危惧の鳥類3種＋植物1種**。済州固有種が多数",
+            "**年間来場者90万人（2008年）** — 漢拏山ビジターセンター管理",
+            "観測デッキ＋解説標識付きの**1km木製ボードウォークループ**",
+            "**秋の紅葉＋冬の雪景色** = 代表的な写真シーズン",
+            "**無料入場**。隣接の1100休憩所（室内トイレ＋カフェ）"
+          ],
+          "timeUsed": [
+            "1100休憩所で到着・駐車 — 約5分",
+            "ボードウォークループ＋展望台 — 約25分",
+            "解説標識＋自然史展示 — 約10分",
+            "余裕/カフェ・トイレ — 約5分"
+          ],
+          "whyOnRoute": "**漢拏山1100高地（ラムサール第1893号、2009年10月12日指定）**はこの日の標高＆資格の見どころです。",
+          "_poi_meta": {
+            "poi_key": "hallasan_1100_wetland",
+            "kb_version": "1.20",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Ramsar Sites Information Service — 1100 Altitude Wetland (Site No. 1893)",
+              "UNESCO Man and the Biosphere Programme — Jeju Island Biosphere Reserve",
+              "Korea National Park Service — Hallasan National Park 1100 Wetland records",
+              "Mt Halla Visitor Centre — visitor management documentation",
+              "Jeju Special Self-Governing Province — Wetland Protected Area designation 2009"
+            ]
+          }
+        },
+        {
+          "number": 3,
+          "time": "≈ 11:00",
+          "duration": "45分",
+          "name": "大浦柱状節理帯",
+          "category": "火山性海岸線—六角形柱状節理溶岩",
+          "description": "**大浦柱状節理**は済州西帰浦のチュンムン海岸沿いの**1kmの六角形柱状節理玄武岩絶壁**です。",
+          "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+          "highlights": [
+            "**天然記念物第443号** — **2005年1月6日指定**、最近指定された済州の海岸地形",
+            "柱は**高さ30〜40m**、**5〜7角形の多角形**（主に六角形）が1km連続",
+            "形成：**漢拏山の斜面の溶岩が約25〜14万年前に海で冷却**、収縮で節理形成",
+            "**東アジア最高の柱状節理地** — ジャイアンツ・コーズウェー、デビルズポストパイルと並ぶ",
+            "**高潮時は20mの飛沫** — 波の噴水撮影のチャンス",
+            "**0.8kmのボードウォークループ**、約15分 — バリアフリーデッキ、車椅子/ベビーカー対応",
+            "**済州グローバルジオパーク（ユネスコ 2010年）**の一部 — 島内13か所のジオサイト",
+            "入場料 **大人₩2,000/青少年₩1,000/7歳以下＋65歳以上無料**",
+            "晴れた日には北に漢拏山頂が見え、**直接上流の地質的**関係がある"
+          ],
+          "timeUsed": [
+            "駐車場＋入場券購入＋入口 — 約5分",
+            "最初の展望台まで歩く — 約5分",
+            "崖の縁の柱状節理観覧＋写真撮影 — 約15分",
+            "ボードウォークループ続行 — 約10分",
+            "バスに戻る — 約10分"
+          ],
+          "whyOnRoute": "**大浦柱状節理帯（天然記念物第443号）**は撮影の柔軟性をご案内します。",
+          "_poi_meta": {
+            "poi_key": "daepo_jusangjeolli_cliff",
+            "kb_version": "1.18",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Cultural Heritage Administration — Natural Monument No. 443 designation (2005-01-06)",
+              "Jeju Global Geopark official site (geopark.jeju.go.kr)",
+              "UNESCO Global Geoparks Network — Jeju (2010 designation)",
+              "VisitJeju — Daepo Jusangjeolli",
+              "Korea Geological Survey — Jeju basalt formation studies"
+            ]
+          }
+        },
+        {
+          "name": "西帰浦毎日オルレ市場近くでランチ",
+          "category": "昼食",
+          "description": "西帰浦オレ毎日市場内またはその近くのガイド選び抜いたレストランで**西帰浦のランチ**をお楽しみください。",
+          "highlights": [
+            "**オレ毎日市場**内/近くのガイド選び抜いたのレストラン",
+            "**タチウオの刺身**、**黒豚BBQ**、またはビビンバ＋モムグク(ベジタリアン)",
+            "約60分 — クルーズ行程に適合",
+            "**天地渊滝の散策路まで徒歩5分**",
+            "**オメギスル**（城邑産の米・黍の伝統酒）試飲可",
+            "**ランチは含まれません** — ₩15,000〜25,000/人"
+          ],
+          "_poi_meta": {
+            "poi_key": "OPS_lunch_seogwipo_olle",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Visit Jeju (Seogwipo cuisine; galchi market trade)",
+              "Jeju Black Pig Natural Monument designation (2015, Cultural Heritage Administration)",
+              "AtoC Korea operations notes (cruise tour lunch venue rotation)"
+            ]
+          },
+          "number": 4,
+          "time": "≈ 12:15",
+          "duration": "60分",
+          "whyOnRoute": "**西帰浦オレ毎日市場でのランチ**は南ルートの効率性の強み — 市場は天地渊滝の散策路入口まで**徒歩5分**の距離にあります。"
+        },
+        {
+          "name": "天地淵瀑布（西帰浦旧市街の滝）",
+          "category": "自然名所＆天然記念物",
+          "description": "**天地渊滝**（文字通り「空と地が出会う滝」）は西帰浦の2つの有名な滝のうち港に近い方です。",
+          "highlights": [
+            "**一段22m×12mの滝→深さ20mのエメラルドの池** — 西帰浦の代表的な滝",
+            "**天帝渕（天帝淵）ではありません** — 別の滝、別の渓谷、チュンムンから西へ約15分",
+            "**天然記念物第379号**",
+            "**ムテ鰻（天然記念物第27号）**の生息地 — 照明下の夜行性大理石模様ウナギ",
+            "**トンボノキ（天然記念物第163号）**＋渓谷の散策路",
+            "緩やかな**1km舗装散策路（約15分）** — ベビーカー/車椅子対応",
+            "**₩2,000/₩1,000の入場料**（09:00〜22:00。最終入場21:30）",
+            "**19:00〜22:00のナイトイルミネーション** — 済州の滝で唯一",
+            "**オレ毎日市場から徒歩5分**"
+          ],
+          "_poi_meta": {
+            "poi_key": "cheonjiyeon_falls",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (Cheonjiyeon Falls dimensions, hours, admission)",
+              "Visit Jeju (Natural Monument designations 27, 163, 379; trail length)",
+              "Wikipedia (Cheonjiyeon Waterfall — habitat protection, distinction from Cheonjeyeon)",
+              "Inside Jeju (hours 09:00–22:00 last entry 21:30; ₩2,000 / ₩1,000 admission)",
+              "(night illumination 19:00–22:00; Mutae eel nocturnal habitat)"
+            ]
+          },
+          "number": 5,
+          "time": "≈ 13:30",
+          "duration": "60分",
+          "whyOnRoute": "**天地渊滝**は**1kmの川沿い散策路**（舗装済み、ベビーカー可）と22mの滝で南ルートを締めくくります。"
+        },
+        {
+          "name": "毎日オルレ市場（西帰浦毎日オルレ市場）",
+          "category": "伝統市場＆食べ物",
+          "description": "**西帰浦毎日オレ市場**は**南済州最大の伝統市場**です。",
+          "highlights": [
+            "**南済州最大の伝統市場** — 620mアーケード、約200店舗、約140の食品販売者",
+            "**1960年代初頭開業** — 60年以上の伝統市場の歴史",
+            "**オルレトレイルコース6・7**が市場入口近くを通る",
+            "**済成ベーカリーのタコまんじゅう** — 地元の定番、午前10時から行列",
+            "旬の**漢拏峰＋天恵香みかん**（12〜3月） — 済州みかんの品種",
+            "タチウオの刺身、黒豚串、モムグク（済州の海藻スープ）",
+            "**オメギスル**（城邑産）試飲",
+            "**半透明の開閉式屋根** — 屋根付きアーケード、天候を問わずショッピング可",
+            "**天地渊滝の散策路まで徒歩5分**"
+          ],
+          "_poi_meta": {
+            "poi_key": "olle_maeil_market",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (market dimensions: 620 m, ~200 shops)",
+              "Visit Jeju (early-1960s history; signature foods; Olle Trail proximity)",
+              "Mindtrip (vendor count ~140; opening hours)",
+              "Soul of Seoul (Olle Maeil Market food guide — Jeseong Bakery octopus buns)",
+              "Jeju Olle Foundation (Trail Courses 6 & 7 routing through market area)"
+            ]
+          },
+          "number": 6,
+          "time": "≈ 14:45",
+          "duration": "45分",
+          "whyOnRoute": "**最後の帰路途中にオレ毎日市場に寄る** — 最終お土産購入の機会。漢拏峰/天恵香みかん箱（12〜3月）、黒豚加工品など。"
+        },
+        {
+          "name": "江汀クルーズターミナルへ帰着（西帰浦・南側）",
+          "category": "クルーズ帰還＆最終乗船",
+          "description": "西帰浦の江汀村の**江汀港クルーズターミナル**への帰路ドライブ。",
+          "highlights": [
+            "**最終乗船の60分以上前に降車** — クルーズ業界標準",
+            "オレ市場/天地渊エリアから：約10〜15分のドライブ",
+            "漢拏山1100から：1100道路経由で約35分下山",
+            "ターミナル入口での荷物お手伝い",
+            "**リムジンバス800/800-1**江汀→済州空港（イノベーションシティ経由）",
+            "ターミナル内に観光案内所、外貨両替、税金還付カウンター"
+          ],
+          "_poi_meta": {
+            "poi_key": "gangjeong_cruise_port",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (Gangjeong facilities + Limousine 800)",
+              "Jeju Provincial Government (Limousine 800/800-1 routing via Innovation City)",
+              "Korea Cruise Port Sales (terminal-to-airport options)",
+              "Cruise industry standard (60-min all-aboard buffer)",
+              "VisitJeju.net (southern circuit drive times)"
+            ]
+          },
+          "number": 7,
+          "time": "≈ 15:45 → 港到着≈16:00",
+          "duration": "車で約15分＋60分の余裕時間",
+          "whyOnRoute": "**カタログ最短のクルーズ帰路** — オレ市場から江汀港まで**ミニコーチで約15分**。"
+        }
+      ],
+      "routeFlowStops": [
+        {
+          "id": "01",
+          "name": "クルーズターミナル",
+          "theme": "出発"
+        },
+        {
+          "id": "02",
+          "name": "1100高地",
+          "theme": "高地エリア"
+        },
+        {
+          "id": "03",
+          "name": "柱状節理",
+          "theme": "地質"
+        },
+        {
+          "id": "04",
+          "name": "昼食",
+          "theme": "食事"
+        },
+        {
+          "id": "05",
+          "name": "天地渊",
+          "theme": "滝"
+        },
+        {
+          "id": "06",
+          "name": "オレ市場",
+          "theme": "市場"
+        },
+        {
+          "id": "07",
+          "name": "クルーズターミナル",
+          "theme": "帰着"
+        }
+      ],
+      "routePhases": [
+        {
+          "label": "午前",
+          "range": "1-3",
+          "theme": "高地から海岸地質へ",
+          "bgClass": "bg-violet-50/70",
+          "textClass": "text-violet-700",
+          "dotClass": "bg-violet-500"
+        },
+        {
+          "label": "昼",
+          "range": "4",
+          "theme": "昼食",
+          "bgClass": "bg-amber-50/70",
+          "textClass": "text-amber-700",
+          "dotClass": "bg-amber-500"
+        },
+        {
+          "label": "午後",
+          "range": "5-7",
+          "theme": "滝・市場・帰路",
+          "bgClass": "bg-emerald-50/70",
+          "textClass": "text-emerald-700",
+          "dotClass": "bg-emerald-500"
+        }
+      ]
+    }
+  ],
+  "whyTourWorks": {
+    "bestFor": [
+      "クルーズターミナルからの同日往復が必要なクルーズ乗客",
+      "一日でユネスコ見どころを体験したい済州初訪問者",
+      "バジェット価格でガイド付き適切なルートを求める旅行者"
+    ],
+    "lessIdealFor": [
+      "移動能力が非常に限られた方（城山の縁ウォークには歩行が必要）",
+      "ベビーカー依存度の高いグループ",
+      "クルーズのスケジュールは固定のため、急がないペースを求める旅行者"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "クルーズ寄港地ツアーを選ぶ理由",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "寄港地に合わせた2ルート",
+            "detail": "済州港（北）発は東部ユネスコルート、江汀港（南）発は漢拏山高地ルート — どちらの寄港地でも最適なルートで対応。"
+          },
+          {
+            "label": "寄港地に合わせた2ルート",
+            "detail": "済州港（北）発は東部ユネスコルート、江汀港（南）発は漢拏山高地ルート — どちらの寄港地でも最適なルートで対応。"
+          },
+          {
+            "label": "寄港地に合わせた2ルート",
+            "detail": "済州港（北）発は東部ユネスコルート、江汀港（南）発は漢拏山高地ルート — どちらの寄港地でも最適なルートで対応。"
+          }
+        ]
+      },
+      {
+        "title": "このルートの推薦理由",
+        "icon": "users",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "ピックアップと帰着",
+      "preview": "クルーズターミナルピックアップ — 港により異なります",
+      "content": [
+        "済州港（北）または江汀港（南）のクルーズターミナルでピックアップ",
+        "AtoC Koreaのサインボードを持ったガイドが旅客ターミナル出口エリアで待機",
+        "帰船時間の90〜120分前にターミナルへ帰着できるようにしています",
+        "予約時に必ず出航時刻をお知らせください",
+        "緊急時はガイドが休憩をスキップして帰船を優先"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "歩行と地形",
+      "preview": "中程度。利用する港のコースにより異なります。",
+      "content": [
+        "城山日出峰の山頂往復：約30〜40分の登山（木製階段あり）",
+        "ソプチコジの断崖縁トレイル：2.1km、ほぼフラット、約30分",
+        "城邑民俗村：フラットな石畳・砂利道、約45〜60分",
+        "総歩行距離：約5〜6km",
+        "歩きやすいクローズドトゥシューズ必須。城山では滑りにくいシューズを推奨"
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "天候ポリシー",
+      "preview": "クルーズスケジュール固定 — ルートが調整されます",
+      "content": [
+        "小雨：ほとんどの見どころで実施可能",
+        "大雨または強風：城山の山頂トレイルが閉鎖される場合あり",
+        "台風：全額返金または日程変更の選択肢をご案内",
+        "悪天候時でも帰船時間は厳守します"
+      ]
+    },
+    {
+      "id": "wear",
+      "title": "服装と持ち物",
+      "preview": "歩きやすい靴＋重ね着＋再乗船用パスポート。クルーズ船の最終乗船時刻に間に合うよう、出港時刻の少なくとも60〜90分前に港へ戻ることを最優先に行程を調整します。交通状況、天候、入国・下船手続きの遅れがある場合は、観光地での滞在時間を短縮してでも、安全な帰港と時間内の再乗船を優先します。",
+      "content": [
+        "グリップの良い靴（城山の木製階段に対応）",
+        "防風ジャケット（ソプチコジ・城山での強風に対応）",
+        "帽子と日焼け止め",
+        "水（少なくとも1L）",
+        "予約確認書または旅客番号（乗船確認用）。クルーズ船の最終乗船時刻に間に合うよう、出港時刻の少なくとも60〜90分前に港へ戻ることを最優先に行程を調整します。交通状況、天候、入国・下船手続きの遅れがある場合は、観光地での滞在時間を短縮してでも、安全な帰港と時間内の再乗船を優先します。"
+      ]
+    },
+    {
+      "id": "included",
+      "title": "含まれるもの・含まれないもの",
+      "preview": "ガイド、車両、ピックアップ、入場料",
+      "variant": "included",
+      "content": [
+        "大型エアコン付きコーチ",
+        "英語対応ガイド",
+        "クルーズターミナル発着の送迎",
+        "全入場料（城山日出峰・ソプチコジ・城邑民俗村）",
+        "含まれないもの：昼食（約₩15,000）・チップ"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "季節別の案内を確認"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "季節別の案内を確認"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "season": "春",
+      "title": "クルーズシーズン開幕",
+      "description": "菜の花（3〜4月）が城山周辺に咲き誇る。ソプチコジが最も混雑するシーズン。",
+      "icon": "flower"
+    },
+    {
+      "season": "夏",
+      "title": "クルーズピーク",
+      "description": "湿気が高いが東済州の海風が涼しい。城邑民俗村の緑が鮮やか。",
+      "icon": "sun"
+    },
+    {
+      "season": "秋",
+      "title": "最高の視界",
+      "description": "晴天が多く視界が良好。城山日出峰の山頂からの眺めが最も澄んでいるシーズン。",
+      "icon": "leaf"
+    },
+    {
+      "season": "冬",
+      "title": "オフピーク",
+      "description": "冬の城山の日の出が美しい。強風に注意。ソプチコジの草原が枯れ野の趣。",
+      "icon": "snow"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "現地を熟知した認定スタッフ",
+      "description": "完全保険付きの認定韓国ツアー催行会社",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "済州全域を知り尽くした現地を熟知した認定スタッフ。クルーズ船の帰船時間管理に豊富な実績。"
+    },
+    {
+      "icon": "route",
+      "title": "クルーズ専用行程づくり",
+      "description": "済州港と江汀港の2ルート対応",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "寄港地に合わせた2つのコース。帰船時間の90〜120分前にターミナルへ戻れるように行程を管理します。"
+    },
+    {
+      "icon": "users",
+      "title": "大型コーチ運行",
+      "description": "大型グループに対応した大型エアコン付きコーチ",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "大型コーチで快適な移動。クルーズ団体客にも対応。英語対応ガイド同乗。"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "予約後すぐ",
+      "title": "予約確認（即時）",
+      "detail": "行程確認付きの予約確認",
+      "description": "クルーズターミナルのピックアップ詳細付きで即時確認。"
+    },
+    {
+      "timing": "12時間前",
+      "title": "12時間前リマインダー",
+      "detail": "天気情報とルート変更のご案内",
+      "description": "天候状況と城山山頂トレイルのアクセス確認を含むプレツアー案内。"
+    },
+    {
+      "timing": "前日の夜",
+      "title": "最終お迎え情報",
+      "detail": "ピックアップポイントとガイドの連絡先",
+      "description": "当日のガイド連絡先とターミナル集合場所の最終確認。"
+    },
+    {
+      "timing": "当日の朝",
+      "title": "当日ルート情報",
+      "detail": "ライブ状況に基づく朝のブリーフィング",
+      "description": "天候と城山トレイル状況の最新情報を含む朝のメッセージ。"
+    },
+    {
+      "timing": "ツアー中",
+      "title": "各訪問地でのガイダンス",
+      "detail": "各場所でのリアルタイムガイド",
+      "description": "城山の地質・ソプチコジのKドラマ歴史・城邑の朝鮮時代の歴史をガイドがナレーション。"
+    },
+    {
+      "timing": "ツアー後",
+      "title": "ツアー後サポート",
+      "detail": "フォローアップとおすすめ情報",
+      "description": "解散後にツアー後のフィードバックリクエストを送付。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "予約可否とクルーズ港は予約ステップで確認されます。",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "人"
+    }
+  },
+  "pickup_dropoff": {
+    "type": "cruise_terminal_pickup",
+    "meeting_points": [
+      {
+        "name": "済州クルーズターミナル（北部）",
+        "note": "税関出口で集合",
+        "port_id": "jeju_port"
+      },
+      {
+        "name": "江汀クルーズターミナル（南部・西帰浦）",
+        "note": "税関出口で集合",
+        "port_id": "gangjeong_port"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "済州クルーズターミナル（北部）",
+        "note": "お迎えと同じクルーズターミナルで降車",
+        "port_id": "jeju_port"
+      },
+      {
+        "name": "江汀クルーズターミナル（南部・西帰浦）",
+        "note": "お迎えと同じクルーズターミナルで降車",
+        "port_id": "gangjeong_port"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "ご予約時のクルーズ日程に基づいて寄港地を確認し、該当するルートでご案内します。"
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "jeju-cruise-shore-excursion-bus-tour",
+    "product_type": "small_group_fixed_itinerary",
+    "route_type": "cruise_shore_excursion_pair_route_variants",
+    "destination_region": "jeju",
+    "region_type": "island_full",
+    "vehicle_type": "coach",
+    "duration_hours": 8.0,
+    "region_tags": [
+      "jeju_east",
+      "jeju_south",
+      "jeju_seogwipo",
+      "jeju_island_wide"
+    ],
+    "theme_tags": [
+      "cruise_shore_excursion",
+      "unesco_geology",
+      "natural_monument",
+      "folk_heritage",
+      "value_pricing",
+      "group_travel",
+      "first_time_jeju",
+      "ramsar_wetland",
+      "columnar_jointing",
+      "tea_culture_optional",
+      "waterfall_natural_monument",
+      "traditional_market",
+      "tadao_ando_architecture"
+    ],
+    "poi_tags": [
+      "jeju_cruise_port",
+      "gangjeong_cruise_port",
+      "seongsan_ilchulbong",
+      "seopjikoji",
+      "seongeup_folk_village",
+      "hallasan_1100_wetland",
+      "daepo_jusangjeolli_cliff",
+      "cheonjiyeon_falls",
+      "olle_maeil_market"
+    ],
+    "pace_level": 0.5,
+    "walking_level": 0.4,
+    "scenic_level": 0.85,
+    "photo_level": 0.85,
+    "culture_level": 0.7,
+    "relax_level": 0.5,
+    "first_time_fit": 0.95,
+    "family_fit": 0.65,
+    "senior_fit": 0.65,
+    "couple_fit": 0.8,
+    "solo_traveler_fit": 1.0,
+    "active_traveler_fit": 0.8,
+    "adult_family_fit": 0.8,
+    "family_with_teens_fit": 0.8,
+    "young_kids_fit": 0.55,
+    "senior_active_fit": 0.8,
+    "senior_general_fit": 0.4,
+    "mobility_friendly_fit": 0.55,
+    "stroller_fit": 0.5,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.95,
+    "rain_fit": 0.45,
+    "value_for_money_fit": 0.8,
+    "iconic_landmark_fit": 0.95,
+    "cafe_fit": 0.4,
+    "food_fit": 0.65,
+    "nature_fit": 0.9,
+    "beach_fit": 0.4,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.55,
+    "no_shopping_fit": 0.4,
+    "local_culture_fit": 0.7,
+    "storytelling_fit": 0.85,
+    "unesco_fit": 0.85,
+    "intangible_heritage_fit": 0.4,
+    "indoor_ratio": 0.2,
+    "weather_sensitivity": 0.85,
+    "comfort_level": 0.75,
+    "budget_fit": 1.0,
+    "premium_fit": 0.4,
+    "small_group_fit": 0.4,
+    "private_fit": 0.15,
+    "bus_fit": 1.0,
+    "price_band": "budget",
+    "pickup_base": "cruise_terminal_dynamic",
+    "return_time_band": "16:30-17:00",
+    "duration_band": "8h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "expecting_full_day_with_no_return_constraint"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "stroller_heavy",
+        "very_young_children"
+      ]
+    },
+    "walking_notes": [
+      "Walking varies by port variant; both routes include moderate walking with optional climbs.",
+      "Jeju port (east coast) variant: Seongsan Ilchulbong rim climb is the steepest section (optional).",
+      "Gangjeong port variant: Hallasan 1100 boardwalk is easy; Cheonjiyeon falls path is short.",
+      "Comfortable walking shoes recommended; bring layers for Hallasan 1100 (Gangjeong variant)."
+    ],
+    "keywords": [
+      "済州クルーズ寄港地観光",
+      "済州クルーズバスツアー",
+      "済州城山日出峰クルーズ"
+    ],
+    "synonym_hints": [
+      "済州クルーズツアー",
+      "済州港寄港観光"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "jeju_cruise",
+    "vehicle_type_legacy": "large_coach",
+    "anchor_poi_keys": [
+      "seongsan_ilchulbong",
+      "seopjikoji",
+      "seongeup_folk_village",
+      "jeju_cruise_port"
+    ],
+    "cruise_shore_excursion_fit": 1.0,
+    "cruise_shore_excursion_value_fit": 1.0,
+    "cruise_shore_excursion_scenic_fit": 0.85,
+    "cruise_shore_excursion_intimacy_fit": 0.4,
+    "cruise_disembarkation_window_fit": 1.0,
+    "cruise_morning_arrival_compatible_fit": 1.0,
+    "cruise_8_hour_window_fit": 1.0,
+    "cruise_all_aboard_60min_buffer_fit": 1.0,
+    "cruise_port_aware_routing_fit": 1.0,
+    "supports_jeju_port_north_variant": true,
+    "supports_gangjeong_port_south_variant": true,
+    "max_concurrent_ships_supported": 2,
+    "private_tour_fit": 0.05,
+    "large_group_fit": 1.0,
+    "group_size_min": 15,
+    "group_size_max": 40,
+    "group_size_typical": 25,
+    "shared_vehicle_fit": 1.0,
+    "vehicle_comfort_level": 0.6,
+    "coach_comfort_floor_fit": 1.0,
+    "ac_vehicle_fit": 1.0,
+    "luggage_storage_in_vehicle_fit": 1.0,
+    "wheelchair_access_capable_with_advance_notice": true,
+    "customizable_route_fit": 0.05,
+    "fixed_itinerary_fit": 1.0,
+    "flexibility_fit": 0.3,
+    "predictable_schedule_fit": 1.0,
+    "first_time_jeju_fit": 1.0,
+    "unesco_focused_tour_fit": 0.85,
+    "triple_unesco_fit": 1.0,
+    "unesco_world_heritage_fit": 1.0,
+    "unesco_biosphere_fit": 1.0,
+    "unesco_geopark_fit": 1.0,
+    "ramsar_wetland_fit": 1.0,
+    "natural_monument_count_visited": 5,
+    "columnar_jointing_fit": 1.0,
+    "tuff_cone_fit": 1.0,
+    "single_eruption_landform_fit": 1.0,
+    "joseon_walled_town_fit": 1.0,
+    "folk_village_anchor_fit": 1.0,
+    "tadao_ando_architecture_fit": 1.0,
+    "pulitzer_architecture_fit": 1.0,
+    "k_drama_filming_locations_count": 5,
+    "natural_park_visit": true,
+    "waterfall_visit": true,
+    "traditional_market_visit": true,
+    "lunch_included": false,
+    "lunch_out_of_pocket_typical_krw": 20000,
+    "vegetarian_options_available_with_advance_notice": true,
+    "card_payment_accepted_at_lunch": true,
+    "cash_krw_recommended_amount": 50000,
+    "stroller_friendly_fit": 0.7,
+    "senior_friendly_fit": 0.85,
+    "child_friendly_fit": 0.8,
+    "mobility_limited_friendly_fit": 0.6,
+    "rainy_day_friendly_fit": 0.7,
+    "sunrise_peak_silhouette_photo_fit": 1.0,
+    "columnar_joint_close_up_photo_fit": 1.0,
+    "wetland_alpine_landscape_photo_fit": 1.0,
+    "village_stone_culture_photo_fit": 1.0,
+    "waterfall_emerald_pool_photo_fit": 1.0,
+    "market_food_photo_fit": 1.0,
+    "differentiates_from_small_group_cruise_tour": true,
+    "value_advantage_vs_small_group": true,
+    "scale_advantage_vs_small_group": true,
+    "intimacy_disadvantage_vs_small_group": true,
+    "per_pax_cost_efficiency_fit": 1.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "china_mainland_market_fit": 0.0,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.9,
+    "se_asia_market_fit": 0.95,
+    "korea_domestic_market_fit": 0.0,
+    "cruise_market_segment_fit": 1.0,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "cross_batch_reuse_count_substantive_stops": 3,
+    "fresh_authored_substantive_stops_count": 2,
+    "fresh_authored_compound_stops_count": 0,
+    "kb_version_at_enrichment": "1.21",
+    "japan_market_fit": 0.85
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "embedded_for": [
+      "authoring",
+      "review",
+      "backfill",
+      "sql_upsert_generation"
+    ],
+    "source_of_truth_note": "Runtime recommendation reads Supabase tour_matching_profiles. Cruise products require user_port parameter for variant selection.",
+    "port_routing_split": {
+      "applied_at": "2026-04-27",
+      "previous_state": "Single itineraryStops representing one generic cruise route.",
+      "schema_change": "itineraryStops -> itinerary_variants (port-keyed array)",
+      "ports_introduced": [
+        {
+          "port_id": "jeju_port",
+          "label": "Jeju Port (Northern Terminal)",
+          "route_focus": "East coast ユネスコ + folk"
+        },
+        {
+          "port_id": "gangjeong_port",
+          "label": "Gangjeong Port (Seogwipo Terminal)",
+          "route_focus": "Hallasan + SW coast geology + market"
+        }
+      ],
+      "rationale": "Cruise ships call at different Jeju ports depending on route. Jeju Port (north) and Gangjeong Port (south, in Seogwipo) are 60+ km apart, so the day-trip route differs entirely. A single itinerary misrepresented the actual product served at each port.",
+      "matching_implications": [
+        "When user_port is known (cruise booking context), score only the matched variant's poi_tags_in_variant / theme_tags_in_variant.",
+        "When user_port is unknown, fall back to product profile.poi_tags (union).",
+        "Variant-level indoor_ratio_in_variant / weather_sensitivity_in_variant override product profile values when a specific port is selected."
+      ],
+      "downstream_actions": [
+        "Frontend: add port selector UI (radio or chip) before itinerary renders. Default to 'Select your cruise port' empty state with both variant previews visible.",
+        "Supabase: add port_id (text, nullable) column to bookings table; FK to a new cruise_ports reference table with rows for jeju_port, gangjeong_port.",
+        "Cruise routing note: use the guest port when available; otherwise use the general cruise route profile.",
+        "Pricing review: validate whether bus / small group pricing differs by port — Gangjeong route includes Hallasan 1100 which adds drive time and toll vs Jeju Port's east-coast loop.",
+        "Existing bookings: backfill port_id where derivable from itinerary or pickup_base; flag rest as null for manual review.",
+        "Locale (ko): translate port_label, port_label_short, route_focus, and stop names/descriptions for Korean users."
+      ]
+    },
+    "audit_summary": {
+      "kept_from_product_json": [
+        "product_type",
+        "route_type=fixed_route_with_port_variants",
+        "vehicle_type",
+        "duration_hours=8",
+        "comfort_level/bus_fit/small_group_fit per format",
+        "indoor_ratio/weather_sensitivity (variant-averaged)"
+      ],
+      "derived_after_json_audit": [
+        "unesco_fit=5 computed from canonicalized poi_tags union",
+        "rain_fit=2 because most variant stops are exposed and cruise return is fixed",
+        "young_kids_fit=2 because 8-hour cruise day with cruise constraint is long for under-6",
+        "mobility_friendly_fit=2 because Seongsan rim and Hallasan 1100 both require walking",
+        "route-specific scoring overrides apply when user_port is known"
+      ],
+      "content_inconsistencies_found": []
+    },
+    "score_rationale": {
+      "unesco_fit": "Both port variants include ユネスコ World Heritage POIs (Seongsan or Hallasan-area).",
+      "weather_sensitivity": "Cruise schedule is fixed — weather impact is structural.",
+      "value_for_money_fit": "Bus format: highest value at lowest price tier.",
+      "comfort_level": "Format-specific bus tour comfort."
+    },
+    "locale_adaptation": {
+      "locale": "en",
+      "shared_fields_kept_identical": [
+        "all numeric and tag fields"
+      ],
+      "localized_fields_updated": [
+        "keywords",
+        "synonym_hints",
+        "walking_notes"
+      ],
+      "note": "Korean locale should translate port_label, port_label_short, and stop names/descriptions."
+    },
+    "anchor_pois": [
+      "Seongsan Ilchulbong",
+      "Manjanggul Cave",
+      "Jeju cruise port",
+      "Seongeup Folk Village"
+    ],
+    "anchor_poi_keys": [
+      "seongsan_ilchulbong",
+      "seopjikoji",
+      "seongeup_folk_village",
+      "jeju_cruise_port"
+    ],
+    "unesco_fit_per_variant": {
+      "jeju_port": 4,
+      "gangjeong_port": 2,
+      "rule": "Per documented unesco_fit scoring: 1 WHS = 4, 1 Geopark/Intangible = 2"
+    },
+    "bus_fit_definition": "bus_fit measures fit for LARGE-COACH format only. Mini-coach products score 1; large-coach products score 5.",
+    "competing_products": [
+      "jeju-cruise-shore-excursion-small-group-tour",
+      "jeju-island-private-car-charter-tour",
+      "jeju-eastern-unesco-spots-day-tour"
+    ],
+    "enrichment_batch": "16a",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.21",
+    "enrichment_target_kb_version": "1.22",
+    "profile_version_pre": 5,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "stop_count_total_variant1": 6,
+    "stop_count_total_variant2": 7,
+    "substantive_stop_count_variant1": 3,
+    "substantive_stop_count_variant2": 4,
+    "auxiliary_stop_count_variant1": 3,
+    "auxiliary_stop_count_variant2": 3,
+    "highlight_count_per_substantive_stop": 9,
+    "source_count_per_substantive_stop_min": 5,
+    "cross_batch_reuse_map": {
+      "variant1_seongsan_ilchulbong": "from batch14a_tour1_data (1901c canonical)",
+      "variant1_seopjikoji": "from batch14b_tour1_data (1716c canonical)",
+      "variant1_seongeup_folk_village": "from batch14b_tour1_data (1742c canonical)",
+      "variant2_hallasan_1100_wetland": "from batch15a_tour2_data (1778c canonical)",
+      "variant2_daepo_jusangjeolli_cliff": "from batch14a_tour1_data (1831c canonical)",
+      "variant2_cheonjiyeon_falls": "fresh authoring in batch16a_shared_stops (1734c)",
+      "variant2_olle_maeil_market": "fresh authoring in batch16a_shared_stops (1581c)"
+    },
+    "differentiation_from_sister": "vehicle_type=coach (vs minicoach) + group_size 25-40 (vs 8-15) + value pricing tier",
+    "port_variant_design": "Both port variants (Jeju north / Gangjeong south) share the same product, dispatched per cruise dock"
+  },
+  "staticQuestions": [
+    {
+      "id": "port-routing",
+      "question": "どの港に寄港するか確認する方法は？",
+      "answer": "クルーズの行程書類またはクルーズ会社のウェブサイトで寄港地を確認してください。済州港または江汀港のどちらかです。予約時にお知らせください。"
+    },
+    {
+      "id": "cruise-return",
+      "question": "時間内に船に戻れますか？",
+      "answer": "このツアーはクルーズの帰船時間に合わせて組まれています。ガイドは全ステップでタイムチェックを行い、出航時間の90〜120分前には必ずターミナルに到着します。予約時に出航時刻を必ずお知らせください。"
+    },
+    {
+      "id": "different-port",
+      "question": "寄港地が変更になった場合はどうなりますか？",
+      "answer": "寄港地の変更は速やかにAtoC Koreaにお知らせください。変更されたルート（済州港→東部ルート、江汀港→南部ルート）に合わせて対応します。寄港地の変更は全額返金または日程変更の対象となります。"
+    },
+    {
+      "id": "first-time",
+      "question": "済州初訪問者に良い選択ですか？",
+      "answer": "はい — このエリアの最も特徴的な見どころをバランスよく一日でカバーします。"
+    },
+    {
+      "id": "walking",
+      "question": "歩行は難しいですか？",
+      "answer": "中程度です。城山日出峰の山頂往復（約30〜40分）が最もアクティブです。ソプチコジの断崖縁トレイル（2.1km、ほぼフラット）と城邑民俗村（フラット）は比較的楽です。歩きやすいクローズドトゥシューズを推奨します。"
+    },
+    {
+      "id": "family",
+      "question": "ファミリーに適したツアーですか？",
+      "answer": "はい — ほとんどのファミリーに快適です。城山の登山が最もアクティブですが、お子様と一緒に無理なく登れます。ソプチコジと城邑はフラットで家族向きです。"
+    },
+    {
+      "id": "seniors",
+      "question": "高齢の方でも快適に参加できますか？",
+      "answer": "はい — 活動的な高齢者の方はご参加いただけます。城山の山頂登山（木製階段）が唯一の負担のある区間ですが、スキップして麓から眺めることもできます。"
+    },
+    {
+      "id": "children",
+      "question": "推奨される最低年齢は？",
+      "answer": "6歳以上が最適です。城山の木製階段を登れる体力があれば参加できます。幼いお子様は抱っこ紐での参加も可能。城邑民俗村とソプチコジはどの年齢にも見て回れます。"
+    },
+    {
+      "id": "rain",
+      "question": "雨の日もツアーは実施しますか？",
+      "answer": "はい。小雨ではほとんどの見どころで実施します。大雨や強風の場合、城山の山頂トレイルが閉鎖される場合がありますが、他の見どころは通常実施します。台風などの悪天候時は全額返金または日程変更をご案内します。"
+    },
+    {
+      "id": "lunch",
+      "question": "昼食は含まれていますか？",
+      "answer": "含まれていません。昼食は自己負担（約₩15,000）です。ガイドが地元の推薦店に案内します。ベジタリアン・ハラール対応は予約時にお申し出ください。"
+    },
+    {
+      "id": "pickup",
+      "question": "どこでピックアップされますか？",
+      "answer": "済州港（北）寄港の場合：済州国際旅客ターミナル出口エリア、AtoC Koreaのサインボードを持ったガイドが待機。江汀港（南）寄港の場合：江汀クルーズターミナル出口エリアで同様に待機。"
+    }
+  ],
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "済州クルーズ寄港地観光 — バスツアー（大型コーチ）",
+        "headlineLine2": "2つのコース — ご利用のクルーズ港に合わせて選択",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+          "imagePosition": "center 35%",
+          "tagline": "クルーズ寄港地から出発する大型コーチバスツアー — 済州港と江汀港の2ルート対応",
+          "pills": [
+            "クルーズ寄港地",
+            "大型コーチ",
+            "済州"
+          ],
+          "meta": {
+            "duration": "≈ 8時間（クルーズターミナル発着）",
+            "region": "済州全域",
+            "stops": "6見どころ",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "概要"
+          },
+          {
+            "id": "itinerary",
+            "label": "行程"
+          },
+          {
+            "id": "details",
+            "label": "詳細情報"
+          },
+          {
+            "id": "faq",
+            "label": "よくある質問"
+          },
+          {
+            "id": "reviews",
+            "label": "クチコミ"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "所要時間",
+            "value": "8時間"
+          },
+          {
+            "icon": "camera",
+            "label": "写真価値",
+            "value": "非常に高い"
+          },
+          {
+            "icon": "mountain",
+            "label": "景観",
+            "value": "非常に高い"
+          },
+          {
+            "icon": "footprints",
+            "label": "歩行",
+            "value": "中程度"
+          },
+          {
+            "icon": "cloud-rain",
+            "label": "雨天適応度",
+            "value": "中程度"
+          },
+          {
+            "icon": "users",
+            "label": "ファミリー適性",
+            "value": "中程度"
+          },
+          {
+            "icon": "gauge",
+            "label": "ペース",
+            "value": "バランス良好"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+            "alt": "城山日出峰の99岩の火口縁から望む日の出と東シナ海",
+            "caption": "城山日出峰 — ユネスコ世界自然遺産の旗艦見どころ",
+            "location": "城山日出峰（ソンサン・イルチュルボン）、済州東部",
+            "atmosphere": "5,000年前の水成火山の山頂。ユネスコトリプル指定"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "alt": "済州の東岬、ソプチコジの断崖縁トレイルと沖合の城山日出峰",
+            "caption": "ソプチコジ（セプジコジ）— 城山を望む東岬",
+            "location": "ソプチコジ、済州東部海岸",
+            "atmosphere": "Kドラマロケ地で有名な2.1kmの断崖トレイル。城山パノラマ"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "alt": "石垣と茅葺き屋根が並ぶ城邑民俗村の朝鮮時代の風景",
+            "caption": "城邑民俗村 — 朝鮮時代の生きた古城郭都市",
+            "location": "城邑民俗村（ソンウプ）、済州東部",
+            "atmosphere": "1423年創建の現存する朝鮮時代の城郭都市。済州の伝統生活を今に伝える"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+            "alt": "漢拏山1100高地湿地の木製遊歩道と稜線",
+            "caption": "漢拏山1100高地湿地 — 南ルートのユネスコ見どころ",
+            "location": "漢拏山1100湿地、標高1,100m",
+            "atmosphere": "ラムサール条約湿地。4重の国際指定を持つ済州の高山生態系"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "alt": "大浦柱状節理の断崖の六角形玄武岩柱",
+            "caption": "天池淵の滝",
+            "location": "韓国",
+            "atmosphere": "韓国の美しい景観"
+          },
+          {
+            "id": "g6",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+            "alt": "ツアーで訪れるオルレ毎日市場の風景",
+            "caption": "オルレ毎日市場",
+            "location": "韓国",
+            "atmosphere": "韓国の美しい景観"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "name": "済州クルーズターミナルでのピックアップ（済州港 — 北）",
+            "category": "出発 — 済州国際旅客ターミナル",
+            "description": "ドライバーと英語対応ガイドが**済州国際旅客ターミナル**にてお出迎え。ガイドはターミナル出口エリアで**AtoC Koreaのサインボード**を掲げて待機します。大型コーチは最大45〜50名収容。**出航前の帰船時間を必ずご確認ください** — このツアーはクルーズスケジュールに合わせ、帰船時間の90〜120分前にはターミナルへ帰着します。",
+            "highlights": [
+              "済州国際旅客ターミナル（済州港北）でピックアップ",
+              "AtoC Koreaのサインボードを持ったガイドが出口エリアで待機",
+              "大型コーチ（最大45〜50名）",
+              "帰船時間の90〜120分前にターミナルへ帰着できるようにしています"
+            ],
+            "_poi_meta": {
+              "poi_key": "jeju_cruise_port",
+              "kb_version": "1.21",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities + 100-bus parking)",
+                "South Korea Ministry of Oceans & Fisheries (terminal opening 2015; berth specifications)",
+                "Korea Cruise Port Sales / k-cruiseinfo.com (berth depths, tonnage capacity)",
+                "Ministry of Culture, Sports & Tourism (2024 cruise volume: 810,000 pax / 414 ships)",
+                "Jeju Provincial Government (Imhang-ro address, Geonip-dong; UN/LOCODE KRCHA)"
+              ]
+            },
+            "number": 1,
+            "time": "クルーズ到着後約30分",
+            "duration": "30分",
+            "whyOnRoute": "済州港（北）からの出発は東部ユネスコルートの始発に最適。ターミナルから直接出発するため乗り換え不要。",
+            "timeUsed": [
+              "ターミナルでの集合＋コーチ乗車 — 約10〜15分",
+              "東済州（城山）への移動 — 約60分"
+            ]
+          },
+          {
+            "number": 2,
+            "time": "≈ 09:00",
+            "duration": "75分",
+            "name": "城山日出峰（ソンサン・イルチュルボン）",
+            "category": "ユネスコ世界自然遺産 — スルツェイ式水成火山錐",
+            "description": "**城山日出峰**は5,000年前のスルツェイ式水成火山凝灰岩錐 — 水中の玄武岩噴火が海面を突き破り、溶岩が海水と急速に冷却・粉砕されて高い岸壁と99の岩峰を持つ独特の火口縁を形成した稀有な地形。**ユネスコ世界自然遺産2007年＋バイオスフィアリザーブ＋グローバルジオパーク**という3重ユネスコ指定を持つ済州の旗艦見どころ。山頂火口縁への往復は約30〜40分、頂上からは東シナ海・城山漁村・牛島が一望できます。入場料：**大人₩5,000**。毎月**第1月曜閉鎖**（環境保護輪番制）。",
+            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+            "highlights": [
+              "**ユネスコトリプル指定**（世界自然遺産2007＋バイオスフィア＋グローバルジオパーク）",
+              "99の岩峰を持つ5,000年前の水成火山の山頂火口縁",
+              "往復**約30〜40分**の山頂登山。頂上から東シナ海・牛島を一望",
+              "入場料 **大人₩5,000** / 青少年₩2,500",
+              "毎月**第1月曜閉鎖**（環境保護輪番制）"
+            ],
+            "timeUsed": [
+              "コーチ到着＋チケット＋入場 — 約10分",
+              "山頂往復 — 約35〜45分",
+              "頂上展望＋写真 — 約15分",
+              "バスに戻る — 約15分"
+            ],
+            "whyOnRoute": "クルーズ乗客に済州の3重ユネスコ旗艦見どころを最も効率よく体験させるオープニング見どころ。エネルギーが高い午前中に最もアクティブな登山を配置。",
+            "_poi_meta": {
+              "poi_key": "seongsan_ilchulbong",
+              "kb_version": "1.18",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
+                "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
+                "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
+                "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
+                "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:15",
+            "duration": "60分",
+            "name": "ソプチコジ（セプジコジ — 東岬）",
+            "category": "海岸の岬 — Kドラマロケ地・城山パノラマ",
+            "description": "**ソプチコジ**は、済州東海岸に細長く突き出た火山性の岬です。地名は「ソプチ（狭い土地、またはこの地域の古い地名）」と、「コジ（岬を意味する済州方言）」に由来すると説明されます。海岸遊歩道からは城山日出峰を正面に望み、黒い玄武岩の崖と青い海が続きます。ドラマ『オールイン』などのロケ地としても知られ、岬の先には灯台と朝鮮時代の烽火台跡があります。海風が強いことが多いため、歩きやすい靴と羽織ものをご用意ください。",
+            "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+            "highlights": [
+              "**2.1kmの断崖縁トレイル**（約30分）— 城山日出峰の正面パノラマ",
+              "**Kドラマロケ地** — 『オールイン（2003年）』『愛の不時着（2019年）』",
+              "岬先端の**済州伝統灯台**と光吉海岸の展望",
+              "強い海風 — **防風ジャケット必須**"
+            ],
+            "timeUsed": [
+              "コーチ到着＋入口 — 約5分",
+              "断崖縁トレイル往復 — 約30〜35分",
+              "城山パノラマ撮影 — 約10分",
+              "バスに戻る — 約5分"
+            ],
+            "whyOnRoute": "城山から10分の近さで全く異なる体験を提供。城山日出峰を別の角度から眺めることで地質学的理解が深まる。Kドラマファンには必須見どころ。",
+            "_poi_meta": {
+              "poi_key": "seopjikoji",
+              "kb_version": "1.19",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Jeju Provincial Cultural Heritage — Special Monument No. 23-2 designation",
+                "VisitJeju — Seopjikoji official listing",
+                "Korea Lighthouse Service — Bangdupo Lighthouse operation records",
+                "Tadao Ando Architect & Associates — Phoenix Island project documentation",
+                "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
+              ]
+            }
+          },
+          {
+            "name": "昼食 — 東済州（地元海産物または黒豚）",
+            "category": "昼食休憩 — 城山/城邑/表善エリア",
+            "description": "東済州の昼食ストップ（城山/城邑/表善エリア）でクルーズ日帰り旅行のタイミングに合わせたガイド推薦の地元レストラン。**2つの典型的なオプション**：**(1) 海産物ランチ** — アワビ・刺身・タチウオの辛煮。**(2) 黒豚BBQ** — 済州固有の黒豚焼き（文化財物質第5号）。**ベジタリアン・ハラール対応**は事前申込で可能。昼食後は城邑民俗村まで約15分。",
+            "highlights": [
+              "**城山/城邑/表善エリア**のガイド推薦店",
+              "**海産物ランチ**（アワビ・刺身・タチウオの辛煮）または**黒豚BBQ**",
+              "**ベジタリアン・ハラール対応**（事前申込）"
+            ],
+            "_poi_meta": {
+              "poi_key": "OPS_lunch_east_jeju",
+              "kb_version": "1.21",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Jeju Black Pig Natural Monument designation (2015, Cultural Heritage Administration)",
+                "Visit Jeju (eastern Jeju cuisine — galchi, heukdwaeji)",
+                "AtoC Korea operations notes (cruise tour lunch venue rotation)"
+              ]
+            },
+            "number": 4,
+            "time": "≈ 12:30",
+            "duration": "60分",
+            "whyOnRoute": "城山・ソプチコジの午前のアクティブな観光後の自然な休憩。クルーズ帰船時間を逆算した戦略的な配置。",
+            "timeUsed": [
+              "コーチで昼食会場へ — 約10分",
+              "注文＋食事 — 約45分",
+              "コーチで城邑へ — 約15分"
+            ]
+          },
+          {
+            "number": 5,
+            "time": "≈ 13:45",
+            "duration": "60分",
+            "name": "城邑民俗村（ソンウプ・ミンソクマウル）",
+            "category": "朝鮮時代の生きた古城郭都市 — 世宗大王時代創建（1423年）",
+            "description": "**城邑民俗村**は**世宗大王の治世（1423年）に鄭義縣として建設された朝鮮時代の城郭都市** — 済州の三行政区の一つ。韓国でほぼ唯一の**現存する朝鮮時代の城郭都市**で、住民が現在も実際に居住する「生きた民俗村」。石の城壁・茅葺き屋根の家・**700〜1,000年の樹齢のエノキ**（天然記念物）・伝統的な石橋が現存。地元のガイドが済州のトルハルバン（石のおじいさん像）伝説と村の歴史を解説。**入場無料**。",
+            "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+            "highlights": [
+              "**1423年創建**の現存する朝鮮時代の城郭都市、住民が今も生活",
+              "**700〜1,000年のエノキ**（天然記念物）が村の入口に",
+              "石の城壁・茅葺き屋根・伝統的な石橋が現存",
+              "**トルハルバン伝説**と済州の三多の解説",
+              "**入場無料**"
+            ],
+            "timeUsed": [
+              "コーチ到着 — 約5分",
+              "石の城壁・エノキ・茅葺きゾーン散策 — 約30分",
+              "ガイド解説＋トルハルバン — 約15分",
+              "自由時間＋写真 — 約10分",
+              "バスに戻る — 約5分"
+            ],
+            "whyOnRoute": "自然遺産（城山）・地質（ソプチコジ）の後、文化・歴史のレイヤーを加えることで午前と午後のテーマコントラストが生まれる。帰路に近いため帰船時間の時間の余裕も確保。",
+            "_poi_meta": {
+              "poi_key": "seongeup_folk_village",
+              "kb_version": "1.19",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Cultural Heritage Administration — Important Folklore Cultural Heritage designation",
+                "Korea Cultural Heritage Foundation — Seongeup Folk Village historical records",
+                "VisitJeju — Seongeup Minsok Maeul",
+                "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
+                "Jeju Folklore Society — Omegisul brewing tradition documentation"
+              ]
+            }
+          },
+          {
+            "name": "済州クルーズターミナルへ帰着（済州港 — 北）",
+            "category": "帰着 — 済州国際旅客ターミナル",
+            "description": "東済州（城山/城邑エリア）から**済州国際旅客ターミナル**への帰路、国道1132号線経由で**約70〜80分**。コーチは**出航時間の90〜120分前**にターミナルへ到着できるようにしています。緊急時や渋滞時はガイドが休憩をスキップして帰船時間を優先します。**当日の出航時刻は予約確認時に必ずお知らせください。**",
+            "highlights": [
+              "東済州→済州市ターミナルへ **約70〜80分**",
+              "**出航時間の90〜120分前**にターミナル到着できるようにしています",
+              "緊急時はガイドが休憩をスキップして帰船を優先",
+              "**出航時刻は予約時に必ず通知**してください"
+            ],
+            "_poi_meta": {
+              "poi_key": "jeju_cruise_port",
+              "kb_version": "1.21",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities)",
+                "Jeju Bus Information System (Bus #100 airport connection)",
+                "Korea Cruise Port Sales (terminal layout + drop-off zones)",
+                "VisitJeju.net (Dongmun Market free shuttle)",
+                "Cruise industry standard (60-min all-aboard buffer)"
+              ]
+            },
+            "number": 6,
+            "time": "約15:30出発 → 約16:45港到着",
+            "duration": "75分のドライブ＋60分の時間の余裕",
+            "whyOnRoute": "クルーズツアーの最優先は帰船時間の厳守。東済州からの帰路が最長（70〜80分）のため、城邑が最後の見どころとして最適。",
+            "timeUsed": [
+              "コーチ 城邑→済州市ターミナル — 約70〜80分",
+              "ターミナル到着＋乗船 — 約10〜15分"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "クルーズターミナル",
+            "type": "origin",
+            "theme": "出発"
+          },
+          {
+            "name": "日出峰",
+            "type": "primary",
+            "theme": "火山"
+          },
+          {
+            "name": "ソプチコジ",
+            "type": "primary",
+            "theme": "海岸"
+          },
+          {
+            "name": "昼食",
+            "type": "meal",
+            "theme": "食事"
+          },
+          {
+            "name": "民俗村",
+            "type": "primary",
+            "theme": "文化"
+          },
+          {
+            "name": "クルーズターミナル",
+            "type": "return",
+            "theme": "帰着"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "ユネスコ火山＋海岸",
+            "duration": "停留所1–3",
+            "description": "城山日出峰（ユネスコ）の山頂登山、続いてソプチコジの断崖縁トレイル。"
+          },
+          {
+            "phase": "昼食",
+            "duration": "停留所4",
+            "description": "東済州の地元レストランで昼食休憩。"
+          },
+          {
+            "phase": "民俗文化＋帰着",
+            "duration": "停留所5–6",
+            "description": "城邑民俗村（朝鮮時代の城郭都市）訪問後、済州クルーズターミナルへ帰着。"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "この一日の流れ",
+          "subtitle": "ルートはご利用のクルーズ港によって異なります。済州港（北）発は東部ユネスコルート。江汀港（南）発は漢拏山高地＋オルレ市場ルート。"
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "クルーズターミナルからの同日往復が必要なクルーズ乗客",
+            "一日でユネスコ見どころを体験したい済州初訪問者",
+            "バジェット価格でガイド付き適切なルートを求める旅行者"
+          ],
+          "lessIdealFor": [
+            "移動能力が非常に限られた方（城山の縁ウォークには歩行が必要）",
+            "ベビーカー依存度の高いグループ",
+            "クルーズのスケジュールは固定のため、急がないペースを求める旅行者"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "クルーズ寄港地ツアーを選ぶ理由",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "寄港地に合わせた2ルート",
+                  "detail": "済州港（北）発は東部ユネスコルート、江汀港（南）発は漢拏山高地ルート — どちらの寄港地でも最適なルートで対応。"
+                },
+                {
+                  "label": "寄港地に合わせた2ルート",
+                  "detail": "済州港（北）発は東部ユネスコルート、江汀港（南）発は漢拏山高地ルート — どちらの寄港地でも最適なルートで対応。"
+                },
+                {
+                  "label": "寄港地に合わせた2ルート",
+                  "detail": "済州港（北）発は東部ユネスコルート、江汀港（南）発は漢拏山高地ルート — どちらの寄港地でも最適なルートで対応。"
+                }
+              ]
+            },
+            {
+              "title": "このルートの推薦理由",
+              "icon": "users",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "ピックアップと帰着",
+            "preview": "クルーズターミナルピックアップ — 港により異なります",
+            "content": [
+              "済州港（北）または江汀港（南）のクルーズターミナルでピックアップ",
+              "AtoC Koreaのサインボードを持ったガイドが旅客ターミナル出口エリアで待機",
+              "帰船時間の90〜120分前にターミナルへ帰着できるようにしています",
+              "予約時に必ず出航時刻をお知らせください",
+              "緊急時はガイドが休憩をスキップして帰船を優先"
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "歩行と地形",
+            "preview": "中程度。利用する港のコースにより異なります。",
+            "content": [
+              "城山日出峰の山頂往復：約30〜40分の登山（木製階段あり）",
+              "ソプチコジの断崖縁トレイル：2.1km、ほぼフラット、約30分",
+              "城邑民俗村：フラットな石畳・砂利道、約45〜60分",
+              "総歩行距離：約5〜6km",
+              "歩きやすいクローズドトゥシューズ必須。城山では滑りにくいシューズを推奨"
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "天候ポリシー",
+            "preview": "クルーズスケジュール固定 — ルートが調整されます",
+            "content": [
+              "小雨：ほとんどの見どころで実施可能",
+              "大雨または強風：城山の山頂トレイルが閉鎖される場合あり",
+              "台風：全額返金または日程変更の選択肢をご案内",
+              "悪天候時でも帰船時間は厳守します"
+            ]
+          },
+          {
+            "id": "wear",
+            "title": "服装と持ち物",
+            "preview": "歩きやすい靴＋重ね着＋再乗船用パスポート。クルーズ船の最終乗船時刻に間に合うよう、出港時刻の少なくとも60〜90分前に港へ戻ることを最優先に行程を調整します。交通状況、天候、入国・下船手続きの遅れがある場合は、観光地での滞在時間を短縮してでも、安全な帰港と時間内の再乗船を優先します。",
+            "content": [
+              "グリップの良い靴（城山の木製階段に対応）",
+              "防風ジャケット（ソプチコジ・城山での強風に対応）",
+              "帽子と日焼け止め",
+              "水（少なくとも1L）",
+              "予約確認書または旅客番号（乗船確認用）。クルーズ船の最終乗船時刻に間に合うよう、出港時刻の少なくとも60〜90分前に港へ戻ることを最優先に行程を調整します。交通状況、天候、入国・下船手続きの遅れがある場合は、観光地での滞在時間を短縮してでも、安全な帰港と時間内の再乗船を優先します。"
+            ]
+          },
+          {
+            "id": "included",
+            "title": "含まれるもの・含まれないもの",
+            "preview": "ガイド、車両、ピックアップ、入場料",
+            "variant": "included",
+            "content": [
+              "大型エアコン付きコーチ",
+              "英語対応ガイド",
+              "クルーズターミナル発着の送迎",
+              "全入場料（城山日出峰・ソプチコジ・城邑民俗村）",
+              "含まれないもの：昼食（約₩15,000）・チップ"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "季節別の案内を確認"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "季節別の案内を確認"
+          }
+        },
+        "seasonalVariations": [
+          {
+            "season": "春",
+            "title": "クルーズシーズン開幕",
+            "description": "菜の花（3〜4月）が城山周辺に咲き誇る。ソプチコジが最も混雑するシーズン。",
+            "icon": "flower"
+          },
+          {
+            "season": "夏",
+            "title": "クルーズピーク",
+            "description": "湿気が高いが東済州の海風が涼しい。城邑民俗村の緑が鮮やか。",
+            "icon": "sun"
+          },
+          {
+            "season": "秋",
+            "title": "最高の視界",
+            "description": "晴天が多く視界が良好。城山日出峰の山頂からの眺めが最も澄んでいるシーズン。",
+            "icon": "leaf"
+          },
+          {
+            "season": "冬",
+            "title": "オフピーク",
+            "description": "冬の城山の日の出が美しい。強風に注意。ソプチコジの草原が枯れ野の趣。",
+            "icon": "snow"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "現地を熟知した認定スタッフ",
+            "description": "完全保険付きの認定韓国ツアー催行会社",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "済州全域を知り尽くした現地を熟知した認定スタッフ。クルーズ船の帰船時間管理に豊富な実績。"
+          },
+          {
+            "icon": "route",
+            "title": "クルーズ専用行程づくり",
+            "description": "済州港と江汀港の2ルート対応",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "寄港地に合わせた2つのコース。帰船時間の90〜120分前にターミナルへ戻れるように行程を管理します。"
+          },
+          {
+            "icon": "users",
+            "title": "大型コーチ運行",
+            "description": "大型グループに対応した大型エアコン付きコーチ",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "大型コーチで快適な移動。クルーズ団体客にも対応。英語対応ガイド同乗。"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "予約後すぐ",
+            "title": "予約確認（即時）",
+            "detail": "行程確認付きの予約確認",
+            "description": "クルーズターミナルのピックアップ詳細付きで即時確認。"
+          },
+          {
+            "timing": "12時間前",
+            "title": "12時間前リマインダー",
+            "detail": "天気情報とルート変更のご案内",
+            "description": "天候状況と城山山頂トレイルのアクセス確認を含むプレツアー案内。"
+          },
+          {
+            "timing": "前日の夜",
+            "title": "最終お迎え情報",
+            "detail": "ピックアップポイントとガイドの連絡先",
+            "description": "当日のガイド連絡先とターミナル集合場所の最終確認。"
+          },
+          {
+            "timing": "当日の朝",
+            "title": "当日ルート情報",
+            "detail": "ライブ状況に基づく朝のブリーフィング",
+            "description": "天候と城山トレイル状況の最新情報を含む朝のメッセージ。"
+          },
+          {
+            "timing": "ツアー中",
+            "title": "各訪問地でのガイダンス",
+            "detail": "各場所でのリアルタイムガイド",
+            "description": "城山の地質・ソプチコジのKドラマ歴史・城邑の朝鮮時代の歴史をガイドがナレーション。"
+          },
+          {
+            "timing": "ツアー後",
+            "title": "ツアー後サポート",
+            "detail": "フォローアップとおすすめ情報",
+            "description": "解散後にツアー後のフィードバックリクエストを送付。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "port-routing",
+            "question": "どの港に寄港するか確認する方法は？",
+            "answer": "クルーズの行程書類またはクルーズ会社のウェブサイトで寄港地を確認してください。済州港または江汀港のどちらかです。予約時にお知らせください。"
+          },
+          {
+            "id": "cruise-return",
+            "question": "時間内に船に戻れますか？",
+            "answer": "このツアーはクルーズの帰船時間に合わせて組まれています。ガイドは全ステップでタイムチェックを行い、出航時間の90〜120分前には必ずターミナルに到着します。予約時に出航時刻を必ずお知らせください。"
+          },
+          {
+            "id": "different-port",
+            "question": "寄港地が変更になった場合はどうなりますか？",
+            "answer": "寄港地の変更は速やかにAtoC Koreaにお知らせください。変更されたルート（済州港→東部ルート、江汀港→南部ルート）に合わせて対応します。寄港地の変更は全額返金または日程変更の対象となります。"
+          },
+          {
+            "id": "first-time",
+            "question": "済州初訪問者に良い選択ですか？",
+            "answer": "はい — このエリアの最も特徴的な見どころをバランスよく一日でカバーします。"
+          },
+          {
+            "id": "walking",
+            "question": "歩行は難しいですか？",
+            "answer": "中程度です。城山日出峰の山頂往復（約30〜40分）が最もアクティブです。ソプチコジの断崖縁トレイル（2.1km、ほぼフラット）と城邑民俗村（フラット）は比較的楽です。歩きやすいクローズドトゥシューズを推奨します。"
+          },
+          {
+            "id": "family",
+            "question": "ファミリーに適したツアーですか？",
+            "answer": "はい — ほとんどのファミリーに快適です。城山の登山が最もアクティブですが、お子様と一緒に無理なく登れます。ソプチコジと城邑はフラットで家族向きです。"
+          },
+          {
+            "id": "seniors",
+            "question": "高齢の方でも快適に参加できますか？",
+            "answer": "はい — 活動的な高齢者の方はご参加いただけます。城山の山頂登山（木製階段）が唯一の負担のある区間ですが、スキップして麓から眺めることもできます。"
+          },
+          {
+            "id": "children",
+            "question": "推奨される最低年齢は？",
+            "answer": "6歳以上が最適です。城山の木製階段を登れる体力があれば参加できます。幼いお子様は抱っこ紐での参加も可能。城邑民俗村とソプチコジはどの年齢にも見て回れます。"
+          },
+          {
+            "id": "rain",
+            "question": "雨の日もツアーは実施しますか？",
+            "answer": "はい。小雨ではほとんどの見どころで実施します。大雨や強風の場合、城山の山頂トレイルが閉鎖される場合がありますが、他の見どころは通常実施します。台風などの悪天候時は全額返金または日程変更をご案内します。"
+          },
+          {
+            "id": "lunch",
+            "question": "昼食は含まれていますか？",
+            "answer": "含まれていません。昼食は自己負担（約₩15,000）です。ガイドが地元の推薦店に案内します。ベジタリアン・ハラール対応は予約時にお申し出ください。"
+          },
+          {
+            "id": "pickup",
+            "question": "どこでピックアップされますか？",
+            "answer": "済州港（北）寄港の場合：済州国際旅客ターミナル出口エリア、AtoC Koreaのサインボードを持ったガイドが待機。江汀港（南）寄港の場合：江汀クルーズターミナル出口エリアで同様に待機。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "予約可否とクルーズ港は予約ステップで確認されます。",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "人"
+        }
+      }
+    }
+  ],
+  "priceSource": {
+    "discountPct": 10,
+    "discountNote": "マーケットプレイス基準価格から10%割引",
+    "amount": null,
+    "currency": "USD"
+  },
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch6_enhancement": {
+        "date": "2026-04-29",
+        "description": "Batch 6 deep enhancement — port-aware cruise shore excursion tour. Both variants (Jeju Port north + Gangjeong Port south) enhanced with 1,000+ char descriptions per stop; KB-backed _poi_meta on all attraction stops; product profile recalibrated to verified-fact 0-1 float scores; variant-level legacy 0-5 / 0-100 scale fields ALSO normalized to 0-1 float (Phase 1 unification completion for variant scope). Time-weighted indoor_ratio computed per variant per Fix 1 methodology.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale per Phase 1 standard. Variant-level legacy 0-5/0-100 scale fields ALSO normalized to 0-1 float in this batch (previously the schema unification stopped at top-level product profile). Time-weighted indoor_ratio per Fix 1 — computed PER VARIANT then aggregated. Top-level product profile uses cross-variant averages weighted toward Gangjeong (the more common 2025+ docking).",
+          "deltas_applied": {
+            "unesco_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "VERIFIED HIGH — both variants hit major UNESCO sites. Variant 0 (Jeju Port): Seongsan Ilchulbong = TRIPLE UNESCO (World Natural Heritage 2007 + Biosphere Reserve + Global Geopark) + Haenyeo ICH demos. Variant 1 (Gangjeong): Hallasan UNESCO World Heritage + Biosphere Reserve + Jusangjeolli Global Geopark. Both variants reliably deliver UNESCO content. 0.85 reflects this consistent delivery. Note: Seongeup is NOT UNESCO (national folklore only). Olle Market and Cheonjiyeon are not UNESCO. Score reflects weighted average of UNESCO density in both variants."
+            },
+            "scenic_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "VERIFIED — Variant 0: volcanic crater + coastal cape + folk village. Variant 1: alpine wetland + columnar basalt + waterfall + market. Both deliver catalog-leading scenic diversity. 0.95 calibrated."
+            },
+            "photo_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified — UNESCO crater, columnar basalt, subtropical falls, thatched-roof village, market food shots. Highly photogenic but not the absolute top (no flower festivals). 0.95 calibrated."
+            },
+            "walking_level": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "VERIFIED — Variant 0: Seongsan optional summit climb (300-500 stairs is the limit case) + Seongeup village walking; Variant 1: Hallasan boardwalk (flat) + Jusangjeolli flat + Cheonjiyeon flat. Variant 1 is materially flatter than Variant 0. Aggregate 0.55 reflects mostly easy walking with the Seongsan summit as the harder option (always optional)."
+            },
+            "indoor_ratio": {
+              "old": 0.25,
+              "new": 0.2,
+              "reasoning": "Time-weighted (Fix 1) — Variant 0 substantive 0.12, Variant 1 substantive 0.18. Aggregate cross-variant ~0.15-0.20. Catalog value 0.20 (slight upward adjustment to account for cruise-day bus-shelter time + lunch indoor)."
+            },
+            "weather_sensitivity": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "UPGRADED — cruise day has hard time constraint + ship cannot wait + the route is mostly outdoor. Heavy rain at Hallasan 1100 (road closure risk) or storm at Seongsan summit climb meaningfully compromises the day. 0.85 reflects this elevated cruise-context weather risk vs ordinary 0.80 day tour."
+            },
+            "rain_fit": {
+              "old": 0.4,
+              "new": 0.45,
+              "reasoning": "Variant 1 is meaningfully more rain-friendly than Variant 0 (Olle Market covered + Hallasan boardwalk under tree canopy + Cheonjiyeon's subtropical forest provides some shelter). Variant 0's Seongsan climb is exposed. Aggregate 0.45 — slightly improved over old 0.40 calibration."
+            },
+            "iconic_landmark_fit": {
+              "old": 0.8,
+              "new": 0.95,
+              "reasoning": "UPGRADED — verified: Variant 0 has Seongsan Ilchulbong (Jeju's single most-iconic landmark, Triple UNESCO). Variant 1 has Hallasan UNESCO + Jusangjeolli Natural Monument. Both variants deliver catalog-leading iconic content. 0.95 — among the highest in the catalog."
+            },
+            "first_time_fit": {
+              "old": 0.85,
+              "new": 0.95,
+              "reasoning": "UPGRADED — cruise day for first-time Jeju visitors is the ARCHETYPE use case for this product. Both variants deliver the iconic Jeju vista appropriate to the docking port. 0.95 — near-maximum first-time fit."
+            },
+            "same_day_flight_fit": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Cruise tour ends 16:30-17:30 at port; not at airport. Bus #100 from Jeju Port to airport is direct (~30 min). For the Gangjeong variant, airport transfer is ~50 min via Limousine 800. Both variants support same-day onward travel for guests leaving the cruise mid-itinerary, but it's tighter from Gangjeong. Aggregate 0.95."
+            },
+            "small_group_fit_smallgroup": {
+              "field": "small_group_fit",
+              "old_smallgroup": 1.0,
+              "new_smallgroup": 1.0,
+              "old_bus": 0.2,
+              "new_bus": 0.2,
+              "reasoning": "Per-tour: small_group tour = 1.0 (small group format defines this product); bus tour = 0.2 (large coach format is the OTHER product). Format fixed by tour SKU."
+            },
+            "bus_fit_smallgroup": {
+              "field": "bus_fit",
+              "old_smallgroup": 0.2,
+              "new_smallgroup": 0.2,
+              "old_bus": 1.0,
+              "new_bus": 1.0,
+              "reasoning": "Per-tour: small_group tour bus_fit = 0.2; bus tour bus_fit = 1.0."
+            },
+            "private_fit": {
+              "old": 0.2,
+              "new": 0.15,
+              "reasoning": "Neither tour is private — both are group products (small group OR large coach). 0.15."
+            },
+            "premium_fit_smallgroup": {
+              "field": "premium_fit",
+              "old_smallgroup": 0.7,
+              "new_smallgroup": 0.75,
+              "old_bus": 0.4,
+              "new_bus": 0.4,
+              "reasoning": "Small group cruise tour reads premium — fewer guests, more guide attention, easier pace. Bus tour reads budget — economies of scale, larger group, less flexibility. Calibrated per tour."
+            },
+            "value_for_money_fit_smallgroup": {
+              "field": "value_for_money_fit",
+              "old_smallgroup": 0.6,
+              "new_smallgroup": 0.65,
+              "old_bus": 0.7,
+              "new_bus": 0.8,
+              "reasoning": "Bus tour delivers stronger value (lower per-person cost for same itinerary). Small group is mid-value (premium-priced but delivers premium experience). Calibrated per tour."
+            },
+            "young_kids_fit": {
+              "old": 0.5,
+              "new": 0.55,
+              "reasoning": "Cruise day with kids works in Variant 1 (Gangjeong) better — Olle Market food + flat boardwalk + waterfall walk all kid-friendly. Variant 0's Seongsan summit climb is the limit case for younger kids. 0.55 aggregate."
+            },
+            "family_fit": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "Verified — UNESCO sights + market food + folk village hit intergenerational interests. Aggregate 0.65."
+            },
+            "senior_fit": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "Variant 1 is materially more senior-friendly (boardwalk + flat market + flat falls path). Variant 0's Seongsan summit is the limit. Aggregate 0.65 — moderate senior fit."
+            },
+            "mobility_friendly_fit": {
+              "old": 0.5,
+              "new": 0.55,
+              "reasoning": "Variant 1 stronger (Gangjeong terminal reportedly has better wheelchair accessibility than Jeju Port; Hallasan boardwalk stroller-friendly; Cheonjiyeon flat path; covered Olle Market). Variant 0's Seongsan climb is the limit. 0.55 aggregate."
+            },
+            "stroller_fit": {
+              "old": 0.4,
+              "new": 0.5,
+              "reasoning": "Variant 1 fully stroller-accessible. Variant 0's Seongsan summit stairs not accessible. Aggregate 0.50."
+            },
+            "nature_fit": {
+              "old": 0.9,
+              "new": 0.9,
+              "reasoning": "Verified — UNESCO volcano + alpine wetland + columnar basalt + subtropical waterfall. 0.90."
+            },
+            "shopping_fit": {
+              "old": 0.4,
+              "new": 0.55,
+              "reasoning": "UPGRADED — Variant 1's Olle Market is a strong shopping anchor (souvenirs + foodie items). Variant 0 lighter on shopping. 0.55 aggregate."
+            },
+            "food_fit": {
+              "old": 0.5,
+              "new": 0.65,
+              "reasoning": "UPGRADED — Variant 1's Olle Market plus Seogwipo lunch cluster deliver strong food anchor. Variant 0 lunch only. 0.65 aggregate. Black pork + Hallabong + abalone all featured."
+            },
+            "local_culture_fit": {
+              "old": 0.6,
+              "new": 0.7,
+              "reasoning": "UPGRADED — Variant 0's Seongeup Folk Village (600-year living town) is high-cultural-density. Variant 1's Olle Market is high-local-life-density. Aggregate 0.70."
+            },
+            "storytelling_fit": {
+              "old": 0.7,
+              "new": 0.85,
+              "reasoning": "UPGRADED — cruise day tours are storytelling-heavy (one-shot first-time guests, guide narrates everything). Both variants have rich histories: Seongsan formation + haenyeo tradition + Joseon-era folk village (Variant 0); Hallasan UNESCO + columnar basalt geology + 1,500-year tangerine heritage + Mutae eel mythology + Gangjeong civilian-military history (Variant 1). 0.85."
+            },
+            "cafe_fit": {
+              "old": 0.4,
+              "new": 0.4,
+              "reasoning": "Modest cafe content — Olle Market has cafe stalls; Hallasan 1100 rest area cafe; otherwise no dedicated cafe stops. 0.40 calibrated."
+            },
+            "comfort_level": {
+              "old": 0.7,
+              "new": 0.75,
+              "reasoning": "Cruise day infrastructure is comfort-optimized — paved/boardwalk trails, climate-controlled vehicles, restaurant lunch, terminal facilities. 0.75 aggregate."
+            },
+            "duration_hours": {
+              "old": 8.0,
+              "new": 8.0,
+              "reasoning": "Confirmed 8h duration for both variants — within cruise day buffer."
+            },
+            "min_recommended_age": {
+              "old": 6,
+              "new": 6,
+              "reasoning": "Confirmed 6+ — both variants accessible to school-age children."
+            }
+          }
+        },
+        "stops_enhanced_jeju_port_variant": 6,
+        "stops_enhanced_gangjeong_port_variant": 7,
+        "sources": [
+          "VisitKorea",
+          "Visit Jeju",
+          "Korea Cruise Port Sales",
+          "CruiseMapper",
+          "Cruise Critic",
+          "Wikipedia",
+          "Inside Jeju",
+          "市場参考資料",
+          "市場参考資料",
+          "Soul of Seoul"
+        ]
+      }
+    }
+  }
+}

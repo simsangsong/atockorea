@@ -1,0 +1,2315 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+  "locale": "ko",
+  "product_id": "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+  "seo": {
+    "pageTitle": "수원 화성·광명동굴·스타필드 라이브러리 투어 | AtoC Korea",
+    "metaDescription": "서울 출발 9시간 소그룹 투어: 유네스코 수원 화성, 광명동굴, 스타필드 라이브러리 수원.",
+    "primaryKeywords": [
+      "수원화성 광명동굴 투어",
+      "광명동굴 투어",
+      "스타필드 별마당도서관 투어",
+      "서울 출발 경기도 소그룹 투어",
+      "수원 광명 당일 투어"
+    ],
+    "ogImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+    "title": "수원화성·광명동굴·스타필드 소그룹 투어 | AtoC Korea",
+    "description": "서울 출발 경기도 소그룹 투어(월요일 제외): 수원화성(유네스코) → 화성행궁 → 스타필드 별마당도서관 → 광명동굴(폐금광 LED 테마파크). 전 입장료 포함."
+  },
+  "catalog_card": {
+    "thumbnail": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+    "title": "수원화성·광명동굴·스타필드 소그룹 투어",
+    "priceLabel": "가격은 예약 시 확인",
+    "shortCardDescription": "수원화성(유네스코 세계문화유산), 화성행궁, 스타필드 수원 별마당도서관, 광명동굴(1912년 금광 폐갱 개조 LED 테마파크)을 소그룹으로 하루에 돌아봅니다. 월요일 미운행. 전 입장료 포함.",
+    "tags": [
+      "소그룹",
+      "문화",
+      "unesco",
+      "동굴",
+      "도서관",
+      "쇼핑",
+      "당일 투어"
+    ],
+    "rating": 4.6,
+    "reviewCount": 137,
+    "slug": "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+    "subtitle": "서울에서 경기도 경유 소그룹 문화 당일 투어 — 유네스코 성곽, 조선 이궁, 별마당도서관, 지하 LED 테마파크의 네 가지 대조적인 면을 하루에.",
+    "region": "경기도 (서울 남부)",
+    "duration": "9시간",
+    "stopsCount": 7,
+    "badges": [
+      "소그룹",
+      "문화 체험",
+      "유네스코",
+      "용암 동굴",
+      "도서관",
+      "쇼핑",
+      "일일 투어"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800"
+  },
+  "headlineLine1": "유네스코 성곽, 지하 금광, 4층 도서관 —",
+  "headlineLine2": "경기도에서 가장 많이 사진 찍히는 하루, 9시간에",
+  "price": {
+    "amountLabel": "54.00",
+    "originalPriceUsd": 60,
+    "salePriceUsd": 54,
+    "discountPercent": 10,
+    "currency": "USD",
+    "per": "인",
+    "priceSource": "direct_rate",
+    "priceNote": "AtoC Korea 공식 판매가 기준입니다."
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
+    "imagePosition": "center 35%",
+    "tagline": "한국 유일의 완전한 성곽 도시, 예술로 재탄생한 옛 금광, 전국에서 가장 많이 촬영되는 도서관",
+    "pills": [
+      "소그룹",
+      "문화"
+    ],
+    "meta": {
+      "duration": "9시간",
+      "region": "경기도 (서울 남부)",
+      "stops": "7개 코스",
+      "rating": 4.6,
+      "ratingStars": 5
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "투어 개요"
+    },
+    {
+      "id": "itinerary",
+      "label": "상세 일정"
+    },
+    {
+      "id": "details",
+      "label": "유의사항"
+    },
+    {
+      "id": "faq",
+      "label": "자주 묻는 질문"
+    },
+    {
+      "id": "reviews",
+      "label": "여행자 후기"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "소요 시간",
+      "value": "약 9시간 (오전~이른 저녁)"
+    },
+    {
+      "icon": "users",
+      "label": "그룹 규모",
+      "value": "소그룹, 영어 가이드"
+    },
+    {
+      "icon": "map-pin",
+      "label": "투어 지역",
+      "value": "수원 & 광명, 경기도"
+    },
+    {
+      "icon": "footprints",
+      "label": "도보 난이도",
+      "value": "중간 — 화성 성곽길에는 돌길 오르막이 있고, 광명동굴에는 180개 이상의 계단이 포함됩니다."
+    },
+    {
+      "icon": "ticket",
+      "label": "포함 사항",
+      "value": "왕복 교통, 영어 가이드, 수원 화성 입장료 (₩1,000), 광명 동굴 (₩12,000) 포함."
+    },
+    {
+      "label": "점심 식사",
+      "value": "미포함 — 일반적으로 스타필드 몰 푸드코트에서 식사."
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+      "alt": "투어 중 방문하는 수원 화성의 풍경",
+      "caption": "수원 화성",
+      "location": "수원 화성 장안문~화서문 구간",
+      "atmosphere": "수원 화성는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+      "alt": "투어 중 방문하는 화성행궁 — 수문장 교대식 재현의 풍경",
+      "caption": "화성행궁 — 수문장 교대식 재현",
+      "location": "수원 화성 성곽 안의 화성행궁",
+      "atmosphere": "화성행궁 수문장 교대식 재현은 이 코스의 대표 볼거리로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+      "alt": "투어 중 방문하는 광명동굴 — 골든로드 터널의 풍경",
+      "caption": "광명동굴 — 골든로드 터널",
+      "location": "광명동굴, Gwangmyeong-si, Gyeonggi-do",
+      "atmosphere": "옛 시흥 금광(1912–1972), 총 7.8km 갱도, 연중 약 12°C 유지"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+      "alt": "투어 중 방문하는 광명동굴 메인 동굴 구간의 풍경",
+      "caption": "광명동굴 메인 동굴 구간",
+      "location": "광명동굴 메인 동굴 구간",
+      "atmosphere": "광명동굴 메인 동굴 구간는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+      "alt": "수원 스타필드 라이브러리의 22미터 바닥-천장 서가와 하층 열람실이 있는 4층 아트리움",
+      "caption": "스타필드 라이브러리 수원 — 22m 서가",
+      "location": "스타필드 수원 별마당도서관, Yeongtong-gu, Suwon",
+      "atmosphere": "신세계의 2세대 스타필드 플래그십, 2024년 1월 개장; 무료 입장; 바이닐 레코드 청음 공간"
+    },
+    {
+      "id": "g6",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+      "alt": "수원식 갈비, 통닭, 전통 간식을 파는 수원 남문시장 실내 골목",
+      "caption": "수원 남문시장 — 220년 역사의 정조 시장",
+      "location": "수원 화성 남문 인근의 수원남문시장",
+      "atmosphere": "220년 역사; 화성 축조 시 정조 창건; 통닭 골목 + 9개 소시장"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "≈ 08:30",
+      "duration": "10분",
+      "name": "서울 출발",
+      "category": "픽업 & 출발",
+      "description": "서울 중심 2개 집결 지점: 홍익대학교역 8번 출구(홍대) 또는 명동역 2·4번 출구. 경부고속도로로 수원 이동.",
+      "highlights": [
+        "서울 중심부 집합 장소 (홍대 + 명동)",
+        "인제-양양 터널 (11km, 한국 최장)을 통한 서울-양양 고속도로",
+        "도중 휴게소 있는 코치 이동",
+        "에어컨 + USB 충전 완비 코치"
+      ],
+      "timeUsed": [
+        "서울 픽업 지점에서 가이드 겸 운전기사와 만남",
+        "그룹 확인, 물과 간식 배포"
+      ],
+      "whyOnRoute": "09:30 수원 도착으로 정오 혼잡 60~90분 전 화성 도착.",
+      "visitBasics": {},
+      "convenience": {},
+      "smartNotes": {
+        "tip": "코치 에어컨이 강할 수 있으니 가벼운 겉옷 지참. 중간쯤 서비스 에어리어에서 화장실 휴식."
+      },
+      "_poi_meta": {
+        "poi_key": "OPS_seoul_pickup_default",
+        "verified": false,
+        "match": "operational_default",
+        "kb_version": "v1.14",
+        "verified_date": "2026-04-29",
+        "note": "Operational pickup — Seoul departure"
+      }
+    },
+    {
+      "number": 2,
+      "time": "≈ 09:30",
+      "duration": "60분",
+      "name": "수원화성 (유네스코 세계문화유산)",
+      "category": "유네스코 요새",
+      "description": "수원화성은 1997년 유네스코 세계문화유산으로 등재된 한국 유일의 완전한 형태의 조선시대 성곽 도시입니다. 정조 대왕이 1794~1796년에 축성했으며, 공사 전 과정을 담은 10권 분량의 『화성성역의궤』(별도 유네스코 기록유산 등재)가 현존합니다. 전체 성벽 5.7km 중 약 1km 구간(장안문~화서문, 공심돈·봉돈 포함)을 걷습니다. 4대문(장안문·팔달문·화서문·창룡문), 포루·각루·수문 48개 시설물이 보존되어 있습니다. 입장료 포함. 방문 시간: 약 60분.",
+      "highlights": [
+        "**1997년 유네스코 세계유산 등재** — 원형 성곽 구조를 갖춘 한국 유일의 요새 도시",
+        "1794~1796년 정조대왕(조선 22대 왕) 재위 중 2년 9개월에 걸쳐 건립",
+        "정약용이 한국·중국·서양 축성 과학을 결합해 구성",
+        "화성성역의궤 — 2007년 유네스코 세계기록유산 등재",
+        "5.74km 성곽 둘레, 41개 전략 군사 시설",
+        "장안문 북쪽 대문 — **한국 현존 최대 왕궁 대문**",
+        "1.2km 가이드 도보 장안문 → 화서문 (사진 찍기 좋은 구간)",
+        "화홍문 7개 수문 아치 — 가장 많이 촬영되는 구조물",
+        "**한복 착용 + 매월 마지막 수요일 + 65세 이상 무료**"
+      ],
+      "timeUsed": [
+        "장안문 근처 코치 하차 — 약 5분",
+        "장안문에서 그룹 오리엔테이션 — 약 5분",
+        "장안문 → 화서문 → 화서장각 구간 도보 — 약 25~30분",
+        "포토 타임 + 차량에서 집결 — 약 10분",
+        "선택: 화성 열차 (연무대 ↔ 팔달문) — 별도 요금"
+      ],
+      "whyOnRoute": "루트의 유네스코 핵심 명소 — 1794~1796년 정조대왕 재위 중 건립된 한국 유일의 성곽 도시.",
+      "visitBasics": {
+        "hours": "성벽 산책로 24시간 (게이트 없음); 권장 09:00-18:00(여름)/09:00-17:00(겨울)",
+        "closed": "연중 무휴 (화성 열차 월요일 운행 중단)",
+        "admission": "성인 ₩1,000 / 청소년 ₩700 / 어린이 ₩500 (무료: 6세 이하·65세 이상 노인·한복 착용자·매달 마지막 수요일)",
+        "walking": "중간 난이도 — 성벽에 경사 구간(서장대 주변); 각 문에 계단; 일부 구간 휠체어 어려움"
+      },
+      "convenience": {
+        "restroom": "장안문, 화서문, 팔달문, 연무대에 화장실 있음",
+        "parking": "장안문 주차장 단체 버스 하차; 연무대 단체 버스 지정 주차"
+      },
+      "smartNotes": {
+        "photo": "수원천 위 7개 아치가 있는 **화홍문(북쪽 수문)** — 이른 아침 또는 늦은 오후 반영 촬영 최적.",
+        "facilities": "장안문+팔달문+행궁광장 관광안내소. 영한 안내판. 화성 열차(₩1,500 왕복) 운행.",
+        "tip": "편안한 신발 착용 — 성벽 돌이 울퉁불퉁함. 행궁광장 한복 대여점에서 **무료 입장** 혜택."
+      },
+      "_poi_meta": {
+        "poi_key": "hwaseong_fortress",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO WHC",
+          "VisitKorea",
+          "Suwon CVB",
+          "UNESCO World Heritage Centre — Suwon Hwaseong (Criteria ii/iii inscription, 1997)",
+          "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Hwaseong Fortress + Hwaseong Seongyeok Uigwe Memory of the World 2007)",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Suwon Hwaseong Fortress official listing)",
+          "Suwon City Tourism (suwon.go.kr/tour — Hwaseong Yeolcha trolley + admission + opening hours)",
+          "Wikipedia (Hwaseong Fortress — Jeong Yak-yong + Geojunggi crane + 5.74 km perimeter + 41 structures)"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 10:45",
+      "duration": "60분",
+      "name": "화성행궁",
+      "category": "현존 최대 행궁 — 1789~1796년 건립",
+      "description": "화성행궁은 정조 대왕이 1789~1796년 화성 축성과 함께 건립한 한국 최대 행궁(임시 이궁)입니다. 정조는 아버지 사도세자의 묘(현륭원)를 참배하기 위해 수원에 행차할 때마다 이곳에 머물렀습니다. 한국전쟁과 일제강점기에 소실됐으나 1989~2003년에 복원되었습니다. 봉수당에서 열리는 무예24기 시범 공연(화·목·토·일요일 정기 공연)을 볼 수 있습니다. 입장료 포함. 방문 시간: 약 50분.",
+      "highlights": [
+        "**현존하는 한국 최대 행궁** — 원래 576칸",
+        "정조대왕이 1789~1796년 화성 요새와 함께 건립",
+        "정조대왕이 사도세자를 기리기 위해 13번 행행",
+        "**낙남헌 = 1796년 원형 건물 유일하게 현존** (나머지는 복원)",
+        "**신풍루 앞 수문장 교대식 화~일 11:00 (무료, 약 15분)**",
+        "1795년 왕실 행차가 유네스코 세계기록유산에 등재됨",
+        "드라마 '대장금' 촬영지 (2003, 5,000만 시청자)",
+        "한복 착용자·65세 이상·6세 이하 **무료 입장**",
+        "**낙남헌은 1796년 원형 건물 유일 — 일제강점기 대부분 소실, 2003년 복원**"
+      ],
+      "timeUsed": [
+        "화성 성벽(화서문 지역)에서 도보 5분",
+        "신풍루 앞 **11:00 수문장 교대식** 관람 (약 15분)",
+        "봉수당 + 낙남헌 + 장안헌 산책 — 약 30분",
+        "사진 + 차량 집결 — 약 15분",
+        "선택: 신풍루 수문장 교대식 (화~일 11:00, 약 15분, 무료)"
+      ],
+      "whyOnRoute": "임시 왕궁이 화성과 같은 유네스코 부지 내, 도보 5분 거리.",
+      "visitBasics": {
+        "hours": "09:00~18:00 (마지막 입장 17:30); 여름 5~10월 야간 18:00~21:00",
+        "closed": "연중 무휴",
+        "admission": "성인 ₩1,500 / 청소년 ₩1,000 / 어린이 ₩700; 화성+행궁 통합권 ₩3,500; 한복·65세 이상·6세 이하 무료",
+        "walking": "쉬움 — 궁궐 경내 대체로 평탄, 일부 마당 간 계단"
+      },
+      "convenience": {
+        "restroom": "정문, 봉수당 근처, 행궁 광장 화장실",
+        "parking": "화성 행궁 공영 주차장; 행궁 광장 유료 주차장"
+      },
+      "smartNotes": {
+        "photo": "**봉수당 정전** — 대표 정전 사진. **낙남헌** — 원형 1796년 건물.",
+        "facilities": "관광안내소, 화장실, 기념품점. 행궁 광장 카페 및 한복 대여점.",
+        "tip": "**화~일 11:00 수문장 교대식 관람**을 위해 그에 맞춰 도착. 한복 착용 시 무료 입장."
+      },
+      "_poi_meta": {
+        "poi_key": "hwaseong_haenggung",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea",
+          "Wikipedia",
+          "Suwon CVB",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Hwaseong Haenggung official listing)",
+          "Cultural Heritage Administration / Korea Heritage Service (cha.go.kr — Hwaseong Haenggung Historic Site No. 478)",
+          "Suwon City Tourism (suwon.go.kr/tour — Royal Guard Changing Ceremony + Mu-ye 24-gi schedule)",
+          "Wikipedia (Hwaseong Haenggung — Naknamheon-only-original-structure + 576-kan scale)",
+          "Visit Suwon CVB (visitsuwon.org — Suwon Pass combined ticket + Haenggung Square facilities)"
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "time": "≈ 12:00",
+      "duration": "75분",
+      "name": "수원 남문시장 — 점심 + 길거리 음식",
+      "category": "전통 시장 + 점심",
+      "description": "수원 남문시장(수원남문로데오시장)은 화성 팔달문(남문) 바로 남쪽에 자리한 전통 시장으로, '남문'이란 이름도 화성 남쪽 문에서 유래했습니다. 수원의 대표 향토 음식인 수원왕갈비(1940년대부터 이어진 수원식 돼지갈비), 순대, 떡볶이 등을 둘러볼 수 있습니다. 화성 관람 후 자연스럽게 이어지는 위치입니다. 방문 시간: 약 50분.",
+      "highlights": [
+        "**약 230년 역사의 전통 시장** — 정조대왕의 화성 건설 계획에서 기원",
+        "한국 SBA 선정 '문화 관광 시장'",
+        "9개 소시장 + 10헥타르 보행자 골목에 1,200개 이상 가게",
+        "**수원 통닭 갈비 거리** — 수원의 상징 통닭 + 갈비 (한국 3대 갈비 중 하나)",
+        "팔달문 광장에서 5분 도보",
+        "길거리 음식: 순대, 떡볶이, 호떡, 빈대떡, 어묵 (₩3,000~7,000/개)",
+        "**K-드라마 '응답하라 1988' (2015) 촬영 골목**",
+        "현금 권장 (₩20,000 이상)",
+        "**수원식 갈비 (수원갈비)** — 경기도 전통 요리로 **별도 지역 한국 음식으로 인정**됨"
+      ],
+      "timeUsed": [
+        "팔달문 통해 화성 행궁 광장 남쪽으로 5분 도보",
+        "통닭·갈비 점심 — 약 20~30분",
+        "남문 시장 골목 길거리 음식 산책 — 약 30~40분",
+        "집결 — 약 5분",
+        "선택: 수원 통닭 갈비 점심/저녁 (₩15,000-30,000/인)"
+      ],
+      "whyOnRoute": "수원 최고의 길거리 음식 지역에서 점심 — 행궁과의 근접성 활용 (5분 거리).",
+      "visitBasics": {
+        "hours": "대부분 매대 09:00~22:00; 길거리 음식 12:00~늦은 저녁",
+        "closed": "연중 무휴 (일부 매대 일요일 휴무)",
+        "admission": "무료 입장; 현금 권장",
+        "walking": "쉬움 — 평탄한 보행자 골목"
+      },
+      "convenience": {
+        "restroom": "팔달문 광장 및 대형 소시장 내 공중화장실",
+        "parking": "수원 남문 시장 공영 주차장; 팔달문 코치 전용 구역"
+      },
+      "smartNotes": {
+        "photo": "시장 입구를 액자 삼아 팔달문(화성 남문) 프레임 — 대표 포토 명소.",
+        "facilities": "팔달문 광장 관광안내소, ATM, 환전소.",
+        "tip": "**현금 ₩20,000 이상 지참** — 많은 길거리 음식 매대 카드 불가. 통닭 + 갈비 조합 점심 추천."
+      },
+      "_poi_meta": {
+        "poi_key": "suwon_nammun_market",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea",
+          "Visit Suwon",
+          "Korea SBA Cultural Tourism Market",
+          "Wikipedia Suwon-style galbi",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Suwon Paldalmun Market + Nammun Rodeo Market listings)",
+          "Visit Suwon CVB (visitsuwon.org — Nammun Market 9-sub-market network + Suwon Tongdak Galbi Street)",
+          "Korea Small & Medium Business Administration (kosbi.or.kr — Cultural Tourism Market 문화관광형시장 designation)",
+          "Wikipedia (Suwon-style galbi — wang-galbi origin + pear-and-ginger marinade)",
+          "Suwon City Tourism (suwon.go.kr/tour — Suwon Tongdak Galbi 거리 cluster + Reply 1988 filming credits)"
+        ]
+      }
+    },
+    {
+      "number": 5,
+      "time": "≈ 13:30",
+      "duration": "75분",
+      "name": "스타필드 수원 별마당도서관",
+      "category": "현대 문화 랜드마크",
+      "description": "스타필드 수원 별마당도서관은 2024년 1월 26일 개관한 신세계 플래그십 스타필드 수원 내 4층 개방형 도서관입니다. 국내 스타필드 중 최대 규모(약 33만4,000㎡ 연면적)로, 중앙에 솟아오른 거대 서가 구조가 SNS 인증샷 명소입니다. 도서관 자체는 무료 입장. 쇼핑몰 푸드홀에서 점심 또는 간식을 둘러볼 수 있습니다. 방문 시간: 약 60분.",
+      "highlights": [
+        "**신세계 플래그십 2세대 스타필드몰 — 2024년 1월 26일 개장**",
+        "BCHO 파트너스 구성 (코엑스 스타필드 라이브러리 2017년 원조 구성사)",
+        "**4층 규모 22m 서가** — 한국 최대 규모 원통형 서가 중 하나",
+        "약 70,000권 도서 + 잡지 **무료** 열람 가능",
+        "바이닐 레코드 감상 라운지 (추천 구성 컬렉션)",
+        "봄 벚꽃 LED 꽃잎 아트리움 설치 (3~4월)",
+        "이터피아 푸드홀 (30개 이상 레스토랑), 아쿠아필드, 토이킹덤, CGV",
+        "수원역 4번 출구에서 스타필드 무료 셔틀 (~10분)",
+        "몰 운영시간 매일 10:00~22:00"
+      ],
+      "timeUsed": [
+        "용인/민속촌에서 15분 드라이브",
+        "몰 + 라이브러리 관람 — 약 45~50분",
+        "라이브러리 또는 푸드홀에서 카페 휴식 — 약 15분",
+        "차량에서 집결",
+        "선택: 바이닐 LP 카페 라운지 (5F, 음료 포함 약 ₩18,500)"
+      ],
+      "whyOnRoute": "화성+행궁+시장 점심 이후 '현대 한국'의 균형추. 신세계 스타필드가 전통과 현대 대비.",
+      "visitBasics": {
+        "hours": "쇼핑몰 10:00-22:00; 도서관은 쇼핑몰 영업 시간 전체 이용 가능",
+        "closed": "월 1~2회 휴관 (보통 월요일 — 방문 전 온라인 확인 권장)",
+        "admission": "**도서관 무료** (쇼핑몰 전체 무료 입장; 쇼핑은 개인 부담; 아쿠아필드 워터파크 별도 ~₩28,000)",
+        "walking": "편안함 — 전층 에스컬레이터·엘리베이터; 전 구역 휠체어·유모차 접근 가능"
+      },
+      "convenience": {
+        "restroom": "전 층 다수 화장실; 기저귀 교환대 있는 가족 화장실",
+        "parking": "지하 주차 약 5,000면; ₩30,000 이상 구매 시 3시간 무료; 단체 버스 전용 구역"
+      },
+      "smartNotes": {
+        "photo": "**22m 높이 책장이 있는 도서관 중앙 아트리움** — 4층 갤러리에서 내려다보는 대표 샷.",
+        "facilities": "B1층 이토피아 푸드홀 (30개+ 레스토랑 ₩5,000~40,000), 4층 토이 킹덤, B1~2층 아쿠아필드 워터파크.",
+        "tip": "**도서관 무료** — 탁월한 가성비 명소. **수원역 출구에서 무료 스타필드 셔틀** 운행 (하차 후 3분 거리)."
+      },
+      "_poi_meta": {
+        "poi_key": "starfield_library_suwon",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Starfield official",
+          "VisitKorea",
+          "Shinsegae press",
+          "BCHO Partners",
+          "Starfield Suwon official (starfield.co.kr/suwon — opening date 2024-01-26 + library 4F-7F + free admission)",
+          "Shinsegae Property press release (Jan 2024 grand opening + 5th Starfield mall + 2nd-generation flagship concept)",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Starfield Library Suwon listing)",
+          "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
+          "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "≈ 15:30",
+      "duration": "100분",
+      "name": "광명동굴",
+      "category": "산업 유산 테마 동굴",
+      "description": "광명동굴은 1912년 일제강점기에 개발된 금·은·동·아연 광산으로, 1972년 폐광 후 2011년부터 문화 테마파크로 조성되었습니다. 연중 12°C 상시 기온으로 여름에는 냉방, 겨울에는 따뜻하게 느껴집니다. 지하 동굴 내 LED 조명 예술 작품, 와인동굴(유럽 와인 1만여 병 숙성), 황금폭포, 아쿠아월드 등이 운영됩니다. 하이라이트 구간까지 약 180계단 하강 후 동일 경로로 귀환합니다. 입장료 포함. 월요일 휴관. 방문 시간: 약 75분.",
+      "highlights": [
+        "**원래 금·은·구리·아연 광산** — 일제강점기 1912~1972년 운영, 이후 50년 방치",
+        "2011년 8월 한국 최초 공공 소유 동굴 관광 시설로 재개장",
+        "**2014년 한국관광의 별 수상** (관광업계 오스카)",
+        "총 터널 길이 7.8km; 공개 구간 약 2km",
+        "**연중 약 12°C 일정** — 가벼운 겉옷 지참 필수",
+        "**41m 유리섬유 용(용마루)** — 한국 실내 동굴 최대 조형물",
+        "와인 동굴 — 한국 최대 지하 와인 저장고 (200종 이상; 시음 ₩5,000)",
+        "LED 아트 터널 + 형광 벽화 + 음악의 전당 + 동굴 수족관",
+        "드라마 촬영: '알함브라 궁전의 추억'(2018), '화유기'",
+        "**월요일 휴무** — 화~일 09:00~18:00",
+        "휠체어 접근 가능 주요 탐방로"
+      ],
+      "timeUsed": [
+        "스타필드 수원에서 광명까지 코치 약 30분",
+        "동굴 입구 + 매표 — 약 10분",
+        "테마존 탐방: 수족관→LED터널→용→음악당→와인동굴→민속공원 — 약 70~80분",
+        "선택: 와인 시음 — 약 15분 (추가 비용)",
+        "코치 집결 — 약 10분"
+      ],
+      "whyOnRoute": "하루의 산업 유산 핵심 명소이자 **전실내 피날레** — 모든 늦은 오후 날씨 변화 흡수.",
+      "visitBasics": {
+        "hours": "화~일 09:00~18:00 (마지막 입장 17:00); 여름 7~8월 주말 19:00까지 연장",
+        "closed": "**월요일** (공휴일이 월요일인 경우 개관, 다음날 대체 휴관)",
+        "admission": "성인 ₩7,000 / 청소년 ₩3,500 / 어린이 ₩2,000; 6세 이하·65세 이상 무료",
+        "walking": "쉬움~중간 — 주요 관람 구간 약 2km, 대체로 평탄한 포장 동굴 바닥; 휠체어 접근 가능"
+      },
+      "convenience": {
+        "restroom": "주 입구, 동굴 중간(음악당 구역), 출구 화장실",
+        "parking": "약 1,000면 전용 주차장; 승용차 ₩2,000 / 버스 ₩5,000; 코치 전용 구역 별도"
+      },
+      "smartNotes": {
+        "photo": "**LED 아트 터널** 계절별 테마 조명 (봄 벚꽃, 가을 단풍, 겨울 눈꽃) — 장노출 촬영 최적.",
+        "facilities": "동굴 레스토랑 (한식 뷔페 약 ₩15,000), 와인 카페, 기념품점.",
+        "tip": "**연중 12°C — 여름에도 가벼운 재킷 필수.** 월요일 휴관. 용마루 포토 명소 놓치지 마세요."
+      },
+      "_poi_meta": {
+        "poi_key": "gwangmyeong_cave",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea",
+          "Wikipedia",
+          "Gwangmyeong City",
+          "KoreaToDo",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Gwangmyeong Cave official listing)",
+          "Gwangmyeong Cave official (gmcave.gm.go.kr — themed zones + operating hours + admission)",
+          "Gwangmyeong City Tourism (gm.go.kr/tour — 2011 city purchase 4.3 billion KRW + Korea's first govt-owned cave-tourism)",
+          "Wikipedia (Gwangmyeong Cave — 1912 Japanese colonial mine + 1972 closure + 7.8 km tunnel total)",
+          "Korea Tourism Star Award archive (Gwangmyeong Cave 2014 winner — Best New Tourist Attraction)"
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "time": "≈ 17:30",
+      "duration": "60분",
+      "name": "서울 귀환",
+      "category": "귀환",
+      "description": "서해안고속도로를 이용해 서울로 귀환(아침 경부고속도로와 다른 경로 — 광명의 서쪽 위치 반영). 서울 집결 지점 귀환.",
+      "highlights": [
+        "**4개 하차 지점** — 동문, 시청, 공항, 하귀 (픽업 역순)",
+        "동문 먼저 (약 17:50) — 저녁 길거리 음식 연장 방문자용",
+        "**공항 하차** 당일 출발자 권장 — 국제선 기준 2.5시간 여유 권장"
+      ],
+      "timeUsed": [
+        "후리에 → 제주시 서쪽으로 이동 — 약 50분",
+        "동문 하차 약 17:50 — 5분"
+      ],
+      "whyOnRoute": "귀환 물류 — 광명에서 서해안 고속도로가 경부 역주행보다 빠릅니다.",
+      "visitBasics": {},
+      "convenience": {},
+      "smartNotes": {
+        "tip": "최종 도착은 금요일 저녁/주말 교통에 따라 달라지며, 혼잡한 날에는 하차가 30~45분 지연될 수 있어요."
+      },
+      "_poi_meta": {
+        "poi_key": "OPS_return",
+        "verified": false,
+        "match": "operational_implicit",
+        "kb_version": "v1.14",
+        "verified_date": "2026-04-29",
+        "note": "Operational stop (return)"
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "서울",
+      "type": "origin",
+      "theme": "출발"
+    },
+    {
+      "name": "수원 화성",
+      "type": "primary",
+      "theme": "유네스코 성곽"
+    },
+    {
+      "name": "화성 행궁",
+      "type": "primary",
+      "theme": "문화유산 궁궐"
+    },
+    {
+      "name": "수원 남문시장",
+      "type": "secondary",
+      "theme": "시장"
+    },
+    {
+      "name": "스타필드 라이브러리 수원",
+      "type": "secondary",
+      "theme": "현대 한국"
+    },
+    {
+      "name": "광명동굴",
+      "type": "primary",
+      "theme": "동굴"
+    },
+    {
+      "name": "서울",
+      "type": "return",
+      "theme": "귀환"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "출발",
+      "duration": "약 1시간",
+      "description": "서울 → 경부고속도로 → 수원 시내."
+    },
+    {
+      "phase": "문화유산 구간",
+      "duration": "약 3시간",
+      "description": "수원화성 성벽, 화성행궁, 남문시장 — 모두 도보 거리 내."
+    },
+    {
+      "phase": "현대 허브",
+      "duration": "약 1시간",
+      "description": "15분 이동 후 스타필드 수원 별마당도서관 관람 및 푸드홀 점심."
+    },
+    {
+      "phase": "지하 피날레",
+      "duration": "약 1시간 30분",
+      "description": "30분 북서쪽 이동 후 광명동굴 LED 테마파크."
+    },
+    {
+      "phase": "귀환",
+      "duration": "약 1시간",
+      "description": "광명 → 서해안고속도로 → 서울."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "하루 일정",
+    "subtitle": "서울 남쪽과 서남쪽을 연결하는 삼각형 경기 루프: 오전에 수원의 유네스코 요새 도시, 오후 초에 수원의 플래그십 현대식 몰, 마지막에 광명의 폐광을 개조한 동굴. 총 10~11시간."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "해당 지역 첫 방문자",
+      "커플",
+      "성인 가족 단위",
+      "하루 종일 활동에 익숙한 활동적인 여행자",
+      "유네스코 세계유산 코스를 원하는 여행자"
+    ],
+    "lessIdealFor": [
+      "밀실 공포증이 있는 여행자.",
+      "광명동굴 하단 약 180계단 불가 여행자 주의 (엘리베이터 없음)",
+      "화성 성벽 이동 제한 여행자 주의 (급경사 및 문 앞 계단)",
+      "서울 중심 궁궐을 보고 싶은 방문자 주의 (경기도 전체 루트)",
+      "월요일 방문자 주의 — 광명동굴 정기 휴관"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "이 코스의 추천 포인트",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "표준 수원 투어보다 다양함",
+            "detail": "대부분의 수원 당일 투어는 요새, 행궁, 스타필드를 조합합니다 — 서로 10분 이내인 세 곳. 이 루트는 서쪽으로 확장해 광명동굴을 추가하며 동굴 관광의 독특한 지하 레이어를 더합니다."
+          },
+          {
+            "label": "날씨에 상관없는 실내 친화적 대안",
+            "detail": "4개 주요 코스 중 두 곳 — 스타필드 라이브러리와 광명동굴 — 이 완전 실내이며 기후 제어됩니다. 비 오는 날에도 강력한 루트입니다."
+          },
+          {
+            "label": "무료 입장, 유료 맥락",
+            "detail": "스타필드 라이브러리는 혼자 방문해도 무료이지만, 가이드와 함께 방문하면 훨씬 의미 있습니다."
+          },
+          {
+            "label": "단일 형식보다 쿨함",
+            "detail": "유산 투어만 하면 부담스러울 수 있습니다. 라이브러리+몰 투어는 가벼울 수 있습니다. 이 일정은 의도적으로 두 가지를 번갈아 배치합니다."
+          }
+        ]
+      },
+      {
+        "title": "실제 도보 난이도는 어느 정도일까",
+        "icon": "footprints",
+        "iconBg": "bg-emerald-50/80",
+        "iconColor": "text-emerald-600",
+        "items": [
+          {
+            "label": "성벽 산책: 가장 힘든 구간",
+            "detail": "약 1km에 가파른 경사와 문 앞 계단이 있습니다. 편안한 신발이 필수."
+          },
+          {
+            "label": "광명동굴: 편도 약 180계단",
+            "detail": "하단 하이라이트(와인동굴, 황금폭포, 아쿠아 월드)까지 내려가고 다시 올라오는 계단입니다. 엘리베이터 없음."
+          },
+          {
+            "label": "행궁, 남문시장, 스타필드: 쉬움",
+            "detail": "궁궐과 스타필드는 평탄하고 접근 가능합니다. 남문시장은 점심시간 혼잡하지만 실질적인 도보 부담은 없습니다."
+          }
+        ]
+      },
+      {
+        "title": "날씨와 계절이 바뀔 때",
+        "icon": "cloud-sun",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "여름 더위: 광명동굴이 피서지",
+            "detail": "동굴 내부 연중 12°C가 더운 날의 구제 코스입니다. 성벽 산책에서 그늘 쉬는 시간이 늘어납니다."
+          },
+          {
+            "label": "겨울 추위: 동굴에 겉옷 지참",
+            "detail": "외부가 더 추울 때 12°C는 시원합니다. 여름에도 광명동굴 안에서는 가벼운 재킷 권장."
+          },
+          {
+            "label": "월요일 운영 없음",
+            "detail": "광명동굴은 월요일 정기 휴관입니다. 월요일에는 민속촌 또는 와우정사 버전을 선택하세요."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "inclusions",
+      "title": "포함 사항",
+      "preview": "서울 왕복 코치, 영어 가이드, 수원 화성",
+      "content": [
+        "서울 왕복 코치 교통, 영어 투어 가이드, 수원 화성 요새(성벽+행궁), 광명동굴, 스타필드 수원 입장 포함.",
+        "미포함: 식사, 음료, 선택 동굴 와이너리 시음, 팁.",
+        "스타필드 라이브러리 입장 무료."
+      ]
+    },
+    {
+      "id": "pickup",
+      "title": "픽업 & 하차",
+      "preview": "홍익대 입구역 (8번 출구) 약 08:00 또는 명동역 (2 또는 4번 출구) 약 08:30.",
+      "content": [
+        "홍익대 입구역(8번 출구) 약 08:00 또는 명동역(2번 또는 4번 출구) 약 08:30.",
+        "10분 전까지 도착.",
+        "호텔 픽업 없음; 집합 장소만.",
+        "지각자 탑승 불가; 노쇼 처리됩니다."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "도보 & 지형",
+      "preview": "중간 난이도.",
+      "content": [
+        "중간 난이도.",
+        "화성 성벽 산책에는 오르막 석계 포함.",
+        "광명동굴은 하층으로 약 180계단 내려가고 다시 오르막 — 엘리베이터 없음.",
+        "발가락 보호형 편안한 워킹화 필수.",
+        "거동 불편자에게는 권장하지 않습니다."
+      ]
+    },
+    {
+      "id": "what",
+      "title": "복장 & 준비물",
+      "preview": "편한 운동화 (스니커즈 또는 등산화), 얇은 재킷 — 광명동굴 12°C",
+      "content": [
+        "편안한 워킹화(운동화 또는 등산화), 가벼운 재킷 — 광명동굴 내부 연중 12°C.",
+        "겨울에는 성벽용 따뜻한 코트와 동굴용 가벼운 겉옷.",
+        "카메라, 물, 점심 및 길거리 음식 현금(예산 ₩10,000~₩20,000)."
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "취소 정책",
+      "preview": "투어 시작 24시간 전까지 무료 취소.",
+      "content": [
+        "투어 시작 24시간 전까지 무료 취소 가능.",
+        "당일 취소 및 노쇼는 환불 불가.",
+        "월요일 운영 없음 (광명동굴 휴관)."
+      ]
+    },
+    {
+      "id": "children",
+      "title": "어린이 & 접근성",
+      "preview": "어린이 선호 투어 — 동굴 조명, 용 조각, 아쿠아 월드 인기",
+      "content": [
+        "어린이 환영 — 동굴 조명, 용 조형물, 아쿠아월드가 매력적.",
+        "성벽 산책에는 계단과 불균일한 표면.",
+        "동굴 180+계단으로 거동 불편자, 유모차, 휠체어에 부적합."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "계절별 안내 확인"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "계절별 안내 확인"
+    },
+    "_seasonalSummary": "수원과 광명은 서울과 비슷한 날씨지만, 여름에는 덥고 습하며 겨울에는 춥고 건조합니다. 광명동굴 내부는 사계절 약 12°C로 일정해 여름에는 시원하고 겨울에는 외부보다 안정적인 실내 구간이 됩니다.",
+    "_seasonalTemperatures": [
+      {
+        "season": "봄 (3~5월)",
+        "range": "5–22°C",
+        "notes": "4월 초~중순에는 성곽길을 따라 벚꽃이 피어납니다."
+      },
+      {
+        "season": "여름 (6~8월)",
+        "range": "22–32°C",
+        "notes": "덥고 습하지만 동굴 내부는 시원한 피난처가 됩니다."
+      },
+      {
+        "season": "가을 (9~11월)",
+        "range": "8–22°C",
+        "notes": "최적기 — 하늘이 맑고 기온이 온화합니다."
+      },
+      {
+        "season": "겨울 (12~2월)",
+        "range": "-5 to 6°C",
+        "notes": "성곽길은 찬바람이 강할 수 있으며, 도서관과 동굴은 실내 온도 관리가 됩니다."
+      }
+    ]
+  },
+  "seasonalVariations": [
+    {
+      "season": "봄",
+      "description": "화성 성벽 벚꽃; 광명동굴 봄 테마 조명 설치."
+    },
+    {
+      "season": "여름",
+      "description": "동굴 12°C 내부 온도가 서울 습기를 피하는 인기 피서지; 수원 화성 문화제 진행."
+    },
+    {
+      "season": "가을",
+      "description": "성벽 따라 단풍; 10월 수원 화성 문화제 하이라이트."
+    },
+    {
+      "season": "겨울",
+      "description": "눈 덮인 성벽은 전통 사진 명소; 동굴은 연중 LED 설치물 운영으로 계절 무관하게 방문 가능."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "공인 현지 여행사",
+      "description": "정식 등록 및 보험 가입 현지 여행사",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "137건 기준 4.6/5 평점의 공인 현지 여행사."
+    },
+    {
+      "icon": "route",
+      "title": "코스 전문",
+      "description": "이동 부담을 줄인 효율적인 코스",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "광명동굴 연중 12°C 상시 기온으로 여름 더위를 식히기에 이상적. 시즌 관계없이 즐길 수 있는 균형 잡힌 코스."
+    },
+    {
+      "icon": "users",
+      "title": "그룹 규모 관리",
+      "description": "코스에 상황에 맞춘 인원 규모",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "광명동굴 월요일 휴관을 사전 고지 — 예약 전 명확한 안내 제공."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "즉시",
+      "title": "즉시 확인",
+      "detail": "행정 요약 포함 예약 확인서 발송",
+      "description": "집결 장소·시각 포함 즉시 예약 확인서 발송 (월요일 미운행 안내 포함)."
+    },
+    {
+      "timing": "출발 12시간 전",
+      "title": "12시간 전 알림",
+      "detail": "날씨 업데이트 및 경로 변경 안내",
+      "description": "화성행궁 무예24기 공연 일정 및 광명동굴 당일 행사 사전 안내."
+    },
+    {
+      "timing": "전날 저녁",
+      "title": "최종 픽업 안내",
+      "detail": "정확한 픽업 시간 및 가이드 연락처",
+      "description": "출발 전날 저녁 최종 집결 시각 확인."
+    },
+    {
+      "timing": "투어 당일 아침",
+      "title": "당일 코스 안내",
+      "detail": "실시간 상황 기반 당일 브리핑",
+      "description": "날씨 및 코스 안내 아침 메시지 전달."
+    },
+    {
+      "timing": "투어 중",
+      "title": "경유지별 심층 안내",
+      "detail": "각 코스 실시간 현장 안내",
+      "description": "정조의 화성 건설 배경, 일제강점기 광업 역사, 별마당도서관 구성 등 가이드 심층 설명."
+    },
+    {
+      "timing": "투어 종료 후",
+      "title": "투어 후 지원",
+      "detail": "피드백 및 추가 여행 추천",
+      "description": "투어 후 피드백 요청 전송."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q1",
+      "question": "왜 월요일에는 투어가 없나요?",
+      "answer": "광명동굴이 매주 월요일 정기 휴관입니다. 광명동굴이 4개 핵심 경유지 중 하나이므로, 이 투어는 화·수·목·금·토·일요일만 운행합니다."
+    },
+    {
+      "id": "q2",
+      "question": "입장료가 포함되어 있나요?",
+      "answer": "네, 수원화성·화성행궁·광명동굴 입장료가 모두 포함됩니다. 스타필드 별마당도서관은 무료 입장입니다."
+    },
+    {
+      "id": "q3",
+      "question": "점심 식사가 포함되어 있나요?",
+      "answer": "포함되지 않습니다. 수원 남문시장(수원왕갈비, 순대 등) 또는 스타필드 수원 푸드홀에서 즐기시면 됩니다. 예산: 약 ₩10,000~20,000."
+    },
+    {
+      "id": "q4",
+      "question": "광명동굴 계단이 많은가요?",
+      "answer": "하이라이트 구간(와인동굴·황금폭포·아쿠아월드)까지 약 180계단 하강 후 동일 경로로 귀환합니다. 경사 완만한 구간도 있지만 전체적으로 계단이 많습니다."
+    },
+    {
+      "id": "q5",
+      "question": "동굴이 덥거나 춥지 않나요?",
+      "answer": "연중 12°C(54°F)입니다. 여름에는 시원하게 느껴지고, 겨울에는 따뜻하게 느껴집니다. 여름 방문 시 얇은 겉옷 하나를 챙기시면 좋습니다."
+    },
+    {
+      "id": "q6",
+      "question": "수원+한국민속촌 투어와 어떻게 다른가요?",
+      "answer": "두 투어 모두 화성·행궁·스타필드를 포함합니다. 이 투어는 광명동굴(지하 LED 테마파크)이 추가되고, 민속촌 대신 남문시장 점심이 포함됩니다."
+    },
+    {
+      "id": "first-time",
+      "question": "수원·광명을 처음 방문하는 분에게 좋은 선택인가요?",
+      "answer": "네, 유네스코 성곽(화성), 조선 이궁(행궁), 지하 테마파크(광명동굴), 현대 도서관(스타필드)을 하루에 균형 있게 볼 수 있습니다."
+    },
+    {
+      "id": "walking",
+      "question": "도보 이동이 힘들지 않나요?",
+      "answer": "활동적인 하루이며 계단 구간이 있습니다. 화성 성벽이 가파른 구간과 계단을 포함하며(약 1km 도보), 광명동굴 하이라이트 구간은 약 180계단 왕복입니다."
+    },
+    {
+      "id": "family",
+      "question": "가족 여행에 적합한가요?",
+      "answer": "성벽 도보와 광명동굴 계단을 소화할 수 있는 어린이(만 10세 이상)가 동반하는 가족에게 적합합니다. 동굴 LED 전시는 어린이들이 특히 좋아합니다."
+    },
+    {
+      "id": "seniors",
+      "question": "어르신도 참여할 수 있나요?",
+      "answer": "계단과 좁은 공간이 있어, 활동적인 어르신께 권장합니다. 광명동굴 180계단은 속도를 조절해 이동합니다."
+    },
+    {
+      "id": "children",
+      "question": "권장 최소 연령은 몇 세인가요?",
+      "answer": "만 10세 이상 추천 — 성벽 고르지 않은 지면, 동굴 180계단, 9시간 일정을 소화할 수 있는 어린이에게 적합합니다."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 4.6,
+    "totalReviews": 137,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 102,
+        "percentage": 74.5
+      },
+      {
+        "stars": 4,
+        "count": 25,
+        "percentage": 18.2
+      },
+      {
+        "stars": 3,
+        "count": 7,
+        "percentage": 5.1
+      },
+      {
+        "stars": 2,
+        "count": 2,
+        "percentage": 1.5
+      },
+      {
+        "stars": 1,
+        "count": 1,
+        "percentage": 0.7
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
+    "price": {
+      "amountLabel": "54.00",
+      "originalPriceUsd": 60,
+      "salePriceUsd": 54,
+      "discountPercent": 10,
+      "currency": "USD",
+      "per": "인",
+      "priceSource": "direct_rate",
+      "priceNote": "AtoC Korea 공식 판매가 기준입니다."
+    }
+  },
+  "pickup_dropoff": {
+    "type": "meeting_point",
+    "meeting_points": [
+      {
+        "name": "홍대입구역 8번 출구",
+        "time": "08:00"
+      },
+      {
+        "name": "명동역 2번 또는 4번 출구",
+        "time": "08:30"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "홍대입구역 8번 출구",
+        "approx_time": "17:30"
+      },
+      {
+        "name": "명동역 4번 출구",
+        "approx_time": "17:30"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "출발 10분 전까지 도착해 주세요. 지각 시 합류가 어렵고 환불이 불가합니다. 광명동굴은 월요일 휴무이므로 이 상품은 월요일에는 운영하지 않습니다."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "gyeonggi_south",
+    "vehicle_type": "coach",
+    "duration_hours": 9.0,
+    "region_tags": [
+      "gyeonggi_suwon",
+      "gyeonggi_gwangmyeong",
+      "gyeonggi_goyang"
+    ],
+    "theme_tags": [
+      "unesco",
+      "fortress",
+      "cave",
+      "modern_landmark"
+    ],
+    "poi_tags": [
+      "hwaseong_fortress",
+      "hwaseong_haenggung",
+      "gwangmyeong_cave",
+      "starfield_library_suwon",
+      "suwon_nammun_market"
+    ],
+    "pace_level": 0.8,
+    "walking_level": 0.8,
+    "scenic_level": 0.7,
+    "photo_level": 1.0,
+    "culture_level": 0.8,
+    "relax_level": 0.6,
+    "first_time_fit": 0.85,
+    "family_fit": 0.9,
+    "senior_fit": 0.85,
+    "couple_fit": 0.95,
+    "solo_traveler_fit": 0.85,
+    "active_traveler_fit": 0.5,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 1.0,
+    "young_kids_fit": 0.85,
+    "senior_active_fit": 0.65,
+    "senior_general_fit": 0.85,
+    "mobility_friendly_fit": 0.7,
+    "stroller_fit": 0.7,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.3,
+    "rain_fit": 0.85,
+    "value_for_money_fit": 0.95,
+    "iconic_landmark_fit": 0.95,
+    "cafe_fit": 0.85,
+    "food_fit": 0.85,
+    "nature_fit": 0.4,
+    "beach_fit": 0.0,
+    "nightlife_fit": 0.05,
+    "shopping_fit": 0.7,
+    "no_shopping_fit": 0.5,
+    "local_culture_fit": 1.0,
+    "storytelling_fit": 1.0,
+    "unesco_fit": 1.0,
+    "intangible_heritage_fit": 0.4,
+    "indoor_ratio": 0.55,
+    "weather_sensitivity": 0.4,
+    "comfort_level": 0.6,
+    "budget_fit": 0.7,
+    "premium_fit": 0.45,
+    "small_group_fit": 1.0,
+    "private_fit": 0.05,
+    "bus_fit": 1.0,
+    "price_band": "mid",
+    "pickup_base": "seoul_central",
+    "return_time_band": "17:00-18:30",
+    "duration_band": "9h",
+    "min_recommended_age": 10,
+    "hard_constraints": {
+      "avoidIf": [
+        "tight_same_day_departure"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "stroller_heavy_groups"
+      ]
+    },
+    "walking_notes": [
+      "Active walking day with some stairs and uneven terrain.",
+      "Average fitness expected.",
+      "Sturdy shoes with grip recommended."
+    ],
+    "keywords": [
+      "seoul suwon hwaseong gwangmyeong cave starfield library",
+      "korea_mainland day tour",
+      "korea_mainland small group"
+    ],
+    "synonym_hints": [
+      "seoul suwon hwaseong gwangmyeong cave starfield library",
+      "korea_mainland sightseeing"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "seoul",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "hwaseong_fortress",
+      "hwaseong_haenggung",
+      "suwon_nammun_market",
+      "starfield_library_suwon",
+      "gwangmyeong_cave"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.1,
+    "flexibility_fit": 0.3,
+    "fortress_fit": 1.0,
+    "joseon_palace_fit": 1.0,
+    "cave_fit": 1.0,
+    "industrial_heritage_fit": 1.0,
+    "library_fit": 1.0,
+    "modern_architecture_fit": 0.85,
+    "street_food_fit": 1.0,
+    "market_fit": 1.0,
+    "k_drama_filming_fit": 0.85,
+    "led_art_fit": 1.0,
+    "history_culture_fit": 0.95,
+    "wheelchair_accessible_anchor_fit": 0.85,
+    "seasonal_fit": 0.8,
+    "romantic_fit": 0.75,
+    "premium_dining_fit": 0.5,
+    "summer_escape_fit": 1.0,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "suwon_hwaseong_route_fit": 1.0,
+    "suwon_central_anchor_fit": 1.0,
+    "seoul_to_suwon_30min_drive_fit": 1.0,
+    "seoul_central_hotel_pickup_fit": 1.0,
+    "return_to_seoul_central_fit": 1.0,
+    "small_group_format_fit": 1.0,
+    "fixed_schedule_format_fit": 1.0,
+    "unesco_world_heritage_anchor_fit": 1.0,
+    "unesco_world_heritage_1997_inscription_fit": 1.0,
+    "joseon_dynasty_late_18c_anchor_fit": 1.0,
+    "king_jeongjo_filial_piety_anchor_fit": 1.0,
+    "jeong_yak_yong_silhak_anchor_fit": 1.0,
+    "geojunggi_crane_engineering_anchor_fit": 1.0,
+    "uigwe_memory_of_world_2007_anchor_fit": 1.0,
+    "hwaseong_5_74km_perimeter_anchor_fit": 1.0,
+    "hwaseong_41_structures_anchor_fit": 1.0,
+    "naknamheon_only_original_1796_structure_fit": 1.0,
+    "joseon_royal_haenggung_largest_in_korea_fit": 1.0,
+    "royal_guard_changing_ceremony_anchor_fit": 1.0,
+    "muye_24_gi_martial_arts_anchor_fit": 1.0,
+    "suwon_galbi_tongdak_street_fit": 1.0,
+    "suwon_style_galbi_origin_fit": 1.0,
+    "wang_galbi_royal_sized_anchor_fit": 1.0,
+    "korea_sba_cultural_tourism_market_fit": 1.0,
+    "nammun_9_sub_market_network_fit": 1.0,
+    "paldalmun_south_gate_anchor_fit": 1.0,
+    "reply_1988_filming_location_fit": 1.0,
+    "starfield_library_photo_stop_fit": 1.0,
+    "starfield_22m_bookshelves_anchor_fit": 1.0,
+    "starfield_4f_to_7f_atrium_void_fit": 1.0,
+    "douglas_coupland_the_planets_rooftop_anchor_fit": 1.0,
+    "bcho_partners_architecture_anchor_fit": 1.0,
+    "starfield_free_admission_photo_permitted_fit": 1.0,
+    "starfield_vinyl_lp_cafe_anchor_fit": 1.0,
+    "shinsegae_second_generation_flagship_fit": 1.0,
+    "instagram_photo_density_high_fit": 1.0,
+    "gwangmyeong_cave_mining_heritage_fit": 1.0,
+    "japanese_colonial_1912_mine_anchor_fit": 1.0,
+    "korea_first_govt_owned_cave_tourism_fit": 1.0,
+    "industrial_heritage_repurpose_anchor_fit": 1.0,
+    "shrimp_paste_fermentation_storage_anchor_fit": 1.0,
+    "gwangmyeong_city_2011_purchase_anchor_fit": 1.0,
+    "year_round_12c_constant_temperature_advisory": true,
+    "korea_largest_underground_wine_cellar_fit": 1.0,
+    "korea_tourism_star_award_2014_fit": 1.0,
+    "led_art_tunnel_200m_anchor_fit": 1.0,
+    "yongmaru_41m_dragon_anchor_fit": 1.0,
+    "memories_of_alhambra_filming_fit": 1.0,
+    "gwangmyeong_cave_closed_mondays_advisory": true,
+    "hwaseong_yeolcha_optional_advisory": true,
+    "free_starfield_shuttle_from_suwon_station_advisory": true,
+    "differentiates_from_suwon_folk_village_route": true,
+    "differentiates_from_suwon_waujeongsa_route": true,
+    "available_months_signature": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "signature_window_label": "Year-round (Gwangmyeong Cave excludes Mondays; peak summer for cool 12°C cave escape; peak autumn for fortress foliage)",
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "culture",
+      "unesco",
+      "underground",
+      "library"
+    ],
+    "secondary_themes": [
+      "market",
+      "joseon_era",
+      "modern_architecture",
+      "all_weather"
+    ],
+    "best_for": [
+      "families_with_teens",
+      "couples",
+      "solo_travelers",
+      "first_time_visitors",
+      "rainy_day",
+      "summer_heat",
+      "winter_cold"
+    ],
+    "not_recommended_for": [
+      "mobility_limited",
+      "claustrophobic",
+      "very_young_children",
+      "nature_seekers"
+    ],
+    "anchor_pois": [
+      "Suwon Hwaseong Fortress",
+      "Hwaseong Haenggung Palace",
+      "Suwon Nammun Market",
+      "Starfield Library Suwon",
+      "Gwangmyeong Cave"
+    ],
+    "competing_products": [
+      "seoul-suwon-hwaseong-folk-village-starfield-library",
+      "seoul-suwon-hwaseong-waujeongsa-starfield",
+      "pocheon-sanjeong-lake-herb-island-art-valley"
+    ],
+    "anchor_poi_keys": [
+      "hwaseong_fortress",
+      "hwaseong_haenggung",
+      "suwon_nammun_market",
+      "starfield_library_suwon",
+      "gwangmyeong_cave"
+    ],
+    "enrichment_batch": "17e",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.27",
+    "enrichment_target_kb_version": "1.28",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "12 substantive stop instances across 3 tours; Batch 11 era authoring → A-grade pv=6 PASS (universal source-attribution gap closed; Suwon-Hwaseong-route + Starfield-library-photo-stop + Korean-Folk-Village-K-drama-set + Gwangmyeong-cave-mining-heritage + Waujeongsa-syncretic-buddhism + Suwon-galbi-tongdak-street patterns introduced)"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "유네스코 성곽, 지하 금광, 4층 도서관 —",
+        "headlineLine2": "경기도에서 가장 많이 사진 찍히는 하루, 9시간에",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
+          "imagePosition": "center 35%",
+          "tagline": "한국 유일의 완전한 성곽 도시, 예술로 재탄생한 옛 금광, 전국에서 가장 많이 촬영되는 도서관",
+          "pills": [
+            "소그룹",
+            "문화"
+          ],
+          "meta": {
+            "duration": "9시간",
+            "region": "경기도 (서울 남부)",
+            "stops": "7개 코스",
+            "rating": 4.6,
+            "ratingStars": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "투어 개요"
+          },
+          {
+            "id": "itinerary",
+            "label": "상세 일정"
+          },
+          {
+            "id": "details",
+            "label": "유의사항"
+          },
+          {
+            "id": "faq",
+            "label": "자주 묻는 질문"
+          },
+          {
+            "id": "reviews",
+            "label": "여행자 후기"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "소요 시간",
+            "value": "약 9시간 (오전~이른 저녁)"
+          },
+          {
+            "icon": "users",
+            "label": "그룹 규모",
+            "value": "소그룹, 영어 가이드"
+          },
+          {
+            "icon": "map-pin",
+            "label": "투어 지역",
+            "value": "수원 & 광명, 경기도"
+          },
+          {
+            "icon": "footprints",
+            "label": "도보 난이도",
+            "value": "중간 — 화성 성곽길에는 돌길 오르막이 있고, 광명동굴에는 180개 이상의 계단이 포함됩니다."
+          },
+          {
+            "icon": "ticket",
+            "label": "포함 사항",
+            "value": "왕복 교통, 영어 가이드, 수원 화성 입장료 (₩1,000), 광명 동굴 (₩12,000) 포함."
+          },
+          {
+            "label": "점심 식사",
+            "value": "미포함 — 일반적으로 스타필드 몰 푸드코트에서 식사."
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+            "alt": "투어 중 방문하는 수원 화성의 풍경",
+            "caption": "수원 화성",
+            "location": "수원 화성 장안문~화서문 구간",
+            "atmosphere": "수원 화성는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "alt": "투어 중 방문하는 화성행궁 — 수문장 교대식 재현의 풍경",
+            "caption": "화성행궁 — 수문장 교대식 재현",
+            "location": "수원 화성 성곽 안의 화성행궁",
+            "atmosphere": "화성행궁 수문장 교대식 재현은 이 코스의 대표 볼거리로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "alt": "투어 중 방문하는 광명동굴 — 골든로드 터널의 풍경",
+            "caption": "광명동굴 — 골든로드 터널",
+            "location": "광명동굴, Gwangmyeong-si, Gyeonggi-do",
+            "atmosphere": "옛 시흥 금광(1912–1972), 총 7.8km 갱도, 연중 약 12°C 유지"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "alt": "투어 중 방문하는 광명동굴 메인 동굴 구간의 풍경",
+            "caption": "광명동굴 메인 동굴 구간",
+            "location": "광명동굴 메인 동굴 구간",
+            "atmosphere": "광명동굴 메인 동굴 구간는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "alt": "수원 스타필드 라이브러리의 22미터 바닥-천장 서가와 하층 열람실이 있는 4층 아트리움",
+            "caption": "스타필드 라이브러리 수원 — 22m 서가",
+            "location": "스타필드 수원 별마당도서관, Yeongtong-gu, Suwon",
+            "atmosphere": "신세계의 2세대 스타필드 플래그십, 2024년 1월 개장; 무료 입장; 바이닐 레코드 청음 공간"
+          },
+          {
+            "id": "g6",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+            "alt": "수원식 갈비, 통닭, 전통 간식을 파는 수원 남문시장 실내 골목",
+            "caption": "수원 남문시장 — 220년 역사의 정조 시장",
+            "location": "수원 화성 남문 인근의 수원남문시장",
+            "atmosphere": "220년 역사; 화성 축조 시 정조 창건; 통닭 골목 + 9개 소시장"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "≈ 08:30",
+            "duration": "10분",
+            "name": "서울 출발",
+            "category": "픽업 & 출발",
+            "description": "서울 중심 2개 집결 지점: 홍익대학교역 8번 출구(홍대) 또는 명동역 2·4번 출구. 경부고속도로로 수원 이동.",
+            "highlights": [
+              "서울 중심부 집합 장소 (홍대 + 명동)",
+              "인제-양양 터널 (11km, 한국 최장)을 통한 서울-양양 고속도로",
+              "도중 휴게소 있는 코치 이동",
+              "에어컨 + USB 충전 완비 코치"
+            ],
+            "timeUsed": [
+              "서울 픽업 지점에서 가이드 겸 운전기사와 만남",
+              "그룹 확인, 물과 간식 배포"
+            ],
+            "whyOnRoute": "09:30 수원 도착으로 정오 혼잡 60~90분 전 화성 도착.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {
+              "tip": "코치 에어컨이 강할 수 있으니 가벼운 겉옷 지참. 중간쯤 서비스 에어리어에서 화장실 휴식."
+            },
+            "_poi_meta": {
+              "poi_key": "OPS_seoul_pickup_default",
+              "verified": false,
+              "match": "operational_default",
+              "kb_version": "v1.14",
+              "verified_date": "2026-04-29",
+              "note": "Operational pickup — Seoul departure"
+            }
+          },
+          {
+            "number": 2,
+            "time": "≈ 09:30",
+            "duration": "60분",
+            "name": "수원화성 (유네스코 세계문화유산)",
+            "category": "유네스코 요새",
+            "description": "수원화성은 1997년 유네스코 세계문화유산으로 등재된 한국 유일의 완전한 형태의 조선시대 성곽 도시입니다. 정조 대왕이 1794~1796년에 축성했으며, 공사 전 과정을 담은 10권 분량의 『화성성역의궤』(별도 유네스코 기록유산 등재)가 현존합니다. 전체 성벽 5.7km 중 약 1km 구간(장안문~화서문, 공심돈·봉돈 포함)을 걷습니다. 4대문(장안문·팔달문·화서문·창룡문), 포루·각루·수문 48개 시설물이 보존되어 있습니다. 입장료 포함. 방문 시간: 약 60분.",
+            "highlights": [
+              "**1997년 유네스코 세계유산 등재** — 원형 성곽 구조를 갖춘 한국 유일의 요새 도시",
+              "1794~1796년 정조대왕(조선 22대 왕) 재위 중 2년 9개월에 걸쳐 건립",
+              "정약용이 한국·중국·서양 축성 과학을 결합해 구성",
+              "화성성역의궤 — 2007년 유네스코 세계기록유산 등재",
+              "5.74km 성곽 둘레, 41개 전략 군사 시설",
+              "장안문 북쪽 대문 — **한국 현존 최대 왕궁 대문**",
+              "1.2km 가이드 도보 장안문 → 화서문 (사진 찍기 좋은 구간)",
+              "화홍문 7개 수문 아치 — 가장 많이 촬영되는 구조물",
+              "**한복 착용 + 매월 마지막 수요일 + 65세 이상 무료**"
+            ],
+            "timeUsed": [
+              "장안문 근처 코치 하차 — 약 5분",
+              "장안문에서 그룹 오리엔테이션 — 약 5분",
+              "장안문 → 화서문 → 화서장각 구간 도보 — 약 25~30분",
+              "포토 타임 + 차량에서 집결 — 약 10분",
+              "선택: 화성 열차 (연무대 ↔ 팔달문) — 별도 요금"
+            ],
+            "whyOnRoute": "루트의 유네스코 핵심 명소 — 1794~1796년 정조대왕 재위 중 건립된 한국 유일의 성곽 도시.",
+            "visitBasics": {
+              "hours": "성벽 산책로 24시간 (게이트 없음); 권장 09:00-18:00(여름)/09:00-17:00(겨울)",
+              "closed": "연중 무휴 (화성 열차 월요일 운행 중단)",
+              "admission": "성인 ₩1,000 / 청소년 ₩700 / 어린이 ₩500 (무료: 6세 이하·65세 이상 노인·한복 착용자·매달 마지막 수요일)",
+              "walking": "중간 난이도 — 성벽에 경사 구간(서장대 주변); 각 문에 계단; 일부 구간 휠체어 어려움"
+            },
+            "convenience": {
+              "restroom": "장안문, 화서문, 팔달문, 연무대에 화장실 있음",
+              "parking": "장안문 주차장 단체 버스 하차; 연무대 단체 버스 지정 주차"
+            },
+            "smartNotes": {
+              "photo": "수원천 위 7개 아치가 있는 **화홍문(북쪽 수문)** — 이른 아침 또는 늦은 오후 반영 촬영 최적.",
+              "facilities": "장안문+팔달문+행궁광장 관광안내소. 영한 안내판. 화성 열차(₩1,500 왕복) 운행.",
+              "tip": "편안한 신발 착용 — 성벽 돌이 울퉁불퉁함. 행궁광장 한복 대여점에서 **무료 입장** 혜택."
+            },
+            "_poi_meta": {
+              "poi_key": "hwaseong_fortress",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO WHC",
+                "VisitKorea",
+                "Suwon CVB",
+                "UNESCO World Heritage Centre — Suwon Hwaseong (Criteria ii/iii inscription, 1997)",
+                "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Hwaseong Fortress + Hwaseong Seongyeok Uigwe Memory of the World 2007)",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Suwon Hwaseong Fortress official listing)",
+                "Suwon City Tourism (suwon.go.kr/tour — Hwaseong Yeolcha trolley + admission + opening hours)",
+                "Wikipedia (Hwaseong Fortress — Jeong Yak-yong + Geojunggi crane + 5.74 km perimeter + 41 structures)"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 10:45",
+            "duration": "60분",
+            "name": "화성행궁",
+            "category": "현존 최대 행궁 — 1789~1796년 건립",
+            "description": "화성행궁은 정조 대왕이 1789~1796년 화성 축성과 함께 건립한 한국 최대 행궁(임시 이궁)입니다. 정조는 아버지 사도세자의 묘(현륭원)를 참배하기 위해 수원에 행차할 때마다 이곳에 머물렀습니다. 한국전쟁과 일제강점기에 소실됐으나 1989~2003년에 복원되었습니다. 봉수당에서 열리는 무예24기 시범 공연(화·목·토·일요일 정기 공연)을 볼 수 있습니다. 입장료 포함. 방문 시간: 약 50분.",
+            "highlights": [
+              "**현존하는 한국 최대 행궁** — 원래 576칸",
+              "정조대왕이 1789~1796년 화성 요새와 함께 건립",
+              "정조대왕이 사도세자를 기리기 위해 13번 행행",
+              "**낙남헌 = 1796년 원형 건물 유일하게 현존** (나머지는 복원)",
+              "**신풍루 앞 수문장 교대식 화~일 11:00 (무료, 약 15분)**",
+              "1795년 왕실 행차가 유네스코 세계기록유산에 등재됨",
+              "드라마 '대장금' 촬영지 (2003, 5,000만 시청자)",
+              "한복 착용자·65세 이상·6세 이하 **무료 입장**",
+              "**낙남헌은 1796년 원형 건물 유일 — 일제강점기 대부분 소실, 2003년 복원**"
+            ],
+            "timeUsed": [
+              "화성 성벽(화서문 지역)에서 도보 5분",
+              "신풍루 앞 **11:00 수문장 교대식** 관람 (약 15분)",
+              "봉수당 + 낙남헌 + 장안헌 산책 — 약 30분",
+              "사진 + 차량 집결 — 약 15분",
+              "선택: 신풍루 수문장 교대식 (화~일 11:00, 약 15분, 무료)"
+            ],
+            "whyOnRoute": "임시 왕궁이 화성과 같은 유네스코 부지 내, 도보 5분 거리.",
+            "visitBasics": {
+              "hours": "09:00~18:00 (마지막 입장 17:30); 여름 5~10월 야간 18:00~21:00",
+              "closed": "연중 무휴",
+              "admission": "성인 ₩1,500 / 청소년 ₩1,000 / 어린이 ₩700; 화성+행궁 통합권 ₩3,500; 한복·65세 이상·6세 이하 무료",
+              "walking": "쉬움 — 궁궐 경내 대체로 평탄, 일부 마당 간 계단"
+            },
+            "convenience": {
+              "restroom": "정문, 봉수당 근처, 행궁 광장 화장실",
+              "parking": "화성 행궁 공영 주차장; 행궁 광장 유료 주차장"
+            },
+            "smartNotes": {
+              "photo": "**봉수당 정전** — 대표 정전 사진. **낙남헌** — 원형 1796년 건물.",
+              "facilities": "관광안내소, 화장실, 기념품점. 행궁 광장 카페 및 한복 대여점.",
+              "tip": "**화~일 11:00 수문장 교대식 관람**을 위해 그에 맞춰 도착. 한복 착용 시 무료 입장."
+            },
+            "_poi_meta": {
+              "poi_key": "hwaseong_haenggung",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea",
+                "Wikipedia",
+                "Suwon CVB",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Hwaseong Haenggung official listing)",
+                "Cultural Heritage Administration / Korea Heritage Service (cha.go.kr — Hwaseong Haenggung Historic Site No. 478)",
+                "Suwon City Tourism (suwon.go.kr/tour — Royal Guard Changing Ceremony + Mu-ye 24-gi schedule)",
+                "Wikipedia (Hwaseong Haenggung — Naknamheon-only-original-structure + 576-kan scale)",
+                "Visit Suwon CVB (visitsuwon.org — Suwon Pass combined ticket + Haenggung Square facilities)"
+              ]
+            }
+          },
+          {
+            "number": 4,
+            "time": "≈ 12:00",
+            "duration": "75분",
+            "name": "수원 남문시장 — 점심 + 길거리 음식",
+            "category": "전통 시장 + 점심",
+            "description": "수원 남문시장(수원남문로데오시장)은 화성 팔달문(남문) 바로 남쪽에 자리한 전통 시장으로, '남문'이란 이름도 화성 남쪽 문에서 유래했습니다. 수원의 대표 향토 음식인 수원왕갈비(1940년대부터 이어진 수원식 돼지갈비), 순대, 떡볶이 등을 둘러볼 수 있습니다. 화성 관람 후 자연스럽게 이어지는 위치입니다. 방문 시간: 약 50분.",
+            "highlights": [
+              "**약 230년 역사의 전통 시장** — 정조대왕의 화성 건설 계획에서 기원",
+              "한국 SBA 선정 '문화 관광 시장'",
+              "9개 소시장 + 10헥타르 보행자 골목에 1,200개 이상 가게",
+              "**수원 통닭 갈비 거리** — 수원의 상징 통닭 + 갈비 (한국 3대 갈비 중 하나)",
+              "팔달문 광장에서 5분 도보",
+              "길거리 음식: 순대, 떡볶이, 호떡, 빈대떡, 어묵 (₩3,000~7,000/개)",
+              "**K-드라마 '응답하라 1988' (2015) 촬영 골목**",
+              "현금 권장 (₩20,000 이상)",
+              "**수원식 갈비 (수원갈비)** — 경기도 전통 요리로 **별도 지역 한국 음식으로 인정**됨"
+            ],
+            "timeUsed": [
+              "팔달문 통해 화성 행궁 광장 남쪽으로 5분 도보",
+              "통닭·갈비 점심 — 약 20~30분",
+              "남문 시장 골목 길거리 음식 산책 — 약 30~40분",
+              "집결 — 약 5분",
+              "선택: 수원 통닭 갈비 점심/저녁 (₩15,000-30,000/인)"
+            ],
+            "whyOnRoute": "수원 최고의 길거리 음식 지역에서 점심 — 행궁과의 근접성 활용 (5분 거리).",
+            "visitBasics": {
+              "hours": "대부분 매대 09:00~22:00; 길거리 음식 12:00~늦은 저녁",
+              "closed": "연중 무휴 (일부 매대 일요일 휴무)",
+              "admission": "무료 입장; 현금 권장",
+              "walking": "쉬움 — 평탄한 보행자 골목"
+            },
+            "convenience": {
+              "restroom": "팔달문 광장 및 대형 소시장 내 공중화장실",
+              "parking": "수원 남문 시장 공영 주차장; 팔달문 코치 전용 구역"
+            },
+            "smartNotes": {
+              "photo": "시장 입구를 액자 삼아 팔달문(화성 남문) 프레임 — 대표 포토 명소.",
+              "facilities": "팔달문 광장 관광안내소, ATM, 환전소.",
+              "tip": "**현금 ₩20,000 이상 지참** — 많은 길거리 음식 매대 카드 불가. 통닭 + 갈비 조합 점심 추천."
+            },
+            "_poi_meta": {
+              "poi_key": "suwon_nammun_market",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea",
+                "Visit Suwon",
+                "Korea SBA Cultural Tourism Market",
+                "Wikipedia Suwon-style galbi",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Suwon Paldalmun Market + Nammun Rodeo Market listings)",
+                "Visit Suwon CVB (visitsuwon.org — Nammun Market 9-sub-market network + Suwon Tongdak Galbi Street)",
+                "Korea Small & Medium Business Administration (kosbi.or.kr — Cultural Tourism Market 문화관광형시장 designation)",
+                "Wikipedia (Suwon-style galbi — wang-galbi origin + pear-and-ginger marinade)",
+                "Suwon City Tourism (suwon.go.kr/tour — Suwon Tongdak Galbi 거리 cluster + Reply 1988 filming credits)"
+              ]
+            }
+          },
+          {
+            "number": 5,
+            "time": "≈ 13:30",
+            "duration": "75분",
+            "name": "스타필드 수원 별마당도서관",
+            "category": "현대 문화 랜드마크",
+            "description": "스타필드 수원 별마당도서관은 2024년 1월 26일 개관한 신세계 플래그십 스타필드 수원 내 4층 개방형 도서관입니다. 국내 스타필드 중 최대 규모(약 33만4,000㎡ 연면적)로, 중앙에 솟아오른 거대 서가 구조가 SNS 인증샷 명소입니다. 도서관 자체는 무료 입장. 쇼핑몰 푸드홀에서 점심 또는 간식을 둘러볼 수 있습니다. 방문 시간: 약 60분.",
+            "highlights": [
+              "**신세계 플래그십 2세대 스타필드몰 — 2024년 1월 26일 개장**",
+              "BCHO 파트너스 구성 (코엑스 스타필드 라이브러리 2017년 원조 구성사)",
+              "**4층 규모 22m 서가** — 한국 최대 규모 원통형 서가 중 하나",
+              "약 70,000권 도서 + 잡지 **무료** 열람 가능",
+              "바이닐 레코드 감상 라운지 (추천 구성 컬렉션)",
+              "봄 벚꽃 LED 꽃잎 아트리움 설치 (3~4월)",
+              "이터피아 푸드홀 (30개 이상 레스토랑), 아쿠아필드, 토이킹덤, CGV",
+              "수원역 4번 출구에서 스타필드 무료 셔틀 (~10분)",
+              "몰 운영시간 매일 10:00~22:00"
+            ],
+            "timeUsed": [
+              "용인/민속촌에서 15분 드라이브",
+              "몰 + 라이브러리 관람 — 약 45~50분",
+              "라이브러리 또는 푸드홀에서 카페 휴식 — 약 15분",
+              "차량에서 집결",
+              "선택: 바이닐 LP 카페 라운지 (5F, 음료 포함 약 ₩18,500)"
+            ],
+            "whyOnRoute": "화성+행궁+시장 점심 이후 '현대 한국'의 균형추. 신세계 스타필드가 전통과 현대 대비.",
+            "visitBasics": {
+              "hours": "쇼핑몰 10:00-22:00; 도서관은 쇼핑몰 영업 시간 전체 이용 가능",
+              "closed": "월 1~2회 휴관 (보통 월요일 — 방문 전 온라인 확인 권장)",
+              "admission": "**도서관 무료** (쇼핑몰 전체 무료 입장; 쇼핑은 개인 부담; 아쿠아필드 워터파크 별도 ~₩28,000)",
+              "walking": "편안함 — 전층 에스컬레이터·엘리베이터; 전 구역 휠체어·유모차 접근 가능"
+            },
+            "convenience": {
+              "restroom": "전 층 다수 화장실; 기저귀 교환대 있는 가족 화장실",
+              "parking": "지하 주차 약 5,000면; ₩30,000 이상 구매 시 3시간 무료; 단체 버스 전용 구역"
+            },
+            "smartNotes": {
+              "photo": "**22m 높이 책장이 있는 도서관 중앙 아트리움** — 4층 갤러리에서 내려다보는 대표 샷.",
+              "facilities": "B1층 이토피아 푸드홀 (30개+ 레스토랑 ₩5,000~40,000), 4층 토이 킹덤, B1~2층 아쿠아필드 워터파크.",
+              "tip": "**도서관 무료** — 탁월한 가성비 명소. **수원역 출구에서 무료 스타필드 셔틀** 운행 (하차 후 3분 거리)."
+            },
+            "_poi_meta": {
+              "poi_key": "starfield_library_suwon",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Starfield official",
+                "VisitKorea",
+                "Shinsegae press",
+                "BCHO Partners",
+                "Starfield Suwon official (starfield.co.kr/suwon — opening date 2024-01-26 + library 4F-7F + free admission)",
+                "Shinsegae Property press release (Jan 2024 grand opening + 5th Starfield mall + 2nd-generation flagship concept)",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Starfield Library Suwon listing)",
+                "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
+                "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
+              ]
+            }
+          },
+          {
+            "number": 6,
+            "time": "≈ 15:30",
+            "duration": "100분",
+            "name": "광명동굴",
+            "category": "산업 유산 테마 동굴",
+            "description": "광명동굴은 1912년 일제강점기에 개발된 금·은·동·아연 광산으로, 1972년 폐광 후 2011년부터 문화 테마파크로 조성되었습니다. 연중 12°C 상시 기온으로 여름에는 냉방, 겨울에는 따뜻하게 느껴집니다. 지하 동굴 내 LED 조명 예술 작품, 와인동굴(유럽 와인 1만여 병 숙성), 황금폭포, 아쿠아월드 등이 운영됩니다. 하이라이트 구간까지 약 180계단 하강 후 동일 경로로 귀환합니다. 입장료 포함. 월요일 휴관. 방문 시간: 약 75분.",
+            "highlights": [
+              "**원래 금·은·구리·아연 광산** — 일제강점기 1912~1972년 운영, 이후 50년 방치",
+              "2011년 8월 한국 최초 공공 소유 동굴 관광 시설로 재개장",
+              "**2014년 한국관광의 별 수상** (관광업계 오스카)",
+              "총 터널 길이 7.8km; 공개 구간 약 2km",
+              "**연중 약 12°C 일정** — 가벼운 겉옷 지참 필수",
+              "**41m 유리섬유 용(용마루)** — 한국 실내 동굴 최대 조형물",
+              "와인 동굴 — 한국 최대 지하 와인 저장고 (200종 이상; 시음 ₩5,000)",
+              "LED 아트 터널 + 형광 벽화 + 음악의 전당 + 동굴 수족관",
+              "드라마 촬영: '알함브라 궁전의 추억'(2018), '화유기'",
+              "**월요일 휴무** — 화~일 09:00~18:00",
+              "휠체어 접근 가능 주요 탐방로"
+            ],
+            "timeUsed": [
+              "스타필드 수원에서 광명까지 코치 약 30분",
+              "동굴 입구 + 매표 — 약 10분",
+              "테마존 탐방: 수족관→LED터널→용→음악당→와인동굴→민속공원 — 약 70~80분",
+              "선택: 와인 시음 — 약 15분 (추가 비용)",
+              "코치 집결 — 약 10분"
+            ],
+            "whyOnRoute": "하루의 산업 유산 핵심 명소이자 **전실내 피날레** — 모든 늦은 오후 날씨 변화 흡수.",
+            "visitBasics": {
+              "hours": "화~일 09:00~18:00 (마지막 입장 17:00); 여름 7~8월 주말 19:00까지 연장",
+              "closed": "**월요일** (공휴일이 월요일인 경우 개관, 다음날 대체 휴관)",
+              "admission": "성인 ₩7,000 / 청소년 ₩3,500 / 어린이 ₩2,000; 6세 이하·65세 이상 무료",
+              "walking": "쉬움~중간 — 주요 관람 구간 약 2km, 대체로 평탄한 포장 동굴 바닥; 휠체어 접근 가능"
+            },
+            "convenience": {
+              "restroom": "주 입구, 동굴 중간(음악당 구역), 출구 화장실",
+              "parking": "약 1,000면 전용 주차장; 승용차 ₩2,000 / 버스 ₩5,000; 코치 전용 구역 별도"
+            },
+            "smartNotes": {
+              "photo": "**LED 아트 터널** 계절별 테마 조명 (봄 벚꽃, 가을 단풍, 겨울 눈꽃) — 장노출 촬영 최적.",
+              "facilities": "동굴 레스토랑 (한식 뷔페 약 ₩15,000), 와인 카페, 기념품점.",
+              "tip": "**연중 12°C — 여름에도 가벼운 재킷 필수.** 월요일 휴관. 용마루 포토 명소 놓치지 마세요."
+            },
+            "_poi_meta": {
+              "poi_key": "gwangmyeong_cave",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea",
+                "Wikipedia",
+                "Gwangmyeong City",
+                "KoreaToDo",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Gwangmyeong Cave official listing)",
+                "Gwangmyeong Cave official (gmcave.gm.go.kr — themed zones + operating hours + admission)",
+                "Gwangmyeong City Tourism (gm.go.kr/tour — 2011 city purchase 4.3 billion KRW + Korea's first govt-owned cave-tourism)",
+                "Wikipedia (Gwangmyeong Cave — 1912 Japanese colonial mine + 1972 closure + 7.8 km tunnel total)",
+                "Korea Tourism Star Award archive (Gwangmyeong Cave 2014 winner — Best New Tourist Attraction)"
+              ]
+            }
+          },
+          {
+            "number": 7,
+            "time": "≈ 17:30",
+            "duration": "60분",
+            "name": "서울 귀환",
+            "category": "귀환",
+            "description": "서해안고속도로를 이용해 서울로 귀환(아침 경부고속도로와 다른 경로 — 광명의 서쪽 위치 반영). 서울 집결 지점 귀환.",
+            "highlights": [
+              "**4개 하차 지점** — 동문, 시청, 공항, 하귀 (픽업 역순)",
+              "동문 먼저 (약 17:50) — 저녁 길거리 음식 연장 방문자용",
+              "**공항 하차** 당일 출발자 권장 — 국제선 기준 2.5시간 여유 권장"
+            ],
+            "timeUsed": [
+              "후리에 → 제주시 서쪽으로 이동 — 약 50분",
+              "동문 하차 약 17:50 — 5분"
+            ],
+            "whyOnRoute": "귀환 물류 — 광명에서 서해안 고속도로가 경부 역주행보다 빠릅니다.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {
+              "tip": "최종 도착은 금요일 저녁/주말 교통에 따라 달라지며, 혼잡한 날에는 하차가 30~45분 지연될 수 있어요."
+            },
+            "_poi_meta": {
+              "poi_key": "OPS_return",
+              "verified": false,
+              "match": "operational_implicit",
+              "kb_version": "v1.14",
+              "verified_date": "2026-04-29",
+              "note": "Operational stop (return)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "서울",
+            "type": "origin",
+            "theme": "출발"
+          },
+          {
+            "name": "수원 화성",
+            "type": "primary",
+            "theme": "유네스코 성곽"
+          },
+          {
+            "name": "화성 행궁",
+            "type": "primary",
+            "theme": "문화유산 궁궐"
+          },
+          {
+            "name": "수원 남문시장",
+            "type": "secondary",
+            "theme": "시장"
+          },
+          {
+            "name": "스타필드 라이브러리 수원",
+            "type": "secondary",
+            "theme": "현대 한국"
+          },
+          {
+            "name": "광명동굴",
+            "type": "primary",
+            "theme": "동굴"
+          },
+          {
+            "name": "서울",
+            "type": "return",
+            "theme": "귀환"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "출발",
+            "duration": "약 1시간",
+            "description": "서울 → 경부고속도로 → 수원 시내."
+          },
+          {
+            "phase": "문화유산 구간",
+            "duration": "약 3시간",
+            "description": "수원화성 성벽, 화성행궁, 남문시장 — 모두 도보 거리 내."
+          },
+          {
+            "phase": "현대 허브",
+            "duration": "약 1시간",
+            "description": "15분 이동 후 스타필드 수원 별마당도서관 관람 및 푸드홀 점심."
+          },
+          {
+            "phase": "지하 피날레",
+            "duration": "약 1시간 30분",
+            "description": "30분 북서쪽 이동 후 광명동굴 LED 테마파크."
+          },
+          {
+            "phase": "귀환",
+            "duration": "약 1시간",
+            "description": "광명 → 서해안고속도로 → 서울."
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "하루 일정",
+          "subtitle": "서울 남쪽과 서남쪽을 연결하는 삼각형 경기 루프: 오전에 수원의 유네스코 요새 도시, 오후 초에 수원의 플래그십 현대식 몰, 마지막에 광명의 폐광을 개조한 동굴. 총 10~11시간."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "해당 지역 첫 방문자",
+            "커플",
+            "성인 가족 단위",
+            "하루 종일 활동에 익숙한 활동적인 여행자",
+            "유네스코 세계유산 코스를 원하는 여행자"
+          ],
+          "lessIdealFor": [
+            "밀실 공포증이 있는 여행자.",
+            "광명동굴 하단 약 180계단 불가 여행자 주의 (엘리베이터 없음)",
+            "화성 성벽 이동 제한 여행자 주의 (급경사 및 문 앞 계단)",
+            "서울 중심 궁궐을 보고 싶은 방문자 주의 (경기도 전체 루트)",
+            "월요일 방문자 주의 — 광명동굴 정기 휴관"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "이 코스의 추천 포인트",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "표준 수원 투어보다 다양함",
+                  "detail": "대부분의 수원 당일 투어는 요새, 행궁, 스타필드를 조합합니다 — 서로 10분 이내인 세 곳. 이 루트는 서쪽으로 확장해 광명동굴을 추가하며 동굴 관광의 독특한 지하 레이어를 더합니다."
+                },
+                {
+                  "label": "날씨에 상관없는 실내 친화적 대안",
+                  "detail": "4개 주요 코스 중 두 곳 — 스타필드 라이브러리와 광명동굴 — 이 완전 실내이며 기후 제어됩니다. 비 오는 날에도 강력한 루트입니다."
+                },
+                {
+                  "label": "무료 입장, 유료 맥락",
+                  "detail": "스타필드 라이브러리는 혼자 방문해도 무료이지만, 가이드와 함께 방문하면 훨씬 의미 있습니다."
+                },
+                {
+                  "label": "단일 형식보다 쿨함",
+                  "detail": "유산 투어만 하면 부담스러울 수 있습니다. 라이브러리+몰 투어는 가벼울 수 있습니다. 이 일정은 의도적으로 두 가지를 번갈아 배치합니다."
+                }
+              ]
+            },
+            {
+              "title": "실제 도보 난이도는 어느 정도일까",
+              "icon": "footprints",
+              "iconBg": "bg-emerald-50/80",
+              "iconColor": "text-emerald-600",
+              "items": [
+                {
+                  "label": "성벽 산책: 가장 힘든 구간",
+                  "detail": "약 1km에 가파른 경사와 문 앞 계단이 있습니다. 편안한 신발이 필수."
+                },
+                {
+                  "label": "광명동굴: 편도 약 180계단",
+                  "detail": "하단 하이라이트(와인동굴, 황금폭포, 아쿠아 월드)까지 내려가고 다시 올라오는 계단입니다. 엘리베이터 없음."
+                },
+                {
+                  "label": "행궁, 남문시장, 스타필드: 쉬움",
+                  "detail": "궁궐과 스타필드는 평탄하고 접근 가능합니다. 남문시장은 점심시간 혼잡하지만 실질적인 도보 부담은 없습니다."
+                }
+              ]
+            },
+            {
+              "title": "날씨와 계절이 바뀔 때",
+              "icon": "cloud-sun",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "여름 더위: 광명동굴이 피서지",
+                  "detail": "동굴 내부 연중 12°C가 더운 날의 구제 코스입니다. 성벽 산책에서 그늘 쉬는 시간이 늘어납니다."
+                },
+                {
+                  "label": "겨울 추위: 동굴에 겉옷 지참",
+                  "detail": "외부가 더 추울 때 12°C는 시원합니다. 여름에도 광명동굴 안에서는 가벼운 재킷 권장."
+                },
+                {
+                  "label": "월요일 운영 없음",
+                  "detail": "광명동굴은 월요일 정기 휴관입니다. 월요일에는 민속촌 또는 와우정사 버전을 선택하세요."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "inclusions",
+            "title": "포함 사항",
+            "preview": "서울 왕복 코치, 영어 가이드, 수원 화성",
+            "content": [
+              "서울 왕복 코치 교통, 영어 투어 가이드, 수원 화성 요새(성벽+행궁), 광명동굴, 스타필드 수원 입장 포함.",
+              "미포함: 식사, 음료, 선택 동굴 와이너리 시음, 팁.",
+              "스타필드 라이브러리 입장 무료."
+            ]
+          },
+          {
+            "id": "pickup",
+            "title": "픽업 & 하차",
+            "preview": "홍익대 입구역 (8번 출구) 약 08:00 또는 명동역 (2 또는 4번 출구) 약 08:30.",
+            "content": [
+              "홍익대 입구역(8번 출구) 약 08:00 또는 명동역(2번 또는 4번 출구) 약 08:30.",
+              "10분 전까지 도착.",
+              "호텔 픽업 없음; 집합 장소만.",
+              "지각자 탑승 불가; 노쇼 처리됩니다."
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "도보 & 지형",
+            "preview": "중간 난이도.",
+            "content": [
+              "중간 난이도.",
+              "화성 성벽 산책에는 오르막 석계 포함.",
+              "광명동굴은 하층으로 약 180계단 내려가고 다시 오르막 — 엘리베이터 없음.",
+              "발가락 보호형 편안한 워킹화 필수.",
+              "거동 불편자에게는 권장하지 않습니다."
+            ]
+          },
+          {
+            "id": "what",
+            "title": "복장 & 준비물",
+            "preview": "편한 운동화 (스니커즈 또는 등산화), 얇은 재킷 — 광명동굴 12°C",
+            "content": [
+              "편안한 워킹화(운동화 또는 등산화), 가벼운 재킷 — 광명동굴 내부 연중 12°C.",
+              "겨울에는 성벽용 따뜻한 코트와 동굴용 가벼운 겉옷.",
+              "카메라, 물, 점심 및 길거리 음식 현금(예산 ₩10,000~₩20,000)."
+            ]
+          },
+          {
+            "id": "cancellation",
+            "title": "취소 정책",
+            "preview": "투어 시작 24시간 전까지 무료 취소.",
+            "content": [
+              "투어 시작 24시간 전까지 무료 취소 가능.",
+              "당일 취소 및 노쇼는 환불 불가.",
+              "월요일 운영 없음 (광명동굴 휴관)."
+            ]
+          },
+          {
+            "id": "children",
+            "title": "어린이 & 접근성",
+            "preview": "어린이 선호 투어 — 동굴 조명, 용 조각, 아쿠아 월드 인기",
+            "content": [
+              "어린이 환영 — 동굴 조명, 용 조형물, 아쿠아월드가 매력적.",
+              "성벽 산책에는 계단과 불균일한 표면.",
+              "동굴 180+계단으로 거동 불편자, 유모차, 휠체어에 부적합."
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "계절별 안내 확인"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "계절별 안내 확인"
+          },
+          "_seasonalSummary": "수원과 광명은 서울과 비슷한 날씨지만, 여름에는 덥고 습하며 겨울에는 춥고 건조합니다. 광명동굴 내부는 사계절 약 12°C로 일정해 여름에는 시원하고 겨울에는 외부보다 안정적인 실내 구간이 됩니다.",
+          "_seasonalTemperatures": [
+            {
+              "season": "봄 (3~5월)",
+              "range": "5–22°C",
+              "notes": "4월 초~중순에는 성곽길을 따라 벚꽃이 피어납니다."
+            },
+            {
+              "season": "여름 (6~8월)",
+              "range": "22–32°C",
+              "notes": "덥고 습하지만 동굴 내부는 시원한 피난처가 됩니다."
+            },
+            {
+              "season": "가을 (9~11월)",
+              "range": "8–22°C",
+              "notes": "최적기 — 하늘이 맑고 기온이 온화합니다."
+            },
+            {
+              "season": "겨울 (12~2월)",
+              "range": "-5 to 6°C",
+              "notes": "성곽길은 찬바람이 강할 수 있으며, 도서관과 동굴은 실내 온도 관리가 됩니다."
+            }
+          ]
+        },
+        "seasonalVariations": [
+          {
+            "season": "봄",
+            "description": "화성 성벽 벚꽃; 광명동굴 봄 테마 조명 설치."
+          },
+          {
+            "season": "여름",
+            "description": "동굴 12°C 내부 온도가 서울 습기를 피하는 인기 피서지; 수원 화성 문화제 진행."
+          },
+          {
+            "season": "가을",
+            "description": "성벽 따라 단풍; 10월 수원 화성 문화제 하이라이트."
+          },
+          {
+            "season": "겨울",
+            "description": "눈 덮인 성벽은 전통 사진 명소; 동굴은 연중 LED 설치물 운영으로 계절 무관하게 방문 가능."
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "공인 현지 여행사",
+            "description": "정식 등록 및 보험 가입 현지 여행사",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "137건 기준 4.6/5 평점의 공인 현지 여행사."
+          },
+          {
+            "icon": "route",
+            "title": "코스 전문",
+            "description": "이동 부담을 줄인 효율적인 코스",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "광명동굴 연중 12°C 상시 기온으로 여름 더위를 식히기에 이상적. 시즌 관계없이 즐길 수 있는 균형 잡힌 코스."
+          },
+          {
+            "icon": "users",
+            "title": "그룹 규모 관리",
+            "description": "코스에 상황에 맞춘 인원 규모",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "광명동굴 월요일 휴관을 사전 고지 — 예약 전 명확한 안내 제공."
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "즉시",
+            "title": "즉시 확인",
+            "detail": "행정 요약 포함 예약 확인서 발송",
+            "description": "집결 장소·시각 포함 즉시 예약 확인서 발송 (월요일 미운행 안내 포함)."
+          },
+          {
+            "timing": "출발 12시간 전",
+            "title": "12시간 전 알림",
+            "detail": "날씨 업데이트 및 경로 변경 안내",
+            "description": "화성행궁 무예24기 공연 일정 및 광명동굴 당일 행사 사전 안내."
+          },
+          {
+            "timing": "전날 저녁",
+            "title": "최종 픽업 안내",
+            "detail": "정확한 픽업 시간 및 가이드 연락처",
+            "description": "출발 전날 저녁 최종 집결 시각 확인."
+          },
+          {
+            "timing": "투어 당일 아침",
+            "title": "당일 코스 안내",
+            "detail": "실시간 상황 기반 당일 브리핑",
+            "description": "날씨 및 코스 안내 아침 메시지 전달."
+          },
+          {
+            "timing": "투어 중",
+            "title": "경유지별 심층 안내",
+            "detail": "각 코스 실시간 현장 안내",
+            "description": "정조의 화성 건설 배경, 일제강점기 광업 역사, 별마당도서관 구성 등 가이드 심층 설명."
+          },
+          {
+            "timing": "투어 종료 후",
+            "title": "투어 후 지원",
+            "detail": "피드백 및 추가 여행 추천",
+            "description": "투어 후 피드백 요청 전송."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "왜 월요일에는 투어가 없나요?",
+            "answer": "광명동굴이 매주 월요일 정기 휴관입니다. 광명동굴이 4개 핵심 경유지 중 하나이므로, 이 투어는 화·수·목·금·토·일요일만 운행합니다."
+          },
+          {
+            "id": "q2",
+            "question": "입장료가 포함되어 있나요?",
+            "answer": "네, 수원화성·화성행궁·광명동굴 입장료가 모두 포함됩니다. 스타필드 별마당도서관은 무료 입장입니다."
+          },
+          {
+            "id": "q3",
+            "question": "점심 식사가 포함되어 있나요?",
+            "answer": "포함되지 않습니다. 수원 남문시장(수원왕갈비, 순대 등) 또는 스타필드 수원 푸드홀에서 즐기시면 됩니다. 예산: 약 ₩10,000~20,000."
+          },
+          {
+            "id": "q4",
+            "question": "광명동굴 계단이 많은가요?",
+            "answer": "하이라이트 구간(와인동굴·황금폭포·아쿠아월드)까지 약 180계단 하강 후 동일 경로로 귀환합니다. 경사 완만한 구간도 있지만 전체적으로 계단이 많습니다."
+          },
+          {
+            "id": "q5",
+            "question": "동굴이 덥거나 춥지 않나요?",
+            "answer": "연중 12°C(54°F)입니다. 여름에는 시원하게 느껴지고, 겨울에는 따뜻하게 느껴집니다. 여름 방문 시 얇은 겉옷 하나를 챙기시면 좋습니다."
+          },
+          {
+            "id": "q6",
+            "question": "수원+한국민속촌 투어와 어떻게 다른가요?",
+            "answer": "두 투어 모두 화성·행궁·스타필드를 포함합니다. 이 투어는 광명동굴(지하 LED 테마파크)이 추가되고, 민속촌 대신 남문시장 점심이 포함됩니다."
+          },
+          {
+            "id": "first-time",
+            "question": "수원·광명을 처음 방문하는 분에게 좋은 선택인가요?",
+            "answer": "네, 유네스코 성곽(화성), 조선 이궁(행궁), 지하 테마파크(광명동굴), 현대 도서관(스타필드)을 하루에 균형 있게 볼 수 있습니다."
+          },
+          {
+            "id": "walking",
+            "question": "도보 이동이 힘들지 않나요?",
+            "answer": "활동적인 하루이며 계단 구간이 있습니다. 화성 성벽이 가파른 구간과 계단을 포함하며(약 1km 도보), 광명동굴 하이라이트 구간은 약 180계단 왕복입니다."
+          },
+          {
+            "id": "family",
+            "question": "가족 여행에 적합한가요?",
+            "answer": "성벽 도보와 광명동굴 계단을 소화할 수 있는 어린이(만 10세 이상)가 동반하는 가족에게 적합합니다. 동굴 LED 전시는 어린이들이 특히 좋아합니다."
+          },
+          {
+            "id": "seniors",
+            "question": "어르신도 참여할 수 있나요?",
+            "answer": "계단과 좁은 공간이 있어, 활동적인 어르신께 권장합니다. 광명동굴 180계단은 속도를 조절해 이동합니다."
+          },
+          {
+            "id": "children",
+            "question": "권장 최소 연령은 몇 세인가요?",
+            "answer": "만 10세 이상 추천 — 성벽 고르지 않은 지면, 동굴 180계단, 9시간 일정을 소화할 수 있는 어린이에게 적합합니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 4.6,
+          "totalReviews": 137,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 102,
+              "percentage": 74.5
+            },
+            {
+              "stars": 4,
+              "count": 25,
+              "percentage": 18.2
+            },
+            {
+              "stars": 3,
+              "count": 7,
+              "percentage": 5.1
+            },
+            {
+              "stars": 2,
+              "count": 2,
+              "percentage": 1.5
+            },
+            {
+              "stars": 1,
+              "count": 1,
+              "percentage": 0.7
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
+        "price": {
+          "amountLabel": "54.00",
+          "originalPriceUsd": 60,
+          "salePriceUsd": 54,
+          "discountPercent": 10,
+          "currency": "USD",
+          "per": "인",
+          "priceSource": "direct_rate",
+          "priceNote": "AtoC Korea 공식 판매가 기준입니다."
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      }
+    }
+  }
+}

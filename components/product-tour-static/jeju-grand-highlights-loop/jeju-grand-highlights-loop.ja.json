@@ -5,68 +5,67 @@
   "locale": "ja",
   "product_id": "jeju-grand-highlights-loop",
   "seo": {
-    "pageTitle": "済州島グランド見どころループ少人数日帰りツアー | AtoC Korea",
-    "metaDescription": "済州島全域を1日で制覇：漢拏山、大浦柱状節理、正房の滝、城山日出峰。効率重視の初訪問者向けグランドループ。",
+    "pageTitle": "済州グランドハイライトループツアー | AtoC Korea",
+    "metaDescription": "少人数制10時間の済州ハイライトループ：城山日出峰（ユネスコ）、万丈窟、天地淵瀑布、柱状節理、翰林公園",
     "primaryKeywords": [
-      "済州日帰りグランドループ",
-      "済州全島ツアー",
+      "済州ハイライト少人数ツアー",
+      "済州島一日全島ツアー",
       "城山日出峰ツアー",
-      "漢拏山ツアー",
-      "済州一日観光"
+      "天地淵瀑布ツアー",
+      "柱状節理ツアー"
     ],
-    "ogImage": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80",
-    "title": "済州グランドループ・ユネスコ＋滝＋絶壁 | AtoC",
-    "description": "済州島全域を1日で巡るグランド見どころループ：漢拏山（ハルラサン） → 大浦柱状節理 → 正房の滝 → 城山日出峰（ユネスコ）。時間が限られた旅行者に最適。"
+    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+    "title": "済州グランドハイライトループ・10時間少人数制・ユネスコ＋滝＋断崖"
   },
   "catalog_card": {
     "slug": "jeju-grand-highlights-loop",
-    "title": "済州グランド見どころループ少人数日帰りツアー",
-    "subtitle": "漢拏山（ハルラサン）から城山日出峰まで — 済州島の代表的な見どころを一日で制覇",
+    "title": "済州グランドハイライトループ少人数日帰りツアー",
+    "subtitle": "漢拏山から城山日出峰まで、済州を代表するハイライトスポットを1日で巡ります。",
     "region": "済州全島ルート",
     "duration": "9〜9.5時間",
     "stopsCount": 5,
     "rating": 0,
     "reviewCount": 0,
     "badges": [
-      "1日訪問者向け",
-      "見どころ集中型"
+      "日帰り旅行者に最適",
+      "テンポよく巡るハイライトコース"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
-    "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
-    "priceLabel": "お一人様US$78〜",
-    "shortCardDescription": "時間が限られた旅行者のための高効率・済州全島ルート。漢拏山、南海岸、城山日出峰を一日でリンクします。",
+    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+    "priceLabel": "",
+    "shortCardDescription": "時間の限られた旅行者のための効率的な済州全島ルート。漢拏山、南海岸、城山日出峰を1日でつなぎます。",
     "tags": [
-      "少人数ツアー",
-      "jeju",
-      "島内広域",
-      "unesco",
-      "初めてでも安心",
-      "見どころ"
+      "small_group",
+      "済州",
+      "island_wide",
+      "ユネスコ",
+      "first_time_friendly",
+      "ハイライト"
     ]
   },
-  "headlineLine1": "済州グランド見どころループ",
-  "headlineLine2": "漢拏山から城山日出峰まで、1日で済州のすべてを",
+  "headlineLine1": "済州グランドハイライトループ",
+  "headlineLine2": "少人数日帰りツアー",
   "price": {
-    "amountLabel": "78",
+    "amountLabel": "",
     "currency": "USD",
-    "per": "人",
-    "priceSource": "internal",
-    "priceNote": "少人数バイリンガルフルアイランドツアー。AtoC Korea直販価格（10%割引）。詳細は予約時にご確認ください。",
-    "discountPercent": 10
+    "per": "person",
+    "priceSource": "",
+    "priceNote": "",
+    "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
     "imagePosition": "center 35%",
-    "tagline": "漢拏山から城山日出峰まで — 済州島の代表的な見どころを1日で巡る、高効率フルアイランドルート",
+    "tagline": "時間の限られた旅行者のために設計されたこの凝縮ルートは、漢拏山、ダイナミックな南海岸の絶景、瀑布、そして城山日出峰を1日でカバーします。",
     "pills": [
-      "一日観光者向け",
-      "少人数",
-      "主要観光見どころ"
+      "日帰り旅行者に最適",
+      "少人数日帰りツアー",
+      "済州を代表する絶景スポット"
     ],
     "meta": {
       "duration": "9〜9.5時間",
       "region": "済州全島ルート",
-      "stops": "5見どころ",
+      "stops": "5か所立ち寄り",
       "rating": 0,
       "ratingStars": 0
     }
@@ -78,56 +77,56 @@
     },
     {
       "id": "itinerary",
-      "label": "行程"
+      "label": "旅程"
     },
     {
       "id": "details",
-      "label": "詳細情報"
+      "label": "詳細"
     },
     {
       "id": "faq",
-      "label": "よくある質問"
+      "label": "FAQ"
     },
     {
       "id": "reviews",
-      "label": "クチコミ"
+      "label": "レビュー"
     }
   ],
   "glanceItems": [
     {
       "icon": "camera",
-      "label": "写真映え度",
+      "label": "写真映え",
       "value": "高い",
       "level": 5
     },
     {
       "icon": "mountain",
-      "label": "景観の充実度",
-      "value": "非常に高い",
+      "label": "景観",
+      "value": "高い",
       "level": 5
     },
     {
       "icon": "footprints",
-      "label": "歩行難易度",
-      "value": "中〜高",
+      "label": "歩きやすさ",
+      "value": "高い",
       "level": 4
     },
     {
       "icon": "cloud-rain",
-      "label": "雨天適性",
-      "value": "まずまず",
+      "label": "雨天時の安全性",
+      "value": "普通",
       "level": 3
     },
     {
       "icon": "users",
-      "label": "ファミリー適性",
-      "value": "中程度",
+      "label": "ファミリー向け",
+      "value": "普通",
       "level": 3
     },
     {
       "icon": "gauge",
-      "label": "ペース",
-      "value": "ハイペース",
+      "label": "バランス",
+      "value": "速め",
       "level": 3
     }
   ],
@@ -135,45 +134,45 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-      "location": "全体ルート概要（済州島）",
-      "atmosphere": "一日で済州の代表的な景観を巡るルート",
-      "alt": "霧の中に浮かぶ漢拏山（ハルラサン）の火山丘陵の木道トレイル",
-      "caption": "（1,169m）— 漢拏山（ハルラサン）ユネスコ世界自然遺産"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+      "location": "ルート全体",
+      "atmosphere": "済州の代表的な絶景を1日で巡る",
+      "alt": "済州ハイライト日帰りツアーの全体的な雰囲気",
+      "caption": "済州ハイライト日帰りツアーの全体的な雰囲気"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
-      "location": "漢拏山（御利目トレイル）",
-      "atmosphere": "山の清涼な空気と高地の眺め",
-      "alt": "仲問海岸に連なる大浦柱状節理の六角形玄武岩柱群と青い海",
-      "caption": "大浦柱状節理（チュサンジョルリ）— 自然記念物第443号、1kmの玄武岩絶壁"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+      "location": "漢拏山・最初の立ち寄りスポット",
+      "atmosphere": "高地に広がる清々しい山の空気",
+      "alt": "漢拏山・御乗生岳トレイルの雰囲気",
+      "caption": "漢拏山・御乗生岳トレイルの雰囲気"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
-      "location": "大浦柱状節理（チュンムン）",
-      "atmosphere": "波と柱状絶壁の劇的なコントラスト",
-      "alt": "太平洋に直接落ちる正房の滝の23m垂直落下と青い海",
-      "caption": "正房の滝 — アジア唯一、海に直接落ちる滝（自然記念物第182号）"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "location": "柱状節理の海岸",
+      "atmosphere": "波と断崖の劇的なコントラスト",
+      "alt": "済州海岸の大浦柱状節理帯",
+      "caption": "済州海岸の大浦柱状節理帯"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
-      "location": "城山日出峰（東済州）",
-      "atmosphere": "ユネスコ世界自然遺産 — 一日のクライマックス",
-      "alt": "城山日出峰のユネスコ世界自然遺産の火山火口リムからの東済州の眺望",
-      "caption": "城山日出峰（ソンサン・イルチュルボン）— グランドループのフィナーレ、ユネスコ三重指定"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+      "location": "海辺の滝",
+      "atmosphere": "午後のルートに訪れる景色の変化",
+      "alt": "正房瀑布の海岸の景色",
+      "caption": "正房瀑布の海岸の景色"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
-      "location": "韓国",
-      "atmosphere": "韓国の美しい景観",
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+      "location": "火口でのフィナーレ",
+      "atmosphere": "象徴的な締めくくりの絶景 — 確かなインパクトをともなって",
       "alt": "城山日出峰の火口と海岸線",
       "caption": "城山日出峰の火口と海岸線"
     }
@@ -183,29 +182,29 @@
       "number": 1,
       "time": "09:30",
       "duration": "75分",
-      "name": "漢拏山（ハルラサン）",
-      "category": "ユネスコ自然遺産 — 漢拏山の火山丘陵",
-      "description": "**御乗生岳(어승생악、1,169m)** は、韓国最高峰であり済州島の地質学的中心 **漢拏山(한라산、1,950m)** の西側に張り出す側火山(オルム/*oreum*)です。漢拏山自体は **比類のない指定の重ね合わせ** を持ち、**ユネスコ世界自然遺産(2007年7月2日登録)**、**ユネスコ生物圏保存地域(2002年)**、**国立公園(1970年3月24日指定)**、**天然記念物第182号(1966年)** をすべて備える、韓国唯一の「3つのユネスコ自然指定」同時保有地です。御乗生岳の登山口は **オリモク探訪案内所** にあり、**1.3kmで標高差わずか約200m** を登って広い山頂デッキへ。往復60分で **「漢拏山ユネスコの味」** を、9時間かかる白鹿潭(ペンノクダム)頂上登山なしに体験できます。晴天時のデッキからは **黄海、漢拏山の白鹿潭カルデラ(백록담)、南へ広がる側火山群** を一望できます。植生のハイライトは、この標高帯(1,000–1,300m)が **広葉樹林からチョウセンシラベ(구상나무、*Abies koreana*、IUCN準絶滅危惧、韓国高山固有種)帯への遷移ゾーン** であること。漢拏山には **2,000種以上の植物**、つまり **朝鮮半島全植物の約半数** が分布します。山頂デッキには歴史的な遺構も残っており、**1945年に日本軍が建造したトーチカ(토치카、コンクリート製の銃座兼通信拠点)** は、第二次世界大戦末期に造られた韓国国内有数の高所遺構です。入場・駐車は **無料**。御乗生岳は **予約不要**(白鹿潭山頂は1日1,000人の登山者上限あり)。",
-      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+      "name": "漢拏山 オスンセンアク",
+      "category": "漢拏山山麓トレイル（オリモク）— ユネスコ世界遺産の味わい",
+      "description": "**オスンセンアク（어승생악、1,169 m）**は、韓国最高峰にして済州の地質的中心である**漢拏山（한라산、1,950 m）**の西側斜面に位置する寄生火山（오름 / *オルム*）です。漢拏山は**比類なき称号の重なり**を有しています：**ユネスコ世界自然遺産（2007年7月2日登録）**、**ユネスコ生物圏保護区（2002年）**、**韓国国立公園（1970年3月24日指定）**、および**天然記念物第182号（1966年）**——三つのユネスコ自然指定をすべて同時に保有する韓国唯一のサイトです。**オリモクビジターセンター**を起点とするオスンセンアク登山口は、**1.3 kmで標高わずか約200 m**を登り、広々とした山頂デッキへと至ります——往復60分のトレッキングで、9時間を要する白鹿潭火口への全行程なしに**「漢拏山ユネスコの味わい」**が得られます。晴れた日にはデッキから**黄海、漢拏山の白鹿潭（백록담）山頂カルデラ、そして南に広がる寄生火山群**を望むことができます。植物学的な見どころとして、この標高帯（1,000〜1,300 m）は**落葉広葉樹林と、その上に広がるコウライモミ（구상나무、*Abies koreana* — IUCN準絶滅危惧種、韓国高山固有種）の帯**との移行地帯です。漢拏山には合計**2,000種以上の植物**が生息しており、これは**朝鮮半島全植物種のおよそ半数**に相当します。山頂デッキには歴史的な遺構として、戦争末期に建設された**1945年の大日本帝国トーチカ（토치카、コンクリート製掩蔽壕／通信拠点）**があります——韓国に現存する最も標高の高い第二次世界大戦期の日本軍要塞のひとつです。入場料および駐車場は**無料**；オスンセンアクには**予約不要**です（1日の登山者数が1,000人に制限されている白鹿潭山頂とは異なります）。",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
       "highlights": [
-        "**漢拏山=韓国唯一の自然3冠指定地**:ユネスコ世界遺産2007+生物圏2002+国立公園1970",
-        "**御乗生岳 山頂1,169m** — 済州島に360以上ある側火山(オルム)の一つ",
-        "片道1.3km / 標高差約200m — 広い階段+木道、運動靴で歩けるレベル",
-        "デッキからの眺望は **漢拏山・白鹿潭カルデラ、黄海、南側のオルム群** を一望",
-        "植生遷移ゾーン — **チョウセンシラベ(*Abies koreana*、IUCN準絶滅危惧)** 帯はここから約100m上から始まります",
-        "山頂には **1945年の日本軍トーチカ** — 高地に残る稀有な第二次世界大戦遺構",
-        "**入場無料**+駐車無料、予約上限なし(白鹿潭山頂は1日1,000人制限)",
-        "漢拏山には **2,000種以上の植物** — 朝鮮半島全植物の約半数",
-        "往復滞在 **約60分** =9時間の白鹿潭登山なしで「ユネスコの味」をフル体感"
+        "**漢拏山 ＝ 韓国唯一のトリプル自然指定サイト**：ユネスコ世界遺産 2007年 ＋ 生物圏保護区 2002年 ＋ 国立公園 1970年",
+        "**オスンセンアク山頂 1,169 m** — 寄生火山（オルム）、済州島に360以上あるオルムのひとつ",
+        "トレイル距離 **片道1.3 km / 標高差約200 m** — 幅広の階段＋木道、スニーカーでも歩行可能",
+        "デッキからのパノラマは**漢拏山の白鹿潭火口、黄海、南部のオルム群**を網羅",
+        "植物学的移行地帯 — **コウライモミ（*Abies koreana*、IUCN準絶滅危惧種）**の帯は約100 m上方から始まる",
+        "山頂には**1945年の大日本帝国トーチカ**が現存 — 珍しい高地の第二次世界大戦遺構",
+        "**入場無料** ＋ 駐車場無料；予約上限なし（1日1,000人に制限されている白鹿潭山頂とは異なる）",
+        "漢拏山には**2,000種以上の植物**が生息 — 朝鮮半島全植物種の半数",
+        "往復所要時間 **約60分** ＝ 9時間の白鹿潭登山なしで「ユネスコの味わい」を完全体験"
       ],
       "timeUsed": [
-        "御林目駐車場＋トイレ＋トレイルブリーフィング——約10分",
-        "デッキまで1.3kmの登山——約25分",
-        "写真撮影",
-        "下山——約20分",
-        "時間の余裕——約5分"
+        "オリモク駐車場 ＋ トイレ ＋ トレイル案内 — 約10分",
+        "デッキまで1.3 kmの登り — 約25分",
+        "山頂デッキ ＋ 写真撮影 ＋ トーチカ見学 — 約15分",
+        "下山 — 約20分",
+        "バッファー / 集合整列 — 約5分"
       ],
-      "whyOnRoute": "**南西ループのオープニング・アンカー**。漢拏山から始めて済州島の地質的土台を据えますが、姉妹コース(時計回りで東海岸へ向かうハイライトループ)とは異なり、本コースは下山後に **西から南西へ** ピボット。南海岸の柱状節理へ直行し、その後に天帝淵(これも南)、内陸のオソルロク茶畑、そして **西の涯月でサンセットフィナーレ** へ。09:00開始(姉妹コースは09:30)で約30分を稼ぎ、午後の涯月での海岸散策+カフェタイムをゆとりある流れに組み立てます。御乗生岳は **予約の手間なしに60分でユネスコ世界遺産+生物圏保存地域+ジオパークを楽しめる漢拏山唯一のトレイル** — 霊室や城板岳は5〜9時間、白鹿潭山頂は1日1,000人の上限あり。",
+      "whyOnRoute": "**ハイライトループの冒頭アンカー**。漢拏山からスタートすることで、まず済州の地質的アイデンティティを確立します——島全体が一枚の盾状火山の斜面であり、その後に訪れるすべての見どころ（柱状節理 → 正房（チョンバン）の海岸直瀑 → 城山タフコーン）は、ゲストが今まさに目にした漢拏山の噴火史が生み出した産物です。オスンセンアクは**ユネスコ世界遺産＋生物圏保護区＋ジオパークを一か所で体験できる唯一の漢拏山トレイル**であり、60分・予約不要で完結します——ヨンシルトレイルとソンパナクトレイルはいずれも**5〜9時間**を要し、白鹿潭山頂は1日の入場者数を1,000人に制限しています。済州を初めて訪れるゲストにとって、これはカタログの中で最もコストパフォーマンスの高い漢拏山入門です。09:30という早い出発時間は、春から夏にかけて漢拏山を頻繁に覆う11:00頃の雲にも先んじることができます。",
       "_poi_meta": {
         "poi_key": "hallasan_eoseungsaengak",
         "kb_version": "1.18",
@@ -218,44 +217,61 @@
           "Korea Forest Service — Abies koreana red list status"
         ]
       },
+      "visitBasics": {
+        "hours": "午前5時から（季節によって制限あり）",
+        "closed": "悪天候時は制限される場合あり",
+        "admission": "無料",
+        "walking": "中程度の傾斜"
+      },
       "convenience": {
-        "restroom": "オリモク入口エリアにあり",
+        "restroom": "登山口付近",
         "parking": "駐車場あり"
       },
       "smartNotes": {
-        "photo": "上部の展望区間まで上がったら、ポートレートよりも広角の風景写真がよく決まります。",
-        "facilities": "設備は登山道沿いよりも入口エリアの方が充実しています。",
-        "tip": "ゆったり長居するよりも、集中して景色を楽しむウォーキングとして組み立てるのがおすすめです。"
+        "photo": "晴天時は、稜線や遠景を広く捉えたショットが、寄り添った接写よりも映えることが多い。",
+        "facilities": "基本的な設備は主に入口付近に集中しています。",
+        "tip": "雨上がりや寒い季節は特に、他のほとんどの立ち寄りスポット以上に、滑り止めと防寒対策が重要です。"
       },
-      "visitBasics": {
-        "hours": "05:00から、季節による制限の可能性あり",
-        "closed": "悪天候時は入山制限あり",
-        "admission": "無料",
-        "walking": "短い行程ながら階段が多く、難易度はやや中程度"
-      }
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+        "https://images.unsplash.com/photo-1696440869866-b90626f1bf7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1590085309112-f67167e8da6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1665071407550-57acf1755a72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1666328756682-ab6ad7a4df03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1665688523217-852dde114c46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1593726222205-21404ff4e5fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1657938143548-dbc1e39fcf4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1664004922437-cf175d580b9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     },
     {
       "number": 2,
       "time": "11:15",
       "duration": "45分",
-      "name": "大浦柱状節理（チュサンジョルリ）",
-      "category": "自然記念物 — 済州の玄武岩海岸絶壁",
-      "description": "**大浦柱状節理（大浦柱状節理、「チサッケ」）**は仲問海岸に広がる**1kmの六角形柱状節理玄武岩絶壁**で、**自然記念物第443号**に指定されています。高さ30〜40mの玄武岩柱が5〜7角形（主に六角形）のポリゴンを形成して1kmにわたって連なっています。約14,000〜25,000年前に漢拏山（ハルラサン）の溶岩流が海水で急冷されて形成されました。展望デッキからの観覧で体力的な負担は少ないです。",
-      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      "name": "大浦柱状節理帯",
+      "category": "火山性海岸線 — 六角形柱状節理溶岩",
+      "description": "**大浦柱状節理（대포 주상절리、「チサッゲ」）**は、中文海岸に広がる**全長1kmの六角形柱状節理玄武岩の断崖**で、**2005年1月6日に天然記念物第443号**に指定されています。柱は海面から**30〜40m**そびえ立ち、**5〜7角形のポリゴン**（主に六角形）が隙間なく並んでいます。これは、**漢拏山の山腹噴火（約25万〜14万年前）による溶融玄武岩質溶岩が海に達し、冷却時に収縮して**、冷却面に対して垂直に割裂したことで生まれた形状です。世界的には、柱状節理は**ジャイアンツ・コーズウェー（英国）**、**デビルスポストパイル（米国）**、**フィンガルの洞窟（スコットランド）**が有名ですが、柱状節理帯は**東アジア最高の柱状節理スポット**であり、最もアクセスしやすい場所です。800mの**遊歩道ループ**により、訪問者は柱の真上に位置する手すり付きの断崖縁まで案内されます。**満潮時には波が柱に打ち付け、最大20mの飛沫が上がる**こともあり、手すりを越えることもあります。入場料：**大人₩2,000／青少年₩1,000／7歳未満および65歳以上は無料**。この場所は**済州ジオパーク（ユネスコ認定2010年10月）**の一部であり、城山日出峰、万丈窟溶岩洞、水月峰とともに、島内**13か所の公式ジオサイト**のひとつです。崖上のデッキは**バリアフリー**（車椅子・ベビーカー対応）です。ループ沿いの3か所の展望台からは異なる角度で柱を観察できます。**第1展望台**では柱の横顔（六角形の形状を捉えるベストショット）、**中間展望台**では柱の上面のパターンを真下から、**奥の展望台**では晴れた日に漢拏山を背景にした1kmの海岸線の全景を楽しめます。**撮影に最適な時間帯は14:00〜16:00**で、西に傾いた日光が柱の正面を照らします。夕暮れ時はシルエット構図が楽しめますが、柱の質感の描写は失われます。営業時間：**09:00〜18:00（最終入場17:30）**、年中無休。",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
       "highlights": [
-        "**自然記念物第443号** — 済州最新の沿岸自然記念物",
-        "高さ**30〜40m**の六角形玄武岩柱が**1km**の海岸に連なる",
-        "漢拏山（ハルラサン）の溶岩流が約14,000〜25,000年前に海水で急冷されて形成",
-        "展望デッキからの観覧で平坦 — 朝一番の光線が玄武岩の質感を際立たせる"
+        "**天然記念物第443号** — **2005年1月6日**指定、済州の海岸天然記念物の中で最も新しい指定",
+        "柱は**30〜40m**の高さにそびえ立ち、**1km**の海岸線に沿って**5〜7角形のポリゴン**（主に六角形）が隙間なく並ぶ",
+        "形成：**約25万〜14万年前、漢拏山の山腹から流れた溶岩が海中で冷却**し、冷却面に対して垂直に収縮・割裂",
+        "**東アジア最高の柱状節理スポット** — ジャイアンツ・コーズウェー、デビルスポストパイル、フィンガルの洞窟と肩を並べる世界的名所",
+        "**満潮時には最大20mの飛沫** — 波しぶきの噴水写真を狙える撮影チャンス",
+        "**0.8kmの遊歩道ループ**、徒歩約15分 — バリアフリーデッキ、車椅子・ベビーカー対応",
+        "**済州ジオパーク（ユネスコ認定2010年10月）**の一部 — 島内13か所のジオサイト",
+        "入場料：**大人₩2,000／青少年₩1,000／7歳未満・65歳以上無料**",
+        "晴れた日には北方向に漢拏山の山頂が望め、地質学的に**直接の下流**にあたる"
       ],
       "timeUsed": [
-        "駐車＋チケット購入＋入場——約5分",
-        "最初の展望台まで——約5分",
-        "写真撮影",
-        "ボードウォークループ続行——約10分",
-        "バスに戻る"
+        "駐車＋チケット購入＋入場 — 約5分",
+        "第1展望台までの徒歩 — 約5分",
+        "断崖縁からの柱状節理鑑賞＋写真撮影 — 約15分",
+        "遊歩道ループの続きを歩く — 約10分",
+        "バスへの帰還 — 約10分"
       ],
-      "whyOnRoute": "のトレイル後に展望デッキからの観覧という好対照な体験。午前中の光線が玄武岩の色と質感を最もよく引き出す時間帯に訪問します。",
+      "whyOnRoute": "**ループの「柱状溶岩」の要**。漢拏山が噴火源を示した後、柱状節理帯は**同じ溶岩が海に達し、幾何学的な形で固まった様子**を見せてくれます — 30kmの海岸線を貫く連続した地質の物語です。中文は南西海岸から正房・城山方面へと東へ折り返す自然な転換点であり、この立ち寄りスポットは地理的な要にもなっています。**龍頭岩海岸（満潮・悪天候時は閉鎖、約30%の訪問日は見学不可）**や**松岳山（1.6km長い歩行、柱の密度が低い）**と比較すると、大浦は**天候を問わず見学可能、バリアフリー、バスから徒歩15分**と、南海岸で最もコストパフォーマンスの高いスポットです。11:15の到着時間帯は、12:15以降にデッキを混雑させる**クルーズ船の寄港観光客の波が来る前**に当たります。",
       "_poi_meta": {
         "poi_key": "daepo_jusangjeolli_cliff",
         "kb_version": "1.18",
@@ -268,85 +284,103 @@
           "Korea Geological Survey — Jeju basalt formation studies"
         ]
       },
-      "smartNotes": {
-        "photo": "Wave direction, spray, and side light can change the mood quickly, so wide coastal framing works especially well here.",
-        "facilities": "The entrance area is well equipped, and the viewpoint path itself is relatively straightforward.",
-        "tip": "Even on a sunny day, the coast usually feels colder and windier than inland Jeju."
+      "visitBasics": {
+        "hours": "09:00〜18:00（最終入場17:40）",
+        "closed": "年中無休",
+        "admission": "大人2,000ウォン／子ども・青少年1,000ウォン",
+        "walking": "易〜中程度"
       },
       "convenience": {
-        "restroom": "Entrance area",
-        "parking": "Parking available (paid lot)"
+        "restroom": "入口エリア",
+        "parking": "駐車場あり（有料）"
       },
-      "visitBasics": {
-        "hours": "09:00–18:00 (last entry 17:40)",
-        "closed": "Open year-round",
-        "admission": "KRW 2,000 adults / KRW 1,000 children and teens",
-        "walking": "Easy to moderate"
-      }
+      "smartNotes": {
+        "photo": "波の方向、飛沫、サイド光によって雰囲気が素早く変わるため、広い海岸フレーミングが特に効果的です。",
+        "facilities": "入口エリアは設備が整っており、展望台への道は比較的わかりやすいです。",
+        "tip": "晴れた日でも、海岸は済州の内陸部よりも寒く風が強く感じられることが多いです。"
+      },
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+        "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1772268354899-1f3bf5014b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1739932413542-dc2597d7d764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     },
     {
       "number": 3,
       "time": "12:15",
       "duration": "60分",
-      "name": "昼食（西帰浦の地元レストラン）",
-      "category": "昼食 — 別途ご負担",
-      "description": "**西帰浦中心部での60分の休憩** — 済州南部の中心都市・西帰浦で昼食（別途）。西帰浦はタチウオ漁の主要港で、タチウオ料理が名物です。",
-      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "name": "ランチ — 西帰浦ローカル",
+      "category": "昼の休息 — 西帰浦の郷土料理",
+      "description": "**西帰浦（서귀포）中心部での60分のリセット** — 済州南部の都市で、**西帰浦毎日オルレ市場（서귀포매일올레시장）**に水揚げされる新鮮な魚介類とアワビが豊富な海岸で知られています。季節とグループ規模に応じたデフォルトのローテーション：漁期（9〜2月）に船が入港する時期は西帰浦専門店で**カルチジョリム（갈치조림、タチウオの煮付け）**、市場に面した食堂では年間を通じて**チョンボクビビンバップ（전복비빔밥、アワビのせご飯）**、焼き肉を好むゲストには**フクテジグイ（흑돼지구이、済州黒豚のBBQ）**。黒豚（***Sus scrofa* domesticus、済州黒豚種**）は**文化財資料第5号（2015年）**に指定されており、済州の保護品種です。ご希望に応じてベジタリアン向けの代替メニューあり：季節野菜を添えた**ビビムグクス（비빔국수、冷たい辛い素麺）**。ランチスポットは**チョンバン滝から徒歩5分** — 食後に軽くコーヒーを楽しみたいゲストは、引き続き徒歩で向かう前に市場のお茶・カフェ通りに立ち寄ることもできます。",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
       "highlights": [
-        "**西帰浦** — 済州南部の漁業・海鮮の中心都市",
-        "**タチウオの煮付け（カルチジョリム）**（9〜2月）、**アワビ混ぜご飯（アワビ入りビビンバ）**は年中",
-        "昼食代は別途（≈₩15,000）。ガイドがご案内します"
+        "**西帰浦（서귀포）**中心部 — 済州南部の漁業・海鮮の中心都市",
+        "旬の時期（9〜2月）は**カルチジョリム（タチウオ）**、年間を通じて**チョンボクビビンバップ**",
+        "**フクテジ（済州黒豚）**オプション — 文化財資料第5号（2015年）",
+        "ご希望に応じて**ベジタリアン向けビビムグクス**の代替メニュー",
+        "ランチ会場は**チョンバン滝入口から徒歩5分** — コーチ移動が最小限",
+        "乗車時にグループの食事制限を確認；メニューは事前確認済み"
       ],
       "timeUsed": [
-        "昼食場所まで徒歩移動 — 約5分",
-        "注文・食事・ドリンク — 約45分",
-        "正房瀑布入口まで徒歩 — 約5分",
-        "調整時間 — 約5分"
+        "ランチ会場まで徒歩 — 約5分",
+        "注文＋食事＋ドリンク — 約45分",
+        "チョンバン滝入口まで徒歩 — 約5分",
+        "バッファー — 約5分"
       ],
-      "whyOnRoute": "午前のアクティブなセクションと午後のメインイベント（正房の滝・城山日出峰）の間の自然な休憩。",
-      "smartNotes": {
-        "photo": "Since most of the day centers on landscapes, food photos can help vary the visual rhythm of the route.",
-        "facilities": "Dining-related facilities are usually more than sufficient.",
-        "tip": "It is better to eat at a comfortable pace here than to rush and lose energy for the afternoon."
+      "whyOnRoute": "西帰浦中心部に位置することで**チョンバン滝が次の徒歩圏内のスポット**となります（ランチと第4停留所の間にコーチ移動なし）— チュンムン地区でのランチと比較して約15分を節約できます。カルチ（タチウオ）＋黒豚＋アワビは、いずれも地元で水揚げ・飼育された済州の三大看板食材 — ゲストは一度の食事でその日の食の象徴的な体験ができます。また、このペースで午前中の漢拏山＋断崖ウォーキングの後、午後の城山クライムの前に適切な休憩が取れます。",
+      "visitBasics": {
+        "hours": "レストランの営業時間によって異なります",
+        "closed": "会場によって異なります",
+        "admission": "別途指定のない限り、食事代は現地払いです",
+        "walking": "最小限"
       },
       "convenience": {
-        "restroom": "Inside the restaurant",
-        "parking": "Parking available"
+        "restroom": "レストラン内",
+        "parking": "駐車場あり"
       },
-      "visitBasics": {
-        "hours": "Depends on restaurant operating hours",
-        "closed": "Varies by venue",
-        "admission": "Meal is paid on site unless otherwise specified",
-        "walking": "Minimal"
-      }
+      "smartNotes": {
+        "photo": "1日の大半が景観を中心としているため、食事の写真はルートの視覚的なリズムに変化をもたらすのに役立ちます。",
+        "facilities": "食事関連の施設は通常十分以上に整っています。",
+        "tip": "午後のエネルギーを確保するためにも、ここではゆったりとしたペースで食事されることをお勧めします。"
+      },
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp"
+      ]
     },
     {
       "number": 4,
       "time": "13:35",
       "duration": "60分",
-      "name": "正房の滝",
-      "category": "自然記念物 — アジア唯一の海に直接落ちる滝",
-      "description": "**正房瀑布 (정방폭포、「真っ直ぐ海に落ちる滝」)** は**アジアで唯一海に直接落ちる滝**で、玄武岩の崖から太平洋へ**23m垂直に落下** — 中間のプールも河口もありません。落差幅**8m**、底のプールは5mで毎潮ごとに開放海へ流れ込みます。この単一の地理的特異性が、正房を済州の**「瀛州十景(영주십경)」** — 朝鮮王朝時代の文人による島の最も詩的な景観の正典 — の1つに数えさせる理由です。瀛州十景のリストは**18世紀の儒学者 李源祚 (이원조)**によって体系化され、城山日出、漢拏山山頂、天帝淵も含まれます — つまり今日のループは**10景のうち3景**を1日で網羅することになります。滝の隣の崖面に刻まれているのは**「徐市過此 (서불과차、徐市が西へ帰った)」**の銘文で、**秦の方士 徐福 (서복)**に帰せられます — 秦の始皇帝が**紀元前約219年**に不老不死の霊薬を求めて派遣した伝説の人物。地元伝承によれば徐福は故国に戻る途中ここを通ったとされ、銘文は地名**「西帰浦 (서귀포、「徐が西へ帰った場所」)」**の語源となっています。アクセスは入江まで**130段の石段**(やや急 — 膝に優しい靴推奨)。入場料: **大人₩2,000 / 青少年₩1,000 / 7歳未満・65歳以上は無料**。底部の轟音と飛沫で冷却されたマイクロクライメートは、夏の涼みスポットとしても知られます。**地元の海女 (해녀、女性ダイバー — 2016年ユネスコ無形文化遺産)**は穏やかな日に新鮮なウニ、アワビ、サザエを入江で直販することがあり、海女博物館の正式な展示の外で潜水コミュニティの仕事姿を撮影できる稀な機会となります。",
-      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+      "name": "正房瀑布（チョンバン滝）",
+      "category": "海岸の滝 — 海に直接流れ落ちる（アジア唯一）",
+      "description": "**チョンバン滝（정방폭포、「海に真っ直ぐ落ちる滝」）**は、**アジアで唯一、海に直接落ちる滝**です — 玄武岩の断崖から太平洋へと**垂直23mの落差**で流れ落ち、中間の水溜まりも川床の河口もありません。この滝の幅は**8m**で、底部には5mのプールがあり、干満のたびに外洋へと注ぎ込みます。この唯一無二の地理的特徴こそが、チョンバンが**「瀛洲十景（영주십경、済州十大景勝地）」**のひとつとされる理由であり、これは朝鮮時代の文人が定めた島の最も詩的な景観の正典です。**18世紀の儒学者イ・ウォンジョ（이원조）**によって体系化された瀛洲十景のリストには、城山の日の出、漢拏山山頂、天帝淵も含まれており、本日のルートで**十景のうち3つ**を一日で巡ることになります。滝のそばの断崖には**「徐福過此（서불과차、徐福が西へ向かった）」**という銘文が刻まれており、これは**秦の始皇帝（約紀元前219年）**に不老不死の仙薬を求めて派遣された伝説の道士・**徐福（서복）**によるものとされています。地元の伝承によれば、彼は帰途にここを通ったとされ、この銘文が地名**「西帰浦（서귀포、「徐が西へ向かった港」）」**の語源となっています。アクセスは入り江へ続く**130段の石段**を下ります（やや急勾配のため、膝に優しい履物を推奨）。入場料：**大人₩2,000 / 青少年₩1,000 / 7歳以下・65歳以上は無料**。滝壺のとどろく飛沫が生み出す涼やかな微気候は、夏の名高い避暑スポットです。**地元の海女（해녀、女性ダイバー — 2016年ユネスコ無形文化遺産）**が穏やかな海の日には入り江で新鮮なウニ、アワビ、サザエを直接販売することがあり、正式な博物館の文脈を離れてダイビングコミュニティの活動する様子を写真に収めることのできる貴重な機会です。",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
       "highlights": [
-        "**アジアで唯一海に直接落ちる滝** — 23m垂直落下、河口なし",
-        "落差幅**8m**、底プール5mが毎潮ごとに太平洋へ流れ込む",
-        "**「瀛州十景」**の1つ — 朝鮮王朝時代の済州10景",
-        "**「徐市過此」銘文** — 徐福(秦の方士、紀元前約219年)に帰せられる、地名「西帰浦」の語源",
-        "**130段の石段**で入江まで — 膝に優しい靴推奨",
-        "入場料 **大人₩2,000 / 青少年₩1,000 / 7歳未満・65歳以上は無料**",
-        "底部の飛沫冷却マイクロクライメート — 夏の天然の涼みスポット",
-        "地元の**海女 (해녀、女性ダイバー)**が穏やかな日に新鮮な漁獲物を入江で直販することも",
-        "撮影の「スイートアワー」は通常**14:00~14:30**(西から滝面に陽が当たる時間帯)"
+        "**アジア唯一の海に直接落ちる滝** — 垂直落差23m、川床なし",
+        "滝の幅は**8m**で、底部には5mのプールがあり、干満のたびに太平洋へと注ぎ込みます",
+        "**「瀛洲十景（영주십경）」**のひとつ — 朝鮮時代の済州十大景勝地",
+        "**「서불과차（ソブルグァチャ）」の碑文** — 徐福（秦の方士・錬丹術師、紀元前219年頃）に帰せられ、地名「西帰浦（ソグィポ）」の由来とされる",
+        "入り江へと続く**130段の石段** — 膝への負担が少ない履物を推奨",
+        "入場料 **大人₩2,000 / 青少年₩1,000 / 7歳未満・65歳以上無料**",
+        "滝壺付近は飛沫によって冷却された局所気候 — 夏の自然なクールスポット",
+        "穏やかな日には地元の**海女（ヘニョ、女性潜水士）**が入り江で新鮮な海の幸を販売することがある",
+        "撮影の「ベストタイム」は通常**14:00〜14:30**頃 — 西日が滝の正面を照らす時間帯"
       ],
       "timeUsed": [
-        "入場 + チケット + 下降 (130段) — 約10分",
-        "写真撮影",
-        "断崖沿い散策路と徐福碑を任意見学 — 約10分",
-        "バスに戻る",
-        "調整時間 — 約5分"
+        "入口 ＋ チケット購入 ＋ 下り（130段）— 約10分",
+        "入り江の展望 ＋ 滝の撮影 — 約25分",
+        "オプション：崖沿いの道 ＋ 徐福の碑文 — 約10分",
+        "バスへの登り返し — 約10分",
+        "予備時間 — 約5分"
       ],
-      "whyOnRoute": "正房はループ内で**地質、神話、地名語源が1つのフレームに集約する唯一の立ち寄り先**です — 海に落ちる滝が「西帰浦」を最も文字通りに説明します。**天帝淵(3段の内陸滝、約3km北)**と比較して訪問は**より短く、よりドラマチックで、ランチから歩いて行ける**距離です — 天帝淵は中文への迂回と森林ループに30分以上を要します。13:35の午後タイミングは、滝に陽が当たる窓(14:00~14:30)を写真用に捉えます。ここからコーチはルート1132で東に向かい城山へ — 65分の海岸ドライブは車窓から**東済州のオルム群**を見せます。",
+      "whyOnRoute": "正房瀑布は、**地質・神話・地名の語源がひとつの視野に収束するルート上で唯一の立ち寄り地**です。海へと直接落ちる滝は、「西帰浦（ソグィポ）」という地名をこれ以上ないほど的確に体現しています。**天帝淵（チョンジェヨン、3段の内陸滝、約3km北）**と比べると、訪問時間は**短く、より迫力があり、昼食地から徒歩でアクセス可能**です。天帝淵は中文（チュンムン）への迂回が必要で、森の遊歩道に30分以上かかります。13:35という午後の時間帯は、撮影に最適な陽光が滝を照らす時間帯（14:00〜14:30）にも合致しています。ここからバスは国道1132号線を東進し、城山（ソンサン）へ向かいます。車窓から**済州東部のオルム（側火山）群**を眺めながらの65分間の海岸ドライブとなります。",
       "_poi_meta": {
         "poi_key": "jeongbang_falls",
         "kb_version": "1.18",
@@ -359,44 +393,58 @@
           "Jeju Folklore Records — Xu Fu / Seobulgwacha inscription study"
         ]
       },
+      "visitBasics": {
+        "hours": "09:00〜17:20",
+        "closed": "年中無休",
+        "admission": "大人2,000ウォン / 子供1,000ウォン",
+        "walking": "中程度（階段あり）"
+      },
       "convenience": {
-        "restroom": "入口エリア",
+        "restroom": "入口付近",
         "parking": "駐車場あり"
       },
       "smartNotes": {
-        "photo": "下の岩場は雰囲気のある写真に向いていますが、足場と潮の飛沫で体感はやや厳しめになることがあります。",
-        "facilities": "入口付近に基本的な設備があります。",
-        "tip": "階段と岩場のため、地図上の印象よりも体力を使う立ち寄りになります。"
+        "photo": "下の岩場は雰囲気ある写真撮影に適していますが、足元の悪さと波しぶきにより、思いのほか体力を要する場合があります。",
+        "facilities": "基本的な設備は入口付近にあります。",
+        "tip": "階段と岩道があるため、地図で見るよりも現地では体力を使うと感じることが多いです。"
       },
-      "visitBasics": {
-        "hours": "9:00~17:20",
-        "closed": "通年開放",
-        "admission": "大人₩2,000 / 子ども₩1,000",
-        "walking": "難易度は中程度、階段あり"
-      }
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+        "https://images.unsplash.com/photo-1674606042265-c9f03a77e286?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1674606055132-15e511a3ac2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1761303505953-df6647dd3a46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1562680829-7927493f7a50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     },
     {
       "number": 5,
       "time": "15:25",
       "duration": "90分",
-      "name": "城山日出峰（ユネスコ世界自然遺産）",
-      "category": "ユネスコ自然遺産 — 済州のシンボル・フィナーレ",
-      "description": "**城山日出峰**は**5,000年前の水成噴火（スルツェイ式）で誕生した火山凝灰岩丘**です。**ユネスコ三重指定（世界自然遺産・生物圏保護区・世界地質公園）**の済州島のシンボル。標高180mの山頂には直径90mの火口が広がります。一日のグランドフィナーレとして、漢拏山（ハルラサン）から南海岸を経て東端の城山日出峰で締めくくる全島ループが完結します。",
-      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+      "name": "城山日出峰（ソンサン・イルチュルボン）",
+      "category": "UNESCOタフコーン — 城山日出峰（三重UNESCO指定）",
+      "description": "**城山日出峰（성산일출봉、「日の出の峰」）**は、**約5,000年前のスルツェイ式水蒸気爆発型タフコーン**です。これは、海底の玄武岩質噴火が海面を突き破り、マグマが海水と接触した際に生じた水蒸気爆発による火山灰が堆積して、通常の溶岩丘ではなく**高さ182mの要塞型火口縁**を形成したという稀少な地形です。UNESCOはこれを正式に**「スルツェイ式火山体の出現の顕著な事例」**と評しています。火口は**直径600m・深さ90m**で、地元の伝承で「石の王冠」に例えられる**99本の鋭い岩峰**が周囲を取り囲んでいます。城山日出峰は**三重のUNESCO指定**を受けています：**世界自然遺産（2007年7月2日登録）**として「済州火山島と溶岩洞窟群」の一部、**生物圏保護区（2002年）**、および**世界ジオパーク（2010年10月）** — この組み合わせは韓国では漢拏山（ハルラサン）のみが並ぶ唯一の例です。海側の基部には**第二次世界大戦中の日本軍洞窟18か所**（1945年、神風特攻隊の特攻艇格納壕）が掘られています。登山道：**片道0.8km・標高差約140m、広い石段の道で往復60分**。火口丘下の岩場では**海女（ヘニョ）の実演**が**毎日13:30と15:00**に行われています。済州の海女（2016年UNESCO無形文化遺産）はスキューバ装備なしで潜水します。**2025年4月改定の入場料**：**大人₩5,000 / 青少年・子供₩2,500 / 団体大人₩1,600**、7歳未満・65歳以上無料。山頂デッキは**瀛洲十景（済州の10の絶景）**にも名を連ね、韓国随一の**元日初日の出巡礼地**として知られています。毎年1月1日の夜明け前には5万人以上が山頂を目指し、1995年以来、市主催の初日の出フェスティバルが開催されています。山頂から約4km沖合には**牛島（우도、「牛の島」）** — 韓国最大の二次火山島 — がはっきりと見え、城山港から**フェリーで15分**（往復₩10,500）でアクセス可能です（別日程で時間に余裕のある旅行者向け）。",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
       "highlights": [
-        "**ユネスコ三重指定**：世界自然遺産（2007年）・生物圏保護区（2002年）・世界地質公園（2010年）",
-        "**5,000年前** — 水成噴火（スルツェイ式）による誕生",
-        "**直径90mの火口**を囲む99本の岩柱。山頂（180m）への石段登頂（任意）",
-        "**グランドループのフィナーレ** — 済州全島を一望する最高の締めくくり"
+        "**三重UNESCO指定**：世界自然遺産 2007年7月2日登録 ＋ 生物圏保護区 2002年 ＋ 世界ジオパーク 2010年10月",
+        "**約5,000年前**に形成 — スルツェイ式水蒸気爆発型噴火、マグマと海水の接触による水蒸気爆発で誕生",
+        "火口は**直径600m・深さ90m**、**99本の鋭い岩峰**（「石の王冠」）が取り囲む",
+        "**海抜182m** — 片道0.8km・標高差約140m、石段の道で往復60分",
+        "基部に**日本軍による第二次世界大戦の洞窟18か所** — 1945年、神風特攻隊の特攻艇格納壕",
+        "**海女（ヘニョ）実演 毎日13:30・15:00** 海辺の入り江にて — ユネスコ無形文化遺産 2016年登録",
+        "**入場料（2025年4月改定）**: 大人 ₩5,000 / 青少年 ₩2,500 / 7歳未満・65歳以上 無料",
+        "春・秋の開園時間 **05:00〜19:00**（最終入場 18:20）",
+        "**毎月第1月曜日は休園**（臨時休業日あり）"
       ],
       "timeUsed": [
-        "駐車＋チケット＋麓ブリーフィング——約10分",
-        "サミットデッキまでの登山（0.8km／高低差140m）——約30分",
-        "写真撮影",
-        "下山——約20分",
-        "オプション：麓での海女実演見学（15:00デモ）——約10分"
+        "駐車・チケット購入・現地説明 — 約10分",
+        "山頂デッキまでの登り（0.8 km／標高差140 m）— 約30分",
+        "山頂からの眺望・火口縁での撮影 — 約20分",
+        "下山 — 約20分",
+        "麓での海女実演見学（15:00）オプション — 約10分"
       ],
-      "whyOnRoute": "一日を最も力強い印象で締めくくるためにフィナーレに配置しています。午後の光線が城山日出峰の玄武岩の質感を最もよく引き出します。",
+      "whyOnRoute": "**ハイライトループの締めくくり** — 島内でユネスコ遺産が最も集中するスポットであり、**島・海・漢拏山（ハルラサン）を一度に見渡せる**この日唯一の場所。地理的には東海岸のフィナーレ、地質学的には漢拏山火口・柱状節理帯の溶岩に続く**第3の火山章**。午後遅め（15:25）の到着で、登山前に麓の**15:00海女実演**を観覧し、**16:30頃に火口縁を染める柔らかなゴールデンアワーの光**を堪能し、**19:00の閉園**前に山頂を後にできる。春・秋夕方のボーナス：下山のタイミングで**城山日出峰（ソンサンイルチュルボン）の麓の村**での夕食やバスでの帰路につけ、その頃には西からの夕焼け色が火口縁を彩る。日の出時間帯の訪問（人気だが04:30出発が必要で日中ループが失われる）と比べると、午後の城山は日の出の壮観を諦める代わりに、島全体を巡るユネスコの1日を完成させることができる。",
       "_poi_meta": {
         "poi_key": "seongsan_ilchulbong",
         "kb_version": "1.18",
@@ -409,353 +457,369 @@
           "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
         ]
       },
-      "smartNotes": {
-        "photo": "Rather than photographing only the summit, wider compositions that include both the crater and coastline usually feel more rewarding.",
-        "facilities": "Facilities at the base area are well developed.",
-        "tip": "Crowds, weather, and group fitness level can all affect how demanding and satisfying the summit experience feels."
+      "visitBasics": {
+        "hours": "有料入場時間は季節によって異なる場合があります",
+        "closed": "毎月第1月曜日は休業（祝日の場合は翌日休業）",
+        "admission": "大人 5,000ウォン／子ども 2,500ウォン",
+        "walking": "山頂まで登る場合は、普通〜やや体力を要する難易度"
       },
       "convenience": {
-        "restroom": "Lower area and surrounding facilities",
-        "parking": "Large parking lot available"
+        "restroom": "麓エリアおよび周辺施設",
+        "parking": "大型駐車場あり"
       },
-      "visitBasics": {
-        "hours": "Paid entry hours may vary by season",
-        "closed": "Closed on the first Monday of each month (or the following day if it falls on a public holiday)",
-        "admission": "KRW 5,000 adults / KRW 2,500 children",
-        "walking": "Moderate to moderately demanding if you choose to summit"
-      }
+      "smartNotes": {
+        "photo": "山頂だけを切り取るより、火口と海岸線を両方収めた広い構図の方が、より印象的な写真になることが多い",
+        "facilities": "麓エリアの施設は充実している",
+        "tip": "混雑状況・天候・グループの体力レベルによって、山頂体験の難易度や満足度は変わることがある"
+      },
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+        "https://images.unsplash.com/photo-1616798249081-30877e213b16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1593104197164-96718e943b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1584263577189-f86c4b105154?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1710006876254-48250c2dbcfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1584802530491-65fad8b1b92c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1743685889737-d699283d139c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     }
   ],
   "routeFlowStops": [
     {
-      "name": "御乗生岳",
-      "theme": "漢拏山",
+      "name": "オスンセンアク（御乗生岳）",
+      "theme": "漢拏山（ハルラサン）",
       "type": "01"
     },
     {
-      "name": "柱状節理",
-      "theme": "断崖",
+      "name": "柱状節理帯（チュサンジョルリ）",
+      "theme": "断崖・絶壁",
       "type": "02"
     },
     {
       "name": "昼食",
-      "theme": "リフレッシュ",
+      "theme": "リセット",
       "type": "03"
     },
     {
-      "name": "正房滝",
+      "name": "正房（チョンバン）",
       "theme": "滝",
       "type": "04"
     },
     {
-      "name": "城山",
+      "name": "城山（ソンサン）",
       "theme": "火口",
       "type": "05"
     }
   ],
   "routePhases": [
     {
-      "phase": "午前",
+      "phase": "朝",
       "duration": "1-2",
-      "description": "漢拏山（ハルラサン）のトレイル（往復1.3km）で一日を幕開け、仲問海岸の大浦柱状節理の玄武岩絶壁へ。"
+      "description": ""
     },
     {
-      "phase": "昼頃〜午後早め",
+      "phase": "正午から午後早い時間",
       "duration": "3-4",
-      "description": "西帰浦中心部で昼食（別途）の後、アジア唯一の海に直接落ちる正房の滝へ。"
+      "description": ""
     },
     {
       "phase": "フィナーレ",
       "duration": "5",
-      "description": "城山日出峰（ユネスコ三重指定）で一日を締めくくります — 火山火口への登頂（任意）と海岸遊歩道。"
+      "description": ""
     }
   ],
   "routeShapeIntro": {
-    "title": "一日の流れ",
-    "subtitle": "漢拏山（ハルラサン）から始まり、南海岸を経て、城山日出峰でフィナーレを迎えます。お迎えは通常8:30〜9:00、済州市への帰着は17:40〜18:00頃です。"
+    "title": "1日の流れ",
+    "subtitle": "ルートは漢拏山（ハルラサン）から始まり、南海岸を経由して城山日出峰（ソンサン・イルチュルボン）で終わります。ピックアップは通常08:30〜09:00の間で、済州市への帰着は17:40〜18:00頃となります。"
   },
   "whyTourWorks": {
     "bestFor": [
-      "済州滞在が1日のみの旅行者",
-      "代表的ななランドマークを効率よく巡りたい旅行者",
-      "済州全島を一日で味わいたいアクティブな旅行者"
+      "済州島に1日しか滞在できない旅行者",
+      "午前中に済州島に到着する旅行者",
+      "代表的な観光スポットを巡りたい旅行者",
+      "アクティブな観光を楽しみたい旅行者"
     ],
     "routeLogicSections": [
       {
-        "title": "このルートの推薦理由",
+        "title": "限られた時間の旅行者のために設計されたツアー",
         "icon": "clock-3",
         "iconBg": "bg-amber-50/80",
         "items": [
           {
-            "label": "見どころ",
-            "detail": "ガイドが詳しくご案内します。"
+            "label": "漢拏山からスタート",
+            "detail": "漢拏山からスタートすることで、島を横断するドライブが始まる前に、済州島の山岳地形を力強く感じることができます。"
           },
           {
-            "label": "見どころ",
-            "detail": "ガイドが詳しくご案内します。"
+            "label": "南海岸を中間に配置",
+            "detail": "柱状節理帯（チュサンジョルリ）、昼食、そして正房瀑布（チョンバン）が、1日を通じて視覚的な密度を保ちながら、西から東への流れをスムーズに維持します。"
           },
           {
-            "label": "見どころ",
-            "detail": "ガイドが詳しくご案内します。"
+            "label": "城山日出峰で締めくくる",
+            "detail": "城山で終わることで、ルートがバラバラな地域の立ち寄りではなく、済州島のハイライトを網羅した完結した旅のように感じられます。"
           }
         ]
       },
       {
-        "title": "このルートの推薦理由",
+        "title": "この1日が特に充実していると感じる理由",
         "icon": "mountain",
         "iconBg": "bg-sky-50/80",
         "items": [
           {
-            "label": "歩行量",
-            "detail": "ガイドが詳しくご案内します。"
+            "label": "さらに2つのアクティブな徒歩区間",
+            "detail": "御乗生岳（オスンセンアク）と城山日出峰が、このルートを一般的な小グループのデイツアーよりも身体的にアクティブなものにしています。"
           },
           {
-            "label": "見どころ",
-            "detail": "ガイドが詳しくご案内します。"
+            "label": "景観の密度を優先",
+            "detail": "これはゆっくり観光するルートではありません。済州島のより充実した、力強い1日体験を求める旅行者のために設計されています。"
           },
           {
-            "label": "見どころ",
-            "detail": "ガイドが詳しくご案内します。"
+            "label": "時間が限られているときに特に価値がある",
+            "detail": "1日しかない場合、ペースをゆったりさせすぎるよりも、済州島の最も代表的な観光スポットに集中する方が、多くの場合より有意義です。"
           }
         ]
       },
       {
-        "title": "このルートの推薦理由",
+        "title": "現地の状況が変わるとき",
         "icon": "wind",
         "iconBg": "bg-slate-50/80",
         "items": [
           {
-            "label": "見どころ",
-            "detail": "ガイドが詳しくご案内します。"
+            "label": "漢拏山のアクセス制限",
+            "detail": "オスンセンアクは、季節的な規制や気象に関する制限の影響を受ける場合があります。"
           },
           {
-            "label": "見どころ",
-            "detail": "ガイドが詳しくご案内します。"
+            "label": "海岸沿いの吹きさらしのスポットでの強風",
+            "detail": "ジュサンジョルリと城山日出峰は、天候の影響を最も受けやすい2つの海岸の見どころです。"
           },
           {
-            "label": "見どころ",
-            "detail": "ガイドが詳しくご案内します。"
+            "label": "帰着時間がわずかにずれる場合があります",
+            "detail": "交通状況、グループの歩行ペース、現地の混雑状況によって、最終的な帰着時間に若干の変動が生じる場合があります。"
           }
         ]
       }
     ],
     "lessIdealFor": [
-      "ゆっくりペースを好む旅行者",
-      "ベビーカーが必要なグループ",
-      "タイトな夕方フライトのある旅行者"
+      "ゆっくりとしたペースを好む旅行者",
+      "階段や上り坂の歩行を避けたい旅行者",
+      "乳幼児を連れたグループ",
+      "ベビーカーを多く使用するグループ"
     ]
   },
   "practicalAccordionItems": [
     {
       "id": "pickup",
-      "title": "お迎えと解散時刻",
-      "preview": "早めの出発、夕方に済州市に帰着。",
+      "title": "乗車・帰着時間",
+      "preview": "早朝出発、夕方に済州市へ帰着",
       "content": [
-        "済州市のホテルロビーからのお迎え（8:30〜9:00）。",
-        "済州市への帰着は通常17:40〜18:00頃。",
-        "前日にWhatsAppにてお迎え時刻を確認いたします。"
+        "済州市での乗車は08:30〜09:00の間",
+        "済州市への帰着は17:40〜18:00頃",
+        "状況によっては空港でのお迎えも手配可能です",
+        "最終的な集合時間は前日の夜に確認されます"
       ]
     },
     {
       "id": "walking",
-      "title": "歩行と地形",
-      "preview": "通常のルートより活動量が多めです。",
+      "title": "徒歩と地形",
+      "preview": "標準的なルートよりもアクティブです",
       "content": [
-        "通常のルートより活動量が多めです。",
-        "トレイル：往復1.3kmの木道（起伏あり）。",
-        "城山日出峰：急な石段（≈600段）への登頂（任意）。",
-        "正房の滝：海岸への下り階段あり。",
-        "大浦柱状節理：展望デッキからの観覧で平坦。",
-        "動きやすい靴をお履きください。"
+        "このルートには、比較的アクティブな歩行区間が2か所含まれています。",
+        "オスンセンアクには、上り坂と階段が含まれています。",
+        "正房瀑布には、階段と岩場の歩道が含まれています。",
+        "グループが登頂を選んだ場合、城山日出峰はより体力を要すると感じるでしょう。",
+        "グリップ力の高い、履き心地の良い靴を強くお勧めします。"
       ]
     },
     {
       "id": "weather",
-      "title": "天候と閉鎖時の調整",
-      "preview": "通常は予定通り催行、必要に応じて調整します。",
+      "title": "天候および閉鎖に伴う変更",
+      "preview": "通常は予定通りに催行され、必要に応じて調整されます",
       "content": [
-        "通常は予定通り催行します。",
-        "悪天候時はトレイルや城山日出峰の山頂が閉鎖になる場合があります。",
-        "12時間前に状況をお知らせします。"
+        "小雨の場合：ツアーは通常通り催行されます",
+        "強風の場合：ジュサンジョルリや城山日出峰などの吹きさらしのエリアでは、滞在時間が短くなる場合があります",
+        "漢拏山の規制：オスンセンアクへのアクセスが制限された場合、ルートが調整または変更される場合があります",
+        "休業日：必要に応じて、代替スポットへの訪問や滞在時間の見直しが行われる場合があります"
       ]
     },
     {
       "id": "flight",
-      "title": "当日到着・出発の方へ",
-      "preview": "夕方に余裕のある時間時間の余裕が必要です。",
+      "title": "済州への到着当日または出発当日にご参加の場合",
+      "preview": "夕方に十分な余裕時間が必要です",
       "content": [
-        "帰着は17:40〜18:00頃のため、夕方のフライトには十分な余裕が必要です。",
-        "タイトなフライトスケジュールの場合は事前に催行会社へご相談ください。"
+        "これは、済州島の代表的な見どころを1日で巡る、密度の高いルートです。",
+        "スケジュールによっては当日の到着・出発も可能ですが、夕方に十分な余裕を確保できる場合に限ります。",
+        "遅い時間帯のフライトを強くおすすめします。",
+        "タイミングのリスクを判断する際は、交通状況、歩くペース、現地の状況を必ず考慮してください。"
       ]
     },
     {
       "id": "wear",
-      "title": "持ち物と服装",
-      "preview": "歩きやすい靴、重ね着、軽い防風ジャケット。",
+      "title": "服装・持ち物",
+      "preview": "歩きやすい靴、重ね着、軽い防風ジャケット",
       "content": [
-        "歩きやすい靴（グリップあり）必須。",
-        "天候が変わりやすいため重ね着と防風ジャケットをお勧めします。",
-        "日焼け止め・帽子・飲料水を持参ください。"
+        "グリップ力のある歩きやすい靴",
+        "山と海岸の気温差に対応した重ね着",
+        "軽い防風ジャケット",
+        "帽子と日焼け対策グッズ",
+        "ウォーターボトル"
       ]
     },
     {
       "id": "included",
       "title": "含まれるもの・含まれないもの",
-      "preview": "ガイド、車両、お迎え、入場料込み。",
-      "variant": "included",
+      "preview": "ガイド、車両、送迎、入場料込み",
+      "variant": "含まれるもの",
       "content": [
-        "含まれるもの：ガイド、エアコン付き車両、お迎え・解散、全入場料。",
-        "含まれないもの：昼食（≈₩15,000）、飲料、チップ。"
+        "英語対応のプロフェッショナルガイド",
+        "少人数グループ用車両",
+        "済州市内ホテルへの送迎",
+        "全入場チケット",
+        "ミネラルウォーター",
+        "昼食（現地払い）",
+        "個人的なショッピング費用",
+        "ガイドへのチップ"
       ]
     }
   ],
   "practicalWeatherStatic": {
     "today": {
       "temp": "—",
-      "label": "季節情報をご確認ください"
+      "label": "リアルタイム天気情報連携"
     },
     "tomorrow": {
       "temp": "—",
-      "label": "季節情報をご確認ください"
+      "label": "毎日更新"
     },
-    "_seasonalSummary": "済州全島ルートは漢拏山（ハルラサン）の山岳気候から南海岸の温暖な海岸気候まで複数の気候帯を通過します。薄手の上着は年中必携です。",
+    "_seasonalSummary": "A full-island loop covering east, south, and west Jeju in one day. Weather can vary between regions — coastal stops mild year-round, but inland transit can be cooler and windier.",
     "_seasonalTemperatures": [
       {
-        "season": "春（3〜5月）",
+        "season": "Spring (Mar–May)",
         "range": "8–22°C",
-        "notes": "桜（4月上旬）と菜の花が済州全島を彩ります。"
+        "notes": "Cherry blossoms on east coast in early April; mild driving conditions."
       },
       {
-        "season": "夏（6〜8月）",
+        "season": "Summer (Jun–Aug)",
         "range": "22–30°C",
-        "notes": "暑くても海岸見どころは風が涼しい。緑が深まり景観が最も鮮やか。"
+        "notes": "Hot but humidity moderated by coastal driving. Cheonjiyeon falls at peak flow."
       },
       {
-        "season": "秋（9〜11月）",
+        "season": "Autumn (Sep–Nov)",
         "range": "10–24°C",
-        "notes": "視界が最もクリアで全島ルートが特に充実します。"
+        "notes": "Best season — clearest visibility across all stops, comfortable walking temps."
       },
       {
-        "season": "冬（12〜2月）",
+        "season": "Winter (Dec–Feb)",
         "range": "3–10°C",
-        "notes": "漢拏山（ハルラサン）に雪が積もる場合あり。防寒対策を。"
+        "notes": "Wind chill significant at Seongsan rim and Jusangjeolli cliffs. Fewer crowds at all stops."
       }
     ]
   },
   "seasonalVariations": [
     {
       "season": "春",
-      "description": "山の空気が特に清々しく、島全体の視界が澄んで明るく感じられます。"
+      "description": "山の空気は特に清々しく、島全体の見通しも澄んで明るいことが多い季節です。"
     },
     {
       "season": "夏",
-      "description": "一年で日照時間が最も長く、海岸の色彩が最も鮮やかに感じられます。"
+      "description": "日照時間が最も長く、海岸の色彩が最も鮮やかで濃く感じられる傾向があります。"
     },
     {
       "season": "秋",
-      "description": "澄み渡った青空の下で全島ルートが始まりから終わりまで特に充実した体験になります。"
+      "description": "晴れた空の下では、島全体を巡るルートが始まりから終わりまで特別な充実感をもたらしてくれます。"
     },
     {
       "season": "冬",
-      "description": "空気が澄んで鋭くなり、山と海のコントラストがさらに際立ちます。"
+      "description": "空気が澄んでより清々しくなり、山と海のコントラストがいっそう際立ちます。"
     }
   ],
   "bookingTrustItems": [
     {
       "icon": "clock-3",
-      "title": "1日で見られる最大を実現",
-      "description": "時間が限られた旅行者向けに構成",
-      "iconBg": "bg-emerald-50/80",
-      "body": "地元公認ツアー催行会社。限られた時間で済州の主要ランドマークをすべてカバーしたい旅行者のために組まれたループルートです。"
+      "title": "1日で見られるものを最大限に",
+      "description": "時間に限りのある旅行者向けに設計",
+      "iconBg": "bg-emerald-50/80"
     },
     {
       "icon": "mountain",
-      "title": "代表的ななランドマークに特化",
-      "description": "漢拏山から城山まで",
-      "iconBg": "bg-sky-50/80",
-      "body": "この島内一周ルートを数百回催行してきたルート担当者が、交通状況・光の向き・混雑を考えて、無理のない順番で見どころを回ります。"
+      "title": "象徴的な名所に焦点を絞った",
+      "description": "漢拏山（ハルラサン）から城山（ソンサン）まで",
+      "iconBg": "bg-sky-50/80"
     },
     {
       "icon": "users",
-      "title": "少人数催行",
-      "description": "道路・現地状況への適応力が高い",
-      "iconBg": "bg-amber-50/80",
-      "body": "少人数形式により柔軟な対応が可能 — 天候や状況に応じて城山日出峰での滞在時間を延長したり、その他の見どころを調整できます。"
+      "title": "少人数制での催行",
+      "description": "道路や現地の状況に柔軟に対応",
+      "iconBg": "bg-amber-50/80"
     }
   ],
   "bookingSupportSteps": [
     {
-      "timing": "予約後",
-      "title": "予約確認（即時）",
-      "detail": "行程概要付きで予約確認書をお送りします",
-      "description": "お迎え場所と時刻の詳細付きで即時確認。"
+      "timing": "ご予約後",
+      "title": "即時確認",
+      "detail": "ルートの概要とともに予約確認書をお送りします。"
     },
     {
-      "timing": "12時間前",
-      "title": "12時間前リマインダー",
-      "detail": "天候情報とルート変更のお知らせ",
-      "description": "天候と各訪問地の状況に関する事前ご案内をお送りします。"
+      "timing": "出発12時間前",
+      "title": "出発前リマインダー",
+      "detail": "天気情報とルート調整に関するご案内を事前にお知らせします。"
     },
     {
       "timing": "前日の夜",
-      "title": "最終お迎え情報",
-      "detail": "正確なお迎え時刻とドライバーの連絡先",
-      "description": "前夜に最終お迎え時刻を確認いたします。"
+      "title": "最終ピックアップのご案内",
+      "detail": "正確なピックアップ時間と担当者の連絡先をお知らせします。"
     },
     {
       "timing": "出発当日の朝",
-      "title": "当日ルート情報",
-      "detail": "現地状況に基づく朝のブリーフィング",
-      "description": "天候やルート状況に関する朝のメッセージをご案内します。"
+      "title": "当日のルートに関するご案内",
+      "detail": "出発前に最新の現地情報を簡単にお知らせします。"
     },
     {
       "timing": "ツアー中",
-      "title": "各訪問地でのガイダンス",
-      "detail": "各訪問地でのリアルタイムアドバイス",
-      "description": "各訪問地で専門的な解説：漢拏山（ハルラサン）のユネスコ指定、柱状節理の地質形成、正房の滝の歴史、城山日出峰の火山学など。"
+      "title": "各立ち寄り地でのガイダンス",
+      "detail": "必要に応じて各立ち寄り地で重要な情報をご案内します。"
     },
     {
       "timing": "ツアー後",
-      "title": "ツアー後サポート",
-      "detail": "フォローアップとおすすめ情報",
-      "description": "ツアー後のフィードバックをお願いしています。済州旅行に関するご質問は当日中にお答えします。"
+      "title": "ツアー後のサポート > **注:** 7・10・13 はCSSクラス名のため、原文のまま表記しています。",
+      "detail": "必要に応じて、フォローアップサポートと追加のご提案も承ります。"
     }
   ],
   "staticQuestions": [
     {
       "id": "one-day",
-      "question": "済州滞在が1日だけの場合、このルートが最適ですか？",
-      "answer": "はい — このルートは済州の核心見どころを1日でカバーしたい旅行者のために組まれています。漢拏山（ハルラサン）、南海岸、城山日出峰という3つの主要エリアを効率よく巡ります。"
+      "question": "済州島に1日しかない場合、このルートは適切ですか？",
+      "answer": "はい。このルートは、済州島の主要観光スポットを1日でまわりたい旅行者向けに設計されており、通常の日帰りツアーよりもペースが速いです。"
     },
     {
       "id": "tiring",
-      "question": "このルートは疲れますか？",
-      "answer": "一般的な少人数日帰りツアーよりアクティブに感じられます。 トレイルと城山日出峰の登頂（任意）が最もアクティブなセクションです。ハイペースな一日ですが、各訪問地で十分な滞在時間を確保しています。"
+      "question": "このルートは疲れを感じますか？",
+      "answer": "徒歩区間が2か所ほど多く、島の広い範囲をカバーするため、通常の少人数日帰りツアーよりも活動的に感じることが多いです。"
     },
     {
       "id": "parents",
-      "question": "親と一緒の参加に適していますか？",
-      "answer": "歩行と速めの観光ペースにどれだけ対応できるかによります。全体的にアクティブなルートのため、体力に自信のあるシニアの方に向いています。"
+      "question": "両親と一緒の旅行に適していますか？",
+      "answer": "歩くことや速めの観光ペースへの慣れによります。このルートは、ゆったりとした観光よりも、アクティブな大人の旅行者に向いています。"
     },
     {
       "id": "flight",
-      "question": "到着日または出発日に参加できますか？",
-      "answer": "可能ですが、夕方に十分な時間時間の余裕がある場合に限ります。帰着は17:40〜18:00頃のため、タイトなフライトスケジュールには注意が必要です。事前に催行会社へご相談ください。"
+      "question": "済州島への到着日または出発日に参加することはできますか？",
+      "answer": "夕方に十分な余裕がある場合は可能かもしれません。フライトの時間が厳しい場合は、このルートはお勧めしません。"
     },
     {
       "id": "order",
-      "question": "当日に見どころの順序が変わることはありますか？",
-      "answer": "はい — 交通・天候・閉鎖状況に応じて見どころの順序が若干調整される場合があります。ガイドが最良の体験のために現地判断を行います。"
+      "question": "当日、立ち寄り順が変わることはありますか？",
+      "answer": "はい。1日をスムーズに進めるため、交通・天候・混雑状況に応じて、立ち寄り順が若干変更される場合があります。"
     },
     {
       "id": "seongsan-last",
-      "question": "なぜ城山日出峰が最後に設定されているのですか？",
-      "answer": "一日を強い印象で締めくくるためです。漢拏山、南海岸、正房の滝を経た後、城山日出峰の火口パノラマが最高のフィナーレになります。また、午後の光線が城山日出峰の火山岩の質感を最もよく引き出します。"
+      "question": "城山日出峰が最後に設定されているのはなぜですか？",
+      "answer": "1日をより印象的に締めくくるためです。漢拏山、南海岸、正房瀑布のあと、城山日出峰は最もシンボリックなフィナーレとして最適です。"
     },
     {
       "id": "summit",
-      "question": "城山日出峰の登頂は必須ですか？",
-      "answer": "必ずしもそうではありません。グループが登頂するかどうか、またどの程度強調するかは天候・参加者の体力・当日の状況によって変わります。麓の海岸遊歩道でも素晴らしい眺望をお楽しみいただけます。"
+      "question": "城山日出峰の山頂まで登る必要はありますか？",
+      "answer": "必ずしもそうではありません。グループが山頂まで登るかどうか、またそのセクションをどれだけ重視するかは、ペース・天候・混雑状況によって変わる場合があります。"
     }
   ],
   "guestReviews": [],
@@ -792,14 +856,14 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "予約可否は決済ステップで確認されます。",
+    "note": "checkout_tour_idはSupabase / envから実行時に解決されます。静的JSONBには含まれません。",
     "price": {
-      "amountLabel": "78",
+      "amountLabel": "",
       "currency": "USD",
-      "per": "人",
-      "priceSource": "internal",
-      "priceNote": "済州全域をめぐる少人数・二言語対応ツアーです。AtoC Korea直販のため、運行会社基準価格から10%割引が適用されます。",
-      "discountPercent": 10
+      "per": "person",
+      "priceSource": "",
+      "priceNote": "",
+      "discountPercent": null
     }
   },
   "matching_profile": {
@@ -1113,19 +1177,19 @@
       "jeongbang_falls",
       "seongsan_ilchulbong"
     ],
-    "reviews_attribution": "Reseñas verificadas por AtoC Korea. 4.7/5 average across 168 verified bookings.",
-    "unesco_fit_note": "unesco_fit=5: two ユネスコ Natural Heritage sites on route from the Jeju Volcanic Island and Lava Tubes inscription (2007) — Manjanggul Cave and Seongsan Ilchulbong. Highest possible ユネスコ density for a one-day Jeju tour.",
+    "reviews_attribution": "Reviews curated from AtoC Korea operator feedback. 4.7/5 average across 168 verified bookings.",
+    "unesco_fit_note": "unesco_fit=5: two UNESCO Natural Heritage sites on route from the Jeju Volcanic Island and Lava Tubes inscription (2007) — Manjanggul Cave and Seongsan Ilchulbong. Highest possible UNESCO density for a one-day Jeju tour.",
     "competing_products": [
       "southwest-hallasan-osulloc-aewol",
       "east-signature-nature-core",
       "jeju-southern-top-unesco-spots-tour",
       "jeju-eastern-unesco-spots-day-tour"
     ],
-    "audit_summary": "Highlights loop covers Jeju's NORTH (Hallasan ユネスコ Triple-stack at Eoseungsaengak), SOUTH (Daepo Jusangjeolli columnar lava + Jeongbang ocean-falling waterfall), and EAST (Seongsan Ilchulbong Triple-ユネスコ Surtseyan tuff cone). The single most representative single-day intro to Jeju for first-time visitors, anchored by 3 of the island's 4 ユネスコ-status volcanic sites + the Asia-unique ocean-falling waterfall.",
+    "audit_summary": "Highlights loop covers Jeju's NORTH (Hallasan UNESCO Triple-stack at Eoseungsaengak), SOUTH (Daepo Jusangjeolli columnar lava + Jeongbang ocean-falling waterfall), and EAST (Seongsan Ilchulbong Triple-UNESCO Surtseyan tuff cone). The single most representative single-day intro to Jeju for first-time visitors, anchored by 3 of the island's 4 UNESCO-status volcanic sites + the Asia-unique ocean-falling waterfall.",
     "score_rationale": {
       "high_scores": {
-        "first_time_jeju_fit=1.0": "Single best intro to Jeju's ユネスコ + volcanic identity; covers 3 cardinal directions (N/S/E) in one day",
-        "unesco_taste_fit=1.0": "Hallasan ユネスコ + Seongsan Triple ユネスコ in same day = unmatched in catalog",
+        "first_time_jeju_fit=1.0": "Single best intro to Jeju's UNESCO + volcanic identity; covers 3 cardinal directions (N/S/E) in one day",
+        "unesco_taste_fit=1.0": "Hallasan UNESCO + Seongsan Triple UNESCO in same day = unmatched in catalog",
         "geology_enthusiast_fit=1.0": "Three distinct volcanic landforms (parasitic cone, columnar lava, tuff cone) sequenced as eruptive history",
         "instagrammable_fit=1.0": "Four of the most photographed Jeju locations on a single loop",
         "asia_unique_landform_fit=1.0": "Jeongbang = only ocean-falling waterfall in Asia"
@@ -1138,7 +1202,7 @@
         "west_jeju_fit=0.3": "Loop deliberately excludes west (covered by sister tour southwest-hallasan-osulloc-aewol)"
       }
     },
-    "differentiation_vs_southwest_sister": "Same Hallasan + Jusangjeolli openers, but **east-coastal anchor at Seongsan Triple ユネスコ** (sister terminates at Aewol Cafe Street west-coast). This tour = ユネスコ + geology emphasis; sister = tea culture + sunset cafe lifestyle. Pair complementarily for guests with 2 days on Jeju: this loop on Day 1 (ユネスコ landmarks), sister on Day 2 (southwest cultural depth).",
+    "differentiation_vs_southwest_sister": "Same Hallasan + Jusangjeolli openers, but **east-coastal anchor at Seongsan Triple UNESCO** (sister terminates at Aewol Cafe Street west-coast). This tour = UNESCO + geology emphasis; sister = tea culture + sunset cafe lifestyle. Pair complementarily for guests with 2 days on Jeju: this loop on Day 1 (UNESCO landmarks), sister on Day 2 (southwest cultural depth).",
     "seasonal_window": {
       "best_months": [
         "April",
@@ -1169,21 +1233,21 @@
       "id": "hero",
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "済州グランド見どころループ",
-        "headlineLine2": "漢拏山から城山日出峰まで、1日で済州のすべてを",
+        "headlineLine1": "済州グランドハイライトループ",
+        "headlineLine2": "少人数制日帰りツアー",
         "hero": {
-          "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
           "imagePosition": "center 35%",
-          "tagline": "漢拏山から城山日出峰まで — 済州島の代表的な見どころを1日で巡る、高効率フルアイランドルート",
+          "tagline": "時間が限られた旅行者のために設計されたこの高密度ルートは、漢拏山・迫力ある南海岸の景色・滝・城山日出峰を1日でカバーします。",
           "pills": [
-            "一日観光者向け",
-            "少人数",
-            "主要観光見どころ"
+            "1日観光の方に最適",
+            "少人数制日帰りツアー",
+            "アイコニックなハイライト"
           ],
           "meta": {
             "duration": "9〜9.5時間",
-            "region": "済州全島ルート",
-            "stops": "5見どころ",
+            "region": "済州島全島ルート",
+            "stops": "5か所の立ち寄りスポット",
             "rating": 0,
             "ratingStars": 0
           }
@@ -1201,110 +1265,110 @@
           },
           {
             "id": "itinerary",
-            "label": "行程"
+            "label": "旅程"
           },
           {
             "id": "details",
-            "label": "詳細情報"
+            "label": "詳細"
           },
           {
             "id": "faq",
-            "label": "よくある質問"
+            "label": "FAQ"
           },
           {
             "id": "reviews",
-            "label": "クチコミ"
+            "label": "レビュー"
           }
         ]
       }
     },
     {
       "id": "overview",
-      "component": "TourAtAGlance",
+      "component": "ツアー概要",
       "props": {
         "glanceItems": [
           {
             "icon": "camera",
-            "label": "写真映え度",
+            "label": "撮影映え度",
             "value": "高い"
           },
           {
             "icon": "mountain",
-            "label": "景観の充実度",
+            "label": "景観の密度",
             "value": "非常に高い"
           },
           {
             "icon": "footprints",
             "label": "歩行難易度",
-            "value": "中〜高"
+            "value": "中〜高い"
           },
           {
             "icon": "cloud-rain",
             "label": "雨天適性",
-            "value": "まずまず"
+            "value": "普通"
           },
           {
             "icon": "users",
-            "label": "ファミリー適性",
-            "value": "中程度"
+            "label": "ファミリー向け度",
+            "value": "普通"
           },
           {
             "icon": "gauge",
             "label": "ペース",
-            "value": "ハイペース"
+            "value": "速い"
           }
         ]
       }
     },
     {
       "id": "atmosphere",
-      "component": "TourAtmosphereGallery",
+      "component": "ツアー雰囲気ギャラリー",
       "props": {
         "galleryItems": [
           {
             "id": 1,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-            "location": "全体ルート概要（済州島）",
-            "atmosphere": "一日で済州の代表的な景観を巡るルート",
-            "alt": "霧の中に浮かぶ漢拏山（ハルラサン）の火山丘陵の木道トレイル",
-            "caption": "（1,169m）— 漢拏山（ハルラサン）ユネスコ世界自然遺産"
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "location": "全体ルート",
+            "atmosphere": "済州の代表的な絶景を一日で巡る",
+            "alt": "済州ハイライトデイツアーの全体的な雰囲気",
+            "caption": "済州ハイライトデイツアーの全体的な雰囲気"
           },
           {
             "id": 2,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
-            "location": "漢拏山（御利目トレイル）",
-            "atmosphere": "山の清涼な空気と高地の眺め",
-            "alt": "仲問海岸に連なる大浦柱状節理の六角形玄武岩柱群と青い海",
-            "caption": "大浦柱状節理（チュサンジョルリ）— 自然記念物第443号、1kmの玄武岩絶壁"
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "location": "漢拏山・最初の立ち寄りスポット",
+            "atmosphere": "高地で味わう清々しい山の空気",
+            "alt": "漢拏山オルスンセンアクトレイルの雰囲気",
+            "caption": "漢拏山オルスンセンアクトレイルの雰囲気"
           },
           {
             "id": 3,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
-            "location": "大浦柱状節理（チュンムン）",
-            "atmosphere": "波と柱状絶壁の劇的なコントラスト",
-            "alt": "太平洋に直接落ちる正房の滝の23m垂直落下と青い海",
-            "caption": "正房の滝 — アジア唯一、海に直接落ちる滝（自然記念物第182号）"
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "location": "柱状節理帯の海岸",
+            "atmosphere": "波と断崖の劇的なコントラスト",
+            "alt": "済州の海岸に広がる大浦柱状節理帯",
+            "caption": "済州の海岸に広がる大浦柱状節理帯"
           },
           {
             "id": 4,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
-            "location": "城山日出峰（東済州）",
-            "atmosphere": "ユネスコ世界自然遺産 — 一日のクライマックス",
-            "alt": "城山日出峰のユネスコ世界自然遺産の火山火口リムからの東済州の眺望",
-            "caption": "城山日出峰（ソンサン・イルチュルボン）— グランドループのフィナーレ、ユネスコ三重指定"
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "location": "海辺の滝",
+            "atmosphere": "午後のルートに変化をもたらす景観",
+            "alt": "正房瀑布の海岸風景",
+            "caption": "正房滝の海岸風景"
           },
           {
             "id": 5,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
-            "location": "韓国",
-            "atmosphere": "韓国の美しい景観",
-            "alt": "城山日出峰の火口と海岸線",
-            "caption": "城山日出峰の火口と海岸線"
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "location": "クレーターフィナーレ",
+            "atmosphere": "強い印象を残す象徴的な締めくくりの景観",
+            "alt": "城山日出峰のクレーターと海岸線",
+            "caption": "城山日出峰のクレーターと海岸線"
           }
         ]
       }
@@ -1317,163 +1381,230 @@
           {
             "number": 1,
             "time": "09:30",
-            "duration": "75分",
-            "name": "漢拏山（ハルラサン）",
-            "category": "ユネスコ自然遺産 — 漢拏山の火山丘陵",
-            "description": "****は**漢拏山**の西側斜面に連なる寄生火山丘陵（オルム）です。漢拏山は**ユネスコ世界自然遺産（2007年）・ユネスコ生物圏保護区（2002年）・国立公園（1970年）**という韓国唯一の「自然三重指定」を有する山です。往復**1.3kmの木道トレイル**（所要約1時間）で山頂からは済州平野と済州市街地のパノラマを一望できます。",
-            "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+            "duration": "70分",
+            "name": "漢拏山・オスンセンアク",
+            "category": "漢拏山麓トレイル",
+            "description": "漢拏山の澄んだ高原の空気の中で一日が始まります。オスンセンアクは森林トレイル、火山の斜面、展望スポットをつなぎ、最初の立ち寄り地からルートに力強い幕開けをもたらします。",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
             "highlights": [
-              "**漢拏山（ハルラサン）= 韓国唯一の自然三重指定**：ユネスコ世界自然遺産・生物圏保護区・国立公園",
-              "**山頂1,169m** — 360以上あるオルム（寄生火山）の一つ",
-              "**往復1.3kmの木道トレイル** — 1時間",
-              "山頂からの済州平野・市街地の360度パノラマ"
+              "漢拏山の中でも最も気軽に訪れられる代表的な展望地のひとつ",
+              "森林トレイルと山の空気に包まれた爽やかなスタート",
+              "市街地から直接海岸へ向かうよりも、より印象深い体験",
+              "限られた時間でも強い印象を残す最初の立ち寄り地"
             ],
             "timeUsed": [
-              "御林目駐車場＋トイレ＋トレイルブリーフィング——約10分",
-              "デッキまで1.3kmの登山——約25分",
-              "写真撮影",
-              "下山——約20分",
-              "時間の余裕——約5分"
+              "到着時のトレイル説明とペースの確認",
+              "展望地に向かうメインの上り坂ウォーク",
+              "下山前の短い撮影と休憩"
             ],
-            "whyOnRoute": "涼しい午前中に最も体力を使うトレイルを配置しています。漢拏山（ハルラサン）のユネスコ自然遺産という一日のオープニング見どころとして機能します。",
-            "_poi_meta": {
-              "poi_key": "hallasan_eoseungsaengak",
-              "kb_version": "1.18",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007)",
-                "Hallasan National Park official site (hallasan.go.kr)",
-                "Korea National Park Service designation records",
-                "VisitKorea — Hallasan Eoseungsaengak trail",
-                "Korea Forest Service — Abies koreana red list status"
-              ]
-            }
+            "whyOnRoute": "ここからスタートすることで、ルートが南海岸へと向かう前に、標高感・高揚感・漢拏山の力強い雰囲気を体感することができます。",
+            "visitBasics": {
+              "hours": "05:00より開放、季節により制限あり",
+              "closed": "悪天候時は利用制限となる場合があります",
+              "admission": "無料",
+              "walking": "緩やかな傾斜"
+            },
+            "convenience": {
+              "restroom": "トレイル入口にて",
+              "parking": "駐車場あり"
+            },
+            "smartNotes": {
+              "photo": "晴天時は、稜線や遠景を捉えたワイドショットが、クローズアップのポートレートよりも効果的なことが多いです。",
+              "facilities": "基本的な施設は主に入口付近に集中しています。",
+              "tip": "特に雨の後や寒い季節は、他の多くの立ち寄り地よりも、グリップ力のある靴と防寒対策が重要です。"
+            },
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+              "https://images.unsplash.com/photo-1696440869866-b90626f1bf7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1590085309112-f67167e8da6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1665071407550-57acf1755a72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1666328756682-ab6ad7a4df03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1665688523217-852dde114c46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1593726222205-21404ff4e5fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1657938143548-dbc1e39fcf4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1664004922437-cf175d580b9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080"
+            ]
           },
           {
             "number": 2,
             "time": "11:15",
-            "duration": "45分",
-            "name": "大浦柱状節理（チュサンジョルリ）",
-            "category": "自然記念物 — 済州の玄武岩海岸絶壁",
-            "description": "**大浦柱状節理（大浦柱状節理、「チサッケ」）**は仲問海岸に広がる**1kmの六角形柱状節理玄武岩絶壁**で、**自然記念物第443号**に指定されています。高さ30〜40mの玄武岩柱が5〜7角形（主に六角形）のポリゴンを形成して1kmにわたって連なっています。約14,000〜25,000年前に漢拏山（ハルラサン）の溶岩流が海水で急冷されて形成されました。展望デッキからの観覧で体力的な負担は少ないです。",
-            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+            "duration": "40分",
+            "name": "大浦柱状節理帯",
+            "category": "玄武岩の海岸線",
+            "description": "漢拏山を下山した後、南海岸では雰囲気が一変します。波、玄武岩の柱、断崖の対比が強烈な印象を与えるスポットで、昼食前に一日の視覚的な高揚感を一気に高めます。",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
             "highlights": [
-              "**自然記念物第443号** — 済州最新の沿岸自然記念物",
-              "高さ**30〜40m**の六角形玄武岩柱が**1km**の海岸に連なる",
-              "漢拏山（ハルラサン）の溶岩流が約14,000〜25,000年前に海水で急冷されて形成",
-              "展望デッキからの観覧で平坦 — 朝一番の光線が玄武岩の質感を際立たせる"
+              "海岸線に沿って続く六角形の玄武岩柱群",
+              "漢拏山セクションの後に広がる、印象的な海食崖のコントラスト",
+              "短時間ながら視覚的インパクトが高く、効率の良い立ち寄りスポット",
+              "済州南部を代表する撮影スポットのひとつ"
             ],
             "timeUsed": [
-              "駐車＋チケット購入＋入場——約5分",
-              "最初の展望台まで——約5分",
-              "写真撮影",
-              "ボードウォークループ続行——約10分",
-              "バスに戻る"
+              "入口での簡単な説明",
+              "海岸沿いのメイン展望台まで歩く",
+              "写真撮影後、集合場所へ戻る"
             ],
-            "whyOnRoute": "のトレイル後に展望デッキからの観覧という好対照な体験。午前中の光線が玄武岩の色と質感を最もよく引き出す時間帯に訪問します。",
-            "_poi_meta": {
-              "poi_key": "daepo_jusangjeolli_cliff",
-              "kb_version": "1.18",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "Cultural Heritage Administration — Natural Monument No. 443 designation (2005-01-06)",
-                "Jeju Global Geopark official site (geopark.jeju.go.kr)",
-                "UNESCO Global Geoparks Network — Jeju (2010 designation)",
-                "VisitJeju — Daepo Jusangjeolli",
-                "Korea Geological Survey — Jeju basalt formation studies"
-              ]
-            }
+            "whyOnRoute": "午前中にさらに長い徒歩区間を加えることなく、済州南海岸の視覚的な魅力をしっかりと体感できます。",
+            "visitBasics": {
+              "hours": "09:00〜18:00（最終入場 17:40）",
+              "closed": "年中無休",
+              "admission": "大人 2,000ウォン／子ども・青少年 1,000ウォン",
+              "walking": "易〜中程度"
+            },
+            "convenience": {
+              "restroom": "入口エリア",
+              "parking": "駐車場あり（有料）"
+            },
+            "smartNotes": {
+              "photo": "波の方向、飛沫、サイドライトによって雰囲気が素早く変わるため、広角の海岸フレーミングが特に効果的です。",
+              "facilities": "入口エリアは設備が充実しており、展望台への道も比較的わかりやすいです。",
+              "tip": "晴れた日でも、海岸は済州の内陸部より肌寒く、風が強く感じられることが多いです。"
+            },
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+              "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1772268354899-1f3bf5014b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1739932413542-dc2597d7d764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+            ]
           },
           {
             "number": 3,
             "time": "12:15",
             "duration": "60分",
-            "name": "昼食（西帰浦の地元レストラン）",
-            "category": "昼食 — 別途ご負担",
-            "description": "**西帰浦中心部での60分の休憩** — 済州南部の中心都市・西帰浦で昼食（別途）。西帰浦はタチウオ漁の主要港で、タチウオ料理が名物です。",
-            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+            "name": "昼食",
+            "category": "昼食休憩",
+            "description": "これはスケジュールの単なる休憩ではありません。午後の正房瀑布と城山日出峰に備えて体力を回復させるための、重要なリセットポイントです。",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
             "highlights": [
-              "**西帰浦** — 済州南部の漁業・海鮮の中心都市",
-              "**タチウオの煮付け（カルチジョリム）**（9〜2月）、**アワビ混ぜご飯（アワビ入りビビンバ）**は年中",
-              "昼食代は別途（≈₩15,000）。ガイドがご案内します"
+              "テンポの速いルートの中で、明確に設けられた回復ポイント",
+              "東へ向かう前にエネルギーをリセットする時間",
+              "幅広い年齢層のアクティブな旅行者に対応",
+              "一日の行程が詰め込みすぎに感じられるのを防ぎます"
             ],
             "timeUsed": [
-              "昼食場所まで徒歩移動 — 約5分",
-              "注文・食事・ドリンク — 約45分",
-              "正房瀑布入口まで徒歩 — 約5分",
-              "調整時間 — 約5分"
+              "到着・着席",
+              "食事と短い休憩",
+              "午後のルートへ出発する準備"
             ],
-            "whyOnRoute": "午前のアクティブなセクションと午後のメインイベント（正房の滝・城山日出峰）の間の自然な休憩。"
+            "whyOnRoute": "ここで昼食を取ることで午後の行程が安定し、ルートが単なる移動の連続にならないようにします。",
+            "visitBasics": {
+              "hours": "レストランの営業時間による",
+              "closed": "会場によって異なる",
+              "admission": "特に記載がない限り、食事は現地払い",
+              "walking": "最小限"
+            },
+            "convenience": {
+              "restroom": "レストラン内",
+              "parking": "駐車場あり"
+            },
+            "smartNotes": {
+              "photo": "一日の大半が景観中心となるため、料理の写真はルートの視覚的なリズムに変化をもたらすのに役立ちます。",
+              "facilities": "食事関連の施設は通常、十分すぎるほど揃っています。",
+              "tip": "午後のエネルギーを失わないよう、ここでは急がずゆったりとしたペースで食事をする方が良いでしょう。"
+            },
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp"
+            ]
           },
           {
             "number": 4,
             "time": "13:35",
-            "duration": "60分",
-            "name": "正房の滝",
-            "category": "自然記念物 — アジア唯一の海に直接落ちる滝",
-            "description": "**正房の滝**は**アジア唯一、海に直接落ちる滝**です。高さ23mの垂直落下で、川床なしに太平洋に直接流れ込みます。滝の幅は8mで、潮のたびに5mの水溜まりが太平洋と交わります。自然記念物第182号に指定されており、中国の秦始皇帝の使者・徐福が不老不死の薬を求めて訪れたとする伝説も残っています。",
-            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+            "duration": "50分",
+            "name": "正房瀑布（チョンバン滝）",
+            "category": "海と出会う滝",
+            "description": "昼食後、正房瀑布はルートに全く異なるテクスチャーを加えます。石段、潮霧、そして海岸へと落ちる滝が、済州南部で最も個性的な景観のひとつを作り出しています。",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
             "highlights": [
-              "**アジア唯一、海に直接落ちる滝** — 高さ23m、川床なしの垂直落下",
-              "滝幅**8m**、5mの水溜まりが潮のたびに太平洋と交わる",
-              "**自然記念物第182号**。秦始皇帝の使者・徐福の伝説が残る歴史的名所",
-              "西帰浦港から徒歩圏内 — 済州南海岸の隠れた名勝"
+              "滝と岩礁が同じフレームに収まるコンパクトな景観",
+              "昼食後に雰囲気が大きく転換する",
+              "東へのドライブ前まで視覚的な緊張感を高く保つ",
+              "見どころが密集したルート内でも変化をもたらす"
             ],
             "timeUsed": [
-              "入場 + チケット + 下降 (130段) — 約10分",
-              "写真撮影",
-              "断崖沿い散策路と徐福碑を任意見学 — 約10分",
-              "バスに戻る",
-              "調整時間 — 約5分"
+              "到着と入場の流れを確認",
+              "メインの滝エリアを見学",
+              "撮影スポット、短い休憩、そして帰路へ"
             ],
-            "whyOnRoute": "南海岸ルートで唯一の「海に落ちる滝」という他では代替できない体験をご案内します。西帰浦昼食からすぐのアクセスで、城山日出峰への移動前に済州南海岸最後の自然見どころを見て回れます。",
-            "_poi_meta": {
-              "poi_key": "jeongbang_falls",
-              "kb_version": "1.18",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "Korea Cultural Heritage Foundation — Yeongjusipgyeong canon",
-                "VisitJeju — Jeongbang Pokpo official listing",
-                "Seogwipo City tourism office — admission and access",
-                "Korea Geological Survey — coastal waterfall inventory",
-                "Jeju Folklore Records — Xu Fu / Seobulgwacha inscription study"
-              ]
-            }
+            "whyOnRoute": "城山（ソンサン）に向けての長いドライブの前に、南海岸の印象をもう一度深めます。",
+            "visitBasics": {
+              "hours": "09:00〜17:20",
+              "closed": "通年営業",
+              "admission": "大人2,000ウォン／子供1,000ウォン",
+              "walking": "階段あり、やや体力を要する"
+            },
+            "convenience": {
+              "restroom": "入口エリア",
+              "parking": "駐車場あり"
+            },
+            "smartNotes": {
+              "photo": "下の岩場エリアは雰囲気たっぷりの写真に最適ですが、足元の悪さや波しぶきにより、より過酷に感じられる場合があります。",
+              "facilities": "基本的な施設は入口付近にあります。",
+              "tip": "階段や岩場の道があるため、地図上で見るよりも実際には体力的な負担をより感じることが多いです。"
+            },
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+              "https://images.unsplash.com/photo-1674606042265-c9f03a77e286?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1674606055132-15e511a3ac2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1761303505953-df6647dd3a46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1562680829-7927493f7a50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+            ]
           },
           {
             "number": 5,
             "time": "15:25",
-            "duration": "90分",
-            "name": "城山日出峰（ユネスコ世界自然遺産）",
-            "category": "ユネスコ自然遺産 — 済州のシンボル・フィナーレ",
-            "description": "**城山日出峰**は**5,000年前の水成噴火（スルツェイ式）で誕生した火山凝灰岩丘**です。**ユネスコ三重指定（世界自然遺産・生物圏保護区・世界地質公園）**の済州島のシンボル。標高180mの山頂には直径90mの火口が広がります。一日のグランドフィナーレとして、漢拏山（ハルラサン）から南海岸を経て東端の城山日出峰で締めくくる全島ループが完結します。",
-            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+            "duration": "70分",
+            "name": "城山日出峰（ソンサン・イルチュルボン）",
+            "category": "火山クレーターでのフィナーレ",
+            "description": "城山日出峰で締めくくることで、このルートは最も印象的なフィナーレを迎えます。漢拏山、南海岸、正房瀑布を巡った後、済州を代表するランドマークのひとつで一日を終えることで、ルート全体が完結したと感じられます。",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
             "highlights": [
-              "**ユネスコ三重指定**：世界自然遺産（2007年）・生物圏保護区（2002年）・世界地質公園（2010年）",
-              "**5,000年前** — 水成噴火（スルツェイ式）による誕生",
-              "**直径90mの火口**を囲む99本の岩柱。山頂（180m）への石段登頂（任意）",
-              "**グランドループのフィナーレ** — 済州全島を一望する最高の締めくくり"
+              "締めくくりの地となる、済州を代表するランドマーク",
+              "充実した一日の最後を飾る、圧倒的な絶景",
+              "グループのペースに応じて、山頂を目指すか下部の展望ポイントにとどまるかを選べる柔軟性",
+              "時間が限られた初めての訪問者にとって、特にわかりやすい締めくくり"
             ],
             "timeUsed": [
-              "駐車＋チケット＋麓ブリーフィング——約10分",
-              "サミットデッキまでの登山（0.8km／高低差140m）——約30分",
-              "写真撮影",
-              "下山——約20分",
-              "オプション：麓での海女実演見学（15:00デモ）——約10分"
+              "到着後のルートおよび歩行ペースに関する説明",
+              "メインウォークまたは下部展望台オプション",
+              "写真撮影・集合を済ませ、済州市へ出発"
             ],
-            "whyOnRoute": "一日を最も力強い印象で締めくくるためにフィナーレに配置しています。午後の光線が城山日出峰の玄武岩の質感を最もよく引き出します。",
-            "_poi_meta": {
-              "poi_key": "seongsan_ilchulbong",
-              "kb_version": "1.18",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
-                "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
-                "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
-                "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
-                "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
-              ]
-            }
+            "whyOnRoute": "一日を締めくくる最も象徴的な場所であり、このルートを真の済州島一周ハイライトの旅として完成させるスポットです。",
+            "visitBasics": {
+              "hours": "有料入場時間は季節によって異なる場合があります",
+              "closed": "毎月第1月曜日は休業（祝日の場合は翌日）",
+              "admission": "大人5,000ウォン／子供2,500ウォン",
+              "walking": "山頂を目指す場合は中程度〜やや体力が必要な難易度"
+            },
+            "convenience": {
+              "restroom": "下部エリアおよび周辺施設",
+              "parking": "大型駐車場あり"
+            },
+            "smartNotes": {
+              "photo": "山頂だけを撮影するよりも、クレーターと海岸線の両方を収めた広い構図の方が、より印象的な仕上がりになることが多いです。",
+              "facilities": "ベースエリアの施設は充実しています。",
+              "tip": "混雑状況・天候・グループの体力レベルによって、山頂体験の難易度と満足度は大きく変わります。"
+            },
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+              "https://images.unsplash.com/photo-1616798249081-30877e213b16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1593104197164-96718e943b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1584263577189-f86c4b105154?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1710006876254-48250c2dbcfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1584802530491-65fad8b1b92c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1743685889737-d699283d139c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+            ]
           }
         ]
       }
@@ -1484,27 +1615,27 @@
       "props": {
         "routeFlowStops": [
           {
-            "name": "御乗生岳",
-            "theme": "漢拏山",
+            "name": "御乗生岳（オスンセンアク）",
+            "theme": "漢拏山（ハルラサン）",
             "type": "01"
           },
           {
-            "name": "柱状節理",
+            "name": "柱状節理（チュサンジョルリ）",
             "theme": "断崖",
             "type": "02"
           },
           {
-            "name": "昼食",
-            "theme": "リフレッシュ",
+            "name": "ランチ",
+            "theme": "リセット",
             "type": "03"
           },
           {
-            "name": "正房滝",
+            "name": "正房（チョンバン）",
             "theme": "滝",
             "type": "04"
           },
           {
-            "name": "城山",
+            "name": "城山（ソンサン）",
             "theme": "火口",
             "type": "05"
           }
@@ -1512,23 +1643,23 @@
         "routePhases": [
           {
             "phase": "午前",
-            "duration": "1-2",
-            "description": "漢拏山（ハルラサン）のトレイル（往復1.3km）で一日を幕開け、仲問海岸の大浦柱状節理の玄武岩絶壁へ。"
+            "duration": "1〜2",
+            "description": ""
           },
           {
-            "phase": "昼頃〜午後早め",
-            "duration": "3-4",
-            "description": "西帰浦中心部で昼食（別途）の後、アジア唯一の海に直接落ちる正房の滝へ。"
+            "phase": "昼から午後早め",
+            "duration": "3〜4",
+            "description": ""
           },
           {
             "phase": "フィナーレ",
             "duration": "5",
-            "description": "城山日出峰（ユネスコ三重指定）で一日を締めくくります — 火山火口への登頂（任意）と海岸遊歩道。"
+            "description": ""
           }
         ],
         "routeShapeIntro": {
           "title": "一日の流れ",
-          "subtitle": "漢拏山（ハルラサン）から始まり、南海岸を経て、城山日出峰でフィナーレを迎えます。お迎えは通常8:30〜9:00、済州市への帰着は17:40〜18:00頃です。"
+          "subtitle": "ルートは漢拏山からスタートし、南海岸を経由して城山日出峰で終わります。送迎は通常08:30〜09:00の間に行われ、済州市への帰着は17:40〜18:00頃となります。"
         }
       }
     },
@@ -1538,194 +1669,207 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "済州滞在が1日のみの旅行者",
-            "代表的ななランドマークを効率よく巡りたい旅行者",
-            "済州全島を一日で味わいたいアクティブな旅行者"
+            "済州島での滞在が1日だけの旅行者",
+            "午前中に済州島に到着する旅行者",
+            "代表的な観光スポットを訪れたい旅行者",
+            "アクティブな観光を楽しむ旅行者"
           ],
           "routeLogicSections": [
             {
-              "title": "このルートの推薦理由",
+              "title": "時間が限られている旅行者のために設計されたツアー",
               "icon": "clock-3",
               "iconBg": "bg-amber-50/80",
               "items": [
                 {
-                  "label": "見どころ",
-                  "detail": "ガイドが詳しくご案内します。"
+                  "label": "漢拏山からスタート",
+                  "detail": "漢拏山からスタートすることで、島を横断するドライブが始まる前に、済州島の山岳地形を強く印象づけることができます。"
                 },
                 {
-                  "label": "見どころ",
-                  "detail": "ガイドが詳しくご案内します。"
+                  "label": "南海岸を中間に配置する",
+                  "detail": "柱状節理帯、ランチ、正房瀑布により、西から東への流れを保ちながら、一日を通じて高い視覚的密度が維持されます。"
                 },
                 {
-                  "label": "見どころ",
-                  "detail": "ガイドが詳しくご案内します。"
+                  "label": "城山日出峰でフィニッシュ",
+                  "detail": "城山で締めくくることで、ルートが各地域の個別の立ち寄りではなく、済州島のハイライトを網羅した完結した旅のように感じられます。"
                 }
               ]
             },
             {
-              "title": "このルートの推薦理由",
+              "title": "この一日が特に充実して感じられる理由",
               "icon": "mountain",
               "iconBg": "bg-sky-50/80",
               "items": [
                 {
-                  "label": "歩行量",
-                  "detail": "ガイドが詳しくご案内します。"
+                  "label": "アクティブな徒歩区間がさらに2つ",
+                  "detail": "御乗生岳と城山日出峰により、このルートは一般的な少人数日帰りツアーよりも体をよく使う内容となっています。"
                 },
                 {
-                  "label": "見どころ",
-                  "detail": "ガイドが詳しくご案内します。"
+                  "label": "景観の密度を優先",
+                  "detail": "これはのんびり眺めるルートではありません。済州島をより充実した、力強い体験として一日で楽しみたい旅行者のために設計されています。"
                 },
                 {
-                  "label": "見どころ",
-                  "detail": "ガイドが詳しくご案内します。"
+                  "label": "時間が限られているときに特に価値がある",
+                  "detail": "1日しか時間がない場合、ペースをゆったりしすぎるよりも、済州島を代表する主要な観光スポットに集中した方が有意義なことが多いです。"
                 }
               ]
             },
             {
-              "title": "このルートの推薦理由",
+              "title": "現地の状況が変わる場合",
               "icon": "wind",
               "iconBg": "bg-slate-50/80",
               "items": [
                 {
-                  "label": "見どころ",
-                  "detail": "ガイドが詳しくご案内します。"
+                  "label": "漢拏山（ハルラサン）への入山規制",
+                  "detail": "オスンセンアクは、季節的な規制や天候に関する規制の影響を受ける場合があります。"
                 },
                 {
-                  "label": "見どころ",
-                  "detail": "ガイドが詳しくご案内します。"
+                  "label": "海岸沿いの開けたスポットでの強風",
+                  "detail": "チュサンジョルリ（柱状節理帯）と城山日出峰（ソンサンイルチュルボン）は、天候の影響を最も受けやすい2つの海岸ハイライトです。"
                 },
                 {
-                  "label": "見どころ",
-                  "detail": "ガイドが詳しくご案内します。"
+                  "label": "帰着時刻が若干変更になる場合があります",
+                  "detail": "交通状況、グループの歩行ペース、現地の混雑状況などにより、最終的な帰着時刻が多少変更になる場合があります。"
                 }
               ]
             }
           ],
           "lessIdealFor": [
-            "ゆっくりペースを好む旅行者",
-            "ベビーカーが必要なグループ",
-            "タイトな夕方フライトのある旅行者"
+            "ゆっくりとした旅を好む旅行者",
+            "階段や上り坂を避けたい旅行者",
+            "幼い子どもを連れたグループ",
+            "ベビーカーを多用するグループ"
           ]
         }
       }
     },
     {
       "id": "practical",
-      "component": "TourPracticalDetails",
+      "component": "ツアー実用情報",
       "props": {
         "practicalAccordionItems": [
           {
             "id": "pickup",
-            "title": "お迎えと解散時刻",
-            "preview": "早めの出発、夕方に済州市に帰着。",
+            "title": "送迎・帰着時刻",
+            "preview": "早朝出発、夕方に済州市へ帰着",
             "content": [
-              "済州市のホテルロビーからのお迎え（8:30〜9:00）。",
-              "済州市への帰着は通常17:40〜18:00頃。",
-              "前日にWhatsAppにてお迎え時刻を確認いたします。"
+              "済州市内での送迎は08:30〜09:00の間",
+              "17:40〜18:00頃に済州市へ帰着",
+              "状況に応じて空港送迎の手配も可能",
+              "最終的な集合時刻は前日夜に確定されます"
             ]
           },
           {
             "id": "walking",
-            "title": "歩行と地形",
-            "preview": "通常のルートより活動量が多めです。",
+            "title": "徒歩と地形",
+            "preview": "標準ルートよりもアクティブ",
             "content": [
-              "通常のルートより活動量が多めです。",
-              "トレイル：往復1.3kmの木道（起伏あり）。",
-              "城山日出峰：急な石段（≈600段）への登頂（任意）。",
-              "正房の滝：海岸への下り階段あり。",
-              "大浦柱状節理：展望デッキからの観覧で平坦。",
-              "動きやすい靴をお履きください。"
+              "このルートには、比較的アクティブな歩行区間が2か所含まれています。",
+              "オスンセンアクには上り坂と階段があります。",
+              "正房瀑布（チョンバン滝）には階段と岩場の遊歩道があります。",
+              "グループが山頂を目指す場合、城山日出峰はより体力を要すると感じられます。",
+              "グリップ力の高い歩きやすい靴を強くお勧めします。"
             ]
           },
           {
             "id": "weather",
-            "title": "天候と閉鎖時の調整",
-            "preview": "通常は予定通り催行、必要に応じて調整します。",
+            "title": "天候・休業に伴うプログラム変更",
+            "preview": "通常は予定通り催行し、必要に応じて変更します",
             "content": [
-              "通常は予定通り催行します。",
-              "悪天候時はトレイルや城山日出峰の山頂が閉鎖になる場合があります。",
-              "12時間前に状況をお知らせします。"
+              "小雨の場合：通常通りツアーは催行されます",
+              "強風：柱状節理帯（チュサンジョルリ）や城山日出峰（ソンサンイルチュルボン）などの吹きさらしのエリアでは、滞在時間が短くなる場合があります",
+              "漢拏山の制限：御乗生岳（オスンセンアク）への立ち入りが制限されている場合、ルートを変更または代替コースに切り替える場合があります",
+              "休業日：必要に応じて代替スポットへの変更や滞在時間の調整が行われる場合があります"
             ]
           },
           {
             "id": "flight",
-            "title": "当日到着・出発の方へ",
-            "preview": "夕方に余裕のある時間時間の余裕が必要です。",
+            "title": "済州への到着・出発が同日の場合",
+            "preview": "夜に十分なバッファ時間が必要です",
             "content": [
-              "帰着は17:40〜18:00頃のため、夕方のフライトには十分な余裕が必要です。",
-              "タイトなフライトスケジュールの場合は事前に催行会社へご相談ください。"
+              "済州の主要スポットを1日で巡る、内容の濃いルートです。",
+              "同日の到着・出発もスケジュール次第で対応可能ですが、夜に十分な余裕時間を確保した場合に限ります。",
+              "遅い時間帯のフライトを強くお勧めします。",
+              "タイミングのリスクを判断する際は、交通状況・歩行ペース・現地の状況を十分にご考慮ください。"
             ]
           },
           {
             "id": "wear",
-            "title": "持ち物と服装",
-            "preview": "歩きやすい靴、重ね着、軽い防風ジャケット。",
+            "title": "服装と持ち物",
+            "preview": "ウォーキングシューズ、重ね着、軽量の防風ジャケット",
             "content": [
-              "歩きやすい靴（グリップあり）必須。",
-              "天候が変わりやすいため重ね着と防風ジャケットをお勧めします。",
-              "日焼け止め・帽子・飲料水を持参ください。"
+              "グリップ力のあるウォーキングシューズ",
+              "山と海岸の気温差に対応した重ね着",
+              "軽量の防風ジャケット",
+              "帽子と日焼け対策",
+              "水筒"
             ]
           },
           {
             "id": "included",
             "title": "含まれるもの・含まれないもの",
-            "preview": "ガイド、車両、お迎え、入場料込み。",
-            "variant": "included",
+            "preview": "ガイド、車両、送迎、入場料が含まれます",
+            "variant": "含まれるもの",
             "content": [
-              "含まれるもの：ガイド、エアコン付き車両、お迎え・解散、全入場料。",
-              "含まれないもの：昼食（≈₩15,000）、飲料、チップ。"
+              "プロの英語ガイド",
+              "小グループ用車両",
+              "済州市内ホテルへの送迎",
+              "すべての入場券",
+              "ペットボトルの水",
+              "昼食（現地払い）",
+              "個人のショッピング費用",
+              "ガイドへのチップ"
             ]
           }
         ],
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "季節情報をご確認ください"
+            "label": "リアルタイム天気連携"
           },
           "tomorrow": {
             "temp": "—",
-            "label": "季節情報をご確認ください"
+            "label": "毎日更新"
           },
-          "_seasonalSummary": "済州全島ルートは漢拏山（ハルラサン）の山岳気候から南海岸の温暖な海岸気候まで複数の気候帯を通過します。薄手の上着は年中必携です。",
+          "_seasonalSummary": "A full-island loop covering east, south, and west Jeju in one day. Weather can vary between regions — coastal stops mild year-round, but inland transit can be cooler and windier.",
           "_seasonalTemperatures": [
             {
-              "season": "春（3〜5月）",
+              "season": "Spring (Mar–May)",
               "range": "8–22°C",
-              "notes": "桜（4月上旬）と菜の花が済州全島を彩ります。"
+              "notes": "Cherry blossoms on east coast in early April; mild driving conditions."
             },
             {
-              "season": "夏（6〜8月）",
+              "season": "Summer (Jun–Aug)",
               "range": "22–30°C",
-              "notes": "暑くても海岸見どころは風が涼しい。緑が深まり景観が最も鮮やか。"
+              "notes": "Hot but humidity moderated by coastal driving. Cheonjiyeon falls at peak flow."
             },
             {
-              "season": "秋（9〜11月）",
+              "season": "Autumn (Sep–Nov)",
               "range": "10–24°C",
-              "notes": "視界が最もクリアで全島ルートが特に充実します。"
+              "notes": "Best season — clearest visibility across all stops, comfortable walking temps."
             },
             {
-              "season": "冬（12〜2月）",
+              "season": "Winter (Dec–Feb)",
               "range": "3–10°C",
-              "notes": "漢拏山（ハルラサン）に雪が積もる場合あり。防寒対策を。"
+              "notes": "Wind chill significant at Seongsan rim and Jusangjeolli cliffs. Fewer crowds at all stops."
             }
           ]
         },
         "seasonalVariations": [
           {
             "season": "春",
-            "description": "山の空気が特に清々しく、島全体の視界が澄んで明るく感じられます。"
+            "description": "山の空気が特に清々しく感じられ、島全体の見通しがより澄んで明るくなることが多いです。"
           },
           {
             "season": "夏",
-            "description": "一年で日照時間が最も長く、海岸の色彩が最も鮮やかに感じられます。"
+            "description": "日照時間が最も長く、海岸の色彩が最も鮮やかで濃く感じられる季節です。"
           },
           {
             "season": "秋",
-            "description": "澄み渡った青空の下で全島ルートが始まりから終わりまで特に充実した体験になります。"
+            "description": "澄んだ空のもと、島全体のルートが始まりから終わりまで特に充実したものに感じられることが多いです。"
           },
           {
             "season": "冬",
-            "description": "空気が澄んで鋭くなり、山と海のコントラストがさらに際立ちます。"
+            "description": "空気が一層鋭く澄み渡り、山と海のコントラストがさらに際立ちます。"
           }
         ]
       }
@@ -1737,112 +1881,103 @@
         "bookingSupportSteps": [
           {
             "timing": "予約後",
-            "title": "予約確認（即時）",
-            "detail": "行程概要付きで予約確認書をお送りします",
-            "description": "お迎え場所と時刻の詳細付きで即時確認。"
+            "title": "即時確認",
+            "detail": "ルートの概要とともに予約確認書が送付されます。"
           },
           {
             "timing": "12時間前",
-            "title": "12時間前リマインダー",
-            "detail": "天候情報とルート変更のお知らせ",
-            "description": "天候と各訪問地の状況に関する事前ご案内をお送りします。"
+            "title": "出発前リマインダー",
+            "detail": "天候に関する情報とルート変更のガイダンスが事前に共有されます。"
           },
           {
-            "timing": "前日の夜",
-            "title": "最終お迎え情報",
-            "detail": "正確なお迎え時刻とドライバーの連絡先",
-            "description": "前夜に最終お迎え時刻を確認いたします。"
+            "timing": "前夜",
+            "title": "最終送迎通知",
+            "detail": "正確なお迎えの時間と連絡先が送られます。"
           },
           {
             "timing": "出発当日の朝",
-            "title": "当日ルート情報",
-            "detail": "現地状況に基づく朝のブリーフィング",
-            "description": "天候やルート状況に関する朝のメッセージをご案内します。"
+            "title": "当日のルートノート",
+            "detail": "出発前に最新の現地情報が簡単にお知らせされます。"
           },
           {
             "timing": "ツアー中",
-            "title": "各訪問地でのガイダンス",
-            "detail": "各訪問地でのリアルタイムアドバイス",
-            "description": "各訪問地で専門的な解説：漢拏山（ハルラサン）のユネスコ指定、柱状節理の地質形成、正房の滝の歴史、城山日出峰の火山学など。"
+            "title": "各スポットでのガイダンス",
+            "detail": "必要に応じて、各スポットで重要な情報が共有されます。"
           },
           {
             "timing": "ツアー後",
-            "title": "ツアー後サポート",
-            "detail": "フォローアップとおすすめ情報",
-            "description": "ツアー後のフィードバックをお願いしています。済州旅行に関するご質問は当日中にお答えします。"
+            "title": "ツアー後のサポート",
+            "detail": "必要に応じてフォローアップサポートと追加のご提案をご利用いただけます。"
           }
         ],
         "bookingTrustItems": [
           {
             "icon": "clock-3",
-            "title": "1日で見られる最大を実現",
-            "description": "時間が限られた旅行者向けに構成",
-            "iconBg": "bg-emerald-50/80",
-            "body": "地元公認ツアー催行会社。限られた時間で済州の主要ランドマークをすべてカバーしたい旅行者のために組まれたループルートです。"
+            "title": "1日で見られるものを最大限に楽しめます。",
+            "description": "限られた時間の旅行者向けに設計されています。",
+            "iconBg": "`bg-emerald-50/80` *(CSSクラス名・そのまま)*"
           },
           {
             "icon": "mountain",
-            "title": "代表的ななランドマークに特化",
-            "description": "漢拏山から城山まで",
-            "iconBg": "bg-sky-50/80",
-            "body": "この島内一周ルートを数百回催行してきたルート担当者が、交通状況・光の向き・混雑を考えて、無理のない順番で見どころを回ります。"
+            "title": "象徴的な観光名所に特化",
+            "description": "漢拏山から城山まで全域を網羅",
+            "iconBg": "`bg-sky-50/80` *(CSSクラス名・そのまま)*"
           },
           {
             "icon": "users",
-            "title": "少人数催行",
-            "description": "道路・現地状況への適応力が高い",
-            "iconBg": "bg-amber-50/80",
-            "body": "少人数形式により柔軟な対応が可能 — 天候や状況に応じて城山日出峰での滞在時間を延長したり、その他の見どころを調整できます。"
+            "title": "少人数制での運営",
+            "description": "道路や現地の状況により柔軟に対応できる",
+            "iconBg": "`bg-amber-50/80` *(CSSクラス名・そのまま)*"
           }
         ]
       }
     },
     {
       "id": "faq",
-      "component": "TourFaqSection",
+      "component": "`TourFaqSection` *(コンポーネント名・そのまま)*",
       "props": {
         "staticQuestions": [
           {
             "id": "one-day",
-            "question": "済州滞在が1日だけの場合、このルートが最適ですか？",
-            "answer": "はい — このルートは済州の核心見どころを1日でカバーしたい旅行者のために組まれています。漢拏山（ハルラサン）、南海岸、城山日出峰という3つの主要エリアを効率よく巡ります。"
+            "question": "済州に1日しかいられない場合、このルートは合っていますか？",
+            "answer": "はい。このルートは、済州の主要な観光名所を1日で巡りたい旅行者向けに設計されており、通常の日帰りツアーよりもペースが速くなっています。"
           },
           {
             "id": "tiring",
-            "question": "このルートは疲れますか？",
-            "answer": "一般的な少人数日帰りツアーよりアクティブに感じられます。 トレイルと城山日出峰の登頂（任意）が最もアクティブなセクションです。ハイペースな一日ですが、各訪問地で十分な滞在時間を確保しています。"
+            "question": "このルートは体力的にきつく感じますか？",
+            "answer": "歩くセクションが2か所ほど多く、島の広い範囲をカバーするルートのため、通常の少人数日帰りツアーよりも活動的に感じることが多いです。"
           },
           {
             "id": "parents",
-            "question": "親と一緒の参加に適していますか？",
-            "answer": "歩行と速めの観光ペースにどれだけ対応できるかによります。全体的にアクティブなルートのため、体力に自信のあるシニアの方に向いています。"
+            "question": "親と一緒の旅行にも適していますか？",
+            "answer": "それは、ご両親の歩行への慣れや速めの観光ペースへの対応力によります。このルートは、のんびりとした観光旅行よりも、活動的な大人の旅行者に向いています。"
           },
           {
             "id": "flight",
-            "question": "到着日または出発日に参加できますか？",
-            "answer": "可能ですが、夕方に十分な時間時間の余裕がある場合に限ります。帰着は17:40〜18:00頃のため、タイトなフライトスケジュールには注意が必要です。事前に催行会社へご相談ください。"
+            "question": "済州に到着する日や出発する日でも参加できますか？",
+            "answer": "状況によっては可能ですが、夕方に十分な余裕がある場合に限ります。フライトの時間が迫っている場合は、このルートはお勧めできません。"
           },
           {
             "id": "order",
-            "question": "当日に見どころの順序が変わることはありますか？",
-            "answer": "はい — 交通・天候・閉鎖状況に応じて見どころの順序が若干調整される場合があります。ガイドが最良の体験のために現地判断を行います。"
+            "question": "当日、立ち寄り地点の順番が変わることはありますか？",
+            "answer": "はい。スムーズな進行を保つため、交通・天候・混雑状況によって立ち寄り順が多少変更される場合があります。"
           },
           {
             "id": "seongsan-last",
-            "question": "なぜ城山日出峰が最後に設定されているのですか？",
-            "answer": "一日を強い印象で締めくくるためです。漢拏山、南海岸、正房の滝を経た後、城山日出峰の火口パノラマが最高のフィナーレになります。また、午後の光線が城山日出峰の火山岩の質感を最もよく引き出します。"
+            "question": "城山日出峰が最後に設定されているのはなぜですか？",
+            "answer": "より印象的な締めくくりになるからです。漢拏山、南海岸、正房瀑布を訪れた後、城山は最もシンボリックなフィナーレとして最適な場所です。"
           },
           {
             "id": "summit",
-            "question": "城山日出峰の登頂は必須ですか？",
-            "answer": "必ずしもそうではありません。グループが登頂するかどうか、またどの程度強調するかは天候・参加者の体力・当日の状況によって変わります。麓の海岸遊歩道でも素晴らしい眺望をお楽しみいただけます。"
+            "question": "城山日出峰の頂上まで登る必要がありますか？",
+            "answer": "必ずしもそうではありません。グループが頂上まで登るかどうか、またそのセクションをどの程度重視するかは、ペース・天候・混雑状況によって変わる場合があります。"
           }
         ]
       }
     },
     {
       "id": "reviews",
-      "component": "TourReviewsSection",
+      "component": "`TourReviewsSection` *(コンポーネント名・そのまま)*",
       "props": {
         "guestReviews": [],
         "reviewsSummary": {
@@ -1881,99 +2016,36 @@
     },
     {
       "id": "sticky_booking",
-      "component": "TourStickyBookingBar",
+      "component": "`TourStickyBookingBar` *(コンポーネント名・そのまま)*",
       "props": {
-        "note": "予約可否は決済ステップで確認されます。",
+        "note": "`checkout_tour_id` は Supabase / 環境変数から実行時に解決されます。静的 JSONB には含まれません。",
         "price": {
           "amountLabel": "78",
           "currency": "USD",
-          "per": "人",
+          "per": "person",
           "priceSource": "internal",
-          "priceNote": "済州全域をめぐる少人数・二言語対応ツアーです。AtoC Korea直販のため、運行会社基準価格から10%割引が適用されます。",
+          "priceNote": "少人数制バイリンガル全島ツアー。AtoC Korea 直販；オペレーター基本価格より10%割引適用。",
           "discountPercent": 10
         }
       }
     }
   ],
   "pickup_dropoff": {
-    "departure": [
+    "type": "hotel_lobby",
+    "meeting_points": [
       {
-        "order": 1,
-        "time": "08:30",
-        "name": "オーシャンスイーツ済州ホテル",
-        "type": "hotel",
-        "note": "ホテルロビーでお待ちください。ガイドはAtoCKoreaのサインを持っています。",
-        "lat": 33.4944,
-        "lng": 126.4808
-      },
-      {
-        "order": 2,
-        "time": "08:45",
-        "name": "済州国際空港（3F 3番ゲート）",
-        "type": "airport",
-        "note": "3階出発エリア。3番ゲートの案内板に従ってください。",
-        "lat": 33.5108,
-        "lng": 126.4932
-      },
-      {
-        "order": 3,
-        "time": "08:55",
-        "name": "ロッテシティホテル済州",
-        "type": "hotel",
-        "note": "メインロビーでお待ちください。ガイドがお名前をお呼びします。",
-        "lat": 33.4963,
-        "lng": 126.4865
-      },
-      {
-        "order": 4,
-        "time": "09:05",
-        "name": "新羅免税店 済州店",
-        "type": "shopping",
-        "note": "新羅免税店済州店のメインエントランス前でお会いしましょう。",
-        "lat": 33.4958,
-        "lng": 126.5252
+        "name": "済州市内ホテルのロビー",
+        "time": "08:00–08:30"
       }
     ],
-    "return": [
+    "dropoff_points": [
       {
-        "order": 1,
-        "name": "オーシャンスイーツ済州ホテル",
-        "type": "hotel",
-        "lat": 33.4944,
-        "lng": 126.4808
-      },
-      {
-        "order": 2,
-        "name": "済州国際空港（3F 3番ゲート）",
-        "type": "airport",
-        "lat": 33.5108,
-        "lng": 126.4932
-      },
-      {
-        "order": 3,
-        "name": "ロッテシティホテル済州",
-        "type": "hotel",
-        "lat": 33.4963,
-        "lng": 126.4865
-      },
-      {
-        "order": 4,
-        "name": "新羅免税店 済州店",
-        "type": "shopping",
-        "lat": 33.4958,
-        "lng": 126.5252
-      },
-      {
-        "order": 5,
-        "name": "東門在来市場",
-        "type": "market",
-        "lat": 33.5136,
-        "lng": 126.5296
+        "name": "済州市内ホテル（帰路）",
+        "approx_time": "≈ 18:00〜18:30"
       }
     ],
-    "notes": [
-      "帰着は通常17:30〜18:00頃となります。"
-    ]
+    "hotel_pickup_available": true,
+    "notes": "10時間の全島ルートのため、早めのピックアップ（08:00〜08:30）；最終時刻は前夜に確定します。状況によっては空港でのピックアップも対応可能な場合があります。"
   },
   "itinerary_variants": [],
   "_publication": {
@@ -1984,10 +2056,10 @@
       "v15_unified"
     ],
     "fix_passes": {
-      "v15_unified": "Migrated from small-group v1 schema to v15 canonical: schema_version 1→7; SEO expanded (primaryKeywords, ogImage, title); price expanded (priceSource, priceNote, discountPercent); routeFlowStops id→type; routePhases stripped of Tailwind classes (bgClass/dotClass/textClass), reshaped to {phase,duration,description}; seasonalVariations stripped of Tailwind, reshaped to {season,description}; whyTourWorks.lessIdeal→lessIdealFor; practicalWeatherStatic gained _seasonalSummary and _seasonalTemperatures; product profile expanded to v15 canonical (≥40 fields with anchor_poi_keys, vehicle_type_legacy, seasonality, fit-vector full set); matching_metadata reformatted to anchor_pois/anchor_poi_keys/primary_themes/secondary_themes/best_for/not_recommended_for/reviews_attribution/unesco_fit_note shape; pickup_dropoff added (Schema A.1); itinerary_variants=[]; _publication block added. PRESERVED from source (richer than catalog v15): itineraryStops[*].visitBasics, .convenience, .smartNotes (operational data), guestReviews[4 each], reviewsSummary.highlights.",
+      "v15_unified": "Migrated from small-group v1 schema to v15 canonical: schema_version 1→7; SEO expanded (primaryKeywords, ogImage, title); price expanded (priceSource, priceNote, discountPercent); routeFlowStops id→type; routePhases stripped of Tailwind classes (bgClass/dotClass/textClass), reshaped to {phase,duration,description}; seasonalVariations stripped of Tailwind, reshaped to {season,description}; whyTourWorks.lessIdeal→lessIdealFor; practicalWeatherStatic gained _seasonalSummary and _seasonalTemperatures; matching_profile expanded to v15 canonical (≥40 fields with anchor_poi_keys, vehicle_type_legacy, seasonality, fit-vector full set); matching_metadata reformatted to anchor_pois/anchor_poi_keys/primary_themes/secondary_themes/best_for/not_recommended_for/reviews_attribution/unesco_fit_note shape; pickup_dropoff added (Schema A.1); itinerary_variants=[]; _publication block added. PRESERVED from source (richer than catalog v15): itineraryStops[*].visitBasics, .convenience, .smartNotes (operational data), guestReviews[4 each], reviewsSummary.highlights.",
       "v17_batch1_enhancement": {
         "date": "2026-04-28",
-        "description": "Batch 1 deep enhancement — descriptions raised to 700-1100+ chars from ~210 chars; KB-backed visitBasics/convenience/smartNotes/_poi_meta on all attraction stops; product profile adjusted with verified-fact reasoning (see _score_audit).",
+        "description": "Batch 1 deep enhancement — descriptions raised to 700-1100+ chars from ~210 chars; KB-backed visitBasics/convenience/smartNotes/_poi_meta on all attraction stops; matching_profile adjusted with verified-fact reasoning (see _score_audit).",
         "_score_audit": {
           "_methodology": "Scores on 1-5 integer scale (existing tours convention). Each delta anchored to a verified fact.",
           "scale_note": "1-5 integer scale matches 24 of 30 tours; 3 new Step3 tours use 0-1 float scale (separate harmonization task).",
@@ -2070,15 +2142,15 @@
           "Wikipedia",
           "Hallasan National Park",
           "AllTrails",
-          "市場参考資料",
+          "Trazy",
           "Inside Jeju",
           "World of Waterfalls",
-          "市場参考資料"
+          "Trip.com Korea"
         ]
       },
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

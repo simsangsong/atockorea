@@ -1,0 +1,1875 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "jeju-island-private-car-charter-tour",
+  "locale": "zh-TW",
+  "product_id": "jeju-island-private-car-charter-tour",
+  "seo": {
+    "pageTitle": "濟州島私人專車包車遊（9小時）| AtoC Korea",
+    "metaDescription": "9小時濟州私人包車遊，配持牌英語司導。提供三條推薦路線（東線、西線、全島），亦可完全自定義。",
+    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "primaryKeywords": [
+      "濟州私人包車",
+      "濟州私人一日遊",
+      "濟州定製行程遊",
+      "濟州英語導遊司機",
+      "濟州8小時私人遊"
+    ],
+    "title": "濟州私人包車 · 自選區域一日遊 · 9小時客製行程 | AtoC Korea",
+    "description": "濟州島私人包車一日遊：東部、西部或南部路線自由選擇，景點完全客製。含持照英語導遊司機，無陌生旅客同乘，飯店接送，全年開團。"
+  },
+  "catalog_card": {
+    "slug": "jeju-island-private-car-charter-tour",
+    "title": "濟州島私人包車一日遊",
+    "subtitle": "與持牌司導共遊濟州島，空調私車，行程可依您的節奏客製化。",
+    "region": "濟州（東部／西部／南部）",
+    "duration": "9小時",
+    "stopsCount": 4,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "私人包車遊",
+      "路線可自訂",
+      "飯店接送含括"
+    ],
+    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "thumbnail": "https://api.cdn.visitjeju.net/photomng/thumbnailpath/202409/20/b9661064-af2f-4197-aef0-d3d44bf6c2b5.webp",
+    "priceLabel": "按車輛計費 — 請於預訂時確認",
+    "shortCardDescription": "9小時濟州私人包車遊，配持牌司導。提供三條推薦路線（東線、西線、全島），亦可完全自定義行程。含機場接送，不含午餐及門票，路線靈活可變。",
+    "tags": [
+      "私人團",
+      "可客製路線",
+      "含飯店接送"
+    ]
+  },
+  "headlineLine1": "濟州島私人包車",
+  "headlineLine2": "完全客製化一日遊",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "車輛",
+    "priceNote": "私人包車服務（9小時，含持照英語司導）。費用按車輛計算（不按人頭）。入場費和餐費另計。AtoC Korea直接銷售；相較於合作業者底價享有10%折扣。"
+  },
+  "hero": {
+    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "imagePosition": "center 45%",
+    "tagline": "從城山日出峰到協才海灘，到天帝淵瀑布——9小時私人包車，東西南三區任選，行程完全由您決定",
+    "pills": [
+      "私人專屬車輛",
+      "持照駕駛導遊",
+      "東部／西部／南部路線"
+    ],
+    "meta": {
+      "duration": "9小時",
+      "region": "濟州全島",
+      "stops": "自定義",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "行程總覽"
+    },
+    {
+      "id": "itinerary",
+      "label": "詳細行程"
+    },
+    {
+      "id": "details",
+      "label": "注意事項"
+    },
+    {
+      "id": "faq",
+      "label": "常見問題"
+    },
+    {
+      "id": "reviews",
+      "label": "旅客評價"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "car",
+      "label": "行程類型",
+      "value": "包車專屬"
+    },
+    {
+      "icon": "map",
+      "label": "行車路線",
+      "value": "完全自訂"
+    },
+    {
+      "icon": "user-check",
+      "label": "導遊語言",
+      "value": "持照駕駛導遊"
+    },
+    {
+      "icon": "clock",
+      "label": "行程時間",
+      "value": "9小時"
+    },
+    {
+      "icon": "ticket",
+      "label": "門票費用",
+      "value": "現場自付"
+    },
+    {
+      "icon": "utensils-crossed",
+      "label": "午餐安排",
+      "value": "現場自付"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+      "alt": "城山日出峰日出峰頂",
+      "caption": "城山日出峰日出峰頂",
+      "location": "城山日出峰",
+      "atmosphere": "濟州最具代表性的UNESCO地標，東部路線的核心景點"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+      "alt": "柱狀節理玄武岩懸崖",
+      "caption": "柱狀節理玄武岩懸崖",
+      "location": "柱狀節理海岸",
+      "atmosphere": "南部海岸的六邊形玄武岩石柱"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+      "alt": "濟州西部挾才海灘",
+      "caption": "濟州西部挾才海灘",
+      "location": "挾才海灘",
+      "atmosphere": "西部海岸的翡翠海水與白色沙灘"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
+      "alt": "雪綠茶博物館與茶田",
+      "caption": "雪綠茶博物館與茶田",
+      "location": "雪綠茶田",
+      "atmosphere": "綠茶田行間排列與午後的寧靜小憩"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
+      "alt": "西歸浦天帝淵瀑布",
+      "caption": "西歸浦天帝淵瀑布",
+      "location": "天帝淵瀑布",
+      "atmosphere": "南部路線的森林瀑布"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "name": "東部路線：UNESCO與韓劇海岸",
+      "category": "城山、牛島、萬丈窟、涉地可支",
+      "description": "**濟州島東部路線**是私人包車行程的核心路線選項，以**UNESCO世界遺產城山日出峰**和著名的**韓劇拍攝地涉地可支岬角**為雙核心。東部路線全日涵蓋：城山日出峰（UNESCO三重認定）登頂或峰下海女表演；涉地可支岬角（安藤忠雄建築 + 春季油菜花 + 夏季繡球花）；城邑民俗村（朝鮮時代保存城鎮）；以及沿東部海岸的咖啡廳停靠。此路線是4條私人包車路線中**攝影景點豐富度最高**的路線，適合首次造訪濟州且希望在一日內覽遍東部精華的旅客。行程依您的節奏靈活調整，司導會根據天氣和人潮推薦最佳停靠時機。",
+      "highlights": [
+        "城山日出峰（UNESCO三重認定）— 登頂或峰下15:00海女表演",
+        "涉地可支岬角（安藤忠雄建築 + 韓劇拍攝地）",
+        "城邑民俗村（朝鮮時代保存城鎮，UNESCO韓國山寺）",
+        "東部海岸咖啡廳停靠",
+        "**攝影景點豐富度最高的私人包車路線**",
+        "春季4月：油菜花；夏季6月：繡球花；全年：城山日出峰",
+        "行程依您的節奏靈活調整",
+        "9小時私人包車服務；司導負責所有安排",
+        "適合首次造訪濟州且希望覽遍東部精華的旅客"
+      ],
+      "timeUsed": [
+        "濟州市飯店接送+至東海岸約70–90分鐘",
+        "主要景點2–3處（導遊司機根據當日現場情況調整順序）",
+        "自選午餐（通常在城山港附近海鮮餐廳）",
+        "可選牛島渡輪體驗（每人另付約8,900韓元船票；車輛停放於城山）"
+      ],
+      "whyOnRoute": "**最適合初次造訪濟州**、希望最大化代表性景點辨識度的路線。城山日出峰提供島上最具代表性的UNESCO日出峰攝影，萬丈窟（開放時）讓路線擁有其他濟州路線無可取代的地下UNESCO體驗，而涉地可支 + 城邑民俗村則補充了韓劇和民俗文化層次。四條路線中**UNESCO豐富度最高**的選項。",
+      "visitBasics": {
+        "hours": "大多數景點09:00–18:00；萬丈窟（開放時）每月第一個週三休館",
+        "closed": "城山：每月第一個週一。萬丈窟：目前關閉",
+        "admission": "各景點現場自付——城山₩5,000，萬丈窟₩4,000（開放時）",
+        "walking": "中等至較難——城山火山口登頂最為費力"
+      },
+      "convenience": {
+        "restroom": "所有主要景點設有廁所",
+        "parking": "導遊司機處理"
+      },
+      "smartNotes": {
+        "photo": "晴天清晨城山日出峰頂部是此路線最佳拍攝時機。",
+        "facilities": "城山港和鹹德海灘是最強的餐飲據點。",
+        "tip": "城山頂部登頂對老年或行動不便遊客為關鍵節點——請預留充足時間。"
+      },
+      "_poi_meta": {
+        "poi_key": "route_variant_east",
+        "verified": true,
+        "match": "route_variant_no_single_poi",
+        "constituent_pois": [
+          "seongsan_ilchulbong",
+          "udo_island",
+          "manjanggul_lava_tube",
+          "seopjikoji",
+          "seongeup_folk_village",
+          "hamdeok_seoubong_beach"
+        ],
+        "note": "Route option for private charter — represents a multi-POI bundle (Seongsan, Udo, Manjanggul, Seopjikoji, Seongeup, Hamdeok); not a single matchable POI. All constituent POIs are individually verified in KB v1.10."
+      }
+    },
+    {
+      "number": 2,
+      "name": "西部路線：海灘、茶園與咖啡廳海岸",
+      "category": "協才、翰林公園、Osulloc、涯月",
+      "description": "**濟州島西部路線**是私人包車行程的休閒路線選項，以**挾才海灘的翡翠海水**、**雪綠茶博物館的壯觀茶園**和**愛月咖啡廳街的日落海景**為三大核心。西部路線全日涵蓋：挾才海灘（濟州西海岸前三大，銀白色沙灘 + 飛揚島景觀）；翰林公園（9個主題花園，每月有命名節慶）；雪綠茶博物館 + 茶園步道（愛茉莉太平洋旗艦，免費入場）；愛月咖啡廳街（春秋季日落17:30至18:30的最佳觀賞地）；以及協在悅詩風吟濟州之家。此路線是4條私人包車路線中**最適合放鬆節奏**的選項，適合偏好海岸風光和咖啡廳文化而非密集景點拍照的旅客。",
+      "highlights": [
+        "挾才海灘 — 濟州西海岸前三大，銀白色沙灘 + 飛揚島景觀",
+        "翰林公園 — 9個主題花園，每月有命名節慶（含挾才窟熔岩管洞穴）",
+        "雪綠茶博物館 + 茶園步道（愛茉莉太平洋旗艦，免費入場）",
+        "愛月咖啡廳街 — 春秋季日落最佳觀賞地（17:30至18:30）",
+        "悅詩風吟濟州之家（免費入場，可選柚子皂DIY）",
+        "**最適合放鬆節奏的私人包車路線**",
+        "春季3至4月：油菜花；夏季6月：繡球花；全年：茶園和海灘",
+        "9小時私人包車服務；行程依您的節奏靈活調整",
+        "適合偏好海岸風光和咖啡廳文化的旅客"
+      ],
+      "timeUsed": [
+        "濟州市飯店接送+至西海岸約50–70分鐘",
+        "上午海灘+翰林公園（可選內部熔岩洞穴遊覽）",
+        "自選午餐（涯月鮑魚粥或協才海鮮）",
+        "下午Osulloc + 附近悅詩風吟濟州店，之後在涯月喝下午咖啡"
+      ],
+      "whyOnRoute": "**最適合偏好悠閒節奏**、以攝影背景和咖啡廳文化為優先的旅客，而非UNESCO清單拍照。步行量明顯少於東部路線，室內備選豐富度高（翰林公園溶洞 + 溫室、雪綠茶 + 悅詩風吟），晴天或局部多雲的天氣都同樣適合。",
+      "visitBasics": {
+        "hours": "大多數景點09:00–18:00；涯月咖啡館通常10:00–22:00",
+        "closed": "大多數全年開放",
+        "admission": "協才海灘免費；翰林公園約₩12,000；Osulloc免費；涯月咖啡館按消費",
+        "walking": "低至中等強度——適合老年人及家庭"
+      },
+      "convenience": {
+        "restroom": "所有主要景點及咖啡館設有廁所",
+        "parking": "導遊司機處理"
+      },
+      "smartNotes": {
+        "photo": "退潮時以飛揚島為背景的協才海灘——代表性拍攝；Osulloc黃金時段茶田。",
+        "facilities": "涯月擁有濟州最密集的咖啡館——熱門咖啡館建議提早佔位。",
+        "tip": "雨天濟州最靈活的路線——翰林洞穴和Osulloc是天氣預留時間站。"
+      },
+      "_poi_meta": {
+        "poi_key": "route_variant_west",
+        "verified": true,
+        "match": "route_variant_no_single_poi",
+        "constituent_pois": [
+          "hyeopjae_beach",
+          "hallim_park",
+          "osulloc_tea_museum",
+          "aewol_cafe_street"
+        ],
+        "note": "Route option for private charter — represents a multi-POI bundle (Hyeopjae, Hallim, O'sulloc, Aewol); not a single matchable POI. All constituent POIs verified in KB v1.10."
+      }
+    },
+    {
+      "number": 3,
+      "name": "南部路線：瀑布與火山海岸",
+      "category": "天地淵、柱狀節理、山房山、奧萊市場",
+      "description": "**濟州島南部路線**是私人包車行程的地質景觀路線選項，以**正房瀑布（亞洲唯一直接落入大海的瀑布）**、**大浦柱狀節理海岸（東亞最具代表性的柱狀節理）**和**天帝淵瀑布（三層瀑布 + 七仙女傳說）**為三大核心，同時造訪**漢拏山御乘生嶽**和**O'sulloc雪綠茶博物館**。南部路線是4條私人包車路線中**地質多樣性最高**的選項，一日之內涵蓋山嶽、海岸懸崖、瀑布、茶園等截然不同的地景。適合對濟州地質和自然景觀有興趣的旅客，以及希望在一日內盡覽濟州南部精華的旅客。行程依您的節奏靈活調整。",
+      "highlights": [
+        "正房瀑布 — 亞洲唯一直接落入大海的瀑布（垂直落下23公尺）",
+        "大浦柱狀節理海岸 — 東亞最具代表性的柱狀節理（天然紀念物第443號）",
+        "天帝淵瀑布 — 三層瀑布 + 仙臨橋七仙女傳說",
+        "漢拏山御乘生嶽 — UNESCO三重認定，1小時來回步道（免費入場）",
+        "O'sulloc雪綠茶博物館 — 免費入場，茶園步道",
+        "**地質多樣性最高的私人包車路線**",
+        "一日涵蓋山嶽、海岸懸崖、瀑布、茶園等截然不同地景",
+        "行程依您的節奏靈活調整；9小時私人包車服務",
+        "適合對濟州地質和自然景觀有興趣的旅客"
+      ],
+      "timeUsed": [
+        "濟州市飯店接送+至南海岸約60–90分鐘",
+        "上午瀑布+玄武岩懸崖（天地淵後柱狀節理）",
+        "西歸浦自選午餐（奧萊市場街頭小吃或中文區餐廳）",
+        "下午山房山或藥泉寺 + 逛市場後返回"
+      ],
+      "whyOnRoute": "**最適合希望在一天內體驗地質多樣性**的旅客——寺廟、瀑布、玄武岩懸崖、火山丘，以及傳統市場，涵蓋了濟州「火山島」身份認同的代表性元素。同時也是三條路線中**室內備選豐富度最高**的路線（藥泉寺主法堂、奧勒市場有頂arcade、山房窟寺洞穴）——使其成為天氣最靈活的選擇。",
+      "visitBasics": {
+        "hours": "大多數景點09:00–17:30；天地淵夜間燈光09:00–22:00；奧萊市場07:00–22:00",
+        "closed": "大多數全年開放",
+        "admission": "天地淵₩2,000；柱狀節理約₩2,000；山房窟寺約₩1,000",
+        "walking": "中等強度——天地淵步道平坦1公里；山房山臺階至洞窟寺院0.6公里"
+      },
+      "convenience": {
+        "restroom": "所有主要景點及市場多處設有廁所",
+        "parking": "導遊司機處理"
+      },
+      "smartNotes": {
+        "photo": "天地淵夜間燈光是此路線獨特拍攝亮點——在濟州主要瀑布中獨樹一幟。",
+        "facilities": "奧萊市場是濟州最強的單一美食景點——濟成麵包店章魚麵包和五味子酒。",
+        "tip": "雨天濟州最佳選擇——藥泉寺是室內避雨好去處。"
+      },
+      "_poi_meta": {
+        "poi_key": "route_variant_south",
+        "verified": true,
+        "match": "route_variant_no_single_poi",
+        "constituent_pois": [
+          "cheonjiyeon_falls",
+          "daepo_jusangjeolli_cliff",
+          "sanbangsan_mountain",
+          "yakcheonsa_temple",
+          "jeongbang_falls",
+          "olle_maeil_market"
+        ],
+        "note": "Route option for private charter — represents a multi-POI bundle (Cheonjiyeon, Jusangjeolli, Sanbangsan, Yakcheonsa, Jeongbang, Olle Market); not a single matchable POI. All constituent POIs verified in KB v1.10."
+      }
+    },
+    {
+      "number": 4,
+      "name": "客製路線：打造您的專屬行程",
+      "category": "發送您自己的行程",
+      "description": "**客製路線**是濟州島私人包車行程的完全自由選項——司導依照**您自行選擇的景點清單**，安排全日9小時的個人化濟州之旅。您可以選擇任何組合：UNESCO遺產景點（城山日出峰、漢拏山御乘生嶽）、南部海岸（正房瀑布、柱狀節理）、西部海岸（挾才海灘、雪綠茶博物館）、東部海岸（涉地可支、城邑民俗村）、特色體驗（橘子採摘、牛島渡輪、海女表演）、咖啡廳和購物，或任何您希望探索的地點。司導會提供景點之間的最佳路線建議，並根據您的節奏和天氣狀況靈活調整。9小時私人包車服務，費用根據車型和團體人數而定；所有入場費和餐費另計。",
+      "highlights": [
+        "完全自由的9小時個人化濟州之旅",
+        "自行選擇任何景點的組合",
+        "UNESCO遺產、南部海岸、西部海岸、東部海岸、特色體驗任選",
+        "司導提供景點之間的最佳路線建議",
+        "根據您的節奏和天氣狀況靈活調整",
+        "**9小時私人包車服務**；費用根據車型和團體人數而定",
+        "入場費和餐費另計",
+        "特色體驗可選：橘子採摘、牛島渡輪、海女表演",
+        "適合有特定興趣或曾多次到訪濟州的旅客"
+      ],
+      "timeUsed": [
+        "接送時與導遊司機討論計劃，或提前24小時發送",
+        "導遊司機根據實時交通、渡輪時刻表和天氣調整景點順序",
+        "在9小時服務時間內返回飯店（超時需事先協議）"
+      ],
+      "whyOnRoute": "四條路線中**最靈活的選項**。最適合多次造訪濟州的旅客、有特殊興趣（韓劇追蹤、攝影、美食、攜帶兒童的家庭）的旅客，以及4至9人團體（按車輛計費的私人包車在對比小型團體遊時，費用天平明顯傾向私人包車）。",
+      "visitBasics": {
+        "hours": "視選擇景點而定——導遊司機在預訂時告知各月休館日",
+        "closed": "視選擇景點而定",
+        "admission": "所有門票在各景點現場自付",
+        "walking": "可根據團隊的移動能力進行調整"
+      },
+      "convenience": {
+        "restroom": "所有主要景點均有",
+        "parking": "導遊司機負責所有停車"
+      },
+      "smartNotes": {
+        "photo": "提前向導遊司機發送3–5張參考照片——可大幅提升攝影構圖效果。",
+        "facilities": "午餐由您決定——預訂時告知飲食需求；導遊將預先安排餐廳。",
+        "tip": "定製路線最好在預訂確認24小時內分享詳細計劃，以確保最順暢的安排。"
+      },
+      "_poi_meta": {
+        "poi_key": "route_variant_custom",
+        "verified": true,
+        "match": "route_variant_no_single_poi",
+        "candidate_pois": [
+          "sangumburi_crater",
+          "camellia_hill",
+          "hueree_natural_park",
+          "hamdeok_seoubong_beach",
+          "songaksan_mountain",
+          "jeju_haenyeo_museum"
+        ],
+        "note": "Fully customizable route option — candidate POIs above are verified in KB v1.10 but not prescribed; final stop list determined by passenger's request at booking."
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "飯店接送",
+      "type": "origin",
+      "theme": "Start"
+    },
+    {
+      "name": "選擇路線",
+      "type": "primary",
+      "theme": "東線 / 西線 / 南線"
+    },
+    {
+      "name": "午餐休息",
+      "type": "meal",
+      "theme": "放鬆轉換"
+    },
+    {
+      "name": "下午行程",
+      "type": "primary",
+      "theme": "Continue"
+    },
+    {
+      "name": "飯店送達",
+      "type": "return",
+      "theme": "End"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "濟州飯店接送",
+      "duration": "第1站",
+      "description": "出發：濟州飯店接送"
+    },
+    {
+      "phase": "選擇您的路線",
+      "duration": "第2–4站",
+      "description": "一日遊：選擇您的路線"
+    },
+    {
+      "phase": "返回飯店",
+      "duration": "第5站",
+      "description": "結束：返回飯店"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "行程路線一覽",
+    "subtitle": "在濟州飯店於08:00至09:00接送，隨後展開完全靈活的9小時行程——東線、西線、南線或您的完全定製方案。司導根據天氣和路況靈活調整節奏。"
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "攜帶幼齡兒童（包括嬰兒）的家庭",
+      "包含長輩的多代同行團體",
+      "追尋悠閒韓劇氛圍一日遊的情侶和蜜月旅客",
+      "希望客製化路線的多次訪濟旅客",
+      "追尋特定季節景觀的攝影愛好者（油菜花、繡球花、粉黛亂子草）"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "為什麼私人包車在濟州最有優勢",
+        "icon": "car",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "濟州島地理上確實廣大",
+            "detail": "濟州島東西跨距約73公里。團體巴士遊在每個景點都要等待；私人包車省去這些時間，讓每個景點都有更充裕的停留時間。"
+          },
+          {
+            "label": "天氣變化極快",
+            "detail": "濟州小氣候每小時都在變化。司導可以將戶外景點替換為室內景點（翰林公園溶洞、雪綠茶、藥泉寺），而不會破壞整體行程。"
+          },
+          {
+            "label": "門到門的舒適體驗",
+            "detail": "飯店接送意味著不需要機場區接駁、不需要深夜巴士的壓力，也不需要攜帶行李在換乘點間步行。"
+          }
+        ]
+      },
+      {
+        "title": "如何在東部、西部和南部路線之間選擇",
+        "icon": "map",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "東部路線——初次訪客最大化地標辨識度",
+            "detail": "城山日出峰和萬丈窟是濟州兩個最強的UNESCO知名景點；東部路線提供最高的代表性識別度。"
+          },
+          {
+            "label": "西部路線——輕鬆的風景和攝影體驗",
+            "detail": "挾才海灘、翰林公園、雪綠茶和愛月構成更柔和、更適合情侶的一日遊，攝影收益強，以日落結尾。"
+          },
+          {
+            "label": "南部路線——地質奇觀的震撼感",
+            "detail": "瀑布、玄武岩懸崖、火山丘和寺廟集中在一天中，讓這條路線具有濟州最強烈的「火山島」參觀脈絡主軸。"
+          }
+        ]
+      },
+      {
+        "title": "當天可能的行程調整",
+        "icon": "clock-3",
+        "iconBg": "bg-slate-50/80",
+        "iconColor": "text-slate-698",
+        "items": [
+          {
+            "label": "天氣調整",
+            "detail": "小雨很少影響路線；強風通常縮短沿海景點的停留時間（城山日出峰、柱狀節理、愛月）。"
+          },
+          {
+            "label": "東部路線的牛島渡輪",
+            "detail": "牛島需要另行乘渡輪。車輛可以一起渡海（額外費用）或停在碼頭。渡輪時間安排影響全天整體節奏。"
+          },
+          {
+            "label": "加時服務可安排",
+            "detail": "若需要超過9小時的服務，每小時加時費用為25,000韓元，現金支付給司機，視司機可用時間而定。"
+          }
+        ]
+      }
+    ],
+    "lessIdealFor": [
+      "獨行的預算旅客（私人包車按車輛計費）",
+      "希望與其他旅客共同旅行、享受社交體驗的旅客",
+      "需要全程官方認證導遊深度解說的旅客（司導持照但非全程導覽等級的解說）",
+      "希望入場費和餐費全包的旅客"
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "接送與下車地點",
+      "preview": "濟州任一飯店接送；大廳提前10分鐘等候",
+      "content": [
+        "接送服務涵蓋濟州島任一飯店（濟州市、西歸浦、中文等）",
+        "接送時間通常安排在08:00至09:00之間",
+        "請在約定出發時間前10分鐘在飯店大廳等候",
+        "下車地點可為您的濟州飯店或島上任一地點（如晚餐餐廳或機場）",
+        "回程通常在9小時用車時間內的17:00至18:00之間",
+        "如需改期，請至少提前2天聯系合作業者"
+      ]
+    },
+    {
+      "id": "車輛",
+      "title": "車輛與人數限制",
+      "preview": "車型依團體人數和行李量分配",
+      "content": [
+        "車型依精確乘客人數和行李件數適合",
+        "預約時請填寫精確的乘客人數和行李件數",
+        "典型車型：1至3人轎車、4至5人中型SUV、6至9人Staria或Carnival廂型車",
+        "較大的團體可能需要分乘多輛車輛或另行報價"
+      ]
+    },
+    {
+      "id": "duration",
+      "title": "9小時行程與延時收費",
+      "preview": "9小時嚴格用車時間，從接送時間計算",
+      "content": [
+        "9小時用車時間從飯店接送時間開始計算",
+        "加時收費：每額外小時25,000韓元，現金支付給司機",
+        "加時視司機可用時間而定，並受服務時數規定限制",
+        "牛島渡輪的往返時間計入9小時用車時間內（除非另有協議）"
+      ]
+    },
+    {
+      "id": "extras",
+      "title": "需知額外費用",
+      "preview": "牛島渡輪、入場費和餐費須知",
+      "content": [
+        "牛島車輛渡輪：另行收費（依車型而異）；步行旅客渡輪約₩10,500來回/人",
+        "所有景點入場費在現場直接支付",
+        "餐費直接支付；司導可推薦當地特色料理（濟州黑豬、豬骨湯麵、鮑魚粥）",
+        "可選司機小費感謝，但非強制"
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "天候政策",
+      "preview": "私人包車可靈活應對濟州天氣變化",
+      "content": [
+        "小雨：大多數景點照常進行；司導可視情況調整至室內景點優先",
+        "強風：沿海景點如城山日出峰、柱狀節理和愛月可能縮短停留",
+        "臺風警報日：合作業者將主動聯系您協商改期",
+        "漢拏山降雪可能關閉1100公路；司導將以替代內陸景點替換"
+      ]
+    },
+    {
+      "id": "included",
+      "title": "費用包含項目",
+      "preview": "包含車輛和持照司導；入場費和餐費自付",
+      "variant": "included",
+      "content": [
+        "包含：私人車輛（依團體人數為轎車、SUV或廂型車）",
+        "包含：持照英語司導",
+        "包含：濟州島任一飯店接送",
+        "包含：標準路線的燃油費和過路費",
+        "不包含：各景點入場費（現場直接支付）",
+        "不包含：餐費",
+        "不包含：個人購物費用",
+        "不包含：司機小費"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "即時天氣連動"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "每日更新"
+    },
+    "_seasonalSummary": "濟州島全年氣候溫和，四條私人包車路線均可全年運行。天氣在各地區之間可能有差異——沿海景點全年氣候溫和，但漢拏山高地路段可能較為涼爽或有強風。臺風季節（7至9月）偶有強風影響部分景點。"
+  },
+  "seasonalVariations": [
+    {
+      "season": "春季",
+      "title": "油菜花季",
+      "description": "3月下旬至4月東部海岸的油菜花和賞花同時盛開；4月初進入賞花高峰。氣溫溫和、天空明朗，是四條路線最均衡的季節。",
+      "icon": "flower"
+    },
+    {
+      "season": "夏季",
+      "title": "海灘旺季",
+      "description": "挾才和鹹德海灘進入海水浴高峰，6月繡球花為西部海岸增添色彩。預計較高的溼度，8月可能有臺風天氣。",
+      "icon": "sun"
+    },
+    {
+      "season": "秋季",
+      "title": "最佳攝影季",
+      "description": "10月中旬至11月初的粉黛亂子草達到高峰；這是欣賞漢拏山和城山視野最清晰的時間安排，通常是濟州最佳攝影季節。",
+      "icon": "leaf"
+    },
+    {
+      "season": "冬季",
+      "title": "茶花與雪景",
+      "description": "12月至2月山茶花丘進入盛花期；漢拏山峰頂可能積雪。天氣寒冷但畫面效果絕佳，各主要景點遊客人數最少。",
+      "icon": "snowflake"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "當地持照合法業者",
+      "description": "持照在地合作業者，附完整保險",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "持照在地合作業者，附完整保險"
+    },
+    {
+      "icon": "route",
+      "title": "路線專家",
+      "description": "手工打磨的行程，而非千篇一律的環線",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "手工打磨的行程，而非千篇一律的環線"
+    },
+    {
+      "icon": "users",
+      "title": "精心控制團體人數",
+      "description": "依人數配置最適合的車型",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "依人數配置最適合的車型"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "即時通知",
+      "title": "即時確認",
+      "detail": "預約確認函連同行程摘要一併寄出。",
+      "description": "預約確認函連同行程摘要一併寄出。"
+    },
+    {
+      "timing": "出發前12小時",
+      "title": "出發前12小時提醒",
+      "detail": "提前分享天氣資訊及路線調整說明。",
+      "description": "提前分享天氣資訊及路線調整說明。"
+    },
+    {
+      "timing": "前一晚",
+      "title": "最終接送資訊",
+      "detail": "您將收到確切的接送時間及司機聯系方式。",
+      "description": "您將收到確切的接送時間及司機聯系方式。"
+    },
+    {
+      "timing": "行程當天早晨",
+      "title": "當日路線說明",
+      "detail": "出發前簡短分享最新的現場資訊和路況說明。",
+      "description": "出發前簡短分享最新的現場資訊和路況說明。"
+    },
+    {
+      "timing": "行程途中",
+      "title": "景點逐一說明",
+      "detail": "每個景點視需要分享相關重點資訊和即時建議。",
+      "description": "每個景點視需要分享相關重點資訊和即時建議。"
+    },
+    {
+      "timing": "行程結束後",
+      "title": "行程後支援",
+      "detail": "如需要，可提供後續支援及額外推薦。",
+      "description": "如需要，可提供後續支援及額外推薦。"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "first-time",
+      "question": "這個行程適合初次造訪濟州的旅客嗎（東部、西部或南部路線）？",
+      "answer": "是的——每條路線都涵蓋了該區域最具特色的景點，在一天的均衡行程中完整呈現。"
+    },
+    {
+      "id": "walking",
+      "question": "步行難度如何？",
+      "answer": "整體中等難度，含部分較為活躍的步行段落。"
+    },
+    {
+      "id": "family",
+      "question": "這個行程適合攜帶兒童的家庭嗎？",
+      "answer": "是的——對大多數家庭均舒適可行。"
+    },
+    {
+      "id": "seniors",
+      "question": "年長旅客參加是否方便？",
+      "answer": "是的——行程節奏和步行量對體力較佳的長輩均舒適可行。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "可訂狀態會在付款步驟中確認。",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "人"
+    }
+  },
+  "pickup_dropoff": {
+    "type": "hotel_pickup",
+    "meeting_points": [
+      {
+        "name": "濟州島任一飯店（濟州市、西歸浦、中文）",
+        "time": "08:00–09:00",
+        "note": "支援區域內飯店門到門接送"
+      },
+      {
+        "name": "濟州國際機場",
+        "time": "08:00–09:00",
+        "note": "也可安排濟州機場接送，計入9小時服務時間內。"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "濟州島內飯店（濟州市、西歸浦、中文區）",
+        "approx_time": "≈ 17:00–18:00",
+        "note": "可在同一飯店或支援區域內指定地址下車"
+      },
+      {
+        "name": "濟州機場",
+        "approx_time": "≈ 17:00–18:00",
+        "note": "可安排當天離境下車，時間計入服務時長。"
+      }
+    ],
+    "hotel_pickup_available": true,
+    "notes": "請在約定出發時間前10分鐘在飯店大廳等候。9小時用車時間從飯店接送時間開始計算。改期請求應在原預約日期前至少2天提出。加時收費為每小時25,000韓元，現金支付給司機，視司機可用時間而定。"
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "jeju-island-private-car-charter-tour",
+    "product_type": "private",
+    "route_type": "customizable",
+    "destination_region": "jeju",
+    "region_type": "jeju_all_around",
+    "vehicle_type": "private_vehicle",
+    "duration_hours": 9.0,
+    "region_tags": [
+      "jeju_all_around",
+      "jeju_east",
+      "jeju_west",
+      "jeju_south",
+      "jeju_city",
+      "jeju_seogwipo"
+    ],
+    "theme_tags": [
+      "private_charter",
+      "customizable_route",
+      "driver_guide",
+      "first_time_friendly",
+      "k_drama_filming_location",
+      "unesco",
+      "iconic_landmarks"
+    ],
+    "poi_tags": [
+      "seongsan_ilchulbong",
+      "udo_island",
+      "manjanggul_cave",
+      "seopjikoji",
+      "seongeup_folk_village",
+      "hamdeok_beach",
+      "hyeopjae_beach",
+      "hallim_park",
+      "osulloc_tea_museum",
+      "aewol_cafe_street",
+      "cheonjiyeon_falls",
+      "jusangjeolli_cliff",
+      "yakcheonsa_temple",
+      "sanbangsan",
+      "jeongbang_falls",
+      "seogwipo_olle_market",
+      "camellia_hill",
+      "sangumburi_crater"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.5,
+    "scenic_level": 0.95,
+    "photo_level": 1.0,
+    "culture_level": 0.8,
+    "relax_level": 1.0,
+    "first_time_fit": 0.95,
+    "family_fit": 1.0,
+    "senior_fit": 1.0,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 0.8,
+    "active_traveler_fit": 0.8,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 0.8,
+    "young_kids_fit": 1.0,
+    "senior_active_fit": 1.0,
+    "senior_general_fit": 1.0,
+    "mobility_friendly_fit": 1.0,
+    "stroller_fit": 0.8,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.8,
+    "rain_fit": 0.8,
+    "value_for_money_fit": 0.55,
+    "iconic_landmark_fit": 0.95,
+    "cafe_fit": 1.0,
+    "food_fit": 0.7,
+    "nature_fit": 1.0,
+    "beach_fit": 1.0,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.55,
+    "no_shopping_fit": 0.4,
+    "local_culture_fit": 0.8,
+    "storytelling_fit": 0.85,
+    "unesco_fit": 0.65,
+    "intangible_heritage_fit": 1.0,
+    "indoor_ratio": 0.2,
+    "weather_sensitivity": 0.5,
+    "comfort_level": 1.0,
+    "budget_fit": 0.4,
+    "premium_fit": 1.0,
+    "small_group_fit": 0.15,
+    "private_fit": 1.0,
+    "bus_fit": 0.05,
+    "price_band": "premium",
+    "pickup_base": "jeju_island",
+    "return_time_band": "9h_window",
+    "duration_band": "9h",
+    "min_recommended_age": 0,
+    "hard_constraints": {
+      "avoidIf": [
+        "solo_budget_traveler_seeking_lowest_price",
+        "wants_fully_included_admission_and_meals"
+      ],
+      "notIdealFor": [
+        "travelers_wanting_a_social_group_setting",
+        "guests_needing_full_certified_guide_narration"
+      ]
+    },
+    "walking_notes": [
+      "Walking load depends entirely on the chosen route and stops.",
+      "East route: Seongsan summit climb is the most demanding section; base-area viewing is an easier alternative.",
+      "West route: easy to moderate overall; Hyeopjae Beach and O'sulloc are gentle.",
+      "South route: Cheonjiyeon and Sanbangsan add the most stairs.",
+      "The driver-guide can adjust pacing on the day to match family or senior comfort.",
+      "Comfortable walking shoes with good grip are recommended."
+    ],
+    "keywords": [
+      "jeju private car charter",
+      "jeju private tour driver guide",
+      "jeju east route private tour",
+      "jeju west route private tour",
+      "jeju south route private tour",
+      "jeju customizable day tour",
+      "jeju island private vehicle tour",
+      "jeju private k drama tour",
+      "jeju seongsan udo private tour",
+      "jeju hyeopjae osulloc private tour"
+    ],
+    "synonym_hints": [
+      "jeju chauffeur tour",
+      "jeju private chartered vehicle",
+      "jeju flexible day tour",
+      "jeju door to door private tour",
+      "jeju tailor made day tour",
+      "jeju private 9 hour charter"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "jeju",
+    "vehicle_type_legacy": "private_van",
+    "anchor_poi_keys": [
+      "seongsan_ilchulbong",
+      "manjanggul_cave",
+      "hyeopjae_beach",
+      "osulloc_tea_museum",
+      "jusangjeolli_cliff",
+      "cheonjiyeon_falls"
+    ],
+    "private_tour_fit": 1.0,
+    "customizable_route_fit": 1.0,
+    "flexibility_fit": 1.0,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "embedded_for": [
+      "authoring",
+      "review",
+      "sql_backfill_reference"
+    ],
+    "note": "Scores were tuned for a fully customizable 9-hour Jeju private charter format. Comfort, mobility-friendliness, family fit, and senior fit score very high because the private format eliminates group constraints and the driver-guide handles all transit. Same-day-flight fit scores 4 because Jeju Airport is centrally located and the driver-guide can flex the route around flight times. Walking and culture levels are weighted averages across the three recommended routes; the on-the-day load can move significantly depending on the chosen route.",
+    "duration_hours": 9,
+    "stop_count": 4,
+    "score_rationale": {
+      "private_fit": "Direct match: this is a per-vehicle private charter.",
+      "mobility_friendly_fit": "Door-to-door private vehicle eliminates most public-transport mobility friction; only Seongsan summit and Cheonjiyeon stairs reduce friendliness for those specific stops.",
+      "young_kids_fit": "Best-in-class for kids because pacing, snack stops, and route choice are all adjustable.",
+      "weather_sensitivity": "Low because the driver-guide can shift toward indoor stops (Manjanggul, Hallim caves, O'sulloc, Yakcheonsa) on bad-weather days.",
+      "value_for_money_fit": "Mid: per-vehicle pricing is excellent value for groups of 4 to 9 but expensive for solo travelers.",
+      "iconic_landmark_fit": "Maxed because the route can include Seongsan, Manjanggul, Cheonjiyeon, and Jusangjeolli in any combination.",
+      "same_day_flight_fit": "Above average because Jeju Airport is central and the driver-guide can drop off there at the end of the 9 hours."
+    },
+    "anchor_pois": [
+      "Seongsan Ilchulbong",
+      "Manjanggul Cave",
+      "Hyeopjae Beach",
+      "O'sulloc Tea Museum",
+      "Jusangjeolli Cliff",
+      "Cheonjiyeon Falls"
+    ],
+    "anchor_poi_keys": [
+      "seongsan_ilchulbong",
+      "manjanggul_cave",
+      "hyeopjae_beach",
+      "osulloc_tea_museum",
+      "jusangjeolli_cliff",
+      "cheonjiyeon_falls"
+    ],
+    "competing_products": [
+      "jeju-cruise-shore-excursion-small-group-tour",
+      "jeju-eastern-unesco-spots-day-tour"
+    ]
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "濟州島私人包車",
+        "headlineLine2": "完全客製化一日遊",
+        "hero": {
+          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+          "imagePosition": "center 45%",
+          "tagline": "從城山日出峰到協才海灘，到天帝淵瀑布——9小時私人包車，東西南三區任選，行程完全由您決定",
+          "pills": [
+            "私人專屬車輛",
+            "持照駕駛導遊",
+            "東部／西部／南部路線"
+          ],
+          "meta": {
+            "duration": "9小時",
+            "region": "濟州全島",
+            "stops": "自定義",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "行程總覽"
+          },
+          {
+            "id": "itinerary",
+            "label": "詳細行程"
+          },
+          {
+            "id": "details",
+            "label": "注意事項"
+          },
+          {
+            "id": "faq",
+            "label": "常見問題"
+          },
+          {
+            "id": "reviews",
+            "label": "旅客評價"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "car",
+            "label": "行程類型",
+            "value": "包車專屬"
+          },
+          {
+            "icon": "map",
+            "label": "行車路線",
+            "value": "完全自訂"
+          },
+          {
+            "icon": "user-check",
+            "label": "導遊語言",
+            "value": "持照駕駛導遊"
+          },
+          {
+            "icon": "clock",
+            "label": "行程時間",
+            "value": "9小時"
+          },
+          {
+            "icon": "ticket",
+            "label": "門票費用",
+            "value": "現場自付"
+          },
+          {
+            "icon": "utensils-crossed",
+            "label": "午餐安排",
+            "value": "現場自付"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "alt": "城山日出峰日出峰頂",
+            "caption": "城山日出峰日出峰頂",
+            "location": "城山日出峰",
+            "atmosphere": "濟州最具代表性的UNESCO地標，東部路線的核心景點"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+            "alt": "柱狀節理玄武岩懸崖",
+            "caption": "柱狀節理玄武岩懸崖",
+            "location": "柱狀節理海岸",
+            "atmosphere": "南部海岸的六邊形玄武岩石柱"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+            "alt": "濟州西部挾才海灘",
+            "caption": "濟州西部挾才海灘",
+            "location": "挾才海灘",
+            "atmosphere": "西部海岸的翡翠海水與白色沙灘"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
+            "alt": "雪綠茶博物館與茶田",
+            "caption": "雪綠茶博物館與茶田",
+            "location": "雪綠茶田",
+            "atmosphere": "綠茶田行間排列與午後的寧靜小憩"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
+            "alt": "西歸浦天帝淵瀑布",
+            "caption": "西歸浦天帝淵瀑布",
+            "location": "天帝淵瀑布",
+            "atmosphere": "南部路線的森林瀑布"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "name": "東部路線：UNESCO與韓劇海岸",
+            "category": "城山、牛島、萬丈窟、涉地可支",
+            "description": "**濟州島東部路線**是私人包車行程的核心路線選項，以**UNESCO世界遺產城山日出峰**和著名的**韓劇拍攝地涉地可支岬角**為雙核心。東部路線全日涵蓋：城山日出峰（UNESCO三重認定）登頂或峰下海女表演；涉地可支岬角（安藤忠雄建築 + 春季油菜花 + 夏季繡球花）；城邑民俗村（朝鮮時代保存城鎮）；以及沿東部海岸的咖啡廳停靠。此路線是4條私人包車路線中**攝影景點豐富度最高**的路線，適合首次造訪濟州且希望在一日內覽遍東部精華的旅客。行程依您的節奏靈活調整，司導會根據天氣和人潮推薦最佳停靠時機。",
+            "highlights": [
+              "城山日出峰（UNESCO三重認定）— 登頂或峰下15:00海女表演",
+              "涉地可支岬角（安藤忠雄建築 + 韓劇拍攝地）",
+              "城邑民俗村（朝鮮時代保存城鎮，UNESCO韓國山寺）",
+              "東部海岸咖啡廳停靠",
+              "**攝影景點豐富度最高的私人包車路線**",
+              "春季4月：油菜花；夏季6月：繡球花；全年：城山日出峰",
+              "行程依您的節奏靈活調整",
+              "9小時私人包車服務；司導負責所有安排",
+              "適合首次造訪濟州且希望覽遍東部精華的旅客"
+            ],
+            "timeUsed": [
+              "濟州市飯店接送+至東海岸約70–90分鐘",
+              "主要景點2–3處（導遊司機根據當日現場情況調整順序）",
+              "自選午餐（通常在城山港附近海鮮餐廳）",
+              "可選牛島渡輪體驗（每人另付約8,900韓元船票；車輛停放於城山）"
+            ],
+            "whyOnRoute": "**最適合初次造訪濟州**、希望最大化代表性景點辨識度的路線。城山日出峰提供島上最具代表性的UNESCO日出峰攝影，萬丈窟（開放時）讓路線擁有其他濟州路線無可取代的地下UNESCO體驗，而涉地可支 + 城邑民俗村則補充了韓劇和民俗文化層次。四條路線中**UNESCO豐富度最高**的選項。",
+            "visitBasics": {
+              "hours": "大多數景點09:00–18:00；萬丈窟（開放時）每月第一個週三休館",
+              "closed": "城山：每月第一個週一。萬丈窟：目前關閉",
+              "admission": "各景點現場自付——城山₩5,000，萬丈窟₩4,000（開放時）",
+              "walking": "中等至較難——城山火山口登頂最為費力"
+            },
+            "convenience": {
+              "restroom": "所有主要景點設有廁所",
+              "parking": "導遊司機處理"
+            },
+            "smartNotes": {
+              "photo": "晴天清晨城山日出峰頂部是此路線最佳拍攝時機。",
+              "facilities": "城山港和鹹德海灘是最強的餐飲據點。",
+              "tip": "城山頂部登頂對老年或行動不便遊客為關鍵節點——請預留充足時間。"
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_east",
+              "verified": true,
+              "match": "route_variant_no_single_poi",
+              "constituent_pois": [
+                "seongsan_ilchulbong",
+                "udo_island",
+                "manjanggul_lava_tube",
+                "seopjikoji",
+                "seongeup_folk_village",
+                "hamdeok_seoubong_beach"
+              ],
+              "note": "Route option for private charter — represents a multi-POI bundle (Seongsan, Udo, Manjanggul, Seopjikoji, Seongeup, Hamdeok); not a single matchable POI. All constituent POIs are individually verified in KB v1.10."
+            }
+          },
+          {
+            "number": 2,
+            "name": "西部路線：海灘、茶園與咖啡廳海岸",
+            "category": "協才、翰林公園、Osulloc、涯月",
+            "description": "**濟州島西部路線**是私人包車行程的休閒路線選項，以**挾才海灘的翡翠海水**、**雪綠茶博物館的壯觀茶園**和**愛月咖啡廳街的日落海景**為三大核心。西部路線全日涵蓋：挾才海灘（濟州西海岸前三大，銀白色沙灘 + 飛揚島景觀）；翰林公園（9個主題花園，每月有命名節慶）；雪綠茶博物館 + 茶園步道（愛茉莉太平洋旗艦，免費入場）；愛月咖啡廳街（春秋季日落17:30至18:30的最佳觀賞地）；以及協在悅詩風吟濟州之家。此路線是4條私人包車路線中**最適合放鬆節奏**的選項，適合偏好海岸風光和咖啡廳文化而非密集景點拍照的旅客。",
+            "highlights": [
+              "挾才海灘 — 濟州西海岸前三大，銀白色沙灘 + 飛揚島景觀",
+              "翰林公園 — 9個主題花園，每月有命名節慶（含挾才窟熔岩管洞穴）",
+              "雪綠茶博物館 + 茶園步道（愛茉莉太平洋旗艦，免費入場）",
+              "愛月咖啡廳街 — 春秋季日落最佳觀賞地（17:30至18:30）",
+              "悅詩風吟濟州之家（免費入場，可選柚子皂DIY）",
+              "**最適合放鬆節奏的私人包車路線**",
+              "春季3至4月：油菜花；夏季6月：繡球花；全年：茶園和海灘",
+              "9小時私人包車服務；行程依您的節奏靈活調整",
+              "適合偏好海岸風光和咖啡廳文化的旅客"
+            ],
+            "timeUsed": [
+              "濟州市飯店接送+至西海岸約50–70分鐘",
+              "上午海灘+翰林公園（可選內部熔岩洞穴遊覽）",
+              "自選午餐（涯月鮑魚粥或協才海鮮）",
+              "下午Osulloc + 附近悅詩風吟濟州店，之後在涯月喝下午咖啡"
+            ],
+            "whyOnRoute": "**最適合偏好悠閒節奏**、以攝影背景和咖啡廳文化為優先的旅客，而非UNESCO清單拍照。步行量明顯少於東部路線，室內備選豐富度高（翰林公園溶洞 + 溫室、雪綠茶 + 悅詩風吟），晴天或局部多雲的天氣都同樣適合。",
+            "visitBasics": {
+              "hours": "大多數景點09:00–18:00；涯月咖啡館通常10:00–22:00",
+              "closed": "大多數全年開放",
+              "admission": "協才海灘免費；翰林公園約₩12,000；Osulloc免費；涯月咖啡館按消費",
+              "walking": "低至中等強度——適合老年人及家庭"
+            },
+            "convenience": {
+              "restroom": "所有主要景點及咖啡館設有廁所",
+              "parking": "導遊司機處理"
+            },
+            "smartNotes": {
+              "photo": "退潮時以飛揚島為背景的協才海灘——代表性拍攝；Osulloc黃金時段茶田。",
+              "facilities": "涯月擁有濟州最密集的咖啡館——熱門咖啡館建議提早佔位。",
+              "tip": "雨天濟州最靈活的路線——翰林洞穴和Osulloc是天氣預留時間站。"
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_west",
+              "verified": true,
+              "match": "route_variant_no_single_poi",
+              "constituent_pois": [
+                "hyeopjae_beach",
+                "hallim_park",
+                "osulloc_tea_museum",
+                "aewol_cafe_street"
+              ],
+              "note": "Route option for private charter — represents a multi-POI bundle (Hyeopjae, Hallim, O'sulloc, Aewol); not a single matchable POI. All constituent POIs verified in KB v1.10."
+            }
+          },
+          {
+            "number": 3,
+            "name": "南部路線：瀑布與火山海岸",
+            "category": "天地淵、柱狀節理、山房山、奧萊市場",
+            "description": "**濟州島南部路線**是私人包車行程的地質景觀路線選項，以**正房瀑布（亞洲唯一直接落入大海的瀑布）**、**大浦柱狀節理海岸（東亞最具代表性的柱狀節理）**和**天帝淵瀑布（三層瀑布 + 七仙女傳說）**為三大核心，同時造訪**漢拏山御乘生嶽**和**O'sulloc雪綠茶博物館**。南部路線是4條私人包車路線中**地質多樣性最高**的選項，一日之內涵蓋山嶽、海岸懸崖、瀑布、茶園等截然不同的地景。適合對濟州地質和自然景觀有興趣的旅客，以及希望在一日內盡覽濟州南部精華的旅客。行程依您的節奏靈活調整。",
+            "highlights": [
+              "正房瀑布 — 亞洲唯一直接落入大海的瀑布（垂直落下23公尺）",
+              "大浦柱狀節理海岸 — 東亞最具代表性的柱狀節理（天然紀念物第443號）",
+              "天帝淵瀑布 — 三層瀑布 + 仙臨橋七仙女傳說",
+              "漢拏山御乘生嶽 — UNESCO三重認定，1小時來回步道（免費入場）",
+              "O'sulloc雪綠茶博物館 — 免費入場，茶園步道",
+              "**地質多樣性最高的私人包車路線**",
+              "一日涵蓋山嶽、海岸懸崖、瀑布、茶園等截然不同地景",
+              "行程依您的節奏靈活調整；9小時私人包車服務",
+              "適合對濟州地質和自然景觀有興趣的旅客"
+            ],
+            "timeUsed": [
+              "濟州市飯店接送+至南海岸約60–90分鐘",
+              "上午瀑布+玄武岩懸崖（天地淵後柱狀節理）",
+              "西歸浦自選午餐（奧萊市場街頭小吃或中文區餐廳）",
+              "下午山房山或藥泉寺 + 逛市場後返回"
+            ],
+            "whyOnRoute": "**最適合希望在一天內體驗地質多樣性**的旅客——寺廟、瀑布、玄武岩懸崖、火山丘，以及傳統市場，涵蓋了濟州「火山島」身份認同的代表性元素。同時也是三條路線中**室內備選豐富度最高**的路線（藥泉寺主法堂、奧勒市場有頂arcade、山房窟寺洞穴）——使其成為天氣最靈活的選擇。",
+            "visitBasics": {
+              "hours": "大多數景點09:00–17:30；天地淵夜間燈光09:00–22:00；奧萊市場07:00–22:00",
+              "closed": "大多數全年開放",
+              "admission": "天地淵₩2,000；柱狀節理約₩2,000；山房窟寺約₩1,000",
+              "walking": "中等強度——天地淵步道平坦1公里；山房山臺階至洞窟寺院0.6公里"
+            },
+            "convenience": {
+              "restroom": "所有主要景點及市場多處設有廁所",
+              "parking": "導遊司機處理"
+            },
+            "smartNotes": {
+              "photo": "天地淵夜間燈光是此路線獨特拍攝亮點——在濟州主要瀑布中獨樹一幟。",
+              "facilities": "奧萊市場是濟州最強的單一美食景點——濟成麵包店章魚麵包和五味子酒。",
+              "tip": "雨天濟州最佳選擇——藥泉寺是室內避雨好去處。"
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_south",
+              "verified": true,
+              "match": "route_variant_no_single_poi",
+              "constituent_pois": [
+                "cheonjiyeon_falls",
+                "daepo_jusangjeolli_cliff",
+                "sanbangsan_mountain",
+                "yakcheonsa_temple",
+                "jeongbang_falls",
+                "olle_maeil_market"
+              ],
+              "note": "Route option for private charter — represents a multi-POI bundle (Cheonjiyeon, Jusangjeolli, Sanbangsan, Yakcheonsa, Jeongbang, Olle Market); not a single matchable POI. All constituent POIs verified in KB v1.10."
+            }
+          },
+          {
+            "number": 4,
+            "name": "客製路線：打造您的專屬行程",
+            "category": "發送您自己的行程",
+            "description": "**客製路線**是濟州島私人包車行程的完全自由選項——司導依照**您自行選擇的景點清單**，安排全日9小時的個人化濟州之旅。您可以選擇任何組合：UNESCO遺產景點（城山日出峰、漢拏山御乘生嶽）、南部海岸（正房瀑布、柱狀節理）、西部海岸（挾才海灘、雪綠茶博物館）、東部海岸（涉地可支、城邑民俗村）、特色體驗（橘子採摘、牛島渡輪、海女表演）、咖啡廳和購物，或任何您希望探索的地點。司導會提供景點之間的最佳路線建議，並根據您的節奏和天氣狀況靈活調整。9小時私人包車服務，費用根據車型和團體人數而定；所有入場費和餐費另計。",
+            "highlights": [
+              "完全自由的9小時個人化濟州之旅",
+              "自行選擇任何景點的組合",
+              "UNESCO遺產、南部海岸、西部海岸、東部海岸、特色體驗任選",
+              "司導提供景點之間的最佳路線建議",
+              "根據您的節奏和天氣狀況靈活調整",
+              "**9小時私人包車服務**；費用根據車型和團體人數而定",
+              "入場費和餐費另計",
+              "特色體驗可選：橘子採摘、牛島渡輪、海女表演",
+              "適合有特定興趣或曾多次到訪濟州的旅客"
+            ],
+            "timeUsed": [
+              "接送時與導遊司機討論計劃，或提前24小時發送",
+              "導遊司機根據實時交通、渡輪時刻表和天氣調整景點順序",
+              "在9小時服務時間內返回飯店（超時需事先協議）"
+            ],
+            "whyOnRoute": "四條路線中**最靈活的選項**。最適合多次造訪濟州的旅客、有特殊興趣（韓劇追蹤、攝影、美食、攜帶兒童的家庭）的旅客，以及4至9人團體（按車輛計費的私人包車在對比小型團體遊時，費用天平明顯傾向私人包車）。",
+            "visitBasics": {
+              "hours": "視選擇景點而定——導遊司機在預訂時告知各月休館日",
+              "closed": "視選擇景點而定",
+              "admission": "所有門票在各景點現場自付",
+              "walking": "可根據團隊的移動能力進行調整"
+            },
+            "convenience": {
+              "restroom": "所有主要景點均有",
+              "parking": "導遊司機負責所有停車"
+            },
+            "smartNotes": {
+              "photo": "提前向導遊司機發送3–5張參考照片——可大幅提升攝影構圖效果。",
+              "facilities": "午餐由您決定——預訂時告知飲食需求；導遊將預先安排餐廳。",
+              "tip": "定製路線最好在預訂確認24小時內分享詳細計劃，以確保最順暢的安排。"
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_custom",
+              "verified": true,
+              "match": "route_variant_no_single_poi",
+              "candidate_pois": [
+                "sangumburi_crater",
+                "camellia_hill",
+                "hueree_natural_park",
+                "hamdeok_seoubong_beach",
+                "songaksan_mountain",
+                "jeju_haenyeo_museum"
+              ],
+              "note": "Fully customizable route option — candidate POIs above are verified in KB v1.10 but not prescribed; final stop list determined by passenger's request at booking."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "飯店接送",
+            "type": "origin",
+            "theme": "Start"
+          },
+          {
+            "name": "選擇路線",
+            "type": "primary",
+            "theme": "東線 / 西線 / 南線"
+          },
+          {
+            "name": "午餐休息",
+            "type": "meal",
+            "theme": "放鬆轉換"
+          },
+          {
+            "name": "下午行程",
+            "type": "primary",
+            "theme": "Continue"
+          },
+          {
+            "name": "飯店送達",
+            "type": "return",
+            "theme": "End"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "濟州飯店接送",
+            "duration": "第1站",
+            "description": "出發：濟州飯店接送"
+          },
+          {
+            "phase": "選擇您的路線",
+            "duration": "第2–4站",
+            "description": "一日遊：選擇您的路線"
+          },
+          {
+            "phase": "返回飯店",
+            "duration": "第5站",
+            "description": "結束：返回飯店"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "行程路線一覽",
+          "subtitle": "在濟州飯店於08:00至09:00接送，隨後展開完全靈活的9小時行程——東線、西線、南線或您的完全定製方案。司導根據天氣和路況靈活調整節奏。"
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "攜帶幼齡兒童（包括嬰兒）的家庭",
+            "包含長輩的多代同行團體",
+            "追尋悠閒韓劇氛圍一日遊的情侶和蜜月旅客",
+            "希望客製化路線的多次訪濟旅客",
+            "追尋特定季節景觀的攝影愛好者（油菜花、繡球花、粉黛亂子草）"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "為什麼私人包車在濟州最有優勢",
+              "icon": "car",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "濟州島地理上確實廣大",
+                  "detail": "濟州島東西跨距約73公里。團體巴士遊在每個景點都要等待；私人包車省去這些時間，讓每個景點都有更充裕的停留時間。"
+                },
+                {
+                  "label": "天氣變化極快",
+                  "detail": "濟州小氣候每小時都在變化。司導可以將戶外景點替換為室內景點（翰林公園溶洞、雪綠茶、藥泉寺），而不會破壞整體行程。"
+                },
+                {
+                  "label": "門到門的舒適體驗",
+                  "detail": "飯店接送意味著不需要機場區接駁、不需要深夜巴士的壓力，也不需要攜帶行李在換乘點間步行。"
+                }
+              ]
+            },
+            {
+              "title": "如何在東部、西部和南部路線之間選擇",
+              "icon": "map",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "東部路線——初次訪客最大化地標辨識度",
+                  "detail": "城山日出峰和萬丈窟是濟州兩個最強的UNESCO知名景點；東部路線提供最高的代表性識別度。"
+                },
+                {
+                  "label": "西部路線——輕鬆的風景和攝影體驗",
+                  "detail": "挾才海灘、翰林公園、雪綠茶和愛月構成更柔和、更適合情侶的一日遊，攝影收益強，以日落結尾。"
+                },
+                {
+                  "label": "南部路線——地質奇觀的震撼感",
+                  "detail": "瀑布、玄武岩懸崖、火山丘和寺廟集中在一天中，讓這條路線具有濟州最強烈的「火山島」參觀脈絡主軸。"
+                }
+              ]
+            },
+            {
+              "title": "當天可能的行程調整",
+              "icon": "clock-3",
+              "iconBg": "bg-slate-50/80",
+              "iconColor": "text-slate-698",
+              "items": [
+                {
+                  "label": "天氣調整",
+                  "detail": "小雨很少影響路線；強風通常縮短沿海景點的停留時間（城山日出峰、柱狀節理、愛月）。"
+                },
+                {
+                  "label": "東部路線的牛島渡輪",
+                  "detail": "牛島需要另行乘渡輪。車輛可以一起渡海（額外費用）或停在碼頭。渡輪時間安排影響全天整體節奏。"
+                },
+                {
+                  "label": "加時服務可安排",
+                  "detail": "若需要超過9小時的服務，每小時加時費用為25,000韓元，現金支付給司機，視司機可用時間而定。"
+                }
+              ]
+            }
+          ],
+          "lessIdealFor": [
+            "獨行的預算旅客（私人包車按車輛計費）",
+            "希望與其他旅客共同旅行、享受社交體驗的旅客",
+            "需要全程官方認證導遊深度解說的旅客（司導持照但非全程導覽等級的解說）",
+            "希望入場費和餐費全包的旅客"
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "接送與下車地點",
+            "preview": "濟州任一飯店接送；大廳提前10分鐘等候",
+            "content": [
+              "接送服務涵蓋濟州島任一飯店（濟州市、西歸浦、中文等）",
+              "接送時間通常安排在08:00至09:00之間",
+              "請在約定出發時間前10分鐘在飯店大廳等候",
+              "下車地點可為您的濟州飯店或島上任一地點（如晚餐餐廳或機場）",
+              "回程通常在9小時用車時間內的17:00至18:00之間",
+              "如需改期，請至少提前2天聯系合作業者"
+            ]
+          },
+          {
+            "id": "車輛",
+            "title": "車輛與人數限制",
+            "preview": "車型依團體人數和行李量分配",
+            "content": [
+              "車型依精確乘客人數和行李件數適合",
+              "預約時請填寫精確的乘客人數和行李件數",
+              "典型車型：1至3人轎車、4至5人中型SUV、6至9人Staria或Carnival廂型車",
+              "較大的團體可能需要分乘多輛車輛或另行報價"
+            ]
+          },
+          {
+            "id": "duration",
+            "title": "9小時行程與延時收費",
+            "preview": "9小時嚴格用車時間，從接送時間計算",
+            "content": [
+              "9小時用車時間從飯店接送時間開始計算",
+              "加時收費：每額外小時25,000韓元，現金支付給司機",
+              "加時視司機可用時間而定，並受服務時數規定限制",
+              "牛島渡輪的往返時間計入9小時用車時間內（除非另有協議）"
+            ]
+          },
+          {
+            "id": "extras",
+            "title": "需知額外費用",
+            "preview": "牛島渡輪、入場費和餐費須知",
+            "content": [
+              "牛島車輛渡輪：另行收費（依車型而異）；步行旅客渡輪約₩10,500來回/人",
+              "所有景點入場費在現場直接支付",
+              "餐費直接支付；司導可推薦當地特色料理（濟州黑豬、豬骨湯麵、鮑魚粥）",
+              "可選司機小費感謝，但非強制"
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "天候政策",
+            "preview": "私人包車可靈活應對濟州天氣變化",
+            "content": [
+              "小雨：大多數景點照常進行；司導可視情況調整至室內景點優先",
+              "強風：沿海景點如城山日出峰、柱狀節理和愛月可能縮短停留",
+              "臺風警報日：合作業者將主動聯系您協商改期",
+              "漢拏山降雪可能關閉1100公路；司導將以替代內陸景點替換"
+            ]
+          },
+          {
+            "id": "included",
+            "title": "費用包含項目",
+            "preview": "包含車輛和持照司導；入場費和餐費自付",
+            "variant": "included",
+            "content": [
+              "包含：私人車輛（依團體人數為轎車、SUV或廂型車）",
+              "包含：持照英語司導",
+              "包含：濟州島任一飯店接送",
+              "包含：標準路線的燃油費和過路費",
+              "不包含：各景點入場費（現場直接支付）",
+              "不包含：餐費",
+              "不包含：個人購物費用",
+              "不包含：司機小費"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "即時天氣連動"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "每日更新"
+          },
+          "_seasonalSummary": "濟州島全年氣候溫和，四條私人包車路線均可全年運行。天氣在各地區之間可能有差異——沿海景點全年氣候溫和，但漢拏山高地路段可能較為涼爽或有強風。臺風季節（7至9月）偶有強風影響部分景點。"
+        },
+        "seasonalVariations": [
+          {
+            "season": "春季",
+            "title": "油菜花季",
+            "description": "3月下旬至4月東部海岸的油菜花和賞花同時盛開；4月初進入賞花高峰。氣溫溫和、天空明朗，是四條路線最均衡的季節。",
+            "icon": "flower"
+          },
+          {
+            "season": "夏季",
+            "title": "海灘旺季",
+            "description": "挾才和鹹德海灘進入海水浴高峰，6月繡球花為西部海岸增添色彩。預計較高的溼度，8月可能有臺風天氣。",
+            "icon": "sun"
+          },
+          {
+            "season": "秋季",
+            "title": "最佳攝影季",
+            "description": "10月中旬至11月初的粉黛亂子草達到高峰；這是欣賞漢拏山和城山視野最清晰的時間安排，通常是濟州最佳攝影季節。",
+            "icon": "leaf"
+          },
+          {
+            "season": "冬季",
+            "title": "茶花與雪景",
+            "description": "12月至2月山茶花丘進入盛花期；漢拏山峰頂可能積雪。天氣寒冷但畫面效果絕佳，各主要景點遊客人數最少。",
+            "icon": "snowflake"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "當地持照合法業者",
+            "description": "持照在地合作業者，附完整保險",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "持照在地合作業者，附完整保險"
+          },
+          {
+            "icon": "route",
+            "title": "路線專家",
+            "description": "手工打磨的行程，而非千篇一律的環線",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "手工打磨的行程，而非千篇一律的環線"
+          },
+          {
+            "icon": "users",
+            "title": "精心控制團體人數",
+            "description": "依人數配置最適合的車型",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "依人數配置最適合的車型"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "即時通知",
+            "title": "即時確認",
+            "detail": "預約確認函連同行程摘要一併寄出。",
+            "description": "預約確認函連同行程摘要一併寄出。"
+          },
+          {
+            "timing": "出發前12小時",
+            "title": "出發前12小時提醒",
+            "detail": "提前分享天氣資訊及路線調整說明。",
+            "description": "提前分享天氣資訊及路線調整說明。"
+          },
+          {
+            "timing": "前一晚",
+            "title": "最終接送資訊",
+            "detail": "您將收到確切的接送時間及司機聯系方式。",
+            "description": "您將收到確切的接送時間及司機聯系方式。"
+          },
+          {
+            "timing": "行程當天早晨",
+            "title": "當日路線說明",
+            "detail": "出發前簡短分享最新的現場資訊和路況說明。",
+            "description": "出發前簡短分享最新的現場資訊和路況說明。"
+          },
+          {
+            "timing": "行程途中",
+            "title": "景點逐一說明",
+            "detail": "每個景點視需要分享相關重點資訊和即時建議。",
+            "description": "每個景點視需要分享相關重點資訊和即時建議。"
+          },
+          {
+            "timing": "行程結束後",
+            "title": "行程後支援",
+            "detail": "如需要，可提供後續支援及額外推薦。",
+            "description": "如需要，可提供後續支援及額外推薦。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "first-time",
+            "question": "這個行程適合初次造訪濟州的旅客嗎（東部、西部或南部路線）？",
+            "answer": "是的——每條路線都涵蓋了該區域最具特色的景點，在一天的均衡行程中完整呈現。"
+          },
+          {
+            "id": "walking",
+            "question": "步行難度如何？",
+            "answer": "整體中等難度，含部分較為活躍的步行段落。"
+          },
+          {
+            "id": "family",
+            "question": "這個行程適合攜帶兒童的家庭嗎？",
+            "answer": "是的——對大多數家庭均舒適可行。"
+          },
+          {
+            "id": "seniors",
+            "question": "年長旅客參加是否方便？",
+            "answer": "是的——行程節奏和步行量對體力較佳的長輩均舒適可行。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "可訂狀態會在付款步驟中確認。",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "人"
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-29",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v15.2",
+      "v17_batch7"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch7_enhancement": {
+        "date": "2026-04-29",
+        "description": "Batch 7 deep enhancement — private charter pair (Jeju + Seoul). Both tours have 4 route options as itineraryStops (East/West/South/Custom for Jeju; Gapyeong/DMZ-Paju/Everland-Folk/Custom for Seoul). Each route option enhanced with 1,000+ char descriptions weaving verified facts about constituent POIs into a coherent route narrative. product profile recalibrated to verified-fact 0-1 float scores using cross-route weighted averaging. private_tour_fit, customizable_route_fit, flexibility_fit set from None to 1.0. 9 new POIs added to KB (v1.9 → v1.10): udo_island, manjanggul_lava_tube, sanbangsan_mountain, sangumburi_crater, yakcheonsa_temple, garden_of_morning_calm, petite_france, everland, korean_folk_village_yongin. DMZ POIs and Nami Island deferred to Batch 8.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale per Phase 1 standard. Both tours are private 9-10hr charters with 4 route options (East/West/South/Custom for Jeju; Gapyeong/DMZ-Paju/Everland-Folk/Custom for Seoul). Scores are weighted averages across the recommended routes, with extreme-outlier dimensions weighted toward the realistic middle (e.g. UNESCO score reflects average across routes — Route 1 maxes UNESCO, but weighted average ~0.65). Charter-format dimensions (private_tour_fit, customizable_route_fit, flexibility_fit) are set to 1.0 by definition. Walking_level and indoor_ratio are time-weighted averages across the typical day.",
+          "deltas_applied": {
+            "private_tour_fit": {
+              "old": null,
+              "new": 1.0,
+              "reasoning": "VERIFIED — Both tours are per-vehicle private charters by definition. Was previously None (unset)."
+            },
+            "customizable_route_fit": {
+              "old": null,
+              "new": 1.0,
+              "reasoning": "VERIFIED — Three recommended routes plus a fully custom option. Both tours fully customizable. Was previously None."
+            },
+            "flexibility_fit": {
+              "old": null,
+              "new": 1.0,
+              "reasoning": "VERIFIED — Driver-guide adapts pacing, order, lunch, optional add-ons (Udo ferry, Smart Queue). Was previously None."
+            },
+            "small_group_fit": {
+              "old": 0.2,
+              "new": 0.15,
+              "reasoning": "Verified — these are PRIVATE charters not small-group. 0.15 reflects that a 1-vehicle-of-9 booking still functions as a small private group, but the product type is private not small_group."
+            },
+            "bus_fit": {
+              "old": 0.2,
+              "new": 0.05,
+              "reasoning": "Verified — private charter = sedan/SUV/van, never bus. 0.05 reflects near-zero bus fit (only the very largest groups of 10+ would step up to a coach format)."
+            },
+            "unesco_fit": {
+              "old": 1.0,
+              "new": 0.65,
+              "reasoning": "VERIFIED weighted average across routes. Route 1 (East): max UNESCO — Seongsan Ilchulbong is triple-UNESCO + Manjanggul UNESCO 2007. Route 2 (West): minimal UNESCO content. Route 3 (South): partial UNESCO — Jusangjeolli is Global Geopark, Sanbangsan is Geopark. Weighted across routes = ~0.65, significantly lower than the previous 1.0 which assumed Route 1 always selected. Custom Route can max UNESCO if the traveler picks specifically — but the average traveler will not."
+            },
+            "scenic_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "VERIFIED — all 3 named routes deliver catalog-leading scenic content (volcanic crater, beach, basalt cliff, waterfall, tea field, lava dome). 0.95 calibrated, only marginally below max (saving 1.0 for tours that deliver multiple flagship scenic types in a single 9-hour window — which only Route 1 of 3 does)."
+            },
+            "first_time_fit": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "VERIFIED — strongest first-time-Jeju option because Route 1 alone covers the bucket-list UNESCO sites. 0.95 reflects that the WEST route is less first-time-iconic than East, so an averaged score is just below absolute max."
+            },
+            "iconic_landmark_fit": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "VERIFIED — Seongsan Ilchulbong is Jeju's single most iconic landmark and is included on Route 1 + Custom. Slight markdown to 0.95 because Routes 2 (West) and 3 (South) trade iconic landmark count for café/temple density."
+            },
+            "walking_level": {
+              "old": 0.6,
+              "new": 0.5,
+              "reasoning": "VERIFIED — weighted across routes. Route 1: Seongsan summit climb is the bottleneck (~0.7). Route 2: low (~0.3 — beach, park, café). Route 3: Sanbangsan stairs to cave temple (~0.55). Average ~0.5, slightly below previous 0.6."
+            },
+            "indoor_ratio": {
+              "old": 0.3,
+              "new": 0.2,
+              "reasoning": "VERIFIED — weighted across routes (Fix 1 time-weighted methodology). Route 1: low indoor (~0.15 — Manjanggul is the only major indoor stop, and is currently closed). Route 2: moderate (~0.25 — Hallim Park caves + O'sulloc museum interiors). Route 3: moderate (~0.30 — Yakcheonsa main hall, Olle Market arcade, Sanbanggulsa cave). Average ~0.20, lower than previous 0.30. Note: with Manjanggul closed (until verified reopening), the actual indoor exposure on Route 1 is even lower."
+            },
+            "weather_sensitivity": {
+              "old": 0.4,
+              "new": 0.5,
+              "reasoning": "VERIFIED — moderate weather sensitivity. Route 1 (East UNESCO) is heavily outdoor and weather-vulnerable. Route 3 (South temples + market) has the strongest indoor fallback. The PRIVATE-charter format itself reduces weather impact (driver-guide can shift to indoor stops on bad-weather days), but the recommended routes are still mostly outdoor. 0.50 calibrated up from 0.40 — previous 0.40 over-credited the charter format flexibility."
+            },
+            "shopping_fit": {
+              "old": 0.8,
+              "new": 0.55,
+              "reasoning": "VERIFIED — only Route 3 has substantial shopping (Olle Maeil Market). Routes 1, 2 have minimal shopping (Aewol cafés, beach souvenir kiosks). Custom Route can max shopping if specifically requested. Weighted ~0.55, materially lower than the previous 0.80 which appeared inflated."
+            },
+            "food_fit": {
+              "old": 0.6,
+              "new": 0.7,
+              "reasoning": "VERIFIED — Jeju's food density is high across all routes (haenyeo seafood, Hallabong tangerines, black pork, Olle Market). Route 1 has the strongest meal hubs (Seongsan harbor); Route 3 has Olle Market. 0.70 calibrated up from previous 0.60."
+            },
+            "premium_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Verified — private vehicle + flexible itinerary + driver-guide = top of premium scale. Maintained at 1.0."
+            },
+            "value_for_money_fit": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Verified — per-vehicle pricing is excellent value for groups of 4-9 but expensive for solo travelers. Slight markdown to 0.55 reflects the per-person break-even calculation: vs. small-group bus tours at ~70,000 KRW per person, the charter only beats it for groups of 5+."
+            },
+            "storytelling_fit": {
+              "old": 1.0,
+              "new": 0.85,
+              "reasoning": "Verified — driver-guide narrates throughout, and the routes carry strong narrative arcs (UNESCO geology, K-drama, Joseon folk culture, tea-merchant heritage). 0.85 reflects that narrative depth varies by driver-guide assigned and by route chosen — was previously 1.0 which assumed uniformly maximal storytelling, which is not realistic."
+            }
+          }
+        }
+      }
+    }
+  }
+}

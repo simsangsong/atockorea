@@ -1,0 +1,2195 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "busan-top-attractions-day-tour",
+  "locale": "ja",
+  "product_id": "busan-top-attractions-day-tour",
+  "seo": {
+    "pageTitle": "釜山トップ観光地少人数日帰りツアー | AtoC Korea",
+    "metaDescription": "釜山トップ7見どころ少人数日帰りツアー10.5時間：海東龍宮寺・青沙浦ブルーラインパーク・国連記念公園・甘川文化村・チャガルチ市場。英語ガイド付き。",
+    "ogImage": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1920&q=80",
+    "primaryKeywords": [
+      "釜山日帰りツアー",
+      "釜山少人数ツアー",
+      "海東龍宮寺ツアー",
+      "甘川文化村ツアー",
+      "釜山観光ツアー"
+    ],
+    "title": "釜山トップ観光地少人数日帰りツアー | AtoC",
+    "description": "釜山の7大見どころを少人数で一日で巡るツアー：海東龍宮寺→青沙浦ブルーラインパーク→国連記念公園→甘川文化村→チャガルチ水産市場。10.5時間、英語ガイド付き。"
+  },
+  "catalog_card": {
+    "slug": "busan-top-attractions-day-tour",
+    "title": "釜山トップ観光地少人数日帰りツアー",
+    "subtitle": "釜山の代表的な7見どころを一日でバランスよく巡るツアー。3か所のピックアップポイント対応。",
+    "region": "釜山",
+    "duration": "10.5時間",
+    "stopsCount": 7,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "少人数",
+      "釜山",
+      "海岸寺院",
+      "文化村",
+      "水産市場"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=600&q=80",
+    "priceLabel": "料金は予約時にご確認ください",
+    "shortCardDescription": "釜山の7大見どころをバランスよく一日で巡る少人数ツアー：海東龍宮寺（韓国一有名な海岸仏教寺院）・青沙浦ブルーラインパーク（廃線路の海岸観光列車）・国連記念公園（世界唯一の国連記念墓地）・甘川文化村（韓国のサントリーニ）・チャガルチ水産市場。3か所のピックアップポイント。",
+    "tags": [
+      "少人数ツアー",
+      "釜山",
+      "初めての方に",
+      "お得",
+      "通年"
+    ]
+  },
+  "headlineLine1": "海岸寺院、ブルーライン海岸、彩りの丘の村、水産市場 —",
+  "headlineLine2": "釜山の7見どころを一日でバランスよく",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "人",
+    "priceNote": "少人数ツアーの価格はAtoC Korea直販価格です。予約時にご確認ください。"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1920&q=80",
+    "imagePosition": "center 40%",
+    "tagline": "釜山で最も人気の7見どころを少人数で一日に",
+    "pills": [
+      "少人数",
+      "釜山",
+      "初訪問者向け"
+    ],
+    "meta": {
+      "duration": "≈ 10.5時間（08:30 最初のピックアップ）",
+      "region": "釜山",
+      "stops": "7見どころ",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "概要"
+    },
+    {
+      "id": "itinerary",
+      "label": "行程"
+    },
+    {
+      "id": "details",
+      "label": "詳細情報"
+    },
+    {
+      "id": "faq",
+      "label": "よくある質問"
+    },
+    {
+      "id": "reviews",
+      "label": "クチコミ"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "所要時間",
+      "value": "≈ 10.5時間（08:30 最初のピックアップ）"
+    },
+    {
+      "icon": "calendar",
+      "label": "ベストシーズン",
+      "value": "年中。桜の季節（3〜4月）は梵魚寺・海東龍宮寺が特に美しい"
+    },
+    {
+      "icon": "users",
+      "label": "グループ人数",
+      "value": "少人数（最大12名程度）、共有ミニコーチ"
+    },
+    {
+      "icon": "footprints",
+      "label": "歩行",
+      "value": "中〜やや難 — 龍宮寺の108段・甘川の丘の路地"
+    },
+    {
+      "icon": "map-pin",
+      "label": "エリア",
+      "value": "釜山（海雲台エリア＋釜山中心部）"
+    },
+    {
+      "icon": "ticket",
+      "label": "含まれるもの",
+      "value": "往復送迎、認定英語ガイド、全入場料"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
+      "alt": "岩礁の海岸にたたずむ海東龍宮寺の仏殿と海の眺め",
+      "caption": "海東龍宮寺 — 韓国一有名な海岸仏教寺院",
+      "location": "海東龍宮寺（ヘドン・ヨングンサ）、機張郡、釜山北東部",
+      "atmosphere": "岩礁の海辺に立つ仏殿。108段の石段を下りた先に広がる絶景"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=1200",
+      "alt": "海岸の廃線路を走る青沙浦ブルーラインパークのスカイカプセル",
+      "caption": "青沙浦ブルーラインパーク — 廃線路の海岸トロッコ",
+      "location": "青沙浦（チョンサポ）、海雲台、釜山",
+      "atmosphere": "東海南部線廃線路を活用した海岸観光列車。海雲台の海岸線パノラマ"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601171291096-87099c2c4625?w=1200",
+      "alt": "太極旗が並ぶ在韓国連記念公園の静寂な墓地",
+      "caption": "在韓国連記念公園 — 世界唯一の国連記念墓地",
+      "location": "在韓国連記念公園（UNMCK）、南区、釜山",
+      "atmosphere": "朝鮮戦争の国連軍兵士を祀る世界唯一の国連記念墓地。静寂と敬虔さ"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1200",
+      "alt": "カラフルな壁画と細い路地が連なる甘川文化村の鳥瞰図",
+      "caption": "甘川文化村 — 韓国のサントリーニ",
+      "location": "甘川文化村（カムチョン・ムナファマウル）、沙下区、釜山",
+      "atmosphere": "丘の斜面に色とりどりに塗られた家々。「韓国のマチュピチュ」の異名"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1572883454114-1cf0031ede2a?w=1200",
+      "alt": "釜山チャガルチ水産市場の生鮮海産物の屋台と活気ある雰囲気",
+      "caption": "チャガルチ水産市場 — 韓国最大の水産市場",
+      "location": "チャガルチ市場、中区、釜山南浦港",
+      "atmosphere": "釜山南浦港のウォーターフロントに広がる韓国最大の水産市場"
+    },
+    {
+      "id": "g6",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+      "alt": "釜山のレストランテーブルに副菜付きのテジクッパプのボウル",
+      "caption": "ランチは地元料理 — 釜山レストランのテジクッパプ、ミルミョン、または海鮮チヂミ",
+      "location": "釜山中心部（地元レストラン）",
+      "atmosphere": "気取らない釜山の郷土料理 — テジ・クッパッまたはミルミョン"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "≈ 09:00",
+      "duration": "30分",
+      "name": "ピックアップ（釜山中心部3か所）",
+      "category": "出発 — 釜山地下鉄駅3か所",
+      "description": "ピックアップは釜山の主要地下鉄3か所に集約し、朝の無駄な移動を最小限に抑えます：**ソミョン駅4番出口（08:30）** — 釜山中心部・宿泊施設密集エリア。**釜山駅4番出口（08:50）** — KTXでお越しのお客様に対応（※KTX出口ではなく地下鉄改札口付近）。**海雲台駅2番出口（09:10）** — 海雲台ビーチエリアに宿泊のお客様向け。ミニコーチは最大12名程度の少人数制、英語対応ガイド付き。全員乗車後、海東龍宮寺（機張郡）へ向けて北東方向へ出発。",
+      "highlights": [
+        "**3か所のピックアップポイント** — ソミョン（08:30）・釜山駅（08:50）・海雲台（09:10）",
+        "少人数制ミニバン（最大12名）、英語対応ガイド付き",
+        "地下鉄駅に直結するため公共交通機関でも容易にアクセス可能"
+      ],
+      "timeUsed": [
+        "ソミョン→釜山駅→海雲台の順次ピックアップ",
+        "海雲台→海東龍宮寺（機張郡）まで約30分"
+      ],
+      "whyOnRoute": "釜山駅・西面・海雲台の主要エリアから参加しやすい集合場所を設定しています。北東部の海東龍宮寺から始めることで、釜山市内を無理なく巡る流れになります。",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_pickup_central",
+        "verified": true,
+        "match": "transit_only",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Busan",
+          "Busan Metro"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "time": "≈ 10:00",
+      "duration": "75分",
+      "name": "海東龍宮寺（ヘドン・ヨングンサ）",
+      "category": "韓国一有名な海岸仏教寺院 — 機張郡、釜山北東部",
+      "description": "**海東龍宮寺**は機張郡の岩礁の海岸に立つ**韓国で最も有名な海岸仏教寺院** — 通常は山の中腹に建てられる韓国の寺院の中で、海辺の岩礁に直接建てられた極めて珍しいロケーション。1376年に恵勤国師によって創建された古刹で、入口から海岸沿いの参道を歩き**108段の石段**（108煩悩を象徴）を下りると、波が打ち寄せる岩礁の上に仏殿が連なります。**日出岩**と呼ばれる奇岩は毎朝の日の出の名所で、延命長寿や子宝祈願に訪れる参拝者で年中賑わいます。**入場無料**。参拝中は寺院の規律を尊重し、静かな参拝をお願いします。",
+      "highlights": [
+        "1376年（恵勤国師）創建の古刹 — **海岸の岩礁に直接建てられた**極めて珍しいロケーション",
+        "**108段の石段**（108煩悩を象徴）— 下りた先に仏殿と海の絶景",
+        "**日出岩**の日の出 — 延命長寿・子宝祈願の参拝者が年中訪れる",
+        "**入場無料**。参拝の礼儀を守ること"
+      ],
+      "timeUsed": [
+        "駐車場＋参道入口 — 約5分",
+        "参道＋108段の石段 — 約15分",
+        "仏殿・日出岩・海岸鑑賞＋写真撮影 — 約25分",
+        "上り帰路＋コーチへ — 約15分"
+      ],
+      "whyOnRoute": "海東龍宮寺は釜山ツアーで最も多くリクエストされる見どころ。機張郡の北東に位置するため、一日の始まりに訪れることで残りのルートが中心部へと自然に流れます。朝の早い時間帯は参拝者が少なく、海の眺めと寺院の雰囲気を最大限に見て回れます。",
+      "visitBasics": {
+        "hours": "毎日04:30〜19:20（最終入場18:50）",
+        "closed": "年中無休",
+        "admission": "無料。マイカー駐車は有料",
+        "walking": "中程度——松林の108段階段、複数の海岸テラスと階段"
+      },
+      "convenience": {
+        "restroom": "正門近くと境内内部",
+        "parking": "海東龍宮寺駐車場（有料）"
+      },
+      "smartNotes": {
+        "photo": "海側の日の出岩。大雄殿横の石段で海を背景にした定番ショット。",
+        "facilities": "上の広場にお土産・スナック屋台と小さなカフェ。",
+        "tip": "お堂への入場は正面ではなく側面ドアを使用（正面は僧侶専用）。仏誕日（4〜5月）のランタン祭りもおすすめ。"
+      },
+      "_poi_meta": {
+        "poi_key": "haedong_yonggungsa",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Busan",
+          "VisitKorea",
+          "Wikipedia",
+          "Culture Trip",
+          "Korean Temple Guide",
+          "Korea Tourism Organization Official"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:30",
+      "duration": "75分",
+      "name": "青沙浦＆海雲台ブルーラインパーク",
+      "category": "廃線路再活用の海岸観光施設 — 東海南部線（廃線）",
+      "description": "**海雲台ブルーラインパーク**は**廃止された東海南部線海岸鉄道**を再活用したエコフレンドリーな観光施設で、2020年に公開。**青沙浦**から松亭（松亭）までの**海岸線沿いの廃線路**に2種類の観光乗り物が運行しています：**(1) スカイカプセル** — 4人乗りの透明ガラス張りのカプセルポッドが空中架線を滑走、東シナ海のパノラマを楽しみながら海岸線を進む。**(2) ビーチトレイン** — 6人乗りの複数編成列車で同路線を走行、座席方向が外向きで全員が海を向くように配置。**青沙浦**は小規模な漁港で、伝統的な漁船と防波堤の光景が海雲台の高層ビル群とのコントラストを生む。スカイカプセルは事前予約を強く推奨（現地購入は混雑で困難なことが多い）。入場料はツアーに**含まれています**。",
+      "highlights": [
+        "**スカイカプセル** — 4人乗りの透明ガラス張りカプセルが海岸線上空を滑走",
+        "**ビーチトレイン** — 全席が海を向く6人乗り観光列車",
+        "**東海南部線廃線路**（2013年廃止）を再活用 — 2020年オープン",
+        "青沙浦の伝統的な漁港と海雲台の高層ビルのコントラスト",
+        "**入場料はツアーに含まれます**（スカイカプセルまたはビーチトレイン）"
+      ],
+      "timeUsed": [
+        "青沙浦漁港散策＋写真撮影 — 約20分",
+        "スカイカプセルまたはビーチトレイン乗車 — 約30〜40分",
+        "待機時間＋バスに戻る — 約10分"
+      ],
+      "whyOnRoute": "海東龍宮寺から海雲台方向への帰路に位置するため、ルートに無駄なく組み込めます。廃線路の再活用という「現代釜山」のクリエイティブな側面を体験できる唯一の見どころ。",
+      "visitBasics": {
+        "hours": "スカイカプセルとビーチトレイン約09:30〜18:30（夏季は20:30まで延長）",
+        "closed": "運行は天候次第。当日要確認",
+        "admission": "無料エリアあり。スカイカプセル₩30,000（2名）/₩39,000（3名）/₩44,000（4名）片道",
+        "walking": "楽 — 木製グリーン鉄道ボードウォーク（水営↔青沙浦2.3km、約30分）"
+      },
+      "convenience": {
+        "restroom": "水営、青沙浦、松亭駅にあり",
+        "parking": "水営駅と青沙浦駅近くの公営駐車場（有料）"
+      },
+      "smartNotes": {
+        "photo": "青沙浦駅横断歩道でスラムダンク風の有名なフレーム。タリットル・スカイウォーク",
+        "facilities": "水営、青沙浦、松亭のみ窓口販売（自動キオスクは他の駅）",
+        "tip": "スカイカプセルは夕日の時間帯がすぐ満席 — 市場参考資料で1〜2週間前に予約を"
+      },
+      "_poi_meta": {
+        "poi_key": "cheongsapo_blue_line_park",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Blue Line Park official",
+          "Visit Busan",
+          "Soul of Seoul",
+          "KoreaToDo",
+          "Tara O'Reilly travel",
+          "Busan Metropolitan City Tourism"
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "time": "≈ 13:00",
+      "duration": "60分",
+      "name": "昼食（釜山の地元レストラン）",
+      "category": "昼食休憩 — 釜山郷土料理",
+      "description": "海雲台から国連記念公園のある南区方向への移動中に立ち寄る、ガイド推薦の地元レストランでの昼食。**2つの典型的なオプション**：**(1) （テジ・クッパッ）** — 豚骨スープと白飯のセットで釜山の「ソウルフード」、韓国全国でも釜山のものが最も有名。**(2) （ミルミョン）** — 小麦粉ベースの冷製麺で朝鮮戦争後に釜山に定着した「釜山式冷麺」、夏は特に人気。どちらも**₩10,000〜15,000**程度。**ベジタリアン・ハラール対応**は事前申込で可能。",
+      "highlights": [
+        "**（テジ・クッパッ）** — 釜山の代名詞的なソウルフード（豚骨スープ＋白飯）",
+        "**（ミルミョン）** — 朝鮮戦争後に釜山で生まれた「釜山式冷麺」",
+        "**ベジタリアン・ハラール対応**（事前申込）"
+      ],
+      "timeUsed": [
+        "コーチで昼食会場へ — 約10〜15分",
+        "注文＋食事 — 約45分"
+      ],
+      "whyOnRoute": "海雲台から南区への移動中に自然な休憩ポイントを設けることで、午後の国連記念公園・甘川・チャガルチという文化・市場ゾーンへ向けてエネルギーを補給。",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_lunch",
+        "verified": true,
+        "match": "lunch_placeholder",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Busan",
+          "Busan Metropolitan Government cuisine guide"
+        ]
+      }
+    },
+    {
+      "number": 5,
+      "time": "≈ 14:15",
+      "duration": "60分",
+      "name": "在韓国連記念公園",
+      "category": "世界唯一の国連記念墓地 — 朝鮮戦争（1950〜53年）",
+      "description": "**在韓国連記念公園**は**世界唯一の国連記念墓地** — 1951年1月18日に国連軍の命令によって設立され、朝鮮戦争で戦死した**16か国の国連軍兵士2,300名以上**が眠ります。韓国・米国・英国・オーストラリア・カナダなど参戦国の国旗が静かにたなびく中、整然と並んだ白い墓石が広大な芝生の上に続きます。**1955年に韓国政府が国連に永久譲渡**した特別な領域で、韓国政府と国連が共同で管理。毎年11月11日に行われる**「ターン・トゥワード・プサン（ターン・トゥワード・プサン）」**では、世界中の参戦国が一斉に釜山の方向を向いて黙祷を捧げます。訪問者は公園内を自由に歩くことができ、追悼館では朝鮮戦争の経緯と国連軍の役割を解説した展示が見られます。**入場無料**。静寂と敬意を保つことを推奨。",
+      "highlights": [
+        "**世界唯一の国連記念墓地** — 1951年設立、16か国の国連軍兵士2,300名以上が眠る",
+        "1955年に韓国政府が**国連に永久譲渡**した特別な国際領域",
+        "毎年11月11日の**「ターン・トゥワード・プサン」**— 世界中の参戦国が同時に黙祷",
+        "追悼館では朝鮮戦争の経緯と国連軍の役割を解説",
+        "**入場無料**。静寂と敬意を保つこと"
+      ],
+      "timeUsed": [
+        "入場＋追悼館展示 — 約20分",
+        "墓地エリア散策＋写真 — 約25分",
+        "バスに戻る — 約10分"
+      ],
+      "whyOnRoute": "釜山の歴史的・国際的な側面を体験できる唯一無二の見どころ。海岸寺院・海岸列車の賑やかな午前とのコントラストが、一日に深みと変化を生みます。",
+      "visitBasics": {
+        "hours": "毎日09:00〜17:00（夏季〜18:00）",
+        "closed": "年中無休",
+        "admission": "無料",
+        "walking": "楽 — 平坦な墓地路。完全な訪問は30〜45分"
+      },
+      "convenience": {
+        "restroom": "メイン入口近く",
+        "parking": "UN記念公園専用駐車場（要確認）"
+      },
+      "smartNotes": {
+        "photo": "中央慰霊塔と整列した石碑 — 静粛で力強い構図",
+        "facilities": "近くに訪問者センター。釜山港方面への市バスアクセス",
+        "tip": "入場時に静粛な態度を保ってください。無料入場 — 観光客から高く評価されていない隠れた宝"
+      },
+      "_poi_meta": {
+        "poi_key": "un_memorial_cemetery",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNMCK official",
+          "Wikipedia",
+          "ABMC",
+          "Visit Busan",
+          "CNN",
+          "VisitKorea",
+          "UN Memorial Cemetery in Korea Official Site"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "≈ 15:30",
+      "duration": "75分",
+      "name": "甘川文化村（カムチョン・ムナファマウル）",
+      "category": "丘の斜面のアート村 — 「韓国のサントリーニ」「韓国のマチュピチュ」",
+      "description": "**甘川文化村** — 「韓国のマチュピチュ」および「韓国のサントリーニ」と呼ばれる — は釜山の沙下区に広がる丘の斜面の住宅街で、朝鮮戦争中の1950年代に避難民が太極道（宗教団体）の集団居住区として形成した起源を持ちます。密集した急斜面の路地に沿って色とりどりに塗られた家々が階段状に広がり、南側の釜山湾と対岸の絶影島（ヨルリョン島）が見渡せます。2009年から公共アートプロジェクト「マウル美術プロジェクト」が開始され、街角ごとにユニークな壁画・彫刻・インスタレーションが設置されています。代表的な撮影ポイントは「星の王子さまと狐」の彫刻と、港を見下ろすメイン展望台。主なフォトゾーンには**メインマップ付きパンフレット**が配布され、主要見どころを自由に巡れます。**入場無料**。丘の坂道と狭い路地のため**グリップの良い靴を推奨**。",
+      "highlights": [
+        "「**韓国のサントリーニ**」「**韓国のマチュピチュ**」と呼ばれる丘の斜面のカラフルな住宅街",
+        "朝鮮戦争（1950年代）の避難民が形成した歴史的な集団居住区",
+        "2009年〜の「マウル美術プロジェクト」で街角に壁画・彫刻が多数設置",
+        "「**星の王子さまと狐**」の彫刻と釜山湾展望台が代表的撮影ポイント",
+        "**入場無料**。急な路地はグリップの良い靴を推奨"
+      ],
+      "timeUsed": [
+        "コーチ到着＋メインマップ配布 — 約5分",
+        "メインフォトゾーン（展望台・壁画・彫刻） — 約40〜50分",
+        "土産物・カフェ（任意） — 約15分",
+        "バスに戻る — 約10分"
+      ],
+      "whyOnRoute": "甘川は釜山の歴史・アート・写真映えするな要素が凝縮された最高コスパの見どころ。国連記念公園の静寂な雰囲気の後、活気ある丘の路地が一日にメリハリをつけます。",
+      "visitBasics": {
+        "hours": "常時開放（多くの工房・カフェは09:00〜18:00）",
+        "closed": "年中無休",
+        "admission": "入場無料。個別アトラクションは各自支払い",
+        "walking": "中〜きつい — 急勾配の路地と多くの階段。スニーカーまたはグリップ付きの靴が必須"
+      },
+      "convenience": {
+        "restroom": "村内複数か所の公衆トイレ",
+        "parking": "限られた駐車場。ガイドドライバーが最寄りの場所を管理"
+      },
+      "smartNotes": {
+        "photo": "メインのサンドル路地眺望。黄色の小さな王子の壁画。カラフルな段々の屋上",
+        "facilities": "多数のカフェ、工房、ギャラリー。村マップは入口で入手可能",
+        "tip": "早朝（09:00〜10:00）が人が少なく最も撮影しやすい時間帯"
+      },
+      "_poi_meta": {
+        "poi_key": "gamcheon_culture_village",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Wikipedia",
+          "CNN",
+          "Visit Busan",
+          "Hapskorea",
+          "Columban Society",
+          "Lifeguin",
+          "Busan Cultural Foundation"
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "time": "≈ 17:15",
+      "duration": "60分",
+      "name": "チャガルチ水産市場",
+      "category": "韓国最大の水産市場 — 釜山南浦港",
+      "description": "**チャガルチ市場**は**韓国最大の水産市場**であり釜山の10大ランドマークのひとつ — 中区の南浦港ウォーターフロントに立地。1950年代の朝鮮戦争後に形成された「（アジメ）文化」 — 逞しい市場のおばちゃん文化 — の中心地として知られ、現在は7層の近代的なビルと屋外の露天市場が共存。1階に新鮮な活魚・貝類・甲殻類・タコが並ぶ「活魚コーナー」では、選んだ魚介をその場で2〜3階の食堂で刺身や海鮮料理にしてもらえる（食材費＋調理費で₩30,000〜50,000程度）。人気の街歩きスナックは**（オデン）** — 釜山風練り物の串焼きで、路地の屋台で温かいスープと一緒に見て回れます。市場内は**2019年釜山市選定 「釜山の文化遺産」**に登録。毎年10月に「チャガルチ祭り」を開催。",
+      "highlights": [
+        "**韓国最大の水産市場** — 釜山10大ランドマーク、南浦港ウォーターフロント",
+        "1階の活魚コーナーで選んで2〜3階の食堂で食べる「選魚→刺身」スタイル",
+        "釜山名物**（オデン）**屋台 — 温かい練り物の串焼きスナック",
+        "**朝鮮戦争後のアジメ（市場おばちゃん）文化**の発祥地",
+        "毎年10月の**「チャガルチ祭り」**開催"
+      ],
+      "timeUsed": [
+        "コーチ到着＋市場入口 — 約5分",
+        "市場内散策＋活魚コーナー鑑賞 — 約30分",
+        "オデン屋台＋街歩きスナック（任意） — 約20分",
+        "解散または解散後自由行動 — 約15分"
+      ],
+      "whyOnRoute": "チャガルチは中央区（南浦洞）に位置し、釜山中心部への帰路の最終見どころとして完璧に役立ちます。夕方の市場の賑わいと活気が一日の締めくくりとして最高のエネルギーをご案内します。",
+      "visitBasics": {
+        "hours": "毎日24時間（ほとんどの店舗06:00〜21:00）",
+        "closed": "年中無休",
+        "admission": "無料。都度払い",
+        "walking": "楽 — 平坦な市場エリア"
+      },
+      "convenience": {
+        "restroom": "市場内複数か所および近くの地下鉄駅",
+        "parking": "チャガルチ駅地下駐車場。ガイドドライバーが処理"
+      },
+      "smartNotes": {
+        "photo": "1階の生け簀と活魚ディスプレイ。朝の競り（06:00〜08:00）",
+        "facilities": "2〜5階に席あり海鮮レストラン。近くに南浦市場",
+        "tip": "海鮮は1階（市場価格）で買って2〜3階の食堂へ持ち込み調理料を払うのがお得"
+      },
+      "_poi_meta": {
+        "poi_key": "jagalchi_market",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea",
+          "Wikipedia",
+          "Visit Busan",
+          "Hungry Pursuit",
+          "Emma Jane Explores",
+          "Jagalchi.org",
+          "Korean Heritage Service / Cultural Heritage Administration"
+        ]
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "ピックアップ（釜山中心部3駅）",
+      "type": "origin",
+      "theme": "出発"
+    },
+    {
+      "name": "海東龍宮寺",
+      "type": "primary",
+      "theme": "海沿いの寺院"
+    },
+    {
+      "name": "青沙浦＆ブルーラインパーク",
+      "type": "primary",
+      "theme": "海岸とビーチ列車"
+    },
+    {
+      "name": "ランチ（釜山の地元レストラン）",
+      "type": "meal",
+      "theme": "食事"
+    },
+    {
+      "name": "国連記念公園",
+      "type": "primary",
+      "theme": "Memorial"
+    },
+    {
+      "name": "甘川文化村",
+      "type": "primary",
+      "theme": "アートの街"
+    },
+    {
+      "name": "ジャガルチ市場",
+      "type": "return",
+      "theme": "海鮮市場"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "海岸の朝",
+      "duration": "約3時間",
+      "description": "海東龍宮寺（機張郡）→青沙浦ブルーラインパーク（海雲台）の北東海岸コース。"
+    },
+    {
+      "phase": "昼食休憩",
+      "duration": "約1時間",
+      "description": "海雲台から南区へ移動中に釜山郷土料理で昼食休憩（テジ・クッパッまたはミルミョン）。"
+    },
+    {
+      "phase": "記念公園＋文化村",
+      "duration": "約3時間30分",
+      "description": "在韓国連記念公園（60分）→甘川文化村の丘の路地アートウォーク。"
+    },
+    {
+      "phase": "市場でフィナーレ",
+      "duration": "約1時間30分",
+      "description": "チャガルチ水産市場の散策＋釜山中心部への解散（南浦洞・釜山駅・ソミョン）。"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "この一日の流れ",
+    "subtitle": "北東の海岸寺院（海東龍宮寺）から始まり、ブルーラインパークを経て中心部へ。国連記念公園で静寂な中間休憩の後、甘川文化村の丘の路地をアートウォーク、チャガルチ水産市場でフィナーレ。"
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "釜山初訪問者",
+      "大人ファミリーとカップル",
+      "釜山に丸一日ある旅行者",
+      "文化と食に興味がある旅行者"
+    ],
+    "lessIdealFor": [
+      "歩行・階段を最小限にしたい方",
+      "ベビーカー依存度の高いグループ（甘川の丘の路地）",
+      "夕方フライトのタイトなスケジュールの旅行者（解散は最大19:00）"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "ペースと地理",
+        "icon": "sun",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "エネルギーが高い朝に北東の寺院へ",
+            "detail": "海東龍宮寺は機張郡の北東端に位置するため、一日の始まりに訪れることでルートが中心部へと自然に流れます。"
+          },
+          {
+            "label": "海岸→記念→村の順番",
+            "detail": "景観→静寂→色彩というルートの流れが、釜山の多面的な姿を一日で体験させます。"
+          },
+          {
+            "label": "中心部でのフィナーレ",
+            "detail": "チャガルチは南浦洞の中心部にあり、南浦洞・釜山駅・ソミョンに宿泊のお客様が最終見どころ後に自由に解散できます。"
+          }
+        ]
+      },
+      {
+        "title": "なぜ10.5時間でこれが実現できるのか",
+        "icon": "clock",
+        "iconBg": "bg-pink-50/80",
+        "iconColor": "text-pink-600",
+        "items": [
+          {
+            "label": "6か所の充実した見どころ＋昼食",
+            "detail": "2か所の海岸見どころ・1か所の記念公園・1か所のアート村（滞在時間たっぷり）・1か所の市場＋昼食で、詰め込みすぎずにバランスよく。"
+          },
+          {
+            "label": "ほぼ屋外、市場で屋内フィナーレ",
+            "detail": "一日の約80%が屋外。チャガルチが唯一の屋内ブロック。適度な雨でも実施可能。"
+          },
+          {
+            "label": "3か所のピックアップポイント",
+            "detail": "ソミョン・釜山駅・海雲台から乗車可能 — 釜山中心部のほとんどの宿泊施設からアクセスできます。"
+          }
+        ]
+      },
+      {
+        "title": "正直なトレードオフ",
+        "icon": "info",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "龍宮寺の108段（スキップ可能）",
+            "detail": "108段は寺院の境内へ下りる石段。上段の展望エリアは階段なしでアクセス可能なので、膝が心配な方は上から眺めるだけでも十分です。"
+          },
+          {
+            "label": "甘川の路地は急坂 — 雨天は滑りやすい",
+            "detail": "グリップの良い靴を履き、上り坂はゆっくり進みましょう。メインフォトゾーンは無理なく到達できます。"
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "ピックアップと解散",
+      "preview": "釜山地下鉄の3つのピックアップポイント：西面駅4番出口(08:30)、釜山駅4番出口、海雲台ビーチ。",
+      "content": [
+        "ピックアップポイント3か所：ソミョン駅4番出口（08:30）・釜山駅4番出口（08:50）・海雲台駅2番出口（09:10）",
+        "解散ポイント：南浦洞、釜山駅、ソミョン、または海雲台（選択可）",
+        "解散は最終見どころ（チャガルチ）から各地点へのコーチ移動で対応",
+        "空港への解散は別途ご相談ください"
+      ]
+    },
+    {
+      "id": "what-to-bring",
+      "title": "服装と持ち物",
+      "preview": "グリップ付き歩きやすい靴 — 甘川の坂道路地と龍宮寺の108段",
+      "content": [
+        "グリップの良い歩きやすい靴 — 甘川の丘の路地と龍宮寺の108段に対応",
+        "軽量な防風ジャケット（海岸見どころでの風対策）",
+        "帽子と日焼け止め",
+        "水（少なくとも1L）",
+        "雨の日はレインコートまたはポンチョを推奨（折り畳み傘も可）"
+      ]
+    },
+    {
+      "id": "weather-policy",
+      "title": "天候ポリシー",
+      "preview": "年間を通じて営業。",
+      "content": [
+        "年中実施。",
+        "小雨：ツアーは予定通り実施 — 雨の龍宮寺は独特の雰囲気があり、甘川も雨天でも見て回れます",
+        "大雨または台風：全額返金または日程変更の選択肢をご案内",
+        "甘川の路地は雨で滑りやすくなるため、グリップのある靴を強く推奨"
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "含まれるもの・含まれないもの",
+      "preview": "釜山3駅でのピックアップと降車、エアコン付きミニコーチ輸送",
+      "content": [
+        "釜山地下鉄3駅でのピックアップと解散、エアコン付きミニコーチ",
+        "認定英語対応ガイド",
+        "全入場料（海東龍宮寺・青沙浦ブルーラインパーク・国連記念公園・甘川文化村）",
+        "含まれないもの：昼食（約₩10,000〜15,000）・チャガルチでの海産物・チップ"
+      ]
+    },
+    {
+      "id": "language",
+      "title": "言語",
+      "preview": "ツアーの主要言語：英語。",
+      "content": [
+        "ツアーの主要言語：英語",
+        "中国語対応ガイドはリクエストで可能 — 3日以上前の予約が必要",
+        "韓国語は移動中に使用されますが、全てのガイド解説は英語で行われます"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "歩行と地形",
+      "preview": "中程度〜やや難しい。",
+      "content": [
+        "中〜やや難しい。",
+        "海東龍宮寺：108段の石段（スキップ可能 — 上段展望エリアあり）",
+        "青沙浦：ほぼフラット（乗車のみ）",
+        "甘川文化村：急な坂道の路地、合計約1.5km",
+        "チャガルチ：フラットな市場内の歩行",
+        "総歩行距離：約4〜5km（甘川の坂道含む）",
+        "歩きやすいクローズドトゥシューズ必須"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "季節別の案内を確認"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "季節別の案内を確認"
+    },
+    "_seasonalSummary": "釜山は韓国南部を代表する海沿いの都市で、ソウルより冬は温暖で雨がやや多い傾向があります。夏は蒸し暑く、7月の梅雨時期は降水量が増えます。"
+  },
+  "seasonalVariations": [
+    {
+      "season": "春（3〜5月）",
+      "description": "3月末〜4月初頭、青沙浦海岸と海雲台ブルーラインパーク沿いの桜。釜山最高の撮影シーズン。"
+    },
+    {
+      "season": "夏（6〜8月）",
+      "description": "日照時間長い。海岸見どころは内陸より涼しい。7月の梅雨で屋外滞在時間が短くなる場合あり。"
+    },
+    {
+      "season": "秋（9〜11月）",
+      "description": "最も透明度が高く海が最も暖かい — 全体的な最高シーズン。10月下旬の紅葉。青沙浦海岸のゴールデンライト。"
+    },
+    {
+      "season": "冬（12〜2月）",
+      "description": "最も閑散。澄んだ海の眺め。韓国基準で温暖（釜山の冬の最低気温5〜10°C）。龍宮寺は元旦の初日の出見どころ。"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "現地を熟知した認定スタッフ",
+      "description": "完全保険付きの認定韓国ツアー催行会社",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "釜山全域を知り尽くした現地を熟知した認定スタッフ。龍宮寺から甘川まで効率的な行程づくり。"
+    },
+    {
+      "icon": "users",
+      "title": "釜山トップ7見どころに特化",
+      "description": "手調整の行程、一般的なループではありません",
+      "iconBg": "bg-pink-50/80",
+      "iconColor": "text-pink-600",
+      "body": "ノーショッピングストップポリシー — ガイドはキックバックではなく品質に基づいて推薦します。"
+    },
+    {
+      "icon": "shield",
+      "title": "少人数制ツアー",
+      "description": "最大12名の少人数制",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "少人数で甘川の路地もチャガルチの市場もゆったり体験。"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "予約後すぐ",
+      "title": "予約確認（即時）",
+      "detail": "行程確認付きの予約確認",
+      "description": "ピックアップポイントの詳細付きで即時確認。"
+    },
+    {
+      "timing": "前日",
+      "title": "ピックアップ詳細",
+      "detail": "正確なピックアップ場所と車両情報（WhatsApp）",
+      "description": "乗車地点と車両番号をWhatsAppで送付。"
+    },
+    {
+      "timing": "当日の朝",
+      "title": "ピックアップ確認",
+      "detail": "ドライバーが到着10分前にチェックイン",
+      "description": "当日朝のドライバーからの最終連絡。"
+    },
+    {
+      "timing": "ツアー中",
+      "title": "ツアー中サポート",
+      "detail": "催行チームへの直通連絡先",
+      "description": "緊急時の連絡先を事前に提供。"
+    },
+    {
+      "timing": "一日の終わり",
+      "title": "柔軟な解散",
+      "detail": "解散ポイントの選択（南浦洞・釜山駅・ソミョン・海雲台）",
+      "description": "希望の解散ポイントを当日確定。"
+    },
+    {
+      "timing": "ツアー後",
+      "title": "レビュー＆フォローアップ",
+      "detail": "任意のレビューとフォローアップ",
+      "description": "解散後にフィードバックリクエストを送付。"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "first-time",
+      "question": "釜山初訪問者に良い選択ですか？",
+      "answer": "はい。海岸寺院・廃線路観光・国連記念公園・アート村・水産市場という5つの全く異なるテーマを一日でカバーできる、釜山の総合入門ツアーです。"
+    },
+    {
+      "id": "stairs",
+      "question": "龍宮寺の階段はどれくらいありますか？",
+      "answer": "108段の石段があります。108は仏教で煩悩の数を象徴し、下り終えると寺院の境内と海の絶景が広がります。膝が心配な方は上段の展望エリアから眺めるだけでも十分見て回れます。"
+    },
+    {
+      "id": "gamcheon-walking",
+      "question": "甘川の丘の路地は大変ですか？",
+      "answer": "急な上り坂と細い路地があります。グリップの良い靴を履き、自分のペースで進めば問題ありません。主要なフォトゾーン（星の王子さまの彫刻・展望台）は無理なく到達できます。"
+    },
+    {
+      "id": "sky-capsule",
+      "question": "青沙浦のスカイカプセルはツアーに含まれますか？",
+      "answer": "はい。スカイカプセルまたはビーチトレインの入場料はツアーに含まれます。当日の混雑状況によっていずれかに乗車します。"
+    },
+    {
+      "id": "lunch",
+      "question": "昼食は含まれていますか？オプションは何ですか？",
+      "answer": "昼食は含まれていません（自己負担、約₩10,000〜15,000）。ガイドが釜山郷土料理のレストランを推薦します。（豚骨スープ）またはミルミョン（釜山式冷麺）が典型的なオプションです。ベジタリアン・ハラール対応は予約時にお申し出ください。"
+    },
+    {
+      "id": "kids",
+      "question": "お子様連れでも参加できますか？",
+      "answer": "はい。6歳以上のお子様に特に適しています。龍宮寺の108段と甘川の急坂が唯一の体力的な部分です。甘川の壁画とチャガルチの活魚コーナーは子供に人気です。"
+    },
+    {
+      "id": "seniors",
+      "question": "高齢の方でも参加できますか？",
+      "answer": "はい、活動的な高齢者の方はご参加いただけます。龍宮寺の108段はスキップ可能（上段展望エリアあり）、甘川はゆっくり自分のペースで歩けます。"
+    },
+    {
+      "id": "language",
+      "question": "ガイドはどの言語を話しますか？",
+      "answer": "ツアーの主要言語は英語です。中国語対応ガイドはご要望に応じて手配可能ですが、3日以上前の予約が必要です。"
+    },
+    {
+      "id": "pickup",
+      "question": "どこでピックアップされますか？",
+      "answer": "ソミョン駅4番出口（08:30）、釜山駅4番出口（08:50）、海雲台駅2番出口（09:10）の3か所です。最寄りの駅を予約時に選択してください。"
+    },
+    {
+      "id": "drop-off",
+      "question": "解散場所はどこですか？",
+      "answer": "チャガルチ市場の後、南浦洞・釜山駅・ソミョン・海雲台のいずれかへコーチで送迎します。希望の解散ポイントを当日ガイドにお申し出ください。"
+    },
+    {
+      "id": "compare",
+      "question": "他の釜山ツアーと比べてどう違いますか？",
+      "answer": "このツアーは釜山の最も象徴的な7見どころ（海岸寺院・廃線路観光・国連記念公園・アート村・水産市場）を一日でカバーする最も総合的なルートです。釜山滞在が1〜2日の旅行者に最適。"
+    },
+    {
+      "id": "yonggungsa-best-time",
+      "question": "龍宮寺を訪れる最良の時間帯は？",
+      "answer": "早朝（日の出直後）が最も混雑が少なく、海の眺めと寺院の雰囲気を静かに見て回れます。このツアーの09:00〜10:00の訪問時間帯はバランスが良く、観光客が本格的に来る前です。"
+    },
+    {
+      "id": "tower-included",
+      "question": "釜山タワーの展望台はこのツアーに含まれますか？",
+      "answer": "含まれていません。このツアーは龍山公園経由ではなく南浦洞方面（チャガルチ）で一日を締めくくります。釜山タワーを優先する場合は、別の釜山ツアーをご検討ください。"
+    },
+    {
+      "id": "walking",
+      "question": "歩行量はどれくらいですか？",
+      "answer": "中〜やや難しい程度です。総歩行距離は約4〜5km（甘川の坂道含む）。最もアクティブな区間は甘川文化村の丘の路地（急坂あり）と龍宮寺の108段。歩きやすいクローズドトゥシューズを推奨します。"
+    },
+    {
+      "id": "family",
+      "question": "ファミリーに適していますか？",
+      "answer": "はい。6歳以上のお子様がいるファミリーに適しています。龍宮寺の108段と甘川の坂道が唯一の難所です。チャガルチの活魚コーナーは子供に人気です。"
+    },
+    {
+      "id": "rain",
+      "question": "雨の場合はどうなりますか？",
+      "answer": "年中実施。小雨ではツアーは予定通り実施します。大雨や台風の場合は全額返金または日程変更の選択肢をご案内します。甘川の路地は雨で滑りやすくなるためグリップのある靴を強く推奨します。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "予約可否は決済ステップで確認されます。",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "人",
+      "priceNote": "少人数グループ料金は催行会社ページで未確定です。釜山の日帰りツアーは他社基準でおおむね41〜70米ドルです。確定後はAtoC Koreaの販売価格に一律10%割引が適用されます。"
+    }
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "busan-top-attractions-day-tour",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "busan_city",
+    "vehicle_type": "coach",
+    "duration_hours": 9.0,
+    "region_tags": [
+      "busan_haeundae",
+      "busan_gijang",
+      "busan_namgu",
+      "busan_saha",
+      "busan_jung"
+    ],
+    "theme_tags": [
+      "temple",
+      "coastal",
+      "war_memorial",
+      "mural_village",
+      "fish_market",
+      "korean_war_history"
+    ],
+    "poi_tags": [
+      "haedong_yonggungsa",
+      "cheongsapo_blue_line_park",
+      "un_memorial_cemetery",
+      "gamcheon_culture_village",
+      "jagalchi_market"
+    ],
+    "pace_level": 0.7,
+    "walking_level": 0.85,
+    "scenic_level": 0.9,
+    "photo_level": 1.0,
+    "culture_level": 0.95,
+    "relax_level": 0.5,
+    "first_time_fit": 1.0,
+    "family_fit": 0.85,
+    "senior_fit": 0.7,
+    "couple_fit": 0.95,
+    "solo_traveler_fit": 0.9,
+    "active_traveler_fit": 0.8,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 0.95,
+    "young_kids_fit": 0.55,
+    "senior_active_fit": 0.7,
+    "senior_general_fit": 0.55,
+    "mobility_friendly_fit": 0.4,
+    "stroller_fit": 0.4,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.3,
+    "rain_fit": 0.5,
+    "value_for_money_fit": 0.95,
+    "iconic_landmark_fit": 1.0,
+    "cafe_fit": 0.6,
+    "food_fit": 0.8,
+    "nature_fit": 0.8,
+    "beach_fit": 0.6,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.4,
+    "no_shopping_fit": 0.5,
+    "local_culture_fit": 1.0,
+    "storytelling_fit": 0.8,
+    "unesco_fit": 0.2,
+    "intangible_heritage_fit": 0.2,
+    "indoor_ratio": 0.2,
+    "weather_sensitivity": 0.5,
+    "comfort_level": 0.6,
+    "budget_fit": 0.85,
+    "premium_fit": 0.3,
+    "small_group_fit": 1.0,
+    "private_fit": 0.05,
+    "bus_fit": 1.0,
+    "price_band": "mid",
+    "pickup_base": "busan_central",
+    "return_time_band": "18:00-19:00",
+    "duration_band": "9h",
+    "min_recommended_age": 8,
+    "hard_constraints": {
+      "avoidIf": [
+        "mobility_limited"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "stroller_heavy_groups"
+      ]
+    },
+    "walking_notes": [
+      "Active walking day with several flights of stairs (Yonggungsa 108 steps, Gamcheon hillside).",
+      "Average fitness expected.",
+      "Sturdy closed-toe shoes recommended (Jagalchi 1F floor is wet)."
+    ],
+    "keywords": [
+      "釜山トップ観光地少人数日帰りツアー",
+      "釜山日帰りツアー",
+      "海東龍宮寺ツアー"
+    ],
+    "synonym_hints": [
+      "釜山観光ツアー",
+      "釜山少人数ツアー"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "busan",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "haedong_yonggungsa",
+      "cheongsapo_blue_line_park",
+      "un_memorial_cemetery",
+      "gamcheon_culture_village",
+      "jagalchi_market"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.1,
+    "flexibility_fit": 0.3,
+    "fixed_itinerary_fit": 1.0,
+    "buddhist_temple_fit": 1.0,
+    "scenic_temple_fit": 1.0,
+    "coastal_temple_fit": 1.0,
+    "seaside_temple_fit": 1.0,
+    "war_memorial_fit": 1.0,
+    "korean_war_history_fit": 1.0,
+    "mural_village_fit": 1.0,
+    "fish_market_fit": 1.0,
+    "market_fit": 1.0,
+    "street_food_fit": 0.9,
+    "skywalk_fit": 1.0,
+    "sky_capsule_fit": 0.7,
+    "coastal_railway_fit": 1.0,
+    "history_culture_fit": 1.0,
+    "k_drama_filming_fit": 0.5,
+    "religious_history_fit": 0.85,
+    "premium_dining_fit": 0.3,
+    "seasonal_fit": 0.85,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "busan_signature_route_fit": 1.0,
+    "skywalk_coastal_railway_fit": 1.0,
+    "first_time_busan_fit": 1.0,
+    "no_inter_city_travel_fit": 1.0,
+    "differentiates_from_busan_gyeongju_routes": true,
+    "deep_history_traveler_fit_minimum": 0.7,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "embedded_for": "atockorea_tour_marketplace",
+    "source_of_truth_note": "Internal note: product profile checked against current Busan route-selection rules. Single fixed route; no route option overrides.",
+    "audit_summary": "Year-round Busan classic 5-stop route. First Busan product in catalog — establishes busan_ region_tag prefix convention parallel to jeju_ used elsewhere. value_for_money_fit=5 reflects $41-47 市場参考資料 market rate.",
+    "score_rationale": {
+      "high_scores": {
+        "first_time_fit=5, iconic_landmark_fit=5, one_day_fit=5": "Hits all of Busan's most-recognized landmarks in one curated day — exactly what first-timers need.",
+        "value_for_money_fit=5, budget_fit=5": "Market rate at $41-47 is unusually low for an all-inclusive 9.5h tour with admissions.",
+        "photo_level=5": "Gamcheon and Yonggungsa are among Korea's most photogenic spots."
+      },
+      "low_scores": {
+        "mobility_friendly_fit=2, stroller_fit=2, senior_general_fit=2": "Yonggungsa stairs (108) and Gamcheon hillside alleys are the bottleneck.",
+        "premium_fit=1": "Budget-positioned tour; premium travelers should consider private Busan tour.",
+        "same_day_flight_fit=1": "9.5h tour ending up to 19:00 makes evening flights very tight.",
+        "private_fit=1, bus_fit=1": "Format is small group only.",
+        "relax_level=2": "Five stops in 9.5h with hillside walking — not a relaxed pace."
+      },
+      "calibration_against_jeju_set": "First non-Jeju product. Naturally separated by island=busan hard filter. Walking and pace metrics roughly match jeju east-bus tour but value_for_money_fit is higher (Busan market pricing is more competitive)."
+    },
+    "locale_adaptation": {
+      "current_locale": "en",
+      "ko_localization_status": ""
+    },
+    "related_products": {
+      "same_destination_alternatives": [
+        "busan-small-group-sightseeing-tour-cruise-passengers (cruise-passenger focused, fewer stops)",
+        "busan-gyeongju-unesco-legacy-tour-national-museum (extends to Gyeongju, longer day)",
+        "from-busan-gyeongju-ancient-capital-day-tour (Gyeongju from Busan)"
+      ],
+      "note": "This is the most comprehensive Busan-only classic route in the catalog. Use cruise tour for cruise-bound guests, Gyeongju tours for travelers wanting historical extension."
+    },
+    "anchor_pois": [
+      "Haedong Yonggungsa Temple",
+      "Cheongsapo & Haeundae Blue Line Park",
+      "UN Memorial Cemetery in Korea",
+      "Gamcheon Culture Village",
+      "Jagalchi Fish Market"
+    ],
+    "anchor_poi_keys": [
+      "haedong_yonggungsa",
+      "cheongsapo_blue_line_park",
+      "un_memorial_cemetery",
+      "gamcheon_culture_village",
+      "jagalchi_market"
+    ],
+    "competing_products": [
+      "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
+      "busan-private-car-charter-cruise-shore",
+      "busan-small-group-sightseeing-tour-cruise-passengers"
+    ],
+    "primary_themes": [
+      "coastal",
+      "korean_war_heritage",
+      "buddhist_temple",
+      "mural_art",
+      "fish_market"
+    ],
+    "secondary_themes": [
+      "coastal_railway",
+      "skywalk",
+      "refugee_history",
+      "street_food"
+    ],
+    "best_for": [
+      "first_time_visitors",
+      "couples",
+      "culture_lovers",
+      "history_enthusiasts",
+      "photographers",
+      "korean_war_descendants"
+    ],
+    "not_recommended_for": [
+      "mobility_limited",
+      "stroller_heavy_groups",
+      "shoppers_only",
+      "nightlife_seekers"
+    ],
+    "enrichment_batch": "17a",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.23",
+    "enrichment_target_kb_version": "1.24",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "16 substantive stops across 4 tours; D-grade audit (8-hl-vs-9-hl artifact) → A-grade pass"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "海岸寺院、ブルーライン海岸、彩りの丘の村、水産市場 —",
+        "headlineLine2": "釜山の7見どころを一日でバランスよく",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1920&q=80",
+          "imagePosition": "center 40%",
+          "tagline": "釜山で最も人気の7見どころを少人数で一日に",
+          "pills": [
+            "少人数",
+            "釜山",
+            "初訪問者向け"
+          ],
+          "meta": {
+            "duration": "≈ 10.5時間（08:30 最初のピックアップ）",
+            "region": "釜山",
+            "stops": "7見どころ",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "概要"
+          },
+          {
+            "id": "itinerary",
+            "label": "行程"
+          },
+          {
+            "id": "details",
+            "label": "詳細情報"
+          },
+          {
+            "id": "faq",
+            "label": "よくある質問"
+          },
+          {
+            "id": "reviews",
+            "label": "クチコミ"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "所要時間",
+            "value": "≈ 10.5時間（08:30 最初のピックアップ）"
+          },
+          {
+            "icon": "calendar",
+            "label": "ベストシーズン",
+            "value": "年中。桜の季節（3〜4月）は梵魚寺・海東龍宮寺が特に美しい"
+          },
+          {
+            "icon": "users",
+            "label": "グループ人数",
+            "value": "少人数（最大12名程度）、共有ミニコーチ"
+          },
+          {
+            "icon": "footprints",
+            "label": "歩行",
+            "value": "中〜やや難 — 龍宮寺の108段・甘川の丘の路地"
+          },
+          {
+            "icon": "map-pin",
+            "label": "エリア",
+            "value": "釜山（海雲台エリア＋釜山中心部）"
+          },
+          {
+            "icon": "ticket",
+            "label": "含まれるもの",
+            "value": "往復送迎、認定英語ガイド、全入場料"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
+            "alt": "岩礁の海岸にたたずむ海東龍宮寺の仏殿と海の眺め",
+            "caption": "海東龍宮寺 — 韓国一有名な海岸仏教寺院",
+            "location": "海東龍宮寺（ヘドン・ヨングンサ）、機張郡、釜山北東部",
+            "atmosphere": "岩礁の海辺に立つ仏殿。108段の石段を下りた先に広がる絶景"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=1200",
+            "alt": "海岸の廃線路を走る青沙浦ブルーラインパークのスカイカプセル",
+            "caption": "青沙浦ブルーラインパーク — 廃線路の海岸トロッコ",
+            "location": "青沙浦（チョンサポ）、海雲台、釜山",
+            "atmosphere": "東海南部線廃線路を活用した海岸観光列車。海雲台の海岸線パノラマ"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601171291096-87099c2c4625?w=1200",
+            "alt": "太極旗が並ぶ在韓国連記念公園の静寂な墓地",
+            "caption": "在韓国連記念公園 — 世界唯一の国連記念墓地",
+            "location": "在韓国連記念公園（UNMCK）、南区、釜山",
+            "atmosphere": "朝鮮戦争の国連軍兵士を祀る世界唯一の国連記念墓地。静寂と敬虔さ"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1200",
+            "alt": "カラフルな壁画と細い路地が連なる甘川文化村の鳥瞰図",
+            "caption": "甘川文化村 — 韓国のサントリーニ",
+            "location": "甘川文化村（カムチョン・ムナファマウル）、沙下区、釜山",
+            "atmosphere": "丘の斜面に色とりどりに塗られた家々。「韓国のマチュピチュ」の異名"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1572883454114-1cf0031ede2a?w=1200",
+            "alt": "釜山チャガルチ水産市場の生鮮海産物の屋台と活気ある雰囲気",
+            "caption": "チャガルチ水産市場 — 韓国最大の水産市場",
+            "location": "チャガルチ市場、中区、釜山南浦港",
+            "atmosphere": "釜山南浦港のウォーターフロントに広がる韓国最大の水産市場"
+          },
+          {
+            "id": "g6",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "alt": "釜山のレストランテーブルに副菜付きのテジクッパプのボウル",
+            "caption": "ランチは地元料理 — 釜山レストランのテジクッパプ、ミルミョン、または海鮮チヂミ",
+            "location": "釜山中心部（地元レストラン）",
+            "atmosphere": "気取らない釜山の郷土料理 — テジ・クッパッまたはミルミョン"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "≈ 09:00",
+            "duration": "30分",
+            "name": "ピックアップ（釜山中心部3か所）",
+            "category": "出発 — 釜山地下鉄駅3か所",
+            "description": "ピックアップは釜山の主要地下鉄3か所に集約し、朝の無駄な移動を最小限に抑えます：**ソミョン駅4番出口（08:30）** — 釜山中心部・宿泊施設密集エリア。**釜山駅4番出口（08:50）** — KTXでお越しのお客様に対応（※KTX出口ではなく地下鉄改札口付近）。**海雲台駅2番出口（09:10）** — 海雲台ビーチエリアに宿泊のお客様向け。ミニコーチは最大12名程度の少人数制、英語対応ガイド付き。全員乗車後、海東龍宮寺（機張郡）へ向けて北東方向へ出発。",
+            "highlights": [
+              "**3か所のピックアップポイント** — ソミョン（08:30）・釜山駅（08:50）・海雲台（09:10）",
+              "少人数制ミニバン（最大12名）、英語対応ガイド付き",
+              "地下鉄駅に直結するため公共交通機関でも容易にアクセス可能"
+            ],
+            "timeUsed": [
+              "ソミョン→釜山駅→海雲台の順次ピックアップ",
+              "海雲台→海東龍宮寺（機張郡）まで約30分"
+            ],
+            "whyOnRoute": "釜山駅・西面・海雲台の主要エリアから参加しやすい集合場所を設定しています。北東部の海東龍宮寺から始めることで、釜山市内を無理なく巡る流れになります。",
+            "_poi_meta": {
+              "poi_key": "OPS_busan_pickup_central",
+              "verified": true,
+              "match": "transit_only",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan",
+                "Busan Metro"
+              ]
+            }
+          },
+          {
+            "number": 2,
+            "time": "≈ 10:00",
+            "duration": "75分",
+            "name": "海東龍宮寺（ヘドン・ヨングンサ）",
+            "category": "韓国一有名な海岸仏教寺院 — 機張郡、釜山北東部",
+            "description": "**海東龍宮寺**は機張郡の岩礁の海岸に立つ**韓国で最も有名な海岸仏教寺院** — 通常は山の中腹に建てられる韓国の寺院の中で、海辺の岩礁に直接建てられた極めて珍しいロケーション。1376年に恵勤国師によって創建された古刹で、入口から海岸沿いの参道を歩き**108段の石段**（108煩悩を象徴）を下りると、波が打ち寄せる岩礁の上に仏殿が連なります。**日出岩**と呼ばれる奇岩は毎朝の日の出の名所で、延命長寿や子宝祈願に訪れる参拝者で年中賑わいます。**入場無料**。参拝中は寺院の規律を尊重し、静かな参拝をお願いします。",
+            "highlights": [
+              "1376年（恵勤国師）創建の古刹 — **海岸の岩礁に直接建てられた**極めて珍しいロケーション",
+              "**108段の石段**（108煩悩を象徴）— 下りた先に仏殿と海の絶景",
+              "**日出岩**の日の出 — 延命長寿・子宝祈願の参拝者が年中訪れる",
+              "**入場無料**。参拝の礼儀を守ること"
+            ],
+            "timeUsed": [
+              "駐車場＋参道入口 — 約5分",
+              "参道＋108段の石段 — 約15分",
+              "仏殿・日出岩・海岸鑑賞＋写真撮影 — 約25分",
+              "上り帰路＋コーチへ — 約15分"
+            ],
+            "whyOnRoute": "海東龍宮寺は釜山ツアーで最も多くリクエストされる見どころ。機張郡の北東に位置するため、一日の始まりに訪れることで残りのルートが中心部へと自然に流れます。朝の早い時間帯は参拝者が少なく、海の眺めと寺院の雰囲気を最大限に見て回れます。",
+            "visitBasics": {
+              "hours": "毎日04:30〜19:20（最終入場18:50）",
+              "closed": "年中無休",
+              "admission": "無料。マイカー駐車は有料",
+              "walking": "中程度——松林の108段階段、複数の海岸テラスと階段"
+            },
+            "convenience": {
+              "restroom": "正門近くと境内内部",
+              "parking": "海東龍宮寺駐車場（有料）"
+            },
+            "smartNotes": {
+              "photo": "海側の日の出岩。大雄殿横の石段で海を背景にした定番ショット。",
+              "facilities": "上の広場にお土産・スナック屋台と小さなカフェ。",
+              "tip": "お堂への入場は正面ではなく側面ドアを使用（正面は僧侶専用）。仏誕日（4〜5月）のランタン祭りもおすすめ。"
+            },
+            "_poi_meta": {
+              "poi_key": "haedong_yonggungsa",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan",
+                "VisitKorea",
+                "Wikipedia",
+                "Culture Trip",
+                "Korean Temple Guide",
+                "Korea Tourism Organization Official"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:30",
+            "duration": "75分",
+            "name": "青沙浦＆海雲台ブルーラインパーク",
+            "category": "廃線路再活用の海岸観光施設 — 東海南部線（廃線）",
+            "description": "**海雲台ブルーラインパーク**は**廃止された東海南部線海岸鉄道**を再活用したエコフレンドリーな観光施設で、2020年に公開。**青沙浦**から松亭（松亭）までの**海岸線沿いの廃線路**に2種類の観光乗り物が運行しています：**(1) スカイカプセル** — 4人乗りの透明ガラス張りのカプセルポッドが空中架線を滑走、東シナ海のパノラマを楽しみながら海岸線を進む。**(2) ビーチトレイン** — 6人乗りの複数編成列車で同路線を走行、座席方向が外向きで全員が海を向くように配置。**青沙浦**は小規模な漁港で、伝統的な漁船と防波堤の光景が海雲台の高層ビル群とのコントラストを生む。スカイカプセルは事前予約を強く推奨（現地購入は混雑で困難なことが多い）。入場料はツアーに**含まれています**。",
+            "highlights": [
+              "**スカイカプセル** — 4人乗りの透明ガラス張りカプセルが海岸線上空を滑走",
+              "**ビーチトレイン** — 全席が海を向く6人乗り観光列車",
+              "**東海南部線廃線路**（2013年廃止）を再活用 — 2020年オープン",
+              "青沙浦の伝統的な漁港と海雲台の高層ビルのコントラスト",
+              "**入場料はツアーに含まれます**（スカイカプセルまたはビーチトレイン）"
+            ],
+            "timeUsed": [
+              "青沙浦漁港散策＋写真撮影 — 約20分",
+              "スカイカプセルまたはビーチトレイン乗車 — 約30〜40分",
+              "待機時間＋バスに戻る — 約10分"
+            ],
+            "whyOnRoute": "海東龍宮寺から海雲台方向への帰路に位置するため、ルートに無駄なく組み込めます。廃線路の再活用という「現代釜山」のクリエイティブな側面を体験できる唯一の見どころ。",
+            "visitBasics": {
+              "hours": "スカイカプセルとビーチトレイン約09:30〜18:30（夏季は20:30まで延長）",
+              "closed": "運行は天候次第。当日要確認",
+              "admission": "無料エリアあり。スカイカプセル₩30,000（2名）/₩39,000（3名）/₩44,000（4名）片道",
+              "walking": "楽 — 木製グリーン鉄道ボードウォーク（水営↔青沙浦2.3km、約30分）"
+            },
+            "convenience": {
+              "restroom": "水営、青沙浦、松亭駅にあり",
+              "parking": "水営駅と青沙浦駅近くの公営駐車場（有料）"
+            },
+            "smartNotes": {
+              "photo": "青沙浦駅横断歩道でスラムダンク風の有名なフレーム。タリットル・スカイウォーク",
+              "facilities": "水営、青沙浦、松亭のみ窓口販売（自動キオスクは他の駅）",
+              "tip": "スカイカプセルは夕日の時間帯がすぐ満席 — 市場参考資料で1〜2週間前に予約を"
+            },
+            "_poi_meta": {
+              "poi_key": "cheongsapo_blue_line_park",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Blue Line Park official",
+                "Visit Busan",
+                "Soul of Seoul",
+                "KoreaToDo",
+                "Tara O'Reilly travel",
+                "Busan Metropolitan City Tourism"
+              ]
+            }
+          },
+          {
+            "number": 4,
+            "time": "≈ 13:00",
+            "duration": "60分",
+            "name": "昼食（釜山の地元レストラン）",
+            "category": "昼食休憩 — 釜山郷土料理",
+            "description": "海雲台から国連記念公園のある南区方向への移動中に立ち寄る、ガイド推薦の地元レストランでの昼食。**2つの典型的なオプション**：**(1) （テジ・クッパッ）** — 豚骨スープと白飯のセットで釜山の「ソウルフード」、韓国全国でも釜山のものが最も有名。**(2) （ミルミョン）** — 小麦粉ベースの冷製麺で朝鮮戦争後に釜山に定着した「釜山式冷麺」、夏は特に人気。どちらも**₩10,000〜15,000**程度。**ベジタリアン・ハラール対応**は事前申込で可能。",
+            "highlights": [
+              "**（テジ・クッパッ）** — 釜山の代名詞的なソウルフード（豚骨スープ＋白飯）",
+              "**（ミルミョン）** — 朝鮮戦争後に釜山で生まれた「釜山式冷麺」",
+              "**ベジタリアン・ハラール対応**（事前申込）"
+            ],
+            "timeUsed": [
+              "コーチで昼食会場へ — 約10〜15分",
+              "注文＋食事 — 約45分"
+            ],
+            "whyOnRoute": "海雲台から南区への移動中に自然な休憩ポイントを設けることで、午後の国連記念公園・甘川・チャガルチという文化・市場ゾーンへ向けてエネルギーを補給。",
+            "_poi_meta": {
+              "poi_key": "OPS_busan_lunch",
+              "verified": true,
+              "match": "lunch_placeholder",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan",
+                "Busan Metropolitan Government cuisine guide"
+              ]
+            }
+          },
+          {
+            "number": 5,
+            "time": "≈ 14:15",
+            "duration": "60分",
+            "name": "在韓国連記念公園",
+            "category": "世界唯一の国連記念墓地 — 朝鮮戦争（1950〜53年）",
+            "description": "**在韓国連記念公園**は**世界唯一の国連記念墓地** — 1951年1月18日に国連軍の命令によって設立され、朝鮮戦争で戦死した**16か国の国連軍兵士2,300名以上**が眠ります。韓国・米国・英国・オーストラリア・カナダなど参戦国の国旗が静かにたなびく中、整然と並んだ白い墓石が広大な芝生の上に続きます。**1955年に韓国政府が国連に永久譲渡**した特別な領域で、韓国政府と国連が共同で管理。毎年11月11日に行われる**「ターン・トゥワード・プサン（ターン・トゥワード・プサン）」**では、世界中の参戦国が一斉に釜山の方向を向いて黙祷を捧げます。訪問者は公園内を自由に歩くことができ、追悼館では朝鮮戦争の経緯と国連軍の役割を解説した展示が見られます。**入場無料**。静寂と敬意を保つことを推奨。",
+            "highlights": [
+              "**世界唯一の国連記念墓地** — 1951年設立、16か国の国連軍兵士2,300名以上が眠る",
+              "1955年に韓国政府が**国連に永久譲渡**した特別な国際領域",
+              "毎年11月11日の**「ターン・トゥワード・プサン」**— 世界中の参戦国が同時に黙祷",
+              "追悼館では朝鮮戦争の経緯と国連軍の役割を解説",
+              "**入場無料**。静寂と敬意を保つこと"
+            ],
+            "timeUsed": [
+              "入場＋追悼館展示 — 約20分",
+              "墓地エリア散策＋写真 — 約25分",
+              "バスに戻る — 約10分"
+            ],
+            "whyOnRoute": "釜山の歴史的・国際的な側面を体験できる唯一無二の見どころ。海岸寺院・海岸列車の賑やかな午前とのコントラストが、一日に深みと変化を生みます。",
+            "visitBasics": {
+              "hours": "毎日09:00〜17:00（夏季〜18:00）",
+              "closed": "年中無休",
+              "admission": "無料",
+              "walking": "楽 — 平坦な墓地路。完全な訪問は30〜45分"
+            },
+            "convenience": {
+              "restroom": "メイン入口近く",
+              "parking": "UN記念公園専用駐車場（要確認）"
+            },
+            "smartNotes": {
+              "photo": "中央慰霊塔と整列した石碑 — 静粛で力強い構図",
+              "facilities": "近くに訪問者センター。釜山港方面への市バスアクセス",
+              "tip": "入場時に静粛な態度を保ってください。無料入場 — 観光客から高く評価されていない隠れた宝"
+            },
+            "_poi_meta": {
+              "poi_key": "un_memorial_cemetery",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNMCK official",
+                "Wikipedia",
+                "ABMC",
+                "Visit Busan",
+                "CNN",
+                "VisitKorea",
+                "UN Memorial Cemetery in Korea Official Site"
+              ]
+            }
+          },
+          {
+            "number": 6,
+            "time": "≈ 15:30",
+            "duration": "75分",
+            "name": "甘川文化村（カムチョン・ムナファマウル）",
+            "category": "丘の斜面のアート村 — 「韓国のサントリーニ」「韓国のマチュピチュ」",
+            "description": "**甘川文化村** — 「韓国のマチュピチュ」および「韓国のサントリーニ」と呼ばれる — は釜山の沙下区に広がる丘の斜面の住宅街で、朝鮮戦争中の1950年代に避難民が太極道（宗教団体）の集団居住区として形成した起源を持ちます。密集した急斜面の路地に沿って色とりどりに塗られた家々が階段状に広がり、南側の釜山湾と対岸の絶影島（ヨルリョン島）が見渡せます。2009年から公共アートプロジェクト「マウル美術プロジェクト」が開始され、街角ごとにユニークな壁画・彫刻・インスタレーションが設置されています。代表的な撮影ポイントは「星の王子さまと狐」の彫刻と、港を見下ろすメイン展望台。主なフォトゾーンには**メインマップ付きパンフレット**が配布され、主要見どころを自由に巡れます。**入場無料**。丘の坂道と狭い路地のため**グリップの良い靴を推奨**。",
+            "highlights": [
+              "「**韓国のサントリーニ**」「**韓国のマチュピチュ**」と呼ばれる丘の斜面のカラフルな住宅街",
+              "朝鮮戦争（1950年代）の避難民が形成した歴史的な集団居住区",
+              "2009年〜の「マウル美術プロジェクト」で街角に壁画・彫刻が多数設置",
+              "「**星の王子さまと狐**」の彫刻と釜山湾展望台が代表的撮影ポイント",
+              "**入場無料**。急な路地はグリップの良い靴を推奨"
+            ],
+            "timeUsed": [
+              "コーチ到着＋メインマップ配布 — 約5分",
+              "メインフォトゾーン（展望台・壁画・彫刻） — 約40〜50分",
+              "土産物・カフェ（任意） — 約15分",
+              "バスに戻る — 約10分"
+            ],
+            "whyOnRoute": "甘川は釜山の歴史・アート・写真映えするな要素が凝縮された最高コスパの見どころ。国連記念公園の静寂な雰囲気の後、活気ある丘の路地が一日にメリハリをつけます。",
+            "visitBasics": {
+              "hours": "常時開放（多くの工房・カフェは09:00〜18:00）",
+              "closed": "年中無休",
+              "admission": "入場無料。個別アトラクションは各自支払い",
+              "walking": "中〜きつい — 急勾配の路地と多くの階段。スニーカーまたはグリップ付きの靴が必須"
+            },
+            "convenience": {
+              "restroom": "村内複数か所の公衆トイレ",
+              "parking": "限られた駐車場。ガイドドライバーが最寄りの場所を管理"
+            },
+            "smartNotes": {
+              "photo": "メインのサンドル路地眺望。黄色の小さな王子の壁画。カラフルな段々の屋上",
+              "facilities": "多数のカフェ、工房、ギャラリー。村マップは入口で入手可能",
+              "tip": "早朝（09:00〜10:00）が人が少なく最も撮影しやすい時間帯"
+            },
+            "_poi_meta": {
+              "poi_key": "gamcheon_culture_village",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Wikipedia",
+                "CNN",
+                "Visit Busan",
+                "Hapskorea",
+                "Columban Society",
+                "Lifeguin",
+                "Busan Cultural Foundation"
+              ]
+            }
+          },
+          {
+            "number": 7,
+            "time": "≈ 17:15",
+            "duration": "60分",
+            "name": "チャガルチ水産市場",
+            "category": "韓国最大の水産市場 — 釜山南浦港",
+            "description": "**チャガルチ市場**は**韓国最大の水産市場**であり釜山の10大ランドマークのひとつ — 中区の南浦港ウォーターフロントに立地。1950年代の朝鮮戦争後に形成された「（アジメ）文化」 — 逞しい市場のおばちゃん文化 — の中心地として知られ、現在は7層の近代的なビルと屋外の露天市場が共存。1階に新鮮な活魚・貝類・甲殻類・タコが並ぶ「活魚コーナー」では、選んだ魚介をその場で2〜3階の食堂で刺身や海鮮料理にしてもらえる（食材費＋調理費で₩30,000〜50,000程度）。人気の街歩きスナックは**（オデン）** — 釜山風練り物の串焼きで、路地の屋台で温かいスープと一緒に見て回れます。市場内は**2019年釜山市選定 「釜山の文化遺産」**に登録。毎年10月に「チャガルチ祭り」を開催。",
+            "highlights": [
+              "**韓国最大の水産市場** — 釜山10大ランドマーク、南浦港ウォーターフロント",
+              "1階の活魚コーナーで選んで2〜3階の食堂で食べる「選魚→刺身」スタイル",
+              "釜山名物**（オデン）**屋台 — 温かい練り物の串焼きスナック",
+              "**朝鮮戦争後のアジメ（市場おばちゃん）文化**の発祥地",
+              "毎年10月の**「チャガルチ祭り」**開催"
+            ],
+            "timeUsed": [
+              "コーチ到着＋市場入口 — 約5分",
+              "市場内散策＋活魚コーナー鑑賞 — 約30分",
+              "オデン屋台＋街歩きスナック（任意） — 約20分",
+              "解散または解散後自由行動 — 約15分"
+            ],
+            "whyOnRoute": "チャガルチは中央区（南浦洞）に位置し、釜山中心部への帰路の最終見どころとして完璧に役立ちます。夕方の市場の賑わいと活気が一日の締めくくりとして最高のエネルギーをご案内します。",
+            "visitBasics": {
+              "hours": "毎日24時間（ほとんどの店舗06:00〜21:00）",
+              "closed": "年中無休",
+              "admission": "無料。都度払い",
+              "walking": "楽 — 平坦な市場エリア"
+            },
+            "convenience": {
+              "restroom": "市場内複数か所および近くの地下鉄駅",
+              "parking": "チャガルチ駅地下駐車場。ガイドドライバーが処理"
+            },
+            "smartNotes": {
+              "photo": "1階の生け簀と活魚ディスプレイ。朝の競り（06:00〜08:00）",
+              "facilities": "2〜5階に席あり海鮮レストラン。近くに南浦市場",
+              "tip": "海鮮は1階（市場価格）で買って2〜3階の食堂へ持ち込み調理料を払うのがお得"
+            },
+            "_poi_meta": {
+              "poi_key": "jagalchi_market",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea",
+                "Wikipedia",
+                "Visit Busan",
+                "Hungry Pursuit",
+                "Emma Jane Explores",
+                "Jagalchi.org",
+                "Korean Heritage Service / Cultural Heritage Administration"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "ピックアップ（釜山中心部3駅）",
+            "type": "origin",
+            "theme": "出発"
+          },
+          {
+            "name": "海東龍宮寺",
+            "type": "primary",
+            "theme": "海沿いの寺院"
+          },
+          {
+            "name": "青沙浦＆ブルーラインパーク",
+            "type": "primary",
+            "theme": "海岸とビーチ列車"
+          },
+          {
+            "name": "ランチ（釜山の地元レストラン）",
+            "type": "meal",
+            "theme": "食事"
+          },
+          {
+            "name": "国連記念公園",
+            "type": "primary",
+            "theme": "Memorial"
+          },
+          {
+            "name": "甘川文化村",
+            "type": "primary",
+            "theme": "アートの街"
+          },
+          {
+            "name": "ジャガルチ市場",
+            "type": "return",
+            "theme": "海鮮市場"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "海岸の朝",
+            "duration": "約3時間",
+            "description": "海東龍宮寺（機張郡）→青沙浦ブルーラインパーク（海雲台）の北東海岸コース。"
+          },
+          {
+            "phase": "昼食休憩",
+            "duration": "約1時間",
+            "description": "海雲台から南区へ移動中に釜山郷土料理で昼食休憩（テジ・クッパッまたはミルミョン）。"
+          },
+          {
+            "phase": "記念公園＋文化村",
+            "duration": "約3時間30分",
+            "description": "在韓国連記念公園（60分）→甘川文化村の丘の路地アートウォーク。"
+          },
+          {
+            "phase": "市場でフィナーレ",
+            "duration": "約1時間30分",
+            "description": "チャガルチ水産市場の散策＋釜山中心部への解散（南浦洞・釜山駅・ソミョン）。"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "この一日の流れ",
+          "subtitle": "北東の海岸寺院（海東龍宮寺）から始まり、ブルーラインパークを経て中心部へ。国連記念公園で静寂な中間休憩の後、甘川文化村の丘の路地をアートウォーク、チャガルチ水産市場でフィナーレ。"
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "釜山初訪問者",
+            "大人ファミリーとカップル",
+            "釜山に丸一日ある旅行者",
+            "文化と食に興味がある旅行者"
+          ],
+          "lessIdealFor": [
+            "歩行・階段を最小限にしたい方",
+            "ベビーカー依存度の高いグループ（甘川の丘の路地）",
+            "夕方フライトのタイトなスケジュールの旅行者（解散は最大19:00）"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "ペースと地理",
+              "icon": "sun",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "エネルギーが高い朝に北東の寺院へ",
+                  "detail": "海東龍宮寺は機張郡の北東端に位置するため、一日の始まりに訪れることでルートが中心部へと自然に流れます。"
+                },
+                {
+                  "label": "海岸→記念→村の順番",
+                  "detail": "景観→静寂→色彩というルートの流れが、釜山の多面的な姿を一日で体験させます。"
+                },
+                {
+                  "label": "中心部でのフィナーレ",
+                  "detail": "チャガルチは南浦洞の中心部にあり、南浦洞・釜山駅・ソミョンに宿泊のお客様が最終見どころ後に自由に解散できます。"
+                }
+              ]
+            },
+            {
+              "title": "なぜ10.5時間でこれが実現できるのか",
+              "icon": "clock",
+              "iconBg": "bg-pink-50/80",
+              "iconColor": "text-pink-600",
+              "items": [
+                {
+                  "label": "6か所の充実した見どころ＋昼食",
+                  "detail": "2か所の海岸見どころ・1か所の記念公園・1か所のアート村（滞在時間たっぷり）・1か所の市場＋昼食で、詰め込みすぎずにバランスよく。"
+                },
+                {
+                  "label": "ほぼ屋外、市場で屋内フィナーレ",
+                  "detail": "一日の約80%が屋外。チャガルチが唯一の屋内ブロック。適度な雨でも実施可能。"
+                },
+                {
+                  "label": "3か所のピックアップポイント",
+                  "detail": "ソミョン・釜山駅・海雲台から乗車可能 — 釜山中心部のほとんどの宿泊施設からアクセスできます。"
+                }
+              ]
+            },
+            {
+              "title": "正直なトレードオフ",
+              "icon": "info",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "龍宮寺の108段（スキップ可能）",
+                  "detail": "108段は寺院の境内へ下りる石段。上段の展望エリアは階段なしでアクセス可能なので、膝が心配な方は上から眺めるだけでも十分です。"
+                },
+                {
+                  "label": "甘川の路地は急坂 — 雨天は滑りやすい",
+                  "detail": "グリップの良い靴を履き、上り坂はゆっくり進みましょう。メインフォトゾーンは無理なく到達できます。"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "ピックアップと解散",
+            "preview": "釜山地下鉄の3つのピックアップポイント：西面駅4番出口(08:30)、釜山駅4番出口、海雲台ビーチ。",
+            "content": [
+              "ピックアップポイント3か所：ソミョン駅4番出口（08:30）・釜山駅4番出口（08:50）・海雲台駅2番出口（09:10）",
+              "解散ポイント：南浦洞、釜山駅、ソミョン、または海雲台（選択可）",
+              "解散は最終見どころ（チャガルチ）から各地点へのコーチ移動で対応",
+              "空港への解散は別途ご相談ください"
+            ]
+          },
+          {
+            "id": "what-to-bring",
+            "title": "服装と持ち物",
+            "preview": "グリップ付き歩きやすい靴 — 甘川の坂道路地と龍宮寺の108段",
+            "content": [
+              "グリップの良い歩きやすい靴 — 甘川の丘の路地と龍宮寺の108段に対応",
+              "軽量な防風ジャケット（海岸見どころでの風対策）",
+              "帽子と日焼け止め",
+              "水（少なくとも1L）",
+              "雨の日はレインコートまたはポンチョを推奨（折り畳み傘も可）"
+            ]
+          },
+          {
+            "id": "weather-policy",
+            "title": "天候ポリシー",
+            "preview": "年間を通じて営業。",
+            "content": [
+              "年中実施。",
+              "小雨：ツアーは予定通り実施 — 雨の龍宮寺は独特の雰囲気があり、甘川も雨天でも見て回れます",
+              "大雨または台風：全額返金または日程変更の選択肢をご案内",
+              "甘川の路地は雨で滑りやすくなるため、グリップのある靴を強く推奨"
+            ]
+          },
+          {
+            "id": "inclusions",
+            "title": "含まれるもの・含まれないもの",
+            "preview": "釜山3駅でのピックアップと降車、エアコン付きミニコーチ輸送",
+            "content": [
+              "釜山地下鉄3駅でのピックアップと解散、エアコン付きミニコーチ",
+              "認定英語対応ガイド",
+              "全入場料（海東龍宮寺・青沙浦ブルーラインパーク・国連記念公園・甘川文化村）",
+              "含まれないもの：昼食（約₩10,000〜15,000）・チャガルチでの海産物・チップ"
+            ]
+          },
+          {
+            "id": "language",
+            "title": "言語",
+            "preview": "ツアーの主要言語：英語。",
+            "content": [
+              "ツアーの主要言語：英語",
+              "中国語対応ガイドはリクエストで可能 — 3日以上前の予約が必要",
+              "韓国語は移動中に使用されますが、全てのガイド解説は英語で行われます"
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "歩行と地形",
+            "preview": "中程度〜やや難しい。",
+            "content": [
+              "中〜やや難しい。",
+              "海東龍宮寺：108段の石段（スキップ可能 — 上段展望エリアあり）",
+              "青沙浦：ほぼフラット（乗車のみ）",
+              "甘川文化村：急な坂道の路地、合計約1.5km",
+              "チャガルチ：フラットな市場内の歩行",
+              "総歩行距離：約4〜5km（甘川の坂道含む）",
+              "歩きやすいクローズドトゥシューズ必須"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "季節別の案内を確認"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "季節別の案内を確認"
+          },
+          "_seasonalSummary": "釜山は韓国南部を代表する海沿いの都市で、ソウルより冬は温暖で雨がやや多い傾向があります。夏は蒸し暑く、7月の梅雨時期は降水量が増えます。"
+        },
+        "seasonalVariations": [
+          {
+            "season": "春（3〜5月）",
+            "description": "3月末〜4月初頭、青沙浦海岸と海雲台ブルーラインパーク沿いの桜。釜山最高の撮影シーズン。"
+          },
+          {
+            "season": "夏（6〜8月）",
+            "description": "日照時間長い。海岸見どころは内陸より涼しい。7月の梅雨で屋外滞在時間が短くなる場合あり。"
+          },
+          {
+            "season": "秋（9〜11月）",
+            "description": "最も透明度が高く海が最も暖かい — 全体的な最高シーズン。10月下旬の紅葉。青沙浦海岸のゴールデンライト。"
+          },
+          {
+            "season": "冬（12〜2月）",
+            "description": "最も閑散。澄んだ海の眺め。韓国基準で温暖（釜山の冬の最低気温5〜10°C）。龍宮寺は元旦の初日の出見どころ。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "現地を熟知した認定スタッフ",
+            "description": "完全保険付きの認定韓国ツアー催行会社",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "釜山全域を知り尽くした現地を熟知した認定スタッフ。龍宮寺から甘川まで効率的な行程づくり。"
+          },
+          {
+            "icon": "users",
+            "title": "釜山トップ7見どころに特化",
+            "description": "手調整の行程、一般的なループではありません",
+            "iconBg": "bg-pink-50/80",
+            "iconColor": "text-pink-600",
+            "body": "ノーショッピングストップポリシー — ガイドはキックバックではなく品質に基づいて推薦します。"
+          },
+          {
+            "icon": "shield",
+            "title": "少人数制ツアー",
+            "description": "最大12名の少人数制",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "少人数で甘川の路地もチャガルチの市場もゆったり体験。"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "予約後すぐ",
+            "title": "予約確認（即時）",
+            "detail": "行程確認付きの予約確認",
+            "description": "ピックアップポイントの詳細付きで即時確認。"
+          },
+          {
+            "timing": "前日",
+            "title": "ピックアップ詳細",
+            "detail": "正確なピックアップ場所と車両情報（WhatsApp）",
+            "description": "乗車地点と車両番号をWhatsAppで送付。"
+          },
+          {
+            "timing": "当日の朝",
+            "title": "ピックアップ確認",
+            "detail": "ドライバーが到着10分前にチェックイン",
+            "description": "当日朝のドライバーからの最終連絡。"
+          },
+          {
+            "timing": "ツアー中",
+            "title": "ツアー中サポート",
+            "detail": "催行チームへの直通連絡先",
+            "description": "緊急時の連絡先を事前に提供。"
+          },
+          {
+            "timing": "一日の終わり",
+            "title": "柔軟な解散",
+            "detail": "解散ポイントの選択（南浦洞・釜山駅・ソミョン・海雲台）",
+            "description": "希望の解散ポイントを当日確定。"
+          },
+          {
+            "timing": "ツアー後",
+            "title": "レビュー＆フォローアップ",
+            "detail": "任意のレビューとフォローアップ",
+            "description": "解散後にフィードバックリクエストを送付。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "first-time",
+            "question": "釜山初訪問者に良い選択ですか？",
+            "answer": "はい。海岸寺院・廃線路観光・国連記念公園・アート村・水産市場という5つの全く異なるテーマを一日でカバーできる、釜山の総合入門ツアーです。"
+          },
+          {
+            "id": "stairs",
+            "question": "龍宮寺の階段はどれくらいありますか？",
+            "answer": "108段の石段があります。108は仏教で煩悩の数を象徴し、下り終えると寺院の境内と海の絶景が広がります。膝が心配な方は上段の展望エリアから眺めるだけでも十分見て回れます。"
+          },
+          {
+            "id": "gamcheon-walking",
+            "question": "甘川の丘の路地は大変ですか？",
+            "answer": "急な上り坂と細い路地があります。グリップの良い靴を履き、自分のペースで進めば問題ありません。主要なフォトゾーン（星の王子さまの彫刻・展望台）は無理なく到達できます。"
+          },
+          {
+            "id": "sky-capsule",
+            "question": "青沙浦のスカイカプセルはツアーに含まれますか？",
+            "answer": "はい。スカイカプセルまたはビーチトレインの入場料はツアーに含まれます。当日の混雑状況によっていずれかに乗車します。"
+          },
+          {
+            "id": "lunch",
+            "question": "昼食は含まれていますか？オプションは何ですか？",
+            "answer": "昼食は含まれていません（自己負担、約₩10,000〜15,000）。ガイドが釜山郷土料理のレストランを推薦します。（豚骨スープ）またはミルミョン（釜山式冷麺）が典型的なオプションです。ベジタリアン・ハラール対応は予約時にお申し出ください。"
+          },
+          {
+            "id": "kids",
+            "question": "お子様連れでも参加できますか？",
+            "answer": "はい。6歳以上のお子様に特に適しています。龍宮寺の108段と甘川の急坂が唯一の体力的な部分です。甘川の壁画とチャガルチの活魚コーナーは子供に人気です。"
+          },
+          {
+            "id": "seniors",
+            "question": "高齢の方でも参加できますか？",
+            "answer": "はい、活動的な高齢者の方はご参加いただけます。龍宮寺の108段はスキップ可能（上段展望エリアあり）、甘川はゆっくり自分のペースで歩けます。"
+          },
+          {
+            "id": "language",
+            "question": "ガイドはどの言語を話しますか？",
+            "answer": "ツアーの主要言語は英語です。中国語対応ガイドはご要望に応じて手配可能ですが、3日以上前の予約が必要です。"
+          },
+          {
+            "id": "pickup",
+            "question": "どこでピックアップされますか？",
+            "answer": "ソミョン駅4番出口（08:30）、釜山駅4番出口（08:50）、海雲台駅2番出口（09:10）の3か所です。最寄りの駅を予約時に選択してください。"
+          },
+          {
+            "id": "drop-off",
+            "question": "解散場所はどこですか？",
+            "answer": "チャガルチ市場の後、南浦洞・釜山駅・ソミョン・海雲台のいずれかへコーチで送迎します。希望の解散ポイントを当日ガイドにお申し出ください。"
+          },
+          {
+            "id": "compare",
+            "question": "他の釜山ツアーと比べてどう違いますか？",
+            "answer": "このツアーは釜山の最も象徴的な7見どころ（海岸寺院・廃線路観光・国連記念公園・アート村・水産市場）を一日でカバーする最も総合的なルートです。釜山滞在が1〜2日の旅行者に最適。"
+          },
+          {
+            "id": "yonggungsa-best-time",
+            "question": "龍宮寺を訪れる最良の時間帯は？",
+            "answer": "早朝（日の出直後）が最も混雑が少なく、海の眺めと寺院の雰囲気を静かに見て回れます。このツアーの09:00〜10:00の訪問時間帯はバランスが良く、観光客が本格的に来る前です。"
+          },
+          {
+            "id": "tower-included",
+            "question": "釜山タワーの展望台はこのツアーに含まれますか？",
+            "answer": "含まれていません。このツアーは龍山公園経由ではなく南浦洞方面（チャガルチ）で一日を締めくくります。釜山タワーを優先する場合は、別の釜山ツアーをご検討ください。"
+          },
+          {
+            "id": "walking",
+            "question": "歩行量はどれくらいですか？",
+            "answer": "中〜やや難しい程度です。総歩行距離は約4〜5km（甘川の坂道含む）。最もアクティブな区間は甘川文化村の丘の路地（急坂あり）と龍宮寺の108段。歩きやすいクローズドトゥシューズを推奨します。"
+          },
+          {
+            "id": "family",
+            "question": "ファミリーに適していますか？",
+            "answer": "はい。6歳以上のお子様がいるファミリーに適しています。龍宮寺の108段と甘川の坂道が唯一の難所です。チャガルチの活魚コーナーは子供に人気です。"
+          },
+          {
+            "id": "rain",
+            "question": "雨の場合はどうなりますか？",
+            "answer": "年中実施。小雨ではツアーは予定通り実施します。大雨や台風の場合は全額返金または日程変更の選択肢をご案内します。甘川の路地は雨で滑りやすくなるためグリップのある靴を強く推奨します。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "予約可否は決済ステップで確認されます。",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "人",
+          "priceNote": "少人数グループ料金は催行会社ページで未確定です。釜山の日帰りツアーは他社基準でおおむね41〜70米ドルです。確定後はAtoC Koreaの販売価格に一律10%割引が適用されます。"
+        }
+      }
+    }
+  ],
+  "pickup_dropoff": {
+    "type": "meeting_point",
+    "meeting_points": [
+      {
+        "name": "西面駅4番出口",
+        "time": "08:30"
+      },
+      {
+        "name": "釜山駅4番出口（KTX乗り場ではありません）",
+        "time": "08:50"
+      },
+      {
+        "name": "海雲台駅5番出口",
+        "time": "09:30"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "南浦洞／チャガルチ（最終観光地で解散）",
+        "approx_time": "≈ 17:50"
+      },
+      {
+        "name": "釜山駅4番出口",
+        "approx_time": "≈ 18:10"
+      },
+      {
+        "name": "西面駅4番出口",
+        "approx_time": "≈ 18:30"
+      },
+      {
+        "name": "海雲台駅5番出口",
+        "approx_time": "≈ 19:00"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "ご予約時にホテルから最も近いピックアップ出口をお選びください。復路の路線安排に沿って順番にお送りします。西面（08:30）乗車のお客様は約10時間で最も長く、海雲台乗車のお客様は約9.5時間で最も短い行程になります。"
+  },
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v15.3"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v15.3_operational_fill": "Filled operational data (visitBasics, convenience, smartNotes) for 5 attraction stops from centralized POI knowledge base. Sources: VisitKorea, VisitBusan, VisitSeoul, official tourism boards.\n  - Stop #2 Haedong Yonggungsa Temple: filled [visitBasics, convenience, smartNotes]\n  - Stop #3 Cheongsapo & Haeundae Blue Line Park: filled [visitBasics, convenience, smartNotes]\n  - Stop #5 UN Memorial Cemetery: filled [visitBasics, convenience, smartNotes]\n  - Stop #6 Gamcheon Culture Village: filled [visitBasics, convenience, smartNotes]\n  - Stop #7 Jagalchi Fish Market: filled [visitBasics, convenience, smartNotes]",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      }
+    }
+  },
+  "priceSource": {
+    "discountPct": 10,
+    "discountNote": "マーケットプレイス基準価格から10%割引",
+    "amount": null,
+    "currency": "USD"
+  }
+}

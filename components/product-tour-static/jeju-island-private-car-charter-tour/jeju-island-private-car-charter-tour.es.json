@@ -5,63 +5,62 @@
   "locale": "es",
   "product_id": "jeju-island-private-car-charter-tour",
   "seo": {
-    "pageTitle": "Tour Privado Jeju: Chófer-Guía Certificado, Ruta a Medida | AtoC",
-    "metaDescription": "Tour privado en coche por Jeju con chófer-guía certificado: 3 rutas recomendadas (Este, Oeste, Sur) o itinerario completamente a medida. Recogida en hotel, entradas incluidas. 9 horas.",
+    "pageTitle": "Tour en Auto Privado con Chofer por la Isla de Jeju (9 h) | AtoC Korea",
+    "metaDescription": "Alquiler privado de auto de 9 horas totalmente personalizable en Jeju con conductor-guía licenciado de habla inglesa. Elige la ruta Este (Seongsan, Manjanggul), Oeste (Hyeopjae) o Sur.",
     "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
     "primaryKeywords": [
-      "tour privado Jeju",
-      "tour privado coche Jeju",
-      "chófer guía Jeju",
-      "tour a medida Jeju",
-      "excursión privada Jeju"
+      "Alquiler de auto privado en Jeju",
+      "Tour privado de día en Jeju",
+      "Tour con itinerario personalizado en Jeju",
+      "Conductor de habla inglesa en Jeju",
+      "Tour privado de 8 horas en Jeju"
     ],
-    "title": "Tour Privado Jeju: Chófer-Guía Certificado, 9h | AtoC",
-    "description": "Tour privado en coche por Jeju con chófer-guía certificado. 3 rutas recomendadas o itinerario a medida. Recogida en hotel, entradas incluidas. 9 horas."
+    "title": "Alquiler de Auto Privado en Jeju · Tour de Día con Región a Elección · Personalizable de 9 Horas"
   },
   "catalog_card": {
     "slug": "jeju-island-private-car-charter-tour",
-    "title": "Tour privado de Jeju con conductor-guía: este, oeste, sur o ruta a medida",
-    "subtitle": "Jeju a su ritmo: conductor-guía certificado, vehículo privado y 9 horas para organizar el día según sus preferencias.",
-    "region": "Jeju (todas las rutas)",
-    "duration": "9 horas (servicio privado)",
+    "title": "Tour en Auto Privado con Chofer por la Isla de Jeju",
+    "subtitle": "Diseña tu propio día en Jeju con un conductor-guía licenciado y un vehículo privado con aire acondicionado.",
+    "region": "Jeju (Este, Oeste o Sur)",
+    "duration": "9 horas",
     "stopsCount": 4,
     "rating": 0,
     "reviewCount": 0,
     "badges": [
-      "Tour privado",
-      "Ruta flexible",
-      "Recogida en hotel incluida"
+      "Tour Privado",
+      "Ruta Personalizable",
+      "Recogida en el Hotel Incluida"
     ],
     "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/thumbnailpath/202409/20/b9661064-af2f-4197-aef0-d3d44bf6c2b5.webp",
-    "priceLabel": "Consulte el precio al reservar",
-    "shortCardDescription": "Diseñe su propio día en Jeju con un chófer-guía certificado en un coche privado con aire acondicionado. Elija entre tres rutas recomendadas — Ruta Este (UNESCO y costa K-drama), Ruta Oeste (playas, té y cafés costeros) o Ruta Sur (cascadas y costa volcánica) — o componga su propio itinerario según tu grupo. Recogida en hotel, 9 horas, entradas incluidas.",
+    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "priceLabel": "",
+    "shortCardDescription": "Alquiler de auto privado de 9 horas en Jeju con conductor-guía licenciado. Tres rutas recomendadas (Este, Oeste, Sur) recorren los lugares más emblemáticos de la isla, o crea la tuya propia entre monumentos de la UNESCO, escenarios de k-dramas, playas, campos de té y mercados tradicionales. La recogida en el hotel está incluida en cualquier punto de la isla.",
     "tags": [
-      "tour privado",
-      "Ruta flexible",
-      "recogida en hotel incluida"
+      "private_tour",
+      "customizable_route",
+      "hotel_pickup_included"
     ]
   },
-  "headlineLine1": "Tour privado en Jeju",
-  "headlineLine2": "con ruta a medida",
+  "headlineLine1": "Isla de Jeju Privado",
+  "headlineLine2": "Tour en Auto con Chofer",
   "price": {
     "amountLabel": "",
     "currency": "USD",
-    "per": "vehículo"
+    "per": "vehicle"
   },
   "hero": {
     "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
     "imagePosition": "center 45%",
-    "tagline": "Su propio Jeju: chófer-guía certificado, coche privado y un itinerario adaptado a sus preferencias",
+    "tagline": "Desde el Pico del Amanecer de Seongsan hasta la Playa de Hyeopjae y las Cataratas de Cheonjiyeon—nueve horas privadas, tu ruta, tu ritmo, con un conductor-guía licenciado.",
     "pills": [
-      "Tour privado",
-      "Chófer-guía certificado",
-      "Ruta flexible"
+      "Vehículo Privado",
+      "Conductor-Guía Licenciado",
+      "Rutas Este / Oeste / Sur"
     ],
     "meta": {
-      "duration": "≈ 9 horas (servicio privado)",
-      "region": "Jeju (todas las rutas)",
-      "stops": "Itinerario flexible",
+      "duration": "9 horas",
+      "region": "Toda la Isla de Jeju",
+      "stops": "Personalizado",
       "rating": 0,
       "ratingStars": 0
     }
@@ -69,7 +68,7 @@
   "subnavItems": [
     {
       "id": "overview",
-      "label": "Descripción"
+      "label": "Descripción General"
     },
     {
       "id": "itinerary",
@@ -77,47 +76,53 @@
     },
     {
       "id": "details",
-      "label": "Información práctica"
+      "label": "Detalles"
     },
     {
       "id": "faq",
-      "label": "Preguntas frecuentes"
+      "label": "FAQ"
     },
     {
       "id": "reviews",
-      "label": "Opiniones"
+      "label": "Reseñas"
     }
   ],
   "glanceItems": [
     {
-      "icon": "car",
-      "label": "Tipo de tour",
-      "value": "Servicio privado exclusivo (coche solo para su grupo)"
+      "icon": "camera",
+      "label": "Valor Fotográfico",
+      "value": "Alto",
+      "level": 5
     },
     {
-      "icon": "route",
-      "label": "Ruta",
-      "value": "3 rutas recomendadas o itinerario 100% a medida"
+      "icon": "mountain",
+      "label": "Pintoresco",
+      "value": "Alto",
+      "level": 5
     },
     {
-      "icon": "user",
-      "label": "Guía",
-      "value": "Chófer-guía certificado, inglés"
+      "icon": "footprints",
+      "label": "Caminata",
+      "value": "Bajo",
+      "level": 2
     },
     {
-      "icon": "clock",
-      "label": "Duración",
-      "value": "9 horas"
+      "icon": "cloud-rain",
+      "label": "Seguridad ante la lluvia",
+      "value": "Bueno",
+      "level": 4
     },
     {
-      "icon": "map-pin",
-      "label": "Punto de encuentro",
-      "value": "Recogida en su hotel de Jeju"
+      "icon": "users",
+      "label": "Apto para familias",
+      "value": "Excelente",
+      "level": 5
     },
     {
-      "icon": "ticket",
-      "label": "Entradas",
-      "value": "Incluidas (según ruta elegida)"
+      "icon": "gauge",
+      "label": "Equilibrio",
+      "value": "Flexible",
+      "level": 5
     }
   ],
   "galleryItems": [
@@ -125,78 +130,81 @@
       "id": "g1",
       "type": "photo",
       "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-      "alt": "Imagen de Ruta Este — Seongsan Ilchulbong (triple Patrimonio UNESCO) + costa K-drama",
-      "caption": "Ruta Este — Seongsan Ilchulbong (triple Patrimonio UNESCO) + costa K-drama",
-      "location": "Seongsan Ilchulbong, Jeju Este",
-      "atmosphere": "La Jeju más dramática: cañones volcánicos y columnas de basalto"
+      "alt": "Pico del amanecer Seongsan Ilchulbong",
+      "caption": "Pico del amanecer Seongsan Ilchulbong",
+      "location": "Seongsan Ilchulbong",
+      "atmosphere": "El monumento UNESCO más emblemático de Jeju, parada principal de la ruta Este"
     },
     {
       "id": "g2",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-      "alt": "Imagen de Ruta Oeste — Playas de arena blanca",
-      "caption": "Ruta Oeste — Playas de arena blanca, campos de té y cafés costeros",
-      "location": "Playa Hyeopjae + Costa Oeste de Jeju",
-      "atmosphere": "La Jeju más dramática: cañones volcánicos y columnas de basalto"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "alt": "Acantilado de basalto Jusangjeolli",
+      "caption": "Acantilado de basalto Jusangjeolli",
+      "location": "Acantilado Jusangjeolli",
+      "atmosphere": "Columnas de basalto hexagonales en la costa sur"
     },
     {
       "id": "g3",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
-      "alt": "Imagen de Ruta Sur — Cascadas",
-      "caption": "Ruta Sur — Cascadas, acantilados volcánicos y costa Jungmun",
-      "location": "Cascadas Cheonjeyeon, Jungmun",
-      "atmosphere": "La Jeju más dramática: cañones volcánicos y columnas de basalto"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+      "alt": "Playa Hyeopjae, oeste de Jeju",
+      "caption": "Playa Hyeopjae, oeste de Jeju",
+      "location": "Playa Hyeopjae",
+      "atmosphere": "Aguas esmeralda y arena blanca en la costa oeste"
     },
     {
       "id": "g4",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
-      "alt": "Imagen de Tour privado a medida — su propio Jeju",
-      "caption": "Tour privado a medida — su propio Jeju, a su ritmo",
-      "location": "Jeju (ruta a medida)",
-      "atmosphere": "La Jeju más dramática: cañones volcánicos y columnas de basalto"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+      "alt": "Museo y campos de té O'sulloc",
+      "caption": "Museo y campos de té O'sulloc",
+      "location": "Campos de té O'sulloc",
+      "atmosphere": "Hileras de campos de té verde y un relajante descanso de mediodía"
     },
     {
       "id": "g5",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
-      "alt": "Imagen de Cascada Cheonjiyeon en Seogwipo",
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
+      "alt": "Cascada Cheonjiyeon en Seogwipo",
       "caption": "Cascada Cheonjiyeon en Seogwipo",
-      "location": "Cascada Cheonjiyeon",
-      "atmosphere": "La Jeju más dramática: cañones volcánicos y columnas de basalto"
+      "location": "Cataratas Cheonjiyeon",
+      "atmosphere": "Cascada en el bosque en la ruta sur"
     }
   ],
   "itineraryStops": [
     {
       "number": 1,
-      "name": "Ruta Este: UNESCO y Costa K-Drama",
-      "category": "La ruta con más Patrimonio UNESCO y escenarios de K-dramas",
-      "description": "La opción de ruta con mayor densidad de hitos, anclada en la costa UNESCO y de K-drama más fuerte de Jeju. El Pico Seongsan Ilchulbong (Pico del Amanecer) es la insignia — un cono de toba hidrovolcánica de 5.000 años que se eleva 182 m directamente desde el mar, inscrito en la lista del Patrimonio Mundial UNESCO en 2007 como parte de 'Isla Volcánica de Jeju y Tubos de Lava' y el hito más fotografiado de la isla. Las opciones complementarias incluyen la Isla Udo, la mayor isla cercana a Jeju, accesible mediante un ferri de 15 minutos desde el Puerto de Seongsan (ida y vuelta ~8.900 KRW); la Cueva Manjanggul, un tubo de lava de 7,4 km inscrito por la UNESCO con la columna de lava más alta del mundo (7,6 m) al final de su tramo turístico de 1 km (IMPORTANTE: Manjanggul lleva cerrada por mantenimiento mayor desde diciembre de 2023; se programó la reapertura para el 31 de marzo de 2026 seguida de inspecciones — verifique el estado antes de programar); Seopjikoji, el cabo costero hecho famoso por el K-drama 'All In' (2003) y con campos primaverales de canola; la Villa Folclórica de Seongeup (asentamiento Joseon de tejados de paja); y la Playa Hamdeok (agua turquesa + rocas volcánicas negras). El guía-conductor adapta el orden según el tiempo, los horarios del ferri y el ritmo del grupo, y se encarga del aparcamiento y de las colas de entradas.",
+      "name": "Ruta Este: Costa UNESCO y K-Drama",
+      "category": "Seongsan, Udo, Manjanggul, Seopjikoji",
+      "description": "La ruta con mayor densidad de lugares emblemáticos, anclada en la costa UNESCO y K-drama más destacada de Jeju. Seongsan Ilchulbong es el punto de referencia principal: un cono de toba hidrovolcánica de 5.000 años que se eleva 182 m directamente desde el mar, inscrito en la Lista del Patrimonio Mundial de la UNESCO en 2007 como parte de la «Isla Volcánica y Tubos de Lava de Jeju», y el lugar más fotografiado de la isla. Las opciones adicionales incluyen la Isla Udo, la mayor isla costera de Jeju, accesible mediante un transbordador de 15 minutos desde el Puerto de Seongsan (ida y vuelta ~8.900 KRW); el Tubo de Lava Manjanggul, una cueva de lava de 7,4 km inscrita en la UNESCO con la columna de lava más alta del mundo —7,6 m— al final de su sección turística de 1 km (IMPORTANTE: Manjanggul ha estado cerrado por importantes obras de mantenimiento desde diciembre de 2023; la reapertura estaba prevista para el 31 de marzo de 2026, seguida de inspecciones; verifique el estado antes de programar la visita); Seopjikoji, el cabo costero que se hizo famoso gracias al K-drama «All In» de 2003, con campos de flores de colza en primavera; el Pueblo Folclórico de Seongeup (un asentamiento de la era Joseon con tejados de paja); y la Playa de Hamdeok (agua turquesa y rocas volcánicas negras). El conductor-guía adapta el orden según el clima, los horarios de los transbordadores y el ritmo de su grupo, y se encarga de todo el estacionamiento y las colas de acceso.",
       "highlights": [
-        "Pico Seongsan Ilchulbong: triple sitio UNESCO (Patrimonio Natural Mundial 2007 + Reserva de la Biosfera + Geoparque Mundial) — subida de 30–40 min a la cresta del cráter de 99 rocas, cumbre cerrada el primer lunes de cada mes; entrada 5.000 KRW",
-        "Isla Udo: ferri de 15 min desde Seongsan, ~370 residentes, pico Udobong de 132 m, helado de cacahuete característico y la playa de arena blanca de coral de Hagosudong; coches de alquiler restringidos salvo pernocta",
-        "Cueva Manjanggul: columna de lava más grande del mundo de 7,6 m, paso accesible de 1 km de un tubo UNESCO de 7,4 km, interior a 11–13 °C todo el año; entrada 4.000 KRW; cerrada el primer miércoles — verificar estado de reapertura post marzo 2026",
-        "Seopjikoji y Seongeup: costa del K-drama 'All In' (2003) + villa folclórica con tejados de paja de época Joseon; Seongeup designada Patrimonio Cultural Folclórico Nacional"
+        "Seongsan Ilchulbong: sitio triple de la UNESCO (Patrimonio Natural Mundial 2007 + Reserva de la Biosfera + Geoparque Global) — ascenso de 30-40 min hasta el borde del cráter de las 99 rocas; la cima cierra el primer lunes de cada mes; entrada 5.000 KRW",
+        "Isla Udo: transbordador de 15 min desde Seongsan, ~370 habitantes, pico Udobong de 132 m, famoso helado de cacahuete y Playa Hagosudong de arena blanca de coral; coches de alquiler restringidos salvo estancia nocturna",
+        "Tubo de Lava Manjanggul: columna de lava más alta del mundo de 7,6 m, pasaje accesible de 1 km de un tubo UNESCO de 7,4 km, temperatura interior de 11-13 °C durante todo el año; entrada 4.000 KRW; cerrado el primer miércoles de cada mes — verificar estado de reapertura tras marzo de 2026",
+        "Seopjikoji y Seongeup: costa del K-drama «All In» (2003) + pueblo folclórico de la era Joseon con tejados de paja; Seongeup declarado Patrimonio Cultural Folclórico Nacional"
       ],
       "timeUsed": [
-        "Diseñe el número de paradas según sus intereses y el tiempo disponible"
+        "Recogida en el hotel y traslado de ~70-90 min desde la Ciudad de Jeju hasta la costa Este",
+        "2-3 paradas principales en lugares emblemáticos (el conductor-guía adapta el orden según el estado de Manjanggul, el clima y los horarios del transbordador para Udo)",
+        "Pausa para el almuerzo (libre elección — normalmente cerca del puerto de Seongsan para marisco de haenyeo, o en Seongeup para especialidades locales de cerdo negro de Jeju)",
+        "Travesía opcional en transbordador a Udo (tarifa adicional de ~8.900 KRW por persona; el vehículo permanece estacionado en Seongsan)"
       ],
-      "whyOnRoute": "La ruta más fuerte para visitantes primerizos de Jeju que buscan máxima identificación de hitos. El Pico Seongsan Ilchulbong entrega la icónica fotografía UNESCO del amanecer de la isla; Manjanggul (cuando está abierta) aporta una experiencia subterránea UNESCO única que ninguna otra ruta de Jeju iguala; y Seopjikoji + Seongeup proporcionan las capas de K-drama y cultura folclórica. La mayor densidad UNESCO de las cuatro rutas.",
+      "whyOnRoute": "La ruta más recomendada para quienes visitan Jeju por primera vez y desean el máximo reconocimiento de lugares emblemáticos. Seongsan Ilchulbong ofrece la icónica fotografía del pico al amanecer del Patrimonio UNESCO de la isla; Manjanggul (cuando está abierto) proporciona a la ruta una singular experiencia subterránea de la UNESCO que ninguna otra ruta de Jeju puede igualar; y Seopjikoji + Seongeup añaden las capas del K-drama y la cultura popular. La mayor densidad de sitios UNESCO de las cuatro rutas.",
       "visitBasics": {
-        "hours": "La mayoría de las paradas 09:00–18:00. Manjanggul (cuando está abierta) cierra el primer miércoles de cada mes y 17:10 es el último acceso. Seongsan cierra el primer lunes de cada mes por protección.",
-        "closed": "Seongsan: primer lunes de cada mes. Manjanggul: primer miércoles de cada mes + actualmente cerrada por mantenimiento (reconfirmar después de marzo de 2026).",
-        "admission": "Pago directo en cada parada — Seongsan 5.000 KRW, Manjanggul 4.000 KRW, Seopjikoji 4.000 KRW, ferri de Udo ida y vuelta desde ~8.900 KRW. El guía-conductor asiste con la compra de entradas.",
-        "walking": "Moderada a alta — la subida a la cumbre de Seongsan es el tramo más exigente (~30–40 min ida y vuelta por escaleras). La observación desde la base sin subir también es válida para viajeros con movilidad reducida."
+        "hours": "La mayoría de las paradas abren de 09:00 a 18:00. Manjanggul (cuando está abierto) cierra el primer miércoles de cada mes y la última entrada es a las 17:10. Seongsan cierra el primer lunes de cada mes por protección.",
+        "closed": "Seongsan: primer lunes de cada mes. Manjanggul: primer miércoles de cada mes + actualmente cerrado por mantenimiento (reconfirmar tras marzo de 2026).",
+        "admission": "Pago directo en cada parada — Seongsan 5.000 KRW, Manjanggul 4.000 KRW, Seopjikoji 4.000 KRW, transbordador de ida y vuelta a Udo desde ~8.900 KRW. El conductor-guía asiste con la compra de entradas.",
+        "walking": "De moderado a alto — el ascenso a la cumbre de Seongsan es la sección más exigente (~30-40 min de ida y vuelta por escaleras). La observación desde la base, sin realizar el ascenso, también es válida para viajeros con movilidad reducida."
       },
       "convenience": {
-        "restroom": "Disponible en todas las paradas principales",
-        "parking": "El guía-conductor gestiona el aparcamiento — las restricciones a coches de alquiler en Udo no afectan a los pasajeros chárter (el vehículo permanece en el Puerto de Seongsan)"
+        "restroom": "Disponibles en todas las paradas principales",
+        "parking": "El conductor-guía se encarga de todo el estacionamiento — las restricciones de coches de alquiler en Udo no afectan a los pasajeros en vehículo privado contratado (el vehículo permanece en el Puerto de Seongsan)"
       },
       "smartNotes": {
-        "photo": "La cumbre de Seongsan en mañana de cielo despejado es la fotografía individual más fuerte del día; el cabo costero de Seopjikoji funciona mejor con luz lateral de tarde. Para Manjanggul (cuando esté abierta), la columna de lava más alta del mundo al final del tramo turístico es la toma icónica.",
-        "facilities": "El puerto de Seongsan y la Playa Hamdeok son los polos gastronómicos más fuertes; la ruta este tiene una densidad culinaria materialmente superior a la oeste. El sashimi preparado por las haenyeo es la firma local del marisco.",
-        "tip": "La subida a la cumbre de Seongsan es el cuello de botella para viajeros mayores o de movilidad reducida — la observación desde la base también es válida. Si Manjanggul sigue cerrada en el momento de la reserva, el guía-conductor sustituirá por el Cráter Sangumburi o la Playa Hamdeok. Programe el ferri de Udo al menos 4 horas antes de la puesta de sol para ir sobre seguro."
+        "photo": "La cumbre de Seongsan con cielo despejado por la mañana es la fotografía más destacada del día; el cabo costero de Seopjikoji luce mejor con la luz lateral de la tarde. En Manjanggul (cuando está abierto), la columna de lava más alta del mundo al final de la sección turística es la toma icónica.",
+        "facilities": "El puerto de Seongsan y la Playa de Hamdeok son los mejores núcleos gastronómicos; la ruta Este cuenta con una densidad de opciones culinarias notablemente superior a la de la ruta Oeste. El pescado crudo preparado por las haenyeo es la especialidad local de marisco.",
+        "tip": "El ascenso a la cumbre de Seongsan representa el mayor desafío de la ruta para viajeros mayores o con movilidad reducida — la observación desde la base también es válida. Si Manjanggul sigue cerrado en el momento de la reserva, el conductor-guía sustituirá la visita por el Cráter Sangumburi o la Playa de Hamdeok. Se recomienda programar el transbordador a Udo al menos 4 horas antes del atardecer para mayor seguridad."
       },
       "_poi_meta": {
         "poi_key": "route_variant_east",
@@ -215,33 +223,36 @@
     },
     {
       "number": 2,
-      "name": "Ruta Oeste: Playas, Té y Costa de Cafés",
-      "category": "La ruta más relajada e instagrameable — costa oeste y campos de té",
-      "description": "La ruta más relajada y fotogénica, anclada en la costa occidental de Jeju con sus playas de arena clara, jardines subtropicales y campos de té. La Playa Hyeopjae brinda la imagen icónica de Jeju — aguas turquesas, arena de fragmentos blancos de concha y la Isla Biyangdo flotando en el horizonte. El Parque Hallim (anexo a la zona de la playa) es un recinto hortícola de 100.000 m² que alberga las cuevas de lava Hyeopjae y Ssangyong en sus terrenos y exhibiciones florales estacionales, desde la camelia (invierno) hasta los tulipanes (primavera) y el loto (verano). El Museo de Té Osulloc, abierto en 2001 por AmorePacific en una plantación de té verde en activo, atrae a los visitantes con sensibilidad de diseño por sus paseos entre cultivos, la Innisfree Jeju House contigua y los menús temáticos rotativos del café, incluidos el celebrado helado suave de té verde y el roll cake. El día suele cerrarse a lo largo de Aewol Cafe Street, una franja costera de 5 km repleta de cafés y restaurantes con vista al mar, donde la tarde y el atardecer marcan el ritmo local. El guía-conductor adapta la secuencia según la marea para las playas y según el clima para los campos de té.",
+      "name": "Ruta Oeste: Playas, Té y Costa de los Cafés",
+      "category": "Hyeopjae, Hallim Park, O'sulloc, Aewol",
+      "description": "La ruta más relajada y favorable para Instagram, anclada en la costa occidental de Jeju, con playas de arena clara, jardines subtropicales y campos de té. La Playa de Hyeopjae ofrece la fotografía icónica de Jeju: aguas turquesas poco profundas, arena blanca de fragmentos de conchas y la Isla Biyangdo flotando en el horizonte. Hallim Park (anexo a la zona de la playa) es un parque hortícola de 100.000 m² con las cuevas de lava Hyeopjae y Ssangyong en su interior y exhibiciones florales de temporada, desde camelias (invierno) hasta tulipanes (primavera) y lotos (verano). El Museo del Té O'sulloc, inaugurado en 2001 por AmorePacific en una finca de té verde en activo, atrae a visitantes con sensibilidad por el diseño para paseos por las plantaciones de té, la Casa Innisfree Jeju adyacente y menús rotativos de café temático de té, incluyendo el famoso helado suave de té verde y el pastel enrollado. El día suele concluir a lo largo de la Calle Café de Aewol, una franja costera de 5 km bordeada de cafés y restaurantes con vistas al mar, donde las horas de tarde y atardecer marcan el ritmo local. El conductor-guía adapta la secuencia según la marea en las playas y el clima en los campos de té.",
       "highlights": [
-        "Playa Hyeopjae: arena de fragmentos blancos de concha, aguas turquesas, Isla Biyangdo en el horizonte — la foto insignia de Jeju; combina con la adyacente Playa Geumneung",
-        "Parque Hallim: parque subtropical de 100.000 m² con las cuevas de lava Hyeopjae/Ssangyong in situ, además de los festivales estacionales de Camelia / Tulipán / Loto; entrada ~12.000 KRW adulto",
-        "Museo de Té Osulloc: museo insignia del té verde de AmorePacific en una plantación en activo; cata de té, paseo por los campos y postres de té verde estrella; entrada gratuita",
-        "Aewol Cafe Street: 5 km de cafés con vista al mar (Bombom, Anthracite, Cafe del Mundo, Monsant) — mejor a la hora dorada"
+        "Playa de Hyeopjae: arena blanca de fragmentos de conchas, aguas turquesas poco profundas, isla Biyangdo en el horizonte — la fotografía de playa más característica de Jeju; complementa a la adyacente Playa de Geumneung",
+        "Hallim Park: parque subtropical de 100.000 m² con las cuevas de lava Hyeopjae/Ssangyong en su interior, además de festivales estacionales de Camelias / Tulipanes / Lotos; entrada ~12.000 KRW adultos",
+        "Museo del Té O'sulloc: museo insignia del té verde de AmorePacific en una finca de té en activo; degustación de té, paseos por la plantación y postres de té verde de temporada; entrada gratuita",
+        "Calle Café de Aewol: 5 km de cafés con vistas al mar (Bombom, Anthracite, Cafe del Mundo, Monsant) — mejor a la hora dorada"
       ],
       "timeUsed": [
-        "Diseñe el número de paradas según sus intereses y el tiempo disponible"
+        "Recogida en el hotel y traslado de ~50-70 min hasta la costa Oeste",
+        "Playa matutina + Parque Hallim (con desvío opcional para visitar las cuevas dentro del parque)",
+        "Pausa para el almuerzo (gachas de abulón de Aewol, mariscos haenyeo de la zona de Hyeopjae o barbacoa coreana de Daejeong-eup)",
+        "O'sulloc por la tarde + Innisfree Jeju House adyacente, luego café a última hora de la tarde en Aewol"
       ],
-      "whyOnRoute": "La ruta más sólida para viajeros que prefieren ritmo pausado, telones de fondo fotogénicos y una cuidada cultura de café/postre frente a completar la lista UNESCO. El volumen de caminata es claramente menor que el de la ruta este, la densidad de alternativas en interior es buena (cuevas e invernadero del Parque Hallim, museo Osulloc + Innisfree) y la ruta funciona igual de bien en un día soleado o parcialmente nublado.",
+      "whyOnRoute": "La ruta más recomendable para viajeros que prefieren un ritmo relajado, escenarios fotogénicos y una cultura de cafés y postres cuidadosamente seleccionada, en lugar de completar la lista de sitios UNESCO. El volumen de caminata es considerablemente menor que en la ruta Este, la densidad de opciones alternativas en interiores es buena (cuevas del Parque Hallim + invernadero, O'sulloc + Innisfree), y la ruta funciona igualmente bien en un día soleado o parcialmente nublado.",
       "visitBasics": {
-        "hours": "La mayoría de las paradas 09:00–18:00; los cafés de Aewol habitualmente 10:00–22:00 con último pedido ~21:30",
-        "closed": "La mayoría de las paradas abre todo el año; algunos cafés cierran en días entre semana rotativos",
-        "admission": "Playa Hyeopjae gratis; Parque Hallim ~12.000 KRW adulto; Museo de Té Osulloc gratis; cafés de Aewol pago según consumo. El guía-conductor asiste en la compra de entradas.",
-        "walking": "Baja a moderada — paseos de playa, sendas planas en el parque y trayectos entre cafés; apto para todas las edades y niveles de movilidad"
+        "hours": "La mayoría de las paradas de 09:00 a 18:00; los cafés de Aewol generalmente de 10:00 a 22:00 con último pedido ~21:30",
+        "closed": "La mayoría de las paradas abren todo el año; los cafés individuales cierran en días de semana rotativos",
+        "admission": "Playa Hyeopjae gratuita; Parque Hallim ~12,000 KRW adultos; Museo del Té O'sulloc gratuito; cafés de Aewol pago por consumo. El conductor-guía ayuda con la compra de entradas al parque.",
+        "walking": "Bajo a moderado: paseos por la playa, caminos planos en el parque, paseos de café en café; apto para todas las edades y niveles de movilidad"
       },
       "convenience": {
-        "restroom": "Disponible en todas las paradas principales; los cafés ofrecen aseos a sus clientes",
-        "parking": "El guía-conductor gestiona todo el aparcamiento; el aparcamiento en la calle de Aewol es ajustado los fines de semana — el charter privado lo resuelve"
+        "restroom": "Disponible en todas las paradas principales; los cafés cuentan con instalaciones para clientes que realizan consumo",
+        "parking": "El conductor-guía se encarga de todo el estacionamiento; el aparcamiento en la calle en Aewol es limitado los fines de semana — el transporte privado contratado resuelve este problema"
       },
       "smartNotes": {
-        "photo": "Hyeopjae con marea baja y Biyangdo de fondo es la toma icónica; las hileras de los campos de Osulloc fotografían mejor por la mañana, con luz suave; las terrazas de los cafés de Aewol a la hora dorada cierran el día con fuerza.",
-        "facilities": "Aewol concentra la mayor densidad de cafés de Jeju — el truco para evitar colas es asegurar la reserva del café para el atardecer por la mañana, de modo que la mesa quede guardada. La cafetería interior del Parque Hallim es una buena opción para días lluviosos.",
-        "tip": "Si su itinerario necesita un único día en Jeju flexible al clima, esta es la ruta — las cuevas del Parque Hallim y el museo Osulloc cubren ~3 horas de tiempo cubierto en un día lluvioso. Idealmente se combina con un cierre al atardecer en un café de Aewol; reserve los cafés por la mañana."
+        "photo": "Hyeopjae en marea baja con Biyangdo de fondo es la toma icónica; las hileras de campos de té de O'sulloc se fotografían mejor por la mañana cuando la luz es suave; las terrazas de los cafés de Aewol en la hora dorada cierran el día de forma espectacular.",
+        "facilities": "Aewol tiene la mayor densidad de cafés en Jeju — el consejo para evitar aglomeraciones es reservar su café para el atardecer por la mañana para asegurar el lugar. El café del jardín interior del Parque Hallim es una excelente opción para días lluviosos.",
+        "tip": "Si su itinerario necesita un día en Jeju con flexibilidad climática, esta es la ruta — las cuevas del Parque Hallim y el museo interior de O'sulloc cubren ~3 horas de tiempo en interiores en un día lluvioso. Se combina mejor con un cierre en un café al atardecer en Aewol; reserve los cafés por la mañana."
       },
       "_poi_meta": {
         "poi_key": "route_variant_west",
@@ -259,32 +270,35 @@
     {
       "number": 3,
       "name": "Ruta Sur: Cascadas y Costa Volcánica",
-      "category": "La ruta más dramática — acantilados volcánicos, cascadas y Jungmun",
-      "description": "La ruta más espectacular desde el punto de vista paisajístico, que entrelaza la geología volcánica meridional de Jeju, sus cascadas subtropicales y la cocina de los mercados tradicionales. Las cascadas Cheonjiyeon, en el centro de Seogwipo, son un salto de un solo nivel de 22 m con una poza de 12 m de ancho × 20 m de profundidad, iluminado a diario de 09:00 a 22:00 y al que se accede por un sendero llano de 1 km a través de un bosque subtropical donde crecen alcanforeros (Monumento Natural 163). Los Acantilados de Daepo Jusangjeolli muestran 1 km de costa con columnas hexagonales de basalto formadas por enfriamiento de la lava — parte del Geoparque Mundial UNESCO de Jeju. El monte Sanbangsan es un domo de lava traquítica de 395 m formado hace 700.000-800.000 años, con el templo-cueva Sanbanggulsa a una altitud de 145–150 m, al que se accede subiendo escaleras; en primavera, los campos de colza en la base crean el icónico contraste oro-y-gris-volcánico. El Templo Yakcheonsa — con 122.100 m², considerado el mayor complejo de templo budista de Asia Oriental, con un salón principal de 30 m de altura, un Buda Vairocana de madera de 5 m y una campana de 18 toneladas — se sitúa entre Daepo y Jungmun. Las cascadas Jeongbang son una de las pocas de Asia que vierten directamente al mar, mientras que el Mercado Olle Maeil de Seogwipo cierra el día con mandarinas Hallabong, especialidades de cerdo negro y los bollos rellenos de pulpo de la Panadería Jeseong.",
+      "category": "Cheonjiyeon, Jusangjeolli, Sanbangsan, Mercado Olle",
+      "description": "La ruta más dramáticamente pintoresca, que entrelaza la geología volcánica del sur de Jeju, cascadas subtropicales y comida de mercado tradicional. Las Cataratas Cheonjiyeon, en el centro de Seogwipo, son una cascada de un solo nivel de 22 m con una poza de inmersión de 12 m de ancho × 20 m de profundidad, iluminada diariamente de 09:00 a 22:00 y accesible a través de un sendero plano de 1 km a través de un bosque subtropical donde crecen árboles de alcanfor (Monumento Natural 163). El Acantilado Daepo Jusangjeolli exhibe un tramo costero de 1 km de columnas de basalto hexagonales formadas por el enfriamiento de la lava, parte del Geoparque Mundial UNESCO de Jeju. La Montaña Sanbangsan es un domo de lava traquítica de 395 m formado hace 700,000-800,000 años, con el templo cueva Sanbanggulsa a 145-150 m de altitud al que se accede por una escalinata; en primavera, los campos de flores de colza en la base crean el icónico contraste dorado y gris volcánico. El Templo Yakcheonsa — con 122,100 m², considerado el complejo de templo budista más grande de Asia Oriental, con un salón principal de 30 m de altura, una estatua de madera de Vairocana de 5 m y una campana de 18 toneladas — se encuentra entre Daepo y Jungmun. Las Cataratas Jeongbang son una de las pocas cascadas de Asia que fluyen directamente hacia el mar, mientras que el Mercado Olle Maeil de Seogwipo cierra el día con mandarinas Hallabong, especialidades de cerdo negro y bollos rellenos de pulpo de la Panadería Jeseong.",
       "highlights": [
-        "Cascadas Cheonjiyeon: salto de un solo nivel de 22 m con iluminación nocturna diaria, sendero llano de 1 km por bosque subtropical; hábitat de la anguila Mutae (Monumento Natural 27); entrada 2.000 KRW",
-        "Acantilados de Daepo Jusangjeolli: 1 km de columnas hexagonales de basalto de hasta 30-40 m de alto, Geoparque Mundial UNESCO; entrada ~2.000 KRW",
-        "Sanbangsan + Yakcheonsa: domo de lava traquítica de 395 m + el mayor complejo de templo budista de Asia; subida al templo-cueva a 150 m; combinado ~1.000-2.500 KRW",
-        "Mercado Olle Maeil: 620 m de soportales cubiertos, ~200 tiendas + ~140 puestos + mercado nocturno de 20 puestos; mandarinas Hallabong, cerdo negro y bollos de pulpo como firma"
+        "Cataratas Cheonjiyeon: cascada de un solo nivel de 22 m con iluminación nocturna diaria, sendero plano de 1 km a través de bosque subtropical; hábitat de la anguila Mutae (Monumento Natural 27); entrada 2,000 KRW",
+        "Acantilado Daepo Jusangjeolli: 1 km de columnas de basalto hexagonales de hasta 30-40 m de altura, Geoparque Mundial UNESCO; entrada ~2,000 KRW",
+        "Sanbangsan + Yakcheonsa: domo de lava traquítica de 395 m + el complejo de templo budista más grande de Asia; ascenso al templo cueva hasta 150 m de altitud; combinado ~1,000-2,500 KRW",
+        "Mercado Olle Maeil: galería cubierta de 620 m, ~200 tiendas + ~140 vendedores + mercado nocturno de 20 puestos; especialidades de mandarinas Hallabong, cerdo negro y bollos de pulpo"
       ],
       "timeUsed": [
-        "Diseñe el número de paradas según sus intereses y el tiempo disponible"
+        "Recogida en el hotel y traslado de ~60-90 min a la costa sur (Seogwipo)",
+        "Paradas matutinas en la cascada + acantilado de basalto (Cheonjiyeon y luego Jusangjeolli)",
+        "Pausa para el almuerzo en Seogwipo (comida callejera del Mercado Olle, o zona de Jungmun para una comida en restaurante)",
+        "Tarde en Sanbangsan o Yakcheonsa + recorrido por el mercado antes del regreso"
       ],
-      "whyOnRoute": "La mejor ruta para viajeros que buscan variedad geológica en una jornada — un templo, una cascada, un acantilado de basalto, un domo volcánico y un mercado tradicional cubren la identidad 'isla volcánica' de Jeju. Es además la que ofrece mayor densidad de opciones cubiertas como plan B (salón principal del Yakcheonsa, soportales del Mercado Olle, cueva del Sanbanggulsa) — la elección más flexible en cuanto al tiempo.",
+      "whyOnRoute": "La ruta más recomendable para viajeros que desean variedad geológica en un solo día: un templo, una cascada, un acantilado de basalto, un domo volcánico y un mercado tradicional que cubren la identidad característica de Jeju como «isla volcánica». También tiene la mayor densidad de opciones alternativas en interiores de las tres rutas (salón principal de Yakcheonsa, galería cubierta del Mercado Olle, cueva Sanbanggulsa), lo que la convierte en la opción más flexible al clima.",
       "visitBasics": {
-        "hours": "Mayoría de paradas 09:00-17:30. Cheonjiyeon iluminado 09:00-22:00. Mercado Olle: 07:00-21:00 verano, 07:00-20:00 invierno; mercado nocturno 18:00-24:00 a diario.",
-        "closed": "La mayoría abre todo el año; tiendas individuales del mercado cierran por turnos en días entre semana",
-        "admission": "Cheonjiyeon 2.000 KRW; Jusangjeolli ~2.000 KRW; Sanbanggulsa ~1.000 KRW; Yakcheonsa gratis; Mercado Olle entrada gratis. El conductor-guía ayuda con las entradas.",
-        "walking": "Dificultad de caminata moderada — sendero llano de Cheonjiyeon de 1 km, escaleras del Sanbangsan de 0,6 millas hasta el templo-cueva, recorrido del mercado por soportales cubiertos llanos. Las escaleras del Sanbangsan son el cuello de botella para visitantes con poca movilidad."
+        "hours": "La mayoría de las paradas de 09:00 a 17:30. Cheonjiyeon iluminado de 09:00 a 22:00. Mercado Olle: 07:00-21:00 en verano, 07:00-20:00 en invierno; mercado nocturno de 18:00 a 24:00 todos los días.",
+        "closed": "La mayoría de las paradas abren todo el año; las tiendas individuales del mercado cierran en días de semana rotativos",
+        "admission": "Cheonjiyeon 2,000 KRW; Jusangjeolli ~2,000 KRW; Sanbanggulsa ~1,000 KRW; Yakcheonsa gratuito; Mercado Olle entrada gratuita. El conductor-guía ayuda con la adquisición de entradas.",
+        "walking": "Moderado: sendero plano de Cheonjiyeon de 1 km, escalinata de Sanbangsan de 0,6 mi hasta el templo cueva, recorrido por el mercado en galería cubierta plana. Las escaleras de Sanbangsan son el punto crítico para viajeros con movilidad reducida."
       },
       "convenience": {
-        "restroom": "Disponibles en todas las paradas principales; el mercado dispone de varios",
-        "parking": "El conductor-guía gestiona todo el aparcamiento; el del Mercado Olle puede saturarse en fin de semana — el charter privado lo evita"
+        "restroom": "Disponible en todas las paradas principales; el mercado dispone de múltiples",
+        "parking": "El guía-conductor gestiona todo el estacionamiento; el aparcamiento del Mercado Olle puede ser complicado los fines de semana — el charter privado evita este problema."
       },
       "smartNotes": {
-        "photo": "La iluminación nocturna de Cheonjiyeon es la toma única (ninguna otra cascada importante de Jeju se ilumina a diario); el Sanbangsan con la colza primaveral en la base es la firma de la temporada; las columnas hexagonales de Jusangjeolli con luz lateral de tarde muestran mejor la geometría columnar.",
-        "facilities": "El Mercado Olle es el mejor único punto de comida de Jeju — bollos de pulpo de la Panadería Jeseong, mochi-tortitas y zumo de Hallabong. Los restaurantes de cerdo negro cerca de Sanbangsan/Daejeong también son sólidos. La comida vegetariana del templestay del Yakcheonsa se reserva por separado.",
-        "tip": "Para un día lluvioso en Jeju, esta es la más sólida de las tres rutas — entre el salón principal del Yakcheonsa, la cueva del Sanbanggulsa y los soportales del Mercado Olle suman ~3-4 horas de tiempo en interior. La cumbre del Sanbangsan en sí está cerrada; el templo-cueva a 150 m es el final de la visita."
+        "photo": "La iluminación nocturna de Cheonjiyeon es la toma única (ninguna otra cascada importante de Jeju se ilumina cada noche); Sanbangsan con colza en flor a su base es la imagen característica de la primavera; los hexágonos de Jusangjeolli con luz lateral de última hora de la tarde muestran mejor la geometría de las columnas.",
+        "facilities": "El Mercado Olle es la mejor parada gastronómica de Jeju — los bollos de pulpo de la Panadería Jeseong, los mochi-pancakes y los puestos de zumo de Hallabong. Los restaurantes de cerdo negro cerca de Sanbangsan/Daejeong también son excelentes. La comida vegetariana del templestay de Yakcheonsa se puede reservar por separado.",
+        "tip": "Para un día de lluvia en Jeju, esta es la mejor de las tres rutas designadas — el salón principal de Yakcheonsa, la cueva de Sanbanggulsa y el pasaje cubierto del Mercado Olle juntos ofrecen unas 3-4 horas de tiempo en interior. La cima de Sanbangsan está cerrada; el templo de la cueva a 150 m es el punto final para los visitantes."
       },
       "_poi_meta": {
         "poi_key": "route_variant_south",
@@ -303,33 +317,35 @@
     },
     {
       "number": 4,
-      "name": "Ruta Personalizada: Diseñe su propio día",
-      "category": "Itinerario 100% flexible — más allá de las 3 rutas recomendadas",
-      "description": "Más allá de las tres rutas recomendadas, la ventana de charter de 9 horas es totalmente personalizable — puede mezclar paradas entre el Este/Oeste/Sur o enviarnos un plan completamente a medida con antelación. Adiciones habituales: Cráter de Sangumburi (Monumento Natural 263 — un cráter freatomagmático de 650 m de ancho × 100 m de profundidad famoso por la hierba plateada otoñal); Camellia Hill (variedades de camelia ya floridas de noviembre a marzo); Parque Natural Hueree (granja de alpacas y mandarinos, favorito familiar); ECO Land Theme Park (paseo en locomotora de vapor por el bosque Gotjawal); Playa Hamdeok (aguas turquesas, ideal para familias); Songaksan (montaña volcánica costera con red de túneles de la Segunda Guerra Mundial); Costa Yongmeori (paseo por acantilados al pie del Sanbangsan); Cafe the Cliff (atardecer en Aewol); Museo de las Haenyeo, cerca de Hado; y tours en submarino o yate desde Seogwipo y Jungmun. Lleve la lista completa al guía-conductor en la recogida y este organizará el día según tráfico, horarios de ferry y horas de apertura.",
+      "name": "Ruta personalizada: Diseña tu propio día",
+      "category": "Envíanos tu propio itinerario",
+      "description": "Más allá de las tres rutas recomendadas, el servicio de charter de 9 horas es totalmente personalizable — puedes combinar paradas del Este/Oeste/Sur o enviar un plan completamente personalizado con antelación. Las adiciones más habituales incluyen: el Cráter Sangumburi (Monumento Natural n.º 263 — un cráter freatomagmático de 650 m de ancho × 100 m de profundidad, famoso por sus hierbas plateadas otoñales); Camellia Hill (variedades de camelia en flor de noviembre a marzo); el Parque Natural Hueree (granja de alpacas y mandarinas, favorita de las familias); el Parque Temático ECO Land (paseo en locomotora de vapor por el bosque Gotjawal); la Playa Hamdeok (aguas turquesas poco profundas, apta para familias); Songaksan (montaña volcánica costera con red de túneles de la Segunda Guerra Mundial); la Costa Yongmeori (paseo por los acantilados bajo Sanbangsan); el Café The Cliff (mirador del atardecer en Aewol); el Museo Haenyeo cerca de Hado; y tours en submarino/yate desde Seogwipo y Jungmun. Lleva una lista completa al guía-conductor al inicio del recorrido y organizará el día según el tráfico, los horarios de ferry y los horarios de apertura.",
       "highlights": [
-        "Combine UNESCO de la costa este (Seongsan, Manjanggul) con campos de té de la costa oeste (Osulloc) si el tiempo lo permite — normalmente solo viable saltando Udo",
-        "Añada un almuerzo de mariscos haenyeo (mujeres buceadoras) — mejor cerca de Hado (Este) o Daejeong (Oeste), donde las cooperativas haenyeo están activas",
-        "Combine una mañana de playa con una tarde de montaña o templo (Hyeopjae + Sanbangsan, o Hamdeok + Sangumburi)",
-        "Incluya localizaciones de rodaje de K-drama: Seopjikoji ('All In'), zona de Hyeopjae ('Boys Over Flowers'), Cheonjiyeon ('Big')"
+        "Combina el patrimonio UNESCO de la costa este (Seongsan, Manjanggul) con los campos de té de la costa oeste (O'sulloc) si el tiempo lo permite — generalmente solo es viable si se omite Udo.",
+        "Añade un almuerzo de marisco con las haenyeo (buceadoras) — lo mejor es cerca de Hado (Este) o Daejeong (Oeste), donde las cooperativas de haenyeo están en activo.",
+        "Combina una mañana de playa con una tarde de montaña o templo (Hyeopjae + Sanbangsan, o Hamdeok + Sangumburi).",
+        "Combínalo con localizaciones de rodaje de K-dramas: Seopjikoji ('All In'), zona de Hyeopjae ('Boys Over Flowers'), Cheonjiyeon ('Big')."
       ],
       "timeUsed": [
-        "9 horas desde la recogida en el hotel — diseñe el número de paradas"
+        "Comenta tu plan con el guía-conductor al inicio del recorrido o envíalo con 24 horas de antelación a través de la confirmación de reserva.",
+        "El guía-conductor organiza las paradas según el tráfico en tiempo real, los horarios de ferry y los días de cierre de cada lugar (Seongsan el primer lunes, Manjanggul el primer miércoles, etc.).",
+        "Regreso al hotel dentro del período de 9 horas (tiempo adicional con acuerdo previo)."
       ],
-      "whyOnRoute": "La opción más flexible de las cuatro. Ideal para visitantes recurrentes de Jeju, viajeros con intereses específicos (rutas K-drama, fotografía, gastronomía, familias con niños) y grupos de 4–9 personas, donde la tarifa por vehículo frente al precio del tour grupal se inclina con fuerza hacia el charter privado.",
+      "whyOnRoute": "La opción más flexible de las cuatro. Ideal para visitantes habituales de Jeju, viajeros con intereses específicos (seguimiento de K-dramas, fotografía, gastronomía, familias con niños) y grupos de 4 a 9 personas donde el precio por vehículo frente al precio de tour en grupo se inclina claramente a favor del charter privado.",
       "visitBasics": {
-        "hours": "Depende de las paradas elegidas — el guía-conductor señalará los días de cierre mensuales en la reserva",
-        "closed": "Depende de las paradas elegidas",
-        "admission": "Todas las entradas se pagan directamente; el guía-conductor asiste en cada acceso",
-        "walking": "Ajustable a la movilidad de su grupo"
+        "hours": "Depende de las paradas elegidas — el guía-conductor informa sobre los días de cierre mensuales en el momento de la reserva.",
+        "closed": "Depende de las paradas elegidas.",
+        "admission": "Todas las entradas se pagan directamente en taquilla; el guía-conductor asiste en cada acceso.",
+        "walking": "Adaptable a la movilidad de tu grupo."
       },
       "convenience": {
-        "restroom": "Disponible en todas las paradas principales",
-        "parking": "El guía-conductor gestiona todo el aparcamiento"
+        "restroom": "Disponible en todas las paradas principales.",
+        "parking": "El guía-conductor gestiona todo el estacionamiento."
       },
       "smartNotes": {
-        "photo": "Envíe 3–5 fotos de referencia al guía-conductor con antelación — mejora notablemente la calidad de la lista final de tomas",
-        "facilities": "El almuerzo lo decide usted — comunique las necesidades dietéticas (halal, vegetariano, sin marisco, menú infantil) en la reserva para que el guía pueda recomendar restaurantes adecuados",
-        "tip": "La ruta personalizada es también la mejor opción para visitantes con vuelo el mismo día — la ventana de 9 horas puede cargarse hacia el final para dejarle en el aeropuerto de Jeju. Indíquelo en la reserva para secuenciar la ruta hacia el aeropuerto a última hora de la tarde."
+        "photo": "Envía 3-5 fotos de referencia al guía-conductor con antelación — esto mejora notablemente la calidad de tu lista final de tomas.",
+        "facilities": "El almuerzo es tu elección — comunica tus necesidades dietéticas (halal, vegetariano, sin marisco, menú infantil) al reservar para que el guía pueda sugerir restaurantes adecuados.",
+        "tip": "La ruta personalizada también es la mejor opción para los visitantes con vuelo ese mismo día — el período de 9 horas puede organizarse para dejarte en el Aeropuerto de Jeju al final del recorrido. Indícalo al reservar para que la ruta se planifique con dirección al aeropuerto durante la tarde."
       },
       "_poi_meta": {
         "poi_key": "route_variant_custom",
@@ -349,198 +365,201 @@
   ],
   "routeFlowStops": [
     {
-      "name": "Recogida en hotel",
+      "name": "Recogida en el hotel",
       "type": "origin",
-      "theme": "Start"
+      "theme": "Inicio"
     },
     {
-      "name": "Elegir ruta",
+      "name": "Elige ruta",
       "type": "primary",
-      "theme": "East/West/South"
+      "theme": "Este / Oeste / Sur"
     },
     {
-      "name": "Pausa para almorzar",
+      "name": "Pausa para el almuerzo",
       "type": "meal",
-      "theme": "Reset"
+      "theme": "Restablecer"
     },
     {
-      "name": "Paradas de tarde",
+      "name": "Paradas de la tarde",
       "type": "primary",
-      "theme": "Continue"
+      "theme": "Continuar"
     },
     {
-      "name": "Bajada en hotel",
+      "name": "Llegada al hotel",
       "type": "return",
-      "theme": "End"
+      "theme": "Fin"
     }
   ],
   "routePhases": [
     {
-      "phase": "Recogida en el hotel",
+      "phase": "Recogida en el hotel de Jeju",
       "duration": "Parada 1",
-      "description": "Recogida en su hotel de Ciudad de Jeju a partir de las 08:30."
+      "description": "Inicio: Recogida en el hotel de Jeju"
     },
     {
-      "phase": "Elija su ruta",
+      "phase": "Elige tu ruta",
       "duration": "Paradas 2–4",
-      "description": "Ruta Este (UNESCO + K-drama) / Ruta Oeste (playas + té + cafés) / Ruta Sur (cascadas + acantilados) / Ruta a medida."
+      "description": "Día de excursión: Elige tu ruta"
     },
     {
-      "phase": "Recogida en el hotel",
+      "phase": "Regreso al hotel",
       "duration": "Parada 5",
-      "description": "Recogida en su hotel de Ciudad de Jeju a partir de las 08:30."
+      "description": "Final: Regreso al hotel"
     }
   ],
   "routeShapeIntro": {
-    "title": "El recorrido del día",
-    "subtitle": "Recogida en su hotel de Ciudad de Jeju, luego elija: Ruta Este (Seongsan + K-drama), Ruta Oeste (playas + té + cafés), Ruta Sur (cascadas + acantilados) o diseñe su propio itinerario. 9 horas, coche privado, chófer-guía certificado."
+    "title": "Cómo transcurre este día privado",
+    "subtitle": "Recogida en tu hotel de Jeju entre las 08:00 y las 09:00, seguida de un día completamente flexible de 9 horas por la ruta Este, Oeste o Sur, o tu propio plan personalizado. El conductor-guía ajusta el ritmo según el clima y el tráfico. Regreso al hotel aproximadamente entre las 17:00 y las 18:00."
   },
   "whyTourWorks": {
     "bestFor": [
-      "Grupos que quieren privacidad y flexibilidad de horario",
-      "Parejas o familias con necesidades específicas (niños pequeños, movilidad reducida)",
-      "Quienes viajan por segunda vez y quieren ver lo que no vieron la primera",
-      "Viajeros con gustos muy definidos que no quieren ajustarse a un itinerario fijo"
+      "Familias con niños, incluyendo los más pequeños",
+      "Grupos multigeneracionales que incluyen personas mayores",
+      "Parejas y recién casados que desean un relajado día de K-drama",
+      "Visitantes habituales de Jeju que desean una ruta personalizada",
+      "Fotógrafos en busca de escenas estacionales específicas (colza, hortensias, muhly rosado)"
     ],
     "routeLogicSections": [
       {
-        "title": "Por qué elegir un tour privado en Jeju",
+        "title": "Por qué un chárter privado es la mejor opción en Jeju",
         "icon": "car",
         "iconBg": "bg-sky-50/80",
         "iconColor": "text-sky-600",
         "items": [
           {
-            "label": "Ventaja del tour privado",
-            "detail": "El guía compartirá el contexto más importante en cada parada."
+            "label": "Jeju es verdaderamente grande",
+            "detail": "La isla se extiende aproximadamente 73 km de este a oeste. Los tours en autobús grupales pierden horas esperando en cada parada; un chárter privado elimina ese tiempo de espera."
           },
           {
-            "label": "Ventaja del tour privado",
-            "detail": "El guía compartirá el contexto más importante en cada parada."
+            "label": "El clima cambia rápidamente",
+            "detail": "Los microclimas de Jeju varían cada hora. Un conductor-guía puede sustituir una parada al aire libre por una en interior (cuevas del Parque Hallim, O'sulloc, Yakcheonsa) sin arruinar el día."
           },
           {
-            "label": "Ventaja del tour privado",
-            "detail": "El guía compartirá el contexto más importante en cada parada."
+            "label": "Comodidad de puerta a puerta",
+            "detail": "La recogida en el hotel significa que no hay lanzadera por la zona del aeropuerto, sin estrés con autobuses nocturnos y sin caminar con equipaje entre traslados."
           }
         ]
       },
       {
-        "title": "Por qué elegir un tour privado en Jeju",
+        "title": "Cómo elegir entre el Este, el Oeste y el Sur",
         "icon": "map",
-        "iconBg": "bg-amber-50/80",
+        "iconBg": "bg-amber-50/80 > **Notas:** Las líneas **22** y **30** (`bg-sky-50/80`, `bg-amber-50/80`) son clases de CSS de Tailwind y se han dejado sin traducir, ya que son nombres de código técnico.",
         "iconColor": "text-amber-600",
         "items": [
           {
-            "label": "Ventaja del tour privado",
-            "detail": "El guía compartirá el contexto más importante en cada parada."
+            "label": "Este para la cobertura de monumentos emblemáticos por primera vez",
+            "detail": "Seongsan Ilchulbong y Manjanggul son los dos nombres UNESCO más destacados de Jeju; la ruta Este ofrece el máximo valor de reconocimiento."
           },
           {
-            "label": "Ventaja del tour privado",
-            "detail": "El guía compartirá el contexto más importante en cada parada."
+            "label": "Oeste para paisajes relajados y fotografías",
+            "detail": "Hyeopjae Beach, Hallim Park, O'sulloc y Aewol forman un día más tranquilo y perfecto para parejas, con excelentes oportunidades fotográficas y un final al atardecer."
           },
           {
-            "label": "Ventaja del tour privado",
-            "detail": "El guía compartirá el contexto más importante en cada parada."
+            "label": "Sur para el drama geológico",
+            "detail": "Cascadas, acantilados de basalto, un domo volcánico y un templo en un solo día otorgan a esta ruta la narrativa de \"isla volcánica\" más poderosa de Jeju."
           }
         ]
       },
       {
-        "title": "Por qué elegir un tour privado en Jeju",
+        "title": "Qué puede cambiar en el día",
         "icon": "clock-3",
         "iconBg": "bg-slate-50/80",
         "iconColor": "text-slate-698",
         "items": [
           {
-            "label": "Ventaja del tour privado",
-            "detail": "El guía compartirá el contexto más importante en cada parada."
+            "label": "Ajustes por condiciones climáticas",
+            "detail": "La lluvia ligera raramente afecta la ruta; el viento fuerte generalmente acorta las paradas costeras (Seongsan, Jusangjeolli, Aewol)."
           },
           {
-            "label": "Ventaja del tour privado",
-            "detail": "El guía compartirá el contexto más importante en cada parada."
+            "label": "Ferry a Udo en la ruta Este",
+            "detail": "La isla Udo requiere un ferry independiente. Los vehículos pueden embarcarse (con costo adicional) o dejarse en el muelle. El horario del ferry afecta el flujo general del día."
           },
           {
-            "label": "Ventaja del tour privado",
-            "detail": "El guía compartirá el contexto más importante en cada parada."
+            "label": "Las horas extra son posibles",
+            "detail": "Si necesita más de 9 horas, cada hora adicional tiene un costo de 25.000 KRW, pagado en efectivo al conductor, sujeto a su disponibilidad."
           }
         ]
       }
     ],
     "lessIdealFor": [
-      "Viajeros individuales o parejas que quieren socializar con otros turistas",
-      "Quienes buscan el precio más bajo (el tour compartido es más económico)"
+      "Viajeros solos con presupuesto ajustado (el precio privado es por vehículo)",
+      "Viajeros que deseen compartir la experiencia con otros huéspedes para una vivencia más social",
+      "Personas que necesiten un tour con narración completa a cargo de un guía certificado (el conductor-guía está licenciado, pero no ofrece narración de nivel guía oficial)",
+      "Viajeros que deseen entradas y comidas totalmente incluidas"
     ]
   },
   "practicalAccordionItems": [
     {
       "id": "pickup",
       "title": "Recogida y regreso",
-      "preview": "Recogida en hotel en cualquier parte de Jeju; reunión en vestíbulo 10 min antes",
+      "preview": "Recogida en el hotel en cualquier punto de Jeju; reunión en el lobby 10 minutos antes",
       "content": [
-        "Recogida en hotel incluida en cualquier lugar de la isla de Jeju (Jeju City, Seogwipo, Jungmun, etc.).",
-        "La recogida se organiza normalmente entre las 08:00 y las 09:00.",
-        "Por favor, espere en el vestíbulo del hotel 10 minutos antes de la hora acordada.",
-        "Bajada en su hotel de Jeju o en cualquier lugar de la isla de su elección (p. ej., un restaurante para cenar o el aeropuerto).",
-        "El regreso es normalmente entre las 17:00 y las 18:00 dentro de las 9 horas.",
-        "Si necesita reprogramar, contacte al operador con al menos 2 días de antelación."
+        "La recogida en el hotel está incluida en cualquier lugar de la isla de Jeju (Ciudad de Jeju, Seogwipo, Jungmun, etc.)",
+        "La recogida se organiza habitualmente entre las 08:00 y las 09:00",
+        "Por favor, espere en el lobby del hotel 10 minutos antes de la hora de salida acordada",
+        "Regreso a su hotel en Jeju o a cualquier lugar de su elección en la isla (p. ej., un restaurante para cenar o el aeropuerto)",
+        "El regreso es generalmente entre las 17:00 y las 18:00 dentro de la ventana de 9 horas",
+        "Si necesita reprogramar, comuníquese con el operador al menos 2 días antes de la fecha de reserva original"
       ]
     },
     {
-      "id": "vehículo",
+      "id": "vehicle",
       "title": "Vehículo y tamaño del grupo",
-      "preview": "Vehículo asignado según tamaño del grupo y volumen de equipaje",
+      "preview": "Vehículo asignado según el tamaño del grupo y el volumen del equipaje",
       "content": [
-        "El tipo de vehículo se adapta al número exacto de pasajeros y maletas.",
-        "Por favor, indique el número exacto de pasajeros y maletas al reservar.",
-        "Los vehículos habituales incluyen berlinas para 1-3 personas, SUV medíanos para 4-5 y Staria o Carnival para 6-9.",
-        "Los grupos más grandes pueden dividirse en varios vehículos o recibir un presupuesto aparte."
+        "El tipo de vehículo se adapta al número exacto de pasajeros y piezas de equipaje",
+        "Por favor, indique el número exacto de pasajeros y maletas al realizar la reserva",
+        "Los vehículos típicos incluyen sedanes para 1 a 3 pasajeros, SUV medianos para 4 a 5 pasajeros, y furgonetas Staria o Carnival para 6 a 9 pasajeros",
+        "Los grupos más grandes pueden distribuirse en varios vehículos o cotizarse por separado"
       ]
     },
     {
       "id": "duration",
-      "title": "tiempo previsto de 9 horas y tiempo extra",
-      "preview": "tiempo previsto de servicio estricta de 9 horas desde la recogida",
+      "title": "Ventana de 9 horas y tiempo adicional",
+      "preview": "Ventana de servicio estricta de 9 horas a partir de la recogida",
       "content": [
-        "Las 9 horas comienzan desde la hora de recogida en el hotel.",
-        "El tiempo extra se cobra a 25.000 KRW por hora adicional, pagado en efectivo directamente al conductor.",
-        "El tiempo extra está sujeto a la disponibilidad del conductor y a las normas de horas de servicio aplicables.",
-        "Los transbordos en ferry a la isla Udo cuentan dentro de las 9 horas salvo acuerdo contrario."
+        "La ventana de 9 horas comienza desde el momento de recogida en su hotel",
+        "El tiempo adicional se cobra a 25,000 KRW por hora extra, pagado en efectivo directamente al conductor",
+        "El tiempo adicional está sujeto a la disponibilidad del conductor y a las normas de horas de servicio aplicables",
+        "Los traslados en ferry a la isla Udo cuentan dentro de la ventana de 9 horas, salvo acuerdo contrario"
       ]
     },
     {
       "id": "extras",
-      "title": "Tarifas adicionales que debes conocer",
-      "preview": "Ferry a Udo, costes de entrada y comidas",
+      "title": "Cargos adicionales que debe conocer",
+      "preview": "Ferry de Udo, costos de entrada y comidas",
       "content": [
-        "Ferry de vehículos a Udo: coste adicional (varía según el tamaño del vehículo); ferry de pasajeros desde ≈10.500 KRW.",
-        "Todas las entradas se pagan directamente en cada lugar.",
-        "Las comidas se pagan directamente; el conductor-guía puede recomendar especialidades locales (cerdo negro heuk dwaeji, gim, etc.).",
-        "La propina al conductor es bien recibida pero no obligatoria."
+        "Ferry para vehículos a isla Udo: costo adicional (varía según el tamaño del vehículo); ferry para pasajeros a pie desde aprox. 10,500 KRW ida y vuelta por persona",
+        "Todas las tarifas de entrada se pagan directamente en cada lugar",
+        "Las comidas se pagan directamente; el conductor-guía puede recomendar especialidades locales (cerdo negro heuk dwaeji, gogi guksu, gachas de abulón)",
+        "Las propinas opcionales al conductor son bienvenidas pero no obligatorias"
       ]
     },
     {
       "id": "weather",
       "title": "Política meteorológica",
-      "preview": "El formato privado se adapta bien a las condiciones cambiantes de Jeju",
+      "preview": "El formato privado se adapta bien a las cambiantes condiciones de Jeju",
       "content": [
-        "Lluvia ligera: la mayoría de paradas siguen operativas; el conductor-guía puede redirigir hacia paradas cubiertas.",
-        "Viento fuerte: la exposición en Seongsan, Jusangjeolli y Aewol puede acortarse.",
-        "Días con aviso de tifón: el operador se pondrá en contacto para reprogramar.",
-        "La nieve en el Hallasan puede cerrar la carretera 1100; el conductor-guía sustituirá por alternativas de interior."
+        "Lluvia ligera: la mayoría de las paradas continúan operando; el conductor-guía puede redirigir hacia paradas en interiores",
+        "Viento fuerte: la exposición costera en Seongsan, Jusangjeolli y Aewol puede reducirse",
+        "Días con aviso de tifón: el operador se pondrá en contacto con usted para reprogramar",
+        "La nieve en Hallasan puede cerrar la carretera de la meseta 1100; el conductor-guía sustituirá con paradas alternativas en el interior"
       ]
     },
     {
       "id": "included",
       "title": "Qué está incluido",
-      "preview": "Vehículo y conductor-guía licenciado; entradas y comidas pago directo",
-      "variant": "included",
+      "preview": "Vehículo y conductor-guía autorizado; entradas y comidas se pagan directamente",
+      "variant": "Incluido",
       "content": [
-        "Vehículo privado (berlina, SUV o furgoneta según el grupo)",
-        "Conductor-guía en inglés con licencia",
-        "Recogida y regreso en hotel en cualquier punto de la isla de Jeju",
+        "Vehículo privado (sedán, SUV o furgoneta según el tamaño del grupo)",
+        "Conductor-guía autorizado con habla inglesa",
+        "Recogida y entrega en hotel en cualquier punto de Jeju",
         "Combustible y peajes para la ruta estándar",
-        "Todas las entradas no incluidas; pagar directamente en cada lugar",
+        "Las tarifas de entrada no están incluidas; se pagan directamente en cada lugar",
         "Las comidas no están incluidas",
         "Las compras personales no están incluidas",
-        "La propina del conductor no está incluida"
+        "Las propinas para el conductor no están incluidas"
       ]
     }
   ],
@@ -551,119 +570,110 @@
     },
     "tomorrow": {
       "temp": "—",
-      "label": "Actualizado a díario"
+      "label": "Actualizado diariamente"
     }
   },
   "seasonalVariations": [
     {
       "season": "Primavera",
       "title": "Temporada de canola",
-      "description": "Tour privado recomendado para perseguir la floración: Seongsan con flores de colza, Aewol con lilas costeras.",
+      "description": "Las flores de canola cubren la costa este a finales de marzo–abril; los cerezos alcanzan su punto máximo a principios de abril. Las temperaturas suaves y los cielos despejados hacen de esta la temporada más equilibrada.",
       "icon": "flower"
     },
     {
       "season": "Verano",
       "title": "Temporada de playa",
-      "description": "La Ruta Oeste brilla en verano: Hyeopjae para bañarse, cafés de Aewol al atardecer.",
+      "description": "Temporada alta de playa con Hyeopjae y Hamdeok en su mejor momento; las hortensias de junio colorean la costa oeste. Espere humedad y posibles tifones en agosto.",
       "icon": "sun"
     },
     {
       "season": "Otoño",
       "title": "Mejor temporada fotográfica",
-      "description": "La Ruta Este ofrece los mejores cielos del año. La Ruta Sur con Songaksan y sus vistas al horizonte.",
+      "description": "Los campos de muhly rosado alcanzan su punto máximo entre mediados de octubre y principios de noviembre; la mejor ventana de visibilidad para las vistas del Hallasan y Seongsan. A menudo la mejor temporada fotográfica de Jeju.",
       "icon": "leaf"
     },
     {
       "season": "Invierno",
       "title": "Camelia y nieve",
-      "description": "La Ruta Sur en invierno: cascadas con más agua, acantilados más dramáticos con las olas grandes.",
+      "description": "Camellia Hill florece de diciembre a febrero; el Hallasan puede tener nieve en su cima. Frío pero visualmente gratificante, con menos aglomeraciones en todas las paradas principales.",
       "icon": "snowflake"
     }
   ],
   "bookingTrustItems": [
     {
       "icon": "check-circle",
-      "title": "Equipo local certificado",
+      "title": "Operador local con licencia",
       "description": "Operador turístico coreano autorizado con seguro completo",
       "iconBg": "bg-emerald-50/80",
-      "iconColor": "text-emerald-600",
-      "body": "Equipo local certificado de Jeju. Chófer-guía certificado por el KTO (Korea Tourism Organization)."
+      "iconColor": "text-emerald-600"
     },
     {
       "icon": "route",
-      "title": "Especialistas en toda la isla",
-      "description": "Itinerario ajustado a medida, no un circuito genérico",
+      "title": "Especialistas en rutas",
+      "description": "Itinerario personalizado, no un circuito genérico",
       "iconBg": "bg-sky-50/80",
-      "iconColor": "text-sky-600",
-      "body": "El chófer-guía conoce las tres rutas y puede adaptar el itinerario en tiempo real según condiciones de tráfico y preferencias."
+      "iconColor": "text-sky-600"
     },
     {
       "icon": "users",
-      "title": "Solo su grupo en el vehículo",
-      "description": "Tamaño adecuado para la ruta",
+      "title": "Tamaño de grupo seleccionado",
+      "description": "Adecuado para la ruta",
       "iconBg": "bg-amber-50/80",
-      "iconColor": "text-amber-600",
-      "body": "Privacidad total: el coche es exclusivamente para su grupo durante las 9 horas."
+      "iconColor": "text-amber-600"
     }
   ],
   "bookingSupportSteps": [
     {
       "timing": "Inmediatamente",
-      "title": "Confirmación inmediata",
-      "detail": "Confirmación con resumen del itinerario elegido.",
-      "description": "Confirmación instantánea con formulario de preferencia de región/ruta y detalles de recogida en hotel."
+      "title": "Confirmación instantánea",
+      "detail": "Confirmación de reserva con resumen del itinerario"
     },
     {
-      "timing": "12 horas antes",
-      "title": "Recordatorio 12 horas antes",
-      "detail": "Confirmación de la ruta y condiciones meteorológicas.",
-      "description": "Ruta finalizada 24 horas antes según el pronóstico meteorológico y sus prioridades."
+      "timing": "12 horas antes > **Notes:** Items 20, 23, and 26 (`bg-emerald-50/80`, `bg-sky-50/80`, `bg-amber-50/80`) are Tailwind CSS class names — kept as-is since they are code values, not translatable text. All proper nouns (Hyeopjae, Hamdeok, Hallasan, Seongsan, Camellia Hill, Jeju) are retained unchanged.",
+      "title": "Recordatorio de 12 horas",
+      "detail": "Actualización del clima y ajustes de ruta"
     },
     {
-      "timing": "La noche anterior",
+      "timing": "La tarde anterior",
       "title": "Información final de recogida",
-      "detail": "Contacto del chófer-guía y punto de encuentro en el hotel.",
-      "description": "Los datos del conductor-guía (nombre y matrícula del vehículo) se envían la noche anterior."
+      "detail": "Hora exacta de recogida y contacto del conductor"
     },
     {
       "timing": "La mañana del tour",
-      "title": "Notas del día del tour",
-      "detail": "Ajustes de última hora según el chófer-guía.",
-      "description": "Conductor en el vestíbulo de su hotel a la hora acordada con letrero con su nombre."
+      "title": "Notas de ruta del día",
+      "detail": "Sesión informativa matutina según las condiciones en tiempo real"
     },
     {
       "timing": "Durante el tour",
-      "title": "Consejos parada a parada",
-      "detail": "El guía le recomienda en tiempo real qué ver y fotografiar en cada parada.",
-      "description": "Ajustes el día a través de mensaje directo — extienda en un lugar que le encante, añada una pausa en un café."
+      "title": "Consejos parada por parada",
+      "detail": "Orientación en tiempo real en cada ubicación"
     },
     {
-      "timing": "Tras el tour",
-      "title": "Atención posventa",
-      "detail": "Solicitud de valoración tras el tour.",
-      "description": "Solicitud de valoración después del tour enviada tras la llegada."
+      "timing": "Después del tour",
+      "title": "Asistencia postventa",
+      "detail": "Seguimiento y recomendaciones"
     }
   ],
   "staticQuestions": [
     {
       "id": "first-time",
-      "question": "(Consulte las opciones de ruta al reservar)",
-      "answer": "Para más información sobre las rutas disponibles, contacte a AtoC Korea al reservar."
+      "question": "¿Es esta una buena opción para los visitantes que van a Jeju por primera vez (Este, Oeste o Sur)?",
+      "answer": "Sí — cubre las paradas más destacadas de la zona en un día equilibrado."
     },
     {
       "id": "walking",
-      "question": "¿Es difícil la caminata?",
-      "answer": "Depende de la ruta elegida. La Ruta Este tiene la subida opcional a Seongsan (~180 escalones). La Ruta Oeste es la más llana. El chófer-guía puede adaptar el nivel de actividad física a sus necesidades."
+      "question": "¿La caminata es difícil?",
+      "answer": "Caminata moderada con algunas secciones activas."
     },
     {
       "id": "family",
-      "question": "¿Es adecuado para familias?",
-      "answer": "Sí, especialmente para familias con niños pequeños o con necesidades específicas. El tour privado permite pausas, cambios de ritmo y adaptaciones imposibles en un tour compartido."
+      "question": "¿Este tour es adecuado para familias?",
+      "answer": "Sí — cómodo para la mayoría de las familias."
     },
     {
       "id": "seniors",
-      "question": "¿Pueden participar personas mayores cómodamente?",
-      "answer": "Sí. El chófer-guía adapta el itinerario y el ritmo a las necesidades de movilidad. La Ruta Oeste es la más accesible."
+      "question": "¿Pueden unirse adultos mayores cómodamente?",
+      "answer": "Sí — el ritmo y la caminata son cómodos para personas mayores activas."
     }
   ],
   "guestReviews": [],
@@ -700,41 +710,41 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "La disponibilidad se confirma en el paso de pago.",
+    "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / entorno; no forma parte del JSONB estático.",
     "price": {
       "amountLabel": "",
       "currency": "USD",
-      "per": "vehículo"
+      "per": "vehicle"
     }
   },
   "pickup_dropoff": {
     "type": "hotel_pickup",
     "meeting_points": [
       {
-        "name": "Any Jeju-island hotel (Jeju City, Seogwipo, Jungmun)",
+        "name": "Cualquier hotel en la isla de Jeju (Ciudad de Jeju, Seogwipo, Jungmun)",
         "time": "08:00–09:00",
-        "note": "Recogida puerta a puerta en cualquier hotel dentro del área cubierta."
+        "note": "Recogida puerta a puerta en cualquier hotel dentro del área habilitada."
       },
       {
         "name": "Aeropuerto de Jeju",
         "time": "08:00–09:00",
-        "note": "También disponible recogida en el aeropuerto de Jeju; cuenta dentro del bloque de 9 horas."
+        "note": "La recogida en el Aeropuerto de Jeju también está disponible; se incluye dentro de la ventana de 9 horas."
       }
     ],
     "dropoff_points": [
       {
-        "name": "Any Jeju-island hotel (Jeju City, Seogwipo, Jungmun)",
+        "name": "Cualquier hotel en la isla de Jeju (Ciudad de Jeju, Seogwipo, Jungmun)",
         "approx_time": "≈ 17:00–18:00",
-        "note": "Regreso al mismo hotel o a cualquier dirección dentro del área cubierta."
+        "note": "Regreso al mismo hotel o a cualquier dirección dentro del área habilitada."
       },
       {
         "name": "Aeropuerto de Jeju",
         "approx_time": "≈ 17:00–18:00",
-        "note": "Regreso para salida el mismo día disponible; se cuenta dentro del tiempo de servicio."
+        "note": "Traslado de salida el mismo día disponible; se contabiliza dentro de la ventana de servicio."
       }
     ],
     "hotel_pickup_available": true,
-    "notes": "Espere en el vestíbulo del hotel 10 minutos antes de la hora acordada. La tiempo previsto de servicio de 9 horas empieza desde la hora de recogida. Las solicitudes de cambio de fecha deben hacerse al menos 2 días antes de la fecha original de reserva. El tiempo extra se cobra a 25.000 KRW por hora, en efectivo al conductor y sujeto a disponibilidad."
+    "notes": "Por favor, espere en el lobby del hotel 10 minutos antes de la hora de salida acordada. La ventana de servicio de 9 horas comienza desde la hora de recogida. Las solicitudes de reprogramación deben realizarse al menos 2 días antes de la fecha de reserva original. Las horas extra se cobran a 25,000 KRW por hora, en efectivo al conductor, sujeto a disponibilidad del conductor."
   },
   "matching_profile": {
     "profile_version": 6,
@@ -745,7 +755,7 @@
     "destination_region": "jeju",
     "region_type": "jeju_all_around",
     "vehicle_type": "private_vehicle",
-    "duration_hours": 9.0,
+    "duration_hours": 9,
     "region_tags": [
       "jeju_all_around",
       "jeju_east",
@@ -786,45 +796,45 @@
     "pace_level": 0.6,
     "walking_level": 0.5,
     "scenic_level": 0.95,
-    "photo_level": 1.0,
+    "photo_level": 1,
     "culture_level": 0.8,
-    "relax_level": 1.0,
+    "relax_level": 1,
     "first_time_fit": 0.95,
-    "family_fit": 1.0,
-    "senior_fit": 1.0,
-    "couple_fit": 1.0,
+    "family_fit": 1,
+    "senior_fit": 1,
+    "couple_fit": 1,
     "solo_traveler_fit": 0.8,
     "active_traveler_fit": 0.8,
-    "adult_family_fit": 1.0,
+    "adult_family_fit": 1,
     "family_with_teens_fit": 0.8,
-    "young_kids_fit": 1.0,
-    "senior_active_fit": 1.0,
-    "senior_general_fit": 1.0,
-    "mobility_friendly_fit": 1.0,
+    "young_kids_fit": 1,
+    "senior_active_fit": 1,
+    "senior_general_fit": 1,
+    "mobility_friendly_fit": 1,
     "stroller_fit": 0.8,
-    "one_day_fit": 1.0,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.8,
     "rain_fit": 0.8,
     "value_for_money_fit": 0.55,
     "iconic_landmark_fit": 0.95,
-    "cafe_fit": 1.0,
+    "cafe_fit": 1,
     "food_fit": 0.7,
-    "nature_fit": 1.0,
-    "beach_fit": 1.0,
+    "nature_fit": 1,
+    "beach_fit": 1,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.55,
     "no_shopping_fit": 0.4,
     "local_culture_fit": 0.8,
     "storytelling_fit": 0.85,
     "unesco_fit": 0.65,
-    "intangible_heritage_fit": 1.0,
+    "intangible_heritage_fit": 1,
     "indoor_ratio": 0.2,
     "weather_sensitivity": 0.5,
-    "comfort_level": 1.0,
+    "comfort_level": 1,
     "budget_fit": 0.4,
-    "premium_fit": 1.0,
+    "premium_fit": 1,
     "small_group_fit": 0.15,
-    "private_fit": 1.0,
+    "private_fit": 1,
     "bus_fit": 0.05,
     "price_band": "premium",
     "pickup_base": "jeju_island",
@@ -846,17 +856,28 @@
       "East route: Seongsan summit climb is the most demanding section; base-area viewing is an easier alternative.",
       "West route: easy to moderate overall; Hyeopjae Beach and O'sulloc are gentle.",
       "South route: Cheonjiyeon and Sanbangsan add the most stairs.",
-      "The driver-guide can adjust ritmo del recorrido on the day to match family or senior comfort.",
+      "The driver-guide can adjust pacing on the day to match family or senior comfort.",
       "Comfortable walking shoes with good grip are recommended."
     ],
     "keywords": [
-      "tour privado Jeju coche",
-      "chófer guía Jeju un día",
-      "excursión privada Jeju ruta personalizada"
+      "jeju private car charter",
+      "jeju private tour driver guide",
+      "jeju east route private tour",
+      "jeju west route private tour",
+      "jeju south route private tour",
+      "jeju customizable day tour",
+      "jeju island private vehicle tour",
+      "jeju private k drama tour",
+      "jeju seongsan udo private tour",
+      "jeju hyeopjae osulloc private tour"
     ],
     "synonym_hints": [
-      "tour privado isla Jeju",
-      "Jeju coche privado chófer"
+      "jeju chauffeur tour",
+      "jeju private chartered vehicle",
+      "jeju flexible day tour",
+      "jeju door to door private tour",
+      "jeju tailor made day tour",
+      "jeju private 9 hour charter"
     ],
     "seasonality": "year_round",
     "pickup_base_normalized": "jeju",
@@ -869,14 +890,14 @@
       "jusangjeolli_cliff",
       "cheonjiyeon_falls"
     ],
-    "private_tour_fit": 1.0,
-    "customizable_route_fit": 1.0,
-    "flexibility_fit": 1.0,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "private_tour_fit": 1,
+    "customizable_route_fit": 1,
+    "flexibility_fit": 1,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
@@ -897,7 +918,7 @@
     "score_rationale": {
       "private_fit": "Direct match: this is a per-vehicle private charter.",
       "mobility_friendly_fit": "Door-to-door private vehicle eliminates most public-transport mobility friction; only Seongsan summit and Cheonjiyeon stairs reduce friendliness for those specific stops.",
-      "young_kids_fit": "Best-in-class for kids because ritmo del recorrido, snack stops, and route choice are all adjustable.",
+      "young_kids_fit": "Best-in-class for kids because pacing, snack stops, and route choice are all adjustable.",
       "weather_sensitivity": "Low because the driver-guide can shift toward indoor stops (Manjanggul, Hallim caves, O'sulloc, Yakcheonsa) on bad-weather days.",
       "value_for_money_fit": "Mid: per-vehicle pricing is excellent value for groups of 4 to 9 but expensive for solo travelers.",
       "iconic_landmark_fit": "Maxed because the route can include Seongsan, Manjanggul, Cheonjiyeon, and Jusangjeolli in any combination.",
@@ -921,7 +942,7 @@
     ],
     "competing_products": [
       "jeju-cruise-shore-excursion-small-group-tour",
-      "jeju-eastern-unesco-lugares-day-tour"
+      "jeju-eastern-unesco-spots-day-tour"
     ]
   },
   "page_sections": [
@@ -930,21 +951,21 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Tour privado en Jeju",
-        "headlineLine2": "con ruta a medida",
+        "headlineLine1": "Isla de Jeju — Privado",
+        "headlineLine2": "Tour en Auto Chárter",
         "hero": {
           "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
           "imagePosition": "center 45%",
-          "tagline": "Su propio Jeju: chófer-guía certificado, coche privado y un itinerario adaptado a sus preferencias",
+          "tagline": "Desde el Pico del Amanecer de Seongsan hasta la Playa de Hyeopjae y las Cataratas de Cheonjiyeon — nueve horas privadas, tu ruta, tu ritmo, con un conductor-guía autorizado.",
           "pills": [
-            "Tour privado",
-            "Chófer-guía certificado",
-            "Ruta flexible"
+            "Vehículo Privado",
+            "Conductor-Guía Autorizado",
+            "Rutas Este / Oeste / Sur"
           ],
           "meta": {
-            "duration": "≈ 9 horas (servicio privado)",
-            "region": "Jeju (todas las rutas)",
-            "stops": "Itinerario flexible",
+            "duration": "9 horas",
+            "region": "Todo Jeju",
+            "stops": "Personalizado",
             "rating": 0,
             "ratingStars": 0
           }
@@ -959,7 +980,7 @@
         "subnavItems": [
           {
             "id": "overview",
-            "label": "Descripción"
+            "label": "Descripción General"
           },
           {
             "id": "itinerary",
@@ -967,15 +988,15 @@
           },
           {
             "id": "details",
-            "label": "Información práctica"
+            "label": "Detalles"
           },
           {
             "id": "faq",
-            "label": "Preguntas frecuentes"
+            "label": "FAQ"
           },
           {
             "id": "reviews",
-            "label": "Opiniones"
+            "label": "Reseñas"
           }
         ]
       }
@@ -988,18 +1009,18 @@
         "glanceItems": [
           {
             "icon": "car",
-            "label": "Tipo de tour",
-            "value": "Servicio privado exclusivo (coche solo para su grupo)"
+            "label": "Estilo de Tour",
+            "value": "Chárter Privado"
           },
           {
-            "icon": "route",
+            "icon": "map",
             "label": "Ruta",
-            "value": "3 rutas recomendadas o itinerario 100% a medida"
+            "value": "Totalmente Personalizable"
           },
           {
-            "icon": "user",
+            "icon": "user-check",
             "label": "Guía",
-            "value": "Chófer-guía certificado, inglés"
+            "value": "Conductor-Guía Autorizado"
           },
           {
             "icon": "clock",
@@ -1007,14 +1028,14 @@
             "value": "9 horas"
           },
           {
-            "icon": "map-pin",
-            "label": "Punto de encuentro",
-            "value": "Recogida en su hotel de Jeju"
+            "icon": "ticket",
+            "label": "Tarifas de Entrada",
+            "value": "Pago Directo"
           },
           {
-            "icon": "ticket",
-            "label": "Entradas",
-            "value": "Incluidas (según ruta elegida)"
+            "icon": "utensils-crossed",
+            "label": "Almuerzo",
+            "value": "Pago Directo"
           }
         ]
       }
@@ -1029,46 +1050,46 @@
             "id": "g1",
             "type": "photo",
             "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-            "alt": "Imagen de Ruta Este — Seongsan Ilchulbong (triple Patrimonio UNESCO) + costa K-drama",
-            "caption": "Ruta Este — Seongsan Ilchulbong (triple Patrimonio UNESCO) + costa K-drama",
-            "location": "Seongsan Ilchulbong, Jeju Este",
-            "atmosphere": "La Jeju más dramática: cañones volcánicos y columnas de basalto"
+            "alt": "Pico del amanecer de Seongsan Ilchulbong",
+            "caption": "Pico del amanecer de Seongsan Ilchulbong",
+            "location": "Seongsan Ilchulbong",
+            "atmosphere": "El hito UNESCO más emblemático de Jeju, parada insignia de la ruta Este"
           },
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-            "alt": "Imagen de Ruta Oeste — Playas de arena blanca",
-            "caption": "Ruta Oeste — Playas de arena blanca, campos de té y cafés costeros",
-            "location": "Playa Hyeopjae + Costa Oeste de Jeju",
-            "atmosphere": "La Jeju más dramática: cañones volcánicos y columnas de basalto"
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "alt": "Acantilado de basalto de Jusangjeolli",
+            "caption": "Acantilado de basalto de Jusangjeolli",
+            "location": "Acantilado de Jusangjeolli",
+            "atmosphere": "Columnas de basalto hexagonales en la costa sur"
           },
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
-            "alt": "Imagen de Ruta Sur — Cascadas",
-            "caption": "Ruta Sur — Cascadas, acantilados volcánicos y costa Jungmun",
-            "location": "Cascadas Cheonjeyeon, Jungmun",
-            "atmosphere": "La Jeju más dramática: cañones volcánicos y columnas de basalto"
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "alt": "Playa Hyeopjae, Jeju Oeste",
+            "caption": "Playa Hyeopjae, Jeju Oeste",
+            "location": "Playa Hyeopjae",
+            "atmosphere": "Aguas esmeralda y arena blanca en la costa oeste"
           },
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
-            "alt": "Imagen de Tour privado a medida — su propio Jeju",
-            "caption": "Tour privado a medida — su propio Jeju, a su ritmo",
-            "location": "Jeju (ruta a medida)",
-            "atmosphere": "La Jeju más dramática: cañones volcánicos y columnas de basalto"
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "alt": "Museo y campos de té O'sulloc",
+            "caption": "Museo y campos de té O'sulloc",
+            "location": "Campos de Té O'sulloc",
+            "atmosphere": "Hileras de campos de té verde y un reconfortante descanso a mediodía"
           },
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
-            "alt": "Imagen de Cascada Cheonjiyeon en Seogwipo",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
+            "alt": "Cascada Cheonjiyeon en Seogwipo",
             "caption": "Cascada Cheonjiyeon en Seogwipo",
-            "location": "Cascada Cheonjiyeon",
-            "atmosphere": "La Jeju más dramática: cañones volcánicos y columnas de basalto"
+            "location": "Cascadas Cheonjiyeon",
+            "atmosphere": "Cascada en el bosque de la ruta Sur"
           }
         ]
       }
@@ -1081,180 +1102,173 @@
         "itineraryStops": [
           {
             "number": 1,
-            "name": "Ruta Este: UNESCO y Costa K-Drama",
-            "category": "La ruta con más Patrimonio UNESCO y escenarios de K-dramas",
-            "description": "La ruta más densa en hitos, centrada en la costa este de Jeju. **Seongsan Ilchulbong** (triple Patrimonio UNESCO, cono hidrovolcánico de 5.000 años, subida al cráter opcional) es el buque insignia; a su lado, **Seopjikoji** (lengua volcánica de 2,1 km, escenario de 'Crash Landing on You') ofrece la mejor vista frontal del cono. Se puede complementar con la **Aldea Seongeup** (ciudad joseonesa viva de 1423), el **Museo Haenyeo** (UNESCO Patrimonio Intangible 2016) y la **Cueva Micheon/Ilchul Land** (tubo de lava de 1.700 m). **Adecuada para:** primera visita a Jeju, amantes de los K-dramas, fotógrafos de paisajes volcánicos.",
+            "time": "Flexible",
+            "duration": "Personalizado",
+            "name": "Ruta Este: UNESCO y Costa del K-Drama",
+            "category": "Seongsan, Udo, Manjanggul, Seopjikoji",
+            "description": "La opción de ruta con mayor densidad de lugares de interés, que cubre los mejores puntos UNESCO y de K-drama de Jeju. Las paradas habituales incluyen Seongsan Ilchulbong (pico del amanecer UNESCO), Isla Udo (isla accesible en ferry con playas), Tubo de Lava Manjanggul (cueva UNESCO), Seopjikoji (cabo costero famoso por dramas), Pueblo Popular de Seongeup y Playa Hamdeok.",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
             "highlights": [
-              "**Seongsan Ilchulbong** — triple Patrimonio UNESCO, el hito más representativo de Jeju",
-              "**Cabo Seopjikoji** — 2,1 km de costa con vistas a Seongsan, escenario de K-dramas",
-              "**Aldea Seongeup, Museo Haenyeo, Cueva Micheon** — opcionales según tiempo",
-              "Recomendado para: primera visita, K-dramas, fotografía volcánica"
+              "Seongsan Ilchulbong: Patrimonio Natural Mundial de la UNESCO y pico del amanecer insignia de Jeju",
+              "Isla Udo: isla accesible en ferry con playas de arena blanca y vistas al faro > **Nota:** Los ítems **3** (`TourAtmosphereGallery`) y **24** (`TourTimelineSection`) se han mantenido en su forma original por tratarse de identificadores técnicos de componentes de interfaz.",
+              "Manjanggul: una de las cuevas de tubo de lava más largas del mundo (UNESCO)",
+              "Seopjikoji y Seongeup: atmósfera clásica de k-drama y aldea folclórica"
             ],
             "timeUsed": [
-              "Diseñe el número de paradas según sus intereses y el tiempo disponible"
+              "Recogida en el hotel y traslado a la costa este",
+              "2 a 3 paradas principales en lugares emblemáticos (el conductor-guía ajusta según el ritmo del grupo)",
+              "Pausa para almorzar (libre elección; generalmente cerca de Seongsan o en la costa este)",
+              "Travesía opcional en ferry a Udo (costo adicional; vehículo estacionado o embarcado)"
             ],
-            "whyOnRoute": "La ruta más sólida para los visitantes de Jeju por primera vez que quieren el máximo reconocimiento de monumentos.",
+            "whyOnRoute": "Es la ruta más destacada para los visitantes que llegan por primera vez a Jeju y desean el máximo reconocimiento: Seongsan Ilchulbong es el monumento más fotografiado de la isla, y Manjanggul aporta a la ruta una singular experiencia subterránea de la UNESCO.",
             "visitBasics": {
-              "hours": "La mayoría de paradas 09:00-18:00. Manjanggul (cuando abre) cierra primer miércoles del mes",
-              "closed": "Seongsan: primer lunes mensual. Manjanggul: actualmente cerrado",
-              "admission": "Pago directo en cada parada — Seongsan ₩5.000, Manjanggul ₩4.000 (cuando abre)",
-              "walking": "Moderado a alto — la subida al cráter de Seongsan es la sección más exigente"
+              "hours": "La mayoría de las paradas de 09:00 a 18:00; Manjanggul cierra el primer miércoles de cada mes",
+              "closed": "Seongsan cierra el primer lunes de cada mes; Manjanggul cierra el primer miércoles",
+              "admission": "Pago directo: Seongsan 5.000 KRW, Manjanggul 4.000 KRW, Seopjikoji 4.000 KRW, ferry a Udo desde 10.500 KRW ida y vuelta",
+              "walking": "Moderado a alto (la subida a la cima de Seongsan es la sección más exigente)"
             },
             "convenience": {
-              "restroom": "Disponibles en todas las paradas principales",
-              "parking": "El conductor-guía gestiona todo"
+              "restroom": "Disponible en todas las paradas principales",
+              "parking": "El conductor-guía se encarga de todo el estacionamiento"
             },
             "smartNotes": {
-              "photo": "La cima de Seongsan en una mañana despejada es la fotografía más potente de esta ruta.",
-              "facilities": "El puerto de Seongsan y la playa Hamdeok son los mejores centros gastronómicos.",
-              "tip": "La subida al cráter de Seongsan es el cuello de botella para viajeros mayores — deja tiempo suficiente."
+              "photo": "La cima de Seongsan en la mañana con cielo despejado ofrece la mejor fotografía individual de la ruta; Seopjikoji luce mejor con la luz lateral de la tarde.",
+              "facilities": "Seongsan y la playa de Hamdeok son los principales centros gastronómicos; la ruta este tiene mayor densidad de opciones que la oeste.",
+              "tip": "La subida a la cima de Seongsan es el cuello de botella de la ruta para viajeros mayores o con movilidad reducida. La visita desde la zona base también es una buena opción."
             },
             "_poi_meta": {
               "poi_key": "route_variant_east",
-              "verified": true,
+              "verified": false,
               "match": "route_variant_no_single_poi",
-              "constituent_pois": [
-                "seongsan_ilchulbong",
-                "udo_island",
-                "manjanggul_lava_tube",
-                "seopjikoji",
-                "seongeup_folk_village",
-                "hamdeok_seoubong_beach"
-              ],
-              "note": "Route option for private charter — represents a multi-POI bundle (Seongsan, Udo, Manjanggul, Seopjikoji, Seongeup, Hamdeok); not a single matchable POI. All constituent POIs are individually verified in KB v1.10."
+              "note": "Route option for private charter — represents a multi-POI bundle (Seongsan, Udo, Manjanggul, Seopjikoji); not a single matchable POI"
             }
           },
           {
             "number": 2,
-            "name": "Ruta Oeste: Playas, Té y Costa de Cafés",
-            "category": "La ruta más relajada e instagrameable — costa oeste y campos de té",
-            "description": "La ruta más tranquila y fotogénica, centrada en la costa oeste y los jardines de Jeju. **Playa Hyeopjae** (top 3 playas de la costa oeste, arena blanca, aguas turquesa) y la isla **Biyangdo** en el horizonte abren el día. Los **Campos de Té ** (mayor plantación de Corea, 700.000 m²) y la **Calle de Cafés de Aewol** (cafés de diseño frente al Mar Amarillo, favorita de celebrities coreanas) completan el recorrido. Opcionales: **Hallim Park** (jardines subtropicales + cuevas de lava) o **Songaksan** (mirador suroeste, vistas a la isla Marado). **Adecuada para:** parejas, cultura cafetera, fotografía de paisajes suaves.",
+            "time": "Flexible",
+            "duration": "Personalizado",
+            "name": "Ruta oeste: Playas, Té y Costa de Cafeterías",
+            "category": "Hyeopjae, Hallim Park, O'sulloc, Aewol",
+            "description": "La ruta más fotogénica y relajada. Las paradas habituales incluyen la playa de Hyeopjae (la playa de aguas esmeralda más icónica de Jeju), Hallim Park (jardines subtropicales y cuevas de lava), el Museo del Té O'sulloc (campos de té y cafetería) y la calle de cafeterías de Aewol (cafeterías costeras al atardecer). Muy adecuada para parejas y fotógrafos.",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
             "highlights": [
-              "**Playa Hyeopjae** — top 3 playas de Jeju, arena blanca, isla Biyangdo",
-              "**** — mayor plantación de té de Corea, helado de matcha",
-              "**Cafés de Aewol** — la 'capital del café de diseño' de Corea frente al mar",
-              "Recomendado para: parejas, cultura cafetera, fotografía tranquila"
+              "Playa de Hyeopjae: agua esmeralda, arena blanca y vistas a la isla de Biyangdo",
+              "Hallim Park: jardín subtropical con dos cuevas de lava en el lugar",
+              "O'sulloc: el museo de té más famoso de Jeju, con amplio espacio interior",
+              "Calle de cafeterías de Aewol: costa al atardecer y cultura contemporánea de cafeterías de Jeju"
             ],
             "timeUsed": [
-              "Diseñe el número de paradas según sus intereses y el tiempo disponible"
+              "Recogida en el hotel y traslado a la costa oeste",
+              "Paradas en la playa y el jardín por la mañana",
+              "Pausa para almorzar (libre elección; mejores opciones cerca de Hallim o Hyeopjae)",
+              "Museo del té y Aewol como cierre del día"
             ],
-            "whyOnRoute": "La ruta más sólida para los viajeros que prefieren un ritmo relajado y fondos fotogénicos.",
+            "whyOnRoute": "Es la ruta más destacada para parejas, fotógrafos y viajeros que prefieren un ritmo más tranquilo. Aewol funciona especialmente bien como cierre al atardecer, y O'sulloc ofrece a la ruta una útil sección interior como refugio ante el mal tiempo.",
             "visitBasics": {
-              "hours": "La mayoría de paradas 09:00-18:00; Aewol cafés ~10:00-22:00",
-              "closed": "La mayoría abiertos todo el año",
-              "admission": "Hyeopjae gratis; Hallim Park ~₩12.000; O'sulloc gratis; cafés Aewol al consumo",
-              "walking": "Baja a moderada — apta para mayores y familias"
+              "hours": "La mayoría de las paradas de 09:00 a 18:00; los horarios de las cafeterías de Aewol varían",
+              "closed": "La mayoría de las paradas abren todo el año",
+              "admission": "Pago directo: Hallim Park 15.000 KRW, O'sulloc entrada gratuita (los programas tienen costo adicional), playas gratuitas",
+              "walking": "Fácil a moderado"
             },
             "convenience": {
-              "restroom": "Disponibles en todas las paradas y cafés",
-              "parking": "El conductor-guía gestiona todo"
+              "restroom": "Disponible en todas las paradas principales",
+              "parking": "El conductor-guía se encarga de todo el estacionamiento"
             },
             "smartNotes": {
-              "photo": "Hyeopjae en marea baja con Biyangdo al fondo — el shot representativo; O'sulloc en hora dorada.",
-              "facilities": "Aewol tiene la mayor concentración de cafés de Jeju.",
-              "tip": "Para un día lluvioso en Jeju, esta es la ruta más flexible — las cuevas de Hallim y O'sulloc son refugios."
+              "photo": "Hyeopjae luce mejor con el sol de media mañana para el color del agua esmeralda; Aewol ofrece las mejores fotografías al atardecer.",
+              "facilities": "O'sulloc cuenta con la mejor infraestructura interior de todas las paradas del Oeste; Aewol tiene la mayor concentración de cafeterías y opciones de bocadillos.",
+              "tip": "Si el pronóstico del día es incierto, la ruta Oeste tolera mejor la lluvia ligera que la ruta Este."
             },
             "_poi_meta": {
               "poi_key": "route_variant_west",
-              "verified": true,
+              "verified": false,
               "match": "route_variant_no_single_poi",
-              "constituent_pois": [
-                "hyeopjae_beach",
-                "hallim_park",
-                "osulloc_tea_museum",
-                "aewol_cafe_street"
-              ],
-              "note": "Route option for private charter — represents a multi-POI bundle (Hyeopjae, Hallim, O'sulloc, Aewol); not a single matchable POI. All constituent POIs verified in KB v1.10."
+              "note": "Route option for private charter — multi-POI bundle (Hyeopjae, Hallim, O'sulloc, Aewol)"
             }
           },
           {
             "number": 3,
+            "time": "Flexible",
+            "duration": "Personalizado",
             "name": "Ruta Sur: Cascadas y Costa Volcánica",
-            "category": "La ruta más dramática — acantilados volcánicos, cascadas y Jungmun",
-            "description": "La ruta sur es la opción más espectacular en paisajes volcánicos y cascadas. Puede incluir la cascada Cheonjiyeon o Cheonjeyeon, el acantilado de columnas basálticas de Daepo Jusangjeolli y zonas costeras de Seogwipo. Es recomendado para viajeros que quieren ver acantilados, agua, vegetación subtropical y miradores en una misma jornada.",
+            "category": "Cheonjiyeon, Jusangjeolli, Sanbangsan, Mercado Olle",
+            "description": "La ruta de mayor dramatismo paisajístico. Las paradas habituales incluyen las Cataratas Cheonjiyeon (cascada en bosque), el Acantilado Jusangjeolli (costa de columnas de basalto), el Templo Yakcheonsa (uno de los templos más grandes del Este de Asia), la Montaña Sanbangsan (domo volcánico con vistas al mar), la Cascada Jeongbang (una de las pocas cascadas de Asia que desemboca directamente en el mar) y el Mercado Olle de Seogwipo.",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
             "highlights": [
-              "**Acantilado Jusangjeolli** — Geoparque UNESCO, columnas hexagonales de hasta 25 m",
-              "**Cascadas Cheonjeyeon / Cheonjiyeon** — cañones subtropicales con Monumentos Naturales",
-              "**Cascada Jeongbang** — la única de Asia que cae directamente al océano",
-              "Recomendado para: geología volcánica, fotografía dramática"
+              "Cataratas Cheonjiyeon: una clásica cascada en el bosque de Seogwipo",
+              "Acantilado Jusangjeolli: columnas de basalto hexagonal en la costa sur",
+              "Sanbangsan: domo volcánico con vistas al templo en el acantilado marino",
+              "Mercado Olle: el mercado tradicional más animado de Seogwipo para bocadillos y souvenirs"
             ],
             "timeUsed": [
-              "Diseñe el número de paradas según sus intereses y el tiempo disponible"
+              "Recogida en el hotel y traslado a la costa Sur",
+              "Paradas matutinas en cascadas y acantilados de basalto",
+              "Pausa para el almuerzo en Seogwipo (libre elección)",
+              "Parada de tarde en la montaña o el templo, cierre en el mercado"
             ],
-            "whyOnRoute": "La ruta más sólida para viajeros que quieren variedad geológica en un día.",
+            "whyOnRoute": "Es la ruta más completa para viajeros que buscan variedad geológica: un templo, una cascada, un acantilado de basalto, un domo volcánico y un mercado en un solo día que refleja la identidad de Jeju como «isla volcánica».",
             "visitBasics": {
-              "hours": "La mayoría de paradas 09:00-17:30. Cheonjiyeon iluminado 09:00-22:00. Olle Market 07:00-22:00",
-              "closed": "La mayoría abiertos todo el año",
-              "admission": "Cheonjiyeon ₩2.000; Jusangjeolli ~₩2.000; Sanbanggulsa ~₩1.000",
-              "walking": "Moderado — sendero Cheonjiyeon llano 1 km, Sanbangsan escaleras 0,6 km al templo cueva"
+              "hours": "La mayoría de las paradas, de 09:00 a 17:30",
+              "closed": "La mayoría de las paradas abren todo el año",
+              "admission": "Pago directo: Cheonjiyeon 2.500 KRW, Jusangjeolli 2.000 KRW, Jeongbang 2.000 KRW, Yakcheonsa gratuito, Sanbangsan 1.000 KRW",
+              "walking": "Moderado (Cheonjiyeon y Sanbangsan implican mayor cantidad de caminata)"
             },
             "convenience": {
-              "restroom": "Disponibles en todas las paradas; múltiples en el mercado",
-              "parking": "El conductor-guía gestiona todo"
+              "restroom": "Disponible en todas las paradas principales",
+              "parking": "El conductor-guía se encarga de todo el estacionamiento"
             },
             "smartNotes": {
-              "photo": "La iluminación nocturna de Cheonjiyeon es el shot único de esta ruta.",
-              "facilities": "El Mercado Olle es la parada gastronómica más fuerte de Jeju — bollos de pulpo de Jeseong y Omegisul.",
-              "tip": "Para un día lluvioso en Jeju, esta es la más sólida de las tres rutas — Yakcheonsa es un refugio cubierto."
+              "photo": "Jusangjeolli luce mejor con la luz lateral de la tarde; el Mercado Olle está en su mejor momento a última hora de la tarde, cuando abre la sección del mercado nocturno.",
+              "facilities": "El Mercado Olle es el principal centro gastronómico; Yakcheonsa ofrece la visita interior más tranquila.",
+              "tip": "Cheonjiyeon y Sanbangsan incluyen escaleras. Los viajeros con problemas de rodilla deberían elegir una de las dos en lugar de visitar ambas."
             },
             "_poi_meta": {
               "poi_key": "route_variant_south",
-              "verified": true,
+              "verified": false,
               "match": "route_variant_no_single_poi",
-              "constituent_pois": [
-                "cheonjiyeon_falls",
-                "daepo_jusangjeolli_cliff",
-                "sanbangsan_mountain",
-                "yakcheonsa_temple",
-                "jeongbang_falls",
-                "olle_maeil_market"
-              ],
-              "note": "Route option for private charter — represents a multi-POI bundle (Cheonjiyeon, Jusangjeolli, Sanbangsan, Yakcheonsa, Jeongbang, Olle Market); not a single matchable POI. All constituent POIs verified in KB v1.10."
+              "note": "Route option for private charter — multi-POI bundle (Cheonjiyeon, Jusangjeolli, Yakcheonsa, Sanbangsan, Jeongbang)"
             }
           },
           {
             "number": 4,
-            "name": "Ruta Personalizada: Diseñe su propio día",
-            "category": "Itinerario 100% flexible — más allá de las 3 rutas recomendadas",
-            "description": "Más allá de las tres rutas recomendadas, la tiempo previsto de **9 horas del chárter** es flexible. Puede combinar paradas de diferentes rutas (ej. Seongsan + Aewol), enviar un itinerario propio con antelación, o indicar sus intereses al guía el día del tour para que adapte el día en tiempo real. Paradas que se añaden con frecuencia: **Isla Udo** (ferry adicional ~₩30.000 ida y vuelta), **Parque de Cultura de Piedra de Jeju** (mito de la creación de Jeju), **Bosque de Gotjawal** (bosque volcánico subtropical único), **Halim Park** (jardines + cuevas de lava). El chófer-guía conoce la isla entera y ajusta el recorrido según tráfico, meteorología y sus preferencias en tiempo real.",
+            "time": "Flexible",
+            "duration": "Personalizado",
+            "name": "Ruta Personalizada: Crea Tu Propio Día",
+            "category": "Envíanos Tu Propio Itinerario",
+            "description": "Más allá de las tres rutas recomendadas, puedes combinar paradas o enviarnos tu propio itinerario. Las posibles incorporaciones incluyen el Acuario Planeta de Jeju, el Parque Temático ECO Land, el Cráter Sangumburi, la Playa Hamdeok, Camellia Hill, Teddy Bear Safari, el Submarino de Seogwipo (tour submarino de Munseom), tours en yate con delfines, Songaksan, Cafe the Cliff y el espectáculo Nanta.",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202311/22/c42559a5-c909-4603-ae16-24c2e03893a0.webp",
             "highlights": [
-              "Mezcle paradas de las 3 rutas o diseñe un itinerario completamente propio",
-              "Isla Udo (ferry adicional) · Parque de Cultura de Piedra · Gotjawal · Hallim Park",
-              "El chófer-guía ajusta la ruta en tiempo real según tráfico y preferencias",
-              "Envíe su itinerario deseado al reservar para confirmar viabilidad"
+              "Combina la costa este de la UNESCO con los campos de té de la costa oeste si el tiempo lo permite",
+              "Añade un almuerzo de mariscos con haenyeo (buceadoras) a cualquier ruta",
+              "Combina una mañana en la playa con una tarde en la montaña o en un templo",
+              "Combínalo con locaciones de grabación de K-dramas específicas de tus series favoritas"
             ],
             "timeUsed": [
-              "9 horas desde la recogida en el hotel — diseñe el número de paradas"
+              "Habla de tu plan con el conductor-guía al momento de la recogida o antes",
+              "El conductor-guía ajusta el ritmo según el tráfico y los horarios del ferry",
+              "Regresa a tu hotel dentro del período de 9 horas"
             ],
-            "whyOnRoute": "La opción más flexible de las cuatro. Recomendado para visitantes repetidos de Jeju, viajeros con intereses específicos o grupos que no encajan en las tres rutas nombradas.",
+            "whyOnRoute": "Es la opción más flexible de las cuatro. Funciona mejor para visitantes frecuentes de Jeju, viajeros con intereses específicos (seguimiento de K-dramas, fotografía, gastronomía) y familias que desean una combinación personalizada.",
             "visitBasics": {
-              "hours": "Según las paradas elegidas",
-              "closed": "Según las paradas elegidas",
-              "admission": "Todas las entradas se pagan directamente en cada parada",
-              "walking": "Ajustable según las capacidades de movilidad del grupo"
+              "hours": "Depende de las paradas elegidas",
+              "closed": "Depende de las paradas elegidas",
+              "admission": "Todas las tarifas de entrada se pagan directamente",
+              "walking": "Depende de las paradas elegidas"
             },
             "convenience": {
-              "restroom": "Disponible en todas las paradas principales",
-              "parking": "El conductor-guía se encarga de todo el aparcamiento"
+              "restroom": "El conductor-guía planificará en función de las instalaciones de cada parada",
+              "parking": "El conductor-guía se encarga de todo el estacionamiento"
             },
             "smartNotes": {
-              "photo": "Envíe 3-5 fotos de referencia al conductor-guía con antelación — mejora considerablemente el encuadre fotográfico en cada parada.",
-              "facilities": "El almuerzo es su elección — comunique las necesidades dietéticas al reservar; el guía preseleccionará un restaurante.",
-              "tip": "Los itinerarios a medidas funcionan mejor si compartes los detalles 24 h antes de la confirmación de reserva."
+              "photo": "Las rutas personalizadas pueden apuntar a ventanas fotográficas estacionales específicas: campos de colza en primavera, hortensias a principios del verano, hierba muhly rosada en otoño.",
+              "facilities": "Habla con tu conductor-guía sobre los horarios de comida y las paradas de descanso antes de partir.",
+              "tip": "Envía el borrador de tu itinerario unos días antes del tour para que el conductor-guía pueda identificar posibles problemas de tiempo o acceso, especialmente en relación con los horarios del ferry."
             },
             "_poi_meta": {
               "poi_key": "route_variant_custom",
-              "verified": true,
+              "verified": false,
               "match": "route_variant_no_single_poi",
-              "candidate_pois": [
-                "sangumburi_crater",
-                "camellia_hill",
-                "hueree_natural_park",
-                "hamdeok_seoubong_beach",
-                "songaksan_mountain",
-                "jeju_haenyeo_museum"
-              ],
-              "note": "Fully customizable route option — candidate POIs above are verified in KB v1.10 but not prescribed; final stop list determined by passenger's request at booking."
+              "note": "Custom route — fully guest-defined; no fixed POI set"
             }
           }
         ]
@@ -1263,135 +1277,147 @@
     {
       "id": "day_flow",
       "section_html_id": null,
-      "component": "TourDayFlowSection",
+      "component": "Sección del Flujo del Día del Tour",
       "props": {
         "routeFlowStops": [
           {
-            "name": "Recogida en hotel",
-            "type": "origin",
-            "theme": "Start"
+            "id": "01",
+            "name": "Recogida en el Hotel",
+            "theme": "Inicio"
           },
           {
-            "name": "Elegir ruta",
-            "type": "primary",
-            "theme": "East/West/South"
+            "id": "02",
+            "name": "Elige la Ruta",
+            "theme": "Este / Oeste / Sur"
           },
           {
-            "name": "Pausa para almorzar",
-            "type": "meal",
-            "theme": "Reset"
+            "id": "03",
+            "name": "Pausa para el Almuerzo",
+            "theme": "Reiniciar"
           },
           {
-            "name": "Paradas de tarde",
-            "type": "primary",
-            "theme": "Continue"
+            "id": "04",
+            "name": "Paradas de la Tarde",
+            "theme": "Continuar"
           },
           {
-            "name": "Bajada en hotel",
-            "type": "return",
-            "theme": "End"
+            "id": "05",
+            "name": "**Regreso al hotel**",
+            "theme": "**Fin**"
           }
         ],
         "routePhases": [
           {
-            "phase": "Recogida en el hotel",
-            "duration": "Parada 1",
-            "description": "Recogida en su hotel de Ciudad de Jeju a partir de las 08:30."
+            "label": "**Inicio**",
+            "range": "**1**",
+            "theme": "**Recogida en el hotel de Jeju**",
+            "bgClass": "**bg-sky-50/70**",
+            "textClass": "text-sky-700",
+            "dotClass": "bg-sky-500"
           },
           {
-            "phase": "Elija su ruta",
-            "duration": "Paradas 2–4",
-            "description": "Ruta Este (UNESCO + K-drama) / Ruta Oeste (playas + té + cafés) / Ruta Sur (cascadas + acantilados) / Ruta a medida."
+            "label": "**Día de excursión**",
+            "range": "**2-4**",
+            "theme": "**Elige tu ruta**",
+            "bgClass": "**bg-emerald-50/70**",
+            "textClass": "text-emerald-700",
+            "dotClass": "bg-emerald-500"
           },
           {
-            "phase": "Recogida en el hotel",
-            "duration": "Parada 5",
-            "description": "Recogida en su hotel de Ciudad de Jeju a partir de las 08:30."
+            "label": "**Finalizar**",
+            "range": "**5**",
+            "theme": "**Regreso al hotel**",
+            "bgClass": "**bg-amber-50/70**",
+            "textClass": "text-amber-700",
+            "dotClass": "bg-amber-500"
           }
         ],
         "routeShapeIntro": {
-          "title": "El recorrido del día",
-          "subtitle": "Recogida en su hotel de Ciudad de Jeju, luego elija: Ruta Este (Seongsan + K-drama), Ruta Oeste (playas + té + cafés), Ruta Sur (cascadas + acantilados) o diseñe su propio itinerario. 9 horas, coche privado, chófer-guía certificado."
+          "title": "**Cómo transcurre este día privado**",
+          "subtitle": "**Recogida en tu hotel de Jeju entre las 08:00 y las 09:00, seguida de un día totalmente flexible de 9 horas por la ruta Este, Oeste o Sur, o con tu propio plan personalizado. El conductor-guía adapta el ritmo según el clima y el tráfico. Regreso al hotel aproximadamente entre las 17:00 y las 18:00.**"
         }
       }
     },
     {
       "id": "details",
       "section_html_id": "details",
-      "component": "TourFitSection",
+      "component": "**TourFitSection**",
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "Grupos que quieren privacidad y flexibilidad de horario",
-            "Parejas o familias con necesidades específicas (niños pequeños, movilidad reducida)",
-            "Quienes viajan por segunda vez y quieren ver lo que no vieron la primera",
-            "Viajeros con gustos muy definidos que no quieren ajustarse a un itinerario fijo"
+            "**Familias con niños, incluidos los más pequeños**",
+            "**Grupos multigeneracionales, incluyendo personas mayores**",
+            "**Parejas y recién casados que desean un día tranquilo al estilo K-drama**",
+            "**Visitantes habituales de Jeju que desean una ruta personalizada**",
+            "**Fotógrafos en busca de paisajes estacionales específicos (colza, hortensias, muhly rosado)**"
           ],
           "routeLogicSections": [
             {
-              "title": "Por qué elegir un tour privado en Jeju",
+              "title": "**Por qué un servicio privado es la mejor opción en Jeju**",
               "icon": "car",
-              "iconBg": "bg-sky-50/80",
+              "iconBg": "**bg-sky-50/80**",
               "iconColor": "text-sky-600",
               "items": [
                 {
-                  "label": "Ventaja del tour privado",
-                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                  "label": "**Jeju es verdaderamente grande**",
+                  "detail": "**La isla tiene aproximadamente 73 km de este a oeste. Los tours en autobús grupal desperdician horas esperando en cada parada; un servicio privado elimina ese tiempo perdido.**"
                 },
                 {
-                  "label": "Ventaja del tour privado",
-                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                  "label": "**El clima cambia rápidamente**",
+                  "detail": "**Los microclimas de Jeju varían cada hora. Un conductor-guía puede cambiar una parada al aire libre por una interior (cuevas del Parque Hallim, O'sulloc, Yakcheonsa) sin arruinar el día.**"
                 },
                 {
-                  "label": "Ventaja del tour privado",
-                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                  "label": "**Comodidad de puerta a puerta**",
+                  "detail": "**La recogida en el hotel significa olvidarse del autobús lanzadera del aeropuerto, sin estrés por los últimos autobuses nocturnos y sin caminar con equipaje entre traslados.** > **Notas:** Los ítems **4, 8, 12** (números) y **6, 10, 14, 24** (clases CSS de Tailwind) y **17** (nombre de componente) se han mantenido sin cambios al ser valores técnicos que no requieren traducción."
                 }
               ]
             },
             {
-              "title": "Por qué elegir un tour privado en Jeju",
+              "title": "Cómo elegir entre Este, Oeste y Sur",
               "icon": "map",
               "iconBg": "bg-amber-50/80",
               "iconColor": "text-amber-600",
               "items": [
                 {
-                  "label": "Ventaja del tour privado",
-                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                  "label": "Este para la cobertura de puntos de referencia en primera visita",
+                  "detail": "Seongsan Ilchulbong y Manjanggul son los dos nombres UNESCO más destacados de Jeju; la ruta Este ofrece el máximo valor de reconocimiento."
                 },
                 {
-                  "label": "Ventaja del tour privado",
-                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                  "label": "Oeste para paisajes relajados y fotografías",
+                  "detail": "La playa de Hyeopjae, el parque Hallim, O'sulloc y Aewol forman una jornada más tranquila y perfecta para parejas, con excelentes oportunidades fotográficas y un final al atardecer."
                 },
                 {
-                  "label": "Ventaja del tour privado",
-                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                  "label": "Sur para la grandeza geológica",
+                  "detail": "Cascadas, acantilados de basalto, un domo volcánico y un templo en un solo día otorgan a esta ruta la narrativa de «isla volcánica» más potente de Jeju."
                 }
               ]
             },
             {
-              "title": "Por qué elegir un tour privado en Jeju",
+              "title": "Qué puede cambiar el día del tour",
               "icon": "clock-3",
               "iconBg": "bg-slate-50/80",
               "iconColor": "text-slate-698",
               "items": [
                 {
-                  "label": "Ventaja del tour privado",
-                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                  "label": "Ajustes por condiciones meteorológicas",
+                  "detail": "La lluvia ligera rara vez afecta la ruta; el viento fuerte suele acortar las paradas costeras (Seongsan, Jusangjeolli, Aewol)."
                 },
                 {
-                  "label": "Ventaja del tour privado",
-                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                  "label": "Ferry a Udo en la ruta Este",
+                  "detail": "La isla Udo requiere un ferry aparte. Los vehículos pueden embarcarse (costo adicional) o dejarse en el muelle. El horario del ferry afecta el desarrollo general del día."
                 },
                 {
-                  "label": "Ventaja del tour privado",
-                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                  "label": "Las horas extra son posibles",
+                  "detail": "Si necesita más de 9 horas, cada hora adicional tiene un costo de 25.000 KRW, pagada en efectivo al conductor, sujeto a disponibilidad."
                 }
               ]
             }
           ],
           "lessIdealFor": [
-            "Viajeros individuales o parejas que quieren socializar con otros turistas",
-            "Quienes buscan el precio más bajo (el tour compartido es más económico)"
+            "Viajeros individuales con presupuesto ajustado (el precio privado es por vehículo)",
+            "Viajeros que deseen compartir con otros huéspedes para una experiencia social",
+            "Personas que necesiten un tour con narración completa de un guía certificado (el conductor-guía tiene licencia, pero no ofrece narración de nivel de guía oficial)",
+            "Viajeros que deseen entradas y comidas totalmente incluidas"
           ]
         }
       }
@@ -1405,74 +1431,74 @@
           {
             "id": "pickup",
             "title": "Recogida y regreso",
-            "preview": "Recogida en hotel en cualquier parte de Jeju; reunión en vestíbulo 10 min antes",
+            "preview": "Recogida en el hotel en cualquier lugar de Jeju; reunirse en el lobby 10 minutos antes",
             "content": [
-              "Recogida en hotel incluida en cualquier lugar de la isla de Jeju (Jeju City, Seogwipo, Jungmun, etc.).",
-              "La recogida se organiza normalmente entre las 08:00 y las 09:00.",
-              "Por favor, espere en el vestíbulo del hotel 10 minutos antes de la hora acordada.",
-              "Bajada en su hotel de Jeju o en cualquier lugar de la isla de su elección (p. ej., un restaurante para cenar o el aeropuerto).",
-              "El regreso es normalmente entre las 17:00 y las 18:00 dentro de las 9 horas.",
-              "Si necesita reprogramar, contacte al operador con al menos 2 días de antelación."
+              "La recogida en el hotel está incluida en cualquier lugar de la isla de Jeju (ciudad de Jeju, Seogwipo, Jungmun, etc.)",
+              "La recogida se organiza normalmente entre las 08:00 y las 09:00",
+              "Por favor, espere en el lobby del hotel 10 minutos antes de la hora de salida acordada",
+              "El regreso puede realizarse en su hotel en Jeju o en cualquier lugar de la isla de su elección (p. ej., un restaurante para cenar o el aeropuerto)",
+              "El regreso es normalmente entre las 17:00 y las 18:00, dentro del período de 9 horas",
+              "Si necesita reprogramar, comuníquese con el operador al menos 2 días antes de la fecha de reserva original"
             ]
           },
           {
-            "id": "vehículo",
+            "id": "vehicle",
             "title": "Vehículo y tamaño del grupo",
-            "preview": "Vehículo asignado según tamaño del grupo y volumen de equipaje",
+            "preview": "Vehículo asignado según el tamaño del grupo y el volumen de equipaje",
             "content": [
-              "El tipo de vehículo se adapta al número exacto de pasajeros y maletas.",
-              "Por favor, indique el número exacto de pasajeros y maletas al reservar.",
-              "Los vehículos habituales incluyen berlinas para 1-3 personas, SUV medíanos para 4-5 y Staria o Carnival para 6-9.",
-              "Los grupos más grandes pueden dividirse en varios vehículos o recibir un presupuesto aparte."
+              "El tipo de vehículo se adapta al número exacto de pasajeros y piezas de equipaje",
+              "Por favor, indique el número exacto de pasajeros y piezas de equipaje al realizar la reserva",
+              "Los vehículos habituales incluyen sedanes para 1 a 3 huéspedes, SUV medianos para 4 a 5 huéspedes, y furgonetas Staria o Carnival para 6 a 9 huéspedes",
+              "Los grupos más numerosos pueden distribuirse en varios vehículos o cotizarse por separado"
             ]
           },
           {
             "id": "duration",
-            "title": "tiempo previsto de 9 horas y tiempo extra",
-            "preview": "tiempo previsto de servicio estricta de 9 horas desde la recogida",
+            "title": "Ventana de 9 horas y tiempo extra",
+            "preview": "Ventana de servicio estricta de 9 horas desde la recogida",
             "content": [
-              "Las 9 horas comienzan desde la hora de recogida en el hotel.",
-              "El tiempo extra se cobra a 25.000 KRW por hora adicional, pagado en efectivo directamente al conductor.",
-              "El tiempo extra está sujeto a la disponibilidad del conductor y a las normas de horas de servicio aplicables.",
-              "Los transbordos en ferry a la isla Udo cuentan dentro de las 9 horas salvo acuerdo contrario."
+              "La ventana de 9 horas comienza desde la hora de recogida en su hotel",
+              "El tiempo extra se cobra a 25,000 KRW por hora adicional, pagadero en efectivo directamente al conductor",
+              "El tiempo extra está sujeto a la disponibilidad del conductor y a las normas de horas de servicio aplicables",
+              "Los trayectos en ferry a la isla Udo cuentan dentro de la ventana de 9 horas, salvo acuerdo en contrario"
             ]
           },
           {
             "id": "extras",
-            "title": "Tarifas adicionales que debes conocer",
-            "preview": "Ferry a Udo, costes de entrada y comidas",
+            "title": "Cargos adicionales que debe conocer",
+            "preview": "Ferry de Udo, costos de entrada y comidas",
             "content": [
-              "Ferry de vehículos a Udo: coste adicional (varía según el tamaño del vehículo); ferry de pasajeros desde ≈10.500 KRW.",
-              "Todas las entradas se pagan directamente en cada lugar.",
-              "Las comidas se pagan directamente; el conductor-guía puede recomendar especialidades locales (cerdo negro heuk dwaeji, gim, etc.).",
-              "La propina al conductor es bien recibida pero no obligatoria."
+              "Ferry de vehículos a la isla Udo: costo adicional (varía según el tamaño del vehículo); ferry para pasajeros a pie desde ≈10,500 KRW ida y vuelta por persona",
+              "Todas las tarifas de entrada se pagan directamente en cada lugar",
+              "Las comidas se pagan directamente; el conductor-guía puede recomendar especialidades locales (cerdo negro heuk dwaeji, gogi guksu, gachas de abulón)",
+              "Las propinas opcionales para el conductor son bienvenidas, pero no obligatorias"
             ]
           },
           {
             "id": "weather",
             "title": "Política meteorológica",
-            "preview": "El formato privado se adapta bien a las condiciones cambiantes de Jeju",
+            "preview": "El formato privado se adapta bien a las cambiantes condiciones de Jeju",
             "content": [
-              "Lluvia ligera: la mayoría de paradas siguen operativas; el conductor-guía puede redirigir hacia paradas cubiertas.",
-              "Viento fuerte: la exposición en Seongsan, Jusangjeolli y Aewol puede acortarse.",
-              "Días con aviso de tifón: el operador se pondrá en contacto para reprogramar.",
-              "La nieve en el Hallasan puede cerrar la carretera 1100; el conductor-guía sustituirá por alternativas de interior."
+              "Lluvia ligera: la mayoría de las paradas siguen operando; el conductor-guía puede orientarse hacia paradas en interiores",
+              "Viento fuerte: la exposición costera en Seongsan, Jusangjeolli y Aewol puede reducirse",
+              "Días con alerta de tifón: el operador se pondrá en contacto con usted para reprogramar",
+              "La nieve en Hallasan puede cerrar la carretera del Altiplano 1100; el conductor-guía sustituirá por paradas alternativas en el interior"
             ]
           },
           {
             "id": "included",
             "title": "Qué está incluido",
-            "preview": "Vehículo y conductor-guía licenciado; entradas y comidas pago directo",
-            "variant": "included",
+            "preview": "Vehículo y conductor-guía con licencia; entradas y comidas se pagan directamente",
+            "variant": "Incluido",
             "content": [
-              "Vehículo privado (berlina, SUV o furgoneta según el grupo)",
-              "Conductor-guía en inglés con licencia",
-              "Recogida y regreso en hotel en cualquier punto de la isla de Jeju",
+              "Vehículo privado (sedán, SUV o furgoneta según el tamaño del grupo)",
+              "Conductor-guía con licencia que habla inglés",
+              "Recogida y entrega en el hotel en cualquier punto de Jeju",
               "Combustible y peajes para la ruta estándar",
-              "Todas las entradas no incluidas; pagar directamente en cada lugar",
+              "Las tarifas de entrada no están incluidas; pague directamente en cada lugar",
               "Las comidas no están incluidas",
               "Las compras personales no están incluidas",
-              "La propina del conductor no está incluida"
+              "Las propinas al conductor no están incluidas"
             ]
           }
         ],
@@ -1483,33 +1509,41 @@
           },
           "tomorrow": {
             "temp": "—",
-            "label": "Actualizado a díario"
+            "label": "Actualizado diariamente"
           }
         },
         "seasonalVariations": [
           {
-            "season": "Primavera",
-            "title": "Temporada de canola",
-            "description": "Tour privado recomendado para perseguir la floración: Seongsan con flores de colza, Aewol con lilas costeras.",
-            "icon": "flower"
+            "name": "Primavera",
+            "icon": "flower",
+            "description": "Las flores de canola cubren la costa Este a finales de marzo-abril; los cerezos alcanzan su punto máximo a principios de abril. Las temperaturas suaves y los cielos despejados hacen de esta la temporada más equilibrada.",
+            "tag": "Temporada de canola",
+            "bgClass": "bg-spring",
+            "iconColor": "text-pink-500"
           },
           {
-            "season": "Verano",
-            "title": "Temporada de playa",
-            "description": "La Ruta Oeste brilla en verano: Hyeopjae para bañarse, cafés de Aewol al atardecer.",
-            "icon": "sun"
+            "name": "Verano",
+            "icon": "sun",
+            "description": "La mejor temporada de playa con Hyeopjae y Hamdeok en su máximo esplendor; las hortensias de junio colorean la costa Oeste. Se esperan humedad y posible clima de tifón en agosto.",
+            "tag": "Temporada de playa",
+            "bgClass": "bg-summer",
+            "iconColor": "text-yellow-500"
           },
           {
-            "season": "Otoño",
-            "title": "Mejor temporada fotográfica",
-            "description": "La Ruta Este ofrece los mejores cielos del año. La Ruta Sur con Songaksan y sus vistas al horizonte.",
-            "icon": "leaf"
+            "name": "Otoño",
+            "icon": "leaf",
+            "description": "Los campos de muhly rosado alcanzan su punto máximo de mediados de octubre a principios de noviembre; la mejor ventana de visibilidad para las vistas del Hallasan y Seongsan. A menudo la mejor temporada fotográfica de Jeju.",
+            "tag": "Mejor temporada fotográfica",
+            "bgClass": "bg-autumn",
+            "iconColor": "text-orange-500"
           },
           {
-            "season": "Invierno",
-            "title": "Camelia y nieve",
-            "description": "La Ruta Sur en invierno: cascadas con más agua, acantilados más dramáticos con las olas grandes.",
-            "icon": "snowflake"
+            "name": "Invierno",
+            "icon": "snowflake",
+            "description": "La colina de camelias florece de diciembre a febrero; el Hallasan puede tener nieve en su cima. Frío pero visualmente gratificante, con menos aglomeraciones en todas las paradas principales.",
+            "tag": "Camelia y nieve",
+            "bgClass": "bg-winter",
+            "iconColor": "text-sky-500"
           }
         ]
       }
@@ -1522,65 +1556,56 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "Equipo local certificado",
+            "title": "Operador local autorizado",
             "description": "Operador turístico coreano autorizado con seguro completo",
             "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600",
-            "body": "Equipo local certificado de Jeju. Chófer-guía certificado por el KTO (Korea Tourism Organization)."
+            "iconColor": "text-emerald-600"
           },
           {
             "icon": "route",
-            "title": "Especialistas en toda la isla",
-            "description": "Itinerario ajustado a medida, no un circuito genérico",
-            "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600",
-            "body": "El chófer-guía conoce las tres rutas y puede adaptar el itinerario en tiempo real según condiciones de tráfico y preferencias."
+            "title": "Especialistas en rutas",
+            "description": "Itinerario diseñado a medida, no un circuito genérico > **Notes:** Lines **5, 7** (dashes), **12, 16, 20, 24** (CSS class names), **25** (component identifier), and **28** (Tailwind class) were kept as-is since they are technical/code tokens that should not be translated.",
+            "iconBg": "bg-sky-50/80 *(código CSS — sin cambios)*",
+            "iconColor": "text-sky-600"
           },
           {
             "icon": "users",
-            "title": "Solo su grupo en el vehículo",
+            "title": "Tamaño de grupo seleccionado",
             "description": "Tamaño adecuado para la ruta",
-            "iconBg": "bg-amber-50/80",
-            "iconColor": "text-amber-600",
-            "body": "Privacidad total: el coche es exclusivamente para su grupo durante las 9 horas."
+            "iconBg": "bg-amber-50/80 *(código CSS — sin cambios)*",
+            "iconColor": "text-amber-600"
           }
         ],
         "bookingSupportSteps": [
           {
             "timing": "Inmediatamente",
             "title": "Confirmación inmediata",
-            "detail": "Confirmación con resumen del itinerario elegido.",
-            "description": "Confirmación instantánea con formulario de preferencia de región/ruta y detalles de recogida en hotel."
+            "detail": "Confirmación de reserva con resumen del itinerario"
           },
           {
             "timing": "12 horas antes",
-            "title": "Recordatorio 12 horas antes",
-            "detail": "Confirmación de la ruta y condiciones meteorológicas.",
-            "description": "Ruta finalizada 24 horas antes según el pronóstico meteorológico y sus prioridades."
+            "title": "Recordatorio de 12 horas",
+            "detail": "Actualización meteorológica y ajustes de ruta"
           },
           {
             "timing": "La noche anterior",
             "title": "Información final de recogida",
-            "detail": "Contacto del chófer-guía y punto de encuentro en el hotel.",
-            "description": "Los datos del conductor-guía (nombre y matrícula del vehículo) se envían la noche anterior."
+            "detail": "Hora exacta de recogida y contacto del conductor"
           },
           {
-            "timing": "La mañana del tour",
-            "title": "Notas del día del tour",
-            "detail": "Ajustes de última hora según el chófer-guía.",
-            "description": "Conductor en el vestíbulo de su hotel a la hora acordada con letrero con su nombre."
+            "timing": "Mañana del tour",
+            "title": "Notas de ruta del día",
+            "detail": "Información matutina según las condiciones en tiempo real"
           },
           {
             "timing": "Durante el tour",
             "title": "Consejos parada a parada",
-            "detail": "El guía le recomienda en tiempo real qué ver y fotografiar en cada parada.",
-            "description": "Ajustes el día a través de mensaje directo — extienda en un lugar que le encante, añada una pausa en un café."
+            "detail": "Orientación en tiempo real en cada ubicación"
           },
           {
-            "timing": "Tras el tour",
-            "title": "Atención posventa",
-            "detail": "Solicitud de valoración tras el tour.",
-            "description": "Solicitud de valoración después del tour enviada tras la llegada."
+            "timing": "Después del tour",
+            "title": "Asistencia posterior al tour",
+            "detail": "Seguimiento y recomendaciones"
           }
         ]
       }
@@ -1588,28 +1613,28 @@
     {
       "id": "faq",
       "section_html_id": "faq",
-      "component": "TourFaqSection",
+      "component": "TourFaqSection *(nombre de componente — sin cambios)*",
       "props": {
         "staticQuestions": [
           {
             "id": "first-time",
-            "question": "(Consulte las opciones de ruta al reservar)",
-            "answer": "Para más información sobre las rutas disponibles, contacte a AtoC Korea al reservar."
+            "question": "¿Es esta una buena opción para los visitantes que visitan Jeju por primera vez (Este, Oeste o Sur)?",
+            "answer": "Sí — cubre las paradas más destacadas de la zona en un solo día equilibrado."
           },
           {
             "id": "walking",
-            "question": "¿Es difícil la caminata?",
-            "answer": "Depende de la ruta elegida. La Ruta Este tiene la subida opcional a Seongsan (~180 escalones). La Ruta Oeste es la más llana. El chófer-guía puede adaptar el nivel de actividad física a sus necesidades."
+            "question": "¿Es difícil caminar?",
+            "answer": "Caminata moderada con algunas secciones más activas."
           },
           {
             "id": "family",
-            "question": "¿Es adecuado para familias?",
-            "answer": "Sí, especialmente para familias con niños pequeños o con necesidades específicas. El tour privado permite pausas, cambios de ritmo y adaptaciones imposibles en un tour compartido."
+            "question": "¿Este tour es adecuado para familias?",
+            "answer": "Sí — cómodo para la mayoría de las familias."
           },
           {
             "id": "seniors",
-            "question": "¿Pueden participar personas mayores cómodamente?",
-            "answer": "Sí. El chófer-guía adapta el itinerario y el ritmo a las necesidades de movilidad. La Ruta Oeste es la más accesible."
+            "question": "¿Pueden unirse los adultos mayores cómodamente? > **Notas:** Los ítems **1**, **4** y **23** son identificadores técnicos (clases CSS y nombre de componente) y se han dejado sin traducir.",
+            "answer": "**Sí — el ritmo y las caminatas son cómodos para adultos mayores activos.**"
           }
         ]
       }
@@ -1617,7 +1642,7 @@
     {
       "id": "reviews",
       "section_html_id": "reviews",
-      "component": "TourReviewsSection",
+      "component": "**SecciónDeReseñasDelTour** *(nombre de componente — traducción descriptiva: Sección de Reseñas del Tour)*",
       "props": {
         "guestReviews": [],
         "reviewsSummary": {
@@ -1657,13 +1682,13 @@
     {
       "id": "sticky_booking",
       "section_html_id": null,
-      "component": "TourStickyBookingBar",
+      "component": "**BarraDeReservaFijaDelTour** *(nombre de componente — traducción descriptiva: Barra de Reserva Fija del Tour)*",
       "props": {
-        "note": "La disponibilidad se confirma en el paso de pago.",
+        "note": "**`checkout_tour_id` se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.** --- **Notas:** - **Líneas 2 y 3** son identificadores de componentes de código. Se mantiene la forma PascalCase técnica, con la traducción descriptiva entre paréntesis por si se necesita como etiqueta visible en la interfaz. - **Línea 4** conserva los términos técnicos (`checkout_tour_id`, `Supabase`, `env`, `JSONB`) sin traducir, ya que son nombres propios de tecnología.",
         "price": {
           "amountLabel": "",
           "currency": "USD",
-          "per": "vehículo"
+          "per": "vehicle"
         }
       }
     }
@@ -1689,31 +1714,31 @@
       "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
       },
       "v17_batch7_enhancement": {
         "date": "2026-04-29",
-        "description": "Batch 7 deep enhancement — private charter pair (Jeju + Seúl). Both tours have 4 route options as itineraryStops (East/West/South/Custom for Jeju; Gapyeong/DMZ-Paju/Everland-Folk/Custom for Seúl). Each route option enhanced with 1,000+ char descriptions weaving verified facts about constituent POIs into a coherent route narrative. product profile recalibrated to verified-fact 0-1 float scores using cross-route weighted averaging. private_tour_fit, customizable_route_fit, flexibility_fit set from None to 1.0. 9 new POIs added to KB (v1.9 → v1.10): udo_island, manjanggul_lava_tube, sanbangsan_mountain, sangumburi_crater, yakcheonsa_temple, garden_of_morning_calm, petite_france, everland, korean_folk_village_yongin. DMZ POIs and Nami Island deferred to Batch 8.",
+        "description": "Batch 7 deep enhancement — private charter pair (Jeju + Seoul). Both tours have 4 route options as itineraryStops (East/West/South/Custom for Jeju; Gapyeong/DMZ-Paju/Everland-Folk/Custom for Seoul). Each route option enhanced with 1,000+ char descriptions weaving verified facts about constituent POIs into a coherent route narrative. matching_profile recalibrated to verified-fact 0-1 float scores using cross-route weighted averaging. private_tour_fit, customizable_route_fit, flexibility_fit set from None to 1.0. 9 new POIs added to KB (v1.9 → v1.10): udo_island, manjanggul_lava_tube, sanbangsan_mountain, sangumburi_crater, yakcheonsa_temple, garden_of_morning_calm, petite_france, everland, korean_folk_village_yongin. DMZ POIs and Nami Island deferred to Batch 8.",
         "_score_audit": {
-          "_methodology": "0-1 float scale per Phase 1 standard. Both tours are private 9-10hr charters with 4 route options (East/West/South/Custom for Jeju; Gapyeong/DMZ-Paju/Everland-Folk/Custom for Seúl). Scores are weighted averages across the recommended routes, with extreme-outlier dimensions weighted toward the realistic middle (e.g. UNESCO score reflects average across routes — Route 1 maxes UNESCO, but weighted average ~0.65). Charter-format dimensions (private_tour_fit, customizable_route_fit, flexibility_fit) are set to 1.0 by definition. Walking_level and indoor_ratio are time-weighted averages across the typical day.",
+          "_methodology": "0-1 float scale per Phase 1 standard. Both tours are private 9-10hr charters with 4 route options (East/West/South/Custom for Jeju; Gapyeong/DMZ-Paju/Everland-Folk/Custom for Seoul). Scores are weighted averages across the recommended routes, with extreme-outlier dimensions weighted toward the realistic middle (e.g. UNESCO score reflects average across routes — Route 1 maxes UNESCO, but weighted average ~0.65). Charter-format dimensions (private_tour_fit, customizable_route_fit, flexibility_fit) are set to 1.0 by definition. Walking_level and indoor_ratio are time-weighted averages across the typical day.",
           "deltas_applied": {
             "private_tour_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Both tours are per-vehicle private charters by definition. Was previously None (unset)."
             },
             "customizable_route_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — Three recommended routes plus a fully custom option. Both tours fully customizable. Was previously None."
             },
             "flexibility_fit": {
               "old": null,
-              "new": 1.0,
-              "reasoning": "VERIFIED — Driver-guide adapts ritmo del recorrido, order, lunch, optional add-ons (Udo ferry, Smart Queue). Was previously None."
+              "new": 1,
+              "reasoning": "VERIFIED — Driver-guide adapts pacing, order, lunch, optional add-ons (Udo ferry, Smart Queue). Was previously None."
             },
             "small_group_fit": {
               "old": 0.2,
@@ -1726,22 +1751,22 @@
               "reasoning": "Verified — private charter = sedan/SUV/van, never bus. 0.05 reflects near-zero bus fit (only the very largest groups of 10+ would step up to a coach format)."
             },
             "unesco_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.65,
               "reasoning": "VERIFIED weighted average across routes. Route 1 (East): max UNESCO — Seongsan Ilchulbong is triple-UNESCO + Manjanggul UNESCO 2007. Route 2 (West): minimal UNESCO content. Route 3 (South): partial UNESCO — Jusangjeolli is Global Geopark, Sanbangsan is Geopark. Weighted across routes = ~0.65, significantly lower than the previous 1.0 which assumed Route 1 always selected. Custom Route can max UNESCO if the traveler picks specifically — but the average traveler will not."
             },
             "scenic_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "VERIFIED — all 3 named routes deliver catalog-leading scenic content (volcanic crater, beach, basalt cliff, waterfall, tea field, lava dome). 0.95 calibrated, only marginally below max (saving 1.0 for tours that deliver multiple flagship scenic types in a single 9-hour window — which only Route 1 of 3 does)."
             },
             "first_time_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "VERIFIED — strongest first-time-Jeju option because Route 1 alone covers the bucket-list UNESCO sites. 0.95 reflects that the WEST route is less first-time-iconic than East, so an averaged score is just below absolute max."
             },
             "iconic_landmark_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "VERIFIED — Seongsan Ilchulbong is Jeju's single most iconic landmark and is included on Route 1 + Custom. Slight markdown to 0.95 because Routes 2 (West) and 3 (South) trade iconic landmark count for café/temple density."
             },
@@ -1771,8 +1796,8 @@
               "reasoning": "VERIFIED — Jeju's food density is high across all routes (haenyeo seafood, Hallabong tangerines, black pork, Olle Market). Route 1 has the strongest meal hubs (Seongsan harbor); Route 3 has Olle Market. 0.70 calibrated up from previous 0.60."
             },
             "premium_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified — private vehicle + flexible itinerary + driver-guide = top of premium scale. Maintained at 1.0."
             },
             "value_for_money_fit": {
@@ -1781,7 +1806,7 @@
               "reasoning": "Verified — per-vehicle pricing is excellent value for groups of 4-9 but expensive for solo travelers. Slight markdown to 0.55 reflects the per-person break-even calculation: vs. small-group bus tours at ~70,000 KRW per person, the charter only beats it for groups of 5+."
             },
             "storytelling_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "Verified — driver-guide narrates throughout, and the routes carry strong narrative arcs (UNESCO geology, K-drama, Joseon folk culture, tea-merchant heritage). 0.85 reflects that narrative depth varies by driver-guide assigned and by route chosen — was previously 1.0 which assumed uniformly maximal storytelling, which is not realistic."
             }

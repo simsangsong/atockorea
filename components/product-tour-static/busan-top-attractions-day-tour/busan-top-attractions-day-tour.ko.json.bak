@@ -1,0 +1,2258 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "busan-top-attractions-day-tour",
+  "locale": "ko",
+  "product_id": "busan-top-attractions-day-tour",
+  "seo": {
+    "pageTitle": "부산 대표 명소 소그룹 당일 투어 | AtoC Korea",
+    "metaDescription": "10.5시간 부산 소그룹 클래식: 해동 용궁사, 청사포 블루라인, 유엔기념공원, 감천 문화 마을, 자갈치 시장.",
+    "ogImage": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1920&q=80",
+    "primaryKeywords": [
+      "부산 소그룹 일일 투어",
+      "해동용궁사 투어",
+      "감천문화마을 투어",
+      "자갈치시장 투어",
+      "부산 핵심 명소 투어"
+    ],
+    "title": "부산 핵심 명소 7곳 소그룹 일일 투어 | AtoC Korea",
+    "description": "부산 7대 명소 소그룹 투어: 해동용궁사 → 청사포 블루라인파크 → 유엔기념공원 → 감천문화마을 → 자갈치시장. 전 입장료 무료, 공인 가이드."
+  },
+  "catalog_card": {
+    "slug": "busan-top-attractions-day-tour",
+    "title": "부산 핵심 명소 7곳 소그룹 일일 투어",
+    "subtitle": "부산 클래식 7곳을 3개 픽업 지점으로 하루에 균형 있게 일주하는 소그룹 투어.",
+    "region": "부산",
+    "duration": "10.5시간",
+    "stopsCount": 7,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "소그룹",
+      "첫 방문 추천",
+      "부산 클래식 코스",
+      "연중 운행"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=600&q=80",
+    "priceLabel": "가격은 예약 시 확인",
+    "shortCardDescription": "해동용궁사(절벽 위 사찰), 청사포·블루라인파크(해안 레일), 유엔기념공원(유일한 유엔 묘지), 감천문화마을(부산의 마추픽추), 자갈치수산시장(한국 최대 수산시장)까지 부산 7대 명소를 소그룹으로 하루에 돌아봅니다. 전 입장료 무료, 공인 가이드.",
+    "tags": [
+      "소그룹",
+      "부산",
+      "첫 방문",
+      "합리적 가격",
+      "연중 운영"
+    ]
+  },
+  "headlineLine1": "해안 사찰, 블루라인 해안, 파스텔 언덕 마을, 수산시장 —",
+  "headlineLine2": "부산 7곳 클래식 코스를 균형 잡힌 하루에",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "인",
+    "priceNote": "상품 정보에서 소그룹 가격 미확정. 비교 가능한 부산 일일 투어 기준."
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1920&q=80",
+    "imagePosition": "center 40%",
+    "tagline": "가장 많이 묻는 부산 핵심 7곳을 하루 소그룹으로",
+    "pills": [
+      "소그룹",
+      "부산",
+      "first_time"
+    ],
+    "meta": {
+      "duration": "10.5시간 (08:30 첫 픽업, ≈ 19:00 마지막 하차)",
+      "region": "부산",
+      "stops": "5개 코스",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "투어 개요"
+    },
+    {
+      "id": "itinerary",
+      "label": "상세 일정"
+    },
+    {
+      "id": "details",
+      "label": "유의사항"
+    },
+    {
+      "id": "faq",
+      "label": "자주 묻는 질문"
+    },
+    {
+      "id": "reviews",
+      "label": "여행자 후기"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "소요 시간",
+      "value": "약 10.5시간 (08:30 첫 픽업, ≈ 19:00 마지막 하차)"
+    },
+    {
+      "icon": "calendar",
+      "label": "최적 시즌",
+      "value": "연중; 청사포 해안 벚꽃 3월 말~4월 초"
+    },
+    {
+      "icon": "users",
+      "label": "최대 인원",
+      "value": "소그룹 (≈12 max), 공유 미니 코치"
+    },
+    {
+      "icon": "footprints",
+      "label": "도보 난이도",
+      "value": "중간~약간 어려움 — 용궁사 108계단(생략 가능), 감천 언덕길, 시장 골목"
+    },
+    {
+      "icon": "map-pin",
+      "label": "투어 지역",
+      "value": "부산 (해운대 + 부산 중심)"
+    },
+    {
+      "icon": "ticket",
+      "label": "포함 사항",
+      "value": "왕복 교통과 공인 가이드가 포함됩니다. 점심은 불포함이며, 스카이캡슐/해변열차와 부산타워(₩12,000)는 선택 사항입니다."
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
+      "alt": "해동 용궁사 동해 절벽 위의 불교 사찰 건물들",
+      "caption": "해동 용궁사 — 1376년 창건지 위에 1930년대 재건된 한국 최고의 해안 사찰",
+      "location": "Haedong 용궁사, Gijang-gun",
+      "atmosphere": "바닷물결, 화강암 절벽, 은은한 향 냄새"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=1200",
+      "alt": "투어 중 방문하는 청사포 블루라인파크 — 1934년 철도를 2020년 4.8km 해안 열차 코리도로 재활용의 풍경",
+      "caption": "청사포 블루라인파크 — 1934년 철도를 2020년 4.8km 해안 열차 코리도로 재활용",
+      "location": "청사포 블루라인파크, 해운대",
+      "atmosphere": "탁 트인 해안, 부드러운 바람, 해변열차 소리"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601171291096-87099c2c4625?w=1200",
+      "alt": "유엔 기념 묘지의 줄지어 늘어선 동일한 묘비들",
+      "caption": "유엔 기념 묘지 — 21개국 2,300여 명의 묘지, 세계 유일의 유엔 묘지",
+      "location": "유엔기념공원, 부산 남구",
+      "atmosphere": "조용하고 격식 있으며 차분한 분위기"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1200",
+      "alt": "투어 중 방문하는 감천 문화마을 — 전후 피란민 동네를 2009년 공공미술 프로젝트로 변신의 풍경",
+      "caption": "감천 문화마을 — 전후 피란민 동네를 2009년 공공미술 프로젝트로 변신",
+      "location": "감천문화마을, Saha-gu",
+      "atmosphere": "밝은 파스텔 톤, 좁은 골목, 언덕 계단길"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1572883454114-1cf0031ede2a?w=1200",
+      "alt": "자갈치 어시장의 얼음 위에 진열된 신선한 해산물",
+      "caption": "자갈치시장",
+      "location": "자갈치시장, Jung-gu",
+      "atmosphere": "활어 수조, 시장의 활기, 바다 내음"
+    },
+    {
+      "id": "g6",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+      "alt": "부산 식당의 돼지 국밥과 반찬",
+      "caption": "현지 점심 — 부산 식당의 돼지 국밥, 밀면, 또는 해물파전",
+      "location": "부산 현지 식당",
+      "atmosphere": "빠르고 간단한 지역 음식"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "≈ 09:00",
+      "duration": "30분",
+      "name": "픽업 (부산 중심 3개 역)",
+      "category": "이동 / 픽업",
+      "description": "아침 이동을 효율화하기 위해 부산 중심 교통 거점 3곳에서 픽업: 서면역 4번 출구(08:30), 부산역 4번 출구(08:50, KTX 게이트 아님), 해운대역 5번 출구(09:30, 정차 후 블루라인파크 방향 출발). 순서대로 탑승 후 해동용궁사로 이동.",
+      "highlights": [
+        "부산 중심부 3개 픽업 지점 (부산역, 서면, 해운대)",
+        "코치는 소그룹 (최대 약 14인)",
+        "첫 코스까지 총 이동 약 30~40분",
+        "픽업 시 한영 일정 카드 배포"
+      ],
+      "timeUsed": [
+        "부산역 픽업 (~09:00, ~5분)",
+        "서면역까지 드라이브 (~10분)",
+        "서면 픽업 (~09:15, ~5분)",
+        "해운대역까지 이동 (~15분)",
+        "해운대 픽업 (~09:30, ~5분)"
+      ],
+      "whyOnRoute": "3개 픽업 포인트로 부산 3개 주요 호텔 구역 커버, 환승 불필요.",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_pickup_central",
+        "verified": true,
+        "match": "transit_only",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Busan",
+          "Busan Metro"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "time": "≈ 10:00",
+      "duration": "75분",
+      "name": "해동용궁사",
+      "category": "불교 사찰 / 해안",
+      "description": "해동용궁사는 1376년 고려 공민왕 시대에 창건된 한국에서 보기 드문 절벽 위 해안 사찰로, 부산 동쪽 해안 바위 절벽에 자리합니다. 108개 돌계단을 내려가며 십이지신 석상을 지나 사찰로 향합니다. 해수관음상(바다를 향한 관음 보살상)과 황금 돼지 조각상(기복 상징)이 대표 볼거리입니다. 무료 입장. 방문 시간: 약 60분.",
+      "highlights": [
+        "**1376년 창건** — 불교 승려 나옹 혜근(원래 이름 '보문사')",
+        "산 속이 대부분인 한국 주요 사찰 중 바닷가에 있는 희귀한 사찰",
+        "**1974년 정암 스님의 용왕·관음 현몽 후 해동 용궁사로 개칭**",
+        "**108개의 석계** = 불교의 108번뇌",
+        "입구의 **12지신상(동물 조각)**; '**무사 안녕 탑**' 동전 기도처",
+        "**해수 관음 대불** (바다의 자비 관음) — 가장 많이 촬영되는 절벽 포토 명소",
+        "대웅전 1970년 원색으로 복원",
+        "매일 04:30~19:20, 무료 입장; 부처님 오신 날(5월) 연등 축제",
+        "**사찰 입구의 12지신 석상** — 한국 내 독특한 배치 형식"
+      ],
+      "timeUsed": [
+        "코치 하차 + 상가 골목 지나 입장 광장까지 도보 — 약 10분",
+        "12지신상 + 무사 안녕 탑 — 약 10분",
+        "108계단 하강 + 대웅전 + 해안 테라스 — 약 30분",
+        "해수 관음 대불 전망 + 사진 — 약 15분",
+        "다시 올라가 코치에서 집결 — 약 10분"
+      ],
+      "whyOnRoute": "루트의 대표 하이라이트 — 650년 역사와 희귀한 해변 위치를 가진 부산 최다 촬영 사찰.",
+      "visitBasics": {
+        "hours": "매일 04:30~19:20 (마지막 입장 18:50)",
+        "closed": "연중 무휴",
+        "admission": "무료; 개인 차량 주차는 유료",
+        "walking": "중간 난이도 — 소나무 숲 108계단, 여러 해안 테라스 및 계단"
+      },
+      "convenience": {
+        "restroom": "정문 근처 및 경내 내부",
+        "parking": "해동 용궁사 주차장 (유료)"
+      },
+      "smartNotes": {
+        "photo": "해안 쪽 일출 바위; 대웅전 옆 계단에서 바다 배경 사진 최적.",
+        "facilities": "상단 광장에 기념품·간식 판매대 및 소규모 카페.",
+        "tip": "불당 출입은 정면 아닌 측면 문 이용 (정면은 스님 전용). 부처님 오신 날(4~5월) 연등 축제."
+      },
+      "_poi_meta": {
+        "poi_key": "haedong_yonggungsa",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Busan",
+          "VisitKorea",
+          "Wikipedia",
+          "Culture Trip",
+          "Korean Temple Guide",
+          "Korea Tourism Organization Official"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:30",
+      "duration": "75분",
+      "name": "청사포 & 해운대 블루라인파크",
+      "category": "해안 공원 / 포토 명소",
+      "description": "해운대 블루라인파크는 폐선된 동해남부선 해안 철로를 활용해 2020년 개방한 에코 레일웨이입니다. 해운대에서 미포·청사포까지 4.8km 해안 구간을 운행합니다. 스카이 캡슐(4인승 투명 케이블카, ₩30,000~35,000 별도)과 해변 열차(₩7,000 별도)를 선택할 수 있습니다. 청사포 포구에서 부산 해안 전망과 소규모 어항 풍경을 즐깁니다. 방문 시간: 약 75분.",
+      "highlights": [
+        "**해운대 블루라인파크 2020년 개장** — 폐선된 동해남부선 해안 철도 부지 활용",
+        "**스카이캡슐** (2.3km 고가) + **해변 열차** (4.8km, 6정류장) + 그린레일웨이 데크",
+        "**청사포 다릿돌 스카이워크** (2017년 8월): 72.5m 유리 바닥 스카이워크, 해수면 20m 상공",
+        "**스카이캡슐 요금**: ₩30,000 (2인) / ₩39,000 (3인) / ₩44,000 (4인) 편도",
+        "이중 등대 + 슬램덩크 스타일 건널목 포토 명소",
+        "세계 최초 해양 레일 바이크 중 하나",
+        "청사포 = 부산의 **8경** 중 하나",
+        "세계 최초 배터리 충전식 친환경 관광 열차",
+        "**2026년 스카이캡슐 요금**: 편도 기준 2인 ₩30,000 / 3인 ₩39,000 / 4인 ₩44,000. **해변열차**는 2020년에 개장한 동해남부선 폐선 구간을 따라 4.8km, 6개 정거장을 운행합니다."
+      ],
+      "timeUsed": [
+        "청사포역 하차 — 약 5분",
+        "다릿돌 스카이워크 + 유리 바닥 체험 — 약 25분",
+        "이중 등대 + 건널목 포토 명소 — 약 15분",
+        "해변 산책 + 카페 들르기 — 약 15분",
+        "집결 — 약 5분"
+      ],
+      "whyOnRoute": "루트의 **가장 많이 인스타그램된** 구간 — 파스텔 스카이 캡슐이 바이럴 한국 여행 사진.",
+      "visitBasics": {
+        "hours": "스카이캡슐·해변 열차 약 09:30–18:30 (여름 20:30까지); 청사포 해안 상시",
+        "closed": "기상 상황에 따라 운영 중단 가능",
+        "admission": "무료 구역; 스카이캡슐 ₩30,000 (2인) / ₩39,000 (3인) / ₩44,000 (4인) 편도",
+        "walking": "쉬움 — 그린레일웨이 데크 (미포↔청사포 2.3km, 약 30분) 나무 보도"
+      },
+      "convenience": {
+        "restroom": "미포, 청사포, 송정역에 화장실",
+        "parking": "미포역·청사포역 인근 공영 주차장 (유료)"
+      },
+      "smartNotes": {
+        "photo": "청사포역 건널목에서 슬램덩크 스타일 프레임; 다릿돌 스카이워크 해수면 위 유리 바닥.",
+        "facilities": "미포, 청사포, 송정역에서만 현장 발권 가능.",
+        "tip": "스카이캡슐 일몰 슬롯은 빨리 마감 — 시장 참고 자료 등을 통해 1~2주 전 사전 예약 권장."
+      },
+      "_poi_meta": {
+        "poi_key": "cheongsapo_blue_line_park",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Blue Line Park official",
+          "Visit Busan",
+          "Soul of Seoul",
+          "KoreaToDo",
+          "Tara O'Reilly travel",
+          "Busan Metropolitan City Tourism"
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "time": "≈ 13:00",
+      "duration": "60분",
+      "name": "점심 (부산 현지 식당)",
+      "category": "식사",
+      "description": "해운대에서 유엔기념공원 방면으로 이동 중 현지 식당에서 점심. 돼지국밥(부산식 돼지 수육 국밥), 밀면(부산식 냉면), 또는 해산물 중 선택. 점심 식사비는 별도(약 ₩10,000~20,000).",
+      "highlights": [
+        "드라이버가 일행 취향에 따라 추천 (한식/해산물/양식)",
+        "부산 대표 메뉴: **돼지국밥**, **밀면**, **회**",
+        "**점심은 본인 부담** (보통 약 ₩10,000~25,000/인)",
+        "예약 시 채식/할랄 대체 요청 가능",
+        "60분 정류 — 유엔 묘지 + 감천 일정을 지키기 충분한 효율"
+      ],
+      "timeUsed": [
+        "코치 하차 + 식당까지 도보 (~5분)",
+        "주문 + 식사 (~40분)",
+        "화장실 + 코치에 집결 (~15분)"
+      ],
+      "whyOnRoute": "점심을 13:00에 배치해 오전 구간와 오후 유산 핵심을 연결.",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_lunch",
+        "verified": true,
+        "match": "lunch_placeholder",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Busan",
+          "Busan Metropolitan Government cuisine guide"
+        ]
+      }
+    },
+    {
+      "number": 5,
+      "time": "≈ 14:15",
+      "duration": "60분",
+      "name": "유엔기념공원",
+      "category": "기념관 & 역사",
+      "description": "유엔기념공원(재한유엔기념공원)은 전 세계 유일의 유엔 관리 군인 묘지입니다. 1951년 1월 유엔사령부에 의해 설립, 한국전쟁 중 전사한 16개국 2,311명의 유엔군 장병이 잠들어 있습니다. 1955년 한국 정부가 토지를 유엔에 영구 임대했습니다. 매년 11월 11일 '턴 투워드 부산(턴 투워드 부산)' 국제 추모 행사가 열립니다. 무료 입장. 방문 시간: 약 60분.",
+      "highlights": [
+        "**세계 유일의 유엔기념묘지** — 1951년 1월 18일 창설; 한국이 1955년 유엔에 기증",
+        "**22개 참전국** 추모; 현재 **11개국 2,300기** 안장",
+        "**기억의 벽 (2006)** — 140개 대리석 패널에 40,896명의 이름",
+        "한국 건축가 **김중업 구성(1966)** 정문",
+        "**부산을 향하여** 행사 — 매년 11월 11일 오전 11시 (전 세계 동시 거행)",
+        "**무료 입장**, 100% 휠체어 접근 가능",
+        "**프랭크 게일로드 미국 한국전쟁 기념비 (2013)**",
+        "**인접 유엔 조각 공원** — 참전 21개국 조각가 기증 34개 조각 작품",
+        "**유엔총회 결의안 977(X) 1955년 12월 15일** — UNMCK를 공식 유엔 묘지로 지정"
+      ],
+      "timeUsed": [
+        "상징 구역 + 22개 참전국 국기 광장 — 약 10분",
+        "기념관 + 12분 영어 다큐멘터리 — 약 15분",
+        "기억의 벽 + 기념관 — 약 20분",
+        "묵상 + 사진 — 약 10분"
+      ],
+      "whyOnRoute": "루트의 **도덕적 균형추** — 부산의 정체성은 함락되지 않은 유일한 한국 도시 역할과 불가분.",
+      "visitBasics": {
+        "hours": "3~10월 09:00~18:00; 11~2월 09:00~17:00",
+        "closed": "연중 무휴",
+        "admission": "무료",
+        "walking": "쉬움 — 전 구역 평탄, 100% 휠체어 접근 가능"
+      },
+      "convenience": {
+        "restroom": "입구 및 공원 내 화장실",
+        "parking": "공원 인근 지정 주차 구역"
+      },
+      "smartNotes": {
+        "photo": "기억의 벽과 22개 국기가 나부끼는 전경. 이른 아침 조용하고 빛이 좋습니다.",
+        "facilities": "방문자 센터, 기념관, 기념품점. 인근 카페 및 식당.",
+        "tip": "11월 11일 오전 11시 '부산을 향하여' 행사에 맞춰 방문하면 특별한 경험. 한국전쟁에 관심 있다면 12분 다큐멘터리를 꼭 관람."
+      },
+      "_poi_meta": {
+        "poi_key": "un_memorial_cemetery",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNMCK official",
+          "Wikipedia",
+          "ABMC",
+          "Visit Busan",
+          "CNN",
+          "VisitKorea",
+          "재한유엔기념공원 in Korea Official Site"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "≈ 15:30",
+      "duration": "75분",
+      "name": "감천문화마을",
+      "category": "산자락 예술 마을",
+      "description": "감천문화마을은 '한국의 마추픽추', '부산의 산토리니'로 불리는 사하구 언덕 위 마을입니다. 한국전쟁 피난민 정착촌이 2009년 공공미술 프로젝트를 통해 파스텔 색상의 계단식 민가와 골목 예술 작품이 어우러진 부산 대표 문화 명소로 탈바꿈했습니다. 입구에서 지도(₩1,000)를 구입해 골목을 탐방합니다. 어린 왕자 조각상이 인기 포토 명소입니다. 무료 입장(지도 별도). 방문 시간: 약 75분.",
+      "highlights": [
+        "**1955년 태극도 피난민 정착지** — 조철제 창시 약 800가구 / 4,000명",
+        "**태극도 철학 '남을 번영케 하라'** = 이웃 집 앞을 막지 않는 낮은 지붕선",
+        "**'마추픽추의 꿈'(2009)** + **'미로미로'(2010)** 문화체육관광부 예술 프로젝트",
+        "**UN-HABITAT 아시아 도시 경관상 2012**",
+        "**연간 약 140만 명 방문**",
+        "**어린왕자와 여우 벤치** (하늘 정원) = 대표 포토 명소 (대기 있음, 무료)",
+        "스탬프 투어 지도 ₩2,000 (9개 설치 작품)",
+        "가파른 골목 + 계단 = 유모차·휠체어 불편",
+        "**K-콘텐츠 성지** — 런닝맨 126화 (최지우 게스트), 루카: 더 비기닝 등"
+      ],
+      "timeUsed": [
+        "코치 상단 입구 하차 — 약 5분",
+        "별 전망대 + 무지개 지붕 파노라마 — 약 15분",
+        "하늘 정원 + 어린왕자 & 여우 벤치 사진 — 약 20분",
+        "벽화 + 공예 가게 골목 하강 — 약 25분",
+        "하단 출구 집결 — 약 10분"
+      ],
+      "whyOnRoute": "루트의 **가장 화려하고 독특한** 코스 — 한국이나 아시아 어디에도 이런 동네는 없습니다.",
+      "visitBasics": {
+        "hours": "마을 상시 개방 (일부 시설 운영 시간 다름)",
+        "closed": "연중 무휴",
+        "admission": "마을 무료 입장; 스탬프 투어 지도 ₩2,000",
+        "walking": "힘든 구간 — 경사진 골목과 계단; 미끄럼 방지 신발 필수"
+      },
+      "convenience": {
+        "restroom": "상단 입구 및 마을 내 여러 곳",
+        "parking": "방문객 주차 제한; 코치 지정 승·하차 구역 이용"
+      },
+      "smartNotes": {
+        "photo": "어린왕자 벤치는 대기 있을 수 있으나 무료. 무지개 지붕이 내려다보이는 전망대 파노라마 샷.",
+        "facilities": "마을 내 소규모 카페 및 공예 판매점 분포. 스탬프 투어 안내소.",
+        "tip": "오전 이른 방문으로 어린왕자 벤치 대기 최소화. 계단이 많으니 튼튼한 신발 필수."
+      },
+      "_poi_meta": {
+        "poi_key": "gamcheon_culture_village",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Wikipedia",
+          "CNN",
+          "Visit Busan",
+          "Hapskorea",
+          "Columban Society",
+          "Lifeguin",
+          "Busan Cultural Foundation"
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "time": "≈ 17:15",
+      "duration": "60분",
+      "name": "자갈치수산시장",
+      "category": "시장 & 길거리 음식",
+      "description": "자갈치시장은 한국 최대 수산시장으로 부산 남포항 수변에 자리합니다. '자갈치'는 '자갈(자갈)' + '치(생선의 방언)'에서 유래했습니다. '아지매'라 불리는 여성 상인들이 시장의 상징입니다. 현장에서 갓 잡은 활어 회, 게, 문어, 해삼, 전복 등을 즐길 수 있으며, 2층 식당에서는 직접 고른 활어를 바로 조리해 먹을 수 있습니다. 무료 입장. 방문 시간: 약 75분.",
+      "highlights": [
+        "**한국 최대 수산 시장** — 약 400개 매대 / 66,000m²",
+        "이름 = **'자갈'(자갈)** + **자갈치 아줌마** 전후 여성 상인에서 유래",
+        "**갈매기 형상 현대 건물 2006년 재개장** (현준민 구성)",
+        "**매일 05:00~22:00**; **매월 1·3번째 화요일 휴장**",
+        "**아래층 구매 / 위층 취식** 횟집 구조",
+        "인접: **BIFF 광장** (부산영화제), **국제시장**, **광복로**",
+        "**10월 자갈치 문화관광축제**",
+        "**주소: 중구 자갈치해안로 52**",
+        "**산낙지 = 부산의 요리 명물** — 살아있는 낙지를 작게 썰어 아직 움직이는 채로 제공"
+      ],
+      "timeUsed": [
+        "용두산/하차 지점에서 도보 이동 — 약 5분",
+        "1층 활어 수조 탐방 — 약 15분",
+        "2층 횟집 구경 + 남포동 거리 사진 — 약 15분",
+        "선택: 간식 구매 + 광복로 산책 — 약 10분",
+        "자갈치 아줌마 노점 기념품 구매 — 약 5분"
+      ],
+      "whyOnRoute": "루트의 **요리적 마무리 장면** — 부산의 정체성은 서울이 길거리 음식으로 세워지듯 해산물로 세워짐.",
+      "visitBasics": {
+        "hours": "대부분 매대 05:00~22:00; 식당 골목 피크 11:00~21:00",
+        "closed": "연중 무휴; 일부 직물층 매대 일요일 휴무",
+        "admission": "무료 입장; 음식은 선택 주문 (대부분 현금만 가능)",
+        "walking": "쉬움 — 평탄한 덮인 골목"
+      },
+      "convenience": {
+        "restroom": "시장 건물 내 (안내 표시 있음)",
+        "parking": "제한적; 가장 가까운 유료 주차장은 도보 약 5분"
+      },
+      "smartNotes": {
+        "photo": "석제 맷돌 위 빈대떡 지지는 모습 — 대표 샷. 마약 김밥 말기도 사진 찍기 좋은.",
+        "facilities": "많은 판매자가 매대 뒤쪽에 소형 좌석 식사 공간 운영. 다국어 메뉴판.",
+        "tip": "**1인당 현금 ₩10,000~20,000 지참.** 빈대떡+마약 김밥 조합이 필수 메뉴. 주말 낮 12~18시 혼잡."
+      },
+      "_poi_meta": {
+        "poi_key": "jagalchi_market",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea",
+          "Wikipedia",
+          "Visit Busan",
+          "Hungry Pursuit",
+          "Emma Jane Explores",
+          "Jagalchi.org",
+          "Korean Heritage Service / Cultural Heritage Administration"
+        ]
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "픽업 (부산 중심 3개 역)",
+      "type": "origin",
+      "theme": "출발"
+    },
+    {
+      "name": "해동 용궁사",
+      "type": "primary",
+      "theme": "해안 사찰"
+    },
+    {
+      "name": "청사포 & 블루라인 파크",
+      "type": "primary",
+      "theme": "해안과 해변열차"
+    },
+    {
+      "name": "점심 (부산 현지 식당)",
+      "type": "meal",
+      "theme": "식사"
+    },
+    {
+      "name": "유엔 기념 묘지",
+      "type": "primary",
+      "theme": "Memorial"
+    },
+    {
+      "name": "감천 문화마을",
+      "type": "primary",
+      "theme": "예술 마을"
+    },
+    {
+      "name": "자갈치 어시장",
+      "type": "return",
+      "theme": "해산물 시장"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "해안 오전",
+      "duration": "약 3시간",
+      "description": "픽업(60분 픽업 시간대) 후 용궁사 이동, 이후 남쪽으로 청사포·해운대 블루라인파크."
+    },
+    {
+      "phase": "점심",
+      "duration": "약 1시간",
+      "description": "부산 현지 식당에서 점심 (돼지국밥, 밀면, 또는 해산물)."
+    },
+    {
+      "phase": "기념관 + 마을",
+      "duration": "약 3시간 30분",
+      "description": "유엔기념공원(60분) → 감천문화마을 포토 루프."
+    },
+    {
+      "phase": "시장 피날레",
+      "duration": "약 1시간 30분",
+      "description": "자갈치시장 관람 및 길거리 음식(75분); 부산 중심부 하차."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "부산 하루 일정",
+    "subtitle": "동북쪽 해안 사찰에서 출발해 블루라인파크, 유엔기념공원, 점심을 포함한 감천 문화 마을, 이후 부산 중심부 자갈치 시장으로 마무리합니다. 오전 8시 30분 출발, 오후 6시 귀환."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "부산 첫 방문자",
+      "성인 가족 및 커플",
+      "부산 하루 여행자",
+      "문화 및 음식 탐험 여행자"
+    ],
+    "lessIdealFor": [
+      "도보 최소화/계단 기피 여행자 주의",
+      "유모차 이용 그룹 주의 (감천 경사)",
+      "저녁 비행기 여유가 필요한 여행자 주의 (귀환 최대 19:00)"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "일정 속도 & 지리적 구조",
+        "icon": "sun",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "에너지가 넘치는 오전에 북동쪽 먼저",
+            "detail": "용궁사는 루트의 북동쪽 끝에 위치해 있어 108계단과 해안 테라스가 아침 이른 시간에 방문하기 적합합니다."
+          },
+          {
+            "label": "해안 → 기념관 → 마을 순서",
+            "detail": "이 루트는 풍경에서 맥락으로, 다시 색감으로 전환됩니다: 밝은 해안 오프너, 조용한 기념관 점심, 감천의 컬러풀한 골목들."
+          },
+          {
+            "label": "부산 중심부에서 마무리",
+            "detail": "자갈치 시장은 부산 중심부에 위치해 있어 남포동 인근 숙박객은 마지막 코스에서 하차해 탐방을 이어갈 수 있습니다."
+          }
+        ]
+      },
+      {
+        "title": "10.5시간으로 이게 가능한 이유",
+        "icon": "clock",
+        "iconBg": "bg-pink-50/80",
+        "iconColor": "text-pink-600",
+        "items": [
+          {
+            "label": "점심 포함 6개 실질 코스",
+            "detail": "해안 2개, 기념관 1개, 마을(확장) 1개, 시장 1개, 점심 포함 — 각 블록이 충분히 실질적으로 느껴질 만큼 길면서도 과부하가 없습니다."
+          },
+          {
+            "label": "대부분 야외, 시장으로 실내 마무리",
+            "detail": "하루의 약 80%가 야외이며, 자갈치만 완전 실내입니다. 대부분의 날씨 조건에서 운영 가능합니다."
+          },
+          {
+            "label": "3개 픽업 지점",
+            "detail": "서면, 부산역, 해운대에서 픽업 — 부산 중심부 대부분의 숙소에서 접근 가능합니다."
+          }
+        ]
+      },
+      {
+        "title": "솔직한 트레이드오프",
+        "icon": "info",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "용궁사에는 108계단이 있음 (생략 가능)",
+            "detail": "108계단은 사찰 플랫폼으로 내려갑니다. 상단 전망 구역은 하강 없이도 접근 가능합니다."
+          },
+          {
+            "label": "감천 골목은 경사져 있어 비 오면 미끄러움",
+            "detail": "접지력 있는 신발을 착용하고 오르막에서 일정 속도를 조절하세요. 주요 포토 구역은 비교적 완만한 길로 접근 가능합니다."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "픽업 & 하차",
+      "preview": "부산 지하철 3개 픽업 지점: 서면역 4번 (08:30), 부산역",
+      "content": [
+        "부산 지하철 3개 지점 픽업: 서면역 4번 출구(08:30), 부산역 4번 출구(이후), 해운대역(마지막).",
+        "하차 순서: 남포동/자갈치 약 17:50, 부산역 약 18:10, 서면 약 18:30, 해운대 약 18:50.",
+        "실질 투어 시간은 픽업 지점에 따라 다름: 서면 약 10시간, 해운대 약 9.5시간."
+      ]
+    },
+    {
+      "id": "what-to-bring",
+      "title": "복장 & 준비물",
+      "preview": "그립 있는 편한 신발 — 감천 경사 골목 및 용궁사 108계단",
+      "content": [
+        "미끄럼 방지 기능의 편안한 워킹화 — 감천 문화 마을 경사 골목과 용궁사 108 계단 모두 접지력 필요.",
+        "냉방 차량과 용궁사 해풍 대비 가벼운 겉옷 한 벌.",
+        "카메라/간편한폰 (감천과 청사포가 포토 하이라이트).",
+        "점심(₩10,000~₩20,000), 청사포 스카이캡슐/해변 열차 선택 이용을 위한 현금 또는 카드."
+      ]
+    },
+    {
+      "id": "weather-policy",
+      "title": "날씨 정책",
+      "preview": "연중 운영.",
+      "content": [
+        "연중 운영.",
+        "가벼운 비: 일정대로 진행 — 비 내리는 용궁사도 특유의 분위기가 있으며, 감천 포토 루트는 우산 씬으로 변신.",
+        "폭우·폭풍: 여행사가 루트를 조정할 수 있음 (용궁사 하단 사찰 구역은 비에 미끄러울 수 있음).",
+        "태풍급 날씨: 여행사 측 전액 환불 또는 재예약."
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "포함 사항",
+      "preview": "부산 3개 역 픽업·하차, 에어컨 미니 코치 이동",
+      "content": [
+        "3개 부산 지하철역 픽업·하차, 에어컨 미니코치, 공인 영어 가이드 포함.",
+        "미포함: 점심(₩10,000~₩20,000), 청사포 스카이캡슐 선택(4인 기준 약 ₩30,000~₩35,000), 기타 유료 선택 체험.",
+        "모든 기타 명소 입장 무료: 용궁사, 유엔기념공원, 감천 마을, 자갈치 시장."
+      ]
+    },
+    {
+      "id": "language",
+      "title": "언어",
+      "preview": "투어 주요 언어: 영어.",
+      "content": [
+        "기본 투어 언어: 영어.",
+        "중국어 가이드는 요청 시 가능 — 출발 3일 이상 전 예약.",
+        "투어 중 메뉴, 간판, 매대 소통은 한국어로 진행; 가이드가 통역 처리."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "도보 & 지형",
+      "preview": "중간~도전적.",
+      "content": [
+        "중간~힘든 난이도.",
+        "용궁사는 사찰까지 석계 108개 (건너뛸 수 있음 — 위층 전망 플랫폼 있음).",
+        "감천은 포토 루트 전체에 가파른 골목과 계단이 있는 경사 마을 — 접지력 있는 신발 필수.",
+        "유엔기념공원은 평탄.",
+        "자갈치 실내 시장은 평탄하지만 혼잡.",
+        "총 도보 약 4~5km + 계단."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "계절별 안내 확인"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "계절별 안내 확인"
+    },
+    "_seasonalSummary": "부산은 한국 남부의 대표 해안 도시로, 서울보다 겨울이 온화하고 비가 조금 더 많은 편입니다. 여름은 습하며 7월 장마철 강수량이 많을 수 있습니다."
+  },
+  "seasonalVariations": [
+    {
+      "season": "봄 (3~5월)",
+      "description": "3월 말~4월 초 청사포 해안과 해운대 블루라인파크 길변 벚꽃. 부산 최고의 사진 시즌."
+    },
+    {
+      "season": "여름 (6~8월)",
+      "description": "낮 시간이 길고; 해안 코스는 내륙보다 서늘함. 7월 장마 시 야외 체류 시간 단축 가능."
+    },
+    {
+      "season": "가을 (9~11월)",
+      "description": "시계 가장 맑고 바다 수온 가장 따뜻 — 전체 최고 시즌. 10월 하순 단풍. 청사포 해안 황금빛 햇살."
+    },
+    {
+      "season": "겨울 (12~2월)",
+      "description": "관광객 적음; 맑은 해상 조망; 한국 기준 온난 (부산 겨울 최저 5~10°C). 용궁사 새해 일출 명소."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "공인 현지 여행사",
+      "description": "부산 자격증 가이드",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "부산 시티 투어를 매일 운행하는 공인 현지 여행사 — 공인 영어·중국어 가이드."
+    },
+    {
+      "icon": "users",
+      "title": "소그룹",
+      "description": "최대 약 12인",
+      "iconBg": "bg-pink-50/80",
+      "iconColor": "text-pink-600",
+      "body": "소그룹 미니밴(최대 12인)으로 감천의 좁은 골목길을 여유롭게 이동합니다."
+    },
+    {
+      "icon": "shield",
+      "title": "전 입장료 무료",
+      "description": "주요 입장료 포함",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "7개 주요 경유지 모두 무료 입장 — 숨겨진 현장 추가 비용이 없습니다."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "즉시",
+      "title": "즉시 확인",
+      "detail": "행정 요약 포함 예약 확인서 발송",
+      "description": "픽업 지점·시각 포함 즉시 예약 확인서 발송."
+    },
+    {
+      "timing": "전날",
+      "title": "픽업 안내",
+      "detail": "픽업 장소와 차량 정보를 WhatsApp으로 발송.",
+      "description": "각 픽업 지점 위치 상세 안내 발송."
+    },
+    {
+      "timing": "투어 당일 오전",
+      "title": "픽업 확인",
+      "detail": "드라이버가 도착 10분 전에 연락합니다.",
+      "description": "출발 전날 저녁 최종 픽업 시각 재확인."
+    },
+    {
+      "timing": "투어 중",
+      "title": "투어 중 지원",
+      "detail": "운영팀 직통 연락",
+      "description": "가이드가 매 경유지에서 직접 안내 제공."
+    },
+    {
+      "timing": "하루 끝",
+      "title": "유연한 하차",
+      "detail": "남포동, 부산역, 서면, 해운대 중 하차 장소 선택 (오전 픽업의 역순).",
+      "description": "귀환 경로 상 여러 지점에서 선택적 하차 가능."
+    },
+    {
+      "timing": "투어 종료 후",
+      "title": "후기 & 팔로업",
+      "detail": "선택적 리뷰 및 후속 연락",
+      "description": "투어 후 피드백 요청 전송."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "first-time",
+      "question": "부산을 처음 방문하는 분에게 좋은가요?",
+      "answer": "네, 이 투어는 사찰·해안·기념관·예술 마을·수산시장으로 이어지는 부산 정통 하루 코스입니다. 하루 시간이 있다면 이 코스가 첫 방문에 적합합니다."
+    },
+    {
+      "id": "stairs",
+      "question": "용궁사 계단이 많은가요?",
+      "answer": "상부 광장에서 사찰 플랫폼까지 108개 돌계단이 있습니다. 이 투어에서 가장 체력이 필요한 구간입니다. 계단이 부담스러운 경우 상부 광장에서 관람만 해도 됩니다."
+    },
+    {
+      "id": "gamcheon-walking",
+      "question": "감천 언덕길이 힘들지 않나요?",
+      "answer": "보통~도전적 수준입니다. 골목이 가파르고 좁으며 계단이 많습니다. 바닥이 미끄럽지 않은 신발을 신고 천천히 이동하면 됩니다. 주요 포토존은 버스 하차 지점에서 짧게 걸어서 닿을 수 있어, 깊은 탐방이 부담스러운 분도 기본 코스를 둘러볼 수 있습니다."
+    },
+    {
+      "id": "sky-capsule",
+      "question": "청사포 스카이 캡슐이 포함되어 있나요?",
+      "answer": "포함되지 않습니다. 스카이 캡슐(4인승 ₩30,000~35,000)과 해변 열차(₩7,000)는 별도 구매 선택 사항입니다."
+    },
+    {
+      "id": "lunch",
+      "question": "점심이 포함되어 있나요? 메뉴는 어떻게 되나요?",
+      "answer": "포함되지 않습니다. 점심 식사비는 별도(약 ₩10,000~20,000). 현지 선택지: 돼지국밥(부산식 돼지 수육 국밥), 밀면(부산식 냉면), 또는 해산물."
+    },
+    {
+      "id": "kids",
+      "question": "어린이와 함께할 수 있나요?",
+      "answer": "만 6세 이상 추천. 용궁사 계단과 감천 언덕길이 주요 체력 포인트이며, 두 곳 모두 단축 경로가 있습니다."
+    },
+    {
+      "id": "seniors",
+      "question": "어르신도 참여할 수 있나요?",
+      "answer": "용궁사 계단과 감천 언덕으로 인해 체력 부담이 있습니다. 활동적인 어르신께 권장하며, 블루라인파크 해변 열차를 이용하면 부담을 줄일 수 있습니다."
+    },
+    {
+      "id": "language",
+      "question": "가이드 언어는 무엇인가요?",
+      "answer": "주로 영어입니다. 중국어 가이드는 요청 시 가능하며, 예약 3일 이상 전에 신청해야 합니다."
+    },
+    {
+      "id": "pickup",
+      "question": "픽업 장소는 어디인가요?",
+      "answer": "부산 3개 중심 역: 서면역 4번 출구(08:30), 부산역 4번 출구(08:50), 해운대역 5번 출구(09:30)."
+    },
+    {
+      "id": "drop-off",
+      "question": "하차 장소는 어디인가요?",
+      "answer": "귀환 경로 여러 지점: 남포동·자갈치(약 17:50, 마지막 경유지), 부산역(약 18:10), 서면역(약 18:20), 해운대역(약 18:40)."
+    },
+    {
+      "id": "compare",
+      "question": "다른 부산 투어와 어떻게 다른가요?",
+      "answer": "이 투어는 7곳 클래식 하루 코스입니다. 경주 추가(유네스코 콘텐츠)를 원하시면 부산-경주 일일 투어를 참고하세요. 프라이빗을 원하시면 부산 전용 차량 투어를 이용하세요."
+    },
+    {
+      "id": "yonggungsa-best-time",
+      "question": "용궁사 방문 최적 시간은 언제인가요?",
+      "answer": "이 투어 기준 약 10:00 도착 — 정오 단체 관광객보다 이르고, 사찰 동쪽 면에 아침 햇살이 드는 시간입니다."
+    },
+    {
+      "id": "tower-included",
+      "question": "부산 타워 전망대가 이 투어에 포함되나요?",
+      "answer": "포함되지 않습니다. 이 7곳 코스는 감천과 청사포를 우선하는 구성으로, 부산 타워는 포함되지 않습니다."
+    },
+    {
+      "id": "walking",
+      "question": "도보 이동이 얼마나 되나요?",
+      "answer": "약 4~5km + 용궁사 108계단(선택) + 감천 언덕. 유엔공원과 자갈치는 평탄합니다. 편안한 운동화 착용을 권장합니다."
+    },
+    {
+      "id": "family",
+      "question": "가족 여행에 적합한가요?",
+      "answer": "계단을 소화할 수 있는 초등학생 이상(만 6+) 어린이와 함께하는 가족에게 적합합니다."
+    },
+    {
+      "id": "rain",
+      "question": "비가 오면 어떻게 되나요?",
+      "answer": "가벼운 비: 예정대로 진행. 강우 시: 용궁사 하부와 감천 계단이 미끄러워져 이동 속도를 조절합니다. 실내 대안(자갈치 2층 식당 등)을 활용합니다."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "인",
+      "priceNote": "소그룹 요금은 상품 정보 기준으로 확인 중입니다. 유사 부산 일일 투어는 여행사에 따라 약 $41~70 수준이며, 확정 후 AtoC Korea 판매가에는 정률 10% 할인이 적용됩니다."
+    }
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "busan-top-attractions-day-tour",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "busan_city",
+    "vehicle_type": "coach",
+    "duration_hours": 9.0,
+    "region_tags": [
+      "busan_haeundae",
+      "busan_gijang",
+      "busan_namgu",
+      "busan_saha",
+      "busan_jung"
+    ],
+    "theme_tags": [
+      "temple",
+      "coastal",
+      "war_memorial",
+      "mural_village",
+      "fish_market",
+      "korean_war_history"
+    ],
+    "poi_tags": [
+      "haedong_yonggungsa",
+      "cheongsapo_blue_line_park",
+      "un_memorial_cemetery",
+      "gamcheon_culture_village",
+      "jagalchi_market"
+    ],
+    "pace_level": 0.7,
+    "walking_level": 0.85,
+    "scenic_level": 0.9,
+    "photo_level": 1.0,
+    "culture_level": 0.95,
+    "relax_level": 0.5,
+    "first_time_fit": 1.0,
+    "family_fit": 0.85,
+    "senior_fit": 0.7,
+    "couple_fit": 0.95,
+    "solo_traveler_fit": 0.9,
+    "active_traveler_fit": 0.8,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 0.95,
+    "young_kids_fit": 0.55,
+    "senior_active_fit": 0.7,
+    "senior_general_fit": 0.55,
+    "mobility_friendly_fit": 0.4,
+    "stroller_fit": 0.4,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.3,
+    "rain_fit": 0.5,
+    "value_for_money_fit": 0.95,
+    "iconic_landmark_fit": 1.0,
+    "cafe_fit": 0.6,
+    "food_fit": 0.8,
+    "nature_fit": 0.8,
+    "beach_fit": 0.6,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.4,
+    "no_shopping_fit": 0.5,
+    "local_culture_fit": 1.0,
+    "storytelling_fit": 0.8,
+    "unesco_fit": 0.2,
+    "intangible_heritage_fit": 0.2,
+    "indoor_ratio": 0.2,
+    "weather_sensitivity": 0.5,
+    "comfort_level": 0.6,
+    "budget_fit": 0.85,
+    "premium_fit": 0.3,
+    "small_group_fit": 1.0,
+    "private_fit": 0.05,
+    "bus_fit": 1.0,
+    "price_band": "mid",
+    "pickup_base": "busan_central",
+    "return_time_band": "18:00-19:00",
+    "duration_band": "9h",
+    "min_recommended_age": 8,
+    "hard_constraints": {
+      "avoidIf": [
+        "mobility_limited"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "stroller_heavy_groups"
+      ]
+    },
+    "walking_notes": [
+      "Active walking day with several flights of stairs (Yonggungsa 108 steps, Gamcheon hillside).",
+      "Average fitness expected.",
+      "Sturdy closed-toe shoes recommended (Jagalchi 1F floor is wet)."
+    ],
+    "keywords": [
+      "busan top attractions day tour",
+      "busan small group tour",
+      "haedong yonggungsa",
+      "gamcheon culture village",
+      "jagalchi market",
+      "un memorial cemetery busan"
+    ],
+    "synonym_hints": [
+      "busan one day classic tour",
+      "busan must-see day trip",
+      "busan top 5 highlights"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "busan",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "haedong_yonggungsa",
+      "cheongsapo_blue_line_park",
+      "un_memorial_cemetery",
+      "gamcheon_culture_village",
+      "jagalchi_market"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.1,
+    "flexibility_fit": 0.3,
+    "fixed_itinerary_fit": 1.0,
+    "buddhist_temple_fit": 1.0,
+    "scenic_temple_fit": 1.0,
+    "coastal_temple_fit": 1.0,
+    "seaside_temple_fit": 1.0,
+    "war_memorial_fit": 1.0,
+    "korean_war_history_fit": 1.0,
+    "mural_village_fit": 1.0,
+    "fish_market_fit": 1.0,
+    "market_fit": 1.0,
+    "street_food_fit": 0.9,
+    "skywalk_fit": 1.0,
+    "sky_capsule_fit": 0.7,
+    "coastal_railway_fit": 1.0,
+    "history_culture_fit": 1.0,
+    "k_drama_filming_fit": 0.5,
+    "religious_history_fit": 0.85,
+    "premium_dining_fit": 0.3,
+    "seasonal_fit": 0.85,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "busan_signature_route_fit": 1.0,
+    "skywalk_coastal_railway_fit": 1.0,
+    "first_time_busan_fit": 1.0,
+    "no_inter_city_travel_fit": 1.0,
+    "differentiates_from_busan_gyeongju_routes": true,
+    "deep_history_traveler_fit_minimum": 0.7,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "embedded_for": "atockorea_tour_marketplace",
+    "source_of_truth_note": "Internal note: product profile checked against current Busan route-selection rules. Single fixed route; no route option overrides.",
+    "audit_summary": "Year-round Busan classic 5-stop route. First Busan product in catalog — establishes busan_ region_tag prefix convention parallel to jeju_ used elsewhere. value_for_money_fit=5 reflects $41-47 시장 참고 자료 market rate.",
+    "score_rationale": {
+      "high_scores": {
+        "first_time_fit=5, iconic_landmark_fit=5, one_day_fit=5": "Hits all of Busan's most-recognized landmarks in one curated day — exactly what first-timers need.",
+        "value_for_money_fit=5, budget_fit=5": "Market rate at $41-47 is unusually low for an all-inclusive 9.5h tour with admissions.",
+        "photo_level=5": "Gamcheon and Yonggungsa are among Korea's most photogenic spots."
+      },
+      "low_scores": {
+        "mobility_friendly_fit=2, stroller_fit=2, senior_general_fit=2": "Yonggungsa stairs (108) and Gamcheon hillside alleys are the bottleneck.",
+        "premium_fit=1": "Budget-positioned tour; premium travelers should consider private Busan tour.",
+        "same_day_flight_fit=1": "9.5h tour ending up to 19:00 makes evening flights very tight.",
+        "private_fit=1, bus_fit=1": "Format is small group only.",
+        "relax_level=2": "Five stops in 9.5h with hillside walking — not a relaxed pace."
+      },
+      "calibration_against_jeju_set": "First non-Jeju product. Naturally separated by island=busan hard filter. Walking and pace metrics roughly match jeju east-bus tour but value_for_money_fit is higher (Busan market pricing is more competitive)."
+    },
+    "locale_adaptation": {
+      "current_locale": "en",
+      "ko_localization_status": ""
+    },
+    "related_products": {
+      "same_destination_alternatives": [
+        "busan-small-group-sightseeing-tour-cruise-passengers (cruise-passenger focused, fewer stops)",
+        "busan-gyeongju-unesco-legacy-tour-national-museum (extends to Gyeongju, longer day)",
+        "from-busan-gyeongju-ancient-capital-day-tour (Gyeongju from Busan)"
+      ],
+      "note": "This is the most comprehensive Busan-only classic route in the catalog. Use cruise tour for cruise-bound guests, Gyeongju tours for travelers wanting historical extension."
+    },
+    "anchor_pois": [
+      "Haedong Yonggungsa Temple",
+      "Cheongsapo & Haeundae Blue Line Park",
+      "UN Memorial Cemetery in Korea",
+      "Gamcheon Culture Village",
+      "Jagalchi Fish Market"
+    ],
+    "anchor_poi_keys": [
+      "haedong_yonggungsa",
+      "cheongsapo_blue_line_park",
+      "un_memorial_cemetery",
+      "gamcheon_culture_village",
+      "jagalchi_market"
+    ],
+    "competing_products": [
+      "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
+      "busan-private-car-charter-cruise-shore",
+      "busan-small-group-sightseeing-tour-cruise-passengers"
+    ],
+    "primary_themes": [
+      "coastal",
+      "korean_war_heritage",
+      "buddhist_temple",
+      "mural_art",
+      "fish_market"
+    ],
+    "secondary_themes": [
+      "coastal_railway",
+      "skywalk",
+      "refugee_history",
+      "street_food"
+    ],
+    "best_for": [
+      "first_time_visitors",
+      "couples",
+      "culture_lovers",
+      "history_enthusiasts",
+      "photographers",
+      "korean_war_descendants"
+    ],
+    "not_recommended_for": [
+      "mobility_limited",
+      "stroller_heavy_groups",
+      "shoppers_only",
+      "nightlife_seekers"
+    ],
+    "enrichment_batch": "17a",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.23",
+    "enrichment_target_kb_version": "1.24",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "16 substantive stops across 4 tours; D-grade audit (8-hl-vs-9-hl artifact) → A-grade pass"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "해안 사찰, 블루라인 해안, 파스텔 언덕 마을, 수산시장 —",
+        "headlineLine2": "부산 7곳 클래식 코스를 균형 잡힌 하루에",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1920&q=80",
+          "imagePosition": "center 40%",
+          "tagline": "가장 많이 묻는 부산 핵심 7곳을 하루 소그룹으로",
+          "pills": [
+            "소그룹",
+            "부산",
+            "first_time"
+          ],
+          "meta": {
+            "duration": "10.5시간 (08:30 첫 픽업, ≈ 19:00 마지막 하차)",
+            "region": "부산",
+            "stops": "5개 코스",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "투어 개요"
+          },
+          {
+            "id": "itinerary",
+            "label": "상세 일정"
+          },
+          {
+            "id": "details",
+            "label": "유의사항"
+          },
+          {
+            "id": "faq",
+            "label": "자주 묻는 질문"
+          },
+          {
+            "id": "reviews",
+            "label": "여행자 후기"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "소요 시간",
+            "value": "약 10.5시간 (08:30 첫 픽업, ≈ 19:00 마지막 하차)"
+          },
+          {
+            "icon": "calendar",
+            "label": "최적 시즌",
+            "value": "연중; 청사포 해안 벚꽃 3월 말~4월 초"
+          },
+          {
+            "icon": "users",
+            "label": "최대 인원",
+            "value": "소그룹 (≈12 max), 공유 미니 코치"
+          },
+          {
+            "icon": "footprints",
+            "label": "도보 난이도",
+            "value": "중간~약간 어려움 — 용궁사 108계단(생략 가능), 감천 언덕길, 시장 골목"
+          },
+          {
+            "icon": "map-pin",
+            "label": "투어 지역",
+            "value": "부산 (해운대 + 부산 중심)"
+          },
+          {
+            "icon": "ticket",
+            "label": "포함 사항",
+            "value": "왕복 교통과 공인 가이드가 포함됩니다. 점심은 불포함이며, 스카이캡슐/해변열차와 부산타워(₩12,000)는 선택 사항입니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
+            "alt": "해동 용궁사 동해 절벽 위의 불교 사찰 건물들",
+            "caption": "해동 용궁사 — 1376년 창건지 위에 1930년대 재건된 한국 최고의 해안 사찰",
+            "location": "Haedong 용궁사, Gijang-gun",
+            "atmosphere": "바닷물결, 화강암 절벽, 은은한 향 냄새"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=1200",
+            "alt": "투어 중 방문하는 청사포 블루라인파크 — 1934년 철도를 2020년 4.8km 해안 열차 코리도로 재활용의 풍경",
+            "caption": "청사포 블루라인파크 — 1934년 철도를 2020년 4.8km 해안 열차 코리도로 재활용",
+            "location": "청사포 블루라인파크, 해운대",
+            "atmosphere": "탁 트인 해안, 부드러운 바람, 해변열차 소리"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601171291096-87099c2c4625?w=1200",
+            "alt": "유엔 기념 묘지의 줄지어 늘어선 동일한 묘비들",
+            "caption": "유엔 기념 묘지 — 21개국 2,300여 명의 묘지, 세계 유일의 유엔 묘지",
+            "location": "유엔기념공원, 부산 남구",
+            "atmosphere": "조용하고 격식 있으며 차분한 분위기"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1200",
+            "alt": "투어 중 방문하는 감천 문화마을 — 전후 피란민 동네를 2009년 공공미술 프로젝트로 변신의 풍경",
+            "caption": "감천 문화마을 — 전후 피란민 동네를 2009년 공공미술 프로젝트로 변신",
+            "location": "감천문화마을, Saha-gu",
+            "atmosphere": "밝은 파스텔 톤, 좁은 골목, 언덕 계단길"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1572883454114-1cf0031ede2a?w=1200",
+            "alt": "자갈치 어시장의 얼음 위에 진열된 신선한 해산물",
+            "caption": "자갈치시장",
+            "location": "자갈치시장, Jung-gu",
+            "atmosphere": "활어 수조, 시장의 활기, 바다 내음"
+          },
+          {
+            "id": "g6",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "alt": "부산 식당의 돼지 국밥과 반찬",
+            "caption": "현지 점심 — 부산 식당의 돼지 국밥, 밀면, 또는 해물파전",
+            "location": "부산 현지 식당",
+            "atmosphere": "빠르고 간단한 지역 음식"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "≈ 09:00",
+            "duration": "30분",
+            "name": "픽업 (부산 중심 3개 역)",
+            "category": "이동 / 픽업",
+            "description": "아침 이동을 효율화하기 위해 부산 중심 교통 거점 3곳에서 픽업: 서면역 4번 출구(08:30), 부산역 4번 출구(08:50, KTX 게이트 아님), 해운대역 5번 출구(09:30, 정차 후 블루라인파크 방향 출발). 순서대로 탑승 후 해동용궁사로 이동.",
+            "highlights": [
+              "부산 중심부 3개 픽업 지점 (부산역, 서면, 해운대)",
+              "코치는 소그룹 (최대 약 14인)",
+              "첫 코스까지 총 이동 약 30~40분",
+              "픽업 시 한영 일정 카드 배포"
+            ],
+            "timeUsed": [
+              "부산역 픽업 (~09:00, ~5분)",
+              "서면역까지 드라이브 (~10분)",
+              "서면 픽업 (~09:15, ~5분)",
+              "해운대역까지 이동 (~15분)",
+              "해운대 픽업 (~09:30, ~5분)"
+            ],
+            "whyOnRoute": "3개 픽업 포인트로 부산 3개 주요 호텔 구역 커버, 환승 불필요.",
+            "_poi_meta": {
+              "poi_key": "OPS_busan_pickup_central",
+              "verified": true,
+              "match": "transit_only",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan",
+                "Busan Metro"
+              ]
+            }
+          },
+          {
+            "number": 2,
+            "time": "≈ 10:00",
+            "duration": "75분",
+            "name": "해동용궁사",
+            "category": "불교 사찰 / 해안",
+            "description": "해동용궁사는 1376년 고려 공민왕 시대에 창건된 한국에서 보기 드문 절벽 위 해안 사찰로, 부산 동쪽 해안 바위 절벽에 자리합니다. 108개 돌계단을 내려가며 십이지신 석상을 지나 사찰로 향합니다. 해수관음상(바다를 향한 관음 보살상)과 황금 돼지 조각상(기복 상징)이 대표 볼거리입니다. 무료 입장. 방문 시간: 약 60분.",
+            "highlights": [
+              "**1376년 창건** — 불교 승려 나옹 혜근(원래 이름 '보문사')",
+              "산 속이 대부분인 한국 주요 사찰 중 바닷가에 있는 희귀한 사찰",
+              "**1974년 정암 스님의 용왕·관음 현몽 후 해동 용궁사로 개칭**",
+              "**108개의 석계** = 불교의 108번뇌",
+              "입구의 **12지신상(동물 조각)**; '**무사 안녕 탑**' 동전 기도처",
+              "**해수 관음 대불** (바다의 자비 관음) — 가장 많이 촬영되는 절벽 포토 명소",
+              "대웅전 1970년 원색으로 복원",
+              "매일 04:30~19:20, 무료 입장; 부처님 오신 날(5월) 연등 축제",
+              "**사찰 입구의 12지신 석상** — 한국 내 독특한 배치 형식"
+            ],
+            "timeUsed": [
+              "코치 하차 + 상가 골목 지나 입장 광장까지 도보 — 약 10분",
+              "12지신상 + 무사 안녕 탑 — 약 10분",
+              "108계단 하강 + 대웅전 + 해안 테라스 — 약 30분",
+              "해수 관음 대불 전망 + 사진 — 약 15분",
+              "다시 올라가 코치에서 집결 — 약 10분"
+            ],
+            "whyOnRoute": "루트의 대표 하이라이트 — 650년 역사와 희귀한 해변 위치를 가진 부산 최다 촬영 사찰.",
+            "visitBasics": {
+              "hours": "매일 04:30~19:20 (마지막 입장 18:50)",
+              "closed": "연중 무휴",
+              "admission": "무료; 개인 차량 주차는 유료",
+              "walking": "중간 난이도 — 소나무 숲 108계단, 여러 해안 테라스 및 계단"
+            },
+            "convenience": {
+              "restroom": "정문 근처 및 경내 내부",
+              "parking": "해동 용궁사 주차장 (유료)"
+            },
+            "smartNotes": {
+              "photo": "해안 쪽 일출 바위; 대웅전 옆 계단에서 바다 배경 사진 최적.",
+              "facilities": "상단 광장에 기념품·간식 판매대 및 소규모 카페.",
+              "tip": "불당 출입은 정면 아닌 측면 문 이용 (정면은 스님 전용). 부처님 오신 날(4~5월) 연등 축제."
+            },
+            "_poi_meta": {
+              "poi_key": "haedong_yonggungsa",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan",
+                "VisitKorea",
+                "Wikipedia",
+                "Culture Trip",
+                "Korean Temple Guide",
+                "Korea Tourism Organization Official"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:30",
+            "duration": "75분",
+            "name": "청사포 & 해운대 블루라인파크",
+            "category": "해안 공원 / 포토 명소",
+            "description": "해운대 블루라인파크는 폐선된 동해남부선 해안 철로를 활용해 2020년 개방한 에코 레일웨이입니다. 해운대에서 미포·청사포까지 4.8km 해안 구간을 운행합니다. 스카이 캡슐(4인승 투명 케이블카, ₩30,000~35,000 별도)과 해변 열차(₩7,000 별도)를 선택할 수 있습니다. 청사포 포구에서 부산 해안 전망과 소규모 어항 풍경을 즐깁니다. 방문 시간: 약 75분.",
+            "highlights": [
+              "**해운대 블루라인파크 2020년 개장** — 폐선된 동해남부선 해안 철도 부지 활용",
+              "**스카이캡슐** (2.3km 고가) + **해변 열차** (4.8km, 6정류장) + 그린레일웨이 데크",
+              "**청사포 다릿돌 스카이워크** (2017년 8월): 72.5m 유리 바닥 스카이워크, 해수면 20m 상공",
+              "**스카이캡슐 요금**: ₩30,000 (2인) / ₩39,000 (3인) / ₩44,000 (4인) 편도",
+              "이중 등대 + 슬램덩크 스타일 건널목 포토 명소",
+              "세계 최초 해양 레일 바이크 중 하나",
+              "청사포 = 부산의 **8경** 중 하나",
+              "세계 최초 배터리 충전식 친환경 관광 열차",
+              "**2026년 스카이캡슐 요금**: 편도 기준 2인 ₩30,000 / 3인 ₩39,000 / 4인 ₩44,000. **해변열차**는 2020년에 개장한 동해남부선 폐선 구간을 따라 4.8km, 6개 정거장을 운행합니다."
+            ],
+            "timeUsed": [
+              "청사포역 하차 — 약 5분",
+              "다릿돌 스카이워크 + 유리 바닥 체험 — 약 25분",
+              "이중 등대 + 건널목 포토 명소 — 약 15분",
+              "해변 산책 + 카페 들르기 — 약 15분",
+              "집결 — 약 5분"
+            ],
+            "whyOnRoute": "루트의 **가장 많이 인스타그램된** 구간 — 파스텔 스카이 캡슐이 바이럴 한국 여행 사진.",
+            "visitBasics": {
+              "hours": "스카이캡슐·해변 열차 약 09:30–18:30 (여름 20:30까지); 청사포 해안 상시",
+              "closed": "기상 상황에 따라 운영 중단 가능",
+              "admission": "무료 구역; 스카이캡슐 ₩30,000 (2인) / ₩39,000 (3인) / ₩44,000 (4인) 편도",
+              "walking": "쉬움 — 그린레일웨이 데크 (미포↔청사포 2.3km, 약 30분) 나무 보도"
+            },
+            "convenience": {
+              "restroom": "미포, 청사포, 송정역에 화장실",
+              "parking": "미포역·청사포역 인근 공영 주차장 (유료)"
+            },
+            "smartNotes": {
+              "photo": "청사포역 건널목에서 슬램덩크 스타일 프레임; 다릿돌 스카이워크 해수면 위 유리 바닥.",
+              "facilities": "미포, 청사포, 송정역에서만 현장 발권 가능.",
+              "tip": "스카이캡슐 일몰 슬롯은 빨리 마감 — 시장 참고 자료 등을 통해 1~2주 전 사전 예약 권장."
+            },
+            "_poi_meta": {
+              "poi_key": "cheongsapo_blue_line_park",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Blue Line Park official",
+                "Visit Busan",
+                "Soul of Seoul",
+                "KoreaToDo",
+                "Tara O'Reilly travel",
+                "Busan Metropolitan City Tourism"
+              ]
+            }
+          },
+          {
+            "number": 4,
+            "time": "≈ 13:00",
+            "duration": "60분",
+            "name": "점심 (부산 현지 식당)",
+            "category": "식사",
+            "description": "해운대에서 유엔기념공원 방면으로 이동 중 현지 식당에서 점심. 돼지국밥(부산식 돼지 수육 국밥), 밀면(부산식 냉면), 또는 해산물 중 선택. 점심 식사비는 별도(약 ₩10,000~20,000).",
+            "highlights": [
+              "드라이버가 일행 취향에 따라 추천 (한식/해산물/양식)",
+              "부산 대표 메뉴: **돼지국밥**, **밀면**, **회**",
+              "**점심은 본인 부담** (보통 약 ₩10,000~25,000/인)",
+              "예약 시 채식/할랄 대체 요청 가능",
+              "60분 정류 — 유엔 묘지 + 감천 일정을 지키기 충분한 효율"
+            ],
+            "timeUsed": [
+              "코치 하차 + 식당까지 도보 (~5분)",
+              "주문 + 식사 (~40분)",
+              "화장실 + 코치에 집결 (~15분)"
+            ],
+            "whyOnRoute": "점심을 13:00에 배치해 오전 구간와 오후 유산 핵심을 연결.",
+            "_poi_meta": {
+              "poi_key": "OPS_busan_lunch",
+              "verified": true,
+              "match": "lunch_placeholder",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan",
+                "Busan Metropolitan Government cuisine guide"
+              ]
+            }
+          },
+          {
+            "number": 5,
+            "time": "≈ 14:15",
+            "duration": "60분",
+            "name": "유엔기념공원",
+            "category": "기념관 & 역사",
+            "description": "유엔기념공원(재한유엔기념공원)은 전 세계 유일의 유엔 관리 군인 묘지입니다. 1951년 1월 유엔사령부에 의해 설립, 한국전쟁 중 전사한 16개국 2,311명의 유엔군 장병이 잠들어 있습니다. 1955년 한국 정부가 토지를 유엔에 영구 임대했습니다. 매년 11월 11일 '턴 투워드 부산(턴 투워드 부산)' 국제 추모 행사가 열립니다. 무료 입장. 방문 시간: 약 60분.",
+            "highlights": [
+              "**세계 유일의 유엔기념묘지** — 1951년 1월 18일 창설; 한국이 1955년 유엔에 기증",
+              "**22개 참전국** 추모; 현재 **11개국 2,300기** 안장",
+              "**기억의 벽 (2006)** — 140개 대리석 패널에 40,896명의 이름",
+              "한국 건축가 **김중업 구성(1966)** 정문",
+              "**부산을 향하여** 행사 — 매년 11월 11일 오전 11시 (전 세계 동시 거행)",
+              "**무료 입장**, 100% 휠체어 접근 가능",
+              "**프랭크 게일로드 미국 한국전쟁 기념비 (2013)**",
+              "**인접 유엔 조각 공원** — 참전 21개국 조각가 기증 34개 조각 작품",
+              "**유엔총회 결의안 977(X) 1955년 12월 15일** — UNMCK를 공식 유엔 묘지로 지정"
+            ],
+            "timeUsed": [
+              "상징 구역 + 22개 참전국 국기 광장 — 약 10분",
+              "기념관 + 12분 영어 다큐멘터리 — 약 15분",
+              "기억의 벽 + 기념관 — 약 20분",
+              "묵상 + 사진 — 약 10분"
+            ],
+            "whyOnRoute": "루트의 **도덕적 균형추** — 부산의 정체성은 함락되지 않은 유일한 한국 도시 역할과 불가분.",
+            "visitBasics": {
+              "hours": "3~10월 09:00~18:00; 11~2월 09:00~17:00",
+              "closed": "연중 무휴",
+              "admission": "무료",
+              "walking": "쉬움 — 전 구역 평탄, 100% 휠체어 접근 가능"
+            },
+            "convenience": {
+              "restroom": "입구 및 공원 내 화장실",
+              "parking": "공원 인근 지정 주차 구역"
+            },
+            "smartNotes": {
+              "photo": "기억의 벽과 22개 국기가 나부끼는 전경. 이른 아침 조용하고 빛이 좋습니다.",
+              "facilities": "방문자 센터, 기념관, 기념품점. 인근 카페 및 식당.",
+              "tip": "11월 11일 오전 11시 '부산을 향하여' 행사에 맞춰 방문하면 특별한 경험. 한국전쟁에 관심 있다면 12분 다큐멘터리를 꼭 관람."
+            },
+            "_poi_meta": {
+              "poi_key": "un_memorial_cemetery",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNMCK official",
+                "Wikipedia",
+                "ABMC",
+                "Visit Busan",
+                "CNN",
+                "VisitKorea",
+                "재한유엔기념공원 in Korea Official Site"
+              ]
+            }
+          },
+          {
+            "number": 6,
+            "time": "≈ 15:30",
+            "duration": "75분",
+            "name": "감천문화마을",
+            "category": "산자락 예술 마을",
+            "description": "감천문화마을은 '한국의 마추픽추', '부산의 산토리니'로 불리는 사하구 언덕 위 마을입니다. 한국전쟁 피난민 정착촌이 2009년 공공미술 프로젝트를 통해 파스텔 색상의 계단식 민가와 골목 예술 작품이 어우러진 부산 대표 문화 명소로 탈바꿈했습니다. 입구에서 지도(₩1,000)를 구입해 골목을 탐방합니다. 어린 왕자 조각상이 인기 포토 명소입니다. 무료 입장(지도 별도). 방문 시간: 약 75분.",
+            "highlights": [
+              "**1955년 태극도 피난민 정착지** — 조철제 창시 약 800가구 / 4,000명",
+              "**태극도 철학 '남을 번영케 하라'** = 이웃 집 앞을 막지 않는 낮은 지붕선",
+              "**'마추픽추의 꿈'(2009)** + **'미로미로'(2010)** 문화체육관광부 예술 프로젝트",
+              "**UN-HABITAT 아시아 도시 경관상 2012**",
+              "**연간 약 140만 명 방문**",
+              "**어린왕자와 여우 벤치** (하늘 정원) = 대표 포토 명소 (대기 있음, 무료)",
+              "스탬프 투어 지도 ₩2,000 (9개 설치 작품)",
+              "가파른 골목 + 계단 = 유모차·휠체어 불편",
+              "**K-콘텐츠 성지** — 런닝맨 126화 (최지우 게스트), 루카: 더 비기닝 등"
+            ],
+            "timeUsed": [
+              "코치 상단 입구 하차 — 약 5분",
+              "별 전망대 + 무지개 지붕 파노라마 — 약 15분",
+              "하늘 정원 + 어린왕자 & 여우 벤치 사진 — 약 20분",
+              "벽화 + 공예 가게 골목 하강 — 약 25분",
+              "하단 출구 집결 — 약 10분"
+            ],
+            "whyOnRoute": "루트의 **가장 화려하고 독특한** 코스 — 한국이나 아시아 어디에도 이런 동네는 없습니다.",
+            "visitBasics": {
+              "hours": "마을 상시 개방 (일부 시설 운영 시간 다름)",
+              "closed": "연중 무휴",
+              "admission": "마을 무료 입장; 스탬프 투어 지도 ₩2,000",
+              "walking": "힘든 구간 — 경사진 골목과 계단; 미끄럼 방지 신발 필수"
+            },
+            "convenience": {
+              "restroom": "상단 입구 및 마을 내 여러 곳",
+              "parking": "방문객 주차 제한; 코치 지정 승·하차 구역 이용"
+            },
+            "smartNotes": {
+              "photo": "어린왕자 벤치는 대기 있을 수 있으나 무료. 무지개 지붕이 내려다보이는 전망대 파노라마 샷.",
+              "facilities": "마을 내 소규모 카페 및 공예 판매점 분포. 스탬프 투어 안내소.",
+              "tip": "오전 이른 방문으로 어린왕자 벤치 대기 최소화. 계단이 많으니 튼튼한 신발 필수."
+            },
+            "_poi_meta": {
+              "poi_key": "gamcheon_culture_village",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Wikipedia",
+                "CNN",
+                "Visit Busan",
+                "Hapskorea",
+                "Columban Society",
+                "Lifeguin",
+                "Busan Cultural Foundation"
+              ]
+            }
+          },
+          {
+            "number": 7,
+            "time": "≈ 17:15",
+            "duration": "60분",
+            "name": "자갈치수산시장",
+            "category": "시장 & 길거리 음식",
+            "description": "자갈치시장은 한국 최대 수산시장으로 부산 남포항 수변에 자리합니다. '자갈치'는 '자갈(자갈)' + '치(생선의 방언)'에서 유래했습니다. '아지매'라 불리는 여성 상인들이 시장의 상징입니다. 현장에서 갓 잡은 활어 회, 게, 문어, 해삼, 전복 등을 즐길 수 있으며, 2층 식당에서는 직접 고른 활어를 바로 조리해 먹을 수 있습니다. 무료 입장. 방문 시간: 약 75분.",
+            "highlights": [
+              "**한국 최대 수산 시장** — 약 400개 매대 / 66,000m²",
+              "이름 = **'자갈'(자갈)** + **자갈치 아줌마** 전후 여성 상인에서 유래",
+              "**갈매기 형상 현대 건물 2006년 재개장** (현준민 구성)",
+              "**매일 05:00~22:00**; **매월 1·3번째 화요일 휴장**",
+              "**아래층 구매 / 위층 취식** 횟집 구조",
+              "인접: **BIFF 광장** (부산영화제), **국제시장**, **광복로**",
+              "**10월 자갈치 문화관광축제**",
+              "**주소: 중구 자갈치해안로 52**",
+              "**산낙지 = 부산의 요리 명물** — 살아있는 낙지를 작게 썰어 아직 움직이는 채로 제공"
+            ],
+            "timeUsed": [
+              "용두산/하차 지점에서 도보 이동 — 약 5분",
+              "1층 활어 수조 탐방 — 약 15분",
+              "2층 횟집 구경 + 남포동 거리 사진 — 약 15분",
+              "선택: 간식 구매 + 광복로 산책 — 약 10분",
+              "자갈치 아줌마 노점 기념품 구매 — 약 5분"
+            ],
+            "whyOnRoute": "루트의 **요리적 마무리 장면** — 부산의 정체성은 서울이 길거리 음식으로 세워지듯 해산물로 세워짐.",
+            "visitBasics": {
+              "hours": "대부분 매대 05:00~22:00; 식당 골목 피크 11:00~21:00",
+              "closed": "연중 무휴; 일부 직물층 매대 일요일 휴무",
+              "admission": "무료 입장; 음식은 선택 주문 (대부분 현금만 가능)",
+              "walking": "쉬움 — 평탄한 덮인 골목"
+            },
+            "convenience": {
+              "restroom": "시장 건물 내 (안내 표시 있음)",
+              "parking": "제한적; 가장 가까운 유료 주차장은 도보 약 5분"
+            },
+            "smartNotes": {
+              "photo": "석제 맷돌 위 빈대떡 지지는 모습 — 대표 샷. 마약 김밥 말기도 사진 찍기 좋은.",
+              "facilities": "많은 판매자가 매대 뒤쪽에 소형 좌석 식사 공간 운영. 다국어 메뉴판.",
+              "tip": "**1인당 현금 ₩10,000~20,000 지참.** 빈대떡+마약 김밥 조합이 필수 메뉴. 주말 낮 12~18시 혼잡."
+            },
+            "_poi_meta": {
+              "poi_key": "jagalchi_market",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea",
+                "Wikipedia",
+                "Visit Busan",
+                "Hungry Pursuit",
+                "Emma Jane Explores",
+                "Jagalchi.org",
+                "Korean Heritage Service / Cultural Heritage Administration"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "픽업 (부산 중심 3개 역)",
+            "type": "origin",
+            "theme": "출발"
+          },
+          {
+            "name": "해동 용궁사",
+            "type": "primary",
+            "theme": "해안 사찰"
+          },
+          {
+            "name": "청사포 & 블루라인 파크",
+            "type": "primary",
+            "theme": "해안과 해변열차"
+          },
+          {
+            "name": "점심 (부산 현지 식당)",
+            "type": "meal",
+            "theme": "식사"
+          },
+          {
+            "name": "유엔 기념 묘지",
+            "type": "primary",
+            "theme": "Memorial"
+          },
+          {
+            "name": "감천 문화마을",
+            "type": "primary",
+            "theme": "예술 마을"
+          },
+          {
+            "name": "자갈치 어시장",
+            "type": "return",
+            "theme": "해산물 시장"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "해안 오전",
+            "duration": "약 3시간",
+            "description": "픽업(60분 픽업 시간대) 후 용궁사 이동, 이후 남쪽으로 청사포·해운대 블루라인파크."
+          },
+          {
+            "phase": "점심",
+            "duration": "약 1시간",
+            "description": "부산 현지 식당에서 점심 (돼지국밥, 밀면, 또는 해산물)."
+          },
+          {
+            "phase": "기념관 + 마을",
+            "duration": "약 3시간 30분",
+            "description": "유엔기념공원(60분) → 감천문화마을 포토 루프."
+          },
+          {
+            "phase": "시장 피날레",
+            "duration": "약 1시간 30분",
+            "description": "자갈치시장 관람 및 길거리 음식(75분); 부산 중심부 하차."
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "부산 하루 일정",
+          "subtitle": "동북쪽 해안 사찰에서 출발해 블루라인파크, 유엔기념공원, 점심을 포함한 감천 문화 마을, 이후 부산 중심부 자갈치 시장으로 마무리합니다. 오전 8시 30분 출발, 오후 6시 귀환."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "부산 첫 방문자",
+            "성인 가족 및 커플",
+            "부산 하루 여행자",
+            "문화 및 음식 탐험 여행자"
+          ],
+          "lessIdealFor": [
+            "도보 최소화/계단 기피 여행자 주의",
+            "유모차 이용 그룹 주의 (감천 경사)",
+            "저녁 비행기 여유가 필요한 여행자 주의 (귀환 최대 19:00)"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "일정 속도 & 지리적 구조",
+              "icon": "sun",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "에너지가 넘치는 오전에 북동쪽 먼저",
+                  "detail": "용궁사는 루트의 북동쪽 끝에 위치해 있어 108계단과 해안 테라스가 아침 이른 시간에 방문하기 적합합니다."
+                },
+                {
+                  "label": "해안 → 기념관 → 마을 순서",
+                  "detail": "이 루트는 풍경에서 맥락으로, 다시 색감으로 전환됩니다: 밝은 해안 오프너, 조용한 기념관 점심, 감천의 컬러풀한 골목들."
+                },
+                {
+                  "label": "부산 중심부에서 마무리",
+                  "detail": "자갈치 시장은 부산 중심부에 위치해 있어 남포동 인근 숙박객은 마지막 코스에서 하차해 탐방을 이어갈 수 있습니다."
+                }
+              ]
+            },
+            {
+              "title": "10.5시간으로 이게 가능한 이유",
+              "icon": "clock",
+              "iconBg": "bg-pink-50/80",
+              "iconColor": "text-pink-600",
+              "items": [
+                {
+                  "label": "점심 포함 6개 실질 코스",
+                  "detail": "해안 2개, 기념관 1개, 마을(확장) 1개, 시장 1개, 점심 포함 — 각 블록이 충분히 실질적으로 느껴질 만큼 길면서도 과부하가 없습니다."
+                },
+                {
+                  "label": "대부분 야외, 시장으로 실내 마무리",
+                  "detail": "하루의 약 80%가 야외이며, 자갈치만 완전 실내입니다. 대부분의 날씨 조건에서 운영 가능합니다."
+                },
+                {
+                  "label": "3개 픽업 지점",
+                  "detail": "서면, 부산역, 해운대에서 픽업 — 부산 중심부 대부분의 숙소에서 접근 가능합니다."
+                }
+              ]
+            },
+            {
+              "title": "솔직한 트레이드오프",
+              "icon": "info",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "용궁사에는 108계단이 있음 (생략 가능)",
+                  "detail": "108계단은 사찰 플랫폼으로 내려갑니다. 상단 전망 구역은 하강 없이도 접근 가능합니다."
+                },
+                {
+                  "label": "감천 골목은 경사져 있어 비 오면 미끄러움",
+                  "detail": "접지력 있는 신발을 착용하고 오르막에서 일정 속도를 조절하세요. 주요 포토 구역은 비교적 완만한 길로 접근 가능합니다."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "픽업 & 하차",
+            "preview": "부산 지하철 3개 픽업 지점: 서면역 4번 (08:30), 부산역",
+            "content": [
+              "부산 지하철 3개 지점 픽업: 서면역 4번 출구(08:30), 부산역 4번 출구(이후), 해운대역(마지막).",
+              "하차 순서: 남포동/자갈치 약 17:50, 부산역 약 18:10, 서면 약 18:30, 해운대 약 18:50.",
+              "실질 투어 시간은 픽업 지점에 따라 다름: 서면 약 10시간, 해운대 약 9.5시간."
+            ]
+          },
+          {
+            "id": "what-to-bring",
+            "title": "복장 & 준비물",
+            "preview": "그립 있는 편한 신발 — 감천 경사 골목 및 용궁사 108계단",
+            "content": [
+              "미끄럼 방지 기능의 편안한 워킹화 — 감천 문화 마을 경사 골목과 용궁사 108 계단 모두 접지력 필요.",
+              "냉방 차량과 용궁사 해풍 대비 가벼운 겉옷 한 벌.",
+              "카메라/간편한폰 (감천과 청사포가 포토 하이라이트).",
+              "점심(₩10,000~₩20,000), 청사포 스카이캡슐/해변 열차 선택 이용을 위한 현금 또는 카드."
+            ]
+          },
+          {
+            "id": "weather-policy",
+            "title": "날씨 정책",
+            "preview": "연중 운영.",
+            "content": [
+              "연중 운영.",
+              "가벼운 비: 일정대로 진행 — 비 내리는 용궁사도 특유의 분위기가 있으며, 감천 포토 루트는 우산 씬으로 변신.",
+              "폭우·폭풍: 여행사가 루트를 조정할 수 있음 (용궁사 하단 사찰 구역은 비에 미끄러울 수 있음).",
+              "태풍급 날씨: 여행사 측 전액 환불 또는 재예약."
+            ]
+          },
+          {
+            "id": "inclusions",
+            "title": "포함 사항",
+            "preview": "부산 3개 역 픽업·하차, 에어컨 미니 코치 이동",
+            "content": [
+              "3개 부산 지하철역 픽업·하차, 에어컨 미니코치, 공인 영어 가이드 포함.",
+              "미포함: 점심(₩10,000~₩20,000), 청사포 스카이캡슐 선택(4인 기준 약 ₩30,000~₩35,000), 기타 유료 선택 체험.",
+              "모든 기타 명소 입장 무료: 용궁사, 유엔기념공원, 감천 마을, 자갈치 시장."
+            ]
+          },
+          {
+            "id": "language",
+            "title": "언어",
+            "preview": "투어 주요 언어: 영어.",
+            "content": [
+              "기본 투어 언어: 영어.",
+              "중국어 가이드는 요청 시 가능 — 출발 3일 이상 전 예약.",
+              "투어 중 메뉴, 간판, 매대 소통은 한국어로 진행; 가이드가 통역 처리."
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "도보 & 지형",
+            "preview": "중간~도전적.",
+            "content": [
+              "중간~힘든 난이도.",
+              "용궁사는 사찰까지 석계 108개 (건너뛸 수 있음 — 위층 전망 플랫폼 있음).",
+              "감천은 포토 루트 전체에 가파른 골목과 계단이 있는 경사 마을 — 접지력 있는 신발 필수.",
+              "유엔기념공원은 평탄.",
+              "자갈치 실내 시장은 평탄하지만 혼잡.",
+              "총 도보 약 4~5km + 계단."
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "계절별 안내 확인"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "계절별 안내 확인"
+          },
+          "_seasonalSummary": "부산은 한국 남부의 대표 해안 도시로, 서울보다 겨울이 온화하고 비가 조금 더 많은 편입니다. 여름은 습하며 7월 장마철 강수량이 많을 수 있습니다."
+        },
+        "seasonalVariations": [
+          {
+            "season": "봄 (3~5월)",
+            "description": "3월 말~4월 초 청사포 해안과 해운대 블루라인파크 길변 벚꽃. 부산 최고의 사진 시즌."
+          },
+          {
+            "season": "여름 (6~8월)",
+            "description": "낮 시간이 길고; 해안 코스는 내륙보다 서늘함. 7월 장마 시 야외 체류 시간 단축 가능."
+          },
+          {
+            "season": "가을 (9~11월)",
+            "description": "시계 가장 맑고 바다 수온 가장 따뜻 — 전체 최고 시즌. 10월 하순 단풍. 청사포 해안 황금빛 햇살."
+          },
+          {
+            "season": "겨울 (12~2월)",
+            "description": "관광객 적음; 맑은 해상 조망; 한국 기준 온난 (부산 겨울 최저 5~10°C). 용궁사 새해 일출 명소."
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "공인 현지 여행사",
+            "description": "부산 자격증 가이드",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "부산 시티 투어를 매일 운행하는 공인 현지 여행사 — 공인 영어·중국어 가이드."
+          },
+          {
+            "icon": "users",
+            "title": "소그룹",
+            "description": "최대 약 12인",
+            "iconBg": "bg-pink-50/80",
+            "iconColor": "text-pink-600",
+            "body": "소그룹 미니밴(최대 12인)으로 감천의 좁은 골목길을 여유롭게 이동합니다."
+          },
+          {
+            "icon": "shield",
+            "title": "전 입장료 무료",
+            "description": "주요 입장료 포함",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "7개 주요 경유지 모두 무료 입장 — 숨겨진 현장 추가 비용이 없습니다."
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "즉시",
+            "title": "즉시 확인",
+            "detail": "행정 요약 포함 예약 확인서 발송",
+            "description": "픽업 지점·시각 포함 즉시 예약 확인서 발송."
+          },
+          {
+            "timing": "전날",
+            "title": "픽업 안내",
+            "detail": "픽업 장소와 차량 정보를 WhatsApp으로 발송.",
+            "description": "각 픽업 지점 위치 상세 안내 발송."
+          },
+          {
+            "timing": "투어 당일 오전",
+            "title": "픽업 확인",
+            "detail": "드라이버가 도착 10분 전에 연락합니다.",
+            "description": "출발 전날 저녁 최종 픽업 시각 재확인."
+          },
+          {
+            "timing": "투어 중",
+            "title": "투어 중 지원",
+            "detail": "운영팀 직통 연락",
+            "description": "가이드가 매 경유지에서 직접 안내 제공."
+          },
+          {
+            "timing": "하루 끝",
+            "title": "유연한 하차",
+            "detail": "남포동, 부산역, 서면, 해운대 중 하차 장소 선택 (오전 픽업의 역순).",
+            "description": "귀환 경로 상 여러 지점에서 선택적 하차 가능."
+          },
+          {
+            "timing": "투어 종료 후",
+            "title": "후기 & 팔로업",
+            "detail": "선택적 리뷰 및 후속 연락",
+            "description": "투어 후 피드백 요청 전송."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "first-time",
+            "question": "부산을 처음 방문하는 분에게 좋은가요?",
+            "answer": "네, 이 투어는 사찰·해안·기념관·예술 마을·수산시장으로 이어지는 부산 정통 하루 코스입니다. 하루 시간이 있다면 이 코스가 첫 방문에 적합합니다."
+          },
+          {
+            "id": "stairs",
+            "question": "용궁사 계단이 많은가요?",
+            "answer": "상부 광장에서 사찰 플랫폼까지 108개 돌계단이 있습니다. 이 투어에서 가장 체력이 필요한 구간입니다. 계단이 부담스러운 경우 상부 광장에서 관람만 해도 됩니다."
+          },
+          {
+            "id": "gamcheon-walking",
+            "question": "감천 언덕길이 힘들지 않나요?",
+            "answer": "보통~도전적 수준입니다. 골목이 가파르고 좁으며 계단이 많습니다. 바닥이 미끄럽지 않은 신발을 신고 천천히 이동하면 됩니다. 주요 포토존은 버스 하차 지점에서 짧게 걸어서 닿을 수 있어, 깊은 탐방이 부담스러운 분도 기본 코스를 둘러볼 수 있습니다."
+          },
+          {
+            "id": "sky-capsule",
+            "question": "청사포 스카이 캡슐이 포함되어 있나요?",
+            "answer": "포함되지 않습니다. 스카이 캡슐(4인승 ₩30,000~35,000)과 해변 열차(₩7,000)는 별도 구매 선택 사항입니다."
+          },
+          {
+            "id": "lunch",
+            "question": "점심이 포함되어 있나요? 메뉴는 어떻게 되나요?",
+            "answer": "포함되지 않습니다. 점심 식사비는 별도(약 ₩10,000~20,000). 현지 선택지: 돼지국밥(부산식 돼지 수육 국밥), 밀면(부산식 냉면), 또는 해산물."
+          },
+          {
+            "id": "kids",
+            "question": "어린이와 함께할 수 있나요?",
+            "answer": "만 6세 이상 추천. 용궁사 계단과 감천 언덕길이 주요 체력 포인트이며, 두 곳 모두 단축 경로가 있습니다."
+          },
+          {
+            "id": "seniors",
+            "question": "어르신도 참여할 수 있나요?",
+            "answer": "용궁사 계단과 감천 언덕으로 인해 체력 부담이 있습니다. 활동적인 어르신께 권장하며, 블루라인파크 해변 열차를 이용하면 부담을 줄일 수 있습니다."
+          },
+          {
+            "id": "language",
+            "question": "가이드 언어는 무엇인가요?",
+            "answer": "주로 영어입니다. 중국어 가이드는 요청 시 가능하며, 예약 3일 이상 전에 신청해야 합니다."
+          },
+          {
+            "id": "pickup",
+            "question": "픽업 장소는 어디인가요?",
+            "answer": "부산 3개 중심 역: 서면역 4번 출구(08:30), 부산역 4번 출구(08:50), 해운대역 5번 출구(09:30)."
+          },
+          {
+            "id": "drop-off",
+            "question": "하차 장소는 어디인가요?",
+            "answer": "귀환 경로 여러 지점: 남포동·자갈치(약 17:50, 마지막 경유지), 부산역(약 18:10), 서면역(약 18:20), 해운대역(약 18:40)."
+          },
+          {
+            "id": "compare",
+            "question": "다른 부산 투어와 어떻게 다른가요?",
+            "answer": "이 투어는 7곳 클래식 하루 코스입니다. 경주 추가(유네스코 콘텐츠)를 원하시면 부산-경주 일일 투어를 참고하세요. 프라이빗을 원하시면 부산 전용 차량 투어를 이용하세요."
+          },
+          {
+            "id": "yonggungsa-best-time",
+            "question": "용궁사 방문 최적 시간은 언제인가요?",
+            "answer": "이 투어 기준 약 10:00 도착 — 정오 단체 관광객보다 이르고, 사찰 동쪽 면에 아침 햇살이 드는 시간입니다."
+          },
+          {
+            "id": "tower-included",
+            "question": "부산 타워 전망대가 이 투어에 포함되나요?",
+            "answer": "포함되지 않습니다. 이 7곳 코스는 감천과 청사포를 우선하는 구성으로, 부산 타워는 포함되지 않습니다."
+          },
+          {
+            "id": "walking",
+            "question": "도보 이동이 얼마나 되나요?",
+            "answer": "약 4~5km + 용궁사 108계단(선택) + 감천 언덕. 유엔공원과 자갈치는 평탄합니다. 편안한 운동화 착용을 권장합니다."
+          },
+          {
+            "id": "family",
+            "question": "가족 여행에 적합한가요?",
+            "answer": "계단을 소화할 수 있는 초등학생 이상(만 6+) 어린이와 함께하는 가족에게 적합합니다."
+          },
+          {
+            "id": "rain",
+            "question": "비가 오면 어떻게 되나요?",
+            "answer": "가벼운 비: 예정대로 진행. 강우 시: 용궁사 하부와 감천 계단이 미끄러워져 이동 속도를 조절합니다. 실내 대안(자갈치 2층 식당 등)을 활용합니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "인",
+          "priceNote": "소그룹 요금은 상품 정보 기준으로 확인 중입니다. 유사 부산 일일 투어는 여행사에 따라 약 $41~70 수준이며, 확정 후 AtoC Korea 판매가에는 정률 10% 할인이 적용됩니다."
+        }
+      }
+    }
+  ],
+  "pickup_dropoff": {
+    "type": "meeting_point",
+    "meeting_points": [
+      {
+        "name": "서면역 4번 출구",
+        "time": "08:30"
+      },
+      {
+        "name": "부산역 4번 출구 (KTX 개찰구가 아님)",
+        "time": "08:50"
+      },
+      {
+        "name": "해운대역 5번 출구",
+        "time": "09:30"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "남포동 / 자갈치(마지막 관광지 하차 지점)",
+        "approx_time": "≈ 17:50"
+      },
+      {
+        "name": "부산역 4번 출구",
+        "approx_time": "≈ 18:10"
+      },
+      {
+        "name": "서면역 4번 출구",
+        "approx_time": "≈ 18:30"
+      },
+      {
+        "name": "해운대역 5번 출구",
+        "approx_time": "≈ 19:00"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "예약 시 호텔에서 가장 가까운 픽업 출구를 선택해 주세요. 하차는 복귀 순서에 따라 순차적으로 진행되며, 서면(08:30) 탑승객은 약 10시간으로 가장 긴 일정, 해운대 탑승객은 약 9.5시간으로 가장 짧은 일정이 됩니다."
+  },
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v15.3"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v15.3_operational_fill": "Filled operational data (visitBasics, convenience, smartNotes) for 5 attraction stops from centralized POI knowledge base. Sources: VisitKorea, VisitBusan, VisitSeoul, official tourism boards.\n  - Stop #2 Haedong Yonggungsa Temple: filled [visitBasics, convenience, smartNotes]\n  - Stop #3 Cheongsapo & Haeundae Blue Line Park: filled [visitBasics, convenience, smartNotes]\n  - Stop #5 UN Memorial Cemetery: filled [visitBasics, convenience, smartNotes]\n  - Stop #6 Gamcheon Culture Village: filled [visitBasics, convenience, smartNotes]\n  - Stop #7 Jagalchi Fish Market: filled [visitBasics, convenience, smartNotes]",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      }
+    }
+  },
+  "priceSource": {
+    "discountPct": 10,
+    "discountNote": "마켓플레이스 기준가 대비 10% 할인",
+    "amount": null,
+    "currency": "USD"
+  }
+}

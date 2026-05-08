@@ -1,0 +1,1935 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "busan-private-car-charter-cruise-shore",
+  "locale": "en",
+  "product_id": "busan-private-car-charter-cruise-shore",
+  "seo": {
+    "pageTitle": "Busan Private Car Charter for Cruise Shore (8hr) | AtoC Korea",
+    "metaDescription": "8-hour fully customizable Busan private car charter for cruise passengers. English-speaking driver, on-time return guaranteed, hotel/KTX/cruise port pickup.",
+    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+    "primaryKeywords": [
+      "Busan private car charter",
+      "Busan cruise shore excursion",
+      "Busan private day tour cruise",
+      "Busan English-speaking driver",
+      "8-hour Busan private tour"
+    ],
+    "title": "Busan Private Car Charter · Cruise Shore Day · 8-Hour Customizable"
+  },
+  "catalog_card": {
+    "slug": "busan-private-car-charter-cruise-shore",
+    "title": "Busan Private Car Charter for Cruise Shore",
+    "subtitle": "Design your own Busan day with a licensed English-speaking driver-guide and an air-conditioned private vehicle — on-time return guaranteed.",
+    "region": "Busan (cruise port + downtown)",
+    "duration": "8 hours",
+    "stopsCount": 5,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "Private Tour",
+      "Customizable Route",
+      "Cruise Pickup Included"
+    ],
+    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+    "priceLabel": "Per-vehicle pricing — confirm at booking",
+    "shortCardDescription": "An 8-hour private car charter for Busan cruise passengers with a licensed English-speaking driver-guide. Default itinerary covers UN Memorial Cemetery, Taejongdae cliffs, Gamcheon Culture Village, Yongdusan Park, and Jagalchi Market. Fully customizable. Pickup at the cruise terminal, KTX station, or any central Busan hotel; on-time return to the ship is guaranteed.",
+    "tags": [
+      "private_tour",
+      "customizable_route",
+      "cruise_pickup_included",
+      "on_time_return_guaranteed"
+    ]
+  },
+  "headlineLine1": "Busan Private",
+  "headlineLine2": "Cruise Shore Charter",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "vehicle"
+  },
+  "hero": {
+    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+    "imagePosition": "center 50%",
+    "tagline": "From UN Memorial Cemetery to Taejongdae cliffs to Gamcheon's painted alleys to Jagalchi's working harbor — eight private hours, your route, your pace, with on-time return to your ship guaranteed.",
+    "pills": [
+      "Private Vehicle",
+      "Licensed Driver-Guide",
+      "On-Time Cruise Return"
+    ],
+    "meta": {
+      "duration": "8 hours",
+      "region": "Busan (cruise + downtown)",
+      "stops": "Custom",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Overview"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerary"
+    },
+    {
+      "id": "details",
+      "label": "Details"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ"
+    },
+    {
+      "id": "reviews",
+      "label": "Reviews"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "Photo Value",
+      "value": "Good",
+      "level": 4
+    },
+    {
+      "icon": "mountain",
+      "label": "Scenic",
+      "value": "Good",
+      "level": 4
+    },
+    {
+      "icon": "footprints",
+      "label": "Walking",
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Rain Safety",
+      "value": "Excellent",
+      "level": 5
+    },
+    {
+      "icon": "users",
+      "label": "Family Fit",
+      "value": "Excellent",
+      "level": 5
+    },
+    {
+      "icon": "gauge",
+      "label": "Balance",
+      "value": "Flexible",
+      "level": 5
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+      "alt": "Busan International Cruise Terminal with ship docked",
+      "caption": "Pickup at Busan Cruise Terminal",
+      "location": "Cruise terminal",
+      "atmosphere": "Departure"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+      "alt": "UN Memorial Cemetery flags and Wall of Remembrance",
+      "caption": "UN Memorial Cemetery — 22 sending-state flags",
+      "location": "UN Memorial Cemetery",
+      "atmosphere": "Reflective"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+      "alt": "Taejongdae cliff observation deck over the East Sea",
+      "caption": "Taejongdae cliffs and Yeongdo Lighthouse",
+      "location": "Taejongdae",
+      "atmosphere": "Coastal scenic"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+      "alt": "Gamcheon Culture Village pastel painted hillside",
+      "caption": "Gamcheon Culture Village rainbow rooftops",
+      "location": "Gamcheon",
+      "atmosphere": "Colorful"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+      "alt": "Busan Diamond Tower at Yongdusan Park",
+      "caption": "Yongdusan Park & Busan Diamond Tower",
+      "location": "Yongdusan Park",
+      "atmosphere": "Urban"
+    },
+    {
+      "id": "g6",
+      "type": "photo",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/61/2702561_image2_1.JPG",
+      "alt": "Jagalchi seafood market vendors and live fish display",
+      "caption": "Jagalchi Fish Market — Korea's largest seafood market",
+      "location": "Jagalchi Market",
+      "atmosphere": "Lively"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "Cruise arrival + 30 min",
+      "duration": "30 min",
+      "name": "Pickup at Busan Cruise Terminal (or hotel/KTX)",
+      "category": "Departure",
+      "description": "Private chauffeur meets you at one of three pickup points: **Busan Port International Cruise Terminal** in Dongsam-dong, Yeongdo-gu (the dedicated cruise pier — used by large vessels including Royal Caribbean's Quantum-class ships and Princess Cruises that exceed Busan Harbor Bridge's 64m clearance), the **Busan Port International Passenger Terminal** at 206 Chungjang-daero in Choryang-dong (opened **August 31, 2015** — Asia's second-largest passenger terminal after Shanghai, with annual capacity of **2.78 million passengers** across 5 buildings totaling 92,945 m²), or your downtown hotel / KTX Busan Station. Pickup is timed for **30 minutes after your ship's posted clearance time** to absorb immigration variance. Driver carries an English/Korean name placard and a **printed itinerary card** with all stop times, addresses in Korean script (for emergency taxi use), and the operator's 24/7 contact number. Vehicle is a **private sedan or van for your party only** (no other passengers) — luggage stays in the trunk while you tour.",
+      "highlights": [
+        "**Three pickup options**: Cruise Terminal (Yeongdo), International Passenger Terminal (Choryang), or hotel/KTX",
+        "**Private vehicle** — your party only, no shared passengers",
+        "Driver carries name placard + Korean/English itinerary card",
+        "Pickup buffered 30 min after ship clearance time"
+      ],
+      "whyOnRoute": "Three pickup points cover both cruise terminal types in Busan (large-ship cruise pier in Dongsam-dong vs ferry/medium-cruise International Passenger Terminal in Choryang) plus city hotels and KTX. The 30-minute buffer after ship arrival absorbs immigration delays — common with crews of 3,000+ pax disembarking simultaneously.",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_cruise_pickup",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Busan Port Authority",
+          "CruiseMapper",
+          "NamuWiki"
+        ]
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG"
+    },
+    {
+      "number": 2,
+      "time": "≈ 09:30",
+      "duration": "60 min",
+      "name": "UN Memorial Cemetery (Korean War)",
+      "category": "Memorial & History",
+      "description": "**United Nations Memorial Cemetery in Korea (UNMCK) — the ONLY UN memorial cemetery in the world** — established by **United Nations Command on January 18, 1951** during the Korean War, dedicated **April 6, 1951 by General Matthew Ridgway**, and **donated by the Republic of Korea to the UN in 1959** under a UN General Assembly resolution. The cemetery honors fallen personnel from the **22 sending nations** of the UN Command (16 combat + 6 medical) and today maintains **2,300 graves from 11 countries** (most repatriations occurred in the late 1950s). The 14-hectare grounds include the **Main Gate** designed by Korean modernist architect **Kim Joong-up (1966)**, the **Memorial Service Hall** with a 12-minute documentary in English, the **Symbolic Area** where the 22 sending-state flags fly, the **US Korean War Memorial** sculpture by Frank Gaylord (American Battle Monuments Commission, 2013), and the **Wall of Remembrance** dedicated in 2006 — **40,896 names** etched on **140 marble panels** representing every UN combatant killed in Korea. Each November 11 at 11:00 AM, the **'Turn Toward Busan' ceremony** is held simultaneously at the cemetery and at memorials in 22 nations worldwide — the only time of year all sending-state flags lower in unison. Admission is **free**, hours **09:00–18:00 (May–Sep) / 09:00–17:00 (Oct–Apr)**, and the entire grounds are **wheelchair-accessible** with paved paths. The cemetery is **administered by the international UN Memorial Cemetery Commission** and protected under **UN General Assembly Resolution 977(X) of December 15, 1955** as sovereign UN-administered territory.",
+      "highlights": [
+        "**ONLY UN memorial cemetery in the world** — established Jan 18, 1951; donated by Korea to UN in 1959",
+        "**22 sending nations** honored; **2,300 graves from 11 countries** today",
+        "**Wall of Remembrance (2006)** — 40,896 names on 140 marble panels",
+        "Main Gate by Korean architect **Kim Joong-up (1966)**",
+        "**'Turn Toward Busan' ceremony** Nov 11 at 11:00 AM (synchronized worldwide)",
+        "**Free admission**, 100% wheelchair-accessible",
+        "**Frank Gaylord US Korean War Monument (2013, dedicated by American Battle Monuments Commission)** — by the same sculptor as the National Mall Korean War Veterans Memorial 'The Column' in Washington DC (1995)",
+        "**Adjacent UN Sculpture Park** — 34 sculptures donated by sculptors from 21 nations who fought in the Korean War; opened October 24, 2001 as 50th-anniversary commemoration",
+        "**UN General Assembly Resolution 977(X) of December 15, 1955** officially established UNMCK as UN-administered protected territory under international UN Memorial Cemetery Commission"
+      ],
+      "timeUsed": [
+        "Symbolic Area + 22 sending-state flag plaza (~10 min)",
+        "Memorial Service Hall + 12-min English documentary (~15 min)",
+        "Wall of Remembrance + Memorabilia Hall (~20 min)",
+        "Reflection time + photographs (~10 min)",
+        "Walk back to vehicle (~5 min)"
+      ],
+      "whyOnRoute": "UNMCK is **the most globally significant Korean War heritage site in Busan** and a sober counterpoint to the rest of the day's coastal/cultural circuit. The 09:30 arrival catches it before tour-bus groups peak (~11:00) and the 60-minute window allows the documentary, Wall, and reflection without rushing. Wheelchair-accessibility makes it the lowest-mobility stop of the day — a deliberate gentle opener. For cruise guests on tight reboarding windows the 60-min dwell is the day's most schedule-flexible stop — visitors can compress to ~30 min while still covering documentary + Symbolic Area + Wall, or extend to 75 min for the Sculpture Park.",
+      "_poi_meta": {
+        "poi_key": "un_memorial_cemetery",
+        "kb_version": "1.25",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNMCK official (unmck.or.kr)",
+          "Wikipedia",
+          "American Battle Monuments Commission",
+          "Korea Tourism Organization (VisitKorea)",
+          "Visit Busan official",
+          "American Battle Monuments Commission (US Korean War Monument at Busan)",
+          "UN General Assembly Resolution 977(X) (December 15, 1955)"
+        ]
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+      "visitBasics": {
+        "hours": "09:00–18:00 (May–Sep) / 09:00–17:00 (Oct–Apr)",
+        "closed": "Open year-round (Memorial Service Hall closed during ceremonies)",
+        "admission": "FREE admission",
+        "walking": "100% wheelchair-accessible — flat paved paths across the 14-hectare grounds"
+      },
+      "convenience": {
+        "restroom": "At the Visitor Center and Memorial Service Hall",
+        "parking": "Free on-site parking + tour-coach drop-off zone"
+      },
+      "smartNotes": {
+        "photo": "**Wall of Remembrance** (40,896 names on 140 marble panels), **Symbolic Area** with 22 sending-state flags, and the **Frank Gaylord US Korean War Monument (2013)** — same sculptor as the Washington DC National Mall memorial. Photography permitted; respectful silence requested.",
+        "tip": "**Only UN cemetery in the world** under UN-administered protected territory (UN GA Resolution 977(X), 1955). The annual **'Turn Toward Busan' ceremony on November 11 at 11:00 AM** is the only time all 22 sending-state flags lower in unison."
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 10:45",
+      "duration": "75 min",
+      "name": "Taejongdae coastal cliffs",
+      "category": "Coast",
+      "description": "**Taejongdae (태종대) — Busan Monument No. 28** (jointly with Oryukdo Islands) — is a **natural park at the southernmost tip of Yeongdo Island** named after **King Taejong Muyeol of Silla (604–661 CE, 29th king)** who is said to have practiced archery here after **unifying the Three Kingdoms**. The signature feature is the **wave-cut terrace called Sinseon Rock** below Yeongdo Lighthouse — geologists date its formation to the **fourth interglacial period (~120,000 years ago)** through a long process of marine erosion against sedimentary rock with visible concentric patterns and fault zones. The **Yeongdo Lighthouse** above the cliffs is **Busan's oldest lighthouse, built 1906** (10th in Korea), with its modern successor tower added 2004 — the original light has guided Busan-bound ships for over a century and was renovated in 2004 into a maritime culture space (See & Sea Gallery + Natural History Museum + observatory + café). Hiking the full 4.3 km loop is strenuous; most visitors ride the **Danubi Train** (~₩4,000 round-trip adult, departs from the entrance plaza) which stops at Taewon Pebble Beach → Gumyeongsa Temple → the Observatory → Yeongdo Lighthouse → Taejongsa Temple. From the **3-story Observatory**, panoramic views extend to **Tea Kettle Island (Saengdo)** and — on clear days — **Japan's Tsushima Island, 50 km southeast**. Two legends define the site: **Mangbuseok Rock** (a faithful wife who turned to stone waiting for her husband taken by Japanese pirates) and the **'Light Beyond Limitation' sculpture** by Korean artist Ji Sul Won Kyung-Lee (blue ring = ocean/sky, red = earth, silver point = lighthouse beam). **Taejongsa Temple** inside the park hosts an annual hydrangea festival late June–early July. Park hours: **04:00–24:00 (Mar–Oct) / 05:00–24:00 (Nov–Feb)**, **free admission**.",
+      "highlights": [
+        "**Busan Monument No. 28** — wave-cut terrace ~120,000 years old (4th interglacial period)",
+        "Named after **King Taejong Muyeol of Silla** (604–661 CE, Three Kingdoms unifier)",
+        "**Yeongdo Lighthouse — Busan's oldest, built 1906** (10th in Korea); renovated 2004",
+        "**3-story Observatory** with views to **Tsushima Island (Japan, 50 km)** on clear days",
+        "**Danubi Train** ~₩4,000 RT — 5 stops along 4.3 km coastal loop",
+        "**Mangbuseok Rock** legend + **'Light Beyond Limitation' sculpture** (Ji Sul Won Kyung-Lee)",
+        "Park free; trails strenuous (lighthouse area = many steep stairs)",
+        "**Designated Busan National Geopark site (2013) + State-Designated Cultural Property Scenic Site No. 17 (2005)** — dual heritage status protecting the Cretaceous-era sedimentary cliffs, wave-cut terraces, orbicular hornfels, and slumping structures",
+        "**Annual Hydrangea Culture Festival** at Taejongsa Temple (late June – early July) draws 100,000+ visitors to the bigleaf-hydrangea flower carpet inside the park grounds"
+      ],
+      "timeUsed": [
+        "Coach drop-off + Danubi Train ticket purchase (~10 min)",
+        "Train to Observatory + 3-floor panorama (~20 min)",
+        "Walk to Yeongdo Lighthouse + 'Light Beyond Limitation' sculpture (~15 min)",
+        "Cliff-edge views toward Mangbuseok Rock + Sinseon Rock area (~20 min)",
+        "Train back to entrance + reassemble (~10 min)"
+      ],
+      "whyOnRoute": "Taejongdae is **the canonical Busan natural-scenery anchor** and pairs ideally with the urban Gamcheon-Yongdusan-Jagalchi cluster later: the day moves from solemn (UN cemetery) → wild coast (Taejongdae) → city color (Gamcheon) → city overview (Yongdusan tower) → market (Jagalchi). The 75-min window covers the Observatory + Lighthouse loop without forcing the strenuous full 4.3 km circuit; the Danubi Train makes the elevation accessible. For cruise guests the 75-min Danubi Train + Observatory + Lighthouse loop is the day's most efficient access to Busan's wild coastline — without the train this stop would require 2+ hours to do justice.",
+      "_poi_meta": {
+        "poi_key": "taejongdae",
+        "kb_version": "1.25",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Busan Geopark official",
+          "Visit Busan (visitbusan.net)",
+          "Wikipedia",
+          "Busan Metropolitan City",
+          "Yeongdo Lighthouse archive (1906 records)",
+          "Busan National Geopark official (busan.go.kr/geopark)"
+        ]
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+      "visitBasics": {
+        "hours": "Park 04:00–24:00 (Mar–Oct) / 05:00–24:00 (Nov–Feb); Danubi Train 09:00–sunset",
+        "closed": "Open year-round (Danubi Train suspends in heavy rain or strong wind)",
+        "admission": "FREE park entry; **Danubi Train ~₩4,000 round-trip adult**, ~₩2,000 child",
+        "walking": "Full 4.3 km coastal loop is strenuous; **Danubi Train** stops at Pebble Beach → Gumyeongsa → Observatory → Yeongdo Lighthouse → Taejongsa Temple"
+      },
+      "convenience": {
+        "restroom": "At the entrance plaza, Observatory, and Yeongdo Lighthouse area",
+        "parking": "Large free parking lot at the entrance plaza"
+      },
+      "smartNotes": {
+        "photo": "**3-story Observatory** (panorama to **Tsushima Island, Japan, 50 km southeast** on clear days), **Yeongdo Lighthouse — Busan's oldest, built 1906**, and the wave-cut **Sinseon Rock terrace (~120,000 years old, 4th interglacial period)** below the lighthouse.",
+        "tip": "Skip the strenuous 4.3 km hike — board the **Danubi Train** for the 5-stop loop. **Taejongsa Temple's Hydrangea Festival** runs late June to early July. Lighthouse area has many steep stairs — not stroller-friendly."
+      }
+    },
+    {
+      "number": 4,
+      "time": "≈ 12:30",
+      "duration": "60 min",
+      "name": "Lunch (local Busan restaurant)",
+      "category": "Meal",
+      "description": "Lunch at a guide-recommended **local Busan restaurant** in either Yeongdo or Nampo-dong — selection driven by your party's preference. Typical options include **Dwaeji Gukbap** (Busan's signature pork-and-rice soup at one of the Seomyeon Dwaeji-gukbap-geori veterans), **Milmyeon** (Busan's wheat-noodle answer to North Korean naengmyeon, originated in Korean War refugee kitchens c.1950), or **Hoe** (raw fish from Jagalchi if your appetite leans seafood). **Lunch is not included** in the tour price — your driver can recommend per budget (₩10,000–25,000/person typical). Vegetarian / halal / allergen requests are accommodated with **prior notice (24h preferred)**.",
+      "highlights": [
+        "Driver recommends per party preference (Korean / seafood / international)",
+        "Typical Busan options: **Dwaeji Gukbap**, **Milmyeon**, **Hoe (raw fish)**",
+        "**Lunch is at your own cost** (~₩10,000–25,000/pp typical)",
+        "Dietary requests accommodated with 24h notice"
+      ],
+      "whyOnRoute": "12:30 lunch slot positions the meal between Taejongdae (coastal) and Gamcheon (hillside) — the most natural break in the day's cadence. Driver-recommended local restaurants outperform tourist-zone defaults; guests can ride the recommendation or request a specific cuisine at the morning pickup briefing.",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_lunch",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29"
+      },
+      "visitBasics": {
+        "hours": "Restaurant-dependent (typical 11:30–14:30 lunch service)",
+        "closed": "Varies by venue; driver confirms availability",
+        "admission": "**Pay direct, ~₩10,000–25,000 per person**; lunch is **NOT included** in tour price",
+        "walking": "Minimal — restaurant within 5 min walk of vehicle drop-off"
+      },
+      "convenience": {
+        "restroom": "Inside the restaurant",
+        "parking": "Driver drops off and waits at nearest legal stand"
+      },
+      "smartNotes": {
+        "photo": "**Dwaeji Gukbap** (pork-and-rice soup, Busan's signature comfort dish from the Korean War refugee era) or **Milmyeon** (Busan's wheat-noodle answer to North Korean naengmyeon, originated in 1950s refugee kitchens) make the strongest local food images.",
+        "tip": "**Vegetarian / halal / allergen requests need 24h advance notice**. Driver recommends per party preference (Korean / seafood / international); ride the recommendation or request a specific cuisine at morning pickup."
+      }
+    },
+    {
+      "number": 5,
+      "time": "≈ 14:00",
+      "duration": "75 min",
+      "name": "Gamcheon Culture Village",
+      "category": "Hillside Art Village",
+      "description": "**Gamcheon Culture Village (감천문화마을) — Busan's 'Machu Picchu of Korea' / 'Korean Santorini'** — is a hillside community of **~10,000 residents in pastel-painted homes** that began as a 1955 refugee settlement when **~800 families (~4,000 people) of the Taegeukdo religious community**, founded by Jo Cheol-je, relocated here after the Korean War. The village's signature feature — **no roof blocks the view of the home behind it**, creating the famous tiered-rainbow effect — comes directly from **Taegeukdo philosophy of 'allowing others to prosper'**. Two government art initiatives transformed the village into a tourist destination: **'Dreaming of Machu Picchu' (2009)** and **'Miro Miro' (2010)**, both commissioned by Korea's Ministry of Culture, with murals, sculptures, and installations integrated through the maze of alleys. The village won the **UN-HABITAT Asian Townscape Award in 2012** and now receives **~1.4 million visitors annually**. Anchor photo spots include the **Little Prince and Fox bench** at Sky Garden (Haneul Maru observatory — long queue but no fee), the **rainbow-roof panorama** from Star Viewing Hall, and the **stamp tour map** (~₩2,000) that guides visitors past 9 numbered installations. **Residents still live here** — keep voices down, no drones, no flash photography in alleys, take rubbish with you. Hours **09:00–18:00 (Mar–Oct) / 09:00–17:00 (Nov–Feb)**, **free village entry**, but the steep stairs and narrow alleys are **not stroller- or wheelchair-friendly** in many sections — wear grippy shoes.",
+      "highlights": [
+        "**1955 Taegeukdo refugee settlement** — ~800 families / ~4,000 people founded by Jo Cheol-je",
+        "**Taegeukdo philosophy 'allowing others to prosper'** = no roof blocks neighbor's view",
+        "**'Dreaming of Machu Picchu' (2009)** + **'Miro Miro' (2010)** Ministry of Culture art projects",
+        "**UN-HABITAT Asian Townscape Award 2012**",
+        "**~1.4 million visitors annually**",
+        "**Little Prince and Fox bench** at Sky Garden = signature photo (long queue, free)",
+        "Stamp Tour map ₩2,000 (9 numbered installations)",
+        "Steep alleys + stairs = not stroller-/wheelchair-friendly",
+        "**K-content pilgrimage site** — Running Man Episode 126 (Choi Ji-woo guest), Luca: The Beginning (2021), Ode to My Father (2014), A Little Princess; **KTO '100 Must-Visit Tourist Spots in Korea' five consecutive times**"
+      ],
+      "timeUsed": [
+        "Coach drop-off at upper entrance (~5 min)",
+        "Star Viewing Hall + rainbow-roof panorama (~15 min)",
+        "Sky Garden + Little Prince & Fox bench photo (~20 min)",
+        "Maze-alley walk down through murals + craft shops (~25 min)",
+        "Reassemble at lower exit (~10 min)"
+      ],
+      "whyOnRoute": "Gamcheon is **the visual centerpiece of any Busan day tour** and pairs naturally with Yongdusan (next stop) — both are hillside vantage points 4 km apart, one residential-artistic, one civic-park. 75 minutes is the sweet spot: enough for the Sky Garden + Little Prince queue + a meaningful descent through the alleys, not so long that the mid-afternoon heat / steep walking becomes exhausting before Yongdusan. For cruise guests the 75-min Gamcheon dwell is the day's primary photo-grade stop — Sky Garden + Star Viewing Hall + maze-alley descent is more Instagram-shareable than any other Busan stop on this circuit.",
+      "_poi_meta": {
+        "poi_key": "gamcheon_culture_village",
+        "kb_version": "1.25",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Busan official",
+          "Wikipedia",
+          "UN-HABITAT 2012 Asian Townscape Awards",
+          "Saha-gu Gamcheon Culture Village Committee",
+          "Korea Tourism Organization",
+          "Korea Tourism Organization (100 Must-Visit Tourist Spots in Korea designation)"
+        ]
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+      "visitBasics": {
+        "hours": "09:00–18:00 (Mar–Oct) / 09:00–17:00 (Nov–Feb); info center same hours",
+        "closed": "Open year-round",
+        "admission": "FREE village entry; **Stamp Tour Map ₩2,000** (optional, 9 numbered installations)",
+        "walking": "Steep stair-streets and narrow alleys — **moderate-to-high** difficulty; **NOT stroller- or wheelchair-friendly**; grippy shoes essential"
+      },
+      "convenience": {
+        "restroom": "At the info center plaza and along the main alley",
+        "parking": "Limited — coach drop-off near the info center, no large lot"
+      },
+      "smartNotes": {
+        "photo": "**'Little Prince and Fox bench'** at Sky Garden (Haneul Maru observatory — long queue, free), **rainbow-roof panorama** from Star Viewing Hall, and the **stair-mural alleys**. **No drones, no flash photography in alleys**.",
+        "tip": "**Residents still live here** (~10,000 people, 1955 Taegeukdo refugee settlement) — **keep voices down**, don't enter homes, take rubbish with you. **UN-HABITAT Asian Townscape Award 2012**; ~1.4 million visitors annually. KTO 100 Must-Visit Spots 5x consecutively."
+      }
+    },
+    {
+      "number": 6,
+      "time": "≈ 15:45",
+      "duration": "45 min",
+      "name": "Yongdusan Park & Busan Tower",
+      "category": "City Viewpoint",
+      "description": "**Yongdusan Park (용두산공원, 'Dragon Head Mountain Park')** — a **69,000 m²** civic park at the heart of Nampo-dong with **70 tree species** — is a layered historical site: it was once a **Joseon-era waegwan** (Choryang Wakan, the **Japanese trade-and-diplomacy enclave from 1678 to 1878**), then a Japanese **Ryūtōsan Shrine (17th–early 20th century)**, then a **Korean War refugee shantytown** (most destroyed by 1950s fires), and finally redeveloped as the modern park. The **120-meter-tall Busan Tower** (originally **opened 1973**, **rebranded 'Busan Diamond Tower' after a 2021 redevelopment**) is the park's centerpiece — its **observation deck top is modeled after the baldaquin (canopy) of Dabotap Pagoda (NT 20) at Bulguksa Temple in Gyeongju**, an explicit architectural quotation linking Busan's modern landmark to Silla heritage. The tower stands at **69m above sea level + 120m height = 189m total summit elevation**, offering **360° panoramas** to Busan Port, Yeongdo Bridge, Tsushima Island (clear days), and Jagalchi Market below. Other park monuments: the **bronze statue of Admiral Yi Sun-sin (1545–1598)** (Busan's hometown naval hero who defeated Japanese forces in the 1592–1598 Imjin War, famously **never lost a single ship**), the **Citizens' Bell** donated by **100,000 Busan citizens** (struck **33 times on New Year's Eve and March 1 Independence Movement Day**), the **flower clock** at the entrance, and a **bronze dragon sculpture** symbolic of the mountain's name. Access is via a **covered escalator from Gwangbok-ro Fashion Street** (no return escalator — descend by stairs). **Park free 24h**; **Busan Diamond Tower observatory ₩12,000 adult / ₩9,000 senior 65+ or child 3–12, hours 10:00–22:00 (last admission 21:30)**.",
+      "highlights": [
+        "**'Dragon Head Mountain'** — historically protective barrier against wokou (Japanese pirates)",
+        "Site of **Joseon-era waegwan (Japanese trade enclave 1678–1878)** + **Ryūtōsan Shrine** + Korean War shantytown",
+        "**Busan Tower 1973** → rebranded **Busan Diamond Tower 2021** after redevelopment",
+        "**Tower top modeled after Bulguksa Dabotap baldaquin** (NT 20, Gyeongju) — Silla heritage quotation",
+        "**Statue of Admiral Yi Sun-sin** (1545–1598) — Imjin War turtle-ship hero who never lost a ship",
+        "**Citizens' Bell** — 100,000 donors; struck 33× on New Year's Eve + March 1",
+        "Tower observatory ₩12,000 adult; park free 24h",
+        "**Covered escalator from Gwangbok-ro** — no return escalator",
+        "**Citizens' Bell 33-strike ritual** — struck **33 times on New Year's Eve and March 1st (Independence Movement Day)** — the **33 strikes commemorate the 33 Korean signatories of the 1919 Declaration of Independence** read at Tapgol Park in Seoul; ties Busan's civic identity to national independence narrative"
+      ],
+      "timeUsed": [
+        "Escalator from Gwangbok-ro Fashion Street up to park (~5 min)",
+        "Flower clock + Yi Sun-sin statue + Citizens' Bell photos (~10 min)",
+        "Tower observatory ascent + 360° panorama (~25 min)",
+        "Descent via stairs (~5 min)",
+        "Citizens' Bell pavilion + flower clock + bronze dragon photo (~5 min)"
+      ],
+      "whyOnRoute": "Yongdusan delivers **Busan's most-recognized 360° panorama** at sunset's golden hour — and the tower's quotation of Bulguksa Dabotap connects this stop conceptually to the Gyeongju heritage circuit you might pair this charter with on a multi-day cruise stop. The 45-min window is calibrated for the observatory ascent without forcing a full park stroll; the escalator from Gwangbok-ro removes the climb. For cruise guests Yongdusan is the day's primary weather-fallback — if rain or fog cancels Taejongdae's outdoor cliff loop, the Diamond Tower observatory + park provides a ~75-min indoor alternative within the same dwell window.",
+      "_poi_meta": {
+        "poi_key": "yongdusan_park",
+        "kb_version": "1.25",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Busan official",
+          "Wikipedia",
+          "Busan Diamond Tower official (busandiamondtower.co.kr)",
+          "Korea Tourism Organization",
+          "Busan Metropolitan City heritage records"
+        ]
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+      "visitBasics": {
+        "hours": "Park open 24h; **Busan Diamond Tower observatory 10:00–22:00 (last admission 21:30)**",
+        "closed": "Tower open year-round (occasional safety closures in extreme wind)",
+        "admission": "Park FREE; **Busan Diamond Tower ₩12,000 adult / ₩9,000 senior 65+ or child 3–12**",
+        "walking": "**Covered escalator from Gwangbok-ro Fashion Street** for ascent (no return escalator — descend by stairs)"
+      },
+      "convenience": {
+        "restroom": "At the park plaza and inside Busan Diamond Tower",
+        "parking": "No on-site parking — use Nampo-dong public lots and walk up via escalator"
+      },
+      "smartNotes": {
+        "photo": "From the **120 m Busan Diamond Tower observatory** (189 m total summit elevation) — **360° panorama** to Busan Port, Yeongdo Bridge, and Tsushima on clear days. Tower top **modeled after Bulguksa Dabotap baldaquin (NT 20)** in Gyeongju. Best at **sunset and post-dark**.",
+        "tip": "Pair tower visit with **Admiral Yi Sun-sin statue** (Imjin War turtle-ship hero who never lost a ship) and the **Citizens' Bell** (struck **33 times on New Year's Eve and March 1**, commemorating the 33 signatories of the 1919 Independence Declaration)."
+      }
+    },
+    {
+      "number": 7,
+      "time": "≈ 16:45",
+      "duration": "45 min",
+      "name": "Nampo-dong & Jagalchi Fish Market",
+      "category": "Market & Streetfood",
+      "description": "**Jagalchi Market (자갈치시장) — Korea's largest seafood market** — anchors **Nampo-dong**, Busan's downtown shopping-and-dining district. The name 'Jagalchi' derives from **'jagal' (gravel)**, a reference to the pebbled shoreline where the market originated. After the 1876 opening of Busan to international trade and the post-Korean-War boom, **'Jagalchi Ajumma' women vendors** (war widows and refugees) built the market's identity as a tough, women-led seafood economy. The current **seagull-shaped modern building** (designed by Hyunjun Mihn) **reopened 2006** and houses **~400 vendors across 66,000 m²** — ground floor for live tanks (octopus, abalone, sea cucumber, halibut), second floor for raw-fish (hoe) restaurants where you can buy fish downstairs and have it filleted upstairs (chogochujang dipping sauce + soju standard). Market hours **05:00–22:00 daily**; **closed 1st and 3rd Tuesdays of each month** (verify before visiting). The annual **Jagalchi Cultural Tourism Festival** in October is the single biggest event. Surrounding **Nampo-dong** offers the **BIFF Square** (Busan International Film Festival origin, with handprints of Korean stars in the pavement — Park Chan-wook, Bong Joon-ho, etc.), **Gukje Market** (Korean War refugee market, still 1,500+ stalls), and **Gwangbok-ro Fashion Street**. Address: **52 Jagalchihaean-ro, Jung-gu**. Photo etiquette: **always ask before photographing live tanks or vendors**; Jagalchi Ajumma can be famously direct about cameras. Adjacent live-fish auctions begin at **04:00 daily** at the seafood traders' wholesale market that supplies the public market upstairs (advance booking required for tourist viewing of auctions).",
+      "highlights": [
+        "**Korea's largest seafood market** — ~400 vendors / 66,000 m²",
+        "Name = **'jagal' (gravel)** + **Jagalchi Ajumma** post-war women vendors",
+        "**Modern seagull-shaped building reopened 2006** (designed by Hyunjun Mihn)",
+        "**Hours 05:00–22:00 daily**; **CLOSED 1st & 3rd Tuesdays**",
+        "**Buy-downstairs / eat-upstairs hoe (raw-fish) flow**",
+        "Adjacent: **BIFF Square** (Busan Film Festival), **Gukje Market**, **Gwangbok-ro**",
+        "October **Jagalchi Cultural Tourism Festival**",
+        "Address: **52 Jagalchihaean-ro, Jung-gu**",
+        "**Sannakji (live cut octopus) is Busan's culinary signature** — small octopus cut into still-moving pieces, served with sesame oil and salt; the source of *Old Boy* (2003)'s famous octopus scene that introduced the dish to international audiences"
+      ],
+      "timeUsed": [
+        "Walk from Yongdusan / drop-off near Jagalchi (~5 min)",
+        "Ground floor live-tank walkthrough (~15 min)",
+        "Second-floor hoe restaurant peek + Nampo-dong street photos (~15 min)",
+        "Optional snack purchase + Gwangbok-ro stroll (~10 min)",
+        "Stamp + souvenir purchase from Jagalchi Ajumma stalls (~5 min)"
+      ],
+      "whyOnRoute": "Jagalchi is **the most authentic 'Busan flavor' on a single-day tour** — and pairing it with Nampo-dong's BIFF Square + Gukje Market creates a complete ground-level urban contrast to Yongdusan's elevated overview from minutes earlier. The 45-min window is short by design: after Yongdusan it's about photo + atmospheric experience, not a full meal (which would conflict with cruise re-board timing). For cruise guests this is the most authentic 'Busan flavor' photo opportunity in 45 minutes — live tanks + ajumma vendor culture + seagull-roof architecture in a walk-through that ends close to the ship's reboarding zone.",
+      "_poi_meta": {
+        "poi_key": "jagalchi_market",
+        "kb_version": "1.25",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Busan official",
+          "Jagalchi Market Association (jagalchimarket.bisco.or.kr)",
+          "Wikipedia",
+          "Korea Tourism Organization",
+          "Busan Jung-gu official",
+          "Busan Tourism Organization (Jagalchi Sannakji designation)"
+        ]
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+      "visitBasics": {
+        "hours": "**Jagalchi Market 05:00–22:00 daily**; live-fish auctions begin 04:00 (advance booking for tourist viewing); Nampo-dong shopping streets 10:30–22:00",
+        "closed": "**Jagalchi: 1st and 3rd Tuesdays of each month**; Nampo-dong open year-round",
+        "admission": "FREE access; **2nd-floor hoe restaurants ~₩30,000+ set menus** (price varies by fish)",
+        "walking": "Flat shopping street + market floor — easy; **2nd-floor hoe restaurants** require a short stair climb"
+      },
+      "convenience": {
+        "restroom": "Public restrooms at BIFF Square and inside Jagalchi",
+        "parking": "Use Lotte Department Store or BIFF Square public lots; market itself has no on-site parking"
+      },
+      "smartNotes": {
+        "photo": "**Seagull-shaped modern building (reopened 2006, architect Hyunjun Mihn)**, **live tanks on the ground floor**, **BIFF Square hand prints** (Park Chan-wook, Bong Joon-ho, etc.), and **Gukje Market** (1,500+ stalls). **Always ask before photographing vendors** — Jagalchi Ajumma can be famously direct about cameras.",
+        "tip": "**Buy-downstairs / eat-upstairs hoe flow**: pick fresh seafood on the ground floor, have it filleted at a 2nd-floor restaurant (chogochujang + soju standard). **Sannakji (live cut octopus)** is Busan's culinary signature — the dish from *Old Boy* (2003)."
+      }
+    },
+    {
+      "number": 8,
+      "time": "≈ 17:30",
+      "duration": "30 min",
+      "name": "Return to Busan Cruise Terminal",
+      "category": "Return",
+      "description": "Private vehicle returns directly to your departure point — **Busan Port International Cruise Terminal** in Dongsam-dong (Yeongdo) for large-ship cruises, or **Busan Port International Passenger Terminal** in Choryang for medium cruises and ferries — buffered to **deliver you 60–90 minutes before your ship's all-aboard time**. Driver coordinates with your morning departure point; if your itinerary changed mid-day (e.g., late lunch), the driver alerts dispatch to adjust the buffer. Drop-off is at the terminal arrival hall, where the cruise line's own gangway shuttle typically operates.",
+      "highlights": [
+        "Direct return to original cruise terminal (Dongsam or Choryang)",
+        "**60–90 min buffer before all-aboard**",
+        "Real-time dispatch coordination if mid-day timing shifts"
+      ],
+      "whyOnRoute": "Direct return without intermediate stops protects the all-aboard buffer. 30 minutes covers worst-case rush-hour transit from Nampo-dong back to either terminal; lighter traffic = earlier delivery (drop-off can be optimized for your preferred arrival time).",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_cruise_return",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29"
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG"
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "type": "pickup",
+      "label": "Cruise Port"
+    },
+    {
+      "type": "stop",
+      "label": "UN Cemetery"
+    },
+    {
+      "type": "stop",
+      "label": "Taejongdae"
+    },
+    {
+      "type": "stop",
+      "label": "Gamcheon Village"
+    },
+    {
+      "type": "stop",
+      "label": "Yongdusan Park"
+    },
+    {
+      "type": "stop",
+      "label": "Jagalchi Market"
+    },
+    {
+      "type": "return",
+      "label": "Cruise Port"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": 1,
+      "title": "Memory and the Sea",
+      "summary": "Quiet morning at UN Memorial Cemetery, then dramatic East Sea cliffs at Taejongdae. Reflective and scenic, away from crowds."
+    },
+    {
+      "phase": 2,
+      "title": "Color, Heights, and Harbor",
+      "summary": "After lunch, climb into Gamcheon's painted alleys, then up Yongdusan Park for downtown panoramas, ending at Jagalchi Market by the working harbor."
+    },
+    {
+      "phase": 3,
+      "title": "On-Time Return",
+      "summary": "Direct drive back to the cruise terminal with a 90-minute buffer before the ship's all-aboard call."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "Cruise-day rhythm: memorial → cliffs → village → tower → market",
+    "body": "The default 5-stop itinerary is shaped for cruise passengers: a quiet, easy-walking start (UN Cemetery), a dramatic East Sea moment (Taejongdae), a colorful midday peak (Gamcheon), a downtown panorama (Yongdusan), and a lively, food-forward finish (Jagalchi) — with the cruise terminal a 10-minute return drive from the last stop. Fully customizable: swap any stop for Haedong Yonggungsa Temple, the Sky Capsule, or Beomeosa Temple at booking."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "Cruise passengers wanting maximum Busan in 8 hours, on-time return guaranteed",
+      "Couples and families who prefer a private, customizable day over a fixed group itinerary",
+      "Multi-generational groups including seniors (private vehicle = no walking between transfers)",
+      "First-time Busan visitors who want the iconic stops without group-tour pacing",
+      "Travelers with mobility, dietary, or pace requirements that group tours can't accommodate"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Why a private charter wins for cruise shore days",
+        "icon": "anchor",
+        "items": [
+          {
+            "label": "On-time return is the whole game",
+            "detail": "Group tours run on a fixed clock; private means we monitor your specific ship's all-aboard call and adjust the day to land you back with a 90-minute buffer."
+          },
+          {
+            "label": "Busan is geographically spread out",
+            "detail": "From the cruise port to Taejongdae to Gamcheon to Jagalchi covers ~25 km with bridges and one-way streets. A private vehicle saves the 30–45 min of pickup/dropoff overhead a group tour would lose at every stop."
+          },
+          {
+            "label": "Customize without re-quoting",
+            "detail": "Swap Jagalchi for Haedong Yonggungsa Temple, skip the Tower observatory, add the Sky Capsule, or extend lunch — the price is per vehicle, not per change."
+          }
+        ]
+      },
+      {
+        "title": "What's included vs. pay-direct",
+        "icon": "ticket",
+        "items": [
+          {
+            "label": "Included",
+            "detail": "Private vehicle, English-speaking driver-guide, all toll fees and parking charges. Pickup at cruise terminal / KTX / central Busan hotel."
+          },
+          {
+            "label": "Pay direct",
+            "detail": "Lunch (10,000–20,000 KRW p/p), Danubi Train at Taejongdae (₩4,000), Busan Tower observatory (₩12,000), Sky Capsule if added. All admissions are reasonable — there is no hidden surcharge from us."
+          },
+          {
+            "label": "Add-ons available",
+            "detail": "Gimhae Airport pickup or drop-off as a separate paid service; overtime at 30,000 KRW per hour cash to driver."
+          }
+        ]
+      },
+      {
+        "title": "Cruise-specific safeguards",
+        "icon": "shield-check",
+        "items": [
+          {
+            "label": "Full refund if your ship can't dock",
+            "detail": "Weather-related ship cancellations (typhoon, fog) get a full refund — no questions, no fees."
+          },
+          {
+            "label": "Driver tracks your ship's departure window",
+            "detail": "We sign up for your specific cruise itinerary and pace the day against the actual all-aboard time, not the brochure time."
+          },
+          {
+            "label": "Vehicle plate number shared in advance",
+            "detail": "You know exactly which car you're looking for at the terminal arrival hall — no scrambling among the crowds of cruise meet-and-greets."
+          }
+        ]
+      }
+    ],
+    "sourcing": "Tour design and operational details are based on AtoC Korea's standard private-charter cruise-shore product. Specific cruise lines served include Royal Caribbean, Princess, MSC, Costa, Diamond Princess, and other major operators arriving at Busan International Cruise Terminal."
+  },
+  "practicalAccordionItems": [
+    {
+      "title": "Pickup, drop-off, and the 8-hour window",
+      "icon": "map-pin",
+      "details": [
+        "Pickup is included from the Busan Cruise Terminal arrival hall, Busan Station (KTX) main exit, or any central Busan hotel (Haeundae, Seomyeon, Nampo-dong, Centum City).",
+        "Driver waits with an AtoC Korea sign and the vehicle plate number is shared in advance.",
+        "Drop-off is at the cruise terminal by default (≈ 90 min before all-aboard call) or any central Busan hotel.",
+        "The 8-hour service window starts from your pickup time. Overtime is charged at 30,000 KRW per hour, cash to driver, subject to availability.",
+        "Gimhae International Airport pickup or drop-off is available as a separate paid add-on (not included in the standard cruise-shore window)."
+      ]
+    },
+    {
+      "title": "What's included vs. pay-direct",
+      "icon": "wallet",
+      "details": [
+        "Included: private vehicle, English-speaking driver-guide, all tolls and parking charges, fuel.",
+        "Pay direct: lunch (10,000–20,000 KRW per person), optional Danubi Train at Taejongdae (₩4,000 round-trip), optional Busan Tower observatory (₩12,000 adult), optional Sky Capsule at Haeundae if substituted in (40,000–50,000 KRW per capsule).",
+        "All site admissions on this default itinerary are free except the optional ones listed above."
+      ]
+    },
+    {
+      "title": "Customization and stop swaps",
+      "icon": "sliders-horizontal",
+      "details": [
+        "The default 5-stop cruise itinerary (UN Cemetery → Taejongdae → Gamcheon → Yongdusan → Jagalchi) is fully swappable.",
+        "Common alternates: Haedong Yonggungsa Temple (seaside Buddhist temple, ~40 min east of port), Cheongsapo & Haeundae Sky Capsule, Beomeosa Temple, Songdo Skywalk, Oryukdo Sunrise Park.",
+        "Send your preferred stops at booking and we'll confirm a workable order; we recommend 4–5 attraction stops within the 8-hour window."
+      ]
+    },
+    {
+      "title": "Vehicle, driver, and capacity",
+      "icon": "car",
+      "details": [
+        "Private air-conditioned vehicle. Sedan or SUV for groups of 1–3 passengers, mid-size van for groups of 4–7.",
+        "All drivers are licensed and English-speaking. Multi-language support (Mandarin, Japanese) available on request at booking.",
+        "Vehicle plate number, driver name, and contact phone are shared via email or KakaoTalk before your arrival."
+      ]
+    },
+    {
+      "title": "Weather and ship cancellation policy",
+      "icon": "cloud-rain",
+      "details": [
+        "Full refund if your cruise ship cannot dock at Busan due to weather (typhoon, fog) — no fees, no questions.",
+        "If the day starts dry and turns rainy, the driver will reorder stops to maximize indoor time (Yongdusan Tower, Jagalchi 2F restaurants, museum substitutions).",
+        "Reschedule requests with at least 2 days' notice are processed without fee."
+      ]
+    },
+    {
+      "title": "Languages and accessibility",
+      "icon": "users",
+      "details": [
+        "English-speaking licensed driver-guide is standard. Mandarin or Japanese guides available on request.",
+        "Vehicle is suitable for travelers with limited mobility — door-to-door pickup avoids most walking on transfers.",
+        "Some stops involve uphill or stair walking (Gamcheon, Taejongdae lighthouse stairs). Tell us about mobility needs at booking and we'll adjust the itinerary."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "summary": "Busan has a humid subtropical climate with four distinct seasons. Cruise season concentrates in spring (Mar–May) and autumn (Sep–Nov), both pleasant 12–25°C with low rainfall. Summer (Jun–Aug) brings warm humid weather and occasional monsoon showers. Winter (Dec–Feb) is cool and windy.",
+    "advice": "Layered clothing in spring/autumn; sun protection and light rain shell in summer; warm coat and gloves in winter for the coastal cliffs at Taejongdae."
+  },
+  "seasonalVariations": [
+    {
+      "season": "Spring (Mar–May)",
+      "summary": "Cherry blossoms peak around late March to early April at Dalmaji Hill, Yongdusan Park, and Gwangalli Beach. Pleasant 12–22°C; light layers.",
+      "swaps": "Add a Dalmaji Hill cherry blossom drive-by between Taejongdae and Gamcheon during peak bloom week."
+    },
+    {
+      "season": "Summer (Jun–Aug)",
+      "summary": "Warm and humid, 25–32°C, with monsoon showers possible Jun–Jul. Sunset is late, so an extra coastal stop at the end of the day works well.",
+      "swaps": "Swap the Tower observatory for the Haeundae Sky Capsule (covered, air-conditioned) or add Songdo Skywalk for a sea breeze."
+    },
+    {
+      "season": "Autumn (Sep–Nov)",
+      "summary": "Korea's best travel weather — 15–25°C, low humidity, golden light. Cruise season peaks here.",
+      "swaps": "All default stops shine in autumn; consider adding Beomeosa Temple for autumn foliage."
+    },
+    {
+      "season": "Winter (Dec–Feb)",
+      "summary": "Cool and windy, 0–10°C, but cruise traffic continues. Coastal stops are stark and beautiful.",
+      "swaps": "Limit outdoor time at Taejongdae lighthouse stairs; add a longer Jagalchi stop where indoor 2F restaurants and hot soup are easy options."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "shield-check",
+      "title": "Full refund if your ship can't dock",
+      "detail": "Weather-related cruise cancellations get a full refund — no fees, no questions."
+    },
+    {
+      "icon": "clock",
+      "title": "On-time return guaranteed",
+      "detail": "We track your specific ship's departure window and pace the day to land you back with a 90-minute buffer."
+    },
+    {
+      "icon": "user-check",
+      "title": "Licensed local driver-guide",
+      "detail": "All drivers are professionally licensed, English-speaking, and verified by AtoC Korea's Busan partner network."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "step": 1,
+      "title": "Reserve online",
+      "detail": "Pick a date and pay nothing today — reserve now & pay later."
+    },
+    {
+      "step": 2,
+      "title": "Send your cruise details",
+      "detail": "Share your ship name, arrival date, and dock — we confirm timing within 24 hours."
+    },
+    {
+      "step": 3,
+      "title": "Customize your stops (optional)",
+      "detail": "Send any preferred or skipped stops at least 2 days before the tour."
+    },
+    {
+      "step": 4,
+      "title": "Receive driver details",
+      "detail": "Vehicle plate number, driver name, and contact phone are sent the day before."
+    },
+    {
+      "step": 5,
+      "title": "Meet at the cruise terminal",
+      "detail": "Driver waits at the arrival hall with an AtoC Korea sign within 30 min of disembarkation."
+    },
+    {
+      "step": 6,
+      "title": "On-time return to your ship",
+      "detail": "Drop-off ≈ 90 min before all-aboard call. Hotel or KTX drop-off available instead."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "question": "How many people can the private vehicle take?",
+      "answer": "Sedan or SUV for 1–3 passengers; mid-size van for 4–7 passengers. Larger groups please contact us for a tailored quote."
+    },
+    {
+      "question": "What if my cruise ship is delayed or cannot dock?",
+      "answer": "If your ship cannot dock at Busan due to weather, you receive a full refund — no fees, no questions. If the ship is simply delayed, the driver waits and adjusts the itinerary; the 8-hour window starts from actual pickup time."
+    },
+    {
+      "question": "Can I customize the stops?",
+      "answer": "Yes — fully. Send your preferred stops at booking and we'll confirm a workable order. The default 5-stop cruise itinerary is a starting point, not a fixed plan. Common substitutions include Haedong Yonggungsa Temple, Sky Capsule, and Beomeosa Temple."
+    },
+    {
+      "question": "Is Gimhae Airport pickup or drop-off included?",
+      "answer": "No — Gimhae Airport pickup or drop-off is a separate paid add-on (not part of the standard cruise-shore window), since the airport is on the western edge of the metropolitan area. Please request at booking and we'll quote the add-on price."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "totalReviews": 0,
+    "averageRating": 0,
+    "ratingDistribution": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0
+    },
+    "lastUpdated": "2026-04-28"
+  },
+  "sticky_booking_bar": {
+    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "vehicle"
+    }
+  },
+  "pickup_dropoff": {
+    "type": "multi_point_pickup",
+    "meeting_points": [
+      {
+        "name": "Busan Cruise Terminal (international cruise port)",
+        "time": "Within 30 min of cruise disembarkation",
+        "note": "Driver waits at the arrival hall with an AtoC Korea sign; please share your cruise name and dock so we can confirm timing."
+      },
+      {
+        "name": "Busan Station (KTX) main exit",
+        "time": "Flexible — confirm at booking",
+        "note": "If you arrive in Busan by KTX before joining the cruise tour, we can pick up at the station instead."
+      },
+      {
+        "name": "Any central Busan hotel",
+        "time": "Flexible — confirm at booking",
+        "note": "Door-to-door pickup at any hotel within central Busan (Haeundae, Seomyeon, Nampo-dong, Centum City)."
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Busan Cruise Terminal (back to ship)",
+        "approx_time": "≈ 90 min before your ship's all-aboard call",
+        "note": "Guaranteed on-time return — we monitor your ship's departure window throughout the day."
+      },
+      {
+        "name": "Any central Busan hotel",
+        "approx_time": "≈ end of service window",
+        "note": "Drop-off at any address within central Busan."
+      }
+    ],
+    "hotel_pickup_available": true,
+    "notes": "The 8-hour service window starts from your pickup time. Gimhae International Airport pickup or drop-off is available as a separate paid add-on (not included in the standard cruise-shore window). Overtime is charged at 30,000 KRW per hour, cash to driver, subject to driver availability. Reschedule requests should be made at least 2 days before the original reservation date — except for ship cancellations due to weather, in which case full refund applies."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "busan-private-car-charter-cruise-shore",
+    "product_type": "private",
+    "route_type": "customizable",
+    "destination_region": "korea_mainland",
+    "region_type": "busan_city",
+    "vehicle_type": "private_vehicle",
+    "duration_hours": 8,
+    "region_tags": [
+      "busan",
+      "busan_central",
+      "busan_eastern",
+      "cruise_port"
+    ],
+    "theme_tags": [
+      "cruise_shore_excursion",
+      "private_charter",
+      "city_highlights",
+      "coastal",
+      "cultural",
+      "memorial"
+    ],
+    "poi_tags": [
+      "un_memorial_cemetery",
+      "taejongdae",
+      "gamcheon_culture_village",
+      "yongdusan_park",
+      "jagalchi_market",
+      "busan_tower"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.5,
+    "scenic_level": 0.85,
+    "photo_level": 0.85,
+    "culture_level": 0.8,
+    "relax_level": 0.55,
+    "first_time_fit": 0.95,
+    "family_fit": 0.85,
+    "senior_fit": 0.9,
+    "couple_fit": 1,
+    "solo_traveler_fit": 0.5,
+    "active_traveler_fit": 0.65,
+    "adult_family_fit": 0.85,
+    "family_with_teens_fit": 0.85,
+    "young_kids_fit": 0.65,
+    "senior_active_fit": 0.85,
+    "senior_general_fit": 0.9,
+    "mobility_friendly_fit": 0.75,
+    "stroller_fit": 0.5,
+    "one_day_fit": 0.8,
+    "same_day_flight_fit": 0.5,
+    "rain_fit": 0.65,
+    "value_for_money_fit": 0.65,
+    "iconic_landmark_fit": 0.85,
+    "cafe_fit": 0.4,
+    "food_fit": 0.65,
+    "nature_fit": 0.55,
+    "beach_fit": 0.4,
+    "nightlife_fit": 0.1,
+    "shopping_fit": 0.55,
+    "no_shopping_fit": 0.55,
+    "local_culture_fit": 0.8,
+    "storytelling_fit": 0.85,
+    "unesco_fit": 0.1,
+    "intangible_heritage_fit": 0.4,
+    "indoor_ratio": 0.15,
+    "weather_sensitivity": 0.7,
+    "comfort_level": 0.85,
+    "budget_fit": 0.2,
+    "premium_fit": 0.85,
+    "small_group_fit": 0,
+    "private_fit": 0.95,
+    "bus_fit": 0.1,
+    "price_band": "mid_to_premium",
+    "pickup_base": "cruise_terminal_or_hotel_or_ktx",
+    "return_time_band": "late_afternoon",
+    "duration_band": "8h",
+    "min_recommended_age": 0,
+    "hard_constraints": [
+      "Private charter — minimum 1 passenger, maximum 7 (van). Larger groups require multi-vehicle coordination.",
+      "Cruise on-time return is guaranteed only if booked with cruise itinerary details (ship name, arrival date, dock).",
+      "Gimhae Airport pickup/drop-off is a paid add-on, not included in the standard 8-hour cruise window."
+    ],
+    "walking_notes": "Mostly door-to-door by vehicle. Walking is required at Gamcheon Culture Village (steep, ~30 min uphill alleys) and at the Taejongdae lighthouse (steep stairs, optional). Other stops are flat or have escalator/train alternatives.",
+    "keywords": [
+      "Busan private car charter",
+      "Busan cruise shore excursion",
+      "Busan day tour from cruise port",
+      "Busan English-speaking driver",
+      "Busan customizable private tour",
+      "private taxi tour Busan cruise",
+      "8-hour Busan private tour"
+    ],
+    "synonym_hints": [
+      "private taxi",
+      "private driver",
+      "shore excursion",
+      "cruise day tour",
+      "private guide",
+      "customized itinerary",
+      "cruise terminal pickup"
+    ],
+    "seasonality": {
+      "spring": 0.9,
+      "summer": 0.85,
+      "autumn": 0.95,
+      "winter": 0.7
+    },
+    "pickup_base_normalized": "busan_central_pickup",
+    "vehicle_type_legacy": "private_sedan_or_van",
+    "anchor_poi_keys": [
+      "un_memorial_cemetery",
+      "taejongdae",
+      "gamcheon_culture_village",
+      "yongdusan_park",
+      "jagalchi_market"
+    ],
+    "private_tour_fit": 1,
+    "shared_tour_fit": 0,
+    "customizable_route_fit": 0.6,
+    "flexibility_fit": 0.85,
+    "solo_fit": 0.5,
+    "family_with_kids_fit": 0.95,
+    "small_party_fit": 1,
+    "large_group_fit": 0.6,
+    "first_time_busan_fit": 1,
+    "repeat_visitor_fit": 0.6,
+    "cruise_passenger_fit": 1,
+    "non_cruise_day_tripper_fit": 0.7,
+    "korean_war_history_fit": 1,
+    "war_memorial_fit": 1,
+    "un_heritage_fit": 1,
+    "wheelchair_accessible_anchor_fit": 0.6,
+    "buddhist_temple_fit": 0,
+    "joseon_era_fit": 0.4,
+    "silla_heritage_fit": 0.2,
+    "modern_korean_history_fit": 0.85,
+    "coastal_fit": 1,
+    "coastal_cliff_fit": 1,
+    "coastal_lighthouse_fit": 1,
+    "city_viewpoint_fit": 1,
+    "panoramic_view_fit": 1,
+    "skywalk_fit": 0,
+    "mountain_fit": 0.3,
+    "forest_fit": 0.5,
+    "geological_heritage_fit": 0.85,
+    "mural_village_fit": 1,
+    "hillside_village_fit": 1,
+    "art_immersive_fit": 0.85,
+    "photo_friendly_fit": 1,
+    "instagrammable_fit": 1,
+    "hanok_village_fit": 0,
+    "fish_market_fit": 1,
+    "seafood_fit": 1,
+    "street_food_fit": 0.85,
+    "market_fit": 1,
+    "lunch_included_fit": 0,
+    "lunch_self_pay_fit": 1,
+    "walking_intensity": 0.7,
+    "stairs_intensity": 0.85,
+    "elderly_friendly_fit": 0.5,
+    "stroller_friendly_fit": 0.4,
+    "compact_route_fit": 0.7,
+    "all_day_fit": 0.7,
+    "half_day_fit": 0,
+    "private_vehicle_fit": 1,
+    "minicoach_fit": 0,
+    "public_transit_alternative_fit": 0.4,
+    "english_guide_fit": 1,
+    "korean_only_fit": 0,
+    "multilingual_fit": 0.85,
+    "spring_fit": 0.95,
+    "summer_fit": 0.85,
+    "autumn_fit": 1,
+    "winter_fit": 0.7,
+    "rainy_day_fit": 0.4,
+    "luxury_fit": 0.7,
+    "value_priced_fit": 0.4,
+    "scenic_intensity": 0.95,
+    "iconic_landmarks_fit": 1,
+    "off_beaten_path_fit": 0.3,
+    "cruise_shore_excursion_fit": 1,
+    "private_cruise_charter_fit": 1,
+    "downtown_busan_fit": 1,
+    "yongdusan_landmark_fit": 1,
+    "diamond_tower_fit": 1,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "cruise_market_segment_fit": 1,
+    "busan_port_pickup_fit": 1,
+    "cruise_reboarding_safety_buffer_fit": 1,
+    "weather_fallback_dense_fit": 1,
+    "instagram_dense_route_fit": 1,
+    "private_charter_format_fit": 1,
+    "flexible_pickup_dropoff_fit": 1,
+    "premium_pacing_fit": 1,
+    "small_party_intimate_fit": 1,
+    "differentiates_from_busan_small_group_cruise_pair_partner": true,
+    "busan_signature_route_fit": 1,
+    "seaside_temple_fit": 0,
+    "natural_geopark_fit": 1,
+    "city_panorama_tower_fit": 1,
+    "no_inter_city_travel_fit": 1,
+    "differentiates_from_busan_gyeongju_routes": true,
+    "available_months_signature": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "signature_window_label": "Year-round (cruise port operating window)",
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "competing_products": [
+      "busan-small-group-sightseeing-tour-cruise-passengers",
+      "busan-top-attractions-day-tour"
+    ],
+    "complementary_products": [
+      "busan-gyeongju-unesco-legacy-tour-national-museum",
+      "from-busan-gyeongju-ancient-capital-day-tour"
+    ],
+    "upgrade_from": [
+      "busan-small-group-sightseeing-tour-cruise-passengers"
+    ],
+    "downgrade_to": [
+      "busan-small-group-sightseeing-tour-cruise-passengers"
+    ],
+    "internal_competing_products_note": "Within the Busan portfolio, this is the canonical private-charter cruise-shore option. The small-group cruise tour (busan-small-group-sightseeing-tour-cruise-passengers) is the lower-priced fixed-group alternative. busan-top-attractions-day-tour serves the same stops for non-cruise day-trippers.",
+    "external_source": "GetYourGuide t899592",
+    "external_source_url": "https://www.getyourguide.com/-t899592/",
+    "operator_partner": "AtoC Korea LLC (private charter network)",
+    "last_competitive_review": "2026-04-28",
+    "primary_themes": [
+      "cruise_shore_excursion",
+      "busan_highlights",
+      "private_charter",
+      "korean_war_heritage"
+    ],
+    "secondary_themes": [
+      "coastal_cliff",
+      "culture_village",
+      "city_viewpoint",
+      "seafood_market",
+      "downtown_busan"
+    ],
+    "best_for": [
+      "couples_premium",
+      "families_with_seniors",
+      "cruise_passengers",
+      "first_time_busan",
+      "private_tour_seekers",
+      "deep_customization_seekers"
+    ],
+    "not_recommended_for": [
+      "solo_budget",
+      "value_seekers",
+      "mobility_severely_limited"
+    ],
+    "anchor_pois": [
+      "UN Memorial Cemetery",
+      "Taejongdae",
+      "Gamcheon Culture Village",
+      "Yongdusan Park & Busan Diamond Tower",
+      "Jagalchi Market"
+    ],
+    "anchor_poi_keys": [
+      "un_memorial_cemetery",
+      "taejongdae",
+      "gamcheon_culture_village",
+      "yongdusan_park",
+      "jagalchi_market"
+    ],
+    "enrichment_batch": "17b",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.24",
+    "enrichment_target_kb_version": "1.25",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "15 substantive stops across 3 tours; Batch 13a/13b authoring → A-grade pv=6 PASS"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "Jeju Island Private",
+        "headlineLine2": "Car Charter Tour",
+        "hero": {
+          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+          "imagePosition": "center 45%",
+          "tagline": "From Seongsan Sunrise Peak to Hyeopjae Beach to Cheonjiyeon Falls—nine private hours, your route, your pace, with a licensed driver-guide.",
+          "pills": [
+            "Private Vehicle",
+            "Licensed Driver-Guide",
+            "East / West / South Routes"
+          ],
+          "meta": {
+            "duration": "9 hours",
+            "region": "All of Jeju",
+            "stops": "Custom",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "Overview"
+          },
+          {
+            "id": "itinerary",
+            "label": "Itinerary"
+          },
+          {
+            "id": "details",
+            "label": "Details"
+          },
+          {
+            "id": "faq",
+            "label": "FAQ"
+          },
+          {
+            "id": "reviews",
+            "label": "Reviews"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "car",
+            "label": "Tour Style",
+            "value": "Private Charter"
+          },
+          {
+            "icon": "map",
+            "label": "Routing",
+            "value": "Fully Customizable"
+          },
+          {
+            "icon": "user-check",
+            "label": "Guide",
+            "value": "Licensed Driver-Guide"
+          },
+          {
+            "icon": "clock",
+            "label": "Duration",
+            "value": "9 hours"
+          },
+          {
+            "icon": "ticket",
+            "label": "Admission Fees",
+            "value": "Pay Direct"
+          },
+          {
+            "icon": "utensils-crossed",
+            "label": "Lunch",
+            "value": "Pay Direct"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+            "alt": "Seongsan Ilchulbong sunrise peak",
+            "caption": "Seongsan Ilchulbong sunrise peak",
+            "location": "Seongsan Ilchulbong",
+            "atmosphere": "Jeju's most iconic UNESCO landmark, a flagship East-route stop"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+            "alt": "Jusangjeolli basalt cliff",
+            "caption": "Jusangjeolli basalt cliff",
+            "location": "Jusangjeolli Cliff",
+            "atmosphere": "Hexagonal basalt columns on the South coast"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "alt": "Hyeopjae Beach West Jeju",
+            "caption": "Hyeopjae Beach West Jeju",
+            "location": "Hyeopjae Beach",
+            "atmosphere": "Emerald water and white sand on the West coast"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+            "alt": "O'sulloc tea museum and fields",
+            "caption": "O'sulloc tea museum and fields",
+            "location": "O'sulloc Tea Fields",
+            "atmosphere": "Green tea-field rows and a calming midday reset"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+            "alt": "Cheonjiyeon waterfall in Seogwipo",
+            "caption": "Cheonjiyeon waterfall in Seogwipo",
+            "location": "Cheonjiyeon Falls",
+            "atmosphere": "Forest waterfall on the South route"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "Flexible",
+            "duration": "Custom",
+            "name": "East Route: UNESCO & K-Drama Coast",
+            "category": "Seongsan, Udo, Manjanggul, Seopjikoji",
+            "description": "The most landmark-dense route option, covering Jeju's strongest UNESCO and K-drama spots. Typical stops include Seongsan Ilchulbong (UNESCO sunrise peak), Udo Island (ferry-access island with beaches), Manjanggul Lava Tube (UNESCO cave), Seopjikoji (drama-famous coastal cape), Seongeup Folk Village, and Hamdeok Beach.",
+            "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG",
+            "highlights": [
+              "Seongsan Ilchulbong: UNESCO World Natural Heritage and Jeju's flagship sunrise peak",
+              "Udo Island: ferry-access island with white-sand beaches and lighthouse views",
+              "Manjanggul: one of the world's longest lava-tube caves (UNESCO)",
+              "Seopjikoji and Seongeup: classic K-drama and folk-village atmosphere"
+            ],
+            "timeUsed": [
+              "Hotel pickup and transfer to the East coast",
+              "2 to 3 main landmark stops (driver-guide adjusts based on group pace)",
+              "Lunch break (free choice; usually near Seongsan or in the East coast)",
+              "Optional Udo ferry crossing (extra cost; vehicle parked or shipped)"
+            ],
+            "whyOnRoute": "It is the strongest route for first-time Jeju visitors who want maximum recognition: Seongsan Ilchulbong is the island's single most-photographed landmark, and Manjanggul gives the route a distinct UNESCO underground experience.",
+            "visitBasics": {
+              "hours": "Most stops 09:00 to 18:00; Manjanggul closes the first Wednesday of each month",
+              "closed": "Seongsan closed first Monday of each month; Manjanggul closed first Wednesday",
+              "admission": "Pay directly: Seongsan 5,000 KRW, Manjanggul 4,000 KRW, Seopjikoji 4,000 KRW, Udo ferry from 10,500 KRW round-trip",
+              "walking": "Moderate to high (Seongsan summit climb is the most demanding section)"
+            },
+            "convenience": {
+              "restroom": "Available at all major stops",
+              "parking": "Driver-guide handles all parking"
+            },
+            "smartNotes": {
+              "photo": "Seongsan summit at clear-weather morning is the strongest single photo on the route; Seopjikoji works better in afternoon side-light.",
+              "facilities": "Seongsan and Hamdeok Beach are the strongest meal hubs; the East route has stronger food density than the West.",
+              "tip": "The Seongsan summit climb is the route's bottleneck for senior or low-mobility travelers. Base-area viewing also works."
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_east",
+              "verified": false,
+              "match": "route_variant_no_single_poi",
+              "note": "Route option for private charter — represents a multi-POI bundle (Seongsan, Udo, Manjanggul, Seopjikoji); not a single matchable POI"
+            }
+          },
+          {
+            "number": 2,
+            "time": "Flexible",
+            "duration": "Custom",
+            "name": "West Route: Beaches, Tea & Cafe Coast",
+            "category": "Hyeopjae, Hallim Park, O'sulloc, Aewol",
+            "description": "The most photogenic and relaxed route. Typical stops include Hyeopjae Beach (Jeju's most iconic emerald-water beach), Hallim Park (subtropical gardens and lava caves), O'sulloc Tea Museum (tea fields and cafe), and Aewol Cafe Street (sunset coastal cafes). Strong fit for couples and photographers.",
+            "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "highlights": [
+              "Hyeopjae Beach: emerald water, white sand, and Biyangdo island views",
+              "Hallim Park: subtropical garden with two on-site lava caves",
+              "O'sulloc: Jeju's most famous tea museum, with strong indoor support",
+              "Aewol Cafe Street: sunset coast and contemporary Jeju cafe culture"
+            ],
+            "timeUsed": [
+              "Hotel pickup and transfer to the West coast",
+              "Beach and garden stops in the morning",
+              "Lunch break (free choice; strongest options near Hallim or Hyeopjae)",
+              "Tea museum and Aewol close to finish the day"
+            ],
+            "whyOnRoute": "It is the strongest route for couples, photographers, and travelers wanting a softer pace. Aewol works particularly well as a sunset close, and O'sulloc gives the route a useful weather-buffer indoor section.",
+            "visitBasics": {
+              "hours": "Most stops 09:00 to 18:00; Aewol cafes vary",
+              "closed": "Most stops open year-round",
+              "admission": "Pay directly: Hallim Park 15,000 KRW, O'sulloc free entry (programs cost extra), beaches free",
+              "walking": "Easy to moderate"
+            },
+            "convenience": {
+              "restroom": "Available at all major stops",
+              "parking": "Driver-guide handles all parking"
+            },
+            "smartNotes": {
+              "photo": "Hyeopjae works best in late-morning sun for emerald-water color; Aewol photographs strongest at sunset.",
+              "facilities": "O'sulloc has the best indoor support of all the West stops; Aewol has the densest cafe and snack options.",
+              "tip": "If the day forecast is uncertain, the West route handles light rain better than the East route."
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_west",
+              "verified": false,
+              "match": "route_variant_no_single_poi",
+              "note": "Route option for private charter — multi-POI bundle (Hyeopjae, Hallim, O'sulloc, Aewol)"
+            }
+          },
+          {
+            "number": 3,
+            "time": "Flexible",
+            "duration": "Custom",
+            "name": "South Route: Waterfalls & Volcanic Coast",
+            "category": "Cheonjiyeon, Jusangjeolli, Sanbangsan, Olle Market",
+            "description": "The most scenically dramatic route. Typical stops include Cheonjiyeon Falls (forest waterfall), Jusangjeolli Cliff (basalt-column coastline), Yakcheonsa Temple (one of the largest temples in East Asia), Sanbangsan Mountain (volcanic dome with sea views), Jeongbang Waterfall (one of Asia's few waterfalls flowing directly into the sea), and Seogwipo Olle Market.",
+            "image": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+            "highlights": [
+              "Cheonjiyeon Falls: a classic Seogwipo forest waterfall",
+              "Jusangjeolli Cliff: hexagonal basalt columns on the south coast",
+              "Sanbangsan: volcanic dome with sea-cliff temple views",
+              "Olle Market: Seogwipo's most lively traditional market for snacks and souvenirs"
+            ],
+            "timeUsed": [
+              "Hotel pickup and transfer to the South coast",
+              "Morning waterfall and basalt-cliff stops",
+              "Lunch break in Seogwipo (free choice)",
+              "Afternoon mountain or temple stop, market close"
+            ],
+            "whyOnRoute": "It is the strongest route for travelers who want geological variety: a temple, a waterfall, a basalt cliff, a volcanic dome, and a market in one day cover Jeju's strongest 'volcanic island' identity.",
+            "visitBasics": {
+              "hours": "Most stops 09:00 to 17:30",
+              "closed": "Most stops open year-round",
+              "admission": "Pay directly: Cheonjiyeon 2,500 KRW, Jusangjeolli 2,000 KRW, Jeongbang 2,000 KRW, Yakcheonsa free, Sanbangsan 1,000 KRW",
+              "walking": "Moderate (Cheonjiyeon and Sanbangsan add the most walking)"
+            },
+            "convenience": {
+              "restroom": "Available at all major stops",
+              "parking": "Driver-guide handles all parking"
+            },
+            "smartNotes": {
+              "photo": "Jusangjeolli works best in afternoon side-light; Olle Market is strongest in late afternoon when the night-market section opens.",
+              "facilities": "Olle Market is the strongest food hub; Yakcheonsa offers the calmest indoor visit.",
+              "tip": "Cheonjiyeon and Sanbangsan both involve stairs. Travelers with knee issues should pick one rather than both."
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_south",
+              "verified": false,
+              "match": "route_variant_no_single_poi",
+              "note": "Route option for private charter — multi-POI bundle (Cheonjiyeon, Jusangjeolli, Yakcheonsa, Sanbangsan, Jeongbang)"
+            }
+          },
+          {
+            "number": 4,
+            "time": "Flexible",
+            "duration": "Custom",
+            "name": "Custom Route: Build Your Own Day",
+            "category": "Send Us Your Own Itinerary",
+            "description": "Beyond the three recommended routes, you can mix stops or send your own itinerary. Possible additions include the Jeju Aquarium Planet, ECO Land Theme Park, Sangumburi Crater, Hamdeok Beach, Camellia Hill, Teddy Bear Safari, Seogwipo Submarine (Munseom underwater tour), dolphin yacht tours, Songaksan, Cafe the Cliff, and Nanta show.",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202311/22/c42559a5-c909-4603-ae16-24c2e03893a0.webp",
+            "highlights": [
+              "Mix East-coast UNESCO with West-coast tea fields if time permits",
+              "Add a haenyeo (female-diver) seafood lunch to any route",
+              "Combine a beach morning with a mountain or temple afternoon",
+              "Pair with K-drama filming locations specific to your favorite shows"
+            ],
+            "timeUsed": [
+              "Discuss your plan with the driver-guide at pickup or before",
+              "Driver-guide adjusts pacing based on traffic and ferry timing",
+              "Return to your hotel within the 9-hour window"
+            ],
+            "whyOnRoute": "It is the most flexible option of the four. It works best for repeat Jeju visitors, travelers with niche interests (K-drama tracking, photography, food), and families who want a tailored mix.",
+            "visitBasics": {
+              "hours": "Depends on chosen stops",
+              "closed": "Depends on chosen stops",
+              "admission": "All admission fees pay directly",
+              "walking": "Depends on chosen stops"
+            },
+            "convenience": {
+              "restroom": "Driver-guide will plan around stop facilities",
+              "parking": "Driver-guide handles all parking"
+            },
+            "smartNotes": {
+              "photo": "Custom routes can target specific seasonal photo windows: canola fields in spring, hydrangeas in early summer, pink muhly in autumn.",
+              "facilities": "Discuss meal timing and rest stops with your driver-guide before departure.",
+              "tip": "Send your itinerary draft a few days before the tour so the driver-guide can flag any timing or access issues, especially around ferry schedules."
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_custom",
+              "verified": false,
+              "match": "route_variant_no_single_poi",
+              "note": "Custom route — fully guest-defined; no fixed POI set"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "id": "01",
+            "name": "Hotel Pickup",
+            "theme": "Start"
+          },
+          {
+            "id": "02",
+            "name": "Choose Route",
+            "theme": "East/West/South"
+          },
+          {
+            "id": "03",
+            "name": "Lunch Break",
+            "theme": "Reset"
+          },
+          {
+            "id": "04",
+            "name": "Afternoon Stops",
+            "theme": "Continue"
+          },
+          {
+            "id": "05",
+            "name": "Hotel Dropoff",
+            "theme": "End"
+          }
+        ],
+        "routePhases": [
+          {
+            "label": "Start",
+            "range": "1",
+            "theme": "Pickup at Jeju Hotel",
+            "bgClass": "bg-sky-50/70",
+            "textClass": "text-sky-700",
+            "dotClass": "bg-sky-500"
+          },
+          {
+            "label": "Day Out",
+            "range": "2-4",
+            "theme": "Choose Your Route",
+            "bgClass": "bg-emerald-50/70",
+            "textClass": "text-emerald-700",
+            "dotClass": "bg-emerald-500"
+          },
+          {
+            "label": "Finish",
+            "range": "5",
+            "theme": "Return to Hotel",
+            "bgClass": "bg-amber-50/70",
+            "textClass": "text-amber-700",
+            "dotClass": "bg-amber-500"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "How this private day moves",
+          "subtitle": "Pickup at your Jeju hotel between 08:00 and 09:00, then a fully flexible 9-hour day around the East, West, or South route—or your own custom plan. Driver-guide adjusts pacing based on weather and traffic. Return drop-off around 17:00 to 18:00."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "Families with children, including very young kids",
+            "Multi-generational groups including seniors",
+            "Couples and honeymooners wanting a relaxed K-drama day",
+            "Repeat Jeju visitors who want a tailored route",
+            "Photographers chasing specific seasonal scenes (canola, hydrangeas, pink muhly)"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Why a private charter wins on Jeju",
+              "icon": "car",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "Jeju is genuinely large",
+                  "detail": "The island spans about 73 km east-to-west. Group bus tours waste hours waiting at each stop; a private charter cuts that overhead."
+                },
+                {
+                  "label": "Weather changes fast",
+                  "detail": "Jeju microclimates shift hourly. A driver-guide can swap an outdoor stop for an indoor one (Hallim Park caves, O'sulloc, Yakcheonsa) without ruining the day."
+                },
+                {
+                  "label": "Door-to-door comfort",
+                  "detail": "Hotel pickup means no airport-area shuttle, no late-evening bus stress, and no walking with luggage between transfers."
+                }
+              ]
+            },
+            {
+              "title": "How to choose between East, West, and South",
+              "icon": "map",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "East for first-time landmark coverage",
+                  "detail": "Seongsan Ilchulbong and Manjanggul are Jeju's two strongest UNESCO names; the East route delivers maximum recognition value."
+                },
+                {
+                  "label": "West for relaxed scenery and photos",
+                  "detail": "Hyeopjae Beach, Hallim Park, O'sulloc, and Aewol form a softer, more couple-friendly day with strong photo payoff and a sunset finish."
+                },
+                {
+                  "label": "South for geological drama",
+                  "detail": "Waterfalls, basalt cliffs, a volcanic dome, and a temple in one day give this route Jeju's strongest 'volcanic island' narrative."
+                }
+              ]
+            },
+            {
+              "title": "What changes on the day",
+              "icon": "clock-3",
+              "iconBg": "bg-slate-50/80",
+              "iconColor": "text-slate-698",
+              "items": [
+                {
+                  "label": "Weather adjustments",
+                  "detail": "Light rain rarely affects the route; strong wind usually shortens coastal stops (Seongsan, Jusangjeolli, Aewol)."
+                },
+                {
+                  "label": "Udo ferry on the East route",
+                  "detail": "Udo Island requires a separate ferry. Vehicles can be shipped (extra cost) or left at the wharf. Ferry timing affects your overall day flow."
+                },
+                {
+                  "label": "Overtime is possible",
+                  "detail": "If you need more than 9 hours, an extra hour is 25,000 KRW paid in cash to the driver, subject to driver availability."
+                }
+              ]
+            }
+          ],
+          "lessIdealFor": [
+            "Solo budget travelers (private pricing is per vehicle)",
+            "Travelers wanting to mix with other guests for a social experience",
+            "Anyone needing a fully narrated certified-guide tour (driver-guide is licensed but not full guide-grade narration)",
+            "Travelers wanting fully included admission and meals"
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "Pickup & drop-off",
+            "preview": "Hotel pickup anywhere on Jeju; lobby meeting 10 minutes early",
+            "content": [
+              "Hotel pickup is included anywhere on Jeju Island (Jeju City, Seogwipo, Jungmun, etc.)",
+              "Pickup is typically arranged between 08:00 and 09:00",
+              "Please wait at the hotel lobby 10 minutes before the agreed departure time",
+              "Drop-off at your Jeju hotel or any Jeju-island location of your choice (e.g., a dinner restaurant or the airport)",
+              "Return is typically between 17:00 and 18:00 within the 9-hour window",
+              "If you need to reschedule, please contact the operator at least 2 days before the original reservation date"
+            ]
+          },
+          {
+            "id": "vehicle",
+            "title": "Vehicle and Group Size",
+            "preview": "Vehicle assigned by group size and luggage volume",
+            "content": [
+              "The vehicle type is matched to the exact number of passengers and luggage pieces",
+              "Please fill in the exact passenger count and luggage count when booking",
+              "Typical vehicles include sedans for 1 to 3 guests, mid-size SUVs for 4 to 5 guests, and Staria or Carnival vans for 6 to 9 guests",
+              "Larger groups may be split across multiple vehicles or quoted separately"
+            ]
+          },
+          {
+            "id": "duration",
+            "title": "9-Hour Window and Overtime",
+            "preview": "Strict 9-hour service window from pickup",
+            "content": [
+              "The 9-hour window starts from your hotel pickup time",
+              "Overtime is charged at 25,000 KRW per additional hour, paid in cash directly to the driver",
+              "Overtime is subject to driver availability and applicable hours of service rules",
+              "Udo Island ferry crossings count inside the 9-hour window unless otherwise agreed"
+            ]
+          },
+          {
+            "id": "extras",
+            "title": "Extra Fees You Should Know About",
+            "preview": "Udo ferry, admission costs, and meals",
+            "content": [
+              "Udo Island vehicle ferry: extra cost (varies by vehicle size); foot-passenger ferry from ≈10,500 KRW round-trip per person",
+              "All admission fees are paid directly at each venue",
+              "Meals are paid directly; the driver-guide can recommend local specialties (heuk dwaeji black pork, gogi guksu, abalone porridge)",
+              "Optional driver gratuities are appreciated but not required"
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "Weather policy",
+            "preview": "Private format adapts well to changing Jeju conditions",
+            "content": [
+              "Light rain: most stops still operate; the driver-guide can shift toward indoor stops",
+              "Strong wind: coastal exposure at Seongsan, Jusangjeolli, and Aewol may be shortened",
+              "Typhoon-warning days: the operator will contact you to reschedule",
+              "Snow on Hallasan can close the 1100 Highland road; the driver-guide will substitute alternative inland stops"
+            ]
+          },
+          {
+            "id": "included",
+            "title": "What's included",
+            "preview": "Vehicle and licensed driver-guide; admission and meals pay direct",
+            "variant": "included",
+            "content": [
+              "Private vehicle (sedan, SUV, or van based on group size)",
+              "Licensed English-speaking driver-guide",
+              "Hotel pickup and drop-off anywhere on Jeju",
+              "Fuel and tolls for the standard route",
+              "All admission fees are not included; pay directly at each venue",
+              "Meals are not included",
+              "Personal shopping is not included",
+              "Driver gratuities are not included"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "Live weather integration"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "Updated daily"
+          }
+        },
+        "seasonalVariations": [
+          {
+            "name": "Spring",
+            "icon": "flower",
+            "description": "Canola flowers blanket the East coast in late March-April; cherry blossoms peak in early April. Mild temperatures and clear skies make this the most balanced season.",
+            "tag": "Canola season",
+            "bgClass": "bg-spring",
+            "iconColor": "text-pink-500"
+          },
+          {
+            "name": "Summer",
+            "icon": "sun",
+            "description": "Peak beach season with Hyeopjae and Hamdeok at their strongest; June hydrangeas color the West coast. Expect humidity and possible typhoon weather in August.",
+            "tag": "Beach season",
+            "bgClass": "bg-summer",
+            "iconColor": "text-yellow-500"
+          },
+          {
+            "name": "Autumn",
+            "icon": "leaf",
+            "description": "Pink muhly fields peak mid-October to early November; the strongest visibility window for Hallasan and Seongsan views. Often Jeju's best photo season.",
+            "tag": "Best photo season",
+            "bgClass": "bg-autumn",
+            "iconColor": "text-orange-500"
+          },
+          {
+            "name": "Winter",
+            "icon": "snowflake",
+            "description": "Camellia Hill blooms December to February; Hallasan can carry snow on its summit. Cold but visually rewarding, with fewer crowds at all major stops.",
+            "tag": "Camellia & snow",
+            "bgClass": "bg-winter",
+            "iconColor": "text-sky-500"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Licensed local operator",
+            "description": "Authorized Korean tour operator with full insurance",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "route",
+            "title": "Route specialists",
+            "description": "Hand-tuned itinerary, not a generic loop",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          },
+          {
+            "icon": "users",
+            "title": "Curated group size",
+            "description": "Right-sized for the route",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Immediately",
+            "title": "Instant Confirmation",
+            "detail": "Booking confirmation with itinerary summary"
+          },
+          {
+            "timing": "12 hours before",
+            "title": "12-Hour Reminder",
+            "detail": "Weather update and any route adjustments"
+          },
+          {
+            "timing": "Evening before",
+            "title": "Final Pickup Info",
+            "detail": "Exact pickup time and driver contact"
+          },
+          {
+            "timing": "Morning of tour",
+            "title": "Day-of Route Notes",
+            "detail": "Morning briefing based on live conditions"
+          },
+          {
+            "timing": "During tour",
+            "title": "Stop-by-Stop Tips",
+            "detail": "Real-time guidance at each location"
+          },
+          {
+            "timing": "After tour",
+            "title": "Post-tour Support",
+            "detail": "Follow-up and recommendations"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "first-time",
+            "question": "Is this a good choice for first-time visitors to Jeju (East, West, or South)?",
+            "answer": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+          },
+          {
+            "id": "walking",
+            "question": "Is the walking difficult?",
+            "answer": "Moderate walking with some active sections."
+          },
+          {
+            "id": "family",
+            "question": "Is this tour suitable for families?",
+            "answer": "Yes — comfortable for most families."
+          },
+          {
+            "id": "seniors",
+            "question": "Can older adults join comfortably?",
+            "answer": "Yes — pacing and walking are comfortable for active seniors."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "vehicle"
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v15.4_new_tour_creation"
+    ],
+    "fix_passes": {
+      "v15.4_new_tour_creation": "Created new tour from GYG product ID t899592 (Busan private car charter for cruise shore). Structural template: jeju-island-private-car-charter-tour. Content template: busan-small-group-sightseeing-tour-cruise-passengers. POI operational data (visitBasics/convenience/smartNotes) sourced from poi_knowledge_base.json (centralized KB built in Step 2). REASONABLE-ASSUMPTION FIELDS that may need patching once the live GYG page is reviewed: (1) price.amountLabel left empty per jeju-charter convention (per-vehicle pricing confirmed at booking); (2) catalog_card.priceFromUSD null; (3) vehicle capacity assumed 1-3 sedan / 4-7 van based on industry standard, not GYG-confirmed; (4) 8-hour duration assumed based on typical Busan cruise dwell time (6-9h common); (5) reviewsSummary populated with zeros — actual GYG reviews not imported in this pass; (6) hero/og images deferred per v15 P3 workflow. Pickup rule applied per Jason's directive: cruise terminal + KTX + central Busan hotel; Gimhae Airport pickup is a paid add-on, not bundled.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 0,
+        "fields_skipped": 0,
+        "fields_already_float": 42
+      }
+    }
+  }
+}

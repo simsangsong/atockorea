@@ -1,0 +1,2181 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "busan-gyeongju-unesco-legacy-tour-national-museum",
+  "locale": "zh-TW",
+  "product_id": "busan-gyeongju-unesco-legacy-tour-national-museum",
+  "seo": {
+    "pageTitle": "釜山出發慶州UNESCO一日遊·佛國寺+國立博物館 | AtoC Korea",
+    "metaDescription": "小團出發·全程約11.5小時。佛國寺（UNESCO世界遺產）、慶州國立博物館、校村韓屋村、月精橋夜景，含往返交通及認證導遊。",
+    "primaryKeywords": [
+      "釜山出發慶州一日遊",
+      "佛國寺旅遊行程",
+      "慶州國立博物館參觀",
+      "慶州UNESCO世界遺產一日遊",
+      "新羅王朝文化遺址遊"
+    ],
+    "ogImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+    "title": "釜山出發慶州一日遊：UNESCO佛國寺、國立博物館、月精橋 | AtoC Korea",
+    "description": "釜山出發慶州UNESCO遺產一日遊：九山竹林→佛國寺UNESCO世界遺產→慶州國立博物館（含天馬冢金冠）→校村韓屋村→月精橋夜燈。小團體，認證英語 / 中文導遊，含主要門票。"
+  },
+  "catalog_card": {
+    "thumbnail": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+    "title": "釜山出發慶州UNESCO遺產一日遊（含國立博物館）",
+    "priceLabel": "每人定價 — 請於預訂時確認小團體費率",
+    "shortCardDescription": "從釜山出發的小團體一日遊，探訪新羅王國992年古都慶州。行程涵蓋亞鶻山竹林→佛國寺（UNESCO）→慶州拌飯午餐→國立博物館→校村韓屋村→月精橋。持有英語/中文資質的認證導遊；小型廂型車；佛國寺與博物館門票均免費。",
+    "tags": [
+      "小團",
+      "慶州",
+      "unesco",
+      "釜山出發",
+      "新羅王國",
+      "博物館重點"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "slug": "busan-gyeongju-unesco-legacy-tour-national-museum",
+    "subtitle": "從釜山一日探訪韓國千年古都——UNESCO佛國寺、國立博物館、韓屋村、月精橋夜景一次涵蓋。",
+    "region": "慶州（釜山出發）",
+    "duration": "11.5小時",
+    "stopsCount": 8,
+    "badges": [
+      "世界遺產",
+      "含國立博物館",
+      "小團體",
+      "釜山出發"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800"
+  },
+  "headlineLine1": "佛國寺到國立博物館、竹林到石橋——",
+  "headlineLine2": "韓國千年古都，釜山出發一日全覽",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "人",
+    "priceSource": "direct_rate",
+    "priceNote": "小團體費率尚待業者確認，請於預訂時諮詢最新報價。",
+    "discountPercent": 10
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
+    "imagePosition": "center 35%",
+    "tagline": "韓國「無牆博物館」——七大UNESCO景點在15公里內密集分佈的千年古都",
+    "pills": [
+      "小團體",
+      "慶州",
+      "世界遺產之旅"
+    ],
+    "meta": {
+      "duration": "約11.5小時（08:10首次接客，約19:45末次送達）",
+      "region": "慶州（釜山出發）",
+      "stops": "8 個景點",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "行程總覽"
+    },
+    {
+      "id": "itinerary",
+      "label": "詳細行程"
+    },
+    {
+      "id": "details",
+      "label": "注意事項"
+    },
+    {
+      "id": "faq",
+      "label": "常見問題"
+    },
+    {
+      "id": "reviews",
+      "label": "旅客評價"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "行程時間",
+      "value": "約11.5小時（08:10首班接送，約19:45末班送達）"
+    },
+    {
+      "icon": "users",
+      "label": "團體規模",
+      "value": "小團體，麵包車（通常10人以內）"
+    },
+    {
+      "icon": "subway",
+      "label": "接送資訊",
+      "value": "釜山站4號出口（08:10）、西面站4號出口（08:30）、海雲臺站5號出口（09:10）"
+    },
+    {
+      "icon": "calendar",
+      "label": "最佳季節",
+      "value": "全年可出行；櫻花季（3月中旬至4月中旬）改走海雲臺達摩吉山，阿胡山暫停"
+    },
+    {
+      "icon": "footprints",
+      "label": "步行強度",
+      "value": "中等強度 — 全程約4–5公里。佛國寺有臺階和坡道；博物館、韓屋村、月精橋均為平地。"
+    },
+    {
+      "icon": "ticket",
+      "label": "費用包含",
+      "value": "含往返交通及認證導遊。各景點入場費：佛國寺免費（2023年5月起）、博物館免費、校村免費、月精橋免費；僅阿胡山（₩5,000）需現場自付。午餐自理。"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+      "alt": "佛國寺多寶塔全景",
+      "caption": "佛國寺多寶塔——統一新羅751年，UNESCO世界文化遺產，曾印於韓國10韓元硬幣",
+      "location": "佛國寺，慶州",
+      "atmosphere": "石頭、木材與8世紀佛塔剪影"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+      "alt": "月精橋夜燈倒映南川河",
+      "caption": "月精橋夜燈——760年新羅景德王初建，2018年複原，韓國最大木造橋梁，夜間燈光從日落至22:00",
+      "location": "月精橋，慶州市中心",
+      "atmosphere": "幽靜展廳，單件藏品聚焦"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+      "alt": "九山竹林毛竹林道晨光",
+      "caption": "九山竹林——南平文氏400年私有氏族森林，2016年才對外開放，清靜的毛竹林道晨光",
+      "location": "九山，機張，釜山",
+      "atmosphere": "修複一新的韓屋小巷，少有人至"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=1200",
+      "alt": "慶州國立博物館天馬冢金冠",
+      "caption": "慶州國立博物館天馬冢金冠（國寶第188號）——1973年發掘，5至6世紀新羅金工藝術頂峰",
+      "location": "慶州國立博物館",
+      "atmosphere": "清涼、碧綠的過濾光線"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
+      "alt": "黃昏時分倒映於水中的木橋涼亭",
+      "caption": "月精橋——2018年竣工的66米新羅風格複原橋梁",
+      "location": "月精橋, Gyeongju",
+      "atmosphere": "木材、流水與柔和夕光"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "08:10",
+      "duration": "60分鐘",
+      "name": "釜山接客（3個地鐵站）",
+      "category": "接送 / 出發",
+      "description": "接送依序從釜山三大地鐵站出發：**釜山站（1號線）約08:10**，適合入住草梁洞 / 南浦洞的旅客；**西面站（1＆2號線）約08:25**，適合樂天飯店釜山等市中心商業飯店的旅客；**海雲臺站（2號線）約08:45**，適合海雲臺海灘度假區旅客。走東海高速公路約30公里 / 25分鐘抵達九山竹林。",
+      "highlights": [
+        "釜山三站接送：釜山站、西面、海雲臺",
+        "走東海高速公路，至九山約30公里 / 25分鐘",
+        "**8站UNESCO遺產路線，以日落月精橋收尾**"
+      ],
+      "timeUsed": [
+        "釜山站接客（約08:10，約5分鐘）",
+        "前往西面站（約12分鐘）",
+        "西面站接客（約08:25，約5分鐘）",
+        "前往海雲臺站（約18分鐘）",
+        "海雲臺站接客 + 出發往東海高速公路（約08:45，約20分鐘）"
+      ],
+      "whyOnRoute": "三站接送是釜山小團體慶州路線的標準運營模式，與各競爭產品保持一致。以海雲臺為最後一站，可最大限度縮短前往機張郡阿胡山竹林（當天首個內容站）的移動距離，同時確保以月精橋的黃昏美景作為完美收尾。",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_subway_pickup",
+        "verified": true,
+        "match": "transit_placeholder",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Busan Metro official",
+          "Operator schedule"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "time": "≈ 09:50",
+      "duration": "60分鐘",
+      "name": "九山竹林",
+      "category": "私人文化遺址林",
+      "description": "**九山竹林**是位於**釜山機張郡東北部的一片52萬平方公尺的私有歷史森林**，由**南平文氏跨越九代、管理約400年**——這個家族在**1592至1598年壬辰倭亂**後定居此谷，刻意以密植竹林和松林封閉谷口以維持隱密性。竹林**直到2016年才對外開放**，因此仍是媲美擔陽竹林但人潮遠少的清靜替代選擇。總面積52萬平方公尺，設有1.5至2公里的標識環形步道，途經9個景點。代表性特色：**毛竹林道**——高聳翠綠的竹杆密密排列，形成拍照效果絕佳的自然隧道，晨間光線最美；以及**松坡**——百年老松與竹林交替，形成獨特的古典韓式林景。**入場費₩5,000（現場現金支付）**。",
+      "highlights": [
+        "**400年私有氏族森林**——南平文氏，九代傳承",
+        "**2016年才對外開放**——遠比擔陽竹林清靜的替代選擇",
+        "**52萬平方公尺**，1.5至2公里標識環形步道，設9個景點",
+        "毛竹林道——竹杆高聳，晨間光線絕佳的自然隧道",
+        "百年松坡——古松與竹林交替的韓式林景"
+      ],
+      "timeUsed": [
+        "巴士下車 + 宗族風格入口購票（約5分鐘）",
+        "下段步道：宗族祠堂、水車、400年赤松（約15分鐘）",
+        "竹林（第9景）— 攝影時間（約25分鐘）",
+        "經木棧道原路折返 + 集合上車（約15分鐘）"
+      ],
+      "whyOnRoute": "九山竹林作為全日晨間開場站，在慶州密集的UNESCO遺址之前帶來一段安靜的自然過渡。私有氏族森林400年管理歷史使其不只是「觀光竹林」，而是有文化深度的自然遺產。",
+      "visitBasics": {
+        "hours": "每日09:00–18:00（最後入場約17:00）",
+        "closed": "週一休館",
+        "admission": "成人₩8,000 / 兒童₩5,000",
+        "walking": "中等強度——碎石小徑與緩坡；部分木棧道；建議穿著舒適鞋履"
+      },
+      "convenience": {
+        "restroom": "入口閘旁及宗族祠堂附近設有廁所",
+        "parking": "場內提供大巴及自駕車停車位（免費）"
+      },
+      "smartNotes": {
+        "photo": "第9景（孟宗竹竹林）— 最佳光線為10:00–11:30側光穿透林冠；茅草屋頂與竹竿形成絕佳的前後景對比。",
+        "facilities": "入口附近有小型農產品攤位（季節性當地農產品、簡單飲品）；林內無咖啡廳，請自備飲用水。",
+        "tip": "穿深色上衣可與明亮竹竿形成更強烈的攝影對比；請勿踩入標示路徑以外的區域——竹根非常脆弱。"
+      },
+      "_poi_meta": {
+        "poi_key": "ahopsan_bamboo_forest",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea",
+          "Visit Busan official",
+          "Korea JoongAng Daily",
+          "K-drama filming location databases",
+          "Korea Tourism Organization (Ahopsan filming location designation)"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:30",
+      "duration": "75分鐘",
+      "name": "佛國寺（UNESCO世界遺產）",
+      "category": "UNESCO佛教寺院",
+      "description": "**佛國寺（佛國寺）——1995年UNESCO世界文化遺產**（與石窟庵共同列入）——是**統一新羅佛教藝術的最高傑作**，韓國史蹟及名勝第1號。**528年法興王時代初建**，現有宏大格局由**宰相金大城於751年擴建，774年完工**。二十年的建設得到「大城兩世父母」的傳說——相傳金大城一世為庶民，累積的功德使他轉世為宰相，並建造佛國寺（報兩世雙親恩）和石窟庵（報過去世雙親恩）。佛國寺同時擁有**六件韓國國寶**：**青雲橋＋白雲橋**（33＋16階石橋，原為通往大雄殿的儀仗路，現為保護文物，僅供觀賞）、**蓮花橋＋七寶橋**（通往極樂殿的石橋）、**釋迦塔**（無影塔，751年，韓國最典型的三層石塔，外型剋制，強調比例美）、**多寶塔**（751年，因精緻複雜的多層結構著稱，曾印在韓國10韓元硬幣上）、**金銅毘盧遮那佛**及**金銅阿彌陀佛**。自**2023年5月起免費入場**。",
+      "highlights": [
+        "**1995年UNESCO世界文化遺產**＋韓國史蹟及名勝第1號",
+        "528年初建→751年宰相金大成擴建→774年完工",
+        "**六件韓國國寶**在同一寺廟",
+        "《佛國寺施工記錄》——UNESCO世界記憶遺產2007",
+        "釋迦塔（無影塔）＋多寶塔——新羅石塔藝術的對比雙峰",
+        "青雲橋＋白雲橋——33＋16階石橋，保護文物，僅供觀賞",
+        "**自2023年5月起免費入場**"
+      ],
+      "timeUsed": [
+        "巴士下車 + 步行穿越松林甬道（約10分鐘）",
+        "一柱門 + 青雲橋/白雲橋攝影時間（約15分鐘）",
+        "大雄殿庭院 + 多寶塔 + 釋迦塔（約25分鐘）",
+        "毗盧殿 + 極樂殿（約15分鐘）",
+        "自由時間 + 集合上車（約10分鐘）"
+      ],
+      "whyOnRoute": "全日UNESCO遺產核心——韓國最重要的單一佛教建築群，六件國寶集中在一處。安排在上午（九山之後）確保在正午韓語大型導覽團湧入前以最充裕的狀態體驗。",
+      "visitBasics": {
+        "hours": "每日09:00–18:00（最後入場17:00）",
+        "closed": "全年開放",
+        "admission": "免費（2023年起依文化遺產保護法修訂施行）",
+        "walking": "中等強度——石階、坡道與碎石小徑；建議穿著舒適鞋履"
+      },
+      "convenience": {
+        "restroom": "寺院內設有仿小寺廟建築風格的免費公共廁所",
+        "parking": "場內停車場（收費）"
+      },
+      "smartNotes": {
+        "photo": "紫霞門下方的青雲橋/白雲橋（國寶第23號）；多寶塔（國寶第20號）與釋迦塔（國寶第21號）正面對稱構圖——上午11點前光線最佳。",
+        "facilities": "入口遊客服務中心；佛國寺博物館（另購門票₩2,000/₩1,000，週一休館）。",
+        "tip": "請著端莊服裝；進入殿堂前須脫鞋；禁止無人機飛行；請勿拍攝僧侶或信徒（寺方標示處勿拍攝）。"
+      },
+      "_poi_meta": {
+        "poi_key": "bulguksa_temple",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO World Heritage Centre",
+          "Wikipedia",
+          "World History Encyclopedia",
+          "VisitKorea",
+          "Visit Gyeongju official"
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "time": "≈ 13:00",
+      "duration": "60分鐘",
+      "name": "午餐（慶州當地餐廳）",
+      "category": "午餐 / 自費",
+      "description": "午餐費用由旅客自行承擔，在佛國寺至吐含山走廊附近的慶州在地餐廳用餐（典型預算**₩10,000至₩15,000 / 人**）。業者不固定合作餐廳；導遊帶領全團前往2至3家提供慶州地區特色料理的餐廳選擇：**慶州包飯（葉包飯定食）——慶州的招牌午餐形式**，以韓式葉菜包飯搭配豐富小菜，素食者也方便。紀念品推薦：**皇南餅（皇南紅豆餡餅，1939年起在慶州製造）**，是最受歡迎的慶州伴手禮。",
+      "highlights": [
+        "午餐自費，約₩10,000至₩15,000在慶州市區",
+        "**慶州包飯（葉包飯定食）＝慶州的招牌午餐形式**",
+        "**皇南餅紅豆餡餅**（1939年起製造）——最受歡迎的慶州伴手禮"
+      ],
+      "timeUsed": [
+        "步行至餐廳 + 就座（約5分鐘）",
+        "點餐 + 備餐（約10分鐘）",
+        "用餐 + 如廁（約40分鐘）",
+        "集合上車 + 購買水/零食（約5分鐘）"
+      ],
+      "whyOnRoute": "將午餐安排在佛國寺與博物館之間，既提供了自然的中途休息，也讓導遊在大家體力最充沛時優先帶領遊覽寺院。午餐不納入套餐，既可降低總體費用，也讓國際遊客自由選擇葷食、素食或簡餐。",
+      "_poi_meta": {
+        "poi_key": "OPS_gyeongju_lunch",
+        "verified": true,
+        "match": "lunch_placeholder",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Gyeongju official",
+          "VisitKorea food guide"
+        ]
+      }
+    },
+    {
+      "number": 5,
+      "time": "≈ 14:15",
+      "duration": "75分鐘",
+      "name": "慶州國立博物館",
+      "category": "國立博物館 / 新羅文物",
+      "description": "**慶州國立博物館（慶州國立博物館）**是**新羅文明的權威博物館**——**1945年以國立博物館慶州分館創立**，1968年完成現有主館建築，1975年晉升為獨立國立博物館。館藏**逾10萬件文物**，其中3萬件以上被指定為文化財產。三大常設展廳：**新羅歷史館**（新羅王朝政治史與社會結構）、**新羅美術館**（統一新羅佛教藝術及金工藝術）、**月池館**（雁鴨池出土9,000件文物）。戶外展示區設有**聖德大王神鐘（又稱愛彌勒鐘）**——**韓國最大的古代銅鐘，鑄於770年，高3.3公尺、重約18.9噸**；以「愛彌勒」命名源於傳說稱其低沉鐘聲如同嬰兒哭喊「媽媽……」。鎮館之寶：**天馬冢金冠（國寶第188號）**——1973年4月16日從天馬冢王陵發掘，純金製成、鑲嵌玻璃珠及金箔裝飾的新羅王冠，代表公元5至6世紀新羅的金工頂峰。**免費入場**，每日09:00至18:00（週末至19:00，週一至21:00，部分節假日調整）。全館提供英文與中文展板說明。",
+      "highlights": [
+        "**新羅文明的權威博物館**——1945年創立，現有館1968年",
+        "**逾10萬件文物**，3萬件以上指定文化財產",
+        "**天馬冢金冠（國寶第188號）**——1973年發掘的純金新羅王冠",
+        "**聖德大王神鐘（又稱愛彌勒鐘）**——韓國最大古代銅鐘，770年鑄造，重18.9噸",
+        "三大常設展廳：新羅歷史館、新羅美術館、月池館",
+        "**免費入場**，全館英文及中文展板說明"
+      ],
+      "timeUsed": [
+        "巴士下車 + 入場 + 寄物（約10分鐘）",
+        "戶外大鐘閣（聖德大王神鐘）（約10分鐘）",
+        "新羅館——金冠 + 王室御物（約25分鐘）",
+        "月池館——雁鴨池宮殿文物（約15分鐘）",
+        "特別展或紀念品店 + 集合（約15分鐘）"
+      ],
+      "whyOnRoute": "博物館安排在午餐後的下午，旅客以飽足的精力靜態欣賞10萬件文物，也是全日唯一的全程室內停留，也能應對午後天氣變化。免費入場且全館提供中文展板，對華語旅客格外友善。",
+      "visitBasics": {
+        "hours": "週二至週日10:00–18:00（最後入場17:30）；週六及每月最後一個週三延長至21:00",
+        "closed": "週一 + 元旦 + 農歷春節 + 中秋",
+        "admission": "免費（特別展覽可能收取小額費用）",
+        "walking": "主要為室內及鋪裝戶外區域；全程輪椅無障礙"
+      },
+      "convenience": {
+        "restroom": "主建築及戶外大鐘閣區域均設有多處廁所",
+        "parking": "場內大巴及自駕車停車位（免費）"
+      },
+      "smartNotes": {
+        "photo": "聖德大王神鐘戶外亭閣（午後側光最佳）；天馬冢金冠（室內較暗，建議調高ISO）；瞻星臺（月池館展示模型，可拍攝）。",
+        "facilities": "博物館商店有金冠複製品珠寶；主建築內設咖啡廳；設有寄存處。",
+        "tip": "禁止閃光燈攝影；部分特別展覽禁止一切拍攝（請留意標示）；在月池館多留10分鐘——雁鴨池文物的細節值得細細欣賞。"
+      },
+      "_poi_meta": {
+        "poi_key": "gyeongju_national_museum",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Gyeongju National Museum official",
+          "Wikipedia",
+          "Korea JoongAng Daily APEC 2025 coverage",
+          "Cultural Heritage Administration (NT 29, NT 188)",
+          "National Museum of Korea (Gyeongju Branch)"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "≈ 15:50",
+      "duration": "60分鐘",
+      "name": "校村韓屋村",
+      "category": "文化韓屋村",
+      "description": "**校村韓屋村**是以**慶州崔氏的歷史宅邸**為核心的傳統韓屋聚落——這個仕紳士大夫家族以**「十二代保存財富」而著稱**，同時奉行**「六大家規」（含荒年不漲佃租）**等韓國倫理守則。慶州崔氏的宅邸被指定為**重要民俗材料第27號**。村落位於慶州市中心南川河畔，步行10分鐘可達月精橋。特色：韓式石板小徑、傳統土牆、石臼及複原的朝鮮時代庭院。村內的**慶州法酒展示館**展示朝鮮時代皇室貢酒的釀造工藝。**免費入場**，全天開放。",
+      "highlights": [
+        "**慶州崔氏宅邸**——仕紳士大夫「十二代保存財富」的歷史傳家",
+        "著名**六大家規**——韓國倫理守則（含荒年不漲佃租）",
+        "**重要民俗材料第27號**——宅邸及家訓的國家認定",
+        "韓式石板小徑、土牆、複原朝鮮庭院",
+        "慶州法酒展示館——朝鮮時代皇室貢酒釀造工藝",
+        "**免費入場**，步行10分鐘可達月精橋"
+      ],
+      "timeUsed": [
+        "巴士下車 + 步行至主入口（約5分鐘）",
+        "崔氏古宅 + 校洞法酒釀造廠外觀（約20分鐘）",
+        "雞林 + 奈勿王陵（約15分鐘）",
+        "鄉校儒學學校 + 村內小巷（約15分鐘）",
+        "集合上車（約5分鐘）"
+      ],
+      "whyOnRoute": "校村是全日歷史景點的人文收尾——從博物館的文物標本轉換到有人居住的活歷史村落，補足新羅文物背後的社會生活面向。同時作為月精橋步行前的最後定點。",
+      "visitBasics": {
+        "hours": "日間開放；大部分古宅09:00–18:00",
+        "closed": "部分古宅週一不開放——主要巷道全年開放",
+        "admission": "大部分古宅免費參觀；崔氏宗宅設有小額捐款箱",
+        "walking": "輕鬆——碎石及石板路；主幹道部分路段輪椅友善"
+      },
+      "convenience": {
+        "restroom": "村落入口及慶州鄉校附近設有公共廁所",
+        "parking": "西側入口設有大巴下客區（免費）"
+      },
+      "smartNotes": {
+        "photo": "黃金時段的韓屋瓦片屋頂；校洞法酒釀造廠大門；月精橋遠景從村落高點可拍攝。",
+        "facilities": "校洞法酒商店（紀念品裝酒）；沿主巷道有小型手工藝店（傳統米點心、陶瓷等）。",
+        "tip": "如有海關酒類免稅額度，可購買校洞法酒作為紀念品（請確認所在國家的攜帶規定）。"
+      },
+      "_poi_meta": {
+        "poi_key": "gyochon_hanok_village",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Gyeongju official",
+          "VisitKorea",
+          "Wikipedia (Gyeongju Choi family)",
+          "Cultural Heritage Administration (Folklore Material No. 27, Intangible No. 86-3)",
+          "Cultural Heritage Administration of Korea (Gyeongju Choi Clan Family Designation)"
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "time": "≈ 17:00",
+      "duration": "40分鐘",
+      "name": "月精橋",
+      "category": "新羅木橋複原",
+      "description": "**月精橋**是**重建的新羅時代木造橋梁，橫跨南川河**，今日以**原長60.57公尺成為韓國最大的木造橋梁**，**2018年4月**在**長達數十年的複原工程（2008至2013年橋面，2013至2018年橋廊屋）**後重新對公眾開放。原橋**760年新羅景德王（第35代）初建**，記載於《三國史記》——橋名「月精（月光之精氣）」反映新羅景德王時代的佛教宇宙觀。橋梁在朝鮮時代廢棄，1984至1986年發掘後確認原址。橋廊屋（有屋頂的橋梁走廊）採唐風建築構成，兩端設有多重斗拱飛簷屋頂。**夜間燈光**每日從日落至22:00亮起，全年照常。本行程約17:00抵達；**冬季（11至2月）日落約17:15至17:30**，是全年唯一可靠捕捉到日落後橋燈倒映南川河的時段。其他季節17:00為日間光線，橋體本身亦值得拍攝。**免費入場**，24小時開放。",
+      "highlights": [
+        "**韓國最大木造橋梁**——原長60.57公尺",
+        "**760年新羅景德王（第35代）初建**——《三國史記》記載",
+        "**朝鮮時代廢棄→1984至1986年發掘→2008至2018年複原**",
+        "橋廊屋採唐風斗拱飛簷，是慶州最具攝影張力的夜景地標",
+        "**夜間燈光每日從日落至22:00**，全年照常",
+        "**冬季（11至2月）17:00前後日落**——最可靠的燈光倒影拍照時機",
+        "**免費入場**，24小時開放"
+      ],
+      "timeUsed": [
+        "巴士停於北岸停車場（約5分鐘）",
+        "步行穿越月精橋至南岸門樓（約10分鐘）",
+        "南岸取景攝影時間（約15分鐘）",
+        "折返 + 集合上車（約10分鐘）"
+      ],
+      "whyOnRoute": "月精橋作為全日壓軸，以新羅時代橋梁的木構建築美學為一整天的慶州UNESCO遺產之旅畫下景色上最豐富的句點。冬季日落時段的燈光倒影是全年最受旅客讚譽的夜景構圖。",
+      "visitBasics": {
+        "hours": "全天24小時開放（夜間照明：約日落至23:00）",
+        "closed": "全年開放",
+        "admission": "免費",
+        "walking": "輕鬆——橋面平坦；北岸可輪椅通行"
+      },
+      "convenience": {
+        "restroom": "北岸停車場設有公共廁所",
+        "parking": "大巴停於北岸；南岸無停車位"
+      },
+      "smartNotes": {
+        "photo": "南岸門樓背景下橋身延伸至月城宮殿遺址的代表性構圖；長曝光可捕捉燈光倒影——傍晚至夜間最佳。",
+        "facilities": "橋面上無商店；北岸停車場旁有少量咖啡廳。",
+        "tip": "建議攜帶三腳架或使用手機夜景模式拍攝燈光；冬季河面薄霧可能模糊倒影，可嘗試廣角取景。"
+      },
+      "_poi_meta": {
+        "poi_key": "woljeonggyo_bridge",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Gyeongju official",
+          "Cultural Heritage Administration",
+          "Wikipedia (Woljeonggyo)",
+          "MCST '100 Best Tourist Attractions 2025–2026' list",
+          "Korea Tourism Organization '100 Best 2025-2026' designation"
+        ]
+      }
+    },
+    {
+      "number": 8,
+      "time": "≈ 17:45",
+      "duration": "75分鐘",
+      "name": "返回釜山",
+      "category": "返程接送",
+      "description": "**約17:45從月精橋北岸出發**，走慶釜高速＋東海高速公路返回釜山。**下車順序與早晨接送相反**：**海雲臺站先下車**（約18:50），再前往**西面**（約19:05），最後**釜山站**（約19:20），視交通情況調整。週五及週日傍晚車流可能多加20至30分鐘，導遊透過群組訊息即時更新。",
+      "highlights": [
+        "**逆順序下車：海雲臺→西面→釜山站**",
+        "預計抵達：海雲臺約18:50 / 西面約19:05 / 釜山站約19:20",
+        "週五／週日傍晚車流可能多加20至30分鐘，導遊即時更新"
+      ],
+      "timeUsed": [
+        "從月精橋北岸出發（約5分鐘）",
+        "京釜 + 東海高速公路行駛（約60分鐘）",
+        "海雲臺站下車（約5分鐘）",
+        "前往西面站 + 釜山站下車（約5分鐘）"
+      ],
+      "whyOnRoute": "倒序送客是小團遊的標準運營慣例——先送地理位置最近的海雲臺，可最大限度壓縮總行程時間。不安排套餐晚餐是出於價格彈性和靈活性的考量，與同類釜山–慶州產品保持一致。",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_return",
+        "verified": true,
+        "match": "transit_placeholder",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Operator schedule",
+          "Korea Expressway Corporation traffic data"
+        ]
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "釜山地鐵接送",
+      "type": "origin",
+      "theme": "出發"
+    },
+    {
+      "name": "阿胡山竹林（花季改走達摩吉山）",
+      "type": "primary",
+      "theme": "竹林／海岸公路（季節限定）"
+    },
+    {
+      "name": "佛國寺（UNESCO世界遺產）",
+      "type": "primary",
+      "theme": "UNESCO文化遺產"
+    },
+    {
+      "name": "午餐（慶州包飯）",
+      "type": "meal",
+      "theme": "用餐"
+    },
+    {
+      "name": "慶州國立博物館",
+      "type": "primary",
+      "theme": "新羅文物"
+    },
+    {
+      "name": "校村韓屋村",
+      "type": "primary",
+      "theme": "傳統韓屋村"
+    },
+    {
+      "name": "月精橋",
+      "type": "primary",
+      "theme": "新羅古橋複原"
+    },
+    {
+      "name": "釜山地鐵送達",
+      "type": "return",
+      "theme": "返程"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "出發＋九山竹林（約2.5小時）",
+      "duration": "約2.5小時",
+      "description": "依次在釜山地鐵三處出口接客（08:10、08:30、09:10），隨後駕車約30分鐘前往機張郡阿胡山竹林。"
+    },
+    {
+      "phase": "UNESCO核心（約2小時）",
+      "duration": "約2小時",
+      "description": "從阿胡山駕車約70分鐘抵達佛國寺，在寺內步行遊覽約75分鐘。"
+    },
+    {
+      "phase": "午餐＋博物館（約2.5小時）",
+      "duration": "約2.5小時",
+      "description": "慶州市內享用當地午餐（60分鐘），隨後參觀國立博物館新羅展館（75分鐘）。"
+    },
+    {
+      "phase": "韓屋村＋月精橋（約2小時）",
+      "duration": "約2小時",
+      "description": "漫步校村韓屋村（60分鐘），再前往月精橋欣賞暮色（40分鐘）。"
+    },
+    {
+      "phase": "返回釜山（約1.25至1.5小時）",
+      "duration": "約1.25–1.5小時",
+      "description": "經京釜高速公路返回釜山，依次在海雲臺、西面、釜山站下客。"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "行程路線一覽",
+    "subtitle": "以文化為核心的釜山出發慶州一日遊，深入呈現「遺產」主題——新羅王朝992年的歷史與留存至今的文物。多數慶州一日遊塞入5至7個戶外景點，本行程刻意放慢節奏、納入國立博物館（大多數行程略過的一站）。月精橋夜間燈光作為一天的完美收尾，是其他路線無法提供的感動時刻。"
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "初次造訪慶州的旅客",
+      "對韓國古代文明（新羅）感興趣的旅客",
+      "希望在一日內涵蓋UNESCO遺址＋博物館＋傳統村落的旅客",
+      "學齡兒童家庭（金冠和大銅鐘是孩子最愛）",
+      "冬季旅客（月精橋日落燈光全年最佳時段）"
+    ],
+    "lessIdealFor": [
+      "需要完全自訂行程的旅客",
+      "行動嚴重受限的旅客（佛國寺石階）",
+      "希望深度參觀石窟庵的旅客（需另行安排）"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "行程安排思路",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "一日涵蓋慶州最具代表性的5個UNESCO相關景點",
+            "detail": "九山（UNESCO景觀背景）→佛國寺（UNESCO世界遺產）→博物館（新羅文物精華）→校村（歷史社會生活）→月精橋（新羅石橋藝術）——構成完整的「慶州一日行程參觀脈絡」，從自然→宗教建築→文物→人文→工程藝術。"
+          },
+          {
+            "label": "博物館安排在下午是關鍵構成",
+            "detail": "下午安排博物館提供全程室內的休息時間，讓旅客在上午佛國寺步行後恢複體力，同時以文物視角深化對新羅文化的理解，為下午校村和月精橋的體驗提供歷史文脈。"
+          },
+          {
+            "label": "冬季日落月精橋是全年獨有亮點",
+            "detail": "冬季日落提早至約17:15至17:30，與本行程約17:00抵達月精橋完美吻合，形成其他季節無法複制的橋燈＋南川河倒影構圖——是慶州最受旅客讚譽的夜景體驗。"
+          },
+          {
+            "label": "小型廂型車——介於大型觀光巴士與私人包車之間的最佳選擇",
+            "detail": "釜山至慶州的大型觀光巴士通常搭載35至45名乘客，私人包車則費用較高。本行程採用8至12人座小型廂型車，既保有靈活性，又比私人包車更具成本效益。"
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "inclusions",
+      "title": "費用包含項目",
+      "preview": "來回廂型小巴交通、認證英語 / 中文導遊、油費 / 過路費 / 停車費",
+      "content": [
+        "來回廂型小巴交通、認證英語 / 中文導遊、油費 / 過路費 / 停車費",
+        "不含：午餐（約₩15,000至₩25,000）、九山竹林入場費（₩5,000現場現金支付）、小費",
+        "佛國寺（2023年5月起免費）、博物館（免費）、校村（免費）、月精橋（免費）"
+      ]
+    },
+    {
+      "id": "pickup",
+      "title": "接送與下車地點",
+      "preview": "釜山地鐵1號線三站依序接送：釜山站4號出口（08:10）、西面站4號出口（08:30）、海雲臺站5號出口（09:10）",
+      "content": [
+        "釜山地鐵三站依序接送：釜山站4號出口（08:10）、西面站4號出口（08:30）、海雲臺站5號出口（09:10）",
+        "預訂時請選擇距您飯店最近的集合點"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "步行強度與地形",
+      "preview": "中等",
+      "content": [
+        "中等",
+        "全日步行距離約4至5公里",
+        "佛國寺石階不平整，輕微上坡；博物館、校村及橋梁均為平地"
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "取消政策",
+      "preview": "出發前24小時前可免費取消",
+      "content": [
+        "出發前24小時前可免費取消",
+        "當日取消及未到場者不予退款"
+      ]
+    },
+    {
+      "id": "seasonal",
+      "title": "季節性路線說明",
+      "preview": "賞櫻季（通常三月中至四月中，確切日期年度波動約7至10天）路線調整",
+      "content": [
+        "賞櫻季（通常三月中至四月中）：九山竹林替換為海雲臺達摩峰，釜山最具代表性的沿海賞櫻路線",
+        "冬季（11至2月）：月精橋日落燈光在約17:15至17:30降臨，是全年唯一可在17:00抵達後捕捉日落後倒影的時段"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "即時天氣連動"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "每日更新"
+    },
+    "_seasonalSummary": "慶州比釜山更接近內陸氣候，冬季更冷、夏季更熱。4月賞櫻季與10月至11月佛國寺紅葉季通常最適合遊覽。",
+    "_seasonalTemperatures": [
+      {
+        "season": "春季（3至5月）",
+        "range": "5–22°C",
+        "notes": "櫻花在4月初盛開，是整體最推薦的季節。"
+      },
+      {
+        "season": "夏季（6至8月）",
+        "range": "22–32°C",
+        "notes": "炎熱潮濕；博物館內有空調，適合作為避暑停留點。"
+      },
+      {
+        "season": "秋季（9至11月）",
+        "range": "8–24°C",
+        "notes": "10月下旬佛國寺一帶紅葉轉色，景色非常好。"
+      },
+      {
+        "season": "冬季（12至2月）",
+        "range": "-3 to 8°C",
+        "notes": "天氣偏冷；博物館與室內咖啡廳會更適合作為停留點。"
+      }
+    ]
+  },
+  "seasonalVariations": [
+    {
+      "season": "春季（3月中旬至4月中旬，賞櫻期）",
+      "description": "三月中至四月中（確切日期年度波動約7至10天）：九山竹林替換為海雲臺達摩峰，釜山沿海賞櫻路線。佛國寺同期亦有野櫻盛開，全日花景豐富。"
+    },
+    {
+      "season": "夏季（6至8月）",
+      "description": "慶州戶外景點在夏日陽光下呈現最鮮豔的顏色。建議戴帽及防曬。博物館提供全程室內的涼爽休息空間。"
+    },
+    {
+      "season": "秋季（9月下旬至10月下旬）",
+      "description": "秋葉映襯佛國寺與校村韓屋，是全年攝影品質最高的季節。月精橋與秋色構成最豐富的夜燈對比。"
+    },
+    {
+      "season": "冬季（11至2月）",
+      "description": "冬季（11至2月）日落約17:15至17:30，是全年唯一可靠在約17:00抵達月精橋後拍到日落後燈光倒影的時段。"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "當地持照合法業者",
+      "description": "持有完整保險的韓國合法旅遊業者",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "認證英語 / 中文導遊全程陪同，熟悉慶州UNESCO遺址的深度歷史，提供遠超指示牌的文化解說。"
+    },
+    {
+      "icon": "route",
+      "title": "路線專家",
+      "description": "精心調校的行程，非泛用路線",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "行程序列（九山→佛國寺→博物館→校村→月精橋）依上午人潮規律、博物館停留效益及月精橋日落時段精心排列。"
+    },
+    {
+      "icon": "users",
+      "title": "精心控制團體人數",
+      "description": "規模恰到好處——適合本路線的小型廂型車",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "小型廂型小巴確保佛國寺各展區及博物館展廳保持舒適的參觀空間，不受大型旅行團擁擠影響。"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "即時通知",
+      "title": "即時確認",
+      "detail": "預訂確認信含行程摘要",
+      "description": "預訂即時收到確認信，含集合站選擇說明。"
+    },
+    {
+      "timing": "出發前12小時",
+      "title": "出發前12小時提醒",
+      "detail": "天氣更新及路線調整通知",
+      "description": "確認天氣及九山 / 月精橋路線調整資訊。"
+    },
+    {
+      "timing": "前一晚",
+      "title": "最終接送資訊",
+      "detail": "確切接客時間與司機聯系方式",
+      "description": "發送確切接送時間及導遊聯絡方式。"
+    },
+    {
+      "timing": "行程當天早晨",
+      "title": "當日路線說明",
+      "detail": "依實況提供當日行程說明",
+      "description": "導遊於集合前確認車牌及當日安排。"
+    },
+    {
+      "timing": "行程途中",
+      "title": "景點逐一說明",
+      "detail": "各景點即時現場導覽",
+      "description": "導遊提供佛國寺六件國寶、新羅金冠等深度解說，博物館特色文物現場帶領。"
+    },
+    {
+      "timing": "行程結束後",
+      "title": "行程後支援",
+      "detail": "行程結束後反饋與後續建議",
+      "description": "行程結束後發送問卷，歡迎意見回饋。"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q-bridge-night-view",
+      "question": "我們抵達月精橋時橋燈真的會亮嗎？",
+      "answer": "要看季節。橋燈全年每晚從日落亮至約22:00，但本行程約17:00抵達。在慶州，日落時間從夏季（20:00）到冬季（17:15至17:30）差異極大。冬季（11至2月）是唯一可靠在17:00抵達後等到日落燈光倒影的時段。"
+    },
+    {
+      "id": "q-vs-ancient-capital",
+      "question": "和「古都」釜山出發慶州日遊有何不同？",
+      "answer": "兩條路線路徑相似（九山→佛國寺→博物館→校村→橋梁）。「UNESCO遺產」版本強調每個景點的遺產價值，幷包含慶州國立博物館的深度停留（含金冠等新羅文物），適合對韓國歷史有更深探索興趣的旅客。"
+    },
+    {
+      "id": "q-seokguram",
+      "question": "石窟庵呢？它也是和佛國寺同一個UNESCO遺址。",
+      "answer": "石窟庵與佛國寺共同列入同一項UNESCO世界遺產，但位於山上8公里外，須走陡峭狹窄山路。結合距離、停車限制及下山難度，全天只能擇一深入體驗——本行程選擇佛國寺，因其六件國寶集中且面積更廣，可看的重點更集中。"
+    },
+    {
+      "id": "q-admissions",
+      "question": "門票含括在行程費用內嗎？",
+      "answer": "大部分免費，唯一需要現場自付的入場費是九山竹林（₩5,000現金）。佛國寺自2023年5月起免費；慶州國立博物館免費；校村免費；月精橋免費。"
+    },
+    {
+      "id": "q-museum-language",
+      "question": "博物館有英文說明牌嗎？",
+      "answer": "有。慶州國立博物館在三大常設展廳（新羅歷史館、新羅美術館、月池館）全程提供英文及中文展板說明。聖德大王神鐘（聖德大王神鐘等戶外展示亦設有英中說明。"
+    },
+    {
+      "id": "q-bulguksa-photography",
+      "question": "佛國寺可以拍照嗎？",
+      "answer": "可以。整個寺廟境內（含兩座石塔及下層石橋）均允許拍照。請勿在禮拜室內使用閃光燈和腳架，並尊重參拜中的信眾。兩座石橋為國寶，不可踩上，僅供觀賞。"
+    },
+    {
+      "id": "q-bulguksa-stairs",
+      "question": "佛國寺的33級石橋必須走嗎？",
+      "answer": "不必。青雲橋和白雲橋是國寶文物，目前作為保護文物保存——遊客在下層庭院欣賞，不可走上橋面。進入大雄殿有另一條無障礙路線可用。"
+    },
+    {
+      "id": "q-vegetarian",
+      "question": "午餐有素食選項嗎？",
+      "answer": "有。慶州包飯（葉包飯，該地區特色午餐）以豐富蔬菜小菜為主；點餐時不要肉類小菜即可接近素食。導遊可協助說明。請於預訂時告知飲食需求。"
+    },
+    {
+      "id": "q-rain",
+      "question": "下雨怎麼辦？",
+      "answer": "小雨照常出發。大雨時：佛國寺石階可能溼滑，九山步道可能泥濘；導遊可縮短戶外時間並延長博物館停留（全程室內）。"
+    },
+    {
+      "id": "first-time",
+      "question": "這是初次造訪慶州的好選擇嗎？",
+      "answer": "是的——涵蓋慶州最具代表性的UNESCO和文化景點，兼顧室內（博物館）與戶外（寺廟、村落、橋梁），在均衡一日行程中提供最完整的慶州初訪覽覽。"
+    },
+    {
+      "id": "walking",
+      "question": "步行距離大約多少？",
+      "answer": "全程約4至5公里。佛國寺步行量最多（不平整石面、輕微上坡）；博物館全程室內平坦；校村和橋梁均為平地。建議穿著舒適步行鞋。"
+    },
+    {
+      "id": "family",
+      "question": "親子家庭適合嗎？",
+      "answer": "適合學齡兒童（約8歲以上）能配合全日節奏者。博物館的金冠和大銅鐘通常是孩子最喜歡的停留；九山竹林對各年齡均具景色吸引力。"
+    },
+    {
+      "id": "seniors",
+      "question": "年長旅客能否舒適地參加？",
+      "answer": "建議能應對4至5公里步行及佛國寺不平整石面的活躍銀發族。全行程節奏中等，博物館的室內停留提供充足的休息時間。行動受限者建議告知導遊以便調整。"
+    },
+    {
+      "id": "children",
+      "question": "建議最低年齡是多少？",
+      "answer": "建議約8歲以上——能配合步行強度及全日節奏的孩子。較年幼的孩子可能在博物館參觀後段體力不支。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "可訂狀態會在付款步驟中確認。",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "人",
+      "priceSource": "direct_rate",
+      "priceNote": "小團價格尚未在旅遊服務團隊商品資訊中確認。釜山出發的慶州一日遊通常約為54–90美元，視套裝與旅遊服務團隊而定。確認後，AtoC Korea官網直售價將按九折計算。",
+      "discountPercent": 10
+    }
+  },
+  "pickup_dropoff": {
+    "type": "meeting_point",
+    "meeting_points": [
+      {
+        "name": "釜山站4號出口",
+        "time": "08:10"
+      },
+      {
+        "name": "西面站4號出口",
+        "time": "08:30"
+      },
+      {
+        "name": "海雲臺站5號出口",
+        "time": "09:10"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "海雲臺站5號出口",
+        "approx_time": "≈ 19:00"
+      },
+      {
+        "name": "西面站4號出口",
+        "approx_time": "≈ 19:25"
+      },
+      {
+        "name": "釜山站4號出口",
+        "approx_time": "≈ 19:45"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "預約時請選擇離飯店最近的接送點。本行程全年運行；櫻花季（通常3月中旬至4月中旬）可能以海雲臺迎月路替代九山竹林。"
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "busan-gyeongju-unesco-legacy-tour-national-museum",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "gyeongsang_north",
+    "vehicle_type": "coach",
+    "duration_hours": 11.0,
+    "region_tags": [
+      "busan_gijang",
+      "gyeongju_tohamsan",
+      "gyeongju_historic_core"
+    ],
+    "theme_tags": [
+      "unesco",
+      "silla_kingdom",
+      "gyeongju",
+      "from_busan",
+      "museum",
+      "bamboo_forest",
+      "hanok_village",
+      "night_illumination",
+      "buddhist_temple"
+    ],
+    "poi_tags": [
+      "ahopsan_bamboo_forest",
+      "bulguksa_temple",
+      "gyeongju_national_museum",
+      "gyochon_hanok_village",
+      "woljeonggyo_bridge"
+    ],
+    "pace_level": 0.7,
+    "walking_level": 0.7,
+    "scenic_level": 0.9,
+    "photo_level": 1.0,
+    "culture_level": 1.0,
+    "relax_level": 0.55,
+    "first_time_fit": 1.0,
+    "family_fit": 0.85,
+    "senior_fit": 0.85,
+    "couple_fit": 0.95,
+    "solo_traveler_fit": 1.0,
+    "active_traveler_fit": 0.6,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 0.95,
+    "young_kids_fit": 0.45,
+    "senior_active_fit": 0.85,
+    "senior_general_fit": 0.75,
+    "mobility_friendly_fit": 0.65,
+    "stroller_fit": 0.4,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.15,
+    "rain_fit": 0.7,
+    "value_for_money_fit": 1.0,
+    "iconic_landmark_fit": 1.0,
+    "cafe_fit": 0.4,
+    "food_fit": 0.6,
+    "nature_fit": 0.6,
+    "beach_fit": 0.2,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.4,
+    "no_shopping_fit": 0.85,
+    "local_culture_fit": 0.95,
+    "storytelling_fit": 1.0,
+    "unesco_fit": 1.0,
+    "intangible_heritage_fit": 0.85,
+    "indoor_ratio": 0.32,
+    "weather_sensitivity": 0.45,
+    "comfort_level": 0.7,
+    "budget_fit": 0.85,
+    "premium_fit": 0.5,
+    "small_group_fit": 1.0,
+    "private_fit": 0.05,
+    "bus_fit": 1.0,
+    "price_band": "mid",
+    "pickup_base": "busan_central",
+    "return_time_band": "18:50-19:20",
+    "duration_band": "11h",
+    "min_recommended_age": 10,
+    "hard_constraints": {
+      "avoidIf": [
+        "very_low_mobility"
+      ],
+      "notIdealFor": [
+        "young_kids_under_10",
+        "private_tour_seekers",
+        "shoppers_only"
+      ]
+    },
+    "walking_notes": [
+      "Moderate-to-busy walking day — Ahopsan gravel path, Bulguksa stone steps, museum interior, Gyochon lanes, Woljeonggyo bridge deck.",
+      "Average fitness expected.",
+      "Comfortable walking shoes mandatory; bring a light layer for the post-sunset bridge stop and morning bamboo forest."
+    ],
+    "keywords": [
+      "busan gyeongju unesco day tour",
+      "gyeongju national museum tour",
+      "ahopsan bamboo forest from busan",
+      "woljeonggyo bridge night",
+      "gyochon hanok village",
+      "bulguksa unesco day trip from busan",
+      "silla heritage day tour"
+    ],
+    "synonym_hints": [
+      "gyeongju museum tour",
+      "korea silla heritage tour",
+      "busan to gyeongju legacy tour",
+      "gyeongju illumination tour"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "busan",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "bulguksa_temple",
+      "gyeongju_national_museum",
+      "gyochon_hanok_village",
+      "ahopsan_bamboo_forest",
+      "woljeonggyo_bridge"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.1,
+    "flexibility_fit": 0.3,
+    "fixed_itinerary_fit": 1.0,
+    "buddhist_temple_fit": 1.0,
+    "silla_kingdom_fit": 1.0,
+    "ancient_capital_fit": 1.0,
+    "silla_artifacts_fit": 1.0,
+    "museum_fit": 1.0,
+    "national_museum_fit": 1.0,
+    "hanok_village_fit": 1.0,
+    "scholar_gentry_heritage_fit": 1.0,
+    "bamboo_forest_fit": 1.0,
+    "k_drama_filming_fit": 1.0,
+    "night_illuminated_bridge_fit": 1.0,
+    "sunset_finale_fit": 1.0,
+    "scenic_temple_fit": 1.0,
+    "history_culture_fit": 1.0,
+    "religious_history_fit": 0.95,
+    "cherry_blossom_fit": 0.5,
+    "spring_seasonal_fit": 0.6,
+    "autumn_foliage_fit": 0.7,
+    "weather_robust_fit": 0.75,
+    "premium_dining_fit": 0.85,
+    "seasonal_fit": 0.95,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "unesco_anchor_count": 2,
+    "national_treasure_count_visited": 5,
+    "intangible_cultural_asset_count_visited": 1,
+    "museum_visit": true,
+    "silla_dynasty_focus_fit": 1.0,
+    "ancient_capital_history_fit": 1.0,
+    "k_drama_filming_locations_count": 1,
+    "deep_history_traveler_fit": 1.0,
+    "longer_day_fit": 1.0,
+    "differentiates_from_busan_top_attractions": true,
+    "differentiates_from_spring_cherry_blossom_route": true,
+    "apec_2025_silla_gold_crown_exhibition_anchor": true,
+    "deep_history_traveler_fit_minimum": 0.7,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "unesco",
+      "silla_kingdom",
+      "gyeongju",
+      "from_busan",
+      "museum"
+    ],
+    "secondary_themes": [
+      "bamboo_forest",
+      "hanok_village",
+      "night_illumination",
+      "buddhist_temple",
+      "k_drama_filming"
+    ],
+    "best_for": [
+      "history_lovers",
+      "first_time_korea",
+      "couples",
+      "solo_travelers",
+      "rainy_day_visitors",
+      "k_drama_fans",
+      "photographers"
+    ],
+    "not_recommended_for": [
+      "young_kids_under_10",
+      "private_tour_seekers",
+      "active_outdoor_seekers",
+      "shoppers_only"
+    ],
+    "anchor_pois": [
+      "Bulguksa Temple (UNESCO)",
+      "Gyeongju National Museum",
+      "Gyochon Hanok Village",
+      "Ahopsan Bamboo Forest",
+      "Woljeonggyo Bridge (sunset)"
+    ],
+    "competing_products": [
+      "from-busan-gyeongju-ancient-capital-day-tour",
+      "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
+      "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
+      "busan-top-attractions-day-tour"
+    ],
+    "anchor_poi_keys": [
+      "bulguksa_temple",
+      "gyeongju_national_museum",
+      "gyochon_hanok_village",
+      "ahopsan_bamboo_forest",
+      "woljeonggyo_bridge"
+    ],
+    "enrichment_batch": "17a",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.23",
+    "enrichment_target_kb_version": "1.24",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "16 substantive stops across 4 tours; D-grade audit (8-hl-vs-9-hl artifact) → A-grade pass"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "佛國寺到國立博物館、竹林到石橋——",
+        "headlineLine2": "韓國千年古都，釜山出發一日全覽",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
+          "imagePosition": "center 35%",
+          "tagline": "韓國「無牆博物館」——七大UNESCO景點在15公里內密集分佈的千年古都",
+          "pills": [
+            "小團體",
+            "慶州",
+            "世界遺產之旅"
+          ],
+          "meta": {
+            "duration": "約11.5小時（08:10首次接客，約19:45末次送達）",
+            "region": "慶州（釜山出發）",
+            "stops": "8 個景點",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "行程總覽"
+          },
+          {
+            "id": "itinerary",
+            "label": "詳細行程"
+          },
+          {
+            "id": "details",
+            "label": "注意事項"
+          },
+          {
+            "id": "faq",
+            "label": "常見問題"
+          },
+          {
+            "id": "reviews",
+            "label": "旅客評價"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "行程時間",
+            "value": "約11.5小時（08:10首班接送，約19:45末班送達）"
+          },
+          {
+            "icon": "users",
+            "label": "團體規模",
+            "value": "小團體，麵包車（通常10人以內）"
+          },
+          {
+            "icon": "subway",
+            "label": "接送資訊",
+            "value": "釜山站4號出口（08:10）、西面站4號出口（08:30）、海雲臺站5號出口（09:10）"
+          },
+          {
+            "icon": "calendar",
+            "label": "最佳季節",
+            "value": "全年可出行；櫻花季（3月中旬至4月中旬）改走海雲臺達摩吉山，阿胡山暫停"
+          },
+          {
+            "icon": "footprints",
+            "label": "步行強度",
+            "value": "中等強度 — 全程約4–5公里。佛國寺有臺階和坡道；博物館、韓屋村、月精橋均為平地。"
+          },
+          {
+            "icon": "ticket",
+            "label": "費用包含",
+            "value": "含往返交通及認證導遊。各景點入場費：佛國寺免費（2023年5月起）、博物館免費、校村免費、月精橋免費；僅阿胡山（₩5,000）需現場自付。午餐自理。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "alt": "佛國寺多寶塔全景",
+            "caption": "佛國寺多寶塔——統一新羅751年，UNESCO世界文化遺產，曾印於韓國10韓元硬幣",
+            "location": "佛國寺，慶州",
+            "atmosphere": "石頭、木材與8世紀佛塔剪影"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "alt": "月精橋夜燈倒映南川河",
+            "caption": "月精橋夜燈——760年新羅景德王初建，2018年複原，韓國最大木造橋梁，夜間燈光從日落至22:00",
+            "location": "月精橋，慶州市中心",
+            "atmosphere": "幽靜展廳，單件藏品聚焦"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "alt": "九山竹林毛竹林道晨光",
+            "caption": "九山竹林——南平文氏400年私有氏族森林，2016年才對外開放，清靜的毛竹林道晨光",
+            "location": "九山，機張，釜山",
+            "atmosphere": "修複一新的韓屋小巷，少有人至"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=1200",
+            "alt": "慶州國立博物館天馬冢金冠",
+            "caption": "慶州國立博物館天馬冢金冠（國寶第188號）——1973年發掘，5至6世紀新羅金工藝術頂峰",
+            "location": "慶州國立博物館",
+            "atmosphere": "清涼、碧綠的過濾光線"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
+            "alt": "黃昏時分倒映於水中的木橋涼亭",
+            "caption": "月精橋——2018年竣工的66米新羅風格複原橋梁",
+            "location": "月精橋, Gyeongju",
+            "atmosphere": "木材、流水與柔和夕光"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "08:10",
+            "duration": "60分鐘",
+            "name": "釜山接客（3個地鐵站）",
+            "category": "接送 / 出發",
+            "description": "接送依序從釜山三大地鐵站出發：**釜山站（1號線）約08:10**，適合入住草梁洞 / 南浦洞的旅客；**西面站（1＆2號線）約08:25**，適合樂天飯店釜山等市中心商業飯店的旅客；**海雲臺站（2號線）約08:45**，適合海雲臺海灘度假區旅客。走東海高速公路約30公里 / 25分鐘抵達九山竹林。",
+            "highlights": [
+              "釜山三站接送：釜山站、西面、海雲臺",
+              "走東海高速公路，至九山約30公里 / 25分鐘",
+              "**8站UNESCO遺產路線，以日落月精橋收尾**"
+            ],
+            "timeUsed": [
+              "釜山站接客（約08:10，約5分鐘）",
+              "前往西面站（約12分鐘）",
+              "西面站接客（約08:25，約5分鐘）",
+              "前往海雲臺站（約18分鐘）",
+              "海雲臺站接客 + 出發往東海高速公路（約08:45，約20分鐘）"
+            ],
+            "whyOnRoute": "三站接送是釜山小團體慶州路線的標準運營模式，與各競爭產品保持一致。以海雲臺為最後一站，可最大限度縮短前往機張郡阿胡山竹林（當天首個內容站）的移動距離，同時確保以月精橋的黃昏美景作為完美收尾。",
+            "_poi_meta": {
+              "poi_key": "OPS_busan_subway_pickup",
+              "verified": true,
+              "match": "transit_placeholder",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Busan Metro official",
+                "Operator schedule"
+              ]
+            }
+          },
+          {
+            "number": 2,
+            "time": "≈ 09:50",
+            "duration": "60分鐘",
+            "name": "九山竹林",
+            "category": "私人文化遺址林",
+            "description": "**九山竹林**是位於**釜山機張郡東北部的一片52萬平方公尺的私有歷史森林**，由**南平文氏跨越九代、管理約400年**——這個家族在**1592至1598年壬辰倭亂**後定居此谷，刻意以密植竹林和松林封閉谷口以維持隱密性。竹林**直到2016年才對外開放**，因此仍是媲美擔陽竹林但人潮遠少的清靜替代選擇。總面積52萬平方公尺，設有1.5至2公里的標識環形步道，途經9個景點。代表性特色：**毛竹林道**——高聳翠綠的竹杆密密排列，形成拍照效果絕佳的自然隧道，晨間光線最美；以及**松坡**——百年老松與竹林交替，形成獨特的古典韓式林景。**入場費₩5,000（現場現金支付）**。",
+            "highlights": [
+              "**400年私有氏族森林**——南平文氏，九代傳承",
+              "**2016年才對外開放**——遠比擔陽竹林清靜的替代選擇",
+              "**52萬平方公尺**，1.5至2公里標識環形步道，設9個景點",
+              "毛竹林道——竹杆高聳，晨間光線絕佳的自然隧道",
+              "百年松坡——古松與竹林交替的韓式林景"
+            ],
+            "timeUsed": [
+              "巴士下車 + 宗族風格入口購票（約5分鐘）",
+              "下段步道：宗族祠堂、水車、400年赤松（約15分鐘）",
+              "竹林（第9景）— 攝影時間（約25分鐘）",
+              "經木棧道原路折返 + 集合上車（約15分鐘）"
+            ],
+            "whyOnRoute": "九山竹林作為全日晨間開場站，在慶州密集的UNESCO遺址之前帶來一段安靜的自然過渡。私有氏族森林400年管理歷史使其不只是「觀光竹林」，而是有文化深度的自然遺產。",
+            "visitBasics": {
+              "hours": "每日09:00–18:00（最後入場約17:00）",
+              "closed": "週一休館",
+              "admission": "成人₩8,000 / 兒童₩5,000",
+              "walking": "中等強度——碎石小徑與緩坡；部分木棧道；建議穿著舒適鞋履"
+            },
+            "convenience": {
+              "restroom": "入口閘旁及宗族祠堂附近設有廁所",
+              "parking": "場內提供大巴及自駕車停車位（免費）"
+            },
+            "smartNotes": {
+              "photo": "第9景（孟宗竹竹林）— 最佳光線為10:00–11:30側光穿透林冠；茅草屋頂與竹竿形成絕佳的前後景對比。",
+              "facilities": "入口附近有小型農產品攤位（季節性當地農產品、簡單飲品）；林內無咖啡廳，請自備飲用水。",
+              "tip": "穿深色上衣可與明亮竹竿形成更強烈的攝影對比；請勿踩入標示路徑以外的區域——竹根非常脆弱。"
+            },
+            "_poi_meta": {
+              "poi_key": "ahopsan_bamboo_forest",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea",
+                "Visit Busan official",
+                "Korea JoongAng Daily",
+                "K-drama filming location databases",
+                "Korea Tourism Organization (Ahopsan filming location designation)"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:30",
+            "duration": "75分鐘",
+            "name": "佛國寺（UNESCO世界遺產）",
+            "category": "UNESCO佛教寺院",
+            "description": "**佛國寺（佛國寺）——1995年UNESCO世界文化遺產**（與石窟庵共同列入）——是**統一新羅佛教藝術的最高傑作**，韓國史蹟及名勝第1號。**528年法興王時代初建**，現有宏大格局由**宰相金大城於751年擴建，774年完工**。二十年的建設得到「大城兩世父母」的傳說——相傳金大城一世為庶民，累積的功德使他轉世為宰相，並建造佛國寺（報兩世雙親恩）和石窟庵（報過去世雙親恩）。佛國寺同時擁有**六件韓國國寶**：**青雲橋＋白雲橋**（33＋16階石橋，原為通往大雄殿的儀仗路，現為保護文物，僅供觀賞）、**蓮花橋＋七寶橋**（通往極樂殿的石橋）、**釋迦塔**（無影塔，751年，韓國最典型的三層石塔，外型剋制，強調比例美）、**多寶塔**（751年，因精緻複雜的多層結構著稱，曾印在韓國10韓元硬幣上）、**金銅毘盧遮那佛**及**金銅阿彌陀佛**。自**2023年5月起免費入場**。",
+            "highlights": [
+              "**1995年UNESCO世界文化遺產**＋韓國史蹟及名勝第1號",
+              "528年初建→751年宰相金大成擴建→774年完工",
+              "**六件韓國國寶**在同一寺廟",
+              "《佛國寺施工記錄》——UNESCO世界記憶遺產2007",
+              "釋迦塔（無影塔）＋多寶塔——新羅石塔藝術的對比雙峰",
+              "青雲橋＋白雲橋——33＋16階石橋，保護文物，僅供觀賞",
+              "**自2023年5月起免費入場**"
+            ],
+            "timeUsed": [
+              "巴士下車 + 步行穿越松林甬道（約10分鐘）",
+              "一柱門 + 青雲橋/白雲橋攝影時間（約15分鐘）",
+              "大雄殿庭院 + 多寶塔 + 釋迦塔（約25分鐘）",
+              "毗盧殿 + 極樂殿（約15分鐘）",
+              "自由時間 + 集合上車（約10分鐘）"
+            ],
+            "whyOnRoute": "全日UNESCO遺產核心——韓國最重要的單一佛教建築群，六件國寶集中在一處。安排在上午（九山之後）確保在正午韓語大型導覽團湧入前以最充裕的狀態體驗。",
+            "visitBasics": {
+              "hours": "每日09:00–18:00（最後入場17:00）",
+              "closed": "全年開放",
+              "admission": "免費（2023年起依文化遺產保護法修訂施行）",
+              "walking": "中等強度——石階、坡道與碎石小徑；建議穿著舒適鞋履"
+            },
+            "convenience": {
+              "restroom": "寺院內設有仿小寺廟建築風格的免費公共廁所",
+              "parking": "場內停車場（收費）"
+            },
+            "smartNotes": {
+              "photo": "紫霞門下方的青雲橋/白雲橋（國寶第23號）；多寶塔（國寶第20號）與釋迦塔（國寶第21號）正面對稱構圖——上午11點前光線最佳。",
+              "facilities": "入口遊客服務中心；佛國寺博物館（另購門票₩2,000/₩1,000，週一休館）。",
+              "tip": "請著端莊服裝；進入殿堂前須脫鞋；禁止無人機飛行；請勿拍攝僧侶或信徒（寺方標示處勿拍攝）。"
+            },
+            "_poi_meta": {
+              "poi_key": "bulguksa_temple",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO World Heritage Centre",
+                "Wikipedia",
+                "World History Encyclopedia",
+                "VisitKorea",
+                "Visit Gyeongju official"
+              ]
+            }
+          },
+          {
+            "number": 4,
+            "time": "≈ 13:00",
+            "duration": "60分鐘",
+            "name": "午餐（慶州當地餐廳）",
+            "category": "午餐 / 自費",
+            "description": "午餐費用由旅客自行承擔，在佛國寺至吐含山走廊附近的慶州在地餐廳用餐（典型預算**₩10,000至₩15,000 / 人**）。業者不固定合作餐廳；導遊帶領全團前往2至3家提供慶州地區特色料理的餐廳選擇：**慶州包飯（葉包飯定食）——慶州的招牌午餐形式**，以韓式葉菜包飯搭配豐富小菜，素食者也方便。紀念品推薦：**皇南餅（皇南紅豆餡餅，1939年起在慶州製造）**，是最受歡迎的慶州伴手禮。",
+            "highlights": [
+              "午餐自費，約₩10,000至₩15,000在慶州市區",
+              "**慶州包飯（葉包飯定食）＝慶州的招牌午餐形式**",
+              "**皇南餅紅豆餡餅**（1939年起製造）——最受歡迎的慶州伴手禮"
+            ],
+            "timeUsed": [
+              "步行至餐廳 + 就座（約5分鐘）",
+              "點餐 + 備餐（約10分鐘）",
+              "用餐 + 如廁（約40分鐘）",
+              "集合上車 + 購買水/零食（約5分鐘）"
+            ],
+            "whyOnRoute": "將午餐安排在佛國寺與博物館之間，既提供了自然的中途休息，也讓導遊在大家體力最充沛時優先帶領遊覽寺院。午餐不納入套餐，既可降低總體費用，也讓國際遊客自由選擇葷食、素食或簡餐。",
+            "_poi_meta": {
+              "poi_key": "OPS_gyeongju_lunch",
+              "verified": true,
+              "match": "lunch_placeholder",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Gyeongju official",
+                "VisitKorea food guide"
+              ]
+            }
+          },
+          {
+            "number": 5,
+            "time": "≈ 14:15",
+            "duration": "75分鐘",
+            "name": "慶州國立博物館",
+            "category": "國立博物館 / 新羅文物",
+            "description": "**慶州國立博物館（慶州國立博物館）**是**新羅文明的權威博物館**——**1945年以國立博物館慶州分館創立**，1968年完成現有主館建築，1975年晉升為獨立國立博物館。館藏**逾10萬件文物**，其中3萬件以上被指定為文化財產。三大常設展廳：**新羅歷史館**（新羅王朝政治史與社會結構）、**新羅美術館**（統一新羅佛教藝術及金工藝術）、**月池館**（雁鴨池出土9,000件文物）。戶外展示區設有**聖德大王神鐘（又稱愛彌勒鐘）**——**韓國最大的古代銅鐘，鑄於770年，高3.3公尺、重約18.9噸**；以「愛彌勒」命名源於傳說稱其低沉鐘聲如同嬰兒哭喊「媽媽……」。鎮館之寶：**天馬冢金冠（國寶第188號）**——1973年4月16日從天馬冢王陵發掘，純金製成、鑲嵌玻璃珠及金箔裝飾的新羅王冠，代表公元5至6世紀新羅的金工頂峰。**免費入場**，每日09:00至18:00（週末至19:00，週一至21:00，部分節假日調整）。全館提供英文與中文展板說明。",
+            "highlights": [
+              "**新羅文明的權威博物館**——1945年創立，現有館1968年",
+              "**逾10萬件文物**，3萬件以上指定文化財產",
+              "**天馬冢金冠（國寶第188號）**——1973年發掘的純金新羅王冠",
+              "**聖德大王神鐘（又稱愛彌勒鐘）**——韓國最大古代銅鐘，770年鑄造，重18.9噸",
+              "三大常設展廳：新羅歷史館、新羅美術館、月池館",
+              "**免費入場**，全館英文及中文展板說明"
+            ],
+            "timeUsed": [
+              "巴士下車 + 入場 + 寄物（約10分鐘）",
+              "戶外大鐘閣（聖德大王神鐘）（約10分鐘）",
+              "新羅館——金冠 + 王室御物（約25分鐘）",
+              "月池館——雁鴨池宮殿文物（約15分鐘）",
+              "特別展或紀念品店 + 集合（約15分鐘）"
+            ],
+            "whyOnRoute": "博物館安排在午餐後的下午，旅客以飽足的精力靜態欣賞10萬件文物，也是全日唯一的全程室內停留，也能應對午後天氣變化。免費入場且全館提供中文展板，對華語旅客格外友善。",
+            "visitBasics": {
+              "hours": "週二至週日10:00–18:00（最後入場17:30）；週六及每月最後一個週三延長至21:00",
+              "closed": "週一 + 元旦 + 農歷春節 + 中秋",
+              "admission": "免費（特別展覽可能收取小額費用）",
+              "walking": "主要為室內及鋪裝戶外區域；全程輪椅無障礙"
+            },
+            "convenience": {
+              "restroom": "主建築及戶外大鐘閣區域均設有多處廁所",
+              "parking": "場內大巴及自駕車停車位（免費）"
+            },
+            "smartNotes": {
+              "photo": "聖德大王神鐘戶外亭閣（午後側光最佳）；天馬冢金冠（室內較暗，建議調高ISO）；瞻星臺（月池館展示模型，可拍攝）。",
+              "facilities": "博物館商店有金冠複製品珠寶；主建築內設咖啡廳；設有寄存處。",
+              "tip": "禁止閃光燈攝影；部分特別展覽禁止一切拍攝（請留意標示）；在月池館多留10分鐘——雁鴨池文物的細節值得細細欣賞。"
+            },
+            "_poi_meta": {
+              "poi_key": "gyeongju_national_museum",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Gyeongju National Museum official",
+                "Wikipedia",
+                "Korea JoongAng Daily APEC 2025 coverage",
+                "Cultural Heritage Administration (NT 29, NT 188)",
+                "National Museum of Korea (Gyeongju Branch)"
+              ]
+            }
+          },
+          {
+            "number": 6,
+            "time": "≈ 15:50",
+            "duration": "60分鐘",
+            "name": "校村韓屋村",
+            "category": "文化韓屋村",
+            "description": "**校村韓屋村**是以**慶州崔氏的歷史宅邸**為核心的傳統韓屋聚落——這個仕紳士大夫家族以**「十二代保存財富」而著稱**，同時奉行**「六大家規」（含荒年不漲佃租）**等韓國倫理守則。慶州崔氏的宅邸被指定為**重要民俗材料第27號**。村落位於慶州市中心南川河畔，步行10分鐘可達月精橋。特色：韓式石板小徑、傳統土牆、石臼及複原的朝鮮時代庭院。村內的**慶州法酒展示館**展示朝鮮時代皇室貢酒的釀造工藝。**免費入場**，全天開放。",
+            "highlights": [
+              "**慶州崔氏宅邸**——仕紳士大夫「十二代保存財富」的歷史傳家",
+              "著名**六大家規**——韓國倫理守則（含荒年不漲佃租）",
+              "**重要民俗材料第27號**——宅邸及家訓的國家認定",
+              "韓式石板小徑、土牆、複原朝鮮庭院",
+              "慶州法酒展示館——朝鮮時代皇室貢酒釀造工藝",
+              "**免費入場**，步行10分鐘可達月精橋"
+            ],
+            "timeUsed": [
+              "巴士下車 + 步行至主入口（約5分鐘）",
+              "崔氏古宅 + 校洞法酒釀造廠外觀（約20分鐘）",
+              "雞林 + 奈勿王陵（約15分鐘）",
+              "鄉校儒學學校 + 村內小巷（約15分鐘）",
+              "集合上車（約5分鐘）"
+            ],
+            "whyOnRoute": "校村是全日歷史景點的人文收尾——從博物館的文物標本轉換到有人居住的活歷史村落，補足新羅文物背後的社會生活面向。同時作為月精橋步行前的最後定點。",
+            "visitBasics": {
+              "hours": "日間開放；大部分古宅09:00–18:00",
+              "closed": "部分古宅週一不開放——主要巷道全年開放",
+              "admission": "大部分古宅免費參觀；崔氏宗宅設有小額捐款箱",
+              "walking": "輕鬆——碎石及石板路；主幹道部分路段輪椅友善"
+            },
+            "convenience": {
+              "restroom": "村落入口及慶州鄉校附近設有公共廁所",
+              "parking": "西側入口設有大巴下客區（免費）"
+            },
+            "smartNotes": {
+              "photo": "黃金時段的韓屋瓦片屋頂；校洞法酒釀造廠大門；月精橋遠景從村落高點可拍攝。",
+              "facilities": "校洞法酒商店（紀念品裝酒）；沿主巷道有小型手工藝店（傳統米點心、陶瓷等）。",
+              "tip": "如有海關酒類免稅額度，可購買校洞法酒作為紀念品（請確認所在國家的攜帶規定）。"
+            },
+            "_poi_meta": {
+              "poi_key": "gyochon_hanok_village",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Gyeongju official",
+                "VisitKorea",
+                "Wikipedia (Gyeongju Choi family)",
+                "Cultural Heritage Administration (Folklore Material No. 27, Intangible No. 86-3)",
+                "Cultural Heritage Administration of Korea (Gyeongju Choi Clan Family Designation)"
+              ]
+            }
+          },
+          {
+            "number": 7,
+            "time": "≈ 17:00",
+            "duration": "40分鐘",
+            "name": "月精橋",
+            "category": "新羅木橋複原",
+            "description": "**月精橋**是**重建的新羅時代木造橋梁，橫跨南川河**，今日以**原長60.57公尺成為韓國最大的木造橋梁**，**2018年4月**在**長達數十年的複原工程（2008至2013年橋面，2013至2018年橋廊屋）**後重新對公眾開放。原橋**760年新羅景德王（第35代）初建**，記載於《三國史記》——橋名「月精（月光之精氣）」反映新羅景德王時代的佛教宇宙觀。橋梁在朝鮮時代廢棄，1984至1986年發掘後確認原址。橋廊屋（有屋頂的橋梁走廊）採唐風建築構成，兩端設有多重斗拱飛簷屋頂。**夜間燈光**每日從日落至22:00亮起，全年照常。本行程約17:00抵達；**冬季（11至2月）日落約17:15至17:30**，是全年唯一可靠捕捉到日落後橋燈倒映南川河的時段。其他季節17:00為日間光線，橋體本身亦值得拍攝。**免費入場**，24小時開放。",
+            "highlights": [
+              "**韓國最大木造橋梁**——原長60.57公尺",
+              "**760年新羅景德王（第35代）初建**——《三國史記》記載",
+              "**朝鮮時代廢棄→1984至1986年發掘→2008至2018年複原**",
+              "橋廊屋採唐風斗拱飛簷，是慶州最具攝影張力的夜景地標",
+              "**夜間燈光每日從日落至22:00**，全年照常",
+              "**冬季（11至2月）17:00前後日落**——最可靠的燈光倒影拍照時機",
+              "**免費入場**，24小時開放"
+            ],
+            "timeUsed": [
+              "巴士停於北岸停車場（約5分鐘）",
+              "步行穿越月精橋至南岸門樓（約10分鐘）",
+              "南岸取景攝影時間（約15分鐘）",
+              "折返 + 集合上車（約10分鐘）"
+            ],
+            "whyOnRoute": "月精橋作為全日壓軸，以新羅時代橋梁的木構建築美學為一整天的慶州UNESCO遺產之旅畫下景色上最豐富的句點。冬季日落時段的燈光倒影是全年最受旅客讚譽的夜景構圖。",
+            "visitBasics": {
+              "hours": "全天24小時開放（夜間照明：約日落至23:00）",
+              "closed": "全年開放",
+              "admission": "免費",
+              "walking": "輕鬆——橋面平坦；北岸可輪椅通行"
+            },
+            "convenience": {
+              "restroom": "北岸停車場設有公共廁所",
+              "parking": "大巴停於北岸；南岸無停車位"
+            },
+            "smartNotes": {
+              "photo": "南岸門樓背景下橋身延伸至月城宮殿遺址的代表性構圖；長曝光可捕捉燈光倒影——傍晚至夜間最佳。",
+              "facilities": "橋面上無商店；北岸停車場旁有少量咖啡廳。",
+              "tip": "建議攜帶三腳架或使用手機夜景模式拍攝燈光；冬季河面薄霧可能模糊倒影，可嘗試廣角取景。"
+            },
+            "_poi_meta": {
+              "poi_key": "woljeonggyo_bridge",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Gyeongju official",
+                "Cultural Heritage Administration",
+                "Wikipedia (Woljeonggyo)",
+                "MCST '100 Best Tourist Attractions 2025–2026' list",
+                "Korea Tourism Organization '100 Best 2025-2026' designation"
+              ]
+            }
+          },
+          {
+            "number": 8,
+            "time": "≈ 17:45",
+            "duration": "75分鐘",
+            "name": "返回釜山",
+            "category": "返程接送",
+            "description": "**約17:45從月精橋北岸出發**，走慶釜高速＋東海高速公路返回釜山。**下車順序與早晨接送相反**：**海雲臺站先下車**（約18:50），再前往**西面**（約19:05），最後**釜山站**（約19:20），視交通情況調整。週五及週日傍晚車流可能多加20至30分鐘，導遊透過群組訊息即時更新。",
+            "highlights": [
+              "**逆順序下車：海雲臺→西面→釜山站**",
+              "預計抵達：海雲臺約18:50 / 西面約19:05 / 釜山站約19:20",
+              "週五／週日傍晚車流可能多加20至30分鐘，導遊即時更新"
+            ],
+            "timeUsed": [
+              "從月精橋北岸出發（約5分鐘）",
+              "京釜 + 東海高速公路行駛（約60分鐘）",
+              "海雲臺站下車（約5分鐘）",
+              "前往西面站 + 釜山站下車（約5分鐘）"
+            ],
+            "whyOnRoute": "倒序送客是小團遊的標準運營慣例——先送地理位置最近的海雲臺，可最大限度壓縮總行程時間。不安排套餐晚餐是出於價格彈性和靈活性的考量，與同類釜山–慶州產品保持一致。",
+            "_poi_meta": {
+              "poi_key": "OPS_busan_return",
+              "verified": true,
+              "match": "transit_placeholder",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Operator schedule",
+                "Korea Expressway Corporation traffic data"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "釜山地鐵接送",
+            "type": "origin",
+            "theme": "出發"
+          },
+          {
+            "name": "阿胡山竹林（花季改走達摩吉山）",
+            "type": "primary",
+            "theme": "竹林／海岸公路（季節限定）"
+          },
+          {
+            "name": "佛國寺（UNESCO世界遺產）",
+            "type": "primary",
+            "theme": "UNESCO文化遺產"
+          },
+          {
+            "name": "午餐（慶州包飯）",
+            "type": "meal",
+            "theme": "用餐"
+          },
+          {
+            "name": "慶州國立博物館",
+            "type": "primary",
+            "theme": "新羅文物"
+          },
+          {
+            "name": "校村韓屋村",
+            "type": "primary",
+            "theme": "傳統韓屋村"
+          },
+          {
+            "name": "月精橋",
+            "type": "primary",
+            "theme": "新羅古橋複原"
+          },
+          {
+            "name": "釜山地鐵送達",
+            "type": "return",
+            "theme": "返程"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "出發＋九山竹林（約2.5小時）",
+            "duration": "約2.5小時",
+            "description": "依次在釜山地鐵三處出口接客（08:10、08:30、09:10），隨後駕車約30分鐘前往機張郡阿胡山竹林。"
+          },
+          {
+            "phase": "UNESCO核心（約2小時）",
+            "duration": "約2小時",
+            "description": "從阿胡山駕車約70分鐘抵達佛國寺，在寺內步行遊覽約75分鐘。"
+          },
+          {
+            "phase": "午餐＋博物館（約2.5小時）",
+            "duration": "約2.5小時",
+            "description": "慶州市內享用當地午餐（60分鐘），隨後參觀國立博物館新羅展館（75分鐘）。"
+          },
+          {
+            "phase": "韓屋村＋月精橋（約2小時）",
+            "duration": "約2小時",
+            "description": "漫步校村韓屋村（60分鐘），再前往月精橋欣賞暮色（40分鐘）。"
+          },
+          {
+            "phase": "返回釜山（約1.25至1.5小時）",
+            "duration": "約1.25–1.5小時",
+            "description": "經京釜高速公路返回釜山，依次在海雲臺、西面、釜山站下客。"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "行程路線一覽",
+          "subtitle": "以文化為核心的釜山出發慶州一日遊，深入呈現「遺產」主題——新羅王朝992年的歷史與留存至今的文物。多數慶州一日遊塞入5至7個戶外景點，本行程刻意放慢節奏、納入國立博物館（大多數行程略過的一站）。月精橋夜間燈光作為一天的完美收尾，是其他路線無法提供的感動時刻。"
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "初次造訪慶州的旅客",
+            "對韓國古代文明（新羅）感興趣的旅客",
+            "希望在一日內涵蓋UNESCO遺址＋博物館＋傳統村落的旅客",
+            "學齡兒童家庭（金冠和大銅鐘是孩子最愛）",
+            "冬季旅客（月精橋日落燈光全年最佳時段）"
+          ],
+          "lessIdealFor": [
+            "需要完全自訂行程的旅客",
+            "行動嚴重受限的旅客（佛國寺石階）",
+            "希望深度參觀石窟庵的旅客（需另行安排）"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "行程安排思路",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "一日涵蓋慶州最具代表性的5個UNESCO相關景點",
+                  "detail": "九山（UNESCO景觀背景）→佛國寺（UNESCO世界遺產）→博物館（新羅文物精華）→校村（歷史社會生活）→月精橋（新羅石橋藝術）——構成完整的「慶州一日行程參觀脈絡」，從自然→宗教建築→文物→人文→工程藝術。"
+                },
+                {
+                  "label": "博物館安排在下午是關鍵構成",
+                  "detail": "下午安排博物館提供全程室內的休息時間，讓旅客在上午佛國寺步行後恢複體力，同時以文物視角深化對新羅文化的理解，為下午校村和月精橋的體驗提供歷史文脈。"
+                },
+                {
+                  "label": "冬季日落月精橋是全年獨有亮點",
+                  "detail": "冬季日落提早至約17:15至17:30，與本行程約17:00抵達月精橋完美吻合，形成其他季節無法複制的橋燈＋南川河倒影構圖——是慶州最受旅客讚譽的夜景體驗。"
+                },
+                {
+                  "label": "小型廂型車——介於大型觀光巴士與私人包車之間的最佳選擇",
+                  "detail": "釜山至慶州的大型觀光巴士通常搭載35至45名乘客，私人包車則費用較高。本行程採用8至12人座小型廂型車，既保有靈活性，又比私人包車更具成本效益。"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "inclusions",
+            "title": "費用包含項目",
+            "preview": "來回廂型小巴交通、認證英語 / 中文導遊、油費 / 過路費 / 停車費",
+            "content": [
+              "來回廂型小巴交通、認證英語 / 中文導遊、油費 / 過路費 / 停車費",
+              "不含：午餐（約₩15,000至₩25,000）、九山竹林入場費（₩5,000現場現金支付）、小費",
+              "佛國寺（2023年5月起免費）、博物館（免費）、校村（免費）、月精橋（免費）"
+            ]
+          },
+          {
+            "id": "pickup",
+            "title": "接送與下車地點",
+            "preview": "釜山地鐵1號線三站依序接送：釜山站4號出口（08:10）、西面站4號出口（08:30）、海雲臺站5號出口（09:10）",
+            "content": [
+              "釜山地鐵三站依序接送：釜山站4號出口（08:10）、西面站4號出口（08:30）、海雲臺站5號出口（09:10）",
+              "預訂時請選擇距您飯店最近的集合點"
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "步行強度與地形",
+            "preview": "中等",
+            "content": [
+              "中等",
+              "全日步行距離約4至5公里",
+              "佛國寺石階不平整，輕微上坡；博物館、校村及橋梁均為平地"
+            ]
+          },
+          {
+            "id": "cancellation",
+            "title": "取消政策",
+            "preview": "出發前24小時前可免費取消",
+            "content": [
+              "出發前24小時前可免費取消",
+              "當日取消及未到場者不予退款"
+            ]
+          },
+          {
+            "id": "seasonal",
+            "title": "季節性路線說明",
+            "preview": "賞櫻季（通常三月中至四月中，確切日期年度波動約7至10天）路線調整",
+            "content": [
+              "賞櫻季（通常三月中至四月中）：九山竹林替換為海雲臺達摩峰，釜山最具代表性的沿海賞櫻路線",
+              "冬季（11至2月）：月精橋日落燈光在約17:15至17:30降臨，是全年唯一可在17:00抵達後捕捉日落後倒影的時段"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "即時天氣連動"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "每日更新"
+          },
+          "_seasonalSummary": "慶州比釜山更接近內陸氣候，冬季更冷、夏季更熱。4月賞櫻季與10月至11月佛國寺紅葉季通常最適合遊覽。",
+          "_seasonalTemperatures": [
+            {
+              "season": "春季（3至5月）",
+              "range": "5–22°C",
+              "notes": "櫻花在4月初盛開，是整體最推薦的季節。"
+            },
+            {
+              "season": "夏季（6至8月）",
+              "range": "22–32°C",
+              "notes": "炎熱潮濕；博物館內有空調，適合作為避暑停留點。"
+            },
+            {
+              "season": "秋季（9至11月）",
+              "range": "8–24°C",
+              "notes": "10月下旬佛國寺一帶紅葉轉色，景色非常好。"
+            },
+            {
+              "season": "冬季（12至2月）",
+              "range": "-3 to 8°C",
+              "notes": "天氣偏冷；博物館與室內咖啡廳會更適合作為停留點。"
+            }
+          ]
+        },
+        "seasonalVariations": [
+          {
+            "season": "春季（3月中旬至4月中旬，賞櫻期）",
+            "description": "三月中至四月中（確切日期年度波動約7至10天）：九山竹林替換為海雲臺達摩峰，釜山沿海賞櫻路線。佛國寺同期亦有野櫻盛開，全日花景豐富。"
+          },
+          {
+            "season": "夏季（6至8月）",
+            "description": "慶州戶外景點在夏日陽光下呈現最鮮豔的顏色。建議戴帽及防曬。博物館提供全程室內的涼爽休息空間。"
+          },
+          {
+            "season": "秋季（9月下旬至10月下旬）",
+            "description": "秋葉映襯佛國寺與校村韓屋，是全年攝影品質最高的季節。月精橋與秋色構成最豐富的夜燈對比。"
+          },
+          {
+            "season": "冬季（11至2月）",
+            "description": "冬季（11至2月）日落約17:15至17:30，是全年唯一可靠在約17:00抵達月精橋後拍到日落後燈光倒影的時段。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "當地持照合法業者",
+            "description": "持有完整保險的韓國合法旅遊業者",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "認證英語 / 中文導遊全程陪同，熟悉慶州UNESCO遺址的深度歷史，提供遠超指示牌的文化解說。"
+          },
+          {
+            "icon": "route",
+            "title": "路線專家",
+            "description": "精心調校的行程，非泛用路線",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "行程序列（九山→佛國寺→博物館→校村→月精橋）依上午人潮規律、博物館停留效益及月精橋日落時段精心排列。"
+          },
+          {
+            "icon": "users",
+            "title": "精心控制團體人數",
+            "description": "規模恰到好處——適合本路線的小型廂型車",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "小型廂型小巴確保佛國寺各展區及博物館展廳保持舒適的參觀空間，不受大型旅行團擁擠影響。"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "即時通知",
+            "title": "即時確認",
+            "detail": "預訂確認信含行程摘要",
+            "description": "預訂即時收到確認信，含集合站選擇說明。"
+          },
+          {
+            "timing": "出發前12小時",
+            "title": "出發前12小時提醒",
+            "detail": "天氣更新及路線調整通知",
+            "description": "確認天氣及九山 / 月精橋路線調整資訊。"
+          },
+          {
+            "timing": "前一晚",
+            "title": "最終接送資訊",
+            "detail": "確切接客時間與司機聯系方式",
+            "description": "發送確切接送時間及導遊聯絡方式。"
+          },
+          {
+            "timing": "行程當天早晨",
+            "title": "當日路線說明",
+            "detail": "依實況提供當日行程說明",
+            "description": "導遊於集合前確認車牌及當日安排。"
+          },
+          {
+            "timing": "行程途中",
+            "title": "景點逐一說明",
+            "detail": "各景點即時現場導覽",
+            "description": "導遊提供佛國寺六件國寶、新羅金冠等深度解說，博物館特色文物現場帶領。"
+          },
+          {
+            "timing": "行程結束後",
+            "title": "行程後支援",
+            "detail": "行程結束後反饋與後續建議",
+            "description": "行程結束後發送問卷，歡迎意見回饋。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q-bridge-night-view",
+            "question": "我們抵達月精橋時橋燈真的會亮嗎？",
+            "answer": "要看季節。橋燈全年每晚從日落亮至約22:00，但本行程約17:00抵達。在慶州，日落時間從夏季（20:00）到冬季（17:15至17:30）差異極大。冬季（11至2月）是唯一可靠在17:00抵達後等到日落燈光倒影的時段。"
+          },
+          {
+            "id": "q-vs-ancient-capital",
+            "question": "和「古都」釜山出發慶州日遊有何不同？",
+            "answer": "兩條路線路徑相似（九山→佛國寺→博物館→校村→橋梁）。「UNESCO遺產」版本強調每個景點的遺產價值，幷包含慶州國立博物館的深度停留（含金冠等新羅文物），適合對韓國歷史有更深探索興趣的旅客。"
+          },
+          {
+            "id": "q-seokguram",
+            "question": "石窟庵呢？它也是和佛國寺同一個UNESCO遺址。",
+            "answer": "石窟庵與佛國寺共同列入同一項UNESCO世界遺產，但位於山上8公里外，須走陡峭狹窄山路。結合距離、停車限制及下山難度，全天只能擇一深入體驗——本行程選擇佛國寺，因其六件國寶集中且面積更廣，可看的重點更集中。"
+          },
+          {
+            "id": "q-admissions",
+            "question": "門票含括在行程費用內嗎？",
+            "answer": "大部分免費，唯一需要現場自付的入場費是九山竹林（₩5,000現金）。佛國寺自2023年5月起免費；慶州國立博物館免費；校村免費；月精橋免費。"
+          },
+          {
+            "id": "q-museum-language",
+            "question": "博物館有英文說明牌嗎？",
+            "answer": "有。慶州國立博物館在三大常設展廳（新羅歷史館、新羅美術館、月池館）全程提供英文及中文展板說明。聖德大王神鐘（聖德大王神鐘等戶外展示亦設有英中說明。"
+          },
+          {
+            "id": "q-bulguksa-photography",
+            "question": "佛國寺可以拍照嗎？",
+            "answer": "可以。整個寺廟境內（含兩座石塔及下層石橋）均允許拍照。請勿在禮拜室內使用閃光燈和腳架，並尊重參拜中的信眾。兩座石橋為國寶，不可踩上，僅供觀賞。"
+          },
+          {
+            "id": "q-bulguksa-stairs",
+            "question": "佛國寺的33級石橋必須走嗎？",
+            "answer": "不必。青雲橋和白雲橋是國寶文物，目前作為保護文物保存——遊客在下層庭院欣賞，不可走上橋面。進入大雄殿有另一條無障礙路線可用。"
+          },
+          {
+            "id": "q-vegetarian",
+            "question": "午餐有素食選項嗎？",
+            "answer": "有。慶州包飯（葉包飯，該地區特色午餐）以豐富蔬菜小菜為主；點餐時不要肉類小菜即可接近素食。導遊可協助說明。請於預訂時告知飲食需求。"
+          },
+          {
+            "id": "q-rain",
+            "question": "下雨怎麼辦？",
+            "answer": "小雨照常出發。大雨時：佛國寺石階可能溼滑，九山步道可能泥濘；導遊可縮短戶外時間並延長博物館停留（全程室內）。"
+          },
+          {
+            "id": "first-time",
+            "question": "這是初次造訪慶州的好選擇嗎？",
+            "answer": "是的——涵蓋慶州最具代表性的UNESCO和文化景點，兼顧室內（博物館）與戶外（寺廟、村落、橋梁），在均衡一日行程中提供最完整的慶州初訪覽覽。"
+          },
+          {
+            "id": "walking",
+            "question": "步行距離大約多少？",
+            "answer": "全程約4至5公里。佛國寺步行量最多（不平整石面、輕微上坡）；博物館全程室內平坦；校村和橋梁均為平地。建議穿著舒適步行鞋。"
+          },
+          {
+            "id": "family",
+            "question": "親子家庭適合嗎？",
+            "answer": "適合學齡兒童（約8歲以上）能配合全日節奏者。博物館的金冠和大銅鐘通常是孩子最喜歡的停留；九山竹林對各年齡均具景色吸引力。"
+          },
+          {
+            "id": "seniors",
+            "question": "年長旅客能否舒適地參加？",
+            "answer": "建議能應對4至5公里步行及佛國寺不平整石面的活躍銀發族。全行程節奏中等，博物館的室內停留提供充足的休息時間。行動受限者建議告知導遊以便調整。"
+          },
+          {
+            "id": "children",
+            "question": "建議最低年齡是多少？",
+            "answer": "建議約8歲以上——能配合步行強度及全日節奏的孩子。較年幼的孩子可能在博物館參觀後段體力不支。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "可訂狀態會在付款步驟中確認。",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "人",
+          "priceSource": "direct_rate",
+          "priceNote": "小團價格尚未在旅遊服務團隊商品資訊中確認。釜山出發的慶州一日遊通常約為54–90美元，視套裝與旅遊服務團隊而定。確認後，AtoC Korea官網直售價將按九折計算。",
+          "discountPercent": 10
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v15.3"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v15.3_operational_fill": "Filled operational data (visitBasics, convenience, smartNotes) for 5 attraction stops from centralized POI knowledge base. Sources: VisitKorea, VisitBusan, VisitSeoul, official tourism boards.\n  - Stop #2 Ahopsan Bamboo Forest: filled [visitBasics, convenience, smartNotes]\n  - Stop #3 Bulguksa Temple (UNESCO World Heritage): filled [visitBasics, convenience, smartNotes]\n  - Stop #5 Gyeongju National Museum: filled [visitBasics, convenience, smartNotes]\n  - Stop #6 Gyochon Hanok Village: filled [visitBasics, convenience, smartNotes]\n  - Stop #7 Woljeonggyo Bridge: filled [visitBasics, convenience, smartNotes]",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      }
+    }
+  }
+}

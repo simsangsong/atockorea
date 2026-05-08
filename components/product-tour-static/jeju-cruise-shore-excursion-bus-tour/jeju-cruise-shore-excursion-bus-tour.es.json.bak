@@ -1,0 +1,2711 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "jeju-cruise-shore-excursion-bus-tour",
+  "locale": "es",
+  "product_id": "jeju-cruise-shore-excursion-bus-tour",
+  "seo": {
+    "pageTitle": "Excursión Crucero Jeju: Tour en autocar (autocar grande) | AtoC Korea",
+    "metaDescription": "8 horas de excursión en gran autocar para cruceros con ruta según el puerto: Puerto de Jeju → UNESCO este; Puerto Gangjeong → Hallasan alpino + Mercado Olle.",
+    "ogImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "primaryKeywords": [
+      "Jeju excursión en tierra",
+      "Jeju tour desde el puerto de cruceros",
+      "Jeju tour en autobús para cruceristas",
+      "Jeju excursión grupal en tierra",
+      "Jeju tour de día para cruceristas"
+    ],
+    "title": "Excursión Crucero Jeju: Autocar, UNESCO y Aldea | AtoC",
+    "description": "Priorizamos regresar de forma segura al puerto con al menos 60-90 minutos de margen antes de la hora límite de embarque del crucero. El itinerario, los tiempos de visita y la hora de regreso se ajustan según el horario real del barco. Si hay tráfico, mal tiempo o retrasos en el desembarque, el guía reducirá el tiempo en algunas paradas para priorizar el regreso seguro al puerto y llegar a tiempo para volver a embarcar."
+  },
+  "catalog_card": {
+    "slug": "jeju-cruise-shore-excursion-bus-tour",
+    "title": "Excursión en Escala de Crucero en Jeju - Excursión en autocar (autocar grande)",
+    "subtitle": "Excursión de día para cruceristas, ajustada al puerto, con rutas alternativas para Jeju y Gangjeong.",
+    "region": "Jeju (según el puerto)",
+    "duration": "8 horas",
+    "stopsCount": 6,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "Excursión para cruceristas",
+      "Ruta según puerto",
+      "Opción económica",
+      "Autocar grande"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
+    "priceLabel": "Precio variable — confirmar al reservar",
+    "shortCardDescription": "Tour en autocar de gran capacidad desde el terminal de cruceros de Jeju, con dos rutas según el puerto de atraque: Puerto de Jeju (norte) → Seongsan Ilchulbong (triple Patrimonio UNESCO) → Cabo Seopjikoji → almuerzo → Aldea Seongeup; Puerto Gangjeong (sur) → ruta alternativa por el Hallasan. Regreso seguro al puerto 90-120 min antes de la salida.",
+    "tags": [
+      "Excursión de crucero",
+      "Ruta adaptada al puerto",
+      "Crucero económico",
+      "Autobús grande"
+    ]
+  },
+  "headlineLine1": "Excursión de crucero en Jeju — tour en autocar (autocar grande)",
+  "headlineLine2": "Dos rutas según su puerto de atraque",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "persona"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "imagePosition": "center 35%",
+    "tagline": "Excursión en autocar desde el terminal de cruceros de Jeju — ruta este o sur según el puerto",
+    "pills": [
+      "cruise_excursion",
+      "Ruta adaptada al puerto",
+      "budget_cruise"
+    ],
+    "meta": {
+      "duration": "8 horas",
+      "region": "Jeju (según puerto)",
+      "stops": "6-7 paradas",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Descripción"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerario"
+    },
+    {
+      "id": "details",
+      "label": "Información práctica"
+    },
+    {
+      "id": "faq",
+      "label": "Preguntas frecuentes"
+    },
+    {
+      "id": "reviews",
+      "label": "Opiniones"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "Duración",
+      "value": "8 horas"
+    },
+    {
+      "icon": "camera",
+      "label": "Valor fotográfico",
+      "value": "Muy alto"
+    },
+    {
+      "icon": "mountain",
+      "label": "Escénico",
+      "value": "Muy alto"
+    },
+    {
+      "icon": "footprints",
+      "label": "Caminata",
+      "value": "Moderado"
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Seguridad con lluvia",
+      "value": "Moderado"
+    },
+    {
+      "icon": "users",
+      "label": "Adecuado para familias",
+      "value": "Moderado"
+    },
+    {
+      "icon": "scale",
+      "label": "Ritmo",
+      "value": "Equilibrado"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+      "alt": "Imagen de Terminal de cruceros de Jeju",
+      "caption": "Terminal de cruceros de Jeju",
+      "location": "Terminal de cruceros",
+      "atmosphere": "Salida"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+      "alt": "Imagen de Seongsan tuff cone",
+      "caption": "Seongsan tuff cone",
+      "location": "Seongsan Ilchulbong",
+      "atmosphere": "Pico del amanecer UNESCO"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+      "alt": "Imagen de Acantilados basálticos de Jusangjeolli",
+      "caption": "Acantilados basálticos de Jusangjeolli",
+      "location": "Jusangjeolli",
+      "atmosphere": "Costa columnar volcánica"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+      "alt": "Imagen de Humedal 1100 de Hallasan",
+      "caption": "Humedal 1100 de Hallasan",
+      "location": "Hallasan 1100",
+      "atmosphere": "Pasarela alpina"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      "alt": "Imagen de Cheonjiyeon waterfall",
+      "caption": "Cheonjiyeon waterfall",
+      "location": "Cheonjiyeon falls",
+      "atmosphere": "Cascada y bosque"
+    },
+    {
+      "id": "g6",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+      "alt": "Imagen de Mercado Olle Maeil",
+      "caption": "Mercado Olle Maeil",
+      "location": "Mercado Olle Maeil",
+      "atmosphere": "Final en el mercado local"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "name": "Recogida Terminal de Cruceros Jeju (Puerto Jeju — norte)",
+      "category": "Logística de Recogida y Crucero",
+      "description": "Su conductor y guía de habla inglesa recibirá al grupo en la **Terminal Internacional de Pasajeros de Jeju**. La recogida se programa **30 minutos después del desembarque anunciado**, con margen para inmigración y para días de alta congestión portuaria. El guía esperará en la sala de llegadas con un cartel con el nombre del grupo y una tarjeta de itinerario con horarios, direcciones en coreano y contacto operativo 24/7. Antes de salir, se confirma la hora límite de regreso al barco, el clima y cualquier ajuste de ruta del día.",
+      "highlights": [
+        "**Recogida 30 min tras el despacho** — margen para absorber retrasos de inmigración",
+        "El conductor y el guía de habla inglesa lo recibirán en la sala de llegadas con un cartel con su nombre",
+        "**Muelle principal 360 m × 12 m / 140.000 ton** (un barco simultáneo)",
+        "**100 plazas de autobús** adyacentes — embarque rápido",
+        "Centro de información turística, cambio de divisas Jeju Bank, cajeros automáticos, Wi-Fi gratuito",
+        "Tarjeta de itinerario con direcciones en coreano como respaldo para taxis de emergencia"
+      ],
+      "_poi_meta": {
+        "poi_key": "jeju_cruise_port",
+        "kb_version": "1.21",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities + 100-bus parking)",
+          "South Korea Ministry of Oceans & Fisheries (terminal opening 2015; berth specifications)",
+          "Korea Cruise Port Sales / k-cruiseinfo.com (berth depths, tonnage de capacidad)",
+          "Ministry of Culture, Sports & Tourism (2024 cruise volume: 810,000 pax / 414 ships)",
+          "Jeju Provincial Government (Imhang-ro address, Geonip-dong; UN/LOCODE KRCHA)"
+        ]
+      },
+      "number": 1,
+      "time": "Llegada del crucero + 30 min",
+      "duration": "30 min",
+      "whyOnRoute": "**El Puerto de Jeju (norte) es la puerta de entrada principal de cruceros** para menos de 140.000 GT."
+    },
+    {
+      "number": 2,
+      "time": "≈ 09:00",
+      "duration": "75 min",
+      "name": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
+      "category": "Cono de Toba UNESCO — Pico del Amanecer (Triple Designación UNESCO)",
+      "description": "**Seongsan Ilchulbong** es un **cono de toba hidrovolcánica de tipo Surtsey de 5.000 años** — una forma de tierra rara creada cuando una erupción submarina emergió del océano alrededor del año 100 d.C.",
+      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+      "highlights": [
+        "**Triple UNESCO**: Patrimonio Mundial 2007-07-02 + Reserva de Biosfera 2002 + Geoparque Global 2010-10",
+        "**5.000 años de antigüedad** — erupción hidrovolcánica tipo Surtsey, explosión de magma en contacto con el agua del mar",
+        "Cráter de **600 m de ancho × 90 m de profundidad**, rodeado por **99 rocas dentadas** (la 'corona de piedra')",
+        "**182 m sobre el nivel del mar** — 0,8 km / ~140 m de ganancia, 60 min ida y vuelta por sendero de escaleras",
+        "**18 cuevas japonesas de la IIGM** — refugios de botes suicidas kamikaze de 1945",
+        "**Demostraciones de haenyeo a diario 13:30 + 15:00** — UNESCO Patrimonio Inmaterial 2016",
+        "**Tarifas actualizadas abril 2025**: Adultos ₩5.000 / Jóvenes ₩2.500 / GRATIS menores de 7 + mayores de 65",
+        "Horario primavera/otoño **05:00–19:00** (última entrada 18:20)",
+        "**Cierra el primer lunes de cada mes**"
+      ],
+      "timeUsed": [
+        "Aparcamiento + entrada + orientación en la base — ~10 min",
+        "Ascenso a la plataforma de la cumbre (0,8 km / 140 m de ganancia) — ~30 min",
+        "Vistas desde la cumbre + fotos del borde del cráter — ~20 min",
+        "Descenso — ~20 min",
+        "Visualización opcional de haenyeo en la base (demo 15:00) — ~10 min"
+      ],
+      "whyOnRoute": "La **triple designación UNESCO de Seongsan Ilchulbong** la convierte en el punto destacado natural.",
+      "_poi_meta": {
+        "poi_key": "seongsan_ilchulbong",
+        "kb_version": "1.18",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
+          "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
+          "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
+          "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
+          "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:15",
+      "duration": "60 min",
+      "name": "Seopjikoji (Cabo Este)",
+      "category": "Cabo Volcánico — Arquitectura Tadao Ando + Faro Bangdupo + Localizaciones de Series",
+      "description": "**Seopjikoji** es un estrecho cabo volcánico en la costa este de Jeju — conocido por las escenas de película y el Glass House de Tadao Ando.",
+      "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+      "highlights": [
+        "**Sendero de 2,1 km por el cabo** (~30 min, solo 14 m de desnivel) — tramos accesibles para sillas de ruedas y cochecitos",
+        "**Faro Bangdupo** — octagonal, **destellos cada 4 seg**, en lo alto del cono volcánico rojo Bulgeun Oreum",
+        "**Estación de señales Hyeopja Yeondae** — yeondae joseon de 4 m × 9 m, **Monumento Especial No. 23-2**",
+        "**Arquitectura Tadao Ando** — restaurante Glass House + Galería de Arte Yumin (Phoenix Island)",
+        "**Roca Seonbawi** — cuello volcánico a 10 m de la costa, leyenda del hijo menor del rey dragón",
+        "**Rodaje de series**: 'All In' (2003), 'Mi nombre es Kim Sam-soon' (2005) y otros",
+        "**Temporada de canola marzo-abril** (pendientes amarillas); **hortensias junio** (azul/violeta)",
+        "**Entrada al cabo GRATUITA**; Galería Yumin + Glass House con entrada separada",
+        "Seongsan Ilchulbong **claramente visible a 4 km al norte** desde el extremo del cabo"
+      ],
+      "timeUsed": [
+        "Aparcamiento + acceso — ~5 min",
+        "Paseo por el sendero del cabo — ~25 min",
+        "Fotos del faro + Hyeopja Yeondae — ~10 min",
+        "Vista exterior de los edificios de Tadao Ando — ~10 min",
+        "Regreso al autocar + reserva — ~10 min"
+      ],
+      "whyOnRoute": "**Arquitectura Tadao Ando en Seopjikoji** (restaurante Glass House + Galería Yumin, reconocida con el Premio Pulitzer).",
+      "_poi_meta": {
+        "poi_key": "seopjikoji",
+        "kb_version": "1.19",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Jeju Provincial Cultural Heritage — Special Monument No. 23-2 designation",
+          "VisitJeju — Seopjikoji official listing",
+          "Korea Lighthouse Service — Bangdupo Lighthouse operation records",
+          "Tadao Ando Architect & Associates — Phoenix Island project documentation",
+          "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
+        ]
+      }
+    },
+    {
+      "name": "Almuerzo (Este de Jeju — marisco local o cerdo negro)",
+      "category": "Almuerzo",
+      "description": "**Parada de almuerzo en el este de Jeju** en un restaurante local seleccionado por el guía.",
+      "highlights": [
+        "Restaurante local del Este de Jeju verificado por el guía — zona Seongsan/Seongeup/Pyoseon",
+        "**BBQ de cerdo negro de Jeju** (Monumento Natural 2015) o **Galchi Jorim** (hairtail a la brasa)",
+        "~60 min — encaja en el itinerario de un día de crucero",
+        "Menús fotográficos bilingües (inglés/chino), se acepta tarjeta y efectivo",
+        "Opciones vegetarianas con aviso previo",
+        "**Almuerzo NO incluido** — gasto personal ₩15.000–25.000/persona"
+      ],
+      "_poi_meta": {
+        "poi_key": "OPS_lunch_east_jeju",
+        "kb_version": "1.21",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Jeju Black Pig Natural Monument designation (2015, Cultural Heritage Administration)",
+          "Visit Jeju (eastern Jeju cuisine — galchi, heukdwaeji)",
+          "AtoC Korea operations notes (cruise tour lunch venue rotation)"
+        ]
+      },
+      "number": 4,
+      "time": "≈ 12:30",
+      "duration": "60 min",
+      "whyOnRoute": "**El almuerzo se sitúa en el punto medio geográfico de la ruta**, no cronológico."
+    },
+    {
+      "number": 5,
+      "time": "≈ 13:45",
+      "duration": "60 min",
+      "name": "Aldea Folclórica Seongeup",
+      "category": "Ciudad Amurallada de Era Joseon — Patrimonio Cultural Folclórico Importante (fundado 1423)",
+      "description": "**Aldea Folclórica de Seongeup** es una **ciudad amurallada de la era Joseon fundada en 1423** durante el reinado del Gran Sejong. Con alrededor de 500 años de administración, sus muros de piedra volcánica y casas con techo de paja ofrecen uno de los entornos históricos más auténticos de Jeju.",
+      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+      "highlights": [
+        "**Fundada en 1423** por el Rey Sejong el Grande — centro administrativo hasta **1914 (~500 años)**",
+        "**110 estructuras tradicionales** dentro del perímetro original de la ciudad amurallada eupseong",
+        "**Patrimonio Cultural Folclórico Importante de Corea del Sur** (todo el pueblo + edificios individuales)",
+        "**Dos árboles de ~600 años** en el centro: Zelkova de hoja de sierra + Almez japonés — **Monumentos Naturales**",
+        "Diseñada según **principios de feng shui joseon (geomancia)** — plano típico de capital de condado",
+        "Lugar de rodaje de **'Dae Jang Geum' (MBC 2003-2004)** — éxito internacional de K-drama",
+        "**Omegisul** — licor de arroz de Jeju elaborado por una sola familia durante generaciones (cata gratuita)",
+        "Cicatrices históricas: **incendio de 1826** destruyó ~80 edificios; daños del **Levantamiento de Jeju de 1948**",
+        "**Entrada GRATUITA** — pueblo habitado por ~250 familias que mantienen las tradiciones"
+      ],
+      "timeUsed": [
+        "Aparcamiento + bienvenida del docente del pueblo — ~10 min",
+        "Camino a los árboles centenarios + centro del pueblo — ~10 min",
+        "Visitas al interior de los hanok (2–3 casas representativas) — ~15 min",
+        "Cata gratuita en la cervecería Omegisul — ~10 min",
+        "Paseo por el callejón Olle + fotografía — ~10 min",
+        "Tiempo de reserva — ~5 min"
+      ],
+      "whyOnRoute": "**Aldea Folclórica de Seongeup** (fundada 1423 por el Gran Sejong, ~500 años de función administrativa).",
+      "_poi_meta": {
+        "poi_key": "seongeup_folk_village",
+        "kb_version": "1.19",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Cultural Heritage Administration — Important Folklore Cultural Heritage designation",
+          "Korea Cultural Heritage Foundation — Seongeup Folk Village historical records",
+          "VisitJeju — Seongeup Minsok Maeul",
+          "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
+          "Jeju Folklore Society — Omegisul brewing tradition documentation"
+        ]
+      }
+    },
+    {
+      "name": "Recogida Terminal de Cruceros Jeju (Puerto Jeju — norte)",
+      "category": "Logística de Recogida y Crucero",
+      "description": "Trayecto de regreso a la **Terminal Internacional de Pasajeros de Jeju**.",
+      "highlights": [
+        "**Recogida 30 min tras el despacho** — margen para absorber retrasos de inmigración",
+        "Conductor + guía de habla inglesa con letrero en la sala de llegadas",
+        "**Muelle principal 360 m × 12 m / 140.000 ton** (un barco simultáneo)",
+        "**100 plazas de autobús** adyacentes — embarque rápido",
+        "Tiendas de recuerdos libres de impuestos, cajero Jeju Bank, cambio de divisas, alquiler de Wi-Fi",
+        "Lanzadera gratuita al **Mercado Tradicional Dongmun** (~10 min) si hay tiempo extra"
+      ],
+      "_poi_meta": {
+        "poi_key": "jeju_cruise_port",
+        "kb_version": "1.21",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities)",
+          "Jeju Bus Information System (Bus #100 airport connection)",
+          "Korea Cruise Port Sales (terminal layout + drop-off zones)",
+          "VisitJeju.net (Dongmun Market free traslado compartido)",
+          "Cruise industry standard (60-min all-aboard buffer)"
+        ]
+      },
+      "number": 6,
+      "time": "≈ 15:30 salida → ≈ 16:45 llegada al puerto",
+      "duration": "75 min de trayecto + 60 min de margen",
+      "whyOnRoute": "**El trayecto de regreso es el bloque individual más largo del día** (~70-80 min de Seongeup al puerto)."
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Terminal de Cruceros",
+      "type": "origin",
+      "theme": "Salida"
+    },
+    {
+      "name": "Pico del Amanecer",
+      "type": "primary",
+      "theme": "Volcano"
+    },
+    {
+      "name": "Seopjikoji",
+      "type": "primary",
+      "theme": "Costa"
+    },
+    {
+      "name": "Almuerzo",
+      "type": "meal",
+      "theme": "Comida"
+    },
+    {
+      "name": "Aldea Folclórica",
+      "type": "primary",
+      "theme": "Culture"
+    },
+    {
+      "name": "Terminal de Cruceros",
+      "type": "return",
+      "theme": "Regreso"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "Volcán UNESCO + costa",
+      "duration": "Paradas 1–3",
+      "description": "Mañana: Volcán UNESCO + costa"
+    },
+    {
+      "phase": "Almuerzo",
+      "duration": "Parada 4",
+      "description": "Mediodía: Almuerzo"
+    },
+    {
+      "phase": "Cultura tradicional + regreso",
+      "duration": "Paradas 5–6",
+      "description": "Tarde: Cultura folclórica + regreso"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "Cómo se desarrolla el día",
+    "subtitle": "La ruta depende de tu puerto de escala. Si atracan en el Puerto de Jeju (norte), el recorrido sigue la ruta UNESCO este; si atracan en el Puerto de Gangjeong (sur), la ruta pasa por la zona alpina del Hallasan y el Mercado Olle."
+  },
+  "itinerary_variants": [
+    {
+      "port_id": "jeju_port",
+      "port_label": "Puerto de Jeju (Terminal Norte)",
+      "port_label_short": "Puerto de Jeju",
+      "route_focus": "Monumentos UNESCO de la costa este + cultura popular",
+      "pickup_base": "jeju_port",
+      "duration_band": "8h",
+      "return_time_band": "17:00–17:30",
+      "poi_tags_in_variant": [
+        "seongsan_ilchulbong",
+        "seopjikoji",
+        "seongeup_folk_village"
+      ],
+      "theme_tags_in_variant": [
+        "volcano",
+        "coast",
+        "culture",
+        "iconic_landmarks",
+        "first_time_friendly"
+      ],
+      "scenic_level_in_variant": 1.0,
+      "walking_level_in_variant": 0.6,
+      "indoor_ratio_in_variant": 0.15,
+      "weather_sensitivity_in_variant": 0.8,
+      "stops": [
+        {
+          "name": "Recogida en Terminal de Cruceros de Jeju (Puerto norte)",
+          "category": "Recogida y logística del crucero",
+          "description": "Su conductor y guía de habla inglesa recibirá al grupo en la **Terminal Internacional de Pasajeros de Jeju**. La recogida se programa **30 minutos después del desembarque anunciado**, con margen para inmigración y para días de alta congestión portuaria. El guía esperará en la sala de llegadas con un cartel con el nombre del grupo y una tarjeta de itinerario con horarios, direcciones en coreano y contacto operativo 24/7. Antes de salir, se confirma la hora límite de regreso al barco, el clima y cualquier ajuste de ruta del día.",
+          "highlights": [
+            "**Recogida 30 min tras el despacho del barco** — margen para absorber retrasos de inmigración",
+            "El conductor y el guía de habla inglesa lo recibirán en la sala de llegadas con un cartel con su nombre",
+            "**Muelle principal 360 m × 12 m / 140.000 ton** (un barco simultáneo)",
+            "**Aparcamiento para 100 autocares** adyacente al terminal — embarque rápido",
+            "Centro de información turística, cambio de divisas Jeju Bank, ATMs, Wi-Fi gratuito",
+            "Tarjeta de itinerario con direcciones en coreano como respaldo para taxis de emergencia"
+          ],
+          "_poi_meta": {
+            "poi_key": "jeju_cruise_port",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities + 100-bus parking)",
+              "South Korea Ministry of Oceans & Fisheries (terminal opening 2015; berth specifications)",
+              "Korea Cruise Port Sales / k-cruiseinfo.com (berth depths, tonnage de capacidad)",
+              "Ministry of Culture, Sports & Tourism (2024 cruise volume: 810,000 pax / 414 ships)",
+              "Jeju Provincial Government (Imhang-ro address, Geonip-dong; UN/LOCODE KRCHA)"
+            ]
+          },
+          "number": 1,
+          "time": "Llegada del crucero + 30 min",
+          "duration": "30 min",
+          "whyOnRoute": "**El Puerto de Jeju (norte) es la principal puerta de entrada de cruceros** para embarcaciones de menos de 140,000 GT — el punto de origen natural del recorrido por la costa este."
+        },
+        {
+          "number": 2,
+          "time": "≈ 09:00",
+          "duration": "75 min",
+          "name": "Seongsan Ilchulbong",
+          "category": "Cono de toba UNESCO — Pico del Amanecer (Triple designación UNESCO)",
+          "description": "**Seongsan Ilchulbong** es un **cono de toba hidrovolcánica de tipo Surtsey de 5.000 años** — una formación geológica volcánica excepcional que constituye la base del Patrimonio Natural UNESCO.",
+          "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+          "highlights": [
+            "**Triple UNESCO**: Patrimonio Mundial 2007-07-02 + Reserva de Biosfera 2002 + Geoparque Global 2010-10",
+            "**5.000 años de antigüedad** — erupción hidrovolcánica tipo Surtsey, explosión de magma en contacto con el agua del mar",
+            "Cráter de **600 m de ancho × 90 m de profundidad**, rodeado por **99 rocas dentadas** (la 'corona de piedra')",
+            "**182 m sobre el nivel del mar** — 0,8 km / ~140 m de ganancia, 60 min ida y vuelta por sendero de escaleras",
+            "**18 cuevas japonesas de la IIGM** — refugios de botes suicidas kamikaze de 1945",
+            "**Demostraciones de haenyeo a diario 13:30 + 15:00** — UNESCO Patrimonio Inmaterial 2016",
+            "**Tarifas actualizadas abril 2025**: Adultos ₩5.000 / Jóvenes ₩2.500 / GRATIS menores de 7 + mayores de 65",
+            "Horario primavera/otoño **05:00–19:00** (última entrada 18:20)",
+            "**Cierra el primer lunes de cada mes**"
+          ],
+          "timeUsed": [
+            "Aparcamiento + entrada + orientación en la base — ~10 min",
+            "Ascenso a la plataforma de la cumbre (0,8 km / 140 m de ganancia) — ~30 min",
+            "Vistas desde la cumbre + fotos del borde del cráter — ~20 min",
+            "Descenso — ~20 min",
+            "Visualización opcional de haenyeo en la base (demo 15:00) — ~10 min"
+          ],
+          "whyOnRoute": "**La triple designación UNESCO de Seongsan Ilchulbong** convierte a este cráter en el punto clave más sólida de la ruta de la costa este.",
+          "_poi_meta": {
+            "poi_key": "seongsan_ilchulbong",
+            "kb_version": "1.18",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
+              "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
+              "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
+              "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
+              "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
+            ]
+          }
+        },
+        {
+          "number": 3,
+          "time": "≈ 11:15",
+          "duration": "60 min",
+          "name": "Seopjikoji (Cabo Este)",
+          "category": "Cabo volcánico — Arquitectura Tadao Ando + Faro Bangdupo + Localizaciones de series",
+          "description": "**Seopjikoji** es un estrecho cabo volcánico en la costa este de Jeju.",
+          "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+          "highlights": [
+            "**Sendero de 2,1 km por el cabo** (~30 min, solo 14 m de desnivel) — tramos accesibles para sillas de ruedas y cochecitos",
+            "**Faro Bangdupo** — octagonal, **destellos cada 4 seg**, en lo alto del cono volcánico rojo Bulgeun Oreum",
+            "**Estación de señales Hyeopja Yeondae** — yeondae joseon de 4 m × 9 m, **Monumento Especial No. 23-2**",
+            "**Arquitectura Tadao Ando** — restaurante Glass House + Galería de Arte Yumin (Phoenix Island)",
+            "**Roca Seonbawi** — cuello volcánico a 10 m de la costa, leyenda del hijo menor del rey dragón",
+            "**Rodaje de series**: 'All In' (2003), 'Mi nombre es Kim Sam-soon' (2005) y otros",
+            "**Temporada de canola marzo-abril** (pendientes amarillas); **hortensias junio** (azul/violeta)",
+            "**Entrada al cabo GRATUITA**; Galería Yumin + Glass House con entrada separada",
+            "Seongsan Ilchulbong **claramente visible a 4 km al norte** desde el extremo del cabo"
+          ],
+          "timeUsed": [
+            "Aparcamiento + acceso — ~5 min",
+            "Paseo por el sendero del cabo — ~25 min",
+            "Fotos del faro + Hyeopja Yeondae — ~10 min",
+            "Vista exterior de los edificios de Tadao Ando — ~10 min",
+            "Regreso al autocar + reserva — ~10 min"
+          ],
+          "whyOnRoute": "La **arquitectura de Tadao Ando en Seopjikoji** es un punto destacado de la ruta del tour en autobús.",
+          "_poi_meta": {
+            "poi_key": "seopjikoji",
+            "kb_version": "1.19",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Jeju Provincial Cultural Heritage — Special Monument No. 23-2 designation",
+              "VisitJeju — Seopjikoji official listing",
+              "Korea Lighthouse Service — Bangdupo Lighthouse operation records",
+              "Tadao Ando Architect & Associates — Phoenix Island project documentation",
+              "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
+            ]
+          }
+        },
+        {
+          "name": "Almuerzo (Este de Jeju — marisco local o cerdo negro)",
+          "category": "Almuerzo",
+          "description": "**Parada de almuerzo en el este de Jeju** en un restaurante local verificado por el guía en la zona Seongsan/Seongeup/Pyoseon.",
+          "highlights": [
+            "Restaurante local del Este de Jeju verificado por el guía — zona Seongsan/Seongeup/Pyoseon",
+            "**BBQ de cerdo negro de Jeju** (Monumento Natural 2015) o **Galchi Jorim** (hairtail a la brasa)",
+            "~60 min de duración — encaja en el itinerario de un día de crucero",
+            "Menús fotográficos bilingües (inglés/chino), se acepta tarjeta + efectivo",
+            "Opciones vegetarianas previo aviso",
+            "**Almuerzo NO incluido** — ₩15.000-25.000 por persona por cuenta propia"
+          ],
+          "_poi_meta": {
+            "poi_key": "OPS_lunch_east_jeju",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Jeju Black Pig Natural Monument designation (2015, Cultural Heritage Administration)",
+              "Visit Jeju (eastern Jeju cuisine — galchi, heukdwaeji)",
+              "AtoC Korea operations notes (cruise tour lunch venue rotation)"
+            ]
+          },
+          "number": 4,
+          "time": "≈ 12:30",
+          "duration": "60 min",
+          "whyOnRoute": "**El almuerzo se posiciona en el punto geográfico medio de la ruta** para absorber cualquier retraso de la mañana."
+        },
+        {
+          "number": 5,
+          "time": "≈ 13:45",
+          "duration": "60 min",
+          "name": "Aldea Folclórica Seongeup",
+          "category": "Ciudad amurallada de era Joseon — Patrimonio Cultural Folclórico Importante (fundado 1423)",
+          "description": "**Seongeup Folk Village** es una **ciudad amurallada joseon viva fundada en 1423** durante el reinado de Sejong el Grande.",
+          "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+          "highlights": [
+            "**Fundada en 1423** por el Rey Sejong el Grande — centro administrativo hasta **1914 (~500 años)**",
+            "**110 estructuras tradicionales** dentro del perímetro original de la ciudad amurallada eupseong",
+            "**Patrimonio Cultural Folclórico Importante de Corea del Sur** (todo el pueblo + edificios individuales)",
+            "**Dos árboles de ~600 años** en el centro: Zelkova de hoja de sierra + Almez japonés — **Monumentos Naturales**",
+            "Diseñada según **principios de feng shui joseon (geomancia)** — plano típico de capital de condado",
+            "Lugar de rodaje de **'Dae Jang Geum' (MBC 2003-2004)** — éxito internacional de K-drama",
+            "**Omegisul** — licor de arroz de Jeju elaborado por una sola familia durante generaciones (cata gratuita)",
+            "Cicatrices históricas: **incendio de 1826** destruyó ~80 edificios; daños del **Levantamiento de Jeju de 1948**",
+            "**Entrada GRATUITA** — pueblo habitado por ~250 familias que mantienen las tradiciones"
+          ],
+          "timeUsed": [
+            "Aparcamiento + bienvenida del docente del pueblo — ~10 min",
+            "Camino a los árboles centenarios + centro del pueblo — ~10 min",
+            "Visitas al interior de los hanok (2–3 casas representativas) — ~15 min",
+            "Cata gratuita en la cervecería Omegisul — ~10 min",
+            "Paseo por el callejón Olle + fotografía — ~10 min",
+            "Tiempo de reserva — ~5 min"
+          ],
+          "whyOnRoute": "**La Aldea Folclórica Seongeup** es el visita cultural clave del recorrido este.",
+          "_poi_meta": {
+            "poi_key": "seongeup_folk_village",
+            "kb_version": "1.19",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Cultural Heritage Administration — Important Folklore Cultural Heritage designation",
+              "Korea Cultural Heritage Foundation — Seongeup Folk Village historical records",
+              "VisitJeju — Seongeup Minsok Maeul",
+              "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
+              "Jeju Folklore Society — Omegisul brewing tradition documentation"
+            ]
+          }
+        },
+        {
+          "name": "Regreso al Terminal de Cruceros de Jeju (Puerto norte)",
+          "category": "Regreso al crucero y subida a bordo",
+          "description": "Trayecto de vuelta al **Terminal Internacional de Pasajeros de Jeju** en la costa norte de Jeju City.",
+          "highlights": [
+            "**Bajada 60+ min antes del embarque** — margen estándar de embarque de crucero",
+            "~70-80 min desde el Este de Jeju vía la autopista 1132 + Ruta 16 con una parada",
+            "Asistencia con equipaje en la entrada del terminal",
+            "El **Bus #100** conecta el terminal directamente con el **Aeropuerto Internacional de Jeju**",
+            "Tiendas libres de impuestos, cajero Jeju Bank, cambio de divisas, alquiler de Wi-Fi",
+            "Traslado gratuito al **Mercado Tradicional Dongmun** (~10 min) si hay tiempo"
+          ],
+          "_poi_meta": {
+            "poi_key": "jeju_cruise_port",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities)",
+              "Jeju Bus Information System (Bus #100 airport connection)",
+              "Korea Cruise Port Sales (terminal layout + drop-off zones)",
+              "VisitJeju.net (Dongmun Market free traslado compartido)",
+              "Cruise industry standard (60-min all-aboard buffer)"
+            ]
+          },
+          "number": 6,
+          "time": "≈ 15:30 → llega al puerto ≈ 16:45",
+          "duration": "75 min de trayecto + 60 min de margen",
+          "whyOnRoute": "**El trayecto de vuelta es el bloque individual más largo del día** (~70-80 min desde Seongeup hasta Jeju Port), con un margen de más de 60 min antes del embarque."
+        }
+      ],
+      "routeFlowStops": [
+        {
+          "id": "01",
+          "name": "Terminal de Cruceros",
+          "theme": "Salida"
+        },
+        {
+          "id": "02",
+          "name": "Pico del Amanecer",
+          "theme": "Volcano"
+        },
+        {
+          "id": "03",
+          "name": "Seopjikoji",
+          "theme": "Costa"
+        },
+        {
+          "id": "04",
+          "name": "Almuerzo",
+          "theme": "Comida"
+        },
+        {
+          "id": "05",
+          "name": "Aldea Folclórica",
+          "theme": "Culture"
+        },
+        {
+          "id": "06",
+          "name": "Terminal de Cruceros",
+          "theme": "Regreso"
+        }
+      ],
+      "routePhases": [
+        {
+          "label": "Mañana",
+          "range": "1-3",
+          "theme": "Volcán UNESCO + costa",
+          "bgClass": "bg-sky-50/70",
+          "textClass": "text-sky-700",
+          "dotClass": "bg-sky-500"
+        },
+        {
+          "label": "Mediodía",
+          "range": "4",
+          "theme": "Almuerzo",
+          "bgClass": "bg-amber-50/70",
+          "textClass": "text-amber-700",
+          "dotClass": "bg-amber-500"
+        },
+        {
+          "label": "Tarde",
+          "range": "5-6",
+          "theme": "Cultura tradicional + regreso",
+          "bgClass": "bg-emerald-50/70",
+          "textClass": "text-emerald-700",
+          "dotClass": "bg-emerald-500"
+        }
+      ]
+    },
+    {
+      "port_id": "gangjeong_port",
+      "port_label": "Puerto Gangjeong (Terminal Seogwipo)",
+      "port_label_short": "Puerto Gangjeong",
+      "route_focus": "Zona alpina Hallasan + geología costa suroeste + mercado",
+      "pickup_base": "gangjeong_port",
+      "duration_band": "8h",
+      "return_time_band": "16:30-17:00",
+      "poi_tags_in_variant": [
+        "hallasan_1100",
+        "jusangjeolli_cliff",
+        "cheonjiyeon_falls",
+        "olle_maeil_market"
+      ],
+      "theme_tags_in_variant": [
+        "volcano",
+        "alpine",
+        "geology",
+        "waterfall",
+        "market",
+        "shopping"
+      ],
+      "scenic_level_in_variant": 1.0,
+      "walking_level_in_variant": 0.6,
+      "indoor_ratio_in_variant": 0.25,
+      "weather_sensitivity_in_variant": 0.6,
+      "stops": [
+        {
+          "name": "Recogida en Terminal de Cruceros Gangjeong (Seogwipo — sur)",
+          "category": "Recogida y logística del crucero",
+          "description": "Su conductor y guía de habla inglesa recibirá al grupo en la **Terminal de Cruceros de Gangjeong**, en la costa sur de Seogwipo. La recogida se programa **30 minutos después del desembarque anunciado**. Gangjeong cuenta con dos muelles para cruceros grandes, por lo que en días con dos barcos puede haber más movimiento; el guía llega con antelación y espera con un cartel con el nombre del grupo. Cuando el barco atraca en Gangjeong, se utiliza la **ruta sur**, ya que ir hasta Seongsan Ilchulbong consumiría demasiado tiempo de escala.",
+          "highlights": [
+            "**Dos atraques × 220.000 ton** — gestiona 2 cruceros simultáneamente",
+            "Recogida 30 min después de la autorización de desembarque; guía de habla inglesa con cartel con el nombre en la sala de llegadas",
+            "Puerto de **'Complejo Civil-Militar para el Bello Turismo'** — abierto feb 2016",
+            "**Aparcamiento exterior para 53 autocares** — se llena rápido en días de doble barco",
+            "**Mejor accesibilidad en silla de ruedas** que Puerto Jeju norte",
+            "**Adora Magic City semihomeport desde el 1 mayo 2025** — 33 rotaciones previstas",
+            "El itinerario sur es obligatorio desde este puerto — Seongsan está a 70+ min"
+          ],
+          "_poi_meta": {
+            "poi_key": "gangjeong_cruise_port",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (Gangjeong terminal facilities + 53-bus parking)",
+              "South Korea Ministry of Oceans & Fisheries (port history, civilian-military designation)",
+              "Korea Cruise Port Sales / k-cruiseinfo.com (berth specifications, tonnage)",
+              "CruiseMapper (Adora Magic City semi-homeporting May 2025; berth assignments)",
+              "South Korean Supreme Court ruling July 2012 (construction lawful; opened Feb 2016)"
+            ]
+          },
+          "number": 1,
+          "time": "Llegada del crucero + 30 min",
+          "duration": "30 min",
+          "whyOnRoute": "**Gangjeong es el único punto de origen viable para la ruta sur** — su capacidad de doble amarre de 220.000 ton lo convierte en el puerto de cruceros para buques más grandes."
+        },
+        {
+          "number": 2,
+          "time": "≈ 09:30",
+          "duration": "60 min",
+          "name": "Humedal de Altitud 1100 del Hallasan (Ramsar + UNESCO)",
+          "category": "Humedal alpino — Sitio Ramsar + dentro del Patrimonio UNESCO Hallasan",
+          "description": "El **Humedal de Altitud 1100 del Hallasan** es un sistema de humedal alpino de alta elevación en la meseta del Hallasan, a ~1.100 m sobre el nivel del mar.",
+          "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
+          "highlights": [
+            "**Sitio Ramsar N.° 1893** (designado 12 oct 2009) — Humedal de Importancia Internacional",
+            "**1.100 m sobre el nivel del mar** — en la **carretera nacional más alta de Corea** (Ruta 1100)",
+            "**Cuádruple designación internacional** — Ramsar + Patrimonio UNESCO + Reserva de Biosfera + Geoparque",
+            "**16+ humedales discontinuos** — pantanos de agua dulce + estanques + turberas",
+            "**3 aves amenazadas + 1 planta amenazada**; múltiples endémicas de Jeju",
+            "**900.000 visitantes (2008)** — gestionado por el Centro de Visitantes del Mt. Halla",
+            "**Pasarela de madera de 1 km** con miradores y señalización interpretativa",
+            "**Follaje otoñal + nieve invernal** = temporadas fotográficas representativas",
+            "**Entrada GRATUITA**; Área de Descanso 1100 adyacente (baño + café)"
+          ],
+          "timeUsed": [
+            "Llegada del autocar + aparcamiento en el Área de Descanso 1100 — ~5 min",
+            "Circuito de pasarela + miradores — ~25 min",
+            "Señalización interpretativa + exposición de historia natural — ~10 min",
+            "Margen / baño del café — ~5 min"
+          ],
+          "whyOnRoute": "**El Altiplano 1100 del Hallasan (Sitio Ramsar N.° 1893, designado 12 oct 2009)** es el punto clave de altitud y credenciales del día.",
+          "_poi_meta": {
+            "poi_key": "hallasan_1100_wetland",
+            "kb_version": "1.20",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Ramsar Sites Information Service — 1100 Altitude Wetland (Site No. 1893)",
+              "UNESCO Man and the Biosphere Programme — Jeju Island Biosphere Reserve",
+              "Korea National Park Service — Hallasan National Park 1100 Wetland records",
+              "Mt Halla Visitor Centre — visitor management documentation",
+              "Jeju Special Self-Governing Province — Wetland Protected Area designation 2009"
+            ]
+          }
+        },
+        {
+          "number": 3,
+          "time": "≈ 11:00",
+          "duration": "45 min",
+          "name": "Acantilado Daepo Jusangjeolli",
+          "category": "Costa volcánica — Lava hexagonal con juntas columnares",
+          "description": "**Daepo Jusangjeolli** es un **tramo de 1 km de acantilado basáltico con juntas columnares hexagonales** en la costa de Jungmun, Seogwipo.",
+          "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+          "highlights": [
+            "**Monumento Natural N.° 443** — designado **2005-01-06**, el accidente costero más recientemente designado",
+            "Columnas de **30–40 m** en polígonos de 5-7 lados en un tramo de 1 km",
+            "Formación: **lava del flanco de Hallasan que se enfrió en el mar hace ~250.000-140.000 años**",
+            "**El mejor sitio de unión columnar de Asia Oriental** — par de Giant's Causeway",
+            "**Salpicaduras de hasta 20 m en días de marea alta** — buen momento para fotografiar las olas rompiendo",
+            "**Pasarela de 0,8 km**, ~15 min a pie — plataforma sin barreras, accesible para sillas de ruedas/cochecitos",
+            "Parte del **Geoparque Global de Jeju (UNESCO 2010-10)** — 13 geositios en toda la isla",
+            "Entrada **₩2.000 adulto / ₩1.000 joven / GRATIS menores de 7 y mayores de 65**",
+            "Cima del Hallasan visible al norte en días despejados"
+          ],
+          "timeUsed": [
+            "Aparcamiento + compra de entrada + acceso — ~5 min",
+            "Paseo hasta la primera plataforma de observación — ~5 min",
+            "Observación de columnas en el borde del acantilado + fotos — ~15 min",
+            "Continuar circuito de pasarela — ~10 min",
+            "Regreso al autocar — ~10 min"
+          ],
+          "whyOnRoute": "El **Acantilado Daepo Jusangjeolli (Monumento Natural N.° 443)** ofrece flexibilidad fotográfica.",
+          "_poi_meta": {
+            "poi_key": "daepo_jusangjeolli_cliff",
+            "kb_version": "1.18",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Cultural Heritage Administration — Natural Monument No. 443 designation (2005-01-06)",
+              "Jeju Global Geopark official site (geopark.jeju.go.kr)",
+              "UNESCO Global Geoparks Network — Jeju (2010 designation)",
+              "VisitJeju — Daepo Jusangjeolli",
+              "Korea Geological Survey — Jeju basalt formation studies"
+            ]
+          }
+        },
+        {
+          "name": "Almuerzo cerca del Mercado Olle Maeil (Seogwipo)",
+          "category": "Almuerzo",
+          "description": "**Parada de almuerzo en Seogwipo** en un restaurante verificado por el guía dentro o adyacente al Mercado Maeil Olle de Seogwipo.",
+          "highlights": [
+            "Restaurante verificado dentro / adyacente al **Mercado Olle Maeil**",
+            "**Sashimi de galchi**, **BBQ de cerdo negro**, o Bibimbap vegetariano + Mom-guk",
+            "~60 min — encaja en el itinerario de crucero",
+            "**5 min a pie al sendero de Cheonjiyeon**",
+            "Degustaciones de **Omegisul** disponibles",
+            "**Almuerzo NO incluido** — ₩15.000-25.000 por persona"
+          ],
+          "_poi_meta": {
+            "poi_key": "OPS_lunch_seogwipo_olle",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Visit Jeju (Seogwipo cuisine; galchi market trade)",
+              "Jeju Black Pig Natural Monument designation (2015, Cultural Heritage Administration)",
+              "AtoC Korea operations notes (cruise tour lunch venue rotation)"
+            ]
+          },
+          "number": 4,
+          "time": "≈ 12:15",
+          "duration": "60 min",
+          "whyOnRoute": "**El almuerzo en el Mercado Maeil Olle de Seogwipo** es la ventaja de eficiencia de la ruta sur — el mercado está a **5 minutos a pie del sendero de la Cascada Cheonjiyeon**."
+        },
+        {
+          "name": "Cascada Cheonjiyeon (cascada del casco antiguo de Seogwipo)",
+          "category": "Atracción natural y Monumento Natural",
+          "description": "**Cascada Cheonjiyeon** es la más cercana al puerto de las dos famosas cascadas de Seogwipo.",
+          "highlights": [
+            "**Cascada de 22 m × 12 m → poza esmeralda de 20 m de profundidad** — la cascada representativa de Seogwipo",
+            "**NO es Cheonjeyeon** — diferentes cascadas, diferente desfiladero",
+            "**Monumento Natural N.° 379**",
+            "Hábitat de la **anguila mutae (Monumento Natural N.° 27)**",
+            "**Árbol de la libélula (Monumento Natural N.° 163)** + helechos Crepidomanes",
+            "**1 km de sendero pavimentado (~15 min)** — apto para cochecitos/silla de ruedas",
+            "**₩2.000 / ₩1.000 de entrada** (09:00-22:00; última entrada 21:30)",
+            "**Iluminación nocturna 19:00-22:00** — única entre las cascadas de Jeju",
+            "**5 min a pie del Mercado Olle Maeil**"
+          ],
+          "_poi_meta": {
+            "poi_key": "cheonjiyeon_falls",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (Cheonjiyeon Falls dimensions, hours, admission)",
+              "Visit Jeju (Natural Monument designations 27, 163, 379; trail length)",
+              "Wikipedia (Cheonjiyeon Waterfall — habitat protection, distinction from Cheonjeyeon)",
+              "Inside Jeju (hours 09:00–22:00 last entry 21:30; ₩2,000 / ₩1,000 admission)",
+              "(night illumination 19:00–22:00; Mutae eel nocturnal habitat)"
+            ]
+          },
+          "number": 5,
+          "time": "≈ 13:30",
+          "duration": "60 min",
+          "whyOnRoute": "**Las Cascadas Cheonjiyeon** rematan la ruta sur con un **sendero fluvial de 1 km** (pavimentado, apto para cochecitos) y una cascada de 22 m."
+        },
+        {
+          "name": "Mercado Maeil Olle (Mercado Maeil Olle de Seogwipo)",
+          "category": "Mercado tradicional y gastronomía",
+          "description": "**Seogwipo Maeil Olle Market** es el **mayor mercado tradicional del sur de Jeju**.",
+          "highlights": [
+            "**El mayor mercado tradicional del sur de Jeju** — 620 m de arcada, ~200 tiendas",
+            "Establecido a **principios de los 60** — más de 60 años de tradición",
+            "Los **Cursos 6 y 7 del Olle Trail** pasan cerca de la entrada",
+            "**Bollos de pulpo de la Panadería Jeseong** — favorito local de culto",
+            "**Hallabong + mandarina cheonhyehyang** de temporada (dic-mar)",
+            "Sashimi de galchi, brochetas de cerdo negro, Mom-guk (sopa de algas de Jeju)",
+            "Degustaciones de **Omegisul** (elaborado en Seongeup)",
+            "**Techo retráctil translúcido** — arcada cubierta, compras a cualquier tiempo",
+            "**5 min a pie al sendero de Cheonjiyeon**"
+          ],
+          "_poi_meta": {
+            "poi_key": "olle_maeil_market",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (market dimensions: 620 m, ~200 shops)",
+              "Visit Jeju (early-1960s history; signature foods; Olle Trail proximity)",
+              "Mindtrip (vendor count ~140; opening hours)",
+              "Soul of Seoul (Olle Maeil Market food guide — Jeseong Bakery octopus buns)",
+              "Jeju Olle Foundation (Trail Courses 6 & 7 routing through market area)"
+            ]
+          },
+          "number": 6,
+          "time": "≈ 14:45",
+          "duration": "45 min",
+          "whyOnRoute": "**Regreso final al Mercado Olle Maeil** para compras de último momento — cajas de mandarina hallabong/cheonhyehyang (dic-mar), productos de cerdo negro."
+        },
+        {
+          "name": "Regreso al Terminal de Cruceros Gangjeong (Seogwipo — sur)",
+          "category": "Regreso al crucero y subida a bordo",
+          "description": "Trayecto de vuelta al **Terminal de Cruceros del Puerto Gangjeong** en el pueblo de Gangjeong, Seogwipo.",
+          "highlights": [
+            "**Bajada 60+ min antes del embarque** — estándar del sector de cruceros",
+            "Desde Mercado Olle/zona Cheonjiyeon: ~10-15 min en coche",
+            "Desde Hallasan 1100: ~35 min de descenso por la Ruta 1100",
+            "Asistencia con equipaje en la entrada del terminal",
+            "**Bus Limusina 800/800-1** Gangjeong → Aeropuerto de Jeju",
+            "Centro de información turística, cambio de divisas, contador de devolución de impuestos"
+          ],
+          "_poi_meta": {
+            "poi_key": "gangjeong_cruise_port",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (Gangjeong facilities + Limousine 800)",
+              "Jeju Provincial Government (Limousine 800/800-1 routing via Innovation City)",
+              "Korea Cruise Port Sales (terminal-to-airport options)",
+              "Cruise industry standard (60-min all-aboard buffer)",
+              "VisitJeju.net (southern circuit drive times)"
+            ]
+          },
+          "number": 7,
+          "time": "≈ 15:45 → llega al puerto ≈ 16:00",
+          "duration": "15 min de trayecto + 60 min de margen",
+          "whyOnRoute": "**El regreso de crucero más corto del catálogo** — del Mercado Olle al puerto Gangjeong son **~15 minutos** en autocar."
+        }
+      ],
+      "routeFlowStops": [
+        {
+          "id": "01",
+          "name": "Terminal de Cruceros",
+          "theme": "Salida"
+        },
+        {
+          "id": "02",
+          "name": "Altiplano 1100",
+          "theme": "Alpine"
+        },
+        {
+          "id": "03",
+          "name": "Jusangjeolli",
+          "theme": "Geology"
+        },
+        {
+          "id": "04",
+          "name": "Almuerzo",
+          "theme": "Comida"
+        },
+        {
+          "id": "05",
+          "name": "Cheonjiyeon",
+          "theme": "Waterfall"
+        },
+        {
+          "id": "06",
+          "name": "Mercado Olle",
+          "theme": "Market"
+        },
+        {
+          "id": "07",
+          "name": "Terminal de Cruceros",
+          "theme": "Regreso"
+        }
+      ],
+      "routePhases": [
+        {
+          "label": "Mañana",
+          "range": "1-3",
+          "theme": "De la zona alpina a la geología costera",
+          "bgClass": "bg-violet-50/70",
+          "textClass": "text-violet-700",
+          "dotClass": "bg-violet-500"
+        },
+        {
+          "label": "Mediodía",
+          "range": "4",
+          "theme": "Almuerzo",
+          "bgClass": "bg-amber-50/70",
+          "textClass": "text-amber-700",
+          "dotClass": "bg-amber-500"
+        },
+        {
+          "label": "Tarde",
+          "range": "5-7",
+          "theme": "Cascada + mercado + regreso",
+          "bgClass": "bg-emerald-50/70",
+          "textClass": "text-emerald-700",
+          "dotClass": "bg-emerald-500"
+        }
+      ]
+    }
+  ],
+  "whyTourWorks": {
+    "bestFor": [
+      "Cruceristas que necesitan un viaje de ida y vuelta el mismo día desde el terminal",
+      "Visitantes por primera vez en Jeju que quieren los puntos UNESCO en un día",
+      "Viajeros que quieren una ruta guiada a precio económico."
+    ],
+    "lessIdealFor": [
+      "Viajeros con movilidad muy reducida (el borde del cráter de Seongsan y el Hallasan 1100 requieren algo de caminata)",
+      "Grupos con muchos cochecitos de bebé",
+      "Viajeros que buscan un ritmo tranquilo — el horario del crucero es fijo"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Por qué dos rutas según el puerto",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "Puerto Jeju = terminal norte",
+            "detail": "Priorizamos regresar de forma segura al puerto con al menos 60-90 minutos de margen antes de la hora límite de embarque del crucero. El itinerario, los tiempos de visita y la hora de regreso se ajustan según el horario real del barco. Si hay tráfico, mal tiempo o retrasos en el desembarque, el guía reducirá el tiempo en algunas paradas para priorizar el regreso seguro al puerto y llegar a tiempo para volver a embarcar."
+          },
+          {
+            "label": "Puerto Gangjeong = terminal sur (Seogwipo)",
+            "detail": "Hallasan 1100 alpino + Jusangjeolli + Cascadas Cheonjeyeon + Mercado Olle."
+          },
+          {
+            "label": "La misma estructura de 8 horas en ambos puertos",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          }
+        ]
+      },
+      {
+        "title": "Especificidades del tour en autobús (gran autocar)",
+        "icon": "users",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "Autocar grande (25-35 personas)",
+            "detail": "Opción más económica. Recomendado para pasajeros de crucero con presupuesto ajustado."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "Recogida y regreso",
+      "preview": "Recogida en terminal de cruceros — varía según el puerto",
+      "content": [
+        "Terminal Internacional de Cruceros de Jeju (Puerto Norte) o Terminal Gangjeong (Puerto Sur) según el puerto de su barco.",
+        "El guía le espera con el letrero de AtoC Korea en la salida del terminal.",
+        "Regreso al terminal programado con 90–120 min de margen de la salida del barco."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "Caminata y terreno",
+      "preview": "Moderado; varía según el puerto",
+      "content": [
+        "Moderado. Seongsan: subida al cráter opcional (~180 escalones). Seopjikoji: 2,1 km de sendero llano junto al mar. Seongeup: completamente plano.",
+        "Distancia total: ~4 km."
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "En caso de mal tiempo",
+      "preview": "El horario del crucero es fijo — la ruta se ajusta",
+      "content": [
+        "Lluvia ligera: el tour sigue normalmente.",
+        "Tifón o cancelación del crucero: reembolso total."
+      ]
+    },
+    {
+      "id": "wear",
+      "title": "Qué llevar",
+      "preview": "Calzado cómodo + capas + pasaporte para volver a embarcar",
+      "content": [
+        "Calzado cómodo con suela de grip.",
+        "Ropa con capas (la cima de Seongsan puede ser fría).",
+        "Protector solar y gorra."
+      ]
+    },
+    {
+      "id": "included",
+      "title": "Qué está incluido",
+      "preview": "Guía, vehículo, recogida, entradas",
+      "variant": "included",
+      "content": [
+        "Autocar, guía certificado en inglés, traslado desde/hasta el terminal, entradas (Seongsan ₩5.000, Seopjikoji y Seongeup gratuitos).",
+        "No incluido: almuerzo (~₩15.000), propina."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "Consultar notas de temporada"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "Consultar notas de temporada"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "season": "Primavera",
+      "title": "Apertura de la temporada de cruceros",
+      "description": "Priorizamos regresar de forma segura al puerto con al menos 60-90 minutos de margen antes de la hora límite de embarque del crucero. El itinerario, los tiempos de visita y la hora de regreso se ajustan según el horario real del barco. Si hay tráfico, mal tiempo o retrasos en el desembarque, el guía reducirá el tiempo en algunas paradas para priorizar el regreso seguro al puerto y llegar a tiempo para volver a embarcar.",
+      "icon": "flower"
+    },
+    {
+      "season": "Verano",
+      "title": "Pico de escalas de crucero",
+      "description": "Caluroso pero con brisa en la costa; el refugio fresco del Hallasan 1100",
+      "icon": "sun"
+    },
+    {
+      "season": "Otoño",
+      "title": "Mejor claridad",
+      "description": "Visibilidad más nítida para ambas rutas de puerto",
+      "icon": "leaf"
+    },
+    {
+      "season": "Invierno",
+      "title": "Temporada baja",
+      "description": "Menos escalas de crucero; puede haber nieve en el Hallasan 1100",
+      "icon": "snow"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "Equipo local certificado",
+      "description": "Operador turístico coreano autorizado con seguro completo",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "Equipo local certificado con experiencia en excursiones de crucero. Regreso seguro al puerto 90-120 min antes de la salida."
+    },
+    {
+      "icon": "route",
+      "title": "Especialistas en la ruta",
+      "description": "Itinerario ajustado a medida, no un circuito genérico",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "Ruta adaptada al puerto — Jeju Norte (este) o Gangjeong (sur). El operador monitorea los horarios de crucero diariamente."
+    },
+    {
+      "icon": "users",
+      "title": "Autocar de gran capacidad — opción económica",
+      "description": "Tamaño adecuado para la ruta",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "La opción más económica para ver los hitos de Jeju en una escala de crucero. Gran capacidad para grupos grandes."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Inmediatamente",
+      "title": "Confirmación instantánea",
+      "detail": "Confirmación de reserva con resumen del itinerario",
+      "description": "Confirmación instantánea; envíe nombre del barco, puerto (Puerto Jeju o Puerto Gangjeong) y hora de desembarco."
+    },
+    {
+      "timing": "12 horas antes",
+      "title": "Aviso 12 horas antes",
+      "detail": "Actualización meteorológica y ajustes de ruta",
+      "description": "Ruta confirmada (este o sur) según su asignación de puerto 24 horas antes."
+    },
+    {
+      "timing": "La noche anterior",
+      "title": "Información final de recogida",
+      "detail": "Hora exacta de recogida y contacto del conductor",
+      "description": "Matrícula del autobús y contacto del guía enviados la noche anterior."
+    },
+    {
+      "timing": "La mañana del tour",
+      "title": "Notas de ruta del día",
+      "detail": "Briefing matutino según las condiciones del momento",
+      "description": "El guía recibe a su grupo en la sala de llegadas del terminal de cruceros."
+    },
+    {
+      "timing": "Durante el tour",
+      "title": "Consejos en cada parada",
+      "detail": "Orientación en tiempo real en cada lugar",
+      "description": "Margen de embarque total integrado en el horario de regreso — bajada en el terminal 60+ minutos antes de la salida."
+    },
+    {
+      "timing": "Tras el tour",
+      "title": "Apoyo postventa",
+      "detail": "Seguimiento y recomendaciones",
+      "description": "Breve solicitud de valoración enviada tras el regreso."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "La disponibilidad y el puerto de crucero se confirman durante la reserva.",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "persona"
+    }
+  },
+  "pickup_dropoff": {
+    "type": "cruise_terminal_pickup",
+    "meeting_points": [
+      {
+        "name": "Terminal de cruceros de Jeju (norte)",
+        "note": "Meet at customs exit",
+        "port_id": "jeju_port"
+      },
+      {
+        "name": "Terminal de cruceros de Gangjeong (sur, Seogwipo)",
+        "note": "Meet at customs exit",
+        "port_id": "gangjeong_port"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Terminal de cruceros de Jeju (norte)",
+        "note": "Regreso a la misma terminal de cruceros de la recogida",
+        "port_id": "jeju_port"
+      },
+      {
+        "name": "Terminal de cruceros de Gangjeong (sur, Seogwipo)",
+        "note": "Regreso a la misma terminal de cruceros de la recogida",
+        "port_id": "gangjeong_port"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "El puerto se confirma al reservar según el itinerario del crucero; la ruta se asigna a la ruta correspondiente."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "jeju-cruise-shore-excursion-bus-tour",
+    "product_type": "small_group_fixed_itinerary",
+    "route_type": "cruise_shore_excursion_pair_route_variants",
+    "destination_region": "jeju",
+    "region_type": "island_full",
+    "vehicle_type": "coach",
+    "duration_hours": 8.0,
+    "region_tags": [
+      "jeju_east",
+      "jeju_south",
+      "jeju_seogwipo",
+      "jeju_island_wide"
+    ],
+    "theme_tags": [
+      "cruise_shore_excursion",
+      "unesco_geology",
+      "natural_monument",
+      "folk_heritage",
+      "value_pricing",
+      "group_travel",
+      "first_time_jeju",
+      "ramsar_wetland",
+      "columnar_jointing",
+      "tea_culture_optional",
+      "waterfall_natural_monument",
+      "traditional_market",
+      "tadao_ando_architecture"
+    ],
+    "poi_tags": [
+      "jeju_cruise_port",
+      "gangjeong_cruise_port",
+      "seongsan_ilchulbong",
+      "seopjikoji",
+      "seongeup_folk_village",
+      "hallasan_1100_wetland",
+      "daepo_jusangjeolli_cliff",
+      "cheonjiyeon_falls",
+      "olle_maeil_market"
+    ],
+    "pace_level": 0.5,
+    "walking_level": 0.4,
+    "scenic_level": 0.85,
+    "photo_level": 0.85,
+    "culture_level": 0.7,
+    "relax_level": 0.5,
+    "first_time_fit": 0.95,
+    "family_fit": 0.65,
+    "senior_fit": 0.65,
+    "couple_fit": 0.8,
+    "solo_traveler_fit": 1.0,
+    "active_traveler_fit": 0.8,
+    "adult_family_fit": 0.8,
+    "family_with_teens_fit": 0.8,
+    "young_kids_fit": 0.55,
+    "senior_active_fit": 0.8,
+    "senior_general_fit": 0.4,
+    "mobility_friendly_fit": 0.55,
+    "stroller_fit": 0.5,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.95,
+    "rain_fit": 0.45,
+    "value_for_money_fit": 0.8,
+    "iconic_landmark_fit": 0.95,
+    "cafe_fit": 0.4,
+    "food_fit": 0.65,
+    "nature_fit": 0.9,
+    "beach_fit": 0.4,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.55,
+    "no_shopping_fit": 0.4,
+    "local_culture_fit": 0.7,
+    "storytelling_fit": 0.85,
+    "unesco_fit": 0.85,
+    "intangible_heritage_fit": 0.4,
+    "indoor_ratio": 0.2,
+    "weather_sensitivity": 0.85,
+    "comfort_level": 0.75,
+    "budget_fit": 1.0,
+    "premium_fit": 0.4,
+    "small_group_fit": 0.4,
+    "private_fit": 0.15,
+    "bus_fit": 1.0,
+    "price_band": "budget",
+    "pickup_base": "cruise_terminal_dynamic",
+    "return_time_band": "16:30-17:00",
+    "duration_band": "8h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "expecting_full_day_with_no_return_constraint"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "stroller_heavy",
+        "very_young_children"
+      ]
+    },
+    "walking_notes": [
+      "Walking varies by port variant; both routes include moderate walking with optional climbs.",
+      "Jeju port (east coast) variant: Seongsan Ilchulbong rim climb is the steepest section (optional).",
+      "Gangjeong port variant: Hallasan 1100 boardwalk is easy; Cheonjiyeon falls path is short.",
+      "Comfortable walking shoes recommended; bring layers for Hallasan 1100 (Gangjeong variant)."
+    ],
+    "keywords": [
+      "jeju cruise excursion",
+      "jeju shore tour",
+      "cruise day tour jeju",
+      "jeju port excursión en tierra",
+      "gangjeong port shore tour",
+      "seongsan ilchulbong cruise",
+      "hallasan cruise day tour",
+      "jeju cruise bus tour",
+      "budget cruise excursion"
+    ],
+    "synonym_hints": [
+      "jeju cruise day trip",
+      "excursión en tierra jeju",
+      "cruise terminal pickup tour",
+      "cruise port jeju tour"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "jeju_cruise",
+    "vehicle_type_legacy": "large_coach",
+    "anchor_poi_keys": [
+      "seongsan_ilchulbong",
+      "seopjikoji",
+      "seongeup_folk_village",
+      "jeju_cruise_port"
+    ],
+    "cruise_shore_excursion_fit": 1.0,
+    "cruise_shore_excursion_value_fit": 1.0,
+    "cruise_shore_excursion_scenic_fit": 0.85,
+    "cruise_shore_excursion_intimacy_fit": 0.4,
+    "cruise_disembarkation_window_fit": 1.0,
+    "cruise_morning_arrival_compatible_fit": 1.0,
+    "cruise_8_hour_window_fit": 1.0,
+    "cruise_all_aboard_60min_buffer_fit": 1.0,
+    "cruise_port_aware_routing_fit": 1.0,
+    "supports_jeju_port_north_variant": true,
+    "supports_gangjeong_port_south_variant": true,
+    "max_concurrent_ships_supported": 2,
+    "private_tour_fit": 0.05,
+    "large_group_fit": 1.0,
+    "group_size_min": 15,
+    "group_size_max": 40,
+    "group_size_typical": 25,
+    "shared_vehicle_fit": 1.0,
+    "vehicle_comfort_level": 0.6,
+    "coach_comfort_floor_fit": 1.0,
+    "ac_vehicle_fit": 1.0,
+    "luggage_storage_in_vehicle_fit": 1.0,
+    "wheelchair_access_capable_with_advance_notice": true,
+    "customizable_route_fit": 0.05,
+    "fixed_itinerary_fit": 1.0,
+    "flexibility_fit": 0.3,
+    "predictable_schedule_fit": 1.0,
+    "first_time_jeju_fit": 1.0,
+    "unesco_focused_tour_fit": 0.85,
+    "triple_unesco_fit": 1.0,
+    "unesco_world_heritage_fit": 1.0,
+    "unesco_biosphere_fit": 1.0,
+    "unesco_geopark_fit": 1.0,
+    "ramsar_wetland_fit": 1.0,
+    "natural_monument_count_visited": 5,
+    "columnar_jointing_fit": 1.0,
+    "tuff_cone_fit": 1.0,
+    "single_eruption_landform_fit": 1.0,
+    "joseon_walled_town_fit": 1.0,
+    "folk_village_anchor_fit": 1.0,
+    "tadao_ando_architecture_fit": 1.0,
+    "pulitzer_architecture_fit": 1.0,
+    "k_drama_filming_locations_count": 5,
+    "natural_park_visit": true,
+    "waterfall_visit": true,
+    "traditional_market_visit": true,
+    "lunch_included": false,
+    "lunch_out_of_pocket_typical_krw": 20000,
+    "vegetarian_options_available_with_advance_notice": true,
+    "card_payment_accepted_at_lunch": true,
+    "cash_krw_recommended_amount": 50000,
+    "stroller_friendly_fit": 0.7,
+    "senior_friendly_fit": 0.85,
+    "child_friendly_fit": 0.8,
+    "mobility_limited_friendly_fit": 0.6,
+    "rainy_day_friendly_fit": 0.7,
+    "sunrise_peak_silhouette_photo_fit": 1.0,
+    "columnar_joint_close_up_photo_fit": 1.0,
+    "wetland_alpine_landscape_photo_fit": 1.0,
+    "village_stone_culture_photo_fit": 1.0,
+    "waterfall_emerald_pool_photo_fit": 1.0,
+    "market_food_photo_fit": 1.0,
+    "differentiates_from_small_group_cruise_tour": true,
+    "value_advantage_vs_small_group": true,
+    "scale_advantage_vs_small_group": true,
+    "intimacy_disadvantage_vs_small_group": true,
+    "per_pax_cost_efficiency_fit": 1.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "china_mainland_market_fit": 0.0,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.9,
+    "se_asia_market_fit": 0.95,
+    "korea_domestic_market_fit": 0.0,
+    "cruise_market_segment_fit": 1.0,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "cross_batch_reuse_count_substantive_stops": 3,
+    "fresh_authored_substantive_stops_count": 2,
+    "fresh_authored_compound_stops_count": 0,
+    "kb_version_at_enrichment": "1.21",
+    "japan_market_fit": 0.85
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "embedded_for": [
+      "authoring",
+      "review",
+      "backfill",
+      "sql_upsert_generation"
+    ],
+    "source_of_truth_note": "Runtime recommendation reads Supabase tour_matching_profiles. Cruise products require user_port parameter for variant selection.",
+    "port_routing_split": {
+      "applied_at": "2026-04-27",
+      "previous_state": "Single itineraryStops representing one generic cruise route.",
+      "schema_change": "itineraryStops -> itinerary_variants (port-keyed array)",
+      "ports_introduced": [
+        {
+          "port_id": "jeju_port",
+          "label": "Jeju Port (Northern Terminal)",
+          "route_focus": "East coast UNESCO + folk"
+        },
+        {
+          "port_id": "gangjeong_port",
+          "label": "Gangjeong Port (Seogwipo Terminal)",
+          "route_focus": "Hallasan + SW coast geology + market"
+        }
+      ],
+      "rationale": "Cruise ships call at different Jeju ports depending on route. Jeju Port (north) and Gangjeong Port (south, in Seogwipo) are 60+ km apart, so the day-trip route differs entirely. A single itinerary misrepresented the actual product served at each port.",
+      "matching_implications": [
+        "When user_port is known (cruise booking context), score only the matched variant's poi_tags_in_variant / theme_tags_in_variant.",
+        "When user_port is unknown, fall back to product profile.poi_tags (union).",
+        "Variant-level indoor_ratio_in_variant / weather_sensitivity_in_variant override product profile values when a specific port is selected."
+      ],
+      "downstream_actions": [
+        "Frontend: add port selector UI (radio or chip) before itinerary renders. Default to 'Select your cruise port' empty state with both variant previews visible.",
+        "Supabase: add port_id (text, nullable) column to bookings table; FK to a new cruise_ports reference table with rows for jeju_port, gangjeong_port.",
+        "Cruise routing note: use the guest port when available; otherwise use the general cruise route profile.",
+        "Pricing review: validate whether bus / small group pricing differs by port — Gangjeong route includes Hallasan 1100 which adds drive time and toll vs Jeju Port's east-coast loop.",
+        "Existing bookings: backfill port_id where derivable from itinerary or pickup_base; flag rest as null for manual review.",
+        "Locale (ko): translate port_label, port_label_short, route_focus, and stop names/descriptions for Korean users."
+      ]
+    },
+    "audit_summary": {
+      "kept_from_product_json": [
+        "product_type",
+        "route_type=fixed_route_with_port_variants",
+        "vehicle_type",
+        "duration_hours=8",
+        "comfort_level/bus_fit/small_group_fit per format",
+        "indoor_ratio/weather_sensitivity (variant-averaged)"
+      ],
+      "derived_after_json_audit": [
+        "unesco_fit=5 computed from canonicalized poi_tags union",
+        "rain_fit=2 because most variant stops are exposed and cruise return is fixed",
+        "young_kids_fit=2 because 8-hour cruise day with cruise constraint is long for under-6",
+        "mobility_friendly_fit=2 because Seongsan rim and Hallasan 1100 both require walking",
+        "route-specific scoring overrides apply when user_port is known"
+      ],
+      "content_inconsistencies_found": []
+    },
+    "score_rationale": {
+      "unesco_fit": "Both port variants include UNESCO World Heritage POIs (Seongsan or Hallasan-area).",
+      "weather_sensitivity": "Cruise schedule is fixed — weather impact is structural.",
+      "value_for_money_fit": "Bus format: highest value at lowest price tier.",
+      "comfort_level": "Format-specific bus tour comfort."
+    },
+    "locale_adaptation": {
+      "locale": "en",
+      "shared_fields_kept_identical": [
+        "all numeric and tag fields"
+      ],
+      "localized_fields_updated": [
+        "keywords",
+        "synonym_hints",
+        "walking_notes"
+      ],
+      "note": "Korean locale should translate port_label, port_label_short, and stop names/descriptions."
+    },
+    "anchor_pois": [
+      "Seongsan Ilchulbong",
+      "Manjanggul Cave",
+      "Jeju cruise port",
+      "Seongeup Folk Village"
+    ],
+    "anchor_poi_keys": [
+      "seongsan_ilchulbong",
+      "seopjikoji",
+      "seongeup_folk_village",
+      "jeju_cruise_port"
+    ],
+    "unesco_fit_per_variant": {
+      "jeju_port": 4,
+      "gangjeong_port": 2,
+      "rule": "Per documented unesco_fit scoring: 1 WHS = 4, 1 Geopark/Intangible = 2"
+    },
+    "bus_fit_definition": "bus_fit measures fit for LARGE-COACH format only. Mini-coach products score 1; large-coach products score 5.",
+    "competing_products": [
+      "jeju-cruise-shore-excursion-small-group-tour",
+      "jeju-island-private-car-charter-tour",
+      "jeju-eastern-unesco-lugares-day-tour"
+    ],
+    "enrichment_batch": "16a",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.21",
+    "enrichment_target_kb_version": "1.22",
+    "profile_version_pre": 5,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "stop_count_total_variant1": 6,
+    "stop_count_total_variant2": 7,
+    "substantive_stop_count_variant1": 3,
+    "substantive_stop_count_variant2": 4,
+    "auxiliary_stop_count_variant1": 3,
+    "auxiliary_stop_count_variant2": 3,
+    "highlight_count_per_substantive_stop": 9,
+    "source_count_per_substantive_stop_min": 5,
+    "cross_batch_reuse_map": {
+      "variant1_seongsan_ilchulbong": "from batch14a_tour1_data (1901c canonical)",
+      "variant1_seopjikoji": "from batch14b_tour1_data (1716c canonical)",
+      "variant1_seongeup_folk_village": "from batch14b_tour1_data (1742c canonical)",
+      "variant2_hallasan_1100_wetland": "from batch15a_tour2_data (1778c canonical)",
+      "variant2_daepo_jusangjeolli_cliff": "from batch14a_tour1_data (1831c canonical)",
+      "variant2_cheonjiyeon_falls": "fresh authoring in batch16a_shared_stops (1734c)",
+      "variant2_olle_maeil_market": "fresh authoring in batch16a_shared_stops (1581c)"
+    },
+    "differentiation_from_sister": "vehicle_type=coach (vs minicoach) + group_size 25-40 (vs 8-15) + value pricing tier",
+    "port_variant_design": "Both port variants (Jeju north / Gangjeong south) share the same product, dispatched per cruise dock"
+  },
+  "staticQuestions": [
+    {
+      "id": "port-routing",
+      "question": "¿Cómo sé en qué puerto atraca mi crucero?",
+      "answer": "Priorizamos regresar de forma segura al puerto con al menos 60-90 minutos de margen antes de la hora límite de embarque del crucero. El itinerario, los tiempos de visita y la hora de regreso se ajustan según el horario real del barco. Si hay tráfico, mal tiempo o retrasos en el desembarque, el guía reducirá el tiempo en algunas paradas para priorizar el regreso seguro al puerto y llegar a tiempo para volver a embarcar."
+    },
+    {
+      "id": "cruise-return",
+      "question": "(Consulte las preguntas frecuentes al reservar)",
+      "answer": "Para más información, contacte a AtoC Korea al reservar."
+    },
+    {
+      "id": "different-port",
+      "question": "¿Qué pasa si cambia el puerto de escala de mi crucero?",
+      "answer": "Priorizamos regresar de forma segura al puerto con al menos 60-90 minutos de margen antes de la hora límite de embarque del crucero. El itinerario, los tiempos de visita y la hora de regreso se ajustan según el horario real del barco. Si hay tráfico, mal tiempo o retrasos en el desembarque, el guía reducirá el tiempo en algunas paradas para priorizar el regreso seguro al puerto y llegar a tiempo para volver a embarcar."
+    },
+    {
+      "id": "first-time",
+      "question": "¿Es una buena opción para quienes visitan Jeju por primera vez?",
+      "answer": "Sí. Cubre los puntos más representativos de la zona en un solo día bien equilibrado."
+    },
+    {
+      "id": "walking",
+      "question": "(Consulte las preguntas frecuentes al reservar)",
+      "answer": "Para más información, contacte a AtoC Korea al reservar."
+    },
+    {
+      "id": "family",
+      "question": "¿Este tour es adecuado para familias?",
+      "answer": "Sí, para familias con niños que puedan llevar bien un día completo con varios traslados y caminatas."
+    },
+    {
+      "id": "seniors",
+      "question": "¿Pueden participar cómodamente los adultos mayores?",
+      "answer": "Recomendado solo para personas mayores activas que se sientan cómodas con escaleras y terreno irregular."
+    },
+    {
+      "id": "children",
+      "question": "(Consulte las preguntas frecuentes al reservar)",
+      "answer": "Para más información, contacte a AtoC Korea al reservar."
+    },
+    {
+      "id": "rain",
+      "question": "(Consulte las preguntas frecuentes al reservar)",
+      "answer": "Para más información, contacte a AtoC Korea al reservar."
+    },
+    {
+      "id": "lunch",
+      "question": "¿El almuerzo está incluido?",
+      "answer": "La ruta incluye una pausa para almorzar. Que la comida esté incluida o no depende de la tarifa reservada; revisa la lista de inclusiones."
+    },
+    {
+      "id": "pickup",
+      "question": "¿Dónde es el punto de recogida?",
+      "answer": "Desde el lobby de tu hotel o un punto de recogida designado dentro del área de reserva. La hora exacta se confirma la noche anterior."
+    }
+  ],
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "Excursión de crucero en Jeju — tour en autocar (autocar grande)",
+        "headlineLine2": "Dos rutas según su puerto de atraque",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+          "imagePosition": "center 35%",
+          "tagline": "Excursión en autocar desde el terminal de cruceros de Jeju — ruta este o sur según el puerto",
+          "pills": [
+            "cruise_excursion",
+            "Ruta adaptada al puerto",
+            "budget_cruise"
+          ],
+          "meta": {
+            "duration": "8 horas",
+            "region": "Jeju (según puerto)",
+            "stops": "6-7 paradas",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "Descripción"
+          },
+          {
+            "id": "itinerary",
+            "label": "Itinerario"
+          },
+          {
+            "id": "details",
+            "label": "Información práctica"
+          },
+          {
+            "id": "faq",
+            "label": "Preguntas frecuentes"
+          },
+          {
+            "id": "reviews",
+            "label": "Opiniones"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "Duración",
+            "value": "8 horas"
+          },
+          {
+            "icon": "camera",
+            "label": "Valor fotográfico",
+            "value": "Muy alto"
+          },
+          {
+            "icon": "mountain",
+            "label": "Escénico",
+            "value": "Muy alto"
+          },
+          {
+            "icon": "footprints",
+            "label": "Caminata",
+            "value": "Moderado"
+          },
+          {
+            "icon": "cloud-rain",
+            "label": "Seguridad con lluvia",
+            "value": "Moderado"
+          },
+          {
+            "icon": "users",
+            "label": "Adecuado para familias",
+            "value": "Moderado"
+          },
+          {
+            "icon": "scale",
+            "label": "Ritmo",
+            "value": "Equilibrado"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+            "alt": "Imagen de Terminal de cruceros de Jeju",
+            "caption": "Terminal de cruceros de Jeju",
+            "location": "Terminal de cruceros",
+            "atmosphere": "Salida"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "alt": "Imagen de Seongsan tuff cone",
+            "caption": "Seongsan tuff cone",
+            "location": "Seongsan Ilchulbong",
+            "atmosphere": "Pico del amanecer UNESCO"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "alt": "Imagen de Acantilados basálticos de Jusangjeolli",
+            "caption": "Acantilados basálticos de Jusangjeolli",
+            "location": "Jusangjeolli",
+            "atmosphere": "Costa columnar volcánica"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+            "alt": "Imagen de Humedal 1100 de Hallasan",
+            "caption": "Humedal 1100 de Hallasan",
+            "location": "Hallasan 1100",
+            "atmosphere": "Pasarela alpina"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "alt": "Imagen de Cheonjiyeon waterfall",
+            "caption": "Cheonjiyeon waterfall",
+            "location": "Cheonjiyeon falls",
+            "atmosphere": "Cascada y bosque"
+          },
+          {
+            "id": "g6",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+            "alt": "Imagen de Mercado Olle Maeil",
+            "caption": "Mercado Olle Maeil",
+            "location": "Mercado Olle Maeil",
+            "atmosphere": "Final en el mercado local"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "name": "Recogida Terminal de Cruceros Jeju (Puerto Jeju — norte)",
+            "category": "Logística de Recogida y Crucero",
+            "description": "Su conductor y guía de habla inglesa recibirá al grupo en la **Terminal Internacional de Pasajeros de Jeju**. La recogida se programa **30 minutos después del desembarque anunciado**, con margen para inmigración y para días de alta congestión portuaria. El guía esperará en la sala de llegadas con un cartel con el nombre del grupo y una tarjeta de itinerario con horarios, direcciones en coreano y contacto operativo 24/7. Antes de salir, se confirma la hora límite de regreso al barco, el clima y cualquier ajuste de ruta del día.",
+            "highlights": [
+              "**Recogida 30 min tras el despacho** — margen para absorber retrasos de inmigración",
+              "El conductor y el guía de habla inglesa lo recibirán en la sala de llegadas con un cartel con su nombre",
+              "**Muelle principal 360 m × 12 m / 140.000 ton** (un barco simultáneo)",
+              "**100 plazas de autobús** adyacentes — embarque rápido",
+              "Centro de información turística, cambio de divisas Jeju Bank, cajeros automáticos, Wi-Fi gratuito",
+              "Tarjeta de itinerario con direcciones en coreano como respaldo para taxis de emergencia"
+            ],
+            "_poi_meta": {
+              "poi_key": "jeju_cruise_port",
+              "kb_version": "1.21",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities + 100-bus parking)",
+                "South Korea Ministry of Oceans & Fisheries (terminal opening 2015; berth specifications)",
+                "Korea Cruise Port Sales / k-cruiseinfo.com (berth depths, tonnage de capacidad)",
+                "Ministry of Culture, Sports & Tourism (2024 cruise volume: 810,000 pax / 414 ships)",
+                "Jeju Provincial Government (Imhang-ro address, Geonip-dong; UN/LOCODE KRCHA)"
+              ]
+            },
+            "number": 1,
+            "time": "Llegada del crucero + 30 min",
+            "duration": "30 min",
+            "whyOnRoute": "**El Puerto de Jeju (norte) es la puerta de entrada principal de cruceros** para menos de 140.000 GT."
+          },
+          {
+            "number": 2,
+            "time": "≈ 09:00",
+            "duration": "75 min",
+            "name": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
+            "category": "Cono de Toba UNESCO — Pico del Amanecer (Triple Designación UNESCO)",
+            "description": "**Seongsan Ilchulbong** es un **cono de toba hidrovolcánica de tipo Surtsey de 5.000 años** — una forma de tierra rara creada cuando una erupción submarina emergió del océano alrededor del año 100 d.C.",
+            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+            "highlights": [
+              "**Triple UNESCO**: Patrimonio Mundial 2007-07-02 + Reserva de Biosfera 2002 + Geoparque Global 2010-10",
+              "**5.000 años de antigüedad** — erupción hidrovolcánica tipo Surtsey, explosión de magma en contacto con el agua del mar",
+              "Cráter de **600 m de ancho × 90 m de profundidad**, rodeado por **99 rocas dentadas** (la 'corona de piedra')",
+              "**182 m sobre el nivel del mar** — 0,8 km / ~140 m de ganancia, 60 min ida y vuelta por sendero de escaleras",
+              "**18 cuevas japonesas de la IIGM** — refugios de botes suicidas kamikaze de 1945",
+              "**Demostraciones de haenyeo a diario 13:30 + 15:00** — UNESCO Patrimonio Inmaterial 2016",
+              "**Tarifas actualizadas abril 2025**: Adultos ₩5.000 / Jóvenes ₩2.500 / GRATIS menores de 7 + mayores de 65",
+              "Horario primavera/otoño **05:00–19:00** (última entrada 18:20)",
+              "**Cierra el primer lunes de cada mes**"
+            ],
+            "timeUsed": [
+              "Aparcamiento + entrada + orientación en la base — ~10 min",
+              "Ascenso a la plataforma de la cumbre (0,8 km / 140 m de ganancia) — ~30 min",
+              "Vistas desde la cumbre + fotos del borde del cráter — ~20 min",
+              "Descenso — ~20 min",
+              "Visualización opcional de haenyeo en la base (demo 15:00) — ~10 min"
+            ],
+            "whyOnRoute": "La **triple designación UNESCO de Seongsan Ilchulbong** la convierte en el punto destacado natural.",
+            "_poi_meta": {
+              "poi_key": "seongsan_ilchulbong",
+              "kb_version": "1.18",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
+                "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
+                "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
+                "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
+                "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:15",
+            "duration": "60 min",
+            "name": "Seopjikoji (Cabo Este)",
+            "category": "Cabo Volcánico — Arquitectura Tadao Ando + Faro Bangdupo + Localizaciones de Series",
+            "description": "**Seopjikoji** es un estrecho cabo volcánico en la costa este de Jeju — conocido por las escenas de película y el Glass House de Tadao Ando.",
+            "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+            "highlights": [
+              "**Sendero de 2,1 km por el cabo** (~30 min, solo 14 m de desnivel) — tramos accesibles para sillas de ruedas y cochecitos",
+              "**Faro Bangdupo** — octagonal, **destellos cada 4 seg**, en lo alto del cono volcánico rojo Bulgeun Oreum",
+              "**Estación de señales Hyeopja Yeondae** — yeondae joseon de 4 m × 9 m, **Monumento Especial No. 23-2**",
+              "**Arquitectura Tadao Ando** — restaurante Glass House + Galería de Arte Yumin (Phoenix Island)",
+              "**Roca Seonbawi** — cuello volcánico a 10 m de la costa, leyenda del hijo menor del rey dragón",
+              "**Rodaje de series**: 'All In' (2003), 'Mi nombre es Kim Sam-soon' (2005) y otros",
+              "**Temporada de canola marzo-abril** (pendientes amarillas); **hortensias junio** (azul/violeta)",
+              "**Entrada al cabo GRATUITA**; Galería Yumin + Glass House con entrada separada",
+              "Seongsan Ilchulbong **claramente visible a 4 km al norte** desde el extremo del cabo"
+            ],
+            "timeUsed": [
+              "Aparcamiento + acceso — ~5 min",
+              "Paseo por el sendero del cabo — ~25 min",
+              "Fotos del faro + Hyeopja Yeondae — ~10 min",
+              "Vista exterior de los edificios de Tadao Ando — ~10 min",
+              "Regreso al autocar + reserva — ~10 min"
+            ],
+            "whyOnRoute": "**Arquitectura Tadao Ando en Seopjikoji** (restaurante Glass House + Galería Yumin, reconocida con el Premio Pulitzer).",
+            "_poi_meta": {
+              "poi_key": "seopjikoji",
+              "kb_version": "1.19",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Jeju Provincial Cultural Heritage — Special Monument No. 23-2 designation",
+                "VisitJeju — Seopjikoji official listing",
+                "Korea Lighthouse Service — Bangdupo Lighthouse operation records",
+                "Tadao Ando Architect & Associates — Phoenix Island project documentation",
+                "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
+              ]
+            }
+          },
+          {
+            "name": "Almuerzo (Este de Jeju — marisco local o cerdo negro)",
+            "category": "Almuerzo",
+            "description": "**Parada de almuerzo en el este de Jeju** en un restaurante local seleccionado por el guía.",
+            "highlights": [
+              "Restaurante local del Este de Jeju verificado por el guía — zona Seongsan/Seongeup/Pyoseon",
+              "**BBQ de cerdo negro de Jeju** (Monumento Natural 2015) o **Galchi Jorim** (hairtail a la brasa)",
+              "~60 min — encaja en el itinerario de un día de crucero",
+              "Menús fotográficos bilingües (inglés/chino), se acepta tarjeta y efectivo",
+              "Opciones vegetarianas con aviso previo",
+              "**Almuerzo NO incluido** — gasto personal ₩15.000–25.000/persona"
+            ],
+            "_poi_meta": {
+              "poi_key": "OPS_lunch_east_jeju",
+              "kb_version": "1.21",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Jeju Black Pig Natural Monument designation (2015, Cultural Heritage Administration)",
+                "Visit Jeju (eastern Jeju cuisine — galchi, heukdwaeji)",
+                "AtoC Korea operations notes (cruise tour lunch venue rotation)"
+              ]
+            },
+            "number": 4,
+            "time": "≈ 12:30",
+            "duration": "60 min",
+            "whyOnRoute": "**El almuerzo se sitúa en el punto medio geográfico de la ruta**, no cronológico."
+          },
+          {
+            "number": 5,
+            "time": "≈ 13:45",
+            "duration": "60 min",
+            "name": "Aldea Folclórica Seongeup",
+            "category": "Ciudad Amurallada de Era Joseon — Patrimonio Cultural Folclórico Importante (fundado 1423)",
+            "description": "**Aldea Folclórica de Seongeup** es una **ciudad amurallada de la era Joseon fundada en 1423** durante el reinado del Gran Sejong. Con alrededor de 500 años de administración, sus muros de piedra volcánica y casas con techo de paja ofrecen uno de los entornos históricos más auténticos de Jeju.",
+            "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+            "highlights": [
+              "**Fundada en 1423** por el Rey Sejong el Grande — centro administrativo hasta **1914 (~500 años)**",
+              "**110 estructuras tradicionales** dentro del perímetro original de la ciudad amurallada eupseong",
+              "**Patrimonio Cultural Folclórico Importante de Corea del Sur** (todo el pueblo + edificios individuales)",
+              "**Dos árboles de ~600 años** en el centro: Zelkova de hoja de sierra + Almez japonés — **Monumentos Naturales**",
+              "Diseñada según **principios de feng shui joseon (geomancia)** — plano típico de capital de condado",
+              "Lugar de rodaje de **'Dae Jang Geum' (MBC 2003-2004)** — éxito internacional de K-drama",
+              "**Omegisul** — licor de arroz de Jeju elaborado por una sola familia durante generaciones (cata gratuita)",
+              "Cicatrices históricas: **incendio de 1826** destruyó ~80 edificios; daños del **Levantamiento de Jeju de 1948**",
+              "**Entrada GRATUITA** — pueblo habitado por ~250 familias que mantienen las tradiciones"
+            ],
+            "timeUsed": [
+              "Aparcamiento + bienvenida del docente del pueblo — ~10 min",
+              "Camino a los árboles centenarios + centro del pueblo — ~10 min",
+              "Visitas al interior de los hanok (2–3 casas representativas) — ~15 min",
+              "Cata gratuita en la cervecería Omegisul — ~10 min",
+              "Paseo por el callejón Olle + fotografía — ~10 min",
+              "Tiempo de reserva — ~5 min"
+            ],
+            "whyOnRoute": "**Aldea Folclórica de Seongeup** (fundada 1423 por el Gran Sejong, ~500 años de función administrativa).",
+            "_poi_meta": {
+              "poi_key": "seongeup_folk_village",
+              "kb_version": "1.19",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Cultural Heritage Administration — Important Folklore Cultural Heritage designation",
+                "Korea Cultural Heritage Foundation — Seongeup Folk Village historical records",
+                "VisitJeju — Seongeup Minsok Maeul",
+                "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
+                "Jeju Folklore Society — Omegisul brewing tradition documentation"
+              ]
+            }
+          },
+          {
+            "name": "Recogida Terminal de Cruceros Jeju (Puerto Jeju — norte)",
+            "category": "Logística de Recogida y Crucero",
+            "description": "Trayecto de regreso a la **Terminal Internacional de Pasajeros de Jeju**.",
+            "highlights": [
+              "**Recogida 30 min tras el despacho** — margen para absorber retrasos de inmigración",
+              "Conductor + guía de habla inglesa con letrero en la sala de llegadas",
+              "**Muelle principal 360 m × 12 m / 140.000 ton** (un barco simultáneo)",
+              "**100 plazas de autobús** adyacentes — embarque rápido",
+              "Tiendas de recuerdos libres de impuestos, cajero Jeju Bank, cambio de divisas, alquiler de Wi-Fi",
+              "Lanzadera gratuita al **Mercado Tradicional Dongmun** (~10 min) si hay tiempo extra"
+            ],
+            "_poi_meta": {
+              "poi_key": "jeju_cruise_port",
+              "kb_version": "1.21",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities)",
+                "Jeju Bus Information System (Bus #100 airport connection)",
+                "Korea Cruise Port Sales (terminal layout + drop-off zones)",
+                "VisitJeju.net (Dongmun Market free traslado compartido)",
+                "Cruise industry standard (60-min all-aboard buffer)"
+              ]
+            },
+            "number": 6,
+            "time": "≈ 15:30 salida → ≈ 16:45 llegada al puerto",
+            "duration": "75 min de trayecto + 60 min de margen",
+            "whyOnRoute": "**El trayecto de regreso es el bloque individual más largo del día** (~70-80 min de Seongeup al puerto)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "Terminal de Cruceros",
+            "type": "origin",
+            "theme": "Salida"
+          },
+          {
+            "name": "Pico del Amanecer",
+            "type": "primary",
+            "theme": "Volcano"
+          },
+          {
+            "name": "Seopjikoji",
+            "type": "primary",
+            "theme": "Costa"
+          },
+          {
+            "name": "Almuerzo",
+            "type": "meal",
+            "theme": "Comida"
+          },
+          {
+            "name": "Aldea Folclórica",
+            "type": "primary",
+            "theme": "Culture"
+          },
+          {
+            "name": "Terminal de Cruceros",
+            "type": "return",
+            "theme": "Regreso"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "Volcán UNESCO + costa",
+            "duration": "Paradas 1–3",
+            "description": "Mañana: Volcán UNESCO + costa"
+          },
+          {
+            "phase": "Almuerzo",
+            "duration": "Parada 4",
+            "description": "Mediodía: Almuerzo"
+          },
+          {
+            "phase": "Cultura tradicional + regreso",
+            "duration": "Paradas 5–6",
+            "description": "Tarde: Cultura folclórica + regreso"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "Cómo se desarrolla el día",
+          "subtitle": "La ruta depende de tu puerto de escala. Si atracan en el Puerto de Jeju (norte), el recorrido sigue la ruta UNESCO este; si atracan en el Puerto de Gangjeong (sur), la ruta pasa por la zona alpina del Hallasan y el Mercado Olle."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "Cruceristas que necesitan un viaje de ida y vuelta el mismo día desde el terminal",
+            "Visitantes por primera vez en Jeju que quieren los puntos UNESCO en un día",
+            "Viajeros que quieren una ruta guiada a precio económico."
+          ],
+          "lessIdealFor": [
+            "Viajeros con movilidad muy reducida (el borde del cráter de Seongsan y el Hallasan 1100 requieren algo de caminata)",
+            "Grupos con muchos cochecitos de bebé",
+            "Viajeros que buscan un ritmo tranquilo — el horario del crucero es fijo"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Por qué dos rutas según el puerto",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "Puerto Jeju = terminal norte",
+                  "detail": "Priorizamos regresar de forma segura al puerto con al menos 60-90 minutos de margen antes de la hora límite de embarque del crucero. El itinerario, los tiempos de visita y la hora de regreso se ajustan según el horario real del barco. Si hay tráfico, mal tiempo o retrasos en el desembarque, el guía reducirá el tiempo en algunas paradas para priorizar el regreso seguro al puerto y llegar a tiempo para volver a embarcar."
+                },
+                {
+                  "label": "Puerto Gangjeong = terminal sur (Seogwipo)",
+                  "detail": "Hallasan 1100 alpino + Jusangjeolli + Cascadas Cheonjeyeon + Mercado Olle."
+                },
+                {
+                  "label": "La misma estructura de 8 horas en ambos puertos",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                }
+              ]
+            },
+            {
+              "title": "Especificidades del tour en autobús (gran autocar)",
+              "icon": "users",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "Autocar grande (25-35 personas)",
+                  "detail": "Opción más económica. Recomendado para pasajeros de crucero con presupuesto ajustado."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "Recogida y regreso",
+            "preview": "Recogida en terminal de cruceros — varía según el puerto",
+            "content": [
+              "Terminal Internacional de Cruceros de Jeju (Puerto Norte) o Terminal Gangjeong (Puerto Sur) según el puerto de su barco.",
+              "El guía le espera con el letrero de AtoC Korea en la salida del terminal.",
+              "Regreso al terminal programado con 90–120 min de margen de la salida del barco."
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "Caminata y terreno",
+            "preview": "Moderado; varía según el puerto",
+            "content": [
+              "Moderado. Seongsan: subida al cráter opcional (~180 escalones). Seopjikoji: 2,1 km de sendero llano junto al mar. Seongeup: completamente plano.",
+              "Distancia total: ~4 km."
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "En caso de mal tiempo",
+            "preview": "El horario del crucero es fijo — la ruta se ajusta",
+            "content": [
+              "Lluvia ligera: el tour sigue normalmente.",
+              "Tifón o cancelación del crucero: reembolso total."
+            ]
+          },
+          {
+            "id": "wear",
+            "title": "Qué llevar",
+            "preview": "Calzado cómodo + capas + pasaporte para volver a embarcar",
+            "content": [
+              "Calzado cómodo con suela de grip.",
+              "Ropa con capas (la cima de Seongsan puede ser fría).",
+              "Protector solar y gorra."
+            ]
+          },
+          {
+            "id": "included",
+            "title": "Qué está incluido",
+            "preview": "Guía, vehículo, recogida, entradas",
+            "variant": "included",
+            "content": [
+              "Autocar, guía certificado en inglés, traslado desde/hasta el terminal, entradas (Seongsan ₩5.000, Seopjikoji y Seongeup gratuitos).",
+              "No incluido: almuerzo (~₩15.000), propina."
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "Consultar notas de temporada"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "Consultar notas de temporada"
+          }
+        },
+        "seasonalVariations": [
+          {
+            "season": "Primavera",
+            "title": "Apertura de la temporada de cruceros",
+            "description": "Priorizamos regresar de forma segura al puerto con al menos 60-90 minutos de margen antes de la hora límite de embarque del crucero. El itinerario, los tiempos de visita y la hora de regreso se ajustan según el horario real del barco. Si hay tráfico, mal tiempo o retrasos en el desembarque, el guía reducirá el tiempo en algunas paradas para priorizar el regreso seguro al puerto y llegar a tiempo para volver a embarcar.",
+            "icon": "flower"
+          },
+          {
+            "season": "Verano",
+            "title": "Pico de escalas de crucero",
+            "description": "Caluroso pero con brisa en la costa; el refugio fresco del Hallasan 1100",
+            "icon": "sun"
+          },
+          {
+            "season": "Otoño",
+            "title": "Mejor claridad",
+            "description": "Visibilidad más nítida para ambas rutas de puerto",
+            "icon": "leaf"
+          },
+          {
+            "season": "Invierno",
+            "title": "Temporada baja",
+            "description": "Menos escalas de crucero; puede haber nieve en el Hallasan 1100",
+            "icon": "snow"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Equipo local certificado",
+            "description": "Operador turístico coreano autorizado con seguro completo",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "Equipo local certificado con experiencia en excursiones de crucero. Regreso seguro al puerto 90-120 min antes de la salida."
+          },
+          {
+            "icon": "route",
+            "title": "Especialistas en la ruta",
+            "description": "Itinerario ajustado a medida, no un circuito genérico",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "Ruta adaptada al puerto — Jeju Norte (este) o Gangjeong (sur). El operador monitorea los horarios de crucero diariamente."
+          },
+          {
+            "icon": "users",
+            "title": "Autocar de gran capacidad — opción económica",
+            "description": "Tamaño adecuado para la ruta",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "La opción más económica para ver los hitos de Jeju en una escala de crucero. Gran capacidad para grupos grandes."
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Inmediatamente",
+            "title": "Confirmación instantánea",
+            "detail": "Confirmación de reserva con resumen del itinerario",
+            "description": "Confirmación instantánea; envíe nombre del barco, puerto (Puerto Jeju o Puerto Gangjeong) y hora de desembarco."
+          },
+          {
+            "timing": "12 horas antes",
+            "title": "Aviso 12 horas antes",
+            "detail": "Actualización meteorológica y ajustes de ruta",
+            "description": "Ruta confirmada (este o sur) según su asignación de puerto 24 horas antes."
+          },
+          {
+            "timing": "La noche anterior",
+            "title": "Información final de recogida",
+            "detail": "Hora exacta de recogida y contacto del conductor",
+            "description": "Matrícula del autobús y contacto del guía enviados la noche anterior."
+          },
+          {
+            "timing": "La mañana del tour",
+            "title": "Notas de ruta del día",
+            "detail": "Briefing matutino según las condiciones del momento",
+            "description": "El guía recibe a su grupo en la sala de llegadas del terminal de cruceros."
+          },
+          {
+            "timing": "Durante el tour",
+            "title": "Consejos en cada parada",
+            "detail": "Orientación en tiempo real en cada lugar",
+            "description": "Margen de embarque total integrado en el horario de regreso — bajada en el terminal 60+ minutos antes de la salida."
+          },
+          {
+            "timing": "Tras el tour",
+            "title": "Apoyo postventa",
+            "detail": "Seguimiento y recomendaciones",
+            "description": "Breve solicitud de valoración enviada tras el regreso."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "port-routing",
+            "question": "¿Cómo sé en qué puerto atraca mi crucero?",
+            "answer": "Priorizamos regresar de forma segura al puerto con al menos 60-90 minutos de margen antes de la hora límite de embarque del crucero. El itinerario, los tiempos de visita y la hora de regreso se ajustan según el horario real del barco. Si hay tráfico, mal tiempo o retrasos en el desembarque, el guía reducirá el tiempo en algunas paradas para priorizar el regreso seguro al puerto y llegar a tiempo para volver a embarcar."
+          },
+          {
+            "id": "cruise-return",
+            "question": "(Consulte las preguntas frecuentes al reservar)",
+            "answer": "Para más información, contacte a AtoC Korea al reservar."
+          },
+          {
+            "id": "different-port",
+            "question": "¿Qué pasa si cambia el puerto de escala de mi crucero?",
+            "answer": "Priorizamos regresar de forma segura al puerto con al menos 60-90 minutos de margen antes de la hora límite de embarque del crucero. El itinerario, los tiempos de visita y la hora de regreso se ajustan según el horario real del barco. Si hay tráfico, mal tiempo o retrasos en el desembarque, el guía reducirá el tiempo en algunas paradas para priorizar el regreso seguro al puerto y llegar a tiempo para volver a embarcar."
+          },
+          {
+            "id": "first-time",
+            "question": "¿Es una buena opción para quienes visitan Jeju por primera vez?",
+            "answer": "Sí. Cubre los puntos más representativos de la zona en un solo día bien equilibrado."
+          },
+          {
+            "id": "walking",
+            "question": "(Consulte las preguntas frecuentes al reservar)",
+            "answer": "Para más información, contacte a AtoC Korea al reservar."
+          },
+          {
+            "id": "family",
+            "question": "¿Este tour es adecuado para familias?",
+            "answer": "Sí, para familias con niños que puedan llevar bien un día completo con varios traslados y caminatas."
+          },
+          {
+            "id": "seniors",
+            "question": "¿Pueden participar cómodamente los adultos mayores?",
+            "answer": "Recomendado solo para personas mayores activas que se sientan cómodas con escaleras y terreno irregular."
+          },
+          {
+            "id": "children",
+            "question": "(Consulte las preguntas frecuentes al reservar)",
+            "answer": "Para más información, contacte a AtoC Korea al reservar."
+          },
+          {
+            "id": "rain",
+            "question": "(Consulte las preguntas frecuentes al reservar)",
+            "answer": "Para más información, contacte a AtoC Korea al reservar."
+          },
+          {
+            "id": "lunch",
+            "question": "¿El almuerzo está incluido?",
+            "answer": "La ruta incluye una pausa para almorzar. Que la comida esté incluida o no depende de la tarifa reservada; revisa la lista de inclusiones."
+          },
+          {
+            "id": "pickup",
+            "question": "¿Dónde es el punto de recogida?",
+            "answer": "Desde el lobby de tu hotel o un punto de recogida designado dentro del área de reserva. La hora exacta se confirma la noche anterior."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "La disponibilidad y el puerto de crucero se confirman durante la reserva.",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "persona"
+        }
+      }
+    }
+  ],
+  "priceSource": {
+    "discountPct": 10,
+    "discountNote": "10% de descuento sobre el precio base del marketplace",
+    "amount": null,
+    "currency": "USD"
+  },
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch6_enhancement": {
+        "date": "2026-04-29",
+        "description": "Batch 6 deep enhancement — port-aware cruise excursión en tierra tour. Both variants (Jeju Port north + Gangjeong Port south) enhanced with 1,000+ char descriptions per stop; KB-backed _poi_meta on all attraction stops; product profile recalibrated to verified-fact 0-1 float scores; variant-level legacy 0-5 / 0-100 scale fields ALSO normalized to 0-1 float (Phase 1 unification completion for variant scope). Time-weighted indoor_ratio computed per variant per Fix 1 methodology.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale per Phase 1 standard. Variant-level legacy 0-5/0-100 scale fields ALSO normalized to 0-1 float in this batch (previously the schema unification stopped at top-level product profile). Time-weighted indoor_ratio per Fix 1 — computed PER VARIANT then aggregated. Top-level product profile uses cross-variant averages weighted toward Gangjeong (the more common 2025+ docking).",
+          "deltas_applied": {
+            "unesco_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "VERIFIED HIGH — both variants hit major UNESCO sites. Variant 0 (Jeju Port): Seongsan Ilchulbong = TRIPLE UNESCO (World Natural Heritage 2007 + Biosphere Reserve + Global Geopark) + Haenyeo ICH demos. Variant 1 (Gangjeong): Hallasan UNESCO World Heritage + Biosphere Reserve + Jusangjeolli Global Geopark. Both variants reliably deliver UNESCO content. 0.85 reflects this consistent delivery. Note: Seongeup is NOT UNESCO (national folklore only). Olle Market and Cheonjiyeon are not UNESCO. Score reflects weighted average of UNESCO density in both variants."
+            },
+            "scenic_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "VERIFIED — Variant 0: volcanic crater + coastal cape + folk village. Variant 1: alpine wetland + columnar basalt + waterfall + market. Both deliver catalog-leading scenic diversity. 0.95 calibrated."
+            },
+            "photo_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified — UNESCO crater, columnar basalt, subtropical falls, thatched-roof village, market food shots. Highly photogenic but not the absolute top (no flower festivals). 0.95 calibrated."
+            },
+            "walking_level": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "VERIFIED — Variant 0: Seongsan optional summit climb (300-500 stairs is the limit case) + Seongeup village walking; Variant 1: Hallasan boardwalk (flat) + Jusangjeolli flat + Cheonjiyeon flat. Variant 1 is materially flatter than Variant 0. Aggregate 0.55 reflects mostly easy walking with the Seongsan summit as the harder option (always optional)."
+            },
+            "indoor_ratio": {
+              "old": 0.25,
+              "new": 0.2,
+              "reasoning": "Time-weighted (Fix 1) — Variant 0 substantive 0.12, Variant 1 substantive 0.18. Aggregate cross-variant ~0.15-0.20. Catalog value 0.20 (slight upward adjustment to account for cruise-day bus-shelter time + lunch indoor)."
+            },
+            "weather_sensitivity": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "UPGRADED — cruise day has hard time constraint + ship cannot wait + the route is mostly outdoor. Heavy rain at Hallasan 1100 (road closure risk) or storm at Seongsan summit climb meaningfully compromises the day. 0.85 reflects this elevated cruise-context weather risk vs ordinary 0.80 day tour."
+            },
+            "rain_fit": {
+              "old": 0.4,
+              "new": 0.45,
+              "reasoning": "Variant 1 is meaningfully more rain-friendly than Variant 0 (Olle Market covered + Hallasan boardwalk under tree canopy + Cheonjiyeon's subtropical forest provides some shelter). Variant 0's Seongsan climb is exposed. Aggregate 0.45 — slightly improved over old 0.40 calibration."
+            },
+            "iconic_landmark_fit": {
+              "old": 0.8,
+              "new": 0.95,
+              "reasoning": "UPGRADED — verified: Variant 0 has Seongsan Ilchulbong (Jeju's single most-iconic landmark, Triple UNESCO). Variant 1 has Hallasan UNESCO + Jusangjeolli Natural Monument. Both variants deliver catalog-leading iconic content. 0.95 — among the highest in the catalog."
+            },
+            "first_time_fit": {
+              "old": 0.85,
+              "new": 0.95,
+              "reasoning": "UPGRADED — cruise day for first-time Jeju visitors is the ARCHETYPE use case for this product. Both variants deliver the iconic Jeju vista appropriate to the docking port. 0.95 — near-maximum first-time fit."
+            },
+            "same_day_flight_fit": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Cruise tour ends 16:30-17:30 at port; not at airport. Bus #100 from Jeju Port to airport is direct (~30 min). For the Gangjeong variant, airport transfer is ~50 min via Limousine 800. Both variants support same-day onward travel for guests leaving the cruise mid-itinerary, but it's tighter from Gangjeong. Aggregate 0.95."
+            },
+            "small_group_fit_smallgroup": {
+              "field": "small_group_fit",
+              "old_smallgroup": 1.0,
+              "new_smallgroup": 1.0,
+              "old_bus": 0.2,
+              "new_bus": 0.2,
+              "reasoning": "Per-tour: small_group tour = 1.0 (small group format defines this product); bus tour = 0.2 (large coach format is the OTHER product). Format fixed by tour SKU."
+            },
+            "bus_fit_smallgroup": {
+              "field": "bus_fit",
+              "old_smallgroup": 0.2,
+              "new_smallgroup": 0.2,
+              "old_bus": 1.0,
+              "new_bus": 1.0,
+              "reasoning": "Per-tour: small_group tour bus_fit = 0.2; bus tour bus_fit = 1.0."
+            },
+            "private_fit": {
+              "old": 0.2,
+              "new": 0.15,
+              "reasoning": "Neither tour is private — both are group products (small group OR large coach). 0.15."
+            },
+            "premium_fit_smallgroup": {
+              "field": "premium_fit",
+              "old_smallgroup": 0.7,
+              "new_smallgroup": 0.75,
+              "old_bus": 0.4,
+              "new_bus": 0.4,
+              "reasoning": "Small group cruise tour reads premium — fewer guests, more guide attention, easier pace. Bus tour reads budget — economies of scale, larger group, less flexibility. Calibrated per tour."
+            },
+            "value_for_money_fit_smallgroup": {
+              "field": "value_for_money_fit",
+              "old_smallgroup": 0.6,
+              "new_smallgroup": 0.65,
+              "old_bus": 0.7,
+              "new_bus": 0.8,
+              "reasoning": "Bus tour delivers stronger value (lower per-person cost for same itinerary). Small group is mid-value (premium-priced but delivers premium experience). Calibrated per tour."
+            },
+            "young_kids_fit": {
+              "old": 0.5,
+              "new": 0.55,
+              "reasoning": "Cruise day with kids works in Variant 1 (Gangjeong) better — Olle Market food + flat boardwalk + waterfall walk all kid-friendly. Variant 0's Seongsan summit climb is the limit case for younger kids. 0.55 aggregate."
+            },
+            "family_fit": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "Verified — UNESCO sights + market food + folk village hit intergenerational interests. Aggregate 0.65."
+            },
+            "senior_fit": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "Variant 1 is materially more senior-friendly (boardwalk + flat market + flat falls path). Variant 0's Seongsan summit is the limit. Aggregate 0.65 — moderate senior fit."
+            },
+            "mobility_friendly_fit": {
+              "old": 0.5,
+              "new": 0.55,
+              "reasoning": "Variant 1 stronger (Gangjeong terminal reportedly has better wheelchair accessibility than Jeju Port; Hallasan boardwalk stroller-friendly; Cheonjiyeon flat path; covered Olle Market). Variant 0's Seongsan climb is the limit. 0.55 aggregate."
+            },
+            "stroller_fit": {
+              "old": 0.4,
+              "new": 0.5,
+              "reasoning": "Variant 1 fully stroller-accessible. Variant 0's Seongsan summit stairs not accessible. Aggregate 0.50."
+            },
+            "nature_fit": {
+              "old": 0.9,
+              "new": 0.9,
+              "reasoning": "Verified — UNESCO volcano + alpine wetland + columnar basalt + subtropical waterfall. 0.90."
+            },
+            "shopping_fit": {
+              "old": 0.4,
+              "new": 0.55,
+              "reasoning": "UPGRADED — Variant 1's Olle Market is a strong shopping anchor (souvenirs + foodie items). Variant 0 lighter on shopping. 0.55 aggregate."
+            },
+            "food_fit": {
+              "old": 0.5,
+              "new": 0.65,
+              "reasoning": "UPGRADED — Variant 1's Olle Market plus Seogwipo lunch tramo deliver strong food anchor. Variant 0 lunch only. 0.65 aggregate. Black pork + Hallabong + abalone all featured."
+            },
+            "local_culture_fit": {
+              "old": 0.6,
+              "new": 0.7,
+              "reasoning": "UPGRADED — Variant 0's Seongeup Folk Village (600-year living town) is high-cultural-density. Variant 1's Olle Market is high-local-life-density. Aggregate 0.70."
+            },
+            "storytelling_fit": {
+              "old": 0.7,
+              "new": 0.85,
+              "reasoning": "UPGRADED — cruise day tours are storytelling-heavy (one-shot first-time guests, guide narrates everything). Both variants have rich histories: Seongsan formation + haenyeo tradition + Joseon-era folk village (Variant 0); Hallasan UNESCO + columnar basalt geology + 1,500-year tangerine heritage + Mutae eel mythology + Gangjeong civilian-military history (Variant 1). 0.85."
+            },
+            "cafe_fit": {
+              "old": 0.4,
+              "new": 0.4,
+              "reasoning": "Modest cafe content — Olle Market has cafe stalls; Hallasan 1100 rest area cafe; otherwise no dedicated cafe stops. 0.40 calibrated."
+            },
+            "comfort_level": {
+              "old": 0.7,
+              "new": 0.75,
+              "reasoning": "Cruise day infrastructure is comfort-optimized — paved/boardwalk trails, climate-controlled vehicles, restaurant lunch, terminal facilities. 0.75 aggregate."
+            },
+            "duration_hours": {
+              "old": 8.0,
+              "new": 8.0,
+              "reasoning": "Confirmed 8h duration for both variants — within cruise day buffer."
+            },
+            "min_recommended_age": {
+              "old": 6,
+              "new": 6,
+              "reasoning": "Confirmed 6+ — both variants accessible to school-age children."
+            }
+          }
+        },
+        "stops_enhanced_jeju_port_variant": 6,
+        "stops_enhanced_gangjeong_port_variant": 7,
+        "sources": [
+          "VisitKorea",
+          "Visit Jeju",
+          "Korea Cruise Port Sales",
+          "CruiseMapper",
+          "Cruise Critic",
+          "Wikipedia",
+          "Inside Jeju",
+          "Referencia de mercado",
+          "Referencia de mercado",
+          "Soul of Seoul"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,2749 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "jeju-cruise-shore-excursion-small-group-tour",
+  "locale": "ko",
+  "product_id": "jeju-cruise-shore-excursion-small-group-tour",
+  "seo": {
+    "pageTitle": "제주 크루즈 기항지 소그룹 투어 | AtoC Korea",
+    "metaDescription": "8시간 기항지 대응형 제주 크루즈 소그룹 투어: 제주항은 동쪽 유네스코 코스, 강정항은 한라산 고산지대+올레 시장 코스.",
+    "ogImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "primaryKeywords": [
+      "제주 크루즈 소그룹 투어",
+      "제주항 기항지 소그룹",
+      "강정항 기항지 투어",
+      "제주 크루즈 기항지 투어"
+    ],
+    "title": "제주 크루즈 기항지 소그룹 투어 | AtoC Korea",
+    "description": "제주 크루즈 기항지 소그룹 투어 — 제주항(동부 유네스코 코스)·강정항(한라산+올레 코스) 2가지 루트. 승선 마감 전에 항구로 안전하게 복귀하는 것을 최우선으로 운영, 공인 가이드."
+  },
+  "catalog_card": {
+    "slug": "jeju-cruise-shore-excursion-small-group-tour",
+    "title": "제주 크루즈 기항지 관광 — 소그룹 투어",
+    "subtitle": "제주항·강정항 2가지 코스를 갖춘 항구 대응형 크루즈 기항지 소그룹 투어.",
+    "region": "제주 (항구에 따라)",
+    "duration": "8시간",
+    "stopsCount": 6,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "크루즈 기항 일일 투어",
+      "귀선 시각 배려 코스",
+      "고급 크루즈 플랜",
+      "소그룹"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
+    "priceLabel": "가격은 예약 시 확인",
+    "shortCardDescription": "크루즈 기항지 소그룹 투어. 기항 항구에 따라 동부 코스(제주항 — 성산일출봉·섭지코지·성읍민속마을) 또는 남부 코스(강정항)로 진행. 승선 마감 전에 항구로 안전하게 복귀하는 것을 최우선으로 운영, 공인 가이드.",
+    "tags": [
+      "크루즈 기항지 투어",
+      "항구별 맞춤 코스",
+      "프리미엄 크루즈",
+      "소그룹"
+    ]
+  },
+  "headlineLine1": "제주 크루즈 기항지 관광 — 소그룹 투어",
+  "headlineLine2": "항구에 맞춘 2가지 코스 — 내 크루즈에 맞는 루트 선택",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "인"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "imagePosition": "center 35%",
+    "tagline": "항구를 선택하세요: 제주항은 동부 유네스코 코스, 강정항은 한라산+올레 코스 — 귀선 시각을 최우선으로 구성했습니다.",
+    "pills": [
+      "cruise_excursion",
+      "항구별 맞춤 코스",
+      "소그룹"
+    ],
+    "meta": {
+      "duration": "8시간",
+      "region": "제주 (기항지 따라 변동)",
+      "stops": "6~7개 코스",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "투어 개요"
+    },
+    {
+      "id": "itinerary",
+      "label": "상세 일정"
+    },
+    {
+      "id": "details",
+      "label": "유의사항"
+    },
+    {
+      "id": "faq",
+      "label": "자주 묻는 질문"
+    },
+    {
+      "id": "reviews",
+      "label": "여행자 후기"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "소요 시간",
+      "value": "8시간"
+    },
+    {
+      "icon": "camera",
+      "label": "사진 포인트",
+      "value": "매우 높음"
+    },
+    {
+      "icon": "mountain",
+      "label": "경관 특색",
+      "value": "매우 높음"
+    },
+    {
+      "icon": "footprints",
+      "label": "도보 난이도",
+      "value": "보통"
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "우천 적합도",
+      "value": "보통"
+    },
+    {
+      "icon": "users",
+      "label": "가족 적합도",
+      "value": "높음"
+    },
+    {
+      "icon": "scale",
+      "label": "투어 일정 속도",
+      "value": "균형"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+      "alt": "투어 중 방문하는 제주 크루즈 터미널의 풍경",
+      "caption": "제주 크루즈 터미널",
+      "location": "크루즈터미널",
+      "atmosphere": "출발"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+      "alt": "투어 중 방문하는 성산일출봉 응회구의 풍경",
+      "caption": "성산일출봉 응회구",
+      "location": "성산일출봉",
+      "atmosphere": "유네스코 일출봉"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+      "alt": "투어 중 방문하는 주상절리 현무암 절벽의 풍경",
+      "caption": "주상절리 현무암 절벽",
+      "location": "주상절리",
+      "atmosphere": "화산 주상절리 해안"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+      "alt": "투어 중 방문하는 한라산 1100 습지의 풍경",
+      "caption": "한라산 1100 습지",
+      "location": "한라산 1100",
+      "atmosphere": "알파인 데크"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      "alt": "대포 주상절리 절벽의 육각형 현무암 기둥",
+      "caption": "Cheonjiyeon 폭포",
+      "location": "Cheonjiyeon 폭포",
+      "atmosphere": "Cheonjiyeon 폭포는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+    },
+    {
+      "id": "g6",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+      "alt": "투어 중 방문하는 올레매일시장의 풍경",
+      "caption": "올레매일시장",
+      "location": "올레매일시장",
+      "atmosphere": "현지 시장 피날레"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "name": "제주 크루즈 터미널 픽업 (제주항 — 북쪽)",
+      "category": "픽업 & 크루즈 물류",
+      "description": "드라이버와 영어 가이드가 제주항 국제여객터미널 도착홀에서 팀을 맞이합니다. 강정항(서귀포 남쪽) 기항 시 남부·서부 코스로 진행됩니다.",
+      "highlights": [
+        "**선박 통관 후 30분 픽업** — 출입국 지연을 흡수하는 완충 시간",
+        "드라이버 + 영어 가이드가 이름 표지판을 들고 입국장 대기",
+        "**메인 선석 360m × 12m / 14만 톤 수용 규모** (동시 1척)",
+        "터미널 인접 **100대 버스 주차 공간** — 빠른 차량 탑승",
+        "관광 안내소, 제주 은행 환전, ATM, 무료 Wi-Fi 현장 운영",
+        "한글 주소가 적힌 비상 택시용 일정 카드 제공"
+      ],
+      "_poi_meta": {
+        "poi_key": "jeju_cruise_port",
+        "kb_version": "1.21",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities + 100-bus parking)",
+          "South Korea Ministry of Oceans & Fisheries (terminal opening 2015; berth specifications)",
+          "Korea Cruise Port Sales / k-cruiseinfo.com (berth depths, tonnage capacity)",
+          "Ministry of Culture, Sports & Tourism (2024 cruise volume: 810,000 pax / 414 ships)",
+          "Jeju Provincial Government (Imhang-ro address, Geonip-dong; UN/LOCODE KRCHA)"
+        ]
+      },
+      "number": 1,
+      "time": "크루즈 도착 후 약 30분",
+      "duration": "30분",
+      "whyOnRoute": "제주 국제 여객 터미널에서 **소그룹 크루즈 픽업 (최대 8~15인)**."
+    },
+    {
+      "number": 2,
+      "time": "≈ 09:00",
+      "duration": "90분",
+      "name": "성산일출봉",
+      "category": "유네스코 응회암 분화구 — 일출봉 (유네스코 3중 지정)",
+      "description": "유네스코 세계자연유산. 분화구 등반 선택(왕복 0.8km) 또는 해안 포토. 입장료 ₩5,000. 방문 시간: 약 60분.",
+      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+      "highlights": [
+        "**유네스코 3중 지정**: 세계유산 2007-07-02 + 생물권보전지역 2002 + 세계지질공원 2010-10",
+        "**5,000년 전** 형성 — 마그마가 바닷물과 만나 폭발한 수성화산 활동, 이후 육지와 연결",
+        "분화구 **지름 600m × 깊이 90m**, **99개의 날카로운 암봉**으로 둘러싸인 '돌 왕관'",
+        "**해발 182m** — 0.8km / 고도 차 약 140m, 석계 트레일 왕복 60분",
+        "**18개의 일제 WWII 동굴** — 1945년 가미카제 자살 특공선 은신처",
+        "**해녀 공연 매일 13:30 + 15:00** — 유네스코 무형유산(2016년 등재)",
+        "**2025년 4월 기준 입장료**: 성인 ₩5,000 / 청소년 ₩2,500 / 7세 이하·65세 이상 무료",
+        "봄·가을 운영 **05:00~19:00** (마지막 입장 18:20)",
+        "**매월 첫 번째 월요일 휴관**"
+      ],
+      "timeUsed": [
+        "주차 + 매표 + 현장 안내 — 약 10분",
+        "정상 데크까지 등반 (0.8km / 고도 차 140m) — 약 30분",
+        "정상 조망 + 분화구 테두리 사진 — 약 20분",
+        "하산 — 약 20분",
+        "선택: 해녀 공연 관람 (15:00 공연) — 약 10분"
+      ],
+      "whyOnRoute": "**소그룹 페이싱 고급을 갖춘 성산일출봉** — 90분 창으로 더 깊은 탐방 가능.",
+      "_poi_meta": {
+        "poi_key": "seongsan_ilchulbong",
+        "kb_version": "1.18",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
+          "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
+          "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
+          "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
+          "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:00",
+      "duration": "75분",
+      "name": "섭지코지 (동부 해안 곶)",
+      "category": "화산 곶 — 안도 다다오 건축 + 방두포 등대 + 드라마 촬영지",
+      "description": "제주 동쪽 화산 곶. 성산일출봉을 배경으로 한 탁 트인 해안 전망. 방문 시간: 약 40분.",
+      "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+      "highlights": [
+        "**2.1km 곶 트레일** (약 30분, 고도 차 14m만) — 휠체어·유모차 친화 구간 포함",
+        "**방두포 등대** — 팔각형, **4초마다 점멸**, 붉은 화산 분석구 '불근오름' 위에 위치",
+        "**협자 연대 봉수대** — 4m × 9m 조선 연대, **특별기념물 제23-2호**",
+        "**안도 다다오 건축** — 글라스 하우스 레스토랑 + 유민 미술관 (피닉스 아일랜드)",
+        "**선바위(선암)** — 해면 10m 화산암 기둥, 용왕의 막내 아들 전설",
+        "**드라마 촬영지**: '올인'(2003), '내 이름은 김삼순'(2005) 외",
+        "**유채꽃 3~4월** (노란 경사면); **수국 6월** (파랑·보라)",
+        "**무료 입장**; 유민 미술관 + 글라스 하우스 별도 유료",
+        "곶 끝에서 **북쪽 4km**에 성산일출봉 선명하게 조망 — 유네스코 3중 지정 배경 구도"
+      ],
+      "timeUsed": [
+        "주차 + 입장 — 약 5분",
+        "곶 트레일 산책 — 약 25분",
+        "등대 + 협자 연대 사진 — 약 10분",
+        "안도 다다오 건물 외관 촬영 — 약 10분",
+        "코치 귀환 + 이동 완충 — 약 10분"
+      ],
+      "whyOnRoute": "**섭지코지의 안도 다다오 건축**은 소그룹 제품 하이라이트.",
+      "_poi_meta": {
+        "poi_key": "seopjikoji",
+        "kb_version": "1.19",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Jeju Provincial Cultural Heritage — Special Monument No. 23-2 designation",
+          "VisitJeju — Seopjikoji official listing",
+          "Korea Lighthouse Service — Bangdupo Lighthouse operation records",
+          "Tadao Ando Architect & Associates — Phoenix Island project documentation",
+          "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
+        ]
+      }
+    },
+    {
+      "name": "점심 (제주 동부 — 현지 해산물 또는 흑돼지)",
+      "category": "점심",
+      "description": "성산·성읍·표선 지역 현지 식당. 점심 식사비 포함 여부는 예약 시 확인.",
+      "highlights": [
+        "가이드 검증 동제주 식당 — 성산/성읍/표선 지역",
+        "**제주 흑돼지 BBQ** (천연기념물 2015) 또는 **갈치조림** (간장 조림 갈치)",
+        "약 60분 소요 — 크루즈 당일 여행 일정에 맞춤",
+        "이중 언어 사진 메뉴 (영어/중국어), 카드 + 현금 가능",
+        "사전 고지 시 채식 옵션 제공",
+        "**점심 미포함** — 개인 부담 ₩15,000~25,000/인 (업그레이드 가능)"
+      ],
+      "_poi_meta": {
+        "poi_key": "OPS_lunch_east_jeju",
+        "kb_version": "1.21",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Jeju Black Pig Natural Monument designation (2015, Cultural Heritage Administration)",
+          "Visit Jeju (eastern Jeju cuisine — galchi, heukdwaeji)",
+          "AtoC Korea operations notes (cruise tour lunch venue rotation)"
+        ]
+      },
+      "number": 4,
+      "time": "≈ 12:30",
+      "duration": "75분",
+      "whyOnRoute": "**소그룹 점심 경험** — 75분 체류 시간 (버스 투어 제품 60분 대비)으로 더 여유로운 점심."
+    },
+    {
+      "number": 5,
+      "time": "≈ 14:00",
+      "duration": "75분",
+      "name": "성읍민속마을",
+      "category": "조선 시대 읍성 — 중요 민속 문화재 (1423년 창건)",
+      "description": "1423년 조선 세종 때 조성된 살아있는 읍성 마을. 크루즈 일정에 맞게 체류 시간 조율. 방문 시간: 약 45분.",
+      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+      "highlights": [
+        "**세종대왕이 1423년 창건** — **1914년(약 500년)**까지 행정 중심지로 기능",
+        "원래 읍성 담장 내 **110개의 전통 건축물** 보존",
+        "**대한민국 중요 민속 문화재** — 마을 전체 및 다수 건물 개별 지정",
+        "마을 중심 **수령 약 600년 된 느티나무와 팽나무** — **천연기념물 지정**",
+        "**조선 풍수지리 원칙**에 따라 구성된 전형적 읍 중심 구획",
+        "**드라마 '대장금' (MBC 2003~2004)** 촬영지 — 국제적 K-드라마 히트작",
+        "**오메기술(오메기술)** — 단일 가문이 대대로 빚은 제주 쌀 기반 전통 술 (무료 시음)",
+        "역사적 상처: **1826년 화재**로 약 80동 소실; **1948년 제주 4·3 사건** 피해",
+        "**무료 입장** — 약 250가구가 전통 계승하며 생활 중인 살아있는 마을"
+      ],
+      "timeUsed": [
+        "주차 + 마을 해설사의 환영 브리핑 — 약 10분",
+        "고목 + 마을 중심 이동 — 약 10분",
+        "한옥 내부 방문 (대표 가옥 2~3채) — 약 15분",
+        "오메기술 양조장 무료 시음 — 약 10분",
+        "올레 골목 산책 + 사진 — 약 10분",
+        "이동 완충 — 약 5분"
+      ],
+      "whyOnRoute": "**소그룹 심층 성읍 민속마을** — 75분 체류 시간 (버스 투어 60분 대비)으로 게스트가 한옥 내부 탐방 가능.",
+      "_poi_meta": {
+        "poi_key": "seongeup_folk_village",
+        "kb_version": "1.19",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Cultural Heritage Administration — Important Folklore Cultural Heritage designation",
+          "Korea Cultural Heritage Foundation — Seongeup Folk Village historical records",
+          "VisitJeju — Seongeup Minsok Maeul",
+          "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
+          "Jeju Folklore Society — Omegisul brewing tradition documentation"
+        ]
+      }
+    },
+    {
+      "name": "제주 크루즈 터미널 귀환 (제주항)",
+      "category": "픽업 & 크루즈 물류",
+      "description": "16:30~17:00 터미널 도착 목표. 교통 지연 여유 시간 포함. 선박 출항 시각 실시간 파악.",
+      "highlights": [
+        "**선박 통관 후 30분 픽업** — 출입국 지연을 흡수하는 완충 시간",
+        "드라이버 + 영어 가이드가 이름 표지판을 들고 입국장 대기",
+        "**메인 선석 360m × 12m / 14만 톤 수용 규모** (동시 1척)",
+        "터미널 인접 **100대 버스 주차 공간** — 빠른 차량 탑승",
+        "관광 안내소, 제주 은행 환전, ATM, 무료 Wi-Fi 현장 운영",
+        "한글 주소가 적힌 비상 택시용 일정 카드 제공"
+      ],
+      "_poi_meta": {
+        "poi_key": "jeju_cruise_port",
+        "kb_version": "1.21",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities)",
+          "Jeju Bus Information System (Bus #100 airport connection)",
+          "Korea Cruise Port Sales (terminal layout + drop-off zones)",
+          "VisitJeju.net (Dongmun Market free shuttle)",
+          "Cruise industry standard (60-min all-aboard buffer)"
+        ]
+      },
+      "number": 6,
+      "time": "≈ 15:30 → arrive port ≈ 16:45",
+      "duration": "75분 드라이브 + 60분 완충",
+      "whyOnRoute": "**소그룹 귀환 드라이브** — 대화형 가이드 동행, 게스트가 당일 내용 마음대로 질문 가능."
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "크루즈 터미널",
+      "type": "origin",
+      "theme": "출발"
+    },
+    {
+      "name": "일출봉",
+      "type": "primary",
+      "theme": "화산"
+    },
+    {
+      "name": "섭지코지",
+      "type": "primary",
+      "theme": "해안"
+    },
+    {
+      "name": "점심",
+      "type": "meal",
+      "theme": "식사"
+    },
+    {
+      "name": "민속마을",
+      "type": "primary",
+      "theme": "문화"
+    },
+    {
+      "name": "크루즈 터미널",
+      "type": "return",
+      "theme": "귀환"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "유네스코 화산 + 해안",
+      "duration": "정류장 1–3",
+      "description": "오전: 유네스코 화산 + 해안."
+    },
+    {
+      "phase": "점심",
+      "duration": "정류장 4",
+      "description": "정오: 점심 식사."
+    },
+    {
+      "phase": "민속 문화 + 귀환",
+      "duration": "정류장 5–6",
+      "description": "오후: 민속 문화 관람 후 크루즈 터미널 귀환."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "하루 일정",
+    "subtitle": "노선은 기항 항구에 따라 결정됩니다. 제주항(북쪽) 기항 시 동쪽 유네스코 코스로 운행하며, 강정항(남쪽) 기항 시 한라산 고산지대 + 올레 시장 코스로 운행합니다."
+  },
+  "itinerary_variants": [
+    {
+      "port_id": "jeju_port",
+      "port_label": "제주항(북부 터미널)",
+      "port_label_short": "제주항",
+      "route_focus": "동해안 유네스코 명소 + 민속 문화",
+      "pickup_base": "jeju_port",
+      "duration_band": "8h",
+      "return_time_band": "17:00–17:30",
+      "poi_tags_in_variant": [
+        "seongsan_ilchulbong",
+        "seopjikoji",
+        "seongeup_folk_village"
+      ],
+      "theme_tags_in_variant": [
+        "volcano",
+        "coast",
+        "culture",
+        "iconic_landmarks",
+        "first_time_friendly"
+      ],
+      "scenic_level_in_variant": 1.0,
+      "walking_level_in_variant": 0.6,
+      "indoor_ratio_in_variant": 0.15,
+      "weather_sensitivity_in_variant": 0.8,
+      "stops": [
+        {
+          "name": "제주항 크루즈 터미널 픽업 (북쪽)",
+          "category": "픽업 & 크루즈 물류",
+          "description": "드라이버와 영어 가이드가 **제주 국제여객터미널** 입국장에서 이름 표지판을 들고 귀하를 맞이합니다.",
+          "highlights": [
+            "**선박 통관 후 30분 픽업** — 출입국 지연을 흡수하는 완충 시간",
+            "드라이버 + 영어 가이드가 이름 표지판을 들고 입국장 대기",
+            "**메인 선석 360m × 12m / 14만 톤 수용 규모** (동시 1척)",
+            "터미널 인접 **100대 버스 주차 공간** — 빠른 차량 탑승 가능",
+            "터미널 내 관광안내소, 제주은행 환전소, ATM, 무료 와이파이",
+            "긴급 시 택시 이용을 위한 한국어 주소 카드 제공"
+          ],
+          "_poi_meta": {
+            "poi_key": "jeju_cruise_port",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities + 100-bus parking)",
+              "South Korea Ministry of Oceans & Fisheries (terminal opening 2015; berth specifications)",
+              "Korea Cruise Port Sales / k-cruiseinfo.com (berth depths, tonnage capacity)",
+              "Ministry of Culture, Sports & Tourism (2024 cruise volume: 810,000 pax / 414 ships)",
+              "Jeju Provincial Government (Imhang-ro address, Geonip-dong; UN/LOCODE KRCHA)"
+            ]
+          },
+          "number": 1,
+          "time": "크루즈 입항 후 30분",
+          "duration": "30분",
+          "whyOnRoute": "**소그룹 크루즈 픽업 (최대 8~15인)** — 소형 차량으로 더 빠르고 유연하게 출발합니다."
+        },
+        {
+          "number": 2,
+          "time": "≈ 09:00",
+          "duration": "90분",
+          "name": "성산일출봉",
+          "category": "유네스코 응회암 분화구 — 일출봉 (유네스코 3중 지정)",
+          "description": "**성산일출봉 (Sunrise Peak)**은 **5,000년 전 형성된 수성화산 응회암 분화구**입니다.",
+          "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+          "highlights": [
+            "**유네스코 3중 지정**: 세계유산 2007-07-02 + 생물권보전지역 2002 + 세계지질공원 2010-10",
+            "**5,000년 전** 형성 — 마그마가 바닷물과 만나 폭발한 수성화산 활동, 이후 육지와 연결",
+            "분화구 **지름 600m × 깊이 90m**, **99개의 날카로운 암봉**으로 둘러싸인 '돌 왕관'",
+            "**해발 182m** — 0.8km / 고도 차 약 140m, 석계 트레일 왕복 60분",
+            "**18개의 일제 WWII 동굴** — 1945년 가미카제 자살 특공선 은신처",
+            "**해녀 공연 매일 13:30 + 15:00** — 유네스코 무형유산(2016년 등재)",
+            "**2025년 4월 기준 입장료**: 성인 ₩5,000 / 청소년 ₩2,500 / 7세 이하·65세 이상 무료",
+            "봄·가을 운영 **05:00~19:00** (마지막 입장 18:20)",
+            "**매월 첫 번째 월요일 휴관**"
+          ],
+          "timeUsed": [
+            "주차 + 매표 + 현장 안내 — 약 10분",
+            "정상 데크까지 등반 (0.8km / 고도 차 140m) — 약 30분",
+            "정상 조망 + 분화구 테두리 사진 — 약 20분",
+            "하산 — 약 20분",
+            "선택: 해녀 공연 관람 (15:00 공연) — 약 10분"
+          ],
+          "whyOnRoute": "**소그룹 페이싱의 성산일출봉** — 버스 제품 75분 대비 90분 창이 더 많은 선택적 시간을 확보합니다.",
+          "_poi_meta": {
+            "poi_key": "seongsan_ilchulbong",
+            "kb_version": "1.18",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
+              "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
+              "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
+              "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
+              "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
+            ]
+          }
+        },
+        {
+          "number": 3,
+          "time": "≈ 11:00",
+          "duration": "75분",
+          "name": "섭지코지 (동쪽 곶)",
+          "category": "화산 곶 — 안도 다다오 건축 + 방두포 등대 + 드라마 촬영지",
+          "description": "**섭지코지**는 제주 동쪽 해안의 좁은 화산 곶입니다.",
+          "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+          "highlights": [
+            "**2.1km 곶 트레일** (약 30분, 고도 차 14m만) — 휠체어·유모차 친화 구간 포함",
+            "**방두포 등대** — 팔각형, **4초마다 점멸**, 붉은 화산 분석구 '불근오름' 위에 위치",
+            "**협자 연대 봉수대** — 4m × 9m 조선 연대, **특별기념물 제23-2호**",
+            "**안도 다다오 건축** — 글라스 하우스 레스토랑 + 유민 미술관 (피닉스 아일랜드)",
+            "**선바위(선암)** — 해면 10m 화산암 기둥, 용왕의 막내 아들 전설",
+            "**드라마 촬영지**: '올인'(2003), '내 이름은 김삼순'(2005) 외",
+            "**유채꽃 3~4월** (노란 경사면); **수국 6월** (파랑·보라)",
+            "**무료 입장**; 유민 미술관 + 글라스 하우스 별도 유료",
+            "곶 끝에서 **북쪽 4km**에 성산일출봉 선명하게 조망 — 유네스코 3중 지정 배경 구도"
+          ],
+          "timeUsed": [
+            "주차 + 입장 — 약 5분",
+            "곶 트레일 산책 — 약 25분",
+            "등대 + 협자 연대 사진 — 약 10분",
+            "안도 다다오 건물 외관 촬영 — 약 10분",
+            "코치 귀환 + 이동 완충 — 약 10분"
+          ],
+          "whyOnRoute": "**소그룹 제품의 섭지코지 안도 다다오 건축** — 소그룹의 유연한 일정 속도로 더 자세히 감상할 수 있습니다.",
+          "_poi_meta": {
+            "poi_key": "seopjikoji",
+            "kb_version": "1.19",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Jeju Provincial Cultural Heritage — Special Monument No. 23-2 designation",
+              "VisitJeju — Seopjikoji official listing",
+              "Korea Lighthouse Service — Bangdupo Lighthouse operation records",
+              "Tadao Ando Architect & Associates — Phoenix Island project documentation",
+              "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
+            ]
+          }
+        },
+        {
+          "name": "점심 (동제주 현지 해산물 또는 흑돼지)",
+          "category": "점심",
+          "description": "성산/성읍/표선 지역 가이드 검증 현지 식당에서 **동제주 점심**을 즐깁니다.",
+          "highlights": [
+            "가이드 검증 동제주 식당 — 성산/성읍/표선 지역",
+            "**제주 흑돼지 BBQ** (천연기념물 2015) 또는 **갈치조림**",
+            "약 60분 소요 — 크루즈 당일 여행 일정에 적합",
+            "영어·중국어 포토 메뉴, 카드 + 현금 결제 가능",
+            "사전 안내 시 채식 메뉴 제공",
+            "**점심 미포함** — 현장 직접 결제 ₩15,000~25,000/인"
+          ],
+          "_poi_meta": {
+            "poi_key": "OPS_lunch_east_jeju",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Jeju Black Pig Natural Monument designation (2015, Cultural Heritage Administration)",
+              "Visit Jeju (eastern Jeju cuisine — galchi, heukdwaeji)",
+              "AtoC Korea operations notes (cruise tour lunch venue rotation)"
+            ]
+          },
+          "number": 4,
+          "time": "≈ 12:30",
+          "duration": "75분",
+          "whyOnRoute": "**소그룹 점심 경험** — 버스 제품 60분 대비 75분 체류 시간으로 더 여유 있게 식사합니다."
+        },
+        {
+          "number": 5,
+          "time": "≈ 14:00",
+          "duration": "75분",
+          "name": "성읍 민속마을",
+          "category": "조선 시대 읍성 — 중요 민속 문화재 (1423년 설립)",
+          "description": "**성읍 민속마을**은 **세종대왕이 1423년 창건한 살아있는 조선 시대 읍성 마을**입니다.",
+          "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+          "highlights": [
+            "**세종대왕이 1423년 창건** — **1914년(약 500년)**까지 행정 중심지로 기능",
+            "원래 읍성 담장 내 **110개의 전통 건축물** 보존",
+            "**대한민국 중요 민속 문화재** — 마을 전체 및 다수 건물 개별 지정",
+            "마을 중심 **수령 약 600년 된 느티나무와 팽나무** — **천연기념물 지정**",
+            "**조선 풍수지리 원칙**에 따라 구성된 전형적 읍 중심 구획",
+            "**드라마 '대장금' (MBC 2003~2004)** 촬영지 — 국제적 K-드라마 히트작",
+            "**오메기술(오메기술)** — 단일 가문이 대대로 빚은 제주 쌀 기반 전통 술 (무료 시음)",
+            "역사적 상처: **1826년 화재**로 약 80동 소실; **1948년 제주 4·3 사건** 피해",
+            "**무료 입장** — 약 250가구가 전통 계승하며 생활 중인 살아있는 마을"
+          ],
+          "timeUsed": [
+            "주차 + 마을 해설사의 환영 브리핑 — 약 10분",
+            "고목 + 마을 중심 이동 — 약 10분",
+            "한옥 내부 방문 (대표 가옥 2~3채) — 약 15분",
+            "오메기술 양조장 무료 시음 — 약 10분",
+            "올레 골목 산책 + 사진 — 약 10분",
+            "이동 완충 — 약 5분"
+          ],
+          "whyOnRoute": "**소그룹 깊이의 성읍 민속마을** — 75분 체류 시간 (버스 60분 대비)으로 **개인 한옥 2채 내부**를 방문할 수 있습니다.",
+          "_poi_meta": {
+            "poi_key": "seongeup_folk_village",
+            "kb_version": "1.19",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Cultural Heritage Administration — Important Folklore Cultural Heritage designation",
+              "Korea Cultural Heritage Foundation — Seongeup Folk Village historical records",
+              "VisitJeju — Seongeup Minsok Maeul",
+              "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
+              "Jeju Folklore Society — Omegisul brewing tradition documentation"
+            ]
+          }
+        },
+        {
+          "name": "제주항 크루즈 터미널 귀환 (북쪽)",
+          "category": "크루즈 귀환 & 전원 승선",
+          "description": "제주시 북쪽 해안의 **제주 국제여객터미널**로 귀환 드라이브.",
+          "highlights": [
+            "**전원 승선 60분 이상 전 하차** — 표준 크루즈 승선 완충 시간",
+            "동제주에서 132번 도로 + 16번 국도 경유 약 70~80분 (1회 휴게 포함)",
+            "터미널 입구에서 가이드·드라이버의 수하물 도움",
+            "터미널에서 제주 국제공항 직행 **100번 버스** 운행",
+            "터미널 내 면세점, 제주은행 ATM, 환전소, 와이파이 렌탈",
+            "전원 승선 전 여유 있을 경우 **동문 전통 시장** 무료 셔틀 운행 (~10분)"
+          ],
+          "_poi_meta": {
+            "poi_key": "jeju_cruise_port",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities)",
+              "Jeju Bus Information System (Bus #100 airport connection)",
+              "Korea Cruise Port Sales (terminal layout + drop-off zones)",
+              "VisitJeju.net (Dongmun Market free shuttle)",
+              "Cruise industry standard (60-min all-aboard buffer)"
+            ]
+          },
+          "number": 6,
+          "time": "≈ 15:30 → 항구 도착 ≈ 16:45",
+          "duration": "약 75분 이동 + 60분 여유시간",
+          "whyOnRoute": "**소그룹 귀환 드라이브** — 가이드와의 대화로 하루 동안 본 것들에 대해 자유롭게 질문할 수 있습니다."
+        }
+      ],
+      "routeFlowStops": [
+        {
+          "id": "01",
+          "name": "크루즈 터미널",
+          "theme": "출발"
+        },
+        {
+          "id": "02",
+          "name": "일출봉",
+          "theme": "화산"
+        },
+        {
+          "id": "03",
+          "name": "섭지코지",
+          "theme": "해안"
+        },
+        {
+          "id": "04",
+          "name": "점심",
+          "theme": "식사"
+        },
+        {
+          "id": "05",
+          "name": "민속마을",
+          "theme": "문화"
+        },
+        {
+          "id": "06",
+          "name": "크루즈 터미널",
+          "theme": "귀환"
+        }
+      ],
+      "routePhases": [
+        {
+          "label": "오전",
+          "range": "1-3",
+          "theme": "유네스코 화산과 해안",
+          "bgClass": "bg-sky-50/70",
+          "textClass": "text-sky-700",
+          "dotClass": "bg-sky-500"
+        },
+        {
+          "label": "점심",
+          "range": "4",
+          "theme": "점심",
+          "bgClass": "bg-amber-50/70",
+          "textClass": "text-amber-700",
+          "dotClass": "bg-amber-500"
+        },
+        {
+          "label": "오후",
+          "range": "5-6",
+          "theme": "민속문화와 귀환",
+          "bgClass": "bg-emerald-50/70",
+          "textClass": "text-emerald-700",
+          "dotClass": "bg-emerald-500"
+        }
+      ]
+    },
+    {
+      "port_id": "gangjeong_port",
+      "port_label": "강정항(서귀포 터미널)",
+      "port_label_short": "강정항",
+      "route_focus": "한라산 고산지대 + 서남부 해안 지질 + 시장",
+      "pickup_base": "gangjeong_port",
+      "duration_band": "8h",
+      "return_time_band": "16:30-17:00",
+      "poi_tags_in_variant": [
+        "hallasan_1100",
+        "jusangjeolli_cliff",
+        "cheonjiyeon_폭포",
+        "olle_maeil_market"
+      ],
+      "theme_tags_in_variant": [
+        "volcano",
+        "alpine",
+        "geology",
+        "폭포",
+        "market",
+        "shopping"
+      ],
+      "scenic_level_in_variant": 1.0,
+      "walking_level_in_variant": 0.6,
+      "indoor_ratio_in_variant": 0.25,
+      "weather_sensitivity_in_variant": 0.6,
+      "stops": [
+        {
+          "name": "강정항 크루즈 터미널 픽업 (서귀포 남쪽)",
+          "category": "픽업 & 크루즈 물류",
+          "description": "드라이버와 영어 가이드가 **강정항 크루즈 터미널** 입국장에서 대기합니다.",
+          "highlights": [
+            "**이중 선석 × 22만 톤 수용** — 동시 2척 처리 가능",
+            "통관 후 30분 픽업; 영어 가이드 + 이름 표지판 입국장 대기",
+            "공식 명칭 **'아름다운 관광을 위한 민군 복합 항구'** — 2016년 2월 개항",
+            "**53대 버스 야외 주차 공간** — 이중 기항일 빨리 채워짐",
+            "제주항(북쪽)보다 **휠체어 접근성 우수**",
+            "**아도라 매직시티 세미 홈포트 2025년 5월 1일부터**",
+            "성산까지 편도 70분 이상으로 이 항구에서는 남쪽 일정이 필수"
+          ],
+          "_poi_meta": {
+            "poi_key": "gangjeong_cruise_port",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (Gangjeong terminal facilities + 53-bus parking)",
+              "South Korea Ministry of Oceans & Fisheries (port history, civilian-military designation)",
+              "Korea Cruise Port Sales / k-cruiseinfo.com (berth specifications, tonnage)",
+              "CruiseMapper (Adora Magic City semi-homeporting May 2025; berth assignments)",
+              "South Korean Supreme Court ruling July 2012 (construction lawful; opened Feb 2016)"
+            ]
+          },
+          "number": 1,
+          "time": "크루즈 입항 후 30분",
+          "duration": "30분",
+          "whyOnRoute": "**강정의 소그룹 픽업** — 이중 선석 22만 톤 규모의 항구로 대형 크루즈선의 기항지입니다."
+        },
+        {
+          "number": 2,
+          "time": "≈ 09:30",
+          "duration": "75분",
+          "name": "한라산 1100고지 습지 (람사르 + 유네스코)",
+          "category": "고산 습지 — 람사르 습지 + 한라산 유네스코 세계유산 구역 내",
+          "description": "**한라산 1100고지 습지**는 해발 약 1,100m의 한라산 고원 고지대 습지대입니다.",
+          "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
+          "highlights": [
+            "**람사르 제1893호** (2009년 10월 12일 지정)",
+            "**해발 1,100m** — 한국에서 **가장 높은 국도** (1100번 도로) 위",
+            "**4중 국제 지정** — 람사르 + 유네스코 세계유산 + 생물권보전지역 + 세계지질공원",
+            "**16곳 이상 불연속 습지** — 담수 늪, 수조, 이탄 습지",
+            "**위기 조류 3종 + 위기 식물 1종**",
+            "**연간 방문객 90만 명 (2008년)**",
+            "관찰 데크 + 안내 표시판이 있는 **1km 목재 데크 루프**",
+            "**가을 단풍 + 겨울 설경** = 대표 사진 계절",
+            "**무료 입장**; 인접 1100고지 휴게소"
+          ],
+          "timeUsed": [
+            "코치 도착 + 1100 휴게소 주차 — 약 5분",
+            "데크 루프 + 전망대 — 약 25분",
+            "해설 표지판 + 자연사 전시 — 약 10분",
+            "완충 / 카페 화장실 — 약 5분"
+          ],
+          "whyOnRoute": "**소그룹 페이싱의 한라산 1100고지** — 75분 체류 시간 (버스 60분 대비)으로 습지 루프와 고원 해설을 더 여유 있게 즐깁니다.",
+          "_poi_meta": {
+            "poi_key": "hallasan_1100_wetland",
+            "kb_version": "1.20",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Ramsar Sites Information Service — 1100 Altitude Wetland (Site No. 1893)",
+              "UNESCO Man and the Biosphere Programme — Jeju Island Biosphere Reserve",
+              "Korea National Park Service — Hallasan National Park 1100 Wetland records",
+              "Mt Halla Visitor Centre — visitor management documentation",
+              "Jeju Special Self-Governing Province — Wetland Protected Area designation 2009"
+            ]
+          }
+        },
+        {
+          "number": 3,
+          "time": "≈ 11:15",
+          "duration": "60분",
+          "name": "대포 주상절리대",
+          "category": "화산 해안 — 육각형 주상절리 용암",
+          "description": "**대포 주상절리**는 제주 서귀포 중문 해안의 **1km 규모 육각형 주상절리 현무암 절벽**입니다.",
+          "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+          "highlights": [
+            "**천연기념물 제443호** — **2005년 1월 6일 지정**, 가장 최근에 지정된 제주 해안 지형",
+            "석주 **30~40m** 높이, **5~7각형 다각형** (주로 육각형)이 따라 1km 배열",
+            "형성: **한라산 측면 용암이 약 25~14만 년 전 바다에서 냉각**, 수축하며 절리 형성",
+            "**동아시아 최고의 주상절리 지역** — 영국 자이언츠 코즈웨이, 데빌스 포스트파일과 동급",
+            "**만조 시 파도 비말 최대 20m** — 파도 분수 사진 촬영 기회",
+            "**0.8km 데크 루프**, 약 15분 도보 — 무장애 데크, 휠체어/유모차 접근 가능",
+            "**제주 세계 지질공원 (유네스코 2010년)** 의 일부 — 섬 전역 13개 지질 유적지",
+            "입장료 **성인 ₩2,000 / 청소년 ₩1,000 / 7세 이하·65세 이상 무료**",
+            "맑은 날 북쪽으로 한라산 정상 조망 가능, **지질학적으로 직접 상류**에 위치"
+          ],
+          "timeUsed": [
+            "주차 + 입장권 구매 + 입장 — 약 5분",
+            "첫 번째 전망대까지 도보 — 약 5분",
+            "절벽 가장자리 주상절리 감상 + 사진 — 약 15분",
+            "데크 루프 계속 — 약 10분",
+            "코치로 귀환 — 약 10분"
+          ],
+          "whyOnRoute": "**사진 유연성의 대포 주상절리** — 소그룹의 유연한 일정 속도로 더 자세한 촬영이 가능합니다.",
+          "_poi_meta": {
+            "poi_key": "daepo_jusangjeolli_cliff",
+            "kb_version": "1.18",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Cultural Heritage Administration — Natural Monument No. 443 designation (2005-01-06)",
+              "Jeju Global Geopark official site (geopark.jeju.go.kr)",
+              "UNESCO Global Geoparks Network — Jeju (2010 designation)",
+              "VisitJeju — Daepo Jusangjeolli",
+              "Korea Geological Survey — Jeju basalt formation studies"
+            ]
+          }
+        },
+        {
+          "name": "서귀포 매일올레시장 근처 점심",
+          "category": "점심",
+          "description": "서귀포 올레 매일 시장 내 또는 인근 가이드 검증 식당에서 **서귀포 점심**을 즐깁니다.",
+          "highlights": [
+            "**올레 매일 시장** 내/인근 가이드 검증 식당",
+            "**갈치 회**, **흑돼지 BBQ**, 또는 채식 비빔밥 + 몸국",
+            "약 60분 소요",
+            "**천지연 폭포 산책로 입구까지 도보 5분**",
+            "**오메기술** 시음 가능",
+            "**점심 미포함** — ₩15,000~25,000/인"
+          ],
+          "_poi_meta": {
+            "poi_key": "OPS_lunch_seogwipo_olle",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "Visit Jeju (Seogwipo cuisine; galchi market trade)",
+              "Jeju Black Pig Natural Monument designation (2015, Cultural Heritage Administration)",
+              "AtoC Korea operations notes (cruise tour lunch venue rotation)"
+            ]
+          },
+          "number": 4,
+          "time": "≈ 12:30",
+          "duration": "75분",
+          "whyOnRoute": "**소그룹 올레 매일 시장 점심** — 75분 체류 시간으로 시장 노점을 먼저 구경하고 앉아서 식사할 수 있습니다."
+        },
+        {
+          "name": "천지연 폭포 (서귀포 구시가지 폭포)",
+          "category": "자연 명소 & 천연기념물",
+          "description": "**천지연 폭포**는 서귀포의 두 유명 폭포 중 항구에 더 가까운 곳입니다.",
+          "highlights": [
+            "**단단 22m × 12m 폭포 → 20m 깊이 에메랄드 연못**",
+            "**천제연이 아님** — 다른 폭포, 다른 협곡",
+            "**천연기념물 제379호**",
+            "**무태장어 (천연기념물 제27호)** 서식지",
+            "**물잠자리나무 (천연기념물 제163호)** + 수중이끼류",
+            "완만한 **1km 포장 산책로 (~15분)**",
+            "**₩2,000 / ₩1,000 입장료**",
+            "**19:00~22:00 야간 조명**",
+            "**올레 매일 시장에서 도보 5분**"
+          ],
+          "_poi_meta": {
+            "poi_key": "cheonjiyeon_falls",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (Cheonjiyeon Falls dimensions, hours, admission)",
+              "Visit Jeju (Natural Monument designations 27, 163, 379; trail length)",
+              "Wikipedia (Cheonjiyeon Waterfall — habitat protection, distinction from Cheonjeyeon)",
+              "Inside Jeju (hours 09:00–22:00 last entry 21:30; ₩2,000 / ₩1,000 admission)",
+              "(night illumination 19:00–22:00; Mutae eel nocturnal habitat)"
+            ]
+          },
+          "number": 5,
+          "time": "≈ 14:00",
+          "duration": "75분",
+          "whyOnRoute": "**소그룹 깊이의 천지연 폭포** — 75분 체류 시간 (버스 60분 대비)으로 1km 강변 트레일 전체를 여유 있게 탐방합니다."
+        },
+        {
+          "name": "매일올레시장 (서귀포 매일올레시장)",
+          "category": "전통 시장 & 음식",
+          "description": "**서귀포 매일올레시장**은 **남제주 최대 전통 시장**입니다.",
+          "highlights": [
+            "**남제주 최대 전통 시장** — 620m 아케이드, 약 200개 매장",
+            "**1960년대 초 개장** — 60년 이상의 전통",
+            "**올레길 6·7코스** 시장 입구 근처 통과",
+            "**제성 베이커리 문어빵** — 현지 컬트 명물",
+            "**한라봉 + 천혜향 감귤** 제철 (12~3월)",
+            "갈치 회, 흑돼지 꼬치, 몸국",
+            "**오메기술** (성읍산) 시음",
+            "**투명 개폐식 지붕** — 우천 시에도 쇼핑 가능",
+            "**천지연 폭포 산책로 입구까지 도보 5분**"
+          ],
+          "_poi_meta": {
+            "poi_key": "olle_maeil_market",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (market dimensions: 620 m, ~200 shops)",
+              "Visit Jeju (early-1960s history; signature foods; Olle Trail proximity)",
+              "Mindtrip (vendor count ~140; opening hours)",
+              "Soul of Seoul (Olle Maeil Market food guide — Jeseong Bakery octopus buns)",
+              "Jeju Olle Foundation (Trail Courses 6 & 7 routing through market area)"
+            ]
+          },
+          "number": 6,
+          "time": "≈ 15:15",
+          "duration": "60분",
+          "whyOnRoute": "**소그룹 귀환 올레 매일 시장** — 60분 체류 시간 (버스 45분 대비)으로 신중한 기념품 구매와 자유 탐방이 가능합니다."
+        },
+        {
+          "name": "강정항 크루즈 터미널 귀환 (서귀포 남쪽)",
+          "category": "크루즈 귀환 & 전원 승선",
+          "description": "서귀포 강정마을의 **강정항 크루즈 터미널**로 귀환 드라이브.",
+          "highlights": [
+            "**전원 승선 60분 이상 전 하차**",
+            "올레 시장/천지연 지역에서: 약 10~15분 드라이브",
+            "한라산 1100에서: 1100번 도로로 약 35분 하산",
+            "터미널 입구에서 가이드·드라이버의 수하물 도움",
+            "**리무진 버스 800/800-1** 강정 → 제주공항 연결",
+            "터미널 내 관광안내소, 환전소, 세금 환급 카운터"
+          ],
+          "_poi_meta": {
+            "poi_key": "gangjeong_cruise_port",
+            "kb_version": "1.21",
+            "verified_date": "2026-04-29",
+            "sources": [
+              "VisitKorea / english.visitkorea.or.kr (Gangjeong facilities + Limousine 800)",
+              "Jeju Provincial Government (Limousine 800/800-1 routing via Innovation City)",
+              "Korea Cruise Port Sales (terminal-to-airport options)",
+              "Cruise industry standard (60-min all-aboard buffer)",
+              "VisitJeju.net (southern circuit drive times)"
+            ]
+          },
+          "number": 7,
+          "time": "≈ 16:30 → 항구 도착 ≈ 16:45",
+          "duration": "약 15분 이동 + 60분 여유시간",
+          "whyOnRoute": "**카탈로그 중 가장 짧은 크루즈 귀환** — 올레 시장에서 강정항까지 미니코치로 **약 15분**."
+        }
+      ],
+      "routeFlowStops": [
+        {
+          "id": "01",
+          "name": "크루즈 터미널",
+          "theme": "출발"
+        },
+        {
+          "id": "02",
+          "name": "1100고지",
+          "theme": "고산지대"
+        },
+        {
+          "id": "03",
+          "name": "주상절리",
+          "theme": "지질"
+        },
+        {
+          "id": "04",
+          "name": "점심",
+          "theme": "식사"
+        },
+        {
+          "id": "05",
+          "name": "천지연",
+          "theme": "폭포"
+        },
+        {
+          "id": "06",
+          "name": "올레 시장",
+          "theme": "시장"
+        },
+        {
+          "id": "07",
+          "name": "크루즈 터미널",
+          "theme": "귀환"
+        }
+      ],
+      "routePhases": [
+        {
+          "label": "오전",
+          "range": "1-3",
+          "theme": "고산지대에서 해안 지질까지",
+          "bgClass": "bg-violet-50/70",
+          "textClass": "text-violet-700",
+          "dotClass": "bg-violet-500"
+        },
+        {
+          "label": "점심",
+          "range": "4",
+          "theme": "점심",
+          "bgClass": "bg-amber-50/70",
+          "textClass": "text-amber-700",
+          "dotClass": "bg-amber-500"
+        },
+        {
+          "label": "오후",
+          "range": "5-7",
+          "theme": "폭포, 시장, 귀환",
+          "bgClass": "bg-emerald-50/70",
+          "textClass": "text-emerald-700",
+          "dotClass": "bg-emerald-500"
+        }
+      ]
+    }
+  ],
+  "whyTourWorks": {
+    "bestFor": [
+      "크루즈 터미널에서 당일 왕복이 필요한 크루즈 여행객",
+      "유네스코 하이라이트를 하루에 원하는 제주 첫 방문자",
+      "소규모 그룹으로 더 세심한 안내와 크루즈 일정에 맞춘 코스를 원하는 여행자"
+    ],
+    "lessIdealFor": [
+      "이동 능력이 매우 제한된 여행자 (성산 분화구 테두리와 한라산 1100은 일정 도보 필요)",
+      "유모차 동반 그룹",
+      "여유로운 일정 속도를 원하는 여행자 — 크루즈 일정은 고정됨"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "왜 두 가지 항구 코스가 있는가",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "제주항 = 북쪽 터미널",
+            "detail": "성산일출봉, 섭지코지, 성읍 민속마을이 포함된 동해안 유네스코 루프."
+          },
+          {
+            "label": "강정항 = 남쪽 (서귀포) 터미널",
+            "detail": "한라산 1100 고산지대 + 주상절리 + 천지연 폭포 + 올레 시장."
+          },
+          {
+            "label": "두 항구 모두 동일한 8시간 구조",
+            "detail": "크루즈 귀환 제약은 동일하며, 루트가 이동 낭비를 최소화하도록 조정됩니다."
+          }
+        ]
+      },
+      {
+        "title": "소그룹 투어 특이사항",
+        "icon": "users",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "미니코치 소그룹",
+            "detail": "더 작은 그룹, 더 많은 가이드 관심, 코스마다 더 빠른 일정 속도."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "픽업 & 하차",
+      "preview": "크루즈 터미널 픽업 — 항구별 상이",
+      "content": [
+        "제주항 픽업: 제주 크루즈 터미널 (북제주).",
+        "강정항 픽업: 강정 크루즈 터미널 (서귀포, 남제주).",
+        "기항 일정에 맞춰 픽업 시간 확정.",
+        "출항 전 완충 시간 포함, 동일 크루즈 터미널 귀환."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "도보 & 지형",
+      "preview": "중간; 항구 변경에 따라 다름",
+      "content": [
+        "제주항 코스: 성산일출봉 분화구 테두리 등반이 가장 힘든 구간 (선택).",
+        "강정항 코스: 한라산 1100은 쉬운 데크 산책; 천지연 길은 짧음.",
+        "겹쳐 입기 — 한라산 1100은 해안(강정)보다 기온이 낮습니다."
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "날씨 정책",
+      "preview": "크루즈 일정 고정 — 루트 조정",
+      "content": [
+        "폭우: 성산 분화구 테두리 등반 생략 가능 (제주항 코스).",
+        "한라산 기상: 1100 고지가 저고도 코스로 대체될 수 있음 (강정항 코스).",
+        "강한 바람: 주상절리와 섭지코지 해안 노출 구간 단축.",
+        "크루즈 복귀는 절대 기준 — 루트가 조정되어도 일정은 불변."
+      ]
+    },
+    {
+      "id": "wear",
+      "title": "복장 & 준비물",
+      "preview": "편한 운동화 + 겹겹이 입기 + 재승선 여권",
+      "content": [
+        "편안한 워킹화.",
+        "가벼운 재킷 (특히 한라산 1100 / 강정 코스).",
+        "모자와 자외선 차단.",
+        "크루즈 ID + 터미널 재입장용 여권."
+      ]
+    },
+    {
+      "id": "included",
+      "title": "포함 사항",
+      "preview": "가이드, 차량, 픽업, 입장료",
+      "variant": "included",
+      "content": [
+        "영어 가이드",
+        "미니코치 교통",
+        "크루즈 터미널 픽업·하차",
+        "모든 명소 입장",
+        "생수",
+        "점심 (레스토랑 현장 직접 결제)",
+        "개인 쇼핑 제외",
+        "팁 제외"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "계절별 안내 확인"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "계절별 안내 확인"
+    },
+    "_seasonalSummary": "제주는 사계절 온화하지만 해안 바람과 산악 날씨의 영향을 크게 받습니다. 동쪽 해안 코스는 비교적 온화하고, 남쪽·한라산 고지 코스는 해안보다 5~8°C 낮을 수 있어 겉옷을 준비하는 것이 좋습니다."
+  },
+  "seasonalVariations": [
+    {
+      "season": "봄",
+      "title": "크루즈 시즌 개막",
+      "description": "온화하고 맑음; 크루즈 기항 최상의 시계",
+      "icon": "flower"
+    },
+    {
+      "season": "여름",
+      "title": "크루즈 피크",
+      "description": "해안은 덥지만 바람 있음; 한라산 1100 시원한 피난처",
+      "icon": "sun"
+    },
+    {
+      "season": "가을",
+      "title": "최고 시계",
+      "description": "두 항구 루트 모두 가장 선명한 조망",
+      "icon": "leaf"
+    },
+    {
+      "season": "겨울",
+      "title": "비성수기",
+      "description": "크루즈 기항 적음; 한라산 1100 눈 가능",
+      "icon": "snow"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "공인 현지 여행사",
+      "description": "정식 등록 및 보험 가입 현지 여행사",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "제주 크루즈 물류에 특화된 공인 현지 여행사 — 귀선 시각 엄수 전문."
+    },
+    {
+      "icon": "route",
+      "title": "코스 전문",
+      "description": "이동 부담을 줄인 효율적인 코스",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "크루즈 도착 시각에 상황에 맞춘 소그룹 코스 구성. 항구별 코스 분리."
+    },
+    {
+      "icon": "users",
+      "title": "그룹 규모 관리",
+      "description": "코스에 상황에 맞춘 인원 규모",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "소그룹으로 여유 있게 이동. 지정 경유지 전 입장료 포함."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "즉시",
+      "title": "즉시 확인",
+      "detail": "행정 요약 포함 예약 확인서 발송",
+      "description": "예약 확인서 발송. 선박명과 기항 항구(제주항 또는 강정항)를 알려주시면 코스를 확정합니다."
+    },
+    {
+      "timing": "출발 12시간 전",
+      "title": "12시간 전 알림",
+      "detail": "날씨 업데이트 및 경로 변경 안내",
+      "description": "기항 항구 확인 후 동부 또는 남부 코스 확정 안내."
+    },
+    {
+      "timing": "전날 저녁",
+      "title": "최종 픽업 안내",
+      "detail": "정확한 픽업 시간 및 가이드 연락처",
+      "description": "가이드 연락처 전날 저녁 전송."
+    },
+    {
+      "timing": "투어 당일 아침",
+      "title": "당일 코스 안내",
+      "detail": "실시간 상황 기반 당일 브리핑",
+      "description": "가이드가 크루즈 터미널 도착홀에서 팀을 맞이합니다."
+    },
+    {
+      "timing": "투어 중",
+      "title": "경유지별 심층 안내",
+      "detail": "각 코스 실시간 현장 안내",
+      "description": "귀선 일정에 충분한 여유를 두고 터미널 귀환."
+    },
+    {
+      "timing": "투어 종료 후",
+      "title": "투어 후 지원",
+      "detail": "피드백 및 추가 여행 추천",
+      "description": "귀환 후 피드백 요청 전송."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "결제 가능 여부와 크루즈 항구 정보는 예약 단계에서 확인됩니다.",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "인"
+    }
+  },
+  "pickup_dropoff": {
+    "type": "cruise_terminal_pickup",
+    "meeting_points": [
+      {
+        "name": "제주항 크루즈터미널(북부)",
+        "note": "세관 출구에서 미팅",
+        "port_id": "jeju_port"
+      },
+      {
+        "name": "강정 크루즈터미널(남부, 서귀포)",
+        "note": "세관 출구에서 미팅",
+        "port_id": "gangjeong_port"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "제주항 크루즈터미널(북부)",
+        "note": "픽업한 동일 크루즈터미널에서 하차",
+        "port_id": "jeju_port"
+      },
+      {
+        "name": "강정 크루즈터미널(남부, 서귀포)",
+        "note": "픽업한 동일 크루즈터미널에서 하차",
+        "port_id": "gangjeong_port"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "예약 시 크루즈 일정표를 기준으로 입항 항구를 확인합니다. 실제 항구와 체류 시간에 맞춰 동쪽 또는 남쪽 루트 중 가장 적합한 버전으로 배정됩니다."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "jeju-cruise-shore-excursion-small-group-tour",
+    "product_type": "small_group_fixed_itinerary",
+    "route_type": "cruise_shore_excursion_pair_route_variants",
+    "destination_region": "jeju",
+    "region_type": "island_full",
+    "vehicle_type": "minicoach",
+    "duration_hours": 8.0,
+    "region_tags": [
+      "jeju_east",
+      "jeju_south",
+      "jeju_seogwipo",
+      "jeju_island_wide"
+    ],
+    "theme_tags": [
+      "cruise_shore_excursion",
+      "unesco_geology",
+      "natural_monument",
+      "folk_heritage",
+      "small_group_intimate",
+      "premium_pacing",
+      "photo_flexibility",
+      "first_time_jeju",
+      "ramsar_wetland",
+      "columnar_jointing",
+      "waterfall_natural_monument",
+      "traditional_market",
+      "tadao_ando_architecture"
+    ],
+    "poi_tags": [
+      "jeju_cruise_port",
+      "gangjeong_cruise_port",
+      "seongsan_ilchulbong",
+      "seopjikoji",
+      "seongeup_folk_village",
+      "hallasan_1100_wetland",
+      "daepo_jusangjeolli_cliff",
+      "cheonjiyeon_falls",
+      "olle_maeil_market"
+    ],
+    "pace_level": 0.4,
+    "walking_level": 0.4,
+    "scenic_level": 0.9,
+    "photo_level": 0.95,
+    "culture_level": 0.8,
+    "relax_level": 0.6,
+    "first_time_fit": 0.95,
+    "family_fit": 0.65,
+    "senior_fit": 0.65,
+    "couple_fit": 0.8,
+    "solo_traveler_fit": 0.8,
+    "active_traveler_fit": 0.8,
+    "adult_family_fit": 0.8,
+    "family_with_teens_fit": 0.8,
+    "young_kids_fit": 0.55,
+    "senior_active_fit": 0.8,
+    "senior_general_fit": 0.6,
+    "mobility_friendly_fit": 0.55,
+    "stroller_fit": 0.5,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.95,
+    "rain_fit": 0.45,
+    "value_for_money_fit": 0.65,
+    "iconic_landmark_fit": 0.95,
+    "cafe_fit": 0.4,
+    "food_fit": 0.65,
+    "nature_fit": 0.9,
+    "beach_fit": 0.4,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.55,
+    "no_shopping_fit": 0.4,
+    "local_culture_fit": 0.7,
+    "storytelling_fit": 0.85,
+    "unesco_fit": 0.85,
+    "intangible_heritage_fit": 0.4,
+    "indoor_ratio": 0.2,
+    "weather_sensitivity": 0.85,
+    "comfort_level": 0.75,
+    "budget_fit": 0.6,
+    "premium_fit": 0.75,
+    "small_group_fit": 1.0,
+    "private_fit": 0.15,
+    "bus_fit": 0.2,
+    "price_band": "mid",
+    "pickup_base": "cruise_terminal_dynamic",
+    "return_time_band": "16:30-17:00",
+    "duration_band": "8h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "expecting_full_day_with_no_return_constraint"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "stroller_heavy",
+        "very_young_children"
+      ]
+    },
+    "walking_notes": [
+      "Walking varies by port variant; both routes include moderate walking with optional climbs.",
+      "Jeju port (east coast) variant: Seongsan Ilchulbong rim climb is the steepest section (optional).",
+      "Gangjeong port variant: Hallasan 1100 boardwalk is easy; Cheonjiyeon falls path is short.",
+      "Comfortable walking shoes recommended; bring layers for Hallasan 1100 (Gangjeong variant)."
+    ],
+    "keywords": [
+      "jeju cruise excursion",
+      "jeju shore tour",
+      "cruise day tour jeju",
+      "jeju port shore excursion",
+      "gangjeong port shore tour",
+      "seongsan ilchulbong cruise",
+      "hallasan cruise day tour",
+      "small group cruise tour",
+      "premium cruise excursion"
+    ],
+    "synonym_hints": [
+      "jeju cruise day trip",
+      "shore excursion jeju",
+      "cruise terminal pickup tour",
+      "cruise port jeju tour"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "jeju_cruise",
+    "vehicle_type_legacy": "mini_coach",
+    "anchor_poi_keys": [
+      "seongsan_ilchulbong",
+      "seopjikoji",
+      "seongeup_folk_village",
+      "jeju_cruise_port"
+    ],
+    "cruise_shore_excursion_fit": 1.0,
+    "cruise_shore_excursion_value_fit": 0.5,
+    "cruise_shore_excursion_scenic_fit": 1.0,
+    "cruise_shore_excursion_intimacy_fit": 1.0,
+    "cruise_disembarkation_window_fit": 1.0,
+    "cruise_morning_arrival_compatible_fit": 1.0,
+    "cruise_8_hour_window_fit": 1.0,
+    "cruise_all_aboard_60min_buffer_fit": 1.0,
+    "cruise_port_aware_routing_fit": 1.0,
+    "supports_jeju_port_north_variant": true,
+    "supports_gangjeong_port_south_variant": true,
+    "max_concurrent_ships_supported": 2,
+    "private_tour_fit": 0.15,
+    "large_group_fit": 0.1,
+    "group_size_min": 4,
+    "group_size_max": 15,
+    "group_size_typical": 10,
+    "shared_vehicle_fit": 1.0,
+    "vehicle_comfort_level": 0.85,
+    "minicoach_comfort_floor_fit": 1.0,
+    "ac_vehicle_fit": 1.0,
+    "luggage_storage_in_vehicle_fit": 1.0,
+    "wheelchair_access_capable_with_advance_notice": true,
+    "customizable_route_fit": 0.15,
+    "fixed_itinerary_fit": 1.0,
+    "flexibility_fit": 0.45,
+    "predictable_schedule_fit": 0.9,
+    "photo_pacing_flexibility_fit": 1.0,
+    "individual_attention_fit": 1.0,
+    "guide_to_guest_ratio_min": 0.067,
+    "guide_to_guest_ratio_max": 0.25,
+    "first_time_jeju_fit": 1.0,
+    "unesco_focused_tour_fit": 0.9,
+    "triple_unesco_fit": 1.0,
+    "unesco_world_heritage_fit": 1.0,
+    "unesco_biosphere_fit": 1.0,
+    "unesco_geopark_fit": 1.0,
+    "ramsar_wetland_fit": 1.0,
+    "natural_monument_count_visited": 5,
+    "columnar_jointing_fit": 1.0,
+    "tuff_cone_fit": 1.0,
+    "single_eruption_landform_fit": 1.0,
+    "joseon_walled_town_fit": 1.0,
+    "folk_village_anchor_fit": 1.0,
+    "tadao_ando_architecture_fit": 1.0,
+    "pulitzer_architecture_fit": 1.0,
+    "k_drama_filming_locations_count": 5,
+    "natural_park_visit": true,
+    "waterfall_visit": true,
+    "traditional_market_visit": true,
+    "private_hanok_home_visit_when_scheduled": true,
+    "haenyeo_demonstration_when_scheduled": true,
+    "lunch_included": false,
+    "lunch_out_of_pocket_typical_krw": 25000,
+    "vegetarian_options_available_with_advance_notice": true,
+    "card_payment_accepted_at_lunch": true,
+    "cash_krw_recommended_amount": 50000,
+    "stroller_friendly_fit": 0.7,
+    "senior_friendly_fit": 0.95,
+    "child_friendly_fit": 0.8,
+    "mobility_limited_friendly_fit": 0.7,
+    "rainy_day_friendly_fit": 0.7,
+    "sunrise_peak_silhouette_photo_fit": 1.0,
+    "columnar_joint_close_up_photo_fit": 1.0,
+    "wetland_alpine_landscape_photo_fit": 1.0,
+    "village_stone_culture_photo_fit": 1.0,
+    "waterfall_emerald_pool_photo_fit": 1.0,
+    "market_food_photo_fit": 1.0,
+    "k_drama_location_photo_fit": 1.0,
+    "tadao_ando_close_up_photo_fit": 1.0,
+    "differentiates_from_bus_cruise_tour": true,
+    "intimacy_advantage_vs_bus": true,
+    "photo_flexibility_advantage_vs_bus": true,
+    "guide_depth_advantage_vs_bus": true,
+    "value_disadvantage_vs_bus": true,
+    "premium_pricing_tier_fit": 1.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "china_mainland_market_fit": 0.0,
+    "us_market_fit": 0.95,
+    "europe_market_fit": 0.95,
+    "australia_market_fit": 0.95,
+    "se_asia_market_fit": 0.9,
+    "korea_domestic_market_fit": 0.0,
+    "cruise_market_segment_fit": 1.0,
+    "cruise_premium_segment_fit": 1.0,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true,
+    "honeymoon_couple_fit": 0.85,
+    "anniversary_couple_fit": 0.85,
+    "photo_enthusiast_fit": 1.0,
+    "luxury_traveler_fit": 0.85,
+    "cross_batch_reuse_count_substantive_stops": 3,
+    "fresh_authored_substantive_stops_count": 2,
+    "fresh_authored_compound_stops_count": 0,
+    "kb_version_at_enrichment": "1.21",
+    "japan_market_fit": 0.85
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "embedded_for": [
+      "authoring",
+      "review",
+      "backfill",
+      "sql_upsert_generation"
+    ],
+    "source_of_truth_note": "Runtime recommendation reads Supabase tour_matching_profiles. Cruise products require user_port parameter for variant selection.",
+    "port_routing_split": {
+      "applied_at": "2026-04-27",
+      "previous_state": "Single itineraryStops representing one generic cruise route.",
+      "schema_change": "itineraryStops -> itinerary_variants (port-keyed array)",
+      "ports_introduced": [
+        {
+          "port_id": "jeju_port",
+          "label": "Jeju Port (Northern Terminal)",
+          "route_focus": "East coast UNESCO + folk"
+        },
+        {
+          "port_id": "gangjeong_port",
+          "label": "Gangjeong Port (Seogwipo Terminal)",
+          "route_focus": "Hallasan + SW coast geology + market"
+        }
+      ],
+      "rationale": "Cruise ships call at different Jeju ports depending on route. Jeju Port (north) and Gangjeong Port (south, in Seogwipo) are 60+ km apart, so the day-trip route differs entirely. A single itinerary misrepresented the actual product served at each port.",
+      "matching_implications": [
+        "When user_port is known (cruise booking context), score only the matched variant's poi_tags_in_variant / theme_tags_in_variant.",
+        "When user_port is unknown, fall back to product profile.poi_tags (union).",
+        "Variant-level indoor_ratio_in_variant / weather_sensitivity_in_variant override product profile values when a specific port is selected."
+      ],
+      "downstream_actions": [
+        "Frontend: add port selector UI (radio or chip) before itinerary renders. Default to 'Select your cruise port' empty state with both variant previews visible.",
+        "Supabase: add port_id (text, nullable) column to bookings table; FK to a new cruise_ports reference table with rows for jeju_port, gangjeong_port.",
+        "Cruise routing note: use the guest port when available; otherwise use the general cruise route profile.",
+        "Pricing review: validate whether bus / small group pricing differs by port — Gangjeong route includes Hallasan 1100 which adds drive time and toll vs Jeju Port's east-coast loop.",
+        "Existing bookings: backfill port_id where derivable from itinerary or pickup_base; flag rest as null for manual review.",
+        "Locale (ko): translate port_label, port_label_short, route_focus, and stop names/descriptions for Korean users."
+      ]
+    },
+    "audit_summary": {
+      "kept_from_product_json": [
+        "product_type",
+        "route_type=fixed_route_with_port_variants",
+        "vehicle_type",
+        "duration_hours=8",
+        "comfort_level/bus_fit/small_group_fit per format",
+        "indoor_ratio/weather_sensitivity (variant-averaged)"
+      ],
+      "derived_after_json_audit": [
+        "unesco_fit=5 computed from canonicalized poi_tags union",
+        "rain_fit=2 because most variant stops are exposed and cruise return is fixed",
+        "young_kids_fit=2 because 8-hour cruise day with cruise constraint is long for under-6",
+        "mobility_friendly_fit=2 because Seongsan rim and Hallasan 1100 both require walking",
+        "route-specific scoring overrides apply when user_port is known"
+      ],
+      "content_inconsistencies_found": []
+    },
+    "score_rationale": {
+      "unesco_fit": "Both port variants include UNESCO World Heritage POIs (Seongsan or Hallasan-area).",
+      "weather_sensitivity": "Cruise schedule is fixed — weather impact is structural.",
+      "value_for_money_fit": "Small group format: balanced value with smaller-group attention.",
+      "comfort_level": "Format-specific small group comfort."
+    },
+    "locale_adaptation": {
+      "locale": "en",
+      "shared_fields_kept_identical": [
+        "all numeric and tag fields"
+      ],
+      "localized_fields_updated": [
+        "keywords",
+        "synonym_hints",
+        "walking_notes"
+      ],
+      "note": "Korean locale should translate port_label, port_label_short, and stop names/descriptions."
+    },
+    "anchor_pois": [
+      "Seongsan Ilchulbong",
+      "Manjanggul Cave",
+      "Jeju cruise port",
+      "Seongeup Folk Village"
+    ],
+    "anchor_poi_keys": [
+      "seongsan_ilchulbong",
+      "seopjikoji",
+      "seongeup_folk_village",
+      "jeju_cruise_port"
+    ],
+    "unesco_fit_per_variant": {
+      "jeju_port": 4,
+      "gangjeong_port": 2,
+      "rule": "Per documented unesco_fit scoring: 1 WHS = 4, 1 Geopark/Intangible = 2"
+    },
+    "bus_fit_definition": "bus_fit measures fit for LARGE-COACH format only. Mini-coach products score 1; large-coach products score 5.",
+    "competing_products": [
+      "jeju-cruise-shore-excursion-bus-tour",
+      "jeju-island-private-car-charter-tour",
+      "jeju-eastern-unesco-spots-day-tour"
+    ],
+    "enrichment_batch": "16a",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.21",
+    "enrichment_target_kb_version": "1.22",
+    "profile_version_pre": 5,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "stop_count_total_variant1": 6,
+    "stop_count_total_variant2": 7,
+    "substantive_stop_count_variant1": 3,
+    "substantive_stop_count_variant2": 4,
+    "auxiliary_stop_count_variant1": 3,
+    "auxiliary_stop_count_variant2": 3,
+    "highlight_count_per_substantive_stop": 9,
+    "source_count_per_substantive_stop_min": 5,
+    "cross_batch_reuse_map": {
+      "variant1_seongsan_ilchulbong": "from batch14a_tour1_data (1901c canonical)",
+      "variant1_seopjikoji": "from batch14b_tour1_data (1716c canonical)",
+      "variant1_seongeup_folk_village": "from batch14b_tour1_data (1742c canonical)",
+      "variant2_hallasan_1100_wetland": "from batch15a_tour2_data (1778c canonical)",
+      "variant2_daepo_jusangjeolli_cliff": "from batch14a_tour1_data (1831c canonical)",
+      "variant2_cheonjiyeon_falls": "fresh authoring in batch16a_shared_stops (1734c)",
+      "variant2_olle_maeil_market": "fresh authoring in batch16a_shared_stops (1581c)"
+    },
+    "differentiation_from_sister": "vehicle_type=minicoach (vs coach) + group_size 8-15 (vs 25-40) + premium pricing + photo flexibility + 1:8-1:15 guide ratio",
+    "port_variant_design": "Both port variants (Jeju north / Gangjeong south) share the same product, dispatched per cruise dock"
+  },
+  "staticQuestions": [
+    {
+      "id": "port-routing",
+      "question": "내 크루즈가 어느 항구에 기항하는지 어떻게 알 수 있나요?",
+      "answer": "크루즈 예약 확인서에 기항 항구가 명시되어 있습니다. 예약 시 알려주시면 코스를 확정합니다."
+    },
+    {
+      "id": "cruise-return",
+      "question": "제시간에 배로 돌아올 수 있나요?",
+      "answer": "네, 16:30~17:00 터미널 도착 목표로 운행하며, 교통 지연 여유 시간을 포함합니다."
+    },
+    {
+      "id": "different-port",
+      "question": "기항 항구가 변경되면 어떻게 되나요?",
+      "answer": "변경 즉시 알려주시면 코스를 바꿔 드립니다."
+    },
+    {
+      "id": "first-time",
+      "question": "제주를 처음 방문하는 분에게 좋은가요?",
+      "answer": "네, 크루즈 기항지 시간 내에 제주 핵심 명소를 균형 있게 볼 수 있습니다."
+    },
+    {
+      "id": "walking",
+      "question": "도보 이동이 힘들지 않나요?",
+      "answer": "보통 수준의 도보와 활동적인 구간이 포함됩니다."
+    },
+    {
+      "id": "family",
+      "question": "가족 여행에 적합한가요?",
+      "answer": "네, 대부분 가족에게 편안한 투어입니다."
+    },
+    {
+      "id": "seniors",
+      "question": "어르신도 참여할 수 있나요?",
+      "answer": "활동적인 어르신에게 적합합니다."
+    },
+    {
+      "id": "children",
+      "question": "권장 최소 연령은 몇 세인가요?",
+      "answer": "만 6세 이상 추천."
+    },
+    {
+      "id": "rain",
+      "question": "비가 와도 투어가 진행되나요?",
+      "answer": "노출 구간이 있어 강우 시 일부 경유지가 단축될 수 있습니다."
+    },
+    {
+      "id": "lunch",
+      "question": "점심이 포함되어 있나요?",
+      "answer": "점심 시간은 항상 있습니다. 식사비 포함 여부는 예약 시 확인하세요."
+    },
+    {
+      "id": "pickup",
+      "question": "픽업 장소는 어디인가요?",
+      "answer": "크루즈 터미널 도착홀에서 가이드가 직접 맞이합니다."
+    }
+  ],
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "제주 크루즈 기항지 관광 — 소그룹 투어",
+        "headlineLine2": "항구에 맞춘 2가지 코스 — 내 크루즈에 맞는 루트 선택",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+          "imagePosition": "center 35%",
+          "tagline": "항구를 선택하세요: 제주항은 동부 유네스코 코스, 강정항은 한라산+올레 코스 — 귀선 시각을 최우선으로 구성했습니다.",
+          "pills": [
+            "cruise_excursion",
+            "항구별 맞춤 코스",
+            "소그룹"
+          ],
+          "meta": {
+            "duration": "8시간",
+            "region": "제주 (기항지 따라 변동)",
+            "stops": "6~7개 코스",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "투어 개요"
+          },
+          {
+            "id": "itinerary",
+            "label": "상세 일정"
+          },
+          {
+            "id": "details",
+            "label": "유의사항"
+          },
+          {
+            "id": "faq",
+            "label": "자주 묻는 질문"
+          },
+          {
+            "id": "reviews",
+            "label": "여행자 후기"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "소요 시간",
+            "value": "8시간"
+          },
+          {
+            "icon": "camera",
+            "label": "사진 포인트",
+            "value": "매우 높음"
+          },
+          {
+            "icon": "mountain",
+            "label": "경관 특색",
+            "value": "매우 높음"
+          },
+          {
+            "icon": "footprints",
+            "label": "도보 난이도",
+            "value": "보통"
+          },
+          {
+            "icon": "cloud-rain",
+            "label": "우천 적합도",
+            "value": "보통"
+          },
+          {
+            "icon": "users",
+            "label": "가족 적합도",
+            "value": "높음"
+          },
+          {
+            "icon": "scale",
+            "label": "투어 일정 속도",
+            "value": "균형"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+            "alt": "투어 중 방문하는 제주 크루즈 터미널의 풍경",
+            "caption": "제주 크루즈 터미널",
+            "location": "크루즈터미널",
+            "atmosphere": "출발"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "alt": "투어 중 방문하는 성산일출봉 응회구의 풍경",
+            "caption": "성산일출봉 응회구",
+            "location": "성산일출봉",
+            "atmosphere": "유네스코 일출봉"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "alt": "투어 중 방문하는 주상절리 현무암 절벽의 풍경",
+            "caption": "주상절리 현무암 절벽",
+            "location": "주상절리",
+            "atmosphere": "화산 주상절리 해안"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+            "alt": "투어 중 방문하는 한라산 1100 습지의 풍경",
+            "caption": "한라산 1100 습지",
+            "location": "한라산 1100",
+            "atmosphere": "알파인 데크"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "alt": "대포 주상절리 절벽의 육각형 현무암 기둥",
+            "caption": "Cheonjiyeon 폭포",
+            "location": "Cheonjiyeon 폭포",
+            "atmosphere": "Cheonjiyeon 폭포는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+          },
+          {
+            "id": "g6",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+            "alt": "투어 중 방문하는 올레매일시장의 풍경",
+            "caption": "올레매일시장",
+            "location": "올레매일시장",
+            "atmosphere": "현지 시장 피날레"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "name": "제주 크루즈 터미널 픽업 (제주항 — 북쪽)",
+            "category": "픽업 & 크루즈 물류",
+            "description": "드라이버와 영어 가이드가 제주항 국제여객터미널 도착홀에서 팀을 맞이합니다. 강정항(서귀포 남쪽) 기항 시 남부·서부 코스로 진행됩니다.",
+            "highlights": [
+              "**선박 통관 후 30분 픽업** — 출입국 지연을 흡수하는 완충 시간",
+              "드라이버 + 영어 가이드가 이름 표지판을 들고 입국장 대기",
+              "**메인 선석 360m × 12m / 14만 톤 수용 규모** (동시 1척)",
+              "터미널 인접 **100대 버스 주차 공간** — 빠른 차량 탑승",
+              "관광 안내소, 제주 은행 환전, ATM, 무료 Wi-Fi 현장 운영",
+              "한글 주소가 적힌 비상 택시용 일정 카드 제공"
+            ],
+            "_poi_meta": {
+              "poi_key": "jeju_cruise_port",
+              "kb_version": "1.21",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities + 100-bus parking)",
+                "South Korea Ministry of Oceans & Fisheries (terminal opening 2015; berth specifications)",
+                "Korea Cruise Port Sales / k-cruiseinfo.com (berth depths, tonnage capacity)",
+                "Ministry of Culture, Sports & Tourism (2024 cruise volume: 810,000 pax / 414 ships)",
+                "Jeju Provincial Government (Imhang-ro address, Geonip-dong; UN/LOCODE KRCHA)"
+              ]
+            },
+            "number": 1,
+            "time": "크루즈 도착 후 약 30분",
+            "duration": "30분",
+            "whyOnRoute": "제주 국제 여객 터미널에서 **소그룹 크루즈 픽업 (최대 8~15인)**."
+          },
+          {
+            "number": 2,
+            "time": "≈ 09:00",
+            "duration": "90분",
+            "name": "성산일출봉",
+            "category": "유네스코 응회암 분화구 — 일출봉 (유네스코 3중 지정)",
+            "description": "유네스코 세계자연유산. 분화구 등반 선택(왕복 0.8km) 또는 해안 포토. 입장료 ₩5,000. 방문 시간: 약 60분.",
+            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+            "highlights": [
+              "**유네스코 3중 지정**: 세계유산 2007-07-02 + 생물권보전지역 2002 + 세계지질공원 2010-10",
+              "**5,000년 전** 형성 — 마그마가 바닷물과 만나 폭발한 수성화산 활동, 이후 육지와 연결",
+              "분화구 **지름 600m × 깊이 90m**, **99개의 날카로운 암봉**으로 둘러싸인 '돌 왕관'",
+              "**해발 182m** — 0.8km / 고도 차 약 140m, 석계 트레일 왕복 60분",
+              "**18개의 일제 WWII 동굴** — 1945년 가미카제 자살 특공선 은신처",
+              "**해녀 공연 매일 13:30 + 15:00** — 유네스코 무형유산(2016년 등재)",
+              "**2025년 4월 기준 입장료**: 성인 ₩5,000 / 청소년 ₩2,500 / 7세 이하·65세 이상 무료",
+              "봄·가을 운영 **05:00~19:00** (마지막 입장 18:20)",
+              "**매월 첫 번째 월요일 휴관**"
+            ],
+            "timeUsed": [
+              "주차 + 매표 + 현장 안내 — 약 10분",
+              "정상 데크까지 등반 (0.8km / 고도 차 140m) — 약 30분",
+              "정상 조망 + 분화구 테두리 사진 — 약 20분",
+              "하산 — 약 20분",
+              "선택: 해녀 공연 관람 (15:00 공연) — 약 10분"
+            ],
+            "whyOnRoute": "**소그룹 페이싱 고급을 갖춘 성산일출봉** — 90분 창으로 더 깊은 탐방 가능.",
+            "_poi_meta": {
+              "poi_key": "seongsan_ilchulbong",
+              "kb_version": "1.18",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
+                "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
+                "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
+                "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
+                "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:00",
+            "duration": "75분",
+            "name": "섭지코지 (동부 해안 곶)",
+            "category": "화산 곶 — 안도 다다오 건축 + 방두포 등대 + 드라마 촬영지",
+            "description": "제주 동쪽 화산 곶. 성산일출봉을 배경으로 한 탁 트인 해안 전망. 방문 시간: 약 40분.",
+            "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+            "highlights": [
+              "**2.1km 곶 트레일** (약 30분, 고도 차 14m만) — 휠체어·유모차 친화 구간 포함",
+              "**방두포 등대** — 팔각형, **4초마다 점멸**, 붉은 화산 분석구 '불근오름' 위에 위치",
+              "**협자 연대 봉수대** — 4m × 9m 조선 연대, **특별기념물 제23-2호**",
+              "**안도 다다오 건축** — 글라스 하우스 레스토랑 + 유민 미술관 (피닉스 아일랜드)",
+              "**선바위(선암)** — 해면 10m 화산암 기둥, 용왕의 막내 아들 전설",
+              "**드라마 촬영지**: '올인'(2003), '내 이름은 김삼순'(2005) 외",
+              "**유채꽃 3~4월** (노란 경사면); **수국 6월** (파랑·보라)",
+              "**무료 입장**; 유민 미술관 + 글라스 하우스 별도 유료",
+              "곶 끝에서 **북쪽 4km**에 성산일출봉 선명하게 조망 — 유네스코 3중 지정 배경 구도"
+            ],
+            "timeUsed": [
+              "주차 + 입장 — 약 5분",
+              "곶 트레일 산책 — 약 25분",
+              "등대 + 협자 연대 사진 — 약 10분",
+              "안도 다다오 건물 외관 촬영 — 약 10분",
+              "코치 귀환 + 이동 완충 — 약 10분"
+            ],
+            "whyOnRoute": "**섭지코지의 안도 다다오 건축**은 소그룹 제품 하이라이트.",
+            "_poi_meta": {
+              "poi_key": "seopjikoji",
+              "kb_version": "1.19",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Jeju Provincial Cultural Heritage — Special Monument No. 23-2 designation",
+                "VisitJeju — Seopjikoji official listing",
+                "Korea Lighthouse Service — Bangdupo Lighthouse operation records",
+                "Tadao Ando Architect & Associates — Phoenix Island project documentation",
+                "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
+              ]
+            }
+          },
+          {
+            "name": "점심 (제주 동부 — 현지 해산물 또는 흑돼지)",
+            "category": "점심",
+            "description": "성산·성읍·표선 지역 현지 식당. 점심 식사비 포함 여부는 예약 시 확인.",
+            "highlights": [
+              "가이드 검증 동제주 식당 — 성산/성읍/표선 지역",
+              "**제주 흑돼지 BBQ** (천연기념물 2015) 또는 **갈치조림** (간장 조림 갈치)",
+              "약 60분 소요 — 크루즈 당일 여행 일정에 맞춤",
+              "이중 언어 사진 메뉴 (영어/중국어), 카드 + 현금 가능",
+              "사전 고지 시 채식 옵션 제공",
+              "**점심 미포함** — 개인 부담 ₩15,000~25,000/인 (업그레이드 가능)"
+            ],
+            "_poi_meta": {
+              "poi_key": "OPS_lunch_east_jeju",
+              "kb_version": "1.21",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Jeju Black Pig Natural Monument designation (2015, Cultural Heritage Administration)",
+                "Visit Jeju (eastern Jeju cuisine — galchi, heukdwaeji)",
+                "AtoC Korea operations notes (cruise tour lunch venue rotation)"
+              ]
+            },
+            "number": 4,
+            "time": "≈ 12:30",
+            "duration": "75분",
+            "whyOnRoute": "**소그룹 점심 경험** — 75분 체류 시간 (버스 투어 제품 60분 대비)으로 더 여유로운 점심."
+          },
+          {
+            "number": 5,
+            "time": "≈ 14:00",
+            "duration": "75분",
+            "name": "성읍민속마을",
+            "category": "조선 시대 읍성 — 중요 민속 문화재 (1423년 창건)",
+            "description": "1423년 조선 세종 때 조성된 살아있는 읍성 마을. 크루즈 일정에 맞게 체류 시간 조율. 방문 시간: 약 45분.",
+            "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+            "highlights": [
+              "**세종대왕이 1423년 창건** — **1914년(약 500년)**까지 행정 중심지로 기능",
+              "원래 읍성 담장 내 **110개의 전통 건축물** 보존",
+              "**대한민국 중요 민속 문화재** — 마을 전체 및 다수 건물 개별 지정",
+              "마을 중심 **수령 약 600년 된 느티나무와 팽나무** — **천연기념물 지정**",
+              "**조선 풍수지리 원칙**에 따라 구성된 전형적 읍 중심 구획",
+              "**드라마 '대장금' (MBC 2003~2004)** 촬영지 — 국제적 K-드라마 히트작",
+              "**오메기술(오메기술)** — 단일 가문이 대대로 빚은 제주 쌀 기반 전통 술 (무료 시음)",
+              "역사적 상처: **1826년 화재**로 약 80동 소실; **1948년 제주 4·3 사건** 피해",
+              "**무료 입장** — 약 250가구가 전통 계승하며 생활 중인 살아있는 마을"
+            ],
+            "timeUsed": [
+              "주차 + 마을 해설사의 환영 브리핑 — 약 10분",
+              "고목 + 마을 중심 이동 — 약 10분",
+              "한옥 내부 방문 (대표 가옥 2~3채) — 약 15분",
+              "오메기술 양조장 무료 시음 — 약 10분",
+              "올레 골목 산책 + 사진 — 약 10분",
+              "이동 완충 — 약 5분"
+            ],
+            "whyOnRoute": "**소그룹 심층 성읍 민속마을** — 75분 체류 시간 (버스 투어 60분 대비)으로 게스트가 한옥 내부 탐방 가능.",
+            "_poi_meta": {
+              "poi_key": "seongeup_folk_village",
+              "kb_version": "1.19",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Cultural Heritage Administration — Important Folklore Cultural Heritage designation",
+                "Korea Cultural Heritage Foundation — Seongeup Folk Village historical records",
+                "VisitJeju — Seongeup Minsok Maeul",
+                "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
+                "Jeju Folklore Society — Omegisul brewing tradition documentation"
+              ]
+            }
+          },
+          {
+            "name": "제주 크루즈 터미널 귀환 (제주항)",
+            "category": "픽업 & 크루즈 물류",
+            "description": "16:30~17:00 터미널 도착 목표. 교통 지연 여유 시간 포함. 선박 출항 시각 실시간 파악.",
+            "highlights": [
+              "**선박 통관 후 30분 픽업** — 출입국 지연을 흡수하는 완충 시간",
+              "드라이버 + 영어 가이드가 이름 표지판을 들고 입국장 대기",
+              "**메인 선석 360m × 12m / 14만 톤 수용 규모** (동시 1척)",
+              "터미널 인접 **100대 버스 주차 공간** — 빠른 차량 탑승",
+              "관광 안내소, 제주 은행 환전, ATM, 무료 Wi-Fi 현장 운영",
+              "한글 주소가 적힌 비상 택시용 일정 카드 제공"
+            ],
+            "_poi_meta": {
+              "poi_key": "jeju_cruise_port",
+              "kb_version": "1.21",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities)",
+                "Jeju Bus Information System (Bus #100 airport connection)",
+                "Korea Cruise Port Sales (terminal layout + drop-off zones)",
+                "VisitJeju.net (Dongmun Market free shuttle)",
+                "Cruise industry standard (60-min all-aboard buffer)"
+              ]
+            },
+            "number": 6,
+            "time": "≈ 15:30 → arrive port ≈ 16:45",
+            "duration": "75분 드라이브 + 60분 완충",
+            "whyOnRoute": "**소그룹 귀환 드라이브** — 대화형 가이드 동행, 게스트가 당일 내용 마음대로 질문 가능."
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "크루즈 터미널",
+            "type": "origin",
+            "theme": "출발"
+          },
+          {
+            "name": "일출봉",
+            "type": "primary",
+            "theme": "화산"
+          },
+          {
+            "name": "섭지코지",
+            "type": "primary",
+            "theme": "해안"
+          },
+          {
+            "name": "점심",
+            "type": "meal",
+            "theme": "식사"
+          },
+          {
+            "name": "민속마을",
+            "type": "primary",
+            "theme": "문화"
+          },
+          {
+            "name": "크루즈 터미널",
+            "type": "return",
+            "theme": "귀환"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "유네스코 화산 + 해안",
+            "duration": "정류장 1–3",
+            "description": "오전: 유네스코 화산 + 해안."
+          },
+          {
+            "phase": "점심",
+            "duration": "정류장 4",
+            "description": "정오: 점심 식사."
+          },
+          {
+            "phase": "민속 문화 + 귀환",
+            "duration": "정류장 5–6",
+            "description": "오후: 민속 문화 관람 후 크루즈 터미널 귀환."
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "하루 일정",
+          "subtitle": "노선은 기항 항구에 따라 결정됩니다. 제주항(북쪽) 기항 시 동쪽 유네스코 코스로 운행하며, 강정항(남쪽) 기항 시 한라산 고산지대 + 올레 시장 코스로 운행합니다."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "크루즈 터미널에서 당일 왕복이 필요한 크루즈 여행객",
+            "유네스코 하이라이트를 하루에 원하는 제주 첫 방문자",
+            "소규모 그룹으로 더 세심한 안내와 크루즈 일정에 맞춘 코스를 원하는 여행자"
+          ],
+          "lessIdealFor": [
+            "이동 능력이 매우 제한된 여행자 (성산 분화구 테두리와 한라산 1100은 일정 도보 필요)",
+            "유모차 동반 그룹",
+            "여유로운 일정 속도를 원하는 여행자 — 크루즈 일정은 고정됨"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "왜 두 가지 항구 코스가 있는가",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "제주항 = 북쪽 터미널",
+                  "detail": "성산일출봉, 섭지코지, 성읍 민속마을이 포함된 동해안 유네스코 루프."
+                },
+                {
+                  "label": "강정항 = 남쪽 (서귀포) 터미널",
+                  "detail": "한라산 1100 고산지대 + 주상절리 + 천지연 폭포 + 올레 시장."
+                },
+                {
+                  "label": "두 항구 모두 동일한 8시간 구조",
+                  "detail": "크루즈 귀환 제약은 동일하며, 루트가 이동 낭비를 최소화하도록 조정됩니다."
+                }
+              ]
+            },
+            {
+              "title": "소그룹 투어 특이사항",
+              "icon": "users",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "미니코치 소그룹",
+                  "detail": "더 작은 그룹, 더 많은 가이드 관심, 코스마다 더 빠른 일정 속도."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "픽업 & 하차",
+            "preview": "크루즈 터미널 픽업 — 항구별 상이",
+            "content": [
+              "제주항 픽업: 제주 크루즈 터미널 (북제주).",
+              "강정항 픽업: 강정 크루즈 터미널 (서귀포, 남제주).",
+              "기항 일정에 맞춰 픽업 시간 확정.",
+              "출항 전 완충 시간 포함, 동일 크루즈 터미널 귀환."
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "도보 & 지형",
+            "preview": "중간; 항구 변경에 따라 다름",
+            "content": [
+              "제주항 코스: 성산일출봉 분화구 테두리 등반이 가장 힘든 구간 (선택).",
+              "강정항 코스: 한라산 1100은 쉬운 데크 산책; 천지연 길은 짧음.",
+              "겹쳐 입기 — 한라산 1100은 해안(강정)보다 기온이 낮습니다."
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "날씨 정책",
+            "preview": "크루즈 일정 고정 — 루트 조정",
+            "content": [
+              "폭우: 성산 분화구 테두리 등반 생략 가능 (제주항 코스).",
+              "한라산 기상: 1100 고지가 저고도 코스로 대체될 수 있음 (강정항 코스).",
+              "강한 바람: 주상절리와 섭지코지 해안 노출 구간 단축.",
+              "크루즈 복귀는 절대 기준 — 루트가 조정되어도 일정은 불변."
+            ]
+          },
+          {
+            "id": "wear",
+            "title": "복장 & 준비물",
+            "preview": "편한 운동화 + 겹겹이 입기 + 재승선 여권",
+            "content": [
+              "편안한 워킹화.",
+              "가벼운 재킷 (특히 한라산 1100 / 강정 코스).",
+              "모자와 자외선 차단.",
+              "크루즈 ID + 터미널 재입장용 여권."
+            ]
+          },
+          {
+            "id": "included",
+            "title": "포함 사항",
+            "preview": "가이드, 차량, 픽업, 입장료",
+            "variant": "included",
+            "content": [
+              "영어 가이드",
+              "미니코치 교통",
+              "크루즈 터미널 픽업·하차",
+              "모든 명소 입장",
+              "생수",
+              "점심 (레스토랑 현장 직접 결제)",
+              "개인 쇼핑 제외",
+              "팁 제외"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "계절별 안내 확인"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "계절별 안내 확인"
+          },
+          "_seasonalSummary": "제주는 사계절 온화하지만 해안 바람과 산악 날씨의 영향을 크게 받습니다. 동쪽 해안 코스는 비교적 온화하고, 남쪽·한라산 고지 코스는 해안보다 5~8°C 낮을 수 있어 겉옷을 준비하는 것이 좋습니다."
+        },
+        "seasonalVariations": [
+          {
+            "season": "봄",
+            "title": "크루즈 시즌 개막",
+            "description": "온화하고 맑음; 크루즈 기항 최상의 시계",
+            "icon": "flower"
+          },
+          {
+            "season": "여름",
+            "title": "크루즈 피크",
+            "description": "해안은 덥지만 바람 있음; 한라산 1100 시원한 피난처",
+            "icon": "sun"
+          },
+          {
+            "season": "가을",
+            "title": "최고 시계",
+            "description": "두 항구 루트 모두 가장 선명한 조망",
+            "icon": "leaf"
+          },
+          {
+            "season": "겨울",
+            "title": "비성수기",
+            "description": "크루즈 기항 적음; 한라산 1100 눈 가능",
+            "icon": "snow"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "공인 현지 여행사",
+            "description": "정식 등록 및 보험 가입 현지 여행사",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "제주 크루즈 물류에 특화된 공인 현지 여행사 — 귀선 시각 엄수 전문."
+          },
+          {
+            "icon": "route",
+            "title": "코스 전문",
+            "description": "이동 부담을 줄인 효율적인 코스",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "크루즈 도착 시각에 상황에 맞춘 소그룹 코스 구성. 항구별 코스 분리."
+          },
+          {
+            "icon": "users",
+            "title": "그룹 규모 관리",
+            "description": "코스에 상황에 맞춘 인원 규모",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "소그룹으로 여유 있게 이동. 지정 경유지 전 입장료 포함."
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "즉시",
+            "title": "즉시 확인",
+            "detail": "행정 요약 포함 예약 확인서 발송",
+            "description": "예약 확인서 발송. 선박명과 기항 항구(제주항 또는 강정항)를 알려주시면 코스를 확정합니다."
+          },
+          {
+            "timing": "출발 12시간 전",
+            "title": "12시간 전 알림",
+            "detail": "날씨 업데이트 및 경로 변경 안내",
+            "description": "기항 항구 확인 후 동부 또는 남부 코스 확정 안내."
+          },
+          {
+            "timing": "전날 저녁",
+            "title": "최종 픽업 안내",
+            "detail": "정확한 픽업 시간 및 가이드 연락처",
+            "description": "가이드 연락처 전날 저녁 전송."
+          },
+          {
+            "timing": "투어 당일 아침",
+            "title": "당일 코스 안내",
+            "detail": "실시간 상황 기반 당일 브리핑",
+            "description": "가이드가 크루즈 터미널 도착홀에서 팀을 맞이합니다."
+          },
+          {
+            "timing": "투어 중",
+            "title": "경유지별 심층 안내",
+            "detail": "각 코스 실시간 현장 안내",
+            "description": "귀선 일정에 충분한 여유를 두고 터미널 귀환."
+          },
+          {
+            "timing": "투어 종료 후",
+            "title": "투어 후 지원",
+            "detail": "피드백 및 추가 여행 추천",
+            "description": "귀환 후 피드백 요청 전송."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "port-routing",
+            "question": "내 크루즈가 어느 항구에 기항하는지 어떻게 알 수 있나요?",
+            "answer": "크루즈 예약 확인서에 기항 항구가 명시되어 있습니다. 예약 시 알려주시면 코스를 확정합니다."
+          },
+          {
+            "id": "cruise-return",
+            "question": "제시간에 배로 돌아올 수 있나요?",
+            "answer": "네, 16:30~17:00 터미널 도착 목표로 운행하며, 교통 지연 여유 시간을 포함합니다."
+          },
+          {
+            "id": "different-port",
+            "question": "기항 항구가 변경되면 어떻게 되나요?",
+            "answer": "변경 즉시 알려주시면 코스를 바꿔 드립니다."
+          },
+          {
+            "id": "first-time",
+            "question": "제주를 처음 방문하는 분에게 좋은가요?",
+            "answer": "네, 크루즈 기항지 시간 내에 제주 핵심 명소를 균형 있게 볼 수 있습니다."
+          },
+          {
+            "id": "walking",
+            "question": "도보 이동이 힘들지 않나요?",
+            "answer": "보통 수준의 도보와 활동적인 구간이 포함됩니다."
+          },
+          {
+            "id": "family",
+            "question": "가족 여행에 적합한가요?",
+            "answer": "네, 대부분 가족에게 편안한 투어입니다."
+          },
+          {
+            "id": "seniors",
+            "question": "어르신도 참여할 수 있나요?",
+            "answer": "활동적인 어르신에게 적합합니다."
+          },
+          {
+            "id": "children",
+            "question": "권장 최소 연령은 몇 세인가요?",
+            "answer": "만 6세 이상 추천."
+          },
+          {
+            "id": "rain",
+            "question": "비가 와도 투어가 진행되나요?",
+            "answer": "노출 구간이 있어 강우 시 일부 경유지가 단축될 수 있습니다."
+          },
+          {
+            "id": "lunch",
+            "question": "점심이 포함되어 있나요?",
+            "answer": "점심 시간은 항상 있습니다. 식사비 포함 여부는 예약 시 확인하세요."
+          },
+          {
+            "id": "pickup",
+            "question": "픽업 장소는 어디인가요?",
+            "answer": "크루즈 터미널 도착홀에서 가이드가 직접 맞이합니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "결제 가능 여부와 크루즈 항구 정보는 예약 단계에서 확인됩니다.",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "인"
+        }
+      }
+    }
+  ],
+  "priceSource": {
+    "discountPct": 10,
+    "discountNote": "마켓플레이스 기준가 대비 10% 할인",
+    "amount": null,
+    "currency": "USD"
+  },
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch6_enhancement": {
+        "date": "2026-04-29",
+        "description": "Batch 6 deep enhancement — port-aware cruise shore excursion tour. Both variants (Jeju Port north + Gangjeong Port south) enhanced with 1,000+ char descriptions per stop; KB-backed _poi_meta on all attraction stops; product profile recalibrated to verified-fact 0-1 float scores; variant-level legacy 0-5 / 0-100 scale fields ALSO normalized to 0-1 float (Phase 1 unification completion for variant scope). Time-weighted indoor_ratio computed per variant per Fix 1 methodology.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale per Phase 1 standard. Variant-level legacy 0-5/0-100 scale fields ALSO normalized to 0-1 float in this batch (previously the schema unification stopped at top-level product profile). Time-weighted indoor_ratio per Fix 1 — computed PER VARIANT then aggregated. Top-level product profile uses cross-variant averages weighted toward Gangjeong (the more common 2025+ docking).",
+          "deltas_applied": {
+            "unesco_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "VERIFIED HIGH — both variants hit major UNESCO sites. Variant 0 (Jeju Port): Seongsan Ilchulbong = TRIPLE UNESCO (World Natural Heritage 2007 + Biosphere Reserve + Global Geopark) + Haenyeo ICH demos. Variant 1 (Gangjeong): Hallasan UNESCO World Heritage + Biosphere Reserve + Jusangjeolli Global Geopark. Both variants reliably deliver UNESCO content. 0.85 reflects this consistent delivery. Note: Seongeup is NOT UNESCO (national folklore only). Olle Market and Cheonjiyeon are not UNESCO. Score reflects weighted average of UNESCO density in both variants."
+            },
+            "scenic_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "VERIFIED — Variant 0: volcanic crater + coastal cape + folk village. Variant 1: alpine wetland + columnar basalt + waterfall + market. Both deliver catalog-leading scenic diversity. 0.95 calibrated."
+            },
+            "photo_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified — UNESCO crater, columnar basalt, subtropical falls, thatched-roof village, market food shots. Highly photogenic but not the absolute top (no flower festivals). 0.95 calibrated."
+            },
+            "walking_level": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "VERIFIED — Variant 0: Seongsan optional summit climb (300-500 stairs is the limit case) + Seongeup village walking; Variant 1: Hallasan boardwalk (flat) + Jusangjeolli flat + Cheonjiyeon flat. Variant 1 is materially flatter than Variant 0. Aggregate 0.55 reflects mostly easy walking with the Seongsan summit as the harder option (always optional)."
+            },
+            "indoor_ratio": {
+              "old": 0.25,
+              "new": 0.2,
+              "reasoning": "Time-weighted (Fix 1) — Variant 0 substantive 0.12, Variant 1 substantive 0.18. Aggregate cross-variant ~0.15-0.20. Catalog value 0.20 (slight upward adjustment to account for cruise-day bus-shelter time + lunch indoor)."
+            },
+            "weather_sensitivity": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "UPGRADED — cruise day has hard time constraint + ship cannot wait + the route is mostly outdoor. Heavy rain at Hallasan 1100 (road closure risk) or storm at Seongsan summit climb meaningfully compromises the day. 0.85 reflects this elevated cruise-context weather risk vs ordinary 0.80 day tour."
+            },
+            "rain_fit": {
+              "old": 0.4,
+              "new": 0.45,
+              "reasoning": "Variant 1 is meaningfully more rain-friendly than Variant 0 (Olle Market covered + Hallasan boardwalk under tree canopy + Cheonjiyeon's subtropical forest provides some shelter). Variant 0's Seongsan climb is exposed. Aggregate 0.45 — slightly improved over old 0.40 calibration."
+            },
+            "iconic_landmark_fit": {
+              "old": 0.8,
+              "new": 0.95,
+              "reasoning": "UPGRADED — verified: Variant 0 has Seongsan Ilchulbong (Jeju's single most-iconic landmark, Triple UNESCO). Variant 1 has Hallasan UNESCO + Jusangjeolli Natural Monument. Both variants deliver catalog-leading iconic content. 0.95 — among the highest in the catalog."
+            },
+            "first_time_fit": {
+              "old": 0.85,
+              "new": 0.95,
+              "reasoning": "UPGRADED — cruise day for first-time Jeju visitors is the ARCHETYPE use case for this product. Both variants deliver the iconic Jeju vista appropriate to the docking port. 0.95 — near-maximum first-time fit."
+            },
+            "same_day_flight_fit": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Cruise tour ends 16:30-17:30 at port; not at airport. Bus #100 from Jeju Port to airport is direct (~30 min). For the Gangjeong variant, airport transfer is ~50 min via Limousine 800. Both variants support same-day onward travel for guests leaving the cruise mid-itinerary, but it's tighter from Gangjeong. Aggregate 0.95."
+            },
+            "small_group_fit_smallgroup": {
+              "field": "small_group_fit",
+              "old_smallgroup": 1.0,
+              "new_smallgroup": 1.0,
+              "old_bus": 0.2,
+              "new_bus": 0.2,
+              "reasoning": "Per-tour: small_group tour = 1.0 (small group format defines this product); bus tour = 0.2 (large coach format is the OTHER product). Format fixed by tour SKU."
+            },
+            "bus_fit_smallgroup": {
+              "field": "bus_fit",
+              "old_smallgroup": 0.2,
+              "new_smallgroup": 0.2,
+              "old_bus": 1.0,
+              "new_bus": 1.0,
+              "reasoning": "Per-tour: small_group tour bus_fit = 0.2; bus tour bus_fit = 1.0."
+            },
+            "private_fit": {
+              "old": 0.2,
+              "new": 0.15,
+              "reasoning": "Neither tour is private — both are group products (small group OR large coach). 0.15."
+            },
+            "premium_fit_smallgroup": {
+              "field": "premium_fit",
+              "old_smallgroup": 0.7,
+              "new_smallgroup": 0.75,
+              "old_bus": 0.4,
+              "new_bus": 0.4,
+              "reasoning": "Small group cruise tour reads premium — fewer guests, more guide attention, easier pace. Bus tour reads budget — economies of scale, larger group, less flexibility. Calibrated per tour."
+            },
+            "value_for_money_fit_smallgroup": {
+              "field": "value_for_money_fit",
+              "old_smallgroup": 0.6,
+              "new_smallgroup": 0.65,
+              "old_bus": 0.7,
+              "new_bus": 0.8,
+              "reasoning": "Bus tour delivers stronger value (lower per-person cost for same itinerary). Small group is mid-value (premium-priced but delivers premium experience). Calibrated per tour."
+            },
+            "young_kids_fit": {
+              "old": 0.5,
+              "new": 0.55,
+              "reasoning": "Cruise day with kids works in Variant 1 (Gangjeong) better — Olle Market food + flat boardwalk + waterfall walk all kid-friendly. Variant 0's Seongsan summit climb is the limit case for younger kids. 0.55 aggregate."
+            },
+            "family_fit": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "Verified — UNESCO sights + market food + folk village hit intergenerational interests. Aggregate 0.65."
+            },
+            "senior_fit": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "Variant 1 is materially more senior-friendly (boardwalk + flat market + flat falls path). Variant 0's Seongsan summit is the limit. Aggregate 0.65 — moderate senior fit."
+            },
+            "mobility_friendly_fit": {
+              "old": 0.5,
+              "new": 0.55,
+              "reasoning": "Variant 1 stronger (Gangjeong terminal reportedly has better wheelchair accessibility than Jeju Port; Hallasan boardwalk stroller-friendly; Cheonjiyeon flat path; covered Olle Market). Variant 0's Seongsan climb is the limit. 0.55 aggregate."
+            },
+            "stroller_fit": {
+              "old": 0.4,
+              "new": 0.5,
+              "reasoning": "Variant 1 fully stroller-accessible. Variant 0's Seongsan summit stairs not accessible. Aggregate 0.50."
+            },
+            "nature_fit": {
+              "old": 0.9,
+              "new": 0.9,
+              "reasoning": "Verified — UNESCO volcano + alpine wetland + columnar basalt + subtropical waterfall. 0.90."
+            },
+            "shopping_fit": {
+              "old": 0.4,
+              "new": 0.55,
+              "reasoning": "UPGRADED — Variant 1's Olle Market is a strong shopping anchor (souvenirs + foodie items). Variant 0 lighter on shopping. 0.55 aggregate."
+            },
+            "food_fit": {
+              "old": 0.5,
+              "new": 0.65,
+              "reasoning": "UPGRADED — Variant 1's Olle Market plus Seogwipo lunch cluster deliver strong food anchor. Variant 0 lunch only. 0.65 aggregate. Black pork + Hallabong + abalone all featured."
+            },
+            "local_culture_fit": {
+              "old": 0.6,
+              "new": 0.7,
+              "reasoning": "UPGRADED — Variant 0's Seongeup Folk Village (600-year living town) is high-cultural-density. Variant 1's Olle Market is high-local-life-density. Aggregate 0.70."
+            },
+            "storytelling_fit": {
+              "old": 0.7,
+              "new": 0.85,
+              "reasoning": "UPGRADED — cruise day tours are storytelling-heavy (one-shot first-time guests, guide narrates everything). Both variants have rich histories: Seongsan formation + haenyeo tradition + Joseon-era folk village (Variant 0); Hallasan UNESCO + columnar basalt geology + 1,500-year tangerine heritage + Mutae eel mythology + Gangjeong civilian-military history (Variant 1). 0.85."
+            },
+            "cafe_fit": {
+              "old": 0.4,
+              "new": 0.4,
+              "reasoning": "Modest cafe content — Olle Market has cafe stalls; Hallasan 1100 rest area cafe; otherwise no dedicated cafe stops. 0.40 calibrated."
+            },
+            "comfort_level": {
+              "old": 0.7,
+              "new": 0.75,
+              "reasoning": "Cruise day infrastructure is comfort-optimized — paved/boardwalk trails, climate-controlled vehicles, restaurant lunch, terminal facilities. 0.75 aggregate."
+            },
+            "duration_hours": {
+              "old": 8.0,
+              "new": 8.0,
+              "reasoning": "Confirmed 8h duration for both variants — within cruise day buffer."
+            },
+            "min_recommended_age": {
+              "old": 6,
+              "new": 6,
+              "reasoning": "Confirmed 6+ — both variants accessible to school-age children."
+            }
+          }
+        },
+        "stops_enhanced_jeju_port_variant": 6,
+        "stops_enhanced_gangjeong_port_variant": 7,
+        "sources": [
+          "VisitKorea",
+          "Visit Jeju",
+          "Korea Cruise Port Sales",
+          "CruiseMapper",
+          "Cruise Critic",
+          "Wikipedia",
+          "Inside Jeju",
+          "시장 참고 자료",
+          "시장 참고 자료",
+          "Soul of Seoul"
+        ]
+      }
+    }
+  }
+}

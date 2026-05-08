@@ -1,0 +1,2059 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "seoul-suwon-hwaseong-folk-village-starfield-library",
+  "locale": "es",
+  "product_id": "seoul-suwon-hwaseong-folk-village-starfield-library",
+  "seo": {
+    "pageTitle": "Tour Seúl→Suwon: Fortaleza UNESCO, Aldea Folk y Starfield | AtoC",
+    "metaDescription": "Tour de un día desde Seúl a Suwon: Fortaleza Hwaseong (UNESCO) → Palacio Haenggung → Pueblo Folclórico Coreano (Yongin) → Biblioteca Starfield. 4 contrastes de la provincia de Gyeonggi en un día.",
+    "primaryKeywords": [
+      "tour Suwon Hwaseong UNESCO",
+      "Pueblo Folclórico Coreano tour",
+      "Biblioteca Starfield Suwon",
+      "tour Seúl Suwon Yongin",
+      "fortaleza Hwaseong excursión"
+    ],
+    "ogImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+    "title": "Tour Suwon: Fortaleza UNESCO, Aldea Folk y Starfield | AtoC",
+    "description": "Tour de un día desde Seúl: Fortaleza Hwaseong (UNESCO) → Palacio Haenggung → Pueblo Folclórico Coreano → Biblioteca Starfield. Grupo pequeño, 10 horas."
+  },
+  "catalog_card": {
+    "thumbnail": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+    "title": "Tour Suwon y Yongin: Fortaleza UNESCO, Pueblo Folclórico y Biblioteca Starfield",
+    "priceLabel": "Consulte el precio al reservar",
+    "shortCardDescription": "Excursión de un día en grupo pequeño desde Seúl explorando cuatro contrastes de la provincia de Gyeonggi: paseo por las murallas de la Fortaleza Hwaseong (Patrimonio UNESCO 1997) → Palacio Haenggung (el mayor palacio de campaña real de Corea) → Pueblo Folclórico Coreano de Yongin (el primer museo al aire libre del país) → Biblioteca Starfield de Suwon (atrio de 22 m, el espacio más fotografiado del nuevo Starfield). 10 horas, grupo pequeño.",
+    "tags": [
+      "grupo reducido",
+      "Cultura",
+      "unesco",
+      "Patrimonio",
+      "Biblioteca",
+      "Aldea tradicional",
+      "Excursión de un día"
+    ],
+    "rating": 4.9,
+    "reviewCount": 79,
+    "slug": "seoul-suwon-hwaseong-folk-village-starfield-library",
+    "subtitle": "Del pasado joseonés al presente viral — cuatro contrastes de Gyeonggi en un día desde Seúl.",
+    "region": "Suwon + Yongin (Gyeonggi)",
+    "duration": "10 horas",
+    "stopsCount": 6,
+    "badges": [
+      "Grupo pequeño",
+      "UNESCO",
+      "Pueblo Folclórico",
+      "Biblioteca Starfield",
+      "Desde Seúl"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800"
+  },
+  "headlineLine1": "Murallas UNESCO, un palacio joseonés y una biblioteca de cuatro plantas —",
+  "headlineLine2": "cuatro contrastes de Gyeonggi en un día desde Seúl",
+  "price": {
+    "amountLabel": "60.30",
+    "originalPriceUsd": 67,
+    "salePriceUsd": 60.3,
+    "discountPercent": 10,
+    "currency": "USD",
+    "per": "persona",
+    "priceSource": "direct_rate",
+    "priceNote": "Precio basado en la tarifa directa de AtoC Korea."
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
+    "imagePosition": "center 35%",
+    "tagline": "La única fortaleza joseonesa, un pueblo folclórico y la biblioteca que arrasa en Instagram — todo en un día desde Seúl",
+    "pills": [
+      "UNESCO",
+      "Pueblo Folclórico",
+      "Biblioteca Starfield"
+    ],
+    "meta": {
+      "duration": "≈ 10 horas (recogida ~09:00)",
+      "region": "Suwon + Yongin (Gyeonggi)",
+      "stops": "6 paradas",
+      "rating": 4.9,
+      "ratingStars": 5
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Descripción"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerario"
+    },
+    {
+      "id": "details",
+      "label": "Información práctica"
+    },
+    {
+      "id": "faq",
+      "label": "Preguntas frecuentes"
+    },
+    {
+      "id": "reviews",
+      "label": "Opiniones"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "Duración",
+      "value": "≈ 10 horas"
+    },
+    {
+      "icon": "users",
+      "label": "Grupo",
+      "value": "Grupo pequeño, minibús con guía de habla inglesa"
+    },
+    {
+      "icon": "map-pin",
+      "label": "Recogida",
+      "value": "Salida Hongik Univ. 8 (Hongdae) o Myeongdong 2/4 (metro)"
+    },
+    {
+      "icon": "footprints",
+      "label": "A pie",
+      "value": "Moderado — muralla de Hwaseong + pueblo folclórico extenso"
+    },
+    {
+      "icon": "ticket",
+      "label": "Entradas",
+      "value": "Incluidas (Hwaseong + Haenggung + Pueblo Folclórico)"
+    },
+    {
+      "icon": "utensils",
+      "label": "Almuerzo",
+      "value": "No incluido — Mercado Nammun o Pueblo Folclórico"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+      "alt": "Imagen de Fortaleza Hwaseong de Suwon — Patrimonio Mundial UNESCO 1997",
+      "caption": "Fortaleza Hwaseong de Suwon — Patrimonio Mundial UNESCO 1997",
+      "location": "Fortaleza Hwaseong, Suwon, Gyeonggi",
+      "atmosphere": "Muralla de 5,74 km con 48 instalaciones militares del período Joseon"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+      "alt": "Imagen de Palacio Haenggung — el mayor palacio de campaña real existente en Corea",
+      "caption": "Palacio Haenggung — el mayor palacio de campaña real existente en Corea",
+      "location": "Palacio Haenggung, Suwon, Gyeonggi",
+      "atmosphere": "El refugio real de Jeongjo: 576 salas, 13 años de peregrinaciones anuales"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+      "alt": "Imagen de Pueblo Folclórico Coreano — el primer y mayor museo al aire libre de Corea",
+      "caption": "Pueblo Folclórico Coreano — el primer y mayor museo al aire libre de Corea",
+      "location": "Pueblo Folclórico Coreano, Yongin, Gyeonggi",
+      "atmosphere": "Vida joseonesa en vivo: artesanos, actores y casas de paja en 991.735 m²"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+      "alt": "Imagen de Biblioteca Starfield de Suwon — el espacio más fotografiado del nuevo Starfield",
+      "caption": "Biblioteca Starfield de Suwon — el espacio más fotografiado del nuevo Starfield",
+      "location": "Biblioteca Starfield, Starfield Suwon Mall, Suwon",
+      "atmosphere": "Corea contemporánea: el atrio de libros más alto del país en el mayor Starfield"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+      "alt": "Imagen de Starfield Library Suwon — estanterías de 22 m",
+      "caption": "Starfield Library Suwon — estanterías de 22 m",
+      "location": "Biblioteca Starfield Suwon, Yeongtong-gu, Suwon",
+      "atmosphere": "Starfield de 2ª generación de Shinsegae, inaugurado en enero de 2024; entrada gratuita; zona de escucha de vinilo"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "≈ 08:00",
+      "duration": "10 min",
+      "name": "Salida desde Seúl",
+      "category": "Salida — 2 puntos de recogida en Seúl centro",
+      "description": "Recogida en uno de dos puntos centrales de Seúl: **Salida 8 de la Estación Hongik University (Hongdae, Línea 2/Aeropuerto)** para huéspedes en Hongdae/Mapo-gu; **Salida 2 o 4 de la Estación Myeongdong (Línea 4)** para el centro de Seúl/Namdaemun/Namsan. Minibús de grupo pequeño hacia Suwon por la Autopista Gyeongbu (~50-60 min).",
+      "highlights": [
+        "2 puntos de recogida — Hongik University Salida 8 (Hongdae) o Myeongdong Salida 2/4",
+        "Minibús grupo pequeño, guía de habla inglesa",
+        "Suwon por la Autopista Gyeongbu — ~50-60 min"
+      ],
+      "timeUsed": [
+        "Recogida Hongdae / Myeongdong",
+        "Desplazamiento a Suwon — ~50-60 min"
+      ],
+      "whyOnRoute": "Una salida de Seúl a las 09:00 sitúa al grupo en la Fortaleza Hwaseong antes de las multitudes.",
+      "visitBasics": {},
+      "convenience": {},
+      "smartNotes": {
+        "tip": "Lleva una capa ligera — el aire acondicionado del autocar puede ser intenso. Parada de baño a mitad de camino en un área de servicio."
+      },
+      "_poi_meta": {
+        "poi_key": "OPS_seoul_pickup_default",
+        "verified": false,
+        "match": "operational_default",
+        "kb_version": "v1.14",
+        "verified_date": "2026-04-29",
+        "note": "Operational pickup — Seoul departure; not a sightseeing POI"
+      }
+    },
+    {
+      "number": 2,
+      "time": "≈ 09:30",
+      "duration": "75 min",
+      "name": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO)",
+      "category": "Patrimonio Mundial UNESCO (1997) — La única ciudad-fortaleza joseonesa con registro de construcción completo",
+      "description": "**Suwon Hwaseong — Patrimonio Mundial UNESCO desde 1997** — es la única ciudad-fortaleza amurallada de la época Joseon en Corea conservada con su **registro de construcción original de 10 volúmenes** ('Hwaseong Seongyeok Uigwe', también Patrimonio Documental UNESCO 2007). Construida entre **1789 y 1797** por orden del rey **Jeongjo** (r. 1776-1800), el monarca reformista de la Ilustración joseonesa, como homenaje a su padre el Príncipe Sado — ejecutado injustamente — y como nuevo centro de poder fuera de la corrupta corte de Hanseong. Las murallas miden **5,74 km de longitud total** con 48 instalaciones militares (portalones, bastiones, garitas, puertas de agua, fosos). El tour cubre el **tramo noroeste** (Puerta Janganmun → Puerta Hwaseomun → Bastión Oeste, ~1-1,5 km), el más fotogénico y con mejor perspectiva sobre el casco histórico de Suwon. **Entrada adultos ₩1.000** (incluida).",
+      "highlights": [
+        "**Patrimonio Mundial UNESCO 1997** — registro documental también en UNESCO 2007",
+        "Construida **1789-1797** por el rey Jeongjo para honrar a su padre ejecutado",
+        "Murallas de **5,74 km** con 48 instalaciones militares",
+        "Tramo noroeste: **Janganmun → Hwaseomun → Bastión Oeste** (~1-1,5 km)",
+        "**Entrada ₩1.000** (incluida)"
+      ],
+      "timeUsed": [
+        "Paseo por el tramo noroeste de la muralla — ~75-90 min"
+      ],
+      "whyOnRoute": "Hwaseong es el visita cultural clave del tour: la única ciudad-fortaleza joseonesa con registro de construcción completo. Sus murallas al amanecer son únicas en Corea.",
+      "visitBasics": {
+        "hours": "Sendero de la muralla 24 horas (sin puertas); recomendado 09:00-18:00 verano / 09:00-17:00 invierno",
+        "closed": "Abierto todo el año (Tranvía Hwaseong cerrado los lunes)",
+        "admission": "Adultos ₩1.000 / Jóvenes ₩700 / Niños ₩500 (GRATIS: menores de 6, mayores de 65, con hanbok, último miércoles del mes)",
+        "walking": "Moderado — la muralla tiene tramos empinados en Seojangdae; escaleras en las puertas; algunas secciones no accesibles en silla de ruedas"
+      },
+      "convenience": {
+        "restroom": "En Janganmun, Hwaseomun, Paldalmun y Yeonmudae",
+        "parking": "Bajada del autocar en el aparcamiento de Janganmun; aparcamiento designado para autocares en Yeonmudae"
+      },
+      "smartNotes": {
+        "photo": "**Hwahongmun (compuerta norte)** con 7 arcos sobre el arroyo Suwoncheon — la foto representativa, mejor a primera hora de la mañana o al atardecer para reflejos.",
+        "facilities": "Centros de información turística en Janganmun, Paldalmun y la plaza Hwaseong Haenggung. Señalización bilingüe inglés-coreano. Tranvía Hwaseong (₩1.500 ida y vuelta).",
+        "tip": "Calzado cómodo — las piedras de la muralla son irregulares. Las tiendas de alquiler de hanbok en la plaza Haenggung ofrecen entrada GRATUITA."
+      },
+      "_poi_meta": {
+        "poi_key": "hwaseong_fortress",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO WHC",
+          "VisitKorea",
+          "KoreaToDo",
+          "Suwon CVB",
+          "UNESCO World Heritage Centre — Suwon Hwaseong (Criteria ii/iii inscription, 1997)",
+          "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Hwaseong Fortress + Hwaseong Seongyeok Uigwe Memory of the World 2007)",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Suwon Hwaseong Fortress official listing)",
+          "Suwon City Tourism (suwon.go.kr/tour — Hwaseong Yeolcha trolley + admission + opening hours)",
+          "Wikipedia (Hwaseong Fortress — Jeong Yak-yong + Geojunggi crane + 5.74 km perimeter + 41 structures)"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:00",
+      "duration": "75 min",
+      "name": "Palacio Haenggung de Hwaseong",
+      "category": "El mayor palacio haenggung (residencia de campaña real) existente en Corea",
+      "description": "**Hwaseong Haenggung — el mayor haenggung (palacio de campaña real) existente en Corea** — fue construido entre **1789 y 1796** por el rey Jeongjo como parte del plan urbanístico unificado de Hwaseong. Los *haenggung* son palacios temporales donde el rey se alojaba durante las visitas al campo; Hwaseong Haenggung, con **576 salas originales**, es con diferencia el más grande de todos los existentes. Jeongjo lo utilizó durante **13 años consecutivos (1789-1800)** en su peregrinación anual a la tumba de su padre. Durante la ocupación japonesa (1910-1945) fue reconvertido en hospital municipal y sufrió daños severos; restaurado entre **1996 y 2003** con los planos originales. Escenario habitual de **dramas históricos coreanos** ('Yi San', 'Dong Yi'). **Entrada adultos ₩1.500** (incluida).",
+      "highlights": [
+        "**El mayor haenggung existente en Corea** — 576 salas originales",
+        "Jeongjo lo usó **13 años consecutivos** para peregrinar a la tumba de su padre",
+        "Reconvertido en hospital japonés (1910-1945), **restaurado 1996-2003**",
+        "Escenario habitual de dramas históricos coreanos",
+        "**Entrada ₩1.500** (incluida)"
+      ],
+      "timeUsed": [
+        "Pabellones principales + patio central + fotografía — ~50 min"
+      ],
+      "whyOnRoute": "El Haenggung cierra el relato de Jeongjo: la muralla fue su declaración política; el palacio fue su refugio emocional. Juntos, cuentan la historia humana detrás de la UNESCO.",
+      "visitBasics": {
+        "hours": "09:00-18:00 (última entrada 17:30); horario de tarde may-oct 18:00-21:00",
+        "closed": "Abierto todo el año",
+        "admission": "Adulto ₩1.500 / Joven ₩1.000 / Niño ₩700; Fortaleza + Palacio combinado ₩3.500; GRATIS hanbok/65+/6 años-",
+        "walking": "Fácil — terrenos del palacio mayormente llanos con algunos escalones entre patios"
+      },
+      "convenience": {
+        "restroom": "En la entrada principal, cerca de Bongsudang y en la Plaza Haenggung",
+        "parking": "Aparcamiento público Hwaseong Haenggung; aparcamientos de pago en la Plaza Haenggung"
+      },
+      "smartNotes": {
+        "photo": "**Sala del trono Bongsudang** — la foto representativa del palacio. **Naknamheon** — el único edificio original.",
+        "facilities": "Centro de información, aseos, tienda de regalos. Cafés y tiendas de alquiler de hanbok en la Plaza Haenggung.",
+        "tip": "Programa la llegada para la **Ceremonia de cambio de guardia mar-dom 11:00 (GRATIS)**. El hanbok da entrada gratuita."
+      },
+      "_poi_meta": {
+        "poi_key": "hwaseong_haenggung",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea",
+          "Wikipedia",
+          "Suwon CVB",
+          "Referencia de mercado",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Hwaseong Haenggung official listing)",
+          "Cultural Heritage Administration / Korea Heritage Service (cha.go.kr — Hwaseong Haenggung Historic Site No. 478)",
+          "Suwon City Tourism (suwon.go.kr/tour — Royal Guard Changing Ceremony + Mu-ye 24-gi schedule)",
+          "Wikipedia (Hwaseong Haenggung — Naknamheon-only-original-structure + 576-kan scale)",
+          "Visit Suwon CVB (visitsuwon.org — Suwon Pass combined ticket + Haenggung Square facilities)"
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "time": "≈ 12:30",
+      "duration": "120 min",
+      "name": "Pueblo Folclórico Coreano (Yongin)",
+      "category": "El primer y mayor museo al aire libre de cultura tradicional de Corea — 991.735 m²",
+      "description": "**Pueblo Folclórico Coreano — el primer y mayor museo al aire libre de cultura tradicional de Corea**, con ~991.735 m² (245 acres) de terreno en un valle natural de Yongin. Inaugurado en **1974**, el recinto reproduce más de **260 edificios** de la época Joseon: aldeas de agricultores, residencias de la aristocracia *yangban*, oficinas de gobierno, tabernas de *makgeolli*, molinos de agua, herreros, boticas y templos. Los intérpretes costumed realizan demostraciones en vivo de artesanías tradicionales (cerámica, costura, fabricación de papel *hanji*). Escenario habitual de **dramas históricos** ('Jumong', 'Daejanggeum', 'Queen Seondeok'). Las **demostraciones de acrobacia en cuerda floja** (*jultagi*) y **música campesina** (*nongak*) tienen lugar a horas fijas. **Alquiler de hanbok** disponible en el recinto (opcional, ~₩15.000-25.000).",
+      "highlights": [
+        "**El primer y mayor museo al aire libre de Corea** — 260+ edificios en 991.735 m²",
+        "Inaugurado en **1974** — 50 años documentando la vida joseonesa",
+        "Demostraciones en vivo: acrobacia en cuerda floja, música campesina, artesanías",
+        "Escenario de 'Jumong', 'Daejanggeum', 'Queen Seondeok'",
+        "**Alquiler de hanbok** disponible (opcional, ~₩15.000-25.000)"
+      ],
+      "timeUsed": [
+        "Pueblo folclórico — ~90-120 min"
+      ],
+      "whyOnRoute": "El Pueblo Folclórico es la contraparte rural del Haenggung: la vida cotidiana joseonesa frente al poder real. Los 260 edificios son la inmersión más completa en la Corea tradicional disponible desde Seúl.",
+      "visitBasics": {
+        "hours": "Lun-Jue 10:00-18:00; Vie-Dom y festivos 10:00-22:00 (invierno más corto)",
+        "closed": "Abierto todo el año",
+        "admission": "Adulto ₩37.000 / Joven ₩32.000 / Niño ₩26.000 (incluye espectáculos)",
+        "walking": "Moderado — terrenos amplios; senderos llanos a suavemente ondulados"
+      },
+      "convenience": {
+        "restroom": "Múltiples, señalizados",
+        "parking": "Aparcamiento dedicado — turismos ₩2.000, SUV ₩3.000; zona para autocares"
+      },
+      "smartNotes": {
+        "photo": "Las dos últimas semanas de octubre son el punto álgido del ginkgo + arce dorado. Sets de boda tradicional.",
+        "facilities": "Puestos de mercado callejero tradicional (pizza de queso Imsil, tteok). Alquiler de hanbok disponible.",
+        "tip": "Comprueba el horario de espectáculos en inglés a la entrada — incluye Jultagi (UNESCO), boda y samulnori."
+      },
+      "_poi_meta": {
+        "poi_key": "korean_folk_village_yongin",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea",
+          "HereKoreaTravel",
+          "Wikipedia",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Korean Folk Village official listing)",
+          "Korean Folk Village Yongin (koreanfolk.co.kr — operating hours + festival schedule + admission)",
+          "UNESCO Intangible Cultural Heritage of Humanity (Jultagi tightrope walking — 2011 inscription)",
+          "Wikipedia (Korean Folk Village — 245 acres / 260 traditional houses / 1974 founding)",
+          "Visit Korea KTO Sageuk K-Drama Filming Locations Guide (Daejanggeum/Jewel-in-the-Palace + Sungkyunkwan Scandal)"
+        ],
+        "note": "Reference fix: Phase 1 used poi_key 'korean_folk_village'; KB canonical key is 'korean_folk_village_yongin'."
+      }
+    },
+    {
+      "number": 5,
+      "time": "≈ 15:30",
+      "duration": "75 min",
+      "name": "Biblioteca Starfield de Suwon",
+      "category": "Biblioteca de 4 plantas y 22 m de altura dentro del mayor centro comercial Starfield de Corea",
+      "description": "**Starfield Library Suwon** — dentro de **Starfield Suwon, el centro comercial Starfield insignia de segunda generación de Shinsegae, abierto el 26 de enero de 2024** como el quinto y mayor Starfield de Corea. La biblioteca es un **atrio de 4 plantas y 22 m de altura** con paredes completamente revestidas de libros que actúa como el corazón visual del centro comercial. El concepto de 'Starfield Library' fue desarrollado originalmente en el Starfield COEX Mall (Seúl, 2017), donde se convirtió en el espacio más fotografiado de la capital; la versión de Suwon amplía la escala original. La biblioteca alberga colecciones temáticas, sillones de lectura, una sala para eventos y una cafetería con vistas al atrio. **Entrada gratuita.** El Starfield Suwon en su conjunto incluye más de 600 tiendas, cines, zona de restauración y parque acuático.",
+      "highlights": [
+        "**Atrio de 22 m** revestido de libros — el espacio más fotografiado del nuevo Starfield",
+        "**Abierto el 26 de enero de 2024** — el mayor Starfield de Corea",
+        "Basado en el concepto del Starfield COEX de Seúl (2017), ampliado",
+        "Cafetería con vistas al atrio + zona de lectura + eventos",
+        "**Entrada gratuita**"
+      ],
+      "timeUsed": [
+        "Biblioteca (atrio + colecciones + fotografía) — ~40-50 min",
+        "Zona de restauración / cafetería (opcional) — ~20-30 min adicionales"
+      ],
+      "whyOnRoute": "La Biblioteca Starfield cierra el día con el contraste perfecto: del Jeju histórico y analógico del siglo XVIII a la Corea moderna del siglo XXI.",
+      "visitBasics": {
+        "hours": "Centro comercial 10:00-22:00; biblioteca accesible durante todo el horario del centro",
+        "closed": "1-2 días de cierre al mes (normalmente lunes — verificar online antes de la visita)",
+        "admission": "**Biblioteca GRATIS** (entrada al centro comercial gratuita; compras a cargo del visitante; parque acuático Aquafield ~₩28.000 aparte)",
+        "walking": "Fácil — escaleras mecánicas y ascensores en todos los pisos; acceso para silla de ruedas y cochecito en toda la instalación"
+      },
+      "convenience": {
+        "restroom": "Múltiples baños en cada planta; zona de cambio de pañales en aseos familiares",
+        "parking": "Aparcamiento subterráneo ~5.000 plazas; 3 horas gratis con compra de ₩30.000 o más; zona para autocares"
+      },
+      "smartNotes": {
+        "photo": "**Atrio central de la biblioteca con estanterías de 22 metros** — la foto representativa desde la galería de la 4.ª planta.",
+        "facilities": "Food hall Eatopia B1 (30+ restaurantes ₩5.000-40.000), Toy Kingdom 4.ª planta, parque acuático Aquafield B1-2.",
+        "tip": "**La biblioteca es GRATIS** — atracción de valor excepcional. **Servicio de autobús gratuito Starfield desde la salida de la Estación Suwon** (3 min a pie desde la parada)."
+      },
+      "_poi_meta": {
+        "poi_key": "starfield_library_suwon",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Starfield official",
+          "VisitKorea",
+          "Shinsegae press release",
+          "BCHO Partners",
+          "Starfield Suwon official (starfield.co.kr/suwon — opening date 2024-01-26 + library 4F-7F + free admission)",
+          "Shinsegae Property press release (Jan 2024 grand opening + 5th Starfield mall + 2nd-generation flagship concept)",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Starfield Library Suwon listing)",
+          "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
+          "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "≈ 17:00",
+      "duration": "60 min",
+      "name": "Regreso a Seúl",
+      "category": "Regreso — Suwon→Seúl por la Autopista Gyeongbu",
+      "description": "Regreso a Seúl con llegada a los **mismos puntos de recogida matutinos** (Hongik University Salida 8 o Myeongdong Salida 2/4). Llegada estimada: **18:00-18:30 h** según el tráfico.",
+      "highlights": [
+        "Llegada a Hongdae o Myeongdong",
+        "Hora estimada: **18:00-18:30 h**"
+      ],
+      "timeUsed": [
+        "Suwon → Seúl — ~50-60 min",
+        "Llegadas escalonadas"
+      ],
+      "whyOnRoute": "Logística de regreso — punto de bajada elegido por la comodidad del huésped y la certeza del horario.",
+      "visitBasics": {},
+      "convenience": {},
+      "smartNotes": {
+        "tip": "La llegada final depende del tráfico de viernes por la noche/fin de semana; en días muy concurridos la bajada puede retrasarse 30-45 min."
+      },
+      "_poi_meta": {
+        "poi_key": "OPS_return",
+        "verified": false,
+        "match": "operational_implicit",
+        "kb_version": "v1.14",
+        "verified_date": "2026-04-29",
+        "note": "Operational stop (return)"
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Seúl",
+      "type": "origin",
+      "theme": "Salida"
+    },
+    {
+      "name": "Fortaleza Hwaseong de Suwon",
+      "type": "primary",
+      "theme": "UNESCO Fortress"
+    },
+    {
+      "name": "Palacio Haenggung de Hwaseong",
+      "type": "primary",
+      "theme": "Heritage Palace"
+    },
+    {
+      "name": "Korean Folk Village (Yongin)",
+      "type": "primary",
+      "theme": "Aldea tradicional"
+    },
+    {
+      "name": "Biblioteca Starfield Suwon",
+      "type": "secondary",
+      "theme": "Modern Korea"
+    },
+    {
+      "name": "Seúl",
+      "type": "return",
+      "theme": "Regreso"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "Salida",
+      "duration": "≈ 1 hora",
+      "description": "Seúl (Hongdae/Myeongdong) → Suwon por Autopista Gyeongbu (~50 min)."
+    },
+    {
+      "phase": "Patrimonio joseonés",
+      "duration": "≈ 3 horas",
+      "description": "Paseo por la muralla de Hwaseong → Palacio Haenggung."
+    },
+    {
+      "phase": "Pueblo folclórico",
+      "duration": "≈ 2,5 horas",
+      "description": "Pueblo Folclórico Coreano de Yongin (260 edificios, demostraciones en vivo)."
+    },
+    {
+      "phase": "Biblioteca y regreso",
+      "duration": "≈ 1,5 horas",
+      "description": "Biblioteca Starfield de Suwon (atrio de 22 m) → regreso a Seúl."
+    },
+    {
+      "phase": "Regreso",
+      "duration": "≈ 1 hora",
+      "description": "Suwon → Seúl (Hongdae/Myeongdong), llegada ~18:00-18:30."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "El recorrido del día",
+    "subtitle": "Un triángulo compacto al sur de Seúl — Suwon (muralla UNESCO + palacio) → Yongin (pueblo folclórico) → Suwon (biblioteca Starfield). Cuatro facetas de la provincia de Gyeonggi que contrastan el pasado joseonés con el presente viral."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "Primera visita a la provincia de Gyeonggi desde Seúl",
+      "Aficionados a los dramas históricos y la cultura joseonesa",
+      "Fotógrafos (muralla de Hwaseong, pueblo folclórico, atrio de la Biblioteca Starfield)",
+      "Parejas y familias adultas que quieren variedad de experiencias en un día"
+    ],
+    "lessIdealFor": [
+      "Quienes priorizan Seúl sobre sus alrededores",
+      "Grupos con cochecito de bebé (Pueblo Folclórico es extenso y con terreno irregular)"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Por qué esta ruta funciona bien",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "El Pueblo Folclórico como contraste con el Haenggung",
+            "detail": "La muralla y el palacio muestran el poder real joseonés; el Pueblo Folclórico muestra la vida del pueblo. Juntos, son los dos lados del mismo período histórico."
+          },
+          {
+            "label": "La Biblioteca Starfield como cierre del día",
+            "detail": "Del siglo XVIII al siglo XXI: el atrio de libros de 22 m es el símbolo de la Corea contemporánea y el contraste perfecto con la Hwaseong."
+          },
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          },
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          }
+        ]
+      },
+      {
+        "title": "Por qué esta ruta funciona bien",
+        "icon": "footprints",
+        "iconBg": "bg-emerald-50/80",
+        "iconColor": "text-emerald-600",
+        "items": [
+          {
+            "label": "Hwaseong como punto clave del tour",
+            "detail": "La Fortaleza Hwaseong es el único Patrimonio Mundial de la provincia de Gyeonggi. Empezar con ella establece el contexto histórico joseonés para el resto del día."
+          },
+          {
+            "label": "El Pueblo Folclórico como contraste con el Haenggung",
+            "detail": "La muralla y el palacio muestran el poder real joseonés; el Pueblo Folclórico muestra la vida del pueblo. Juntos, son los dos lados del mismo período histórico."
+          },
+          {
+            "label": "La Biblioteca Starfield como cierre del día",
+            "detail": "Del siglo XVIII al siglo XXI: el atrio de libros de 22 m es el símbolo de la Corea contemporánea y el contraste perfecto con la Hwaseong."
+          }
+        ]
+      },
+      {
+        "title": "Por qué esta ruta funciona bien",
+        "icon": "cloud-sun",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          },
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          },
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "inclusions",
+      "title": "Qué está incluido",
+      "preview": "Transporte ida y vuelta en bus desde Seúl, guía en inglés y visita a Suwon Hwaseong…",
+      "content": [
+        "Minibús, guía de habla inglesa, traslados desde/hasta 2 puntos de Seúl, entradas (Hwaseong ₩1.000, Haenggung ₩1.500, Pueblo Folclórico ~₩20.000, Starfield gratuito).",
+        "No incluido: almuerzo (~₩12.000-18.000), alquiler de hanbok (opcional), propina."
+      ]
+    },
+    {
+      "id": "pickup",
+      "title": "Recogida y llegada",
+      "preview": "Estación de la Universidad Hongik (Salida 8) a ≈08:00 o Estación Myeongdong (Salida 2/4) a ≈08:20.",
+      "content": [
+        "Recogida: Hongik University Salida 8 (Hongdae) o Myeongdong Salida 2/4, ~09:00.",
+        "Llegada: mismos puntos, ~18:00-18:30."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "Caminata y terreno",
+      "preview": "Moderado.",
+      "content": [
+        "Moderado. Hwaseong: cuestas + escalones en la muralla (1-1,5 km). Haenggung: patio de piedra plano. Pueblo Folclórico: tierra y grava, mayormente plano (extenso). Starfield: interior plano.",
+        "Total: ~4-5 km."
+      ]
+    },
+    {
+      "id": "what",
+      "title": "Qué llevar",
+      "preview": "Zapatos cómodos de punta cerrada, sombrero en verano, ropa en capas",
+      "content": [
+        "Calzado cómodo con grip (muralla de Hwaseong).",
+        "Ropa con capas.",
+        "Protector solar y agua."
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "Cancelación",
+      "preview": "Cancelación gratuita hasta 24 horas antes del inicio del tour.",
+      "content": [
+        "Cancelación gratuita hasta 24 horas antes.",
+        "Mal tiempo / tifón: reembolso total."
+      ]
+    },
+    {
+      "id": "children",
+      "title": "Niños y accesibilidad",
+      "preview": "Niños bienvenidos — el pueblo folclórico es especialmente familiar, con espectáculo ecuestre",
+      "content": [
+        "A partir de 6 años recomendado.",
+        "Pueblo Folclórico: extenso y con terreno irregular — no recomendado para cochecito.",
+        "Biblioteca Starfield: accesible (ascensores)."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "Consultar notas de temporada"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "Consultar notas de temporada"
+    },
+    "_seasonalSummary": "Suwon y Yongin tienen un clima muy parecido al de Seúl (están unos 30 km al sur). Prepárate para veranos calurosos y húmedos e inviernos fríos y secos; la primavera y el otoño son las estaciones más agradables.",
+    "_seasonalTemperatures": [
+      {
+        "season": "Primavera (mar.–may.)",
+        "range": "5–22°C",
+        "notes": "Cerezos en flor junto a la muralla entre principios y mediados de abril."
+      },
+      {
+        "season": "Verano (jun.–ago.)",
+        "range": "22–32°C",
+        "notes": "Caluroso y húmedo; lleve protección solar y agua."
+      },
+      {
+        "season": "Otoño (sep.–nov.)",
+        "range": "8–22°C",
+        "notes": "Mejor temporada: cielos despejados y temperaturas suaves."
+      },
+      {
+        "season": "Invierno (dic.–feb.)",
+        "range": "-5 to 6°C",
+        "notes": "Puede hacer viento frío en la muralla; la biblioteca es interior y cálida."
+      }
+    ]
+  },
+  "seasonalVariations": [
+    {
+      "season": "Primavera",
+      "description": "Flores de cerezo junto a las murallas de Hwaseong (marzo-abril). Temperatura recomendado para el paseo por la muralla."
+    },
+    {
+      "season": "Verano",
+      "description": "Festival de agua en el Pueblo Folclórico. La Biblioteca Starfield ofrece aire acondicionado agradable en el calor del verano."
+    },
+    {
+      "season": "Otoño",
+      "description": "Follaje otoñal junto a la muralla de Hwaseong. El Pueblo Folclórico con luz dorada de otoño."
+    },
+    {
+      "season": "Invierno",
+      "description": "Nieve sobre la muralla de Hwaseong — uno de los paisajes invernales más clásicos de Corea. Menos turistas."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "Equipo local certificado",
+      "description": "Operador turístico coreano autorizado con seguro completo",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "4,9/5 con 79 reseñas. Equipo local certificado, guía de habla inglesa."
+    },
+    {
+      "icon": "route",
+      "title": "Especialistas en la ruta",
+      "description": "Itinerario ajustado a medida, no un circuito genérico",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "La llegada al Haenggung está sincronizada para aprovechar el momento óptimo. El Pueblo Folclórico incluye las demostraciones de horario fijo."
+    },
+    {
+      "icon": "users",
+      "title": "Grupo reducido cuidado",
+      "description": "Tamaño adecuado para la ruta",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "El Pueblo Folclórico es el único sitio en la Gran Seúl donde el tamaño del grupo marca una diferencia real — los senderos entre edificios son estrechos."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Inmediatamente",
+      "title": "Confirmación inmediata",
+      "detail": "Confirmación con resumen del itinerario.",
+      "description": "Confirmación instantánea con los detalles del punto de recogida en Seúl (Salida 8 Hongdae o Salida 2/4 Myeongdong)."
+    },
+    {
+      "timing": "12 horas antes",
+      "title": "Recordatorio 12 horas antes",
+      "detail": "Condiciones meteorológicas y horario de demostraciones del Pueblo Folclórico.",
+      "description": "Nota previa sobre el horario de actuaciones diarias del Korean Folk Village (espectáculo ecuestre, Jultagi, boda)."
+    },
+    {
+      "timing": "La noche anterior",
+      "title": "Información final de recogida",
+      "detail": "Punto de encuentro y contacto del guía.",
+      "description": "Hora final de recogida y cualquier nota de horario lunes/festivo confirmada la noche anterior."
+    },
+    {
+      "timing": "La mañana del tour",
+      "title": "Notas del día del tour",
+      "detail": "Horarios de las demostraciones del día en el Pueblo Folclórico.",
+      "description": "Mensaje matutino con resumen meteorológico y cualquier actualización de actuaciones del parque."
+    },
+    {
+      "timing": "Durante el tour",
+      "title": "Consejos parada a parada",
+      "detail": "Ángulos fotográficos en Hwaseong y dónde está el mural del \"Pez y Niño\" en Gamcheon.",
+      "description": "El guía narra la historia de ingeniería de Hwaseong (la grúa geojunggi de Jeong Yak-yong), el contexto de piedad filial del rey y el enfoque de historia viva del pueblo folclórico."
+    },
+    {
+      "timing": "Tras el tour",
+      "title": "Atención posventa",
+      "detail": "Solicitud de valoración tras el tour.",
+      "description": "Solicitud de valoración después del tour enviada tras la llegada a Seúl."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q1",
+      "question": "¿Las entradas están incluidas?",
+      "answer": "Sí. Fortaleza Hwaseong (₩1.000), Palacio Haenggung (₩1.500), Pueblo Folclórico Coreano (₩20.000 aprox.) y Biblioteca Starfield (gratuita) — todas incluidas en el precio del tour."
+    },
+    {
+      "id": "q2",
+      "question": "¿El almuerzo está incluido?",
+      "answer": "No. El almuerzo es por su cuenta en el Mercado Nammun de Suwon o en los restaurantes del Pueblo Folclórico (~₩12.000-18.000/persona). El guía le recomienda opciones."
+    },
+    {
+      "id": "q3",
+      "question": "¿Cuánto de la muralla de la fortaleza recorremos?",
+      "answer": "El tour cubre el tramo noroeste (~1-1,5 km) desde la puerta Janganmun hasta el Bastión Oeste, la sección más fotogénica y panorámica. La muralla completa mide 5,74 km y llevaría 2-3 horas a ritmo normal."
+    },
+    {
+      "id": "q4",
+      "question": "¿Vale la pena dedicar una hora entera a la Biblioteca Starfield?",
+      "answer": "Sí. El atrio de 22 m es el espacio más fotografiado del nuevo Starfield. Explore las cuatro plantas, fotografíe desde los diferentes ángulos y tome un café en la cafetería con vistas. Una hora pasa rápido."
+    },
+    {
+      "id": "q5",
+      "question": "¿Puedo alquilar un hanbok en el Pueblo Folclórico?",
+      "answer": "Sí. Hay puntos de alquiler de hanbok dentro del recinto (~₩15.000-25.000, no incluido). El guía le indicará dónde están."
+    },
+    {
+      "id": "q6",
+      "question": "¿Cuál es la diferencia con el tour Suwon + Waujeongsa?",
+      "answer": "Este tour (D1) incluye el Pueblo Folclórico Coreano de Yongin en lugar del Templo Waujeongsa. D3 tiene el templo budista pan-asiático, sin el pueblo folclórico. Comparten Hwaseong, Haenggung y Starfield."
+    },
+    {
+      "id": "first-time",
+      "question": "(Consulte las preguntas frecuentes al reservar)",
+      "answer": "Para más información, contacte a AtoC Korea al reservar."
+    },
+    {
+      "id": "walking",
+      "question": "¿Es difícil la caminata?",
+      "answer": "Moderado. La muralla de Hwaseong tiene algunas cuestas y escalones. El Pueblo Folclórico es extenso (terreno de tierra y grava, mayormente plano). La Biblioteca Starfield es interior y plana."
+    },
+    {
+      "id": "family",
+      "question": "¿Es adecuado para familias?",
+      "answer": "Sí para familias con niños de 6+ años. Las demostraciones del Pueblo Folclórico (acrobacia, música) son especialmente populares entre niños."
+    },
+    {
+      "id": "seniors",
+      "question": "¿Pueden participar personas mayores cómodamente?",
+      "answer": "Sí para mayores activos. La muralla de Hwaseong tiene algunas cuestas. El Pueblo Folclórico es extenso pero mayormente plano."
+    },
+    {
+      "id": "children",
+      "question": "¿Cuál es la edad mínima recomendada?",
+      "answer": "A partir de 6 años para aprovechar el ritmo de 10 horas y las demostraciones del Pueblo Folclórico."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 4.9,
+    "totalReviews": 79,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 73,
+        "percentage": 92.4
+      },
+      {
+        "stars": 4,
+        "count": 5,
+        "percentage": 6.3
+      },
+      {
+        "stars": 3,
+        "count": 1,
+        "percentage": 1.3
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0.0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "La disponibilidad se confirma en el paso de pago.",
+    "price": {
+      "amountLabel": "60.30",
+      "originalPriceUsd": 67,
+      "salePriceUsd": 60.3,
+      "discountPercent": 10,
+      "currency": "USD",
+      "per": "persona",
+      "priceSource": "direct_rate",
+      "priceNote": "Precio basado en la tarifa directa de AtoC Korea."
+    }
+  },
+  "pickup_dropoff": {
+    "type": "meeting_point",
+    "meeting_points": [
+      {
+        "name": "Estación Hongik University, salida 8",
+        "time": "08:00"
+      },
+      {
+        "name": "Myeongdong Station Exit 2 or 4",
+        "time": "08:30"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Estación Hongik University, salida 8",
+        "approx_time": "18:00"
+      },
+      {
+        "name": "Estación Myeongdong, salida 4",
+        "approx_time": "18:00"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "Llega 10 minutos antes. No se podrá esperar a quienes lleguen tarde y no habrá reembolso."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "seoul-suwon-hwaseong-folk-village-starfield-library",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "gyeonggi_south",
+    "vehicle_type": "coach",
+    "duration_hours": 10.0,
+    "region_tags": [
+      "gyeonggi_suwon",
+      "gyeonggi_goyang"
+    ],
+    "theme_tags": [
+      "unesco",
+      "fortress",
+      "folk_village",
+      "modern_landmark",
+      "mixed_culture"
+    ],
+    "poi_tags": [
+      "hwaseong_fortress",
+      "hwaseong_haenggung",
+      "korean_folk_village",
+      "starfield_library_suwon"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.8,
+    "scenic_level": 0.8,
+    "photo_level": 1.0,
+    "culture_level": 1.0,
+    "relax_level": 0.6,
+    "first_time_fit": 0.95,
+    "family_fit": 0.85,
+    "senior_fit": 0.7,
+    "couple_fit": 0.85,
+    "solo_traveler_fit": 0.85,
+    "active_traveler_fit": 0.5,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 1.0,
+    "young_kids_fit": 0.7,
+    "senior_active_fit": 0.6,
+    "senior_general_fit": 0.7,
+    "mobility_friendly_fit": 0.55,
+    "stroller_fit": 0.5,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.3,
+    "rain_fit": 0.65,
+    "value_for_money_fit": 0.95,
+    "iconic_landmark_fit": 1.0,
+    "cafe_fit": 0.7,
+    "food_fit": 0.6,
+    "nature_fit": 0.5,
+    "beach_fit": 0.0,
+    "nightlife_fit": 0.05,
+    "shopping_fit": 0.7,
+    "no_shopping_fit": 0.5,
+    "local_culture_fit": 1.0,
+    "storytelling_fit": 1.0,
+    "unesco_fit": 1.0,
+    "intangible_heritage_fit": 1.0,
+    "indoor_ratio": 0.4,
+    "weather_sensitivity": 0.4,
+    "comfort_level": 0.6,
+    "budget_fit": 0.7,
+    "premium_fit": 0.4,
+    "small_group_fit": 1.0,
+    "private_fit": 0.05,
+    "bus_fit": 1.0,
+    "price_band": "mid",
+    "pickup_base": "seoul_central",
+    "return_time_band": "18:00-19:30",
+    "duration_band": "10h",
+    "min_recommended_age": 10,
+    "hard_constraints": {
+      "avoidIf": [
+        "tight_same_day_departure"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "stroller_heavy_groups"
+      ]
+    },
+    "walking_notes": [
+      "Active walking day with some stairs and uneven terrain.",
+      "Average fitness expected.",
+      "Sturdy shoes with grip recommended."
+    ],
+    "keywords": [
+      "tour Suwon Hwaseong UNESCO Seúl",
+      "Pueblo Folclórico Coreano excursión",
+      "Biblioteca Starfield Suwon tour"
+    ],
+    "synonym_hints": [
+      "tour Gyeonggi desde Seúl",
+      "Suwon Yongin tour un día"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "seoul",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "hwaseong_fortress",
+      "hwaseong_haenggung",
+      "korean_folk_village",
+      "starfield_library_suwon"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.1,
+    "flexibility_fit": 0.3,
+    "fortress_fit": 1.0,
+    "joseon_palace_fit": 1.0,
+    "folk_culture_fit": 1.0,
+    "joseon_era_fit": 1.0,
+    "modern_architecture_fit": 0.85,
+    "library_fit": 1.0,
+    "k_drama_filming_fit": 0.8,
+    "history_culture_fit": 0.95,
+    "seasonal_fit": 0.85,
+    "romantic_fit": 0.6,
+    "premium_dining_fit": 0.4,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "suwon_hwaseong_route_fit": 1.0,
+    "suwon_central_anchor_fit": 1.0,
+    "seoul_to_suwon_30min_drive_fit": 1.0,
+    "seoul_central_hotel_pickup_fit": 1.0,
+    "return_to_seoul_central_fit": 1.0,
+    "small_group_format_fit": 1.0,
+    "fixed_schedule_format_fit": 1.0,
+    "unesco_world_heritage_anchor_fit": 1.0,
+    "unesco_world_heritage_1997_inscription_fit": 1.0,
+    "joseon_dynasty_late_18c_anchor_fit": 1.0,
+    "king_jeongjo_filial_piety_anchor_fit": 1.0,
+    "jeong_yak_yong_silhak_anchor_fit": 1.0,
+    "geojunggi_crane_engineering_anchor_fit": 1.0,
+    "uigwe_memory_of_world_2007_anchor_fit": 1.0,
+    "hwaseong_5_74km_perimeter_anchor_fit": 1.0,
+    "hwaseong_41_structures_anchor_fit": 1.0,
+    "naknamheon_only_original_1796_structure_fit": 1.0,
+    "joseon_royal_haenggung_largest_in_korea_fit": 1.0,
+    "royal_guard_changing_ceremony_anchor_fit": 1.0,
+    "muye_24_gi_martial_arts_anchor_fit": 1.0,
+    "korean_folk_village_k_drama_set_fit": 1.0,
+    "sageuk_filming_location_density_high_fit": 1.0,
+    "jewel_in_the_palace_daejanggeum_filming_fit": 1.0,
+    "sungkyunkwan_scandal_filming_fit": 1.0,
+    "moonlight_drawn_by_clouds_filming_fit": 1.0,
+    "unesco_jultagi_tightrope_walking_anchor_fit": 1.0,
+    "korea_first_open_air_folk_museum_fit": 1.0,
+    "korean_folk_village_245_acre_scale_fit": 1.0,
+    "korean_folk_village_260_houses_anchor_fit": 1.0,
+    "starfield_library_photo_stop_fit": 1.0,
+    "starfield_22m_bookshelves_anchor_fit": 1.0,
+    "starfield_4f_to_7f_atrium_void_fit": 1.0,
+    "douglas_coupland_the_planets_rooftop_anchor_fit": 1.0,
+    "bcho_partners_architecture_anchor_fit": 1.0,
+    "starfield_free_admission_photo_permitted_fit": 1.0,
+    "starfield_vinyl_lp_cafe_anchor_fit": 1.0,
+    "shinsegae_second_generation_flagship_fit": 1.0,
+    "instagram_photo_density_high_fit": 1.0,
+    "hwaseong_yeolcha_optional_advisory": true,
+    "free_starfield_shuttle_from_suwon_station_advisory": true,
+    "differentiates_from_suwon_gwangmyeong_cave_route": true,
+    "differentiates_from_suwon_waujeongsa_route": true,
+    "available_months_signature": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "signature_window_label": "Year-round (peak: April-May spring blossoms; October-November autumn foliage; December-February for crisp blue-sky fortress photography)",
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "culture",
+      "unesco",
+      "heritage",
+      "folk_village"
+    ],
+    "secondary_themes": [
+      "library",
+      "modern_architecture",
+      "joseon_era",
+      "k_drama"
+    ],
+    "best_for": [
+      "culture_lovers",
+      "families_with_teens",
+      "couples",
+      "solo_travelers",
+      "first_time_visitors",
+      "rainy_day"
+    ],
+    "not_recommended_for": [
+      "mobility_limited",
+      "shoppers_only",
+      "nightlife_seekers"
+    ],
+    "anchor_pois": [
+      "Suwon Hwaseong Fortress",
+      "Hwaseong Haenggung Palace",
+      "Korean Folk Village",
+      "Starfield Library Suwon"
+    ],
+    "competing_products": [
+      "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+      "seoul-suwon-hwaseong-waujeongsa-starfield",
+      "pocheon-sanjeong-lake-herb-island-art-valley"
+    ],
+    "anchor_poi_keys": [
+      "hwaseong_fortress",
+      "hwaseong_haenggung",
+      "korean_folk_village",
+      "starfield_library_suwon"
+    ],
+    "enrichment_batch": "17e",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.27",
+    "enrichment_target_kb_version": "1.28",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "12 substantive stop instances across 3 tours; Batch 11 era authoring → A-grade pv=6 PASS (universal source-attribution gap closed; Suwon-Hwaseong-route + Starfield-library-photo-stop + Korean-Folk-Village-K-drama-set + Gwangmyeong-cave-mining-heritage + Waujeongsa-syncretic-buddhism + Suwon-galbi-tongdak-street patterns introduced)"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "Murallas UNESCO, un palacio joseonés y una biblioteca de cuatro plantas —",
+        "headlineLine2": "cuatro contrastes de Gyeonggi en un día desde Seúl",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
+          "imagePosition": "center 35%",
+          "tagline": "La única fortaleza joseonesa, un pueblo folclórico y la biblioteca que arrasa en Instagram — todo en un día desde Seúl",
+          "pills": [
+            "UNESCO",
+            "Pueblo Folclórico",
+            "Biblioteca Starfield"
+          ],
+          "meta": {
+            "duration": "≈ 10 horas (recogida ~09:00)",
+            "region": "Suwon + Yongin (Gyeonggi)",
+            "stops": "6 paradas",
+            "rating": 4.9,
+            "ratingStars": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "Descripción"
+          },
+          {
+            "id": "itinerary",
+            "label": "Itinerario"
+          },
+          {
+            "id": "details",
+            "label": "Información práctica"
+          },
+          {
+            "id": "faq",
+            "label": "Preguntas frecuentes"
+          },
+          {
+            "id": "reviews",
+            "label": "Opiniones"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "Duración",
+            "value": "≈ 10 horas"
+          },
+          {
+            "icon": "users",
+            "label": "Grupo",
+            "value": "Grupo pequeño, minibús con guía de habla inglesa"
+          },
+          {
+            "icon": "map-pin",
+            "label": "Recogida",
+            "value": "Salida Hongik Univ. 8 (Hongdae) o Myeongdong 2/4 (metro)"
+          },
+          {
+            "icon": "footprints",
+            "label": "A pie",
+            "value": "Moderado — muralla de Hwaseong + pueblo folclórico extenso"
+          },
+          {
+            "icon": "ticket",
+            "label": "Entradas",
+            "value": "Incluidas (Hwaseong + Haenggung + Pueblo Folclórico)"
+          },
+          {
+            "icon": "utensils",
+            "label": "Almuerzo",
+            "value": "No incluido — Mercado Nammun o Pueblo Folclórico"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+            "alt": "Imagen de Fortaleza Hwaseong de Suwon — Patrimonio Mundial UNESCO 1997",
+            "caption": "Fortaleza Hwaseong de Suwon — Patrimonio Mundial UNESCO 1997",
+            "location": "Fortaleza Hwaseong, Suwon, Gyeonggi",
+            "atmosphere": "Muralla de 5,74 km con 48 instalaciones militares del período Joseon"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "alt": "Imagen de Palacio Haenggung — el mayor palacio de campaña real existente en Corea",
+            "caption": "Palacio Haenggung — el mayor palacio de campaña real existente en Corea",
+            "location": "Palacio Haenggung, Suwon, Gyeonggi",
+            "atmosphere": "El refugio real de Jeongjo: 576 salas, 13 años de peregrinaciones anuales"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "alt": "Imagen de Pueblo Folclórico Coreano — el primer y mayor museo al aire libre de Corea",
+            "caption": "Pueblo Folclórico Coreano — el primer y mayor museo al aire libre de Corea",
+            "location": "Pueblo Folclórico Coreano, Yongin, Gyeonggi",
+            "atmosphere": "Vida joseonesa en vivo: artesanos, actores y casas de paja en 991.735 m²"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "alt": "Imagen de Biblioteca Starfield de Suwon — el espacio más fotografiado del nuevo Starfield",
+            "caption": "Biblioteca Starfield de Suwon — el espacio más fotografiado del nuevo Starfield",
+            "location": "Biblioteca Starfield, Starfield Suwon Mall, Suwon",
+            "atmosphere": "Corea contemporánea: el atrio de libros más alto del país en el mayor Starfield"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "alt": "Imagen de Starfield Library Suwon — estanterías de 22 m",
+            "caption": "Starfield Library Suwon — estanterías de 22 m",
+            "location": "Biblioteca Starfield Suwon, Yeongtong-gu, Suwon",
+            "atmosphere": "Starfield de 2ª generación de Shinsegae, inaugurado en enero de 2024; entrada gratuita; zona de escucha de vinilo"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "≈ 08:00",
+            "duration": "10 min",
+            "name": "Salida desde Seúl",
+            "category": "Salida — 2 puntos de recogida en Seúl centro",
+            "description": "Recogida en uno de dos puntos centrales de Seúl: **Salida 8 de la Estación Hongik University (Hongdae, Línea 2/Aeropuerto)** para huéspedes en Hongdae/Mapo-gu; **Salida 2 o 4 de la Estación Myeongdong (Línea 4)** para el centro de Seúl/Namdaemun/Namsan. Minibús de grupo pequeño hacia Suwon por la Autopista Gyeongbu (~50-60 min).",
+            "highlights": [
+              "2 puntos de recogida — Hongik University Salida 8 (Hongdae) o Myeongdong Salida 2/4",
+              "Minibús grupo pequeño, guía de habla inglesa",
+              "Suwon por la Autopista Gyeongbu — ~50-60 min"
+            ],
+            "timeUsed": [
+              "Recogida Hongdae / Myeongdong",
+              "Desplazamiento a Suwon — ~50-60 min"
+            ],
+            "whyOnRoute": "Una salida de Seúl a las 09:00 sitúa al grupo en la Fortaleza Hwaseong antes de las multitudes.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {
+              "tip": "Lleva una capa ligera — el aire acondicionado del autocar puede ser intenso. Parada de baño a mitad de camino en un área de servicio."
+            },
+            "_poi_meta": {
+              "poi_key": "OPS_seoul_pickup_default",
+              "verified": false,
+              "match": "operational_default",
+              "kb_version": "v1.14",
+              "verified_date": "2026-04-29",
+              "note": "Operational pickup — Seoul departure; not a sightseeing POI"
+            }
+          },
+          {
+            "number": 2,
+            "time": "≈ 09:30",
+            "duration": "75 min",
+            "name": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO)",
+            "category": "Patrimonio Mundial UNESCO (1997) — La única ciudad-fortaleza joseonesa con registro de construcción completo",
+            "description": "**Suwon Hwaseong — Patrimonio Mundial UNESCO desde 1997** — es la única ciudad-fortaleza amurallada de la época Joseon en Corea conservada con su **registro de construcción original de 10 volúmenes** ('Hwaseong Seongyeok Uigwe', también Patrimonio Documental UNESCO 2007). Construida entre **1789 y 1797** por orden del rey **Jeongjo** (r. 1776-1800), el monarca reformista de la Ilustración joseonesa, como homenaje a su padre el Príncipe Sado — ejecutado injustamente — y como nuevo centro de poder fuera de la corrupta corte de Hanseong. Las murallas miden **5,74 km de longitud total** con 48 instalaciones militares (portalones, bastiones, garitas, puertas de agua, fosos). El tour cubre el **tramo noroeste** (Puerta Janganmun → Puerta Hwaseomun → Bastión Oeste, ~1-1,5 km), el más fotogénico y con mejor perspectiva sobre el casco histórico de Suwon. **Entrada adultos ₩1.000** (incluida).",
+            "highlights": [
+              "**Patrimonio Mundial UNESCO 1997** — registro documental también en UNESCO 2007",
+              "Construida **1789-1797** por el rey Jeongjo para honrar a su padre ejecutado",
+              "Murallas de **5,74 km** con 48 instalaciones militares",
+              "Tramo noroeste: **Janganmun → Hwaseomun → Bastión Oeste** (~1-1,5 km)",
+              "**Entrada ₩1.000** (incluida)"
+            ],
+            "timeUsed": [
+              "Paseo por el tramo noroeste de la muralla — ~75-90 min"
+            ],
+            "whyOnRoute": "Hwaseong es el visita cultural clave del tour: la única ciudad-fortaleza joseonesa con registro de construcción completo. Sus murallas al amanecer son únicas en Corea.",
+            "visitBasics": {
+              "hours": "Sendero de la muralla 24 horas (sin puertas); recomendado 09:00-18:00 verano / 09:00-17:00 invierno",
+              "closed": "Abierto todo el año (Tranvía Hwaseong cerrado los lunes)",
+              "admission": "Adultos ₩1.000 / Jóvenes ₩700 / Niños ₩500 (GRATIS: menores de 6, mayores de 65, con hanbok, último miércoles del mes)",
+              "walking": "Moderado — la muralla tiene tramos empinados en Seojangdae; escaleras en las puertas; algunas secciones no accesibles en silla de ruedas"
+            },
+            "convenience": {
+              "restroom": "En Janganmun, Hwaseomun, Paldalmun y Yeonmudae",
+              "parking": "Bajada del autocar en el aparcamiento de Janganmun; aparcamiento designado para autocares en Yeonmudae"
+            },
+            "smartNotes": {
+              "photo": "**Hwahongmun (compuerta norte)** con 7 arcos sobre el arroyo Suwoncheon — la foto representativa, mejor a primera hora de la mañana o al atardecer para reflejos.",
+              "facilities": "Centros de información turística en Janganmun, Paldalmun y la plaza Hwaseong Haenggung. Señalización bilingüe inglés-coreano. Tranvía Hwaseong (₩1.500 ida y vuelta).",
+              "tip": "Calzado cómodo — las piedras de la muralla son irregulares. Las tiendas de alquiler de hanbok en la plaza Haenggung ofrecen entrada GRATUITA."
+            },
+            "_poi_meta": {
+              "poi_key": "hwaseong_fortress",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO WHC",
+                "VisitKorea",
+                "KoreaToDo",
+                "Suwon CVB",
+                "UNESCO World Heritage Centre — Suwon Hwaseong (Criteria ii/iii inscription, 1997)",
+                "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Hwaseong Fortress + Hwaseong Seongyeok Uigwe Memory of the World 2007)",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Suwon Hwaseong Fortress official listing)",
+                "Suwon City Tourism (suwon.go.kr/tour — Hwaseong Yeolcha trolley + admission + opening hours)",
+                "Wikipedia (Hwaseong Fortress — Jeong Yak-yong + Geojunggi crane + 5.74 km perimeter + 41 structures)"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:00",
+            "duration": "75 min",
+            "name": "Palacio Haenggung de Hwaseong",
+            "category": "El mayor palacio haenggung (residencia de campaña real) existente en Corea",
+            "description": "**Hwaseong Haenggung — el mayor haenggung (palacio de campaña real) existente en Corea** — fue construido entre **1789 y 1796** por el rey Jeongjo como parte del plan urbanístico unificado de Hwaseong. Los *haenggung* son palacios temporales donde el rey se alojaba durante las visitas al campo; Hwaseong Haenggung, con **576 salas originales**, es con diferencia el más grande de todos los existentes. Jeongjo lo utilizó durante **13 años consecutivos (1789-1800)** en su peregrinación anual a la tumba de su padre. Durante la ocupación japonesa (1910-1945) fue reconvertido en hospital municipal y sufrió daños severos; restaurado entre **1996 y 2003** con los planos originales. Escenario habitual de **dramas históricos coreanos** ('Yi San', 'Dong Yi'). **Entrada adultos ₩1.500** (incluida).",
+            "highlights": [
+              "**El mayor haenggung existente en Corea** — 576 salas originales",
+              "Jeongjo lo usó **13 años consecutivos** para peregrinar a la tumba de su padre",
+              "Reconvertido en hospital japonés (1910-1945), **restaurado 1996-2003**",
+              "Escenario habitual de dramas históricos coreanos",
+              "**Entrada ₩1.500** (incluida)"
+            ],
+            "timeUsed": [
+              "Pabellones principales + patio central + fotografía — ~50 min"
+            ],
+            "whyOnRoute": "El Haenggung cierra el relato de Jeongjo: la muralla fue su declaración política; el palacio fue su refugio emocional. Juntos, cuentan la historia humana detrás de la UNESCO.",
+            "visitBasics": {
+              "hours": "09:00-18:00 (última entrada 17:30); horario de tarde may-oct 18:00-21:00",
+              "closed": "Abierto todo el año",
+              "admission": "Adulto ₩1.500 / Joven ₩1.000 / Niño ₩700; Fortaleza + Palacio combinado ₩3.500; GRATIS hanbok/65+/6 años-",
+              "walking": "Fácil — terrenos del palacio mayormente llanos con algunos escalones entre patios"
+            },
+            "convenience": {
+              "restroom": "En la entrada principal, cerca de Bongsudang y en la Plaza Haenggung",
+              "parking": "Aparcamiento público Hwaseong Haenggung; aparcamientos de pago en la Plaza Haenggung"
+            },
+            "smartNotes": {
+              "photo": "**Sala del trono Bongsudang** — la foto representativa del palacio. **Naknamheon** — el único edificio original.",
+              "facilities": "Centro de información, aseos, tienda de regalos. Cafés y tiendas de alquiler de hanbok en la Plaza Haenggung.",
+              "tip": "Programa la llegada para la **Ceremonia de cambio de guardia mar-dom 11:00 (GRATIS)**. El hanbok da entrada gratuita."
+            },
+            "_poi_meta": {
+              "poi_key": "hwaseong_haenggung",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea",
+                "Wikipedia",
+                "Suwon CVB",
+                "Referencia de mercado",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Hwaseong Haenggung official listing)",
+                "Cultural Heritage Administration / Korea Heritage Service (cha.go.kr — Hwaseong Haenggung Historic Site No. 478)",
+                "Suwon City Tourism (suwon.go.kr/tour — Royal Guard Changing Ceremony + Mu-ye 24-gi schedule)",
+                "Wikipedia (Hwaseong Haenggung — Naknamheon-only-original-structure + 576-kan scale)",
+                "Visit Suwon CVB (visitsuwon.org — Suwon Pass combined ticket + Haenggung Square facilities)"
+              ]
+            }
+          },
+          {
+            "number": 4,
+            "time": "≈ 12:30",
+            "duration": "120 min",
+            "name": "Pueblo Folclórico Coreano (Yongin)",
+            "category": "El primer y mayor museo al aire libre de cultura tradicional de Corea — 991.735 m²",
+            "description": "**Pueblo Folclórico Coreano — el primer y mayor museo al aire libre de cultura tradicional de Corea**, con ~991.735 m² (245 acres) de terreno en un valle natural de Yongin. Inaugurado en **1974**, el recinto reproduce más de **260 edificios** de la época Joseon: aldeas de agricultores, residencias de la aristocracia *yangban*, oficinas de gobierno, tabernas de *makgeolli*, molinos de agua, herreros, boticas y templos. Los intérpretes costumed realizan demostraciones en vivo de artesanías tradicionales (cerámica, costura, fabricación de papel *hanji*). Escenario habitual de **dramas históricos** ('Jumong', 'Daejanggeum', 'Queen Seondeok'). Las **demostraciones de acrobacia en cuerda floja** (*jultagi*) y **música campesina** (*nongak*) tienen lugar a horas fijas. **Alquiler de hanbok** disponible en el recinto (opcional, ~₩15.000-25.000).",
+            "highlights": [
+              "**El primer y mayor museo al aire libre de Corea** — 260+ edificios en 991.735 m²",
+              "Inaugurado en **1974** — 50 años documentando la vida joseonesa",
+              "Demostraciones en vivo: acrobacia en cuerda floja, música campesina, artesanías",
+              "Escenario de 'Jumong', 'Daejanggeum', 'Queen Seondeok'",
+              "**Alquiler de hanbok** disponible (opcional, ~₩15.000-25.000)"
+            ],
+            "timeUsed": [
+              "Pueblo folclórico — ~90-120 min"
+            ],
+            "whyOnRoute": "El Pueblo Folclórico es la contraparte rural del Haenggung: la vida cotidiana joseonesa frente al poder real. Los 260 edificios son la inmersión más completa en la Corea tradicional disponible desde Seúl.",
+            "visitBasics": {
+              "hours": "Lun-Jue 10:00-18:00; Vie-Dom y festivos 10:00-22:00 (invierno más corto)",
+              "closed": "Abierto todo el año",
+              "admission": "Adulto ₩37.000 / Joven ₩32.000 / Niño ₩26.000 (incluye espectáculos)",
+              "walking": "Moderado — terrenos amplios; senderos llanos a suavemente ondulados"
+            },
+            "convenience": {
+              "restroom": "Múltiples, señalizados",
+              "parking": "Aparcamiento dedicado — turismos ₩2.000, SUV ₩3.000; zona para autocares"
+            },
+            "smartNotes": {
+              "photo": "Las dos últimas semanas de octubre son el punto álgido del ginkgo + arce dorado. Sets de boda tradicional.",
+              "facilities": "Puestos de mercado callejero tradicional (pizza de queso Imsil, tteok). Alquiler de hanbok disponible.",
+              "tip": "Comprueba el horario de espectáculos en inglés a la entrada — incluye Jultagi (UNESCO), boda y samulnori."
+            },
+            "_poi_meta": {
+              "poi_key": "korean_folk_village_yongin",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea",
+                "HereKoreaTravel",
+                "Wikipedia",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Korean Folk Village official listing)",
+                "Korean Folk Village Yongin (koreanfolk.co.kr — operating hours + festival schedule + admission)",
+                "UNESCO Intangible Cultural Heritage of Humanity (Jultagi tightrope walking — 2011 inscription)",
+                "Wikipedia (Korean Folk Village — 245 acres / 260 traditional houses / 1974 founding)",
+                "Visit Korea KTO Sageuk K-Drama Filming Locations Guide (Daejanggeum/Jewel-in-the-Palace + Sungkyunkwan Scandal)"
+              ],
+              "note": "Reference fix: Phase 1 used poi_key 'korean_folk_village'; KB canonical key is 'korean_folk_village_yongin'."
+            }
+          },
+          {
+            "number": 5,
+            "time": "≈ 15:30",
+            "duration": "75 min",
+            "name": "Biblioteca Starfield de Suwon",
+            "category": "Biblioteca de 4 plantas y 22 m de altura dentro del mayor centro comercial Starfield de Corea",
+            "description": "**Starfield Library Suwon** — dentro de **Starfield Suwon, el centro comercial Starfield insignia de segunda generación de Shinsegae, abierto el 26 de enero de 2024** como el quinto y mayor Starfield de Corea. La biblioteca es un **atrio de 4 plantas y 22 m de altura** con paredes completamente revestidas de libros que actúa como el corazón visual del centro comercial. El concepto de 'Starfield Library' fue desarrollado originalmente en el Starfield COEX Mall (Seúl, 2017), donde se convirtió en el espacio más fotografiado de la capital; la versión de Suwon amplía la escala original. La biblioteca alberga colecciones temáticas, sillones de lectura, una sala para eventos y una cafetería con vistas al atrio. **Entrada gratuita.** El Starfield Suwon en su conjunto incluye más de 600 tiendas, cines, zona de restauración y parque acuático.",
+            "highlights": [
+              "**Atrio de 22 m** revestido de libros — el espacio más fotografiado del nuevo Starfield",
+              "**Abierto el 26 de enero de 2024** — el mayor Starfield de Corea",
+              "Basado en el concepto del Starfield COEX de Seúl (2017), ampliado",
+              "Cafetería con vistas al atrio + zona de lectura + eventos",
+              "**Entrada gratuita**"
+            ],
+            "timeUsed": [
+              "Biblioteca (atrio + colecciones + fotografía) — ~40-50 min",
+              "Zona de restauración / cafetería (opcional) — ~20-30 min adicionales"
+            ],
+            "whyOnRoute": "La Biblioteca Starfield cierra el día con el contraste perfecto: del Jeju histórico y analógico del siglo XVIII a la Corea moderna del siglo XXI.",
+            "visitBasics": {
+              "hours": "Centro comercial 10:00-22:00; biblioteca accesible durante todo el horario del centro",
+              "closed": "1-2 días de cierre al mes (normalmente lunes — verificar online antes de la visita)",
+              "admission": "**Biblioteca GRATIS** (entrada al centro comercial gratuita; compras a cargo del visitante; parque acuático Aquafield ~₩28.000 aparte)",
+              "walking": "Fácil — escaleras mecánicas y ascensores en todos los pisos; acceso para silla de ruedas y cochecito en toda la instalación"
+            },
+            "convenience": {
+              "restroom": "Múltiples baños en cada planta; zona de cambio de pañales en aseos familiares",
+              "parking": "Aparcamiento subterráneo ~5.000 plazas; 3 horas gratis con compra de ₩30.000 o más; zona para autocares"
+            },
+            "smartNotes": {
+              "photo": "**Atrio central de la biblioteca con estanterías de 22 metros** — la foto representativa desde la galería de la 4.ª planta.",
+              "facilities": "Food hall Eatopia B1 (30+ restaurantes ₩5.000-40.000), Toy Kingdom 4.ª planta, parque acuático Aquafield B1-2.",
+              "tip": "**La biblioteca es GRATIS** — atracción de valor excepcional. **Servicio de autobús gratuito Starfield desde la salida de la Estación Suwon** (3 min a pie desde la parada)."
+            },
+            "_poi_meta": {
+              "poi_key": "starfield_library_suwon",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Starfield official",
+                "VisitKorea",
+                "Shinsegae press release",
+                "BCHO Partners",
+                "Starfield Suwon official (starfield.co.kr/suwon — opening date 2024-01-26 + library 4F-7F + free admission)",
+                "Shinsegae Property press release (Jan 2024 grand opening + 5th Starfield mall + 2nd-generation flagship concept)",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Starfield Library Suwon listing)",
+                "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
+                "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
+              ]
+            }
+          },
+          {
+            "number": 6,
+            "time": "≈ 17:00",
+            "duration": "60 min",
+            "name": "Regreso a Seúl",
+            "category": "Regreso — Suwon→Seúl por la Autopista Gyeongbu",
+            "description": "Regreso a Seúl con llegada a los **mismos puntos de recogida matutinos** (Hongik University Salida 8 o Myeongdong Salida 2/4). Llegada estimada: **18:00-18:30 h** según el tráfico.",
+            "highlights": [
+              "Llegada a Hongdae o Myeongdong",
+              "Hora estimada: **18:00-18:30 h**"
+            ],
+            "timeUsed": [
+              "Suwon → Seúl — ~50-60 min",
+              "Llegadas escalonadas"
+            ],
+            "whyOnRoute": "Logística de regreso — punto de bajada elegido por la comodidad del huésped y la certeza del horario.",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {
+              "tip": "La llegada final depende del tráfico de viernes por la noche/fin de semana; en días muy concurridos la bajada puede retrasarse 30-45 min."
+            },
+            "_poi_meta": {
+              "poi_key": "OPS_return",
+              "verified": false,
+              "match": "operational_implicit",
+              "kb_version": "v1.14",
+              "verified_date": "2026-04-29",
+              "note": "Operational stop (return)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "Seúl",
+            "type": "origin",
+            "theme": "Salida"
+          },
+          {
+            "name": "Fortaleza Hwaseong de Suwon",
+            "type": "primary",
+            "theme": "UNESCO Fortress"
+          },
+          {
+            "name": "Palacio Haenggung de Hwaseong",
+            "type": "primary",
+            "theme": "Heritage Palace"
+          },
+          {
+            "name": "Korean Folk Village (Yongin)",
+            "type": "primary",
+            "theme": "Aldea tradicional"
+          },
+          {
+            "name": "Biblioteca Starfield Suwon",
+            "type": "secondary",
+            "theme": "Modern Korea"
+          },
+          {
+            "name": "Seúl",
+            "type": "return",
+            "theme": "Regreso"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "Salida",
+            "duration": "≈ 1 hora",
+            "description": "Seúl (Hongdae/Myeongdong) → Suwon por Autopista Gyeongbu (~50 min)."
+          },
+          {
+            "phase": "Patrimonio joseonés",
+            "duration": "≈ 3 horas",
+            "description": "Paseo por la muralla de Hwaseong → Palacio Haenggung."
+          },
+          {
+            "phase": "Pueblo folclórico",
+            "duration": "≈ 2,5 horas",
+            "description": "Pueblo Folclórico Coreano de Yongin (260 edificios, demostraciones en vivo)."
+          },
+          {
+            "phase": "Biblioteca y regreso",
+            "duration": "≈ 1,5 horas",
+            "description": "Biblioteca Starfield de Suwon (atrio de 22 m) → regreso a Seúl."
+          },
+          {
+            "phase": "Regreso",
+            "duration": "≈ 1 hora",
+            "description": "Suwon → Seúl (Hongdae/Myeongdong), llegada ~18:00-18:30."
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "El recorrido del día",
+          "subtitle": "Un triángulo compacto al sur de Seúl — Suwon (muralla UNESCO + palacio) → Yongin (pueblo folclórico) → Suwon (biblioteca Starfield). Cuatro facetas de la provincia de Gyeonggi que contrastan el pasado joseonés con el presente viral."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "Primera visita a la provincia de Gyeonggi desde Seúl",
+            "Aficionados a los dramas históricos y la cultura joseonesa",
+            "Fotógrafos (muralla de Hwaseong, pueblo folclórico, atrio de la Biblioteca Starfield)",
+            "Parejas y familias adultas que quieren variedad de experiencias en un día"
+          ],
+          "lessIdealFor": [
+            "Quienes priorizan Seúl sobre sus alrededores",
+            "Grupos con cochecito de bebé (Pueblo Folclórico es extenso y con terreno irregular)"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Por qué esta ruta funciona bien",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "El Pueblo Folclórico como contraste con el Haenggung",
+                  "detail": "La muralla y el palacio muestran el poder real joseonés; el Pueblo Folclórico muestra la vida del pueblo. Juntos, son los dos lados del mismo período histórico."
+                },
+                {
+                  "label": "La Biblioteca Starfield como cierre del día",
+                  "detail": "Del siglo XVIII al siglo XXI: el atrio de libros de 22 m es el símbolo de la Corea contemporánea y el contraste perfecto con la Hwaseong."
+                },
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                },
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                }
+              ]
+            },
+            {
+              "title": "Por qué esta ruta funciona bien",
+              "icon": "footprints",
+              "iconBg": "bg-emerald-50/80",
+              "iconColor": "text-emerald-600",
+              "items": [
+                {
+                  "label": "Hwaseong como punto clave del tour",
+                  "detail": "La Fortaleza Hwaseong es el único Patrimonio Mundial de la provincia de Gyeonggi. Empezar con ella establece el contexto histórico joseonés para el resto del día."
+                },
+                {
+                  "label": "El Pueblo Folclórico como contraste con el Haenggung",
+                  "detail": "La muralla y el palacio muestran el poder real joseonés; el Pueblo Folclórico muestra la vida del pueblo. Juntos, son los dos lados del mismo período histórico."
+                },
+                {
+                  "label": "La Biblioteca Starfield como cierre del día",
+                  "detail": "Del siglo XVIII al siglo XXI: el atrio de libros de 22 m es el símbolo de la Corea contemporánea y el contraste perfecto con la Hwaseong."
+                }
+              ]
+            },
+            {
+              "title": "Por qué esta ruta funciona bien",
+              "icon": "cloud-sun",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                },
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                },
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "inclusions",
+            "title": "Qué está incluido",
+            "preview": "Transporte ida y vuelta en bus desde Seúl, guía en inglés y visita a Suwon Hwaseong…",
+            "content": [
+              "Minibús, guía de habla inglesa, traslados desde/hasta 2 puntos de Seúl, entradas (Hwaseong ₩1.000, Haenggung ₩1.500, Pueblo Folclórico ~₩20.000, Starfield gratuito).",
+              "No incluido: almuerzo (~₩12.000-18.000), alquiler de hanbok (opcional), propina."
+            ]
+          },
+          {
+            "id": "pickup",
+            "title": "Recogida y llegada",
+            "preview": "Estación de la Universidad Hongik (Salida 8) a ≈08:00 o Estación Myeongdong (Salida 2/4) a ≈08:20.",
+            "content": [
+              "Recogida: Hongik University Salida 8 (Hongdae) o Myeongdong Salida 2/4, ~09:00.",
+              "Llegada: mismos puntos, ~18:00-18:30."
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "Caminata y terreno",
+            "preview": "Moderado.",
+            "content": [
+              "Moderado. Hwaseong: cuestas + escalones en la muralla (1-1,5 km). Haenggung: patio de piedra plano. Pueblo Folclórico: tierra y grava, mayormente plano (extenso). Starfield: interior plano.",
+              "Total: ~4-5 km."
+            ]
+          },
+          {
+            "id": "what",
+            "title": "Qué llevar",
+            "preview": "Zapatos cómodos de punta cerrada, sombrero en verano, ropa en capas",
+            "content": [
+              "Calzado cómodo con grip (muralla de Hwaseong).",
+              "Ropa con capas.",
+              "Protector solar y agua."
+            ]
+          },
+          {
+            "id": "cancellation",
+            "title": "Cancelación",
+            "preview": "Cancelación gratuita hasta 24 horas antes del inicio del tour.",
+            "content": [
+              "Cancelación gratuita hasta 24 horas antes.",
+              "Mal tiempo / tifón: reembolso total."
+            ]
+          },
+          {
+            "id": "children",
+            "title": "Niños y accesibilidad",
+            "preview": "Niños bienvenidos — el pueblo folclórico es especialmente familiar, con espectáculo ecuestre",
+            "content": [
+              "A partir de 6 años recomendado.",
+              "Pueblo Folclórico: extenso y con terreno irregular — no recomendado para cochecito.",
+              "Biblioteca Starfield: accesible (ascensores)."
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "Consultar notas de temporada"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "Consultar notas de temporada"
+          },
+          "_seasonalSummary": "Suwon y Yongin tienen un clima muy parecido al de Seúl (están unos 30 km al sur). Prepárate para veranos calurosos y húmedos e inviernos fríos y secos; la primavera y el otoño son las estaciones más agradables.",
+          "_seasonalTemperatures": [
+            {
+              "season": "Primavera (mar.–may.)",
+              "range": "5–22°C",
+              "notes": "Cerezos en flor junto a la muralla entre principios y mediados de abril."
+            },
+            {
+              "season": "Verano (jun.–ago.)",
+              "range": "22–32°C",
+              "notes": "Caluroso y húmedo; lleve protección solar y agua."
+            },
+            {
+              "season": "Otoño (sep.–nov.)",
+              "range": "8–22°C",
+              "notes": "Mejor temporada: cielos despejados y temperaturas suaves."
+            },
+            {
+              "season": "Invierno (dic.–feb.)",
+              "range": "-5 to 6°C",
+              "notes": "Puede hacer viento frío en la muralla; la biblioteca es interior y cálida."
+            }
+          ]
+        },
+        "seasonalVariations": [
+          {
+            "season": "Primavera",
+            "description": "Flores de cerezo junto a las murallas de Hwaseong (marzo-abril). Temperatura recomendado para el paseo por la muralla."
+          },
+          {
+            "season": "Verano",
+            "description": "Festival de agua en el Pueblo Folclórico. La Biblioteca Starfield ofrece aire acondicionado agradable en el calor del verano."
+          },
+          {
+            "season": "Otoño",
+            "description": "Follaje otoñal junto a la muralla de Hwaseong. El Pueblo Folclórico con luz dorada de otoño."
+          },
+          {
+            "season": "Invierno",
+            "description": "Nieve sobre la muralla de Hwaseong — uno de los paisajes invernales más clásicos de Corea. Menos turistas."
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Equipo local certificado",
+            "description": "Operador turístico coreano autorizado con seguro completo",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "4,9/5 con 79 reseñas. Equipo local certificado, guía de habla inglesa."
+          },
+          {
+            "icon": "route",
+            "title": "Especialistas en la ruta",
+            "description": "Itinerario ajustado a medida, no un circuito genérico",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "La llegada al Haenggung está sincronizada para aprovechar el momento óptimo. El Pueblo Folclórico incluye las demostraciones de horario fijo."
+          },
+          {
+            "icon": "users",
+            "title": "Grupo reducido cuidado",
+            "description": "Tamaño adecuado para la ruta",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "El Pueblo Folclórico es el único sitio en la Gran Seúl donde el tamaño del grupo marca una diferencia real — los senderos entre edificios son estrechos."
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Inmediatamente",
+            "title": "Confirmación inmediata",
+            "detail": "Confirmación con resumen del itinerario.",
+            "description": "Confirmación instantánea con los detalles del punto de recogida en Seúl (Salida 8 Hongdae o Salida 2/4 Myeongdong)."
+          },
+          {
+            "timing": "12 horas antes",
+            "title": "Recordatorio 12 horas antes",
+            "detail": "Condiciones meteorológicas y horario de demostraciones del Pueblo Folclórico.",
+            "description": "Nota previa sobre el horario de actuaciones diarias del Korean Folk Village (espectáculo ecuestre, Jultagi, boda)."
+          },
+          {
+            "timing": "La noche anterior",
+            "title": "Información final de recogida",
+            "detail": "Punto de encuentro y contacto del guía.",
+            "description": "Hora final de recogida y cualquier nota de horario lunes/festivo confirmada la noche anterior."
+          },
+          {
+            "timing": "La mañana del tour",
+            "title": "Notas del día del tour",
+            "detail": "Horarios de las demostraciones del día en el Pueblo Folclórico.",
+            "description": "Mensaje matutino con resumen meteorológico y cualquier actualización de actuaciones del parque."
+          },
+          {
+            "timing": "Durante el tour",
+            "title": "Consejos parada a parada",
+            "detail": "Ángulos fotográficos en Hwaseong y dónde está el mural del \"Pez y Niño\" en Gamcheon.",
+            "description": "El guía narra la historia de ingeniería de Hwaseong (la grúa geojunggi de Jeong Yak-yong), el contexto de piedad filial del rey y el enfoque de historia viva del pueblo folclórico."
+          },
+          {
+            "timing": "Tras el tour",
+            "title": "Atención posventa",
+            "detail": "Solicitud de valoración tras el tour.",
+            "description": "Solicitud de valoración después del tour enviada tras la llegada a Seúl."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "¿Las entradas están incluidas?",
+            "answer": "Sí. Fortaleza Hwaseong (₩1.000), Palacio Haenggung (₩1.500), Pueblo Folclórico Coreano (₩20.000 aprox.) y Biblioteca Starfield (gratuita) — todas incluidas en el precio del tour."
+          },
+          {
+            "id": "q2",
+            "question": "¿El almuerzo está incluido?",
+            "answer": "No. El almuerzo es por su cuenta en el Mercado Nammun de Suwon o en los restaurantes del Pueblo Folclórico (~₩12.000-18.000/persona). El guía le recomienda opciones."
+          },
+          {
+            "id": "q3",
+            "question": "¿Cuánto de la muralla de la fortaleza recorremos?",
+            "answer": "El tour cubre el tramo noroeste (~1-1,5 km) desde la puerta Janganmun hasta el Bastión Oeste, la sección más fotogénica y panorámica. La muralla completa mide 5,74 km y llevaría 2-3 horas a ritmo normal."
+          },
+          {
+            "id": "q4",
+            "question": "¿Vale la pena dedicar una hora entera a la Biblioteca Starfield?",
+            "answer": "Sí. El atrio de 22 m es el espacio más fotografiado del nuevo Starfield. Explore las cuatro plantas, fotografíe desde los diferentes ángulos y tome un café en la cafetería con vistas. Una hora pasa rápido."
+          },
+          {
+            "id": "q5",
+            "question": "¿Puedo alquilar un hanbok en el Pueblo Folclórico?",
+            "answer": "Sí. Hay puntos de alquiler de hanbok dentro del recinto (~₩15.000-25.000, no incluido). El guía le indicará dónde están."
+          },
+          {
+            "id": "q6",
+            "question": "¿Cuál es la diferencia con el tour Suwon + Waujeongsa?",
+            "answer": "Este tour (D1) incluye el Pueblo Folclórico Coreano de Yongin en lugar del Templo Waujeongsa. D3 tiene el templo budista pan-asiático, sin el pueblo folclórico. Comparten Hwaseong, Haenggung y Starfield."
+          },
+          {
+            "id": "first-time",
+            "question": "(Consulte las preguntas frecuentes al reservar)",
+            "answer": "Para más información, contacte a AtoC Korea al reservar."
+          },
+          {
+            "id": "walking",
+            "question": "¿Es difícil la caminata?",
+            "answer": "Moderado. La muralla de Hwaseong tiene algunas cuestas y escalones. El Pueblo Folclórico es extenso (terreno de tierra y grava, mayormente plano). La Biblioteca Starfield es interior y plana."
+          },
+          {
+            "id": "family",
+            "question": "¿Es adecuado para familias?",
+            "answer": "Sí para familias con niños de 6+ años. Las demostraciones del Pueblo Folclórico (acrobacia, música) son especialmente populares entre niños."
+          },
+          {
+            "id": "seniors",
+            "question": "¿Pueden participar personas mayores cómodamente?",
+            "answer": "Sí para mayores activos. La muralla de Hwaseong tiene algunas cuestas. El Pueblo Folclórico es extenso pero mayormente plano."
+          },
+          {
+            "id": "children",
+            "question": "¿Cuál es la edad mínima recomendada?",
+            "answer": "A partir de 6 años para aprovechar el ritmo de 10 horas y las demostraciones del Pueblo Folclórico."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 4.9,
+          "totalReviews": 79,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 73,
+              "percentage": 92.4
+            },
+            {
+              "stars": 4,
+              "count": 5,
+              "percentage": 6.3
+            },
+            {
+              "stars": 3,
+              "count": 1,
+              "percentage": 1.3
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0.0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0.0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "La disponibilidad se confirma en el paso de pago.",
+        "price": {
+          "amountLabel": "60.30",
+          "originalPriceUsd": 67,
+          "salePriceUsd": 60.3,
+          "discountPercent": 10,
+          "currency": "USD",
+          "per": "persona",
+          "priceSource": "direct_rate",
+          "priceNote": "Precio basado en la tarifa directa de AtoC Korea."
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      }
+    }
+  }
+}

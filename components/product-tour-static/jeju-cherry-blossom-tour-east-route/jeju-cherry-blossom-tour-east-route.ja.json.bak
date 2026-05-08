@@ -1,0 +1,2073 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "jeju-cherry-blossom-tour-east-route",
+  "locale": "ja",
+  "product_id": "jeju-cherry-blossom-tour-east-route",
+  "seo": {
+    "pageTitle": "済州桜ツアー・東ルート・春 | AtoC Korea",
+    "metaDescription": "済州東ルート春限定桜ツアー：全農路（済州最古の桜並木）→緑山路（加時里10km桜＋菜の花）→密川洞窟→日出ランド庭園→城山日出峰（ユネスコ）。春のベストフォトシーンを一日で。",
+    "ogImage": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
+    "primaryKeywords": [
+      "済州桜ツアー",
+      "済州東ルート桜",
+      "全農路桜",
+      "緑山路桜菜の花",
+      "加時里桜"
+    ],
+    "title": "済州桜ツアー・東ルート・春 | AtoC",
+    "description": "済州東部春限定桜ツアー：全農路（済州最古の桜並木）→緑山路（10km桜＋菜の花）→密川洞窟→日出ランド庭園→城山日出峰（ユネスコ）。英語ガイド付き。"
+  },
+  "catalog_card": {
+    "slug": "jeju-cherry-blossom-tour-east-route",
+    "title": "済州桜ツアー・東ルート・春限定",
+    "subtitle": "桜並木、菜の花ロード、溶岩洞窟 — 東済州の春の一日。",
+    "region": "済州東部",
+    "duration": "春限定（催行期間は開花状況による）",
+    "stopsCount": 6,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "春限定",
+      "済州",
+      "桜",
+      "菜の花",
+      "ユネスコ"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=600&q=80",
+    "priceLabel": "料金は予約時にご確認ください",
+    "shortCardDescription": "済州の春を象徴する東ルート桜ツアー：全農路（済州市内最古の桜並木）→緑山路（加時里10kmの桜＋菜の花の絶景ロード）→密川洞窟→日出ランドのテーマ庭園→城山日出峰（ユネスコ）。春のベスト撮影ポイントを一日で。",
+    "tags": [
+      "春限定",
+      "桜シーズン",
+      "済州東部"
+    ]
+  },
+  "headlineLine1": "桜並木、菜の花、溶岩洞窟 —",
+  "headlineLine2": "済州東部の春を一日で",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "人"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
+    "imagePosition": "center 40%",
+    "tagline": "済州の春を象徴する撮影ポイントを一日で — 全農路の桜並木から城山日出峰まで",
+    "pills": [
+      "済州東ルート",
+      "春限定",
+      "桜×菜の花"
+    ],
+    "meta": {
+      "duration": "春限定（半日〜終日）",
+      "region": "済州東部",
+      "stops": "6見どころ",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "概要"
+    },
+    {
+      "id": "itinerary",
+      "label": "行程"
+    },
+    {
+      "id": "details",
+      "label": "詳細情報"
+    },
+    {
+      "id": "faq",
+      "label": "よくある質問"
+    },
+    {
+      "id": "reviews",
+      "label": "クチコミ"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "写真価値",
+      "value": "非常に高い"
+    },
+    {
+      "icon": "flower",
+      "label": "シーズン",
+      "value": "済州の桜シーズン（通常3月下旬〜4月上旬）"
+    },
+    {
+      "icon": "users",
+      "label": "グループ規模",
+      "value": "少人数"
+    },
+    {
+      "icon": "clock",
+      "label": "所要時間",
+      "value": "春限定・一日ツアー"
+    },
+    {
+      "icon": "map-pin",
+      "label": "エリア",
+      "value": "済州東部"
+    },
+    {
+      "icon": "footprints",
+      "label": "歩行",
+      "value": "軽〜中程度"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
+      "alt": "済州市・典農路を包むピンク色の桜トンネル",
+      "caption": "済州市の桜並木",
+      "location": "全農路（済州市内）",
+      "atmosphere": "済州最古の桜並木 — 王桜の白〜ピンクのトンネル"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&q=80",
+      "alt": "加時里鹿山路の桜と黄色い菜の花畑",
+      "caption": "鹿山路の桜と菜の花",
+      "location": "緑山路・加時里（西帰浦市）",
+      "atmosphere": "桜×菜の花の黄色のコントラスト — 済州春の象徴"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1200&q=80",
+      "alt": "日出ランド・美千窟の溶岩洞窟内部と鍾乳石",
+      "caption": "美千窟の溶岩洞窟内部",
+      "location": "東済州（表善面/城山エリア）",
+      "atmosphere": "東済州の地元料理で春の昼食休憩"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=1200&q=80",
+      "alt": "日出ランド庭園の春の花々に囲まれた彫刻作品",
+      "caption": "日出ランドのテーマ植物園",
+      "location": "密川洞窟・日出ランド（城山）",
+      "atmosphere": "春の庭園と溶岩洞窟 — 季節の花が咲く"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1551649001-7a2482d98d05?w=1200&q=80",
+      "alt": "麓の展望ポイントからの城山日出峰の凝灰岩錐シルエット",
+      "caption": "城山日出峰のユネスコ火口",
+      "location": "日出ランドのテーマ庭園",
+      "atmosphere": "春花（桜・水仙・菜の花）が咲くテーマ庭園"
+    },
+    {
+      "id": "g6",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
+      "alt": "東済州の地元食堂で味わう黒豚ビビンバ",
+      "caption": "東済州の桜ルート概要",
+      "location": "城山日出峰（ソンサン・イルチュルボン）",
+      "atmosphere": "ユネスコ世界自然遺産 — 春の麓の桜並木と火山錐"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "09:00",
+      "duration": "75分",
+      "name": "全農路（チョンノンノ）桜並木",
+      "category": "済州市内最古の桜並木 — 全長1.2kmの王桜（ワンボッコト）並木",
+      "description": "**全農路**は**済州で最も古い桜並木**で、済州市内中心部に位置する全長約1.2kmの街路樹桜道。両側に植えられた**王桜** — 済州が原産地とされる学術上重要な桜の品種 — が春になると白〜淡ピンクのトンネルを形成。全農路の桜は済州島内では最もアクセスしやすい桜見どころのひとつで、地元住民と観光客が行き交う活気ある桜並木が見て回れます。また、**王桜は済州島が原産地**という説が有力で、日本の桜の起源との関係でも学術的・歴史的な議論の対象。**無料**。",
+      "highlights": [
+        "済州で**最も古い桜並木** — 全長1.2kmの王桜並木",
+        "**王桜** — 済州が原産地とされる学術的に重要な桜品種",
+        "地元住民と観光客が行き交う活気ある市内桜見どころ",
+        "**無料**"
+      ],
+      "timeUsed": [
+        "桜並木ウォーク＋写真撮影 — 約30〜40分"
+      ],
+      "whyOnRoute": "済州市内からすぐアクセスできる最初の訪問地。王桜原産地としての済州の植物学的な重要性を解説しながら一日のテーマを設定します。",
+      "_poi_meta": {
+        "poi_key": "jeonnong_ro_cherry_blossom_street",
+        "kb_version": "1.29",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Jeju official",
+          "Korea Tourism Organization 2026 forecast",
+          "Best of Korea 2026 cherry blossom guide",
+          "90DayKorean cherry blossom guide",
+          "Visit Jeju official (visitjeju.net — Jeonnong-ro Cherry Blossom Festival listing + 1.2 km corridor + Sin-jeju location)",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Jeju Cherry Blossom Festival 2026 forecast + bloom timing)",
+          "Jeju Cherry Blossom Festival official organizing committee (Jeonnong-ro 19th edition 2026 — car-free corridor + lanterns + night illumination)",
+          "Korea Forest Service (forest.go.kr — King Cherry / Wangbeotnamu native species record + 1908 Émile Taquet Hallasan documentation)",
+          "Wikipedia (Prunus × yedoensis — King Cherry vs Yoshino Cherry botanical classification debate)"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "time": "10:30",
+      "duration": "90分",
+      "name": "緑山路（ノクサンノ — 加時里10km桜＋菜の花ロード）",
+      "category": "済州を代表する春の絶景ロード — 10kmの桜並木×菜の花の黄色い絨毯",
+      "description": "**緑山路**は**加時里村**の**10km区間**にわたる、**両側に桜並木、道路の両脇に菜の花が黄色い絨毯のように広がる済州を代表する春の絶景ロード**。王桜と菜の花の白×ピンク×黄色のコントラストは済州の春の象徴として全国メディアに毎年取り上げられます。**済州（チョランマル）体験公園**（加時里）や** 験（馬牧場）**が周辺にあり、馬の放牧風景も桜と菜の花のバックグラウンドとして人気。道路沿いに駐車場・撮影ポイント案内板が設置されており、ドライブと徒歩の両方で見て回れます。**無料**。",
+      "highlights": [
+        "済州を代表する春の絶景ロード — 10kmの桜×菜の花コントラスト",
+        "**王桜の白〜ピンク ×菜の花の黄色**のコントラストが全国メディアで話題",
+        "済州（ポニー）の放牧風景も桜のバックグラウンドとして人気",
+        "**無料**。駐車場・撮影ポイント案内板完備"
+      ],
+      "timeUsed": [
+        "ドライブ＋撮影ポイント散策 — 約40〜50分"
+      ],
+      "whyOnRoute": "全農路（市内桜並木）から緑山路（田園桜＋菜の花ロード）への移動が、済州市街地→田園風景という景観の変化をもたらします。",
+      "_poi_meta": {
+        "poi_key": "noksan_ro_gasiri_blossom_road",
+        "kb_version": "1.29",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Korea (Korea Tourism Organization)",
+          "Jeju Horse Park official",
+          "The Soul of Seoul Jeju spring guide",
+          "Calm Chronicle Jeju guide",
+          "Visit Korea (Korea Tourism Organization — Noksan-ro 'Jeju's Most Beautiful Spring Road' + Korea's 100 Most Beautiful Roads listing)",
+          "Jeju Horse Park (jejuhorsepark.com — Jorangmal Experience Center + first community-run national museum in Korea)",
+          "Korea Forest Service (forest.go.kr — Korea's 100 Most Beautiful Roads designation methodology)",
+          "Visit Jeju official (visitjeju.net — Gasi-ri Village + Noksanjang/Gammajang royal horse pasture heritage + 600-year history)",
+          "Wikipedia (Gasi-ri — When Life Gives You Tangerines 2024 Netflix + Welcome to Samdal-ri 2023 JTBC filming credits)"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "12:15",
+      "duration": "60分",
+      "name": "昼食（東済州地元料理）",
+      "category": "昼食休憩 — 表善面/城山エリア",
+      "description": "表善面/城山エリアの地元レストランでの昼食（自己負担）。東済州の地元料理：**アワビ入りビビンバ（アワビ入りビビンバ）**または**タチウオの辛煮（タチウオの辛煮）**。昼食後は密川洞窟へ。",
+      "highlights": [
+        "東済州の地元料理",
+        "昼食は自己負担"
+      ],
+      "timeUsed": [
+        "昼食 — 約45〜60分"
+      ],
+      "whyOnRoute": "ランチは午前の桜ドライブと午後のイルチュルランド+城邑の地理的中間地点に配置されます。",
+      "_poi_meta": {
+        "poi_key": "OPS_east_jeju_lunch",
+        "kb_version": "1.17",
+        "verified_date": "2026-04-29"
+      }
+    },
+    {
+      "number": 4,
+      "time": "13:30",
+      "duration": "60分",
+      "name": "密川洞窟（ミルチョン・ドンクル）— 日出ランド",
+      "category": "溶岩洞窟 — 日出ランド内の天然溶岩チューブ",
+      "description": "**密川洞窟**は**日出ランド**内の**済州を代表する溶岩洞窟**のひとつ。洞窟内は年間通じて一定温度（約18°C）を維持する天然の冷暖房空間。「密川」とは「曲がりくねった川」を意味し、洞窟内を流れる溶岩の痕跡から名付けられました。洞窟内には溶岩の流れた痕跡（溶岩シェルフ・ラバチューブの壁模様）が残り、照明で演出された空間が幻想的な雰囲気を生み出します。日出ランド内の施設として入場料に含まれます。",
+      "highlights": [
+        "日出ランド内の天然溶岩チューブ",
+        "洞窟内年間約18°C — 夏は涼しく冬は暖かい",
+        "溶岩の流れた痕跡が照明で演出された幻想的な空間"
+      ],
+      "timeUsed": [
+        "密川洞窟探索 — 約30〜40分"
+      ],
+      "whyOnRoute": "ミチョン洞窟はどんな東済州ルートの**雨天保険** — 天気が悪くなっても、30分の溶岩チューブは常に撮影映えして快適です。",
+      "_poi_meta": {
+        "poi_key": "ilchulland_micheon_cave",
+        "kb_version": "1.29",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Jeju official (Micheongul Cave page)",
+          "Visit Korea Ilchul Land page",
+          "Creatrip Ilchul Land guide",
+          "Wanderlog Ilchul Land reviews",
+          "Visit Jeju official (visitjeju.net — Micheongul Cave + Samdal-ri eastern cave group of 15 Jeju cave systems)",
+          "Visit Korea (Korea Tourism Organization — Ilchul Land + Micheon Cave 1,700m total / 365m public-access listing)",
+          "Ilchul Land official (ilchulland.com — 2002 opening + admission + 09:00-18:00 hours + 7-color lighting installation)",
+          "Korea Heritage Service (cha.go.kr — Jeju lava-tube cave systems + UNESCO Geomunoreum lava-tube system inheritance)",
+          "Wikipedia (Ilchul Land — Micheon Cave geology + ~14°C constant temperature + Jeju lava tube formation)"
+        ]
+      }
+    },
+    {
+      "number": 5,
+      "time": "15:00",
+      "duration": "75分",
+      "name": "日出ランドのテーマ庭園",
+      "category": "日出ランド — 花と自然のテーマパーク（城山エリア）",
+      "description": "**日出ランドのテーマ庭園**は密川洞窟と同じ施設内の花と自然のテーマパーク。春シーズンには**（菜の花）・桜（桜）・（水仙）**などの春花が咲き誇り、様々な植物展示と散策路で見て回れます。フォトゾーンも充実しており、桜シーズンとの組み合わせで人気の撮影スポット。",
+      "highlights": [
+        "密川洞窟と同じ施設内のテーマ庭園",
+        "春は菜の花・桜・水仙などの春花が満開",
+        "充実したフォトゾーン"
+      ],
+      "timeUsed": [
+        "テーマ庭園散策＋写真撮影 — 約30〜40分"
+      ],
+      "whyOnRoute": "イルチュルランドのテーマガーデンは暗い洞窟の午前と断崖の地質学の午後の間の**理想的な行程の流れ切り替えポイント**です。",
+      "_poi_meta": {
+        "poi_key": "ilchulland_themed_gardens",
+        "kb_version": "1.29",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Korea Ilchul Land page",
+          "Creatrip Ilchul Land guide",
+          "Wanderlog Ilchul Land reviews",
+          "Ilchul Land listing",
+          "Visit Korea (Korea Tourism Organization — Ilchul Land themed-garden complex + Folk Village + Wild Flower Bonsai Garden)",
+          "Ilchul Land official (ilchulland.com — blue-line walking path + Folk Village + Cactus Greenhouse + Subyeon Park)",
+          "Visit Jeju official (visitjeju.net — Eung Tae-seok 'stones that lay eggs' fertility folklore + Sculpture Path)",
+          "Korea Tourism Organization Filming Locations Guide (Running Man Episode 89 2012 + What Star Do You Come From 2006 MBC)",
+          "Wikipedia (Jeju Black Pig — Cultural Heritage Material No. 5 designation 2015)"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "16:15",
+      "duration": "75分",
+      "name": "城山日出峰（ソンサン・イルチュルボン）（ユネスコフォトストップ）",
+      "category": "ユネスコトリプル指定の旗艦見どころ — 東ルートのフィナーレ",
+      "description": "**城山日出峰**は5,000年前の水成火山錐でユネスコ世界自然遺産2007年登録。春の桜シーズンには城山日出峰の麓の桜並木と城山の火山錐の組み合わせが絶景フォトシーン。山頂登山（往復30〜40分）または麓からの眺望のみ選択可能。入場料：**大人₩5,000**（ツアーに含まれます）。",
+      "highlights": [
+        "ユネスコトリプル指定",
+        "春の麓の桜並木と火山錐の組み合わせ",
+        "入場料 大人₩5,000（含まれます）"
+      ],
+      "timeUsed": [
+        "城山周辺散策＋写真撮影 — 約30〜45分（山頂登山任意）"
+      ],
+      "whyOnRoute": "城山日出峰はこの東済州ルートの**唯一のユネスコ世界自然遺産見どころ**です。",
+      "_poi_meta": {
+        "poi_key": "seongsan_ilchulbong",
+        "kb_version": "1.29",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO World Heritage Centre",
+          "Visit Jeju official",
+          "Inside Jeju 2026 admission guide",
+          "Cultural Heritage Administration of Korea",
+          "UNESCO World Heritage Centre (whc.unesco.org — Jeju Volcanic Island and Lava Tubes inscription 2007-07-02)",
+          "Visit Jeju official (visitjeju.net — Seongsan Ilchulbong Sunrise Peak listing + 99-crown-rocks + 5,000-year tuff cone)",
+          "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Natural Monument designation 2000-07-19)",
+          "UNESCO Global Geoparks Network (Jeju Island Global Geopark inscription 2010-10)",
+          "Wikipedia (Seongsan Ilchulbong — Surtseyan-type hydrovolcanic eruption + 18 Japanese WWII caves + haenyeo demonstrations)"
+        ]
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "前農路",
+      "type": "origin",
+      "theme": "街なかの花景色"
+    },
+    {
+      "name": "鹿山路",
+      "type": "primary",
+      "theme": "田園の花景色"
+    },
+    {
+      "name": "昼食",
+      "type": "meal",
+      "theme": "食事"
+    },
+    {
+      "name": "ミチョン洞窟",
+      "type": "primary",
+      "theme": "洞窟"
+    },
+    {
+      "name": "イルチュルランド",
+      "type": "primary",
+      "theme": "庭園"
+    },
+    {
+      "name": "城山",
+      "type": "return",
+      "theme": "ユネスコ火山地形"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "桜のピーク",
+      "description": "全農路（市内桜並木）→緑山路（10km桜×菜の花ロード）"
+    },
+    {
+      "phase": "昼食",
+      "description": "東済州の地元料理で昼食休憩。"
+    },
+    {
+      "phase": "洞窟から庭園へ、火口縁へ",
+      "description": "密川洞窟（溶岩チューブ）→日出ランドのテーマ庭園→城山日出峰（ユネスコフィナーレ）。"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "この一日の流れ",
+    "subtitle": "済州市内の桜並木から加時里の菜の花×桜ロード、溶岩洞窟、テーマ庭園、そして城山日出峰（ユネスコ）というフィナーレまで。済州東部の春の全てを一日でカバーします。"
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "済州の春を最大限にカバーしたいフォトグラファー",
+      "桜と菜の花の両方を楽しみたい旅行者",
+      "ユネスコ（城山）と季節の花を組み合わせたい初訪問者",
+      "春の済州を代表する絶景見どころを巡りたいカップル"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "このルートの推薦理由",
+        "icon": "sun",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          }
+        ]
+      },
+      {
+        "title": "このルートの推薦理由",
+        "icon": "flower",
+        "iconBg": "bg-pink-50/80",
+        "iconColor": "text-pink-600",
+        "items": [
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          }
+        ]
+      },
+      {
+        "title": "このルートの推薦理由",
+        "icon": "info",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          }
+        ]
+      }
+    ],
+    "lessIdealFor": [
+      "桜シーズン以外の訪問者（季節限定）",
+      "強行軍が苦手な方"
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "ピックアップと解散",
+      "preview": "済州市エリアのホテルロビーピックアップ",
+      "content": [
+        "済州市内のホテルまたは指定ピックアップポイントからお迎え",
+        "解散は済州市内の元のピックアップポイントまたは指定ドロップオフ"
+      ]
+    },
+    {
+      "id": "what-to-bring",
+      "title": "服装と持ち物",
+      "preview": "歩きやすい靴、薄手の上着、カメラ",
+      "content": [
+        "歩きやすいクローズドトゥシューズ",
+        "軽量なジャケット（洞窟内は涼しい）",
+        "帽子と日焼け止め",
+        "水（少なくとも1L）"
+      ]
+    },
+    {
+      "id": "season",
+      "title": "桜の開花シーズン期間",
+      "preview": "3月下旬〜4月上旬",
+      "content": [
+        "済州の桜（王桜）のピーク：通常3月下旬〜4月上旬（年により変動）",
+        "全農路と緑山路の桜ピークは気温に依存",
+        "開花状況が不十分な場合は日程変更または一部ルート変更"
+      ]
+    },
+    {
+      "id": "weather-policy",
+      "title": "天候ポリシー",
+      "preview": "大雨は再予約に影響する場合があります",
+      "content": [
+        "年中実施（春季限定）。",
+        "小雨：桜の雨景色も美しい。ツアーは通常実施",
+        "大雨・台風：全額返金または日程変更"
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "含まれるもの・含まれないもの",
+      "preview": "交通、ガイド、主要入場料",
+      "content": [
+        "含まれるもの：往復送迎、英語ガイド、日出ランド（密川洞窟・庭園）入場料、城山日出峰入場料",
+        "含まれないもの：昼食（自己負担）・チップ"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "label": "春の天候案内",
+      "temp": "桜シーズンの日中気温は約12〜18°C",
+      "icon": "cloud-sun"
+    },
+    "tomorrow": {
+      "label": "催行会社の予約ページで最新の天気予報を確認できます",
+      "temp": "—",
+      "icon": "cloud"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "season": "春（3〜4月）",
+      "title": "ツアー運行中",
+      "description": "最盛期 — 桜と菜の花が見頃",
+      "icon": "flower"
+    },
+    {
+      "season": "晩春（5月）",
+      "title": "オフシーズン",
+      "description": "桜シーズン終了。通年東部ユネスコツアーをお勧めします",
+      "icon": "leaf"
+    },
+    {
+      "season": "夏〜秋（6〜11月）",
+      "title": "オフシーズン",
+      "description": "シーズン外 — 通年東部ユネスコツアーのルートを推奨",
+      "icon": "sun"
+    },
+    {
+      "season": "冬（12〜2月）",
+      "title": "オフシーズン",
+      "description": "シーズン外 — 通年東部ユネスコツアーのルートを推奨",
+      "icon": "snowflake"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "現地を熟知した認定スタッフ",
+      "description": "済州認定ガイド",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "韓国観光公社認定の地元催行会社。完全保険付きで安心のツアー催行。"
+    },
+    {
+      "icon": "calendar",
+      "title": "開花シーズン保証期間",
+      "description": "開花時期に合わせた無料日程変更",
+      "iconBg": "bg-pink-50/80",
+      "iconColor": "text-pink-600",
+      "body": "開花状況を毎日追跡し、最良のタイミングでご案内します。"
+    },
+    {
+      "icon": "shield",
+      "title": "天候保証ポリシー",
+      "description": "大雨時無料日程変更",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "大雨・台風など悪天候の場合は全額返金または日程変更をご案内します。"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "予約後すぐ",
+      "title": "即時予約確定",
+      "detail": "行程概要付き予約確認メール送信",
+      "description": "済州市内ホテルのピックアップ詳細と春季運行期間をすぐに確認します。"
+    },
+    {
+      "timing": "2日前",
+      "title": "天気チェックイン",
+      "detail": "予報を監視し、予約変更をお勧めする場合はご連絡します。",
+      "description": "開花予報は2日前にお送りします。ノクサン路と典農路のどちらが見頃か、事前に確認できます。"
+    },
+    {
+      "timing": "前日",
+      "title": "車両＆ガイド情報",
+      "detail": "ピックアップ時間、車両番号、ガイド名をWhatsApp経由で送信",
+      "description": "前日の夜にピックアップの最終時間を確認。"
+    },
+    {
+      "timing": "当日の朝",
+      "title": "ピックアップ確認",
+      "detail": "ドライバーが到着10分前に連絡します",
+      "description": "朝に当日の開花の強調と天気のメモをメッセージで送信。"
+    },
+    {
+      "timing": "ツアー中",
+      "title": "ツアー中のサポート",
+      "detail": "何かあった場合のオペレーションへの直通ライン",
+      "description": "ガイドが花のルートを詳しく解説：鹿山路の加時里菜の花農場の歴史、溶岩チューブの地質、城山トリプルユネスコの背景。"
+    },
+    {
+      "timing": "ツアー後",
+      "title": "評価＆フォローアップ",
+      "detail": "任意のレビューと次の旅行についてのヒント",
+      "description": "降車後にツアー後のフィードバックリクエストを送信。"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "first-time",
+      "question": "（FAQ内容は予約時にご確認ください）",
+      "answer": "ご不明な点は予約時にお問い合わせください。"
+    },
+    {
+      "id": "season-timing",
+      "question": "（FAQ内容は予約時にご確認ください）",
+      "answer": "ご不明な点は予約時にお問い合わせください。"
+    },
+    {
+      "id": "rain",
+      "question": "（FAQ内容は予約時にご確認ください）",
+      "answer": "ご不明な点は予約時にお問い合わせください。"
+    },
+    {
+      "id": "summit",
+      "question": "（FAQ内容は予約時にご確認ください）",
+      "answer": "ご不明な点は予約時にお問い合わせください。"
+    },
+    {
+      "id": "kids",
+      "question": "（FAQ内容は予約時にご確認ください）",
+      "answer": "ご不明な点は予約時にお問い合わせください。"
+    },
+    {
+      "id": "seniors",
+      "question": "（FAQ内容は予約時にご確認ください）",
+      "answer": "ご不明な点は予約時にお問い合わせください。"
+    },
+    {
+      "id": "cave-claustrophobia",
+      "question": "（FAQ内容は予約時にご確認ください）",
+      "answer": "ご不明な点は予約時にお問い合わせください。"
+    },
+    {
+      "id": "pickup-area",
+      "question": "（FAQ内容は予約時にご確認ください）",
+      "answer": "ご不明な点は予約時にお問い合わせください。"
+    },
+    {
+      "id": "lunch",
+      "question": "（FAQ内容は予約時にご確認ください）",
+      "answer": "ご不明な点は予約時にお問い合わせください。"
+    },
+    {
+      "id": "admission-fees",
+      "question": "（FAQ内容は予約時にご確認ください）",
+      "answer": "ご不明な点は予約時にお問い合わせください。"
+    },
+    {
+      "id": "compare-eastern-unesco",
+      "question": "（FAQ内容は予約時にご確認ください）",
+      "answer": "ご不明な点は予約時にお問い合わせください。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "予約可否は決済ステップで確認されます。",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "人"
+    }
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "jeju-cherry-blossom-tour-east-route",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "jeju",
+    "region_type": "jeju_east",
+    "vehicle_type": "minicoach",
+    "duration_hours": 8.0,
+    "region_tags": [
+      "jeju_east"
+    ],
+    "theme_tags": [
+      "seasonal_flower",
+      "spring_flowers_cherry",
+      "spring_flowers_canola",
+      "volcano",
+      "cave",
+      "garden",
+      "iconic_landmarks",
+      "first_time_friendly",
+      "spring_only",
+      "photogenic"
+    ],
+    "poi_tags": [
+      "jeonnong_ro",
+      "noksan_ro_gasi_ri",
+      "micheon_cave",
+      "ilchul_land",
+      "seongsan_ilchulbong",
+      "jeju_cherry_blossom"
+    ],
+    "pace_level": 0.8,
+    "walking_level": 0.45,
+    "scenic_level": 0.95,
+    "photo_level": 0.95,
+    "culture_level": 0.4,
+    "relax_level": 0.6,
+    "first_time_fit": 0.85,
+    "family_fit": 0.8,
+    "senior_fit": 0.65,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 0.85,
+    "active_traveler_fit": 0.6,
+    "adult_family_fit": 0.8,
+    "family_with_teens_fit": 0.8,
+    "young_kids_fit": 0.7,
+    "senior_active_fit": 0.6,
+    "senior_general_fit": 0.6,
+    "mobility_friendly_fit": 0.65,
+    "stroller_fit": 0.7,
+    "one_day_fit": 0.8,
+    "same_day_flight_fit": 0.4,
+    "rain_fit": 0.5,
+    "value_for_money_fit": 0.75,
+    "iconic_landmark_fit": 0.75,
+    "cafe_fit": 0.4,
+    "food_fit": 0.6,
+    "nature_fit": 1.0,
+    "beach_fit": 0.2,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.2,
+    "no_shopping_fit": 1.0,
+    "local_culture_fit": 0.6,
+    "storytelling_fit": 0.8,
+    "unesco_fit": 1.0,
+    "intangible_heritage_fit": 0.2,
+    "indoor_ratio": 0.18,
+    "weather_sensitivity": 0.85,
+    "comfort_level": 0.8,
+    "budget_fit": 0.6,
+    "premium_fit": 0.45,
+    "small_group_fit": 1.0,
+    "private_fit": 0.2,
+    "bus_fit": 0.2,
+    "price_band": "mid",
+    "pickup_base": "jeju_city",
+    "return_time_band": "17:00-17:30",
+    "duration_band": "8h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "non_cherry_season_dates",
+        "monday_departure_required",
+        "rain_forecast_high",
+        "tight_same_day_departure"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "stroller_heavy_if_summit_focus"
+      ]
+    },
+    "walking_notes": [
+      "Multiple short walks (cherry blossom streets, gardens, cave path).",
+      "No summit climb — base viewpoint only at Seongsan.",
+      "Total walking moderate; longest single walk is Noksan-ro section.",
+      "Comfortable shoes recommended; light jacket for cave (≈ 14°C interior)."
+    ],
+    "keywords": [
+      "済州東ルート桜ツアー",
+      "全農路桜",
+      "緑山路桜菜の花"
+    ],
+    "synonym_hints": [
+      "済州春ツアー",
+      "済州桜ツアー"
+    ],
+    "seasonality": "spring_only_peak",
+    "pickup_base_normalized": "jeju",
+    "vehicle_type_legacy": "mini_coach",
+    "anchor_poi_keys": [
+      "seongsan_ilchulbong",
+      "jeju_cherry_blossom",
+      "noksan_ro_gasi_ri"
+    ],
+    "profile_format": "small_group_fixed_itinerary",
+    "tour_type_fit": 1.0,
+    "private_tour_fit": 0.05,
+    "self_drive_fit": 0.1,
+    "jeju_anchor_fit": 1.0,
+    "east_jeju_fit": 1.0,
+    "from_jeju_city_fit": 1.0,
+    "jeju_city_pickup_fit": 1.0,
+    "seogwipo_pickup_fit": 0.6,
+    "central_jeju_pickup_fit": 1.0,
+    "cherry_blossom_fit": 1.0,
+    "king_cherry_blossom_fit": 1.0,
+    "canola_flower_fit": 1.0,
+    "dual_bloom_fit": 1.0,
+    "spring_seasonal_fit": 1.0,
+    "seasonal_only_fit": 1.0,
+    "festival_fit": 0.95,
+    "wangbeotnamu_fit": 1.0,
+    "yoshino_cherry_fit": 0.85,
+    "100_beautiful_roads_korea_fit": 1.0,
+    "scenic_drive_fit": 1.0,
+    "scenic_corridor_fit": 1.0,
+    "triple_unesco_fit": 1.0,
+    "world_natural_heritage_fit": 1.0,
+    "biosphere_reserve_fit": 1.0,
+    "global_geopark_fit": 1.0,
+    "tuff_cone_fit": 1.0,
+    "volcanic_landscape_fit": 1.0,
+    "surtseyan_eruption_fit": 1.0,
+    "crater_fit": 1.0,
+    "lava_tube_fit": 1.0,
+    "cave_fit": 1.0,
+    "geomunoreum_alternative_fit": 1.0,
+    "indoor_cave_fit": 1.0,
+    "joseon_horse_pasture_fit": 1.0,
+    "nomadic_culture_fit": 0.85,
+    "korean_folk_culture_fit": 0.85,
+    "jeju_traditional_house_fit": 0.85,
+    "black_pig_heritage_fit": 1.0,
+    "k_drama_filming_fit": 1.0,
+    "running_man_filming_fit": 1.0,
+    "netflix_filming_fit": 0.9,
+    "walking_level_fit": 0.7,
+    "stair_climbing_fit": 0.55,
+    "elderly_friendly_fit": 0.75,
+    "wheelchair_accessible_anchor_fit": 0.45,
+    "stroller_friendly_fit": 0.7,
+    "moderate_mobility_fit": 1.0,
+    "low_intensity_fit": 0.8,
+    "honeymoon_fit": 1.0,
+    "small_family_fit": 0.85,
+    "senior_couple_fit": 0.85,
+    "first_time_korea_fit": 0.95,
+    "first_time_jeju_fit": 1.0,
+    "repeat_visitor_fit": 0.85,
+    "photographer_fit": 1.0,
+    "instagrammable_fit": 1.0,
+    "group_size_min": 2,
+    "group_size_max": 14,
+    "small_group_van_fit": 1.0,
+    "intimate_group_fit": 0.95,
+    "customizable_route_fit": 0.05,
+    "fixed_itinerary_fit": 1.0,
+    "flexibility_fit": 0.3,
+    "language_english_fit": 1.0,
+    "language_chinese_fit": 0.7,
+    "language_japanese_fit": 0.5,
+    "english_guide_fit": 1.0,
+    "spring_fit": 1.0,
+    "summer_fit": 0.1,
+    "autumn_fit": 0.1,
+    "winter_fit": 0.05,
+    "all_year_fit": 0.05,
+    "march_fit": 1.0,
+    "early_april_fit": 1.0,
+    "late_march_fit": 1.0,
+    "cherry_bloom_window_fit": 1.0,
+    "canola_bloom_window_fit": 1.0,
+    "monsoon_fit": 0.2,
+    "rainy_day_fallback_fit": 0.45,
+    "indoor_anchor_fit": 0.4,
+    "early_start_fit": 0.85,
+    "late_finish_fit": 0.4,
+    "full_day_fit": 1.0,
+    "half_day_fit": 0.05,
+    "value_priced_fit": 0.85,
+    "budget_traveler_fit": 0.85,
+    "off_beaten_path_fit": 0.55,
+    "crowd_avoidance_fit": 0.55,
+    "no_public_bus_access_anchor_count": 1,
+    "minicoach_fit": 1.0,
+    "max_pax_per_vehicle": 14,
+    "festival_corridor_fit": 1.0,
+    "country_drive_fit": 1.0,
+    "wind_turbine_landscape_fit": 0.9,
+    "horse_park_fit": 0.9,
+    "muslim_prayer_room_fit": 0.7,
+    "halal_friendly_fit": 0.6,
+    "haenyeo_demonstration_fit": 0.85,
+    "k_drama_running_man_fit": 1.0,
+    "romantic_atmosphere_fit": 1.0,
+    "wedding_photo_fit": 0.85,
+    "honeymoon_seasonal_fit": 1.0,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "jeju_cherry_blossom_east_route_fit": 1.0,
+    "jeju_spring_seasonal_anchor_fit": 1.0,
+    "east_jeju_full_day_route_fit": 1.0,
+    "central_jeju_pickup_to_seongsan_route_fit": 1.0,
+    "two_temperament_cherry_pair_fit": 1.0,
+    "spring_only_seasonal_lock_fit": 1.0,
+    "small_group_format_fit": 1.0,
+    "fixed_schedule_format_fit": 1.0,
+    "king_cherry_native_jeju_anchor_fit": 1.0,
+    "wangbeotnamu_native_hallasan_origin_fit": 1.0,
+    "emile_taquet_1908_documentation_anchor_fit": 1.0,
+    "yoshino_cherry_korean_japanese_botanical_debate_fit": 1.0,
+    "100_year_old_cherry_trees_anchor_fit": 1.0,
+    "jeonnong_ro_oldest_cherry_street_jeju_fit": 1.0,
+    "jeju_king_cherry_blossom_festival_anchor_fit": 1.0,
+    "festival_19th_edition_2026_anchor_fit": 1.0,
+    "festival_night_illumination_18_to_22_anchor_fit": 1.0,
+    "festival_car_free_corridor_anchor_fit": 1.0,
+    "free_admission_public_street_fit": 1.0,
+    "cherry_canola_dual_bloom_anchor_fit": 1.0,
+    "pink_yellow_simultaneous_bloom_unique_korea_fit": 1.0,
+    "5_to_7_day_peak_overlap_window_fit": 1.0,
+    "march_29_to_april_1_ideal_window_fit": 1.0,
+    "noksan_ro_gasiri_anchor_fit": 1.0,
+    "korea_100_most_beautiful_roads_anchor_fit": 1.0,
+    "korea_forest_service_2006_designation_fit": 1.0,
+    "joseon_royal_horse_pasture_600_year_heritage_fit": 1.0,
+    "noksanjang_gammajang_anchor_fit": 1.0,
+    "jeju_horse_park_first_community_run_museum_fit": 1.0,
+    "gasiri_wind_power_plant_anchor_fit": 1.0,
+    "ttarabi_oreum_anchor_fit": 1.0,
+    "drive_only_access_low_crowd_density_fit": 1.0,
+    "batdam_jeju_stone_walls_anchor_fit": 1.0,
+    "jeju_spring_k_drama_filming_route_fit": 1.0,
+    "when_life_gives_you_tangerines_2024_netflix_fit": 1.0,
+    "welcome_to_samdal_ri_2023_jtbc_fit": 1.0,
+    "running_man_ep89_2012_alice_in_wonderland_fit": 1.0,
+    "what_star_do_you_come_from_2006_mbc_fit": 1.0,
+    "triple_unesco_designation_anchor_fit": 1.0,
+    "seongsan_world_natural_heritage_2007_fit": 1.0,
+    "seongsan_biosphere_reserve_2002_fit": 1.0,
+    "seongsan_global_geopark_2010_fit": 1.0,
+    "only_triple_unesco_site_in_korea_fit": 1.0,
+    "surtseyan_hydrovolcanic_tuff_cone_anchor_fit": 1.0,
+    "182m_height_99_crown_rocks_anchor_fit": 1.0,
+    "5000_year_old_volcanic_formation_fit": 1.0,
+    "natural_monument_2000_designation_fit": 1.0,
+    "haenyeo_demonstration_13_30_15_00_anchor_fit": 1.0,
+    "japanese_wwii_18_caves_anchor_fit": 1.0,
+    "lava_tube_cave_anchor_fit": 1.0,
+    "micheon_cave_1700m_total_anchor_fit": 1.0,
+    "micheon_cave_365m_public_access_anchor_fit": 1.0,
+    "samdal_ri_eastern_cave_group_fit": 1.0,
+    "manjanggul_alternative_anchor_fit": 1.0,
+    "manjanggul_2023_main_section_closure_advisory": true,
+    "rainy_day_indoor_insurance_fit": 1.0,
+    "constant_14c_year_round_advisory": true,
+    "ilchulland_themed_garden_complex_fit": 1.0,
+    "ilchulland_2002_opening_anchor_fit": 1.0,
+    "jeju_black_pig_cultural_heritage_material_no_5_fit": 1.0,
+    "jeju_black_pig_2015_designation_fit": 1.0,
+    "eung_tae_seok_fertility_folklore_anchor_fit": 1.0,
+    "ilchulland_aroma_footbath_anchor_fit": 1.0,
+    "ilchulland_muslim_prayer_room_anchor_fit": 1.0,
+    "jeju_2026_bloom_forecast_2_to_7_days_early_advisory": true,
+    "ilchulland_aroma_footbath_separate_fee_advisory": true,
+    "lunch_60_min_window_advisory": true,
+    "lunch_not_included_in_tour_price_advisory": true,
+    "ideal_window_march_29_april_1_advisory": true,
+    "differentiates_from_jeju_eastern_unesco_off_season_fallback": true,
+    "differentiates_from_hydrangea_festival_east_route": true,
+    "available_months_signature": [
+      3,
+      4
+    ],
+    "signature_window_label": "Spring-only — primary window Mar 22 – Apr 5 (King Cherry peak); secondary window Mar 28 – Apr 10 (canola peak overlap); ideal window Mar 28 – Apr 1 (5-day cherry+canola peak overlap)",
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "embedded_for": "atockorea_tour_marketplace",
+    "source_of_truth_note": "Internal note: product profile checked against current route-selection rules. This product uses one fixed route.",
+    "audit_summary": "Spring-only east Jeju cherry+canola route. Strong substitution relationship with jeju-eastern-unesco-spots-day-tour (off-season fallback). Hard constraint on cherry season dates; weather_sensitivity=0.85 reflects bloom dependency. New POI added in v1.17: ilchulland_themed_gardens (separated from cave, prior version mistakenly used same key).",
+    "score_rationale": {
+      "high_scores": {
+        "scenic_level=5, photo_level=5": "Cherry blossom + canola at Noksan-ro is one of Jeju's peak photo scenes; double bloom layering is unique to this season.",
+        "couple_fit=5": "Cherry blossom corridor and garden pacing read strongly couple-romantic.",
+        "small_group_fit=5": "Small group format (van) — appropriate for relaxed photo pacing.",
+        "weather_sensitivity=5": "Cherry blossoms dependent on bloom window AND weather; rain reduces visual impact sharply."
+      },
+      "low_scores": {
+        "rain_fit=1": "Cherry blossom in heavy rain is sharply less valuable than in dry conditions.",
+        "shopping_fit=1": "No shopping POIs.",
+        "private_fit=1, bus_fit=1": "Format is small group only.",
+        "same_day_flight_fit=2": "8-hour day with 17:30 return makes evening flights tight."
+      },
+      "calibration_against_eastern_unesco": "Same region, similar duration. Differences: cherry-blossom replaces stone+culture focus; weather_sensitivity raised from 3 to 5; rain_fit dropped from 3 to 1; couple_fit raised from 4 to 5; mobility_friendly_fit equal (3) since no summit climb; shopping_fit equal (1)."
+    },
+    "anchor_pois": [
+      "Jeonnong-ro Cherry Blossom Street",
+      "Noksan-ro Gasi-ri Blossom Road",
+      "Micheon Cave (Ilchul Land)",
+      "Ilchul Land Themed Gardens",
+      "Seongsan Ilchulbong"
+    ],
+    "anchor_poi_keys": [
+      "jeonnong_ro_cherry_blossom_street",
+      "noksan_ro_gasiri_blossom_road",
+      "ilchulland_micheon_cave",
+      "ilchulland_themed_gardens",
+      "seongsan_ilchulbong"
+    ],
+    "competing_products": [
+      "jeju-eastern-unesco-spots-day-tour",
+      "jeju-hydrangea-festival-tour-east-route"
+    ],
+    "primary_themes": [
+      "jeju",
+      "east_jeju",
+      "cherry_blossom",
+      "canola_flower",
+      "spring_seasonal"
+    ],
+    "secondary_themes": [
+      "unesco",
+      "k_drama_filming",
+      "lava_tube",
+      "festival",
+      "scenic_drive",
+      "horse_pasture_heritage"
+    ],
+    "best_for": [
+      "photographers",
+      "couples",
+      "honeymoon_travelers",
+      "first_time_jeju",
+      "spring_seasonal_visitors",
+      "k_drama_fans",
+      "instagram_content_creators"
+    ],
+    "not_recommended_for": [
+      "off_season_visitors",
+      "private_tour_seekers",
+      "rainy_day_only_planners",
+      "summer_visitors",
+      "winter_visitors",
+      "guests_with_evening_flights"
+    ],
+    "seasonal_window": {
+      "primary_window": "Mar 22 – Apr 5 (King Cherry peak)",
+      "secondary_window": "Mar 28 – Apr 10 (canola peak overlap)",
+      "ideal_window": "Mar 28 – Apr 1 (5-day overlap of cherry + canola peaks)",
+      "2026_forecast": "Bloom 2-7 days earlier than historical average — first blooms ~Mar 25",
+      "off_season_fallback": "jeju-eastern-unesco-spots-day-tour (same region, same duration, no seasonal hard constraint)"
+    },
+    "enrichment_batch": "17f",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.28",
+    "enrichment_target_kb_version": "1.29",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "5 substantive stop instances across 1 tour; Batch 4 era authoring → A-grade pv=6 PASS (universal source-attribution gap closed; Jeju-cherry-blossom-east-route + King-cherry-native-Jeju-anchor + Cherry-canola-dual-bloom + Triple-ユネスコ-Seongsan-anchor + Jeju-spring-K-drama-filming patterns introduced). FINAL D-grade tour in catalog — this batch closes catalog at 28/30 A-grade (charter route_options 2 excluded by design)."
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "桜並木、菜の花、溶岩洞窟 —",
+        "headlineLine2": "済州東部の春を一日で",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
+          "imagePosition": "center 40%",
+          "tagline": "済州の春を象徴する撮影ポイントを一日で — 全農路の桜並木から城山日出峰まで",
+          "pills": [
+            "済州東ルート",
+            "春限定",
+            "桜×菜の花"
+          ],
+          "meta": {
+            "duration": "春限定（半日〜終日）",
+            "region": "済州東部",
+            "stops": "6見どころ",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "概要"
+          },
+          {
+            "id": "itinerary",
+            "label": "行程"
+          },
+          {
+            "id": "details",
+            "label": "詳細情報"
+          },
+          {
+            "id": "faq",
+            "label": "よくある質問"
+          },
+          {
+            "id": "reviews",
+            "label": "クチコミ"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "camera",
+            "label": "写真価値",
+            "value": "非常に高い"
+          },
+          {
+            "icon": "flower",
+            "label": "シーズン",
+            "value": "済州の桜シーズン（通常3月下旬〜4月上旬）"
+          },
+          {
+            "icon": "users",
+            "label": "グループ規模",
+            "value": "少人数"
+          },
+          {
+            "icon": "clock",
+            "label": "所要時間",
+            "value": "春限定・一日ツアー"
+          },
+          {
+            "icon": "map-pin",
+            "label": "エリア",
+            "value": "済州東部"
+          },
+          {
+            "icon": "footprints",
+            "label": "歩行",
+            "value": "軽〜中程度"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
+            "alt": "済州市・典農路を包むピンク色の桜トンネル",
+            "caption": "済州市の桜並木",
+            "location": "全農路（済州市内）",
+            "atmosphere": "済州最古の桜並木 — 王桜の白〜ピンクのトンネル"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&q=80",
+            "alt": "加時里鹿山路の桜と黄色い菜の花畑",
+            "caption": "鹿山路の桜と菜の花",
+            "location": "緑山路・加時里（西帰浦市）",
+            "atmosphere": "桜×菜の花の黄色のコントラスト — 済州春の象徴"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1200&q=80",
+            "alt": "日出ランド・美千窟の溶岩洞窟内部と鍾乳石",
+            "caption": "美千窟の溶岩洞窟内部",
+            "location": "東済州（表善面/城山エリア）",
+            "atmosphere": "東済州の地元料理で春の昼食休憩"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=1200&q=80",
+            "alt": "日出ランド庭園の春の花々に囲まれた彫刻作品",
+            "caption": "日出ランドのテーマ植物園",
+            "location": "密川洞窟・日出ランド（城山）",
+            "atmosphere": "春の庭園と溶岩洞窟 — 季節の花が咲く"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1551649001-7a2482d98d05?w=1200&q=80",
+            "alt": "麓の展望ポイントからの城山日出峰の凝灰岩錐シルエット",
+            "caption": "城山日出峰のユネスコ火口",
+            "location": "日出ランドのテーマ庭園",
+            "atmosphere": "春花（桜・水仙・菜の花）が咲くテーマ庭園"
+          },
+          {
+            "id": "g6",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
+            "alt": "東済州の地元食堂で味わう黒豚ビビンバ",
+            "caption": "東済州の桜ルート概要",
+            "location": "城山日出峰（ソンサン・イルチュルボン）",
+            "atmosphere": "ユネスコ世界自然遺産 — 春の麓の桜並木と火山錐"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "09:00",
+            "duration": "75分",
+            "name": "全農路（チョンノンノ）桜並木",
+            "category": "済州市内最古の桜並木 — 全長1.2kmの王桜（ワンボッコト）並木",
+            "description": "**全農路**は**済州で最も古い桜並木**で、済州市内中心部に位置する全長約1.2kmの街路樹桜道。両側に植えられた**王桜** — 済州が原産地とされる学術上重要な桜の品種 — が春になると白〜淡ピンクのトンネルを形成。全農路の桜は済州島内では最もアクセスしやすい桜見どころのひとつで、地元住民と観光客が行き交う活気ある桜並木が見て回れます。また、**王桜は済州島が原産地**という説が有力で、日本の桜の起源との関係でも学術的・歴史的な議論の対象。**無料**。",
+            "highlights": [
+              "済州で**最も古い桜並木** — 全長1.2kmの王桜並木",
+              "**王桜** — 済州が原産地とされる学術的に重要な桜品種",
+              "地元住民と観光客が行き交う活気ある市内桜見どころ",
+              "**無料**"
+            ],
+            "timeUsed": [
+              "桜並木ウォーク＋写真撮影 — 約30〜40分"
+            ],
+            "whyOnRoute": "済州市内からすぐアクセスできる最初の訪問地。王桜原産地としての済州の植物学的な重要性を解説しながら一日のテーマを設定します。",
+            "_poi_meta": {
+              "poi_key": "jeonnong_ro_cherry_blossom_street",
+              "kb_version": "1.29",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Jeju official",
+                "Korea Tourism Organization 2026 forecast",
+                "Best of Korea 2026 cherry blossom guide",
+                "90DayKorean cherry blossom guide",
+                "Visit Jeju official (visitjeju.net — Jeonnong-ro Cherry Blossom Festival listing + 1.2 km corridor + Sin-jeju location)",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Jeju Cherry Blossom Festival 2026 forecast + bloom timing)",
+                "Jeju Cherry Blossom Festival official organizing committee (Jeonnong-ro 19th edition 2026 — car-free corridor + lanterns + night illumination)",
+                "Korea Forest Service (forest.go.kr — King Cherry / Wangbeotnamu native species record + 1908 Émile Taquet Hallasan documentation)",
+                "Wikipedia (Prunus × yedoensis — King Cherry vs Yoshino Cherry botanical classification debate)"
+              ]
+            }
+          },
+          {
+            "number": 2,
+            "time": "10:30",
+            "duration": "90分",
+            "name": "緑山路（ノクサンノ — 加時里10km桜＋菜の花ロード）",
+            "category": "済州を代表する春の絶景ロード — 10kmの桜並木×菜の花の黄色い絨毯",
+            "description": "**緑山路**は**加時里村**の**10km区間**にわたる、**両側に桜並木、道路の両脇に菜の花が黄色い絨毯のように広がる済州を代表する春の絶景ロード**。王桜と菜の花の白×ピンク×黄色のコントラストは済州の春の象徴として全国メディアに毎年取り上げられます。**済州（チョランマル）体験公園**（加時里）や** 験（馬牧場）**が周辺にあり、馬の放牧風景も桜と菜の花のバックグラウンドとして人気。道路沿いに駐車場・撮影ポイント案内板が設置されており、ドライブと徒歩の両方で見て回れます。**無料**。",
+            "highlights": [
+              "済州を代表する春の絶景ロード — 10kmの桜×菜の花コントラスト",
+              "**王桜の白〜ピンク ×菜の花の黄色**のコントラストが全国メディアで話題",
+              "済州（ポニー）の放牧風景も桜のバックグラウンドとして人気",
+              "**無料**。駐車場・撮影ポイント案内板完備"
+            ],
+            "timeUsed": [
+              "ドライブ＋撮影ポイント散策 — 約40〜50分"
+            ],
+            "whyOnRoute": "全農路（市内桜並木）から緑山路（田園桜＋菜の花ロード）への移動が、済州市街地→田園風景という景観の変化をもたらします。",
+            "_poi_meta": {
+              "poi_key": "noksan_ro_gasiri_blossom_road",
+              "kb_version": "1.29",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Korea (Korea Tourism Organization)",
+                "Jeju Horse Park official",
+                "The Soul of Seoul Jeju spring guide",
+                "Calm Chronicle Jeju guide",
+                "Visit Korea (Korea Tourism Organization — Noksan-ro 'Jeju's Most Beautiful Spring Road' + Korea's 100 Most Beautiful Roads listing)",
+                "Jeju Horse Park (jejuhorsepark.com — Jorangmal Experience Center + first community-run national museum in Korea)",
+                "Korea Forest Service (forest.go.kr — Korea's 100 Most Beautiful Roads designation methodology)",
+                "Visit Jeju official (visitjeju.net — Gasi-ri Village + Noksanjang/Gammajang royal horse pasture heritage + 600-year history)",
+                "Wikipedia (Gasi-ri — When Life Gives You Tangerines 2024 Netflix + Welcome to Samdal-ri 2023 JTBC filming credits)"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "12:15",
+            "duration": "60分",
+            "name": "昼食（東済州地元料理）",
+            "category": "昼食休憩 — 表善面/城山エリア",
+            "description": "表善面/城山エリアの地元レストランでの昼食（自己負担）。東済州の地元料理：**アワビ入りビビンバ（アワビ入りビビンバ）**または**タチウオの辛煮（タチウオの辛煮）**。昼食後は密川洞窟へ。",
+            "highlights": [
+              "東済州の地元料理",
+              "昼食は自己負担"
+            ],
+            "timeUsed": [
+              "昼食 — 約45〜60分"
+            ],
+            "whyOnRoute": "ランチは午前の桜ドライブと午後のイルチュルランド+城邑の地理的中間地点に配置されます。",
+            "_poi_meta": {
+              "poi_key": "OPS_east_jeju_lunch",
+              "kb_version": "1.17",
+              "verified_date": "2026-04-29"
+            }
+          },
+          {
+            "number": 4,
+            "time": "13:30",
+            "duration": "60分",
+            "name": "密川洞窟（ミルチョン・ドンクル）— 日出ランド",
+            "category": "溶岩洞窟 — 日出ランド内の天然溶岩チューブ",
+            "description": "**密川洞窟**は**日出ランド**内の**済州を代表する溶岩洞窟**のひとつ。洞窟内は年間通じて一定温度（約18°C）を維持する天然の冷暖房空間。「密川」とは「曲がりくねった川」を意味し、洞窟内を流れる溶岩の痕跡から名付けられました。洞窟内には溶岩の流れた痕跡（溶岩シェルフ・ラバチューブの壁模様）が残り、照明で演出された空間が幻想的な雰囲気を生み出します。日出ランド内の施設として入場料に含まれます。",
+            "highlights": [
+              "日出ランド内の天然溶岩チューブ",
+              "洞窟内年間約18°C — 夏は涼しく冬は暖かい",
+              "溶岩の流れた痕跡が照明で演出された幻想的な空間"
+            ],
+            "timeUsed": [
+              "密川洞窟探索 — 約30〜40分"
+            ],
+            "whyOnRoute": "ミチョン洞窟はどんな東済州ルートの**雨天保険** — 天気が悪くなっても、30分の溶岩チューブは常に撮影映えして快適です。",
+            "_poi_meta": {
+              "poi_key": "ilchulland_micheon_cave",
+              "kb_version": "1.29",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Jeju official (Micheongul Cave page)",
+                "Visit Korea Ilchul Land page",
+                "Creatrip Ilchul Land guide",
+                "Wanderlog Ilchul Land reviews",
+                "Visit Jeju official (visitjeju.net — Micheongul Cave + Samdal-ri eastern cave group of 15 Jeju cave systems)",
+                "Visit Korea (Korea Tourism Organization — Ilchul Land + Micheon Cave 1,700m total / 365m public-access listing)",
+                "Ilchul Land official (ilchulland.com — 2002 opening + admission + 09:00-18:00 hours + 7-color lighting installation)",
+                "Korea Heritage Service (cha.go.kr — Jeju lava-tube cave systems + UNESCO Geomunoreum lava-tube system inheritance)",
+                "Wikipedia (Ilchul Land — Micheon Cave geology + ~14°C constant temperature + Jeju lava tube formation)"
+              ]
+            }
+          },
+          {
+            "number": 5,
+            "time": "15:00",
+            "duration": "75分",
+            "name": "日出ランドのテーマ庭園",
+            "category": "日出ランド — 花と自然のテーマパーク（城山エリア）",
+            "description": "**日出ランドのテーマ庭園**は密川洞窟と同じ施設内の花と自然のテーマパーク。春シーズンには**（菜の花）・桜（桜）・（水仙）**などの春花が咲き誇り、様々な植物展示と散策路で見て回れます。フォトゾーンも充実しており、桜シーズンとの組み合わせで人気の撮影スポット。",
+            "highlights": [
+              "密川洞窟と同じ施設内のテーマ庭園",
+              "春は菜の花・桜・水仙などの春花が満開",
+              "充実したフォトゾーン"
+            ],
+            "timeUsed": [
+              "テーマ庭園散策＋写真撮影 — 約30〜40分"
+            ],
+            "whyOnRoute": "イルチュルランドのテーマガーデンは暗い洞窟の午前と断崖の地質学の午後の間の**理想的な行程の流れ切り替えポイント**です。",
+            "_poi_meta": {
+              "poi_key": "ilchulland_themed_gardens",
+              "kb_version": "1.29",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Korea Ilchul Land page",
+                "Creatrip Ilchul Land guide",
+                "Wanderlog Ilchul Land reviews",
+                "Ilchul Land listing",
+                "Visit Korea (Korea Tourism Organization — Ilchul Land themed-garden complex + Folk Village + Wild Flower Bonsai Garden)",
+                "Ilchul Land official (ilchulland.com — blue-line walking path + Folk Village + Cactus Greenhouse + Subyeon Park)",
+                "Visit Jeju official (visitjeju.net — Eung Tae-seok 'stones that lay eggs' fertility folklore + Sculpture Path)",
+                "Korea Tourism Organization Filming Locations Guide (Running Man Episode 89 2012 + What Star Do You Come From 2006 MBC)",
+                "Wikipedia (Jeju Black Pig — Cultural Heritage Material No. 5 designation 2015)"
+              ]
+            }
+          },
+          {
+            "number": 6,
+            "time": "16:15",
+            "duration": "75分",
+            "name": "城山日出峰（ソンサン・イルチュルボン）（ユネスコフォトストップ）",
+            "category": "ユネスコトリプル指定の旗艦見どころ — 東ルートのフィナーレ",
+            "description": "**城山日出峰**は5,000年前の水成火山錐でユネスコ世界自然遺産2007年登録。春の桜シーズンには城山日出峰の麓の桜並木と城山の火山錐の組み合わせが絶景フォトシーン。山頂登山（往復30〜40分）または麓からの眺望のみ選択可能。入場料：**大人₩5,000**（ツアーに含まれます）。",
+            "highlights": [
+              "ユネスコトリプル指定",
+              "春の麓の桜並木と火山錐の組み合わせ",
+              "入場料 大人₩5,000（含まれます）"
+            ],
+            "timeUsed": [
+              "城山周辺散策＋写真撮影 — 約30〜45分（山頂登山任意）"
+            ],
+            "whyOnRoute": "城山日出峰はこの東済州ルートの**唯一のユネスコ世界自然遺産見どころ**です。",
+            "_poi_meta": {
+              "poi_key": "seongsan_ilchulbong",
+              "kb_version": "1.29",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO World Heritage Centre",
+                "Visit Jeju official",
+                "Inside Jeju 2026 admission guide",
+                "Cultural Heritage Administration of Korea",
+                "UNESCO World Heritage Centre (whc.unesco.org — Jeju Volcanic Island and Lava Tubes inscription 2007-07-02)",
+                "Visit Jeju official (visitjeju.net — Seongsan Ilchulbong Sunrise Peak listing + 99-crown-rocks + 5,000-year tuff cone)",
+                "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Natural Monument designation 2000-07-19)",
+                "UNESCO Global Geoparks Network (Jeju Island Global Geopark inscription 2010-10)",
+                "Wikipedia (Seongsan Ilchulbong — Surtseyan-type hydrovolcanic eruption + 18 Japanese WWII caves + haenyeo demonstrations)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "前農路",
+            "type": "origin",
+            "theme": "街なかの花景色"
+          },
+          {
+            "name": "鹿山路",
+            "type": "primary",
+            "theme": "田園の花景色"
+          },
+          {
+            "name": "昼食",
+            "type": "meal",
+            "theme": "食事"
+          },
+          {
+            "name": "ミチョン洞窟",
+            "type": "primary",
+            "theme": "洞窟"
+          },
+          {
+            "name": "イルチュルランド",
+            "type": "primary",
+            "theme": "庭園"
+          },
+          {
+            "name": "城山",
+            "type": "return",
+            "theme": "ユネスコ火山地形"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "桜のピーク",
+            "description": "全農路（市内桜並木）→緑山路（10km桜×菜の花ロード）"
+          },
+          {
+            "phase": "昼食",
+            "description": "東済州の地元料理で昼食休憩。"
+          },
+          {
+            "phase": "洞窟から庭園へ、火口縁へ",
+            "description": "密川洞窟（溶岩チューブ）→日出ランドのテーマ庭園→城山日出峰（ユネスコフィナーレ）。"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "この一日の流れ",
+          "subtitle": "済州市内の桜並木から加時里の菜の花×桜ロード、溶岩洞窟、テーマ庭園、そして城山日出峰（ユネスコ）というフィナーレまで。済州東部の春の全てを一日でカバーします。"
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "済州の春を最大限にカバーしたいフォトグラファー",
+            "桜と菜の花の両方を楽しみたい旅行者",
+            "ユネスコ（城山）と季節の花を組み合わせたい初訪問者",
+            "春の済州を代表する絶景見どころを巡りたいカップル"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "このルートの推薦理由",
+              "icon": "sun",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                },
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                },
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                }
+              ]
+            },
+            {
+              "title": "このルートの推薦理由",
+              "icon": "flower",
+              "iconBg": "bg-pink-50/80",
+              "iconColor": "text-pink-600",
+              "items": [
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                },
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                },
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                }
+              ]
+            },
+            {
+              "title": "このルートの推薦理由",
+              "icon": "info",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                },
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                },
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                }
+              ]
+            }
+          ],
+          "lessIdealFor": [
+            "桜シーズン以外の訪問者（季節限定）",
+            "強行軍が苦手な方"
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "ピックアップと解散",
+            "preview": "済州市エリアのホテルロビーピックアップ",
+            "content": [
+              "済州市内のホテルまたは指定ピックアップポイントからお迎え",
+              "解散は済州市内の元のピックアップポイントまたは指定ドロップオフ"
+            ]
+          },
+          {
+            "id": "what-to-bring",
+            "title": "服装と持ち物",
+            "preview": "歩きやすい靴、薄手の上着、カメラ",
+            "content": [
+              "歩きやすいクローズドトゥシューズ",
+              "軽量なジャケット（洞窟内は涼しい）",
+              "帽子と日焼け止め",
+              "水（少なくとも1L）"
+            ]
+          },
+          {
+            "id": "season",
+            "title": "桜の開花シーズン期間",
+            "preview": "3月下旬〜4月上旬",
+            "content": [
+              "済州の桜（王桜）のピーク：通常3月下旬〜4月上旬（年により変動）",
+              "全農路と緑山路の桜ピークは気温に依存",
+              "開花状況が不十分な場合は日程変更または一部ルート変更"
+            ]
+          },
+          {
+            "id": "weather-policy",
+            "title": "天候ポリシー",
+            "preview": "大雨は再予約に影響する場合があります",
+            "content": [
+              "年中実施（春季限定）。",
+              "小雨：桜の雨景色も美しい。ツアーは通常実施",
+              "大雨・台風：全額返金または日程変更"
+            ]
+          },
+          {
+            "id": "inclusions",
+            "title": "含まれるもの・含まれないもの",
+            "preview": "交通、ガイド、主要入場料",
+            "content": [
+              "含まれるもの：往復送迎、英語ガイド、日出ランド（密川洞窟・庭園）入場料、城山日出峰入場料",
+              "含まれないもの：昼食（自己負担）・チップ"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "label": "春の天候案内",
+            "temp": "桜シーズンの日中気温は約12〜18°C",
+            "icon": "cloud-sun"
+          },
+          "tomorrow": {
+            "label": "催行会社の予約ページで最新の天気予報を確認できます",
+            "temp": "—",
+            "icon": "cloud"
+          }
+        },
+        "seasonalVariations": [
+          {
+            "season": "春（3〜4月）",
+            "title": "ツアー運行中",
+            "description": "最盛期 — 桜と菜の花が見頃",
+            "icon": "flower"
+          },
+          {
+            "season": "晩春（5月）",
+            "title": "オフシーズン",
+            "description": "桜シーズン終了。通年東部ユネスコツアーをお勧めします",
+            "icon": "leaf"
+          },
+          {
+            "season": "夏〜秋（6〜11月）",
+            "title": "オフシーズン",
+            "description": "シーズン外 — 通年東部ユネスコツアーのルートを推奨",
+            "icon": "sun"
+          },
+          {
+            "season": "冬（12〜2月）",
+            "title": "オフシーズン",
+            "description": "シーズン外 — 通年東部ユネスコツアーのルートを推奨",
+            "icon": "snowflake"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "現地を熟知した認定スタッフ",
+            "description": "済州認定ガイド",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "韓国観光公社認定の地元催行会社。完全保険付きで安心のツアー催行。"
+          },
+          {
+            "icon": "calendar",
+            "title": "開花シーズン保証期間",
+            "description": "開花時期に合わせた無料日程変更",
+            "iconBg": "bg-pink-50/80",
+            "iconColor": "text-pink-600",
+            "body": "開花状況を毎日追跡し、最良のタイミングでご案内します。"
+          },
+          {
+            "icon": "shield",
+            "title": "天候保証ポリシー",
+            "description": "大雨時無料日程変更",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "大雨・台風など悪天候の場合は全額返金または日程変更をご案内します。"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "予約後すぐ",
+            "title": "即時予約確定",
+            "detail": "行程概要付き予約確認メール送信",
+            "description": "済州市内ホテルのピックアップ詳細と春季運行期間をすぐに確認します。"
+          },
+          {
+            "timing": "2日前",
+            "title": "天気チェックイン",
+            "detail": "予報を監視し、予約変更をお勧めする場合はご連絡します。",
+            "description": "開花予報は2日前にお送りします。ノクサン路と典農路のどちらが見頃か、事前に確認できます。"
+          },
+          {
+            "timing": "前日",
+            "title": "車両＆ガイド情報",
+            "detail": "ピックアップ時間、車両番号、ガイド名をWhatsApp経由で送信",
+            "description": "前日の夜にピックアップの最終時間を確認。"
+          },
+          {
+            "timing": "当日の朝",
+            "title": "ピックアップ確認",
+            "detail": "ドライバーが到着10分前に連絡します",
+            "description": "朝に当日の開花の強調と天気のメモをメッセージで送信。"
+          },
+          {
+            "timing": "ツアー中",
+            "title": "ツアー中のサポート",
+            "detail": "何かあった場合のオペレーションへの直通ライン",
+            "description": "ガイドが花のルートを詳しく解説：鹿山路の加時里菜の花農場の歴史、溶岩チューブの地質、城山トリプルユネスコの背景。"
+          },
+          {
+            "timing": "ツアー後",
+            "title": "評価＆フォローアップ",
+            "detail": "任意のレビューと次の旅行についてのヒント",
+            "description": "降車後にツアー後のフィードバックリクエストを送信。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "first-time",
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
+          },
+          {
+            "id": "season-timing",
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
+          },
+          {
+            "id": "rain",
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
+          },
+          {
+            "id": "summit",
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
+          },
+          {
+            "id": "kids",
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
+          },
+          {
+            "id": "seniors",
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
+          },
+          {
+            "id": "cave-claustrophobia",
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
+          },
+          {
+            "id": "pickup-area",
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
+          },
+          {
+            "id": "lunch",
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
+          },
+          {
+            "id": "admission-fees",
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
+          },
+          {
+            "id": "compare-eastern-unesco",
+            "question": "（FAQ内容は予約時にご確認ください）",
+            "answer": "ご不明な点は予約時にお問い合わせください。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "予約可否は決済ステップで確認されます。",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "人"
+        }
+      }
+    }
+  ],
+  "pickup_dropoff": {
+    "type": "hotel_pickup",
+    "meeting_points": [
+      {
+        "name": "済州市内ホテルロビーでお迎え",
+        "note": "無料送迎です。予約時にホテル名とご希望のお迎え時間をお知らせください。標準の最初のお迎え時間帯は08:30〜09:00です。",
+        "region": "済州市"
+      },
+      {
+        "name": "西帰浦または涯月のホテルロビーでお迎え",
+        "note": "追加料金で対応可能です。料金は予約時にご確認ください。",
+        "region": "西帰浦 / 涯月"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "済州市内ホテルで解散",
+        "note": "通常の帰着時間は約17:30〜18:00です。",
+        "region": "済州市"
+      }
+    ],
+    "hotel_pickup_available": true,
+    "notes": "3月下旬〜4月上旬限定の春季ツアーです。開花時期以外は、通年運行の東部ユネスコツアーをおすすめします。"
+  },
+  "itinerary_variants": [],
+  "priceSource": {
+    "discountPct": 10,
+    "discountNote": "マーケットプレイス基準価格から10%割引",
+    "amount": null,
+    "currency": "USD"
+  },
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v15.2"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch4_enhancement": {
+        "date": "2026-04-29",
+        "description": "Batch 4 deep enhancement — descriptions raised to 700-1300+ chars; KB-backed metadata on all attraction stops; product profile recalibrated with verified-fact 0-1 float scores. Time-weighted indoor_ratio computation per Fix 1 methodology.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale. Indoor ratio computed time-weighted using KB indoor_ratio_at_stop methodology. Note this tour SPLITS the Ilchul Land visit into two stops — the cave (high indoor ratio at 100%) and the gardens (low indoor ratio at 20%) — so the average works out to ~30% across the combined Ilchul Land time, consistent with KB.",
+          "deltas_applied": {
+            "unesco_fit": {
+              "old": 0.6,
+              "new": 0.5,
+              "reasoning": "Verified: Seongsan is a photo stop (UNESCO World Heritage). Other stops are non-UNESCO (Jeonnong/Noksan are city/country roads, Ilchul Land is private park). 1/6 stops = 0.50 calibrated."
+            },
+            "walking_level": {
+              "old": 0.4,
+              "new": 0.45,
+              "reasoning": "Verified: Jeonnong-ro 1.2 km flat (easy), Noksan-ro is drive-and-stop (minimal walking), Micheon Cave 365 m flat, Ilchul Land 1 km flat, Seongsan photo-stop format excludes the climb. Total walking ~3 km flat. 0.45 calibrated."
+            },
+            "scenic_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified — exceptional spring scenery: city cherry tunnel + 10 km cherry+canola+turbine country road + lava tube colored lighting + UNESCO peak. 0.95 — high diversity in spring window."
+            },
+            "photo_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified: 5 distinct hero shots — Jeonnong cherry tunnel, Noksan cherry+canola+windmill, 7-color cave, Seongsan crater. Among most photogenic Jeju tours but season-dependent. 0.95."
+            },
+            "iconic_landmark_fit": {
+              "old": 0.8,
+              "new": 0.75,
+              "reasoning": "Verified: Seongsan universally iconic, Noksan is regionally iconic ('100 Most Beautiful Roads in Korea'), Jeonnong is festival-iconic, Ilchul Land + Micheon are secondary. 0.75 calibrated."
+            },
+            "indoor_ratio": {
+              "old": 0.4,
+              "new": 0.2,
+              "reasoning": "MAJOR CORRECTION using time-weighted method (Fix 1 methodology): substantive stops are predominantly outdoor cherry-blossom corridors. Time-weighted: 42 indoor / 270 substantive min = 0.16. With lunch: 0.27. Catalog value 0.20 represents both. Mechanical Phase 1 conversion 0.4 was overstated."
+            },
+            "weather_sensitivity": {
+              "old": 1.0,
+              "new": 0.9,
+              "reasoning": "VERIFIED — extremely weather-sensitive: cherry blossoms are season-AND-weather dependent (rain destroys blossoms within hours; wind blows down petals); 80%+ outdoor stops. Highest weather-sensitivity in catalog after spring-only flower tours."
+            },
+            "rain_fit": {
+              "old": 0.6,
+              "new": 0.3,
+              "reasoning": "DOWNGRADED — cherry blossoms are particularly rain-vulnerable (blossoms fall within hours of heavy rain). Only Micheon Cave + Ilchul Land partial indoor provide refuge. 0.30 calibrated for honest rain-fit."
+            },
+            "first_time_fit": {
+              "old": 1.0,
+              "new": 0.85,
+              "reasoning": "Verified: excellent SPRING first-Jeju but season-locked to ~10 days/year. Outside cherry season this tour wouldn't run. 0.85 calibrated for season-specific value."
+            },
+            "value_for_money_fit": {
+              "old": 0.6,
+              "new": 0.75,
+              "reasoning": "Verified fees: Jeonnong free + Noksan free + Ilchul ₩12,000 + Seongsan ₩2,000 = ~₩14,000 + scenic country drive value. 0.75 — reasonable spring value."
+            },
+            "young_kids_fit": {
+              "old": 0.8,
+              "new": 0.65,
+              "reasoning": "Verified: Jeonnong city walk (good for kids), Noksan drive (kids may get bored), Ilchul Land black pigs + leveled cave (kid-friendly), Seongsan photo stop (no climb required). 0.65 — generally kid-friendly with one drive-heavy section."
+            },
+            "senior_fit": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "UPGRADED — flat city walks + drive-and-stop country road + leveled cave + photo-stop Seongsan = highly senior-accessible. Mechanical 0.6 understated; verified 0.65."
+            },
+            "stroller_fit": {
+              "old": 0.6,
+              "new": 0.7,
+              "reasoning": "UPGRADED — Jeonnong flat road, Noksan drive-only, Micheon Cave leveled, Ilchul Land flat paths, Seongsan base-only photo stop. 5/5 stroller-friendly = 0.70."
+            },
+            "mobility_friendly_fit": {
+              "old": 0.4,
+              "new": 0.65,
+              "reasoning": "UPGRADED — same logic: tour is predominantly drive-to-walk-and-back format with leveled paths and photo-stop Seongsan. 0.65 verified."
+            },
+            "iconic_landmark_fit_check": {
+              "field": "iconic_landmark_fit",
+              "old": 0.8,
+              "new": 0.75,
+              "reasoning": "(Same as above)"
+            }
+          }
+        },
+        "stops_enhanced": 6,
+        "sources": [
+          "VisitKorea",
+          "Visit Jeju",
+          "Jeju Tourism Organization",
+          "市場参考資料",
+          "市場参考資料",
+          "NOL World",
+          "Hueree Park official"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,2160 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "busan-gyeongju-unesco-legacy-tour-national-museum",
+  "locale": "ja",
+  "product_id": "busan-gyeongju-unesco-legacy-tour-national-museum",
+  "seo": {
+    "pageTitle": "釜山発→慶州ユネスコ遺産ツアー：寺院・博物館・橋 | AtoC",
+    "metaDescription": "釜山発・慶州日帰りツアー11.5時間：アホプサン竹林→仏国寺（ユネスコ）→慶州国立博物館→校村韓屋村→月精橋。韓国千年の古都を一日で。英語ガイド付き少人数。",
+    "primaryKeywords": [
+      "釜山発慶州ツアー",
+      "仏国寺ユネスコツアー",
+      "慶州日帰りツアー",
+      "慶州国立博物館",
+      "月精橋ツアー"
+    ],
+    "ogImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+    "title": "釜山発慶州ユネスコツアー：寺院・博物館・橋 | AtoC",
+    "description": "釜山発・慶州少人数日帰りツアー：アホプサン竹林→仏国寺（ユネスコ世界遺産）→慶州国立博物館→校村韓屋村→月精橋。11.5時間、英語ガイド付き。"
+  },
+  "catalog_card": {
+    "thumbnail": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+    "title": "釜山→慶州ユネスコ遺産ツアー：寺院・博物館・橋",
+    "priceLabel": "料金は予約時にご確認ください",
+    "shortCardDescription": "釜山から日帰りで韓国千年の古都・慶州を巡る少人数ツアー：アホプサン竹林→仏国寺（ユネスコ世界遺産）→慶州国立博物館→校村韓屋村→月精橋（夜間ライトアップ）。ユネスコ遺産・考古学・建築・韓国の「遺産テーマ」を一日で濃縮体験。",
+    "tags": [
+      "少人数ツアー",
+      "慶州",
+      "unesco",
+      "釜山発",
+      "新羅王国",
+      "博物館中心"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "slug": "busan-gyeongju-unesco-legacy-tour-national-museum",
+    "subtitle": "韓国千年の古都を一日で — ユネスコ寺院、国立博物館、韓屋村、橋のフィナーレ。",
+    "region": "慶州（釜山発）",
+    "duration": "11.5時間",
+    "stopsCount": 8,
+    "badges": [
+      "少人数",
+      "慶州",
+      "ユネスコ",
+      "仏国寺",
+      "釜山発"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800"
+  },
+  "headlineLine1": "仏国寺から国立博物館、竹林から橋まで —",
+  "headlineLine2": "韓国千年の古都を釜山からの一日で",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "人",
+    "priceSource": "direct_rate",
+    "priceNote": "少人数ツアーの正式価格は予約時にご確認ください。",
+    "discountPercent": 10
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
+    "imagePosition": "center 35%",
+    "tagline": "釜山から韓国千年の古都・慶州へ。ユネスコ遺産、国立博物館、韓屋村、月精橋まで一日で巡ります。",
+    "pills": [
+      "少人数ミニバン",
+      "慶州ユネスコ遺産",
+      "釜山発着"
+    ],
+    "meta": {
+      "duration": "≈ 11.5時間（08:10 最初のピックアップ）",
+      "region": "慶州（釜山発）",
+      "stops": "8見どころ",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "概要"
+    },
+    {
+      "id": "itinerary",
+      "label": "行程"
+    },
+    {
+      "id": "details",
+      "label": "詳細情報"
+    },
+    {
+      "id": "faq",
+      "label": "よくある質問"
+    },
+    {
+      "id": "reviews",
+      "label": "クチコミ"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "所要時間",
+      "value": "≈ 11.5時間（08:10 最初のピックアップ）"
+    },
+    {
+      "icon": "users",
+      "label": "グループ人数",
+      "value": "少人数・ミニバン（典型的に最大8〜10名）"
+    },
+    {
+      "icon": "map-pin",
+      "label": "送迎",
+      "value": "釜山駅4番出口 08:10 / ソミョン駅 08:25 / 海雲台 08:40"
+    },
+    {
+      "icon": "calendar",
+      "label": "ベストシーズン",
+      "value": "年中。桜（4月）・紅葉（10〜11月）に月精橋が特に美しい"
+    },
+    {
+      "icon": "footprints",
+      "label": "歩行",
+      "value": "中程度 — 総計約4〜5km。仏国寺は石段あり"
+    },
+    {
+      "icon": "ticket",
+      "label": "含まれるもの",
+      "value": "往復送迎、認定英語ガイド、全入場料"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+      "alt": "アホプサン竹林の緑の竹が高くそびえる細い小道",
+      "caption": "アホプサン竹林 — 機張郡の520,000m²の竹の森",
+      "location": "アホプサン竹林（アホプサン）竹林、機張郡、釜山北東部",
+      "atmosphere": "朴氏一族が12代にわたって守り続けてきた私有地の竹林。520,000m²の原生林"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+      "alt": "仏国寺の多宝塔と釈迦塔が並ぶ大雄殿前の石庭",
+      "caption": "仏国寺（プルグクサ）— ユネスコ世界遺産",
+      "location": "仏国寺（仏国寺）、吐含山、慶州",
+      "atmosphere": "統一新羅の仏教建築の最高傑作。1,300年の歴史を持つ韓国最高の寺院"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+      "alt": "慶州国立博物館の展示室に展示された新羅時代の金冠",
+      "caption": "慶州国立博物館 — 新羅文明の決定版博物館",
+      "location": "慶州国立博物館（国立慶州博物館）、慶州",
+      "atmosphere": "9万点以上の新羅時代の遺物。金冠・天馬・聖徳大王の神鐘"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=1200",
+      "alt": "校村韓屋村の伝統的な屋根と慶州崔氏家の庭園",
+      "caption": "校村韓屋村 — 慶州崔氏家の保存された韓屋群",
+      "location": "校村韓屋村（校村韓屋村）、慶州",
+      "atmosphere": "慶州崔氏家（600年間維持した万石長者の一族）の屋敷を中心とした保存された韓屋群"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
+      "alt": "ライトアップされた月精橋が南川に映る夜の反射",
+      "caption": "月精橋（ウォルジョンギョ）— 韓国最大の木造橋",
+      "location": "月精橋（月精橋）、慶州",
+      "atmosphere": "60.57mの新羅時代の木造橋の復元。夜のライトアップが南川に映える絶景"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "08:10",
+      "duration": "60分",
+      "name": "釜山ピックアップ（地下鉄3駅）",
+      "category": "出発 — 釜山地下鉄3駅",
+      "description": "ピックアップは釜山の主要地下鉄3駅で順次実施：**釜山駅（1号線）** 約08:10（西区・南浦洞付近の宿泊のお客様向け）。**ソミョン駅** 約08:25（釜山中心部の宿泊のお客様向け）。**海雲台駅** 約08:40（海雲台エリアの宿泊のお客様向け）。ミニバン（典型的に最大8〜10名）で英語対応ガイド付き。全員乗車後、機張郡の**アホプサン竹林**へ北東方向へ出発。慶州まで釜山から約60〜70分。",
+      "highlights": [
+        "**3か所の釜山地下鉄駅**でのピックアップ — 釜山駅（08:10）・ソミョン（08:25）・海雲台（08:40）",
+        "少人数ミニバン（最大8〜10名）、英語対応ガイド付き",
+        "釜山→慶州まで約60〜70分"
+      ],
+      "timeUsed": [
+        "3駅の順次ピックアップ — 約40分",
+        "アホプサン竹林への移動 — 約30分"
+      ],
+      "whyOnRoute": "釜山駅・西面・海雲台の主要エリアから参加しやすい集合場所を設定しています。",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_subway_pickup",
+        "verified": true,
+        "match": "transit_placeholder",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Busan Metro official",
+          "Operator schedule"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "time": "≈ 09:50",
+      "duration": "60分",
+      "name": "アホプサン竹林（アホプサン竹林）",
+      "category": "私有の世襲竹林 — 520,000m²、12代にわたる朴氏一族の管理",
+      "description": "**アホプサン竹林（アホプサン竹林、「九山の森」）**は釜山北東部の機張郡にある**520,000m²の私有世襲森林**で、**南平文氏の家系が9代・約400年にわたり守り続けてきた森です。竹林の主体は**孟宗竹** — 直径10〜15cm、高さ15〜20mの巨竹で、韓国最大級の竹林のひとつ。竹林の中に入ると太陽光が遮断されて独特の緑の薄暗い空間が生まれ、風が吹くたびに竹が揺れる音（「さらさら」）が響きます。フォトグラファーには**竹の縦列の奥行き**と**逆光シルエット**が人気の被写体。また、竹林の一部には**500年以上の樹齢を誇る楠木の大木**（天然記念物候補）が点在し、竹とのコントラストが印象的。**入場料はツアーに含まれます**。慶州への移動前の最初に訪れる場所として、都市の喧騒から自然の静寂への移り変わりを演出します。",
+      "highlights": [
+        "**520,000m²の私有世襲竹林** — 12代にわたる朴氏一族の管理",
+        "**孟宗竹** — 直径10〜15cm・高さ15〜20mの巨竹が林立",
+        "竹の揺れる音（「さらさら」）と緑のトンネル効果",
+        "**500年以上の楠木の大木**が点在",
+        "**入場料はツアーに含まれます**"
+      ],
+      "timeUsed": [
+        "駐車＋竹林入口 — 約5分",
+        "竹林メインゾーン散策＋写真撮影 — 約30〜35分",
+        "バスに戻る — 約5分"
+      ],
+      "whyOnRoute": "慶州への移動前の理想的な最初の訪問地。都市の喧騒から自然の静寂への移り変わりを演出しながら、機張郡の独特の地域文化（世襲竹林管理）も体験していただけます。",
+      "visitBasics": {
+        "hours": "毎日09:00〜18:00（最終入場約17:00）",
+        "closed": "月曜日",
+        "admission": "大人₩8,000/子供₩5,000",
+        "walking": "中程度 — 砂利道と緩やかな傾斜。一部木製遊歩道。動きやすい靴推奨"
+      },
+      "convenience": {
+        "restroom": "入口ゲートと先祖の館近くの中間地点に公衆トイレ",
+        "parking": "オンサイトの観光バス・乗用車駐車場（無料）"
+      },
+      "smartNotes": {
+        "photo": "撮影ポイント9（孟宗竹の竹林）— 10:00〜11:30の側光が最高",
+        "facilities": "入口に小さな農家直売所（季節の地元農産物、ソフトドリンク）",
+        "tip": "竹の明るさに対して写真のコントラストを高めるため濃い色の服装がおすすめ"
+      },
+      "_poi_meta": {
+        "poi_key": "ahopsan_bamboo_forest",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea",
+          "Visit Busan official",
+          "Korea JoongAng 毎日",
+          "K-drama filming location databases",
+          "Korea Tourism Organization (Ahopsan filming location designation)"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:30",
+      "duration": "75分",
+      "name": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+      "category": "ユネスコ世界遺産（1995年） — 統一新羅の仏教建築の最高傑作",
+      "description": "**仏国寺（仏国寺） — 1995年にユネスコ世界遺産に登録**（石窟庵と共に）— は**統一新羅仏教芸術の最高傑作**であり**韓国で最も研究された単一寺院**。751年に宰相金大城が2つの世界（現在の世界と来世）のために建立を始め、774年の完成まで23年を要した。大雄殿前庭の**釈迦塔** と**多宝塔**は韓国の古紙幣の図案にもなった国宝中の国宝（各国宝第20号・第21号）。**青雲橋・白雲橋**（国宝第23号）と**蓮花橋・七宝橋**（国宝第22号）は普通の参拝者が通れない儀礼的な石段橋で、各橋の石組みは1,300年の時を経ても精巧に保たれている。境内には**紫霞門・安養門**など古代建築が点在し、背後の吐含山（745m）の森が神聖な境界を形成。**石窟庵（不国寺から4km上）**は今回のルートには含まれませんが、世界遺産の「もう一方の半分」として解説があります。入場料：**大人₩6,000**。早朝・平日が比較的空いている。",
+      "highlights": [
+        "**ユネスコ世界遺産1995年登録**（石窟庵と共に）",
+        "**釈迦塔（国宝第20号）と多宝塔（国宝第21号）** — 韓国の古紙幣図案",
+        "**青雲橋・白雲橋（国宝第23号）** — 1,300年の精巧な石段橋",
+        "**751年金大城建立開始**、23年の歳月をかけた統一新羅の集大成",
+        "入場料 **大人₩6,000**"
+      ],
+      "timeUsed": [
+        "入口・チケット＋解説 — 約10分",
+        "大雄殿前庭（釈迦塔・多宝塔・石段橋）— 約30分",
+        "境内各堂・通路・庭園 — 約30分",
+        "バスに戻る — 約10分"
+      ],
+      "whyOnRoute": "仏国寺は慶州ルートの文化・遺産の中心となる見どころ。ユネスコ世界遺産の石仏寺と多宝塔を直接見学できる慶州ツアーの最優先の訪問地。",
+      "visitBasics": {
+        "hours": "毎日09:00–18:00（最終入場17:00）",
+        "closed": "年中無休",
+        "admission": "無料（2023年、文化財保護法改正により）",
+        "walking": "中程度 — 石段・坂・砂利道。歩きやすい靴を推奨"
+      },
+      "convenience": {
+        "restroom": "境内に無料トイレがあります。",
+        "parking": "境内駐車場（有料）"
+      },
+      "smartNotes": {
+        "photo": "紫霞門下の青雲橋・白雲橋（国宝23号）。多宝塔（国宝20号）と釈迦塔（国宝21号）の正面対称構図 — 午前11時前の光が最適。",
+        "facilities": "入口観光案内所。仏国寺博物館（別途チケット₩2,000/₩1,000、月曜休館）。",
+        "tip": "服装は端正に。堂内に入る際は靴を脱ぐ。ドローン禁止。僧侶・参拝者の撮影禁止（標示箇所を遵守）。"
+      },
+      "_poi_meta": {
+        "poi_key": "bulguksa_temple",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO World Heritage Centre",
+          "Wikipedia",
+          "World History Encyclopedia",
+          "VisitKorea",
+          "Visit Gyeongju official"
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "time": "≈ 13:00",
+      "duration": "60分",
+      "name": "昼食（慶州の地元レストラン）",
+      "category": "昼食休憩 — 慶州郷土料理",
+      "description": "仏国寺–吐含山コリドー近辺の慶州地元レストランでの昼食（自己負担、**₩10,000〜15,000**程度）。典型的なオプション：**サムパプ（サムバッ）** — 野菜包み定食、多種の惣菜と葉野菜で米を包んで食べる慶州スタイル。**韓定食（ハンジョンシク）** — 慶州の伝統的なコース定食（小鉢料理が数十種類）。または、仏国寺近辺の慶州名物**ファンナムパン（ファンナンパン）**小豆あんパンを購入してのランチボックス形式も可。**ベジタリアン・ハラール対応**は事前申込で可能。",
+      "highlights": [
+        "**サムパプ（サムバッ）** — 野菜包み定食、慶州スタイル",
+        "**韓定食（ハンジョンシク）** — 慶州の伝統的なコース定食",
+        "慶州名物**ファンナムパン（ファンナンパン）**小豆あんパン",
+        "**ベジタリアン・ハラール対応**（事前申込）"
+      ],
+      "timeUsed": [
+        "コーチで昼食会場へ — 約10分",
+        "注文＋食事 — 約45〜50分"
+      ],
+      "whyOnRoute": "仏国寺の午前中にじっくり楽しむ文化体験の後、午後の博物館・韓屋村・橋に向けてエネルギーを補給。",
+      "_poi_meta": {
+        "poi_key": "OPS_gyeongju_lunch",
+        "verified": true,
+        "match": "lunch_placeholder",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Gyeongju official",
+          "VisitKorea food guide"
+        ]
+      }
+    },
+    {
+      "number": 5,
+      "time": "≈ 14:15",
+      "duration": "75分",
+      "name": "慶州国立博物館",
+      "category": "新羅文明の決定版博物館 — 1945年設立、9万点以上の収蔵品",
+      "description": "**慶州国立博物館（国立慶州博物館）**は**新羅文明の決定版博物館** — 1945年に国立博物館慶州支館として設立。現在の収蔵品は**9万点以上**で、仏国寺・石窟庵などの発掘調査で出土した新羅時代（紀元前57年〜935年）の遺物を体系的に展示。必見の展示品：**(1) 新羅金冠** — 6世紀の金製の王冠、金箔の木の葉と勾玉（勾玉）が吊り下げられた精巧な細工。**(2) 天馬図**（国宝第207号）— 天馬塚から発掘された白樺樹皮に描かれた天を駆ける白馬の絵（6世紀）。**(3) 聖徳大王神鐘（聖徳大王の神鐘）** — 1,300年前の韓国最大・最美の梵鐘（高さ3.6m、重量18.9トン）で、鐘声は「エミレの鐘」と呼ばれる深い余韻を持つ。**入場無料**。英語・日本語のパンフレット配布あり。主要展示物に**日本語の説明ラベル**が付いている。",
+      "highlights": [
+        "**9万点以上の新羅時代遺物** — 1945年設立の新羅文明の決定版博物館",
+        "**新羅金冠** — 6世紀の金製王冠（国宝）",
+        "**天馬図（天馬塚）（国宝第207号）** — 6世紀の白樺樹皮に描かれた天駆ける白馬",
+        "**聖徳大王の神鐘（エミレの鐘）** — 高さ3.6m・重量18.9トンの韓国最大の梵鐘",
+        "**入場無料**。日本語説明ラベル・パンフレットあり"
+      ],
+      "timeUsed": [
+        "入口＋案内図受取 — 約5分",
+        "新羅金冠・天馬図・聖徳大王の神鐘の主要展示 — 約45〜50分",
+        "屋外野外展示（石塔・石仏） — 約10分",
+        "バスに戻る — 約5分"
+      ],
+      "whyOnRoute": "仏国寺で建築・空間として感じた新羅文明を、博物館で遺物・考古学として理解する流れが完成。入場無料で最も満足度の高い慶州の見どころ。",
+      "visitBasics": {
+        "hours": "火〜日 10:00〜18:00（最終入場17:30）。土・毎月最終水曜は延長",
+        "closed": "月曜日＋1月1日＋旧正月＋チュソク",
+        "admission": "無料",
+        "walking": "館内はおおむねバリアフリー対応で、一部屋外の舗装エリアがあります。"
+      },
+      "convenience": {
+        "restroom": "本館内と屋外パビリオン周辺",
+        "parking": "無料駐車場"
+      },
+      "smartNotes": {
+        "photo": "屋外パビリオンの聖徳大王神鐘（午後の側光）。展示室の天馬塚金冠。",
+        "facilities": "金冠レプリカのお土産ショップ。本館内カフェ。荷物預かり所。",
+        "tip": "フラッシュ禁止。一部の特別展示は撮影全面禁止（入口表示を確認）。"
+      },
+      "_poi_meta": {
+        "poi_key": "gyeongju_national_museum",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Gyeongju National Museum official",
+          "Wikipedia",
+          "Korea JoongAng 毎日 APEC 2025 coverage",
+          "Cultural Heritage Administration (NT 29, NT 188)",
+          "National Museum of Korea (Gyeongju Branch)"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "≈ 15:50",
+      "duration": "60分",
+      "name": "校村韓屋村（キョチョン・ハノクマウル）",
+      "category": "保存された韓屋群 — 慶州崔氏家、12代・万石の一族",
+      "description": "**校村韓屋村（校村韓屋村）**は慶州崔氏家の歴史的屋敷を中心とした**伝統的な韓国の韓屋（韓屋）が保存されたエリア** — 慶州崔氏は**12代・250年以上にわたって万石（万石、最高の土地保有量を表す単位）の財産を維持した**ことで知られる特異な家系。崔氏家の家訓は「飢えた旅人を追い返してはならない」「土地を100里以内のみ所有せよ」「家を99間以上に増築してはならない」などを含む高潔な家風で知られ、現在も慶州の代表的な「ノブレス・オブリージュ」の象徴として引用されます。村内には複数の保存された韓屋が点在し、**校里キンパ（キョリキンパ）**（慶州校里のロールご飯、観光客に人気）の専門店も。**入場無料**。狭い路地と石畳が続くため歩きやすい靴を推奨。",
+      "highlights": [
+        "**慶州崔氏家** — 12代・250年以上万石の財産を維持した稀有な一族",
+        "「飢えた旅人を追い返すな」などの崔氏家の高潔な家訓",
+        "保存された**伝統韓屋群**と石畳の路地",
+        "**校里キンパ（キョリキンパ）**の人気専門店",
+        "**入場無料**"
+      ],
+      "timeUsed": [
+        "入口＋村地図 — 約5分",
+        "崔氏屋敷・韓屋群散策 — 約25〜30分",
+        "キョリキンパ（任意） — 約10分",
+        "バスに戻る — 約5分"
+      ],
+      "whyOnRoute": "博物館での新羅遺物と仏国寺の仏教建築の後、朝鮮時代（14〜20世紀）の儒教的な両班文化と韓屋建築を体験することで、慶州の歴史層が完成します。",
+      "visitBasics": {
+        "hours": "昼間は常時開放。ほとんどの文化財家屋 09:00〜18:00",
+        "closed": "一部の個人家屋は月曜休 — メインの路地は常時開放",
+        "admission": "多くは無料。崔氏古宅の主要棟には小額寄付箱",
+        "walking": "楽 — 砂利と石板の小路。メインストリートは部分的に車椅子対応"
+      },
+      "convenience": {
+        "restroom": "村入口と慶州鄕校近くの公衆トイレ",
+        "parking": "西入口の観光バス無料降車エリア"
+      },
+      "smartNotes": {
+        "photo": "ゴールデンアワーの韓屋瓦屋根。校洞法酒醸造場の門。月精橋方向の路地。",
+        "facilities": "校洞法酒販売店（お土産ボトル）。メイン路地の小工芸品店。",
+        "tip": "関税の免税枠があれば校洞法酒をお土産に（非常にまろやかな伝統米酒）。"
+      },
+      "_poi_meta": {
+        "poi_key": "gyochon_hanok_village",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Gyeongju official",
+          "VisitKorea",
+          "Wikipedia (Gyeongju Choi family)",
+          "Cultural Heritage Administration (Folklore Material No. 27, Intangible No. 86-3)",
+          "Cultural Heritage Administration of Korea (Gyeongju Choi Clan Family Designation)"
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "time": "≈ 17:00",
+      "duration": "40分",
+      "name": "月精橋（ウォルジョンギョ）",
+      "category": "復元された新羅時代の木造橋 — 韓国最大の木造橋（60.57m）",
+      "description": "**月精橋（月精橋）**は**南川（南川）に架かる新羅時代の木造橋の復元**で、現在は**韓国最大の木造橋**（全長60.57m、幅8.7m）。元の橋は760年（景徳王19年）に建設され、1280年代（高麗時代）に廃橋となりましたが、2018年に復元工事が完了。復元工事では近隣の三陵林（松林）の松を伐採せずに材料を調達するために**30年以上の準備期間**を要したとされ、使用した木材は**朝鮮式木造建築法**に従った伝統工法。橋の両端に立つ**樓門（楼門）**は統一新羅時代の建築様式を再現。**夜間ライトアップ**（日没後）が橋の最高の撮影シーン — 南川の水面に映る橋の反射が慶州ツアー全体で最もInstagram映えする瞬間。**入場無料**。このツアーの到着時刻（約17:00〜17:30）は季節によって夕暮れの光が橋を染め、夜間ライトアップ開始直前の「マジックアワー」に当たることが多い。",
+      "highlights": [
+        "**韓国最大の木造橋**（全長60.57m・幅8.7m）— 2018年復元完了",
+        "**760年（新羅・景徳王19年）**建設の元橋。**30年以上の準備期間**をかけた復元",
+        "橋の両端の**樓門**が統一新羅の建築様式を再現",
+        "**夜間ライトアップ**で南川の水面に映る橋の反射 — 慶州最大の撮影ポイント",
+        "**入場無料**"
+      ],
+      "timeUsed": [
+        "コーチ到着＋橋入口 — 約5分",
+        "橋の歩行＋楼門内外の見学 — 約20〜25分",
+        "南川沿い散策＋写真撮影 — 約15分",
+        "バスに戻る — 約5分"
+      ],
+      "whyOnRoute": "月精橋は一日の文化・遺産フィナーレとして完璧な位置にあります。日没前後のマジックアワーに合わせた時間配分で、慶州ツアーの見どころシーンを最大化します。",
+      "visitBasics": {
+        "hours": "24時間（イルミネーションは日没〜約23:00）",
+        "closed": "年中無休",
+        "admission": "無料",
+        "walking": "楽 — 平坦な橋デッキ。北岸から車椅子でアクセス可能"
+      },
+      "convenience": {
+        "restroom": "北岸駐車場の公衆トイレ",
+        "parking": "北岸に観光バス駐車（無料）"
+      },
+      "smartNotes": {
+        "photo": "月城宮跡に向かって橋が伸びる南側門楼 — 代表的なショット、夜間照明は特に美しい。",
+        "facilities": "橋上に店なし。北岸駐車場近くに小さなカフェ。",
+        "tip": "夜間照明撮影には三脚やナイトモードを。冬の雪と照明は特に美しい。"
+      },
+      "_poi_meta": {
+        "poi_key": "woljeonggyo_bridge",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Gyeongju official",
+          "Cultural Heritage Administration",
+          "Wikipedia (Woljeonggyo)",
+          "MCST '100 Best Tourist Attractions 2025–2026' list",
+          "Korea Tourism Organization '100 Best 2025-2026' designation"
+        ]
+      }
+    },
+    {
+      "number": 8,
+      "time": "≈ 17:45",
+      "duration": "75分",
+      "name": "釜山への帰路",
+      "category": "帰路 — 慶州→釜山（京釜高速道路）",
+      "description": "月精橋北岸から約17:45に出発し、**京釜高速道路＋東海高速道路**で釜山へ南下。**帰路の解散は朝のピックアップの逆順**：海雲台→ソミョン→釜山駅。推定到着時刻：海雲台 約19:15、ソミョン 約19:30、釜山駅 約19:45。移動中にガイドが一日の見どころをまとめ、慶州・釜山のおすすめポイント（石窟庵・甘川文化村など）を案内します。コーチ内Wi-Fi完備。",
+      "highlights": [
+        "慶州→釜山：京釜高速道路＋東海高速道路経由、**約80〜90分**",
+        "帰路解散：海雲台（約19:15）→ソミョン（約19:30）→釜山駅（約19:45）",
+        "車内Wi-Fiを利用できます。"
+      ],
+      "timeUsed": [
+        "月精橋北岸→釜山まで — 約80〜90分",
+        "釜山市内3駅への解散 — 約30分"
+      ],
+      "whyOnRoute": "月精橋が最後の見どころのため、帰路が最短距離で釜山へ戻れます。",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_return",
+        "verified": true,
+        "match": "transit_placeholder",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Operator schedule",
+          "Korea Expressway Corporation traffic data"
+        ]
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "釜山地下鉄ピックアップ",
+      "type": "origin",
+      "theme": "出発"
+    },
+    {
+      "name": "アホプサン竹林（花見シーズンはヘウンデ達摩吉山へ）",
+      "type": "primary",
+      "theme": "竹林・海岸ドライブ（季節限定）"
+    },
+    {
+      "name": "仏国寺（ユネスコ世界遺産）",
+      "type": "primary",
+      "theme": "ユネスコ文化遺産"
+    },
+    {
+      "name": "昼食（慶州サムパプ）",
+      "type": "meal",
+      "theme": "食事"
+    },
+    {
+      "name": "慶州国立博物館",
+      "type": "primary",
+      "theme": "新羅の遺物"
+    },
+    {
+      "name": "キョチョン韓屋村",
+      "type": "primary",
+      "theme": "伝統韓屋村"
+    },
+    {
+      "name": "月精橋",
+      "type": "primary",
+      "theme": "新羅の古橋（復元）"
+    },
+    {
+      "name": "釜山地下鉄降車",
+      "type": "return",
+      "theme": "帰路"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "出発 ＋ アホプサン",
+      "duration": "約2時間30分",
+      "description": "釜山地下鉄の3か所で順次ピックアップ（08:10・08:30・09:10）後、機張郡のアホプサン竹林まで車で約30分。"
+    },
+    {
+      "phase": "ユネスコの核心",
+      "duration": "約2時間",
+      "description": "アホプサンから仏国寺まで約70分のドライブ後、境内を75分かけてじっくり見学。"
+    },
+    {
+      "phase": "昼食＋博物館",
+      "duration": "約2時間30分",
+      "description": "慶州の地元料理での昼食後、慶州国立博物館へ。"
+    },
+    {
+      "phase": "韓屋村＋橋＋帰路",
+      "duration": "約2時間",
+      "description": "校村韓屋村の路地散策→月精橋のフィナーレ→釜山への帰路。"
+    },
+    {
+      "phase": "慶州への朝の移動",
+      "duration": "約1時間15分〜1時間30分",
+      "description": "ピックアップ→アホプサン竹林→仏国寺。"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "この一日の流れ",
+    "subtitle": "「遺産テーマ」を重視した釜山→慶州の一日 — 韓国で最も長く続いた王国（新羅、992年間）とその遺物を一日かけて体験します。竹林・ユネスコ寺院・国立博物館・韓屋村・橋という流れで、歴史の深さを積み重ねていきます。"
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "韓国初訪問者でユネスコ遺産を一日で体験したい方",
+      "カップルと大人ファミリー",
+      "博物館の解説パネルを読む歴史好きの旅行者",
+      "フォトグラファー（仏国寺の塔・校村韓屋・月精橋）"
+    ],
+    "lessIdealFor": [
+      "歩行を最小限にしたい方",
+      "ベビーカー依存度の高いグループ（仏国寺の石段）",
+      "非常に幼いお子様（フルデイのリズム）",
+      "当日夜フライトのタイトなスケジュールの旅行者（帰着は最大19:45）"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "このルートのおすすめポイント",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "博物館を含む（大多数のツアーが省く）",
+            "detail": "多くの慶州日帰りツアーが博物館をスキップしますが、このツアーは新羅時代の遺物（金冠・天馬図・聖徳大王の神鐘）をガイド解説付きで鑑賞できます。"
+          },
+          {
+            "label": "月精橋を一日の締めくくりに",
+            "detail": "月精橋は短く平坦な撮影ポイントで、一日のフィナーレとして完璧。日没前後のマジックアワーに到着するよう組まれています。"
+          },
+          {
+            "label": "年中実施、季節による賢いルート変更",
+            "detail": "アホプサン竹林は桜（4月）の季節に竹×桜の幻想的な組み合わせとなります。"
+          },
+          {
+            "label": "コーチと専用車の中間のミニバン",
+            "detail": "釜山〜慶州のコーチツアーは40名以上の大型グループが多いため、少人数ミニバンで博物館や月精橋をゆったり鑑賞できます。"
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "inclusions",
+      "title": "含まれるもの・含まれないもの",
+      "preview": "釜山発着の往復ミニバン、英語・中国語対応認定ガイド、燃料費・高速料金・駐車料…",
+      "content": [
+        "往復送迎（釜山地下鉄3駅）、エアコン付きミニバン",
+        "認定英語対応ガイド",
+        "全入場料（アホプサン竹林・仏国寺・慶州国立博物館・校村韓屋村・月精橋）",
+        "含まれないもの：昼食（約₩10,000〜15,000）・チップ"
+      ]
+    },
+    {
+      "id": "pickup",
+      "title": "ピックアップと解散",
+      "preview": "釜山地下鉄1号線沿いに3か所でピックアップ：釜山駅4番出口（08:10）、西面駅4番出口（08:30）、海雲台駅5番出口（09:10）…",
+      "content": [
+        "ピックアップ：釜山駅4番出口（08:10）・ソミョン駅（08:25）・海雲台駅（08:40）",
+        "解散（逆順）：海雲台（約19:15）→ソミョン（約19:30）→釜山駅（約19:45）",
+        "空港への解散は別途ご相談ください"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "歩行と地形",
+      "preview": "中程度。終日の総歩行距離は約4〜5km。仏国寺には石段あり。博物館・韓屋村・橋は平坦。",
+      "content": [
+        "中程度、総計約4〜5km。",
+        "仏国寺：石段と境内の砂利道（通常の移動は問題なし）",
+        "慶州国立博物館：フラットな屋内・屋外展示",
+        "校村韓屋村：石畳の路地（若干の坂あり）",
+        "月精橋：フラットな木製橋",
+        "歩きやすいクローズドトゥシューズ推奨"
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "キャンセルポリシー",
+      "preview": "ピックアップ24時間前までは無料キャンセル可。",
+      "content": [
+        "ピックアップの24時間前まで無料キャンセル",
+        "当日キャンセルおよびノーショーは返金不可",
+        "悪天候（台風・大雪）の場合は全額返金または日程変更"
+      ]
+    },
+    {
+      "id": "seasonal",
+      "title": "季節のルートに関する注意",
+      "preview": "桜の季節（例年3月中旬〜4月中旬、年によって7〜10日前後）は…",
+      "content": [
+        "桜（4月）：仏国寺・慶州全域で桜が咲き誇る。最も混雑するシーズン",
+        "紅葉（10〜11月）：校村韓屋村と月精橋周辺が特に美しい",
+        "冬（12〜2月）：雪景色の仏国寺が幻想的。寒さ対策を忘れずに",
+        "夏（6〜8月）：仏国寺は朝早い時間帯に訪問するためピーク前に行動可能"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "季節別の案内を確認"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "季節別の案内を確認"
+    },
+    "_seasonalSummary": "慶州は釜山より内陸性の気候が強く、冬はより寒く、夏はより暑く感じられることがあります。桜の4月、そして仏国寺の紅葉が美しい10〜11月が特におすすめです。",
+    "_seasonalTemperatures": [
+      {
+        "season": "春（3〜5月）",
+        "range": "5–22°C",
+        "notes": "4月上旬は桜が見頃で、全体的に最もおすすめの季節です。"
+      },
+      {
+        "season": "夏（6〜8月）",
+        "range": "22–32°C",
+        "notes": "夏は蒸し暑いですが、博物館は冷房があり快適です。"
+      },
+      {
+        "season": "秋（9〜11月）",
+        "range": "8–24°C",
+        "notes": "10月下旬の仏国寺の紅葉は特に見事です。"
+      },
+      {
+        "season": "冬（12〜2月）",
+        "range": "-3 to 8°C",
+        "notes": "冬は冷え込むため、博物館や屋内カフェでの休憩がより便利です。"
+      }
+    ]
+  },
+  "seasonalVariations": [
+    {
+      "season": "春（3月中旬〜4月中旬、桜シーズン）",
+      "description": "オープニングのアホプサン竹林をハウンデのダルマジヒル桜道に変更。仏国寺境内は4月中旬に見頃。多宝塔前のヤエザクラは定番構図。"
+    },
+    {
+      "season": "夏（6〜8月）",
+      "description": "竹林は林冠下で涼しさを保つ。博物館は冷房完備。仏国寺の山地ロケーションは海沿いの釜山より気温が低い。"
+    },
+    {
+      "season": "秋（9月下旬〜10月下旬）",
+      "description": "仏国寺10月下旬の紅葉は韓国を代表する撮影スポット。慶州の古墳群周辺も色づく。10月中旬以降、17時到着で月精橋が夕暮れ照明に入る。"
+    },
+    {
+      "season": "冬（11〜2月）",
+      "description": "観光客が最も少ない。博物館が最も価値ある屋内見どころに。日没17:15〜17:30で訪問中に月精橋の照明が点灯し始める——日没後の水面反射写真が撮れる唯一のシーズン。"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "現地を熟知した認定スタッフ",
+      "description": "完全保険付きの認定韓国ツアー催行会社",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "慶州・釜山全域を熟知した現地を熟知した認定スタッフ。仏国寺の最適な訪問時間帯の管理に実績。"
+    },
+    {
+      "icon": "route",
+      "title": "ユネスコ遺産に特化したルート",
+      "description": "手調整の慶州遺産行程",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "アホプサン竹林→仏国寺→博物館→韓屋村→月精橋という「歴史層を積み重ねる」行程づくり。"
+    },
+    {
+      "icon": "users",
+      "title": "少人数制ツアー",
+      "description": "最大8〜10名の少人数ミニバン",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "少人数で仏国寺の境内も博物館の展示も落ち着いて鑑賞できます。"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "予約後すぐ",
+      "title": "予約確認（即時）",
+      "detail": "行程確認付きの予約確認",
+      "description": "予約確認はすぐに届き、ピックアップ駅（釜山駅／西面／海雲台）と当日の朝のスケジュールもあわせて案内されます。"
+    },
+    {
+      "timing": "12時間前",
+      "title": "12時間前リマインダー",
+      "detail": "天気情報とルート変更のご案内",
+      "description": "前日に天気情報と季節ごとのルート案内をお送りします。桜シーズンの代替ルートや冬の月精橋ライトアップ時間もあわせてご案内します。"
+    },
+    {
+      "timing": "前日の夜",
+      "title": "最終お迎え情報",
+      "detail": "正確なピックアップ時間とドライバーの連絡先",
+      "description": "ドライバー兼ガイドが出発前日の夜に車両番号と正確なピックアップ時間をお知らせします。"
+    },
+    {
+      "timing": "当日の朝",
+      "title": "当日ルート情報",
+      "detail": "ライブ状況に基づく朝のブリーフィング",
+      "description": "朝のメッセージで集合駅と東海高速道路の交通状況を確認します。"
+    },
+    {
+      "timing": "ツアー中",
+      "title": "各訪問地でのガイダンス",
+      "detail": "仏国寺の建築・新羅の歴史・月精橋の照明タイミングをガイドがナレーション",
+      "description": "ガイドが各訪問地で詳しくご案内します。仏国寺の国宝、博物館の新羅金冠、校村韓屋村に伝わる崔氏一族の歴史まで、見どころを日本語でも理解しやすい流れで紹介します。"
+    },
+    {
+      "timing": "ツアー後",
+      "title": "ツアー後サポート",
+      "detail": "フォローアップとおすすめ情報",
+      "description": "降車後に簡単なフィードバックアンケートを送信します。慶州でのその後の移動に関するご質問にもフォローアップします。"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q-bridge-night-view",
+      "question": "月精橋は訪問時にライトアップされていますか？",
+      "answer": "到着時刻（約17:00〜17:30）は日没前後のマジックアワーに当たることが多く、ライトアップが始まる時間帯です。季節によって日没時刻が異なりますが、春・秋は最も美しい夕暮れと月精橋のライトアップが重なります。"
+    },
+    {
+      "id": "q-vs-ancient-capital",
+      "question": "「古都」日帰りツアーとの違いは何ですか？",
+      "answer": "このユネスコレガシーツアーは遺産テーマをより強調し、ゆったり11.5時間かけて各訪問地に深く向き合います。古都ツアーは10.5時間でより穏やかなペース設定です。両者の見どころは同じですが、フレーミングとガイドの解説の深度が異なります。"
+    },
+    {
+      "id": "q-seokguram",
+      "question": "石窟庵は含まれていますか？仏国寺のもう一方のユネスコサイトですが。",
+      "answer": "今回のルートには含まれていません。石窟庵は仏国寺から4km山を上った場所にあり、往復1〜1.5時間のトレッキングが必要です。1日のスケジュールに収めるには他の見どころを省略する必要があるため、今回は仏国寺に集中しています。石窟庵を優先する場合は別途ご相談ください。"
+    },
+    {
+      "id": "q-admissions",
+      "question": "入場料は含まれていますか？",
+      "answer": "はい、全入場料（アホプサン竹林・仏国寺・慶州国立博物館・校村韓屋村・月精橋）がツアー代金に含まれています。昼食は自己負担（約₩10,000〜15,000）です。"
+    },
+    {
+      "id": "q-museum-language",
+      "question": "博物館に英語の案内はありますか？",
+      "answer": "はい。慶州国立博物館の主要展示物には英語・日本語の説明ラベルが付いています。また、英語・日本語のパンフレットも受付で配布しています。ガイドが主要な展示品（金冠・天馬図・聖徳大王の神鐘）について重点解説を行います。"
+    },
+    {
+      "id": "q-bulguksa-photography",
+      "question": "仏国寺で写真撮影はできますか？",
+      "answer": "はい。境内全域で写真撮影が可能です。釈迦塔・多宝塔・石段橋（青雲橋・白雲橋）が最人気の撮影スポットです。仏殿内部は参拝中に写真撮影する際は静かに行ってください。"
+    },
+    {
+      "id": "q-bulguksa-stairs",
+      "question": "仏国寺の33段の石段橋（青雲橋・白雲橋）を上る必要がありますか？",
+      "answer": "通常の参拝者は石段橋（国宝）を上ることができません。儀礼的な意味を持つ文化財として保護されているため立入禁止で、境内への入場は別の通路を使用します。石段橋はその下から・横から観賞・撮影します。"
+    },
+    {
+      "id": "q-vegetarian",
+      "question": "昼食にベジタリアンのオプションはありますか？",
+      "answer": "はい。事前に予約時にお申し出いただければ、ベジタリアン・ビーガン対応の慶州レストランへご案内します。"
+    },
+    {
+      "id": "q-rain",
+      "question": "雨の場合はどうなりますか？",
+      "answer": "年中実施。仏国寺と月精橋は雨でも独特の美しさがあります。竹林は雨天でも竹の雨音が幻想的な雰囲気を演出します。大雨・台風の場合は全額返金または日程変更の選択肢をご案内します。"
+    },
+    {
+      "id": "first-time",
+      "question": "慶州初訪問者に良い選択ですか？",
+      "answer": "はい。ユネスコ世界遺産・博物館・韓屋村・木造橋という慶州の4つの主要テーマを一日でカバーできる、最もバランスの良い慶州入門ツアーです。"
+    },
+    {
+      "id": "walking",
+      "question": "歩行量はどれくらいですか？",
+      "answer": "中程度。総計約4〜5kmで、仏国寺の境内（石段あり）が最もアクティブな区間です。慶州国立博物館・校村韓屋村・月精橋は比較的楽な歩行です。歩きやすいクローズドトゥシューズを推奨します。"
+    },
+    {
+      "id": "family",
+      "question": "ファミリーに適していますか？",
+      "answer": "はい。6歳以上のお子様がいるファミリーに適しています。仏国寺の石段が唯一の体力的な部分です。慶州国立博物館の金冠や天馬図は子供にも人気です。"
+    },
+    {
+      "id": "seniors",
+      "question": "高齢の方でも参加できますか？",
+      "answer": "はい、活動的な高齢者の方はご参加いただけます。仏国寺の境内は石段があるものの、ゆっくり自分のペースで歩けます。月精橋・博物館・韓屋村はフラットで問題ありません。"
+    },
+    {
+      "id": "children",
+      "question": "推奨される最低年齢は？",
+      "answer": "6歳以上が最適です。フルデイ（11.5時間）のリズムについてこられる体力があれば参加できます。慶州国立博物館の金冠と月精橋のライトアップは子供にも印象的です。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "予約可否は決済ステップで確認されます。",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "人",
+      "priceSource": "direct_rate",
+      "priceNote": "料金は予約画面でご確認ください。AtoC Koreaの直販ページでは、表示料金と空席状況を確認したうえでご予約いただけます。",
+      "discountPercent": 10
+    }
+  },
+  "pickup_dropoff": {
+    "type": "meeting_point",
+    "meeting_points": [
+      {
+        "name": "釜山駅4番出口",
+        "time": "08:10"
+      },
+      {
+        "name": "西面駅4番出口",
+        "time": "08:30"
+      },
+      {
+        "name": "海雲台駅5番出口",
+        "time": "09:10"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "海雲台駅5番出口",
+        "approx_time": "≈ 19:00"
+      },
+      {
+        "name": "西面駅4番出口",
+        "approx_time": "≈ 19:25"
+      },
+      {
+        "name": "釜山駅4番出口",
+        "approx_time": "≈ 19:45"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "予約時にホテルから最も近いピックアップ地点をお選びください。通年運行のコースですが、桜シーズン（通常3月中旬〜4月中旬）は、アホプサン竹林の代わりに海雲台タルマジキルを訪れる場合があります。"
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "busan-gyeongju-unesco-legacy-tour-national-museum",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "gyeongsang_north",
+    "vehicle_type": "coach",
+    "duration_hours": 11.0,
+    "region_tags": [
+      "busan_gijang",
+      "gyeongju_tohamsan",
+      "gyeongju_historic_core"
+    ],
+    "theme_tags": [
+      "unesco",
+      "silla_kingdom",
+      "gyeongju",
+      "from_busan",
+      "museum",
+      "bamboo_forest",
+      "hanok_village",
+      "night_illumination",
+      "buddhist_temple"
+    ],
+    "poi_tags": [
+      "ahopsan_bamboo_forest",
+      "bulguksa_temple",
+      "gyeongju_national_museum",
+      "gyochon_hanok_village",
+      "woljeonggyo_bridge"
+    ],
+    "pace_level": 0.7,
+    "walking_level": 0.7,
+    "scenic_level": 0.9,
+    "photo_level": 1.0,
+    "culture_level": 1.0,
+    "relax_level": 0.55,
+    "first_time_fit": 1.0,
+    "family_fit": 0.85,
+    "senior_fit": 0.85,
+    "couple_fit": 0.95,
+    "solo_traveler_fit": 1.0,
+    "active_traveler_fit": 0.6,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 0.95,
+    "young_kids_fit": 0.45,
+    "senior_active_fit": 0.85,
+    "senior_general_fit": 0.75,
+    "mobility_friendly_fit": 0.65,
+    "stroller_fit": 0.4,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.15,
+    "rain_fit": 0.7,
+    "value_for_money_fit": 1.0,
+    "iconic_landmark_fit": 1.0,
+    "cafe_fit": 0.4,
+    "food_fit": 0.6,
+    "nature_fit": 0.6,
+    "beach_fit": 0.2,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.4,
+    "no_shopping_fit": 0.85,
+    "local_culture_fit": 0.95,
+    "storytelling_fit": 1.0,
+    "unesco_fit": 1.0,
+    "intangible_heritage_fit": 0.85,
+    "indoor_ratio": 0.32,
+    "weather_sensitivity": 0.45,
+    "comfort_level": 0.7,
+    "budget_fit": 0.85,
+    "premium_fit": 0.5,
+    "small_group_fit": 1.0,
+    "private_fit": 0.05,
+    "bus_fit": 1.0,
+    "price_band": "mid",
+    "pickup_base": "busan_central",
+    "return_time_band": "18:50-19:20",
+    "duration_band": "11h",
+    "min_recommended_age": 10,
+    "hard_constraints": {
+      "avoidIf": [
+        "very_low_mobility"
+      ],
+      "notIdealFor": [
+        "young_kids_under_10",
+        "private_tour_seekers",
+        "shoppers_only"
+      ]
+    },
+    "walking_notes": [
+      "中程度-to-busy walking day — Ahopsan gravel path, Bulguksa stone steps, museum interior, Gyochon lanes, Woljeonggyo bridge deck.",
+      "Average fitness expected.",
+      "Comfortable walking shoes mandatory; bring a light layer for the post-sunset bridge stop and morning bamboo forest."
+    ],
+    "keywords": [
+      "釜山発慶州日帰りツアー",
+      "仏国寺ユネスコツアー",
+      "慶州遺産ツアー"
+    ],
+    "synonym_hints": [
+      "慶州観光ツアー",
+      "釜山から慶州"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "busan",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "bulguksa_temple",
+      "gyeongju_national_museum",
+      "gyochon_hanok_village",
+      "ahopsan_bamboo_forest",
+      "woljeonggyo_bridge"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.1,
+    "flexibility_fit": 0.3,
+    "fixed_itinerary_fit": 1.0,
+    "buddhist_temple_fit": 1.0,
+    "silla_kingdom_fit": 1.0,
+    "ancient_capital_fit": 1.0,
+    "silla_artifacts_fit": 1.0,
+    "museum_fit": 1.0,
+    "national_museum_fit": 1.0,
+    "hanok_village_fit": 1.0,
+    "scholar_gentry_heritage_fit": 1.0,
+    "bamboo_forest_fit": 1.0,
+    "k_drama_filming_fit": 1.0,
+    "night_illuminated_bridge_fit": 1.0,
+    "sunset_finale_fit": 1.0,
+    "scenic_temple_fit": 1.0,
+    "history_culture_fit": 1.0,
+    "religious_history_fit": 0.95,
+    "cherry_blossom_fit": 0.5,
+    "spring_seasonal_fit": 0.6,
+    "autumn_foliage_fit": 0.7,
+    "weather_robust_fit": 0.75,
+    "premium_dining_fit": 0.85,
+    "seasonal_fit": 0.95,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "unesco_anchor_count": 2,
+    "national_treasure_count_visited": 5,
+    "intangible_cultural_asset_count_visited": 1,
+    "museum_visit": true,
+    "silla_dynasty_focus_fit": 1.0,
+    "ancient_capital_history_fit": 1.0,
+    "k_drama_filming_locations_count": 1,
+    "deep_history_traveler_fit": 1.0,
+    "longer_day_fit": 1.0,
+    "differentiates_from_busan_top_attractions": true,
+    "differentiates_from_spring_cherry_blossom_route": true,
+    "apec_2025_silla_gold_crown_exhibition_anchor": true,
+    "deep_history_traveler_fit_minimum": 0.7,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "unesco",
+      "silla_kingdom",
+      "gyeongju",
+      "from_busan",
+      "museum"
+    ],
+    "secondary_themes": [
+      "bamboo_forest",
+      "hanok_village",
+      "night_illumination",
+      "buddhist_temple",
+      "k_drama_filming"
+    ],
+    "best_for": [
+      "history_lovers",
+      "first_time_korea",
+      "couples",
+      "solo_travelers",
+      "rainy_day_visitors",
+      "k_drama_fans",
+      "photographers"
+    ],
+    "not_recommended_for": [
+      "young_kids_under_10",
+      "private_tour_seekers",
+      "active_outdoor_seekers",
+      "shoppers_only"
+    ],
+    "anchor_pois": [
+      "Bulguksa Temple (ユネスコ)",
+      "Gyeongju National Museum",
+      "Gyochon Hanok Village",
+      "Ahopsan Bamboo Forest",
+      "Woljeonggyo Bridge (sunset)"
+    ],
+    "competing_products": [
+      "from-busan-gyeongju-ancient-capital-day-tour",
+      "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
+      "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
+      "busan-top-attractions-day-tour"
+    ],
+    "anchor_poi_keys": [
+      "bulguksa_temple",
+      "gyeongju_national_museum",
+      "gyochon_hanok_village",
+      "ahopsan_bamboo_forest",
+      "woljeonggyo_bridge"
+    ],
+    "enrichment_batch": "17a",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.23",
+    "enrichment_target_kb_version": "1.24",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "16 substantive stops across 4 tours; D-grade audit (8-hl-vs-9-hl artifact) → A-grade pass"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "仏国寺から国立博物館、竹林から橋まで —",
+        "headlineLine2": "韓国千年の古都を釜山からの一日で",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
+          "imagePosition": "center 35%",
+          "tagline": "釜山から韓国千年の古都・慶州へ。ユネスコ遺産、国立博物館、韓屋村、月精橋まで一日で巡ります。",
+          "pills": [
+            "少人数ミニバン",
+            "慶州ユネスコ遺産",
+            "釜山発着"
+          ],
+          "meta": {
+            "duration": "≈ 11.5時間（08:10 最初のピックアップ）",
+            "region": "慶州（釜山発）",
+            "stops": "8見どころ",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "概要"
+          },
+          {
+            "id": "itinerary",
+            "label": "行程"
+          },
+          {
+            "id": "details",
+            "label": "詳細情報"
+          },
+          {
+            "id": "faq",
+            "label": "よくある質問"
+          },
+          {
+            "id": "reviews",
+            "label": "クチコミ"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "所要時間",
+            "value": "≈ 11.5時間（08:10 最初のピックアップ）"
+          },
+          {
+            "icon": "users",
+            "label": "グループ人数",
+            "value": "少人数・ミニバン（典型的に最大8〜10名）"
+          },
+          {
+            "icon": "map-pin",
+            "label": "送迎",
+            "value": "釜山駅4番出口 08:10 / ソミョン駅 08:25 / 海雲台 08:40"
+          },
+          {
+            "icon": "calendar",
+            "label": "ベストシーズン",
+            "value": "年中。桜（4月）・紅葉（10〜11月）に月精橋が特に美しい"
+          },
+          {
+            "icon": "footprints",
+            "label": "歩行",
+            "value": "中程度 — 総計約4〜5km。仏国寺は石段あり"
+          },
+          {
+            "icon": "ticket",
+            "label": "含まれるもの",
+            "value": "往復送迎、認定英語ガイド、全入場料"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "alt": "アホプサン竹林の緑の竹が高くそびえる細い小道",
+            "caption": "アホプサン竹林 — 機張郡の520,000m²の竹の森",
+            "location": "アホプサン竹林（アホプサン）竹林、機張郡、釜山北東部",
+            "atmosphere": "朴氏一族が12代にわたって守り続けてきた私有地の竹林。520,000m²の原生林"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "alt": "仏国寺の多宝塔と釈迦塔が並ぶ大雄殿前の石庭",
+            "caption": "仏国寺（プルグクサ）— ユネスコ世界遺産",
+            "location": "仏国寺（仏国寺）、吐含山、慶州",
+            "atmosphere": "統一新羅の仏教建築の最高傑作。1,300年の歴史を持つ韓国最高の寺院"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "alt": "慶州国立博物館の展示室に展示された新羅時代の金冠",
+            "caption": "慶州国立博物館 — 新羅文明の決定版博物館",
+            "location": "慶州国立博物館（国立慶州博物館）、慶州",
+            "atmosphere": "9万点以上の新羅時代の遺物。金冠・天馬・聖徳大王の神鐘"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=1200",
+            "alt": "校村韓屋村の伝統的な屋根と慶州崔氏家の庭園",
+            "caption": "校村韓屋村 — 慶州崔氏家の保存された韓屋群",
+            "location": "校村韓屋村（校村韓屋村）、慶州",
+            "atmosphere": "慶州崔氏家（600年間維持した万石長者の一族）の屋敷を中心とした保存された韓屋群"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
+            "alt": "ライトアップされた月精橋が南川に映る夜の反射",
+            "caption": "月精橋（ウォルジョンギョ）— 韓国最大の木造橋",
+            "location": "月精橋（月精橋）、慶州",
+            "atmosphere": "60.57mの新羅時代の木造橋の復元。夜のライトアップが南川に映える絶景"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "08:10",
+            "duration": "60分",
+            "name": "釜山ピックアップ（地下鉄3駅）",
+            "category": "出発 — 釜山地下鉄3駅",
+            "description": "ピックアップは釜山の主要地下鉄3駅で順次実施：**釜山駅（1号線）** 約08:10（西区・南浦洞付近の宿泊のお客様向け）。**ソミョン駅** 約08:25（釜山中心部の宿泊のお客様向け）。**海雲台駅** 約08:40（海雲台エリアの宿泊のお客様向け）。ミニバン（典型的に最大8〜10名）で英語対応ガイド付き。全員乗車後、機張郡の**アホプサン竹林**へ北東方向へ出発。慶州まで釜山から約60〜70分。",
+            "highlights": [
+              "**3か所の釜山地下鉄駅**でのピックアップ — 釜山駅（08:10）・ソミョン（08:25）・海雲台（08:40）",
+              "少人数ミニバン（最大8〜10名）、英語対応ガイド付き",
+              "釜山→慶州まで約60〜70分"
+            ],
+            "timeUsed": [
+              "3駅の順次ピックアップ — 約40分",
+              "アホプサン竹林への移動 — 約30分"
+            ],
+            "whyOnRoute": "釜山駅・西面・海雲台の主要エリアから参加しやすい集合場所を設定しています。",
+            "_poi_meta": {
+              "poi_key": "OPS_busan_subway_pickup",
+              "verified": true,
+              "match": "transit_placeholder",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Busan Metro official",
+                "Operator schedule"
+              ]
+            }
+          },
+          {
+            "number": 2,
+            "time": "≈ 09:50",
+            "duration": "60分",
+            "name": "アホプサン竹林（アホプサン竹林）",
+            "category": "私有の世襲竹林 — 520,000m²、12代にわたる朴氏一族の管理",
+            "description": "**アホプサン竹林（アホプサン竹林、「九山の森」）**は釜山北東部の機張郡にある**520,000m²の私有世襲森林**で、**南平文氏の家系が9代・約400年にわたり守り続けてきた森です。竹林の主体は**孟宗竹** — 直径10〜15cm、高さ15〜20mの巨竹で、韓国最大級の竹林のひとつ。竹林の中に入ると太陽光が遮断されて独特の緑の薄暗い空間が生まれ、風が吹くたびに竹が揺れる音（「さらさら」）が響きます。フォトグラファーには**竹の縦列の奥行き**と**逆光シルエット**が人気の被写体。また、竹林の一部には**500年以上の樹齢を誇る楠木の大木**（天然記念物候補）が点在し、竹とのコントラストが印象的。**入場料はツアーに含まれます**。慶州への移動前の最初に訪れる場所として、都市の喧騒から自然の静寂への移り変わりを演出します。",
+            "highlights": [
+              "**520,000m²の私有世襲竹林** — 12代にわたる朴氏一族の管理",
+              "**孟宗竹** — 直径10〜15cm・高さ15〜20mの巨竹が林立",
+              "竹の揺れる音（「さらさら」）と緑のトンネル効果",
+              "**500年以上の楠木の大木**が点在",
+              "**入場料はツアーに含まれます**"
+            ],
+            "timeUsed": [
+              "駐車＋竹林入口 — 約5分",
+              "竹林メインゾーン散策＋写真撮影 — 約30〜35分",
+              "バスに戻る — 約5分"
+            ],
+            "whyOnRoute": "慶州への移動前の理想的な最初の訪問地。都市の喧騒から自然の静寂への移り変わりを演出しながら、機張郡の独特の地域文化（世襲竹林管理）も体験していただけます。",
+            "visitBasics": {
+              "hours": "毎日09:00〜18:00（最終入場約17:00）",
+              "closed": "月曜日",
+              "admission": "大人₩8,000/子供₩5,000",
+              "walking": "中程度 — 砂利道と緩やかな傾斜。一部木製遊歩道。動きやすい靴推奨"
+            },
+            "convenience": {
+              "restroom": "入口ゲートと先祖の館近くの中間地点に公衆トイレ",
+              "parking": "オンサイトの観光バス・乗用車駐車場（無料）"
+            },
+            "smartNotes": {
+              "photo": "撮影ポイント9（孟宗竹の竹林）— 10:00〜11:30の側光が最高",
+              "facilities": "入口に小さな農家直売所（季節の地元農産物、ソフトドリンク）",
+              "tip": "竹の明るさに対して写真のコントラストを高めるため濃い色の服装がおすすめ"
+            },
+            "_poi_meta": {
+              "poi_key": "ahopsan_bamboo_forest",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea",
+                "Visit Busan official",
+                "Korea JoongAng 毎日",
+                "K-drama filming location databases",
+                "Korea Tourism Organization (Ahopsan filming location designation)"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:30",
+            "duration": "75分",
+            "name": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+            "category": "ユネスコ世界遺産（1995年） — 統一新羅の仏教建築の最高傑作",
+            "description": "**仏国寺（仏国寺） — 1995年にユネスコ世界遺産に登録**（石窟庵と共に）— は**統一新羅仏教芸術の最高傑作**であり**韓国で最も研究された単一寺院**。751年に宰相金大城が2つの世界（現在の世界と来世）のために建立を始め、774年の完成まで23年を要した。大雄殿前庭の**釈迦塔** と**多宝塔**は韓国の古紙幣の図案にもなった国宝中の国宝（各国宝第20号・第21号）。**青雲橋・白雲橋**（国宝第23号）と**蓮花橋・七宝橋**（国宝第22号）は普通の参拝者が通れない儀礼的な石段橋で、各橋の石組みは1,300年の時を経ても精巧に保たれている。境内には**紫霞門・安養門**など古代建築が点在し、背後の吐含山（745m）の森が神聖な境界を形成。**石窟庵（不国寺から4km上）**は今回のルートには含まれませんが、世界遺産の「もう一方の半分」として解説があります。入場料：**大人₩6,000**。早朝・平日が比較的空いている。",
+            "highlights": [
+              "**ユネスコ世界遺産1995年登録**（石窟庵と共に）",
+              "**釈迦塔（国宝第20号）と多宝塔（国宝第21号）** — 韓国の古紙幣図案",
+              "**青雲橋・白雲橋（国宝第23号）** — 1,300年の精巧な石段橋",
+              "**751年金大城建立開始**、23年の歳月をかけた統一新羅の集大成",
+              "入場料 **大人₩6,000**"
+            ],
+            "timeUsed": [
+              "入口・チケット＋解説 — 約10分",
+              "大雄殿前庭（釈迦塔・多宝塔・石段橋）— 約30分",
+              "境内各堂・通路・庭園 — 約30分",
+              "バスに戻る — 約10分"
+            ],
+            "whyOnRoute": "仏国寺は慶州ルートの文化・遺産の中心となる見どころ。ユネスコ世界遺産の石仏寺と多宝塔を直接見学できる慶州ツアーの最優先の訪問地。",
+            "visitBasics": {
+              "hours": "毎日09:00–18:00（最終入場17:00）",
+              "closed": "年中無休",
+              "admission": "無料（2023年、文化財保護法改正により）",
+              "walking": "中程度 — 石段・坂・砂利道。歩きやすい靴を推奨"
+            },
+            "convenience": {
+              "restroom": "境内に無料トイレがあります。",
+              "parking": "境内駐車場（有料）"
+            },
+            "smartNotes": {
+              "photo": "紫霞門下の青雲橋・白雲橋（国宝23号）。多宝塔（国宝20号）と釈迦塔（国宝21号）の正面対称構図 — 午前11時前の光が最適。",
+              "facilities": "入口観光案内所。仏国寺博物館（別途チケット₩2,000/₩1,000、月曜休館）。",
+              "tip": "服装は端正に。堂内に入る際は靴を脱ぐ。ドローン禁止。僧侶・参拝者の撮影禁止（標示箇所を遵守）。"
+            },
+            "_poi_meta": {
+              "poi_key": "bulguksa_temple",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO World Heritage Centre",
+                "Wikipedia",
+                "World History Encyclopedia",
+                "VisitKorea",
+                "Visit Gyeongju official"
+              ]
+            }
+          },
+          {
+            "number": 4,
+            "time": "≈ 13:00",
+            "duration": "60分",
+            "name": "昼食（慶州の地元レストラン）",
+            "category": "昼食休憩 — 慶州郷土料理",
+            "description": "仏国寺–吐含山コリドー近辺の慶州地元レストランでの昼食（自己負担、**₩10,000〜15,000**程度）。典型的なオプション：**サムパプ（サムバッ）** — 野菜包み定食、多種の惣菜と葉野菜で米を包んで食べる慶州スタイル。**韓定食（ハンジョンシク）** — 慶州の伝統的なコース定食（小鉢料理が数十種類）。または、仏国寺近辺の慶州名物**ファンナムパン（ファンナンパン）**小豆あんパンを購入してのランチボックス形式も可。**ベジタリアン・ハラール対応**は事前申込で可能。",
+            "highlights": [
+              "**サムパプ（サムバッ）** — 野菜包み定食、慶州スタイル",
+              "**韓定食（ハンジョンシク）** — 慶州の伝統的なコース定食",
+              "慶州名物**ファンナムパン（ファンナンパン）**小豆あんパン",
+              "**ベジタリアン・ハラール対応**（事前申込）"
+            ],
+            "timeUsed": [
+              "コーチで昼食会場へ — 約10分",
+              "注文＋食事 — 約45〜50分"
+            ],
+            "whyOnRoute": "仏国寺の午前中にじっくり楽しむ文化体験の後、午後の博物館・韓屋村・橋に向けてエネルギーを補給。",
+            "_poi_meta": {
+              "poi_key": "OPS_gyeongju_lunch",
+              "verified": true,
+              "match": "lunch_placeholder",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Gyeongju official",
+                "VisitKorea food guide"
+              ]
+            }
+          },
+          {
+            "number": 5,
+            "time": "≈ 14:15",
+            "duration": "75分",
+            "name": "慶州国立博物館",
+            "category": "新羅文明の決定版博物館 — 1945年設立、9万点以上の収蔵品",
+            "description": "**慶州国立博物館（国立慶州博物館）**は**新羅文明の決定版博物館** — 1945年に国立博物館慶州支館として設立。現在の収蔵品は**9万点以上**で、仏国寺・石窟庵などの発掘調査で出土した新羅時代（紀元前57年〜935年）の遺物を体系的に展示。必見の展示品：**(1) 新羅金冠** — 6世紀の金製の王冠、金箔の木の葉と勾玉（勾玉）が吊り下げられた精巧な細工。**(2) 天馬図**（国宝第207号）— 天馬塚から発掘された白樺樹皮に描かれた天を駆ける白馬の絵（6世紀）。**(3) 聖徳大王神鐘（聖徳大王の神鐘）** — 1,300年前の韓国最大・最美の梵鐘（高さ3.6m、重量18.9トン）で、鐘声は「エミレの鐘」と呼ばれる深い余韻を持つ。**入場無料**。英語・日本語のパンフレット配布あり。主要展示物に**日本語の説明ラベル**が付いている。",
+            "highlights": [
+              "**9万点以上の新羅時代遺物** — 1945年設立の新羅文明の決定版博物館",
+              "**新羅金冠** — 6世紀の金製王冠（国宝）",
+              "**天馬図（天馬塚）（国宝第207号）** — 6世紀の白樺樹皮に描かれた天駆ける白馬",
+              "**聖徳大王の神鐘（エミレの鐘）** — 高さ3.6m・重量18.9トンの韓国最大の梵鐘",
+              "**入場無料**。日本語説明ラベル・パンフレットあり"
+            ],
+            "timeUsed": [
+              "入口＋案内図受取 — 約5分",
+              "新羅金冠・天馬図・聖徳大王の神鐘の主要展示 — 約45〜50分",
+              "屋外野外展示（石塔・石仏） — 約10分",
+              "バスに戻る — 約5分"
+            ],
+            "whyOnRoute": "仏国寺で建築・空間として感じた新羅文明を、博物館で遺物・考古学として理解する流れが完成。入場無料で最も満足度の高い慶州の見どころ。",
+            "visitBasics": {
+              "hours": "火〜日 10:00〜18:00（最終入場17:30）。土・毎月最終水曜は延長",
+              "closed": "月曜日＋1月1日＋旧正月＋チュソク",
+              "admission": "無料",
+              "walking": "館内はおおむねバリアフリー対応で、一部屋外の舗装エリアがあります。"
+            },
+            "convenience": {
+              "restroom": "本館内と屋外パビリオン周辺",
+              "parking": "無料駐車場"
+            },
+            "smartNotes": {
+              "photo": "屋外パビリオンの聖徳大王神鐘（午後の側光）。展示室の天馬塚金冠。",
+              "facilities": "金冠レプリカのお土産ショップ。本館内カフェ。荷物預かり所。",
+              "tip": "フラッシュ禁止。一部の特別展示は撮影全面禁止（入口表示を確認）。"
+            },
+            "_poi_meta": {
+              "poi_key": "gyeongju_national_museum",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Gyeongju National Museum official",
+                "Wikipedia",
+                "Korea JoongAng 毎日 APEC 2025 coverage",
+                "Cultural Heritage Administration (NT 29, NT 188)",
+                "National Museum of Korea (Gyeongju Branch)"
+              ]
+            }
+          },
+          {
+            "number": 6,
+            "time": "≈ 15:50",
+            "duration": "60分",
+            "name": "校村韓屋村（キョチョン・ハノクマウル）",
+            "category": "保存された韓屋群 — 慶州崔氏家、12代・万石の一族",
+            "description": "**校村韓屋村（校村韓屋村）**は慶州崔氏家の歴史的屋敷を中心とした**伝統的な韓国の韓屋（韓屋）が保存されたエリア** — 慶州崔氏は**12代・250年以上にわたって万石（万石、最高の土地保有量を表す単位）の財産を維持した**ことで知られる特異な家系。崔氏家の家訓は「飢えた旅人を追い返してはならない」「土地を100里以内のみ所有せよ」「家を99間以上に増築してはならない」などを含む高潔な家風で知られ、現在も慶州の代表的な「ノブレス・オブリージュ」の象徴として引用されます。村内には複数の保存された韓屋が点在し、**校里キンパ（キョリキンパ）**（慶州校里のロールご飯、観光客に人気）の専門店も。**入場無料**。狭い路地と石畳が続くため歩きやすい靴を推奨。",
+            "highlights": [
+              "**慶州崔氏家** — 12代・250年以上万石の財産を維持した稀有な一族",
+              "「飢えた旅人を追い返すな」などの崔氏家の高潔な家訓",
+              "保存された**伝統韓屋群**と石畳の路地",
+              "**校里キンパ（キョリキンパ）**の人気専門店",
+              "**入場無料**"
+            ],
+            "timeUsed": [
+              "入口＋村地図 — 約5分",
+              "崔氏屋敷・韓屋群散策 — 約25〜30分",
+              "キョリキンパ（任意） — 約10分",
+              "バスに戻る — 約5分"
+            ],
+            "whyOnRoute": "博物館での新羅遺物と仏国寺の仏教建築の後、朝鮮時代（14〜20世紀）の儒教的な両班文化と韓屋建築を体験することで、慶州の歴史層が完成します。",
+            "visitBasics": {
+              "hours": "昼間は常時開放。ほとんどの文化財家屋 09:00〜18:00",
+              "closed": "一部の個人家屋は月曜休 — メインの路地は常時開放",
+              "admission": "多くは無料。崔氏古宅の主要棟には小額寄付箱",
+              "walking": "楽 — 砂利と石板の小路。メインストリートは部分的に車椅子対応"
+            },
+            "convenience": {
+              "restroom": "村入口と慶州鄕校近くの公衆トイレ",
+              "parking": "西入口の観光バス無料降車エリア"
+            },
+            "smartNotes": {
+              "photo": "ゴールデンアワーの韓屋瓦屋根。校洞法酒醸造場の門。月精橋方向の路地。",
+              "facilities": "校洞法酒販売店（お土産ボトル）。メイン路地の小工芸品店。",
+              "tip": "関税の免税枠があれば校洞法酒をお土産に（非常にまろやかな伝統米酒）。"
+            },
+            "_poi_meta": {
+              "poi_key": "gyochon_hanok_village",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Gyeongju official",
+                "VisitKorea",
+                "Wikipedia (Gyeongju Choi family)",
+                "Cultural Heritage Administration (Folklore Material No. 27, Intangible No. 86-3)",
+                "Cultural Heritage Administration of Korea (Gyeongju Choi Clan Family Designation)"
+              ]
+            }
+          },
+          {
+            "number": 7,
+            "time": "≈ 17:00",
+            "duration": "40分",
+            "name": "月精橋（ウォルジョンギョ）",
+            "category": "復元された新羅時代の木造橋 — 韓国最大の木造橋（60.57m）",
+            "description": "**月精橋（月精橋）**は**南川（南川）に架かる新羅時代の木造橋の復元**で、現在は**韓国最大の木造橋**（全長60.57m、幅8.7m）。元の橋は760年（景徳王19年）に建設され、1280年代（高麗時代）に廃橋となりましたが、2018年に復元工事が完了。復元工事では近隣の三陵林（松林）の松を伐採せずに材料を調達するために**30年以上の準備期間**を要したとされ、使用した木材は**朝鮮式木造建築法**に従った伝統工法。橋の両端に立つ**樓門（楼門）**は統一新羅時代の建築様式を再現。**夜間ライトアップ**（日没後）が橋の最高の撮影シーン — 南川の水面に映る橋の反射が慶州ツアー全体で最もInstagram映えする瞬間。**入場無料**。このツアーの到着時刻（約17:00〜17:30）は季節によって夕暮れの光が橋を染め、夜間ライトアップ開始直前の「マジックアワー」に当たることが多い。",
+            "highlights": [
+              "**韓国最大の木造橋**（全長60.57m・幅8.7m）— 2018年復元完了",
+              "**760年（新羅・景徳王19年）**建設の元橋。**30年以上の準備期間**をかけた復元",
+              "橋の両端の**樓門**が統一新羅の建築様式を再現",
+              "**夜間ライトアップ**で南川の水面に映る橋の反射 — 慶州最大の撮影ポイント",
+              "**入場無料**"
+            ],
+            "timeUsed": [
+              "コーチ到着＋橋入口 — 約5分",
+              "橋の歩行＋楼門内外の見学 — 約20〜25分",
+              "南川沿い散策＋写真撮影 — 約15分",
+              "バスに戻る — 約5分"
+            ],
+            "whyOnRoute": "月精橋は一日の文化・遺産フィナーレとして完璧な位置にあります。日没前後のマジックアワーに合わせた時間配分で、慶州ツアーの見どころシーンを最大化します。",
+            "visitBasics": {
+              "hours": "24時間（イルミネーションは日没〜約23:00）",
+              "closed": "年中無休",
+              "admission": "無料",
+              "walking": "楽 — 平坦な橋デッキ。北岸から車椅子でアクセス可能"
+            },
+            "convenience": {
+              "restroom": "北岸駐車場の公衆トイレ",
+              "parking": "北岸に観光バス駐車（無料）"
+            },
+            "smartNotes": {
+              "photo": "月城宮跡に向かって橋が伸びる南側門楼 — 代表的なショット、夜間照明は特に美しい。",
+              "facilities": "橋上に店なし。北岸駐車場近くに小さなカフェ。",
+              "tip": "夜間照明撮影には三脚やナイトモードを。冬の雪と照明は特に美しい。"
+            },
+            "_poi_meta": {
+              "poi_key": "woljeonggyo_bridge",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Gyeongju official",
+                "Cultural Heritage Administration",
+                "Wikipedia (Woljeonggyo)",
+                "MCST '100 Best Tourist Attractions 2025–2026' list",
+                "Korea Tourism Organization '100 Best 2025-2026' designation"
+              ]
+            }
+          },
+          {
+            "number": 8,
+            "time": "≈ 17:45",
+            "duration": "75分",
+            "name": "釜山への帰路",
+            "category": "帰路 — 慶州→釜山（京釜高速道路）",
+            "description": "月精橋北岸から約17:45に出発し、**京釜高速道路＋東海高速道路**で釜山へ南下。**帰路の解散は朝のピックアップの逆順**：海雲台→ソミョン→釜山駅。推定到着時刻：海雲台 約19:15、ソミョン 約19:30、釜山駅 約19:45。移動中にガイドが一日の見どころをまとめ、慶州・釜山のおすすめポイント（石窟庵・甘川文化村など）を案内します。コーチ内Wi-Fi完備。",
+            "highlights": [
+              "慶州→釜山：京釜高速道路＋東海高速道路経由、**約80〜90分**",
+              "帰路解散：海雲台（約19:15）→ソミョン（約19:30）→釜山駅（約19:45）",
+              "車内Wi-Fiを利用できます。"
+            ],
+            "timeUsed": [
+              "月精橋北岸→釜山まで — 約80〜90分",
+              "釜山市内3駅への解散 — 約30分"
+            ],
+            "whyOnRoute": "月精橋が最後の見どころのため、帰路が最短距離で釜山へ戻れます。",
+            "_poi_meta": {
+              "poi_key": "OPS_busan_return",
+              "verified": true,
+              "match": "transit_placeholder",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Operator schedule",
+                "Korea Expressway Corporation traffic data"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "釜山地下鉄ピックアップ",
+            "type": "origin",
+            "theme": "出発"
+          },
+          {
+            "name": "アホプサン竹林（花見シーズンはヘウンデ達摩吉山へ）",
+            "type": "primary",
+            "theme": "竹林・海岸ドライブ（季節限定）"
+          },
+          {
+            "name": "仏国寺（ユネスコ世界遺産）",
+            "type": "primary",
+            "theme": "ユネスコ文化遺産"
+          },
+          {
+            "name": "昼食（慶州サムパプ）",
+            "type": "meal",
+            "theme": "食事"
+          },
+          {
+            "name": "慶州国立博物館",
+            "type": "primary",
+            "theme": "新羅の遺物"
+          },
+          {
+            "name": "キョチョン韓屋村",
+            "type": "primary",
+            "theme": "伝統韓屋村"
+          },
+          {
+            "name": "月精橋",
+            "type": "primary",
+            "theme": "新羅の古橋（復元）"
+          },
+          {
+            "name": "釜山地下鉄降車",
+            "type": "return",
+            "theme": "帰路"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "出発 ＋ アホプサン",
+            "duration": "約2時間30分",
+            "description": "釜山地下鉄の3か所で順次ピックアップ（08:10・08:30・09:10）後、機張郡のアホプサン竹林まで車で約30分。"
+          },
+          {
+            "phase": "ユネスコの核心",
+            "duration": "約2時間",
+            "description": "アホプサンから仏国寺まで約70分のドライブ後、境内を75分かけてじっくり見学。"
+          },
+          {
+            "phase": "昼食＋博物館",
+            "duration": "約2時間30分",
+            "description": "慶州の地元料理での昼食後、慶州国立博物館へ。"
+          },
+          {
+            "phase": "韓屋村＋橋＋帰路",
+            "duration": "約2時間",
+            "description": "校村韓屋村の路地散策→月精橋のフィナーレ→釜山への帰路。"
+          },
+          {
+            "phase": "慶州への朝の移動",
+            "duration": "約1時間15分〜1時間30分",
+            "description": "ピックアップ→アホプサン竹林→仏国寺。"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "この一日の流れ",
+          "subtitle": "「遺産テーマ」を重視した釜山→慶州の一日 — 韓国で最も長く続いた王国（新羅、992年間）とその遺物を一日かけて体験します。竹林・ユネスコ寺院・国立博物館・韓屋村・橋という流れで、歴史の深さを積み重ねていきます。"
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "韓国初訪問者でユネスコ遺産を一日で体験したい方",
+            "カップルと大人ファミリー",
+            "博物館の解説パネルを読む歴史好きの旅行者",
+            "フォトグラファー（仏国寺の塔・校村韓屋・月精橋）"
+          ],
+          "lessIdealFor": [
+            "歩行を最小限にしたい方",
+            "ベビーカー依存度の高いグループ（仏国寺の石段）",
+            "非常に幼いお子様（フルデイのリズム）",
+            "当日夜フライトのタイトなスケジュールの旅行者（帰着は最大19:45）"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "このルートのおすすめポイント",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "博物館を含む（大多数のツアーが省く）",
+                  "detail": "多くの慶州日帰りツアーが博物館をスキップしますが、このツアーは新羅時代の遺物（金冠・天馬図・聖徳大王の神鐘）をガイド解説付きで鑑賞できます。"
+                },
+                {
+                  "label": "月精橋を一日の締めくくりに",
+                  "detail": "月精橋は短く平坦な撮影ポイントで、一日のフィナーレとして完璧。日没前後のマジックアワーに到着するよう組まれています。"
+                },
+                {
+                  "label": "年中実施、季節による賢いルート変更",
+                  "detail": "アホプサン竹林は桜（4月）の季節に竹×桜の幻想的な組み合わせとなります。"
+                },
+                {
+                  "label": "コーチと専用車の中間のミニバン",
+                  "detail": "釜山〜慶州のコーチツアーは40名以上の大型グループが多いため、少人数ミニバンで博物館や月精橋をゆったり鑑賞できます。"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "inclusions",
+            "title": "含まれるもの・含まれないもの",
+            "preview": "釜山発着の往復ミニバン、英語・中国語対応認定ガイド、燃料費・高速料金・駐車料…",
+            "content": [
+              "往復送迎（釜山地下鉄3駅）、エアコン付きミニバン",
+              "認定英語対応ガイド",
+              "全入場料（アホプサン竹林・仏国寺・慶州国立博物館・校村韓屋村・月精橋）",
+              "含まれないもの：昼食（約₩10,000〜15,000）・チップ"
+            ]
+          },
+          {
+            "id": "pickup",
+            "title": "ピックアップと解散",
+            "preview": "釜山地下鉄1号線沿いに3か所でピックアップ：釜山駅4番出口（08:10）、西面駅4番出口（08:30）、海雲台駅5番出口（09:10）…",
+            "content": [
+              "ピックアップ：釜山駅4番出口（08:10）・ソミョン駅（08:25）・海雲台駅（08:40）",
+              "解散（逆順）：海雲台（約19:15）→ソミョン（約19:30）→釜山駅（約19:45）",
+              "空港への解散は別途ご相談ください"
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "歩行と地形",
+            "preview": "中程度。終日の総歩行距離は約4〜5km。仏国寺には石段あり。博物館・韓屋村・橋は平坦。",
+            "content": [
+              "中程度、総計約4〜5km。",
+              "仏国寺：石段と境内の砂利道（通常の移動は問題なし）",
+              "慶州国立博物館：フラットな屋内・屋外展示",
+              "校村韓屋村：石畳の路地（若干の坂あり）",
+              "月精橋：フラットな木製橋",
+              "歩きやすいクローズドトゥシューズ推奨"
+            ]
+          },
+          {
+            "id": "cancellation",
+            "title": "キャンセルポリシー",
+            "preview": "ピックアップ24時間前までは無料キャンセル可。",
+            "content": [
+              "ピックアップの24時間前まで無料キャンセル",
+              "当日キャンセルおよびノーショーは返金不可",
+              "悪天候（台風・大雪）の場合は全額返金または日程変更"
+            ]
+          },
+          {
+            "id": "seasonal",
+            "title": "季節のルートに関する注意",
+            "preview": "桜の季節（例年3月中旬〜4月中旬、年によって7〜10日前後）は…",
+            "content": [
+              "桜（4月）：仏国寺・慶州全域で桜が咲き誇る。最も混雑するシーズン",
+              "紅葉（10〜11月）：校村韓屋村と月精橋周辺が特に美しい",
+              "冬（12〜2月）：雪景色の仏国寺が幻想的。寒さ対策を忘れずに",
+              "夏（6〜8月）：仏国寺は朝早い時間帯に訪問するためピーク前に行動可能"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "季節別の案内を確認"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "季節別の案内を確認"
+          },
+          "_seasonalSummary": "慶州は釜山より内陸性の気候が強く、冬はより寒く、夏はより暑く感じられることがあります。桜の4月、そして仏国寺の紅葉が美しい10〜11月が特におすすめです。",
+          "_seasonalTemperatures": [
+            {
+              "season": "春（3〜5月）",
+              "range": "5–22°C",
+              "notes": "4月上旬は桜が見頃で、全体的に最もおすすめの季節です。"
+            },
+            {
+              "season": "夏（6〜8月）",
+              "range": "22–32°C",
+              "notes": "夏は蒸し暑いですが、博物館は冷房があり快適です。"
+            },
+            {
+              "season": "秋（9〜11月）",
+              "range": "8–24°C",
+              "notes": "10月下旬の仏国寺の紅葉は特に見事です。"
+            },
+            {
+              "season": "冬（12〜2月）",
+              "range": "-3 to 8°C",
+              "notes": "冬は冷え込むため、博物館や屋内カフェでの休憩がより便利です。"
+            }
+          ]
+        },
+        "seasonalVariations": [
+          {
+            "season": "春（3月中旬〜4月中旬、桜シーズン）",
+            "description": "オープニングのアホプサン竹林をハウンデのダルマジヒル桜道に変更。仏国寺境内は4月中旬に見頃。多宝塔前のヤエザクラは定番構図。"
+          },
+          {
+            "season": "夏（6〜8月）",
+            "description": "竹林は林冠下で涼しさを保つ。博物館は冷房完備。仏国寺の山地ロケーションは海沿いの釜山より気温が低い。"
+          },
+          {
+            "season": "秋（9月下旬〜10月下旬）",
+            "description": "仏国寺10月下旬の紅葉は韓国を代表する撮影スポット。慶州の古墳群周辺も色づく。10月中旬以降、17時到着で月精橋が夕暮れ照明に入る。"
+          },
+          {
+            "season": "冬（11〜2月）",
+            "description": "観光客が最も少ない。博物館が最も価値ある屋内見どころに。日没17:15〜17:30で訪問中に月精橋の照明が点灯し始める——日没後の水面反射写真が撮れる唯一のシーズン。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "現地を熟知した認定スタッフ",
+            "description": "完全保険付きの認定韓国ツアー催行会社",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "慶州・釜山全域を熟知した現地を熟知した認定スタッフ。仏国寺の最適な訪問時間帯の管理に実績。"
+          },
+          {
+            "icon": "route",
+            "title": "ユネスコ遺産に特化したルート",
+            "description": "手調整の慶州遺産行程",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "アホプサン竹林→仏国寺→博物館→韓屋村→月精橋という「歴史層を積み重ねる」行程づくり。"
+          },
+          {
+            "icon": "users",
+            "title": "少人数制ツアー",
+            "description": "最大8〜10名の少人数ミニバン",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "少人数で仏国寺の境内も博物館の展示も落ち着いて鑑賞できます。"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "予約後すぐ",
+            "title": "予約確認（即時）",
+            "detail": "行程確認付きの予約確認",
+            "description": "予約確認はすぐに届き、ピックアップ駅（釜山駅／西面／海雲台）と当日の朝のスケジュールもあわせて案内されます。"
+          },
+          {
+            "timing": "12時間前",
+            "title": "12時間前リマインダー",
+            "detail": "天気情報とルート変更のご案内",
+            "description": "前日に天気情報と季節ごとのルート案内をお送りします。桜シーズンの代替ルートや冬の月精橋ライトアップ時間もあわせてご案内します。"
+          },
+          {
+            "timing": "前日の夜",
+            "title": "最終お迎え情報",
+            "detail": "正確なピックアップ時間とドライバーの連絡先",
+            "description": "ドライバー兼ガイドが出発前日の夜に車両番号と正確なピックアップ時間をお知らせします。"
+          },
+          {
+            "timing": "当日の朝",
+            "title": "当日ルート情報",
+            "detail": "ライブ状況に基づく朝のブリーフィング",
+            "description": "朝のメッセージで集合駅と東海高速道路の交通状況を確認します。"
+          },
+          {
+            "timing": "ツアー中",
+            "title": "各訪問地でのガイダンス",
+            "detail": "仏国寺の建築・新羅の歴史・月精橋の照明タイミングをガイドがナレーション",
+            "description": "ガイドが各訪問地で詳しくご案内します。仏国寺の国宝、博物館の新羅金冠、校村韓屋村に伝わる崔氏一族の歴史まで、見どころを日本語でも理解しやすい流れで紹介します。"
+          },
+          {
+            "timing": "ツアー後",
+            "title": "ツアー後サポート",
+            "detail": "フォローアップとおすすめ情報",
+            "description": "降車後に簡単なフィードバックアンケートを送信します。慶州でのその後の移動に関するご質問にもフォローアップします。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q-bridge-night-view",
+            "question": "月精橋は訪問時にライトアップされていますか？",
+            "answer": "到着時刻（約17:00〜17:30）は日没前後のマジックアワーに当たることが多く、ライトアップが始まる時間帯です。季節によって日没時刻が異なりますが、春・秋は最も美しい夕暮れと月精橋のライトアップが重なります。"
+          },
+          {
+            "id": "q-vs-ancient-capital",
+            "question": "「古都」日帰りツアーとの違いは何ですか？",
+            "answer": "このユネスコレガシーツアーは遺産テーマをより強調し、ゆったり11.5時間かけて各訪問地に深く向き合います。古都ツアーは10.5時間でより穏やかなペース設定です。両者の見どころは同じですが、フレーミングとガイドの解説の深度が異なります。"
+          },
+          {
+            "id": "q-seokguram",
+            "question": "石窟庵は含まれていますか？仏国寺のもう一方のユネスコサイトですが。",
+            "answer": "今回のルートには含まれていません。石窟庵は仏国寺から4km山を上った場所にあり、往復1〜1.5時間のトレッキングが必要です。1日のスケジュールに収めるには他の見どころを省略する必要があるため、今回は仏国寺に集中しています。石窟庵を優先する場合は別途ご相談ください。"
+          },
+          {
+            "id": "q-admissions",
+            "question": "入場料は含まれていますか？",
+            "answer": "はい、全入場料（アホプサン竹林・仏国寺・慶州国立博物館・校村韓屋村・月精橋）がツアー代金に含まれています。昼食は自己負担（約₩10,000〜15,000）です。"
+          },
+          {
+            "id": "q-museum-language",
+            "question": "博物館に英語の案内はありますか？",
+            "answer": "はい。慶州国立博物館の主要展示物には英語・日本語の説明ラベルが付いています。また、英語・日本語のパンフレットも受付で配布しています。ガイドが主要な展示品（金冠・天馬図・聖徳大王の神鐘）について重点解説を行います。"
+          },
+          {
+            "id": "q-bulguksa-photography",
+            "question": "仏国寺で写真撮影はできますか？",
+            "answer": "はい。境内全域で写真撮影が可能です。釈迦塔・多宝塔・石段橋（青雲橋・白雲橋）が最人気の撮影スポットです。仏殿内部は参拝中に写真撮影する際は静かに行ってください。"
+          },
+          {
+            "id": "q-bulguksa-stairs",
+            "question": "仏国寺の33段の石段橋（青雲橋・白雲橋）を上る必要がありますか？",
+            "answer": "通常の参拝者は石段橋（国宝）を上ることができません。儀礼的な意味を持つ文化財として保護されているため立入禁止で、境内への入場は別の通路を使用します。石段橋はその下から・横から観賞・撮影します。"
+          },
+          {
+            "id": "q-vegetarian",
+            "question": "昼食にベジタリアンのオプションはありますか？",
+            "answer": "はい。事前に予約時にお申し出いただければ、ベジタリアン・ビーガン対応の慶州レストランへご案内します。"
+          },
+          {
+            "id": "q-rain",
+            "question": "雨の場合はどうなりますか？",
+            "answer": "年中実施。仏国寺と月精橋は雨でも独特の美しさがあります。竹林は雨天でも竹の雨音が幻想的な雰囲気を演出します。大雨・台風の場合は全額返金または日程変更の選択肢をご案内します。"
+          },
+          {
+            "id": "first-time",
+            "question": "慶州初訪問者に良い選択ですか？",
+            "answer": "はい。ユネスコ世界遺産・博物館・韓屋村・木造橋という慶州の4つの主要テーマを一日でカバーできる、最もバランスの良い慶州入門ツアーです。"
+          },
+          {
+            "id": "walking",
+            "question": "歩行量はどれくらいですか？",
+            "answer": "中程度。総計約4〜5kmで、仏国寺の境内（石段あり）が最もアクティブな区間です。慶州国立博物館・校村韓屋村・月精橋は比較的楽な歩行です。歩きやすいクローズドトゥシューズを推奨します。"
+          },
+          {
+            "id": "family",
+            "question": "ファミリーに適していますか？",
+            "answer": "はい。6歳以上のお子様がいるファミリーに適しています。仏国寺の石段が唯一の体力的な部分です。慶州国立博物館の金冠や天馬図は子供にも人気です。"
+          },
+          {
+            "id": "seniors",
+            "question": "高齢の方でも参加できますか？",
+            "answer": "はい、活動的な高齢者の方はご参加いただけます。仏国寺の境内は石段があるものの、ゆっくり自分のペースで歩けます。月精橋・博物館・韓屋村はフラットで問題ありません。"
+          },
+          {
+            "id": "children",
+            "question": "推奨される最低年齢は？",
+            "answer": "6歳以上が最適です。フルデイ（11.5時間）のリズムについてこられる体力があれば参加できます。慶州国立博物館の金冠と月精橋のライトアップは子供にも印象的です。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "予約可否は決済ステップで確認されます。",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "人",
+          "priceSource": "direct_rate",
+          "priceNote": "料金は予約画面でご確認ください。AtoC Koreaの直販ページでは、表示料金と空席状況を確認したうえでご予約いただけます。",
+          "discountPercent": 10
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v15.3"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v15.3_operational_fill": "Filled operational data (visitBasics, convenience, smartNotes) for 5 attraction stops from centralized POI knowledge base. Sources: VisitKorea, VisitBusan, Visitソウル, official tourism boards.\n  - Stop #2 Ahopsan Bamboo Forest: filled [visitBasics, convenience, smartNotes]\n  - Stop #3 Bulguksa Temple (UNESCO World Heritage): filled [visitBasics, convenience, smartNotes]\n  - Stop #5 Gyeongju National Museum: filled [visitBasics, convenience, smartNotes]\n  - Stop #6 Gyochon Hanok Village: filled [visitBasics, convenience, smartNotes]\n  - Stop #7 Woljeonggyo Bridge: filled [visitBasics, convenience, smartNotes]",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      }
+    }
+  }
+}

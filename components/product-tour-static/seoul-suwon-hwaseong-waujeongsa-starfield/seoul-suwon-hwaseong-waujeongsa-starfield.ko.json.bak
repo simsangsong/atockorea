@@ -1,0 +1,1870 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "seoul-suwon-hwaseong-waujeongsa-starfield",
+  "locale": "ko",
+  "product_id": "seoul-suwon-hwaseong-waujeongsa-starfield",
+  "seo": {
+    "pageTitle": "수원 화성·와우정사·스타필드 당일 투어 | AtoC Korea",
+    "metaDescription": "서울 출발 9~10시간 투어: 유네스코 수원 화성, 스타필드 수원 도서관, 와우정사 산사 체험.",
+    "ogImage": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
+    "primaryKeywords": [
+      "수원화성 와우정사 투어",
+      "와우정사 투어",
+      "스타필드 별마당도서관 투어",
+      "서울 출발 수원 소그룹 투어",
+      "경기도 사찰 투어"
+    ],
+    "title": "수원화성·와우정사·스타필드 소그룹 투어 | AtoC Korea",
+    "description": "서울 출발 경기도 소그룹 투어: 수원화성(유네스코) → 화성행궁 → 스타필드 별마당도서관 → 와우정사(산사). 전 입장료 포함, 공인 가이드."
+  },
+  "catalog_card": {
+    "slug": "seoul-suwon-hwaseong-waujeongsa-starfield",
+    "title": "수원화성·와우정사·스타필드 소그룹 투어",
+    "subtitle": "유네스코 성곽, 산사, 바이럴 도서관 — 한국의 과거·정신·현재를 하루 서울 당일 투어로.",
+    "region": "수원 & 용인",
+    "duration": "9~10시간",
+    "stopsCount": 3,
+    "rating": 4.9,
+    "reviewCount": 57,
+    "badges": [
+      "유네스코 문화유산",
+      "역사유적+현대 일일 투어",
+      "입장료 포함"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=600&q=80",
+    "priceLabel": "가격은 예약 시 확인",
+    "shortCardDescription": "수원화성(유네스코 세계문화유산), 화성행궁, 스타필드 수원 별마당도서관, 와우정사(용인 산속 국제불교 사찰)를 소그룹으로 하루에 돌아봅니다. 전 입장료 포함, 공인 가이드, 4.9/5 평점.",
+    "tags": [
+      "유네스코 유산",
+      "역사와 현대를 함께 보는 당일 투어",
+      "입장료 포함"
+    ]
+  },
+  "headlineLine1": "수원화성, 와우정사",
+  "headlineLine2": "& 스타필드 별마당도서관 문화유산 투어",
+  "price": {
+    "amountLabel": "48.60",
+    "originalPriceUsd": 54,
+    "salePriceUsd": 48.6,
+    "discountPercent": 10,
+    "currency": "USD",
+    "per": "인",
+    "priceSource": "direct_rate",
+    "priceNote": "AtoC Korea 공식 판매가 기준입니다."
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
+    "imagePosition": "center 50%",
+    "tagline": "18세기 유네스코 성곽부터 한국에서 가장 많이 촬영되는 현대 도서관, 그리고 고요한 산속 불교 사찰까지 — 서울 당일 투어 한 편에 담겼습니다.",
+    "pills": [
+      "유네스코 유적지",
+      "입장료 포함",
+      "서울 왕복 교통"
+    ],
+    "meta": {
+      "duration": "9~10시간",
+      "region": "수원 & 용인",
+      "stops": "3개 코스",
+      "rating": 4.9,
+      "ratingStars": 5
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "투어 개요"
+    },
+    {
+      "id": "itinerary",
+      "label": "상세 일정"
+    },
+    {
+      "id": "details",
+      "label": "유의사항"
+    },
+    {
+      "id": "faq",
+      "label": "자주 묻는 질문"
+    },
+    {
+      "id": "reviews",
+      "label": "여행자 후기"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "소요 시간",
+      "value": "9~10시간"
+    },
+    {
+      "icon": "landmark",
+      "label": "문화유산",
+      "value": "유네스코+사찰"
+    },
+    {
+      "icon": "camera",
+      "label": "포토 명소",
+      "value": "매우 높음"
+    },
+    {
+      "icon": "footprints",
+      "label": "도보 난이도",
+      "value": "보통"
+    },
+    {
+      "icon": "users",
+      "label": "투어 형태",
+      "value": "소그룹"
+    },
+    {
+      "icon": "ticket",
+      "label": "입장료",
+      "value": "포함"
+    },
+    {
+      "icon": "gauge",
+      "label": "투어 일정 속도",
+      "value": "균형"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200&q=80",
+      "alt": "투어 중 방문하는 수원 화성의 풍경",
+      "caption": "수원 화성",
+      "location": "수원 화성, Suwon, Gyeonggi-do",
+      "atmosphere": "수원 화성는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=1200&q=80",
+      "alt": "투어 중 방문하는 스타필드 라이브러리 — 22m 서가의 풍경",
+      "caption": "스타필드 라이브러리 — 22m 서가",
+      "location": "스타필드 수원 별마당도서관, Yeongtong-gu, Suwon",
+      "atmosphere": "신세계의 2세대 스타필드 플래그십, 2024년 1월 개장; 무료 입장; 바이닐 레코드 청음 좌석"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1200&q=80",
+      "alt": "투어 중 방문하는 와우정사 대형 불두 풍경",
+      "caption": "와우정사 대형 불두",
+      "location": "와우정사, 연화산 자락, Yongin",
+      "atmosphere": "와우정사 대형 불두는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+      "alt": "투어 중 방문하는 Hwaseong Wall의 풍경",
+      "caption": "Hwaseong Wall",
+      "location": "Hwaseong Wall, Janganmun 구간, Suwon",
+      "atmosphere": "장안문과 화서문 사이 1km 성벽 산책로; 급경사; 치성과 장대"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+      "alt": "채색 처마와 돌 바닥 안뜰을 두른 화성 행궁의 전통 한국 목조 건물들",
+      "caption": "화성 행궁 안뜰들",
+      "location": "수원 화성 성곽 안의 화성행궁",
+      "atmosphere": "한국 최대 행궁; 정조의 임시 거처; 19세기 화재 후 복원"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "≈ 10:00",
+      "duration": "120분",
+      "name": "수원화성 (유네스코 세계문화유산)",
+      "category": "유네스코 요새",
+      "description": "수원화성은 1997년 유네스코 세계문화유산으로 등재된 한국 유일의 완전한 형태의 조선시대 성곽 도시입니다. 정조 대왕이 1794~1796년에 축성했으며, 공사 전 과정을 담은 10권 분량의 『화성성역의궤』(별도 유네스코 기록유산 등재)가 현존합니다. 전체 성벽 5.7km 중 약 1km 구간(장안문~화서문, 공심돈·봉돈 포함)을 걷습니다. 4대문(장안문·팔달문·화서문·창룡문), 포루·각루·수문 48개 시설물이 보존되어 있습니다. 입장료 포함. 방문 시간: 약 60분.",
+      "highlights": [
+        "**1997년 유네스코 세계유산 등재** — 원형 성곽 구조를 갖춘 한국 유일의 요새 도시",
+        "1794~1796년 정조대왕(조선 22대 왕) 재위 중 2년 9개월에 걸쳐 건립",
+        "정약용이 한국·중국·서양 축성 과학을 결합해 구성",
+        "화성성역의궤 — 2007년 유네스코 세계기록유산 등재",
+        "5.74km 성곽 둘레, 41개 전략 군사 시설",
+        "장안문 북쪽 대문 — **한국 현존 최대 왕궁 대문**",
+        "1.2km 가이드 도보 장안문 → 화서문 (사진 찍기 좋은 구간)",
+        "화홍문 7개 수문 아치 — 가장 많이 촬영되는 구조물",
+        "**한복 착용 + 매월 마지막 수요일 + 65세 이상 무료**"
+      ],
+      "timeUsed": [
+        "장안문 근처 코치 하차 — 약 5분",
+        "장안문에서 그룹 오리엔테이션 — 약 5분",
+        "장안문 → 화서문 → 화서장각 구간 도보 — 약 25~30분",
+        "포토 타임 + 차량에서 집결 — 약 10분",
+        "선택: 화성 열차 (연무대 ↔ 팔달문) — 별도 요금"
+      ],
+      "whyOnRoute": "투어 3의 유산 핵심 명소 — 3코스 간결 구성로 화성이 단독으로 경주 전체 유산 하루치 역할.",
+      "visitBasics": {
+        "hours": "성벽 산책로 24시간 (게이트 없음); 권장 09:00-18:00(여름)/09:00-17:00(겨울)",
+        "closed": "연중 무휴 (화성 열차 월요일 운행 중단)",
+        "admission": "성인 ₩1,000 / 청소년 ₩700 / 어린이 ₩500 (무료: 6세 이하·65세 이상 노인·한복 착용자·매달 마지막 수요일)",
+        "walking": "중간 난이도 — 성벽에 경사 구간(서장대 주변); 각 문에 계단; 일부 구간 휠체어 어려움"
+      },
+      "convenience": {
+        "restroom": "장안문, 화서문, 팔달문, 연무대에 화장실 있음",
+        "parking": "장안문 주차장 단체 버스 하차; 연무대 단체 버스 지정 주차"
+      },
+      "smartNotes": {
+        "photo": "수원천 위 7개 아치가 있는 **화홍문(북쪽 수문)** — 이른 아침 또는 늦은 오후 반영 촬영 최적.",
+        "facilities": "장안문+팔달문+행궁광장 관광안내소. 영한 안내판. 화성 열차(₩1,500 왕복) 운행.",
+        "tip": "편안한 신발 착용 — 성벽 돌이 울퉁불퉁함. 행궁광장 한복 대여점에서 **무료 입장** 혜택."
+      },
+      "_poi_meta": {
+        "poi_key": "hwaseong_fortress",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO WHC",
+          "VisitKorea",
+          "Suwon CVB",
+          "KoreaToDo",
+          "UNESCO World Heritage Centre — Suwon Hwaseong (Criteria ii/iii inscription, 1997)",
+          "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Hwaseong Fortress + Hwaseong Seongyeok Uigwe Memory of the World 2007)",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Suwon Hwaseong Fortress official listing)",
+          "Suwon City Tourism (suwon.go.kr/tour — Hwaseong Yeolcha trolley + admission + opening hours)",
+          "Wikipedia (Hwaseong Fortress — Jeong Yak-yong + Geojunggi crane + 5.74 km perimeter + 41 structures)"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "time": "≈ 13:30",
+      "duration": "90분",
+      "name": "스타필드 수원 별마당도서관",
+      "category": "현대 문화 랜드마크",
+      "description": "스타필드 수원 별마당도서관은 2024년 1월 26일 개관한 신세계 플래그십 스타필드 수원 내 4층 개방형 도서관입니다. 국내 스타필드 중 최대 규모(약 33만4,000㎡ 연면적)로, 중앙에 솟아오른 거대 서가 구조가 SNS 인증샷 명소입니다. 도서관 자체는 무료 입장. 쇼핑몰 푸드홀에서 점심 또는 간식을 둘러볼 수 있습니다. 방문 시간: 약 60분.",
+      "highlights": [
+        "**신세계 플래그십 2세대 스타필드몰 — 2024년 1월 26일 개장**",
+        "BCHO 파트너스 구성 (코엑스 스타필드 라이브러리 2017년 원조 구성사)",
+        "**4층 규모 22m 서가** — 한국 최대 규모 원통형 서가 중 하나",
+        "약 70,000권 도서 + 잡지 **무료** 열람 가능",
+        "바이닐 레코드 감상 라운지 (추천 구성 컬렉션)",
+        "봄 벚꽃 LED 꽃잎 아트리움 설치 (3~4월)",
+        "이터피아 푸드홀 (30개 이상 레스토랑), 아쿠아필드, 토이킹덤, CGV",
+        "수원역 4번 출구에서 스타필드 무료 셔틀 (~10분)",
+        "몰 운영시간 매일 10:00~22:00",
+        "첫 해(2024년) 방문객 약 2,800만 명"
+      ],
+      "timeUsed": [
+        "용인/민속촌에서 15분 드라이브",
+        "몰 + 라이브러리 관람 — 약 45~50분",
+        "라이브러리 또는 푸드홀에서 카페 휴식 — 약 15분",
+        "차량에서 집결",
+        "선택: 바이닐 LP 카페 라운지 (5F, 음료 포함 약 ₩18,500)"
+      ],
+      "whyOnRoute": "오전 유네스코 유산 핵심 명소 이후 '현대 한국'의 균형추.",
+      "visitBasics": {
+        "hours": "쇼핑몰 10:00-22:00; 도서관은 쇼핑몰 영업 시간 전체 이용 가능",
+        "closed": "월 1~2회 휴관 (보통 월요일 — 방문 전 온라인 확인 권장)",
+        "admission": "**도서관 무료** (쇼핑몰 전체 무료 입장; 쇼핑은 개인 부담; 아쿠아필드 워터파크 별도 ~₩28,000)",
+        "walking": "편안함 — 전층 에스컬레이터·엘리베이터; 전 구역 휠체어·유모차 접근 가능"
+      },
+      "convenience": {
+        "restroom": "전 층 다수 화장실; 기저귀 교환대 있는 가족 화장실",
+        "parking": "지하 주차 약 5,000면; ₩30,000 이상 구매 시 3시간 무료; 단체 버스 전용 구역"
+      },
+      "smartNotes": {
+        "photo": "**22m 높이 책장이 있는 도서관 중앙 아트리움** — 4층 갤러리에서 내려다보는 대표 샷.",
+        "facilities": "B1층 이토피아 푸드홀 (30개+ 레스토랑 ₩5,000~40,000), 4층 토이 킹덤, B1~2층 아쿠아필드 워터파크.",
+        "tip": "**도서관 무료** — 탁월한 가성비 명소. **수원역 출구에서 무료 스타필드 셔틀** 운행 (하차 후 3분 거리)."
+      },
+      "_poi_meta": {
+        "poi_key": "starfield_library_suwon",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Starfield official",
+          "VisitKorea",
+          "Shinsegae press",
+          "BCHO Partners",
+          "Starfield Suwon official (starfield.co.kr/suwon — opening date 2024-01-26 + library 4F-7F + free admission)",
+          "Shinsegae Property press release (Jan 2024 grand opening + 5th Starfield mall + 2nd-generation flagship concept)",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Starfield Library Suwon listing)",
+          "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
+          "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 15:30",
+      "duration": "75분",
+      "name": "와우정사",
+      "category": "불교 사찰 (현대 절충주의)",
+      "description": "와우정사는 1970년 해등 큰스님(북한 출신 피난 승려 김해근)이 창건한 사찰로, 한국전쟁(1950~1953) 분단으로 고향 사찰과 단절된 북한 불교 승려들의 안식처로 지어졌습니다. 창건자의 원력에 따라 범아시아 불교 문화를 한 곳에 담아, 거대한 열반불(누운 불상, 동남아시아 방식), 티베트 불탑, 인도네시아 목조 불상 등 아시아 각지 불교 문화의 조각상을 경내에 모아두었습니다. 무료 입장. 단풍 시즌(10~11월)이 포토 절정 시기. 방문 시간: 약 70분.",
+      "highlights": [
+        "**1970년 해등 스님이 한국 통일 기도 사찰로 창건**",
+        "범아시아 불교(인도, 스리랑카, 태국, 미얀마 등) 절충·혼합 디자인",
+        "다양한 아시아 불교 국가에서 기증받은 **약 3,000개의 불상**",
+        "**3m 목제 와불 = 세계 최대** (인도산 백단향)",
+        "입구의 **8m 불두(佛頭)** — 와우정사의 대표 포토 명소",
+        "**인도산 백단향으로 제작된 세계 최대 3m 목제 와불**",
+        "사찰 내 게스트하우스 시설; 한국어 진행 템플스테이 당일 체험 가능",
+        "입장 **무료**; 기부 환영; 템플스테이 1박 약 ₩70,000~₩90,000",
+        "**무료 입장** + 템플스테이 프로그램 이용 가능",
+        "봄 벚꽃 / 가을 단풍 — 사진 찍기 최적 시기"
+      ],
+      "timeUsed": [
+        "스타필드 수원에서 용인으로 코치 이동 약 30분",
+        "사찰 입구에서 그룹 오리엔테이션 — 약 5분",
+        "자유 탐방: 불두 → 주요 법당 → 세계 최대 와불 → 기증 불상 컬렉션 — 약 35분",
+        "사진 + 집결 — 약 10분",
+        "선택: 태평종 (평화의 종, 8톤 청동) 타종 체험"
+      ],
+      "whyOnRoute": "투어 3의 산 사찰 마무리 — 화성의 군사 역사에 대한 평화로운 영적 대조.",
+      "visitBasics": {
+        "hours": "매일 06:00~19:00 (방문자 홀 보통 09:00~18:00)",
+        "closed": "연중 무휴",
+        "admission": "**무료** (기부 환영); 템플스테이 1박 약 ₩70,000~90,000",
+        "walking": "중간 난이도 — 경사지에 위치한 사찰 경내, 법당 간 계단; 약 500m 도보"
+      },
+      "convenience": {
+        "restroom": "주 법당 및 방문자 안내소 근처",
+        "parking": "사찰 입구 무료 주차장; 관광 코치 수용 가능"
+      },
+      "smartNotes": {
+        "photo": "**입구의 8m 불두** — 와우정사의 대표 사진, 특히 측면 각도에서.",
+        "facilities": "방문자 안내 센터, 템플스테이 등록 사무소, 승복 구매 가능.",
+        "tip": "**무료 입장** — 다른 주요 한국 사찰과 비교해 탁월한 가성비. 세계 최대 와불 놓치지 마세요."
+      },
+      "_poi_meta": {
+        "poi_key": "waujeongsa_temple",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea",
+          "Wikipedia",
+          "Visit Yongin",
+          "Templestay Korea",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Waujeongsa Temple official listing)",
+          "Visit Yongin Tourism (yongin.go.kr/tour — Master Haedeung 1970 founding + reunification prayer temple)",
+          "Templestay Korea (templestay.com — Waujeongsa overnight program + 108-bow practice + sachal eumsik cuisine)",
+          "Wikipedia (Waujeongsa — pan-Asian Buddhist syncretism + Indravarna pagoda + Taepyeongjong 8-ton bell)",
+          "Korea Buddhism Yeonhwasan/Lotus-Mountain regional guide (Waujeongsa 와우 = 'reclining cow' + sandalwood reclining Buddha origin)"
+        ]
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "화성",
+      "type": "origin",
+      "theme": "유네스코 역사"
+    },
+    {
+      "name": "스타필드 라이브러리",
+      "type": "primary",
+      "theme": "현대 한국"
+    },
+    {
+      "name": "점심",
+      "type": "meal",
+      "theme": "리프레시"
+    },
+    {
+      "name": "와우정사",
+      "type": "return",
+      "theme": "사찰 마무리"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "유네스코 문화유산",
+      "duration": "정류장 1",
+      "description": "오전: 수원화성 성벽 + 화성행궁."
+    },
+    {
+      "phase": "도서관 & 점심",
+      "duration": "정류장 2–3",
+      "description": "정오: 스타필드 별마당도서관 + 푸드홀 점심."
+    },
+    {
+      "phase": "산사 피날레",
+      "duration": "정류장 4",
+      "description": "오후: 와우정사 산속 사찰 탐방."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "하루 일정 흐름",
+    "subtitle": "주로 홍익대 입구역 또는 명동 두 곳의 서울 집합 장소에서 오전 9시경 픽업, 오전 유네스코 유산, 점심 및 현대식 도서관, 오후 방정사와 조용한 사찰 방문 순으로 진행됩니다."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "역사와 현대를 하루에 원하는 한국 첫 방문자",
+      "역사 관심 여행자 및 유네스코 컴플리티스트",
+      "포토그래퍼 (화성 성벽, 스타필드 아트리움, 불상)",
+      "활동적이기보다 균형 잡힌 하루를 원하는 커플 및 성인 가족",
+      "입장료 포함 소그룹 형식을 원하는 여행자"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "이 수원-용인 루트가 효과적인 이유",
+        "icon": "landmark",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "하루에 세 시대",
+            "detail": "조선 시대 유네스코 건축, 현대 한국 라이프스타일, 산악 불교 사찰이 매우 다른 세 가지 한국을 하루에 커버합니다."
+          },
+          {
+            "label": "촘촘한 지리적 배치",
+            "detail": "화성, 스타필드 수원, 와우정사가 모두 서울 남쪽 30분 드라이브 안에 있어 이동 낭비가 최소화됩니다."
+          },
+          {
+            "label": "화성 단독보다 강한 가치",
+            "detail": "스타필드와 사찰 추가로 단일 명소 방문이 더 풍성한 당일 여행으로 변모합니다."
+          }
+        ]
+      },
+      {
+        "title": "실제 도보 난이도는 어느 정도일까",
+        "icon": "footprints",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "화성이 가장 활동적인 구간",
+            "detail": "성벽 산책이 루트의 주요 신체 활동으로 석계와 불균일한 표면이 있습니다."
+          },
+          {
+            "label": "스타필드는 휴식 시간",
+            "detail": "라이브러리와 점심 휴식은 본질적으로 실내 도보와 착석 시간으로, 루트에 유용한 중간 쉬는 구간을 안내해 드립니다."
+          },
+          {
+            "label": "와우정사는 중간 난이도",
+            "detail": "사찰 경내는 오르막 길과 계단이 있지만 각 구간이 짧고 주요 불상은 입구에서 도보 5분 거리입니다."
+          }
+        ]
+      },
+      {
+        "title": "날씨 안내",
+        "icon": "cloud-rain",
+        "iconBg": "bg-slate-50/80",
+        "iconColor": "text-slate-600",
+        "items": [
+          {
+            "label": "화성이 날씨에 가장 민감한 코스",
+            "detail": "폭우나 눈은 성벽 산책을 불편하게 합니다; 화성 행궁 실내 궁궐이 우천 시 좋은 대안입니다."
+          },
+          {
+            "label": "스타필드는 완전한 날씨 완충",
+            "detail": "라이브러리와 몰이 완전 실내이므로 이 코스가 비 오는 날의 핵심 명소 역할을 합니다."
+          },
+          {
+            "label": "여름 습도가 하루에 영향",
+            "detail": "요새 성벽과 사찰 경내는 노출되어 있습니다. 6~8월에는 물과 자외선 차단제를 챙기세요."
+          }
+        ]
+      }
+    ],
+    "lessIdealFor": [
+      "쇼핑 위주의 몰 하루를 원하는 여행자",
+      "돌길 또는 사찰 경로 보행이 불편한 방문자 주의",
+      "완전 고정 일정 속도 비도보 일정 필요 여행자 주의",
+      "서울 중심 궁궐 방문을 원하는 여행자 주의 (서울 외곽 루트)"
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "픽업 & 하차",
+      "preview": "서울 2개 집결 지점; 약 09:00 출발",
+      "content": [
+        "홍익대 입구역(4번 출구)과 명동역 픽업.",
+        "첫 집합 장소 기준 출발 08:30~09:00.",
+        "선택 집합 장소에 최소 10분 전 도착.",
+        "서울 동일 집합 장소 하차.",
+        "교통·일요일 정체 등에 따라 18:00~19:00 귀환 예상.",
+        "고정 루트 소그룹 방식으로 호텔 픽업이 아님; 직접 집합 장소에 이동해야 합니다."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "도보 & 지형",
+      "preview": "중간; 화성 성벽이 주요 체력 소모 구간",
+      "content": [
+        "화성 성벽: 성벽 길과 주요 문에 석계; 울퉁불퉁한 역사적 표면.",
+        "스타필드 라이브러리·몰: 평탄한 실내 도보, 쉬움.",
+        "와우정사: 오르막 길과 계단이 있는 중간 난이도.",
+        "미끄럼 방지 기능의 편안한 워킹화 권장.",
+        "스타필드에서만 유모차 가능; 화성 성벽과 와우정사는 유모차 불편."
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "날씨 정책",
+      "preview": "가벼운 비 가능; 폭우 시 화성 도보 구간 축소",
+      "content": [
+        "가벼운 비: 투어 대체로 정상 진행.",
+        "폭우·폭설: 화성 성벽 산책을 단축하고 화성 행궁 위주로 변경 가능.",
+        "스타필드는 완전 실내 코스로 우천 시 핵심 명소 역할.",
+        "와우정사는 부분 노출; 가벼운 비에도 사찰 운영 계속."
+      ]
+    },
+    {
+      "id": "wear",
+      "title": "복장 & 준비물",
+      "preview": "운동화, 단정한 사찰 복장, 레이어링",
+      "content": [
+        "화성·와우정사에 필수인 미끄럼 방지 기능의 편안한 워킹화.",
+        "사찰 방문 시 단정한 복장 (어깨 가리개 권장).",
+        "성벽 노출 구간과 실내 공간의 기온 차이 대비 겹쳐 입기.",
+        "여름 자외선 차단과 물.",
+        "스타필드 라이브러리 광각 촬영을 위한 카메라/간편한폰."
+      ]
+    },
+    {
+      "id": "included",
+      "title": "포함 사항",
+      "preview": "가이드, 교통, 입장료 포함; 점심 현장 직접 결제",
+      "variant": "included",
+      "content": [
+        "영어 가이드",
+        "서울 출발 왕복 소그룹 차량",
+        "모든 입장료 (화성, 화성 행궁, 스타필드 무료, 와우정사)",
+        "점심 미포함; 스타필드 식당에서 현장 직접 결제",
+        "개인 쇼핑 미포함",
+        "선택 카페 이용 미포함",
+        "가이드 팁은 선택 사항"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "실시간 날씨 연동"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "매일 업데이트"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "season": "봄",
+      "title": "벚꽃 시즌",
+      "description": "4월 초 화성 성벽 따라 벚꽃 — 최고 포토 코스 중 하나. 쾌적한 기온으로 성벽 전 구간 도보에 이상적.",
+      "icon": "flower"
+    },
+    {
+      "season": "여름",
+      "title": "무성하지만 습함",
+      "description": "와우정사 경내와 숲길이 울창하고 낮이 길지만, 성벽 노출 구간에서 습도와 열기가 체감됨.",
+      "icon": "sun"
+    },
+    {
+      "season": "가을",
+      "title": "최고 시즌",
+      "description": "화성 성벽과 연화산 따라 선명한 단풍; 9~11월 두 코스 모두 최고 조건. 한국 최상의 가을 경관 시즌.",
+      "icon": "leaf"
+    },
+    {
+      "season": "겨울",
+      "title": "조용하고 드라마틱",
+      "description": "조용한 사찰 경내와 극적인 요새 성벽; 춥지만 눈에 보이는으로 보람 있음. 성벽 노출 구간 방한 준비 필수.",
+      "icon": "snowflake"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "공인 현지 여행사",
+      "description": "정식 등록 및 보험 가입 현지 여행사",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "57건 기준 4.9/5 평점의 공인 현지 여행사."
+    },
+    {
+      "icon": "route",
+      "title": "코스 전문",
+      "description": "이동 부담을 줄인 효율적인 코스",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "와우정사 무료 입장과 범아시아 불교 조각 컬렉션이 기존 수원 코스와 차별화된 문화적 깊이를 더합니다."
+    },
+    {
+      "icon": "users",
+      "title": "그룹 규모 관리",
+      "description": "코스에 상황에 맞춘 인원 규모",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "10~11월 단풍이 와우정사의 사진적 절정 시기입니다."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "즉시",
+      "title": "즉시 확인",
+      "detail": "행정 요약 포함 예약 확인서 발송",
+      "description": "집결 장소·시각 포함 즉시 예약 확인서 발송."
+    },
+    {
+      "timing": "출발 12시간 전",
+      "title": "12시간 전 알림",
+      "detail": "날씨 업데이트 및 경로 변경 안내",
+      "description": "화성행궁 무예24기 공연 일정 및 와우정사 당일 행사 사전 안내."
+    },
+    {
+      "timing": "전날 저녁",
+      "title": "최종 픽업 안내",
+      "detail": "정확한 픽업 시간 및 가이드 연락처",
+      "description": "출발 전날 저녁 최종 집결 시각 확인."
+    },
+    {
+      "timing": "투어 당일 아침",
+      "title": "당일 코스 안내",
+      "detail": "실시간 상황 기반 당일 브리핑",
+      "description": "날씨 및 코스 안내 아침 메시지 전달."
+    },
+    {
+      "timing": "투어 중",
+      "title": "경유지별 심층 안내",
+      "detail": "각 코스 실시간 현장 안내",
+      "description": "정조의 화성 건설 배경, 와우정사 창건 역사와 통일 염원, 스타필드 건축 구성 등 가이드 심층 설명."
+    },
+    {
+      "timing": "투어 종료 후",
+      "title": "투어 후 지원",
+      "detail": "피드백 및 추가 여행 추천",
+      "description": "투어 후 피드백 요청 전송."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q1",
+      "question": "수원+민속촌 또는 수원+광명동굴 투어와 어떻게 다른가요?",
+      "answer": "세 투어 모두 수원화성·화성행궁·스타필드를 공유합니다. 이 투어는 와우정사 산사 방문이 추가됩니다. 활동적인 민속 문화(민속촌)나 지하 LED 테마파크(광명동굴) 대신 조용하고 사색적인 분위기를 원하는 분께 적합합니다."
+    },
+    {
+      "id": "q2",
+      "question": "입장료가 포함되어 있나요?",
+      "answer": "네, 3개 유료 경유지 모두 포함됩니다: 수원화성(성인 ₩1,000), 화성행궁(성인 ₩1,500), 와우정사(무료). 스타필드 별마당도서관은 무료 입장입니다."
+    },
+    {
+      "id": "q3",
+      "question": "점심 식사가 포함되어 있나요?",
+      "answer": "포함되지 않습니다. 스타필드 수원 푸드홀에서 자유롭게 즐기시면 됩니다. 예산: 약 ₩10,000~20,000."
+    },
+    {
+      "id": "q4",
+      "question": "와우정사는 어떤 점이 특별한가요?",
+      "answer": "전통 한국 불교 사찰과 달리, 1970년 창건된 비전통적 사찰입니다. 거대한 열반불(누운 불상), 티베트 불탑, 인도네시아 목조 불상 등 범아시아 불교 컬렉션이 한 곳에 모여 있어 독특한 문화적 풍경을 만들어 냅니다."
+    },
+    {
+      "id": "q5",
+      "question": "사찰 방문 시 복장 규정이 있나요?",
+      "answer": "어깨를 가리는 복장을 권장합니다. 여름에 민소매 상의를 입고 가신다면 얇은 겉옷을 챙기세요. 모자는 대체로 착용 가능합니다."
+    },
+    {
+      "id": "q6",
+      "question": "하루 도보 부담이 어떻게 분배되나요?",
+      "answer": "세 가지 서로 다른 도보 유형: 화성 성벽이 가장 힘든 구간(가파른 경사, 계단, 약 1km). 스타필드는 평탄한 실내. 와우정사는 가파르지 않은 사찰 경내와 계단."
+    },
+    {
+      "id": "first-time",
+      "question": "수원·용인을 처음 방문하는 분에게 좋은 선택인가요?",
+      "answer": "네, 유네스코 성곽(화성), 현대 포토 공간(스타필드), 독특한 산사(와우정사)를 한 번에 볼 수 있는 첫 방문자에게 잘 맞는 코스입니다."
+    },
+    {
+      "id": "walking",
+      "question": "도보 이동이 힘들지 않나요?",
+      "answer": "보통 활동적 수준. 가장 힘든 구간은 화성 성벽으로 약 1km의 고르지 않은 석재 성벽 도보, 성문 계단이 포함됩니다. 스타필드는 평탄한 실내. 와우정사는 완만한 계단을 오르내립니다."
+    },
+    {
+      "id": "family",
+      "question": "가족 여행에 적합한가요?",
+      "answer": "만 6세 이상 어린이를 동반하는 가족에게 적합합니다. 유모차는 화성 성벽과 와우정사에서 사용이 어렵지만 스타필드에서는 편리합니다."
+    },
+    {
+      "id": "seniors",
+      "question": "어르신도 참여할 수 있나요?",
+      "answer": "계단과 고르지 않은 지형이 있어, 활동적인 어르신께 권장합니다. 화성 성벽이 가장 힘든 구간입니다."
+    },
+    {
+      "id": "children",
+      "question": "권장 최소 연령은 몇 세인가요?",
+      "answer": "만 6세 이상 추천 — 화성 성벽 계단과 고르지 않은 석재 지면, 와우정사 사찰 경내 계단을 소화할 수 있는 어린이에게 적합합니다."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 4.9,
+    "totalReviews": 57,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 53,
+        "percentage": 93.0
+      },
+      {
+        "stars": 4,
+        "count": 3,
+        "percentage": 5.3
+      },
+      {
+        "stars": 3,
+        "count": 1,
+        "percentage": 1.8
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0.0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
+    "price": {
+      "amountLabel": "48.60",
+      "originalPriceUsd": 54,
+      "salePriceUsd": 48.6,
+      "discountPercent": 10,
+      "currency": "USD",
+      "per": "인",
+      "priceSource": "direct_rate",
+      "priceNote": "AtoC Korea 공식 판매가 기준입니다."
+    }
+  },
+  "pickup_dropoff": {
+    "type": "meeting_point",
+    "meeting_points": [
+      {
+        "name": "홍대입구역 4번 출구",
+        "time": "08:30",
+        "note": "서울 첫 번째 미팅 장소입니다. 10분 일찍 도착해 주세요."
+      },
+      {
+        "name": "명동 Station",
+        "time": "09:00",
+        "note": "서울 두 번째 미팅 장소입니다."
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "명동 Station",
+        "note": "서울 표준 하차 지점"
+      },
+      {
+        "name": "홍대입구역",
+        "note": "서울 표준 하차 지점"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "귀환 시간은 교통 상황에 따라 달라지며 보통 18:00~19:00 사이입니다. 운영 효율을 위해 하차 순서는 일부 조정될 수 있습니다. 선택한 미팅 포인트에는 최소 10분 일찍 도착해 주세요. 이 상품은 호텔 픽업이 아닌 고정 미팅 포인트 방식입니다."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "seoul-suwon-hwaseong-waujeongsa-starfield",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "gyeonggi_south",
+    "vehicle_type": "minicoach",
+    "duration_hours": 9.0,
+    "region_tags": [
+      "seoul_capital",
+      "gyeonggi_suwon",
+      "gyeonggi_yongin",
+      "gyeonggi_south",
+      "seoul_day_trip"
+    ],
+    "theme_tags": [
+      "unesco",
+      "fortress",
+      "buddhist_temple",
+      "contemporary_architecture",
+      "k_drama_filming_location",
+      "first_time_friendly",
+      "iconic_landmarks",
+      "heritage_plus_modern"
+    ],
+    "poi_tags": [
+      "hwaseong_fortress",
+      "hwaseong_haenggung",
+      "starfield_library_suwon",
+      "waujeongsa_temple",
+      "yeonhwasan"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.6,
+    "scenic_level": 0.85,
+    "photo_level": 1.0,
+    "culture_level": 1.0,
+    "relax_level": 0.8,
+    "first_time_fit": 0.7,
+    "family_fit": 0.85,
+    "senior_fit": 0.75,
+    "couple_fit": 0.85,
+    "solo_traveler_fit": 0.95,
+    "active_traveler_fit": 0.5,
+    "adult_family_fit": 0.95,
+    "family_with_teens_fit": 0.85,
+    "young_kids_fit": 0.55,
+    "senior_active_fit": 0.6,
+    "senior_general_fit": 0.7,
+    "mobility_friendly_fit": 0.5,
+    "stroller_fit": 0.5,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.3,
+    "rain_fit": 0.65,
+    "value_for_money_fit": 0.95,
+    "iconic_landmark_fit": 0.85,
+    "cafe_fit": 0.7,
+    "food_fit": 0.5,
+    "nature_fit": 0.7,
+    "beach_fit": 0.0,
+    "nightlife_fit": 0.05,
+    "shopping_fit": 0.55,
+    "no_shopping_fit": 0.7,
+    "local_culture_fit": 1.0,
+    "storytelling_fit": 1.0,
+    "unesco_fit": 1.0,
+    "intangible_heritage_fit": 0.4,
+    "indoor_ratio": 0.45,
+    "weather_sensitivity": 0.6,
+    "comfort_level": 0.8,
+    "budget_fit": 0.85,
+    "premium_fit": 0.4,
+    "small_group_fit": 1.0,
+    "private_fit": 0.05,
+    "bus_fit": 0.7,
+    "price_band": "budget",
+    "pickup_base": "seoul_meeting_point",
+    "return_time_band": "18:00-19:00",
+    "duration_band": "9-10h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "very_low_mobility_full_route",
+        "wants_a_seoul_city_palace_focused_day"
+      ],
+      "notIdealFor": [
+        "stroller_heavy_groups",
+        "guests_avoiding_stairs_entirely"
+      ]
+    },
+    "walking_notes": [
+      "Hwaseong Fortress wall walk is the main physical section: stone steps and uneven historic surfaces.",
+      "Starfield Suwon is a flat-floor indoor stop and gives the route a useful midday recovery.",
+      "Waujeongsa Temple grounds involve some uphill walking and stairs.",
+      "Comfortable walking shoes with grip are strongly recommended.",
+      "The route is not stroller-friendly except at Starfield Suwon."
+    ],
+    "keywords": [
+      "suwon hwaseong day tour from seoul",
+      "starfield suwon library tour",
+      "waujeongsa temple tour",
+      "suwon unesco fortress small group",
+      "seoul to suwon heritage tour",
+      "hwaseong starfield waujeongsa tour",
+      "suwon library day trip",
+      "yongin temple tour",
+      "korea heritage and modern day tour",
+      "suwon hwaseong palace day tour"
+    ],
+    "synonym_hints": [
+      "suwon fortress library temple tour",
+      "korea past and present day trip",
+      "seoul day trip suwon yongin",
+      "unesco heritage seoul day tour",
+      "hwaseong wall walk small group",
+      "buddhist temple seoul day trip"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "seoul",
+    "vehicle_type_legacy": "mini_coach",
+    "anchor_poi_keys": [
+      "hwaseong_fortress",
+      "waujeongsa_temple",
+      "starfield_library_suwon",
+      "hwaseong_haenggung"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.1,
+    "flexibility_fit": 0.3,
+    "minicoach_fit": 1.0,
+    "fortress_fit": 1.0,
+    "buddhist_temple_fit": 1.0,
+    "scenic_temple_fit": 1.0,
+    "modern_eclectic_temple_fit": 1.0,
+    "pan_asian_buddhism_fit": 1.0,
+    "library_fit": 1.0,
+    "modern_architecture_fit": 0.85,
+    "history_culture_fit": 0.95,
+    "spiritual_fit": 0.95,
+    "meditation_fit": 0.85,
+    "k_drama_filming_fit": 0.5,
+    "seasonal_fit": 0.85,
+    "romantic_fit": 0.65,
+    "premium_dining_fit": 0.4,
+    "compact_route_fit": 1.0,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "suwon_hwaseong_route_fit": 1.0,
+    "suwon_central_anchor_fit": 1.0,
+    "seoul_to_suwon_30min_drive_fit": 1.0,
+    "seoul_central_hotel_pickup_fit": 1.0,
+    "return_to_seoul_central_fit": 1.0,
+    "small_group_format_fit": 1.0,
+    "fixed_schedule_format_fit": 1.0,
+    "unesco_world_heritage_anchor_fit": 1.0,
+    "unesco_world_heritage_1997_inscription_fit": 1.0,
+    "joseon_dynasty_late_18c_anchor_fit": 1.0,
+    "jeong_yak_yong_silhak_anchor_fit": 1.0,
+    "geojunggi_crane_engineering_anchor_fit": 1.0,
+    "uigwe_memory_of_world_2007_anchor_fit": 1.0,
+    "hwaseong_5_74km_perimeter_anchor_fit": 1.0,
+    "hwaseong_41_structures_anchor_fit": 1.0,
+    "starfield_library_photo_stop_fit": 1.0,
+    "starfield_22m_bookshelves_anchor_fit": 1.0,
+    "starfield_4f_to_7f_atrium_void_fit": 1.0,
+    "douglas_coupland_the_planets_rooftop_anchor_fit": 1.0,
+    "starfield_free_admission_photo_permitted_fit": 1.0,
+    "instagram_photo_density_high_fit": 1.0,
+    "waujeongsa_syncretic_buddhism_fit": 1.0,
+    "korean_war_reunification_prayer_temple_fit": 1.0,
+    "north_korean_monks_refugee_temple_origin_fit": 1.0,
+    "master_haedeung_1970_founding_anchor_fit": 1.0,
+    "world_largest_wooden_reclining_buddha_fit": 1.0,
+    "indian_sandalwood_buddha_anchor_fit": 1.0,
+    "indravarna_sri_lankan_pagoda_anchor_fit": 1.0,
+    "myanmar_brass_jade_buddha_anchor_fit": 1.0,
+    "taepyeongjong_8_ton_bell_anchor_fit": 1.0,
+    "pan_asian_buddhist_syncretism_fit": 1.0,
+    "free_admission_buddhist_temple_fit": 1.0,
+    "templestay_program_available_fit": 1.0,
+    "three_stop_pivot_day_trip_fit": 1.0,
+    "secular_to_commercial_to_religious_pivot_fit": 1.0,
+    "evening_contemplative_anchor_fit": 1.0,
+    "hwaseong_yeolcha_optional_advisory": true,
+    "waujeongsa_free_admission_advisory": true,
+    "differentiates_from_suwon_folk_village_route": true,
+    "differentiates_from_suwon_gwangmyeong_cave_route": true,
+    "available_months_signature": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "signature_window_label": "Year-round (Waujeongsa peak: April-May cherry blossoms / October-November ginkgo+maple foliage)",
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "embedded_for": [
+      "authoring",
+      "review",
+      "sql_backfill_reference"
+    ],
+    "note": "Scores were tuned for a small-group heritage-plus-modern day-trip from Seoul. Culture, photo, and storytelling fit are maxed because the route delivers a true Joseon-to-contemporary narrative arc. Iconic landmark fit is maxed because Hwaseong (UNESCO) and Starfield Library are both top-tier Korean tourism brand names. Mobility-friendly fit is conservative because the fortress walls have stone steps. Same-day-flight fit is low because the route runs 9-10 hours and ends in Seoul evening.",
+    "duration_hours": 10,
+    "stop_count": 3,
+    "score_rationale": {
+      "culture_level": "Maxed because the route covers UNESCO architecture, contemporary lifestyle, and Buddhist tradition in one day.",
+      "storytelling_fit": "Maxed because the route gives a guide three distinct narrative chapters (Joseon defense, modern Korea, Buddhist tradition).",
+      "iconic_landmark_fit": "Maxed because Hwaseong is UNESCO and Starfield Library is one of the most-photographed contemporary Korean spaces.",
+      "value_for_money_fit": "5 because the small-group format includes round-trip transport, admission, and a guide for one of the lower price points among Seoul day trips.",
+      "mobility_friendly_fit": "2 because the Hwaseong wall walk is unavoidable for the route's main attraction and is not wheelchair-accessible.",
+      "rain_fit": "4 because Starfield Suwon is fully indoor and the Hwaseong Haenggung palace is a good wet-weather alternative to the wall walk.",
+      "small_group_fit": "Direct match: this is the route's intended format."
+    },
+    "anchor_pois": [
+      "Suwon Hwaseong Fortress",
+      "Starfield Library Suwon",
+      "Waujeongsa Temple"
+    ],
+    "anchor_poi_keys": [
+      "hwaseong_fortress",
+      "starfield_library_suwon",
+      "waujeongsa_temple"
+    ],
+    "competing_products": [
+      "seoul-suwon-hwaseong-folk-village-starfield-library",
+      "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library"
+    ],
+    "primary_themes": [
+      "culture",
+      "unesco",
+      "temple",
+      "library"
+    ],
+    "secondary_themes": [
+      "modern_architecture",
+      "joseon_era",
+      "buddhism",
+      "yongin"
+    ],
+    "best_for": [
+      "culture_lovers",
+      "couples",
+      "solo_travelers",
+      "compact_route_seekers",
+      "first_time_visitors"
+    ],
+    "not_recommended_for": [
+      "mobility_limited",
+      "shoppers_only",
+      "nightlife_seekers",
+      "young_kids_pure"
+    ],
+    "enrichment_batch": "17e",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.27",
+    "enrichment_target_kb_version": "1.28",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "12 substantive stop instances across 3 tours; Batch 11 era authoring → A-grade pv=6 PASS (universal source-attribution gap closed; Suwon-Hwaseong-route + Starfield-library-photo-stop + Korean-Folk-Village-K-drama-set + Gwangmyeong-cave-mining-heritage + Waujeongsa-syncretic-buddhism + Suwon-galbi-tongdak-street patterns introduced)"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "수원화성, 와우정사",
+        "headlineLine2": "& 스타필드 별마당도서관 문화유산 투어",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
+          "imagePosition": "center 50%",
+          "tagline": "18세기 유네스코 성곽부터 한국에서 가장 많이 촬영되는 현대 도서관, 그리고 고요한 산속 불교 사찰까지 — 서울 당일 투어 한 편에 담겼습니다.",
+          "pills": [
+            "유네스코 유적지",
+            "입장료 포함",
+            "서울 왕복 교통"
+          ],
+          "meta": {
+            "duration": "9~10시간",
+            "region": "수원 & 용인",
+            "stops": "3개 코스",
+            "rating": 4.9,
+            "ratingStars": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "투어 개요"
+          },
+          {
+            "id": "itinerary",
+            "label": "상세 일정"
+          },
+          {
+            "id": "details",
+            "label": "유의사항"
+          },
+          {
+            "id": "faq",
+            "label": "자주 묻는 질문"
+          },
+          {
+            "id": "reviews",
+            "label": "여행자 후기"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "소요 시간",
+            "value": "9~10시간"
+          },
+          {
+            "icon": "landmark",
+            "label": "문화유산",
+            "value": "유네스코+사찰"
+          },
+          {
+            "icon": "camera",
+            "label": "포토 명소",
+            "value": "매우 높음"
+          },
+          {
+            "icon": "footprints",
+            "label": "도보 난이도",
+            "value": "보통"
+          },
+          {
+            "icon": "users",
+            "label": "투어 형태",
+            "value": "소그룹"
+          },
+          {
+            "icon": "ticket",
+            "label": "입장료",
+            "value": "포함"
+          },
+          {
+            "icon": "gauge",
+            "label": "투어 일정 속도",
+            "value": "균형"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200&q=80",
+            "alt": "투어 중 방문하는 수원 화성의 풍경",
+            "caption": "수원 화성",
+            "location": "수원 화성, Suwon, Gyeonggi-do",
+            "atmosphere": "수원 화성는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=1200&q=80",
+            "alt": "투어 중 방문하는 스타필드 라이브러리 — 22m 서가의 풍경",
+            "caption": "스타필드 라이브러리 — 22m 서가",
+            "location": "스타필드 수원 별마당도서관, Yeongtong-gu, Suwon",
+            "atmosphere": "신세계의 2세대 스타필드 플래그십, 2024년 1월 개장; 무료 입장; 바이닐 레코드 청음 좌석"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1200&q=80",
+            "alt": "투어 중 방문하는 와우정사 대형 불두 풍경",
+            "caption": "와우정사 대형 불두",
+            "location": "와우정사, 연화산 자락, Yongin",
+            "atmosphere": "와우정사 대형 불두는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+            "alt": "투어 중 방문하는 Hwaseong Wall의 풍경",
+            "caption": "Hwaseong Wall",
+            "location": "Hwaseong Wall, Janganmun 구간, Suwon",
+            "atmosphere": "장안문과 화서문 사이 1km 성벽 산책로; 급경사; 치성과 장대"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+            "alt": "채색 처마와 돌 바닥 안뜰을 두른 화성 행궁의 전통 한국 목조 건물들",
+            "caption": "화성 행궁 안뜰들",
+            "location": "수원 화성 성곽 안의 화성행궁",
+            "atmosphere": "한국 최대 행궁; 정조의 임시 거처; 19세기 화재 후 복원"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "≈ 10:00",
+            "duration": "120분",
+            "name": "수원화성 (유네스코 세계문화유산)",
+            "category": "유네스코 요새",
+            "description": "수원화성은 1997년 유네스코 세계문화유산으로 등재된 한국 유일의 완전한 형태의 조선시대 성곽 도시입니다. 정조 대왕이 1794~1796년에 축성했으며, 공사 전 과정을 담은 10권 분량의 『화성성역의궤』(별도 유네스코 기록유산 등재)가 현존합니다. 전체 성벽 5.7km 중 약 1km 구간(장안문~화서문, 공심돈·봉돈 포함)을 걷습니다. 4대문(장안문·팔달문·화서문·창룡문), 포루·각루·수문 48개 시설물이 보존되어 있습니다. 입장료 포함. 방문 시간: 약 60분.",
+            "highlights": [
+              "**1997년 유네스코 세계유산 등재** — 원형 성곽 구조를 갖춘 한국 유일의 요새 도시",
+              "1794~1796년 정조대왕(조선 22대 왕) 재위 중 2년 9개월에 걸쳐 건립",
+              "정약용이 한국·중국·서양 축성 과학을 결합해 구성",
+              "화성성역의궤 — 2007년 유네스코 세계기록유산 등재",
+              "5.74km 성곽 둘레, 41개 전략 군사 시설",
+              "장안문 북쪽 대문 — **한국 현존 최대 왕궁 대문**",
+              "1.2km 가이드 도보 장안문 → 화서문 (사진 찍기 좋은 구간)",
+              "화홍문 7개 수문 아치 — 가장 많이 촬영되는 구조물",
+              "**한복 착용 + 매월 마지막 수요일 + 65세 이상 무료**"
+            ],
+            "timeUsed": [
+              "장안문 근처 코치 하차 — 약 5분",
+              "장안문에서 그룹 오리엔테이션 — 약 5분",
+              "장안문 → 화서문 → 화서장각 구간 도보 — 약 25~30분",
+              "포토 타임 + 차량에서 집결 — 약 10분",
+              "선택: 화성 열차 (연무대 ↔ 팔달문) — 별도 요금"
+            ],
+            "whyOnRoute": "투어 3의 유산 핵심 명소 — 3코스 간결 구성로 화성이 단독으로 경주 전체 유산 하루치 역할.",
+            "visitBasics": {
+              "hours": "성벽 산책로 24시간 (게이트 없음); 권장 09:00-18:00(여름)/09:00-17:00(겨울)",
+              "closed": "연중 무휴 (화성 열차 월요일 운행 중단)",
+              "admission": "성인 ₩1,000 / 청소년 ₩700 / 어린이 ₩500 (무료: 6세 이하·65세 이상 노인·한복 착용자·매달 마지막 수요일)",
+              "walking": "중간 난이도 — 성벽에 경사 구간(서장대 주변); 각 문에 계단; 일부 구간 휠체어 어려움"
+            },
+            "convenience": {
+              "restroom": "장안문, 화서문, 팔달문, 연무대에 화장실 있음",
+              "parking": "장안문 주차장 단체 버스 하차; 연무대 단체 버스 지정 주차"
+            },
+            "smartNotes": {
+              "photo": "수원천 위 7개 아치가 있는 **화홍문(북쪽 수문)** — 이른 아침 또는 늦은 오후 반영 촬영 최적.",
+              "facilities": "장안문+팔달문+행궁광장 관광안내소. 영한 안내판. 화성 열차(₩1,500 왕복) 운행.",
+              "tip": "편안한 신발 착용 — 성벽 돌이 울퉁불퉁함. 행궁광장 한복 대여점에서 **무료 입장** 혜택."
+            },
+            "_poi_meta": {
+              "poi_key": "hwaseong_fortress",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO WHC",
+                "VisitKorea",
+                "Suwon CVB",
+                "KoreaToDo",
+                "UNESCO World Heritage Centre — Suwon Hwaseong (Criteria ii/iii inscription, 1997)",
+                "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Hwaseong Fortress + Hwaseong Seongyeok Uigwe Memory of the World 2007)",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Suwon Hwaseong Fortress official listing)",
+                "Suwon City Tourism (suwon.go.kr/tour — Hwaseong Yeolcha trolley + admission + opening hours)",
+                "Wikipedia (Hwaseong Fortress — Jeong Yak-yong + Geojunggi crane + 5.74 km perimeter + 41 structures)"
+              ]
+            }
+          },
+          {
+            "number": 2,
+            "time": "≈ 13:30",
+            "duration": "90분",
+            "name": "스타필드 수원 별마당도서관",
+            "category": "현대 문화 랜드마크",
+            "description": "스타필드 수원 별마당도서관은 2024년 1월 26일 개관한 신세계 플래그십 스타필드 수원 내 4층 개방형 도서관입니다. 국내 스타필드 중 최대 규모(약 33만4,000㎡ 연면적)로, 중앙에 솟아오른 거대 서가 구조가 SNS 인증샷 명소입니다. 도서관 자체는 무료 입장. 쇼핑몰 푸드홀에서 점심 또는 간식을 둘러볼 수 있습니다. 방문 시간: 약 60분.",
+            "highlights": [
+              "**신세계 플래그십 2세대 스타필드몰 — 2024년 1월 26일 개장**",
+              "BCHO 파트너스 구성 (코엑스 스타필드 라이브러리 2017년 원조 구성사)",
+              "**4층 규모 22m 서가** — 한국 최대 규모 원통형 서가 중 하나",
+              "약 70,000권 도서 + 잡지 **무료** 열람 가능",
+              "바이닐 레코드 감상 라운지 (추천 구성 컬렉션)",
+              "봄 벚꽃 LED 꽃잎 아트리움 설치 (3~4월)",
+              "이터피아 푸드홀 (30개 이상 레스토랑), 아쿠아필드, 토이킹덤, CGV",
+              "수원역 4번 출구에서 스타필드 무료 셔틀 (~10분)",
+              "몰 운영시간 매일 10:00~22:00",
+              "첫 해(2024년) 방문객 약 2,800만 명"
+            ],
+            "timeUsed": [
+              "용인/민속촌에서 15분 드라이브",
+              "몰 + 라이브러리 관람 — 약 45~50분",
+              "라이브러리 또는 푸드홀에서 카페 휴식 — 약 15분",
+              "차량에서 집결",
+              "선택: 바이닐 LP 카페 라운지 (5F, 음료 포함 약 ₩18,500)"
+            ],
+            "whyOnRoute": "오전 유네스코 유산 핵심 명소 이후 '현대 한국'의 균형추.",
+            "visitBasics": {
+              "hours": "쇼핑몰 10:00-22:00; 도서관은 쇼핑몰 영업 시간 전체 이용 가능",
+              "closed": "월 1~2회 휴관 (보통 월요일 — 방문 전 온라인 확인 권장)",
+              "admission": "**도서관 무료** (쇼핑몰 전체 무료 입장; 쇼핑은 개인 부담; 아쿠아필드 워터파크 별도 ~₩28,000)",
+              "walking": "편안함 — 전층 에스컬레이터·엘리베이터; 전 구역 휠체어·유모차 접근 가능"
+            },
+            "convenience": {
+              "restroom": "전 층 다수 화장실; 기저귀 교환대 있는 가족 화장실",
+              "parking": "지하 주차 약 5,000면; ₩30,000 이상 구매 시 3시간 무료; 단체 버스 전용 구역"
+            },
+            "smartNotes": {
+              "photo": "**22m 높이 책장이 있는 도서관 중앙 아트리움** — 4층 갤러리에서 내려다보는 대표 샷.",
+              "facilities": "B1층 이토피아 푸드홀 (30개+ 레스토랑 ₩5,000~40,000), 4층 토이 킹덤, B1~2층 아쿠아필드 워터파크.",
+              "tip": "**도서관 무료** — 탁월한 가성비 명소. **수원역 출구에서 무료 스타필드 셔틀** 운행 (하차 후 3분 거리)."
+            },
+            "_poi_meta": {
+              "poi_key": "starfield_library_suwon",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Starfield official",
+                "VisitKorea",
+                "Shinsegae press",
+                "BCHO Partners",
+                "Starfield Suwon official (starfield.co.kr/suwon — opening date 2024-01-26 + library 4F-7F + free admission)",
+                "Shinsegae Property press release (Jan 2024 grand opening + 5th Starfield mall + 2nd-generation flagship concept)",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Starfield Library Suwon listing)",
+                "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
+                "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 15:30",
+            "duration": "75분",
+            "name": "와우정사",
+            "category": "불교 사찰 (현대 절충주의)",
+            "description": "와우정사는 1970년 해등 큰스님(북한 출신 피난 승려 김해근)이 창건한 사찰로, 한국전쟁(1950~1953) 분단으로 고향 사찰과 단절된 북한 불교 승려들의 안식처로 지어졌습니다. 창건자의 원력에 따라 범아시아 불교 문화를 한 곳에 담아, 거대한 열반불(누운 불상, 동남아시아 방식), 티베트 불탑, 인도네시아 목조 불상 등 아시아 각지 불교 문화의 조각상을 경내에 모아두었습니다. 무료 입장. 단풍 시즌(10~11월)이 포토 절정 시기. 방문 시간: 약 70분.",
+            "highlights": [
+              "**1970년 해등 스님이 한국 통일 기도 사찰로 창건**",
+              "범아시아 불교(인도, 스리랑카, 태국, 미얀마 등) 절충·혼합 디자인",
+              "다양한 아시아 불교 국가에서 기증받은 **약 3,000개의 불상**",
+              "**3m 목제 와불 = 세계 최대** (인도산 백단향)",
+              "입구의 **8m 불두(佛頭)** — 와우정사의 대표 포토 명소",
+              "**인도산 백단향으로 제작된 세계 최대 3m 목제 와불**",
+              "사찰 내 게스트하우스 시설; 한국어 진행 템플스테이 당일 체험 가능",
+              "입장 **무료**; 기부 환영; 템플스테이 1박 약 ₩70,000~₩90,000",
+              "**무료 입장** + 템플스테이 프로그램 이용 가능",
+              "봄 벚꽃 / 가을 단풍 — 사진 찍기 최적 시기"
+            ],
+            "timeUsed": [
+              "스타필드 수원에서 용인으로 코치 이동 약 30분",
+              "사찰 입구에서 그룹 오리엔테이션 — 약 5분",
+              "자유 탐방: 불두 → 주요 법당 → 세계 최대 와불 → 기증 불상 컬렉션 — 약 35분",
+              "사진 + 집결 — 약 10분",
+              "선택: 태평종 (평화의 종, 8톤 청동) 타종 체험"
+            ],
+            "whyOnRoute": "투어 3의 산 사찰 마무리 — 화성의 군사 역사에 대한 평화로운 영적 대조.",
+            "visitBasics": {
+              "hours": "매일 06:00~19:00 (방문자 홀 보통 09:00~18:00)",
+              "closed": "연중 무휴",
+              "admission": "**무료** (기부 환영); 템플스테이 1박 약 ₩70,000~90,000",
+              "walking": "중간 난이도 — 경사지에 위치한 사찰 경내, 법당 간 계단; 약 500m 도보"
+            },
+            "convenience": {
+              "restroom": "주 법당 및 방문자 안내소 근처",
+              "parking": "사찰 입구 무료 주차장; 관광 코치 수용 가능"
+            },
+            "smartNotes": {
+              "photo": "**입구의 8m 불두** — 와우정사의 대표 사진, 특히 측면 각도에서.",
+              "facilities": "방문자 안내 센터, 템플스테이 등록 사무소, 승복 구매 가능.",
+              "tip": "**무료 입장** — 다른 주요 한국 사찰과 비교해 탁월한 가성비. 세계 최대 와불 놓치지 마세요."
+            },
+            "_poi_meta": {
+              "poi_key": "waujeongsa_temple",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea",
+                "Wikipedia",
+                "Visit Yongin",
+                "Templestay Korea",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Waujeongsa Temple official listing)",
+                "Visit Yongin Tourism (yongin.go.kr/tour — Master Haedeung 1970 founding + reunification prayer temple)",
+                "Templestay Korea (templestay.com — Waujeongsa overnight program + 108-bow practice + sachal eumsik cuisine)",
+                "Wikipedia (Waujeongsa — pan-Asian Buddhist syncretism + Indravarna pagoda + Taepyeongjong 8-ton bell)",
+                "Korea Buddhism Yeonhwasan/Lotus-Mountain regional guide (Waujeongsa 와우 = 'reclining cow' + sandalwood reclining Buddha origin)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "화성",
+            "type": "origin",
+            "theme": "유네스코 역사"
+          },
+          {
+            "name": "스타필드 라이브러리",
+            "type": "primary",
+            "theme": "현대 한국"
+          },
+          {
+            "name": "점심",
+            "type": "meal",
+            "theme": "리프레시"
+          },
+          {
+            "name": "와우정사",
+            "type": "return",
+            "theme": "사찰 마무리"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "유네스코 문화유산",
+            "duration": "정류장 1",
+            "description": "오전: 수원화성 성벽 + 화성행궁."
+          },
+          {
+            "phase": "도서관 & 점심",
+            "duration": "정류장 2–3",
+            "description": "정오: 스타필드 별마당도서관 + 푸드홀 점심."
+          },
+          {
+            "phase": "산사 피날레",
+            "duration": "정류장 4",
+            "description": "오후: 와우정사 산속 사찰 탐방."
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "하루 일정 흐름",
+          "subtitle": "주로 홍익대 입구역 또는 명동 두 곳의 서울 집합 장소에서 오전 9시경 픽업, 오전 유네스코 유산, 점심 및 현대식 도서관, 오후 방정사와 조용한 사찰 방문 순으로 진행됩니다."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "역사와 현대를 하루에 원하는 한국 첫 방문자",
+            "역사 관심 여행자 및 유네스코 컴플리티스트",
+            "포토그래퍼 (화성 성벽, 스타필드 아트리움, 불상)",
+            "활동적이기보다 균형 잡힌 하루를 원하는 커플 및 성인 가족",
+            "입장료 포함 소그룹 형식을 원하는 여행자"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "이 수원-용인 루트가 효과적인 이유",
+              "icon": "landmark",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "하루에 세 시대",
+                  "detail": "조선 시대 유네스코 건축, 현대 한국 라이프스타일, 산악 불교 사찰이 매우 다른 세 가지 한국을 하루에 커버합니다."
+                },
+                {
+                  "label": "촘촘한 지리적 배치",
+                  "detail": "화성, 스타필드 수원, 와우정사가 모두 서울 남쪽 30분 드라이브 안에 있어 이동 낭비가 최소화됩니다."
+                },
+                {
+                  "label": "화성 단독보다 강한 가치",
+                  "detail": "스타필드와 사찰 추가로 단일 명소 방문이 더 풍성한 당일 여행으로 변모합니다."
+                }
+              ]
+            },
+            {
+              "title": "실제 도보 난이도는 어느 정도일까",
+              "icon": "footprints",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "화성이 가장 활동적인 구간",
+                  "detail": "성벽 산책이 루트의 주요 신체 활동으로 석계와 불균일한 표면이 있습니다."
+                },
+                {
+                  "label": "스타필드는 휴식 시간",
+                  "detail": "라이브러리와 점심 휴식은 본질적으로 실내 도보와 착석 시간으로, 루트에 유용한 중간 쉬는 구간을 안내해 드립니다."
+                },
+                {
+                  "label": "와우정사는 중간 난이도",
+                  "detail": "사찰 경내는 오르막 길과 계단이 있지만 각 구간이 짧고 주요 불상은 입구에서 도보 5분 거리입니다."
+                }
+              ]
+            },
+            {
+              "title": "날씨 안내",
+              "icon": "cloud-rain",
+              "iconBg": "bg-slate-50/80",
+              "iconColor": "text-slate-600",
+              "items": [
+                {
+                  "label": "화성이 날씨에 가장 민감한 코스",
+                  "detail": "폭우나 눈은 성벽 산책을 불편하게 합니다; 화성 행궁 실내 궁궐이 우천 시 좋은 대안입니다."
+                },
+                {
+                  "label": "스타필드는 완전한 날씨 완충",
+                  "detail": "라이브러리와 몰이 완전 실내이므로 이 코스가 비 오는 날의 핵심 명소 역할을 합니다."
+                },
+                {
+                  "label": "여름 습도가 하루에 영향",
+                  "detail": "요새 성벽과 사찰 경내는 노출되어 있습니다. 6~8월에는 물과 자외선 차단제를 챙기세요."
+                }
+              ]
+            }
+          ],
+          "lessIdealFor": [
+            "쇼핑 위주의 몰 하루를 원하는 여행자",
+            "돌길 또는 사찰 경로 보행이 불편한 방문자 주의",
+            "완전 고정 일정 속도 비도보 일정 필요 여행자 주의",
+            "서울 중심 궁궐 방문을 원하는 여행자 주의 (서울 외곽 루트)"
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "픽업 & 하차",
+            "preview": "서울 2개 집결 지점; 약 09:00 출발",
+            "content": [
+              "홍익대 입구역(4번 출구)과 명동역 픽업.",
+              "첫 집합 장소 기준 출발 08:30~09:00.",
+              "선택 집합 장소에 최소 10분 전 도착.",
+              "서울 동일 집합 장소 하차.",
+              "교통·일요일 정체 등에 따라 18:00~19:00 귀환 예상.",
+              "고정 루트 소그룹 방식으로 호텔 픽업이 아님; 직접 집합 장소에 이동해야 합니다."
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "도보 & 지형",
+            "preview": "중간; 화성 성벽이 주요 체력 소모 구간",
+            "content": [
+              "화성 성벽: 성벽 길과 주요 문에 석계; 울퉁불퉁한 역사적 표면.",
+              "스타필드 라이브러리·몰: 평탄한 실내 도보, 쉬움.",
+              "와우정사: 오르막 길과 계단이 있는 중간 난이도.",
+              "미끄럼 방지 기능의 편안한 워킹화 권장.",
+              "스타필드에서만 유모차 가능; 화성 성벽과 와우정사는 유모차 불편."
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "날씨 정책",
+            "preview": "가벼운 비 가능; 폭우 시 화성 도보 구간 축소",
+            "content": [
+              "가벼운 비: 투어 대체로 정상 진행.",
+              "폭우·폭설: 화성 성벽 산책을 단축하고 화성 행궁 위주로 변경 가능.",
+              "스타필드는 완전 실내 코스로 우천 시 핵심 명소 역할.",
+              "와우정사는 부분 노출; 가벼운 비에도 사찰 운영 계속."
+            ]
+          },
+          {
+            "id": "wear",
+            "title": "복장 & 준비물",
+            "preview": "운동화, 단정한 사찰 복장, 레이어링",
+            "content": [
+              "화성·와우정사에 필수인 미끄럼 방지 기능의 편안한 워킹화.",
+              "사찰 방문 시 단정한 복장 (어깨 가리개 권장).",
+              "성벽 노출 구간과 실내 공간의 기온 차이 대비 겹쳐 입기.",
+              "여름 자외선 차단과 물.",
+              "스타필드 라이브러리 광각 촬영을 위한 카메라/간편한폰."
+            ]
+          },
+          {
+            "id": "included",
+            "title": "포함 사항",
+            "preview": "가이드, 교통, 입장료 포함; 점심 현장 직접 결제",
+            "variant": "included",
+            "content": [
+              "영어 가이드",
+              "서울 출발 왕복 소그룹 차량",
+              "모든 입장료 (화성, 화성 행궁, 스타필드 무료, 와우정사)",
+              "점심 미포함; 스타필드 식당에서 현장 직접 결제",
+              "개인 쇼핑 미포함",
+              "선택 카페 이용 미포함",
+              "가이드 팁은 선택 사항"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "실시간 날씨 연동"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "매일 업데이트"
+          }
+        },
+        "seasonalVariations": [
+          {
+            "season": "봄",
+            "title": "벚꽃 시즌",
+            "description": "4월 초 화성 성벽 따라 벚꽃 — 최고 포토 코스 중 하나. 쾌적한 기온으로 성벽 전 구간 도보에 이상적.",
+            "icon": "flower"
+          },
+          {
+            "season": "여름",
+            "title": "무성하지만 습함",
+            "description": "와우정사 경내와 숲길이 울창하고 낮이 길지만, 성벽 노출 구간에서 습도와 열기가 체감됨.",
+            "icon": "sun"
+          },
+          {
+            "season": "가을",
+            "title": "최고 시즌",
+            "description": "화성 성벽과 연화산 따라 선명한 단풍; 9~11월 두 코스 모두 최고 조건. 한국 최상의 가을 경관 시즌.",
+            "icon": "leaf"
+          },
+          {
+            "season": "겨울",
+            "title": "조용하고 드라마틱",
+            "description": "조용한 사찰 경내와 극적인 요새 성벽; 춥지만 눈에 보이는으로 보람 있음. 성벽 노출 구간 방한 준비 필수.",
+            "icon": "snowflake"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "공인 현지 여행사",
+            "description": "정식 등록 및 보험 가입 현지 여행사",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "57건 기준 4.9/5 평점의 공인 현지 여행사."
+          },
+          {
+            "icon": "route",
+            "title": "코스 전문",
+            "description": "이동 부담을 줄인 효율적인 코스",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "와우정사 무료 입장과 범아시아 불교 조각 컬렉션이 기존 수원 코스와 차별화된 문화적 깊이를 더합니다."
+          },
+          {
+            "icon": "users",
+            "title": "그룹 규모 관리",
+            "description": "코스에 상황에 맞춘 인원 규모",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "10~11월 단풍이 와우정사의 사진적 절정 시기입니다."
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "즉시",
+            "title": "즉시 확인",
+            "detail": "행정 요약 포함 예약 확인서 발송",
+            "description": "집결 장소·시각 포함 즉시 예약 확인서 발송."
+          },
+          {
+            "timing": "출발 12시간 전",
+            "title": "12시간 전 알림",
+            "detail": "날씨 업데이트 및 경로 변경 안내",
+            "description": "화성행궁 무예24기 공연 일정 및 와우정사 당일 행사 사전 안내."
+          },
+          {
+            "timing": "전날 저녁",
+            "title": "최종 픽업 안내",
+            "detail": "정확한 픽업 시간 및 가이드 연락처",
+            "description": "출발 전날 저녁 최종 집결 시각 확인."
+          },
+          {
+            "timing": "투어 당일 아침",
+            "title": "당일 코스 안내",
+            "detail": "실시간 상황 기반 당일 브리핑",
+            "description": "날씨 및 코스 안내 아침 메시지 전달."
+          },
+          {
+            "timing": "투어 중",
+            "title": "경유지별 심층 안내",
+            "detail": "각 코스 실시간 현장 안내",
+            "description": "정조의 화성 건설 배경, 와우정사 창건 역사와 통일 염원, 스타필드 건축 구성 등 가이드 심층 설명."
+          },
+          {
+            "timing": "투어 종료 후",
+            "title": "투어 후 지원",
+            "detail": "피드백 및 추가 여행 추천",
+            "description": "투어 후 피드백 요청 전송."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "수원+민속촌 또는 수원+광명동굴 투어와 어떻게 다른가요?",
+            "answer": "세 투어 모두 수원화성·화성행궁·스타필드를 공유합니다. 이 투어는 와우정사 산사 방문이 추가됩니다. 활동적인 민속 문화(민속촌)나 지하 LED 테마파크(광명동굴) 대신 조용하고 사색적인 분위기를 원하는 분께 적합합니다."
+          },
+          {
+            "id": "q2",
+            "question": "입장료가 포함되어 있나요?",
+            "answer": "네, 3개 유료 경유지 모두 포함됩니다: 수원화성(성인 ₩1,000), 화성행궁(성인 ₩1,500), 와우정사(무료). 스타필드 별마당도서관은 무료 입장입니다."
+          },
+          {
+            "id": "q3",
+            "question": "점심 식사가 포함되어 있나요?",
+            "answer": "포함되지 않습니다. 스타필드 수원 푸드홀에서 자유롭게 즐기시면 됩니다. 예산: 약 ₩10,000~20,000."
+          },
+          {
+            "id": "q4",
+            "question": "와우정사는 어떤 점이 특별한가요?",
+            "answer": "전통 한국 불교 사찰과 달리, 1970년 창건된 비전통적 사찰입니다. 거대한 열반불(누운 불상), 티베트 불탑, 인도네시아 목조 불상 등 범아시아 불교 컬렉션이 한 곳에 모여 있어 독특한 문화적 풍경을 만들어 냅니다."
+          },
+          {
+            "id": "q5",
+            "question": "사찰 방문 시 복장 규정이 있나요?",
+            "answer": "어깨를 가리는 복장을 권장합니다. 여름에 민소매 상의를 입고 가신다면 얇은 겉옷을 챙기세요. 모자는 대체로 착용 가능합니다."
+          },
+          {
+            "id": "q6",
+            "question": "하루 도보 부담이 어떻게 분배되나요?",
+            "answer": "세 가지 서로 다른 도보 유형: 화성 성벽이 가장 힘든 구간(가파른 경사, 계단, 약 1km). 스타필드는 평탄한 실내. 와우정사는 가파르지 않은 사찰 경내와 계단."
+          },
+          {
+            "id": "first-time",
+            "question": "수원·용인을 처음 방문하는 분에게 좋은 선택인가요?",
+            "answer": "네, 유네스코 성곽(화성), 현대 포토 공간(스타필드), 독특한 산사(와우정사)를 한 번에 볼 수 있는 첫 방문자에게 잘 맞는 코스입니다."
+          },
+          {
+            "id": "walking",
+            "question": "도보 이동이 힘들지 않나요?",
+            "answer": "보통 활동적 수준. 가장 힘든 구간은 화성 성벽으로 약 1km의 고르지 않은 석재 성벽 도보, 성문 계단이 포함됩니다. 스타필드는 평탄한 실내. 와우정사는 완만한 계단을 오르내립니다."
+          },
+          {
+            "id": "family",
+            "question": "가족 여행에 적합한가요?",
+            "answer": "만 6세 이상 어린이를 동반하는 가족에게 적합합니다. 유모차는 화성 성벽과 와우정사에서 사용이 어렵지만 스타필드에서는 편리합니다."
+          },
+          {
+            "id": "seniors",
+            "question": "어르신도 참여할 수 있나요?",
+            "answer": "계단과 고르지 않은 지형이 있어, 활동적인 어르신께 권장합니다. 화성 성벽이 가장 힘든 구간입니다."
+          },
+          {
+            "id": "children",
+            "question": "권장 최소 연령은 몇 세인가요?",
+            "answer": "만 6세 이상 추천 — 화성 성벽 계단과 고르지 않은 석재 지면, 와우정사 사찰 경내 계단을 소화할 수 있는 어린이에게 적합합니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 4.9,
+          "totalReviews": 57,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 53,
+              "percentage": 93.0
+            },
+            {
+              "stars": 4,
+              "count": 3,
+              "percentage": 5.3
+            },
+            {
+              "stars": 3,
+              "count": 1,
+              "percentage": 1.8
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0.0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0.0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
+        "price": {
+          "amountLabel": "48.60",
+          "originalPriceUsd": 54,
+          "salePriceUsd": 48.6,
+          "discountPercent": 10,
+          "currency": "USD",
+          "per": "인",
+          "priceSource": "direct_rate",
+          "priceNote": "AtoC Korea 공식 판매가 기준입니다."
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      }
+    }
+  }
+}

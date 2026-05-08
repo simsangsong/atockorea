@@ -1,0 +1,1827 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "seoul-private-nami-morning-calm-petite-france",
+  "locale": "es",
+  "product_id": "seoul-private-nami-morning-calm-petite-france",
+  "seo": {
+    "pageTitle": "Tour Privado Seúl: Isla Nami, Jardín Tranquila y Petite France | AtoC",
+    "metaDescription": "Tour privado Seúl→Gapyeong: Isla Nami (Winter Sonata) → Jardín de la Mañana Tranquila → Petite France (El Principito). Entradas incluidas, recogida en hotel.",
+    "ogImage": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1920&q=80",
+    "primaryKeywords": [
+      "tour isla Nami Seúl privado",
+      "Nami Island tour Korea",
+      "Jardín Mañana Tranquila Achimsogwon",
+      "Petite France Corea tour",
+      "Gapyeong day trip Seoul"
+    ],
+    "title": "Tour Privado: Isla Nami, Jardín y Petite France | AtoC",
+    "description": "Tour privado de un día en Gapyeong: Nami Island (travesía en ferry, escenario de Winter Sonata) → Petite France → Jardín de Calma Matutina."
+  },
+  "catalog_card": {
+    "slug": "seoul-private-nami-morning-calm-petite-france",
+    "title": "Tour Privado Seúl→Gapyeong: Isla Nami, Jardín de la Mañana Tranquila y Petite France",
+    "subtitle": "La isla de 'Winter Sonata', el jardín de las 22 estaciones y la aldea de El Principito — Gapyeong en privado.",
+    "region": "Gapyeong (Gyeonggi Norte)",
+    "duration": "Un día privado",
+    "stopsCount": 3,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "Tour privado",
+      "Isla Nami",
+      "K-drama",
+      "Parejas y familias"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=600&q=80",
+    "priceLabel": "Consulte el precio al reservar",
+    "shortCardDescription": "Las tres experiencias más fotogénicas de Gapyeong en un día privado desde Seúl: Isla Nami (isla fluvial, 'Winter Sonata', arboleda de metasecoya) → Jardín de la Mañana Tranquila (330.000 m², 22 jardines temáticos) → Petite France (aldea alsaciana con la mayor colección de 'El Principito' de Asia). Coche privado, recogida en hotel, entradas incluidas.",
+    "tags": [
+      "tour privado",
+      "Lugares de K-drama",
+      "Parejas y familias"
+    ]
+  },
+  "headlineLine1": "La isla de 'Winter Sonata', el jardín de 22 estaciones",
+  "headlineLine2": "y la aldea de El Principito — tour privado desde Seúl",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "vehículo"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1920&q=80",
+    "imagePosition": "center 45%",
+    "tagline": "La isla más romántica de Corea, 22 jardines temáticos y la aldea alsaciana de El Principito — el día perfecto en Gapyeong",
+    "pills": [
+      "Isla Nami (Winter Sonata)",
+      "22 jardines temáticos",
+      "El Principito"
+    ],
+    "meta": {
+      "duration": "Un día privado",
+      "region": "Gapyeong",
+      "stops": "3 paradas",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Descripción"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerario"
+    },
+    {
+      "id": "details",
+      "label": "Información práctica"
+    },
+    {
+      "id": "faq",
+      "label": "Preguntas frecuentes"
+    },
+    {
+      "id": "reviews",
+      "label": "Opiniones"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "car",
+      "label": "Tipo",
+      "value": "Tour privado en coche, solo su grupo"
+    },
+    {
+      "icon": "clock",
+      "label": "Duración",
+      "value": "Un día completo"
+    },
+    {
+      "icon": "map-pin",
+      "label": "Recogida",
+      "value": "Su hotel en Seúl"
+    },
+    {
+      "icon": "ticket",
+      "label": "Entradas",
+      "value": "Ferry Nami + Achimsogwon + Petite France — incluidas"
+    },
+    {
+      "icon": "camera",
+      "label": "Fotos",
+      "value": "Muy alto (4 estaciones distintas)"
+    },
+    {
+      "icon": "heart",
+      "label": "Recomendado para",
+      "value": "Parejas y familias"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+      "alt": "Imagen de Isla Nami — la arboleda de metasecoya",
+      "caption": "Isla Nami — la arboleda de metasecoya, escenario de 'Winter Sonata'",
+      "location": "Isla Nami (Namiseom), río Bukhan, Gapyeong",
+      "atmosphere": "La isla de los K-dramas en su mejor estación"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601273453200-7e1b7e5e3a8a?w=1200&q=80",
+      "alt": "Imagen de Jardín de la Mañana Tranquila (Achimsogwon) — 22 jardines temáticos",
+      "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — 22 jardines temáticos, 5.000 especies",
+      "location": "Achimsogwon, Gapyeong",
+      "atmosphere": "22 estaciones florales: el jardín botánico más diverso de Gyeonggi en cualquier época"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1583917123405-3aa64e6a96b8?w=1200&q=80",
+      "alt": "Imagen de Petite France — aldea alsaciana con la mayor colección de 'El Principito' de Asi",
+      "caption": "Petite France — aldea alsaciana con la mayor colección de 'El Principito' de Asia",
+      "location": "Petite France, Cheongpyeong, Gapyeong",
+      "atmosphere": "El Principito en Corea: arquitectura alsaciana"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+      "alt": "Imagen de ferri por el lago Cheongpyeong hacia la isla Nami",
+      "caption": "ferri por el lago Cheongpyeong hacia la isla Nami",
+      "location": "Cheongpyeong Lake",
+      "atmosphere": "Paisaje de Gyeonggi: naturaleza y cultura al norte de Seúl"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+      "alt": "Imagen del Festival de Iluminación Invernal del Jardín de la Calma Matutina (diciembre a mediados de marzo)",
+      "caption": "Festival de Iluminación Invernal del Jardín de la Calma Matutina (diciembre a mediados de marzo)",
+      "location": "Festival de Iluminación Invernal",
+      "atmosphere": "Paisaje de Gyeonggi: naturaleza y cultura al norte de Seúl"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "10:30",
+      "duration": "180 min",
+      "name": "Isla Nami (Namiseom)",
+      "category": "Isla fluvial del río Bukhan — escenario de 'Winter Sonata' (2002)",
+      "description": "**Isla Nami** — isla fluvial semicircular del **río Bukhan** (600 m de anchura), famosa mundialmente como escenario del drama **'Winter Sonata'** que detonó la primera ola hallyu en Japón y Asia. La isla se transformó en 2006 en la **'Naminara Republic'**, un estado artístico independiente con su propio pasaporte (sello simbólico). Las **arboledas de metasecoya** y de **Ginkgo** son los protagonistas fotográficos según la estación: verde en primavera, dorado en otoño, nevado en invierno. El ferry de ida y vuelta (~5 min) y la entrada están incluidos.",
+      "highlights": [
+        "Escenario de **'Winter Sonata (2002)'** — la primera ola hallyu de Asia",
+        "**Arboledas de metasecoya** — doradas en otoño, nevadas en invierno",
+        "La **'Naminara Republic'** — estado artístico con pasaporte propio",
+        "**Ferry + entrada incluidos**"
+      ],
+      "timeUsed": [
+        "Ferry → isla → paseo arboledas → fotografía → vuelta: ~90 min"
+      ],
+      "whyOnRoute": "Colocar Nami Island primero aprovecha la mejor luz matutina para fotografías de árboles.",
+      "visitBasics": {
+        "hours": "Isla 08:00-21:00 (último ferry varía); tiendas de la isla cierran ~18:00",
+        "closed": "Abierto todo el año",
+        "admission": "Visado de la República Naminara (ferry ida y vuelta incluido): Normal ₩19.000 / Dto ₩13.000",
+        "walking": "Fácil — senderos arbolados planos; ~5 km perimetral. Bicicleta / buggy eléctrico disponible"
+      },
+      "convenience": {
+        "restroom": "Múltiples en la isla y en el Embarcadero de Gapyeong",
+        "parking": "Embarcadero Gapyeong coche pequeño ₩6.000 / vehículo grande ₩10.000"
+      },
+      "smartNotes": {
+        "photo": "La avenida de Metasequoias — mejor en otoño (dorado) e invierno (nieve).",
+        "facilities": "Restaurantes, cafés y tiendas de recuerdos en la isla.",
+        "tip": "Mejores temporadas: primavera (cerezos abr-may), otoño (ginkgo dorado octubre). Llega temprano los fines de semana."
+      },
+      "_poi_meta": {
+        "poi_key": "nami_island",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea — Nami Island official listing + visa fee schedule)",
+          "Naminara Republic Official Site (namisum-en.imweb.me — own corpus on cultural-independence brand)",
+          "UNICEF Korea (Nami Island 2010 Child Friendly Park designation + International Children's Book Festival)",
+          "KBS / Korea Times (Winter Sonata 2002 production retrospectives + Japanese tourism boom coverage)",
+          "Wikipedia (Namiseom — open corpus on General Nami history + Cheongpyeong Dam 1944 origin)"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "time": "14:00",
+      "duration": "120 min",
+      "name": "Jardín de la Mañana Tranquila (Achimsogwon)",
+      "category": "Jardín botánico de 330.000 m² — 5.000 especies, 22 jardines temáticos",
+      "description": "**Jardín de la Mañana Tranquila** — jardín botánico de **330.000 m²** con **5.000 especies de plantas** organizadas en **22 jardines temáticos**: jardín de los áloes, jardín del edén, jardín de las rosas, jardín alpino, jardín silvestre... cada estación transforma el parque completamente. En invierno ofrece el famoso **Festival de Luces**. En primavera: tulipanes, cerezos y azaleas. En verano: hortensias. En otoño: follaje de colores. **Entradas incluidas.**",
+      "highlights": [
+        "**22 jardines temáticos** — cada estación permite una visita completamente distinta",
+        "Festival de Luces en invierno — el más popular del norte de Gyeonggi",
+        "**5.000 especies** de plantas en 330.000 m²",
+        "**Entradas incluidas**"
+      ],
+      "timeUsed": [
+        "Achimsogwon — ~90 min"
+      ],
+      "whyOnRoute": "Colocar Morning Calm a mediodía da a la ruta su capítulo visual más tranquilo.",
+      "visitBasics": {
+        "hours": "Primavera-Otoño 08:30-19:00 (última entrada 18:00); Festival de Luces dom-vie 17:30-21:30, sáb 17:30-22:00",
+        "closed": "Abierto todo el año",
+        "admission": "Adulto ₩11.000 / Senior 65+ ₩9.000 / Joven 13-18 ₩8.500 / Niño 3-12 ₩7.500",
+        "walking": "Moderado — amplios senderos sobre terreno ondulado; la mayoría pavimentados"
+      },
+      "convenience": {
+        "restroom": "Múltiples, señalizados",
+        "parking": "Gran aparcamiento gratuito; taquillas ₩1.500-2.000 (solo monedas de ₩500)"
+      },
+      "smartNotes": {
+        "photo": "Primavera (cerezos abril), verano (verdes exuberantes), otoño (follaje oct-nov), Festival de Luces de Invierno.",
+        "facilities": "Restaurante (estofado de pasta de soja, bibimbap vegetal, tteok tradicional), panadería, tienda de regalos.",
+        "tip": "Para el Festival de Luces (5 dic-15 mar), llega ~16:00 para disfrutar del jardín de día + iluminación nocturna."
+      },
+      "_poi_meta": {
+        "poi_key": "garden_of_morning_calm",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "note": "POI verified in KB v1.10 (Batch 7) and reused here unchanged.",
+        "sources": [
+          "Garden of Morning Calm Official Site (morningcalm.co.kr — own corpus on founder + 1996 opening + 20 sub-gardens)",
+          "Korea Tourism Organization (VisitKorea — Lighting Festival listing + lighting-fest schedule)",
+          "Gyeonggi Cultural Foundation (ggc.ggcf.kr — official cultural promotion entry on Sunken Garden + 200,000 LEDs)",
+          "Sahmyook University Department of Horticulture (Prof. Han Sang-kyung honorary professor profile + garden origin)",
+          "Wikipedia (Garden of Morning Calm — corpus on Tagore-derived name + 5,000 species + 330,000 m² total)"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "16:30",
+      "duration": "60 min",
+      "name": "Petite France",
+      "category": "Aldea temática alsaciana — la mayor colección de 'El Principito' de Asia",
+      "description": "**Petite France** — aldea temática de estilo **alsaciano francés** a orillas del lago Cheongpyeong (río Bukhan), famosa por albergar la **mayor colección de 'El Principito' de Asia**: libros, ilustraciones originales y esculturas de Saint-Exupéry en 20 edificios de colores. El escenario apareció en el K-drama **'My Love From the Star' (2013)**. **Entradas incluidas.**",
+      "highlights": [
+        "**La mayor colección de 'El Principito' de Asia** — libros, ilustraciones originales",
+        "Aldea de estilo **alsaciano** con edificios de colores en la colina",
+        "Escenario del K-drama **'My Love From the Star' (2013)**",
+        "**Entradas incluidas**"
+      ],
+      "timeUsed": [
+        "Petite France — ~60 min",
+        "Regreso a Seúl — ~70 min"
+      ],
+      "whyOnRoute": "Colocado al final, Petite France da al día un cierre más ligero y fotogénico después de Nami Island.",
+      "visitBasics": {
+        "hours": "09:00-18:00 (última entrada 17:00); algunos lunes cerrado en temporada baja",
+        "closed": "Algunos lunes en temporada baja",
+        "admission": "Adulto ₩12.000 / Joven ₩8.500 / Niño ₩7.500 (combo con Italian Village ₩19.500 adulto)",
+        "walking": "Fácil — pequeño pueblo llano a suave pendiente (1-1,5 horas para explorar)"
+      },
+      "convenience": {
+        "restroom": "En el sitio",
+        "parking": "Aparcamiento gratuito"
+      },
+      "smartNotes": {
+        "photo": "Las casas de entramado de madera en colores pastel contra el fondo de montaña verde son la foto representativa.",
+        "facilities": "Solo puestos de snacks — gofres, dumplings, sopa de pastel de pescado, café.",
+        "tip": "Ideal combinarlo con Nami Island y/o Garden of Morning Calm mediante el bus turístico de Gapyeong."
+      },
+      "_poi_meta": {
+        "poi_key": "petite_france",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "note": "POI verified in KB v1.10 (Batch 7) and reused here unchanged.",
+        "sources": [
+          "Petite France Official Site (en.pfcamp.com — own corpus on founder + 16-building layout + Goseong Youth Training Center)",
+          "Korea Tourism Organization (VisitKorea — Petite France listing + 2025 'Bon Appétit, Your Majesty' filming-location verification)",
+          "Saint-Exupéry Foundation France (international license agreement — Le Petit Prince motif authorization)",
+          "Gapyeong County Tourism Office (gapyeong.go.kr — official local-government attractions listing)",
+          "Wikipedia (Petite France theme park — corpus on July 2008 opening + Le Petit Prince theme + organizational structure)"
+        ]
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Isla Nami",
+      "type": "origin",
+      "theme": "Ferry & Forest"
+    },
+    {
+      "name": "Pausa para almorzar",
+      "type": "meal",
+      "theme": "Reset"
+    },
+    {
+      "name": "Jardín Calma Matutina",
+      "type": "primary",
+      "theme": "Garden"
+    },
+    {
+      "name": "Petite France",
+      "type": "return",
+      "theme": "Village"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "Nami Island Opener",
+      "duration": "Parada 1",
+      "description": "Mañana: Apertura en Nami Island"
+    },
+    {
+      "phase": "Almuerzo y paseo por el jardín",
+      "duration": "Paradas 2–3",
+      "description": "Mediodía: Almuerzo y paseo por el jardín"
+    },
+    {
+      "phase": "Petite France Finish",
+      "duration": "Parada 4",
+      "description": "Tarde: Final en Petite France"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "Cómo se desarrolla tu día privado",
+    "subtitle": "Recogida en tu hotel del centro de Seúl, seguida de un ruta circular directo hacia Gapyeong: primero Nami Island para la luz boscosa de la mañana, almuerzo local en Gapyeong, y luego Garden of Morning Calm y Petite France por la tarde. Regreso a Seúl entre las 18:00 y las 19:00."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "Parejas — la isla de los K-dramas más románticos",
+      "Familias con niños — El Principito + arboledas de Nami",
+      "Fotógrafos (4 estaciones radicalmente distintas en las 3 paradas)"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Por qué están estas tres paradas juntas",
+        "icon": "car",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          },
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          },
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          }
+        ]
+      },
+      {
+        "title": "Por qué están estas tres paradas juntas",
+        "icon": "footprints",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          },
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          },
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          }
+        ]
+      },
+      {
+        "title": "Por qué están estas tres paradas juntas",
+        "icon": "calendar",
+        "iconBg": "bg-slate-50/80",
+        "iconColor": "text-slate-600",
+        "items": [
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          },
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          },
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          }
+        ]
+      }
+    ],
+    "lessIdealFor": [
+      "Quienes priorizan sitios históricos",
+      "Quienes buscan principalmente naturaleza activa"
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "Recogida y regreso",
+      "preview": "Recogida gratuita en hotel centro Seúl; reunión en el vestíbulo 10 minutos antes",
+      "content": [
+        "Recogida gratuita en hotel incluida para zonas del centro de Seúl (Myeongdong, Hongdae, Dongdaemun, Insadong, Itaewon, etc.).",
+        "Las estancias fuera del centro de Seúl pueden conllevar un suplemento de recogida.",
+        "Por favor, espere en el vestíbulo del hotel 10 minutos antes de la hora acordada de salida.",
+        "La recogida comienza normalmente entre las 08:30 y las 09:30.",
+        "Regreso al hotel en Seúl entre las 19:00 y las 19:30 (más tarde si se queda al Festival de Luces de invierno).",
+        "Los detalles del itinerario suelen confirmarse 2-3 días antes de la salida."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "Caminata y terreno",
+      "preview": "Moderado, con más caminata en Nami Island",
+      "content": [
+        "Nami Island: caminos sin pavimentar y fáciles, aunque la isla es más grande de lo que parece — 15-20 minutos de un extremo al otro.",
+        "Garden of Morning Calm: fácil a moderado, con pendientes suaves y subidas opcionales al mirador.",
+        "Petite France: caminata sencilla con pendientes y escaleras ligeras.",
+        "Se recomiendan zapatos cómodos; la ruta no es imposible para cochecitos pero no es del todo accesible."
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "Política meteorológica",
+      "preview": "La mayoría de paradas operan con lluvia ligera o nieve",
+      "content": [
+        "Nami Island opera con lluvia y nieve; el ferry funciona salvo que la seguridad se vea afectada.",
+        "Morning Calm es mayormente al aire libre; la lluvia ligera es viable pero la lluvia intensa reduce el disfrute.",
+        "Petite France tiene salas de exposición cubiertas que funcionan como refugio en días de lluvia.",
+        "El conductor-guía puede ajustar el ritmo del día si el clima afecta alguna parada."
+      ]
+    },
+    {
+      "id": "money",
+      "title": "Entradas y gastos del día",
+      "preview": "Todas las entradas y comidas se pagan directamente; tarjetas ampliamente aceptadas",
+      "content": [
+        "Entrada a Nami Island con ferry de ida y vuelta: Adulto 19.000 KRW.",
+        "Entrada al Garden of Morning Calm: Adulto 11.000 KRW.",
+        "Entrada a Petite France: Adulto 12.000 KRW.",
+        "Las comidas se pagan en el momento; espera 15.000-25.000 KRW por persona para un menú de Dakgalbi.",
+        "La mayoría de tiendas aceptan tarjeta; lleva algo de efectivo para puestos de snacks y taquillas."
+      ]
+    },
+    {
+      "id": "wear",
+      "title": "Qué vestir y llevar",
+      "preview": "Calzado para caminar, capas y ropa exterior adecuada al tiempo",
+      "content": [
+        "Calzado cómodo con buena adherencia.",
+        "Ropa en capas — la isla y el jardín pueden ser más frescos que el centro de Seúl.",
+        "Protección solar en primavera y verano; capas de abrigo y guantes en invierno.",
+        "Cámara o teléfono con bastante memoria.",
+        "Efectivo o tarjeta para entradas y comidas."
+      ]
+    },
+    {
+      "id": "included",
+      "title": "Qué está incluido",
+      "preview": "Vehículo y conductor-guía; entradas y comidas pago directo",
+      "variant": "included",
+      "content": [
+        "Vehículo privado (berlina, SUV o furgoneta según el grupo)",
+        "Conductor-guía en inglés con licencia",
+        "Recogida y regreso gratuitos al hotel en el centro de Seúl",
+        "Combustible y peajes para la ruta estándar",
+        "Las entradas a los tres sitios no están incluidas; pagar directamente",
+        "Almuerzo y aperitivos no incluidos",
+        "Compras personales no incluidas",
+        "Propina del conductor no incluida"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "Integración de clima en tiempo real"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "Actualizado a diario"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "season": "Primavera",
+      "title": "Temporada de flores",
+      "description": "Flores de cerezo en Nami y Achimsogwon. Las 22 estaciones del jardín en su apertura.",
+      "icon": "flower"
+    },
+    {
+      "season": "Verano",
+      "title": "Exuberante pero húmedo",
+      "description": "Verde intenso en Nami. Hortensias en Achimsogwon.",
+      "icon": "sun"
+    },
+    {
+      "season": "Otoño",
+      "title": "Mejor temporada fotográfica",
+      "description": "Nami dorada — el mejor momento fotográfico. Follaje de 22 colores en Achimsogwon.",
+      "icon": "leaf"
+    },
+    {
+      "season": "Invierno",
+      "title": "Temporada del Festival de Luces",
+      "description": "Nami nevada. Festival de Luces en Achimsogwon.",
+      "icon": "snowflake"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "Equipo local certificado",
+      "description": "Operador turístico coreano autorizado con seguro completo",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "Operador certificado con experiencia en tours de Gapyeong."
+    },
+    {
+      "icon": "route",
+      "title": "Especialistas en la ruta",
+      "description": "Itinerario ajustado a medida, no un circuito genérico",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "Nami + Achimsogwon + Petite France — las tres paradas con mayor potencial fotográfico del norte de Gyeonggi."
+    },
+    {
+      "icon": "users",
+      "title": "Tour privado — solo su grupo",
+      "description": "Tamaño adecuado para la ruta",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "Coche privado para mayor flexibilidad."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Inmediatamente",
+      "title": "Confirmación inmediata",
+      "detail": "Confirmación con resumen.",
+      "description": "Confirmación instantánea con los detalles de recogida en el hotel de Seúl (gratuito en el centro de Seúl)."
+    },
+    {
+      "timing": "12 horas antes",
+      "title": "Recordatorio 12 h",
+      "detail": "Estado de floración/Festival de Luces.",
+      "description": "Los huéspedes de invierno (dic–mar) reciben una nota previa sobre el horario del festival de iluminación."
+    },
+    {
+      "timing": "La noche anterior",
+      "title": "Info recogida",
+      "detail": "Datos del conductor.",
+      "description": "Los huéspedes de otoño reciben consejos sobre el momento pico del follaje en Nami Island."
+    },
+    {
+      "timing": "La mañana del tour",
+      "title": "Notas del día",
+      "detail": "Instrucciones matutinas.",
+      "description": "Detalles del conductor y vehículo confirmados la noche anterior."
+    },
+    {
+      "timing": "Durante el tour",
+      "title": "Consejos",
+      "detail": "Mejor época fotográfica en Nami. Qué ver en Achimsogwon.",
+      "description": "Conductor en el vestíbulo de su hotel a la hora acordada con letrero con su nombre."
+    },
+    {
+      "timing": "Tras el tour",
+      "title": "Posventa",
+      "detail": "Valoración.",
+      "description": "Solicitud de valoración después del tour; preguntas sobre alojamiento en Gapyeong o viajes adicionales respondidas."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q1",
+      "question": "(Consulte las preguntas frecuentes al reservar)",
+      "answer": "Para más información, contacte a AtoC Korea al reservar."
+    },
+    {
+      "id": "q2",
+      "question": "(Consulte las preguntas frecuentes al reservar)",
+      "answer": "Para más información, contacte a AtoC Korea al reservar."
+    },
+    {
+      "id": "q3",
+      "question": "(Consulte las preguntas frecuentes al reservar)",
+      "answer": "Para más información, contacte a AtoC Korea al reservar."
+    },
+    {
+      "id": "q4",
+      "question": "(Consulte las preguntas frecuentes al reservar)",
+      "answer": "Para más información, contacte a AtoC Korea al reservar."
+    },
+    {
+      "id": "q5",
+      "question": "(Consulte las preguntas frecuentes al reservar)",
+      "answer": "Para más información, contacte a AtoC Korea al reservar."
+    },
+    {
+      "id": "q6",
+      "question": "(Consulte las preguntas frecuentes al reservar)",
+      "answer": "Para más información, contacte a AtoC Korea al reservar."
+    },
+    {
+      "id": "first-time",
+      "question": "(Consulte las preguntas frecuentes al reservar)",
+      "answer": "Para más información, contacte a AtoC Korea al reservar."
+    },
+    {
+      "id": "walking",
+      "question": "¿Difícil la caminata?",
+      "answer": "Ligero-moderado. Nami: paseo llano. Achimsogwon: senderos con algunas cuestas suaves. Petite France: llano."
+    },
+    {
+      "id": "family",
+      "question": "¿Adecuado para familias?",
+      "answer": "Sí. Nami y Petite France son especialmente populares con niños."
+    },
+    {
+      "id": "seniors",
+      "question": "¿Personas mayores?",
+      "answer": "Sí para mayores activos. Todas las paradas son moderadas."
+    },
+    {
+      "id": "children",
+      "question": "¿Edad mínima?",
+      "answer": "A partir de 5 años."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "La disponibilidad se confirma en el paso de pago.",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "vehículo"
+    }
+  },
+  "pickup_dropoff": {
+    "type": "hotel_pickup",
+    "meeting_points": [
+      {
+        "name": "Cualquier hotel céntrico de Seúl",
+        "time": "07:30–08:30",
+        "note": "Recogida puerta a puerta en cualquier hotel dentro del área cubierta."
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Cualquier hotel céntrico de Seúl",
+        "approx_time": "≈ 17:30–18:30",
+        "note": "Regreso al mismo hotel o a cualquier dirección dentro del área cubierta."
+      }
+    ],
+    "hotel_pickup_available": true,
+    "notes": "Espera en el lobby del hotel 10 minutos antes de la hora de salida acordada. El horario final del itinerario suele confirmarse 2-3 días antes de la salida. Si visitas durante el Festival de Luces de invierno, de diciembre a mediados de marzo, la hora de regreso puede moverse a las 21:00 o más tarde bajo solicitud."
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "seoul-private-nami-morning-calm-petite-france",
+    "product_type": "private",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "gyeonggi_gapyeong",
+    "vehicle_type": "private_vehicle",
+    "duration_hours": 9.0,
+    "region_tags": [
+      "seoul_capital",
+      "gyeonggi_gapyeong",
+      "seoul_day_trip",
+      "gyeonggi_north_han_river",
+      "gangwon_chuncheon"
+    ],
+    "theme_tags": [
+      "k_drama_filming_location",
+      "garden_walk",
+      "themed_park",
+      "island_ferry",
+      "private_charter",
+      "first_time_friendly",
+      "seasonal_lighting_festival",
+      "iconic_landmarks",
+      "photogenic"
+    ],
+    "poi_tags": [
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france",
+      "gapyeong_wharf",
+      "cheongpyeong_lake"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.5,
+    "scenic_level": 0.95,
+    "photo_level": 1.0,
+    "culture_level": 0.6,
+    "relax_level": 0.8,
+    "first_time_fit": 0.95,
+    "family_fit": 1.0,
+    "senior_fit": 0.8,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 0.8,
+    "active_traveler_fit": 0.6,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 0.8,
+    "young_kids_fit": 0.8,
+    "senior_active_fit": 0.8,
+    "senior_general_fit": 0.8,
+    "mobility_friendly_fit": 0.6,
+    "stroller_fit": 0.6,
+    "one_day_fit": 0.8,
+    "same_day_flight_fit": 0.4,
+    "rain_fit": 0.6,
+    "value_for_money_fit": 0.6,
+    "iconic_landmark_fit": 0.9,
+    "cafe_fit": 0.8,
+    "food_fit": 0.6,
+    "nature_fit": 1.0,
+    "beach_fit": 0.2,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.4,
+    "no_shopping_fit": 0.8,
+    "local_culture_fit": 0.6,
+    "storytelling_fit": 0.85,
+    "unesco_fit": 0.15,
+    "intangible_heritage_fit": 0.2,
+    "indoor_ratio": 0.2,
+    "weather_sensitivity": 0.6,
+    "comfort_level": 1.0,
+    "budget_fit": 0.4,
+    "premium_fit": 1.0,
+    "small_group_fit": 0.15,
+    "private_fit": 1.0,
+    "bus_fit": 0.05,
+    "price_band": "premium",
+    "pickup_base": "seoul_downtown",
+    "return_time_band": "19:00-19:30",
+    "duration_band": "9-10h",
+    "min_recommended_age": 3,
+    "hard_constraints": {
+      "avoidIf": [
+        "solo_budget_traveler_seeking_lowest_price",
+        "wants_a_high_action_day"
+      ],
+      "notIdealFor": [
+        "travelers_avoiding_unpaved_garden_paths",
+        "guests_needing_a_fully_indoor_route"
+      ]
+    },
+    "walking_notes": [
+      "Nami Island is the largest walking section; the famous metasequoia path is 15 to 20 minutes one-way from the ferry pier.",
+      "Garden of Morning Calm is mostly easy with gentle slopes and optional viewpoint climbs.",
+      "Petite France is the easiest stop, with light slopes and stairs only.",
+      "Comfortable walking shoes are strongly recommended.",
+      "The route is not fully stroller-friendly because of unpaved island paths and garden steps."
+    ],
+    "keywords": [
+      "tour isla Nami Seúl privado",
+      "Nami Achimsogwon Petite France tour",
+      "Gapyeong day trip privado Seúl"
+    ],
+    "synonym_hints": [
+      "seoul private gapyeong loop",
+      "private day tour to namiseom",
+      "private tour seoul countryside",
+      "seoul to gapyeong private charter",
+      "k drama trio private day tour",
+      "morning calm winter lights private tour"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "seoul",
+    "vehicle_type_legacy": "private_van",
+    "anchor_poi_keys": [
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france"
+    ],
+    "private_tour_fit": 1.0,
+    "history_culture_fit": 0.6,
+    "customizable_route_fit": 0.4,
+    "flexibility_fit": 0.7,
+    "romantic_fit": 0.95,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "seoul_day_trip_pair_fit": 1.0,
+    "seoul_central_hotel_pickup_fit": 1.0,
+    "return_to_seoul_central_fit": 1.0,
+    "day_trip_2_3_hour_drive_each_way_fit": 1.0,
+    "private_charter_format_fit": 1.0,
+    "premium_pacing_fit": 1.0,
+    "small_party_intimate_fit": 1.0,
+    "k_drama_filming_location_route_fit": 1.0,
+    "winter_sonata_anchor_fit": 1.0,
+    "little_prince_saint_exupery_anchor_fit": 1.0,
+    "saint_exupery_foundation_licensed_fit": 1.0,
+    "naminara_micronation_concept_fit": 1.0,
+    "unicef_child_friendly_park_fit": 1.0,
+    "ferry_island_visit_fit": 1.0,
+    "k_drama_filming_density_high_fit": 1.0,
+    "bon_appetit_your_majesty_2025_filming_fit": 1.0,
+    "im_yoon_ah_filming_location_fit": 1.0,
+    "private_arboretum_visit_fit": 1.0,
+    "korean_peninsula_shape_garden_fit": 1.0,
+    "rabindranath_tagore_land_of_morning_calm_anchor_fit": 1.0,
+    "winter_lighting_festival_anchor_fit": 1.0,
+    "mediterranean_alpine_french_village_fit": 1.0,
+    "naminara_passport_visa_concept_fit": 1.0,
+    "cnn_top_50_korea_attraction_fit": 1.0,
+    "gapyeong_attractions_route_fit": 1.0,
+    "namisum_5km_circuit_walking_fit": 1.0,
+    "petite_france_combined_pinocchio_italian_village_fit": 1.0,
+    "differentiates_from_dmz_day_trip": true,
+    "differentiates_from_seoraksan_sokcho_day_trip": true,
+    "differentiates_from_pocheon_three_pillar_day_trip": true,
+    "available_months_signature": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "signature_window_label": "Year-round (peak: April-May spring blooms, October-November autumn foliage, December-March Morning Calm Lighting Festival)",
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "embedded_for": [
+      "authoring",
+      "review",
+      "sql_backfill_reference"
+    ],
+    "note": "Scores were tuned for a fixed three-stop private Gapyeong loop with strong scenic and photo fit, high comfort and family fit (private format), and moderate walking. Iconic landmark fit is maxed because all three stops are top-tier Korean tourism brand names. Same-day-flight fit is low because the loop runs 9-10 hours and ends in late afternoon or evening.",
+    "duration_hours": 10,
+    "stop_count": 3,
+    "score_rationale": {
+      "scenic_level": "Maxed because all three stops are visually distinct and well-curated.",
+      "photo_level": "Maxed because all three are heavy K-drama filming locations with seasonally rotating photo windows.",
+      "private_fit": "Direct match: per-vehicle private charter.",
+      "family_fit": "Very high because private comfort plus child-friendly stops (rabbits at Nami, Marionettes at Petite France) make it broadly accessible.",
+      "rain_fit": "Mid because most walking is outdoor; Petite France indoor halls help but do not cover the full route.",
+      "iconic_landmark_fit": "Maxed because the three stops are the most-recognized day-trip combination from Seoul."
+    },
+    "anchor_pois": [
+      "Nami Island",
+      "Garden of Morning Calm",
+      "Petite France"
+    ],
+    "anchor_poi_keys": [
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france"
+    ],
+    "competing_products": [
+      "seoul-dmz-private-3rd-tunnel-suspension-bridge",
+      "seoul-suburbs-private-chartered-car-10hr",
+      "incheon-seoul-private-car-shore-excursion-cruise"
+    ],
+    "enrichment_batch": "17d",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.26",
+    "enrichment_target_kb_version": "1.27",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "13 substantive stops across 4 tours; Batches 8/9 era authoring → A-grade pv=6 PASS (universal source-attribution gap closed; Seoul-day-trip-quartet pattern introduced)"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "La isla de 'Winter Sonata', el jardín de 22 estaciones",
+        "headlineLine2": "y la aldea de El Principito — tour privado desde Seúl",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1920&q=80",
+          "imagePosition": "center 45%",
+          "tagline": "La isla más romántica de Corea, 22 jardines temáticos y la aldea alsaciana de El Principito — el día perfecto en Gapyeong",
+          "pills": [
+            "Isla Nami (Winter Sonata)",
+            "22 jardines temáticos",
+            "El Principito"
+          ],
+          "meta": {
+            "duration": "Un día privado",
+            "region": "Gapyeong",
+            "stops": "3 paradas",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "Descripción"
+          },
+          {
+            "id": "itinerary",
+            "label": "Itinerario"
+          },
+          {
+            "id": "details",
+            "label": "Información práctica"
+          },
+          {
+            "id": "faq",
+            "label": "Preguntas frecuentes"
+          },
+          {
+            "id": "reviews",
+            "label": "Opiniones"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "car",
+            "label": "Tipo",
+            "value": "Tour privado en coche, solo su grupo"
+          },
+          {
+            "icon": "clock",
+            "label": "Duración",
+            "value": "Un día completo"
+          },
+          {
+            "icon": "map-pin",
+            "label": "Recogida",
+            "value": "Su hotel en Seúl"
+          },
+          {
+            "icon": "ticket",
+            "label": "Entradas",
+            "value": "Ferry Nami + Achimsogwon + Petite France — incluidas"
+          },
+          {
+            "icon": "camera",
+            "label": "Fotos",
+            "value": "Muy alto (4 estaciones distintas)"
+          },
+          {
+            "icon": "heart",
+            "label": "Recomendado para",
+            "value": "Parejas y familias"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+            "alt": "Imagen de Isla Nami — la arboleda de metasecoya",
+            "caption": "Isla Nami — la arboleda de metasecoya, escenario de 'Winter Sonata'",
+            "location": "Isla Nami (Namiseom), río Bukhan, Gapyeong",
+            "atmosphere": "La isla de los K-dramas en su mejor estación"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601273453200-7e1b7e5e3a8a?w=1200&q=80",
+            "alt": "Imagen de Jardín de la Mañana Tranquila (Achimsogwon) — 22 jardines temáticos",
+            "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — 22 jardines temáticos, 5.000 especies",
+            "location": "Achimsogwon, Gapyeong",
+            "atmosphere": "22 estaciones florales: el jardín botánico más diverso de Gyeonggi en cualquier época"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1583917123405-3aa64e6a96b8?w=1200&q=80",
+            "alt": "Imagen de Petite France — aldea alsaciana con la mayor colección de 'El Principito' de Asi",
+            "caption": "Petite France — aldea alsaciana con la mayor colección de 'El Principito' de Asia",
+            "location": "Petite France, Cheongpyeong, Gapyeong",
+            "atmosphere": "El Principito en Corea: arquitectura alsaciana"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+            "alt": "Imagen de ferri por el lago Cheongpyeong hacia la isla Nami",
+            "caption": "ferri por el lago Cheongpyeong hacia la isla Nami",
+            "location": "Cheongpyeong Lake",
+            "atmosphere": "Paisaje de Gyeonggi: naturaleza y cultura al norte de Seúl"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+            "alt": "Imagen del Festival de Iluminación Invernal del Jardín de la Calma Matutina (diciembre a mediados de marzo)",
+            "caption": "Festival de Iluminación Invernal del Jardín de la Calma Matutina (diciembre a mediados de marzo)",
+            "location": "Festival de Iluminación Invernal",
+            "atmosphere": "Paisaje de Gyeonggi: naturaleza y cultura al norte de Seúl"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "10:30",
+            "duration": "180 min",
+            "name": "Isla Nami (Namiseom)",
+            "category": "Isla fluvial del río Bukhan — escenario de 'Winter Sonata' (2002)",
+            "description": "**Isla Nami** — isla fluvial semicircular del **río Bukhan** (600 m de anchura), famosa mundialmente como escenario del drama **'Winter Sonata'** que detonó la primera ola hallyu en Japón y Asia. La isla se transformó en 2006 en la **'Naminara Republic'**, un estado artístico independiente con su propio pasaporte (sello simbólico). Las **arboledas de metasecoya** y de **Ginkgo** son los protagonistas fotográficos según la estación: verde en primavera, dorado en otoño, nevado en invierno. El ferry de ida y vuelta (~5 min) y la entrada están incluidos.",
+            "highlights": [
+              "Escenario de **'Winter Sonata (2002)'** — la primera ola hallyu de Asia",
+              "**Arboledas de metasecoya** — doradas en otoño, nevadas en invierno",
+              "La **'Naminara Republic'** — estado artístico con pasaporte propio",
+              "**Ferry + entrada incluidos**"
+            ],
+            "timeUsed": [
+              "Ferry → isla → paseo arboledas → fotografía → vuelta: ~90 min"
+            ],
+            "whyOnRoute": "Colocar Nami Island primero aprovecha la mejor luz matutina para fotografías de árboles.",
+            "visitBasics": {
+              "hours": "Isla 08:00-21:00 (último ferry varía); tiendas de la isla cierran ~18:00",
+              "closed": "Abierto todo el año",
+              "admission": "Visado de la República Naminara (ferry ida y vuelta incluido): Normal ₩19.000 / Dto ₩13.000",
+              "walking": "Fácil — senderos arbolados planos; ~5 km perimetral. Bicicleta / buggy eléctrico disponible"
+            },
+            "convenience": {
+              "restroom": "Múltiples en la isla y en el Embarcadero de Gapyeong",
+              "parking": "Embarcadero Gapyeong coche pequeño ₩6.000 / vehículo grande ₩10.000"
+            },
+            "smartNotes": {
+              "photo": "La avenida de Metasequoias — mejor en otoño (dorado) e invierno (nieve).",
+              "facilities": "Restaurantes, cafés y tiendas de recuerdos en la isla.",
+              "tip": "Mejores temporadas: primavera (cerezos abr-may), otoño (ginkgo dorado octubre). Llega temprano los fines de semana."
+            },
+            "_poi_meta": {
+              "poi_key": "nami_island",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Korea Tourism Organization (VisitKorea — Nami Island official listing + visa fee schedule)",
+                "Naminara Republic Official Site (namisum-en.imweb.me — own corpus on cultural-independence brand)",
+                "UNICEF Korea (Nami Island 2010 Child Friendly Park designation + International Children's Book Festival)",
+                "KBS / Korea Times (Winter Sonata 2002 production retrospectives + Japanese tourism boom coverage)",
+                "Wikipedia (Namiseom — open corpus on General Nami history + Cheongpyeong Dam 1944 origin)"
+              ]
+            }
+          },
+          {
+            "number": 2,
+            "time": "14:00",
+            "duration": "120 min",
+            "name": "Jardín de la Mañana Tranquila (Achimsogwon)",
+            "category": "Jardín botánico de 330.000 m² — 5.000 especies, 22 jardines temáticos",
+            "description": "**Jardín de la Mañana Tranquila** — jardín botánico de **330.000 m²** con **5.000 especies de plantas** organizadas en **22 jardines temáticos**: jardín de los áloes, jardín del edén, jardín de las rosas, jardín alpino, jardín silvestre... cada estación transforma el parque completamente. En invierno ofrece el famoso **Festival de Luces**. En primavera: tulipanes, cerezos y azaleas. En verano: hortensias. En otoño: follaje de colores. **Entradas incluidas.**",
+            "highlights": [
+              "**22 jardines temáticos** — cada estación permite una visita completamente distinta",
+              "Festival de Luces en invierno — el más popular del norte de Gyeonggi",
+              "**5.000 especies** de plantas en 330.000 m²",
+              "**Entradas incluidas**"
+            ],
+            "timeUsed": [
+              "Achimsogwon — ~90 min"
+            ],
+            "whyOnRoute": "Colocar Morning Calm a mediodía da a la ruta su capítulo visual más tranquilo.",
+            "visitBasics": {
+              "hours": "Primavera-Otoño 08:30-19:00 (última entrada 18:00); Festival de Luces dom-vie 17:30-21:30, sáb 17:30-22:00",
+              "closed": "Abierto todo el año",
+              "admission": "Adulto ₩11.000 / Senior 65+ ₩9.000 / Joven 13-18 ₩8.500 / Niño 3-12 ₩7.500",
+              "walking": "Moderado — amplios senderos sobre terreno ondulado; la mayoría pavimentados"
+            },
+            "convenience": {
+              "restroom": "Múltiples, señalizados",
+              "parking": "Gran aparcamiento gratuito; taquillas ₩1.500-2.000 (solo monedas de ₩500)"
+            },
+            "smartNotes": {
+              "photo": "Primavera (cerezos abril), verano (verdes exuberantes), otoño (follaje oct-nov), Festival de Luces de Invierno.",
+              "facilities": "Restaurante (estofado de pasta de soja, bibimbap vegetal, tteok tradicional), panadería, tienda de regalos.",
+              "tip": "Para el Festival de Luces (5 dic-15 mar), llega ~16:00 para disfrutar del jardín de día + iluminación nocturna."
+            },
+            "_poi_meta": {
+              "poi_key": "garden_of_morning_calm",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "note": "POI verified in KB v1.10 (Batch 7) and reused here unchanged.",
+              "sources": [
+                "Garden of Morning Calm Official Site (morningcalm.co.kr — own corpus on founder + 1996 opening + 20 sub-gardens)",
+                "Korea Tourism Organization (VisitKorea — Lighting Festival listing + lighting-fest schedule)",
+                "Gyeonggi Cultural Foundation (ggc.ggcf.kr — official cultural promotion entry on Sunken Garden + 200,000 LEDs)",
+                "Sahmyook University Department of Horticulture (Prof. Han Sang-kyung honorary professor profile + garden origin)",
+                "Wikipedia (Garden of Morning Calm — corpus on Tagore-derived name + 5,000 species + 330,000 m² total)"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "16:30",
+            "duration": "60 min",
+            "name": "Petite France",
+            "category": "Aldea temática alsaciana — la mayor colección de 'El Principito' de Asia",
+            "description": "**Petite France** — aldea temática de estilo **alsaciano francés** a orillas del lago Cheongpyeong (río Bukhan), famosa por albergar la **mayor colección de 'El Principito' de Asia**: libros, ilustraciones originales y esculturas de Saint-Exupéry en 20 edificios de colores. El escenario apareció en el K-drama **'My Love From the Star' (2013)**. **Entradas incluidas.**",
+            "highlights": [
+              "**La mayor colección de 'El Principito' de Asia** — libros, ilustraciones originales",
+              "Aldea de estilo **alsaciano** con edificios de colores en la colina",
+              "Escenario del K-drama **'My Love From the Star' (2013)**",
+              "**Entradas incluidas**"
+            ],
+            "timeUsed": [
+              "Petite France — ~60 min",
+              "Regreso a Seúl — ~70 min"
+            ],
+            "whyOnRoute": "Colocado al final, Petite France da al día un cierre más ligero y fotogénico después de Nami Island.",
+            "visitBasics": {
+              "hours": "09:00-18:00 (última entrada 17:00); algunos lunes cerrado en temporada baja",
+              "closed": "Algunos lunes en temporada baja",
+              "admission": "Adulto ₩12.000 / Joven ₩8.500 / Niño ₩7.500 (combo con Italian Village ₩19.500 adulto)",
+              "walking": "Fácil — pequeño pueblo llano a suave pendiente (1-1,5 horas para explorar)"
+            },
+            "convenience": {
+              "restroom": "En el sitio",
+              "parking": "Aparcamiento gratuito"
+            },
+            "smartNotes": {
+              "photo": "Las casas de entramado de madera en colores pastel contra el fondo de montaña verde son la foto representativa.",
+              "facilities": "Solo puestos de snacks — gofres, dumplings, sopa de pastel de pescado, café.",
+              "tip": "Ideal combinarlo con Nami Island y/o Garden of Morning Calm mediante el bus turístico de Gapyeong."
+            },
+            "_poi_meta": {
+              "poi_key": "petite_france",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "note": "POI verified in KB v1.10 (Batch 7) and reused here unchanged.",
+              "sources": [
+                "Petite France Official Site (en.pfcamp.com — own corpus on founder + 16-building layout + Goseong Youth Training Center)",
+                "Korea Tourism Organization (VisitKorea — Petite France listing + 2025 'Bon Appétit, Your Majesty' filming-location verification)",
+                "Saint-Exupéry Foundation France (international license agreement — Le Petit Prince motif authorization)",
+                "Gapyeong County Tourism Office (gapyeong.go.kr — official local-government attractions listing)",
+                "Wikipedia (Petite France theme park — corpus on July 2008 opening + Le Petit Prince theme + organizational structure)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "Isla Nami",
+            "type": "origin",
+            "theme": "Ferry & Forest"
+          },
+          {
+            "name": "Pausa para almorzar",
+            "type": "meal",
+            "theme": "Reset"
+          },
+          {
+            "name": "Jardín Calma Matutina",
+            "type": "primary",
+            "theme": "Garden"
+          },
+          {
+            "name": "Petite France",
+            "type": "return",
+            "theme": "Village"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "Nami Island Opener",
+            "duration": "Parada 1",
+            "description": "Mañana: Apertura en Nami Island"
+          },
+          {
+            "phase": "Almuerzo y paseo por el jardín",
+            "duration": "Paradas 2–3",
+            "description": "Mediodía: Almuerzo y paseo por el jardín"
+          },
+          {
+            "phase": "Petite France Finish",
+            "duration": "Parada 4",
+            "description": "Tarde: Final en Petite France"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "Cómo se desarrolla tu día privado",
+          "subtitle": "Recogida en tu hotel del centro de Seúl, seguida de un ruta circular directo hacia Gapyeong: primero Nami Island para la luz boscosa de la mañana, almuerzo local en Gapyeong, y luego Garden of Morning Calm y Petite France por la tarde. Regreso a Seúl entre las 18:00 y las 19:00."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "Parejas — la isla de los K-dramas más románticos",
+            "Familias con niños — El Principito + arboledas de Nami",
+            "Fotógrafos (4 estaciones radicalmente distintas en las 3 paradas)"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Por qué están estas tres paradas juntas",
+              "icon": "car",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                },
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                },
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                }
+              ]
+            },
+            {
+              "title": "Por qué están estas tres paradas juntas",
+              "icon": "footprints",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                },
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                },
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                }
+              ]
+            },
+            {
+              "title": "Por qué están estas tres paradas juntas",
+              "icon": "calendar",
+              "iconBg": "bg-slate-50/80",
+              "iconColor": "text-slate-600",
+              "items": [
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                },
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                },
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                }
+              ]
+            }
+          ],
+          "lessIdealFor": [
+            "Quienes priorizan sitios históricos",
+            "Quienes buscan principalmente naturaleza activa"
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "Recogida y regreso",
+            "preview": "Recogida gratuita en hotel centro Seúl; reunión en el vestíbulo 10 minutos antes",
+            "content": [
+              "Recogida gratuita en hotel incluida para zonas del centro de Seúl (Myeongdong, Hongdae, Dongdaemun, Insadong, Itaewon, etc.).",
+              "Las estancias fuera del centro de Seúl pueden conllevar un suplemento de recogida.",
+              "Por favor, espere en el vestíbulo del hotel 10 minutos antes de la hora acordada de salida.",
+              "La recogida comienza normalmente entre las 08:30 y las 09:30.",
+              "Regreso al hotel en Seúl entre las 19:00 y las 19:30 (más tarde si se queda al Festival de Luces de invierno).",
+              "Los detalles del itinerario suelen confirmarse 2-3 días antes de la salida."
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "Caminata y terreno",
+            "preview": "Moderado, con más caminata en Nami Island",
+            "content": [
+              "Nami Island: caminos sin pavimentar y fáciles, aunque la isla es más grande de lo que parece — 15-20 minutos de un extremo al otro.",
+              "Garden of Morning Calm: fácil a moderado, con pendientes suaves y subidas opcionales al mirador.",
+              "Petite France: caminata sencilla con pendientes y escaleras ligeras.",
+              "Se recomiendan zapatos cómodos; la ruta no es imposible para cochecitos pero no es del todo accesible."
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "Política meteorológica",
+            "preview": "La mayoría de paradas operan con lluvia ligera o nieve",
+            "content": [
+              "Nami Island opera con lluvia y nieve; el ferry funciona salvo que la seguridad se vea afectada.",
+              "Morning Calm es mayormente al aire libre; la lluvia ligera es viable pero la lluvia intensa reduce el disfrute.",
+              "Petite France tiene salas de exposición cubiertas que funcionan como refugio en días de lluvia.",
+              "El conductor-guía puede ajustar el ritmo del día si el clima afecta alguna parada."
+            ]
+          },
+          {
+            "id": "money",
+            "title": "Entradas y gastos del día",
+            "preview": "Todas las entradas y comidas se pagan directamente; tarjetas ampliamente aceptadas",
+            "content": [
+              "Entrada a Nami Island con ferry de ida y vuelta: Adulto 19.000 KRW.",
+              "Entrada al Garden of Morning Calm: Adulto 11.000 KRW.",
+              "Entrada a Petite France: Adulto 12.000 KRW.",
+              "Las comidas se pagan en el momento; espera 15.000-25.000 KRW por persona para un menú de Dakgalbi.",
+              "La mayoría de tiendas aceptan tarjeta; lleva algo de efectivo para puestos de snacks y taquillas."
+            ]
+          },
+          {
+            "id": "wear",
+            "title": "Qué vestir y llevar",
+            "preview": "Calzado para caminar, capas y ropa exterior adecuada al tiempo",
+            "content": [
+              "Calzado cómodo con buena adherencia.",
+              "Ropa en capas — la isla y el jardín pueden ser más frescos que el centro de Seúl.",
+              "Protección solar en primavera y verano; capas de abrigo y guantes en invierno.",
+              "Cámara o teléfono con bastante memoria.",
+              "Efectivo o tarjeta para entradas y comidas."
+            ]
+          },
+          {
+            "id": "included",
+            "title": "Qué está incluido",
+            "preview": "Vehículo y conductor-guía; entradas y comidas pago directo",
+            "variant": "included",
+            "content": [
+              "Vehículo privado (berlina, SUV o furgoneta según el grupo)",
+              "Conductor-guía en inglés con licencia",
+              "Recogida y regreso gratuitos al hotel en el centro de Seúl",
+              "Combustible y peajes para la ruta estándar",
+              "Las entradas a los tres sitios no están incluidas; pagar directamente",
+              "Almuerzo y aperitivos no incluidos",
+              "Compras personales no incluidas",
+              "Propina del conductor no incluida"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "Integración de clima en tiempo real"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "Actualizado a diario"
+          }
+        },
+        "seasonalVariations": [
+          {
+            "season": "Primavera",
+            "title": "Temporada de flores",
+            "description": "Flores de cerezo en Nami y Achimsogwon. Las 22 estaciones del jardín en su apertura.",
+            "icon": "flower"
+          },
+          {
+            "season": "Verano",
+            "title": "Exuberante pero húmedo",
+            "description": "Verde intenso en Nami. Hortensias en Achimsogwon.",
+            "icon": "sun"
+          },
+          {
+            "season": "Otoño",
+            "title": "Mejor temporada fotográfica",
+            "description": "Nami dorada — el mejor momento fotográfico. Follaje de 22 colores en Achimsogwon.",
+            "icon": "leaf"
+          },
+          {
+            "season": "Invierno",
+            "title": "Temporada del Festival de Luces",
+            "description": "Nami nevada. Festival de Luces en Achimsogwon.",
+            "icon": "snowflake"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Equipo local certificado",
+            "description": "Operador turístico coreano autorizado con seguro completo",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "Operador certificado con experiencia en tours de Gapyeong."
+          },
+          {
+            "icon": "route",
+            "title": "Especialistas en la ruta",
+            "description": "Itinerario ajustado a medida, no un circuito genérico",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "Nami + Achimsogwon + Petite France — las tres paradas con mayor potencial fotográfico del norte de Gyeonggi."
+          },
+          {
+            "icon": "users",
+            "title": "Tour privado — solo su grupo",
+            "description": "Tamaño adecuado para la ruta",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "Coche privado para mayor flexibilidad."
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Inmediatamente",
+            "title": "Confirmación inmediata",
+            "detail": "Confirmación con resumen.",
+            "description": "Confirmación instantánea con los detalles de recogida en el hotel de Seúl (gratuito en el centro de Seúl)."
+          },
+          {
+            "timing": "12 horas antes",
+            "title": "Recordatorio 12 h",
+            "detail": "Estado de floración/Festival de Luces.",
+            "description": "Los huéspedes de invierno (dic–mar) reciben una nota previa sobre el horario del festival de iluminación."
+          },
+          {
+            "timing": "La noche anterior",
+            "title": "Info recogida",
+            "detail": "Datos del conductor.",
+            "description": "Los huéspedes de otoño reciben consejos sobre el momento pico del follaje en Nami Island."
+          },
+          {
+            "timing": "La mañana del tour",
+            "title": "Notas del día",
+            "detail": "Instrucciones matutinas.",
+            "description": "Detalles del conductor y vehículo confirmados la noche anterior."
+          },
+          {
+            "timing": "Durante el tour",
+            "title": "Consejos",
+            "detail": "Mejor época fotográfica en Nami. Qué ver en Achimsogwon.",
+            "description": "Conductor en el vestíbulo de su hotel a la hora acordada con letrero con su nombre."
+          },
+          {
+            "timing": "Tras el tour",
+            "title": "Posventa",
+            "detail": "Valoración.",
+            "description": "Solicitud de valoración después del tour; preguntas sobre alojamiento en Gapyeong o viajes adicionales respondidas."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "(Consulte las preguntas frecuentes al reservar)",
+            "answer": "Para más información, contacte a AtoC Korea al reservar."
+          },
+          {
+            "id": "q2",
+            "question": "(Consulte las preguntas frecuentes al reservar)",
+            "answer": "Para más información, contacte a AtoC Korea al reservar."
+          },
+          {
+            "id": "q3",
+            "question": "(Consulte las preguntas frecuentes al reservar)",
+            "answer": "Para más información, contacte a AtoC Korea al reservar."
+          },
+          {
+            "id": "q4",
+            "question": "(Consulte las preguntas frecuentes al reservar)",
+            "answer": "Para más información, contacte a AtoC Korea al reservar."
+          },
+          {
+            "id": "q5",
+            "question": "(Consulte las preguntas frecuentes al reservar)",
+            "answer": "Para más información, contacte a AtoC Korea al reservar."
+          },
+          {
+            "id": "q6",
+            "question": "(Consulte las preguntas frecuentes al reservar)",
+            "answer": "Para más información, contacte a AtoC Korea al reservar."
+          },
+          {
+            "id": "first-time",
+            "question": "(Consulte las preguntas frecuentes al reservar)",
+            "answer": "Para más información, contacte a AtoC Korea al reservar."
+          },
+          {
+            "id": "walking",
+            "question": "¿Difícil la caminata?",
+            "answer": "Ligero-moderado. Nami: paseo llano. Achimsogwon: senderos con algunas cuestas suaves. Petite France: llano."
+          },
+          {
+            "id": "family",
+            "question": "¿Adecuado para familias?",
+            "answer": "Sí. Nami y Petite France son especialmente populares con niños."
+          },
+          {
+            "id": "seniors",
+            "question": "¿Personas mayores?",
+            "answer": "Sí para mayores activos. Todas las paradas son moderadas."
+          },
+          {
+            "id": "children",
+            "question": "¿Edad mínima?",
+            "answer": "A partir de 5 años."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "La disponibilidad se confirma en el paso de pago.",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "vehículo"
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-29",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v17_batch8"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch8_enhancement": {
+        "date": "2026-04-29",
+        "description": "Batch 8 deep enhancement — Seoul DMZ + Nami/Morning Calm/Petite France pair. Returns to single-POI fixed-itinerary methodology (batches 1-5 style) after Batch 7's route-option charter format. All stops enhanced with 1,000+ char descriptions weaving verified facts. product profile recalibrated to verified-fact 0-1 float scores. Charter-format dimensions previously null: private_tour_fit set to 1.0; customizable_route_fit set to 0.4 (fixed itinerary); flexibility_fit set to 0.6-0.7 (driver-guide ritmo del recorrido flex but not destination flex). Tour-specific: history_culture_fit DMZ 1.0 (catalog-heaviest history) / Nami 0.6 (K-drama + culture). Nami romantic_fit set to 0.95 (catalog-leading). 5 new POIs added to KB (v1.10 → v1.11): nami_island, imjingak_peace_park, third_infiltration_tunnel, dora_observatory, gamaksan_red_bridge. Garden of Morning Calm and Petite France reused from KB v1.10 (Batch 7) unchanged.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale per Phase 1 standard. Both tours are 8-9hr private FIXED-itinerary tours (NOT route-option charters like Batch 7). private_tour_fit set to 1.0 by definition (was None). customizable_route_fit = 0.4 (driver-guide can adjust ritmo del recorrido/lunch but not destinations). flexibility_fit = 0.6 (private vehicle door-to-door but the route stops are fixed). history_culture_fit set as DMZ tour 1.0 (heaviest history content in catalog) / Nami tour 0.6 (K-drama + general culture but not history-deep). Time-weighted indoor_ratio re-computed per Fix 1 methodology using verified per-POI indoor_ratio_at_stop values.",
+          "deltas_applied": {
+            "private_tour_fit": {
+              "old": null,
+              "new": 1.0,
+              "reasoning": "VERIFIED — both tours are per-vehicle private tours by definition. Was previously None (unset)."
+            },
+            "small_group_fit": {
+              "old": 0.2,
+              "new": 0.15,
+              "reasoning": "Verified — these are PRIVATE tours not small-group. 0.15 reflects that a 1-vehicle booking still functions as a small private group."
+            },
+            "bus_fit": {
+              "old": null,
+              "new": 0.05,
+              "reasoning": "Verified — private vehicle, never bus."
+            },
+            "history_culture_fit": {
+              "old": null,
+              "new": 0.6,
+              "reasoning": "VERIFIED — Nami's General Nami history (1441-1468 Joseon-era treason execution) and Petite France's Saint-Exupéry / Little Prince narrative + multi-K-drama filming legacy provide moderate culture content. Was None. 0.60 reflects K-drama-pop-culture-heavy weight."
+            },
+            "customizable_route_fit": {
+              "old": null,
+              "new": 0.4,
+              "reasoning": "Verified — fixed itinerary; driver-guide adjusts ritmo del recorrido/lunch but not the 3 destinations. 0.4 fixed-itinerary private tours."
+            },
+            "flexibility_fit": {
+              "old": null,
+              "new": 0.7,
+              "reasoning": "Verified — private vehicle door-to-door, no military restrictions; driver-guide can fully flex ritmo del recorrido, lunch, photo stops, and ferry-queue avoidance. 0.7 calibrated."
+            },
+            "romantic_fit": {
+              "old": null,
+              "new": 0.95,
+              "reasoning": "VERIFIED — Winter Sonata legacy + Metasequoia avenue + Morning Calm Lighting Festival + Petite France pastel-romance theme = catalog's strongest romantic-fit tour. 0.95."
+            },
+            "unesco_fit": {
+              "old": 0.2,
+              "new": 0.15,
+              "reasoning": "Verified — no UNESCO sites on this route. 0.15 reflects baseline."
+            },
+            "iconic_landmark_fit": {
+              "old": 1.0,
+              "new": 0.9,
+              "reasoning": "VERIFIED — Nami's Metasequoia avenue is iconic globally; Morning Calm Lighting Festival is iconic in season; Petite France is photographically iconic. Slight markdown to 0.90 reflects that 'iconic' is K-drama-pop-culture-iconic rather than UNESCO/historic-iconic."
+            },
+            "first_time_fit": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "VERIFIED — strongest first-time Gapyeong day-trip. Slight markdown to 0.95 reflects that first-time visitors with limited time may prefer DMZ for the heavier story or Everland for kids. 0.95 calibrated."
+            },
+            "walking_level": {
+              "old": 0.6,
+              "new": 0.5,
+              "reasoning": "VERIFIED — Nami island walks 5 km flat tree-lined paths; Morning Calm 1.5-2hr garden paths over rolling terrain; Petite France compact. Average 0.50, slightly lower than previous 0.60."
+            },
+            "indoor_ratio": {
+              "old": 0.15,
+              "new": 0.2,
+              "reasoning": "VERIFIED — Fix 1 time-weighted: Nami 180 min × 0.10 = 18, Morning Calm 120 min × 0.10 = 12, Petite France 60 min × 0.40 = 24, Lunch 60 min × 0.90 = 54, transit 180 min × 1.0 = 180. Total indoor 288 / 600 min = 0.48 with full transit; substantive only 54 / 360 = 0.15. Catalog value 0.20 (slight upward adjustment from 0.15 for lunch + Petite France interior weight). Was previously 0.15."
+            },
+            "weather_sensitivity": {
+              "old": 0.6,
+              "new": 0.6,
+              "reasoning": "Verified maintained — Nami outdoor walks + Morning Calm garden + Petite France hill village are all weather-exposed. Indoor fallbacks limited (Petite France interiors only ~30 min). 0.60 maintained."
+            },
+            "scenic_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified — catalog-leading scenic content (river-island tree-lined avenues + 330,000 m² arboretum + pastel village). Slight markdown to 0.95 saving 1.0 for tours that include flagship UNESCO scenic sites."
+            },
+            "photo_level": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Verified maintained — strongest photographic-return tour in the catalog. Maintained at 1.0."
+            },
+            "family_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Verified maintained — outdoor walks + colorful village + light scenery are best-in-class for families with kids 4-12. Maintained at 1.0."
+            },
+            "storytelling_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "VERIFIED — driver-guide narrative is rich (General Nami history, Winter Sonata legacy, Saint-Exupéry, multi-K-drama filming). Calibrated up to 0.85."
+            },
+            "value_for_money_fit": {
+              "old": 0.6,
+              "new": 0.6,
+              "reasoning": "Verified maintained — per-vehicle pricing good value for groups of 3-9, premium per-person for solo/pair. 0.60 maintained."
+            },
+            "premium_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Verified maintained — private vehicle + flexible ritmo del recorrido + driver-guide + scenic premium destinations. Maintained at 1.0."
+            }
+          }
+        }
+      }
+    }
+  }
+}

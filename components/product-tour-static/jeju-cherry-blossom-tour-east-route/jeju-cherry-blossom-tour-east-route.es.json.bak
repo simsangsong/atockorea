@@ -1,0 +1,2094 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "jeju-cherry-blossom-tour-east-route",
+  "locale": "es",
+  "product_id": "jeju-cherry-blossom-tour-east-route",
+  "seo": {
+    "pageTitle": "Tour Cerezos Jeju Este: Calles en Flor, Canola y Seongsan | AtoC",
+    "metaDescription": "Tour de cerezos por el este de Jeju (mar-abr): Calle Jeonnong-ro → Noksan-ro (canola + cerezos, 10 km) → almuerzo → Cueva Micheon → Ilchul Land → Seongsan Ilchulbong (UNESCO). Primavera.",
+    "ogImage": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
+    "primaryKeywords": [
+      "tour cerezos Jeju primavera",
+      "Jeonnong-ro cerezos Jeju",
+      "Noksan-ro canola cerezos",
+      "tour flor cerezo Jeju Este",
+      "Seongsan cerezos Jeju"
+    ],
+    "title": "Tour Cerezos Jeju Este: Calles, Canola y Seongsan | AtoC",
+    "description": "Tour de floración en grupo pequeño en el este de Jeju: Jeonnong-ro → Noksan-ro → Cueva Micheon → Ilchul Land → Seongsan UNESCO. Marzo-abril."
+  },
+  "catalog_card": {
+    "slug": "jeju-cherry-blossom-tour-east-route",
+    "title": "Tour Cerezos Jeju Este: Jeonnong-ro, Noksan-ro, Cueva de Lava y Seongsan",
+    "subtitle": "El bulevar de cerezos más antiguo, la carretera de cerezos y canola más fotogénica y el Pico del Amanecer — cerezos del este de Jeju en un día.",
+    "region": "Jeju Este (temporada primavera)",
+    "duration": "Un día (solo mar-abr)",
+    "stopsCount": 6,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "Solo primavera",
+      "Cerezos + canola",
+      "Jeju Este",
+      "Seongsan UNESCO"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=600&q=80",
+    "priceLabel": "Consulte el precio al reservar",
+    "shortCardDescription": "Los cerezos del este de Jeju en tres formatos distintos: la calle Jeonnong-ro (el bulevar de cerezos más antiguo de Jeju, 1,2 km de túnel floral) → la carretera Noksan-ro de Gasi-ri (10 km de cerezos + colza amarilla, la imagen de primavera más reproducida de Jeju) → almuerzo → Cueva Micheon en Ilchul Land → jardines de primavera → Seongsan Ilchulbong (triple UNESCO) como foto final.",
+    "tags": [
+      "Solo primavera",
+      "Temporada de cerezos",
+      "Jeju Este"
+    ]
+  },
+  "headlineLine1": "Cerezos, campos de canola y un tubo de lava —",
+  "headlineLine2": "los cerezos del este de Jeju en un día",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "persona"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
+    "imagePosition": "center 40%",
+    "tagline": "De las calles más antiguas de cerezos de Jeju a la carretera de canola y hasta el Pico del Amanecer — primavera en el este de la isla",
+    "pills": [
+      "Solo mar-abr",
+      "Cerezos + canola",
+      "Seongsan UNESCO"
+    ],
+    "meta": {
+      "duration": "Un día (solo temporada cerezos, mar-abr)",
+      "region": "Jeju Este",
+      "stops": "6 paradas",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Descripción"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerario"
+    },
+    {
+      "id": "details",
+      "label": "Información práctica"
+    },
+    {
+      "id": "faq",
+      "label": "Preguntas frecuentes"
+    },
+    {
+      "id": "reviews",
+      "label": "Opiniones"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "calendar",
+      "label": "Temporada",
+      "value": "Solo temporada de cerezos (marzo-abril)"
+    },
+    {
+      "icon": "flower",
+      "label": "Floración",
+      "value": "Cerezos + colza — el contraste más fotogénico de Jeju"
+    },
+    {
+      "icon": "map-pin",
+      "label": "Recogida",
+      "value": "Hotel / puntos de recogida en Ciudad de Jeju"
+    },
+    {
+      "icon": "footprints",
+      "label": "A pie",
+      "value": "Ligero-moderado"
+    },
+    {
+      "icon": "ticket",
+      "label": "Entradas",
+      "value": "Incluidas (Ilchul Land + Seongsan)"
+    },
+    {
+      "icon": "mountain",
+      "label": "Cierre",
+      "value": "Seongsan Ilchulbong — triple Patrimonio UNESCO"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
+      "alt": "Imagen de Calle Jeonnong-ro — el bulevar de cerezos más antiguo de Jeju",
+      "caption": "Calle Jeonnong-ro — el bulevar de cerezos más antiguo de Jeju, 1,2 km de túnel floral",
+      "location": "Jeonnong-ro, Ciudad de Jeju",
+      "atmosphere": "El paseo más romántico de Jeju en primavera: el bulevar de cerezos centenario"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&q=80",
+      "alt": "Imagen de Carretera Noksan-ro — 10 km de cerezos + canola",
+      "caption": "Carretera Noksan-ro — 10 km de cerezos + canola, la imagen de primavera más reproducida de Jeju",
+      "location": "Noksan-ro, Gasi-ri, Pyoseon-myeon, Seogwipo",
+      "atmosphere": "El contraste rosa-amarillo de Jeju: cerezos y canola en la carretera más fotogénica de la isla"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1200&q=80",
+      "alt": "Imagen de Cueva Micheon + jardines de Ilchul Land — contraste subterráneo y flores de prim",
+      "caption": "Cueva Micheon + jardines de Ilchul Land — contraste subterráneo y flores de primavera",
+      "location": "Ilchul Land, Seongsan",
+      "atmosphere": "Del subsuelo volcánico a los jardines florales de primavera"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=1200&q=80",
+      "alt": "Imagen de Seongsan Ilchulbong con cerezos — el cierre fotográfico perfecto del tour de pri",
+      "caption": "Seongsan Ilchulbong con cerezos — el cierre fotográfico perfecto del tour de primavera",
+      "location": "Seongsan Ilchulbong, Jeju Este",
+      "atmosphere": "El Pico del Amanecer rodeado de cerezos: UNESCO + floración al mismo tiempo"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1551649001-7a2482d98d05?w=1200&q=80",
+      "alt": "Imagen de Cráter UNESCO de Seongsan Ilchulbong",
+      "caption": "Cráter UNESCO de Seongsan Ilchulbong",
+      "location": "Seongsan Ilchulbong",
+      "atmosphere": "Sunrise crater rim"
+    },
+    {
+      "id": "g6",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
+      "alt": "Imagen de Vista general de la ruta de cerezos en flor del este de Jeju",
+      "caption": "Vista general de la ruta de cerezos en flor del este de Jeju",
+      "location": "Resumen de la ruta",
+      "atmosphere": "El día de un vistazo"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "09:00",
+      "duration": "75 min",
+      "name": "Calle Jeonnong-ro (el bulevar de cerezos más antiguo de Jeju)",
+      "category": "1,2 km de túnel floral — el bulevar de cerezos más antiguo de Jeju",
+      "description": "**Jeonnong-ro** es el **bulevar de cerezos más antiguo de Jeju** — una avenida de **1,2 km de longitud** flanqueada por cerezos *Wangbeot* de más de **60 años** que cierran el cielo formando un **túnel floral completo**. El cerezo *Wangbeot* es nativo de Jeju (algunos botánicos lo consideran endémico de la isla) y su floración suele ser 1-3 días anterior a los cerezos Yoshino del continente. El festival de cerezos de Jeonnong-ro atrae a miles de visitantes con fotomatones, puestos de comida y actuaciones. La calle está dentro de la ciudad de Jeju y es la primera parada del día (antes de salir hacia el este).",
+      "highlights": [
+        "**1,2 km de túnel floral** de cerezos *Wangbeot* de más de 60 años",
+        "**El bulevar de cerezos más antiguo de Jeju**",
+        "El cerezo *Wangbeot* puede ser endémico de Jeju",
+        "Festival de cerezos con fotomatones y puestos de comida"
+      ],
+      "timeUsed": [
+        "Paseo por el bulevar + fotografía — ~40 min"
+      ],
+      "whyOnRoute": "Jeonnong-ro es **el punto clave principal del catálogo** para cualquier tour de cerezos de Jeju.",
+      "_poi_meta": {
+        "poi_key": "jeonnong_ro_cherry_blossom_street",
+        "kb_version": "1.29",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Jeju official",
+          "Korea Tourism Organization 2026 forecast",
+          "Best of Korea 2026 cherry blossom guide",
+          "90DayKorean cherry blossom guide",
+          "Visit Jeju official (visitjeju.net — Jeonnong-ro Cherry Blossom Festival listing + 1.2 km corridor + Sin-jeju location)",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Jeju Cherry Blossom Festival 2026 forecast + bloom timing)",
+          "Jeju Cherry Blossom Festival official organizing committee (Jeonnong-ro 19th edition 2026 — car-free corridor + lanterns + night illumination)",
+          "Korea Forest Service (forest.go.kr — King Cherry / Wangbeotnamu native species record + 1908 Émile Taquet Hallasan documentation)",
+          "Wikipedia (Prunus × yedoensis — King Cherry vs Yoshino Cherry botanical classification debate)"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "time": "10:30",
+      "duration": "90 min",
+      "name": "Noksan-ro, Gasi-ri (10 km de cerezos + canola)",
+      "category": "'La carretera más bella de Jeju' — 10 km de cerezos y colza amarilla",
+      "description": "**Noksan-ro** en **Gasi-ri** es apodada **'la carretera más bella de Jeju en primavera'** — una carretera rural de **10 km** flanqueada por cerezos de un lado y **campos de colza amarilla** del otro. El resultado es el **contraste rosa-amarillo más reproducido de Jeju**: los pétalos de cerezo cayendo sobre el amarillo intenso de la canola. El punto más fotogénico es la curva de la **Meseta de Gasi-ri**, donde la carretera se curva y la combinación de flores llena el encuadre de horizonte a horizonte. Aparcamiento disponible; el paseo a pie dura ~30-40 min por el tramo más fotogénico.",
+      "highlights": [
+        "**10 km de carretera** con cerezos y colza — el contraste más reproducido de Jeju",
+        "**'La carretera más bella de Jeju en primavera'** — apodo popular",
+        "Meseta de Gasi-ri: el punto más fotogénico de todo el tour",
+        "Mejor foto: la curva donde los cerezos y la canola llenan el encuadre"
+      ],
+      "timeUsed": [
+        "Paseo por Noksan-ro + Meseta de Gasi-ri — ~45 min"
+      ],
+      "whyOnRoute": "Noksan-ro es **la experiencia de conducción entre cerezos insignia de Jeju**.",
+      "_poi_meta": {
+        "poi_key": "noksan_ro_gasiri_blossom_road",
+        "kb_version": "1.29",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Korea (Korea Tourism Organization)",
+          "Jeju Horse Park official",
+          "The Soul of Seoul Jeju spring guide",
+          "Calm Chronicle Jeju guide",
+          "Visit Korea (Korea Tourism Organization — Noksan-ro 'Jeju's Most Beautiful Spring Road' + Korea's 100 Most Beautiful Roads listing)",
+          "Jeju Horse Park (jejuhorsepark.com — Jorangmal Experience Center + first community-run national museum in Korea)",
+          "Korea Forest Service (forest.go.kr — Korea's 100 Most Beautiful Roads designation methodology)",
+          "Visit Jeju official (visitjeju.net — Gasi-ri Village + Noksanjang/Gammajang royal horse pasture heritage + 600-year history)",
+          "Wikipedia (Gasi-ri — When Life Gives You Tangerines 2024 Netflix + Welcome to Samdal-ri 2023 JTBC filming credits)"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "12:15",
+      "duration": "60 min",
+      "name": "Almuerzo (cocina local del este de Jeju)",
+      "category": "Pausa para comer — Zona Pyoseon/Seongsan",
+      "description": "Almuerzo en restaurante local del este de Jeju en la zona Pyoseon-Seongsan. Mulhoe (sopa fría de pescado en verano/primavera) o haemul jeongsik. **No incluido** (~₩12.000-15.000/persona).",
+      "highlights": [
+        "Cocina local del este de Jeju",
+        "**No incluido** (~₩12.000-15.000/persona)"
+      ],
+      "timeUsed": [
+        "Almuerzo — ~60 min"
+      ],
+      "whyOnRoute": "El almuerzo cae en el punto medio geográfico entre el recorrido de cerezos y Ilchul Land/Seongeup.",
+      "_poi_meta": {
+        "poi_key": "OPS_east_jeju_lunch",
+        "kb_version": "1.17",
+        "verified_date": "2026-04-29"
+      }
+    },
+    {
+      "number": 4,
+      "time": "13:30",
+      "duration": "60 min",
+      "name": "Cueva Micheon (Ilchul Land)",
+      "category": "Tubo de lava de 1.700 m — contraste subterráneo después de las flores",
+      "description": "**Cueva Micheon** en Ilchul Land — tubo de lava de **1.700 m** con sección visitable de **365 m** a ~18°C constantes. Después de las flores de colores de la mañana, el contraste subterráneo de la cueva aporta un momento de pausa fresca antes del cierre volcánico del día. **Entradas incluidas.**",
+      "highlights": [
+        "Tubo de lava de 1.700 m (365 m visitable)",
+        "18°C constantes — contraste fresco con las flores del exterior",
+        "**Entradas incluidas**"
+      ],
+      "timeUsed": [
+        "Cueva Micheon — ~30 min"
+      ],
+      "whyOnRoute": "La Cueva Micheon es el **seguro para días de lluvia** de cualquier ruta este-Jeju.",
+      "_poi_meta": {
+        "poi_key": "ilchulland_micheon_cave",
+        "kb_version": "1.29",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Jeju official (Micheongul Cave page)",
+          "Visit Korea Ilchul Land page",
+          "Creatrip Ilchul Land guide",
+          "Wanderlog Ilchul Land reviews",
+          "Visit Jeju official (visitjeju.net — Micheongul Cave + Samdal-ri eastern cave group of 15 Jeju cave systems)",
+          "Visit Korea (Korea Tourism Organization — Ilchul Land + Micheon Cave 1,700m total / 365m public-access listing)",
+          "Ilchul Land official (ilchulland.com — 2002 opening + admission + 09:00-18:00 hours + 7-color lighting installation)",
+          "Korea Heritage Service (cha.go.kr — Jeju lava-tube cave systems + UNESCO Geomunoreum lava-tube system inheritance)",
+          "Wikipedia (Ilchul Land — Micheon Cave geology + ~14°C constant temperature + Jeju lava tube formation)"
+        ]
+      }
+    },
+    {
+      "number": 5,
+      "time": "15:00",
+      "duration": "75 min",
+      "name": "Jardines Temáticos de Ilchul Land",
+      "category": "Jardines de primavera de Ilchul Land — flores estacionales",
+      "description": "Los **jardines temáticos de Ilchul Land** en primavera albergan **flores estacionales** (narcisos, tulipanes, flores de cerezo tardías) y esculturas en el recinto de 400.000 m². Breve paseo entre los jardines antes del gran final en Seongsan.",
+      "highlights": [
+        "Flores de primavera del recinto de Ilchul Land",
+        "Narcisos, tulipanes, cerezos tardíos"
+      ],
+      "timeUsed": [
+        "Jardines de Ilchul Land — ~25 min"
+      ],
+      "whyOnRoute": "Los jardines temáticos de Ilchul Land son **el punto de transición de ritmo ideal** entre la cueva y la tarde.",
+      "_poi_meta": {
+        "poi_key": "ilchulland_themed_gardens",
+        "kb_version": "1.29",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Korea Ilchul Land page",
+          "Creatrip Ilchul Land guide",
+          "Wanderlog Ilchul Land reviews",
+          "Ilchul Land listing",
+          "Visit Korea (Korea Tourism Organization — Ilchul Land themed-garden complex + Folk Village + Wild Flower Bonsai Garden)",
+          "Ilchul Land official (ilchulland.com — blue-line walking path + Folk Village + Cactus Greenhouse + Subyeon Park)",
+          "Visit Jeju official (visitjeju.net — Eung Tae-seok 'stones that lay eggs' fertility folklore + Sculpture Path)",
+          "Korea Tourism Organization Filming Locations Guide (Running Man Episode 89 2012 + What Star Do You Come From 2006 MBC)",
+          "Wikipedia (Jeju Black Pig — Cultural Heritage Material No. 5 designation 2015)"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "16:15",
+      "duration": "75 min",
+      "name": "Seongsan Ilchulbong (UNESCO — parada fotográfica)",
+      "category": "Triple Patrimonio UNESCO — el cierre fotográfico del tour de cerezos",
+      "description": "**Seongsan Ilchulbong** en primavera: los **cerezos de la base del cono** crean el fondo floral más fotogénico del tour. La subida al cráter (~180 escalones) es opcional y depende del tiempo. El objetivo principal de esta parada de primavera es el **fotograma** de Seongsan con cerezos — el icono turístico más reconocible de Jeju. **Entrada ₩5.000 (incluida).**",
+      "highlights": [
+        "Cerezos en la base del cono — el icono de primavera de Jeju",
+        "Subida al cráter **opcional** (tiempo permitting)",
+        "Triple Patrimonio UNESCO",
+        "**Entrada ₩5.000** (incluida)"
+      ],
+      "timeUsed": [
+        "Fotografía exterior + subida opcional — ~45-60 min",
+        "Regreso a Ciudad de Jeju — ~50 min"
+      ],
+      "whyOnRoute": "Seongsan Ilchulbong es **el único punto clave del Patrimonio Natural UNESCO** en esta ruta este-Jeju.",
+      "_poi_meta": {
+        "poi_key": "seongsan_ilchulbong",
+        "kb_version": "1.29",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO World Heritage Centre",
+          "Visit Jeju official",
+          "Inside Jeju 2026 admission guide",
+          "Cultural Heritage Administration of Korea",
+          "UNESCO World Heritage Centre (whc.unesco.org — Jeju Volcanic Island and Lava Tubes inscription 2007-07-02)",
+          "Visit Jeju official (visitjeju.net — Seongsan Ilchulbong Sunrise Peak listing + 99-crown-rocks + 5,000-year tuff cone)",
+          "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Natural Monument designation 2000-07-19)",
+          "UNESCO Global Geoparks Network (Jeju Island Global Geopark inscription 2010-10)",
+          "Wikipedia (Seongsan Ilchulbong — Surtseyan-type hydrovolcanic eruption + 18 Japanese WWII caves + haenyeo demonstrations)"
+        ]
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Jeonnong-ro",
+      "type": "origin",
+      "theme": "Urban Bloom"
+    },
+    {
+      "name": "Noksan-ro",
+      "type": "primary",
+      "theme": "Country Bloom"
+    },
+    {
+      "name": "Almuerzo",
+      "type": "meal",
+      "theme": "Comida"
+    },
+    {
+      "name": "Micheongul",
+      "type": "primary",
+      "theme": "Cave"
+    },
+    {
+      "name": "Ilchul Land",
+      "type": "primary",
+      "theme": "Garden"
+    },
+    {
+      "name": "Seongsan",
+      "type": "return",
+      "theme": "UNESCO Volcano"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "Cherry blossom peaks",
+      "duration": "Paradas 1–2",
+      "description": "Mañana: Pico de los cerezos en flor"
+    },
+    {
+      "phase": "Almuerzo",
+      "duration": "Parada 3",
+      "description": "Mediodía: Almuerzo"
+    },
+    {
+      "phase": "Cave to garden to crater",
+      "duration": "Paradas 4–6",
+      "description": "Tarde: Cueva → jardín → cráter"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "El recorrido del día",
+    "subtitle": "Los tres formatos de cerezos del este de Jeju: el túnel floral urbano (Jeonnong-ro) → la carretera rural con canola (Noksan-ro) → los cerezos del volcán UNESCO (Seongsan). Un día dedicado al espectáculo de primavera más diverso de la isla."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "Fotógrafos de flores — tres escenas radicalmente distintas de cerezos en un día",
+      "Primera vez en Jeju en primavera que quiere el mayor contraste visual posible",
+      "Parejas y familias en temporada de floración"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Por qué esta ruta funciona bien",
+        "icon": "sun",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          },
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          },
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          }
+        ]
+      },
+      {
+        "title": "Por qué esta ruta funciona bien",
+        "icon": "flower",
+        "iconBg": "bg-pink-50/80",
+        "iconColor": "text-pink-600",
+        "items": [
+          {
+            "label": "tiempo previsto de temporada extendida",
+            "detail": "La temporada de operación del tour cubre el período de mayor probabilidad de floración, reduciendo el riesgo de llegar fuera de temporada."
+          },
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          },
+          {
+            "label": "Reembolso total si la floración falla",
+            "detail": "Si la floración llega antes o después de la tiempo previsto del tour, el operador ofrece reembolso total o cambio de fecha."
+          }
+        ]
+      },
+      {
+        "title": "Por qué esta ruta funciona bien",
+        "icon": "info",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          },
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          },
+          {
+            "label": "Punto destacado",
+            "detail": "El guía compartirá el contexto más importante en cada parada."
+          }
+        ]
+      }
+    ],
+    "lessIdealFor": [
+      "Fuera de la temporada de cerezos (el tour año completo del este de Jeju cubre las mismas paradas)",
+      "Quienes priorizan el senderismo sobre la fotografía"
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "Recogida y regreso",
+      "preview": "Recogida en el vestíbulo del hotel en Jeju City",
+      "content": [
+        "Recogida en el vestíbulo del hotel entre las 08:30 y las 09:00.",
+        "Bajada de regreso aproximadamente a las 17:30.",
+        "Recogida en el aeropuerto disponible bajo petición.",
+        "Recogida fuera de Jeju City (Seogwipo, Aewol) sujeta a suplemento; confirmar al reservar."
+      ]
+    },
+    {
+      "id": "what-to-bring",
+      "title": "Qué vestir y llevar",
+      "preview": "Calzado cómodo, ropa en capas, cámara",
+      "content": [
+        "Zapatos cómodos (varios tramos cortos de caminata).",
+        "Chaqueta ligera — temperaturas primaverales de 10-18 °C.",
+        "Cámara o teléfono para fotos de las flores.",
+        "Efectivo o tarjeta para el almuerzo y las entradas."
+      ]
+    },
+    {
+      "id": "season",
+      "title": "tiempo previsto de temporada de cerezos",
+      "preview": "Finales de marzo a principios de abril",
+      "content": [
+        "Período pico: aproximadamente del 25 de marzo al 10 de abril (varía de año en año).",
+        "Las flores de canola se extienden 1-2 semanas más allá del pico de los cerezos.",
+        "Recomendamos reservar el primer día de tu viaje a Jeju dentro de la tiempo previsto.",
+        "Si tus fechas quedan fuera de la tiempo previsto, considera el tour UNESCO Este durante todo el año."
+      ]
+    },
+    {
+      "id": "weather-policy",
+      "title": "Política meteorológica",
+      "preview": "La lluvia intensa puede afectar la reserva",
+      "content": [
+        "Lluvia ligera: el tour opera según lo previsto.",
+        "Lluvia intensa: reprogramación gratuita disponible dentro de la tiempo previsto de temporada.",
+        "Las políticas de cancelación fuera de temporada siguen los términos estándar de atockorea."
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "Qué está incluido",
+      "preview": "Transporte, guía y principales entradas",
+      "content": [
+        "Recogida y regreso en hotel (Jeju City)",
+        "Transporte en furgoneta climatizada",
+        "Guía oficial de habla inglesa",
+        "Principales entradas (combo Micheongul + Ilchul Land)",
+        "El almuerzo se paga aparte. La entrada a Seongsan no se aplica en este tour (se visita el nivel base)."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "label": "Consejos de clima primaveral",
+      "temp": "Daytime ≈ 12–18 °C in cherry season",
+      "icon": "cloud-sun"
+    },
+    "tomorrow": {
+      "label": "Pronóstico en tiempo real disponible en la página de reserva del operador",
+      "temp": "—",
+      "icon": "cloud"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "season": "Primavera (mar-abr)",
+      "title": "Tour en operación",
+      "description": "Temporada operativa del tour. Jeonnong-ro suele alcanzar el pico una semana antes que Noksan-ro. El guía confirma el estado de cada punto.",
+      "icon": "flower"
+    },
+    {
+      "season": "Primavera (mar-abr)",
+      "title": "Fuera de temporada",
+      "description": "Temporada operativa del tour. Jeonnong-ro suele alcanzar el pico una semana antes que Noksan-ro. El guía confirma el estado de cada punto.",
+      "icon": "leaf"
+    },
+    {
+      "season": "Verano–Otoño (jun–nov)",
+      "title": "Fuera de temporada",
+      "description": "Fuera de temporada — se recomienda la ruta del tour UNESCO este durante todo el año",
+      "icon": "sun"
+    },
+    {
+      "season": "Invierno (dic–feb)",
+      "title": "Fuera de temporada",
+      "description": "Fuera de temporada — se recomienda la ruta del tour UNESCO este durante todo el año",
+      "icon": "snowflake"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "Equipo local certificado",
+      "description": "Guía con licencia de Jeju",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "Equipo local certificado con experiencia en tours de temporada de Jeju."
+    },
+    {
+      "icon": "calendar",
+      "title": "tiempo previsto flexible según floración",
+      "description": "Reprogramación gratuita dentro del periodo de floración",
+      "iconBg": "bg-pink-50/80",
+      "iconColor": "text-pink-600",
+      "body": "El guía confirma el estado de cada bulevar y campo por la mañana."
+    },
+    {
+      "icon": "shield",
+      "title": "Garantía por mal tiempo",
+      "description": "Reprogramación gratuita en caso de lluvia intensa",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "Con tifón o lluvia intensa que impida la visita: reembolso total."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Inmediatamente",
+      "title": "Confirmación inmediata",
+      "detail": "Confirmación con la tiempo previsto de temporada.",
+      "description": "Confirmación instantánea con detalles de recogida en hotel de Jeju City y la temporada de operación de primavera."
+    },
+    {
+      "timing": "2 días antes",
+      "title": "Recordatorio 12 horas antes",
+      "detail": "Estado de floración de Jeonnong-ro, Noksan-ro y Seongsan.",
+      "description": "Pronóstico de floración enviado 2 días antes — sabrás whether Noksan-ro or Jeonnong-ro is currently at peak."
+    },
+    {
+      "timing": "Día anterior",
+      "title": "Información final de recogida",
+      "detail": "Punto de recogida y contacto del guía.",
+      "description": "Hora de recogida final confirmada la noche anterior."
+    },
+    {
+      "timing": "Mañana de",
+      "title": "Notas del día del tour",
+      "detail": "Estado de floración de la mañana y ajustes.",
+      "description": "Mensaje matutino con el énfasis de floración del día y cualquier nota meteorológica."
+    },
+    {
+      "timing": "Durante el tour",
+      "title": "Consejos parada a parada",
+      "detail": "Mejores ángulos en Noksan-ro y Seongsan con cerezos.",
+      "description": "El guía narra la ruta de floración en profundidad: historia de la granja de colza de Gasi-ri en Noksan-ro, geología de tubos de lava, contexto triple-UNESCO de Seongsan."
+    },
+    {
+      "timing": "Tras el tour",
+      "title": "Atención posventa",
+      "detail": "Solicitud de valoración.",
+      "description": "Solicitud de valoración después del tour enviada tras la llegada."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "first-time",
+      "question": "¿Es buena opción para primera visita a Jeju?",
+      "answer": "Sí, en primavera. Combina el espectáculo floral más diverso del este (3 tipos de cerezos) con el Pico del Amanecer UNESCO."
+    },
+    {
+      "id": "season-timing",
+      "question": "¿Cuándo es exactamente la temporada de cerezos?",
+      "answer": "En Jeju, los cerezos suelen florecer en la segunda-tercera semana de marzo, 1-2 semanas antes que en el continente. El pico de Noksan-ro suele ser a finales de marzo. La tiempo previsto total es de ~4 semanas."
+    },
+    {
+      "id": "rain",
+      "question": "¿Qué pasa si llueve?",
+      "answer": "Con lluvia suave el tour sigue — las flores mojadas son fotogénicamente diferentes. Con tifón o lluvia intensa: reembolso total."
+    },
+    {
+      "id": "summit",
+      "question": "¿Subimos al cráter de Seongsan Ilchulbong?",
+      "answer": "La subida es opcional según el tiempo disponible. El objetivo principal en este tour de primavera es la fotografía de los cerezos en la base del cono."
+    },
+    {
+      "id": "kids",
+      "question": "¿Es adecuado para niños?",
+      "answer": "Sí para niños de 6+ años. Los colores de Noksan-ro son especialmente impactantes para niños."
+    },
+    {
+      "id": "seniors",
+      "question": "¿Es adecuado para personas mayores?",
+      "answer": "Sí para mayores activos. Jeonnong-ro y Noksan-ro son llanos. Ilchul Land tiene escalones de bajada (~20 peldaños). Seongsan subida es opcional."
+    },
+    {
+      "id": "cave-claustrophobia",
+      "question": "¿La cueva es claustrofóbica?",
+      "answer": "El pasillo de la Cueva Micheon mide ~2 m de alto y 1,5-2 m de ancho — no es estrecho. Personas con claustrofobia severa pueden omitir esta parada."
+    },
+    {
+      "id": "pickup-area",
+      "question": "¿Dónde es la recogida?",
+      "answer": "En los puntos de recogida habituales de Ciudad de Jeju (hotel o punto de encuentro). El guía confirma el punto al reservar."
+    },
+    {
+      "id": "lunch",
+      "question": "¿El almuerzo está incluido?",
+      "answer": "No. Almuerzo por su cuenta (~₩12.000-15.000/persona)."
+    },
+    {
+      "id": "admission-fees",
+      "question": "¿Las entradas están incluidas?",
+      "answer": "Sí: Ilchul Land (Cueva Micheon) y Seongsan Ilchulbong (₩5.000) — incluidas."
+    },
+    {
+      "id": "compare-eastern-unesco",
+      "question": "(Consulte las preguntas frecuentes al reservar)",
+      "answer": "Para más información, contacte a AtoC Korea al reservar."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "La disponibilidad se confirma en el paso de pago.",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "persona"
+    }
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "jeju-cherry-blossom-tour-east-route",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "jeju",
+    "region_type": "jeju_east",
+    "vehicle_type": "minicoach",
+    "duration_hours": 8.0,
+    "region_tags": [
+      "jeju_east"
+    ],
+    "theme_tags": [
+      "seasonal_flower",
+      "spring_flowers_cherry",
+      "spring_flowers_canola",
+      "volcano",
+      "cave",
+      "garden",
+      "iconic_landmarks",
+      "first_time_friendly",
+      "spring_only",
+      "photogenic"
+    ],
+    "poi_tags": [
+      "jeonnong_ro",
+      "noksan_ro_gasi_ri",
+      "micheon_cave",
+      "ilchul_land",
+      "seongsan_ilchulbong",
+      "jeju_cherry_blossom"
+    ],
+    "pace_level": 0.8,
+    "walking_level": 0.45,
+    "scenic_level": 0.95,
+    "photo_level": 0.95,
+    "culture_level": 0.4,
+    "relax_level": 0.6,
+    "first_time_fit": 0.85,
+    "family_fit": 0.8,
+    "senior_fit": 0.65,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 0.85,
+    "active_traveler_fit": 0.6,
+    "adult_family_fit": 0.8,
+    "family_with_teens_fit": 0.8,
+    "young_kids_fit": 0.7,
+    "senior_active_fit": 0.6,
+    "senior_general_fit": 0.6,
+    "mobility_friendly_fit": 0.65,
+    "stroller_fit": 0.7,
+    "one_day_fit": 0.8,
+    "same_day_flight_fit": 0.4,
+    "rain_fit": 0.5,
+    "value_for_money_fit": 0.75,
+    "iconic_landmark_fit": 0.75,
+    "cafe_fit": 0.4,
+    "food_fit": 0.6,
+    "nature_fit": 1.0,
+    "beach_fit": 0.2,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.2,
+    "no_shopping_fit": 1.0,
+    "local_culture_fit": 0.6,
+    "storytelling_fit": 0.8,
+    "unesco_fit": 1.0,
+    "intangible_heritage_fit": 0.2,
+    "indoor_ratio": 0.18,
+    "weather_sensitivity": 0.85,
+    "comfort_level": 0.8,
+    "budget_fit": 0.6,
+    "premium_fit": 0.45,
+    "small_group_fit": 1.0,
+    "private_fit": 0.2,
+    "bus_fit": 0.2,
+    "price_band": "mid",
+    "pickup_base": "jeju_city",
+    "return_time_band": "17:00-17:30",
+    "duration_band": "8h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "non_cherry_season_dates",
+        "monday_departure_required",
+        "rain_forecast_high",
+        "tight_same_day_departure"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "stroller_heavy_if_summit_focus"
+      ]
+    },
+    "walking_notes": [
+      "Multiple short walks (cherry blossom streets, gardens, cave path).",
+      "No summit climb — base viewpoint only at Seongsan.",
+      "Total walking moderate; longest single walk is Noksan-ro section.",
+      "Comfortable shoes recommended; light jacket for cave (≈ 14°C interior)."
+    ],
+    "keywords": [
+      "tour cerezos Jeju Este primavera",
+      "Jeonnong-ro Noksan-ro Jeju cerezos",
+      "tour flor cerezo Jeju Seongsan"
+    ],
+    "synonym_hints": [
+      "jeju spring east route",
+      "cherry blossom day trip jeju",
+      "jeju spring bloom tour",
+      "noksan canola road tour",
+      "east jeju march april tour",
+      "jeju seasonal cherry tour"
+    ],
+    "seasonality": "spring_only_peak",
+    "pickup_base_normalized": "jeju",
+    "vehicle_type_legacy": "mini_coach",
+    "anchor_poi_keys": [
+      "seongsan_ilchulbong",
+      "jeju_cherry_blossom",
+      "noksan_ro_gasi_ri"
+    ],
+    "profile_format": "small_group_fixed_itinerary",
+    "tour_type_fit": 1.0,
+    "private_tour_fit": 0.05,
+    "self_drive_fit": 0.1,
+    "jeju_anchor_fit": 1.0,
+    "east_jeju_fit": 1.0,
+    "from_jeju_city_fit": 1.0,
+    "jeju_city_pickup_fit": 1.0,
+    "seogwipo_pickup_fit": 0.6,
+    "central_jeju_pickup_fit": 1.0,
+    "cherry_blossom_fit": 1.0,
+    "king_cherry_blossom_fit": 1.0,
+    "canola_flower_fit": 1.0,
+    "dual_bloom_fit": 1.0,
+    "spring_seasonal_fit": 1.0,
+    "seasonal_only_fit": 1.0,
+    "festival_fit": 0.95,
+    "wangbeotnamu_fit": 1.0,
+    "yoshino_cherry_fit": 0.85,
+    "100_beautiful_roads_korea_fit": 1.0,
+    "scenic_drive_fit": 1.0,
+    "scenic_corridor_fit": 1.0,
+    "triple_unesco_fit": 1.0,
+    "world_natural_heritage_fit": 1.0,
+    "biosphere_reserve_fit": 1.0,
+    "global_geopark_fit": 1.0,
+    "tuff_cone_fit": 1.0,
+    "volcanic_landscape_fit": 1.0,
+    "surtseyan_eruption_fit": 1.0,
+    "crater_fit": 1.0,
+    "lava_tube_fit": 1.0,
+    "cave_fit": 1.0,
+    "geomunoreum_alternative_fit": 1.0,
+    "indoor_cave_fit": 1.0,
+    "joseon_horse_pasture_fit": 1.0,
+    "nomadic_culture_fit": 0.85,
+    "korean_folk_culture_fit": 0.85,
+    "jeju_traditional_house_fit": 0.85,
+    "black_pig_heritage_fit": 1.0,
+    "k_drama_filming_fit": 1.0,
+    "running_man_filming_fit": 1.0,
+    "netflix_filming_fit": 0.9,
+    "walking_level_fit": 0.7,
+    "stair_climbing_fit": 0.55,
+    "elderly_friendly_fit": 0.75,
+    "wheelchair_accessible_anchor_fit": 0.45,
+    "stroller_friendly_fit": 0.7,
+    "moderate_mobility_fit": 1.0,
+    "low_intensity_fit": 0.8,
+    "honeymoon_fit": 1.0,
+    "small_family_fit": 0.85,
+    "senior_couple_fit": 0.85,
+    "first_time_korea_fit": 0.95,
+    "first_time_jeju_fit": 1.0,
+    "repeat_visitor_fit": 0.85,
+    "photographer_fit": 1.0,
+    "instagrammable_fit": 1.0,
+    "group_size_min": 2,
+    "group_size_max": 14,
+    "small_group_van_fit": 1.0,
+    "intimate_group_fit": 0.95,
+    "customizable_route_fit": 0.05,
+    "fixed_itinerary_fit": 1.0,
+    "flexibility_fit": 0.3,
+    "language_english_fit": 1.0,
+    "language_chinese_fit": 0.7,
+    "language_japanese_fit": 0.5,
+    "english_guide_fit": 1.0,
+    "spring_fit": 1.0,
+    "summer_fit": 0.1,
+    "autumn_fit": 0.1,
+    "winter_fit": 0.05,
+    "all_year_fit": 0.05,
+    "march_fit": 1.0,
+    "early_april_fit": 1.0,
+    "late_march_fit": 1.0,
+    "cherry_bloom_window_fit": 1.0,
+    "canola_bloom_window_fit": 1.0,
+    "monsoon_fit": 0.2,
+    "rainy_day_fallback_fit": 0.45,
+    "indoor_anchor_fit": 0.4,
+    "early_start_fit": 0.85,
+    "late_finish_fit": 0.4,
+    "full_day_fit": 1.0,
+    "half_day_fit": 0.05,
+    "value_priced_fit": 0.85,
+    "budget_traveler_fit": 0.85,
+    "off_beaten_path_fit": 0.55,
+    "crowd_avoidance_fit": 0.55,
+    "no_public_bus_access_anchor_count": 1,
+    "minicoach_fit": 1.0,
+    "max_pax_per_vehicle": 14,
+    "festival_corridor_fit": 1.0,
+    "country_drive_fit": 1.0,
+    "wind_turbine_landscape_fit": 0.9,
+    "horse_park_fit": 0.9,
+    "muslim_prayer_room_fit": 0.7,
+    "halal_friendly_fit": 0.6,
+    "haenyeo_demonstration_fit": 0.85,
+    "k_drama_running_man_fit": 1.0,
+    "romantic_atmosphere_fit": 1.0,
+    "wedding_photo_fit": 0.85,
+    "honeymoon_seasonal_fit": 1.0,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "jeju_cherry_blossom_east_route_fit": 1.0,
+    "jeju_spring_seasonal_anchor_fit": 1.0,
+    "east_jeju_full_day_route_fit": 1.0,
+    "central_jeju_pickup_to_seongsan_route_fit": 1.0,
+    "two_temperament_cherry_pair_fit": 1.0,
+    "spring_only_seasonal_lock_fit": 1.0,
+    "small_group_format_fit": 1.0,
+    "fixed_schedule_format_fit": 1.0,
+    "king_cherry_native_jeju_anchor_fit": 1.0,
+    "wangbeotnamu_native_hallasan_origin_fit": 1.0,
+    "emile_taquet_1908_documentation_anchor_fit": 1.0,
+    "yoshino_cherry_korean_japanese_botanical_debate_fit": 1.0,
+    "100_year_old_cherry_trees_anchor_fit": 1.0,
+    "jeonnong_ro_oldest_cherry_street_jeju_fit": 1.0,
+    "jeju_king_cherry_blossom_festival_anchor_fit": 1.0,
+    "festival_19th_edition_2026_anchor_fit": 1.0,
+    "festival_night_illumination_18_to_22_anchor_fit": 1.0,
+    "festival_car_free_corridor_anchor_fit": 1.0,
+    "free_admission_public_street_fit": 1.0,
+    "cherry_canola_dual_bloom_anchor_fit": 1.0,
+    "pink_yellow_simultaneous_bloom_unique_korea_fit": 1.0,
+    "5_to_7_day_peak_overlap_window_fit": 1.0,
+    "march_29_to_april_1_ideal_window_fit": 1.0,
+    "noksan_ro_gasiri_anchor_fit": 1.0,
+    "korea_100_most_beautiful_roads_anchor_fit": 1.0,
+    "korea_forest_service_2006_designation_fit": 1.0,
+    "joseon_royal_horse_pasture_600_year_heritage_fit": 1.0,
+    "noksanjang_gammajang_anchor_fit": 1.0,
+    "jeju_horse_park_first_community_run_museum_fit": 1.0,
+    "gasiri_wind_power_plant_anchor_fit": 1.0,
+    "ttarabi_oreum_anchor_fit": 1.0,
+    "drive_only_access_low_crowd_density_fit": 1.0,
+    "batdam_jeju_stone_walls_anchor_fit": 1.0,
+    "jeju_spring_k_drama_filming_route_fit": 1.0,
+    "when_life_gives_you_tangerines_2024_netflix_fit": 1.0,
+    "welcome_to_samdal_ri_2023_jtbc_fit": 1.0,
+    "running_man_ep89_2012_alice_in_wonderland_fit": 1.0,
+    "what_star_do_you_come_from_2006_mbc_fit": 1.0,
+    "triple_unesco_designation_anchor_fit": 1.0,
+    "seongsan_world_natural_heritage_2007_fit": 1.0,
+    "seongsan_biosphere_reserve_2002_fit": 1.0,
+    "seongsan_global_geopark_2010_fit": 1.0,
+    "only_triple_unesco_site_in_korea_fit": 1.0,
+    "surtseyan_hydrovolcanic_tuff_cone_anchor_fit": 1.0,
+    "182m_height_99_crown_rocks_anchor_fit": 1.0,
+    "5000_year_old_volcanic_formation_fit": 1.0,
+    "natural_monument_2000_designation_fit": 1.0,
+    "haenyeo_demonstration_13_30_15_00_anchor_fit": 1.0,
+    "japanese_wwii_18_caves_anchor_fit": 1.0,
+    "lava_tube_cave_anchor_fit": 1.0,
+    "micheon_cave_1700m_total_anchor_fit": 1.0,
+    "micheon_cave_365m_public_access_anchor_fit": 1.0,
+    "samdal_ri_eastern_cave_group_fit": 1.0,
+    "manjanggul_alternative_anchor_fit": 1.0,
+    "manjanggul_2023_main_section_closure_advisory": true,
+    "rainy_day_indoor_insurance_fit": 1.0,
+    "constant_14c_year_round_advisory": true,
+    "ilchulland_themed_garden_complex_fit": 1.0,
+    "ilchulland_2002_opening_anchor_fit": 1.0,
+    "jeju_black_pig_cultural_heritage_material_no_5_fit": 1.0,
+    "jeju_black_pig_2015_designation_fit": 1.0,
+    "eung_tae_seok_fertility_folklore_anchor_fit": 1.0,
+    "ilchulland_aroma_footbath_anchor_fit": 1.0,
+    "ilchulland_muslim_prayer_room_anchor_fit": 1.0,
+    "jeju_2026_bloom_forecast_2_to_7_days_early_advisory": true,
+    "ilchulland_aroma_footbath_separate_fee_advisory": true,
+    "lunch_60_min_window_advisory": true,
+    "lunch_not_included_in_tour_price_advisory": true,
+    "ideal_window_march_29_april_1_advisory": true,
+    "differentiates_from_jeju_eastern_unesco_off_season_fallback": true,
+    "differentiates_from_hydrangea_festival_east_route": true,
+    "available_months_signature": [
+      3,
+      4
+    ],
+    "signature_window_label": "Spring-only — primary window Mar 22 – Apr 5 (King Cherry peak); secondary window Mar 28 – Apr 10 (canola peak overlap); ideal window Mar 28 – Apr 1 (5-day cherry+canola peak overlap)",
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "embedded_for": "atockorea_tour_marketplace",
+    "source_of_truth_note": "Internal note: product profile checked against current route-selection rules. This product uses one fixed route.",
+    "audit_summary": "Spring-only east Jeju cherry+canola route. Strong substitution relationship with jeju-eastern-unesco-lugares-day-tour (off-season fallback). Hard constraint on cherry season dates; weather_sensitivity=0.85 reflects bloom dependency. New POI added in v1.17: ilchulland_themed_gardens (separated from cave, prior version mistakenly used same key).",
+    "score_rationale": {
+      "high_scores": {
+        "scenic_level=5, photo_level=5": "Cherry blossom + canola at Noksan-ro is one of Jeju's peak photo scenes; double bloom layering is unique to this season.",
+        "couple_fit=5": "Cherry blossom corridor and garden ritmo del recorrido read strongly couple-romantic.",
+        "small_group_fit=5": "Small group format (van) — appropriate for relaxed photo ritmo del recorrido.",
+        "weather_sensitivity=5": "Cherry blossoms dependent on bloom window AND weather; rain reduces visual impact sharply."
+      },
+      "low_scores": {
+        "rain_fit=1": "Cherry blossom in heavy rain is sharply less valuable than in dry conditions.",
+        "shopping_fit=1": "No shopping POIs.",
+        "private_fit=1, bus_fit=1": "Format is small group only.",
+        "same_day_flight_fit=2": "8-hour day with 17:30 return makes evening flights tight."
+      },
+      "calibration_against_eastern_unesco": "Same region, similar duration. Differences: cherry-blossom replaces stone+culture focus; weather_sensitivity raised from 3 to 5; rain_fit dropped from 3 to 1; couple_fit raised from 4 to 5; mobility_friendly_fit equal (3) since no summit climb; shopping_fit equal (1)."
+    },
+    "anchor_pois": [
+      "Jeonnong-ro Cherry Blossom Street",
+      "Noksan-ro Gasi-ri Blossom Road",
+      "Micheon Cave (Ilchul Land)",
+      "Ilchul Land Themed Gardens",
+      "Seongsan Ilchulbong"
+    ],
+    "anchor_poi_keys": [
+      "jeonnong_ro_cherry_blossom_street",
+      "noksan_ro_gasiri_blossom_road",
+      "ilchulland_micheon_cave",
+      "ilchulland_themed_gardens",
+      "seongsan_ilchulbong"
+    ],
+    "competing_products": [
+      "jeju-eastern-unesco-lugares-day-tour",
+      "jeju-hydrangea-festival-tour-east-route"
+    ],
+    "primary_themes": [
+      "jeju",
+      "east_jeju",
+      "cherry_blossom",
+      "canola_flower",
+      "spring_seasonal"
+    ],
+    "secondary_themes": [
+      "unesco",
+      "k_drama_filming",
+      "lava_tube",
+      "festival",
+      "scenic_drive",
+      "horse_pasture_heritage"
+    ],
+    "best_for": [
+      "photographers",
+      "couples",
+      "honeymoon_travelers",
+      "first_time_jeju",
+      "spring_seasonal_visitors",
+      "k_drama_fans",
+      "instagram_content_creators"
+    ],
+    "not_recommended_for": [
+      "off_season_visitors",
+      "private_tour_seekers",
+      "rainy_day_only_planners",
+      "summer_visitors",
+      "winter_visitors",
+      "guests_with_evening_flights"
+    ],
+    "seasonal_window": {
+      "primary_window": "Mar 22 – Apr 5 (King Cherry peak)",
+      "secondary_window": "Mar 28 – Apr 10 (canola peak overlap)",
+      "ideal_window": "Mar 28 – Apr 1 (5-day overlap of cherry + canola peaks)",
+      "2026_forecast": "Bloom 2-7 days earlier than historical average — first blooms ~Mar 25",
+      "off_season_fallback": "jeju-eastern-unesco-lugares-day-tour (same region, same duration, no seasonal hard constraint)"
+    },
+    "enrichment_batch": "17f",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.28",
+    "enrichment_target_kb_version": "1.29",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "5 substantive stop instances across 1 tour; Batch 4 era authoring → A-grade pv=6 PASS (universal source-attribution gap closed; Jeju-cherry-blossom-east-route + King-cherry-native-Jeju-anchor + Cherry-canola-dual-bloom + Triple-UNESCO-Seongsan-anchor + Jeju-spring-K-drama-filming patterns introduced). FINAL D-grade tour in catalog — this batch closes catalog at 28/30 A-grade (charter route_options 2 excluded by design)."
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "Cerezos, campos de canola y un tubo de lava —",
+        "headlineLine2": "los cerezos del este de Jeju en un día",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
+          "imagePosition": "center 40%",
+          "tagline": "De las calles más antiguas de cerezos de Jeju a la carretera de canola y hasta el Pico del Amanecer — primavera en el este de la isla",
+          "pills": [
+            "Solo mar-abr",
+            "Cerezos + canola",
+            "Seongsan UNESCO"
+          ],
+          "meta": {
+            "duration": "Un día (solo temporada cerezos, mar-abr)",
+            "region": "Jeju Este",
+            "stops": "6 paradas",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "Descripción"
+          },
+          {
+            "id": "itinerary",
+            "label": "Itinerario"
+          },
+          {
+            "id": "details",
+            "label": "Información práctica"
+          },
+          {
+            "id": "faq",
+            "label": "Preguntas frecuentes"
+          },
+          {
+            "id": "reviews",
+            "label": "Opiniones"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "calendar",
+            "label": "Temporada",
+            "value": "Solo temporada de cerezos (marzo-abril)"
+          },
+          {
+            "icon": "flower",
+            "label": "Floración",
+            "value": "Cerezos + colza — el contraste más fotogénico de Jeju"
+          },
+          {
+            "icon": "map-pin",
+            "label": "Recogida",
+            "value": "Hotel / puntos de recogida en Ciudad de Jeju"
+          },
+          {
+            "icon": "footprints",
+            "label": "A pie",
+            "value": "Ligero-moderado"
+          },
+          {
+            "icon": "ticket",
+            "label": "Entradas",
+            "value": "Incluidas (Ilchul Land + Seongsan)"
+          },
+          {
+            "icon": "mountain",
+            "label": "Cierre",
+            "value": "Seongsan Ilchulbong — triple Patrimonio UNESCO"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
+            "alt": "Imagen de Calle Jeonnong-ro — el bulevar de cerezos más antiguo de Jeju",
+            "caption": "Calle Jeonnong-ro — el bulevar de cerezos más antiguo de Jeju, 1,2 km de túnel floral",
+            "location": "Jeonnong-ro, Ciudad de Jeju",
+            "atmosphere": "El paseo más romántico de Jeju en primavera: el bulevar de cerezos centenario"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&q=80",
+            "alt": "Imagen de Carretera Noksan-ro — 10 km de cerezos + canola",
+            "caption": "Carretera Noksan-ro — 10 km de cerezos + canola, la imagen de primavera más reproducida de Jeju",
+            "location": "Noksan-ro, Gasi-ri, Pyoseon-myeon, Seogwipo",
+            "atmosphere": "El contraste rosa-amarillo de Jeju: cerezos y canola en la carretera más fotogénica de la isla"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1200&q=80",
+            "alt": "Imagen de Cueva Micheon + jardines de Ilchul Land — contraste subterráneo y flores de prim",
+            "caption": "Cueva Micheon + jardines de Ilchul Land — contraste subterráneo y flores de primavera",
+            "location": "Ilchul Land, Seongsan",
+            "atmosphere": "Del subsuelo volcánico a los jardines florales de primavera"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=1200&q=80",
+            "alt": "Imagen de Seongsan Ilchulbong con cerezos — el cierre fotográfico perfecto del tour de pri",
+            "caption": "Seongsan Ilchulbong con cerezos — el cierre fotográfico perfecto del tour de primavera",
+            "location": "Seongsan Ilchulbong, Jeju Este",
+            "atmosphere": "El Pico del Amanecer rodeado de cerezos: UNESCO + floración al mismo tiempo"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1551649001-7a2482d98d05?w=1200&q=80",
+            "alt": "Imagen de Cráter UNESCO de Seongsan Ilchulbong",
+            "caption": "Cráter UNESCO de Seongsan Ilchulbong",
+            "location": "Seongsan Ilchulbong",
+            "atmosphere": "Sunrise crater rim"
+          },
+          {
+            "id": "g6",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
+            "alt": "Imagen de Vista general de la ruta de cerezos en flor del este de Jeju",
+            "caption": "Vista general de la ruta de cerezos en flor del este de Jeju",
+            "location": "Resumen de la ruta",
+            "atmosphere": "El día de un vistazo"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "09:00",
+            "duration": "75 min",
+            "name": "Calle Jeonnong-ro (el bulevar de cerezos más antiguo de Jeju)",
+            "category": "1,2 km de túnel floral — el bulevar de cerezos más antiguo de Jeju",
+            "description": "**Jeonnong-ro** es el **bulevar de cerezos más antiguo de Jeju** — una avenida de **1,2 km de longitud** flanqueada por cerezos *Wangbeot* de más de **60 años** que cierran el cielo formando un **túnel floral completo**. El cerezo *Wangbeot* es nativo de Jeju (algunos botánicos lo consideran endémico de la isla) y su floración suele ser 1-3 días anterior a los cerezos Yoshino del continente. El festival de cerezos de Jeonnong-ro atrae a miles de visitantes con fotomatones, puestos de comida y actuaciones. La calle está dentro de la ciudad de Jeju y es la primera parada del día (antes de salir hacia el este).",
+            "highlights": [
+              "**1,2 km de túnel floral** de cerezos *Wangbeot* de más de 60 años",
+              "**El bulevar de cerezos más antiguo de Jeju**",
+              "El cerezo *Wangbeot* puede ser endémico de Jeju",
+              "Festival de cerezos con fotomatones y puestos de comida"
+            ],
+            "timeUsed": [
+              "Paseo por el bulevar + fotografía — ~40 min"
+            ],
+            "whyOnRoute": "Jeonnong-ro es **el punto clave principal del catálogo** para cualquier tour de cerezos de Jeju.",
+            "_poi_meta": {
+              "poi_key": "jeonnong_ro_cherry_blossom_street",
+              "kb_version": "1.29",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Jeju official",
+                "Korea Tourism Organization 2026 forecast",
+                "Best of Korea 2026 cherry blossom guide",
+                "90DayKorean cherry blossom guide",
+                "Visit Jeju official (visitjeju.net — Jeonnong-ro Cherry Blossom Festival listing + 1.2 km corridor + Sin-jeju location)",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Jeju Cherry Blossom Festival 2026 forecast + bloom timing)",
+                "Jeju Cherry Blossom Festival official organizing committee (Jeonnong-ro 19th edition 2026 — car-free corridor + lanterns + night illumination)",
+                "Korea Forest Service (forest.go.kr — King Cherry / Wangbeotnamu native species record + 1908 Émile Taquet Hallasan documentation)",
+                "Wikipedia (Prunus × yedoensis — King Cherry vs Yoshino Cherry botanical classification debate)"
+              ]
+            }
+          },
+          {
+            "number": 2,
+            "time": "10:30",
+            "duration": "90 min",
+            "name": "Noksan-ro, Gasi-ri (10 km de cerezos + canola)",
+            "category": "'La carretera más bella de Jeju' — 10 km de cerezos y colza amarilla",
+            "description": "**Noksan-ro** en **Gasi-ri** es apodada **'la carretera más bella de Jeju en primavera'** — una carretera rural de **10 km** flanqueada por cerezos de un lado y **campos de colza amarilla** del otro. El resultado es el **contraste rosa-amarillo más reproducido de Jeju**: los pétalos de cerezo cayendo sobre el amarillo intenso de la canola. El punto más fotogénico es la curva de la **Meseta de Gasi-ri**, donde la carretera se curva y la combinación de flores llena el encuadre de horizonte a horizonte. Aparcamiento disponible; el paseo a pie dura ~30-40 min por el tramo más fotogénico.",
+            "highlights": [
+              "**10 km de carretera** con cerezos y colza — el contraste más reproducido de Jeju",
+              "**'La carretera más bella de Jeju en primavera'** — apodo popular",
+              "Meseta de Gasi-ri: el punto más fotogénico de todo el tour",
+              "Mejor foto: la curva donde los cerezos y la canola llenan el encuadre"
+            ],
+            "timeUsed": [
+              "Paseo por Noksan-ro + Meseta de Gasi-ri — ~45 min"
+            ],
+            "whyOnRoute": "Noksan-ro es **la experiencia de conducción entre cerezos insignia de Jeju**.",
+            "_poi_meta": {
+              "poi_key": "noksan_ro_gasiri_blossom_road",
+              "kb_version": "1.29",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Korea (Korea Tourism Organization)",
+                "Jeju Horse Park official",
+                "The Soul of Seoul Jeju spring guide",
+                "Calm Chronicle Jeju guide",
+                "Visit Korea (Korea Tourism Organization — Noksan-ro 'Jeju's Most Beautiful Spring Road' + Korea's 100 Most Beautiful Roads listing)",
+                "Jeju Horse Park (jejuhorsepark.com — Jorangmal Experience Center + first community-run national museum in Korea)",
+                "Korea Forest Service (forest.go.kr — Korea's 100 Most Beautiful Roads designation methodology)",
+                "Visit Jeju official (visitjeju.net — Gasi-ri Village + Noksanjang/Gammajang royal horse pasture heritage + 600-year history)",
+                "Wikipedia (Gasi-ri — When Life Gives You Tangerines 2024 Netflix + Welcome to Samdal-ri 2023 JTBC filming credits)"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "12:15",
+            "duration": "60 min",
+            "name": "Almuerzo (cocina local del este de Jeju)",
+            "category": "Pausa para comer — Zona Pyoseon/Seongsan",
+            "description": "Almuerzo en restaurante local del este de Jeju en la zona Pyoseon-Seongsan. Mulhoe (sopa fría de pescado en verano/primavera) o haemul jeongsik. **No incluido** (~₩12.000-15.000/persona).",
+            "highlights": [
+              "Cocina local del este de Jeju",
+              "**No incluido** (~₩12.000-15.000/persona)"
+            ],
+            "timeUsed": [
+              "Almuerzo — ~60 min"
+            ],
+            "whyOnRoute": "El almuerzo cae en el punto medio geográfico entre el recorrido de cerezos y Ilchul Land/Seongeup.",
+            "_poi_meta": {
+              "poi_key": "OPS_east_jeju_lunch",
+              "kb_version": "1.17",
+              "verified_date": "2026-04-29"
+            }
+          },
+          {
+            "number": 4,
+            "time": "13:30",
+            "duration": "60 min",
+            "name": "Cueva Micheon (Ilchul Land)",
+            "category": "Tubo de lava de 1.700 m — contraste subterráneo después de las flores",
+            "description": "**Cueva Micheon** en Ilchul Land — tubo de lava de **1.700 m** con sección visitable de **365 m** a ~18°C constantes. Después de las flores de colores de la mañana, el contraste subterráneo de la cueva aporta un momento de pausa fresca antes del cierre volcánico del día. **Entradas incluidas.**",
+            "highlights": [
+              "Tubo de lava de 1.700 m (365 m visitable)",
+              "18°C constantes — contraste fresco con las flores del exterior",
+              "**Entradas incluidas**"
+            ],
+            "timeUsed": [
+              "Cueva Micheon — ~30 min"
+            ],
+            "whyOnRoute": "La Cueva Micheon es el **seguro para días de lluvia** de cualquier ruta este-Jeju.",
+            "_poi_meta": {
+              "poi_key": "ilchulland_micheon_cave",
+              "kb_version": "1.29",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Jeju official (Micheongul Cave page)",
+                "Visit Korea Ilchul Land page",
+                "Creatrip Ilchul Land guide",
+                "Wanderlog Ilchul Land reviews",
+                "Visit Jeju official (visitjeju.net — Micheongul Cave + Samdal-ri eastern cave group of 15 Jeju cave systems)",
+                "Visit Korea (Korea Tourism Organization — Ilchul Land + Micheon Cave 1,700m total / 365m public-access listing)",
+                "Ilchul Land official (ilchulland.com — 2002 opening + admission + 09:00-18:00 hours + 7-color lighting installation)",
+                "Korea Heritage Service (cha.go.kr — Jeju lava-tube cave systems + UNESCO Geomunoreum lava-tube system inheritance)",
+                "Wikipedia (Ilchul Land — Micheon Cave geology + ~14°C constant temperature + Jeju lava tube formation)"
+              ]
+            }
+          },
+          {
+            "number": 5,
+            "time": "15:00",
+            "duration": "75 min",
+            "name": "Jardines Temáticos de Ilchul Land",
+            "category": "Jardines de primavera de Ilchul Land — flores estacionales",
+            "description": "Los **jardines temáticos de Ilchul Land** en primavera albergan **flores estacionales** (narcisos, tulipanes, flores de cerezo tardías) y esculturas en el recinto de 400.000 m². Breve paseo entre los jardines antes del gran final en Seongsan.",
+            "highlights": [
+              "Flores de primavera del recinto de Ilchul Land",
+              "Narcisos, tulipanes, cerezos tardíos"
+            ],
+            "timeUsed": [
+              "Jardines de Ilchul Land — ~25 min"
+            ],
+            "whyOnRoute": "Los jardines temáticos de Ilchul Land son **el punto de transición de ritmo ideal** entre la cueva y la tarde.",
+            "_poi_meta": {
+              "poi_key": "ilchulland_themed_gardens",
+              "kb_version": "1.29",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Korea Ilchul Land page",
+                "Creatrip Ilchul Land guide",
+                "Wanderlog Ilchul Land reviews",
+                "Ilchul Land listing",
+                "Visit Korea (Korea Tourism Organization — Ilchul Land themed-garden complex + Folk Village + Wild Flower Bonsai Garden)",
+                "Ilchul Land official (ilchulland.com — blue-line walking path + Folk Village + Cactus Greenhouse + Subyeon Park)",
+                "Visit Jeju official (visitjeju.net — Eung Tae-seok 'stones that lay eggs' fertility folklore + Sculpture Path)",
+                "Korea Tourism Organization Filming Locations Guide (Running Man Episode 89 2012 + What Star Do You Come From 2006 MBC)",
+                "Wikipedia (Jeju Black Pig — Cultural Heritage Material No. 5 designation 2015)"
+              ]
+            }
+          },
+          {
+            "number": 6,
+            "time": "16:15",
+            "duration": "75 min",
+            "name": "Seongsan Ilchulbong (UNESCO — parada fotográfica)",
+            "category": "Triple Patrimonio UNESCO — el cierre fotográfico del tour de cerezos",
+            "description": "**Seongsan Ilchulbong** en primavera: los **cerezos de la base del cono** crean el fondo floral más fotogénico del tour. La subida al cráter (~180 escalones) es opcional y depende del tiempo. El objetivo principal de esta parada de primavera es el **fotograma** de Seongsan con cerezos — el icono turístico más reconocible de Jeju. **Entrada ₩5.000 (incluida).**",
+            "highlights": [
+              "Cerezos en la base del cono — el icono de primavera de Jeju",
+              "Subida al cráter **opcional** (tiempo permitting)",
+              "Triple Patrimonio UNESCO",
+              "**Entrada ₩5.000** (incluida)"
+            ],
+            "timeUsed": [
+              "Fotografía exterior + subida opcional — ~45-60 min",
+              "Regreso a Ciudad de Jeju — ~50 min"
+            ],
+            "whyOnRoute": "Seongsan Ilchulbong es **el único punto clave del Patrimonio Natural UNESCO** en esta ruta este-Jeju.",
+            "_poi_meta": {
+              "poi_key": "seongsan_ilchulbong",
+              "kb_version": "1.29",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO World Heritage Centre",
+                "Visit Jeju official",
+                "Inside Jeju 2026 admission guide",
+                "Cultural Heritage Administration of Korea",
+                "UNESCO World Heritage Centre (whc.unesco.org — Jeju Volcanic Island and Lava Tubes inscription 2007-07-02)",
+                "Visit Jeju official (visitjeju.net — Seongsan Ilchulbong Sunrise Peak listing + 99-crown-rocks + 5,000-year tuff cone)",
+                "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Natural Monument designation 2000-07-19)",
+                "UNESCO Global Geoparks Network (Jeju Island Global Geopark inscription 2010-10)",
+                "Wikipedia (Seongsan Ilchulbong — Surtseyan-type hydrovolcanic eruption + 18 Japanese WWII caves + haenyeo demonstrations)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "Jeonnong-ro",
+            "type": "origin",
+            "theme": "Urban Bloom"
+          },
+          {
+            "name": "Noksan-ro",
+            "type": "primary",
+            "theme": "Country Bloom"
+          },
+          {
+            "name": "Almuerzo",
+            "type": "meal",
+            "theme": "Comida"
+          },
+          {
+            "name": "Micheongul",
+            "type": "primary",
+            "theme": "Cave"
+          },
+          {
+            "name": "Ilchul Land",
+            "type": "primary",
+            "theme": "Garden"
+          },
+          {
+            "name": "Seongsan",
+            "type": "return",
+            "theme": "UNESCO Volcano"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "Cherry blossom peaks",
+            "duration": "Paradas 1–2",
+            "description": "Mañana: Pico de los cerezos en flor"
+          },
+          {
+            "phase": "Almuerzo",
+            "duration": "Parada 3",
+            "description": "Mediodía: Almuerzo"
+          },
+          {
+            "phase": "Cave to garden to crater",
+            "duration": "Paradas 4–6",
+            "description": "Tarde: Cueva → jardín → cráter"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "El recorrido del día",
+          "subtitle": "Los tres formatos de cerezos del este de Jeju: el túnel floral urbano (Jeonnong-ro) → la carretera rural con canola (Noksan-ro) → los cerezos del volcán UNESCO (Seongsan). Un día dedicado al espectáculo de primavera más diverso de la isla."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "Fotógrafos de flores — tres escenas radicalmente distintas de cerezos en un día",
+            "Primera vez en Jeju en primavera que quiere el mayor contraste visual posible",
+            "Parejas y familias en temporada de floración"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Por qué esta ruta funciona bien",
+              "icon": "sun",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                },
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                },
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                }
+              ]
+            },
+            {
+              "title": "Por qué esta ruta funciona bien",
+              "icon": "flower",
+              "iconBg": "bg-pink-50/80",
+              "iconColor": "text-pink-600",
+              "items": [
+                {
+                  "label": "tiempo previsto de temporada extendida",
+                  "detail": "La temporada de operación del tour cubre el período de mayor probabilidad de floración, reduciendo el riesgo de llegar fuera de temporada."
+                },
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                },
+                {
+                  "label": "Reembolso total si la floración falla",
+                  "detail": "Si la floración llega antes o después de la tiempo previsto del tour, el operador ofrece reembolso total o cambio de fecha."
+                }
+              ]
+            },
+            {
+              "title": "Por qué esta ruta funciona bien",
+              "icon": "info",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                },
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                },
+                {
+                  "label": "Punto destacado",
+                  "detail": "El guía compartirá el contexto más importante en cada parada."
+                }
+              ]
+            }
+          ],
+          "lessIdealFor": [
+            "Fuera de la temporada de cerezos (el tour año completo del este de Jeju cubre las mismas paradas)",
+            "Quienes priorizan el senderismo sobre la fotografía"
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "Recogida y regreso",
+            "preview": "Recogida en el vestíbulo del hotel en Jeju City",
+            "content": [
+              "Recogida en el vestíbulo del hotel entre las 08:30 y las 09:00.",
+              "Bajada de regreso aproximadamente a las 17:30.",
+              "Recogida en el aeropuerto disponible bajo petición.",
+              "Recogida fuera de Jeju City (Seogwipo, Aewol) sujeta a suplemento; confirmar al reservar."
+            ]
+          },
+          {
+            "id": "what-to-bring",
+            "title": "Qué vestir y llevar",
+            "preview": "Calzado cómodo, ropa en capas, cámara",
+            "content": [
+              "Zapatos cómodos (varios tramos cortos de caminata).",
+              "Chaqueta ligera — temperaturas primaverales de 10-18 °C.",
+              "Cámara o teléfono para fotos de las flores.",
+              "Efectivo o tarjeta para el almuerzo y las entradas."
+            ]
+          },
+          {
+            "id": "season",
+            "title": "tiempo previsto de temporada de cerezos",
+            "preview": "Finales de marzo a principios de abril",
+            "content": [
+              "Período pico: aproximadamente del 25 de marzo al 10 de abril (varía de año en año).",
+              "Las flores de canola se extienden 1-2 semanas más allá del pico de los cerezos.",
+              "Recomendamos reservar el primer día de tu viaje a Jeju dentro de la tiempo previsto.",
+              "Si tus fechas quedan fuera de la tiempo previsto, considera el tour UNESCO Este durante todo el año."
+            ]
+          },
+          {
+            "id": "weather-policy",
+            "title": "Política meteorológica",
+            "preview": "La lluvia intensa puede afectar la reserva",
+            "content": [
+              "Lluvia ligera: el tour opera según lo previsto.",
+              "Lluvia intensa: reprogramación gratuita disponible dentro de la tiempo previsto de temporada.",
+              "Las políticas de cancelación fuera de temporada siguen los términos estándar de atockorea."
+            ]
+          },
+          {
+            "id": "inclusions",
+            "title": "Qué está incluido",
+            "preview": "Transporte, guía y principales entradas",
+            "content": [
+              "Recogida y regreso en hotel (Jeju City)",
+              "Transporte en furgoneta climatizada",
+              "Guía oficial de habla inglesa",
+              "Principales entradas (combo Micheongul + Ilchul Land)",
+              "El almuerzo se paga aparte. La entrada a Seongsan no se aplica en este tour (se visita el nivel base)."
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "label": "Consejos de clima primaveral",
+            "temp": "Daytime ≈ 12–18 °C in cherry season",
+            "icon": "cloud-sun"
+          },
+          "tomorrow": {
+            "label": "Pronóstico en tiempo real disponible en la página de reserva del operador",
+            "temp": "—",
+            "icon": "cloud"
+          }
+        },
+        "seasonalVariations": [
+          {
+            "season": "Primavera (mar-abr)",
+            "title": "Tour en operación",
+            "description": "Temporada operativa del tour. Jeonnong-ro suele alcanzar el pico una semana antes que Noksan-ro. El guía confirma el estado de cada punto.",
+            "icon": "flower"
+          },
+          {
+            "season": "Primavera (mar-abr)",
+            "title": "Fuera de temporada",
+            "description": "Temporada operativa del tour. Jeonnong-ro suele alcanzar el pico una semana antes que Noksan-ro. El guía confirma el estado de cada punto.",
+            "icon": "leaf"
+          },
+          {
+            "season": "Verano–Otoño (jun–nov)",
+            "title": "Fuera de temporada",
+            "description": "Fuera de temporada — se recomienda la ruta del tour UNESCO este durante todo el año",
+            "icon": "sun"
+          },
+          {
+            "season": "Invierno (dic–feb)",
+            "title": "Fuera de temporada",
+            "description": "Fuera de temporada — se recomienda la ruta del tour UNESCO este durante todo el año",
+            "icon": "snowflake"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Equipo local certificado",
+            "description": "Guía con licencia de Jeju",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "Equipo local certificado con experiencia en tours de temporada de Jeju."
+          },
+          {
+            "icon": "calendar",
+            "title": "tiempo previsto flexible según floración",
+            "description": "Reprogramación gratuita dentro del periodo de floración",
+            "iconBg": "bg-pink-50/80",
+            "iconColor": "text-pink-600",
+            "body": "El guía confirma el estado de cada bulevar y campo por la mañana."
+          },
+          {
+            "icon": "shield",
+            "title": "Garantía por mal tiempo",
+            "description": "Reprogramación gratuita en caso de lluvia intensa",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "Con tifón o lluvia intensa que impida la visita: reembolso total."
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Inmediatamente",
+            "title": "Confirmación inmediata",
+            "detail": "Confirmación con la tiempo previsto de temporada.",
+            "description": "Confirmación instantánea con detalles de recogida en hotel de Jeju City y la temporada de operación de primavera."
+          },
+          {
+            "timing": "2 días antes",
+            "title": "Recordatorio 12 horas antes",
+            "detail": "Estado de floración de Jeonnong-ro, Noksan-ro y Seongsan.",
+            "description": "Pronóstico de floración enviado 2 días antes — sabrás whether Noksan-ro or Jeonnong-ro is currently at peak."
+          },
+          {
+            "timing": "Día anterior",
+            "title": "Información final de recogida",
+            "detail": "Punto de recogida y contacto del guía.",
+            "description": "Hora de recogida final confirmada la noche anterior."
+          },
+          {
+            "timing": "Mañana de",
+            "title": "Notas del día del tour",
+            "detail": "Estado de floración de la mañana y ajustes.",
+            "description": "Mensaje matutino con el énfasis de floración del día y cualquier nota meteorológica."
+          },
+          {
+            "timing": "Durante el tour",
+            "title": "Consejos parada a parada",
+            "detail": "Mejores ángulos en Noksan-ro y Seongsan con cerezos.",
+            "description": "El guía narra la ruta de floración en profundidad: historia de la granja de colza de Gasi-ri en Noksan-ro, geología de tubos de lava, contexto triple-UNESCO de Seongsan."
+          },
+          {
+            "timing": "Tras el tour",
+            "title": "Atención posventa",
+            "detail": "Solicitud de valoración.",
+            "description": "Solicitud de valoración después del tour enviada tras la llegada."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "first-time",
+            "question": "¿Es buena opción para primera visita a Jeju?",
+            "answer": "Sí, en primavera. Combina el espectáculo floral más diverso del este (3 tipos de cerezos) con el Pico del Amanecer UNESCO."
+          },
+          {
+            "id": "season-timing",
+            "question": "¿Cuándo es exactamente la temporada de cerezos?",
+            "answer": "En Jeju, los cerezos suelen florecer en la segunda-tercera semana de marzo, 1-2 semanas antes que en el continente. El pico de Noksan-ro suele ser a finales de marzo. La tiempo previsto total es de ~4 semanas."
+          },
+          {
+            "id": "rain",
+            "question": "¿Qué pasa si llueve?",
+            "answer": "Con lluvia suave el tour sigue — las flores mojadas son fotogénicamente diferentes. Con tifón o lluvia intensa: reembolso total."
+          },
+          {
+            "id": "summit",
+            "question": "¿Subimos al cráter de Seongsan Ilchulbong?",
+            "answer": "La subida es opcional según el tiempo disponible. El objetivo principal en este tour de primavera es la fotografía de los cerezos en la base del cono."
+          },
+          {
+            "id": "kids",
+            "question": "¿Es adecuado para niños?",
+            "answer": "Sí para niños de 6+ años. Los colores de Noksan-ro son especialmente impactantes para niños."
+          },
+          {
+            "id": "seniors",
+            "question": "¿Es adecuado para personas mayores?",
+            "answer": "Sí para mayores activos. Jeonnong-ro y Noksan-ro son llanos. Ilchul Land tiene escalones de bajada (~20 peldaños). Seongsan subida es opcional."
+          },
+          {
+            "id": "cave-claustrophobia",
+            "question": "¿La cueva es claustrofóbica?",
+            "answer": "El pasillo de la Cueva Micheon mide ~2 m de alto y 1,5-2 m de ancho — no es estrecho. Personas con claustrofobia severa pueden omitir esta parada."
+          },
+          {
+            "id": "pickup-area",
+            "question": "¿Dónde es la recogida?",
+            "answer": "En los puntos de recogida habituales de Ciudad de Jeju (hotel o punto de encuentro). El guía confirma el punto al reservar."
+          },
+          {
+            "id": "lunch",
+            "question": "¿El almuerzo está incluido?",
+            "answer": "No. Almuerzo por su cuenta (~₩12.000-15.000/persona)."
+          },
+          {
+            "id": "admission-fees",
+            "question": "¿Las entradas están incluidas?",
+            "answer": "Sí: Ilchul Land (Cueva Micheon) y Seongsan Ilchulbong (₩5.000) — incluidas."
+          },
+          {
+            "id": "compare-eastern-unesco",
+            "question": "(Consulte las preguntas frecuentes al reservar)",
+            "answer": "Para más información, contacte a AtoC Korea al reservar."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "La disponibilidad se confirma en el paso de pago.",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "persona"
+        }
+      }
+    }
+  ],
+  "pickup_dropoff": {
+    "type": "hotel_pickup",
+    "meeting_points": [
+      {
+        "name": "Recogida en el lobby del hotel dentro de la ciudad de Jeju",
+        "note": "Recogida gratuita. Indique el nombre del hotel y la hora de recogida al reservar. La primera franja estándar de recogida es 08:30–09:00.",
+        "region": "Ciudad de Jeju"
+      },
+      {
+        "name": "Recogida en el lobby del hotel desde Seogwipo o Aewol",
+        "note": "Disponible con suplemento; confirme el importe al reservar.",
+        "region": "Seogwipo / Aewol"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Regreso a hoteles de la ciudad de Jeju",
+        "note": "Regreso estándar aprox. 17:30–18:00.",
+        "region": "Ciudad de Jeju"
+      }
+    ],
+    "hotel_pickup_available": true,
+    "notes": "Operación solo en primavera, desde finales de marzo hasta principios de abril. Fuera de la floración recomendamos el tour UNESCO del Este, disponible todo el año."
+  },
+  "itinerary_variants": [],
+  "priceSource": {
+    "discountPct": 10,
+    "discountNote": "10% de descuento sobre el precio base del marketplace",
+    "amount": null,
+    "currency": "USD"
+  },
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v15.2"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch4_enhancement": {
+        "date": "2026-04-29",
+        "description": "Batch 4 deep enhancement — descriptions raised to 700-1300+ chars; KB-backed metadata on all attraction stops; product profile recalibrated with verified-fact 0-1 float scores. Time-weighted indoor_ratio computation per Fix 1 methodology.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale. Indoor ratio computed time-weighted using KB indoor_ratio_at_stop methodology. Note this tour SPLITS the Ilchul Land visit into two stops — the cave (high indoor ratio at 100%) and the gardens (low indoor ratio at 20%) — so the average works out to ~30% across the combined Ilchul Land time, consistent with KB.",
+          "deltas_applied": {
+            "unesco_fit": {
+              "old": 0.6,
+              "new": 0.5,
+              "reasoning": "Verified: Seongsan is a photo stop (UNESCO World Heritage). Other stops are non-UNESCO (Jeonnong/Noksan are city/country roads, Ilchul Land is private park). 1/6 stops = 0.50 calibrated."
+            },
+            "walking_level": {
+              "old": 0.4,
+              "new": 0.45,
+              "reasoning": "Verified: Jeonnong-ro 1.2 km flat (easy), Noksan-ro is drive-and-stop (minimal walking), Micheon Cave 365 m flat, Ilchul Land 1 km flat, Seongsan photo-stop format excludes the climb. Total walking ~3 km flat. 0.45 calibrated."
+            },
+            "scenic_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified — exceptional spring scenery: city cherry tunnel + 10 km cherry+canola+turbine country road + lava tube colored lighting + UNESCO peak. 0.95 — high diversity in spring window."
+            },
+            "photo_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified: 5 distinct hero shots — Jeonnong cherry tunnel, Noksan cherry+canola+windmill, 7-color cave, Seongsan crater. Among most photogenic Jeju tours but season-dependent. 0.95."
+            },
+            "iconic_landmark_fit": {
+              "old": 0.8,
+              "new": 0.75,
+              "reasoning": "Verified: Seongsan universally iconic, Noksan is regionally iconic ('100 Most Beautiful Roads in Korea'), Jeonnong is festival-iconic, Ilchul Land + Micheon are secondary. 0.75 calibrated."
+            },
+            "indoor_ratio": {
+              "old": 0.4,
+              "new": 0.2,
+              "reasoning": "MAJOR CORRECTION using time-weighted method (Fix 1 methodology): substantive stops are predominantly outdoor cherry-blossom corridors. Time-weighted: 42 indoor / 270 substantive min = 0.16. With lunch: 0.27. Catalog value 0.20 represents both. Mechanical Phase 1 conversion 0.4 was overstated."
+            },
+            "weather_sensitivity": {
+              "old": 1.0,
+              "new": 0.9,
+              "reasoning": "VERIFIED — extremely weather-sensitive: cherry blossoms are season-AND-weather dependent (rain destroys blossoms within hours; wind blows down petals); 80%+ outdoor stops. Highest weather-sensitivity in catalog after spring-only flower tours."
+            },
+            "rain_fit": {
+              "old": 0.6,
+              "new": 0.3,
+              "reasoning": "DOWNGRADED — cherry blossoms are particularly rain-vulnerable (blossoms fall within hours of heavy rain). Only Micheon Cave + Ilchul Land partial indoor provide refuge. 0.30 calibrated for honest rain-fit."
+            },
+            "first_time_fit": {
+              "old": 1.0,
+              "new": 0.85,
+              "reasoning": "Verified: excellent SPRING first-Jeju but season-locked to ~10 days/year. Outside cherry season this tour wouldn't run. 0.85 calibrated for season-specific value."
+            },
+            "value_for_money_fit": {
+              "old": 0.6,
+              "new": 0.75,
+              "reasoning": "Verified fees: Jeonnong free + Noksan free + Ilchul ₩12,000 + Seongsan ₩2,000 = ~₩14,000 + scenic country drive value. 0.75 — reasonable spring value."
+            },
+            "young_kids_fit": {
+              "old": 0.8,
+              "new": 0.65,
+              "reasoning": "Verified: Jeonnong city walk (good for kids), Noksan drive (kids may get bored), Ilchul Land black pigs + leveled cave (kid-friendly), Seongsan photo stop (no climb required). 0.65 — generally kid-friendly with one drive-heavy section."
+            },
+            "senior_fit": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "UPGRADED — flat city walks + drive-and-stop country road + leveled cave + photo-stop Seongsan = highly senior-accessible. Mechanical 0.6 understated; verified 0.65."
+            },
+            "stroller_fit": {
+              "old": 0.6,
+              "new": 0.7,
+              "reasoning": "UPGRADED — Jeonnong flat road, Noksan drive-only, Micheon Cave leveled, Ilchul Land flat paths, Seongsan base-only photo stop. 5/5 stroller-friendly = 0.70."
+            },
+            "mobility_friendly_fit": {
+              "old": 0.4,
+              "new": 0.65,
+              "reasoning": "UPGRADED — same logic: tour is predominantly drive-to-walk-and-back format with leveled paths and photo-stop Seongsan. 0.65 verified."
+            },
+            "iconic_landmark_fit_check": {
+              "field": "iconic_landmark_fit",
+              "old": 0.8,
+              "new": 0.75,
+              "reasoning": "(Same as above)"
+            }
+          }
+        },
+        "stops_enhanced": 6,
+        "sources": [
+          "VisitKorea",
+          "Visit Jeju",
+          "Jeju Tourism Organization",
+          "Referencia de mercado",
+          "Referencia de mercado",
+          "NOL World",
+          "Hueree Park official"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,1937 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "seoul-suburbs-private-chartered-car-10hr",
+  "locale": "zh-CN",
+  "product_id": "seoul-suburbs-private-chartered-car-10hr",
+  "seo": {
+    "pageTitle": "首尔市区或近郊私人包车10小时游 | AtoC Korea",
+    "metaDescription": "与英语导游兼司机共享10小时首尔区域私人包车游：加平自然、DMZ+坡州、爱宝乐园+民俗村，或完全自定义行程。",
+    "ogImage": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1920&q=80",
+    "primaryKeywords": [
+      "首尔近郊私家车",
+      "首尔私人10小时游",
+      "首尔包车一日游",
+      "首尔私人自驾游",
+      "首尔定制行程游"
+    ],
+    "title": "首尔私人包车 · 10小时客制近郊行程 | AtoC Korea",
+    "description": "首尔或近郊私人包车10小时行程：路线完全客制，南怡岛、晨静苑、杨平、水原等均可安排。持照英语导游司机，无陌生旅客，酒店接送，人数不限。"
+  },
+  "catalog_card": {
+    "slug": "seoul-suburbs-private-chartered-car-10hr",
+    "title": "首尔市区或近郊私人包车10小时行程",
+    "subtitle": "10小时私人包车，持牌司导，自由设计首尔市区或郊区一日行程。",
+    "region": "首尔及近郊",
+    "duration": "10小时",
+    "stopsCount": 4,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "私人包车游",
+      "完全自订行程",
+      "免费首尔酒店接送"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=600&q=80",
+    "priceLabel": "按车辆计费 — 请于预订时确认",
+    "shortCardDescription": "精品10小时私人包车游，让您自由打造专属首尔都市区一日行程。常用组合包含南怡岛加晨静树木园、水原华城加韩国民俗村、DMZ加板门店游客中心，或完全自定义行程。",
+    "tags": [
+      "私家团",
+      "完全可定制",
+      "首尔酒店免费接送"
+    ]
+  },
+  "headlineLine1": "首尔市区或近郊私人包车",
+  "headlineLine2": "10小时完全客制行程",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "车辆",
+    "priceNote": "费用尚未确认。私人包车定价视车辆大小而异。确认后，AtoC Korea直售价格享9折优惠。"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1920&q=80",
+    "imagePosition": "center 40%",
+    "tagline": "以您自己的节奏打造首尔近郊的一天，持照英语导游全程陪同——路线由您决定",
+    "pills": [
+      "私人专属车辆",
+      "持照驾驶导游",
+      "自订行程"
+    ],
+    "meta": {
+      "duration": "10小时",
+      "region": "首尔及近郊",
+      "stops": "自定义",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "行程总览"
+    },
+    {
+      "id": "itinerary",
+      "label": "详细行程"
+    },
+    {
+      "id": "details",
+      "label": "注意事项"
+    },
+    {
+      "id": "faq",
+      "label": "常见问题"
+    },
+    {
+      "id": "reviews",
+      "label": "旅客评价"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "car",
+      "label": "行程类型",
+      "value": "包车专属"
+    },
+    {
+      "icon": "map",
+      "label": "行车路线",
+      "value": "完全自订"
+    },
+    {
+      "icon": "user-check",
+      "label": "导游语言",
+      "value": "持照驾驶导游"
+    },
+    {
+      "icon": "clock",
+      "label": "行程时间",
+      "value": "10小时"
+    },
+    {
+      "icon": "ticket",
+      "label": "门票费用",
+      "value": "现场自付"
+    },
+    {
+      "icon": "utensils-crossed",
+      "label": "午餐安排",
+      "value": "现场自付"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1200&q=80",
+      "alt": "首尔天际线弹性出发点",
+      "caption": "首尔天际线——弹性出发点",
+      "location": "首尔（出发城市）",
+      "atmosphere": "以现代首尔为灵活起点；私家车酒店接送"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+      "alt": "南怡岛落羽松步道路线1亮点",
+      "caption": "南怡岛落羽松步道——路线1亮点",
+      "location": "南怡岛，加平（路线1选项）",
+      "atmosphere": "林荫步道与短程渡船；《冬季恋歌》韩剧取景地"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601273453200-7e1b7e5e3a8a?w=1200&q=80",
+      "alt": "晨静树木园路线1拍摄景点",
+      "caption": "晨静树木园——路线1拍摄景点",
+      "location": "晨静树木园，加平（路线1选项）",
+      "atmosphere": "20个主题花园，面积33万平方米；1996年由韩相璟创办"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1583917123405-3aa64e6a96b8?w=1200&q=80",
+      "alt": "普蒂法国小王子村庄路线1",
+      "caption": "普蒂法国——《来自星星的您》村庄（路线1）",
+      "location": "普蒂法国，加平（路线1选项）",
+      "atmosphere": "色彩缤纷的山坡村落；《来自星星的您》韩剧取景地"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+      "alt": "临津阁和平公园路线2核心亮点",
+      "caption": "临津阁和平公园——路线2核心亮点",
+      "location": "临津阁和平公园，坡州（路线2选项）",
+      "atmosphere": "韩国历史最沉重的边境公园；自由桥（1953年）；距军事分界线7公里"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "name": "路线1：加平自然与文化环线",
+      "category": "南怡岛+晨静树木园+小法国村+江村铁路自行车",
+      "description": "**首尔近郊私人包车路线1 — 加平自然文化环线**以**南怡岛、晨静树木园、小法国村**为三大核心，是首尔近郊最具代表性的自然与文化组合路线。南怡岛（《冬季恋歌》水杉大道）；晨静树木园（韩国最具代表性的私人树木园，20个主题花园，冬季灯光节每年12月至3月）；小法国村（法式主题村，《来自星星的您》拍摄地）。加平环线是4条首尔近郊私人包车路线中**最适合拍照**的路线，四季各有不同的花卉和景观主题。行程10小时，费用根据车型和团体人数而定，入场费和餐费另计。",
+      "highlights": [
+        "南怡岛（《冬季恋歌》水杉大道）+ 晨静树木园 + 小法国村",
+        "**最适合拍照的首尔近郊私人包车路线**",
+        "晨静树木园：20个主题花园，冬季灯光节12月至3月",
+        "小法国村：法式主题村，《来自星星的您》拍摄地",
+        "四季各有不同的花卉和景观主题",
+        "10小时私人包车服务",
+        "入场费和餐费另计",
+        "适合喜爱拍照和自然景观的旅客",
+        "从首尔市中心出发，车程约1小时"
+      ],
+      "timeUsed": [
+        "首尔酒店接送约08:00–09:00，至加平约70–90分钟",
+        "上午：南怡岛（2–3小时）或江村铁路自行车（90分钟）",
+        "在清平镇或小法国村入口午餐",
+        "下午：小法兰西村（1.5–2小时）＋晨静树木园（1.5–2小时；冬季如停留至日落后，可欣赏灯光节）",
+        "返回首尔 ~18:00-20:00（冬季灯光节期间更晚）"
+      ],
+      "whyOnRoute": "**首次游首尔、希望以低步行量获得高Instagram回报的自然＋拍摄之日的最强路线**。四个景点彼此相距仅15至20分钟，每个景点的入场费在₩1,000至₩13,000之间，路线紧凑；与DMZ路线不同，不受军事时间表影响，全年可行。春季赏花、秋季红叶及冬季灯光节（晨静树木园12月至3月）让加平路线在四季均有明确主题。",
+      "visitBasics": {
+        "hours": "南怡岛07:30–21:00；晨静树木园08:30–19:00；小法国村09:00–18:00",
+        "closed": "全年开放；小法国村淡季部分周一休馆",
+        "admission": "南怡岛₩18,000/晨静树木园₩11,000/小法国村₩12,000/铁路自行车约₩30,000–35,000",
+        "walking": "中等强度——南怡岛约3公里平坦环线；晨静树木园1.5–2小时缓坡地形"
+      },
+      "convenience": {
+        "restroom": "所有景点均设有厕所",
+        "parking": "导游司机处理全部停车事宜"
+      },
+      "smartNotes": {
+        "photo": "南怡岛水杉大道及银杏路是代表性拍摄画面；小法国村彩色建筑背景。",
+        "facilities": "南怡岛有多处咖啡馆及餐厅；小法国村入口有小吃摊。",
+        "tip": "12月至3月参观，建议约16:00抵达晨静树木园，可同时欣赏白天花园与夜间灯光节。"
+      },
+      "_poi_meta": {
+        "poi_key": "route_variant_gapyeong_loop",
+        "verified": true,
+        "match": "route_variant_no_single_poi",
+        "constituent_pois": [
+          "garden_of_morning_calm",
+          "petite_france"
+        ],
+        "deferred_pois": [
+          "nami_island"
+        ],
+        "note": "Route option for private charter — represents a multi-POI Gapyeong-cluster bundle (Nami, Morning Calm, Petite France, Gangchon Railbike). Garden of Morning Calm and Petite France verified in KB v1.10. Nami Island will receive its dedicated KB entry in Batch 8 alongside the standalone Nami tour. Gangchon Rail Bike is a single-use experience without a standalone KB entry."
+      }
+    },
+    {
+      "number": 2,
+      "name": "路线2：DMZ历史&坡州购物",
+      "category": "DMZ之旅+坡州奥特莱斯",
+      "description": "**首尔近郊私人包车路线2 — DMZ历史与坡州购物**以**DMZ非武装地带历史参观和坡州出版城购物**为双核心，提供深度认识朝鲜半岛分裂历史和现代文化创意的完整体验。典型路线涵盖：临津阁和平公园（自由桥、风车丘）、坡州英语村或赫理农场（可选）、坡州出版城（韩国最大的出版和设计社区），以及普罗旺斯村（欧式主题村）。DMZ路线是4条路线中**历史意义最深远**的选项，同时融合了轻松的购物和咖啡厅体验。行程10小时，费用根据车型和团体人数而定，入场费和餐费另计。部分DMZ景点需提前预约。",
+      "highlights": [
+        "临津阁和平公园（自由桥、望拜坛、千疮百孔蒸汽机车）",
+        "坡州出版城 — 韩国最大的出版和设计社区",
+        "**历史意义最深远的首尔近郊私人包车路线**",
+        "坡州英语村或赫理农场（可选体验活动）",
+        "普罗旺斯村（欧式主题村）",
+        "10小时私人包车服务",
+        "入场费和餐费另计",
+        "部分DMZ景点需提前预约",
+        "适合对朝鲜半岛历史有兴趣的旅客"
+      ],
+      "timeUsed": [
+        "首尔酒店接送约08:00，至临津阁约70分钟",
+        "上午：临津阁+第三侵道+都罗山瞭望台+都罗山站",
+        "坡州午餐（坡州五花肉烤肉或文山韩食）",
+        "下午：坡州精品奥特莱斯＋道路对面的可选乐天精品奥特莱斯（约3–4小时）",
+        "返回首尔 ~18:00-19:00"
+      ],
+      "whyOnRoute": "**希望深入体验韩战∕南北韩关系历史，而无需承受标准JSA行程的严格时间表和大巴节奏的旅客的最强路线**。私人包车意味着您可以在板门店∕统一展望台的某个阵列停留更长时间，而不是被赶上巴士。坡州精品奥特莱斯作为下午的压力释放站，使此组合成为既有深度又有购物的罕见配对——通常是有历史意识的旅客和陪同者双方都满意的折衷之选。",
+      "visitBasics": {
+        "hours": "DMZ景点09:00–17:00（最晚入场约15:30）；坡州奥特莱斯10:30–21:00",
+        "closed": "DMZ周一休闭+军事活动时可能关闭；坡州奥特莱斯全年开放",
+        "admission": "DMZ联票约₩12,000",
+        "walking": "中等强度——第三侵道下行坡道最为费力"
+      },
+      "convenience": {
+        "restroom": "所有DMZ景点及坡州奥特莱斯美食广场",
+        "parking": "导游司机处理；DMZ专用旅游大巴停车场"
+      },
+      "smartNotes": {
+        "photo": "都罗山瞭望台高倍望远镜朝鲜远景；自由之桥拍照点。",
+        "facilities": "坡州市区（DMZ与奥特莱斯之间）午餐最佳——坡州五花肉名产地。",
+        "tip": "务必携带护照——DMZ入场必需。第三侵道斜坡为瓶颈，建议乘单轨。"
+      },
+      "_poi_meta": {
+        "poi_key": "route_variant_dmz_paju",
+        "verified": true,
+        "match": "route_variant_no_single_poi",
+        "constituent_pois": [],
+        "deferred_pois": [
+          "dmz_imjingak",
+          "dmz_3rd_tunnel",
+          "dmz_dora_observatory",
+          "paju_premium_outlets"
+        ],
+        "note": "Route option for private charter — DMZ-related POIs (Imjingak, 3rd Tunnel, Dora Observatory, Dorasan) will receive their dedicated KB entries in Batch 8 alongside the standalone DMZ tour (seoul-dmz-private-3rd-tunnel-suspension-bridge). Paju Premium Outlets does not get a standalone KB entry (single-use shopping stop). Facts above are verified via VisitKorea and DMZ tour operator pages."
+      }
+    },
+    {
+      "number": 3,
+      "name": "路线3：爱宝乐园+韩国民俗村",
+      "category": "主题乐园+历史文化村落",
+      "description": "**首尔近郊私人包车路线3 — 爱宝乐园 + 韩国民俗村**是4条路线中**最适合家庭旅游**的选项，结合了韩国最大的主题乐园和最具代表性的传统民俗村。爱宝乐园是韩国最大的主题乐园，设有多个主题区、刺激游乐设施和季节性花卉活动（春季郁金香节、夏季水上乐园、秋季南瓜节、冬季雪橇节）；韩国民俗村（，龙仁）是韩国第一座露天民俗文化博物馆，260多栋传统房屋，每日农乐、走钢丝（UNESCO非物质文化遗产）等传统表演。行程10小时，费用根据车型和团体人数而定，入场费和餐费另计。",
+      "highlights": [
+        "爱宝乐园 — 韩国最大主题乐园，多个主题区 + 季节性节庆活动",
+        "韩国民俗村 — 第一座露天民俗文化博物馆，260多栋传统房屋",
+        "每日传统表演：农乐、走钢丝（UNESCO非物质文化遗产）、马上武术",
+        "**最适合家庭旅游的首尔近郊私人包车路线**",
+        "四季节庆活动：春季郁金香、夏季水上乐园、秋季南瓜、冬季雪橇",
+        "10小时私人包车服务",
+        "入场费和餐费另计",
+        "适合携带儿童的家庭和喜爱主题乐园的旅客",
+        "从首尔市中心出发，车程约1小时"
+      ],
+      "timeUsed": [
+        "首尔酒店接送约08:30，至龙仁约50–70分钟",
+        "A选项——仅爱宝乐园：全天游园（通常9–10小时）",
+        "B选项——仅民俗村：全天游览（通常4–5小时+周边探索）",
+        "选项C — 混合路线（较少安排）：上午民俗村（3–4小时）+ 下午爱宝乐园（4–5小时）— 仅在不安排加勒比海湾水上乐园且大幅减少动物园区域时可行",
+        "返回首尔 ~18:30-19:30"
+      ],
+      "whyOnRoute": "**携带6至15岁孩子的家庭、主题公园爱好者，以及希望深度玩一个地点而非多点走马看花的旅客的最强路线**。爱宝乐园本身通常需要8至10小时——私人包车让您可以选择自己的抵达时间，不受固定出发的限制；驾驶在您玩乐时等候，让您完全掌控节奏。对于想在首尔附近花一整天的家庭而言，爱宝乐园＋韩国民俗村的龙仁组合最大程度减少了车程。",
+      "visitBasics": {
+        "hours": "爱宝乐园：平日10:00–22:00，周末09:30–22:00；民俗村：09:00–18:00",
+        "closed": "全年开放",
+        "admission": "爱宝乐园成人1日票₩54,000–64,000（外国人凭证享20%折扣）；民俗村成人₩25,000",
+        "walking": "中等至大量——两处均需较多步行"
+      },
+      "convenience": {
+        "restroom": "两处均设有多处厕所",
+        "parking": "导游司机处理"
+      },
+      "smartNotes": {
+        "photo": "爱宝乐园T特快与熊猫世界；民俗村传统民居与表演。",
+        "facilities": "爱宝乐园内多家餐厅；民俗村传统饮食展示。",
+        "tip": "通过市场参考资料等平台购买爱宝乐园门票可节省20%以上。"
+      },
+      "_poi_meta": {
+        "poi_key": "route_variant_everland_folk",
+        "verified": true,
+        "match": "route_variant_no_single_poi",
+        "constituent_pois": [
+          "everland",
+          "korean_folk_village_yongin"
+        ],
+        "note": "Route option for private charter — represents a Yongin-area bundle (Everland + Korean Folk Village). Both POIs are verified in KB v1.10."
+      }
+    },
+    {
+      "number": 4,
+      "name": "路线4：定制行程选项",
+      "category": "发送您自己的计划",
+      "description": "**首尔近郊私人包车路线4 — 客制行程选项**是完全自由的10小时个人化首尔近郊之旅——司导依照**您自行选择的景点清单**安排行程。您可以选择任何组合：水原华城城郭（UNESCO世界遗产）、加平自然景观（南怡岛、晨静树木园）、DMZ历史（临津阁）、宗教文化（水原光教山寺庙群）、韩剧拍摄地（龙仁、坡州）、购物（坡州出版城、京畿道广场）或任何您希望探索的地点。司导会提供景点之间的最佳路线建议，并根据您的节奏和天气状况灵活调整。10小时私人包车服务，费用根据车型和团体人数而定；入场费和餐费另计。",
+      "highlights": [
+        "完全自由的10小时个人化首尔近郊之旅",
+        "自行选择任何景点的组合",
+        "可选：水原华城、加平、DMZ、韩剧拍摄地、购物等任意组合",
+        "司导提供景点之间的最佳路线建议",
+        "根据您的节奏和天气状况灵活调整",
+        "**10小时私人包车服务**；费用根据车型和团体人数而定",
+        "入场费和餐费另计",
+        "适合有特定兴趣或希望自由探索的旅客",
+        "可事先与司导确认行程计划"
+      ],
+      "timeUsed": [
+        "预订确认后24–48小时内发送计划——导游司机将根据首尔早高峰时间安排行程顺序",
+        "司导会根据首尔通勤高峰（进城07:00–09:00、出城17:00–20:00）及各景点闭馆日调整顺序。",
+        "在10小时服务时间内返回酒店（超时需事先协议）"
+      ],
+      "whyOnRoute": "**四个选项中最灵活的一个**。最适合首尔回头客、有特定兴趣（K-pop、韩剧、摄影、美食、亲子、历史深度）的旅客，以及4至9人团体（在此规模下，每辆车的定价相比私人拼团更具竞争力）。客制行程选项允许将三条预设路线的元素混搭——例如：加平自然＋一个DMZ停留——或完全按照自己的景点清单来安排，前提是在10小时服务时间内可行。",
+      "visitBasics": {
+        "hours": "视选择景点而定",
+        "closed": "视选择景点而定",
+        "admission": "所有门票在各景点现场自付",
+        "walking": "可根据团队的移动能力进行调整"
+      },
+      "convenience": {
+        "restroom": "所有主要景点均有",
+        "parking": "导游司机负责所有停车"
+      },
+      "smartNotes": {
+        "photo": "提前向导游司机发送3–5张参考照片——可大幅提升摄影构图效果。",
+        "facilities": "午餐由您决定——预订时告知饮食需求；导游将预先安排餐厅。",
+        "tip": "定制行程一旦确认可能较难更改，建议提前充分沟通。"
+      },
+      "_poi_meta": {
+        "poi_key": "route_variant_custom_seoul",
+        "verified": true,
+        "match": "route_variant_no_single_poi",
+        "candidate_pois": [
+          "everland",
+          "korean_folk_village_yongin",
+          "garden_of_morning_calm",
+          "petite_france"
+        ],
+        "deferred_pois": [
+          "nami_island",
+          "suwon_hwaseong",
+          "pocheon_sanjeong_lake"
+        ],
+        "note": "Fully customizable route option — candidate POIs include both Batch 7 KB additions and POIs reserved for batches 8-9. Final stop list determined by passenger's request at booking."
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "酒店接送",
+      "type": "origin",
+      "theme": "Start"
+    },
+    {
+      "name": "定制路线",
+      "type": "primary",
+      "theme": "Choose"
+    },
+    {
+      "name": "午餐休息",
+      "type": "meal",
+      "theme": "放松转换"
+    },
+    {
+      "name": "下午行程",
+      "type": "primary",
+      "theme": "Continue"
+    },
+    {
+      "name": "酒店送达",
+      "type": "return",
+      "theme": "End"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "首尔酒店接送",
+      "duration": "第1站",
+      "description": "出发：首尔酒店接送"
+    },
+    {
+      "phase": "选择您的路线",
+      "duration": "第2–4站",
+      "description": "一日游：选择您的路线"
+    },
+    {
+      "phase": "返回酒店",
+      "duration": "第5站",
+      "description": "结束：返回酒店"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "行程路线一览",
+    "subtitle": "在首尔市内酒店接送后，展开由您与司导共同塑造的10小时完全自由行程。可选择三条推荐路线之一：加平自然（南怡岛+晨静树木园）、DMZ+坡州、爱宝乐园+民俗村，或完全自定义行程。"
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "携带幼儿的家庭，包含年幼小孩",
+      "含长辈的多代同游",
+      "蜜月或周年纪念情侣",
+      "希望量身订制全日行程的回头客",
+      "重视舒适、私密和弹性的旅客"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "私人包车在弹性上的优势",
+        "icon": "car",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "按您的节奏，而非团队的节奏",
+            "detail": "在您喜爱的景点多停留，跳过不感兴趣的，随时调整行程，无需等候其他旅客集合。"
+          },
+          {
+            "label": "门到门的舒适体验",
+            "detail": "首尔市中心免费酒店接送，省去清晨地铁换乘和深夜接驳车的压力。"
+          },
+          {
+            "label": "司机兼导游的当地洞察",
+            "detail": "持牌韩国司机兼导游提供当地脉络，推荐餐厅，并即时根据天气或交通调整路线。"
+          }
+        ]
+      },
+      {
+        "title": "如何选择路线",
+        "icon": "map",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "路线1——首次游览的最佳风景体验",
+            "detail": "若您想要一天充实的韩国自然与韩剧取景地，加平环线涵盖最受情侣和家庭喜爱的代表性景点。"
+          },
+          {
+            "label": "路线2——历史深度与购物的完美平衡",
+            "detail": "若您既想深度体验又想轻松购物，DMZ＋坡州组合尤其适合成人旅客和历史爱好者。"
+          },
+          {
+            "label": "路线3——亲子家庭的主题公园之选",
+            "detail": "若您的团体有想乘坐游乐设施的孩子，爱宝乐园和韩国民俗村的龙仁组合最大程度减少车程。"
+          }
+        ]
+      },
+      {
+        "title": "当天可能发生的变化",
+        "icon": "clock-3",
+        "iconBg": "bg-slate-50/80",
+        "iconColor": "text-slate-600",
+        "items": [
+          {
+            "label": "进出首尔的交通状况",
+            "detail": "周五和周日下午返程可能增加30至60分钟；司机兼导游将相应调整最后一个停留点。"
+          },
+          {
+            "label": "跨省目的地需额外费用",
+            "detail": "羊驼世界和乐高乐园（均在江原道）需加收₩60,000跨省费用，现金支付给司机。"
+          },
+          {
+            "label": "超时服务",
+            "detail": "若您需要超过10小时，超时费用为每小时₩30,000，以现金支付给司机，视司机排班而定。"
+          }
+        ]
+      }
+    ],
+    "lessIdealFor": [
+      "独游预算旅客（私人定价按车计，非按人计）",
+      "希望与其他旅客共乘以增加社交体验的旅客",
+      "需要固定时间表、有解说的拼团行程的旅客",
+      "希望含所有入场费和餐费的旅客"
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "接送与下车地点",
+      "preview": "首尔市中心酒店免费接送，大厅提早10分钟等候",
+      "content": [
+        "首尔市中心地区（明洞、弘大、东大门、仁寺洞、梨泰院等）的酒店提供免费接送。",
+        "首尔市中心以外的住宿可能需要额外接送费用。",
+        "请在约定出发时间前10分钟在酒店大厅等候。",
+        "返回时可在您的首尔酒店或任何您选择的首尔市中心地点下车。",
+        "仁川机场接送可加收₩100,000单程附加费。",
+        "如需改期，请至少在原预订日期前2天告知。"
+      ]
+    },
+    {
+      "id": "车辆",
+      "title": "车辆与人数限制",
+      "preview": "车辆依团体人数及行李量配置",
+      "content": [
+        "车辆类型依乘客人数及行李件数精准配置。",
+        "预订时请填写确切的乘客人数及行李件数。",
+        "典型配置：1至3位宾客用轿车、4至5位宾客用中型SUV、6至9位宾客用Staria或Carnival商务车。",
+        "10人以上大型团体可安排多辆车或另行报价。"
+      ]
+    },
+    {
+      "id": "duration",
+      "title": "10小时行程与延时收费",
+      "preview": "从接送起严格执行10小时服务时间",
+      "content": [
+        "10小时服务时间从您的酒店接送时间开始计算。",
+        "如已加购机场接送，亦包含在同一10小时内。",
+        "超时费用为每小时₩30,000，直接以现金支付给司机。",
+        "超时需视司机排班及适用服务时数规定而定。"
+      ]
+    },
+    {
+      "id": "extras",
+      "title": "需知额外费用",
+      "preview": "跨省、机场接送及入场费另计",
+      "content": [
+        "羊驼世界或乐高乐园（江原道）：跨省附加费₩60,000，现金支付给司机。",
+        "仁川机场接送：单程附加费₩100,000。",
+        "所有入场费、餐费及个人购物费用均由宾客自行支付。",
+        "司机小费为自愿性质，全日服务后适当致谢不胜感激。"
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "天候政策",
+      "preview": "私人包车格式对天气变化适应力强",
+      "content": [
+        "雨天：司机兼导游可转向室内景点（博物馆、坡州精品奥特莱斯、Heyri艺术村）。",
+        "大雪可能关闭江原道冬季路线。",
+        "DMZ入场可能受军事训练时间表影响，可能需要当日路线调整。",
+        "最终路线调整在当天与司机兼导游共同确认。"
+      ]
+    },
+    {
+      "id": "included",
+      "title": "费用包含项目",
+      "preview": "含车辆及持牌司机兼导游；入场费及餐费自费",
+      "variant": "included",
+      "content": [
+        "私家车（轿车、SUV或商务车，依团体人数）",
+        "持牌英语司机兼导游",
+        "首尔市中心酒店免费接送",
+        "标准路线的油费及过路费",
+        "所有入场费不含，在各景点自行支付",
+        "餐费不含",
+        "个人购物费用不含",
+        "司机小费不含"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "即时天气连动"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "每日更新"
+    },
+    "_seasonalSummary": "首尔四季分明。路线因地而异：加平比首尔凉爽；DMZ冬季极寒；爱宝乐园龙仁地区与首尔相近。"
+  },
+  "seasonalVariations": [
+    {
+      "season": "春季",
+      "title": "赏花最佳时节",
+      "description": "首尔和加平各处赏樱；晨静树木园进入木莲和杜鹃盛开期。",
+      "icon": "flower"
+    },
+    {
+      "season": "夏季",
+      "title": "白昼长",
+      "description": "长日照延伸10小时服务时间；预期潮湿及六、七月可能的梅雨。",
+      "icon": "sun"
+    },
+    {
+      "season": "秋季",
+      "title": "最佳摄影季",
+      "description": "韩国最强的景观季节；南怡岛、晨静树木园和韩国民俗村均呈现最美拍摄效果。",
+      "icon": "leaf"
+    },
+    {
+      "season": "冬季",
+      "title": "灯光节季节",
+      "description": "晨静树木园举办著名灯光节（12月至3月中旬）；DMZ冬季极为寒冷且暴露在外。",
+      "icon": "snowflake"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "当地持照合法业者",
+      "description": "持牌韩国旅游旅游服务团队，备有完整保险",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "持牌韩国旅游旅游服务团队，备有完整保险"
+    },
+    {
+      "icon": "route",
+      "title": "路线专家",
+      "description": "定制化行程，而非千篇一律的固定路线",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "定制化行程，而非千篇一律的固定路线"
+    },
+    {
+      "icon": "users",
+      "title": "精心控制团体人数",
+      "description": "车辆大小适合您的团体需求",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "车辆大小适合您的团体需求"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "即时通知",
+      "title": "即时确认",
+      "detail": "您将收到含行程摘要的预订确认通知。",
+      "description": "您将收到含行程摘要的预订确认通知。"
+    },
+    {
+      "timing": "出发前12小时",
+      "title": "出发前12小时提醒",
+      "detail": "出发前分享天气更新及任何路线调整。",
+      "description": "出发前分享天气更新及任何路线调整。"
+    },
+    {
+      "timing": "前一晚",
+      "title": "最终接送信息",
+      "detail": "确认确切接送时间及司机联络方式。",
+      "description": "确认确切接送时间及司机联络方式。"
+    },
+    {
+      "timing": "行程当天早晨",
+      "title": "当日路线说明",
+      "detail": "出发当天早上根据最新现场状况提供简报。",
+      "description": "出发当天早上根据最新现场状况提供简报。"
+    },
+    {
+      "timing": "行程途中",
+      "title": "景点逐一说明",
+      "detail": "每个景点提供即时现场讲解。",
+      "description": "每个景点提供即时现场讲解。"
+    },
+    {
+      "timing": "行程结束后",
+      "title": "行程后支援",
+      "detail": "行程结束后提供后续建议及额外信息。",
+      "description": "行程结束后提供后续建议及额外信息。"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q1",
+      "question": "这与南怡岛或DMZ的小团巴士行程有何不同？",
+      "answer": "这是仅供您的团体使用的私家车——灵活行程、酒店接送、无需配合他人时间表。小团巴士行程在多个团体间遵循固定时间。若您需要酒店接送、客制路线组合（加平自然＋DMZ＋爱宝乐园或自订清单）或适合长辈和幼儿的节奏，请选择私人包车。若您是1至2人且以预算为优先，固定路线拼团行程更为划算——私人定价是按车计，而非按人计。"
+    },
+    {
+      "id": "q2",
+      "question": "10小时服务时间如何运作？",
+      "answer": "计时从您的首尔酒店接送时间开始，连续计算至返回下车——包含车程、停留时间，以及如已加购的机场接送。超过10小时的费用为每小时₩30,000，以现金支付给司机，并视司机排班而定。建议在当天早晨或前一晚与司机兼导游确认行程优先事项。"
+    },
+    {
+      "id": "q3",
+      "question": "下雨天怎么办？",
+      "answer": "司机兼导游会在雨天转向室内景点——坡州精品奥特莱斯、Heyri艺术村、博物馆停留或水原星野购物中心。路线2的DMZ部分也可能受军事训练时间表影响，可能需要当日路线调整。最终路线在当天早晨根据现场天气与司机兼导游共同确认。"
+    },
+    {
+      "id": "q4",
+      "question": "我会乘坐什么车型？",
+      "answer": "车辆在预订时依您的团体人数及行李量配置。典型配置：1至3位宾客用轿车、4至5位宾客用中型SUV、6至9位宾客用现代Staria或起亚Carnival商务车。预订时请提供确切人数及行李件数。10人以上团体可安排多辆车报价。"
+    },
+    {
+      "id": "q5",
+      "question": "有哪些额外费用需要了解？",
+      "answer": "跨省附加费：羊驼世界或乐高乐园（均在江原道）需加收₩60,000。仁川机场接送为单程₩100,000。所有入场费及餐费均由宾客在各景点自行支付（不含在行程费用中）。司机小费为自愿性质，全日服务后适当致谢不胜感激。"
+    },
+    {
+      "id": "q6",
+      "question": "哪些首尔地区享有免费酒店接送？",
+      "answer": "免费接送涵盖首尔市中心核心地带：明洞、弘大、东大门、仁寺洞、梨泰院及邻近地区。此区域以外的住宿（如江南阳才以东、金浦机场附近、麻浦远西）可能需要小额附加接送费——预订时确认。请在预订时提供酒店地址，以便司机提前规划路线。"
+    },
+    {
+      "id": "first-time",
+      "question": "对于初次游览首尔及近郊的旅客，这是好选择吗？",
+      "answer": "适合，但有一点说明：此格式最适合对三条预设路线（加平自然环线、DMZ＋坡州、爱宝乐园＋民俗村）之一有明确偏好或有特定景点想法的旅客。没有特定想法的初次旅客有时从固定路线小团行程中获益更多，因为路线已替您决定好。若您尚未决定，司机兼导游可在当天早晨建议路线。"
+    },
+    {
+      "id": "walking",
+      "question": "步行难度高吗？",
+      "answer": "大多以轻松步行为主——这是以车辆为主的行程，司机会在每个景点附近下客。步行需求视路线而定：南怡岛有平坦林荫步道（约2公里环岛）；晨静树木园有缓坡；DMZ景点在第3条地下隧道和临津阁有些许不平整路面。爱宝乐园和民俗村步行较多，但司机等候，您自行掌控节奏。"
+    },
+    {
+      "id": "family",
+      "question": "这个行程适合家庭吗？",
+      "answer": "适合——这是首尔近郊格式中对家庭最友善的选择之一。私家车省去了婴儿车和儿童座椅的巴士协调问题，司机兼导游可在小憩或孩子疲惫时暂停或转向。路线3（爱宝乐园＋韩国民俗村）是最强的家庭选择；路线1（加平）适合大一点的孩子；路线2（DMZ）仅适合青少年及以上。"
+    },
+    {
+      "id": "seniors",
+      "question": "年长者可以舒适地参加吗？",
+      "answer": "是的——这是最适合年长旅客的格式之一。私家车、酒店接送和弹性节奏让活跃年长者及行动较不便的长辈都能舒适参与。司机兼导游可依要求在更靠近入口处下客、安排休息座位，并略过上坡可选路段（如普蒂法国山坡、天空公园螺旋梯）。预订时请告知具体的行动限制，以便调整路线。"
+    },
+    {
+      "id": "children",
+      "question": "建议的最低参加年龄是多少？",
+      "answer": "所有年龄均欢迎。私家车、弹性节奏和酒店接送让此格式成为首尔日行程中对幼儿最友善的选择之一——如需儿童安全座椅请提前准备（司机可提供建议）。路线3（爱宝乐园＋韩国民俗村）是预设中最适合家庭的选择。对于学步儿童，司机兼导游可安排额外休息时间，不影响您的行程。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "可订状态将在支付步骤中确认。",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "人"
+    }
+  },
+  "pickup_dropoff": {
+    "type": "hotel_pickup",
+    "meeting_points": [
+      {
+        "name": "首尔市中心各酒店大厅",
+        "time": "08:00–09:00",
+        "note": "支持区域内酒店门到门接送"
+      },
+      {
+        "name": "仁川机场（可选）",
+        "time": "08:00–09:00",
+        "note": "可按需安排仁川或金浦机场接送，计入10小时服务时间内。"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "首尔市中心任意酒店",
+        "approx_time": "≈ 18:00–19:00",
+        "note": "可在同一酒店或支持区域内指定地址下车"
+      },
+      {
+        "name": "仁川机场（可选）",
+        "approx_time": "≈ 18:00–19:00",
+        "note": "可安排当天离境下车，时间计入服务时长。"
+      }
+    ],
+    "hotel_pickup_available": true,
+    "notes": "首尔市中心地区（明洞、弘大、东大门、仁寺洞、梨泰院等）酒店免费接送。请在约定出发时间前10分钟在大厅等候。仁川机场接送可加收₩100,000附加费。"
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "seoul-suburbs-private-chartered-car-10hr",
+    "product_type": "private",
+    "route_type": "customizable",
+    "destination_region": "korea_mainland",
+    "region_type": "gyeonggi_mixed",
+    "vehicle_type": "private_vehicle",
+    "duration_hours": 10.0,
+    "region_tags": [
+      "seoul_capital",
+      "seoul_city",
+      "seoul_suburbs",
+      "gyeonggi_gapyeong",
+      "gyeonggi_yongin",
+      "gyeonggi_paju",
+      "incheon_central"
+    ],
+    "theme_tags": [
+      "private_charter",
+      "customizable_route",
+      "driver_guide",
+      "first_time_friendly",
+      "multi_route_options"
+    ],
+    "poi_tags": [
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france",
+      "gangchon_railbike",
+      "third_infiltration_tunnel",
+      "dora_observatory",
+      "imjingak_peace_park",
+      "paju_premium_outlets",
+      "everland",
+      "korean_folk_village",
+      "heyri_art_village",
+      "alpaca_world",
+      "seoraksan_national_park",
+      "dmz_general",
+      "seoul_suburbs_charter"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.55,
+    "scenic_level": 0.8,
+    "photo_level": 0.8,
+    "culture_level": 0.8,
+    "relax_level": 1.0,
+    "first_time_fit": 0.85,
+    "family_fit": 1.0,
+    "senior_fit": 1.0,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 0.6,
+    "active_traveler_fit": 0.8,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 0.8,
+    "young_kids_fit": 1.0,
+    "senior_active_fit": 1.0,
+    "senior_general_fit": 1.0,
+    "mobility_friendly_fit": 1.0,
+    "stroller_fit": 1.0,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.8,
+    "rain_fit": 0.8,
+    "value_for_money_fit": 0.55,
+    "iconic_landmark_fit": 0.85,
+    "cafe_fit": 1.0,
+    "food_fit": 0.6,
+    "nature_fit": 0.8,
+    "beach_fit": 0.2,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.7,
+    "no_shopping_fit": 0.2,
+    "local_culture_fit": 0.8,
+    "storytelling_fit": 0.8,
+    "unesco_fit": 0.3,
+    "intangible_heritage_fit": 1.0,
+    "indoor_ratio": 0.4,
+    "weather_sensitivity": 0.5,
+    "comfort_level": 1.0,
+    "budget_fit": 0.4,
+    "premium_fit": 1.0,
+    "small_group_fit": 0.15,
+    "private_fit": 1.0,
+    "bus_fit": 0.05,
+    "price_band": "premium",
+    "pickup_base": "seoul_downtown",
+    "return_time_band": "10h_window",
+    "duration_band": "10h",
+    "min_recommended_age": 0,
+    "hard_constraints": {
+      "avoidIf": [
+        "solo_budget_traveler_seeking_lowest_price",
+        "wants_fully_included_admission_and_meals"
+      ],
+      "notIdealFor": [
+        "travelers_wanting_a_social_group_setting",
+        "guests_needing_full_certified_guide_narration"
+      ]
+    },
+    "walking_notes": [
+      "Walking load depends entirely on the chosen route.",
+      "Route 1 (Gapyeong loop) is moderate, with the most walking at Nami Island and the Garden of Morning Calm.",
+      "Route 2 (DMZ + Paju) includes a steep descent at the 3rd Tunnel, which is the most demanding section across all routes.",
+      "Route 3 (Everland + Folk Village) is highest in cumulative walking due to theme-park movement.",
+      "The driver-guide can adjust pacing on the day to match family or senior comfort."
+    ],
+    "keywords": [
+      "seoul private car charter 10 hours",
+      "seoul suburbs private tour",
+      "seoul private driver guide",
+      "nami island private tour",
+      "dmz private tour seoul",
+      "everland private tour seoul",
+      "customizable seoul day tour",
+      "seoul premium private tour",
+      "private van tour seoul",
+      "seoul family private tour"
+    ],
+    "synonym_hints": [
+      "seoul chauffeur tour",
+      "seoul private chartered vehicle",
+      "seoul flexible day tour",
+      "seoul private guide and driver",
+      "seoul tailor made day tour",
+      "seoul private 10 hour charter"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "seoul",
+    "vehicle_type_legacy": "private_van",
+    "anchor_poi_keys": [
+      "seoul_suburbs_charter",
+      "nami_island",
+      "dmz_general",
+      "paju_premium_outlets"
+    ],
+    "private_tour_fit": 1.0,
+    "customizable_route_fit": 1.0,
+    "flexibility_fit": 1.0,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "embedded_for": [
+      "authoring",
+      "review",
+      "sql_backfill_reference"
+    ],
+    "note": "Scores were tuned for a fully customizable 10-hour private charter format. Comfort, flexibility, mobility-friendliness, and family fit score very high because the private format eliminates group constraints. Value-for-money and budget fit score lower because the private format is per-vehicle rather than per-person. Walking and culture levels reflect a weighted average across the three recommended routes; the on-the-day load can move significantly depending on the chosen route.",
+    "duration_hours": 10,
+    "stop_count": 4,
+    "score_rationale": {
+      "private_fit": "Direct match: this is a per-vehicle private charter.",
+      "mobility_friendly_fit": "Private car door-to-door eliminates most public-transport mobility friction; only the DMZ 3rd Tunnel (Route 2) reduces friendliness if chosen.",
+      "young_kids_fit": "Best-in-class for kids because car seats, stops, and pacing are all adjustable.",
+      "weather_sensitivity": "Low because the driver-guide can shift the route toward indoor stops on bad-weather days.",
+      "value_for_money_fit": "Mid: per-vehicle pricing is excellent value for groups of 4 to 9 but expensive for solo travelers.",
+      "culture_level": "Moderate weighted average; the chosen route can push it to 5 (Folk Village + DMZ) or 3 (Gapyeong loop).",
+      "rain_fit": "Above-average because Paju Outlets, Heyri, and Korean Folk Village indoor sections give strong wet-weather alternatives."
+    },
+    "anchor_pois": [
+      "Seoul greater area (Gapyeong, DMZ, Paju, custom)",
+      "Nami Island",
+      "DMZ",
+      "Paju Premium Outlets"
+    ],
+    "anchor_poi_keys": [
+      "seoul_suburbs_charter",
+      "nami_island",
+      "dmz_general",
+      "paju_premium_outlets"
+    ],
+    "competing_products": [
+      "seoul-private-nami-morning-calm-petite-france",
+      "seoul-dmz-private-3rd-tunnel-suspension-bridge",
+      "incheon-seoul-private-car-shore-excursion-cruise"
+    ]
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "首尔市区或近郊私人包车",
+        "headlineLine2": "10小时完全客制行程",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1920&q=80",
+          "imagePosition": "center 40%",
+          "tagline": "以您自己的节奏打造首尔近郊的一天，持照英语导游全程陪同——路线由您决定",
+          "pills": [
+            "私人专属车辆",
+            "持照驾驶导游",
+            "自订行程"
+          ],
+          "meta": {
+            "duration": "10小时",
+            "region": "首尔及近郊",
+            "stops": "自定义",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "行程总览"
+          },
+          {
+            "id": "itinerary",
+            "label": "详细行程"
+          },
+          {
+            "id": "details",
+            "label": "注意事项"
+          },
+          {
+            "id": "faq",
+            "label": "常见问题"
+          },
+          {
+            "id": "reviews",
+            "label": "旅客评价"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "car",
+            "label": "行程类型",
+            "value": "包车专属"
+          },
+          {
+            "icon": "map",
+            "label": "行车路线",
+            "value": "完全自订"
+          },
+          {
+            "icon": "user-check",
+            "label": "导游语言",
+            "value": "持照驾驶导游"
+          },
+          {
+            "icon": "clock",
+            "label": "行程时间",
+            "value": "10小时"
+          },
+          {
+            "icon": "ticket",
+            "label": "门票费用",
+            "value": "现场自付"
+          },
+          {
+            "icon": "utensils-crossed",
+            "label": "午餐安排",
+            "value": "现场自付"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1200&q=80",
+            "alt": "首尔天际线弹性出发点",
+            "caption": "首尔天际线——弹性出发点",
+            "location": "首尔（出发城市）",
+            "atmosphere": "以现代首尔为灵活起点；私家车酒店接送"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+            "alt": "南怡岛落羽松步道路线1亮点",
+            "caption": "南怡岛落羽松步道——路线1亮点",
+            "location": "南怡岛，加平（路线1选项）",
+            "atmosphere": "林荫步道与短程渡船；《冬季恋歌》韩剧取景地"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601273453200-7e1b7e5e3a8a?w=1200&q=80",
+            "alt": "晨静树木园路线1拍摄景点",
+            "caption": "晨静树木园——路线1拍摄景点",
+            "location": "晨静树木园，加平（路线1选项）",
+            "atmosphere": "20个主题花园，面积33万平方米；1996年由韩相璟创办"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1583917123405-3aa64e6a96b8?w=1200&q=80",
+            "alt": "普蒂法国小王子村庄路线1",
+            "caption": "普蒂法国——《来自星星的您》村庄（路线1）",
+            "location": "普蒂法国，加平（路线1选项）",
+            "atmosphere": "色彩缤纷的山坡村落；《来自星星的您》韩剧取景地"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+            "alt": "临津阁和平公园路线2核心亮点",
+            "caption": "临津阁和平公园——路线2核心亮点",
+            "location": "临津阁和平公园，坡州（路线2选项）",
+            "atmosphere": "韩国历史最沉重的边境公园；自由桥（1953年）；距军事分界线7公里"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "name": "路线1：加平自然与文化环线",
+            "category": "南怡岛+晨静树木园+小法国村+江村铁路自行车",
+            "description": "**首尔近郊私人包车路线1 — 加平自然文化环线**以**南怡岛、晨静树木园、小法国村**为三大核心，是首尔近郊最具代表性的自然与文化组合路线。南怡岛（《冬季恋歌》水杉大道）；晨静树木园（韩国最具代表性的私人树木园，20个主题花园，冬季灯光节每年12月至3月）；小法国村（法式主题村，《来自星星的您》拍摄地）。加平环线是4条首尔近郊私人包车路线中**最适合拍照**的路线，四季各有不同的花卉和景观主题。行程10小时，费用根据车型和团体人数而定，入场费和餐费另计。",
+            "highlights": [
+              "南怡岛（《冬季恋歌》水杉大道）+ 晨静树木园 + 小法国村",
+              "**最适合拍照的首尔近郊私人包车路线**",
+              "晨静树木园：20个主题花园，冬季灯光节12月至3月",
+              "小法国村：法式主题村，《来自星星的您》拍摄地",
+              "四季各有不同的花卉和景观主题",
+              "10小时私人包车服务",
+              "入场费和餐费另计",
+              "适合喜爱拍照和自然景观的旅客",
+              "从首尔市中心出发，车程约1小时"
+            ],
+            "timeUsed": [
+              "首尔酒店接送约08:00–09:00，至加平约70–90分钟",
+              "上午：南怡岛（2–3小时）或江村铁路自行车（90分钟）",
+              "在清平镇或小法国村入口午餐",
+              "下午：小法兰西村（1.5–2小时）＋晨静树木园（1.5–2小时；冬季如停留至日落后，可欣赏灯光节）",
+              "返回首尔 ~18:00-20:00（冬季灯光节期间更晚）"
+            ],
+            "whyOnRoute": "**首次游首尔、希望以低步行量获得高Instagram回报的自然＋拍摄之日的最强路线**。四个景点彼此相距仅15至20分钟，每个景点的入场费在₩1,000至₩13,000之间，路线紧凑；与DMZ路线不同，不受军事时间表影响，全年可行。春季赏花、秋季红叶及冬季灯光节（晨静树木园12月至3月）让加平路线在四季均有明确主题。",
+            "visitBasics": {
+              "hours": "南怡岛07:30–21:00；晨静树木园08:30–19:00；小法国村09:00–18:00",
+              "closed": "全年开放；小法国村淡季部分周一休馆",
+              "admission": "南怡岛₩18,000/晨静树木园₩11,000/小法国村₩12,000/铁路自行车约₩30,000–35,000",
+              "walking": "中等强度——南怡岛约3公里平坦环线；晨静树木园1.5–2小时缓坡地形"
+            },
+            "convenience": {
+              "restroom": "所有景点均设有厕所",
+              "parking": "导游司机处理全部停车事宜"
+            },
+            "smartNotes": {
+              "photo": "南怡岛水杉大道及银杏路是代表性拍摄画面；小法国村彩色建筑背景。",
+              "facilities": "南怡岛有多处咖啡馆及餐厅；小法国村入口有小吃摊。",
+              "tip": "12月至3月参观，建议约16:00抵达晨静树木园，可同时欣赏白天花园与夜间灯光节。"
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_gapyeong_loop",
+              "verified": true,
+              "match": "route_variant_no_single_poi",
+              "constituent_pois": [
+                "garden_of_morning_calm",
+                "petite_france"
+              ],
+              "deferred_pois": [
+                "nami_island"
+              ],
+              "note": "Route option for private charter — represents a multi-POI Gapyeong-cluster bundle (Nami, Morning Calm, Petite France, Gangchon Railbike). Garden of Morning Calm and Petite France verified in KB v1.10. Nami Island will receive its dedicated KB entry in Batch 8 alongside the standalone Nami tour. Gangchon Rail Bike is a single-use experience without a standalone KB entry."
+            }
+          },
+          {
+            "number": 2,
+            "name": "路线2：DMZ历史&坡州购物",
+            "category": "DMZ之旅+坡州奥特莱斯",
+            "description": "**首尔近郊私人包车路线2 — DMZ历史与坡州购物**以**DMZ非武装地带历史参观和坡州出版城购物**为双核心，提供深度认识朝鲜半岛分裂历史和现代文化创意的完整体验。典型路线涵盖：临津阁和平公园（自由桥、风车丘）、坡州英语村或赫理农场（可选）、坡州出版城（韩国最大的出版和设计社区），以及普罗旺斯村（欧式主题村）。DMZ路线是4条路线中**历史意义最深远**的选项，同时融合了轻松的购物和咖啡厅体验。行程10小时，费用根据车型和团体人数而定，入场费和餐费另计。部分DMZ景点需提前预约。",
+            "highlights": [
+              "临津阁和平公园（自由桥、望拜坛、千疮百孔蒸汽机车）",
+              "坡州出版城 — 韩国最大的出版和设计社区",
+              "**历史意义最深远的首尔近郊私人包车路线**",
+              "坡州英语村或赫理农场（可选体验活动）",
+              "普罗旺斯村（欧式主题村）",
+              "10小时私人包车服务",
+              "入场费和餐费另计",
+              "部分DMZ景点需提前预约",
+              "适合对朝鲜半岛历史有兴趣的旅客"
+            ],
+            "timeUsed": [
+              "首尔酒店接送约08:00，至临津阁约70分钟",
+              "上午：临津阁+第三侵道+都罗山瞭望台+都罗山站",
+              "坡州午餐（坡州五花肉烤肉或文山韩食）",
+              "下午：坡州精品奥特莱斯＋道路对面的可选乐天精品奥特莱斯（约3–4小时）",
+              "返回首尔 ~18:00-19:00"
+            ],
+            "whyOnRoute": "**希望深入体验韩战∕南北韩关系历史，而无需承受标准JSA行程的严格时间表和大巴节奏的旅客的最强路线**。私人包车意味着您可以在板门店∕统一展望台的某个阵列停留更长时间，而不是被赶上巴士。坡州精品奥特莱斯作为下午的压力释放站，使此组合成为既有深度又有购物的罕见配对——通常是有历史意识的旅客和陪同者双方都满意的折衷之选。",
+            "visitBasics": {
+              "hours": "DMZ景点09:00–17:00（最晚入场约15:30）；坡州奥特莱斯10:30–21:00",
+              "closed": "DMZ周一休闭+军事活动时可能关闭；坡州奥特莱斯全年开放",
+              "admission": "DMZ联票约₩12,000",
+              "walking": "中等强度——第三侵道下行坡道最为费力"
+            },
+            "convenience": {
+              "restroom": "所有DMZ景点及坡州奥特莱斯美食广场",
+              "parking": "导游司机处理；DMZ专用旅游大巴停车场"
+            },
+            "smartNotes": {
+              "photo": "都罗山瞭望台高倍望远镜朝鲜远景；自由之桥拍照点。",
+              "facilities": "坡州市区（DMZ与奥特莱斯之间）午餐最佳——坡州五花肉名产地。",
+              "tip": "务必携带护照——DMZ入场必需。第三侵道斜坡为瓶颈，建议乘单轨。"
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_dmz_paju",
+              "verified": true,
+              "match": "route_variant_no_single_poi",
+              "constituent_pois": [],
+              "deferred_pois": [
+                "dmz_imjingak",
+                "dmz_3rd_tunnel",
+                "dmz_dora_observatory",
+                "paju_premium_outlets"
+              ],
+              "note": "Route option for private charter — DMZ-related POIs (Imjingak, 3rd Tunnel, Dora Observatory, Dorasan) will receive their dedicated KB entries in Batch 8 alongside the standalone DMZ tour (seoul-dmz-private-3rd-tunnel-suspension-bridge). Paju Premium Outlets does not get a standalone KB entry (single-use shopping stop). Facts above are verified via VisitKorea and DMZ tour operator pages."
+            }
+          },
+          {
+            "number": 3,
+            "name": "路线3：爱宝乐园+韩国民俗村",
+            "category": "主题乐园+历史文化村落",
+            "description": "**首尔近郊私人包车路线3 — 爱宝乐园 + 韩国民俗村**是4条路线中**最适合家庭旅游**的选项，结合了韩国最大的主题乐园和最具代表性的传统民俗村。爱宝乐园是韩国最大的主题乐园，设有多个主题区、刺激游乐设施和季节性花卉活动（春季郁金香节、夏季水上乐园、秋季南瓜节、冬季雪橇节）；韩国民俗村（，龙仁）是韩国第一座露天民俗文化博物馆，260多栋传统房屋，每日农乐、走钢丝（UNESCO非物质文化遗产）等传统表演。行程10小时，费用根据车型和团体人数而定，入场费和餐费另计。",
+            "highlights": [
+              "爱宝乐园 — 韩国最大主题乐园，多个主题区 + 季节性节庆活动",
+              "韩国民俗村 — 第一座露天民俗文化博物馆，260多栋传统房屋",
+              "每日传统表演：农乐、走钢丝（UNESCO非物质文化遗产）、马上武术",
+              "**最适合家庭旅游的首尔近郊私人包车路线**",
+              "四季节庆活动：春季郁金香、夏季水上乐园、秋季南瓜、冬季雪橇",
+              "10小时私人包车服务",
+              "入场费和餐费另计",
+              "适合携带儿童的家庭和喜爱主题乐园的旅客",
+              "从首尔市中心出发，车程约1小时"
+            ],
+            "timeUsed": [
+              "首尔酒店接送约08:30，至龙仁约50–70分钟",
+              "A选项——仅爱宝乐园：全天游园（通常9–10小时）",
+              "B选项——仅民俗村：全天游览（通常4–5小时+周边探索）",
+              "选项C — 混合路线（较少安排）：上午民俗村（3–4小时）+ 下午爱宝乐园（4–5小时）— 仅在不安排加勒比海湾水上乐园且大幅减少动物园区域时可行",
+              "返回首尔 ~18:30-19:30"
+            ],
+            "whyOnRoute": "**携带6至15岁孩子的家庭、主题公园爱好者，以及希望深度玩一个地点而非多点走马看花的旅客的最强路线**。爱宝乐园本身通常需要8至10小时——私人包车让您可以选择自己的抵达时间，不受固定出发的限制；驾驶在您玩乐时等候，让您完全掌控节奏。对于想在首尔附近花一整天的家庭而言，爱宝乐园＋韩国民俗村的龙仁组合最大程度减少了车程。",
+            "visitBasics": {
+              "hours": "爱宝乐园：平日10:00–22:00，周末09:30–22:00；民俗村：09:00–18:00",
+              "closed": "全年开放",
+              "admission": "爱宝乐园成人1日票₩54,000–64,000（外国人凭证享20%折扣）；民俗村成人₩25,000",
+              "walking": "中等至大量——两处均需较多步行"
+            },
+            "convenience": {
+              "restroom": "两处均设有多处厕所",
+              "parking": "导游司机处理"
+            },
+            "smartNotes": {
+              "photo": "爱宝乐园T特快与熊猫世界；民俗村传统民居与表演。",
+              "facilities": "爱宝乐园内多家餐厅；民俗村传统饮食展示。",
+              "tip": "通过市场参考资料等平台购买爱宝乐园门票可节省20%以上。"
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_everland_folk",
+              "verified": true,
+              "match": "route_variant_no_single_poi",
+              "constituent_pois": [
+                "everland",
+                "korean_folk_village_yongin"
+              ],
+              "note": "Route option for private charter — represents a Yongin-area bundle (Everland + Korean Folk Village). Both POIs are verified in KB v1.10."
+            }
+          },
+          {
+            "number": 4,
+            "name": "路线4：定制行程选项",
+            "category": "发送您自己的计划",
+            "description": "**首尔近郊私人包车路线4 — 客制行程选项**是完全自由的10小时个人化首尔近郊之旅——司导依照**您自行选择的景点清单**安排行程。您可以选择任何组合：水原华城城郭（UNESCO世界遗产）、加平自然景观（南怡岛、晨静树木园）、DMZ历史（临津阁）、宗教文化（水原光教山寺庙群）、韩剧拍摄地（龙仁、坡州）、购物（坡州出版城、京畿道广场）或任何您希望探索的地点。司导会提供景点之间的最佳路线建议，并根据您的节奏和天气状况灵活调整。10小时私人包车服务，费用根据车型和团体人数而定；入场费和餐费另计。",
+            "highlights": [
+              "完全自由的10小时个人化首尔近郊之旅",
+              "自行选择任何景点的组合",
+              "可选：水原华城、加平、DMZ、韩剧拍摄地、购物等任意组合",
+              "司导提供景点之间的最佳路线建议",
+              "根据您的节奏和天气状况灵活调整",
+              "**10小时私人包车服务**；费用根据车型和团体人数而定",
+              "入场费和餐费另计",
+              "适合有特定兴趣或希望自由探索的旅客",
+              "可事先与司导确认行程计划"
+            ],
+            "timeUsed": [
+              "预订确认后24–48小时内发送计划——导游司机将根据首尔早高峰时间安排行程顺序",
+              "司导会根据首尔通勤高峰（进城07:00–09:00、出城17:00–20:00）及各景点闭馆日调整顺序。",
+              "在10小时服务时间内返回酒店（超时需事先协议）"
+            ],
+            "whyOnRoute": "**四个选项中最灵活的一个**。最适合首尔回头客、有特定兴趣（K-pop、韩剧、摄影、美食、亲子、历史深度）的旅客，以及4至9人团体（在此规模下，每辆车的定价相比私人拼团更具竞争力）。客制行程选项允许将三条预设路线的元素混搭——例如：加平自然＋一个DMZ停留——或完全按照自己的景点清单来安排，前提是在10小时服务时间内可行。",
+            "visitBasics": {
+              "hours": "视选择景点而定",
+              "closed": "视选择景点而定",
+              "admission": "所有门票在各景点现场自付",
+              "walking": "可根据团队的移动能力进行调整"
+            },
+            "convenience": {
+              "restroom": "所有主要景点均有",
+              "parking": "导游司机负责所有停车"
+            },
+            "smartNotes": {
+              "photo": "提前向导游司机发送3–5张参考照片——可大幅提升摄影构图效果。",
+              "facilities": "午餐由您决定——预订时告知饮食需求；导游将预先安排餐厅。",
+              "tip": "定制行程一旦确认可能较难更改，建议提前充分沟通。"
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_custom_seoul",
+              "verified": true,
+              "match": "route_variant_no_single_poi",
+              "candidate_pois": [
+                "everland",
+                "korean_folk_village_yongin",
+                "garden_of_morning_calm",
+                "petite_france"
+              ],
+              "deferred_pois": [
+                "nami_island",
+                "suwon_hwaseong",
+                "pocheon_sanjeong_lake"
+              ],
+              "note": "Fully customizable route option — candidate POIs include both Batch 7 KB additions and POIs reserved for batches 8-9. Final stop list determined by passenger's request at booking."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "酒店接送",
+            "type": "origin",
+            "theme": "Start"
+          },
+          {
+            "name": "定制路线",
+            "type": "primary",
+            "theme": "Choose"
+          },
+          {
+            "name": "午餐休息",
+            "type": "meal",
+            "theme": "放松转换"
+          },
+          {
+            "name": "下午行程",
+            "type": "primary",
+            "theme": "Continue"
+          },
+          {
+            "name": "酒店送达",
+            "type": "return",
+            "theme": "End"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "首尔酒店接送",
+            "duration": "第1站",
+            "description": "出发：首尔酒店接送"
+          },
+          {
+            "phase": "选择您的路线",
+            "duration": "第2–4站",
+            "description": "一日游：选择您的路线"
+          },
+          {
+            "phase": "返回酒店",
+            "duration": "第5站",
+            "description": "结束：返回酒店"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "行程路线一览",
+          "subtitle": "在首尔市内酒店接送后，展开由您与司导共同塑造的10小时完全自由行程。可选择三条推荐路线之一：加平自然（南怡岛+晨静树木园）、DMZ+坡州、爱宝乐园+民俗村，或完全自定义行程。"
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "携带幼儿的家庭，包含年幼小孩",
+            "含长辈的多代同游",
+            "蜜月或周年纪念情侣",
+            "希望量身订制全日行程的回头客",
+            "重视舒适、私密和弹性的旅客"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "私人包车在弹性上的优势",
+              "icon": "car",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "按您的节奏，而非团队的节奏",
+                  "detail": "在您喜爱的景点多停留，跳过不感兴趣的，随时调整行程，无需等候其他旅客集合。"
+                },
+                {
+                  "label": "门到门的舒适体验",
+                  "detail": "首尔市中心免费酒店接送，省去清晨地铁换乘和深夜接驳车的压力。"
+                },
+                {
+                  "label": "司机兼导游的当地洞察",
+                  "detail": "持牌韩国司机兼导游提供当地脉络，推荐餐厅，并即时根据天气或交通调整路线。"
+                }
+              ]
+            },
+            {
+              "title": "如何选择路线",
+              "icon": "map",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "路线1——首次游览的最佳风景体验",
+                  "detail": "若您想要一天充实的韩国自然与韩剧取景地，加平环线涵盖最受情侣和家庭喜爱的代表性景点。"
+                },
+                {
+                  "label": "路线2——历史深度与购物的完美平衡",
+                  "detail": "若您既想深度体验又想轻松购物，DMZ＋坡州组合尤其适合成人旅客和历史爱好者。"
+                },
+                {
+                  "label": "路线3——亲子家庭的主题公园之选",
+                  "detail": "若您的团体有想乘坐游乐设施的孩子，爱宝乐园和韩国民俗村的龙仁组合最大程度减少车程。"
+                }
+              ]
+            },
+            {
+              "title": "当天可能发生的变化",
+              "icon": "clock-3",
+              "iconBg": "bg-slate-50/80",
+              "iconColor": "text-slate-600",
+              "items": [
+                {
+                  "label": "进出首尔的交通状况",
+                  "detail": "周五和周日下午返程可能增加30至60分钟；司机兼导游将相应调整最后一个停留点。"
+                },
+                {
+                  "label": "跨省目的地需额外费用",
+                  "detail": "羊驼世界和乐高乐园（均在江原道）需加收₩60,000跨省费用，现金支付给司机。"
+                },
+                {
+                  "label": "超时服务",
+                  "detail": "若您需要超过10小时，超时费用为每小时₩30,000，以现金支付给司机，视司机排班而定。"
+                }
+              ]
+            }
+          ],
+          "lessIdealFor": [
+            "独游预算旅客（私人定价按车计，非按人计）",
+            "希望与其他旅客共乘以增加社交体验的旅客",
+            "需要固定时间表、有解说的拼团行程的旅客",
+            "希望含所有入场费和餐费的旅客"
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "接送与下车地点",
+            "preview": "首尔市中心酒店免费接送，大厅提早10分钟等候",
+            "content": [
+              "首尔市中心地区（明洞、弘大、东大门、仁寺洞、梨泰院等）的酒店提供免费接送。",
+              "首尔市中心以外的住宿可能需要额外接送费用。",
+              "请在约定出发时间前10分钟在酒店大厅等候。",
+              "返回时可在您的首尔酒店或任何您选择的首尔市中心地点下车。",
+              "仁川机场接送可加收₩100,000单程附加费。",
+              "如需改期，请至少在原预订日期前2天告知。"
+            ]
+          },
+          {
+            "id": "车辆",
+            "title": "车辆与人数限制",
+            "preview": "车辆依团体人数及行李量配置",
+            "content": [
+              "车辆类型依乘客人数及行李件数精准配置。",
+              "预订时请填写确切的乘客人数及行李件数。",
+              "典型配置：1至3位宾客用轿车、4至5位宾客用中型SUV、6至9位宾客用Staria或Carnival商务车。",
+              "10人以上大型团体可安排多辆车或另行报价。"
+            ]
+          },
+          {
+            "id": "duration",
+            "title": "10小时行程与延时收费",
+            "preview": "从接送起严格执行10小时服务时间",
+            "content": [
+              "10小时服务时间从您的酒店接送时间开始计算。",
+              "如已加购机场接送，亦包含在同一10小时内。",
+              "超时费用为每小时₩30,000，直接以现金支付给司机。",
+              "超时需视司机排班及适用服务时数规定而定。"
+            ]
+          },
+          {
+            "id": "extras",
+            "title": "需知额外费用",
+            "preview": "跨省、机场接送及入场费另计",
+            "content": [
+              "羊驼世界或乐高乐园（江原道）：跨省附加费₩60,000，现金支付给司机。",
+              "仁川机场接送：单程附加费₩100,000。",
+              "所有入场费、餐费及个人购物费用均由宾客自行支付。",
+              "司机小费为自愿性质，全日服务后适当致谢不胜感激。"
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "天候政策",
+            "preview": "私人包车格式对天气变化适应力强",
+            "content": [
+              "雨天：司机兼导游可转向室内景点（博物馆、坡州精品奥特莱斯、Heyri艺术村）。",
+              "大雪可能关闭江原道冬季路线。",
+              "DMZ入场可能受军事训练时间表影响，可能需要当日路线调整。",
+              "最终路线调整在当天与司机兼导游共同确认。"
+            ]
+          },
+          {
+            "id": "included",
+            "title": "费用包含项目",
+            "preview": "含车辆及持牌司机兼导游；入场费及餐费自费",
+            "variant": "included",
+            "content": [
+              "私家车（轿车、SUV或商务车，依团体人数）",
+              "持牌英语司机兼导游",
+              "首尔市中心酒店免费接送",
+              "标准路线的油费及过路费",
+              "所有入场费不含，在各景点自行支付",
+              "餐费不含",
+              "个人购物费用不含",
+              "司机小费不含"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "即时天气连动"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "每日更新"
+          },
+          "_seasonalSummary": "首尔四季分明。路线因地而异：加平比首尔凉爽；DMZ冬季极寒；爱宝乐园龙仁地区与首尔相近。"
+        },
+        "seasonalVariations": [
+          {
+            "season": "春季",
+            "title": "赏花最佳时节",
+            "description": "首尔和加平各处赏樱；晨静树木园进入木莲和杜鹃盛开期。",
+            "icon": "flower"
+          },
+          {
+            "season": "夏季",
+            "title": "白昼长",
+            "description": "长日照延伸10小时服务时间；预期潮湿及六、七月可能的梅雨。",
+            "icon": "sun"
+          },
+          {
+            "season": "秋季",
+            "title": "最佳摄影季",
+            "description": "韩国最强的景观季节；南怡岛、晨静树木园和韩国民俗村均呈现最美拍摄效果。",
+            "icon": "leaf"
+          },
+          {
+            "season": "冬季",
+            "title": "灯光节季节",
+            "description": "晨静树木园举办著名灯光节（12月至3月中旬）；DMZ冬季极为寒冷且暴露在外。",
+            "icon": "snowflake"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "当地持照合法业者",
+            "description": "持牌韩国旅游旅游服务团队，备有完整保险",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "持牌韩国旅游旅游服务团队，备有完整保险"
+          },
+          {
+            "icon": "route",
+            "title": "路线专家",
+            "description": "定制化行程，而非千篇一律的固定路线",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "定制化行程，而非千篇一律的固定路线"
+          },
+          {
+            "icon": "users",
+            "title": "精心控制团体人数",
+            "description": "车辆大小适合您的团体需求",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "车辆大小适合您的团体需求"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "即时通知",
+            "title": "即时确认",
+            "detail": "您将收到含行程摘要的预订确认通知。",
+            "description": "您将收到含行程摘要的预订确认通知。"
+          },
+          {
+            "timing": "出发前12小时",
+            "title": "出发前12小时提醒",
+            "detail": "出发前分享天气更新及任何路线调整。",
+            "description": "出发前分享天气更新及任何路线调整。"
+          },
+          {
+            "timing": "前一晚",
+            "title": "最终接送信息",
+            "detail": "确认确切接送时间及司机联络方式。",
+            "description": "确认确切接送时间及司机联络方式。"
+          },
+          {
+            "timing": "行程当天早晨",
+            "title": "当日路线说明",
+            "detail": "出发当天早上根据最新现场状况提供简报。",
+            "description": "出发当天早上根据最新现场状况提供简报。"
+          },
+          {
+            "timing": "行程途中",
+            "title": "景点逐一说明",
+            "detail": "每个景点提供即时现场讲解。",
+            "description": "每个景点提供即时现场讲解。"
+          },
+          {
+            "timing": "行程结束后",
+            "title": "行程后支援",
+            "detail": "行程结束后提供后续建议及额外信息。",
+            "description": "行程结束后提供后续建议及额外信息。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "这与南怡岛或DMZ的小团巴士行程有何不同？",
+            "answer": "这是仅供您的团体使用的私家车——灵活行程、酒店接送、无需配合他人时间表。小团巴士行程在多个团体间遵循固定时间。若您需要酒店接送、客制路线组合（加平自然＋DMZ＋爱宝乐园或自订清单）或适合长辈和幼儿的节奏，请选择私人包车。若您是1至2人且以预算为优先，固定路线拼团行程更为划算——私人定价是按车计，而非按人计。"
+          },
+          {
+            "id": "q2",
+            "question": "10小时服务时间如何运作？",
+            "answer": "计时从您的首尔酒店接送时间开始，连续计算至返回下车——包含车程、停留时间，以及如已加购的机场接送。超过10小时的费用为每小时₩30,000，以现金支付给司机，并视司机排班而定。建议在当天早晨或前一晚与司机兼导游确认行程优先事项。"
+          },
+          {
+            "id": "q3",
+            "question": "下雨天怎么办？",
+            "answer": "司机兼导游会在雨天转向室内景点——坡州精品奥特莱斯、Heyri艺术村、博物馆停留或水原星野购物中心。路线2的DMZ部分也可能受军事训练时间表影响，可能需要当日路线调整。最终路线在当天早晨根据现场天气与司机兼导游共同确认。"
+          },
+          {
+            "id": "q4",
+            "question": "我会乘坐什么车型？",
+            "answer": "车辆在预订时依您的团体人数及行李量配置。典型配置：1至3位宾客用轿车、4至5位宾客用中型SUV、6至9位宾客用现代Staria或起亚Carnival商务车。预订时请提供确切人数及行李件数。10人以上团体可安排多辆车报价。"
+          },
+          {
+            "id": "q5",
+            "question": "有哪些额外费用需要了解？",
+            "answer": "跨省附加费：羊驼世界或乐高乐园（均在江原道）需加收₩60,000。仁川机场接送为单程₩100,000。所有入场费及餐费均由宾客在各景点自行支付（不含在行程费用中）。司机小费为自愿性质，全日服务后适当致谢不胜感激。"
+          },
+          {
+            "id": "q6",
+            "question": "哪些首尔地区享有免费酒店接送？",
+            "answer": "免费接送涵盖首尔市中心核心地带：明洞、弘大、东大门、仁寺洞、梨泰院及邻近地区。此区域以外的住宿（如江南阳才以东、金浦机场附近、麻浦远西）可能需要小额附加接送费——预订时确认。请在预订时提供酒店地址，以便司机提前规划路线。"
+          },
+          {
+            "id": "first-time",
+            "question": "对于初次游览首尔及近郊的旅客，这是好选择吗？",
+            "answer": "适合，但有一点说明：此格式最适合对三条预设路线（加平自然环线、DMZ＋坡州、爱宝乐园＋民俗村）之一有明确偏好或有特定景点想法的旅客。没有特定想法的初次旅客有时从固定路线小团行程中获益更多，因为路线已替您决定好。若您尚未决定，司机兼导游可在当天早晨建议路线。"
+          },
+          {
+            "id": "walking",
+            "question": "步行难度高吗？",
+            "answer": "大多以轻松步行为主——这是以车辆为主的行程，司机会在每个景点附近下客。步行需求视路线而定：南怡岛有平坦林荫步道（约2公里环岛）；晨静树木园有缓坡；DMZ景点在第3条地下隧道和临津阁有些许不平整路面。爱宝乐园和民俗村步行较多，但司机等候，您自行掌控节奏。"
+          },
+          {
+            "id": "family",
+            "question": "这个行程适合家庭吗？",
+            "answer": "适合——这是首尔近郊格式中对家庭最友善的选择之一。私家车省去了婴儿车和儿童座椅的巴士协调问题，司机兼导游可在小憩或孩子疲惫时暂停或转向。路线3（爱宝乐园＋韩国民俗村）是最强的家庭选择；路线1（加平）适合大一点的孩子；路线2（DMZ）仅适合青少年及以上。"
+          },
+          {
+            "id": "seniors",
+            "question": "年长者可以舒适地参加吗？",
+            "answer": "是的——这是最适合年长旅客的格式之一。私家车、酒店接送和弹性节奏让活跃年长者及行动较不便的长辈都能舒适参与。司机兼导游可依要求在更靠近入口处下客、安排休息座位，并略过上坡可选路段（如普蒂法国山坡、天空公园螺旋梯）。预订时请告知具体的行动限制，以便调整路线。"
+          },
+          {
+            "id": "children",
+            "question": "建议的最低参加年龄是多少？",
+            "answer": "所有年龄均欢迎。私家车、弹性节奏和酒店接送让此格式成为首尔日行程中对幼儿最友善的选择之一——如需儿童安全座椅请提前准备（司机可提供建议）。路线3（爱宝乐园＋韩国民俗村）是预设中最适合家庭的选择。对于学步儿童，司机兼导游可安排额外休息时间，不影响您的行程。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "可订状态将在支付步骤中确认。",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "人"
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-29",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v17_batch7"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch7_enhancement": {
+        "date": "2026-04-29",
+        "description": "Batch 7 deep enhancement — private charter pair (Jeju + Seoul). Both tours have 4 route options as itineraryStops (East/West/South/Custom for Jeju; Gapyeong/DMZ-Paju/Everland-Folk/Custom for Seoul). Each route option enhanced with 1,000+ char descriptions weaving verified facts about constituent POIs into a coherent route narrative. product profile recalibrated to verified-fact 0-1 float scores using cross-route weighted averaging. private_tour_fit, customizable_route_fit, flexibility_fit set from None to 1.0. 9 new POIs added to KB (v1.9 → v1.10): udo_island, manjanggul_lava_tube, sanbangsan_mountain, sangumburi_crater, yakcheonsa_temple, garden_of_morning_calm, petite_france, everland, korean_folk_village_yongin. DMZ POIs and Nami Island deferred to Batch 8.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale per Phase 1 standard. Both tours are private 9-10hr charters with 4 route options (East/West/South/Custom for Jeju; Gapyeong/DMZ-Paju/Everland-Folk/Custom for Seoul). Scores are weighted averages across the recommended routes, with extreme-outlier dimensions weighted toward the realistic middle (e.g. UNESCO score reflects average across routes — Route 1 maxes UNESCO, but weighted average ~0.65). Charter-format dimensions (private_tour_fit, customizable_route_fit, flexibility_fit) are set to 1.0 by definition. Walking_level and indoor_ratio are time-weighted averages across the typical day.",
+          "deltas_applied": {
+            "private_tour_fit": {
+              "old": null,
+              "new": 1.0,
+              "reasoning": "VERIFIED — Both tours are per-vehicle private charters by definition. Was previously None (unset)."
+            },
+            "customizable_route_fit": {
+              "old": null,
+              "new": 1.0,
+              "reasoning": "VERIFIED — Three recommended routes plus a fully custom option. Both tours fully customizable. Was previously None."
+            },
+            "flexibility_fit": {
+              "old": null,
+              "new": 1.0,
+              "reasoning": "VERIFIED — Driver-guide adapts pacing, order, lunch, optional add-ons (Udo ferry, Smart Queue). Was previously None."
+            },
+            "small_group_fit": {
+              "old": 0.2,
+              "new": 0.15,
+              "reasoning": "Verified — these are PRIVATE charters not small-group. 0.15 reflects that a 1-vehicle-of-9 booking still functions as a small private group, but the product type is private not small_group."
+            },
+            "bus_fit": {
+              "old": 0.2,
+              "new": 0.05,
+              "reasoning": "Verified — private charter = sedan/SUV/van, never bus. 0.05 reflects near-zero bus fit (only the very largest groups of 10+ would step up to a coach format)."
+            },
+            "unesco_fit": {
+              "old": 0.2,
+              "new": 0.3,
+              "reasoning": "VERIFIED — modest upward calibration. Route 3 visits Korean Folk Village (Jultagi tightrope is UNESCO ICH, but the village itself isn't UNESCO World Heritage). Custom Route can include Suwon Hwaseong (UNESCO 1997). Weighted ~0.30 — modest UNESCO content compared to a Jeju or Gyeongju trip."
+            },
+            "iconic_landmark_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "VERIFIED — Nami Island, Garden of Morning Calm, DMZ 3rd Tunnel, Everland T Express are all iconic landmarks of the Seoul-area touring circuit. 0.85 calibrated."
+            },
+            "first_time_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "VERIFIED — for a first-time Seoul visitor with kids, Route 1 (Gapyeong) or Route 3 (Everland) deliver maximum recognizable content. 0.85 calibrated up from 0.80."
+            },
+            "scenic_level": {
+              "old": 0.8,
+              "new": 0.8,
+              "reasoning": "Verified — Gapyeong nature loop is high scenic; DMZ is institutional rather than scenic; Everland is theme-park visual rather than scenic. Average ~0.80 maintained."
+            },
+            "walking_level": {
+              "old": 0.4,
+              "new": 0.55,
+              "reasoning": "VERIFIED — was significantly underestimated. Route 1: 3 km Nami walk + Morning Calm 1.5-2hr garden + Petite France slopes (~0.55). Route 2: 3rd Tunnel ramp + Paju Outlets walking (~0.50). Route 3: Everland 5-10 km hilly OR Folk Village 5-7 km flat (~0.75). Average ~0.55, materially higher than previous 0.40."
+            },
+            "indoor_ratio": {
+              "old": 0.5,
+              "new": 0.4,
+              "reasoning": "VERIFIED — weighted across routes. Route 1: low indoor (~0.20 — Petite France interiors + Morning Calm cafés). Route 2: moderate (~0.45 — 3rd Tunnel underground + Paju Outlets covered shopping). Route 3: moderate (~0.30 Everland + 0.20 Folk Village = ~0.25). Average ~0.40, lower than previous 0.50."
+            },
+            "weather_sensitivity": {
+              "old": 0.4,
+              "new": 0.5,
+              "reasoning": "VERIFIED — calibrated up from 0.40. Route 1 (Gapyeong outdoor gardens + island) has high weather sensitivity. Route 2 has indoor DMZ + Paju Outlets fallback. Route 3 Everland is outdoor theme park. Average ~0.50."
+            },
+            "shopping_fit": {
+              "old": 1.0,
+              "new": 0.7,
+              "reasoning": "VERIFIED — only Route 2 (Paju Outlets) has flag邮轮 shopping. Routes 1, 3 have minimal shopping. Custom Route can max if specifically requested. Weighted ~0.70, materially lower than the previous 1.0 which assumed Route 2 always selected."
+            },
+            "family_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Verified — Routes 1 and 3 are best-in-class for families with kids. Route 2 less so but still doable. Maintained at 1.0."
+            },
+            "premium_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Verified — private vehicle + flexible itinerary + driver-guide = top of premium scale. Maintained at 1.0."
+            },
+            "value_for_money_fit": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Verified — per-vehicle pricing is excellent value for groups of 4-9 but expensive for solo travelers. Slight markdown to 0.55."
+            },
+            "storytelling_fit": {
+              "old": 0.8,
+              "new": 0.8,
+              "reasoning": "Verified — driver-guide narrates throughout. 0.80 maintained — slightly less rich narrative than Jeju (geology) but DMZ history is a strong narrative if Route 2."
+            }
+          }
+        }
+      }
+    }
+  }
+}

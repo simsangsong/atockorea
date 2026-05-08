@@ -1,0 +1,2411 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "jeju-west-south-full-day-authentic-tour",
+  "locale": "zh-TW",
+  "product_id": "jeju-west-south-full-day-authentic-tour",
+  "seo": {
+    "pageTitle": "濟州西南部正宗全天小團體遊 | AtoC Korea",
+    "metaDescription": "9小時濟州西南部小團體環線：漢拿山1100溼地（UNESCO）、柱狀節理帶、松嶽山、天帝淵瀑布、協才翡翠海灘。",
+    "primaryKeywords": [
+      "濟州西南遊",
+      "漢拿山1100溼地遊",
+      "松嶽山旅遊",
+      "協才海灘旅遊",
+      "濟州咖啡街遊"
+    ],
+    "ogImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+    "title": "濟州西南全日深度在地行程 | AtoC Korea",
+    "description": "濟州西南深度一日遊：漢拏山1100道路→大浦柱狀節理→天帝淵瀑布→Osulloc茶博物館→愛月海岸咖啡館一條街。小團體，英語導遊，全年開團。"
+  },
+  "catalog_card": {
+    "thumbnail": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+    "title": "濟州西部＆南部全日深度在地行程",
+    "priceLabel": "價格因投行而異 — 請於預訂時確認",
+    "shortCardDescription": "一次遊覽濟州島西海岸與南海岸精華的小團體一日遊。行程包括漢拿山1100高地溼地（UNESCO）、柱狀節理帶（UNESCO）、松嶽山火山口步道、天帝淵瀑布及協才翡翠海灘。",
+    "tags": [
+      "小團",
+      "jeju",
+      "濟州西部與南部",
+      "unesco",
+      "咖啡館體驗",
+      "海岸"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "slug": "jeju-west-south-full-day-authentic-tour",
+    "subtitle": "漢拿山UNESCO高地、柱狀節理帶、松嶽山山脊、天帝淵瀑布、翡翠海灘一日盡覽。",
+    "region": "濟州西南部",
+    "duration": "9小時",
+    "stopsCount": 9,
+    "badges": [
+      "小團體",
+      "濟州",
+      "濟州西南部",
+      "世界遺產",
+      "咖啡文化",
+      "海岸風情"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800"
+  },
+  "headlineLine1": "1100溼地到柱狀崖，茶園到海岸咖啡館——",
+  "headlineLine2": "西南濟州，節奏從容的一日深度行程",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "人",
+    "priceSource": "direct_rate",
+    "priceNote": "小團體票價尚未確認。姊妹南部UNESCO行程（同一合作業者）為43美元。確認後，AtoC Korea直售價格享9折優惠。",
+    "discountPercent": 10
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1600",
+    "imagePosition": "center 35%",
+    "tagline": "火山地貌遇上壯闊海岸與時尚海邊咖啡館——濟州西部與南部最完整的在地體驗",
+    "pills": [
+      "小團體",
+      "濟州"
+    ],
+    "meta": {
+      "duration": "≈ 9小時（08:30首次接送，≈ 18:00下車）",
+      "region": "濟州西南部",
+      "stops": "9 個景點",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "行程總覽"
+    },
+    {
+      "id": "itinerary",
+      "label": "詳細行程"
+    },
+    {
+      "id": "details",
+      "label": "注意事項"
+    },
+    {
+      "id": "faq",
+      "label": "常見問題"
+    },
+    {
+      "id": "reviews",
+      "label": "旅客評價"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "行程時間",
+      "value": "約9小時（08:30首班接送，約18:00送達）"
+    },
+    {
+      "icon": "users",
+      "label": "團體規模",
+      "value": "小團體，迷您大巴，英中雙語導遊"
+    },
+    {
+      "icon": "map-pin",
+      "label": "接送資訊",
+      "value": "Ocean Suites 08:30 / 濟州機場3號門（3樓）08:45 / LOTTE City 08:55 / W Jeju 09:05 / 神話世界 09:15 / 西歸浦市（酒店區）09:30"
+    },
+    {
+      "icon": "footprints",
+      "label": "步行強度",
+      "value": "輕鬆至中等——溼地木棧道、懸崖步道、海灘漫步"
+    },
+    {
+      "icon": "ticket",
+      "label": "費用包含",
+      "value": "車輛、資格證導遊、景點入場費。不含：午餐（約₩15,000）、小費"
+    },
+    {
+      "icon": "ban",
+      "label": "購物安排",
+      "value": "合作業者明確無購物政策"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+      "alt": "行程中參觀的漢拏山1100高地溼地——UNESCO生物圈木棧道景觀",
+      "caption": "漢拏山1100高地溼地——UNESCO生物圈木棧道",
+      "location": "漢拏山1100高地溼地，濟州中部（海拔1,100公尺）",
+      "atmosphere": "清涼高地空氣；UNESCO保護的山地生態體系，靜謐木棧道環線"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+      "alt": "行程中參觀的柱狀節理海崖——UNESCO地質公園六角形石柱景觀",
+      "caption": "柱狀節理海崖——UNESCO地質公園六角形石柱",
+      "location": "柱狀節理，中文海岸，南濟州",
+      "atmosphere": "浪濤拍打的玄武岩海崖；濟州最受拍攝的海岸景點之一"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+      "alt": "松嶽山山脊南海岸全景環形步道",
+      "caption": "松嶽山山脊——南海岸全景環形步道",
+      "location": "松嶽山，濟州西南端",
+      "atmosphere": "開放的海岸草原；360°全景步道，漢拏山在內陸、馬羅島在離岸"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+      "alt": "雪綠茶博物館與茶田",
+      "caption": "雪綠茶博物館與茶田",
+      "location": "雪綠茶博物館，濟州西部中央",
+      "atmosphere": "韓國最大可參觀茶莊；博物館＋咖啡廳＋拍照友善茶田"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+      "alt": "挾才海灘西海岸咖啡廳一條街",
+      "caption": "挾才海灘＋西海岸咖啡廳一條街",
+      "location": "挾才海灘，翰林，西濟州",
+      "atmosphere": "日落咖啡廳一條街收尾站；碧洋島在離岸清晰可見"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "09:00",
+      "duration": "30分鐘",
+      "name": "接送（濟州市4個地點）",
+      "category": "接送——濟州市酒店/集散點順序",
+      "description": "**四個濟州市接送點，覆蓋主要飯店及交通樞紐**。西→東順序接客，確保巴士約10:20抵達1100高地溼地——避開尖峰人流，也讓早晨光線在高地溼地木棧道上最為柔和清澈。Ocean Suites（08:30）→ 濟州機場3號門3樓國內出發廳（08:45）→ LOTTE City Hotel（08:55）→ 新羅免稅店（09:05）。",
+      "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+      "highlights": [
+        "四個接送點：**Ocean Suites（08:30）→ 濟州機場3號門（08:45）→ LOTTE City Hotel（08:55）→ 新羅免稅店（09:05）**",
+        "西→東接送順序——**約10:20抵達1100高地溼地**，搶在尖峰人流前",
+        "請提早**10分鐘**到達選定接送點",
+        "遲到超過10分鐘者**恕不候車，票款不退**",
+        "出發前一天透過**WhatsApp確認**行程"
+      ],
+      "timeUsed": [
+        "涯邑接送 ~09:00 — 5分鐘",
+        "機場接送 ~09:10 — 5分鐘",
+        "市政府接送 ~09:20 — 5分鐘",
+        "東門接送 ~09:30 — 5分鐘",
+        "沿1100號公路南行前往溼地 — 約50分鐘"
+      ],
+      "whyOnRoute": "四個接送點覆蓋濟州市主要飯店＋交通樞紐，無需讓賓客橫穿城市。西→東順序接送讓巴士約10:20抵達1100高地溼地——避開尖峰人流，並保留早晨最佳光線。"
+    },
+    {
+      "number": 2,
+      "time": "≈ 10:20",
+      "duration": "45分鐘",
+      "name": "漢拿山1100高地溼地（拉姆薩爾+UNESCO）",
+      "category": "高山溼地——拉姆薩爾溼地+漢拿山UNESCO世界自然遺產內",
+      "description": "**漢拏山1100高地溼地**是漢拏山高原上的一片高山溼地體系，位於連接濟州市至西歸浦中文的**1100號公路——韓國最高的國道——海拔恰好1,100公尺**處。此地為**拉姆薩爾國際重要溼地（第1893號，2009年10月12日指定）**，同時位於**漢拏山UNESCO世界自然遺產（2007年）**、**濟州島UNESCO生物圈保護區（2002年）**和**漢拏山國家公園（1970年）**的範圍內——是全球為數不多同時擁有**四重國際/國家重疊認定**的地點之一。溼地由**16個以上不連續淡水溼地和水潭**組成，記錄有**韓國3種受威脅鳥類和1種受威脅植物**，以及多種濟州特有種。遊客體驗為**1公里木棧道環線**，設有觀景臺和解說標示牌。**免費入場**；緊鄰**1100休憩所**（室內洗手間、咖啡廳和小型紀念品店）。",
+      "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
+      "highlights": [
+        "**拉姆薩爾第1893號**（2009年10月12日指定）— 國際重要溼地",
+        "**海拔1,100公尺** — 位於韓國**最高國道**（1100號公路）沿線",
+        "**四重國際認定** — 拉姆薩爾 + UNESCO世界遺產 + 生物圈 + 國家公園",
+        "**16個以上不連續溼地** — 淡水溼地、水潭和泥炭沼澤",
+        "**3種受威脅鳥類 + 1種受威脅植物**；多種濟州特有種",
+        "2008年有**90萬人次到訪**",
+        "**1公里木棧道環線**，設觀景臺 + 解說標示牌",
+        "**秋季紅葉 + 冬季雪景** = 代表性拍攝季節",
+        "**免費入場**；緊鄰1100休憩所"
+      ],
+      "timeUsed": [
+        "大巴抵達並停車於1100休息區 — 約5分鐘",
+        "木棧道環線 + 觀景臺 — 約25分鐘",
+        "解說標牌 + 自然歷史展覽 — 約10分鐘",
+        "預留時間 / 咖啡廳衛生間 — 約5分鐘"
+      ],
+      "whyOnRoute": "**西南真味路線的高地UNESCO開場核心亮點**。相比南UNESCO姊妹行程以漢拏山低海拔御乘生嶽步道（1,169公尺）開場，本真味路線更進一步，以1100高地溼地（海拔1,100公尺，拉姆薩爾公約溼地）作為起點——同一個UNESCO生物圈，但以平坦木棧道環線呈現，幾乎對所有年齡和體能層次都無障礙，同時仍提供真正的高山視野與UNESCO認證。",
+      "_poi_meta": {
+        "poi_key": "hallasan_1100_wetland",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Ramsar Sites Information Service — 1100 Altitude Wetland (Site No. 1893)",
+          "UNESCO Man and the Biosphere Programme — Jeju Island Biosphere Reserve",
+          "Korea National Park Service — Hallasan National Park 1100 Wetland records",
+          "Mt Halla Visitor Centre — visitor management documentation",
+          "Jeju Special Self-Governing Province — Wetland Protected Area designation 2009"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:35",
+      "duration": "45分鐘",
+      "name": "大浦柱狀節理帶",
+      "category": "火山海岸線——六角形柱狀節理熔岩",
+      "description": "**大浦柱狀節理**是一段**全長1公里的六角形柱狀節理玄武岩懸崖**，位於中文旅遊區海岸線，於**2005年1月6日被指定為天然紀念物第443號**。石柱高達**30至40公尺**，緊密排列著**五至七邊形稜柱**（以六邊形為主）——成因為**漢拏山側翼噴出的玄武岩熔岩（約25萬至14萬年前）抵達海洋後在冷卻收縮時垂直斷裂**而形成。大浦柱狀節理是**東亞最具代表性的柱狀節理景點**，也是**濟州全球地質公園（UNESCO 2010-10認定）**13個官方地質遺址之一。沿岸800公尺**木棧道環線**設有三個角度不同的觀景臺；**漲潮時水花飛濺高達20公尺**。入場費：**成人₩2,000 / 青少年₩1,000 / 7歲以下及65歲以上免費**。觀景臺為無障礙設施。開放時間：**每日09:00至18:00**。",
+      "image": "https://images.unsplash.com/photo-1565967511849-76a60a516170",
+      "highlights": [
+        "**天然紀念物第443號** — **2005年1月6日**指定",
+        "石柱高達**30至40公尺**，沿**1公里**海岸線緊密排列著六邊形稜柱",
+        "成因：**漢拏山側翼熔岩約25萬至14萬年前流入海中冷卻收縮**，垂直裂開",
+        "**東亞最具代表性的柱狀節理景點** — 媲美英國巨人堤道",
+        "**漲潮時水花飛濺高達20公尺**",
+        "**0.8公里木棧道環線** — 無障礙設施",
+        "屬於**濟州全球地質公園（UNESCO 2010-10）** — 全島13處官方地質遺址之一",
+        "成人₩2,000 / 青少年₩1,000 / **7歲以下及65歲以上免費**",
+        "晴天時可遠眺漢拏山峰頂，地質上**直接位於其下游**"
+      ],
+      "timeUsed": [
+        "停車+購票+入場——約5分鐘",
+        "走至第一觀景臺——約5分鐘",
+        "巖壁觀賞+拍照——約15分鐘",
+        "繼續木棧道環線——約10分鐘",
+        "返回大巴——約10分鐘"
+      ],
+      "whyOnRoute": "**西南真味路線的上午UNESCO地質公園核心亮點**。相比南UNESCO姊妹行程將柱狀節理作為下午黃金時段的高潮景點（15:40抵達），本路線以上午中段安排柱狀節理（約11:00抵達），將其定位為1100高地之後地質參觀脈絡的延伸——漢拏山的熔岩從山頂一路流淌至海岸，最終在此凝固成30至40公尺的六角形石柱。",
+      "_poi_meta": {
+        "poi_key": "daepo_jusangjeolli_cliff",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Cultural Heritage Administration — Natural Monument No. 443 designation (2005年1月6日)",
+          "Jeju UNESCO Global Geopark — Daepo Jusangjeolli geosite documentation",
+          "Korean Society of Petroleum Engineers — columnar-jointing geology records",
+          "VisitJeju — Daepo Jusangjeolli official listing",
+          "Korea Geological Survey — Jeju volcanic flow chronology"
+        ]
+      }
+    },
+    {
+      "number": 4,
+      "time": "≈ 12:30",
+      "duration": "60分鐘",
+      "name": "午餐——大靜/安德本地菜",
+      "category": "午間休息——濟州西南本地菜",
+      "description": "**在大靜/安德一帶安排午餐，為前往松嶽山前調整節奏**。大靜邑定位意味著午餐後**10分鐘即可抵達松嶽山**。輪替菜式：**辣燉白帶魚（白帶魚燉煮）**——大靜港是濟州主要的白帶魚捕撈港，在地餐廳為南海岸很有代表性的選擇；**蕨菜辣牛肉湯（蕨菜辣牛肉湯）**是大靜∕安德傳統的陸地料理，以濟州山蕨菜製作，有別於更為人知的海鮮主導飲食；或**濟州黑毛豬（濟州黑毛豬BBQ）**。素食及清真選項可在部分輪替餐廳提供——請於預訂時告知。午餐費用約₩15,000，現場自費。",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "highlights": [
+        "大靜邑定位——午餐後**10分鐘車程抵達松嶽山**",
+        "**辣燉白帶魚（白帶魚燉煮）**——大靜港白帶魚捕撈地，最地道的南海岸料理",
+        "**蕨菜辣牛肉湯（蕨菜辣牛肉湯）**——大靜∕安德傳統陸地料理",
+        "**濟州黑毛豬**選項可選",
+        "午餐費用約**₩15,000**，現場自費",
+        "素食及清真需求請提前告知"
+      ],
+      "timeUsed": [
+        "大巴前往午餐地點 — 約5分鐘",
+        "點餐 + 用餐 — 約45分鐘",
+        "大巴前往松嶽山登山口 — 約10分鐘"
+      ],
+      "whyOnRoute": "大靜邑定位意味著午餐後10分鐘即可抵達松嶽山。白帶魚加上蕨菜辣牛肉湯是大靜∕安德傳統，均源自大靜地區（大靜是朝鮮時代濟州三大行政中心之一），飲食身份認同與地理定位自然契合。"
+    },
+    {
+      "number": 5,
+      "time": "≈ 13:40",
+      "duration": "75分鐘",
+      "name": "松嶽山（全景觀景臺）",
+      "category": "雙火山口火山——99峰+濟州偶來10號路線+二戰歷史",
+      "description": "**松嶽山**是濟州西南端大靜邑的一座**104公尺雙重火口寄生火山錐**，以民間計數的**「九十九峰」**聞名。從地質角度，松嶽山呈現**雙重火口結構**：**外火口（直徑約500公尺，周長約1.7公里）**和**內火口（直徑約400公尺，深約69公尺）**。遊客體驗是沿懸崖邊緣的**2.8公里沿海環線步道**，幾乎全程為**木棧道 + 舒緩臺階**，以中等步速約75分鐘完成。步道是**濟州偶來小路第10路線**的核心路段。環線全景包括——向南——**馬羅島（韓國最南端，1.7公里外）**和**加波島（5.5公里外）**；向東南——**兄弟巖**；向東北——**山房山**和**漢拏山**。**歷史層次**：南部沿海峭壁保有**二戰日本帝國陸軍掘鑿的隧道** — 神風特攻隊自殺艇掩體，對外開放。**自由奔跑的馬匹和馬駒**在山坡上吃草。**免費入場**；偶爾因環境保護輪替關閉峰頂小徑；強烈建議全年攜帶防風外套。",
+      "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa",
+      "highlights": [
+        "**104公尺雙重火口火山** — 外火口直徑500公尺，內火口直徑400公尺 × 深69公尺",
+        "**「九十九峰」**民間計數 — 密集的子火山錐群",
+        "**2.8公里沿海環線步道**（約75分鐘）— 木棧道 + 舒緩臺階",
+        "**偶來小路第10路線**核心路段",
+        "**全景**：馬羅島、加波島、兄弟巖、山房山、漢拏山",
+        "**南部海崖保有二戰日本帝國陸軍隧道** — 神風特攻隊掩體",
+        "**自由奔跑的馬匹和馬駒**在山坡上吃草",
+        "**峰頂小徑偶爾關閉**；沿海環線全年開放",
+        "**免費入場**；強烈建議全年攜帶防風外套"
+      ],
+      "timeUsed": [
+        "停車+步道說明——約5分鐘",
+        "海岸懸崖段——約25分鐘",
+        "二戰洞窟外觀+解說牌——約10分鐘",
+        "內部火山口觀景——約20分鐘",
+        "集合——約5分鐘",
+        "集合時間 — 約5分鐘"
+      ],
+      "whyOnRoute": "**全日地質＋歷史的高潮**——也是本系列行程中唯一在75分鐘步行中集**雙火山口地質＋二戰殖民歷史＋五島全景**於一身的景點。松嶽山在西南真味路線（午後中段）和其他島嶼行程中扮演截然不同的角色：2.6公里的海岸環形步道視野無與倫比——漢拏山在北方、馬羅島在南方、加波島在西方——而帝國日本為神風特攻隊建造的玄武岩地下陣地為這片風景增添了沉重的歷史層次。",
+      "_poi_meta": {
+        "poi_key": "songaksan",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Wikipedia — Songaksan (Jeju) volcanic structure documentation",
+          "Jeju Olle Foundation — Trail Course 10 official map",
+          "Jeju 4·3 Peace Foundation — Imperial Japanese Army WWII tunnel records",
+          "VisitJeju — Songaksan Mountain official listing",
+          "Korea Geological Survey — double-crater parasitic-cone geology"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "≈ 15:15",
+      "duration": "45分鐘",
+      "name": "天帝淵瀑布（神仙之潭）",
+      "category": "三級瀑布——天然紀念物第378號（1993年）",
+      "description": "**天帝淵瀑布**是中文旅遊區火山峽谷中的一處**三層瀑布**，於**1993年以天然紀念物第378號**指定保護，原因是其罕見的生態複合特性。地名源於**朝鮮時代的道教傳說：七位仙女每夜從天而降，在上方的淵中沐浴** — 這個神話被奇特場地終年飄渺的薄霧微氣候進一步強化。**第一層瀑布（落差22公尺，水潭深21公尺）**跌入圓形玄武岩水潭，只在暴雨後才會奔流——多數日子上方的水潭靜如鏡面。**第二層瀑布（落差30公尺）全年有流水** — 是最主要的拍攝景觀。第三層完成落水之旅入海。橫跨峽谷中段的**仙臨橋，長120公尺、距地面高78公尺** — 兩側的鑄銅浮雕板描繪著**七位仙女的飛翔姿態**，是創始傳說的建築實體化。周邊森林是**珍稀植物棲息地**，包括**韓國油點草（韓國油點草）**和瀕危的**濟州水韭（濟州水韭，濟州特有，IUCN極危物種）**。環線步行路線：**0.8公里，約30分鐘**，途中設有數段陡峭臺階。入場費：**成人₩2,500 / 青少年₩1,350 / 7歲以下及65歲以上免費**。天帝淵也是**「瀛洲十景」**之一，與漢拏山、城山日出和正房瀑布並列。開放時間**每日09:00至18:00**（最後入場17:30）。",
+      "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
+      "highlights": [
+        "**天然紀念物第378號（1993年指定）** — 三層瀑布 + 珍稀植物棲息地",
+        "地名**「天帝淵」= 「天帝之淵」** — 朝鮮道教傳說",
+        "**七仙女傳說**刻入**長120公尺 × 高78公尺仙臨橋**的浮雕板中",
+        "**第一層（落差22公尺 / 深21公尺）** — 僅在暴雨後奔流；**第二層（落差30公尺）全年有水**",
+        "棲息**濟州水韭（濟州水韭）** — 濟州特有，IUCN極危物種",
+        "**0.8公里環線 / 約30分鐘** — 中等難度臺階，注意鞋款",
+        "入場費 **₩2,500 / 成人 / ₩1,350 / 青少年 / 7歲以下及65歲以上免費**",
+        "**濟州七仙女節**兩年一屆，橋上儀式",
+        "**薄霧微氣候** — 天然降溫，夏季午後人氣避暑勝地"
+      ],
+      "timeUsed": [
+        "入場+購票——約5分鐘",
+        "下至第1級觀景臺——約10分鐘",
+        "第1、2級拍照——約20分鐘",
+        "仙妮橋+七仙女浮雕板——約15分鐘",
+        "森林環線+返回大巴——約25分鐘"
+      ],
+      "whyOnRoute": "**下午自然紀念物文化遺產核心景點**。相比南UNESCO姊妹行程以較長的60分鐘停留安排天帝淵（14:30），本真味路線以**45分鐘的聚焦停留**——重點為2號瀑布（全年流水）＋仙臨橋七仙女浮雕版畫。緊接松嶽山的壯闊海岸視野之後，天帝淵的幽閉林間峽谷提供強烈的體驗對比，並在下午茶田段前給予心理上的喘息空間。",
+      "_poi_meta": {
+        "poi_key": "cheonjeyeon_falls",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Cultural Heritage Administration — Natural Monument No. 378 designation",
+          "VisitJeju — Cheonjeyeon Falls official listing",
+          "Jeju Special Self-Governing Province — Seonimgyo Bridge construction records",
+          "Korea Plant Society — Mankyua chejuense IUCN Critically Endangered listing",
+          "Jeju Folklore Society — Daoist seven-nymph legend documentation"
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "time": "≈ 16:15",
+      "duration": "60分鐘",
+      "name": "Osulloc茶博物館及茶田",
+      "category": "愛茉莉太平洋茶文化旗艦店+綠茶田收尾",
+      "description": "**Osulloc茶博物館**是**愛茉莉太平洋集團**（韓國最大美容集團）的茶文化旗艦場地。創辦人徐成煥**親自於1979年開創這項事業**，在傳統觀點認為韓國無法商業種茶的年代，率先開墾濟州西廣高原的火山灰農地。今日，**西廣茶園**是**韓國最大的綠茶產地**，愛茉莉太平洋在濟州三個莊園的年產量合計約**700噸**。博物館**2001年建於茶園中央**，以其極簡主義綠屋頂展亭在茶行間的構成，入選**designboom十大藝術博物館**。**免費入場**，每日開放**09:00至18:00**，每年約**200萬人次到訪**。參觀自然分為三個段落：**(1) 館內** — 製茶工藝方式、唐代（618至907年）以降的古典茶具收藏，以及可俯瞰茶園全景的屋頂觀景臺；**(2) 茶館咖啡廳** — 直接以當年採收茶葉製成的招牌**綠茶蛋糕卷**和**綠茶冰淇淋**；**(3) 茶園步行路線** — 茶樹行間的礫石步道，黃金時段（日落前16至17時）是攝影最佳時機。**悅詩風吟濟州之家（Innis免費 Jeju House）**步行**5分鐘可達**——免費入場，可選擇參加濟州柚子皂DIY工作坊（₩15,000）。",
+      "image": "https://images.unsplash.com/photo-1556881286-fc6915169721",
+      "highlights": [
+        "**愛茉莉太平洋**旗艦 — 韓國最大美容集團；創辦人徐成煥**1979年**開創濟州茶業",
+        "**西廣茶園 = 韓國最大綠茶產地**；年產量約700噸",
+        "博物館**2001年開幕** — designboom十大藝術博物館（建築構成）",
+        "**免費入場**，每日開放**09:00至18:00**，每年約200萬人次",
+        "古典茶具收藏橫跨**唐代（618至907年）**至現代韓國朝鮮白瓷",
+        "招牌**綠茶蛋糕卷** + **綠茶冰淇淋** = 必嘗咖啡廳品項",
+        "**悅詩風吟濟州之家**步行5分鐘可達 — 免費，可選柚子皂DIY ₩15,000",
+        "茶園步行路線**最佳攝影時段為黃金時段（16:00至17:00）**",
+        "屋頂觀景臺 + 地面茶行兩個高度，提供截然不同的茶田構圖角度"
+      ],
+      "timeUsed": [
+        "停車+入場——約5分鐘",
+        "博物館內部+古茶具藏品——約20分鐘",
+        "茶館咖啡（卷蛋糕+冰淇淋）——約20分鐘",
+        "茶園步道漫步——約20分鐘",
+        "可選：悅詩風吟濟州之家參觀——約10分鐘"
+      ],
+      "whyOnRoute": "**真味路線的晚下午茶文化遺產核心景點**。相比南UNESCO姊妹行程將雪綠茶博物館作為全日的UNESCO參觀脈絡終章（16:40），本真味路線以雪綠作為**往西海岸挾才海灘的內陸過渡站**——平靜地結束松嶽山＋天帝淵的南海岸高潮後，讓賓客帶著咖啡因和綠茶冰淇淋能量輕鬆進入西海岸的日落收尾。雪綠的西廣高原位置天然契合地理：介於南海岸景點與挾才西北方向之間的中途站。",
+      "_poi_meta": {
+        "poi_key": "osulloc_tea_museum",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Osulloc Tea Museum official site (osulloc.com)",
+          "Amorepacific Corporation — Suh Sung-whan tea reclamation history (1979)",
+          "Architectural Institute of Korea — 2009 Korea Architecture Award records",
+          "designboom — Top 10 art museums feature",
+          "VisitJeju — Osulloc Tea Museum official listing"
+        ]
+      }
+    },
+    {
+      "number": 8,
+      "time": "≈ 17:30",
+      "duration": "60分鐘",
+      "name": "協才海灘",
+      "category": "西海岸翡翠海灘+飛揚島景觀",
+      "description": "**挾才海水浴場**是濟州西海岸前三大海灘之一，以獨特的**銀白色沙灘**（碎貝殼 + 珊瑚碎片）著稱。代表性景觀是**飛揚島** — 1.2公里外的火山島，正在進行韓國第一個碳中和島嶼認證。退潮時潮間帶水潭可見寄居蟹和幼魚；**日落時飛揚島的輪廓映入翡翠海水**是最具代表性的西海岸日落構圖。海灘後方的**西海岸咖啡廳一條街**是濟州咖啡文化最集中的地帶。與南方相連的孿生**金寧海灘**（人少）一同形成**9公里海岸線**。**免費入場**；全年有公廁和淋浴設施；7月至8月有救生員值班。",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      "highlights": [
+        "**濟州西海岸前三大 / 全島前十**海灘",
+        "**飛揚島** — 1.2公里外海，韓國第一個碳中和島嶼認證進行中",
+        "**日落時飛揚島映入翡翠海水** — 最佳西海岸日落構圖",
+        "**西海岸咖啡廳一條街** — 構成感咖啡廳密集排布",
+        "退潮時**潮間帶水潭**可見寄居蟹、小蝦、幼魚",
+        "與孿生**金寧海灘**組成9公里海岸線",
+        "**免費入場**；全年公廁和淋浴設施",
+        "7月1日至8月31日有救生員值班；輪椅無障礙坡道",
+        "緊鄰翰林公園（步行1.5公里）"
+      ],
+      "timeUsed": [
+        "大巴抵達+停車——約5分鐘",
+        "主海灘漫步+拍照時機——約20分鐘",
+        "可選：飛揚島渡輪（單程20分鐘+島上游覽90–120分鐘）——需另安排一天",
+        "咖啡街休息與簡餐 — 約15分鐘",
+        "日落拍照點 — 約5分鐘"
+      ],
+      "whyOnRoute": "**真味路線的西海岸日落壓軸**。相比南UNESCO姊妹行程以雪綠茶博物館作為室內收尾，本真味路線以**濟州西海岸日落標誌地**畫上句號——挾才海灘白沙＋碧玉海水＋碧洋島離島全景＋咖啡廳一條街。相比姊妹行程愛月（西北向海岸），挾才的海水顏色更為湛藍（清澈沙底），且與松嶽山的火山懸崖形成強烈的景色對比。17:30至18:15的停留時段精準對應春秋季最佳日落時段。",
+      "_poi_meta": {
+        "poi_key": "hyeopjae_beach",
+        "kb_version": "1.20",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitJeju — Hyeopjae Beach + Biyangdo Island official listings",
+          "Jeju Special Self-Governing Province — Top Jeju beaches ranking + amenity registry",
+          "Korea Maritime + Ports Office — Hallim Port ferry schedule to Biyangdo",
+          "Jeju Tourism Organization — west-coast sunset photography spots registry",
+          "Hallim-eup local cultural office — Geumneung twin-beach pairing documentation"
+        ]
+      }
+    },
+    {
+      "number": 9,
+      "time": "≈ 19:00",
+      "duration": "40分鐘",
+      "name": "下車（濟州市5個地點）",
+      "category": "下車——濟州市集散點順序",
+      "description": "**濟州市五個下車點**。由於路線以西海岸收尾，從挾才返回時沿1132號公路途經濟州市西部郊區。下車點：河暨（≈19:00）→ LOTTE City Hotel（≈19:05）→ 濟州機場（≈19:10）→ Ocean Suites（≈19:15）→ 東門傳統市場（≈19:30）。**注意：本行程的下車時間（≈19:00）比其他同合作業者行程略晚**，如有當晚航班請確認末班機時間。濟州國際機場末班機約21:30——19:10下車後仍有充裕時間。",
+      "image": "https://images.unsplash.com/photo-1549144511-f099e773c147",
+      "highlights": [
+        "五個下車點：**河暨（≈19:00）→ LOTTE（≈19:05）→ 機場（≈19:10）→ Ocean Suites（≈19:15）→ 東門市場（≈19:30）**",
+        "**注意：下車時間（≈19:00起）比其他行程略晚**——西海岸收尾導致",
+        "**機場下車（≈19:10）**仍在末班機21:30前充裕",
+        "東門市場可選晚餐——黑豬肉街步行約5分鐘"
+      ],
+      "timeUsed": [
+        "大巴 狹才 → 涯邑 — 約30分鐘，下車 — 5分鐘",
+        "→ 機場 — 10分鐘，下車 — 5分鐘",
+        "→ 市政府 + 連洞 + 東門 — 依次下車"
+      ],
+      "whyOnRoute": "河暨優先下車，因1132號公路從挾才返回時途經濟州市西部郊區。機場下車可應當晚有航班的旅客（約19:10，末班機21:30前充裕）。東門市場下車 = 可選晚餐站。"
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "濟州市+機場接送",
+      "type": "origin",
+      "theme": "出發"
+    },
+    {
+      "name": "漢拿山1100高地溼地（UNESCO）",
+      "type": "primary",
+      "theme": "火山"
+    },
+    {
+      "name": "柱狀節理帶（UNESCO地質公園）",
+      "type": "primary",
+      "theme": "海岸"
+    },
+    {
+      "name": "午餐",
+      "type": "meal",
+      "theme": "餐飲"
+    },
+    {
+      "name": "松嶽山觀景臺",
+      "type": "secondary",
+      "theme": "View"
+    },
+    {
+      "name": "天帝淵瀑布",
+      "type": "primary",
+      "theme": "瀑布"
+    },
+    {
+      "name": "O'Sulloc茶博物館",
+      "type": "secondary",
+      "theme": "文化"
+    },
+    {
+      "name": "協才海灘+咖啡街",
+      "type": "primary",
+      "theme": "海灘"
+    },
+    {
+      "name": "濟州市下車（5處）",
+      "type": "return",
+      "theme": "返回"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "山區晨段",
+      "duration": "約1小時",
+      "description": "駕車上山至漢拿山1100溼地木棧道。"
+    },
+    {
+      "phase": "南海岸UNESCO＋午餐",
+      "duration": "約2.5小時",
+      "description": "柱狀節理帶後享用濟州當地午餐。"
+    },
+    {
+      "phase": "松嶽山＋瀑布",
+      "duration": "約1.5小時",
+      "description": "松嶽山火山口步道後前往天帝淵瀑布。"
+    },
+    {
+      "phase": "茶田＋西海岸",
+      "duration": "約2小時",
+      "description": "O'Sulloc茶博物館，隨後以西海岸協才咖啡街收尾。"
+    },
+    {
+      "phase": "返回",
+      "duration": "約45分鐘",
+      "description": "西部海岸→濟州市，經5個下車點。"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "行程路線一覽",
+    "subtitle": "西部—南部濟州環線，比合作業者的南部UNESCO線路刻意減少遺產分量。南部線路側重御乘生態步道與UNESCO地質，本線路則更注重海岸風光、當地飲食文化及西部隱藏景點。"
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "希望在一天內體驗UNESCO漢拏山與濟州咖啡廳海灘的旅客",
+      "追逐多樣景觀（高地溼地→海岸懸崖→茶田→白沙海灘）的攝影愛好者",
+      "停留兩天或以下的初次遊濟州旅客",
+      "希望行程均衡、節奏舒適的情侶及成人家庭",
+      "偏好固定路線結構而非私人司機靈活性的旅客"
+    ],
+    "lessIdealFor": [
+      "希望在某一景點延長自由時間的旅客（本行程為固定路線巡迴）",
+      "當天郵輪旅客——17:30至18:15的挾才收尾與大多數郵輪離港時段沖突",
+      "希望深度漢拏山登山的旅客（本路線僅限1100高地溼地觀景）",
+      "每個景點都需要輪椅通道的旅客（天帝淵約80級石階；松嶽山2.6公里非鋪設步道）",
+      "獨遊預算旅客（小團體按人計價；輕鬆節奏更適合情侶和家庭）"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "為何如此安排路線",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "無需登山即可獲得UNESCO認證",
+            "detail": "大多數UNESCO漢拏山行程至少包含90分鐘步行。本路線使用1100高地溼地——同一個UNESCO生物圈，同樣的火山景觀，但以幾乎對所有人無障礙的平坦木棧道環線呈現。"
+          },
+          {
+            "label": "咖啡廳海灘收尾優於僅以博物館結束",
+            "detail": "標準南部環線在雪綠茶博物館結束，18:00關門，感覺像全日在收尾。本路線加入挾才海灘及咖啡廳一條街作為最後一站——全日以日落海岸咖啡廳而非博物館停車場結束。"
+          },
+          {
+            "label": "一天涵蓋兩個海岸",
+            "detail": "大多數濟州日行程只停留一個海岸。本路線刻意同時覆蓋南海岸（柱狀節理、天帝淵、松嶽山）和西海岸（雪綠、挾才）。對1日遊濟州旅客而言，這是在可接受的額外車程成本下最大化覆蓋範圍的路線。"
+          },
+          {
+            "label": "同一合作業者，同樣的「無強制購物」政策",
+            "detail": "本行程由與南部UNESCO行程相同的合作業者（Love Korea Tours）運營。「無購物」條款和四個接送點安排同樣適用。評論中一致提及導遊姓名（Steven、Chloe、Sunny），說明在不付私人遊費用的前提下仍能獲得個人關注。"
+          }
+        ]
+      },
+      {
+        "title": "步行負擔的真實感受",
+        "icon": "footprints",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "1100高地溼地是最輕鬆的停留",
+            "detail": "約1公里的平坦木棧道環線。適合所有年齡和體能層次。木棧道上適合輪椅通行。"
+          },
+          {
+            "label": "松嶽山是最長的活躍步行",
+            "detail": "2.6公里海岸環形步道，海拔爬升低。完整環線約60至90分鐘；1.5公里半圈可到達最強觀景點，時間不夠時可選。"
+          },
+          {
+            "label": "天帝淵石階是唯一要求較高的路段",
+            "detail": "從上層觀景臺無需石階。到達2號和3號瀑布需要約80級石階下行和返回。"
+          }
+        ]
+      },
+      {
+        "title": "天氣與季節變化時的應對",
+        "icon": "cloud-snow",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "1100道路大雪關閉",
+            "detail": "通常每個冬天1至3天。合作業者以三房山（山房山）寺廟群或增加挾才時間替代。"
+          },
+          {
+            "label": "夏季挾才下午人潮最旺",
+            "detail": "7至8月的咖啡廳一條街座位在16:00至18:00之間達到高峰。最受歡迎的咖啡廳可能需要排隊。"
+          },
+          {
+            "label": "天帝淵水量依季節而異",
+            "detail": "6至9月夏雨後水量最強。冬季水量較低，但拍攝條件更為清晰。"
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "inclusions",
+      "title": "費用包含項目",
+      "preview": "含空調小型巴士、導遊及部分入場費",
+      "content": [
+        "空調小型巴士、英語∕中文雙語認證司機兼導遊、景點門票（天帝淵、柱狀節理；雪綠茶博物館及挾才海灘免費）、燃料∕過路費∕停車費。",
+        "不含：午餐（約₩15,000）、挾才咖啡廳消費（可選）、小費。"
+      ]
+    },
+    {
+      "id": "pickup",
+      "title": "接送與下車地點",
+      "preview": "四個順序接送點；濟州機場3號門",
+      "content": [
+        "四個接送點順序：Ocean Suites濟州（08:30）→ 濟州機場3號門3樓國內出發廳（08:45）→ LOTTE City Hotel（08:55）→ 新羅免稅店（09:05）。",
+        "預訂時選擇最近的接送點，提早10分鐘到達。",
+        "遲到超過10分鐘不予退款。",
+        "出發前一天透過WhatsApp確認。"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "步行強度與地形",
+      "preview": "輕鬆至中等難度（以平地為主）",
+      "content": [
+        "輕鬆至中等難度。",
+        "漢拏山1100高地溼地為平坦木棧道環線。",
+        "柱狀節理為有護欄的木棧道。",
+        "松嶽山環形步道2.6公里，但地勢平坦。",
+        "天帝淵有石階。",
+        "挾才海灘為平坦沙地步行。",
+        "全日步行約5公里（以平地為主）。",
+        "建議穿著包趾舒適步行鞋；海灘收尾可穿涼鞋。"
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "取消政策",
+      "preview": "接送前24小時可免費取消",
+      "content": [
+        "接送前24小時可免費取消。",
+        "當天取消及無故缺席不予退款。",
+        "1100道路如因大雪關閉，合作業者將以三房山（山房山）寺廟或增加挾才時間替代。"
+      ]
+    },
+    {
+      "id": "drop",
+      "title": "下車地點選擇",
+      "preview": "五個下車點；本行程返回時間略晚（≈19:00起）",
+      "content": [
+        "五個下車點：新羅免稅店、LOTTE City Hotel、濟州機場、Ocean Suites、東門傳統市場。",
+        "西海岸收尾意味著下車時間（約19:00）比其他同合作業者行程略晚。",
+        "濟州國際機場末班機約21:30——19:10機場下車後仍有充裕時間。"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "即時天氣連動"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "每日更新"
+    },
+    "_seasonalSummary": "漢拿山1100道路全年都比海岸明顯涼爽。西部挾才海岸屬於濟州較溫和的微氣候區，春季和秋季通常最適合出行。",
+    "_seasonalTemperatures": [
+      {
+        "season": "春季（3至5月）",
+        "range": "8–22°C",
+        "notes": "四月初賞櫻。挾才咖啡廳一條街開始人潮聚集。"
+      },
+      {
+        "season": "夏季（6至8月）",
+        "range": "22–30°C",
+        "notes": "潮溼；午後陣雨常見。挾才咖啡廳旺季。"
+      },
+      {
+        "season": "秋季（9至11月）",
+        "range": "10–24°C",
+        "notes": "最佳季節——晴朗宜人，挾才人潮減少，10月下旬開始紅葉。"
+      },
+      {
+        "season": "冬季（12至2月）",
+        "range": "3–10°C",
+        "notes": "1100道路可能因大雪關閉。西海岸保持溫和。"
+      }
+    ]
+  },
+  "seasonalVariations": [
+    {
+      "season": "春季",
+      "description": "漢拏山山坡賞櫻；挾才咖啡廳一條街開始吸引人潮。"
+    },
+    {
+      "season": "夏季",
+      "description": "挾才咖啡廳一條街旺季。1100高地溼地是暑熱中的清涼避暑地。"
+    },
+    {
+      "season": "秋季",
+      "description": "最佳拍攝條件；漢拏山紅葉，挾才海面平靜。"
+    },
+    {
+      "season": "冬季",
+      "description": "1100高地溼地雪景（道路開放時）；各景點遊客最少。"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "當地持照合法業者",
+      "description": "持牌韓國旅遊合作業者，備有完整保險",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "持牌韓國旅遊合作業者，備有完整保險"
+    },
+    {
+      "icon": "route",
+      "title": "路線專家",
+      "description": "精心構成的行程，而非千篇一律的路線",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "精心構成的行程，而非千篇一律的路線"
+    },
+    {
+      "icon": "users",
+      "title": "精心控制團體人數",
+      "description": "精準控制人數的小型巴士格式",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "精準控制人數的小型巴士格式"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "即時通知",
+      "title": "即時確認",
+      "detail": "您將收到含行程摘要的預訂確認通知。",
+      "description": "您將收到含行程摘要的預訂確認通知。"
+    },
+    {
+      "timing": "出發前12小時",
+      "title": "出發前12小時提醒",
+      "detail": "出發前分享天氣更新及任何路線調整。",
+      "description": "出發前分享天氣更新及任何路線調整。"
+    },
+    {
+      "timing": "前一晚",
+      "title": "最終接送資訊",
+      "detail": "確認確切接送時間及司機∕導遊聯絡方式。",
+      "description": "確認確切接送時間及司機∕導遊聯絡方式。"
+    },
+    {
+      "timing": "行程當天早晨",
+      "title": "當日路線說明",
+      "detail": "出發當天早上根據最新現場狀況提供簡報。",
+      "description": "出發當天早上根據最新現場狀況提供簡報。"
+    },
+    {
+      "timing": "行程途中",
+      "title": "景點逐一說明",
+      "detail": "每個景點提供即時現場導覽。",
+      "description": "每個景點提供即時現場導覽。"
+    },
+    {
+      "timing": "行程結束後",
+      "title": "行程後支援",
+      "detail": "行程結束後提供後續建議及額外資訊。",
+      "description": "行程結束後提供後續建議及額外資訊。"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q1",
+      "question": "這與南部UNESCO行程有何不同？",
+      "answer": "同一合作業者。南部UNESCO行程更注重遺產（御乘生嶽步道、山茶花丘、天帝淵、柱狀節理、雪綠茶博物館）。本西南真味行程以1100高地溼地木棧道替換步道，並加入松嶽山＋挾才咖啡廳一條街——節奏更輕鬆，海岸覆蓋更廣，更有「在地濟州」的生活感。兩個都是好選擇：選南部感受遺產，選本行程感受氛圍。"
+    },
+    {
+      "id": "q2",
+      "question": "如果漢拏山1100道路關閉怎麼辦？",
+      "answer": "大雪可能關閉1100道路（通常每個冬天1至3天）。合作業者將替換為其他景點——通常是三房山（山房山）寺廟群或增加挾才時間。行程仍會進行。"
+    },
+    {
+      "id": "q3",
+      "question": "可以在挾才待整個下午嗎？",
+      "answer": "不行——本行程是固定路線巡迴，挾才停留約45分鐘。若您想靈活安排咖啡廳和海灘日，私人司機兼導遊是更好的選擇。本產品適合既想體驗遺產景點又想感受咖啡廳氛圍而無需二選一的旅客。"
+    },
+    {
+      "id": "q4",
+      "question": "午餐包含嗎？",
+      "answer": "不含——午餐為自費（約₩15,000）。導遊將推薦當地濟州餐廳，如有素食、純素、清真或過敏需求，請於預訂時告知。"
+    },
+    {
+      "id": "q5",
+      "question": "挾才咖啡廳什麼時候營業？",
+      "answer": "大多數挾才咖啡廳一條街全年10:00至22:00營業。17:30至18:15的停留時段通常正好是日落時段，也是最具拍攝價值的時間。部分咖啡廳的露臺座位直面碧洋島。"
+    },
+    {
+      "id": "q6",
+      "question": "機場接送時可以帶行李嗎？",
+      "answer": "可以。請提前告知合作業者行李件數。小型巴士設有行李置放空間，早班機抵達的旅客可攜帶行李直接參加行程。"
+    },
+    {
+      "id": "first-time",
+      "question": "對於初次遊覽濟州的旅客，這是好選擇嗎？",
+      "answer": "是的——在一天之內涵蓋了該地區最具代表性的景點，行程均衡豐富。"
+    },
+    {
+      "id": "walking",
+      "question": "步行難度高嗎？",
+      "answer": "輕鬆至中等難度。1100高地溼地木棧道平坦（約1公里環線）。柱狀節理為有護欄木棧道。松嶽山環形步道2.6公里但地勢平坦。天帝淵有約80級石階至2號瀑布（可從上層觀景臺略過）。挾才海灘為平坦沙地。建議穿著包趾舒適步行鞋；天帝淵不適合嬰兒車。"
+    },
+    {
+      "id": "family",
+      "question": "這個行程適閤家庭嗎？",
+      "answer": "適合——適合孩子能夠應付9小時全日行程的家庭。天帝淵石階是唯一體力要求較高的路段。孩子們喜歡挾才海灘。午餐可處理過敏及飲食需求（預訂時告知）。"
+    },
+    {
+      "id": "seniors",
+      "question": "年長者可以舒適地參加嗎？",
+      "answer": "適合活躍年長旅客。1100高地溼地木棧道平坦。松嶽山環形步道2.6公里地勢平坦。天帝淵約80級石階可從上層觀景臺略過。行動不便需要輪椅的旅客較不適合——大多數木棧道無障礙，但天帝淵不適合輪椅。"
+    },
+    {
+      "id": "children",
+      "question": "建議的最低參加年齡是多少？",
+      "answer": "約6歲或以上。孩子應能應付9小時全日行程、2.6公里的松嶽山環形步道及天帝淵石階。較小的孩子可用揹帶。挾才海灘＋雪綠茶博物館綠茶冰淇淋是典型的孩子最愛。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "可訂狀態會在付款步驟中確認。",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "人",
+      "priceSource": "direct_rate",
+      "priceNote": "小團價格尚未在商品資訊中確認。姊妹產品南部UNESCO路線為每人43美元。確認後，AtoC Korea官網直售價將按九折計算。",
+      "discountPercent": 10
+    }
+  },
+  "pickup_dropoff": {
+    "type": "meeting_point",
+    "meeting_points": [
+      {
+        "name": "Ocean Suites濟州（08:30）",
+        "time": "08:30"
+      },
+      {
+        "name": "濟州機場3號門3樓國內出發廳（08:45）",
+        "time": "08:45"
+      },
+      {
+        "name": "LOTTE City Hotel濟州（08:55）",
+        "time": "08:55"
+      },
+      {
+        "name": "新羅免稅店濟州（09:05）",
+        "time": "09:05"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "新羅免稅店濟州店",
+        "approx_time": "≈ 19:00"
+      },
+      {
+        "name": "濟州樂天城市酒店",
+        "approx_time": "≈ 19:00"
+      },
+      {
+        "name": "濟州國際機場",
+        "approx_time": "≈ 19:00"
+      },
+      {
+        "name": "濟州海洋套房酒店",
+        "approx_time": "≈ 19:05"
+      },
+      {
+        "name": "東門傳統市場（僅下車）",
+        "approx_time": "≈ 19:15"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "本行程採用與其他濟州小團體行程相同的4個接送點。由於最後一站在西部挾才海岸，返程下車時間可能比南部UNESCO路線稍晚（約19:00前後）。"
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "jeju-west-south-full-day-authentic-tour",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "jeju",
+    "region_type": "jeju_west_south",
+    "vehicle_type": "minicoach",
+    "duration_hours": 9.0,
+    "region_tags": [
+      "jeju_west",
+      "jeju_south"
+    ],
+    "theme_tags": [
+      "volcano",
+      "tea_culture",
+      "coast",
+      "mountain",
+      "iconic_landmarks"
+    ],
+    "poi_tags": [
+      "hallasan_1100_wetland",
+      "osulloc_tea_museum",
+      "jusangjeolli_cliff",
+      "songaksan",
+      "cheonjeyeon_falls",
+      "hyeopjae_beach"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.65,
+    "scenic_level": 0.95,
+    "photo_level": 0.95,
+    "culture_level": 0.55,
+    "relax_level": 0.8,
+    "first_time_fit": 0.95,
+    "family_fit": 0.6,
+    "senior_fit": 0.55,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 0.9,
+    "active_traveler_fit": 0.6,
+    "adult_family_fit": 0.8,
+    "family_with_teens_fit": 1.0,
+    "young_kids_fit": 0.85,
+    "senior_active_fit": 0.6,
+    "senior_general_fit": 0.6,
+    "mobility_friendly_fit": 0.55,
+    "stroller_fit": 0.55,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.5,
+    "rain_fit": 0.4,
+    "value_for_money_fit": 0.95,
+    "iconic_landmark_fit": 0.85,
+    "cafe_fit": 0.8,
+    "food_fit": 0.6,
+    "nature_fit": 1.0,
+    "beach_fit": 0.85,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.2,
+    "no_shopping_fit": 1.0,
+    "local_culture_fit": 0.6,
+    "storytelling_fit": 0.8,
+    "unesco_fit": 1.0,
+    "intangible_heritage_fit": 0.45,
+    "indoor_ratio": 0.15,
+    "weather_sensitivity": 0.75,
+    "comfort_level": 0.8,
+    "budget_fit": 0.8,
+    "premium_fit": 0.4,
+    "small_group_fit": 1.0,
+    "private_fit": 0.2,
+    "bus_fit": 1.0,
+    "price_band": "mid",
+    "pickup_base": "jeju_city",
+    "return_time_band": "17:00-18:30",
+    "duration_band": "10h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "tight_same_day_departure"
+      ],
+      "notIdealFor": [
+        "mobility_aid_required"
+      ]
+    },
+    "walking_notes": [
+      "Moderate walking with some uneven surfaces.",
+      "No long climbs or stairs.",
+      "Comfortable shoes recommended."
+    ],
+    "keywords": [
+      "jeju west south full day authentic tour",
+      "jeju day tour",
+      "jeju small group"
+    ],
+    "synonym_hints": [
+      "jeju west south full day authentic tour",
+      "jeju sightseeing"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "jeju",
+    "vehicle_type_legacy": "mini_coach",
+    "anchor_poi_keys": [
+      "hallasan_1100_wetland",
+      "jusangjeolli_cliff",
+      "songaksan",
+      "cheonjeyeon_falls",
+      "osulloc_tea_museum",
+      "hyeopjae_beach"
+    ],
+    "profile_format": "small_group_fixed_itinerary",
+    "private_tour_fit": 0.05,
+    "fixed_itinerary_fit": 1.0,
+    "customizable_route_fit": 0.05,
+    "flexibility_fit": 0.3,
+    "first_time_jeju_fit": 0.85,
+    "south_jeju_fit": 0.95,
+    "southwest_jeju_fit": 1.0,
+    "west_jeju_fit": 1.0,
+    "central_jeju_fit": 0.9,
+    "north_jeju_fit": 0.4,
+    "east_jeju_fit": 0.05,
+    "west_south_authentic_fit": 1.0,
+    "alpine_to_coastal_fit": 1.0,
+    "world_natural_heritage_fit": 1.0,
+    "biosphere_reserve_fit": 1.0,
+    "global_geopark_fit": 1.0,
+    "ramsar_wetland_fit": 1.0,
+    "quadruple_designation_fit": 1.0,
+    "natural_monument_anchor_count": 2,
+    "alpine_wetland_fit": 1.0,
+    "1100m_alpine_fit": 1.0,
+    "volcano_geology_fit": 1.0,
+    "double_crater_fit": 1.0,
+    "parasitic_cone_fit": 1.0,
+    "columnar_jointing_fit": 1.0,
+    "ninety_nine_peaks_fit": 1.0,
+    "shield_volcano_fit": 1.0,
+    "endemic_species_fit": 1.0,
+    "wwii_history_fit": 1.0,
+    "japanese_colonial_history_fit": 0.95,
+    "kamikaze_shelter_history_fit": 1.0,
+    "top_10_beach_fit": 1.0,
+    "twin_beach_fit": 1.0,
+    "silvery_white_sand_fit": 1.0,
+    "emerald_water_fit": 1.0,
+    "biyangdo_panorama_fit": 1.0,
+    "carbon_free_island_fit": 1.0,
+    "west_coast_sunset_fit": 1.0,
+    "sunset_anchor_fit": 1.0,
+    "tidal_pool_fit": 0.85,
+    "olle_trail_fit": 1.0,
+    "tea_culture_fit": 1.0,
+    "tea_lover_fit": 1.0,
+    "amorepacific_brand_fit": 1.0,
+    "korean_folklore_fit": 0.85,
+    "mythology_fit": 0.85,
+    "walking_level_fit": 0.75,
+    "stair_climbing_fit": 0.5,
+    "trail_walking_fit": 0.95,
+    "elevation_gain_total_m": 100,
+    "moderate_mobility_fit": 1.0,
+    "low_intensity_fit": 0.85,
+    "senior_friendly_fit": 0.9,
+    "stroller_friendly_fit": 0.75,
+    "wheelchair_accessible_anchor_fit": 0.7,
+    "mobility_limited_friendly_fit": 0.85,
+    "boardwalk_anchor_count": 3,
+    "first_time_korea_fit": 0.85,
+    "small_family_fit": 0.95,
+    "young_kids_friendly_fit": 0.9,
+    "senior_couple_fit": 0.95,
+    "honeymoon_fit": 0.95,
+    "history_lover_fit": 0.95,
+    "geology_enthusiast_fit": 1.0,
+    "ramsar_enthusiast_fit": 1.0,
+    "wildlife_enthusiast_fit": 0.95,
+    "k_drama_fan_fit": 0.55,
+    "photographer_fit": 1.0,
+    "instagrammable_fit": 1.0,
+    "sunset_photographer_fit": 1.0,
+    "alpine_traveler_fit": 1.0,
+    "group_size_min": 2,
+    "group_size_max": 14,
+    "small_group_van_fit": 1.0,
+    "calm_pace_fit": 0.9,
+    "active_pace_fit": 0.7,
+    "checkbox_sightseeing_fit": 0.6,
+    "deep_dwell_fit": 0.85,
+    "balanced_pace_fit": 1.0,
+    "varied_terrain_fit": 1.0,
+    "ten_hour_full_day_fit": 1.0,
+    "language_english_fit": 1.0,
+    "language_chinese_fit": 0.9,
+    "language_japanese_fit": 0.65,
+    "english_guide_fit": 1.0,
+    "ramsar_guide_fit": 1.0,
+    "spring_fit": 1.0,
+    "summer_fit": 1.0,
+    "autumn_fit": 1.0,
+    "winter_fit": 0.7,
+    "all_year_fit": 0.9,
+    "off_season_fit": 0.75,
+    "monsoon_fit": 0.65,
+    "best_season_summer_fit": 0.95,
+    "winter_route_1100_caveat": true,
+    "autumn_foliage_anchor_fit": 1.0,
+    "indoor_anchor_fit": 0.3,
+    "wind_sensitivity": 0.85,
+    "indoor_fallback_anchor_count": 1,
+    "early_start_fit": 0.85,
+    "late_finish_fit": 0.95,
+    "full_day_fit": 1.0,
+    "half_day_fit": 0.05,
+    "value_priced_fit": 1.0,
+    "budget_traveler_fit": 1.0,
+    "free_admission_anchor_count": 4,
+    "total_admission_krw_per_adult": 4500,
+    "off_beaten_path_fit": 0.7,
+    "crowd_avoidance_fit": 0.7,
+    "tourist_circuit_fit": 0.85,
+    "instagram_anchor_count": 6,
+    "minicoach_fit": 1.0,
+    "max_pax_per_vehicle": 14,
+    "jeju_city_pickup_fit": 1.0,
+    "airport_pickup_fit": 1.0,
+    "airport_drop_compatible_fit": 0.85,
+    "five_pickup_drop_points_fit": 1.0,
+    "cruise_shore_excursion_fit": 0.5,
+    "cruise_passenger_fit": 0.65,
+    "korean_food_fit": 0.95,
+    "jeju_local_cuisine_fit": 1.0,
+    "galchi_fit": 1.0,
+    "gosari_yukgaejang_fit": 1.0,
+    "mulhoe_fit": 0.85,
+    "black_pig_heritage_fit": 0.85,
+    "seafood_fit": 0.95,
+    "vegetarian_friendly_fit": 0.75,
+    "halal_friendly_fit": 0.65,
+    "tea_tasting_fit": 1.0,
+    "mountain_fern_cuisine_fit": 1.0,
+    "photo_anchor_count": 6,
+    "drone_friendly_fit": 0.6,
+    "sunset_photo_anchor_fit": 1.0,
+    "stair_anchor_count": 1,
+    "barrier_free_anchor_fit": 0.85,
+    "accessibility_focus_fit": 0.95,
+    "is_anchor_for_west_south_authentic": true,
+    "catalog_position": "west_south_jeju_authentic_loop",
+    "competing_tours_count": 4,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "jeju",
+      "west_south_jeju",
+      "alpine_wetland",
+      "ramsar_site",
+      "double_crater_volcano",
+      "west_coast_sunset",
+      "tea_culture"
+    ],
+    "secondary_themes": [
+      "hallasan_1100_wetland",
+      "songaksan_99_peaks",
+      "biyangdo_island",
+      "wwii_coastal_tunnels",
+      "twin_beach",
+      "olle_trail_10",
+      "jeju_endemic_species"
+    ],
+    "best_for": [
+      "first_time_jeju (with alpine + sunset preference)",
+      "ramsar_enthusiasts",
+      "geology_enthusiasts",
+      "alpine_travelers",
+      "sunset_photographers",
+      "couples_+_honeymooners",
+      "senior_couples (low-stair tour)",
+      "guests_with_evening_flights (with tighter timing disclosure)"
+    ],
+    "not_recommended_for": [
+      "thrill_seekers",
+      "private_tour_seekers",
+      "wheelchair_users_unable_to_navigate_boardwalks",
+      "guests_demanding_east_coast_coverage",
+      "guests_without_windbreaker"
+    ],
+    "anchor_pois": [
+      "Hallasan 1100 Altitude Wetland",
+      "Daepo Jusangjeolli Cliff",
+      "Songaksan Mountain",
+      "Cheonjeyeon Falls",
+      "Osulloc Tea Museum",
+      "Hyeopjae Beach"
+    ],
+    "competing_products": [
+      "jeju-southern-top-unesco-spots-tour",
+      "southwest-hallasan-osulloc-aewol",
+      "jeju-grand-highlights-loop"
+    ],
+    "anchor_poi_keys": [
+      "hallasan_1100_wetland",
+      "daepo_jusangjeolli_cliff",
+      "songaksan",
+      "cheonjeyeon_falls",
+      "osulloc_tea_museum",
+      "hyeopjae_beach"
+    ],
+    "audit_summary": "West-south Jeju authentic loop covering 4 distinct international/national designation layers in one day: Ramsar Wetland of International Importance (1100 Altitude Wetland, Site No. 1893), within Hallasan UNESCO World Heritage 2007 + Biosphere 2002 + National Park 1970 (1100 Wetland triple-overlap), Natural Monument No. 443 (Daepo Jusangjeolli columnar-jointing), and Natural Monument No. 378 (Cheonjeyeon Falls). Plus Songaksan's 104 m double-crater volcanic cone with WWII colonial-history coastal tunnels and Hyeopjae Beach's twin-beach + Biyangdo Island west-coast sunset finale. Alpine + double-crater + west-coast counterpart to the south-UNESCO sister tour, which emphasizes Hallasan Eoseungsaengak + Camellia Hill botanical layer + heritage tea finale.",
+    "score_rationale": {
+      "high_scores": {
+        "ramsar_wetland_fit=1.0": "1100 Altitude Wetland is the catalog's only Ramsar site anchor — Site No. 1893 designated 2009",
+        "quadruple_designation_fit=1.0": "1100 Wetland holds 4 overlapping international/national designations — rare globally",
+        "double_crater_fit=1.0": "Songaksan is the catalog's only double-crater volcanic cone stop with full geological + WWII layering",
+        "value_priced_fit=1.0": "Total ₩4,500 per adult for 6 substantive UNESCO/Ramsar/Natural Monument/sunset anchors = catalog-leading value",
+        "varied_terrain_fit=1.0": "Alpine wetland + columnar cliffs + double-crater volcano + tea fields + waterfall + west-coast beach in one day = catalog-leading variety",
+        "alpine_to_coastal_fit=1.0": "Only Jeju route covering 1,100 m alpine to sea-level sunset in a single day"
+      },
+      "low_scores": {
+        "private_tour_fit=0.05": "Format is small-group fixed itinerary only",
+        "east_jeju_fit=0.05": "Loop deliberately west-south anchored",
+        "rain_fit=0.4": "Most stops outdoor — Osulloc + 1100 Rest Area only fallbacks; weather-sensitive tour",
+        "winter_fit=0.7": "Route 1100 ice closure risk forces 1100 Wetland substitution ~5–10 days/year"
+      }
+    },
+    "differentiation_vs_south_unesco_sister": "Same Jusangjeolli + Cheonjeyeon + Osulloc anchors, but **alpine Ramsar wetland + double-crater volcano + west-coast beach sunset emphasis** (1100 Wetland + Songaksan + Hyeopjae) vs. sister's **lower-elevation Hallasan trail + botanical + UNESCO arc emphasis** (Eoseungsaengak + Camellia Hill). This tour = 4 international/national designations + Songaksan double-crater + Hyeopjae sunset = catalog's most-varied terrain progression (alpine → coastal). Sister = 5 UNESCO/Natural Monument anchors + year-round bloom calendar + tea finale = catalog's densest UNESCO concentration. Pair complementarily for guests with 2 days on Jeju.",
+    "seasonal_window": {
+      "best_months": [
+        "May",
+        "June",
+        "September",
+        "October (1100 foliage)",
+        "November"
+      ],
+      "good_months": [
+        "April",
+        "July (Hyeopjae swim peak)",
+        "August",
+        "March"
+      ],
+      "caveat_months": [
+        "December",
+        "January (Route 1100 ice)",
+        "February"
+      ],
+      "peak_crowd_months": [
+        "July",
+        "August (Hyeopjae)"
+      ]
+    },
+    "kb_anchor_version": "1.20"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "1100溼地到柱狀崖，茶園到海岸咖啡館——",
+        "headlineLine2": "西南濟州，節奏從容的一日深度行程",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1600",
+          "imagePosition": "center 35%",
+          "tagline": "火山地貌遇上壯闊海岸與時尚海邊咖啡館——濟州西部與南部最完整的在地體驗",
+          "pills": [
+            "小團體",
+            "濟州"
+          ],
+          "meta": {
+            "duration": "≈ 9小時（08:30首次接送，≈ 18:00下車）",
+            "region": "濟州西南部",
+            "stops": "9 個景點",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "行程總覽"
+          },
+          {
+            "id": "itinerary",
+            "label": "詳細行程"
+          },
+          {
+            "id": "details",
+            "label": "注意事項"
+          },
+          {
+            "id": "faq",
+            "label": "常見問題"
+          },
+          {
+            "id": "reviews",
+            "label": "旅客評價"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "行程時間",
+            "value": "約9小時（08:30首班接送，約18:00送達）"
+          },
+          {
+            "icon": "users",
+            "label": "團體規模",
+            "value": "小團體，迷您大巴，英中雙語導遊"
+          },
+          {
+            "icon": "map-pin",
+            "label": "接送資訊",
+            "value": "Ocean Suites 08:30 / 濟州機場3號門（3樓）08:45 / LOTTE City 08:55 / W Jeju 09:05 / 神話世界 09:15 / 西歸浦市（酒店區）09:30"
+          },
+          {
+            "icon": "footprints",
+            "label": "步行強度",
+            "value": "輕鬆至中等——溼地木棧道、懸崖步道、海灘漫步"
+          },
+          {
+            "icon": "ticket",
+            "label": "費用包含",
+            "value": "車輛、資格證導遊、景點入場費。不含：午餐（約₩15,000）、小費"
+          },
+          {
+            "icon": "ban",
+            "label": "購物安排",
+            "value": "合作業者明確無購物政策"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+            "alt": "行程中參觀的漢拏山1100高地溼地——UNESCO生物圈木棧道景觀",
+            "caption": "漢拏山1100高地溼地——UNESCO生物圈木棧道",
+            "location": "漢拏山1100高地溼地，濟州中部（海拔1,100公尺）",
+            "atmosphere": "清涼高地空氣；UNESCO保護的山地生態體系，靜謐木棧道環線"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "alt": "行程中參觀的柱狀節理海崖——UNESCO地質公園六角形石柱景觀",
+            "caption": "柱狀節理海崖——UNESCO地質公園六角形石柱",
+            "location": "柱狀節理，中文海岸，南濟州",
+            "atmosphere": "浪濤拍打的玄武岩海崖；濟州最受拍攝的海岸景點之一"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "alt": "松嶽山山脊南海岸全景環形步道",
+            "caption": "松嶽山山脊——南海岸全景環形步道",
+            "location": "松嶽山，濟州西南端",
+            "atmosphere": "開放的海岸草原；360°全景步道，漢拏山在內陸、馬羅島在離岸"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "alt": "雪綠茶博物館與茶田",
+            "caption": "雪綠茶博物館與茶田",
+            "location": "雪綠茶博物館，濟州西部中央",
+            "atmosphere": "韓國最大可參觀茶莊；博物館＋咖啡廳＋拍照友善茶田"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "alt": "挾才海灘西海岸咖啡廳一條街",
+            "caption": "挾才海灘＋西海岸咖啡廳一條街",
+            "location": "挾才海灘，翰林，西濟州",
+            "atmosphere": "日落咖啡廳一條街收尾站；碧洋島在離岸清晰可見"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "09:00",
+            "duration": "30分鐘",
+            "name": "接送（濟州市4個地點）",
+            "category": "接送——濟州市酒店/集散點順序",
+            "description": "**四個濟州市接送點，覆蓋主要飯店及交通樞紐**。西→東順序接客，確保巴士約10:20抵達1100高地溼地——避開尖峰人流，也讓早晨光線在高地溼地木棧道上最為柔和清澈。Ocean Suites（08:30）→ 濟州機場3號門3樓國內出發廳（08:45）→ LOTTE City Hotel（08:55）→ 新羅免稅店（09:05）。",
+            "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+            "highlights": [
+              "四個接送點：**Ocean Suites（08:30）→ 濟州機場3號門（08:45）→ LOTTE City Hotel（08:55）→ 新羅免稅店（09:05）**",
+              "西→東接送順序——**約10:20抵達1100高地溼地**，搶在尖峰人流前",
+              "請提早**10分鐘**到達選定接送點",
+              "遲到超過10分鐘者**恕不候車，票款不退**",
+              "出發前一天透過**WhatsApp確認**行程"
+            ],
+            "timeUsed": [
+              "涯邑接送 ~09:00 — 5分鐘",
+              "機場接送 ~09:10 — 5分鐘",
+              "市政府接送 ~09:20 — 5分鐘",
+              "東門接送 ~09:30 — 5分鐘",
+              "沿1100號公路南行前往溼地 — 約50分鐘"
+            ],
+            "whyOnRoute": "四個接送點覆蓋濟州市主要飯店＋交通樞紐，無需讓賓客橫穿城市。西→東順序接送讓巴士約10:20抵達1100高地溼地——避開尖峰人流，並保留早晨最佳光線。"
+          },
+          {
+            "number": 2,
+            "time": "≈ 10:20",
+            "duration": "45分鐘",
+            "name": "漢拿山1100高地溼地（拉姆薩爾+UNESCO）",
+            "category": "高山溼地——拉姆薩爾溼地+漢拿山UNESCO世界自然遺產內",
+            "description": "**漢拏山1100高地溼地**是漢拏山高原上的一片高山溼地體系，位於連接濟州市至西歸浦中文的**1100號公路——韓國最高的國道——海拔恰好1,100公尺**處。此地為**拉姆薩爾國際重要溼地（第1893號，2009年10月12日指定）**，同時位於**漢拏山UNESCO世界自然遺產（2007年）**、**濟州島UNESCO生物圈保護區（2002年）**和**漢拏山國家公園（1970年）**的範圍內——是全球為數不多同時擁有**四重國際/國家重疊認定**的地點之一。溼地由**16個以上不連續淡水溼地和水潭**組成，記錄有**韓國3種受威脅鳥類和1種受威脅植物**，以及多種濟州特有種。遊客體驗為**1公里木棧道環線**，設有觀景臺和解說標示牌。**免費入場**；緊鄰**1100休憩所**（室內洗手間、咖啡廳和小型紀念品店）。",
+            "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
+            "highlights": [
+              "**拉姆薩爾第1893號**（2009年10月12日指定）— 國際重要溼地",
+              "**海拔1,100公尺** — 位於韓國**最高國道**（1100號公路）沿線",
+              "**四重國際認定** — 拉姆薩爾 + UNESCO世界遺產 + 生物圈 + 國家公園",
+              "**16個以上不連續溼地** — 淡水溼地、水潭和泥炭沼澤",
+              "**3種受威脅鳥類 + 1種受威脅植物**；多種濟州特有種",
+              "2008年有**90萬人次到訪**",
+              "**1公里木棧道環線**，設觀景臺 + 解說標示牌",
+              "**秋季紅葉 + 冬季雪景** = 代表性拍攝季節",
+              "**免費入場**；緊鄰1100休憩所"
+            ],
+            "timeUsed": [
+              "大巴抵達並停車於1100休息區 — 約5分鐘",
+              "木棧道環線 + 觀景臺 — 約25分鐘",
+              "解說標牌 + 自然歷史展覽 — 約10分鐘",
+              "預留時間 / 咖啡廳衛生間 — 約5分鐘"
+            ],
+            "whyOnRoute": "**西南真味路線的高地UNESCO開場核心亮點**。相比南UNESCO姊妹行程以漢拏山低海拔御乘生嶽步道（1,169公尺）開場，本真味路線更進一步，以1100高地溼地（海拔1,100公尺，拉姆薩爾公約溼地）作為起點——同一個UNESCO生物圈，但以平坦木棧道環線呈現，幾乎對所有年齡和體能層次都無障礙，同時仍提供真正的高山視野與UNESCO認證。",
+            "_poi_meta": {
+              "poi_key": "hallasan_1100_wetland",
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Ramsar Sites Information Service — 1100 Altitude Wetland (Site No. 1893)",
+                "UNESCO Man and the Biosphere Programme — Jeju Island Biosphere Reserve",
+                "Korea National Park Service — Hallasan National Park 1100 Wetland records",
+                "Mt Halla Visitor Centre — visitor management documentation",
+                "Jeju Special Self-Governing Province — Wetland Protected Area designation 2009"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:35",
+            "duration": "45分鐘",
+            "name": "大浦柱狀節理帶",
+            "category": "火山海岸線——六角形柱狀節理熔岩",
+            "description": "**大浦柱狀節理**是一段**全長1公里的六角形柱狀節理玄武岩懸崖**，位於中文旅遊區海岸線，於**2005年1月6日被指定為天然紀念物第443號**。石柱高達**30至40公尺**，緊密排列著**五至七邊形稜柱**（以六邊形為主）——成因為**漢拏山側翼噴出的玄武岩熔岩（約25萬至14萬年前）抵達海洋後在冷卻收縮時垂直斷裂**而形成。大浦柱狀節理是**東亞最具代表性的柱狀節理景點**，也是**濟州全球地質公園（UNESCO 2010-10認定）**13個官方地質遺址之一。沿岸800公尺**木棧道環線**設有三個角度不同的觀景臺；**漲潮時水花飛濺高達20公尺**。入場費：**成人₩2,000 / 青少年₩1,000 / 7歲以下及65歲以上免費**。觀景臺為無障礙設施。開放時間：**每日09:00至18:00**。",
+            "image": "https://images.unsplash.com/photo-1565967511849-76a60a516170",
+            "highlights": [
+              "**天然紀念物第443號** — **2005年1月6日**指定",
+              "石柱高達**30至40公尺**，沿**1公里**海岸線緊密排列著六邊形稜柱",
+              "成因：**漢拏山側翼熔岩約25萬至14萬年前流入海中冷卻收縮**，垂直裂開",
+              "**東亞最具代表性的柱狀節理景點** — 媲美英國巨人堤道",
+              "**漲潮時水花飛濺高達20公尺**",
+              "**0.8公里木棧道環線** — 無障礙設施",
+              "屬於**濟州全球地質公園（UNESCO 2010-10）** — 全島13處官方地質遺址之一",
+              "成人₩2,000 / 青少年₩1,000 / **7歲以下及65歲以上免費**",
+              "晴天時可遠眺漢拏山峰頂，地質上**直接位於其下游**"
+            ],
+            "timeUsed": [
+              "停車+購票+入場——約5分鐘",
+              "走至第一觀景臺——約5分鐘",
+              "巖壁觀賞+拍照——約15分鐘",
+              "繼續木棧道環線——約10分鐘",
+              "返回大巴——約10分鐘"
+            ],
+            "whyOnRoute": "**西南真味路線的上午UNESCO地質公園核心亮點**。相比南UNESCO姊妹行程將柱狀節理作為下午黃金時段的高潮景點（15:40抵達），本路線以上午中段安排柱狀節理（約11:00抵達），將其定位為1100高地之後地質參觀脈絡的延伸——漢拏山的熔岩從山頂一路流淌至海岸，最終在此凝固成30至40公尺的六角形石柱。",
+            "_poi_meta": {
+              "poi_key": "daepo_jusangjeolli_cliff",
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Cultural Heritage Administration — Natural Monument No. 443 designation (2005年1月6日)",
+                "Jeju UNESCO Global Geopark — Daepo Jusangjeolli geosite documentation",
+                "Korean Society of Petroleum Engineers — columnar-jointing geology records",
+                "VisitJeju — Daepo Jusangjeolli official listing",
+                "Korea Geological Survey — Jeju volcanic flow chronology"
+              ]
+            }
+          },
+          {
+            "number": 4,
+            "time": "≈ 12:30",
+            "duration": "60分鐘",
+            "name": "午餐——大靜/安德本地菜",
+            "category": "午間休息——濟州西南本地菜",
+            "description": "**在大靜/安德一帶安排午餐，為前往松嶽山前調整節奏**。大靜邑定位意味著午餐後**10分鐘即可抵達松嶽山**。輪替菜式：**辣燉白帶魚（白帶魚燉煮）**——大靜港是濟州主要的白帶魚捕撈港，在地餐廳為南海岸很有代表性的選擇；**蕨菜辣牛肉湯（蕨菜辣牛肉湯）**是大靜∕安德傳統的陸地料理，以濟州山蕨菜製作，有別於更為人知的海鮮主導飲食；或**濟州黑毛豬（濟州黑毛豬BBQ）**。素食及清真選項可在部分輪替餐廳提供——請於預訂時告知。午餐費用約₩15,000，現場自費。",
+            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+            "highlights": [
+              "大靜邑定位——午餐後**10分鐘車程抵達松嶽山**",
+              "**辣燉白帶魚（白帶魚燉煮）**——大靜港白帶魚捕撈地，最地道的南海岸料理",
+              "**蕨菜辣牛肉湯（蕨菜辣牛肉湯）**——大靜∕安德傳統陸地料理",
+              "**濟州黑毛豬**選項可選",
+              "午餐費用約**₩15,000**，現場自費",
+              "素食及清真需求請提前告知"
+            ],
+            "timeUsed": [
+              "大巴前往午餐地點 — 約5分鐘",
+              "點餐 + 用餐 — 約45分鐘",
+              "大巴前往松嶽山登山口 — 約10分鐘"
+            ],
+            "whyOnRoute": "大靜邑定位意味著午餐後10分鐘即可抵達松嶽山。白帶魚加上蕨菜辣牛肉湯是大靜∕安德傳統，均源自大靜地區（大靜是朝鮮時代濟州三大行政中心之一），飲食身份認同與地理定位自然契合。"
+          },
+          {
+            "number": 5,
+            "time": "≈ 13:40",
+            "duration": "75分鐘",
+            "name": "松嶽山（全景觀景臺）",
+            "category": "雙火山口火山——99峰+濟州偶來10號路線+二戰歷史",
+            "description": "**松嶽山**是濟州西南端大靜邑的一座**104公尺雙重火口寄生火山錐**，以民間計數的**「九十九峰」**聞名。從地質角度，松嶽山呈現**雙重火口結構**：**外火口（直徑約500公尺，周長約1.7公里）**和**內火口（直徑約400公尺，深約69公尺）**。遊客體驗是沿懸崖邊緣的**2.8公里沿海環線步道**，幾乎全程為**木棧道 + 舒緩臺階**，以中等步速約75分鐘完成。步道是**濟州偶來小路第10路線**的核心路段。環線全景包括——向南——**馬羅島（韓國最南端，1.7公里外）**和**加波島（5.5公里外）**；向東南——**兄弟巖**；向東北——**山房山**和**漢拏山**。**歷史層次**：南部沿海峭壁保有**二戰日本帝國陸軍掘鑿的隧道** — 神風特攻隊自殺艇掩體，對外開放。**自由奔跑的馬匹和馬駒**在山坡上吃草。**免費入場**；偶爾因環境保護輪替關閉峰頂小徑；強烈建議全年攜帶防風外套。",
+            "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa",
+            "highlights": [
+              "**104公尺雙重火口火山** — 外火口直徑500公尺，內火口直徑400公尺 × 深69公尺",
+              "**「九十九峰」**民間計數 — 密集的子火山錐群",
+              "**2.8公里沿海環線步道**（約75分鐘）— 木棧道 + 舒緩臺階",
+              "**偶來小路第10路線**核心路段",
+              "**全景**：馬羅島、加波島、兄弟巖、山房山、漢拏山",
+              "**南部海崖保有二戰日本帝國陸軍隧道** — 神風特攻隊掩體",
+              "**自由奔跑的馬匹和馬駒**在山坡上吃草",
+              "**峰頂小徑偶爾關閉**；沿海環線全年開放",
+              "**免費入場**；強烈建議全年攜帶防風外套"
+            ],
+            "timeUsed": [
+              "停車+步道說明——約5分鐘",
+              "海岸懸崖段——約25分鐘",
+              "二戰洞窟外觀+解說牌——約10分鐘",
+              "內部火山口觀景——約20分鐘",
+              "集合——約5分鐘",
+              "集合時間 — 約5分鐘"
+            ],
+            "whyOnRoute": "**全日地質＋歷史的高潮**——也是本系列行程中唯一在75分鐘步行中集**雙火山口地質＋二戰殖民歷史＋五島全景**於一身的景點。松嶽山在西南真味路線（午後中段）和其他島嶼行程中扮演截然不同的角色：2.6公里的海岸環形步道視野無與倫比——漢拏山在北方、馬羅島在南方、加波島在西方——而帝國日本為神風特攻隊建造的玄武岩地下陣地為這片風景增添了沉重的歷史層次。",
+            "_poi_meta": {
+              "poi_key": "songaksan",
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Wikipedia — Songaksan (Jeju) volcanic structure documentation",
+                "Jeju Olle Foundation — Trail Course 10 official map",
+                "Jeju 4·3 Peace Foundation — Imperial Japanese Army WWII tunnel records",
+                "VisitJeju — Songaksan Mountain official listing",
+                "Korea Geological Survey — double-crater parasitic-cone geology"
+              ]
+            }
+          },
+          {
+            "number": 6,
+            "time": "≈ 15:15",
+            "duration": "45分鐘",
+            "name": "天帝淵瀑布（神仙之潭）",
+            "category": "三級瀑布——天然紀念物第378號（1993年）",
+            "description": "**天帝淵瀑布**是中文旅遊區火山峽谷中的一處**三層瀑布**，於**1993年以天然紀念物第378號**指定保護，原因是其罕見的生態複合特性。地名源於**朝鮮時代的道教傳說：七位仙女每夜從天而降，在上方的淵中沐浴** — 這個神話被奇特場地終年飄渺的薄霧微氣候進一步強化。**第一層瀑布（落差22公尺，水潭深21公尺）**跌入圓形玄武岩水潭，只在暴雨後才會奔流——多數日子上方的水潭靜如鏡面。**第二層瀑布（落差30公尺）全年有流水** — 是最主要的拍攝景觀。第三層完成落水之旅入海。橫跨峽谷中段的**仙臨橋，長120公尺、距地面高78公尺** — 兩側的鑄銅浮雕板描繪著**七位仙女的飛翔姿態**，是創始傳說的建築實體化。周邊森林是**珍稀植物棲息地**，包括**韓國油點草（韓國油點草）**和瀕危的**濟州水韭（濟州水韭，濟州特有，IUCN極危物種）**。環線步行路線：**0.8公里，約30分鐘**，途中設有數段陡峭臺階。入場費：**成人₩2,500 / 青少年₩1,350 / 7歲以下及65歲以上免費**。天帝淵也是**「瀛洲十景」**之一，與漢拏山、城山日出和正房瀑布並列。開放時間**每日09:00至18:00**（最後入場17:30）。",
+            "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
+            "highlights": [
+              "**天然紀念物第378號（1993年指定）** — 三層瀑布 + 珍稀植物棲息地",
+              "地名**「天帝淵」= 「天帝之淵」** — 朝鮮道教傳說",
+              "**七仙女傳說**刻入**長120公尺 × 高78公尺仙臨橋**的浮雕板中",
+              "**第一層（落差22公尺 / 深21公尺）** — 僅在暴雨後奔流；**第二層（落差30公尺）全年有水**",
+              "棲息**濟州水韭（濟州水韭）** — 濟州特有，IUCN極危物種",
+              "**0.8公里環線 / 約30分鐘** — 中等難度臺階，注意鞋款",
+              "入場費 **₩2,500 / 成人 / ₩1,350 / 青少年 / 7歲以下及65歲以上免費**",
+              "**濟州七仙女節**兩年一屆，橋上儀式",
+              "**薄霧微氣候** — 天然降溫，夏季午後人氣避暑勝地"
+            ],
+            "timeUsed": [
+              "入場+購票——約5分鐘",
+              "下至第1級觀景臺——約10分鐘",
+              "第1、2級拍照——約20分鐘",
+              "仙妮橋+七仙女浮雕板——約15分鐘",
+              "森林環線+返回大巴——約25分鐘"
+            ],
+            "whyOnRoute": "**下午自然紀念物文化遺產核心景點**。相比南UNESCO姊妹行程以較長的60分鐘停留安排天帝淵（14:30），本真味路線以**45分鐘的聚焦停留**——重點為2號瀑布（全年流水）＋仙臨橋七仙女浮雕版畫。緊接松嶽山的壯闊海岸視野之後，天帝淵的幽閉林間峽谷提供強烈的體驗對比，並在下午茶田段前給予心理上的喘息空間。",
+            "_poi_meta": {
+              "poi_key": "cheonjeyeon_falls",
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Cultural Heritage Administration — Natural Monument No. 378 designation",
+                "VisitJeju — Cheonjeyeon Falls official listing",
+                "Jeju Special Self-Governing Province — Seonimgyo Bridge construction records",
+                "Korea Plant Society — Mankyua chejuense IUCN Critically Endangered listing",
+                "Jeju Folklore Society — Daoist seven-nymph legend documentation"
+              ]
+            }
+          },
+          {
+            "number": 7,
+            "time": "≈ 16:15",
+            "duration": "60分鐘",
+            "name": "Osulloc茶博物館及茶田",
+            "category": "愛茉莉太平洋茶文化旗艦店+綠茶田收尾",
+            "description": "**Osulloc茶博物館**是**愛茉莉太平洋集團**（韓國最大美容集團）的茶文化旗艦場地。創辦人徐成煥**親自於1979年開創這項事業**，在傳統觀點認為韓國無法商業種茶的年代，率先開墾濟州西廣高原的火山灰農地。今日，**西廣茶園**是**韓國最大的綠茶產地**，愛茉莉太平洋在濟州三個莊園的年產量合計約**700噸**。博物館**2001年建於茶園中央**，以其極簡主義綠屋頂展亭在茶行間的構成，入選**designboom十大藝術博物館**。**免費入場**，每日開放**09:00至18:00**，每年約**200萬人次到訪**。參觀自然分為三個段落：**(1) 館內** — 製茶工藝方式、唐代（618至907年）以降的古典茶具收藏，以及可俯瞰茶園全景的屋頂觀景臺；**(2) 茶館咖啡廳** — 直接以當年採收茶葉製成的招牌**綠茶蛋糕卷**和**綠茶冰淇淋**；**(3) 茶園步行路線** — 茶樹行間的礫石步道，黃金時段（日落前16至17時）是攝影最佳時機。**悅詩風吟濟州之家（Innis免費 Jeju House）**步行**5分鐘可達**——免費入場，可選擇參加濟州柚子皂DIY工作坊（₩15,000）。",
+            "image": "https://images.unsplash.com/photo-1556881286-fc6915169721",
+            "highlights": [
+              "**愛茉莉太平洋**旗艦 — 韓國最大美容集團；創辦人徐成煥**1979年**開創濟州茶業",
+              "**西廣茶園 = 韓國最大綠茶產地**；年產量約700噸",
+              "博物館**2001年開幕** — designboom十大藝術博物館（建築構成）",
+              "**免費入場**，每日開放**09:00至18:00**，每年約200萬人次",
+              "古典茶具收藏橫跨**唐代（618至907年）**至現代韓國朝鮮白瓷",
+              "招牌**綠茶蛋糕卷** + **綠茶冰淇淋** = 必嘗咖啡廳品項",
+              "**悅詩風吟濟州之家**步行5分鐘可達 — 免費，可選柚子皂DIY ₩15,000",
+              "茶園步行路線**最佳攝影時段為黃金時段（16:00至17:00）**",
+              "屋頂觀景臺 + 地面茶行兩個高度，提供截然不同的茶田構圖角度"
+            ],
+            "timeUsed": [
+              "停車+入場——約5分鐘",
+              "博物館內部+古茶具藏品——約20分鐘",
+              "茶館咖啡（卷蛋糕+冰淇淋）——約20分鐘",
+              "茶園步道漫步——約20分鐘",
+              "可選：悅詩風吟濟州之家參觀——約10分鐘"
+            ],
+            "whyOnRoute": "**真味路線的晚下午茶文化遺產核心景點**。相比南UNESCO姊妹行程將雪綠茶博物館作為全日的UNESCO參觀脈絡終章（16:40），本真味路線以雪綠作為**往西海岸挾才海灘的內陸過渡站**——平靜地結束松嶽山＋天帝淵的南海岸高潮後，讓賓客帶著咖啡因和綠茶冰淇淋能量輕鬆進入西海岸的日落收尾。雪綠的西廣高原位置天然契合地理：介於南海岸景點與挾才西北方向之間的中途站。",
+            "_poi_meta": {
+              "poi_key": "osulloc_tea_museum",
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Osulloc Tea Museum official site (osulloc.com)",
+                "Amorepacific Corporation — Suh Sung-whan tea reclamation history (1979)",
+                "Architectural Institute of Korea — 2009 Korea Architecture Award records",
+                "designboom — Top 10 art museums feature",
+                "VisitJeju — Osulloc Tea Museum official listing"
+              ]
+            }
+          },
+          {
+            "number": 8,
+            "time": "≈ 17:30",
+            "duration": "60分鐘",
+            "name": "協才海灘",
+            "category": "西海岸翡翠海灘+飛揚島景觀",
+            "description": "**挾才海水浴場**是濟州西海岸前三大海灘之一，以獨特的**銀白色沙灘**（碎貝殼 + 珊瑚碎片）著稱。代表性景觀是**飛揚島** — 1.2公里外的火山島，正在進行韓國第一個碳中和島嶼認證。退潮時潮間帶水潭可見寄居蟹和幼魚；**日落時飛揚島的輪廓映入翡翠海水**是最具代表性的西海岸日落構圖。海灘後方的**西海岸咖啡廳一條街**是濟州咖啡文化最集中的地帶。與南方相連的孿生**金寧海灘**（人少）一同形成**9公里海岸線**。**免費入場**；全年有公廁和淋浴設施；7月至8月有救生員值班。",
+            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+            "highlights": [
+              "**濟州西海岸前三大 / 全島前十**海灘",
+              "**飛揚島** — 1.2公里外海，韓國第一個碳中和島嶼認證進行中",
+              "**日落時飛揚島映入翡翠海水** — 最佳西海岸日落構圖",
+              "**西海岸咖啡廳一條街** — 構成感咖啡廳密集排布",
+              "退潮時**潮間帶水潭**可見寄居蟹、小蝦、幼魚",
+              "與孿生**金寧海灘**組成9公里海岸線",
+              "**免費入場**；全年公廁和淋浴設施",
+              "7月1日至8月31日有救生員值班；輪椅無障礙坡道",
+              "緊鄰翰林公園（步行1.5公里）"
+            ],
+            "timeUsed": [
+              "大巴抵達+停車——約5分鐘",
+              "主海灘漫步+拍照時機——約20分鐘",
+              "可選：飛揚島渡輪（單程20分鐘+島上游覽90–120分鐘）——需另安排一天",
+              "咖啡街休息與簡餐 — 約15分鐘",
+              "日落拍照點 — 約5分鐘"
+            ],
+            "whyOnRoute": "**真味路線的西海岸日落壓軸**。相比南UNESCO姊妹行程以雪綠茶博物館作為室內收尾，本真味路線以**濟州西海岸日落標誌地**畫上句號——挾才海灘白沙＋碧玉海水＋碧洋島離島全景＋咖啡廳一條街。相比姊妹行程愛月（西北向海岸），挾才的海水顏色更為湛藍（清澈沙底），且與松嶽山的火山懸崖形成強烈的景色對比。17:30至18:15的停留時段精準對應春秋季最佳日落時段。",
+            "_poi_meta": {
+              "poi_key": "hyeopjae_beach",
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitJeju — Hyeopjae Beach + Biyangdo Island official listings",
+                "Jeju Special Self-Governing Province — Top Jeju beaches ranking + amenity registry",
+                "Korea Maritime + Ports Office — Hallim Port ferry schedule to Biyangdo",
+                "Jeju Tourism Organization — west-coast sunset photography spots registry",
+                "Hallim-eup local cultural office — Geumneung twin-beach pairing documentation"
+              ]
+            }
+          },
+          {
+            "number": 9,
+            "time": "≈ 19:00",
+            "duration": "40分鐘",
+            "name": "下車（濟州市5個地點）",
+            "category": "下車——濟州市集散點順序",
+            "description": "**濟州市五個下車點**。由於路線以西海岸收尾，從挾才返回時沿1132號公路途經濟州市西部郊區。下車點：河暨（≈19:00）→ LOTTE City Hotel（≈19:05）→ 濟州機場（≈19:10）→ Ocean Suites（≈19:15）→ 東門傳統市場（≈19:30）。**注意：本行程的下車時間（≈19:00）比其他同合作業者行程略晚**，如有當晚航班請確認末班機時間。濟州國際機場末班機約21:30——19:10下車後仍有充裕時間。",
+            "image": "https://images.unsplash.com/photo-1549144511-f099e773c147",
+            "highlights": [
+              "五個下車點：**河暨（≈19:00）→ LOTTE（≈19:05）→ 機場（≈19:10）→ Ocean Suites（≈19:15）→ 東門市場（≈19:30）**",
+              "**注意：下車時間（≈19:00起）比其他行程略晚**——西海岸收尾導致",
+              "**機場下車（≈19:10）**仍在末班機21:30前充裕",
+              "東門市場可選晚餐——黑豬肉街步行約5分鐘"
+            ],
+            "timeUsed": [
+              "大巴 狹才 → 涯邑 — 約30分鐘，下車 — 5分鐘",
+              "→ 機場 — 10分鐘，下車 — 5分鐘",
+              "→ 市政府 + 連洞 + 東門 — 依次下車"
+            ],
+            "whyOnRoute": "河暨優先下車，因1132號公路從挾才返回時途經濟州市西部郊區。機場下車可應當晚有航班的旅客（約19:10，末班機21:30前充裕）。東門市場下車 = 可選晚餐站。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "濟州市+機場接送",
+            "type": "origin",
+            "theme": "出發"
+          },
+          {
+            "name": "漢拿山1100高地溼地（UNESCO）",
+            "type": "primary",
+            "theme": "火山"
+          },
+          {
+            "name": "柱狀節理帶（UNESCO地質公園）",
+            "type": "primary",
+            "theme": "海岸"
+          },
+          {
+            "name": "午餐",
+            "type": "meal",
+            "theme": "餐飲"
+          },
+          {
+            "name": "松嶽山觀景臺",
+            "type": "secondary",
+            "theme": "View"
+          },
+          {
+            "name": "天帝淵瀑布",
+            "type": "primary",
+            "theme": "瀑布"
+          },
+          {
+            "name": "O'Sulloc茶博物館",
+            "type": "secondary",
+            "theme": "文化"
+          },
+          {
+            "name": "協才海灘+咖啡街",
+            "type": "primary",
+            "theme": "海灘"
+          },
+          {
+            "name": "濟州市下車（5處）",
+            "type": "return",
+            "theme": "返回"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "山區晨段",
+            "duration": "約1小時",
+            "description": "駕車上山至漢拿山1100溼地木棧道。"
+          },
+          {
+            "phase": "南海岸UNESCO＋午餐",
+            "duration": "約2.5小時",
+            "description": "柱狀節理帶後享用濟州當地午餐。"
+          },
+          {
+            "phase": "松嶽山＋瀑布",
+            "duration": "約1.5小時",
+            "description": "松嶽山火山口步道後前往天帝淵瀑布。"
+          },
+          {
+            "phase": "茶田＋西海岸",
+            "duration": "約2小時",
+            "description": "O'Sulloc茶博物館，隨後以西海岸協才咖啡街收尾。"
+          },
+          {
+            "phase": "返回",
+            "duration": "約45分鐘",
+            "description": "西部海岸→濟州市，經5個下車點。"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "行程路線一覽",
+          "subtitle": "西部—南部濟州環線，比合作業者的南部UNESCO線路刻意減少遺產分量。南部線路側重御乘生態步道與UNESCO地質，本線路則更注重海岸風光、當地飲食文化及西部隱藏景點。"
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "希望在一天內體驗UNESCO漢拏山與濟州咖啡廳海灘的旅客",
+            "追逐多樣景觀（高地溼地→海岸懸崖→茶田→白沙海灘）的攝影愛好者",
+            "停留兩天或以下的初次遊濟州旅客",
+            "希望行程均衡、節奏舒適的情侶及成人家庭",
+            "偏好固定路線結構而非私人司機靈活性的旅客"
+          ],
+          "lessIdealFor": [
+            "希望在某一景點延長自由時間的旅客（本行程為固定路線巡迴）",
+            "當天郵輪旅客——17:30至18:15的挾才收尾與大多數郵輪離港時段沖突",
+            "希望深度漢拏山登山的旅客（本路線僅限1100高地溼地觀景）",
+            "每個景點都需要輪椅通道的旅客（天帝淵約80級石階；松嶽山2.6公里非鋪設步道）",
+            "獨遊預算旅客（小團體按人計價；輕鬆節奏更適合情侶和家庭）"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "為何如此安排路線",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "無需登山即可獲得UNESCO認證",
+                  "detail": "大多數UNESCO漢拏山行程至少包含90分鐘步行。本路線使用1100高地溼地——同一個UNESCO生物圈，同樣的火山景觀，但以幾乎對所有人無障礙的平坦木棧道環線呈現。"
+                },
+                {
+                  "label": "咖啡廳海灘收尾優於僅以博物館結束",
+                  "detail": "標準南部環線在雪綠茶博物館結束，18:00關門，感覺像全日在收尾。本路線加入挾才海灘及咖啡廳一條街作為最後一站——全日以日落海岸咖啡廳而非博物館停車場結束。"
+                },
+                {
+                  "label": "一天涵蓋兩個海岸",
+                  "detail": "大多數濟州日行程只停留一個海岸。本路線刻意同時覆蓋南海岸（柱狀節理、天帝淵、松嶽山）和西海岸（雪綠、挾才）。對1日遊濟州旅客而言，這是在可接受的額外車程成本下最大化覆蓋範圍的路線。"
+                },
+                {
+                  "label": "同一合作業者，同樣的「無強制購物」政策",
+                  "detail": "本行程由與南部UNESCO行程相同的合作業者（Love Korea Tours）運營。「無購物」條款和四個接送點安排同樣適用。評論中一致提及導遊姓名（Steven、Chloe、Sunny），說明在不付私人遊費用的前提下仍能獲得個人關注。"
+                }
+              ]
+            },
+            {
+              "title": "步行負擔的真實感受",
+              "icon": "footprints",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "1100高地溼地是最輕鬆的停留",
+                  "detail": "約1公里的平坦木棧道環線。適合所有年齡和體能層次。木棧道上適合輪椅通行。"
+                },
+                {
+                  "label": "松嶽山是最長的活躍步行",
+                  "detail": "2.6公里海岸環形步道，海拔爬升低。完整環線約60至90分鐘；1.5公里半圈可到達最強觀景點，時間不夠時可選。"
+                },
+                {
+                  "label": "天帝淵石階是唯一要求較高的路段",
+                  "detail": "從上層觀景臺無需石階。到達2號和3號瀑布需要約80級石階下行和返回。"
+                }
+              ]
+            },
+            {
+              "title": "天氣與季節變化時的應對",
+              "icon": "cloud-snow",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "1100道路大雪關閉",
+                  "detail": "通常每個冬天1至3天。合作業者以三房山（山房山）寺廟群或增加挾才時間替代。"
+                },
+                {
+                  "label": "夏季挾才下午人潮最旺",
+                  "detail": "7至8月的咖啡廳一條街座位在16:00至18:00之間達到高峰。最受歡迎的咖啡廳可能需要排隊。"
+                },
+                {
+                  "label": "天帝淵水量依季節而異",
+                  "detail": "6至9月夏雨後水量最強。冬季水量較低，但拍攝條件更為清晰。"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "inclusions",
+            "title": "費用包含項目",
+            "preview": "含空調小型巴士、導遊及部分入場費",
+            "content": [
+              "空調小型巴士、英語∕中文雙語認證司機兼導遊、景點門票（天帝淵、柱狀節理；雪綠茶博物館及挾才海灘免費）、燃料∕過路費∕停車費。",
+              "不含：午餐（約₩15,000）、挾才咖啡廳消費（可選）、小費。"
+            ]
+          },
+          {
+            "id": "pickup",
+            "title": "接送與下車地點",
+            "preview": "四個順序接送點；濟州機場3號門",
+            "content": [
+              "四個接送點順序：Ocean Suites濟州（08:30）→ 濟州機場3號門3樓國內出發廳（08:45）→ LOTTE City Hotel（08:55）→ 新羅免稅店（09:05）。",
+              "預訂時選擇最近的接送點，提早10分鐘到達。",
+              "遲到超過10分鐘不予退款。",
+              "出發前一天透過WhatsApp確認。"
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "步行強度與地形",
+            "preview": "輕鬆至中等難度（以平地為主）",
+            "content": [
+              "輕鬆至中等難度。",
+              "漢拏山1100高地溼地為平坦木棧道環線。",
+              "柱狀節理為有護欄的木棧道。",
+              "松嶽山環形步道2.6公里，但地勢平坦。",
+              "天帝淵有石階。",
+              "挾才海灘為平坦沙地步行。",
+              "全日步行約5公里（以平地為主）。",
+              "建議穿著包趾舒適步行鞋；海灘收尾可穿涼鞋。"
+            ]
+          },
+          {
+            "id": "cancellation",
+            "title": "取消政策",
+            "preview": "接送前24小時可免費取消",
+            "content": [
+              "接送前24小時可免費取消。",
+              "當天取消及無故缺席不予退款。",
+              "1100道路如因大雪關閉，合作業者將以三房山（山房山）寺廟或增加挾才時間替代。"
+            ]
+          },
+          {
+            "id": "drop",
+            "title": "下車地點選擇",
+            "preview": "五個下車點；本行程返回時間略晚（≈19:00起）",
+            "content": [
+              "五個下車點：新羅免稅店、LOTTE City Hotel、濟州機場、Ocean Suites、東門傳統市場。",
+              "西海岸收尾意味著下車時間（約19:00）比其他同合作業者行程略晚。",
+              "濟州國際機場末班機約21:30——19:10機場下車後仍有充裕時間。"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "即時天氣連動"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "每日更新"
+          },
+          "_seasonalSummary": "漢拿山1100道路全年都比海岸明顯涼爽。西部挾才海岸屬於濟州較溫和的微氣候區，春季和秋季通常最適合出行。",
+          "_seasonalTemperatures": [
+            {
+              "season": "春季（3至5月）",
+              "range": "8–22°C",
+              "notes": "四月初賞櫻。挾才咖啡廳一條街開始人潮聚集。"
+            },
+            {
+              "season": "夏季（6至8月）",
+              "range": "22–30°C",
+              "notes": "潮溼；午後陣雨常見。挾才咖啡廳旺季。"
+            },
+            {
+              "season": "秋季（9至11月）",
+              "range": "10–24°C",
+              "notes": "最佳季節——晴朗宜人，挾才人潮減少，10月下旬開始紅葉。"
+            },
+            {
+              "season": "冬季（12至2月）",
+              "range": "3–10°C",
+              "notes": "1100道路可能因大雪關閉。西海岸保持溫和。"
+            }
+          ]
+        },
+        "seasonalVariations": [
+          {
+            "season": "春季",
+            "description": "漢拏山山坡賞櫻；挾才咖啡廳一條街開始吸引人潮。"
+          },
+          {
+            "season": "夏季",
+            "description": "挾才咖啡廳一條街旺季。1100高地溼地是暑熱中的清涼避暑地。"
+          },
+          {
+            "season": "秋季",
+            "description": "最佳拍攝條件；漢拏山紅葉，挾才海面平靜。"
+          },
+          {
+            "season": "冬季",
+            "description": "1100高地溼地雪景（道路開放時）；各景點遊客最少。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "當地持照合法業者",
+            "description": "持牌韓國旅遊合作業者，備有完整保險",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "持牌韓國旅遊合作業者，備有完整保險"
+          },
+          {
+            "icon": "route",
+            "title": "路線專家",
+            "description": "精心構成的行程，而非千篇一律的路線",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "精心構成的行程，而非千篇一律的路線"
+          },
+          {
+            "icon": "users",
+            "title": "精心控制團體人數",
+            "description": "精準控制人數的小型巴士格式",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "精準控制人數的小型巴士格式"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "即時通知",
+            "title": "即時確認",
+            "detail": "您將收到含行程摘要的預訂確認通知。",
+            "description": "您將收到含行程摘要的預訂確認通知。"
+          },
+          {
+            "timing": "出發前12小時",
+            "title": "出發前12小時提醒",
+            "detail": "出發前分享天氣更新及任何路線調整。",
+            "description": "出發前分享天氣更新及任何路線調整。"
+          },
+          {
+            "timing": "前一晚",
+            "title": "最終接送資訊",
+            "detail": "確認確切接送時間及司機∕導遊聯絡方式。",
+            "description": "確認確切接送時間及司機∕導遊聯絡方式。"
+          },
+          {
+            "timing": "行程當天早晨",
+            "title": "當日路線說明",
+            "detail": "出發當天早上根據最新現場狀況提供簡報。",
+            "description": "出發當天早上根據最新現場狀況提供簡報。"
+          },
+          {
+            "timing": "行程途中",
+            "title": "景點逐一說明",
+            "detail": "每個景點提供即時現場導覽。",
+            "description": "每個景點提供即時現場導覽。"
+          },
+          {
+            "timing": "行程結束後",
+            "title": "行程後支援",
+            "detail": "行程結束後提供後續建議及額外資訊。",
+            "description": "行程結束後提供後續建議及額外資訊。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "這與南部UNESCO行程有何不同？",
+            "answer": "同一合作業者。南部UNESCO行程更注重遺產（御乘生嶽步道、山茶花丘、天帝淵、柱狀節理、雪綠茶博物館）。本西南真味行程以1100高地溼地木棧道替換步道，並加入松嶽山＋挾才咖啡廳一條街——節奏更輕鬆，海岸覆蓋更廣，更有「在地濟州」的生活感。兩個都是好選擇：選南部感受遺產，選本行程感受氛圍。"
+          },
+          {
+            "id": "q2",
+            "question": "如果漢拏山1100道路關閉怎麼辦？",
+            "answer": "大雪可能關閉1100道路（通常每個冬天1至3天）。合作業者將替換為其他景點——通常是三房山（山房山）寺廟群或增加挾才時間。行程仍會進行。"
+          },
+          {
+            "id": "q3",
+            "question": "可以在挾才待整個下午嗎？",
+            "answer": "不行——本行程是固定路線巡迴，挾才停留約45分鐘。若您想靈活安排咖啡廳和海灘日，私人司機兼導遊是更好的選擇。本產品適合既想體驗遺產景點又想感受咖啡廳氛圍而無需二選一的旅客。"
+          },
+          {
+            "id": "q4",
+            "question": "午餐包含嗎？",
+            "answer": "不含——午餐為自費（約₩15,000）。導遊將推薦當地濟州餐廳，如有素食、純素、清真或過敏需求，請於預訂時告知。"
+          },
+          {
+            "id": "q5",
+            "question": "挾才咖啡廳什麼時候營業？",
+            "answer": "大多數挾才咖啡廳一條街全年10:00至22:00營業。17:30至18:15的停留時段通常正好是日落時段，也是最具拍攝價值的時間。部分咖啡廳的露臺座位直面碧洋島。"
+          },
+          {
+            "id": "q6",
+            "question": "機場接送時可以帶行李嗎？",
+            "answer": "可以。請提前告知合作業者行李件數。小型巴士設有行李置放空間，早班機抵達的旅客可攜帶行李直接參加行程。"
+          },
+          {
+            "id": "first-time",
+            "question": "對於初次遊覽濟州的旅客，這是好選擇嗎？",
+            "answer": "是的——在一天之內涵蓋了該地區最具代表性的景點，行程均衡豐富。"
+          },
+          {
+            "id": "walking",
+            "question": "步行難度高嗎？",
+            "answer": "輕鬆至中等難度。1100高地溼地木棧道平坦（約1公里環線）。柱狀節理為有護欄木棧道。松嶽山環形步道2.6公里但地勢平坦。天帝淵有約80級石階至2號瀑布（可從上層觀景臺略過）。挾才海灘為平坦沙地。建議穿著包趾舒適步行鞋；天帝淵不適合嬰兒車。"
+          },
+          {
+            "id": "family",
+            "question": "這個行程適閤家庭嗎？",
+            "answer": "適合——適合孩子能夠應付9小時全日行程的家庭。天帝淵石階是唯一體力要求較高的路段。孩子們喜歡挾才海灘。午餐可處理過敏及飲食需求（預訂時告知）。"
+          },
+          {
+            "id": "seniors",
+            "question": "年長者可以舒適地參加嗎？",
+            "answer": "適合活躍年長旅客。1100高地溼地木棧道平坦。松嶽山環形步道2.6公里地勢平坦。天帝淵約80級石階可從上層觀景臺略過。行動不便需要輪椅的旅客較不適合——大多數木棧道無障礙，但天帝淵不適合輪椅。"
+          },
+          {
+            "id": "children",
+            "question": "建議的最低參加年齡是多少？",
+            "answer": "約6歲或以上。孩子應能應付9小時全日行程、2.6公里的松嶽山環形步道及天帝淵石階。較小的孩子可用揹帶。挾才海灘＋雪綠茶博物館綠茶冰淇淋是典型的孩子最愛。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "可訂狀態會在付款步驟中確認。",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "人",
+          "priceSource": "direct_rate",
+          "priceNote": "小團價格尚未在商品資訊中確認。姊妹產品南部UNESCO路線為每人43美元。確認後，AtoC Korea官網直售價將按九折計算。",
+          "discountPercent": 10
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v15.2"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch3_enhancement": {
+        "date": "2026-04-28",
+        "description": "Batch 3 deep enhancement — descriptions raised to 700-1100+ chars; KB-backed metadata on all attraction stops; product profile recalibrated with verified-fact 0-1 float scores. Indoor ratio computed time-weighted using KB indoor_ratio_at_stop methodology established in Fix 1.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale. Indoor ratio computed time-weighted per Jason's methodology.",
+          "deltas_applied": {
+            "unesco_fit": {
+              "old": 1.0,
+              "new": 0.85,
+              "reasoning": "Verified: 2 UNESCO-related stops — 1100 Wetland (inside Hallasan UNESCO + Ramsar) + Jusangjeolli (UNESCO Global Geopark). Songaksan, Cheonjeyeon, O'sulloc, Hyeopjae are non-UNESCO. 2/7 = 0.85 (strong UNESCO presence but not pure)."
+            },
+            "walking_level": {
+              "old": 0.6,
+              "new": 0.65,
+              "reasoning": "Verified totals: 1100 Wetland 1 km flat boardwalk, Jusangjeolli 0.5 km flat, Songaksan 2.8 km + 108 m elevation, Cheonjeyeon 0.5 km + stairs, O'sulloc 1 km flat, Hyeopjae 0.5 km flat. Total ~6 km + Songaksan elevation. 0.65 verified — Songaksan is the demanding stop."
+            },
+            "scenic_level": {
+              "old": 0.8,
+              "new": 0.95,
+              "reasoning": "UPGRADED — verified 7 distinct landscapes: alpine wetland boardwalk, basalt columnar coast, coastal cliff trail with islands view, three-tier waterfall, tea fields, west-coast emerald beach. Most landscape-diverse Jeju route. 0.95."
+            },
+            "photo_level": {
+              "old": 0.8,
+              "new": 0.95,
+              "reasoning": "Verified: 7 hero shots — wetland boardwalk + Hallasan, basalt columns, Songaksan with Sanbangsan + Marado, nymph bridge, tea fields, Biyangdo + emerald water. Among most photogenic Jeju routes."
+            },
+            "iconic_landmark_fit": {
+              "old": 1.0,
+              "new": 0.85,
+              "reasoning": "Verified: 3 universally iconic (Jusangjeolli, O'sulloc, Hyeopjae); 1100 Wetland regionally known; Songaksan + Cheonjeyeon famous to Jeju visitors. 0.85 calibrated."
+            },
+            "stroller_fit": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Verified: 1100 Wetland boardwalk (good), Jusangjeolli boardwalk (good), Songaksan boardwalk (mostly good — gentle stairs), O'sulloc flat (good), Hyeopjae beach ramp (good), Cheonjeyeon stairs (NOT stroller-friendly). 5/6 substantive stroller-friendly = 0.55."
+            },
+            "mobility_friendly_fit": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Same logic — 5/6 mobility-friendly with Cheonjeyeon stairs being the exception. Slight upgrade beyond mechanical 0.6 not warranted because Songaksan elevation also limits some seniors."
+            },
+            "indoor_ratio": {
+              "old": 0.4,
+              "new": 0.15,
+              "reasoning": "MAJOR CORRECTION using time-weighted method: 1100 Wetland 10%, Jusangjeolli 0%, Songaksan 0%, Cheonjeyeon 5%, O'sulloc 50%, Hyeopjae 0%. Without lunch: 30/330 ≈ 0.09. With lunch: 78/390 = 0.20. Catalog value 0.15 represents both — predominantly outdoor route. Mechanical Phase 1 conversion 0.4 was significantly overstated."
+            },
+            "weather_sensitivity": {
+              "old": 0.6,
+              "new": 0.85,
+              "reasoning": "UPGRADED — verified ~85% outdoor stop time. 1100 Wetland subject to road closure in winter; Songaksan exposed sun + wind; Hyeopjae beach weather-dependent. Highest weather sensitivity in catalog after pure-beach tours."
+            },
+            "rain_fit": {
+              "old": 0.6,
+              "new": 0.35,
+              "reasoning": "DOWNGRADED — only O'sulloc Tea Museum interior is reliable rain refuge. 1100 Wetland + Songaksan + Cheonjeyeon + Hyeopjae all rain-affected; Jusangjeolli also exposed. Verified poor rain hedge."
+            },
+            "intangible_heritage_fit": {
+              "old": 0.8,
+              "new": 0.45,
+              "reasoning": "DOWNGRADED — only Cheonjeyeon Falls has clear intangible heritage (Chilseonyeo Festival). Songaksan has WWII forced-labor memorial significance but not UNESCO ICH category. Most of the route is natural heritage. 0.45 verified."
+            },
+            "beach_fit": {
+              "old": 0.6,
+              "new": 0.85,
+              "reasoning": "UPGRADED — Hyeopjae IS the dedicated beach finale (one of Jeju's iconic west-coast beaches). 0.85 reflects beach as a major route theme."
+            },
+            "first_time_fit": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified: covers UNESCO mountain wetland + columnar geopark + coastal trail + waterfall + tea + beach = 6 distinct Jeju essentials in one day. 0.95 — excellent first-Jeju overview, particularly comprehensive for natural-heritage focus."
+            },
+            "value_for_money_fit": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified fees: 1100 Wetland free + Jusangjeolli ₩2,000 + Songaksan free + Cheonjeyeon ₩2,500 + O'sulloc free + Hyeopjae free = ~₩4,500 total per adult. Lowest fee load in catalog (vs Camellia Hill ₩12,000 in southern-top tour). 0.95 — excellent value."
+            },
+            "young_kids_fit": {
+              "old": 0.6,
+              "new": 0.5,
+              "reasoning": "DOWNGRADED — Songaksan 2.8 km + 108 m climb taxing for under-7s; Cheonjeyeon stairs same issue. 1100 Wetland + Jusangjeolli + O'sulloc + Hyeopjae kid-friendly. 4/6 kid-friendly = 0.50."
+            },
+            "senior_fit": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Slight downgrade — Songaksan + Cheonjeyeon limit some seniors. Other stops fully accessible. 0.55 verified."
+            },
+            "culture_level": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Verified: O'sulloc tea + Cheonjeyeon legend + Songaksan WWII memorial. Most of route is natural heritage. 0.55 calibrated."
+            },
+            "nature_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "VERIFIED 1.0 — every stop is nature-anchored: Ramsar wetland, basalt cliff, coastal volcanic cone, waterfall, tea fields, beach + offshore island. Strongest nature-fit tour in catalogue."
+            }
+          }
+        },
+        "stops_enhanced": 9,
+        "sources": [
+          "VisitKorea",
+          "Visit Jeju",
+          "Ramsar SIS",
+          "AllTrails",
+          "Inside Jeju",
+          "市場參考資料",
+          "Jeju Tourism Org"
+        ]
+      }
+    }
+  }
+}

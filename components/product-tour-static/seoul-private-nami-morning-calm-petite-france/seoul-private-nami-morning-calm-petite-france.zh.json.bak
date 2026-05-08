@@ -1,0 +1,1906 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "seoul-private-nami-morning-calm-petite-france",
+  "locale": "zh-CN",
+  "product_id": "seoul-private-nami-morning-calm-petite-france",
+  "seo": {
+    "pageTitle": "南怡岛·晨静树木园·小法国村私人专游 | AtoC Korea",
+    "metaDescription": "首尔出发9至10小时私人加平三大标志景点游：南怡岛（渡轮+秋日枫叶大道）、晨静树木园、小法国村。",
+    "ogImage": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1920&q=80",
+    "primaryKeywords": [
+      "南怡岛私人游",
+      "晨静树木园旅游",
+      "小法国村一日游",
+      "首尔南怡私家车",
+      "加平一日游从首尔"
+    ],
+    "title": "首尔私人包车：南怡岛＋晨静苑＋小法国村一日游 | AtoC Korea",
+    "description": "首尔私人包车北郊一日游：南怡岛（渡轮横渡＋韩剧《冬季恋歌》取景地）→晨静苑季节主题庭园→小法国村（《跑男》《爱的迫降》取景地）。含酒店接送，无陌生旅客。"
+  },
+  "catalog_card": {
+    "slug": "seoul-private-nami-morning-calm-petite-france",
+    "title": "首尔私人行程：南怡岛、晨静苑＆小法国村",
+    "subtitle": "韩国三大最具拍摄价值的郊游胜地，一辆私家车，一天尽览。",
+    "region": "加平（首尔日归）",
+    "duration": "9–10小时",
+    "stopsCount": 3,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "私人包车游",
+      "韩剧拍摄地",
+      "情侣家庭适合"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=600&q=80",
+    "priceLabel": "按车辆计费 — 请于预订时确认",
+    "shortCardDescription": "从首尔出发的私人一日游，涵盖南怡岛（渡轮+秋日枫叶大道）、晨静树木园（仙境般的晨雾与庭园）及小法国村（欧式建筑与小王子主题）。",
+    "tags": [
+      "私家团",
+      "韩剧取景地",
+      "情侣与家庭"
+    ]
+  },
+  "headlineLine1": "首尔私人行程——南怡岛、",
+  "headlineLine2": "晨静苑＆小法国村",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "车辆",
+    "priceNote": "费用尚未确认。私人包车定价视车辆大小而异。确认后，AtoC Korea直售价格享9折优惠。"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1920&q=80",
+    "imagePosition": "center 45%",
+    "tagline": "从南怡岛渡轮横渡，到晨静苑的主题庭园，再到小法国村的欧陆建筑——首尔北郊最上镜的私人三景",
+    "pills": [
+      "私人专属车辆",
+      "免费酒店接送",
+      "固定三站路线"
+    ],
+    "meta": {
+      "duration": "9–10小时",
+      "region": "加平",
+      "stops": "3 个景点",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "行程总览"
+    },
+    {
+      "id": "itinerary",
+      "label": "详细行程"
+    },
+    {
+      "id": "details",
+      "label": "注意事项"
+    },
+    {
+      "id": "faq",
+      "label": "常见问题"
+    },
+    {
+      "id": "reviews",
+      "label": "旅客评价"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "行程时间",
+      "value": "9至10小时"
+    },
+    {
+      "icon": "camera",
+      "label": "拍照潜力",
+      "value": "极高"
+    },
+    {
+      "icon": "tree-pine",
+      "label": "景色评级",
+      "value": "庭园与森林"
+    },
+    {
+      "icon": "footprints",
+      "label": "步行强度",
+      "value": "中等"
+    },
+    {
+      "icon": "users",
+      "label": "参团形式",
+      "value": "完全私人"
+    },
+    {
+      "icon": "ticket",
+      "label": "门票费用",
+      "value": "现场自付"
+    },
+    {
+      "icon": "gauge",
+      "label": "行程节奏",
+      "value": "私人悠闲节奏"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+      "alt": "南怡岛落羽松林荫大道冬季恋歌取景地",
+      "caption": "南怡岛落羽松林荫大道（《冬季恋歌》取景地）",
+      "location": "南怡岛",
+      "atmosphere": "林荫步道与《冬季恋歌》取景场景"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1601273453200-7e1b7e5e3a8a?w=1200&q=80",
+      "alt": "晨静树木园主题花园季节灯光节",
+      "caption": "晨静树木园（1996年建立，面积33万平方米，20个主题花园）",
+      "location": "晨静树木园",
+      "atmosphere": "主题花园及季节灯光节"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1583917123405-3aa64e6a96b8?w=1200&q=80",
+      "alt": "小法国村小王子主题山坡村落",
+      "caption": "小法国村——《小王子》主题山坡村落",
+      "location": "小法国村",
+      "atmosphere": "色彩缤纷的《小王子》主题村落氛围"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+      "alt": "清平湖渡船前往南怡岛",
+      "caption": "清平湖渡船前往南怡岛",
+      "location": "清平湖",
+      "atmosphere": "渡船横渡前往南怡岛"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+      "alt": "晨静树木园冬季灯光节",
+      "caption": "晨静树木园冬季灯光节（12月至3月中旬）",
+      "location": "冬季灯光节",
+      "atmosphere": "晨静树木园季节灯光节（12月至3月中旬）"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "10:30",
+      "duration": "180分钟",
+      "name": "南怡岛（南怡洲）",
+      "category": "渡轮小岛&韩剧地标",
+      "description": "南怡岛以5分钟渡轮从加平码头出发，登上北汉江中一座形似半月的河中小岛。面积约**46万平方米、周长约5公里**，以朝鲜时代军事将领**南怡（1441至1468年）**命名。2002年，南怡岛因成为KBS剧集**《冬季恋歌》**（裴勇俊、崔志友主演）的拍摄地而享誉全球——成为2000年代初韩流浪潮的催化剂——每年至今仍吸引约**330万人次**（其中130万名外籍旅客）。自**2006年3月1日**起，岛屿以「**南怡共和国**」的名义进行自我品牌建设，设有专属旗帜、货币（硬币）、护照和邮政服务（旅游行销概念）。代表性的**水杉大道**（《冬季恋歌》经典雪中小径）、**银杏恋人道**、**韩国红松道**，以及用烧酒瓶制成的再生玻璃红杉桥，都可在轻松的半日游中步行游览。",
+      "highlights": [
+        "半月形河中小岛，约46万平方米 / 周长5公里；以将领南怡（1441至1468年）命名",
+        "代表性水杉大道 — 《冬季恋歌》（2002年）经典拍摄地",
+        "自2006年起自称「南怡共和国」 — 设有旗帜、货币、护照（旅游概念）",
+        "从加平码头搭乘5分钟渡轮（每10至20分钟一班）",
+        "岛上野生动物：孔雀（含罕见白化孔雀）、鸵鸟、野兔、松鼠",
+        "**1944年清平水坝建成**使南怡成为永久岛屿",
+        "**2006年3月1日宣布成立南怡共和国** — 韩国第一个微型旅游共和国概念",
+        "**UNI年F儿童友善公园2010年认定** + 每年600多场表演/展览/节庆",
+        "**入场费**：正常渡轮₩19,000来回；36个月以下婴儿免费"
+      ],
+      "timeUsed": [
+        "从加平码头乘渡轮（含排队5–10分钟）",
+        "沿水杉/银杏/韩国松大道自由漫步",
+        "可选：租借自行车（单人₩7,000/双人₩14,000/小时）",
+        "岛上午餐（Sonata 咖啡馆、糖饼、红薯拿铁、韩式牛肉饼等）",
+        "乘渡轮返回码头"
+      ],
+      "whyOnRoute": "**南怡岛排在最前**，利用最强的早晨光线进行林荫步道摄影，同时避开下午最重的渡船排队人潮。在全日体力最充沛时在岛上停留，也让后续的晨静树木园和小法国村在更轻松的节奏下进行。私人包车跳过了加平接驳巴士（每30至60分钟一班）的等候时间，为南怡岛多争取了1至2小时的有效游览时间。",
+      "visitBasics": {
+        "hours": "岛上08:00–21:00（末班渡轮时间变动）；岛内大部分店铺约18:00打烊",
+        "closed": "全年开放",
+        "admission": "纳米纳拉共和国签证费（含往返渡轮）：普通₩19,000/优惠₩13,000",
+        "walking": "轻松——平坦林荫大道；全程约5公里。可租自行车/电动车"
+      },
+      "convenience": {
+        "restroom": "岛上多处及加平码头设有厕所",
+        "parking": "加平码头小型车₩6,000/大型车₩10,000"
+      },
+      "smartNotes": {
+        "photo": "水杉大道——秋季金黄与冬季雪景是代表性拍摄画面。",
+        "facilities": "岛内韩式餐厅、咖啡馆、纪念品商店。",
+        "tip": "最佳季节：春季（4–5月樱花）、秋季（10月银杏金黄）。周末高峰期请提早到达。"
+      },
+      "_poi_meta": {
+        "poi_key": "nami_island",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea — Nami Island official listing + visa fee schedule)",
+          "Naminara Republic Official Site (namisum-en.imweb.me — own corpus on cultural-independence brand)",
+          "UNICEF Korea (Nami Island 2010 Child Friendly Park designation + International Children's Book Festival)",
+          "KBS / Korea Times (Winter Sonata 2002 production retrospectives + Japanese tourism boom coverage)",
+          "Wikipedia (Namiseom — open corpus on General Nami history + Cheongpyeong Dam 1944 origin)"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "time": "14:00",
+      "duration": "120分钟",
+      "name": "晨静树木园",
+      "category": "主题植物园",
+      "description": "距南怡岛南方约30分钟车程，**晨静树木园**是韩国最具代表性的私人树木园——占地约**33万平方米**，种植约**5,000种植物**。树木园由三育大学的韩相劲构思于**1992年**，**1996年对外开放**，名称取自韩国「朝鲜」（晨静之国）的称号。韩相劲及其妻子亲手设计并开辟整座花园，甚至在早期财务困难时卖掉自家房子。园内设有**20个主题子花园**——包含形似韩国半岛的「凹陷花园」、「月光花园」、「盆景花园」和「伊甸花园」。冬季灯光节每年12月初至3月中旬装设逾**20万个LED灯泡**（2025至2026年为12月5日至2026年3月15日）。**CNN评选为韩国前50大观光景点**。",
+      "highlights": [
+        "韩国最具代表性的私人树木园 — 33万平方米，种植约5,000种植物",
+        "三育大学韩相劲教授1996年开放（1992年构思）",
+        "冬季灯光节：2025年12月5日至2026年3月15日，20万+个LED",
+        "20个主题子花园 — 形似韩国半岛的「凹陷花园」等",
+        "韩剧《云画的月光》等拍摄地",
+        "**1992年构思 / 1994年购地 / 1996年5月11日开放**：创办人夫妇亲手设计，甚至卖掉自家房子",
+        "**CNN评选为韩国前50大观光景点**",
+        "**灯光节20万+个环保LED灯泡**（12月至3月）",
+        "**天年香（中国刺柏）**是晨静树木园的官方象征植物"
+      ],
+      "timeUsed": [
+        "进入树木园及导游简短介绍",
+        "20个主题花园自由漫步（建议路线：60–90分钟）",
+        "可选：Morning Spring面包坊或现场餐厅咖啡小憩",
+        "集合返回车辆",
+        "可选沉降花园（韩半岛造型）延长拍照时间——CNN韩国50大美景相关景观之一（约15分钟）"
+      ],
+      "whyOnRoute": "**晨静树木园排在路线中段**，在南怡岛的活跃步行巡回和小法国村的紧凑村落收尾之间，提供全日最平静的景色章节。12月至3月，花园在黑暗中举办韩国最大的花园灯光节，日落后延长开放至21:00——若出发日期落在此时段，可安排在此多停留并加入夜间换场。",
+      "visitBasics": {
+        "hours": "春秋08:30–19:00（最晚入场18:00）；冬季灯光节周日至周五17:30–21:30，周六17:30–22:00",
+        "closed": "全年开放",
+        "admission": "成人₩11,000/65岁以上₩9,000/青少年13–18岁₩8,500/儿童3–12岁₩7,500",
+        "walking": "中等强度——横跨起伏地形的宽阔步道，穿越20个主题花园；大部分铺装"
+      },
+      "convenience": {
+        "restroom": "多处，有标识",
+        "parking": "大型免费停车场；投币储物柜₩1,500–2,000（仅限₩500硬币）"
+      },
+      "smartNotes": {
+        "photo": "春季（4月樱花）、夏季（郁郁葱葱）、秋季（10月至11月初红叶）、冬季灯光节。",
+        "facilities": "餐厅（大酱汤、蔬菜拌饭、传统年糕等）、面包坊、纪念品商店。",
+        "tip": "灯光节（12/5–3/15）期间建议约16:00到达，可同时欣赏白天花园与夜晚灯光。"
+      },
+      "_poi_meta": {
+        "poi_key": "garden_of_morning_calm",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "note": "POI verified in KB v1.10 (Batch 7) and reused here unchanged.",
+        "sources": [
+          "Garden of Morning Calm Official Site (morningcalm.co.kr — own corpus on founder + 1996 opening + 20 sub-gardens)",
+          "Korea Tourism Organization (VisitKorea — Lighting Festival listing + lighting-fest schedule)",
+          "Gyeonggi Cultural Foundation (ggc.ggcf.kr — official cultural promotion entry on Sunken Garden + 200,000 LEDs)",
+          "Sahmyook University Department of Horticulture (Prof. Han Sang-kyung honorary professor profile + garden origin)",
+          "Wikipedia (Garden of Morning Calm — corpus on Tagore-derived name + 5,000 species + 330,000 m² total)"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "16:30",
+      "duration": "60分钟",
+      "name": "小法国村",
+      "category": "小王子主题村落",
+      "description": "这是当日紧凑的最后一站，小法国村是一个依山而建的法式文化主题村，俯瞰著清平湖，距南怡岛约25分钟车程。由创办人于**2008年7月开幕**，16栋建筑以**「花卉、星星与小王子」**（圣-埃克苏佩里1943年著作）为主题，设有圣-埃克苏佩里纪念馆、奥格尔馆（藏有200年历史古董音乐盒）、法式住宅展览馆、傀儡剧场，以及高卢雄鸡雕塑和绘画画廊。韩剧拍摄记录包含**《贝多芬病毒》（2008年）、《个人趣向》（2010年）、《秘密花园》（2010年）、《来自星星的您》（2013至2014年）、《女王陛下的食物》（2025年）**。小法国村是**韩国唯一获得圣-埃克苏佩里基金会授权的机构**，场内所有小王子图案均获法国正式授权。",
+      "highlights": [
+        "2008年7月开幕；16栋法式建筑，以《小王子》主题打造",
+        "韩剧：《贝多芬病毒》（2008）、《秘密花园》（2010）、《来自星星的您》（2013至14）、《女王陛下的食物》（2025）",
+        "奥格尔馆：200年历史古董音乐盒；傀儡剧场每日表演",
+        "紧邻皮诺曹与达文西义大利村 — 套票₩19,500/成人",
+        "入选2026年韩法建交140周年纪念计划",
+        "**韩国唯一获圣-埃克苏佩里基金会国际授权** — 所有小王子图案均获法国正式授权",
+        "**16栋建筑含一栋19世纪法式农舍**，200年以上木材榫卯工艺不使用铁钉",
+        "**2025年《女王陛下的食物》拍摄地**（任允娥饰演角色房间）",
+        "**成人₩10,000；与义大利村套票₩19,500**"
+      ],
+      "timeUsed": [
+        "入场+快速定向",
+        "穿越彩色街道和16栋展示建筑散步+拍照——约50分钟",
+        "可选木偶剧或八音盒公演（如有安排）——约15分钟",
+        "在现场小吃摊或咖啡厅享用简餐",
+        "可选皮诺丘与达芬奇意大利村延伸参观（约45分钟，联票成人₩19,500）"
+      ],
+      "whyOnRoute": "**小法国村排在最后**，在南怡岛更广阔的步行巡回和晨静树木园的景色丰富感之后，以轻盈、拍照友善的方式作为全日收尾。其紧凑的规模（通常游览1.5至2小时）天然契合日落前的最后一站时段，而K-drama取景地的身份（《来自星星的您》）让此站成为有意寻找特定拍摄场景的访客的明确目的地。",
+      "visitBasics": {
+        "hours": "09:00–18:00（最晚入场17:00）；淡季部分周一休馆",
+        "closed": "淡季部分周一休馆",
+        "admission": "成人₩12,000/青少年₩8,500/儿童₩7,500（含意大利村组合票成人₩19,500）",
+        "walking": "轻松——小型平坦至缓坡村落（1–1.5小时游览）"
+      },
+      "convenience": {
+        "restroom": "场内设有",
+        "parking": "免费停车"
+      },
+      "smartNotes": {
+        "photo": "以青山为背景的彩色木结构建筑是代表性拍摄构图。",
+        "facilities": "仅有小吃摊——华夫饼、饺子、鱼饼汤、咖啡。建议在之前的景点用餐。",
+        "tip": "最适合与南怡岛及/或晨静树木园搭配，通过加平城市观光巴士串联。"
+      },
+      "_poi_meta": {
+        "poi_key": "petite_france",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "note": "POI verified in KB v1.10 (Batch 7) and reused here unchanged.",
+        "sources": [
+          "Petite France Official Site (en.pfcamp.com — own corpus on founder + 16-building layout + Goseong Youth Training Center)",
+          "Korea Tourism Organization (VisitKorea — Petite France listing + 2025 'Bon Appétit, Your Majesty' filming-location verification)",
+          "Saint-Exupéry Foundation France (international license agreement — Le Petit Prince motif authorization)",
+          "Gapyeong County Tourism Office (gapyeong.go.kr — official local-government attractions listing)",
+          "Wikipedia (Petite France theme park — corpus on July 2008 opening + Le Petit Prince theme + organizational structure)"
+        ]
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "南怡岛",
+      "type": "origin",
+      "theme": "Ferry & Forest"
+    },
+    {
+      "name": "午餐休息",
+      "type": "meal",
+      "theme": "放松转换"
+    },
+    {
+      "name": "晨静树木园",
+      "type": "primary",
+      "theme": "花园"
+    },
+    {
+      "name": "小法国村",
+      "type": "return",
+      "theme": "村落漫步"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "南怡岛开场",
+      "duration": "第1站",
+      "description": "上午：南怡岛开篇"
+    },
+    {
+      "phase": "午餐＋晨静树木园",
+      "duration": "第2–3站",
+      "description": "中午：午餐与花园漫步"
+    },
+    {
+      "phase": "小法国村收尾",
+      "duration": "第4站",
+      "description": "下午：小法国村收尾"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "行程路线一览",
+    "subtitle": "在首尔市内酒店接送后，向加平方向单程环线：先游南怡岛享受森林晨光，加平当地午餐，下午游览晨静树木园和小法国村。约18:00至19:00返回首尔。"
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "渴望浪漫K-drama全日行程的情侣及蜜月旅客",
+      "喜爱拍照的成人家庭",
+      "含长辈的多代同游",
+      "初次到韩国、希望在首尔以外好好体验一个日行程的旅客",
+      "希望享有私家车而非巴士行程节奏的旅客"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "为何加平环线选择私人包车格式",
+        "icon": "car",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "省去接驳巴士等候",
+            "detail": "标准加平接驳巴士每30至60分钟一班。私人交通省去等候，每天多回1至2小时有效游览时间。"
+          },
+          {
+            "label": "时间安排更灵活",
+            "detail": "您可以在最喜爱的景点多停留——通常是南怡岛或晨静树木园——而无需配合固定的团体返回时间。"
+          },
+          {
+            "label": "携带父母和孩子更轻松",
+            "detail": "门到门接送省去清晨地铁换乘和深夜接驳车的压力，让多代同游的路线轻松许多。"
+          }
+        ]
+      },
+      {
+        "title": "步行负担的真实感受",
+        "icon": "footprints",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "南怡岛步行量最多",
+            "detail": "岛屿面积大，最美丽的落羽松和银杏步道距渡船码头单程需15至20分钟；若步行是顾虑，可选自行车租借。"
+          },
+          {
+            "label": "晨静树木园以轻松为主，可选上坡",
+            "detail": "大多数步道平缓，但上坡至观景台有短程爬坡值得一走。"
+          },
+          {
+            "label": "小法国村是最轻松的一站",
+            "detail": "村落面积小，主要为紧凑格局，有缓坡石阶，但无任何挑战性步行。"
+          }
+        ]
+      },
+      {
+        "title": "季节性时机说明",
+        "icon": "calendar",
+        "iconBg": "bg-slate-50/80",
+        "iconColor": "text-slate-600",
+        "items": [
+          {
+            "label": "秋季是最强的拍摄季节",
+            "detail": "10月下旬至11月中旬南怡岛落羽松和银杏步道金黄火红，人潮达到高峰；请提早预订。"
+          },
+          {
+            "label": "冬季有灯光节",
+            "detail": "12月初至3月中旬，晨静树木园举办韩国最大的花园灯光节——值得留到日落后观赏。"
+          },
+          {
+            "label": "春夏气氛较为平静",
+            "detail": "4至5月赏樱和杜鹃花；7至8月植被翠绿旺盛，但潮湿度也较高。"
+          }
+        ]
+      }
+    ],
+    "lessIdealFor": [
+      "独游预算旅客（私人定价按车计，非按人计）",
+      "希望以高能量或运动为主的旅客",
+      "不喜欢在不平整花园步道上行走的旅客",
+      "需要全程室内雨天备案的旅客"
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "接送与下车地点",
+      "preview": "首尔市中心酒店免费接送；大厅提早10分钟",
+      "content": [
+        "首尔市中心地区酒店提供免费接送（明洞、弘大、东大门、仁寺洞、梨泰院、江南）。",
+        "首尔市中心以外的住宿可能需要小额附加接送费。",
+        "请在约定出发时间前10分钟在酒店大厅等候。",
+        "接送通常在08:30至09:30之间开始。",
+        "返回时于首尔酒店下车，预计19:00至19:30（若停留冬季灯光节则更晚）。",
+        "行程详情通常在出发前2至3天确认。"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "步行强度与地形",
+      "preview": "中等难度，南怡岛步行量最多",
+      "content": [
+        "南怡岛：轻松非铺设步道，但岛屿比看起来大——从渡船码头到著名落羽松步道单程需15至20分钟。",
+        "晨静树木园：轻松至中等，以缓坡为主，有可选的上坡观景台步道。",
+        "小法国村：轻松步行，有缓坡及石阶，无需求高。",
+        "建议穿着舒适步行鞋；路线并非完全不能使用婴儿车，但也并非全程无障碍。"
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "天候政策",
+      "preview": "大多数景点在小雨或降雪中仍可运作",
+      "content": [
+        "南怡岛在雨天和雪天照常运作；渡船在影响安全的情况下才停航。",
+        "晨静树木园以室外为主；小雨可以应付，大雨降低观赏体验。",
+        "小法国村设有室内展示厅，可作为雨天遮蔽场所。",
+        "司机兼导游可在当天根据天气调整各站节奏。"
+      ]
+    },
+    {
+      "id": "money",
+      "title": "门票与当日费用",
+      "preview": "所有入场费及餐费现场支付；刷卡广泛通用",
+      "content": [
+        "南怡岛入场费含来回渡船：成人₩19,000。",
+        "晨静树木园入场费：成人₩11,000。",
+        "小法国村入场费：成人₩12,000。",
+        "餐费（午餐及点心）现场支付；南怡岛附近（辣炒鸡肉）每人约₩15,000至₩25,000。",
+        "大多数商店和餐厅接受刷卡；备少量现金应付小摊位及储物柜。"
+      ]
+    },
+    {
+      "id": "wear",
+      "title": "穿着与携带物品",
+      "preview": "步行鞋、分层穿搭及天气适当外套",
+      "content": [
+        "防滑舒适步行鞋",
+        "分层穿搭——岛屿和花园可能比首尔市中心凉爽",
+        "春夏备防晒用品；冬季备保暖外套及手套",
+        "相机或手机（充足储存空间）",
+        "入场费及餐费备现金或刷卡"
+      ]
+    },
+    {
+      "id": "included",
+      "title": "费用包含项目",
+      "preview": "含私家车及司机兼导游；入场费及餐费自费",
+      "variant": "included",
+      "content": [
+        "私家车（轿车、SUV或商务车，依团体人数）",
+        "持牌英语司机兼导游",
+        "首尔市中心酒店免费接送",
+        "标准路线的油费及过路费",
+        "三个景点入场费不含，在各景点自行支付",
+        "午餐及点心不含",
+        "个人购物费用不含",
+        "司机小费不含"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "即时天气连动"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "每日更新"
+    },
+    "_seasonalSummary": "无"
+  },
+  "seasonalVariations": [
+    {
+      "season": "春季",
+      "title": "花卉季",
+      "description": "4月南怡岛和晨静树木园的赏樱及木莲；本路线四季中最均衡的季节。",
+      "icon": "flower"
+    },
+    {
+      "season": "夏季",
+      "title": "郁郁葱葱但潮湿",
+      "description": "翠绿植被和较长日照，但6月下旬和7月预期潮湿及可能的梅雨。",
+      "icon": "sun"
+    },
+    {
+      "season": "秋季",
+      "title": "最佳摄影季",
+      "description": "10月下旬至11月中旬南怡岛落羽松和银杏步道金黄火红；摄影最强季节，同时也是最拥挤的季节。",
+      "icon": "leaf"
+    },
+    {
+      "season": "冬季",
+      "title": "灯光节季节",
+      "description": "12月至3月中旬：宁静雪白的南怡岛，加上晨静树木园著名的灯光节。寒冷但画面效果极佳。",
+      "icon": "snowflake"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "当地持照合法业者",
+      "description": "持牌韩国旅游旅游服务团队，备有完整保险",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "持牌韩国旅游旅游服务团队，备有完整保险"
+    },
+    {
+      "icon": "route",
+      "title": "路线专家",
+      "description": "定制化行程，而非千篇一律的固定路线",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "定制化行程，而非千篇一律的固定路线"
+    },
+    {
+      "icon": "users",
+      "title": "精心控制团体人数",
+      "description": "车辆大小适合您的团体需求",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "车辆大小适合您的团体需求"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "即时通知",
+      "title": "即时确认",
+      "detail": "您将收到含行程摘要的预订确认通知。",
+      "description": "您将收到含行程摘要的预订确认通知。"
+    },
+    {
+      "timing": "出发前12小时",
+      "title": "出发前12小时提醒",
+      "detail": "出发前分享天气更新及任何路线调整。",
+      "description": "出发前分享天气更新及任何路线调整。"
+    },
+    {
+      "timing": "前一晚",
+      "title": "最终接送信息",
+      "detail": "确认确切接送时间及司机∕导游联络方式。",
+      "description": "确认确切接送时间及司机∕导游联络方式。"
+    },
+    {
+      "timing": "行程当天早晨",
+      "title": "当日路线说明",
+      "detail": "出发当天早上根据最新现场状况提供简报。",
+      "description": "出发当天早上根据最新现场状况提供简报。"
+    },
+    {
+      "timing": "行程途中",
+      "title": "景点逐一说明",
+      "detail": "每个景点提供即时现场讲解。",
+      "description": "每个景点提供即时现场讲解。"
+    },
+    {
+      "timing": "行程结束后",
+      "title": "行程后支援",
+      "detail": "行程结束后提供后续建议及额外信息。",
+      "description": "行程结束后提供后续建议及额外信息。"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q1",
+      "question": "景点顺序是什么？为什么不以小法国村开场？",
+      "answer": "南怡岛优先使用最强的早班渡船时段（08:30至10:00人潮最少，落羽松步道光线最佳）。晨静树木园在正午最方便午餐，园内步道也在此时段全面开放。小法国村是最轻松的景点，适合60分钟的日落前收尾。可以应要求逆向安排，但通常会增加30至40分钟等候时间。"
+    },
+    {
+      "id": "q2",
+      "question": "入场费含在费用中还是另外支付？",
+      "answer": "私人行程定价通常包含全部三个景点入场费：南怡岛含来回渡船（成人₩19,000相当于）、晨静树木园（成人₩11,000）和小法国村（成人₩12,000）。预订时请确认——部分旅游服务团队版本以较低头条价格将入场费列为另计。午餐现场支付（每人约₩15,000至₩25,000）。"
+    },
+    {
+      "id": "q3",
+      "question": "为什么选择私人行程而非巴士行程？",
+      "answer": "私人行程比典型拼团巴士行程多出1至2小时有效游览时间，因为您略过了加平接驳巴士（每30至60分钟一班）的等候时间，且可在最喜爱的景点延长停留。拼团行程遵循固定返回时间时段。私人行程更适合多代同游；巴士行程更适合独自出行且以预算为优先的旅客。"
+    },
+    {
+      "id": "q4",
+      "question": "南怡岛渡船如何运作？",
+      "answer": "渡船从加平码头每10至20分钟一班，08:00至21:30运营。渡船横渡时间5至10分钟。来回票已包含在入场费中，并捆绑为「南怡共和国」的「签证」品牌包装。另有拉链滑翔绳选项（₩44,000单程；不含）供想跳过排队又追求刺激的旅客选择。"
+    },
+    {
+      "id": "q5",
+      "question": "晨静树木园灯光节是什么时候？",
+      "answer": "通常12月初至3月中旬——韩国最大的花园灯光节将20个主题花园变为日落后的灯光步道。节日期间开放至21:00。若您的出发日期在此时段内，值得留到日落后观赏——请与旅游服务团队确认以延长行程并加入夜间换场。"
+    },
+    {
+      "id": "q6",
+      "question": "可以用义大利村替换小法国村吗？",
+      "answer": "可以——义大利村（木偶奇遇记和达文西主题公园）距小法国村约5分钟，共享入场复合区（成人组合票₩18,000，比小法国村单票₩12,000稍贵）。只有同时参观两者才能节省费用。若只选择义大利村需提前告知。义大利村的K-drama曝光度较低，但内部展示更丰富。"
+    },
+    {
+      "id": "first-time",
+      "question": "对于初次游览加平的旅客，这是好选择吗？",
+      "answer": "是的——在一天之内涵盖了该地区最具代表性的景点，行程均衡丰富。"
+    },
+    {
+      "id": "walking",
+      "question": "步行难度高吗？",
+      "answer": "中等难度，南怡岛步行量最多。南怡岛面积较大，最具拍摄价值的落羽松步道和银杏步道距渡船码头单程需15至20分钟；可租借自行车和三轮车代步。晨静树木园以轻松铺设步道为主，可选上坡至上层观景台。小法国村是紧凑的山坡村落，有缓坡石阶但无挑战性步行。建议穿着包趾舒适步行鞋应对南怡岛的非铺设路段。"
+    },
+    {
+      "id": "family",
+      "question": "这个行程适合家庭吗？",
+      "answer": "是的——首尔日行程中最亲子友善的选择之一。晨静树木园和小法国村适合婴儿车通行；南怡岛有非铺设路段但可以步行。孩子最喜欢的景点包含小法国村的木偶剧场、南怡岛儿童花园和南怡岛的季节性动物互动。3岁以下用揹带也可以。"
+    },
+    {
+      "id": "seniors",
+      "question": "年长者可以舒适地参加吗？",
+      "answer": "是的——节奏和步行强度对活跃年长旅客相当友善。南怡岛自行车租借可避免从码头步行15至20分钟。晨静树木园有铺设步道和各处设有座椅。小法国村紧凑，有缓坡石阶。若需要全程轮椅无障碍则较不理想——南怡岛步道和部分小法国村路段并非完全无障碍。"
+    },
+    {
+      "id": "children",
+      "question": "建议的最低参加年龄是多少？",
+      "answer": "3岁以上均可——这是首尔日行程中最亲子友善的选择之一。晨静树木园和小法国村适合婴儿车；南怡岛非铺设步道可以步行，非常幼小的孩子请用揹带。孩子最喜欢的景点包含小法国村的木偶剧场和南怡岛儿童花园。3岁以下用揹带也欢迎。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "可订状态将在支付步骤中确认。",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "人"
+    }
+  },
+  "pickup_dropoff": {
+    "type": "hotel_pickup",
+    "meeting_points": [
+      {
+        "name": "首尔市中心各酒店大厅",
+        "time": "07:30–08:30",
+        "note": "支持区域内酒店门到门接送"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "首尔市中心任意酒店",
+        "approx_time": "≈ 17:30–18:30",
+        "note": "可在同一酒店或支持区域内指定地址下车"
+      }
+    ],
+    "hotel_pickup_available": true,
+    "notes": "首尔市中心地区酒店免费接送（明洞、弘大、东大门、仁寺洞、梨泰院、江南）。请在约定出发时间前10分钟在酒店大厅等候。接送通常08:30至09:30开始，返回19:00至19:30。"
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "seoul-private-nami-morning-calm-petite-france",
+    "product_type": "private",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "gyeonggi_gapyeong",
+    "vehicle_type": "private_vehicle",
+    "duration_hours": 9.0,
+    "region_tags": [
+      "seoul_capital",
+      "gyeonggi_gapyeong",
+      "seoul_day_trip",
+      "gyeonggi_north_han_river",
+      "gangwon_chuncheon"
+    ],
+    "theme_tags": [
+      "k_drama_filming_location",
+      "garden_walk",
+      "themed_park",
+      "island_ferry",
+      "private_charter",
+      "first_time_friendly",
+      "seasonal_lighting_festival",
+      "iconic_landmarks",
+      "photogenic"
+    ],
+    "poi_tags": [
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france",
+      "gapyeong_wharf",
+      "cheongpyeong_lake"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.5,
+    "scenic_level": 0.95,
+    "photo_level": 1.0,
+    "culture_level": 0.6,
+    "relax_level": 0.8,
+    "first_time_fit": 0.95,
+    "family_fit": 1.0,
+    "senior_fit": 0.8,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 0.8,
+    "active_traveler_fit": 0.6,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 0.8,
+    "young_kids_fit": 0.8,
+    "senior_active_fit": 0.8,
+    "senior_general_fit": 0.8,
+    "mobility_friendly_fit": 0.6,
+    "stroller_fit": 0.6,
+    "one_day_fit": 0.8,
+    "same_day_flight_fit": 0.4,
+    "rain_fit": 0.6,
+    "value_for_money_fit": 0.6,
+    "iconic_landmark_fit": 0.9,
+    "cafe_fit": 0.8,
+    "food_fit": 0.6,
+    "nature_fit": 1.0,
+    "beach_fit": 0.2,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.4,
+    "no_shopping_fit": 0.8,
+    "local_culture_fit": 0.6,
+    "storytelling_fit": 0.85,
+    "unesco_fit": 0.15,
+    "intangible_heritage_fit": 0.2,
+    "indoor_ratio": 0.2,
+    "weather_sensitivity": 0.6,
+    "comfort_level": 1.0,
+    "budget_fit": 0.4,
+    "premium_fit": 1.0,
+    "small_group_fit": 0.15,
+    "private_fit": 1.0,
+    "bus_fit": 0.05,
+    "price_band": "premium",
+    "pickup_base": "seoul_downtown",
+    "return_time_band": "19:00-19:30",
+    "duration_band": "9-10h",
+    "min_recommended_age": 3,
+    "hard_constraints": {
+      "avoidIf": [
+        "solo_budget_traveler_seeking_lowest_price",
+        "wants_a_high_action_day"
+      ],
+      "notIdealFor": [
+        "travelers_avoiding_unpaved_garden_paths",
+        "guests_needing_a_fully_indoor_route"
+      ]
+    },
+    "walking_notes": [
+      "Nami Island is the largest walking section; the famous metasequoia path is 15 to 20 minutes one-way from the ferry pier.",
+      "Garden of Morning Calm is mostly easy with gentle slopes and optional viewpoint climbs.",
+      "Petite France is the easiest stop, with light slopes and stairs only.",
+      "Comfortable walking shoes are strongly recommended.",
+      "The route is not fully stroller-friendly because of unpaved island paths and garden steps."
+    ],
+    "keywords": [
+      "seoul private nami island tour",
+      "seoul private gapyeong day trip",
+      "nami island morning calm petite france private",
+      "private k drama tour from seoul",
+      "winter sonata filming location private tour",
+      "garden of morning calm lighting festival tour",
+      "seoul private day trip nami island",
+      "petite france private tour",
+      "gapyeong private vehicle tour",
+      "seoul to nami island private driver"
+    ],
+    "synonym_hints": [
+      "seoul private gapyeong loop",
+      "private day tour to namiseom",
+      "private tour seoul countryside",
+      "seoul to gapyeong private charter",
+      "k drama trio private day tour",
+      "morning calm winter lights private tour"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "seoul",
+    "vehicle_type_legacy": "private_van",
+    "anchor_poi_keys": [
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france"
+    ],
+    "private_tour_fit": 1.0,
+    "history_culture_fit": 0.6,
+    "customizable_route_fit": 0.4,
+    "flexibility_fit": 0.7,
+    "romantic_fit": 0.95,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "seoul_day_trip_pair_fit": 1.0,
+    "seoul_central_hotel_pickup_fit": 1.0,
+    "return_to_seoul_central_fit": 1.0,
+    "day_trip_2_3_hour_drive_each_way_fit": 1.0,
+    "private_charter_format_fit": 1.0,
+    "premium_pacing_fit": 1.0,
+    "small_party_intimate_fit": 1.0,
+    "k_drama_filming_location_route_fit": 1.0,
+    "winter_sonata_anchor_fit": 1.0,
+    "little_prince_saint_exupery_anchor_fit": 1.0,
+    "saint_exupery_foundation_licensed_fit": 1.0,
+    "naminara_micronation_concept_fit": 1.0,
+    "unicef_child_friendly_park_fit": 1.0,
+    "ferry_island_visit_fit": 1.0,
+    "k_drama_filming_density_high_fit": 1.0,
+    "bon_appetit_your_majesty_2025_filming_fit": 1.0,
+    "im_yoon_ah_filming_location_fit": 1.0,
+    "private_arboretum_visit_fit": 1.0,
+    "korean_peninsula_shape_garden_fit": 1.0,
+    "rabindranath_tagore_land_of_morning_calm_anchor_fit": 1.0,
+    "winter_lighting_festival_anchor_fit": 1.0,
+    "mediterranean_alpine_french_village_fit": 1.0,
+    "naminara_passport_visa_concept_fit": 1.0,
+    "cnn_top_50_korea_attraction_fit": 1.0,
+    "gapyeong_attractions_route_fit": 1.0,
+    "namisum_5km_circuit_walking_fit": 1.0,
+    "petite_france_combined_pinocchio_italian_village_fit": 1.0,
+    "differentiates_from_dmz_day_trip": true,
+    "differentiates_from_seoraksan_sokcho_day_trip": true,
+    "differentiates_from_pocheon_three_pillar_day_trip": true,
+    "available_months_signature": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "signature_window_label": "Year-round (peak: April-May spring blooms, October-November autumn foliage, December-March Morning Calm Lighting Festival)",
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "embedded_for": [
+      "authoring",
+      "review",
+      "sql_backfill_reference"
+    ],
+    "note": "Scores were tuned for a fixed three-stop private Gapyeong loop with strong scenic and photo fit, high comfort and family fit (private format), and moderate walking. Iconic landmark fit is maxed because all three stops are top-tier Korean tourism brand names. Same-day-flight fit is low because the loop runs 9-10 hours and ends in late afternoon or evening.",
+    "duration_hours": 10,
+    "stop_count": 3,
+    "score_rationale": {
+      "scenic_level": "Maxed because all three stops are visually distinct and well-curated.",
+      "photo_level": "Maxed because all three are heavy K-drama filming locations with seasonally rotating photo windows.",
+      "private_fit": "Direct match: per-vehicle private charter.",
+      "family_fit": "Very high because private comfort plus child-friendly stops (rabbits at Nami, Marionettes at Petite France) make it broadly accessible.",
+      "rain_fit": "Mid because most walking is outdoor; Petite France indoor halls help but do not cover the full route.",
+      "iconic_landmark_fit": "Maxed because the three stops are the most-recognized day-trip combination from Seoul."
+    },
+    "anchor_pois": [
+      "Nami Island",
+      "Garden of Morning Calm",
+      "Petite France"
+    ],
+    "anchor_poi_keys": [
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france"
+    ],
+    "competing_products": [
+      "seoul-dmz-private-3rd-tunnel-suspension-bridge",
+      "seoul-suburbs-private-chartered-car-10hr",
+      "incheon-seoul-private-car-shore-excursion-cruise"
+    ],
+    "enrichment_batch": "17d",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.26",
+    "enrichment_target_kb_version": "1.27",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "13 substantive stops across 4 tours; Batches 8/9 era authoring → A-grade pv=6 PASS (universal source-attribution gap closed; Seoul-day-trip-quartet pattern introduced)"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "首尔私人行程——南怡岛、",
+        "headlineLine2": "晨静苑＆小法国村",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1920&q=80",
+          "imagePosition": "center 45%",
+          "tagline": "从南怡岛渡轮横渡，到晨静苑的主题庭园，再到小法国村的欧陆建筑——首尔北郊最上镜的私人三景",
+          "pills": [
+            "私人专属车辆",
+            "免费酒店接送",
+            "固定三站路线"
+          ],
+          "meta": {
+            "duration": "9–10小时",
+            "region": "加平",
+            "stops": "3 个景点",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "行程总览"
+          },
+          {
+            "id": "itinerary",
+            "label": "详细行程"
+          },
+          {
+            "id": "details",
+            "label": "注意事项"
+          },
+          {
+            "id": "faq",
+            "label": "常见问题"
+          },
+          {
+            "id": "reviews",
+            "label": "旅客评价"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "行程时间",
+            "value": "9至10小时"
+          },
+          {
+            "icon": "camera",
+            "label": "拍照潜力",
+            "value": "极高"
+          },
+          {
+            "icon": "tree-pine",
+            "label": "景色评级",
+            "value": "庭园与森林"
+          },
+          {
+            "icon": "footprints",
+            "label": "步行强度",
+            "value": "中等"
+          },
+          {
+            "icon": "users",
+            "label": "参团形式",
+            "value": "完全私人"
+          },
+          {
+            "icon": "ticket",
+            "label": "门票费用",
+            "value": "现场自付"
+          },
+          {
+            "icon": "gauge",
+            "label": "行程节奏",
+            "value": "私人悠闲节奏"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+            "alt": "南怡岛落羽松林荫大道冬季恋歌取景地",
+            "caption": "南怡岛落羽松林荫大道（《冬季恋歌》取景地）",
+            "location": "南怡岛",
+            "atmosphere": "林荫步道与《冬季恋歌》取景场景"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1601273453200-7e1b7e5e3a8a?w=1200&q=80",
+            "alt": "晨静树木园主题花园季节灯光节",
+            "caption": "晨静树木园（1996年建立，面积33万平方米，20个主题花园）",
+            "location": "晨静树木园",
+            "atmosphere": "主题花园及季节灯光节"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1583917123405-3aa64e6a96b8?w=1200&q=80",
+            "alt": "小法国村小王子主题山坡村落",
+            "caption": "小法国村——《小王子》主题山坡村落",
+            "location": "小法国村",
+            "atmosphere": "色彩缤纷的《小王子》主题村落氛围"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+            "alt": "清平湖渡船前往南怡岛",
+            "caption": "清平湖渡船前往南怡岛",
+            "location": "清平湖",
+            "atmosphere": "渡船横渡前往南怡岛"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+            "alt": "晨静树木园冬季灯光节",
+            "caption": "晨静树木园冬季灯光节（12月至3月中旬）",
+            "location": "冬季灯光节",
+            "atmosphere": "晨静树木园季节灯光节（12月至3月中旬）"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "10:30",
+            "duration": "180分钟",
+            "name": "南怡岛（南怡洲）",
+            "category": "渡轮小岛&韩剧地标",
+            "description": "南怡岛以5分钟渡轮从加平码头出发，登上北汉江中一座形似半月的河中小岛。面积约**46万平方米、周长约5公里**，以朝鲜时代军事将领**南怡（1441至1468年）**命名。2002年，南怡岛因成为KBS剧集**《冬季恋歌》**（裴勇俊、崔志友主演）的拍摄地而享誉全球——成为2000年代初韩流浪潮的催化剂——每年至今仍吸引约**330万人次**（其中130万名外籍旅客）。自**2006年3月1日**起，岛屿以「**南怡共和国**」的名义进行自我品牌建设，设有专属旗帜、货币（硬币）、护照和邮政服务（旅游行销概念）。代表性的**水杉大道**（《冬季恋歌》经典雪中小径）、**银杏恋人道**、**韩国红松道**，以及用烧酒瓶制成的再生玻璃红杉桥，都可在轻松的半日游中步行游览。",
+            "highlights": [
+              "半月形河中小岛，约46万平方米 / 周长5公里；以将领南怡（1441至1468年）命名",
+              "代表性水杉大道 — 《冬季恋歌》（2002年）经典拍摄地",
+              "自2006年起自称「南怡共和国」 — 设有旗帜、货币、护照（旅游概念）",
+              "从加平码头搭乘5分钟渡轮（每10至20分钟一班）",
+              "岛上野生动物：孔雀（含罕见白化孔雀）、鸵鸟、野兔、松鼠",
+              "**1944年清平水坝建成**使南怡成为永久岛屿",
+              "**2006年3月1日宣布成立南怡共和国** — 韩国第一个微型旅游共和国概念",
+              "**UNI年F儿童友善公园2010年认定** + 每年600多场表演/展览/节庆",
+              "**入场费**：正常渡轮₩19,000来回；36个月以下婴儿免费"
+            ],
+            "timeUsed": [
+              "从加平码头乘渡轮（含排队5–10分钟）",
+              "沿水杉/银杏/韩国松大道自由漫步",
+              "可选：租借自行车（单人₩7,000/双人₩14,000/小时）",
+              "岛上午餐（Sonata 咖啡馆、糖饼、红薯拿铁、韩式牛肉饼等）",
+              "乘渡轮返回码头"
+            ],
+            "whyOnRoute": "**南怡岛排在最前**，利用最强的早晨光线进行林荫步道摄影，同时避开下午最重的渡船排队人潮。在全日体力最充沛时在岛上停留，也让后续的晨静树木园和小法国村在更轻松的节奏下进行。私人包车跳过了加平接驳巴士（每30至60分钟一班）的等候时间，为南怡岛多争取了1至2小时的有效游览时间。",
+            "visitBasics": {
+              "hours": "岛上08:00–21:00（末班渡轮时间变动）；岛内大部分店铺约18:00打烊",
+              "closed": "全年开放",
+              "admission": "纳米纳拉共和国签证费（含往返渡轮）：普通₩19,000/优惠₩13,000",
+              "walking": "轻松——平坦林荫大道；全程约5公里。可租自行车/电动车"
+            },
+            "convenience": {
+              "restroom": "岛上多处及加平码头设有厕所",
+              "parking": "加平码头小型车₩6,000/大型车₩10,000"
+            },
+            "smartNotes": {
+              "photo": "水杉大道——秋季金黄与冬季雪景是代表性拍摄画面。",
+              "facilities": "岛内韩式餐厅、咖啡馆、纪念品商店。",
+              "tip": "最佳季节：春季（4–5月樱花）、秋季（10月银杏金黄）。周末高峰期请提早到达。"
+            },
+            "_poi_meta": {
+              "poi_key": "nami_island",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Korea Tourism Organization (VisitKorea — Nami Island official listing + visa fee schedule)",
+                "Naminara Republic Official Site (namisum-en.imweb.me — own corpus on cultural-independence brand)",
+                "UNICEF Korea (Nami Island 2010 Child Friendly Park designation + International Children's Book Festival)",
+                "KBS / Korea Times (Winter Sonata 2002 production retrospectives + Japanese tourism boom coverage)",
+                "Wikipedia (Namiseom — open corpus on General Nami history + Cheongpyeong Dam 1944 origin)"
+              ]
+            }
+          },
+          {
+            "number": 2,
+            "time": "14:00",
+            "duration": "120分钟",
+            "name": "晨静树木园",
+            "category": "主题植物园",
+            "description": "距南怡岛南方约30分钟车程，**晨静树木园**是韩国最具代表性的私人树木园——占地约**33万平方米**，种植约**5,000种植物**。树木园由三育大学的韩相劲构思于**1992年**，**1996年对外开放**，名称取自韩国「朝鲜」（晨静之国）的称号。韩相劲及其妻子亲手设计并开辟整座花园，甚至在早期财务困难时卖掉自家房子。园内设有**20个主题子花园**——包含形似韩国半岛的「凹陷花园」、「月光花园」、「盆景花园」和「伊甸花园」。冬季灯光节每年12月初至3月中旬装设逾**20万个LED灯泡**（2025至2026年为12月5日至2026年3月15日）。**CNN评选为韩国前50大观光景点**。",
+            "highlights": [
+              "韩国最具代表性的私人树木园 — 33万平方米，种植约5,000种植物",
+              "三育大学韩相劲教授1996年开放（1992年构思）",
+              "冬季灯光节：2025年12月5日至2026年3月15日，20万+个LED",
+              "20个主题子花园 — 形似韩国半岛的「凹陷花园」等",
+              "韩剧《云画的月光》等拍摄地",
+              "**1992年构思 / 1994年购地 / 1996年5月11日开放**：创办人夫妇亲手设计，甚至卖掉自家房子",
+              "**CNN评选为韩国前50大观光景点**",
+              "**灯光节20万+个环保LED灯泡**（12月至3月）",
+              "**天年香（中国刺柏）**是晨静树木园的官方象征植物"
+            ],
+            "timeUsed": [
+              "进入树木园及导游简短介绍",
+              "20个主题花园自由漫步（建议路线：60–90分钟）",
+              "可选：Morning Spring面包坊或现场餐厅咖啡小憩",
+              "集合返回车辆",
+              "可选沉降花园（韩半岛造型）延长拍照时间——CNN韩国50大美景相关景观之一（约15分钟）"
+            ],
+            "whyOnRoute": "**晨静树木园排在路线中段**，在南怡岛的活跃步行巡回和小法国村的紧凑村落收尾之间，提供全日最平静的景色章节。12月至3月，花园在黑暗中举办韩国最大的花园灯光节，日落后延长开放至21:00——若出发日期落在此时段，可安排在此多停留并加入夜间换场。",
+            "visitBasics": {
+              "hours": "春秋08:30–19:00（最晚入场18:00）；冬季灯光节周日至周五17:30–21:30，周六17:30–22:00",
+              "closed": "全年开放",
+              "admission": "成人₩11,000/65岁以上₩9,000/青少年13–18岁₩8,500/儿童3–12岁₩7,500",
+              "walking": "中等强度——横跨起伏地形的宽阔步道，穿越20个主题花园；大部分铺装"
+            },
+            "convenience": {
+              "restroom": "多处，有标识",
+              "parking": "大型免费停车场；投币储物柜₩1,500–2,000（仅限₩500硬币）"
+            },
+            "smartNotes": {
+              "photo": "春季（4月樱花）、夏季（郁郁葱葱）、秋季（10月至11月初红叶）、冬季灯光节。",
+              "facilities": "餐厅（大酱汤、蔬菜拌饭、传统年糕等）、面包坊、纪念品商店。",
+              "tip": "灯光节（12/5–3/15）期间建议约16:00到达，可同时欣赏白天花园与夜晚灯光。"
+            },
+            "_poi_meta": {
+              "poi_key": "garden_of_morning_calm",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "note": "POI verified in KB v1.10 (Batch 7) and reused here unchanged.",
+              "sources": [
+                "Garden of Morning Calm Official Site (morningcalm.co.kr — own corpus on founder + 1996 opening + 20 sub-gardens)",
+                "Korea Tourism Organization (VisitKorea — Lighting Festival listing + lighting-fest schedule)",
+                "Gyeonggi Cultural Foundation (ggc.ggcf.kr — official cultural promotion entry on Sunken Garden + 200,000 LEDs)",
+                "Sahmyook University Department of Horticulture (Prof. Han Sang-kyung honorary professor profile + garden origin)",
+                "Wikipedia (Garden of Morning Calm — corpus on Tagore-derived name + 5,000 species + 330,000 m² total)"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "16:30",
+            "duration": "60分钟",
+            "name": "小法国村",
+            "category": "小王子主题村落",
+            "description": "这是当日紧凑的最后一站，小法国村是一个依山而建的法式文化主题村，俯瞰著清平湖，距南怡岛约25分钟车程。由创办人于**2008年7月开幕**，16栋建筑以**「花卉、星星与小王子」**（圣-埃克苏佩里1943年著作）为主题，设有圣-埃克苏佩里纪念馆、奥格尔馆（藏有200年历史古董音乐盒）、法式住宅展览馆、傀儡剧场，以及高卢雄鸡雕塑和绘画画廊。韩剧拍摄记录包含**《贝多芬病毒》（2008年）、《个人趣向》（2010年）、《秘密花园》（2010年）、《来自星星的您》（2013至2014年）、《女王陛下的食物》（2025年）**。小法国村是**韩国唯一获得圣-埃克苏佩里基金会授权的机构**，场内所有小王子图案均获法国正式授权。",
+            "highlights": [
+              "2008年7月开幕；16栋法式建筑，以《小王子》主题打造",
+              "韩剧：《贝多芬病毒》（2008）、《秘密花园》（2010）、《来自星星的您》（2013至14）、《女王陛下的食物》（2025）",
+              "奥格尔馆：200年历史古董音乐盒；傀儡剧场每日表演",
+              "紧邻皮诺曹与达文西义大利村 — 套票₩19,500/成人",
+              "入选2026年韩法建交140周年纪念计划",
+              "**韩国唯一获圣-埃克苏佩里基金会国际授权** — 所有小王子图案均获法国正式授权",
+              "**16栋建筑含一栋19世纪法式农舍**，200年以上木材榫卯工艺不使用铁钉",
+              "**2025年《女王陛下的食物》拍摄地**（任允娥饰演角色房间）",
+              "**成人₩10,000；与义大利村套票₩19,500**"
+            ],
+            "timeUsed": [
+              "入场+快速定向",
+              "穿越彩色街道和16栋展示建筑散步+拍照——约50分钟",
+              "可选木偶剧或八音盒公演（如有安排）——约15分钟",
+              "在现场小吃摊或咖啡厅享用简餐",
+              "可选皮诺丘与达芬奇意大利村延伸参观（约45分钟，联票成人₩19,500）"
+            ],
+            "whyOnRoute": "**小法国村排在最后**，在南怡岛更广阔的步行巡回和晨静树木园的景色丰富感之后，以轻盈、拍照友善的方式作为全日收尾。其紧凑的规模（通常游览1.5至2小时）天然契合日落前的最后一站时段，而K-drama取景地的身份（《来自星星的您》）让此站成为有意寻找特定拍摄场景的访客的明确目的地。",
+            "visitBasics": {
+              "hours": "09:00–18:00（最晚入场17:00）；淡季部分周一休馆",
+              "closed": "淡季部分周一休馆",
+              "admission": "成人₩12,000/青少年₩8,500/儿童₩7,500（含意大利村组合票成人₩19,500）",
+              "walking": "轻松——小型平坦至缓坡村落（1–1.5小时游览）"
+            },
+            "convenience": {
+              "restroom": "场内设有",
+              "parking": "免费停车"
+            },
+            "smartNotes": {
+              "photo": "以青山为背景的彩色木结构建筑是代表性拍摄构图。",
+              "facilities": "仅有小吃摊——华夫饼、饺子、鱼饼汤、咖啡。建议在之前的景点用餐。",
+              "tip": "最适合与南怡岛及/或晨静树木园搭配，通过加平城市观光巴士串联。"
+            },
+            "_poi_meta": {
+              "poi_key": "petite_france",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.27",
+              "verified_date": "2026-04-29",
+              "note": "POI verified in KB v1.10 (Batch 7) and reused here unchanged.",
+              "sources": [
+                "Petite France Official Site (en.pfcamp.com — own corpus on founder + 16-building layout + Goseong Youth Training Center)",
+                "Korea Tourism Organization (VisitKorea — Petite France listing + 2025 'Bon Appétit, Your Majesty' filming-location verification)",
+                "Saint-Exupéry Foundation France (international license agreement — Le Petit Prince motif authorization)",
+                "Gapyeong County Tourism Office (gapyeong.go.kr — official local-government attractions listing)",
+                "Wikipedia (Petite France theme park — corpus on July 2008 opening + Le Petit Prince theme + organizational structure)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "南怡岛",
+            "type": "origin",
+            "theme": "Ferry & Forest"
+          },
+          {
+            "name": "午餐休息",
+            "type": "meal",
+            "theme": "放松转换"
+          },
+          {
+            "name": "晨静树木园",
+            "type": "primary",
+            "theme": "花园"
+          },
+          {
+            "name": "小法国村",
+            "type": "return",
+            "theme": "村落漫步"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "南怡岛开场",
+            "duration": "第1站",
+            "description": "上午：南怡岛开篇"
+          },
+          {
+            "phase": "午餐＋晨静树木园",
+            "duration": "第2–3站",
+            "description": "中午：午餐与花园漫步"
+          },
+          {
+            "phase": "小法国村收尾",
+            "duration": "第4站",
+            "description": "下午：小法国村收尾"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "行程路线一览",
+          "subtitle": "在首尔市内酒店接送后，向加平方向单程环线：先游南怡岛享受森林晨光，加平当地午餐，下午游览晨静树木园和小法国村。约18:00至19:00返回首尔。"
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "渴望浪漫K-drama全日行程的情侣及蜜月旅客",
+            "喜爱拍照的成人家庭",
+            "含长辈的多代同游",
+            "初次到韩国、希望在首尔以外好好体验一个日行程的旅客",
+            "希望享有私家车而非巴士行程节奏的旅客"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "为何加平环线选择私人包车格式",
+              "icon": "car",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "省去接驳巴士等候",
+                  "detail": "标准加平接驳巴士每30至60分钟一班。私人交通省去等候，每天多回1至2小时有效游览时间。"
+                },
+                {
+                  "label": "时间安排更灵活",
+                  "detail": "您可以在最喜爱的景点多停留——通常是南怡岛或晨静树木园——而无需配合固定的团体返回时间。"
+                },
+                {
+                  "label": "携带父母和孩子更轻松",
+                  "detail": "门到门接送省去清晨地铁换乘和深夜接驳车的压力，让多代同游的路线轻松许多。"
+                }
+              ]
+            },
+            {
+              "title": "步行负担的真实感受",
+              "icon": "footprints",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "南怡岛步行量最多",
+                  "detail": "岛屿面积大，最美丽的落羽松和银杏步道距渡船码头单程需15至20分钟；若步行是顾虑，可选自行车租借。"
+                },
+                {
+                  "label": "晨静树木园以轻松为主，可选上坡",
+                  "detail": "大多数步道平缓，但上坡至观景台有短程爬坡值得一走。"
+                },
+                {
+                  "label": "小法国村是最轻松的一站",
+                  "detail": "村落面积小，主要为紧凑格局，有缓坡石阶，但无任何挑战性步行。"
+                }
+              ]
+            },
+            {
+              "title": "季节性时机说明",
+              "icon": "calendar",
+              "iconBg": "bg-slate-50/80",
+              "iconColor": "text-slate-600",
+              "items": [
+                {
+                  "label": "秋季是最强的拍摄季节",
+                  "detail": "10月下旬至11月中旬南怡岛落羽松和银杏步道金黄火红，人潮达到高峰；请提早预订。"
+                },
+                {
+                  "label": "冬季有灯光节",
+                  "detail": "12月初至3月中旬，晨静树木园举办韩国最大的花园灯光节——值得留到日落后观赏。"
+                },
+                {
+                  "label": "春夏气氛较为平静",
+                  "detail": "4至5月赏樱和杜鹃花；7至8月植被翠绿旺盛，但潮湿度也较高。"
+                }
+              ]
+            }
+          ],
+          "lessIdealFor": [
+            "独游预算旅客（私人定价按车计，非按人计）",
+            "希望以高能量或运动为主的旅客",
+            "不喜欢在不平整花园步道上行走的旅客",
+            "需要全程室内雨天备案的旅客"
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "接送与下车地点",
+            "preview": "首尔市中心酒店免费接送；大厅提早10分钟",
+            "content": [
+              "首尔市中心地区酒店提供免费接送（明洞、弘大、东大门、仁寺洞、梨泰院、江南）。",
+              "首尔市中心以外的住宿可能需要小额附加接送费。",
+              "请在约定出发时间前10分钟在酒店大厅等候。",
+              "接送通常在08:30至09:30之间开始。",
+              "返回时于首尔酒店下车，预计19:00至19:30（若停留冬季灯光节则更晚）。",
+              "行程详情通常在出发前2至3天确认。"
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "步行强度与地形",
+            "preview": "中等难度，南怡岛步行量最多",
+            "content": [
+              "南怡岛：轻松非铺设步道，但岛屿比看起来大——从渡船码头到著名落羽松步道单程需15至20分钟。",
+              "晨静树木园：轻松至中等，以缓坡为主，有可选的上坡观景台步道。",
+              "小法国村：轻松步行，有缓坡及石阶，无需求高。",
+              "建议穿着舒适步行鞋；路线并非完全不能使用婴儿车，但也并非全程无障碍。"
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "天候政策",
+            "preview": "大多数景点在小雨或降雪中仍可运作",
+            "content": [
+              "南怡岛在雨天和雪天照常运作；渡船在影响安全的情况下才停航。",
+              "晨静树木园以室外为主；小雨可以应付，大雨降低观赏体验。",
+              "小法国村设有室内展示厅，可作为雨天遮蔽场所。",
+              "司机兼导游可在当天根据天气调整各站节奏。"
+            ]
+          },
+          {
+            "id": "money",
+            "title": "门票与当日费用",
+            "preview": "所有入场费及餐费现场支付；刷卡广泛通用",
+            "content": [
+              "南怡岛入场费含来回渡船：成人₩19,000。",
+              "晨静树木园入场费：成人₩11,000。",
+              "小法国村入场费：成人₩12,000。",
+              "餐费（午餐及点心）现场支付；南怡岛附近（辣炒鸡肉）每人约₩15,000至₩25,000。",
+              "大多数商店和餐厅接受刷卡；备少量现金应付小摊位及储物柜。"
+            ]
+          },
+          {
+            "id": "wear",
+            "title": "穿着与携带物品",
+            "preview": "步行鞋、分层穿搭及天气适当外套",
+            "content": [
+              "防滑舒适步行鞋",
+              "分层穿搭——岛屿和花园可能比首尔市中心凉爽",
+              "春夏备防晒用品；冬季备保暖外套及手套",
+              "相机或手机（充足储存空间）",
+              "入场费及餐费备现金或刷卡"
+            ]
+          },
+          {
+            "id": "included",
+            "title": "费用包含项目",
+            "preview": "含私家车及司机兼导游；入场费及餐费自费",
+            "variant": "included",
+            "content": [
+              "私家车（轿车、SUV或商务车，依团体人数）",
+              "持牌英语司机兼导游",
+              "首尔市中心酒店免费接送",
+              "标准路线的油费及过路费",
+              "三个景点入场费不含，在各景点自行支付",
+              "午餐及点心不含",
+              "个人购物费用不含",
+              "司机小费不含"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "即时天气连动"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "每日更新"
+          },
+          "_seasonalSummary": "无"
+        },
+        "seasonalVariations": [
+          {
+            "season": "春季",
+            "title": "花卉季",
+            "description": "4月南怡岛和晨静树木园的赏樱及木莲；本路线四季中最均衡的季节。",
+            "icon": "flower"
+          },
+          {
+            "season": "夏季",
+            "title": "郁郁葱葱但潮湿",
+            "description": "翠绿植被和较长日照，但6月下旬和7月预期潮湿及可能的梅雨。",
+            "icon": "sun"
+          },
+          {
+            "season": "秋季",
+            "title": "最佳摄影季",
+            "description": "10月下旬至11月中旬南怡岛落羽松和银杏步道金黄火红；摄影最强季节，同时也是最拥挤的季节。",
+            "icon": "leaf"
+          },
+          {
+            "season": "冬季",
+            "title": "灯光节季节",
+            "description": "12月至3月中旬：宁静雪白的南怡岛，加上晨静树木园著名的灯光节。寒冷但画面效果极佳。",
+            "icon": "snowflake"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "当地持照合法业者",
+            "description": "持牌韩国旅游旅游服务团队，备有完整保险",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "持牌韩国旅游旅游服务团队，备有完整保险"
+          },
+          {
+            "icon": "route",
+            "title": "路线专家",
+            "description": "定制化行程，而非千篇一律的固定路线",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "定制化行程，而非千篇一律的固定路线"
+          },
+          {
+            "icon": "users",
+            "title": "精心控制团体人数",
+            "description": "车辆大小适合您的团体需求",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "车辆大小适合您的团体需求"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "即时通知",
+            "title": "即时确认",
+            "detail": "您将收到含行程摘要的预订确认通知。",
+            "description": "您将收到含行程摘要的预订确认通知。"
+          },
+          {
+            "timing": "出发前12小时",
+            "title": "出发前12小时提醒",
+            "detail": "出发前分享天气更新及任何路线调整。",
+            "description": "出发前分享天气更新及任何路线调整。"
+          },
+          {
+            "timing": "前一晚",
+            "title": "最终接送信息",
+            "detail": "确认确切接送时间及司机∕导游联络方式。",
+            "description": "确认确切接送时间及司机∕导游联络方式。"
+          },
+          {
+            "timing": "行程当天早晨",
+            "title": "当日路线说明",
+            "detail": "出发当天早上根据最新现场状况提供简报。",
+            "description": "出发当天早上根据最新现场状况提供简报。"
+          },
+          {
+            "timing": "行程途中",
+            "title": "景点逐一说明",
+            "detail": "每个景点提供即时现场讲解。",
+            "description": "每个景点提供即时现场讲解。"
+          },
+          {
+            "timing": "行程结束后",
+            "title": "行程后支援",
+            "detail": "行程结束后提供后续建议及额外信息。",
+            "description": "行程结束后提供后续建议及额外信息。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "景点顺序是什么？为什么不以小法国村开场？",
+            "answer": "南怡岛优先使用最强的早班渡船时段（08:30至10:00人潮最少，落羽松步道光线最佳）。晨静树木园在正午最方便午餐，园内步道也在此时段全面开放。小法国村是最轻松的景点，适合60分钟的日落前收尾。可以应要求逆向安排，但通常会增加30至40分钟等候时间。"
+          },
+          {
+            "id": "q2",
+            "question": "入场费含在费用中还是另外支付？",
+            "answer": "私人行程定价通常包含全部三个景点入场费：南怡岛含来回渡船（成人₩19,000相当于）、晨静树木园（成人₩11,000）和小法国村（成人₩12,000）。预订时请确认——部分旅游服务团队版本以较低头条价格将入场费列为另计。午餐现场支付（每人约₩15,000至₩25,000）。"
+          },
+          {
+            "id": "q3",
+            "question": "为什么选择私人行程而非巴士行程？",
+            "answer": "私人行程比典型拼团巴士行程多出1至2小时有效游览时间，因为您略过了加平接驳巴士（每30至60分钟一班）的等候时间，且可在最喜爱的景点延长停留。拼团行程遵循固定返回时间时段。私人行程更适合多代同游；巴士行程更适合独自出行且以预算为优先的旅客。"
+          },
+          {
+            "id": "q4",
+            "question": "南怡岛渡船如何运作？",
+            "answer": "渡船从加平码头每10至20分钟一班，08:00至21:30运营。渡船横渡时间5至10分钟。来回票已包含在入场费中，并捆绑为「南怡共和国」的「签证」品牌包装。另有拉链滑翔绳选项（₩44,000单程；不含）供想跳过排队又追求刺激的旅客选择。"
+          },
+          {
+            "id": "q5",
+            "question": "晨静树木园灯光节是什么时候？",
+            "answer": "通常12月初至3月中旬——韩国最大的花园灯光节将20个主题花园变为日落后的灯光步道。节日期间开放至21:00。若您的出发日期在此时段内，值得留到日落后观赏——请与旅游服务团队确认以延长行程并加入夜间换场。"
+          },
+          {
+            "id": "q6",
+            "question": "可以用义大利村替换小法国村吗？",
+            "answer": "可以——义大利村（木偶奇遇记和达文西主题公园）距小法国村约5分钟，共享入场复合区（成人组合票₩18,000，比小法国村单票₩12,000稍贵）。只有同时参观两者才能节省费用。若只选择义大利村需提前告知。义大利村的K-drama曝光度较低，但内部展示更丰富。"
+          },
+          {
+            "id": "first-time",
+            "question": "对于初次游览加平的旅客，这是好选择吗？",
+            "answer": "是的——在一天之内涵盖了该地区最具代表性的景点，行程均衡丰富。"
+          },
+          {
+            "id": "walking",
+            "question": "步行难度高吗？",
+            "answer": "中等难度，南怡岛步行量最多。南怡岛面积较大，最具拍摄价值的落羽松步道和银杏步道距渡船码头单程需15至20分钟；可租借自行车和三轮车代步。晨静树木园以轻松铺设步道为主，可选上坡至上层观景台。小法国村是紧凑的山坡村落，有缓坡石阶但无挑战性步行。建议穿着包趾舒适步行鞋应对南怡岛的非铺设路段。"
+          },
+          {
+            "id": "family",
+            "question": "这个行程适合家庭吗？",
+            "answer": "是的——首尔日行程中最亲子友善的选择之一。晨静树木园和小法国村适合婴儿车通行；南怡岛有非铺设路段但可以步行。孩子最喜欢的景点包含小法国村的木偶剧场、南怡岛儿童花园和南怡岛的季节性动物互动。3岁以下用揹带也可以。"
+          },
+          {
+            "id": "seniors",
+            "question": "年长者可以舒适地参加吗？",
+            "answer": "是的——节奏和步行强度对活跃年长旅客相当友善。南怡岛自行车租借可避免从码头步行15至20分钟。晨静树木园有铺设步道和各处设有座椅。小法国村紧凑，有缓坡石阶。若需要全程轮椅无障碍则较不理想——南怡岛步道和部分小法国村路段并非完全无障碍。"
+          },
+          {
+            "id": "children",
+            "question": "建议的最低参加年龄是多少？",
+            "answer": "3岁以上均可——这是首尔日行程中最亲子友善的选择之一。晨静树木园和小法国村适合婴儿车；南怡岛非铺设步道可以步行，非常幼小的孩子请用揹带。孩子最喜欢的景点包含小法国村的木偶剧场和南怡岛儿童花园。3岁以下用揹带也欢迎。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "可订状态将在支付步骤中确认。",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "人"
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-29",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v17_batch8"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch8_enhancement": {
+        "date": "2026-04-29",
+        "description": "Batch 8 deep enhancement — Seoul DMZ + Nami/Morning Calm/Petite France pair. Returns to single-POI fixed-itinerary methodology (batches 1-5 style) after Batch 7's route-option charter format. All stops enhanced with 1,000+ char descriptions weaving verified facts. product profile recalibrated to verified-fact 0-1 float scores. Charter-format dimensions previously null: private_tour_fit set to 1.0; customizable_route_fit set to 0.4 (fixed itinerary); flexibility_fit set to 0.6-0.7 (driver-guide pacing flex but not destination flex). Tour-specific: history_culture_fit DMZ 1.0 (catalog-heaviest history) / Nami 0.6 (K-drama + culture). Nami romantic_fit set to 0.95 (catalog-leading). 5 new POIs added to KB (v1.10 → v1.11): nami_island, imjingak_peace_park, third_infiltration_tunnel, dora_observatory, gamaksan_red_bridge. Garden of Morning Calm and Petite France reused from KB v1.10 (Batch 7) unchanged.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale per Phase 1 standard. Both tours are 8-9hr private FIXED-itinerary tours (NOT route-option charters like Batch 7). private_tour_fit set to 1.0 by definition (was None). customizable_route_fit = 0.4 (driver-guide can adjust pacing/lunch but not destinations). flexibility_fit = 0.6 (private vehicle door-to-door but the route stops are fixed). history_culture_fit set as DMZ tour 1.0 (heaviest history content in catalog) / Nami tour 0.6 (K-drama + general culture but not history-deep). Time-weighted indoor_ratio re-computed per Fix 1 methodology using verified per-POI indoor_ratio_at_stop values.",
+          "deltas_applied": {
+            "private_tour_fit": {
+              "old": null,
+              "new": 1.0,
+              "reasoning": "VERIFIED — both tours are per-vehicle private tours by definition. Was previously None (unset)."
+            },
+            "small_group_fit": {
+              "old": 0.2,
+              "new": 0.15,
+              "reasoning": "Verified — these are PRIVATE tours not small-group. 0.15 reflects that a 1-vehicle booking still functions as a small private group."
+            },
+            "bus_fit": {
+              "old": null,
+              "new": 0.05,
+              "reasoning": "Verified — private vehicle, never bus."
+            },
+            "history_culture_fit": {
+              "old": null,
+              "new": 0.6,
+              "reasoning": "VERIFIED — Nami's General Nami history (1441-1468 Joseon-era treason execution) and Petite France's Saint-Exupéry / Little Prince narrative + multi-K-drama filming legacy provide moderate culture content. Was None. 0.60 reflects K-drama-pop-culture-heavy weight."
+            },
+            "customizable_route_fit": {
+              "old": null,
+              "new": 0.4,
+              "reasoning": "Verified — fixed itinerary; driver-guide adjusts pacing/lunch but not the 3 destinations. 0.4 fixed-itinerary private tours."
+            },
+            "flexibility_fit": {
+              "old": null,
+              "new": 0.7,
+              "reasoning": "Verified — private vehicle door-to-door, no military restrictions; driver-guide can fully flex pacing, lunch, photo stops, and ferry-queue avoidance. 0.7 calibrated."
+            },
+            "romantic_fit": {
+              "old": null,
+              "new": 0.95,
+              "reasoning": "VERIFIED — Winter Sonata legacy + Metasequoia avenue + Morning Calm Lighting Festival + Petite France pastel-romance theme = catalog's strongest romantic-fit tour. 0.95."
+            },
+            "unesco_fit": {
+              "old": 0.2,
+              "new": 0.15,
+              "reasoning": "Verified — no UNESCO sites on this route. 0.15 reflects baseline."
+            },
+            "iconic_landmark_fit": {
+              "old": 1.0,
+              "new": 0.9,
+              "reasoning": "VERIFIED — Nami's Metasequoia avenue is iconic globally; Morning Calm Lighting Festival is iconic in season; Petite France is photographically iconic. Slight markdown to 0.90 reflects that 'iconic' is K-drama-pop-culture-iconic rather than UNESCO/historic-iconic."
+            },
+            "first_time_fit": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "VERIFIED — strongest first-time Gapyeong day-trip. Slight markdown to 0.95 reflects that first-time visitors with limited time may prefer DMZ for the heavier story or Everland for kids. 0.95 calibrated."
+            },
+            "walking_level": {
+              "old": 0.6,
+              "new": 0.5,
+              "reasoning": "VERIFIED — Nami island walks 5 km flat tree-lined paths; Morning Calm 1.5-2hr garden paths over rolling terrain; Petite France compact. Average 0.50, slightly lower than previous 0.60."
+            },
+            "indoor_ratio": {
+              "old": 0.15,
+              "new": 0.2,
+              "reasoning": "VERIFIED — Fix 1 time-weighted: Nami 180 min × 0.10 = 18, Morning Calm 120 min × 0.10 = 12, Petite France 60 min × 0.40 = 24, Lunch 60 min × 0.90 = 54, transit 180 min × 1.0 = 180. Total indoor 288 / 600 min = 0.48 with full transit; substantive only 54 / 360 = 0.15. Catalog value 0.20 (slight upward adjustment from 0.15 for lunch + Petite France interior weight). Was previously 0.15."
+            },
+            "weather_sensitivity": {
+              "old": 0.6,
+              "new": 0.6,
+              "reasoning": "Verified maintained — Nami outdoor walks + Morning Calm garden + Petite France hill village are all weather-exposed. Indoor fallbacks limited (Petite France interiors only ~30 min). 0.60 maintained."
+            },
+            "scenic_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "Verified — catalog-leading scenic content (river-island tree-lined avenues + 330,000 m² arboretum + pastel village). Slight markdown to 0.95 saving 1.0 for tours that include flag邮轮 UNESCO scenic sites."
+            },
+            "photo_level": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Verified maintained — strongest photographic-return tour in the catalog. Maintained at 1.0."
+            },
+            "family_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Verified maintained — outdoor walks + colorful village + light scenery are best-in-class for families with kids 4-12. Maintained at 1.0."
+            },
+            "storytelling_fit": {
+              "old": 0.8,
+              "new": 0.85,
+              "reasoning": "VERIFIED — driver-guide narrative is rich (General Nami history, Winter Sonata legacy, Saint-Exupéry, multi-K-drama filming). Calibrated up to 0.85."
+            },
+            "value_for_money_fit": {
+              "old": 0.6,
+              "new": 0.6,
+              "reasoning": "Verified maintained — per-vehicle pricing good value for groups of 3-9, premium per-person for solo/pair. 0.60 maintained."
+            },
+            "premium_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Verified maintained — private vehicle + flexible pacing + driver-guide + scenic premium destinations. Maintained at 1.0."
+            }
+          }
+        }
+      }
+    }
+  }
+}

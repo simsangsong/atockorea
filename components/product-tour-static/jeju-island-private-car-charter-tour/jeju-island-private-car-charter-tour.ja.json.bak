@@ -1,0 +1,1837 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "jeju-island-private-car-charter-tour",
+  "locale": "ja",
+  "product_id": "jeju-island-private-car-charter-tour",
+  "seo": {
+    "pageTitle": "済州プライベートカーチャーター・カスタム9時間 | AtoC Korea",
+    "metaDescription": "済州島プライベートカーチャーター9時間：ご自分だけのルートを構成。東ルート（ユネスコ・Kドラマ海岸）、西ルート（ビーチ・茶畑・カフェ）、南ルート（滝・火山海岸）または完全カスタム。英語対応ドライバー兼ガイド。",
+    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "primaryKeywords": [
+      "済州プライベートカーチャーター",
+      "済州プライベートツアー",
+      "済州カスタム日帰りツアー",
+      "済州ドライバー兼ガイド",
+      "済州専用車ツアー"
+    ],
+    "title": "済州プライベートチャーター・カスタム9時間 | AtoC",
+    "description": "済州プライベートカーチャーター9時間：英語対応ドライバー兼ガイドとエアコン付き専用車でご自分だけの済州一日ツアーをデザイン。東・西・南または完全カスタムルートから選択可能。"
+  },
+  "catalog_card": {
+    "slug": "jeju-island-private-car-charter-tour",
+    "title": "済州島プライベートカーチャーターツアー",
+    "subtitle": "認定ドライバー兼ガイドとエアコン付き専用車でご自分だけの済州一日ツアーをデザイン。",
+    "region": "済州全域",
+    "duration": "9時間",
+    "stopsCount": 4,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "プライベート",
+      "済州",
+      "カスタムルート",
+      "ドライバー兼ガイド",
+      "専用車"
+    ],
+    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "thumbnail": "https://api.cdn.visitjeju.net/photomng/thumbnailpath/202409/20/b9661064-af2f-4197-aef0-d3d44bf6c2b5.webp",
+    "priceLabel": "料金は予約時にご確認ください",
+    "shortCardDescription": "認定ドライバー兼ガイドとエアコン付き専用車でご自分だけの済州一日ツアーをデザイン。東ルート（ユネスコ・Kドラマ海岸）、西ルート（ビーチ・茶畑・カフェ通り）、南ルート（滝・火山海岸）、または完全カスタムルートから選択できます。9時間チャーター、済州市内のホテルからの送迎込み。",
+    "tags": [
+      "プライベートツアー",
+      "ルート相談可",
+      "ホテル送迎込み"
+    ]
+  },
+  "headlineLine1": "済州島プライベート",
+  "headlineLine2": "カーチャーターツアー",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "車両"
+  },
+  "hero": {
+    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "imagePosition": "center 45%",
+    "tagline": "ご自分だけのルートで済州一日ツアー — 認定ドライバー兼ガイドと専用車で",
+    "pills": [
+      "プライベート",
+      "認定ドライバー兼ガイド",
+      "東/西/南ルート選択"
+    ],
+    "meta": {
+      "duration": "≈ 9時間（ホテルからの送迎込み）",
+      "region": "済州全域",
+      "stops": "カスタムルート",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "概要"
+    },
+    {
+      "id": "itinerary",
+      "label": "行程"
+    },
+    {
+      "id": "details",
+      "label": "詳細情報"
+    },
+    {
+      "id": "faq",
+      "label": "よくある質問"
+    },
+    {
+      "id": "reviews",
+      "label": "クチコミ"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "car",
+      "label": "ツアースタイル",
+      "value": "プライベートチャーター"
+    },
+    {
+      "icon": "route",
+      "label": "ルート",
+      "value": "完全カスタマイズ可能"
+    },
+    {
+      "icon": "user",
+      "label": "ガイド",
+      "value": "認定ドライバー兼ガイド（英語対応）"
+    },
+    {
+      "icon": "clock",
+      "label": "所要時間",
+      "value": "9時間"
+    },
+    {
+      "icon": "ticket",
+      "label": "入場料",
+      "value": "現地にてお支払い"
+    },
+    {
+      "icon": "utensils",
+      "label": "昼食",
+      "value": "現地にてお支払い"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+      "alt": "城山日出峰の山頂火口縁トレイル — 5,000年前の水成火山",
+      "caption": "城山日出峰 — ユネスコトリプル指定の旗艦見どころ",
+      "location": "城山日出峰、済州東部",
+      "atmosphere": "山頂の99岩の火口縁から望む日の出。3つのユネスコ指定を持つ済州の象徴"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+      "alt": "飛揚島（ビヤンド）を背景にした協才海岸の白砂とターコイズの海",
+      "caption": "協才海岸 — 済州の代表的なビーチ",
+      "location": "協才（ヒョプジェ）海岸、済州西部",
+      "atmosphere": "白い貝殻砂とエメラルド・ターコイズの海。飛揚島の夕日シルエット"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+      "alt": "夜間照明に浮かぶ天地淵の滝の22m単段の瀑布",
+      "caption": "天地淵の滝 — 西帰浦市街の22m単段の滝",
+      "location": "天地淵（チョンジヨン）の滝、西帰浦市街",
+      "atmosphere": "済州唯一の夜間照明の滝。海に最も近い単段の滝"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
+      "alt": "ツアーで訪れるO'sulloc茶畑 — 西ルートの茶文化見どころの風景",
+      "caption": "O'sulloc茶畑 — 西ルートの茶文化見どころ",
+      "location": "O'sulloc、済州中西部",
+      "atmosphere": "韓国最大の緑茶農園。緑茶アイスクリームと茶畑の写真撮影"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
+      "alt": "翰潭（ハンダム）海岸遊歩道沿いの海ビューカフェ列",
+      "caption": "涯月カフェ通り — 西ルートのカフェコーストフィナーレ",
+      "location": "涯月カフェ通り、済州北西部",
+      "atmosphere": "韓国で最も充実度の高い海ビューカフェ。済州の日常的なカフェ文化"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "name": "東ルート：ユネスコ＆Kドラマ海岸",
+      "category": "最もランドマーク充実度の高いルート",
+      "description": "最もランドマーク充実度の高いルートオプションで、済州最強のユネスコおよびKドラマ海岸を中心に組み立てられています。**城山日出峰**がフラッグシップ — 5,000年前の水成火山の凝灰岩錐が海から182mそびえ立ち、**ユネスコ世界自然遺産2007年＋バイオスフィアリザーブ＋グローバルジオパーク**という3重のユネスコ指定を持ちます。**万丈窟**は世界最大級の溶岩洞窟のひとつ（全長7.4km、一般公開区間1km）で、**ユネスコ世界自然遺産の地下部分**。**牛島**は城山沖合の小島で、有名な「ピーナッツアイスクリーム」とサンゴ砂のビーチ、180度のパノラマ展望台が待ちます。**ソプチコジ**はKドラマのロケ地として有名な海岸岬。東ルートは済州で最も多くの国際認定見どころを一日でカバーできます。",
+      "highlights": [
+        "城山日出峰：トリプルユネスコ指定（世界自然遺産2007＋バイオスフィア＋グローバルジオパーク）— 99岩の火口縁への30〜40分の山頂登山。入場料₩5,000",
+        "牛島：城山から15分のフェリー、約370人の住民、高さ132mの牛島峰、代表的なのピーナッツアイスクリームと白サンゴ砂のハゴスドン海岸",
+        "万丈窟：全長7.4kmの溶岩洞窟（一般公開区間1km）、ユネスコ世界遺産の地下部分、通年快適な涼しさ（18°C）",
+        "ソプチコジ：ドラマロケ地として有名な海岸岬、城山展望、イルチュルランドの溶岩洞窟（有料）",
+        "城邑民俗村：石・風・女性の三多の島として知られる済州の農村生活を今に伝える民族村"
+      ],
+      "timeUsed": [
+        "ホテルピックアップ→城山 — 約50〜60分",
+        "城山日出峰（山頂往復） — 約75〜90分",
+        "牛島フェリー往復＋島内観光 — 約90分（任意）",
+        "昼食 — 約60分",
+        "万丈窟または城邑 — 約60〜75分",
+        "ソプチコジ — 約45分",
+        "ホテルへ帰路 — 約40〜50分"
+      ],
+      "whyOnRoute": "東ルートはユネスコの充実度が最も高い選択肢であり、済州のトリプルユネスコ指定の旗艦見どころを効率よくカバーできます。牛島へのフェリーが含まれる場合、所要時間が若干長くなりますが、独特の島体験が加わります。",
+      "visitBasics": {
+        "hours": "ほとんどの停留所09:00〜18:00。万丈窟（開放時）は毎月第1水曜日に閉鎖。",
+        "closed": "城山：毎月第1月曜日。万丈窟：毎月第1水曜日＋現在安全修理のため閉鎖。",
+        "admission": "各停留所で直接払い — 城山₩5,000、万丈窟₩4,000、ソプチコジ外部無料",
+        "walking": "中〜高 — 城山の頂上登り（約600段、往復約30分）が最も要求の高い区間"
+      },
+      "convenience": {
+        "restroom": "すべての主要停留所にあり",
+        "parking": "ガイドドライバーが全駐車を担当"
+      },
+      "smartNotes": {
+        "photo": "晴天の朝の城山頂上が最強の写真見どころ",
+        "facilities": "城山港とハムドックビーチが最強の食事拠点",
+        "tip": "城山の頂上登りはシニアや移動が少ない方のルートのボトルネック"
+      },
+      "_poi_meta": {
+        "poi_key": "route_variant_east",
+        "verified": true,
+        "match": "route_variant_no_single_poi",
+        "constituent_pois": [
+          "seongsan_ilchulbong",
+          "udo_island",
+          "manjanggul_lava_tube",
+          "seopjikoji",
+          "seongeup_folk_village",
+          "hamdeok_seoubong_beach"
+        ],
+        "note": "Route option for private charter — represents a multi-POI bundle (Seongsan, Udo, Manjanggul, Seopjikoji, Seongeup, Hamdeok); not a single matchable POI. All constituent POIs are individually verified in KB v1.10."
+      }
+    },
+    {
+      "number": 2,
+      "name": "西ルート：ビーチ・茶畑・カフェ海岸",
+      "category": "最もリラックスしてInstagramに映えるルート",
+      "description": "最もリラックスしてInstagram映えするルートで、済州の白砂ビーチ・亜熱帯庭園・茶畑からなる西海岸に中心を置いています。**協才（ヒョプジェ）海岸**が済州の象徴的なショット — ターコイズの浅瀬と沖合の**飛揚島（ビヤンド）**の眺め。隣接する**翰林公園（ハルリムパーク）**には「（ヒョプジェグル）」「（ッサンニョングル）」という二つの溶岩洞窟が公園内にあり、亜熱帯植物・ツバキ・チューリップ・ハス祭りのシーズンごとの花も見て回れます。**O'sulloc雪緑茶博物館**は韓国最大の緑茶農園のフラッグシップ — 無料入場・緑茶アイスクリーム・茶畑の写真撮影。**涯月（エウォル）カフェ通り**は翰潭海岸遊歩道沿いの5km区間に韓国で最も充実度の高い海ビューカフェが連なる終日のリラックスしたフィナーレ。西ルートはアクティビティよりも雰囲気とリラックスを重視する方に最適です。",
+      "highlights": [
+        "協才（ヒョプジェ）海岸：白い貝殻砂、ターコイズの浅瀬、沖合に飛揚島 — 済州の代表的なビーチショット。隣接する金陵（クムヌン）海岸との組み合わせも",
+        "翰林公園：10万㎡の亜熱帯公園、ヒョプジェグル・ッサンニョングル溶岩洞窟を内包、ツバキ・チューリップ・ハスの季節祭り。入場料約₩12,000（大人）",
+        "O'sulloc茶博物館：韓国最大の緑茶農園、入場無料、緑茶アイスクリーム＋ロールケーキ、農園散策路、イニスフリー済州ハウス徒歩5分",
+        "涯月カフェ通り：翰潭海岸遊歩道沿い5kmに30以上の海ビューカフェ、夕日撮影スポット",
+        "山房山（サンバンサン）：395m凝灰岩溶岩錐、山腹に海食洞窟の山房窟（観音菩薩像）と海岸展望台"
+      ],
+      "timeUsed": [
+        "ホテルピックアップ→協才/翰林 — 約40〜50分",
+        "協才海岸＋翰林公園 — 約90〜120分",
+        "O'sulloc茶博物館 — 約60〜75分",
+        "昼食 — 約60分",
+        "涯月カフェ通り＋翰潭遊歩道 — 約60〜75分",
+        "ホテルへ帰路 — 約40〜50分"
+      ],
+      "whyOnRoute": "西ルートは雰囲気とリラックスを優先する方のベスト選択肢。アクティブなハイキングや急な階段がなく、白砂ビーチ・茶畑・海辺のカフェという済州の「ライフスタイル」側面を最大限に見て回れます。",
+      "visitBasics": {
+        "hours": "ほとんどの停留所09:00〜18:00。涯月カフェは通常10:00〜22:00",
+        "closed": "ほとんどの停留所は年中無休。個々のカフェは平日輪番で休業",
+        "admission": "狭才ビーチ無料。翰林公園約₩12,000大人。O'sullocお茶博物館無料",
+        "walking": "低〜中程度 — ビーチウォーク、平坦な公園路、カフェ間の散策"
+      },
+      "convenience": {
+        "restroom": "すべての主要停留所にあり。カフェは有料顧客に設備あり",
+        "parking": "ガイドドライバーが全駐車を担当。涯月の路上駐車は週末に込み合う"
+      },
+      "smartNotes": {
+        "photo": "干潮時に飛揚島を背景にした狭才が代表的ななショット",
+        "facilities": "涯月は済州で最も充実のカフェ — 混雑を避けるコツは早めに場所取り",
+        "tip": "天候に融通の利く済州の一日が必要なら、これが最強のルート"
+      },
+      "_poi_meta": {
+        "poi_key": "route_variant_west",
+        "verified": true,
+        "match": "route_variant_no_single_poi",
+        "constituent_pois": [
+          "hyeopjae_beach",
+          "hallim_park",
+          "osulloc_tea_museum",
+          "aewol_cafe_street"
+        ],
+        "note": "Route option for private charter — represents a multi-POI bundle (Hyeopjae, Hallim, O'sulloc, Aewol); not a single matchable POI. All constituent POIs verified in KB v1.10."
+      }
+    },
+    {
+      "number": 3,
+      "name": "南ルート：滝・火山海岸",
+      "category": "最も景観が劇的なルート",
+      "description": "最も景観が劇的なルートで、済州南部の火山地質・亜熱帯の滝・伝統市場の食文化をつなぎ合わせています。西帰浦市街の**天地淵（チョンジヨン）の滝**は22mの単段の滝で毎夜のライトアップが名物、1kmのフラットな亜熱帯森林トレイルで到達します — 済州唯一の夜間照明の滝で、海に最も近い単段の滝。**大浦柱状節理（テアポジュサンジョルリ）**はチュンムン海岸沿いの1km区間に六角形の玄武岩柱が30〜40mそびえ立つ壮観な景色、ユネスコグローバルジオパーク指定。**正房の滝（チョンバン・ポクポ）**は東アジア唯一の海に直接落下する滝（高さ23m）。西帰浦の**西帰浦オルレ市場（オイレジャン）**は木曜・日曜の定期市、地元の海産物・黒豚・チェジュ麦芽菓子（甘礼）が並びます。南ルートは済州の自然の険しさを最も直接的に感じられる選択肢です。",
+      "highlights": [
+        "天地淵（チョンジヨン）の滝：22mの単段の滝で毎夜ライトアップ、1kmのフラットな亜熱帯森林トレイル。ムタエウナギ（天然記念物第27号）の生息地。入場料₩2,000",
+        "大浦柱状節理：1kmの六角形玄武岩柱が30〜40mそびえ、ユネスコグローバルジオパーク。入場料約₩2,000",
+        "正房の滝（チョンバン・ポクポ）：東アジア唯一の海に直接落下する滝（高さ23m）。秦の方士が徐福の名を岩に刻んだという伝説。入場料₩2,000",
+        "天帝淵（チョンジェヨン）の滝：三段の滝と七仙女（チルソニョ）伝説、仙臨橋の浮き彫り、稀少シダ植物の生息地。天然記念物第378号。入場料₩2,500",
+        "西帰浦オルレ市場：木曜・日曜の地元定期市、黒豚・海産物・済州の伝統菓子"
+      ],
+      "timeUsed": [
+        "ホテルピックアップ→天地淵/西帰浦 — 約60〜70分",
+        "天地淵の滝 — 約45〜60分",
+        "大浦柱状節理 — 約45〜60分",
+        "昼食（西帰浦） — 約60分",
+        "正房の滝または天帝淵 — 約45〜60分",
+        "西帰浦オルレ市場（任意） — 約30〜45分",
+        "ホテルへ帰路 — 約60〜70分"
+      ],
+      "whyOnRoute": "南ルートは済州の火山的な険しさと亜熱帯の豊かさが最も凝縮されたルート。東アジア唯一の海に落ちる滝と夜間照明の滝という2つの独自見どころを1日でカバーできる唯一の選択肢です。",
+      "visitBasics": {
+        "hours": "ほとんどの停留所09:00〜17:30。天地渕ライトアップ09:00〜22:00。",
+        "closed": "ほとんどの停留所年中無休。個々の市場の店は輪番で休業",
+        "admission": "天地渕₩2,000。柱状節理約₩2,000。山房窟寺約₩1,000",
+        "walking": "中程度 — 天地渕トレイル平坦1km、山房山の階段0.6マイルで洞窟テラスへ"
+      },
+      "convenience": {
+        "restroom": "すべての主要停留所にあり。市場に複数あり",
+        "parking": "ガイドドライバーが全駐車を担当。オレ市場は週末に込み合う"
+      },
+      "smartNotes": {
+        "photo": "天地渕の夕方ライトアップは他の済州主要見どころにない独自のショット",
+        "facilities": "オレ市場は済州で最強の単一食事見どころ",
+        "tip": "済州の雨の日には、3つの名前付きルートの中で最強のルート"
+      },
+      "_poi_meta": {
+        "poi_key": "route_variant_south",
+        "verified": true,
+        "match": "route_variant_no_single_poi",
+        "constituent_pois": [
+          "cheonjiyeon_falls",
+          "daepo_jusangjeolli_cliff",
+          "sanbangsan_mountain",
+          "yakcheonsa_temple",
+          "jeongbang_falls",
+          "olle_maeil_market"
+        ],
+        "note": "Route option for private charter — represents a multi-POI bundle (Cheonjiyeon, Jusangjeolli, Sanbangsan, Yakcheonsa, Jeongbang, Olle Market); not a single matchable POI. All constituent POIs verified in KB v1.10."
+      }
+    },
+    {
+      "number": 4,
+      "name": "カスタムルート：自由に構成する一日",
+      "category": "完全カスタマイズ — 東・西・南を組み合わせる",
+      "description": "3つの推薦ルート以外にも、9時間のチャーター期間は自由にカスタマイズ可能 — 東・西・南の見どころを自由に組み合わせるか、完全なカスタムプランを事前に送ることもできます。よく追加される見どころとして：**砂羅峰（サラボン）**（済州市内の短い登山、海と市街のパノラマ）、**天帝淵の滝**（東ルートと南ルートの橋渡し）、**牛島**（東ルートのオプション延長）、**山房山**（西南部の海岸展望）、**チョコレートランド**（家族向けチョコレート体験工場）。ドライバー兼ガイドは**天候・交通・混雑状況**に基づいてリアルタイムでルートを調整します。撮影目的の旅行者には、**菜の花（3〜4月）・アジサイ（6〜7月）・ピンクミューリー（10月）**の撮影ポイントも案内可能。",
+      "highlights": [
+        "東海岸ユネスコ（城山・万丈窟）と西海岸茶畑（O'sulloc）を組み合わせる — 通常、牛島を省略すれば実現可能",
+        "女性海女の海産物昼食を追加 — 海女協同組合のある下道（東）または大静（西）近辺が最適",
+        "菜の花（3〜4月）・アジサイ（6〜7月）・ピンクミューリー（10月）の撮影ポイントへの案内",
+        "家族連れには万丈窟の溶岩洞窟＋翰林公園の亜熱帯花園を組み合わせた家族向けカスタム",
+        "ハネムーンカップルには協才ビーチ夕日＋ソプチコジKドラマ岬の組み合わせが人気"
+      ],
+      "timeUsed": [
+        "事前にご希望のルートをご連絡ください",
+        "ドライバー兼ガイドが当日の状況に合わせてペースを調整",
+        "9時間の期間内で最大5〜6見どころ（ペース次第）"
+      ],
+      "whyOnRoute": "9時間のプライベートチャーターは完全なカスタマイズが可能 — 複数の済州エリアをまたぐ場合や特定の撮影・体験目的には、このオプションが最も柔軟です。",
+      "visitBasics": {
+        "hours": "選択した停留所による — ガイドドライバーが予約時に月次休業日を通知",
+        "closed": "選択した停留所による",
+        "admission": "すべての入場料は直接払い。ガイドドライバーが各ゲートでサポート",
+        "walking": "グループの移動能力に合わせて調整可能"
+      },
+      "convenience": {
+        "restroom": "すべての主要停留所にあり",
+        "parking": "ガイドドライバーが全駐車を担当"
+      },
+      "smartNotes": {
+        "photo": "ガイドドライバーに参考写真3〜5枚を事前に送ると、写真フレーミングが大幅に向上",
+        "facilities": "昼食はお客様の選択 — 食事の制限（ハラール、ベジタリアン等）を事前に伝えてください",
+        "tip": "カスタムルートは当日便のある方にも最適 — 出発時間を予約時にお伝えください"
+      },
+      "_poi_meta": {
+        "poi_key": "route_variant_custom",
+        "verified": true,
+        "match": "route_variant_no_single_poi",
+        "candidate_pois": [
+          "sangumburi_crater",
+          "camellia_hill",
+          "hueree_natural_park",
+          "hamdeok_seoubong_beach",
+          "songaksan_mountain",
+          "jeju_haenyeo_museum"
+        ],
+        "note": "Fully customizable route option — candidate POIs above are verified in KB v1.10 but not prescribed; final stop list determined by passenger's request at booking."
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "ホテルピックアップ",
+      "type": "origin",
+      "theme": "Start"
+    },
+    {
+      "name": "ルートを選択",
+      "type": "primary",
+      "theme": "東部 / 西部 / 南部"
+    },
+    {
+      "name": "ランチ休憩",
+      "type": "meal",
+      "theme": "リフレッシュ"
+    },
+    {
+      "name": "午後の見どころ",
+      "type": "primary",
+      "theme": "Continue"
+    },
+    {
+      "name": "ホテル降車",
+      "type": "return",
+      "theme": "End"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "済州ホテルでのピックアップ",
+      "duration": "停留所1",
+      "description": "08:00〜09:00の間にホテルにお迎え。"
+    },
+    {
+      "phase": "ルートの選択と一日の観光",
+      "duration": "停留所2–4",
+      "description": "東・西・南または完全カスタムルートで9時間。ドライバー兼ガイドが状況に合わせてペースを調整。"
+    },
+    {
+      "phase": "ホテルへ帰路",
+      "duration": "停留所5",
+      "description": "17:00〜18:00頃にホテルへ解散。"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "このプライベートな一日の流れ",
+    "subtitle": "08:00〜09:00の間に済州ホテルでピックアップ、東・西・南ルートまたはご自身のカスタムプランで完全フレキシブルな9時間の一日。ドライバー兼ガイドが天候と交通に応じてペースを調整。17:00〜18:00頃に解散。"
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "非常に幼いお子様を含むファミリー",
+      "高齢者を含む多世代グループ",
+      "リラックスしたKドラマデーを望むカップル・ハネムーン",
+      "オーダーメイドのルートを求める済州リピーター",
+      "菜の花・アジサイ・ピンクミューリーなど特定のシーズン風景を追うフォトグラファー"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "プライベートチャーターを選ぶ理由",
+        "icon": "car",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          }
+        ]
+      },
+      {
+        "title": "このルートの推薦理由",
+        "icon": "map",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          }
+        ]
+      },
+      {
+        "title": "このルートの推薦理由",
+        "icon": "clock-3",
+        "iconBg": "bg-slate-50/80",
+        "iconColor": "text-slate-698",
+        "items": [
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "行程づくり",
+            "detail": "ガイドが詳しくご案内します。"
+          },
+          {
+            "label": "見どころ",
+            "detail": "ガイドが詳しくご案内します。"
+          }
+        ]
+      }
+    ],
+    "lessIdealFor": [
+      "プライベートな料金設定のため費用対効果を重視する一人旅",
+      "他のお客様と交流する社交的な体験を求める方",
+      "本格的な資格ガイドによる詳細なナレーションを必要とする方（ドライバー兼ガイドは認定資格あり、ただし充実したナレーションとは異なります）",
+      "入場料・昼食を全て含めたい方"
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "お迎えと解散",
+      "preview": "済州島どこでもホテルピックアップ。ロビーで10分前に集合",
+      "content": [
+        "済州島のどこのホテルでもお迎え可能（済州市・西帰浦・チュンムンなど）",
+        "ピックアップは08:00〜09:00の間（予約時に確定）",
+        "お迎え後すぐにドライバー兼ガイドがルートをご確認",
+        "解散は通常17:00〜18:00頃",
+        "空港への解散も可能（ご要望の場合は事前にお知らせください）"
+      ]
+    },
+    {
+      "id": "車両",
+      "title": "車両とグループ人数",
+      "preview": "グループサイズと荷物の量に応じて車両を割り当て",
+      "content": [
+        "車両タイプは乗客人数と荷物量に合わせて最適なものをご用意",
+        "予約時に正確な人数と大型荷物の有無をご記入ください",
+        "通常：1〜3名はセダン、4〜6名はSUV/ミニバン、7名以上はバン/ミニコーチ",
+        "全車両エアコン完備"
+      ]
+    },
+    {
+      "id": "duration",
+      "title": "9時間期間と延長料金",
+      "preview": "ピックアップから厳格な9時間のサービス時間",
+      "content": [
+        "9時間はホテルのお迎え時間からスタート",
+        "延長は追加₩25,000/30分",
+        "延長が必要になりそうな場合はドライバー兼ガイドが事前にお知らせします",
+        "牛島フェリー待ち時間は通常9時間期間に含まれます"
+      ]
+    },
+    {
+      "id": "extras",
+      "title": "別途かかる費用について",
+      "preview": "牛島フェリー、入場料、食事",
+      "content": [
+        "牛島の車両フェリー：別途費用（車両サイズにより異なる）。徒歩乗船フェリーは≈₩10,500（往復）",
+        "各訪問地の入場料：城山日出峰₩5,000、万丈窟₩4,000、翰林公園₩12,000など",
+        "昼食・カフェ：自己負担（ガイドが地元の推薦店を案内）",
+        "チップは任意ですが歓迎されます"
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "天候ポリシー",
+      "preview": "プライベート形式は済州の変化する状況に適応しやすい",
+      "content": [
+        "小雨：ほとんどの見どころは通常通り実施。ドライバー兼ガイドが屋内見どころ優先にシフト可",
+        "強風：大浦柱状節理や涯月など露出度の高い見どころが影響を受ける場合あり",
+        "台風または悪天候：全額返金または日程変更の選択肢をご案内します"
+      ]
+    },
+    {
+      "id": "included",
+      "title": "含まれるもの・含まれないもの",
+      "preview": "車両と認定ガイドドライバー。入場料と食事は現地払い",
+      "variant": "included",
+      "content": [
+        "専用車両（セダン・SUV・バン、グループ人数に応じて）",
+        "認定英語対応ドライバー兼ガイド",
+        "済州島内全ホテルへのお迎えと解散",
+        "燃料・高速道路・駐車料金",
+        "含まれないもの：入場料（現地払い）・昼食・カフェ・チップ・牛島フェリー"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "リアルタイム天気連携"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "毎日更新"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "season": "春",
+      "title": "菜の花シーズン",
+      "description": "菜の花（3月下旬〜4月）。城山の早朝日の出が最も安定したシーズン。",
+      "icon": "flower"
+    },
+    {
+      "season": "夏",
+      "title": "ビーチシーズン",
+      "description": "アジサイ（6〜7月）。協才・金陵のビーチが最繁忙期。午前中の早めの出発が快適。",
+      "icon": "sun"
+    },
+    {
+      "season": "秋",
+      "title": "最高の撮影シーズン",
+      "description": "ピンクミューリー（10月）。晴天が多く全ルートで最高の撮影条件。",
+      "icon": "leaf"
+    },
+    {
+      "season": "冬",
+      "title": "椿と雪",
+      "description": "漢拏山の積雪時に一部トレイルが閉鎖の場合あり。涯月と南部海岸は比較的温暖。",
+      "icon": "snowflake"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "現地を熟知した認定スタッフ",
+      "description": "完全保険付きの認定韓国ツアー催行会社",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "認定ドライバー兼ガイドが英語で対応。済州全域の道路・見どころ・季節状況を熟知。"
+    },
+    {
+      "icon": "route",
+      "title": "ルート特化型の専門ガイド",
+      "description": "細かく配慮したルート、一般的な観光コースとは異なる",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "韓国観光公社認定の地元催行会社。完全保険付きで安心のツアー催行。"
+    },
+    {
+      "icon": "users",
+      "title": "少人数制ツアー",
+      "description": "ルートに最適な規模",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "少人数グループで丁寧で質の高いガイドサービスをご案内します。"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "予約後すぐ",
+      "title": "予約確認（即時）",
+      "detail": "行程確認付きの予約確認",
+      "description": "地域/ルートの好みの受付とホテルピックアップの詳細と即時確認。"
+    },
+    {
+      "timing": "12時間前",
+      "title": "12時間前リマインダー",
+      "detail": "天気情報とルート変更のご案内",
+      "description": "天気予報とお客様の優先事項に基づいて、24時間前に最終的なルートを確定します。"
+    },
+    {
+      "timing": "前日の夜",
+      "title": "最終お迎え情報",
+      "detail": "正確なピックアップ時間とドライバーの連絡先",
+      "description": "ドライバー兼ガイドの情報（氏名・車両ナンバー）は前日の夜に送信します。"
+    },
+    {
+      "timing": "当日の朝",
+      "title": "当日ルート情報",
+      "detail": "ライブ状況に基づく朝のブリーフィング",
+      "description": "合意した時間にドライバーがネームプレードを持ってホテルロビーに待機。"
+    },
+    {
+      "timing": "ツアー中",
+      "title": "各訪問地でのガイダンス",
+      "detail": "各場所でのリアルタイムガイド",
+      "description": "その日の調整をダイレクトメッセージで — 気に入った場所で延長し、カフェに立ち寄り、響かないものをスキップ。"
+    },
+    {
+      "timing": "ツアー後",
+      "title": "ツアー後サポート",
+      "detail": "フォローアップとおすすめ情報",
+      "description": "降車後にツアー後のフィードバックリクエストを送信。"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "first-time",
+      "question": "済州初訪問者（東・西・南どのルート）に良い選択ですか？",
+      "answer": "はい — このエリアの最も特徴的な見どころをバランスよく一日でカバーします。"
+    },
+    {
+      "id": "walking",
+      "question": "歩行は難しいですか？",
+      "answer": "中程度の歩行でアクティブな区間があります。城山日出峰の山頂登山（往復約30〜40分）が最もアクティブです。残りの見どころは概ねやさしい歩行か遊歩道。"
+    },
+    {
+      "id": "family",
+      "question": "ファミリーに適したツアーですか？",
+      "answer": "はい — ほとんどのファミリーに快適です。プライベートチャーターは幼いお子様や高齢者、移動が必要な方のいるグループに特に適しています。ペースを自由に調整できます。"
+    },
+    {
+      "id": "seniors",
+      "question": "高齢の方でも快適に参加できますか？",
+      "answer": "はい — ペースと歩行は活動的なシニアの方にも快適に組まれています。ルート選択と各訪問地の滞在時間をご希望に合わせて調整します。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "予約可否は決済ステップで確認されます。",
+    "price": {
+      "amountLabel": "",
+      "currency": "USD",
+      "per": "車両"
+    }
+  },
+  "pickup_dropoff": {
+    "type": "hotel_pickup",
+    "meeting_points": [
+      {
+        "name": "済州島内ホテル（済州市、西帰浦、中門）",
+        "time": "08:00–09:00",
+        "note": "対応エリア内のホテル玄関までお迎え"
+      },
+      {
+        "name": "済州空港",
+        "time": "08:00–09:00",
+        "note": "済州空港でのピックアップも可能です（9時間の利用時間に含まれます）。"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "済州島内ホテル（済州市、西帰浦、中門）",
+        "approx_time": "≈ 17:00–18:00",
+        "note": "同じホテルまたは対応エリア内のご希望住所で降車"
+      },
+      {
+        "name": "済州空港",
+        "approx_time": "≈ 17:00–18:00",
+        "note": "当日出発の降車対応も可能です。サービス時間内に含まれます。"
+      }
+    ],
+    "hotel_pickup_available": true,
+    "notes": "出発予定時刻の10分前までにホテルロビーでお待ちください。9時間の利用時間はピックアップ時刻から開始します。日程変更は原則として予約日の2日前までにご連絡ください。延長はドライバーの都合により、1時間あたり25,000ウォンを現金でお支払いいただきます。"
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "jeju-island-private-car-charter-tour",
+    "product_type": "private",
+    "route_type": "customizable",
+    "destination_region": "jeju",
+    "region_type": "jeju_all_around",
+    "vehicle_type": "private_vehicle",
+    "duration_hours": 9.0,
+    "region_tags": [
+      "jeju_all_around",
+      "jeju_east",
+      "jeju_west",
+      "jeju_south",
+      "jeju_city",
+      "jeju_seogwipo"
+    ],
+    "theme_tags": [
+      "private_charter",
+      "customizable_route",
+      "driver_guide",
+      "first_time_friendly",
+      "k_drama_filming_location",
+      "unesco",
+      "iconic_landmarks"
+    ],
+    "poi_tags": [
+      "seongsan_ilchulbong",
+      "udo_island",
+      "manjanggul_cave",
+      "seopjikoji",
+      "seongeup_folk_village",
+      "hamdeok_beach",
+      "hyeopjae_beach",
+      "hallim_park",
+      "osulloc_tea_museum",
+      "aewol_cafe_street",
+      "cheonjiyeon_falls",
+      "jusangjeolli_cliff",
+      "yakcheonsa_temple",
+      "sanbangsan",
+      "jeongbang_falls",
+      "seogwipo_olle_market",
+      "camellia_hill",
+      "sangumburi_crater"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.5,
+    "scenic_level": 0.95,
+    "photo_level": 1.0,
+    "culture_level": 0.8,
+    "relax_level": 1.0,
+    "first_time_fit": 0.95,
+    "family_fit": 1.0,
+    "senior_fit": 1.0,
+    "couple_fit": 1.0,
+    "solo_traveler_fit": 0.8,
+    "active_traveler_fit": 0.8,
+    "adult_family_fit": 1.0,
+    "family_with_teens_fit": 0.8,
+    "young_kids_fit": 1.0,
+    "senior_active_fit": 1.0,
+    "senior_general_fit": 1.0,
+    "mobility_friendly_fit": 1.0,
+    "stroller_fit": 0.8,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.8,
+    "rain_fit": 0.8,
+    "value_for_money_fit": 0.55,
+    "iconic_landmark_fit": 0.95,
+    "cafe_fit": 1.0,
+    "food_fit": 0.7,
+    "nature_fit": 1.0,
+    "beach_fit": 1.0,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.55,
+    "no_shopping_fit": 0.4,
+    "local_culture_fit": 0.8,
+    "storytelling_fit": 0.85,
+    "unesco_fit": 0.65,
+    "intangible_heritage_fit": 1.0,
+    "indoor_ratio": 0.2,
+    "weather_sensitivity": 0.5,
+    "comfort_level": 1.0,
+    "budget_fit": 0.4,
+    "premium_fit": 1.0,
+    "small_group_fit": 0.15,
+    "private_fit": 1.0,
+    "bus_fit": 0.05,
+    "price_band": "premium",
+    "pickup_base": "jeju_island",
+    "return_time_band": "9h_window",
+    "duration_band": "9h",
+    "min_recommended_age": 0,
+    "hard_constraints": {
+      "avoidIf": [
+        "solo_budget_traveler_seeking_lowest_price",
+        "wants_fully_included_admission_and_meals"
+      ],
+      "notIdealFor": [
+        "travelers_wanting_a_social_group_setting",
+        "guests_needing_full_certified_guide_narration"
+      ]
+    },
+    "walking_notes": [
+      "Walking load depends entirely on the chosen route and stops.",
+      "East route: Seongsan summit climb is the most demanding section; base-area viewing is an easier alternative.",
+      "West route: easy to moderate overall; Hyeopjae Beach and O'sulloc are gentle.",
+      "South route: Cheonjiyeon and Sanbangsan add the most stairs.",
+      "The driver-guide can adjust pacing on the day to match family or senior comfort.",
+      "Comfortable walking shoes with good grip are recommended."
+    ],
+    "keywords": [
+      "済州プライベートカーチャーター",
+      "済州専用車ツアー",
+      "済州カスタム日帰りツアー"
+    ],
+    "synonym_hints": [
+      "済州プライベートツアー",
+      "済州ドライバー兼ガイド"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "jeju",
+    "vehicle_type_legacy": "private_van",
+    "anchor_poi_keys": [
+      "seongsan_ilchulbong",
+      "manjanggul_cave",
+      "hyeopjae_beach",
+      "osulloc_tea_museum",
+      "jusangjeolli_cliff",
+      "cheonjiyeon_falls"
+    ],
+    "private_tour_fit": 1.0,
+    "customizable_route_fit": 1.0,
+    "flexibility_fit": 1.0,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "embedded_for": [
+      "authoring",
+      "review",
+      "sql_backfill_reference"
+    ],
+    "note": "Scores were tuned for a fully customizable 9-hour Jeju private charter format. Comfort, mobility-friendliness, family fit, and senior fit score very high because the private format eliminates group constraints and the driver-guide handles all transit. Same-day-flight fit scores 4 because Jeju Airport is centrally located and the driver-guide can flex the route around flight times. Walking and culture levels are weighted averages across the three recommended routes; the on-the-day load can move significantly depending on the chosen route.",
+    "duration_hours": 9,
+    "stop_count": 4,
+    "score_rationale": {
+      "private_fit": "Direct match: this is a per-vehicle private charter.",
+      "mobility_friendly_fit": "Door-to-door private vehicle eliminates most public-transport mobility friction; only Seongsan summit and Cheonjiyeon stairs reduce friendliness for those specific stops.",
+      "young_kids_fit": "Best-in-class for kids because pacing, snack stops, and route choice are all adjustable.",
+      "weather_sensitivity": "Low because the driver-guide can shift toward indoor stops (Manjanggul, Hallim caves, O'sulloc, Yakcheonsa) on bad-weather days.",
+      "value_for_money_fit": "Mid: per-vehicle pricing is excellent value for groups of 4 to 9 but expensive for solo travelers.",
+      "iconic_landmark_fit": "Maxed because the route can include Seongsan, Manjanggul, Cheonjiyeon, and Jusangjeolli in any combination.",
+      "same_day_flight_fit": "Above average because Jeju Airport is central and the driver-guide can drop off there at the end of the 9 hours."
+    },
+    "anchor_pois": [
+      "Seongsan Ilchulbong",
+      "Manjanggul Cave",
+      "Hyeopjae Beach",
+      "O'sulloc Tea Museum",
+      "Jusangjeolli Cliff",
+      "Cheonjiyeon Falls"
+    ],
+    "anchor_poi_keys": [
+      "seongsan_ilchulbong",
+      "manjanggul_cave",
+      "hyeopjae_beach",
+      "osulloc_tea_museum",
+      "jusangjeolli_cliff",
+      "cheonjiyeon_falls"
+    ],
+    "competing_products": [
+      "jeju-cruise-shore-excursion-small-group-tour",
+      "jeju-eastern-unesco-spots-day-tour"
+    ]
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "済州島プライベート",
+        "headlineLine2": "カーチャーターツアー",
+        "hero": {
+          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+          "imagePosition": "center 45%",
+          "tagline": "ご自分だけのルートで済州一日ツアー — 認定ドライバー兼ガイドと専用車で",
+          "pills": [
+            "プライベート",
+            "認定ドライバー兼ガイド",
+            "東/西/南ルート選択"
+          ],
+          "meta": {
+            "duration": "≈ 9時間（ホテルからの送迎込み）",
+            "region": "済州全域",
+            "stops": "カスタムルート",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "概要"
+          },
+          {
+            "id": "itinerary",
+            "label": "行程"
+          },
+          {
+            "id": "details",
+            "label": "詳細情報"
+          },
+          {
+            "id": "faq",
+            "label": "よくある質問"
+          },
+          {
+            "id": "reviews",
+            "label": "クチコミ"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "car",
+            "label": "ツアースタイル",
+            "value": "プライベートチャーター"
+          },
+          {
+            "icon": "route",
+            "label": "ルート",
+            "value": "完全カスタマイズ可能"
+          },
+          {
+            "icon": "user",
+            "label": "ガイド",
+            "value": "認定ドライバー兼ガイド（英語対応）"
+          },
+          {
+            "icon": "clock",
+            "label": "所要時間",
+            "value": "9時間"
+          },
+          {
+            "icon": "ticket",
+            "label": "入場料",
+            "value": "現地にてお支払い"
+          },
+          {
+            "icon": "utensils",
+            "label": "昼食",
+            "value": "現地にてお支払い"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "alt": "城山日出峰の山頂火口縁トレイル — 5,000年前の水成火山",
+            "caption": "城山日出峰 — ユネスコトリプル指定の旗艦見どころ",
+            "location": "城山日出峰、済州東部",
+            "atmosphere": "山頂の99岩の火口縁から望む日の出。3つのユネスコ指定を持つ済州の象徴"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+            "alt": "飛揚島（ビヤンド）を背景にした協才海岸の白砂とターコイズの海",
+            "caption": "協才海岸 — 済州の代表的なビーチ",
+            "location": "協才（ヒョプジェ）海岸、済州西部",
+            "atmosphere": "白い貝殻砂とエメラルド・ターコイズの海。飛揚島の夕日シルエット"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+            "alt": "夜間照明に浮かぶ天地淵の滝の22m単段の瀑布",
+            "caption": "天地淵の滝 — 西帰浦市街の22m単段の滝",
+            "location": "天地淵（チョンジヨン）の滝、西帰浦市街",
+            "atmosphere": "済州唯一の夜間照明の滝。海に最も近い単段の滝"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
+            "alt": "ツアーで訪れるO'sulloc茶畑 — 西ルートの茶文化見どころの風景",
+            "caption": "O'sulloc茶畑 — 西ルートの茶文化見どころ",
+            "location": "O'sulloc、済州中西部",
+            "atmosphere": "韓国最大の緑茶農園。緑茶アイスクリームと茶畑の写真撮影"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
+            "alt": "翰潭（ハンダム）海岸遊歩道沿いの海ビューカフェ列",
+            "caption": "涯月カフェ通り — 西ルートのカフェコーストフィナーレ",
+            "location": "涯月カフェ通り、済州北西部",
+            "atmosphere": "韓国で最も充実度の高い海ビューカフェ。済州の日常的なカフェ文化"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "name": "東ルート：ユネスコ＆Kドラマ海岸",
+            "category": "最もランドマーク充実度の高いルート",
+            "description": "最もランドマーク充実度の高いルートオプションで、済州最強のユネスコおよびKドラマ海岸を中心に組み立てられています。**城山日出峰**がフラッグシップ — 5,000年前の水成火山の凝灰岩錐が海から182mそびえ立ち、**ユネスコ世界自然遺産2007年＋バイオスフィアリザーブ＋グローバルジオパーク**という3重のユネスコ指定を持ちます。**万丈窟**は世界最大級の溶岩洞窟のひとつ（全長7.4km、一般公開区間1km）で、**ユネスコ世界自然遺産の地下部分**。**牛島**は城山沖合の小島で、有名な「ピーナッツアイスクリーム」とサンゴ砂のビーチ、180度のパノラマ展望台が待ちます。**ソプチコジ**はKドラマのロケ地として有名な海岸岬。東ルートは済州で最も多くの国際認定見どころを一日でカバーできます。",
+            "highlights": [
+              "城山日出峰：トリプルユネスコ指定（世界自然遺産2007＋バイオスフィア＋グローバルジオパーク）— 99岩の火口縁への30〜40分の山頂登山。入場料₩5,000",
+              "牛島：城山から15分のフェリー、約370人の住民、高さ132mの牛島峰、代表的なのピーナッツアイスクリームと白サンゴ砂のハゴスドン海岸",
+              "万丈窟：全長7.4kmの溶岩洞窟（一般公開区間1km）、ユネスコ世界遺産の地下部分、通年快適な涼しさ（18°C）",
+              "ソプチコジ：ドラマロケ地として有名な海岸岬、城山展望、イルチュルランドの溶岩洞窟（有料）",
+              "城邑民俗村：石・風・女性の三多の島として知られる済州の農村生活を今に伝える民族村"
+            ],
+            "timeUsed": [
+              "ホテルピックアップ→城山 — 約50〜60分",
+              "城山日出峰（山頂往復） — 約75〜90分",
+              "牛島フェリー往復＋島内観光 — 約90分（任意）",
+              "昼食 — 約60分",
+              "万丈窟または城邑 — 約60〜75分",
+              "ソプチコジ — 約45分",
+              "ホテルへ帰路 — 約40〜50分"
+            ],
+            "whyOnRoute": "東ルートはユネスコの充実度が最も高い選択肢であり、済州のトリプルユネスコ指定の旗艦見どころを効率よくカバーできます。牛島へのフェリーが含まれる場合、所要時間が若干長くなりますが、独特の島体験が加わります。",
+            "visitBasics": {
+              "hours": "ほとんどの停留所09:00〜18:00。万丈窟（開放時）は毎月第1水曜日に閉鎖。",
+              "closed": "城山：毎月第1月曜日。万丈窟：毎月第1水曜日＋現在安全修理のため閉鎖。",
+              "admission": "各停留所で直接払い — 城山₩5,000、万丈窟₩4,000、ソプチコジ外部無料",
+              "walking": "中〜高 — 城山の頂上登り（約600段、往復約30分）が最も要求の高い区間"
+            },
+            "convenience": {
+              "restroom": "すべての主要停留所にあり",
+              "parking": "ガイドドライバーが全駐車を担当"
+            },
+            "smartNotes": {
+              "photo": "晴天の朝の城山頂上が最強の写真見どころ",
+              "facilities": "城山港とハムドックビーチが最強の食事拠点",
+              "tip": "城山の頂上登りはシニアや移動が少ない方のルートのボトルネック"
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_east",
+              "verified": true,
+              "match": "route_variant_no_single_poi",
+              "constituent_pois": [
+                "seongsan_ilchulbong",
+                "udo_island",
+                "manjanggul_lava_tube",
+                "seopjikoji",
+                "seongeup_folk_village",
+                "hamdeok_seoubong_beach"
+              ],
+              "note": "Route option for private charter — represents a multi-POI bundle (Seongsan, Udo, Manjanggul, Seopjikoji, Seongeup, Hamdeok); not a single matchable POI. All constituent POIs are individually verified in KB v1.10."
+            }
+          },
+          {
+            "number": 2,
+            "name": "西ルート：ビーチ・茶畑・カフェ海岸",
+            "category": "最もリラックスしてInstagramに映えるルート",
+            "description": "最もリラックスしてInstagram映えするルートで、済州の白砂ビーチ・亜熱帯庭園・茶畑からなる西海岸に中心を置いています。**協才（ヒョプジェ）海岸**が済州の象徴的なショット — ターコイズの浅瀬と沖合の**飛揚島（ビヤンド）**の眺め。隣接する**翰林公園（ハルリムパーク）**には「（ヒョプジェグル）」「（ッサンニョングル）」という二つの溶岩洞窟が公園内にあり、亜熱帯植物・ツバキ・チューリップ・ハス祭りのシーズンごとの花も見て回れます。**O'sulloc雪緑茶博物館**は韓国最大の緑茶農園のフラッグシップ — 無料入場・緑茶アイスクリーム・茶畑の写真撮影。**涯月（エウォル）カフェ通り**は翰潭海岸遊歩道沿いの5km区間に韓国で最も充実度の高い海ビューカフェが連なる終日のリラックスしたフィナーレ。西ルートはアクティビティよりも雰囲気とリラックスを重視する方に最適です。",
+            "highlights": [
+              "協才（ヒョプジェ）海岸：白い貝殻砂、ターコイズの浅瀬、沖合に飛揚島 — 済州の代表的なビーチショット。隣接する金陵（クムヌン）海岸との組み合わせも",
+              "翰林公園：10万㎡の亜熱帯公園、ヒョプジェグル・ッサンニョングル溶岩洞窟を内包、ツバキ・チューリップ・ハスの季節祭り。入場料約₩12,000（大人）",
+              "O'sulloc茶博物館：韓国最大の緑茶農園、入場無料、緑茶アイスクリーム＋ロールケーキ、農園散策路、イニスフリー済州ハウス徒歩5分",
+              "涯月カフェ通り：翰潭海岸遊歩道沿い5kmに30以上の海ビューカフェ、夕日撮影スポット",
+              "山房山（サンバンサン）：395m凝灰岩溶岩錐、山腹に海食洞窟の山房窟（観音菩薩像）と海岸展望台"
+            ],
+            "timeUsed": [
+              "ホテルピックアップ→協才/翰林 — 約40〜50分",
+              "協才海岸＋翰林公園 — 約90〜120分",
+              "O'sulloc茶博物館 — 約60〜75分",
+              "昼食 — 約60分",
+              "涯月カフェ通り＋翰潭遊歩道 — 約60〜75分",
+              "ホテルへ帰路 — 約40〜50分"
+            ],
+            "whyOnRoute": "西ルートは雰囲気とリラックスを優先する方のベスト選択肢。アクティブなハイキングや急な階段がなく、白砂ビーチ・茶畑・海辺のカフェという済州の「ライフスタイル」側面を最大限に見て回れます。",
+            "visitBasics": {
+              "hours": "ほとんどの停留所09:00〜18:00。涯月カフェは通常10:00〜22:00",
+              "closed": "ほとんどの停留所は年中無休。個々のカフェは平日輪番で休業",
+              "admission": "狭才ビーチ無料。翰林公園約₩12,000大人。O'sullocお茶博物館無料",
+              "walking": "低〜中程度 — ビーチウォーク、平坦な公園路、カフェ間の散策"
+            },
+            "convenience": {
+              "restroom": "すべての主要停留所にあり。カフェは有料顧客に設備あり",
+              "parking": "ガイドドライバーが全駐車を担当。涯月の路上駐車は週末に込み合う"
+            },
+            "smartNotes": {
+              "photo": "干潮時に飛揚島を背景にした狭才が代表的ななショット",
+              "facilities": "涯月は済州で最も充実のカフェ — 混雑を避けるコツは早めに場所取り",
+              "tip": "天候に融通の利く済州の一日が必要なら、これが最強のルート"
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_west",
+              "verified": true,
+              "match": "route_variant_no_single_poi",
+              "constituent_pois": [
+                "hyeopjae_beach",
+                "hallim_park",
+                "osulloc_tea_museum",
+                "aewol_cafe_street"
+              ],
+              "note": "Route option for private charter — represents a multi-POI bundle (Hyeopjae, Hallim, O'sulloc, Aewol); not a single matchable POI. All constituent POIs verified in KB v1.10."
+            }
+          },
+          {
+            "number": 3,
+            "name": "南ルート：滝・火山海岸",
+            "category": "最も景観が劇的なルート",
+            "description": "最も景観が劇的なルートで、済州南部の火山地質・亜熱帯の滝・伝統市場の食文化をつなぎ合わせています。西帰浦市街の**天地淵（チョンジヨン）の滝**は22mの単段の滝で毎夜のライトアップが名物、1kmのフラットな亜熱帯森林トレイルで到達します — 済州唯一の夜間照明の滝で、海に最も近い単段の滝。**大浦柱状節理（テアポジュサンジョルリ）**はチュンムン海岸沿いの1km区間に六角形の玄武岩柱が30〜40mそびえ立つ壮観な景色、ユネスコグローバルジオパーク指定。**正房の滝（チョンバン・ポクポ）**は東アジア唯一の海に直接落下する滝（高さ23m）。西帰浦の**西帰浦オルレ市場（オイレジャン）**は木曜・日曜の定期市、地元の海産物・黒豚・チェジュ麦芽菓子（甘礼）が並びます。南ルートは済州の自然の険しさを最も直接的に感じられる選択肢です。",
+            "highlights": [
+              "天地淵（チョンジヨン）の滝：22mの単段の滝で毎夜ライトアップ、1kmのフラットな亜熱帯森林トレイル。ムタエウナギ（天然記念物第27号）の生息地。入場料₩2,000",
+              "大浦柱状節理：1kmの六角形玄武岩柱が30〜40mそびえ、ユネスコグローバルジオパーク。入場料約₩2,000",
+              "正房の滝（チョンバン・ポクポ）：東アジア唯一の海に直接落下する滝（高さ23m）。秦の方士が徐福の名を岩に刻んだという伝説。入場料₩2,000",
+              "天帝淵（チョンジェヨン）の滝：三段の滝と七仙女（チルソニョ）伝説、仙臨橋の浮き彫り、稀少シダ植物の生息地。天然記念物第378号。入場料₩2,500",
+              "西帰浦オルレ市場：木曜・日曜の地元定期市、黒豚・海産物・済州の伝統菓子"
+            ],
+            "timeUsed": [
+              "ホテルピックアップ→天地淵/西帰浦 — 約60〜70分",
+              "天地淵の滝 — 約45〜60分",
+              "大浦柱状節理 — 約45〜60分",
+              "昼食（西帰浦） — 約60分",
+              "正房の滝または天帝淵 — 約45〜60分",
+              "西帰浦オルレ市場（任意） — 約30〜45分",
+              "ホテルへ帰路 — 約60〜70分"
+            ],
+            "whyOnRoute": "南ルートは済州の火山的な険しさと亜熱帯の豊かさが最も凝縮されたルート。東アジア唯一の海に落ちる滝と夜間照明の滝という2つの独自見どころを1日でカバーできる唯一の選択肢です。",
+            "visitBasics": {
+              "hours": "ほとんどの停留所09:00〜17:30。天地渕ライトアップ09:00〜22:00。",
+              "closed": "ほとんどの停留所年中無休。個々の市場の店は輪番で休業",
+              "admission": "天地渕₩2,000。柱状節理約₩2,000。山房窟寺約₩1,000",
+              "walking": "中程度 — 天地渕トレイル平坦1km、山房山の階段0.6マイルで洞窟テラスへ"
+            },
+            "convenience": {
+              "restroom": "すべての主要停留所にあり。市場に複数あり",
+              "parking": "ガイドドライバーが全駐車を担当。オレ市場は週末に込み合う"
+            },
+            "smartNotes": {
+              "photo": "天地渕の夕方ライトアップは他の済州主要見どころにない独自のショット",
+              "facilities": "オレ市場は済州で最強の単一食事見どころ",
+              "tip": "済州の雨の日には、3つの名前付きルートの中で最強のルート"
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_south",
+              "verified": true,
+              "match": "route_variant_no_single_poi",
+              "constituent_pois": [
+                "cheonjiyeon_falls",
+                "daepo_jusangjeolli_cliff",
+                "sanbangsan_mountain",
+                "yakcheonsa_temple",
+                "jeongbang_falls",
+                "olle_maeil_market"
+              ],
+              "note": "Route option for private charter — represents a multi-POI bundle (Cheonjiyeon, Jusangjeolli, Sanbangsan, Yakcheonsa, Jeongbang, Olle Market); not a single matchable POI. All constituent POIs verified in KB v1.10."
+            }
+          },
+          {
+            "number": 4,
+            "name": "カスタムルート：自由に構成する一日",
+            "category": "完全カスタマイズ — 東・西・南を組み合わせる",
+            "description": "3つの推薦ルート以外にも、9時間のチャーター期間は自由にカスタマイズ可能 — 東・西・南の見どころを自由に組み合わせるか、完全なカスタムプランを事前に送ることもできます。よく追加される見どころとして：**砂羅峰（サラボン）**（済州市内の短い登山、海と市街のパノラマ）、**天帝淵の滝**（東ルートと南ルートの橋渡し）、**牛島**（東ルートのオプション延長）、**山房山**（西南部の海岸展望）、**チョコレートランド**（家族向けチョコレート体験工場）。ドライバー兼ガイドは**天候・交通・混雑状況**に基づいてリアルタイムでルートを調整します。撮影目的の旅行者には、**菜の花（3〜4月）・アジサイ（6〜7月）・ピンクミューリー（10月）**の撮影ポイントも案内可能。",
+            "highlights": [
+              "東海岸ユネスコ（城山・万丈窟）と西海岸茶畑（O'sulloc）を組み合わせる — 通常、牛島を省略すれば実現可能",
+              "女性海女の海産物昼食を追加 — 海女協同組合のある下道（東）または大静（西）近辺が最適",
+              "菜の花（3〜4月）・アジサイ（6〜7月）・ピンクミューリー（10月）の撮影ポイントへの案内",
+              "家族連れには万丈窟の溶岩洞窟＋翰林公園の亜熱帯花園を組み合わせた家族向けカスタム",
+              "ハネムーンカップルには協才ビーチ夕日＋ソプチコジKドラマ岬の組み合わせが人気"
+            ],
+            "timeUsed": [
+              "事前にご希望のルートをご連絡ください",
+              "ドライバー兼ガイドが当日の状況に合わせてペースを調整",
+              "9時間の期間内で最大5〜6見どころ（ペース次第）"
+            ],
+            "whyOnRoute": "9時間のプライベートチャーターは完全なカスタマイズが可能 — 複数の済州エリアをまたぐ場合や特定の撮影・体験目的には、このオプションが最も柔軟です。",
+            "visitBasics": {
+              "hours": "選択した停留所による — ガイドドライバーが予約時に月次休業日を通知",
+              "closed": "選択した停留所による",
+              "admission": "すべての入場料は直接払い。ガイドドライバーが各ゲートでサポート",
+              "walking": "グループの移動能力に合わせて調整可能"
+            },
+            "convenience": {
+              "restroom": "すべての主要停留所にあり",
+              "parking": "ガイドドライバーが全駐車を担当"
+            },
+            "smartNotes": {
+              "photo": "ガイドドライバーに参考写真3〜5枚を事前に送ると、写真フレーミングが大幅に向上",
+              "facilities": "昼食はお客様の選択 — 食事の制限（ハラール、ベジタリアン等）を事前に伝えてください",
+              "tip": "カスタムルートは当日便のある方にも最適 — 出発時間を予約時にお伝えください"
+            },
+            "_poi_meta": {
+              "poi_key": "route_variant_custom",
+              "verified": true,
+              "match": "route_variant_no_single_poi",
+              "candidate_pois": [
+                "sangumburi_crater",
+                "camellia_hill",
+                "hueree_natural_park",
+                "hamdeok_seoubong_beach",
+                "songaksan_mountain",
+                "jeju_haenyeo_museum"
+              ],
+              "note": "Fully customizable route option — candidate POIs above are verified in KB v1.10 but not prescribed; final stop list determined by passenger's request at booking."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "ホテルピックアップ",
+            "type": "origin",
+            "theme": "Start"
+          },
+          {
+            "name": "ルートを選択",
+            "type": "primary",
+            "theme": "東部 / 西部 / 南部"
+          },
+          {
+            "name": "ランチ休憩",
+            "type": "meal",
+            "theme": "リフレッシュ"
+          },
+          {
+            "name": "午後の見どころ",
+            "type": "primary",
+            "theme": "Continue"
+          },
+          {
+            "name": "ホテル降車",
+            "type": "return",
+            "theme": "End"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "済州ホテルでのピックアップ",
+            "duration": "停留所1",
+            "description": "08:00〜09:00の間にホテルにお迎え。"
+          },
+          {
+            "phase": "ルートの選択と一日の観光",
+            "duration": "停留所2–4",
+            "description": "東・西・南または完全カスタムルートで9時間。ドライバー兼ガイドが状況に合わせてペースを調整。"
+          },
+          {
+            "phase": "ホテルへ帰路",
+            "duration": "停留所5",
+            "description": "17:00〜18:00頃にホテルへ解散。"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "このプライベートな一日の流れ",
+          "subtitle": "08:00〜09:00の間に済州ホテルでピックアップ、東・西・南ルートまたはご自身のカスタムプランで完全フレキシブルな9時間の一日。ドライバー兼ガイドが天候と交通に応じてペースを調整。17:00〜18:00頃に解散。"
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "非常に幼いお子様を含むファミリー",
+            "高齢者を含む多世代グループ",
+            "リラックスしたKドラマデーを望むカップル・ハネムーン",
+            "オーダーメイドのルートを求める済州リピーター",
+            "菜の花・アジサイ・ピンクミューリーなど特定のシーズン風景を追うフォトグラファー"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "プライベートチャーターを選ぶ理由",
+              "icon": "car",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                },
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                },
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                }
+              ]
+            },
+            {
+              "title": "このルートの推薦理由",
+              "icon": "map",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                },
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                },
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                }
+              ]
+            },
+            {
+              "title": "このルートの推薦理由",
+              "icon": "clock-3",
+              "iconBg": "bg-slate-50/80",
+              "iconColor": "text-slate-698",
+              "items": [
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                },
+                {
+                  "label": "行程づくり",
+                  "detail": "ガイドが詳しくご案内します。"
+                },
+                {
+                  "label": "見どころ",
+                  "detail": "ガイドが詳しくご案内します。"
+                }
+              ]
+            }
+          ],
+          "lessIdealFor": [
+            "プライベートな料金設定のため費用対効果を重視する一人旅",
+            "他のお客様と交流する社交的な体験を求める方",
+            "本格的な資格ガイドによる詳細なナレーションを必要とする方（ドライバー兼ガイドは認定資格あり、ただし充実したナレーションとは異なります）",
+            "入場料・昼食を全て含めたい方"
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "お迎えと解散",
+            "preview": "済州島どこでもホテルピックアップ。ロビーで10分前に集合",
+            "content": [
+              "済州島のどこのホテルでもお迎え可能（済州市・西帰浦・チュンムンなど）",
+              "ピックアップは08:00〜09:00の間（予約時に確定）",
+              "お迎え後すぐにドライバー兼ガイドがルートをご確認",
+              "解散は通常17:00〜18:00頃",
+              "空港への解散も可能（ご要望の場合は事前にお知らせください）"
+            ]
+          },
+          {
+            "id": "車両",
+            "title": "車両とグループ人数",
+            "preview": "グループサイズと荷物の量に応じて車両を割り当て",
+            "content": [
+              "車両タイプは乗客人数と荷物量に合わせて最適なものをご用意",
+              "予約時に正確な人数と大型荷物の有無をご記入ください",
+              "通常：1〜3名はセダン、4〜6名はSUV/ミニバン、7名以上はバン/ミニコーチ",
+              "全車両エアコン完備"
+            ]
+          },
+          {
+            "id": "duration",
+            "title": "9時間期間と延長料金",
+            "preview": "ピックアップから厳格な9時間のサービス時間",
+            "content": [
+              "9時間はホテルのお迎え時間からスタート",
+              "延長は追加₩25,000/30分",
+              "延長が必要になりそうな場合はドライバー兼ガイドが事前にお知らせします",
+              "牛島フェリー待ち時間は通常9時間期間に含まれます"
+            ]
+          },
+          {
+            "id": "extras",
+            "title": "別途かかる費用について",
+            "preview": "牛島フェリー、入場料、食事",
+            "content": [
+              "牛島の車両フェリー：別途費用（車両サイズにより異なる）。徒歩乗船フェリーは≈₩10,500（往復）",
+              "各訪問地の入場料：城山日出峰₩5,000、万丈窟₩4,000、翰林公園₩12,000など",
+              "昼食・カフェ：自己負担（ガイドが地元の推薦店を案内）",
+              "チップは任意ですが歓迎されます"
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "天候ポリシー",
+            "preview": "プライベート形式は済州の変化する状況に適応しやすい",
+            "content": [
+              "小雨：ほとんどの見どころは通常通り実施。ドライバー兼ガイドが屋内見どころ優先にシフト可",
+              "強風：大浦柱状節理や涯月など露出度の高い見どころが影響を受ける場合あり",
+              "台風または悪天候：全額返金または日程変更の選択肢をご案内します"
+            ]
+          },
+          {
+            "id": "included",
+            "title": "含まれるもの・含まれないもの",
+            "preview": "車両と認定ガイドドライバー。入場料と食事は現地払い",
+            "variant": "included",
+            "content": [
+              "専用車両（セダン・SUV・バン、グループ人数に応じて）",
+              "認定英語対応ドライバー兼ガイド",
+              "済州島内全ホテルへのお迎えと解散",
+              "燃料・高速道路・駐車料金",
+              "含まれないもの：入場料（現地払い）・昼食・カフェ・チップ・牛島フェリー"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "リアルタイム天気連携"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "毎日更新"
+          }
+        },
+        "seasonalVariations": [
+          {
+            "season": "春",
+            "title": "菜の花シーズン",
+            "description": "菜の花（3月下旬〜4月）。城山の早朝日の出が最も安定したシーズン。",
+            "icon": "flower"
+          },
+          {
+            "season": "夏",
+            "title": "ビーチシーズン",
+            "description": "アジサイ（6〜7月）。協才・金陵のビーチが最繁忙期。午前中の早めの出発が快適。",
+            "icon": "sun"
+          },
+          {
+            "season": "秋",
+            "title": "最高の撮影シーズン",
+            "description": "ピンクミューリー（10月）。晴天が多く全ルートで最高の撮影条件。",
+            "icon": "leaf"
+          },
+          {
+            "season": "冬",
+            "title": "椿と雪",
+            "description": "漢拏山の積雪時に一部トレイルが閉鎖の場合あり。涯月と南部海岸は比較的温暖。",
+            "icon": "snowflake"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "現地を熟知した認定スタッフ",
+            "description": "完全保険付きの認定韓国ツアー催行会社",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "認定ドライバー兼ガイドが英語で対応。済州全域の道路・見どころ・季節状況を熟知。"
+          },
+          {
+            "icon": "route",
+            "title": "ルート特化型の専門ガイド",
+            "description": "細かく配慮したルート、一般的な観光コースとは異なる",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "韓国観光公社認定の地元催行会社。完全保険付きで安心のツアー催行。"
+          },
+          {
+            "icon": "users",
+            "title": "少人数制ツアー",
+            "description": "ルートに最適な規模",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "少人数グループで丁寧で質の高いガイドサービスをご案内します。"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "予約後すぐ",
+            "title": "予約確認（即時）",
+            "detail": "行程確認付きの予約確認",
+            "description": "地域/ルートの好みの受付とホテルピックアップの詳細と即時確認。"
+          },
+          {
+            "timing": "12時間前",
+            "title": "12時間前リマインダー",
+            "detail": "天気情報とルート変更のご案内",
+            "description": "天気予報とお客様の優先事項に基づいて、24時間前に最終的なルートを確定します。"
+          },
+          {
+            "timing": "前日の夜",
+            "title": "最終お迎え情報",
+            "detail": "正確なピックアップ時間とドライバーの連絡先",
+            "description": "ドライバー兼ガイドの情報（氏名・車両ナンバー）は前日の夜に送信します。"
+          },
+          {
+            "timing": "当日の朝",
+            "title": "当日ルート情報",
+            "detail": "ライブ状況に基づく朝のブリーフィング",
+            "description": "合意した時間にドライバーがネームプレードを持ってホテルロビーに待機。"
+          },
+          {
+            "timing": "ツアー中",
+            "title": "各訪問地でのガイダンス",
+            "detail": "各場所でのリアルタイムガイド",
+            "description": "その日の調整をダイレクトメッセージで — 気に入った場所で延長し、カフェに立ち寄り、響かないものをスキップ。"
+          },
+          {
+            "timing": "ツアー後",
+            "title": "ツアー後サポート",
+            "detail": "フォローアップとおすすめ情報",
+            "description": "降車後にツアー後のフィードバックリクエストを送信。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "first-time",
+            "question": "済州初訪問者（東・西・南どのルート）に良い選択ですか？",
+            "answer": "はい — このエリアの最も特徴的な見どころをバランスよく一日でカバーします。"
+          },
+          {
+            "id": "walking",
+            "question": "歩行は難しいですか？",
+            "answer": "中程度の歩行でアクティブな区間があります。城山日出峰の山頂登山（往復約30〜40分）が最もアクティブです。残りの見どころは概ねやさしい歩行か遊歩道。"
+          },
+          {
+            "id": "family",
+            "question": "ファミリーに適したツアーですか？",
+            "answer": "はい — ほとんどのファミリーに快適です。プライベートチャーターは幼いお子様や高齢者、移動が必要な方のいるグループに特に適しています。ペースを自由に調整できます。"
+          },
+          {
+            "id": "seniors",
+            "question": "高齢の方でも快適に参加できますか？",
+            "answer": "はい — ペースと歩行は活動的なシニアの方にも快適に組まれています。ルート選択と各訪問地の滞在時間をご希望に合わせて調整します。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "予約可否は決済ステップで確認されます。",
+        "price": {
+          "amountLabel": "",
+          "currency": "USD",
+          "per": "車両"
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-29",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15",
+      "v15.2",
+      "v17_batch7"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      },
+      "v17_batch7_enhancement": {
+        "date": "2026-04-29",
+        "description": "Batch 7 deep enhancement — private charter pair (Jeju + ソウル). Both tours have 4 route options as itineraryStops (East/West/South/Custom for Jeju; Gapyeong/DMZ-Paju/Everland-Folk/Custom for ソウル). Each route option enhanced with 1,000+ char descriptions weaving verified facts about constituent POIs into a coherent route narrative. product profile recalibrated to verified-fact 0-1 float scores using cross-route weighted averaging. private_tour_fit, customizable_route_fit, flexibility_fit set from None to 1.0. 9 new POIs added to KB (v1.9 → v1.10): udo_island, manjanggul_lava_tube, sanbangsan_mountain, sangumburi_crater, yakcheonsa_temple, garden_of_morning_calm, petite_france, everland, korean_folk_village_yongin. DMZ POIs and Nami Island deferred to Batch 8.",
+        "_score_audit": {
+          "_methodology": "0-1 float scale per Phase 1 standard. Both tours are private 9-10hr charters with 4 route options (East/West/South/Custom for Jeju; Gapyeong/DMZ-Paju/Everland-Folk/Custom for ソウル). Scores are weighted averages across the recommended routes, with extreme-outlier dimensions weighted toward the realistic middle (e.g. UNESCO score reflects average across routes — Route 1 maxes UNESCO, but weighted average ~0.65). Charter-format dimensions (private_tour_fit, customizable_route_fit, flexibility_fit) are set to 1.0 by definition. Walking_level and indoor_ratio are time-weighted averages across the typical day.",
+          "deltas_applied": {
+            "private_tour_fit": {
+              "old": null,
+              "new": 1.0,
+              "reasoning": "VERIFIED — Both tours are per-vehicle private charters by definition. Was previously None (unset)."
+            },
+            "customizable_route_fit": {
+              "old": null,
+              "new": 1.0,
+              "reasoning": "VERIFIED — Three recommended routes plus a fully custom option. Both tours fully customizable. Was previously None."
+            },
+            "flexibility_fit": {
+              "old": null,
+              "new": 1.0,
+              "reasoning": "VERIFIED — Driver-guide adapts pacing, order, lunch, optional add-ons (Udo ferry, Smart Queue). Was previously None."
+            },
+            "small_group_fit": {
+              "old": 0.2,
+              "new": 0.15,
+              "reasoning": "Verified — these are PRIVATE charters not small-group. 0.15 reflects that a 1-vehicle-of-9 booking still functions as a small private group, but the product type is private not small_group."
+            },
+            "bus_fit": {
+              "old": 0.2,
+              "new": 0.05,
+              "reasoning": "Verified — private charter = sedan/SUV/van, never bus. 0.05 reflects near-zero bus fit (only the very largest groups of 10+ would step up to a coach format)."
+            },
+            "unesco_fit": {
+              "old": 1.0,
+              "new": 0.65,
+              "reasoning": "VERIFIED weighted average across routes. Route 1 (East): max UNESCO — Seongsan Ilchulbong is triple-UNESCO + Manjanggul UNESCO 2007. Route 2 (West): minimal UNESCO content. Route 3 (South): partial UNESCO — Jusangjeolli is Global Geopark, Sanbangsan is Geopark. Weighted across routes = ~0.65, significantly lower than the previous 1.0 which assumed Route 1 always selected. Custom Route can max UNESCO if the traveler picks specifically — but the average traveler will not."
+            },
+            "scenic_level": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "VERIFIED — all 3 named routes deliver catalog-leading scenic content (volcanic crater, beach, basalt cliff, waterfall, tea field, lava dome). 0.95 calibrated, only marginally below max (saving 1.0 for tours that deliver multiple flagship scenic types in a single 9-hour window — which only Route 1 of 3 does)."
+            },
+            "first_time_fit": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "VERIFIED — strongest first-time-Jeju option because Route 1 alone covers the bucket-list UNESCO sites. 0.95 reflects that the WEST route is less first-time-iconic than East, so an averaged score is just below absolute max."
+            },
+            "iconic_landmark_fit": {
+              "old": 1.0,
+              "new": 0.95,
+              "reasoning": "VERIFIED — Seongsan Ilchulbong is Jeju's single most iconic landmark and is included on Route 1 + Custom. Slight markdown to 0.95 because Routes 2 (West) and 3 (South) trade iconic landmark count for café/temple density."
+            },
+            "walking_level": {
+              "old": 0.6,
+              "new": 0.5,
+              "reasoning": "VERIFIED — weighted across routes. Route 1: Seongsan summit climb is the bottleneck (~0.7). Route 2: low (~0.3 — beach, park, café). Route 3: Sanbangsan stairs to cave temple (~0.55). Average ~0.5, slightly below previous 0.6."
+            },
+            "indoor_ratio": {
+              "old": 0.3,
+              "new": 0.2,
+              "reasoning": "VERIFIED — weighted across routes (Fix 1 time-weighted methodology). Route 1: low indoor (~0.15 — Manjanggul is the only major indoor stop, and is currently 休業). Route 2: moderate (~0.25 — Hallim Park caves + O'sulloc museum interiors). Route 3: moderate (~0.30 — Yakcheonsa main hall, Olle Market arcade, Sanbanggulsa cave). Average ~0.20, lower than previous 0.30. Note: with Manjanggul 休業 (until verified reopening), the actual indoor exposure on Route 1 is even lower."
+            },
+            "weather_sensitivity": {
+              "old": 0.4,
+              "new": 0.5,
+              "reasoning": "VERIFIED — moderate weather sensitivity. Route 1 (East UNESCO) is heavily outdoor and weather-vulnerable. Route 3 (South temples + market) has the strongest indoor fallback. The PRIVATE-charter format itself reduces weather impact (driver-guide can shift to indoor stops on bad-weather days), but the recommended routes are still mostly outdoor. 0.50 calibrated up from 0.40 — previous 0.40 over-credited the charter format flexibility."
+            },
+            "shopping_fit": {
+              "old": 0.8,
+              "new": 0.55,
+              "reasoning": "VERIFIED — only Route 3 has substantial shopping (Olle Maeil Market). Routes 1, 2 have minimal shopping (Aewol cafés, beach souvenir kiosks). Custom Route can max shopping if specifically requested. Weighted ~0.55, materially lower than the previous 0.80 which appeared inflated."
+            },
+            "food_fit": {
+              "old": 0.6,
+              "new": 0.7,
+              "reasoning": "VERIFIED — Jeju's food density is high across all routes (haenyeo seafood, Hallabong tangerines, black pork, Olle Market). Route 1 has the strongest meal hubs (Seongsan harbor); Route 3 has Olle Market. 0.70 calibrated up from previous 0.60."
+            },
+            "premium_fit": {
+              "old": 1.0,
+              "new": 1.0,
+              "reasoning": "Verified — private vehicle + flexible itinerary + driver-guide = top of premium scale. Maintained at 1.0."
+            },
+            "value_for_money_fit": {
+              "old": 0.6,
+              "new": 0.55,
+              "reasoning": "Verified — per-vehicle pricing is excellent value for groups of 4-9 but expensive for solo travelers. Slight markdown to 0.55 reflects the per-person break-even calculation: vs. small-group bus tours at ~70,000 KRW per person, the charter only beats it for groups of 5+."
+            },
+            "storytelling_fit": {
+              "old": 1.0,
+              "new": 0.85,
+              "reasoning": "Verified — driver-guide narrates throughout, and the routes carry strong narrative arcs (UNESCO geology, K-drama, Joseon folk culture, tea-merchant heritage). 0.85 reflects that narrative depth varies by driver-guide assigned and by route chosen — was previously 1.0 which assumed uniformly maximal storytelling, which is not realistic."
+            }
+          }
+        }
+      }
+    }
+  }
+}

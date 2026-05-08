@@ -1,0 +1,1838 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "seoul-suwon-hwaseong-waujeongsa-starfield",
+  "locale": "zh-TW",
+  "product_id": "seoul-suwon-hwaseong-waujeongsa-starfield",
+  "seo": {
+    "pageTitle": "水原華城·臥牛精舍·星野圖書館一日遊 | AtoC Korea",
+    "metaDescription": "首爾出發9至10小時遊：UNESCO水原華城、水原星野圖書館、臥牛精舍山寺體驗。",
+    "ogImage": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
+    "primaryKeywords": [
+      "水原華城一日遊",
+      "臥牛精舍龍仁",
+      "水原星野圖書館",
+      "首爾水原文化遺址遊",
+      "華城要塞UNESCO遊"
+    ],
+    "title": "水原華城＋臥牛精舍佛寺＋星空圖書館文化遺產一日遊 | AtoC Korea",
+    "description": "首爾出發一日遊：水原華城UNESCO世界遺產→星空圖書館水原→臥牛精舍佛寺（全球最大木雕臥佛＋3,000尊亞洲佛像）。小團體，英語導遊，含全部門票，全年開團。"
+  },
+  "catalog_card": {
+    "slug": "seoul-suwon-hwaseong-waujeongsa-starfield",
+    "title": "水原華城＋臥牛精舍＋星空圖書館文化遺產一日遊",
+    "subtitle": "UNESCO古堡、山中古剎、網紅圖書館——韓國歷史、精神與當代的三重體驗。",
+    "region": "水原＆龍仁",
+    "duration": "9–10小時",
+    "stopsCount": 3,
+    "rating": 4.9,
+    "reviewCount": 57,
+    "badges": [
+      "世界文化遺產",
+      "歷史遺蹟＋現代一日遊",
+      "門票已包含"
+    ],
+    "heroImage": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=600&q=80",
+    "priceLabel": "每人 US$48.60 起 （九折優惠，原價$54）",
+    "shortCardDescription": "從首爾出發遊覽三大截然不同韓國體驗的小團體一日遊：水原華城（UNESCO）、臥牛精舍（藏於首爾近郊山間的古剎）及星際圖書館。全程約10小時。",
+    "tags": [
+      "UNESCO遺產",
+      "歷史與現代一日遊",
+      "含門票"
+    ]
+  },
+  "headlineLine1": "水原華城、臥牛精舍佛寺",
+  "headlineLine2": "與星空圖書館文化遺產之旅",
+  "price": {
+    "amountLabel": "48.60",
+    "originalPriceUsd": 54,
+    "salePriceUsd": 48.6,
+    "discountPercent": 10,
+    "currency": "USD",
+    "per": "人",
+    "priceSource": "direct_rate",
+    "priceNote": "價格以 AtoC Korea 官網直售價為準。"
+  },
+  "hero": {
+    "imageUrl": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
+    "imagePosition": "center 50%",
+    "tagline": "18世紀UNESCO城牆要塞、最上鏡的韓國當代圖書館、山間寧靜融合佛寺——韓國三面，一日全覽",
+    "pills": [
+      "世界遺產",
+      "門票已包含",
+      "首爾來回接送"
+    ],
+    "meta": {
+      "duration": "9–10小時",
+      "region": "水原＆龍仁",
+      "stops": "3 個景點",
+      "rating": 4.9,
+      "ratingStars": 5
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "行程總覽"
+    },
+    {
+      "id": "itinerary",
+      "label": "詳細行程"
+    },
+    {
+      "id": "details",
+      "label": "注意事項"
+    },
+    {
+      "id": "faq",
+      "label": "常見問題"
+    },
+    {
+      "id": "reviews",
+      "label": "旅客評價"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "行程時間",
+      "value": "9至10小時"
+    },
+    {
+      "icon": "landmark",
+      "label": "文化遺產",
+      "value": "世界遺產＋古寺"
+    },
+    {
+      "icon": "camera",
+      "label": "拍照潛力",
+      "value": "極高"
+    },
+    {
+      "icon": "footprints",
+      "label": "步行強度",
+      "value": "中等"
+    },
+    {
+      "icon": "users",
+      "label": "參團形式",
+      "value": "小團體"
+    },
+    {
+      "icon": "ticket",
+      "label": "門票費用",
+      "value": "已包含"
+    },
+    {
+      "icon": "gauge",
+      "label": "行程節奏",
+      "value": "均衡"
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "g1",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200&q=80",
+      "alt": "水原華城華虹門7拱水門全景",
+      "caption": "水原華城UNESCO世界文化遺產——華虹門7拱水門，18世紀朝鮮最完整的城牆要塞城市",
+      "location": "水原，京畿道",
+      "atmosphere": "水原華城UNESCO世界文化遺產——華虹門7拱水門，18世紀朝鮮最完整的城牆要塞城市是本路線的代表性停靠點，適合拍照並感受現場氛圍。"
+    },
+    {
+      "id": "g2",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=1200&q=80",
+      "alt": "臥牛精舍佛寺印度白檀木臥佛",
+      "caption": "臥牛精舍佛寺——3公尺高印度白檀木雕臥佛，全球最大木雕臥佛，1970年韓朝統一祈願寺",
+      "location": "臥牛精舍，龍仁，京畿道",
+      "atmosphere": "新世界2024年1月開業的旗艦第二代星際；免費入場；黑膠唱片欣賞座席"
+    },
+    {
+      "id": "g3",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1200&q=80",
+      "alt": "臥牛精舍3,000尊亞洲佛像步道",
+      "caption": "臥牛精舍山間步道——來自亞洲各佛教國家的3,000尊佛像依山而立，泛亞洲融合聖地",
+      "location": "臥牛精舍，龍仁，京畿道",
+      "atmosphere": "臥牛精舍山間步道——來自亞洲各佛教國家的3是本路線的代表性停靠點，適合拍照並感受現場氛圍。"
+    },
+    {
+      "id": "g4",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+      "alt": "星空圖書館水原22公尺書架中庭全景",
+      "caption": "星空圖書館水原——22公尺高圓柱形書架中庭，韓國最受歡迎的室內拍照景點之一",
+      "location": "星空水原購物中心，水原",
+      "atmosphere": "長安門至華西門1公里城牆步道；陡峭坡度；敵臺與將臺"
+    },
+    {
+      "id": "g5",
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+      "alt": "華城行宮彩繪屋簷的傳統韓式木質建築圍繞石板庭院排列",
+      "caption": "華城行宮庭院",
+      "location": "水原華城城牆內的華城行宮",
+      "atmosphere": "韓國最大的行宮（臨時行宮）；正祖的臨時住所；從19世紀火災中複原"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "≈ 10:00",
+      "duration": "120分鐘",
+      "name": "水原華城",
+      "category": "UNESCO要塞",
+      "description": "**水原華城——1997年UNESCO世界文化遺產**——是韓國唯一同時保存有原始10冊施工記錄（《華城城役儀軌》，2007年另列入UNESCO世界記憶遺產）的城牆要塞城市。由正祖大王（朝鮮第22代國王）命令於**1794至1796年，僅2年9個月**建成，旨在將朝鮮首都從漢陽遷至水原，並紀念被悶死的父親思悼世子。城牆由**丁若鏞**構成，融合韓式、中式及西方城防科學；丁若鏞並發明瞭**巨重機（巨重機）**——以西方力學原理構成的滑輪組吊車，是韓國建築史首次應用西方工程技術的紀錄。城牆全周長**5.74公里**，設有41處軍事設施，含4座主城門。今日導覽步行涵蓋長安門至華西門之間約1.2公里的最內容豐富城牆段。緊鄰的**華城行宮**是韓國現存最大行宮（原576間），**洛南軒**是現場唯一保存自1796年原建的真實建築，其他建築均為依儀軌複原的重建物。**行宮換崗儀式**週二至日上午11:00在新豐樓前舉行（免費，約15分鐘）。",
+      "highlights": [
+        "**1997年UNESCO世界文化遺產**——韓國唯一保存原施工記錄的城牆要塞城市",
+        "1794至1796年，正祖大王命令建造，歷時2年9個月",
+        "丁若鏞構成，融合韓式＋中式＋西方城防科學",
+        "《華城城役儀軌》施工記錄——2007年UNESCO世界記憶遺產",
+        "**韓國現存最大行宮（原576間）**，洛南軒是唯一原1796年真實建築",
+        "**換崗儀式週二至日上午11:00，免費，約15分鐘**",
+        "韓劇《大長今》（2003年）取景地",
+        "**門票已含括在行程費用內**"
+      ],
+      "timeUsed": [
+        "在長安門附近大巴下車——約5分鐘",
+        "在長安門進行團體簡介——約5分鐘",
+        "長安門→華西門→華西將閣步道——約25–30分鐘",
+        "拍照時間+返回車輛集合——約10分鐘",
+        "可選：華城列車（練武臺↔八達門）——另付費"
+      ],
+      "whyOnRoute": "華城是全日UNESCO遺產主核心亮點——朝鮮時代最完整的城市防禦體系，配合行宮的歷史離宮體驗，為全日建立深厚的朝鮮王朝文化基礎，為後續現代圖書館和融合佛寺提供歷史文脈對照。",
+      "visitBasics": {
+        "hours": "城牆步道24小時（無閘門）；推薦09:00-18:00（夏季）/09:00-17:00（冬季）",
+        "closed": "全年開放（華城列車週一停運）",
+        "admission": "成人₩1,000 / 青少年₩700 / 兒童₩500（免費：6歲以下·65歲以上·穿韓服者·每月最後一個週三）",
+        "walking": "中等強度——城牆在西將臺附近有陡坡；城門處有臺階；部分路段輪椅不便通行"
+      },
+      "convenience": {
+        "restroom": "長安門、華西門、八達門及練武臺均設有廁所",
+        "parking": "大巴在長安門停車場下客；練武臺設有大巴專用停車位"
+      },
+      "smartNotes": {
+        "photo": "**華虹門（北水門）**——7個拱門橫跨水原川，是代表性拍攝構圖，清晨或傍晚拍攝倒影效果最佳。",
+        "facilities": "長安門+八達門+行宮廣場遊客服務中心。英韓雙語標識。華城列車（₩1,500往返）運行。",
+        "tip": "建議穿著舒適鞋履——城牆石材凹凸不平。行宮廣場韓服租賃店可享受**免費入場**優惠。"
+      },
+      "_poi_meta": {
+        "poi_key": "hwaseong_fortress",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "UNESCO WHC",
+          "VisitKorea",
+          "Suwon CVB",
+          "KoreaToDo",
+          "UNESCO World Heritage Centre — Suwon Hwaseong (Criteria ii/iii inscription, 1997)",
+          "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Hwaseong Fortress + Hwaseong Seongyeok Uigwe Memory of the World 2007)",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Suwon Hwaseong Fortress official listing)",
+          "Suwon City Tourism (suwon.go.kr/tour — Hwaseong Yeolcha trolley + admission + opening hours)",
+          "Wikipedia (Hwaseong Fortress — Jeong Yak-yong + Geojunggi crane + 5.74 km perimeter + 41 structures)"
+        ]
+      }
+    },
+    {
+      "number": 2,
+      "time": "≈ 13:30",
+      "duration": "90分鐘",
+      "name": "星空圖書館水原（星空水原購物中心）",
+      "category": "當代文化地標",
+      "description": "**星空圖書館水原**——位於**新世界星空水原購物中心（2024年1月26日開幕）**，是新世界地產第五座星空購物中心，總投資超過1兆韓元（約7.5億美元）；約33萬4,000平方公尺使其成為繼河南星空外韓國第二大室內購物中心。由**BCHO Partners（趙秉沐）**構成——同一建築師事務所負責2017年COEX原版星空圖書館——水原版是升級的第二代構成，**22公尺高書架**是韓國最高的圓柱形書架建築之一。圖書館橫跨4層（一至四樓挑空中庭），館藏約7萬冊書籍與雜誌。**免費對外開放**，每日10:00至22:00。特色設施：黑膠唱片聆聽區、每月輪換當代藝術展覽，及春季（3至4月）中庭千朵粉色LED花瓣裝置。地下一樓**Eatopia美食廣場**（30多家餐廳，₩5,000至₩40,000以上）是本行程自費午餐的推薦場所。Starfield免費接駁巴士從水原站4號出口發車（約10分鐘）。",
+      "highlights": [
+        "**新世界旗艦第二代星空購物中心——2024年1月26日開幕**",
+        "BCHO Partners構成（同時構成2017年COEX原版星空圖書館）",
+        "**4層圖書館，22公尺高書架**——韓國最高的圓柱形書架之一",
+        "約7萬冊書籍＋雜誌，**免費開放**",
+        "黑膠唱片聆聽區、每月輪換當代藝術展覽",
+        "春季（3至4月）中庭千朵粉色LED花瓣裝置",
+        "Eatopia美食廣場（30多家餐廳），自費午餐推薦地點",
+        "購物中心每日10:00至22:00開放"
+      ],
+      "timeUsed": [
+        "從龍仁/民俗村駕車15分鐘",
+        "購物中心+圖書館參觀——約45–50分鐘",
+        "在圖書館或美食廣場咖啡小歇——約15分鐘",
+        "返回車輛集合",
+        "可選：黑膠咖啡廳（5樓，含飲品約₩18,500）"
+      ],
+      "whyOnRoute": "星空圖書館是繼華城歷史景點後的「現代韓國」景色對照——22公尺高書架建築是Instagram上最多人分享的韓國室內景點之一。全程室內構成同時解決午餐安排，為下午臥牛精舍的山間佛寺體驗提供舒適的中段預留時間。",
+      "visitBasics": {
+        "hours": "購物中心10:00-22:00；圖書館在購物中心營業期間全程開放",
+        "closed": "每月1至2天休館（通常為週一——建議參觀前在線確認）",
+        "admission": "**圖書館免費**（購物中心全場免費入場；購物費用自理；Aquafield水上樂園另付約₩28,000）",
+        "walking": "輕鬆——全層設有自動扶梯及電梯；全場輪椅及嬰兒車無障礙通行"
+      },
+      "convenience": {
+        "restroom": "各層設有多個衛生間；家庭洗手間內含尿布更換臺",
+        "parking": "地下停車位約5,000個；消費₩30,000以上享3小時免費停車；設有大巴專用區"
+      },
+      "smartNotes": {
+        "photo": "**圖書館中央中庭22米高書架**——從4樓畫廊俯瞰是代表性拍攝角度。",
+        "facilities": "B1層Eatopia美食廣場（30家以上餐廳₩5,000至40,000），4層玩具王國，B1至2層Aquafield水上樂園。",
+        "tip": "**圖書館免費**——極具性價比的拍照景點。**水原站出口有免費星野接駁巴士**（下車步行3分鐘）。"
+      },
+      "_poi_meta": {
+        "poi_key": "starfield_library_suwon",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Starfield official",
+          "VisitKorea",
+          "Shinsegae press",
+          "BCHO Partners",
+          "Starfield Suwon official (starfield.co.kr/suwon — opening date 2024-01-26 + library 4F-7F + free admission)",
+          "Shinsegae Property press release (Jan 2024 grand opening + 5th Starfield mall + 2nd-generation flagship concept)",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Starfield Library Suwon listing)",
+          "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
+          "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
+        ]
+      }
+    },
+    {
+      "number": 3,
+      "time": "≈ 15:30",
+      "duration": "75分鐘",
+      "name": "臥牛精舍佛寺",
+      "category": "佛教寺院（現代折衷主義）",
+      "description": "**臥牛精舍——1970年由海燈大師創立**，作為韓戰（1950至1953年）後半島分裂時，北韓佛教僧侶與家鄉寺廟斷絕聯系的避難地。寺廟原名「千佛寺」（「千零一佛之寺」），以向33位佛教神靈祈願韓朝統一而得名。**臥牛**源自附近蓮花山的山形地貌，形如「橫臥之牛」。臥牛精舍是韓國生動的**泛亞洲融合佛教聖地**——印度、斯里蘭卡、泰國、緬甸、西藏、中國及韓國各地佛教建築風格在山間步道間並列共存，由創辦人海燈大師歷數十年從亞洲各國蒐集並安奉。寺廟核心景觀：**3公尺高的印度白檀木雕臥佛——全球最大的木雕臥佛**，安奉於寺廟主殿；與臥佛形成對比的是入口大道排列的**3,000尊亞洲各國佛像**，構成寺廟最壯觀的景色走廊。其他地標：**大型韓朝統一祈願銅鐘**；**石雕四面佛像**；建在蓮花池上的**韓式亭閣**；及散佈山間的**緬甸和泰式佛塔**。寺廟全年365天開放，無明確關閉時間，**免費入場**。建議穿著覆肩服飾進入主殿（夏季穿著無袖者建議備薄外套）。",
+      "highlights": [
+        "**1970年由海燈大師創立作為韓朝統一祈願寺**",
+        "折衷融合構成——泛亞洲佛教（印度、斯里蘭卡、泰國、緬甸、西藏、中國、韓國）",
+        "約3,000尊來自亞洲各佛教國家的佛像",
+        "**3公尺高印度白檀木雕臥佛＝全球最大的木雕臥佛**",
+        "大型韓朝統一祈願銅鐘",
+        "緬甸及泰式佛塔散佈山間步道",
+        "全年免費入場，365天開放",
+        "**建議主殿參觀覆肩著裝（夏季無袖者備薄外套）**"
+      ],
+      "timeUsed": [
+        "從水原星野乘大巴至龍仁約30分鐘",
+        "寺院入口團體簡介——約5分鐘",
+        "自由參觀：佛頭→主要殿堂→世界最大臥佛→捐贈佛像展——約35分鐘",
+        "拍照+集合——約10分鐘",
+        "可選敲響太平鐘（8噸青銅鐘）並祈願和平統一（可自由捐獻，約10分鐘）"
+      ],
+      "whyOnRoute": "臥牛精舍是全日最獨特的景點——在首爾近郊找不到第二個類似的場所。作為下午壓軸站，山間佛寺的靜謐氛圍與早晨城牆的歷史壯闊及中午圖書館的現代感形成完整的三段式對比，賦予全日行程清晰的節奏起伏。",
+      "visitBasics": {
+        "hours": "每日06:00–19:00（訪客殿堂通常09:00–18:00）",
+        "closed": "全年開放",
+        "admission": "**免費**（歡迎捐贈）；寺廟住宿一晚約₩70,000–90,000",
+        "walking": "中等強度——位於山坡上的寺院，殿堂間有臺階；約步行500米"
+      },
+      "convenience": {
+        "restroom": "主殿及遊客信息區附近",
+        "parking": "寺院入口免費停車場；可停旅遊大巴"
+      },
+      "smartNotes": {
+        "photo": "**入口處8米佛頭**——臥牛精舍代表性拍攝角度，尤以側面角度最佳。",
+        "facilities": "遊客信息中心、寺廟住宿登記處、可購買僧袍。",
+        "tip": "**免費入場**——與其他韓國主要寺院相比性價比極高。千萬不要錯過世界最大木製臥佛。"
+      },
+      "_poi_meta": {
+        "poi_key": "waujeongsa_temple",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.28",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "VisitKorea",
+          "Wikipedia",
+          "Visit Yongin",
+          "Templestay Korea",
+          "Korea Tourism Organization (english.visitkorea.or.kr — Waujeongsa Temple official listing)",
+          "Visit Yongin Tourism (yongin.go.kr/tour — Master Haedeung 1970 founding + reunification prayer temple)",
+          "Templestay Korea (templestay.com — Waujeongsa overnight program + 108-bow practice + sachal eumsik cuisine)",
+          "Wikipedia (Waujeongsa — pan-Asian Buddhist syncretism + Indravarna pagoda + Taepyeongjong 8-ton bell)",
+          "Korea Buddhism Yeonhwasan/Lotus-Mountain regional guide "
+        ]
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "華城",
+      "type": "origin",
+      "theme": "UNESCO歷史"
+    },
+    {
+      "name": "星野圖書館",
+      "type": "primary",
+      "theme": "現代韓國"
+    },
+    {
+      "name": "午餐",
+      "type": "meal",
+      "theme": "放鬆轉換"
+    },
+    {
+      "name": "臥牛精舍",
+      "type": "return",
+      "theme": "寺廟收尾"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "UNESCO遺產（第1站）",
+      "duration": "第1站",
+      "description": "上午：UNESCO文化遺產"
+    },
+    {
+      "phase": "圖書館＆午餐（第2至3站）",
+      "duration": "第2–3站",
+      "description": "中午：圖書館與午餐"
+    },
+    {
+      "phase": "山間佛寺收尾（第4站）",
+      "duration": "第4站",
+      "description": "下午：山地寺廟收尾"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "行程路線一覽",
+    "subtitle": "通常在首爾兩處集合點（弘益大學站或明洞）約09:00接送；上午參觀UNESCO遺產，中午遊覽當代圖書館兼午餐，下午遊覽臥牛精舍並享受寧靜的寺廟時光。"
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "對朝鮮歷史遺產及佛教文化感興趣的旅客",
+      "希望一日體驗UNESCO遺址＋現代構成＋精神聖地三重景觀的旅客",
+      "情侶（臥牛精舍的靜謐山間氛圍是浪漫收尾選項）",
+      "攝影愛好者（三個截然不同的景色場景）",
+      "初次造訪水原和龍仁的旅客"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "行程安排思路",
+        "icon": "landmark",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "三段歷史時間軸——韓國千年文化弧線",
+            "detail": "水原華城（18世紀朝鮮王朝）→星空圖書館（2024年現代韓國）→臥牛精舍（1970年融合佛教，以2,000年亞洲佛教傳統為底蘊）——三個景點構成一條跨越時代的韓國文化縱覽。"
+          },
+          {
+            "label": "臥牛精舍是近首爾唯一的泛亞洲融合佛寺體驗",
+            "detail": "首爾近郊找不到第二個類似臥牛精舍的場所——3,000尊來自印度、泰國、緬甸、西藏、中國的佛像在山間步道上並列共存，加上全球最大木雕臥佛，是完全不同於傳統韓國佛寺的獨特體驗。"
+          },
+          {
+            "label": "星空圖書館作為全天節奏調節器",
+            "detail": "繼上午城牆的戶外歷史步道後，星空圖書館提供舒適的室內午餐預留時間，讓旅客在不減損行程深度的情況下，以飽足的精力迎接下午臥牛精舍的山間步道。"
+          }
+        ]
+      },
+      {
+        "title": "實際步行強度究竟如何",
+        "icon": "footprints",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "華城是最活躍的路段",
+            "detail": "城牆步行是路線的主要體力消耗，有石階和不平整路面。大多數遊客應對自如，建議穿舒適的平底鞋。"
+          },
+          {
+            "label": "星野是休息時間",
+            "detail": "圖書館和午餐休息本質上是室內步行和坐歇時間，為路線提供實用的中段預留時間。"
+          },
+          {
+            "label": "臥牛精舍難度適中",
+            "detail": "寺院內有些上坡步行和臺階，但每段路程較短，主要佛像從入口步行5分鐘即可到達。"
+          }
+        ]
+      },
+      {
+        "title": "天氣說明",
+        "icon": "cloud-rain",
+        "iconBg": "bg-slate-50/80",
+        "iconColor": "text-slate-600",
+        "items": [
+          {
+            "label": "華城是最受天氣影響的景點",
+            "detail": "大雨或降雪使城牆步行不舒適；華城行宮室內宮殿是雨天的好選擇。"
+          },
+          {
+            "label": "星野是完整的天氣預留時間",
+            "detail": "圖書館和商場完全室內，是下雨天的有力依託。"
+          },
+          {
+            "label": "夏季溼度影響全天",
+            "detail": "要塞城牆和寺院均為開放空間；6–8月請攜帶水和防曬用品。"
+          }
+        ]
+      }
+    ],
+    "lessIdealFor": [
+      "期望觀賞大型民俗表演的旅客（建議選民俗村版本）",
+      "行動不便或無法應對城牆石階的旅客",
+      "10歲以下年幼兒童（全日步行量較大）",
+      "偏好完全現代購物行程的旅客"
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "接送與下車地點",
+      "preview": "兩個首爾集合點；約09:00出發",
+      "content": [
+        "通常從弘益大學站（4號出口）及明洞站接送",
+        "通常從第一集合點約08:30至09:00出發",
+        "請提前至少10分鐘在您選定的集合點等候"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "步行強度與地形",
+      "preview": "中等；華城城牆是全日最具體力需求的路段",
+      "content": [
+        "華城要塞：城牆步道含石階及城門石梯，歷史地面不平整",
+        "星空圖書館及購物中心：平坦室內步行，設有手扶梯",
+        "臥牛精舍：中等，含部分上坡路段和樓梯"
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "天候政策",
+      "preview": "小雨可進行；大雨縮短城牆段",
+      "content": [
+        "小雨：行程照常進行，適當調整",
+        "大雨或下雪：華城城牆段可能縮短，改以華城行宮主殿取代",
+        "星空圖書館為全程室內景點，可作為惡劣天氣的預留時間核心亮點"
+      ]
+    },
+    {
+      "id": "wear",
+      "title": "穿著與攜帶物品",
+      "preview": "步行鞋、佛寺著裝、分層衣物",
+      "content": [
+        "有抓地力的舒適步行鞋（華城城牆和臥牛精舍均需要）",
+        "佛寺參觀建議覆肩著裝（夏季無袖者攜帶薄外套）",
+        "氣溫在城牆暴露段與室內空間之間落差較大，建議分層穿著"
+      ]
+    },
+    {
+      "id": "included",
+      "title": "費用包含項目",
+      "preview": "導遊、交通及門票含括；午餐自費",
+      "variant": "included",
+      "content": [
+        "專業英語導遊",
+        "首爾往返小型巴士交通",
+        "所有景點門票（華城、華城行宮含括；星空圖書館免費；臥牛精舍免費）",
+        "午餐自費（建議在星空美食廣場用餐，每人約₩10,000至₩20,000）"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "即時天氣連動"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "每日更新"
+    }
+  },
+  "seasonalVariations": [
+    {
+      "season": "春季",
+      "title": "櫻花季",
+      "description": "華城水門附近野櫻盛開，是全年最受歡迎的城牆攝影時段。臥牛精舍山林間同時呈現春季嫩綠，佛寺氛圍格外清幽。",
+      "icon": "flower"
+    },
+    {
+      "season": "夏季",
+      "title": "鬱鬱蔥蔥但潮溼",
+      "description": "城牆段日照強烈，建議戴帽＋防曬。星空圖書館全程室內，是午後避暑的完美選項。臥牛精舍在鬱鬱蔥蔥的夏日山林中格外靜謐。",
+      "icon": "sun"
+    },
+    {
+      "season": "秋季",
+      "title": "全面最佳季節",
+      "description": "秋葉映襯華城城牆，臥牛精舍的山間步道火紅金黃，是全年攝影品質最高的季節。",
+      "icon": "leaf"
+    },
+    {
+      "season": "冬季",
+      "title": "靜謐而壯觀",
+      "description": "城牆段風大寒冷，建議穿著防風外套。星空圖書館提供溫暖的室內預留時間。臥牛精舍在白雪或冬日枯枝間呈現獨特禪意。",
+      "icon": "snowflake"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "當地持照合法業者",
+      "description": "持有完整保險的韓國合法旅遊業者",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "持照英語導遊全程陪同，熟悉華城歷史典故及臥牛精舍的多元宗教背景，提供有深度的景點解說。"
+    },
+    {
+      "icon": "route",
+      "title": "路線專家",
+      "description": "精心調校的行程，非泛用路線",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "華城→星空圖書館→臥牛精舍的路線順序是按地理效率＋歷史到現代→精神體驗的行程參觀脈絡精心規劃，三個景點各自代表韓國的不同面向。"
+    },
+    {
+      "icon": "users",
+      "title": "精心控制團體人數",
+      "description": "規模恰到好處——適合本路線",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "小型團體確保在城牆段及臥牛精舍的山間步道保持機動性，同時讓導遊為每位旅客提供個人化關注。"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "即時通知",
+      "title": "即時確認",
+      "detail": "預訂確認函含行程摘要",
+      "description": "預訂即時收到確認信，含集合點資訊及確切集合時間。"
+    },
+    {
+      "timing": "出發前12小時",
+      "title": "出發前12小時提醒",
+      "detail": "天氣更新及路線調整通知",
+      "description": "確認天氣及城牆段開放狀況，如有路線調整提前通知。"
+    },
+    {
+      "timing": "前一晚",
+      "title": "最終接送資訊",
+      "detail": "確切接客時間與司機聯系方式",
+      "description": "發送確切集合時間、導遊聯絡方式及當日行程說明。"
+    },
+    {
+      "timing": "行程當天早晨",
+      "title": "當日路線說明",
+      "detail": "依實況提供當日行程說明",
+      "description": "導遊於集合前以訊息確認當日安排及集合標識說明。"
+    },
+    {
+      "timing": "行程途中",
+      "title": "景點逐一說明",
+      "detail": "各景點即時現場導覽",
+      "description": "導遊於華城、星空圖書館及臥牛精舍提供深度解說，現場確認換崗儀式時間及佛寺特色景觀。"
+    },
+    {
+      "timing": "行程結束後",
+      "title": "行程後支援",
+      "detail": "行程結束後反饋與後續建議",
+      "description": "行程結束後發送問卷，歡迎提供意見回饋。"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "q1",
+      "question": "這條路線和水原＋民俗村或水原＋光明洞窟行程有何不同？",
+      "answer": "三條路線共同包含水原華城＋華城行宮＋星空圖書館。本版本移除民俗村，以龍仁的臥牛精舍佛寺取代——融合佛教寺廟，設有全球最大木雕臥佛及3,000座亞洲各地佛像，偏重精神文化體驗而非民俗表演。光明洞窟版本則以光明礦山改建的洞窟主題公園作為現代景點替換。"
+    },
+    {
+      "id": "q2",
+      "question": "門票含括在行程費用內嗎？",
+      "answer": "含括——三個付費景點門票全部含括：水原華城（成人₩1,000）、華城行宮（成人₩1,500）及臥牛精舍（免費入場）。星空圖書館對外免費開放。"
+    },
+    {
+      "id": "q3",
+      "question": "午餐含括嗎？",
+      "answer": "不含。午餐在星空水原美食廣場自由用餐的自費時間——品項豐富，通常每人₩10,000至₩20,000。圖書館和購物中心是全行程第2站（約13:30），剛好對應最佳午餐時段。"
+    },
+    {
+      "id": "q4",
+      "question": "臥牛精舍有什麼特別之處？",
+      "answer": "這是一座非傳統佛寺：1970年由北韓難民僧侶金海根（海燈大師）創立，圍繞3,000餘尊來自亞洲各地的佛像建造——印度臥佛、緬甸佛塔、泰式寺廟建築等並列共存。全球最大木雕臥佛（3公尺高印度白檀木）是最具代表性的景觀。整體氛圍更像一座「活的佛教地圖」，而非單一宗派傳統寺廟。"
+    },
+    {
+      "id": "q5",
+      "question": "去寺廟需要著裝端莊嗎？",
+      "answer": "建議覆肩——夏季穿著無袖者建議攜帶薄外套。進入主殿通常需摘帽。臥牛精舍沒有嚴格著裝要求，但表示尊重的謹慎穿著是禮貌之舉。"
+    },
+    {
+      "id": "q6",
+      "question": "全日步行量如何分佈？",
+      "answer": "三段各異的步行模式：華城城牆段難度最高（坡度石階及不平整地面，約1公里）；星空圖書館全程室內平坦，含電梯；臥牛精舍有部分上坡和樓梯的山間步道（中等）。"
+    },
+    {
+      "id": "first-time",
+      "question": "這是初次造訪水原和龍仁的好選擇嗎？",
+      "answer": "是的——對想在一日內體驗一個UNESCO遺址、一個現代拍照空間和一個獨特佛教聖地的旅客，是最強力的首選組合之一，三個景點的風格截然不同卻相互補充。"
+    },
+    {
+      "id": "walking",
+      "question": "步行難度如何？",
+      "answer": "中等。最難的是華城城牆：約1公里的石砌城牆，含坡度起伏、城門樓梯及不平整歷史地面——建議穿著有抓地力的舒適步行鞋。星空圖書館全程平坦室內。臥牛精舍有部分上坡路段和樓梯，中等強度。"
+    },
+    {
+      "id": "family",
+      "question": "親子家庭適合嗎？",
+      "answer": "適合——大多數家庭帶6歲以上兒童均可舒適完成。城牆段的石階和臥牛精舍的部分坡道對嬰兒車較不友善，但星空圖書館全程可推嬰兒車，設有手扶梯。孩子通常對臥牛精舍的3,000尊佛像和大臥佛印象深刻。"
+    },
+    {
+      "id": "seniors",
+      "question": "年長旅客能否舒適地參加？",
+      "answer": "能應對樓梯和不平整地面的活躍銀發族完全適合，行動受限的旅客建議更多考慮。華城城牆是最具挑戰性的路段（坡度石階）；星空圖書館全程平坦；臥牛精舍有部分上坡可選擇縮短。如需特殊協助請提前告知。"
+    },
+    {
+      "id": "children",
+      "question": "建議最低年齡是多少？",
+      "answer": "建議6歲以上。城牆有樓梯和不平整歷史地面，臥牛精舍寺廟地面有坡道，較小幼兒容易疲勞。大一些的孩子（10歲以上）通常對三個景點都有主動探索的興趣。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 4.9,
+    "totalReviews": 57,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 53,
+        "percentage": 93.0
+      },
+      {
+        "stars": 4,
+        "count": 3,
+        "percentage": 5.3
+      },
+      {
+        "stars": 3,
+        "count": 1,
+        "percentage": 1.8
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0.0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0.0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "可訂狀態會在付款步驟中確認。",
+    "price": {
+      "amountLabel": "48.60",
+      "originalPriceUsd": 54,
+      "salePriceUsd": 48.6,
+      "discountPercent": 10,
+      "currency": "USD",
+      "per": "人",
+      "priceSource": "direct_rate",
+      "priceNote": "價格以 AtoC Korea 官網直售價為準。"
+    }
+  },
+  "pickup_dropoff": {
+    "type": "meeting_point",
+    "meeting_points": [
+      {
+        "name": "弘大入口站4號出口",
+        "time": "08:30",
+        "note": "首爾第一個集合點，請提前10分鐘抵達。"
+      },
+      {
+        "name": "明洞 Station",
+        "time": "09:00",
+        "note": "首爾第二個集合點。"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "明洞 Station",
+        "note": "首爾標準下車點"
+      },
+      {
+        "name": "弘大入口站",
+        "note": "首爾標準下車點"
+      }
+    ],
+    "hotel_pickup_available": false,
+    "notes": "返回時間視交通狀況而定，通常為18:00–19:00之間。為提升營運效率，下車順序可能微調。請至少提前10分鐘抵達您選擇的集合點。本產品為固定集合點形式，不提供飯店接送。"
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "seoul-suwon-hwaseong-waujeongsa-starfield",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "gyeonggi_south",
+    "vehicle_type": "minicoach",
+    "duration_hours": 9.0,
+    "region_tags": [
+      "seoul_capital",
+      "gyeonggi_suwon",
+      "gyeonggi_yongin",
+      "gyeonggi_south",
+      "seoul_day_trip"
+    ],
+    "theme_tags": [
+      "unesco",
+      "fortress",
+      "buddhist_temple",
+      "contemporary_architecture",
+      "k_drama_filming_location",
+      "first_time_friendly",
+      "iconic_landmarks",
+      "heritage_plus_modern"
+    ],
+    "poi_tags": [
+      "hwaseong_fortress",
+      "hwaseong_haenggung",
+      "starfield_library_suwon",
+      "waujeongsa_temple",
+      "yeonhwasan"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.6,
+    "scenic_level": 0.85,
+    "photo_level": 1.0,
+    "culture_level": 1.0,
+    "relax_level": 0.8,
+    "first_time_fit": 0.7,
+    "family_fit": 0.85,
+    "senior_fit": 0.75,
+    "couple_fit": 0.85,
+    "solo_traveler_fit": 0.95,
+    "active_traveler_fit": 0.5,
+    "adult_family_fit": 0.95,
+    "family_with_teens_fit": 0.85,
+    "young_kids_fit": 0.55,
+    "senior_active_fit": 0.6,
+    "senior_general_fit": 0.7,
+    "mobility_friendly_fit": 0.5,
+    "stroller_fit": 0.5,
+    "one_day_fit": 1.0,
+    "same_day_flight_fit": 0.3,
+    "rain_fit": 0.65,
+    "value_for_money_fit": 0.95,
+    "iconic_landmark_fit": 0.85,
+    "cafe_fit": 0.7,
+    "food_fit": 0.5,
+    "nature_fit": 0.7,
+    "beach_fit": 0.0,
+    "nightlife_fit": 0.05,
+    "shopping_fit": 0.55,
+    "no_shopping_fit": 0.7,
+    "local_culture_fit": 1.0,
+    "storytelling_fit": 1.0,
+    "unesco_fit": 1.0,
+    "intangible_heritage_fit": 0.4,
+    "indoor_ratio": 0.45,
+    "weather_sensitivity": 0.6,
+    "comfort_level": 0.8,
+    "budget_fit": 0.85,
+    "premium_fit": 0.4,
+    "small_group_fit": 1.0,
+    "private_fit": 0.05,
+    "bus_fit": 0.7,
+    "price_band": "budget",
+    "pickup_base": "seoul_meeting_point",
+    "return_time_band": "18:00-19:00",
+    "duration_band": "9-10h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "very_low_mobility_full_route",
+        "wants_a_seoul_city_palace_focused_day"
+      ],
+      "notIdealFor": [
+        "stroller_heavy_groups",
+        "guests_avoiding_stairs_entirely"
+      ]
+    },
+    "walking_notes": [
+      "Hwaseong Fortress wall walk is the main physical section: stone steps and uneven historic surfaces.",
+      "Starfield Suwon is a flat-floor indoor stop and gives the route a useful midday recovery.",
+      "Waujeongsa Temple grounds involve some uphill walking and stairs.",
+      "Comfortable walking shoes with grip are strongly recommended.",
+      "The route is not stroller-friendly except at Starfield Suwon."
+    ],
+    "keywords": [
+      "suwon hwaseong day tour from seoul",
+      "starfield suwon library tour",
+      "waujeongsa temple tour",
+      "suwon unesco fortress small group",
+      "seoul to suwon heritage tour",
+      "hwaseong starfield waujeongsa tour",
+      "suwon library day trip",
+      "yongin temple tour",
+      "korea heritage and modern day tour",
+      "suwon hwaseong palace day tour"
+    ],
+    "synonym_hints": [
+      "suwon fortress library temple tour",
+      "korea past and present day trip",
+      "seoul day trip suwon yongin",
+      "unesco heritage seoul day tour",
+      "hwaseong wall walk small group",
+      "buddhist temple seoul day trip"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "seoul",
+    "vehicle_type_legacy": "mini_coach",
+    "anchor_poi_keys": [
+      "hwaseong_fortress",
+      "waujeongsa_temple",
+      "starfield_library_suwon",
+      "hwaseong_haenggung"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.1,
+    "flexibility_fit": 0.3,
+    "minicoach_fit": 1.0,
+    "fortress_fit": 1.0,
+    "buddhist_temple_fit": 1.0,
+    "scenic_temple_fit": 1.0,
+    "modern_eclectic_temple_fit": 1.0,
+    "pan_asian_buddhism_fit": 1.0,
+    "library_fit": 1.0,
+    "modern_architecture_fit": 0.85,
+    "history_culture_fit": 0.95,
+    "spiritual_fit": 0.95,
+    "meditation_fit": 0.85,
+    "k_drama_filming_fit": 0.5,
+    "seasonal_fit": 0.85,
+    "romantic_fit": 0.65,
+    "premium_dining_fit": 0.4,
+    "compact_route_fit": 1.0,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "suwon_hwaseong_route_fit": 1.0,
+    "suwon_central_anchor_fit": 1.0,
+    "seoul_to_suwon_30min_drive_fit": 1.0,
+    "seoul_central_hotel_pickup_fit": 1.0,
+    "return_to_seoul_central_fit": 1.0,
+    "small_group_format_fit": 1.0,
+    "fixed_schedule_format_fit": 1.0,
+    "unesco_world_heritage_anchor_fit": 1.0,
+    "unesco_world_heritage_1997_inscription_fit": 1.0,
+    "joseon_dynasty_late_18c_anchor_fit": 1.0,
+    "jeong_yak_yong_silhak_anchor_fit": 1.0,
+    "geojunggi_crane_engineering_anchor_fit": 1.0,
+    "uigwe_memory_of_world_2007_anchor_fit": 1.0,
+    "hwaseong_5_74km_perimeter_anchor_fit": 1.0,
+    "hwaseong_41_structures_anchor_fit": 1.0,
+    "starfield_library_photo_stop_fit": 1.0,
+    "starfield_22m_bookshelves_anchor_fit": 1.0,
+    "starfield_4f_to_7f_atrium_void_fit": 1.0,
+    "douglas_coupland_the_planets_rooftop_anchor_fit": 1.0,
+    "starfield_free_admission_photo_permitted_fit": 1.0,
+    "instagram_photo_density_high_fit": 1.0,
+    "waujeongsa_syncretic_buddhism_fit": 1.0,
+    "korean_war_reunification_prayer_temple_fit": 1.0,
+    "north_korean_monks_refugee_temple_origin_fit": 1.0,
+    "master_haedeung_1970_founding_anchor_fit": 1.0,
+    "world_largest_wooden_reclining_buddha_fit": 1.0,
+    "indian_sandalwood_buddha_anchor_fit": 1.0,
+    "indravarna_sri_lankan_pagoda_anchor_fit": 1.0,
+    "myanmar_brass_jade_buddha_anchor_fit": 1.0,
+    "taepyeongjong_8_ton_bell_anchor_fit": 1.0,
+    "pan_asian_buddhist_syncretism_fit": 1.0,
+    "free_admission_buddhist_temple_fit": 1.0,
+    "templestay_program_available_fit": 1.0,
+    "three_stop_pivot_day_trip_fit": 1.0,
+    "secular_to_commercial_to_religious_pivot_fit": 1.0,
+    "evening_contemplative_anchor_fit": 1.0,
+    "hwaseong_yeolcha_optional_advisory": true,
+    "waujeongsa_free_admission_advisory": true,
+    "differentiates_from_suwon_folk_village_route": true,
+    "differentiates_from_suwon_gwangmyeong_cave_route": true,
+    "available_months_signature": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "signature_window_label": "Year-round (Waujeongsa peak: April-May cherry blossoms / October-November ginkgo+maple foliage)",
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "embedded_for": [
+      "authoring",
+      "review",
+      "sql_backfill_reference"
+    ],
+    "note": "Scores were tuned for a small-group heritage-plus-modern day-trip from Seoul. Culture, photo, and storytelling fit are maxed because the route delivers a true Joseon-to-contemporary narrative arc. Iconic landmark fit is maxed because Hwaseong (UNESCO) and Starfield Library are both top-tier Korean tourism brand names. Mobility-friendly fit is conservative because the fortress walls have stone steps. Same-day-flight fit is low because the route runs 9-10 hours and ends in Seoul evening.",
+    "duration_hours": 10,
+    "stop_count": 3,
+    "score_rationale": {
+      "culture_level": "Maxed because the route covers UNESCO architecture, contemporary lifestyle, and Buddhist tradition in one day.",
+      "storytelling_fit": "Maxed because the route gives a guide three distinct narrative chapters (Joseon defense, modern Korea, Buddhist tradition).",
+      "iconic_landmark_fit": "Maxed because Hwaseong is UNESCO and Starfield Library is one of the most-photographed contemporary Korean spaces.",
+      "value_for_money_fit": "5 because the small-group format includes round-trip transport, admission, and a guide for one of the lower price points among Seoul day trips.",
+      "mobility_friendly_fit": "2 because the Hwaseong wall walk is unavoidable for the route's main attraction and is not wheelchair-accessible.",
+      "rain_fit": "4 because Starfield Suwon is fully indoor and the Hwaseong Haenggung palace is a good wet-weather alternative to the wall walk.",
+      "small_group_fit": "Direct match: this is the route's intended format."
+    },
+    "anchor_pois": [
+      "Suwon Hwaseong Fortress",
+      "Starfield Library Suwon",
+      "Waujeongsa Temple"
+    ],
+    "anchor_poi_keys": [
+      "hwaseong_fortress",
+      "starfield_library_suwon",
+      "waujeongsa_temple"
+    ],
+    "competing_products": [
+      "seoul-suwon-hwaseong-folk-village-starfield-library",
+      "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library"
+    ],
+    "primary_themes": [
+      "culture",
+      "unesco",
+      "temple",
+      "library"
+    ],
+    "secondary_themes": [
+      "modern_architecture",
+      "joseon_era",
+      "buddhism",
+      "yongin"
+    ],
+    "best_for": [
+      "culture_lovers",
+      "couples",
+      "solo_travelers",
+      "compact_route_seekers",
+      "first_time_visitors"
+    ],
+    "not_recommended_for": [
+      "mobility_limited",
+      "shoppers_only",
+      "nightlife_seekers",
+      "young_kids_pure"
+    ],
+    "enrichment_batch": "17e",
+    "enrichment_date": "2026-04-29",
+    "enrichment_kb_version": "1.27",
+    "enrichment_target_kb_version": "1.28",
+    "profile_version_pre": 6,
+    "profile_version_post": 6,
+    "schema_version": 7,
+    "patch_type": "polish_existing_pv6_to_a_grade",
+    "patch_target": "12 substantive stop instances across 3 tours; Batch 11 era authoring → A-grade pv=6 PASS (universal source-attribution gap closed; Suwon-Hwaseong-route + Starfield-library-photo-stop + Korean-Folk-Village-K-drama-set + Gwangmyeong-cave-mining-heritage + Waujeongsa-syncretic-buddhism + Suwon-galbi-tongdak-street patterns introduced)"
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "水原華城、臥牛精舍佛寺",
+        "headlineLine2": "與星空圖書館文化遺產之旅",
+        "hero": {
+          "imageUrl": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
+          "imagePosition": "center 50%",
+          "tagline": "18世紀UNESCO城牆要塞、最上鏡的韓國當代圖書館、山間寧靜融合佛寺——韓國三面，一日全覽",
+          "pills": [
+            "世界遺產",
+            "門票已包含",
+            "首爾來回接送"
+          ],
+          "meta": {
+            "duration": "9–10小時",
+            "region": "水原＆龍仁",
+            "stops": "3 個景點",
+            "rating": 4.9,
+            "ratingStars": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "行程總覽"
+          },
+          {
+            "id": "itinerary",
+            "label": "詳細行程"
+          },
+          {
+            "id": "details",
+            "label": "注意事項"
+          },
+          {
+            "id": "faq",
+            "label": "常見問題"
+          },
+          {
+            "id": "reviews",
+            "label": "旅客評價"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "clock",
+            "label": "行程時間",
+            "value": "9至10小時"
+          },
+          {
+            "icon": "landmark",
+            "label": "文化遺產",
+            "value": "世界遺產＋古寺"
+          },
+          {
+            "icon": "camera",
+            "label": "拍照潛力",
+            "value": "極高"
+          },
+          {
+            "icon": "footprints",
+            "label": "步行強度",
+            "value": "中等"
+          },
+          {
+            "icon": "users",
+            "label": "參團形式",
+            "value": "小團體"
+          },
+          {
+            "icon": "ticket",
+            "label": "門票費用",
+            "value": "已包含"
+          },
+          {
+            "icon": "gauge",
+            "label": "行程節奏",
+            "value": "均衡"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": "g1",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200&q=80",
+            "alt": "水原華城華虹門7拱水門全景",
+            "caption": "水原華城UNESCO世界文化遺產——華虹門7拱水門，18世紀朝鮮最完整的城牆要塞城市",
+            "location": "水原，京畿道",
+            "atmosphere": "水原華城UNESCO世界文化遺產——華虹門7拱水門，18世紀朝鮮最完整的城牆要塞城市是本路線的代表性停靠點，適合拍照並感受現場氛圍。"
+          },
+          {
+            "id": "g2",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=1200&q=80",
+            "alt": "臥牛精舍佛寺印度白檀木臥佛",
+            "caption": "臥牛精舍佛寺——3公尺高印度白檀木雕臥佛，全球最大木雕臥佛，1970年韓朝統一祈願寺",
+            "location": "臥牛精舍，龍仁，京畿道",
+            "atmosphere": "新世界2024年1月開業的旗艦第二代星際；免費入場；黑膠唱片欣賞座席"
+          },
+          {
+            "id": "g3",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1200&q=80",
+            "alt": "臥牛精舍3,000尊亞洲佛像步道",
+            "caption": "臥牛精舍山間步道——來自亞洲各佛教國家的3,000尊佛像依山而立，泛亞洲融合聖地",
+            "location": "臥牛精舍，龍仁，京畿道",
+            "atmosphere": "臥牛精舍山間步道——來自亞洲各佛教國家的3是本路線的代表性停靠點，適合拍照並感受現場氛圍。"
+          },
+          {
+            "id": "g4",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
+            "alt": "星空圖書館水原22公尺書架中庭全景",
+            "caption": "星空圖書館水原——22公尺高圓柱形書架中庭，韓國最受歡迎的室內拍照景點之一",
+            "location": "星空水原購物中心，水原",
+            "atmosphere": "長安門至華西門1公里城牆步道；陡峭坡度；敵臺與將臺"
+          },
+          {
+            "id": "g5",
+            "type": "photo",
+            "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
+            "alt": "華城行宮彩繪屋簷的傳統韓式木質建築圍繞石板庭院排列",
+            "caption": "華城行宮庭院",
+            "location": "水原華城城牆內的華城行宮",
+            "atmosphere": "韓國最大的行宮（臨時行宮）；正祖的臨時住所；從19世紀火災中複原"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "≈ 10:00",
+            "duration": "120分鐘",
+            "name": "水原華城",
+            "category": "UNESCO要塞",
+            "description": "**水原華城——1997年UNESCO世界文化遺產**——是韓國唯一同時保存有原始10冊施工記錄（《華城城役儀軌》，2007年另列入UNESCO世界記憶遺產）的城牆要塞城市。由正祖大王（朝鮮第22代國王）命令於**1794至1796年，僅2年9個月**建成，旨在將朝鮮首都從漢陽遷至水原，並紀念被悶死的父親思悼世子。城牆由**丁若鏞**構成，融合韓式、中式及西方城防科學；丁若鏞並發明瞭**巨重機（巨重機）**——以西方力學原理構成的滑輪組吊車，是韓國建築史首次應用西方工程技術的紀錄。城牆全周長**5.74公里**，設有41處軍事設施，含4座主城門。今日導覽步行涵蓋長安門至華西門之間約1.2公里的最內容豐富城牆段。緊鄰的**華城行宮**是韓國現存最大行宮（原576間），**洛南軒**是現場唯一保存自1796年原建的真實建築，其他建築均為依儀軌複原的重建物。**行宮換崗儀式**週二至日上午11:00在新豐樓前舉行（免費，約15分鐘）。",
+            "highlights": [
+              "**1997年UNESCO世界文化遺產**——韓國唯一保存原施工記錄的城牆要塞城市",
+              "1794至1796年，正祖大王命令建造，歷時2年9個月",
+              "丁若鏞構成，融合韓式＋中式＋西方城防科學",
+              "《華城城役儀軌》施工記錄——2007年UNESCO世界記憶遺產",
+              "**韓國現存最大行宮（原576間）**，洛南軒是唯一原1796年真實建築",
+              "**換崗儀式週二至日上午11:00，免費，約15分鐘**",
+              "韓劇《大長今》（2003年）取景地",
+              "**門票已含括在行程費用內**"
+            ],
+            "timeUsed": [
+              "在長安門附近大巴下車——約5分鐘",
+              "在長安門進行團體簡介——約5分鐘",
+              "長安門→華西門→華西將閣步道——約25–30分鐘",
+              "拍照時間+返回車輛集合——約10分鐘",
+              "可選：華城列車（練武臺↔八達門）——另付費"
+            ],
+            "whyOnRoute": "華城是全日UNESCO遺產主核心亮點——朝鮮時代最完整的城市防禦體系，配合行宮的歷史離宮體驗，為全日建立深厚的朝鮮王朝文化基礎，為後續現代圖書館和融合佛寺提供歷史文脈對照。",
+            "visitBasics": {
+              "hours": "城牆步道24小時（無閘門）；推薦09:00-18:00（夏季）/09:00-17:00（冬季）",
+              "closed": "全年開放（華城列車週一停運）",
+              "admission": "成人₩1,000 / 青少年₩700 / 兒童₩500（免費：6歲以下·65歲以上·穿韓服者·每月最後一個週三）",
+              "walking": "中等強度——城牆在西將臺附近有陡坡；城門處有臺階；部分路段輪椅不便通行"
+            },
+            "convenience": {
+              "restroom": "長安門、華西門、八達門及練武臺均設有廁所",
+              "parking": "大巴在長安門停車場下客；練武臺設有大巴專用停車位"
+            },
+            "smartNotes": {
+              "photo": "**華虹門（北水門）**——7個拱門橫跨水原川，是代表性拍攝構圖，清晨或傍晚拍攝倒影效果最佳。",
+              "facilities": "長安門+八達門+行宮廣場遊客服務中心。英韓雙語標識。華城列車（₩1,500往返）運行。",
+              "tip": "建議穿著舒適鞋履——城牆石材凹凸不平。行宮廣場韓服租賃店可享受**免費入場**優惠。"
+            },
+            "_poi_meta": {
+              "poi_key": "hwaseong_fortress",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO WHC",
+                "VisitKorea",
+                "Suwon CVB",
+                "KoreaToDo",
+                "UNESCO World Heritage Centre — Suwon Hwaseong (Criteria ii/iii inscription, 1997)",
+                "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Hwaseong Fortress + Hwaseong Seongyeok Uigwe Memory of the World 2007)",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Suwon Hwaseong Fortress official listing)",
+                "Suwon City Tourism (suwon.go.kr/tour — Hwaseong Yeolcha trolley + admission + opening hours)",
+                "Wikipedia (Hwaseong Fortress — Jeong Yak-yong + Geojunggi crane + 5.74 km perimeter + 41 structures)"
+              ]
+            }
+          },
+          {
+            "number": 2,
+            "time": "≈ 13:30",
+            "duration": "90分鐘",
+            "name": "星空圖書館水原（星空水原購物中心）",
+            "category": "當代文化地標",
+            "description": "**星空圖書館水原**——位於**新世界星空水原購物中心（2024年1月26日開幕）**，是新世界地產第五座星空購物中心，總投資超過1兆韓元（約7.5億美元）；約33萬4,000平方公尺使其成為繼河南星空外韓國第二大室內購物中心。由**BCHO Partners（趙秉沐）**構成——同一建築師事務所負責2017年COEX原版星空圖書館——水原版是升級的第二代構成，**22公尺高書架**是韓國最高的圓柱形書架建築之一。圖書館橫跨4層（一至四樓挑空中庭），館藏約7萬冊書籍與雜誌。**免費對外開放**，每日10:00至22:00。特色設施：黑膠唱片聆聽區、每月輪換當代藝術展覽，及春季（3至4月）中庭千朵粉色LED花瓣裝置。地下一樓**Eatopia美食廣場**（30多家餐廳，₩5,000至₩40,000以上）是本行程自費午餐的推薦場所。Starfield免費接駁巴士從水原站4號出口發車（約10分鐘）。",
+            "highlights": [
+              "**新世界旗艦第二代星空購物中心——2024年1月26日開幕**",
+              "BCHO Partners構成（同時構成2017年COEX原版星空圖書館）",
+              "**4層圖書館，22公尺高書架**——韓國最高的圓柱形書架之一",
+              "約7萬冊書籍＋雜誌，**免費開放**",
+              "黑膠唱片聆聽區、每月輪換當代藝術展覽",
+              "春季（3至4月）中庭千朵粉色LED花瓣裝置",
+              "Eatopia美食廣場（30多家餐廳），自費午餐推薦地點",
+              "購物中心每日10:00至22:00開放"
+            ],
+            "timeUsed": [
+              "從龍仁/民俗村駕車15分鐘",
+              "購物中心+圖書館參觀——約45–50分鐘",
+              "在圖書館或美食廣場咖啡小歇——約15分鐘",
+              "返回車輛集合",
+              "可選：黑膠咖啡廳（5樓，含飲品約₩18,500）"
+            ],
+            "whyOnRoute": "星空圖書館是繼華城歷史景點後的「現代韓國」景色對照——22公尺高書架建築是Instagram上最多人分享的韓國室內景點之一。全程室內構成同時解決午餐安排，為下午臥牛精舍的山間佛寺體驗提供舒適的中段預留時間。",
+            "visitBasics": {
+              "hours": "購物中心10:00-22:00；圖書館在購物中心營業期間全程開放",
+              "closed": "每月1至2天休館（通常為週一——建議參觀前在線確認）",
+              "admission": "**圖書館免費**（購物中心全場免費入場；購物費用自理；Aquafield水上樂園另付約₩28,000）",
+              "walking": "輕鬆——全層設有自動扶梯及電梯；全場輪椅及嬰兒車無障礙通行"
+            },
+            "convenience": {
+              "restroom": "各層設有多個衛生間；家庭洗手間內含尿布更換臺",
+              "parking": "地下停車位約5,000個；消費₩30,000以上享3小時免費停車；設有大巴專用區"
+            },
+            "smartNotes": {
+              "photo": "**圖書館中央中庭22米高書架**——從4樓畫廊俯瞰是代表性拍攝角度。",
+              "facilities": "B1層Eatopia美食廣場（30家以上餐廳₩5,000至40,000），4層玩具王國，B1至2層Aquafield水上樂園。",
+              "tip": "**圖書館免費**——極具性價比的拍照景點。**水原站出口有免費星野接駁巴士**（下車步行3分鐘）。"
+            },
+            "_poi_meta": {
+              "poi_key": "starfield_library_suwon",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Starfield official",
+                "VisitKorea",
+                "Shinsegae press",
+                "BCHO Partners",
+                "Starfield Suwon official (starfield.co.kr/suwon — opening date 2024-01-26 + library 4F-7F + free admission)",
+                "Shinsegae Property press release (Jan 2024 grand opening + 5th Starfield mall + 2nd-generation flagship concept)",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Starfield Library Suwon listing)",
+                "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
+                "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
+              ]
+            }
+          },
+          {
+            "number": 3,
+            "time": "≈ 15:30",
+            "duration": "75分鐘",
+            "name": "臥牛精舍佛寺",
+            "category": "佛教寺院（現代折衷主義）",
+            "description": "**臥牛精舍——1970年由海燈大師創立**，作為韓戰（1950至1953年）後半島分裂時，北韓佛教僧侶與家鄉寺廟斷絕聯系的避難地。寺廟原名「千佛寺」（「千零一佛之寺」），以向33位佛教神靈祈願韓朝統一而得名。**臥牛**源自附近蓮花山的山形地貌，形如「橫臥之牛」。臥牛精舍是韓國生動的**泛亞洲融合佛教聖地**——印度、斯里蘭卡、泰國、緬甸、西藏、中國及韓國各地佛教建築風格在山間步道間並列共存，由創辦人海燈大師歷數十年從亞洲各國蒐集並安奉。寺廟核心景觀：**3公尺高的印度白檀木雕臥佛——全球最大的木雕臥佛**，安奉於寺廟主殿；與臥佛形成對比的是入口大道排列的**3,000尊亞洲各國佛像**，構成寺廟最壯觀的景色走廊。其他地標：**大型韓朝統一祈願銅鐘**；**石雕四面佛像**；建在蓮花池上的**韓式亭閣**；及散佈山間的**緬甸和泰式佛塔**。寺廟全年365天開放，無明確關閉時間，**免費入場**。建議穿著覆肩服飾進入主殿（夏季穿著無袖者建議備薄外套）。",
+            "highlights": [
+              "**1970年由海燈大師創立作為韓朝統一祈願寺**",
+              "折衷融合構成——泛亞洲佛教（印度、斯里蘭卡、泰國、緬甸、西藏、中國、韓國）",
+              "約3,000尊來自亞洲各佛教國家的佛像",
+              "**3公尺高印度白檀木雕臥佛＝全球最大的木雕臥佛**",
+              "大型韓朝統一祈願銅鐘",
+              "緬甸及泰式佛塔散佈山間步道",
+              "全年免費入場，365天開放",
+              "**建議主殿參觀覆肩著裝（夏季無袖者備薄外套）**"
+            ],
+            "timeUsed": [
+              "從水原星野乘大巴至龍仁約30分鐘",
+              "寺院入口團體簡介——約5分鐘",
+              "自由參觀：佛頭→主要殿堂→世界最大臥佛→捐贈佛像展——約35分鐘",
+              "拍照+集合——約10分鐘",
+              "可選敲響太平鐘（8噸青銅鐘）並祈願和平統一（可自由捐獻，約10分鐘）"
+            ],
+            "whyOnRoute": "臥牛精舍是全日最獨特的景點——在首爾近郊找不到第二個類似的場所。作為下午壓軸站，山間佛寺的靜謐氛圍與早晨城牆的歷史壯闊及中午圖書館的現代感形成完整的三段式對比，賦予全日行程清晰的節奏起伏。",
+            "visitBasics": {
+              "hours": "每日06:00–19:00（訪客殿堂通常09:00–18:00）",
+              "closed": "全年開放",
+              "admission": "**免費**（歡迎捐贈）；寺廟住宿一晚約₩70,000–90,000",
+              "walking": "中等強度——位於山坡上的寺院，殿堂間有臺階；約步行500米"
+            },
+            "convenience": {
+              "restroom": "主殿及遊客信息區附近",
+              "parking": "寺院入口免費停車場；可停旅遊大巴"
+            },
+            "smartNotes": {
+              "photo": "**入口處8米佛頭**——臥牛精舍代表性拍攝角度，尤以側面角度最佳。",
+              "facilities": "遊客信息中心、寺廟住宿登記處、可購買僧袍。",
+              "tip": "**免費入場**——與其他韓國主要寺院相比性價比極高。千萬不要錯過世界最大木製臥佛。"
+            },
+            "_poi_meta": {
+              "poi_key": "waujeongsa_temple",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.28",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "VisitKorea",
+                "Wikipedia",
+                "Visit Yongin",
+                "Templestay Korea",
+                "Korea Tourism Organization (english.visitkorea.or.kr — Waujeongsa Temple official listing)",
+                "Visit Yongin Tourism (yongin.go.kr/tour — Master Haedeung 1970 founding + reunification prayer temple)",
+                "Templestay Korea (templestay.com — Waujeongsa overnight program + 108-bow practice + sachal eumsik cuisine)",
+                "Wikipedia (Waujeongsa — pan-Asian Buddhist syncretism + Indravarna pagoda + Taepyeongjong 8-ton bell)",
+                "Korea Buddhism Yeonhwasan/Lotus-Mountain regional guide "
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "華城",
+            "type": "origin",
+            "theme": "UNESCO歷史"
+          },
+          {
+            "name": "星野圖書館",
+            "type": "primary",
+            "theme": "現代韓國"
+          },
+          {
+            "name": "午餐",
+            "type": "meal",
+            "theme": "放鬆轉換"
+          },
+          {
+            "name": "臥牛精舍",
+            "type": "return",
+            "theme": "寺廟收尾"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "UNESCO遺產（第1站）",
+            "duration": "第1站",
+            "description": "上午：UNESCO文化遺產"
+          },
+          {
+            "phase": "圖書館＆午餐（第2至3站）",
+            "duration": "第2–3站",
+            "description": "中午：圖書館與午餐"
+          },
+          {
+            "phase": "山間佛寺收尾（第4站）",
+            "duration": "第4站",
+            "description": "下午：山地寺廟收尾"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "行程路線一覽",
+          "subtitle": "通常在首爾兩處集合點（弘益大學站或明洞）約09:00接送；上午參觀UNESCO遺產，中午遊覽當代圖書館兼午餐，下午遊覽臥牛精舍並享受寧靜的寺廟時光。"
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "對朝鮮歷史遺產及佛教文化感興趣的旅客",
+            "希望一日體驗UNESCO遺址＋現代構成＋精神聖地三重景觀的旅客",
+            "情侶（臥牛精舍的靜謐山間氛圍是浪漫收尾選項）",
+            "攝影愛好者（三個截然不同的景色場景）",
+            "初次造訪水原和龍仁的旅客"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "行程安排思路",
+              "icon": "landmark",
+              "iconBg": "bg-amber-50/80",
+              "iconColor": "text-amber-600",
+              "items": [
+                {
+                  "label": "三段歷史時間軸——韓國千年文化弧線",
+                  "detail": "水原華城（18世紀朝鮮王朝）→星空圖書館（2024年現代韓國）→臥牛精舍（1970年融合佛教，以2,000年亞洲佛教傳統為底蘊）——三個景點構成一條跨越時代的韓國文化縱覽。"
+                },
+                {
+                  "label": "臥牛精舍是近首爾唯一的泛亞洲融合佛寺體驗",
+                  "detail": "首爾近郊找不到第二個類似臥牛精舍的場所——3,000尊來自印度、泰國、緬甸、西藏、中國的佛像在山間步道上並列共存，加上全球最大木雕臥佛，是完全不同於傳統韓國佛寺的獨特體驗。"
+                },
+                {
+                  "label": "星空圖書館作為全天節奏調節器",
+                  "detail": "繼上午城牆的戶外歷史步道後，星空圖書館提供舒適的室內午餐預留時間，讓旅客在不減損行程深度的情況下，以飽足的精力迎接下午臥牛精舍的山間步道。"
+                }
+              ]
+            },
+            {
+              "title": "實際步行強度究竟如何",
+              "icon": "footprints",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "華城是最活躍的路段",
+                  "detail": "城牆步行是路線的主要體力消耗，有石階和不平整路面。大多數遊客應對自如，建議穿舒適的平底鞋。"
+                },
+                {
+                  "label": "星野是休息時間",
+                  "detail": "圖書館和午餐休息本質上是室內步行和坐歇時間，為路線提供實用的中段預留時間。"
+                },
+                {
+                  "label": "臥牛精舍難度適中",
+                  "detail": "寺院內有些上坡步行和臺階，但每段路程較短，主要佛像從入口步行5分鐘即可到達。"
+                }
+              ]
+            },
+            {
+              "title": "天氣說明",
+              "icon": "cloud-rain",
+              "iconBg": "bg-slate-50/80",
+              "iconColor": "text-slate-600",
+              "items": [
+                {
+                  "label": "華城是最受天氣影響的景點",
+                  "detail": "大雨或降雪使城牆步行不舒適；華城行宮室內宮殿是雨天的好選擇。"
+                },
+                {
+                  "label": "星野是完整的天氣預留時間",
+                  "detail": "圖書館和商場完全室內，是下雨天的有力依託。"
+                },
+                {
+                  "label": "夏季溼度影響全天",
+                  "detail": "要塞城牆和寺院均為開放空間；6–8月請攜帶水和防曬用品。"
+                }
+              ]
+            }
+          ],
+          "lessIdealFor": [
+            "期望觀賞大型民俗表演的旅客（建議選民俗村版本）",
+            "行動不便或無法應對城牆石階的旅客",
+            "10歲以下年幼兒童（全日步行量較大）",
+            "偏好完全現代購物行程的旅客"
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "接送與下車地點",
+            "preview": "兩個首爾集合點；約09:00出發",
+            "content": [
+              "通常從弘益大學站（4號出口）及明洞站接送",
+              "通常從第一集合點約08:30至09:00出發",
+              "請提前至少10分鐘在您選定的集合點等候"
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "步行強度與地形",
+            "preview": "中等；華城城牆是全日最具體力需求的路段",
+            "content": [
+              "華城要塞：城牆步道含石階及城門石梯，歷史地面不平整",
+              "星空圖書館及購物中心：平坦室內步行，設有手扶梯",
+              "臥牛精舍：中等，含部分上坡路段和樓梯"
+            ]
+          },
+          {
+            "id": "weather",
+            "title": "天候政策",
+            "preview": "小雨可進行；大雨縮短城牆段",
+            "content": [
+              "小雨：行程照常進行，適當調整",
+              "大雨或下雪：華城城牆段可能縮短，改以華城行宮主殿取代",
+              "星空圖書館為全程室內景點，可作為惡劣天氣的預留時間核心亮點"
+            ]
+          },
+          {
+            "id": "wear",
+            "title": "穿著與攜帶物品",
+            "preview": "步行鞋、佛寺著裝、分層衣物",
+            "content": [
+              "有抓地力的舒適步行鞋（華城城牆和臥牛精舍均需要）",
+              "佛寺參觀建議覆肩著裝（夏季無袖者攜帶薄外套）",
+              "氣溫在城牆暴露段與室內空間之間落差較大，建議分層穿著"
+            ]
+          },
+          {
+            "id": "included",
+            "title": "費用包含項目",
+            "preview": "導遊、交通及門票含括；午餐自費",
+            "variant": "included",
+            "content": [
+              "專業英語導遊",
+              "首爾往返小型巴士交通",
+              "所有景點門票（華城、華城行宮含括；星空圖書館免費；臥牛精舍免費）",
+              "午餐自費（建議在星空美食廣場用餐，每人約₩10,000至₩20,000）"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "即時天氣連動"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "每日更新"
+          }
+        },
+        "seasonalVariations": [
+          {
+            "season": "春季",
+            "title": "櫻花季",
+            "description": "華城水門附近野櫻盛開，是全年最受歡迎的城牆攝影時段。臥牛精舍山林間同時呈現春季嫩綠，佛寺氛圍格外清幽。",
+            "icon": "flower"
+          },
+          {
+            "season": "夏季",
+            "title": "鬱鬱蔥蔥但潮溼",
+            "description": "城牆段日照強烈，建議戴帽＋防曬。星空圖書館全程室內，是午後避暑的完美選項。臥牛精舍在鬱鬱蔥蔥的夏日山林中格外靜謐。",
+            "icon": "sun"
+          },
+          {
+            "season": "秋季",
+            "title": "全面最佳季節",
+            "description": "秋葉映襯華城城牆，臥牛精舍的山間步道火紅金黃，是全年攝影品質最高的季節。",
+            "icon": "leaf"
+          },
+          {
+            "season": "冬季",
+            "title": "靜謐而壯觀",
+            "description": "城牆段風大寒冷，建議穿著防風外套。星空圖書館提供溫暖的室內預留時間。臥牛精舍在白雪或冬日枯枝間呈現獨特禪意。",
+            "icon": "snowflake"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "當地持照合法業者",
+            "description": "持有完整保險的韓國合法旅遊業者",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "持照英語導遊全程陪同，熟悉華城歷史典故及臥牛精舍的多元宗教背景，提供有深度的景點解說。"
+          },
+          {
+            "icon": "route",
+            "title": "路線專家",
+            "description": "精心調校的行程，非泛用路線",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "華城→星空圖書館→臥牛精舍的路線順序是按地理效率＋歷史到現代→精神體驗的行程參觀脈絡精心規劃，三個景點各自代表韓國的不同面向。"
+          },
+          {
+            "icon": "users",
+            "title": "精心控制團體人數",
+            "description": "規模恰到好處——適合本路線",
+            "iconBg": "bg-amber-50/80",
+            "iconColor": "text-amber-600",
+            "body": "小型團體確保在城牆段及臥牛精舍的山間步道保持機動性，同時讓導遊為每位旅客提供個人化關注。"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "即時通知",
+            "title": "即時確認",
+            "detail": "預訂確認函含行程摘要",
+            "description": "預訂即時收到確認信，含集合點資訊及確切集合時間。"
+          },
+          {
+            "timing": "出發前12小時",
+            "title": "出發前12小時提醒",
+            "detail": "天氣更新及路線調整通知",
+            "description": "確認天氣及城牆段開放狀況，如有路線調整提前通知。"
+          },
+          {
+            "timing": "前一晚",
+            "title": "最終接送資訊",
+            "detail": "確切接客時間與司機聯系方式",
+            "description": "發送確切集合時間、導遊聯絡方式及當日行程說明。"
+          },
+          {
+            "timing": "行程當天早晨",
+            "title": "當日路線說明",
+            "detail": "依實況提供當日行程說明",
+            "description": "導遊於集合前以訊息確認當日安排及集合標識說明。"
+          },
+          {
+            "timing": "行程途中",
+            "title": "景點逐一說明",
+            "detail": "各景點即時現場導覽",
+            "description": "導遊於華城、星空圖書館及臥牛精舍提供深度解說，現場確認換崗儀式時間及佛寺特色景觀。"
+          },
+          {
+            "timing": "行程結束後",
+            "title": "行程後支援",
+            "detail": "行程結束後反饋與後續建議",
+            "description": "行程結束後發送問卷，歡迎提供意見回饋。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "id": "q1",
+            "question": "這條路線和水原＋民俗村或水原＋光明洞窟行程有何不同？",
+            "answer": "三條路線共同包含水原華城＋華城行宮＋星空圖書館。本版本移除民俗村，以龍仁的臥牛精舍佛寺取代——融合佛教寺廟，設有全球最大木雕臥佛及3,000座亞洲各地佛像，偏重精神文化體驗而非民俗表演。光明洞窟版本則以光明礦山改建的洞窟主題公園作為現代景點替換。"
+          },
+          {
+            "id": "q2",
+            "question": "門票含括在行程費用內嗎？",
+            "answer": "含括——三個付費景點門票全部含括：水原華城（成人₩1,000）、華城行宮（成人₩1,500）及臥牛精舍（免費入場）。星空圖書館對外免費開放。"
+          },
+          {
+            "id": "q3",
+            "question": "午餐含括嗎？",
+            "answer": "不含。午餐在星空水原美食廣場自由用餐的自費時間——品項豐富，通常每人₩10,000至₩20,000。圖書館和購物中心是全行程第2站（約13:30），剛好對應最佳午餐時段。"
+          },
+          {
+            "id": "q4",
+            "question": "臥牛精舍有什麼特別之處？",
+            "answer": "這是一座非傳統佛寺：1970年由北韓難民僧侶金海根（海燈大師）創立，圍繞3,000餘尊來自亞洲各地的佛像建造——印度臥佛、緬甸佛塔、泰式寺廟建築等並列共存。全球最大木雕臥佛（3公尺高印度白檀木）是最具代表性的景觀。整體氛圍更像一座「活的佛教地圖」，而非單一宗派傳統寺廟。"
+          },
+          {
+            "id": "q5",
+            "question": "去寺廟需要著裝端莊嗎？",
+            "answer": "建議覆肩——夏季穿著無袖者建議攜帶薄外套。進入主殿通常需摘帽。臥牛精舍沒有嚴格著裝要求，但表示尊重的謹慎穿著是禮貌之舉。"
+          },
+          {
+            "id": "q6",
+            "question": "全日步行量如何分佈？",
+            "answer": "三段各異的步行模式：華城城牆段難度最高（坡度石階及不平整地面，約1公里）；星空圖書館全程室內平坦，含電梯；臥牛精舍有部分上坡和樓梯的山間步道（中等）。"
+          },
+          {
+            "id": "first-time",
+            "question": "這是初次造訪水原和龍仁的好選擇嗎？",
+            "answer": "是的——對想在一日內體驗一個UNESCO遺址、一個現代拍照空間和一個獨特佛教聖地的旅客，是最強力的首選組合之一，三個景點的風格截然不同卻相互補充。"
+          },
+          {
+            "id": "walking",
+            "question": "步行難度如何？",
+            "answer": "中等。最難的是華城城牆：約1公里的石砌城牆，含坡度起伏、城門樓梯及不平整歷史地面——建議穿著有抓地力的舒適步行鞋。星空圖書館全程平坦室內。臥牛精舍有部分上坡路段和樓梯，中等強度。"
+          },
+          {
+            "id": "family",
+            "question": "親子家庭適合嗎？",
+            "answer": "適合——大多數家庭帶6歲以上兒童均可舒適完成。城牆段的石階和臥牛精舍的部分坡道對嬰兒車較不友善，但星空圖書館全程可推嬰兒車，設有手扶梯。孩子通常對臥牛精舍的3,000尊佛像和大臥佛印象深刻。"
+          },
+          {
+            "id": "seniors",
+            "question": "年長旅客能否舒適地參加？",
+            "answer": "能應對樓梯和不平整地面的活躍銀發族完全適合，行動受限的旅客建議更多考慮。華城城牆是最具挑戰性的路段（坡度石階）；星空圖書館全程平坦；臥牛精舍有部分上坡可選擇縮短。如需特殊協助請提前告知。"
+          },
+          {
+            "id": "children",
+            "question": "建議最低年齡是多少？",
+            "answer": "建議6歲以上。城牆有樓梯和不平整歷史地面，臥牛精舍寺廟地面有坡道，較小幼兒容易疲勞。大一些的孩子（10歲以上）通常對三個景點都有主動探索的興趣。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 4.9,
+          "totalReviews": 57,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 53,
+              "percentage": 93.0
+            },
+            {
+              "stars": 4,
+              "count": 3,
+              "percentage": 5.3
+            },
+            {
+              "stars": 3,
+              "count": 1,
+              "percentage": 1.8
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0.0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0.0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "可訂狀態會在付款步驟中確認。",
+        "price": {
+          "amountLabel": "48.60",
+          "originalPriceUsd": 54,
+          "salePriceUsd": 48.6,
+          "discountPercent": 10,
+          "currency": "USD",
+          "per": "人",
+          "priceSource": "direct_rate",
+          "priceNote": "價格以 AtoC Korea 官網直售價為準。"
+        }
+      }
+    }
+  ],
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "last_modified": "2026-04-28",
+    "version_history": [
+      "v11",
+      "v12",
+      "v13",
+      "v14",
+      "v15"
+    ],
+    "fix_passes": {
+      "v12": "P0+P1 — pickup_dropoff Schema A unification, routeFlowStops type-based, competing_products → internal slugs, anchor_poi_keys aligned",
+      "v13": "P1.5 — pickup_dropoff Schema A.2 → A.1; practicalAccordionItems / routePhases / seasonalVariations unified to V4 canonical (no Tailwind in data)",
+      "v14": "P2 — _publication uniform; duration formatting standardized; glanceItems Duration added where missing",
+      "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
+      "v17_schema_unification": {
+        "date": "2026-04-28",
+        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "fields_converted": 43,
+        "fields_skipped": 0,
+        "fields_already_float": 0
+      }
+    }
+  }
+}
