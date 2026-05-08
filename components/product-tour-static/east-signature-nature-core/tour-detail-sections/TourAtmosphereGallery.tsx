@@ -7,58 +7,49 @@ import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNat
 
 export type TourAtmosphereGalleryProps = Pick<EastSignatureNatureCoreDetailViewModel, "galleryItems" | "sectionUi">;
 
-function GridCell({
-  item,
-  index,
-  onOpen,
-  extraCount,
-  loading,
-}: {
-  item: EastSignatureNatureCoreDetailViewModel["galleryItems"][number];
-  index: number;
-  onOpen: (i: number) => void;
-  extraCount?: number;
-  loading?: "eager" | "lazy";
-}) {
-  return (
-    <button
-      type="button"
-      onClick={() => onOpen(index)}
-      className="group relative w-full h-full overflow-hidden outline-none focus-visible:ring-2 focus-visible:ring-white/60"
-    >
-      <img
-        src={item.src}
-        alt={item.alt ?? ""}
-        loading={loading ?? "lazy"}
-        decoding="async"
-        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
-      />
-      {/* subtle bottom scrim for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
-      {/* location label */}
-      <span className="absolute bottom-2 left-2.5 text-[10px] font-semibold text-white/90 leading-none drop-shadow-[0_1px_3px_rgba(0,0,0,0.7)] truncate max-w-[90%]">
-        {item.location}
-      </span>
-      {/* video play badge */}
-      {item.type === "video" && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 shadow-md">
-            <Play className="h-3.5 w-3.5 text-foreground ml-px" fill="currentColor" />
-          </div>
-        </div>
-      )}
-      {/* "+N more" overlay on last visible cell */}
-      {extraCount != null && extraCount > 0 && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/55">
-          <span className="text-white text-2xl font-bold leading-none">+{extraCount}</span>
-          <span className="text-white/75 text-[11px] mt-1 tracking-wide">photos</span>
-        </div>
-      )}
-      {/* hover shimmer */}
-      <div className="absolute inset-0 ring-1 ring-inset ring-white/0 group-hover:ring-white/20 transition-all duration-300" />
-    </button>
-  );
-}
+/*
+  Editorial "floating" collage — each photo fades into the warm background via CSS mask.
+  No hard grid lines. Photos overlap and blend at their outer edges.
+
+  Layout (absolute, within a 4/3 container):
+    [1] Left anchor — tall dominant photo, fades right
+    [2] Top-right — portrait crop, fades left + bottom
+    [3] Bottom-right — landscape, fades top + left
+    [4] Bottom-center-left — landscape, fades top + right
+    [5] Centre peek — small square, soft radial fade all-around (behind others)
+*/
+const FLOAT_LAYERS = [
+  {
+    pos: { left: "0", top: "0", bottom: "0", width: "64%" },
+    mask: "linear-gradient(to right, black 50%, rgba(0,0,0,0.5) 75%, transparent 100%)",
+    z: 3,
+    objectPos: "center center",
+  },
+  {
+    pos: { right: "0", top: "0", width: "43%", height: "58%" },
+    mask: "linear-gradient(225deg, black 42%, rgba(0,0,0,0.45) 68%, transparent 90%)",
+    z: 4,
+    objectPos: "center 30%",
+  },
+  {
+    pos: { right: "0", bottom: "0", width: "45%", height: "56%" },
+    mask: "linear-gradient(315deg, black 44%, rgba(0,0,0,0.45) 66%, transparent 88%)",
+    z: 4,
+    objectPos: "center 60%",
+  },
+  {
+    pos: { left: "18%", bottom: "0", width: "42%", height: "50%" },
+    mask: "linear-gradient(45deg, black 42%, rgba(0,0,0,0.4) 64%, transparent 86%)",
+    z: 3,
+    objectPos: "center 70%",
+  },
+  {
+    pos: { left: "45%", top: "22%", width: "30%", height: "44%" },
+    mask: "radial-gradient(ellipse 78% 76% at 50% 50%, black 28%, rgba(0,0,0,0.5) 55%, transparent 80%)",
+    z: 2,
+    objectPos: "center center",
+  },
+] as const;
 
 export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmosphereGalleryProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -96,9 +87,7 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
     stripRef.current?.scrollBy({ left: dir * 180, behavior: "smooth" });
   };
 
-  // Grid shows up to 5; remainder shown as "+N" overlay on slot 5
-  const gridItems = galleryItems.slice(0, 5);
-  const extraCount = Math.max(0, galleryItems.length - 5);
+  const floatItems = galleryItems.slice(0, 5);
 
   return (
     <>
@@ -108,64 +97,52 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
           <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{sectionUi.atmosphereSubtitle}</p>
         </div>
 
-        {/* ── Bento grid: 1 large + 2 medium + 2 small ── */}
-        {/*
-          Layout (3-col equal, 2-row):
-          [ Photo 1 (col-span-2, large) ] [ Photo 2 (small) ]
-          [ Photo 3 (medium)            ] [ Photo 4 (med)   ] [ Photo 5 (sm) ]
-          Row heights: 3fr top, 2fr bottom
-        */}
-        <div
-          className="rounded-2xl overflow-hidden shadow-[0_2px_8px_rgba(26,35,50,0.08),0_16px_40px_-14px_rgba(26,35,50,0.22)]"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr",
-            gridTemplateRows: "3fr 2fr",
-            gap: "3px",
-            aspectRatio: "4/3",
-            background: "#e2e8f0",
-          }}
+        {/* ── Editorial floating collage ── */}
+        <button
+          type="button"
+          onClick={() => openLightbox(0)}
+          className="group relative w-full rounded-2xl overflow-hidden cursor-pointer shadow-[0_2px_6px_rgba(26,35,50,0.06),0_16px_40px_-14px_rgba(26,35,50,0.20)] transition-shadow duration-500 hover:shadow-[0_3px_10px_rgba(26,35,50,0.08),0_24px_56px_-16px_rgba(26,35,50,0.28)]"
+          style={{ aspectRatio: "4/3", background: "#e8e2d9" }}
         >
-          {/* Large — top-left, 2 cols wide */}
-          <div className="col-span-2 row-span-1" style={{ minHeight: 0 }}>
-            {gridItems[0] && (
-              <GridCell item={gridItems[0]} index={0} onOpen={openLightbox} loading="eager" />
-            )}
-          </div>
+          {floatItems.map((item, i) => {
+            const layer = FLOAT_LAYERS[i];
+            if (!layer) return null;
+            return (
+              <div
+                key={item.id}
+                className="absolute"
+                style={{
+                  ...layer.pos,
+                  zIndex: layer.z,
+                  WebkitMaskImage: layer.mask,
+                  maskImage: layer.mask,
+                  WebkitMaskSize: "100% 100%",
+                  maskSize: "100% 100%",
+                }}
+              >
+                <img
+                  src={item.src}
+                  alt={item.alt ?? ""}
+                  loading={i === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                  style={{ objectPosition: layer.objectPos }}
+                />
+              </div>
+            );
+          })}
 
-          {/* Small — top-right */}
-          <div className="row-span-1" style={{ minHeight: 0 }}>
-            {gridItems[1] && (
-              <GridCell item={gridItems[1]} index={1} onOpen={openLightbox} />
-            )}
-          </div>
-
-          {/* Medium — bottom-left */}
-          <div style={{ minHeight: 0 }}>
-            {gridItems[2] && (
-              <GridCell item={gridItems[2]} index={2} onOpen={openLightbox} />
-            )}
-          </div>
-
-          {/* Medium — bottom-center */}
-          <div style={{ minHeight: 0 }}>
-            {gridItems[3] && (
-              <GridCell item={gridItems[3]} index={3} onOpen={openLightbox} />
-            )}
-          </div>
-
-          {/* Small — bottom-right (shows +N if more exist) */}
-          <div style={{ minHeight: 0 }}>
-            {gridItems[4] && (
-              <GridCell
-                item={gridItems[4]}
-                index={4}
-                onOpen={openLightbox}
-                extraCount={extraCount}
-              />
-            )}
-          </div>
-        </div>
+          {/* Subtle inner vignette to pull the eye inward */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0"
+            style={{
+              zIndex: 10,
+              background: "radial-gradient(ellipse 90% 85% at 50% 50%, transparent 50%, rgba(232,226,217,0.30) 100%)",
+            }}
+          />
+          <div aria-hidden className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/[0.06]" style={{ zIndex: 11 }} />
+        </button>
 
         {/* ── Thumbnail strip with nav arrows ── */}
         {galleryItems.length > 1 && (

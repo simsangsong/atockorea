@@ -69,29 +69,25 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
         <p className="mt-1.5 text-[13px] leading-relaxed tracking-wide text-muted-foreground">{sectionUi.fitSubtitle}</p>
       </div>
 
-      {/* ── Dark navy "Best For" card ── */}
+      {/* ── Warm amber "Best For" card — matches page's copper brand language ── */}
       <div
-        className="relative overflow-hidden rounded-[24px] shadow-[0_2px_8px_rgba(10,18,30,0.20),0_20px_48px_-16px_rgba(10,18,30,0.32)]"
-        style={{ background: "linear-gradient(135deg, #111d31 0%, #0c1622 60%, #091220 100%)" }}
+        className="overflow-hidden rounded-[24px] shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_10px_-2px_rgba(15,23,42,0.06),0_18px_36px_-14px_rgba(15,23,42,0.12)]"
+        style={{ background: "#fdf8f3", border: "1px solid rgba(200,149,108,0.18)" }}
       >
-        {/* Top shimmer line */}
-        <span
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-px"
-          style={{ background: "rgba(255,255,255,0.08)" }}
-        />
+        {/* Copper header strip */}
+        <div
+          className="flex items-center gap-2.5 px-5 py-3"
+          style={{ background: "linear-gradient(135deg, #d4a37e 0%, #c8956c 50%, #b07d55 100%)" }}
+        >
+          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/25">
+            <Check className="h-3 w-3 text-white" strokeWidth={2.75} />
+          </span>
+          <h3 className="text-[12px] font-semibold tracking-wide text-white">
+            {sectionUi.fitBestForLabel}
+          </h3>
+        </div>
 
-        <div className="p-4 sm:p-5">
-          {/* Best For header */}
-          <div className="mb-3 flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 ring-1 ring-emerald-400/25">
-              <Check className="h-3 w-3 text-emerald-400" strokeWidth={2.75} />
-            </span>
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.10em] text-emerald-400/85">
-              {sectionUi.fitBestForLabel}
-            </h3>
-          </div>
-
+        <div className="px-4 py-4 sm:px-5">
           {/* Best For items */}
           <ul className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
             {(whyTourWorks.bestFor ?? []).map((item, i) => {
@@ -100,20 +96,26 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
                 <li
                   key={i}
                   className="flex items-start gap-2.5 rounded-lg px-2.5 py-2"
-                  style={{ background: "rgba(255,255,255,0.06)", boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.08)" }}
+                  style={{
+                    background: "rgba(200,149,108,0.08)",
+                    boxShadow: "inset 0 0 0 1px rgba(200,149,108,0.18)",
+                  }}
                 >
-                  <span className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
+                  <span
+                    className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full"
+                    style={{ background: "rgba(200,149,108,0.18)", color: "#b07d55" }}
+                  >
                     <Icon className="h-3 w-3" strokeWidth={2} />
                   </span>
-                  <span className="text-[12.5px] leading-snug text-white/85">{item}</span>
+                  <span className="text-[12.5px] leading-snug text-foreground">{item}</span>
                 </li>
               );
             })}
           </ul>
 
-          {/* Less Ideal — collapsible on dark */}
+          {/* Less Ideal — collapsible */}
           {lessIdealItems.length > 0 && (
-            <div className="mt-3 border-t pt-3" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+            <div className="mt-3 border-t pt-3" style={{ borderColor: "rgba(200,149,108,0.20)" }}>
               <button
                 type="button"
                 onClick={() => setShowLessIdeal((v) => !v)}
@@ -121,19 +123,19 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
                 className="group flex w-full items-center justify-between gap-2 text-left"
               >
                 <div className="flex items-center gap-2">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15">
-                    <X className="h-3 w-3 text-white/55" strokeWidth={2.75} />
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 ring-1 ring-slate-200/70">
+                    <X className="h-3 w-3 text-slate-400" strokeWidth={2.75} />
                   </span>
-                  <h3 className="text-[11px] font-semibold uppercase tracking-[0.10em] text-white/50">
+                  <h3 className="text-[11px] font-semibold uppercase tracking-[0.10em] text-muted-foreground">
                     {sectionUi.fitLessIdealLabel}
                   </h3>
-                  <span className="text-[10.5px] font-medium tabular-nums text-white/35">
+                  <span className="text-[10.5px] font-medium tabular-nums text-muted-foreground/70">
                     {lessIdealItems.length}
                   </span>
                 </div>
                 <ChevronDown
                   className={cn(
-                    "h-4 w-4 flex-shrink-0 text-white/40 transition-transform duration-200",
+                    "h-4 w-4 flex-shrink-0 text-muted-foreground/50 transition-transform duration-200",
                     showLessIdeal && "rotate-180",
                   )}
                   strokeWidth={2}
@@ -153,13 +155,12 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
                       return (
                         <li
                           key={i}
-                          className="flex items-start gap-2.5 rounded-lg px-2.5 py-2"
-                          style={{ background: "rgba(255,255,255,0.03)", boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.06)" }}
+                          className="flex items-start gap-2.5 rounded-lg bg-muted/45 px-2.5 py-2 ring-1 ring-border/50"
                         >
-                          <span className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-white/[0.08] text-white/45 ring-1 ring-white/10">
+                          <span className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-background text-muted-foreground ring-1 ring-border/60">
                             <Icon className="h-3 w-3" strokeWidth={1.9} />
                           </span>
-                          <span className="text-[12.5px] leading-snug text-white/45">{item}</span>
+                          <span className="text-[12.5px] leading-snug text-muted-foreground">{item}</span>
                         </li>
                       );
                     })}
@@ -173,18 +174,18 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
         {/* Families / Seniors note strip */}
         <div
           className="border-t px-4 py-3 sm:px-5"
-          style={{ borderColor: "rgba(255,255,255,0.07)" }}
+          style={{ borderColor: "rgba(200,149,108,0.15)", background: "rgba(200,149,108,0.04)" }}
         >
-          <p className="text-[11.5px] leading-relaxed text-white/45">
-            <span className="font-semibold text-white/70">{sectionUi.fitFamiliesPrefix}</span>{" "}
+          <p className="text-[11.5px] leading-relaxed text-muted-foreground">
+            <span className="font-semibold text-foreground">{sectionUi.fitFamiliesPrefix}</span>{" "}
             {sectionUi.fitFamiliesText}
-            <span className="font-semibold text-white/70">{sectionUi.fitSeniorsPrefix}</span>{" "}
+            <span className="font-semibold text-foreground">{sectionUi.fitSeniorsPrefix}</span>{" "}
             {sectionUi.fitSeniorsText}
           </p>
         </div>
       </div>
 
-      {/* ── Route logic accordion (stays white) ── */}
+      {/* ── Route logic accordion ── */}
       <div className="overflow-hidden rounded-[24px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
         <button
           type="button"
