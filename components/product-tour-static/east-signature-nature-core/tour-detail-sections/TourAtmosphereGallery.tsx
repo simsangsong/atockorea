@@ -8,47 +8,20 @@ import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNat
 export type TourAtmosphereGalleryProps = Pick<EastSignatureNatureCoreDetailViewModel, "galleryItems" | "sectionUi">;
 
 /*
-  Editorial "floating" collage — each photo fades into the warm background via CSS mask.
-  No hard grid lines. Photos overlap and blend at their outer edges.
-
-  Layout (absolute, within a 4/3 container):
-    [1] Left anchor — tall dominant photo, fades right
-    [2] Top-right — portrait crop, fades left + bottom
-    [3] Bottom-right — landscape, fades top + left
-    [4] Bottom-center-left — landscape, fades top + right
-    [5] Centre peek — small square, soft radial fade all-around (behind others)
+  Editorial bento collage — 5 photos in a 3×3 grid, separated by a clean cream gutter.
+    [1][1][2]
+    [1][1][3]
+    [4][5][3]
+  • Hero (1) is 2×2 — top-left, dominant
+  • Right tall (3) is 1×2 — portrait-friendly slot
+  • Three small tiles (2, 4, 5) keep the original 4/3 ratio
 */
-const FLOAT_LAYERS = [
-  {
-    pos: { left: "0", top: "0", bottom: "0", width: "64%" },
-    mask: "linear-gradient(to right, black 50%, rgba(0,0,0,0.5) 75%, transparent 100%)",
-    z: 3,
-    objectPos: "center center",
-  },
-  {
-    pos: { right: "0", top: "0", width: "43%", height: "58%" },
-    mask: "linear-gradient(225deg, black 42%, rgba(0,0,0,0.45) 68%, transparent 90%)",
-    z: 4,
-    objectPos: "center 30%",
-  },
-  {
-    pos: { right: "0", bottom: "0", width: "45%", height: "56%" },
-    mask: "linear-gradient(315deg, black 44%, rgba(0,0,0,0.45) 66%, transparent 88%)",
-    z: 4,
-    objectPos: "center 60%",
-  },
-  {
-    pos: { left: "18%", bottom: "0", width: "42%", height: "50%" },
-    mask: "linear-gradient(45deg, black 42%, rgba(0,0,0,0.4) 64%, transparent 86%)",
-    z: 3,
-    objectPos: "center 70%",
-  },
-  {
-    pos: { left: "45%", top: "22%", width: "30%", height: "44%" },
-    mask: "radial-gradient(ellipse 78% 76% at 50% 50%, black 28%, rgba(0,0,0,0.5) 55%, transparent 80%)",
-    z: 2,
-    objectPos: "center center",
-  },
+const COLLAGE_TILES = [
+  { col: "1 / span 2", row: "1 / span 2", objectPos: "center 35%" },
+  { col: "3 / span 1", row: "1 / span 1", objectPos: "center center" },
+  { col: "3 / span 1", row: "2 / span 2", objectPos: "center 50%" },
+  { col: "1 / span 1", row: "3 / span 1", objectPos: "center 60%" },
+  { col: "2 / span 1", row: "3 / span 1", objectPos: "center center" },
 ] as const;
 
 export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmosphereGalleryProps) {
@@ -97,52 +70,53 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
           <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{sectionUi.atmosphereSubtitle}</p>
         </div>
 
-        {/* ── Editorial floating collage ── */}
-        <button
-          type="button"
-          onClick={() => openLightbox(0)}
-          className="group relative w-full rounded-2xl overflow-hidden cursor-pointer shadow-[0_2px_6px_rgba(26,35,50,0.06),0_16px_40px_-14px_rgba(26,35,50,0.20)] transition-shadow duration-500 hover:shadow-[0_3px_10px_rgba(26,35,50,0.08),0_24px_56px_-16px_rgba(26,35,50,0.28)]"
-          style={{ aspectRatio: "4/3", background: "#e8e2d9" }}
+        {/* ── Editorial bento collage ── */}
+        <div
+          className="relative w-full rounded-2xl overflow-hidden bg-[#e8e2d9] p-1.5 shadow-[0_2px_6px_rgba(26,35,50,0.06),0_16px_40px_-14px_rgba(26,35,50,0.20)]"
+          style={{ aspectRatio: "4/3" }}
         >
-          {floatItems.map((item, i) => {
-            const layer = FLOAT_LAYERS[i];
-            if (!layer) return null;
-            return (
-              <div
-                key={item.id}
-                className="absolute"
-                style={{
-                  ...layer.pos,
-                  zIndex: layer.z,
-                  WebkitMaskImage: layer.mask,
-                  maskImage: layer.mask,
-                  WebkitMaskSize: "100% 100%",
-                  maskSize: "100% 100%",
-                }}
-              >
-                <img
-                  src={item.src}
-                  alt={item.alt ?? ""}
-                  loading={i === 0 ? "eager" : "lazy"}
-                  decoding="async"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
-                  style={{ objectPosition: layer.objectPos }}
-                />
-              </div>
-            );
-          })}
-
-          {/* Subtle inner vignette to pull the eye inward */}
           <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0"
+            className="grid h-full w-full"
             style={{
-              zIndex: 10,
-              background: "radial-gradient(ellipse 90% 85% at 50% 50%, transparent 50%, rgba(232,226,217,0.30) 100%)",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gridTemplateRows: "repeat(3, 1fr)",
+              gap: "4px",
             }}
-          />
-          <div aria-hidden className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/[0.06]" style={{ zIndex: 11 }} />
-        </button>
+          >
+            {floatItems.map((item, i) => {
+              const tile = COLLAGE_TILES[i];
+              if (!tile) return null;
+              return (
+                <button
+                  type="button"
+                  key={item.id}
+                  onClick={() => openLightbox(i)}
+                  aria-label={item.alt ?? `Open photo ${i + 1}`}
+                  className="group relative overflow-hidden rounded-lg cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30"
+                  style={{ gridColumn: tile.col, gridRow: tile.row }}
+                >
+                  <img
+                    src={item.src}
+                    alt={item.alt ?? ""}
+                    loading={i === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+                    style={{ objectPosition: tile.objectPos }}
+                  />
+                  {item.type === "video" && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/95 shadow-md">
+                        <Play className="h-4 w-4 text-foreground ml-0.5" fill="currentColor" />
+                      </div>
+                    </div>
+                  )}
+                  <div aria-hidden className="pointer-events-none absolute inset-0 rounded-lg ring-1 ring-inset ring-black/[0.05]" />
+                </button>
+              );
+            })}
+          </div>
+          <div aria-hidden className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/[0.06]" />
+        </div>
 
         {/* ── Thumbnail strip with nav arrows ── */}
         {galleryItems.length > 1 && (
