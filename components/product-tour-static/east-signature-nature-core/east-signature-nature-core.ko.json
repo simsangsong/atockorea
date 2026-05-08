@@ -144,11 +144,11 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
+      "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
       "location": "제주돌문화공원 — 제주 돌 문화와 창세 신화를 보여주는 야외 박물관",
       "atmosphere": "화산섬 제주를 돌 문화와 창세 신화로 시작하는 차분한 오프닝",
-      "alt": "제주돌문화공원의 현무암 조형물과 야외 전시",
-      "caption": "제주돌문화공원 — 제주 돌 문화와 창세 신화를 보여주는 야외 박물관"
+      "alt": "Jeju Stone Culture Park stone path with lava rock walls, green meadow, and oreum mountain backdrop",
+      "caption": "Jeju Stone Culture Park — lava-rock path, open meadow, and oreum silhouette"
     },
     {
       "id": 3,
@@ -195,7 +195,7 @@
       "name": "제주돌문화공원 (제주 석문화공원)",
       "category": "신화 + 화산 돌 문화 — 30만 평 야외 박물관",
       "description": "**제주돌문화공원**은 조천에 자리한 **30만 평(약 990,000㎡) 규모의 야외 박물관**으로, 제주의 창조 신화 **설문대 할망(거대 여신)**에게 헌정된 공간입니다. 제주 구전에 따르면 **설문대 할망이 치맛자락으로 돌을 흩뿌려 섬을 만들었으며**, 가장 큰 돌이 떨어진 자리에 한라산이 솟았고, **걸으면서 떨어진 더 작은 돌들이 섬 곳곳의 360여 개 오름이 되었다**고 전해집니다. 공원 소장 석물 컬렉션은 **30년 이상 제주 전역에서 모은 결과물**로, 섬의 화산암 유산을 보존하기 위한 큐레이션의 산물입니다. 세 갈래 산책 코스가 마련되어 있습니다. **1코스(약 1시간)**는 메인 박물관 + 하늘 연못 + 어머니의 방을, **세 코스 모두(약 2시간 40분)**를 따라가면 오백장군 갤러리, 돌박물관, 제주 초가집 마을, 설문대할망전시관까지 전 영역을 둘러볼 수 있습니다. 현대 건축의 시그니처 모먼트는 **'어머니의 방'** — 천창에서 들어오는 하루의 빛이 중앙의 석조 조각상에 비스듬히 떨어지는 원통형 콘크리트 챔버로, 추상적 거대 여신 신화를 명상적인 건축 경험으로 풀어 놓은 공간입니다. 입장료 **성인 ₩5,000 / 청소년 ₩3,500 / 13세 미만 + 65세 이상 무료**; **매월 마지막 수요일은 문화가 있는 날 무료입니다**. 운영 시간 **09:00–18:00(마지막 입장 17:00)**, **매월 첫 월요일 휴관**. 실내 비중 약 30%(박물관 + 실내 전시관), 나머지는 야외 도보 — 편한 신발이 필수입니다.",
-      "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176",
+      "image": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
       "highlights": [
         "**30만 평 야외 박물관** — 제주 최대 규모의 화산암 유산지",
         "**설문대 할망 신화** — 제주 창조 전설, 한라산과 360개 오름의 기원",
@@ -241,7 +241,49 @@
         "closed": "월요일",
         "admission": "성인 5,000원 / 청소년 3,500원",
         "walking": "난이도 하–중"
-      }
+      },
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+          "location": "Stone Park Grounds",
+          "caption": "Lava-rock-lined stone path winding through the open meadow grounds",
+          "alt": "Woman walking on stone path with lava rock walls and green meadow at Jeju Stone Culture Park"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-water-oreum.webp",
+          "location": "Water Garden",
+          "caption": "Wading pool garden with oreum (volcanic cone) backdrop",
+          "alt": "Woman walking in the shallow water garden with oreum mountain at Jeju Stone Culture Park"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
+          "location": "Dolhareubang Grounds",
+          "caption": "Hundreds of stone figures arranged across the open park",
+          "alt": "Rows of dolhareubang and stone figures at Jeju Stone Culture Park"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
+          "location": "Dolhareubang",
+          "caption": "Traditional Jeju dolhareubang stone guardians",
+          "alt": "Dolhareubang stone guardian figures with forest and oreum behind them"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-standing-stones.webp",
+          "location": "Standing Stone Corridor",
+          "caption": "Walking between monolithic standing stones lining the corridor path",
+          "alt": "Woman walking between large standing stone monoliths at Jeju Stone Culture Park"
+        }
+      ]
     },
     {
       "number": 2,
@@ -1093,11 +1135,11 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
+            "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
             "location": "제주돌문화공원 — 제주 돌 문화와 창세 신화를 보여주는 야외 박물관",
             "atmosphere": "화산섬 제주를 돌 문화와 창세 신화로 시작하는 차분한 오프닝",
-            "alt": "제주돌문화공원의 현무암 조형물과 야외 전시",
-            "caption": "제주돌문화공원 — 제주 돌 문화와 창세 신화를 보여주는 야외 박물관"
+            "alt": "Jeju Stone Culture Park stone path with lava rock walls, green meadow, and oreum mountain backdrop",
+            "caption": "Jeju Stone Culture Park — lava-rock path, open meadow, and oreum silhouette"
           },
           {
             "id": 3,
@@ -1150,7 +1192,7 @@
             "name": "제주돌문화공원 (제주 석문화공원)",
             "category": "신화 + 화산 돌 문화 — 30만 평 야외 박물관",
             "description": "제주돌문화공원은 약 99만㎡(30만 평) 규모의 야외 박물관으로, 제주 섬의 형성을 상징적으로 표현한 돌 문화 중심 공원입니다. 제주 신화인 '설문대할망과 오백장군'을 주제로 한 야외 조각과 전통 돌 구조물이 전시되어 있습니다. 한라산 현무암을 활용한 전통 돌담, 돌하르방, 정낭 등 제주 고유 건축 요소를 볼 수 있습니다. 방문 시간: 약 60분.",
-            "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176",
+            "image": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
             "highlights": [
               "**30만 평 야외 박물관** — 제주 최대 화산암 유산 명소",
               "**설문대 할망 신화** — 제주 창세 설화, 한라산 + 360 오름과 제주 섬 탄생 이야기",
@@ -1181,7 +1223,49 @@
                 "Korea Folklore Society — Seolmundae Halmang oral tradition records",
                 "Architectural Institute of Korea — Mother's Room sculpture/architecture documentation"
               ]
-            }
+            },
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+                "location": "Stone Park Grounds",
+                "caption": "Lava-rock-lined stone path winding through the open meadow grounds",
+                "alt": "Woman walking on stone path with lava rock walls and green meadow at Jeju Stone Culture Park"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-water-oreum.webp",
+                "location": "Water Garden",
+                "caption": "Wading pool garden with oreum (volcanic cone) backdrop",
+                "alt": "Woman walking in the shallow water garden with oreum mountain at Jeju Stone Culture Park"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
+                "location": "Dolhareubang Grounds",
+                "caption": "Hundreds of stone figures arranged across the open park",
+                "alt": "Rows of dolhareubang and stone figures at Jeju Stone Culture Park"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
+                "location": "Dolhareubang",
+                "caption": "Traditional Jeju dolhareubang stone guardians",
+                "alt": "Dolhareubang stone guardian figures with forest and oreum behind them"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-standing-stones.webp",
+                "location": "Standing Stone Corridor",
+                "caption": "Walking between monolithic standing stones lining the corridor path",
+                "alt": "Woman walking between large standing stone monoliths at Jeju Stone Culture Park"
+              }
+            ]
           },
           {
             "number": 2,

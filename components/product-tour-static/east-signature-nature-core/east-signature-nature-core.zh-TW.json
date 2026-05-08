@@ -144,11 +144,11 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
+      "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
       "location": "石頭文化開場",
       "atmosphere": "平靜的地質文化開場",
-      "alt": "濟州石頭文化公園石像與景觀",
-      "caption": "濟州石頭文化公園石像與景觀"
+      "alt": "Jeju Stone Culture Park stone path with lava rock walls, green meadow, and oreum mountain backdrop",
+      "caption": "Jeju Stone Culture Park — lava-rock path, open meadow, and oreum silhouette"
     },
     {
       "id": 3,
@@ -195,7 +195,7 @@
       "name": "濟州石文化公園",
       "category": "神話+火山石文化——30萬坪露天博物館",
       "description": "**濟州石頭文化公園(제주 돌문화공원,Jeju Dolmunhwa Gongwon)**為位於朝天的**佔地 30 萬坪(約 99 萬平方公尺)露天博物館**,主題環繞濟州的開族創世神話:**雪門臺奶奶(설문대 할망,巨人女神)**——濟州口傳神話相傳,**她從圍裙中倒出岩石創造了島嶼**——漢拏山在她落下最大塊石頭處隆起,而島上**360 多座寄生火山(오름)是她行走時掉落的較小石頭**。公園的石頭收藏歷時**30 多年**,自濟州各地策展彙整,以保存島上的火山岩石遺產。三條步道規劃了不同體驗深度:**第 1 條(約 1 小時)**涵蓋主館博物館+天空池+母親之屋;**全部三條(約 2 小時 40 分)**完整走完,含五百將軍展示館、石博物館、濟州傳統茅草韓屋村,以及雪門臺奶奶展示館。園區最具當代建築力的代表是**「母親之屋(어머니의 방)」**——一座圓筒形混凝土室,單一頂部天窗將自然光投射至中央石雕之上,將抽象的女神神話化為冥想式的建築體驗。門票:**成人 ₩5,000/青少年 ₩3,500/13 歲以下及 65 歲以上免費**;**每月最後一週三為免費文化日**。開放時間:**09:00–18:00(末班入場 17:00)**,**每月第一個週一公休**。室內比例約 30%(博物館+室內展館);其餘為戶外步行——務必穿好走的鞋。",
-      "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176",
+      "image": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
       "highlights": [
         "**30 萬坪露天博物館**——濟州最大火山岩石遺產園區",
         "**雪門臺奶奶神話**——濟州創世傳說,漢拏山+360 寄生火山起源",
@@ -241,7 +241,49 @@
         "closed": "週一公休",
         "admission": "成人 KRW 5,000/青少年 KRW 3,500",
         "walking": "輕鬆至中等"
-      }
+      },
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+          "location": "Stone Park Grounds",
+          "caption": "Lava-rock-lined stone path winding through the open meadow grounds",
+          "alt": "Woman walking on stone path with lava rock walls and green meadow at Jeju Stone Culture Park"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-water-oreum.webp",
+          "location": "Water Garden",
+          "caption": "Wading pool garden with oreum (volcanic cone) backdrop",
+          "alt": "Woman walking in the shallow water garden with oreum mountain at Jeju Stone Culture Park"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
+          "location": "Dolhareubang Grounds",
+          "caption": "Hundreds of stone figures arranged across the open park",
+          "alt": "Rows of dolhareubang and stone figures at Jeju Stone Culture Park"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
+          "location": "Dolhareubang",
+          "caption": "Traditional Jeju dolhareubang stone guardians",
+          "alt": "Dolhareubang stone guardian figures with forest and oreum behind them"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-standing-stones.webp",
+          "location": "Standing Stone Corridor",
+          "caption": "Walking between monolithic standing stones lining the corridor path",
+          "alt": "Woman walking between large standing stone monoliths at Jeju Stone Culture Park"
+        }
+      ]
     },
     {
       "number": 2,
@@ -1092,11 +1134,11 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
+            "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
             "location": "石頭文化開場",
             "atmosphere": "平靜的地質文化開場",
-            "alt": "濟州石頭文化公園石像與景觀",
-            "caption": "濟州石頭文化公園石像與景觀"
+            "alt": "Jeju Stone Culture Park stone path with lava rock walls, green meadow, and oreum mountain backdrop",
+            "caption": "Jeju Stone Culture Park — lava-rock path, open meadow, and oreum silhouette"
           },
           {
             "id": 3,
@@ -1149,7 +1191,7 @@
             "name": "濟州石文化公園",
             "category": "神話+火山石文化——30萬坪露天博物館",
             "description": "**濟州石頭文化公園**是一座**99萬6,000平方公尺的戶外博物館和生態自然公園**，坐落在漢拏山北麓的廣闊森林中，展示**濟州獨特的石頭文化** — 源於島上隨處可見的玄武岩，深深滲透進濟州的建築、農業、民俗和宗教傳統之中。公園設有4個主題展覽區：**石頭文化廳**（記錄石頭在濟州生活中的角色）；**濟州神話世界**」——從天而降創造濟州萬物的女神）；**石頭博物館**（展示濟州石頭藝術、農具和碑刻）；以及**盆景庭院**。代表性的濟州石頭爺爺雕像遍佈全園。入場費：**成人₩5,000 / 青少年₩3,500 / 兒童₩1,500 / 7歲以下及65歲以上免費**。開放時間**09:00至18:00**，**週一休館**。",
-            "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176",
+            "image": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
             "highlights": [
               "**99萬6,000平方公尺**戶外博物館 — 展示濟州玄武岩石頭文化",
               "4個主題展覽區：石頭文化廳、神話世界、石頭博物館、盆景庭院",
@@ -1180,7 +1222,49 @@
                 "Korea Folklore Society — Seolmundae Halmang oral tradition records",
                 "Architectural Institute of Korea — Mother's Room sculpture/architecture documentation"
               ]
-            }
+            },
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+                "location": "Stone Park Grounds",
+                "caption": "Lava-rock-lined stone path winding through the open meadow grounds",
+                "alt": "Woman walking on stone path with lava rock walls and green meadow at Jeju Stone Culture Park"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-water-oreum.webp",
+                "location": "Water Garden",
+                "caption": "Wading pool garden with oreum (volcanic cone) backdrop",
+                "alt": "Woman walking in the shallow water garden with oreum mountain at Jeju Stone Culture Park"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
+                "location": "Dolhareubang Grounds",
+                "caption": "Hundreds of stone figures arranged across the open park",
+                "alt": "Rows of dolhareubang and stone figures at Jeju Stone Culture Park"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
+                "location": "Dolhareubang",
+                "caption": "Traditional Jeju dolhareubang stone guardians",
+                "alt": "Dolhareubang stone guardian figures with forest and oreum behind them"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-standing-stones.webp",
+                "location": "Standing Stone Corridor",
+                "caption": "Walking between monolithic standing stones lining the corridor path",
+                "alt": "Woman walking between large standing stone monoliths at Jeju Stone Culture Park"
+              }
+            ]
           },
           {
             "number": 2,

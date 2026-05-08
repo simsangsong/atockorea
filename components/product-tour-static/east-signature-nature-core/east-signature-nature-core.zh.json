@@ -144,11 +144,11 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
+      "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
       "location": "石头文化开场",
       "atmosphere": "平静的地质文化开场",
-      "alt": "济州石头文化公园石像与景观",
-      "caption": "济州石头文化公园石像与景观"
+      "alt": "Jeju Stone Culture Park stone path with lava rock walls, green meadow, and oreum mountain backdrop",
+      "caption": "Jeju Stone Culture Park — lava-rock path, open meadow, and oreum silhouette"
     },
     {
       "id": 3,
@@ -195,7 +195,7 @@
       "name": "济州石文化公园",
       "category": "神话+火山石文化——30万坪露天博物馆",
       "description": "**济州石头文化公园(제주 돌문화공원,Jeju Dolmunhwa Gongwon)** 是位于朝天的 **30 万坪(约 99 万平方米)露天博物馆**,致力于呈现济州的开天创世神话:**雪门台姥姥(설문대 할망,巨人女神)** 的传说——根据济州口传,**她将围裙中的石头撒落,创造了这座岛屿**——汉拿山在最大石块落下处隆起,而 **岛上 360 余座寄生火山(오름)即是她行走时洒落的较小石块**。园区的石材收藏 **历经 30 余年精挑细选**,从济州各地汇集,以保护岛屿的火山岩文化遗产。三条游览路径展开整个体验:**第 1 条(约 1 小时)** 涵盖核心博物馆 + 天空潭 + 母亲之屋;**全部三条(约 2 小时 40 分钟)** 走完整片园区,包含五百将军画廊、石头博物馆、传统济州茅草屋村,以及雪门台姥姥展示馆。园区的当代建筑亮点是 **'母亲之屋(어머니의 방)'**——一处圆筒形混凝土室,头顶天窗将变化的日光投在中央石雕上,将抽象的女神神话化为冥想性的建筑体验。门票:**成人 ₩5,000 / 青少年 ₩3,500 / 13 岁以下及 65 岁以上免费**;**每月最后一个周三为免费文化日**。开放时间:**09:00–18:00(末次入场 17:00)**,**每月第一个周一闭园**。室内比例约 30%(博物馆 + 室内厅);其余为户外步行——舒适的鞋具必不可少。",
-      "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176",
+      "image": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
       "highlights": [
         "**30 万坪露天博物馆**——济州规模最大的火山岩文化遗产地",
         "**雪门台姥姥神话**——济州的开天创世传说,汉拿山 + 360 寄生火山起源",
@@ -241,7 +241,49 @@
         "closed": "週一闭馆",
         "admission": "成人 5,000 韩元 / 青少年 3,500 韩元",
         "walking": "轻松至中等"
-      }
+      },
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+          "location": "Stone Park Grounds",
+          "caption": "Lava-rock-lined stone path winding through the open meadow grounds",
+          "alt": "Woman walking on stone path with lava rock walls and green meadow at Jeju Stone Culture Park"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-water-oreum.webp",
+          "location": "Water Garden",
+          "caption": "Wading pool garden with oreum (volcanic cone) backdrop",
+          "alt": "Woman walking in the shallow water garden with oreum mountain at Jeju Stone Culture Park"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
+          "location": "Dolhareubang Grounds",
+          "caption": "Hundreds of stone figures arranged across the open park",
+          "alt": "Rows of dolhareubang and stone figures at Jeju Stone Culture Park"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
+          "location": "Dolhareubang",
+          "caption": "Traditional Jeju dolhareubang stone guardians",
+          "alt": "Dolhareubang stone guardian figures with forest and oreum behind them"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-standing-stones.webp",
+          "location": "Standing Stone Corridor",
+          "caption": "Walking between monolithic standing stones lining the corridor path",
+          "alt": "Woman walking between large standing stone monoliths at Jeju Stone Culture Park"
+        }
+      ]
     },
     {
       "number": 2,
@@ -1092,11 +1134,11 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
+            "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
             "location": "石头文化开场",
             "atmosphere": "平静的地质文化开场",
-            "alt": "济州石头文化公园石像与景观",
-            "caption": "济州石头文化公园石像与景观"
+            "alt": "Jeju Stone Culture Park stone path with lava rock walls, green meadow, and oreum mountain backdrop",
+            "caption": "Jeju Stone Culture Park — lava-rock path, open meadow, and oreum silhouette"
           },
           {
             "id": 3,
@@ -1149,7 +1191,7 @@
             "name": "济州石文化公园",
             "category": "神话+火山石文化——30万坪露天博物馆",
             "description": "**济州石头文化公园**是一座**99万6,000平方米的户外博物馆和生态自然公园**，坐落在汉拏山北麓的广阔森林中，展示**济州独特的石头文化** — 源于岛上随处可见的玄武岩，深深渗透进济州的建筑、农业、民俗和宗教传统之中。公园设有4个主题展览区：**石头文化厅**（记录石头在济州生活中的角色）；**济州神话世界**（呈现济州创世神话「（雪门台奶奶）」——从天而降创造济州万物的女神）；**石头博物馆**（展示济州石头艺术、农具和碑刻）；以及**盆景庭院**。代表性的济州石头爷爷（，「石头祖父」）雕像遍布全园。入场费：**成人₩5,000 / 青少年₩3,500 / 儿童₩1,500 / 7岁以下及65岁以上免费**。开放时间**09:00至18:00**，**周一休馆**。",
-            "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176",
+            "image": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
             "highlights": [
               "**99万6,000平方米**户外博物馆 — 展示济州玄武岩石头文化",
               "4个主题展览区：石头文化厅、神话世界、石头博物馆、盆景庭院",
@@ -1180,7 +1222,49 @@
                 "Korea Folklore Society — Seolmundae Halmang oral tradition records",
                 "Architectural Institute of Korea — Mother's Room sculpture/architecture documentation"
               ]
-            }
+            },
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+                "location": "Stone Park Grounds",
+                "caption": "Lava-rock-lined stone path winding through the open meadow grounds",
+                "alt": "Woman walking on stone path with lava rock walls and green meadow at Jeju Stone Culture Park"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-water-oreum.webp",
+                "location": "Water Garden",
+                "caption": "Wading pool garden with oreum (volcanic cone) backdrop",
+                "alt": "Woman walking in the shallow water garden with oreum mountain at Jeju Stone Culture Park"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
+                "location": "Dolhareubang Grounds",
+                "caption": "Hundreds of stone figures arranged across the open park",
+                "alt": "Rows of dolhareubang and stone figures at Jeju Stone Culture Park"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
+                "location": "Dolhareubang",
+                "caption": "Traditional Jeju dolhareubang stone guardians",
+                "alt": "Dolhareubang stone guardian figures with forest and oreum behind them"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-standing-stones.webp",
+                "location": "Standing Stone Corridor",
+                "caption": "Walking between monolithic standing stones lining the corridor path",
+                "alt": "Woman walking between large standing stone monoliths at Jeju Stone Culture Park"
+              }
+            ]
           },
           {
             "number": 2,

@@ -151,11 +151,11 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/21/e5f84397-91c4-4a31-91b2-4bfd618b9259.webp",
+      "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
       "location": "Stone Culture Opening",
       "atmosphere": "A calm mythological opening — Jeju's giantess origin myth",
-      "alt": "Jeju Stone Park outdoor stone-culture museum",
-      "caption": "Jeju Stone Park — 300,000-pyeong volcanic stone heritage"
+      "alt": "Jeju Stone Culture Park stone path with lava rock walls, green meadow, and oreum mountain backdrop",
+      "caption": "Jeju Stone Culture Park — lava-rock path, open meadow, and oreum silhouette"
     },
     {
       "id": 3,
@@ -202,7 +202,7 @@
       "name": "Jeju Stone Park (Stone Culture Park)",
       "category": "Mythology + Volcanic Stone Culture — 300,000-pyeong outdoor museum",
       "description": "**Jeju Stone Park (제주 돌문화공원, Jeju Dolmunhwa Gongwon)** is a **300,000-pyeong (~990,000 m²) open-air museum** in Jocheon, dedicated to Jeju's foundational creation myth: **Seolmundae Halmang (설문대 할망, the Giantess Goddess)** who, according to Jeju oral tradition, **created the island by scattering rocks from her apron** — Hallasan rose where she dropped the largest stone, and the **360+ oreum (parasitic cones) across the island are the smaller stones that fell as she walked**. The park's stone collection is **30+ years in the making**, carefully assembled from sites across Jeju to preserve the island's volcanic-rock heritage. Three walking courses lay out the experience: **Course 1 (~1 hour)** covers the headline museum + Sky Pond + Mother's Room; **all three courses (~2h 40min)** complete the full grounds including the Obaek Janggun (500 generals) Gallery, Stone Museum, traditional Jeju thatched-roof village, and Seolmundae Halmang Exhibition Hall. The site's signature contemporary architectural moment is **'Mother's Room (어머니의 방)'** — a cylindrical concrete chamber where a single overhead skylight beams shifting daylight onto a central stone sculpture, resolving the abstract giantess myth into a meditative architectural experience. Admission: **Adult ₩5,000 / Youth ₩3,500 / FREE under 13 + over 65**; **last Wednesday of every month is FREE Cultural Day**. Hours: **09:00–18:00 (last entry 17:00)**, **closed first Monday of each month**. Indoor ratio ~30% (museum + indoor halls); remainder outdoor walking — comfortable shoes essential.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/21/e5f84397-91c4-4a31-91b2-4bfd618b9259.webp",
+      "image": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
       "highlights": [
         "**300,000-pyeong outdoor museum** — Jeju's largest volcanic-stone heritage site",
         "**Seolmundae Halmang myth** — Jeju's foundational creation legend, Hallasan + 360 oreum origin",
@@ -299,7 +299,49 @@
         "closed": "Mondays",
         "admission": "KRW 5,000 adults / KRW 3,500 teens",
         "walking": "Easy to moderate"
-      }
+      },
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+          "location": "Stone Park Grounds",
+          "caption": "Lava-rock-lined stone path winding through the open meadow grounds",
+          "alt": "Woman walking on stone path with lava rock walls and green meadow at Jeju Stone Culture Park"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-water-oreum.webp",
+          "location": "Water Garden",
+          "caption": "Wading pool garden with oreum (volcanic cone) backdrop",
+          "alt": "Woman walking in the shallow water garden with oreum mountain at Jeju Stone Culture Park"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
+          "location": "Dolhareubang Grounds",
+          "caption": "Hundreds of stone figures arranged across the open park",
+          "alt": "Rows of dolhareubang and stone figures at Jeju Stone Culture Park"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
+          "location": "Dolhareubang",
+          "caption": "Traditional Jeju dolhareubang stone guardians",
+          "alt": "Dolhareubang stone guardian figures with forest and oreum behind them"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/stone-culture/stone-park-standing-stones.webp",
+          "location": "Standing Stone Corridor",
+          "caption": "Walking between monolithic standing stones lining the corridor path",
+          "alt": "Woman walking between large standing stone monoliths at Jeju Stone Culture Park"
+        }
+      ]
     },
     {
       "number": 2,
@@ -1344,11 +1386,11 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/21/e5f84397-91c4-4a31-91b2-4bfd618b9259.webp",
+            "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
             "location": "Stone Culture Opening",
             "atmosphere": "A calm geological start to the day",
-            "alt": "Stone sculptures and landscape at Jeju Stone Park",
-            "caption": "Stone sculptures and landscape at Jeju Stone Park"
+            "alt": "Jeju Stone Culture Park stone path with lava rock walls, green meadow, and oreum mountain backdrop",
+            "caption": "Jeju Stone Culture Park — lava-rock path, open meadow, and oreum silhouette"
           },
           {
             "id": 3,
@@ -1401,7 +1443,7 @@
             "name": "Jeju Stone Park (Stone Culture Park)",
             "category": "Mythology + Volcanic Stone Culture — 300,000-pyeong outdoor museum",
             "description": "**Jeju Stone Park (제주 돌문화공원, Jeju Dolmunhwa Gongwon)** is a **300,000-pyeong (~990,000 m²) open-air museum** in Jocheon, dedicated to Jeju's foundational creation myth: **Seolmundae Halmang (설문대 할망, the Giantess Goddess)** who, according to Jeju oral tradition, **created the island by scattering rocks from her apron** — Hallasan rose where she dropped the largest stone, and the **360+ oreum (parasitic cones) across the island are the smaller stones that fell as she walked**. The park's stone collection is **30+ years in the making**, carefully assembled from sites across Jeju to preserve the island's volcanic-rock heritage. Three walking courses lay out the experience: **Course 1 (~1 hour)** covers the headline museum + Sky Pond + Mother's Room; **all three courses (~2h 40min)** complete the full grounds including the Obaek Janggun (500 generals) Gallery, Stone Museum, traditional Jeju thatched-roof village, and Seolmundae Halmang Exhibition Hall. The site's signature contemporary architectural moment is **'Mother's Room (어머니의 방)'** — a cylindrical concrete chamber where a single overhead skylight beams shifting daylight onto a central stone sculpture, resolving the abstract giantess myth into a meditative architectural experience. Admission: **Adult ₩5,000 / Youth ₩3,500 / FREE under 13 + over 65**; **last Wednesday of every month is FREE Cultural Day**. Hours: **09:00–18:00 (last entry 17:00)**, **closed first Monday of each month**. Indoor ratio ~30% (museum + indoor halls); remainder outdoor walking — comfortable shoes essential.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/21/e5f84397-91c4-4a31-91b2-4bfd618b9259.webp",
+            "image": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
             "highlights": [
               "Stone sculptures, towers, and open lawns create strong visual layers",
               "An ideal opening stop for understanding Jeju’s stone culture and volcanic background",
@@ -1478,6 +1520,48 @@
               {
                 "url": "https://images.unsplash.com/photo-1619166719537-a4bbb89b483d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxkb2xoYXJldWJhbmclMjBKZWp1JTIwc3RvbmUlMjBzdGF0dWV8ZW58MHwwfHx8MTc3ODA3ODMwOXww&ixlib=rb-4.1.0&q=80&w=1080",
                 "source": "unsplash"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+                "location": "Stone Park Grounds",
+                "caption": "Lava-rock-lined stone path winding through the open meadow grounds",
+                "alt": "Woman walking on stone path with lava rock walls and green meadow at Jeju Stone Culture Park"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-water-oreum.webp",
+                "location": "Water Garden",
+                "caption": "Wading pool garden with oreum (volcanic cone) backdrop",
+                "alt": "Woman walking in the shallow water garden with oreum mountain at Jeju Stone Culture Park"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
+                "location": "Dolhareubang Grounds",
+                "caption": "Hundreds of stone figures arranged across the open park",
+                "alt": "Rows of dolhareubang and stone figures at Jeju Stone Culture Park"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
+                "location": "Dolhareubang",
+                "caption": "Traditional Jeju dolhareubang stone guardians",
+                "alt": "Dolhareubang stone guardian figures with forest and oreum behind them"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/stone-culture/stone-park-standing-stones.webp",
+                "location": "Standing Stone Corridor",
+                "caption": "Walking between monolithic standing stones lining the corridor path",
+                "alt": "Woman walking between large standing stone monoliths at Jeju Stone Culture Park"
               }
             ]
           },
