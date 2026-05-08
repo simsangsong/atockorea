@@ -495,7 +495,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
                       animate="center"
                       exit="exit"
                       transition={{ duration: 0.5, ease: drawerEase }}
-                      className="absolute inset-0 h-full w-full object-cover"
+                      className="absolute inset-0 h-full w-full object-cover tour-photo-grade"
                     />
                   </AnimatePresence>
                 ) : null}
@@ -1025,7 +1025,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
                             : "opacity-50 hover:opacity-80",
                         )}
                       >
-                        <img src={src} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
+                        <img src={src} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover tour-photo-grade" />
                       </button>
                     ))}
                   </div>

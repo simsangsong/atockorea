@@ -169,8 +169,8 @@
     {
       "id": "g5",
       "type": "photo",
-      "src": "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
-      "alt": "White sand and turquoise waters at Hamdeok Beach, Jeju",
+      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+      "alt": "Imagen de playa Hamdeok",
       "caption": "Playa Hamdeok, una de las playas más representativas de Jeju",
       "location": "",
       "atmosphere": ""
@@ -183,29 +183,21 @@
       "duration": "30 min",
       "name": "Recogida en hotel (Ciudad de Jeju)",
       "category": "Salida — Recogida en los 4 puntos habituales de Ciudad de Jeju",
-      "description": "**La recogida se consolida en los cuatro puntos estándar de Jeju City** para mantener la mañana compacta y el itinerario hacia el este limpio: **Aeropuerto Internacional de Jeju (제주공항)** para huéspedes con llegadas el mismo día u hoteles cercanos al aeropuerto (Hidden Cliff, Maison Glad, Lotte City, etc.); **Ayuntamiento de Jeju (제주시청)** para el grupo de hoteles de Yeon-dong / Nohyeong / Casco Antiguo; **Hagwi-dong (하귀동)** como recogida más occidental de Jeju City; y **Mercado Tradicional de Dongmun (동문시장)** para el grupo costero oriental de Jeju City Tapdong/Sarabong. La secuencia es **Hagwi → Aeropuerto → Ayuntamiento → Dongmun → ruta costera 1132 hacia el este** rumbo a Hamdeok. El minibús es **de grupo pequeño (máx. ~14 personas)** con guía angloparlante con licencia. Se reparte una **tarjeta bilingüe del itinerario** en la primera recogida y el guía ofrece un parte meteorológico junto con una **lectura del estado de floración de las hortensias** (qué jardines están en pico vs. floración temprana esa mañana) para calibrar las prioridades de las paradas fotográficas del día.",
+      "description": "Recogida en los cuatro puntos habituales de Ciudad de Jeju (Ocean Suites / Aeropuerto / Ayuntamiento / Dongmun) ~08:30-09:05.",
       "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
       "highlights": [
-        "**4 puntos de recogida** — Aeropuerto, Ayuntamiento, Hagwi, Dongmun (Tapdong)",
-        "Secuencia oeste→este minimiza la distancia matinal del autocar",
-        "**Minibús de grupo pequeño (máx. 14 pax)** con guía angloparlante con licencia",
-        "Tarjeta bilingüe del itinerario distribuida en la primera recogida",
-        "**Parte del estado de floración de las hortensias** en la primera parada (calibración pico vs. floración temprana)",
-        "Tránsito matinal total Jeju City → Playa Hamdeok: ~25 min"
+        "4 puntos de recogida en Ciudad de Jeju — ~08:30-09:05"
       ],
       "timeUsed": [
         "Recogidas escalonadas 08:30-09:05"
       ],
-      "whyOnRoute": "**Ancla operativa del bucle oriental de hortensias.** La recogida es el único momento del día en el que confluyen las cuatro zonas hoteleras dispersas — una vez al este de Dongmun, el minibús se compromete con el corredor de la Ruta 1132 costera que define la jornada (Hamdeok → Seongeup → Seongsan → Ilchul Land → Hueree). El orden de recogida de oeste a este es intencionado: permite al autocar recoger primero a los huéspedes de Hagwi y emplear los 25 minutos restantes tras Dongmun para llegar a Hamdeok dentro de la ventana matinal de marea de la playa, antes de que lleguen los autobuses turísticos.",
+      "whyOnRoute": "**Punto clave operativo del circuito oriental de hortensias.** El punto de contacto único con los visitantes.",
       "_poi_meta": {
         "poi_key": "OPS_pickup",
         "kb_version": "1.20",
         "verified_date": "2026-04-29",
         "sources": []
-      },
-      "convenience": {},
-      "smartNotes": {},
-      "visitBasics": {}
+      }
     },
     {
       "number": 2,
@@ -213,23 +205,17 @@
       "duration": "40 min",
       "name": "Playa Hamdeok Seoubong",
       "category": "Apertura costera — Top 3 playas de Jeju, aguas esmeralda turquesa",
-      "description": "**La Playa Hamdeok Seoubong (함덕 서우봉 해변)** se sitúa de forma constante entre las **3 mejores playas de Jeju**, definida por el contraste entre su **arena blanca (~500 m de tramo principal y 3 calas conectadas que suman ~900 m)** y el **cono volcánico parásito Seoubong (서우봉, 'cono que parece la cabeza de una vaca')** que se eleva directamente desde el extremo este. El característico **color verde esmeralda-turquesa** del agua proviene del fondo marino arenoso de coral poco profundo, que refleja la luz a través del océano transparente — un contraste de aire mediterráneo (raro en Corea) que convirtió Hamdeok en uno de los destinos de playa más fotografiados del país a nivel doméstico. La playa puede absorber hasta **50.000 visitantes diarios** en plena temporada estival, pero las visitas en primavera y otoño suelen estar despobladas. **El Pico Seoubong** (escalable en ~1 hora hasta la cima) luce **laderas amarillas de canola en primavera (marzo–abril)** y ofrece una **vista panorámica al este hasta la zona del tubo de lava de Manjanggul**. **Capa histórica**: los acantilados marinos justo al oeste de Seoubong albergan **túneles del Ejército Imperial Japonés excavados durante la ocupación colonial de la Segunda Guerra Mundial** —refugios para botes suicidas kamikaze y depósitos de munición, similares a las 18 cuevas del Pico Seongsan Ilchulbong. Los túneles son de acceso público (con paneles que explican el contexto histórico). La playa es el **tramo central del Sendero Olle de Jeju, ruta 19 (조천 → 김녕)**, marcado con las cintas azules y naranjas características del trail. El **Café Delmoondo (델문도 카페)** ancla el paseo marítimo: amplias terrazas, vistas al mar, popular para Instagram y paradas informales. **Entrada GRATUITA**; la playa está **a 20 km / ~40 min en coche del Aeropuerto Internacional de Jeju** por la Ruta 1132.",
-      "image": "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
+      "description": "**Playa Hamdeok Seoubong** — el contraste verde-azul del mar con el azul-malva de las hortensias de la tarde: primero el esmeralda marino, luego el azul floral. Arena blanca, aguas turquesa, colina Seoubong. En verano, el área de baño está abierta.",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
       "highlights": [
-        "**Top 3 de playas de Jeju** — agua esmeralda-turquesa + arena blanca de coral",
-        "**500 m de playa principal** + 3 calas conectadas (~900 m de longitud total)",
-        "**Cono volcánico Seoubong** — ascenso de ~1 hora; laderas amarillas de canola en marzo–abril",
-        "**Túneles del Ejército Imperial Japonés (Segunda Guerra Mundial)** en los acantilados adyacentes — refugios para botes suicidas kamikaze",
-        "**Sendero Olle, ruta 19 (조천 → 김녕)** — cintas azul y naranja como marcadores",
-        "**Café Delmoondo** — amplias terrazas, paseo marítimo, parada distintiva",
-        "Hasta **50.000 visitantes diarios en pleno verano**; despoblada en primavera y otoño",
-        "**Entrada GRATUITA**; 20 km / ~40 min del Aeropuerto Internacional de Jeju",
-        "Contraste cromático de aire mediterráneo — raro en la península coreana"
+        "Top 3 playas de Jeju en verano",
+        "Aguas esmeralda + zona de baño en temporada",
+        "Contraste mar-flores: azul marino → azul hortensia"
       ],
       "timeUsed": [
         "Playa Hamdeok — ~40 min"
       ],
-      "whyOnRoute": "**Esmeralda matinal y primer calentamiento de la ruta de las hortensias.** Hamdeok es la primera parada por tres motivos deliberados de la ruta este. (1) **Sincronía de marea y luz**: la llegada a las 09:30 atrapa la ventana de marea baja matinal (la franja esmeralda-turquesa más fotogénica antes de que el oleaje y los reflejos de mediodía aplanen el contraste); esta es *la* foto distintiva de la costa este de Jeju, y obtenerla antes de la oleada de autocares de las 10:30 supone una victoria tangible para el huésped. (2) **Anclaje geográfico para el arco hacia el este**: Hamdeok se sitúa a unos 14 km al este de Jeju City por la Ruta 1132 — la primera chincheta natural en el corredor costero que define el día. Saltársela obligaría a comenzar con un trayecto de autopista de 50 min hacia Seongeup (visualmente plano) o a abrir con un jardín de hortensias (privando al día de variedad rítmica). (3) **Contrapunto a la ruta de hortensias**: la arena blanca y el agua esmeralda de Hamdeok aportan el único anclaje paisajístico **no floral** del día —cualquier otra parada sustancial está codificada como hortensia o como patrimonio—, así que el papel de Hamdeok es dar amplitud visual antes de la inmersión floral.",
+      "whyOnRoute": "**Esmeralda matutina + primer calentamiento de la ruta de hortensias.**",
       "_poi_meta": {
         "poi_key": "hamdeok_seoubong_beach",
         "kb_version": "1.20",
@@ -241,98 +227,7 @@
           "Korea Tourism Organization — Top 3 Jeju Beaches ranking",
           "Jocheon-eup local cultural office — Seoubong oreum trail records"
         ]
-      },
-      "convenience": {
-        "restroom": "Aseos públicos y duchas en la playa",
-        "parking": "Aparcamiento público (de pago en verano)"
-      },
-      "smartNotes": {
-        "photo": "El atardecer con la silueta de Seoubong es la toma clásica; las panorámicas tipo aéreas desde la cima de Seoubong muestran la curva de arena blanca",
-        "facilities": "Varias cafeterías a lo largo del paseo marítimo; tiendas de conveniencia cercanas",
-        "tip": "Menos concurrida que Hyeopjae o Gimnyeong; la zona del Café Delmoondo, en el lado este, es popular al atardecer"
-      },
-      "visitBasics": {
-        "hours": "Abierta 24 horas (la playa); temporada de baño gestionada con socorristas en julio–agosto",
-        "closed": "Abierta todo el año",
-        "admission": "Gratuita",
-        "walking": "Fácil — la playa es de arena llana; el ascenso al Seoubong es moderado (escalones)"
-      },
-      "images": [
-        "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
-        "/images/tours/hamdeok-beach/hamdeok-beach-buskers-palms.webp",
-        "/images/tours/hamdeok-beach/hamdeok-beach-evening-wading.webp",
-        "/images/tours/hamdeok-beach/hamdeok-beach-sunset-crowd.webp",
-        "/images/tours/hamdeok-beach/hamdeok-beach-golden-hour-aerial.webp"
-      ],
-      "imageCredits": [
-        {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
-        },
-        {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-buskers-palms.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
-        },
-        {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-evening-wading.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
-        },
-        {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-sunset-crowd.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
-        },
-        {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-golden-hour-aerial.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
-        }
-      ],
-      "galleryItems": [
-        {
-          "id": "hamdeok-1",
-          "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
-          "location": "Hamdeok Beach",
-          "caption": "White sand and turquoise waters",
-          "alt": "Elevated view of white sand and turquoise sea, Hamdeok Beach"
-        },
-        {
-          "id": "hamdeok-2",
-          "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-buskers-palms.webp",
-          "location": "Hamdeok Beach",
-          "caption": "Beachside buskers under palm trees",
-          "alt": "Buskers performing on white sand with palm trees, Hamdeok Beach"
-        },
-        {
-          "id": "hamdeok-3",
-          "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-evening-wading.webp",
-          "location": "Hamdeok Beach",
-          "caption": "Evening waders at Hamdeok",
-          "alt": "Families wading in shallow water at dusk, Hamdeok Beach"
-        },
-        {
-          "id": "hamdeok-4",
-          "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-sunset-crowd.webp",
-          "location": "Hamdeok Beach",
-          "caption": "Sunset over Hamdeok Beach",
-          "alt": "Orange sunset with crowd on Hamdeok Beach, buoys visible"
-        },
-        {
-          "id": "hamdeok-5",
-          "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-golden-hour-aerial.webp",
-          "location": "Hamdeok Beach",
-          "caption": "Golden hour aerial view",
-          "alt": "Aerial golden hour view of Hamdeok Beach and Jeju City"
-        }
-      ]
+      }
     },
     {
       "number": 3,
@@ -362,21 +257,6 @@
           "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
           "Jeju Folklore Society — Omegisul brewing tradition documentation"
         ]
-      },
-      "smartNotes": {
-        "photo": "Stone walls (dolhareubang grandfathers), thatched-roof houses with smoke holes, and traditional doors are iconic Jeju shots",
-        "facilities": "Visitor information center at entrance; English maps available",
-        "tip": "Hire a free volunteer guide at the entrance for cultural context; respect that residents actually live here — don't enter homes uninvited"
-      },
-      "convenience": {
-        "restroom": "Public restrooms at village entrance",
-        "parking": "Free parking near entrance"
-      },
-      "visitBasics": {
-        "hours": "Open 24 hours (outdoor village); shops typically 09:00–17:00",
-        "closed": "Open year-round",
-        "admission": "Free for general village; some private homes charge for guided visits",
-        "walking": "Easy — flat dirt and stone paths through the village"
       }
     },
     {
@@ -385,37 +265,20 @@
       "duration": "60 min",
       "name": "Almuerzo (restaurante local de Jeju)",
       "category": "Pausa para comer — Zona Pyoseon/Seongsan",
-      "description": "**El almuerzo se sirve en un restaurante local de estilo Jeju en el corredor Hallim / Aewol-tail / Andeok**, seleccionado de una lista validada de establecimientos familiares que el operador ha aprobado por sus **cartas en inglés, capacidad de adaptación dietética (opciones vegetarianas y de pollo o marisco aptas para halal bajo solicitud) y especialidades de la costa oeste de Jeju** a precios justos para grupos. Las opciones típicas incluyen **galchi-jorim (pez sable estofado)**, **heuk-dwaeji bulgogi (bulgogi de cerdo negro de Jeju)**, **mom-guk (sopa de algas y cerdo de Jeju)** y **bibimbap con namul de temporada**. **El mom-guk, en particular, es una especialidad regional del suroeste de Jeju** que no aparece en los tours de la costa este. Como en el almuerzo de la ruta este, el restaurante exacto se selecciona el día anterior según el tamaño del grupo, las solicitudes dietéticas y la disponibilidad de cocina; los huéspedes son informados en el briefing matinal. **El coste del almuerzo corre por cuenta del huésped** (~₩12.000–₩18.000 por persona) y **no está incluido** en la tarifa del tour. Las bebidas y los acompañamientos de arroz/banchan están siempre incluidos con la comida.",
+      "description": "Almuerzo en restaurante local. **No incluido** (~₩15.000/persona).",
       "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
       "highlights": [
-        "**Restaurante local del suroeste de Jeju** — corredor Hallim / Aewol-tail / Andeok",
-        "Lista validada: **cartas en inglés** + adaptación dietética",
-        "Opciones distintivas: **galchi-jorim, heuk-dwaeji bulgogi, mom-guk (regional), bibimbap**",
-        "**Mom-guk** = especialidad regional del oeste de Jeju (sopa de algas y cerdo) ausente en los tours del este",
-        "**Almuerzo por cuenta del huésped** (~₩12.000–₩18.000/persona, no incluido)",
-        "Opciones vegetarianas y aptas para halal bajo solicitud"
+        "**No incluido** (~₩15.000/persona)"
       ],
       "timeUsed": [
         "Almuerzo — ~60 min"
       ],
-      "whyOnRoute": "**Parada operativa de mediodía**, fijada a las 12:35 para enlazar el anclaje matinal de Hyeopjae+Hallim (los 120 min de Hallim entran ya en la franja prelunch) con el arco de tarde Jusangjeolli/Cheonjeyeon + Camellia Hill. La franja de 60 min también funciona como **buffer absorbente**: si la cola de la cueva de Hallim se alarga en fines de semana de temporada alta, la ventana de comida se comprime a 50 min sin perder el objetivo de las 13:50 en los acantilados columnares.",
+      "whyOnRoute": "**Parada de mediodía operativa**, fijada a las 11:30 para conectar la mañana de ritmo patrimonial y la tarde de hortensias.",
       "_poi_meta": {
         "poi_key": "OPS_lunch",
         "kb_version": "1.20",
         "verified_date": "2026-04-29",
         "sources": []
-      },
-      "convenience": {
-        "restroom": "En el restaurante",
-        "parking": "Disponible"
-      },
-      "smartNotes": {
-        "tip": "Opciones vegetarianas bajo solicitud — avise el día anterior."
-      },
-      "visitBasics": {
-        "hours": "12:00–14:00 habitual",
-        "admission": "El almuerzo se paga directamente, ≈ 10.000–15.000 KRW habitual (restaurantes locales coreanos cercanos a la ruta)",
-        "walking": "Mínima"
       }
     },
     {
@@ -447,21 +310,6 @@
           "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
           "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
         ]
-      },
-      "smartNotes": {
-        "photo": "Summit view of Hallasan to the west and Udo island to the north on clear days; haenyeo black-sand beach view from descending path",
-        "facilities": "Café (Fritz Coffee 1.3km away has best exterior views of the peak); ferry to Udo Island from Seongsan Port (1.5km/15 min walk)",
-        "tip": "All stairs but well-maintained — manageable in casual clothes; family-friendly with rest stops; sunrise visits popular but crowds gather pre-dawn"
-      },
-      "convenience": {
-        "restroom": "Available at entrance and base",
-        "parking": "Large free parking lot"
-      },
-      "visitBasics": {
-        "hours": "Mar–Apr & Sep–Oct: 05:00–19:00; May–Aug: 04:30–20:00; Nov–Feb: 06:00–18:00 (last ticketing 1 hour before closing)",
-        "closed": "Open year-round (weather closures possible)",
-        "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
-        "walking": "Moderate — 20–30 min steady stair climb (≈600 stairs); benches every few minutes for rest"
       }
     },
     {
@@ -470,23 +318,17 @@
       "duration": "70 min",
       "name": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
       "category": "Festival de Hortensias + Tubo de lava — Ilchul Land, Seongsan",
-      "description": "**Ilchul Land (일출랜드)** es un **parque temático natural de 400.000 m²** situado en Seongsan, inaugurado en **2002** y construido alrededor del tubo de lava **Cueva Micheon (미천굴)** — una **cueva de 1.700 m de longitud total** con un **tramo nivelado artificialmente de 365 m abierto al público** (recorrido de unos 25 minutos). La cueva forma parte del **sistema de tubos de lava de Jeju que comparte linaje geológico con la Cueva Manjanggul** —el tubo de lava inscrito como Patrimonio Natural Mundial de la UNESCO— y **funciona como alternativa operativa cuando Manjanggul cierra por mantenimiento de conservación o por meteorología (tifones, heladas)**. Mientras Manjanggul preserva su suelo natural irregular como experiencia geológica auténtica, la pasarela nivelada de Micheon hace que la cueva sea **accesible para visitantes mayores, familias con cochecitos y huéspedes con movilidad reducida** —una elección de ingeniería deliberada que amplía la experiencia del tubo de lava a públicos que no podrían recorrer Manjanggul. El interior está iluminado con una **iluminación decorativa de siete colores (oro, plata, bronce, rojo, negro, azul, blanco)** que resalta las formaciones —controvertida entre los puristas, pero práctica para la fotografía turística no especializada. Fuera de la cueva, el parque se extiende por el **Parque Subyeon, una aldea tradicional de Jeju reconstruida, el Jardín de Bonsáis de Flores Silvestres, el Invernadero de Cactus, la Calle de Esculturas y un Café de Baño de Pies (spa aromático para pies)**, lo que convierte este espacio en la **única atracción de Jeju con sala de oración musulmana en sus instalaciones** (una inversión deliberada en accesibilidad). Localización de rodaje: **'Running Man' (런닝맨, SBS), episodio 89 (temática de Alicia en el País de las Maravillas, 2012)**. Entrada: **Adulto ₩12.000 / Joven ₩9.000 / Niño ₩7.000**. La proporción interior/exterior es de **30 % cubierto (cueva + invernadero) / 70 % al aire libre (recinto del parque)**, dato relevante para planificar con flexibilidad ante el clima.",
+      "description": "**Ilchul Land** durante el festival de verano: las **hortensias azules y malva** cubren los jardines del parque, rodeando la entrada de la **Cueva Micheon** (tubo de lava de 365 m visitable). La combinación de flores de verano + cueva de lava es única en Jeju.",
       "image": "https://images.unsplash.com/photo-1502780402662-acc01917a3a4",
       "highlights": [
-        "**1.700 m totales** de tubo de lava; **365 m de tramo abierto** (~25 min de recorrido)",
-        "**Alternativa UNESCO a Manjanggul** — mismo sistema de tubos de lava; abre cuando Manjanggul cierra",
-        "**Suelo nivelado artificialmente** — accesible para mayores, cochecitos y huéspedes con movilidad reducida",
-        "**Iluminación decorativa de siete colores** — oro/plata/bronce/rojo/negro/azul/blanco",
-        "**400.000 m² de recinto** — bonsáis, cactus, esculturas, aldea tradicional, café con baño de pies",
-        "**Única atracción de Jeju con sala de oración musulmana** — accesibilidad deliberada",
-        "**'Running Man' Ep. 89** rodado aquí (2012, tema de Alicia en el País de las Maravillas)",
-        "Entrada **₩12.000 adulto / ₩9.000 joven / ₩7.000 niño**",
-        "**30 % cubierto / 70 % al aire libre** — combinación flexible ante el clima"
+        "Hortensias azules/malva cubriendo el recinto de Ilchul Land",
+        "Cueva Micheon (365 m de tubo de lava) incluida",
+        "La combinación flores verano + cueva es única en Jeju"
       ],
       "timeUsed": [
         "Ilchul Land hortensias + cueva — ~60 min"
       ],
-      "whyOnRoute": "**Punto de anclaje del tubo de lava antes del almuerzo**, planteado explícitamente como el capítulo **'adyacente a propiedad UNESCO'** dentro del tema UNESCO de la jornada. Donde el tour hermano centrado en la naturaleza utiliza Ilchulland como parada flexible a media tarde, esta ruta UNESCO la sitúa más temprano en el día para mantener el **arco narrativo 'UNESCO + patrimonio'** bien tejido: Hamdeok (Olle Trail 19, patrimonio de senderismo casi-UNESCO) → Seongeup (Patrimonio Cultural Folclórico Importante) → **Cueva Micheon de Ilchulland (sistema de tubos de lava de Manjanggul, misma propiedad UNESCO que la propia Manjanggul)** → Seongsan por la tarde (triple UNESCO) → cierre en el Museo de las Haenyeo (Patrimonio Inmaterial UNESCO 2016). La ubicación previa al almuerzo también garantiza una temperatura agradable en la cueva (las cuevas se mantienen a 13–15 °C todo el año, frescas en verano y suaves en invierno) antes de los tramos al aire libre más cálidos del día.",
+      "whyOnRoute": "**El primer punto clave de hortensias del día — y el contrapunto del tubo de lava que da profundidad a toda la ruta.**",
       "_poi_meta": {
         "poi_key": "ilchulland_micheon_cave",
         "kb_version": "1.20",
@@ -498,21 +340,6 @@
           "SBS Variety Archive — Running Man Episode 89 (2012)",
           "Jeju Tourism Organization — accessibility-friendly attraction registry"
         ]
-      },
-      "convenience": {
-        "restroom": "Disponible en la entrada del parque Ilchul Land",
-        "parking": "Aparcamiento gratuito en Ilchul Land"
-      },
-      "smartNotes": {
-        "photo": "Tramo iluminado de la cueva y jardín botánico circundante; verifique qué zonas fotográficas están incluidas con la entrada vigente de Ilchul Land",
-        "facilities": "Servicios del parque Ilchul Land (cafetería, tienda de regalos, aseos)",
-        "tip": "Esta es la alternativa estándar a Manjanggul cuando el tubo de lava público se cierra por inspección de seguridad. Confirme que el acceso a la sección de cueva de Ilchul Land está incluido en el ticket de su grupo."
-      },
-      "visitBasics": {
-        "hours": "Según el horario del parque Ilchul Land — consulte con el operador",
-        "closed": "Según el calendario del parque Ilchul Land — consulte con el operador",
-        "admission": "Incluida en la entrada del parque Ilchul Land — verifique las tarifas con el operador",
-        "walking": "Moderada: descenso por escaleras hacia la cueva, ≈ 12 °C todo el año; suelo volcánico irregular dentro del tramo de cueva"
       }
     },
     {
@@ -521,23 +348,17 @@
       "duration": "75 min",
       "name": "Parque Natural Hueree — Hortensias del sur",
       "category": "El mayor espectáculo de hortensias de Jeju — flanco sur del Hallasan",
-      "description": "**El Parque Natural Hueree (휴애리 자연생활공원)** es un parque floral abierto todo el año, situado en la falda meridional del Monte Hallasan, presentado como **'una isla dentro de la isla'** por concentrar el calendario floral estacional de Jeju en un único jardín, con el Hallasan como telón de fondo. El parque rota **cinco festivales nombrados a lo largo del año** — el **Festival de la Flor de Ciruelo** (de mediados de febrero a finales de marzo); el **Festival de Hortensias de Primavera** (de principios de abril a mediados de junio, invernadero interior + primeras floraciones exteriores); el **Festival de Hortensias de Verano** (pico de junio hasta principios de julio, plena floración exterior); el **Festival Europeo de Hortensias** (de mediados de julio a agosto, cultivares distintos); el **Festival del Pink Muhly** (de mediados de septiembre a octubre); y el **Festival de la Camelia** (de mediados de noviembre a enero) — lo que significa que **una visita aterriza dentro de un festival activo nombrado aproximadamente 320 días al año**. **Para el tour del festival de hortensias por la ruta este, la ventana de junio coincide con el pico exterior**, con el **invernadero de hortensias** como refugio interior garantizado si las tormentas vespertinas hacen acto de presencia. El espectáculo emblemático del parque es el **Espectáculo del Cerdo Negro de Jeju**, programado cuatro veces al día a las **11:00 / 13:00 / 15:00 / 17:00** — la franja de las 17:00 es el objetivo natural para la llegada a las 15:50 de este tour. **El cerdo negro de Jeju está designado Monumento Natural de Corea**, y el espectáculo es el **anclaje del parque más amigable para niños y mayores** junto al paseo de las hortensias. Otros reclamos fotográficos incluyen la **Aldea Cultural de Jeju** (juegos tradicionales + hanok con techo de paja y muros de piedra), la **sala de exhibición de insectos**, el **jardín de flores silvestres** y la **Cueva Hueree** (una pequeña cueva fotográfica iluminada con luces de neón). El parque es **~85 % al aire libre**, así que el **invernadero de hortensias + sala de insectos + Galería Hueree Pang** sirven como opciones de refugio meteorológico al final de la tarde.",
+      "description": "**Parque Natural Hueree** — en el flanco sur del Hallasan — es un parque de flores de temporada. En verano (junio-agosto) se convierte en el **mayor jardín de hortensias de Jeju**: colinas cubiertas de hortensias azules con el Hallasan de telón de fondo. La vista desde las colinas de Hueree, con las hortensias en primer plano y el volcán al fondo, es uno de los escenarios más fotogénicos de la isla.",
       "image": "https://images.unsplash.com/photo-1565538810643-b5bdb714032a",
       "highlights": [
-        "**'Una isla dentro de la isla'** — parque floral con el Hallasan al fondo, rotación de festivales todo el año",
-        "**5 festivales nombrados** rotan a lo largo del año — los visitantes aterrizan dentro de un festival activo ~320 días/año",
-        "**Festival de Hortensias de Primavera** (principios de abr–mediados de jun) + **Festival de Hortensias de Verano** (pico de jun–principios de jul) + **Festival Europeo de Hortensias** (mediados de jul–ago)",
-        "**Invernadero de hortensias** como refugio interior garantizado si caen tormentas por la tarde",
-        "**Espectáculo del Cerdo Negro de Jeju** — 4 franjas diarias (11:00/13:00/15:00/17:00); llegue 30 min antes",
-        "El cerdo negro de Jeju es **Monumento Natural designado de Corea**",
-        "**Aldea Cultural de Jeju** (juegos tradicionales + hanok con techo de paja) + sala de exhibición de insectos + jardín de flores silvestres",
-        "**~85 % al aire libre** — invernadero + sala de insectos + galería como refugio meteorológico",
-        "Seleccionado por la KTO como **uno de los Mejores Atractivos Turísticos de Corea**"
+        "**El mayor jardín de hortensias de Jeju** en el flanco sur del Hallasan",
+        "Hortensias en primer plano + Hallasan al fondo — icono fotográfico veraniego",
+        "Festival de verano con exposiciones adicionales"
       ],
       "timeUsed": [
         "Parque Hueree + hortensias — ~50 min"
       ],
-      "whyOnRoute": "**El anclaje de hortensias del día y el broche floral que da nombre al tour entero.** Cuatro motivos por los que Hueree es la última parada sustancial a las 15:50. (1) **Luz tardía + color de las hortensias**: los campos exteriores de hortensias de Hueree miran al oeste-suroeste con el Hallasan como horizonte visible; la franja de 15:50–17:05 capta la **cálida luz dorada de la tarde** que hace brillar los rosas y azules de las hortensias (la luz plana del mediodía los desatura). (2) **Sincronización con el Espectáculo del Cerdo Negro**: la franja del espectáculo de las 17:00 coincide exactamente con el final natural de la visita — los huéspedes pueden hacer primero el paseo por el jardín (15:50–16:30) y cerrar con el espectáculo, en lugar de interrumpir el flujo del jardín para perseguir un espectáculo de mediodía. (3) **Margen operativo**: el perfil **~85 % al aire libre** de Hueree lo convierte en la parada con mayor exposición meteorológica del día — situarlo al final (en lugar de abrir con él) permite al guía observar cómo evoluciona el tiempo por la tarde y emplear el invernadero interior + la sala de insectos + la galería como alternativa si fuese necesario, sin reorganizar el resto del día. (4) **Cierre de la identidad del tour**: esta es la parada que completa la triple identidad de la ruta este — triple UNESCO (Seongsan) + patrimonio Joseon (Seongeup) + anclaje del festival de hortensias (Hueree). Cerrar en el anclaje del festival que da nombre a la ruta es el desenlace narrativo merecido.",
+      "whyOnRoute": "**El punto clave de hortensias del día y el finale floral que da identidad al tour.**",
       "_poi_meta": {
         "poi_key": "hueree_natural_park",
         "kb_version": "1.21",
@@ -549,21 +370,6 @@
           "Hueree Natural Park ticket page",
           "https://jeju-asean.org/notice/lets-follow-the-flower-path-to-find-out-what-flower-festivals-are-happening-in-jeju-this-spring/ — Jeju Business Agency Singapore official notice"
         ]
-      },
-      "convenience": {
-        "restroom": "Numerosos aseos por todo el parque",
-        "parking": "Aparcamiento gratuito disponible"
-      },
-      "smartNotes": {
-        "photo": "La ladera de hortensias a finales de junio/julio es uno de los paisajes más fotografiados de Jeju",
-        "facilities": "Cafetería, restaurante, tienda de regalos, expendedoras de pienso para animales",
-        "tip": "El pico de hortensias es corto (de finales de mayo a mediados de julio, pico a mediados de junio) — calcule bien las visitas; el paseo en pony tiene tarifa aparte"
-      },
-      "visitBasics": {
-        "hours": "09:00–18:00 (última admisión 17:00); variaciones estacionales",
-        "closed": "Abierto todo el año",
-        "admission": "Adulto ≈13.000 KRW / Niño ≈10.000 KRW (sujeto a variación estacional)",
-        "walking": "Dificultad moderada — recinto amplio con caminos en pendiente; parcialmente accesible para cochecitos"
       }
     },
     {
@@ -572,28 +378,21 @@
       "duration": "30 min",
       "name": "Llegada (Ciudad de Jeju)",
       "category": "Regreso — 4 puntos en Ciudad de Jeju",
-      "description": "**La bajada invierte el arco de recogida matinal** por la Ruta 1132 en sentido oeste, con cuatro puntos de descenso a lo largo de Jeju City: el **Mercado Tradicional de Dongmun (동문시장)** como primera parada cerca del paseo marítimo de Tapdong/Sarabong (cómodo para huéspedes que quieran prolongar su tarde con la escena de comida callejera nocturna de Dongmun); después el **Ayuntamiento de Jeju (제주시청)** para el clúster hotelero de Yeon-dong / Nohyeong / Casco Antiguo; a continuación el **Aeropuerto Internacional de Jeju (제주공항)** para huéspedes con vuelos el mismo día u hoteles cercanos; y finalmente **Hagwi-dong (하귀동)**, el punto de bajada más occidental. **Ventana de llegada estándar: ~17:50 Dongmun, ~18:05 Ayuntamiento, ~18:15 Aeropuerto, ~18:25 Hagwi.** A los huéspedes con vuelos nocturnos se les recomienda elegir la **bajada en el aeropuerto** y reservar al menos **2,5 horas** de margen para el check-in internacional, dado el posible desfase de +30 min por contingencias meteorológicas. El guía recoge las tarjetas de feedback durante el trayecto y confirma cada punto de bajada individualmente con cada huésped antes de que descienda.",
+      "description": "Regreso a los puntos de recogida de Ciudad de Jeju. Llegada estimada ~18:30-19:00.",
       "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
       "highlights": [
-        "**4 puntos de bajada** — Dongmun, Ayuntamiento, Aeropuerto, Hagwi (orden inverso a la recogida)",
-        "Dongmun primero (~17:50) para quienes alarguen la tarde con comida callejera",
-        "**Bajada en el aeropuerto** para vuelos del mismo día — recomendamos 2,5 h de margen para vuelos internacionales",
-        "Tarjetas de feedback recogidas durante el tránsito hacia el oeste",
-        "Cada punto de bajada se confirma individualmente con cada huésped"
+        "Regreso a Ciudad de Jeju — ~18:30-19:00"
       ],
       "timeUsed": [
         "Hueree → Ciudad de Jeju — ~40 min"
       ],
-      "whyOnRoute": "**Cierre operativo del bucle de la ruta este.** El orden inverso al de la recogida hace que el autocar encuentre Dongmun primero al reincorporarse a la ciudad desde el este, y luego trace un arco hacia el oeste por Ayuntamiento + Aeropuerto + Hagwi sin volver atrás. La bajada también es el momento en que el guía recopila las tarjetas de feedback mientras el grupo sigue en tránsito y la jornada está fresca en la memoria.",
+      "whyOnRoute": "**Cierre operativo del circuito de la ruta este.**",
       "_poi_meta": {
         "poi_key": "OPS_return",
         "kb_version": "1.20",
         "verified_date": "2026-04-29",
         "sources": []
-      },
-      "convenience": {},
-      "smartNotes": {},
-      "visitBasics": {}
+      }
     }
   ],
   "routeFlowStops": [
@@ -968,84 +767,37 @@
     }
   },
   "pickup_dropoff": {
-    "departure": [
+    "type": "hotel_pickup",
+    "meeting_points": [
       {
-        "order": 1,
-        "time": "08:30",
-        "name": "Ocean Suites Jeju Hotel",
-        "type": "hotel",
-        "note": "Reúnase en el lobby del hotel. El guía lleva un cartel de AtoCKorea.",
-        "lat": 33.4944,
-        "lng": 126.4808
+        "name": "Hotel dentro de la ciudad de Jeju",
+        "time": "≈08:30 (free)"
       },
       {
-        "order": 2,
-        "time": "08:45",
-        "name": "Aeropuerto Internacional de Jeju (3F, Puerta 3)",
-        "type": "airport",
-        "note": "Área de salidas en el 3er piso. Siga las señales hacia la Puerta 3.",
-        "lat": 33.5108,
-        "lng": 126.4932
+        "name": "Hotel fuera de la ciudad de Jeju (Seogwipo/Aewol/Seongsan)",
+        "time": "Recogida más temprana; suplemento de ₩70.000"
       },
       {
-        "order": 3,
-        "time": "08:55",
-        "name": "LOTTE City Hotel Jeju",
-        "type": "hotel",
-        "note": "Espere en el lobby principal. El guía le llamará por su nombre.",
-        "lat": 33.4963,
-        "lng": 126.4865
-      },
-      {
-        "order": 4,
-        "time": "09:05",
-        "name": "Shilla Duty Free (Tienda Jeju)",
-        "type": "shopping",
-        "note": "Reúnase fuera de la entrada principal de Shilla Duty Free, sucursal Jeju.",
-        "lat": 33.4958,
-        "lng": 126.5252
+        "name": "Aeropuerto Internacional de Jeju",
+        "time": "≈08:30"
       }
     ],
-    "return": [
+    "dropoff_points": [
       {
-        "order": 1,
-        "name": "Ocean Suites Jeju Hotel",
-        "type": "hotel",
-        "lat": 33.4944,
-        "lng": 126.4808
+        "name": "Hotel en la ciudad de Jeju",
+        "approx_time": "≈18:00"
       },
       {
-        "order": 2,
-        "name": "Aeropuerto Internacional de Jeju (3F, Puerta 3)",
-        "type": "airport",
-        "lat": 33.5108,
-        "lng": 126.4932
+        "name": "Mercado Tradicional Dongmun",
+        "approx_time": "≈18:00"
       },
       {
-        "order": 3,
-        "name": "LOTTE City Hotel Jeju",
-        "type": "hotel",
-        "lat": 33.4963,
-        "lng": 126.4865
-      },
-      {
-        "order": 4,
-        "name": "Shilla Duty Free (Tienda Jeju)",
-        "type": "shopping",
-        "lat": 33.4958,
-        "lng": 126.5252
-      },
-      {
-        "order": 5,
-        "name": "Mercado Tradicional de Dongmun",
-        "type": "market",
-        "lat": 33.5136,
-        "lng": 126.5296
+        "name": "Aeropuerto de Jeju",
+        "approx_time": "≈18:00"
       }
     ],
-    "notes": [
-      "El regreso suele ser alrededor de las 17:30–18:00."
-    ]
+    "hotel_pickup_available": true,
+    "notes": "Recogida gratuita en la ciudad de Jeju. La recogida fuera de la ciudad añade ₩70.000. Las paradas de hortensias solo se visitan durante la floración, de finales de mayo a mediados de julio, con pico habitual a mediados de junio; confirme antes de reservar."
   },
   "matching_profile": {
     "profile_version": 6,
@@ -1056,7 +808,7 @@
     "destination_region": "jeju",
     "region_type": "jeju_east",
     "vehicle_type": "minicoach",
-    "duration_hours": 9,
+    "duration_hours": 9.0,
     "region_tags": [
       "jeju_east",
       "jeju_namwon"
@@ -1086,17 +838,17 @@
     "first_time_fit": 0.85,
     "family_fit": 0.7,
     "senior_fit": 0.6,
-    "couple_fit": 1,
+    "couple_fit": 1.0,
     "solo_traveler_fit": 0.95,
     "active_traveler_fit": 0.85,
     "adult_family_fit": 0.9,
-    "family_with_teens_fit": 1,
+    "family_with_teens_fit": 1.0,
     "young_kids_fit": 0.45,
     "senior_active_fit": 0.6,
     "senior_general_fit": 0.4,
     "mobility_friendly_fit": 0.4,
     "stroller_fit": 0.4,
-    "one_day_fit": 1,
+    "one_day_fit": 1.0,
     "same_day_flight_fit": 0.4,
     "rain_fit": 0.5,
     "value_for_money_fit": 0.75,
@@ -1107,7 +859,7 @@
     "beach_fit": 0.65,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.2,
-    "no_shopping_fit": 1,
+    "no_shopping_fit": 1.0,
     "local_culture_fit": 0.8,
     "storytelling_fit": 0.8,
     "unesco_fit": 0.95,
@@ -1117,9 +869,9 @@
     "comfort_level": 0.6,
     "budget_fit": 0.6,
     "premium_fit": 0.4,
-    "small_group_fit": 1,
+    "small_group_fit": 1.0,
     "private_fit": 0.2,
-    "bus_fit": 1,
+    "bus_fit": 1.0,
     "price_band": "mid",
     "pickup_base": "jeju_city",
     "return_time_band": "17:00-18:30",
@@ -1160,7 +912,7 @@
     ],
     "profile_format": "small_group_fixed_itinerary",
     "private_tour_fit": 0.05,
-    "fixed_itinerary_fit": 1,
+    "fixed_itinerary_fit": 1.0,
     "customizable_route_fit": 0.05,
     "flexibility_fit": 0.3,
     "first_time_jeju_fit": 0.85,
@@ -1168,40 +920,40 @@
     "southwest_jeju_fit": 0.1,
     "central_jeju_fit": 0.5,
     "north_jeju_fit": 0.4,
-    "east_jeju_fit": 1,
+    "east_jeju_fit": 1.0,
     "west_jeju_fit": 0.05,
-    "east_jeju_signature_fit": 1,
-    "east_unesco_focused_fit": 1,
-    "east_coast_corridor_fit": 1,
+    "east_jeju_signature_fit": 1.0,
+    "east_unesco_focused_fit": 1.0,
+    "east_coast_corridor_fit": 1.0,
     "unesco_focused_tour_fit": 0.7,
-    "unesco_taste_fit": 1,
+    "unesco_taste_fit": 1.0,
     "unesco_anchor_count": 1,
-    "unesco_world_heritage_fit": 1,
-    "unesco_geopark_fit": 1,
-    "unesco_biosphere_fit": 1,
-    "unesco_triple_anchor_fit": 1,
-    "national_folklore_heritage_fit": 1,
-    "joseon_heritage_fit": 1,
-    "natural_monument_fit": 1,
+    "unesco_world_heritage_fit": 1.0,
+    "unesco_geopark_fit": 1.0,
+    "unesco_biosphere_fit": 1.0,
+    "unesco_triple_anchor_fit": 1.0,
+    "national_folklore_heritage_fit": 1.0,
+    "joseon_heritage_fit": 1.0,
+    "natural_monument_fit": 1.0,
     "natural_monument_anchor_count": 2,
     "hydrangea_festival_anchor_count": 2,
-    "summer_flowers_hydrangea_fit": 1,
-    "june_peak_floral_fit": 1,
-    "early_summer_jeju_fit": 1,
+    "summer_flowers_hydrangea_fit": 1.0,
+    "june_peak_floral_fit": 1.0,
+    "early_summer_jeju_fit": 1.0,
     "named_seasonal_festival_anchor_count": 2,
-    "year_round_flower_park_fit": 1,
+    "year_round_flower_park_fit": 1.0,
     "garden_anchor_count": 2,
     "hydrangea_tunnel_visit": false,
-    "hydrangea_greenhouse_fallback_fit": 1,
+    "hydrangea_greenhouse_fallback_fit": 1.0,
     "multi_garden_pairing_fit": 0.7,
-    "unesco_plus_floral_combo_fit": 1,
+    "unesco_plus_floral_combo_fit": 1.0,
     "lava_tube_visit": true,
     "lava_tube_anchor_count": 1,
-    "manjanggul_alternate_fit": 1,
-    "tuff_cone_climb_fit": 1,
-    "volcanic_geology_fit": 1,
-    "volcano_climb_fit": 1,
-    "rim_view_fit": 1,
+    "manjanggul_alternate_fit": 1.0,
+    "tuff_cone_climb_fit": 1.0,
+    "volcanic_geology_fit": 1.0,
+    "volcano_climb_fit": 1.0,
+    "rim_view_fit": 1.0,
     "stair_climb_demand": 0.7,
     "physical_demand_level": 0.55,
     "leisure_traveler_fit": 0.6,
@@ -1210,13 +962,13 @@
     "teen_kids_fit": 0.85,
     "senior_low_mobility_fit": 0.3,
     "wheelchair_fit": 0.05,
-    "pet_friendly_fit": 0,
-    "instagram_traveler_fit": 1,
-    "photographer_fit": 1,
+    "pet_friendly_fit": 0.0,
+    "instagram_traveler_fit": 1.0,
+    "photographer_fit": 1.0,
     "cultural_traveler_fit": 0.95,
     "botanical_enthusiast_fit": 0.95,
     "nature_lover_fit": 0.95,
-    "english_speaking_market_fit": 1,
+    "english_speaking_market_fit": 1.0,
     "mandarin_speaking_market_fit": 0.7,
     "japanese_speaking_market_fit": 0.7,
     "korean_speaking_market_fit": 0.05,
@@ -1224,7 +976,7 @@
     "singapore_market_fit": 0.95,
     "hong_kong_market_fit": 0.95,
     "china_diaspora_overseas_market_fit": 0.9,
-    "china_mainland_market_fit": 0,
+    "china_mainland_market_fit": 0.0,
     "southeast_asia_market_fit": 0.85,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
@@ -1234,7 +986,7 @@
     "per_pax_pricing_tier": "mid",
     "group_size_max": 14,
     "group_size_min": 4,
-    "lunch_included_fit": 0,
+    "lunch_included_fit": 0.0,
     "ticket_inclusion_fit": 0.5,
     "english_guide_included": true,
     "hotel_pickup_included": true,
@@ -1259,8 +1011,8 @@
     "snow_closure_risk": 0.05,
     "typhoon_disruption_risk_summer": 0.25,
     "signature_photo_count": 5,
-    "wide_landscape_fit": 1,
-    "macro_floral_fit": 1,
+    "wide_landscape_fit": 1.0,
+    "macro_floral_fit": 1.0,
     "wedding_photo_fit": 0.85,
     "couple_portrait_fit": 0.95,
     "instagram_anchor_count": 4,
@@ -1278,7 +1030,7 @@
       "vi",
       "es"
     ],
-    "korea_domestic_market_fit": 0,
+    "korea_domestic_market_fit": 0.0,
     "se_asia_market_fit": 0.95,
     "japan_market_fit": 0.85
   },
@@ -2217,7 +1969,7 @@
           "_methodology": "0-1 float scale. Indoor ratio computed time-weighted with Fix 1 methodology applied to Seongeup (30%) and Ilchul Land (30%).",
           "deltas_applied": {
             "unesco_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.85,
               "reasoning": "Verified: Seongsan = UNESCO World Heritage. Tour name says 'Seongeup UNESCO' but Seongeup is Korean National Folklore Cultural Heritage, NOT UNESCO. 1/6 stops actually UNESCO. 0.85 reflects strong cultural-heritage anchor + 1 UNESCO."
             },
@@ -2232,12 +1984,12 @@
               "reasoning": "Verified: Hamdeok 0.5 km flat, Seongeup ~1 km flat olle, Seongsan photo+optional climb, Micheon 365 m flat, Ilchul Land 1 km flat, Hueree 1.5–2 km flat. Total ~5 km flat. 0.55 calibrated — gentler than mechanical 0.6."
             },
             "scenic_level": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.85,
               "reasoning": "Verified: 6 distinct landscapes (turquoise beach, Joseon walled town, UNESCO peak, lava tube + gardens, hydrangea fields). 0.85 — strong but not catalog-leading (west-south tour at 0.95)."
             },
             "photo_level": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.9,
               "reasoning": "Verified: 6 hero shots + dedicated festival photography (hydrangea Hueree). 0.90 calibrated."
             },
@@ -2252,7 +2004,7 @@
               "reasoning": "CORRECTION using time-weighted method (Fix 1 + Batch 4 methodology): 105.75 indoor / 390 total = 0.27 with lunch; 57.75 / 330 = 0.18 without. Catalog 0.20 represents both. Mechanical 0.4 overstated."
             },
             "weather_sensitivity": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.85,
               "reasoning": "VERIFIED 0.85 — hydrangea blooms are weather-affected; outdoor stops dominate; Hamdeok beach + Seongsan exposed. Higher than typical because of hydrangea festival's bloom-window dependency."
             },
@@ -2262,7 +2014,7 @@
               "reasoning": "DOWNGRADED — Hueree's hydrangea greenhouse is rain refuge, Micheon Cave + Seongeup hanok provide partial shelter. But Hamdeok + Seongsan + outdoor hydrangea fields all rain-vulnerable. 0.50 verified."
             },
             "first_time_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.85,
               "reasoning": "Verified: covers Jeju's iconic UNESCO + folk heritage + flower festival diversity. Season-locked (May–August primary). 0.85 — strong first-Jeju summer overview."
             },
@@ -2292,12 +2044,12 @@
               "reasoning": "UPGRADED — Hamdeok IS the beach component (Top 3 Jeju). Mechanical 0.4 understated. 0.65 calibrated."
             },
             "culture_level": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.75,
               "reasoning": "Verified: Seongeup 600-year town + Seongsan haenyeo demo + Hueree Jeju Cultural Village (traditional hanok). 3 cultural anchors, 3 nature/garden anchors. 0.75 calibrated."
             },
             "nature_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.85,
               "reasoning": "Verified: beach + UNESCO peak + flower park + lava tube. Strong but not catalog-leading because of substantial cultural component. 0.85."
             }

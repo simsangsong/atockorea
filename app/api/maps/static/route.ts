@@ -19,7 +19,9 @@ export async function GET(req: NextRequest) {
   });
 
   if (!upstream.ok) {
-    return new NextResponse("Maps API error", { status: upstream.status });
+    const errorText = await upstream.text();
+    console.error("[maps/static] Google API error:", upstream.status, errorText);
+    return new NextResponse(`Maps API error: ${errorText}`, { status: upstream.status });
   }
 
   const imageBuffer = await upstream.arrayBuffer();

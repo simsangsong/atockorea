@@ -100,7 +100,7 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                     alt={item.alt ?? ""}
                     loading={i === 0 ? "eager" : "lazy"}
                     decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05] tour-photo-grade"
                     style={{ objectPosition: tile.objectPos }}
                   />
                   {item.type === "video" && (
@@ -152,7 +152,7 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                       alt={item.alt ?? ""}
                       loading="lazy"
                       decoding="async"
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06] tour-photo-grade"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0c1622]/65 via-[#0c1622]/10 to-transparent" />
                     <div aria-hidden className="absolute inset-0 pointer-events-none rounded-xl ring-1 ring-inset ring-white/10" />
@@ -228,7 +228,7 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
               src={galleryItems[activeIndex].src}
               alt={galleryItems[activeIndex].alt ?? ""}
               decoding="async"
-              className="max-h-[80vh] w-auto rounded-xl shadow-2xl"
+              className="max-h-[80vh] w-auto rounded-xl shadow-2xl tour-photo-grade"
             />
             <div className="absolute bottom-4 left-4 right-4 text-center">
               <span className="inline-block rounded-full bg-black/40 backdrop-blur-sm px-4 py-2 text-sm font-medium text-white">
