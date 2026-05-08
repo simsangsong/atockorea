@@ -14,7 +14,7 @@
       "Aldea Seongeup tour",
       "Jeju grupo pequeño un día"
     ],
-    "ogImage": "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=1200&q=85&fm=jpg&fit=crop",
+    "ogImage": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80",
     "title": "Jeju Este: Volcán, Costa y Aldea Folclórica | AtoC",
     "description": "Tour en grupo pequeño por el este de Jeju: Parque de Piedra → Cabo Seopjikoji → Seongsan Ilchulbong (UNESCO) → Cueva Micheon → Aldea Seongeup. Recogida en hotel, entradas incluidas."
   },
@@ -32,8 +32,8 @@
       "Ruta estrella Jeju Este",
       "Grupo pequeño"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=1920&q=85&fm=jpg&fit=crop",
-    "thumbnail": "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=600&q=85&fm=jpg&fit=crop",
+    "heroImage": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80",
+    "thumbnail": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80",
     "priceLabel": "Consulte el precio al reservar",
     "shortCardDescription": "Tour en grupo pequeño por el este de Jeju siguiendo la ruta más equilibrada de la isla: Parque de Cultura de Piedra de Jeju (mitología de la creación) → Cabo Seopjikoji (2,1 km de costa volcánica y escenario de K-dramas) → Seongsan Ilchulbong (Patrimonio Natural UNESCO) → Cueva Micheon en Ilchul Land → Aldea Folclórica Seongeup (ciudad joseonesa viva desde 1423). Recogida en hotel, todas las entradas incluidas.",
     "tags": [
@@ -56,15 +56,8 @@
     "discountPercent": 10
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=1920&q=85&fm=jpg&fit=crop",
+    "imageUrl": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80",
     "imagePosition": "center 35%",
-    "images": [
-      "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=1920&q=85&fm=jpg&fit=crop",
-      "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
-      "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
-      "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
-      "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/bfc943f0-5372-4a9f-8d07-97c3793808db.webp"
-    ],
     "tagline": "De la cultura de la piedra a la costa volcánica, del cráter de lava a la aldea viva — el este de Jeju en un día",
     "pills": [
       "Recomendado para primera visita",
@@ -105,94 +98,88 @@
     {
       "icon": "camera",
       "label": "Valor fotográfico",
-      "value": "Muy alto",
-      "level": 5
+      "value": "Muy alto"
     },
     {
       "icon": "calendar",
       "label": "Temporada",
-      "value": "Todo el año (4 estaciones distintas)",
-      "level": 5
+      "value": "Todo el año (4 estaciones distintas)"
     },
     {
       "icon": "users",
       "label": "Grupo",
-      "value": "Grupo pequeño",
-      "level": 3
+      "value": "Grupo pequeño"
     },
     {
       "icon": "clock",
       "label": "Duración",
-      "value": "Un día",
-      "level": 3
+      "value": "Un día"
     },
     {
       "icon": "map-pin",
       "label": "Región",
-      "value": "Jeju Este",
-      "level": 4
+      "value": "Jeju Este"
     },
     {
       "icon": "footprints",
       "label": "A pie",
-      "value": "Moderado",
-      "level": 4
+      "value": "Moderado"
     }
   ],
   "galleryItems": [
     {
       "id": 1,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
-      "location": "Seongsan Ilchulbong",
-      "atmosphere": "El cono volcánico Triple-UNESCO que vertebra el día",
-      "alt": "Cono volcánico Seongsan Ilchulbong sobre la costa este de Jeju",
-      "caption": "Seongsan Ilchulbong — cono Triple-UNESCO del este de Jeju"
+      "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1200&q=80",
+      "location": "Jeju Este (vista general)",
+      "atmosphere": "Una ruta que se va revelando poco a poco y que cobra sentido al avanzar el día",
+      "alt": "Imagen de Visión general de la ruta — el este de Jeju en un día",
+      "caption": "Visión general de la ruta — el este de Jeju en un día"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-      "location": "Apertura: Cultura de la Piedra",
-      "atmosphere": "Apertura tranquila con el mito de creación de la isla",
-      "alt": "Jeju Stone Culture Park stone path with lava rock walls, green meadow, and oreum mountain backdrop",
-      "caption": "Jeju Stone Culture Park — lava-rock path, open meadow, and oreum silhouette"
+      "src": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
+      "location": "Parque de Cultura de Piedra de Jeju, Jocheon-eup",
+      "atmosphere": "Inicio tranquilo: escultura de piedra basáltica y el mito de la creación de Jeju",
+      "alt": "Imagen de Parque de Cultura de Piedra de Jeju — apertura geológica y mitológica",
+      "caption": "Parque de Cultura de Piedra de Jeju — apertura geológica y mitológica"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
-      "location": "Cabo y campo de colza",
-      "atmosphere": "El sello del cabo Seopjikoji: laderas de colza en primavera",
-      "alt": "Campos de colza primaverales en Seopjikoji con el faro de Bangdupo",
-      "caption": "Seopjikoji — cabo volcánico y colza primaveral"
+      "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+      "location": "Seopjikoji, costa este de Jeju",
+      "atmosphere": "Perspectiva costera: el cráter de Seongsan visto desde la lengua de tierra de Seopjikoji",
+      "alt": "Imagen de Cabo Seopjikoji — el cono volcánico de Seongsan se yergue al fondo",
+      "caption": "Cabo Seopjikoji — el cono volcánico de Seongsan se yergue al fondo"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
-      "location": "Cueva de lava",
-      "atmosphere": "Contraste fresco y cerrado tras el cráter — el mundo subterráneo",
-      "alt": "Interior de la cueva Micheon en Ilchul Land",
-      "caption": "Cueva Micheon — del sistema de tubos de lava de Manjanggul"
+      "src": "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=800&q=80",
+      "location": "Ilchul Land, Seongsan",
+      "atmosphere": "Pausa subterránea: temperatura constante de 18°C en la cueva de lava",
+      "alt": "Imagen de Cueva Micheon en Ilchul Land — contraste fresco y oscuro después del cráter",
+      "caption": "Cueva Micheon en Ilchul Land — contraste fresco y oscuro después del cráter"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "https://live.staticflickr.com/65535/53953518745_a91884d6e2_b.jpg",
-      "location": "Final en aldea folclórica",
-      "atmosphere": "Cierre suave con 500 años de vida cotidiana",
-      "alt": "Aldea folclórica de Seongeup — ciudad amurallada de la era Joseon",
-      "caption": "Aldea folclórica Seongeup — ciudad amurallada de 1423"
+      "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
+      "location": "Aldea Folclórica Seongeup, Pyoseon-myeon",
+      "atmosphere": "Cierre suave: historia y vida cotidiana joseonesa al final de la jornada",
+      "alt": "Imagen de Aldea Seongeup — ciudad joseonesa viva que cierra el día con historia",
+      "caption": "Aldea Seongeup — ciudad joseonesa viva que cierra el día con historia"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
-      "location": "Costa abierta",
-      "atmosphere": "Viento y horizonte abierto que cambian el ánimo de la ruta",
-      "alt": "Carretera costera de Seongsan a Sehwa, este de Jeju",
-      "caption": "Carretera costera del este de Jeju — Seongsan a Sehwa"
+      "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80",
+      "location": "Seongsan Ilchulbong, costa este de Jeju",
+      "atmosphere": "Punto culminante del día: el cráter más fotogénico de la isla",
+      "alt": "Imagen de Seongsan Ilchulbong — el gran volcán del este de Jeju",
+      "caption": "Seongsan Ilchulbong — el gran volcán del este de Jeju"
     }
   ],
   "itineraryStops": [
@@ -202,25 +189,20 @@
       "duration": "75 min",
       "name": "Parque de la Cultura de Piedra de Jeju",
       "category": "Museo al aire libre — 990.000 m², mitología de la creación de Jeju",
-      "description": "**El Parque de la Cultura de la Piedra de Jeju (제주 돌문화공원, Jeju Dolmunhwa Gongwon)** es un **museo al aire libre de 300.000 pyeong (~990.000 m²)** en Jocheon, dedicado al mito fundacional de Jeju: **Seolmundae Halmang (설문대 할망, la Diosa Gigante)** que, según la tradición oral de Jeju, **creó la isla esparciendo rocas desde su delantal** — el Hallasan se alzó donde dejó caer la piedra más grande, y los **más de 360 oreum (conos parásitos) de la isla son las piedras menores que cayeron mientras caminaba**. La colección de piedras del parque lleva **más de 30 años en formación**, curada en lugares de toda Jeju para preservar el patrimonio en roca volcánica de la isla. Tres recorridos a pie articulan la experiencia: **el Recorrido 1 (~1 hora)** abarca el museo principal + el Estanque del Cielo + la Sala de la Madre; **los tres recorridos juntos (~2h 40min)** completan el recinto íntegro, incluida la Galería de los Obaek Janggun (500 generales), el Museo de la Piedra, la villa tradicional de Jeju con techos de paja y la Sala de Exposiciones de Seolmundae Halmang. El gran momento arquitectónico contemporáneo del lugar es **'la Sala de la Madre (어머니의 방)'** — una cámara cilíndrica de hormigón donde un único tragaluz superior proyecta luz cambiante sobre una escultura central de piedra, resolviendo el mito abstracto de la giganta en una experiencia arquitectónica meditativa. Entrada: **adulto ₩5.000 / juvenil ₩3.500 / GRATIS para menores de 13 y mayores de 65 años**; **el último miércoles de cada mes es Día Cultural GRATUITO**. Horario: **09:00–18:00 (última entrada 17:00)**, **cerrado el primer lunes de cada mes**. Proporción interior ~30 % (museo + salas interiores); el resto es paseo al aire libre — calzado cómodo imprescindible.",
-      "image": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+      "description": "**Parque de la Cultura de Piedra de Jeju** es un **museo al aire libre de 990.000 m²** en Jocheon dedicado al mito de la creación de Jeju: **Seolmundae Halmang**, la diosa creadora, formó Jeju alzando el fondo del mar con su cuerpo, generando el Hallasan como su ombligo y las islas satélite como sus pechos. El parque documenta la omnipresencia del **basalto negro** en la cultura de Jeju: muros de piedra (*doltap*), molinos de piedra, caminos pavimentados, guardianes de piedra (*tol hareubang*) y esculturas de la diosa en 300.000 m² de bosque y parques temáticos. Ofrece un contexto cultural único antes de visitar los mismos paisajes volcánicos que originaron el mito. **Entradas incluidas en el tour.**",
+      "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176",
       "highlights": [
-        "**Museo al aire libre de 300.000 pyeong** — el mayor sitio del patrimonio en roca volcánica de Jeju",
-        "**Mito de Seolmundae Halmang** — leyenda fundacional de Jeju, origen del Hallasan + 360 oreum",
-        "**Recorrido 1 (~1 h)** vs circuito completo (~2h 40min) — paseo flexible según el tiempo disponible",
-        "**Sala de la Madre (어머니의 방)** — cámara cilíndrica de hormigón con tragaluz + escultura de piedra",
-        "**Galería Obaek Janggun (500 Generales)** — colección de esculturas de piedra inspiradas en el mito",
-        "**Más de 30 años** de colección curada de roca volcánica por toda Jeju",
-        "Reconstruida **villa tradicional de Jeju con techos de paja (jip)** en el extremo del parque",
-        "Entrada **₩5.000 adulto / ₩3.500 juvenil / GRATIS para menores de 13 y mayores de 65**; **último miércoles GRATIS**",
-        "**Cerrado el primer lunes** de cada mes; verifique antes de reservar"
+        "**Mito de la creación de Jeju** — Seolmundae Halmang, la diosa que formó la isla",
+        "990.000 m² de museo al aire libre con esculturas de basalto negro",
+        "Guardianes *tol hareubang*, muros de piedra, molinos — la cultura de la piedra de Jeju",
+        "**Entradas incluidas**"
       ],
       "timeUsed": [
         "Recogida en hoteles de Ciudad de Jeju (08:30-09:00)",
         "Desplazamiento al Parque de Piedra — ~20 min",
         "Visita al parque — ~60 min"
       ],
-      "whyOnRoute": "**Anclaje de apertura mitológico + cultural del bucle este**. Donde el tour de paisajes de los aspectos destacados abre con la geología UNESCO del Hallasan, esta ruta nuclear-natural abre con la **historia mitológica del origen del Hallasan** — la misma isla volcánica, enmarcada como creación de la tradición oral en lugar de geología UNESCO. Establecer a Seolmundae Halmang como el primer hito narrativo del día significa que cada parada posterior (cuello volcánico Seonbawi de Seopjikoji, cono de toba de Seongsan, tubo de lava de Ilchulland, hanok con muros de piedra de Seongeup) se lee como un capítulo derivado del mito de la giganta. **Los 300.000 pyeong de paseo al aire libre** también adelantan la exposición exterior del día — capitalizando el tiempo al aire libre antes de posibles cambios meteorológicos por la tarde. En comparación con el **Parque Hallim (300.000 pyeong, ₩15.000, experiencia botánica más diluida)**, el Parque de la Piedra es de **₩5.000, centrado en mitología y curado arquitectónicamente** — el preámbulo cultural de mayor rendimiento del este de Jeju.",
+      "whyOnRoute": "**Punto clave mitológico y cultural de apertura del circuito este.** El tour del circuito empieza en Stone Park (geología+mito), la ruta para cruceros abre en el Museo Haenyeo (folclore+patrimonio vivo).",
       "_poi_meta": {
         "poi_key": "jeju_stone_park",
         "kb_version": "1.19",
@@ -232,93 +214,7 @@
           "Korea Folklore Society — Seolmundae Halmang oral tradition records",
           "Architectural Institute of Korea — Mother's Room sculpture/architecture documentation"
         ]
-      },
-      "convenience": {
-        "restroom": "En la entrada y dentro de las instalaciones",
-        "parking": "Aparcamiento disponible"
-      },
-      "smartNotes": {
-        "photo": "Las composiciones paisajísticas amplias suelen funcionar mejor aquí que los retratos de cerca.",
-        "facilities": "Entre las primeras paradas, esta tiene en general la mejor dotación de aseos e instalaciones interiores.",
-        "tip": "Esta parada funciona mejor como apertura serena y con sentido que como una foto rápida y de paso."
-      },
-      "visitBasics": {
-        "hours": "09:00–18:00",
-        "closed": "Lunes",
-        "admission": "5.000 KRW adultos / 3.500 KRW adolescentes",
-        "walking": "Fácil a moderada"
-      },
-      "images": [
-        "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-        "/images/tours/stone-culture/stone-park-water-oreum.webp",
-        "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
-        "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
-        "/images/tours/stone-culture/stone-park-standing-stones.webp"
-      ],
-      "imageCredits": [
-        {
-          "url": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/stone-culture/stone-park-water-oreum.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/stone-culture/stone-park-standing-stones.webp",
-          "source": "atoc-korea"
-        }
-      ],
-      "galleryItems": [
-        {
-          "id": 1,
-          "type": "photo",
-          "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-          "location": "Stone Park Grounds",
-          "caption": "Lava-rock-lined stone path winding through the open meadow grounds",
-          "alt": "Woman walking on stone path with lava rock walls and green meadow at Jeju Stone Culture Park"
-        },
-        {
-          "id": 2,
-          "type": "photo",
-          "src": "/images/tours/stone-culture/stone-park-water-oreum.webp",
-          "location": "Water Garden",
-          "caption": "Wading pool garden with oreum (volcanic cone) backdrop",
-          "alt": "Woman walking in the shallow water garden with oreum mountain at Jeju Stone Culture Park"
-        },
-        {
-          "id": 3,
-          "type": "photo",
-          "src": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
-          "location": "Dolhareubang Grounds",
-          "caption": "Hundreds of stone figures arranged across the open park",
-          "alt": "Rows of dolhareubang and stone figures at Jeju Stone Culture Park"
-        },
-        {
-          "id": 4,
-          "type": "photo",
-          "src": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
-          "location": "Dolhareubang",
-          "caption": "Traditional Jeju dolhareubang stone guardians",
-          "alt": "Dolhareubang stone guardian figures with forest and oreum behind them"
-        },
-        {
-          "id": 5,
-          "type": "photo",
-          "src": "/images/tours/stone-culture/stone-park-standing-stones.webp",
-          "location": "Standing Stone Corridor",
-          "caption": "Walking between monolithic standing stones lining the corridor path",
-          "alt": "Woman walking between large standing stone monoliths at Jeju Stone Culture Park"
-        }
-      ]
+      }
     },
     {
       "number": 2,
@@ -327,7 +223,7 @@
       "name": "Cabo Seopjikoji (Costa Este)",
       "category": "Cabo volcánico del este de Jeju — escenario de K-dramas, vistas a Seongsan",
       "description": "**Seopjikoji** es una estrecha lengua volcánica en la costa este de Jeju. Su nombre combina **“Seopji”**, asociado a una franja de tierra estrecha, y **“koji”**, palabra del dialecto de Jeju para “cabo”. El sendero costero de **2,1 km** recorre el borde del acantilado con **vistas frontales a Seongsan Ilchulbong** en el horizonte, una de las mejores perspectivas del cono volcánico antes de subirlo. La hierba verde del cabo, el basalto negro y el azul del mar forman uno de los paisajes más fotografiados de Jeju. Seopjikoji fue escenario de los dramas **All In** y **Crash Landing on You**. Al fondo del cabo hay un pequeño faro tradicional. **Entrada gratuita.**",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
+      "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
       "highlights": [
         "Sendero costero de **2,1 km** con vista frontal a **Seongsan Ilchulbong**",
         "Escenario de **K-dramas**: 'Crash Landing on You' (2019) y 'All In' (2003)",
@@ -352,42 +248,6 @@
           "Tadao Ando Architect & Associates — Phoenix Island project documentation",
           "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
         ]
-      },
-      "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
-        "https://api.cdn.visitjeju.net/photomng/imgpath/201908/08/9d19a7d3-97a8-4999-b849-123e46fc88bc.webp",
-        "https://pixabay.com/get/g58bbbe80bb67eb0a32a6e60a6931f0e77d2b2c342b890c9aaf73e87edffcf3af7cedd6ca98cbae1e5fe157fd6658ce642a1c0c5ca621591b1f85cec6e987313d_1280.jpg"
-      ],
-      "imageCredits": [
-        {
-          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
-          "source": "visitjeju",
-          "title": "섭지코지"
-        },
-        {
-          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201908/08/9d19a7d3-97a8-4999-b849-123e46fc88bc.webp",
-          "source": "visitjeju",
-          "title": "신양섭지해수욕장"
-        },
-        {
-          "url": "https://pixabay.com/get/g58bbbe80bb67eb0a32a6e60a6931f0e77d2b2c342b890c9aaf73e87edffcf3af7cedd6ca98cbae1e5fe157fd6658ce642a1c0c5ca621591b1f85cec6e987313d_1280.jpg",
-          "source": "pixabay"
-        }
-      ],
-      "smartNotes": {
-        "photo": "Because the sky is wide and the wind is strong, side angles and wider framing often look better than straightforward posed shots.",
-        "facilities": "Facilities are limited, with restrooms mainly near the entrance zone.",
-        "tip": "Compared with the previous stop, this section feels much more exposed to wind and sun."
-      },
-      "convenience": {
-        "restroom": "Near the entrance area",
-        "parking": "Parking available"
-      },
-      "visitBasics": {
-        "hours": "Open 24 hours",
-        "closed": "Open year-round",
-        "admission": "Free",
-        "walking": "Easy to moderate"
       }
     },
     {
@@ -405,22 +265,7 @@
       "timeUsed": [
         "Almuerzo — ~60 min"
       ],
-      "whyOnRoute": "La ubicación en la costa este permite un **salto de 10 min a Seongsan Ilchulbong** — mantiene el impulso de la costa este.",
-      "smartNotes": {
-        "photo": "If you want food photos, local Jeju dishes usually make the strongest images.",
-        "facilities": "Restaurant facilities are generally sufficient.",
-        "tip": "The most important function here is to reset the pace well, not to compress the schedule as much as possible."
-      },
-      "convenience": {
-        "restroom": "Inside the restaurant",
-        "parking": "Parking available"
-      },
-      "visitBasics": {
-        "hours": "Depends on the restaurant",
-        "closed": "Varies by venue",
-        "admission": "Included or paid on site depending on product setup",
-        "walking": "Minimal"
-      }
+      "whyOnRoute": "La ubicación en la costa este permite un **salto de 10 min a Seongsan Ilchulbong** — mantiene el impulso de la costa este."
     },
     {
       "number": 4,
@@ -429,7 +274,7 @@
       "name": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
       "category": "Triple designación UNESCO — Cono volcánico de 5.000 años",
       "description": "**Seongsan Ilchulbong** es el hito más representativo de Jeju — **Patrimonio Natural UNESCO (2007), Reserva de la Biosfera UNESCO y Geoparque Global UNESCO**: triple designación única en Corea. Cono hidrovolcánico de **5.000 años** con **99 agujas de roca** y **cráter de 600 m de diámetro**. Subida al borde del cráter: ~180 escalones, ~20-25 min, **opcional** — vistas al Mar del Este, isla Udo y el pueblo de Seongsan. **Entrada ₩5.000 (incluida).**",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
+      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
       "highlights": [
         "**Triple designación UNESCO**: Patrimonio Natural + Reserva Biosfera + Geoparque",
         "Cono de 5.000 años con 99 agujas de roca y cráter de 600 m",
@@ -453,89 +298,6 @@
           "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
           "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
         ]
-      },
-      "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
-        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/bfc943f0-5372-4a9f-8d07-97c3793808db.webp",
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202306/19/51f1c895-032f-4b18-9e47-a1a0cb21511f.webp",
-        "https://live.staticflickr.com/65535/53953518745_a91884d6e2_b.jpg",
-        "https://live.staticflickr.com/5247/5370777099_5053f69108_b.jpg",
-        "https://live.staticflickr.com/5169/5370774765_8c1e200d19_b.jpg",
-        "https://live.staticflickr.com/5089/5370768533_3662b7d908_b.jpg",
-        "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBzdW5yaXNlJTIwY3JhdGVyfGVufDB8MHx8fDE3NzgwNzgzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://pixabay.com/get/gd4d8b6155182b4d2c2fc04952137adb1e3dc7431b2f950f7a50ba799393e122c3edd772a230b42cc71890517bd0898cbd5e207a844e1dafba34600088b9ab2c0_1280.jpg"
-      ],
-      "imageCredits": [
-        {
-          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
-          "source": "visitjeju",
-          "title": "성산일출봉(UNESCO 세계자연유산)"
-        },
-        {
-          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/bfc943f0-5372-4a9f-8d07-97c3793808db.webp",
-          "source": "visitjeju",
-          "title": "성산~세화 해안도로"
-        },
-        {
-          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202306/19/51f1c895-032f-4b18-9e47-a1a0cb21511f.webp",
-          "source": "visitjeju",
-          "title": "성산스쿠버리조트"
-        },
-        {
-          "url": "https://live.staticflickr.com/65535/53953518745_a91884d6e2_b.jpg",
-          "source": "flickr",
-          "author": "xiquinhosilva",
-          "license": "CC BY 2.0",
-          "sourceUrl": "https://www.flickr.com/photos/7138083@N04/53953518745",
-          "title": "Seongsan Ilchulbong"
-        },
-        {
-          "url": "https://live.staticflickr.com/5247/5370777099_5053f69108_b.jpg",
-          "source": "flickr",
-          "author": "-Jérôme-",
-          "license": "CC BY 2.0",
-          "sourceUrl": "https://www.flickr.com/photos/76474448@N00/5370777099",
-          "title": "Presqu'ile volcanique"
-        },
-        {
-          "url": "https://live.staticflickr.com/5169/5370774765_8c1e200d19_b.jpg",
-          "source": "flickr",
-          "author": "-Jérôme-",
-          "license": "CC BY 2.0",
-          "sourceUrl": "https://www.flickr.com/photos/76474448@N00/5370774765",
-          "title": "Après la lave, la végétation"
-        },
-        {
-          "url": "https://live.staticflickr.com/5089/5370768533_3662b7d908_b.jpg",
-          "source": "flickr",
-          "author": "-Jérôme-",
-          "license": "CC BY 2.0",
-          "sourceUrl": "https://www.flickr.com/photos/76474448@N00/5370768533",
-          "title": "La caldera"
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBzdW5yaXNlJTIwY3JhdGVyfGVufDB8MHx8fDE3NzgwNzgzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-          "source": "unsplash"
-        },
-        {
-          "url": "https://pixabay.com/get/gd4d8b6155182b4d2c2fc04952137adb1e3dc7431b2f950f7a50ba799393e122c3edd772a230b42cc71890517bd0898cbd5e207a844e1dafba34600088b9ab2c0_1280.jpg",
-          "source": "pixabay"
-        }
-      ],
-      "smartNotes": {
-        "photo": "Wide-angle framing that includes both the crater and coastline usually feels stronger than summit selfies alone.",
-        "facilities": "Facilities are more developed near the base and more basic higher up.",
-        "tip": "Wind, crowd levels, and group fitness can all shift this stop toward more walking, more viewing, or more haenyeo-focused time."
-      },
-      "convenience": {
-        "restroom": "At the base area and some upper sections",
-        "parking": "Large parking lot available"
-      },
-      "visitBasics": {
-        "hours": "Varies by season; last ticketing is typically 1 hour before closing",
-        "closed": "First Monday of each month (or the following day if Monday is a holiday)",
-        "admission": "KRW 5,000 adults / KRW 2,500 teens and children",
-        "walking": "Moderate, or moderately demanding if the group chooses the summit"
       }
     },
     {
@@ -544,24 +306,19 @@
       "duration": "75 min",
       "name": "Ilchul Land (Cueva Micheon — Tubo de lava)",
       "category": "Parque natural de 400.000 m² — Cueva de lava Micheon",
-      "description": "**Ilchul Land (일출랜드)** es un **parque temático natural de 400.000 m²** situado en Seongsan, inaugurado en **2002** y construido alrededor del tubo de lava **Cueva Micheon (미천굴)** — una **cueva de 1.700 m de longitud total** con un **tramo nivelado artificialmente de 365 m abierto al público** (recorrido de unos 25 minutos). La cueva forma parte del **sistema de tubos de lava de Jeju que comparte linaje geológico con la Cueva Manjanggul** —el tubo de lava inscrito como Patrimonio Natural Mundial de la UNESCO— y **funciona como alternativa operativa cuando Manjanggul cierra por mantenimiento de conservación o por meteorología (tifones, heladas)**. Mientras Manjanggul preserva su suelo natural irregular como experiencia geológica auténtica, la pasarela nivelada de Micheon hace que la cueva sea **accesible para visitantes mayores, familias con cochecitos y huéspedes con movilidad reducida** —una elección de ingeniería deliberada que amplía la experiencia del tubo de lava a públicos que no podrían recorrer Manjanggul. El interior está iluminado con una **iluminación decorativa de siete colores (oro, plata, bronce, rojo, negro, azul, blanco)** que resalta las formaciones —controvertida entre los puristas, pero práctica para la fotografía turística no especializada. Fuera de la cueva, el parque se extiende por el **Parque Subyeon, una aldea tradicional de Jeju reconstruida, el Jardín de Bonsáis de Flores Silvestres, el Invernadero de Cactus, la Calle de Esculturas y un Café de Baño de Pies (spa aromático para pies)**, lo que convierte este espacio en la **única atracción de Jeju con sala de oración musulmana en sus instalaciones** (una inversión deliberada en accesibilidad). Localización de rodaje: **'Running Man' (런닝맨, SBS), episodio 89 (temática de Alicia en el País de las Maravillas, 2012)**. Entrada: **Adulto ₩12.000 / Joven ₩9.000 / Niño ₩7.000**. La proporción interior/exterior es de **30 % cubierto (cueva + invernadero) / 70 % al aire libre (recinto del parque)**, dato relevante para planificar con flexibilidad ante el clima.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
+      "description": "**Ilchul Land**: parque natural de **400.000 m²** con la **Cueva Micheon** — tubo de lava de 1.700 m, sección visitable de **365 m** a temperatura constante de ~18°C. Además: parque escultórico, jardín de bonsái y zona de baño de pies. Alternativa operativa mientras la Cueva Manjanggul está cerrada. **Entradas incluidas.**",
+      "image": "https://images.unsplash.com/photo-1502780402662-acc01917a3a4",
       "highlights": [
-        "**1.700 m totales** de tubo de lava; **365 m de tramo abierto** (~25 min de recorrido)",
-        "**Alternativa UNESCO a Manjanggul** — mismo sistema de tubos de lava; abre cuando Manjanggul cierra",
-        "**Suelo nivelado artificialmente** — accesible para mayores, cochecitos y huéspedes con movilidad reducida",
-        "**Iluminación decorativa de siete colores** — oro/plata/bronce/rojo/negro/azul/blanco",
-        "**400.000 m² de recinto** — bonsáis, cactus, esculturas, aldea tradicional, café con baño de pies",
-        "**Única atracción de Jeju con sala de oración musulmana** — accesibilidad deliberada",
-        "**'Running Man' Ep. 89** rodado aquí (2012, tema de Alicia en el País de las Maravillas)",
-        "Entrada **₩12.000 adulto / ₩9.000 joven / ₩7.000 niño**",
-        "**30 % cubierto / 70 % al aire libre** — combinación flexible ante el clima"
+        "Tubo de lava de **1.700 m** — sección visitable de **365 m** (~25 min)",
+        "Interior a ~18°C constantes",
+        "Parque escultórico + jardín de bonsái",
+        "**Entradas incluidas**"
       ],
       "timeUsed": [
         "Recorrido por la Cueva Micheon — ~30 min",
         "Parque Subyeon + jardín (opcional) — ~20 min"
       ],
-      "whyOnRoute": "**Punto de anclaje del tubo de lava antes del almuerzo**, planteado explícitamente como el capítulo **'adyacente a propiedad UNESCO'** dentro del tema UNESCO de la jornada. Donde el tour hermano centrado en la naturaleza utiliza Ilchulland como parada flexible a media tarde, esta ruta UNESCO la sitúa más temprano en el día para mantener el **arco narrativo 'UNESCO + patrimonio'** bien tejido: Hamdeok (Olle Trail 19, patrimonio de senderismo casi-UNESCO) → Seongeup (Patrimonio Cultural Folclórico Importante) → **Cueva Micheon de Ilchulland (sistema de tubos de lava de Manjanggul, misma propiedad UNESCO que la propia Manjanggul)** → Seongsan por la tarde (triple UNESCO) → cierre en el Museo de las Haenyeo (Patrimonio Inmaterial UNESCO 2016). La ubicación previa al almuerzo también garantiza una temperatura agradable en la cueva (las cuevas se mantienen a 13–15 °C todo el año, frescas en verano y suaves en invierno) antes de los tramos al aire libre más cálidos del día.",
+      "whyOnRoute": "**Punto clave del tubo de lava del circuito este** — la única parada donde los huéspedes experimentan la geología de clase mundial de Jeju a prueba de lluvia.",
       "_poi_meta": {
         "poi_key": "ilchulland_micheon_cave",
         "kb_version": "1.19",
@@ -573,85 +330,7 @@
           "SBS Variety Archive — Running Man Episode 89 (2012)",
           "Jeju Tourism Organization — accessibility-friendly attraction registry"
         ]
-      },
-      "convenience": {
-        "restroom": "Disponible en la entrada del parque Ilchul Land",
-        "parking": "Aparcamiento gratuito en Ilchul Land"
-      },
-      "smartNotes": {
-        "photo": "Tramo iluminado de la cueva y jardín botánico circundante; verifique qué zonas fotográficas están incluidas con la entrada vigente de Ilchul Land",
-        "facilities": "Servicios del parque Ilchul Land (cafetería, tienda de regalos, aseos)",
-        "tip": "Esta es la alternativa estándar a Manjanggul cuando el tubo de lava público se cierra por inspección de seguridad. Confirme que el acceso a la sección de cueva de Ilchul Land está incluido en el ticket de su grupo."
-      },
-      "visitBasics": {
-        "hours": "Según el horario del parque Ilchul Land — consulte con el operador",
-        "closed": "Según el calendario del parque Ilchul Land — consulte con el operador",
-        "admission": "Incluida en la entrada del parque Ilchul Land — verifique las tarifas con el operador",
-        "walking": "Moderada: descenso por escaleras hacia la cueva, ≈ 12 °C todo el año; suelo volcánico irregular dentro del tramo de cueva"
-      },
-      "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202205/30/8d1fb97b-1ad0-48cc-9aa0-2ec519e9575c.webp",
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202112/21/5d2e84f4-d58b-4fa0-b7bb-a2f32cf63428.webp",
-        "https://live.staticflickr.com/65535/53953062566_80ce9e16af_b.jpg",
-        "https://live.staticflickr.com/7534/27767696885_e3b15614a5_b.jpg",
-        "https://live.staticflickr.com/7430/27733577536_8ecebd8480_b.jpg",
-        "https://live.staticflickr.com/7262/27733580686_b5c66c7b9d_b.jpg",
-        "https://images.unsplash.com/photo-1596617345904-f0b8677f5a8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZWp1JTIwbGF2YSUyMGNhdmUlMjBhdG1vc3BoZXJpY3xlbnwwfDB8fHwxNzc4MDc4NDI3fDA&ixlib=rb-4.1.0&q=80&w=1080"
-      ],
-      "imageCredits": [
-        {
-          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
-          "source": "visitjeju",
-          "title": "일출랜드 아트센터"
-        },
-        {
-          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202205/30/8d1fb97b-1ad0-48cc-9aa0-2ec519e9575c.webp",
-          "source": "visitjeju",
-          "title": "일출랜드"
-        },
-        {
-          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202112/21/5d2e84f4-d58b-4fa0-b7bb-a2f32cf63428.webp",
-          "source": "visitjeju",
-          "title": "미천굴"
-        },
-        {
-          "url": "https://live.staticflickr.com/65535/53953062566_80ce9e16af_b.jpg",
-          "source": "flickr",
-          "author": "xiquinhosilva",
-          "license": "CC BY 2.0",
-          "sourceUrl": "https://www.flickr.com/photos/7138083@N04/53953062566",
-          "title": "Jeju Volcanic Island and Lava Tubes"
-        },
-        {
-          "url": "https://live.staticflickr.com/7534/27767696885_e3b15614a5_b.jpg",
-          "source": "flickr",
-          "author": "lnevay",
-          "license": "CC BY-SA 2.0",
-          "sourceUrl": "https://www.flickr.com/photos/98901717@N08/27767696885",
-          "title": "Manjanggul Cave"
-        },
-        {
-          "url": "https://live.staticflickr.com/7430/27733577536_8ecebd8480_b.jpg",
-          "source": "flickr",
-          "author": "lnevay",
-          "license": "CC BY-SA 2.0",
-          "sourceUrl": "https://www.flickr.com/photos/98901717@N08/27733577536",
-          "title": "Manjanggul Cave"
-        },
-        {
-          "url": "https://live.staticflickr.com/7262/27733580686_b5c66c7b9d_b.jpg",
-          "source": "flickr",
-          "author": "lnevay",
-          "license": "CC BY-SA 2.0",
-          "sourceUrl": "https://www.flickr.com/photos/98901717@N08/27733580686",
-          "title": "Manjanggul Cave"
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1596617345904-f0b8677f5a8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZWp1JTIwbGF2YSUyMGNhdmUlMjBhdG1vc3BoZXJpY3xlbnwwfDB8fHwxNzc4MDc4NDI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-          "source": "unsplash"
-        }
-      ]
+      }
     },
     {
       "number": 6,
@@ -660,7 +339,7 @@
       "name": "Aldea Folclórica Seongeup",
       "category": "Ciudad amurallada joseonesa viva — fundada en 1423",
       "description": "**Aldea Seongeup** — ciudad amurallada del período Joseon fundada en **1423** por el rey Sejong, habitada en la actualidad. Muros de piedra, casas de tejado de paja, olmeros de **700-1.000 años** (monumentos naturales) y destilería de licor de mijo con degustación gratuita. El cierre tranquilo y cultural del día. **Entrada gratuita.**",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
+      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
       "highlights": [
         "**Fundada en 1423** — única ciudad amurallada joseonesa habitada en la actualidad",
         "Olmeros de **700-1.000 años** (monumentos naturales)",
@@ -683,62 +362,6 @@
           "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
           "Jeju Folklore Society — Omegisul brewing tradition documentation"
         ]
-      },
-      "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
-        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/d3665aa5-bb00-472d-9886-06e3337d9515.webp",
-        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/69a0bd54-97fa-49b5-b59e-5986b8e48ecf.webp",
-        "https://live.staticflickr.com/1446/25727012660_f652a7494e_b.jpg",
-        "https://images.unsplash.com/photo-1777543331241-a80f9cd409ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxLb3JlYW4lMjB0cmFkaXRpb25hbCUyMHZpbGxhZ2UlMjB0aGF0Y2hlZHxlbnwwfDB8fHwxNzc4MDc4NDYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://pixabay.com/get/gc781d5c3ef50ea89a6bdfedaf270b199fd3a4168f2358667c660d28ef8ba7257108f84be87a22e9ce96ff035aca4ebb68139baf8cc26b7a22e47a28e931e9591_1280.jpg"
-      ],
-      "imageCredits": [
-        {
-          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
-          "source": "visitjeju",
-          "title": "성읍민속마을"
-        },
-        {
-          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/d3665aa5-bb00-472d-9886-06e3337d9515.webp",
-          "source": "visitjeju",
-          "title": "성읍목장"
-        },
-        {
-          "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/69a0bd54-97fa-49b5-b59e-5986b8e48ecf.webp",
-          "source": "visitjeju",
-          "title": "성읍승마장"
-        },
-        {
-          "url": "https://live.staticflickr.com/1446/25727012660_f652a7494e_b.jpg",
-          "source": "flickr",
-          "author": "anokarina",
-          "license": "CC BY-SA 2.0",
-          "sourceUrl": "https://www.flickr.com/photos/30760976@N04/25727012660",
-          "title": "“Living is Easy with Eyes Closed.” ―John Lennon 🌴"
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1777543331241-a80f9cd409ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxLb3JlYW4lMjB0cmFkaXRpb25hbCUyMHZpbGxhZ2UlMjB0aGF0Y2hlZHxlbnwwfDB8fHwxNzc4MDc4NDYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-          "source": "unsplash"
-        },
-        {
-          "url": "https://pixabay.com/get/gc781d5c3ef50ea89a6bdfedaf270b199fd3a4168f2358667c660d28ef8ba7257108f84be87a22e9ce96ff035aca4ebb68139baf8cc26b7a22e47a28e931e9591_1280.jpg",
-          "source": "pixabay"
-        }
-      ],
-      "smartNotes": {
-        "photo": "Narrow lanes, roof lines, and stone-wall textures often make more rewarding images than broad centered compositions.",
-        "facilities": "Facilities inside the village are basic.",
-        "tip": "The less rushed this stop feels, the better the whole day tends to land emotionally."
-      },
-      "convenience": {
-        "restroom": "Near the village center",
-        "parking": "Parking available nearby"
-      },
-      "visitBasics": {
-        "hours": "10:00–17:00",
-        "closed": "Open year-round",
-        "admission": "Free (except some hands-on programs)",
-        "walking": "Easy and mostly flat"
       }
     }
   ],
@@ -1322,7 +945,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
+            "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1200&q=80",
             "location": "Jeju Este (vista general)",
             "atmosphere": "Una ruta que se va revelando poco a poco y que cobra sentido al avanzar el día",
             "alt": "Imagen de Visión general de la ruta — el este de Jeju en un día",
@@ -1331,16 +954,16 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+            "src": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
             "location": "Parque de Cultura de Piedra de Jeju, Jocheon-eup",
             "atmosphere": "Inicio tranquilo: escultura de piedra basáltica y el mito de la creación de Jeju",
-            "alt": "Jeju Stone Culture Park stone path with lava rock walls, green meadow, and oreum mountain backdrop",
-            "caption": "Jeju Stone Culture Park — lava-rock path, open meadow, and oreum silhouette"
+            "alt": "Imagen de Parque de Cultura de Piedra de Jeju — apertura geológica y mitológica",
+            "caption": "Parque de Cultura de Piedra de Jeju — apertura geológica y mitológica"
           },
           {
             "id": 3,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
+            "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
             "location": "Seopjikoji, costa este de Jeju",
             "atmosphere": "Perspectiva costera: el cráter de Seongsan visto desde la lengua de tierra de Seopjikoji",
             "alt": "Imagen de Cabo Seopjikoji — el cono volcánico de Seongsan se yergue al fondo",
@@ -1349,7 +972,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
+            "src": "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=800&q=80",
             "location": "Ilchul Land, Seongsan",
             "atmosphere": "Pausa subterránea: temperatura constante de 18°C en la cueva de lava",
             "alt": "Imagen de Cueva Micheon en Ilchul Land — contraste fresco y oscuro después del cráter",
@@ -1358,7 +981,7 @@
           {
             "id": 5,
             "type": "photo",
-            "src": "https://live.staticflickr.com/65535/53953518745_a91884d6e2_b.jpg",
+            "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
             "location": "Aldea Folclórica Seongeup, Pyoseon-myeon",
             "atmosphere": "Cierre suave: historia y vida cotidiana joseonesa al final de la jornada",
             "alt": "Imagen de Aldea Seongeup — ciudad joseonesa viva que cierra el día con historia",
@@ -1367,7 +990,7 @@
           {
             "id": 6,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
+            "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80",
             "location": "Seongsan Ilchulbong, costa este de Jeju",
             "atmosphere": "Punto culminante del día: el cráter más fotogénico de la isla",
             "alt": "Imagen de Seongsan Ilchulbong — el gran volcán del este de Jeju",
@@ -1388,7 +1011,7 @@
             "name": "Parque de la Cultura de Piedra de Jeju",
             "category": "Museo al aire libre — 990.000 m², mitología de la creación de Jeju",
             "description": "**Parque de la Cultura de Piedra de Jeju** es un **museo al aire libre de 990.000 m²** en Jocheon dedicado al mito de la creación de Jeju: **Seolmundae Halmang**, la diosa creadora, formó Jeju alzando el fondo del mar con su cuerpo, generando el Hallasan como su ombligo y las islas satélite como sus pechos. El parque documenta la omnipresencia del **basalto negro** en la cultura de Jeju: muros de piedra (*doltap*), molinos de piedra, caminos pavimentados, guardianes de piedra (*tol hareubang*) y esculturas de la diosa en 300.000 m² de bosque y parques temáticos. Ofrece un contexto cultural único antes de visitar los mismos paisajes volcánicos que originaron el mito. **Entradas incluidas en el tour.**",
-            "image": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+            "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176",
             "highlights": [
               "**Mito de la creación de Jeju** — Seolmundae Halmang, la diosa que formó la isla",
               "990.000 m² de museo al aire libre con esculturas de basalto negro",
@@ -1412,78 +1035,7 @@
                 "Korea Folklore Society — Seolmundae Halmang oral tradition records",
                 "Architectural Institute of Korea — Mother's Room sculpture/architecture documentation"
               ]
-            },
-            "images": [
-              "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-              "/images/tours/stone-culture/stone-park-water-oreum.webp",
-              "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
-              "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
-              "/images/tours/stone-culture/stone-park-standing-stones.webp"
-            ],
-            "imageCredits": [
-              {
-                "url": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/stone-culture/stone-park-water-oreum.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/stone-culture/stone-park-standing-stones.webp",
-                "source": "atoc-korea"
-              }
-            ],
-            "galleryItems": [
-              {
-                "id": 1,
-                "type": "photo",
-                "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-                "location": "Stone Park Grounds",
-                "caption": "Lava-rock-lined stone path winding through the open meadow grounds",
-                "alt": "Woman walking on stone path with lava rock walls and green meadow at Jeju Stone Culture Park"
-              },
-              {
-                "id": 2,
-                "type": "photo",
-                "src": "/images/tours/stone-culture/stone-park-water-oreum.webp",
-                "location": "Water Garden",
-                "caption": "Wading pool garden with oreum (volcanic cone) backdrop",
-                "alt": "Woman walking in the shallow water garden with oreum mountain at Jeju Stone Culture Park"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
-                "location": "Dolhareubang Grounds",
-                "caption": "Hundreds of stone figures arranged across the open park",
-                "alt": "Rows of dolhareubang and stone figures at Jeju Stone Culture Park"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
-                "location": "Dolhareubang",
-                "caption": "Traditional Jeju dolhareubang stone guardians",
-                "alt": "Dolhareubang stone guardian figures with forest and oreum behind them"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/stone-culture/stone-park-standing-stones.webp",
-                "location": "Standing Stone Corridor",
-                "caption": "Walking between monolithic standing stones lining the corridor path",
-                "alt": "Woman walking between large standing stone monoliths at Jeju Stone Culture Park"
-              }
-            ]
+            }
           },
           {
             "number": 2,
@@ -1492,7 +1044,7 @@
             "name": "Cabo Seopjikoji (Costa Este)",
             "category": "Cabo volcánico del este de Jeju — escenario de K-dramas, vistas a Seongsan",
             "description": "**Seopjikoji** es una estrecha lengua volcánica en la costa este de Jeju. Su nombre combina **“Seopji”**, asociado a una franja de tierra estrecha, y **“koji”**, palabra del dialecto de Jeju para “cabo”. El sendero costero de **2,1 km** recorre el borde del acantilado con **vistas frontales a Seongsan Ilchulbong** en el horizonte, una de las mejores perspectivas del cono volcánico antes de subirlo. La hierba verde del cabo, el basalto negro y el azul del mar forman uno de los paisajes más fotografiados de Jeju. Seopjikoji fue escenario de los dramas **All In** y **Crash Landing on You**. Al fondo del cabo hay un pequeño faro tradicional. **Entrada gratuita.**",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
+            "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
             "highlights": [
               "Sendero costero de **2,1 km** con vista frontal a **Seongsan Ilchulbong**",
               "Escenario de **K-dramas**: 'Crash Landing on You' (2019) y 'All In' (2003)",
@@ -1517,28 +1069,7 @@
                 "Tadao Ando Architect & Associates — Phoenix Island project documentation",
                 "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
               ]
-            },
-            "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
-              "https://api.cdn.visitjeju.net/photomng/imgpath/201908/08/9d19a7d3-97a8-4999-b849-123e46fc88bc.webp",
-              "https://pixabay.com/get/g58bbbe80bb67eb0a32a6e60a6931f0e77d2b2c342b890c9aaf73e87edffcf3af7cedd6ca98cbae1e5fe157fd6658ce642a1c0c5ca621591b1f85cec6e987313d_1280.jpg"
-            ],
-            "imageCredits": [
-              {
-                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
-                "source": "visitjeju",
-                "title": "섭지코지"
-              },
-              {
-                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201908/08/9d19a7d3-97a8-4999-b849-123e46fc88bc.webp",
-                "source": "visitjeju",
-                "title": "신양섭지해수욕장"
-              },
-              {
-                "url": "https://pixabay.com/get/g58bbbe80bb67eb0a32a6e60a6931f0e77d2b2c342b890c9aaf73e87edffcf3af7cedd6ca98cbae1e5fe157fd6658ce642a1c0c5ca621591b1f85cec6e987313d_1280.jpg",
-                "source": "pixabay"
-              }
-            ]
+            }
           },
           {
             "number": 3,
@@ -1564,7 +1095,7 @@
             "name": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
             "category": "Triple designación UNESCO — Cono volcánico de 5.000 años",
             "description": "**Seongsan Ilchulbong** es el hito más representativo de Jeju — **Patrimonio Natural UNESCO (2007), Reserva de la Biosfera UNESCO y Geoparque Global UNESCO**: triple designación única en Corea. Cono hidrovolcánico de **5.000 años** con **99 agujas de roca** y **cráter de 600 m de diámetro**. Subida al borde del cráter: ~180 escalones, ~20-25 min, **opcional** — vistas al Mar del Este, isla Udo y el pueblo de Seongsan. **Entrada ₩5.000 (incluida).**",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
+            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
             "highlights": [
               "**Triple designación UNESCO**: Patrimonio Natural + Reserva Biosfera + Geoparque",
               "Cono de 5.000 años con 99 agujas de roca y cráter de 600 m",
@@ -1588,75 +1119,7 @@
                 "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
                 "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
               ]
-            },
-            "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
-              "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/bfc943f0-5372-4a9f-8d07-97c3793808db.webp",
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202306/19/51f1c895-032f-4b18-9e47-a1a0cb21511f.webp",
-              "https://live.staticflickr.com/65535/53953518745_a91884d6e2_b.jpg",
-              "https://live.staticflickr.com/5247/5370777099_5053f69108_b.jpg",
-              "https://live.staticflickr.com/5169/5370774765_8c1e200d19_b.jpg",
-              "https://live.staticflickr.com/5089/5370768533_3662b7d908_b.jpg",
-              "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBzdW5yaXNlJTIwY3JhdGVyfGVufDB8MHx8fDE3NzgwNzgzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://pixabay.com/get/gd4d8b6155182b4d2c2fc04952137adb1e3dc7431b2f950f7a50ba799393e122c3edd772a230b42cc71890517bd0898cbd5e207a844e1dafba34600088b9ab2c0_1280.jpg"
-            ],
-            "imageCredits": [
-              {
-                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
-                "source": "visitjeju",
-                "title": "성산일출봉(UNESCO 세계자연유산)"
-              },
-              {
-                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/bfc943f0-5372-4a9f-8d07-97c3793808db.webp",
-                "source": "visitjeju",
-                "title": "성산~세화 해안도로"
-              },
-              {
-                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202306/19/51f1c895-032f-4b18-9e47-a1a0cb21511f.webp",
-                "source": "visitjeju",
-                "title": "성산스쿠버리조트"
-              },
-              {
-                "url": "https://live.staticflickr.com/65535/53953518745_a91884d6e2_b.jpg",
-                "source": "flickr",
-                "author": "xiquinhosilva",
-                "license": "CC BY 2.0",
-                "sourceUrl": "https://www.flickr.com/photos/7138083@N04/53953518745",
-                "title": "Seongsan Ilchulbong"
-              },
-              {
-                "url": "https://live.staticflickr.com/5247/5370777099_5053f69108_b.jpg",
-                "source": "flickr",
-                "author": "-Jérôme-",
-                "license": "CC BY 2.0",
-                "sourceUrl": "https://www.flickr.com/photos/76474448@N00/5370777099",
-                "title": "Presqu'ile volcanique"
-              },
-              {
-                "url": "https://live.staticflickr.com/5169/5370774765_8c1e200d19_b.jpg",
-                "source": "flickr",
-                "author": "-Jérôme-",
-                "license": "CC BY 2.0",
-                "sourceUrl": "https://www.flickr.com/photos/76474448@N00/5370774765",
-                "title": "Après la lave, la végétation"
-              },
-              {
-                "url": "https://live.staticflickr.com/5089/5370768533_3662b7d908_b.jpg",
-                "source": "flickr",
-                "author": "-Jérôme-",
-                "license": "CC BY 2.0",
-                "sourceUrl": "https://www.flickr.com/photos/76474448@N00/5370768533",
-                "title": "La caldera"
-              },
-              {
-                "url": "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBzdW5yaXNlJTIwY3JhdGVyfGVufDB8MHx8fDE3NzgwNzgzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-                "source": "unsplash"
-              },
-              {
-                "url": "https://pixabay.com/get/gd4d8b6155182b4d2c2fc04952137adb1e3dc7431b2f950f7a50ba799393e122c3edd772a230b42cc71890517bd0898cbd5e207a844e1dafba34600088b9ab2c0_1280.jpg",
-                "source": "pixabay"
-              }
-            ]
+            }
           },
           {
             "number": 5,
@@ -1665,7 +1128,7 @@
             "name": "Ilchul Land (Cueva Micheon — Tubo de lava)",
             "category": "Parque natural de 400.000 m² — Cueva de lava Micheon",
             "description": "**Ilchul Land**: parque natural de **400.000 m²** con la **Cueva Micheon** — tubo de lava de 1.700 m, sección visitable de **365 m** a temperatura constante de ~18°C. Además: parque escultórico, jardín de bonsái y zona de baño de pies. Alternativa operativa mientras la Cueva Manjanggul está cerrada. **Entradas incluidas.**",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
+            "image": "https://images.unsplash.com/photo-1502780402662-acc01917a3a4",
             "highlights": [
               "Tubo de lava de **1.700 m** — sección visitable de **365 m** (~25 min)",
               "Interior a ~18°C constantes",
@@ -1688,70 +1151,7 @@
                 "SBS Variety Archive — Running Man Episode 89 (2012)",
                 "Jeju Tourism Organization — accessibility-friendly attraction registry"
               ]
-            },
-            "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202205/30/8d1fb97b-1ad0-48cc-9aa0-2ec519e9575c.webp",
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202112/21/5d2e84f4-d58b-4fa0-b7bb-a2f32cf63428.webp",
-              "https://live.staticflickr.com/65535/53953062566_80ce9e16af_b.jpg",
-              "https://live.staticflickr.com/7534/27767696885_e3b15614a5_b.jpg",
-              "https://live.staticflickr.com/7430/27733577536_8ecebd8480_b.jpg",
-              "https://live.staticflickr.com/7262/27733580686_b5c66c7b9d_b.jpg",
-              "https://images.unsplash.com/photo-1596617345904-f0b8677f5a8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZWp1JTIwbGF2YSUyMGNhdmUlMjBhdG1vc3BoZXJpY3xlbnwwfDB8fHwxNzc4MDc4NDI3fDA&ixlib=rb-4.1.0&q=80&w=1080"
-            ],
-            "imageCredits": [
-              {
-                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
-                "source": "visitjeju",
-                "title": "일출랜드 아트센터"
-              },
-              {
-                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202205/30/8d1fb97b-1ad0-48cc-9aa0-2ec519e9575c.webp",
-                "source": "visitjeju",
-                "title": "일출랜드"
-              },
-              {
-                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202112/21/5d2e84f4-d58b-4fa0-b7bb-a2f32cf63428.webp",
-                "source": "visitjeju",
-                "title": "미천굴"
-              },
-              {
-                "url": "https://live.staticflickr.com/65535/53953062566_80ce9e16af_b.jpg",
-                "source": "flickr",
-                "author": "xiquinhosilva",
-                "license": "CC BY 2.0",
-                "sourceUrl": "https://www.flickr.com/photos/7138083@N04/53953062566",
-                "title": "Jeju Volcanic Island and Lava Tubes"
-              },
-              {
-                "url": "https://live.staticflickr.com/7534/27767696885_e3b15614a5_b.jpg",
-                "source": "flickr",
-                "author": "lnevay",
-                "license": "CC BY-SA 2.0",
-                "sourceUrl": "https://www.flickr.com/photos/98901717@N08/27767696885",
-                "title": "Manjanggul Cave"
-              },
-              {
-                "url": "https://live.staticflickr.com/7430/27733577536_8ecebd8480_b.jpg",
-                "source": "flickr",
-                "author": "lnevay",
-                "license": "CC BY-SA 2.0",
-                "sourceUrl": "https://www.flickr.com/photos/98901717@N08/27733577536",
-                "title": "Manjanggul Cave"
-              },
-              {
-                "url": "https://live.staticflickr.com/7262/27733580686_b5c66c7b9d_b.jpg",
-                "source": "flickr",
-                "author": "lnevay",
-                "license": "CC BY-SA 2.0",
-                "sourceUrl": "https://www.flickr.com/photos/98901717@N08/27733580686",
-                "title": "Manjanggul Cave"
-              },
-              {
-                "url": "https://images.unsplash.com/photo-1596617345904-f0b8677f5a8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZWp1JTIwbGF2YSUyMGNhdmUlMjBhdG1vc3BoZXJpY3xlbnwwfDB8fHwxNzc4MDc4NDI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-                "source": "unsplash"
-              }
-            ]
+            }
           },
           {
             "number": 6,
@@ -1760,7 +1160,7 @@
             "name": "Aldea Folclórica Seongeup",
             "category": "Ciudad amurallada joseonesa viva — fundada en 1423",
             "description": "**Aldea Seongeup** — ciudad amurallada del período Joseon fundada en **1423** por el rey Sejong, habitada en la actualidad. Muros de piedra, casas de tejado de paja, olmeros de **700-1.000 años** (monumentos naturales) y destilería de licor de mijo con degustación gratuita. El cierre tranquilo y cultural del día. **Entrada gratuita.**",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
+            "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
             "highlights": [
               "**Fundada en 1423** — única ciudad amurallada joseonesa habitada en la actualidad",
               "Olmeros de **700-1.000 años** (monumentos naturales)",
@@ -1783,48 +1183,7 @@
                 "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
                 "Jeju Folklore Society — Omegisul brewing tradition documentation"
               ]
-            },
-            "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
-              "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/d3665aa5-bb00-472d-9886-06e3337d9515.webp",
-              "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/69a0bd54-97fa-49b5-b59e-5986b8e48ecf.webp",
-              "https://live.staticflickr.com/1446/25727012660_f652a7494e_b.jpg",
-              "https://images.unsplash.com/photo-1777543331241-a80f9cd409ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxLb3JlYW4lMjB0cmFkaXRpb25hbCUyMHZpbGxhZ2UlMjB0aGF0Y2hlZHxlbnwwfDB8fHwxNzc4MDc4NDYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://pixabay.com/get/gc781d5c3ef50ea89a6bdfedaf270b199fd3a4168f2358667c660d28ef8ba7257108f84be87a22e9ce96ff035aca4ebb68139baf8cc26b7a22e47a28e931e9591_1280.jpg"
-            ],
-            "imageCredits": [
-              {
-                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
-                "source": "visitjeju",
-                "title": "성읍민속마을"
-              },
-              {
-                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/d3665aa5-bb00-472d-9886-06e3337d9515.webp",
-                "source": "visitjeju",
-                "title": "성읍목장"
-              },
-              {
-                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/69a0bd54-97fa-49b5-b59e-5986b8e48ecf.webp",
-                "source": "visitjeju",
-                "title": "성읍승마장"
-              },
-              {
-                "url": "https://live.staticflickr.com/1446/25727012660_f652a7494e_b.jpg",
-                "source": "flickr",
-                "author": "anokarina",
-                "license": "CC BY-SA 2.0",
-                "sourceUrl": "https://www.flickr.com/photos/30760976@N04/25727012660",
-                "title": "“Living is Easy with Eyes Closed.” ―John Lennon 🌴"
-              },
-              {
-                "url": "https://images.unsplash.com/photo-1777543331241-a80f9cd409ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxLb3JlYW4lMjB0cmFkaXRpb25hbCUyMHZpbGxhZ2UlMjB0aGF0Y2hlZHxlbnwwfDB8fHwxNzc4MDc4NDYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-                "source": "unsplash"
-              },
-              {
-                "url": "https://pixabay.com/get/gc781d5c3ef50ea89a6bdfedaf270b199fd3a4168f2358667c660d28ef8ba7257108f84be87a22e9ce96ff035aca4ebb68139baf8cc26b7a22e47a28e931e9591_1280.jpg",
-                "source": "pixabay"
-              }
-            ]
+            }
           }
         ]
       }
@@ -2386,13 +1745,13 @@
     "senior_fit": 0.6,
     "couple_fit": 0.95,
     "active_traveler_fit": 0.8,
-    "one_day_fit": 1,
+    "one_day_fit": 1.0,
     "same_day_flight_fit": 0.4,
     "rain_fit": 0.55,
     "value_for_money_fit": 0.85,
     "iconic_landmark_fit": 0.9,
     "cafe_fit": 0.4,
-    "adult_family_fit": 1,
+    "adult_family_fit": 1.0,
     "young_kids_fit": 0.7,
     "senior_active_fit": 0.8,
     "senior_general_fit": 0.6,
@@ -2400,13 +1759,13 @@
     "stroller_fit": 0.45,
     "indoor_ratio": 0.3,
     "weather_sensitivity": 0.55,
-    "local_culture_fit": 1,
+    "local_culture_fit": 1.0,
     "shopping_fit": 0.2,
-    "storytelling_fit": 1,
+    "storytelling_fit": 1.0,
     "comfort_level": 0.6,
     "budget_fit": 0.8,
     "premium_fit": 0.5,
-    "small_group_fit": 1,
+    "small_group_fit": 1.0,
     "private_fit": 0.2,
     "bus_fit": 0.2,
     "price_band": "mid",
@@ -2447,7 +1806,7 @@
     "destination_region": "jeju",
     "vehicle_type": "minicoach",
     "vehicle_type_legacy": "minicoach",
-    "duration_hours": 9,
+    "duration_hours": 9.0,
     "anchor_poi_keys": [
       "seongsan_ilchulbong",
       "manjanggul_cave",
@@ -2455,67 +1814,67 @@
     ],
     "pickup_base_normalized": "jeju_city",
     "unesco_fit": 0.85,
-    "family_with_teens_fit": 1,
+    "family_with_teens_fit": 1.0,
     "solo_traveler_fit": 0.85,
     "food_fit": 0.6,
-    "nature_fit": 1,
+    "nature_fit": 1.0,
     "beach_fit": 0.8,
     "nightlife_fit": 0.2,
-    "no_shopping_fit": 1,
+    "no_shopping_fit": 1.0,
     "intangible_heritage_fit": 0.75,
     "seasonality": "year_round",
     "profile_format": "small_group_fixed_itinerary",
     "private_tour_fit": 0.05,
-    "fixed_itinerary_fit": 1,
+    "fixed_itinerary_fit": 1.0,
     "customizable_route_fit": 0.05,
     "flexibility_fit": 0.3,
     "first_time_jeju_fit": 0.85,
-    "east_jeju_fit": 1,
+    "east_jeju_fit": 1.0,
     "north_jeju_fit": 0.5,
     "south_jeju_fit": 0.4,
     "west_jeju_fit": 0.05,
     "central_jeju_fit": 0.6,
-    "east_signature_fit": 1,
-    "east_nature_core_fit": 1,
+    "east_signature_fit": 1.0,
+    "east_nature_core_fit": 1.0,
     "unesco_taste_fit": 0.85,
     "world_natural_heritage_fit": 0.85,
     "biosphere_reserve_fit": 0.7,
     "global_geopark_fit": 0.95,
     "triple_unesco_fit": 0.95,
-    "lava_tube_unesco_adjacent_fit": 1,
-    "volcano_geology_fit": 1,
-    "tuff_cone_fit": 1,
-    "lava_tube_fit": 1,
+    "lava_tube_unesco_adjacent_fit": 1.0,
+    "volcano_geology_fit": 1.0,
+    "tuff_cone_fit": 1.0,
+    "lava_tube_fit": 1.0,
     "volcanic_neck_fit": 0.85,
     "parasitic_cone_fit": 0.95,
-    "shield_volcano_fit": 1,
+    "shield_volcano_fit": 1.0,
     "natural_monument_anchor_count": 3,
-    "mythology_fit": 1,
-    "seolmundae_halmang_fit": 1,
-    "creation_myth_fit": 1,
+    "mythology_fit": 1.0,
+    "seolmundae_halmang_fit": 1.0,
+    "creation_myth_fit": 1.0,
     "korean_oral_tradition_fit": 0.95,
-    "joseon_heritage_fit": 1,
-    "joseon_walled_town_fit": 1,
+    "joseon_heritage_fit": 1.0,
+    "joseon_walled_town_fit": 1.0,
     "feng_shui_design_fit": 0.95,
     "yeondae_beacon_fit": 0.95,
-    "korean_folklore_fit": 1,
+    "korean_folklore_fit": 1.0,
     "k_drama_filming_fit": 0.95,
     "k_drama_anchor_count": 4,
-    "tadao_ando_architecture_fit": 1,
-    "pulitzer_architecture_fit": 1,
-    "concrete_minimalism_fit": 1,
-    "contemporary_architecture_fit": 1,
-    "korean_traditional_architecture_fit": 1,
-    "hanok_village_fit": 1,
+    "tadao_ando_architecture_fit": 1.0,
+    "pulitzer_architecture_fit": 1.0,
+    "concrete_minimalism_fit": 1.0,
+    "contemporary_architecture_fit": 1.0,
+    "korean_traditional_architecture_fit": 1.0,
+    "hanok_village_fit": 1.0,
     "thatched_roof_fit": 0.85,
     "lighthouse_anchor_fit": 0.95,
-    "coastal_cape_fit": 1,
+    "coastal_cape_fit": 1.0,
     "cliff_walk_fit": 0.95,
-    "ocean_view_fit": 1,
-    "coastal_cliff_fit": 1,
-    "park_anchor_fit": 1,
-    "outdoor_museum_fit": 1,
-    "stone_culture_fit": 1,
+    "ocean_view_fit": 1.0,
+    "coastal_cliff_fit": 1.0,
+    "park_anchor_fit": 1.0,
+    "outdoor_museum_fit": 1.0,
+    "stone_culture_fit": 1.0,
     "bonsai_garden_fit": 0.7,
     "cactus_greenhouse_fit": 0.7,
     "sculpture_garden_fit": 0.85,
@@ -2525,55 +1884,55 @@
     "stair_climbing_fit": 0.6,
     "trail_walking_fit": 0.85,
     "elevation_gain_total_m": 154,
-    "moderate_mobility_fit": 1,
+    "moderate_mobility_fit": 1.0,
     "low_intensity_fit": 0.7,
     "senior_friendly_fit": 0.75,
     "stroller_friendly_fit": 0.6,
     "wheelchair_accessible_anchor_fit": 0.55,
     "mobility_limited_friendly_fit": 0.7,
-    "muslim_prayer_facility_fit": 1,
+    "muslim_prayer_facility_fit": 1.0,
     "first_time_korea_fit": 0.85,
     "small_family_fit": 0.95,
     "young_kids_friendly_fit": 0.85,
     "senior_couple_fit": 0.85,
     "honeymoon_fit": 0.85,
-    "history_lover_fit": 1,
+    "history_lover_fit": 1.0,
     "geology_enthusiast_fit": 0.95,
-    "mythology_lover_fit": 1,
-    "k_drama_fan_fit": 1,
-    "architecture_enthusiast_fit": 1,
-    "photographer_fit": 1,
-    "instagrammable_fit": 1,
+    "mythology_lover_fit": 1.0,
+    "k_drama_fan_fit": 1.0,
+    "architecture_enthusiast_fit": 1.0,
+    "photographer_fit": 1.0,
+    "instagrammable_fit": 1.0,
     "group_size_min": 2,
     "group_size_max": 14,
-    "small_group_van_fit": 1,
+    "small_group_van_fit": 1.0,
     "calm_pace_fit": 0.85,
     "active_pace_fit": 0.7,
     "checkbox_sightseeing_fit": 0.4,
     "deep_dwell_fit": 0.95,
-    "balanced_pace_fit": 1,
-    "varied_terrain_fit": 1,
-    "language_english_fit": 1,
+    "balanced_pace_fit": 1.0,
+    "varied_terrain_fit": 1.0,
+    "language_english_fit": 1.0,
     "language_chinese_fit": 0.85,
     "language_japanese_fit": 0.5,
-    "english_guide_fit": 1,
-    "mythology_guide_fit": 1,
-    "spring_fit": 1,
+    "english_guide_fit": 1.0,
+    "mythology_guide_fit": 1.0,
+    "spring_fit": 1.0,
     "summer_fit": 0.85,
     "autumn_fit": 0.95,
     "winter_fit": 0.7,
     "all_year_fit": 0.85,
     "off_season_fit": 0.65,
     "monsoon_fit": 0.55,
-    "best_season_spring_fit": 1,
-    "canola_season_anchor_fit": 1,
+    "best_season_spring_fit": 1.0,
+    "canola_season_anchor_fit": 1.0,
     "hydrangea_season_anchor_fit": 0.85,
     "indoor_anchor_fit": 0.65,
     "wind_sensitivity": 0.55,
     "indoor_fallback_anchor_count": 3,
     "early_start_fit": 0.85,
     "late_finish_fit": 0.7,
-    "full_day_fit": 1,
+    "full_day_fit": 1.0,
     "half_day_fit": 0.05,
     "value_priced_fit": 0.85,
     "budget_traveler_fit": 0.85,
@@ -2583,35 +1942,35 @@
     "crowd_avoidance_fit": 0.6,
     "tourist_circuit_fit": 0.85,
     "instagram_anchor_count": 5,
-    "minicoach_fit": 1,
+    "minicoach_fit": 1.0,
     "max_pax_per_vehicle": 14,
-    "jeju_city_pickup_fit": 1,
+    "jeju_city_pickup_fit": 1.0,
     "seogwipo_pickup_fit": 0.85,
     "cruise_shore_excursion_fit": 0.5,
     "cruise_passenger_fit": 0.6,
     "korean_food_fit": 0.95,
-    "jeju_local_cuisine_fit": 1,
+    "jeju_local_cuisine_fit": 1.0,
     "mulhoe_fit": 0.95,
     "galchi_fit": 0.85,
     "black_pig_heritage_fit": 0.85,
     "seafood_fit": 0.95,
     "vegetarian_friendly_fit": 0.75,
     "halal_friendly_fit": 0.65,
-    "omegisul_tasting_fit": 1,
+    "omegisul_tasting_fit": 1.0,
     "photo_anchor_count": 5,
     "drone_friendly_fit": 0.55,
-    "filming_location_fit": 1,
+    "filming_location_fit": 1.0,
     "stair_anchor_count": 1,
     "barrier_free_anchor_fit": 0.7,
-    "accessibility_focus_fit": 1,
+    "accessibility_focus_fit": 1.0,
     "is_anchor_for_east_jeju_signature": true,
     "catalog_position": "east_jeju_signature_nature_core",
     "competing_tours_count": 3,
-    "china_mainland_market_fit": 0,
-    "korea_domestic_market_fit": 0,
-    "taiwan_market_fit": 1,
-    "singapore_market_fit": 1,
-    "hong_kong_market_fit": 1,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
@@ -2759,7 +2118,7 @@
           "_methodology": "0-1 float scale (post Phase 1 unification). Each score grounded in verified facts from KB v1.4 sources.",
           "deltas_applied": {
             "unesco_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.85,
               "reasoning": "Verified: 1 of 5 attractions is full UNESCO WHS (Seongsan, 'Jeju Volcanic Island & Lava Tubes'). Stone Park has volcanic-stone heritage value (not UNESCO designated). Seongeup is National Folklore Cultural Heritage (Korean designation, NOT UNESCO). Ilchul Land's Micheon Cave is a Natural Monument but not UNESCO. So 1/5 verified UNESCO = 0.85 (lowering from mechanical 1.0 to fact-grounded 0.85)."
             },
@@ -2774,7 +2133,7 @@
               "reasoning": "UPGRADED 0.6→0.65 with verified totals: Stone Park Course 1 (~1.5 km flat), Seopjikoji (2.1 km out-and-back + lighthouse stairs), Seongsan (0.8 km + 140 m gain via 300-500 wooden steps), Ilchul Land (~1 km park + 365 m cave), Seongeup (~1 km olle alleys flat). Total ~6.5 km + Seongsan elevation. Slightly more demanding than mechanical 0.6 due to Seongsan."
             },
             "iconic_landmark_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.9,
               "reasoning": "Verified: Seongsan + Seopjikoji = nationally iconic; Stone Park + Seongeup = regionally iconic; Ilchul Land = secondary. 0.9 (lowering from mechanical 1.0) — only 2 of 5 are universally must-see Jeju landmarks."
             },
@@ -2799,7 +2158,7 @@
               "reasoning": "Slightly UPGRADED 0.6→0.65: Stone Park has 3 indoor exhibition halls (rain refuge), Ilchul Land's cave is fully indoor and stays cool/dry, Seongeup has covered houses. Only Seopjikoji and Seongsan are heavily rain-affected. Verified balance = 0.65."
             },
             "value_for_money_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.85,
               "reasoning": "DOWNGRADED 1.0→0.85 with verified fees: Stone Park ₩5,000 + Seopjikoji free + Seongsan ₩2,000 + Ilchul Land ₩12,000 + Seongeup free = ~₩19,000/adult attraction fees. Higher than Grand Highlights (~₩6,000) due to Ilchul Land's premium. Still good value but not exceptional. 0.85 calibrated."
             },
@@ -2820,7 +2179,7 @@
               "reasoning": "UPGRADED 0.8→0.9 with verified iconic shots: Sky Pond (Stone Park), Bangdupo Lighthouse + Bulgeun Oreum (Seopjikoji), 99-rim crater (Seongsan), 7-color lit cave (Ilchul Land), 600-year zelkova trees + thatched hanok (Seongeup). 5 distinct hero images in one route."
             },
             "first_time_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.95,
               "reasoning": "Verified: covers volcanic geology + UNESCO peak + culture + lava tube + folk village = 5 distinct Jeju essentials in one day. 0.95 is excellent first-Jeju overview."
             }

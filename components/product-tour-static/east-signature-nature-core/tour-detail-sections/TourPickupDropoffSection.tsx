@@ -49,7 +49,7 @@ function buildStaticMapUrl(
   if (!allPoints.some((p) => p.lat && p.lng)) return null;
 
   const parts: string[] = [
-    "size=600x180",
+    "size=600x280",
     "scale=2",
     "maptype=roadmap",
     "style=feature:poi%7Cvisibility:off",
@@ -142,7 +142,7 @@ export function TourPickupDropoffSection({
       >
         {/* Google Static Map — shows all pickup pins; hidden if API returns error */}
         {mapUrl && !mapError && (
-          <div className="relative w-full overflow-hidden bg-slate-100" style={{ aspectRatio: "600/180" }}>
+          <div className="relative w-full overflow-hidden bg-slate-100" style={{ aspectRatio: "600/280" }}>
             <img
               src={mapUrl}
               alt="Pickup and drop-off map"

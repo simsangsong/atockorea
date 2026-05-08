@@ -97,38 +97,32 @@
     {
       "icon": "camera",
       "label": "拍照潜力",
-      "value": "高",
-      "level": 5
+      "value": "高"
     },
     {
       "icon": "mountain",
       "label": "景点丰富度",
-      "value": "高",
-      "level": 5
+      "value": "高"
     },
     {
       "icon": "footprints",
       "label": "步行强度",
-      "value": "中等",
-      "level": 3
+      "value": "中等"
     },
     {
       "icon": "cloud-rain",
       "label": "雨天适合度",
-      "value": "中等",
-      "level": 3
+      "value": "中等"
     },
     {
       "icon": "users",
       "label": "亲子适合度",
-      "value": "良好",
-      "level": 4
+      "value": "良好"
     },
     {
       "icon": "gauge",
       "label": "行程节奏",
-      "value": "均衡",
-      "level": 4
+      "value": "均衡"
     }
   ],
   "galleryItems": [
@@ -144,11 +138,11 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+      "src": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
       "location": "石头文化开场",
       "atmosphere": "平静的地质文化开场",
-      "alt": "Jeju Stone Culture Park stone path with lava rock walls, green meadow, and oreum mountain backdrop",
-      "caption": "Jeju Stone Culture Park — lava-rock path, open meadow, and oreum silhouette"
+      "alt": "济州石头文化公园石像与景观",
+      "caption": "济州石头文化公园石像与景观"
     },
     {
       "id": 3,
@@ -194,18 +188,18 @@
       "duration": "75分钟",
       "name": "济州石文化公园",
       "category": "神话+火山石文化——30万坪露天博物馆",
-      "description": "**济州石头文化公园(제주 돌문화공원,Jeju Dolmunhwa Gongwon)** 是位于朝天的 **30 万坪(约 99 万平方米)露天博物馆**,致力于呈现济州的开天创世神话:**雪门台姥姥(설문대 할망,巨人女神)** 的传说——根据济州口传,**她将围裙中的石头撒落,创造了这座岛屿**——汉拿山在最大石块落下处隆起,而 **岛上 360 余座寄生火山(오름)即是她行走时洒落的较小石块**。园区的石材收藏 **历经 30 余年精挑细选**,从济州各地汇集,以保护岛屿的火山岩文化遗产。三条游览路径展开整个体验:**第 1 条(约 1 小时)** 涵盖核心博物馆 + 天空潭 + 母亲之屋;**全部三条(约 2 小时 40 分钟)** 走完整片园区,包含五百将军画廊、石头博物馆、传统济州茅草屋村,以及雪门台姥姥展示馆。园区的当代建筑亮点是 **'母亲之屋(어머니의 방)'**——一处圆筒形混凝土室,头顶天窗将变化的日光投在中央石雕上,将抽象的女神神话化为冥想性的建筑体验。门票:**成人 ₩5,000 / 青少年 ₩3,500 / 13 岁以下及 65 岁以上免费**;**每月最后一个周三为免费文化日**。开放时间:**09:00–18:00(末次入场 17:00)**,**每月第一个周一闭园**。室内比例约 30%(博物馆 + 室内厅);其余为户外步行——舒适的鞋具必不可少。",
-      "image": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+      "description": "**济州石头文化公园**是一座**99万6,000平方米的户外博物馆和生态自然公园**，坐落在汉拏山北麓的广阔森林中，展示**济州独特的石头文化** — 源于岛上随处可见的玄武岩，深深渗透进济州的建筑、农业、民俗和宗教传统之中。公园设有4个主题展览区：**石头文化厅**（记录石头在济州生活中的角色）；**济州神话世界**（呈现济州创世神话「（雪门台奶奶）」——从天而降创造济州万物的女神）；**石头博物馆**（展示济州石头艺术、农具和碑刻）；以及**盆景庭院**。代表性的济州石头爷爷（，「石头祖父」）雕像遍布全园。入场费：**成人₩5,000 / 青少年₩3,500 / 儿童₩1,500 / 7岁以下及65岁以上免费**。开放时间**09:00至18:00**，**周一休馆**。",
+      "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176",
       "highlights": [
-        "**30 万坪露天博物馆**——济州规模最大的火山岩文化遗产地",
-        "**雪门台姥姥神话**——济州的开天创世传说,汉拿山 + 360 寄生火山起源",
-        "**第 1 条路径(约 1 小时)** vs 全程(约 2 小时 40 分钟)——可灵活分配步行时间",
-        "**母亲之屋(어머니의 방)**——圆筒形混凝土室配天窗与中央石雕",
-        "**五百将军画廊**——以神话为灵感的石雕阵列",
-        "**30 余年** 在济州各地精选的火山岩收藏",
-        "园区一角重建的 **传统济州茅草屋村**",
-        "门票 **成人 ₩5,000 / 青少年 ₩3,500 / 13 岁以下及 65 岁以上免费**;**每月最后一个周三免费**",
-        "**每月第一个周一闭园**;预订前请确认"
+        "**99万6,000平方米**户外博物馆 — 展示济州玄武岩石头文化",
+        "4个主题展览区：石头文化厅、神话世界、石头博物馆、盆景庭院",
+        "济州创世神话「（雪门台奶奶）」展示",
+        "石头爷爷雕像 — 朝鲜时代城镇守护者",
+        "穿越石墙的户外步行小径",
+        "入场费：**成人₩5,000；7岁以下及65岁以上免费**",
+        "开放时间**09:00至18:00**，**周一休馆**",
+        "典型游览时间约**1至2小时**",
+        "紧邻汉拏山国家公园北麓"
       ],
       "timeUsed": [
         "停车+入场+课程简介——约10分钟",
@@ -214,7 +208,7 @@
         "集合——约5分钟",
         "卫生间 / 集合 — 约10分钟"
       ],
-      "whyOnRoute": "**东线神话与文化的开篇核心。** 同主题精选环线在汉拿山 UNESCO 地质处开篇,本'自然主线'路线则以汉拿山的 **神话起源故事** 开篇——同一座火山岛,以口传创世而非 UNESCO 地质来呈现。将雪门台姥姥设为当日叙事的首章,意味着此后每一站(涉地可支的火山颈仙岩、城山日出峰的火山凝灰岩、日出乐园的熔岩管、城邑民俗村的石墙韩屋)都成为女神神话的下游章节。**30 万坪的户外步行** 也将当日的户外暴露集中前置——在午后可能的天气变化前完成步行配额。相比于 **翰林公园(同为 30 万坪,门票 ₩15,000,植物体验更分散)**,石头文化公园 **门票 ₩5,000、聚焦神话、建筑感经过策展**——是东济州性价比最高的文化开篇站。",
+      "whyOnRoute": "**东环线的神话＋文化开场核心亮点**。大环线姊妹团以汉拏山UNESCO地质作为开场，而本自然核心路线则以汉拏山的**神话起源故事**揭开序幕——同一座火山岛，以口述传统与石头文化为框架。石头公园以「雪文台」创世传说展开全日参观脉络，让后续的海岸、火山口、熔岩管及民俗村都显得更有层次、更有脉络。正因如此，本行程被称为「自然核心」而非「精华环线」——同样的济州地理，以人文而非地质作为入口。",
       "_poi_meta": {
         "poi_key": "jeju_stone_park",
         "kb_version": "1.19",
@@ -226,93 +220,7 @@
           "Korea Folklore Society — Seolmundae Halmang oral tradition records",
           "Architectural Institute of Korea — Mother's Room sculpture/architecture documentation"
         ]
-      },
-      "convenience": {
-        "restroom": "入口与园内设施处均设洗手间",
-        "parking": "园区设有停车场"
-      },
-      "smartNotes": {
-        "photo": "宽阔的风景构图通常比近景人像表现更佳。",
-        "facilities": "在早段几个站点中,这一处的洗手间与室内设施总体最完善。",
-        "tip": "这一站作为沉静开篇效果最佳,而非匆忙打卡之地。"
-      },
-      "visitBasics": {
-        "hours": "09:00–18:00",
-        "closed": "週一闭馆",
-        "admission": "成人 5,000 韩元 / 青少年 3,500 韩元",
-        "walking": "轻松至中等"
-      },
-      "galleryItems": [
-        {
-          "id": 1,
-          "type": "photo",
-          "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-          "location": "Stone Park Grounds",
-          "caption": "Lava-rock-lined stone path winding through the open meadow grounds",
-          "alt": "Woman walking on stone path with lava rock walls and green meadow at Jeju Stone Culture Park"
-        },
-        {
-          "id": 2,
-          "type": "photo",
-          "src": "/images/tours/stone-culture/stone-park-water-oreum.webp",
-          "location": "Water Garden",
-          "caption": "Wading pool garden with oreum (volcanic cone) backdrop",
-          "alt": "Woman walking in the shallow water garden with oreum mountain at Jeju Stone Culture Park"
-        },
-        {
-          "id": 3,
-          "type": "photo",
-          "src": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
-          "location": "Dolhareubang Grounds",
-          "caption": "Hundreds of stone figures arranged across the open park",
-          "alt": "Rows of dolhareubang and stone figures at Jeju Stone Culture Park"
-        },
-        {
-          "id": 4,
-          "type": "photo",
-          "src": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
-          "location": "Dolhareubang",
-          "caption": "Traditional Jeju dolhareubang stone guardians",
-          "alt": "Dolhareubang stone guardian figures with forest and oreum behind them"
-        },
-        {
-          "id": 5,
-          "type": "photo",
-          "src": "/images/tours/stone-culture/stone-park-standing-stones.webp",
-          "location": "Standing Stone Corridor",
-          "caption": "Walking between monolithic standing stones lining the corridor path",
-          "alt": "Woman walking between large standing stone monoliths at Jeju Stone Culture Park"
-        }
-      ],
-      "images": [
-        "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-        "/images/tours/stone-culture/stone-park-water-oreum.webp",
-        "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
-        "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
-        "/images/tours/stone-culture/stone-park-standing-stones.webp"
-      ],
-      "imageCredits": [
-        {
-          "url": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/stone-culture/stone-park-water-oreum.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/stone-culture/stone-park-standing-stones.webp",
-          "source": "atoc-korea"
-        }
-      ]
+      }
     },
     {
       "number": 2,
@@ -352,21 +260,6 @@
           "安藤忠雄 Architect & Associates — Phoenix Island project documentation",
           "SBS Drama Archive — '《All In》' (2003) and 'My Girl' (2005) filming locations"
         ]
-      },
-      "smartNotes": {
-        "photo": "Because the sky is wide and the wind is strong, side angles and wider framing often look better than straightforward posed shots.",
-        "facilities": "Facilities are limited, with restrooms mainly near the entrance zone.",
-        "tip": "Compared with the previous stop, this section feels much more exposed to wind and sun."
-      },
-      "convenience": {
-        "restroom": "Near the entrance area",
-        "parking": "Parking available"
-      },
-      "visitBasics": {
-        "hours": "Open 24 hours",
-        "closed": "Open year-round",
-        "admission": "Free",
-        "walking": "Easy to moderate"
       }
     },
     {
@@ -389,22 +282,7 @@
         "点餐 + 用餐 — 约45分钟",
         "大巴前往城山日出峰入口 — 约10分钟"
       ],
-      "whyOnRoute": "东海岸定位意味着午餐后**仅需10分钟即可抵达城山日出峰**——为下午的登顶保留体力。（冷生鱼片汤饭）也是东济州的地区特色（济州市较少见），在城山附近用餐，也能顺路品尝东济州特色料理。",
-      "smartNotes": {
-        "photo": "If you want food photos, local Jeju dishes usually make the strongest images.",
-        "facilities": "Restaurant facilities are generally sufficient.",
-        "tip": "The most important function here is to reset the pace well, not to compress the schedule as much as possible."
-      },
-      "convenience": {
-        "restroom": "Inside the restaurant",
-        "parking": "Parking available"
-      },
-      "visitBasics": {
-        "hours": "Depends on the restaurant",
-        "closed": "Varies by venue",
-        "admission": "Included or paid on site depending on product setup",
-        "walking": "Minimal"
-      }
+      "whyOnRoute": "东海岸定位意味着午餐后**仅需10分钟即可抵达城山日出峰**——为下午的登顶保留体力。（冷生鱼片汤饭）也是东济州的地区特色（济州市较少见），在城山附近用餐，也能顺路品尝东济州特色料理。"
     },
     {
       "number": 4,
@@ -444,21 +322,6 @@
           "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
           "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
         ]
-      },
-      "smartNotes": {
-        "photo": "Wide-angle framing that includes both the crater and coastline usually feels stronger than summit selfies alone.",
-        "facilities": "Facilities are more developed near the base and more basic higher up.",
-        "tip": "Wind, crowd levels, and group fitness can all shift this stop toward more walking, more viewing, or more haenyeo-focused time."
-      },
-      "convenience": {
-        "restroom": "At the base area and some upper sections",
-        "parking": "Large parking lot available"
-      },
-      "visitBasics": {
-        "hours": "Varies by season; last ticketing is typically 1 hour before closing",
-        "closed": "First Monday of each month (or the following day if Monday is a holiday)",
-        "admission": "KRW 5,000 adults / KRW 2,500 teens and children",
-        "walking": "Moderate, or moderately demanding if the group chooses the summit"
       }
     },
     {
@@ -467,18 +330,18 @@
       "duration": "75分钟",
       "name": "日出乐园（米川窟熔岩洞穴）",
       "category": "熔岩洞穴+主题公园——万丈窟备选（紧邻UNESCO认定区域）",
-      "description": "**日出乐园 (일출랜드)** 是位于城山的 **40 万平方米自然主题公园**,**2002 年开业**,围绕 **美川窟 (미천굴)** 熔岩洞而建——这是一条 **总长 1,700 米的熔岩洞**,其中 **365 米经人工平整后开放参观**(穿越用时约 25 分钟)。该洞穴属于济州 **与万丈窟同源的熔岩洞系统**——万丈窟为联合国教科文组织世界自然遗产熔岩洞——并 **在万丈窟因保护性维护或天气原因(台风、冰冻)关闭时,作为标准替代景点对外开放**。万丈窟保留崎岖的天然洞底,提供原汁原味的地质体验;美川窟则通过平整步道,**让长者、推婴儿车的家庭以及行动不便的客人也能进入参观**——这是一项有意为之的工程设计,使熔岩洞体验向无法穿行万丈窟的群体开放。洞内布有 **七色装饰灯光(金、银、铜、红、黑、蓝、白)** 来突出洞穴造型——纯粹派人士对此颇有微词,但对非专业游客的拍照而言相当实用。洞穴之外,园区延展至 **水边公园、复原的济州传统民俗村、野花盆景园、仙人掌温室、雕塑街、足浴咖啡馆(芳香足疗)** 等区域——也是 **济州唯一设有穆斯林祈祷室的景点**(有意为之的无障碍配套投资)。综艺取景:**SBS《Running Man (런닝맨)》第 89 集(爱丽丝梦游仙境主题,2012 年)**。门票:**成人 ₩12,000 / 青少年 ₩9,000 / 儿童 ₩7,000**。室内 / 室外比例 **室内 30%(洞穴 + 温室)/ 室外 70%(园区步道)**——便于您依据天气灵活安排行程。",
+      "description": "**日出乐园（日出乐园）**是2002年在城山开业的一座**40万平方米自然主题公园**，围绕**弥天窟（美千窟）**熔岩管而建——全长**1,700米**，其中**365米人工平整路段**开放（约25分钟穿越）。洞穴与UNESCO世界自然遗产**万丈窟**属同一熔岩管体系，在**万丈窟因保育或天气关闭时作为备用方案**。人工平整的步道使洞穴对老年游客、婴儿车和行动不便旅客更易到达。洞穴内部以**七色装饰灯光**（金、银、铜、红、黑、蓝、白）照明。洞穴外设有传统济州村落、野花盆景园、仙人掌温室和泡脚咖啡厅。日出乐园是**济州唯一设有现场穆斯林祈祷室**的景点。入场费：**成人₩12,000 / 青少年₩9,000 / 儿童₩7,000**。室内/户外比例**30%室内 / 70%户外**。",
       "image": "https://images.unsplash.com/photo-1502780402662-acc01917a3a4",
       "highlights": [
-        "**总长 1,700 米** 熔岩洞;**365 米开放段**(穿越约 25 分钟)",
-        "**万丈窟世遗替代点**——同一熔岩洞系统;万丈窟闭园时启用",
-        "**地面经过人工平整**——长者、婴儿车、行动不便者皆可入内",
-        "**七色装饰灯光**——金 / 银 / 铜 / 红 / 黑 / 蓝 / 白",
-        "**40 万平方米园区**——盆景、仙人掌、雕塑、传统村、足浴咖啡馆",
-        "**济州唯一设有穆斯林祈祷室的景点**——有意为之的无障碍配套",
-        "**《Running Man》第 89 集** 取景(2012 年,爱丽丝梦游仙境主题)",
-        "门票 **成人 ₩12,000 / 青少年 ₩9,000 / 儿童 ₩7,000**",
-        "**室内 30% / 室外 70%**——便于您按天气灵活搭配"
+        "**全长1,700米**熔岩管；**365米开放路段**（约25分钟穿行）",
+        "**万丈窟UNESCO备用方案** — 万丈窟关闭时开放",
+        "**洞底人工平整** — 适合老年游客、婴儿车和行动不便旅客",
+        "**七色装饰灯光** — 金/银/铜/红/黑/蓝/白",
+        "**40万平方米公园场地** — 盆景、仙人掌、传统村落、泡脚咖啡厅",
+        "**济州唯一设有现场穆斯林祈祷室**",
+        "**《Running Man》第89集**拍摄（2012年，爱丽丝主题）",
+        "入场费 **₩12,000 / 成人；₩7,000 / 儿童**",
+        "**30%室内 / 70%户外**"
       ],
       "timeUsed": [
         "停车+购票+入场——约5分钟",
@@ -487,7 +350,7 @@
         "可选：盆景/仙人掌园+足浴咖啡馆——约15分钟",
         "集合时间——约5分钟"
       ],
-      "whyOnRoute": "**午前的熔岩洞主轴**——明确定位为当日联合国教科文组织主题中 **'与世界遗产同源'** 的篇章。同系列的自然主轴线路将日出乐园安排为午后随天气灵活调整的站点;本条联合国教科文组织线路则将其前置,使 **'世界遗产 + 文化遗产'的叙事弧线更紧凑**:咸德(Olle 19 号路线、半世遗级步行遗产)→ 城邑(国家重要民俗文化遗产)→ **日出乐园美川窟(与万丈窟同属同一世界遗产熔岩洞系统)**→ 下午城山(三重世界遗产)→ 压轴海女博物馆(2016 年人类非物质文化遗产)。午前安排同时确保洞内温度的舒适感(洞穴常年 13–15°C,夏日凉爽宜人,冬日仅微凉),先于全日最暖的户外段进行。",
+      "whyOnRoute": "**东环线的熔岩管核心亮点**——也是本行程中唯一让宾客体验**济州地下火山身份**的景点（万丈窟熔岩管体系）。相比**万丈窟（UNESCO指定地，频繁关闭，现场无相关主题设施）**，日出乐园组合了**弥天窟熔岩管＋主题花园＋绣球花庭院**，以城山日出峰后降低节奏的「过渡核心亮点」形式呈现。免费入场的花园让不希望进入溶洞的宾客也有充裕的活动空间。",
       "_poi_meta": {
         "poi_key": "ilchulland_micheon_cave",
         "kb_version": "1.19",
@@ -499,21 +362,6 @@
           "SBS Variety Archive — Running Man Episode 89 (2012)",
           "Jeju Tourism Organization — accessibility-friendly attraction registry"
         ]
-      },
-      "convenience": {
-        "restroom": "日出乐园园区入口处提供洗手间",
-        "parking": "日出乐园免费停车"
-      },
-      "smartNotes": {
-        "photo": "灯光照明的洞穴段 + 周边植物园——请向运营方确认当前日出乐园门票包含的具体拍照区域",
-        "facilities": "日出乐园园区配套(咖啡馆、礼品店、洗手间)",
-        "tip": "当公开开放的万丈窟因安全检查闭园时,这里是标准替代点。请确认您的团体票包含日出乐园洞穴段的入园权限。"
-      },
-      "visitBasics": {
-        "hours": "依日出乐园园区开放时间——请向运营方确认",
-        "closed": "依日出乐园园区时间表——请向运营方确认",
-        "admission": "包含在日出乐园门票内——票价请向运营方确认",
-        "walking": "中等——下行台阶进入洞穴,常年约 12°C;洞穴段内地面为不平整的火山岩"
       }
     },
     {
@@ -555,21 +403,6 @@
           "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
           "Jeju Folklore Society — Omegisul brewing tradition documentation"
         ]
-      },
-      "smartNotes": {
-        "photo": "Narrow lanes, roof lines, and stone-wall textures often make more rewarding images than broad centered compositions.",
-        "facilities": "Facilities inside the village are basic.",
-        "tip": "The less rushed this stop feels, the better the whole day tends to land emotionally."
-      },
-      "convenience": {
-        "restroom": "Near the village center",
-        "parking": "Parking available nearby"
-      },
-      "visitBasics": {
-        "hours": "10:00–17:00",
-        "closed": "Open year-round",
-        "admission": "Free (except some hands-on programs)",
-        "walking": "Easy and mostly flat"
       }
     }
   ],
@@ -1163,11 +996,11 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+            "src": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80",
             "location": "石头文化开场",
             "atmosphere": "平静的地质文化开场",
-            "alt": "Jeju Stone Culture Park stone path with lava rock walls, green meadow, and oreum mountain backdrop",
-            "caption": "Jeju Stone Culture Park — lava-rock path, open meadow, and oreum silhouette"
+            "alt": "济州石头文化公园石像与景观",
+            "caption": "济州石头文化公园石像与景观"
           },
           {
             "id": 3,
@@ -1220,7 +1053,7 @@
             "name": "济州石文化公园",
             "category": "神话+火山石文化——30万坪露天博物馆",
             "description": "**济州石头文化公园**是一座**99万6,000平方米的户外博物馆和生态自然公园**，坐落在汉拏山北麓的广阔森林中，展示**济州独特的石头文化** — 源于岛上随处可见的玄武岩，深深渗透进济州的建筑、农业、民俗和宗教传统之中。公园设有4个主题展览区：**石头文化厅**（记录石头在济州生活中的角色）；**济州神话世界**（呈现济州创世神话「（雪门台奶奶）」——从天而降创造济州万物的女神）；**石头博物馆**（展示济州石头艺术、农具和碑刻）；以及**盆景庭院**。代表性的济州石头爷爷（，「石头祖父」）雕像遍布全园。入场费：**成人₩5,000 / 青少年₩3,500 / 儿童₩1,500 / 7岁以下及65岁以上免费**。开放时间**09:00至18:00**，**周一休馆**。",
-            "image": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+            "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176",
             "highlights": [
               "**99万6,000平方米**户外博物馆 — 展示济州玄武岩石头文化",
               "4个主题展览区：石头文化厅、神话世界、石头博物馆、盆景庭院",
@@ -1251,78 +1084,7 @@
                 "Korea Folklore Society — Seolmundae Halmang oral tradition records",
                 "Architectural Institute of Korea — Mother's Room sculpture/architecture documentation"
               ]
-            },
-            "galleryItems": [
-              {
-                "id": 1,
-                "type": "photo",
-                "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-                "location": "Stone Park Grounds",
-                "caption": "Lava-rock-lined stone path winding through the open meadow grounds",
-                "alt": "Woman walking on stone path with lava rock walls and green meadow at Jeju Stone Culture Park"
-              },
-              {
-                "id": 2,
-                "type": "photo",
-                "src": "/images/tours/stone-culture/stone-park-water-oreum.webp",
-                "location": "Water Garden",
-                "caption": "Wading pool garden with oreum (volcanic cone) backdrop",
-                "alt": "Woman walking in the shallow water garden with oreum mountain at Jeju Stone Culture Park"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
-                "location": "Dolhareubang Grounds",
-                "caption": "Hundreds of stone figures arranged across the open park",
-                "alt": "Rows of dolhareubang and stone figures at Jeju Stone Culture Park"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
-                "location": "Dolhareubang",
-                "caption": "Traditional Jeju dolhareubang stone guardians",
-                "alt": "Dolhareubang stone guardian figures with forest and oreum behind them"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/stone-culture/stone-park-standing-stones.webp",
-                "location": "Standing Stone Corridor",
-                "caption": "Walking between monolithic standing stones lining the corridor path",
-                "alt": "Woman walking between large standing stone monoliths at Jeju Stone Culture Park"
-              }
-            ],
-            "images": [
-              "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-              "/images/tours/stone-culture/stone-park-water-oreum.webp",
-              "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
-              "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
-              "/images/tours/stone-culture/stone-park-standing-stones.webp"
-            ],
-            "imageCredits": [
-              {
-                "url": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/stone-culture/stone-park-water-oreum.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/stone-culture/stone-park-standing-stones.webp",
-                "source": "atoc-korea"
-              }
-            ]
+            }
           },
           {
             "number": 2,
@@ -2068,13 +1830,13 @@
     "senior_fit": 0.6,
     "couple_fit": 0.95,
     "active_traveler_fit": 0.8,
-    "one_day_fit": 1,
+    "one_day_fit": 1.0,
     "same_day_flight_fit": 0.4,
     "rain_fit": 0.55,
     "value_for_money_fit": 0.85,
     "iconic_landmark_fit": 0.9,
     "cafe_fit": 0.4,
-    "adult_family_fit": 1,
+    "adult_family_fit": 1.0,
     "young_kids_fit": 0.7,
     "senior_active_fit": 0.8,
     "senior_general_fit": 0.6,
@@ -2082,13 +1844,13 @@
     "stroller_fit": 0.45,
     "indoor_ratio": 0.3,
     "weather_sensitivity": 0.55,
-    "local_culture_fit": 1,
+    "local_culture_fit": 1.0,
     "shopping_fit": 0.2,
-    "storytelling_fit": 1,
+    "storytelling_fit": 1.0,
     "comfort_level": 0.6,
     "budget_fit": 0.8,
     "premium_fit": 0.5,
-    "small_group_fit": 1,
+    "small_group_fit": 1.0,
     "private_fit": 0.2,
     "bus_fit": 0.2,
     "price_band": "mid",
@@ -2144,7 +1906,7 @@
     "destination_region": "jeju",
     "vehicle_type": "minicoach",
     "vehicle_type_legacy": "minicoach",
-    "duration_hours": 9,
+    "duration_hours": 9.0,
     "anchor_poi_keys": [
       "seongsan_ilchulbong",
       "manjanggul_cave",
@@ -2152,67 +1914,67 @@
     ],
     "pickup_base_normalized": "jeju_city",
     "unesco_fit": 0.85,
-    "family_with_teens_fit": 1,
+    "family_with_teens_fit": 1.0,
     "solo_traveler_fit": 0.85,
     "food_fit": 0.6,
-    "nature_fit": 1,
+    "nature_fit": 1.0,
     "beach_fit": 0.8,
     "nightlife_fit": 0.2,
-    "no_shopping_fit": 1,
+    "no_shopping_fit": 1.0,
     "intangible_heritage_fit": 0.75,
     "seasonality": "year_round",
     "profile_format": "small_group_fixed_itinerary",
     "private_tour_fit": 0.05,
-    "fixed_itinerary_fit": 1,
+    "fixed_itinerary_fit": 1.0,
     "customizable_route_fit": 0.05,
     "flexibility_fit": 0.3,
     "first_time_jeju_fit": 0.85,
-    "east_jeju_fit": 1,
+    "east_jeju_fit": 1.0,
     "north_jeju_fit": 0.5,
     "south_jeju_fit": 0.4,
     "west_jeju_fit": 0.05,
     "central_jeju_fit": 0.6,
-    "east_signature_fit": 1,
-    "east_nature_core_fit": 1,
+    "east_signature_fit": 1.0,
+    "east_nature_core_fit": 1.0,
     "unesco_taste_fit": 0.85,
     "world_natural_heritage_fit": 0.85,
     "biosphere_reserve_fit": 0.7,
     "global_geopark_fit": 0.95,
     "triple_unesco_fit": 0.95,
-    "lava_tube_unesco_adjacent_fit": 1,
-    "volcano_geology_fit": 1,
-    "tuff_cone_fit": 1,
-    "lava_tube_fit": 1,
+    "lava_tube_unesco_adjacent_fit": 1.0,
+    "volcano_geology_fit": 1.0,
+    "tuff_cone_fit": 1.0,
+    "lava_tube_fit": 1.0,
     "volcanic_neck_fit": 0.85,
     "parasitic_cone_fit": 0.95,
-    "shield_volcano_fit": 1,
+    "shield_volcano_fit": 1.0,
     "natural_monument_anchor_count": 3,
-    "mythology_fit": 1,
-    "seolmundae_halmang_fit": 1,
-    "creation_myth_fit": 1,
+    "mythology_fit": 1.0,
+    "seolmundae_halmang_fit": 1.0,
+    "creation_myth_fit": 1.0,
     "korean_oral_tradition_fit": 0.95,
-    "joseon_heritage_fit": 1,
-    "joseon_walled_town_fit": 1,
+    "joseon_heritage_fit": 1.0,
+    "joseon_walled_town_fit": 1.0,
     "feng_shui_design_fit": 0.95,
     "yeondae_beacon_fit": 0.95,
-    "korean_folklore_fit": 1,
+    "korean_folklore_fit": 1.0,
     "k_drama_filming_fit": 0.95,
     "k_drama_anchor_count": 4,
-    "tadao_ando_architecture_fit": 1,
-    "pulitzer_architecture_fit": 1,
-    "concrete_minimalism_fit": 1,
-    "contemporary_architecture_fit": 1,
-    "korean_traditional_architecture_fit": 1,
-    "hanok_village_fit": 1,
+    "tadao_ando_architecture_fit": 1.0,
+    "pulitzer_architecture_fit": 1.0,
+    "concrete_minimalism_fit": 1.0,
+    "contemporary_architecture_fit": 1.0,
+    "korean_traditional_architecture_fit": 1.0,
+    "hanok_village_fit": 1.0,
     "thatched_roof_fit": 0.85,
     "lighthouse_anchor_fit": 0.95,
-    "coastal_cape_fit": 1,
+    "coastal_cape_fit": 1.0,
     "cliff_walk_fit": 0.95,
-    "ocean_view_fit": 1,
-    "coastal_cliff_fit": 1,
-    "park_anchor_fit": 1,
-    "outdoor_museum_fit": 1,
-    "stone_culture_fit": 1,
+    "ocean_view_fit": 1.0,
+    "coastal_cliff_fit": 1.0,
+    "park_anchor_fit": 1.0,
+    "outdoor_museum_fit": 1.0,
+    "stone_culture_fit": 1.0,
     "bonsai_garden_fit": 0.7,
     "cactus_greenhouse_fit": 0.7,
     "sculpture_garden_fit": 0.85,
@@ -2222,55 +1984,55 @@
     "stair_climbing_fit": 0.6,
     "trail_walking_fit": 0.85,
     "elevation_gain_total_m": 154,
-    "moderate_mobility_fit": 1,
+    "moderate_mobility_fit": 1.0,
     "low_intensity_fit": 0.7,
     "senior_friendly_fit": 0.75,
     "stroller_friendly_fit": 0.6,
     "wheelchair_accessible_anchor_fit": 0.55,
     "mobility_limited_friendly_fit": 0.7,
-    "muslim_prayer_facility_fit": 1,
+    "muslim_prayer_facility_fit": 1.0,
     "first_time_korea_fit": 0.85,
     "small_family_fit": 0.95,
     "young_kids_friendly_fit": 0.85,
     "senior_couple_fit": 0.85,
     "honeymoon_fit": 0.85,
-    "history_lover_fit": 1,
+    "history_lover_fit": 1.0,
     "geology_enthusiast_fit": 0.95,
-    "mythology_lover_fit": 1,
-    "k_drama_fan_fit": 1,
-    "architecture_enthusiast_fit": 1,
-    "photographer_fit": 1,
-    "instagrammable_fit": 1,
+    "mythology_lover_fit": 1.0,
+    "k_drama_fan_fit": 1.0,
+    "architecture_enthusiast_fit": 1.0,
+    "photographer_fit": 1.0,
+    "instagrammable_fit": 1.0,
     "group_size_min": 2,
     "group_size_max": 14,
-    "small_group_van_fit": 1,
+    "small_group_van_fit": 1.0,
     "calm_pace_fit": 0.85,
     "active_pace_fit": 0.7,
     "checkbox_sightseeing_fit": 0.4,
     "deep_dwell_fit": 0.95,
-    "balanced_pace_fit": 1,
-    "varied_terrain_fit": 1,
-    "language_english_fit": 1,
+    "balanced_pace_fit": 1.0,
+    "varied_terrain_fit": 1.0,
+    "language_english_fit": 1.0,
     "language_chinese_fit": 0.85,
     "language_japanese_fit": 0.5,
-    "english_guide_fit": 1,
-    "mythology_guide_fit": 1,
-    "spring_fit": 1,
+    "english_guide_fit": 1.0,
+    "mythology_guide_fit": 1.0,
+    "spring_fit": 1.0,
     "summer_fit": 0.85,
     "autumn_fit": 0.95,
     "winter_fit": 0.7,
     "all_year_fit": 0.85,
     "off_season_fit": 0.65,
     "monsoon_fit": 0.55,
-    "best_season_spring_fit": 1,
-    "canola_season_anchor_fit": 1,
+    "best_season_spring_fit": 1.0,
+    "canola_season_anchor_fit": 1.0,
     "hydrangea_season_anchor_fit": 0.85,
     "indoor_anchor_fit": 0.65,
     "wind_sensitivity": 0.55,
     "indoor_fallback_anchor_count": 3,
     "early_start_fit": 0.85,
     "late_finish_fit": 0.7,
-    "full_day_fit": 1,
+    "full_day_fit": 1.0,
     "half_day_fit": 0.05,
     "value_priced_fit": 0.85,
     "budget_traveler_fit": 0.85,
@@ -2280,35 +2042,35 @@
     "crowd_avoidance_fit": 0.6,
     "tourist_circuit_fit": 0.85,
     "instagram_anchor_count": 5,
-    "minicoach_fit": 1,
+    "minicoach_fit": 1.0,
     "max_pax_per_vehicle": 14,
-    "jeju_city_pickup_fit": 1,
+    "jeju_city_pickup_fit": 1.0,
     "seogwipo_pickup_fit": 0.85,
     "cruise_shore_excursion_fit": 0.5,
     "cruise_passenger_fit": 0.6,
     "korean_food_fit": 0.95,
-    "jeju_local_cuisine_fit": 1,
+    "jeju_local_cuisine_fit": 1.0,
     "mulhoe_fit": 0.95,
     "galchi_fit": 0.85,
     "black_pig_heritage_fit": 0.85,
     "seafood_fit": 0.95,
     "vegetarian_friendly_fit": 0.75,
     "halal_friendly_fit": 0.65,
-    "omegisul_tasting_fit": 1,
+    "omegisul_tasting_fit": 1.0,
     "photo_anchor_count": 5,
     "drone_friendly_fit": 0.55,
-    "filming_location_fit": 1,
+    "filming_location_fit": 1.0,
     "stair_anchor_count": 1,
     "barrier_free_anchor_fit": 0.7,
-    "accessibility_focus_fit": 1,
+    "accessibility_focus_fit": 1.0,
     "is_anchor_for_east_jeju_signature": true,
     "catalog_position": "east_jeju_signature_nature_core",
     "competing_tours_count": 3,
-    "china_mainland_market_fit": 0,
-    "korea_domestic_market_fit": 0,
-    "taiwan_market_fit": 1,
-    "singapore_market_fit": 1,
-    "hong_kong_market_fit": 1,
+    "china_mainland_market_fit": 0.0,
+    "korea_domestic_market_fit": 0.0,
+    "taiwan_market_fit": 1.0,
+    "singapore_market_fit": 1.0,
+    "hong_kong_market_fit": 1.0,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
@@ -2456,7 +2218,7 @@
           "_methodology": "0-1 float scale (post Phase 1 unification). Each score grounded in verified facts from KB v1.4 sources.",
           "deltas_applied": {
             "unesco_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.85,
               "reasoning": "Verified: 1 of 5 attractions is full UNESCO WHS (Seongsan, 'Jeju Volcanic Island & Lava Tubes'). Stone Park has volcanic-stone heritage value (not UNESCO designated). Seongeup is National Folklore Cultural Heritage (Korean designation, NOT UNESCO). Ilchul Land's Micheon Cave is a Natural Monument but not UNESCO. So 1/5 verified UNESCO = 0.85 (lowering from mechanical 1.0 to fact-grounded 0.85)."
             },
@@ -2471,7 +2233,7 @@
               "reasoning": "UPGRADED 0.6→0.65 with verified totals: Stone Park Course 1 (~1.5 km flat), Seopjikoji (2.1 km out-and-back + lighthouse stairs), Seongsan (0.8 km + 140 m gain via 300-500 wooden steps), Ilchul Land (~1 km park + 365 m cave), Seongeup (~1 km olle alleys flat). Total ~6.5 km + Seongsan elevation. Slightly more demanding than mechanical 0.6 due to Seongsan."
             },
             "iconic_landmark_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.9,
               "reasoning": "Verified: Seongsan + Seopjikoji = nationally iconic; Stone Park + Seongeup = regionally iconic; Ilchul Land = secondary. 0.9 (lowering from mechanical 1.0) — only 2 of 5 are universally must-see Jeju landmarks."
             },
@@ -2496,7 +2258,7 @@
               "reasoning": "Slightly UPGRADED 0.6→0.65: Stone Park has 3 indoor exhibition halls (rain refuge), Ilchul Land's cave is fully indoor and stays cool/dry, Seongeup has covered houses. Only Seopjikoji and Seongsan are heavily rain-affected. Verified balance = 0.65."
             },
             "value_for_money_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.85,
               "reasoning": "DOWNGRADED 1.0→0.85 with verified fees: Stone Park ₩5,000 + Seopjikoji free + Seongsan ₩2,000 + Ilchul Land ₩12,000 + Seongeup free = ~₩19,000/adult attraction fees. Higher than Grand Highlights (~₩6,000) due to Ilchul Land's premium. Still good value but not exceptional. 0.85 calibrated."
             },
@@ -2517,7 +2279,7 @@
               "reasoning": "UPGRADED 0.8→0.9 with verified iconic shots: Sky Pond (Stone Park), Bangdupo Lighthouse + Bulgeun Oreum (Seopjikoji), 99-rim crater (Seongsan), 7-color lit cave (Ilchul Land), 600-year zelkova trees + thatched hanok (Seongeup). 5 distinct hero images in one route."
             },
             "first_time_fit": {
-              "old": 1,
+              "old": 1.0,
               "new": 0.95,
               "reasoning": "Verified: covers volcanic geology + UNESCO peak + culture + lava tube + folk village = 5 distinct Jeju essentials in one day. 0.95 is excellent first-Jeju overview."
             }
