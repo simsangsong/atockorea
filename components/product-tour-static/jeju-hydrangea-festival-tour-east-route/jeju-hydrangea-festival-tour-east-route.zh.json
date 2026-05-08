@@ -2,40 +2,39 @@
   "document_kind": "tour_product_full_page_v1",
   "schema_version": 7,
   "slug": "jeju-hydrangea-festival-tour-east-route",
-  "locale": "zh-CN",
+  "locale": "zh",
   "product_id": "jeju-hydrangea-festival-tour-east-route",
   "seo": {
     "pageTitle": "济州绣球花节东线一日游 | AtoC Korea",
-    "metaDescription": "夏季限定9小时东济州小团游：惠裕园自然公园绣球花节、城山日出峰（UNESCO）、海女文化。",
+    "metaDescription": "仅限夏季的济州东线9小时小团游：休蕾自然公园绣球花节、城山日出峰（联合国教科文组织世界遗产）、城邑民俗村、咸德海滩。",
     "primaryKeywords": [
       "济州绣球花节",
-      "济州东线旅游",
-      "城山日出峰旅游",
-      "惠裕园绣球花",
-      "济州夏季旅游"
+      "济州东线游",
+      "城山日出峰游览",
+      "休蕾绣球花",
+      "济州夏季游"
     ],
-    "ogImage": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
-    "title": "济州绣球花节一日游 · 东部路线 · 夏季限定小团 | AtoC Korea",
-    "description": "济州东部夏季限定绣球花节一日游：城山日出峰UNESCO世界遗产→日出乐园绣球花节→休爱里自然公园绣球花田。小团，英语导游，6月至7月中旬限定。"
+    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "title": "济州绣球花节游 · 东线 · 仅限夏季小团一日游"
   },
   "catalog_card": {
-    "thumbnail": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
-    "title": "济州绣球花节一日游：东部路线",
-    "priceLabel": "价格因投行而异 — 请于预订时确认",
-    "shortCardDescription": "夏季限定东济州小团一日游，以岛内绣球花节庆为主题：城山日出峰（UNESCO）、山房山绣球花节、涉地可支海岸及成音浦港游船。6月下旬至7月下旬运营，正值绣球花盛放期。",
+    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "title": "济州绣球花节游：东线",
+    "priceLabel": "",
+    "shortCardDescription": "以济州岛绣球花节（5月下旬至7月中旬，高峰期为6月中旬）为主题的东线季节性小团一日游，途经休蕾自然公园与日出乐园。路线还涵盖两处联合国教科文组织世界遗产——城山日出峰与城邑民俗村，以及咸德海滩和米天洞熔岩隧道。在济州市提供酒店接送，配有持证英语/中文双语导游兼司机。",
     "tags": [
-      "小团",
-      "jeju",
+      "small_group",
+      "济州",
       "绣球花",
       "季节限定",
       "夏季",
-      "unesco",
-      "节庆"
+      "联合国教科文组织",
+      "节日"
     ],
     "rating": 0,
     "reviewCount": 0,
     "slug": "jeju-hydrangea-festival-tour-east-route",
-    "subtitle": "绣球花节庆+UNESCO东济州，夏季限定小团一日游。",
+    "subtitle": "绣球花节 + 联合国教科文组织世界遗产济州东线，仅限夏季小团一日游。",
     "region": "济州东部",
     "duration": "9小时",
     "stopsCount": 8,
@@ -44,34 +43,34 @@
       "济州",
       "绣球花",
       "季节限定",
-      "夏季限定",
-      "世界遗产",
-      "节庆活动"
+      "夏季",
+      "UNESCO",
+      "节日"
     ],
-    "heroImage": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg"
+    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp"
   },
-  "headlineLine1": "绣球花蓝海与城山日出峰金辉——",
-  "headlineLine2": "东济州夏日路线，9小时一圈环游",
+  "headlineLine1": "绣球花的蓝与日出峰的金——",
+  "headlineLine2": "济州东线夏季路线，9小时一次环游",
   "price": {
     "amountLabel": "",
     "currency": "USD",
-    "per": "人",
-    "priceSource": "direct_rate",
-    "priceNote": "小团票价尚未确认。姊妹西南绣球花行程约89至96美元。确认后，AtoC Korea直售价格享9折优惠。",
-    "discountPercent": 10
+    "per": "person",
+    "priceSource": "",
+    "priceNote": "",
+    "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
     "imagePosition": "center 35%",
-    "tagline": "绣球花盛开时的东济州——UNESCO遗产与一片花海，夏日最完整的9小时环线",
+    "tagline": "绣球花盛开的济州东部——9小时尽览联合国教科文组织世界遗产与花海",
     "pills": [
       "小团",
       "济州"
     ],
     "meta": {
       "duration": "9小时",
-      "region": "济州东部",
-      "stops": "8 个景点",
+      "region": "济州岛东部",
+      "stops": "8个景点",
       "rating": 0,
       "ratingStars": 0
     }
@@ -79,100 +78,106 @@
   "subnavItems": [
     {
       "id": "overview",
-      "label": "行程总览"
+      "label": "概览"
     },
     {
       "id": "itinerary",
-      "label": "详细行程"
+      "label": "行程"
     },
     {
       "id": "details",
-      "label": "注意事项"
+      "label": "详情"
     },
     {
       "id": "faq",
-      "label": "常见问题"
+      "label": "FAQ"
     },
     {
       "id": "reviews",
-      "label": "旅客评价"
+      "label": "评价"
     }
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "行程时间",
-      "value": "9小时（通常08:30–17:30）"
+      "icon": "camera",
+      "label": "拍照价值",
+      "value": "极佳",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "团体规模",
-      "value": "小团，英中双语导游"
-    },
-    {
-      "icon": "calendar",
-      "label": "最佳季节",
-      "value": "5月下旬至7月中旬（6月中旬顶峰）；全年可运营，非花季花卉效果有限"
-    },
-    {
-      "icon": "hotel",
-      "label": "接送信息",
-      "value": "济州市内酒店免费接送；市外+₩70,000"
+      "icon": "mountain",
+      "label": "风景优美",
+      "value": "良好",
+      "level": 4
     },
     {
       "icon": "footprints",
-      "label": "步行强度",
-      "value": "中等——城山日出峰需约30分钟上坡（可跳过）"
+      "label": "步行",
+      "value": "适中",
+      "level": 3
     },
     {
-      "icon": "ticket",
-      "label": "费用包含",
-      "value": "车辆、执照司导、油费/过路费/停车费。不含：景点入场费、午餐"
+      "icon": "cloud-rain",
+      "label": "雨天安全性",
+      "value": "低",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "家庭适合度",
+      "value": "良好",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "均衡性",
+      "value": "均衡",
+      "level": 4
     }
   ],
   "galleryItems": [
     {
       "id": "g1",
       "type": "photo",
-      "src": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
-      "alt": "行程中参观的城山日出峰（日出峰）——UNESCO世界自然遗产景观",
-      "caption": "城山日出峰（日出峰）——UNESCO世界自然遗产",
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+      "alt": "城山日出峰 — 联合国教科文组织自然遗产",
+      "caption": "城山日出峰 — 联合国教科文组织自然遗产",
       "location": "",
       "atmosphere": ""
     },
     {
       "id": "g2",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "休爱里自然公园绣球花田",
-      "caption": "休爱里自然公园绣球花田——盛花期5月下旬至7月中旬（高峰6月中）",
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/20/a397a498-7bc9-4730-963a-cfa29ccffe7d.webp",
+      "alt": "休爱里自然公园绣球花田 — 旺季为5月下旬至7月中旬（盛花期6月中旬）",
+      "caption": "休爱里自然公园绣球花田 — 旺季为5月下旬至7月中旬（盛花期6月中旬）",
       "location": "",
       "atmosphere": ""
     },
     {
       "id": "g3",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "日出乐园弥天窟熔岩管万丈窟备选安排",
-      "caption": "日出乐园弥天窟熔岩管（万丈窟备选安排）",
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/cf7e9f6b-178f-4d3d-b978-91beb5145a10.webp",
+      "alt": "日出乐园美川熔岩管洞窟（万丈窟关闭期间的替代景点）",
+      "caption": "日出乐园美川熔岩管洞窟（万丈窟关闭期间的替代景点）",
       "location": "",
       "atmosphere": ""
     },
     {
       "id": "g4",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "行程中参观的城邑民俗村传统石屋UNESCO遗产景观",
-      "caption": "城邑民俗村传统石屋UNESCO遗产",
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
+      "alt": "城邑民俗村传统石屋，联合国教科文组织遗产",
+      "caption": "城邑民俗村传统石屋，联合国教科文组织遗产",
       "location": "",
       "atmosphere": ""
     },
     {
       "id": "g5",
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "含德海滩济州前三名海滩",
-      "caption": "含德海滩，济州前三名海滩之一",
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201810/17/654ec69c-ca81-443d-9b10-3cfe4a8e98f0.webp",
+      "alt": "咸德海滩，跻身济州三大海滩之列",
+      "caption": "咸德海滩，跻身济州三大海滩之列",
       "location": "",
       "atmosphere": ""
     }
@@ -183,62 +188,62 @@
       "time": "08:30",
       "duration": "30分钟",
       "name": "酒店接送（济州市）",
-      "category": "接送——济州市酒店/集合点顺序",
-      "description": "**接送整合于济州市的四个标准接送点**,以保持上午紧凑、东行出发顺畅:**济州国际机场(제주공항)** 适合当日抵达或机场片区酒店住客(Hidden Cliff、Maison Glad、Lotte City 等);**济州市厅(제주시청)** 服务莲洞 / 老衡洞 / 老城区酒店群;**下贵洞(하귀동)** 是济州市最西的接送点;**东门传统市场(동문시장)** 服务东侧塔洞/沙罗峰滨海酒店群。顺序为 **下贵 → 机场 → 市厅 → 东门 → 沿东向 1132 号海岸公路** 驶向咸德。小型大巴 **小团专车(最多约 14 人)** 配持牌讲英语向导。**双语印刷行程卡** 在首站派发,向导随后进行天气简介及 **绣球花花期解读**(当天哪些花园达盛花期、哪些仍处早花),便于按当日花情校准摄影站点优先级。",
-      "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+      "category": "接送 — 济州市酒店/集散点顺序",
+      "description": "**接送点整合为济州市四个标准上车点**，以保持早晨行程紧凑、东行路线畅通：**济州国际机场（제주공항）**服务当天抵达或机场周边酒店的旅客（Hidden Cliff、Maison Glad、Lotte City等）；**济州市厅（제주시청）**服务涟洞/老峻/旧城区酒店群；**河贵洞（하귀동）**为济州市最西端接送点；**东门传统市场（동문시장）**服务济州市东部塔洞/纱罗峰滨海区酒店群。接送顺序为**河贵 → 机场 → 市厅 → 东门 → 沿1132号沿海公路东行**，前往咸德。小型巴士为**小团队出行（最多约14人）**，配备持牌英语导游。**双语印刷行程卡**在第一接送点发放，导游将提供天气简报及**绣球花开放状态说明**（当日哪些花园处于盛开期或初开期），以便合理安排当日拍照停留的优先顺序。",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
       "highlights": [
-        "**4 个接送点**——机场、市厅、下贵、东门(塔洞)",
-        "西向东顺序最大限度缩短上午大巴里程",
-        "**小型大巴(最多 14 人)** 配持牌英语向导",
-        "首站派发双语行程卡",
-        "**首站进行绣球花花期简介**(盛花期 vs 早花校准)",
-        "上午济州市 → 咸德海水浴场总转场:约 25 分钟"
+        "**4个接送点** — 机场、市厅、河贵、东门（塔洞）",
+        "西→东接送顺序最大程度减少早晨巴士行驶距离",
+        "**小团队迷你巴士（最多14人）**，配备持牌英语导游",
+        "双语行程卡于第一接送点发放",
+        "**绣球花开放状态简报**（第一站，盛开期与初开期区分说明）",
+        "济州市至咸德海滩早晨总行程时间：约25分钟"
       ],
       "timeUsed": [
-        "河贵接送~08:30——5分钟",
-        "机场接送~08:40——5分钟",
-        "市政厅·东门依次接送~08:50–09:05",
-        "东门接送 ~09:00 — 5分钟",
-        "沿海岸1132号公路东行前往咸德 — 约25分钟"
+        "河贵接送约08:30 — 5分钟",
+        "机场接送约08:40 — 5分钟",
+        "市厅接送约08:50 — 5分钟",
+        "东门接送约09:00 — 5分钟",
+        "沿1132号沿海公路东行至咸德 — 约25分钟"
       ],
-      "whyOnRoute": "**东线绣球花环线的运营核心。** 接送是当日唯一让四个分散酒店区汇拢的节点——一旦驶过东门,小型大巴即承诺进入定义当日的 1132 号海岸公路走廊(咸德 → 城邑 → 城山 → 日出乐园 → 休爱里)。西向东的接送顺序是有意为之:大巴先接下贵客人,得以利用东门后剩余的 25 分钟,在大批团车涌入之前抵达咸德,赶上晨间的退潮窗口。",
+      "whyOnRoute": "**东部绣球花环线的运营核心。** 接送是一天中四个分散酒店区域唯一汇聚的时间节点——一旦驶过东门，迷你巴士将全程沿贯穿当日行程的1132号沿海走廊前行（咸德 → 城邑 → 城山 → 日出乐园 → Hueree）。西→东的接送顺序经过精心设计：让巴士优先接载河贵旅客，并在东门出发后利用约25分钟顺利抵达咸德，赶在大批旅游巴士涌入前把握早晨海滩的最佳潮汐窗口期。",
       "_poi_meta": {
         "poi_key": "OPS_pickup",
         "kb_version": "1.20",
         "verified_date": "2026-04-29",
         "sources": []
       },
+      "visitBasics": {},
       "convenience": {},
-      "smartNotes": {},
-      "visitBasics": {}
+      "smartNotes": {}
     },
     {
       "number": 2,
       "time": "09:30",
       "duration": "40分钟",
       "name": "咸德西牛峰海滩",
-      "category": "海岸",
-      "description": "**咸德犀牛峰海水浴场 (함덕 서우봉 해변)** 长期位列 **济州前三名海滩**,以 **白沙滩(主沙带约 500 米,3 段相连海湾合计约 900 米)** 与紧邻的 **犀牛峰 (서우봉,'形似牛头的寄生火山') 火山锥** 形成的反差为标志,后者自沙滩东端直起。海水标志性的 **翡翠绿松石色** 来自浅海珊瑚沙海底对清澈海水的反射——这种近似地中海的色彩反差(在韩国少见)使咸德成为韩国国内拍照最多的海滨之一。海滩在夏季高峰期日承载力可达 **5 万人**,但春秋来访通常人潮不多。**犀牛峰**(可徒步攀登,约 1 小时登顶)在 **3–4 月披上油菜花黄**,登顶可远眺东向 **万丈窟熔岩洞一带** 的全景。**历史层次**:犀牛峰以西的海岸悬崖中藏有 **二战时期日本陆军开凿的隧道**——神风敢死小艇掩体与弹药储藏所,与城山日出峰的 18 个洞穴类似。这些隧道对公众开放(配有解释历史背景的标识)。海滩为 **济州 Olle 19 号路线(朝天 → 金宁)** 的中段,以蓝橙双色丝带标识。**Cafe Delmoondo (델문도 카페)** 坐落在沙滩边——大露台、海景视野,深受 Instagram 拍照与休闲驻足喜爱。**免费入场**;距济州国际机场 **20 公里 / 沿 1132 号公路驾车约 40 分钟**。",
-      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      "category": "海岸拍照停留 — 翡翠绿松石色海水 + 西牛峰寄生火山丘",
+      "description": "**咸德西牛峰海滩（함덕 서우봉 해변）**长期位列**济州前三大海滩**，其标志性景观在于**白沙滩（主滩约500米，3个相连海湾总长约900米）**与**紧邻的寄生火山锥西牛峰（서우봉，形如\"牛头\"的寄生火山锥）**之间的鲜明对比——西牛峰从海滩东端直接拔起。海水独特的**翡翠绿松石色**源自浅层珊瑚沙海底在清澈海水中的折射反光——这种地中海式色彩对比在韩国极为罕见，使咸德成为国内拍照打卡最多的海滩目的地之一。盛夏高峰期该海滩可接待多达**每日5万名游客**，但春秋两季通常人流稀少。**西牛峰山顶**（可攀登，约需1小时到顶）在**春季（3月至4月）呈现金黄色油菜花坡**，并可俯瞰**向东延伸至万丈窟熔岩管遗址的全景**。**历史层**：西牛峰以西的海崖中保存有**二战殖民占领时期日本帝国陆军开凿的隧道** — 神风特攻队自杀艇掩体及弹药库，与城山日出峰的18处洞穴类似。隧道对外开放参观（配有历史背景说明标牌）。海滩是**济州偶来小路第19路线（조천 → 김녕）**的**核心路段**，沿途设有该路线标志性的蓝橙丝带标记。**德尔蒙多咖啡馆（델문도 카페）**坐落于海滩前方——宽阔露台、无敌海景，是Instagram打卡热点及休闲停留的热门之选。**免费入场**；海滩位于**济州国际机场20公里外，沿1132号公路驾车约40分钟**。",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/20/a397a498-7bc9-4730-963a-cfa29ccffe7d.webp",
       "highlights": [
-        "**济州前三名海滩**——翡翠绿松石海水 + 白色珊瑚沙",
-        "**主沙带 500 米** + 3 段相连海湾(合计约 900 米)",
-        "**犀牛峰火山锥** 约 1 小时登顶——3–4 月披油菜花黄",
-        "**二战日本陆军隧道** 位于相邻悬崖——神风敢死小艇掩体",
-        "**Olle 19 号路线(朝天 → 金宁)**——蓝橙丝带标识",
-        "**Cafe Delmoondo**——大露台、海景、标志性驻足点",
-        "夏季高峰日承载 **5 万游客**;春秋人潮稀少",
-        "**免费入场**;距济州国际机场 20 公里 / 约 40 分钟",
-        "近似地中海的色彩反差——在朝鲜半岛少有"
+        "**济州前三大海滩** — 翡翠绿松石色海水 + 白色珊瑚沙",
+        "**主滩500米** + 3个相连海湾（总长约900米）",
+        "**西牛峰火山锥**约1小时登顶 — 3至4月金黄油菜花坡",
+        "**毗邻崖壁中的二战日本帝国陆军隧道** — 神风特攻队自杀艇掩体",
+        "**偶来小路第19路线（조천 → 김녕）** — 蓝橙丝带路标",
+        "**德尔蒙多咖啡馆** — 宽阔露台、滨海位置、标志性休息站",
+        "盛夏高峰期每日最多**5万名游客**；春秋两季人流稀少",
+        "**免费入场**；距济州国际机场20公里/约40分钟车程",
+        "地中海式色彩对比 — 在朝鲜半岛极为罕见"
       ],
       "timeUsed": [
-        "大巴抵达+停车——约5分钟",
-        "主海滩+第二处海湾漫步——约25分钟",
-        "二战坑道外观参观——约10分钟",
-        "Delmoondo咖啡馆或海滩拍照——约15分钟",
-        "集合时间——约5分钟"
+        "巴士抵达及停车 — 约5分钟",
+        "海滩漫步（主滩 + 第二海湾）— 约25分钟",
+        "观看二战隧道外观 — 约10分钟",
+        "Cafe Delmoondo或海滨摄影 — 约15分钟",
+        "缓冲/集合整队 — 约5分钟"
       ],
-      "whyOnRoute": "**清晨翡翠 + 第一站绣球花线路热身。** 咸德是首站,基于三个东线策略性原因。(1) **潮汐与光线的时机**:09:30 抵达正赶上清晨低潮窗口(最为上镜的翡翠绿松石带,先于午前的浪涌与日眩使色彩反差变平)——这是 **济州东海岸的标志性画面**,赶在 10:30 旅游大巴大潮前拿到这一画面是给客人的实在加分。(2) **东行弧线的地理锚点**:咸德位于沿 1132 号公路距济州市约 14 公里——是定义全天的滨海走廊上的天然首站。略过此处会逼迫全天以一段 50 分钟内陆高速车程开篇前往城邑(画面单调),或以绣球花花园开篇(剥夺全天的节奏变化)。(3) **绣球花线路的对位**:咸德的白沙 + 翡翠海水提供了全天唯一的 **非花卉** 大场景锚点——其他主要站点皆为绣球花或文化遗产主题,因此咸德的角色是在沉浸花卉之前为全天提供视觉的广度。",
+      "whyOnRoute": "**清晨翡翠海色 + 绣球花路线首段热身。** 涵德海滩作为第一站，出于三个精心考量的东线理由。(1) **潮汐与光线时机**：09:30抵达恰好赶上清晨退潮窗口期（上午中段涌浪与阳光眩光使对比度减弱之前，翡翠-青绿色水带最为上镜）——这是*济州*东海岸的标志性照片，在10:30大巴团队涌入前拍到此景，是对客人切实可感的价值馈赠。(2) **向东弧线的地理锚点**：涵德位于济州市以东约14公里的1132号公路沿线——是定义全天行程的海岸走廊上天然的第一个落脚点。跳过它将迫使全天行程要么以50分钟内陆高速直奔城邑（视觉单调），要么以绣球花园开场（剥夺行程的节奏层次感）。(3) **与绣球花路线的视觉对位**：涵德的白沙滩与翡翠海水，是全天唯一一处**非花卉**的大场景视觉锚点——其余所有重要站点均以绣球花或历史遗产为主题，因此涵德的作用在于：在花卉沉浸式体验开始之前，赋予全天行程视觉上的广度。",
       "_poi_meta": {
         "poi_key": "hamdeok_seoubong_beach",
         "kb_version": "1.20",
@@ -251,50 +256,62 @@
           "Jocheon-eup local cultural office — Seoubong oreum trail records"
         ]
       },
-      "convenience": {
-        "restroom": "海滩设有公共洗手间和淋浴设施",
-        "parking": "公共停车场(夏季收费)"
-      },
-      "smartNotes": {
-        "photo": "犀牛峰剪影衬托下的日落是经典画面;犀牛峰山顶的航拍视角能呈现白沙湾的弧线",
-        "facilities": "沙滩前一带多家咖啡馆;附近便利店若干",
-        "tip": "比挟才或金宁海滩人少;东侧 Delmoondo 咖啡馆一带是热门日落点"
-      },
       "visitBasics": {
-        "hours": "24 小时开放(海滩);7–8 月开放游泳期,配救生员",
+        "hours": "全天24小时开放（海滩）；7–8月游泳季有救生员值守",
         "closed": "全年开放",
         "admission": "免费",
-        "walking": "轻松——沙滩平整;犀牛峰徒步为中等(有台阶)"
-      }
+        "walking": "轻松 — 海滩为平坦沙滩；西우봉徒步为中等难度（有台阶）"
+      },
+      "convenience": {
+        "restroom": "海滩设有公共卫生间及淋浴设施",
+        "parking": "公共停车场（夏季收费）"
+      },
+      "smartNotes": {
+        "photo": "夕阳配西우봉剪影是经典构图；从西우봉山顶可拍出俯瞰式白沙弧线全景",
+        "facilities": "海滨沿线有多家咖啡厅；附近有便利店",
+        "tip": "比挟才海滩或金宁海滩人少；东侧的Delmoondo咖啡厅区域是热门日落打卡地"
+      },
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202408/20/a397a498-7bc9-4730-963a-cfa29ccffe7d.webp",
+        "https://images.unsplash.com/photo-1761529812825-3b9797bad2b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1688544969956-a887beadb9d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1769557040812-69d73be117a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1747497153297-6ed1af10e284?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1747587306969-e0765d6f5d71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1747497153316-526d3a56d219?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1666348185731-0d20e028ff02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1758327740354-9c918c10fe47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     },
     {
       "number": 3,
       "time": "10:30",
       "duration": "50分钟",
       "name": "城邑民俗村",
-      "category": "朝鲜时代城郭城镇——重要民俗文化遗产（1423年创立）",
-      "description": "**城邑民俗村**是**朝鲜时代的城郭式城镇，始建于1423年世宗大王年间**，当时称为旌义县，是朝鲜时代济州三大行政中心之一。村落持续作为**县政中心长达近500年，直至1914年**，至今在原有邑城城郭范围内保存著**110栋传统建筑**，整体按照朝鲜县政中心典型的**韩国风水原则**规划布局。整座村落被指定为**韩国重要民俗文化遗产**，多栋个别建筑亦分别获得独立遗产指定。村落中心耸立著**两棵被指定为韩国天然纪念物的古树**——**一棵光叶榉**和一棵**朴树**，两者均**树龄逾600年**，是村落的精神象征。历史伤痕清晰可见：**1826年的大火烧毁了约80栋建筑**，村落在**1948年济州四三事件中**也遭受过火灾破坏——两段历史均记载于村内标示牌上。历史上户数高峰时约**1,500户**，今日村落仍有约**250户人家居住**，许多村民积极传承传统工艺。韩剧拍摄记录：**《大长今》（MBC，2003至2004年）**，这部国际韩剧大作曾在此取景。当地特色：**五味子酒** — 村内一户人家**世代相传、多代酿造**的**济州传统米酿酒**，村内家庭酿酒坊可免费参观品尝。**免费入场**；以户外步行为主（约70%户外）。",
-      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+      "category": "朝鲜时代民俗遗产 — 联合国教科文组织/国家民俗文化遗产指定地",
+      "description": "**城邑民俗村（성읍 민속마을）** 是一座**至今仍有居民居住的朝鲜时代城墙古镇，建于1423年**，由**世宗大王**在位期间创立，名为旌义县（정의현），是朝鲜时代济州三大行政驻地之一。该村持续作为**县级行政中心直至1914年**——长达近**500年**——在原有邑城（읍성）城墙古镇范围内至今保留有**110座传统建筑**，整体格局遵循**朝鲜郡县首府典型的韩国风水原则**规划布局。整个村落被列为**韩国重要民俗文化遗产**，其中**多栋单体建筑**另有独立遗产认定。村落中心矗立着**两株被列为韩国天然纪念物的古树**——一株**榉树（느티나무）**与一株**朴树（팽나무）**，均估计树龄**超过600年**，被视为村落的精神象征。历史创伤清晰可见：**1826年的一场大火烧毁了约80栋建筑**，村落在**1948年济州四三事件**期间也遭受了火灾破坏——两段历史均以村内告示牌的形式留存为历史记录。**历史户籍高峰期（近代以前）约有1,500户**——如今村内仍有约250户家庭居住，许多居民积极传承传统手工艺。影视拍摄地：**《大长今》（MBC，2003–2004年）**，韩国历史剧国际代表作。当地特产：**오메기술（五麦酒）** — 一种**以米为原料的济州传统酒**，由**一户家族世代酿造**，村内酿造作坊提供免费酿造展示与品尝。**免费入场**；游览以户外步行为主（约70%户外 / 30%参观韩屋室内）。",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/cf7e9f6b-178f-4d3d-b978-91beb5145a10.webp",
       "highlights": [
-        "**始建于1423年**（世宗大王年间）——行政中心持续运作至**1914年（近500年）**",
-        "原有邑城城郭范围内保存**110栋传统建筑**",
-        "**韩国重要民俗文化遗产**（整座村落 + 多栋个别建筑）",
-        "村落中心有**两棵树龄逾600年的古树**：光叶榉 + 朴树 — **天然纪念物**",
-        "按照**朝鲜韩国风水（地理）原则**规划 — 典型县政中心格局",
-        "**《大长今》（MBC 2003至2004年）**拍摄地 — 国际韩剧大作",
-        "**五味子酒** — 济州传统米酿酒，单一家族世代相传酿造（免费品尝）",
-        "历史伤痕：**1826年大火**烧毁约80栋；**1948年济州四三事件**破坏",
-        "**免费入场** — 村落仍有约250户人家居住，延续传统"
+        "**建于1423年**，由世宗大王创立 — 行政中心地位延续至**1914年（约500年）**",
+        "原邑城城墙古镇范围内保有**110座传统建筑**",
+        "**韩国重要民俗文化遗产**（整体村落 + 多栋单体建筑）",
+        "中心有**两株约600年树龄的古树**：榉树 + 朴树 — **天然纪念物**",
+        "按**朝鲜时代韩国风水（堪舆）原则**规划设计 — 典型郡县首府格局",
+        "**《大长今》（MBC 2003–2004年）** 拍摄地 — 韩剧国际代表作",
+        "**오메기술（五麦酒）** — 单一家族世代酿造的济州米酒（免费品尝）",
+        "历史创伤：**1826年大火**烧毁约80栋建筑；**1948年济州四三事件**造成破坏",
+        "**免费入场** — 村内至今仍有约250户家庭居住，传承传统文化"
       ],
       "timeUsed": [
-        "停车+村落解说员迎接简介——约10分钟",
-        "走至古树+村落中心——约10分钟",
-        "参观韩屋内部（代表性民居2–3栋）——约15分钟",
-        "五味子酒酿造坊免费品尝——约10分钟",
-        "奥莱小巷散步+拍照——约10分钟",
-        "集合时间——约5分钟"
+        "停车 + 村落讲解员迎宾简介 — 约10分钟",
+        "步行至古树与村落中心 — 约10分钟",
+        "参观韩屋室内（2–3栋代表性民居）— 约15分钟",
+        "오메기술酿造坊免费品尝 — 约10分钟",
+        "偶来小巷漫步 + 摄影 — 约10分钟",
+        "缓冲时间 — 约5分钟"
       ],
-      "whyOnRoute": "**全日唯一的内陆朝鲜时代遗产停留**。城邑属于东部路线的三个理由：（1）**地理枢纽**：城邑位于表善面的内陆十字路口，是汉拏山南坡自然下行至城山的过渡站；（2）**遗产节奏**：含德（自然＋殖民历史）→城邑（朝鲜行政遗产）的序列，在午后密集的UNESCO景点和绣球花景点之前建立清晰的文化背景层次；（3）**时段逻辑**：10:30抵达让城邑在早班游客散去后保持适中人流。",
+      "whyOnRoute": "**文化遗产锚点，也是全天唯一的内陆朝鲜王朝景点。** 城邑列入东线10:30行程的三大理由。(1) **地理枢纽**：城邑位于内陆表善面交汇处，是咸德→城山东行沿海弧线向南绕行中部高地的节点。将其确定为上午第二个实质性游览站，可将原本约50分钟的过境驾车时间转化为遗产锚点，且无需额外绕道代价。(2) **与花卉主题下午的节奏与基调形成对比**：当天其余行程（日出乐园、休憩花园）均以绣球花为核心、花园氛围浓厚；城邑的石墙韩屋小巷与马匹引领的朝鲜王朝行政历史，赋予路线唯一一处**深度文化、悠闲步行**体验，防止全天行程沦为单纯的花卉摄影游。(3) **UNESCO相关层次**：国家民俗文化遗产第188号的认定，与下午UNESCO三重遗产城山自然契合，构建起东线遗产与火山地貌并重的贯穿主线，与2号路线（西南线）的花园加海岸变体形成鲜明区别。",
       "_poi_meta": {
         "poi_key": "seongeup_folk_village",
         "kb_version": "1.20",
@@ -306,78 +323,96 @@
           "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
           "Jeju Folklore Society — Omegisul brewing tradition documentation"
         ]
-      }
+      },
+      "visitBasics": {
+        "hours": "全天24小时开放（户外村落）；商铺通常营业时间为09:00–17:00",
+        "closed": "全年开放",
+        "admission": "村落整体免费参观；部分私人民居提供导览参观需收费",
+        "walking": "轻松 — 村内为平坦土路与石板路"
+      },
+      "convenience": {
+        "restroom": "村落入口设有公共卫生间",
+        "parking": "入口附近提供免费停车"
+      },
+      "smartNotes": {
+        "photo": "石墙（石爷爷石像）、带烟孔的茅草屋顶房屋以及传统木门，是济州标志性拍摄题材",
+        "facilities": "入口处设有游客信息中心；提供英文地图",
+        "tip": "可在入口处申请免费志愿导游以了解文化背景；请尊重此地居民的日常生活——未经邀请切勿擅入民居"
+      },
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/cf7e9f6b-178f-4d3d-b978-91beb5145a10.webp",
+        "https://images.unsplash.com/photo-1746431565374-77fd0e8a02b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1769433471231-939e6c9d24a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1674142338030-3edf28f79322?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1659090833777-fcdb820ce4e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1757357921301-6a0ec0947c7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1660782556788-02f7539c0524?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1748092821079-ba4e8abff5e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1719985968360-15b822c49a03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1734961592183-6904430d3f3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     },
     {
       "number": 4,
       "time": "11:30",
       "duration": "60分钟",
       "name": "午餐（济州当地餐厅）",
-      "category": "运营停留——东济州当地午餐",
-      "description": "**午餐安排在翰林 / 涯月尾段 / 安德走廊的当地济州式餐厅**,从运营方甄选的家族式名单中选取,该名单经审核 **支持英语友好菜单、特殊饮食(应需提供素食 + 清真友好的鸡肉 / 海鲜选项)与西海岸济州特色菜**,团体价格公道。典型选择包含 **galchi-jorim(炖银带鱼)**、**heuk-dwaeji bulgogi(济州黑猪烤肉)**、**Mom-guk(济州海藻猪肉汤)**,以及 **配应季野菜的拌饭**。**Mom-guk 尤其是西南济州的地方特色**,东线行程中并不出现。与东线午餐一样,具体餐厅在出发前一日依据团队人数、饮食需求和厨房档期选定——清晨简报时通知客人。**午餐由客人自付**(人均约 ₩12,000–₩18,000),**不含在团费内**。饮品与米饭、配菜的续添始终随餐附赠。",
-      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "category": "行程节点 — 济州东部当地午餐",
+      "description": "**午餐安排在表善面/城山东部走廊的济州风味当地餐厅**，从运营商精心审核的3家家庭式餐厅轮换名单中选取，筛选标准为**英文菜单友好、膳食需求可满足（素食及清真友好鸡肉/海鲜选项可提前申请）以及济州本地特色菜肴**，并提供合理的团体价格。典型午餐选项包括**갈치조림（红烧带鱼）**、**黑猪肉韩式烤肉（济州黑猪烤肉）**、**时令野菜拌饭**以及**辣鱼汤（매운탕）**。具体餐厅将根据团体人数、膳食需求及厨房供应情况于前一天确定——游客将在早晨简报时获知用餐地点。**午餐费用由游客自理**（通常每人₩12,000–₩18,000），**不含**在团费内。无论点选何种菜肴，饮料及米饭/小菜续添均随餐提供。",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
       "highlights": [
-        "**西南济州当地餐厅**——翰林 / 涯月尾段 / 安德走廊",
-        "甄选名单:**英语友好菜单** + 特殊饮食支持",
-        "招牌選項：**白帶魚燉煮（galchi-jorim）、黑豬肉烤肉（heuk-dwaeji bulgogi）、莫子湯（Mom-guk，地方菜）、拌飯**",
-        "**Mom-guk** = 西济州地方特色(海藻猪肉汤),东线不见",
-        "**午餐由客人自付**(人均约 ₩12,000–₩18,000,不含在团费)",
-        "应需提供素食 + 清真友好选项"
+        "**济州东部当地餐厅** — 表善/城山东部走廊",
+        "精选名单：**英文菜单友好** + 膳食需求可满足",
+        "招牌选项：**红烧带鱼、黑猪肉烤肉、拌饭、辣鱼汤**",
+        "可提前申请素食及清真友好选项",
+        "**午餐费用由游客自理**（约₩12,000–₩18,000/人，不含在团费内）",
+        "餐厅于前一天根据团体人数及膳食需求确定"
       ],
       "timeUsed": [
-        "抵达+就坐——5分钟",
-        "点餐+饮食确认——5分钟",
-        "用餐——35分钟",
-        "洗手间+集合——15分钟",
+        "抵达 + 入座 — 5分钟",
+        "点餐 + 确认膳食需求 — 5分钟",
+        "用餐 — 35分钟",
+        "结账 + 如厕 — 10分钟",
         "上车 + 出发 — 5分钟"
       ],
-      "whyOnRoute": "**运营性午间站点**,锁定在 12:35 衔接清晨的挟才 + 翰林主轴(120 分钟翰林会延伸至早午时段)与下午的柱状节理 / 天帝渊 + 茶花山弧线。60 分钟的时段同时充当 **缓冲蓄水池**——若旺季周末翰林洞排队过长,午餐窗口可压缩至 50 分钟,而不影响 13:50 的柱状海岸目标时间。",
+      "whyOnRoute": "**行程中段节点**，固定于11:30，衔接遗产节奏的上午（城邑）与UNESCO节奏的下午（城山）。60分钟时间段同时作为**缓冲吸收器** — 若城邑行程延长（遗产小巷极易令人流连忘返），午餐时间可压缩至50分钟，仍不影响12:50抵达城山的目标。",
       "_poi_meta": {
         "poi_key": "OPS_lunch",
         "kb_version": "1.20",
         "verified_date": "2026-04-29",
         "sources": []
       },
-      "convenience": {
-        "restroom": "餐厅内",
-        "parking": "可停车"
-      },
-      "smartNotes": {
-        "tip": "应需提供素食选项——请提前一日告知。"
-      },
-      "visitBasics": {
-        "hours": "通常 12:00-14:00",
-        "admission": "午餐费用现场支付,沿线韩国当地餐厅人均约 10,000–15,000 韩元",
-        "walking": "极少"
-      }
+      "visitBasics": {},
+      "convenience": {},
+      "smartNotes": {}
     },
     {
       "number": 5,
       "time": "12:50",
       "duration": "75分钟",
       "name": "城山日出峰",
-      "category": "UNESCO凝灰岩锥——日出峰（三重UNESCO认定）",
-      "description": "**城山日出峰（城山日出峰，「日出峰」）**是一座**距今5,000年的苏尔特塞式（Surtseyan）水成火山凝灰岩锥**——形成于海底玄武岩喷发冲出海面之时，岩浆接触海水引发蒸汽爆炸，堆积的火山灰形成**182米高、形如城堡的火口**边缘，而非典型的熔岩锥。UNESCO将其正式定义为**「萨托谢安式火山构造典型范例」**。火口**直径600米、深90米**，周围环绕着**99块锯齿状的边缘岩石**，当地传说将其比喻为石冠。城山日出峰拥有**UNESCO三重认定**：**世界自然遗产（2007年7月2日列入）**，是**「济州火山岛与熔岩洞窟」**遗址的组成部分；**生物圈保护区（2002年）**；以及**全球地质公园（2010-10）**——这一荣衔仅与汉拏山本身并列，为韩国景点中的最高规格。峰体向海一侧隧道有**18座帝国日本二战地下掩体**（1945年神风特攻队自杀艇掩体）。步道：**单程0.8公里，爬升约140米，来回60分钟**，沿宽阔石阶攀登。**海女表演**每日在峰下岩石海湾**13:30和15:00**各举行一场——无需氧气罐的济州女性潜水员（UNESCO 2016年非物质文化遗产）。门票于**2025年4月更新**：**成人₩5,000 / 青少年+儿童₩2,500 / 团体成人₩1,600**，7岁以下及65岁以上免费。山顶观景台同属**瀛洲十景**，长期以来是韩国**元旦日出朝圣**的首选地——每年1月1日有逾5万人在黎明前登顶，自1995年起设有市政日出节活动。**牛岛** —— 韩国最大的次级火山岛——在山顶可清晰看见，位于4公里外海域，搭乘**15分钟渡轮自城山港出发**可前往（来回₩10,500）。",
-      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+      "category": "UNESCO三重认定凝灰岩火山锥——攀登至火山口边缘",
+      "description": "**城山日出峰（성산일출봉，\"日出峰\"）**是一座**有5,000年历史的苏特西型水成火山凝灰岩锥**——一种罕见地貌，由海底玄武岩喷发穿破海面时形成：岩浆与海水相遇，由此产生的蒸汽爆炸式火山灰堆砌出高**182米、形如要塞的火山口**边缘，而非典型熔岩锥。其成果正是UNESCO官方所称的**\"苏特西型涌现式火山构造的杰出范例\"**。火山口**宽600米×深90米**，周围环绕**99块嶙峋的边缘岩石**，当地传说将其比作石冠。城山日出峰拥有**UNESCO三重认定**：作为**\"济州火山岛与熔岩管\"遗产地**的组成部分，于**2007年7月2日列入世界自然遗产**，另有**生物圈保护区（2002年）**和**世界地质公园（2010年10月）**——这一组合在韩国景点中仅汉拿山本身可与比肩。**18座二战日本帝国军遗留洞穴**（1945年神风特攻队自杀艇藏身处）被凿入面海山基之中。步道：**单程0.8公里，爬升约140米，宽阔石阶，往返约60分钟**。**海女（해녀）表演**每天在火山锥下方的礁石湾**13:30和15:00各举行一场**——济州女性潜水员（2016年UNESCO非物质文化遗产）不借助水肺器具下水作业。**2025年4月更新门票**：**成人₩5,000 / 青少年+儿童₩2,500 / 团体成人₩1,600**，7岁以下及65岁以上免费。山顶观景台同时列入**瀛洲十景（济州十大胜景）**名录，并始终是韩国首屈一指的**年度元旦日出朝圣地**——每年1月1日有逾5万名游客在黎明前攀登，市级日出节庆活动自1995年延续至今。**牛岛（우도，\"牛岛\"）**——韩国最大的次生火山岛——在山顶清晰可见，距岸4公里，可乘坐**从城山港出发的15分钟渡轮**抵达（往返₩10,500），适合行程有余裕的游客另行安排。",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
       "highlights": [
-        "**UNESCO三重认定**：世界遗产2007-07-02 + 生物圈保护区2002年 + 全球地质公园2010-10",
-        "**距今5,000年** — 萨托谢安式水火山喷发，岩浆遇海水引发蒸汽爆炸诞生",
-        "火口**直径600米、深90米**，环绕着**99块锯齿状边缘岩石**（「石冠」）",
-        "**海拔182米** — 单程0.8公里 / 爬升约140米，石阶步道来回60分钟",
-        "峰体基部有**18座帝国日本二战地下掩体** — 1945年神风特攻队自杀艇掩体",
-        "**每日13:30 + 15:00海女表演**，在海滨海湾举行 — UNESCO非物质文化遗产2016年",
-        "**门票2025年4月更新**：成人₩5,000 / 青少年₩2,500 / 7岁以下及65岁以上免费",
-        "春秋季开放时间 **05:00至19:00**（最后入场18:20）",
-        "**每月第一个星期一休馆**（偶尔休息日）"
+        "**UNESCO三重认定**：世界遗产2007-07-02 + 生物圈保护区2002 + 世界地质公园2010-10",
+        "**形成于5,000年前**——苏特西型水成火山喷发，岩浆遇海水蒸汽爆炸式诞生",
+        "火山口**宽600米×深90米**，周围环绕**99块嶙峋边缘岩石**（即\"石冠\"）",
+        "**海拔182米**——单程0.8公里 / 爬升约140米，石阶步道往返60分钟",
+        "山基处有**18座二战日本帝国军遗留洞穴**——1945年神风特攻队自杀艇藏身处",
+        "**海女表演每日13:30及15:00举行**，地点位于海边礁石湾——2016年UNESCO非物质文化遗产",
+        "**2025年4月更新门票**：成人₩5,000 / 青少年₩2,500 / 7岁以下及65岁以上**免费**",
+        "春秋季开放时间**05:00–19:00**（最后入场18:20）",
+        "**每月第一个周一休息**（定期休园日）"
       ],
       "timeUsed": [
-        "停车+购票+底部简介——约10分钟",
-        "登顶观景台（0.8公里/高差140米）——约30分钟",
-        "顶部观景+火山口边缘拍照——约20分钟",
+        "停车 + 购票 + 山脚简介——约10分钟",
+        "攀登至山顶观景台（0.8公里 / 爬升140米）——约30分钟",
+        "山顶观景 + 火山口边缘拍照——约20分钟",
         "下山——约20分钟",
-        "可选：在底部观看海女表演（15:00场次）——约10分钟"
+        "可选：在山脚观看海女表演（15:00场次）——约10分钟"
       ],
-      "whyOnRoute": "**全日的UNESCO顶峰核心亮点和东部路线的核心景点**。城山是下午第一站（12:50抵达）的三个理由：（1）**三重UNESCO份量**：城山是全济州唯一同时获得UNESCO世界自然遗产＋生物圈保护区＋全球地质公园三重指定的景点；（2）**体力管理**：将城山安排在绣球花午后之前，确保宾客以最饱满的体力完成城山登顶；（3）**光线时机**：12:50至14:30的光线以侧光角度照射凝灰岩锥面，比下午晚段的低角光线更能呈现锥体的几何感。",
+      "whyOnRoute": "**当日UNESCO地标核心站点与东线主打景点。** 城山日出峰成为12:50下午首站核心的三大理由：（1）**UNESCO三重认定的分量**：城山日出峰是全程路线上唯一同时拥有**三重认定**的景点——世界遗产（2007年）+ 世界地质公园（2010年）+ 生物圈保护区（2002年）。在绣球花节主题游览中，这是全程最重量级的非花卉核心站点，也是赋予本次游览目录中\"UNESCO+\"定位的标志性景点。（2）**光线与攀登时机**：12:50–14:05的午后时段是25分钟环形登顶的最佳窗口——游客刚刚补充体力，尚未进入午后高温期（在6月绣球花季的炎热中尤为重要），而午后早段来自西南偏南方向的光线使凝灰岩锥东向火山口壁的拍摄效果更为出色。（3）**为花卉终章铺垫节奏**：城山日出峰带来当日体力消耗最大的体验（攀登），为随后更为舒缓的**日出乐园绣球花预览**和**休爱里绣球花压轴站**营造出张弛有度的氛围——这也是全程\"地质—花卉\"叙事弧线的刻意设计。",
       "_poi_meta": {
         "poi_key": "seongsan_ilchulbong",
         "kb_version": "1.20",
@@ -389,35 +424,62 @@
           "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
           "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
         ]
-      }
+      },
+      "visitBasics": {
+        "hours": "3–4月及9–10月：05:00–19:00；5–8月：04:30–20:00；11–2月：06:00–18:00（停止售票时间为闭园前1小时）",
+        "closed": "全年开放（可能因天气原因临时关闭）",
+        "admission": "成人5,000韩元 / 青少年及儿童2,500韩元（VisitKorea数据）",
+        "walking": "中等难度——持续登阶约20–30分钟（约600级台阶）；每隔数分钟设有休息椅"
+      },
+      "convenience": {
+        "restroom": "入口处及山脚均有提供",
+        "parking": "大型免费停车场"
+      },
+      "smartNotes": {
+        "photo": "晴天可从山顶眺望西侧的汉拿山及北侧的牛岛；下山途中可欣赏海女黑沙滩海景",
+        "facilities": "咖啡厅（弗里茨咖啡距山峰1.3公里，外景视角最佳）；可从城山港乘渡轮前往牛岛（步行1.5公里/约15分钟）",
+        "tip": "全程为台阶但维护良好——穿休闲服装即可应对；适合家庭出行，设有休息站；元旦日出参观热门但黎明前人流汇聚"
+      },
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+        "https://images.unsplash.com/photo-1616798249081-30877e213b16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1593104197164-96718e943b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1584263577189-f86c4b105154?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1710006876254-48250c2dbcfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1584802530491-65fad8b1b92c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1743685889737-d699283d139c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     },
     {
       "number": 6,
       "time": "14:30",
       "duration": "70分钟",
-      "name": "日出乐园（米川窟熔岩洞穴）",
-      "category": "熔岩洞穴+主题公园——万丈窟备选（紧邻UNESCO认定区域）",
-      "description": "**日出乐园 (일출랜드)** 是位于城山的 **40 万平方米自然主题公园**,**2002 年开业**,围绕 **美川窟 (미천굴)** 熔岩洞而建——这是一条 **总长 1,700 米的熔岩洞**,其中 **365 米经人工平整后开放参观**(穿越用时约 25 分钟)。该洞穴属于济州 **与万丈窟同源的熔岩洞系统**——万丈窟为联合国教科文组织世界自然遗产熔岩洞——并 **在万丈窟因保护性维护或天气原因(台风、冰冻)关闭时,作为标准替代景点对外开放**。万丈窟保留崎岖的天然洞底,提供原汁原味的地质体验;美川窟则通过平整步道,**让长者、推婴儿车的家庭以及行动不便的客人也能进入参观**——这是一项有意为之的工程设计,使熔岩洞体验向无法穿行万丈窟的群体开放。洞内布有 **七色装饰灯光(金、银、铜、红、黑、蓝、白)** 来突出洞穴造型——纯粹派人士对此颇有微词,但对非专业游客的拍照而言相当实用。洞穴之外,园区延展至 **水边公园、复原的济州传统民俗村、野花盆景园、仙人掌温室、雕塑街、足浴咖啡馆(芳香足疗)** 等区域——也是 **济州唯一设有穆斯林祈祷室的景点**(有意为之的无障碍配套投资)。综艺取景:**SBS《Running Man (런닝맨)》第 89 集(爱丽丝梦游仙境主题,2012 年)**。门票:**成人 ₩12,000 / 青少年 ₩9,000 / 儿童 ₩7,000**。室内 / 室外比例 **室内 30%(洞穴 + 温室)/ 室外 70%(园区步道)**——便于您依据天气灵活安排行程。",
-      "image": "https://images.unsplash.com/photo-1502780402662-acc01917a3a4",
+      "name": "日出乐园——绣球花节 + 美泉洞熔岩管洞穴",
+      "category": "绣球花节花园 + 熔岩管洞穴（6月盛期）",
+      "description": "**日出乐园（일출랜드）**是位于城山的一座**占地40万平方米的自然主题公园**，开业于**2002年**，以**美泉洞（미천굴）**熔岩管为核心打造——这是一座**全长1,700米的洞穴**，其中**365米经过人工平整，作为游览通道对游客开放**（单程穿越约25分钟）。该洞穴属于济州熔岩管系统，与**万丈窟**——UNESCO世界自然遗产熔岩管——**同属一脉地质渊源**，并在**万丈窟因保育维护或天气原因（台风、结冰）关闭时作为备选替代方案运营**。万丈窟保留了凹凸不平的自然地面以呈现真实地质体验，而美泉洞平整后的步道则使洞穴**对老年游客、携婴儿车的家庭及行动不便人士开放**——这是一项有意为之的工程决策，使更广泛的受众得以体验熔岩管。洞内以**七彩装饰灯光（金、银、铜、红、黑、蓝、白）**照亮洞穴景观，在纯粹主义者看来颇具争议，但对非专业游客摄影而言实用性较强。洞穴外，公园延伸至**水边公园、复原的济州传统村落、野花盆景园、仙人掌温室、雕塑街及足浴咖啡厅（芳香足疗）**等区域，使其成为**济州唯一一处设有穆斯林祈祷室的景点**（一项刻意投入的无障碍便利设施）。影视拍摄记录：**《Running Man》（런닝맨，SBS）第89集（2012年爱丽丝梦游仙境主题）**。门票：**成人₩12,000 / 青少年₩9,000 / 儿童₩7,000**。室内外比例为**30%室内（洞穴+温室）**/**70%室外（园区）**——对于天气弹性规划具有实际参考价值。",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
       "highlights": [
-        "**总长 1,700 米** 熔岩洞;**365 米开放段**(穿越约 25 分钟)",
-        "**万丈窟世遗替代点**——同一熔岩洞系统;万丈窟闭园时启用",
-        "**地面经过人工平整**——长者、婴儿车、行动不便者皆可入内",
-        "**七色装饰灯光**——金 / 银 / 铜 / 红 / 黑 / 蓝 / 白",
-        "**40 万平方米园区**——盆景、仙人掌、雕塑、传统村、足浴咖啡馆",
-        "**济州唯一设有穆斯林祈祷室的景点**——有意为之的无障碍配套",
-        "**《Running Man》第 89 集** 取景(2012 年,爱丽丝梦游仙境主题)",
-        "门票 **成人 ₩12,000 / 青少年 ₩9,000 / 儿童 ₩7,000**",
-        "**室内 30% / 室外 70%**——便于您按天气灵活搭配"
+        "**总长1,700米**熔岩隧道；**开放区段365米**（约25分钟穿越体验）",
+        "**万丈窟UNESCO替代景点** — 同一熔岩隧道系统；万丈窟关闭时开放",
+        "**地面人工整平** — 适合老人、婴儿车及行动不便的游客",
+        "**七彩装饰灯光** — 金/银/铜/红/黑/蓝/白",
+        "**40万平方米园区** — 盆景、仙人掌、雕塑、传统民俗村、足浴咖啡厅",
+        "**济州唯一设有穆斯林祈祷室的景点** — 专为无障碍接待而设",
+        "**《奔跑吧兄弟》第89集**拍摄地（2012年，爱丽丝梦游仙境主题）",
+        "门票 **₩12,000成人 / ₩9,000青少年 / ₩7,000儿童**",
+        "**室内30% / 室外70%** — 灵活应对各类天气"
       ],
       "timeUsed": [
-        "停车+购票+入场——约5分钟",
-        "米川窟穿越（365米/约25分钟）——约30分钟",
-        "水边公园+雕塑街——约20分钟",
-        "可选：盆景/仙人掌园+足浴咖啡馆——约15分钟",
-        "集合时间——约5分钟"
+        "停车 + 购票 + 入场 — 约5分钟",
+        "米千洞穿越参观（365米 / 约25分钟）— 约30分钟",
+        "水边公园 + 雕塑街 — 约20分钟",
+        "可选：盆景/仙人掌园 + 足浴咖啡厅 — 约15分钟",
+        "缓冲 / 集合整队 — 约5分钟"
       ],
-      "whyOnRoute": "**午前的熔岩洞主轴**——明确定位为当日联合国教科文组织主题中 **'与世界遗产同源'** 的篇章。同系列的自然主轴线路将日出乐园安排为午后随天气灵活调整的站点;本条联合国教科文组织线路则将其前置,使 **'世界遗产 + 文化遗产'的叙事弧线更紧凑**:咸德(Olle 19 号路线、半世遗级步行遗产)→ 城邑(国家重要民俗文化遗产)→ **日出乐园美川窟(与万丈窟同属同一世界遗产熔岩洞系统)**→ 下午城山(三重世界遗产)→ 压轴海女博物馆(2016 年人类非物质文化遗产)。午前安排同时确保洞内温度的舒适感(洞穴常年 13–15°C,夏日凉爽宜人,冬日仅微凉),先于全日最暖的户外段进行。",
+      "whyOnRoute": "**当日首个绣球花亮点——兼具\"花卉+地质\"双重特色，赋予行程独特身份的熔岩隧道之旅。** 日出之地（Ilchul Land）安排在14:30的三大东线理由：(1) **绣球花节窗口期**：日出之地是济州**四大绣球花节举办地之一**，与Hueree、翰林公园及山茶花山并列——不同于纯植物园，这里将花卉节与**可全程穿越的熔岩隧道（米千洞）**相结合，打造当日唯一的\"花园+地质\"复合型景点。6月游客通常能在此欣赏到室外盛开的花朵（盛花期6月10–25日），随后再前往午后的Hueree享受更为轻松的赏花体验。(2) **万丈窟替代价值**：万丈窟是济州最著名的熔岩隧道，但因保育需要每年有较长时间关闭；日出之地的米千洞是**实际运营中的替代选项**，使东线行程全年均可体验熔岩隧道，无需依赖万丈窟的开放状态。(3) **向Hueree过渡的节奏把控**：日出之地是一处需步行约70分钟的花园，强度适中——将其安插在高强度的城山日出峰登山与低强度的Hueree收尾之间，让游客得以逐渐放缓脚步，自然过渡到当日以拍照为主的花卉收尾环节。",
       "_poi_meta": {
         "poi_key": "ilchulland_micheon_cave",
         "kb_version": "1.20",
@@ -430,49 +492,49 @@
           "Jeju Tourism Organization — accessibility-friendly attraction registry"
         ]
       },
-      "convenience": {
-        "restroom": "日出乐园园区入口处提供洗手间",
-        "parking": "日出乐园免费停车"
-      },
-      "smartNotes": {
-        "photo": "灯光照明的洞穴段 + 周边植物园——请向运营方确认当前日出乐园门票包含的具体拍照区域",
-        "facilities": "日出乐园园区配套(咖啡馆、礼品店、洗手间)",
-        "tip": "当公开开放的万丈窟因安全检查闭园时,这里是标准替代点。请确认您的团体票包含日出乐园洞穴段的入园权限。"
-      },
-      "visitBasics": {
-        "hours": "依日出乐园园区开放时间——请向运营方确认",
-        "closed": "依日出乐园园区时间表——请向运营方确认",
-        "admission": "包含在日出乐园门票内——票价请向运营方确认",
-        "walking": "中等——下行台阶进入洞穴,常年约 12°C;洞穴段内地面为不平整的火山岩"
-      }
+      "visitBasics": {},
+      "convenience": {},
+      "smartNotes": {},
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
+        "https://images.unsplash.com/photo-1749382872044-b9da36fe9117?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1562680829-7927493f7a50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1745504779500-0e95c1b4d58c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1674606059344-68bdc8cd06d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1595015975293-6f5c68bcdbaa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1609766418260-38c07e7ae69c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1646187582419-a8c67b3170ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1745504540086-06fa137c27db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     },
     {
       "number": 7,
       "time": "15:50",
       "duration": "75分钟",
-      "name": "惠裕园自然生活公园——绣球花亮点",
-      "category": "绣球花核心亮点+济州黑猪表演标志项目",
-      "description": "**休爱里自然生活公园(휴애리 자연생활공원)** 是位于汉拿山南麓的全年花园,以 **'岛中之岛'** 为品牌——将济州的季节花卉日历压缩进一座 **以汉拿山为背景** 的园区。园区在年内轮换 **五大命名庆典**:**梅花庆典**(2 月中旬至 3 月底)、**春季绣球花庆典**(4 月初至 6 月中旬,室内温室 + 室外早花)、**夏季绣球花庆典**(6 月盛花至 7 月初,室外全花)、**欧洲绣球花庆典**(7 月中旬至 8 月,不同品种)、**粉黛乱子草庆典**(9 月中旬至 10 月)与 **山茶花庆典**(11 月中旬至次年 1 月)——意味着 **一年中约有 320 天可遇上活跃的命名庆典**。**对于东线绣球花庆典之旅,6 月窗口正捕捉室外盛花期**,**绣球花温室** 则在午后雷雨来袭时提供有保障的室内避难。园区的招牌演出是 **济州黑猪秀**,每日四场 **11:00 / 13:00 / 15:00 / 17:00**——17:00 场次正契合本团 15:50 抵达的节奏。**济州黑猪是韩国指定的天然纪念物**,而黑猪秀是与绣球花步道并列的 **最适合儿童与长者的园区锚点**。其他打卡点包含 **济州文化村**(传统游戏 + 茅草石墙韩屋)、**昆虫展厅**、**野花园**,以及 **休爱里洞窟**(小型霓虹灯光洞穴)。园区 **约 85% 为户外**,因此 **绣球花温室 + 昆虫厅 + 休爱里 Pang 画廊** 是当日下午晚段的天气预案选项。",
-      "image": "https://images.unsplash.com/photo-1565538810643-b5bdb714032a",
+      "name": "Hueree自然公园 — 绣球花主题亮点",
+      "category": "绣球花核心景点 + 济州黑猪特色表演",
+      "description": "**Hueree自然生活公园（휴애리 자연생활공원）**是一座位于汉拿山南麓的全年赏花公园，以**\"岛中之岛\"**为品牌定位，将济州四季花卉精华浓缩于一座**以汉拿山为背景**的花园之中。公园全年轮番举办**五大主题花节**——**梅花节**（2月中旬至3月下旬）、**春季绣球花节**（4月初至6月中旬，室内温室+室外早花品种）、**夏季绣球花节**（6月盛花期至7月初，室外全面盛开）、**欧洲绣球花节**（7月中旬至8月，特色品种）、**粉黛乱子草节**（9月中旬至10月），以及**茶花节**（11月中旬至次年1月）——这意味着**全年约320天，游客到访时都能赶上某个正在举办的花节**。**对于东线绣球花节行程而言，6月窗口期可欣赏到室外盛花**，而**绣球花温室**则在午后突降雷阵雨时提供有保障的室内避雨场所。公园的招牌表演是**济州黑猪秀**，每日四场，时间为**11:00 / 13:00 / 15:00 / 17:00**——对于本行程15:50抵达的情况，17:00场次是最佳目标。**济州黑猪被列为韩国国家天然纪念物**，该表演是公园内与绣球花漫步并列的**最受儿童及老年游客欢迎的核心项目**。其他适合拍照打卡的景点还包括**济州民俗村**（传统游戏+茅草石墙韩屋）、**昆虫展览馆**、**野花园**，以及**Hueree洞窟**（一处以霓虹灯装饰的小型拍照洞窟）。公园**约85%为室外区域**，因此**绣球花温室+昆虫馆+Hueree Gallery Pang**可作为当日午后应对恶劣天气的备选方案。",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
       "highlights": [
-        "**'岛中之岛'**——以汉拿山为背景的花卉公园,全年庆典轮转",
-        "**5 大命名庆典** 全年轮换——访客每年约有 320 天可遇上活跃庆典",
-        "**春季绣球花庆典**(4 月初–6 月中)+ **夏季绣球花庆典**(6 月盛花–7 月初)+ **欧洲绣球花庆典**(7 月中–8 月)",
-        "**绣球花温室** 作为午后雷雨时的有保障室内避难所",
-        "**济州黑猪秀**——每日 4 场(11:00/13:00/15:00/17:00);请提前 30 分钟入场",
-        "济州黑猪为 **韩国指定天然纪念物**",
-        "**济州文化村**(传统游戏 + 茅草韩屋)+ 昆虫展厅 + 野花园",
-        "**约 85% 室外**——温室 + 昆虫厅 + 画廊作为天气预案",
-        "由韩国旅游公社选为 **韩国最佳旅游景点之一**"
+        "**\"岛中之岛\"** — 以汉拿山为背景的赏花公园，全年轮番花节",
+        "**5大主题花节**全年轮番举办 — 游客全年约320天均可赶上正在举办的花节",
+        "**春季绣球花节**（4月初–6月中旬）+ **夏季绣球花节**（6月盛花期–7月初）+ **欧洲绣球花节**（7月中旬–8月）",
+        "**绣球花温室** — 午后雷阵雨来袭时有保障的室内避雨场所",
+        "**济州黑猪秀** — 每日4场（11:00/13:00/15:00/17:00）；建议提前30分钟入场",
+        "济州黑猪被列为**韩国国家天然纪念物**",
+        "**济州民俗村**（传统游戏+茅草韩屋）+ 昆虫展览馆 + 野花园",
+        "**约85%为室外** — 温室+昆虫馆+展览馆可作为天气不佳时的备选",
+        "荣获韩国观光公社（KTO）评选的**韩国优秀旅游景点**之一"
       ],
       "timeUsed": [
-        "公园入口+购票+欢迎——10分钟",
-        "绣球花温室+室外花园散步——30分钟",
-        "济州黑猪喂食表演（可选）——15分钟",
-        "咖啡馆休息——15分钟",
-        "卫生间 + 出发 — 5分钟"
+        "入园 + 购票 + 欢迎介绍 — 10分钟",
+        "绣球花温室 + 室外花园漫步 — 30分钟",
+        "济州黑猪表演（17:00场次）— 20分钟",
+        "文化村 + 拍照区 — 10分钟",
+        "洗手间 + 出发 — 5分钟"
       ],
-      "whyOnRoute": "**当日的绣球花核心站点,也是为整条线路命名的花卉收尾。** 休爱里于 15:50 作为收官实质性站点,基于四点考量。(1)**晚间光线 + 绣球花颜色**:休爱里室外绣球花田面朝西南,以汉拿山为可见地平线背景;15:50–17:05 窗口正好捕捉 **温暖的傍晚金光**,让绣球花的粉与蓝更加饱满(正午强光会让花色失真)。(2)**黑猪秀时段**:17:00 场次恰好契合参观自然结束的时间——客人可先走完花园(15:50–16:30)再以演出收尾,而非在花园游览中段插入演出。(3)**运营缓冲**:休爱里 **约 85% 室外** 的属性,使其成为当日天气暴露最大的站点——将其置于末段(而非开篇)让向导得以观察午后天气,在需要时启用室内温室 + 昆虫厅 + 画廊作为预案,而无需重排其他行程。(4)**线路身份完整**:这是完成东线三支柱身份的站点——UNESCO 三件套(城山)+ 朝鲜遗产(城邑)+ 绣球花庆典核心(休爱里)。在同名庆典的核心站点收尾,正是线路应有的叙事回报。",
+      "whyOnRoute": "**全日绣球花的压轴亮点，也是赋予整条线路名称的花卉终章。** 以下四点说明为何惠利苑定于15:50作为最后一个实质性景点。（1）**午后光线 + 绣球花色彩**：惠利苑的户外绣球花田朝向西南偏西，以汉拿山为远景地平线；15:50–17:05的时间窗口恰好捕捉到**温暖的午后金色光线**，使绣球花的粉色与蓝色更加鲜亮动人（正午的平光会令色彩显得暗淡）。（2）**黑猪表演时间安排**：17:00的表演场次与游览自然结束时间完美契合——游客可先漫步花园（15:50–16:30），再以表演作为收尾，而无需中断花园游览去赶中午场的表演。（3）**运营缓冲空间**：惠利苑约**85%为户外**区域，是全天最受天气影响的景点——将其安排在最后（而非开场），便于导游观察下午天气变化，如有需要可将室内温室、昆虫馆及展廊作为备选，而无需重新调整全天行程。（4）**线路主题的完整呈现**：此站完成了东线三大主题支柱——联合国教科文组织三重遗产（城山）+ 朝鲜时代历史遗存（城邑）+ 绣球花节核心景点（惠利苑）。以同名花节的核心景点作为终章，是这条线路当之无愧的叙事收官之笔。",
       "_poi_meta": {
         "poi_key": "hueree_natural_park",
         "kb_version": "1.21",
@@ -481,58 +543,62 @@
           "https://m.visitjeju.net/en/detail/view?contentsid=CNTS_000000000022860 — Hueree Hydrangea Festival, Visit Jeju official",
           "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=80492 — Hueree Maehwa Festival, Visit Korea (KTO)",
           "https://world.nol.com/en/content/articles/cc1d5d91-7a2f-4f2e-8615-d3898f88242a — NOL World Iconic Seasonal Festivals guide",
-          "Hueree Natural Park ticket page",
+          "https://www.trazy.com/experience/detail/jeju-island-hueree-natural-park-ticket — Trazy Hueree Natural Park ticket page",
           "https://jeju-asean.org/notice/lets-follow-the-flower-path-to-find-out-what-flower-festivals-are-happening-in-jeju-this-spring/ — Jeju Business Agency Singapore official notice"
         ]
       },
+      "visitBasics": {
+        "hours": "09:00–18:00（最晚入场17:00）；随季节有所调整",
+        "closed": "全年开放",
+        "admission": "成人约13,000韩元 / 儿童约10,000韩元（随季节有所浮动）",
+        "walking": "中等强度 — 园区面积较大，含坡道路段；部分区域可推婴儿车通行"
+      },
       "convenience": {
-        "restroom": "园区内分布多间洗手间",
-        "parking": "园区内免费停车"
+        "restroom": "园区内多处设有洗手间",
+        "parking": "提供免费停车"
       },
       "smartNotes": {
-        "photo": "6 月底/7 月的绣球花山坡是济州拍摄最多的场景之一",
-        "facilities": "咖啡馆、餐厅、礼品店、动物饲料自动售卖机",
-        "tip": "绣球花花期较短(5 月底至 7 月中旬,盛花期为 6 月中旬)——请精确把握访问时机;骑小马体验需另行付费"
+        "photo": "六月下旬至七月的绣球花山坡是济州岛拍照最多的景色之一",
+        "facilities": "咖啡厅、餐厅、礼品店、动物投食自动贩卖机",
+        "tip": "绣球花花期较短（五月下旬至七月中旬，盛花期为六月中旬）——请合理安排游览时间；骑小马体验需另行收费"
       },
-      "visitBasics": {
-        "hours": "09:00–18:00(末次入场 17:00);随季节小幅调整",
-        "closed": "全年开放",
-        "admission": "成人约 13,000 韩元 / 儿童约 10,000 韩元(随季节有所变动)",
-        "walking": "中等难度——园区面积大,有山坡步道;部分区段婴儿车可行"
-      }
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
+        "https://images.unsplash.com/photo-1756691151629-c6f594110166?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIdWVyZWUlMjBOYXR1cmFsJTIwUGFyayUyMEh5ZHJhbmdlYSUyMGhpZ2hsaWdodCUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     },
     {
       "number": 8,
       "time": "17:50",
       "duration": "30分钟",
       "name": "下车（济州市）",
-      "category": "下车——逆序4个站点",
-      "description": "**送返路线沿 1132 号公路向西反向重走清晨接送弧线**,在济州市内设 4 处下车点:**东门传统市场 (동문시장)** 作为塔洞 / 沙罗峰海滨附近的首站(便于希望延续东门夜市美食的客人);**济州市厅 (제주시청)** 服务于莲洞 / 老衡洞 / 老城区酒店群;**济州国际机场 (제주공항)** 服务于当日离岛或机场周边酒店的客人;**下贵洞 (하귀동)** 为最西端下车点。**标准抵达时间窗口:东门约 17:50,市厅约 18:05,机场约 18:15,下贵约 18:25。** 当日傍晚搭乘晚班国际航班的客人,建议选择 **机场下车点**,并按当日 +30 分钟天气缓冲的浮动空间,**预留至少 2.5 小时** 国际离港办理时间。导游会在送返途中收集反馈卡,并在每位客人下车前与其逐一确认下车点。",
-      "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+      "category": "下车 — 沿早晨接客路线逆序4个下车点",
+      "description": "**下车路线沿1132号公路向西，逆序重现早晨接客弧线**，在济州市设四个下车点：**东门传统市场（동문시장）**为首个下车点，邻近塔洞/纱罗峰海滨（便于希望继续体验东门夜间街头美食的游客），其次是**济州市政厅（제주시청）**，覆盖莲洞/老衡/旧城区酒店群，再次是**济州国际机场（제주공항）**，适合当日有航班或住机场附近酒店的游客，最后是**下贵洞（하귀동）**，为最西端下车点。**标准到达时间：东门约17:50，市政厅约18:05，机场约18:15，下贵约18:25。** 乘坐当日晚间航班的游客建议选择**机场下车点**，并预留至少**2.5小时**缓冲时间办理国际航班值机，以应对全天可能产生的约30分钟天气弹性偏差。导游将在途中收集反馈卡，并在每位游客下车前逐一确认其下车地点。",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
       "highlights": [
-        "**4 处下车点**——东门、市厅、机场、下贵(接送顺序的反向)",
-        "东门优先(约 17:50)便于继续探索夜市美食",
-        "**机场下车点** 服务当日离岛——建议预留 2.5 小时国际离港缓冲",
-        "西行车程中收集反馈卡",
-        "每位客人的下车点逐一确认"
+        "**4个下车点** — 东门、市政厅、机场、下贵（与接客顺序相反）",
+        "东门最先下车（约17:50），适合延伸体验夜间街头美食的游客",
+        "**机场下车点**适合当日出发的游客 — 建议国际航班提前2.5小时抵达",
+        "西行途中收集反馈卡",
+        "逐一与每位游客确认各自的下车地点"
       ],
       "timeUsed": [
-        "惠裕园→济州市向西转移——约50分钟",
-        "东门下车约17:50——5分钟",
-        "市厅下车约18:05——5分钟",
-        "机场下车约18:20——5分钟",
-        "涯邑下车 ~18:25 — 5分钟"
+        "惠利苑 → 济州市西行途中 — 约50分钟",
+        "东门下车约17:50 — 5分钟",
+        "市政厅下车约18:05 — 5分钟",
+        "机场下车约18:15 — 5分钟",
+        "下贵下车约18:25 — 5分钟"
       ],
-      "whyOnRoute": "**东线环线的运营收尾。** 反向接送的顺序意味着大巴自东侧进入市区时自然先抵东门,再向西依次经过市厅 + 机场 + 下贵——全程不走回头路。送返时段也是导游在车上收集反馈卡的最佳时机,此时全员仍在车内,当日体验记忆犹新。",
+      "whyOnRoute": "**东线环线的运营收尾。** 与接客顺序相反的下车安排，使大巴从东侧进入市区后自然先经过东门，再向西依次途经市政厅、机场与下贵——全程无需折返。下车途中也是导游收集游客反馈卡的时间，此时大家仍在车上，当日记忆犹新。",
       "_poi_meta": {
         "poi_key": "OPS_return",
         "kb_version": "1.20",
         "verified_date": "2026-04-29",
         "sources": []
       },
+      "visitBasics": {},
       "convenience": {},
-      "smartNotes": {},
-      "visitBasics": {}
+      "smartNotes": {}
     }
   ],
   "routeFlowStops": [
@@ -547,27 +613,27 @@
       "theme": "海滩"
     },
     {
-      "name": "城邑民俗村（UNESCO）",
+      "name": "城邑民俗村（联合国教科文组织）",
       "type": "primary",
-      "theme": "传统村落"
+      "theme": "文化遗产村落"
     },
     {
       "name": "午餐",
       "type": "meal",
-      "theme": "餐饮"
+      "theme": "餐食"
     },
     {
-      "name": "城山日出峰（UNESCO）",
+      "name": "城山日出峰（联合国教科文组织）",
       "type": "primary",
-      "theme": "UNESCO火山"
+      "theme": "联合国教科文组织火山"
     },
     {
-      "name": "日出乐园+米川窟",
+      "name": "日出乐园 + 米天溶岩洞",
       "type": "primary",
-      "theme": "洞穴"
+      "theme": "溶洞"
     },
     {
-      "name": "惠裕园自然公园（绣球花亮点）",
+      "name": "休爱里自然公园（绣球花特色）",
       "type": "primary",
       "theme": "花园"
     },
@@ -579,71 +645,71 @@
   ],
   "routePhases": [
     {
-      "phase": "出发海岸",
+      "phase": "去程海岸",
       "duration": "约1.5小时",
-      "description": "济州市→经咸德海滩摄影站驾车前往东海岸。"
+      "description": "济州市→东海岸，途经咸德海滩拍照留念。"
     },
     {
-      "phase": "遗产前半段",
+      "phase": "文化遗产半程",
       "duration": "约2小时",
-      "description": "城邑民俗村+东济州村庄区域午餐。"
+      "description": "城邑民俗村 + 在济州东部村庄地区享用午餐。"
     },
     {
-      "phase": "UNESCO高峰",
+      "phase": "联合国教科文组织峰顶",
       "duration": "约1.5小时",
-      "description": "城山日出峰登顶或沿海岸散步。"
+      "description": "登上城山日出峰或沿海岸漫步。"
     },
     {
       "phase": "绣球花压轴",
       "duration": "约2.5小时",
-      "description": "日出乐园熔岩洞穴+节庆活动，随后前往作为绣球花主打景点的惠裕园自然公园。"
+      "description": "游览日出乐园熔岩洞及节庆活动，随后前往休爱里自然公园，尽赏绣球花美景。"
     },
     {
       "phase": "返回",
       "duration": "约1小时",
-      "description": "惠裕园→济州市。"
+      "description": "休爱里 → 济州市。"
     }
   ],
   "routeShapeIntro": {
-    "title": "行程路线一览",
-    "subtitle": "以岛内最具代表性夏季活动为核心的季节限定东济州环线。惠裕园和日出乐园的绣球花节约持续四周的盛花期（5月末至7月中旬，高峰期6月中旬），与城山日出峰组合，一日内涵盖UNESCO与花卉亮点。"
+    "title": "当日行程概览",
+    "subtitle": "这是一条以济州岛标志性夏季活动为核心的季节性东济州环线路线。休爱里和日出乐园的绣球花节盛开时间约为四周（5月下旬至7月中旬，6月中旬为最佳），时间窗口相当短暂，大多数国际游客若未提前规划行程往往会与之擦肩而过。该路线将绣球花节融入东海岸标准UNESCO巡游线路，让恰好在花期内来到济州的游客，能在同一天9小时内同时体验世界遗产与绣球花海之美。"
   },
   "whyTourWorks": {
     "bestFor": [
-      "初次游览该地区的旅客",
+      "首次游览该地区的游客",
       "情侣",
       "成人家庭",
-      "能够应付全日活跃行程的旅客",
-      "希望参观UNESCO世界遗产景点的旅客"
+      "适合全天行程的活跃型旅行者",
+      "希望参观UNESCO世界遗产景点的旅行者"
     ],
     "lessIdealFor": [
-      "步行需求最少的旅客",
-      "行动不便的旅客",
-      "携带婴儿车的亲子团",
-      "当天还要赶航班的旅客"
+      "希望减少步行的旅行者",
+      "行动不便的旅行者",
+      "携带婴儿车的团体",
+      "需要赶当天航班、时间紧张的旅行者"
     ],
     "routeLogicSections": [
       {
-        "title": "为何如此安排路线",
+        "title": "为何如此规划这条路线",
         "icon": "route",
         "iconBg": "bg-sky-50/80",
         "iconColor": "text-sky-600",
         "items": [
           {
-            "label": "一天涵盖两个绣球花节",
-            "detail": "济州有四大绣球花节（休爱里、翰林公园、山茶花丘、日出乐园）。东部路线包含其中两个——日出乐园和休爱里——涵盖最广泛的绣球花品种和拍摄场景。两者组合若靠公共巴士安排则非常繁琐。"
+            "label": "一天游览两大花节",
+            "detail": "济州共有四大绣球花节（休爱里、翰林公园、山茶花山丘、日出乐园）。东线路线涵盖其中两处——日出乐园与休爱里——两者合计涵盖最广泛的绣球花品种与拍摄场景。乘坐公共巴士同时游览两处颇为不便。"
           },
           {
-            "label": "遗产景点保留在路线中",
-            "detail": "许多季节性花卉行程以增加更多花卉景点为由跳过遗产景点。本路线保留城山日出峰和城邑民俗村——即使您不特别在意绣球花，全日仍值得作为标准东济州UNESCO环线。"
+            "label": "保留UNESCO遗产景点",
+            "detail": "许多季节性赏花游会跳过遗产景点，转而安排更多赏花地点。本路线将城山日出峰和城邑民俗村保留在行程中——这意味着即使您对绣球花兴趣不大，这一天作为标准东济州UNESCO环线游依然物有所值。"
           },
           {
-            "label": "花卉表现不佳时有内建备案",
-            "detail": "绣球花盛开时机年度波动1至2周。若您抵达时机稍早或稍晚，遗产景点仍能撑起全日行程。导游将根据即时花况情报，灵活替换最强的可用花卉场景。"
+            "label": "花期表现欠佳时的内置备选方案",
+            "detail": "绣球花盛开时间每年会有1至2周的偏差。如果您到来时稍早或稍晚于花期，遗产景点仍能撑起全天行程。导游将根据实时花情信息，为您安排当下最佳的赏花地点。"
           },
           {
-            "label": "酒店接送比自驾更适合一日游旅客",
-            "detail": "许多济州旅客是从首尔中转停留1至2天的旅客。自驾需要国际驾照及30分钟以上的机场取车手续。附酒店接送的9小时讲解行程让您抵达、休息、被接走，轻松游览东济州精华——省去在火山山脊公路上的驾驶压力。"
+            "label": "对于一日游游客，酒店接送优于自驾",
+            "detail": "许多济州游客是从首尔过来的1至2天中转旅行者。租车需要持有国际驾照，并需在机场花费30分钟以上办理相关手续。选择含酒店接送的9小时导游行程，您只需抵达、入住、等待接送，即可轻松游览东济州精华——无需在火山山脊公路上承受驾车压力。"
           }
         ]
       }
@@ -652,218 +718,209 @@
   "practicalAccordionItems": [
     {
       "id": "inclusions",
-      "title": "费用包含项目",
-      "preview": "含车辆及导游；入场费另计（约₩30,000–₩40,000）",
+      "title": "费用包含",
+      "preview": "空调车辆、持证英语／中文双语导游司机、燃油费、过路费、停车费。",
       "content": [
-        "空调车辆、持牌英语∕中文司机兼导游、燃料、过路费、停车费。",
-        "不含：景点入场费（城山日出峰₩5,000、休爱里₩13,000、日出乐园₩12,000、城邑民俗村免费）、餐费、小费。",
-        "每人全日典型入场费合计：₩30,000至₩40,000。"
+        "空调车辆、持证英语／中文双语导游司机、燃油费、过路费、停车费。",
+        "不含：景点门票（城山日出峰₩5,000、休爱里₩13,000、日出乐园₩12,000、城邑免费）、餐费、小费。",
+        "每人门票费用合计约₩30,000至₩40,000。"
       ]
     },
     {
       "id": "pickup",
-      "title": "接送与下车地点",
-      "preview": "济州市区酒店免费接送；市外加收₩70,000",
+      "title": "接送服务",
+      "preview": "济州市内（济州机场周边及市中心）提供免费酒店接送。",
       "content": [
-        "济州市区酒店免费接送（济州机场附近及市中心）。",
-        "济州市以外接送（西归浦、爱月、城山）加收₩70,000，现场支付给司机。",
-        "预订时确认接送地点。"
+        "济州市内（济州机场周边及市中心）提供免费酒店接送。",
+        "济州市以外地区接送（西归浦、涯月、城山）需额外支付₩70,000，费用直接支付给司机。",
+        "预订时请确认接送地点。"
       ]
     },
     {
       "id": "hydrangea",
-      "title": "绣球花花期说明",
-      "preview": "绣球花盛开期通常为5月下旬至7月中旬（高峰6月中）",
+      "title": "绣球花盛开时间",
+      "preview": "盛花期通常为5月下旬至7月中旬（6月中旬为高峰期），每年略有差异。",
       "content": [
-        "盛开期通常为5月下旬至7月中旬（高峰6月中），年度略有波动。",
-        "出发前1至2周向旅游服务团队确认最新花况。",
-        "时段以外的季节路线仍可出发，但绣球花景点不在花期——建议改选秋季粉黛乱子草或冬季山茶花行程。"
+        "盛花期通常为5月下旬至7月中旬（6月中旬为高峰期），每年略有差异。",
+        "请在出行日期前1至2周向运营商确认最新花期状况。",
+        "在此时间窗口之外，路线照常运行，但绣球花景点处于淡季——建议改选\"东部雪地茶花冬季游\"或\"东部粉黛乱子草秋季游\"。"
       ]
     },
     {
       "id": "walking",
-      "title": "步行强度与地形",
-      "preview": "中等难度",
+      "title": "步行与地形",
+      "preview": "中等难度。",
       "content": [
         "中等难度。",
-        "城山日出峰火山口边缘登顶为30分钟石阶（有护栏，但费力；可选）。",
-        "选择略过登顶的旅客可走底部免费海岸步道。",
-        "休爱里、日出乐园及民俗村以平地为主。",
-        "弥天窟有不平整地面及石阶。"
+        "城山日出峰的山顶攀爬约需30分钟，为带扶手的石阶——虽然费力，但标识清晰。",
+        "选择不攀登的游客可在免费的海岸步道上漫步。",
+        "Hueree、日出乐园及民俗村地势基本平坦。",
+        "迷川洞窟内地面不平且设有台阶。"
       ]
     },
     {
       "id": "cancellation",
       "title": "取消政策",
-      "preview": "接送前24小时可免费取消",
+      "preview": "接送前24小时内可免费取消。",
       "content": [
-        "接送前24小时可免费取消。",
-        "当天取消及无故缺席不予退款。",
-        "济州台风相关取消（夏末常见）：全额退款或改期。"
+        "接送前24小时内可免费取消。",
+        "当日取消及未出行者不予退款。",
+        "因台风导致的济州岛行程取消（夏末较为频繁），可申请全额退款或改期。"
       ]
     }
   ],
   "practicalWeatherStatic": {
     "today": {
       "temp": "—",
-      "label": "即时天气连动"
+      "label": "请参阅季节说明"
     },
     "tomorrow": {
       "temp": "—",
-      "label": "每日更新"
+      "label": "请参阅季节说明"
     },
-    "_seasonalSummary": "济州绣球花季（6至7月）温热潮湿，短暂阵雨频繁，气温通常在22至28°C。请备防晒用品及轻薄雨具。",
+    "_seasonalSummary": "Jeju in hydrangea season (June–July) is warm, humid, and prone to short rain showers. Temperatures of 22–28°C are typical, with high humidity. Bring sun protection and a light rain layer.",
     "_seasonalTemperatures": [
       {
-        "season": "绣球花季（5月下旬至7月中旬，6月中旬为高峰）",
+        "season": "Hydrangea season (late May to mid-July, peak mid-June)",
         "range": "22–28°C",
-        "notes": "潮湿；午后阵雨可能。绣球花在阴天或雨后早晨拍摄效果最佳。"
+        "notes": "Humid; afternoon showers possible. Hydrangeas actually photograph best on overcast or post-rain mornings."
       },
       {
-        "season": "夏末（8月）",
+        "season": "Late summer (Aug)",
         "range": "26–32°C",
-        "notes": "最热时段；绣球花过了高峰；台风风险增加。"
+        "notes": "Hottest period; hydrangea past peak; typhoon risk increasing."
       },
       {
-        "season": "非旺季（其余月份）",
-        "range": "视季节而定",
-        "notes": "行程全年可出发，但绣球花景点不在花期——建议选择应季替代行程。"
+        "season": "Off-season (rest of year)",
+        "range": "varies",
+        "notes": "Tour available year-round, but hydrangea stops are not in bloom — consider seasonal alternates."
       }
     ]
   },
   "seasonalVariations": [
     {
       "season": "6月下旬至7月初",
-      "description": "两个日出乐园和休爱里的绣球花盛开高峰。最佳拍摄条件。行程在此时段最快售罄。"
+      "description": "日出乐园与Hueree绣球花同步盛放，摄影条件最佳。此时段内行程预订最为紧俏。"
     },
     {
-      "season": "7月中下旬",
-      "description": "绣球花仍茂盛但开始凋谢。人潮稍少。"
+      "season": "7月中旬至下旬",
+      "description": "绣球花仍然茂盛，但已开始凋谢。游客相对较少。"
     },
     {
-      "season": "花季外停办",
-      "description": "遗产核心亮点（城山＋城邑）仍具吸引力。建议改选应季替代行程：粉黛乱子草（秋季）、山茶花（冬季）、油菜花（春季）。"
+      "season": "花期之外",
+      "description": "文化主轴景点（城山＋城邑）仍具吸引力。建议选择当季适合的替代行程：粉黛乱子草（秋季）、茶花（冬季）、油菜花（春季）。"
     }
   ],
   "bookingTrustItems": [
     {
       "icon": "check-circle",
-      "title": "当地持照合法业者",
-      "description": "持牌韩国旅游旅游服务团队，备有完整保险",
+      "title": "持证本地运营商",
+      "description": "持有完整保险的韩国授权旅游运营商",
       "iconBg": "bg-emerald-50/80",
-      "iconColor": "text-emerald-600",
-      "body": "持牌韩国旅游旅游服务团队，备有完整保险"
+      "iconColor": "text-emerald-600"
     },
     {
       "icon": "route",
       "title": "路线专家",
-      "description": "精心设计的行程，而非千篇一律的路线",
+      "description": "精心定制的行程，而非千篇一律的环线游",
       "iconBg": "bg-sky-50/80",
-      "iconColor": "text-sky-600",
-      "body": "精心设计的行程，而非千篇一律的路线"
+      "iconColor": "text-sky-600"
     },
     {
       "icon": "users",
-      "title": "精心控制团体人数",
-      "description": "精准控制人数的小型巴士格式",
+      "title": "精选团队规模",
+      "description": "适合路线的最优人数",
       "iconBg": "bg-amber-50/80",
-      "iconColor": "text-amber-600",
-      "body": "精准控制人数的小型巴士格式"
+      "iconColor": "text-amber-600"
     }
   ],
   "bookingSupportSteps": [
     {
-      "timing": "即时通知",
+      "timing": "立即",
       "title": "即时确认",
-      "detail": "您将收到含行程摘要的预订确认通知。",
-      "description": "您将收到含行程摘要的预订确认通知。"
+      "detail": "含行程摘要的预订确认通知"
     },
     {
       "timing": "出发前12小时",
-      "title": "出发前12小时提醒",
-      "detail": "出发前1至2周提供最新绣球花花况更新。",
-      "description": "出发前1至2周提供最新绣球花花况更新。"
+      "title": "12小时提醒",
+      "detail": "天气更新及路线调整通知"
     },
     {
-      "timing": "前一晚",
-      "title": "最终接送信息",
-      "detail": "确认确切接送时间及司机∕导游联络方式。",
-      "description": "确认确切接送时间及司机∕导游联络方式。"
+      "timing": "前一天晚上",
+      "title": "最终接送详情",
+      "detail": "准确的接客时间及司机联系方式"
     },
     {
-      "timing": "行程当天早晨",
+      "timing": "出游当天早晨",
       "title": "当日路线说明",
-      "detail": "出发当天早上根据最新现场状况提供简报。",
-      "description": "出发当天早上根据最新现场状况提供简报。"
+      "detail": "根据实时路况发送的早间简报"
     },
     {
-      "timing": "行程途中",
-      "title": "景点逐一说明",
-      "detail": "每个景点提供即时现场讲解。",
-      "description": "每个景点提供即时现场讲解。"
+      "timing": "游览途中",
+      "title": "逐站实用贴士",
+      "detail": "每个地点的实时导览"
     },
     {
-      "timing": "行程结束后",
-      "title": "行程后支援",
-      "detail": "行程结束后提供后续建议及额外信息。",
-      "description": "行程结束后提供后续建议及额外信息。"
+      "timing": "游览结束后",
+      "title": "游后支持服务",
+      "detail": "后续跟进与推荐建议"
     }
   ],
   "staticQuestions": [
     {
       "id": "q1",
-      "question": "济州的绣球花何时盛开？",
-      "answer": "通常5月下旬至7月中旬（高峰约6月最后一周）。盛开时机因春季降雨量和温度每年波动约±1周。出发前1至2周向旅游服务团队确认最新状态。"
+      "question": "济州岛的绣球花具体何时盛开？",
+      "answer": "通常为5月下旬至7月中旬（高峰期在6月中旬），最佳观赏期约为6月最后一周。每年花期因春季降雨量和气温不同，会有±1周的偏差。建议在出游日期前1至2周查看最新动态。"
     },
     {
       "id": "q2",
-      "question": "入场费包含吗？",
-      "answer": "不含——每人全日预算约₩30,000至₩40,000。入场费：城山日出峰₩5,000、休爱里₩13,000、日出乐园₩12,000、城邑民俗村免费。"
+      "question": "门票费用包含在内吗？",
+      "answer": "不包含——建议每人预留约₩30,000至₩40,000的当日门票费用。各景点门票：城山日出峰₩5,000，Hueree自然文化公园₩13,000，日出乐园₩12,000，城邑民俗村免费。"
     },
     {
       "id": "q3",
-      "question": "为什么万丈窟关闭了？",
-      "answer": "万丈窟熔岩管因安全修缮暂时关闭（状态视预订日期而定）。标准备选安排为日出乐园的弥天窟，提供类似的熔岩管体验，已包含在本路线中。"
+      "question": "万丈窟为何关闭？",
+      "answer": "万丈窟熔岩隧道目前因安全维修暂时关闭（状态随时变化，请在预订时确认）。常规替代景点为日出乐园内的米川洞窟，体验与熔岩隧道相似，已包含在本路线内。 > **注：** 第3项（`bg-sky-50/80`）和第6项（`bg-amber-50/80`）为 Tailwind CSS 样式类名，属于代码标识符，保持原文不作翻译。"
     },
     {
       "id": "q4",
-      "question": "这与西南部绣球花行程有何不同？",
-      "answer": "本路线涵盖休爱里＋日出乐园绣球花，加上东海岸UNESCO景点（城山日出峰、城邑民俗村）。西南部行程涵盖翰林公园＋山茶花丘绣球花，加上南海岸景点（天帝渊瀑布、柱状节理海崖）。选择东部路线体验UNESCO高峰；选择西部路线体验更密集的花卉园林。"
+      "question": "这条路线与西部／南部绣球花游览有何不同？",
+      "answer": "本路线涵盖休里绣球花园＋日出之地绣球花，以及东海岸UNESCO世界遗产景点（城山、城邑）。西部／南部路线（我们的西部与南部绣球花路线）涵盖翰林公园＋山茶花之丘绣球花，以及南海岸景点（天帝渊瀑布、柱状节理海岸）。想览UNESCO峰景请选东线，想欣赏更密集花园景观请选西线。"
     },
     {
       "id": "q5",
-      "question": "可以以私人行程方式参加吗？",
-      "answer": "同一旅游服务团队提供私人版本的绣球花行程，可在济州任何地点接送，时间可定制化。如果您是4人以上的团体，或需要济州市以外接送且不想支付₩70,000附加费，请询问私人版本。"
+      "question": "可以选择私人包团游吗？",
+      "answer": "同一运营商提供绣球花私人包团游，可在济州岛任意地点接送，行程时间灵活可调。详见独立产品页面；如您一行4人及以上，或希望在济州市外接送且不想支付额外₩70,000附加费，请咨询私人包团选项。"
     },
     {
       "id": "first-time",
-      "question": "对于初次游览东济州的旅客，这是好选择吗？",
-      "answer": "是的——在一天之内涵盖了该地区最具代表性的景点，行程均衡丰富。"
+      "question": "这条路线适合初次游览济州东部的游客吗？",
+      "answer": "适合——一天之内即可游览该区域最具特色的景点，行程安排均衡合理。"
     },
     {
       "id": "walking",
-      "question": "步行难度高吗？",
-      "answer": "全日较为活跃，步行量较大。"
+      "question": "步行强度大吗？",
+      "answer": "全天较为活跃，多个景点需要大量步行。"
     },
     {
       "id": "family",
-      "question": "这个行程适合家庭吗？",
-      "answer": "适合孩子能够应付全日动态行程的家庭。"
+      "question": "这条路线适合家庭出游吗？",
+      "answer": "适合孩子能够承受全天活动强度的家庭。"
     },
     {
       "id": "seniors",
-      "question": "年长者可以舒适地参加吗？",
-      "answer": "仅推荐能应付石阶及不平整路面的活跃年长旅客。"
+      "question": "老年人可以舒适地参加吗？",
+      "answer": "仅建议体力较好、能够应对台阶和不平地面的活跃老年人参加。"
     },
     {
       "id": "children",
       "question": "建议的最低参加年龄是多少？",
-      "answer": "约10岁或以上——能够应付全日节奏及上述步行说明的儿童。"
+      "answer": "最适合10岁及以上的儿童——需能适应全天行程节奏及上述步行要求。"
     },
     {
       "id": "rain",
-      "question": "下雨天行程还会进行吗？",
-      "answer": "小雨没问题；大雨可能调整部分景点安排。"
+      "question": "下雨天可以照常出行吗？",
+      "answer": "小雨不影响出行；大雨可能会调整部分行程景点。"
     }
   ],
   "guestReviews": [],
@@ -900,26 +957,26 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "可订状态将在支付步骤中确认。",
+    "note": "checkout_tour_id 在运行时从 Supabase／环境变量解析，不属于静态 JSONB 的一部分。",
     "price": {
       "amountLabel": "",
       "currency": "USD",
-      "per": "人",
-      "priceSource": "direct_rate",
-      "priceNote": "小团价格尚未在商品信息中确认。姊妹产品（西南部绣球花路线）约为每人89–96美元。确认后，AtoC Korea官网直售价将按九折执行。",
-      "discountPercent": 10
+      "per": "person",
+      "priceSource": "",
+      "priceNote": "",
+      "discountPercent": null
     }
   },
   "pickup_dropoff": {
     "type": "hotel_pickup",
     "meeting_points": [
       {
-        "name": "济州市区各酒店大厅",
-        "time": "≈08:30 (免费)"
+        "name": "济州市内酒店",
+        "time": "≈08:30 (free)"
       },
       {
-        "name": "济州市外酒店（西归浦/涯月/城山）",
-        "time": "提前接送；+₩70,000 附加费"
+        "name": "济州市外酒店（西归浦／涯月／城山）",
+        "time": "Earlier pickup; +₩70,000 surcharge"
       },
       {
         "name": "济州国际机场",
@@ -928,7 +985,7 @@
     ],
     "dropoff_points": [
       {
-        "name": "济州市酒店",
+        "name": "济州市内酒店",
         "approx_time": "≈18:00"
       },
       {
@@ -941,7 +998,7 @@
       }
     ],
     "hotel_pickup_available": true,
-    "notes": "济州市区酒店免费接送（机场附近及市中心）。出发时间通常08:30至09:30。济州市以外接送加收₩70,000。预计17:00至18:00返回济州市。"
+    "notes": "济州市内免费接送。市外接送另收₩70,000。绣球花景点仅在5月下旬至7月中旬花期内开放（盛花期为6月中旬），请预订前确认。"
   },
   "matching_profile": {
     "profile_version": 6,
@@ -952,7 +1009,7 @@
     "destination_region": "jeju",
     "region_type": "jeju_east",
     "vehicle_type": "minicoach",
-    "duration_hours": 9.0,
+    "duration_hours": 9,
     "region_tags": [
       "jeju_east",
       "jeju_namwon"
@@ -982,17 +1039,17 @@
     "first_time_fit": 0.85,
     "family_fit": 0.7,
     "senior_fit": 0.6,
-    "couple_fit": 1.0,
+    "couple_fit": 1,
     "solo_traveler_fit": 0.95,
     "active_traveler_fit": 0.85,
     "adult_family_fit": 0.9,
-    "family_with_teens_fit": 1.0,
+    "family_with_teens_fit": 1,
     "young_kids_fit": 0.45,
     "senior_active_fit": 0.6,
     "senior_general_fit": 0.4,
     "mobility_friendly_fit": 0.4,
     "stroller_fit": 0.4,
-    "one_day_fit": 1.0,
+    "one_day_fit": 1,
     "same_day_flight_fit": 0.4,
     "rain_fit": 0.5,
     "value_for_money_fit": 0.75,
@@ -1003,7 +1060,7 @@
     "beach_fit": 0.65,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.2,
-    "no_shopping_fit": 1.0,
+    "no_shopping_fit": 1,
     "local_culture_fit": 0.8,
     "storytelling_fit": 0.8,
     "unesco_fit": 0.95,
@@ -1013,9 +1070,9 @@
     "comfort_level": 0.6,
     "budget_fit": 0.6,
     "premium_fit": 0.4,
-    "small_group_fit": 1.0,
+    "small_group_fit": 1,
     "private_fit": 0.2,
-    "bus_fit": 1.0,
+    "bus_fit": 1,
     "price_band": "mid",
     "pickup_base": "jeju_city",
     "return_time_band": "17:00-18:30",
@@ -1056,7 +1113,7 @@
     ],
     "profile_format": "small_group_fixed_itinerary",
     "private_tour_fit": 0.05,
-    "fixed_itinerary_fit": 1.0,
+    "fixed_itinerary_fit": 1,
     "customizable_route_fit": 0.05,
     "flexibility_fit": 0.3,
     "first_time_jeju_fit": 0.85,
@@ -1064,40 +1121,40 @@
     "southwest_jeju_fit": 0.1,
     "central_jeju_fit": 0.5,
     "north_jeju_fit": 0.4,
-    "east_jeju_fit": 1.0,
+    "east_jeju_fit": 1,
     "west_jeju_fit": 0.05,
-    "east_jeju_signature_fit": 1.0,
-    "east_unesco_focused_fit": 1.0,
-    "east_coast_corridor_fit": 1.0,
+    "east_jeju_signature_fit": 1,
+    "east_unesco_focused_fit": 1,
+    "east_coast_corridor_fit": 1,
     "unesco_focused_tour_fit": 0.7,
-    "unesco_taste_fit": 1.0,
+    "unesco_taste_fit": 1,
     "unesco_anchor_count": 1,
-    "unesco_world_heritage_fit": 1.0,
-    "unesco_geopark_fit": 1.0,
-    "unesco_biosphere_fit": 1.0,
-    "unesco_triple_anchor_fit": 1.0,
-    "national_folklore_heritage_fit": 1.0,
-    "joseon_heritage_fit": 1.0,
-    "natural_monument_fit": 1.0,
+    "unesco_world_heritage_fit": 1,
+    "unesco_geopark_fit": 1,
+    "unesco_biosphere_fit": 1,
+    "unesco_triple_anchor_fit": 1,
+    "national_folklore_heritage_fit": 1,
+    "joseon_heritage_fit": 1,
+    "natural_monument_fit": 1,
     "natural_monument_anchor_count": 2,
     "hydrangea_festival_anchor_count": 2,
-    "summer_flowers_hydrangea_fit": 1.0,
-    "june_peak_floral_fit": 1.0,
-    "early_summer_jeju_fit": 1.0,
+    "summer_flowers_hydrangea_fit": 1,
+    "june_peak_floral_fit": 1,
+    "early_summer_jeju_fit": 1,
     "named_seasonal_festival_anchor_count": 2,
-    "year_round_flower_park_fit": 1.0,
+    "year_round_flower_park_fit": 1,
     "garden_anchor_count": 2,
     "hydrangea_tunnel_visit": false,
-    "hydrangea_greenhouse_fallback_fit": 1.0,
+    "hydrangea_greenhouse_fallback_fit": 1,
     "multi_garden_pairing_fit": 0.7,
-    "unesco_plus_floral_combo_fit": 1.0,
+    "unesco_plus_floral_combo_fit": 1,
     "lava_tube_visit": true,
     "lava_tube_anchor_count": 1,
-    "manjanggul_alternate_fit": 1.0,
-    "tuff_cone_climb_fit": 1.0,
-    "volcanic_geology_fit": 1.0,
-    "volcano_climb_fit": 1.0,
-    "rim_view_fit": 1.0,
+    "manjanggul_alternate_fit": 1,
+    "tuff_cone_climb_fit": 1,
+    "volcanic_geology_fit": 1,
+    "volcano_climb_fit": 1,
+    "rim_view_fit": 1,
     "stair_climb_demand": 0.7,
     "physical_demand_level": 0.55,
     "leisure_traveler_fit": 0.6,
@@ -1106,13 +1163,13 @@
     "teen_kids_fit": 0.85,
     "senior_low_mobility_fit": 0.3,
     "wheelchair_fit": 0.05,
-    "pet_friendly_fit": 0.0,
-    "instagram_traveler_fit": 1.0,
-    "photographer_fit": 1.0,
+    "pet_friendly_fit": 0,
+    "instagram_traveler_fit": 1,
+    "photographer_fit": 1,
     "cultural_traveler_fit": 0.95,
     "botanical_enthusiast_fit": 0.95,
     "nature_lover_fit": 0.95,
-    "english_speaking_market_fit": 1.0,
+    "english_speaking_market_fit": 1,
     "mandarin_speaking_market_fit": 0.7,
     "japanese_speaking_market_fit": 0.7,
     "korean_speaking_market_fit": 0.05,
@@ -1120,7 +1177,7 @@
     "singapore_market_fit": 0.95,
     "hong_kong_market_fit": 0.95,
     "china_diaspora_overseas_market_fit": 0.9,
-    "china_mainland_market_fit": 0.0,
+    "china_mainland_market_fit": 0,
     "southeast_asia_market_fit": 0.85,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
@@ -1130,7 +1187,7 @@
     "per_pax_pricing_tier": "mid",
     "group_size_max": 14,
     "group_size_min": 4,
-    "lunch_included_fit": 0.0,
+    "lunch_included_fit": 0,
     "ticket_inclusion_fit": 0.5,
     "english_guide_included": true,
     "hotel_pickup_included": true,
@@ -1155,8 +1212,8 @@
     "snow_closure_risk": 0.05,
     "typhoon_disruption_risk_summer": 0.25,
     "signature_photo_count": 5,
-    "wide_landscape_fit": 1.0,
-    "macro_floral_fit": 1.0,
+    "wide_landscape_fit": 1,
+    "macro_floral_fit": 1,
     "wedding_photo_fit": 0.85,
     "couple_portrait_fit": 0.95,
     "instagram_anchor_count": 4,
@@ -1174,7 +1231,7 @@
       "vi",
       "es"
     ],
-    "korea_domestic_market_fit": 0.0,
+    "korea_domestic_market_fit": 0,
     "se_asia_market_fit": 0.95,
     "japan_market_fit": 0.85
   },
@@ -1293,20 +1350,20 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "绣球花蓝海与城山日出峰金辉——",
-        "headlineLine2": "东济州夏日路线，9小时一圈环游",
+        "headlineLine1": "绣球花的蓝与日出峰的金——",
+        "headlineLine2": "济州东部夏日之旅，一次9小时环线尽览",
         "hero": {
           "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
           "imagePosition": "center 35%",
-          "tagline": "绣球花盛开时的东济州——UNESCO遗产与一片花海，夏日最完整的9小时环线",
+          "tagline": "济州东部绣球花盛开季节 — 9小时尽享联合国教科文组织遗产与花海",
           "pills": [
-            "小团",
+            "small_group",
             "济州"
           ],
           "meta": {
             "duration": "9小时",
-            "region": "济州东部",
-            "stops": "8 个景点",
+            "region": "",
+            "stops": "8个景点",
             "rating": 0,
             "ratingStars": 0
           }
@@ -1321,23 +1378,23 @@
         "subnavItems": [
           {
             "id": "overview",
-            "label": "行程总览"
+            "label": "概览"
           },
           {
             "id": "itinerary",
-            "label": "详细行程"
+            "label": "行程"
           },
           {
             "id": "details",
-            "label": "注意事项"
+            "label": "详情"
           },
           {
             "id": "faq",
-            "label": "常见问题"
+            "label": "FAQ"
           },
           {
             "id": "reviews",
-            "label": "旅客评价"
+            "label": "评价"
           }
         ]
       }
@@ -1350,33 +1407,33 @@
         "glanceItems": [
           {
             "icon": "clock",
-            "label": "行程时间",
-            "value": "9小时（通常08:30–17:30）"
+            "label": "时长",
+            "value": "9小时（通常为08:30–17:30）"
           },
           {
             "icon": "users",
-            "label": "团体规模",
-            "value": "小团，英中双语导游"
+            "label": "团组",
+            "value": "小团体，配备英语/中文导游"
           },
           {
             "icon": "calendar",
             "label": "最佳季节",
-            "value": "5月下旬至7月中旬（6月中旬顶峰）；全年可运营，非花季花卉效果有限"
+            "value": "五月下旬至七月中旬（高峰期为六月中旬）；全年均可参团，非花季时无花可赏"
           },
           {
             "icon": "hotel",
-            "label": "接送信息",
-            "value": "济州市内酒店免费接送；市外+₩70,000"
+            "label": "接送服务",
+            "value": "济州市内免费接送酒店；济州市外需加收₩70,000"
           },
           {
             "icon": "footprints",
             "label": "步行强度",
-            "value": "中等——城山日出峰需约30分钟上坡（可跳过）"
+            "value": "中等强度 — 城山日出峰需爬约30分钟上坡路至山顶（可选择跳过）"
           },
           {
             "icon": "ticket",
             "label": "费用包含",
-            "value": "车辆、执照司导、油费/过路费/停车费。不含：景点入场费、午餐"
+            "value": "车辆、持证导游兼司机、燃油/过路费/停车费。不含：景点门票、午餐"
           }
         ]
       }
@@ -1390,45 +1447,45 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
-            "alt": "行程中参观的城山日出峰（日出峰）——UNESCO世界自然遗产景观",
-            "caption": "城山日出峰（日出峰）——UNESCO世界自然遗产",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "alt": "城山日出峰 — 联合国教科文组织自然遗产",
+            "caption": "城山日出峰 — 联合国教科文组织自然遗产",
             "location": "",
             "atmosphere": ""
           },
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-            "alt": "休爱里自然公园绣球花田",
-            "caption": "休爱里自然公园绣球花田——盛花期5月下旬至7月中旬（高峰6月中）",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/20/a397a498-7bc9-4730-963a-cfa29ccffe7d.webp",
+            "alt": "休爱里自然公园绣球花田 — 高峰期为五月下旬至七月中旬（盛花期六月中旬）",
+            "caption": "休爱里自然公园绣球花田 — 高峰期为五月下旬至七月中旬（盛花期六月中旬）",
             "location": "",
             "atmosphere": ""
           },
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-            "alt": "日出乐园弥天窟熔岩管万丈窟备选安排",
-            "caption": "日出乐园弥天窟熔岩管（万丈窟备选安排）",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/cf7e9f6b-178f-4d3d-b978-91beb5145a10.webp",
+            "alt": "日出乐园弥天熔岩管洞穴（万丈窟关闭时的替代景点）",
+            "caption": "日出乐园弥天熔岩管洞穴（万丈窟关闭时的替代景点）",
             "location": "",
             "atmosphere": ""
           },
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-            "alt": "行程中参观的城邑民俗村传统石屋UNESCO遗产景观",
-            "caption": "城邑民俗村传统石屋UNESCO遗产",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
+            "alt": "城邑民俗村传统石屋，联合国教科文组织遗产 > **注：** 第5项（TourTabsNav）、第10项（TourAtAGlance）、第23项（TourAtmosphereGallery）为UI组件名称，保留原文不译。",
+            "caption": "城邑民俗村的传统石屋，联合国教科文组织遗产",
             "location": "",
             "atmosphere": ""
           },
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-            "alt": "含德海滩济州前三名海滩",
-            "caption": "含德海滩，济州前三名海滩之一",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201810/17/654ec69c-ca81-443d-9b10-3cfe4a8e98f0.webp",
+            "alt": "咸德海滩，跻身济州三大海滩之列",
+            "caption": "咸德海滩，跻身济州三大海滩之列",
             "location": "",
             "atmosphere": ""
           }
@@ -1443,292 +1500,357 @@
         "itineraryStops": [
           {
             "number": 1,
-            "time": "08:30",
-            "duration": "30分钟",
+            "time": "≈ 08:30",
+            "duration": "30 分钟",
             "name": "酒店接送（济州市）",
-            "category": "接送——济州市酒店/集合点顺序",
-            "description": "**济州市区酒店免费接送**。接送范围涵盖济州市区（济州机场附近及市中心）。济州市以外（西归浦、爱月、城山）的接送需加收₩70,000附加费，请直接支付给司机。出发时间视您的酒店位置而定，通常在08:30至09:30之间；预订时确认确切时间。",
-            "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+            "category": "出发",
+            "description": "济州市中心提供免费酒店接送。济州市以外地区（西归浦、涯月、城山）需另付 ₩70,000 接送费。亦可提供济州机场接送服务。",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
             "highlights": [
-              "**济州市区酒店免费接送**（机场附近及市中心）",
-              "济州市以外接送加收**₩70,000附加费**（西归浦、爱月、城山等）",
-              "出发时间通常**08:30至09:30**——预订时确认",
-              "出发前一天透过**WhatsApp确认**行程及绣球花最新花况"
+              "济州市免费接送",
+              "配备空调的车辆",
+              "持证司机兼导游"
             ],
             "timeUsed": [
-              "河贵接送~08:30——5分钟",
-              "机场接送~08:40——5分钟",
-              "市政厅·东门依次接送~08:50–09:05",
-              "东门接送 ~09:00 — 5分钟",
-              "沿海岸1132号公路东行前往咸德 — 约25分钟"
+              "运营后勤（接送 / 餐饮 / 转乘 / 返程）",
+              "简短说明或休息"
             ],
-            "whyOnRoute": "酒店直接接送是东部绣球花环线的出发点。出发后，小型巴士向东沿海岸路线行驶，约09:30抵达含德——这也是东部行程接送的唯一合理入口，因为一旦进入东海岸，路线便沿1132号环岛公路向东南行进，无法折返接客。",
+            "whyOnRoute": "接送地点经过精心选择，以确保高效集合游客，同时保证行程准时出发。",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {},
             "_poi_meta": {
               "poi_key": "OPS_pickup",
-              "kb_version": "1.20",
-              "verified_date": "2026-04-29",
-              "sources": []
-            }
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "match": "operational_implicit",
+              "note": "Operational stop (pickup); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+            },
+            "_image_status": "placeholder_removed_v8"
           },
           {
             "number": 2,
-            "time": "09:30",
-            "duration": "40分钟",
-            "name": "咸德西牛峰海滩",
-            "category": "海岸",
-            "description": "**咸德犀牛峰海滩（咸德 ）**稳居**济州前三大海滩之列**，以**白沙海滩（主滩约500米，3个相连海湾合计约900米）**与**紧邻的火山锥犀牛峰（，「形似牛头的寄生火山锥」）**直接相接的鲜明对比而著称。海水独特的**翡翠碧绿色**源于浅层珊瑚沙海床反射通透海水——这种类地中海的画面效果（在韩国极为罕见）使咸德成为韩国本土最多人拍摄的度假海滩之一。海滩在夏季高峰期最多可容纳**每日50,000人到访**，但春秋季到访通常人少。**犀牛峰山顶**（登顶约需1小时）在**春季三月至四月时山坡遍开油菜花（金黄色）**，并提供向东远眺万丈窟熔岩洞窟区域的**全景视野**。**历史层次**：犀牛峰以西的海崖中保有**二战日据时期日本帝国陆军掘凿的隧道** — 神风特攻队自杀艇掩体和弹药库，与城山日出峰的18个地下掩体相似，且隧道对外开放（附解说标示牌说明历史背景）。海滩是**济州偶来小路第19路线（助天 → 金宁）**的核心段落，以小路代表性的蓝橙色丝带作为指引。**咖啡厅**坐落于海滩前方 — 大型露台、海景，是Instagram必到拍照点。**免费入场**；海滩距**济州国际机场约20公里 / 车程约40分钟**（沿1132号公路）。",
-            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+            "time": "≈ 09:30",
+            "duration": "60–90 分钟",
+            "name": "咸德犀牛峰海滩",
+            "category": "火山海滩",
+            "description": "在济州最受喜爱的海滩之一驻足拍照——翠绿色浅水区、白色沙滩与深色玄武岩相映成趣。小巧的犀牛峰火山锥从海滩东端直接拔地而起。",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/20/a397a498-7bc9-4730-963a-cfa29ccffe7d.webp",
             "highlights": [
-              "**济州前三大海滩** — 翡翠碧绿海水 + 白色珊瑚沙",
-              "**主滩约500米** + 3个相连海湾（合计约900米）",
-              "**犀牛峰火山锥**约需1小时登顶 — 三至四月山坡遍开金黄油菜花",
-              "**邻近海崖二战日本帝国陆军隧道** — 神风特攻队自杀艇掩体",
-              "**偶来小路第19路线（助天 → 金宁）** — 蓝橙色丝带指引",
-              "**咖啡厅** — 大型露台、海景、Instagram拍照点",
-              "夏季高峰期每日最多**50,000人到访**；春秋季人少",
-              "**免费入场**；距离济州国际机场20公里 / 约40分钟车程",
-              "类地中海的色彩对比 — 在朝鲜半岛极为罕见"
+              "济州三大海滩之一",
+              "犀牛峰火山锥",
+              "轻松拍照打卡点"
             ],
             "timeUsed": [
-              "大巴抵达+停车——约5分钟",
-              "主海滩+第二处海湾漫步——约25分钟",
-              "二战坑道外观参观——约10分钟",
-              "Delmoondo咖啡馆或海滩拍照——约15分钟",
-              "集合时间——约5分钟"
+              "抵达、购票及行程说明",
+              "主要景点游览及拍照时间",
+              "结束游览，在车辆处重新集合"
             ],
-            "whyOnRoute": "**东部绣球花路线的早晨碧绿海水＋首个绣球花热身站**。含德是第一站的三个刻意的东部路线理由：（1）**潮汐＋光线时机**：09:30抵达正好赶上早晨低潮侧，碧玉色海水最为清澈；（2）**绣球花热身**：犀牛峰（西乙峰）斜坡上的油菜花（春季）及草地为绣球花季前的景色暖身；（3）**地理门户**：含德→城邑的北→南路线使南向移动不走回头路。",
+            "whyOnRoute": "本线路的重点核心站——因其文化 / 景观价值及与全天行程节奏的契合而精心选定。",
+            "visitBasics": {
+              "hours": "全天 24 小时开放（海滩）；7 月至 8 月为设有救生员的游泳管理季",
+              "closed": "全年开放",
+              "admission": "免费",
+              "walking": "轻松——海滩为平坦沙地；犀牛峰徒步为中等难度（含台阶）"
+            },
+            "convenience": {
+              "restroom": "海滩设有公共卫生间及淋浴设施",
+              "parking": "公共停车场（夏季收费）"
+            },
+            "smartNotes": {
+              "photo": "以西牛峰剪影映衬的日落是经典拍摄角度；从西牛峰山顶俯拍可呈现白色沙滩的优美弧线",
+              "facilities": "海滩沿线设有多家咖啡馆；附近有便利店",
+              "tip": "人流量少于协才海滩或金宁海滩；东侧的Delmoondo咖啡馆区是观赏日落的热门地点"
+            },
             "_poi_meta": {
-              "poi_key": "hamdeok_seoubong_beach",
-              "kb_version": "1.20",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "Jeju Olle Foundation — Trail Course 19 official map",
-                "VisitJeju — Hamdeok Seoubong Beach",
-                "Jeju 4·3 Peace Foundation — Imperial Japanese Army tunnel records",
-                "Korea Tourism Organization — Top 3 Jeju Beaches ranking",
-                "Jocheon-eup local cultural office — Seoubong oreum trail records"
-              ]
-            }
+              "poi_key": "hamdeok_beach",
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "note": "Operational details based on aggregated visitor info"
+            },
+            "_image_status": "placeholder_removed_v8",
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202408/20/a397a498-7bc9-4730-963a-cfa29ccffe7d.webp",
+              "https://images.unsplash.com/photo-1761529812825-3b9797bad2b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1688544969956-a887beadb9d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1769557040812-69d73be117a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1747497153297-6ed1af10e284?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1747587306969-e0765d6f5d71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1747497153316-526d3a56d219?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1666348185731-0d20e028ff02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1758327740354-9c918c10fe47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxIYW1kZW9rJTIwU2VvdWJvbmclMjBCZWFjaCUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080"
+            ]
           },
           {
             "number": 3,
-            "time": "10:30",
-            "duration": "50分钟",
-            "name": "城邑民俗村",
-            "category": "朝鲜时代城郭城镇——重要民俗文化遗产（1423年创立）",
-            "description": "**城邑民俗村**是**朝鲜时代的城郭式城镇，始建于1423年世宗大王年间**，当时称为旌义县，是朝鲜时代济州三大行政中心之一。村落持续作为**县政中心长达近500年，直至1914年**，至今在原有邑城城郭范围内保存著**110栋传统建筑**，整体按照朝鲜县政中心典型的**韩国风水原则**规划布局。整座村落被指定为**韩国重要民俗文化遗产**，多栋个别建筑亦分别获得独立遗产指定。村落中心耸立著**两棵被指定为韩国天然纪念物的古树**——**一棵光叶榉**和一棵**朴树**，两者均**树龄逾600年**，是村落的精神象征。历史伤痕清晰可见：**1826年的大火烧毁了约80栋建筑**，村落在**1948年济州四三事件中**也遭受过火灾破坏——两段历史均记载于村内标示牌上。历史上户数高峰时约**1,500户**，今日村落仍有约**250户人家居住**，许多村民积极传承传统工艺。韩剧拍摄记录：**《大长今》（MBC，2003至2004年）**，这部国际韩剧大作曾在此取景。当地特色：**五味子酒** — 村内一户人家**世代相传、多代酿造**的**济州传统米酿酒**，村内家庭酿酒坊可免费参观品尝。**免费入场**；以户外步行为主（约70%户外）。",
-            "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+            "time": "≈ 10:30",
+            "duration": "60–90分钟",
+            "name": "城邑民俗村（联合国教科文组织）",
+            "category": "联合国教科文组织民俗村",
+            "description": "这是一座至今仍有人居住、拥有数百年历史的石墙古村落。火山石墙（돌담）、茅草屋顶与传统厨房，是济州岛上唯一完整保存前现代村落原貌的地方，已被列为韩国民俗文化遗产。",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/cf7e9f6b-178f-4d3d-b978-91beb5145a10.webp",
             "highlights": [
-              "**始建于1423年**（世宗大王年间）——行政中心持续运作至**1914年（近500年）**",
-              "原有邑城城郭范围内保存**110栋传统建筑**",
-              "**韩国重要民俗文化遗产**（整座村落 + 多栋个别建筑）",
-              "村落中心有**两棵树龄逾600年的古树**：光叶榉 + 朴树 — **天然纪念物**",
-              "按照**朝鲜韩国风水（地理）原则**规划 — 典型县政中心格局",
-              "**《大长今》（MBC 2003至2004年）**拍摄地 — 国际韩剧大作",
-              "**五味子酒** — 济州传统米酿酒，单一家族世代相传酿造（免费品尝）",
-              "历史伤痕：**1826年大火**烧毁约80栋；**1948年济州四三事件**破坏",
-              "**免费入场** — 村落仍有约250户人家居住，延续传统"
+              "仍有居民生活的遗产村落",
+              "火山石墙",
+              "传统厨房与茅草屋顶"
             ],
             "timeUsed": [
-              "停车+村落解说员迎接简介——约10分钟",
-              "走至古树+村落中心——约10分钟",
-              "参观韩屋内部（代表性民居2–3栋）——约15分钟",
-              "五味子酒酿造坊免费品尝——约10分钟",
-              "奥莱小巷散步+拍照——约10分钟",
-              "集合时间——约5分钟"
+              "抵达、购票及行程说明",
+              "主要景点游览与拍照时间",
+              "结束参观，在车辆处集合"
             ],
-            "whyOnRoute": "**全日唯一的内陆朝鲜时代遗产停留**。城邑属于东部路线的三个理由：（1）**地理枢纽**：城邑位于表善面的内陆十字路口，是汉拏山南坡自然下行至城山的过渡站；（2）**遗产节奏**：含德（自然＋殖民历史）→城邑（朝鲜行政遗产）的序列，在午后密集的UNESCO景点和绣球花景点之前建立清晰的文化背景层次；（3）**时段逻辑**：10:30抵达让城邑在早班游客散去后保持适中人流。",
+            "whyOnRoute": "本路线的重点核心站点——因其文化与景观价值及与全天行程节奏的契合而入选。",
+            "visitBasics": {
+              "hours": "全天24小时开放（室外村落）；店铺通常营业时间为09:00–17:00",
+              "closed": "全年开放",
+              "admission": "村落整体免费参观；部分私人民居的导览参观需收费",
+              "walking": "轻松——村内为平坦的土路与石板路"
+            },
+            "convenience": {
+              "restroom": "村落入口处设有公共卫生间",
+              "parking": "入口附近免费停车"
+            },
+            "smartNotes": {
+              "photo": "石墙、茅草屋顶民居（带烟孔）及传统大门，连同石爷爷雕像（돌하르방），是拍摄济州风情的标志性素材",
+              "facilities": "入口处设有游客服务中心；提供英文地图",
+              "tip": "可在入口处免费聘用志愿导游以了解文化背景；请尊重居民的日常生活——未经邀请请勿擅入民居"
+            },
             "_poi_meta": {
               "poi_key": "seongeup_folk_village",
-              "kb_version": "1.20",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "Cultural Heritage Administration — Important Folklore Cultural Heritage designation",
-                "Korea Cultural Heritage Foundation — Seongeup Folk Village historical records",
-                "VisitJeju — Seongeup Minsok Maeul",
-                "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
-                "Jeju Folklore Society — Omegisul brewing tradition documentation"
-              ]
-            }
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "note": "Operational details based on aggregated visitor info; verify with operator"
+            },
+            "_image_status": "placeholder_removed_v8",
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/cf7e9f6b-178f-4d3d-b978-91beb5145a10.webp",
+              "https://images.unsplash.com/photo-1746431565374-77fd0e8a02b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1769433471231-939e6c9d24a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1674142338030-3edf28f79322?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1659090833777-fcdb820ce4e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1757357921301-6a0ec0947c7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1660782556788-02f7539c0524?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1748092821079-ba4e8abff5e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1719985968360-15b822c49a03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1734961592183-6904430d3f3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080"
+            ]
           },
           {
             "number": 4,
-            "time": "11:30",
+            "time": "≈ 11:30",
             "duration": "60分钟",
             "name": "午餐（济州当地餐厅）",
-            "category": "运营停留——东济州当地午餐",
-            "description": "**连接遗产前半段和UNESCO下午段的东济州午餐**。60分钟午餐时段同时作为预留时间——如果城邑人潮多导致前半程延误，此段可吸收。轮替菜式：**（冷汤生鱼片）**和**（海胆面）**是东济州的地区特色；或**（鲍鱼石锅饭）**全年供应。如有特殊饮食需求，请于预订时告知。午餐费用约₩15,000，现场自费。",
-            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+            "category": "餐食",
+            "description": "在导游推荐的当地餐厅自由用餐。东海岸常见推荐：黑猪肉（济州黑猪）烤肉、艾草鲍鱼汤（몸국）或鲍鱼粥（전복죽）。如有需要，可提前告知安排素食选项。",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
             "highlights": [
-              "**（冷汤生鱼片）**和**（海胆面）**——东济州地区特色",
-              "**（鲍鱼石锅饭）**全年供应",
-              "60分钟时段——同时作为上午行程的**预留时间**",
-              "城山邑定位——午餐后**短车程即达城山日出峰**",
-              "午餐费用约**₩15,000**，现场自费",
-              "特殊饮食需求请提前告知"
+              "黑猪肉烤肉",
+              "东海岸海鲜",
+              "提供素食选项"
             ],
             "timeUsed": [
-              "抵达+就坐——5分钟",
-              "点餐+饮食确认——5分钟",
-              "用餐——35分钟",
-              "洗手间+集合——15分钟",
-              "上车 + 出发 — 5分钟"
+              "行程运营安排（接送 / 餐食 / 转乘 / 返程）",
+              "简短说明或休息"
             ],
-            "whyOnRoute": "锁定在11:30，以衔接遗产节奏的上午（城邑）和UNESCO节奏的下午（城山）。60分钟时段同时作为预留时间——如果城邑人潮多，午餐可吸收延误，确保城山及绣球花午后段按时进行。",
+            "whyOnRoute": "根据客人体力和行程节奏安排的中途用餐休息。",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {},
             "_poi_meta": {
               "poi_key": "OPS_lunch",
-              "kb_version": "1.20",
-              "verified_date": "2026-04-29",
-              "sources": []
-            }
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "match": "operational_implicit",
+              "note": "Operational stop (lunch); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+            },
+            "_image_status": "placeholder_removed_v8"
           },
           {
             "number": 5,
-            "time": "12:50",
-            "duration": "75分钟",
-            "name": "城山日出峰",
-            "category": "UNESCO凝灰岩锥——日出峰（三重UNESCO认定）",
-            "description": "**城山日出峰（城山日出峰，「日出峰」）**是一座**距今5,000年的苏尔特塞式（Surtseyan）水成火山凝灰岩锥**——形成于海底玄武岩喷发冲出海面之时，岩浆接触海水引发蒸汽爆炸，堆积的火山灰形成**182米高、形如城堡的火口**边缘，而非典型的熔岩锥。UNESCO将其正式定义为**「萨托谢安式火山构造典型范例」**。火口**直径600米、深90米**，周围环绕着**99块锯齿状的边缘岩石**，当地传说将其比喻为石冠。城山日出峰拥有**UNESCO三重认定**：**世界自然遗产（2007年7月2日列入）**，是**「济州火山岛与熔岩洞窟」**遗址的组成部分；**生物圈保护区（2002年）**；以及**全球地质公园（2010-10）**——这一荣衔仅与汉拏山本身并列，为韩国景点中的最高规格。峰体向海一侧隧道有**18座帝国日本二战地下掩体**（1945年神风特攻队自杀艇掩体）。步道：**单程0.8公里，爬升约140米，来回60分钟**，沿宽阔石阶攀登。**海女表演**每日在峰下岩石海湾**13:30和15:00**各举行一场——无需氧气罐的济州女性潜水员（UNESCO 2016年非物质文化遗产）。门票于**2025年4月更新**：**成人₩5,000 / 青少年+儿童₩2,500 / 团体成人₩1,600**，7岁以下及65岁以上免费。山顶观景台同属**瀛洲十景**，长期以来是韩国**元旦日出朝圣**的首选地——每年1月1日有逾5万人在黎明前登顶，自1995年起设有市政日出节活动。**牛岛** —— 韩国最大的次级火山岛——在山顶可清晰看见，位于4公里外海域，搭乘**15分钟渡轮自城山港出发**可前往（来回₩10,500）。",
-            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+            "time": "≈ 13:00",
+            "duration": "60–90 分钟",
+            "name": "城山日出峰（日出峰，UNESCO）",
+            "category": "UNESCO 日出峰",
+            "description": "济州岛最具代表性的景点——一座有 5,000 年历史的水成火山凝灰岩锥，从海面拔地而起 180 米，火山口边缘保存完好。UNESCO 自然遗产。攀登至火山口边缘约需 30 分钟，为陡峭的石阶；不想爬山的游客可沿山脚的免费海岸步道漫步，同样可拍摄到绝佳角度的照片。",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
             "highlights": [
-              "**UNESCO三重认定**：世界遗产2007-07-02 + 生物圈保护区2002年 + 全球地质公园2010-10",
-              "**距今5,000年** — 萨托谢安式水火山喷发，岩浆遇海水引发蒸汽爆炸诞生",
-              "火口**直径600米、深90米**，环绕着**99块锯齿状边缘岩石**（「石冠」）",
-              "**海拔182米** — 单程0.8公里 / 爬升约140米，石阶步道来回60分钟",
-              "峰体基部有**18座帝国日本二战地下掩体** — 1945年神风特攻队自杀艇掩体",
-              "**每日13:30 + 15:00海女表演**，在海滨海湾举行 — UNESCO非物质文化遗产2016年",
-              "**门票2025年4月更新**：成人₩5,000 / 青少年₩2,500 / 7岁以下及65岁以上免费",
-              "春秋季开放时间 **05:00至19:00**（最后入场18:20）",
-              "**每月第一个星期一休馆**（偶尔休息日）"
+              "UNESCO 自然遗产",
+              "180 米火山凝灰岩锥",
+              "火山口边缘观景点",
+              "海岸步道（免费区段）"
             ],
             "timeUsed": [
-              "停车+购票+底部简介——约10分钟",
-              "登顶观景台（0.8公里/高差140米）——约30分钟",
-              "顶部观景+火山口边缘拍照——约20分钟",
-              "下山——约20分钟",
-              "可选：在底部观看海女表演（15:00场次）——约10分钟"
+              "抵达、购票及行程说明",
+              "主要景点游览及拍照时间",
+              "集合返回车辆"
             ],
-            "whyOnRoute": "**全日的UNESCO顶峰核心亮点和东部路线的核心景点**。城山是下午第一站（12:50抵达）的三个理由：（1）**三重UNESCO份量**：城山是全济州唯一同时获得UNESCO世界自然遗产＋生物圈保护区＋全球地质公园三重指定的景点；（2）**体力管理**：将城山安排在绣球花午后之前，确保宾客以最饱满的体力完成城山登顶；（3）**光线时机**：12:50至14:30的光线以侧光角度照射凝灰岩锥面，比下午晚段的低角光线更能呈现锥体的几何感。",
+            "whyOnRoute": "本路线的重点标志性停靠站——因其文化 / 景观价值及与当日行程节奏的契合度而入选。",
+            "visitBasics": {
+              "hours": "3–4 月及 9–10 月：05:00–19:00；5–8 月：04:30–20:00；11 月–次年 2 月：06:00–18:00（最后购票时间为闭馆前 1 小时）",
+              "closed": "全年开放（恶劣天气可能临时关闭）",
+              "admission": "成人 5,000 韩元 / 青少年及儿童 2,500 韩元（参考 VisitKorea）",
+              "walking": "中等难度——持续攀登约 20–30 分钟的石阶（约 600 级）；每隔数分钟设有休息长椅"
+            },
+            "convenience": {
+              "restroom": "入口处及山脚均有提供",
+              "parking": "大型免费停车场"
+            },
+            "smartNotes": {
+              "photo": "晴天可从山顶西望汉拿山、北眺牛岛；下山途中可欣赏海女黑沙滩美景",
+              "facilities": "咖啡厅（距此 1.3 公里的 Fritz Coffee 可欣赏日出峰最佳外景）；可从城山港（步行约 1.5 公里 / 15 分钟）乘渡轮前往牛岛",
+              "tip": "全程为台阶但维护良好——穿休闲服即可轻松应对；适合家庭出游，设有多处休息站；日出时分游览最受欢迎，但人群往往在天亮前便已聚集"
+            },
             "_poi_meta": {
               "poi_key": "seongsan_ilchulbong",
-              "kb_version": "1.20",
-              "verified_date": "2026-04-29",
+              "verified": true,
               "sources": [
-                "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
-                "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
-                "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
-                "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
-                "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
-              ]
-            }
+                "VisitKorea",
+                "Wikipedia",
+                "InsideJeju",
+                "AllTrails"
+              ],
+              "verified_date": "2026-04-27"
+            },
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+              "https://images.unsplash.com/photo-1616798249081-30877e213b16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1593104197164-96718e943b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1584263577189-f86c4b105154?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1710006876254-48250c2dbcfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1584802530491-65fad8b1b92c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1743685889737-d699283d139c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+            ]
           },
           {
             "number": 6,
-            "time": "14:30",
-            "duration": "70分钟",
-            "name": "日出乐园（米川窟熔岩洞穴）",
-            "category": "熔岩洞穴+主题公园——万丈窟备选（紧邻UNESCO认定区域）",
-            "description": "**日出乐园（日出乐园）**是一座**40万平方米自然主题公园**，围绕**弥天窟熔岩管**而建，公园同时举办**绣球花节**（6月至7月中旬）。弥天窟全长1,700米，其中**365米人工平整路段**开放（约25分钟穿越）——是**万丈窟UNESCO熔岩管的备用选择**。绣球花节期间，公园室外区域遍植蓝紫色绣球花，在熔岩地形背景的映衬下尤为壮观。公园还设有传统济州村落、盆景园、仙人掌温室和泡脚咖啡厅。**济州唯一设有现场穆斯林祈祷室**。入场费：**成人₩12,000 / 青少年₩9,000 / 儿童₩7,000**。",
-            "image": "https://images.unsplash.com/photo-1502780402662-acc01917a3a4",
+            "time": "≈ 15:00",
+            "duration": "90 分钟",
+            "name": "日出乐园——绣球花节 + 米川溶洞",
+            "category": "节庆活动与自然公园",
+            "description": "济州岛最大的植物园，于每年 6 月下旬至 7 月初举办大型绣球花节，沿熔岩流步道设有精心布置的拍照打卡区。园区内还设有米川溶洞（미천굴），这是一处规模较小但便于游览的熔岩管洞穴，目前作为临时关闭的万丈窟的替代景点对外开放。",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
             "highlights": [
-              "**6月至7月中旬绣球花节** — 蓝紫色绣球花覆盖熔岩地形",
-              "弥天窟：**全长1,700米；365米开放路段**（约25分钟穿行）",
-              "**万丈窟UNESCO备用方案**",
-              "**洞底人工平整** — 适合老年游客、婴儿车",
-              "40万平方米公园 — 传统村落、盆景园、泡脚咖啡厅",
-              "**济州唯一设有现场穆斯林祈祷室**",
-              "入场费 **₩12,000 / 成人；₩7,000 / 儿童**",
-              "30%室内 / 70%户外",
-              "《Running Man》第89集拍摄（2012年）"
+              "绣球花节拍照打卡区",
+              "迷川洞熔岩管道",
+              "万丈窟的替代选择"
             ],
             "timeUsed": [
-              "停车+购票+入场——约5分钟",
-              "米川窟穿越（365米/约25分钟）——约30分钟",
-              "水边公园+雕塑街——约20分钟",
-              "可选：盆景/仙人掌园+足浴咖啡馆——约15分钟",
-              "集合时间——约5分钟"
+              "漫步日出之地绣球花园（花期6月至7月）",
+              "探索迷川洞（日出之地专属熔岩管道）",
+              "在节日主要观景点拍照留念"
             ],
-            "whyOnRoute": "**全日首个绣球花核心亮点——同时提供「花卉＋地质」双重身份的熔岩管对照物**。日出乐园位于14:30第二站的三个东部路线理由：（1）**绣球花节的丰富度**：日出乐园在盛花期（6月）集中展示数千株绣球花，并以主题花园路线安排达到最佳拍摄效果；（2）**熔岩管体验**：弥天窟在花卉景色后提供冷却的地下对比——从花海中走入昏暗的熔岩管；（3）**时间备案**：如果城山因天气问题缩短，日出乐园可吸收额外时间，因为花园＋溶洞的组合提供灵活的延长可能。",
+            "whyOnRoute": "济州东部路线绣球花季的核心景点。日出之地将盛大的绣球花节与迷川洞相结合（迷川洞是繁忙时节代替万丈窟的专属熔岩管道），是一处值得停留90分钟的高品质景点。",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {},
             "_poi_meta": {
-              "poi_key": "ilchulland_micheon_cave",
-              "kb_version": "1.20",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "Ilchul Land official site (ilchulland.com)",
-                "VisitJeju — Ilchul Land Micheon Cave",
-                "Korea Cave Research Institute — Manjanggul lava-tube system documentation",
-                "SBS Variety Archive — Running Man Episode 89 (2012)",
-                "Jeju Tourism Organization — accessibility-friendly attraction registry"
-              ]
-            }
+              "poi_key": null,
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "match": "unmatched_v6_retained",
+              "note": "No POI factsheet match; v6 visitBasics/convenience/smartNotes retained as-is. Recommend manual verification before publication."
+            },
+            "_image_status": "placeholder_removed_v8",
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
+              "https://images.unsplash.com/photo-1749382872044-b9da36fe9117?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1562680829-7927493f7a50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1745504779500-0e95c1b4d58c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1674606059344-68bdc8cd06d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1595015975293-6f5c68bcdbaa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1609766418260-38c07e7ae69c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1646187582419-a8c67b3170ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1745504540086-06fa137c27db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+            ]
           },
           {
             "number": 7,
-            "time": "15:50",
-            "duration": "75分钟",
-            "name": "惠裕园自然生活公园——绣球花亮点",
-            "category": "绣球花核心亮点+济州黑猪表演标志项目",
-            "description": "**休爱里自然生活公园（休爱里 ）**是汉拏山南麓的全年花卉公园，以**「岛中之岛」**自我定位，全年轮换**5个命名节庆** — 梅花节、春季绣球花节（4月初至6月中旬）、**夏季绣球花节**（**6月高峰**至7月初）、欧式绣球花节（7月中旬至8月）、粉黛乱子草节、山茶花节 — 意味着**一年中约320天，旅客到访恰好处于某个命名节庆之中**。对于**东路绣球花节行程，6月时段正值室外全盛期**，加上**绣球花温室**作为午后雷阵雨的可靠室内备选。公园代表性表演是**济州黑猪表演**，每天4场——**11:00 / 13:00 / 15:00 / 17:00**。**济州黑猪是韩国指定天然纪念物**。其他亮点：**济州文化村**（传统游戏 + 茅草韩屋）、昆虫展览馆、野花园和休爱里洞穴。公园**约85%户外**。",
-            "image": "https://images.unsplash.com/photo-1565538810643-b5bdb714032a",
+            "time": "≈ 16:30",
+            "duration": "60至90分钟",
+            "name": "休里自然公园 — 绣球花精华之地",
+            "category": "自然公园",
+            "description": "当日最重磅景点。休里的绣球花田是济州夏季拍照率最高的地点之一——蓝色、粉色与白色绣球花密植于连绵起伏的山丘之间，园内还附设小型动物园和橘子果园。公园全年轮换季节性节日（冬季山茶花、春季油菜花、夏季绣球花）。",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
             "highlights": [
-              "**「岛中之岛」** — 汉拏山为背景的花卉公园，全年节庆轮换",
-              "**5个命名节庆**全年轮换 — 旅客到访恰好在某个节庆中约占**320天**",
-              "**春季绣球花节**（4月初至6月中旬）+ **夏季绣球花节**（6月高峰至7月初）",
-              "**绣球花温室**作为午后雷阵雨的可靠室内备选",
-              "**济州黑猪表演** — 每天4场（11:00/13:00/15:00/17:00）",
-              "济州黑猪是**韩国指定天然纪念物**",
-              "**济州文化村**（传统游戏 + 茅草韩屋）+ 昆虫展览馆 + 野花园",
-              "**约85%户外** — 温室 + 昆虫馆作为天气备选",
-              "入选KTO **「韩国最佳旅游景点」**"
+              "绣球花密植山丘",
+              "小型动物园",
+              "全年季节性节日轮换",
+              "六月下旬拍照效果最佳"
             ],
             "timeUsed": [
-              "公园入口+购票+欢迎——10分钟",
-              "绣球花温室+室外花园散步——30分钟",
-              "济州黑猪喂食表演（可选）——15分钟",
-              "咖啡馆休息——15分钟",
-              "卫生间 + 出发 — 5分钟"
+              "抵达、购票及行程说明",
+              "主要景点游览及拍照时间",
+              "游览结束，返回车辆集合"
             ],
-            "whyOnRoute": "**全日的绣球花压轴，也是整个行程名称的来源**。休爱里是最后一个实质景点（15:50）的四个理由：（1）**晚日照＋绣球花色彩**：休爱里主绣球花山丘在15:50至17:00的光线下以柔和侧光呈现色彩饱和度最佳的蓝紫色系；（2）**济州黑毛猪表演**：下午场次（通常15:30及16:30）在绣球花赏花结束后紧接举行，形成独特的农业遗产＋节庆花卉组合；（3）**绣球花规模**：休爱里拥有东济州最大单一绣球花田，在高峰期呈现整山蓝色的强烈景色感；（4）**感情收尾**：以花卉高潮而非地质景观作为全日最后一个实质站，让行程以最强烈的季节印象结束。",
+            "whyOnRoute": "本路线特色核心景点——凭借其文化与自然景观价值及与全天行程节奏的契合度入选。",
+            "visitBasics": {
+              "hours": "09:00–18:00（最后入场时间17:00）；季节性时间变动",
+              "closed": "全年开放",
+              "admission": "成人约13,000韩元 / 儿童约10,000韩元（价格随季节有所变动）",
+              "walking": "中等难度——园区占地宽广，含山地小径；部分区域适合婴儿车通行"
+            },
+            "convenience": {
+              "restroom": "园内多处设有洗手间",
+              "parking": "提供免费停车"
+            },
+            "smartNotes": {
+              "photo": "六月下旬至七月的绣球花山坡是济州最受欢迎的拍照场景之一",
+              "facilities": "咖啡厅、餐厅、礼品店、动物饲料自动售货机",
+              "tip": "绣球花盛开期较短（五月下旬至七月中旬，高峰期为六月中旬）——请合理安排参观时间；小马骑乘体验需另行付费"
+            },
             "_poi_meta": {
               "poi_key": "hueree_natural_park",
-              "kb_version": "1.21",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "https://m.visitjeju.net/en/detail/view?contentsid=CNTS_000000000022860 — Hueree Hydrangea Festival, Visit Jeju official",
-                "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=80492 — Hueree Maehwa Festival, Visit Korea (KTO)",
-                "https://world.nol.com/en/content/articles/cc1d5d91-7a2f-4f2e-8615-d3898f88242a — NOL World Iconic Seasonal Festivals guide",
-                "Hueree Natural Park ticket page",
-                "https://jeju-asean.org/notice/lets-follow-the-flower-path-to-find-out-what-flower-festivals-are-happening-in-jeju-this-spring/ — Jeju Business Agency Singapore official notice"
-              ]
-            }
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "note": "Operational details based on aggregated tour-operator info"
+            },
+            "_image_status": "placeholder_removed_v8",
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
+              "https://images.unsplash.com/photo-1756691151629-c6f594110166?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIdWVyZWUlMjBOYXR1cmFsJTIwUGFyayUyMEh5ZHJhbmdlYSUyMGhpZ2hsaWdodCUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+            ]
           },
           {
             "number": 8,
-            "time": "17:50",
-            "duration": "30分钟",
-            "name": "下车（济州市）",
-            "category": "下车——逆序4个站点",
-            "description": "**返回济州市，逆向四点下车**。从休爱里向西返回时，巴士自然先遇到东门市场，再向西弧形行驶途经市政厅、涯月洞，最后到达机场和酒店区。预计17:00至18:00左右返回，视路况而定。",
-            "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+            "time": "≈ 18:00",
+            "duration": "45至60分钟",
+            "name": "返回（济州市）",
+            "category": "返程",
+            "description": "可按需送至济州市酒店、东门传统市场或济州机场。",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
             "highlights": [
-              "逆向四点下车顺序（东门→市政厅→涯月洞→机场→酒店区）",
-              "预计**17:00至18:00**返回济州市",
-              "如有当晚航班，**济州机场末班机约21:30**，时间充裕"
+              "酒店送达",
+              "东门市场选项",
+              "可提供机场送达服务"
             ],
             "timeUsed": [
-              "惠裕园→济州市向西转移——约50分钟",
-              "东门下车约17:50——5分钟",
-              "市厅下车约18:05——5分钟",
-              "机场下车约18:20——5分钟",
-              "涯邑下车 ~18:25 — 5分钟"
+              "行程运营安排（接送／餐食／交通转运／返程）",
+              "简短说明或休息"
             ],
-            "whyOnRoute": "逆向接送顺序是东部路线返回时最省时的下车方式——东门市场在从东部返回时自然先被遇到，再弧形向西。",
+            "whyOnRoute": "返程安排——根据客人便利及时间确定性选择送达地点。",
+            "visitBasics": {},
+            "convenience": {},
+            "smartNotes": {},
             "_poi_meta": {
               "poi_key": "OPS_return",
-              "kb_version": "1.20",
-              "verified_date": "2026-04-29",
-              "sources": []
-            }
+              "verified": false,
+              "sources": [],
+              "verified_date": "2026-04-27",
+              "match": "operational_implicit",
+              "note": "Operational stop (return); identified by name pattern. visitBasics/convenience/smartNotes were not factsheet-derived."
+            },
+            "_image_status": "placeholder_removed_v8"
           }
         ]
       }
@@ -1750,27 +1872,27 @@
             "theme": "海滩"
           },
           {
-            "name": "城邑民俗村（UNESCO）",
+            "name": "城邑民俗村（联合国教科文组织）",
             "type": "primary",
-            "theme": "传统村落"
+            "theme": "文化遗产村"
           },
           {
             "name": "午餐",
             "type": "meal",
-            "theme": "餐饮"
+            "theme": "餐食"
           },
           {
-            "name": "城山日出峰（UNESCO）",
+            "name": "城山日出峰（联合国教科文组织）",
             "type": "primary",
-            "theme": "UNESCO火山"
+            "theme": "联合国教科文组织火山"
           },
           {
-            "name": "日出乐园+米川窟",
+            "name": "日出乐园 + 密川洞窟",
             "type": "primary",
-            "theme": "洞穴"
+            "theme": "洞窟"
           },
           {
-            "name": "惠裕园自然公园（绣球花亮点）",
+            "name": "休愛里自然公园（绣球花特色）",
             "type": "primary",
             "theme": "花园"
           },
@@ -1782,34 +1904,34 @@
         ],
         "routePhases": [
           {
-            "phase": "出发海岸",
+            "phase": "出发沿海段",
             "duration": "约1.5小时",
-            "description": "济州市→经咸德海滩摄影站驾车前往东海岸。"
+            "description": "济州市 → 经咸德海滩拍照停靠前往东海岸。"
           },
           {
-            "phase": "遗产前半段",
+            "phase": "文化遗产半程",
             "duration": "约2小时",
-            "description": "城邑民俗村+东济州村庄区域午餐。"
+            "description": "城邑民俗村 + 在济州东部村庄区域用午餐。 > **注：** 第8行 `TourDayFlowSection` 为系统/组件标识符，保留原文不作翻译。"
           },
           {
-            "phase": "UNESCO高峰",
-            "duration": "约1.5小时",
-            "description": "城山日出峰登顶或沿海岸散步。"
+            "phase": "UNESCO 峰顶",
+            "duration": "≈ 1.5 小时",
+            "description": "城山日出峰登顶或海岸漫步。"
           },
           {
-            "phase": "绣球花压轴",
-            "duration": "约2.5小时",
-            "description": "日出乐园熔岩洞穴+节庆活动，随后前往作为绣球花主打景点的惠裕园自然公园。"
+            "phase": "绣球花的终章",
+            "duration": "≈ 2.5 小时",
+            "description": "日出乐园熔岩洞穴 + 节庆活动，随后前往 Hueree 自然公园，作为重头绣球花打卡地。"
           },
           {
-            "phase": "返回",
-            "duration": "约1小时",
-            "description": "惠裕园→济州市。"
+            "phase": "返程",
+            "duration": "≈ 1 小时",
+            "description": "Hueree → 济州市。"
           }
         ],
         "routeShapeIntro": {
-          "title": "行程路线一览",
-          "subtitle": "以岛内最具代表性夏季活动为核心的季节限定东济州环线。惠裕园和日出乐园的绣球花节约持续四周的盛花期（5月末至7月中旬，高峰期6月中旬），与城山日出峰组合，一日内涵盖UNESCO与花卉亮点。"
+          "title": "当日行程安排",
+          "subtitle": "这是一条以济州岛标志性夏季活动为核心打造的济州东部季节性环线。Hueree 与日出乐园的绣球花节盛开期约为四周（五月下旬至七月中旬，六月中旬为盛期）——时间窗口极短，大多数国际游客若未事先规划，往往会错过。此路线将花节融入标准东海岸 UNESCO 环线之中，让恰好在盛花期到访济州的旅行者，得以在同一天 9 小时内同时体验世界遗产与满园花海。"
         }
       }
     },
@@ -1820,40 +1942,40 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "初次游览该地区的旅客",
+            "首次到访该地区的游客",
             "情侣",
             "成人家庭",
-            "能够应付全日活跃行程的旅客",
-            "希望参观UNESCO世界遗产景点的旅客"
+            "习惯全天行程的活力型旅行者",
+            "希望游览 UNESCO 世界遗产景点的旅行者"
           ],
           "lessIdealFor": [
-            "步行需求最少的旅客",
-            "行动不便的旅客",
-            "携带婴儿车的亲子团",
-            "当天还要赶航班的旅客"
+            "希望减少步行的旅行者",
+            "行动不便的旅行者",
+            "携带婴儿车的团体",
+            "需要为当日航班预留充足缓冲时间的旅行者"
           ],
           "routeLogicSections": [
             {
-              "title": "为何如此安排路线",
+              "title": "为何如此设计这条路线",
               "icon": "route",
               "iconBg": "bg-sky-50/80",
               "iconColor": "text-sky-600",
               "items": [
                 {
-                  "label": "一天涵盖两个绣球花节",
-                  "detail": "济州有四大绣球花节（休爱里、翰林公园、山茶花丘、日出乐园）。东部路线包含其中两个——日出乐园和休爱里——涵盖最广泛的绣球花品种和拍摄场景。两者组合若靠公共巴士安排则非常繁琐。"
+                  "label": "一天两个节庆",
+                  "detail": "济州共有四大绣球花节（Hueree、翰林公园、茶花山庄、日出乐园）。东线涵盖其中两处——日出乐园与 Hueree——两者合计囊括了最丰富的绣球花品种与拍摄场景。若乘坐公共交通同游两处，安排颇为不便。"
                 },
                 {
-                  "label": "遗产景点保留在路线中",
-                  "detail": "许多季节性花卉行程以增加更多花卉景点为由跳过遗产景点。本路线保留城山日出峰和城邑民俗村——即使您不特别在意绣球花，全日仍值得作为标准东济州UNESCO环线。"
+                  "label": "UNESCO 遗产景点保留在行程中",
+                  "detail": "许多季节性赏花团往往以增加花卉景点为由，略去遗产地。本路线仍将城山日出峰与城邑民俗村纳入行程——这意味着即使您对绣球花兴趣不大，当天仍是一趟完整的济州东部 UNESCO 经典环线，值回票价。"
                 },
                 {
-                  "label": "花卉表现不佳时有内建备案",
-                  "detail": "绣球花盛开时机年度波动1至2周。若您抵达时机稍早或稍晚，遗产景点仍能撑起全日行程。导游将根据即时花况情报，灵活替换最强的可用花卉场景。"
+                  "label": "花期不佳时的内置备选方案",
+                  "detail": "绣球花的盛开时间每年会有 1 至 2 周的浮动。若您到访时间略早或略晚于花季，遗产景点仍可作为全天行程的核心支撑。导游将根据实时花况信息，灵活替换为当前花势最佳的花田。"
                 },
                 {
-                  "label": "酒店接送比自驾更适合一日游旅客",
-                  "detail": "许多济州旅客是从首尔中转停留1至2天的旅客。自驾需要国际驾照及30分钟以上的机场取车手续。附酒店接送的9小时讲解行程让您抵达、休息、被接走，轻松游览东济州精华——省去在火山山脊公路上的驾驶压力。"
+                  "label": "对于一日游旅行者而言，酒店接送优于自驾",
+                  "detail": "许多济州游客是从首尔中转停留1至2天。在机场租车需要持有国际驾照，并须花费30分钟以上办理手续。含酒店接送的9小时导览服务，让您抵达后安心休息、被接送上车，即可尽览济州东部精华——无需在火山山脊道路上自驾，省去驾车烦恼。"
                 }
               ]
             }
@@ -1864,102 +1986,70 @@
     {
       "id": "practical",
       "section_html_id": null,
-      "component": "TourPracticalDetails",
+      "component": "行程实用信息",
       "props": {
         "practicalAccordionItems": [
           {
-            "id": "inclusions",
-            "title": "费用包含项目",
-            "preview": "含车辆及导游；入场费另计（约₩30,000–₩40,000）",
-            "content": [
-              "空调车辆、持牌英语∕中文司机兼导游、燃料、过路费、停车费。",
-              "不含：景点入场费（城山日出峰₩5,000、休爱里₩13,000、日出乐园₩12,000、城邑民俗村免费）、餐费、小费。",
-              "每人全日典型入场费合计：₩30,000至₩40,000。"
-            ]
+            "title": "费用包含",
+            "content": "含空调车辆、持证英语／中文导游司机、燃油、过路费及停车费。不含：景点门票（城山日出峰₩5,000，Hueree ₩13,000，日出乐园₩12,000，城邑民俗村免费）、餐费及小费。每人典型门票总费用约₩30,000–₩40,000。"
           },
           {
-            "id": "pickup",
-            "title": "接送与下车地点",
-            "preview": "济州市区酒店免费接送；市外加收₩70,000",
-            "content": [
-              "济州市区酒店免费接送（济州机场附近及市中心）。",
-              "济州市以外接送（西归浦、爱月、城山）加收₩70,000，现场支付给司机。",
-              "预订时确认接送地点。"
-            ]
+            "title": "接送信息",
+            "content": "济州市内（济州机场周边及市中心）提供免费酒店接送。济州市外（西归浦、涯月、城山）接送需额外支付₩70,000费用，直接付给司机。预订时请确认接送地点。"
           },
           {
-            "id": "hydrangea",
-            "title": "绣球花花期说明",
-            "preview": "绣球花盛开期通常为5月下旬至7月中旬（高峰6月中）",
-            "content": [
-              "盛开期通常为5月下旬至7月中旬（高峰6月中），年度略有波动。",
-              "出发前1至2周向旅游服务团队确认最新花况。",
-              "时段以外的季节路线仍可出发，但绣球花景点不在花期——建议改选秋季粉黛乱子草或冬季山茶花行程。"
-            ]
+            "title": "绣球花盛开时间",
+            "content": "盛花期通常为5月下旬至7月中旬（高峰期为6月中旬），每年略有差异。建议在出行前1至2周向运营商确认最新花情。在此时间段之外，行程仍照常运行，但绣球花景点处于非盛花期——建议改选济州东部冬季雪景与茶花之旅或秋季粉黛乱子草之旅。"
           },
           {
-            "id": "walking",
-            "title": "步行强度与地形",
-            "preview": "中等难度",
-            "content": [
-              "中等难度。",
-              "城山日出峰火山口边缘登顶为30分钟石阶（有护栏，但费力；可选）。",
-              "选择略过登顶的旅客可走底部免费海岸步道。",
-              "休爱里、日出乐园及民俗村以平地为主。",
-              "弥天窟有不平整地面及石阶。"
-            ]
+            "title": "步行与地形",
+            "content": "中等难度。城山日出峰的山顶攀登约需30分钟，沿石级台阶而上并设有扶手——虽较费力，但标识清晰。不想攀登的游客可沿免费海岸步道游览。Hueree、日出乐园及民俗村地势较为平坦。迷川洞窟内地面不平，设有台阶。"
           },
           {
-            "id": "cancellation",
             "title": "取消政策",
-            "preview": "接送前24小时可免费取消",
-            "content": [
-              "接送前24小时可免费取消。",
-              "当天取消及无故缺席不予退款。",
-              "济州台风相关取消（夏末常见）：全额退款或改期。"
-            ]
+            "content": "接送前24小时内可免费取消。当日取消及未出行者不予退款。因济州台风（夏末较为频繁）导致的取消，可享全额退款或改期服务。"
           }
         ],
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "即时天气连动"
+            "label": "请参阅季节说明"
           },
           "tomorrow": {
             "temp": "—",
-            "label": "每日更新"
+            "label": "请参阅季节说明"
           },
-          "_seasonalSummary": "济州绣球花季（6至7月）温热潮湿，短暂阵雨频繁，气温通常在22至28°C。请备防晒用品及轻薄雨具。",
+          "_seasonalSummary": "Jeju in hydrangea season (June–July) is warm, humid, and prone to short rain showers. Temperatures of 22–28°C are typical, with high humidity. Bring sun protection and a light rain layer.",
           "_seasonalTemperatures": [
             {
-              "season": "绣球花季（5月下旬至7月中旬，6月中旬为高峰）",
+              "season": "Hydrangea season (late May to mid-July, peak mid-June)",
               "range": "22–28°C",
-              "notes": "潮湿；午后阵雨可能。绣球花在阴天或雨后早晨拍摄效果最佳。"
+              "notes": "Humid; afternoon showers possible. Hydrangeas actually photograph best on overcast or post-rain mornings."
             },
             {
-              "season": "夏末（8月）",
+              "season": "Late summer (Aug)",
               "range": "26–32°C",
-              "notes": "最热时段；绣球花过了高峰；台风风险增加。"
+              "notes": "Hottest period; hydrangea past peak; typhoon risk increasing."
             },
             {
-              "season": "非旺季（其余月份）",
-              "range": "视季节而定",
-              "notes": "行程全年可出发，但绣球花景点不在花期——建议选择应季替代行程。"
+              "season": "Off-season (rest of year)",
+              "range": "varies",
+              "notes": "Tour available year-round, but hydrangea stops are not in bloom — consider seasonal alternates."
             }
           ]
         },
         "seasonalVariations": [
           {
-            "season": "6月下旬至7月初",
-            "description": "两个日出乐园和休爱里的绣球花盛开高峰。最佳拍摄条件。行程在此时段最快售罄。"
+            "season": "6月下旬 – 7月上旬",
+            "highlight": "日出乐园与Hueree绣球花同步盛开，观赏效果最佳，拍照条件极佳。此时段行程预订最为紧俏。"
           },
           {
-            "season": "7月中下旬",
-            "description": "绣球花仍茂盛但开始凋谢。人潮稍少。"
+            "season": "7月中旬至下旬",
+            "highlight": "绣球花仍茂盛但开始凋谢，游客相对较少。"
           },
           {
-            "season": "花季外停办",
-            "description": "遗产核心亮点（城山＋城邑）仍具吸引力。建议改选应季替代行程：粉黛乱子草（秋季）、山茶花（冬季）、油菜花（春季）。"
+            "season": "非花期",
+            "highlight": "核心历史景点（城山＋城邑）仍值得游览。建议根据季节选择相应替代行程：粉黛乱子草（秋季）、茶花（冬季）、油菜花（春季）。"
           }
         ]
       }
@@ -1967,70 +2057,61 @@
     {
       "id": "booking_support",
       "section_html_id": null,
-      "component": "TourBookingSupportSection",
+      "component": "预订支持板块",
       "props": {
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "当地持照合法业者",
-            "description": "持牌韩国旅游旅游服务团队，备有完整保险",
+            "title": "持证本地运营商",
+            "description": "持有全额保险的韩国授权旅游运营商",
             "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600",
-            "body": "持牌韩国旅游旅游服务团队，备有完整保险"
+            "iconColor": "text-emerald-600"
           },
           {
             "icon": "route",
             "title": "路线专家",
-            "description": "精心设计的行程，而非千篇一律的路线",
+            "description": "精心定制的行程，非通用环线",
             "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600",
-            "body": "精心设计的行程，而非千篇一律的路线"
+            "iconColor": "text-sky-600"
           },
           {
             "icon": "users",
-            "title": "精心控制团体人数",
-            "description": "精准控制人数的小型巴士格式",
+            "title": "精选团队规模",
+            "description": "适合路线规模",
             "iconBg": "bg-amber-50/80",
-            "iconColor": "text-amber-600",
-            "body": "精准控制人数的小型巴士格式"
+            "iconColor": "text-amber-600"
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "即时通知",
+            "timing": "立即",
             "title": "即时确认",
-            "detail": "您将收到含行程摘要的预订确认通知。",
-            "description": "您将收到含行程摘要的预订确认通知。"
+            "detail": "含行程摘要的预订确认"
           },
           {
             "timing": "出发前12小时",
-            "title": "出发前12小时提醒",
-            "detail": "出发前1至2周提供最新绣球花花况更新。",
-            "description": "出发前1至2周提供最新绣球花花况更新。"
+            "title": "12小时提醒",
+            "detail": "天气更新及路线调整通知"
           },
           {
-            "timing": "前一晚",
+            "timing": "前一天晚上",
             "title": "最终接送信息",
-            "detail": "确认确切接送时间及司机∕导游联络方式。",
-            "description": "确认确切接送时间及司机∕导游联络方式。"
+            "detail": "精确接送时间及司机联系方式"
           },
           {
-            "timing": "行程当天早晨",
-            "title": "当日路线说明",
-            "detail": "出发当天早上根据最新现场状况提供简报。",
-            "description": "出发当天早上根据最新现场状况提供简报。"
+            "timing": "游览当天早晨",
+            "title": "当日路线备注",
+            "detail": "基于实时路况的晨间简报"
           },
           {
-            "timing": "行程途中",
-            "title": "景点逐一说明",
-            "detail": "每个景点提供即时现场讲解。",
-            "description": "每个景点提供即时现场讲解。"
+            "timing": "游览途中",
+            "title": "逐站游览提示",
+            "detail": "每处景点实时导览"
           },
           {
-            "timing": "行程结束后",
-            "title": "行程后支援",
-            "detail": "行程结束后提供后续建议及额外信息。",
-            "description": "行程结束后提供后续建议及额外信息。"
+            "timing": "游览结束后",
+            "title": "游后服务与支持",
+            "detail": "跟进服务与推荐建议"
           }
         ]
       }
@@ -2043,58 +2124,58 @@
         "staticQuestions": [
           {
             "id": "q1",
-            "question": "济州的绣球花何时盛开？",
-            "answer": "通常5月下旬至7月中旬（高峰约6月最后一周）。盛开时机因春季降雨量和温度每年波动约±1周。出发前1至2周向旅游服务团队确认最新状态。"
+            "question": "济州绣球花确切什么时候开放？",
+            "answer": "通常为五月下旬至七月中旬（盛花期为六月中旬），高峰约在六月最后一周。每年花期因春季降雨量和气温不同，可能提前或推迟约一周。建议在游览日期前1至2周查看最新动态。"
           },
           {
             "id": "q2",
-            "question": "入场费包含吗？",
-            "answer": "不含——每人全日预算约₩30,000至₩40,000。入场费：城山日出峰₩5,000、休爱里₩13,000、日出乐园₩12,000、城邑民俗村免费。"
+            "question": "门票费用包含在内吗？",
+            "answer": "不含——全天预计人均花费约₩30,000至₩40,000。门票详情：城山日出峰₩5,000，休丽绣球花园₩13,000，日出乐园₩12,000，城邑民俗村免费。"
           },
           {
             "id": "q3",
-            "question": "为什么万丈窟关闭了？",
-            "answer": "万丈窟熔岩管因安全修缮暂时关闭（状态视预订日期而定）。标准备选安排为日出乐园的弥天窟，提供类似的熔岩管体验，已包含在本路线中。"
+            "question": "万丈窟为何关闭？",
+            "answer": "万丈窟熔岩洞穴因安全维修暂时关闭（状态不定，请以预订日实际情况为准）。常规替代方案为日出乐园内的迷川洞穴，体验与熔岩洞穴相似，已纳入本路线行程。"
           },
           {
             "id": "q4",
-            "question": "这与西南部绣球花行程有何不同？",
-            "answer": "本路线涵盖休爱里＋日出乐园绣球花，加上东海岸UNESCO景点（城山日出峰、城邑民俗村）。西南部行程涵盖翰林公园＋山茶花丘绣球花，加上南海岸景点（天帝渊瀑布、柱状节理海崖）。选择东部路线体验UNESCO高峰；选择西部路线体验更密集的花卉园林。"
+            "question": "这条路线与西部/南部绣球花路线有何不同？",
+            "answer": "本路线涵盖休丽及日出乐园的绣球花景观，以及东海岸联合国教科文组织遗址（城山、城邑）。西部/南部路线（我们的西部与南部绣球花路线）涵盖翰林公园与山茶山丘的绣球花，以及南海岸景点（天帝渊瀑布、柱状节理带）。如希望游览联合国教科文组织名胜，请选择东部路线；如偏好欣赏更集中的花卉园区，则选择西部路线。"
           },
           {
             "id": "q5",
-            "question": "可以以私人行程方式参加吗？",
-            "answer": "同一旅游服务团队提供私人版本的绣球花行程，可在济州任何地点接送，时间可定制化。如果您是4人以上的团体，或需要济州市以外接送且不想支付₩70,000附加费，请询问私人版本。"
+            "question": "可以预订私人包车游览吗？ > **注：** 第2项（`bg-amber-50/80`）为Tailwind CSS样式类名，第21项（`TourFaqSection`）为代码组件名，均保留原文不译。",
+            "answer": "同一运营商提供绣球花游览的私人定制版本，可在济州岛任意地点提供酒店接送，出行时间灵活可调。产品页面不同；如您为4人及以上团体，或希望在济州市以外接送且不愿支付额外₩70,000附加费，请咨询私人定制选项。"
           },
           {
             "id": "first-time",
-            "question": "对于初次游览东济州的旅客，这是好选择吗？",
-            "answer": "是的——在一天之内涵盖了该地区最具代表性的景点，行程均衡丰富。"
+            "question": "这是初次游览济州岛东部的好选择吗？",
+            "answer": "是的——一天行程涵盖该地区最具特色的景点，安排均衡合理。"
           },
           {
             "id": "walking",
-            "question": "步行难度高吗？",
-            "answer": "全日较为活跃，步行量较大。"
+            "question": "步行难度大吗？",
+            "answer": "这是行程较为紧凑的一天，包含多个以步行为主的景点。"
           },
           {
             "id": "family",
-            "question": "这个行程适合家庭吗？",
-            "answer": "适合孩子能够应付全日动态行程的家庭。"
+            "question": "这个游览适合家庭出行吗？",
+            "answer": "适合孩子能承受全天活动强度的家庭。"
           },
           {
             "id": "seniors",
-            "question": "年长者可以舒适地参加吗？",
-            "answer": "仅推荐能应付石阶及不平整路面的活跃年长旅客。"
+            "question": "老年人能舒适地参加吗？",
+            "answer": "仅推荐给能够应对楼梯及不平整地面的活跃老年人。"
           },
           {
             "id": "children",
-            "question": "建议的最低参加年龄是多少？",
-            "answer": "约10岁或以上——能够应付全日节奏及上述步行说明的儿童。"
+            "question": "推荐的最低参团年龄是多少？",
+            "answer": "最适合10岁及以上——能适应全天行程节奏且满足上述步行要求的儿童。"
           },
           {
             "id": "rain",
-            "question": "下雨天行程还会进行吗？",
-            "answer": "小雨没问题；大雨可能调整部分景点安排。"
+            "question": "下雨天可以正常出行吗？",
+            "answer": "小雨无碍；大雨可能会调整部分景点安排。"
           }
         ]
       }
@@ -2144,13 +2225,13 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "可订状态将在支付步骤中确认。",
+        "note": "checkout_tour_id 在运行时通过 Supabase / 环境变量解析，不属于静态 JSONB 的一部分。",
         "price": {
           "amountLabel": "",
           "currency": "USD",
-          "per": "人",
-          "priceSource": "direct_rate",
-          "priceNote": "小团价格尚未在商品信息中确认。姊妹产品（西南部绣球花路线）约为每人89–96美元。确认后，AtoC Korea官网直售价将按九折执行。",
+          "per": "person",
+          "priceSource": "getyourguide_t662120",
+          "priceNote": "小团体价格尚未从列表信息中最终确认。姐妹线路（济州西部与南部绣球花路线）每人约 $89–96。价格确认后，AtoC Korea 销售价格统一享受九折优惠。",
           "discountPercent": 10
         }
       }
@@ -2176,19 +2257,19 @@
       "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
       },
       "v17_batch4_enhancement": {
         "date": "2026-04-29",
-        "description": "Batch 4 deep enhancement — descriptions raised to 700-1300+ chars; KB-backed metadata on all attraction stops; product profile recalibrated with verified-fact 0-1 float scores. Time-weighted indoor_ratio computation per Fix 1 methodology.",
+        "description": "Batch 4 deep enhancement — descriptions raised to 700-1300+ chars; KB-backed metadata on all attraction stops; matching_profile recalibrated with verified-fact 0-1 float scores. Time-weighted indoor_ratio computation per Fix 1 methodology.",
         "_score_audit": {
           "_methodology": "0-1 float scale. Indoor ratio computed time-weighted with Fix 1 methodology applied to Seongeup (30%) and Ilchul Land (30%).",
           "deltas_applied": {
             "unesco_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "Verified: Seongsan = UNESCO World Heritage. Tour name says 'Seongeup UNESCO' but Seongeup is Korean National Folklore Cultural Heritage, NOT UNESCO. 1/6 stops actually UNESCO. 0.85 reflects strong cultural-heritage anchor + 1 UNESCO."
             },
@@ -2203,12 +2284,12 @@
               "reasoning": "Verified: Hamdeok 0.5 km flat, Seongeup ~1 km flat olle, Seongsan photo+optional climb, Micheon 365 m flat, Ilchul Land 1 km flat, Hueree 1.5–2 km flat. Total ~5 km flat. 0.55 calibrated — gentler than mechanical 0.6."
             },
             "scenic_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "Verified: 6 distinct landscapes (turquoise beach, Joseon walled town, UNESCO peak, lava tube + gardens, hydrangea fields). 0.85 — strong but not catalog-leading (west-south tour at 0.95)."
             },
             "photo_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.9,
               "reasoning": "Verified: 6 hero shots + dedicated festival photography (hydrangea Hueree). 0.90 calibrated."
             },
@@ -2223,7 +2304,7 @@
               "reasoning": "CORRECTION using time-weighted method (Fix 1 + Batch 4 methodology): 105.75 indoor / 390 total = 0.27 with lunch; 57.75 / 330 = 0.18 without. Catalog 0.20 represents both. Mechanical 0.4 overstated."
             },
             "weather_sensitivity": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "VERIFIED 0.85 — hydrangea blooms are weather-affected; outdoor stops dominate; Hamdeok beach + Seongsan exposed. Higher than typical because of hydrangea festival's bloom-window dependency."
             },
@@ -2233,7 +2314,7 @@
               "reasoning": "DOWNGRADED — Hueree's hydrangea greenhouse is rain refuge, Micheon Cave + Seongeup hanok provide partial shelter. But Hamdeok + Seongsan + outdoor hydrangea fields all rain-vulnerable. 0.50 verified."
             },
             "first_time_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "Verified: covers Jeju's iconic UNESCO + folk heritage + flower festival diversity. Season-locked (May–August primary). 0.85 — strong first-Jeju summer overview."
             },
@@ -2263,12 +2344,12 @@
               "reasoning": "UPGRADED — Hamdeok IS the beach component (Top 3 Jeju). Mechanical 0.4 understated. 0.65 calibrated."
             },
             "culture_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.75,
               "reasoning": "Verified: Seongeup 600-year town + Seongsan haenyeo demo + Hueree Jeju Cultural Village (traditional hanok). 3 cultural anchors, 3 nature/garden anchors. 0.75 calibrated."
             },
             "nature_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.85,
               "reasoning": "Verified: beach + UNESCO peak + flower park + lava tube. Strong but not catalog-leading because of substantial cultural component. 0.85."
             }
@@ -2279,8 +2360,8 @@
           "VisitKorea",
           "Visit Jeju",
           "Jeju Tourism Organization",
-          "市场参考资料",
-          "市场参考资料",
+          "Trazy",
+          "KKday",
           "NOL World",
           "Hueree Park official"
         ]
