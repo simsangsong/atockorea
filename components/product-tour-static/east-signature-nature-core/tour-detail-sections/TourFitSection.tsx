@@ -23,11 +23,6 @@ import {
 import { cn } from "@/lib/utils";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
-/**
- * `whyTourWorks.routeLogicSections[].icon` → Lucide.
- * East/Southwest: sun, mountain, wind. Jeju Grand Highlights: clock-3, mountain, wind.
- * Bus tours: bus, footprints, cloud-rain.
- */
 const LOGIC_ICONS = {
   sun: Sun,
   mountain: Mountain,
@@ -42,40 +37,19 @@ const ROUTE_LOGIC_ICON_FALLBACK = Sun;
 
 type LucideIcon = ComponentType<{ className?: string; strokeWidth?: number }>;
 
-/** Pick a persona-evocative icon from free-text fit/non-fit copy across locales. */
 function pickPersonaIcon(raw: string): LucideIcon {
   const t = raw.toLowerCase();
-
-  // Stroller / baby / very young children → highest priority because they often co-mention "family"
   if (/stroller|유모차|ベビーカー|婴儿车|嬰兒車|cochecito/.test(t)) return Baby;
   if (/very young|young child|toddler|어린|유아|幼児|幼い|幼儿|幼兒|niños pequeños|niño pequeñ/.test(t)) return Baby;
-
-  // Mobility / stairs / cave warnings
   if (/stair|cave|동굴|계단|階段|楼梯|樓梯|escaleras|cuevas/.test(t)) return AlertTriangle;
   if (/mobilit|wheelchair|휠체어|車いす|轮椅|輪椅|movilidad/.test(t)) return AlertTriangle;
-
-  // Couples
   if (/couple|커플|커풀|カップル|情侣|情侶|pareja/.test(t)) return Heart;
-
-  // Older / senior / elderly
   if (/older|senior|elderly|고령|노인|シニア|高齢|年配|长者|長者|老年|mayor|adulto mayor/.test(t)) return PersonStanding;
-
-  // First-time visitor
   if (/first[-\s]?time|first[-\s]?visit|new to|처음|첫\s?방문|初めて|初次|首次|primera vez/.test(t)) return Sparkles;
-
-  // Walking / hiking pace
   if (/walk|trek|hik|걷|보행|걸|歩|徒步|散步|步行|caminar|caminata/.test(t)) return Footprints;
-
-  // Pace / full-day struggle
   if (/pace|full[-\s]?day|long day|페이스|속도|ペース|节奏|節奏|ritmo/.test(t)) return Clock3;
-
-  // Family / adult family — keep AFTER stroller check above
   if (/famil|가족|家族|家庭|familia/.test(t)) return Users;
-
-  // Outdoor / nature / mountain
   if (/mountain|hill|trail|산|언덕|코스|山|trilla|sendero/.test(t)) return Mountain;
-
-  // Default
   return Compass;
 }
 
@@ -95,34 +69,51 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
         <p className="mt-1.5 text-[13px] leading-relaxed tracking-wide text-muted-foreground">{sectionUi.fitSubtitle}</p>
       </div>
 
-      <div className="tour-fit-premium-card tour-why-tour-works-card relative overflow-hidden p-4 sm:p-5 rounded-[24px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
-        <span aria-hidden className="tour-fit-premium-card__sheen" />
-        <div className="relative">
-          <div className="flex items-center gap-2 mb-2.5">
-            <div className="tour-fit-column__badge tour-fit-column__badge--positive">
-              <Check className="h-3 w-3" strokeWidth={2.75} />
-            </div>
-            <h3 className="tour-fit-micro-label">{sectionUi.fitBestForLabel}</h3>
+      {/* ── Dark navy "Best For" card ── */}
+      <div
+        className="relative overflow-hidden rounded-[24px] shadow-[0_2px_8px_rgba(10,18,30,0.20),0_20px_48px_-16px_rgba(10,18,30,0.32)]"
+        style={{ background: "linear-gradient(135deg, #111d31 0%, #0c1622 60%, #091220 100%)" }}
+      >
+        {/* Top shimmer line */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-px"
+          style={{ background: "rgba(255,255,255,0.08)" }}
+        />
+
+        <div className="p-4 sm:p-5">
+          {/* Best For header */}
+          <div className="mb-3 flex items-center gap-2">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 ring-1 ring-emerald-400/25">
+              <Check className="h-3 w-3 text-emerald-400" strokeWidth={2.75} />
+            </span>
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.10em] text-emerald-400/85">
+              {sectionUi.fitBestForLabel}
+            </h3>
           </div>
+
+          {/* Best For items */}
           <ul className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
             {(whyTourWorks.bestFor ?? []).map((item, i) => {
               const Icon = pickPersonaIcon(item);
               return (
                 <li
                   key={i}
-                  className="flex items-start gap-2.5 rounded-lg bg-emerald-50/60 px-2.5 py-1.5 ring-1 ring-emerald-100/70"
+                  className="flex items-start gap-2.5 rounded-lg px-2.5 py-2"
+                  style={{ background: "rgba(255,255,255,0.06)", boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.08)" }}
                 >
-                  <span className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-emerald-100/90 text-emerald-700">
+                  <span className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
                     <Icon className="h-3 w-3" strokeWidth={2} />
                   </span>
-                  <span className="text-[12.5px] leading-snug text-foreground">{item}</span>
+                  <span className="text-[12.5px] leading-snug text-white/85">{item}</span>
                 </li>
               );
             })}
           </ul>
 
+          {/* Less Ideal — collapsible on dark */}
           {lessIdealItems.length > 0 && (
-            <div className="mt-3 border-t border-border/50 pt-3">
+            <div className="mt-3 border-t pt-3" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
               <button
                 type="button"
                 onClick={() => setShowLessIdeal((v) => !v)}
@@ -130,17 +121,19 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
                 className="group flex w-full items-center justify-between gap-2 text-left"
               >
                 <div className="flex items-center gap-2">
-                  <div className="tour-fit-column__badge tour-fit-column__badge--negative">
-                    <X className="h-3 w-3" strokeWidth={2.75} />
-                  </div>
-                  <h3 className="tour-fit-micro-label">{sectionUi.fitLessIdealLabel}</h3>
-                  <span className="text-[10.5px] font-medium tabular-nums text-muted-foreground">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15">
+                    <X className="h-3 w-3 text-white/55" strokeWidth={2.75} />
+                  </span>
+                  <h3 className="text-[11px] font-semibold uppercase tracking-[0.10em] text-white/50">
+                    {sectionUi.fitLessIdealLabel}
+                  </h3>
+                  <span className="text-[10.5px] font-medium tabular-nums text-white/35">
                     {lessIdealItems.length}
                   </span>
                 </div>
                 <ChevronDown
                   className={cn(
-                    "h-4 w-4 flex-shrink-0 text-muted-foreground transition-transform duration-200",
+                    "h-4 w-4 flex-shrink-0 text-white/40 transition-transform duration-200",
                     showLessIdeal && "rotate-180",
                   )}
                   strokeWidth={2}
@@ -160,12 +153,13 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
                       return (
                         <li
                           key={i}
-                          className="flex items-start gap-2.5 rounded-lg bg-muted/45 px-2.5 py-1.5 ring-1 ring-border/50"
+                          className="flex items-start gap-2.5 rounded-lg px-2.5 py-2"
+                          style={{ background: "rgba(255,255,255,0.03)", boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.06)" }}
                         >
-                          <span className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-background text-muted-foreground ring-1 ring-border/60">
+                          <span className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-white/[0.08] text-white/45 ring-1 ring-white/10">
                             <Icon className="h-3 w-3" strokeWidth={1.9} />
                           </span>
-                          <span className="text-[12.5px] leading-snug text-muted-foreground">{item}</span>
+                          <span className="text-[12.5px] leading-snug text-white/45">{item}</span>
                         </li>
                       );
                     })}
@@ -176,15 +170,22 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
           )}
         </div>
 
-        <div className="tour-fit-premium-card__note mt-4 pt-3">
-          <p className="tour-fit-note text-muted-foreground">
-            <span className="font-semibold text-foreground">{sectionUi.fitFamiliesPrefix}</span> {sectionUi.fitFamiliesText}
-            <span className="font-semibold text-foreground">{sectionUi.fitSeniorsPrefix}</span> {sectionUi.fitSeniorsText}
+        {/* Families / Seniors note strip */}
+        <div
+          className="border-t px-4 py-3 sm:px-5"
+          style={{ borderColor: "rgba(255,255,255,0.07)" }}
+        >
+          <p className="text-[11.5px] leading-relaxed text-white/45">
+            <span className="font-semibold text-white/70">{sectionUi.fitFamiliesPrefix}</span>{" "}
+            {sectionUi.fitFamiliesText}
+            <span className="font-semibold text-white/70">{sectionUi.fitSeniorsPrefix}</span>{" "}
+            {sectionUi.fitSeniorsText}
           </p>
         </div>
       </div>
 
-      <div className="tour-why-tour-works-card overflow-hidden rounded-[24px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
+      {/* ── Route logic accordion (stays white) ── */}
+      <div className="overflow-hidden rounded-[24px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
         <button
           type="button"
           onClick={() => setShowLogic(!showLogic)}
@@ -206,7 +207,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
 
         <div className={cn("grid transition-[grid-template-rows] duration-300 ease-out", showLogic ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
           <div className="overflow-hidden">
-            <div className="tour-fit-route-logic-inner space-y-4 border-t border-border/60 p-4">
+            <div className="space-y-4 border-t border-border/60 p-4">
               {(whyTourWorks.routeLogicSections ?? []).map((section) => {
                 const Icon =
                   LOGIC_ICONS[section.icon as keyof typeof LOGIC_ICONS] ?? ROUTE_LOGIC_ICON_FALLBACK;
@@ -222,7 +223,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
                       {(section.items ?? []).map((item, i) => (
                         <div key={i}>
                           <p className="text-[12.5px] font-medium leading-snug tracking-tight text-foreground">{item.label}</p>
-                          <p className="tour-fit-note mt-0.5 text-muted-foreground">{item.detail}</p>
+                          <p className="text-[11.5px] leading-relaxed text-muted-foreground mt-0.5">{item.detail}</p>
                         </div>
                       ))}
                     </div>

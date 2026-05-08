@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, X } from "lucide-react";
+import { Check, Package, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { PracticalAccordionItem } from "@/components/product-tour-static/_shared/tourProductDetailSectionTypes";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
@@ -10,7 +10,7 @@ export type TourIncludedSectionProps = {
   sectionUi: TourProductSectionUiV1;
 };
 
-export function TourIncludedSection({ practicalAccordionItems, sectionUi }: TourIncludedSectionProps) {
+export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSectionProps) {
   const item = practicalAccordionItems.find((i) => i.variant === "included");
   if (!item || !item.content?.length) return null;
 
@@ -32,11 +32,22 @@ export function TourIncludedSection({ practicalAccordionItems, sectionUi }: Tour
       <div
         className={cn(
           "overflow-hidden rounded-2xl",
-          "ring-1 ring-slate-900/[0.07]",
+          "ring-1 ring-emerald-900/[0.10]",
           "shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_10px_-2px_rgba(15,23,42,0.06),0_18px_36px_-14px_rgba(15,23,42,0.14)]",
         )}
       >
-        {/* Included column */}
+        {/* Emerald header strip */}
+        <div
+          className="flex items-center gap-2.5 px-5 py-3"
+          style={{ background: "linear-gradient(135deg, #059669 0%, #047857 100%)" }}
+        >
+          <Package className="h-4 w-4 text-white/90" strokeWidth={1.8} />
+          <span className="text-[12px] font-semibold tracking-wide text-white">
+            Tour Package Contents
+          </span>
+        </div>
+
+        {/* Included items */}
         <div className="bg-white px-5 py-4">
           <div className="mb-3 flex items-center gap-2">
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 ring-1 ring-emerald-200/60">
@@ -59,9 +70,9 @@ export function TourIncludedSection({ practicalAccordionItems, sectionUi }: Tour
           </ul>
         </div>
 
-        {/* Not-included column — slightly tinted surface to distinguish */}
+        {/* Not-included */}
         {excludedItems.length > 0 && (
-          <div className="border-t border-slate-100 bg-slate-50/60 px-5 py-4">
+          <div className="border-t border-slate-100 bg-slate-50/70 px-5 py-4">
             <div className="mb-3 flex items-center gap-2">
               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-rose-50 ring-1 ring-rose-200/60">
                 <X className="h-3 w-3 text-rose-500" strokeWidth={2.5} />
