@@ -116,7 +116,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
           )}
         >
           <div className="overflow-hidden">
-            <div className="border-t bg-white px-4 pt-4 pb-3 sm:px-5" style={{ borderColor: "rgba(200,149,108,0.20)" }}>
+            <div className="border-t px-4 pt-4 pb-3 sm:px-5" style={{ borderColor: "rgba(200,149,108,0.20)", background: "#fdf4e8" }}>
               <ul className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
                 {bestForItems.map((item, i) => {
                   const Icon = pickPersonaIcon(item);
@@ -189,7 +189,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
             </div>
 
             {/* Families / Seniors note */}
-            <div className="border-t bg-slate-50/40 px-4 py-3 sm:px-5" style={{ borderColor: "rgba(200,149,108,0.12)" }}>
+            <div className="border-t px-4 py-3 sm:px-5" style={{ borderColor: "rgba(200,149,108,0.18)", background: "rgba(200,149,108,0.06)" }}>
               <p className="text-[11.5px] leading-relaxed text-muted-foreground">
                 <span className="font-semibold text-foreground">{sectionUi.fitFamiliesPrefix}</span>{" "}
                 {sectionUi.fitFamiliesText}

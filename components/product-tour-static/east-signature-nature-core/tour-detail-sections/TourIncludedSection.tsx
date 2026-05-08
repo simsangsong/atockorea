@@ -72,7 +72,7 @@ export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSec
         >
           <div className="overflow-hidden">
             {/* Included */}
-            <div className="border-t border-emerald-100/70 bg-white px-5 pt-4 pb-3">
+            <div className="border-t border-emerald-100/70 px-4 pt-4 pb-3 sm:px-5" style={{ background: "#f0faf4" }}>
               <div className="mb-3 flex items-center gap-2">
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 ring-1 ring-emerald-200/60">
                   <Check className="h-3 w-3 text-emerald-600" strokeWidth={2.5} />
@@ -81,10 +81,13 @@ export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSec
                   Included
                 </p>
               </div>
-              <ul className="space-y-2.5">
+              <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                 {includedItems.map((line, i) => (
-                  <li key={i} className="flex items-start gap-2.5">
-                    <Check className="mt-[3px] h-3.5 w-3.5 flex-shrink-0 text-emerald-500" strokeWidth={2.5} />
+                  <li
+                    key={i}
+                    className="flex items-start gap-2.5 rounded-xl bg-white px-3 py-2.5 shadow-[0_1px_3px_rgba(0,0,0,0.05)] ring-1 ring-emerald-100/80"
+                  >
+                    <Check className="mt-[2px] h-3.5 w-3.5 flex-shrink-0 text-emerald-500" strokeWidth={2.5} />
                     <span className="text-[13px] leading-snug text-foreground">{line}</span>
                   </li>
                 ))}
@@ -93,7 +96,7 @@ export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSec
 
             {/* Not included */}
             {excludedItems.length > 0 && (
-              <div className="border-t border-slate-100 bg-slate-50/60 px-5 py-4">
+              <div className="border-t border-rose-100/50 px-4 py-4 sm:px-5" style={{ background: "#fff5f5" }}>
                 <div className="mb-3 flex items-center gap-2">
                   <span className="flex h-5 w-5 items-center justify-center rounded-full bg-rose-50 ring-1 ring-rose-200/60">
                     <X className="h-3 w-3 text-rose-500" strokeWidth={2.5} />
@@ -102,10 +105,13 @@ export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSec
                     Not included
                   </p>
                 </div>
-                <ul className="space-y-2.5">
+                <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                   {excludedItems.map((line, i) => (
-                    <li key={i} className="flex items-start gap-2.5">
-                      <X className="mt-[3px] h-3.5 w-3.5 flex-shrink-0 text-rose-400/70" strokeWidth={2.5} />
+                    <li
+                      key={i}
+                      className="flex items-start gap-2.5 rounded-xl bg-white/80 px-3 py-2.5 shadow-[0_1px_2px_rgba(0,0,0,0.04)] ring-1 ring-rose-100/70"
+                    >
+                      <X className="mt-[2px] h-3.5 w-3.5 flex-shrink-0 text-rose-400/70" strokeWidth={2.5} />
                       <span className="text-[13px] leading-snug text-muted-foreground">{line}</span>
                     </li>
                   ))}
