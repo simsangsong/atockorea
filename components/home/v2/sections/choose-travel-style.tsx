@@ -50,9 +50,6 @@ export function ChooseTravelStyle() {
           <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-800 tracking-tight mb-2">
             {t("premium.v2.chooseStyle.title")}
           </h2>
-          <p className="text-slate-600 text-[13px] md:text-[14px] font-medium max-w-lg mx-auto leading-relaxed">
-            {t("premium.v2.chooseStyle.subtitle")}
-          </p>
         </div>
 
         <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-none md:mx-0 md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0 md:snap-none">
