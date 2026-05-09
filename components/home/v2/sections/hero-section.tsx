@@ -159,6 +159,7 @@ export function HeroSection() {
               <div className="rounded-xl border border-amber-100 bg-white/80 px-2.5 py-3 text-center shadow-[0_1px_4px_rgba(180,130,60,0.07)]">
                 <span className="block text-[18px] font-extrabold leading-none tracking-tight text-slate-900">8</span>
                 <span className="mt-1.5 block text-[9px] font-medium uppercase tracking-wide text-slate-400">platforms</span>
+                <span className="mt-1 block text-[8px] leading-tight text-slate-400">KLO · VIA · GYG · KKD +4</span>
               </div>
             </div>
 
