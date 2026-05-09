@@ -14,6 +14,8 @@ import {
 } from "@/components/product-tour-static/_shared/TourStopDetailDrawer";
 
 const FREE_ADMISSION_PATTERNS = /\bfree\b|무료|à la carte|included|포함/i;
+// EN + KO + ZH + JA pickup/departure category patterns
+const PICKUP_STOP_RX = /pickup|departure|transit|hotel.*pickup|pick.up|픽업|出発|出発地|출발|接送|接机/i;
 
 function StopCard({
   stop,
@@ -148,8 +150,20 @@ export function TourTimelineSection({
 }: TourTimelineSectionProps) {
   const [drawerStop, setDrawerStop] = useState<TourStopDrawerStop | null>(null);
   const [internalPortIndex, setInternalPortIndex] = useState(0);
-  const total = itineraryStops.length;
   const hasRouteVariants = Array.isArray(routeVariants) && routeVariants.length > 0;
+
+  // If stop #1 is a pickup stop and a pickup_dropoff card already renders above,
+  // strip it from the numbered timeline and renumber remaining stops from 1.
+  const firstStop = itineraryStops[0];
+  const firstIsPickup =
+    !hasRouteVariants &&
+    !!pickup_dropoff &&
+    !!firstStop &&
+    PICKUP_STOP_RX.test((firstStop.category ?? "") + " " + (firstStop.name ?? ""));
+  const displayStops = firstIsPickup
+    ? itineraryStops.slice(1).map((s, i) => ({ ...s, number: i + 1 }))
+    : itineraryStops;
+  const total = displayStops.length;
   const effectivePortIndex = onPortChange ? selectedPortIndex : internalPortIndex;
 
   const handlePortChange = (index: number) => {
@@ -183,7 +197,7 @@ export function TourTimelineSection({
             sectionUi={sectionUi}
           />
         ) : (
-          itineraryStops.map((stop) => (
+          displayStops.map((stop) => (
             <StopCard
               key={stop.number}
               stop={stop}

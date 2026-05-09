@@ -100,34 +100,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "行程时间",
-      "value": "9小时（通常08:30–17:30）"
+      "icon": "camera",
+      "label": "拍照潜力",
+      "value": "高",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "团体规模",
-      "value": "小团，英中双语导游"
-    },
-    {
-      "icon": "calendar",
-      "label": "最佳季节",
-      "value": "5月下旬至7月中旬（6月中旬顶峰）；全年可运营，非花季花卉效果有限"
-    },
-    {
-      "icon": "hotel",
-      "label": "接送信息",
-      "value": "济州市内酒店免费接送；市外+₩70,000"
+      "icon": "mountain",
+      "label": "景观丰富度",
+      "value": "高",
+      "level": 5
     },
     {
       "icon": "footprints",
       "label": "步行强度",
-      "value": "中等——城山日出峰需约30分钟上坡（可跳过）"
+      "value": "适中",
+      "level": 3
     },
     {
-      "icon": "ticket",
-      "label": "费用包含",
-      "value": "车辆、执照司导、油费/过路费/停车费。不含：景点入场费、午餐"
+      "icon": "cloud-rain",
+      "label": "雨天适合度",
+      "value": "有限",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "亲子适合度",
+      "value": "良好",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "行程节奏",
+      "value": "专注",
+      "level": 3
     }
   ],
   "galleryItems": [

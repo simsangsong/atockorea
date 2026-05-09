@@ -89,23 +89,23 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
 
           <TourTabsNav subnavItems={vm.subnavItems} />
 
-        <section id="overview" className="mx-3 mt-6 lg:mx-0">
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-8">
+        <section id="overview" className="mx-3 mt-5 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
             <TourAtAGlance glanceItems={vm.glanceItems} sectionUi={vm.sectionUi} />
           </div>
         </section>
 
-        <section className="mx-3 mt-6 lg:mx-0">
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
+        <section className="mx-3 mt-4 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
             <TourAtmosphereGallery galleryItems={vm.galleryItems} sectionUi={vm.sectionUi} />
           </div>
         </section>
 
         <section
           id="itinerary"
-          className="mx-3 mt-6 lg:mx-0"
+          className="mx-3 mt-4 lg:mx-0"
         >
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-10 pb-4 space-y-9">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-6 pb-3 space-y-7">
             <TourDayFlowSection
               routeFlowStops={vm.routeFlowStops}
               routePhases={vm.routePhases}
@@ -114,7 +114,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
               itineraryStops={vm.itineraryStops}
             />
           </div>
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-2 pb-6">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-2 pb-4">
             <TourTimelineSection
               itineraryStops={vm.itineraryStops}
               sectionUi={vm.sectionUi}
@@ -127,8 +127,8 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
         </section>
 
         {vm.pickup_dropoff ? (
-          <section id="pickup-dropoff" className="mx-3 mt-6 lg:mx-0">
-            <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
+          <section id="pickup-dropoff" className="mx-3 mt-4 lg:mx-0">
+            <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
               <TourPickupDropoffSection
                 pickup_dropoff={vm.pickup_dropoff}
                 sectionUi={vm.sectionUi}
@@ -137,8 +137,8 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           </section>
         ) : null}
 
-        <section id="included" className="mx-3 mt-6 lg:mx-0">
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
+        <section id="included" className="mx-3 mt-4 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
             <TourIncludedSection
               practicalAccordionItems={vm.practicalAccordionItems}
               sectionUi={vm.sectionUi}
@@ -146,14 +146,14 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           </div>
         </section>
 
-        <section id="details" className="mx-3 mt-6 lg:mx-0">
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
+        <section id="details" className="mx-3 mt-4 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
             <TourFitSection whyTourWorks={vm.whyTourWorks} sectionUi={vm.sectionUi} />
           </div>
         </section>
 
-        <section className="mx-3 mt-6 lg:mx-0">
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
+        <section className="mx-3 mt-4 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
             <TourPracticalDetails
               practicalAccordionItems={vm.practicalAccordionItems}
               practicalWeatherStatic={vm.practicalWeatherStatic}
@@ -163,8 +163,8 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           </div>
         </section>
 
-        <section className="mx-3 mt-6 lg:mx-0">
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
+        <section className="mx-3 mt-4 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
             <TourBookingSupportSection
               bookingTrustItems={vm.bookingTrustItems}
               bookingSupportSteps={vm.bookingSupportSteps}
@@ -173,14 +173,14 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           </div>
         </section>
 
-        <section id="faq" className="mx-3 mt-6 lg:mx-0">
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
+        <section id="faq" className="mx-3 mt-4 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
             <TourFaqSection staticQuestions={vm.staticQuestions} sectionUi={vm.sectionUi} />
           </div>
         </section>
 
-        <section id="reviews" className="mx-3 mt-6 lg:mx-0">
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
+        <section id="reviews" className="mx-3 mt-4 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
             <TourReviewsSection
               guestReviews={vm.guestReviews}
               reviewsSummary={vm.reviewsSummary}
@@ -190,8 +190,8 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
         </section>
 
         {recommendations && recommendations.length > 0 ? (
-          <section className="mx-3 mt-6 lg:mx-0">
-            <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
+          <section className="mx-3 mt-4 lg:mx-0">
+            <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
               <TourRecommendationsSection recommendations={recommendations} sectionUi={vm.sectionUi} />
             </div>
           </section>

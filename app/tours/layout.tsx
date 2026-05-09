@@ -1,10 +1,10 @@
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 export const metadata = generateSEOMetadata({
-  title: 'All Tours - Explore Korea',
-  description: 'Browse all available tours in Korea. Find the perfect day tour in Seoul, Busan, or Jeju. Compare prices, read reviews, and book directly with licensed travel agencies.',
+  title: 'Korea Tours — Discover Jeju, Busan & Seoul',
+  description: 'Curated small-group day tours across Korea — UNESCO heritage sites, volcanic Jeju, coastal Busan & Seoul day trips. Book directly with licensed Korean travel agencies.',
   url: '/tours',
-  tags: ['Korea tours', 'Seoul tours', 'Busan tours', 'Jeju tours', 'day tours'],
+  tags: ['Korea tours', 'Jeju tours', 'Busan tours', 'Seoul day trips', 'small group tours', 'UNESCO Korea', 'cruise shore excursions Korea'],
 });
 
 export default function ToursLayout({

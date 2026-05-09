@@ -100,34 +100,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "行程時間",
-      "value": "9小時（通常08:30–17:30）"
+      "icon": "camera",
+      "label": "拍照潛力",
+      "value": "高",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "團體規模",
-      "value": "小團體，英中雙語導遊"
-    },
-    {
-      "icon": "calendar",
-      "label": "最佳季節",
-      "value": "5月下旬至7月中旬（6月中旬頂峰）；全年可運營，非花季花卉效果有限"
-    },
-    {
-      "icon": "hotel",
-      "label": "接送資訊",
-      "value": "濟州市內飯店免費接送；市外+₩70,000"
+      "icon": "mountain",
+      "label": "景觀豐富度",
+      "value": "高",
+      "level": 5
     },
     {
       "icon": "footprints",
       "label": "步行強度",
-      "value": "中等——城山日出峰需約30分鐘上坡（可跳過）"
+      "value": "適中",
+      "level": 3
     },
     {
-      "icon": "ticket",
-      "label": "費用包含",
-      "value": "車輛、執照司導、油費/過路費/停車費。不含：景點入場費、午餐"
+      "icon": "cloud-rain",
+      "label": "雨天適合度",
+      "value": "有限",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "親子適合度",
+      "value": "良好",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "行程節奏",
+      "value": "集中",
+      "level": 3
     }
   ],
   "galleryItems": [

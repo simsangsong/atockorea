@@ -101,34 +101,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "行程时间",
-      "value": "约9小时（08:30首班接送，约18:00送达）"
+      "icon": "camera",
+      "label": "拍照潜力",
+      "value": "高",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "团体规模",
-      "value": "小团，迷您大巴，英中双语导游"
-    },
-    {
-      "icon": "map-pin",
-      "label": "接送信息",
-      "value": "Ocean Suites 08:30 / 济州机场3号门（3楼）08:45 / LOTTE City 08:55 / W Jeju 09:05 / 神话世界 09:15 / 西归浦市（酒店区）09:30"
-    },
-    {
-      "icon": "star",
-      "label": "旅客评价",
-      "value": "648条评论综合4.9/5"
+      "icon": "mountain",
+      "label": "景观丰富度",
+      "value": "高",
+      "level": 5
     },
     {
       "icon": "footprints",
       "label": "步行强度",
-      "value": "中等——御乘生岳步道（1小时）、瀑布台阶、悬崖步道"
+      "value": "中高",
+      "level": 4
     },
     {
-      "icon": "ticket",
-      "label": "费用包含",
-      "value": "车辆、资格证导游、全部入场费。不含：午餐（约₩15,000）、小费"
+      "icon": "cloud-rain",
+      "label": "雨天适合度",
+      "value": "有限",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "亲子适合度",
+      "value": "适中",
+      "level": 3
+    },
+    {
+      "icon": "gauge",
+      "label": "行程节奏",
+      "value": "均衡",
+      "level": 4
     }
   ],
   "galleryItems": [

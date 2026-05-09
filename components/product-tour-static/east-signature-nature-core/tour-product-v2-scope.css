@@ -3,7 +3,7 @@
  * 메인 앱 전역과 분리해 `.tour-product-v2-static-root` 아래에만 적용.
  */
 .tour-product-v2-static-root {
-  --background: #fdfcfa;
+  --background: #f7f7f9;
   --foreground: #1a2332;
   --card: #ffffff;
   --card-foreground: #1a2332;
@@ -13,30 +13,30 @@
   --primary-foreground: #ffffff;
   --secondary: #fefefe;
   --secondary-foreground: #1a2332;
-  --muted: #f7f6f3;
+  --muted: #f4f4f6;
   --muted-foreground: #5c6775;
   --accent: #c8956c;
   --accent-foreground: #1a2332;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: #ebe8e3;
-  --input: #ebe8e3;
+  --border: #e8e8ec;
+  --input: #e8e8ec;
   --ring: #2e5c8a;
   --radius: 0.875rem;
 
-  --warm-ivory: #fffefb;
-  --soft-pearl: #fafbfc;
-  --mist-blue: #f7f9fb;
-  --sand-blush: #fcf9f6;
-  --cloud-gray: #faf9f8;
+  --warm-ivory: #f9f9fb;
+  --soft-pearl: #f8f8fa;
+  --mist-blue: #f6f7fb;
+  --sand-blush: #f6f6f9;
+  --cloud-gray: #f5f5f7;
 
   /* Section background system: white ↔ section-alt alternation, neutral & premium */
-  --section-alt: #f7f7f8;
+  --section-alt: #f3f3f5;
 
-  --spring-blossom: #fdf8f9;
-  --summer-breeze: #f6fafa;
-  --autumn-gold: #fdfaf6;
-  --winter-mist: #f8fafc;
+  --spring-blossom: #f7f5f8;
+  --summer-breeze: #f4f7f8;
+  --autumn-gold: #f6f6f8;
+  --winter-mist: #f5f6f9;
 
   --shadow-subtle: 0 1px 2px rgba(26, 35, 50, 0.02);
   --shadow-card: 0 1px 3px rgba(26, 35, 50, 0.03), 0 4px 16px rgba(26, 35, 50, 0.025);

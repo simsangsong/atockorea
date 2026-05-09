@@ -97,34 +97,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "≈ 11.5 hours (08:10 first pickup, ≈ 19:45 last drop)"
+      "icon": "camera",
+      "label": "Photo Potential",
+      "value": "High",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "Group",
-      "value": "Small group, mini-van (typically up to ≈10 passengers)"
-    },
-    {
-      "icon": "subway",
-      "label": "Pickup",
-      "value": "Busan Station Exit 4 (08:10), Seomyeon Exit 4 (08:30), Haeundae Exit 5 (09:10)"
-    },
-    {
-      "icon": "calendar",
-      "label": "Best season",
-      "value": "Year-round; cherry-blossom alt route mid-Mar to mid-Apr (Ahopsan replaced by Haeundae Dalmaji Hill)"
+      "icon": "mountain",
+      "label": "Scenery",
+      "value": "Good",
+      "level": 4
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "Moderate — ≈4–5 km total. Bulguksa terraces and steps; flat at the museum, hanok village, and bridge."
+      "value": "Moderate",
+      "level": 3
     },
     {
-      "icon": "ticket",
-      "label": "Includes",
-      "value": "Round-trip transport, certified guide. Entry fees: Bulguksa free (since May 2023), museum free, Gyochon free, bridge free; only Ahopsan (₩5,000) is paid on-site. Lunch on guest."
+      "icon": "cloud-rain",
+      "label": "Rain Suitability",
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "Family Suitability",
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "gauge",
+      "label": "Pace",
+      "value": "Balanced",
+      "level": 4
     }
   ],
   "galleryItems": [
@@ -176,104 +182,124 @@
   ],
   "itineraryStops": [
     {
-      "number": 1,
-      "time": "08:10–09:10",
-      "duration": "60 min",
       "name": "Busan pickup (3 subway stations)",
+      "time": "08:10",
+      "number": 1,
       "category": "Transit / Pickup",
-      "description": "Pickup runs from Busan Station Exit 4, Seomyeon Station Exit 4, and Haeundae Station Exit 5. This sequence matches the Busan-departure Gyeongju full-day route and keeps the day long enough for both the heritage core and the evening bridge stop.",
-      "highlights": [
-        "Busan Station / Seomyeon / Haeundae pickup",
-        "Please arrive 10 minutes early",
-        "WhatsApp/KakaoTalk contact recommended",
-        "Light snacks (water, banana) provided on the coach; lunch own expense"
-      ],
+      "duration": "60 min",
       "timeUsed": [
-        "60 min",
+        "Busan Station pickup (~08:10, ~5 min)",
         "Drive to Seomyeon Station (~12 min)",
         "Seomyeon pickup (~08:25, ~5 min)",
         "Drive to Haeundae Station (~18 min)",
         "Haeundae pickup + departure to Donghae Expressway (~08:45, ~20 min)"
       ],
-      "whyOnRoute": "The three pickup points cover the main hotel zones without asking guests to cross the city early in the morning.",
       "_poi_meta": {
-        "poi_key": "OPS_busan_subway_pickup",
-        "verified": true,
         "match": "transit_placeholder",
-        "kb_version": "1.15",
-        "verified_date": "2026-04-29",
+        "poi_key": "OPS_busan_subway_pickup",
         "sources": [
           "Busan Metro official",
           "Operator schedule"
-        ]
-      }
+        ],
+        "verified": true,
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29"
+      },
+      "highlights": [
+        "Three Busan pickup options: Busan Station, Seomyeon, Haeundae",
+        "Coach transit Busan → Ahopsan ~30 km / ~25 min via Donghae Expressway",
+        "**8-stop UNESCO-legacy circuit ends with sunset Woljeonggyo Bridge**",
+        "Light snacks (water, banana) provided on the coach; lunch own expense"
+      ],
+      "whyOnRoute": "Three-station pickup is the standard Busan small-group format for Gyeongju routes and matches the staging used by competing operators. Starting from Haeundae as the final pickup minimizes deadhead distance to the Gijang-gun bamboo forest (the day's first content stop), preserving the carefully-built sunset finale at Woljeonggyo Bridge.",
+      "description": "Pickup runs in sequence from three central Busan subway stations: **Busan Station (Line 1)** at ~08:10 for guests staying near Choryang/Nampo-dong, **Seomyeon Station (Lines 1 & 2)** at ~08:25 for the central business hotel district, and **Haeundae Station (Line 2)** at ~08:45 for the eastern beachfront resort area. From the final pickup the coach takes the **Donghae Expressway** north toward Gijang-gun — the route's first stop, **Ahopsan Bamboo Forest**, sits just ~30 km / ~25 min from Haeundae in the foothills of northeastern Busan. The early start is intentional: this 8-stop UNESCO-legacy tour is the catalog's most content-dense Gyeongju route, ending at sunset with **Woljeonggyo Bridge illuminated against Namcheon River** before the return drive. Guests should pre-load coffee, water and any motion-sickness preparation at the first pickup, since the coach makes only one comfort stop before reaching Bulguksa around 11:30."
     },
     {
+      "name": "Ahopsan Bamboo Forest (아홉산숲)",
+      "time": "≈ 09:50",
       "number": 2,
-      "time": "09:40",
+      "category": "Private Heritage Forest",
       "duration": "60 min",
-      "name": "Ahopsan Forest",
-      "category": "Nature / Film location",
-      "description": "Ahopsan Forest is a privately managed bamboo and woodland area in Gijang, Busan. It gives the day a quiet natural start before the longer drive to Gyeongju and is known for bamboo paths, old trees, and filming locations used in Korean dramas and movies.",
-      "highlights": [
-        "Bamboo forest walk",
-        "Quiet start before Gyeongju",
-        "Admission may be paid on site",
-        "**Maengjongjuk moso bamboo grove** = filming location for **5+ major K-dramas**",
-        "Featured in **Kundo (2014), Memories of the Sword (2015), Moon Lovers: Scarlet Heart Ryeo (2016), 100 Days My Prince (2018), The King: Eternal Monarch (2020)**",
-        "**116 designated 400-year-old red pine trees** along lower paths",
-        "**Admission: Adult ₩8,000 / Child ₩5,000**, hours 09:00–18:00, **closed Mondays**",
-        "**Filming location for The King: Eternal Monarch (2020)** + Moon Lovers (2016) + Kundo (2014) + 100 Days My Prince (2018) — Korean drama heritage highlight",
-        "**Closed Mondays** (operational note for itinerary planning); ₩8,000 adult / ₩5,000 under-18 admission (private property — no senior or group discount)"
-      ],
       "timeUsed": [
-        "60 min",
+        "Coach drop-off + ticketing at clan-style gate (~5 min)",
         "Walk lower path: ancestral hall + water mill + 400-year pines (~15 min)",
         "Bamboo grove (Spot 9) — photo time (~25 min)",
         "Loop back via wooden walkway + reassemble at coach (~15 min)"
       ],
-      "whyOnRoute": "Starting here balances the cultural stops in Gyeongju with a relaxed nature walk close to Busan.",
-      "visitBasics": {
-        "hours": "Daily 09:00–18:00 (last admission ~17:00)",
-        "closed": "Mondays",
-        "admission": "Adult ₩8,000 / Child ₩5,000",
-        "walking": "Moderate — gravel paths and gentle slopes; partial wooden walkway; comfortable shoes recommended"
-      },
-      "convenience": {
-        "restroom": "Restrooms at the entrance gate and midway near the ancestral hall",
-        "parking": "On-site coach and car parking (free)"
-      },
-      "smartNotes": {
-        "photo": "Spot 9 (Maengjongjuk bamboo grove) — best 10:00–11:30 with side-light through the canopy; the thatched gate near the ancestral hall; 400-year pine corridor at the lower loop",
-        "facilities": "Small farm-stand at the entrance (seasonal local produce, simple drinks); no full café inside the forest",
-        "tip": "Wear darker tops for stronger photo contrast against the bright bamboo; do not step off the marked path (active forest restoration); drone use is prohibited"
-      },
       "_poi_meta": {
-        "poi_key": "ahopsan_bamboo_forest",
-        "verified": true,
         "match": "exact",
-        "kb_version": "1.24",
-        "verified_date": "2026-04-29",
+        "poi_key": "ahopsan_bamboo_forest",
         "sources": [
           "VisitKorea",
           "Visit Busan official",
           "Korea JoongAng Daily",
           "K-drama filming location databases",
           "Korea Tourism Organization (Ahopsan filming location designation)"
-        ]
+        ],
+        "verified": true,
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29"
+      },
+      "highlights": [
+        "**400-year private clan forest** — Nampyeong Moon family, 9 generations",
+        "**Only opened to public in 2016** — quiet alternative to Damyang",
+        "**520,000 m² total**, 1.5–2 km signed circuit with 9 spots",
+        "**Maengjongjuk moso bamboo grove** = filming location for **5+ major K-dramas**",
+        "Featured in **Kundo (2014), Memories of the Sword (2015), Moon Lovers: Scarlet Heart Ryeo (2016), 100 Days My Prince (2018), The King: Eternal Monarch (2020)**",
+        "**116 designated 400-year-old red pine trees** along lower paths",
+        "**Admission: Adult ₩8,000 / Child ₩5,000**, hours 09:00–18:00, **closed Mondays**",
+        "**Filming location for The King: Eternal Monarch (2020)** + Moon Lovers (2016) + Kundo (2014) + 100 Days My Prince (2018) — Korean drama heritage anchor",
+        "**Closed Mondays** (operational note for itinerary planning); ₩8,000 adult / ₩5,000 under-18 admission (private property — no senior or group discount)"
+      ],
+      "smartNotes": {
+        "tip": "Wear darker tops for stronger photo contrast against the bright bamboo; do not step off the marked path (active forest restoration); drone use is prohibited",
+        "photo": "Spot 9 (Maengjongjuk bamboo grove) — best 10:00–11:30 with side-light through the canopy; the thatched gate near the ancestral hall; 400-year pine corridor at the lower loop",
+        "facilities": "Small farm-stand at the entrance (seasonal local produce, simple drinks); no full café inside the forest"
+      },
+      "whyOnRoute": "Ahopsan opens the day with **Korea's most photogenic bamboo forest experience outside Damyang** while staying within Busan administrative limits — a unique selling point versus competitors who skip directly from Busan to Bulguksa. The K-drama filming history makes this a **strong hook for Hallyu fans**, and the 60-minute slot is sufficient because the forest is compact and signed. Visiting before 11:00 also avoids the Monday closure trap and the weekend tour-bus crowd from Busan. Pairing with Bulguksa later in the day creates a heritage spectrum from ~400-yr private clan forest to ~1,250-yr UNESCO Buddhist temple — both representing different facets of Korean cultural continuity.",
+      "convenience": {
+        "parking": "On-site coach and car parking (free)",
+        "restroom": "Restrooms at the entrance gate and midway near the ancestral hall"
+      },
+      "description": "**Ahopsan Bamboo Forest (아홉산숲, 'Nine Mountain Forest')** is a **520,000 m² privately-owned heritage forest** in **Gijang-gun, northeastern Busan**, **managed for ~400 years by the Nampyeong Moon clan across nine generations** — the family settled in this valley after the **1592–1598 Imjin War** and has protected the forest ever since. **The forest only opened to the general public in 2016**, which is why it remains so quiet compared to Korea's more famous bamboo destination at Damyang. The signature feature is the **Maengjongjuk grove (Spot 9)** — towering Phyllostachys pubescens 'moso' bamboo that filters sunlight into vertical green shafts, the same scene used as the **filming location for *Kundo: Age of the Rampant* (2014), *Memories of the Sword* (2015), *Moon Lovers: Scarlet Heart Ryeo* (2016), *100 Days My Prince* (2018), and *The King: Eternal Monarch* (2020)**. The forest also protects **116 designated 400-year-old Korean red pine (Pinus densiflora) trees** along its lower paths. **Admission is paid: Adult ₩8,000 / Child ₩5,000**, **hours 09:00–18:00**, **closed Mondays**. The circuit covers a 1.5–2 km loop with 9 numbered photo spots (clan ancestral hall, old water mill, the bamboo grove, a thatched gate). The **wooden walkway is wheelchair-friendly only on the lower 60%**; the bamboo grove itself requires a moderate uphill on uneven gravel. The forest was opened to public visits in 2016 — before that it was a private working bamboo grove; the Nampyeong Moon clan continues to harvest bamboo for traditional Korean crafts (zithers, baskets, fishing rods) and manages the site as a sustainable working forest rather than a pure tourist attraction. Photography is encouraged in the Gutteo Grove and second forest, but commercial filming requires advance permission. The Korean cultural heritage value of 9-generation forest stewardship ranks alongside the natural-beauty value of the bamboo canopy.",
+      "visitBasics": {
+        "hours": "Daily 09:00–18:00 (last admission ~17:00)",
+        "closed": "Mondays",
+        "walking": "Moderate — gravel paths and gentle slopes; partial wooden walkway; comfortable shoes recommended",
+        "admission": "Adult ₩8,000 / Child ₩5,000"
       }
     },
     {
-      "number": 3,
-      "time": "11:30",
-      "duration": "75 min",
       "name": "Bulguksa Temple (UNESCO World Heritage)",
-      "category": "UNESCO / Temple",
-      "description": "Bulguksa Temple is the key Buddhist heritage stop of the day. Guests can see the temple courtyards, stone bridges, and pagodas while the guide explains how Silla Buddhist architecture shaped Gyeongju’s identity.",
+      "time": "≈ 11:30",
+      "number": 3,
+      "category": "UNESCO Buddhist Temple",
+      "duration": "75 min",
+      "timeUsed": [
+        "Coach drop-off + walk through pine-lined approach (~10 min)",
+        "Iljumun + Cheongungyo/Baegungyo photo time (~15 min)",
+        "Daeungjeon courtyard + Dabotap + Seokgatap (~25 min)",
+        "Birojeon Vairocana Hall + Geuknakjeon Pure Land Hall (~15 min)",
+        "Free time + reassemble at coach (~10 min)"
+      ],
+      "_poi_meta": {
+        "match": "exact",
+        "poi_key": "bulguksa_temple",
+        "sources": [
+          "UNESCO World Heritage Centre",
+          "Wikipedia",
+          "World History Encyclopedia",
+          "VisitKorea",
+          "Visit Gyeongju official"
+        ],
+        "verified": true,
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29"
+      },
       "highlights": [
-        "UNESCO World Heritage temple",
-        "Dabotap and Seokgatap pagodas",
-        "Moderate walking and stone steps",
+        "**UNESCO World Heritage 1995** + **Korea's Historic and Scenic Site No. 1**",
+        "Founded **528 CE → expanded 751 CE by PM Kim Daeseong → completed 774 CE**",
+        "**Six Korean National Treasures** in a single temple",
         "**Dabotap (NT 20)** = image on Korea's 10-won coin",
         "**Seokgatap (NT 21) + Pure Light Dharani Sutra** = world's oldest extant woodblock print (704–751 CE)",
         "Cheongungyo/Baegungyo (NT 23): 34 steps = the 34 steps to Buddhist enlightenment",
@@ -281,87 +307,87 @@
         "Hours daily 09:00–18:00, last admission 17:00",
         "**Pure Light Dharani Sutra (704-751 CE) — world's oldest woodblock print** — discovered 1966 inside Seokgatap; tangible evidence of 8th-century Silla print technology preceding Gutenberg by 700 years"
       ],
-      "timeUsed": [
-        "75 min",
-        "Iljumun + Cheongungyo/Baegungyo photo time (~15 min)",
-        "Daeungjeon courtyard + Dabotap + Seokgatap (~25 min)",
-        "Birojeon Vairocana Hall + Geuknakjeon Pure Land Hall (~15 min)",
-        "Free time + reassemble at coach (~10 min)"
-      ],
-      "whyOnRoute": "Bulguksa is the essential UNESCO highlight for a first Gyeongju visit from Busan.",
+      "smartNotes": {
+        "tip": "Modest dress; remove shoes when entering halls; no drones; do not photograph monks or worshippers (signs marked clearly); the temple is still an active Jogye Order head temple (11th district)",
+        "photo": "Cheongungyo / Baegungyo bridge stairway (NT 23) below Jahamun Gate; Dabotap (NT 20) and Seokgatap (NT 21) pagodas in the main courtyard; spring cherry blossoms along the approach road",
+        "facilities": "Tourist Information Center at the entrance; Bulguksa Museum (separate ticket 2,000 / 1,000 KRW, closed Mondays)"
+      },
+      "whyOnRoute": "Bulguksa is **the non-negotiable UNESCO anchor of any Gyeongju day tour** and the most-recognized Buddhist heritage site in Korea. The 11:30 arrival is timed to **finish the temple before lunch hunger sets in** and to free the afternoon for the Gyeongju National Museum (paired conceptually as 'temple + treasures'). The 75-minute window is calibrated so guests can complete the full pilgrimage axis without rushing the photogenic Dabotap/Seokgatap pairing in the courtyard. The afternoon arrival window also avoids the morning Korean school-group crowds that fill the temple courtyards before 11:00.",
+      "convenience": {
+        "parking": "On-site lot (paid)",
+        "restroom": "Free public restrooms (mini-temple style architecture) inside the complex"
+      },
+      "description": "**Bulguksa Temple (불국사) — UNESCO World Heritage Site since 1995** (jointly with Seokguram Grotto) — is **the masterpiece of Unified Silla Buddhist art** and **Korea's Historic and Scenic Site No. 1**. Originally founded in **528 CE under King Beopheung**, the current grand layout was commissioned in **751 CE by Prime Minister Kim Daeseong** (to honor his earthly parents) and completed in **774 CE** after his death. The temple's name means **'Temple of the Buddha Land'** — its stone-terrace layout maps Buddhist cosmology in three zones: **Daeungjeon (Hall of Great Enlightenment)** for the historical Buddha, **Geuknakjeon (Hall of Pure Land)** for Amitabha, and **Birojeon (Hall of Vairocana)** for the cosmic Buddha. The wooden halls were destroyed by fire in the **1592–1598 Imjin War**; rebuilding spanned 1604–1805, and the **major modern restoration was 1969–1973 under President Park Chung-hee**. Bulguksa houses **six Korean National Treasures**: **Dabotap (NT 20, 10.4 m, image on Korea's 10-won coin)**, **Seokgatap (NT 21, 8.2 m, inside which the world's oldest extant woodblock-printed text — the Pure Light Dharani Sutra dated 704–751 CE — was discovered in 1966)**, the **Cheongungyo + Baegungyo bridges (NT 23, the symbolic 34-step path leading to Jahamun gate)**, the **Yeonhwagyo + Chilbogyo bridges (NT 22, leading to Geuknakjeon)**, and the **gilt-bronze Vairocana (NT 26)** + **gilt-bronze Maitreya (NT 27)**. **Admission has been FREE since 2023** under the revised Cultural Heritage Protection Act. **Hours daily 09:00–18:00 (last admission 17:00)**, **modest dress + remove shoes when entering halls** + **no drone photography**. The visit follows the temple's pilgrimage axis: **Iljumun gate → Cheongungyo/Baegungyo (admire from below; foot traffic banned) → Jahamun → Daeungjeon courtyard with Dabotap and Seokgatap → Birojeon → Geuknakjeon**.",
       "visitBasics": {
         "hours": "Daily 09:00–18:00 (last admission 17:00)",
         "closed": "Open year-round",
-        "admission": "Free (since 2023, per the revised Cultural Heritage Protection Act)",
-        "walking": "Moderate — stone steps, slopes and gravel paths; comfortable shoes recommended"
-      },
-      "convenience": {
-        "restroom": "Free public restrooms (mini-temple style architecture) inside the complex",
-        "parking": "On-site lot (paid)"
-      },
-      "smartNotes": {
-        "photo": "Cheongungyo / Baegungyo bridge stairway (NT 23) below Jahamun Gate; Dabotap (NT 20) and Seokgatap (NT 21) pagodas in the main courtyard; spring cherry blossoms along the approach road",
-        "facilities": "Tourist Information Center at the entrance; Bulguksa Museum (separate ticket 2,000 / 1,000 KRW, closed Mondays)",
-        "tip": "Modest dress; remove shoes when entering halls; no drones; do not photograph monks or worshippers (signs marked clearly); the temple is still an active Jogye Order head temple (11th district)"
-      },
-      "_poi_meta": {
-        "poi_key": "bulguksa_temple",
-        "verified": true,
-        "match": "exact",
-        "kb_version": "1.24",
-        "verified_date": "2026-04-29",
-        "sources": [
-          "UNESCO World Heritage Centre",
-          "Wikipedia",
-          "World History Encyclopedia",
-          "VisitKorea",
-          "Visit Gyeongju official"
-        ]
+        "walking": "Moderate — stone steps, slopes and gravel paths; comfortable shoes recommended",
+        "admission": "Free (since 2023, per the revised Cultural Heritage Protection Act)"
       }
     },
     {
+      "name": "Lunch (Gyeongju local restaurant)",
+      "time": "≈ 13:00",
       "number": 4,
-      "time": "12:50",
+      "category": "Lunch / Own Expense",
       "duration": "60 min",
-      "name": "Lunch (local Gyeongju restaurant)",
-      "category": "Meal",
-      "description": "Lunch is usually arranged at a local restaurant in Gyeongju at guests’ own expense. The guide can recommend approachable Korean dishes, and guests with allergies or dietary restrictions should tell us in advance.",
-      "highlights": [
-        "Lunch paid directly",
-        "Local Korean restaurant",
-        "Dietary needs should be shared before the tour",
-        "Vegetarian/vegan options widely available at ssambap restaurants"
-      ],
       "timeUsed": [
-        "60 min",
+        "Walk + seating (~5 min)",
         "Order + food prep (~10 min)",
         "Eat + restroom (~40 min)",
         "Reassemble at coach + buy water/snacks (~5 min)"
       ],
-      "whyOnRoute": "A simple local lunch keeps the schedule flexible before the afternoon heritage walk.",
       "_poi_meta": {
-        "poi_key": "OPS_gyeongju_lunch",
-        "verified": true,
         "match": "lunch_placeholder",
-        "kb_version": "1.15",
-        "verified_date": "2026-04-29",
+        "poi_key": "OPS_gyeongju_lunch",
         "sources": [
           "Visit Gyeongju official",
           "VisitKorea food guide"
-        ]
-      }
+        ],
+        "verified": true,
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29"
+      },
+      "highlights": [
+        "Lunch own expense ~₩10,000–15,000 in Gyeongju city",
+        "**Ssambap (leaf-wrapped rice + banchan) = Gyeongju's signature lunch format**",
+        "**Hwangnam-bbang red-bean pastry** (made in Gyeongju since 1939) for souvenir",
+        "Vegetarian/vegan options widely available at ssambap restaurants"
+      ],
+      "whyOnRoute": "Splitting lunch between Bulguksa and the museum provides a natural mid-day pause and lets the guide front-load the temple while energy is highest. Keeping lunch off the package contract lowers the price band and gives international guests freedom to choose between meat / vegetarian / quick options.",
+      "description": "Lunch is at the guests' own expense at a Gyeongju local restaurant near the Bulguksa–Tohamsan corridor (typical budget **₩10,000–15,000** per head). The operator does not run a fixed lunch venue contract; instead the guide walks the group to a 2–3 restaurant cluster offering Gyeongju regional staples: **Hwangnam-bbang (황남빵, the iconic red-bean pastry of Gyeongju, made by hand since 1939)**, **Gyodong Beopju (교동법주)** as a souvenir bottle (see Stop 6 — Gyochon village), **Ssambap (쌈밥, leaf-wrapped rice with banchan)** which is Gyeongju's signature lunch format, or **bibimbap and seafood pajeon**. **Vegetarian/vegan options** are available at most ssambap restaurants since the format is leaf-wrapping centered. The 60-minute window includes restroom break and buying water/snacks for the museum and bridge stops to follow."
     },
     {
+      "name": "Gyeongju National Museum",
+      "time": "≈ 14:15",
       "number": 5,
-      "time": "14:00",
-      "duration": "60 min",
-      "name": "Gyochon Hanok Village & House of Choi area",
-      "category": "Historic village",
-      "description": "Gyochon Hanok Village introduces Gyeongju’s traditional houses and the story of the Gyeongju Choi family, one of Korea’s well-known historic families. It adds a human, village-level layer after the temple stop.",
+      "category": "National Museum / Silla Heritage",
+      "duration": "75 min",
+      "timeUsed": [
+        "Coach drop-off + entry + cloakroom (~10 min)",
+        "Outdoor Bell Pavilion (Sacred Bell) (~10 min)",
+        "Silla Hall — gold crowns + royal regalia (~25 min)",
+        "Wolji Hall — Anapji palace artifacts (~15 min)",
+        "Special exhibition or museum shop + reassemble (~15 min)"
+      ],
+      "_poi_meta": {
+        "match": "exact",
+        "poi_key": "gyeongju_national_museum",
+        "sources": [
+          "Gyeongju National Museum official",
+          "Wikipedia",
+          "Korea JoongAng Daily APEC 2025 coverage",
+          "Cultural Heritage Administration (NT 29, NT 188)",
+          "National Museum of Korea (Gyeongju Branch)"
+        ],
+        "verified": true,
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29"
+      },
       "highlights": [
-        "Traditional hanok village",
-        "Gyeongju Choi family story",
-        "Easy walking",
+        "**Definitive museum of Silla civilization** — founded 1945, current building 1968",
+        "**100,000+ artifacts**, 30,000+ designated cultural properties",
+        "**Cheonmachong Gold Crown (NT 188)** — excavated April 16, 1973",
         "**Sacred Bell of King Seongdeok (NT 29, 'Emille Bell')** — cast 771 CE, 18.9 tonnes",
         "**Korea's largest extant bronze bell** (3.66 m) — outdoor pavilion at entrance",
         "**'Silla Gold Crowns' exhibition through Dec 14, 2025** — all 6 crowns reunited for the first time in 104 years (commemorating Gyeongju APEC 2025)",
@@ -369,55 +395,55 @@
         "Fully wheelchair-accessible — strong rain-day fit for this tour",
         "**Oct 28 - Dec 14, 2025 special exhibition reunited 6 Silla gold crowns for the first time in 104 years** (APEC Summit commemoration) — Cheonmachong Gold Crown NT 188 + Hwangnamdaechong North + South + Geumgwanchong + Seobongchong + Geumnyeongchong"
       ],
-      "timeUsed": [
-        "60 min",
-        "Outdoor Bell Pavilion (Sacred Bell) (~10 min)",
-        "Silla Hall — gold crowns + royal regalia (~25 min)",
-        "Wolji Hall — Anapji palace artifacts (~15 min)",
-        "Special exhibition or museum shop + reassemble (~15 min)"
-      ],
-      "whyOnRoute": "This stop connects Silla-era heritage with later Korean local history in a way that is easier for visitors to understand.",
+      "smartNotes": {
+        "tip": "No flash photography; some special exhibitions prohibit all photography (check signage); allow ~10 minutes for the bell pavilion alone — it is the single most important Silla artifact",
+        "photo": "Sacred Bell of King Seongdeok in its outdoor pavilion (afternoon side-light); Cheonmachong gold crown display in Silla Hall (low-light, no flash); the museum garden with stone pagoda fragments",
+        "facilities": "Museum shop with replica gold-crown jewelry; café in the main building; cloakroom available"
+      },
+      "whyOnRoute": "The museum is **the catalog's strongest indoor cultural anchor in Gyeongju** and the **only stop on this route that is fully weather-proof** — when rain or heat hits, the 75-minute slot can extend without harming the day. Pairing Bulguksa (the temple) with the museum (the temple's contemporaneous artifacts in their original political context) is a deliberate **'see it, then understand it'** sequence that no competing Gyeongju tour matches. The 14:15 timing is chosen so the **Sacred Bell pavilion catches mid-afternoon side-light** for photographers, before the museum's final-hour rush.",
+      "convenience": {
+        "parking": "Free on-site coach and car parking",
+        "restroom": "Multiple restrooms in main building + outdoor pavilion area"
+      },
+      "description": "**Gyeongju National Museum (국립경주박물관)** is **the definitive museum of Silla civilization** — founded in **1945 as the Gyeongju Branch of the National Museum**, with the current main building completed in **1968** and elevated to full National Museum status in **1975**. The collection holds **over 100,000 artifacts** (of which **30,000+ are designated cultural properties**) excavated from Gyeongju Historic Areas and royal tombs. The two unmissable masterpieces are the **Cheonmachong Gold Crown (National Treasure No. 188)** — a 5th–6th century Silla royal crown of pure gold with jade comma-shaped 'gogok' pendants, excavated from Tomb 155 (Cheonmachong) in the **April 16, 1973 excavation** — and the **Sacred Bell of Great King Seongdeok (National Treasure No. 29, 'Emille Bell')** — **cast in 771 CE**, **3.66 m tall**, **18.9 tonnes**, the **largest extant bronze bell in Korea** and one of the largest in East Asia, displayed under its own outdoor pavilion at the museum entrance. The current major exhibition (running through Dec 14, 2025 to commemorate the **2025 Gyeongju APEC Summit**) is **'Silla Gold Crowns: Power and Prestige' — reuniting all 6 Silla gold crowns for the first time in 104 years**. The museum is divided into the **Silla Hall** (royal court life), the **Wolji Hall** (the wooden artifacts excavated from the Anapji palace pond), and the **outdoor Bell Pavilion**. **Admission is FREE**, **hours Tue–Sun 10:00–18:00**, **closed Mondays + Jan 1 + Lunar New Year + Chuseok**, and the building is **fully wheelchair-accessible**.",
       "visitBasics": {
         "hours": "Tue–Sun 10:00–18:00 (last admission 17:30); extended hours Sat & last Wed of month until 21:00",
         "closed": "Mondays + Jan 1 + Lunar New Year + Chuseok",
-        "admission": "Free (special exhibitions may charge a small fee)",
-        "walking": "Mostly indoor + paved outdoor; fully wheelchair-accessible"
-      },
-      "convenience": {
-        "restroom": "Multiple restrooms in main building + outdoor pavilion area",
-        "parking": "Free on-site coach and car parking"
-      },
-      "smartNotes": {
-        "photo": "Sacred Bell of King Seongdeok in its outdoor pavilion (afternoon side-light); Cheonmachong gold crown display in Silla Hall (low-light, no flash); the museum garden with stone pagoda fragments",
-        "facilities": "Museum shop with replica gold-crown jewelry; café in the main building; cloakroom available",
-        "tip": "No flash photography; some special exhibitions prohibit all photography (check signage); allow ~10 minutes for the bell pavilion alone — it is the single most important Silla artifact"
-      },
-      "_poi_meta": {
-        "poi_key": "gyeongju_national_museum",
-        "verified": true,
-        "match": "exact",
-        "kb_version": "1.24",
-        "verified_date": "2026-04-29",
-        "sources": [
-          "Gyeongju National Museum official",
-          "Wikipedia",
-          "Korea JoongAng Daily APEC 2025 coverage",
-          "Cultural Heritage Administration (NT 29, NT 188)",
-          "National Museum of Korea (Gyeongju Branch)"
-        ]
+        "walking": "Mostly indoor + paved outdoor; fully wheelchair-accessible",
+        "admission": "Free (special exhibitions may charge a small fee)"
       }
     },
     {
+      "name": "Gyochon Hanok Village",
+      "time": "≈ 15:50",
       "number": 6,
-      "time": "15:00",
-      "duration": "70 min",
-      "name": "Daereungwon Tomb Complex & Hwangnidan-gil",
-      "category": "Royal tombs / Local street",
-      "description": "Daereungwon shows the large grass-covered royal tombs of ancient Silla. Nearby Hwangnidan-gil adds a lighter break with cafés, small shops, and modern hanok-style streets, giving guests both history and a sense of today’s Gyeongju.",
+      "category": "Heritage Hanok Village",
+      "duration": "60 min",
+      "timeUsed": [
+        "Coach drop-off + walk to main entrance (~5 min)",
+        "House of Choi Clan + Gyodong Beopju brewery exterior (~20 min)",
+        "Gyerim Forest + King Naemul's Royal Tomb (~15 min)",
+        "Hyanggyo Confucian school + village lanes (~15 min)",
+        "Reassemble at coach (~5 min)"
+      ],
+      "_poi_meta": {
+        "match": "exact",
+        "poi_key": "gyochon_hanok_village",
+        "sources": [
+          "Visit Gyeongju official",
+          "VisitKorea",
+          "Wikipedia (Gyeongju Choi family)",
+          "Cultural Heritage Administration (Folklore Material No. 27, Intangible No. 86-3)",
+          "Cultural Heritage Administration of Korea (Gyeongju Choi Clan Family Designation)"
+        ],
+        "verified": true,
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29"
+      },
       "highlights": [
-        "Silla royal tomb scenery",
-        "Photo-friendly walking area",
-        "Nearby Hwangnidan-gil café street",
+        "**Gyeongju Choi Clan estate** — scholar-gentry preserved across **12 generations**",
+        "Famous **Six Family Rules** — Korean ethical code (e.g. no rent raises in famine years)",
+        "**House of Choi Clan** = Important Folklore Material No. 27",
         "**Gyodong Beopju liquor** — Important Intangible Cultural Asset No. 86-3 (350-year recipe)",
         "Adjacent **Gyerim Forest** = mythological birthplace of Silla Kim clan",
         "Adjacent **King Naemul's Royal Tomb** + **Gyeongjuhyanggyo Confucian school**",
@@ -425,130 +451,110 @@
         "**Most heritage houses FREE** to enter during daytime hours",
         "**Gyodong Beopju liquor — Important Intangible Cultural Asset No. 86-3** — 350-year Gyeongju Choi clan family recipe still produced under traditional fermentation methods (~16% ABV; a tasting flight is available at the family residence)"
       ],
-      "timeUsed": [
-        "70 min",
-        "House of Choi Clan + Gyodong Beopju brewery exterior (~20 min)",
-        "Gyerim Forest + King Naemul's Royal Tomb (~15 min)",
-        "Hyanggyo Confucian school + village lanes (~15 min)",
-        "Reassemble at coach (~5 min)"
-      ],
-      "whyOnRoute": "Pairing the tomb complex with Hwangnidan-gil gives the afternoon both depth and a short modern-local break.",
+      "smartNotes": {
+        "tip": "Buy Gyodong Beopju as a souvenir if you have customs allowance for spirits (verify your country's import limit); the village can be quiet on weekday afternoons — perfect for slow photography",
+        "photo": "Hanok tile roofs in golden-hour light; Gyodong Beopju brewery gate; Woljeonggyo Bridge appears in the distance from the village's southwest corner (preview of Stop 7); Gyerim Forest's old willows",
+        "facilities": "Gyodong Beopju shop (souvenir bottles); small artisan stores along the main lane (traditional rice cake, hwangnam-bbang); Yosukgung 1779 (luxury restaurant, reservation required)"
+      },
+      "whyOnRoute": "Gyochon is the route's **'living Silla' anchor** — while Bulguksa shows Silla Buddhism and the museum shows Silla artifacts, Gyochon shows the **continuous Korean lifeway that descends from Silla** through the Joseon scholar-gentry to today's protected Choi clan estate. Placing Gyochon at 15:50 catches the **golden-hour side-light on the hanok tile roofs and the Gyodong Beopju brewery's wooden gates**, the village's most photogenic time. The compact walking layout also fits well between the indoor museum and the upcoming bridge stop.",
+      "convenience": {
+        "parking": "Coach drop-off lot at the western entrance (free)",
+        "restroom": "Public restrooms at the village entrance and near Gyeongjuhyanggyo"
+      },
+      "description": "**Gyochon Hanok Village (교촌마을)** is a **preserved cluster of traditional Korean hanok houses** centered on the historic estate of the **Gyeongju Choi Clan** — a lineage of **scholar-gentry famous for sustaining their wealth across 12 generations** while practicing **'Six Family Rules' that included never raising rents in a famine year and never letting any neighbor go hungry within 100 ri (~40 km) of the family compound**. The flagship building, the **House of the Gyeongju Choi Clan**, is designated **Important Folklore Material No. 27**. The village also holds the **350-year-old Gyodong Beopju liquor brewery** — the only **Important Intangible Cultural Asset No. 86-3** liquor in Korea, fermented from glutinous rice and traditional nuruk by the Choi family using a recipe passed down across generations. Adjacent to the village stand **Gyerim Forest (the mythological birthplace of the Silla Kim clan)**, **King Naemul's Royal Tomb**, and **Gyeongju Hyanggyo (the Confucian school established under Goryeo and rebuilt in the early Joseon period)** — all walkable within the 60-minute slot. The village also includes the **traditional site of Yoseokgung (요석궁) — the palace of Princess Yoseok** of the late Silla period — now operated as the **Yosukgung 1779 luxury restaurant** (separate optional dinner upgrade for premium-tier guests). The lanes are **gravel and partial stone-flag**, **partially wheelchair-friendly along the main spine**. **Most heritage houses are FREE to enter** during daytime hours.",
       "visitBasics": {
         "hours": "Daily during daylight; most heritage houses 09:00–18:00",
         "closed": "Some individual houses close on Mondays — main lanes always open",
-        "admission": "Free for most houses; Choi Clan main hall has a small donation box",
-        "walking": "Easy — gravel and stone-flag lanes; main spine partially wheelchair-friendly"
-      },
-      "convenience": {
-        "restroom": "Public restrooms at the village entrance and near Gyeongjuhyanggyo",
-        "parking": "Coach drop-off lot at the western entrance (free)"
-      },
-      "smartNotes": {
-        "photo": "Hanok tile roofs in golden-hour light; Gyodong Beopju brewery gate; Woljeonggyo Bridge appears in the distance from the village's southwest corner (preview of Stop 7); Gyerim Forest's old willows",
-        "facilities": "Gyodong Beopju shop (souvenir bottles); small artisan stores along the main lane (traditional rice cake, hwangnam-bbang); Yosukgung 1779 (luxury restaurant, reservation required)",
-        "tip": "Buy Gyodong Beopju as a souvenir if you have customs allowance for spirits (verify your country's import limit); the village can be quiet on weekday afternoons — perfect for slow photography"
-      },
-      "_poi_meta": {
-        "poi_key": "gyochon_hanok_village",
-        "verified": true,
-        "match": "exact",
-        "kb_version": "1.24",
-        "verified_date": "2026-04-29",
-        "sources": [
-          "Visit Gyeongju official",
-          "VisitKorea",
-          "Wikipedia (Gyeongju Choi family)",
-          "Cultural Heritage Administration (Folklore Material No. 27, Intangible No. 86-3)",
-          "Cultural Heritage Administration of Korea (Gyeongju Choi Clan Family Designation)"
-        ]
+        "walking": "Easy — gravel and stone-flag lanes; main spine partially wheelchair-friendly",
+        "admission": "Free for most houses; Choi Clan main hall has a small donation box"
       }
     },
     {
+      "name": "Woljeonggyo Bridge",
+      "time": "≈ 17:00",
       "number": 7,
-      "time": "16:20",
-      "duration": "60 min",
-      "name": "Gyeongju National Museum or Donggung Palace & Wolji Pond",
-      "category": "Museum / Optional heritage stop",
-      "description": "Depending on operating conditions and guest preference, the route can include the Gyeongju National Museum for Silla artifacts or Donggung Palace and Wolji Pond for palace-site scenery. The museum is the better choice for deeper historical context, while Donggung and Wolji is more scenic.",
-      "highlights": [
-        "Museum option for Silla artifacts",
-        "Donggung and Wolji scenic option",
-        "Final choice may depend on time and conditions",
-        "Reopened **April 2018** after gatehouse completion",
-        "**Korean Historic Site since November 27, 2004**",
-        "**'100 Best Tourist Attractions in Korea 2025–2026'** by MCST",
-        "**Sunset / dusk illumination = most photographed Gyeongju nightscape after Donggung**",
-        "**FREE**, open 24 hours, wheelchair-accessible from north bank",
-        "**Selected '100 Best Tourist Attractions in Korea 2025-2026'** by Korea Tourism Organization — recognizing the 2018-reopened reconstruction of King Gyeongdeok's original 760 CE wooden bridge as a national heritage landmark"
-      ],
+      "category": "Reconstructed Silla Wooden Bridge",
+      "duration": "40 min",
       "timeUsed": [
-        "60 min",
+        "Coach drop-off at north bank parking (~5 min)",
         "Walk across bridge to south gatehouse (~10 min)",
         "Photo time at south bank composition (~15 min)",
         "Walk back + reassemble at coach (~10 min)"
       ],
-      "whyOnRoute": "This flexible stop lets the day adjust between deeper cultural learning and a more scenic heritage walk.",
-      "visitBasics": {
-        "hours": "Open 24 hours (illumination runs roughly sunset → 23:00)",
-        "closed": "Open year-round",
-        "admission": "Free",
-        "walking": "Easy — flat bridge deck; wheelchair-accessible from the north bank"
-      },
-      "convenience": {
-        "restroom": "Public restroom at the north bank parking area",
-        "parking": "Coach parking on the north bank; no parking on the south bank"
-      },
-      "smartNotes": {
-        "photo": "South-bank gatehouse with bridge spanning toward Wolseong palace site (the iconic composition); long-exposure river reflections after illumination begins; the bridge in autumn-foliage frame is on the cover of many MCST tourism brochures",
-        "facilities": "No shops on the bridge itself; small café cluster at the north bank parking",
-        "tip": "Bring a tripod or phone with night mode for the illumination shot; in winter the river fog can blur distant compositions — use the gatehouse foreground; do not climb on the wooden railings"
-      },
       "_poi_meta": {
-        "poi_key": "woljeonggyo_bridge",
-        "verified": true,
         "match": "exact",
-        "kb_version": "1.24",
-        "verified_date": "2026-04-29",
+        "poi_key": "woljeonggyo_bridge",
         "sources": [
           "Visit Gyeongju official",
           "Cultural Heritage Administration",
           "Wikipedia (Woljeonggyo)",
           "MCST '100 Best Tourist Attractions 2025–2026' list",
           "Korea Tourism Organization '100 Best 2025-2026' designation"
-        ]
+        ],
+        "verified": true,
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29"
+      },
+      "highlights": [
+        "**Korea's largest wooden bridge** — 60.57 m original length",
+        "**First built 760 CE** by King Gyeongdeok (35th Silla king) — recorded in *Samguk Sagi*",
+        "**Lost during Joseon → excavated 1984–1986 → reconstructed 2008–2018**",
+        "Reopened **April 2018** after gatehouse completion",
+        "**Korean Historic Site since November 27, 2004**",
+        "**'100 Best Tourist Attractions in Korea 2025–2026'** by MCST",
+        "**Sunset / dusk illumination = most photographed Gyeongju nightscape after Donggung**",
+        "**FREE**, open 24 hours, wheelchair-accessible from north bank",
+        "**Selected '100 Best Tourist Attractions in Korea 2025-2026'** by Korea Tourism Organization — recognizing the 2018-reopened reconstruction of King Gyeongdeok's original 760 CE wooden bridge as a national heritage anchor"
+      ],
+      "smartNotes": {
+        "tip": "Bring a tripod or phone with night mode for the illumination shot; in winter the river fog can blur distant compositions — use the gatehouse foreground; do not climb on the wooden railings",
+        "photo": "South-bank gatehouse with bridge spanning toward Wolseong palace site (the iconic composition); long-exposure river reflections after illumination begins; the bridge in autumn-foliage frame is on the cover of many MCST tourism brochures",
+        "facilities": "No shops on the bridge itself; small café cluster at the north bank parking"
+      },
+      "whyOnRoute": "Woljeonggyo is **the catalog's signature 'sunset finale'** — a deliberately-built closer that lets the day end on a high emotional note rather than dribbling out at Gyochon. The 17:00 arrival is **timed to the seasonal sunset window** — in spring and autumn the illumination kicks in around 18:00, but the **40-minute slot captures the magic-hour transition** with both daylight and the first illumination glow. No competing Busan-Gyeongju day tour ends here; this is the route's strongest differentiation against **busan-top-attractions**, **from-busan-gyeongju-ancient-capital**, and other day tours that close earlier.",
+      "convenience": {
+        "parking": "Coach parking on the north bank; no parking on the south bank",
+        "restroom": "Public restroom at the north bank parking area"
+      },
+      "description": "**Woljeonggyo Bridge (월정교)** is the **reconstructed Silla-era wooden bridge spanning the Namcheon River**, today **Korea's largest wooden bridge** at **60.57 m original length**, reopened to the public in **April 2018** after a **multi-decade reconstruction project (2008–2013 for the bridge deck, 2016–2018 for the gatehouses)**. The bridge was **first built in 760 CE under King Gyeongdeok (35th king of Silla)** as recorded in the *Samguk Sagi* — connecting the **Wolseong (Half-Moon Palace)** of the Silla royal court to the south settlement. **Lost during the Joseon Dynasty**, it was **rediscovered in the 1984–1986 archaeological excavation** which uncovered the original stone foundations preserved in the riverbed; the modern reconstruction matches Silla construction methods using interlocking wooden joinery without nails. The bridge was designated a **Historic Site of Korea on November 27, 2004** and was selected as one of **Korea's '100 Best Tourist Attractions' for 2025–2026 by the Ministry of Culture, Sports and Tourism**. **The most spectacular time to visit is the 30-minute window after sunset**, when the bridge's nightly illumination casts warm reflections on the Namcheon River — the reason this stop closes the day. **Admission is FREE**, **the bridge is open 24 hours**, and there is a **wheelchair-accessible path from the north bank**. Photo composition tip: the **south-bank gatehouse** with the bridge spanning toward Wolseong creates the most photographed Gyeongju nightscape after Donggung Palace.",
+      "visitBasics": {
+        "hours": "Open 24 hours (illumination runs roughly sunset → 23:00)",
+        "closed": "Open year-round",
+        "walking": "Easy — flat bridge deck; wheelchair-accessible from the north bank",
+        "admission": "Free"
       }
     },
     {
+      "name": "Return drive to Busan",
+      "time": "≈ 17:45",
       "number": 8,
-      "time": "17:30",
-      "duration": "40 min",
-      "name": "Woljeonggyo Bridge",
-      "category": "Reconstructed Silla bridge",
-      "description": "Woljeonggyo Bridge is a reconstructed Silla-era wooden bridge over the Namcheon River. It is one of Gyeongju’s most photogenic evening stops, especially when the bridge lighting begins and reflects on the river.",
-      "highlights": [
-        "Reconstructed Silla-style bridge",
-        "Good evening photo stop",
-        "Flat walking area nearby",
-        "No dinner provided — guests should eat snacks bought earlier or after drop-off"
-      ],
+      "category": "Transit / Return",
+      "duration": "75 min",
       "timeUsed": [
-        "40 min",
+        "Departure from Woljeonggyo north bank (~5 min)",
         "Gyeongbu + Donghae Expressways drive (~60 min)",
         "First drop-off at Haeundae Station (~5 min)",
         "Drive to Seomyeon + Busan Station drop-offs (~5 min)"
       ],
-      "whyOnRoute": "Ending here gives the route a clear visual finale before the return drive to Busan.",
       "_poi_meta": {
-        "poi_key": "OPS_busan_return",
-        "verified": true,
         "match": "transit_placeholder",
-        "kb_version": "1.15",
-        "verified_date": "2026-04-29",
+        "poi_key": "OPS_busan_return",
         "sources": [
           "Operator schedule",
           "Korea Expressway Corporation traffic data"
-        ]
-      }
+        ],
+        "verified": true,
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29"
+      },
+      "highlights": [
+        "**Drop-off in reverse order: Haeundae → Seomyeon → Busan Station**",
+        "Estimated arrival: Haeundae ~18:50 / Seomyeon ~19:05 / Busan Station ~19:20",
+        "Friday/Sunday evening traffic may add 20–30 min — guide updates via group chat",
+        "No dinner provided — guests should eat snacks bought earlier or after drop-off"
+      ],
+      "whyOnRoute": "Reverse-order drop-off is standard small-group operations practice — first drop-off is the geographically nearest (Haeundae) which minimizes total transit. Avoiding a packaged dinner is a deliberate price/flexibility choice and matches competing Busan-Gyeongju products.",
+      "description": "The coach departs Woljeonggyo's north bank at **~17:45** and takes the **Gyeongbu + Donghae Expressways** south back to Busan. **Drop-offs reverse the morning pickup order**: **Haeundae Station first** (~18:50), then **Seomyeon** (~19:05), then **Busan Station** (~19:20), depending on traffic. Late-evening Friday or Sunday returns can extend the run by 20–30 minutes due to weekend traffic on the Donghae corridor; the guide updates ETA via the group chat. Light dinner snacks (rice cake, water) are not provided — guests are advised to **eat hwangnam-bbang or rice cake purchased at Gyochon**, or to arrange a late dinner near their drop-off station."
     }
   ],
   "routeFlowStops": [

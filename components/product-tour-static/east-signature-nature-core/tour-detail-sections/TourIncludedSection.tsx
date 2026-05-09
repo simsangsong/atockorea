@@ -11,15 +11,30 @@ export type TourIncludedSectionProps = {
   sectionUi: TourProductSectionUiV1;
 };
 
+// Matches opening "not included" / "excluded" markers in EN · KO · ZH · ZH-TW · JA · ES
+// Matches "not included" openers in EN · KO · ZH · ZH-TW · JA · ES
+const NOT_INCLUDED_RX =
+  /^(not included|excluded|excludes|not include|excl\.|does not include|불포함|미포함|不含|不包含|费用不含|含まれないもの|no incluye|no incluido|excluido)/i;
+
 export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSectionProps) {
   const [open, setOpen] = useState(false);
 
-  const item = practicalAccordionItems.find((i) => i.variant === "included");
+  const item = practicalAccordionItems.find(
+    (i) => i.variant === "included" || i.id === "inclusions",
+  );
   if (!item || !item.content?.length) return null;
 
-  const splitAt = item.includedCount ?? 5;
-  const includedItems = item.content.slice(0, splitAt);
-  const excludedItems = item.content.slice(splitAt);
+  let includedItems: readonly string[];
+  let excludedItems: readonly string[];
+
+  if (item.variant === "included") {
+    const splitAt = item.includedCount ?? 5;
+    includedItems = item.content.slice(0, splitAt);
+    excludedItems = item.content.slice(splitAt);
+  } else {
+    includedItems = item.content.filter((c) => !NOT_INCLUDED_RX.test(c.trim()));
+    excludedItems = item.content.filter((c) => NOT_INCLUDED_RX.test(c.trim()));
+  }
 
   return (
     <div className="space-y-4">

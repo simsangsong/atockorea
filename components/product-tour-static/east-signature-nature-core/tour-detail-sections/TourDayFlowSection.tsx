@@ -11,6 +11,12 @@ type FlexFlowStop = { id?: string; type?: string; name: string; theme?: string }
 export function TourDayFlowSection({ routeFlowStops, routeShapeIntro, itineraryStops }: TourDayFlowSectionProps) {
   const flexStops = routeFlowStops as readonly FlexFlowStop[];
 
+  // Hide section when no stop has a photo — grey circles with type labels look confusing.
+  const hasAnyPhoto = flexStops.some(
+    (_, i) => itineraryStops?.[i]?.images?.[0] ?? itineraryStops?.[i]?.image,
+  );
+  if (!hasAnyPhoto) return null;
+
   return (
     <div className="space-y-5">
       <div>
@@ -29,10 +35,10 @@ export function TourDayFlowSection({ routeFlowStops, routeShapeIntro, itineraryS
         <div className="relative overflow-x-auto scrollbar-hide">
           <div className="flex items-start gap-0.5 min-w-max px-4 py-5">
             {flexStops.map((stop, i) => {
-              const stopId = stop.id ?? stop.type ?? String(i + 1).padStart(2, "0");
-              const photoUrl = itineraryStops?.[i]?.image;
+              const photoUrl = itineraryStops?.[i]?.images?.[0] ?? itineraryStops?.[i]?.image ?? null;
+              const fallbackLabel = String(i + 1).padStart(2, "0");
               return (
-                <div key={`${stopId}-${i}`} className="flex items-start">
+                <div key={`${stop.name}-${i}`} className="flex items-start">
                   <div className="flex w-[72px] flex-col items-center px-1">
                     <div className="relative">
                       <div
@@ -52,7 +58,7 @@ export function TourDayFlowSection({ routeFlowStops, routeShapeIntro, itineraryS
                           />
                         ) : (
                           <div className="flex h-full w-full items-center justify-center text-[11px] font-semibold text-muted-foreground">
-                            {stopId}
+                            {fallbackLabel}
                           </div>
                         )}
                       </div>

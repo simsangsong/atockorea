@@ -98,34 +98,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "≈ 9 hours (first pickup 08:30, drop-off ≈18:00)"
+      "icon": "camera",
+      "label": "Photo Potential",
+      "value": "High",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "Group",
-      "value": "Small group, mini-coach with English/Chinese-speaking guide"
-    },
-    {
-      "icon": "map-pin",
-      "label": "Pickup",
-      "value": "Ocean Suites 08:30 / Jeju Airport Gate 3 (3F) 08:45 / LOTTE City 08:55 / Shilla Duty-Free 09:05"
+      "icon": "mountain",
+      "label": "Scenery",
+      "value": "High",
+      "level": 5
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "Light to moderate — wetland boardwalk, cliff boardwalk, beach stroll"
+      "value": "Moderate",
+      "level": 3
     },
     {
-      "icon": "ticket",
-      "label": "Includes",
-      "value": "Vehicle, certified guide, attraction admissions. Excludes: lunch (~₩15,000), tips"
+      "icon": "cloud-rain",
+      "label": "Rain Suitability",
+      "value": "Moderate",
+      "level": 3
     },
     {
-      "icon": "ban",
-      "label": "No shopping",
-      "value": "Operator's explicit no-shopping policy"
+      "icon": "users",
+      "label": "Family Suitability",
+      "value": "Good",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Pace",
+      "value": "Balanced",
+      "level": 4
     }
   ],
   "galleryItems": [

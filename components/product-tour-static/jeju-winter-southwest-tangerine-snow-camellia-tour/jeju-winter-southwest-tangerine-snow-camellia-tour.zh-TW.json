@@ -100,34 +100,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "行程時間",
-      "value": "9小時（通常08:30至17:30）"
+      "icon": "camera",
+      "label": "拍照潛力",
+      "value": "良好",
+      "level": 4
+    },
+    {
+      "icon": "mountain",
+      "label": "景觀豐富度",
+      "value": "良好",
+      "level": 4
+    },
+    {
+      "icon": "footprints",
+      "label": "步行強度",
+      "value": "低",
+      "level": 2
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "雨天適合度",
+      "value": "適中",
+      "level": 3
     },
     {
       "icon": "users",
-      "label": "團體規模",
-      "value": "小團體，英語 / 中文導遊"
+      "label": "親子適合度",
+      "value": "良好",
+      "level": 4
     },
     {
-      "icon": "calendar",
-      "label": "最佳季節",
-      "value": "十二月至二月（山茶花高峰十二至一月；橘子採摘十二至二月）"
-    },
-    {
-      "icon": "map-pin",
-      "label": "接送資訊",
-      "value": "濟州市區飯店免費接送；市外加收₩70,000"
-    },
-    {
-      "icon": "hiking",
-      "label": "步行強度",
-      "value": "輕鬆至中等——漢拏山為觀景停留，無需登山"
-    },
-    {
-      "icon": "check",
-      "label": "費用包含",
-      "value": "車輛、持照導遊司機、油費 / 過路費 / 停車費。不含：門票、午餐、橘子採摘費"
+      "icon": "gauge",
+      "label": "行程節奏",
+      "value": "集中",
+      "level": 3
     }
   ],
   "galleryItems": [

@@ -94,34 +94,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "≈ 10.5 hours (08:30 first pickup, ≈ 19:00 last drop)"
+      "icon": "camera",
+      "label": "Photo Potential",
+      "value": "High",
+      "level": 5
     },
     {
-      "icon": "calendar",
-      "label": "Best season",
-      "value": "Year-round; cherry blossoms at Cheongsapo coast late March–early April"
-    },
-    {
-      "icon": "users",
-      "label": "Group Size",
-      "value": "Small group (≈12 max), shared mini-coach"
+      "icon": "mountain",
+      "label": "Scenery",
+      "value": "Good",
+      "level": 4
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "Moderate–challenging — Yonggungsa 108 stairs (skippable), Gamcheon hillside, market alleys"
+      "value": "Challenging",
+      "level": 4
     },
     {
-      "icon": "map-pin",
-      "label": "Region",
-      "value": "Busan (Haeundae area + central Busan)"
+      "icon": "cloud-rain",
+      "label": "Rain Suitability",
+      "value": "Moderate",
+      "level": 3
     },
     {
-      "icon": "ticket",
-      "label": "Includes",
-      "value": "Round-trip transport, certified guide. Excludes lunch, optional Sky Capsule / Beach Train, optional Busan Tower (₩12,000)."
+      "icon": "users",
+      "label": "Family Suitability",
+      "value": "Good",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Pace",
+      "value": "Balanced",
+      "level": 4
     }
   ],
   "galleryItems": [
@@ -182,18 +188,11 @@
   ],
   "itineraryStops": [
     {
-      "number": 1,
-      "time": "08:30–09:30",
-      "duration": "30 min",
       "name": "Pickup (3 central Busan stations)",
+      "time": "≈ 09:00",
+      "number": 1,
       "category": "Transit / Pickup",
-      "description": "Sequential pickup at Busan Station Exit 4 (08:30), Seomyeon Station Exit 4 (08:50), and Haeundae Station Exit 5 (09:30). The route then heads toward Gijang and the east coast for Haedong Yonggungsa Temple. Please arrive 10 minutes early at the confirmed exit.",
-      "highlights": [
-        "Busan Station 08:30",
-        "Seomyeon Station 08:50",
-        "Haeundae Station 09:30",
-        "Please arrive 10 minutes early"
-      ],
+      "duration": "30 min",
       "timeUsed": [
         "Busan Station pickup (~09:00, ~5 min)",
         "Drive to Seomyeon Station (~10 min)",
@@ -201,26 +200,54 @@
         "Drive to Haeundae Station (~15 min)",
         "Haeundae pickup (~09:30, ~5 min)"
       ],
-      "whyOnRoute": "The pickup sequence matches the eastbound route toward Yonggungsa and reduces unnecessary backtracking.",
       "_poi_meta": {
-        "poi_key": "OPS_busan_pickup_central",
-        "verified": true,
         "match": "transit_only",
-        "kb_version": "1.15",
-        "verified_date": "2026-04-29",
+        "poi_key": "OPS_busan_pickup_central",
         "sources": [
           "Visit Busan",
           "Busan Metro"
-        ]
-      }
+        ],
+        "verified": true,
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29"
+      },
+      "highlights": [
+        "Three pickup options across central Busan (Busan Station, Seomyeon, Haeundae)",
+        "Coach is small-group (max ~14 pax)",
+        "Total transit to first stop: ~30-40 min",
+        "Printed Korean-English itinerary card distributed at pickup"
+      ],
+      "whyOnRoute": "Three pickup points cover Busan's three main hotel zones (KTX/Nampo, Seomyeon mid-city, Haeundae beachfront) without forcing guests to transit across the city in the morning. Sequencing northwest→east minimizes coach distance and lands the group at Haedong Yonggungsa around 10:00 — early enough to beat the busiest tour-bus arrivals.",
+      "description": "Pickup is consolidated at three central Busan transit hubs to keep the day manageable without crisscrossing the city: **Busan Station (Line 1)** for guests staying near the KTX terminal or in the Choryang/Nampo-dong area; **Seomyeon Station (Lines 1 & 2)** — Busan's busiest subway interchange, central for guests in mid-city hotels around Lotte Hotel Busan or the Seomyeon Medical Street; and **Haeundae Station (Line 2)** for guests in the beachfront resort district near Westin Josun, Park Hyatt, or Signiel Busan. The coach picks up at all three in sequence (typically Busan Station first ~09:00, Seomyeon ~09:15, Haeundae ~09:30) and then heads northeast along the coastal Gwangan Bridge route toward Gijang-gun for the day's first stop. Total transit from final pickup to Haedong Yonggungsa: ~30-40 minutes depending on traffic. Driver will share a printed Korean-English itinerary card with timings; please be at your pickup point 5 minutes before the scheduled time to keep the day on track for the later UN Memorial Cemetery and Gamcheon stops, which have stricter operating windows."
     },
     {
-      "number": 2,
-      "time": "≈ 10:00",
-      "duration": "75 min",
       "name": "Haedong Yonggungsa Temple",
+      "time": "≈ 10:00",
+      "number": 2,
       "category": "Buddhist Temple / Coastal",
-      "description": "**Haedong Yonggungsa (해동 용궁사) — Korea's most famous seaside Buddhist temple** — perches on the rocky cliffs of Gijang-gun on Busan's northeastern coast, one of the very few major Korean temples NOT set in the mountains. Originally founded in **1376 during the Goryeo Dynasty by the great Buddhist teacher Naong Hyegeun (나옹 혜근, 1320-1376)** — a royal consultant and master who would help shape Korean Buddhism into the early Joseon era. Per legend, Naong was practicing asceticism at Bunhwangsa Temple in Gyeongju during a national drought; the East Sea god appeared to him in a dream and told him that building a temple on Bongrae Mountain (the original name of this seaside cliff) would restore the kingdom's prosperity. Naong founded the temple and named it **Bomunsa**, dedicated to Gwanseum-bosal (관세음보살, the Bodhisattva of Compassion). The temple was destroyed in the **Japanese Imjin Invasion of 1592** and lay in ruins for over 300 years until **Monk Ungang of Tongdosa Temple began reconstruction in the early 1930s**. The current name, **Haedong Yonggungsa (Korean Dragon Palace Temple)**, dates only to **1974** — when Head Monk Jeong-am, during a 100-day prayer (jeong-geon kido), had a vision of the Goddess of Mercy descending on the back of a dragon, emanating multicolor light. The temple was renamed to honor this vision. The visit follows the temple's signature processional path: through the row of **12 Sibiji-shin (Twelve Zodiac Generals)** at the entry plaza, past the **7-story 'No-Accident Pagoda'** (where drivers leave coin offerings under a stone wheel-shrine), down the famous **108 stone stairs** (representing the 108 delusions of the Buddhist mind) through a small bamboo grove, and out onto the seaside terraces and Daeungjeon main hall. The **Haesu Gwaneum Daebul** (Sea-Goddess of Mercy statue) on the upper cliff is the most photographed view, framing both the temple rooftops and the East Sea. Hours **04:30-19:20 daily, last entry 18:50, FREE admission**. **Buddha's Birthday (May)** brings Yeondunhoe lantern festival displays.",
+      "duration": "75 min",
+      "timeUsed": [
+        "Coach drop-off + walk through vendor lane to entry plaza (~10 min)",
+        "Twelve Zodiac Generals + No-Accident Pagoda (~10 min)",
+        "108 stairs descent + Daeungjeon main hall + seaside terraces (~30 min)",
+        "Haesu Gwaneum statue viewpoint + photo time (~15 min)",
+        "Walk back up + reassemble at coach (~10 min)"
+      ],
+      "_poi_meta": {
+        "match": "exact",
+        "poi_key": "haedong_yonggungsa",
+        "sources": [
+          "Visit Busan",
+          "VisitKorea",
+          "Wikipedia",
+          "Culture Trip",
+          "Korean Temple Guide",
+          "Korea Tourism Organization Official"
+        ],
+        "verified": true,
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29"
+      },
       "highlights": [
         "**Founded 1376** by Buddhist master Naong Hyegeun (originally 'Bomunsa')",
         "One of very few major Korean temples set on the seaside (most are in mountains)",
@@ -232,63 +259,30 @@
         "Hours daily 04:30-19:20, FREE admission; Buddha's Birthday (May) lantern festival",
         "**Stone-pillar Buddhist 12 Sibiji-shin Zodiac Generals lineup at the temple gate** — unique among Korean coastal temples"
       ],
-      "timeUsed": [
-        "Coach drop-off + walk through vendor lane to entry plaza (~10 min)",
-        "Twelve Zodiac Generals + No-Accident Pagoda (~10 min)",
-        "108 stairs descent + Daeungjeon main hall + seaside terraces (~30 min)",
-        "Haesu Gwaneum statue viewpoint + photo time (~15 min)",
-        "Walk back up + reassemble at coach (~10 min)"
-      ],
-      "whyOnRoute": "The route's iconic highlight — the most-photographed temple in Busan, with a 650-year history and a rare Korean seaside Buddhist setting. Picking the 10:00 arrival time lands before the major tour-bus surge (typically 11:00 onward) so the 108-stair descent and the Haesu Gwaneum viewpoint are still walkable without queuing. The northeast-coast location also pairs naturally with Cheongsapo Blue Line Park immediately south — together forming the day's east-coast cluster before the coach swings back across the city for UN Memorial Cemetery, Gamcheon, and Jagalchi.",
+      "smartNotes": {
+        "tip": "Side doors for entering halls (front door reserved for monks); Buddha's Birthday (Apr–May) brings the lantern display; arrive before 10:30 to avoid the worst tour-bus crowds",
+        "photo": "Sunrise rock at the seaward edge; stairs next to Daeungjeon Hall give the classic ocean-and-temple frame; Haesu Gwaneum statue from the upper cliff gives the wide-angle temple-and-East-Sea view",
+        "facilities": "Souvenir/snack stalls and small cafe at upper plaza; coastal trail leads further along the rocks"
+      },
+      "whyOnRoute": "The route's iconic anchor — the most-photographed temple in Busan, with a 650-year history and a rare Korean seaside Buddhist setting. Picking the 10:00 arrival window lands before the major tour-bus surge (typically 11:00 onward) so the 108-stair descent and the Haesu Gwaneum viewpoint are still walkable without queuing. The northeast-coast location also pairs naturally with Cheongsapo Blue Line Park immediately south — together forming the day's east-coast cluster before the coach swings back across the city for UN Memorial Cemetery, Gamcheon, and Jagalchi.",
+      "convenience": {
+        "parking": "Haedong Yonggungsa Parking Lot (paid, per Visit Busan official)",
+        "restroom": "Available near main entrance and inside complex"
+      },
+      "description": "**Haedong Yonggungsa (해동 용궁사) — Korea's most famous seaside Buddhist temple** — perches on the rocky cliffs of Gijang-gun on Busan's northeastern coast, one of the very few major Korean temples NOT set in the mountains. Originally founded in **1376 during the Goryeo Dynasty by the great Buddhist teacher Naong Hyegeun (나옹 혜근, 1320-1376)** — a royal consultant and master who would help shape Korean Buddhism into the early Joseon era. Per legend, Naong was practicing asceticism at Bunhwangsa Temple in Gyeongju during a national drought; the East Sea god appeared to him in a dream and told him that building a temple on Bongrae Mountain (the original name of this seaside cliff) would restore the kingdom's prosperity. Naong founded the temple and named it **Bomunsa**, dedicated to Gwanseum-bosal (관세음보살, the Bodhisattva of Compassion). The temple was destroyed in the **Japanese Imjin Invasion of 1592** and lay in ruins for over 300 years until **Monk Ungang of Tongdosa Temple began reconstruction in the early 1930s**. The current name, **Haedong Yonggungsa (Korean Dragon Palace Temple)**, dates only to **1974** — when Head Monk Jeong-am, during a 100-day prayer (jeong-geon kido), had a vision of the Goddess of Mercy descending on the back of a dragon, emanating multicolor light. The temple was renamed to honor this vision. The visit follows the temple's signature processional path: through the row of **12 Sibiji-shin (Twelve Zodiac Generals)** at the entry plaza, past the **7-story 'No-Accident Pagoda'** (where drivers leave coin offerings under a stone wheel-shrine), down the famous **108 stone stairs** (representing the 108 delusions of the Buddhist mind) through a small bamboo grove, and out onto the seaside terraces and Daeungjeon main hall. The **Haesu Gwaneum Daebul** (Sea-Goddess of Mercy statue) on the upper cliff is the most photographed view, framing both the temple rooftops and the East Sea. Hours **04:30-19:20 daily, last entry 18:50, FREE admission**. **Buddha's Birthday (May)** brings Yeondunhoe lantern festival displays.",
       "visitBasics": {
         "hours": "Daily 04:30–19:20 (last admission 18:50)",
         "closed": "Open year-round",
-        "admission": "Free; private-car parking is paid",
-        "walking": "Moderate — 108 steps through pine grove, multiple seaside terraces and stairs"
-      },
-      "convenience": {
-        "restroom": "Available near main entrance and inside complex",
-        "parking": "Haedong Yonggungsa Parking Lot (paid, per Visit Busan official)"
-      },
-      "smartNotes": {
-        "photo": "Sunrise rock at the seaward edge; stairs next to Daeungjeon Hall give the classic ocean-and-temple frame; Haesu Gwaneum statue from the upper cliff gives the wide-angle temple-and-East-Sea view",
-        "facilities": "Souvenir/snack stalls and small cafe at upper plaza; coastal trail leads further along the rocks",
-        "tip": "Side doors for entering halls (front door reserved for monks); Buddha's Birthday (Apr–May) brings the lantern display; arrive before 10:30 to avoid the worst tour-bus crowds"
-      },
-      "_poi_meta": {
-        "poi_key": "haedong_yonggungsa",
-        "verified": true,
-        "match": "exact",
-        "kb_version": "1.24",
-        "verified_date": "2026-04-29",
-        "sources": [
-          "Visit Busan",
-          "VisitKorea",
-          "Wikipedia",
-          "Culture Trip",
-          "Korean Temple Guide",
-          "Korea Tourism Organization Official"
-        ]
+        "walking": "Moderate — 108 steps through pine grove, multiple seaside terraces and stairs",
+        "admission": "Free; private-car parking is paid"
       }
     },
     {
-      "number": 3,
+      "name": "Cheongsapo & Haeundae Blue Line Park",
       "time": "≈ 11:30",
-      "duration": "75 min",
-      "name": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area",
+      "number": 3,
       "category": "Coastal Park / Photo Spot",
-      "description": "Cheongsapo combines coastal views, Daritdol Observatory, and the Haeundae Blue Line Park area. Guests can enjoy the coastal scenery, take photos of the Sky Capsule/Beach Train area, or purchase optional tickets on site if available. During busy periods, tickets may sell out.",
-      "highlights": [
-        "Cheongsapo coastal view",
-        "Daritdol Observatory",
-        "Blue Line Park / Sky Capsule area",
-        "Optional tickets may sell out",
-        "Cheongsapo Twin Lighthouses (red + white) — Slam Dunk-style anime crosswalk",
-        "Beach Train ₩7,000 single / ₩10,000 re-board once",
-        "Cheongsapo = one of Busan's **eight scenic views**",
-        "World's first battery-charged eco-friendly sightseeing train",
-        "**Sky Capsule pricing 2026**: 2pax ₩30,000 / 3pax ₩39,000 / 4pax ₩44,000 one-way; **Beach Train** runs 4.8 km / 6 stops on the Donghae Nambu line opened in 2020"
-      ],
+      "duration": "75 min",
       "timeUsed": [
         "Drop-off at Cheongsapo Station (~5 min)",
         "Daritdol Skywalk walk-out + glass-floor experience (~25 min)",
@@ -296,28 +290,9 @@
         "Optional Sky Capsule one-way OR seafood snack at village stalls (~25 min)",
         "Reassemble at coach (~5 min)"
       ],
-      "whyOnRoute": "The route's **most-Instagrammed** segment — the pastel Sky Capsule has become a viral Korea-travel symbol since 2020. Cheongsapo is chosen over Mipo or Songjeong because the Daritdol Skywalk + Twin Lighthouses + village atmosphere all sit within a 600-m walking radius of the station, fitting cleanly inside a 75-min stop. Sky Capsule is OPTIONAL because the on-the-day boarding queue can run 30+ min and would otherwise jeopardize the lunch + UN Cemetery + Gamcheon timing later in the day; guests who must ride should book the sunset Mipo→Cheongsapo slot independently.",
-      "visitBasics": {
-        "hours": "Sky Capsule and Beach Train ~09:30–18:30 (extended to 20:30 in summer); Cheongsapo Daritdol Skywalk free 24h",
-        "closed": "Operations weather-dependent; check the day of",
-        "admission": "Free area; Sky Capsule 30,000 KRW (2 ppl) / 39,000 (3) / 44,000 (4) one-way; Beach Train ₩7,000 single / ₩10,000 re-board once",
-        "walking": "Easy along the wooden Green Railway boardwalk (Mipo↔Cheongsapo 2.3 km, ~30 min); flat at stations"
-      },
-      "convenience": {
-        "restroom": "Available at Mipo, Cheongsapo and Songjeong stations",
-        "parking": "Public lots near Mipo Station and Cheongsapo Station (paid)"
-      },
-      "smartNotes": {
-        "photo": "Cheongsapo Station crosswalk for the famous Slam Dunk-style frame; Daritdol Skywalk for glass-bottom sea view; Mipo→Cheongsapo direction on Sky Capsule has the best afternoon light",
-        "facilities": "In-person ticketing at Mipo, Cheongsapo and Songjeong only (automated kiosks at Dalmaji Tunnel, Daritdol, Gudeokpo); convenience store and food at Mipo plaza",
-        "tip": "Sky Capsule time slots can sell out quickly, especially near sunset. Book in advance through the official Blue Line Park channel when possible, and check the ticket policy before booking."
-      },
       "_poi_meta": {
-        "poi_key": "cheongsapo_blue_line_park",
-        "verified": true,
         "match": "exact",
-        "kb_version": "1.24",
-        "verified_date": "2026-04-29",
+        "poi_key": "cheongsapo_blue_line_park",
         "sources": [
           "Blue Line Park official",
           "Visit Busan",
@@ -325,16 +300,62 @@
           "KoreaToDo",
           "Tara O'Reilly travel",
           "Busan Metropolitan City Tourism"
-        ]
+        ],
+        "verified": true,
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29"
+      },
+      "highlights": [
+        "**Haeundae Blue Line Park opened 2020** on disused Donghae Nambu coastal railway",
+        "**Sky Capsule** (2.3 km elevated) + **Beach Train** (4.8 km, 6 stops) + Green Railway boardwalk",
+        "**Cheongsapo Daritdol Skywalk** (Aug 2017): 72.5-m glass-bottom skywalk, 20m above sea — **FREE**",
+        "**Sky Capsule pricing**: ₩30,000 (2 ppl) / ₩39,000 (3) / ₩44,000 (4) one-way",
+        "Cheongsapo Twin Lighthouses (red + white) — Slam Dunk-style anime crosswalk",
+        "Beach Train ₩7,000 single / ₩10,000 re-board once",
+        "Cheongsapo = one of Busan's **eight scenic views**",
+        "World's first battery-charged eco-friendly sightseeing train",
+        "**Sky Capsule pricing 2026**: 2pax ₩30,000 / 3pax ₩39,000 / 4pax ₩44,000 one-way; **Beach Train** runs 4.8 km / 6 stops on the Donghae Nambu line opened in 2020"
+      ],
+      "smartNotes": {
+        "tip": "Sky Capsule books out fast at sunset slots — reserve 1-2 weeks in advance via Klook or bluelinepark.com; bring backup for refunds — no refunds/changes for missed slots",
+        "photo": "Cheongsapo Station crosswalk for the famous Slam Dunk-style frame; Daritdol Skywalk for glass-bottom sea view; Mipo→Cheongsapo direction on Sky Capsule has the best afternoon light",
+        "facilities": "In-person ticketing at Mipo, Cheongsapo and Songjeong only (automated kiosks at Dalmaji Tunnel, Daritdol, Gudeokpo); convenience store and food at Mipo plaza"
+      },
+      "whyOnRoute": "The route's **most-Instagrammed** segment — the pastel Sky Capsule has become a viral Korea-travel symbol since 2020. Cheongsapo is chosen over Mipo or Songjeong because the Daritdol Skywalk + Twin Lighthouses + village atmosphere all sit within a 600-m walking radius of the station, fitting cleanly inside a 75-min stop. Sky Capsule is OPTIONAL because the on-the-day boarding queue can run 30+ min and would otherwise jeopardize the lunch + UN Cemetery + Gamcheon timing later in the day; guests who must ride should book the sunset Mipo→Cheongsapo slot independently.",
+      "convenience": {
+        "parking": "Public lots near Mipo Station and Cheongsapo Station (paid)",
+        "restroom": "Available at Mipo, Cheongsapo and Songjeong stations"
+      },
+      "description": "**Haeundae Blue Line Park (해운대 블루라인파크)** is an eco-friendly redevelopment of the **abandoned Donghae Nambu coastal railway**, opened to the public in **2020**. The complex spans 4.8 km of Busan's most photogenic coastline between **Mipo Station** (near Haeundae Beach) and **Songjeong Station** (near Songjeong Beach), with three ways to experience the same scenery: (1) the **Sky Capsule** — pastel-colored 4-person cabins on an elevated rail 7-10 meters above the coast, running 2.3 km between Mipo and Cheongsapo, (2) the **Beach Train** — a battery-powered eco-train with full-glass ocean-side benches running the entire 4.8 km on 6 stops (Mipo → Dalmaji Tunnel → Cheongsapo → Daritdol Skywalk → Gudeokpo → Songjeong), and (3) the **Busan Green Railway** — a 4.8 km wooden coastal boardwalk that won the 2021 Ministry of Land 'Korea Landscaping Award'. Today's stop centers on **Cheongsapo (청사포)** — a small fishing-village station that's one of Busan's eight scenic views — with two free highlight attractions: (1) the **Cheongsapo Daritdol Skywalk**, opened **August 2017**, a 72.5-m-long, 20-m-high half-moon-shaped glass-bottom observatory in the shape of a blue dragon, FREE admission with slipper covers provided to protect the glass, and (2) the **Cheongsapo Twin Lighthouses** (red + white) and the famous **station crosswalk** that's gone viral for its Slam Dunk anime resemblance. Guests have free time to (a) ride the **Sky Capsule one-way Mipo→Cheongsapo (₩30,000 for 2 ppl, ₩39,000 for 3, ₩44,000 for 4)** if booked in advance, or (b) walk the wooden Green Railway ~30 min from Mipo to Cheongsapo. **Sky Capsule reservations should be made through the official bluelinepark.com or Klook 1-2 weeks in advance** for sunset slots; tour staff can assist with on-site automated kiosks if available.",
+      "visitBasics": {
+        "hours": "Sky Capsule and Beach Train ~09:30–18:30 (extended to 20:30 in summer); Cheongsapo Daritdol Skywalk free 24h",
+        "closed": "Operations weather-dependent; check the day of",
+        "walking": "Easy along the wooden Green Railway boardwalk (Mipo↔Cheongsapo 2.3 km, ~30 min); flat at stations",
+        "admission": "Free area; Sky Capsule 30,000 KRW (2 ppl) / 39,000 (3) / 44,000 (4) one-way; Beach Train ₩7,000 single / ₩10,000 re-board once"
       }
     },
     {
-      "number": 4,
-      "time": "≈ 13:00",
-      "duration": "60 min",
       "name": "Lunch (local Busan restaurant)",
+      "time": "≈ 13:00",
+      "number": 4,
       "category": "Lunch / Local Cuisine",
-      "description": "Lunch is at a coach-friendly local restaurant en route from Haeundae back across central Busan toward UN Memorial Cemetery in Nam-gu. Two typical options depending on coach routing and group preference: (1) **Dwaeji Gukbap (돼지국밥)** — Busan's signature pork-bone broth rice soup, the city's working-class comfort food since the Korean War refugee era, served with kkakdugi radish kimchi, saeujeot shrimp paste, buchu chives, and rice (~9,000-12,000 KRW per bowl); recommended in the Seomyeon or Daeyeon-dong neighborhoods, or (2) **Milmyeon (밀면)** — Busan's wheat-flour cold noodles, an adaptation of North Korean Pyongyang naengmyeon by refugees who couldn't find buckwheat in wartime Busan, served in chilled beef-broth or in spicy bibim style (~8,000-11,000 KRW). Both are **regional specialties unique to Busan and not commonly found in Seoul**. Lunch is at the guest's own expense; vegetarian and halal-friendly options are limited at most dwaeji-gukbap restaurants — please notify the guide at booking if dietary accommodations are needed and a separate restaurant (typically a bibimbap or hansik buffet) will be substituted. Total time ~60 min including parking + ordering + eating + restroom + boarding the coach.",
+      "duration": "60 min",
+      "timeUsed": [
+        "Coach drop-off + walk to restaurant (~5 min)",
+        "Order + meal (~40 min)",
+        "Restroom + reassemble at coach (~15 min)"
+      ],
+      "_poi_meta": {
+        "match": "lunch_placeholder",
+        "poi_key": "OPS_busan_lunch",
+        "sources": [
+          "Visit Busan",
+          "Busan Metropolitan Government cuisine guide"
+        ],
+        "verified": true,
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29"
+      },
       "highlights": [
         "**Dwaeji-gukbap** (Busan pork-bone soup) or **milmyeon** (Busan cold wheat noodles) — both regional specialties",
         "Both dishes have Korean War refugee origins unique to Busan",
@@ -342,31 +363,37 @@
         "Vegetarian / halal-friendly substitution available on request at booking",
         "60-min stop — efficient enough to keep UN Cemetery + Gamcheon on schedule"
       ],
-      "timeUsed": [
-        "Coach drop-off + walk to restaurant (~5 min)",
-        "Order + meal (~40 min)",
-        "Restroom + reassemble at coach (~15 min)"
-      ],
       "whyOnRoute": "Lunch is timed at 13:00 to bridge the morning's east-coast cluster (Haedong Yonggungsa + Cheongsapo) and the afternoon's central Busan cluster (UN Memorial Cemetery + Gamcheon + Jagalchi). The choice of dwaeji-gukbap or milmyeon over generic Korean BBQ reflects the route's local-culture priority — both dishes are Busan-specific Korean War heritage cuisine that guests are unlikely to encounter on a Seoul-only Korea trip. Restaurant choice on the day depends on coach routing and current restaurant availability; tour guide will confirm at the morning briefing.",
-      "_poi_meta": {
-        "poi_key": "OPS_busan_lunch",
-        "verified": true,
-        "match": "lunch_placeholder",
-        "kb_version": "1.15",
-        "verified_date": "2026-04-29",
-        "sources": [
-          "Visit Busan",
-          "Busan Metropolitan Government cuisine guide"
-        ]
-      }
+      "description": "Lunch is at a coach-friendly local restaurant en route from Haeundae back across central Busan toward UN Memorial Cemetery in Nam-gu. Two typical options depending on coach routing and group preference: (1) **Dwaeji Gukbap (돼지국밥)** — Busan's signature pork-bone broth rice soup, the city's working-class comfort food since the Korean War refugee era, served with kkakdugi radish kimchi, saeujeot shrimp paste, buchu chives, and rice (~9,000-12,000 KRW per bowl); recommended in the Seomyeon or Daeyeon-dong neighborhoods, or (2) **Milmyeon (밀면)** — Busan's wheat-flour cold noodles, an adaptation of North Korean Pyongyang naengmyeon by refugees who couldn't find buckwheat in wartime Busan, served in chilled beef-broth or in spicy bibim style (~8,000-11,000 KRW). Both are **regional specialties unique to Busan and not commonly found in Seoul**. Lunch is at the guest's own expense; vegetarian and halal-friendly options are limited at most dwaeji-gukbap restaurants — please notify the guide at booking if dietary accommodations are needed and a separate restaurant (typically a bibimbap or hansik buffet) will be substituted. Total time ~60 min including parking + ordering + eating + restroom + boarding the coach."
     },
     {
-      "number": 5,
-      "time": "≈ 14:15",
-      "duration": "60 min",
       "name": "UN Memorial Cemetery in Korea",
+      "time": "≈ 14:15",
+      "number": 5,
       "category": "Memorial / War History",
-      "description": "**The UN Memorial Cemetery in Korea (재한유엔기념공원, UNMCK)** is the **only United Nations memorial cemetery anywhere in the world** — established January 18, 1951 by the UN Command during the Korean War, dedicated April 6, 1951 by US General Matthew Ridgway, and formally donated to the United Nations by the Republic of Korea in **1959** in gratitude for the UN forces who died defending South Korea. **22 sending nations participated in the Korean War (1950-1953)** under the UN flag — 16 nations sent combat troops + 5 sent medical aid + 1 sent observers. Initially up to **11,000 graves** were here; most fallen were repatriated post-armistice, leaving today **2,300 graves from 11 countries** (UK, US, Türkiye, Canada, Australia, Netherlands, France, Norway, South Korea, New Zealand, South Africa). The visit walks the cemetery's main monumental sequence: (1) the **Main Gate** (designed by Korean architect Kim Joong-up, built by Busan City in 1966 — the eight roof-supporting pillars symbolize the moment and eternity of soldiers' standing watch); (2) the **Memorial Service Hall** featuring a 12-minute documentary in English/Korean on the cemetery's history; (3) the **Symbolic Area** where the **22 sending-state flags + Korean + UN flag** fly daily; (4) the **Wall of Remembrance**, completed **2006**, with all **40,896 UN casualty names inscribed on 140 marble panels** — many veterans' relatives find their ancestors here for the first time; and (5) the **US Korean War Memorial**, dedicated **2013** with the Frank Gaylord sculpture commissioned by the American Battle Monuments Commission. **Hours: 09:00-18:00 (May-Sep) / 09:00-17:00 (Oct-Apr); FREE; 100% wheelchair-accessible**. Annual **'Turn Toward Busan' silent ceremony** Nov 11 11:00 AM, where the world turns symbolically toward this cemetery.",
+      "duration": "60 min",
+      "timeUsed": [
+        "Coach drop-off + walk to Memorial Hall (~5 min)",
+        "12-minute Korean War documentary + introduction (~15 min)",
+        "Symbolic Area (22 flags) + Wall of Remembrance (~20 min)",
+        "Walk grounds + return to coach (~20 min)"
+      ],
+      "_poi_meta": {
+        "match": "exact",
+        "poi_key": "un_memorial_cemetery",
+        "sources": [
+          "UNMCK official",
+          "Wikipedia",
+          "ABMC",
+          "Visit Busan",
+          "CNN",
+          "VisitKorea",
+          "UN Memorial Cemetery in Korea Official Site"
+        ],
+        "verified": true,
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29"
+      },
       "highlights": [
         "**Only UN memorial cemetery in the world** — established January 1951 by UN Command",
         "Land donated by Republic of Korea to United Nations in **1959**",
@@ -378,52 +405,53 @@
         "Hours daily 09:00-18:00 May-Sep / 09:00-17:00 Oct-Apr; FREE; 100% wheelchair-accessible",
         "**'Turn Toward Busan' ceremony November 11 at 11:00 AM** — only UN memorial cemetery in the world hosts this annual moment of silence honoring 22 sending nations"
       ],
-      "timeUsed": [
-        "Coach drop-off + walk to Memorial Hall (~5 min)",
-        "12-minute Korean War documentary + introduction (~15 min)",
-        "Symbolic Area (22 flags) + Wall of Remembrance (~20 min)",
-        "Walk grounds + return to coach (~20 min)"
-      ],
+      "smartNotes": {
+        "tip": "Watch the 12-minute documentary in Memorial Service Hall first (English available); dress neatly, keep voices low, and no food on the grounds; ground is sacred — no climbing on graves or grass between markers",
+        "photo": "Wall of Remembrance (40,896 names on 140 marble panels) and the Symbolic Area where the 22 sending-state flags fly",
+        "facilities": "Memorial Service Hall, Memorabilia Hall, UN Forces Monument, US Korean War Memorial (2013 Frank Gaylord sculpture), and adjacent UN Peace Memorial Hall"
+      },
       "whyOnRoute": "The route's **moral counterweight** — Busan's identity is inseparable from its role as the only Korean city the North Korean Army never captured during the war (population spiked from 880,000 to 1.4 million as refugees flooded south), and Gamcheon's hillside refugee shanties + Jagalchi's 'ajumma' fish-vendor culture both trace directly to this same Korean War narrative. Visiting UNMCK before Gamcheon and Jagalchi gives guests the historical context that makes the rest of the day's stops more than just photo opportunities. The 14:15 arrival also lands well inside the May-Sep evening 18:00 close (or Oct-Apr 17:00 close).",
+      "convenience": {
+        "parking": "On-site lot — free for first 90 min, then ₩1,200/hr",
+        "restroom": "Available at Memorial Service Hall and visitor center"
+      },
+      "description": "**The UN Memorial Cemetery in Korea (재한유엔기념공원, UNMCK)** is the **only United Nations memorial cemetery anywhere in the world** — established January 18, 1951 by the UN Command during the Korean War, dedicated April 6, 1951 by US General Matthew Ridgway, and formally donated to the United Nations by the Republic of Korea in **1959** in gratitude for the UN forces who died defending South Korea. **22 sending nations participated in the Korean War (1950-1953)** under the UN flag — 16 nations sent combat troops + 5 sent medical aid + 1 sent observers. Initially up to **11,000 graves** were here; most fallen were repatriated post-armistice, leaving today **2,300 graves from 11 countries** (UK, US, Türkiye, Canada, Australia, Netherlands, France, Norway, South Korea, New Zealand, South Africa). The visit walks the cemetery's main monumental sequence: (1) the **Main Gate** (designed by Korean architect Kim Joong-up, built by Busan City in 1966 — the eight roof-supporting pillars symbolize the moment and eternity of soldiers' standing watch); (2) the **Memorial Service Hall** featuring a 12-minute documentary in English/Korean on the cemetery's history; (3) the **Symbolic Area** where the **22 sending-state flags + Korean + UN flag** fly daily; (4) the **Wall of Remembrance**, completed **2006**, with all **40,896 UN casualty names inscribed on 140 marble panels** — many veterans' relatives find their ancestors here for the first time; and (5) the **US Korean War Memorial**, dedicated **2013** with the Frank Gaylord sculpture commissioned by the American Battle Monuments Commission. **Hours: 09:00-18:00 (May-Sep) / 09:00-17:00 (Oct-Apr); FREE; 100% wheelchair-accessible**. Annual **'Turn Toward Busan' silent ceremony** Nov 11 11:00 AM, where the world turns symbolically toward this cemetery.",
       "visitBasics": {
         "hours": "Daily 09:00–18:00 (May–Sep) / 09:00–17:00 (Oct–Apr)",
         "closed": "Open year-round",
-        "admission": "Free",
-        "walking": "Easy — flat grass paths and paved walkways across 14 ha of grounds; 100% wheelchair-accessible"
-      },
-      "convenience": {
-        "restroom": "Available at Memorial Service Hall and visitor center",
-        "parking": "On-site lot — free for first 90 min, then ₩1,200/hr"
-      },
-      "smartNotes": {
-        "photo": "Wall of Remembrance (40,896 names on 140 marble panels) and the Symbolic Area where the 22 sending-state flags fly",
-        "facilities": "Memorial Service Hall, Memorabilia Hall, UN Forces Monument, US Korean War Memorial (2013 Frank Gaylord sculpture), and adjacent UN Peace Memorial Hall",
-        "tip": "Watch the 12-minute documentary in Memorial Service Hall first (English available); dress neatly, keep voices low, and no food on the grounds; ground is sacred — no climbing on graves or grass between markers"
-      },
-      "_poi_meta": {
-        "poi_key": "un_memorial_cemetery",
-        "verified": true,
-        "match": "exact",
-        "kb_version": "1.24",
-        "verified_date": "2026-04-29",
-        "sources": [
-          "UNMCK official",
-          "Wikipedia",
-          "ABMC",
-          "Visit Busan",
-          "CNN",
-          "VisitKorea",
-          "UN Memorial Cemetery in Korea Official Site"
-        ]
+        "walking": "Easy — flat grass paths and paved walkways across 14 ha of grounds; 100% wheelchair-accessible",
+        "admission": "Free"
       }
     },
     {
-      "number": 6,
-      "time": "≈ 15:30",
-      "duration": "75 min",
       "name": "Gamcheon Culture Village",
+      "time": "≈ 15:30",
+      "number": 6,
       "category": "Cultural Village / Mural Art",
-      "description": "**Gamcheon Culture Village (감천문화마을)** — nicknamed both **'Korea's Machu Picchu'** and **'Korea's Santorini'** — is a hillside neighborhood in Saha-gu, west Busan, whose pastel-painted houses cascade down in stepped rows over the slope. The settlement began in the **1920s-1930s** when the Busan administration relocated working-class residents away from the port. The village's character was set in **1955** when **~800 families (about 4,000 people) of the Taegeukdo religious community** — a uniquely Korean syncretic religion blending Buddhist, Confucian, and yin-yang elements, founded by **Jo Cheol-je** during the Japanese colonial period — settled here as Korean War refugees fleeing the North. The Taegeukdo philosophy of '**allowing others to prosper**' directly shaped the village's most distinctive feature: houses are intentionally tiered so that **no roof blocks the view of the house behind it**, with the entire community visible to the sky and the sea. Gamcheon remained one of Busan's poorest neighborhoods until **2009**, when the Korean Ministry of Culture launched the **'Dreaming of Machu Picchu in Busan'** public-art revitalization project, followed by the **'Miro Miro' (maze) project in 2010** — adding 22+ commissioned murals, sculptures, and art installations including the iconic **'Little Prince and Fox' bench** at the Sky Garden viewpoint. Gamcheon won the **2012 UN-HABITAT Asian Townscape Award** and now welcomes **~1.4 million visitors annually**. The visit follows the village's signature stamp-map walking route: from the entrance at the **Tourist Information Center**, up to **Sky Garden viewpoint** for the panoramic rainbow-roof shot, then down through the labyrinthine alleys past murals, hanbok rental shops, craft workshops, and small cafes. **The village is a living residential community** — quiet voices required, no drones, no flash photography into homes, and rubbish carried out. Hours **09:00-18:00 Mar-Oct / 09:00-17:00 Nov-Feb (info center)**; **village itself open 24h, FREE entry**.",
+      "duration": "75 min",
+      "timeUsed": [
+        "Coach drop-off at Public Parking Lot 2 + walk to entrance (~5 min)",
+        "Tourist Information Center + Stamp Map purchase (~10 min)",
+        "Sky Garden viewpoint + Little Prince bench (~25 min)",
+        "Alley walk past murals + small cafe pause (~25 min)",
+        "Reassemble at coach (~10 min)"
+      ],
+      "_poi_meta": {
+        "match": "exact",
+        "poi_key": "gamcheon_culture_village",
+        "sources": [
+          "Wikipedia",
+          "CNN",
+          "Visit Busan",
+          "Hapskorea",
+          "Columban Society",
+          "Lifeguin",
+          "Busan Cultural Foundation"
+        ],
+        "verified": true,
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29"
+      },
       "highlights": [
         "**'Korea's Machu Picchu' / 'Korea's Santorini'** — UN-HABITAT Asian Townscape Award 2012",
         "Origins: **1920s-1930s** Busan administration relocation + **1955 Taegeukdo refugees** (~800 families)",
@@ -435,64 +463,30 @@
         "Free village entry; optional Stamp Map ~₩2,000",
         "**UN-HABITAT Asian Townscape Award 2012** — recognition of the 2009 'Dreaming of Machu Picchu' art project that transformed the 1955 Taegeukdo refugee settlement into Busan's signature mural village"
       ],
-      "timeUsed": [
-        "Coach drop-off at Public Parking Lot 2 + walk to entrance (~5 min)",
-        "Tourist Information Center + Stamp Map purchase (~10 min)",
-        "Sky Garden viewpoint + Little Prince bench (~25 min)",
-        "Alley walk past murals + small cafe pause (~25 min)",
-        "Reassemble at coach (~10 min)"
-      ],
+      "smartNotes": {
+        "tip": "Residents live here — keep voices down, no drones, take rubbish with you; wear grippy shoes for the steep lanes; afternoon golden hour ~16:00-17:00 is the village's best light",
+        "photo": "Little Prince and Fox bench (long queue) and Haneul Maru / Sky Garden Observatory for the sweeping rainbow-roof and bay view",
+        "facilities": "Hanbok rental, craft workshops, Korean candy stalls, cafes; small village museum at the entrance; the stamp map is the easiest way to navigate"
+      },
       "whyOnRoute": "The route's **most colorful and unique** stop — there is no other neighborhood like this anywhere in Korea. The Korean War refugee narrative directly threads from UN Memorial Cemetery (the moral memorial) → Gamcheon (the lived consequence: refugee settlement that became a community) → Jagalchi (the economic consequence: ajumma fish-vendors supporting their families). The 15:30 arrival lands ahead of the 18:00 info-center close while still giving guests ~1 hour of golden-hour light over the rainbow rooftops, the village's most photogenic time.",
+      "convenience": {
+        "parking": "Gamcheon Public Parking Lot 2 (paid)",
+        "restroom": "Public restrooms at the Tourist Information Center and around the main viewpoints"
+      },
+      "description": "**Gamcheon Culture Village (감천문화마을)** — nicknamed both **'Korea's Machu Picchu'** and **'Korea's Santorini'** — is a hillside neighborhood in Saha-gu, west Busan, whose pastel-painted houses cascade down in stepped rows over the slope. The settlement began in the **1920s-1930s** when the Busan administration relocated working-class residents away from the port. The village's character was set in **1955** when **~800 families (about 4,000 people) of the Taegeukdo religious community** — a uniquely Korean syncretic religion blending Buddhist, Confucian, and yin-yang elements, founded by **Jo Cheol-je** during the Japanese colonial period — settled here as Korean War refugees fleeing the North. The Taegeukdo philosophy of '**allowing others to prosper**' directly shaped the village's most distinctive feature: houses are intentionally tiered so that **no roof blocks the view of the house behind it**, with the entire community visible to the sky and the sea. Gamcheon remained one of Busan's poorest neighborhoods until **2009**, when the Korean Ministry of Culture launched the **'Dreaming of Machu Picchu in Busan'** public-art revitalization project, followed by the **'Miro Miro' (maze) project in 2010** — adding 22+ commissioned murals, sculptures, and art installations including the iconic **'Little Prince and Fox' bench** at the Sky Garden viewpoint. Gamcheon won the **2012 UN-HABITAT Asian Townscape Award** and now welcomes **~1.4 million visitors annually**. The visit follows the village's signature stamp-map walking route: from the entrance at the **Tourist Information Center**, up to **Sky Garden viewpoint** for the panoramic rainbow-roof shot, then down through the labyrinthine alleys past murals, hanbok rental shops, craft workshops, and small cafes. **The village is a living residential community** — quiet voices required, no drones, no flash photography into homes, and rubbish carried out. Hours **09:00-18:00 Mar-Oct / 09:00-17:00 Nov-Feb (info center)**; **village itself open 24h, FREE entry**.",
       "visitBasics": {
         "hours": "Daily 09:00–18:00 (Mar–Oct) / 09:00–17:00 (Nov–Feb); some shops/cafes keep their own hours",
         "closed": "Open year-round (a living residential community)",
-        "admission": "Free village entry; optional Stamp Map ≈ 2,000 KRW",
-        "walking": "Strenuous — very steep alleys and stairs; not stroller- or wheelchair-friendly in many sections"
-      },
-      "convenience": {
-        "restroom": "Public restrooms at the Tourist Information Center and around the main viewpoints",
-        "parking": "Gamcheon Public Parking Lot 2 (paid)"
-      },
-      "smartNotes": {
-        "photo": "Little Prince and Fox bench (long queue) and Haneul Maru / Sky Garden Observatory for the sweeping rainbow-roof and bay view",
-        "facilities": "Hanbok rental, craft workshops, Korean candy stalls, cafes; small village museum at the entrance; the stamp map is the easiest way to navigate",
-        "tip": "Residents live here — keep voices down, no drones, take rubbish with you; wear grippy shoes for the steep lanes; afternoon golden hour ~16:00-17:00 is the village's best light"
-      },
-      "_poi_meta": {
-        "poi_key": "gamcheon_culture_village",
-        "verified": true,
-        "match": "exact",
-        "kb_version": "1.24",
-        "verified_date": "2026-04-29",
-        "sources": [
-          "Wikipedia",
-          "CNN",
-          "Visit Busan",
-          "Hapskorea",
-          "Columban Society",
-          "Lifeguin",
-          "Busan Cultural Foundation"
-        ]
+        "walking": "Strenuous — very steep alleys and stairs; not stroller- or wheelchair-friendly in many sections",
+        "admission": "Free village entry; optional Stamp Map ≈ 2,000 KRW"
       }
     },
     {
-      "number": 7,
+      "name": "Jagalchi Fish Market",
       "time": "≈ 17:15",
-      "duration": "60 min",
-      "name": "Jagalchi Market / Nampo-dong drop-off option",
+      "number": 7,
       "category": "Fish Market / Local Culture",
-      "description": "The day can finish near Jagalchi Market and Nampo-dong, giving guests the option to continue with dinner, seafood-market browsing, BIFF Square, or nearby shopping after the guided tour ends.",
-      "highlights": [
-        "Jagalchi Market",
-        "Nampo-dong",
-        "Optional evening continuation",
-        "**Buy fish 1F → cook upstairs 2F** with small cooking fee = the local way",
-        "**Modern seagull-shaped building reopened 2006**",
-        "Annual **Jagalchi Cultural Tourism Festival** in October",
-        "Outdoor pier and Sky Park (5F when open) for waterfront photos",
-        "Hours daily 05:00-22:00; **CLOSED 1st & 3rd Tuesdays** of each month",
-        "**Modern seagull-shaped main building reopened 2006** spanning ~66,000 m² with ~400 vendors; **closed 1st & 3rd Tuesdays** of each month (operational note critical for itinerary planning)"
-      ],
+      "duration": "60 min",
       "timeUsed": [
         "Coach drop-off + walk to main building (~5 min)",
         "1F live-seafood walk-through with guide commentary (~20 min)",
@@ -500,28 +494,9 @@
         "Optional sashimi snack OR Sky Park rooftop (~15 min)",
         "Reassemble at coach + drop-off at pickup points (~5 min)"
       ],
-      "whyOnRoute": "The route's **culinary closing scene** — Busan's identity is built on seafood the way Seoul's is built on royal Joseon palace cuisine, and Jagalchi is the single-most-essential expression of that. The 17:15 visit lands deliberately between the lunch crowd's tail-end and the dinner-drinking surge that fills the 2F sashimi restaurants from 18:30 onward — making the lanes walkable and photogenic. Pairing Jagalchi as the day's final stop also lets the coach efficiently drop guests at Jagalchi/Nampo (Line 1) for those wanting to continue independently into Nampo-dong's BIFF Square or Gukje Market in the evening, or back to Busan Station / Seomyeon / Haeundae for those returning to hotels.",
-      "visitBasics": {
-        "hours": "Daily 05:00–22:00 (vendor hours vary; live-fish section officially 06:00–22:00)",
-        "closed": "1st and 3rd Tuesdays of every month",
-        "admission": "Free entry; pay-as-you-go for seafood and 2F cooking-fee",
-        "walking": "Moderate — ground floor flat (wet, can be slippery); stairs to 2F sashimi/restaurant level"
-      },
-      "convenience": {
-        "restroom": "Available inside the main building on each floor",
-        "parking": "Basement lot at the main building, ₩700 / 10 min"
-      },
-      "smartNotes": {
-        "photo": "Outdoor pier behind the building for the harbor-and-fishing-boat shot; Jagalchi ajummas at the live-fish stalls (always ask permission first)",
-        "facilities": "1F live seafood, 2F sashimi & restaurants, dried-fish section, rooftop Sky Park (when open), Sashimi Center buffet on 5F",
-        "tip": "Buy the fish on 1F, then bring it upstairs to a 2F restaurant and pay a small cooking fee — that's the local way; address 52 Jagalchihaean-ro, Jung-gu; floor is wet — closed-toe shoes recommended; cash works better than cards at smaller stalls"
-      },
       "_poi_meta": {
-        "poi_key": "jagalchi_market",
-        "verified": true,
         "match": "exact",
-        "kb_version": "1.24",
-        "verified_date": "2026-04-29",
+        "poi_key": "jagalchi_market",
         "sources": [
           "VisitKorea",
           "Wikipedia",
@@ -530,7 +505,38 @@
           "Emma Jane Explores",
           "Jagalchi.org",
           "Korean Heritage Service / Cultural Heritage Administration"
-        ]
+        ],
+        "verified": true,
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29"
+      },
+      "highlights": [
+        "**Korea's largest seafood market** — covers 66,000 m² with ~400 vendors",
+        "**'Jagalchi'** = 'gravel' (자갈) for the original pebbly shoreline",
+        "**'Jagalchi Ajumma'** = post-Korean War widowed/displaced women fish vendors — Busan's icon",
+        "**Buy fish 1F → cook upstairs 2F** with small cooking fee = the local way",
+        "**Modern seagull-shaped building reopened 2006**",
+        "Annual **Jagalchi Cultural Tourism Festival** in October",
+        "Outdoor pier and Sky Park (5F when open) for waterfront photos",
+        "Hours daily 05:00-22:00; **CLOSED 1st & 3rd Tuesdays** of each month",
+        "**Modern seagull-shaped main building reopened 2006** spanning ~66,000 m² with ~400 vendors; **closed 1st & 3rd Tuesdays** of each month (operational note critical for itinerary planning)"
+      ],
+      "smartNotes": {
+        "tip": "Buy the fish on 1F, then bring it upstairs to a 2F restaurant and pay a small cooking fee — that's the local way; address 52 Jagalchihaean-ro, Jung-gu; floor is wet — closed-toe shoes recommended; cash works better than cards at smaller stalls",
+        "photo": "Outdoor pier behind the building for the harbor-and-fishing-boat shot; Jagalchi ajummas at the live-fish stalls (always ask permission first)",
+        "facilities": "1F live seafood, 2F sashimi & restaurants, dried-fish section, rooftop Sky Park (when open), Sashimi Center buffet on 5F"
+      },
+      "whyOnRoute": "The route's **culinary closing scene** — Busan's identity is built on seafood the way Seoul's is built on royal Joseon palace cuisine, and Jagalchi is the single-most-essential expression of that. The 17:15 visit lands deliberately between the lunch crowd's tail-end and the dinner-drinking surge that fills the 2F sashimi restaurants from 18:30 onward — making the lanes walkable and photogenic. Pairing Jagalchi as the day's final stop also lets the coach efficiently drop guests at Jagalchi/Nampo (Line 1) for those wanting to continue independently into Nampo-dong's BIFF Square or Gukje Market in the evening, or back to Busan Station / Seomyeon / Haeundae for those returning to hotels.",
+      "convenience": {
+        "parking": "Basement lot at the main building, ₩700 / 10 min",
+        "restroom": "Available inside the main building on each floor"
+      },
+      "description": "**Jagalchi Market (자갈치시장)** — **Korea's largest seafood market** and one of Busan's ten landmarks — sits on the Nampo Port waterfront in Jung-gu, a 7-min walk from Jagalchi Station (Line 1) or Nampo Station. The name **'Jagalchi'** comes from **'jagal' (자갈, gravel)**, after the pebbly shoreline that once lined the area. The market's modern character was forged after the **Korean War (1950-1953)**: when many men were away fighting or had been lost in combat, **widowed and displaced women — the legendary 'Jagalchi Ajumma' (자갈치 아주머니)** — became their families' breadwinners by selling fish on wooden boxes along the pierside. The ajumma have been the **economic and cultural soul of Busan ever since**, embodying both the city's post-war recovery story and Korea's '**jeong (정)**' culture of long-term personal trust between vendor and customer. The current modern **seagull-shaped main building reopened in 2006** and houses ~400 vendors across 66,000 m² gross floor area: **1F** is the live-seafood market (octopus, snow crab, abalone, sea squirt, live hagfish, mackerel, sea cucumbers, hoe-grade flounders) where guests can **buy fresh seafood by weight then take it upstairs to a 2F restaurant for a small cooking fee** — that's the local way to eat at Jagalchi. **2F** is the sashimi-and-restaurant level. The dried-seafood section (anchovies, sea laver, kelp, dried squid) extends along the outdoor pier and is the most photogenic for travel snapshots. **Hours 05:00-22:00 daily; CLOSED 1st & 3rd Tuesdays of each month**. **Annual Jagalchi Cultural Tourism Festival** every October. The visit time is deliberately at the market's late-afternoon lull (post-lunch crowd, pre-evening drinking crowd) to make the lanes and rooftop **Sky Park** comfortably walkable.",
+      "visitBasics": {
+        "hours": "Daily 05:00–22:00 (vendor hours vary; live-fish section officially 06:00–22:00)",
+        "closed": "1st and 3rd Tuesdays of every month",
+        "walking": "Moderate — ground floor flat (wet, can be slippery); stairs to 2F sashimi/restaurant level",
+        "admission": "Free entry; pay-as-you-go for seafood and 2F cooking-fee"
       }
     }
   ],

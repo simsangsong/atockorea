@@ -100,34 +100,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "소요 시간",
-      "value": "약 9시간 (08:30 첫 픽업, ≈18:00 하차)"
+      "icon": "camera",
+      "label": "포토 가치",
+      "value": "높음",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "그룹 규모",
-      "value": "소그룹, 미니코치, 영어/중국어 가이드 동행"
-    },
-    {
-      "icon": "map-pin",
-      "label": "픽업 정보",
-      "value": "오션 스위트 08:30 / 제주공항 3번 게이트 (3층) 08:45 / 롯데시티호텔 09:00 / 시청 09:05."
-    },
-    {
-      "icon": "star",
-      "label": "여행자 평점",
-      "value": "648개 리뷰 4.9/5"
+      "icon": "mountain",
+      "label": "경관",
+      "value": "높음",
+      "level": 5
     },
     {
       "icon": "footprints",
-      "label": "도보 난이도",
-      "value": "중간 — 어승생악 탐방로 (1시간), 폭포 계단, 한라산 전망."
+      "label": "도보",
+      "value": "높음",
+      "level": 4
     },
     {
-      "icon": "ticket",
-      "label": "포함 사항",
-      "value": "차량, 공인 가이드, ALL 입장료. 불포함: 점심 (~₩15,000), 팁"
+      "icon": "cloud-rain",
+      "label": "우천 적합성",
+      "value": "낮음",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "가족 적합도",
+      "value": "보통",
+      "level": 3
+    },
+    {
+      "icon": "gauge",
+      "label": "투어 페이스",
+      "value": "균형 잡힘",
+      "level": 4
     }
   ],
   "galleryItems": [

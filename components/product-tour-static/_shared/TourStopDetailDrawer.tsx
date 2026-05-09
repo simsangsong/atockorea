@@ -81,27 +81,23 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
   });
 }
 
-/** Premium-styled inline markdown for the description modal. Restraint over
- *  saturation: only the FIRST `**bold**` per paragraph reads as a key-term
- *  highlight (soft amber wash). Subsequent bolds stay as plain `<strong>` —
- *  weight only, no color noise. Measurements get tabular-nums but no underline. */
+/** Premium-styled inline markdown for the description modal.
+ *  ALL `**bold**` terms get a consistent soft primary-tinted highlight so
+ *  key facts, locations, and named entities pop uniformly. */
 function renderModalInline(text: string): React.ReactNode[] {
   if (!text) return [];
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  let boldIndex = 0;
   return parts.map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
       const inner = part.slice(2, -2);
-      const isFirstBold = boldIndex === 0;
-      boldIndex += 1;
-      const isMeasurement = /^[0-9][\d.,\s/–-]*\s*(?:m²|m|km|hr|min|%|kg|₩|\$|€|¥|°C|°F|pyeong|평)?\s*$/i.test(inner.trim());
+      const isMeasurement = /^[0-9][\d.,\s/–\-]*\s*(?:m²|m\b|km\b|hr\b|min\b|%|kg|₩|\$|€|¥|°C|°F|pyeong|평)/i.test(inner.trim());
       return (
         <strong
           key={i}
           className={cn(
             "font-semibold text-foreground",
             isMeasurement && "tabular-nums",
-            isFirstBold && "rounded-[3px] bg-amber-100/55 px-[3px] py-[1px]",
+            "rounded-[3px] bg-primary/[0.07] px-[3px] py-[0.5px]",
           )}
         >
           {inner}
@@ -112,16 +108,50 @@ function renderModalInline(text: string): React.ReactNode[] {
   });
 }
 
-/** Splits the long-form description into readable paragraphs at natural topic
- *  transitions: end-of-sentence followed by a bold-led phrase or a numbered
- *  marker like `(1)`. Falls back to a single block for short descriptions. */
+/** Splits the long-form description into readable paragraphs.
+ *  Priority: explicit `\n\n` → natural sentence-boundary starters → bold-led
+ *  phrase breaks → single block fallback. */
 function splitDescriptionToParagraphs(text: string): string[] {
   if (!text) return [];
-  const segments = text
+
+  // 1. Explicit paragraph breaks
+  if (text.includes("\n\n")) {
+    return text.split(/\n\n+/).map((s) => s.trim()).filter(Boolean);
+  }
+
+  // 2. Split at end-of-sentence before natural new-paragraph starters
+  const byStarter = text
+    .split(
+      /(?<=[\.\!\?])\s+(?=(?:The |This |Total |Adjacent |A[n]? |Beyond |Admission|Hours|Its |With |In |At |On |For |From |Each |Both |Guests?|Visitors?|When |Where |Nearby |Unlike |Despite |After |Before |During |Here |There |\*\*[A-Z]))/g,
+    )
+    .map((s) => s.trim())
+    .filter(Boolean);
+  if (byStarter.length > 1) return byStarter;
+
+  // 3. Bold-led phrase breaks (original fallback)
+  const byBold = text
     .split(/(?<=\.)\s+(?=\*\*|\(\d+\))/g)
     .map((s) => s.trim())
     .filter(Boolean);
-  return segments.length > 0 ? segments : [text];
+  return byBold.length > 1 ? byBold : [text];
+}
+
+/** Extracts short bold terms (≤35 chars) from a description for the key-facts
+ *  chip strip. Deduplicates and caps at 7 chips. */
+function extractKeyBoldTerms(text: string): string[] {
+  if (!text) return [];
+  const seen = new Set<string>();
+  const result: string[] = [];
+  for (const m of text.matchAll(/\*\*([^*]{2,35})\*\*/g)) {
+    const term = m[1].trim();
+    const key = term.toLowerCase().replace(/\s+/g, " ");
+    if (!seen.has(key)) {
+      seen.add(key);
+      result.push(term);
+    }
+    if (result.length >= 7) break;
+  }
+  return result;
 }
 
 /** Strip a trailing colon / fullwidth colon / Japanese colon for use as a
@@ -888,12 +918,14 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
                   </div>
 
                   {/* Modal header — title + close */}
-                  <div className="relative flex flex-shrink-0 items-start justify-between gap-3 border-b border-border/60 bg-gradient-to-b from-white via-white to-muted/15 px-5 py-3.5 sm:px-6 sm:py-4">
-                    <div className="min-w-0 flex-1">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary/85">
+                  <div className="relative flex flex-shrink-0 items-start justify-between gap-3 border-b border-border/50 bg-white px-5 py-4 sm:px-6 sm:py-5">
+                    {/* Left accent line */}
+                    <span aria-hidden className="absolute left-0 top-3.5 h-[calc(100%-1.75rem)] w-[3px] rounded-r-full bg-primary/50" />
+                    <div className="min-w-0 flex-1 pl-3">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">
                         {sectionUi.stopFullDescriptionTitle ?? "Full description"}
                       </p>
-                      <h3 className="mt-1 text-[17px] font-semibold tracking-tight text-foreground sm:text-[19px]">
+                      <h3 className="mt-1 text-[17px] font-semibold tracking-tight text-foreground sm:text-[18px]">
                         {stop.name}
                       </h3>
                     </div>
@@ -907,15 +939,38 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
                     </button>
                   </div>
 
+                  {/* Key facts chip strip — fixed above scroll area, shown when ≥ 2 chips */}
+                  {(() => {
+                    const chips = extractKeyBoldTerms(stop.description);
+                    if (chips.length < 2) return null;
+                    return (
+                      <div className="flex-shrink-0 border-b border-border/40 bg-[#f8f8fb] px-5 py-3 sm:px-6">
+                        <div className="flex gap-1.5 overflow-x-auto scrollbar-hide pb-0.5">
+                          {chips.map((chip, ci) => (
+                            <span
+                              key={ci}
+                              className="flex-shrink-0 whitespace-nowrap rounded-full bg-primary/[0.08] px-2.5 py-[4.5px] text-[11px] font-medium text-primary/90 ring-1 ring-primary/10"
+                            >
+                              {chip}
+                            </span>
+                          ))}
+                          <span className="flex-shrink-0 w-1" aria-hidden />
+                        </div>
+                      </div>
+                    );
+                  })()}
+
                   {/* Modal body — premium typographic description */}
-                  <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain bg-[linear-gradient(180deg,#ffffff_0%,#fdfcfa_100%)]">
-                    <article className="px-5 py-5 sm:px-6 sm:py-6">
+                  <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain bg-white">
+                    <article className="px-5 py-6 sm:px-6 sm:py-8">
                       {splitDescriptionToParagraphs(stop.description).map((p, i) => (
                         <p
                           key={i}
                           className={cn(
-                            "text-[15px] leading-[1.75] tracking-[-0.003em] text-foreground/88 break-words [overflow-wrap:anywhere] hyphens-auto",
-                            i === 0 ? "first-letter:float-left first-letter:mr-2 first-letter:text-[40px] first-letter:font-semibold first-letter:leading-[0.95] first-letter:text-foreground" : "mt-4",
+                            "break-words [overflow-wrap:anywhere] hyphens-auto text-foreground/88",
+                            i === 0
+                              ? "text-[15px] leading-[1.82] tracking-[-0.004em]"
+                              : "mt-5 text-[14px] leading-[1.8] tracking-[-0.003em]",
                           )}
                         >
                           {renderModalInline(p)}

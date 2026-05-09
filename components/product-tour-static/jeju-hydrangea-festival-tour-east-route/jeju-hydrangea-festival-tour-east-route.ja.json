@@ -98,34 +98,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "所要時間",
-      "value": "≈ 9時間（夏限定）"
+      "icon": "camera",
+      "label": "写真映え度",
+      "value": "高い",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "グループ人数",
-      "value": "少人数、英語対応ガイド付き"
-    },
-    {
-      "icon": "calendar",
-      "label": "ベストシーズン",
-      "value": "夏（6〜8月）アジサイ祭り期間"
-    },
-    {
-      "icon": "map-pin",
-      "label": "送迎",
-      "value": "済州市ホテル発着"
+      "icon": "mountain",
+      "label": "景観の充実度",
+      "value": "高い",
+      "level": 5
     },
     {
       "icon": "footprints",
-      "label": "歩行",
-      "value": "軽〜中程度"
+      "label": "歩行難易度",
+      "value": "普通",
+      "level": 3
     },
     {
-      "icon": "ticket",
-      "label": "含まれるもの",
-      "value": "往復送迎・英語ガイド・全入場料"
+      "icon": "cloud-rain",
+      "label": "雨天適性",
+      "value": "限定的",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "ファミリー適性",
+      "value": "良好",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "ペース",
+      "value": "集中型",
+      "level": 3
     }
   ],
   "galleryItems": [

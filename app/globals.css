@@ -986,7 +986,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     /* Next.js 14: Geist 미지원 → Pretendard(CDN) + 시스템 폰트 */
     --font-sans: "Pretendard", ui-sans-serif, system-ui, sans-serif;
     /* Warm-cream top tint, mint mid (matches body::before) */
-    --page-gradient-fallback: #f2ebe5;
+    --page-gradient-fallback: #f4f4f6;
   }
   .dark {
     --background: oklch(0.145 0 0);
@@ -1069,97 +1069,20 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     background-image:
-      radial-gradient(ellipse 118% 62% at 50% 4%, rgba(255, 220, 200, 0.105) 0%, transparent 54%),
-      radial-gradient(ellipse 70% 50% at 16% 10%, rgba(255, 195, 205, 0.086) 0%, transparent 52%),
-      radial-gradient(ellipse 75% 46% at 84% 7%, rgba(255, 205, 178, 0.084) 0%, transparent 53%),
-      radial-gradient(ellipse 90% 74% at 14% 22%, rgba(175, 235, 245, 0.07) 0%, transparent 55%),
-      radial-gradient(ellipse 64% 90% at 86% 12%, rgba(255, 170, 195, 0.104) 0%, transparent 52%),
-      radial-gradient(ellipse 102% 60% at 50% 92%, rgba(255, 190, 148, 0.106) 0%, transparent 56%),
-      radial-gradient(ellipse 56% 72% at 76% 46%, rgba(195, 245, 228, 0.098) 0%, transparent 51%),
-      radial-gradient(ellipse 94% 50% at 8% 60%, rgba(255, 160, 150, 0.08) 0%, transparent 54%),
-      radial-gradient(ellipse 74% 84% at 92% 76%, rgba(255, 200, 165, 0.098) 0%, transparent 55%),
-      radial-gradient(ellipse 120% 82% at 56% 30%, rgba(195, 238, 248, 0.072) 0%, transparent 58%),
-      radial-gradient(ellipse 50% 58% at 30% 44%, rgba(255, 225, 205, 0.09) 0%, transparent 49%),
-      radial-gradient(ellipse 80% 66% at 70% 8%, rgba(175, 238, 220, 0.076) 0%, transparent 56%),
-      radial-gradient(ellipse 96% 70% at 34% 72%, rgba(255, 175, 200, 0.1) 0%, transparent 54%),
-      radial-gradient(ellipse 44% 94% at 96% 42%, rgba(165, 232, 242, 0.065) 0%, transparent 50%),
-      radial-gradient(ellipse 72% 56% at 46% 56%, rgba(255, 210, 180, 0.082) 0%, transparent 60%),
-      radial-gradient(ellipse 108% 54% at 20% 86%, rgba(255, 155, 115, 0.072) 0%, transparent 53%),
-      radial-gradient(ellipse 58% 78% at 80% 28%, rgba(190, 235, 245, 0.07) 0%, transparent 52%),
-      radial-gradient(ellipse 88% 62% at 4% 36%, rgba(225, 250, 235, 0.1) 0%, transparent 57%),
-      radial-gradient(ellipse 66% 96% at 52% 50%, rgba(255, 185, 205, 0.076) 0%, transparent 64%),
-      radial-gradient(ellipse 76% 68% at 44% 18%, rgba(150, 235, 210, 0.098) 0%, transparent 54%),
-      radial-gradient(ellipse 52% 88% at 90% 46%, rgba(130, 225, 195, 0.09) 0%, transparent 52%),
-      radial-gradient(ellipse 92% 48% at 6% 26%, rgba(175, 245, 225, 0.088) 0%, transparent 56%),
-      radial-gradient(ellipse 64% 72% at 64% 82%, rgba(118, 218, 188, 0.09) 0%, transparent 55%),
-      radial-gradient(ellipse 70% 58% at 28% 58%, rgba(198, 252, 232, 0.082) 0%, transparent 58%),
-      radial-gradient(ellipse 95% 90% at 50% 38%, rgba(185, 248, 228, 0.055) 0%, transparent 62%),
-      radial-gradient(ellipse 55% 70% at 72% 64%, rgba(160, 235, 215, 0.072) 0%, transparent 54%),
+      radial-gradient(ellipse 100% 50% at 50% 0%, rgba(210, 215, 225, 0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 60% at 10% 20%, rgba(200, 208, 220, 0.10) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 60% at 90% 15%, rgba(205, 210, 222, 0.10) 0%, transparent 55%),
+      radial-gradient(ellipse 80% 70% at 50% 90%, rgba(208, 212, 222, 0.12) 0%, transparent 60%),
       linear-gradient(
-        150deg,
-        #f4ede6 0%,
-        #f2f5f1 14%,
-        #ecf7f2 30%,
-        #f4faf7 44%,
-        #fcefe4 64%,
-        #f4f4f8 100%
+        160deg,
+        #f6f6f8 0%,
+        #f5f5f8 25%,
+        #f4f5f7 50%,
+        #f5f5f8 75%,
+        #f6f6f9 100%
       );
-    background-position:
-      0 -6%,
-      2% -4%,
-      -3% -5%,
-      3% -4%,
-      -5% 6%,
-      4% 8%,
-      -6% -3%,
-      5% 4%,
-      -4% 5%,
-      2% -2%,
-      -3% 3%,
-      4% -5%,
-      -2% 6%,
-      3% 2%,
-      -5% -2%,
-      6% 3%,
-      -3% -4%,
-      2% 5%,
-      -4% -3%,
-      5% -5%,
-      -2% 4%,
-      4% 3%,
-      -3% -2%,
-      2% -3%,
-      -4% 5%,
-      0 0,
-      0 0;
-    background-size:
-      108% 98%,
-      115% 102%,
-      112% 100%,
-      108% 112%,
-      115% 105%,
-      102% 118%,
-      110% 108%,
-      105% 114%,
-      112% 102%,
-      104% 116%,
-      118% 98%,
-      106% 110%,
-      100% 120%,
-      114% 106%,
-      108% 108%,
-      112% 104%,
-      106% 112%,
-      104% 110%,
-      118% 118%,
-      112% 106%,
-      104% 118%,
-      118% 102%,
-      108% 114%,
-      116% 108%,
-      120% 115%,
-      110% 112%,
-      100% 100%;
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
     background-repeat: no-repeat;
   }
   @media (max-width: 768px) {
@@ -1170,114 +1093,25 @@ input[type="time"]::-webkit-calendar-picker-indicator {
       right: 0;
       transform: translateZ(0);
       -webkit-transform: translateZ(0);
-      /* Mobile: slightly warmer + more saturated hero veil; mint eased in upper band */
       background-image:
-        radial-gradient(ellipse 118% 62% at 50% 4%, rgba(255, 200, 160, 0.128) 0%, transparent 54%),
-        radial-gradient(ellipse 70% 50% at 16% 10%, rgba(255, 175, 190, 0.108) 0%, transparent 52%),
-        radial-gradient(ellipse 75% 46% at 84% 7%, rgba(255, 188, 158, 0.104) 0%, transparent 53%),
-        radial-gradient(ellipse 90% 74% at 14% 22%, rgba(175, 235, 245, 0.068) 0%, transparent 55%),
-        radial-gradient(ellipse 64% 90% at 86% 12%, rgba(255, 155, 182, 0.122) 0%, transparent 52%),
-        radial-gradient(ellipse 102% 60% at 50% 92%, rgba(255, 185, 140, 0.114) 0%, transparent 56%),
-        radial-gradient(ellipse 56% 72% at 76% 46%, rgba(195, 245, 228, 0.098) 0%, transparent 51%),
-        radial-gradient(ellipse 94% 50% at 8% 60%, rgba(255, 155, 145, 0.092) 0%, transparent 54%),
-        radial-gradient(ellipse 74% 84% at 92% 76%, rgba(255, 198, 160, 0.108) 0%, transparent 55%),
-        radial-gradient(ellipse 120% 82% at 56% 30%, rgba(195, 238, 248, 0.072) 0%, transparent 58%),
-        radial-gradient(ellipse 50% 58% at 30% 44%, rgba(255, 215, 190, 0.104) 0%, transparent 49%),
-        radial-gradient(ellipse 80% 66% at 70% 8%, rgba(175, 238, 220, 0.072) 0%, transparent 56%),
-        radial-gradient(ellipse 96% 70% at 34% 72%, rgba(255, 165, 192, 0.118) 0%, transparent 54%),
-        radial-gradient(ellipse 44% 94% at 96% 42%, rgba(165, 232, 242, 0.065) 0%, transparent 50%),
-        radial-gradient(ellipse 72% 56% at 46% 56%, rgba(255, 200, 168, 0.1) 0%, transparent 60%),
-        radial-gradient(ellipse 108% 54% at 20% 86%, rgba(255, 145, 105, 0.086) 0%, transparent 53%),
-        radial-gradient(ellipse 58% 78% at 80% 28%, rgba(190, 235, 245, 0.072) 0%, transparent 52%),
-        radial-gradient(ellipse 88% 62% at 4% 36%, rgba(225, 250, 235, 0.098) 0%, transparent 57%),
-        radial-gradient(ellipse 66% 96% at 52% 50%, rgba(255, 178, 198, 0.096) 0%, transparent 64%),
-        radial-gradient(ellipse 76% 68% at 44% 18%, rgba(150, 235, 210, 0.088) 0%, transparent 54%),
-        radial-gradient(ellipse 52% 88% at 90% 46%, rgba(130, 225, 195, 0.09) 0%, transparent 52%),
-        radial-gradient(ellipse 92% 48% at 6% 26%, rgba(175, 245, 225, 0.088) 0%, transparent 56%),
-        radial-gradient(ellipse 64% 72% at 64% 82%, rgba(118, 218, 188, 0.094) 0%, transparent 55%),
-        radial-gradient(ellipse 70% 58% at 28% 58%, rgba(198, 252, 232, 0.084) 0%, transparent 58%),
-        radial-gradient(ellipse 95% 90% at 50% 38%, rgba(185, 248, 228, 0.058) 0%, transparent 62%),
-        radial-gradient(ellipse 55% 70% at 72% 64%, rgba(160, 235, 215, 0.076) 0%, transparent 54%),
+        radial-gradient(ellipse 100% 50% at 50% 0%, rgba(210, 215, 225, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 70% at 50% 90%, rgba(208, 212, 222, 0.10) 0%, transparent 60%),
         linear-gradient(
-          150deg,
-          #f5e6dc 0%,
-          #f3ede5 10%,
-          #eef6f2 24%,
-          #ecf7f2 36%,
-          #f4faf7 46%,
-          #fce8da 66%,
-          #f4f4f8 100%
+          160deg,
+          #f6f6f8 0%,
+          #f5f5f8 40%,
+          #f5f5f7 70%,
+          #f6f6f9 100%
         );
-      background-position:
-        0 -6%,
-        2% -4%,
-        -3% -5%,
-        3% -4%,
-        -5% 6%,
-        4% 8%,
-        -6% -3%,
-        5% 4%,
-        -4% 5%,
-        2% -2%,
-        -3% 3%,
-        4% -5%,
-        -2% 6%,
-        3% 2%,
-        -5% -2%,
-        6% 3%,
-        -3% -4%,
-        2% 5%,
-        -4% -3%,
-        5% -5%,
-        -2% 4%,
-        4% 3%,
-        -3% -2%,
-        2% -3%,
-        -4% 5%,
-        0 0,
-        0 0;
-      background-size:
-        108% 98%,
-        115% 102%,
-        112% 100%,
-        108% 112%,
-        115% 105%,
-        102% 118%,
-        110% 108%,
-        105% 114%,
-        112% 102%,
-        104% 116%,
-        118% 98%,
-        106% 110%,
-        100% 120%,
-        114% 106%,
-        108% 108%,
-        112% 104%,
-        106% 112%,
-        104% 110%,
-        118% 118%,
-        112% 106%,
-        104% 118%,
-        118% 102%,
-        108% 114%,
-        116% 108%,
-        120% 115%,
-        110% 112%,
-        100% 100%;
+      background-position: 0 0, 0 0, 0 0;
+      background-size: 100% 100%, 100% 100%, 100% 100%;
     }
   }
   @media (prefers-reduced-motion: reduce) {
     body::before {
-      background-image:
-        radial-gradient(ellipse 110% 58% at 50% 5%, rgba(255, 215, 195, 0.098) 0%, transparent 58%),
-        radial-gradient(ellipse 88% 78% at 70% 22%, rgba(255, 188, 160, 0.084) 0%, transparent 60%),
-        radial-gradient(ellipse 75% 72% at 22% 70%, rgba(255, 165, 188, 0.08) 0%, transparent 58%),
-        radial-gradient(ellipse 85% 80% at 48% 38%, rgba(175, 245, 225, 0.09) 0%, transparent 62%),
-        radial-gradient(ellipse 70% 75% at 18% 42%, rgba(135, 228, 200, 0.078) 0%, transparent 58%),
-        radial-gradient(ellipse 72% 68% at 82% 58%, rgba(195, 242, 232, 0.07) 0%, transparent 60%),
-        linear-gradient(148deg, #f2ebe4 0%, #eef8f4 22%, #e8f5f0 38%, #fcefe6 58%, #f3f2f6 100%);
-      background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
-      background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+      background-image: linear-gradient(160deg, #f6f6f8 0%, #f5f5f7 100%);
+      background-size: 100% 100%;
+      background-position: 0 0;
     }
   }
   /* Keep z-index like light mode so in-flow app content stays above body::before when themes toggle */

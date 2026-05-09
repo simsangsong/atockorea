@@ -98,34 +98,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "所要時間",
-      "value": "冬限定・一日ツアー"
+      "icon": "camera",
+      "label": "写真映え度",
+      "value": "良好",
+      "level": 4
     },
     {
-      "icon": "users",
-      "label": "グループ人数",
-      "value": "少人数、英語対応ガイド付き"
-    },
-    {
-      "icon": "calendar",
-      "label": "ベストシーズン",
-      "value": "冬（12〜2月）みかん＆ツバキシーズン"
-    },
-    {
-      "icon": "map-pin",
-      "label": "送迎",
-      "value": "済州市/チュンムン地区ホテル発着（08:30〜09:00）"
+      "icon": "mountain",
+      "label": "景観の充実度",
+      "value": "良好",
+      "level": 4
     },
     {
       "icon": "footprints",
-      "label": "歩行",
-      "value": "中程度 — 御利目トレイルは上り坂・雪道あり"
+      "label": "歩行難易度",
+      "value": "楽",
+      "level": 2
     },
     {
-      "icon": "ticket",
-      "label": "含まれるもの",
-      "value": "往復送迎・英語ガイド・全入場料（みかん狩り含む）"
+      "icon": "cloud-rain",
+      "label": "雨天適性",
+      "value": "普通",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "ファミリー適性",
+      "value": "良好",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "ペース",
+      "value": "集中型",
+      "level": 3
     }
   ],
   "galleryItems": [

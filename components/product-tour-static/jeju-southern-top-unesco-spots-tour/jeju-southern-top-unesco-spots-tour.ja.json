@@ -100,34 +100,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "所要時間",
-      "value": "≈ 9時間（最初のお迎え 8:30、解散 ≈ 18:00）"
+      "icon": "camera",
+      "label": "写真映え度",
+      "value": "高い",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "グループ人数",
-      "value": "少人数、英語・中国語ガイド付きミニコーチ"
-    },
-    {
-      "icon": "map-pin",
-      "label": "送迎",
-      "value": "オーシャンスイーツ 8:30 / 済州空港ゲート3（3階）8:45 / LOTTEシティ 8:55 / 新羅免税店 9:05"
-    },
-    {
-      "icon": "star",
-      "label": "評価",
-      "value": "4.9/5（648件のクチコミ）"
+      "icon": "mountain",
+      "label": "景観の充実度",
+      "value": "高い",
+      "level": 5
     },
     {
       "icon": "footprints",
-      "label": "歩行",
-      "value": "中程度 — トレイル（1時間）、滝の階段、茶畑の遊歩道"
+      "label": "歩行難易度",
+      "value": "やや高め",
+      "level": 4
     },
     {
-      "icon": "ticket",
-      "label": "含まれるもの",
-      "value": "車両、認定ガイド、全入場料。除く：昼食（≈₩15,000）、チップ"
+      "icon": "cloud-rain",
+      "label": "雨天適性",
+      "value": "限定的",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "ファミリー適性",
+      "value": "普通",
+      "level": 3
+    },
+    {
+      "icon": "gauge",
+      "label": "ペース",
+      "value": "バランス良好",
+      "level": 4
     }
   ],
   "galleryItems": [

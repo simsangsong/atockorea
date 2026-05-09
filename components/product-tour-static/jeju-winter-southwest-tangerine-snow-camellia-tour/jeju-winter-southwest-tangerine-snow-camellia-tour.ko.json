@@ -99,34 +99,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "소요 시간",
-      "value": "9시간 (일반적인 08:30–17:30)"
+      "icon": "camera",
+      "label": "포토 가치",
+      "value": "좋음",
+      "level": 4
     },
     {
-      "icon": "users",
-      "label": "그룹 규모",
-      "value": "소그룹, 영어/중국어 가이드"
-    },
-    {
-      "icon": "calendar",
-      "label": "최적 시즌",
-      "value": "12월~2월(동백 절정 12월~1월, 감귤 수확 12월~2월)"
-    },
-    {
-      "icon": "hotel",
-      "label": "픽업 정보",
-      "value": "제주 시내 호텔 픽업 무료; 제주 시내 외 +₩70,000"
+      "icon": "mountain",
+      "label": "경관",
+      "value": "좋음",
+      "level": 4
     },
     {
       "icon": "footprints",
-      "label": "도보 난이도",
-      "value": "쉬움~중간 — 한라산 구간은 등산이 아니라 전망 포인트입니다."
+      "label": "도보",
+      "value": "낮음",
+      "level": 2
     },
     {
-      "icon": "ticket",
-      "label": "포함 사항",
-      "value": "차량, 공인 드라이버 가이드, 유류비/통행료/주차비. 불포함: 입장료, 점심, 감귤 따기 체험비"
+      "icon": "cloud-rain",
+      "label": "우천 적합성",
+      "value": "보통",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "가족 적합도",
+      "value": "좋음",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "투어 페이스",
+      "value": "집중형",
+      "level": 3
     }
   ],
   "galleryItems": [

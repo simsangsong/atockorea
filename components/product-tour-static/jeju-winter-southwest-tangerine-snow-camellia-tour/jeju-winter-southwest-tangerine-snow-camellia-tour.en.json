@@ -100,34 +100,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "9 hours (typical 08:30–17:30)"
+      "icon": "camera",
+      "label": "Photo Potential",
+      "value": "Good",
+      "level": 4
     },
     {
-      "icon": "users",
-      "label": "Group",
-      "value": "Small group, English/Chinese-speaking guide"
-    },
-    {
-      "icon": "calendar",
-      "label": "Best season",
-      "value": "December to February (camellia peak Dec–Jan, tangerine harvest Dec–Feb)"
-    },
-    {
-      "icon": "hotel",
-      "label": "Pickup",
-      "value": "Free hotel pickup in Jeju City; +₩70,000 outside Jeju City"
+      "icon": "mountain",
+      "label": "Scenery",
+      "value": "Good",
+      "level": 4
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "Light to moderate — Hallasan stop is a viewpoint, not a hike"
+      "value": "Light",
+      "level": 2
     },
     {
-      "icon": "ticket",
-      "label": "Includes",
-      "value": "Vehicle, licensed guide-driver, fuel/tolls/parking. Excludes: admissions, lunch, tangerine-picking fee"
+      "icon": "cloud-rain",
+      "label": "Rain Suitability",
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "Family Suitability",
+      "value": "Good",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Pace",
+      "value": "Focused",
+      "level": 3
     }
   ],
   "galleryItems": [

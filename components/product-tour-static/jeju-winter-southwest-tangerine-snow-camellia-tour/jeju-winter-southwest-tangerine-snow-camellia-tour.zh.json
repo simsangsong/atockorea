@@ -100,34 +100,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "行程时间",
-      "value": "9小时（通常08:30至17:30）"
+      "icon": "camera",
+      "label": "拍照潜力",
+      "value": "良好",
+      "level": 4
+    },
+    {
+      "icon": "mountain",
+      "label": "景观丰富度",
+      "value": "良好",
+      "level": 4
+    },
+    {
+      "icon": "footprints",
+      "label": "步行强度",
+      "value": "低",
+      "level": 2
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "雨天适合度",
+      "value": "适中",
+      "level": 3
     },
     {
       "icon": "users",
-      "label": "团体规模",
-      "value": "小团，英文/中文导游"
+      "label": "亲子适合度",
+      "value": "良好",
+      "level": 4
     },
     {
-      "icon": "calendar",
-      "label": "最佳季节",
-      "value": "十二月至二月（山茶花高峰十二至一月；橘子采摘十二至二月）"
-    },
-    {
-      "icon": "map-pin",
-      "label": "接送信息",
-      "value": "济州市区酒店免费接送；市外加收₩70,000"
-    },
-    {
-      "icon": "hiking",
-      "label": "步行强度",
-      "value": "轻松至中等——汉拏山为观景停留，无需登山"
-    },
-    {
-      "icon": "check",
-      "label": "费用包含",
-      "value": "车辆、持照导游司机、油费 / 过路费 / 停车费。不含：门票、午餐、橘子采摘费"
+      "icon": "gauge",
+      "label": "行程节奏",
+      "value": "专注",
+      "level": 3
     }
   ],
   "galleryItems": [

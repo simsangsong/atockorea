@@ -100,34 +100,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duración",
-      "value": "≈ 9 horas (recogida desde las 08:30)"
+      "icon": "camera",
+      "label": "Valor fotográfico",
+      "value": "Alto",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "Grupo",
-      "value": "Grupo pequeño, minibús con guía de habla inglesa/chino"
-    },
-    {
-      "icon": "map-pin",
-      "label": "Punto de encuentro",
-      "value": "Ocean Suites 08:30 / Aeropuerto / Ayuntamiento / Shilla DFS"
-    },
-    {
-      "icon": "star",
-      "label": "Valoración",
-      "value": "4,9/5 con 648 reseñas"
+      "icon": "mountain",
+      "label": "Paisaje",
+      "value": "Alto",
+      "level": 5
     },
     {
       "icon": "footprints",
-      "label": "A pie",
-      "value": "Moderado-exigente — Eoseungsaengak tiene escalones de madera"
+      "label": "Caminata",
+      "value": "Exigente",
+      "level": 4
     },
     {
-      "icon": "ticket",
-      "label": "Incluido",
-      "value": "Vehículo, guía certificado, todas las entradas"
+      "icon": "cloud-rain",
+      "label": "Apto para lluvia",
+      "value": "Limitado",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "Apto para familias",
+      "value": "Moderado",
+      "level": 3
+    },
+    {
+      "icon": "gauge",
+      "label": "Ritmo",
+      "value": "Equilibrado",
+      "level": 4
     }
   ],
   "galleryItems": [

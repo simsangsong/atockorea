@@ -98,34 +98,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "calendar",
-      "label": "Temporada",
-      "value": "Solo invierno (diciembre-febrero)"
+      "icon": "camera",
+      "label": "Valor fotográfico",
+      "value": "Bueno",
+      "level": 4
     },
     {
-      "icon": "snowflake",
-      "label": "Nieve",
-      "value": "Sendero Eorimok del Hallasan — nieve y escarcha en la montaña"
+      "icon": "mountain",
+      "label": "Paisaje",
+      "value": "Bueno",
+      "level": 4
     },
     {
-      "icon": "orange",
-      "label": "Mandarinas",
-      "value": "Recogida de Hallabong de invierno en granja local"
+      "icon": "footprints",
+      "label": "Caminata",
+      "value": "Ligero",
+      "level": 2
     },
     {
-      "icon": "flower",
-      "label": "Camelias",
-      "value": "Camellia Hill — pico de camelias rojas (dic-ene)"
-    },
-    {
-      "icon": "ticket",
-      "label": "Entradas",
-      "value": "Incluidas (recogida de mandarinas + Camellia Hill + Jusangjeolli + Cheonjeyeon)"
+      "icon": "cloud-rain",
+      "label": "Apto para lluvia",
+      "value": "Moderado",
+      "level": 3
     },
     {
       "icon": "users",
-      "label": "Grupo",
-      "value": "Grupo pequeño, recogida en hotel"
+      "label": "Apto para familias",
+      "value": "Bueno",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Ritmo",
+      "value": "Enfocado",
+      "level": 3
     }
   ],
   "galleryItems": [

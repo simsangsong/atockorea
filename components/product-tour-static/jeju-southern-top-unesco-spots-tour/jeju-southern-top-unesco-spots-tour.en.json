@@ -101,34 +101,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "≈ 9 hours (first pickup 08:30, drop-off ≈18:00)"
+      "icon": "camera",
+      "label": "Photo Potential",
+      "value": "High",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "Group",
-      "value": "Small group, mini-coach with English/Chinese-speaking guide"
-    },
-    {
-      "icon": "map-pin",
-      "label": "Pickup",
-      "value": "Ocean Suites 08:30 / Jeju Airport Gate 3 (3F) 08:45 / LOTTE City 08:55 / Shilla Duty-Free 09:05"
-    },
-    {
-      "icon": "star",
-      "label": "Rating",
-      "value": "4.9/5 across 648 reviews"
+      "icon": "mountain",
+      "label": "Scenery",
+      "value": "High",
+      "level": 5
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "Moderate — Eoseungsaengak Trail (1 hour), waterfall stairs, cliff boardwalk"
+      "value": "Challenging",
+      "level": 4
     },
     {
-      "icon": "ticket",
-      "label": "Includes",
-      "value": "Vehicle, certified guide, ALL admissions. Excludes: lunch (~₩15,000), tips"
+      "icon": "cloud-rain",
+      "label": "Rain Suitability",
+      "value": "Limited",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "Family Suitability",
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "gauge",
+      "label": "Pace",
+      "value": "Balanced",
+      "level": 4
     }
   ],
   "galleryItems": [

@@ -95,34 +95,40 @@
   ],
   "glanceItems": [
     {
-      "icon": "clock",
-      "label": "Duration",
-      "value": "≈ 10.5 hours (08:10 first pickup, ≈ 18:50 last drop)"
+      "icon": "camera",
+      "label": "Photo Potential",
+      "value": "High",
+      "level": 5
     },
     {
-      "icon": "users",
-      "label": "Group",
-      "value": "Small group, mini-van (typically up to ≈10 passengers)"
-    },
-    {
-      "icon": "subway",
-      "label": "Pickup",
-      "value": "Busan Station Exit 4 (08:10), Seomyeon Exit 4 (08:30), Haeundae Exit 5 (09:10)"
-    },
-    {
-      "icon": "calendar",
-      "label": "Best season",
-      "value": "Year-round; cherry-blossom alt route mid-Mar to mid-Apr"
+      "icon": "mountain",
+      "label": "Scenery",
+      "value": "Good",
+      "level": 4
     },
     {
       "icon": "footprints",
       "label": "Walking",
-      "value": "Moderate — ≈3.5–4 km. Calmer pace than the UNESCO Legacy version."
+      "value": "Moderate",
+      "level": 3
     },
     {
-      "icon": "ticket",
-      "label": "Includes",
-      "value": "Round-trip transport, certified guide. Bulguksa, museum, Gyochon, bridge: free. Only Ahopsan (₩5,000) and lunch are paid on-day."
+      "icon": "cloud-rain",
+      "label": "Rain Suitability",
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "Family Suitability",
+      "value": "Good",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Pace",
+      "value": "Balanced",
+      "level": 4
     }
   ],
   "galleryItems": [
