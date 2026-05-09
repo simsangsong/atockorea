@@ -159,7 +159,7 @@ export function HeroSection() {
               <div className="rounded-xl border border-amber-100 bg-white/80 px-2.5 py-3 text-center shadow-[0_1px_4px_rgba(180,130,60,0.07)]">
                 <span className="block text-[18px] font-extrabold leading-none tracking-tight text-slate-900">8</span>
                 <span className="mt-1.5 block text-[9px] font-semibold uppercase tracking-wide text-slate-600">platforms</span>
-                <span className="mt-1 block text-[9px] font-medium leading-tight text-slate-500">KLO** · KKD**</span>
+                <span className="mt-1 block text-[9px] font-medium leading-tight text-slate-500">KLO*** · KKD***+6</span>
               </div>
             </div>
 
@@ -345,7 +345,7 @@ export function HeroSection() {
         <div className="mt-4 md:mt-5 flex items-center justify-center gap-1 text-[10.5px] md:text-[11px] font-medium text-slate-500 flex-wrap text-center leading-relaxed">
           <span className="font-bold text-slate-700">100K+ bookings</span>
           <span className="text-slate-300 mx-0.5">·</span>
-          <span className="text-slate-500">KLO** · KKD**</span>
+          <span className="text-slate-500">KLO*** · KKD***+6</span>
           <span className="text-slate-300 mx-0.5">·</span>
           <span className="font-semibold text-emerald-700">KTO-Licensed</span>
         </div>
