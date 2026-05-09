@@ -70,7 +70,7 @@ export function ChooseTravelStyle() {
 
             <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-emerald-500/10 to-transparent rounded-full -mr-20 -mt-20 pointer-events-none" />
 
-            <div className="relative flex flex-col flex-1">
+            <div className="relative">
               <h3 className="text-base md:text-lg font-bold text-white mb-1 mt-2.5">
                 {t("premium.v2.chooseStyle.smallGroupTitle")}
               </h3>
@@ -96,7 +96,7 @@ export function ChooseTravelStyle() {
               <V0ShadcnButton
                 asChild
                 size="lg"
-                className="w-full rounded-xl bg-white py-3 text-[13px] font-semibold text-slate-900 transition-all duration-300 hover:bg-white/95 h-auto mt-auto"
+                className="w-full rounded-xl bg-white py-3 text-[13px] font-semibold text-slate-900 transition-all duration-300 hover:bg-white/95 h-auto mt-4"
                 style={chooseStyleFeaturedWhiteCtaStyle}
               >
                 <Link
@@ -147,7 +147,7 @@ export function ChooseTravelStyle() {
               asChild
               variant="outline"
               size="lg"
-              className="w-full border-amber-300/80 bg-amber-50/50 text-amber-800 hover:bg-amber-100 hover:border-amber-400 font-semibold py-3 rounded-xl text-[13px] transition-all h-auto mt-auto"
+              className="w-full border-amber-300/80 bg-amber-50/50 text-amber-800 hover:bg-amber-100 hover:border-amber-400 font-semibold py-3 rounded-xl text-[13px] transition-all h-auto mt-4"
             >
               <Link
                 href={HOME_CTA_MATCHING_HREF}
@@ -198,7 +198,7 @@ export function ChooseTravelStyle() {
               asChild
               variant="outline"
               size="lg"
-              className="w-full border-amber-300/70 bg-white text-amber-800 hover:bg-amber-50 hover:border-amber-400 font-semibold py-3 rounded-xl text-[13px] transition-all h-auto mt-auto"
+              className="w-full border-amber-300/70 bg-white text-amber-800 hover:bg-amber-50 hover:border-amber-400 font-semibold py-3 rounded-xl text-[13px] transition-all h-auto mt-4"
             >
               <Link
                 href={HOME_CTA_BROWSE_TOURS_HREF}

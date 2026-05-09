@@ -16,7 +16,8 @@ export function ProcessOperational() {
 
   return (
     <section
-      className="py-10 md:py-14 px-4 bg-slate-900"
+      className="py-10 md:py-14 px-4"
+      style={{ background: "linear-gradient(to bottom, #1C1810, #141008)" }}
     >
       <div ref={containerRef} className="max-w-5xl mx-auto scroll-animate">
         <div className="text-center mb-8 md:mb-10">
