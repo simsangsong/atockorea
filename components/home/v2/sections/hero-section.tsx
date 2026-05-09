@@ -330,7 +330,7 @@ export function HeroSection() {
               onClick={handleSubmit}
               className="h-auto w-full rounded-xl py-4 text-[15px] font-semibold transition-all duration-300 disabled:opacity-70 md:py-5 md:text-base"
               style={{
-                background: "linear-gradient(to bottom, #1e3a5f, #172d4a)",
+                background: "linear-gradient(to bottom, #1a1a1a, #111111)",
                 boxShadow: "var(--home-shadow-btn-primary)",
                 border: "none",
                 color: "#fff",
