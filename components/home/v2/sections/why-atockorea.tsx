@@ -93,11 +93,8 @@ export function WhyAtockorea() {
 
   return (
     <section
-      className="relative overflow-hidden px-4 py-10 md:py-14"
-      style={{
-        background:
-          "linear-gradient(180deg, rgba(255,253,251,0.9) 0%, rgba(252,249,245,0.7) 50%, rgba(255,255,255,0.95) 100%)",
-      }}
+      className="relative overflow-hidden px-4 py-10 md:py-14 border-t border-amber-100/70"
+      style={{ background: "#FDF8F0" }}
     >
       <div ref={containerRef} className="relative z-[1] mx-auto max-w-5xl">
         <div className="mb-7 text-center md:mb-9">

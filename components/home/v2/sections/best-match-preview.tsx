@@ -162,6 +162,8 @@ export function BestMatchPreview() {
     };
   }, [matchResult, t, locale]);
 
+  if (phase === "idle") return null;
+
   return (
     <section className="py-8 md:py-20 px-3 sm:px-4">
       <div className="max-w-2xl mx-auto">
@@ -198,50 +200,6 @@ export function BestMatchPreview() {
           </p>
         </div>
 
-        {phase === "idle" ? (
-          <>
-            {/** Empty placeholder — no sample product card. Invite user to use the hero planner above. */}
-            <div ref={revealRef} className="scroll-animate">
-              <div
-                className={cn(
-                  "relative overflow-hidden rounded-home-card px-5 py-10 text-center md:px-8 md:py-14",
-                  "border border-dashed border-slate-300/80 bg-white/55 backdrop-blur-[2px]",
-                  "shadow-[0_1px_2px_rgba(15,23,42,0.03),0_12px_32px_-18px_rgba(15,23,42,0.16)]",
-                )}
-              >
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/80 via-white/20 to-transparent"
-                />
-                <div className="relative">
-                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-sky-100 to-indigo-100 ring-1 ring-white/80 shadow-sm">
-                    <Sparkles className="h-5 w-5 text-sky-600" aria-hidden />
-                  </div>
-                  <h3 className="text-[15px] md:text-[17px] font-semibold text-slate-800 tracking-[-0.01em]">
-                    {t("premium.v2.bestMatch.emptyTitle")}
-                  </h3>
-                  <p className="mt-2 text-[12.5px] md:text-[13px] text-slate-500 leading-relaxed max-w-sm mx-auto">
-                    {t("premium.v2.bestMatch.emptyBody")}
-                  </p>
-
-                  <V0ShadcnButton
-                    type="button"
-                    size="lg"
-                    onClick={scrollToHeroPlanner}
-                    className="mt-6 h-auto rounded-xl px-5 py-3 text-[13px] font-semibold bg-foreground text-white hover:bg-foreground/90"
-                  >
-                    {t("premium.v2.bestMatch.emptyStartCta")}
-                    <ArrowUp className="ml-1.5 h-3.5 w-3.5" />
-                  </V0ShadcnButton>
-                </div>
-              </div>
-            </div>
-
-            <p className="text-center text-[12px] text-slate-500 mt-3 md:mt-5">
-              {t("premium.v2.bestMatch.emptyFooter")}
-            </p>
-          </>
-        ) : null}
 
         {phase === "loading" ? (
           <div

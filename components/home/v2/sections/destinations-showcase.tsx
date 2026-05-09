@@ -51,14 +51,9 @@ export function DestinationsShowcase() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden px-4 py-12 md:px-6 md:py-16">
-      {/* Soft premium wash — matches home warm neutrals */}
+    <section className="relative overflow-hidden px-4 py-12 md:px-6 md:py-16 bg-white border-t border-slate-100">
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_75%_55%_at_50%_-8%,rgba(245,158,11,0.09),transparent_58%)]"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-300/40 to-transparent"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-200/60 to-transparent"
         aria-hidden
       />
       <div ref={containerRef} className="relative mx-auto max-w-6xl scroll-animate">

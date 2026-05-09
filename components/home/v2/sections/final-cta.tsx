@@ -36,10 +36,7 @@ export function FinalCTA() {
   }, []);
 
   return (
-    <section
-      className="py-14 md:py-20 px-4"
-      style={{ background: "linear-gradient(to bottom, rgba(252, 249, 245, 0.7), rgba(255, 250, 244, 0.5))" }}
-    >
+    <section className="py-14 md:py-20 px-4 bg-white border-t border-slate-100">
       <div className="max-w-2xl mx-auto">
         <div ref={blockRef} className="relative scroll-animate">
           <div
