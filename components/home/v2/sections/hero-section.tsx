@@ -136,10 +136,10 @@ export function HeroSection() {
             <h2 className="mb-1.5 text-[16px] font-bold leading-snug tracking-[-0.02em] text-slate-900 md:text-[18px]">
               Stop searching. We already did it for you.
             </h2>
-            <p className="mb-4 text-[12.5px] leading-relaxed text-slate-500 md:text-[13px]">
+            <p className="mb-4 text-[12.5px] leading-relaxed text-slate-700 md:text-[13px]">
               Every tour independently verified by us — proven by{" "}
-              <span className="font-semibold text-slate-700">100K+ travelers</span> on{" "}
-              <span className="font-semibold text-slate-700">8 global platforms</span>.
+              <span className="font-semibold text-slate-900">100K+ travelers</span> on{" "}
+              <span className="font-semibold text-slate-900">8 global platforms</span>.
             </p>
 
             {/* Stat cards — 3 equal columns */}
@@ -148,27 +148,27 @@ export function HeroSection() {
                 <span className="block text-[18px] font-extrabold leading-none tracking-tight text-slate-900">
                   4.9<span className="text-[11px] text-amber-400">★</span>
                 </span>
-                <span className="mt-1.5 block text-[9px] font-medium uppercase tracking-wide text-slate-400">avg. rating</span>
+                <span className="mt-1.5 block text-[9px] font-semibold uppercase tracking-wide text-slate-600">avg. rating</span>
               </div>
 
               <div className="rounded-xl border border-amber-100 bg-white/80 px-2.5 py-3 text-center shadow-[0_1px_4px_rgba(180,130,60,0.07)]">
                 <span className="block text-[18px] font-extrabold leading-none tracking-tight text-slate-900">100K+</span>
-                <span className="mt-1.5 block text-[9px] font-medium uppercase tracking-wide text-slate-400">bookings</span>
+                <span className="mt-1.5 block text-[9px] font-semibold uppercase tracking-wide text-slate-600">bookings</span>
               </div>
 
               <div className="rounded-xl border border-amber-100 bg-white/80 px-2.5 py-3 text-center shadow-[0_1px_4px_rgba(180,130,60,0.07)]">
                 <span className="block text-[18px] font-extrabold leading-none tracking-tight text-slate-900">8</span>
-                <span className="mt-1.5 block text-[9px] font-medium uppercase tracking-wide text-slate-400">platforms</span>
-                <span className="mt-1 block text-[8px] leading-tight text-slate-400">KLO · VIA · GYG · KKD +4</span>
+                <span className="mt-1.5 block text-[9px] font-semibold uppercase tracking-wide text-slate-600">platforms</span>
+                <span className="mt-1 block text-[9px] font-medium leading-tight text-slate-500">KLO** · KKD**</span>
               </div>
             </div>
 
             {/* Trust pill badges */}
             <div className="mt-3 flex flex-wrap items-center gap-1.5 border-t border-amber-100 pt-3">
-              <span className="inline-flex items-center gap-1 rounded-full border border-amber-100/80 bg-white/60 px-2.5 py-1 text-[10.5px] font-medium text-slate-600">
+              <span className="inline-flex items-center gap-1 rounded-full border border-amber-100/80 bg-white/60 px-2.5 py-1 text-[10.5px] font-semibold text-slate-700">
                 <span aria-hidden>🤝</span> Direct partnerships
               </span>
-              <span className="inline-flex items-center gap-1 rounded-full border border-amber-100/80 bg-white/60 px-2.5 py-1 text-[10.5px] font-medium text-slate-600">
+              <span className="inline-flex items-center gap-1 rounded-full border border-amber-100/80 bg-white/60 px-2.5 py-1 text-[10.5px] font-semibold text-slate-700">
                 <span className="text-amber-400" aria-hidden>★</span> 4.9 · 100K+ verified
               </span>
               <span className="inline-flex items-center gap-1 rounded-full border border-emerald-200/60 bg-emerald-50 px-2.5 py-1 text-[10.5px] font-semibold text-emerald-700">
@@ -345,7 +345,7 @@ export function HeroSection() {
         <div className="mt-4 md:mt-5 flex items-center justify-center gap-1 text-[10.5px] md:text-[11px] font-medium text-slate-500 flex-wrap text-center leading-relaxed">
           <span className="font-bold text-slate-700">100K+ bookings</span>
           <span className="text-slate-300 mx-0.5">·</span>
-          <span className="text-slate-500">KLO** · VIA*** · GYG*** · KKD** +4</span>
+          <span className="text-slate-500">KLO** · KKD**</span>
           <span className="text-slate-300 mx-0.5">·</span>
           <span className="font-semibold text-emerald-700">KTO-Licensed</span>
         </div>
