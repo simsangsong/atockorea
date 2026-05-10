@@ -4,7 +4,7 @@ import type { CSSProperties } from "react";
 import { useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
-import { ArrowRight, Car, Bus, Award } from "lucide-react";
+import { ArrowRight, Car, Bus, Award, Users } from "lucide-react";
 import { analytics } from "@/src/design/analytics";
 import {
   HOME_CTA_BROWSE_TOURS_HREF,
@@ -58,55 +58,57 @@ export function ChooseTravelStyle() {
             className="relative w-[68vw] flex-none snap-start overflow-hidden rounded-home-card border border-slate-700/50 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 p-4 md:p-5 shadow-home-offer-smgroup transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-home-offer-smgroup-hover scroll-animate flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
             data-animate
           >
-            <div className="absolute top-0 right-4 z-10">
-              <div className="bg-emerald-500 text-white text-[9px] md:text-[10px] font-bold px-2.5 md:px-3 py-1 md:py-1.5 rounded-b-lg shadow-md flex items-center gap-1 tracking-wide">
-                <Award className="w-3 h-3" />
-                {t("premium.v2.chooseStyle.recommended")}
-              </div>
-            </div>
-
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-400" />
             <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-emerald-500/10 to-transparent rounded-full -mr-20 -mt-20 pointer-events-none" />
 
-            <div className="relative">
-              <h3 className="text-base md:text-lg font-bold text-white mb-1 mt-2.5">
-                {t("premium.v2.chooseStyle.smallGroupTitle")}
-              </h3>
-              <p className="text-[12.5px] text-slate-300 mb-3 leading-relaxed line-clamp-2">
-                {t("premium.v2.chooseStyle.smallGroupDesc")}
-              </p>
-
-              <div className="mb-4">
-                <p className="text-[10px] text-slate-400 mb-0.5 uppercase tracking-wider">{t("premium.v2.chooseStyle.from")}</p>
-                <div className="flex items-baseline gap-2">
-                  {featuredJoin.compareAtPriceUsd != null ? (
-                    <span className="text-sm text-slate-500 line-through">
-                      {formatPrice(featuredJoin.compareAtPriceUsd)}
-                    </span>
-                  ) : null}
-                  <span className="text-xl md:text-2xl font-bold text-white tracking-tight">
-                    {formatPrice(featuredJoin.listPriceUsd)}
-                  </span>
-                  <span className="text-[11px] text-emerald-300 font-semibold">{t("premium.v2.chooseStyle.perPerson")}</span>
-                </div>
+            <div className="flex items-center justify-between mb-4 mt-1">
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center">
+                <Users className="w-4 h-4 md:w-5 md:h-5 text-emerald-400" />
               </div>
-
-              <V0ShadcnButton
-                asChild
-                size="lg"
-                className="w-full rounded-xl bg-white py-3 text-[13px] font-semibold text-slate-900 transition-all duration-300 hover:bg-white/95 h-auto mt-4"
-                style={chooseStyleFeaturedWhiteCtaStyle}
-              >
-                <Link
-                  href={HOME_CTA_SMALL_GROUP_LIST_HREF}
-                  onClick={() => {
-                    analytics.homeCtaClick({ source: "choose_style_featured_join" });
-                  }}
-                >
-                  {t("premium.v2.chooseStyle.sgCta")}
-                  <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
-                </Link>
-              </V0ShadcnButton>
+              <span className="text-[9px] md:text-[10px] font-bold text-emerald-400 bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-1 rounded-full tracking-wide flex items-center gap-1">
+                <Award className="w-3 h-3" />
+                {t("premium.v2.chooseStyle.recommended")}
+              </span>
             </div>
+
+            <h3 className="text-base md:text-lg font-bold text-white mb-1">
+              {t("premium.v2.chooseStyle.smallGroupTitle")}
+            </h3>
+            <p className="text-[12.5px] text-slate-300 mb-3 leading-relaxed line-clamp-3 flex-1">
+              {t("premium.v2.chooseStyle.smallGroupDesc")}
+            </p>
+
+            <div className="mb-4">
+              <p className="text-[10px] text-slate-400 mb-0.5 uppercase tracking-wider">{t("premium.v2.chooseStyle.from")}</p>
+              <div className="flex items-baseline gap-2">
+                {featuredJoin.compareAtPriceUsd != null ? (
+                  <span className="text-sm text-slate-500 line-through">
+                    {formatPrice(featuredJoin.compareAtPriceUsd)}
+                  </span>
+                ) : null}
+                <span className="text-xl md:text-2xl font-bold text-white tracking-tight">
+                  {formatPrice(featuredJoin.listPriceUsd)}
+                </span>
+                <span className="text-[11px] text-emerald-300 font-semibold">{t("premium.v2.chooseStyle.perPerson")}</span>
+              </div>
+            </div>
+
+            <V0ShadcnButton
+              asChild
+              size="lg"
+              className="w-full rounded-xl bg-white py-3 text-[13px] font-semibold text-slate-900 transition-all duration-300 hover:bg-white/95 h-auto"
+              style={chooseStyleFeaturedWhiteCtaStyle}
+            >
+              <Link
+                href={HOME_CTA_SMALL_GROUP_LIST_HREF}
+                onClick={() => {
+                  analytics.homeCtaClick({ source: "choose_style_featured_join" });
+                }}
+              >
+                {t("premium.v2.chooseStyle.sgCta")}
+                <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+              </Link>
+            </V0ShadcnButton>
           </div>
 
           {/* Private — amber accent */}
@@ -126,7 +128,7 @@ export function ChooseTravelStyle() {
             </div>
 
             <h3 className="text-base md:text-lg font-bold text-slate-900 mb-1">{t("premium.v2.chooseStyle.privateTitle")}</h3>
-            <p className="text-[12.5px] text-slate-600 mb-3 leading-relaxed line-clamp-2">
+            <p className="text-[12.5px] text-slate-600 mb-3 leading-relaxed line-clamp-3 flex-1">
               {t("premium.v2.chooseStyle.privateDesc")}
             </p>
 
@@ -177,7 +179,7 @@ export function ChooseTravelStyle() {
             <h3 className="text-base md:text-lg font-bold text-slate-800 tracking-tight mb-1">
               {t("premium.v2.chooseStyle.busTitle")}
             </h3>
-            <p className="text-[12.5px] text-stone-600 mb-3 leading-relaxed line-clamp-2">
+            <p className="text-[12.5px] text-stone-600 mb-3 leading-relaxed line-clamp-3 flex-1">
               {t("premium.v2.chooseStyle.busDesc")}
             </p>
 
