@@ -14,12 +14,12 @@
       "济州汉拿山雪景",
       "济州12月旅游"
     ],
-    "ogImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+    "ogImage": "https://www.atockorea.com/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
     "title": "济州冬季西南路线：橘子采摘、赏雪＆山茶花 | AtoC Korea",
     "description": "济州冬季西南路线：汉拏山雪景→橘子采摘农场（汉拏峰盛产期）→山茶花丘山茶花全盛期→大浦柱状节理→天帝渊瀑布。12至2月限定，小团英文/中文导游。"
   },
   "catalog_card": {
-    "thumbnail": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+    "thumbnail": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
     "title": "济州冬季西南路线：橘子采摘、雪景＆山茶花一日游",
     "priceLabel": "价格因投行而异 — 请于预订时确认",
     "shortCardDescription": "西南济州冬季限定一日游（12月至2月），以岛内三大冬季特色体验为核心：汉拿山积雪生态景观、山茶花山庄盛花期及自采柑橘农场体验。行程同时涵盖柱状节理带（UNESCO）与天帝渊瀑布。",
@@ -48,7 +48,7 @@
       "山茶花",
       "雪景"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800"
+    "heroImage": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp"
   },
   "headlineLine1": "汉拏山白雪、山茶花盛放",
   "headlineLine2": "亲手采摘橘子——9小时尽享冬季济州西南",
@@ -61,7 +61,7 @@
     "discountPercent": 10
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1600",
+    "imageUrl": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
     "imagePosition": "center 35%",
     "tagline": "只有济州冬天才做得到的三件事——雪景、山茶花、橘子亲摘",
     "pills": [
@@ -138,49 +138,76 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
-      "alt": "山茶花丘冬季山茶花全盛期",
-      "caption": "山茶花丘冬季山茶花全盛期——十一月至三月，红粉白三色竞放",
-      "location": "山茶花丘，安德，济州",
-      "atmosphere": "清冽的冬季山间空气；即使济州海岸无雪，也常能看见山脊积雪"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "山茶花丘（全年推荐花园）",
+      "alt": "山茶花丘（全年推荐花园） — gallery image 1",
+      "caption": "山茶花丘（全年推荐花园） — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "汉拏山御里木步道冬日雪景",
-      "caption": "汉拏山御里木步道冬日雪景——被积雪覆盖的矮树被积雪覆盖的矮树",
-      "location": "御里木，汉拏山，济州",
-      "atmosphere": "6000多棵山茶树与500个品种迎来冬季盛花"
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "大浦柱状节理",
+      "alt": "大浦柱状节理 — gallery image 1",
+      "caption": "大浦柱状节理 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "济州橘子农场采摘体验",
-      "caption": "橘子农场采摘体验——汉拏峰盛产期（十二月至一月），亲手采摘自助餐",
-      "location": "西归浦 / 中文地区，济州",
-      "atmosphere": "橘子农场采摘体验——汉拏峰盛产期（十二月至一月），亲手采摘自助餐是本路线的代表性停靠点，适合拍照并感受现场氛围。"
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "天帝渊瀑布",
+      "alt": "天帝渊瀑布 — gallery image 1",
+      "caption": "天帝渊瀑布 — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "大浦柱状节理冬日海崖",
-      "caption": "大浦柱状节理——高达30至40米的六边形玄武岩柱，冬日浪花冲天",
-      "location": "大浦，中文，济州",
-      "atmosphere": "大浦柱状节理——高达30至40米的六边形玄武岩柱，冬日浪花冲天是本路线的代表性停靠点，适合拍照并感受现场氛围。"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+      "location": "山茶花丘（全年推荐花园）",
+      "alt": "山茶花丘（全年推荐花园） — gallery image 2",
+      "caption": "山茶花丘（全年推荐花园） — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "郁郁葱葱山谷中仙女桥横跨其上的三级瀑布",
-      "caption": "天帝渊瀑布与七仙女仙女桥",
-      "location": "济州南部西归浦天帝渊瀑布",
-      "atmosphere": "天帝渊瀑布与七仙女仙女桥是本路线的代表性停靠点，适合拍照并感受现场氛围。"
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "大浦柱状节理",
+      "alt": "大浦柱状节理 — gallery image 2",
+      "caption": "大浦柱状节理 — photo 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "大浦柱状节理",
+      "alt": "大浦柱状节理 — gallery image 3",
+      "caption": "大浦柱状节理 — photo 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "大浦柱状节理",
+      "alt": "大浦柱状节理 — gallery image 4",
+      "caption": "大浦柱状节理 — photo 4"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "location": "天帝渊瀑布",
+      "alt": "天帝渊瀑布 — gallery image 2",
+      "caption": "天帝渊瀑布 — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+      "location": "天帝渊瀑布",
+      "alt": "天帝渊瀑布 — gallery image 3",
+      "caption": "天帝渊瀑布 — photo 3"
     }
   ],
   "itineraryStops": [
@@ -334,7 +361,7 @@
       "name": "山茶花丘（全年推荐花园）",
       "category": "绣球花隧道+东洋最大山茶花园（172,000平方米）",
       "description": "**茶花山(카멜리아힐,济州茶花树木园)**是位于安德的**172,000 ㎡植物园**,**论占地与品种数量均为东方最大的茶花树木园**:**6,000株茶花、500余个品种,引种自80个国家**,由创办人梁钟文经**30余年**精心栽培而成。园区的标志是**全年开花日历**——每个季节呈现不同的色彩组合:**11月–翌年3月 = 茶花盛期**(红、粉、白、米色等品种,园区的标志季);**3月–5月 = 樱花 + 郁金香 + 晚开茶花**层层叠叠,色块密集;**6月–8月 = 绣球花**(户外花田 + 恒温温室全年展出);**9月–10月 = 秋叶 + 晚季花卉**。园内步道穿过多个主题区——**欧式花园、韩国本土森林区、樱花步道、绣球花田**——由一条蜿蜒的2.5公里环路串联,从容步行约60–75分钟可走完。建筑亮点是入口处的**玻璃温室 + 画廊 + 咖啡馆**综合体,既是雨天遮蔽空间(全程仅约15%为室内),也是一处可远眺花园的茶咖空间。**韩剧取景地**:综艺节目**《换乘恋爱3》(환승연애)**在此拍摄了珠媛与有正的经典约会场景,深受K综艺爱好者喜爱。**全年365天开放**;由于园区**无户外照明**,日落即关门(冬季约17:00,夏季约19:00)。门票:**成人₩12,000 / 青少年与长者₩10,000 / 儿童(4–11岁)₩9,000 / 3岁以下免费**。",
-      "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+      "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "highlights": [
         "**172,000 ㎡** —— 东方最大的茶花树木园",
         "**6,000株 / 500余品种来自80个国家** —— 30余年栽培积累",
@@ -380,7 +407,39 @@
         "closed": "全年开放",
         "admission": "成人₩10,000 / 青少年₩8,000 / 儿童₩7,000(参考价)",
         "walking": "易至中等难度——和缓的山路；大部分婴儿车可通行."
-      }
+      },
+      "images": [
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "location": "山茶花丘（全年推荐花园）",
+          "caption": "山茶花丘（全年推荐花园） — photo 1",
+          "alt": "山茶花丘（全年推荐花园） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "location": "山茶花丘（全年推荐花园）",
+          "caption": "山茶花丘（全年推荐花园） — photo 2",
+          "alt": "山茶花丘（全年推荐花园） — gallery image 2"
+        }
+      ]
     },
     {
       "number": 6,
@@ -389,7 +448,7 @@
       "name": "大浦柱状节理",
       "category": "火山海岸线——六角形柱状节理熔岩",
       "description": "**大浦柱状节理（ 柱状节理，）**是中文海岸的一段**1公里长、六边形柱状玄武岩崖壁**，于**2005年1月6日**指定为**天然纪念物第443号**。岩柱从海面耸立**30至40米**，排列为紧密相嵌的**5至7边形多边形**（以六边形为主）——这种几何形态是**汉拏山侧翼喷发的熔岩（约25至14万年前）冷却于大海时垂直收缩破裂**所致。本地是**东亚首要的柱状节理地貌地点**——可与北爱尔兰「巨人堤道」、加州「魔鬼石柱」及苏格兰「芬格尔洞穴」并列。高潮日浪花可达**20米**，溅起大面积水幕，是冬季最具景色冲击力的拍摄时机。",
-      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "**天然纪念物第443号**——指定于**2005年1月6日**，最晚近的济州海岸天然纪念物",
         "岩柱沿**1公里**海岸耸立**30至40米**，排列为**5至7边形**（以六边形为主）",
@@ -431,7 +490,65 @@
         "closed": "Open year-round (weather-dependent)",
         "admission": "Adult 2,000 KRW / Child 1,000 KRW (low fee)",
         "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
-      }
+      },
+      "images": [
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "大浦柱状节理",
+          "caption": "大浦柱状节理 — photo 1",
+          "alt": "大浦柱状节理 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "大浦柱状节理",
+          "caption": "大浦柱状节理 — photo 2",
+          "alt": "大浦柱状节理 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "大浦柱状节理",
+          "caption": "大浦柱状节理 — photo 3",
+          "alt": "大浦柱状节理 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "大浦柱状节理",
+          "caption": "大浦柱状节理 — photo 4",
+          "alt": "大浦柱状节理 — gallery image 4"
+        }
+      ]
     },
     {
       "number": 7,
@@ -440,7 +557,7 @@
       "name": "天帝渊瀑布",
       "category": "三级瀑布——天然纪念物第378号（1993年）",
       "description": "**天帝渊瀑布(천제연,'渊 = 水潭 + 天帝 = 天上皇帝')** 是位于中文火山峡谷中的 **三段式瀑布**,1993 年因稀有的生态组合获指定为 **天然纪念物第 378 号**。瀑布之名源自一则 **朝鲜王朝时期的道家传说——七位仙女(선녀,*seonnyeo*)每晚自天界降临沐浴于上潭** ——这则神话因瀑布常年笼罩薄雾的微气候而更显灵动。**第 1 段(落差 22 米,潭深 21 米)** 跌入圆形玄武岩潭,只有在雨后才有水流,大多数日子上潭水面平静如镜。**第 2 段(落差 30 米)全年常流不息**,是摄影主体。第 3 段则一路降至大海。**横跨峡谷的仙临桥(선임교,'七仙女桥',全长 120 米、高 78 米)** 位于环线中段——桥身两侧的青铜浮雕板 **完整刻画了七位飞天仙女**,将建筑与建园传说合二为一。周边森林是 **稀有植物栖息地**,包含 **韩国油点草(***Tricyrtis macropoda***)** 和 **濒危的济州万年青蕨(Mankyua chejuense,济州特有种,IUCN 极危)**。环线长度 **0.8 公里,步行约 30 分钟**,沿途有几段陡峭的阶梯。门票:**成人 ₩2,500 / 青少年 ₩1,350 / 7 岁以下及 65 岁以上免费**。天帝渊也是 **朝鲜文人定义的'瀛洲十景(영주십경,济州十大胜景)'** 之一——与汉拿山顶、城山日出峰、正房瀑布并列——意味着如今的西南环线一日内可同时游览 **十景中的两景(汉拿山 + 天帝渊)**。两年一届的 **济州七仙女庆典** 每逢奇数年 5 月在桥上举行,以传统舞蹈与音乐演绎仙女降临的传说——若行程恰逢庆典日,需提前预约。开放时间 **全年 09:00–18:00**(最晚入场 17:30)。",
-      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+      "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "highlights": [
         "**天然纪念物第 378 号(1993 年指定)**——三段式瀑布 + 稀有植物栖息地",
         "名称 **'天帝渊'='天上皇帝之渊'**——朝鲜道家传说",
@@ -486,7 +603,52 @@
         "closed": "全年开放(偶因天气临时关闭)",
         "admission": "成人 2,500 韩元 / 儿童 1,350 韩元",
         "walking": "中等难度——峡谷阶梯较多;不适合婴儿车;行动不便者请慎选"
-      }
+      },
+      "images": [
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "location": "天帝渊瀑布",
+          "caption": "天帝渊瀑布 — photo 1",
+          "alt": "天帝渊瀑布 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "location": "天帝渊瀑布",
+          "caption": "天帝渊瀑布 — photo 2",
+          "alt": "天帝渊瀑布 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "location": "天帝渊瀑布",
+          "caption": "天帝渊瀑布 — photo 3",
+          "alt": "天帝渊瀑布 — gallery image 3"
+        }
+      ]
     },
     {
       "number": 8,
@@ -1591,7 +1753,7 @@
             "name": "山茶花丘（全年推荐花园）",
             "category": "绣球花隧道+东洋最大山茶花园（172,000平方米）",
             "description": "**山茶花丘（山茶花之丘，济州山茶花植物园）**是安德地区一座**172,000平方米的植物园**，以树种数量及占地面积计，是**东方最大的山茶花植物园**：由创办人杨钟门历时**逾30年**精心搜集的**代表80个国家的6,000棵山茶花树，涵盖500多个品种**。冬季（十一月至三月）是山茶花的**全盛期**——红、粉、白、奶油色各品种竞相盛开，是本路线命名的核心景观。步道穿越欧式庭园、韩国原生林区、夏季绣球花田等主题区段，连接成约2.5公里的蜿蜒环形路。入口处的**玻璃温室＋艺廊＋咖啡馆**复合建筑是冬日驱寒的完美室内避风所。**《换乘恋爱3》**曾在此拍摄知名约会场景。**全年365天开放**，日落后关闭。门票：**成人₩12,000 / 青少年＋长者₩10,000 / 儿童（4至11岁）₩9,000 / 3岁以下免费**。",
-            "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+            "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
             "highlights": [
               "**172,000平方米**——东方最大山茶花植物园",
               "**6,000棵山茶花 / 500多个品种，来自80个国家**——历时逾30年搜集",
@@ -1621,7 +1783,39 @@
                 "Korea Tourism Organization — Top Korean botanical gardens registry",
                 "Kakao TV / Wavve programming archive — 'EXchange / Transit Love 3' filming locations"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "location": "山茶花丘（全年推荐花园）",
+                "caption": "山茶花丘（全年推荐花园） — photo 1",
+                "alt": "山茶花丘（全年推荐花园） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "location": "山茶花丘（全年推荐花园）",
+                "caption": "山茶花丘（全年推荐花园） — photo 2",
+                "alt": "山茶花丘（全年推荐花园） — gallery image 2"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1630,7 +1824,7 @@
             "name": "大浦柱状节理",
             "category": "火山海岸线——六角形柱状节理熔岩",
             "description": "**大浦柱状节理（ 柱状节理，）**是中文海岸的一段**1公里长、六边形柱状玄武岩崖壁**，于**2005年1月6日**指定为**天然纪念物第443号**。岩柱从海面耸立**30至40米**，排列为紧密相嵌的**5至7边形多边形**（以六边形为主）——这种几何形态是**汉拏山侧翼喷发的熔岩（约25至14万年前）冷却于大海时垂直收缩破裂**所致。本地是**东亚首要的柱状节理地貌地点**——可与北爱尔兰「巨人堤道」、加州「魔鬼石柱」及苏格兰「芬格尔洞穴」并列。高潮日浪花可达**20米**，溅起大面积水幕，是冬季最具景色冲击力的拍摄时机。",
-            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
             "highlights": [
               "**天然纪念物第443号**——指定于**2005年1月6日**，最晚近的济州海岸天然纪念物",
               "岩柱沿**1公里**海岸耸立**30至40米**，排列为**5至7边形**（以六边形为主）",
@@ -1657,7 +1851,65 @@
                 "VisitJeju — Daepo Jusangjeolli",
                 "Korea Geological Survey — Jeju basalt formation studies"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "location": "大浦柱状节理",
+                "caption": "大浦柱状节理 — photo 1",
+                "alt": "大浦柱状节理 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "location": "大浦柱状节理",
+                "caption": "大浦柱状节理 — photo 2",
+                "alt": "大浦柱状节理 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "location": "大浦柱状节理",
+                "caption": "大浦柱状节理 — photo 3",
+                "alt": "大浦柱状节理 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "location": "大浦柱状节理",
+                "caption": "大浦柱状节理 — photo 4",
+                "alt": "大浦柱状节理 — gallery image 4"
+              }
+            ]
           },
           {
             "number": 7,
@@ -1666,7 +1918,7 @@
             "name": "天帝渊瀑布",
             "category": "三级瀑布——天然纪念物第378号（1993年）",
             "description": "**天帝渊瀑布（天帝渊瀑布，「渊 = 水潭 + 天帝 = 天之皇帝」）**是中文火山峡谷中的**三层瀑布**，1993年以罕见生态组合指定为**天然纪念物第378号**。名称源自**朝鲜时代道教传说——七名仙女从天降临，夜夜在上池沐浴**——这个神话因现场的奇特微气候而更显真实。峡谷湿润环境孕育了岛屿特有的稀有蕨类**济州满江红（Mankyua chejuense）**，列入**IUCN极危等级**。**第一层瀑布（22米高，水潭直径21米）**仅在大雨后有水；**第二层（30米高）全年流水不断**。现场代表性建筑是**仙女桥（，「七仙女桥」）**——一座128米×78米的拱形步道桥，桥栏浮雕七仙女故事，横跨峡谷俯视上层瀑布。",
-            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+            "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
             "highlights": [
               "**天然纪念物第378号（1993年指定）**——三层瀑布＋稀有植物栖地",
               "名称**「天帝渊」**——朝鲜时代道教传说，七仙女夜夜降临沐浴",
@@ -1693,7 +1945,52 @@
                 "Jeju Cultural Foundation — Seven Nymphs Festival history",
                 "Seogwipo City tourism — Cheonjeyeon admission and access"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "location": "天帝渊瀑布",
+                "caption": "天帝渊瀑布 — photo 1",
+                "alt": "天帝渊瀑布 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "location": "天帝渊瀑布",
+                "caption": "天帝渊瀑布 — photo 2",
+                "alt": "天帝渊瀑布 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "location": "天帝渊瀑布",
+                "caption": "天帝渊瀑布 — photo 3",
+                "alt": "天帝渊瀑布 — gallery image 3"
+              }
+            ]
           },
           {
             "number": 8,

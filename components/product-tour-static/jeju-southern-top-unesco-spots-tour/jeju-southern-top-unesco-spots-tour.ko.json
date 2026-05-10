@@ -14,12 +14,12 @@
       "오설록 투어",
       "제주 한라산 오름 일일 투어"
     ],
-    "ogImage": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+    "ogImage": "https://www.atockorea.com/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "제주 남부 유네스코 명소 소그룹 투어 | AtoC Korea",
     "description": "제주 남부 소그룹 투어: 한라산 오름 → 카멜리아힐 → 천제연폭포 → 주상절리 → 오설록 차밭. 전 입장료 포함, 공인 가이드, 4.9/5 (648건)."
   },
   "catalog_card": {
-    "thumbnail": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+    "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "제주 남부 유네스코 핵심 명소 일일 투어",
     "priceLabel": "가격은 예약 시 확인",
     "shortCardDescription": "제주 남부 핵심 유네스코 명소와 자연 경관을 소그룹으로 일주하는 투어입니다. 어승생악 트레일(한라산 기생화산), 카멜리아힐 꽃 정원, 천제연폭포(3단 폭포), 대포주상절리(유네스코), 오설록 티뮤지엄 포함. 전 입장료 포함, 공인 가이드, 648건 기준 4.9/5 평점.",
@@ -46,7 +46,7 @@
       "합리적 가격",
       "쇼핑 없음"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800"
+    "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp"
   },
   "headlineLine1": "한라산에서 주상절리, 폭포에서 차밭까지 —",
   "headlineLine2": "합리적 가격으로 즐기는 제주 남부 대표 루프",
@@ -61,7 +61,7 @@
     "priceNote": "AtoC Korea 공식 판매가 기준입니다."
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1600",
+    "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "imagePosition": "center 35%",
     "tagline": "입문자용 제주 남부 투어 최고 평점 — 648건 기준 4.9/5, 전 입장료 포함",
     "pills": [
@@ -138,49 +138,188 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "주상절리 — 제주 남쪽 해안의 육각형 화산 기둥",
-      "caption": "주상절리 — 제주 남쪽 해안의 육각형 화산 기둥",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "location": "어승생악 트레일 (한라산 유네스코)",
+      "alt": "어승생악 트레일 (한라산 유네스코) — gallery image 1",
+      "caption": "어승생악 트레일 (한라산 유네스코) — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
-      "alt": "투어 중 방문하는 유네스코 생물권보전지역 한라산 어승생악 탐방로의 풍경",
-      "caption": "유네스코 생물권보전지역 한라산 어승생악 탐방로",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "카멜리아힐 (사계절 꽃 정원)",
+      "alt": "카멜리아힐 (사계절 꽃 정원) — gallery image 1",
+      "caption": "카멜리아힐 (사계절 꽃 정원) — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "카멜리아힐 — 250개 품종 6,000그루 이상",
-      "caption": "카멜리아힐 — 250개 품종 6,000그루 이상",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "천제연폭포 (신들의 연못)",
+      "alt": "천제연폭포 (신들의 연못) — gallery image 1",
+      "caption": "천제연폭포 (신들의 연못) — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "천지연 폭포와 선임교 (칠선녀 다리)",
-      "caption": "천지연 폭포와 선임교 (칠선녀 다리)",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "대포주상절리 (중문대포해안 주상절리대)",
+      "alt": "대포주상절리 (중문대포해안 주상절리대) — gallery image 1",
+      "caption": "대포주상절리 (중문대포해안 주상절리대) — photo 1"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "투어 중 방문하는 방문지의 풍경",
-      "caption": "방문지",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+      "location": "오설록 티뮤지엄 + 녹차밭",
+      "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 1",
+      "caption": "오설록 티뮤지엄 + 녹차밭 — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+      "location": "어승생악 트레일 (한라산 유네스코)",
+      "alt": "어승생악 트레일 (한라산 유네스코) — gallery image 2",
+      "caption": "어승생악 트레일 (한라산 유네스코) — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+      "location": "카멜리아힐 (사계절 꽃 정원)",
+      "alt": "카멜리아힐 (사계절 꽃 정원) — gallery image 2",
+      "caption": "카멜리아힐 (사계절 꽃 정원) — photo 2"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "location": "천제연폭포 (신들의 연못)",
+      "alt": "천제연폭포 (신들의 연못) — gallery image 2",
+      "caption": "천제연폭포 (신들의 연못) — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+      "location": "천제연폭포 (신들의 연못)",
+      "alt": "천제연폭포 (신들의 연못) — gallery image 3",
+      "caption": "천제연폭포 (신들의 연못) — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "대포주상절리 (중문대포해안 주상절리대)",
+      "alt": "대포주상절리 (중문대포해안 주상절리대) — gallery image 2",
+      "caption": "대포주상절리 (중문대포해안 주상절리대) — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "대포주상절리 (중문대포해안 주상절리대)",
+      "alt": "대포주상절리 (중문대포해안 주상절리대) — gallery image 3",
+      "caption": "대포주상절리 (중문대포해안 주상절리대) — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "대포주상절리 (중문대포해안 주상절리대)",
+      "alt": "대포주상절리 (중문대포해안 주상절리대) — gallery image 4",
+      "caption": "대포주상절리 (중문대포해안 주상절리대) — photo 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+      "location": "오설록 티뮤지엄 + 녹차밭",
+      "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 2",
+      "caption": "오설록 티뮤지엄 + 녹차밭 — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+      "location": "오설록 티뮤지엄 + 녹차밭",
+      "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 3",
+      "caption": "오설록 티뮤지엄 + 녹차밭 — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+      "location": "오설록 티뮤지엄 + 녹차밭",
+      "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 4",
+      "caption": "오설록 티뮤지엄 + 녹차밭 — photo 4"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+      "location": "오설록 티뮤지엄 + 녹차밭",
+      "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 5",
+      "caption": "오설록 티뮤지엄 + 녹차밭 — photo 5"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+      "location": "오설록 티뮤지엄 + 녹차밭",
+      "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 6",
+      "caption": "오설록 티뮤지엄 + 녹차밭 — photo 6"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+      "location": "오설록 티뮤지엄 + 녹차밭",
+      "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 7",
+      "caption": "오설록 티뮤지엄 + 녹차밭 — photo 7"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+      "location": "오설록 티뮤지엄 + 녹차밭",
+      "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 8",
+      "caption": "오설록 티뮤지엄 + 녹차밭 — photo 8"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+      "location": "오설록 티뮤지엄 + 녹차밭",
+      "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 9",
+      "caption": "오설록 티뮤지엄 + 녹차밭 — photo 9"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+      "location": "오설록 티뮤지엄 + 녹차밭",
+      "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 10",
+      "caption": "오설록 티뮤지엄 + 녹차밭 — photo 10"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+      "location": "오설록 티뮤지엄 + 녹차밭",
+      "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 11",
+      "caption": "오설록 티뮤지엄 + 녹차밭 — photo 11"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+      "location": "오설록 티뮤지엄 + 녹차밭",
+      "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 12",
+      "caption": "오설록 티뮤지엄 + 녹차밭 — photo 12"
     }
   ],
   "itineraryStops": [
@@ -219,7 +358,7 @@
       "name": "어승생악 트레일 (한라산 유네스코)",
       "category": "한라산 기슭 탐방로 (어리목) — 유네스코 세계유산 체험",
       "description": "**어승생악(1,169m)**은 한국 최고봉이자 제주 지질의 심장인 **한라산(1,950m)**의 서쪽 사면에 자리한 기생화산(오름)입니다. 한라산은 그 자체로 **유례없는 자연유산 타이틀**을 보유하고 있습니다. **2007년 7월 2일 유네스코 세계자연유산 등재**, **2002년 유네스코 생물권보전지역 지정**, **1970년 3월 24일 국립공원 지정**, **1966년 천연기념물 제182호 지정** — 한국에서 유일하게 세 개의 유네스코 자연 타이틀을 동시에 보유한 사이트입니다. 어승생악 들머리인 **어리목 탐방안내소**에서 **1.3km 동안 약 200m**만 오르면 너른 정상 데크에 닿으며, 왕복 60분이면 9시간짜리 백록담 정상 코스를 거치지 않고도 **'한라산 유네스코의 정수'**를 맛볼 수 있습니다. 정상 데크에서 맑은 날에는 **황해, 한라산 백록담 정상 분화구, 그리고 남쪽으로 펼쳐진 오름 군락**까지 한눈에 들어옵니다. 식생 측면에서 1,000–1,300m 구간은 낙엽활엽수림에서 **구상나무(*Abies koreana* — IUCN 준위협종, 한국 고산 특산종)** 군락대로 넘어가는 전이지대입니다. 한라산 전체에는 **2,000종 이상의 식물**이 서식하며, 이는 한반도 전체 식물의 약 절반에 해당합니다. 정상 데크 옆에는 작은 역사 흔적이 남아 있는데, 일제가 패망 직전인 **1945년에 구축한 토치카(콘크리트 진지·통신호)**로, 한국에 현존하는 가장 고지대의 일제 군사 시설 중 하나입니다. 입장료와 주차 모두 **무료**이며, 어승생악은 백록담 정상 코스(일일 1,000명 정원 예약제)와 달리 **사전 예약이 필요 없습니다**.",
-      "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
+      "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
       "highlights": [
         "**한라산 = 한국 유일의 3대 자연 타이틀 보유지**: 2007년 유네스코 세계유산 + 2002년 생물권보전지역 + 1970년 국립공원",
         "**어승생악 정상 1,169m** — 제주 360여 개 오름 중 하나의 기생화산",
@@ -265,7 +404,39 @@
         "closed": "기상 상황에 따라 입산이 제한될 수 있음",
         "admission": "무료",
         "walking": "거리는 짧지만 계단 구간이 많아 난이도는 보통"
-      }
+      },
+      "images": [
+        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "location": "어승생악 트레일 (한라산 유네스코)",
+          "caption": "어승생악 트레일 (한라산 유네스코) — photo 1",
+          "alt": "어승생악 트레일 (한라산 유네스코) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "location": "어승생악 트레일 (한라산 유네스코)",
+          "caption": "어승생악 트레일 (한라산 유네스코) — photo 2",
+          "alt": "어승생악 트레일 (한라산 유네스코) — gallery image 2"
+        }
+      ]
     },
     {
       "number": 3,
@@ -274,7 +445,7 @@
       "name": "카멜리아힐 (사계절 꽃 정원)",
       "category": "수국 터널 + 동양 최대 172,000m² 동백 수목원",
       "description": "**카멜리아힐(카멜리아힐, 제주 동백수목원)**은 안덕에 자리한 **172,000 m² 식물원**으로, 면적과 보유 종 수 모두에서 **동양 최대의 동백 수목원**입니다. **80개국에서 들여온 500여 품종의 동백나무 6,000그루**를 보유하고 있으며, 설립자 양종문 원장이 **30년 이상**에 걸쳐 가꿔 온 결실입니다. 이 정원의 시그니처는 **사계절 개화 캘린더**입니다. 어느 계절에 방문해도 색감이 다른 풍경을 만나도록 의도적으로 설계되어, **11월–3월에는 동백 전성기**(빨강·분홍·흰색·크림 베이지 품종 — 정원의 대표 시즌), **3월–5월에는 벚꽃 + 튤립 + 늦동백**이 짙은 색채로 어우러지고, **6월–8월에는 수국**(야외 군락 + 사계절 전시 온실), **9월–10월에는 단풍 + 늦가을 개화**가 이어집니다. 산책로는 **유럽정원, 한국 자생림, 벚꽃길, 수국밭** 등 테마 구역을 굽이굽이 잇는 약 2.5 km 순환로로 구성되어 있어, 천천히 걸으면 약 60–75분이 소요됩니다. 입구에는 **유리 온실 + 갤러리 + 카페** 복합 공간이 자리해 우천 시 실내 대피 공간(전체 관람의 약 15%만이 실내) 겸 정원이 보이는 차·커피 휴식처가 됩니다. **드라마 촬영지**로도 알려져 있는데, 예능 **'환승연애 3'** 주원과 유정의 데이트 장면이 카멜리아힐에서 촬영되어 K-리얼리티 팬들의 발길이 이어집니다. **연중무휴**이며, **야외 조명이 없어** 일몰 시 폐장합니다(겨울 약 17:00, 여름 약 19:00). 입장료는 **성인 ₩12,000 / 청소년·경로 ₩10,000 / 어린이(4–11세) ₩9,000 / 36개월 미만 무료**입니다.",
-      "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+      "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "highlights": [
         "**172,000 m²** — 동양 최대 동백 수목원",
         "**6,000그루 / 80개국 500+ 품종** — 30년 이상 축적",
@@ -320,7 +491,39 @@
         "closed": "연중무휴",
         "admission": "성인 10,000원 / 청소년 8,000원 / 어린이 7,000원 (안내 기준)",
         "walking": "쉬움–보통 — 완만한 언덕길; 대부분 유모차 통행 가능"
-      }
+      },
+      "images": [
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "location": "카멜리아힐 (사계절 꽃 정원)",
+          "caption": "카멜리아힐 (사계절 꽃 정원) — photo 1",
+          "alt": "카멜리아힐 (사계절 꽃 정원) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "location": "카멜리아힐 (사계절 꽃 정원)",
+          "caption": "카멜리아힐 (사계절 꽃 정원) — photo 2",
+          "alt": "카멜리아힐 (사계절 꽃 정원) — gallery image 2"
+        }
+      ]
     },
     {
       "number": 4,
@@ -355,7 +558,7 @@
       "name": "천제연폭포 (신들의 연못)",
       "category": "삼단 폭포 — 천연기념물 제378호 (1993년)",
       "description": "**천제연 폭포(天帝淵, '연 = 못 + 천제 = 하늘의 황제')**는 중문 화산 협곡에 자리한 **3단 폭포**로, 희귀한 생태 환경을 품은 가치를 인정받아 **천연기념물 제378호(1993년 지정)**로 등재되어 있습니다. 이름의 유래는 **조선 시대 도가 전설로, 일곱 선녀가 매일 밤 하늘에서 내려와 상단 못에서 목욕했다**는 이야기에서 비롯되었으며, 협곡에 늘 자욱하게 끼는 안개가 이 신화에 신비로움을 더합니다. **1단(높이 22m, 깊이 21m의 못)** 폭포는 현무암 원형 돌가마로 떨어지지만 큰 비가 내린 뒤에만 흐르며, 평소에는 거울처럼 잔잔한 못의 모습으로 머물러 있습니다. **2단(높이 30m)은 사계절 내내 흐르는** 폭포로, 천제연을 대표하는 촬영 포인트입니다. 3단은 바다로 이어지며 마지막 낙차를 완성합니다. 산책로 중간에는 **길이 120m, 높이 78m의 선임교('일곱 선녀의 다리')**가 협곡을 가로지르며, 양쪽 난간의 청동 부조 패널에는 **하늘을 나는 일곱 선녀의 모습**이 정교하게 새겨져 있어 창건 전설을 건축적으로 구현해 놓았습니다. 주변 숲은 **희귀 식물의 서식지**로, 한국 자생 **죽대아재비(*Tricyrtis macropoda*)**와 멸종 위기종 **제주고사리삼(*Mankyua chejuense*, 제주 고유종, IUCN 심각한 위기종)**이 자라고 있습니다. 산책로 길이는 **0.8km, 도보 약 30분**이며 가파른 계단 구간이 여러 곳 있습니다. 입장료는 **성인 ₩2,500 / 청소년 ₩1,350 / 7세 미만·65세 이상 무료**입니다. 또한 천제연은 한라산 정상, 성산일출봉, 정방폭포와 함께 **조선 문인들이 꼽은 '영주십경(瀛洲十景)'**의 하나로, 오늘 코스의 남서부 일정만으로도 **영주십경 10곳 가운데 2곳(한라산 + 천제연)**을 한 번에 둘러보는 셈입니다. 5월 홀수 해마다 다리에서 열리는 **제주 칠선녀 축제**는 전통 무용과 음악 공연으로 선녀 강림 전설을 재현하며, 투어 일정과 겹칠 경우 사전 예약이 필요합니다. 운영 시간은 연중 **09:00–18:00**(마지막 입장 17:30)입니다.",
-      "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
+      "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "highlights": [
         "**천연기념물 제378호(1993년 지정)** — 3단 폭포 + 희귀 식물 서식지",
         "**'천제연' = '하늘 황제의 못'** — 조선 시대 도가 전설에서 유래",
@@ -401,7 +604,52 @@
         "closed": "연중무휴 (악천후 시 일시 폐쇄될 수 있음)",
         "admission": "성인 2,500원 / 어린이 1,350원",
         "walking": "난이도 중 — 협곡을 따라 계단이 많고 유모차 진입이 어려우며, 거동이 불편한 분께는 권장하지 않습니다"
-      }
+      },
+      "images": [
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "location": "천제연폭포 (신들의 연못)",
+          "caption": "천제연폭포 (신들의 연못) — photo 1",
+          "alt": "천제연폭포 (신들의 연못) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "location": "천제연폭포 (신들의 연못)",
+          "caption": "천제연폭포 (신들의 연못) — photo 2",
+          "alt": "천제연폭포 (신들의 연못) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "location": "천제연폭포 (신들의 연못)",
+          "caption": "천제연폭포 (신들의 연못) — photo 3",
+          "alt": "천제연폭포 (신들의 연못) — gallery image 3"
+        }
+      ]
     },
     {
       "number": 6,
@@ -410,7 +658,7 @@
       "name": "대포주상절리 (중문대포해안 주상절리대)",
       "category": "화산 해안선 — 육각형 주상절리 용암",
       "description": "**대포 주상절리(Daepo Jusangjeolli, '지삿개')**는 중문 해안에 펼쳐진 **길이 1km의 육각형 주상절리 현무암 절벽**으로, **2005년 1월 6일 천연기념물 제443호**로 지정되었습니다. 절리 기둥은 바다에서 **30–40m** 높이로 솟아 있고, 대부분 **5–7각형(주로 육각형) 다각형**이 빈틈없이 맞물린 기하학적 구조를 보입니다. 이는 **약 25만~14만 년 전 한라산 측면 분출에서 흘러나온 현무암질 용암이 바다에 닿아 냉각·수축**하면서 냉각면에 수직 방향으로 갈라진 결과물입니다. 전 세계적으로 주상절리는 **자이언츠 코즈웨이(영국)**, **데블스 포스트파일(미국)**, **핑갈의 동굴(스코틀랜드)**이 잘 알려져 있으며, 주상절리는 **동아시아 최고의 사례**이자 가장 접근성이 뛰어난 명소입니다. **800m 산책로 순환 코스**가 절벽 끝의 안전 난간까지 이어지며, **만조 시 파도가 기둥에 부딪혀 물보라가 최고 20m까지 솟구치고**, 때로는 난간 너머까지 튀어 오릅니다. 입장료는 **성인 2,000원 / 청소년 1,000원 / 7세 미만·65세 이상 무료**입니다. 이곳은 **제주 세계지질공원(2010년 10월 유네스코 지정)**의 일부로, 성산일출봉, 만장굴 용암동굴, 수월봉과 함께 섬 전체 **13개 공식 지질명소** 중 하나입니다. 절벽 위 데크는 **무장애 시설**(휠체어·유모차 접근 가능)이며, 코스 위 세 곳의 전망 데크가 각기 다른 각도의 절리 풍경을 제공합니다. **첫 번째 데크**는 측면 프로파일 컷(육각 기하학 사진에 최적), **중간 데크**는 정수리 단면 패턴, **마지막 데크**는 1km 해안선 전경과 함께 맑은 날이면 한라산을 배경으로 담을 수 있습니다. **사진 골든 타임은 14:00–16:00**로, 서향 햇살이 기둥 정면을 비추는 시간대입니다. 일몰 무렵에는 실루엣 구도가 가능하지만 절리의 세부 질감은 흐려집니다. 운영시간은 **09:00–18:00 (마지막 입장 17:30)**, 연중 운영됩니다.",
-      "image": "https://images.unsplash.com/photo-1565967511849-76a60a516170",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "**천연기념물 제443호** — **2005년 1월 6일** 지정, 제주 해안 천연기념물 중 가장 최근 사례",
         "기둥 높이 **30–40m**, **5–7각형 다각형(주로 육각형)** 구조가 **1km 해안선**을 따라 빼곡히 배열",
@@ -456,7 +704,65 @@
         "closed": "연중무휴 (기상 상황에 따라 변동 가능)",
         "admission": "성인 2,000원 / 어린이 1,000원 (저렴한 입장료)",
         "walking": "난이도 쉬움 — 절벽을 따라 평탄한 목재 데크 산책로 / 총 도보 15–20분"
-      }
+      },
+      "images": [
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "대포주상절리 (중문대포해안 주상절리대)",
+          "caption": "대포주상절리 (중문대포해안 주상절리대) — photo 1",
+          "alt": "대포주상절리 (중문대포해안 주상절리대) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "대포주상절리 (중문대포해안 주상절리대)",
+          "caption": "대포주상절리 (중문대포해안 주상절리대) — photo 2",
+          "alt": "대포주상절리 (중문대포해안 주상절리대) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "대포주상절리 (중문대포해안 주상절리대)",
+          "caption": "대포주상절리 (중문대포해안 주상절리대) — photo 3",
+          "alt": "대포주상절리 (중문대포해안 주상절리대) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "대포주상절리 (중문대포해안 주상절리대)",
+          "caption": "대포주상절리 (중문대포해안 주상절리대) — photo 4",
+          "alt": "대포주상절리 (중문대포해안 주상절리대) — gallery image 4"
+        }
+      ]
     },
     {
       "number": 7,
@@ -465,7 +771,7 @@
       "name": "오설록 티뮤지엄 + 녹차밭",
       "category": "아모레퍼시픽 차 문화 플래그십 + 녹차밭 피날레",
       "description": "**오설록 티 뮤지엄(O'Sulloc Tea Museum, 오설록은 '눈을 만난다 + 푸르름'이라는 뜻)**은 한국 최대 뷰티 기업 **아모레퍼시픽**이 운영하는 차 문화 플래그십입니다. 창업주 **서성환 회장이 1979년 직접 진두지휘**해 시작한 사업으로, 당시 '한국에서는 차의 상업 재배가 불가능하다'는 통념을 깨고 제주 서광 고원의 화산회토 황무지를 일구어 다원으로 재탄생시켰습니다. 오늘날 **서광다원**은 **한국 최대 녹차밭**이며, 아모레퍼시픽이 보유한 제주 3개 다원에서 **연간 약 700톤**의 차를 생산합니다. 박물관 본관은 **2001년 개관**해 다원 한가운데 자리하고 있으며, 차밭 능선과 어우러지는 미니멀한 녹색 지붕 파빌리온 디자인으로 **designboom 선정 세계 미술관 톱 10**에 이름을 올렸습니다. **입장 무료**, 매일 **09:00–18:00** 운영, 연간 약 **200만 명**이 찾습니다. 동선은 자연스럽게 세 구역으로 나뉩니다. **(1) 박물관 내부** — 차 제조 공정, 당나라(618–907년) 이후의 고차구 컬렉션, 차밭 전경을 한눈에 담는 옥상 전망 데크; **(2) 티하우스 카페** — 시그니처 메뉴인 **오설록 롤케이크**와 그해 수확한 찻잎으로 만든 **녹차 아이스크림**; **(3) 다원 산책로** — 차나무 사이로 이어지는 자갈길로, 서쪽 끝은 일몰 촬영 명소로 꼽힙니다. 아모레퍼시픽의 자연주의 화장품 브랜드 **이니스프리 제주하우스**는 도보 **5분 거리**에 있으며, 무료 입장에 감귤 비누 만들기 DIY 워크숍(15,000원)도 별도 운영합니다. 박물관 건물은 한국 건축가 그룹 **매스스터디스(조민석)**가 설계했으며, 차밭의 수평선과 경쟁하지 않고 그 기하를 따라 낮게 누운 형태가 특징입니다. 이러한 절제된 건축 언어 덕분에 designboom 톱 10에 선정되었고, 한국 현대 미술관 디자인의 대표 사례로 꾸준히 인용됩니다. 선택 프로그램으로 **오설록 티 클래스(1인 30,000원, 60분, 사전 예약 필수)**가 있으며, 한국 도자기로 차를 우리는 시연과 함께 가이드형 시음을 즐길 수 있습니다. 매일 **10:00–16:00** 진행되고 영어 강의는 수·토요일에 운영됩니다.",
-      "image": "https://images.unsplash.com/photo-1556881286-fc6915169721",
+      "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "highlights": [
         "**아모레퍼시픽** 플래그십 — 한국 최대 뷰티 기업으로, 창업주 서성환 회장이 **1979년** 제주 차 재배 개척",
         "**서광다원 = 한국 최대 녹차밭**, 연 약 700톤 생산",
@@ -511,7 +817,169 @@
         "closed": "연중무휴(기상에 따라 일부 휴장 가능)",
         "admission": "박물관 무료, 카페의 차·디저트는 별도 결제, 이니스프리 워크숍도 별도 결제",
         "walking": "쉬움 — 박물관은 평탄하고 유아차 동행도 무리 없으며, 잘 정비된 차밭 산책로 제공"
-      }
+      },
+      "images": [
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "location": "오설록 티뮤지엄 + 녹차밭",
+          "caption": "오설록 티뮤지엄 + 녹차밭 — photo 1",
+          "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "location": "오설록 티뮤지엄 + 녹차밭",
+          "caption": "오설록 티뮤지엄 + 녹차밭 — photo 2",
+          "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "location": "오설록 티뮤지엄 + 녹차밭",
+          "caption": "오설록 티뮤지엄 + 녹차밭 — photo 3",
+          "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "location": "오설록 티뮤지엄 + 녹차밭",
+          "caption": "오설록 티뮤지엄 + 녹차밭 — photo 4",
+          "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "location": "오설록 티뮤지엄 + 녹차밭",
+          "caption": "오설록 티뮤지엄 + 녹차밭 — photo 5",
+          "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "location": "오설록 티뮤지엄 + 녹차밭",
+          "caption": "오설록 티뮤지엄 + 녹차밭 — photo 6",
+          "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "location": "오설록 티뮤지엄 + 녹차밭",
+          "caption": "오설록 티뮤지엄 + 녹차밭 — photo 7",
+          "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "location": "오설록 티뮤지엄 + 녹차밭",
+          "caption": "오설록 티뮤지엄 + 녹차밭 — photo 8",
+          "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "location": "오설록 티뮤지엄 + 녹차밭",
+          "caption": "오설록 티뮤지엄 + 녹차밭 — photo 9",
+          "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "location": "오설록 티뮤지엄 + 녹차밭",
+          "caption": "오설록 티뮤지엄 + 녹차밭 — photo 10",
+          "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "location": "오설록 티뮤지엄 + 녹차밭",
+          "caption": "오설록 티뮤지엄 + 녹차밭 — photo 11",
+          "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "location": "오설록 티뮤지엄 + 녹차밭",
+          "caption": "오설록 티뮤지엄 + 녹차밭 — photo 12",
+          "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 12"
+        }
+      ]
     },
     {
       "number": 8,
@@ -1560,7 +2028,7 @@
             "name": "어승생악 트레일 (한라산 유네스코)",
             "category": "한라산 기슭 탐방로 (어리목) — 유네스코 세계유산 체험",
             "description": "어승생악(해발 1,169m)은 한라산 서쪽 사면의 기생화산(오름)입니다. 왕복 1.3km 목조 계단 트레일로, 정상에서 한라산 정상부와 제주 서쪽 해안 파노라마가 펼쳐집니다. 화구호(분화구 호수)와 곶자왈 숲이 인상적입니다. 맑은 날 성산일출봉까지 보입니다. 방문 시간: 약 70분.",
-            "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
+            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "**한라산 = 한국 유일의 유네스코 자연 3중 지정**: 세계유산 2007 + 생물권보전지역 2002 + 세계지질공원 2010",
               "**어승생악 정상 1,169m** — 기생화산(오름), 제주 360여 개 오름 중 하나",
@@ -1591,7 +2059,39 @@
                 "Cultural Heritage Administration — Hallasan Natural Monument 1966",
                 "Korea National Park Service — Hallasan visitor management records"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+                "location": "어승생악 트레일 (한라산 유네스코)",
+                "caption": "어승생악 트레일 (한라산 유네스코) — photo 1",
+                "alt": "어승생악 트레일 (한라산 유네스코) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+                "location": "어승생악 트레일 (한라산 유네스코)",
+                "caption": "어승생악 트레일 (한라산 유네스코) — photo 2",
+                "alt": "어승생악 트레일 (한라산 유네스코) — gallery image 2"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1600,7 +2100,7 @@
             "name": "카멜리아힐 (사계절 꽃 정원)",
             "category": "수국 터널 + 동양 최대 172,000m² 동백 수목원",
             "description": "카멜리아힐은 안덕면에 위치한 약 17만㎡ 규모의 식물원으로, 500여 종 6,000그루 동백나무를 포함한 사계절 꽃 정원입니다. 계절별로 개화 식물이 달라져 연중 방문이 즐겁습니다. 에스코르트 가든, 수국 터널, 이끼 정원 등이 있습니다. 입장료 포함. 방문 시간: 약 60분.",
-            "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+            "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
             "highlights": [
               "**172,000m²** — 동양 최대 동백 수목원",
               "**수목 6,000그루 / 80개국 500여 품종** — 30년 이상 수집",
@@ -1631,7 +2131,39 @@
                 "Korea Tourism Organization — Top Korean botanical gardens registry",
                 "Kakao TV / Wavve programming archive — 'EXchange / Transit Love 3' filming locations"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "location": "카멜리아힐 (사계절 꽃 정원)",
+                "caption": "카멜리아힐 (사계절 꽃 정원) — photo 1",
+                "alt": "카멜리아힐 (사계절 꽃 정원) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "location": "카멜리아힐 (사계절 꽃 정원)",
+                "caption": "카멜리아힐 (사계절 꽃 정원) — photo 2",
+                "alt": "카멜리아힐 (사계절 꽃 정원) — gallery image 2"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1663,7 +2195,7 @@
             "name": "천제연폭포 (신들의 연못)",
             "category": "삼단 폭포 — 천연기념물 제378호 (1993년)",
             "description": "천제연('하늘 임금의 연못'이라는 뜻)은 중문관광단지 내 3단 폭포입니다. 1단 폭포는 물이 마르면 잠기는 천정굴에서 흘러내립니다. 무지개 조각이 있는 선임교(무지개다리)가 포토 명소입니다. 주변 난대림 식물군락이 울창합니다. 입장료 포함. 방문 시간: 약 50분.",
-            "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
+            "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
             "highlights": [
               "**천연기념물 제378호 (1993년 지정)** — 삼단 폭포 + 희귀 식물 서식지",
               "이름 **'천제연' = '하늘 황제의 연못'** — 조선 도교 전설",
@@ -1694,7 +2226,52 @@
                 "Korea Plant Society — Mankyua chejuense IUCN Critically Endangered listing",
                 "Jeju Folklore Society — Daoist seven-nymph legend documentation"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "location": "천제연폭포 (신들의 연못)",
+                "caption": "천제연폭포 (신들의 연못) — photo 1",
+                "alt": "천제연폭포 (신들의 연못) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "location": "천제연폭포 (신들의 연못)",
+                "caption": "천제연폭포 (신들의 연못) — photo 2",
+                "alt": "천제연폭포 (신들의 연못) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "location": "천제연폭포 (신들의 연못)",
+                "caption": "천제연폭포 (신들의 연못) — photo 3",
+                "alt": "천제연폭포 (신들의 연못) — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1703,7 +2280,7 @@
             "name": "대포주상절리 (중문대포해안 주상절리대)",
             "category": "화산 해안선 — 육각형 주상절리 용암",
             "description": "대포 주상절리는 중문 해안을 따라 약 1km 이어지는 6각형 주상절리 현무암 절벽입니다. 화산 용암이 바다에서 급속 냉각되어 형성된 지형으로, 유네스코 세계지질공원 핵심 지질 명소입니다. 파도가 절벽에 부딪히는 장관은 사진 명소입니다. 입장료 포함. 방문 시간: 약 40분.",
-            "image": "https://images.unsplash.com/photo-1565967511849-76a60a516170",
+            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
             "highlights": [
               "**천연기념물 제443호** — **2005년 1월 6일** 지정, 제주 해안 천연기념물 중 가장 최근 지정",
               "기둥 높이 **30~40m**, **5~7각형 다각형**(주로 육각형)이 **1km**를 따라 밀집",
@@ -1734,7 +2311,65 @@
                 "VisitJeju — Daepo Jusangjeolli official listing",
                 "Korea Geological Survey — Jeju volcanic flow chronology"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "location": "대포주상절리 (중문대포해안 주상절리대)",
+                "caption": "대포주상절리 (중문대포해안 주상절리대) — photo 1",
+                "alt": "대포주상절리 (중문대포해안 주상절리대) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "location": "대포주상절리 (중문대포해안 주상절리대)",
+                "caption": "대포주상절리 (중문대포해안 주상절리대) — photo 2",
+                "alt": "대포주상절리 (중문대포해안 주상절리대) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "location": "대포주상절리 (중문대포해안 주상절리대)",
+                "caption": "대포주상절리 (중문대포해안 주상절리대) — photo 3",
+                "alt": "대포주상절리 (중문대포해안 주상절리대) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "location": "대포주상절리 (중문대포해안 주상절리대)",
+                "caption": "대포주상절리 (중문대포해안 주상절리대) — photo 4",
+                "alt": "대포주상절리 (중문대포해안 주상절리대) — gallery image 4"
+              }
+            ]
           },
           {
             "number": 7,
@@ -1743,7 +2378,7 @@
             "name": "오설록 티뮤지엄 + 녹차밭",
             "category": "아모레퍼시픽 차 문화 플래그십 + 녹차밭 피날레",
             "description": "오설록 티뮤지엄은 아모레퍼시픽이 운영하는 한국 최대 녹차 재배지의 문화 공간입니다. 서광다원 녹차밭 전망 포토 명소, 녹차 아이스크림·음료 구매 가능. 입장 무료. 방문 시간: 약 50분.",
-            "image": "https://images.unsplash.com/photo-1556881286-fc6915169721",
+            "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
             "highlights": [
               "**아모레퍼시픽** 플래그십 — 창업자 서성환이 1979년 제주 서광 다원을 개척하며 국내 녹차 문화를 부활",
               "**서광 다원 = 한국 최대 녹차밭**; 연간 약 700톤 생산",
@@ -1774,7 +2409,169 @@
                 "designboom — Top 10 art museums feature",
                 "VisitJeju — Osulloc Tea Museum official listing"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "location": "오설록 티뮤지엄 + 녹차밭",
+                "caption": "오설록 티뮤지엄 + 녹차밭 — photo 1",
+                "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "location": "오설록 티뮤지엄 + 녹차밭",
+                "caption": "오설록 티뮤지엄 + 녹차밭 — photo 2",
+                "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "location": "오설록 티뮤지엄 + 녹차밭",
+                "caption": "오설록 티뮤지엄 + 녹차밭 — photo 3",
+                "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "location": "오설록 티뮤지엄 + 녹차밭",
+                "caption": "오설록 티뮤지엄 + 녹차밭 — photo 4",
+                "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "location": "오설록 티뮤지엄 + 녹차밭",
+                "caption": "오설록 티뮤지엄 + 녹차밭 — photo 5",
+                "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "location": "오설록 티뮤지엄 + 녹차밭",
+                "caption": "오설록 티뮤지엄 + 녹차밭 — photo 6",
+                "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "location": "오설록 티뮤지엄 + 녹차밭",
+                "caption": "오설록 티뮤지엄 + 녹차밭 — photo 7",
+                "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "location": "오설록 티뮤지엄 + 녹차밭",
+                "caption": "오설록 티뮤지엄 + 녹차밭 — photo 8",
+                "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "location": "오설록 티뮤지엄 + 녹차밭",
+                "caption": "오설록 티뮤지엄 + 녹차밭 — photo 9",
+                "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "location": "오설록 티뮤지엄 + 녹차밭",
+                "caption": "오설록 티뮤지엄 + 녹차밭 — photo 10",
+                "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "location": "오설록 티뮤지엄 + 녹차밭",
+                "caption": "오설록 티뮤지엄 + 녹차밭 — photo 11",
+                "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 11"
+              },
+              {
+                "id": 12,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "location": "오설록 티뮤지엄 + 녹차밭",
+                "caption": "오설록 티뮤지엄 + 녹차밭 — photo 12",
+                "alt": "오설록 티뮤지엄 + 녹차밭 — gallery image 12"
+              }
+            ]
           },
           {
             "number": 8,

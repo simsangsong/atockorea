@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "제주 크루즈 기항지 버스 투어 (대형 코치) | AtoC Korea",
     "metaDescription": "8시간 기항지 대응형 제주 크루즈 관광: 제주항은 동쪽 유네스코 코스, 강정항은 한라산 고산지대+올레 시장 코스.",
-    "ogImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "ogImage": "https://www.atockorea.com/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "primaryKeywords": [
       "제주 크루즈 기항지 투어",
       "제주 크루즈 버스 투어",
@@ -33,8 +33,8 @@
       "알뜰 크루즈 플랜",
       "대형 버스"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
-    "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
+    "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+    "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "priceLabel": "가격은 예약 시 확인",
     "shortCardDescription": "크루즈 기항지 대형 버스 투어로, 기항 항구에 따라 동부 코스(제주항 — 성산일출봉·섭지코지·성읍민속마을) 또는 남부 코스(강정항 — 한라산+올레)로 진행됩니다. 승선 마감 전에 항구로 안전하게 복귀하는 것을 최우선으로 운영, 전 입장료 포함, 공인 가이드.",
     "tags": [
@@ -52,7 +52,7 @@
     "per": "인"
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "imageUrl": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "imagePosition": "center 35%",
     "tagline": "항구를 선택하세요: 제주항은 동부 유네스코 코스, 강정항은 한라산+올레 코스 — 귀선 시각을 최우선으로 구성했습니다.",
     "pills": [
@@ -135,58 +135,148 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-      "alt": "투어 중 방문하는 제주 크루즈 터미널의 풍경",
-      "caption": "제주 크루즈 터미널",
-      "location": "크루즈터미널",
-      "atmosphere": "출발"
-    },
-    {
-      "id": "g2",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
-      "alt": "투어 중 방문하는 성산일출봉 응회구의 풍경",
-      "caption": "성산일출봉 응회구",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "location": "성산일출봉",
-      "atmosphere": "유네스코 일출봉"
+      "alt": "성산일출봉 — gallery image 1",
+      "caption": "성산일출봉 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
-      "alt": "투어 중 방문하는 주상절리 현무암 절벽의 풍경",
-      "caption": "주상절리 현무암 절벽",
-      "location": "주상절리",
-      "atmosphere": "화산 주상절리 해안"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+      "location": "섭지코지 (동부 해안 곶)",
+      "alt": "섭지코지 (동부 해안 곶) — gallery image 1",
+      "caption": "섭지코지 (동부 해안 곶) — photo 1"
     },
     {
-      "id": "g4",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
-      "alt": "투어 중 방문하는 한라산 1100고지 습지의 풍경",
-      "caption": "한라산 1100고지 습지",
-      "location": "한라산 1100",
-      "atmosphere": "알파인 데크"
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+      "location": "성읍민속마을",
+      "alt": "성읍민속마을 — gallery image 1",
+      "caption": "성읍민속마을 — photo 1"
     },
     {
-      "id": "g5",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
-      "alt": "대포 주상절리 절벽의 육각형 현무암 기둥",
-      "caption": "천지연폭포",
-      "location": "천지연폭포",
-      "atmosphere": "천지연폭포는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "성산일출봉",
+      "alt": "성산일출봉 — gallery image 2",
+      "caption": "성산일출봉 — photo 2"
     },
     {
-      "id": "g6",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
-      "alt": "투어 중 방문하는 올레매일시장의 풍경",
-      "caption": "올레매일시장",
-      "location": "올레매일시장",
-      "atmosphere": "현지 시장 피날레"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "성산일출봉",
+      "alt": "성산일출봉 — gallery image 3",
+      "caption": "성산일출봉 — photo 3"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "성산일출봉",
+      "alt": "성산일출봉 — gallery image 4",
+      "caption": "성산일출봉 — photo 4"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "성산일출봉",
+      "alt": "성산일출봉 — gallery image 5",
+      "caption": "성산일출봉 — photo 5"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+      "location": "섭지코지 (동부 해안 곶)",
+      "alt": "섭지코지 (동부 해안 곶) — gallery image 2",
+      "caption": "섭지코지 (동부 해안 곶) — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+      "location": "섭지코지 (동부 해안 곶)",
+      "alt": "섭지코지 (동부 해안 곶) — gallery image 3",
+      "caption": "섭지코지 (동부 해안 곶) — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+      "location": "섭지코지 (동부 해안 곶)",
+      "alt": "섭지코지 (동부 해안 곶) — gallery image 4",
+      "caption": "섭지코지 (동부 해안 곶) — photo 4"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+      "location": "섭지코지 (동부 해안 곶)",
+      "alt": "섭지코지 (동부 해안 곶) — gallery image 5",
+      "caption": "섭지코지 (동부 해안 곶) — photo 5"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+      "location": "섭지코지 (동부 해안 곶)",
+      "alt": "섭지코지 (동부 해안 곶) — gallery image 6",
+      "caption": "섭지코지 (동부 해안 곶) — photo 6"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+      "location": "성읍민속마을",
+      "alt": "성읍민속마을 — gallery image 2",
+      "caption": "성읍민속마을 — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+      "location": "성읍민속마을",
+      "alt": "성읍민속마을 — gallery image 3",
+      "caption": "성읍민속마을 — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+      "location": "성읍민속마을",
+      "alt": "성읍민속마을 — gallery image 4",
+      "caption": "성읍민속마을 — photo 4"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+      "location": "성읍민속마을",
+      "alt": "성읍민속마을 — gallery image 5",
+      "caption": "성읍민속마을 — photo 5"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+      "location": "성읍민속마을",
+      "alt": "성읍민속마을 — gallery image 6",
+      "caption": "성읍민속마을 — photo 6"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+      "location": "성읍민속마을",
+      "alt": "성읍민속마을 — gallery image 7",
+      "caption": "성읍민속마을 — photo 7"
     }
   ],
   "itineraryStops": [
@@ -236,7 +326,7 @@
       "name": "성산일출봉",
       "category": "유네스코 응회암 분화구 — 일출봉 (유네스코 3중 지정)",
       "description": "**성산일출봉(Seongsan Ilchulbong, '해돋이 봉우리')**은 **5,000년 전 형성된 서트시안형(Surtseyan-type) 수성화산 응회구**입니다. 해저에서 분출한 현무암질 마그마가 해수면을 뚫고 올라와 바닷물을 만나면서 발생한 수증기 폭발로, 일반적인 용암 원추구가 아닌 **해발 182m의 요새 모양 분화구** 분지를 만들어낸 희귀한 지형입니다. 유네스코는 이를 공식적으로 **'서트시안형 수성화산체의 탁월한 사례'**로 평가합니다. 분화구는 **너비 600m × 깊이 90m** 규모로, 주변을 둘러싼 **99개의 뾰족한 암봉**은 현지에서 '돌 왕관'으로 비유됩니다. 성산일출봉은 한국 내에서 한라산과 더불어 **유네스코 3중 지정**을 받은 곳으로, **세계자연유산(2007년 7월 2일 등재, '제주 화산섬과 용암동굴' 일부)**, **생물권보전지역(2002년)**, **세계지질공원(2010년 10월)**의 위상을 동시에 갖추고 있습니다. 분화구 바다 쪽 기슭에는 **1945년 일제강점기에 굴착된 자폭 보트(가미카제) 동굴 18개**가 남아 있습니다. 탐방로는 **편도 0.8km, 고도차 약 140m, 왕복 60분**의 폭이 넓은 돌계단 코스입니다. **해녀(海女) 물질 시연**은 분화구 아래 갯바위 코지에서 **매일 13:30, 15:00**에 진행되며, 제주 해녀(2016년 유네스코 인류무형문화유산)는 스쿠버 장비 없이 잠수합니다. **2025년 4월 갱신된 입장료**는 **성인 5,000원 / 청소년·어린이 2,500원 / 단체 성인 1,600원**이며, 7세 미만과 65세 이상은 무료입니다. 정상 전망대는 **영주십경(瀛州十景)**의 하나로 꼽히며, 한국에서 가장 대표적인 **새해 일출 명소**로 1995년 이후 매년 1월 1일 새벽에 5만 명 이상이 운집하는 일출 축제가 시청 주관으로 열립니다. 정상에서 4km 떨어진 해상에는 한국 최대의 부속 화산섬 **우도(牛島, '소섬')**가 또렷이 보이며, 일정에 여유가 있을 경우 **성산항에서 페리 15분(왕복 ₩10,500)**으로 접근할 수 있습니다.",
-      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+      "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "highlights": [
         "**유네스코 3중 지정**: 세계유산(2007년 7월 2일) + 생물권보전지역(2002) + 세계지질공원(2010년 10월)",
         "**5,000년 전 형성** — 서트시안형 수성화산, 마그마와 바닷물의 만남이 빚은 수증기 폭발의 산물",
@@ -282,7 +372,78 @@
         "closed": "연중무휴 (기상 상황에 따라 일시 폐쇄 가능)",
         "admission": "성인 5,000원 / 청소년·어린이 2,500원 (한국관광공사 기준)",
         "walking": "난이도 보통 — 약 600개 계단을 꾸준히 오르는 20–30분 코스; 몇 분 간격으로 휴식용 벤치 배치"
-      }
+      },
+      "images": [
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "location": "성산일출봉",
+          "caption": "성산일출봉 — photo 1",
+          "alt": "성산일출봉 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "location": "성산일출봉",
+          "caption": "성산일출봉 — photo 2",
+          "alt": "성산일출봉 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "location": "성산일출봉",
+          "caption": "성산일출봉 — photo 3",
+          "alt": "성산일출봉 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "location": "성산일출봉",
+          "caption": "성산일출봉 — photo 4",
+          "alt": "성산일출봉 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "location": "성산일출봉",
+          "caption": "성산일출봉 — photo 5",
+          "alt": "성산일출봉 — gallery image 5"
+        }
+      ]
     },
     {
       "number": 3,
@@ -291,7 +452,7 @@
       "name": "섭지코지 (동부 해안 곶)",
       "category": "화산 곶 — 안도 다다오 건축 + 방두포 등대 + 드라마 촬영지",
       "description": "**섭지코지(Seopjikoji)**는 제주 동부 해안의 좁고 긴 화산 곶으로, 이름은 **'섭지(좁은 땅)' + '코지(곶을 뜻하는 제주 방언)'**의 합성어입니다. **2.1km 절벽 끝 산책로(약 30분, 고도차 14m에 불과)**는 제주에서 가장 많이 촬영되는 해안 길 가운데 하나로, 세 가지 문화·건축적 포인트가 그 중심에 있습니다. **(1) 붉은 오름** — 곶 끝에 자리한 붉은 빛깔의 기생화산구로, 그 정상에 **방두포 등대**가 서 있습니다. 등대는 팔각형 구조로 **4초마다 한 번씩 점멸**하며 현재도 항로 표지로 운영되고 있습니다. **(2) 협자연대(協子煙臺)** — **높이 4m × 직경 9m의 조선 시대 봉수대 형태 연대**로, 화산석으로 축조되었으며 제주특별자치도 **기념물 제23-2호**로 지정되어 있습니다. 16–18세기 왜구 침입에 대비한 조기경보 체계의 일부로 섬 전역에 38기가 배치되었던 봉수대 가운데 하나입니다. **(3) 안도 다다오 건축물** — 프리츠커상 수상 일본 건축가 **안도 다다오**가 설계한 두 건물, **글라스 하우스** 레스토랑과 **유민 미술관**이 있습니다. 두 건물 모두 안도 특유의 콘크리트와 빛의 미니멀리즘 어휘로 마감되었으며, 피닉스 아일랜드 리조트 개발의 일환으로 완공되었습니다. 곶 앞바다에는 **높이 10m의 화산암 첨탑인 선바위(船岩)**가 자리하며, 용왕의 막내아들 전설이 전해집니다. 드라마 촬영 이력으로는 **'올인'(2003, SBS), '마이걸'(2005, SBS), '징가민가', '봉기', '천일야'** 등이 있습니다. **봄철 유채꽃밭**은 **3–4월(노란빛)**에 비탈을 물들이고, **여름 수국**은 **6월(파랑·보랏빛)**에 이어집니다. 곶 자체는 **무료 입장**이며, 유민 미술관과 글라스 하우스 레스토랑은 별도 입장권·예약이 필요합니다.",
-      "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+      "image": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
       "highlights": [
         "**2.1km 곶 산책로** (약 30분, 고도차 14m에 불과) — 일부 구간 휠체어·유모차 접근 가능",
         "**방두포 등대** — 팔각형 구조, **4초마다 점멸**, 붉은 오름 정상에 위치",
@@ -337,7 +498,91 @@
         "closed": "연중무휴",
         "admission": "무료",
         "walking": "난이도 쉬움–보통 — 평탄한 해안 산책로 / 전체 순환 약 1시간"
-      }
+      },
+      "images": [
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+          "location": "섭지코지 (동부 해안 곶)",
+          "caption": "섭지코지 (동부 해안 곶) — photo 1",
+          "alt": "섭지코지 (동부 해안 곶) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+          "location": "섭지코지 (동부 해안 곶)",
+          "caption": "섭지코지 (동부 해안 곶) — photo 2",
+          "alt": "섭지코지 (동부 해안 곶) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+          "location": "섭지코지 (동부 해안 곶)",
+          "caption": "섭지코지 (동부 해안 곶) — photo 3",
+          "alt": "섭지코지 (동부 해안 곶) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+          "location": "섭지코지 (동부 해안 곶)",
+          "caption": "섭지코지 (동부 해안 곶) — photo 4",
+          "alt": "섭지코지 (동부 해안 곶) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+          "location": "섭지코지 (동부 해안 곶)",
+          "caption": "섭지코지 (동부 해안 곶) — photo 5",
+          "alt": "섭지코지 (동부 해안 곶) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+          "location": "섭지코지 (동부 해안 곶)",
+          "caption": "섭지코지 (동부 해안 곶) — photo 6",
+          "alt": "섭지코지 (동부 해안 곶) — gallery image 6"
+        }
+      ]
     },
     {
       "name": "점심 (제주 동부 — 현지 해산물 또는 흑돼지)",
@@ -386,7 +631,7 @@
       "name": "성읍민속마을",
       "category": "조선 시대 읍성 — 중요 민속 문화재 (1423년 창건)",
       "description": "**성읍 민속마을(Seongeup Folk Village)**은 **세종대왕 재위기인 1423년에 조성된 조선 시대 읍성 마을**로, 조선 시대 제주 3대 행정 중심지 가운데 하나인 **정의현(旌義縣)**의 자리입니다. 이 마을은 **1914년까지 약 500년간** 군현 행정 중심지로서 기능을 이어왔으며, 오늘날에도 본래의 읍성 부지 안에 **전통 가옥 110채**가 남아 있습니다. 마을 배치는 조선 군현 도읍의 전형인 **풍수지리 원칙**을 따르고 있으며, 마을 전체가 **국가민속문화재**로 지정되어 있고 **개별 건물 다수**도 별도의 문화재 지위를 갖습니다. 마을 중심에는 **국가 천연기념물로 지정된 두 그루의 노거수** — **느티나무**와 **팽나무**가 자리하고 있으며, 두 나무 모두 **수령 600년 이상**으로 추정되고 마을의 정신적 구심점으로 신앙됩니다. 역사적 흔적도 남아 있습니다. **1826년 대화재로 약 80채가 소실**되었고, **1948년 제주 4·3 사건** 당시에도 화재 피해를 입었으며, 두 사건 모두 마을 안내판에 사료로 보존되어 있습니다. **역사상 최대 가구 수(근대 이전 기준)는 약 1,500호**였고, 오늘날에도 약 250가구가 거주하며 다수가 전통 공예를 현역으로 계승하고 있습니다. 드라마 촬영지로는 국제적 K-드라마 흥행작 **'대장금'(MBC, 2003–2004)**의 무대로 알려져 있습니다. 지역 특산은 **오메기술** — 제주의 **쌀 기반 전통주**로, 마을 안의 한 가옥에서 **여러 세대에 걸쳐 한 집안이 빚어온** 술이며, 양조 시연과 무료 시음을 직접 체험할 수 있습니다. **입장료 무료**이며, 동선의 약 70%가 야외이고 30%가 개별 한옥 실내 관람으로 구성됩니다.",
-      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+      "image": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
       "highlights": [
         "**1423년 세종대왕 재위기 조성** — 1914년까지 **약 500년간** 행정 중심지 기능 유지",
         "원형 읍성 부지 안 **전통 가옥 110채** 보존",
@@ -433,7 +678,104 @@
         "closed": "연중무휴",
         "admission": "마을 전체 무료입장 / 일부 사가 한옥은 가이드 관람 시 별도 요금",
         "walking": "난이도 쉬움 — 마을 안의 평탄한 흙길과 돌길 위주"
-      }
+      },
+      "images": [
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+          "location": "성읍민속마을",
+          "caption": "성읍민속마을 — photo 1",
+          "alt": "성읍민속마을 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+          "location": "성읍민속마을",
+          "caption": "성읍민속마을 — photo 2",
+          "alt": "성읍민속마을 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+          "location": "성읍민속마을",
+          "caption": "성읍민속마을 — photo 3",
+          "alt": "성읍민속마을 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+          "location": "성읍민속마을",
+          "caption": "성읍민속마을 — photo 4",
+          "alt": "성읍민속마을 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+          "location": "성읍민속마을",
+          "caption": "성읍민속마을 — photo 5",
+          "alt": "성읍민속마을 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+          "location": "성읍민속마을",
+          "caption": "성읍민속마을 — photo 6",
+          "alt": "성읍민속마을 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+          "location": "성읍민속마을",
+          "caption": "성읍민속마을 — photo 7",
+          "alt": "성읍민속마을 — gallery image 7"
+        }
+      ]
     },
     {
       "name": "제주 크루즈 터미널 귀환 (제주항 — 북쪽)",
@@ -2185,7 +2527,7 @@
             "name": "성산일출봉",
             "category": "유네스코 응회암 분화구 — 일출봉 (유네스코 3중 지정)",
             "description": "성산일출봉은 약 5,000년 전 해저 화산 분출로 형성된 응회암 분화구로, 유네스코 세계자연유산(2007년)·생물권보전지역·세계지질공원 3관왕입니다. 분화구 등반 왕복 0.8km(약 30분, 선택). 크루즈 일정상 분화구 등반 여부는 가이드와 협의합니다. 입장료 포함. 방문 시간: 약 60분.",
-            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+            "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
             "highlights": [
               "**유네스코 3중 지정**: 세계유산 2007-07-02 + 생물권보전지역 2002 + 세계지질공원 2010-10",
               "**5,000년 전** 형성 — 마그마가 바닷물과 만나 폭발한 수성화산 활동, 이후 육지와 연결",
@@ -2216,7 +2558,78 @@
                 "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
                 "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "location": "성산일출봉",
+                "caption": "성산일출봉 — photo 1",
+                "alt": "성산일출봉 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "location": "성산일출봉",
+                "caption": "성산일출봉 — photo 2",
+                "alt": "성산일출봉 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "location": "성산일출봉",
+                "caption": "성산일출봉 — photo 3",
+                "alt": "성산일출봉 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "location": "성산일출봉",
+                "caption": "성산일출봉 — photo 4",
+                "alt": "성산일출봉 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "location": "성산일출봉",
+                "caption": "성산일출봉 — photo 5",
+                "alt": "성산일출봉 — gallery image 5"
+              }
+            ]
           },
           {
             "number": 3,
@@ -2225,7 +2638,7 @@
             "name": "섭지코지 (동부 해안 곶)",
             "category": "화산 곶 — 안도 다다오 건축 + 방두포 등대 + 드라마 촬영지",
             "description": "섭지코지는 제주 동쪽 해안의 좁은 화산 곶으로, 성산일출봉을 배경으로 한 탁 트인 해안 풍경이 유명합니다. 드라마 '올인' 촬영지로 알려져 있습니다. 방문 시간: 약 40분.",
-            "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+            "image": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
             "highlights": [
               "**2.1km 곶 트레일** (약 30분, 고도 차 14m만) — 휠체어·유모차 친화 구간 포함",
               "**방두포 등대** — 팔각형, **4초마다 점멸**, 붉은 화산 분석구 '불근오름' 위에 위치",
@@ -2256,7 +2669,91 @@
                 "Tadao Ando Architect & Associates — Phoenix Island project documentation",
                 "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+                "location": "섭지코지 (동부 해안 곶)",
+                "caption": "섭지코지 (동부 해안 곶) — photo 1",
+                "alt": "섭지코지 (동부 해안 곶) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+                "location": "섭지코지 (동부 해안 곶)",
+                "caption": "섭지코지 (동부 해안 곶) — photo 2",
+                "alt": "섭지코지 (동부 해안 곶) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+                "location": "섭지코지 (동부 해안 곶)",
+                "caption": "섭지코지 (동부 해안 곶) — photo 3",
+                "alt": "섭지코지 (동부 해안 곶) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+                "location": "섭지코지 (동부 해안 곶)",
+                "caption": "섭지코지 (동부 해안 곶) — photo 4",
+                "alt": "섭지코지 (동부 해안 곶) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+                "location": "섭지코지 (동부 해안 곶)",
+                "caption": "섭지코지 (동부 해안 곶) — photo 5",
+                "alt": "섭지코지 (동부 해안 곶) — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+                "location": "섭지코지 (동부 해안 곶)",
+                "caption": "섭지코지 (동부 해안 곶) — photo 6",
+                "alt": "섭지코지 (동부 해안 곶) — gallery image 6"
+              }
+            ]
           },
           {
             "name": "점심 (제주 동부 — 현지 해산물 또는 흑돼지)",
@@ -2292,7 +2789,7 @@
             "name": "성읍민속마을",
             "category": "조선 시대 읍성 — 중요 민속 문화재 (1423년 창건)",
             "description": "성읍민속마을은 1423년 조선 세종 때 정의현 치소로 조성된 살아있는 조선시대 읍성 마을입니다. 돌담과 초가집, 전통 제주 건축이 보존되어 있으며, 현재도 주민이 거주합니다. 크루즈 당일 일정에 맞게 방문 시간을 조율합니다. 방문 시간: 약 45분.",
-            "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+            "image": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
             "highlights": [
               "**세종대왕이 1423년 창건** — **1914년(약 500년)**까지 행정 중심지로 기능",
               "원래 읍성 담장 내 **110개의 전통 건축물** 보존",
@@ -2324,7 +2821,104 @@
                 "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
                 "Jeju Folklore Society — Omegisul brewing tradition documentation"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+                "location": "성읍민속마을",
+                "caption": "성읍민속마을 — photo 1",
+                "alt": "성읍민속마을 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+                "location": "성읍민속마을",
+                "caption": "성읍민속마을 — photo 2",
+                "alt": "성읍민속마을 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+                "location": "성읍민속마을",
+                "caption": "성읍민속마을 — photo 3",
+                "alt": "성읍민속마을 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+                "location": "성읍민속마을",
+                "caption": "성읍민속마을 — photo 4",
+                "alt": "성읍민속마을 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+                "location": "성읍민속마을",
+                "caption": "성읍민속마을 — photo 5",
+                "alt": "성읍민속마을 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+                "location": "성읍민속마을",
+                "caption": "성읍민속마을 — photo 6",
+                "alt": "성읍민속마을 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+                "location": "성읍민속마을",
+                "caption": "성읍민속마을 — photo 7",
+                "alt": "성읍민속마을 — gallery image 7"
+              }
+            ]
           },
           {
             "name": "제주 크루즈 터미널 귀환 (제주항 — 북쪽)",

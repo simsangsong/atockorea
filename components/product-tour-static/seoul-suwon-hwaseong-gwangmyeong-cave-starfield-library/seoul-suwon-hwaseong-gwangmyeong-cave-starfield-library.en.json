@@ -13,13 +13,13 @@
       "Starfield Library Suwon tour",
       "UNESCO Korea day tour"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG",
+    "ogImage": "https://www.atockorea.com/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "title": "Suwon Hwaseong, Gwangmyeong Cave & Starfield Library Day Tour from Seoul | AtoC Korea"
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG",
+    "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "title": "Suwon Hwaseong, Gwangmyeong Cave & Starfield Library Day Tour",
-    "priceLabel": "From US$54.00 per person (10% off, was $60)",
+    "priceLabel": "",
     "shortCardDescription": "A small-group cultural day-trip from Seoul covering four contrasting sides of Gyeonggi Province: the UNESCO-listed Suwon Hwaseong Fortress with its 18th-century walls and Haenggung Palace, the dramatic LED-lit underground theme park inside Gwangmyeong Cave (a former Japanese-era gold mine), the four-floor Starfield Library Suwon, and the 1,000-year-old Nammun traditional market for street food. 9 hours with included transport and admissions.",
     "tags": [
       "small_group",
@@ -30,8 +30,8 @@
       "shopping",
       "day_trip"
     ],
-    "rating": 4.6,
-    "reviewCount": 137,
+    "rating": 0,
+    "reviewCount": 0,
     "slug": "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
     "subtitle": "A small-group cultural day-trip from Seoul covering four contrasting sides of Gyeonggi Province: the UNESCO-listed Suwon Hwaseong Fortress with its…",
     "region": "Gyeonggi-do (south of Seoul)",
@@ -46,22 +46,22 @@
       "Shopping",
       "Day Trip"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG"
+    "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp"
   },
   "headlineLine1": "UNESCO walls, an underground gold mine, and a four-floor library —",
   "headlineLine2": "Gyeonggi Province's most photographed day in 9 hours",
   "price": {
-    "amountLabel": "54.00",
-    "originalPriceUsd": 60,
-    "salePriceUsd": 54,
-    "discountPercent": 10,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person",
-    "priceSource": "getyourguide_t816598",
-    "priceNote": "Original price 60 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+    "priceSource": "",
+    "priceNote": ""
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG",
+    "imageUrl": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "imagePosition": "center 35%",
     "tagline": "Korea's only walled fortress, a former gold mine reborn as art, and the country's most-photographed library",
     "pills": [
@@ -138,58 +138,116 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG",
-      "alt": "Suwon Hwaseong Fortress wall section with Janganmun gate visible in the distance and bastions along the ridgeline",
-      "caption": "Hwaseong Fortress — UNESCO since 1997",
-      "location": "Suwon Hwaseong Fortress, Janganmun-Hwaseomun section, Suwon",
-      "atmosphere": "Stone walls built 1794-1796 under King Jeongjo; only walled fortress city remaining in Korea"
+      "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+      "location": "Suwon Hwaseong Fortress",
+      "alt": "Suwon Hwaseong Fortress — gallery image 1",
+      "caption": "Suwon Hwaseong Fortress — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
-      "alt": "Hwaseong Haenggung Palace courtyard during a royal-guard reenactment with Joseon-era armor and traditional drums",
-      "caption": "Haenggung — royal guard reenactment",
-      "location": "Hwaseong Haenggung Palace, inside the fortress, Suwon",
-      "atmosphere": "Korea's largest haenggung; daily royal-guard ceremonies and martial-arts demos"
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+      "location": "Starfield Library Suwon",
+      "alt": "Starfield Library Suwon — gallery image 1",
+      "caption": "Starfield Library Suwon — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/19/2598719_image2_1.JPG",
-      "alt": "Gwangmyeong Cave's LED-lit Golden Road tunnel with curving illuminated walls inside the former colonial-era gold mine",
-      "caption": "Gwangmyeong Cave — Golden Road tunnel",
-      "location": "Gwangmyeong Cave, Gwangmyeong-si, Gyeonggi-do",
-      "atmosphere": "Former Siheung gold mine (1912-1972); 7.8 km of tunnels; constant 12°C year-round"
+      "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+      "location": "Gwangmyeong Cave",
+      "alt": "Gwangmyeong Cave — gallery image 1",
+      "caption": "Gwangmyeong Cave — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/56/2536656_image2_1.JPG",
-      "alt": "The 41-meter dragon sculpture inside Gwangmyeong Cave's main chamber with its head curved upward toward LED lighting",
-      "caption": "41-m dragon sculpture — Korea's largest",
-      "location": "Gwangmyeong Cave main chamber",
-      "atmosphere": "Korea's largest dragon (41 m, 800 kg, 'Lord of the Cave') built by Weta Workshop (Lord of the Rings prop studio)"
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+      "location": "Suwon Hwaseong Fortress",
+      "alt": "Suwon Hwaseong Fortress — gallery image 2",
+      "caption": "Suwon Hwaseong Fortress — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-      "alt": "Starfield Library Suwon's four-story atrium with 22-meter floor-to-ceiling bookshelves and reading lounges arranged on the lower floors",
-      "caption": "Starfield Library Suwon — 22 m bookshelves",
-      "location": "Starfield Suwon Library, Yeongtong-gu, Suwon",
-      "atmosphere": "Shinsegae's flagship 2nd-generation Starfield, opened January 2024; free entry; vinyl-record listening area"
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+      "location": "Suwon Hwaseong Fortress",
+      "alt": "Suwon Hwaseong Fortress — gallery image 3",
+      "caption": "Suwon Hwaseong Fortress — photo 3"
     },
     {
-      "id": "g6",
+      "id": 6,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
-      "alt": "Suwon Nammun Market's covered alley with food stalls selling Suwon-style galbi, fried chicken, and traditional sweets",
-      "caption": "Suwon Nammun Market — 220-year King Jeongjo market",
-      "location": "Suwon Nammun Market, south gate of the fortress, Suwon",
-      "atmosphere": "220-year history; created by King Jeongjo during Hwaseong's construction; tongdak alley + 9 sub-markets"
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+      "location": "Suwon Hwaseong Fortress",
+      "alt": "Suwon Hwaseong Fortress — gallery image 4",
+      "caption": "Suwon Hwaseong Fortress — photo 4"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+      "location": "Suwon Hwaseong Fortress",
+      "alt": "Suwon Hwaseong Fortress — gallery image 5",
+      "caption": "Suwon Hwaseong Fortress — photo 5"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+      "location": "Starfield Library Suwon",
+      "alt": "Starfield Library Suwon — gallery image 2",
+      "caption": "Starfield Library Suwon — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+      "location": "Starfield Library Suwon",
+      "alt": "Starfield Library Suwon — gallery image 3",
+      "caption": "Starfield Library Suwon — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+      "location": "Starfield Library Suwon",
+      "alt": "Starfield Library Suwon — gallery image 4",
+      "caption": "Starfield Library Suwon — photo 4"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
+      "location": "Gwangmyeong Cave",
+      "alt": "Gwangmyeong Cave — gallery image 2",
+      "caption": "Gwangmyeong Cave — photo 2"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
+      "location": "Gwangmyeong Cave",
+      "alt": "Gwangmyeong Cave — gallery image 3",
+      "caption": "Gwangmyeong Cave — photo 3"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
+      "location": "Gwangmyeong Cave",
+      "alt": "Gwangmyeong Cave — gallery image 4",
+      "caption": "Gwangmyeong Cave — photo 4"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp",
+      "location": "Gwangmyeong Cave",
+      "alt": "Gwangmyeong Cave — gallery image 5",
+      "caption": "Gwangmyeong Cave — photo 5"
     }
   ],
   "itineraryStops": [
@@ -283,7 +341,78 @@
           "Wikipedia (Hwaseong Fortress — Jeong Yak-yong + Geojunggi crane + 5.74 km perimeter + 41 structures)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG"
+      "image": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+      "images": [
+        "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+          "location": "Suwon Hwaseong Fortress",
+          "caption": "Suwon Hwaseong Fortress — photo 1",
+          "alt": "Suwon Hwaseong Fortress — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+          "location": "Suwon Hwaseong Fortress",
+          "caption": "Suwon Hwaseong Fortress — photo 2",
+          "alt": "Suwon Hwaseong Fortress — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+          "location": "Suwon Hwaseong Fortress",
+          "caption": "Suwon Hwaseong Fortress — photo 3",
+          "alt": "Suwon Hwaseong Fortress — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+          "location": "Suwon Hwaseong Fortress",
+          "caption": "Suwon Hwaseong Fortress — photo 4",
+          "alt": "Suwon Hwaseong Fortress — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+          "location": "Suwon Hwaseong Fortress",
+          "caption": "Suwon Hwaseong Fortress — photo 5",
+          "alt": "Suwon Hwaseong Fortress — gallery image 5"
+        }
+      ]
     },
     {
       "number": 3,
@@ -343,7 +472,78 @@
           "Visit Suwon CVB (visitsuwon.org — Suwon Pass combined ticket + Haenggung Square facilities)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG"
+      "image": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+      "images": [
+        "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+          "location": "Hwaseong Haenggung Palace",
+          "caption": "Hwaseong Haenggung Palace — photo 1",
+          "alt": "Hwaseong Haenggung Palace — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+          "location": "Hwaseong Haenggung Palace",
+          "caption": "Hwaseong Haenggung Palace — photo 2",
+          "alt": "Hwaseong Haenggung Palace — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+          "location": "Hwaseong Haenggung Palace",
+          "caption": "Hwaseong Haenggung Palace — photo 3",
+          "alt": "Hwaseong Haenggung Palace — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+          "location": "Hwaseong Haenggung Palace",
+          "caption": "Hwaseong Haenggung Palace — photo 4",
+          "alt": "Hwaseong Haenggung Palace — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+          "location": "Hwaseong Haenggung Palace",
+          "caption": "Hwaseong Haenggung Palace — photo 5",
+          "alt": "Hwaseong Haenggung Palace — gallery image 5"
+        }
+      ]
     },
     {
       "number": 4,
@@ -465,7 +665,65 @@
           "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG"
+      "image": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+      "images": [
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+          "location": "Starfield Library Suwon",
+          "caption": "Starfield Library Suwon — photo 1",
+          "alt": "Starfield Library Suwon — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+          "location": "Starfield Library Suwon",
+          "caption": "Starfield Library Suwon — photo 2",
+          "alt": "Starfield Library Suwon — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+          "location": "Starfield Library Suwon",
+          "caption": "Starfield Library Suwon — photo 3",
+          "alt": "Starfield Library Suwon — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+          "location": "Starfield Library Suwon",
+          "caption": "Starfield Library Suwon — photo 4",
+          "alt": "Starfield Library Suwon — gallery image 4"
+        }
+      ]
     },
     {
       "number": 6,
@@ -528,7 +786,78 @@
           "Korea Tourism Star Award archive (Gwangmyeong Cave 2014 winner — Best New Tourist Attraction)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG"
+      "image": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+      "images": [
+        "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+        "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
+        "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
+        "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
+        "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+          "location": "Gwangmyeong Cave",
+          "caption": "Gwangmyeong Cave — photo 1",
+          "alt": "Gwangmyeong Cave — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
+          "location": "Gwangmyeong Cave",
+          "caption": "Gwangmyeong Cave — photo 2",
+          "alt": "Gwangmyeong Cave — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
+          "location": "Gwangmyeong Cave",
+          "caption": "Gwangmyeong Cave — photo 3",
+          "alt": "Gwangmyeong Cave — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
+          "location": "Gwangmyeong Cave",
+          "caption": "Gwangmyeong Cave — photo 4",
+          "alt": "Gwangmyeong Cave — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp",
+          "location": "Gwangmyeong Cave",
+          "caption": "Gwangmyeong Cave — photo 5",
+          "alt": "Gwangmyeong Cave — gallery image 5"
+        }
+      ]
     },
     {
       "number": 7,
@@ -976,14 +1305,14 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
     "price": {
-      "amountLabel": "54.00",
-      "originalPriceUsd": 60,
-      "salePriceUsd": 54,
-      "discountPercent": 10,
+      "amountLabel": "",
+      "originalPriceUsd": null,
+      "salePriceUsd": null,
+      "discountPercent": null,
       "currency": "USD",
       "per": "person",
-      "priceSource": "getyourguide_t816598",
-      "priceNote": "Original price 60 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+      "priceSource": "",
+      "priceNote": ""
     }
   },
   "pickup_dropoff": {
@@ -1491,7 +1820,7 @@
             "name": "Suwon Hwaseong Fortress",
             "category": "UNESCO Fortress",
             "description": "Guided walk along a section of the 5.7 km UNESCO-listed fortress wall, built 1794–1796 under King Jeongjo as a planned new capital. Highlights typically include Janganmun (the largest gate), Hwaseomun, beacon mounds, and bastions, with sweeping city views from the wall.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+            "image": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
             "highlights": [
               "UNESCO since 1997",
               "Major fortress gates",
@@ -1528,7 +1857,78 @@
                 "KoreaToDo"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+                "location": "Suwon Hwaseong Fortress",
+                "caption": "Suwon Hwaseong Fortress — photo 1",
+                "alt": "Suwon Hwaseong Fortress — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+                "location": "Suwon Hwaseong Fortress",
+                "caption": "Suwon Hwaseong Fortress — photo 2",
+                "alt": "Suwon Hwaseong Fortress — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+                "location": "Suwon Hwaseong Fortress",
+                "caption": "Suwon Hwaseong Fortress — photo 3",
+                "alt": "Suwon Hwaseong Fortress — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+                "location": "Suwon Hwaseong Fortress",
+                "caption": "Suwon Hwaseong Fortress — photo 4",
+                "alt": "Suwon Hwaseong Fortress — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+                "location": "Suwon Hwaseong Fortress",
+                "caption": "Suwon Hwaseong Fortress — photo 5",
+                "alt": "Suwon Hwaseong Fortress — gallery image 5"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1537,7 +1937,7 @@
             "name": "Hwaseong Haenggung Palace",
             "category": "Joseon Royal Palace",
             "description": "The temporary royal residence inside the fortress, used by King Jeongjo when he visited his father's tomb. The largest haenggung (detached palace) in Korea. Live performances — royal guard ceremonies, martial arts demos — run on most days.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+            "image": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
             "highlights": [
               "Largest detached palace in Korea",
               "Royal guard reenactment",
@@ -1569,11 +1969,82 @@
               "verified": true,
               "sources": [
                 "Wikipedia",
-                "Trazy",
+                "",
                 "TimeTravelTurtle"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+                "location": "Hwaseong Haenggung Palace",
+                "caption": "Hwaseong Haenggung Palace — photo 1",
+                "alt": "Hwaseong Haenggung Palace — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+                "location": "Hwaseong Haenggung Palace",
+                "caption": "Hwaseong Haenggung Palace — photo 2",
+                "alt": "Hwaseong Haenggung Palace — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+                "location": "Hwaseong Haenggung Palace",
+                "caption": "Hwaseong Haenggung Palace — photo 3",
+                "alt": "Hwaseong Haenggung Palace — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+                "location": "Hwaseong Haenggung Palace",
+                "caption": "Hwaseong Haenggung Palace — photo 4",
+                "alt": "Hwaseong Haenggung Palace — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+                "location": "Hwaseong Haenggung Palace",
+                "caption": "Hwaseong Haenggung Palace — photo 5",
+                "alt": "Hwaseong Haenggung Palace — gallery image 5"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1613,7 +2084,7 @@
             "name": "Starfield Library, Suwon",
             "category": "Modern Cultural Landmark",
             "description": "Inside Starfield Suwon — Shinsegae's flagship 'second-generation' Starfield mall opened January 2024 — the library spans four floors with bookshelves up to 22 meters tall, a vinyl-record listening area, and curated reading lounges. Bigger and quieter than the original Starfield Library at COEX in Seoul. Free time for photos, browsing, and coffee.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+            "image": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
             "highlights": [
               "Four-floor library, 22 m shelves",
               "Vinyl-record listening seats",
@@ -1649,7 +2120,65 @@
                 "SeoulSearching"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+                "location": "Starfield Library, Suwon",
+                "caption": "Starfield Library, Suwon — photo 1",
+                "alt": "Starfield Library, Suwon — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+                "location": "Starfield Library, Suwon",
+                "caption": "Starfield Library, Suwon — photo 2",
+                "alt": "Starfield Library, Suwon — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+                "location": "Starfield Library, Suwon",
+                "caption": "Starfield Library, Suwon — photo 3",
+                "alt": "Starfield Library, Suwon — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+                "location": "Starfield Library, Suwon",
+                "caption": "Starfield Library, Suwon — photo 4",
+                "alt": "Starfield Library, Suwon — gallery image 4"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1658,7 +2187,7 @@
             "name": "Gwangmyeong Cave",
             "category": "Underground Themed Attraction",
             "description": "A 30-minute drive to Gwangmyeong, where the former Siheung gold mine — opened by Japanese colonial authorities in 1912 and worked under forced labor — has been reborn as Korea's largest themed cave park. The mine produced gold, silver, copper, and zinc until closure in 1972, then served as a salted-shrimp storage facility for 40 years before Gwangmyeong city converted it into a tourist attraction in 2011. Its 7.8 km of underground tunnels now host LED-lit tableaux, an underground winery (Wine Cave, 170+ Korean wines), an Aqua World aquarium, the Golden Waterfall, the Golden Road of wishes, and Korea's largest dragon sculpture — a 41 m, 800 kg sculpture named 'Lord of the Cave' built by Weta Workshop (the New Zealand prop studio behind Lord of the Rings). Year-round 12°C inside — an air-conditioned experience in summer, a sheltered one in winter.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG",
+            "image": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
             "highlights": [
               "Former Siheung Mine (1912-1972, gold/silver/copper/zinc)",
               "7.8 km of LED-lit underground tunnels",
@@ -1693,7 +2222,78 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated tour info; verify hours seasonally"
-            }
+            },
+            "images": [
+              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
+              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
+              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
+              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+                "location": "Gwangmyeong Cave",
+                "caption": "Gwangmyeong Cave — photo 1",
+                "alt": "Gwangmyeong Cave — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
+                "location": "Gwangmyeong Cave",
+                "caption": "Gwangmyeong Cave — photo 2",
+                "alt": "Gwangmyeong Cave — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
+                "location": "Gwangmyeong Cave",
+                "caption": "Gwangmyeong Cave — photo 3",
+                "alt": "Gwangmyeong Cave — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
+                "location": "Gwangmyeong Cave",
+                "caption": "Gwangmyeong Cave — photo 4",
+                "alt": "Gwangmyeong Cave — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp",
+                "location": "Gwangmyeong Cave",
+                "caption": "Gwangmyeong Cave — photo 5",
+                "alt": "Gwangmyeong Cave — gallery image 5"
+              }
+            ]
           },
           {
             "number": 7,
@@ -2113,7 +2713,7 @@
           "currency": "USD",
           "per": "person",
           "priceSource": "getyourguide_t816598",
-          "priceNote": "Original price 60 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+          "priceNote": "Original price 60 USD; AtoC Korea sale price is a flat 10% discount."
         }
       }
     }

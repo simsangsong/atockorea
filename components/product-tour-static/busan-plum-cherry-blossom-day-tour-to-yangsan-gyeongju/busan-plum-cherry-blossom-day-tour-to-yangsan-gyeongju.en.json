@@ -34,7 +34,7 @@
     ],
     "heroImage": "https://tong.visitkorea.or.kr/cms/resource/87/2748787_image2_1.JPG",
     "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/87/2748787_image2_1.JPG",
-    "priceLabel": "Per-person pricing — confirm at booking",
+    "priceLabel": "",
     "shortCardDescription": "An 8.5-hour Busan-departure dual-season shuttle covering Yangsan and Gyeongju. The default itinerary visits Tongdosa Temple (UNESCO Sansa, Korea's Three Jewel Temple, with the 350-year Jajangmae plum tree), Wondong Plum Blossom Village (Minari Samgyeopsal lunch in greenhouse pop-up restaurants), Bulguksa Temple (UNESCO World Heritage), and Bomun Lake (8 km cherry blossom loop). Wider operating window than cherry-only tours: ~Feb 25 – Apr 10 covers both plum and cherry blossom peaks. Daily route shifts emphasis based on plum vs cherry bloom status.",
     "tags": [
       "spring_seasonal",
@@ -132,58 +132,44 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/87/2748787_image2_1.JPG",
-      "alt": "Plum blossom branches with Tongdosa Temple in background",
-      "caption": "Tongdosa Temple Jajangmae (350-year red plum)",
-      "location": "Tongdosa Temple",
-      "atmosphere": "Sacred spring"
+      "location": "Tongdosa Temple (UNESCO Sansa + Jajangmae plum tree)",
+      "alt": "Tongdosa Temple (UNESCO Sansa + Jajangmae plum tree) — on-route photo",
+      "caption": "Tongdosa Temple (UNESCO Sansa + Jajangmae plum tree)"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
-      "alt": "Tongdosa Daeungjeon hall and pine forest approach",
-      "caption": "Tongdosa Daeungjeon (National Treasure #290)",
-      "location": "Tongdosa Temple",
-      "atmosphere": "UNESCO Sansa"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "location": "Bulguksa Temple (UNESCO World Heritage)",
+      "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 1",
+      "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/87/2661487_image2_1.JPG",
-      "alt": "Plum blossoms and railway tracks at Wondong Yangsan",
-      "caption": "Wondong Plum Blossom Village — railway and blossoms",
-      "location": "Wondong Plum Village",
-      "atmosphere": "Nostalgic"
+      "location": "Bomun Lake (cherry blossom centerpiece)",
+      "alt": "Bomun Lake (cherry blossom centerpiece) — on-route photo",
+      "caption": "Bomun Lake (cherry blossom centerpiece)"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/16/2565716_image2_1.JPG",
-      "alt": "Bulguksa stone pagodas with cherry blossoms in background",
-      "caption": "Bulguksa Temple cherry blossom road",
-      "location": "Bulguksa Temple",
-      "atmosphere": "UNESCO heritage"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+      "location": "Bulguksa Temple (UNESCO World Heritage)",
+      "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 2",
+      "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/49/2390749_image2_1.JPG",
-      "alt": "Bomun Lake cherry blossom path and pavilion",
-      "caption": "Bomun Lake cherry blossom loop",
-      "location": "Bomun Lake",
-      "atmosphere": "Spring scenic"
-    },
-    {
-      "id": "g6",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/25/3083925_image2_1.JPG",
-      "alt": "Minari Samgyeopsal grilled pork belly with parsley",
-      "caption": "Wondong Minari Samgyeopsal (seasonal regional dish)",
-      "location": "Wondong",
-      "atmosphere": "Foodie"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "location": "Bulguksa Temple (UNESCO World Heritage)",
+      "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 3",
+      "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 3"
     }
   ],
   "itineraryStops": [
@@ -367,7 +353,52 @@
           "Visit Gyeongju official"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG"
+      "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+      "images": [
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "location": "Bulguksa Temple (UNESCO World Heritage)",
+          "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 1",
+          "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "location": "Bulguksa Temple (UNESCO World Heritage)",
+          "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 2",
+          "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "location": "Bulguksa Temple (UNESCO World Heritage)",
+          "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 3",
+          "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 3"
+        }
+      ]
     },
     {
       "number": 5,
@@ -571,7 +602,7 @@
         ]
       }
     ],
-    "sourcing": "Tour design follows the dual-season plum + cherry blossom standard (verified via Trazy 'Busan & Gyeongju Cherry Blossom Private Tour' listing, Yangsan tourism office, Wondong Plum Blossom Festival annual data, KMA bloom forecasts). UNESCO designations cross-checked with the official UNESCO World Heritage List entries for 'Bulguksa Temple' (1995) and 'Sansa, Buddhist Mountain Monasteries in Korea' (2018)."
+    "sourcing": "Tour design follows the dual-season plum + cherry blossom standard ( 'Busan & Gyeongju Cherry Blossom Private Tour' listing, Yangsan tourism office, Wondong Plum Blossom Festival annual data, KMA bloom forecasts). UNESCO designations cross-checked with the official UNESCO World Heritage List entries for 'Bulguksa Temple' (1995) and 'Sansa, Buddhist Mountain Monasteries in Korea' (2018)."
   },
   "practicalAccordionItems": [
     {
@@ -967,8 +998,8 @@
       "busan-spring-cherry-blossom-gyeongju-highlights-day-tour"
     ],
     "internal_competing_products_note": "Within the Busan-departure spring portfolio, this is the WIDER-WINDOW dual-season (plum + cherry) variant covering Yangsan + Gyeongju. The cherry-only tour (busan-spring-cherry-blossom-gyeongju-highlights-day-tour) is the narrower-window (Mar 28 – Apr 10) Gyeongju-only alternative. The two year-round Gyeongju tours (busan-gyeongju-unesco-legacy-tour-national-museum, from-busan-gyeongju-ancient-capital-day-tour) cover the same UNESCO core year-round but skip Yangsan and the seasonal blossom POIs.",
-    "external_source": "GetYourGuide t1199329",
-    "external_source_url": "https://www.getyourguide.com/-t1199329/",
+    "external_source": "t1199329",
+    "external_source_url": "https://www..com/-t1199329/",
     "operator_partner": "AtoC Korea LLC (seasonal plum + cherry blossom shuttle)",
     "last_competitive_review": "2026-04-28",
     "primary_themes": [
@@ -1195,7 +1226,7 @@
             "duration": "60 min",
             "name": "Ahopsan Bamboo Forest",
             "category": "Bamboo Forest",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/87/2748787_image2_1.JPG",
+            "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
             "description": "Privately preserved bamboo grove inside the Nampyeong Mun clan's ancestral estate in Gijang-gun, Busan — the family has owned and maintained the forest since 1638 (roughly 400 years). Several iconic Korean dramas have filmed here, most famously the bamboo-corridor scenes in 'Mr. Sunshine' (2018). The walking loop is roughly 1 km on flat compacted dirt, takes 45–60 minutes at a slow photography pace, and stays cool in summer because the canopy filters most direct sunlight. Adult admission ₩5,000 (cash; not included in tour price). Spring (cherry blossom season) is the only exception when the route swaps this stop for Haeundae Dalmaji Hill (see Seasonal notes).",
             "timeUsed": [
               "Arrival, ticketing, and orientation briefing",
@@ -1207,7 +1238,52 @@
               "poi_key": "ahopsan_bamboo_forest",
               "is_attraction": true,
               "fee_krw": 5000
-            }
+            },
+            "images": [
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+                "location": "Ahopsan Bamboo Forest",
+                "caption": "Ahopsan Bamboo Forest — photo 1",
+                "alt": "Ahopsan Bamboo Forest — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+                "location": "Ahopsan Bamboo Forest",
+                "caption": "Ahopsan Bamboo Forest — photo 2",
+                "alt": "Ahopsan Bamboo Forest — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+                "location": "Ahopsan Bamboo Forest",
+                "caption": "Ahopsan Bamboo Forest — photo 3",
+                "alt": "Ahopsan Bamboo Forest — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1232,7 +1308,52 @@
                 "No. 20 Dabotap",
                 "No. 21 Seokgatap"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "location": "Bulguksa Temple (UNESCO World Heritage)",
+                "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 1",
+                "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "location": "Bulguksa Temple (UNESCO World Heritage)",
+                "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 2",
+                "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "location": "Bulguksa Temple (UNESCO World Heritage)",
+                "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 3",
+                "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 3"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1276,7 +1397,52 @@
                 "No. 29 Sacred Bell",
                 "No. 188 Gold Crown"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+                "location": "Gyeongju National Museum",
+                "caption": "Gyeongju National Museum — photo 1",
+                "alt": "Gyeongju National Museum — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+                "location": "Gyeongju National Museum",
+                "caption": "Gyeongju National Museum — photo 2",
+                "alt": "Gyeongju National Museum — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+                "location": "Gyeongju National Museum",
+                "caption": "Gyeongju National Museum — photo 3",
+                "alt": "Gyeongju National Museum — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1296,7 +1462,65 @@
               "poi_key": "gyochon_hanok_village",
               "is_attraction": true,
               "fee_krw": 0
-            }
+            },
+            "images": [
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+                "location": "Gyochon Hanok Village",
+                "caption": "Gyochon Hanok Village — photo 1",
+                "alt": "Gyochon Hanok Village — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+                "location": "Gyochon Hanok Village",
+                "caption": "Gyochon Hanok Village — photo 2",
+                "alt": "Gyochon Hanok Village — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+                "location": "Gyochon Hanok Village",
+                "caption": "Gyochon Hanok Village — photo 3",
+                "alt": "Gyochon Hanok Village — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+                "location": "Gyochon Hanok Village",
+                "caption": "Gyochon Hanok Village — photo 4",
+                "alt": "Gyochon Hanok Village — gallery image 4"
+              }
+            ]
           },
           {
             "number": 7,
@@ -1757,7 +1981,7 @@
       "v15.4_new_tour_creation"
     ],
     "fix_passes": {
-      "v15.4_new_tour_creation": "Created new tour from GYG product ID t1199329 (Busan plum + cherry blossom day tour to Yangsan + Gyeongju). Structural template: busan-spring-cherry-blossom-gyeongju-highlights-day-tour (Step 3b — same Busan-departure shuttle pattern, same 8.5h, same fact-grounded scoring methodology). POI knowledge base extended to v1.2 (19 → 21 POIs): added tongdosa_temple, wondong_plum_blossom_village. Wonhyoam Hermitage was researched but EXCLUDED from KB — its 8 km mountain road approach + 900 m elevation makes it unsuitable for a day tour with mixed-mobility shuttle group. POI operational data sourced from VisitKorea, Yangsan City tourism office, Korean Sansa World Heritage Committee, Trazy plum blossom listings, Trip.com Yangsan moments, Wondong Plum Festival annual reports (cross-verified across 5–7 sources per POI). OPERATING WINDOW: Approximately Feb 25 – Apr 10 each year (~6 weeks, wider than the cherry-only Step 3b tour at Mar 28 – Apr 10) due to dual-season coverage (plum peak ~Mar 1–15 + cherry peak ~Mar 28 – Apr 10). MATCHING-PROFILE SCORING METHODOLOGY (per Jason's directive: 'matching scores grounded in facts and actual attraction info, carefully calibrated'): All 68 fields scored from verified facts about the actual stops in the default itinerary. Inline reasoning for each non-trivial score is captured as comments in the generator script step3c_create_plum_cherry_tour.py — Jason can review or adjust any specific score by editing the generator and re-running. Key derivations vs Step 3b cherry-only: (1) walking_level=0.55 (vs Step 3b 0.50) — Tongdosa's 1.2 km riverside approach adds walking distance; (2) culture_level=0.90 (vs Step 3b 0.85) — Tongdosa is a Three Jewel Temple with the unique 'no Buddha image' Daeungjeon NT#290 + 1,400-year continuous monastic practice; (3) intangible_heritage_fit=0.65 (vs Step 3b 0.30) — Tongdosa Sansa designation is specifically for living intangible monastic heritage; (4) food_fit=0.70 (vs Step 3b 0.55) — Wondong's Minari Samgyeopsal is a documented seasonal regional dish, not generic lunch; (5) unesco_fit=0.85 (vs Step 3b 0.95) — 2 of 4 stops UNESCO (Tongdosa Sansa 2018 + Bulguksa 1995), one less than Step 3b; (6) value_for_money_fit=0.90 (vs Step 3b 0.85) — wider operating window = same price for more booking flexibility; (7) mobility_friendly_fit=0.60 (vs Step 3b 0.55) — Tongdosa flat barefoot-friendly approach (verified VisitKorea) is more accessible than Cheomseongdae/Daereungwon's grass paths; (8) seasonality.spring=1.0 (operating Feb 25 – Apr 10), others=0.0 (does not operate). REASONABLE-ASSUMPTION FIELDS that may need patching once the live GYG page is reviewed: (a) price.amountLabel left empty (per-person pricing TBD); (b) catalog_card.priceFromUSD null; (c) exact pickup times (08:00/08:15/08:30) and Nopo Station as third pickup point assumed from typical Busan-Yangsan shuttle schedule; (d) reviewsSummary populated with zeros — actual GYG reviews not imported in this pass; (e) hero/og images deferred per v15 P3 image workflow.",
+      "v15.4_new_tour_creation": "Created new tour from GYG product ID t1199329 (Busan plum + cherry blossom day tour to Yangsan + Gyeongju). Structural template: busan-spring-cherry-blossom-gyeongju-highlights-day-tour (Step 3b — same Busan-departure shuttle pattern, same 8.5h, same fact-grounded scoring methodology). POI knowledge base extended to v1.2 (19 → 21 POIs): added tongdosa_temple, wondong_plum_blossom_village. Wonhyoam Hermitage was researched but EXCLUDED from KB — its 8 km mountain road approach + 900 m elevation makes it unsuitable for a day tour with mixed-mobility shuttle group. POI operational data sourced from VisitKorea, Yangsan City tourism office, Korean Sansa World Heritage Committee, plum blossom listings, Yangsan moments, Wondong Plum Festival annual reports (cross-verified across 5–7 sources per POI). OPERATING WINDOW: Approximately Feb 25 – Apr 10 each year (~6 weeks, wider than the cherry-only Step 3b tour at Mar 28 – Apr 10) due to dual-season coverage (plum peak ~Mar 1–15 + cherry peak ~Mar 28 – Apr 10). MATCHING-PROFILE SCORING METHODOLOGY (per Jason's directive: 'matching scores grounded in facts and actual attraction info, carefully calibrated'): All 68 fields scored from verified facts about the actual stops in the default itinerary. Inline reasoning for each non-trivial score is captured as comments in the generator script step3c_create_plum_cherry_tour.py — Jason can review or adjust any specific score by editing the generator and re-running. Key derivations vs Step 3b cherry-only: (1) walking_level=0.55 (vs Step 3b 0.50) — Tongdosa's 1.2 km riverside approach adds walking distance; (2) culture_level=0.90 (vs Step 3b 0.85) — Tongdosa is a Three Jewel Temple with the unique 'no Buddha image' Daeungjeon NT#290 + 1,400-year continuous monastic practice; (3) intangible_heritage_fit=0.65 (vs Step 3b 0.30) — Tongdosa Sansa designation is specifically for living intangible monastic heritage; (4) food_fit=0.70 (vs Step 3b 0.55) — Wondong's Minari Samgyeopsal is a documented seasonal regional dish, not generic lunch; (5) unesco_fit=0.85 (vs Step 3b 0.95) — 2 of 4 stops UNESCO (Tongdosa Sansa 2018 + Bulguksa 1995), one less than Step 3b; (6) value_for_money_fit=0.90 (vs Step 3b 0.85) — wider operating window = same price for more booking flexibility; (7) mobility_friendly_fit=0.60 (vs Step 3b 0.55) — Tongdosa flat barefoot-friendly approach (verified VisitKorea) is more accessible than Cheomseongdae/Daereungwon's grass paths; (8) seasonality.spring=1.0 (operating Feb 25 – Apr 10), others=0.0 (does not operate). REASONABLE-ASSUMPTION FIELDS that may need patching once the live GYG page is reviewed: (a) price.amountLabel left empty (per-person pricing TBD); (b) catalog_card.priceFromUSD null; (c) exact pickup times (08:00/08:15/08:30) and Nopo Station as third pickup point assumed from typical Busan-Yangsan shuttle schedule; (d) reviewsSummary populated with zeros — actual GYG reviews not imported in this pass; (e) hero/og images deferred per v15 P3 image workflow.",
       "v17_schema_unification": {
         "date": "2026-04-28",
         "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",

@@ -14,12 +14,12 @@
       "柱状節理ツアー",
       "雪緑茶博物館ツアー"
     ],
-    "ogImage": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+    "ogImage": "https://www.atockorea.com/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "済州南部ユネスコ日帰りツアー・全入場料込み | AtoC",
     "description": "済州南部日帰りツアー：（漢拏山ユネスコ）→ 山茶花の丘 → 天帝淵の滝 → 大浦柱状節理 → 雪緑茶博物館。全入場料込み、少人数、認定ガイド。4.9/5（648件のクチコミ）。"
   },
   "catalog_card": {
-    "thumbnail": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+    "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "済州南部ユネスコ世界遺産日帰りツアー",
     "priceLabel": "料金は予約時にご確認ください",
     "shortCardDescription": "済州南部の主要ユネスコ見どころを9時間で巡る少人数日帰りツアー。トレイル（漢拏山（ハルラサン）自然遺産）、山茶花の丘（カメリアヒル）、天帝淵の滝、大浦柱状節理、雪緑茶博物館を一日で網羅。全入場料込み、英語・中国語対応の認定ガイド付き。648件のクチコミで4.9/5。",
@@ -46,7 +46,7 @@
       "お得",
       "全入場料込み"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800"
+    "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp"
   },
   "headlineLine1": "漢拏山から柱状絶壁、滝から茶畑まで —",
   "headlineLine2": "済州南部ユネスコ世界遺産ループ、全入場料込み",
@@ -61,7 +61,7 @@
     "priceNote": "詳しい料金は予約時にご確認ください。"
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1600",
+    "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "imagePosition": "center 35%",
     "tagline": "南済州のユネスコ遺産を一日で制覇 — 648件のクチコミで4.9/5、全入場料込み",
     "pills": [
@@ -138,49 +138,212 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "霧に包まれた漢拏山（ハルラサン）の斜面 火山丘陵",
-      "caption": "（1,169m）— 漢拏山（ハルラサン）ユネスコ世界自然遺産の一部",
-      "location": "",
-      "atmosphere": ""
+      "src": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+      "location": "お迎え（済州市内4か所）",
+      "alt": "お迎え（済州市内4か所） — on-route photo",
+      "caption": "お迎え（済州市内4か所）"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
-      "alt": "山茶花の丘（カメリアヒル）に咲き誇る色とりどりの山茶花",
-      "caption": "山茶花の丘（カメリアヒル）— 東洋最大の山茶花植物園",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "location": "トレイル（漢拏山（ハルラサン）ユネスコ）",
+      "alt": "トレイル（漢拏山（ハルラサン）ユネスコ） — gallery image 1",
+      "caption": "トレイル（漢拏山（ハルラサン）ユネスコ） — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "仲問の溶岩峡谷に流れ落ちる天帝淵の三段滝",
-      "caption": "天帝淵（チョンジェヨン）— 済州の「天帝の池」、自然記念物第378号",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "山茶花の丘（カメリアヒル）",
+      "alt": "山茶花の丘（カメリアヒル） — gallery image 1",
+      "caption": "山茶花の丘（カメリアヒル） — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "仲文海岸を彩る大浦柱状節理の六角形玄武岩柱群",
-      "caption": "大浦柱状節理（チュサンジョルリ）— 1kmに広がるユネスコ認定の六角形玄武岩絶壁",
-      "location": "",
-      "atmosphere": ""
+      "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "location": "昼食（済州南部の地元レストラン）",
+      "alt": "昼食（済州南部の地元レストラン） — on-route photo",
+      "caption": "昼食（済州南部の地元レストラン）"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "ツアーで訪れる雪緑茶博物館と西光茶苑 — 韓国最大の緑茶生産地の風景",
-      "caption": "雪緑茶博物館と西光茶苑 — 韓国最大の緑茶生産地",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "天帝淵の滝（天帝の池）",
+      "alt": "天帝淵の滝（天帝の池） — gallery image 1",
+      "caption": "天帝淵の滝（天帝の池） — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "大浦柱状節理（チュサンジョルリ）",
+      "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 1",
+      "caption": "大浦柱状節理（チュサンジョルリ） — photo 1"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+      "location": "雪緑茶博物館＋緑茶畑",
+      "alt": "雪緑茶博物館＋緑茶畑 — gallery image 1",
+      "caption": "雪緑茶博物館＋緑茶畑 — photo 1"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1549144511-f099e773c147",
+      "location": "解散（5か所＋東門市場オプション）",
+      "alt": "解散（5か所＋東門市場オプション） — on-route photo",
+      "caption": "解散（5か所＋東門市場オプション）"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+      "location": "トレイル（漢拏山（ハルラサン）ユネスコ）",
+      "alt": "トレイル（漢拏山（ハルラサン）ユネスコ） — gallery image 2",
+      "caption": "トレイル（漢拏山（ハルラサン）ユネスコ） — photo 2"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+      "location": "山茶花の丘（カメリアヒル）",
+      "alt": "山茶花の丘（カメリアヒル） — gallery image 2",
+      "caption": "山茶花の丘（カメリアヒル） — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "location": "天帝淵の滝（天帝の池）",
+      "alt": "天帝淵の滝（天帝の池） — gallery image 2",
+      "caption": "天帝淵の滝（天帝の池） — photo 2"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+      "location": "天帝淵の滝（天帝の池）",
+      "alt": "天帝淵の滝（天帝の池） — gallery image 3",
+      "caption": "天帝淵の滝（天帝の池） — photo 3"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "大浦柱状節理（チュサンジョルリ）",
+      "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 2",
+      "caption": "大浦柱状節理（チュサンジョルリ） — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "大浦柱状節理（チュサンジョルリ）",
+      "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 3",
+      "caption": "大浦柱状節理（チュサンジョルリ） — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "大浦柱状節理（チュサンジョルリ）",
+      "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 4",
+      "caption": "大浦柱状節理（チュサンジョルリ） — photo 4"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+      "location": "雪緑茶博物館＋緑茶畑",
+      "alt": "雪緑茶博物館＋緑茶畑 — gallery image 2",
+      "caption": "雪緑茶博物館＋緑茶畑 — photo 2"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+      "location": "雪緑茶博物館＋緑茶畑",
+      "alt": "雪緑茶博物館＋緑茶畑 — gallery image 3",
+      "caption": "雪緑茶博物館＋緑茶畑 — photo 3"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+      "location": "雪緑茶博物館＋緑茶畑",
+      "alt": "雪緑茶博物館＋緑茶畑 — gallery image 4",
+      "caption": "雪緑茶博物館＋緑茶畑 — photo 4"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+      "location": "雪緑茶博物館＋緑茶畑",
+      "alt": "雪緑茶博物館＋緑茶畑 — gallery image 5",
+      "caption": "雪緑茶博物館＋緑茶畑 — photo 5"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+      "location": "雪緑茶博物館＋緑茶畑",
+      "alt": "雪緑茶博物館＋緑茶畑 — gallery image 6",
+      "caption": "雪緑茶博物館＋緑茶畑 — photo 6"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+      "location": "雪緑茶博物館＋緑茶畑",
+      "alt": "雪緑茶博物館＋緑茶畑 — gallery image 7",
+      "caption": "雪緑茶博物館＋緑茶畑 — photo 7"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+      "location": "雪緑茶博物館＋緑茶畑",
+      "alt": "雪緑茶博物館＋緑茶畑 — gallery image 8",
+      "caption": "雪緑茶博物館＋緑茶畑 — photo 8"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+      "location": "雪緑茶博物館＋緑茶畑",
+      "alt": "雪緑茶博物館＋緑茶畑 — gallery image 9",
+      "caption": "雪緑茶博物館＋緑茶畑 — photo 9"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+      "location": "雪緑茶博物館＋緑茶畑",
+      "alt": "雪緑茶博物館＋緑茶畑 — gallery image 10",
+      "caption": "雪緑茶博物館＋緑茶畑 — photo 10"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+      "location": "雪緑茶博物館＋緑茶畑",
+      "alt": "雪緑茶博物館＋緑茶畑 — gallery image 11",
+      "caption": "雪緑茶博物館＋緑茶畑 — photo 11"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+      "location": "雪緑茶博物館＋緑茶畑",
+      "alt": "雪緑茶博物館＋緑茶畑 — gallery image 12",
+      "caption": "雪緑茶博物館＋緑茶畑 — photo 12"
     }
   ],
   "itineraryStops": [
@@ -217,7 +380,7 @@
       "name": "トレイル（漢拏山（ハルラサン）ユネスコ）",
       "category": "ユネスコ自然遺産 — 漢拏山の火山丘陵トレイル",
       "description": "**御乗生岳(어승생악、1,169m)** は、韓国最高峰であり済州島の地質学的中心 **漢拏山(한라산、1,950m)** の西側に張り出す側火山(オルム/*oreum*)です。漢拏山自体は **比類のない指定の重ね合わせ** を持ち、**ユネスコ世界自然遺産(2007年7月2日登録)**、**ユネスコ生物圏保存地域(2002年)**、**国立公園(1970年3月24日指定)**、**天然記念物第182号(1966年)** をすべて備える、韓国唯一の「3つのユネスコ自然指定」同時保有地です。御乗生岳の登山口は **オリモク探訪案内所** にあり、**1.3kmで標高差わずか約200m** を登って広い山頂デッキへ。往復60分で **「漢拏山ユネスコの味」** を、9時間かかる白鹿潭(ペンノクダム)頂上登山なしに体験できます。晴天時のデッキからは **黄海、漢拏山の白鹿潭カルデラ(백록담)、南へ広がる側火山群** を一望できます。植生のハイライトは、この標高帯(1,000–1,300m)が **広葉樹林からチョウセンシラベ(구상나무、*Abies koreana*、IUCN準絶滅危惧、韓国高山固有種)帯への遷移ゾーン** であること。漢拏山には **2,000種以上の植物**、つまり **朝鮮半島全植物の約半数** が分布します。山頂デッキには歴史的な遺構も残っており、**1945年に日本軍が建造したトーチカ(토치카、コンクリート製の銃座兼通信拠点)** は、第二次世界大戦末期に造られた韓国国内有数の高所遺構です。入場・駐車は **無料**。御乗生岳は **予約不要**(白鹿潭山頂は1日1,000人の登山者上限あり)。",
-      "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
+      "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
       "highlights": [
         "**漢拏山=韓国唯一の自然3冠指定地**:ユネスコ世界遺産2007+生物圏2002+国立公園1970",
         "**御乗生岳 山頂1,169m** — 済州島に360以上ある側火山(オルム)の一つ",
@@ -263,7 +426,39 @@
         "closed": "悪天候時は入山制限あり",
         "admission": "無料",
         "walking": "短い行程ながら階段が多く、難易度はやや中程度"
-      }
+      },
+      "images": [
+        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "location": "トレイル（漢拏山（ハルラサン）ユネスコ）",
+          "caption": "トレイル（漢拏山（ハルラサン）ユネスコ） — photo 1",
+          "alt": "トレイル（漢拏山（ハルラサン）ユネスコ） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "location": "トレイル（漢拏山（ハルラサン）ユネスコ）",
+          "caption": "トレイル（漢拏山（ハルラサン）ユネスコ） — photo 2",
+          "alt": "トレイル（漢拏山（ハルラサン）ユネスコ） — gallery image 2"
+        }
+      ]
     },
     {
       "number": 3,
@@ -272,7 +467,7 @@
       "name": "山茶花の丘（カメリアヒル）",
       "category": "植物園 — 年中楽しめる済州のシンボル花園",
       "description": "**カメリアヒル(카멜리아힐、済州椿樹木園)**は安徳にある**172,000m²の植物園**で、面積・品種数の両面で**東洋最大の椿樹木園**です。**80か国から取り寄せた500種以上、6,000本の椿**を収蔵し、創設者ヤン・ジョンムン氏が**30年以上**にわたり育成を続けてきました。園の最大の特徴は**通年の開花カレンダー**で、どの季節に訪れても異なる色彩のパレットが楽しめるよう緻密に設計されています。**11月〜3月は椿のピーク**(赤、ピンク、白、クリームベージュなど — 園の象徴シーズン)、**3月〜5月は桜+チューリップ+晩咲きの椿**が層を成して鮮やかな色彩のマスを形成、**6月〜8月はアジサイ**(屋外スタンドと通年開花の温室の両方)、**9月〜10月は紅葉+晩季の花々**となります。散策路は**ヨーロッパガーデン、韓国在来森林セクション、桜の散歩道、アジサイ畑**といったテーマ別エリアを縫うように走り、ゆったり歩いて約60〜75分の2.5kmループでつながっています。建築面の見どころは、入口の**ガラス温室+ギャラリー+カフェ**複合施設。屋内の天候避難所(訪問の約15%が屋内)を兼ね、庭園の眺めとともにお茶やコーヒーを楽しむ滞留スペースとなっています。**ドラマロケ地としての功績**:バラエティ番組**「EXchange / トランジット・ラブ3」(환승연애)**で、ジュウォンとユジョンの印象的なデートシーンの舞台となり、Kリアリティ番組ファンの聖地となっています。**年中無休・365日開園**ですが、**屋外照明がない**ため日没で閉園します(冬期約17時、夏期約19時)。入場料:**大人₩12,000 / 学生・シニア₩10,000 / 子供(4–11歳)₩9,000 / 3歳未満は無料**。",
-      "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+      "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "highlights": [
         "**172,000m²** — 東洋最大の椿樹木園",
         "**80か国から500種以上、6,000本** — 30年以上かけて収集",
@@ -318,7 +513,39 @@
         "closed": "年中無休",
         "admission": "大人 10,000 KRW / 中高生 8,000 KRW / 子供 7,000 KRW(目安)",
         "walking": "難易度:易〜中 — 緩やかな丘の遊歩道。大半はベビーカー対応"
-      }
+      },
+      "images": [
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "location": "山茶花の丘（カメリアヒル）",
+          "caption": "山茶花の丘（カメリアヒル） — photo 1",
+          "alt": "山茶花の丘（カメリアヒル） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "location": "山茶花の丘（カメリアヒル）",
+          "caption": "山茶花の丘（カメリアヒル） — photo 2",
+          "alt": "山茶花の丘（カメリアヒル） — gallery image 2"
+        }
+      ]
     },
     {
       "number": 4,
@@ -351,7 +578,7 @@
       "name": "天帝淵の滝（天帝の池）",
       "category": " — 済州の三段滝",
       "description": "**天帝淵**は仲問の火山峡谷に流れる**三段の滝**で、**第378号（1993年指定）**に指定されています。第1段の滝壺（深さ21m）は普段は滝がなく穏やかですが、雨季には迫力ある流れが出現します。峡谷の植生には絶滅危惧種の岩蕨類が含まれています。朝鮮時代の道教の伝説では、七人の仙女（七仙女）が夜ごとこの池に降りると言われています。",
-      "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
+      "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "highlights": [
         "**第378号（1993年指定）** — 三段滝＋希少植物生息地",
         "名前は**「天帝淵」＝「天の帝の池」** — 朝鮮道教の伝説（七仙女）に由来",
@@ -393,7 +620,52 @@
         "closed": "Open year-round (occasional weather closures)",
         "admission": "Adult 2,500 KRW / Child 1,350 KRW",
         "walking": "Moderate — many stairs through the valley; not stroller-friendly; mobility-difficult"
-      }
+      },
+      "images": [
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "location": "天帝淵の滝（天帝の池）",
+          "caption": "天帝淵の滝（天帝の池） — photo 1",
+          "alt": "天帝淵の滝（天帝の池） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "location": "天帝淵の滝（天帝の池）",
+          "caption": "天帝淵の滝（天帝の池） — photo 2",
+          "alt": "天帝淵の滝（天帝の池） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "location": "天帝淵の滝（天帝の池）",
+          "caption": "天帝淵の滝（天帝の池） — photo 3",
+          "alt": "天帝淵の滝（天帝の池） — gallery image 3"
+        }
+      ]
     },
     {
       "number": 6,
@@ -402,7 +674,7 @@
       "name": "大浦柱状節理（チュサンジョルリ）",
       "category": " — 済州の玄武岩海岸絶壁",
       "description": "**大浦柱状節理（大浦柱状節理、「チサッケ」）**は仲問海岸に広がる**1kmの六角形柱状節理玄武岩絶壁**で、**第443号（2005年指定）**に指定されています。高さ30〜40mの玄武岩柱が5〜7角形（主に六角形）のポリゴンを形成して1kmにわたって連なっています。今から約14,000〜25,000年前に漢拏山（ハルラサン）の溶岩流が海水で急冷されて形成されました。",
-      "image": "https://images.unsplash.com/photo-1565967511849-76a60a516170",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "**第443号** — 済州最新の沿岸然記念物（2005年1月6日指定）",
         "柱の高さ**30〜40m**、**5〜7角形のポリゴン**（主に六角形）が**1km**の海岸に連なる",
@@ -444,7 +716,65 @@
         "closed": "Open year-round (weather-dependent)",
         "admission": "Adult 2,000 KRW / Child 1,000 KRW (low fee)",
         "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
-      }
+      },
+      "images": [
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "大浦柱状節理（チュサンジョルリ）",
+          "caption": "大浦柱状節理（チュサンジョルリ） — photo 1",
+          "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "大浦柱状節理（チュサンジョルリ）",
+          "caption": "大浦柱状節理（チュサンジョルリ） — photo 2",
+          "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "大浦柱状節理（チュサンジョルリ）",
+          "caption": "大浦柱状節理（チュサンジョルリ） — photo 3",
+          "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "大浦柱状節理（チュサンジョルリ）",
+          "caption": "大浦柱状節理（チュサンジョルリ） — photo 4",
+          "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 4"
+        }
+      ]
     },
     {
       "number": 7,
@@ -453,7 +783,7 @@
       "name": "雪緑茶博物館＋緑茶畑",
       "category": "文化施設 — 韓国最大の緑茶産地",
       "description": "**オソルロク・ティーミュージアム(오설록 티 뮤지엄、「オソルロク」は「雪に出会う+緑」を意味します)** は、韓国最大の美容企業 **アモーレパシフィック** の茶文化フラッグシップ施設です。創業者の **徐成煥(ソ・ソンファン)氏が1979年に自ら主導** し、当時「韓国では商業的な茶栽培は不可能」とされていた済州島・西広(ソグァン)高原の火山灰地を開墾しました。現在の **西広茶園(서광다원)** は **韓国最大の緑茶畑** で、アモーレパシフィックが済州島内に持つ3か所の茶園で **年間約700トン** を生産しています。茶園の中心に位置するミュージアム本館は **2001年に開館** し、極限まで抑えたグリーンルーフのパビリオン建築が評価され、**designboomの「世界の美術館トップ10」** にも選出されました。**入館無料**、**毎日09:00–18:00** 営業、**年間訪問者数は約200万人** に上ります。見学は自然と3つのパートに分かれます。**(1) 館内展示** — 茶の製造工程、唐代(618–907年)から続くアンティーク茶器コレクション、茶畑を一望できる屋上展望デッキ。**(2) ティーハウス・カフェ** — 看板メニューの **緑茶ロールケーキ(오설록 롤케이크)** と **緑茶アイスクリーム** を、その年に収穫された茶葉でお楽しみいただけます。**(3) 茶畑の散策路** — 茶樹の間を縫う砂利道は、西側のサンセット撮影スポットとして人気です。アモーレパシフィックの自然派コスメブランド **Innisfree Jeju House** までは徒歩5分。ブランド・エコシステム全体に関心のある方は、こちらも入場無料で、オプションのみかん石けんDIYワークショップ(₩15,000)を体験できます。建築は韓国の建築事務所 **Mass Studies(チョ・ミンスク)** が手掛け、茶畑のラインに沿うように水平方向へ低く伸びるフォルムは、農業景観に勝ろうとせず溶け込むデザイン。これがdesignboomトップ10入りと、現代韓国ミュージアム建築の代表事例として研究され続ける理由です。オプション追加:**オソルロク・ティークラス(₩30,000/名、60分、要事前予約)** — 韓国陶磁器を用いた淹れ方の実演付きティーフライトテイスティング。**毎日10:00–16:00** 開催、英語インストラクションは水・土曜のみ。",
-      "image": "https://images.unsplash.com/photo-1556881286-fc6915169721",
+      "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "highlights": [
         "**アモーレパシフィック** フラッグシップ — 韓国最大の美容企業、創業者 徐成煥氏が **1979年** に済州茶の道を切り開きました",
         "**西広茶園=韓国最大の緑茶畑**、年間生産量は約700トン",
@@ -499,7 +829,169 @@
         "closed": "年中無休(天候により休業の可能性あり)",
         "admission": "ミュージアムは入館無料、カフェのお茶・デザートは別途、Innisfreeのワークショップも別料金",
         "walking": "易しい — フラットなミュージアムとベビーカー対応の茶畑、整備された遊歩道"
-      }
+      },
+      "images": [
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "location": "雪緑茶博物館＋緑茶畑",
+          "caption": "雪緑茶博物館＋緑茶畑 — photo 1",
+          "alt": "雪緑茶博物館＋緑茶畑 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "location": "雪緑茶博物館＋緑茶畑",
+          "caption": "雪緑茶博物館＋緑茶畑 — photo 2",
+          "alt": "雪緑茶博物館＋緑茶畑 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "location": "雪緑茶博物館＋緑茶畑",
+          "caption": "雪緑茶博物館＋緑茶畑 — photo 3",
+          "alt": "雪緑茶博物館＋緑茶畑 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "location": "雪緑茶博物館＋緑茶畑",
+          "caption": "雪緑茶博物館＋緑茶畑 — photo 4",
+          "alt": "雪緑茶博物館＋緑茶畑 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "location": "雪緑茶博物館＋緑茶畑",
+          "caption": "雪緑茶博物館＋緑茶畑 — photo 5",
+          "alt": "雪緑茶博物館＋緑茶畑 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "location": "雪緑茶博物館＋緑茶畑",
+          "caption": "雪緑茶博物館＋緑茶畑 — photo 6",
+          "alt": "雪緑茶博物館＋緑茶畑 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "location": "雪緑茶博物館＋緑茶畑",
+          "caption": "雪緑茶博物館＋緑茶畑 — photo 7",
+          "alt": "雪緑茶博物館＋緑茶畑 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "location": "雪緑茶博物館＋緑茶畑",
+          "caption": "雪緑茶博物館＋緑茶畑 — photo 8",
+          "alt": "雪緑茶博物館＋緑茶畑 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "location": "雪緑茶博物館＋緑茶畑",
+          "caption": "雪緑茶博物館＋緑茶畑 — photo 9",
+          "alt": "雪緑茶博物館＋緑茶畑 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "location": "雪緑茶博物館＋緑茶畑",
+          "caption": "雪緑茶博物館＋緑茶畑 — photo 10",
+          "alt": "雪緑茶博物館＋緑茶畑 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "location": "雪緑茶博物館＋緑茶畑",
+          "caption": "雪緑茶博物館＋緑茶畑 — photo 11",
+          "alt": "雪緑茶博物館＋緑茶畑 — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "location": "雪緑茶博物館＋緑茶畑",
+          "caption": "雪緑茶博物館＋緑茶畑 — photo 12",
+          "alt": "雪緑茶博物館＋緑茶畑 — gallery image 12"
+        }
+      ]
     },
     {
       "number": 8,
@@ -1548,7 +2040,7 @@
             "name": "トレイル（漢拏山（ハルラサン）ユネスコ）",
             "category": "ユネスコ自然遺産 — 漢拏山の火山丘陵トレイル",
             "description": "****は**漢拏山**の西側斜面に連なる寄生火山丘陵（オルム）です。漢拏山は**ユネスコ世界自然遺産（2007年）・ユネスコ生物圏保護区（2002年）・（1970年）**という韓国唯一の「自然三重指定」を有する山です。の山頂への往復トレイルは**1.3kmの木道コース（所要約1時間）**で、山頂からは済州平野と済州市街地を一望できます。",
-            "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
+            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "**漢拏山（ハルラサン）= 韓国唯一の自然三重指定**：ユネスコ世界自然遺産・生物圏保護区・国立公園",
               "**山頂1,169m** — 漢拏山（ハルラサン）の360以上あるオルム（寄生火山）の一つ",
@@ -1575,7 +2067,39 @@
                 "Cultural Heritage Administration — Hallasan Natural Monument 1966",
                 "Korea National Park Service — Hallasan visitor management records"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+                "location": "トレイル（漢拏山（ハルラサン）ユネスコ）",
+                "caption": "トレイル（漢拏山（ハルラサン）ユネスコ） — photo 1",
+                "alt": "トレイル（漢拏山（ハルラサン）ユネスコ） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+                "location": "トレイル（漢拏山（ハルラサン）ユネスコ）",
+                "caption": "トレイル（漢拏山（ハルラサン）ユネスコ） — photo 2",
+                "alt": "トレイル（漢拏山（ハルラサン）ユネスコ） — gallery image 2"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1584,7 +2108,7 @@
             "name": "山茶花の丘（カメリアヒル）",
             "category": "植物園 — 年中楽しめる済州のシンボル花園",
             "description": "**山茶花の丘**は安徳に位置する**17万2,000m²の植物園**で、**東洋最大の山茶花植物園**です。80か国から集められた**500種以上・6,000本**の山茶花を30年以上かけて蓄積しました。山茶花のピーク開花は11月〜4月ですが、春の桜、夏のアジサイ（6月下旬）、秋のピンクのムーリーグラス（10〜11月）と年中見どころがあります。",
-            "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+            "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
             "highlights": [
               "**17万2,000m²** — 東洋最大の山茶花植物園",
               "**80か国から6,000本・500種以上**の山茶花を30年以上かけて集積",
@@ -1611,7 +2135,39 @@
                 "Korea Tourism Organization — Top Korean botanical gardens registry",
                 "Kakao TV / Wavve programming archive — 'EXchange / Transit Love 3' filming locations"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "location": "山茶花の丘（カメリアヒル）",
+                "caption": "山茶花の丘（カメリアヒル） — photo 1",
+                "alt": "山茶花の丘（カメリアヒル） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "location": "山茶花の丘（カメリアヒル）",
+                "caption": "山茶花の丘（カメリアヒル） — photo 2",
+                "alt": "山茶花の丘（カメリアヒル） — gallery image 2"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1641,7 +2197,7 @@
             "name": "天帝淵の滝（天帝の池）",
             "category": " — 済州の三段滝",
             "description": "**天帝淵**は仲問の火山峡谷に流れる**三段の滝**で、**第378号（1993年指定）**に指定されています。第1段の滝壺（深さ21m）は普段は滝がなく穏やかですが、雨季には迫力ある流れが出現します。峡谷の植生には絶滅危惧種の岩蕨類が含まれています。朝鮮時代の道教の伝説では、七人の仙女（七仙女）が夜ごとこの池に降りると言われています。",
-            "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
+            "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
             "highlights": [
               "**第378号（1993年指定）** — 三段滝＋希少植物生息地",
               "名前は**「天帝淵」＝「天の帝の池」** — 朝鮮道教の伝説（七仙女）に由来",
@@ -1668,7 +2224,52 @@
                 "Korea Plant Society — Mankyua chejuense IUCN Critically Endangered listing",
                 "Jeju Folklore Society — Daoist seven-nymph legend documentation"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "location": "天帝淵の滝（天帝の池）",
+                "caption": "天帝淵の滝（天帝の池） — photo 1",
+                "alt": "天帝淵の滝（天帝の池） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "location": "天帝淵の滝（天帝の池）",
+                "caption": "天帝淵の滝（天帝の池） — photo 2",
+                "alt": "天帝淵の滝（天帝の池） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "location": "天帝淵の滝（天帝の池）",
+                "caption": "天帝淵の滝（天帝の池） — photo 3",
+                "alt": "天帝淵の滝（天帝の池） — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1677,7 +2278,7 @@
             "name": "大浦柱状節理（チュサンジョルリ）",
             "category": " — 済州の玄武岩海岸絶壁",
             "description": "**大浦柱状節理（大浦柱状節理、「チサッケ」）**は仲問海岸に広がる**1kmの六角形柱状節理玄武岩絶壁**で、**第443号（2005年指定）**に指定されています。高さ30〜40mの玄武岩柱が5〜7角形（主に六角形）のポリゴンを形成して1kmにわたって連なっています。今から約14,000〜25,000年前に漢拏山（ハルラサン）の溶岩流が海水で急冷されて形成されました。",
-            "image": "https://images.unsplash.com/photo-1565967511849-76a60a516170",
+            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
             "highlights": [
               "**第443号** — 済州最新の沿岸然記念物（2005年1月6日指定）",
               "柱の高さ**30〜40m**、**5〜7角形のポリゴン**（主に六角形）が**1km**の海岸に連なる",
@@ -1704,7 +2305,65 @@
                 "VisitJeju — Daepo Jusangjeolli official listing",
                 "Korea Geological Survey — Jeju volcanic flow chronology"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "location": "大浦柱状節理（チュサンジョルリ）",
+                "caption": "大浦柱状節理（チュサンジョルリ） — photo 1",
+                "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "location": "大浦柱状節理（チュサンジョルリ）",
+                "caption": "大浦柱状節理（チュサンジョルリ） — photo 2",
+                "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "location": "大浦柱状節理（チュサンジョルリ）",
+                "caption": "大浦柱状節理（チュサンジョルリ） — photo 3",
+                "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "location": "大浦柱状節理（チュサンジョルリ）",
+                "caption": "大浦柱状節理（チュサンジョルリ） — photo 4",
+                "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 4"
+              }
+            ]
           },
           {
             "number": 7,
@@ -1713,7 +2372,7 @@
             "name": "雪緑茶博物館＋緑茶畑",
             "category": "文化施設 — 韓国最大の緑茶産地",
             "description": "**雪緑茶博物館**は**アモーレパシフィック**の茶文化フラッグシップです。韓国最大の美容・化粧品企業の創業者、徐成煥氏が1979年に済州での茶栽培を開拓し、西光茶苑は現在約700トン/年を生産する**韓国最大の緑茶畑**です。博物館は茶の歴史・栽培・文化を展示し、ティーハウスでは抹茶スイーツや緑茶ソフトクリームをお楽しみいただけます。入場無料。",
-            "image": "https://images.unsplash.com/photo-1556881286-fc6915169721",
+            "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
             "highlights": [
               "**アモーレパシフィック**フラッグシップ — 韓国最大の美容企業。創業者が1979年に済州の茶栽培を開拓",
               "**西光茶苑 = 韓国最大の緑茶畑**。年間約700トン生産",
@@ -1740,7 +2399,169 @@
                 "designboom — Top 10 art museums feature",
                 "VisitJeju — Osulloc Tea Museum official listing"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "location": "雪緑茶博物館＋緑茶畑",
+                "caption": "雪緑茶博物館＋緑茶畑 — photo 1",
+                "alt": "雪緑茶博物館＋緑茶畑 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "location": "雪緑茶博物館＋緑茶畑",
+                "caption": "雪緑茶博物館＋緑茶畑 — photo 2",
+                "alt": "雪緑茶博物館＋緑茶畑 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "location": "雪緑茶博物館＋緑茶畑",
+                "caption": "雪緑茶博物館＋緑茶畑 — photo 3",
+                "alt": "雪緑茶博物館＋緑茶畑 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "location": "雪緑茶博物館＋緑茶畑",
+                "caption": "雪緑茶博物館＋緑茶畑 — photo 4",
+                "alt": "雪緑茶博物館＋緑茶畑 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "location": "雪緑茶博物館＋緑茶畑",
+                "caption": "雪緑茶博物館＋緑茶畑 — photo 5",
+                "alt": "雪緑茶博物館＋緑茶畑 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "location": "雪緑茶博物館＋緑茶畑",
+                "caption": "雪緑茶博物館＋緑茶畑 — photo 6",
+                "alt": "雪緑茶博物館＋緑茶畑 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "location": "雪緑茶博物館＋緑茶畑",
+                "caption": "雪緑茶博物館＋緑茶畑 — photo 7",
+                "alt": "雪緑茶博物館＋緑茶畑 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "location": "雪緑茶博物館＋緑茶畑",
+                "caption": "雪緑茶博物館＋緑茶畑 — photo 8",
+                "alt": "雪緑茶博物館＋緑茶畑 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "location": "雪緑茶博物館＋緑茶畑",
+                "caption": "雪緑茶博物館＋緑茶畑 — photo 9",
+                "alt": "雪緑茶博物館＋緑茶畑 — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "location": "雪緑茶博物館＋緑茶畑",
+                "caption": "雪緑茶博物館＋緑茶畑 — photo 10",
+                "alt": "雪緑茶博物館＋緑茶畑 — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "location": "雪緑茶博物館＋緑茶畑",
+                "caption": "雪緑茶博物館＋緑茶畑 — photo 11",
+                "alt": "雪緑茶博物館＋緑茶畑 — gallery image 11"
+              },
+              {
+                "id": 12,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "location": "雪緑茶博物館＋緑茶畑",
+                "caption": "雪緑茶博物館＋緑茶畑 — photo 12",
+                "alt": "雪緑茶博物館＋緑茶畑 — gallery image 12"
+              }
+            ]
           },
           {
             "number": 8,

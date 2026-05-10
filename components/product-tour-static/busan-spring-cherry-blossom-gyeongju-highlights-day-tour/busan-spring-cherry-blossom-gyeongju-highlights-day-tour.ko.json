@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "부산 출발 경주 봄 벚꽃 하이라이트 투어 (3/28~4/10) | AtoC Korea",
     "metaDescription": "8.5시간 부산 출발 봄 벚꽃 셔틀: 보문호 8km 벚꽃 루프, 대릉원 석벽로, 불국사 벚꽃. 3월 말~4월 초 한정.",
-    "ogImage": "",
+    "ogImage": "https://www.atockorea.com/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "primaryKeywords": [
       "부산 경주 벚꽃 투어",
       "보문호 벚꽃 투어",
@@ -32,8 +32,8 @@
       "유네스코 명소",
       "부산 픽업"
     ],
-    "heroImage": "",
-    "thumbnail": "",
+    "heroImage": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+    "thumbnail": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "priceLabel": "가격은 예약 시 확인",
     "shortCardDescription": "보문호(경주 대표 벚꽃 명소), 첨성대+대릉원(유네스코 경주 역사지구), 불국사(유네스코)를 봄 시즌 한정(3/28~4/10)으로 소그룹 투어. 공인 가이드.",
     "tags": [
@@ -52,7 +52,7 @@
     "per": "인"
   },
   "hero": {
-    "imageUrl": "",
+    "imageUrl": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "imagePosition": "center 50%",
     "tagline": "보문호 벚꽃길, 대릉원 돌담길, 첨성대 주변 봄 풍경, 불국사 경내까지 — 경주의 봄 하이라이트를 하루에 둘러봅니다.",
     "pills": [
@@ -124,58 +124,44 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
-      "alt": "경주 보문호 분홍빛 벚꽃 산책로",
-      "caption": "보문호 — 약 8km 벚꽃길",
-      "location": "Bomun Lake",
-      "atmosphere": "로맨틱한 봄"
+      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+      "location": "첨성대 + 대릉원 (유네스코 경주 역사지구)",
+      "alt": "첨성대 + 대릉원 (유네스코 경주 역사지구) — gallery image 1",
+      "caption": "첨성대 + 대릉원 (유네스코 경주 역사지구) — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1583244694751-9ce8b1d2b39a?w=1200&q=80",
-      "alt": "대릉원 신라 고분군을 에워싼 벚꽃",
-      "caption": "대릉원 돌담길 벚꽃",
-      "location": "대릉원 Tomb Complex",
-      "atmosphere": "역사적인 봄"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "location": "불국사 (유네스코 세계문화유산)",
+      "alt": "불국사 (유네스코 세계문화유산) — gallery image 1",
+      "caption": "불국사 (유네스코 세계문화유산) — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601822336970-8af7c01f3a91?w=1200&q=80",
-      "alt": "7세기 첨성대 석조 천문대",
-      "caption": "첨성대 (647년, 동아시아 최고 천문대)",
-      "location": "첨성대",
-      "atmosphere": "고대"
+      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+      "location": "첨성대 + 대릉원 (유네스코 경주 역사지구)",
+      "alt": "첨성대 + 대릉원 (유네스코 경주 역사지구) — gallery image 2",
+      "caption": "첨성대 + 대릉원 (유네스코 경주 역사지구) — photo 2"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601649308334-2cc8e6f0e21f?w=1200&q=80",
-      "alt": "불국사 석교와 탑",
-      "caption": "불국사 (유네스코 세계유산 1995)",
-      "location": "불국사",
-      "atmosphere": "영적인"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+      "location": "불국사 (유네스코 세계문화유산)",
+      "alt": "불국사 (유네스코 세계문화유산) — gallery image 2",
+      "caption": "불국사 (유네스코 세계문화유산) — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1614853128977-b1f1d7e64fae?w=1200&q=80",
-      "alt": "투어 중 방문하는 보문정 — CNN 선정 한국의 아름다운 명소 중 하나의 풍경",
-      "caption": "보문정 — CNN 선정 한국의 아름다운 명소 중 하나",
-      "location": "Bomun Lake",
-      "atmosphere": "대표적인"
-    },
-    {
-      "id": "g6",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1611348586804-61bf6c080437?w=1200&q=80",
-      "alt": "투어 중 방문하는 방문지의 풍경",
-      "caption": "방문지",
-      "location": "투어 셔틀 차량",
-      "atmosphere": "그룹 여행"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "location": "불국사 (유네스코 세계문화유산)",
+      "alt": "불국사 (유네스코 세계문화유산) — gallery image 3",
+      "caption": "불국사 (유네스코 세계문화유산) — photo 3"
     }
   ],
   "itineraryStops": [
@@ -330,7 +316,40 @@
           "daereungwon_tomb_complex"
         ],
         "compound_stop_note": "Cheomseongdae and Daereungwon are co-located in the Gyeongju Historic Areas (UNESCO 2000), ~5-min walk apart, visited together as a single ~75-90 min itinerary block but tracked separately in the KB. Cheomseongdae (NT 31, 9.17m / 27 layers / 362 stones — oldest astronomical observatory in East Asia, Queen Seondeok era 632-647) is the primary anchor; Daereungwon (23 Silla royal tombs incl. Cheonmachong NT 155 with 11,526 artifacts) is the secondary."
-      }
+      },
+      "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+      "images": [
+        "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+        "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+          "location": "첨성대 + 대릉원 (유네스코 경주 역사지구)",
+          "caption": "첨성대 + 대릉원 (유네스코 경주 역사지구) — photo 1",
+          "alt": "첨성대 + 대릉원 (유네스코 경주 역사지구) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+          "location": "첨성대 + 대릉원 (유네스코 경주 역사지구)",
+          "caption": "첨성대 + 대릉원 (유네스코 경주 역사지구) — photo 2",
+          "alt": "첨성대 + 대릉원 (유네스코 경주 역사지구) — gallery image 2"
+        }
+      ]
     },
     {
       "number": 4,
@@ -418,7 +437,53 @@
           "VisitKorea",
           "Visit Gyeongju official"
         ]
-      }
+      },
+      "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "images": [
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "location": "불국사 (유네스코 세계문화유산)",
+          "caption": "불국사 (유네스코 세계문화유산) — photo 1",
+          "alt": "불국사 (유네스코 세계문화유산) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "location": "불국사 (유네스코 세계문화유산)",
+          "caption": "불국사 (유네스코 세계문화유산) — photo 2",
+          "alt": "불국사 (유네스코 세계문화유산) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "location": "불국사 (유네스코 세계문화유산)",
+          "caption": "불국사 (유네스코 세계문화유산) — photo 3",
+          "alt": "불국사 (유네스코 세계문화유산) — gallery image 3"
+        }
+      ]
     },
     {
       "number": 6,
@@ -1318,7 +1383,40 @@
                 "daereungwon_tomb_complex"
               ],
               "compound_stop_note": "Cheomseongdae and Daereungwon are co-located in the Gyeongju Historic Areas (UNESCO 2000), ~5-min walk apart, visited together as a single ~75-90 min itinerary block but tracked separately in the KB. Cheomseongdae (NT 31, 9.17m / 27 layers / 362 stones — oldest astronomical observatory in East Asia, Queen Seondeok era 632-647) is the primary anchor; Daereungwon (23 Silla royal tombs incl. Cheonmachong NT 155 with 11,526 artifacts) is the secondary."
-            }
+            },
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+            "images": [
+              "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+              "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+                "location": "첨성대 + 대릉원 (유네스코 경주 역사지구)",
+                "caption": "첨성대 + 대릉원 (유네스코 경주 역사지구) — photo 1",
+                "alt": "첨성대 + 대릉원 (유네스코 경주 역사지구) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+                "location": "첨성대 + 대릉원 (유네스코 경주 역사지구)",
+                "caption": "첨성대 + 대릉원 (유네스코 경주 역사지구) — photo 2",
+                "alt": "첨성대 + 대릉원 (유네스코 경주 역사지구) — gallery image 2"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1406,7 +1504,53 @@
                 "VisitKorea",
                 "Visit Gyeongju official"
               ]
-            }
+            },
+            "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+            "images": [
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "location": "불국사 (유네스코 세계문화유산)",
+                "caption": "불국사 (유네스코 세계문화유산) — photo 1",
+                "alt": "불국사 (유네스코 세계문화유산) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "location": "불국사 (유네스코 세계문화유산)",
+                "caption": "불국사 (유네스코 세계문화유산) — photo 2",
+                "alt": "불국사 (유네스코 세계문화유산) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "location": "불국사 (유네스코 세계문화유산)",
+                "caption": "불국사 (유네스코 세계문화유산) — photo 3",
+                "alt": "불국사 (유네스코 세계문화유산) — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,

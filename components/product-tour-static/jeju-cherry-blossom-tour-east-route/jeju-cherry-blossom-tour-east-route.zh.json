@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "济州东部春季樱花小团游 | AtoC Korea",
     "metaDescription": "春季专属东济州游：田农路樱花街、加时里10公里油菜+樱花大道、万丈窟（UNESCO）、城山日出峰（UNESCO）。",
-    "ogImage": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
+    "ogImage": "https://www.atockorea.com/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
     "primaryKeywords": [
       "济州樱花旅游",
       "济州春季游",
@@ -32,8 +32,8 @@
       "樱花季",
       "济州东部"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
-    "thumbnail": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=600&q=80",
+    "heroImage": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+    "thumbnail": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
     "priceLabel": "价格因季节而异 — 请于预订时确认",
     "shortCardDescription": "东济州限定春季路线——穿越樱花街道、10公里油菜花田大道、万丈窟熔岩洞穴（UNESCO）及城山日出峰（UNESCO）。3月下旬至4月中旬运营，每日根据开花情况安排行程。",
     "tags": [
@@ -51,7 +51,7 @@
     "priceNote": "春季限定赏花行程（3月下旬至4月初）。含英语导游 + 空调商务车 + 主要入场费。午餐费用自付。AtoC Korea直接销售；相较于旅游服务团队底价享有10%折扣。"
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
+    "imageUrl": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
     "imagePosition": "center 40%",
     "tagline": "从赏花街道到熔岩管，再到城山日出峰——东济州春季最美的三重奏",
     "pills": [
@@ -123,58 +123,124 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
-      "alt": "济州市全农路街道上方的粉色赏花花冠",
-      "caption": "济州市全农路赏花街",
-      "location": "全农路",
-      "atmosphere": "济州市区的赏花隧道"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "location": "弥天窟（日出乐园）",
+      "alt": "弥天窟（日出乐园） — gallery image 1",
+      "caption": "弥天窟（日出乐园） — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&q=80",
-      "alt": "加时里鹿山路沿线的赏花树与金黄油菜花田",
-      "caption": "鹿山路赏花与油菜花",
-      "location": "鹿山路 / 加时里",
-      "atmosphere": "10公里赏花与油菜花"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "城山日出峰（UNESCO拍照景点）",
+      "alt": "城山日出峰（UNESCO拍照景点） — gallery image 1",
+      "caption": "城山日出峰（UNESCO拍照景点） — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1200&q=80",
-      "alt": "日出乐园弥天窟洞穴的熔岩管内部与钟乳石",
-      "caption": "弥天窟熔岩管洞穴内部",
-      "location": "弥天窟",
-      "atmosphere": "熔岩管洞穴内部"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+      "location": "弥天窟（日出乐园）",
+      "alt": "弥天窟（日出乐园） — gallery image 2",
+      "caption": "弥天窟（日出乐园） — photo 2"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=1200&q=80",
-      "alt": "日出乐园花园中春日花卉之间的雕塑装置",
-      "caption": "日出乐园主题植物花园",
-      "location": "日出乐园",
-      "atmosphere": "主题花园"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+      "location": "弥天窟（日出乐园）",
+      "alt": "弥天窟（日出乐园） — gallery image 3",
+      "caption": "弥天窟（日出乐园） — photo 3"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1551649001-7a2482d98d05?w=1200&q=80",
-      "alt": "从峰下拍照点俯瞰城山日出峰凝灰岩锥轮廓",
-      "caption": "城山日出峰UNESCO火口",
-      "location": "城山日出峰",
-      "atmosphere": "日出火口边缘"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+      "location": "弥天窟（日出乐园）",
+      "alt": "弥天窟（日出乐园） — gallery image 4",
+      "caption": "弥天窟（日出乐园） — photo 4"
     },
     {
-      "id": "g6",
+      "id": 6,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
-      "alt": "东部济州当地餐厅供应的黑猪拌饭",
-      "caption": "济州东部赏花路线全览",
-      "location": "路线全览",
-      "atmosphere": "全天行程一览"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+      "location": "弥天窟（日出乐园）",
+      "alt": "弥天窟（日出乐园） — gallery image 5",
+      "caption": "弥天窟（日出乐园） — photo 5"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+      "location": "弥天窟（日出乐园）",
+      "alt": "弥天窟（日出乐园） — gallery image 6",
+      "caption": "弥天窟（日出乐园） — photo 6"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+      "location": "弥天窟（日出乐园）",
+      "alt": "弥天窟（日出乐园） — gallery image 7",
+      "caption": "弥天窟（日出乐园） — photo 7"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+      "location": "弥天窟（日出乐园）",
+      "alt": "弥天窟（日出乐园） — gallery image 8",
+      "caption": "弥天窟（日出乐园） — photo 8"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+      "location": "弥天窟（日出乐园）",
+      "alt": "弥天窟（日出乐园） — gallery image 9",
+      "caption": "弥天窟（日出乐园） — photo 9"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+      "location": "弥天窟（日出乐园）",
+      "alt": "弥天窟（日出乐园） — gallery image 10",
+      "caption": "弥天窟（日出乐园） — photo 10"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "城山日出峰（UNESCO拍照景点）",
+      "alt": "城山日出峰（UNESCO拍照景点） — gallery image 2",
+      "caption": "城山日出峰（UNESCO拍照景点） — photo 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "城山日出峰（UNESCO拍照景点）",
+      "alt": "城山日出峰（UNESCO拍照景点） — gallery image 3",
+      "caption": "城山日出峰（UNESCO拍照景点） — photo 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "城山日出峰（UNESCO拍照景点）",
+      "alt": "城山日出峰（UNESCO拍照景点） — gallery image 4",
+      "caption": "城山日出峰（UNESCO拍照景点） — photo 4"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "城山日出峰（UNESCO拍照景点）",
+      "alt": "城山日出峰（UNESCO拍照景点） — gallery image 5",
+      "caption": "城山日出峰（UNESCO拍照景点） — photo 5"
     }
   ],
   "itineraryStops": [
@@ -389,7 +455,144 @@
         "closed": "依日出乐园园区时间表——请向运营方确认",
         "admission": "包含在日出乐园门票内——票价请向运营方确认",
         "walking": "中等——下行台阶进入洞穴,常年约 12°C;洞穴段内地面为不平整的火山岩"
-      }
+      },
+      "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "images": [
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+          "location": "弥天窟（日出乐园）",
+          "caption": "弥天窟（日出乐园） — photo 1",
+          "alt": "弥天窟（日出乐园） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+          "location": "弥天窟（日出乐园）",
+          "caption": "弥天窟（日出乐园） — photo 2",
+          "alt": "弥天窟（日出乐园） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+          "location": "弥天窟（日出乐园）",
+          "caption": "弥天窟（日出乐园） — photo 3",
+          "alt": "弥天窟（日出乐园） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+          "location": "弥天窟（日出乐园）",
+          "caption": "弥天窟（日出乐园） — photo 4",
+          "alt": "弥天窟（日出乐园） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "location": "弥天窟（日出乐园）",
+          "caption": "弥天窟（日出乐园） — photo 5",
+          "alt": "弥天窟（日出乐园） — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "location": "弥天窟（日出乐园）",
+          "caption": "弥天窟（日出乐园） — photo 6",
+          "alt": "弥天窟（日出乐园） — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "location": "弥天窟（日出乐园）",
+          "caption": "弥天窟（日出乐园） — photo 7",
+          "alt": "弥天窟（日出乐园） — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+          "location": "弥天窟（日出乐园）",
+          "caption": "弥天窟（日出乐园） — photo 8",
+          "alt": "弥天窟（日出乐园） — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+          "location": "弥天窟（日出乐园）",
+          "caption": "弥天窟（日出乐园） — photo 9",
+          "alt": "弥天窟（日出乐园） — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+          "location": "弥天窟（日出乐园）",
+          "caption": "弥天窟（日出乐园） — photo 10",
+          "alt": "弥天窟（日出乐园） — gallery image 10"
+        }
+      ]
     },
     {
       "number": 5,
@@ -504,7 +707,79 @@
         "closed": "Open year-round (weather closures possible)",
         "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
         "walking": "Moderate — 20–30 min steady stair climb (≈ 600 stairs); benches every few minutes for rest"
-      }
+      },
+      "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "images": [
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "location": "城山日出峰（UNESCO拍照景点）",
+          "caption": "城山日出峰（UNESCO拍照景点） — photo 1",
+          "alt": "城山日出峰（UNESCO拍照景点） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "location": "城山日出峰（UNESCO拍照景点）",
+          "caption": "城山日出峰（UNESCO拍照景点） — photo 2",
+          "alt": "城山日出峰（UNESCO拍照景点） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "location": "城山日出峰（UNESCO拍照景点）",
+          "caption": "城山日出峰（UNESCO拍照景点） — photo 3",
+          "alt": "城山日出峰（UNESCO拍照景点） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "location": "城山日出峰（UNESCO拍照景点）",
+          "caption": "城山日出峰（UNESCO拍照景点） — photo 4",
+          "alt": "城山日出峰（UNESCO拍照景点） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "location": "城山日出峰（UNESCO拍照景点）",
+          "caption": "城山日出峰（UNESCO拍照景点） — photo 5",
+          "alt": "城山日出峰（UNESCO拍照景点） — gallery image 5"
+        }
+      ]
     }
   ],
   "routeFlowStops": [
@@ -1619,7 +1894,144 @@
                 "Korea Heritage Service (cha.go.kr — Jeju lava-tube cave systems + UNESCO Geomunoreum lava-tube system inheritance)",
                 "Wikipedia (Ilchul Land — Micheon Cave geology + ~14°C constant temperature + Jeju lava tube formation)"
               ]
-            }
+            },
+            "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+            "images": [
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+                "location": "弥天窟（日出乐园）",
+                "caption": "弥天窟（日出乐园） — photo 1",
+                "alt": "弥天窟（日出乐园） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+                "location": "弥天窟（日出乐园）",
+                "caption": "弥天窟（日出乐园） — photo 2",
+                "alt": "弥天窟（日出乐园） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+                "location": "弥天窟（日出乐园）",
+                "caption": "弥天窟（日出乐园） — photo 3",
+                "alt": "弥天窟（日出乐园） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+                "location": "弥天窟（日出乐园）",
+                "caption": "弥天窟（日出乐园） — photo 4",
+                "alt": "弥天窟（日出乐园） — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+                "location": "弥天窟（日出乐园）",
+                "caption": "弥天窟（日出乐园） — photo 5",
+                "alt": "弥天窟（日出乐园） — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+                "location": "弥天窟（日出乐园）",
+                "caption": "弥天窟（日出乐园） — photo 6",
+                "alt": "弥天窟（日出乐园） — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+                "location": "弥天窟（日出乐园）",
+                "caption": "弥天窟（日出乐园） — photo 7",
+                "alt": "弥天窟（日出乐园） — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+                "location": "弥天窟（日出乐园）",
+                "caption": "弥天窟（日出乐园） — photo 8",
+                "alt": "弥天窟（日出乐园） — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+                "location": "弥天窟（日出乐园）",
+                "caption": "弥天窟（日出乐园） — photo 9",
+                "alt": "弥天窟（日出乐园） — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+                "location": "弥天窟（日出乐园）",
+                "caption": "弥天窟（日出乐园） — photo 10",
+                "alt": "弥天窟（日出乐园） — gallery image 10"
+              }
+            ]
           },
           {
             "number": 5,
@@ -1705,7 +2117,79 @@
                 "UNESCO Global Geoparks Network (Jeju Island Global Geopark inscription 2010-10)",
                 "Wikipedia (Seongsan Ilchulbong — Surtseyan-type hydrovolcanic eruption + 18 Japanese WWII caves + haenyeo demonstrations)"
               ]
-            }
+            },
+            "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+            "images": [
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "location": "城山日出峰（UNESCO拍照景点）",
+                "caption": "城山日出峰（UNESCO拍照景点） — photo 1",
+                "alt": "城山日出峰（UNESCO拍照景点） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "location": "城山日出峰（UNESCO拍照景点）",
+                "caption": "城山日出峰（UNESCO拍照景点） — photo 2",
+                "alt": "城山日出峰（UNESCO拍照景点） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "location": "城山日出峰（UNESCO拍照景点）",
+                "caption": "城山日出峰（UNESCO拍照景点） — photo 3",
+                "alt": "城山日出峰（UNESCO拍照景点） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "location": "城山日出峰（UNESCO拍照景点）",
+                "caption": "城山日出峰（UNESCO拍照景点） — photo 4",
+                "alt": "城山日出峰（UNESCO拍照景点） — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "location": "城山日出峰（UNESCO拍照景点）",
+                "caption": "城山日出峰（UNESCO拍照景点） — photo 5",
+                "alt": "城山日出峰（UNESCO拍照景点） — gallery image 5"
+              }
+            ]
           }
         ]
       }

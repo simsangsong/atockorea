@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Seoul DMZ Private Tour: 3rd Tunnel + Bridge | AtoC Korea",
     "metaDescription": "Private 8–9-hour DMZ day tour from Seoul: Imjingak Peace Park, 3rd Infiltration Tunnel, Dora Observatory, and the 220m Gamaksan Red Suspension Bridge.",
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/03/2493203_image2_1.JPG",
+    "ogImage": "https://www.atockorea.com/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
     "primaryKeywords": [
       "Seoul DMZ private tour",
       "DMZ 3rd Tunnel tour",
@@ -31,9 +31,9 @@
       "DMZ + Suspension Bridge",
       "Hotel Pickup Included"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/03/2493203_image2_1.JPG",
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/03/2493203_image2_1.JPG",
-    "priceLabel": "Per-vehicle pricing — confirm at booking",
+    "heroImage": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+    "thumbnail": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+    "priceLabel": "",
     "shortCardDescription": "A private day-trip pairing Korea's heaviest historical site with one of its most photogenic mountain bridges. Morning at the DMZ (Imjingak Peace Park, 3rd Infiltration Tunnel, Dora Observatory), then an afternoon walk across the 220-meter Gamaksan Red Suspension Bridge. Passport required for the DMZ portion.",
     "tags": [
       "private_tour",
@@ -49,7 +49,7 @@
     "per": "vehicle"
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2493203_image2_1.JPG",
+    "imageUrl": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
     "imagePosition": "center 40%",
     "tagline": "From the world's most fortified border to a 220-meter mountain suspension bridge—one private day, two completely different sides of Korea.",
     "pills": [
@@ -127,49 +127,44 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/03/2493203_image2_1.JPG",
-      "alt": "The Mangbaedan Altar and Bridge of Freedom at Imjingak, with ribbons and memorial plaques",
-      "caption": "Imjingak Peace Park (1972 memorial site)",
+      "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
       "location": "Imjingak Peace Park",
-      "atmosphere": "Mangbaedan Altar, Freedom Bridge, and the bullet-ridden steam locomotive"
+      "alt": "Imjingak Peace Park — gallery image 1",
+      "caption": "Imjingak Peace Park — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/98/1977698_image2_1.JPG",
-      "alt": "Concrete entrance to an underground tunnel with safety helmets stacked on shelves",
-      "caption": "3rd Infiltration Tunnel entrance (discovered 1978)",
-      "location": "3rd Infiltration Tunnel",
-      "atmosphere": "Underground passage built for a surprise invasion, discovered in 1978"
+      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "location": "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
+      "alt": "3rd Infiltration Tunnel (Underground Invasion Tunnel) — gallery image 1",
+      "caption": "3rd Infiltration Tunnel (Underground Invasion Tunnel) — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/03/2493203_image2_1.JPG",
-      "alt": "Open observation deck with high-powered binoculars overlooking the DMZ landscape",
-      "caption": "Dora Observatory looking across the border to North Korea",
-      "location": "Dora Observatory",
-      "atmosphere": "Direct view across the border into North Korea"
+      "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+      "location": "Imjingak Peace Park",
+      "alt": "Imjingak Peace Park — gallery image 2",
+      "caption": "Imjingak Peace Park — photo 2"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-      "alt": "Long red suspension bridge stretching across a forested mountain valley",
-      "caption": "Gamaksan Red Suspension Bridge — 220 meters, Korea's longest red suspension bridge",
-      "location": "Gamaksan Red Suspension Bridge",
-      "atmosphere": "Korea's longest red suspension bridge stretches 220 meters across a forested valley"
+      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+      "location": "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
+      "alt": "3rd Infiltration Tunnel (Underground Invasion Tunnel) — gallery image 2",
+      "caption": "3rd Infiltration Tunnel (Underground Invasion Tunnel) — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
-      "alt": "Open Paju countryside with rural roads and farmland between the DMZ and Gamaksan",
-      "caption": "Paju countryside — the drive between the DMZ and Gamaksan",
-      "location": "Paju Countryside",
-      "atmosphere": "The drive between the DMZ and Gamaksan"
+      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+      "location": "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
+      "alt": "3rd Infiltration Tunnel (Underground Invasion Tunnel) — gallery image 3",
+      "caption": "3rd Infiltration Tunnel (Underground Invasion Tunnel) — photo 3"
     }
   ],
   "itineraryStops": [
@@ -228,7 +223,39 @@
           "Wikipedia (Imjingak — open verifiable corpus on Freedom Bridge POW exchange + 2ID Memorial)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/03/2493203_image2_1.JPG"
+      "image": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+      "images": [
+        "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+        "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+          "location": "Imjingak Peace Park",
+          "caption": "Imjingak Peace Park — photo 1",
+          "alt": "Imjingak Peace Park — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+          "location": "Imjingak Peace Park",
+          "caption": "Imjingak Peace Park — photo 2",
+          "alt": "Imjingak Peace Park — gallery image 2"
+        }
+      ]
     },
     {
       "number": 2,
@@ -285,7 +312,52 @@
           "Korea Herald / Yonhap News archival coverage (Korean defector tip-off + 30,000 troops/hour estimate)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/03/2493203_image2_1.JPG"
+      "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "images": [
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "location": "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
+          "caption": "3rd Infiltration Tunnel (Underground Invasion Tunnel) — photo 1",
+          "alt": "3rd Infiltration Tunnel (Underground Invasion Tunnel) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "location": "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
+          "caption": "3rd Infiltration Tunnel (Underground Invasion Tunnel) — photo 2",
+          "alt": "3rd Infiltration Tunnel (Underground Invasion Tunnel) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "location": "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
+          "caption": "3rd Infiltration Tunnel (Underground Invasion Tunnel) — photo 3",
+          "alt": "3rd Infiltration Tunnel (Underground Invasion Tunnel) — gallery image 3"
+        }
+      ]
     },
     {
       "number": 3,
@@ -342,7 +414,52 @@
           "Wikipedia (Dora Observatory — corpus on 304 ft² capacity + 500-person observatory replacement of Songaksan)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/98/1977698_image2_1.JPG"
+      "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "images": [
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "location": "Dora Observatory",
+          "caption": "Dora Observatory — photo 1",
+          "alt": "Dora Observatory — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "location": "Dora Observatory",
+          "caption": "Dora Observatory — photo 2",
+          "alt": "Dora Observatory — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "location": "Dora Observatory",
+          "caption": "Dora Observatory — photo 3",
+          "alt": "Dora Observatory — gallery image 3"
+        }
+      ]
     },
     {
       "number": 4,
@@ -400,7 +517,52 @@
           "Wikipedia (Battle of the Imjin River — 1st Battalion Gloucester Regiment + 170th Mortar Battery courageous-stand record)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/98/1977698_image2_1.JPG"
+      "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "images": [
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "location": "Gamaksan Red Suspension Bridge",
+          "caption": "Gamaksan Red Suspension Bridge — photo 1",
+          "alt": "Gamaksan Red Suspension Bridge — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "location": "Gamaksan Red Suspension Bridge",
+          "caption": "Gamaksan Red Suspension Bridge — photo 2",
+          "alt": "Gamaksan Red Suspension Bridge — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "location": "Gamaksan Red Suspension Bridge",
+          "caption": "Gamaksan Red Suspension Bridge — photo 3",
+          "alt": "Gamaksan Red Suspension Bridge — gallery image 3"
+        }
+      ]
     }
   ],
   "routeFlowStops": [
@@ -1237,7 +1399,7 @@
             "name": "Imjingak Peace Park",
             "category": "Korean War Memorial Park",
             "description": "About 70 minutes from Seoul, Imjingak is a peace park built in 1972 as a symbol of hoped-for reunification. It is open to civilians without special permission and gathers many of the most powerful symbols of the divided peninsula in one place: the Mangbaedan Altar where displaced families gather on holidays, the Freedom Bridge once used to repatriate prisoners of war, and a bullet-ridden steam locomotive left from the Korean War.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/03/2493203_image2_1.JPG",
+            "image": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
             "highlights": [
               "Mangbaedan Altar where families pray toward the North on holidays",
               "Freedom Bridge with peace ribbons tied along the fence",
@@ -1270,11 +1432,43 @@
               "verified": true,
               "sources": [
                 "Paju City",
-                "GetYourGuide",
+                "",
                 "Soul of Seoul"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+                "location": "Imjingak Peace Park",
+                "caption": "Imjingak Peace Park — photo 1",
+                "alt": "Imjingak Peace Park — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+                "location": "Imjingak Peace Park",
+                "caption": "Imjingak Peace Park — photo 2",
+                "alt": "Imjingak Peace Park — gallery image 2"
+              }
+            ]
           },
           {
             "number": 2,
@@ -1283,7 +1477,7 @@
             "name": "3rd Infiltration Tunnel",
             "category": "Underground Invasion Tunnel (1978)",
             "description": "Discovered in 1978, the 3rd Infiltration Tunnel is the largest of four known tunnels built by North Korea toward Seoul. It runs 1,635 meters long, 2 meters high, and 2 meters wide, capable of moving 30,000 soldiers per hour, and reaches 52 kilometers from the South Korean capital. After a short orientation video, visitors descend a steep monorail or walking ramp into the tunnel itself.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/03/2493203_image2_1.JPG",
+            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
             "highlights": [
               "Direct underground experience of a Cold War invasion route",
               "Short documentary on the tunnel's discovery",
@@ -1321,7 +1515,52 @@
                 "Creatrip"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "location": "3rd Infiltration Tunnel",
+                "caption": "3rd Infiltration Tunnel — photo 1",
+                "alt": "3rd Infiltration Tunnel — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "location": "3rd Infiltration Tunnel",
+                "caption": "3rd Infiltration Tunnel — photo 2",
+                "alt": "3rd Infiltration Tunnel — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "location": "3rd Infiltration Tunnel",
+                "caption": "3rd Infiltration Tunnel — photo 3",
+                "alt": "3rd Infiltration Tunnel — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1330,7 +1569,7 @@
             "name": "Dora Observatory",
             "category": "DMZ Border Viewpoint",
             "description": "Korea's northernmost civilian-accessible observatory, rebuilt and reopened in late 2018 with high-powered binoculars on the third floor. From the open roof, visitors can see directly into North Korea: a propaganda village, the city of Kaesong, the giant flag at Kijongdong, and the Kaesong Industrial Complex. Visibility depends on weather.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/98/1977698_image2_1.JPG",
+            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
             "highlights": [
               "Direct sightline into North Korean territory",
               "High-powered binoculars on the open viewing deck",
@@ -1366,7 +1605,52 @@
                 "KoreaEtour"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "location": "Dora Observatory",
+                "caption": "Dora Observatory — photo 1",
+                "alt": "Dora Observatory — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "location": "Dora Observatory",
+                "caption": "Dora Observatory — photo 2",
+                "alt": "Dora Observatory — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "location": "Dora Observatory",
+                "caption": "Dora Observatory — photo 3",
+                "alt": "Dora Observatory — gallery image 3"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1375,7 +1659,7 @@
             "name": "Gamaksan Red Suspension Bridge",
             "category": "Mountain Suspension Bridge",
             "description": "After lunch, the route shifts from heavy history to mountain scenery. The Gamaksan Chulleong Bridge stretches 220 meters across a forested valley, making it Korea's longest red suspension bridge. Reaching the bridge requires a short uphill walk of about 10 to 40 minutes depending on the trailhead used; the bridge itself is wide enough for hundreds of visitors at once.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/98/1977698_image2_1.JPG",
+            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
             "highlights": [
               "Korea's longest red suspension bridge at 220 meters",
               "Strong visual contrast to the morning's DMZ stops",
@@ -1410,7 +1694,52 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated visitor info"
-            }
+            },
+            "images": [
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "location": "Gamaksan Red Suspension Bridge",
+                "caption": "Gamaksan Red Suspension Bridge — photo 1",
+                "alt": "Gamaksan Red Suspension Bridge — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "location": "Gamaksan Red Suspension Bridge",
+                "caption": "Gamaksan Red Suspension Bridge — photo 2",
+                "alt": "Gamaksan Red Suspension Bridge — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "location": "Gamaksan Red Suspension Bridge",
+                "caption": "Gamaksan Red Suspension Bridge — photo 3",
+                "alt": "Gamaksan Red Suspension Bridge — gallery image 3"
+              }
+            ]
           }
         ]
       }

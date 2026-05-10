@@ -14,7 +14,7 @@
       "城山日出峰旅遊",
       "城邑民俗村遊"
     ],
-    "ogImage": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80",
+    "ogImage": "https://www.atockorea.com/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
     "title": "東濟州東部特色自然路線 · 9小時小團體 · UNESCO城山日出峰 | AtoC Korea",
     "description": "濟州東部特色路線：城山日出峰UNESCO世界遺產→萬丈窟熔岩管→城邑民俗村→日出樂園。全程含門票，小團體英語導遊，全年開團，9小時。"
   },
@@ -31,8 +31,8 @@
       "初訪友善",
       "濟州東部招牌"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80",
-    "thumbnail": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80",
+    "heroImage": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+    "thumbnail": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
     "priceLabel": "每人 US$58起/每人",
     "shortCardDescription": "結構清晰的東濟州一日路線，以石頭文化與火山為起點，途經東部沿海核心景點：濟州石文化公園、城山日出峰（UNESCO）、涉地可支及私人馬場體驗。透過合理安排遊覽順序，盡量避開旺季人流。",
     "tags": [
@@ -55,7 +55,7 @@
     "discountPercent": 10
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80",
+    "imageUrl": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
     "imagePosition": "center 35%",
     "tagline": "從石頭文化與開闊海岸，到火山口、熔岩管庭園與民俗村——濟州東部最完整的自然人文一日路線",
     "pills": [
@@ -135,56 +135,274 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1200&q=80",
-      "location": "路線概覽",
-      "atmosphere": "路線逐步展開、邏輯清晰",
-      "alt": "東濟州海岸及火山口一日遊概覽",
-      "caption": "東濟州海岸及火山口一日遊概覽"
+      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+      "location": "濟州石文化公園",
+      "alt": "濟州石文化公園 — gallery image 1",
+      "caption": "濟州石文化公園 — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-      "location": "石頭文化開場",
-      "atmosphere": "平靜的地質文化開場",
-      "alt": "Jeju Stone Culture Park stone path with lava rock walls, green meadow, and oreum mountain backdrop",
-      "caption": "Jeju Stone Culture Park — lava-rock path, open meadow, and oreum silhouette"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+      "location": "涉地可支（東海岬）",
+      "alt": "涉地可支（東海岬） — gallery image 1",
+      "caption": "涉地可支（東海岬） — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-      "location": "日出樂園熔岩管花園",
-      "atmosphere": "火山口段後清涼幽靜的對比空間",
-      "alt": "日出樂園熔岩管與花園氛圍",
-      "caption": "日出樂園熔岩管與花園氛圍"
+      "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "location": "午餐——東海岸本地菜",
+      "alt": "午餐——東海岸本地菜 — on-route photo",
+      "caption": "午餐——東海岸本地菜"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=800&q=80",
-      "location": "民俗村收尾",
-      "atmosphere": "帶有歷史生活痕跡的柔和收尾",
-      "alt": "城邑民俗村傳統村落氛圍",
-      "caption": "城邑民俗村傳統村落氛圍"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 1",
+      "caption": "城山日出峰 — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
-      "location": "火山口與海岸",
-      "atmosphere": "全日最強烈的火山景觀亮點",
-      "alt": "城山日出峰火山口與海岸線",
-      "caption": "城山日出峰火山口與海岸線"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "location": "日出樂園（米川窟熔岩洞穴）",
+      "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 1",
+      "caption": "日出樂園（米川窟熔岩洞穴） — photo 1"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80",
-      "location": "開放海岸線",
-      "atmosphere": "帶來海風與開闊視野，改變行程氣氛",
-      "alt": "涉地可支步道與海景",
-      "caption": "涉地可支步道與海景"
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 1",
+      "caption": "城邑民俗村 — photo 1"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
+      "location": "濟州石文化公園",
+      "alt": "濟州石文化公園 — gallery image 2",
+      "caption": "濟州石文化公園 — photo 2"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
+      "location": "濟州石文化公園",
+      "alt": "濟州石文化公園 — gallery image 3",
+      "caption": "濟州石文化公園 — photo 3"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
+      "location": "濟州石文化公園",
+      "alt": "濟州石文化公園 — gallery image 4",
+      "caption": "濟州石文化公園 — photo 4"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp",
+      "location": "濟州石文化公園",
+      "alt": "濟州石文化公園 — gallery image 5",
+      "caption": "濟州石文化公園 — photo 5"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+      "location": "涉地可支（東海岬）",
+      "alt": "涉地可支（東海岬） — gallery image 2",
+      "caption": "涉地可支（東海岬） — photo 2"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+      "location": "涉地可支（東海岬）",
+      "alt": "涉地可支（東海岬） — gallery image 3",
+      "caption": "涉地可支（東海岬） — photo 3"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+      "location": "涉地可支（東海岬）",
+      "alt": "涉地可支（東海岬） — gallery image 4",
+      "caption": "涉地可支（東海岬） — photo 4"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+      "location": "涉地可支（東海岬）",
+      "alt": "涉地可支（東海岬） — gallery image 5",
+      "caption": "涉地可支（東海岬） — photo 5"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+      "location": "涉地可支（東海岬）",
+      "alt": "涉地可支（東海岬） — gallery image 6",
+      "caption": "涉地可支（東海岬） — photo 6"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 2",
+      "caption": "城山日出峰 — photo 2"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 3",
+      "caption": "城山日出峰 — photo 3"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 4",
+      "caption": "城山日出峰 — photo 4"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 5",
+      "caption": "城山日出峰 — photo 5"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+      "location": "日出樂園（米川窟熔岩洞穴）",
+      "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 2",
+      "caption": "日出樂園（米川窟熔岩洞穴） — photo 2"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+      "location": "日出樂園（米川窟熔岩洞穴）",
+      "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 3",
+      "caption": "日出樂園（米川窟熔岩洞穴） — photo 3"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+      "location": "日出樂園（米川窟熔岩洞穴）",
+      "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 4",
+      "caption": "日出樂園（米川窟熔岩洞穴） — photo 4"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+      "location": "日出樂園（米川窟熔岩洞穴）",
+      "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 5",
+      "caption": "日出樂園（米川窟熔岩洞穴） — photo 5"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+      "location": "日出樂園（米川窟熔岩洞穴）",
+      "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 6",
+      "caption": "日出樂園（米川窟熔岩洞穴） — photo 6"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+      "location": "日出樂園（米川窟熔岩洞穴）",
+      "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 7",
+      "caption": "日出樂園（米川窟熔岩洞穴） — photo 7"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+      "location": "日出樂園（米川窟熔岩洞穴）",
+      "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 8",
+      "caption": "日出樂園（米川窟熔岩洞穴） — photo 8"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+      "location": "日出樂園（米川窟熔岩洞穴）",
+      "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 9",
+      "caption": "日出樂園（米川窟熔岩洞穴） — photo 9"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+      "location": "日出樂園（米川窟熔岩洞穴）",
+      "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 10",
+      "caption": "日出樂園（米川窟熔岩洞穴） — photo 10"
+    },
+    {
+      "id": 29,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 2",
+      "caption": "城邑民俗村 — photo 2"
+    },
+    {
+      "id": 30,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 3",
+      "caption": "城邑民俗村 — photo 3"
+    },
+    {
+      "id": 31,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 4",
+      "caption": "城邑民俗村 — photo 4"
+    },
+    {
+      "id": 32,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 5",
+      "caption": "城邑民俗村 — photo 5"
+    },
+    {
+      "id": 33,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 6",
+      "caption": "城邑民俗村 — photo 6"
+    },
+    {
+      "id": 34,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 7",
+      "caption": "城邑民俗村 — photo 7"
     }
   ],
   "itineraryStops": [
@@ -195,7 +413,7 @@
       "name": "濟州石文化公園",
       "category": "神話+火山石文化——30萬坪露天博物館",
       "description": "**濟州石頭文化公園(제주 돌문화공원,Jeju Dolmunhwa Gongwon)**為位於朝天的**佔地 30 萬坪(約 99 萬平方公尺)露天博物館**,主題環繞濟州的開族創世神話:**雪門臺奶奶(설문대 할망,巨人女神)**——濟州口傳神話相傳,**她從圍裙中倒出岩石創造了島嶼**——漢拏山在她落下最大塊石頭處隆起,而島上**360 多座寄生火山(오름)是她行走時掉落的較小石頭**。公園的石頭收藏歷時**30 多年**,自濟州各地策展彙整,以保存島上的火山岩石遺產。三條步道規劃了不同體驗深度:**第 1 條(約 1 小時)**涵蓋主館博物館+天空池+母親之屋;**全部三條(約 2 小時 40 分)**完整走完,含五百將軍展示館、石博物館、濟州傳統茅草韓屋村,以及雪門臺奶奶展示館。園區最具當代建築力的代表是**「母親之屋(어머니의 방)」**——一座圓筒形混凝土室,單一頂部天窗將自然光投射至中央石雕之上,將抽象的女神神話化為冥想式的建築體驗。門票:**成人 ₩5,000/青少年 ₩3,500/13 歲以下及 65 歲以上免費**;**每月最後一週三為免費文化日**。開放時間:**09:00–18:00(末班入場 17:00)**,**每月第一個週一公休**。室內比例約 30%(博物館+室內展館);其餘為戶外步行——務必穿好走的鞋。",
-      "image": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+      "image": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
       "highlights": [
         "**30 萬坪露天博物館**——濟州最大火山岩石遺產園區",
         "**雪門臺奶奶神話**——濟州創世傳說,漢拏山+360 寄生火山起源",
@@ -246,70 +464,70 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-          "location": "Stone Park Grounds",
-          "caption": "Lava-rock-lined stone path winding through the open meadow grounds",
-          "alt": "Woman walking on stone path with lava rock walls and green meadow at Jeju Stone Culture Park"
+          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+          "location": "濟州石文化公園",
+          "caption": "濟州石文化公園 — photo 1",
+          "alt": "濟州石文化公園 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/stone-culture/stone-park-water-oreum.webp",
-          "location": "Water Garden",
-          "caption": "Wading pool garden with oreum (volcanic cone) backdrop",
-          "alt": "Woman walking in the shallow water garden with oreum mountain at Jeju Stone Culture Park"
+          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
+          "location": "濟州石文化公園",
+          "caption": "濟州石文化公園 — photo 2",
+          "alt": "濟州石文化公園 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
-          "location": "Dolhareubang Grounds",
-          "caption": "Hundreds of stone figures arranged across the open park",
-          "alt": "Rows of dolhareubang and stone figures at Jeju Stone Culture Park"
+          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
+          "location": "濟州石文化公園",
+          "caption": "濟州石文化公園 — photo 3",
+          "alt": "濟州石文化公園 — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
-          "location": "Dolhareubang",
-          "caption": "Traditional Jeju dolhareubang stone guardians",
-          "alt": "Dolhareubang stone guardian figures with forest and oreum behind them"
+          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
+          "location": "濟州石文化公園",
+          "caption": "濟州石文化公園 — photo 4",
+          "alt": "濟州石文化公園 — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
-          "src": "/images/tours/stone-culture/stone-park-standing-stones.webp",
-          "location": "Standing Stone Corridor",
-          "caption": "Walking between monolithic standing stones lining the corridor path",
-          "alt": "Woman walking between large standing stone monoliths at Jeju Stone Culture Park"
+          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp",
+          "location": "濟州石文化公園",
+          "caption": "濟州石文化公園 — photo 5",
+          "alt": "濟州石文化公園 — gallery image 5"
         }
       ],
       "images": [
-        "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-        "/images/tours/stone-culture/stone-park-water-oreum.webp",
-        "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
-        "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
-        "/images/tours/stone-culture/stone-park-standing-stones.webp"
+        "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+        "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
+        "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
+        "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
+        "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+          "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/stone-culture/stone-park-water-oreum.webp",
+          "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
+          "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
+          "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/stone-culture/stone-park-standing-stones.webp",
+          "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp",
           "source": "atoc-korea"
         }
       ]
@@ -321,7 +539,7 @@
       "name": "涉地可支（東海岬）",
       "category": "火山海岬——安藤忠雄建築+防頭浦燈塔+韓劇拍攝地",
       "description": "**涉地可支**是濟州東海岸一處狹長的火山岬角。地名通常解釋為：「涉地」指狹長土地或這一帶的舊地名，「可支」是濟州方言，意為伸向海面的岬角。沿著海岸步道，可以看到玄武岩海崖、開闊海景和遠處的城山日出峰。岬角一帶還有燈塔、朝鮮時代烽火臺遺跡，也因韓劇《All In》等拍攝地而知名。此處海風較強，建議穿好走的鞋並準備薄外套。",
-      "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+      "image": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
       "highlights": [
         "**2.1公里岬角步道**（約30分鐘，僅14公尺爬升）— 部分路段輪椅及嬰兒車可通行",
         "**方頭浦燈塔** — 八角形，**每4秒閃光**，矗立於紅色火山錐紅色火山丘頂端",
@@ -367,7 +585,91 @@
         "closed": "Open year-round",
         "admission": "Free",
         "walking": "Easy to moderate"
-      }
+      },
+      "images": [
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+          "location": "涉地可支（東海岬）",
+          "caption": "涉地可支（東海岬） — photo 1",
+          "alt": "涉地可支（東海岬） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+          "location": "涉地可支（東海岬）",
+          "caption": "涉地可支（東海岬） — photo 2",
+          "alt": "涉地可支（東海岬） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+          "location": "涉地可支（東海岬）",
+          "caption": "涉地可支（東海岬） — photo 3",
+          "alt": "涉地可支（東海岬） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+          "location": "涉地可支（東海岬）",
+          "caption": "涉地可支（東海岬） — photo 4",
+          "alt": "涉地可支（東海岬） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+          "location": "涉地可支（東海岬）",
+          "caption": "涉地可支（東海岬） — photo 5",
+          "alt": "涉地可支（東海岬） — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+          "location": "涉地可支（東海岬）",
+          "caption": "涉地可支（東海岬） — photo 6",
+          "alt": "涉地可支（東海岬） — gallery image 6"
+        }
+      ]
     },
     {
       "number": 3,
@@ -413,7 +715,7 @@
       "name": "城山日出峰",
       "category": "UNESCO凝灰岩錐——日出峰（三重UNESCO認定）",
       "description": "**城山日出峰（城山日出峰，「日出峰」）**是一座**距今5,000年的蘇爾特塞式（Surtseyan）水成火山凝灰岩錐**——形成於海底玄武岩噴發沖出海面之時，岩漿接觸海水引發蒸汽爆炸，堆積的火山灰形成**182公尺高、形如城堡的火口**邊緣，而非典型的熔岩錐。UNESCO將其正式定義為**「薩託謝安式火山構造典型範例」**。火口**直徑600公尺、深90公尺**，周圍環繞著**99塊鋸齒狀的邊緣岩石**，當地傳說將其比喻為石冠。城山日出峰擁有**UNESCO三重認定**：**世界自然遺產（2007-07-02登載）**，是**「濟州火山島與熔岩洞窟」**遺址的組成部分；**生物圈保護區（2002年）**；以及**全球地質公園（2010-10）**——這一榮銜僅與漢拏山本身並列，為韓國景點中的最高規格。峰體向海一側隧道有**18座帝國日本二戰地下掩體**（1945年神風特攻隊自殺艇掩體）。步道：**單程0.8公里，爬升約140公尺，來回60分鐘**，沿寬闊石階攀登。**海女表演**每日在峰下岩石海灣**13:30和15:00**各舉行一場——無需氧氣罐的濟州女性潛水員（UNESCO 2016年非物質文化遺產）。門票於**2025年4月更新**：**成人₩5,000 / 青少年+兒童₩2,500 / 團體成人₩1,600**，7歲以下及65歲以上免費。山頂觀景臺同屬**瀛洲十景**，長期以來是韓國**元旦日出朝聖**的首選地——每年1月1日有逾5萬人在黎明前登頂，自1995年起設有市政日出節活動。**牛島** —— 韓國最大的次級火山島——在山頂可清晰看見，位於4公里外海域，搭乘**15分鐘渡輪自城山港出發**可前往（來回₩10,500）。",
-      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+      "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "highlights": [
         "**UNESCO三重認定**：世界遺產2007-07-02 + 生物圈保護區2002年 + 全球地質公園2010-10",
         "**距今5,000年** — 薩託謝安式水火山噴發，岩漿遇海水引發蒸汽爆炸誕生",
@@ -459,7 +761,78 @@
         "closed": "First Monday of each month (or the following day if Monday is a holiday)",
         "admission": "KRW 5,000 adults / KRW 2,500 teens and children",
         "walking": "Moderate, or moderately demanding if the group chooses the summit"
-      }
+      },
+      "images": [
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 1",
+          "alt": "城山日出峰 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 2",
+          "alt": "城山日出峰 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 3",
+          "alt": "城山日出峰 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 4",
+          "alt": "城山日出峰 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 5",
+          "alt": "城山日出峰 — gallery image 5"
+        }
+      ]
     },
     {
       "number": 5,
@@ -468,7 +841,7 @@
       "name": "日出樂園（米川窟熔岩洞穴）",
       "category": "熔岩洞穴+主題公園——萬丈窟備選（緊鄰UNESCO認定區域）",
       "description": "**日出樂園（일출랜드）** 是位於城山的 **40 萬平方公尺自然主題公園**，**2002 年開園**，園區圍繞著 **米千窟（미천굴）熔岩洞窟** 規劃而成——這條 **總長 1,700 公尺** 的洞窟，開放給遊客的 **365 公尺人工平整步道區段**（步行約 25 分鐘）。此洞窟屬於濟州 **與萬丈窟同一火山熔岩管系統**——萬丈窟為聯合國教科文組織世界自然遺產的熔岩洞窟——並 **在萬丈窟因保育維護或天候因素（颱風、結冰）關閉時擔任正式替代景點**。萬丈窟保留了崎嶇的天然洞底以呈現原汁原味的地質體驗，米千窟則透過平整步道讓 **長者、推娃娃車的家庭以及行動不便的旅客都能順利參觀**——這是一項刻意的工程設計，將熔岩洞窟體驗開放給無法走完萬丈窟的族群。洞內以 **七彩裝飾燈光（金、銀、銅、紅、黑、藍、白）** 照亮岩石構造——純粹派或許有所保留，但對非專業遊客拍照而言相當實用。洞窟外，園區延伸至 **水蓮公園、復原的傳統濟州村落、野花盆栽花園、仙人掌溫室、雕塑街以及足浴咖啡館（芳香足浴）**——使其成為 **濟州唯一設置穆斯林祈禱室的景點**（為一項刻意投入的友善設施）。電視劇拍攝紀錄：**SBS《Running Man》第 89 集（2012 年「愛麗絲夢遊仙境」主題）**。門票：**成人 ₩12,000／青少年 ₩9,000／兒童 ₩7,000**。室內外比例為 **室內 30%（洞窟＋溫室）／室外 70%（園區）**——對天候彈性安排頗具參考價值。",
-      "image": "https://images.unsplash.com/photo-1502780402662-acc01917a3a4",
+      "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
       "highlights": [
         "**全長 1,700 公尺** 熔岩管；**開放區段 365 公尺**（步行約 25 分鐘）",
         "**萬丈窟 UNESCO 替代景點**——同一火山熔岩管系統；萬丈窟關閉時開放",
@@ -514,7 +887,143 @@
         "closed": "依日出樂園園區行事曆——請向營運方確認",
         "admission": "包含於日出樂園園區門票——請向營運方確認票價",
         "walking": "難度中等——需走下階梯進入洞窟，洞內全年約 12°C；洞窟區段內地面為不平整的火山岩"
-      }
+      },
+      "images": [
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+          "location": "日出樂園（米川窟熔岩洞穴）",
+          "caption": "日出樂園（米川窟熔岩洞穴） — photo 1",
+          "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+          "location": "日出樂園（米川窟熔岩洞穴）",
+          "caption": "日出樂園（米川窟熔岩洞穴） — photo 2",
+          "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+          "location": "日出樂園（米川窟熔岩洞穴）",
+          "caption": "日出樂園（米川窟熔岩洞穴） — photo 3",
+          "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+          "location": "日出樂園（米川窟熔岩洞穴）",
+          "caption": "日出樂園（米川窟熔岩洞穴） — photo 4",
+          "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "location": "日出樂園（米川窟熔岩洞穴）",
+          "caption": "日出樂園（米川窟熔岩洞穴） — photo 5",
+          "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "location": "日出樂園（米川窟熔岩洞穴）",
+          "caption": "日出樂園（米川窟熔岩洞穴） — photo 6",
+          "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "location": "日出樂園（米川窟熔岩洞穴）",
+          "caption": "日出樂園（米川窟熔岩洞穴） — photo 7",
+          "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+          "location": "日出樂園（米川窟熔岩洞穴）",
+          "caption": "日出樂園（米川窟熔岩洞穴） — photo 8",
+          "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+          "location": "日出樂園（米川窟熔岩洞穴）",
+          "caption": "日出樂園（米川窟熔岩洞穴） — photo 9",
+          "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+          "location": "日出樂園（米川窟熔岩洞穴）",
+          "caption": "日出樂園（米川窟熔岩洞穴） — photo 10",
+          "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 10"
+        }
+      ]
     },
     {
       "number": 6,
@@ -523,7 +1032,7 @@
       "name": "城邑民俗村",
       "category": "朝鮮時代城郭城鎮——重要民俗文化遺產（1423年創立）",
       "description": "**城邑民俗村**是**朝鮮時代的城郭式城鎮，始建於1423年世宗大王年間**，當時稱為旌義縣，是朝鮮時代濟州三大行政中心之一。村落持續作為**縣政中心長達近500年，直至1914年**，至今在原有邑城城郭範圍內保存著**110棟傳統建築**，整體按照朝鮮縣政中心典型的**韓國風水原則**規劃佈局。整座村落被指定為**韓國重要民俗文化遺產**，多棟個別建築亦分別獲得獨立遺產指定。村落中心聳立著**兩棵被指定為韓國天然紀念物的古樹**——**一棵光葉櫸**和一棵**樸樹**，兩者均**樹齡逾600年**，是村落的精神象徵。歷史傷痕清晰可見：**1826年的大火燒燬了約80棟建築**，村落在**1948年濟州四三事件中**也遭受過火災破壞——兩段歷史均記載於村內標示牌上。歷史上戶數高峰時約**1,500戶**，今日村落仍有約**250戶人家居住**，許多村民積極傳承傳統工藝。韓劇拍攝記錄：**《大長今》（MBC，2003至2004年）**，這部國際韓劇大作曾在此取景。當地特色：**五味子酒** — 村內一戶人家**世代相傳、多代釀造**的**濟州傳統米釀酒**，村內家庭釀酒坊可免費參觀品嚐。**免費入場**；以戶外步行為主（約70%戶外）。",
-      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+      "image": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
       "highlights": [
         "**始建於1423年**（世宗大王年間）——行政中心持續運作至**1914年（近500年）**",
         "原有邑城城郭範圍內保存**110棟傳統建築**",
@@ -570,7 +1079,104 @@
         "closed": "Open year-round",
         "admission": "Free (except some hands-on programs)",
         "walking": "Easy and mostly flat"
-      }
+      },
+      "images": [
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 1",
+          "alt": "城邑民俗村 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 2",
+          "alt": "城邑民俗村 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 3",
+          "alt": "城邑民俗村 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 4",
+          "alt": "城邑民俗村 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 5",
+          "alt": "城邑民俗村 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 6",
+          "alt": "城邑民俗村 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 7",
+          "alt": "城邑民俗村 — gallery image 7"
+        }
+      ]
     }
   ],
   "routeFlowStops": [
@@ -1220,7 +1826,7 @@
             "name": "濟州石文化公園",
             "category": "神話+火山石文化——30萬坪露天博物館",
             "description": "**濟州石頭文化公園**是一座**99萬6,000平方公尺的戶外博物館和生態自然公園**，坐落在漢拏山北麓的廣闊森林中，展示**濟州獨特的石頭文化** — 源於島上隨處可見的玄武岩，深深滲透進濟州的建築、農業、民俗和宗教傳統之中。公園設有4個主題展覽區：**石頭文化廳**（記錄石頭在濟州生活中的角色）；**濟州神話世界**」——從天而降創造濟州萬物的女神）；**石頭博物館**（展示濟州石頭藝術、農具和碑刻）；以及**盆景庭院**。代表性的濟州石頭爺爺雕像遍佈全園。入場費：**成人₩5,000 / 青少年₩3,500 / 兒童₩1,500 / 7歲以下及65歲以上免費**。開放時間**09:00至18:00**，**週一休館**。",
-            "image": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+            "image": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "highlights": [
               "**99萬6,000平方公尺**戶外博物館 — 展示濟州玄武岩石頭文化",
               "4個主題展覽區：石頭文化廳、神話世界、石頭博物館、盆景庭院",
@@ -1256,70 +1862,70 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-                "location": "Stone Park Grounds",
-                "caption": "Lava-rock-lined stone path winding through the open meadow grounds",
-                "alt": "Woman walking on stone path with lava rock walls and green meadow at Jeju Stone Culture Park"
+                "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+                "location": "濟州石文化公園",
+                "caption": "濟州石文化公園 — photo 1",
+                "alt": "濟州石文化公園 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/stone-culture/stone-park-water-oreum.webp",
-                "location": "Water Garden",
-                "caption": "Wading pool garden with oreum (volcanic cone) backdrop",
-                "alt": "Woman walking in the shallow water garden with oreum mountain at Jeju Stone Culture Park"
+                "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
+                "location": "濟州石文化公園",
+                "caption": "濟州石文化公園 — photo 2",
+                "alt": "濟州石文化公園 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
-                "location": "Dolhareubang Grounds",
-                "caption": "Hundreds of stone figures arranged across the open park",
-                "alt": "Rows of dolhareubang and stone figures at Jeju Stone Culture Park"
+                "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
+                "location": "濟州石文化公園",
+                "caption": "濟州石文化公園 — photo 3",
+                "alt": "濟州石文化公園 — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
-                "location": "Dolhareubang",
-                "caption": "Traditional Jeju dolhareubang stone guardians",
-                "alt": "Dolhareubang stone guardian figures with forest and oreum behind them"
+                "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
+                "location": "濟州石文化公園",
+                "caption": "濟州石文化公園 — photo 4",
+                "alt": "濟州石文化公園 — gallery image 4"
               },
               {
                 "id": 5,
                 "type": "photo",
-                "src": "/images/tours/stone-culture/stone-park-standing-stones.webp",
-                "location": "Standing Stone Corridor",
-                "caption": "Walking between monolithic standing stones lining the corridor path",
-                "alt": "Woman walking between large standing stone monoliths at Jeju Stone Culture Park"
+                "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp",
+                "location": "濟州石文化公園",
+                "caption": "濟州石文化公園 — photo 5",
+                "alt": "濟州石文化公園 — gallery image 5"
               }
             ],
             "images": [
-              "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-              "/images/tours/stone-culture/stone-park-water-oreum.webp",
-              "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
-              "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
-              "/images/tours/stone-culture/stone-park-standing-stones.webp"
+              "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+              "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
+              "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
+              "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
+              "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+                "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/stone-culture/stone-park-water-oreum.webp",
+                "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
+                "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
+                "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/stone-culture/stone-park-standing-stones.webp",
+                "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp",
                 "source": "atoc-korea"
               }
             ]
@@ -1331,7 +1937,7 @@
             "name": "涉地可支（東海岬）",
             "category": "火山海岬——安藤忠雄建築+防頭浦燈塔+韓劇拍攝地",
             "description": "**涉地可支**是濟州東海岸一處狹長的火山岬角。地名通常解釋為：「涉地」指狹長土地或這一帶的舊地名，「可支」是濟州方言，意為伸向海面的岬角。沿著海岸步道，可以看到玄武岩海崖、開闊海景和遠處的城山日出峰。岬角一帶還有燈塔、朝鮮時代烽火臺遺跡，也因韓劇《All In》等拍攝地而知名。此處海風較強，建議穿好走的鞋並準備薄外套。",
-            "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+            "image": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
             "highlights": [
               "**2.1公里岬角步道**（約30分鐘，僅14公尺爬升）— 部分路段輪椅及嬰兒車可通行",
               "**方頭浦燈塔** — 八角形，**每4秒閃光**，矗立於紅色火山錐紅色火山丘頂端",
@@ -1362,7 +1968,91 @@
                 "安藤忠雄 Architect & Associates — Phoenix Island project documentation",
                 "SBS Drama Archive — '《All In》' (2003) and 'My Girl' (2005) filming locations"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+                "location": "涉地可支（東海岬）",
+                "caption": "涉地可支（東海岬） — photo 1",
+                "alt": "涉地可支（東海岬） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+                "location": "涉地可支（東海岬）",
+                "caption": "涉地可支（東海岬） — photo 2",
+                "alt": "涉地可支（東海岬） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+                "location": "涉地可支（東海岬）",
+                "caption": "涉地可支（東海岬） — photo 3",
+                "alt": "涉地可支（東海岬） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+                "location": "涉地可支（東海岬）",
+                "caption": "涉地可支（東海岬） — photo 4",
+                "alt": "涉地可支（東海岬） — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+                "location": "涉地可支（東海岬）",
+                "caption": "涉地可支（東海岬） — photo 5",
+                "alt": "涉地可支（東海岬） — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+                "location": "涉地可支（東海岬）",
+                "caption": "涉地可支（東海岬） — photo 6",
+                "alt": "涉地可支（東海岬） — gallery image 6"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1393,7 +2083,7 @@
             "name": "城山日出峰",
             "category": "UNESCO凝灰岩錐——日出峰（三重UNESCO認定）",
             "description": "**城山日出峰（城山日出峰，「日出峰」）**是一座**距今5,000年的蘇爾特塞式（Surtseyan）水成火山凝灰岩錐**——形成於海底玄武岩噴發沖出海面之時，岩漿接觸海水引發蒸汽爆炸，堆積的火山灰形成**182公尺高、形如城堡的火口**邊緣，而非典型的熔岩錐。UNESCO將其正式定義為**「薩託謝安式火山構造典型範例」**。火口**直徑600公尺、深90公尺**，周圍環繞著**99塊鋸齒狀的邊緣岩石**，當地傳說將其比喻為石冠。城山日出峰擁有**UNESCO三重認定**：**世界自然遺產（2007-07-02登載）**，是**「濟州火山島與熔岩洞窟」**遺址的組成部分；**生物圈保護區（2002年）**；以及**全球地質公園（2010-10）**——這一榮銜僅與漢拏山本身並列，為韓國景點中的最高規格。峰體向海一側隧道有**18座帝國日本二戰地下掩體**（1945年神風特攻隊自殺艇掩體）。步道：**單程0.8公里，爬升約140公尺，來回60分鐘**，沿寬闊石階攀登。**海女表演**每日在峰下岩石海灣**13:30和15:00**各舉行一場——無需氧氣罐的濟州女性潛水員（UNESCO 2016年非物質文化遺產）。門票於**2025年4月更新**：**成人₩5,000 / 青少年+兒童₩2,500 / 團體成人₩1,600**，7歲以下及65歲以上免費。山頂觀景臺同屬**瀛洲十景**，長期以來是韓國**元旦日出朝聖**的首選地——每年1月1日有逾5萬人在黎明前登頂，自1995年起設有市政日出節活動。**牛島** —— 韓國最大的次級火山島——在山頂可清晰看見，位於4公里外海域，搭乘**15分鐘渡輪自城山港出發**可前往（來回₩10,500）。",
-            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+            "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
             "highlights": [
               "**UNESCO三重認定**：世界遺產2007-07-02 + 生物圈保護區2002年 + 全球地質公園2010-10",
               "**距今5,000年** — 薩託謝安式水火山噴發，岩漿遇海水引發蒸汽爆炸誕生",
@@ -1424,7 +2114,78 @@
                 "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
                 "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "location": "城山日出峰",
+                "caption": "城山日出峰 — photo 1",
+                "alt": "城山日出峰 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "location": "城山日出峰",
+                "caption": "城山日出峰 — photo 2",
+                "alt": "城山日出峰 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "location": "城山日出峰",
+                "caption": "城山日出峰 — photo 3",
+                "alt": "城山日出峰 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "location": "城山日出峰",
+                "caption": "城山日出峰 — photo 4",
+                "alt": "城山日出峰 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "location": "城山日出峰",
+                "caption": "城山日出峰 — photo 5",
+                "alt": "城山日出峰 — gallery image 5"
+              }
+            ]
           },
           {
             "number": 5,
@@ -1433,7 +2194,7 @@
             "name": "日出樂園（米川窟熔岩洞穴）",
             "category": "熔岩洞穴+主題公園——萬丈窟備選（緊鄰UNESCO認定區域）",
             "description": "**日出樂園**是2002年在城山開業的一座**40萬平方公尺自然主題公園**，圍繞**彌天窟**熔岩管而建——全長**1,700公尺**，其中**365公尺人工平整路段**開放（約25分鐘穿越）。洞穴與UNESCO世界自然遺產**萬丈窟**屬同一熔岩管體系，在**萬丈窟因保育或天氣關閉時作為備用方案**。人工平整的步道使洞穴對老年遊客、嬰兒車和行動不便旅客更易到達。洞穴內部以**七色裝飾燈光**（金、銀、銅、紅、黑、藍、白）照明。洞穴外設有傳統濟州村落、野花盆景園、仙人掌溫室和泡腳咖啡廳。日出樂園是**濟州唯一設有現場穆斯林祈禱室**的景點。入場費：**成人₩12,000 / 青少年₩9,000 / 兒童₩7,000**。室內/戶外比例**30%室內 / 70%戶外**。",
-            "image": "https://images.unsplash.com/photo-1502780402662-acc01917a3a4",
+            "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
             "highlights": [
               "**全長1,700公尺**熔岩管；**365公尺開放路段**（約25分鐘穿行）",
               "**萬丈窟UNESCO備用方案** — 萬丈窟關閉時開放",
@@ -1464,7 +2225,143 @@
                 "SBS Variety Archive — Running Man Episode 89 (2012)",
                 "Jeju Tourism Organization — accessibility-friendly attraction registry"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+                "location": "日出樂園（米川窟熔岩洞穴）",
+                "caption": "日出樂園（米川窟熔岩洞穴） — photo 1",
+                "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+                "location": "日出樂園（米川窟熔岩洞穴）",
+                "caption": "日出樂園（米川窟熔岩洞穴） — photo 2",
+                "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+                "location": "日出樂園（米川窟熔岩洞穴）",
+                "caption": "日出樂園（米川窟熔岩洞穴） — photo 3",
+                "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+                "location": "日出樂園（米川窟熔岩洞穴）",
+                "caption": "日出樂園（米川窟熔岩洞穴） — photo 4",
+                "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+                "location": "日出樂園（米川窟熔岩洞穴）",
+                "caption": "日出樂園（米川窟熔岩洞穴） — photo 5",
+                "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+                "location": "日出樂園（米川窟熔岩洞穴）",
+                "caption": "日出樂園（米川窟熔岩洞穴） — photo 6",
+                "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+                "location": "日出樂園（米川窟熔岩洞穴）",
+                "caption": "日出樂園（米川窟熔岩洞穴） — photo 7",
+                "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+                "location": "日出樂園（米川窟熔岩洞穴）",
+                "caption": "日出樂園（米川窟熔岩洞穴） — photo 8",
+                "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+                "location": "日出樂園（米川窟熔岩洞穴）",
+                "caption": "日出樂園（米川窟熔岩洞穴） — photo 9",
+                "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+                "location": "日出樂園（米川窟熔岩洞穴）",
+                "caption": "日出樂園（米川窟熔岩洞穴） — photo 10",
+                "alt": "日出樂園（米川窟熔岩洞穴） — gallery image 10"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1473,7 +2370,7 @@
             "name": "城邑民俗村",
             "category": "朝鮮時代城郭城鎮——重要民俗文化遺產（1423年創立）",
             "description": "**城邑民俗村**是**朝鮮時代的城郭式城鎮，始建於1423年世宗大王年間**，當時稱為旌義縣，是朝鮮時代濟州三大行政中心之一。村落持續作為**縣政中心長達近500年，直至1914年**，至今在原有邑城城郭範圍內保存著**110棟傳統建築**，整體按照朝鮮縣政中心典型的**韓國風水原則**規劃佈局。整座村落被指定為**韓國重要民俗文化遺產**，多棟個別建築亦分別獲得獨立遺產指定。村落中心聳立著**兩棵被指定為韓國天然紀念物的古樹**——**一棵光葉櫸**和一棵**樸樹**，兩者均**樹齡逾600年**，是村落的精神象徵。歷史傷痕清晰可見：**1826年的大火燒燬了約80棟建築**，村落在**1948年濟州四三事件中**也遭受過火災破壞——兩段歷史均記載於村內標示牌上。歷史上戶數高峰時約**1,500戶**，今日村落仍有約**250戶人家居住**，許多村民積極傳承傳統工藝。韓劇拍攝記錄：**《大長今》（MBC，2003至2004年）**，這部國際韓劇大作曾在此取景。當地特色：**五味子酒** — 村內一戶人家**世代相傳、多代釀造**的**濟州傳統米釀酒**，村內家庭釀酒坊可免費參觀品嚐。**免費入場**；以戶外步行為主（約70%戶外）。",
-            "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+            "image": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
             "highlights": [
               "**始建於1423年**（世宗大王年間）——行政中心持續運作至**1914年（近500年）**",
               "原有邑城城郭範圍內保存**110棟傳統建築**",
@@ -1505,7 +2402,104 @@
                 "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
                 "Jeju Folklore Society — Omegisul brewing tradition documentation"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+                "location": "城邑民俗村",
+                "caption": "城邑民俗村 — photo 1",
+                "alt": "城邑民俗村 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+                "location": "城邑民俗村",
+                "caption": "城邑民俗村 — photo 2",
+                "alt": "城邑民俗村 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+                "location": "城邑民俗村",
+                "caption": "城邑民俗村 — photo 3",
+                "alt": "城邑民俗村 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+                "location": "城邑民俗村",
+                "caption": "城邑民俗村 — photo 4",
+                "alt": "城邑民俗村 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+                "location": "城邑民俗村",
+                "caption": "城邑民俗村 — photo 5",
+                "alt": "城邑民俗村 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+                "location": "城邑民俗村",
+                "caption": "城邑民俗村 — photo 6",
+                "alt": "城邑民俗村 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+                "location": "城邑民俗村",
+                "caption": "城邑民俗村 — photo 7",
+                "alt": "城邑民俗村 — gallery image 7"
+              }
+            ]
           }
         ]
       }

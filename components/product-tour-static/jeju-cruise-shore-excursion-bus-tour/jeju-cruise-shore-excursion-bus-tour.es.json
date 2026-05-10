@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Excursión Crucero Jeju: Tour en autocar (autocar grande) | AtoC Korea",
     "metaDescription": "8 horas de excursión en gran autocar para cruceros con ruta según el puerto: Puerto de Jeju → UNESCO este; Puerto Gangjeong → Hallasan alpino + Mercado Olle.",
-    "ogImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "ogImage": "https://www.atockorea.com/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "primaryKeywords": [
       "Jeju excursión en tierra",
       "Jeju tour desde el puerto de cruceros",
@@ -33,8 +33,8 @@
       "Opción económica",
       "Autocar grande"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
-    "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
+    "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+    "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "priceLabel": "Precio variable — confirmar al reservar",
     "shortCardDescription": "Tour en autocar de gran capacidad desde el terminal de cruceros de Jeju, con dos rutas según el puerto de atraque: Puerto de Jeju (norte) → Seongsan Ilchulbong (triple Patrimonio UNESCO) → Cabo Seopjikoji → almuerzo → Aldea Seongeup; Puerto Gangjeong (sur) → ruta alternativa por el Hallasan. Regreso seguro al puerto 90-120 min antes de la salida.",
     "tags": [
@@ -52,7 +52,7 @@
     "per": "persona"
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "imageUrl": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "imagePosition": "center 35%",
     "tagline": "Excursión en autocar desde el terminal de cruceros de Jeju — ruta este o sur según el puerto",
     "pills": [
@@ -135,58 +135,148 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-      "alt": "Imagen de Terminal de cruceros de Jeju",
-      "caption": "Terminal de cruceros de Jeju",
-      "location": "Terminal de cruceros",
-      "atmosphere": "Salida"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
+      "alt": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — gallery image 1",
+      "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
-      "alt": "Imagen de Seongsan tuff cone",
-      "caption": "Seongsan tuff cone",
-      "location": "Seongsan Ilchulbong",
-      "atmosphere": "Pico del amanecer UNESCO"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+      "location": "Seopjikoji (Cabo Este)",
+      "alt": "Seopjikoji (Cabo Este) — gallery image 1",
+      "caption": "Seopjikoji (Cabo Este) — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
-      "alt": "Imagen de Acantilados basálticos de Jusangjeolli",
-      "caption": "Acantilados basálticos de Jusangjeolli",
-      "location": "Jusangjeolli",
-      "atmosphere": "Costa columnar volcánica"
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+      "location": "Aldea Folclórica Seongeup",
+      "alt": "Aldea Folclórica Seongeup — gallery image 1",
+      "caption": "Aldea Folclórica Seongeup — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
-      "alt": "Imagen de Humedal 1100 de Hallasan",
-      "caption": "Humedal 1100 de Hallasan",
-      "location": "Hallasan 1100",
-      "atmosphere": "Pasarela alpina"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
+      "alt": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — gallery image 2",
+      "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
-      "alt": "Imagen de Cheonjiyeon waterfall",
-      "caption": "Cheonjiyeon waterfall",
-      "location": "Cheonjiyeon falls",
-      "atmosphere": "Cascada y bosque"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
+      "alt": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — gallery image 3",
+      "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 3"
     },
     {
-      "id": "g6",
+      "id": 6,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
-      "alt": "Imagen de Mercado Olle Maeil",
-      "caption": "Mercado Olle Maeil",
-      "location": "Mercado Olle Maeil",
-      "atmosphere": "Final en el mercado local"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
+      "alt": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — gallery image 4",
+      "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 4"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
+      "alt": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — gallery image 5",
+      "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 5"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+      "location": "Seopjikoji (Cabo Este)",
+      "alt": "Seopjikoji (Cabo Este) — gallery image 2",
+      "caption": "Seopjikoji (Cabo Este) — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+      "location": "Seopjikoji (Cabo Este)",
+      "alt": "Seopjikoji (Cabo Este) — gallery image 3",
+      "caption": "Seopjikoji (Cabo Este) — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+      "location": "Seopjikoji (Cabo Este)",
+      "alt": "Seopjikoji (Cabo Este) — gallery image 4",
+      "caption": "Seopjikoji (Cabo Este) — photo 4"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+      "location": "Seopjikoji (Cabo Este)",
+      "alt": "Seopjikoji (Cabo Este) — gallery image 5",
+      "caption": "Seopjikoji (Cabo Este) — photo 5"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+      "location": "Seopjikoji (Cabo Este)",
+      "alt": "Seopjikoji (Cabo Este) — gallery image 6",
+      "caption": "Seopjikoji (Cabo Este) — photo 6"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+      "location": "Aldea Folclórica Seongeup",
+      "alt": "Aldea Folclórica Seongeup — gallery image 2",
+      "caption": "Aldea Folclórica Seongeup — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+      "location": "Aldea Folclórica Seongeup",
+      "alt": "Aldea Folclórica Seongeup — gallery image 3",
+      "caption": "Aldea Folclórica Seongeup — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+      "location": "Aldea Folclórica Seongeup",
+      "alt": "Aldea Folclórica Seongeup — gallery image 4",
+      "caption": "Aldea Folclórica Seongeup — photo 4"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+      "location": "Aldea Folclórica Seongeup",
+      "alt": "Aldea Folclórica Seongeup — gallery image 5",
+      "caption": "Aldea Folclórica Seongeup — photo 5"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+      "location": "Aldea Folclórica Seongeup",
+      "alt": "Aldea Folclórica Seongeup — gallery image 6",
+      "caption": "Aldea Folclórica Seongeup — photo 6"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+      "location": "Aldea Folclórica Seongeup",
+      "alt": "Aldea Folclórica Seongeup — gallery image 7",
+      "caption": "Aldea Folclórica Seongeup — photo 7"
     }
   ],
   "itineraryStops": [
@@ -236,7 +326,7 @@
       "name": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
       "category": "Cono de Toba UNESCO — Pico del Amanecer (Triple Designación UNESCO)",
       "description": "**Seongsan Ilchulbong (성산일출봉, «Pico del Amanecer»)** es un **cono de toba hidrovolcánica de tipo Surtsey con 5.000 años de antigüedad**, una forma de relieve poco habitual que se generó cuando una erupción basáltica submarina rompió la superficie del mar: el magma entró en contacto con el agua marina y la explosión de vapor resultante formó una **muralla cónica de 182 m**, con aspecto de fortaleza, en lugar del cono de lava convencional. La UNESCO lo describe como **«un ejemplo excepcional de edificio volcánico surgente de tipo Surtsey»**. El cráter tiene **600 m de diámetro y 90 m de profundidad** y lo rodean **99 rocas dentadas** a las que la tradición local llama «corona de piedra». Seongsan acumula la **triple designación UNESCO**: **Patrimonio Natural Mundial (inscrito el 02-07-2007)** como parte de la propiedad **«Isla Volcánica y Tubos de Lava de Jeju»**, **Reserva de Biosfera (2002)** y **Geoparque Global (octubre de 2010)** — una distinción que en Corea solo comparte con el propio Hallasan. En la base, hacia el mar, hay **18 cuevas excavadas por el ejército imperial japonés en la II Guerra Mundial** (refugios para embarcaciones suicidas kamikaze, 1945). Sendero: **0,8 km de ida, ~140 m de desnivel, 60 min ida y vuelta** por escaleras de piedra bien mantenidas. Las **demostraciones de haenyeo (해녀)** tienen lugar **a diario a las 13:30 y a las 15:00** en la cala rocosa bajo el cono — las buceadoras de apnea de Jeju son Patrimonio Cultural Inmaterial de la UNESCO desde 2016. Entrada actualizada en **abril de 2025**: **Adultos ₩5.000 / Jóvenes y niños ₩2.500 / Grupos adultos ₩1.600**; gratuito para menores de 7 y mayores de 65 años. Desde la terraza de la cumbre se divisa con claridad la **isla de Udo (우도)** a 4 km, la mayor isla volcánica secundaria de Corea, accesible en **ferry de 15 minutos desde el puerto de Seongsan** (₩10.500 ida y vuelta).",
-      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+      "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "highlights": [
         "**Triple UNESCO**: Patrimonio Mundial 2007-07-02 + Reserva de Biosfera 2002 + Geoparque Global 2010-10",
         "**5.000 años de antigüedad** — erupción hidrovolcánica tipo Surtsey, explosión de magma en contacto con el agua del mar",
@@ -282,7 +372,78 @@
         "closed": "Open year-round (weather closures possible)",
         "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
         "walking": "Moderate — 20–30 min steady stair climb (≈ 600 stairs); benches every few minutes for rest"
-      }
+      },
+      "images": [
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
+          "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 1",
+          "alt": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
+          "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 2",
+          "alt": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
+          "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 3",
+          "alt": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
+          "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 4",
+          "alt": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
+          "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 5",
+          "alt": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — gallery image 5"
+        }
+      ]
     },
     {
       "number": 3,
@@ -291,7 +452,7 @@
       "name": "Seopjikoji (Cabo Este)",
       "category": "Cabo Volcánico — Arquitectura Tadao Ando + Faro Bangdupo + Localizaciones de Series",
       "description": "**Seopjikoji (섭지코지)** es un estrecho cabo volcánico en la costa este de Jeju. En el dialecto de la isla, **koji** significa cabo o promontorio, y el lugar es conocido por sus amplias vistas al mar, un suave sendero costero, el faro blanco y la panorámica sobre Seongsan Ilchulbong. El paseo resulta pintoresco sin ser una caminata exigente, lo que lo convierte en una parada muy adecuada para quienes buscan buenas fotos y aire del mar sin dedicar el día entero a subir cuestas. Según el tiempo disponible, también se puede ver el área del Glass House y el exterior del Museo de Arte Yumin, ambas obras del arquitecto Tadao Ando. La visita es flexible: el guía puede acortarla o alargarla en función del viento, la lluvia, los horarios del recinto y el ritmo del grupo.",
-      "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+      "image": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
       "highlights": [
         "**Sendero de 2,1 km por el cabo** (~30 min, solo 14 m de desnivel) — tramos accesibles para sillas de ruedas y cochecitos",
         "**Faro Bangdupo** — octagonal, **destellos cada 4 seg**, en lo alto del cono volcánico rojo Bulgeun Oreum",
@@ -337,7 +498,91 @@
         "closed": "Open year-round",
         "admission": "Free",
         "walking": "Easy to moderate — flat coastal walkway; total loop ≈ 1 hour"
-      }
+      },
+      "images": [
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+          "location": "Seopjikoji (Cabo Este)",
+          "caption": "Seopjikoji (Cabo Este) — photo 1",
+          "alt": "Seopjikoji (Cabo Este) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+          "location": "Seopjikoji (Cabo Este)",
+          "caption": "Seopjikoji (Cabo Este) — photo 2",
+          "alt": "Seopjikoji (Cabo Este) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+          "location": "Seopjikoji (Cabo Este)",
+          "caption": "Seopjikoji (Cabo Este) — photo 3",
+          "alt": "Seopjikoji (Cabo Este) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+          "location": "Seopjikoji (Cabo Este)",
+          "caption": "Seopjikoji (Cabo Este) — photo 4",
+          "alt": "Seopjikoji (Cabo Este) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+          "location": "Seopjikoji (Cabo Este)",
+          "caption": "Seopjikoji (Cabo Este) — photo 5",
+          "alt": "Seopjikoji (Cabo Este) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+          "location": "Seopjikoji (Cabo Este)",
+          "caption": "Seopjikoji (Cabo Este) — photo 6",
+          "alt": "Seopjikoji (Cabo Este) — gallery image 6"
+        }
+      ]
     },
     {
       "name": "Almuerzo (Este de Jeju — marisco local o cerdo negro)",
@@ -386,7 +631,7 @@
       "name": "Aldea Folclórica Seongeup",
       "category": "Ciudad Amurallada de Era Joseon — Patrimonio Cultural Folclórico Importante (fundado 1423)",
       "description": "**La Aldea Folclórica de Seongeup (성읍민속마을)** es un pueblo de la era Joseon que sigue habitado hoy en día, con antiguos muros de piedra de Jeju, casas de tejado de paja, callejones estrechos y distribuciones domésticas tradicionales bien conservadas. Históricamente fue el centro administrativo del condado de Jeongui-hyeon, uno de los principales distritos de Jeju durante el período Joseon, y su valor patrimonial está reconocido con la declaración de **Patrimonio Cultural Folclórico Importante**. A diferencia de un parque etnográfico montado para turistas, aquí viven familias reales, por lo que la visita exige respeto y discreción junto a las viviendas privadas. Entre los atractivos del pueblo se incluyen los viejos zelkovas y almeces japoneses cerca del centro — árboles con siglos de antigüedad —, la cultura doméstica tradicional de Jeju, las estatuas de abuelos de piedra y los relatos ligados a la vida de la aldea.",
-      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+      "image": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
       "highlights": [
         "**Fundada en 1423** por el Rey Sejong el Grande — centro administrativo hasta **1914 (~500 años)**",
         "**110 estructuras tradicionales** dentro del perímetro original de la ciudad amurallada eupseong",
@@ -433,7 +678,104 @@
         "closed": "Open year-round",
         "admission": "Free for general village; some private homes charge for guided visits",
         "walking": "Easy — flat dirt and stone paths through the village"
-      }
+      },
+      "images": [
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+          "location": "Aldea Folclórica Seongeup",
+          "caption": "Aldea Folclórica Seongeup — photo 1",
+          "alt": "Aldea Folclórica Seongeup — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+          "location": "Aldea Folclórica Seongeup",
+          "caption": "Aldea Folclórica Seongeup — photo 2",
+          "alt": "Aldea Folclórica Seongeup — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+          "location": "Aldea Folclórica Seongeup",
+          "caption": "Aldea Folclórica Seongeup — photo 3",
+          "alt": "Aldea Folclórica Seongeup — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+          "location": "Aldea Folclórica Seongeup",
+          "caption": "Aldea Folclórica Seongeup — photo 4",
+          "alt": "Aldea Folclórica Seongeup — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+          "location": "Aldea Folclórica Seongeup",
+          "caption": "Aldea Folclórica Seongeup — photo 5",
+          "alt": "Aldea Folclórica Seongeup — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+          "location": "Aldea Folclórica Seongeup",
+          "caption": "Aldea Folclórica Seongeup — photo 6",
+          "alt": "Aldea Folclórica Seongeup — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+          "location": "Aldea Folclórica Seongeup",
+          "caption": "Aldea Folclórica Seongeup — photo 7",
+          "alt": "Aldea Folclórica Seongeup — gallery image 7"
+        }
+      ]
     },
     {
       "name": "Recogida Terminal de Cruceros Jeju (Puerto Jeju — norte)",
@@ -2069,7 +2411,7 @@
             "name": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
             "category": "Cono de Toba UNESCO — Pico del Amanecer (Triple Designación UNESCO)",
             "description": "**Seongsan Ilchulbong** es un **cono de toba hidrovolcánica de tipo Surtsey de 5.000 años** — una forma de tierra rara creada cuando una erupción submarina emergió del océano alrededor del año 100 d.C.",
-            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+            "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
             "highlights": [
               "**Triple UNESCO**: Patrimonio Mundial 2007-07-02 + Reserva de Biosfera 2002 + Geoparque Global 2010-10",
               "**5.000 años de antigüedad** — erupción hidrovolcánica tipo Surtsey, explosión de magma en contacto con el agua del mar",
@@ -2100,7 +2442,78 @@
                 "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
                 "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
+                "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 1",
+                "alt": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
+                "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 2",
+                "alt": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
+                "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 3",
+                "alt": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
+                "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 4",
+                "alt": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
+                "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 5",
+                "alt": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — gallery image 5"
+              }
+            ]
           },
           {
             "number": 3,
@@ -2109,7 +2522,7 @@
             "name": "Seopjikoji (Cabo Este)",
             "category": "Cabo Volcánico — Arquitectura Tadao Ando + Faro Bangdupo + Localizaciones de Series",
             "description": "**Seopjikoji** es un estrecho cabo volcánico en la costa este de Jeju — conocido por las escenas de película y el Glass House de Tadao Ando.",
-            "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+            "image": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
             "highlights": [
               "**Sendero de 2,1 km por el cabo** (~30 min, solo 14 m de desnivel) — tramos accesibles para sillas de ruedas y cochecitos",
               "**Faro Bangdupo** — octagonal, **destellos cada 4 seg**, en lo alto del cono volcánico rojo Bulgeun Oreum",
@@ -2140,7 +2553,91 @@
                 "Tadao Ando Architect & Associates — Phoenix Island project documentation",
                 "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+                "location": "Seopjikoji (Cabo Este)",
+                "caption": "Seopjikoji (Cabo Este) — photo 1",
+                "alt": "Seopjikoji (Cabo Este) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+                "location": "Seopjikoji (Cabo Este)",
+                "caption": "Seopjikoji (Cabo Este) — photo 2",
+                "alt": "Seopjikoji (Cabo Este) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+                "location": "Seopjikoji (Cabo Este)",
+                "caption": "Seopjikoji (Cabo Este) — photo 3",
+                "alt": "Seopjikoji (Cabo Este) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+                "location": "Seopjikoji (Cabo Este)",
+                "caption": "Seopjikoji (Cabo Este) — photo 4",
+                "alt": "Seopjikoji (Cabo Este) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+                "location": "Seopjikoji (Cabo Este)",
+                "caption": "Seopjikoji (Cabo Este) — photo 5",
+                "alt": "Seopjikoji (Cabo Este) — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+                "location": "Seopjikoji (Cabo Este)",
+                "caption": "Seopjikoji (Cabo Este) — photo 6",
+                "alt": "Seopjikoji (Cabo Este) — gallery image 6"
+              }
+            ]
           },
           {
             "name": "Almuerzo (Este de Jeju — marisco local o cerdo negro)",
@@ -2176,7 +2673,7 @@
             "name": "Aldea Folclórica Seongeup",
             "category": "Ciudad Amurallada de Era Joseon — Patrimonio Cultural Folclórico Importante (fundado 1423)",
             "description": "**Aldea Folclórica de Seongeup** es una **ciudad amurallada de la era Joseon fundada en 1423** durante el reinado del Gran Sejong. Con alrededor de 500 años de administración, sus muros de piedra volcánica y casas con techo de paja ofrecen uno de los entornos históricos más auténticos de Jeju.",
-            "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+            "image": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
             "highlights": [
               "**Fundada en 1423** por el Rey Sejong el Grande — centro administrativo hasta **1914 (~500 años)**",
               "**110 estructuras tradicionales** dentro del perímetro original de la ciudad amurallada eupseong",
@@ -2208,7 +2705,104 @@
                 "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
                 "Jeju Folklore Society — Omegisul brewing tradition documentation"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+                "location": "Aldea Folclórica Seongeup",
+                "caption": "Aldea Folclórica Seongeup — photo 1",
+                "alt": "Aldea Folclórica Seongeup — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+                "location": "Aldea Folclórica Seongeup",
+                "caption": "Aldea Folclórica Seongeup — photo 2",
+                "alt": "Aldea Folclórica Seongeup — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+                "location": "Aldea Folclórica Seongeup",
+                "caption": "Aldea Folclórica Seongeup — photo 3",
+                "alt": "Aldea Folclórica Seongeup — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+                "location": "Aldea Folclórica Seongeup",
+                "caption": "Aldea Folclórica Seongeup — photo 4",
+                "alt": "Aldea Folclórica Seongeup — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+                "location": "Aldea Folclórica Seongeup",
+                "caption": "Aldea Folclórica Seongeup — photo 5",
+                "alt": "Aldea Folclórica Seongeup — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+                "location": "Aldea Folclórica Seongeup",
+                "caption": "Aldea Folclórica Seongeup — photo 6",
+                "alt": "Aldea Folclórica Seongeup — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+                "location": "Aldea Folclórica Seongeup",
+                "caption": "Aldea Folclórica Seongeup — photo 7",
+                "alt": "Aldea Folclórica Seongeup — gallery image 7"
+              }
+            ]
           },
           {
             "name": "Recogida Terminal de Cruceros Jeju (Puerto Jeju — norte)",

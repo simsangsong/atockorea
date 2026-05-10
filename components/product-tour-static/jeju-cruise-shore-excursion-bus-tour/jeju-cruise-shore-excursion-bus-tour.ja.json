@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "済州クルーズ寄港地観光・大型コーチ | AtoC Korea",
     "metaDescription": "済州クルーズ寄港地観光8時間：済州港（北）発→城山日出峰・ソプチコジ・城邑民俗村、または江汀港（南）発→漢拏山湿地・オルレ市場。英語ガイド付き大型コーチ。",
-    "ogImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "ogImage": "https://www.atockorea.com/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "primaryKeywords": [
       "済州クルーズ寄港地観光",
       "済州クルーズツアー",
@@ -34,8 +34,8 @@
       "ユネスコ",
       "ターミナル発着"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
-    "thumbnail": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80",
+    "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+    "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "priceLabel": "料金は予約時にご確認ください",
     "shortCardDescription": "寄港地に合わせて選べる済州日帰りツアーです。済州港（北）発は東部ユネスコルート（城山日出峰・ソプチコジ・城邑民俗村）、江汀港（南）発は漢拏山高地＋オルレ市場ルート。クルーズの停泊時間に合わせた8時間構成です。",
     "tags": [
@@ -53,7 +53,7 @@
     "per": "人"
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+    "imageUrl": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "imagePosition": "center 35%",
     "tagline": "クルーズ寄港地から出発する大型コーチバスツアー — 済州港と江汀港の2ルート対応",
     "pills": [
@@ -136,58 +136,148 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-      "alt": "城山日出峰の99岩の火口縁から望む日の出と東シナ海",
-      "caption": "城山日出峰 — ユネスコ世界自然遺産の旗艦見どころ",
-      "location": "城山日出峰（ソンサン・イルチュルボン）、済州東部",
-      "atmosphere": "5,000年前の水成火山の山頂。ユネスコトリプル指定"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "城山日出峰（ソンサン・イルチュルボン）",
+      "alt": "城山日出峰（ソンサン・イルチュルボン） — gallery image 1",
+      "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
-      "alt": "済州の東岬、ソプチコジの断崖縁トレイルと沖合の城山日出峰",
-      "caption": "ソプチコジ（セプジコジ）— 城山を望む東岬",
-      "location": "ソプチコジ、済州東部海岸",
-      "atmosphere": "Kドラマロケ地で有名な2.1kmの断崖トレイル。城山パノラマ"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+      "location": "ソプチコジ（セプジコジ — 東岬）",
+      "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 1",
+      "caption": "ソプチコジ（セプジコジ — 東岬） — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
-      "alt": "石垣と茅葺き屋根が並ぶ城邑民俗村の朝鮮時代の風景",
-      "caption": "城邑民俗村 — 朝鮮時代の生きた古城郭都市",
-      "location": "城邑民俗村（ソンウプ）、済州東部",
-      "atmosphere": "1423年創建の現存する朝鮮時代の城郭都市。済州の伝統生活を今に伝える"
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+      "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+      "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 1",
+      "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
-      "alt": "漢拏山1100高地湿地の木製遊歩道と稜線",
-      "caption": "漢拏山1100高地湿地 — 南ルートのユネスコ見どころ",
-      "location": "漢拏山1100湿地、標高1,100m",
-      "atmosphere": "ラムサール条約湿地。4重の国際指定を持つ済州の高山生態系"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "城山日出峰（ソンサン・イルチュルボン）",
+      "alt": "城山日出峰（ソンサン・イルチュルボン） — gallery image 2",
+      "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
-      "alt": "大浦柱状節理の断崖の六角形玄武岩柱",
-      "caption": "天池淵の滝",
-      "location": "韓国",
-      "atmosphere": "韓国の美しい景観"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "城山日出峰（ソンサン・イルチュルボン）",
+      "alt": "城山日出峰（ソンサン・イルチュルボン） — gallery image 3",
+      "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 3"
     },
     {
-      "id": "g6",
+      "id": 6,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
-      "alt": "ツアーで訪れるオルレ毎日市場の風景",
-      "caption": "オルレ毎日市場",
-      "location": "韓国",
-      "atmosphere": "韓国の美しい景観"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "城山日出峰（ソンサン・イルチュルボン）",
+      "alt": "城山日出峰（ソンサン・イルチュルボン） — gallery image 4",
+      "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 4"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "城山日出峰（ソンサン・イルチュルボン）",
+      "alt": "城山日出峰（ソンサン・イルチュルボン） — gallery image 5",
+      "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 5"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+      "location": "ソプチコジ（セプジコジ — 東岬）",
+      "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 2",
+      "caption": "ソプチコジ（セプジコジ — 東岬） — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+      "location": "ソプチコジ（セプジコジ — 東岬）",
+      "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 3",
+      "caption": "ソプチコジ（セプジコジ — 東岬） — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+      "location": "ソプチコジ（セプジコジ — 東岬）",
+      "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 4",
+      "caption": "ソプチコジ（セプジコジ — 東岬） — photo 4"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+      "location": "ソプチコジ（セプジコジ — 東岬）",
+      "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 5",
+      "caption": "ソプチコジ（セプジコジ — 東岬） — photo 5"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+      "location": "ソプチコジ（セプジコジ — 東岬）",
+      "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 6",
+      "caption": "ソプチコジ（セプジコジ — 東岬） — photo 6"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+      "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+      "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 2",
+      "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+      "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+      "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 3",
+      "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+      "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+      "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 4",
+      "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 4"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+      "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+      "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 5",
+      "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 5"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+      "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+      "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 6",
+      "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 6"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+      "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+      "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 7",
+      "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 7"
     }
   ],
   "itineraryStops": [
@@ -241,7 +331,7 @@
       "name": "城山日出峰（ソンサン・イルチュルボン）",
       "category": "ユネスコ世界自然遺産 — スルツェイ式水成火山錐",
       "description": "**城山日出峰（성산일출봉、「日出峰」）**は、**約5,000年前に形成されたスルツェイ式水成火山凝灰岩錐**です。海底の玄武岩マグマが海面を突き破った際、マグマが海水と接触して水蒸気爆発が起き、典型的な溶岩ドームではなく**高さ182mの要塞状の火口縁**を形成した稀有な地形です。UNESCOはこれを**「スルツェイ式火山構造の典型例」**と正式に認定しています。火口は**直径600m・深さ90m**で、**99個のギザギザした岩峰**が連なり、地元では「石の王冠」と呼ばれています。城山日出峰は**ユネスコ3重指定**を持ちます：**世界自然遺産（2007年7月2日登録）**（「済州火山島と溶岩洞窟群」の一部）、**生物圏保護区（2002年）**、**グローバルジオパーク（2010年10月）** — この3つを同時に持つのは韓国では漢拏山のみです。海に面した基部には**旧日本軍WWII地下壕が18か所**（1945年、神風特攻隊の特攻艇格納庫）あります。トレイルは**片道0.8km・標高差約140m・往復60分**、石段が整備されています。**海女（해녀）のパフォーマンス**は岩礁の入り江で**毎日13:30と15:00**に実施（済州の女性素潜り漁師、ユネスコ無形文化遺産2016年）。入場料は**2025年4月改定**：**大人₩5,000・青少年＋子ども₩2,500・団体大人₩1,600**（7歳未満・65歳以上無料）。山頂デッキは**瀛州十景（済州の十大絶景）**の一つで、毎年元日の初日の出には5万人以上が夜明け前に登頂します。山頂からは4km沖合に**牛島（우도、「牛の島」）**が見え、城山港から**フェリーで15分**（往復₩10,500）で訪れることもできます。",
-      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+      "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "highlights": [
         "**ユネスコトリプル指定**（世界自然遺産2007＋バイオスフィア＋グローバルジオパーク）",
         "99の岩峰を持つ5,000年前の水成火山の山頂火口縁",
@@ -282,7 +372,78 @@
         "closed": "Open year-round (weather closures possible)",
         "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
         "walking": "Moderate — 20–30 min steady stair climb (≈ 600 stairs); benches every few minutes for rest"
-      }
+      },
+      "images": [
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "location": "城山日出峰（ソンサン・イルチュルボン）",
+          "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 1",
+          "alt": "城山日出峰（ソンサン・イルチュルボン） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "location": "城山日出峰（ソンサン・イルチュルボン）",
+          "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 2",
+          "alt": "城山日出峰（ソンサン・イルチュルボン） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "location": "城山日出峰（ソンサン・イルチュルボン）",
+          "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 3",
+          "alt": "城山日出峰（ソンサン・イルチュルボン） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "location": "城山日出峰（ソンサン・イルチュルボン）",
+          "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 4",
+          "alt": "城山日出峰（ソンサン・イルチュルボン） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "location": "城山日出峰（ソンサン・イルチュルボン）",
+          "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 5",
+          "alt": "城山日出峰（ソンサン・イルチュルボン） — gallery image 5"
+        }
+      ]
     },
     {
       "number": 3,
@@ -291,7 +452,7 @@
       "name": "ソプチコジ（セプジコジ — 東岬）",
       "category": "海岸の岬 — Kドラマロケ地・城山パノラマ",
       "description": "**ソプチコジ（섭지코지）**は、済州東海岸に細長く突き出た火山性の岬です。済州方言で**コジ（koji）**は「岬・突き出た地形」を意味し、広い海の眺望、緩やかな海岸散策路、白い灯台、そして城山日出峰を振り返る開けたパノラマで知られています。重い登山なしでしっかりとした写真映えと潮風を楽しみたいクルーズゲストにぴったりのコースです。時間に余裕があれば、建築家・安藤忠雄が設計したガラスハウスやYumin美術館（フェニックスアイランド）の外観も見学できます。風、雨、ギャラリーの開館状況、グループの歩行ペースによって岬をどこまで回るか柔軟に調整します。",
-      "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+      "image": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
       "highlights": [
         "**2.1kmの岬散策路**（約30分、標高差わずか14m） — 車椅子・ベビーカー対応区間あり",
         "**防頭浦灯台（バンドゥポ灯台）** — 八角形、**4秒ごとに点滅**、赤い火山丘の頂上に立つ",
@@ -337,7 +498,91 @@
         "closed": "Open year-round",
         "admission": "Free",
         "walking": "Easy to moderate — flat coastal walkway; total loop ≈ 1 hour"
-      }
+      },
+      "images": [
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+          "location": "ソプチコジ（セプジコジ — 東岬）",
+          "caption": "ソプチコジ（セプジコジ — 東岬） — photo 1",
+          "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+          "location": "ソプチコジ（セプジコジ — 東岬）",
+          "caption": "ソプチコジ（セプジコジ — 東岬） — photo 2",
+          "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+          "location": "ソプチコジ（セプジコジ — 東岬）",
+          "caption": "ソプチコジ（セプジコジ — 東岬） — photo 3",
+          "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+          "location": "ソプチコジ（セプジコジ — 東岬）",
+          "caption": "ソプチコジ（セプジコジ — 東岬） — photo 4",
+          "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+          "location": "ソプチコジ（セプジコジ — 東岬）",
+          "caption": "ソプチコジ（セプジコジ — 東岬） — photo 5",
+          "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+          "location": "ソプチコジ（セプジコジ — 東岬）",
+          "caption": "ソプチコジ（セプジコジ — 東岬） — photo 6",
+          "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 6"
+        }
+      ]
     },
     {
       "name": "昼食 — 東済州（地元海産物または黒豚）",
@@ -391,7 +636,7 @@
       "name": "城邑民俗村（ソンウプ・ミンソクマウル）",
       "category": "朝鮮時代の生きた古城郭都市 — 世宗大王時代創建（1423年）",
       "description": "**城邑民俗村（성읍민속마을）**は、朝鮮時代の城郭都市の姿を現代に伝える居住型の民俗村です。古い済州の石壁、茅葺き屋根の民家、細い路地、伝統的な家屋の配置が今も保存されています。歴史的には鄭義縣の行政中心として機能し、朝鮮時代の済州における主要な地方行政区の一つでした。その遺産的価値から**重要民俗文化財**に指定されています。民俗公園とは異なり、実際に住民が暮らしているため、私有地の周辺は静かに、敬意をもって見学することが求められます。村内では、中心部に立つ古いケヤキとエノキの大木、伝統的な済州の家屋文化、石の老人像（トルハルバン）、村の生活にまつわる伝承もご覧いただけます。",
-      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+      "image": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
       "highlights": [
         "**1423年創建**の現存する朝鮮時代の城郭都市、住民が今も生活",
         "**700〜1,000年のエノキ**（天然記念物）が村の入口に",
@@ -433,7 +678,104 @@
         "closed": "Open year-round",
         "admission": "Free for general village; some private homes charge for guided visits",
         "walking": "Easy — flat dirt and stone paths through the village"
-      }
+      },
+      "images": [
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+          "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+          "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 1",
+          "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+          "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+          "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 2",
+          "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+          "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+          "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 3",
+          "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+          "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+          "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 4",
+          "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+          "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+          "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 5",
+          "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+          "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+          "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 6",
+          "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+          "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+          "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 7",
+          "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 7"
+        }
+      ]
     },
     {
       "name": "済州クルーズターミナルへ帰着（済州港 — 北）",
@@ -2077,7 +2419,7 @@
             "name": "城山日出峰（ソンサン・イルチュルボン）",
             "category": "ユネスコ世界自然遺産 — スルツェイ式水成火山錐",
             "description": "**城山日出峰**は5,000年前のスルツェイ式水成火山凝灰岩錐 — 水中の玄武岩噴火が海面を突き破り、溶岩が海水と急速に冷却・粉砕されて高い岸壁と99の岩峰を持つ独特の火口縁を形成した稀有な地形。**ユネスコ世界自然遺産2007年＋バイオスフィアリザーブ＋グローバルジオパーク**という3重ユネスコ指定を持つ済州の旗艦見どころ。山頂火口縁への往復は約30〜40分、頂上からは東シナ海・城山漁村・牛島が一望できます。入場料：**大人₩5,000**。毎月**第1月曜閉鎖**（環境保護輪番制）。",
-            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+            "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
             "highlights": [
               "**ユネスコトリプル指定**（世界自然遺産2007＋バイオスフィア＋グローバルジオパーク）",
               "99の岩峰を持つ5,000年前の水成火山の山頂火口縁",
@@ -2103,7 +2445,78 @@
                 "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
                 "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "location": "城山日出峰（ソンサン・イルチュルボン）",
+                "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 1",
+                "alt": "城山日出峰（ソンサン・イルチュルボン） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "location": "城山日出峰（ソンサン・イルチュルボン）",
+                "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 2",
+                "alt": "城山日出峰（ソンサン・イルチュルボン） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "location": "城山日出峰（ソンサン・イルチュルボン）",
+                "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 3",
+                "alt": "城山日出峰（ソンサン・イルチュルボン） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "location": "城山日出峰（ソンサン・イルチュルボン）",
+                "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 4",
+                "alt": "城山日出峰（ソンサン・イルチュルボン） — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "location": "城山日出峰（ソンサン・イルチュルボン）",
+                "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 5",
+                "alt": "城山日出峰（ソンサン・イルチュルボン） — gallery image 5"
+              }
+            ]
           },
           {
             "number": 3,
@@ -2112,7 +2525,7 @@
             "name": "ソプチコジ（セプジコジ — 東岬）",
             "category": "海岸の岬 — Kドラマロケ地・城山パノラマ",
             "description": "**ソプチコジ**は、済州東海岸に細長く突き出た火山性の岬です。地名は「ソプチ（狭い土地、またはこの地域の古い地名）」と、「コジ（岬を意味する済州方言）」に由来すると説明されます。海岸遊歩道からは城山日出峰を正面に望み、黒い玄武岩の崖と青い海が続きます。ドラマ『オールイン』などのロケ地としても知られ、岬の先には灯台と朝鮮時代の烽火台跡があります。海風が強いことが多いため、歩きやすい靴と羽織ものをご用意ください。",
-            "image": "https://images.unsplash.com/photo-1548625149-fc4a29cf7092",
+            "image": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
             "highlights": [
               "**2.1kmの断崖縁トレイル**（約30分）— 城山日出峰の正面パノラマ",
               "**Kドラマロケ地** — 『オールイン（2003年）』『愛の不時着（2019年）』",
@@ -2137,7 +2550,91 @@
                 "Tadao Ando Architect & Associates — Phoenix Island project documentation",
                 "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+                "location": "ソプチコジ（セプジコジ — 東岬）",
+                "caption": "ソプチコジ（セプジコジ — 東岬） — photo 1",
+                "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+                "location": "ソプチコジ（セプジコジ — 東岬）",
+                "caption": "ソプチコジ（セプジコジ — 東岬） — photo 2",
+                "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+                "location": "ソプチコジ（セプジコジ — 東岬）",
+                "caption": "ソプチコジ（セプジコジ — 東岬） — photo 3",
+                "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+                "location": "ソプチコジ（セプジコジ — 東岬）",
+                "caption": "ソプチコジ（セプジコジ — 東岬） — photo 4",
+                "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+                "location": "ソプチコジ（セプジコジ — 東岬）",
+                "caption": "ソプチコジ（セプジコジ — 東岬） — photo 5",
+                "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+                "location": "ソプチコジ（セプジコジ — 東岬）",
+                "caption": "ソプチコジ（セプジコジ — 東岬） — photo 6",
+                "alt": "ソプチコジ（セプジコジ — 東岬） — gallery image 6"
+              }
+            ]
           },
           {
             "name": "昼食 — 東済州（地元海産物または黒豚）",
@@ -2175,7 +2672,7 @@
             "name": "城邑民俗村（ソンウプ・ミンソクマウル）",
             "category": "朝鮮時代の生きた古城郭都市 — 世宗大王時代創建（1423年）",
             "description": "**城邑民俗村**は**世宗大王の治世（1423年）に鄭義縣として建設された朝鮮時代の城郭都市** — 済州の三行政区の一つ。韓国でほぼ唯一の**現存する朝鮮時代の城郭都市**で、住民が現在も実際に居住する「生きた民俗村」。石の城壁・茅葺き屋根の家・**700〜1,000年の樹齢のエノキ**（天然記念物）・伝統的な石橋が現存。地元のガイドが済州のトルハルバン（石のおじいさん像）伝説と村の歴史を解説。**入場無料**。",
-            "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+            "image": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
             "highlights": [
               "**1423年創建**の現存する朝鮮時代の城郭都市、住民が今も生活",
               "**700〜1,000年のエノキ**（天然記念物）が村の入口に",
@@ -2202,7 +2699,104 @@
                 "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
                 "Jeju Folklore Society — Omegisul brewing tradition documentation"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+                "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+                "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 1",
+                "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+                "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+                "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 2",
+                "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+                "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+                "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 3",
+                "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+                "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+                "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 4",
+                "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+                "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+                "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 5",
+                "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+                "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+                "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 6",
+                "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+                "location": "城邑民俗村（ソンウプ・ミンソクマウル）",
+                "caption": "城邑民俗村（ソンウプ・ミンソクマウル） — photo 7",
+                "alt": "城邑民俗村（ソンウプ・ミンソクマウル） — gallery image 7"
+              }
+            ]
           },
           {
             "name": "済州クルーズターミナルへ帰着（済州港 — 北）",

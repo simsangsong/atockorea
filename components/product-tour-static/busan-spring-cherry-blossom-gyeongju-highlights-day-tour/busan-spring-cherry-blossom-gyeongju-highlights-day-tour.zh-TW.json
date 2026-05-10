@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "釜山出發慶州春季櫻花精華日遊（3/28–4/10）| AtoC Korea",
     "metaDescription": "8.5小時釜山出發春季櫻花班車：普門湖8公里櫻花環湖、大陵苑石牆路、佛國寺櫻花。僅3月末至4月初運營。",
-    "ogImage": "",
+    "ogImage": "https://www.atockorea.com/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "primaryKeywords": [
       "慶州櫻花旅遊從釜山",
       "普門湖櫻花一日遊",
@@ -33,8 +33,8 @@
       "世界遺產景點",
       "釜山接送"
     ],
-    "heroImage": "",
-    "thumbnail": "",
+    "heroImage": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+    "thumbnail": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "priceLabel": "按人計費 — 請於預訂時確認",
     "shortCardDescription": "從釜山出發的8.5小時季節班車遊，專程前往慶州兩大春日櫻花勝地：佛國寺櫻花入口道路（UNESCO遺址，2023年起免費）及普門湖8公里櫻花環湖步道（9000棵櫻花樹）。3月末至4月初期間運營。",
     "tags": [
@@ -54,7 +54,7 @@
     "priceNote": "春季限定賞花小型團體行程（慶州春日賞花 + UNESCO文化遺產一日遊）。AtoC Korea直接銷售；相較於合作業者底價享有10%折扣。"
   },
   "hero": {
-    "imageUrl": "",
+    "imageUrl": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "imagePosition": "center 50%",
     "tagline": "從普門湖8公里賞櫻步道到大陵苑石牆路的野櫻林——慶州最美的春日兩站組合",
     "pills": [
@@ -126,58 +126,44 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
-      "alt": "慶州普門湖粉色花瓣飄落的賞櫻步道",
-      "caption": "普門湖 — 8公里賞櫻大道",
-      "location": "普門湖",
-      "atmosphere": "浪漫春日湖畔風光"
+      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+      "location": "瞻星臺 + 大陵苑古墳群",
+      "alt": "瞻星臺 + 大陵苑古墳群 — gallery image 1",
+      "caption": "瞻星臺 + 大陵苑古墳群 — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1583244694751-9ce8b1d2b39a?w=1200&q=80",
-      "alt": "大陵苑新羅古墳群四周盛開的賞櫻樹",
-      "caption": "大陵苑石牆路賞櫻",
-      "location": "大陵苑古墳群",
-      "atmosphere": "古蹟春日氛圍"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "location": "佛國寺（UNESCO世界遺產）",
+      "alt": "佛國寺（UNESCO世界遺產） — gallery image 1",
+      "caption": "佛國寺（UNESCO世界遺產） — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601822336970-8af7c01f3a91?w=1200&q=80",
-      "alt": "7世紀慶州瞻星臺石造觀測塔",
-      "caption": "瞻星臺（公元647年，東亞現存最古老天文臺）",
-      "location": "瞻星臺",
-      "atmosphere": "古代科技遺蹟"
+      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+      "location": "瞻星臺 + 大陵苑古墳群",
+      "alt": "瞻星臺 + 大陵苑古墳群 — gallery image 2",
+      "caption": "瞻星臺 + 大陵苑古墳群 — photo 2"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601649308334-2cc8e6f0e21f?w=1200&q=80",
-      "alt": "佛國寺石橋與石塔",
-      "caption": "佛國寺（UNESCO世界遺產，1995年）",
-      "location": "佛國寺",
-      "atmosphere": "靈性文化氛圍"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+      "location": "佛國寺（UNESCO世界遺產）",
+      "alt": "佛國寺（UNESCO世界遺產） — gallery image 2",
+      "caption": "佛國寺（UNESCO世界遺產） — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1614853128977-b1f1d7e64fae?w=1200&q=80",
-      "alt": "普門亭與湖面倒映的賞櫻樹",
-      "caption": "普門亭（CNN韓國最美50處地點之一）",
-      "location": "普門湖",
-      "atmosphere": "代表性湖畔景觀"
-    },
-    {
-      "id": "g6",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1611348586804-61bf6c080437?w=1200&q=80",
-      "alt": "接駁巴士旅客在賞櫻樹旁",
-      "caption": "釜山出發雙語接駁服務",
-      "location": "接駁車",
-      "atmosphere": "輕鬆從容的團體旅行"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "location": "佛國寺（UNESCO世界遺產）",
+      "alt": "佛國寺（UNESCO世界遺產） — gallery image 3",
+      "caption": "佛國寺（UNESCO世界遺產） — photo 3"
     }
   ],
   "itineraryStops": [
@@ -332,7 +318,40 @@
           "daereungwon_tomb_complex"
         ],
         "compound_stop_note": "Cheomseongdae and Daereungwon are co-located in the Gyeongju Historic Areas (UNESCO 2000), ~5-min walk apart, visited together as a single ~75-90 min itinerary block but tracked separately in the KB. Cheomseongdae (NT 31, 9.17m / 27 layers / 362 stones — oldest astronomical observatory in East Asia, Queen Seondeok era 632-647) is the primary anchor; Daereungwon (23 Silla royal tombs incl. Cheonmachong NT 155 with 11,526 artifacts) is the secondary."
-      }
+      },
+      "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+      "images": [
+        "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+        "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+          "location": "瞻星臺 + 大陵苑古墳群",
+          "caption": "瞻星臺 + 大陵苑古墳群 — photo 1",
+          "alt": "瞻星臺 + 大陵苑古墳群 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+          "location": "瞻星臺 + 大陵苑古墳群",
+          "caption": "瞻星臺 + 大陵苑古墳群 — photo 2",
+          "alt": "瞻星臺 + 大陵苑古墳群 — gallery image 2"
+        }
+      ]
     },
     {
       "number": 4,
@@ -420,7 +439,53 @@
           "VisitKorea",
           "Visit Gyeongju official"
         ]
-      }
+      },
+      "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "images": [
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "location": "佛國寺（UNESCO世界遺產）",
+          "caption": "佛國寺（UNESCO世界遺產） — photo 1",
+          "alt": "佛國寺（UNESCO世界遺產） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "location": "佛國寺（UNESCO世界遺產）",
+          "caption": "佛國寺（UNESCO世界遺產） — photo 2",
+          "alt": "佛國寺（UNESCO世界遺產） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "location": "佛國寺（UNESCO世界遺產）",
+          "caption": "佛國寺（UNESCO世界遺產） — photo 3",
+          "alt": "佛國寺（UNESCO世界遺產） — gallery image 3"
+        }
+      ]
     },
     {
       "number": 6,
@@ -1371,7 +1436,40 @@
                 "daereungwon_tomb_complex"
               ],
               "compound_stop_note": "Cheomseongdae and Daereungwon are co-located in the Gyeongju Historic Areas (UNESCO 2000), ~5-min walk apart, visited together as a single ~75-90 min itinerary block but tracked separately in the KB. Cheomseongdae (NT 31, 9.17m / 27 layers / 362 stones — oldest astronomical observatory in East Asia, Queen Seondeok era 632-647) is the primary anchor; Daereungwon (23 Silla royal tombs incl. Cheonmachong NT 155 with 11,526 artifacts) is the secondary."
-            }
+            },
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+            "images": [
+              "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+              "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+                "location": "瞻星臺 + 大陵苑古墳群",
+                "caption": "瞻星臺 + 大陵苑古墳群 — photo 1",
+                "alt": "瞻星臺 + 大陵苑古墳群 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+                "location": "瞻星臺 + 大陵苑古墳群",
+                "caption": "瞻星臺 + 大陵苑古墳群 — photo 2",
+                "alt": "瞻星臺 + 大陵苑古墳群 — gallery image 2"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1458,7 +1556,53 @@
                 "VisitKorea",
                 "Visit Gyeongju official"
               ]
-            }
+            },
+            "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+            "images": [
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "location": "佛國寺（UNESCO世界遺產）",
+                "caption": "佛國寺（UNESCO世界遺產） — photo 1",
+                "alt": "佛國寺（UNESCO世界遺產） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "location": "佛國寺（UNESCO世界遺產）",
+                "caption": "佛國寺（UNESCO世界遺產） — photo 2",
+                "alt": "佛國寺（UNESCO世界遺產） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "location": "佛國寺（UNESCO世界遺產）",
+                "caption": "佛國寺（UNESCO世界遺產） — photo 3",
+                "alt": "佛國寺（UNESCO世界遺產） — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,

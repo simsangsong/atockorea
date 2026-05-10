@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "釜山：梅・桜ツアー 梁山＋慶州 | AtoC Korea",
     "metaDescription": "釜山発・梅＋桜の両方を楽しむ8.5時間ツアー：通度寺（ユネスコ山寺）＋慈蔵梅（350年の紅梅）→仏国寺（ユネスコ）→普門湖（桜）。2月25日〜4月10日のみ催行。",
-    "ogImage": "",
+    "ogImage": "https://www.atockorea.com/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
     "primaryKeywords": [
       "釜山梅桜ツアー",
       "通度寺梅ツアー",
@@ -34,8 +34,8 @@
       "ユネスコ",
       "春限定"
     ],
-    "heroImage": "",
-    "thumbnail": "",
+    "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+    "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
     "priceLabel": "料金は予約時にご確認ください",
     "shortCardDescription": "梅と桜の両方をカバーする釜山発の春限定8.5時間ツアー — 通度寺（ユネスコ山寺＋350年の慈蔵梅）→ウォンドン水芹サムギョプサル昼食（梅シーズン）→仏国寺（ユネスコ世界遺産）→普門湖（桜）。2月25日〜4月10日のみ催行。",
     "tags": [
@@ -57,7 +57,7 @@
     "priceNote": "少人数ツアーの価格は予約時にご確認ください。春限定ツアー（2月25日〜4月10日のみ催行）。"
   },
   "hero": {
-    "imageUrl": "",
+    "imageUrl": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
     "imagePosition": "center 50%",
     "tagline": "韓国の春をひとつのツアーで — ユネスコ山寺の350年の紅梅から慶州の桜並木まで",
     "pills": [
@@ -129,58 +129,28 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1571156425562-12341e7c9aae?w=1200&q=80",
-      "alt": "通度寺を背景にした梅の枝",
-      "caption": "通度寺自杖梅（樹齢350年の紅梅）",
-      "location": "通度寺（梁山市、慶南）",
-      "atmosphere": "春の聖地 — 梅の花と千年の仏教遺産"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+      "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 1",
+      "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601901574849-2ce39f2e0867?w=1200&q=80",
-      "alt": "通度寺大雄殿と松林の参道",
-      "caption": "通度寺大雄殿（国宝第290号）",
-      "location": "通度寺（梁山市、慶南）",
-      "atmosphere": "ユネスコ山寺 — 韓国仏教三宝寺院の仏宝"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+      "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+      "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 2",
+      "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 2"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601822336970-8af7c01f3a91?w=1200&q=80",
-      "alt": "ウォンドン梁山の梅の花と鉄路",
-      "caption": "ウォンドン梅の花村 — 線路と梅の花",
-      "location": "ウォンドン面（梁山市、慶南）",
-      "atmosphere": "梅花と線路 — 懐かしい春の里山風景"
-    },
-    {
-      "id": "g4",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601649308334-2cc8e6f0e21f?w=1200&q=80",
-      "alt": "背景に桜が咲く仏国寺の石塔",
-      "caption": "仏国寺の桜並木",
-      "location": "仏国寺（吐含山、慶州）",
-      "atmosphere": "ユネスコ世界遺産 — 桜と仏国寺の石段橋"
-    },
-    {
-      "id": "g5",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1614853128977-b1f1d7e64fae?w=1200&q=80",
-      "alt": "普門湖の桜並木と東屋",
-      "caption": "普門湖桜ループ",
-      "location": "普門湖（慶州）",
-      "atmosphere": "春の慶州 — 9,000本の桜が咲く湖畔"
-    },
-    {
-      "id": "g6",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1567427361984-0cbe7396fc6c?w=1200&q=80",
-      "alt": "ミナリサムギョプサル（セリと一緒に焼いた豚バラ肉）",
-      "caption": "ウォンドン水芹サムギョプサル（季節の地元料理）",
-      "location": "ウォンドン面（梁山市、慶南）",
-      "atmosphere": "春の風物詩グルメ — ミナリ・サムギョプサル"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+      "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 3",
+      "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 3"
     }
   ],
   "itineraryStops": [
@@ -350,7 +320,53 @@
           "VisitKorea",
           "Visit Gyeongju official"
         ]
-      }
+      },
+      "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "images": [
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+          "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 1",
+          "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+          "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 2",
+          "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+          "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 3",
+          "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 3"
+        }
+      ]
     },
     {
       "number": 5,
@@ -1324,7 +1340,53 @@
                 "VisitKorea",
                 "Visit Gyeongju official"
               ]
-            }
+            },
+            "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+            "images": [
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+                "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 1",
+                "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+                "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 2",
+                "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+                "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 3",
+                "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 3"
+              }
+            ]
           },
           {
             "number": 5,

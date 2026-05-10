@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "水原华城·卧牛精舍·星野图书馆一日游 | AtoC Korea",
     "metaDescription": "首尔出发9至10小时游：UNESCO水原华城、水原星野图书馆、卧牛精舍山寺体验。",
-    "ogImage": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
+    "ogImage": "https://www.atockorea.com/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
     "primaryKeywords": [
       "水原华城一日游",
       "卧牛精舍龙仁",
@@ -32,8 +32,8 @@
       "历史遗迹＋现代一日游",
       "门票已包含"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
-    "thumbnail": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=600&q=80",
+    "heroImage": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+    "thumbnail": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
     "priceLabel": "每人 US$48.60 起 （九折优惠，原价$54）",
     "shortCardDescription": "从首尔出发游览三大截然不同韩国体验的小团一日游：水原华城（UNESCO）、卧牛精舍（藏于首尔近郊山间的古刹）及星际图书馆。全程约10小时。",
     "tags": [
@@ -55,7 +55,7 @@
     "priceNote": "价格以 AtoC Korea 官网直售价为准。"
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
+    "imageUrl": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
     "imagePosition": "center 50%",
     "tagline": "18世纪UNESCO城墙要塞、最上镜的韩国当代图书馆、山间宁静融合佛寺——韩国三面，一日全览",
     "pills": [
@@ -132,49 +132,76 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200&q=80",
-      "alt": "水原华城华虹门7拱水门全景",
-      "caption": "水原华城UNESCO世界文化遗产——华虹门7拱水门，18世纪朝鲜最完整的城墙要塞城市",
-      "location": "水原，京畿道",
-      "atmosphere": "水原华城UNESCO世界文化遗产——华虹门7拱水门，18世纪朝鲜最完整的城墙要塞城市是本路线的代表性停靠点，适合拍照并感受现场氛围。"
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+      "location": "星空图书馆水原（星空水原购物中心）",
+      "alt": "星空图书馆水原（星空水原购物中心） — gallery image 1",
+      "caption": "星空图书馆水原（星空水原购物中心） — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=1200&q=80",
-      "alt": "卧牛精舍佛寺印度白檀木卧佛",
-      "caption": "卧牛精舍佛寺——3米高印度白檀木雕卧佛，全球最大木雕卧佛，1970年韩朝统一祈愿寺",
-      "location": "卧牛精舍，龙仁，京畿道",
-      "atmosphere": "新世界2024年1月开业的旗舰第二代星际；免费入场；黑胶唱片欣赏座席"
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+      "location": "卧牛精舍佛寺",
+      "alt": "卧牛精舍佛寺 — gallery image 1",
+      "caption": "卧牛精舍佛寺 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1200&q=80",
-      "alt": "卧牛精舍3,000尊亚洲佛像步道",
-      "caption": "卧牛精舍山间步道——来自亚洲各佛教国家的3,000尊佛像依山而立，泛亚洲融合圣地",
-      "location": "卧牛精舍，龙仁，京畿道",
-      "atmosphere": "卧牛精舍山间步道——来自亚洲各佛教国家的3是本路线的代表性停靠点，适合拍照并感受现场氛围。"
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+      "location": "星空图书馆水原（星空水原购物中心）",
+      "alt": "星空图书馆水原（星空水原购物中心） — gallery image 2",
+      "caption": "星空图书馆水原（星空水原购物中心） — photo 2"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
-      "alt": "星空图书馆水原22米书架中庭全景",
-      "caption": "星空图书馆水原——22米高圆柱形书架中庭，韩国最受欢迎的室内拍照景点之一",
-      "location": "星空水原购物中心，水原",
-      "atmosphere": "长安门至华西门1公里城墙步道；陡峭坡度；敌台与将台"
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+      "location": "星空图书馆水原（星空水原购物中心）",
+      "alt": "星空图书馆水原（星空水原购物中心） — gallery image 3",
+      "caption": "星空图书馆水原（星空水原购物中心） — photo 3"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
-      "alt": "华城行宫彩绘屋檐的传统韩式木质建筑围绕石板庭院排列",
-      "caption": "华城行宫庭院",
-      "location": "水原华城城墙内的华城行宫",
-      "atmosphere": "韩国最大的行宫（临时行宫）；正祖的临时住所；从19世纪火灾中复原"
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+      "location": "星空图书馆水原（星空水原购物中心）",
+      "alt": "星空图书馆水原（星空水原购物中心） — gallery image 4",
+      "caption": "星空图书馆水原（星空水原购物中心） — photo 4"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+      "location": "卧牛精舍佛寺",
+      "alt": "卧牛精舍佛寺 — gallery image 2",
+      "caption": "卧牛精舍佛寺 — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+      "location": "卧牛精舍佛寺",
+      "alt": "卧牛精舍佛寺 — gallery image 3",
+      "caption": "卧牛精舍佛寺 — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+      "location": "卧牛精舍佛寺",
+      "alt": "卧牛精舍佛寺 — gallery image 4",
+      "caption": "卧牛精舍佛寺 — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
+      "location": "卧牛精舍佛寺",
+      "alt": "卧牛精舍佛寺 — gallery image 5",
+      "caption": "卧牛精舍佛寺 — photo 5"
     }
   ],
   "itineraryStops": [
@@ -295,7 +322,66 @@
           "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
           "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
         ]
-      }
+      },
+      "image": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+      "images": [
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+          "location": "星空图书馆水原（星空水原购物中心）",
+          "caption": "星空图书馆水原（星空水原购物中心） — photo 1",
+          "alt": "星空图书馆水原（星空水原购物中心） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+          "location": "星空图书馆水原（星空水原购物中心）",
+          "caption": "星空图书馆水原（星空水原购物中心） — photo 2",
+          "alt": "星空图书馆水原（星空水原购物中心） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+          "location": "星空图书馆水原（星空水原购物中心）",
+          "caption": "星空图书馆水原（星空水原购物中心） — photo 3",
+          "alt": "星空图书馆水原（星空水原购物中心） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+          "location": "星空图书馆水原（星空水原购物中心）",
+          "caption": "星空图书馆水原（星空水原购物中心） — photo 4",
+          "alt": "星空图书馆水原（星空水原购物中心） — gallery image 4"
+        }
+      ]
     },
     {
       "number": 3,
@@ -356,7 +442,79 @@
           "Wikipedia (Waujeongsa — pan-Asian Buddhist syncretism + Indravarna pagoda + Taepyeongjong 8-ton bell)",
           "Korea Buddhism Yeonhwasan/Lotus-Mountain regional guide (Waujeongsa  = 'reclining cow' + sandalwood reclining Buddha origin)"
         ]
-      }
+      },
+      "image": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+      "images": [
+        "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+        "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+        "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+        "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+        "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+          "location": "卧牛精舍佛寺",
+          "caption": "卧牛精舍佛寺 — photo 1",
+          "alt": "卧牛精舍佛寺 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+          "location": "卧牛精舍佛寺",
+          "caption": "卧牛精舍佛寺 — photo 2",
+          "alt": "卧牛精舍佛寺 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+          "location": "卧牛精舍佛寺",
+          "caption": "卧牛精舍佛寺 — photo 3",
+          "alt": "卧牛精舍佛寺 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+          "location": "卧牛精舍佛寺",
+          "caption": "卧牛精舍佛寺 — photo 4",
+          "alt": "卧牛精舍佛寺 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
+          "location": "卧牛精舍佛寺",
+          "caption": "卧牛精舍佛寺 — photo 5",
+          "alt": "卧牛精舍佛寺 — gallery image 5"
+        }
+      ]
     }
   ],
   "routeFlowStops": [
@@ -1340,7 +1498,66 @@
                 "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
                 "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
               ]
-            }
+            },
+            "image": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+            "images": [
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+                "location": "星空图书馆水原（星空水原购物中心）",
+                "caption": "星空图书馆水原（星空水原购物中心） — photo 1",
+                "alt": "星空图书馆水原（星空水原购物中心） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+                "location": "星空图书馆水原（星空水原购物中心）",
+                "caption": "星空图书馆水原（星空水原购物中心） — photo 2",
+                "alt": "星空图书馆水原（星空水原购物中心） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+                "location": "星空图书馆水原（星空水原购物中心）",
+                "caption": "星空图书馆水原（星空水原购物中心） — photo 3",
+                "alt": "星空图书馆水原（星空水原购物中心） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+                "location": "星空图书馆水原（星空水原购物中心）",
+                "caption": "星空图书馆水原（星空水原购物中心） — photo 4",
+                "alt": "星空图书馆水原（星空水原购物中心） — gallery image 4"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1399,7 +1616,79 @@
                 "Wikipedia (Waujeongsa — pan-Asian Buddhist syncretism + Indravarna pagoda + Taepyeongjong 8-ton bell)",
                 "Korea Buddhism Yeonhwasan/Lotus-Mountain regional guide (Waujeongsa  = 'reclining cow' + sandalwood reclining Buddha origin)"
               ]
-            }
+            },
+            "image": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+            "images": [
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+                "location": "卧牛精舍佛寺",
+                "caption": "卧牛精舍佛寺 — photo 1",
+                "alt": "卧牛精舍佛寺 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+                "location": "卧牛精舍佛寺",
+                "caption": "卧牛精舍佛寺 — photo 2",
+                "alt": "卧牛精舍佛寺 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+                "location": "卧牛精舍佛寺",
+                "caption": "卧牛精舍佛寺 — photo 3",
+                "alt": "卧牛精舍佛寺 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+                "location": "卧牛精舍佛寺",
+                "caption": "卧牛精舍佛寺 — photo 4",
+                "alt": "卧牛精舍佛寺 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
+                "location": "卧牛精舍佛寺",
+                "caption": "卧牛精舍佛寺 — photo 5",
+                "alt": "卧牛精舍佛寺 — gallery image 5"
+              }
+            ]
           }
         ]
       }

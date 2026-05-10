@@ -14,14 +14,14 @@
       "Jeju Hallasan snow",
       "Jeju December tour"
     ],
-    "ogImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+    "ogImage": "https://www.atockorea.com/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
     "title": "Jeju Winter Tour: Tangerine, Snow & Camellia | AtoC Korea",
     "description": "Jeju winter southwest small-group tour: Hallasan snow hike → tangerine farm picking (Hallabong peak Dec–Feb) → Camellia Hill camellia season → Jusangjeolli cliff → Cheonjeyeon Waterfall. Dec–Feb only."
   },
   "catalog_card": {
-    "thumbnail": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+    "thumbnail": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
     "title": "Jeju Winter Southwest Tour: Tangerine Picking, Snow & Camellia",
-    "priceLabel": "Price varies — confirm at booking",
+    "priceLabel": "",
     "shortCardDescription": "A seasonal winter day-tour of southwest Jeju (December through February) built around the three things only Jeju does well in winter: snow on Hallasan's slopes, red camellias in full bloom at Camellia Hill, and pick-your-own Jeju tangerines (gyul) at a working orchard. The route also covers Cheonjeyeon Falls, Jusangjeolli columnar cliffs, and the Osulloc Tea Museum. Hotel pickup in Jeju City, English/Chinese-speaking licensed guide.",
     "tags": [
       "Small group",
@@ -48,7 +48,7 @@
       "Camellia",
       "Snow"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800"
+    "heroImage": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp"
   },
   "headlineLine1": "Snow on Hallasan, red camellia in full bloom,",
   "headlineLine2": "and tangerines you pick yourself — winter Jeju in 9 hours",
@@ -56,12 +56,12 @@
     "amountLabel": "",
     "currency": "USD",
     "per": "person",
-    "priceSource": "AtoC Korea direct rate",
-    "priceNote": "Final rate is confirmed after selecting your travel date and group size. Direct booking is handled by AtoC Korea.",
-    "discountPercent": 10
+    "priceSource": "",
+    "priceNote": "",
+    "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1600",
+    "imageUrl": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
     "imagePosition": "center 35%",
     "tagline": "The three things only Jeju does well in winter — snow, camellia, and citrus",
     "pills": [
@@ -138,49 +138,76 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
-      "alt": "Snow-dusted ridgelines of Hallasan visible from a southwest viewpoint, with low forest in the foreground",
-      "caption": "Hallasan winter scenery from the southwest viewpoint",
-      "location": "Hallasan 1100 Road or Eorimok trailhead, central Jeju",
-      "atmosphere": "Crisp winter mountain air; snow-capped ridges visible even when coastal Jeju has none"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "Camellia Hill (year-round signature flower garden)",
+      "alt": "Camellia Hill (year-round signature flower garden) — gallery image 1",
+      "caption": "Camellia Hill (year-round signature flower garden) — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "Garden path lined with mature camellia trees in full red bloom",
-      "caption": "Camellia Hill in peak winter bloom (December-February)",
-      "location": "Camellia Hill, Andeok, southern Jeju",
-      "atmosphere": "Winter peak bloom across 6,000+ camellia trees and 500 varieties"
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "Daepo Jusangjeolli Cliff",
+      "alt": "Daepo Jusangjeolli Cliff — gallery image 1",
+      "caption": "Daepo Jusangjeolli Cliff — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "Hands picking ripe orange tangerines from a low tree in a Jeju orchard",
-      "caption": "Jeju gyul (tangerine) orchard winter harvest",
-      "location": "A Jeju southwest tangerine orchard (specific farm rotates)",
-      "atmosphere": "Hands-on Jeju agricultural experience; clippers and baskets provided"
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "Cheonjeyeon Waterfall",
+      "alt": "Cheonjeyeon Waterfall — gallery image 1",
+      "caption": "Cheonjeyeon Waterfall — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "Hexagonal columnar lava cliffs rising from a winter sea",
-      "caption": "Daepo Jusangjeolli columnar lava cliffs",
-      "location": "Daepo, Jungmun coast, southern Jeju",
-      "atmosphere": "UNESCO Geopark winter coastline; dramatic surf at the cliff base"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+      "location": "Camellia Hill (year-round signature flower garden)",
+      "alt": "Camellia Hill (year-round signature flower garden) — gallery image 2",
+      "caption": "Camellia Hill (year-round signature flower garden) — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "Three-tier waterfall in a forested valley with the Seonimgyo Bridge crossing above",
-      "caption": "Cheonjeyeon Waterfall and the Seonimgyo Bridge of Seven Nymphs",
-      "location": "Cheonjeyeon Falls, Seogwipo, southern Jeju",
-      "atmosphere": "Forest valley waterfall stop; the bridge depicts seven heavenly nymphs in legend"
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "Daepo Jusangjeolli Cliff",
+      "alt": "Daepo Jusangjeolli Cliff — gallery image 2",
+      "caption": "Daepo Jusangjeolli Cliff — photo 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "Daepo Jusangjeolli Cliff",
+      "alt": "Daepo Jusangjeolli Cliff — gallery image 3",
+      "caption": "Daepo Jusangjeolli Cliff — photo 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "Daepo Jusangjeolli Cliff",
+      "alt": "Daepo Jusangjeolli Cliff — gallery image 4",
+      "caption": "Daepo Jusangjeolli Cliff — photo 4"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "location": "Cheonjeyeon Waterfall",
+      "alt": "Cheonjeyeon Waterfall — gallery image 2",
+      "caption": "Cheonjeyeon Waterfall — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+      "location": "Cheonjeyeon Waterfall",
+      "alt": "Cheonjeyeon Waterfall — gallery image 3",
+      "caption": "Cheonjeyeon Waterfall — photo 3"
     }
   ],
   "itineraryStops": [
@@ -246,7 +273,7 @@
         ]
       },
       "smartNotes": {
-        "photo": "Boardwalk leading into the wetland with Hallasan in the distance is the iconic shot; autumn (October) gives golden grass colors",
+        "photo": "Snow-covered dwarf birch trees along the upper ridge are the iconic winter shot; arrive before 10:00 for undisturbed snowfields",
         "facilities": "Visitor center with snacks and information",
         "tip": "Bring layers — temperature is 5–10°C cooler than coastal Jeju; check road conditions in winter; combine with Cheonjeyeon Falls if descending south"
       },
@@ -255,10 +282,10 @@
         "parking": "Free parking at visitor center"
       },
       "visitBasics": {
-        "hours": "Open 24 hours (boardwalk); visitor center 09:00–18:00",
+        "hours": "Entry allowed from sunrise to 13:00 (last entry cutoff in winter); no summit access in winter",
         "closed": "1100 Highway may close temporarily during heavy snow (Dec–Feb)",
         "admission": "Free",
-        "walking": "Easy — 1 km wooden boardwalk; flat, accessible"
+        "walking": "Moderate–Strenuous — 4.7 km one-way to Witseoreum Shelter (1,700 m elevation); return same route; allow 5–6 hours round-trip"
       }
     },
     {
@@ -288,7 +315,7 @@
           "VisitKorea / english.visitkorea.or.kr (Jeju citrus history; royal-gift tradition since Baekje)",
           "Visit Jeju (variety calendar; cultivation tradition)",
           "Jeju Provincial Government (Hallabong + Cheonhyehyang + Hwanggeumhyang + Red Hyang varieties)",
-          "third-party booking site / Trazy / Mindtrip (farm rotation: Gyulhyangi, Bong Bong, Choenamdan, Jeju Southernmost, Jejue In; pricing ₩5,000–15,000)",
+          "third-party booking site / / (farm rotation: Gyulhyangi, Bong Bong, Choenamdan, Jeju Southernmost, Jejue In; pricing ₩5,000–15,000)",
           "Korea Agricultural GAP Certification (Jeju Southernmost Theme Park year-round greenhouse)"
         ]
       },
@@ -334,7 +361,7 @@
       "name": "Camellia Hill (year-round signature flower garden)",
       "category": "Botanical Garden — Largest Camellia Arboretum in the East",
       "description": "**Camellia Hill** is a large botanical garden in Andeok known for camellias, seasonal flowers, photo paths, and greenhouse-style garden spaces. VisitJeju describes the park as holding about 6,000 camellia trees and over 500 species of wildflowers, trees, and other plants. In winter, camellias are the main highlight, and the garden offers a colorful contrast to Hallasan's colder mountain scenery.",
-      "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+      "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "highlights": [
         "**172,000 m²** — largest camellia arboretum in the East",
         "**6,000 trees / 500+ species from 80 countries** — accumulated 30+ years",
@@ -378,9 +405,41 @@
       "visitBasics": {
         "hours": "Summer (Jun–Aug) 08:30–19:00; Spring/Fall 08:30–18:30; Winter 08:30–17:30 (varies seasonally)",
         "closed": "Open year-round",
-        "admission": "Adult 10,000 KRW / Teen 8,000 KRW / Child 7,000 KRW (approximate)",
+        "admission": "Adult ₩12,000 / Teen & Senior ₩10,000 / Child (4–11) ₩9,000 / Under 3 free",
         "walking": "Easy to moderate — gentle hill paths; mostly stroller-accessible"
-      }
+      },
+      "images": [
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "location": "Camellia Hill (year-round signature flower garden)",
+          "caption": "Camellia Hill (year-round signature flower garden) — photo 1",
+          "alt": "Camellia Hill (year-round signature flower garden) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "location": "Camellia Hill (year-round signature flower garden)",
+          "caption": "Camellia Hill (year-round signature flower garden) — photo 2",
+          "alt": "Camellia Hill (year-round signature flower garden) — gallery image 2"
+        }
+      ]
     },
     {
       "number": 6,
@@ -389,7 +448,7 @@
       "name": "Daepo Jusangjeolli Cliff",
       "category": "Volcanic Coastline — Hexagonal Columnar-Jointed Lava",
       "description": "**Daepo Jusangjeolli Cliff** is a dramatic stretch of columnar basalt on the Jungmun coast. The stone pillars were formed as lava cooled and contracted, creating the polygonal columns seen along the sea. The columns are commonly described as 30-40 m high and continue for about 1 km along the coast. Visitors use a clifftop boardwalk and viewing decks to see the columns, ocean, and wave action. On windy or high-tide days, waves may create strong spray, so the guide may adjust photo time for safety and comfort.",
-      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "**Natural Monument No. 443** — designated **2005-01-06**, the most recent Jeju coastal NM",
         "Columns rise **30–40 m**, packed in **5- to 7-sided polygons** (mostly hexagons) along **1 km** of coastline",
@@ -435,7 +494,65 @@
         "closed": "Open year-round (weather-dependent)",
         "admission": "Adult 2,000 KRW / Child 1,000 KRW (low fee)",
         "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
-      }
+      },
+      "images": [
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "Daepo Jusangjeolli Cliff",
+          "caption": "Daepo Jusangjeolli Cliff — photo 1",
+          "alt": "Daepo Jusangjeolli Cliff — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "Daepo Jusangjeolli Cliff",
+          "caption": "Daepo Jusangjeolli Cliff — photo 2",
+          "alt": "Daepo Jusangjeolli Cliff — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "Daepo Jusangjeolli Cliff",
+          "caption": "Daepo Jusangjeolli Cliff — photo 3",
+          "alt": "Daepo Jusangjeolli Cliff — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "Daepo Jusangjeolli Cliff",
+          "caption": "Daepo Jusangjeolli Cliff — photo 4",
+          "alt": "Daepo Jusangjeolli Cliff — gallery image 4"
+        }
+      ]
     },
     {
       "number": 7,
@@ -444,7 +561,7 @@
       "name": "Cheonjeyeon Waterfall",
       "category": "Three-Tier Waterfall + Forest — 'Pond of the Emperor of Heaven'",
       "description": "**Cheonjeyeon Falls (천제연, '연 = pond + 천제 = Emperor of Heaven')** is a **three-tier waterfall** in Jungmun's volcanic gorge, designated **Natural Monument No. 378 (1993)** for its rare ecological combination. The name comes from a **Joseon-era Daoist legend that seven nymphs (선녀, *seonnyeo*) descended from heaven nightly to bathe in the upper pond** — a myth reinforced by the dramatic site's microclimate of perpetual mist. The **1st tier (22 m fall, 21 m deep pond)** drops into a circular basalt cauldron and only flows after heavy rain — most days the upper pond sits glassy and reflective. The **2nd tier (30 m fall) flows year-round** — the dominant photographic subject. The 3rd tier completes the descent to the sea. The **120 m / 78 m-high Seonimgyo Bridge (선임교, 'Bridge of the Seven Nymphs')** crosses the gorge midway through the loop — its cast-bronze relief panels along both sides depict **all seven nymphs in flight**, a literal architectural realization of the founding legend. Surrounding forest is a **rare-plant habitat** including **Korean toadlily (***Tricyrtis macropoda***)** and the endangered **Mankyua chejuense fern** (Jeju endemic, IUCN Critically Endangered). Loop length: **0.8 km, ~30 min walk** with several steep stair sections. Admission: **Adult ₩2,500 / Youth ₩1,350 / FREE under 7 + over 65**. Cheonjeyeon is also a member of the **'Yeongjusipgyeong (영주십경, 10 Scenic Wonders of Jeju)'** Joseon-era literati canon — alongside Hallasan summit, Seongsan Sunrise, and Jeongbang Falls — meaning today's southwest loop covers **2 of the 10 (Hallasan + Cheonjeyeon)** in a single day. The biennial **Jeju Chilseonyeo (Seven Nymphs) Festival** held at the bridge in May (every odd year) reenacts the descent legend with traditional dance and musical performance — reservations required when the festival coincides with a tour date. Hours **09:00–18:00** year-round (last entry 17:30).",
-      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+      "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "highlights": [
         "**Natural Monument No. 378 (designated 1993)** — three-tier waterfall + rare-plant habitat",
         "Name **'Cheonjeyeon' = 'Pond of the Emperor of Heaven'** — Joseon Daoist legend",
@@ -490,7 +607,52 @@
         "closed": "Open year-round (occasional weather closures)",
         "admission": "Adult 2,500 KRW / Child 1,350 KRW",
         "walking": "Moderate — many stairs through the valley; not stroller-friendly; mobility-difficult"
-      }
+      },
+      "images": [
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "location": "Cheonjeyeon Waterfall",
+          "caption": "Cheonjeyeon Waterfall — photo 1",
+          "alt": "Cheonjeyeon Waterfall — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "location": "Cheonjeyeon Waterfall",
+          "caption": "Cheonjeyeon Waterfall — photo 2",
+          "alt": "Cheonjeyeon Waterfall — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "location": "Cheonjeyeon Waterfall",
+          "caption": "Cheonjeyeon Waterfall — photo 3",
+          "alt": "Cheonjeyeon Waterfall — gallery image 3"
+        }
+      ]
     },
     {
       "number": 8,
@@ -942,9 +1104,9 @@
       "amountLabel": "",
       "currency": "USD",
       "per": "person",
-      "priceSource": "AtoC Korea direct rate",
-      "priceNote": "Final rate is confirmed after selecting your travel date and group size. Direct booking is handled by AtoC Korea.",
-      "discountPercent": 10
+      "priceSource": "",
+      "priceNote": "",
+      "discountPercent": null
     }
   },
   "pickup_dropoff": {
@@ -1518,7 +1680,7 @@
             "name": "Hallasan viewpoint (Eorimok or 1100 Wetland)",
             "category": "UNESCO Wetland",
             "description": "Drive up the southwest face of Hallasan (Korea's highest peak at 1,947 m) to a viewpoint along the 1100 Road or the Eorimok trailhead. In winter, the upper slopes are dusted with snow even when coastal Jeju is in single-digit Celsius. This is a viewpoint stop, not a hike — bring layers, but no special gear needed.",
-            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "highlights": [
               "Hallasan snow viewpoint",
               "Korea's highest peak (1,947 m)",
@@ -1552,7 +1714,52 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on national park info"
-            }
+            },
+            "images": [
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+                "location": "Hallasan viewpoint (Eorimok or 1100 Wetland)",
+                "caption": "Hallasan viewpoint (Eorimok or 1100 Wetland) — photo 1",
+                "alt": "Hallasan viewpoint (Eorimok or 1100 Wetland) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+                "location": "Hallasan viewpoint (Eorimok or 1100 Wetland)",
+                "caption": "Hallasan viewpoint (Eorimok or 1100 Wetland) — photo 2",
+                "alt": "Hallasan viewpoint (Eorimok or 1100 Wetland) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "location": "Hallasan viewpoint (Eorimok or 1100 Wetland)",
+                "caption": "Hallasan viewpoint (Eorimok or 1100 Wetland) — photo 3",
+                "alt": "Hallasan viewpoint (Eorimok or 1100 Wetland) — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1623,7 +1830,7 @@
             "name": "Camellia Hill — Winter Peak",
             "category": "Flower Garden",
             "description": "The headline winter stop. Camellia Hill has 6,000+ camellia trees representing 500 varieties from 80 countries — most loved in winter, when other gardens are dormant. Peak bloom is December through February. The site also has a hydrangea tunnel (off-season in winter), greenhouse exhibits, and a Snoopy Garden adjacent.",
-            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
             "highlights": [
               "6,000+ camellia trees",
               "Peak bloom Dec–Feb",
@@ -1656,11 +1863,43 @@
               "verified": true,
               "sources": [
                 "VisitKorea",
-                "TripAdvisor",
+                "",
                 "third-party booking site"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "location": "Camellia Hill — Winter Peak",
+                "caption": "Camellia Hill — Winter Peak — photo 1",
+                "alt": "Camellia Hill — Winter Peak — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "location": "Camellia Hill — Winter Peak",
+                "caption": "Camellia Hill — Winter Peak — photo 2",
+                "alt": "Camellia Hill — Winter Peak — gallery image 2"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1669,7 +1908,7 @@
             "name": "Jusangjeolli Cliff (Daepo Columnar Joints)",
             "category": "UNESCO Geopark Cliff",
             "description": "Hexagonal columnar lava cliffs on the south coast — formed when Hallasan's lava cooled rapidly on contact with the sea. The geometric cliff face is one of Jeju's most photographed coastal features. Boardwalk and railings; flat walking.",
-            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
             "highlights": [
               "Hexagonal lava columns",
               "South-coast cliff walk",
@@ -1704,7 +1943,65 @@
                 "AfunCouple"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
+                "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 1",
+                "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
+                "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 2",
+                "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
+                "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 3",
+                "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
+                "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 4",
+                "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 4"
+              }
+            ]
           },
           {
             "number": 7,
@@ -1713,7 +2010,7 @@
             "name": "Cheonjeyeon Falls + Seonimgyo Bridge",
             "category": "Waterfall",
             "description": "A three-tier waterfall in a forested valley, locally called the 'Pond of the Gods' — legend has seven nymphs descending from heaven to bathe here. The Seonimgyo Bridge above the gorge is decorated with seven nymph carvings. Easy walk along boardwalk paths.",
-            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
             "highlights": [
               "Three-tier waterfall",
               "Pond of the Gods legend",
@@ -1750,7 +2047,52 @@
                 "World-of-Waterfalls"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "location": "Cheonjeyeon Falls + Seonimgyo Bridge",
+                "caption": "Cheonjeyeon Falls + Seonimgyo Bridge — photo 1",
+                "alt": "Cheonjeyeon Falls + Seonimgyo Bridge — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "location": "Cheonjeyeon Falls + Seonimgyo Bridge",
+                "caption": "Cheonjeyeon Falls + Seonimgyo Bridge — photo 2",
+                "alt": "Cheonjeyeon Falls + Seonimgyo Bridge — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "location": "Cheonjeyeon Falls + Seonimgyo Bridge",
+                "caption": "Cheonjeyeon Falls + Seonimgyo Bridge — photo 3",
+                "alt": "Cheonjeyeon Falls + Seonimgyo Bridge — gallery image 3"
+              }
+            ]
           },
           {
             "number": 8,
@@ -2347,8 +2689,8 @@
           "Hunting for Bliss",
           "Soul of Seoul",
           "Roaming Sonaa",
-          "Trazy",
-          "KKday",
+          "",
+          "",
           "NOL World"
         ],
         "_extended_dimensions_documented_only": {

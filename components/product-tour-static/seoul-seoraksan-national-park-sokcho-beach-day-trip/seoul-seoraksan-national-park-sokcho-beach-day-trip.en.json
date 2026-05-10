@@ -19,7 +19,7 @@
   "catalog_card": {
     "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG",
     "title": "Seoraksan National Park & Sokcho Beach Day Trip",
-    "priceLabel": "Price varies — confirm at booking",
+    "priceLabel": "",
     "shortCardDescription": "A small-group day-trip from Seoul to Korea's most-loved national park and the East Sea coastal city of Sokcho. The route pairs Seoraksan's granite peaks, valleys, and Buddhist heritage with the seafood market and beach of Sokcho — a mountain-and-ocean combination only the east coast offers. 12 hours with English-speaking guide and round-trip transport.",
     "tags": [
       "small_group",
@@ -54,9 +54,9 @@
     "amountLabel": "",
     "currency": "USD",
     "per": "person",
-    "priceSource": "getyourguide_t1230340",
-    "priceNote": "Price not yet confirmed from GetYourGuide listing snippet. Once original price is set, AtoC Korea sale price applies a flat 10% discount.",
-    "discountPercent": 10
+    "priceSource": "",
+    "priceNote": "",
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG",
@@ -136,49 +136,12 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG",
-      "alt": "Granite ridges of Seoraksan National Park rising over a wooded valley, with cable-car cables visible against the rock face",
-      "caption": "Seoraksan ridges — UNESCO Biosphere Reserve since 1982",
-      "location": "Seoraksan National Park, Sogongwon entrance, Gangwon-do",
-      "atmosphere": "Cool mountain air at the park's main entrance; paved approach trail past Sinheungsa Temple"
-    },
-    {
-      "id": "g2",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/93/2375893_image2_1.JPG",
-      "alt": "Seoraksan's Sinheungsa Temple Great Bronze Buddha statue seated in lotus position with Sinheungsa hall buildings behind",
-      "caption": "Sinheungsa Great Bronze Buddha — park entrance",
-      "location": "Sinheungsa Temple, Sogongwon, Seoraksan National Park",
-      "atmosphere": "≈600 m flat paved walk from the park entrance; Korea's largest seated bronze Buddha (≈14 m)"
-    },
-    {
-      "id": "g3",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
-      "alt": "Biseondae Rock formation along the stream-side trail at Seoraksan with clear water flowing through smooth granite slabs",
-      "caption": "Biseondae stream trail — flat 1.5 km optional walk",
-      "location": "Biseondae, Sogongwon section, Seoraksan",
-      "atmosphere": "Stream-side flat trail; clear water over smooth granite; no elevation gain"
-    },
-    {
-      "id": "g4",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-      "alt": "Sokcho Tourist Fishery Market interior with covered stalls displaying live East Sea sashimi, king crab, and seafood",
-      "caption": "Sokcho Fishery Market — sashimi, king crab, abai squid",
-      "location": "Sokcho Tourist Fishery Market, Sokcho waterfront",
-      "atmosphere": "Covered concrete-floor market; East Sea sashimi, abai-style stuffed squid (Korean War refugee dish)"
-    },
-    {
-      "id": "g5",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG",
-      "alt": "Sokcho Beach's long stretch of golden sand looking out at the East Sea with Seoraksan's silhouette visible inland",
-      "caption": "Sokcho Beach — East Sea coastline, Seoraksan inland",
-      "location": "Sokcho Beach, East Sea coast, Sokcho",
-      "atmosphere": "1 km flat sand beach; Sokcho Eye ferris wheel at south end; swim season July-August"
+      "location": "Seoraksan National Park",
+      "alt": "Seoraksan National Park — on-route photo",
+      "caption": "Seoraksan National Park"
     }
   ],
   "itineraryStops": [
@@ -284,7 +247,7 @@
         "Abai sundae — North Korean Hamgyeong-province blood sausage, refugee heritage from Korean War",
         "Specialized alleys: chicken, blood sausage, salted seafood, vegetables, chili peppers + Special Food Street",
         "Adjacent gaetbae ferry to Abai Village (200 KRW, filmed for 'Autumn in My Heart' K-drama)",
-        "**500+ stalls across 2 floors + basement raw-fish center** (Tripadvisor + KTO confirmed) — daily 08:00 open, no entrance fee; raw fish center closed 2nd Wednesday monthly",
+        "**500+ stalls across 2 floors + basement raw-fish center** ( + KTO confirmed) — daily 08:00 open, no entrance fee; raw fish center closed 2nd Wednesday monthly",
         "**Dakgangjeong was first invented here** — Gangwon-do's poultry-farm density made the market the original innovation site for the now-nationwide sweet-spicy crispy-chicken dish (KTO's 'Top 3 Eateries' anchor)",
         "**Sulbbang (술빵)**: a Sokcho-only specialty (Stall #54, ₩5,000) — naturally-fermented makgeolli rice-flour bread topped with red and green beans, found nowhere else in Korea"
       ],
@@ -818,9 +781,9 @@
       "amountLabel": "",
       "currency": "USD",
       "per": "person",
-      "priceSource": "getyourguide_t1230340",
-      "priceNote": "Price not yet confirmed from GetYourGuide listing snippet. Once original price is set, AtoC Korea sale price applies a flat 10% discount.",
-      "discountPercent": 10
+      "priceSource": "",
+      "priceNote": "",
+      "discountPercent": null
     }
   },
   "pickup_dropoff": {
@@ -1801,7 +1764,7 @@
           "currency": "USD",
           "per": "person",
           "priceSource": "getyourguide_t1230340",
-          "priceNote": "Price not yet confirmed from GetYourGuide listing snippet. Once original price is set, AtoC Korea sale price applies a flat 10% discount.",
+          "priceNote": "Price not yet confirmed listing snippet. Once original price is set, AtoC Korea sale price applies a flat 10% discount.",
           "discountPercent": 10
         }
       }

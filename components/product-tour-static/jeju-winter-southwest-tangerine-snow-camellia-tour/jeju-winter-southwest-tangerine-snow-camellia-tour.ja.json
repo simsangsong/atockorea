@@ -14,12 +14,12 @@
       "カメリアヒル冬",
       "済州冬南西部"
     ],
-    "ogImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+    "ogImage": "https://www.atockorea.com/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
     "title": "済州冬ツアー：みかん・雪・ツバキ | AtoC",
     "description": "済州冬南西部小グループツアー：漢拏山雪ハイキング→みかん狩り→カメリアヒル→柱状節理→天帝渊の滝。12〜2月限定。"
   },
   "catalog_card": {
-    "thumbnail": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+    "thumbnail": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
     "title": "済州冬ツアー：みかん・雪・ツバキ（南西部）",
     "priceLabel": "料金は予約時にご確認ください",
     "shortCardDescription": "冬の済州（12〜2月）にしか体験できない3大テーマで組んだ南西部日帰りツアー：漢拏山御利目コースの樹氷林ハイク・カメリアヒルの満開のツバキ（冬がピーク）・ハルラボンのみかん狩り体験。さらに大浦柱状節理と天帝淵の滝も。",
@@ -46,7 +46,7 @@
       "ツバキ",
       "漢拏山"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800"
+    "heroImage": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp"
   },
   "headlineLine1": "漢拏山の雪景色、赤いツバキ、",
   "headlineLine2": "みかん狩りで楽しむ冬の済州南西部",
@@ -59,7 +59,7 @@
     "discountPercent": 10
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1600",
+    "imageUrl": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
     "imagePosition": "center 35%",
     "tagline": "冬の済州を象徴する3つの体験 — 雪山ハイク・みかん狩り・ツバキの満開を一日に",
     "pills": [
@@ -136,49 +136,76 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
-      "alt": "ツアーで訪れる韓国の風景",
-      "caption": "韓国",
-      "location": "韓国",
-      "atmosphere": "海岸の絶景"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "カメリアヒル（ツバキの丘 — 年中代表的な花園）",
+      "alt": "カメリアヒル（ツバキの丘 — 年中代表的な花園） — gallery image 1",
+      "caption": "カメリアヒル（ツバキの丘 — 年中代表的な花園） — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "ツアーで訪れる冬の満開期（12〜2月）のカメリアヒルの風景",
-      "caption": "冬の満開期（12〜2月）のカメリアヒル",
-      "location": "韓国",
-      "atmosphere": "韓国の美しい景観"
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "大浦柱状節理（チュサンジョルリ）",
+      "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 1",
+      "caption": "大浦柱状節理（チュサンジョルリ） — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "済州の果樹園で低い木から熟したオレンジのみかんを摘む手",
-      "caption": "済州のgyul（みかん）農園の冬の収穫",
-      "location": "韓国",
-      "atmosphere": "文化的な体験"
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "天帝淵の滝（チョンジェヨン）",
+      "alt": "天帝淵の滝（チョンジェヨン） — gallery image 1",
+      "caption": "天帝淵の滝（チョンジェヨン） — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "ツアーで訪れる大浦柱状節理 溶岩柱状節理崖の風景",
-      "caption": "大浦柱状節理 溶岩柱状節理崖",
-      "location": "韓国",
-      "atmosphere": "劇的な景観"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+      "location": "カメリアヒル（ツバキの丘 — 年中代表的な花園）",
+      "alt": "カメリアヒル（ツバキの丘 — 年中代表的な花園） — gallery image 2",
+      "caption": "カメリアヒル（ツバキの丘 — 年中代表的な花園） — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "上方に仙女橋が架かる森の渓谷の三段滝",
-      "caption": "天帝渊の滝と七仙女の仙女橋",
-      "location": "韓国",
-      "atmosphere": "韓国の美しい景観"
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "大浦柱状節理（チュサンジョルリ）",
+      "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 2",
+      "caption": "大浦柱状節理（チュサンジョルリ） — photo 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "大浦柱状節理（チュサンジョルリ）",
+      "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 3",
+      "caption": "大浦柱状節理（チュサンジョルリ） — photo 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "大浦柱状節理（チュサンジョルリ）",
+      "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 4",
+      "caption": "大浦柱状節理（チュサンジョルリ） — photo 4"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "location": "天帝淵の滝（チョンジェヨン）",
+      "alt": "天帝淵の滝（チョンジェヨン） — gallery image 2",
+      "caption": "天帝淵の滝（チョンジェヨン） — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+      "location": "天帝淵の滝（チョンジェヨン）",
+      "alt": "天帝淵の滝（チョンジェヨン） — gallery image 3",
+      "caption": "天帝淵の滝（チョンジェヨン） — photo 3"
     }
   ],
   "itineraryStops": [
@@ -343,7 +370,7 @@
       "name": "カメリアヒル（ツバキの丘 — 年中代表的な花園）",
       "category": "172,000m²の植物園 — 冬のツバキ（ツバキ）が全盛期",
       "description": "**カメリアヒル(카멜리아힐、済州椿樹木園)**は安徳にある**172,000m²の植物園**で、面積・品種数の両面で**東洋最大の椿樹木園**です。**80か国から取り寄せた500種以上、6,000本の椿**を収蔵し、創設者ヤン・ジョンムン氏が**30年以上**にわたり育成を続けてきました。園の最大の特徴は**通年の開花カレンダー**で、どの季節に訪れても異なる色彩のパレットが楽しめるよう緻密に設計されています。**11月〜3月は椿のピーク**(赤、ピンク、白、クリームベージュなど — 園の象徴シーズン)、**3月〜5月は桜+チューリップ+晩咲きの椿**が層を成して鮮やかな色彩のマスを形成、**6月〜8月はアジサイ**(屋外スタンドと通年開花の温室の両方)、**9月〜10月は紅葉+晩季の花々**となります。散策路は**ヨーロッパガーデン、韓国在来森林セクション、桜の散歩道、アジサイ畑**といったテーマ別エリアを縫うように走り、ゆったり歩いて約60〜75分の2.5kmループでつながっています。建築面の見どころは、入口の**ガラス温室+ギャラリー+カフェ**複合施設。屋内の天候避難所(訪問の約15%が屋内)を兼ね、庭園の眺めとともにお茶やコーヒーを楽しむ滞留スペースとなっています。**ドラマロケ地としての功績**:バラエティ番組**「EXchange / トランジット・ラブ3」(환승연애)**で、ジュウォンとユジョンの印象的なデートシーンの舞台となり、Kリアリティ番組ファンの聖地となっています。**年中無休・365日開園**ですが、**屋外照明がない**ため日没で閉園します(冬期約17時、夏期約19時)。入場料:**大人₩12,000 / 学生・シニア₩10,000 / 子供(4–11歳)₩9,000 / 3歳未満は無料**。",
-      "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+      "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "highlights": [
         "**172,000m²** — 東洋最大の椿樹木園",
         "**80か国から500種以上、6,000本** — 30年以上かけて収集",
@@ -385,7 +412,39 @@
         "closed": "年中無休",
         "admission": "大人 10,000 KRW / 中高生 8,000 KRW / 子供 7,000 KRW(目安)",
         "walking": "難易度:易〜中 — 緩やかな丘の遊歩道。大半はベビーカー対応"
-      }
+      },
+      "images": [
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "location": "カメリアヒル（ツバキの丘 — 年中代表的な花園）",
+          "caption": "カメリアヒル（ツバキの丘 — 年中代表的な花園） — photo 1",
+          "alt": "カメリアヒル（ツバキの丘 — 年中代表的な花園） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "location": "カメリアヒル（ツバキの丘 — 年中代表的な花園）",
+          "caption": "カメリアヒル（ツバキの丘 — 年中代表的な花園） — photo 2",
+          "alt": "カメリアヒル（ツバキの丘 — 年中代表的な花園） — gallery image 2"
+        }
+      ]
     },
     {
       "number": 6,
@@ -394,7 +453,7 @@
       "name": "大浦柱状節理（チュサンジョルリ）",
       "category": "天然記念物第443号・ユネスコジオパーク",
       "description": "**大浦柱状節理（大浦柱状節理）** — 天然記念物第443号、1kmの六角形玄武岩柱状絶壁（30〜40m）、ユネスコグローバルジオパーク。冬の海岸は波が高く、満潮時に波が20mまで飛沫を上げる迫力あるシーン。入場料：**大人₩2,000**（含まれます）。",
-      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "天然記念物第443号・ユネスコジオパーク",
         "冬の荒波が打ち寄せる迫力ある景観",
@@ -430,7 +489,65 @@
         "closed": "Open year-round (weather-dependent)",
         "admission": "Adult 2,000 KRW / Child 1,000 KRW (low fee)",
         "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
-      }
+      },
+      "images": [
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "大浦柱状節理（チュサンジョルリ）",
+          "caption": "大浦柱状節理（チュサンジョルリ） — photo 1",
+          "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "大浦柱状節理（チュサンジョルリ）",
+          "caption": "大浦柱状節理（チュサンジョルリ） — photo 2",
+          "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "大浦柱状節理（チュサンジョルリ）",
+          "caption": "大浦柱状節理（チュサンジョルリ） — photo 3",
+          "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "大浦柱状節理（チュサンジョルリ）",
+          "caption": "大浦柱状節理（チュサンジョルリ） — photo 4",
+          "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 4"
+        }
+      ]
     },
     {
       "number": 7,
@@ -439,7 +556,7 @@
       "name": "天帝淵の滝（チョンジェヨン）",
       "category": "天然記念物第378号 — 三段の滝と七仙女伝説",
       "description": "**天帝淵の滝（天帝淵）** — 天然記念物第378号。三段の滝と七仙女（チルソニョ）伝説の仙臨橋（120m×78m）。冬は水量が少なくなりますが、すっきりとした透明感のある写真撮影に最適な条件。入場料：**大人₩2,500**（含まれます）。",
-      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+      "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "highlights": [
         "天然記念物第378号",
         "七仙女伝説の仙臨橋（120m×78m）",
@@ -476,7 +593,52 @@
         "closed": "Open year-round (occasional weather closures)",
         "admission": "Adult 2,500 KRW / Child 1,350 KRW",
         "walking": "Moderate — many stairs through the valley; not stroller-friendly; mobility-difficult"
-      }
+      },
+      "images": [
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "location": "天帝淵の滝（チョンジェヨン）",
+          "caption": "天帝淵の滝（チョンジェヨン） — photo 1",
+          "alt": "天帝淵の滝（チョンジェヨン） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "location": "天帝淵の滝（チョンジェヨン）",
+          "caption": "天帝淵の滝（チョンジェヨン） — photo 2",
+          "alt": "天帝淵の滝（チョンジェヨン） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "location": "天帝淵の滝（チョンジェヨン）",
+          "caption": "天帝淵の滝（チョンジェヨン） — photo 3",
+          "alt": "天帝淵の滝（チョンジェヨン） — gallery image 3"
+        }
+      ]
     },
     {
       "number": 8,
@@ -1586,7 +1748,7 @@
             "name": "カメリアヒル（ツバキの丘 — 年中代表的な花園）",
             "category": "172,000m²の植物園 — 冬のツバキ（ツバキ）が全盛期",
             "description": "**カメリアヒル**は夏のアジサイの花道と並んで**冬のツバキが全盛期**で最も有名な季節。12月〜3月にかけて500品種以上のツバキ（カメリア）が次々と開花し、白・ピンク・赤のツバキが緑の葉に映える絶景を作り出します。特に冬の済州の象徴「 （赤いツバキ）」が落花する光景は、赤い花びらが緑の芝の上に散る幻想的なシーン。入場料：**大人₩6,000**（含まれます）。",
-            "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+            "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
             "highlights": [
               "冬の**ツバキが全盛期** — 500品種以上のツバキが開花",
               "赤いツバキが散落する幻想的な冬景色 — 済州冬の象徴フォトシーン",
@@ -1608,7 +1770,39 @@
                 "Korea Tourism Organization — Top Korean botanical gardens registry",
                 "Kakao TV / Wavve programming archive — 'EXchange / Transit Love 3' filming locations"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "location": "カメリアヒル（ツバキの丘 — 年中代表的な花園）",
+                "caption": "カメリアヒル（ツバキの丘 — 年中代表的な花園） — photo 1",
+                "alt": "カメリアヒル（ツバキの丘 — 年中代表的な花園） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "location": "カメリアヒル（ツバキの丘 — 年中代表的な花園）",
+                "caption": "カメリアヒル（ツバキの丘 — 年中代表的な花園） — photo 2",
+                "alt": "カメリアヒル（ツバキの丘 — 年中代表的な花園） — gallery image 2"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1617,7 +1811,7 @@
             "name": "大浦柱状節理（チュサンジョルリ）",
             "category": "天然記念物第443号・ユネスコジオパーク",
             "description": "**大浦柱状節理（大浦柱状節理）** — 天然記念物第443号、1kmの六角形玄武岩柱状絶壁（30〜40m）、ユネスコグローバルジオパーク。冬の海岸は波が高く、満潮時に波が20mまで飛沫を上げる迫力あるシーン。入場料：**大人₩2,000**（含まれます）。",
-            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
             "highlights": [
               "天然記念物第443号・ユネスコジオパーク",
               "冬の荒波が打ち寄せる迫力ある景観",
@@ -1638,7 +1832,65 @@
                 "VisitJeju — Daepo Jusangjeolli",
                 "Korea Geological Survey — Jeju basalt formation studies"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "location": "大浦柱状節理（チュサンジョルリ）",
+                "caption": "大浦柱状節理（チュサンジョルリ） — photo 1",
+                "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "location": "大浦柱状節理（チュサンジョルリ）",
+                "caption": "大浦柱状節理（チュサンジョルリ） — photo 2",
+                "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "location": "大浦柱状節理（チュサンジョルリ）",
+                "caption": "大浦柱状節理（チュサンジョルリ） — photo 3",
+                "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "location": "大浦柱状節理（チュサンジョルリ）",
+                "caption": "大浦柱状節理（チュサンジョルリ） — photo 4",
+                "alt": "大浦柱状節理（チュサンジョルリ） — gallery image 4"
+              }
+            ]
           },
           {
             "number": 7,
@@ -1647,7 +1899,7 @@
             "name": "天帝淵の滝（チョンジェヨン）",
             "category": "天然記念物第378号 — 三段の滝と七仙女伝説",
             "description": "**天帝淵の滝（天帝淵）** — 天然記念物第378号。三段の滝と七仙女（チルソニョ）伝説の仙臨橋（120m×78m）。冬は水量が少なくなりますが、すっきりとした透明感のある写真撮影に最適な条件。入場料：**大人₩2,500**（含まれます）。",
-            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+            "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
             "highlights": [
               "天然記念物第378号",
               "七仙女伝説の仙臨橋（120m×78m）",
@@ -1669,7 +1921,52 @@
                 "Jeju Cultural Foundation — Seven Nymphs Festival history",
                 "Seogwipo City tourism — Cheonjeyeon admission and access"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "location": "天帝淵の滝（チョンジェヨン）",
+                "caption": "天帝淵の滝（チョンジェヨン） — photo 1",
+                "alt": "天帝淵の滝（チョンジェヨン） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "location": "天帝淵の滝（チョンジェヨン）",
+                "caption": "天帝淵の滝（チョンジェヨン） — photo 2",
+                "alt": "天帝淵の滝（チョンジェヨン） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "location": "天帝淵の滝（チョンジェヨン）",
+                "caption": "天帝淵の滝（チョンジェヨン） — photo 3",
+                "alt": "天帝淵の滝（チョンジェヨン） — gallery image 3"
+              }
+            ]
           },
           {
             "number": 8,

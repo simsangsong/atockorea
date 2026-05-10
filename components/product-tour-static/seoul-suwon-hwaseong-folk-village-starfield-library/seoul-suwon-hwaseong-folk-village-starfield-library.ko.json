@@ -14,12 +14,12 @@
       "서울 출발 수원 소그룹 투어",
       "경기도 당일 투어"
     ],
-    "ogImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+    "ogImage": "https://www.atockorea.com/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "title": "수원화성·한국민속촌·스타필드 소그룹 투어 | AtoC Korea",
     "description": "서울 출발 경기도 소그룹 투어: 수원화성(유네스코) → 화성행궁 → 한국민속촌(용인) → 스타필드 수원 별마당도서관. 전 입장료 포함, 10시간."
   },
   "catalog_card": {
-    "thumbnail": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+    "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "title": "수원화성·한국민속촌·스타필드 소그룹 투어",
     "priceLabel": "가격은 예약 시 확인",
     "shortCardDescription": "수원화성(유네스코 세계문화유산), 화성행궁(한국 최대 행궁), 한국민속촌(용인, 한국 최초·최대 야외 민속박물관), 스타필드 수원 별마당도서관을 소그룹으로 하루에 돌아봅니다. 전 입장료 포함, 공인 가이드.",
@@ -48,7 +48,7 @@
       "민속마을",
       "일일 투어"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800"
+    "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp"
   },
   "headlineLine1": "유네스코 성곽, 조선 이궁, 4층 도서관 —",
   "headlineLine2": "한국의 문화유산과 현대적 감각을 하루에",
@@ -63,7 +63,7 @@
     "priceNote": "AtoC Korea 공식 판매가 기준입니다."
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
+    "imageUrl": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "imagePosition": "center 35%",
     "tagline": "한국 유일의 완전한 성곽 도시, 민속마을, 그리고 인스타그램 인기 도서관",
     "pills": [
@@ -133,49 +133,92 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-      "alt": "투어 중 방문하는 수원 화성의 풍경",
-      "caption": "수원 화성",
-      "location": "수원 화성, 장안문–화서문 구간, Suwon",
-      "atmosphere": "수원 화성는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+      "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+      "location": "수원화성 (유네스코 세계문화유산)",
+      "alt": "수원화성 (유네스코 세계문화유산) — gallery image 1",
+      "caption": "수원화성 (유네스코 세계문화유산) — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "전통 한국 목조 건물, 채색 처마, 돌 바닥이 있는 화성 행궁 안뜰",
-      "caption": "화성행궁",
-      "location": "화성행궁, 수원 화성 성곽 안, Suwon",
-      "atmosphere": "화성행궁는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+      "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+      "location": "한국민속촌 (용인)",
+      "alt": "한국민속촌 (용인) — gallery image 1",
+      "caption": "한국민속촌 (용인) — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "투어 중 방문하는 화성행궁 수문장 교대식의 풍경",
-      "caption": "화성행궁 수문장 교대식",
-      "location": "화성행궁 마당",
-      "atmosphere": "화성행궁 수문장 교대식는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+      "location": "스타필드 수원 별마당도서관",
+      "alt": "스타필드 수원 별마당도서관 — gallery image 1",
+      "caption": "스타필드 수원 별마당도서관 — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "투어 중 방문하는 한국민속촌 — 270여 채의 전통가옥의 풍경",
-      "caption": "한국민속촌 — 270여 채의 전통가옥",
-      "location": "한국민속촌, Yongin, Gyeonggi-do",
-      "atmosphere": "조선 후기 전통가옥 270여 채, 승마 공연, 주요 K-드라마 촬영지"
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+      "location": "수원화성 (유네스코 세계문화유산)",
+      "alt": "수원화성 (유네스코 세계문화유산) — gallery image 2",
+      "caption": "수원화성 (유네스코 세계문화유산) — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "수원 스타필드 라이브러리의 22미터 높이 바닥-천장 서가와 아래 열람실이 있는 4층 아트리움",
-      "caption": "스타필드 라이브러리 수원 — 22m 서가",
-      "location": "스타필드 수원 별마당도서관, Yeongtong-gu, Suwon",
-      "atmosphere": "신세계의 2세대 스타필드 플래그십, 2024년 1월 개장; 무료 입장; 바이닐 청음 공간"
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+      "location": "수원화성 (유네스코 세계문화유산)",
+      "alt": "수원화성 (유네스코 세계문화유산) — gallery image 3",
+      "caption": "수원화성 (유네스코 세계문화유산) — photo 3"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+      "location": "수원화성 (유네스코 세계문화유산)",
+      "alt": "수원화성 (유네스코 세계문화유산) — gallery image 4",
+      "caption": "수원화성 (유네스코 세계문화유산) — photo 4"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+      "location": "수원화성 (유네스코 세계문화유산)",
+      "alt": "수원화성 (유네스코 세계문화유산) — gallery image 5",
+      "caption": "수원화성 (유네스코 세계문화유산) — photo 5"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+      "location": "한국민속촌 (용인)",
+      "alt": "한국민속촌 (용인) — gallery image 2",
+      "caption": "한국민속촌 (용인) — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+      "location": "스타필드 수원 별마당도서관",
+      "alt": "스타필드 수원 별마당도서관 — gallery image 2",
+      "caption": "스타필드 수원 별마당도서관 — photo 2"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+      "location": "스타필드 수원 별마당도서관",
+      "alt": "스타필드 수원 별마당도서관 — gallery image 3",
+      "caption": "스타필드 수원 별마당도서관 — photo 3"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+      "location": "스타필드 수원 별마당도서관",
+      "alt": "스타필드 수원 별마당도서관 — gallery image 4",
+      "caption": "스타필드 수원 별마당도서관 — photo 4"
     }
   ],
   "itineraryStops": [
@@ -269,7 +312,79 @@
           "Suwon City Tourism (suwon.go.kr/tour — Hwaseong Yeolcha trolley + admission + opening hours)",
           "Wikipedia (Hwaseong Fortress — Jeong Yak-yong + Geojunggi crane + 5.74 km perimeter + 41 structures)"
         ]
-      }
+      },
+      "image": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+      "images": [
+        "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+          "location": "수원화성 (유네스코 세계문화유산)",
+          "caption": "수원화성 (유네스코 세계문화유산) — photo 1",
+          "alt": "수원화성 (유네스코 세계문화유산) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+          "location": "수원화성 (유네스코 세계문화유산)",
+          "caption": "수원화성 (유네스코 세계문화유산) — photo 2",
+          "alt": "수원화성 (유네스코 세계문화유산) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+          "location": "수원화성 (유네스코 세계문화유산)",
+          "caption": "수원화성 (유네스코 세계문화유산) — photo 3",
+          "alt": "수원화성 (유네스코 세계문화유산) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+          "location": "수원화성 (유네스코 세계문화유산)",
+          "caption": "수원화성 (유네스코 세계문화유산) — photo 4",
+          "alt": "수원화성 (유네스코 세계문화유산) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+          "location": "수원화성 (유네스코 세계문화유산)",
+          "caption": "수원화성 (유네스코 세계문화유산) — photo 5",
+          "alt": "수원화성 (유네스코 세계문화유산) — gallery image 5"
+        }
+      ]
     },
     {
       "number": 3,
@@ -329,7 +444,79 @@
           "Wikipedia (Hwaseong Haenggung — Naknamheon-only-original-structure + 576-kan scale)",
           "Visit Suwon CVB (visitsuwon.org — Suwon Pass combined ticket + Haenggung Square facilities)"
         ]
-      }
+      },
+      "image": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+      "images": [
+        "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+          "location": "화성행궁",
+          "caption": "화성행궁 — photo 1",
+          "alt": "화성행궁 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+          "location": "화성행궁",
+          "caption": "화성행궁 — photo 2",
+          "alt": "화성행궁 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+          "location": "화성행궁",
+          "caption": "화성행궁 — photo 3",
+          "alt": "화성행궁 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+          "location": "화성행궁",
+          "caption": "화성행궁 — photo 4",
+          "alt": "화성행궁 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+          "location": "화성행궁",
+          "caption": "화성행궁 — photo 5",
+          "alt": "화성행궁 — gallery image 5"
+        }
+      ]
     },
     {
       "number": 4,
@@ -389,7 +576,40 @@
           "Visit Korea KTO Sageuk K-Drama Filming Locations Guide (Daejanggeum/Jewel-in-the-Palace + Sungkyunkwan Scandal)"
         ],
         "note": "Reference fix: Phase 1 used poi_key 'korean_folk_village'; KB canonical key is 'korean_folk_village_yongin'."
-      }
+      },
+      "image": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+      "images": [
+        "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+        "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+          "location": "한국민속촌 (용인)",
+          "caption": "한국민속촌 (용인) — photo 1",
+          "alt": "한국민속촌 (용인) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+          "location": "한국민속촌 (용인)",
+          "caption": "한국민속촌 (용인) — photo 2",
+          "alt": "한국민속촌 (용인) — gallery image 2"
+        }
+      ]
     },
     {
       "number": 5,
@@ -449,7 +669,66 @@
           "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
           "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
         ]
-      }
+      },
+      "image": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+      "images": [
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+          "location": "스타필드 수원 별마당도서관",
+          "caption": "스타필드 수원 별마당도서관 — photo 1",
+          "alt": "스타필드 수원 별마당도서관 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+          "location": "스타필드 수원 별마당도서관",
+          "caption": "스타필드 수원 별마당도서관 — photo 2",
+          "alt": "스타필드 수원 별마당도서관 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+          "location": "스타필드 수원 별마당도서관",
+          "caption": "스타필드 수원 별마당도서관 — photo 3",
+          "alt": "스타필드 수원 별마당도서관 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+          "location": "스타필드 수원 별마당도서관",
+          "caption": "스타필드 수원 별마당도서관 — photo 4",
+          "alt": "스타필드 수원 별마당도서관 — gallery image 4"
+        }
+      ]
     },
     {
       "number": 6,
@@ -1437,7 +1716,79 @@
                 "Suwon City Tourism (suwon.go.kr/tour — Hwaseong Yeolcha trolley + admission + opening hours)",
                 "Wikipedia (Hwaseong Fortress — Jeong Yak-yong + Geojunggi crane + 5.74 km perimeter + 41 structures)"
               ]
-            }
+            },
+            "image": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+            "images": [
+              "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+                "location": "수원화성 (유네스코 세계문화유산)",
+                "caption": "수원화성 (유네스코 세계문화유산) — photo 1",
+                "alt": "수원화성 (유네스코 세계문화유산) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+                "location": "수원화성 (유네스코 세계문화유산)",
+                "caption": "수원화성 (유네스코 세계문화유산) — photo 2",
+                "alt": "수원화성 (유네스코 세계문화유산) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+                "location": "수원화성 (유네스코 세계문화유산)",
+                "caption": "수원화성 (유네스코 세계문화유산) — photo 3",
+                "alt": "수원화성 (유네스코 세계문화유산) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+                "location": "수원화성 (유네스코 세계문화유산)",
+                "caption": "수원화성 (유네스코 세계문화유산) — photo 4",
+                "alt": "수원화성 (유네스코 세계문화유산) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+                "location": "수원화성 (유네스코 세계문화유산)",
+                "caption": "수원화성 (유네스코 세계문화유산) — photo 5",
+                "alt": "수원화성 (유네스코 세계문화유산) — gallery image 5"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1497,7 +1848,79 @@
                 "Wikipedia (Hwaseong Haenggung — Naknamheon-only-original-structure + 576-kan scale)",
                 "Visit Suwon CVB (visitsuwon.org — Suwon Pass combined ticket + Haenggung Square facilities)"
               ]
-            }
+            },
+            "image": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+            "images": [
+              "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+                "location": "화성행궁",
+                "caption": "화성행궁 — photo 1",
+                "alt": "화성행궁 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+                "location": "화성행궁",
+                "caption": "화성행궁 — photo 2",
+                "alt": "화성행궁 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+                "location": "화성행궁",
+                "caption": "화성행궁 — photo 3",
+                "alt": "화성행궁 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+                "location": "화성행궁",
+                "caption": "화성행궁 — photo 4",
+                "alt": "화성행궁 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+                "location": "화성행궁",
+                "caption": "화성행궁 — photo 5",
+                "alt": "화성행궁 — gallery image 5"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1557,7 +1980,40 @@
                 "Visit Korea KTO Sageuk K-Drama Filming Locations Guide (Daejanggeum/Jewel-in-the-Palace + Sungkyunkwan Scandal)"
               ],
               "note": "Reference fix: Phase 1 used poi_key 'korean_folk_village'; KB canonical key is 'korean_folk_village_yongin'."
-            }
+            },
+            "image": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+            "images": [
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+                "location": "한국민속촌 (용인)",
+                "caption": "한국민속촌 (용인) — photo 1",
+                "alt": "한국민속촌 (용인) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+                "location": "한국민속촌 (용인)",
+                "caption": "한국민속촌 (용인) — photo 2",
+                "alt": "한국민속촌 (용인) — gallery image 2"
+              }
+            ]
           },
           {
             "number": 5,
@@ -1617,7 +2073,66 @@
                 "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
                 "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
               ]
-            }
+            },
+            "image": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+            "images": [
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+                "location": "스타필드 수원 별마당도서관",
+                "caption": "스타필드 수원 별마당도서관 — photo 1",
+                "alt": "스타필드 수원 별마당도서관 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+                "location": "스타필드 수원 별마당도서관",
+                "caption": "스타필드 수원 별마당도서관 — photo 2",
+                "alt": "스타필드 수원 별마당도서관 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+                "location": "스타필드 수원 별마당도서관",
+                "caption": "스타필드 수원 별마당도서관 — photo 3",
+                "alt": "스타필드 수원 별마당도서관 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+                "location": "스타필드 수원 별마당도서관",
+                "caption": "스타필드 수원 별마당도서관 — photo 4",
+                "alt": "스타필드 수원 별마당도서관 — gallery image 4"
+              }
+            ]
           },
           {
             "number": 6,

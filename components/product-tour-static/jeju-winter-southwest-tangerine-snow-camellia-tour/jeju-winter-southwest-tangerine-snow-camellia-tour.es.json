@@ -14,12 +14,12 @@
       "tour diciembre enero Jeju",
       "recogida mandarinas Jeju invierno"
     ],
-    "ogImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+    "ogImage": "https://www.atockorea.com/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
     "title": "Tour Invierno Jeju: Nieve, Mandarinas y Camelias | AtoC",
     "description": "Tour de invierno en el suroeste de Jeju: senderismo en la nieve de Hallasan → recolección de mandarinas → Camellia Hill → Jusangjeolli."
   },
   "catalog_card": {
-    "thumbnail": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+    "thumbnail": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
     "title": "Tour Invierno Jeju Suroeste: Nieve en el Hallasan, Recogida de Mandarinas y Camelias",
     "priceLabel": "Consulte el precio al reservar",
     "shortCardDescription": "Las tres experiencias únicas del invierno de Jeju en un día: senderismo en el sendero nevado Eorimok del Hallasan (árboles cubiertos de escarcha y nieve en la montaña más alta de Corea) → recogida de mandarinas Hallabong de invierno en una granja local → almuerzo → Camellia Hill (las camelias rojas en su pico de diciembre-enero) → Acantilado Jusangjeolli → Cascadas Cheonjeyeon. Diciembre-febrero, grupo pequeño, recogida en hotel.",
@@ -45,7 +45,7 @@
       "Grupo pequeño",
       "Recogida en hotel"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800"
+    "heroImage": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp"
   },
   "headlineLine1": "Nieve en el Hallasan, camelias rojas en plena floración y mandarinas de invierno —",
   "headlineLine2": "el suroeste de Jeju en su temporada más tranquila",
@@ -58,7 +58,7 @@
     "discountPercent": 10
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1600",
+    "imageUrl": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
     "imagePosition": "center 35%",
     "tagline": "Tres experiencias que solo existen en invierno en Jeju: la nieve del Hallasan, las mandarinas de temporada y las camelias de Camellia Hill en su pico",
     "pills": [
@@ -136,49 +136,76 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
-      "alt": "Imagen de Sendero Eorimok del Hallasan — nieve y escarcha en la montaña más alta de Corea",
-      "caption": "Sendero Eorimok del Hallasan — nieve y escarcha en la montaña más alta de Corea",
-      "location": "Sendero Eorimok, flanco sur-oeste del Hallasan",
-      "atmosphere": "Blanco invernal: el Hallasan nevado"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "Camellia Hill (camelias en pico dic-ene)",
+      "alt": "Camellia Hill (camelias en pico dic-ene) — gallery image 1",
+      "caption": "Camellia Hill (camelias en pico dic-ene) — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "Imagen de Recogida de mandarinas Hallabong — la mandarina estrella del invierno de Jeju",
-      "caption": "Recogida de mandarinas Hallabong — la mandarina estrella del invierno de Jeju",
-      "location": "Granja de mandarinas, Seogwipo sur",
-      "atmosphere": "Naranja invernal: las Hallabong en cosecha"
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "Acantilado Jusangjeolli de Daepo",
+      "alt": "Acantilado Jusangjeolli de Daepo — gallery image 1",
+      "caption": "Acantilado Jusangjeolli de Daepo — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "Imagen de Camellia Hill — camelias rojas en pico",
-      "caption": "Camellia Hill — camelias rojas en pico, diciembre-enero",
-      "location": "Camellia Hill, Andeok-myeon, Seogwipo",
-      "atmosphere": "Rojo invernal: 6.000 camelias en pico"
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "Cascadas Cheonjeyeon",
+      "alt": "Cascadas Cheonjeyeon — gallery image 1",
+      "caption": "Cascadas Cheonjeyeon — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "Imagen de Acantilado Jusangjeolli — las olas del invierno en las columnas de basalto",
-      "caption": "Acantilado Jusangjeolli — las olas del invierno en las columnas de basalto",
-      "location": "Daepo Jusangjeolli, Jungmun",
-      "atmosphere": "Olas invernales en las columnas de basalto"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+      "location": "Camellia Hill (camelias en pico dic-ene)",
+      "alt": "Camellia Hill (camelias en pico dic-ene) — gallery image 2",
+      "caption": "Camellia Hill (camelias en pico dic-ene) — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "Imagen de Cascada Cheonjeyeon y el Puente de las Siete Ninfas Seonimgyo",
-      "caption": "Cascada Cheonjeyeon y el Puente de las Siete Ninfas Seonimgyo",
-      "location": "Cheonjeyeon Falls, Seogwipo, southern Jeju",
-      "atmosphere": "Paisaje de Corea en su mejor momento"
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "Acantilado Jusangjeolli de Daepo",
+      "alt": "Acantilado Jusangjeolli de Daepo — gallery image 2",
+      "caption": "Acantilado Jusangjeolli de Daepo — photo 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "Acantilado Jusangjeolli de Daepo",
+      "alt": "Acantilado Jusangjeolli de Daepo — gallery image 3",
+      "caption": "Acantilado Jusangjeolli de Daepo — photo 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "Acantilado Jusangjeolli de Daepo",
+      "alt": "Acantilado Jusangjeolli de Daepo — gallery image 4",
+      "caption": "Acantilado Jusangjeolli de Daepo — photo 4"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "location": "Cascadas Cheonjeyeon",
+      "alt": "Cascadas Cheonjeyeon — gallery image 2",
+      "caption": "Cascadas Cheonjeyeon — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+      "location": "Cascadas Cheonjeyeon",
+      "alt": "Cascadas Cheonjeyeon — gallery image 3",
+      "caption": "Cascadas Cheonjeyeon — photo 3"
     }
   ],
   "itineraryStops": [
@@ -346,7 +373,7 @@
       "name": "Camellia Hill (camelias en pico dic-ene)",
       "category": "El mayor arboreto de camelias de Oriente — pico invernal de las camelias rojas",
       "description": "**Camellia Hill (카멜리아힐, Arboreto de Camelias de Jeju)** es un **jardín botánico de 172.000 m²** en Andeok, **el mayor arboreto de camelias del Oriente** por superficie y número de especies: **6.000 camelios que representan más de 500 especies traídas de 80 países**, acumuladas a lo largo de **más de 30 años** de curaduría por el fundador Yang Jong-mun. Su sello distintivo es el **calendario floral durante todo el año**, diseñado deliberadamente para que cada estación ofrezca una paleta cromática diferente: **noviembre–marzo = pico de camelias** (variedades rojas, rosadas, blancas y crema, la temporada que da nombre al jardín); **marzo–mayo = cerezos en flor + tulipanes + camelias tardías** superpuestos en una densa masa de color; **junio–agosto = hortensias** (tanto en exteriores como en un invernadero climatizado con exhibición permanente); **septiembre–octubre = follaje otoñal + floración tardía**. Los senderos atraviesan secciones temáticas — **Jardín Europeo, Bosque Nativo Coreano, Paseo de los Cerezos, Campo de Hortensias** — conectados por un circuito sinuoso de 2,5 km que se completa en ~60–75 min a paso pausado. Punto arquitectónico destacado: un complejo de **invernadero acristalado + galería + cafetería** en la entrada, que sirve a la vez como refugio interior frente al clima (la única zona cubierta, en torno al 15 % de la visita) y como espacio de café/té con vistas al jardín. **Crédito de rodaje**: el reality **'EXchange / Transit Love 3' (환승연애)** filmó en Camellia Hill la memorable cita de Ju-won y Yu-jeong, un imán para los aficionados al género. **Abierto los 365 días del año**; la **falta de iluminación exterior** obliga al cierre al atardecer (invierno ~17:00, verano ~19:00). Entrada: **adulto ₩12.000 / juvenil + senior ₩10.000 / niño (4–11) ₩9.000 / GRATIS para menores de 3 años**.",
-      "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+      "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "highlights": [
         "**172.000 m²** — el mayor arboreto de camelias del Oriente",
         "**6.000 árboles / más de 500 especies de 80 países** — acumulados durante más de 30 años",
@@ -388,7 +415,39 @@
         "closed": "Abierto todo el año",
         "admission": "Adulto 10.000 KRW / Adolescente 8.000 KRW / Niño 7.000 KRW (aproximado)",
         "walking": "Fácil a moderada — senderos de pendiente suave; en su mayoría accesible para cochecitos"
-      }
+      },
+      "images": [
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "location": "Camellia Hill (camelias en pico dic-ene)",
+          "caption": "Camellia Hill (camelias en pico dic-ene) — photo 1",
+          "alt": "Camellia Hill (camelias en pico dic-ene) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "location": "Camellia Hill (camelias en pico dic-ene)",
+          "caption": "Camellia Hill (camelias en pico dic-ene) — photo 2",
+          "alt": "Camellia Hill (camelias en pico dic-ene) — gallery image 2"
+        }
+      ]
     },
     {
       "number": 6,
@@ -397,7 +456,7 @@
       "name": "Acantilado Jusangjeolli de Daepo",
       "category": "Geoparque UNESCO — olas de invierno en las columnas de basalto",
       "description": "**Acantilado Jusangjeolli** en invierno: el mar del sur está agitado y las **olas más grandes del año** rompen en las columnas hexagonales con un impacto especialmente dramático. El spray puede alcanzar los 20-25 m en días de viento fuerte del norte. **Entradas ₩2.000 (incluidas).**",
-      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "Las **olas más grandes del año** en invierno",
         "Spray de hasta 20-25 m en días de viento norte",
@@ -434,7 +493,65 @@
         "closed": "Open year-round (weather-dependent)",
         "admission": "Adult 2,000 KRW / Child 1,000 KRW (low fee)",
         "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
-      }
+      },
+      "images": [
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "Acantilado Jusangjeolli de Daepo",
+          "caption": "Acantilado Jusangjeolli de Daepo — photo 1",
+          "alt": "Acantilado Jusangjeolli de Daepo — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "Acantilado Jusangjeolli de Daepo",
+          "caption": "Acantilado Jusangjeolli de Daepo — photo 2",
+          "alt": "Acantilado Jusangjeolli de Daepo — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "Acantilado Jusangjeolli de Daepo",
+          "caption": "Acantilado Jusangjeolli de Daepo — photo 3",
+          "alt": "Acantilado Jusangjeolli de Daepo — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "Acantilado Jusangjeolli de Daepo",
+          "caption": "Acantilado Jusangjeolli de Daepo — photo 4",
+          "alt": "Acantilado Jusangjeolli de Daepo — gallery image 4"
+        }
+      ]
     },
     {
       "number": 7,
@@ -443,7 +560,7 @@
       "name": "Cascadas Cheonjeyeon",
       "category": "Monumento Natural n.° 378 — Las cascadas en invierno",
       "description": "**La Cascada Cheonjeyeon (천제연, '연 = estanque + 천제 = Emperador del Cielo')** es una **cascada de tres niveles** situada en la garganta volcánica de Jungmun, designada **Monumento Natural N.º 378 (1993)** por su rara combinación ecológica. El nombre proviene de una **leyenda taoísta de la era Joseon que narra cómo siete ninfas (선녀, *seonnyeo*) descendían cada noche del cielo para bañarse en el estanque superior** — un mito reforzado por el microclima de niebla perpetua del lugar. El **primer nivel (caída de 22 m, estanque de 21 m de profundidad)** desemboca en un caldero circular de basalto y solo fluye tras lluvias intensas — la mayoría de los días el estanque superior permanece vidrioso y reflectante. El **segundo nivel (caída de 30 m) fluye todo el año** — protagonista fotográfico indiscutible. El tercer nivel completa el descenso hacia el mar. El **Puente Seonimgyo (선임교, 'Puente de las Siete Ninfas') de 120 m × 78 m de altura** cruza la garganta a mitad del recorrido — sus paneles en relieve de bronce fundido a ambos lados representan **a las siete ninfas en pleno vuelo**, una materialización arquitectónica literal de la leyenda fundacional. El bosque circundante alberga **especies vegetales raras**, entre ellas el **lirio sapo coreano (*Tricyrtis macropoda*)** y el helecho amenazado **Mankyua chejuense** (endémico de Jeju, En Peligro Crítico según la UICN). Longitud del circuito: **0,8 km, ~30 min de caminata** con varios tramos de escaleras pronunciadas. Entrada: **adulto ₩2.500 / juvenil ₩1.350 / GRATIS para menores de 7 y mayores de 65 años**. Cheonjeyeon también forma parte del canon literario de la era Joseon **'Yeongjusipgyeong (영주십경, las 10 Maravillas Paisajísticas de Jeju)'** — junto con la cumbre del Monte Hallasan, el Pico Seongsan Ilchulbong y la Cascada Jeongbang — lo que significa que el circuito suroeste de hoy cubre **2 de las 10 (Hallasan + Cheonjeyeon)** en una sola jornada. El bienal **Festival Jeju Chilseonyeo (Siete Ninfas)**, que se celebra en el puente cada mes de mayo (años impares), recrea la leyenda del descenso con danza tradicional y actuaciones musicales — se requiere reserva cuando el festival coincide con la fecha del tour. Horario **09:00–18:00** todo el año (última entrada 17:30).",
-      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+      "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "highlights": [
         "**Monumento Natural N.º 378 (designado en 1993)** — cascada de tres niveles + hábitat de plantas raras",
         "El nombre **'Cheonjeyeon' = 'Estanque del Emperador del Cielo'** — leyenda taoísta de la era Joseon",
@@ -485,7 +602,52 @@
         "closed": "Abierto todo el año (cierres ocasionales por meteorología)",
         "admission": "Adulto 2.500 KRW / niño 1.350 KRW",
         "walking": "Dificultad de caminata moderada — numerosas escaleras a lo largo del valle; no apto para cochecitos; no recomendable para personas con movilidad reducida"
-      }
+      },
+      "images": [
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "location": "Cascadas Cheonjeyeon",
+          "caption": "Cascadas Cheonjeyeon — photo 1",
+          "alt": "Cascadas Cheonjeyeon — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "location": "Cascadas Cheonjeyeon",
+          "caption": "Cascadas Cheonjeyeon — photo 2",
+          "alt": "Cascadas Cheonjeyeon — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "location": "Cascadas Cheonjeyeon",
+          "caption": "Cascadas Cheonjeyeon — photo 3",
+          "alt": "Cascadas Cheonjeyeon — gallery image 3"
+        }
+      ]
     },
     {
       "number": 8,
@@ -1596,7 +1758,7 @@
             "name": "Camellia Hill (camelias en pico dic-ene)",
             "category": "El mayor arboreto de camelias de Oriente — pico invernal de las camelias rojas",
             "description": "**Camellia Hill** en invierno es el mejor momento del año: las **camelias rojas** alcanzan su **pico absoluto en diciembre-enero**, cuando todas las demás flores de Jeju están dormidas. Los 6.000 camelios en 172.000 m² cubren el jardín de rojo intenso sobre el basalto negro — el contraste más dramático del jardín en cualquier estación. Las flores de camelia tienen un período de caída única: caen enteras, sin deshojarse, formando una alfombra roja bajo los árboles. **Entradas incluidas.**",
-            "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+            "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
             "highlights": [
               "**Pico absoluto de camelias rojas** en diciembre-enero",
               "El único jardín importante de Jeju en plena floración en invierno",
@@ -1618,7 +1780,39 @@
                 "Korea Tourism Organization — Top Korean botanical gardens registry",
                 "Kakao TV / Wavve programming archive — 'EXchange / Transit Love 3' filming locations"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "location": "Camellia Hill (camelias en pico dic-ene)",
+                "caption": "Camellia Hill (camelias en pico dic-ene) — photo 1",
+                "alt": "Camellia Hill (camelias en pico dic-ene) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "location": "Camellia Hill (camelias en pico dic-ene)",
+                "caption": "Camellia Hill (camelias en pico dic-ene) — photo 2",
+                "alt": "Camellia Hill (camelias en pico dic-ene) — gallery image 2"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1627,7 +1821,7 @@
             "name": "Acantilado Jusangjeolli de Daepo",
             "category": "Geoparque UNESCO — olas de invierno en las columnas de basalto",
             "description": "**Acantilado Jusangjeolli** en invierno: el mar del sur está agitado y las **olas más grandes del año** rompen en las columnas hexagonales con un impacto especialmente dramático. El spray puede alcanzar los 20-25 m en días de viento fuerte del norte. **Entradas ₩2.000 (incluidas).**",
-            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
             "highlights": [
               "Las **olas más grandes del año** en invierno",
               "Spray de hasta 20-25 m en días de viento norte",
@@ -1649,7 +1843,65 @@
                 "VisitJeju — Daepo Jusangjeolli",
                 "Korea Geological Survey — Jeju basalt formation studies"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "location": "Acantilado Jusangjeolli de Daepo",
+                "caption": "Acantilado Jusangjeolli de Daepo — photo 1",
+                "alt": "Acantilado Jusangjeolli de Daepo — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "location": "Acantilado Jusangjeolli de Daepo",
+                "caption": "Acantilado Jusangjeolli de Daepo — photo 2",
+                "alt": "Acantilado Jusangjeolli de Daepo — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "location": "Acantilado Jusangjeolli de Daepo",
+                "caption": "Acantilado Jusangjeolli de Daepo — photo 3",
+                "alt": "Acantilado Jusangjeolli de Daepo — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "location": "Acantilado Jusangjeolli de Daepo",
+                "caption": "Acantilado Jusangjeolli de Daepo — photo 4",
+                "alt": "Acantilado Jusangjeolli de Daepo — gallery image 4"
+              }
+            ]
           },
           {
             "number": 7,
@@ -1658,7 +1910,7 @@
             "name": "Cascadas Cheonjeyeon",
             "category": "Monumento Natural n.° 378 — Las cascadas en invierno",
             "description": "**Cascadas Cheonjeyeon** en invierno: el caudal es mayor que en verano por las lluvias otoñales acumuladas. Las tres cascadas tienen más fuerza y el ambiente de la garganta volcánica subtropical con vegetación verde en pleno invierno es especialmente sorprendente. **Entradas ₩2.500 (incluidas).**",
-            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+            "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
             "highlights": [
               "Mayor caudal de invierno — las cascadas con más fuerza del año",
               "Vegetación subtropical verde en pleno invierno",
@@ -1680,7 +1932,52 @@
                 "Jeju Cultural Foundation — Seven Nymphs Festival history",
                 "Seogwipo City tourism — Cheonjeyeon admission and access"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "location": "Cascadas Cheonjeyeon",
+                "caption": "Cascadas Cheonjeyeon — photo 1",
+                "alt": "Cascadas Cheonjeyeon — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "location": "Cascadas Cheonjeyeon",
+                "caption": "Cascadas Cheonjeyeon — photo 2",
+                "alt": "Cascadas Cheonjeyeon — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "location": "Cascadas Cheonjeyeon",
+                "caption": "Cascadas Cheonjeyeon — photo 3",
+                "alt": "Cascadas Cheonjeyeon — gallery image 3"
+              }
+            ]
           },
           {
             "number": 8,

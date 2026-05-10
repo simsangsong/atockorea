@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "釜山→慶州桜ツアー 3月28日〜4月10日 | AtoC",
     "metaDescription": "釜山発・慶州桜ツアー8.5時間（3月28日〜4月10日限定）：普門湖（桜の中心）→瞻星台＋大陵苑（ユネスコ）→仏国寺（ユネスコ）。慶州最大の3大桜見どころを一日で。",
-    "ogImage": "",
+    "ogImage": "https://www.atockorea.com/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "primaryKeywords": [
       "釜山発慶州桜ツアー",
       "普門湖桜ツアー",
@@ -34,8 +34,8 @@
       "ユネスコ",
       "春限定"
     ],
-    "heroImage": "",
-    "thumbnail": "",
+    "heroImage": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+    "thumbnail": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "priceLabel": "料金は予約時にご確認ください",
     "shortCardDescription": "釜山発の慶州桜見どころ8.5時間ツアー（3月28日〜4月10日限定）：普門湖（慶州最大の桜）→瞻星台＋大陵苑（ユネスコ）→慶州地元料理の昼食→仏国寺（ユネスコ）。3大桜見どころ、全入場料無料。",
     "tags": [
@@ -55,7 +55,7 @@
     "priceNote": "釜山発慶州桜ツアーの価格は予約時にご確認ください。3月28日〜4月10日の春限定ツアー。"
   },
   "hero": {
-    "imageUrl": "",
+    "imageUrl": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "imagePosition": "center 50%",
     "tagline": "釜山から慶州へ — 普門湖の湖畔桜、ユネスコエリアの瞻星台、仏国寺の春景色を一日で巡ります。",
     "pills": [
@@ -127,58 +127,44 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
-      "alt": "慶州普門湖のピンク花びら桜並木",
-      "caption": "普門湖 — 約8kmの桜並木",
-      "location": "普門湖（慶州）",
-      "atmosphere": "春の慶州 — 湖面に映る桜の反射が絶景"
+      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+      "location": "瞻星台天文台＋大陵苑古墳群（ユネスコ）",
+      "alt": "瞻星台天文台＋大陵苑古墳群（ユネスコ） — gallery image 1",
+      "caption": "瞻星台天文台＋大陵苑古墳群（ユネスコ） — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1583244694751-9ce8b1d2b39a?w=1200&q=80",
-      "alt": "大陵苑の新羅古墳を囲む桜",
-      "caption": "大陵苑石垣道の桜",
-      "location": "大陵苑古墳群（慶州）",
-      "atmosphere": "新羅王室の古墳群と春の桜のコントラスト"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+      "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 1",
+      "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601822336970-8af7c01f3a91?w=1200&q=80",
-      "alt": "7世紀の石造天文台、瞻星台",
-      "caption": "瞻星台（647年、東アジア最古の天文台）",
-      "location": "瞻星台天文台（慶州）",
-      "atmosphere": "東アジア最古の天文台と花の組み合わせ"
+      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+      "location": "瞻星台天文台＋大陵苑古墳群（ユネスコ）",
+      "alt": "瞻星台天文台＋大陵苑古墳群（ユネスコ） — gallery image 2",
+      "caption": "瞻星台天文台＋大陵苑古墳群（ユネスコ） — photo 2"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601649308334-2cc8e6f0e21f?w=1200&q=80",
-      "alt": "仏国寺の石橋と石塔",
-      "caption": "仏国寺（ユネスコ世界遺産1995年）",
-      "location": "仏国寺（吐含山）",
-      "atmosphere": "ユネスコ世界遺産と桜の参道の春景色"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+      "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+      "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 2",
+      "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1614853128977-b1f1d7e64fae?w=1200&q=80",
-      "alt": "ツアーで訪れる普門亭の風景",
-      "caption": "普門亭 — CNNが選んだ韓国の美しい名所",
-      "location": "普門湖（慶州）",
-      "atmosphere": "慶州最大の桜見どころ — 9,000本が咲き誇る"
-    },
-    {
-      "id": "g6",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1611348586804-61bf6c080437?w=1200&q=80",
-      "alt": "ツアーで訪れる釜山〜慶州シャトルバスの風景",
-      "caption": "釜山〜慶州シャトルバス",
-      "location": "釜山〜慶州シャトルバス",
-      "atmosphere": "釜山発着の春限定シャトル"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+      "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 3",
+      "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 3"
     }
   ],
   "itineraryStops": [
@@ -323,7 +309,40 @@
           "daereungwon_tomb_complex"
         ],
         "compound_stop_note": "Cheomseongdae and Daereungwon are co-located in the Gyeongju Historic Areas (ユネスコ 2000), ~5-min walk apart, visited together as a single ~75-90 min itinerary block but tracked separately in the KB. Cheomseongdae (NT 31, 9.17m / 27 layers / 362 stones — oldest astronomical observatory in East Asia, Queen Seondeok era 632-647) is the primary anchor; Daereungwon (23 Silla royal tombs incl. Cheonmachong NT 155 with 11,526 artifacts) is the secondary."
-      }
+      },
+      "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+      "images": [
+        "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+        "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+          "location": "瞻星台天文台＋大陵苑古墳群（ユネスコ）",
+          "caption": "瞻星台天文台＋大陵苑古墳群（ユネスコ） — photo 1",
+          "alt": "瞻星台天文台＋大陵苑古墳群（ユネスコ） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+          "location": "瞻星台天文台＋大陵苑古墳群（ユネスコ）",
+          "caption": "瞻星台天文台＋大陵苑古墳群（ユネスコ） — photo 2",
+          "alt": "瞻星台天文台＋大陵苑古墳群（ユネスコ） — gallery image 2"
+        }
+      ]
     },
     {
       "number": 4,
@@ -402,7 +421,53 @@
           "VisitKorea",
           "Visit Gyeongju official"
         ]
-      }
+      },
+      "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "images": [
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+          "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 1",
+          "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+          "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 2",
+          "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+          "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 3",
+          "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 3"
+        }
+      ]
     },
     {
       "number": 6,
@@ -1271,7 +1336,40 @@
                 "daereungwon_tomb_complex"
               ],
               "compound_stop_note": "Cheomseongdae and Daereungwon are co-located in the Gyeongju Historic Areas (ユネスコ 2000), ~5-min walk apart, visited together as a single ~75-90 min itinerary block but tracked separately in the KB. Cheomseongdae (NT 31, 9.17m / 27 layers / 362 stones — oldest astronomical observatory in East Asia, Queen Seondeok era 632-647) is the primary anchor; Daereungwon (23 Silla royal tombs incl. Cheonmachong NT 155 with 11,526 artifacts) is the secondary."
-            }
+            },
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+            "images": [
+              "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+              "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+                "location": "瞻星台天文台＋大陵苑古墳群（ユネスコ）",
+                "caption": "瞻星台天文台＋大陵苑古墳群（ユネスコ） — photo 1",
+                "alt": "瞻星台天文台＋大陵苑古墳群（ユネスコ） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+                "location": "瞻星台天文台＋大陵苑古墳群（ユネスコ）",
+                "caption": "瞻星台天文台＋大陵苑古墳群（ユネスコ） — photo 2",
+                "alt": "瞻星台天文台＋大陵苑古墳群（ユネスコ） — gallery image 2"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1350,7 +1448,53 @@
                 "VisitKorea",
                 "Visit Gyeongju official"
               ]
-            }
+            },
+            "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+            "images": [
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+                "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 1",
+                "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+                "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 2",
+                "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "location": "仏国寺（プルグクサ、ユネスコ世界遺産）",
+                "caption": "仏国寺（プルグクサ、ユネスコ世界遺産） — photo 3",
+                "alt": "仏国寺（プルグクサ、ユネスコ世界遺産） — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,

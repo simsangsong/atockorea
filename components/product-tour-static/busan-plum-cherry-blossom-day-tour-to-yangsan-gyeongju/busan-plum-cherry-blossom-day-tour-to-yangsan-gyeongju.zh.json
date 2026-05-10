@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "釜山出发·梅花+樱花一日游·通度寺+佛国寺+普门湖 | AtoC Korea",
     "metaDescription": "8.5小时春季专线——通度寺（UNESCO山寺+慈藏梅），院洞梅花村，佛国寺，普门湖樱花。2月25日至4月10日限定运行。",
-    "ogImage": "",
+    "ogImage": "https://www.atockorea.com/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
     "primaryKeywords": [
       "梁山通度寺梅花旅游",
       "釜山梅花樱花一日游梁山庆州",
@@ -33,8 +33,8 @@
       "2处世界遗产",
       "釜山接送"
     ],
-    "heroImage": "",
-    "thumbnail": "",
+    "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+    "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
     "priceLabel": "按人计费 — 请于预订时确认",
     "shortCardDescription": "从釜山出发的梅花+樱花双季班车，途经梁山和庆州。行程包含通度寺（UNESCO三宝寺之一，含350年自然梅花）、元动梅花村（米酒三层肉午餐）、佛国寺（UNESCO）及普门湖8公里樱花步道。每日根据开花情况调整重点，错过两季全额退款。",
     "tags": [
@@ -56,7 +56,7 @@
     "priceNote": "春季限定双语小型团体行程（梅花 + 赏樱双季覆盖）。AtoC Korea直接销售；相较于旅游服务团队底价享有10%折扣。"
   },
   "hero": {
-    "imageUrl": "",
+    "imageUrl": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
     "imagePosition": "center 50%",
     "tagline": "从通度寺350年紫藏梅古树到元东里铁道赏樱步道——釜山出发最美的梅樱双季路线",
     "pills": [
@@ -128,58 +128,28 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1571156425562-12341e7c9aae?w=1200&q=80",
-      "alt": "通度寺寺庙背景中的梅花枝桠",
-      "caption": "通度寺慈藏梅（350年红梅）",
-      "location": "通度寺",
-      "atmosphere": "神圣春意"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "location": "佛国寺（UNESCO世界遗产）",
+      "alt": "佛国寺（UNESCO世界遗产） — gallery image 1",
+      "caption": "佛国寺（UNESCO世界遗产） — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601901574849-2ce39f2e0867?w=1200&q=80",
-      "alt": "通度寺大雄殿法堂与松林参道",
-      "caption": "通度寺大雄殿（国宝第290号）",
-      "location": "通度寺",
-      "atmosphere": "UNESCO山寺氛围"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+      "location": "佛国寺（UNESCO世界遗产）",
+      "alt": "佛国寺（UNESCO世界遗产） — gallery image 2",
+      "caption": "佛国寺（UNESCO世界遗产） — photo 2"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601822336970-8af7c01f3a91?w=1200&q=80",
-      "alt": "梁山元东梅花与铁道",
-      "caption": "元东梅花村 — 铁道与花海",
-      "location": "元东梅花村",
-      "atmosphere": "怀旧情怀"
-    },
-    {
-      "id": "g4",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601649308334-2cc8e6f0e21f?w=1200&q=80",
-      "alt": "佛国寺石塔与背景中的樱花",
-      "caption": "佛国寺赏樱路",
-      "location": "佛国寺",
-      "atmosphere": "UNESCO文化遗产春日氛围"
-    },
-    {
-      "id": "g5",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1614853128977-b1f1d7e64fae?w=1200&q=80",
-      "alt": "普门湖赏樱步道与普门亭",
-      "caption": "普门湖赏樱环湖路",
-      "location": "普门湖",
-      "atmosphere": "春日湖畔风光"
-    },
-    {
-      "id": "g6",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1567427361984-0cbe7396fc6c?w=1200&q=80",
-      "alt": "元东水芹烤猪五花肉",
-      "caption": "元东水芹五花肉（季节限定地区料理）",
-      "location": "元东",
-      "atmosphere": "春日美食飨宴"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "location": "佛国寺（UNESCO世界遗产）",
+      "alt": "佛国寺（UNESCO世界遗产） — gallery image 3",
+      "caption": "佛国寺（UNESCO世界遗产） — photo 3"
     }
   ],
   "itineraryStops": [
@@ -362,7 +332,53 @@
           "VisitKorea",
           "Visit Gyeongju official"
         ]
-      }
+      },
+      "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "images": [
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "location": "佛国寺（UNESCO世界遗产）",
+          "caption": "佛国寺（UNESCO世界遗产） — photo 1",
+          "alt": "佛国寺（UNESCO世界遗产） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "location": "佛国寺（UNESCO世界遗产）",
+          "caption": "佛国寺（UNESCO世界遗产） — photo 2",
+          "alt": "佛国寺（UNESCO世界遗产） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "location": "佛国寺（UNESCO世界遗产）",
+          "caption": "佛国寺（UNESCO世界遗产） — photo 3",
+          "alt": "佛国寺（UNESCO世界遗产） — gallery image 3"
+        }
+      ]
     },
     {
       "number": 5,
@@ -1412,7 +1428,53 @@
                 "VisitKorea",
                 "Visit Gyeongju official"
               ]
-            }
+            },
+            "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+            "images": [
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "location": "佛国寺（UNESCO世界遗产）",
+                "caption": "佛国寺（UNESCO世界遗产） — photo 1",
+                "alt": "佛国寺（UNESCO世界遗产） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "location": "佛国寺（UNESCO世界遗产）",
+                "caption": "佛国寺（UNESCO世界遗产） — photo 2",
+                "alt": "佛国寺（UNESCO世界遗产） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "location": "佛国寺（UNESCO世界遗产）",
+                "caption": "佛国寺（UNESCO世界遗产） — photo 3",
+                "alt": "佛国寺（UNESCO世界遗产） — gallery image 3"
+              }
+            ]
           },
           {
             "number": 5,

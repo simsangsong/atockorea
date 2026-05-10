@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "ソウルプライベートツアー：南怡島・晨靜苑・プチフランス | AtoC",
     "metaDescription": "ソウル発プライベートツアー：南怡島（ナミ島）→晨靜苑（一万平米の庭園）→プチフランス（フランス風テーマ施設）。「冬のソナタ」ロケ地巡り。英語ガイド付き。",
-    "ogImage": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1920&q=80",
+    "ogImage": "https://www.atockorea.com/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
     "primaryKeywords": [
       "南怡島ナミ島ツアー",
       "晨靜苑ツアー",
@@ -34,8 +34,8 @@
       "プチフランス",
       "ソウル発"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1920&q=80",
-    "thumbnail": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=600&q=80",
+    "heroImage": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+    "thumbnail": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
     "priceLabel": "車両単位の料金 — 予約時にご確認ください",
     "shortCardDescription": "「冬のソナタ」のロケ地・南怡島の並木フェリー体験、22のテーマ庭園を持つ晨靜苑の花の散策、「星の王子さま」がテーマのプチフランスのコロニアル建築街を巡るソウル発プライベート日帰りツアー。ホテル送迎・全入場料込み。",
     "tags": [
@@ -52,7 +52,7 @@
     "per": "車両"
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1920&q=80",
+    "imageUrl": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
     "imagePosition": "center 45%",
     "tagline": "ソウルから約1時間 — 南怡島のポプラ並木、一万平米の庭園、プチフランスのコロニアル建築を一日に",
     "pills": [
@@ -124,49 +124,76 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
-      "alt": "南怡島の一直線の道に並ぶメタセコイアの並木道",
-      "caption": "南怡島のメタセコイア並木（冬のソナタ撮影地）",
-      "location": "韓国",
-      "atmosphere": "韓国の美しい景観"
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+      "location": "南怡島（ナミソム）",
+      "alt": "南怡島（ナミソム） — gallery image 1",
+      "caption": "南怡島（ナミソム） — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601273453200-7e1b7e5e3a8a?w=1200&q=80",
-      "alt": "ツアーで訪れるアチムゴヨ樹木園 (1996の風景",
-      "caption": "アチムゴヨ樹木園 (1996, 330,000 sqm, 20 themed gardens)",
-      "location": "韓国",
-      "atmosphere": "韓国の美しい景観"
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+      "location": "晨靜苑",
+      "alt": "晨靜苑 — gallery image 1",
+      "caption": "晨靜苑 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1583917123405-3aa64e6a96b8?w=1200&q=80",
-      "alt": "湖の上の丘に鮮やかに塗られたフランス風の村の建物",
-      "caption": "プチフランス — 星の王子さまテーマの丘の村",
-      "location": "韓国",
-      "atmosphere": "カラフルな景観"
+      "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+      "location": "プチフランス",
+      "alt": "プチフランス — gallery image 1",
+      "caption": "プチフランス — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
-      "alt": "ツアーで訪れる清平湖を渡って南怡島へ向かうフェリーの風景",
-      "caption": "清平湖を渡って南怡島へ向かうフェリー",
-      "location": "韓国",
-      "atmosphere": "韓国の美しい景観"
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+      "location": "南怡島（ナミソム）",
+      "alt": "南怡島（ナミソム） — gallery image 2",
+      "caption": "南怡島（ナミソム） — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
-      "alt": "ツアーで訪れるアチムゴヨ樹木園 冬のライトアップ祭り (12月〜3月中旬)の風景",
-      "caption": "アチムゴヨ樹木園 冬のライトアップ祭り (12月〜3月中旬)",
-      "location": "韓国",
-      "atmosphere": "韓国の美しい景観"
+      "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+      "location": "南怡島（ナミソム）",
+      "alt": "南怡島（ナミソム） — gallery image 3",
+      "caption": "南怡島（ナミソム） — photo 3"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+      "location": "晨靜苑",
+      "alt": "晨靜苑 — gallery image 2",
+      "caption": "晨靜苑 — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+      "location": "晨靜苑",
+      "alt": "晨靜苑 — gallery image 3",
+      "caption": "晨靜苑 — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+      "location": "晨靜苑",
+      "alt": "晨靜苑 — gallery image 4",
+      "caption": "晨靜苑 — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp",
+      "location": "プチフランス",
+      "alt": "プチフランス — gallery image 2",
+      "caption": "プチフランス — photo 2"
     }
   ],
   "itineraryStops": [
@@ -217,7 +244,53 @@
           "KBS / Korea Times (Winter Sonata 2002 production retrospectives + Japanese tourism boom coverage)",
           "Wikipedia (Namiseom — open corpus on General Nami history + Cheongpyeong Dam 1944 origin)"
         ]
-      }
+      },
+      "image": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+      "images": [
+        "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+        "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+        "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+          "location": "南怡島（ナミソム）",
+          "caption": "南怡島（ナミソム） — photo 1",
+          "alt": "南怡島（ナミソム） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+          "location": "南怡島（ナミソム）",
+          "caption": "南怡島（ナミソム） — photo 2",
+          "alt": "南怡島（ナミソム） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+          "location": "南怡島（ナミソム）",
+          "caption": "南怡島（ナミソム） — photo 3",
+          "alt": "南怡島（ナミソム） — gallery image 3"
+        }
+      ]
     },
     {
       "number": 2,
@@ -270,7 +343,66 @@
           "Sahmyook University Department of Horticulture (Prof. Han Sang-kyung honorary professor profile + garden origin)",
           "Wikipedia (Garden of Morning Calm — corpus on Tagore-derived name + 5,000 species + 330,000 m² total)"
         ]
-      }
+      },
+      "image": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+      "images": [
+        "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+        "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+        "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+        "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+          "location": "晨靜苑",
+          "caption": "晨靜苑 — photo 1",
+          "alt": "晨靜苑 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+          "location": "晨靜苑",
+          "caption": "晨靜苑 — photo 2",
+          "alt": "晨靜苑 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+          "location": "晨靜苑",
+          "caption": "晨靜苑 — photo 3",
+          "alt": "晨靜苑 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+          "location": "晨靜苑",
+          "caption": "晨靜苑 — photo 4",
+          "alt": "晨靜苑 — gallery image 4"
+        }
+      ]
     },
     {
       "number": 3,
@@ -323,7 +455,40 @@
           "Gapyeong County Tourism Office (gapyeong.go.kr — official local-government attractions listing)",
           "Wikipedia (Petite France theme park — corpus on July 2008 opening + Le Petit Prince theme + organizational structure)"
         ]
-      }
+      },
+      "image": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+      "images": [
+        "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+        "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+          "location": "プチフランス",
+          "caption": "プチフランス — photo 1",
+          "alt": "プチフランス — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp",
+          "location": "プチフランス",
+          "caption": "プチフランス — photo 2",
+          "alt": "プチフランス — gallery image 2"
+        }
+      ]
     }
   ],
   "routeFlowStops": [
@@ -730,7 +895,7 @@
     "destination_region": "korea_mainland",
     "region_type": "gyeonggi_gapyeong",
     "vehicle_type": "private_vehicle",
-    "duration_hours": 9.0,
+    "duration_hours": 9,
     "region_tags": [
       "seoul_capital",
       "gyeonggi_gapyeong",
@@ -759,16 +924,16 @@
     "pace_level": 0.6,
     "walking_level": 0.5,
     "scenic_level": 0.95,
-    "photo_level": 1.0,
+    "photo_level": 1,
     "culture_level": 0.6,
     "relax_level": 0.8,
     "first_time_fit": 0.95,
-    "family_fit": 1.0,
+    "family_fit": 1,
     "senior_fit": 0.8,
-    "couple_fit": 1.0,
+    "couple_fit": 1,
     "solo_traveler_fit": 0.8,
     "active_traveler_fit": 0.6,
-    "adult_family_fit": 1.0,
+    "adult_family_fit": 1,
     "family_with_teens_fit": 0.8,
     "young_kids_fit": 0.8,
     "senior_active_fit": 0.8,
@@ -782,7 +947,7 @@
     "iconic_landmark_fit": 0.9,
     "cafe_fit": 0.8,
     "food_fit": 0.6,
-    "nature_fit": 1.0,
+    "nature_fit": 1,
     "beach_fit": 0.2,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.4,
@@ -793,11 +958,11 @@
     "intangible_heritage_fit": 0.2,
     "indoor_ratio": 0.2,
     "weather_sensitivity": 0.6,
-    "comfort_level": 1.0,
+    "comfort_level": 1,
     "budget_fit": 0.4,
-    "premium_fit": 1.0,
+    "premium_fit": 1,
     "small_group_fit": 0.15,
-    "private_fit": 1.0,
+    "private_fit": 1,
     "bus_fit": 0.05,
     "price_band": "premium",
     "pickup_base": "seoul_downtown",
@@ -838,49 +1003,49 @@
       "garden_of_morning_calm",
       "petite_france"
     ],
-    "private_tour_fit": 1.0,
+    "private_tour_fit": 1,
     "history_culture_fit": 0.6,
     "customizable_route_fit": 0.4,
     "flexibility_fit": 0.7,
     "romantic_fit": 0.95,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "seoul_day_trip_pair_fit": 1.0,
-    "seoul_central_hotel_pickup_fit": 1.0,
-    "return_to_seoul_central_fit": 1.0,
-    "day_trip_2_3_hour_drive_each_way_fit": 1.0,
-    "private_charter_format_fit": 1.0,
-    "premium_pacing_fit": 1.0,
-    "small_party_intimate_fit": 1.0,
-    "k_drama_filming_location_route_fit": 1.0,
-    "winter_sonata_anchor_fit": 1.0,
-    "little_prince_saint_exupery_anchor_fit": 1.0,
-    "saint_exupery_foundation_licensed_fit": 1.0,
-    "naminara_micronation_concept_fit": 1.0,
-    "unicef_child_friendly_park_fit": 1.0,
-    "ferry_island_visit_fit": 1.0,
-    "k_drama_filming_density_high_fit": 1.0,
-    "bon_appetit_your_majesty_2025_filming_fit": 1.0,
-    "im_yoon_ah_filming_location_fit": 1.0,
-    "private_arboretum_visit_fit": 1.0,
-    "korean_peninsula_shape_garden_fit": 1.0,
-    "rabindranath_tagore_land_of_morning_calm_anchor_fit": 1.0,
-    "winter_lighting_festival_anchor_fit": 1.0,
-    "mediterranean_alpine_french_village_fit": 1.0,
-    "naminara_passport_visa_concept_fit": 1.0,
-    "cnn_top_50_korea_attraction_fit": 1.0,
-    "gapyeong_attractions_route_fit": 1.0,
-    "namisum_5km_circuit_walking_fit": 1.0,
-    "petite_france_combined_pinocchio_italian_village_fit": 1.0,
+    "seoul_day_trip_pair_fit": 1,
+    "seoul_central_hotel_pickup_fit": 1,
+    "return_to_seoul_central_fit": 1,
+    "day_trip_2_3_hour_drive_each_way_fit": 1,
+    "private_charter_format_fit": 1,
+    "premium_pacing_fit": 1,
+    "small_party_intimate_fit": 1,
+    "k_drama_filming_location_route_fit": 1,
+    "winter_sonata_anchor_fit": 1,
+    "little_prince_saint_exupery_anchor_fit": 1,
+    "saint_exupery_foundation_licensed_fit": 1,
+    "naminara_micronation_concept_fit": 1,
+    "unicef_child_friendly_park_fit": 1,
+    "ferry_island_visit_fit": 1,
+    "k_drama_filming_density_high_fit": 1,
+    "bon_appetit_your_majesty_2025_filming_fit": 1,
+    "im_yoon_ah_filming_location_fit": 1,
+    "private_arboretum_visit_fit": 1,
+    "korean_peninsula_shape_garden_fit": 1,
+    "rabindranath_tagore_land_of_morning_calm_anchor_fit": 1,
+    "winter_lighting_festival_anchor_fit": 1,
+    "mediterranean_alpine_french_village_fit": 1,
+    "naminara_passport_visa_concept_fit": 1,
+    "cnn_top_50_korea_attraction_fit": 1,
+    "gapyeong_attractions_route_fit": 1,
+    "namisum_5km_circuit_walking_fit": 1,
+    "petite_france_combined_pinocchio_italian_village_fit": 1,
     "differentiates_from_dmz_day_trip": true,
     "differentiates_from_seoraksan_sokcho_day_trip": true,
     "differentiates_from_pocheon_three_pillar_day_trip": true,
@@ -1148,7 +1313,53 @@
                 "KBS / Korea Times (Winter Sonata 2002 production retrospectives + Japanese tourism boom coverage)",
                 "Wikipedia (Namiseom — open corpus on General Nami history + Cheongpyeong Dam 1944 origin)"
               ]
-            }
+            },
+            "image": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+            "images": [
+              "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+              "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+              "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+                "location": "南怡島（ナミソム）",
+                "caption": "南怡島（ナミソム） — photo 1",
+                "alt": "南怡島（ナミソム） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+                "location": "南怡島（ナミソム）",
+                "caption": "南怡島（ナミソム） — photo 2",
+                "alt": "南怡島（ナミソム） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+                "location": "南怡島（ナミソム）",
+                "caption": "南怡島（ナミソム） — photo 3",
+                "alt": "南怡島（ナミソム） — gallery image 3"
+              }
+            ]
           },
           {
             "number": 2,
@@ -1196,7 +1407,66 @@
                 "Sahmyook University Department of Horticulture (Prof. Han Sang-kyung honorary professor profile + garden origin)",
                 "Wikipedia (Garden of Morning Calm — corpus on Tagore-derived name + 5,000 species + 330,000 m² total)"
               ]
-            }
+            },
+            "image": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+            "images": [
+              "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+              "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+              "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+              "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+                "location": "晨靜苑",
+                "caption": "晨靜苑 — photo 1",
+                "alt": "晨靜苑 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+                "location": "晨靜苑",
+                "caption": "晨靜苑 — photo 2",
+                "alt": "晨靜苑 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+                "location": "晨靜苑",
+                "caption": "晨靜苑 — photo 3",
+                "alt": "晨靜苑 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+                "location": "晨靜苑",
+                "caption": "晨靜苑 — photo 4",
+                "alt": "晨靜苑 — gallery image 4"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1245,7 +1515,40 @@
                 "Gapyeong County Tourism Office (gapyeong.go.kr — official local-government attractions listing)",
                 "Wikipedia (Petite France theme park — corpus on July 2008 opening + Le Petit Prince theme + organizational structure)"
               ]
-            }
+            },
+            "image": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+            "images": [
+              "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+              "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+                "location": "プチフランス",
+                "caption": "プチフランス — photo 1",
+                "alt": "プチフランス — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp",
+                "location": "プチフランス",
+                "caption": "プチフランス — photo 2",
+                "alt": "プチフランス — gallery image 2"
+              }
+            ]
           }
         ]
       }
@@ -1706,7 +2009,7 @@
           "deltas_applied": {
             "private_tour_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — both tours are per-vehicle private tours by definition. Was previously None (unset)."
             },
             "small_group_fit": {
@@ -1745,12 +2048,12 @@
               "reasoning": "Verified — no UNESCO sites on this route. 0.15 reflects baseline."
             },
             "iconic_landmark_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.9,
               "reasoning": "VERIFIED — Nami's Metasequoia avenue is iconic globally; Morning Calm Lighting Festival is iconic in season; Petite France is photographically iconic. Slight markdown to 0.90 reflects that 'iconic' is K-drama-pop-culture-iconic rather than UNESCO/historic-iconic."
             },
             "first_time_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "VERIFIED — strongest first-time Gapyeong day-trip. Slight markdown to 0.95 reflects that first-time visitors with limited time may prefer DMZ for the heavier story or Everland for kids. 0.95 calibrated."
             },
@@ -1770,18 +2073,18 @@
               "reasoning": "Verified maintained — Nami outdoor walks + Morning Calm garden + Petite France hill village are all weather-exposed. Indoor fallbacks limited (Petite France interiors only ~30 min). 0.60 maintained."
             },
             "scenic_level": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "Verified — catalog-leading scenic content (river-island tree-lined avenues + 330,000 m² arboretum + pastel village). Slight markdown to 0.95 saving 1.0 for tours that include flagship UNESCO scenic sites."
             },
             "photo_level": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified maintained — strongest photographic-return tour in the catalog. Maintained at 1.0."
             },
             "family_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified maintained — outdoor walks + colorful village + light scenery are best-in-class for families with kids 4-12. Maintained at 1.0."
             },
             "storytelling_fit": {
@@ -1795,8 +2098,8 @@
               "reasoning": "Verified maintained — per-vehicle pricing good value for groups of 3-9, premium per-person for solo/pair. 0.60 maintained."
             },
             "premium_fit": {
-              "old": 1.0,
-              "new": 1.0,
+              "old": 1,
+              "new": 1,
               "reasoning": "Verified maintained — private vehicle + flexible pacing + driver-guide + scenic premium destinations. Maintained at 1.0."
             }
           }

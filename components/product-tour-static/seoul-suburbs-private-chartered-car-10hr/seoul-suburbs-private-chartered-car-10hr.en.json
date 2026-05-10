@@ -33,7 +33,7 @@
     ],
     "heroImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
     "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-    "priceLabel": "Per-vehicle pricing — confirm at booking",
+    "priceLabel": "",
     "shortCardDescription": "A premium 10-hour private car charter that lets you build your own Seoul-area day. Choose one of three recommended routes—Nami Island + Morning Calm + Petite France + Gangchon Railbike, DMZ + Paju Outlet, or Everland + Korean Folk Village—or send your own itinerary. Free hotel pickup is included for Seoul downtown stays.",
     "tags": [
       "private_tour",
@@ -127,49 +127,12 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-      "alt": "Seoul city skyline with Lotte World Tower and Han River visible at dusk, viewed from a south-Seoul vantage",
-      "caption": "Seoul skyline — flexible departure point",
-      "location": "Seoul (departure city)",
-      "atmosphere": "Modern Seoul as the flexible starting point; private vehicle hotel pickup"
-    },
-    {
-      "id": "g2",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
-      "alt": "Nami Island's tree-lined metasequoia path with travelers walking under tall trees on a wide gravel walkway",
-      "caption": "Nami Island metasequoia path — Route 1 highlight",
-      "location": "Nami Island, Gapyeong (Route 1 option)",
-      "atmosphere": "Tree-lined paths and short ferry crossing; Winter Sonata K-drama filming location"
-    },
-    {
-      "id": "g3",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
-      "alt": "Garden of Morning Calm's themed flower beds with seasonal blooms and curving stone walking paths",
-      "caption": "Garden of Morning Calm — Route 1 photo stop",
-      "location": "Garden of Morning Calm, Gapyeong (Route 1 option)",
-      "atmosphere": "20 themed gardens across 330,000 m²; founded 1996 by Han Sang-kyung"
-    },
-    {
-      "id": "g4",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
-      "alt": "Petite France village with brightly colored Mediterranean-style houses on a hillside in Gapyeong",
-      "caption": "Petite France — Le Petit Prince village (Route 1)",
-      "location": "Petite France, Gapyeong (Route 1 option)",
-      "atmosphere": "Colorful hillside village; My Love from the Star K-drama filming location"
-    },
-    {
-      "id": "g5",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG",
-      "alt": "DMZ Imjingak Peace Park with the Bridge of Freedom visible behind the monument area near Paju",
-      "caption": "Imjingak Peace Park — Route 2 anchor",
-      "location": "Imjingak Peace Park, Paju (Route 2 option)",
-      "atmosphere": "Korea's most historically charged border park; Bridge of Freedom (1953); 7 km from MDL"
+      "src": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG",
+      "location": "Route 3: Everland + Korean Folk Village",
+      "alt": "Route 3: Everland + Korean Folk Village — on-route photo",
+      "caption": "Route 3: Everland + Korean Folk Village"
     }
   ],
   "itineraryStops": [
@@ -291,7 +254,7 @@
       "visitBasics": {
         "hours": "Everland: 10:00-22:00 weekdays, 09:30-22:00 weekends/holidays (varies seasonally); Korean Folk Village: Mon-Thu 10:00-18:00, Fri-Sun 10:00-22:00",
         "closed": "Both open year-round",
-        "admission": "Everland adult 1-day 54,000-64,000 KRW (20% foreigner discount at gate; Klook discounts often available); Korean Folk Village adult 37,000 KRW (Visit Korea official). Driver-guide assists with ticket purchase.",
+        "admission": "Everland adult 1-day 54,000-64,000 KRW (20% foreigner discount at gate; discounts often available); Korean Folk Village adult 37,000 KRW (Visit Korea official). Driver-guide assists with ticket purchase.",
         "walking": "High at Everland (5-10 km easily — large hilly park) — Korean Folk Village is high too (5-7 km on flat dirt/gravel paths)"
       },
       "convenience": {
@@ -1234,7 +1197,7 @@
             "name": "Route 3: Everland + Korean Folk Village",
             "category": "Theme Park + Heritage Village",
             "description": "A family-friendly contrast day pairing Everland, Korea's largest theme park, with the Korean Folk Village in Yongin, a living-heritage open-air museum showing Joseon-era life and traditional performances.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG",
+            "image": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
             "highlights": [
               "Korea's largest and most-visited theme park",
               "Living traditional village with daily performances",
@@ -1271,7 +1234,39 @@
                 "VisitKorea"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+                "location": "Route 3: Everland + Korean Folk Village",
+                "caption": "Route 3: Everland + Korean Folk Village — photo 1",
+                "alt": "Route 3: Everland + Korean Folk Village — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+                "location": "Route 3: Everland + Korean Folk Village",
+                "caption": "Route 3: Everland + Korean Folk Village — photo 2",
+                "alt": "Route 3: Everland + Korean Folk Village — gallery image 2"
+              }
+            ]
           },
           {
             "number": 4,

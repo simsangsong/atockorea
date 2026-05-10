@@ -15,12 +15,12 @@
       "Osulloc茶博物館遊",
       "濟州一日遊"
     ],
-    "ogImage": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+    "ogImage": "https://www.atockorea.com/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "濟州南部UNESCO景點一日遊 · 9小時小團體 · 含全部門票 | AtoC Korea",
     "description": "濟州南部精華一日遊：漢拏山1100道路→大浦柱狀節理→天帝淵瀑布→Osulloc茶博物館→山茶花丘。含全部門票，小團體英語導遊，4.9分／648則評價，超值定價。"
   },
   "catalog_card": {
-    "thumbnail": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+    "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "濟州南部推薦UNESCO景點一日遊",
     "priceLabel": "每人 US$38.70起/每人 （九折優惠，原價$43）",
     "shortCardDescription": "小團體一日遊，遊覽南濟州代表性景點：御乘生態步道（漢拿山UNESCO預留時間區）、天帝淵三瀑、柱狀節理帶懸崖（UNESCO）、大浦主相節理帶及西歸浦正方瀑布。全程約9小時。",
@@ -47,7 +47,7 @@
       "超值定價",
       "無購物行程"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800"
+    "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp"
   },
   "headlineLine1": "漢拏山到柱狀崖、瀑布到茶園——",
   "headlineLine2": "南濟州招牌環線，超值一日全覽",
@@ -62,7 +62,7 @@
     "priceNote": "價格以 AtoC Korea 官網直售價為準。"
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1600",
+    "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "imagePosition": "center 35%",
     "tagline": "評價最高的濟州入門行程——4.9分（648則評價），含全部門票，超值定價",
     "pills": [
@@ -139,49 +139,212 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "柱狀節理海崖濟州南岸六角形火山岩柱",
-      "caption": "柱狀節理海崖——濟州南岸六角形火山岩柱",
-      "location": "",
-      "atmosphere": ""
+      "src": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+      "location": "接送（濟州市4個地點）",
+      "alt": "接送（濟州市4個地點） — on-route photo",
+      "caption": "接送（濟州市4個地點）"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
-      "alt": "行程中參觀的御乘生嶽步道——漢拏山UNESCO生物圈保護區景觀",
-      "caption": "御乘生嶽步道——漢拏山UNESCO生物圈保護區",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "location": "漢拿山御乘生嶽",
+      "alt": "漢拿山御乘生嶽 — gallery image 1",
+      "caption": "漢拿山御乘生嶽 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "山茶花丘6000棵以上250個品種山茶花",
-      "caption": "山茶花丘——6,000棵以上、250個品種的山茶花",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "山茶花山莊（繡球花隧道）",
+      "alt": "山茶花山莊（繡球花隧道） — gallery image 1",
+      "caption": "山茶花山莊（繡球花隧道） — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "天帝淵瀑布七仙女仙臨橋",
-      "caption": "天帝淵瀑布與七仙女仙臨橋",
-      "location": "",
-      "atmosphere": ""
+      "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "location": "午餐——濟州南部本地菜",
+      "alt": "午餐——濟州南部本地菜 — on-route photo",
+      "caption": "午餐——濟州南部本地菜"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "雪綠茶博物館與周邊綠茶田",
-      "caption": "雪綠茶博物館與周邊綠茶田",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "天帝淵瀑布（神仙之潭）",
+      "alt": "天帝淵瀑布（神仙之潭） — gallery image 1",
+      "caption": "天帝淵瀑布（神仙之潭） — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "大浦柱狀節理帶",
+      "alt": "大浦柱狀節理帶 — gallery image 1",
+      "caption": "大浦柱狀節理帶 — photo 1"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+      "location": "Osulloc茶博物館及茶田",
+      "alt": "Osulloc茶博物館及茶田 — gallery image 1",
+      "caption": "Osulloc茶博物館及茶田 — photo 1"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1549144511-f099e773c147",
+      "location": "下車（濟州市5個地點）",
+      "alt": "下車（濟州市5個地點） — on-route photo",
+      "caption": "下車（濟州市5個地點）"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+      "location": "漢拿山御乘生嶽",
+      "alt": "漢拿山御乘生嶽 — gallery image 2",
+      "caption": "漢拿山御乘生嶽 — photo 2"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+      "location": "山茶花山莊（繡球花隧道）",
+      "alt": "山茶花山莊（繡球花隧道） — gallery image 2",
+      "caption": "山茶花山莊（繡球花隧道） — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "location": "天帝淵瀑布（神仙之潭）",
+      "alt": "天帝淵瀑布（神仙之潭） — gallery image 2",
+      "caption": "天帝淵瀑布（神仙之潭） — photo 2"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+      "location": "天帝淵瀑布（神仙之潭）",
+      "alt": "天帝淵瀑布（神仙之潭） — gallery image 3",
+      "caption": "天帝淵瀑布（神仙之潭） — photo 3"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "大浦柱狀節理帶",
+      "alt": "大浦柱狀節理帶 — gallery image 2",
+      "caption": "大浦柱狀節理帶 — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "大浦柱狀節理帶",
+      "alt": "大浦柱狀節理帶 — gallery image 3",
+      "caption": "大浦柱狀節理帶 — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "大浦柱狀節理帶",
+      "alt": "大浦柱狀節理帶 — gallery image 4",
+      "caption": "大浦柱狀節理帶 — photo 4"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+      "location": "Osulloc茶博物館及茶田",
+      "alt": "Osulloc茶博物館及茶田 — gallery image 2",
+      "caption": "Osulloc茶博物館及茶田 — photo 2"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+      "location": "Osulloc茶博物館及茶田",
+      "alt": "Osulloc茶博物館及茶田 — gallery image 3",
+      "caption": "Osulloc茶博物館及茶田 — photo 3"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+      "location": "Osulloc茶博物館及茶田",
+      "alt": "Osulloc茶博物館及茶田 — gallery image 4",
+      "caption": "Osulloc茶博物館及茶田 — photo 4"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+      "location": "Osulloc茶博物館及茶田",
+      "alt": "Osulloc茶博物館及茶田 — gallery image 5",
+      "caption": "Osulloc茶博物館及茶田 — photo 5"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+      "location": "Osulloc茶博物館及茶田",
+      "alt": "Osulloc茶博物館及茶田 — gallery image 6",
+      "caption": "Osulloc茶博物館及茶田 — photo 6"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+      "location": "Osulloc茶博物館及茶田",
+      "alt": "Osulloc茶博物館及茶田 — gallery image 7",
+      "caption": "Osulloc茶博物館及茶田 — photo 7"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+      "location": "Osulloc茶博物館及茶田",
+      "alt": "Osulloc茶博物館及茶田 — gallery image 8",
+      "caption": "Osulloc茶博物館及茶田 — photo 8"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+      "location": "Osulloc茶博物館及茶田",
+      "alt": "Osulloc茶博物館及茶田 — gallery image 9",
+      "caption": "Osulloc茶博物館及茶田 — photo 9"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+      "location": "Osulloc茶博物館及茶田",
+      "alt": "Osulloc茶博物館及茶田 — gallery image 10",
+      "caption": "Osulloc茶博物館及茶田 — photo 10"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+      "location": "Osulloc茶博物館及茶田",
+      "alt": "Osulloc茶博物館及茶田 — gallery image 11",
+      "caption": "Osulloc茶博物館及茶田 — photo 11"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+      "location": "Osulloc茶博物館及茶田",
+      "alt": "Osulloc茶博物館及茶田 — gallery image 12",
+      "caption": "Osulloc茶博物館及茶田 — photo 12"
     }
   ],
   "itineraryStops": [
@@ -219,7 +382,7 @@
       "name": "漢拿山御乘生嶽",
       "category": "漢拿山山麓步道（御林目）——UNESCO世界遺產體驗",
       "description": "**御乘生岳（어승생악，海拔1,169公尺）**是**漢拏山（한라산，1,950公尺）**西側的寄生火山錐（오름／*oreum*） — 漢拏山為韓國最高峰，也是濟州地質與生態的核心。漢拏山本身擁有**極為罕見的多重認證**：**聯合國教科文組織世界自然遺產（2007年7月2日列名）**、**聯合國教科文組織生物圈保護區（2002）**、**韓國國家公園（1970年3月24日指定）**、**第182號天然紀念物（1966）** — 是韓國境內唯一同時具備三項聯合國教科文組織自然指定的場域。御乘生岳登山口位於**御林木遊客中心**，全程**1.3公里、上升約200公尺**即可登頂寬闊觀景平台 — 60分鐘往返便能體驗到「漢拏山世界遺產風味」，無須挑戰白鹿潭9小時長線。晴朗時觀景台可眺望**黃海、漢拏山白鹿潭火口湖（백록담），以及向南綿延的寄生火山錐群**。植物特色：1,000–1,300公尺海拔正是**落葉闊葉林與韓國冷杉（구상나무，*Abies koreana* — IUCN近危、僅見於韓國高山）林帶**之間的過渡帶。漢拏山總計擁有**2,000多種植物** — 約占整個朝鮮半島植物相的一半。觀景台還有一個歷史細節：**1945年舊日本軍토치카（토치카，混凝土碉堡／通信哨所）**，建於戰爭末期，是韓國境內海拔最高的二戰日本軍事工事之一。**入場與停車皆免費**；御乘生岳**無須預約**（不同於白鹿潭主峰每日限額1,000人）。",
-      "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
+      "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
       "highlights": [
         "**漢拏山 = 韓國唯一同時具備三項自然認證**：2007年世界遺產＋2002年生物圈保護區＋1970年國家公園",
         "**御乘生岳海拔1,169公尺** — 寄生火山錐（oreum），濟州360多座之一",
@@ -265,7 +428,39 @@
         "closed": "特定天候條件下可能限制進入",
         "admission": "免費",
         "walking": "路線雖短，但階梯較多，整體難度中等"
-      }
+      },
+      "images": [
+        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "location": "漢拿山御乘生嶽",
+          "caption": "漢拿山御乘生嶽 — photo 1",
+          "alt": "漢拿山御乘生嶽 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "location": "漢拿山御乘生嶽",
+          "caption": "漢拿山御乘生嶽 — photo 2",
+          "alt": "漢拿山御乘生嶽 — gallery image 2"
+        }
+      ]
     },
     {
       "number": 3,
@@ -274,7 +469,7 @@
       "name": "山茶花山莊（繡球花隧道）",
       "category": "繡球花隧道+東洋最大山茶花園（172,000平方米）",
       "description": "**茶花山（카멜리아힐，濟州山茶樹木園）** 是位於安德地區、佔地 **172,000 平方公尺** 的植物園，**就面積與品種數量而言為東方最大的山茶樹木園**：園內栽植 **6,000 株山茶，涵蓋來自 80 個國家的 500 餘個品種**，由創辦人梁宗門先生 **耗時逾 30 年** 持續蒐集策劃。園區招牌特色是 **全年花期循環設計**——每個季節造訪都能呈現截然不同的色調：**11 月–3 月為山茶盛開期**（紅、粉、白、米色等品種，正是園區命名的主場季節）；**3 月–5 月** 櫻花、鬱金香與末期山茶交織出層次豐富的花海；**6 月–8 月為繡球花季**（戶外花叢搭配恆溫溫室全年展示）；**9 月–10 月** 則有秋葉與晚季花卉。步道串聯多個主題園區——**歐式花園、韓國原生森林區、櫻花步道、繡球花田**——以蜿蜒的 2.5 公里環狀路線相連，悠閒漫步約需 60–75 分鐘。值得一提的建築亮點：入口處的 **玻璃溫室＋藝廊＋咖啡館** 複合空間，既是約佔行程 15% 的室內避雨點，也是邊賞景邊品茗或喝咖啡的休憩場所。**韓劇取景紀錄**：綜藝節目 **《換乘戀愛 3》（환승연애）** 將茶花山選為周原與宥貞令人難忘的約會場景，深受 K-綜藝迷青睞。**全年 365 天開放**；**園內無戶外照明**，故日落即閉園（冬季約 17:00、夏季約 19:00）。門票：**成人 ₩12,000／青少年及長者 ₩10,000／兒童（4–11 歲）₩9,000／3 歲以下免費**。",
-      "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+      "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "highlights": [
         "**172,000 平方公尺**——東方最大的山茶樹木園",
         "**6,000 株／500 餘品種，源自 80 國**——耗時 30 餘年蒐集",
@@ -320,7 +515,39 @@
         "closed": "全年開放",
         "admission": "成人 10,000 韓元／青少年 8,000 韓元／兒童 7,000 韓元（約略）",
         "walking": "輕鬆至中等難度——緩坡步道；多數路段可推嬰兒車"
-      }
+      },
+      "images": [
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "location": "山茶花山莊（繡球花隧道）",
+          "caption": "山茶花山莊（繡球花隧道） — photo 1",
+          "alt": "山茶花山莊（繡球花隧道） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "location": "山茶花山莊（繡球花隧道）",
+          "caption": "山茶花山莊（繡球花隧道） — photo 2",
+          "alt": "山茶花山莊（繡球花隧道） — gallery image 2"
+        }
+      ]
     },
     {
       "number": 4,
@@ -355,7 +582,7 @@
       "name": "天帝淵瀑布（神仙之潭）",
       "category": "三級瀑布——天然紀念物第378號（1993年）",
       "description": "**天帝淵瀑布(천제연,「淵=池、天帝=天上之帝」)**為中文洞火山溪谷中的**三段式瀑布**,因其罕見的生態組合於 1993 年指定為**天然紀念物第 378 號**。名稱源自**朝鮮時代的道教傳說——七位仙女(선녀,*seonnyeo*)每夜自天而降,在上池沐浴**,而瀑布終年雲霧繚繞的微氣候更為這則神話增添神祕氛圍。**第一段(落差 22 公尺,潭深 21 公尺)**自玄武岩圓形深潭直瀉而下,僅在大雨之後才會出現水流——多數時候上池如鏡面般平靜,清澈倒影令人駐足。**第二段(落差 30 公尺)全年有水**,是最具代表性的攝影主題。第三段則完成入海的最後段落。**長 120 公尺、高 78 公尺的仙臨橋(선임교,「七仙女之橋」)**橫跨溪谷,位於環行步道中段;橋身兩側的青銅浮雕**完整刻畫七位仙女飛舞之姿**,將立國傳說以建築語彙具象呈現。周圍森林是**罕見植物的棲地**,包含**杜鵑蘭(***Tricyrtis macropoda***)**與瀕危的**濟州貫眾蕨(濟州特有種,IUCN 列為極危)**。環行步道全長**0.8 公里,步行約 30 分鐘**,沿途數段陡峭階梯。門票:**成人 ₩2,500/青少年 ₩1,350/7 歲以下及 65 歲以上免費**。天帝淵亦是朝鮮文人圈定的**「瀛洲十景(영주십경,濟州十大勝景)」**之一,與漢拏山主峰、城山日出峰、正房瀑布並列——意即今日西南環線可在一日之內走訪**十景中的兩處(漢拏山+天帝淵)**。每兩年舉辦一次的**濟州七仙女祭典**於 5 月在橋上重現仙女下凡傳說(逢奇數年舉辦),搭配傳統舞蹈與音樂表演——若行程恰逢祭典日,需事先預約。開放時間**全年 09:00–18:00**(最後入場 17:30)。",
-      "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
+      "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "highlights": [
         "**天然紀念物第 378 號(1993 年指定)**——三段式瀑布+罕見植物棲地",
         "名稱**「天帝淵」=「天上之帝的水潭」**——朝鮮道教傳說",
@@ -401,7 +628,52 @@
         "closed": "全年開放(偶因天候因素關閉)",
         "admission": "成人 2,500 韓元/兒童 1,350 韓元",
         "walking": "中等難度——溪谷間階梯眾多;不適合嬰兒車;行動不便者較吃力"
-      }
+      },
+      "images": [
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "location": "天帝淵瀑布（神仙之潭）",
+          "caption": "天帝淵瀑布（神仙之潭） — photo 1",
+          "alt": "天帝淵瀑布（神仙之潭） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "location": "天帝淵瀑布（神仙之潭）",
+          "caption": "天帝淵瀑布（神仙之潭） — photo 2",
+          "alt": "天帝淵瀑布（神仙之潭） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "location": "天帝淵瀑布（神仙之潭）",
+          "caption": "天帝淵瀑布（神仙之潭） — photo 3",
+          "alt": "天帝淵瀑布（神仙之潭） — gallery image 3"
+        }
+      ]
     },
     {
       "number": 6,
@@ -410,7 +682,7 @@
       "name": "大浦柱狀節理帶",
       "category": "火山海岸線——六角形柱狀節理熔岩",
       "description": "**大浦柱狀節理**是一段**全長1公里的六角形柱狀節理玄武岩懸崖**，位於中文海岸線，於**2005年1月6日被指定為天然紀念物第443號**。石柱高達**30至40公尺**，緊密排列著**五至七邊形稜柱**（以六邊形為主）——這種幾何形態是由於**漢拏山側翼噴出的玄武岩熔岩（約25萬至14萬年前）抵達海洋後，在冷卻收縮時垂直於冷卻面斷裂**而形成。大浦柱狀節理是**東亞最具代表性的柱狀節理景點**，媲美英國巨人堤道、美國魔鬼柱和蘇格蘭芬加爾洞穴。沿岸的800公尺**木棧道環線**帶領大家前往有欄杆防護的懸崖邊緣；**漲潮時水花飛濺高達20公尺**。入場費：**成人₩2,000 / 青少年₩1,000 / 7歲以下及65歲以上免費**。屬於**濟州全球地質公園（UNESCO 2010-10認定）**，是全島13個官方地質遺址之一。觀景臺為**無障礙設施**（輪椅及嬰兒車可通行）。開放時間：**每日09:00至18:00（最後入場17:30）**，全年運營。",
-      "image": "https://images.unsplash.com/photo-1565967511849-76a60a516170",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "**天然紀念物第443號** — **2005年1月6日**指定",
         "石柱高達**30至40公尺**，沿**1公里**海岸線緊密排列著**五至七邊形稜柱**",
@@ -456,7 +728,65 @@
         "closed": "Open year-round (weather-dependent)",
         "admission": "Adult 2,000 KRW / Child 1,000 KRW (low fee)",
         "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
-      }
+      },
+      "images": [
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "大浦柱狀節理帶",
+          "caption": "大浦柱狀節理帶 — photo 1",
+          "alt": "大浦柱狀節理帶 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "大浦柱狀節理帶",
+          "caption": "大浦柱狀節理帶 — photo 2",
+          "alt": "大浦柱狀節理帶 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "大浦柱狀節理帶",
+          "caption": "大浦柱狀節理帶 — photo 3",
+          "alt": "大浦柱狀節理帶 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "大浦柱狀節理帶",
+          "caption": "大浦柱狀節理帶 — photo 4",
+          "alt": "大浦柱狀節理帶 — gallery image 4"
+        }
+      ]
     },
     {
       "number": 7,
@@ -465,7 +795,7 @@
       "name": "Osulloc茶博物館及茶田",
       "category": "愛茉莉太平洋茶文化旗艦店+綠茶田收尾",
       "description": "**O'sulloc茶博物館（오설록 티 뮤지엄，「오설록」意為「相遇雪+綠」）**是韓國最大美妝企業**愛茉莉太平洋集團（Amorepacific Corporation）**的茶文化旗艦。創辦人**徐成煥於1979年親自開拓此計畫**，在當時普遍認為「韓國無法商業種植茶葉」的氛圍下，於濟州西廣高原將火山灰農地復墾為茶園。如今**西廣茶園（서광다원）**已是**韓國最大綠茶田**，與愛茉莉太平洋濟州三大茶園合計年產量約**700公噸**。博物館主體建築**於2001年開幕**，落腳於茶園正中央，並憑藉低調綠頂、與茶壟並行的展館設計入選**designboom十大藝術博物館**。**免費入場**、每日**09:00–18:00**開放，年訪客約**200萬人次**。整體參觀自然分為三段：**(1) 博物館內部** — 茶葉製程、自唐代（618–907年）起的古董茶器收藏，以及可俯瞰茶園全景的頂樓觀景台；**(2) Tea House咖啡廳** — 招牌**綠茶捲蛋糕（오설록 롤케이크）**與當年度茶葉直送的**綠茶冰淇淋**；**(3) 茶園步道** — 茶叢間的碎石小徑，西側邊緣是夕陽攝影熱點。**Innisfree濟州小屋**（愛茉莉太平洋天然保養品牌）距離**步行5分鐘**，同樣免費入場，可選購15,000韓元的橘子手工皂DIY課程。建築本身由韓國建築師**Mass Studies（趙敏錫）**設計，刻意採低姿態水平量體，與茶壟幾何呼應而非凌駕於農業地景，因而獲designboom十大殊榮，並持續被當作韓國當代博物館設計的研究案例。延伸選項：**Osulloc茶課程（每人30,000韓元，60分鐘，需事先預約）** — 由講師於韓國陶瓷茶具上示範沖泡技法並導覽品茶，每日**10:00–16:00**開課，週三、週六提供英語場次。",
-      "image": "https://images.unsplash.com/photo-1556881286-fc6915169721",
+      "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "highlights": [
         "**愛茉莉太平洋**旗艦 — 韓國最大美妝企業；創辦人徐成煥於**1979年**開拓濟州茶業",
         "**西廣茶園 = 韓國最大綠茶田**；年產量約700公噸",
@@ -511,7 +841,169 @@
         "closed": "全年開放（天候因素可能臨時關閉）",
         "admission": "博物館免費；咖啡廳茶飲與點心需付費；Innisfree工作坊另計",
         "walking": "輕鬆 — 博物館平坦、茶園適合嬰兒車；步道維護良好"
-      }
+      },
+      "images": [
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "location": "Osulloc茶博物館及茶田",
+          "caption": "Osulloc茶博物館及茶田 — photo 1",
+          "alt": "Osulloc茶博物館及茶田 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "location": "Osulloc茶博物館及茶田",
+          "caption": "Osulloc茶博物館及茶田 — photo 2",
+          "alt": "Osulloc茶博物館及茶田 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "location": "Osulloc茶博物館及茶田",
+          "caption": "Osulloc茶博物館及茶田 — photo 3",
+          "alt": "Osulloc茶博物館及茶田 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "location": "Osulloc茶博物館及茶田",
+          "caption": "Osulloc茶博物館及茶田 — photo 4",
+          "alt": "Osulloc茶博物館及茶田 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "location": "Osulloc茶博物館及茶田",
+          "caption": "Osulloc茶博物館及茶田 — photo 5",
+          "alt": "Osulloc茶博物館及茶田 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "location": "Osulloc茶博物館及茶田",
+          "caption": "Osulloc茶博物館及茶田 — photo 6",
+          "alt": "Osulloc茶博物館及茶田 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "location": "Osulloc茶博物館及茶田",
+          "caption": "Osulloc茶博物館及茶田 — photo 7",
+          "alt": "Osulloc茶博物館及茶田 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "location": "Osulloc茶博物館及茶田",
+          "caption": "Osulloc茶博物館及茶田 — photo 8",
+          "alt": "Osulloc茶博物館及茶田 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "location": "Osulloc茶博物館及茶田",
+          "caption": "Osulloc茶博物館及茶田 — photo 9",
+          "alt": "Osulloc茶博物館及茶田 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "location": "Osulloc茶博物館及茶田",
+          "caption": "Osulloc茶博物館及茶田 — photo 10",
+          "alt": "Osulloc茶博物館及茶田 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "location": "Osulloc茶博物館及茶田",
+          "caption": "Osulloc茶博物館及茶田 — photo 11",
+          "alt": "Osulloc茶博物館及茶田 — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "location": "Osulloc茶博物館及茶田",
+          "caption": "Osulloc茶博物館及茶田 — photo 12",
+          "alt": "Osulloc茶博物館及茶田 — gallery image 12"
+        }
+      ]
     },
     {
       "number": 8,
@@ -1557,7 +2049,7 @@
             "name": "漢拿山御乘生嶽",
             "category": "漢拿山山麓步道（御林目）——UNESCO世界遺產體驗",
             "description": "**御乘生嶽（御乘生嶽，1,169 m）** 是**漢拏山（漢拏山，1,950 m）** 西麓的一座寄生火山錐（火山錐 / *oreum*）——漢拏山是韓國最高峰，也是濟州島的地質核心。漢拏山本身擁有**無與倫比的榮銜疊加**：**UNESCO世界自然遺產（2007-07-02登載）**、**UNESCO生物圈保護區（2002年）**、**韓國國家公園（1970-03-24指定）**，以及**天然紀念物第182號（1966年）**——是韓國唯一同時持有UNESCO三大自然指定的地點。全程僅需**在1.3公里內爬升約200公尺**，到達寬闊的山頂觀景臺——來回約60分鐘，即可體驗**「漢拏山UNESCO代表看點」**，無需耗費9小時攀登白鹿潭火口。天晴時，從觀景臺可遠眺**黃海、漢拏山白鹿潭火口以及向南延伸的寄生火山錐群**。漢拏山共記錄**超過2,000種植物**——約佔**朝鮮半島全部植物種類的一半**。山頂觀景臺旁還留有一段歷史遺蹟：**1945年帝國日本建造的碉堡碉堡**，是韓國現存海拔最高的二戰日軍工事之一。入場費及停車費均為**免費**；**無需預約**。",
-            "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
+            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "**漢拏山 = 韓國唯一「三重自然指定」地點**：UNESCO世界遺產2007年 + 生物圈保護區2002年 + 國家公園1970年",
               "**御乘生嶽峰頂1,169 m** — 寄生火山錐（火山錐），為濟州360餘座火山錐之一",
@@ -1588,7 +2080,39 @@
                 "Cultural Heritage Administration — Hallasan Natural Monument 1966",
                 "Korea National Park Service — Hallasan visitor management records"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+                "location": "漢拿山御乘生嶽",
+                "caption": "漢拿山御乘生嶽 — photo 1",
+                "alt": "漢拿山御乘生嶽 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+                "location": "漢拿山御乘生嶽",
+                "caption": "漢拿山御乘生嶽 — photo 2",
+                "alt": "漢拿山御乘生嶽 — gallery image 2"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1597,7 +2121,7 @@
             "name": "山茶花山莊（繡球花隧道）",
             "category": "繡球花隧道+東洋最大山茶花園（172,000平方米）",
             "description": "**山茶花丘（山茶花之丘，濟州山茶花樹木園）**是一座佔地**172,000平方公尺的植物園**，位於安德，是**東方面積最大、品種最多的山茶花樹木園**：由創辦人梁鍾文歷經**30多年**精心蒐集，共栽種**來自80個國家的500多個品種共6,000棵山茶花樹**。花園的精髓是其**精心構成的全年花歷**，讓每個季節到訪都呈現截然不同的色彩：**11月至3月 = 山茶花高峰期**（紅、粉、白、奶油米色品種——花園的命名之季）；**3月至5月 = 櫻花 + 鬱金香 + 晚開山茶花**大面積色彩疊加；**6月至8月 = 繡球花**（戶外花田和氣候控制溫室展示全年花卉）；**9月至10月 = 秋季紅葉 + 晚季花卉**。步行路線穿越多個主題分區——**歐式花園、韓國本土森林區、賞櫻步道、繡球花田** — 以蜿蜒的2.5公里環線連結，悠閒步行約60至75分鐘。值得注意的建築亮點：入口處的**玻璃溫室 + 畫廊 + 咖啡廳**複合空間，既是室內避雨場所（參觀的約15%室內部分），也是俯瞰花園的茶飲咖啡停留空間。**影視拍攝記錄**：戀愛實境節目**《換乘戀愛3》**以山茶花丘作為朱元與柳亭難忘約會場景的拍攝地——深受K-實境節目迷的喜愛。**全年365天開放**；無室外照明，花園於日落時關閉（冬季約17:00，夏季約19:00）。入場費：**成人₩12,000 / 青少年+長者₩10,000 / 兒童（4至11歲）₩9,000 / 3歲以下免費**。",
-            "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+            "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
             "highlights": [
               "**172,000平方公尺** — 東方面積最大的山茶花樹木園",
               "**6,000棵 / 500多個品種，來自80個國家** — 歷經30多年蒐集",
@@ -1628,7 +2152,39 @@
                 "Korea Tourism Organization — Top Korean botanical gardens registry",
                 "Kakao TV / Wavve programming archive — 'EXchange / Transit Love 3' filming locations"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "location": "山茶花山莊（繡球花隧道）",
+                "caption": "山茶花山莊（繡球花隧道） — photo 1",
+                "alt": "山茶花山莊（繡球花隧道） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "location": "山茶花山莊（繡球花隧道）",
+                "caption": "山茶花山莊（繡球花隧道） — photo 2",
+                "alt": "山茶花山莊（繡球花隧道） — gallery image 2"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1660,7 +2216,7 @@
             "name": "天帝淵瀑布（神仙之潭）",
             "category": "三級瀑布——天然紀念物第378號（1993年）",
             "description": "**天帝淵瀑布**是中文火山峽谷中的一處**三層瀑布**，於**1993年以天然紀念物第378號**指定保護，原因是其罕見的生態複合特性。地名源於**朝鮮時代的道教傳說：七位仙女每夜從天而降，在上方的淵中沐浴** — 這個神話被奇特場地終年飄渺的薄霧微氣候進一步強化。**第一層瀑布（落差22公尺，水潭深21公尺）**跌入圓形玄武岩水潭，只在暴雨後才會奔流——多數日子上方的水潭靜如鏡面。**第二層瀑布（落差30公尺）全年有流水** — 是最主要的拍攝景觀。第三層完成落水之旅入海。橫跨峽谷中段的**仙臨橋，長120公尺、距地面高78公尺** — 兩側的鑄銅浮雕板描繪著**七位仙女的飛翔姿態**，是創始傳說的建築實體化。周邊森林是**珍稀植物棲息地**，包括**韓國油點草（韓國油點草）**和瀕危的**濟州水韭（濟州水韭，濟州特有，IUCN極危物種）**。環線步行路線：**0.8公里，約30分鐘**，途中設有數段陡峭臺階。入場費：**成人₩2,500 / 青少年₩1,350 / 7歲以下及65歲以上免費**。天帝淵也是**「瀛洲十景」**之一，與漢拏山、城山日出和正房瀑布並列。開放時間**每日09:00至18:00**（最後入場17:30）。",
-            "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
+            "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
             "highlights": [
               "**天然紀念物第378號（1993年指定）** — 三層瀑布 + 珍稀植物棲息地",
               "地名**「天帝淵」= 「天帝之淵」** — 朝鮮道教傳說",
@@ -1691,7 +2247,52 @@
                 "Korea Plant Society — Mankyua chejuense IUCN Critically Endangered listing",
                 "Jeju Folklore Society — Daoist seven-nymph legend documentation"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "location": "天帝淵瀑布（神仙之潭）",
+                "caption": "天帝淵瀑布（神仙之潭） — photo 1",
+                "alt": "天帝淵瀑布（神仙之潭） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "location": "天帝淵瀑布（神仙之潭）",
+                "caption": "天帝淵瀑布（神仙之潭） — photo 2",
+                "alt": "天帝淵瀑布（神仙之潭） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "location": "天帝淵瀑布（神仙之潭）",
+                "caption": "天帝淵瀑布（神仙之潭） — photo 3",
+                "alt": "天帝淵瀑布（神仙之潭） — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1700,7 +2301,7 @@
             "name": "大浦柱狀節理帶",
             "category": "火山海岸線——六角形柱狀節理熔岩",
             "description": "**大浦柱狀節理**是一段**全長1公里的六角形柱狀節理玄武岩懸崖**，位於中文海岸線，於**2005年1月6日被指定為天然紀念物第443號**。石柱高達**30至40公尺**，緊密排列著**五至七邊形稜柱**（以六邊形為主）——這種幾何形態是由於**漢拏山側翼噴出的玄武岩熔岩（約25萬至14萬年前）抵達海洋後，在冷卻收縮時垂直於冷卻面斷裂**而形成。大浦柱狀節理是**東亞最具代表性的柱狀節理景點**，媲美英國巨人堤道、美國魔鬼柱和蘇格蘭芬加爾洞穴。沿岸的800公尺**木棧道環線**帶領大家前往有欄杆防護的懸崖邊緣；**漲潮時水花飛濺高達20公尺**。入場費：**成人₩2,000 / 青少年₩1,000 / 7歲以下及65歲以上免費**。屬於**濟州全球地質公園（UNESCO 2010-10認定）**，是全島13個官方地質遺址之一。觀景臺為**無障礙設施**（輪椅及嬰兒車可通行）。開放時間：**每日09:00至18:00（最後入場17:30）**，全年運營。",
-            "image": "https://images.unsplash.com/photo-1565967511849-76a60a516170",
+            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
             "highlights": [
               "**天然紀念物第443號** — **2005年1月6日**指定",
               "石柱高達**30至40公尺**，沿**1公里**海岸線緊密排列著**五至七邊形稜柱**",
@@ -1731,7 +2332,65 @@
                 "VisitJeju — Daepo Jusangjeolli official listing",
                 "Korea Geological Survey — Jeju volcanic flow chronology"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "location": "大浦柱狀節理帶",
+                "caption": "大浦柱狀節理帶 — photo 1",
+                "alt": "大浦柱狀節理帶 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "location": "大浦柱狀節理帶",
+                "caption": "大浦柱狀節理帶 — photo 2",
+                "alt": "大浦柱狀節理帶 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "location": "大浦柱狀節理帶",
+                "caption": "大浦柱狀節理帶 — photo 3",
+                "alt": "大浦柱狀節理帶 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "location": "大浦柱狀節理帶",
+                "caption": "大浦柱狀節理帶 — photo 4",
+                "alt": "大浦柱狀節理帶 — gallery image 4"
+              }
+            ]
           },
           {
             "number": 7,
@@ -1740,7 +2399,7 @@
             "name": "Osulloc茶博物館及茶田",
             "category": "愛茉莉太平洋茶文化旗艦店+綠茶田收尾",
             "description": "**雪綠茶博物館**是**愛茉莉太平洋集團**（韓國最大美容集團）的茶文化旗艦場地。創辦人徐成煥**親自於1979年開創這項事業**，在傳統觀點認為韓國無法商業種茶的年代，率先開墾濟州西廣高原的火山灰農地。今日，**西廣茶園**是**韓國最大的綠茶產地**，愛茉莉太平洋在濟州三個莊園的年產量合計約**700噸**。博物館**2001年建於茶園中央**，以其極簡主義綠屋頂展亭在茶行間的構成，入選**designboom十大藝術博物館**。**免費入場**，每日開放**09:00至18:00**，每年約**200萬人次到訪**。參觀自然分為三個段落：**(1) 館內** — 製茶工藝方式、唐代（618至907年）以降的古典茶具收藏，以及可俯瞰茶園全景的屋頂觀景臺；**(2) 茶館咖啡廳** — 直接以當年採收茶葉製成的招牌**綠茶蛋糕卷**和**綠茶冰淇淋**；**(3) 茶園步行路線** — 茶樹行間的礫石步道，黃金時段（日落前16至17時）是攝影最佳時機。**悅詩風吟濟州之家（Innis免費 Jeju House）**步行**5分鐘可達**——免費入場，可選擇參加濟州柚子皂DIY工作坊（₩15,000）。",
-            "image": "https://images.unsplash.com/photo-1556881286-fc6915169721",
+            "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
             "highlights": [
               "**愛茉莉太平洋**旗艦 — 韓國最大美容集團；創辦人徐成煥**1979年**開創濟州茶業",
               "**西廣茶園 = 韓國最大綠茶產地**；年產量約700噸",
@@ -1771,7 +2430,169 @@
                 "designboom — Top 10 art museums feature",
                 "VisitJeju — Osulloc Tea Museum official listing"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "location": "Osulloc茶博物館及茶田",
+                "caption": "Osulloc茶博物館及茶田 — photo 1",
+                "alt": "Osulloc茶博物館及茶田 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "location": "Osulloc茶博物館及茶田",
+                "caption": "Osulloc茶博物館及茶田 — photo 2",
+                "alt": "Osulloc茶博物館及茶田 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "location": "Osulloc茶博物館及茶田",
+                "caption": "Osulloc茶博物館及茶田 — photo 3",
+                "alt": "Osulloc茶博物館及茶田 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "location": "Osulloc茶博物館及茶田",
+                "caption": "Osulloc茶博物館及茶田 — photo 4",
+                "alt": "Osulloc茶博物館及茶田 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "location": "Osulloc茶博物館及茶田",
+                "caption": "Osulloc茶博物館及茶田 — photo 5",
+                "alt": "Osulloc茶博物館及茶田 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "location": "Osulloc茶博物館及茶田",
+                "caption": "Osulloc茶博物館及茶田 — photo 6",
+                "alt": "Osulloc茶博物館及茶田 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "location": "Osulloc茶博物館及茶田",
+                "caption": "Osulloc茶博物館及茶田 — photo 7",
+                "alt": "Osulloc茶博物館及茶田 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "location": "Osulloc茶博物館及茶田",
+                "caption": "Osulloc茶博物館及茶田 — photo 8",
+                "alt": "Osulloc茶博物館及茶田 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "location": "Osulloc茶博物館及茶田",
+                "caption": "Osulloc茶博物館及茶田 — photo 9",
+                "alt": "Osulloc茶博物館及茶田 — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "location": "Osulloc茶博物館及茶田",
+                "caption": "Osulloc茶博物館及茶田 — photo 10",
+                "alt": "Osulloc茶博物館及茶田 — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "location": "Osulloc茶博物館及茶田",
+                "caption": "Osulloc茶博物館及茶田 — photo 11",
+                "alt": "Osulloc茶博物館及茶田 — gallery image 11"
+              },
+              {
+                "id": 12,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "location": "Osulloc茶博物館及茶田",
+                "caption": "Osulloc茶博物館及茶田 — photo 12",
+                "alt": "Osulloc茶博物館及茶田 — gallery image 12"
+              }
+            ]
           },
           {
             "number": 8,

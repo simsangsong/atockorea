@@ -13,12 +13,12 @@
       "카멜리아힐 동백꽃 투어",
       "제주 한라산 설경 투어"
     ],
-    "ogImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+    "ogImage": "https://www.atockorea.com/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
     "title": "제주 겨울 감귤·설경·동백 소그룹 투어 | AtoC Korea",
     "description": "제주 겨울 서남부 소그룹 투어: 한라산 어리목 설경 트레일 → 감귤 따기 체험 → 카멜리아힐 동백꽃 → 주상절리 → 천제연폭포. 9시간."
   },
   "catalog_card": {
-    "thumbnail": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+    "thumbnail": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
     "title": "제주 겨울 감귤·설경·동백 소그룹 투어",
     "priceLabel": "가격은 예약 시 확인",
     "shortCardDescription": "한라산 어리목 트레일(겨울 설경), 감귤(귤) 따기 체험(겨울 할라봉 절정), 카멜리아힐(동백꽃 절정), 대포주상절리(유네스코), 천제연폭포를 포함한 제주 겨울 한정 소그룹 투어.",
@@ -47,7 +47,7 @@
       "동백꽃",
       "설경"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800"
+    "heroImage": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp"
   },
   "headlineLine1": "한라산 설경, 붉은 동백 만개,",
   "headlineLine2": "직접 따는 감귤 — 제주 겨울 9시간에",
@@ -60,7 +60,7 @@
     "discountPercent": 10
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1600",
+    "imageUrl": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
     "imagePosition": "center 35%",
     "tagline": "제주가 겨울에만 잘 하는 세 가지 — 눈, 동백꽃, 감귤",
     "pills": [
@@ -137,49 +137,76 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
-      "alt": "투어 중 방문하는 한라산 1100도로 또는 어리목 탐방로 입구의 풍경",
-      "caption": "한라산 1100도로 또는 어리목 탐방로 입구",
-      "location": "한라산 1100도로 또는 어리목 탐방로 입구, 제주 중산간 지역",
-      "atmosphere": "한라산 1100도로 또는 어리목 탐방로 입구는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "카멜리아힐 (동백꽃 절정)",
+      "alt": "카멜리아힐 (동백꽃 절정) — gallery image 1",
+      "caption": "카멜리아힐 (동백꽃 절정) — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "투어 중 방문하는 겨울 절정기(12월~2월) 카멜리아힐의 풍경",
-      "caption": "겨울 절정기(12월~2월) 카멜리아힐",
-      "location": "카멜리아힐, Andeok, southern Jeju",
-      "atmosphere": "겨울 절정기(12월~2월) 카멜리아힐는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "대포주상절리",
+      "alt": "대포주상절리 — gallery image 1",
+      "caption": "대포주상절리 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "제주 과수원의 낮은 나무에서 잘 익은 주황색 귤을 따는 손",
-      "caption": "제주 귤(감귤) 과수원 겨울 수확",
-      "location": "제주 서남부 감귤 농장(방문 농장은 시즌별로 조정)",
-      "atmosphere": "제주 귤(감귤) 과수원 겨울 수확는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "천제연폭포",
+      "alt": "천제연폭포 — gallery image 1",
+      "caption": "천제연폭포 — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "투어 중 방문하는 대포 주상절리 현무암 절벽의 풍경",
-      "caption": "대포 주상절리 현무암 절벽",
-      "location": "서귀포 대포·중문 해안, 제주 남부",
-      "atmosphere": "대포 주상절리 현무암 절벽는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+      "location": "카멜리아힐 (동백꽃 절정)",
+      "alt": "카멜리아힐 (동백꽃 절정) — gallery image 2",
+      "caption": "카멜리아힐 (동백꽃 절정) — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "위로 선임교가 가로지르는 숲 계곡의 3단 폭포",
-      "caption": "천지연 폭포와 칠선녀 선임교",
-      "location": "제주 남부 서귀포 천제연폭포",
-      "atmosphere": "천지연 폭포와 칠선녀 선임교는 이 코스의 대표 방문지로, 사진 촬영과 현장 분위기를 함께 즐기기 좋습니다."
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "대포주상절리",
+      "alt": "대포주상절리 — gallery image 2",
+      "caption": "대포주상절리 — photo 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "대포주상절리",
+      "alt": "대포주상절리 — gallery image 3",
+      "caption": "대포주상절리 — photo 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "대포주상절리",
+      "alt": "대포주상절리 — gallery image 4",
+      "caption": "대포주상절리 — photo 4"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "location": "천제연폭포",
+      "alt": "천제연폭포 — gallery image 2",
+      "caption": "천제연폭포 — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+      "location": "천제연폭포",
+      "alt": "천제연폭포 — gallery image 3",
+      "caption": "천제연폭포 — photo 3"
     }
   ],
   "itineraryStops": [
@@ -333,7 +360,7 @@
       "name": "카멜리아힐 (동백꽃 절정)",
       "category": "수국 터널 + 동양 최대 172,000m² 동백 수목원",
       "description": "**카멜리아힐(카멜리아힐, 제주 동백수목원)**은 안덕에 자리한 **172,000 m² 식물원**으로, 면적과 보유 종 수 모두에서 **동양 최대의 동백 수목원**입니다. **80개국에서 들여온 500여 품종의 동백나무 6,000그루**를 보유하고 있으며, 설립자 양종문 원장이 **30년 이상**에 걸쳐 가꿔 온 결실입니다. 이 정원의 시그니처는 **사계절 개화 캘린더**입니다. 어느 계절에 방문해도 색감이 다른 풍경을 만나도록 의도적으로 설계되어, **11월–3월에는 동백 전성기**(빨강·분홍·흰색·크림 베이지 품종 — 정원의 대표 시즌), **3월–5월에는 벚꽃 + 튤립 + 늦동백**이 짙은 색채로 어우러지고, **6월–8월에는 수국**(야외 군락 + 사계절 전시 온실), **9월–10월에는 단풍 + 늦가을 개화**가 이어집니다. 산책로는 **유럽정원, 한국 자생림, 벚꽃길, 수국밭** 등 테마 구역을 굽이굽이 잇는 약 2.5 km 순환로로 구성되어 있어, 천천히 걸으면 약 60–75분이 소요됩니다. 입구에는 **유리 온실 + 갤러리 + 카페** 복합 공간이 자리해 우천 시 실내 대피 공간(전체 관람의 약 15%만이 실내) 겸 정원이 보이는 차·커피 휴식처가 됩니다. **드라마 촬영지**로도 알려져 있는데, 예능 **'환승연애 3'** 주원과 유정의 데이트 장면이 카멜리아힐에서 촬영되어 K-리얼리티 팬들의 발길이 이어집니다. **연중무휴**이며, **야외 조명이 없어** 일몰 시 폐장합니다(겨울 약 17:00, 여름 약 19:00). 입장료는 **성인 ₩12,000 / 청소년·경로 ₩10,000 / 어린이(4–11세) ₩9,000 / 36개월 미만 무료**입니다.",
-      "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+      "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "highlights": [
         "**172,000 m²** — 동양 최대 동백 수목원",
         "**6,000그루 / 80개국 500+ 품종** — 30년 이상 축적",
@@ -379,7 +406,39 @@
         "closed": "연중무휴",
         "admission": "성인 10,000원 / 청소년 8,000원 / 어린이 7,000원 (안내 기준)",
         "walking": "쉬움–보통 — 완만한 언덕길; 대부분 유모차 통행 가능"
-      }
+      },
+      "images": [
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "location": "카멜리아힐 (동백꽃 절정)",
+          "caption": "카멜리아힐 (동백꽃 절정) — photo 1",
+          "alt": "카멜리아힐 (동백꽃 절정) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "location": "카멜리아힐 (동백꽃 절정)",
+          "caption": "카멜리아힐 (동백꽃 절정) — photo 2",
+          "alt": "카멜리아힐 (동백꽃 절정) — gallery image 2"
+        }
+      ]
     },
     {
       "number": 6,
@@ -388,7 +447,7 @@
       "name": "대포주상절리",
       "category": "화산 해안선 — 육각형 주상절리 용암",
       "description": "**대포 주상절리(Daepo Jusangjeolli, '지삿개')**는 중문 해안에 펼쳐진 **길이 1km의 육각형 주상절리 현무암 절벽**으로, **2005년 1월 6일 천연기념물 제443호**로 지정되었습니다. 절리 기둥은 바다에서 **30–40m** 높이로 솟아 있고, 대부분 **5–7각형(주로 육각형) 다각형**이 빈틈없이 맞물린 기하학적 구조를 보입니다. 이는 **약 25만~14만 년 전 한라산 측면 분출에서 흘러나온 현무암질 용암이 바다에 닿아 냉각·수축**하면서 냉각면에 수직 방향으로 갈라진 결과물입니다. 전 세계적으로 주상절리는 **자이언츠 코즈웨이(영국)**, **데블스 포스트파일(미국)**, **핑갈의 동굴(스코틀랜드)**이 잘 알려져 있으며, 주상절리는 **동아시아 최고의 사례**이자 가장 접근성이 뛰어난 명소입니다. **800m 산책로 순환 코스**가 절벽 끝의 안전 난간까지 이어지며, **만조 시 파도가 기둥에 부딪혀 물보라가 최고 20m까지 솟구치고**, 때로는 난간 너머까지 튀어 오릅니다. 입장료는 **성인 2,000원 / 청소년 1,000원 / 7세 미만·65세 이상 무료**입니다. 이곳은 **제주 세계지질공원(2010년 10월 유네스코 지정)**의 일부로, 성산일출봉, 만장굴 용암동굴, 수월봉과 함께 섬 전체 **13개 공식 지질명소** 중 하나입니다. 절벽 위 데크는 **무장애 시설**(휠체어·유모차 접근 가능)이며, 코스 위 세 곳의 전망 데크가 각기 다른 각도의 절리 풍경을 제공합니다. **첫 번째 데크**는 측면 프로파일 컷(육각 기하학 사진에 최적), **중간 데크**는 정수리 단면 패턴, **마지막 데크**는 1km 해안선 전경과 함께 맑은 날이면 한라산을 배경으로 담을 수 있습니다. **사진 골든 타임은 14:00–16:00**로, 서향 햇살이 기둥 정면을 비추는 시간대입니다. 일몰 무렵에는 실루엣 구도가 가능하지만 절리의 세부 질감은 흐려집니다. 운영시간은 **09:00–18:00 (마지막 입장 17:30)**, 연중 운영됩니다.",
-      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "**천연기념물 제443호** — **2005년 1월 6일** 지정, 제주 해안 천연기념물 중 가장 최근 사례",
         "기둥 높이 **30–40m**, **5–7각형 다각형(주로 육각형)** 구조가 **1km 해안선**을 따라 빼곡히 배열",
@@ -434,7 +493,65 @@
         "closed": "연중무휴 (기상 상황에 따라 변동 가능)",
         "admission": "성인 2,000원 / 어린이 1,000원 (저렴한 입장료)",
         "walking": "난이도 쉬움 — 절벽을 따라 평탄한 목재 데크 산책로 / 총 도보 15–20분"
-      }
+      },
+      "images": [
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "대포주상절리",
+          "caption": "대포주상절리 — photo 1",
+          "alt": "대포주상절리 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "대포주상절리",
+          "caption": "대포주상절리 — photo 2",
+          "alt": "대포주상절리 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "대포주상절리",
+          "caption": "대포주상절리 — photo 3",
+          "alt": "대포주상절리 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "대포주상절리",
+          "caption": "대포주상절리 — photo 4",
+          "alt": "대포주상절리 — gallery image 4"
+        }
+      ]
     },
     {
       "number": 7,
@@ -443,7 +560,7 @@
       "name": "천제연폭포",
       "category": "삼단 폭포 — 천연기념물 제378호 (1993년)",
       "description": "**천제연 폭포(天帝淵, '연 = 못 + 천제 = 하늘의 황제')**는 중문 화산 협곡에 자리한 **3단 폭포**로, 희귀한 생태 환경을 품은 가치를 인정받아 **천연기념물 제378호(1993년 지정)**로 등재되어 있습니다. 이름의 유래는 **조선 시대 도가 전설로, 일곱 선녀가 매일 밤 하늘에서 내려와 상단 못에서 목욕했다**는 이야기에서 비롯되었으며, 협곡에 늘 자욱하게 끼는 안개가 이 신화에 신비로움을 더합니다. **1단(높이 22m, 깊이 21m의 못)** 폭포는 현무암 원형 돌가마로 떨어지지만 큰 비가 내린 뒤에만 흐르며, 평소에는 거울처럼 잔잔한 못의 모습으로 머물러 있습니다. **2단(높이 30m)은 사계절 내내 흐르는** 폭포로, 천제연을 대표하는 촬영 포인트입니다. 3단은 바다로 이어지며 마지막 낙차를 완성합니다. 산책로 중간에는 **길이 120m, 높이 78m의 선임교('일곱 선녀의 다리')**가 협곡을 가로지르며, 양쪽 난간의 청동 부조 패널에는 **하늘을 나는 일곱 선녀의 모습**이 정교하게 새겨져 있어 창건 전설을 건축적으로 구현해 놓았습니다. 주변 숲은 **희귀 식물의 서식지**로, 한국 자생 **죽대아재비(*Tricyrtis macropoda*)**와 멸종 위기종 **제주고사리삼(*Mankyua chejuense*, 제주 고유종, IUCN 심각한 위기종)**이 자라고 있습니다. 산책로 길이는 **0.8km, 도보 약 30분**이며 가파른 계단 구간이 여러 곳 있습니다. 입장료는 **성인 ₩2,500 / 청소년 ₩1,350 / 7세 미만·65세 이상 무료**입니다. 또한 천제연은 한라산 정상, 성산일출봉, 정방폭포와 함께 **조선 문인들이 꼽은 '영주십경(瀛洲十景)'**의 하나로, 오늘 코스의 남서부 일정만으로도 **영주십경 10곳 가운데 2곳(한라산 + 천제연)**을 한 번에 둘러보는 셈입니다. 5월 홀수 해마다 다리에서 열리는 **제주 칠선녀 축제**는 전통 무용과 음악 공연으로 선녀 강림 전설을 재현하며, 투어 일정과 겹칠 경우 사전 예약이 필요합니다. 운영 시간은 연중 **09:00–18:00**(마지막 입장 17:30)입니다.",
-      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+      "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "highlights": [
         "**천연기념물 제378호(1993년 지정)** — 3단 폭포 + 희귀 식물 서식지",
         "**'천제연' = '하늘 황제의 못'** — 조선 시대 도가 전설에서 유래",
@@ -489,7 +606,52 @@
         "closed": "연중무휴 (악천후 시 일시 폐쇄될 수 있음)",
         "admission": "성인 2,500원 / 어린이 1,350원",
         "walking": "난이도 중 — 협곡을 따라 계단이 많고 유모차 진입이 어려우며, 거동이 불편한 분께는 권장하지 않습니다"
-      }
+      },
+      "images": [
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "location": "천제연폭포",
+          "caption": "천제연폭포 — photo 1",
+          "alt": "천제연폭포 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "location": "천제연폭포",
+          "caption": "천제연폭포 — photo 2",
+          "alt": "천제연폭포 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "location": "천제연폭포",
+          "caption": "천제연폭포 — photo 3",
+          "alt": "천제연폭포 — gallery image 3"
+        }
+      ]
     },
     {
       "number": 8,
@@ -1606,7 +1768,7 @@
             "name": "카멜리아힐 (동백꽃 절정)",
             "category": "수국 터널 + 동양 최대 172,000m² 동백 수목원",
             "description": "카멜리아힐 17만2,000㎡ 식물원은 겨울(12~2월)에 동백꽃이 만개합니다. 500여 종 6,000그루 동백나무로, 동아시아 최대 동백나무 식물원입니다. 떨어진 동백꽃이 바닥을 붉게 덮는 광경이 겨울 명장면. 입장료 별도(약 ₩12,000). 방문 시간: 약 60분.",
-            "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+            "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
             "highlights": [
               "**172,000m²** — 동양 최대 동백 수목원",
               "**수목 6,000그루 / 80개국 500여 품종** — 30년 이상 수집",
@@ -1637,7 +1799,39 @@
                 "Korea Tourism Organization — Top Korean botanical gardens registry",
                 "Kakao TV / Wavve programming archive — 'EXchange / Transit Love 3' filming locations"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "location": "카멜리아힐 (동백꽃 절정)",
+                "caption": "카멜리아힐 (동백꽃 절정) — photo 1",
+                "alt": "카멜리아힐 (동백꽃 절정) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "location": "카멜리아힐 (동백꽃 절정)",
+                "caption": "카멜리아힐 (동백꽃 절정) — photo 2",
+                "alt": "카멜리아힐 (동백꽃 절정) — gallery image 2"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1646,7 +1840,7 @@
             "name": "대포주상절리",
             "category": "화산 해안선 — 육각형 주상절리 용암",
             "description": "주상절리 현무암 절벽. 겨울 파도가 더 강렬해 장관. 입장료 별도(₩2,000). 방문 시간: 약 35분.",
-            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
             "highlights": [
               "**천연기념물 제443호** — **2005년 1월 6일** 지정, 제주 해안 천연기념물 중 가장 최근 지정",
               "기둥 높이 **30~40m**, **5~7각형 다각형**(주로 육각형)이 **1km**를 따라 밀집",
@@ -1677,7 +1871,65 @@
                 "VisitJeju — Daepo Jusangjeolli",
                 "Korea Geological Survey — Jeju basalt formation studies"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "location": "대포주상절리",
+                "caption": "대포주상절리 — photo 1",
+                "alt": "대포주상절리 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "location": "대포주상절리",
+                "caption": "대포주상절리 — photo 2",
+                "alt": "대포주상절리 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "location": "대포주상절리",
+                "caption": "대포주상절리 — photo 3",
+                "alt": "대포주상절리 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "location": "대포주상절리",
+                "caption": "대포주상절리 — photo 4",
+                "alt": "대포주상절리 — gallery image 4"
+              }
+            ]
           },
           {
             "number": 7,
@@ -1686,7 +1938,7 @@
             "name": "천제연폭포",
             "category": "삼단 폭포 — 천연기념물 제378호 (1993년)",
             "description": "3단 폭포. 겨울에도 1단 폭포에서 물이 흐릅니다. 입장료 별도(₩2,500). 방문 시간: 약 40분.",
-            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+            "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
             "highlights": [
               "**천연기념물 제378호 (1993년 지정)** — 삼단 폭포 + 희귀 식물 서식지",
               "이름 **'천제연' = '하늘 황제의 연못'** — 조선 도교 전설",
@@ -1717,7 +1969,52 @@
                 "Jeju Cultural Foundation — Seven Nymphs Festival history",
                 "Seogwipo City tourism — Cheonjeyeon admission and access"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "location": "천제연폭포",
+                "caption": "천제연폭포 — photo 1",
+                "alt": "천제연폭포 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "location": "천제연폭포",
+                "caption": "천제연폭포 — photo 2",
+                "alt": "천제연폭포 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "location": "천제연폭포",
+                "caption": "천제연폭포 — photo 3",
+                "alt": "천제연폭포 — gallery image 3"
+              }
+            ]
           },
           {
             "number": 8,

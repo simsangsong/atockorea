@@ -14,12 +14,12 @@
       "ソウル発日帰り",
       "スターフィールド水原"
     ],
-    "ogImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+    "ogImage": "https://www.atockorea.com/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
     "title": "水原華城・光明洞窟・スターフィールド | AtoC",
     "description": "ソウル発・水原華城（ユネスコ）→水原南門市場（昼食）→スターフィールド図書館→光明洞窟（旧金銀銅亜鉛鉱山）の9時間少人数ツアー。英語ガイド付き。"
   },
   "catalog_card": {
-    "thumbnail": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+    "thumbnail": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
     "title": "水原華城・光明洞窟・スターフィールド図書館日帰りツアー",
     "priceLabel": "US$54.00〜／1名様 （10%オフ、通常$60）",
     "shortCardDescription": "ソウル発少人数日帰りツアーで京畿道の4つの対照的な側面を体験：ユネスコ登録の水原華城（18世紀の城壁と華城行宮）→水原南門市場での昼食→スターフィールド・スウォン図書館（22m吹き抜け）→光明洞窟（旧金銀鉱山の地下観光施設）。月曜日運休（光明洞窟定休日）。",
@@ -46,7 +46,7 @@
       "光明洞窟",
       "ソウル発"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800"
+    "heroImage": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp"
   },
   "headlineLine1": "ユネスコ城壁、地下の旧金鉱山、四層吹き抜けの図書館 —",
   "headlineLine2": "京畿道で最も写真映えするな一日、9時間で",
@@ -61,7 +61,7 @@
     "priceNote": "詳しい料金は予約時にご確認ください。"
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
+    "imageUrl": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
     "imagePosition": "center 35%",
     "tagline": "ユネスコ城壁・地下の金鉱山・Instagramで話題の図書館 — 京畿道の3大撮影ポイントを一日に",
     "pills": [
@@ -132,58 +132,76 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-      "alt": "ツアーで訪れる韓国の風景",
-      "caption": "韓国",
-      "location": "韓国",
-      "atmosphere": "韓国の美しい景観"
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+      "location": "スターフィールド・スウォン図書館",
+      "alt": "スターフィールド・スウォン図書館 — gallery image 1",
+      "caption": "スターフィールド・スウォン図書館 — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "ツアーで訪れる華城行宮 — 王宮守門将交代儀式再現の風景",
-      "caption": "華城行宮 — 王宮守門将交代儀式再現",
-      "location": "韓国",
-      "atmosphere": "韓国の美しい景観"
+      "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+      "location": "光明洞窟（クァンミョン・ドンクル）",
+      "alt": "光明洞窟（クァンミョン・ドンクル） — gallery image 1",
+      "caption": "光明洞窟（クァンミョン・ドンクル） — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "ツアーで訪れる光明洞窟 — ゴールデンロードの風景",
-      "caption": "光明洞窟 — ゴールデンロード",
-      "location": "韓国",
-      "atmosphere": "韓国の美しい景観"
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+      "location": "スターフィールド・スウォン図書館",
+      "alt": "スターフィールド・スウォン図書館 — gallery image 2",
+      "caption": "スターフィールド・スウォン図書館 — photo 2"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "ツアーで訪れる韓国の風景",
-      "caption": "韓国",
-      "location": "韓国",
-      "atmosphere": "韓国の美しい景観"
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+      "location": "スターフィールド・スウォン図書館",
+      "alt": "スターフィールド・スウォン図書館 — gallery image 3",
+      "caption": "スターフィールド・スウォン図書館 — photo 3"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "22メートルの床から天井までの書架と下層の読書ラウンジが並ぶ水原スターフィールドライブラリの4階のアトリウム",
-      "caption": "スターフィールドライブラリ水原 — 22m書架",
-      "location": "韓国",
-      "atmosphere": "韓国の美しい景観"
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+      "location": "スターフィールド・スウォン図書館",
+      "alt": "スターフィールド・スウォン図書館 — gallery image 4",
+      "caption": "スターフィールド・スウォン図書館 — photo 4"
     },
     {
-      "id": "g6",
+      "id": 6,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-      "alt": "水原式カルビ、フライドチキン、伝統的なお菓子を売る屋台が並ぶ水原南門市場の屋根付き路地",
-      "caption": "水原南門市場 — 220年の歴史を持つ正祖の市場",
-      "location": "韓国",
-      "atmosphere": "韓国の美しい景観"
+      "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
+      "location": "光明洞窟（クァンミョン・ドンクル）",
+      "alt": "光明洞窟（クァンミョン・ドンクル） — gallery image 2",
+      "caption": "光明洞窟（クァンミョン・ドンクル） — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
+      "location": "光明洞窟（クァンミョン・ドンクル）",
+      "alt": "光明洞窟（クァンミョン・ドンクル） — gallery image 3",
+      "caption": "光明洞窟（クァンミョン・ドンクル） — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
+      "location": "光明洞窟（クァンミョン・ドンクル）",
+      "alt": "光明洞窟（クァンミョン・ドンクル） — gallery image 4",
+      "caption": "光明洞窟（クァンミョン・ドンクル） — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp",
+      "location": "光明洞窟（クァンミョン・ドンクル）",
+      "alt": "光明洞窟（クァンミョン・ドンクル） — gallery image 5",
+      "caption": "光明洞窟（クァンミョン・ドンクル） — photo 5"
     }
   ],
   "itineraryStops": [
@@ -444,7 +462,66 @@
           "Arch毎日 — BCHO Partners (Cho Byoung-soo) スターフィールド 水原 design review",
           "Wikipedia (スターフィールド 水原 — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
         ]
-      }
+      },
+      "image": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+      "images": [
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+          "location": "スターフィールド・スウォン図書館",
+          "caption": "スターフィールド・スウォン図書館 — photo 1",
+          "alt": "スターフィールド・スウォン図書館 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+          "location": "スターフィールド・スウォン図書館",
+          "caption": "スターフィールド・スウォン図書館 — photo 2",
+          "alt": "スターフィールド・スウォン図書館 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+          "location": "スターフィールド・スウォン図書館",
+          "caption": "スターフィールド・スウォン図書館 — photo 3",
+          "alt": "スターフィールド・スウォン図書館 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+          "location": "スターフィールド・スウォン図書館",
+          "caption": "スターフィールド・スウォン図書館 — photo 4",
+          "alt": "スターフィールド・スウォン図書館 — gallery image 4"
+        }
+      ]
     },
     {
       "number": 6,
@@ -505,7 +582,79 @@
           "Wikipedia (光明 Cave — 1912 Japanese colonial mine + 1972 closure + 7.8 km tunnel total)",
           "Korea Tourism Star Award archive (光明 Cave 2014 winner — Best New Tourist Attraction)"
         ]
-      }
+      },
+      "image": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+      "images": [
+        "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+        "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
+        "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
+        "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
+        "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+          "location": "光明洞窟（クァンミョン・ドンクル）",
+          "caption": "光明洞窟（クァンミョン・ドンクル） — photo 1",
+          "alt": "光明洞窟（クァンミョン・ドンクル） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
+          "location": "光明洞窟（クァンミョン・ドンクル）",
+          "caption": "光明洞窟（クァンミョン・ドンクル） — photo 2",
+          "alt": "光明洞窟（クァンミョン・ドンクル） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
+          "location": "光明洞窟（クァンミョン・ドンクル）",
+          "caption": "光明洞窟（クァンミョン・ドンクル） — photo 3",
+          "alt": "光明洞窟（クァンミョン・ドンクル） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
+          "location": "光明洞窟（クァンミョン・ドンクル）",
+          "caption": "光明洞窟（クァンミョン・ドンクル） — photo 4",
+          "alt": "光明洞窟（クァンミョン・ドンクル） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp",
+          "location": "光明洞窟（クァンミョン・ドンクル）",
+          "caption": "光明洞窟（クァンミョン・ドンクル） — photo 5",
+          "alt": "光明洞窟（クァンミョン・ドンクル） — gallery image 5"
+        }
+      ]
     },
     {
       "number": 7,
@@ -1687,7 +1836,66 @@
                 "Arch毎日 — BCHO Partners (Cho Byoung-soo) スターフィールド 水原 design review",
                 "Wikipedia (スターフィールド 水原 — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
               ]
-            }
+            },
+            "image": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+            "images": [
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+                "location": "スターフィールド・スウォン図書館",
+                "caption": "スターフィールド・スウォン図書館 — photo 1",
+                "alt": "スターフィールド・スウォン図書館 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+                "location": "スターフィールド・スウォン図書館",
+                "caption": "スターフィールド・スウォン図書館 — photo 2",
+                "alt": "スターフィールド・スウォン図書館 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+                "location": "スターフィールド・スウォン図書館",
+                "caption": "スターフィールド・スウォン図書館 — photo 3",
+                "alt": "スターフィールド・スウォン図書館 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+                "location": "スターフィールド・スウォン図書館",
+                "caption": "スターフィールド・スウォン図書館 — photo 4",
+                "alt": "スターフィールド・スウォン図書館 — gallery image 4"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1743,7 +1951,79 @@
                 "Wikipedia (光明 Cave — 1912 Japanese colonial mine + 1972 closure + 7.8 km tunnel total)",
                 "Korea Tourism Star Award archive (光明 Cave 2014 winner — Best New Tourist Attraction)"
               ]
-            }
+            },
+            "image": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+            "images": [
+              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
+              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
+              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
+              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+                "location": "光明洞窟（クァンミョン・ドンクル）",
+                "caption": "光明洞窟（クァンミョン・ドンクル） — photo 1",
+                "alt": "光明洞窟（クァンミョン・ドンクル） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
+                "location": "光明洞窟（クァンミョン・ドンクル）",
+                "caption": "光明洞窟（クァンミョン・ドンクル） — photo 2",
+                "alt": "光明洞窟（クァンミョン・ドンクル） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
+                "location": "光明洞窟（クァンミョン・ドンクル）",
+                "caption": "光明洞窟（クァンミョン・ドンクル） — photo 3",
+                "alt": "光明洞窟（クァンミョン・ドンクル） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
+                "location": "光明洞窟（クァンミョン・ドンクル）",
+                "caption": "光明洞窟（クァンミョン・ドンクル） — photo 4",
+                "alt": "光明洞窟（クァンミョン・ドンクル） — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp",
+                "location": "光明洞窟（クァンミョン・ドンクル）",
+                "caption": "光明洞窟（クァンミョン・ドンクル） — photo 5",
+                "alt": "光明洞窟（クァンミョン・ドンクル） — gallery image 5"
+              }
+            ]
           },
           {
             "number": 7,

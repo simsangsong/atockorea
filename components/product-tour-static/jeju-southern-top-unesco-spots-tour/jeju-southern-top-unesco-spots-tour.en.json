@@ -15,14 +15,14 @@
       "O'sulloc Tea Museum tour",
       "Jeju day tour"
     ],
-    "ogImage": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+    "ogImage": "https://www.atockorea.com/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "Jeju South UNESCO Day Tour · All Admissions · 4.9/5 | AtoC",
     "description": "South Jeju UNESCO small-group day tour: Hallasan Eoseungsaengak trail → Camellia Hill → Cheonjeyeon Waterfall → Jusangjeolli cliff → Osulloc Tea Museum. All admissions, small group. 4.9/5 (648 reviews)."
   },
   "catalog_card": {
-    "thumbnail": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+    "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "Jeju Southern Top UNESCO Spots Day Tour",
-    "priceLabel": "From US$38.70 per person (10% off, was $43)",
+    "priceLabel": "",
     "shortCardDescription": "A small-group day tour through southern Jeju's signature stops — the Eoseungsaengak Trail along Hallasan (UNESCO biosphere), Camellia Hill garden, the three-tier Cheonjeyeon Waterfall, the hexagonal Jusangjeolli Cliff, and the O'sulloc Tea Museum. Four pickup points across Jeju City and the airport, certified English/Chinese-speaking guide, all admissions included, no shopping pressure. The most reviewed entry-level Jeju tour at 4.9/5 across 648 reviews.",
     "tags": [
       "Small group",
@@ -32,8 +32,8 @@
       "Good value",
       "No shopping stops"
     ],
-    "rating": 4.9,
-    "reviewCount": 648,
+    "rating": 0,
+    "reviewCount": 0,
     "slug": "jeju-southern-top-unesco-spots-tour",
     "subtitle": "South Jeju UNESCO loop — Hallasan trail, waterfalls, Jusangjeolli columnar cliff.",
     "region": "Southern Jeju",
@@ -47,22 +47,22 @@
       "Value priced",
       "No shopping"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800"
+    "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp"
   },
   "headlineLine1": "Hallasan to the columnar cliffs, waterfall to tea fields —",
   "headlineLine2": "southern Jeju's signature loop in a value-priced day",
   "price": {
-    "amountLabel": "38.70",
-    "originalPriceUsd": 43,
-    "salePriceUsd": 38.7,
-    "discountPercent": 10,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person",
-    "priceSource": "AtoC Korea direct rate",
-    "priceNote": "Final rate is confirmed after selecting your travel date and group size. Direct booking is handled by AtoC Korea."
+    "priceSource": "",
+    "priceNote": ""
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1600",
+    "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "imagePosition": "center 35%",
     "tagline": "The most reviewed entry-level Jeju tour — 4.9/5 across 648 reviews, all admissions included",
     "pills": [
@@ -139,49 +139,188 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "Jusangjeolli Cliff — hexagonal volcanic columns on Jeju's south coast",
-      "caption": "Jusangjeolli Cliff — hexagonal volcanic columns on Jeju's south coast",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "location": "Eoseungsaengak Trail (Hallasan UNESCO)",
+      "alt": "Eoseungsaengak Trail (Hallasan UNESCO) — gallery image 1",
+      "caption": "Eoseungsaengak Trail (Hallasan UNESCO) — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
-      "alt": "Eoseungsaengak Trail along Hallasan, the UNESCO biosphere reserve",
-      "caption": "Eoseungsaengak Trail along Hallasan, the UNESCO biosphere reserve",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "Camellia Hill (year-round signature flower garden)",
+      "alt": "Camellia Hill (year-round signature flower garden) — gallery image 1",
+      "caption": "Camellia Hill (year-round signature flower garden) — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "Camellia Hill — 6,000+ trees across 250 varieties",
-      "caption": "Camellia Hill — 6,000+ trees across 250 varieties",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+      "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 1",
+      "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "Cheonjeyeon Falls and the Seonimgyo Bridge of Seven Nymphs",
-      "caption": "Cheonjeyeon Falls and the Seonimgyo Bridge of Seven Nymphs",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
+      "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 1",
+      "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 1"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "O'sulloc Tea Museum and surrounding green tea fields",
-      "caption": "O'sulloc Tea Museum and surrounding green tea fields",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 1",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+      "location": "Eoseungsaengak Trail (Hallasan UNESCO)",
+      "alt": "Eoseungsaengak Trail (Hallasan UNESCO) — gallery image 2",
+      "caption": "Eoseungsaengak Trail (Hallasan UNESCO) — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+      "location": "Camellia Hill (year-round signature flower garden)",
+      "alt": "Camellia Hill (year-round signature flower garden) — gallery image 2",
+      "caption": "Camellia Hill (year-round signature flower garden) — photo 2"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+      "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 2",
+      "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+      "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+      "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 3",
+      "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
+      "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 2",
+      "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
+      "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 3",
+      "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
+      "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 4",
+      "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 2",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 3",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 4",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 4"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 5",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 5"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 6",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 6"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 7",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 7"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 8",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 8"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 9",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 9"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 10",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 10"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 11",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 11"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 12",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 12"
     }
   ],
   "itineraryStops": [
@@ -220,7 +359,7 @@
       "name": "Eoseungsaengak Trail (Hallasan UNESCO)",
       "category": "UNESCO Volcanic Geology — Hallasan Lower Trail (Triple Natural designation)",
       "description": "**Eoseungsaengak (어승생악, 1,169 m)** is a short Hallasan-side volcanic cone trail starting near Eorimok Visitor Center. Hallasan is Korea's highest mountain and the central landscape of Jeju's UNESCO-recognized volcanic island, so this stop gives guests a manageable way to experience the mountain without attempting the full summit hike. The trail is much shorter than the Seongpanak or Gwaneumsa summit courses and does not normally require the summit-reservation system. The climb still includes stairs and uphill sections, so comfortable shoes are important. On clear days, the upper viewpoint can show Hallasan's higher slopes, Jeju's volcanic-cone landscape, and the northern sea. Because mountain weather changes quickly, visibility can vary, but the forest atmosphere and cool mountain air still make this a strong opening stop for the southern route.",
-      "image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
+      "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
       "highlights": [
         "**Hallasan = only Korean site with Triple Natural designation**: UNESCO World Heritage 2007 + Biosphere 2002 + National Park 1970",
         "**Eoseungsaengak summit 1,169 m** — parasitic cone (oreum), one of 360+ on Jeju",
@@ -266,7 +405,39 @@
         "closed": "Weather-dependent (snow, fog, high wind closures common Nov–Mar)",
         "admission": "Free",
         "walking": "Moderate — short but with many stairs; some steep sections"
-      }
+      },
+      "images": [
+        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "location": "Eoseungsaengak Trail (Hallasan UNESCO)",
+          "caption": "Eoseungsaengak Trail (Hallasan UNESCO) — photo 1",
+          "alt": "Eoseungsaengak Trail (Hallasan UNESCO) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "location": "Eoseungsaengak Trail (Hallasan UNESCO)",
+          "caption": "Eoseungsaengak Trail (Hallasan UNESCO) — photo 2",
+          "alt": "Eoseungsaengak Trail (Hallasan UNESCO) — gallery image 2"
+        }
+      ]
     },
     {
       "number": 3,
@@ -275,7 +446,7 @@
       "name": "Camellia Hill (year-round signature flower garden)",
       "category": "Botanical Garden — Largest Camellia Arboretum in the East",
       "description": "**Camellia Hill (카멜리아힐)** is a large private botanical garden in Andeok known for camellias, seasonal flowers, garden paths, photo spots, and indoor rest areas. It is especially famous in winter and early spring when camellias bloom, but the garden changes through the year with tulips, hydrangeas, greenery, and autumn color depending on the season. Walking paths connect themed gardens, greenhouse areas, small galleries, and cafe spaces, making the stop softer and more relaxed than the mountain and coastal geology stops. The garden is useful for families, couples, and guests who want a colorful photo break during the day. Flower conditions always depend on weather and season, so the exact scenery can vary, but the site remains one of Jeju's most popular garden stops.",
-      "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+      "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "highlights": [
         "**172,000 m²** — largest camellia arboretum in the East",
         "**6,000 trees / 500+ species from 80 countries** — accumulated 30+ years",
@@ -321,7 +492,39 @@
         "closed": "Open year-round",
         "admission": "Adult 10,000 KRW / Teen 8,000 KRW / Child 7,000 KRW (approximate)",
         "walking": "Easy to moderate — gentle hill paths; mostly stroller-accessible"
-      }
+      },
+      "images": [
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "location": "Camellia Hill (year-round signature flower garden)",
+          "caption": "Camellia Hill (year-round signature flower garden) — photo 1",
+          "alt": "Camellia Hill (year-round signature flower garden) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "location": "Camellia Hill (year-round signature flower garden)",
+          "caption": "Camellia Hill (year-round signature flower garden) — photo 2",
+          "alt": "Camellia Hill (year-round signature flower garden) — gallery image 2"
+        }
+      ]
     },
     {
       "number": 4,
@@ -356,7 +559,7 @@
       "name": "Cheonjeyeon Waterfall (Pond of the Gods)",
       "category": "Three-Tier Waterfall — Natural Monument No. 378 (1993)",
       "description": "**Cheonjeyeon Falls (천제연, '연 = pond + 천제 = Emperor of Heaven')** is a **three-tier waterfall** in Jungmun's volcanic gorge, designated **Natural Monument No. 378 (1993)** for its rare ecological combination. The name comes from a **Joseon-era Daoist legend that seven nymphs (선녀, *seonnyeo*) descended from heaven nightly to bathe in the upper pond** — a myth reinforced by the dramatic site's microclimate of perpetual mist. The **1st tier (22 m fall, 21 m deep pond)** drops into a circular basalt cauldron and only flows after heavy rain — most days the upper pond sits glassy and reflective. The **2nd tier (30 m fall) flows year-round** — the dominant photographic subject. The 3rd tier completes the descent to the sea. The **120 m / 78 m-high Seonimgyo Bridge (선임교, 'Bridge of the Seven Nymphs')** crosses the gorge midway through the loop — its cast-bronze relief panels along both sides depict **all seven nymphs in flight**, a literal architectural realization of the founding legend. Surrounding forest is a **rare-plant habitat** including **Korean toadlily (***Tricyrtis macropoda***)** and the endangered **Mankyua chejuense fern** (Jeju endemic, IUCN Critically Endangered). Loop length: **0.8 km, ~30 min walk** with several steep stair sections. Admission: **Adult ₩2,500 / Youth ₩1,350 / FREE under 7 + over 65**. Cheonjeyeon is also a member of the **'Yeongjusipgyeong (영주십경, 10 Scenic Wonders of Jeju)'** Joseon-era literati canon — alongside Hallasan summit, Seongsan Sunrise, and Jeongbang Falls — meaning today's southwest loop covers **2 of the 10 (Hallasan + Cheonjeyeon)** in a single day. The biennial **Jeju Chilseonyeo (Seven Nymphs) Festival** held at the bridge in May (every odd year) reenacts the descent legend with traditional dance and musical performance — reservations required when the festival coincides with a tour date. Hours **09:00–18:00** year-round (last entry 17:30).",
-      "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
+      "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "highlights": [
         "**Natural Monument No. 378 (designated 1993)** — three-tier waterfall + rare-plant habitat",
         "Name **'Cheonjeyeon' = 'Pond of the Emperor of Heaven'** — Joseon Daoist legend",
@@ -402,7 +605,52 @@
         "closed": "Open year-round (occasional weather closures)",
         "admission": "Adult 2,500 KRW / Child 1,350 KRW",
         "walking": "Moderate — many stairs through the valley; not stroller-friendly; mobility-difficult"
-      }
+      },
+      "images": [
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+          "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 1",
+          "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+          "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 2",
+          "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+          "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 3",
+          "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 3"
+        }
+      ]
     },
     {
       "number": 6,
@@ -411,7 +659,7 @@
       "name": "Jusangjeolli Cliff (Daepo Columnar Joints)",
       "category": "Columnar Jointing — Natural Monument No. 443 (2005)",
       "description": "**Daepo Jusangjeolli (대포 주상절리, 'Jisatgae')** is a **1 km stretch of hexagonal columnar-jointed basalt cliff** on the Jungmun coast — designated **Natural Monument No. 443 on 2005-01-06**. The columns rise **30–40 m** from the sea, packed in tightly fitted **5- to 7-sided polygons** (mostly hexagons) — a geometry produced when **molten basaltic lava from a Hallasan flank eruption (~250,000–140,000 years ago) reached the ocean and contracted as it cooled**, fracturing perpendicular to the cooling surface. Globally, columnar jointing is best known from **Giant's Causeway (UK)**, **Devils Postpile (US)**, and **Fingal's Cave (Scotland)** — Jusangjeolli is **East Asia's premier example** and the most accessible. The 800 m **boardwalk loop** delivers visitors to a railed cliff edge directly above the columns; **on high-tide days waves break against the columns and throw spray up to 20 m**, occasionally over the rail. Admission: **Adult ₩2,000 / Youth ₩1,000 / FREE under 7 and over 65**. The site is part of the **Jeju Global Geopark (UNESCO designated 2010-10)** — one of **13 official geosites** on the island, alongside Seongsan Ilchulbong, Manjanggul Lava Tube, and Suwolbong. The clifftop deck is **barrier-free** (wheelchair/stroller accessible). Three viewing platforms along the loop give different column angles: the **first platform** shows the columns in profile (best for the hexagonal-geometry shot), the **mid-platform** looks straight down for top-of-column patterns, and the **far platform** captures the 1 km coastal sweep with Hallasan as backdrop on clear days. **Best photo time: 14:00–16:00**, when westering sunlight lights the column faces frontally; sunset visits bring silhouette compositions but lose column-detail texture. Hours: **09:00–18:00 (last entry 17:30)**, year-round operation.",
-      "image": "https://images.unsplash.com/photo-1565967511849-76a60a516170",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "**Natural Monument No. 443** — designated **2005-01-06**, the most recent Jeju coastal NM",
         "Columns rise **30–40 m**, packed in **5- to 7-sided polygons** (mostly hexagons) along **1 km** of coastline",
@@ -457,7 +705,65 @@
         "closed": "Open year-round (weather-dependent)",
         "admission": "Adult 2,000 KRW / Child 1,000 KRW (low fee)",
         "walking": "Easy — flat wooden boardwalk along cliff; total walk 15–20 min"
-      }
+      },
+      "images": [
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
+          "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 1",
+          "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
+          "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 2",
+          "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
+          "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 3",
+          "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
+          "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 4",
+          "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 4"
+        }
+      ]
     },
     {
       "number": 7,
@@ -466,7 +772,7 @@
       "name": "O'sulloc Tea Museum + Green Tea Fields",
       "category": "Tea Heritage Museum — Korea's Largest Green Tea Field (Seogwang Dawon)",
       "description": "**O'Sulloc Tea Museum (오설록 티 뮤지엄, '오설록' meaning 'meeting snow + green')** is the tea-culture flagship of **Amorepacific Corporation** — Korea's largest beauty company. Founder **Suh Sung-whan personally pioneered the project in 1979**, reclaiming volcanic ash farmland on Jeju's Seogwang plateau when conventional wisdom held tea couldn't be grown commercially in Korea. Today the **Seogwang Dawon plantation (서광다원)** is **Korea's largest green-tea field**, producing **~700 tonnes annually** across Amorepacific's three Jeju estates. The museum building **opened 2001** in the plantation's heart and was named to **designboom's Top 10 art museums** for its minimalist green-roofed pavilion-amid-tea-rows design. **FREE admission**, daily **09:00–18:00**, ~**2 million annual visitors**. The visit splits naturally into three segments: **(1) Museum interior** — tea production process, antique tea-ware collection from Tang dynasty (618–907 CE) onward, and rooftop observation deck with panoramic plantation view; **(2) Tea House cafe** — signature **green tea rolling cake (오설록 롤케이크)** and **green tea ice cream** served from the tea-leaf harvest year directly; **(3) Plantation walking paths** — gravel rows between tea bushes, popular for sunset photography at the western edge. **Innisfree Jeju House** (Amorepacific's natural cosmetics brand) is a **5-minute walk** for guests interested in the broader brand ecosystem — also free admission with optional tangerine soap DIY workshop (₩15,000). The museum building itself, designed by Korean architect **Mass Studies (Cho Min-suk)**, takes a deliberately low-profile horizontal form that mirrors the tea-row geometry rather than overpowering the agricultural landscape — the architectural deference earning it both the designboom Top 10 listing and ongoing use as a case study in Korean contemporary museum design. Optional add-on: the **Osulloc Tea Class (₩30,000 per person, 60 min, advance booking required)** — guided tea-flight tasting with brewing technique demonstration on Korean ceramics, available daily **10:00–16:00**, English-speaking instruction on Wed/Sat sessions.",
-      "image": "https://images.unsplash.com/photo-1556881286-fc6915169721",
+      "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "highlights": [
         "**Amorepacific** flagship — Korea's largest beauty company; founder Suh Sung-whan pioneered Jeju tea **1979**",
         "**Seogwang Dawon = Korea's largest green-tea field**; ~700 tonnes annual production",
@@ -512,7 +818,169 @@
         "closed": "Open year-round (weather closures possible)",
         "admission": "Free for museum; tea/desserts in café paid; Innisfree workshops paid separately",
         "walking": "Easy — flat museum and stroller-friendly tea fields; well-maintained paths"
-      }
+      },
+      "images": [
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "location": "O'sulloc Tea Museum + Green Tea Fields",
+          "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 1",
+          "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "location": "O'sulloc Tea Museum + Green Tea Fields",
+          "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 2",
+          "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "location": "O'sulloc Tea Museum + Green Tea Fields",
+          "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 3",
+          "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "location": "O'sulloc Tea Museum + Green Tea Fields",
+          "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 4",
+          "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "location": "O'sulloc Tea Museum + Green Tea Fields",
+          "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 5",
+          "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "location": "O'sulloc Tea Museum + Green Tea Fields",
+          "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 6",
+          "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "location": "O'sulloc Tea Museum + Green Tea Fields",
+          "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 7",
+          "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "location": "O'sulloc Tea Museum + Green Tea Fields",
+          "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 8",
+          "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "location": "O'sulloc Tea Museum + Green Tea Fields",
+          "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 9",
+          "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "location": "O'sulloc Tea Museum + Green Tea Fields",
+          "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 10",
+          "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "location": "O'sulloc Tea Museum + Green Tea Fields",
+          "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 11",
+          "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "location": "O'sulloc Tea Museum + Green Tea Fields",
+          "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 12",
+          "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 12"
+        }
+      ]
     },
     {
       "number": 8,
@@ -932,14 +1400,14 @@
   "sticky_booking_bar": {
     "note": "Select your date and group size to check live availability and complete your booking.",
     "price": {
-      "amountLabel": "38.70",
-      "originalPriceUsd": 43,
-      "salePriceUsd": 38.7,
-      "discountPercent": 10,
+      "amountLabel": "",
+      "originalPriceUsd": null,
+      "salePriceUsd": null,
+      "discountPercent": null,
       "currency": "USD",
       "per": "person",
-      "priceSource": "AtoC Korea direct rate",
-      "priceNote": "Final rate is confirmed after selecting your travel date and group size. Direct booking is handled by AtoC Korea."
+      "priceSource": "",
+      "priceNote": ""
     }
   },
   "pickup_dropoff": {
@@ -1566,7 +2034,7 @@
             "name": "Eoseungsaengak Trail (Hallasan UNESCO)",
             "category": "UNESCO Volcanic Geology — Hallasan Lower Trail (Triple Natural designation)",
             "description": "**Eoseungsaengak (어승생악, 1,169 m)** is a short Hallasan-side volcanic cone trail starting near Eorimok Visitor Center. Hallasan is Korea's highest mountain and the central landscape of Jeju's UNESCO-recognized volcanic island, so this stop gives guests a manageable way to experience the mountain without attempting the full summit hike. The trail is much shorter than the Seongpanak or Gwaneumsa summit courses and does not normally require the summit-reservation system. The climb still includes stairs and uphill sections, so comfortable shoes are important. On clear days, the upper viewpoint can show Hallasan's higher slopes, Jeju's volcanic-cone landscape, and the northern sea. Because mountain weather changes quickly, visibility can vary, but the forest atmosphere and cool mountain air still make this a strong opening stop for the southern route.",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "UNESCO World Heritage (Hallasan)",
               "1.3 km wooden-stair climb each way",
@@ -1601,7 +2069,39 @@
                 "Gold reference (verified by tour operator)"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+                "location": "Eoseungsaengak Trail (Hallasan UNESCO)",
+                "caption": "Eoseungsaengak Trail (Hallasan UNESCO) — photo 1",
+                "alt": "Eoseungsaengak Trail (Hallasan UNESCO) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+                "location": "Eoseungsaengak Trail (Hallasan UNESCO)",
+                "caption": "Eoseungsaengak Trail (Hallasan UNESCO) — photo 2",
+                "alt": "Eoseungsaengak Trail (Hallasan UNESCO) — gallery image 2"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1610,7 +2110,7 @@
             "name": "Camellia Hill (year-round signature flower garden)",
             "category": "Botanical Garden — Largest Camellia Arboretum in the East",
             "description": "**Camellia Hill (카멜리아힐)** is a large private botanical garden in Andeok known for camellias, seasonal flowers, garden paths, photo spots, and indoor rest areas. It is especially famous in winter and early spring when camellias bloom, but the garden changes through the year with tulips, hydrangeas, greenery, and autumn color depending on the season. Walking paths connect themed gardens, greenhouse areas, small galleries, and cafe spaces, making the stop softer and more relaxed than the mountain and coastal geology stops. The garden is useful for families, couples, and guests who want a colorful photo break during the day. Flower conditions always depend on weather and season, so the exact scenery can vary, but the site remains one of Jeju's most popular garden stops.",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+            "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
             "highlights": [
               "6,000+ camellia trees",
               "250 varieties",
@@ -1643,11 +2143,43 @@
               "verified": true,
               "sources": [
                 "VisitKorea",
-                "TripAdvisor",
+                "",
                 "third-party booking site"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "location": "Camellia Hill (year-round signature flower garden)",
+                "caption": "Camellia Hill (year-round signature flower garden) — photo 1",
+                "alt": "Camellia Hill (year-round signature flower garden) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "location": "Camellia Hill (year-round signature flower garden)",
+                "caption": "Camellia Hill (year-round signature flower garden) — photo 2",
+                "alt": "Camellia Hill (year-round signature flower garden) — gallery image 2"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1686,7 +2218,7 @@
             "name": "Cheonjeyeon Waterfall (Pond of the Gods)",
             "category": "Three-Tier Waterfall — Natural Monument No. 378 (1993)",
             "description": "**Cheonjeyeon Falls (천제연, '연 = pond + 천제 = Emperor of Heaven')** is a **three-tier waterfall** in Jungmun's volcanic gorge, designated **Natural Monument No. 378 (1993)** for its rare ecological combination. The name comes from a **Joseon-era Daoist legend that seven nymphs (선녀, *seonnyeo*) descended from heaven nightly to bathe in the upper pond** — a myth reinforced by the dramatic site's microclimate of perpetual mist. The **1st tier (22 m fall, 21 m deep pond)** drops into a circular basalt cauldron and only flows after heavy rain — most days the upper pond sits glassy and reflective. The **2nd tier (30 m fall) flows year-round** — the dominant photographic subject. The 3rd tier completes the descent to the sea. The **120 m / 78 m-high Seonimgyo Bridge (선임교, 'Bridge of the Seven Nymphs')** crosses the gorge midway through the loop — its cast-bronze relief panels along both sides depict **all seven nymphs in flight**, a literal architectural realization of the founding legend. Surrounding forest is a **rare-plant habitat** including **Korean toadlily (***Tricyrtis macropoda***)** and the endangered **Mankyua chejuense fern** (Jeju endemic, IUCN Critically Endangered). Loop length: **0.8 km, ~30 min walk** with several steep stair sections. Admission: **Adult ₩2,500 / Youth ₩1,350 / FREE under 7 + over 65**. Cheonjeyeon is also a member of the **'Yeongjusipgyeong (영주십경, 10 Scenic Wonders of Jeju)'** Joseon-era literati canon — alongside Hallasan summit, Seongsan Sunrise, and Jeongbang Falls — meaning today's southwest loop covers **2 of the 10 (Hallasan + Cheonjeyeon)** in a single day. The biennial **Jeju Chilseonyeo (Seven Nymphs) Festival** held at the bridge in May (every odd year) reenacts the descent legend with traditional dance and musical performance — reservations required when the festival coincides with a tour date. Hours **09:00–18:00** year-round (last entry 17:30).",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+            "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
             "highlights": [
               "Three-tier waterfall",
               "Seven Nymphs legend",
@@ -1724,7 +2256,52 @@
                 "World-of-Waterfalls"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+                "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 1",
+                "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+                "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 2",
+                "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+                "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 3",
+                "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1733,7 +2310,7 @@
             "name": "Jusangjeolli Cliff (Daepo Columnar Joints)",
             "category": "Columnar Jointing — Natural Monument No. 443 (2005)",
             "description": "**Daepo Jusangjeolli (대포 주상절리, 'Jisatgae')** is a **1 km stretch of hexagonal columnar-jointed basalt cliff** on the Jungmun coast — designated **Natural Monument No. 443 on 2005-01-06**. The columns rise **30–40 m** from the sea, packed in tightly fitted **5- to 7-sided polygons** (mostly hexagons) — a geometry produced when **molten basaltic lava from a Hallasan flank eruption (~250,000–140,000 years ago) reached the ocean and contracted as it cooled**, fracturing perpendicular to the cooling surface. Globally, columnar jointing is best known from **Giant's Causeway (UK)**, **Devils Postpile (US)**, and **Fingal's Cave (Scotland)** — Jusangjeolli is **East Asia's premier example** and the most accessible. The 800 m **boardwalk loop** delivers visitors to a railed cliff edge directly above the columns; **on high-tide days waves break against the columns and throw spray up to 20 m**, occasionally over the rail. Admission: **Adult ₩2,000 / Youth ₩1,000 / FREE under 7 and over 65**. The site is part of the **Jeju Global Geopark (UNESCO designated 2010-10)** — one of **13 official geosites** on the island, alongside Seongsan Ilchulbong, Manjanggul Lava Tube, and Suwolbong. The clifftop deck is **barrier-free** (wheelchair/stroller accessible). Three viewing platforms along the loop give different column angles: the **first platform** shows the columns in profile (best for the hexagonal-geometry shot), the **mid-platform** looks straight down for top-of-column patterns, and the **far platform** captures the 1 km coastal sweep with Hallasan as backdrop on clear days. **Best photo time: 14:00–16:00**, when westering sunlight lights the column faces frontally; sunset visits bring silhouette compositions but lose column-detail texture. Hours: **09:00–18:00 (last entry 17:30)**, year-round operation.",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
             "highlights": [
               "Hexagonal lava columns",
               "UNESCO Global Geopark",
@@ -1769,7 +2346,65 @@
                 "AfunCouple"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
+                "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 1",
+                "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
+                "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 2",
+                "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
+                "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 3",
+                "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
+                "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 4",
+                "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 4"
+              }
+            ]
           },
           {
             "number": 7,
@@ -1778,7 +2413,7 @@
             "name": "O'sulloc Tea Museum + Green Tea Fields",
             "category": "Tea Heritage Museum — Korea's Largest Green Tea Field (Seogwang Dawon)",
             "description": "**O'Sulloc Tea Museum (오설록 티 뮤지엄, '오설록' meaning 'meeting snow + green')** is the tea-culture flagship of **Amorepacific Corporation** — Korea's largest beauty company. Founder **Suh Sung-whan personally pioneered the project in 1979**, reclaiming volcanic ash farmland on Jeju's Seogwang plateau when conventional wisdom held tea couldn't be grown commercially in Korea. Today the **Seogwang Dawon plantation (서광다원)** is **Korea's largest green-tea field**, producing **~700 tonnes annually** across Amorepacific's three Jeju estates. The museum building **opened 2001** in the plantation's heart and was named to **designboom's Top 10 art museums** for its minimalist green-roofed pavilion-amid-tea-rows design. **FREE admission**, daily **09:00–18:00**, ~**2 million annual visitors**. The visit splits naturally into three segments: **(1) Museum interior** — tea production process, antique tea-ware collection from Tang dynasty (618–907 CE) onward, and rooftop observation deck with panoramic plantation view; **(2) Tea House cafe** — signature **green tea rolling cake (오설록 롤케이크)** and **green tea ice cream** served from the tea-leaf harvest year directly; **(3) Plantation walking paths** — gravel rows between tea bushes, popular for sunset photography at the western edge. **Innisfree Jeju House** (Amorepacific's natural cosmetics brand) is a **5-minute walk** for guests interested in the broader brand ecosystem — also free admission with optional tangerine soap DIY workshop (₩15,000). The museum building itself, designed by Korean architect **Mass Studies (Cho Min-suk)**, takes a deliberately low-profile horizontal form that mirrors the tea-row geometry rather than overpowering the agricultural landscape — the architectural deference earning it both the designboom Top 10 listing and ongoing use as a case study in Korean contemporary museum design. Optional add-on: the **Osulloc Tea Class (₩30,000 per person, 60 min, advance booking required)** — guided tea-flight tasting with brewing technique demonstration on Korean ceramics, available daily **10:00–16:00**, English-speaking instruction on Wed/Sat sessions.",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+            "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
             "highlights": [
               "Korean tea culture museum",
               "Iconic green tea field photo backdrop",
@@ -1812,11 +2447,173 @@
               "sources": [
                 "VisitKorea",
                 "Osulloc.com",
-                "Trazy",
+                "",
                 "third-party booking site"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "location": "O'sulloc Tea Museum + Green Tea Fields",
+                "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 1",
+                "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "location": "O'sulloc Tea Museum + Green Tea Fields",
+                "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 2",
+                "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "location": "O'sulloc Tea Museum + Green Tea Fields",
+                "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 3",
+                "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "location": "O'sulloc Tea Museum + Green Tea Fields",
+                "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 4",
+                "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "location": "O'sulloc Tea Museum + Green Tea Fields",
+                "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 5",
+                "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "location": "O'sulloc Tea Museum + Green Tea Fields",
+                "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 6",
+                "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "location": "O'sulloc Tea Museum + Green Tea Fields",
+                "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 7",
+                "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "location": "O'sulloc Tea Museum + Green Tea Fields",
+                "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 8",
+                "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "location": "O'sulloc Tea Museum + Green Tea Fields",
+                "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 9",
+                "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "location": "O'sulloc Tea Museum + Green Tea Fields",
+                "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 10",
+                "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "location": "O'sulloc Tea Museum + Green Tea Fields",
+                "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 11",
+                "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 11"
+              },
+              {
+                "id": 12,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "location": "O'sulloc Tea Museum + Green Tea Fields",
+                "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 12",
+                "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 12"
+              }
+            ]
           },
           {
             "number": 8,
@@ -2367,7 +3164,7 @@
           "Ramsar SIS",
           "AllTrails",
           "Inside Jeju",
-          "Trazy",
+          "",
           "Jeju Tourism Org"
         ]
       }

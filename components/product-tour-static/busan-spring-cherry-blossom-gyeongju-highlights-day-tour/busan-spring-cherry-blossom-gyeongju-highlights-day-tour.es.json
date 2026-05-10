@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Tour Cerezos Busan→Gyeongju: Bomun, Cheomseongdae y Bulguksa | AtoC",
     "metaDescription": "Tour flor de cerezo desde Busan a Gyeongju (28 mar – 10 abr): Lago Bomun (9.000 cerezos) → Cheomseongdae + Daereungwon (UNESCO) → almuerzo → Bulguksa (UNESCO). Solo primavera.",
-    "ogImage": "",
+    "ogImage": "https://www.atockorea.com/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "primaryKeywords": [
       "tour cerezos Gyeongju Busan",
       "Lago Bomun cerezos tour",
@@ -33,8 +33,8 @@
       "Patrimonio UNESCO",
       "Desde Busan"
     ],
-    "heroImage": "",
-    "thumbnail": "",
+    "heroImage": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+    "thumbnail": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "priceLabel": "Consulte el precio al reservar",
     "shortCardDescription": "El tour de cerezos más completo de Gyeongju desde Busan (28 mar – 10 abr): Lago Bomun (9.000 cerezos, reflejo en el agua) → Cheomseongdae (el observatorio astronómico más antiguo de Asia) + Daereungwon (tumba Silla UNESCO 2000) → almuerzo local → Templo Bulguksa (UNESCO 1995, cerezos tardíos en la avenida). 8,5 horas, dos Patrimonios UNESCO, guía bilingüe.",
     "tags": [
@@ -53,7 +53,7 @@
     "per": "persona"
   },
   "hero": {
-    "imageUrl": "",
+    "imageUrl": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "imagePosition": "center 50%",
     "tagline": "Los 9.000 cerezos del Lago Bomun, el observatorio Cheomseongdae y el Templo Bulguksa — Gyeongju en su mejor momento",
     "pills": [
@@ -125,58 +125,44 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
-      "alt": "Imagen de Lago Bomun — 9.000 cerezos",
-      "caption": "Lago Bomun — 9.000 cerezos, el corazón del espectáculo de cerezos de Gyeongju",
-      "location": "Lago Bomun, complejo Bomun, Gyeongju",
-      "atmosphere": "El escenario más publicado de la floración de Gyeongju: lago + 9.000 cerezos"
+      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+      "location": "Cheomseongdae + Complejo de Túmulos Daereungwon",
+      "alt": "Cheomseongdae + Complejo de Túmulos Daereungwon — gallery image 1",
+      "caption": "Cheomseongdae + Complejo de Túmulos Daereungwon — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1583244694751-9ce8b1d2b39a?w=1200&q=80",
-      "alt": "Imagen de Cheomseongdae — el observatorio astronómico más antiguo de Asia (633)",
-      "caption": "Cheomseongdae — el observatorio astronómico más antiguo de Asia (633)",
-      "location": "Cheomseongdae, Hwangnam-dong, Gyeongju",
-      "atmosphere": "633: la piedra más antigua de la ciencia asiática rodeada de cerezos"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "location": "Templo Bulguksa (Patrimonio UNESCO)",
+      "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 1",
+      "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601822336970-8af7c01f3a91?w=1200&q=80",
-      "alt": "Imagen de Daereungwon — túmulos reales Silla",
-      "caption": "Daereungwon — túmulos reales Silla, Patrimonio UNESCO 2000",
-      "location": "Daereungwon, Hwangnam-dong, Gyeongju",
-      "atmosphere": "Tumbas del Reino Silla coronadas de cerezos en primavera"
+      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+      "location": "Cheomseongdae + Complejo de Túmulos Daereungwon",
+      "alt": "Cheomseongdae + Complejo de Túmulos Daereungwon — gallery image 2",
+      "caption": "Cheomseongdae + Complejo de Túmulos Daereungwon — photo 2"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601649308334-2cc8e6f0e21f?w=1200&q=80",
-      "alt": "Imagen de Templo Bulguksa con cerezos tardíos — el fondo más fotogénico de Corea en abril",
-      "caption": "Templo Bulguksa con cerezos tardíos — el fondo más fotogénico de Corea en abril",
-      "location": "Bulguksa, Tohamsan, Gyeongju",
-      "atmosphere": "Patrimonio UNESCO 1995 + cerezos tardíos: el cierre más memorable del tour"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+      "location": "Templo Bulguksa (Patrimonio UNESCO)",
+      "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 2",
+      "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1614853128977-b1f1d7e64fae?w=1200&q=80",
-      "alt": "Imagen de Pabellón Bomunjeong",
-      "caption": "Pabellón Bomunjeong — uno de los paisajes más fotogénicos de Gyeongju",
-      "location": "Bomun Lake",
-      "atmosphere": "Icónico"
-    },
-    {
-      "id": "g6",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1611348586804-61bf6c080437?w=1200&q=80",
-      "alt": "Imagen de Traslado bilingüe desde Busan",
-      "caption": "Traslado bilingüe desde Busan",
-      "location": "Traslado del tour",
-      "atmosphere": "Viaje en grupo"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "location": "Templo Bulguksa (Patrimonio UNESCO)",
+      "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 3",
+      "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 3"
     }
   ],
   "itineraryStops": [
@@ -319,7 +305,40 @@
           "daereungwon_tomb_complex"
         ],
         "compound_stop_note": "Cheomseongdae and Daereungwon are co-located in the Gyeongju Historic Areas (UNESCO 2000), ~5-min walk apart, visited together as a single ~75-90 min itinerary block but tracked separately in the KB. Cheomseongdae (NT 31, 9.17m / 27 layers / 362 stones — oldest astronomical observatory in East Asia, Queen Seondeok era 632-647) is the primary anchor; Daereungwon (23 Silla royal tombs incl. Cheonmachong NT 155 with 11,526 artifacts) is the secondary."
-      }
+      },
+      "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+      "images": [
+        "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+        "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+          "location": "Cheomseongdae + Complejo de Túmulos Daereungwon",
+          "caption": "Cheomseongdae + Complejo de Túmulos Daereungwon — photo 1",
+          "alt": "Cheomseongdae + Complejo de Túmulos Daereungwon — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+          "location": "Cheomseongdae + Complejo de Túmulos Daereungwon",
+          "caption": "Cheomseongdae + Complejo de Túmulos Daereungwon — photo 2",
+          "alt": "Cheomseongdae + Complejo de Túmulos Daereungwon — gallery image 2"
+        }
+      ]
     },
     {
       "number": 4,
@@ -396,7 +415,53 @@
           "VisitKorea",
           "Visit Gyeongju official"
         ]
-      }
+      },
+      "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "images": [
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "location": "Templo Bulguksa (Patrimonio UNESCO)",
+          "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 1",
+          "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "location": "Templo Bulguksa (Patrimonio UNESCO)",
+          "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 2",
+          "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "location": "Templo Bulguksa (Patrimonio UNESCO)",
+          "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 3",
+          "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 3"
+        }
+      ]
     },
     {
       "number": 6,
@@ -1268,7 +1333,40 @@
                 "daereungwon_tomb_complex"
               ],
               "compound_stop_note": "Cheomseongdae and Daereungwon are co-located in the Gyeongju Historic Areas (UNESCO 2000), ~5-min walk apart, visited together as a single ~75-90 min itinerary block but tracked separately in the KB. Cheomseongdae (NT 31, 9.17m / 27 layers / 362 stones — oldest astronomical observatory in East Asia, Queen Seondeok era 632-647) is the primary anchor; Daereungwon (23 Silla royal tombs incl. Cheonmachong NT 155 with 11,526 artifacts) is the secondary."
-            }
+            },
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+            "images": [
+              "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+              "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+                "location": "Cheomseongdae + Complejo de Túmulos Daereungwon",
+                "caption": "Cheomseongdae + Complejo de Túmulos Daereungwon — photo 1",
+                "alt": "Cheomseongdae + Complejo de Túmulos Daereungwon — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+                "location": "Cheomseongdae + Complejo de Túmulos Daereungwon",
+                "caption": "Cheomseongdae + Complejo de Túmulos Daereungwon — photo 2",
+                "alt": "Cheomseongdae + Complejo de Túmulos Daereungwon — gallery image 2"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1343,7 +1441,53 @@
                 "VisitKorea",
                 "Visit Gyeongju official"
               ]
-            }
+            },
+            "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+            "images": [
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "location": "Templo Bulguksa (Patrimonio UNESCO)",
+                "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 1",
+                "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "location": "Templo Bulguksa (Patrimonio UNESCO)",
+                "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 2",
+                "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "location": "Templo Bulguksa (Patrimonio UNESCO)",
+                "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 3",
+                "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,

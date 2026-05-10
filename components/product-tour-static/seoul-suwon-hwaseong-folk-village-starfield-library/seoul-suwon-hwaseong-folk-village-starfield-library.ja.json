@@ -14,12 +14,12 @@
       "ソウル発日帰りツアー",
       "水原ユネスコツアー"
     ],
-    "ogImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+    "ogImage": "https://www.atockorea.com/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
     "title": "水原華城・民俗村・スターフィールド図書館 | AtoC",
     "description": "ソウル発・水原華城（ユネスコ世界遺産）→韓国民俗村（龍仁）→スターフィールド・スウォン図書館の10時間少人数ツアー。英語ガイド付き。"
   },
   "catalog_card": {
-    "thumbnail": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
+    "thumbnail": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
     "title": "水原華城・民俗村・スターフィールド図書館日帰りツアー",
     "priceLabel": "料金は予約時にご確認ください",
     "shortCardDescription": "ソウルから日帰りで京畿道の4つの対照的な側面を体験：ユネスコ世界遺産の水原華城の城壁ウォーク・朝鮮時代の離宮・韓国最初の野外民俗博物館（韓国民俗村）・22mの書架が連なるスターフィールド・スウォン図書館。少人数英語ガイド付き。",
@@ -46,7 +46,7 @@
       "民俗村",
       "ソウル発"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800"
+    "heroImage": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp"
   },
   "headlineLine1": "ユネスコ城壁、朝鮮の離宮、四層吹き抜けの図書館 —",
   "headlineLine2": "韓国の遺産と現代の静けさを10時間の一日に",
@@ -61,7 +61,7 @@
     "priceNote": "詳しい料金は予約時にご確認ください。"
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
+    "imageUrl": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
     "imagePosition": "center 35%",
     "tagline": "韓国唯一の城郭都市、民俗村、そしてInstagramで話題の図書館",
     "pills": [
@@ -132,49 +132,52 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
-      "alt": "水原華城の城壁と遠くに見える水原市街地のパノラマ",
-      "caption": "水原華城 — ユネスコ世界遺産の朝鮮時代の城郭都市",
-      "location": "水原華城（水原華城）、水原市、京畿道",
-      "atmosphere": "1797年完成の韓国唯一の完全に保存された朝鮮時代の城郭都市。ユネスコ世界遺産1997年登録"
+      "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+      "location": "韓国民俗村（龍仁）",
+      "alt": "韓国民俗村（龍仁） — gallery image 1",
+      "caption": "韓国民俗村（龍仁） — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "華城行宮の大（大門）と朝鮮時代の宮廷建築",
-      "caption": "華城行宮 — 韓国最大の行宮（離宮）",
-      "location": "華城行宮（華城行宮）、水原市、京畿道",
-      "atmosphere": "正祖王が建設した576室の韓国最大の行宮。韓国時代劇のロケ地"
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+      "location": "スターフィールド・スウォン図書館",
+      "alt": "スターフィールド・スウォン図書館 — gallery image 1",
+      "caption": "スターフィールド・スウォン図書館 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "広大な野外エリアに復元された朝鮮時代の家屋が並ぶ韓国民俗村",
-      "caption": "韓国民俗村 — 韓国初の野外民俗博物館",
-      "location": "韓国民俗村、龍仁市、京畿道",
-      "atmosphere": "245エーカーの自然の谷に復元された朝鮮時代の農村・市場・両班屋敷"
+      "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+      "location": "韓国民俗村（龍仁）",
+      "alt": "韓国民俗村（龍仁） — gallery image 2",
+      "caption": "韓国民俗村（龍仁） — photo 2"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "スターフィールド・スウォンの22m吹き抜け書架が連なるスターフィールド図書館",
-      "caption": "スターフィールド・スウォン図書館 — Instagramで話題の現代建築",
-      "location": "スターフィールド・スウォン図書館、水原市、京畿道",
-      "atmosphere": "22mの書架と四層吹き抜けのアトリウム。2024年1月開業の韓国最大のスタフィールドモール内"
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+      "location": "スターフィールド・スウォン図書館",
+      "alt": "スターフィールド・スウォン図書館 — gallery image 2",
+      "caption": "スターフィールド・スウォン図書館 — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "水原スターフィールドライブラリの22メートル床から天井までの書架と読書ラウンジを持つ4階のアトリウム",
-      "caption": "スターフィールドライブラリ水原 — 22m書架",
-      "location": "韓国",
-      "atmosphere": "韓国の美しい景観"
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+      "location": "スターフィールド・スウォン図書館",
+      "alt": "スターフィールド・スウォン図書館 — gallery image 3",
+      "caption": "スターフィールド・スウォン図書館 — photo 3"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+      "location": "スターフィールド・スウォン図書館",
+      "alt": "スターフィールド・スウォン図書館 — gallery image 4",
+      "caption": "スターフィールド・スウォン図書館 — photo 4"
     }
   ],
   "itineraryStops": [
@@ -383,7 +386,40 @@
           "Visit Korea KTO Sageuk K-Drama Filming Locations Guide (Daejanggeum/Jewel-in-the-Palace + Sungkyunkwan Scandal)"
         ],
         "note": "Reference fix: Phase 1 used poi_key 'korean_folk_village'; KB canonical key is 'korean_folk_village_yongin'."
-      }
+      },
+      "image": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+      "images": [
+        "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+        "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+          "location": "韓国民俗村（龍仁）",
+          "caption": "韓国民俗村（龍仁） — photo 1",
+          "alt": "韓国民俗村（龍仁） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+          "location": "韓国民俗村（龍仁）",
+          "caption": "韓国民俗村（龍仁） — photo 2",
+          "alt": "韓国民俗村（龍仁） — gallery image 2"
+        }
+      ]
     },
     {
       "number": 5,
@@ -438,7 +474,66 @@
           "Arch毎日 — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
           "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
         ]
-      }
+      },
+      "image": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+      "images": [
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+          "location": "スターフィールド・スウォン図書館",
+          "caption": "スターフィールド・スウォン図書館 — photo 1",
+          "alt": "スターフィールド・スウォン図書館 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+          "location": "スターフィールド・スウォン図書館",
+          "caption": "スターフィールド・スウォン図書館 — photo 2",
+          "alt": "スターフィールド・スウォン図書館 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+          "location": "スターフィールド・スウォン図書館",
+          "caption": "スターフィールド・スウォン図書館 — photo 3",
+          "alt": "スターフィールド・スウォン図書館 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+          "location": "スターフィールド・スウォン図書館",
+          "caption": "スターフィールド・スウォン図書館 — photo 4",
+          "alt": "スターフィールド・スウォン図書館 — gallery image 4"
+        }
+      ]
     },
     {
       "number": 6,
@@ -1535,7 +1630,40 @@
                 "Visit Korea KTO Sageuk K-Drama Filming Locations Guide (Daejanggeum/Jewel-in-the-Palace + Sungkyunkwan Scandal)"
               ],
               "note": "Reference fix: Phase 1 used poi_key 'korean_folk_village'; KB canonical key is 'korean_folk_village_yongin'."
-            }
+            },
+            "image": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+            "images": [
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+                "location": "韓国民俗村（龍仁）",
+                "caption": "韓国民俗村（龍仁） — photo 1",
+                "alt": "韓国民俗村（龍仁） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+                "location": "韓国民俗村（龍仁）",
+                "caption": "韓国民俗村（龍仁） — photo 2",
+                "alt": "韓国民俗村（龍仁） — gallery image 2"
+              }
+            ]
           },
           {
             "number": 5,
@@ -1590,7 +1718,66 @@
                 "Arch毎日 — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
                 "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
               ]
-            }
+            },
+            "image": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+            "images": [
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+                "location": "スターフィールド・スウォン図書館",
+                "caption": "スターフィールド・スウォン図書館 — photo 1",
+                "alt": "スターフィールド・スウォン図書館 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+                "location": "スターフィールド・スウォン図書館",
+                "caption": "スターフィールド・スウォン図書館 — photo 2",
+                "alt": "スターフィールド・スウォン図書館 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+                "location": "スターフィールド・スウォン図書館",
+                "caption": "スターフィールド・スウォン図書館 — photo 3",
+                "alt": "スターフィールド・スウォン図書館 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+                "location": "スターフィールド・スウォン図書館",
+                "caption": "スターフィールド・スウォン図書館 — photo 4",
+                "alt": "スターフィールド・スウォン図書館 — gallery image 4"
+              }
+            ]
           },
           {
             "number": 6,

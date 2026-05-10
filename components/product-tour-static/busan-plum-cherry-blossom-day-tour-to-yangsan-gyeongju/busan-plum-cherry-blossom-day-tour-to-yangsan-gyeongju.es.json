@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Tour Primavera Busan: Ciruelos y Cerezos en Tongdosa y Gyeongju | AtoC",
     "metaDescription": "Tour de primavera desde Busan: Templo Tongdosa (UNESCO + ciruelo Jajangmae de 350 años) → almuerzo minari-samgyeopsal → Bulguksa (UNESCO) → Lago Bomun (9.000 cerezos). Solo 25 feb – 10 abr.",
-    "ogImage": "",
+    "ogImage": "https://www.atockorea.com/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
     "primaryKeywords": [
       "tour ciruelos cerezos Busan primavera",
       "Tongdosa ciruelo Jajangmae tour",
@@ -33,8 +33,8 @@
       "2 sitios UNESCO",
       "Desde Busan"
     ],
-    "heroImage": "",
-    "thumbnail": "",
+    "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+    "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
     "priceLabel": "Consulte el precio al reservar",
     "shortCardDescription": "Temporada de ciruelos y cerezos desde Busan (25 feb – 10 abr): Templo Tongdosa en Yangsan (UNESCO + ciruelo Jajangmae de 350 años) → almuerzo minari-samgyeopsal (temporada de ciruelos) o local de Gyeongju (temporada de cerezos) → Templo Bulguksa (UNESCO 1995) → Lago Bomun (9.000 cerezos). Dos Patrimonios UNESCO y dos floraciones en un único traslado compartido de 8,5 horas.",
     "tags": [
@@ -55,7 +55,7 @@
     "per": "persona"
   },
   "hero": {
-    "imageUrl": "",
+    "imageUrl": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
     "imagePosition": "center 50%",
     "tagline": "El único tour que combina el ciruelo Jajangmae de 350 años con los 9.000 cerezos del Lago Bomun — dos UNESCO y dos floraciones desde Busan",
     "pills": [
@@ -127,58 +127,28 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1571156425562-12341e7c9aae?w=1200&q=80",
-      "alt": "Imagen de Ciruelo Jajangmae de Tongdosa — 350 años",
-      "caption": "Ciruelo Jajangmae de Tongdosa — 350 años, el ciruelo más famoso de Corea",
-      "location": "Templo Tongdosa, Yangsan, Gyeongnam",
-      "atmosphere": "El ciruelo más fotografiado de Corea: 350 años de historia en flor"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "location": "Templo Bulguksa (Patrimonio UNESCO)",
+      "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 1",
+      "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601901574849-2ce39f2e0867?w=1200&q=80",
-      "alt": "Imagen de Templo Tongdosa — UNESCO Sansa",
-      "caption": "Templo Tongdosa — UNESCO Sansa, templo del Buda (sin imagen de Buda)",
-      "location": "Tongdosa, flanco sur del Chisesan, Yangsan",
-      "atmosphere": "Tres Joyas del Budismo: Tongdosa, el Templo del Buda"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+      "location": "Templo Bulguksa (Patrimonio UNESCO)",
+      "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 2",
+      "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 2"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601822336970-8af7c01f3a91?w=1200&q=80",
-      "alt": "Imagen de Lago Bomun — 9.000 cerezos",
-      "caption": "Lago Bomun — 9.000 cerezos, la mayor concentración de cerezos de Gyeongju",
-      "location": "Lago Bomun, complejo turístico Bomun, Gyeongju",
-      "atmosphere": "El mayor espectáculo de cerezos de Gyeongju: lago + flores + reflejo"
-    },
-    {
-      "id": "g4",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601649308334-2cc8e6f0e21f?w=1200&q=80",
-      "alt": "Imagen de Templo Bulguksa (UNESCO) con cerezos tardíos en abril",
-      "caption": "Templo Bulguksa (UNESCO) con cerezos tardíos en abril",
-      "location": "Bulguksa, Tohamsan, Gyeongju",
-      "atmosphere": "Arte budista del siglo VIII con el telón de fondo rosa de los cerezos tardíos"
-    },
-    {
-      "id": "g5",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1614853128977-b1f1d7e64fae?w=1200&q=80",
-      "alt": "Imagen de Circuito de cerezos en flor del Lago Bomun",
-      "caption": "Circuito de cerezos en flor del Lago Bomun",
-      "location": "Bomun Lake",
-      "atmosphere": "Paisaje primaveral"
-    },
-    {
-      "id": "g6",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1567427361984-0cbe7396fc6c?w=1200&q=80",
-      "alt": "Imagen de Minari Samgyeopsal de Wondong (plato regional de temporada)",
-      "caption": "Minari Samgyeopsal de Wondong (plato regional de temporada)",
-      "location": "Wondong",
-      "atmosphere": "Gastronómico"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "location": "Templo Bulguksa (Patrimonio UNESCO)",
+      "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 3",
+      "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 3"
     }
   ],
   "itineraryStops": [
@@ -341,7 +311,53 @@
           "VisitKorea",
           "Visit Gyeongju official"
         ]
-      }
+      },
+      "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "images": [
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "location": "Templo Bulguksa (Patrimonio UNESCO)",
+          "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 1",
+          "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "location": "Templo Bulguksa (Patrimonio UNESCO)",
+          "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 2",
+          "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "location": "Templo Bulguksa (Patrimonio UNESCO)",
+          "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 3",
+          "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 3"
+        }
+      ]
     },
     {
       "number": 5,
@@ -1301,7 +1317,53 @@
                 "VisitKorea",
                 "Visit Gyeongju official"
               ]
-            }
+            },
+            "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+            "images": [
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "location": "Templo Bulguksa (Patrimonio UNESCO)",
+                "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 1",
+                "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "location": "Templo Bulguksa (Patrimonio UNESCO)",
+                "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 2",
+                "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "location": "Templo Bulguksa (Patrimonio UNESCO)",
+                "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 3",
+                "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 3"
+              }
+            ]
           },
           {
             "number": 5,

@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Busan to Gyeongju Cherry Blossom Day Tour (Mar 28–Apr 10) | AtoC Korea",
     "metaDescription": "8.5-hour Busan-departure spring cherry blossom shuttle tour to Gyeongju. Bomun Lake, Daereungwon Stone Wall Road, Bulguksa. Operates Mar 28 to Apr 10 only.",
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+    "ogImage": "https://www.atockorea.com/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "primaryKeywords": [
       "Gyeongju cherry blossom tour from Busan",
       "Bomun Lake cherry blossom day tour",
@@ -32,9 +32,9 @@
       "UNESCO Sites",
       "Busan Pickup"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
-    "priceLabel": "Per-person pricing — confirm at booking",
+    "heroImage": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+    "thumbnail": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+    "priceLabel": "",
     "shortCardDescription": "An 8.5-hour Busan-departure shuttle tour to Gyeongju's biggest spring cherry blossom spots. The default route covers Bomun Lake (8 km of cherry tree-lined lakeside walking), the Cheomseongdae + Daereungwon historic core (UNESCO Gyeongju Historic Areas), and Bulguksa Temple (UNESCO World Heritage with mid-April yaezakura double cherry blossom). 2–3 stops are confirmed each morning based on the day's bloom report. Tour operates Mar 28 to Apr 10 only — full refund if bloom is materially delayed or finished.",
     "tags": [
       "spring_seasonal",
@@ -52,7 +52,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+    "imageUrl": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "imagePosition": "center 50%",
     "tagline": "From Bomun Lake's 8-kilometer cherry tunnel to Daereungwon's Stone Wall Road blossoms to Bulguksa's late-April yaezakura — eight and a half hours through Gyeongju's biggest spring bloom spots, with the daily route confirmed from that morning's bloom report.",
     "pills": [
@@ -130,58 +130,52 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
-      "alt": "Cherry blossom path with pink petals at Bomun Lake Gyeongju",
-      "caption": "Bomun Lake — 8 km cherry blossom avenue",
-      "location": "Bomun Lake",
-      "atmosphere": "Romantic spring"
-    },
-    {
-      "id": "g2",
+      "id": 1,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/87/2661487_image2_1.JPG",
-      "alt": "Cherry blossoms surrounding ancient Silla burial mounds at Daereungwon",
-      "caption": "Daereungwon Stone Wall Road cherry blossoms",
-      "location": "Daereungwon Tomb Complex",
-      "atmosphere": "Historic spring"
+      "location": "Bomun Lake (cherry blossom centerpiece)",
+      "alt": "Bomun Lake (cherry blossom centerpiece) — on-route photo",
+      "caption": "Bomun Lake (cherry blossom centerpiece)"
     },
     {
-      "id": "g3",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/16/2565716_image2_1.JPG",
-      "alt": "Cheomseongdae 7th century stone observatory tower",
-      "caption": "Cheomseongdae Observatory (647 AD, oldest in East Asia)",
-      "location": "Cheomseongdae",
-      "atmosphere": "Ancient"
+      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+      "location": "Cheomseongdae Observatory + Daereungwon Tomb Complex",
+      "alt": "Cheomseongdae Observatory + Daereungwon Tomb Complex — gallery image 1",
+      "caption": "Cheomseongdae Observatory + Daereungwon Tomb Complex — photo 1"
     },
     {
-      "id": "g4",
+      "id": 3,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/25/3083925_image2_1.JPG",
-      "alt": "Bulguksa temple stone bridges and pagodas",
-      "caption": "Bulguksa Temple (UNESCO World Heritage 1995)",
-      "location": "Bulguksa Temple",
-      "atmosphere": "Spiritual"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "location": "Bulguksa Temple (UNESCO World Heritage)",
+      "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 1",
+      "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 1"
     },
     {
-      "id": "g5",
+      "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG",
-      "alt": "Bomun Pavilion with cherry blossoms reflected in lake water",
-      "caption": "Bomun Pavilion (CNN 50 most beautiful places in Korea)",
-      "location": "Bomun Lake",
-      "atmosphere": "Iconic"
+      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+      "location": "Cheomseongdae Observatory + Daereungwon Tomb Complex",
+      "alt": "Cheomseongdae Observatory + Daereungwon Tomb Complex — gallery image 2",
+      "caption": "Cheomseongdae Observatory + Daereungwon Tomb Complex — photo 2"
     },
     {
-      "id": "g6",
+      "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/49/2390749_image2_1.JPG",
-      "alt": "Tour shuttle bus with passengers near cherry blossoms",
-      "caption": "Bilingual tour shuttle from Busan",
-      "location": "Tour shuttle",
-      "atmosphere": "Group travel"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+      "location": "Bulguksa Temple (UNESCO World Heritage)",
+      "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 2",
+      "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "location": "Bulguksa Temple (UNESCO World Heritage)",
+      "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 3",
+      "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 3"
     }
   ],
   "itineraryStops": [
@@ -338,7 +332,39 @@
         ],
         "compound_stop_note": "Cheomseongdae and Daereungwon are co-located in the Gyeongju Historic Areas (UNESCO 2000), ~5-min walk apart, visited together as a single ~75-90 min itinerary block but tracked separately in the KB. Cheomseongdae (NT 31, 9.17m / 27 layers / 362 stones — oldest astronomical observatory in East Asia, Queen Seondeok era 632-647) is the primary anchor; Daereungwon (23 Silla royal tombs incl. Cheonmachong NT 155 with 11,526 artifacts) is the secondary."
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/87/2661487_image2_1.JPG"
+      "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+      "images": [
+        "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+        "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+          "location": "Cheomseongdae Observatory + Daereungwon Tomb Complex",
+          "caption": "Cheomseongdae Observatory + Daereungwon Tomb Complex — photo 1",
+          "alt": "Cheomseongdae Observatory + Daereungwon Tomb Complex — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+          "location": "Cheomseongdae Observatory + Daereungwon Tomb Complex",
+          "caption": "Cheomseongdae Observatory + Daereungwon Tomb Complex — photo 2",
+          "alt": "Cheomseongdae Observatory + Daereungwon Tomb Complex — gallery image 2"
+        }
+      ]
     },
     {
       "number": 4,
@@ -427,7 +453,52 @@
           "Visit Gyeongju official"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG"
+      "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+      "images": [
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "location": "Bulguksa Temple (UNESCO World Heritage)",
+          "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 1",
+          "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "location": "Bulguksa Temple (UNESCO World Heritage)",
+          "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 2",
+          "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "location": "Bulguksa Temple (UNESCO World Heritage)",
+          "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 3",
+          "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 3"
+        }
+      ]
     },
     {
       "number": 6,
@@ -568,7 +639,7 @@
         ]
       }
     ],
-    "sourcing": "Tour design follows the Gyeongju cherry blossom tour standard practice (verified across GetYourGuide, Trazy, KoreaTravelEasy, Seoul Pass listings 2024–2026). Bloom timing data cross-checked with KMA Cherry Blossom Forecast and Gyeongju City tourism office annual festival announcements."
+    "sourcing": "Tour design follows the Gyeongju cherry blossom tour standard practice (,,, listings 2024–2026). Bloom timing data cross-checked with KMA Cherry Blossom Forecast and Gyeongju City tourism office annual festival announcements."
   },
   "practicalAccordionItems": [
     {
@@ -954,8 +1025,8 @@
       "busan-gyeongju-unesco-legacy-tour-national-museum"
     ],
     "internal_competing_products_note": "Within the Busan→Gyeongju portfolio, this is the SEASONAL spring-only cherry blossom variant. The two year-round Gyeongju tours (busan-gyeongju-unesco-legacy-tour-national-museum, from-busan-gyeongju-ancient-capital-day-tour) cover the same UNESCO core (Bulguksa + Gyeongju historic area) but skip the cherry blossom POIs (Bomun Lake, Cheomseongdae fields, Stone Wall Road). For visits outside Mar 28–Apr 10 the year-round tours are the substitute.",
-    "external_source": "GetYourGuide t1192332",
-    "external_source_url": "https://www.getyourguide.com/-t1192332/",
+    "external_source": "t1192332",
+    "external_source_url": "https://www..com/-t1192332/",
     "operator_partner": "AtoC Korea LLC (seasonal cherry blossom shuttle)",
     "last_competitive_review": "2026-04-28",
     "primary_themes": [
@@ -1183,7 +1254,7 @@
             "duration": "60 min",
             "name": "Ahopsan Bamboo Forest",
             "category": "Bamboo Forest",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/87/2661487_image2_1.JPG",
+            "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
             "description": "Privately preserved bamboo grove inside the Nampyeong Mun clan's ancestral estate in Gijang-gun, Busan — the family has owned and maintained the forest since 1638 (roughly 400 years). Several iconic Korean dramas have filmed here, most famously the bamboo-corridor scenes in 'Mr. Sunshine' (2018). The walking loop is roughly 1 km on flat compacted dirt, takes 45–60 minutes at a slow photography pace, and stays cool in summer because the canopy filters most direct sunlight. Adult admission ₩5,000 (cash; not included in tour price). Spring (cherry blossom season) is the only exception when the route swaps this stop for Haeundae Dalmaji Hill (see Seasonal notes).",
             "timeUsed": [
               "Arrival, ticketing, and orientation briefing",
@@ -1195,7 +1266,52 @@
               "poi_key": "ahopsan_bamboo_forest",
               "is_attraction": true,
               "fee_krw": 5000
-            }
+            },
+            "images": [
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+                "location": "Ahopsan Bamboo Forest",
+                "caption": "Ahopsan Bamboo Forest — photo 1",
+                "alt": "Ahopsan Bamboo Forest — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+                "location": "Ahopsan Bamboo Forest",
+                "caption": "Ahopsan Bamboo Forest — photo 2",
+                "alt": "Ahopsan Bamboo Forest — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+                "location": "Ahopsan Bamboo Forest",
+                "caption": "Ahopsan Bamboo Forest — photo 3",
+                "alt": "Ahopsan Bamboo Forest — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1220,7 +1336,52 @@
                 "No. 20 Dabotap",
                 "No. 21 Seokgatap"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "location": "Bulguksa Temple (UNESCO World Heritage)",
+                "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 1",
+                "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "location": "Bulguksa Temple (UNESCO World Heritage)",
+                "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 2",
+                "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "location": "Bulguksa Temple (UNESCO World Heritage)",
+                "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 3",
+                "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 3"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1264,7 +1425,52 @@
                 "No. 29 Sacred Bell",
                 "No. 188 Gold Crown"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+                "location": "Gyeongju National Museum",
+                "caption": "Gyeongju National Museum — photo 1",
+                "alt": "Gyeongju National Museum — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+                "location": "Gyeongju National Museum",
+                "caption": "Gyeongju National Museum — photo 2",
+                "alt": "Gyeongju National Museum — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+                "location": "Gyeongju National Museum",
+                "caption": "Gyeongju National Museum — photo 3",
+                "alt": "Gyeongju National Museum — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1284,7 +1490,65 @@
               "poi_key": "gyochon_hanok_village",
               "is_attraction": true,
               "fee_krw": 0
-            }
+            },
+            "images": [
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+                "location": "Gyochon Hanok Village",
+                "caption": "Gyochon Hanok Village — photo 1",
+                "alt": "Gyochon Hanok Village — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+                "location": "Gyochon Hanok Village",
+                "caption": "Gyochon Hanok Village — photo 2",
+                "alt": "Gyochon Hanok Village — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+                "location": "Gyochon Hanok Village",
+                "caption": "Gyochon Hanok Village — photo 3",
+                "alt": "Gyochon Hanok Village — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+                "location": "Gyochon Hanok Village",
+                "caption": "Gyochon Hanok Village — photo 4",
+                "alt": "Gyochon Hanok Village — gallery image 4"
+              }
+            ]
           },
           {
             "number": 7,
@@ -1745,7 +2009,7 @@
       "v15.4_new_tour_creation"
     ],
     "fix_passes": {
-      "v15.4_new_tour_creation": "Created new tour from GYG product ID t1192332 (Busan-Gyeongju spring cherry blossom day tour). Structural template: busan-gyeongju-unesco-legacy-tour-national-museum (same Busan→Gyeongju logistics, shuttle small_group format). Content layered with cherry-blossom-specific POIs added to KB v1.1: bomun_lake, daereungwon_tomb_complex, cheomseongdae. POI operational data sourced from VisitKorea, Visit Busan, Gyeongju City tourism office, Trazy listings, KoreaTravelEasy, Seoul Pass listings (cross-verified across 4–6 sources per POI). SEASONALITY is STRICT: spring=1.0, summer/autumn/winter=0.0 — tour operates only Mar 28–Apr 10 (verified from GYG t1192332 dating and Trazy listings 2024–2026). MATCHING-PROFILE SCORING METHODOLOGY: All 68 fields scored from verified facts about the actual stops in the default itinerary (walking distances measured, accessibility per VisitKorea + AllTrails, hours/admission per official tourism boards, UNESCO designations per UNESCO World Heritage List). Inline reasoning for each non-trivial score is captured as comments in the generator script step3b_create_cherry_blossom_tour.py — Jason can review or adjust any specific score by editing the generator and re-running. Key derivations: (1) walking_level=0.50 from measured 3–5km total walking with mostly flat paths and one stair section; (2) unesco_fit=0.95 from 3-of-4 stops being UNESCO-listed; (3) seasonality.spring=1.0 + others=0.0 from verified seasonal-only operating dates; (4) couple_fit=0.95 vs young_kids_fit=0.50 from cherry blossom romance vs 8.5h day length tradeoff; (5) value_for_money_fit=0.85 from 4 free admissions + shuttle pricing in peak demand season. REASONABLE-ASSUMPTION FIELDS that may need patching once the live GYG page is reviewed: (a) price.amountLabel left empty (per-person pricing TBD); (b) catalog_card.priceFromUSD null; (c) exact pickup times (08:00/08:15/08:30) assumed from typical shuttle schedule; (d) reviewsSummary populated with zeros — actual GYG reviews not imported in this pass; (e) hero/og images deferred per v15 P3 image workflow.",
+      "v15.4_new_tour_creation": "Created new tour from GYG product ID t1192332 (Busan-Gyeongju spring cherry blossom day tour). Structural template: busan-gyeongju-unesco-legacy-tour-national-museum (same Busan→Gyeongju logistics, shuttle small_group format). Content layered with cherry-blossom-specific POIs added to KB v1.1: bomun_lake, daereungwon_tomb_complex, cheomseongdae. POI operational data sourced from VisitKorea, Visit Busan, Gyeongju City tourism office, listings,, listings (cross-verified across 4–6 sources per POI). SEASONALITY is STRICT: spring=1.0, summer/autumn/winter=0.0 — tour operates only Mar 28–Apr 10 (verified from GYG t1192332 dating and listings 2024–2026). MATCHING-PROFILE SCORING METHODOLOGY: All 68 fields scored from verified facts about the actual stops in the default itinerary (walking distances measured, accessibility per VisitKorea + AllTrails, hours/admission per official tourism boards, UNESCO designations per UNESCO World Heritage List). Inline reasoning for each non-trivial score is captured as comments in the generator script step3b_create_cherry_blossom_tour.py — Jason can review or adjust any specific score by editing the generator and re-running. Key derivations: (1) walking_level=0.50 from measured 3–5km total walking with mostly flat paths and one stair section; (2) unesco_fit=0.95 from 3-of-4 stops being UNESCO-listed; (3) seasonality.spring=1.0 + others=0.0 from verified seasonal-only operating dates; (4) couple_fit=0.95 vs young_kids_fit=0.50 from cherry blossom romance vs 8.5h day length tradeoff; (5) value_for_money_fit=0.85 from 4 free admissions + shuttle pricing in peak demand season. REASONABLE-ASSUMPTION FIELDS that may need patching once the live GYG page is reviewed: (a) price.amountLabel left empty (per-person pricing TBD); (b) catalog_card.priceFromUSD null; (c) exact pickup times (08:00/08:15/08:30) assumed from typical shuttle schedule; (d) reviewsSummary populated with zeros — actual GYG reviews not imported in this pass; (e) hero/og images deferred per v15 P3 image workflow.",
       "v17_schema_unification": {
         "date": "2026-04-28",
         "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",

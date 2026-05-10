@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "首尔DMZ私人专游：第三侵道+加马山吊桥 | AtoC Korea",
     "metaDescription": "首尔出发8至9小时私人DMZ游：临津阁和平公园、第三侵道、都拉瞭望台、加马山云天阁吊桥。",
-    "ogImage": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1920&q=80",
+    "ogImage": "https://www.atockorea.com/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
     "primaryKeywords": [
       "首尔DMZ私人游",
       "DMZ第三侵道旅游",
@@ -32,8 +32,8 @@
       "非军事区＋悬索桥",
       "酒店接送含括"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1920&q=80",
-    "thumbnail": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=600&q=80",
+    "heroImage": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+    "thumbnail": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
     "priceLabel": "按车辆计费 — 请于预订时确认",
     "shortCardDescription": "私人一日游，将韩国历史最沉重的地点与最壮观的自然奇观融为一体——第三侵道（最接近首尔的朝鲜挖掘隧道）与加马山云天阁吊桥（海拔582米，山谷上方220米）。",
     "tags": [
@@ -50,7 +50,7 @@
     "per": "车辆"
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1920&q=80",
+    "imageUrl": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
     "imagePosition": "center 40%",
     "tagline": "从全球戒备最森严的边境到一座220米的山间悬索桥——一日私人行程，韩国的两副面孔",
     "pills": [
@@ -127,49 +127,28 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
-      "alt": "临津阁自由之桥统一祈愿丝带",
-      "caption": "临津阁和平公园自由之桥——1953年遣返战俘的旧铁道桥，今日覆满统一祈愿丝带",
-      "location": "临津阁，坡州",
-      "atmosphere": "临津阁和平公园自由之桥——1953年遣返战俘的旧铁道桥，今日覆满统一祈愿丝带是本路线的代表性停靠点，适合拍照并感受现场氛围。"
+      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "location": "第三南侵地道（地下入侵地道）",
+      "alt": "第三南侵地道（地下入侵地道） — gallery image 1",
+      "caption": "第三南侵地道（地下入侵地道） — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1604935080832-bcdf83b3a4f0?w=1200&q=80",
-      "alt": "第三南侵地道入口",
-      "caption": "第三南侵地道——1978年发现，深73米，北韩向首尔方向挖掘，距军事分界线仅170米",
-      "location": "DMZ，坡州",
-      "atmosphere": "第三南侵地道——1978年发现，深73米，北韩向首尔方向挖掘，距军事分界线仅170米是本路线的代表性停靠点，适合拍照并感受现场氛围。"
+      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+      "location": "第三南侵地道（地下入侵地道）",
+      "alt": "第三南侵地道（地下入侵地道） — gallery image 2",
+      "caption": "第三南侵地道（地下入侵地道） — photo 2"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1576487248805-cf45f6bcc67f?w=1200&q=80",
-      "alt": "甘岳山格洛斯特英雄桥红色悬索桥全景",
-      "caption": "甘岳山格洛斯特英雄桥——150米红色悬索桥，纪念1951年临津江战役英国格洛斯特郡团",
-      "location": "甘岳山，坡州，京畿道",
-      "atmosphere": "甘岳山格洛斯特英雄桥——150米红色悬索桥，纪念1951年临津江战役英国格洛斯特郡团是本路线的代表性停靠点，适合拍照并感受现场氛围。"
-    },
-    {
-      "id": "g4",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
-      "alt": "横跨林木茂密山谷的长红色吊桥",
-      "caption": "加马山红色吊桥——220米，韩国最长的红色吊桥",
-      "location": "感岳山红色吊桥",
-      "atmosphere": "加马山红色吊桥——220米，韩国最长的红色吊桥是本路线的代表性停靠点，适合拍照并感受现场氛围。"
-    },
-    {
-      "id": "g5",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-      "alt": "行程中参观的坡州农村——DMZ与加马山之间的驾驶路程景观",
-      "caption": "坡州农村——DMZ与加马山之间的驾驶路程",
-      "location": "Paju Countryside",
-      "atmosphere": "DMZ与加马山之间的驾驶路程"
+      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+      "location": "第三南侵地道（地下入侵地道）",
+      "alt": "第三南侵地道（地下入侵地道） — gallery image 3",
+      "caption": "第三南侵地道（地下入侵地道） — photo 3"
     }
   ],
   "itineraryStops": [
@@ -283,7 +262,53 @@
           "Wikipedia (Third Tunnel of Aggression — open corpus verifying 1,635 m / 73 m / 1978 specs)",
           "Korea Herald / Yonhap News archival coverage (Korean defector tip-off + 30,000 troops/hour estimate)"
         ]
-      }
+      },
+      "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "images": [
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "location": "第三南侵地道（地下入侵地道）",
+          "caption": "第三南侵地道（地下入侵地道） — photo 1",
+          "alt": "第三南侵地道（地下入侵地道） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "location": "第三南侵地道（地下入侵地道）",
+          "caption": "第三南侵地道（地下入侵地道） — photo 2",
+          "alt": "第三南侵地道（地下入侵地道） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "location": "第三南侵地道（地下入侵地道）",
+          "caption": "第三南侵地道（地下入侵地道） — photo 3",
+          "alt": "第三南侵地道（地下入侵地道） — gallery image 3"
+        }
+      ]
     },
     {
       "number": 3,
@@ -339,7 +364,53 @@
           "Joint Chiefs of Staff ROK / Ministry of National Defense (security advisory on rooftop closure)",
           "Wikipedia (Dora Observatory — corpus on 304 ft² capacity + 500-person observatory replacement of Songaksan)"
         ]
-      }
+      },
+      "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "images": [
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "location": "都拉展望台",
+          "caption": "都拉展望台 — photo 1",
+          "alt": "都拉展望台 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "location": "都拉展望台",
+          "caption": "都拉展望台 — photo 2",
+          "alt": "都拉展望台 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "location": "都拉展望台",
+          "caption": "都拉展望台 — photo 3",
+          "alt": "都拉展望台 — gallery image 3"
+        }
+      ]
     },
     {
       "number": 4,
@@ -396,7 +467,53 @@
           "韩国旅游发展局 Korea Foundation Cultural Heritage Bridges Series (Gloucester Heroes Bridge dedication official)",
           "Wikipedia (Battle of the Imjin River — 1st Battalion Gloucester Regiment + 170th Mortar Battery courageous-stand record)"
         ]
-      }
+      },
+      "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "images": [
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "location": "甘岳山红色吊桥",
+          "caption": "甘岳山红色吊桥 — photo 1",
+          "alt": "甘岳山红色吊桥 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "location": "甘岳山红色吊桥",
+          "caption": "甘岳山红色吊桥 — photo 2",
+          "alt": "甘岳山红色吊桥 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "location": "甘岳山红色吊桥",
+          "caption": "甘岳山红色吊桥 — photo 3",
+          "alt": "甘岳山红色吊桥 — gallery image 3"
+        }
+      ]
     }
   ],
   "routeFlowStops": [
@@ -819,7 +936,7 @@
     "destination_region": "korea_mainland",
     "region_type": "gyeonggi_paju",
     "vehicle_type": "private_vehicle",
-    "duration_hours": 8.0,
+    "duration_hours": 8,
     "region_tags": [
       "seoul_capital",
       "gyeonggi_paju",
@@ -851,7 +968,7 @@
     "walking_level": 0.7,
     "scenic_level": 0.6,
     "photo_level": 0.6,
-    "culture_level": 1.0,
+    "culture_level": 1,
     "relax_level": 0.4,
     "first_time_fit": 0.8,
     "family_fit": 0.55,
@@ -877,18 +994,18 @@
     "beach_fit": 0.2,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.2,
-    "no_shopping_fit": 1.0,
-    "local_culture_fit": 1.0,
+    "no_shopping_fit": 1,
+    "local_culture_fit": 1,
     "storytelling_fit": 0.95,
     "unesco_fit": 0.15,
     "intangible_heritage_fit": 0.2,
     "indoor_ratio": 0.45,
     "weather_sensitivity": 0.55,
-    "comfort_level": 1.0,
+    "comfort_level": 1,
     "budget_fit": 0.6,
     "premium_fit": 0.95,
     "small_group_fit": 0.15,
-    "private_fit": 1.0,
+    "private_fit": 1,
     "bus_fit": 0.05,
     "price_band": "premium",
     "pickup_base": "seoul_downtown",
@@ -945,40 +1062,40 @@
       "gamaksan_red_bridge",
       "dora_observatory"
     ],
-    "private_tour_fit": 1.0,
-    "history_culture_fit": 1.0,
+    "private_tour_fit": 1,
+    "history_culture_fit": 1,
     "customizable_route_fit": 0.4,
     "flexibility_fit": 0.6,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "seoul_day_trip_pair_fit": 1.0,
-    "seoul_central_hotel_pickup_fit": 1.0,
-    "return_to_seoul_central_fit": 1.0,
-    "day_trip_2_3_hour_drive_each_way_fit": 1.0,
-    "private_charter_format_fit": 1.0,
-    "dmz_security_zone_day_tour_fit": 1.0,
-    "north_korea_proximity_history_fit": 1.0,
-    "korean_war_memorial_complex_fit": 1.0,
-    "mandatory_passport_or_arc_id_fit": 1.0,
-    "third_infiltration_tunnel_anchor_fit": 1.0,
-    "dora_observatory_anchor_fit": 1.0,
-    "imjingak_peace_park_anchor_fit": 1.0,
-    "gamaksan_lighter_close_to_heavy_dmz_pivot_fit": 1.0,
-    "gloucester_heroes_battle_memorial_fit": 1.0,
-    "battle_of_imjin_river_1951_history_fit": 1.0,
-    "separated_families_displaced_persons_history_fit": 1.0,
-    "divided_korea_geography_visit_fit": 1.0,
-    "mangbaedan_lunar_new_year_chuseok_ritual_fit": 1.0,
-    "freedom_bridge_pow_repatriation_anchor_fit": 1.0,
+    "seoul_day_trip_pair_fit": 1,
+    "seoul_central_hotel_pickup_fit": 1,
+    "return_to_seoul_central_fit": 1,
+    "day_trip_2_3_hour_drive_each_way_fit": 1,
+    "private_charter_format_fit": 1,
+    "dmz_security_zone_day_tour_fit": 1,
+    "north_korea_proximity_history_fit": 1,
+    "korean_war_memorial_complex_fit": 1,
+    "mandatory_passport_or_arc_id_fit": 1,
+    "third_infiltration_tunnel_anchor_fit": 1,
+    "dora_observatory_anchor_fit": 1,
+    "imjingak_peace_park_anchor_fit": 1,
+    "gamaksan_lighter_close_to_heavy_dmz_pivot_fit": 1,
+    "gloucester_heroes_battle_memorial_fit": 1,
+    "battle_of_imjin_river_1951_history_fit": 1,
+    "separated_families_displaced_persons_history_fit": 1,
+    "divided_korea_geography_visit_fit": 1,
+    "mangbaedan_lunar_new_year_chuseok_ritual_fit": 1,
+    "freedom_bridge_pow_repatriation_anchor_fit": 1,
     "closed_mondays_holidays": true,
     "mondays_closure_advisory": true,
     "seollal_chuseok_closure_advisory": true,
@@ -1316,7 +1433,53 @@
                 "Wikipedia (Third Tunnel of Aggression — open corpus verifying 1,635 m / 73 m / 1978 specs)",
                 "Korea Herald / Yonhap News archival coverage (Korean defector tip-off + 30,000 troops/hour estimate)"
               ]
-            }
+            },
+            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+            "images": [
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "location": "第三南侵地道（地下入侵地道）",
+                "caption": "第三南侵地道（地下入侵地道） — photo 1",
+                "alt": "第三南侵地道（地下入侵地道） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "location": "第三南侵地道（地下入侵地道）",
+                "caption": "第三南侵地道（地下入侵地道） — photo 2",
+                "alt": "第三南侵地道（地下入侵地道） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "location": "第三南侵地道（地下入侵地道）",
+                "caption": "第三南侵地道（地下入侵地道） — photo 3",
+                "alt": "第三南侵地道（地下入侵地道） — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1367,7 +1530,53 @@
                 "Joint Chiefs of Staff ROK / Ministry of National Defense (security advisory on rooftop closure)",
                 "Wikipedia (Dora Observatory — corpus on 304 ft² capacity + 500-person observatory replacement of Songaksan)"
               ]
-            }
+            },
+            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+            "images": [
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "location": "都拉展望台",
+                "caption": "都拉展望台 — photo 1",
+                "alt": "都拉展望台 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "location": "都拉展望台",
+                "caption": "都拉展望台 — photo 2",
+                "alt": "都拉展望台 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "location": "都拉展望台",
+                "caption": "都拉展望台 — photo 3",
+                "alt": "都拉展望台 — gallery image 3"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1420,7 +1629,53 @@
                 "韩国旅游发展局 Korea Foundation Cultural Heritage Bridges Series (Gloucester Heroes Bridge dedication official)",
                 "Wikipedia (Battle of the Imjin River — 1st Battalion Gloucester Regiment + 170th Mortar Battery courageous-stand record)"
               ]
-            }
+            },
+            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+            "images": [
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "location": "甘岳山红色吊桥",
+                "caption": "甘岳山红色吊桥 — photo 1",
+                "alt": "甘岳山红色吊桥 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "location": "甘岳山红色吊桥",
+                "caption": "甘岳山红色吊桥 — photo 2",
+                "alt": "甘岳山红色吊桥 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "location": "甘岳山红色吊桥",
+                "caption": "甘岳山红色吊桥 — photo 3",
+                "alt": "甘岳山红色吊桥 — gallery image 3"
+              }
+            ]
           }
         ]
       }
@@ -1897,7 +2152,7 @@
           "deltas_applied": {
             "private_tour_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — both tours are per-vehicle private tours by definition. Was previously None (unset)."
             },
             "small_group_fit": {
@@ -1912,7 +2167,7 @@
             },
             "history_culture_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — DMZ tour with 3rd Tunnel + Dora Observatory + Imjingak is the catalog's heaviest history content. Maximum score by definition. Was None (unset)."
             },
             "customizable_route_fit": {
@@ -1961,7 +2216,7 @@
               "reasoning": "Verified maintained — DMZ horizons + Gamaksan bridge are scenic, but the 3rd Tunnel underground is institutional. Average 0.60 maintained."
             },
             "storytelling_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "VERIFIED — driver-guide narrative is at its strongest on DMZ tours (Korean War + tunnel discovery + observatory geopolitics). 0.95 reflects that storytelling depth is bounded by passport-required restrictions and the standardized DMZ Peace Tour shuttle structure."
             },
@@ -1971,7 +2226,7 @@
               "reasoning": "Verified — DMZ tours can be intense for young children (heavy history content, 3rd Tunnel claustrophobia, photography restrictions, passport check). Suitable for older children 10+ but markdown for younger families. 0.55."
             },
             "premium_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "Verified — private vehicle + driver-guide is premium, but DMZ portion is military-shuttle-constrained (no upgrade path inside the DMZ proper). 0.95."
             },

@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Tour Suwon: Fortaleza UNESCO, Templo Pan-Asiático y Starfield | AtoC",
     "metaDescription": "Tour de un día Seúl→Suwon: Fortaleza Hwaseong (UNESCO) → Biblioteca Starfield → Templo Waujeongsa (templo budista pan-asiático, 3.000 estatuas, entrada gratuita). Patrimonio, modernidad y espiritualidad.",
-    "ogImage": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
+    "ogImage": "https://www.atockorea.com/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "primaryKeywords": [
       "tour Suwon Hwaseong Waujeongsa",
       "templo Waujeongsa tour",
@@ -32,8 +32,8 @@
       "Patrimonio + Modernidad",
       "Entrada incluida"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
-    "thumbnail": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=600&q=80",
+    "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+    "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "priceLabel": "Consulte el precio al reservar",
     "shortCardDescription": "Tres caras radicalmente distintas de Corea en un día desde Seúl: Fortaleza Hwaseong de Suwon (Patrimonio UNESCO 1997, murallas del siglo XVIII) → Biblioteca Starfield de Suwon (atrio de libros de 22 m, abierta en 2024) → Templo Waujeongsa en Yongin (fundado en 1970, ~3.000 estatuas de estilos budistas pan-asiáticos, entrada gratuita). Recogida en Seúl, entradas incluidas, todo el año disponible.",
     "tags": [
@@ -55,7 +55,7 @@
     "priceNote": "Precio basado en la tarifa directa de AtoC Korea."
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1920&q=80",
+    "imageUrl": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "imagePosition": "center 50%",
     "tagline": "De una fortaleza joseonesa del siglo XVIII a la biblioteca más fotografiada de Corea y un templo budista pan-asiático con 3.000 estatuas",
     "pills": [
@@ -127,49 +127,116 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200&q=80",
-      "alt": "Imagen de Fortaleza Hwaseong — Patrimonio UNESCO",
-      "caption": "Fortaleza Hwaseong — Patrimonio UNESCO, la única ciudad-fortaleza joseonesa completa",
-      "location": "Fortaleza Hwaseong, Suwon, Gyeonggi",
-      "atmosphere": "Muralla del siglo XVIII: 5,74 km con 48 instalaciones militares"
+      "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+      "location": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO)",
+      "alt": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — gallery image 1",
+      "caption": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=1200&q=80",
-      "alt": "Imagen de Biblioteca Starfield — 22 m de libros en el mayor Starfield de Corea",
-      "caption": "Biblioteca Starfield — 22 m de libros en el mayor Starfield de Corea",
-      "location": "Biblioteca Starfield, Starfield Suwon, Suwon",
-      "atmosphere": "Contemporánea y viral: el atrio de libros más fotografiado de Corea"
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+      "location": "Biblioteca Starfield de Suwon",
+      "alt": "Biblioteca Starfield de Suwon — gallery image 1",
+      "caption": "Biblioteca Starfield de Suwon — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1200&q=80",
-      "alt": "Imagen de Templo Waujeongsa — ~3.000 estatuas budistas pan-asiáticas",
-      "caption": "Templo Waujeongsa — ~3.000 estatuas budistas pan-asiáticas, fundado 1970",
-      "location": "Templo Waujeongsa, Yongin, Gyeonggi",
-      "atmosphere": "Espiritualidad pan-asiática: India, Nepal, China, Tíbet, Tailandia y Corea en un recinto"
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+      "location": "Templo Waujeongsa",
+      "alt": "Templo Waujeongsa — gallery image 1",
+      "caption": "Templo Waujeongsa — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&q=80",
-      "alt": "Imagen de Hwaseong wall walk — sweeping city views",
-      "caption": "Hwaseong wall walk — sweeping city views",
-      "location": "Hwaseong Wall, Janganmun section, Suwon",
-      "atmosphere": "1 km de paseo por la muralla entre Janganmun y Hwaseomun; pendientes pronunciadas; baluartes y puestos de mando"
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+      "location": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO)",
+      "alt": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — gallery image 2",
+      "caption": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
-      "alt": "Imagen de Patios del Palacio Hwaseong Haenggung",
-      "caption": "Patios del Palacio Hwaseong Haenggung",
-      "location": "Templo Waujeongsa, Yongin, Gyeonggi",
-      "atmosphere": "Haenggung (palacio separado) más grande de Corea; residencia temporal del Rey Jeongjo; restaurado tras el incendio del siglo XIX"
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+      "location": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO)",
+      "alt": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — gallery image 3",
+      "caption": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — photo 3"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+      "location": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO)",
+      "alt": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — gallery image 4",
+      "caption": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — photo 4"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+      "location": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO)",
+      "alt": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — gallery image 5",
+      "caption": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — photo 5"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+      "location": "Biblioteca Starfield de Suwon",
+      "alt": "Biblioteca Starfield de Suwon — gallery image 2",
+      "caption": "Biblioteca Starfield de Suwon — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+      "location": "Biblioteca Starfield de Suwon",
+      "alt": "Biblioteca Starfield de Suwon — gallery image 3",
+      "caption": "Biblioteca Starfield de Suwon — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+      "location": "Biblioteca Starfield de Suwon",
+      "alt": "Biblioteca Starfield de Suwon — gallery image 4",
+      "caption": "Biblioteca Starfield de Suwon — photo 4"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+      "location": "Templo Waujeongsa",
+      "alt": "Templo Waujeongsa — gallery image 2",
+      "caption": "Templo Waujeongsa — photo 2"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+      "location": "Templo Waujeongsa",
+      "alt": "Templo Waujeongsa — gallery image 3",
+      "caption": "Templo Waujeongsa — photo 3"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+      "location": "Templo Waujeongsa",
+      "alt": "Templo Waujeongsa — gallery image 4",
+      "caption": "Templo Waujeongsa — photo 4"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
+      "location": "Templo Waujeongsa",
+      "alt": "Templo Waujeongsa — gallery image 5",
+      "caption": "Templo Waujeongsa — photo 5"
     }
   ],
   "itineraryStops": [
@@ -223,7 +290,79 @@
           "Suwon City Tourism (suwon.go.kr/tour — Hwaseong Yeolcha trolley + admission + opening hours)",
           "Wikipedia (Hwaseong Fortress — Jeong Yak-yong + Geojunggi crane + 5.74 km perimeter + 41 structures)"
         ]
-      }
+      },
+      "image": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+      "images": [
+        "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+        "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+          "location": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO)",
+          "caption": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — photo 1",
+          "alt": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+          "location": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO)",
+          "caption": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — photo 2",
+          "alt": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+          "location": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO)",
+          "caption": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — photo 3",
+          "alt": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+          "location": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO)",
+          "caption": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — photo 4",
+          "alt": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+          "location": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO)",
+          "caption": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — photo 5",
+          "alt": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — gallery image 5"
+        }
+      ]
     },
     {
       "number": 2,
@@ -280,7 +419,66 @@
           "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
           "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
         ]
-      }
+      },
+      "image": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+      "images": [
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+        "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+          "location": "Biblioteca Starfield de Suwon",
+          "caption": "Biblioteca Starfield de Suwon — photo 1",
+          "alt": "Biblioteca Starfield de Suwon — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+          "location": "Biblioteca Starfield de Suwon",
+          "caption": "Biblioteca Starfield de Suwon — photo 2",
+          "alt": "Biblioteca Starfield de Suwon — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+          "location": "Biblioteca Starfield de Suwon",
+          "caption": "Biblioteca Starfield de Suwon — photo 3",
+          "alt": "Biblioteca Starfield de Suwon — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+          "location": "Biblioteca Starfield de Suwon",
+          "caption": "Biblioteca Starfield de Suwon — photo 4",
+          "alt": "Biblioteca Starfield de Suwon — gallery image 4"
+        }
+      ]
     },
     {
       "number": 3,
@@ -337,7 +535,79 @@
           "Wikipedia (Waujeongsa — pan-Asian Buddhist syncretism + Indravarna pagoda + Taepyeongjong 8-ton bell)",
           "Korea Buddhism Yeonhwasan/Lotus-Mountain regional guide"
         ]
-      }
+      },
+      "image": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+      "images": [
+        "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+        "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+        "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+        "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+        "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+          "location": "Templo Waujeongsa",
+          "caption": "Templo Waujeongsa — photo 1",
+          "alt": "Templo Waujeongsa — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+          "location": "Templo Waujeongsa",
+          "caption": "Templo Waujeongsa — photo 2",
+          "alt": "Templo Waujeongsa — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+          "location": "Templo Waujeongsa",
+          "caption": "Templo Waujeongsa — photo 3",
+          "alt": "Templo Waujeongsa — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+          "location": "Templo Waujeongsa",
+          "caption": "Templo Waujeongsa — photo 4",
+          "alt": "Templo Waujeongsa — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
+          "location": "Templo Waujeongsa",
+          "caption": "Templo Waujeongsa — photo 5",
+          "alt": "Templo Waujeongsa — gallery image 5"
+        }
+      ]
     }
   ],
   "routeFlowStops": [
@@ -1231,7 +1501,79 @@
                 "Suwon City Tourism (suwon.go.kr/tour — Hwaseong Yeolcha trolley + admission + opening hours)",
                 "Wikipedia (Hwaseong Fortress — Jeong Yak-yong + Geojunggi crane + 5.74 km perimeter + 41 structures)"
               ]
-            }
+            },
+            "image": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+            "images": [
+              "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+                "location": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO)",
+                "caption": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — photo 1",
+                "alt": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+                "location": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO)",
+                "caption": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — photo 2",
+                "alt": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+                "location": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO)",
+                "caption": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — photo 3",
+                "alt": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+                "location": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO)",
+                "caption": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — photo 4",
+                "alt": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+                "location": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO)",
+                "caption": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — photo 5",
+                "alt": "Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO) — gallery image 5"
+              }
+            ]
           },
           {
             "number": 2,
@@ -1284,7 +1626,66 @@
                 "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
                 "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
               ]
-            }
+            },
+            "image": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+            "images": [
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+                "location": "Biblioteca Starfield de Suwon",
+                "caption": "Biblioteca Starfield de Suwon — photo 1",
+                "alt": "Biblioteca Starfield de Suwon — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+                "location": "Biblioteca Starfield de Suwon",
+                "caption": "Biblioteca Starfield de Suwon — photo 2",
+                "alt": "Biblioteca Starfield de Suwon — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+                "location": "Biblioteca Starfield de Suwon",
+                "caption": "Biblioteca Starfield de Suwon — photo 3",
+                "alt": "Biblioteca Starfield de Suwon — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+                "location": "Biblioteca Starfield de Suwon",
+                "caption": "Biblioteca Starfield de Suwon — photo 4",
+                "alt": "Biblioteca Starfield de Suwon — gallery image 4"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1336,7 +1737,79 @@
                 "Wikipedia (Waujeongsa — pan-Asian Buddhist syncretism + Indravarna pagoda + Taepyeongjong 8-ton bell)",
                 "Korea Buddhism Yeonhwasan/Lotus-Mountain regional guide"
               ]
-            }
+            },
+            "image": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+            "images": [
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+                "location": "Templo Waujeongsa",
+                "caption": "Templo Waujeongsa — photo 1",
+                "alt": "Templo Waujeongsa — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+                "location": "Templo Waujeongsa",
+                "caption": "Templo Waujeongsa — photo 2",
+                "alt": "Templo Waujeongsa — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+                "location": "Templo Waujeongsa",
+                "caption": "Templo Waujeongsa — photo 3",
+                "alt": "Templo Waujeongsa — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+                "location": "Templo Waujeongsa",
+                "caption": "Templo Waujeongsa — photo 4",
+                "alt": "Templo Waujeongsa — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
+                "location": "Templo Waujeongsa",
+                "caption": "Templo Waujeongsa — photo 5",
+                "alt": "Templo Waujeongsa — gallery image 5"
+              }
+            ]
           }
         ]
       }

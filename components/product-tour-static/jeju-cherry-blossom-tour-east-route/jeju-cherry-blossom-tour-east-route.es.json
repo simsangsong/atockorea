@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Tour Cerezos Jeju Este: Calles en Flor, Canola y Seongsan | AtoC",
     "metaDescription": "Tour de cerezos por el este de Jeju (mar-abr): Calle Jeonnong-ro → Noksan-ro (canola + cerezos, 10 km) → almuerzo → Cueva Micheon → Ilchul Land → Seongsan Ilchulbong (UNESCO). Primavera.",
-    "ogImage": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
+    "ogImage": "https://www.atockorea.com/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
     "primaryKeywords": [
       "tour cerezos Jeju primavera",
       "Jeonnong-ro cerezos Jeju",
@@ -33,8 +33,8 @@
       "Jeju Este",
       "Seongsan UNESCO"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
-    "thumbnail": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=600&q=80",
+    "heroImage": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+    "thumbnail": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
     "priceLabel": "Consulte el precio al reservar",
     "shortCardDescription": "Los cerezos del este de Jeju en tres formatos distintos: la calle Jeonnong-ro (el bulevar de cerezos más antiguo de Jeju, 1,2 km de túnel floral) → la carretera Noksan-ro de Gasi-ri (10 km de cerezos + colza amarilla, la imagen de primavera más reproducida de Jeju) → almuerzo → Cueva Micheon en Ilchul Land → jardines de primavera → Seongsan Ilchulbong (triple UNESCO) como foto final.",
     "tags": [
@@ -51,7 +51,7 @@
     "per": "persona"
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
+    "imageUrl": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
     "imagePosition": "center 40%",
     "tagline": "De las calles más antiguas de cerezos de Jeju a la carretera de canola y hasta el Pico del Amanecer — primavera en el este de la isla",
     "pills": [
@@ -123,58 +123,124 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
-      "alt": "Imagen de Calle Jeonnong-ro — el bulevar de cerezos más antiguo de Jeju",
-      "caption": "Calle Jeonnong-ro — el bulevar de cerezos más antiguo de Jeju, 1,2 km de túnel floral",
-      "location": "Jeonnong-ro, Ciudad de Jeju",
-      "atmosphere": "El paseo más romántico de Jeju en primavera: el bulevar de cerezos centenario"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "location": "Cueva Micheon (Ilchul Land)",
+      "alt": "Cueva Micheon (Ilchul Land) — gallery image 1",
+      "caption": "Cueva Micheon (Ilchul Land) — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&q=80",
-      "alt": "Imagen de Carretera Noksan-ro — 10 km de cerezos + canola",
-      "caption": "Carretera Noksan-ro — 10 km de cerezos + canola, la imagen de primavera más reproducida de Jeju",
-      "location": "Noksan-ro, Gasi-ri, Pyoseon-myeon, Seogwipo",
-      "atmosphere": "El contraste rosa-amarillo de Jeju: cerezos y canola en la carretera más fotogénica de la isla"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "Seongsan Ilchulbong (UNESCO — parada fotográfica)",
+      "alt": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — gallery image 1",
+      "caption": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1200&q=80",
-      "alt": "Imagen de Cueva Micheon + jardines de Ilchul Land — contraste subterráneo y flores de prim",
-      "caption": "Cueva Micheon + jardines de Ilchul Land — contraste subterráneo y flores de primavera",
-      "location": "Ilchul Land, Seongsan",
-      "atmosphere": "Del subsuelo volcánico a los jardines florales de primavera"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+      "location": "Cueva Micheon (Ilchul Land)",
+      "alt": "Cueva Micheon (Ilchul Land) — gallery image 2",
+      "caption": "Cueva Micheon (Ilchul Land) — photo 2"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=1200&q=80",
-      "alt": "Imagen de Seongsan Ilchulbong con cerezos — el cierre fotográfico perfecto del tour de pri",
-      "caption": "Seongsan Ilchulbong con cerezos — el cierre fotográfico perfecto del tour de primavera",
-      "location": "Seongsan Ilchulbong, Jeju Este",
-      "atmosphere": "El Pico del Amanecer rodeado de cerezos: UNESCO + floración al mismo tiempo"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+      "location": "Cueva Micheon (Ilchul Land)",
+      "alt": "Cueva Micheon (Ilchul Land) — gallery image 3",
+      "caption": "Cueva Micheon (Ilchul Land) — photo 3"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1551649001-7a2482d98d05?w=1200&q=80",
-      "alt": "Imagen de Cráter UNESCO de Seongsan Ilchulbong",
-      "caption": "Cráter UNESCO de Seongsan Ilchulbong",
-      "location": "Seongsan Ilchulbong",
-      "atmosphere": "Sunrise crater rim"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+      "location": "Cueva Micheon (Ilchul Land)",
+      "alt": "Cueva Micheon (Ilchul Land) — gallery image 4",
+      "caption": "Cueva Micheon (Ilchul Land) — photo 4"
     },
     {
-      "id": "g6",
+      "id": 6,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
-      "alt": "Imagen de Vista general de la ruta de cerezos en flor del este de Jeju",
-      "caption": "Vista general de la ruta de cerezos en flor del este de Jeju",
-      "location": "Resumen de la ruta",
-      "atmosphere": "El día de un vistazo"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+      "location": "Cueva Micheon (Ilchul Land)",
+      "alt": "Cueva Micheon (Ilchul Land) — gallery image 5",
+      "caption": "Cueva Micheon (Ilchul Land) — photo 5"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+      "location": "Cueva Micheon (Ilchul Land)",
+      "alt": "Cueva Micheon (Ilchul Land) — gallery image 6",
+      "caption": "Cueva Micheon (Ilchul Land) — photo 6"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+      "location": "Cueva Micheon (Ilchul Land)",
+      "alt": "Cueva Micheon (Ilchul Land) — gallery image 7",
+      "caption": "Cueva Micheon (Ilchul Land) — photo 7"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+      "location": "Cueva Micheon (Ilchul Land)",
+      "alt": "Cueva Micheon (Ilchul Land) — gallery image 8",
+      "caption": "Cueva Micheon (Ilchul Land) — photo 8"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+      "location": "Cueva Micheon (Ilchul Land)",
+      "alt": "Cueva Micheon (Ilchul Land) — gallery image 9",
+      "caption": "Cueva Micheon (Ilchul Land) — photo 9"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+      "location": "Cueva Micheon (Ilchul Land)",
+      "alt": "Cueva Micheon (Ilchul Land) — gallery image 10",
+      "caption": "Cueva Micheon (Ilchul Land) — photo 10"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "Seongsan Ilchulbong (UNESCO — parada fotográfica)",
+      "alt": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — gallery image 2",
+      "caption": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — photo 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "Seongsan Ilchulbong (UNESCO — parada fotográfica)",
+      "alt": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — gallery image 3",
+      "caption": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — photo 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "Seongsan Ilchulbong (UNESCO — parada fotográfica)",
+      "alt": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — gallery image 4",
+      "caption": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — photo 4"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "Seongsan Ilchulbong (UNESCO — parada fotográfica)",
+      "alt": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — gallery image 5",
+      "caption": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — photo 5"
     }
   ],
   "itineraryStops": [
@@ -374,7 +440,144 @@
         "closed": "Según el calendario del parque Ilchul Land — consulte con el operador",
         "admission": "Incluida en la entrada del parque Ilchul Land — verifique las tarifas con el operador",
         "walking": "Moderada: descenso por escaleras hacia la cueva, ≈ 12 °C todo el año; suelo volcánico irregular dentro del tramo de cueva"
-      }
+      },
+      "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "images": [
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+          "location": "Cueva Micheon (Ilchul Land)",
+          "caption": "Cueva Micheon (Ilchul Land) — photo 1",
+          "alt": "Cueva Micheon (Ilchul Land) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+          "location": "Cueva Micheon (Ilchul Land)",
+          "caption": "Cueva Micheon (Ilchul Land) — photo 2",
+          "alt": "Cueva Micheon (Ilchul Land) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+          "location": "Cueva Micheon (Ilchul Land)",
+          "caption": "Cueva Micheon (Ilchul Land) — photo 3",
+          "alt": "Cueva Micheon (Ilchul Land) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+          "location": "Cueva Micheon (Ilchul Land)",
+          "caption": "Cueva Micheon (Ilchul Land) — photo 4",
+          "alt": "Cueva Micheon (Ilchul Land) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "location": "Cueva Micheon (Ilchul Land)",
+          "caption": "Cueva Micheon (Ilchul Land) — photo 5",
+          "alt": "Cueva Micheon (Ilchul Land) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "location": "Cueva Micheon (Ilchul Land)",
+          "caption": "Cueva Micheon (Ilchul Land) — photo 6",
+          "alt": "Cueva Micheon (Ilchul Land) — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "location": "Cueva Micheon (Ilchul Land)",
+          "caption": "Cueva Micheon (Ilchul Land) — photo 7",
+          "alt": "Cueva Micheon (Ilchul Land) — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+          "location": "Cueva Micheon (Ilchul Land)",
+          "caption": "Cueva Micheon (Ilchul Land) — photo 8",
+          "alt": "Cueva Micheon (Ilchul Land) — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+          "location": "Cueva Micheon (Ilchul Land)",
+          "caption": "Cueva Micheon (Ilchul Land) — photo 9",
+          "alt": "Cueva Micheon (Ilchul Land) — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+          "location": "Cueva Micheon (Ilchul Land)",
+          "caption": "Cueva Micheon (Ilchul Land) — photo 10",
+          "alt": "Cueva Micheon (Ilchul Land) — gallery image 10"
+        }
+      ]
     },
     {
       "number": 5,
@@ -477,7 +680,79 @@
         "closed": "Open year-round (weather closures possible)",
         "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
         "walking": "Moderate — 20–30 min steady stair climb (≈ 600 stairs); benches every few minutes for rest"
-      }
+      },
+      "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "images": [
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "location": "Seongsan Ilchulbong (UNESCO — parada fotográfica)",
+          "caption": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — photo 1",
+          "alt": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "location": "Seongsan Ilchulbong (UNESCO — parada fotográfica)",
+          "caption": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — photo 2",
+          "alt": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "location": "Seongsan Ilchulbong (UNESCO — parada fotográfica)",
+          "caption": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — photo 3",
+          "alt": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "location": "Seongsan Ilchulbong (UNESCO — parada fotográfica)",
+          "caption": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — photo 4",
+          "alt": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "location": "Seongsan Ilchulbong (UNESCO — parada fotográfica)",
+          "caption": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — photo 5",
+          "alt": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — gallery image 5"
+        }
+      ]
     }
   ],
   "routeFlowStops": [
@@ -1548,7 +1823,144 @@
                 "Korea Heritage Service (cha.go.kr — Jeju lava-tube cave systems + UNESCO Geomunoreum lava-tube system inheritance)",
                 "Wikipedia (Ilchul Land — Micheon Cave geology + ~14°C constant temperature + Jeju lava tube formation)"
               ]
-            }
+            },
+            "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+            "images": [
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+                "location": "Cueva Micheon (Ilchul Land)",
+                "caption": "Cueva Micheon (Ilchul Land) — photo 1",
+                "alt": "Cueva Micheon (Ilchul Land) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+                "location": "Cueva Micheon (Ilchul Land)",
+                "caption": "Cueva Micheon (Ilchul Land) — photo 2",
+                "alt": "Cueva Micheon (Ilchul Land) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+                "location": "Cueva Micheon (Ilchul Land)",
+                "caption": "Cueva Micheon (Ilchul Land) — photo 3",
+                "alt": "Cueva Micheon (Ilchul Land) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+                "location": "Cueva Micheon (Ilchul Land)",
+                "caption": "Cueva Micheon (Ilchul Land) — photo 4",
+                "alt": "Cueva Micheon (Ilchul Land) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+                "location": "Cueva Micheon (Ilchul Land)",
+                "caption": "Cueva Micheon (Ilchul Land) — photo 5",
+                "alt": "Cueva Micheon (Ilchul Land) — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+                "location": "Cueva Micheon (Ilchul Land)",
+                "caption": "Cueva Micheon (Ilchul Land) — photo 6",
+                "alt": "Cueva Micheon (Ilchul Land) — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+                "location": "Cueva Micheon (Ilchul Land)",
+                "caption": "Cueva Micheon (Ilchul Land) — photo 7",
+                "alt": "Cueva Micheon (Ilchul Land) — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+                "location": "Cueva Micheon (Ilchul Land)",
+                "caption": "Cueva Micheon (Ilchul Land) — photo 8",
+                "alt": "Cueva Micheon (Ilchul Land) — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+                "location": "Cueva Micheon (Ilchul Land)",
+                "caption": "Cueva Micheon (Ilchul Land) — photo 9",
+                "alt": "Cueva Micheon (Ilchul Land) — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+                "location": "Cueva Micheon (Ilchul Land)",
+                "caption": "Cueva Micheon (Ilchul Land) — photo 10",
+                "alt": "Cueva Micheon (Ilchul Land) — gallery image 10"
+              }
+            ]
           },
           {
             "number": 5,
@@ -1615,7 +2027,79 @@
                 "UNESCO Global Geoparks Network (Jeju Island Global Geopark inscription 2010-10)",
                 "Wikipedia (Seongsan Ilchulbong — Surtseyan-type hydrovolcanic eruption + 18 Japanese WWII caves + haenyeo demonstrations)"
               ]
-            }
+            },
+            "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+            "images": [
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "location": "Seongsan Ilchulbong (UNESCO — parada fotográfica)",
+                "caption": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — photo 1",
+                "alt": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "location": "Seongsan Ilchulbong (UNESCO — parada fotográfica)",
+                "caption": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — photo 2",
+                "alt": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "location": "Seongsan Ilchulbong (UNESCO — parada fotográfica)",
+                "caption": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — photo 3",
+                "alt": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "location": "Seongsan Ilchulbong (UNESCO — parada fotográfica)",
+                "caption": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — photo 4",
+                "alt": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "location": "Seongsan Ilchulbong (UNESCO — parada fotográfica)",
+                "caption": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — photo 5",
+                "alt": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — gallery image 5"
+              }
+            ]
           }
         ]
       }

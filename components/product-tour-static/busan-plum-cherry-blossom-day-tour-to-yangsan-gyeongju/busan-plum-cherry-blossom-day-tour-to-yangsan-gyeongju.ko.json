@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "부산 출발 통도사·경주 매화+벚꽃 투어 (2~4월 한정) | AtoC Korea",
     "metaDescription": "8.5시간 봄 시즌 투어 — 통도사(유네스코 산사+자장매), 원동 미나리 삼겹살, 불국사, 보문호 벚꽃. 2월 25일~4월 10일 운행.",
-    "ogImage": "",
+    "ogImage": "https://www.atockorea.com/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
     "primaryKeywords": [
       "부산 매화 벚꽃 투어",
       "통도사 매화 투어",
@@ -32,8 +32,8 @@
       "유네스코 명소 2곳",
       "부산 픽업"
     ],
-    "heroImage": "",
-    "thumbnail": "",
+    "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+    "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
     "priceLabel": "1인 요금 — 예약 시 확인",
     "shortCardDescription": "통도사(유네스코 산사, 350년 자장매), 불국사(유네스코 세계문화유산), 보문호(경주 대표 벚꽃 명소)를 하루에 잇는 봄 시즌 한정 투어. 소그룹 밴, 공인 가이드.",
     "tags": [
@@ -54,7 +54,7 @@
     "per": "인"
   },
   "hero": {
-    "imageUrl": "",
+    "imageUrl": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
     "imagePosition": "center 50%",
     "tagline": "통도사 350년 자장매 매화나무에서 원동 철길 벚꽃 전망, 보문호 벚꽃 터널까지",
     "pills": [
@@ -126,58 +126,28 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1571156425562-12341e7c9aae?w=1200&q=80",
-      "alt": "배경에 통도사를 둔 매화 가지",
-      "caption": "통도사 자장매 (수령 350년 붉은 매화)",
-      "location": "통도사",
-      "atmosphere": "신성한 봄"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "location": "불국사 (유네스코 세계문화유산)",
+      "alt": "불국사 (유네스코 세계문화유산) — gallery image 1",
+      "caption": "불국사 (유네스코 세계문화유산) — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601901574849-2ce39f2e0867?w=1200&q=80",
-      "alt": "통도사 대웅전과 솔숲 진입로",
-      "caption": "통도사 대웅전 (국보 제290호)",
-      "location": "통도사",
-      "atmosphere": "유네스코 산사"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+      "location": "불국사 (유네스코 세계문화유산)",
+      "alt": "불국사 (유네스코 세계문화유산) — gallery image 2",
+      "caption": "불국사 (유네스코 세계문화유산) — photo 2"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601822336970-8af7c01f3a91?w=1200&q=80",
-      "alt": "원동 양산 철길과 매화",
-      "caption": "원동 매화마을 — 철길과 매화",
-      "location": "원동 매화마을",
-      "atmosphere": "향수"
-    },
-    {
-      "id": "g4",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601649308334-2cc8e6f0e21f?w=1200&q=80",
-      "alt": "배경에 벚꽃이 핀 불국사 석탑",
-      "caption": "불국사 벚꽃길",
-      "location": "불국사",
-      "atmosphere": "유네스코 유산"
-    },
-    {
-      "id": "g5",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1614853128977-b1f1d7e64fae?w=1200&q=80",
-      "alt": "보문호 벚꽃 산책로와 정자",
-      "caption": "보문호 벚꽃 루프",
-      "location": "Bomun Lake",
-      "atmosphere": "봄 경관"
-    },
-    {
-      "id": "g6",
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1567427361984-0cbe7396fc6c?w=1200&q=80",
-      "alt": "미나리 삼겹살 (미나리와 함께 구운 삼겹살)",
-      "caption": "원동 미나리 삼겹살 (계절 지역 음식)",
-      "location": "Wondong",
-      "atmosphere": "미식"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "location": "불국사 (유네스코 세계문화유산)",
+      "alt": "불국사 (유네스코 세계문화유산) — gallery image 3",
+      "caption": "불국사 (유네스코 세계문화유산) — photo 3"
     }
   ],
   "itineraryStops": [
@@ -360,7 +330,53 @@
           "VisitKorea",
           "Visit Gyeongju official"
         ]
-      }
+      },
+      "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "images": [
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "location": "불국사 (유네스코 세계문화유산)",
+          "caption": "불국사 (유네스코 세계문화유산) — photo 1",
+          "alt": "불국사 (유네스코 세계문화유산) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "location": "불국사 (유네스코 세계문화유산)",
+          "caption": "불국사 (유네스코 세계문화유산) — photo 2",
+          "alt": "불국사 (유네스코 세계문화유산) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "location": "불국사 (유네스코 세계문화유산)",
+          "caption": "불국사 (유네스코 세계문화유산) — photo 3",
+          "alt": "불국사 (유네스코 세계문화유산) — gallery image 3"
+        }
+      ]
     },
     {
       "number": 5,
@@ -1360,7 +1376,53 @@
                 "VisitKorea",
                 "Visit Gyeongju official"
               ]
-            }
+            },
+            "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+            "images": [
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "location": "불국사 (유네스코 세계문화유산)",
+                "caption": "불국사 (유네스코 세계문화유산) — photo 1",
+                "alt": "불국사 (유네스코 세계문화유산) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "location": "불국사 (유네스코 세계문화유산)",
+                "caption": "불국사 (유네스코 세계문화유산) — photo 2",
+                "alt": "불국사 (유네스코 세계문화유산) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "location": "불국사 (유네스코 세계문화유산)",
+                "caption": "불국사 (유네스코 세계문화유산) — photo 3",
+                "alt": "불국사 (유네스코 세계문화유산) — gallery image 3"
+              }
+            ]
           },
           {
             "number": 5,

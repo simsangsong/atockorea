@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Tour Privado DMZ Seúl: 3er Túnel + Puente Colgante | AtoC Korea",
     "metaDescription": "Tour privado DMZ de 8-9 horas desde Seúl: Imjingak Peace Park, 3er Túnel de Infiltración, Observatorio Dora y puente colgante de Gamaksan.",
-    "ogImage": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1920&q=80",
+    "ogImage": "https://www.atockorea.com/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
     "primaryKeywords": [
       "tour privado a la DMZ desde Seúl",
       "DMZ tercer túnel tour",
@@ -32,8 +32,8 @@
       "DMZ + Suspension Bridge",
       "Recogida en hotel incluida"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1920&q=80",
-    "thumbnail": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=600&q=80",
+    "heroImage": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+    "thumbnail": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
     "priceLabel": "Precio por vehículo — confirmar al reservar",
     "shortCardDescription": "Tour privado al DMZ (Zona Desmilitarizada) desde Seúl con recogida en hotel: Parque de la Paz de Imjingak (Puente de la Libertad de 1953) → 3er Túnel de Infiltración (descubierto en 1978, a 44 km de Seúl, ⚠️ pasaporte obligatorio) → Observatorio Dora (punto de observación más septentrional de Corea del Sur) → Puente colgante rojo de Gamaksan (150 m sobre el barranco). Coche privado, recogida en hotel.",
     "tags": [
@@ -50,7 +50,7 @@
     "per": "vehículo"
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1920&q=80",
+    "imageUrl": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
     "imagePosition": "center 40%",
     "tagline": "El túnel subterráneo más cercano a Seúl y el puente rojo más fotogénico de Corea — historia y naturaleza del DMZ en un día privado",
     "pills": [
@@ -127,49 +127,44 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1545569310-e6f00e29ec4f?w=1200&q=80",
-      "alt": "Imagen de Parque de la Paz Imjingak (lugar conmemorativo de 1972)",
-      "caption": "Parque de la Paz Imjingak (lugar conmemorativo de 1972)",
-      "location": "Imjingak Peace Park",
-      "atmosphere": "Historia de la División: el Puente de la Libertad de 1953"
+      "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+      "location": "Parque de la Paz Imjingak",
+      "alt": "Parque de la Paz Imjingak — gallery image 1",
+      "caption": "Parque de la Paz Imjingak — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1604935080832-bcdf83b3a4f0?w=1200&q=80",
-      "alt": "Imagen de tercer túnel de infiltración entrance (discovered 1978)",
-      "caption": "tercer túnel de infiltración entrance (discovered 1978)",
-      "location": "tercer túnel de infiltración",
-      "atmosphere": "Bajo tierra en el DMZ: el túnel hacia Seúl"
+      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "location": "tercer túnel de Infiltración",
+      "alt": "tercer túnel de Infiltración — gallery image 1",
+      "caption": "tercer túnel de Infiltración — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1576487248805-cf45f6bcc67f?w=1200&q=80",
-      "alt": "Imagen de Observatorio Dora con vistas al otro lado de la frontera hacia Corea del Norte",
-      "caption": "Observatorio Dora con vistas al otro lado de la frontera hacia Corea del Norte",
-      "location": "Dora Observatory",
-      "atmosphere": "Mirando al norte: el horizonte norcoreano"
+      "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+      "location": "Parque de la Paz Imjingak",
+      "alt": "Parque de la Paz Imjingak — gallery image 2",
+      "caption": "Parque de la Paz Imjingak — photo 2"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
-      "alt": "Imagen de Puente Colgante Rojo de Gamaksan — 220 metros",
-      "caption": "Puente Colgante Rojo de Gamaksan — 220 metros, el puente colgante rojo más largo de Corea",
-      "location": "Gamaksan Red Suspension Bridge",
-      "atmosphere": "El puente rojo más fotogénico del norte de Gyeonggi"
+      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+      "location": "tercer túnel de Infiltración",
+      "alt": "tercer túnel de Infiltración — gallery image 2",
+      "caption": "tercer túnel de Infiltración — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-      "alt": "Imagen de Campo de Paju — el trayecto entre el DMZ y Gamaksan",
-      "caption": "Campo de Paju — el trayecto entre el DMZ y Gamaksan",
-      "location": "Paju Countryside",
-      "atmosphere": "Paisaje de Gyeonggi: naturaleza y cultura al norte de Seúl"
+      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+      "location": "tercer túnel de Infiltración",
+      "alt": "tercer túnel de Infiltración — gallery image 3",
+      "caption": "tercer túnel de Infiltración — photo 3"
     }
   ],
   "itineraryStops": [
@@ -227,7 +222,40 @@
           "Cultural Heritage Administration (Jangdan Station Steam Locomotive — Cultural Heritage 78 designation 2004)",
           "Wikipedía (Imjingak — open verifiable corpus on Freedom Bridge POW exchange + 2ID Memorial)"
         ]
-      }
+      },
+      "image": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+      "images": [
+        "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+        "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+          "location": "Parque de la Paz Imjingak",
+          "caption": "Parque de la Paz Imjingak — photo 1",
+          "alt": "Parque de la Paz Imjingak — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+          "location": "Parque de la Paz Imjingak",
+          "caption": "Parque de la Paz Imjingak — photo 2",
+          "alt": "Parque de la Paz Imjingak — gallery image 2"
+        }
+      ]
     },
     {
       "number": 2,
@@ -283,7 +311,53 @@
           "Wikipedía (Third Tunnel of Aggression — open corpus verifying 1,635 m / 73 m / 1978 specs)",
           "Korea Herald / Yonhap News archival coverage (Korean defector tip-off + 30,000 troops/hour estimate)"
         ]
-      }
+      },
+      "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "images": [
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "location": "tercer túnel de Infiltración",
+          "caption": "tercer túnel de Infiltración — photo 1",
+          "alt": "tercer túnel de Infiltración — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "location": "tercer túnel de Infiltración",
+          "caption": "tercer túnel de Infiltración — photo 2",
+          "alt": "tercer túnel de Infiltración — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "location": "tercer túnel de Infiltración",
+          "caption": "tercer túnel de Infiltración — photo 3",
+          "alt": "tercer túnel de Infiltración — gallery image 3"
+        }
+      ]
     },
     {
       "number": 3,
@@ -339,7 +413,53 @@
           "Joint Chiefs of Staff ROK / Ministry of National Defense (security advisory on rooftop closure)",
           "Wikipedía (Dora Observatory — corpus on 304 ft² capacity + 500-person observatory replacement of Songaksan)"
         ]
-      }
+      },
+      "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "images": [
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "location": "Observatorio Dora",
+          "caption": "Observatorio Dora — photo 1",
+          "alt": "Observatorio Dora — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "location": "Observatorio Dora",
+          "caption": "Observatorio Dora — photo 2",
+          "alt": "Observatorio Dora — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "location": "Observatorio Dora",
+          "caption": "Observatorio Dora — photo 3",
+          "alt": "Observatorio Dora — gallery image 3"
+        }
+      ]
     },
     {
       "number": 4,
@@ -396,7 +516,53 @@
           "Visit Korea Korea Foundation Cultural Heritage Bridges Series (Gloucester Heroes Bridge dedication official)",
           "Wikipedía (Battle of the Imjin River — 1st Battalion Gloucester Regiment + 170th Mortar Battery courageous-stand record)"
         ]
-      }
+      },
+      "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "images": [
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "location": "Puente colgante de Gamaksan",
+          "caption": "Puente colgante de Gamaksan — photo 1",
+          "alt": "Puente colgante de Gamaksan — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "location": "Puente colgante de Gamaksan",
+          "caption": "Puente colgante de Gamaksan — photo 2",
+          "alt": "Puente colgante de Gamaksan — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "location": "Puente colgante de Gamaksan",
+          "caption": "Puente colgante de Gamaksan — photo 3",
+          "alt": "Puente colgante de Gamaksan — gallery image 3"
+        }
+      ]
     }
   ],
   "routeFlowStops": [
@@ -841,7 +1007,7 @@
     "destination_region": "korea_mainland",
     "region_type": "gyeonggi_paju",
     "vehicle_type": "private_vehicle",
-    "duration_hours": 8.0,
+    "duration_hours": 8,
     "region_tags": [
       "seoul_capital",
       "gyeonggi_paju",
@@ -873,7 +1039,7 @@
     "walking_level": 0.7,
     "scenic_level": 0.6,
     "photo_level": 0.6,
-    "culture_level": 1.0,
+    "culture_level": 1,
     "relax_level": 0.4,
     "first_time_fit": 0.8,
     "family_fit": 0.55,
@@ -899,18 +1065,18 @@
     "beach_fit": 0.2,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.2,
-    "no_shopping_fit": 1.0,
-    "local_culture_fit": 1.0,
+    "no_shopping_fit": 1,
+    "local_culture_fit": 1,
     "storytelling_fit": 0.95,
     "unesco_fit": 0.15,
     "intangible_heritage_fit": 0.2,
     "indoor_ratio": 0.45,
     "weather_sensitivity": 0.55,
-    "comfort_level": 1.0,
+    "comfort_level": 1,
     "budget_fit": 0.6,
     "premium_fit": 0.95,
     "small_group_fit": 0.15,
-    "private_fit": 1.0,
+    "private_fit": 1,
     "bus_fit": 0.05,
     "price_band": "premium",
     "pickup_base": "seoul_downtown",
@@ -967,40 +1133,40 @@
       "gamaksan_red_bridge",
       "dora_observatory"
     ],
-    "private_tour_fit": 1.0,
-    "history_culture_fit": 1.0,
+    "private_tour_fit": 1,
+    "history_culture_fit": 1,
     "customizable_route_fit": 0.4,
     "flexibility_fit": 0.6,
-    "china_mainland_market_fit": 0.0,
-    "korea_domestic_market_fit": 0.0,
-    "taiwan_market_fit": 1.0,
-    "singapore_market_fit": 1.0,
-    "hong_kong_market_fit": 1.0,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
     "china_diaspora_overseas_market_fit": 0.95,
     "se_asia_market_fit": 0.95,
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
     "japan_market_fit": 0.85,
-    "seoul_day_trip_pair_fit": 1.0,
-    "seoul_central_hotel_pickup_fit": 1.0,
-    "return_to_seoul_central_fit": 1.0,
-    "day_trip_2_3_hour_drive_each_way_fit": 1.0,
-    "private_charter_format_fit": 1.0,
-    "dmz_security_zone_day_tour_fit": 1.0,
-    "north_korea_proximity_history_fit": 1.0,
-    "korean_war_memorial_complex_fit": 1.0,
-    "mandatory_passport_or_arc_id_fit": 1.0,
-    "third_infiltration_tunnel_anchor_fit": 1.0,
-    "dora_observatory_anchor_fit": 1.0,
-    "imjingak_peace_park_anchor_fit": 1.0,
-    "gamaksan_lighter_close_to_heavy_dmz_pivot_fit": 1.0,
-    "gloucester_heroes_battle_memorial_fit": 1.0,
-    "battle_of_imjin_river_1951_history_fit": 1.0,
-    "separated_families_displaced_persons_history_fit": 1.0,
-    "divided_korea_geography_visit_fit": 1.0,
-    "mangbaedan_lunar_new_year_chuseok_ritual_fit": 1.0,
-    "freedom_bridge_pow_repatriation_anchor_fit": 1.0,
+    "seoul_day_trip_pair_fit": 1,
+    "seoul_central_hotel_pickup_fit": 1,
+    "return_to_seoul_central_fit": 1,
+    "day_trip_2_3_hour_drive_each_way_fit": 1,
+    "private_charter_format_fit": 1,
+    "dmz_security_zone_day_tour_fit": 1,
+    "north_korea_proximity_history_fit": 1,
+    "korean_war_memorial_complex_fit": 1,
+    "mandatory_passport_or_arc_id_fit": 1,
+    "third_infiltration_tunnel_anchor_fit": 1,
+    "dora_observatory_anchor_fit": 1,
+    "imjingak_peace_park_anchor_fit": 1,
+    "gamaksan_lighter_close_to_heavy_dmz_pivot_fit": 1,
+    "gloucester_heroes_battle_memorial_fit": 1,
+    "battle_of_imjin_river_1951_history_fit": 1,
+    "separated_families_displaced_persons_history_fit": 1,
+    "divided_korea_geography_visit_fit": 1,
+    "mangbaedan_lunar_new_year_chuseok_ritual_fit": 1,
+    "freedom_bridge_pow_repatriation_anchor_fit": 1,
     "closed_mondays_holidays": true,
     "mondays_closure_advisory": true,
     "seollal_chuseok_closure_advisory": true,
@@ -1290,7 +1456,40 @@
                 "Cultural Heritage Administration (Jangdan Station Steam Locomotive — Cultural Heritage 78 designation 2004)",
                 "Wikipedía (Imjingak — open verifiable corpus on Freedom Bridge POW exchange + 2ID Memorial)"
               ]
-            }
+            },
+            "image": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+            "images": [
+              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+                "location": "Parque de la Paz Imjingak",
+                "caption": "Parque de la Paz Imjingak — photo 1",
+                "alt": "Parque de la Paz Imjingak — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+                "location": "Parque de la Paz Imjingak",
+                "caption": "Parque de la Paz Imjingak — photo 2",
+                "alt": "Parque de la Paz Imjingak — gallery image 2"
+              }
+            ]
           },
           {
             "number": 2,
@@ -1346,7 +1545,53 @@
                 "Wikipedía (Third Tunnel of Aggression — open corpus verifying 1,635 m / 73 m / 1978 specs)",
                 "Korea Herald / Yonhap News archival coverage (Korean defector tip-off + 30,000 troops/hour estimate)"
               ]
-            }
+            },
+            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+            "images": [
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "location": "tercer túnel de Infiltración",
+                "caption": "tercer túnel de Infiltración — photo 1",
+                "alt": "tercer túnel de Infiltración — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "location": "tercer túnel de Infiltración",
+                "caption": "tercer túnel de Infiltración — photo 2",
+                "alt": "tercer túnel de Infiltración — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "location": "tercer túnel de Infiltración",
+                "caption": "tercer túnel de Infiltración — photo 3",
+                "alt": "tercer túnel de Infiltración — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1402,7 +1647,53 @@
                 "Joint Chiefs of Staff ROK / Ministry of National Defense (security advisory on rooftop closure)",
                 "Wikipedía (Dora Observatory — corpus on 304 ft² capacity + 500-person observatory replacement of Songaksan)"
               ]
-            }
+            },
+            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+            "images": [
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "location": "Observatorio Dora",
+                "caption": "Observatorio Dora — photo 1",
+                "alt": "Observatorio Dora — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "location": "Observatorio Dora",
+                "caption": "Observatorio Dora — photo 2",
+                "alt": "Observatorio Dora — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "location": "Observatorio Dora",
+                "caption": "Observatorio Dora — photo 3",
+                "alt": "Observatorio Dora — gallery image 3"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1459,7 +1750,53 @@
                 "Visit Korea Korea Foundation Cultural Heritage Bridges Series (Gloucester Heroes Bridge dedication official)",
                 "Wikipedía (Battle of the Imjin River — 1st Battalion Gloucester Regiment + 170th Mortar Battery courageous-stand record)"
               ]
-            }
+            },
+            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+            "images": [
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "location": "Puente colgante de Gamaksan",
+                "caption": "Puente colgante de Gamaksan — photo 1",
+                "alt": "Puente colgante de Gamaksan — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "location": "Puente colgante de Gamaksan",
+                "caption": "Puente colgante de Gamaksan — photo 2",
+                "alt": "Puente colgante de Gamaksan — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "location": "Puente colgante de Gamaksan",
+                "caption": "Puente colgante de Gamaksan — photo 3",
+                "alt": "Puente colgante de Gamaksan — gallery image 3"
+              }
+            ]
           }
         ]
       }
@@ -1958,7 +2295,7 @@
           "deltas_applied": {
             "private_tour_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — both tours are per-vehicle private tours by definition. Was previously None (unset)."
             },
             "small_group_fit": {
@@ -1973,7 +2310,7 @@
             },
             "history_culture_fit": {
               "old": null,
-              "new": 1.0,
+              "new": 1,
               "reasoning": "VERIFIED — DMZ tour with tercer túnel + Dora Observatory + Imjingak is the catalog's heaviest history content. Maximum score by definition. Was None (unset)."
             },
             "customizable_route_fit": {
@@ -2022,7 +2359,7 @@
               "reasoning": "Verified maintained — DMZ horizons + Gamaksan bridge are scenic, but the tercer túnel underground is institutional. Average 0.60 maintained."
             },
             "storytelling_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "VERIFIED — driver-guide narrative is at its strongest on DMZ tours (Korean War + tunnel discovery + observatory geopolitics). 0.95 reflects that storytelling depth is bounded by passport-required restrictions and the standardized DMZ Peace Tour traslado compartido structure."
             },
@@ -2032,7 +2369,7 @@
               "reasoning": "Verified — DMZ tours can be intense for young children (heavy history content, tercer túnel claustrophobia, photography restrictions, passport check). Suitable for older children 10+ but markdown for younger families. 0.55."
             },
             "premium_fit": {
-              "old": 1.0,
+              "old": 1,
               "new": 0.95,
               "reasoning": "Verified — private vehicle + driver-guide is premium, but DMZ portion is military-traslado compartido-constrained (no upgrade path inside the DMZ proper). 0.95."
             },
