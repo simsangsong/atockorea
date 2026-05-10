@@ -14,12 +14,12 @@
       "천지연폭포 투어",
       "주상절리 투어"
     ],
-    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "제주 그랜드 하이라이트 루프 · 10시간 소그룹 · 유네스코 + 폭포 + 절벽"
   },
   "catalog_card": {
     "slug": "jeju-grand-highlights-loop",
-    "title": "제주 그랜드 하이라이트 루프 소그룹 당일 투어",
+    "title": "제주 그랜드 하이라이트 일일 투어",
     "subtitle": "한라산부터 성산일출봉까지, 제주의 대표 명소를 하루에 만나보세요.",
     "region": "제주 전 지역 코스",
     "duration": "9~9.5시간",
@@ -30,8 +30,8 @@
       "당일 여행객에게 최적",
       "빠르게 즐기는 하이라이트"
     ],
-    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+    "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+    "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "priceLabel": "",
     "shortCardDescription": "시간이 부족한 여행객을 위한 고효율 제주 전 지역 코스로, 한라산, 남쪽 해안, 성산일출봉을 하루에 연결합니다.",
     "tags": [
@@ -43,8 +43,8 @@
       "하이라이트"
     ]
   },
-  "headlineLine1": "제주 그랜드 하이라이트 루프",
-  "headlineLine2": "소그룹 당일 투어",
+  "headlineLine1": "제주 그랜드 하이라이트 일일 투어",
+  "headlineLine2": "투어",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -54,7 +54,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+    "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "imagePosition": "center 35%",
     "tagline": "시간이 제한된 여행객을 위해 설계된 이 고밀도 코스는 한라산, 웅장한 남쪽 해안 경관, 폭포, 성산일출봉을 하루에 담아냅니다.",
     "pills": [
@@ -134,47 +134,114 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-      "location": "전체 경로",
-      "atmosphere": "하루에 제주의 대표 경관을 한눈에",
-      "alt": "제주 하이라이트 당일 투어의 전반적인 분위기",
-      "caption": "제주 하이라이트 당일 투어의 전반적인 분위기"
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "location": "한라산 어승생악",
+      "alt": "한라산 어승생악 — gallery image 1",
+      "caption": "한라산 어승생악 — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-      "location": "한라산 첫 번째 방문지",
-      "atmosphere": "고지대의 상쾌한 산 공기",
-      "alt": "한라산 어승생악 탐방로의 분위기",
-      "caption": "한라산 어승생악 탐방로의 분위기"
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "대포 주상절리 절벽",
+      "alt": "대포 주상절리 절벽 — gallery image 1",
+      "caption": "대포 주상절리 절벽 — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-      "location": "주상절리 해안",
-      "atmosphere": "파도와 절벽의 극적인 대비",
-      "alt": "제주 해안의 대포 주상절리",
-      "caption": "제주 해안의 대포 주상절리"
+      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+      "location": "정방폭포",
+      "alt": "정방폭포 — gallery image 1",
+      "caption": "정방폭포 — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-      "location": "바다 옆 폭포",
-      "atmosphere": "오후 경로에서 느끼는 색다른 풍경",
-      "alt": "정방폭포의 해안 경치",
-      "caption": "정방폭포의 해안 경치"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "성산일출봉",
+      "alt": "성산일출봉 — gallery image 1",
+      "caption": "성산일출봉 — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
-      "location": "분화구 피날레",
-      "atmosphere": "실질적인 감동을 주는 상징적인 마무리 전망",
-      "alt": "성산일출봉 분화구와 해안선",
-      "caption": "성산일출봉 분화구와 해안선"
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+      "location": "한라산 어승생악",
+      "alt": "한라산 어승생악 — gallery image 2",
+      "caption": "한라산 어승생악 — photo 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "대포 주상절리 절벽",
+      "alt": "대포 주상절리 절벽 — gallery image 2",
+      "caption": "대포 주상절리 절벽 — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "대포 주상절리 절벽",
+      "alt": "대포 주상절리 절벽 — gallery image 3",
+      "caption": "대포 주상절리 절벽 — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "대포 주상절리 절벽",
+      "alt": "대포 주상절리 절벽 — gallery image 4",
+      "caption": "대포 주상절리 절벽 — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+      "location": "정방폭포",
+      "alt": "정방폭포 — gallery image 2",
+      "caption": "정방폭포 — photo 2"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+      "location": "정방폭포",
+      "alt": "정방폭포 — gallery image 3",
+      "caption": "정방폭포 — photo 3"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "성산일출봉",
+      "alt": "성산일출봉 — gallery image 2",
+      "caption": "성산일출봉 — photo 2"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "성산일출봉",
+      "alt": "성산일출봉 — gallery image 3",
+      "caption": "성산일출봉 — photo 3"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "성산일출봉",
+      "alt": "성산일출봉 — gallery image 4",
+      "caption": "성산일출봉 — photo 4"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "성산일출봉",
+      "alt": "성산일출봉 — gallery image 5",
+      "caption": "성산일출봉 — photo 5"
     }
   ],
   "itineraryStops": [
@@ -185,7 +252,7 @@
       "name": "한라산 어승생악",
       "category": "한라산 기슭 트레일 (어리목) — 유네스코 세계유산 맛보기",
       "description": "**어승생악(1,169m)**은 **한라산(1,950m)** 서쪽 사면에 위치한 기생화산(오름)으로, 한라산은 한국에서 가장 높은 봉우리이자 제주의 지질학적 중심입니다. 한라산은 **타의 추종을 불허하는 중복 지정 현황**을 자랑합니다: **유네스코 세계자연유산(2007년 7월 2일 등재)**, **유네스코 생물권보전지역(2002년)**, **국립공원(1970년 3월 24일 지정)**, **천연기념물 제182호(1966년)** — 유네스코 3대 자연 분야 지정을 동시에 보유한 국내 유일의 장소입니다. **어리목 탐방안내소** 인근의 어승생악 등산로는 **1.3km 구간에서 약 200m**만 오르면 넓은 정상 전망대에 닿을 수 있으며, 왕복 60분이면 **백록담 분화구까지 이어지는 9시간 코스 없이도 '한라산 유네스코 맛보기'**가 가능합니다. 맑은 날 전망대에서는 **황해, 한라산 백록담 정상 칼데라, 남쪽으로 펼쳐진 오름 군락**을 조망할 수 있습니다. 식물학적 볼거리: 이 고도대(1,000~1,300m)는 **낙엽활엽수림과 구상나무(*Abies koreana* — IUCN 준위협종, 한국 고산지대 고유종) 지대** 사이의 전이 구간입니다. 한라산에는 **2,000종 이상의 식물**이 자생하며, 이는 **한반도 전체 식물의 약 절반**에 해당합니다. 정상 전망대에는 역사적 흔적도 남아 있습니다: 태평양 전쟁 말기에 건설된 **1945년 일제 시대 토치카(콘크리트 벙커/통신 진지)**로, 한국에 현존하는 가장 높은 고도의 제2차 세계대전 일본군 축성물 중 하나입니다. 입장료와 주차비는 **무료**이며, 어승생악은 **예약 불필요**(일일 입장객을 1,000명으로 제한하는 백록담 정상과 달리).",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
       "highlights": [
         "**한라산 = 유네스코 3대 자연 지정 보유 국내 유일 장소**: 세계유산 2007년 + 생물권보전지역 2002년 + 국립공원 1970년",
         "**어승생악 정상 해발 1,169m** — 기생화산(오름), 제주 360여 개 오름 중 하나",
@@ -233,16 +300,36 @@
         "tip": "특히 비가 온 후나 추운 계절에는 다른 어떤 정류장보다 이곳에서 미끄럼 방지와 보온이 더 중요합니다."
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-        "https://images.unsplash.com/photo-1696440869866-b90626f1bf7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1590085309112-f67167e8da6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665071407550-57acf1755a72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1666328756682-ab6ad7a4df03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665688523217-852dde114c46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1593726222205-21404ff4e5fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1657938143548-dbc1e39fcf4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1664004922437-cf175d580b9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "location": "한라산 어승생악",
+          "caption": "한라산 어승생악 — photo 1",
+          "alt": "한라산 어승생악 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "location": "한라산 어승생악",
+          "caption": "한라산 어승생악 — photo 2",
+          "alt": "한라산 어승생악 — gallery image 2"
+        }
       ]
     },
     {
@@ -252,7 +339,7 @@
       "name": "대포 주상절리 절벽",
       "category": "화산 해안선 — 육각형 주상절리 용암",
       "description": "**대포 주상절리(대포 주상절리, '지삿개')**는 중문 해안에 위치한 **1km 길이의 육각형 주상절리 현무암 절벽**으로, **2005년 1월 6일 천연기념물 제443호**로 지정되었습니다. 절리 기둥들은 해수면에서 **30~40m** 높이로 솟아 있으며, **5~7각형의 다각형**(대부분 육각형)이 빽빽하게 맞닿아 있습니다. 이는 **약 25만~14만 년 전 한라산 측면 분화에서 흘러나온 현무암질 용암이 바다에 닿아 냉각되면서 수축**하고, 냉각면에 수직으로 균열이 생겨 형성된 지형입니다. 전 세계적으로 주상절리는 **자이언트 코즈웨이(영국)**, **데블스 포스트파일(미국)**, **핑갈의 동굴(스코틀랜드)**이 가장 유명하며, 주상절리대는 **동아시아 최고의 주상절리 명소**이자 가장 접근하기 쉬운 곳입니다. 800m **보드워크 순환로**를 따라가면 절리 기둥 바로 위 절벽 끝 난간까지 이를 수 있으며, **만조 시에는 파도가 기둥에 부딪혀 최대 20m 높이의 물보라를 일으키고**, 간혹 난간 너머까지 튀기도 합니다. 입장료: **성인 ₩2,000 / 청소년 ₩1,000 / 7세 미만 및 65세 이상 무료**. 이 명소는 **제주 세계지질공원(유네스코, 2010년 10월 지정)** 내 **13개 공식 지질명소** 중 하나로, 성산일출봉, 만장굴, 수월봉 등과 함께 포함되어 있습니다. 절벽 위 데크는 **무장애 시설**(휠체어·유모차 이용 가능)을 갖추고 있습니다. 순환로를 따라 3개의 전망대가 있어 각기 다른 각도에서 기둥을 감상할 수 있습니다. **첫 번째 전망대**에서는 기둥의 측면(육각형 기하학 구조 촬영에 최적)을, **중간 전망대**에서는 기둥 꼭대기를 내려다보는 패턴을, **끝 전망대**에서는 맑은 날 한라산을 배경으로 한 1km 해안 전경을 담을 수 있습니다. **최적 사진 촬영 시간대: 14:00~16:00** — 서쪽으로 기우는 햇빛이 기둥 면을 정면에서 비추는 시간입니다. 일몰 방문 시에는 실루엣 구도를 연출할 수 있지만 기둥의 세부 질감이 살아나지 않습니다. 운영 시간: **09:00~18:00(마지막 입장 17:30)**, 연중무휴.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "**천연기념물 제443호** — **2005년 1월 6일** 지정, 제주 해안 천연기념물 중 가장 최근에 지정된 곳",
         "기둥들은 **30~40m** 높이로 솟아 있으며, 해안선 **1km**를 따라 **5~7각형 다각형**(대부분 육각형)이 빽빽하게 늘어서 있습니다",
@@ -300,16 +387,62 @@
         "tip": "맑은 날에도 해안은 제주 내륙보다 대체로 더 춥고 바람이 강하게 느껴집니다."
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-        "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1772268354899-1f3bf5014b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1739932413542-dc2597d7d764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "대포 주상절리 절벽",
+          "caption": "대포 주상절리 절벽 — photo 1",
+          "alt": "대포 주상절리 절벽 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "대포 주상절리 절벽",
+          "caption": "대포 주상절리 절벽 — photo 2",
+          "alt": "대포 주상절리 절벽 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "대포 주상절리 절벽",
+          "caption": "대포 주상절리 절벽 — photo 3",
+          "alt": "대포 주상절리 절벽 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "대포 주상절리 절벽",
+          "caption": "대포 주상절리 절벽 — photo 4",
+          "alt": "대포 주상절리 절벽 — gallery image 4"
+        }
       ]
     },
     {
@@ -361,7 +494,7 @@
       "name": "정방폭포",
       "category": "해안 폭포 — 바다로 직접 떨어지는 폭포 (아시아 유일)",
       "description": "**정방폭포(정방폭포, '바다로 곧장 떨어지는 폭포')**는 **아시아에서 유일하게 바다로 직접 떨어지는 폭포**입니다 — 태평양으로 이어지는 현무암 절벽에서 수직으로 **23m를 낙하**하며, 중간 웅덩이나 하천 하구 없이 곧장 떨어집니다. 폭포의 너비는 **8m**이며, 5m의 기저 웅덩이는 매 조류마다 바다와 이어집니다. 이 독보적인 지리적 특성이 정방폭포가 **'영주십경(영주십경, 제주의 10대 절경)'** — 조선 시대 문인들이 선정한 섬의 가장 시적인 풍경 목록 — 중 하나로 꼽히는 이유입니다. **18세기 유학자 이원조(이원조)**가 정리한 영주십경에는 성산 일출, 한라산 정상, 천제연도 포함되어 있어, 오늘 하루 코스에서만 **10경 중 3곳**을 방문하게 됩니다. 폭포 옆 절벽면에는 **'서불과차(서불과차, 서불이 서쪽으로 돌아가다)'**라는 비문이 새겨져 있으며, 이는 **진시황(~기원전 219년)**이 불로초를 구하러 보낸 전설적인 진나라 방사 **서복(서복)**의 것으로 전해집니다. 전설에 따르면 그가 귀국길에 이곳을 지나갔다고 하며, 이 비문이 **'서귀포(서귀포, 서씨가 돌아간 곳)'**라는 지명의 어원이 되었습니다. 입구는 **130개의 돌계단**을 내려가 작은 만에 도착합니다(경사가 있으므로 무릎에 부담 없는 신발 권장). 입장료: **성인 ₩2,000 / 청소년 ₩1,000 / 7세 미만 및 65세 이상 무료**. 폭포 아래의 물보라가 만들어내는 선선한 소기후는 여름철 더위를 식히는 명소로 알려져 있습니다. **현지 해녀(해녀, 여성 잠수부 — 2016년 유네스코 무형문화유산)**들이 잔잔한 날에는 작은 만에서 직접 성게, 전복, 소라를 판매하기도 하며, 공식 박물관 밖에서 잠수 공동체의 활동을 촬영할 수 있는 드문 기회가 됩니다.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+      "image": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
       "highlights": [
         "**아시아 유일, 바다로 직접 떨어지는 폭포** — 23m 수직 낙하, 하천 없음",
         "폭포 너비 **8m**, 5m 기저 웅덩이가 매 조류마다 태평양으로 연결",
@@ -409,13 +542,49 @@
         "tip": "계단과 바위 길 때문에 지도에서 보이는 것보다 현장에서 신체적으로 더 활동적으로 느껴지는 경우가 많습니다."
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-        "https://images.unsplash.com/photo-1674606042265-c9f03a77e286?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1674606055132-15e511a3ac2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1761303505953-df6647dd3a46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1562680829-7927493f7a50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "location": "정방폭포",
+          "caption": "정방폭포 — photo 1",
+          "alt": "정방폭포 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "location": "정방폭포",
+          "caption": "정방폭포 — photo 2",
+          "alt": "정방폭포 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "location": "정방폭포",
+          "caption": "정방폭포 — photo 3",
+          "alt": "정방폭포 — gallery image 3"
+        }
       ]
     },
     {
@@ -425,7 +594,7 @@
       "name": "성산일출봉",
       "category": "유네스코 응회구 — 일출봉 (유네스코 삼중 지정)",
       "description": "**성산일출봉(성산일출봉, '일출봉')**은 **5,000년 된 수르트세이식 수성화산 응회구**입니다 — 수중 현무암 분출이 해수면을 뚫고 나오면서 마그마와 바닷물이 만나 증기 폭발로 쌓인 화산재가 일반적인 용암 화산구 대신 **182m 높이의 요새 형태 분화구** 테두리를 만들어낸 희귀한 지형입니다. 유네스코는 이를 공식적으로 **'수르트세이식 화산 지형의 탁월한 사례'**로 규정하고 있습니다. 분화구는 **직경 600m × 깊이 90m**이며, **99개의 날카로운 테두리 바위**로 둘러싸여 현지에서는 돌 왕관에 비유됩니다. 성산일출봉은 **유네스코 삼중 지정**을 보유하고 있습니다: **세계자연유산(2007년 7월 2일 등재)** — '제주 화산섬과 용암 동굴' 명칭의 일부, **생물권보전지역(2002년)**, **세계지질공원(2010년 10월)** — 한국 내에서 한라산과 함께 이 삼중 지정을 보유한 유일한 사례입니다. **일제강점기 제2차 세계대전 동굴 18개**(1945년 가미카제 자살 특공정 대피소)가 바다 쪽 기슭에 굴착되어 있습니다. 탐방로: **편도 0.8km, 고도 약 140m 상승, 넓은 돌계단으로 왕복 60분** 소요. **해녀 물질 시연**은 분화구 아래 바위 해안에서 **매일 13:30과 15:00**에 진행되며 — 제주 해녀(2016년 유네스코 무형문화유산)는 스쿠버 장비 없이 잠수합니다. 입장료는 **2025년 4월 기준 업데이트**: **성인 ₩5,000 / 청소년·어린이 ₩2,500 / 단체 성인 ₩1,600**, 7세 미만 및 65세 이상 무료. 정상 전망대는 **영주십경(제주 10경)** 중 하나로, 한국 최대의 **연례 신년 일출 성지**이기도 합니다 — 매년 1월 1일 새벽 5만 명 이상이 일출을 보기 위해 오르며, 1995년부터 시립 일출 축제가 운영되고 있습니다. **우도(우도, '소섬')** — 한국 최대의 부속 화산섬 — 은 정상에서 4km 해상에 뚜렷이 보이며, 다른 일정으로 여유 시간이 있는 여행객은 **성산항에서 15분 소요 페리**(왕복 ₩10,500)로 이동할 수 있습니다.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+      "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "highlights": [
         "**유네스코 삼중 지정**: 세계유산 2007년 7월 2일 + 생물권보전지역 2002년 + 세계지질공원 2010년 10월",
         "**5,000년 역사** — 수르트세이식 수성화산 분출, 마그마와 바닷물이 만나 증기 폭발로 탄생",
@@ -473,16 +642,75 @@
         "tip": "인파, 날씨, 그룹의 체력 수준 모두 정상 경험의 난이도와 만족감에 영향을 줄 수 있습니다."
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-        "https://images.unsplash.com/photo-1616798249081-30877e213b16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1593104197164-96718e943b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1584263577189-f86c4b105154?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1710006876254-48250c2dbcfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1584802530491-65fad8b1b92c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1743685889737-d699283d139c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "location": "성산일출봉",
+          "caption": "성산일출봉 — photo 1",
+          "alt": "성산일출봉 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "location": "성산일출봉",
+          "caption": "성산일출봉 — photo 2",
+          "alt": "성산일출봉 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "location": "성산일출봉",
+          "caption": "성산일출봉 — photo 3",
+          "alt": "성산일출봉 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "location": "성산일출봉",
+          "caption": "성산일출봉 — photo 4",
+          "alt": "성산일출봉 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "location": "성산일출봉",
+          "caption": "성산일출봉 — photo 5",
+          "alt": "성산일출봉 — gallery image 5"
+        }
       ]
     }
   ],
@@ -1233,8 +1461,8 @@
       "id": "hero",
       "component": "TourHeroSection (투어 히어로 섹션)",
       "props": {
-        "headlineLine1": "제주 주요 명소 순환 코스",
-        "headlineLine2": "소그룹 당일 투어",
+        "headlineLine1": "제주 그랜드 하이라이트 일일 투어",
+        "headlineLine2": "투어",
         "hero": {
           "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
           "imagePosition": "center 35%",

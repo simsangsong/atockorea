@@ -14,11 +14,11 @@
       "太宗台クルーズツアー",
       "チャガルチ市場ツアー"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG"
+    "ogImage": "https://www.atockorea.com/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp"
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
-    "title": "クルーズ乗客向け釜山少人数観光ツアー",
+    "thumbnail": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "title": "釜山クルーズ寄港地・少人数ツアー",
     "priceLabel": "",
     "shortCardDescription": "釜山クルーズターミナル発の乗合バン日帰りツアーで、人気の5スポットを9時間で巡ります：国連記念公園（朝鮮戦争の歴史）、太宗台の海岸断崖、地元レストランでの昼食、甘川文化村（カラフルな丘の街）、龍頭山公園（釜山タワー展望台はオプション）、チャガルチ市場。お客様の船の下船時刻に合わせたピックアップ。英語・中国語対応の認定ガイド付き。",
     "tags": [
@@ -41,10 +41,10 @@
       "港でのピックアップ",
       "9時間の行程"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG"
+    "heroImage": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp"
   },
-  "headlineLine1": "クルーズ港からカラフルな路地へ、市場から記念公園まで —",
-  "headlineLine2": "釜山の定番コースを乗合バンで一日で制覇",
+  "headlineLine1": "釜山クルーズ寄港地・少人数ツアー",
+  "headlineLine2": "ツアー",
   "price": {
     "amountLabel": "",
     "originalPriceUsd": null,
@@ -56,7 +56,7 @@
     "priceNote": ""
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+    "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
     "imagePosition": "center 35%",
     "tagline": "船のスケジュールに合わせた釜山の5大スポット、ほかのクルーズ旅客と乗合バンで",
     "pills": [
@@ -134,49 +134,100 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
-      "alt": "甘川文化村の丘の斜面に連なるカラフルな家々",
-      "caption": "甘川文化村 — 戦後の難民居住地区を再生する釜山の公共アート事業の一環として、2009年に彩られた。",
-      "location": "甘川文化村、沙下区",
-      "atmosphere": "鮮やかなパステルカラー、細い路地、丘の石段"
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "location": "国連記念公園（朝鮮戦争）",
+      "alt": "国連記念公園（朝鮮戦争） — gallery image 1",
+      "caption": "国連記念公園（朝鮮戦争） — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+      "location": "テジョンデ（太宗台）沿岸断崖",
+      "alt": "テジョンデ（太宗台）沿岸断崖 — gallery image 1",
+      "caption": "テジョンデ（太宗台）沿岸断崖 — photo 1"
+    },
+    {
+      "id": 3,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
-      "alt": "水平線に白い灯台が望める海の断崖",
-      "caption": "太宗台海岸公園、影島の最南端。晴れた冬の日には対馬を望むことができる。",
-      "location": "太宗台、影島区",
-      "atmosphere": "広大な海、断崖の縁、潮風"
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
     },
     {
-      "id": "g3",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
-      "alt": "国連記念公園に整然と並ぶ、国旗をあしらった白い墓石の列",
-      "caption": "国連記念公園 — 世界唯一の国連墓地で、21か国の兵士2,300名以上が眠る。",
-      "location": "国連記念公園、南区",
-      "atmosphere": "静寂、厳粛、物思いにふける"
-    },
-    {
-      "id": "g4",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
-      "alt": "チャガルチ市場の露店に並ぶ、氷の上の新鮮な魚",
-      "caption": "チャガルチ市場 — 1889年から釜山の海辺で営業する、韓国最大の水産市場。",
-      "location": "チャガルチ市場、中区",
-      "atmosphere": "活魚の露店、市場のにぎわい、2階のレストラン"
-    },
-    {
-      "id": "g5",
+      "id": 4,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
-      "alt": "龍頭山公園の松林と中層ビル群のスカイラインを背に屹立する釜山タワー",
-      "caption": "龍頭山公園と釜山タワー（高さ120m、1973年建設）— 釜山の中心部を一望できる展望スポット。",
-      "location": "龍頭山公園、中区",
-      "atmosphere": "松に覆われた丘の頂上、市街地を一望するパノラマビュー"
+      "location": "龍頭山公園＆釜山タワー",
+      "alt": "龍頭山公園＆釜山タワー — on-route photo",
+      "caption": "龍頭山公園＆釜山タワー"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+      "location": "南浦洞＆チャガルチ水産市場",
+      "alt": "南浦洞＆チャガルチ水産市場 — on-route photo",
+      "caption": "南浦洞＆チャガルチ水産市場"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+      "location": "国連記念公園（朝鮮戦争）",
+      "alt": "国連記念公園（朝鮮戦争） — gallery image 2",
+      "caption": "国連記念公園（朝鮮戦争） — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+      "location": "国連記念公園（朝鮮戦争）",
+      "alt": "国連記念公園（朝鮮戦争） — gallery image 3",
+      "caption": "国連記念公園（朝鮮戦争） — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+      "location": "テジョンデ（太宗台）沿岸断崖",
+      "alt": "テジョンデ（太宗台）沿岸断崖 — gallery image 2",
+      "caption": "テジョンデ（太宗台）沿岸断崖 — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+      "location": "テジョンデ（太宗台）沿岸断崖",
+      "alt": "テジョンデ（太宗台）沿岸断崖 — gallery image 3",
+      "caption": "テジョンデ（太宗台）沿岸断崖 — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+      "location": "テジョンデ（太宗台）沿岸断崖",
+      "alt": "テジョンデ（太宗台）沿岸断崖 — gallery image 4",
+      "caption": "テジョンデ（太宗台）沿岸断崖 — photo 4"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+      "location": "テジョンデ（太宗台）沿岸断崖",
+      "alt": "テジョンデ（太宗台）沿岸断崖 — gallery image 5",
+      "caption": "テジョンデ（太宗台）沿岸断崖 — photo 5"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+      "location": "テジョンデ（太宗台）沿岸断崖",
+      "alt": "テジョンデ（太宗台）沿岸断崖 — gallery image 6",
+      "caption": "テジョンデ（太宗台）沿岸断崖 — photo 6"
     }
   ],
   "itineraryStops": [
@@ -246,7 +297,7 @@
           "UN General Assembly Resolution 977(X) (December 15, 1955)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+      "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
       "visitBasics": {
         "hours": "09:00〜18:00（5〜9月）/ 09:00〜17:00（10〜4月）",
         "closed": "年中無休（記念礼拝堂は式典中閉館）",
@@ -260,7 +311,52 @@
       "smartNotes": {
         "photo": "**追悼の壁**（140枚の大理石パネルに刻まれた40,896名の名前）、22か国の派遣国旗が立つ**象徴エリア**、そして**フランク・ゲイロード作 米国朝鮮戦争記念碑（2013年）** — ワシントンDCナショナルモール記念碑と同じ彫刻家による作品。写真撮影可能；敬意ある静粛をお願いします。",
         "tip": "**国連管理保護地域内にある世界唯一の国連墓地**（国連総会決議977(X)、1955年）。毎年**11月11日午前11時に行われる「釜山に向かって」式典**は、22か国すべての派遣国旗が一斉に降旗される唯一の機会です。"
-      }
+      },
+      "images": [
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "location": "国連記念公園（朝鮮戦争）",
+          "caption": "国連記念公園（朝鮮戦争） — photo 1",
+          "alt": "国連記念公園（朝鮮戦争） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "location": "国連記念公園（朝鮮戦争）",
+          "caption": "国連記念公園（朝鮮戦争） — photo 2",
+          "alt": "国連記念公園（朝鮮戦争） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "location": "国連記念公園（朝鮮戦争）",
+          "caption": "国連記念公園（朝鮮戦争） — photo 3",
+          "alt": "国連記念公園（朝鮮戦争） — gallery image 3"
+        }
+      ]
     },
     {
       "number": 3,
@@ -301,7 +397,7 @@
           "Busan National Geopark official (busan.go.kr/geopark)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+      "image": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
       "visitBasics": {
         "hours": "公園04:00〜24:00（3〜10月）/ 05:00〜24:00（11〜2月）；ダヌビトレイン09:00〜日没",
         "closed": "年中無休（ダヌビトレインは大雨・強風時に運休）",
@@ -315,7 +411,91 @@
       "smartNotes": {
         "photo": "**3階建て展望台**（晴れた日には**南東50kmの日本・対馬島**を一望）、**影島灯台——1906年建設、釜山最古の灯台**、そして灯台下の波食**仙岩（シンソン岩）岩棚（約12万年前、第4間氷期形成）**。",
         "tip": "体力を要する4.3kmのハイキングを省略し、**ダヌビ列車**に乗って5停留所のループをお楽しみください。**太宗寺の紫陽花祭り**は6月下旬〜7月上旬に開催されます。灯台エリアは急な階段が多く、ベビーカーには不向きです。"
-      }
+      },
+      "images": [
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+          "location": "テジョンデ（太宗台）沿岸断崖",
+          "caption": "テジョンデ（太宗台）沿岸断崖 — photo 1",
+          "alt": "テジョンデ（太宗台）沿岸断崖 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+          "location": "テジョンデ（太宗台）沿岸断崖",
+          "caption": "テジョンデ（太宗台）沿岸断崖 — photo 2",
+          "alt": "テジョンデ（太宗台）沿岸断崖 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+          "location": "テジョンデ（太宗台）沿岸断崖",
+          "caption": "テジョンデ（太宗台）沿岸断崖 — photo 3",
+          "alt": "テジョンデ（太宗台）沿岸断崖 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+          "location": "テジョンデ（太宗台）沿岸断崖",
+          "caption": "テジョンデ（太宗台）沿岸断崖 — photo 4",
+          "alt": "テジョンデ（太宗台）沿岸断崖 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+          "location": "テジョンデ（太宗台）沿岸断崖",
+          "caption": "テジョンデ（太宗台）沿岸断崖 — photo 5",
+          "alt": "テジョンデ（太宗台）沿岸断崖 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+          "location": "テジョンデ（太宗台）沿岸断崖",
+          "caption": "テジョンデ（太宗台）沿岸断崖 — photo 6",
+          "alt": "テジョンデ（太宗台）沿岸断崖 — gallery image 6"
+        }
+      ]
     },
     {
       "number": 4,
@@ -1265,8 +1445,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "クルーズ港から色鮮やかな路地へ、市場から記念館へ —",
-        "headlineLine2": "相乗りバンで巡る釜山の定番コース、充実の1日",
+        "headlineLine1": "釜山クルーズ寄港地・少人数ツアー",
+        "headlineLine2": "ツアー",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
           "imagePosition": "center 35%",
@@ -1437,7 +1617,7 @@
             "duration": "60分",
             "name": "国連記念公園（朝鮮戦争）",
             "category": "記念地・歴史",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "世界で唯一の国連墓地。1951年の朝鮮戦争中に設立され、1955年に国連総会によって恒久的な国連施設として認定されました。国連軍の指揮下で戦った21カ国の兵士2,300名以上が眠っており、国別では英国（885名）、トルコ（462名）、カナダ（378名）、オーストラリア（281名）の順に多くなっています。敷地内には多言語展示を備えた記念館、国連軍戦死者全40,896名が刻まれた「追悼の壁」があり、毎日10:00に国旗掲揚式が行われます（天候により変更あり）。墓地は釜山市南区に位置し、影島から車で東へ約30分です。入場無料、毎日9:00〜17:00開園（韓国の旧正月・秋夕は休園）。",
             "timeUsed": [
               "到着・チケット購入・オリエンテーション",
@@ -1449,7 +1629,52 @@
               "is_attraction": true,
               "fee_krw": 0,
               "closed": "Korean New Year, Chuseok"
-            }
+            },
+            "images": [
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+                "location": "国連記念公園（朝鮮戦争）",
+                "caption": "国連記念公園（朝鮮戦争） — photo 1",
+                "alt": "国連記念公園（朝鮮戦争） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+                "location": "国連記念公園（朝鮮戦争）",
+                "caption": "国連記念公園（朝鮮戦争） — photo 2",
+                "alt": "国連記念公園（朝鮮戦争） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+                "location": "国連記念公園（朝鮮戦争）",
+                "caption": "国連記念公園（朝鮮戦争） — photo 3",
+                "alt": "国連記念公園（朝鮮戦争） — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1457,7 +1682,7 @@
             "duration": "75分",
             "name": "太宗台の断崖絶壁",
             "category": "海岸",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+            "image": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
             "description": "影島南端に位置する海岸公園。新羅の太宗武烈王（在位654〜661年）にちなんで命名されており、同王は唐と同盟を結んで朝鮮半島の統一を成し遂げました。全長4.3kmの周回トレイルは、東海へ向かって約100m落ち込む断崖に沿って進み、影島灯台（1906年建造）と展望台を経由します。晴れた冬の日には、約50km沖合に浮かぶ日本の対馬が見えることもあります。クルーズ旅行者のほとんどは全コースを歩く代わりに、ダヌビ列車（大人₩4,000・青少年₩3,000、任意、約30分周回）を利用します。公園の入場は無料で、灯台エリアは車椅子に対応していますが、断崖トレイルは対応していません。",
             "timeUsed": [
               "到着・チケット購入・オリエンテーション",
@@ -1470,7 +1695,91 @@
               "is_attraction": true,
               "fee_krw": 0,
               "optional_train_krw": 4000
-            }
+            },
+            "images": [
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+                "location": "太宗台の断崖絶壁",
+                "caption": "太宗台の断崖絶壁 — photo 1",
+                "alt": "太宗台の断崖絶壁 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+                "location": "太宗台の断崖絶壁",
+                "caption": "太宗台の断崖絶壁 — photo 2",
+                "alt": "太宗台の断崖絶壁 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+                "location": "太宗台の断崖絶壁",
+                "caption": "太宗台の断崖絶壁 — photo 3",
+                "alt": "太宗台の断崖絶壁 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+                "location": "太宗台の断崖絶壁",
+                "caption": "太宗台の断崖絶壁 — photo 4",
+                "alt": "太宗台の断崖絶壁 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+                "location": "太宗台の断崖絶壁",
+                "caption": "太宗台の断崖絶壁 — photo 5",
+                "alt": "太宗台の断崖絶壁 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+                "location": "太宗台の断崖絶壁",
+                "caption": "太宗台の断崖絶壁 — photo 6",
+                "alt": "太宗台の断崖絶壁 — gallery image 6"
+              }
+            ]
           },
           {
             "number": 4,

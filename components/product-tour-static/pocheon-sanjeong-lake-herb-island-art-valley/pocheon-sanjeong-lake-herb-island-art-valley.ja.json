@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "ポチョン日帰り旅行：湖・ハーブアイランド＆アートバレー | AtoC Korea",
     "metaDescription": "ソウルから10時間のゆったりポチョン日帰り旅行：山井湖（サンジョン湖）のトレイル、地中海スタイルのハーブアイランド、エメラルドグリーンの天柱湖（チョンジュホ）を見渡すアートバレーのモノレール。",
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "primaryKeywords": [
       "ソウル発ポチョン日帰りツアー",
       "山井湖ツアー",
@@ -19,7 +19,7 @@
   },
   "catalog_card": {
     "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-    "title": "ポチョン日帰り旅行：山井湖・ハーブアイランド＆ポチョン・アートバレー",
+    "title": "抱川：山正湖・ハーブ・アートバレー",
     "subtitle": "山の湖、地中海式ハーブガーデン、採石場を転用したアートパーク——ソウルから行く、最もゆったりとした季節の日帰り旅行。",
     "region": "ポチョン（ソウル日帰り旅行）",
     "duration": "10時間",
@@ -31,8 +31,8 @@
       "季節のハイライト",
       "ロマンティックなイルミネーション"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+    "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "priceLabel": "",
     "shortCardDescription": "ソウルから京畿道の田舎・ポチョンへのゆったりとした季節の日帰り旅行。湖、ハーブガーデン、そしてドラマチックなアートパークの風景で知られるこの地を巡るルートは、山に囲まれた山井湖、地中海スタイルのガーデンと夜のイルミネーションが魅力のハーブアイランド、モノレールでアクセスするポチョン・アートバレーの採石場展望台を組み合わせています。南怡島より混雑が少なく、名所を駆け足で回るのではなく、写真撮影を中心とした落ち着いた旅を楽しめます。",
     "tags": [
@@ -41,8 +41,8 @@
       "romantic_evening_lights"
     ]
   },
-  "headlineLine1": "ポチョン日帰り旅行：山井湖、",
-  "headlineLine2": "ハーブアイランド＆アートバレー",
+  "headlineLine1": "抱川",
+  "headlineLine2": "山正湖・ハーブ・アートバレー",
   "price": {
     "amountLabel": "",
     "originalPriceUsd": null,
@@ -54,7 +54,7 @@
     "priceNote": ""
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+    "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "imagePosition": "center 50%",
     "tagline": "山の湖、地中海スタイルのハーブビレッジ、そしてかつての花崗岩採石場を転用したアートパーク——ポチョンで最も穏やかで写真映えする3つのスポットを、ソウルからの日帰り旅行で巡ります。",
     "pills": [
@@ -132,49 +132,60 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
-      "alt": "白壁とハーブ花壇、季節のラベンダーが彩る地中海風ガーデンゾーン",
-      "caption": "ハーブアイランドの地中海風ハーブガーデン（抱川）",
-      "location": "ハーブアイランド",
-      "atmosphere": "季節のラベンダー・デイジー・ピンクミューリーが咲く地中海風ハーブガーデン"
+      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "location": "山井湖（サンジョン湖）",
+      "alt": "山井湖（サンジョン湖） — gallery image 1",
+      "caption": "山井湖（サンジョン湖） — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG",
-      "alt": "山に囲まれた湖と平坦な湖畔遊歩道、水面に映る森の断崖",
-      "caption": "明星山の山政湖（抱川）",
-      "location": "山政湖",
-      "atmosphere": "遊歩道と湖畔カフェを備えた、山に囲まれた湖"
+      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+      "location": "ポチョン・ハーブアイランド",
+      "alt": "ポチョン・ハーブアイランド — gallery image 1",
+      "caption": "ポチョン・ハーブアイランド — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG",
-      "alt": "切り立った花崗岩の岩壁に囲まれたエメラルドグリーンの採石場湖",
-      "caption": "抱川アートバレー採石場内の天柱湖",
-      "location": "抱川アートバレー",
-      "atmosphere": "旧花崗岩採石場内のエメラルドグリーンの天柱湖"
+      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+      "location": "ポチョン・アートバレー",
+      "alt": "ポチョン・アートバレー — gallery image 1",
+      "caption": "ポチョン・アートバレー — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/01/2791401_image2_1.JPG",
-      "alt": "イルミネーションとテーマ別オブジェが彩る夜の庭園散策路",
-      "caption": "ハーブアイランドのライトフェスティバルの夜（年間通じたサンタビレッジエリア）",
-      "location": "ハーブアイランド イブニングライト",
-      "atmosphere": "日没後のロマンチックなイルミネーション"
+      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+      "location": "山井湖（サンジョン湖）",
+      "alt": "山井湖（サンジョン湖） — gallery image 2",
+      "caption": "山井湖（サンジョン湖） — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
-      "alt": "岩棚から滝つぼへと流れ落ちる森の滝",
-      "caption": "ビドゥルギナン滝 ― 抱川近郊の季節限定代替スポット",
-      "location": "ビドゥルギナン滝",
-      "atmosphere": "ルートの季節限定バージョンにおける滝への任意立ち寄り"
+      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+      "location": "ポチョン・ハーブアイランド",
+      "alt": "ポチョン・ハーブアイランド — gallery image 2",
+      "caption": "ポチョン・ハーブアイランド — photo 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+      "location": "ポチョン・ハーブアイランド",
+      "alt": "ポチョン・ハーブアイランド — gallery image 3",
+      "caption": "ポチョン・ハーブアイランド — photo 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+      "location": "ポチョン・アートバレー",
+      "alt": "ポチョン・アートバレー — gallery image 2",
+      "caption": "ポチョン・アートバレー — photo 2"
     }
   ],
   "itineraryStops": [
@@ -233,7 +244,39 @@
           "NamuWiki (en.namu.wiki/w/산정호수 — Korean-language verified facts on construction date + depth + 1945-armistice administrative history)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG"
+      "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "images": [
+        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "location": "山井湖（サンジョン湖）",
+          "caption": "山井湖（サンジョン湖） — photo 1",
+          "alt": "山井湖（サンジョン湖） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "location": "山井湖（サンジョン湖）",
+          "caption": "山井湖（サンジョン湖） — photo 2",
+          "alt": "山井湖（サンジョン湖） — gallery image 2"
+        }
+      ]
     },
     {
       "number": 2,
@@ -291,7 +334,52 @@
           "Visit Gyeonggi (ggtour.or.kr — provincial tourism portal on Pocheon herb-themed attraction cluster)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG"
+      "image": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+      "images": [
+        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+          "location": "ポチョン・ハーブアイランド",
+          "caption": "ポチョン・ハーブアイランド — photo 1",
+          "alt": "ポチョン・ハーブアイランド — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+          "location": "ポチョン・ハーブアイランド",
+          "caption": "ポチョン・ハーブアイランド — photo 2",
+          "alt": "ポチョン・ハーブアイランド — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+          "location": "ポチョン・ハーブアイランド",
+          "caption": "ポチョン・ハーブアイランド — photo 3",
+          "alt": "ポチョン・ハーブアイランド — gallery image 3"
+        }
+      ]
     },
     {
       "number": 3,
@@ -350,7 +438,39 @@
           "Inquirer Lifestyle / Korea Times (Cheong Wa Dae + National Assembly + Incheon Airport granite-source historical reporting)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG"
+      "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+      "images": [
+        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "location": "ポチョン・アートバレー",
+          "caption": "ポチョン・アートバレー — photo 1",
+          "alt": "ポチョン・アートバレー — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "location": "ポチョン・アートバレー",
+          "caption": "ポチョン・アートバレー — photo 2",
+          "alt": "ポチョン・アートバレー — gallery image 2"
+        }
+      ]
     }
   ],
   "routeFlowStops": [
@@ -1009,8 +1129,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "抱川日帰り旅行：山井湖、",
-        "headlineLine2": "ハーブアイランド＆アートバレー",
+        "headlineLine1": "抱川",
+        "headlineLine2": "山正湖・ハーブ・アートバレー",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
           "imagePosition": "center 50%",
@@ -1170,7 +1290,7 @@
             "name": "サンジョン湖",
             "category": "山に囲まれた散策の湖",
             "description": "サンジョン湖（산정호）は明星山（ミョンソンサン）の麓に位置する人工湖で、そびえ立つ断崖と豊かな森に囲まれています。周囲4kmの遊歩道は京畿道で最も人気のあるなだらかな散策路のひとつで、湖畔カフェやアヒル型ペダルボート、小さな遊戯ゾーンなどを楽しめます。秋には周囲のススキが黄金色に染まり、冬には凍った湖でアヒルそり遊びやアイスアクティビティが楽しめます。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG",
+            "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "highlights": [
               "高低差が少ない、湖畔4kmの遊歩道",
               "山に囲まれた景色と湖畔カフェ",
@@ -1205,7 +1325,39 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated visitor info"
-            }
+            },
+            "images": [
+              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "location": "サンジョン湖",
+                "caption": "サンジョン湖 — photo 1",
+                "alt": "サンジョン湖 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "location": "サンジョン湖",
+                "caption": "サンジョン湖 — photo 2",
+                "alt": "サンジョン湖 — gallery image 2"
+              }
+            ]
           },
           {
             "number": 2,
@@ -1214,7 +1366,7 @@
             "name": "ハーブアイランド",
             "category": "地中海スタイルのハーブ植物園",
             "description": "韓国最大のハーブをテーマにした植物園。白壁、オリーブ林、テーマ別ガーデンゾーンで地中海の村の雰囲気を演出。140種以上のハーブが園内で育ち、香水作り・キャンドル作り・ハーブパンのベーカリーなどの体験も楽しめます。日没後は、年中オープンの人気「サンタビレッジ」をはじめ、ロマンチックなライトアップゾーンへと変貌します。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+            "image": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
             "highlights": [
               "ハーブガーデンとともに楽しむ地中海風ビレッジの雰囲気",
               "季節の花々：ラベンダー、デイジー、ピンクミューリーグラス",
@@ -1249,7 +1401,52 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated tour info"
-            }
+            },
+            "images": [
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+                "location": "ハーブアイランド",
+                "caption": "ハーブアイランド — photo 1",
+                "alt": "ハーブアイランド — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+                "location": "ハーブアイランド",
+                "caption": "ハーブアイランド — photo 2",
+                "alt": "ハーブアイランド — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+                "location": "ハーブアイランド",
+                "caption": "ハーブアイランド — photo 3",
+                "alt": "ハーブアイランド — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1258,7 +1455,7 @@
             "name": "ポチョンアートバレー",
             "category": "モノレール付き、採石場跡地を活用したアートパーク",
             "description": "かつての花崗岩採石場をアートと自然のパークに転換した施設。モノレールで丘を上り、旧採石場の岩壁に囲まれたエメラルドグリーンの天柱湖（チョンジュホ）へアクセス。彫刻インスタレーションや展望台も整備されており、映画的な断崖と湖の風景から多くのK-ドラマやミュージックビデオのロケ地としても知られています。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG",
+            "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
             "highlights": [
               "モノレールで採石場展望台へ",
               "天柱湖（チョンジュホ）：断崖絶壁に囲まれたエメラルドグリーンの湖",
@@ -1297,7 +1494,39 @@
                 "Soul of Seoul"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "location": "ポチョンアートバレー",
+                "caption": "ポチョンアートバレー — photo 1",
+                "alt": "ポチョンアートバレー — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "location": "ポチョンアートバレー",
+                "caption": "ポチョンアートバレー — photo 2",
+                "alt": "ポチョンアートバレー — gallery image 2"
+              }
+            ]
           }
         ]
       }

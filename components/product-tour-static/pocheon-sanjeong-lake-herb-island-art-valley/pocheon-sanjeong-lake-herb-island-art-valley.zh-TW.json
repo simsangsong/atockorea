@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "抱川一日遊：湖泊、香草島與藝術谷 | AtoC Korea",
     "metaDescription": "從首爾出發的輕鬆10小時抱川一日遊：山井湖步道、地中海風情香草島，以及俯瞰翡翠色天柱湖的藝術谷單軌列車。",
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "primaryKeywords": [
       "從首爾出發的抱川一日遊",
       "山井湖遊覽",
@@ -19,7 +19,7 @@
   },
   "catalog_card": {
     "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-    "title": "抱川一日遊：山井湖、香草島與抱川藝術谷",
+    "title": "抱川：山亭湖·香草島·藝術谷",
     "subtitle": "山中湖泊、地中海香草花園，以及採石場改建的藝術公園——從首爾出發最寧靜的季節性一日遊。",
     "region": "抱川（首爾一日遊）",
     "duration": "10小時",
@@ -31,8 +31,8 @@
       "季節性亮點",
       "浪漫夜燈"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+    "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "priceLabel": "",
     "shortCardDescription": "從首爾出發前往抱川的輕鬆季節性一日遊，抱川是京畿道鄉村地區，以湖泊、香草花園和壯觀的藝術公園景觀聞名。行程結合山井湖的群山環抱水景、香草島的地中海風格花園與夜間燈光，以及搭乘單軌列車前往的抱川藝術谷採石場觀景台。比南怡島人潮稀少，以攝影主導的寧靜體驗取代名勝景點的快速打卡。",
     "tags": [
@@ -41,8 +41,8 @@
       "romantic_evening_lights"
     ]
   },
-  "headlineLine1": "抱川一日遊：山井湖、",
-  "headlineLine2": "香草島與藝術谷",
+  "headlineLine1": "抱川",
+  "headlineLine2": "山亭湖·香草島·藝術谷",
   "price": {
     "amountLabel": "",
     "originalPriceUsd": null,
@@ -54,7 +54,7 @@
     "priceNote": ""
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+    "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "imagePosition": "center 50%",
     "tagline": "山中湖泊、地中海風情香草村，以及昔日花崗岩採石場搖身一變的藝術公園——集抱川三大最恬靜、最上鏡景點於一次首爾一日遊之中。",
     "pills": [
@@ -132,49 +132,60 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
-      "alt": "地中海風格庭園區，設有白灰粉牆、香草花圃及季節性薰衣草展示",
-      "caption": "香草島地中海香草花園（抱川）",
-      "location": "香草島",
-      "atmosphere": "地中海風格香草花園，種有季節性薰衣草、雛菊及粉黛亂子草"
-    },
-    {
-      "id": "g2",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG",
-      "alt": "群山環抱的湖泊，設有平坦湖畔步道，茂密山崖倒映水中",
-      "caption": "抱川明聖山山井湖",
+      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "location": "山井湖",
-      "atmosphere": "群山環抱的湖泊，設有步行小徑及湖畔咖啡廳"
+      "alt": "山井湖 — gallery image 1",
+      "caption": "山井湖 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG",
-      "alt": "翠綠採石場湖泊，四周環繞陡峭花崗岩峭壁",
-      "caption": "抱川藝術谷採石場內的天柱湖",
+      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+      "location": "抱川香草島",
+      "alt": "抱川香草島 — gallery image 1",
+      "caption": "抱川香草島 — photo 1"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
       "location": "抱川藝術谷",
-      "atmosphere": "舊花崗岩採石場內的翠綠天柱湖"
+      "alt": "抱川藝術谷 — gallery image 1",
+      "caption": "抱川藝術谷 — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/01/2791401_image2_1.JPG",
-      "alt": "庭園小徑以串串夜燈及主題裝置點綴照明",
-      "caption": "香草島燈光節夜晚（全年開放的聖誕老人村區域）",
-      "location": "香草島夜間燈光秀",
-      "atmosphere": "日落後的浪漫燈光展演"
+      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+      "location": "山井湖",
+      "alt": "山井湖 — gallery image 2",
+      "caption": "山井湖 — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
-      "alt": "山林瀑布沿岩石台階奔流而下，注入水潭",
-      "caption": "鴿子崖瀑布——抱川附近的季節性替代景點",
-      "location": "鴿子崖瀑布",
-      "atmosphere": "季節性路線版本中可選擇的瀑布停靠站"
+      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+      "location": "抱川香草島",
+      "alt": "抱川香草島 — gallery image 2",
+      "caption": "抱川香草島 — photo 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+      "location": "抱川香草島",
+      "alt": "抱川香草島 — gallery image 3",
+      "caption": "抱川香草島 — photo 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+      "location": "抱川藝術谷",
+      "alt": "抱川藝術谷 — gallery image 2",
+      "caption": "抱川藝術谷 — photo 2"
     }
   ],
   "itineraryStops": [
@@ -233,7 +244,39 @@
           "NamuWiki (en.namu.wiki/w/산정호수 — Korean-language verified facts on construction date + depth + 1945-armistice administrative history)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG"
+      "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "images": [
+        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "location": "山井湖",
+          "caption": "山井湖 — photo 1",
+          "alt": "山井湖 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "location": "山井湖",
+          "caption": "山井湖 — photo 2",
+          "alt": "山井湖 — gallery image 2"
+        }
+      ]
     },
     {
       "number": 2,
@@ -291,7 +334,52 @@
           "Visit Gyeonggi (ggtour.or.kr — provincial tourism portal on Pocheon herb-themed attraction cluster)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG"
+      "image": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+      "images": [
+        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+          "location": "抱川香草島",
+          "caption": "抱川香草島 — photo 1",
+          "alt": "抱川香草島 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+          "location": "抱川香草島",
+          "caption": "抱川香草島 — photo 2",
+          "alt": "抱川香草島 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+          "location": "抱川香草島",
+          "caption": "抱川香草島 — photo 3",
+          "alt": "抱川香草島 — gallery image 3"
+        }
+      ]
     },
     {
       "number": 3,
@@ -350,7 +438,39 @@
           "Inquirer Lifestyle / Korea Times (Cheong Wa Dae + National Assembly + Incheon Airport granite-source historical reporting)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG"
+      "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+      "images": [
+        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "location": "抱川藝術谷",
+          "caption": "抱川藝術谷 — photo 1",
+          "alt": "抱川藝術谷 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "location": "抱川藝術谷",
+          "caption": "抱川藝術谷 — photo 2",
+          "alt": "抱川藝術谷 — gallery image 2"
+        }
+      ]
     }
   ],
   "routeFlowStops": [
@@ -1009,8 +1129,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "抱川一日遊：山井湖，",
-        "headlineLine2": "香草島與藝術谷",
+        "headlineLine1": "抱川",
+        "headlineLine2": "山亭湖·香草島·藝術谷",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
           "imagePosition": "center 50%",
@@ -1170,7 +1290,7 @@
             "name": "山井湖",
             "category": "群山環抱的漫步湖泊",
             "description": "山井湖（산정호수）是位於明星山山腳的人工湖，四周環繞著高聳峭壁與茂密森林。全長4公里的環湖步道是京畿道最受喜愛的平緩散步路線之一，沿岸設有湖畔咖啡廳、鴨形踩踏船及小型遊樂區。秋天時，周邊芒草染上金黃；冬天時，結冰的湖面則舉辦鴨形雪橇與冰上活動。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG",
+            "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "highlights": [
               "4公里湖畔步道，高度起伏平緩",
               "群山環抱的景色與湖畔咖啡廳",
@@ -1205,7 +1325,39 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated visitor info"
-            }
+            },
+            "images": [
+              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "location": "山井湖",
+                "caption": "山井湖 — photo 1",
+                "alt": "山井湖 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "location": "山井湖",
+                "caption": "山井湖 — photo 2",
+                "alt": "山井湖 — gallery image 2"
+              }
+            ]
           },
           {
             "number": 2,
@@ -1214,7 +1366,7 @@
             "name": "香草島",
             "category": "地中海風格香草植物園",
             "description": "韓國最大的香草主題植物園，以白色牆壁、橄欖樹林及主題花園區重現地中海村莊風情。園內種植逾 140 種香草品種，並提供香水製作、蠟燭製作及香草麵包烘焙等體驗活動。日落後，香草島搖身一變成為浪漫燈光展示區，著名的「聖誕村」更全年開放。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+            "image": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
             "highlights": [
               "地中海風格村莊氛圍與香草花園",
               "季節性花卉展示：薰衣草、雛菊、粉黛亂子草",
@@ -1249,7 +1401,52 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated tour info"
-            }
+            },
+            "images": [
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+                "location": "香草島",
+                "caption": "香草島 — photo 1",
+                "alt": "香草島 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+                "location": "香草島",
+                "caption": "香草島 — photo 2",
+                "alt": "香草島 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+                "location": "香草島",
+                "caption": "香草島 — photo 3",
+                "alt": "香草島 — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1258,7 +1455,7 @@
             "name": "抱川藝術谷",
             "category": "採石場改建的藝術公園，設有單軌列車",
             "description": "昔日的花崗岩採石場，如今搖身一變成為藝術與自然公園。單軌列車載著遊客沿山坡而上，抵達壯觀的天柱湖——一座藏於舊採石場岩壁之間的翠綠湖泊，四周環繞雕塑裝置與觀景台。由於其如電影般的懸崖湖泊景致，此地已在眾多韓劇及音樂錄影帶中亮相。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG",
+            "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
             "highlights": [
               "乘坐單軌列車上行至採石場觀景台",
               "天柱湖：壯麗峭壁環抱中的翡翠碧水",
@@ -1297,7 +1494,39 @@
                 "Soul of Seoul"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "location": "抱川藝術谷",
+                "caption": "抱川藝術谷 — photo 1",
+                "alt": "抱川藝術谷 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "location": "抱川藝術谷",
+                "caption": "抱川藝術谷 — photo 2",
+                "alt": "抱川藝術谷 — gallery image 2"
+              }
+            ]
           }
         ]
       }

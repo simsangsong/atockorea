@@ -14,12 +14,12 @@
       "天地淵瀑布遊",
       "柱狀節理帶遊"
     ],
-    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "濟州精華環島 · 10小時小團體 · UNESCO + 瀑布 + 絕壁"
   },
   "catalog_card": {
     "slug": "jeju-grand-highlights-loop",
-    "title": "濟州精華環島小團體一日遊",
+    "title": "濟州全島精華一日遊",
     "subtitle": "從漢拏山到城山日出峰，一天盡覽濟州代表性精華景點。",
     "region": "濟州全島路線",
     "duration": "9至9.5小時",
@@ -30,8 +30,8 @@
       "最適合一日遊旅客",
       "緊湊精華行程"
     ],
-    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+    "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+    "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "priceLabel": "",
     "shortCardDescription": "專為時間有限的旅客設計的高效率濟州全島路線，一天串聯漢拏山、南海岸與城山日出峰。",
     "tags": [
@@ -43,8 +43,8 @@
       "精華景點"
     ]
   },
-  "headlineLine1": "濟州精華環島",
-  "headlineLine2": "小團體一日遊",
+  "headlineLine1": "濟州全島精華一日遊",
+  "headlineLine2": "一日遊",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -54,7 +54,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+    "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "imagePosition": "center 35%",
     "tagline": "專為時間有限的旅客打造，這條高密度路線一天涵蓋漢拏山、壯觀南海岸風光、瀑布及城山日出峰。",
     "pills": [
@@ -134,47 +134,122 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-      "location": "整體路線",
-      "atmosphere": "一日盡覽濟州島代表性風景",
-      "alt": "濟州島精華一日遊的整體氛圍",
-      "caption": "濟州島精華一日遊的整體氛圍"
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "location": "漢拿山御乘生岳",
+      "alt": "漢拿山御乘生岳 — gallery image 1",
+      "caption": "漢拿山御乘生岳 — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-      "location": "漢拿山起點站",
-      "atmosphere": "高海拔清新山間空氣",
-      "alt": "漢拿山御乘生岳步道的氛圍",
-      "caption": "漢拿山御乘生岳步道的氛圍"
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "大浦柱狀節理海岸",
+      "alt": "大浦柱狀節理海岸 — gallery image 1",
+      "caption": "大浦柱狀節理海岸 — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-      "location": "柱狀節理海岸",
-      "atmosphere": "海浪與懸崖的壯麗對比",
-      "alt": "濟州海岸大浦柱狀節理海崖",
-      "caption": "濟州海岸大浦柱狀節理海崖"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
+      "location": "午餐 — 西歸浦在地料理",
+      "alt": "午餐 — 西歸浦在地料理 — on-route photo",
+      "caption": "午餐 — 西歸浦在地料理"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-      "location": "海邊瀑布",
-      "atmosphere": "午後路線的景致轉換",
-      "alt": "正房瀑布的海岸風光",
-      "caption": "正房瀑布的海岸風光"
+      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+      "location": "正房瀑布",
+      "alt": "正房瀑布 — gallery image 1",
+      "caption": "正房瀑布 — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
-      "location": "火山口終章",
-      "atmosphere": "具有真實衝擊感的象徵性收尾景觀",
-      "alt": "城山日出峰火山口與海岸線",
-      "caption": "城山日出峰火山口與海岸線"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 1",
+      "caption": "城山日出峰 — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+      "location": "漢拿山御乘生岳",
+      "alt": "漢拿山御乘生岳 — gallery image 2",
+      "caption": "漢拿山御乘生岳 — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "大浦柱狀節理海岸",
+      "alt": "大浦柱狀節理海岸 — gallery image 2",
+      "caption": "大浦柱狀節理海岸 — photo 2"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "大浦柱狀節理海岸",
+      "alt": "大浦柱狀節理海岸 — gallery image 3",
+      "caption": "大浦柱狀節理海岸 — photo 3"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "大浦柱狀節理海岸",
+      "alt": "大浦柱狀節理海岸 — gallery image 4",
+      "caption": "大浦柱狀節理海岸 — photo 4"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+      "location": "正房瀑布",
+      "alt": "正房瀑布 — gallery image 2",
+      "caption": "正房瀑布 — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+      "location": "正房瀑布",
+      "alt": "正房瀑布 — gallery image 3",
+      "caption": "正房瀑布 — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 2",
+      "caption": "城山日出峰 — photo 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 3",
+      "caption": "城山日出峰 — photo 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 4",
+      "caption": "城山日出峰 — photo 4"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 5",
+      "caption": "城山日出峰 — photo 5"
     }
   ],
   "itineraryStops": [
@@ -185,7 +260,7 @@
       "name": "漢拿山御乘生岳",
       "category": "漢拿山山麓步道（御里牧）——UNESCO世界遺產初體驗",
       "description": "**御乘生岳（어승생악，海拔1,169公尺）** 是位於**漢拿山（한라산，海拔1,950公尺）** 西側山腰的一座寄生火山丘（오름／*oreum*）。漢拿山是韓國最高峰，也是濟州島的地質核心。漢拿山擁有**無與倫比的多重認定**：**UNESCO世界自然遺產（2007年7月2日登錄）**、**UNESCO生物圈保護區（2002年）**、**韓國國立公園（1970年3月24日指定）**，以及**天然紀念物第182號（1966年）**——是韓國唯一同時獲得三項UNESCO自然類認定的地點。御乘生岳登山口位於**御里牧遊客中心**，全程**僅1.3公里、爬升約200公尺**，可抵達寬闊的山頂觀景台，來回約60分鐘，讓旅客無需耗費完整的9小時攀登白鹿潭火山口，即可享受**「漢拿山UNESCO初體驗」**。晴天時，從觀景台可遠眺**黃海、漢拿山白鹿潭頂部破火山口（백록담），以及向南延伸的寄生火山丘群**。植物學亮點：此海拔區段（1,000–1,300公尺）為**落葉闊葉林與韓國冷杉（구상나무，*Abies koreana*——IUCN近危物種，韓國高山特有種）林帶的過渡地帶**。漢拿山全山共記錄有**2,000餘種植物**——約佔**韓半島全部植物種數的一半**。山頂觀景台上還保存著一處歷史遺跡：一座建於**1945年二戰末期的日本帝國軍碉堡（토치카，混凝土機槍堡／通訊陣地）**，是韓國現存海拔最高的二戰日軍遺構之一。入園與停車均**免費**；攀登御乘生岳**無需預約**（白鹿潭頂端每日限額1,000人，御乘生岳不在此限）。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
       "highlights": [
         "**漢拿山＝韓國唯一三重自然認定地點**：UNESCO世界遺產2007年＋生物圈保護區2002年＋國立公園1970年",
         "**御乘生岳山頂海拔1,169公尺**——寄生火山丘（오름），為濟州360餘座火山丘之一",
@@ -233,16 +308,36 @@
         "tip": "尤其在雨後或寒冷季節，此處對防滑與保暖的需求比其他大多數景點更為重要。"
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-        "https://images.unsplash.com/photo-1696440869866-b90626f1bf7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1590085309112-f67167e8da6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665071407550-57acf1755a72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1666328756682-ab6ad7a4df03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665688523217-852dde114c46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1593726222205-21404ff4e5fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1657938143548-dbc1e39fcf4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1664004922437-cf175d580b9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "location": "漢拿山御乘生岳",
+          "caption": "漢拿山御乘生岳 — photo 1",
+          "alt": "漢拿山御乘生岳 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "location": "漢拿山御乘生岳",
+          "caption": "漢拿山御乘生岳 — photo 2",
+          "alt": "漢拿山御乘生岳 — gallery image 2"
+        }
       ]
     },
     {
@@ -252,7 +347,7 @@
       "name": "大浦柱狀節理海岸",
       "category": "火山海岸線——六角柱狀節理熔岩",
       "description": "**大浦柱狀節理（대포 주상절리，別稱「지삿개」）** 是位於中文（Jungmun）海岸的一段 **1 公里長的六角柱狀節理玄武岩懸崖**，於 **2005年1月6日被指定為天然紀念物第443號**。岩柱從海面拔地而起，高達 **30至40公尺**，緊密排列成 **5至7邊形多邊體**（以六邊形為主）——此一幾何形態源於**漢拏山側翼噴發（約25萬至14萬年前）的玄武岩熔岩流入海洋後，在冷卻收縮過程中垂直於冷卻面龜裂**所形成。全球著名的柱狀節理地形包括**英國巨人堤道（Giant's Causeway）**、**美國惡魔柱（Devils Postpile）**及**蘇格蘭芬格爾洞（Fingal's Cave）**——大浦柱狀節理是**東亞最具代表性的範例**，也是最易抵達的一處。長達800公尺的**木棧道環形步道**引領遊客直抵岩柱正上方的欄杆邊緣；**大潮之日，海浪拍打岩柱，水花可飛濺高達20公尺**，偶爾越過護欄。門票：**成人₩2,000 / 青少年₩1,000 / 7歲以下及65歲以上免費**。此景點隸屬**濟州世界地質公園（UNESCO，2010年10月認定）**，是全島 **13處官方地質遺址**之一，與城山日出峰、萬丈窟熔岩洞及水月峰齊名。懸崖頂部觀景台為**無障礙設施**（輪椅及嬰兒車可通行）。環形步道沿途設有三處觀景平台，可從不同角度欣賞岩柱：**第一平台**可側面觀賞岩柱（最適合拍攝六邊形幾何構圖），**中段平台**可俯視岩柱頂部紋路，而**遠端平台**則可在晴天以漢拏山為背景，將長達1公里的海岸線盡收眼底。**最佳攝影時段：14:00至16:00**，此時西斜陽光正面照射岩柱面；傍晚造訪雖可拍出剪影構圖，但會失去岩柱紋理細節。開放時間：**09:00至18:00（最後入場17:30）**，全年開放。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "**天然紀念物第443號** — 指定日期 **2005年1月6日**，為濟州最新指定的海岸天然紀念物",
         "岩柱高達 **30至40公尺**，沿 **1公里**海岸線緊密排列成 **5至7邊形多邊體**（以六邊形為主）",
@@ -300,16 +395,62 @@
         "tip": "即使在晴天，海岸通常也比濟州內陸更為寒冷多風。"
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-        "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1772268354899-1f3bf5014b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1739932413542-dc2597d7d764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "大浦柱狀節理海岸",
+          "caption": "大浦柱狀節理海岸 — photo 1",
+          "alt": "大浦柱狀節理海岸 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "大浦柱狀節理海岸",
+          "caption": "大浦柱狀節理海岸 — photo 2",
+          "alt": "大浦柱狀節理海岸 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "大浦柱狀節理海岸",
+          "caption": "大浦柱狀節理海岸 — photo 3",
+          "alt": "大浦柱狀節理海岸 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "大浦柱狀節理海岸",
+          "caption": "大浦柱狀節理海岸 — photo 4",
+          "alt": "大浦柱狀節理海岸 — gallery image 4"
+        }
       ]
     },
     {
@@ -361,7 +502,7 @@
       "name": "正房瀑布",
       "category": "海岸瀑布 — 直接落入大海（亞洲唯一）",
       "description": "**正房瀑布（정방폭포，「直落入海之瀑」）**是**亞洲唯一直接落入大海的瀑布** — 從玄武岩懸崖**垂直落下23公尺**直入太平洋，無中間水潭，無河床出口。瀑布**寬8公尺**，底部水潭深5公尺，每逢潮汐便與外海相通。這一獨特的地理特徵，使正房瀑布躋身**「瀛洲十景（영주십경，濟州十大勝景）」**之列 — 此為朝鮮時代文人所定，記錄島上最具詩意景觀的典範名錄。瀛洲十景由**18世紀儒學學者李源祚（이원조）**整理成冊，其中亦涵蓋城山日出、漢拿山頂及天帝淵 — 意味著今日的環線行程在一日之內即涵蓋**十景中的3景**。瀑布旁的崖壁上刻有銘文**「徐市過此（서불과차，徐市西歸）」**，相傳為**徐福（서복）**所留 — 他是傳說中秦朝方士，受**秦始皇（約西元前219年）**之命出海尋訪長生不老仙藥。民間傳說他歸途中曾途經此地 — 這段銘文即是地名**「西歸浦（서귀포，「徐市西歸之地」）」**的語源所在。入口處需沿**130級石階**下行至海灣（坡度較陡，建議穿著護膝舒適鞋款）。門票：**成人₩2,000 ／ 青少年₩1,000 ／ 7歲以下及65歲以上免費**。瀑布底部水霧瀰漫、氣候涼爽，是著名的夏日消暑勝地。**當地海女（해녀，女性潛水採集者 — 聯合國教科文組織2016年非物質文化遺產）**於風平浪靜之日，有時會直接在海灣販售新鮮海膽、鮑魚與海螺 — 這是在正式博物館場域以外，難得一見的記錄潛水社群真實生活的攝影機會。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+      "image": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
       "highlights": [
         "**亞洲唯一直接落入大海的瀑布** — 垂直落差23公尺，無河床",
         "瀑布**寬8公尺**，底部水潭深5公尺，每逢潮汐便沖入太平洋",
@@ -409,13 +550,49 @@
         "tip": "由於需走樓梯及礁石路，實際體驗通常比地圖上看起來更耗費體力。"
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-        "https://images.unsplash.com/photo-1674606042265-c9f03a77e286?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1674606055132-15e511a3ac2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1761303505953-df6647dd3a46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1562680829-7927493f7a50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "location": "正房瀑布",
+          "caption": "正房瀑布 — photo 1",
+          "alt": "正房瀑布 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "location": "正房瀑布",
+          "caption": "正房瀑布 — photo 2",
+          "alt": "正房瀑布 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "location": "正房瀑布",
+          "caption": "正房瀑布 — photo 3",
+          "alt": "正房瀑布 — gallery image 3"
+        }
       ]
     },
     {
@@ -425,7 +602,7 @@
       "name": "城山日出峰",
       "category": "聯合國教科文組織認定凝灰岩錐 — 日出峰（三重UNESCO認定）",
       "description": "**城山日出峰（성산일출봉，「日出峰」）** 是一座**形成於5,000年前的蘇特西式水火山凝灰岩錐** — 這一罕見地貌由海底玄武岩噴發衝破海面時形成，岩漿與海水相遇，產生蒸汽爆炸式噴發，堆積出**182公尺高的要塞形火山口**邊緣，而非典型的熔岩錐。其成果正是聯合國教科文組織正式稱之為**「蘇特西式火山地體出露的傑出典範」**。火山口**寬600公尺、深90公尺**，周圍環繞**99塊嶙峋岩石**，當地傳說將其比喻為石冠。城山日出峰擁有**三重UNESCO認定**：**世界自然遺產（2007年7月2日列入）**，為**「濟州火山島與熔岩管」遺產地**的一部分；**生物圈保護區（2002年）**；以及**全球地質公園（2010年10月）** — 在韓國景點中，僅漢拏山本身可與此相提並論。**18座日本帝國二戰時期洞窟**（1945年神風特攻隊自殺艇掩體）鑿入面海的基部。步道：**單程0.8公里，爬升約140公尺，寬闊石階步道來回60分鐘**。**海女（해녀）表演**每日於錐體下方礁岩灣**13:30及15:00**各舉行一場 — 濟州女性潛水人（2016年UNESCO非物質文化遺產）不使用水肺裝備下潛。門票**2025年4月更新**：**成人₩5,000 / 青少年及兒童₩2,500 / 團體成人₩1,600**，7歲以下及65歲以上免費。山頂觀景台亦列入**瀛洲十景（濟州十大勝景）**之列，並持續是韓國首屈一指的**年度新年日出朝聖地** — 每年1月1日黎明前逾5萬名遊客登頂，自1995年起更設有官方日出慶典活動。**牛島（우도，「牛之島」）** — 韓國最大的次生火山島 — 在山頂清晰可見，位於離岸4公里處，可從城山港搭乘**15分鐘渡輪**前往（來回票₩10,500），適合在其他行程中有額外時間的旅客。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+      "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "highlights": [
         "**三重UNESCO認定**：世界自然遺產 2007-07-02 + 生物圈保護區 2002 + 全球地質公園 2010-10",
         "**形成於5,000年前** — 蘇特西式水火山噴發，岩漿與海水相遇，蒸汽爆炸孕育而生",
@@ -473,16 +650,75 @@
         "tip": "人潮、天氣及團體體能狀況，皆可能影響登頂體驗的難度與滿足感。"
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-        "https://images.unsplash.com/photo-1616798249081-30877e213b16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1593104197164-96718e943b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1584263577189-f86c4b105154?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1710006876254-48250c2dbcfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1584802530491-65fad8b1b92c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1743685889737-d699283d139c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 1",
+          "alt": "城山日出峰 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 2",
+          "alt": "城山日出峰 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 3",
+          "alt": "城山日出峰 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 4",
+          "alt": "城山日出峰 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 5",
+          "alt": "城山日出峰 — gallery image 5"
+        }
       ]
     }
   ],
@@ -1233,8 +1469,8 @@
       "id": "hero",
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "濟州精華亮點環線",
-        "headlineLine2": "小團一日遊",
+        "headlineLine1": "濟州全島精華一日遊",
+        "headlineLine2": "一日遊",
         "hero": {
           "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
           "imagePosition": "center 35%",

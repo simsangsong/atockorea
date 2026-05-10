@@ -14,12 +14,12 @@
       "Tour por la playa Hyeopjae",
       "Tour por la franja de cafés de Jeju"
     ],
-    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "title": "Tour auténtico de día completo por el oeste y sur de Jeju | AtoC Korea"
   },
   "catalog_card": {
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-    "title": "Tour auténtico de día completo por el oeste y sur de Jeju",
+    "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "title": "Jeju Oeste-Sur: Auténtico",
     "priceLabel": "",
     "shortCardDescription": "Un tour en grupo pequeño que combina las costas occidental y meridional de Jeju en un solo circuito: el Humedal de Altitud 1100 de Hallasan (UNESCO), el Acantilado Jusangjeolli de columnas hexagonales, el mirador panorámico de Songaksan, la Cascada Cheonjeyeon, el Museo del Té O'sulloc y la franja de cafés de la playa Hyeopjae en la costa oeste. Mismo operador que el tour UNESCO del sur, pero con un enfoque más orientado al estilo de vida: \"paisajes volcánicos que se encuentran con costas dramáticas y modernos cafés junto al mar.\"",
     "tags": [
@@ -45,10 +45,10 @@
       "Cultura del café",
       "Costero"
     ],
-    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp"
+    "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp"
   },
-  "headlineLine1": "Del Humedal 1100 a Jusangjeolli, de los campos de té a los cafés junto al mar —",
-  "headlineLine2": "El oeste y sur de Jeju, en un auténtico día a buen ritmo",
+  "headlineLine1": "Jeju Oeste-Sur",
+  "headlineLine2": "Auténtico",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -58,7 +58,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+    "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "imagePosition": "center 35%",
     "tagline": "Paisajes volcánicos que se encuentran con costas dramáticas y modernos cafés junto al mar — el circuito oeste-sur de Jeju como debe hacerse",
     "pills": [
@@ -135,49 +135,220 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
       "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-      "alt": "Pasarela de madera circular que atraviesa el Humedal de Altitud 1100 con arbustos bajos y la sierra de Hallasan visible a lo lejos",
-      "caption": "Humedal de Altitud 1100 de Hallasan — Pasarela de la Reserva de Biosfera UNESCO",
-      "location": "Humedal 1100 de Hallasan, centro de Jeju (elevación: 1.100 m)",
-      "atmosphere": "Aire fresco de las tierras altas; ecosistema de montaña protegido por la UNESCO con tranquila pasarela circular"
+      "location": "Recogida (4 puntos en toda la ciudad de Jeju)",
+      "alt": "Recogida (4 puntos en toda la ciudad de Jeju) — on-route photo",
+      "caption": "Recogida (4 puntos en toda la ciudad de Jeju)"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-      "alt": "Acantilados de lava columnar hexagonal que se elevan verticalmente desde el mar, vistos desde una pasarela con barandilla",
-      "caption": "Acantilado Jusangjeolli — Columnas hexagonales del Geoparque UNESCO",
-      "location": "Jusangjeolli, costa de Jungmun, sur de Jeju",
-      "atmosphere": "Acantilados basálticos azotados por las olas; uno de los puntos costeros más fotografiados de Jeju"
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+      "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
+      "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 1",
+      "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-      "alt": "Cono volcánico costero con sendero de cima plana, océano e islas cercanas visibles al fondo",
-      "caption": "Cima de Songaksan — Ruta panorámica circular de la costa sur",
-      "location": "Songaksan, extremo suroeste de Jeju",
-      "atmosphere": "Praderas costeras abiertas; caminata panorámica de 360° con Hallasan al interior y Marado en el mar"
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+      "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 1",
+      "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
-      "alt": "Ondulantes campos de té verde con hileras ordenadas que se extienden hasta un edificio de museo de baja altura",
-      "caption": "Museo del Té O'sulloc y campos de té",
-      "location": "O'sulloc, centro-oeste de Jeju",
-      "atmosphere": "La mayor hacienda de té visitable de Corea; museo + café + campos ideales para fotografías"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
+      "location": "Almuerzo — Daejeong / Gastronomía Local de Andeok",
+      "alt": "Almuerzo — Daejeong / Gastronomía Local de Andeok — on-route photo",
+      "caption": "Almuerzo — Daejeong / Gastronomía Local de Andeok"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
-      "alt": "Playa de arena blanca con aguas turquesas, edificios de la franja de cafés en la orilla, pequeña isla visible en alta mar",
-      "caption": "Playa Hyeopjae + franja de cafés de la costa oeste",
-      "location": "Playa Hyeopjae, Hallim, oeste de Jeju",
-      "atmosphere": "Última parada al atardecer en la franja de cafés; isla Biyangdo visible en alta mar"
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
+      "alt": "Cascada Cheonjeyeon (Estanque de los Dioses) — gallery image 1",
+      "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+      "location": "Museo del Té O'sulloc + Campos de Té Verde",
+      "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 1",
+      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 1"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+      "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
+      "alt": "Playa Hyeopjae + franja de cafés de la costa oeste — gallery image 1",
+      "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 1"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+      "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
+      "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 2",
+      "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+      "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
+      "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 3",
+      "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+      "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 2",
+      "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+      "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 3",
+      "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+      "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 4",
+      "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
+      "alt": "Cascada Cheonjeyeon (Estanque de los Dioses) — gallery image 2",
+      "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+      "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
+      "alt": "Cascada Cheonjeyeon (Estanque de los Dioses) — gallery image 3",
+      "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+      "location": "Museo del Té O'sulloc + Campos de Té Verde",
+      "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 2",
+      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 2"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+      "location": "Museo del Té O'sulloc + Campos de Té Verde",
+      "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 3",
+      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 3"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+      "location": "Museo del Té O'sulloc + Campos de Té Verde",
+      "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 4",
+      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 4"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+      "location": "Museo del Té O'sulloc + Campos de Té Verde",
+      "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 5",
+      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 5"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+      "location": "Museo del Té O'sulloc + Campos de Té Verde",
+      "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 6",
+      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 6"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+      "location": "Museo del Té O'sulloc + Campos de Té Verde",
+      "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 7",
+      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 7"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+      "location": "Museo del Té O'sulloc + Campos de Té Verde",
+      "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 8",
+      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 8"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+      "location": "Museo del Té O'sulloc + Campos de Té Verde",
+      "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 9",
+      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 9"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+      "location": "Museo del Té O'sulloc + Campos de Té Verde",
+      "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 10",
+      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 10"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+      "location": "Museo del Té O'sulloc + Campos de Té Verde",
+      "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 11",
+      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 11"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+      "location": "Museo del Té O'sulloc + Campos de Té Verde",
+      "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 12",
+      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 12"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+      "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
+      "alt": "Playa Hyeopjae + franja de cafés de la costa oeste — gallery image 2",
+      "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 2"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+      "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
+      "alt": "Playa Hyeopjae + franja de cafés de la costa oeste — gallery image 3",
+      "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 3"
     }
   ],
   "itineraryStops": [
@@ -216,7 +387,7 @@
       "name": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
       "category": "Humedal Alpino — Sitio Ramsar + dentro del Patrimonio Mundial UNESCO de Hallasan",
       "description": "**El Humedal de Altitud 1100 de Hallasan (한라산 1100고지 습지)** es un sistema de humedales alpinos de gran altitud en la meseta de Hallasan, ubicado **exactamente a 1.100 m sobre el nivel del mar** a lo largo de la **Ruta 1100 — la carretera nacional más alta de Corea** que une la ciudad de Jeju con Seogwipo Jungmun. El sitio es un **Humedal de Importancia Internacional Ramsar (Sitio n.º 1893, designado el 12 de octubre de 2009)**, incluido dentro del **Sitio Patrimonio Mundial UNESCO de Hallasan (2007)**, la **Reserva de la Biosfera UNESCO de la Isla de Jeju (2002)** y el **Parque Nacional de Hallasan (1970)** — lo que convierte a este lugar en uno de los pocos del mundo con **cuatro designaciones internacionales/nacionales superpuestas**. El humedal comprende **más de 16 marismas y pozas de agua dulce discontinuas** distribuidas a lo largo de una sección de meseta de baja pendiente que capta y retiene el agua de lluvia, formando **pequeños lagos permanentes y turberas** que albergan diversas comunidades florísticas con un endemismo significativo de Jeju. La biodiversidad registrada incluye **3 especies de aves amenazadas y 1 especie vegetal amenazada en Corea**, además de especies de mamíferos, reptiles e insectos endémicas de la isla de Jeju. El sitio recibió **900.000 visitantes en 2008** (datos del Centro de Visitantes del Monte Halla). Experiencia para el visitante: un **paseo entablado en bucle de 1 km** con miradores, señalización interpretativa y una pequeña exposición de historia natural en el punto de inicio. **El follaje otoñal (octubre–noviembre)** y **las escenas nevadas invernales (diciembre–febrero)** son las temporadas más fotografiadas; **primavera + verano** ofrecen visibilidad de la flora del humedal y las especies endémicas. **Entrada GRATUITA**; el **Área de Descanso 1100 (1100 휴게소)** adyacente dispone de baños interiores + cafetería + pequeña tienda de recuerdos. **La importancia cultural y religiosa** para las comunidades locales está documentada en la ficha Ramsar — peregrinaciones chamánicas históricas vinculadas a los espíritus del agua de la montaña.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
       "highlights": [
         "**Sitio Ramsar n.º 1893** (designado el 12 de oct. de 2009) — Humedal de Importancia Internacional",
         "**1.100 m sobre el nivel del mar** — en la **carretera nacional más alta** de Corea (Ruta 1100)",
@@ -263,16 +434,49 @@
         "tip": "Lleve ropa de abrigo en capas — la temperatura es entre 5 y 10 °C más fría que en la costa de Jeju; compruebe las condiciones de la carretera en invierno; combínelo con las Cataratas Cheonjeyeon si desciende hacia el sur"
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-        "https://images.unsplash.com/photo-1672306145001-a9a193ed5573?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1579677475701-5c1cc28581ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1732446402420-36f8e1a31ca9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1648467179706-bb1617dddb81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1635252273211-d0d5fb502c8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1676377962839-8fb92dfa4fd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1615129718947-5de7ddb45143?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1634641683828-73bd90bd9503?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1621844143414-f1d0bb21702e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+          "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
+          "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 1",
+          "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+          "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
+          "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 2",
+          "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+          "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
+          "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 3",
+          "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 3"
+        }
       ]
     },
     {
@@ -282,7 +486,7 @@
       "name": "Acantilado Jusangjeolli (Geoparque UNESCO)",
       "category": "Disyunción columnar — Monumento Natural n.º 443 (2005)",
       "description": "**Daepo Jusangjeolli (대포 주상절리, 'Jisatgae')** es un **tramo de 1 km de acantilado de basalto con disyunción columnar hexagonal** en la costa de Jungmun — designado **Monumento Natural n.º 443 el 06-01-2005**. Las columnas se elevan **30–40 m** desde el mar, formando **polígonos de 5 a 7 lados** perfectamente encajados (principalmente hexágonos) — una geometría producida cuando **la lava basáltica fundida de una erupción en el flanco del Hallasan (~250.000–140.000 años atrás) llegó al océano y se contrajo al enfriarse**, fracturándose de forma perpendicular a la superficie de enfriamiento. A nivel mundial, la disyunción columnar es más conocida por la **Calzada del Gigante (Reino Unido)**, **Devils Postpile (EE. UU.)** y la **Cueva de Fingal (Escocia)** — Jusangjeolli es el **principal ejemplo del este de Asia** y el más accesible. El **circuito de pasarela de 800 m** lleva a los visitantes hasta el borde del acantilado con barandilla, directamente sobre las columnas; **en días de marea alta, las olas rompen contra las columnas y lanzan salpicaduras de hasta 20 m**, a veces por encima de la barandilla. Entrada: **Adultos ₩2.000 / Jóvenes ₩1.000 / GRATUITO para menores de 7 años y mayores de 65**. El lugar forma parte del **Geoparque Global de Jeju (designado por la UNESCO en octubre de 2010)** — uno de los **13 geositios oficiales** de la isla, junto con Seongsan Ilchulbong, el Tubo de Lava Manjanggul y Suwolbong. La plataforma en lo alto del acantilado es **accesible sin barreras** (para sillas de ruedas y cochecitos). Tres miradores a lo largo del circuito ofrecen diferentes ángulos de las columnas: el **primer mirador** muestra las columnas de perfil (el mejor para fotografiar la geometría hexagonal), el **mirador central** mira directamente hacia abajo para ver los patrones en la cima de las columnas, y el **mirador lejano** captura el recorrido costero de 1 km con el Hallasan como telón de fondo en días despejados. **Ventana fotográfica óptima: 14:00–16:00**, cuando la luz solar vespertina ilumina las caras de las columnas de frente; las visitas al atardecer ofrecen composiciones en silueta, pero pierden la textura del detalle de las columnas. Horario: **09:00–18:00 (última entrada a las 17:30)**, funcionamiento durante todo el año.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "**Monumento Natural n.º 443** — designado el **06-01-2005**, el Monumento Natural costero más reciente de Jeju",
         "Las columnas se elevan **30–40 m**, formando **polígonos de 5 a 7 lados** (principalmente hexágonos) a lo largo de **1 km** de costa",
@@ -330,16 +534,62 @@
         "tip": "Llegue antes de las 11:00 o después de las 16:00 para evitar la afluencia de autobuses turísticos; combine con la Playa Jungmun Saekdal (5 min) para pasar medio día"
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-        "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1772268354899-1f3bf5014b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1739932413542-dc2597d7d764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+          "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 1",
+          "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+          "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 2",
+          "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+          "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 3",
+          "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+          "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 4",
+          "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 4"
+        }
       ]
     },
     {
@@ -431,7 +681,7 @@
       "name": "Cascada Cheonjeyeon (Estanque de los Dioses)",
       "category": "Cascada de Tres Niveles — Monumento Natural N.º 378 (1993)",
       "description": "**Cataratas Cheonjeyeon (천제연, '연 = estanque + 천제 = Emperador del Cielo')** son una **cascada de tres niveles** ubicada en el cañón volcánico de Jungmun, declarada **Monumento Natural N.º 378 (1993)** por su excepcional combinación ecológica. El nombre proviene de una **leyenda daísta de la era Joseon que narra cómo siete ninfas (선녀, *seonnyeo*) descendían del cielo cada noche para bañarse en el estanque superior** — un mito reforzado por el microclima de neblina perpetua del impresionante paraje. El **1.er nivel (caída de 22 m, estanque de 21 m de profundidad)** desemboca en un cráter circular de basalto y solo fluye tras lluvias intensas — la mayoría de los días el estanque superior luce sereno y reflectante. El **2.º nivel (caída de 30 m) fluye durante todo el año** — es el principal sujeto fotográfico. El 3.er nivel completa el descenso hasta el mar. El **Puente Seonimgyo (선임교, 'Puente de las Siete Ninfas') de 120 m de longitud y 78 m de altura** cruza el cañón a mitad del recorrido circular — sus paneles de bajorrelieve en bronce fundido a ambos lados representan **a las siete ninfas en vuelo**, una materialización arquitectónica literal de la leyenda fundacional. El bosque circundante constituye un **hábitat de plantas raras**, entre ellas la **lirio de sapo coreano (***Tricyrtis macropoda***)** y el amenazado **helecho *Mankyua chejuense*** (endémico de Jeju, En Peligro Crítico según la UICN). Longitud del recorrido circular: **0,8 km, ~30 min a pie** con varios tramos de escaleras empinadas. Entrada: **Adulto ₩2.500 / Joven ₩1.350 / GRATIS menores de 7 años y mayores de 65**. Cheonjeyeon también forma parte del canon literato de la era Joseon **'Yeongjusipgyeong (영주십경, Las 10 Maravillas Escénicas de Jeju)'** — junto con la cumbre del Hallasan, el amanecer en Seongsan y las cataratas de Jeongbang — lo que significa que el recorrido de hoy por el suroeste incluye **2 de las 10 maravillas (Hallasan + Cheonjeyeon)** en un solo día. El bienal **Festival Jeju Chilseonyeo (de las Siete Ninfas)** celebrado en el puente en mayo (cada año impar) recrea la leyenda del descenso con danzas tradicionales y actuaciones musicales — se requiere reserva previa cuando el festival coincide con la fecha del tour. Horario: **09:00–18:00** durante todo el año (última entrada a las 17:30).",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+      "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "highlights": [
         "**Monumento Natural N.º 378 (declarado en 1993)** — cascada de tres niveles + hábitat de plantas raras",
         "El nombre **'Cheonjeyeon' = 'Estanque del Emperador del Cielo'** — leyenda daísta de la era Joseon",
@@ -477,7 +727,52 @@
         "photo": "El segundo nivel desde su plataforma de observación ofrece la icónica toma de la cascada de 30 m; el Puente Seonimgyo con las siete ninfas también resulta impresionante",
         "facilities": "Pequeña tienda de souvenirs y café en la entrada",
         "tip": "El primer nivel está seco excepto tras lluvias intensas — no se sorprenda si no hay agua fluyendo; reserve entre 1,5 y 2 horas para ver los tres niveles; NO confundir con las Cataratas Cheonjiyeon (caídas diferentes en Seogwipo)"
-      }
+      },
+      "images": [
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
+          "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 1",
+          "alt": "Cascada Cheonjeyeon (Estanque de los Dioses) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
+          "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 2",
+          "alt": "Cascada Cheonjeyeon (Estanque de los Dioses) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
+          "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 3",
+          "alt": "Cascada Cheonjeyeon (Estanque de los Dioses) — gallery image 3"
+        }
+      ]
     },
     {
       "number": 7,
@@ -486,7 +781,7 @@
       "name": "Museo del Té O'sulloc + Campos de Té Verde",
       "category": "Museo del Patrimonio del Té — el Mayor Campo de Té Verde de Corea (Seogwang Dawon)",
       "description": "**El Museo del Té O'Sulloc (오설록 티 뮤지엄, '오설록' que significa 'encuentro de nieve + verdor')** es el buque insignia de la cultura del té de **Amorepacific Corporation** — la mayor empresa de belleza de Corea. El fundador **Suh Sung-hwan lideró personalmente el proyecto en 1979**, recuperando tierras de cultivo de ceniza volcánica en la meseta de Seogwang de Jeju cuando la opinión generalizada sostenía que el té no podía cultivarse comercialmente en Corea. Hoy, la **plantación Seogwang Dawon (서광다원)** es el **mayor campo de té verde de Corea**, produciendo **~700 toneladas anuales** en las tres haciendas de Amorepacific en Jeju. El edificio del museo **abrió sus puertas en 2001** en el corazón de la plantación y fue incluido en el **Top 10 de museos de arte de *designboom*** por su diseño de pabellón minimalista de cubierta verde integrado entre las hileras de té. **Entrada gratuita**, horario diario de **09:00–18:00**, con aproximadamente **2 millones de visitantes anuales**. La visita se divide de forma natural en tres segmentos: **(1) Interior del museo** — proceso de producción del té, colección de utensilios antiguos para el té desde la dinastía Tang (618–907 d. C.) en adelante, y terraza de observación con vistas panorámicas a la plantación; **(2) Cafetería Tea House** — el exclusivo **brazo de té verde enrollado (오설록 롤케이크)** y el **helado de té verde** servidos directamente de la cosecha del año; **(3) Senderos por la plantación** — caminos de grava entre los arbustos de té, populares para la fotografía al atardecer en el extremo occidental. La **Casa Innisfree Jeju** (la marca de cosmética natural de Amorepacific) se encuentra a **5 minutos a pie** para los visitantes interesados en el ecosistema más amplio de la marca — también con entrada gratuita y taller optativo de jabón de mandarina (₩15.000). El propio edificio del museo, diseñado por el arquitecto coreano **Mass Studies (Cho Min-suk)**, adopta una forma horizontal deliberadamente discreta que refleja la geometría de las hileras de té en lugar de competir con el paisaje agrícola — una deferencia arquitectónica que le ha valido tanto el reconocimiento en el Top 10 de *designboom* como su uso continuado como caso de estudio en el diseño museístico contemporáneo coreano. Complemento opcional: la **Clase de Té de Osulloc (₩30.000 por persona, 60 min, reserva previa obligatoria)** — cata guiada de té con demostración de técnicas de preparación en cerámica coreana, disponible a diario de **10:00 a 16:00**, con instrucción en inglés los miércoles y sábados.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+      "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "highlights": [
         "**Amorepacific** buque insignia — la mayor empresa de belleza de Corea; el fundador Suh Sung-whan fue pionero en el té de Jeju en **1979**",
         "**Seogwang Dawon = el mayor campo de té verde de Corea**; ~700 toneladas de producción anual",
@@ -532,7 +827,169 @@
         "photo": "Campos de té con edificio del museo en forma de taza de té; zona de asientos al aire libre; los cerezos alcanzan su esplendor en temporada intermedia",
         "facilities": "Café (helado de té verde imprescindible), tienda de regalos, Innisfree Jeju House contigua, terraza mirador con vistas a los campos",
         "tip": "Llegue antes de las 10:30 para evitar la avalancha de autobuses turísticos; reserve entre 1,5 y 2 horas incluyendo el tiempo en el café y el paseo por los campos de té"
-      }
+      },
+      "images": [
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "location": "Museo del Té O'sulloc + Campos de Té Verde",
+          "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 1",
+          "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "location": "Museo del Té O'sulloc + Campos de Té Verde",
+          "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 2",
+          "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "location": "Museo del Té O'sulloc + Campos de Té Verde",
+          "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 3",
+          "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "location": "Museo del Té O'sulloc + Campos de Té Verde",
+          "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 4",
+          "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "location": "Museo del Té O'sulloc + Campos de Té Verde",
+          "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 5",
+          "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "location": "Museo del Té O'sulloc + Campos de Té Verde",
+          "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 6",
+          "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "location": "Museo del Té O'sulloc + Campos de Té Verde",
+          "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 7",
+          "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "location": "Museo del Té O'sulloc + Campos de Té Verde",
+          "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 8",
+          "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "location": "Museo del Té O'sulloc + Campos de Té Verde",
+          "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 9",
+          "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "location": "Museo del Té O'sulloc + Campos de Té Verde",
+          "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 10",
+          "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "location": "Museo del Té O'sulloc + Campos de Té Verde",
+          "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 11",
+          "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "location": "Museo del Té O'sulloc + Campos de Té Verde",
+          "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 12",
+          "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 12"
+        }
+      ]
     },
     {
       "number": 8,
@@ -541,7 +998,7 @@
       "name": "Playa Hyeopjae + franja de cafés de la costa oeste",
       "category": "Playa de Atardecer de la Costa Oeste — Playa Gemela + Panorama de la Isla Biyangdo",
       "description": "**La Playa Hyeopjae (협재 해수욕장)** es una de las **3 mejores playas de la costa oeste de Jeju** y está ampliamente clasificada entre las **Top 10 playas** de la isla en general, definida por su **distintiva arena blanco plateado** — formada a partir de **conchas trituradas + fragmentos de coral mezclados con arena fina**, produciendo una luminiscencia poco común en la Península Coreana. La playa forma una **línea costera de 9 km** cuando se combina con su **playa gemela Geumneung Beach (inmediatamente al sur, accesible a pie por la misma orilla, menos concurrida)** — el par de playas es una de las ventanas fotográficas emblemáticas del catálogo. La vista emblemática es la **Isla Biyangdo (비양도)** — una **isla volcánica a 1,2 km de la costa con ~200 residentes permanentes**, accesible en **ferry de 20 minutos desde el Puerto de Hallim**. Biyangdo está en proceso de obtener la **primera certificación de isla libre de carbono de Corea**, un escaparate de política medioambiental. El **agua esmeralda turquesa** de la playa proviene del fondo marino poco profundo de arena coralina, y con la **marea baja, las pozas mareales revelan cangrejos ermitaños, camarones pequeños y peces juveniles** — Biyangdo puede parecer 'accesible a pie' a través de la extensa y poco profunda franja de agua. El **telón de fondo de bosque de pinos (Songlim)** detrás de la playa ofrece zona de acampada gratuita y senderos sombreados. Detrás de las dunas discurre la más desarrollada **franja de cafés de la costa oeste de Jeju** — arquitectura concentrada de cafés + restaurantes + boutiques orientada al turismo nacional. El **atardecer detrás de Biyangdo sobre el agua esmeralda** es la firma visual y el encuadre de atardecer en la costa oeste más destacado del catálogo. **Entrada GRATUITA**; **temporada de baño con socorrista del 1 de julio al 31 de agosto**; **acceso para sillas de ruedas** mediante rampas en múltiples puntos de la playa; baños públicos + vestuarios + duchas + alquiler de equipos durante todo el año. El adyacente **Hallim Park** (jardín botánico + cuevas de lava + pueblo folclórico, entrada separada de ₩10,000, a 1,5 km) se sustituye ocasionalmente en invierno.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+      "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
       "highlights": [
         "**Top 3 playas de la costa oeste de Jeju / Top 10 en general** — agua esmeralda turquesa + arena plateada",
         "**Arena blanco plateado distintiva** — conchas trituradas + fragmentos de coral",
@@ -587,7 +1044,52 @@
         "photo": "Fotografías del atardecer con la silueta de Biyangdo; el color turquesa es más intenso al mediodía bajo la luz solar directa",
         "facilities": "Varias cafeterías a lo largo del paseo marítimo; tiendas de conveniencia",
         "tip": "Combinar con el Parque Hallim (5 min a pie); evitar los fines de semana de verano para menos aglomeraciones"
-      }
+      },
+      "images": [
+        "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+        "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+        "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+          "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
+          "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 1",
+          "alt": "Playa Hyeopjae + franja de cafés de la costa oeste — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+          "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
+          "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 2",
+          "alt": "Playa Hyeopjae + franja de cafés de la costa oeste — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+          "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
+          "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 3",
+          "alt": "Playa Hyeopjae + franja de cafés de la costa oeste — gallery image 3"
+        }
+      ]
     },
     {
       "number": 9,
@@ -1453,8 +1955,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Del Humedal 1100 a Jusangjeolli, campos de té y cafeterías frente al mar —",
-        "headlineLine2": "El oeste y el sur de Jeju, en un día auténtico y bien dosificado",
+        "headlineLine1": "Jeju Oeste-Sur",
+        "headlineLine2": "Auténtico",
         "hero": {
           "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
           "imagePosition": "center 35%",
@@ -1638,7 +2140,7 @@
             "name": "Humedal de Altitud 1100 de Hallasan (UNESCO)",
             "category": "Humedal UNESCO",
             "description": "Uno de los puntos más altos accesibles del Hallasan, a 1.100 m de altitud. El humedal es un sitio designado por la Convención Ramsar y forma parte de la Reserva de la Biosfera UNESCO de Hallasan. Un sendero de madera en bucle (≈ 1 km llano) permite a los visitantes recorrer el ecosistema de alta montaña sin necesidad de senderismo exigente. El trayecto por la Carretera 1100 es también un atractivo paisajístico — la ruta puede modificarse por nevadas intensas o cierres viales.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "highlights": [
               "Altitud de 1.100 m",
               "Humedal de la Convención Ramsar",
@@ -1674,16 +2176,49 @@
               "note": "Operational details based on national park info"
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-              "https://images.unsplash.com/photo-1672306145001-a9a193ed5573?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1579677475701-5c1cc28581ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1732446402420-36f8e1a31ca9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1648467179706-bb1617dddb81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1635252273211-d0d5fb502c8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1676377962839-8fb92dfa4fd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1615129718947-5de7ddb45143?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1634641683828-73bd90bd9503?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1621844143414-f1d0bb21702e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+                "location": "Humedal de Altitud 1100 de Hallasan (UNESCO)",
+                "caption": "Humedal de Altitud 1100 de Hallasan (UNESCO) — photo 1",
+                "alt": "Humedal de Altitud 1100 de Hallasan (UNESCO) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+                "location": "Humedal de Altitud 1100 de Hallasan (UNESCO)",
+                "caption": "Humedal de Altitud 1100 de Hallasan (UNESCO) — photo 2",
+                "alt": "Humedal de Altitud 1100 de Hallasan (UNESCO) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "location": "Humedal de Altitud 1100 de Hallasan (UNESCO)",
+                "caption": "Humedal de Altitud 1100 de Hallasan (UNESCO) — photo 3",
+                "alt": "Humedal de Altitud 1100 de Hallasan (UNESCO) — gallery image 3"
+              }
             ]
           },
           {
@@ -1693,7 +2228,7 @@
             "name": "Acantilado Jusangjeolli (Geoparque UNESCO)",
             "category": "Acantilado del Geoparque UNESCO",
             "description": "Acantilados de lava columnar hexagonal a lo largo de la costa sur de Jeju — formados cuando los flujos de lava del Hallasan se enfriaron rápidamente al contacto con el mar. La pared acantilada de geometría regular es uno de los elementos costeros más fotografiados de Corea y forma parte del Geoparque Mundial UNESCO de Jeju. Pasarelas con barandillas; caminata llana con miradores salpicados por el oleaje.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
             "highlights": [
               "Columnas de lava hexagonales",
               "Geoparque Mundial UNESCO",
@@ -1731,16 +2266,62 @@
               "verified_date": "2026-04-27"
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-              "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1772268354899-1f3bf5014b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1739932413542-dc2597d7d764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+                "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 1",
+                "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+                "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 2",
+                "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+                "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 3",
+                "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+                "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 4",
+                "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 4"
+              }
             ]
           },
           {
@@ -1822,7 +2403,7 @@
             "name": "Cascada de Cheonjeyeon (Estanque de los Dioses)",
             "category": "Cascada",
             "description": "Una cascada de tres niveles en un valle volcánico boscoso, conocida localmente como el «Estanque de los Dioses». La leyenda cuenta que siete ninfas celestiales descienden del cielo para bañarse en el estanque superior. El puente Seonimgyo, sobre el barranco, está decorado con tallas de las siete ninfas.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
             "highlights": [
               "Cascada de tres niveles",
               "Leyenda de las siete ninfas",
@@ -1860,7 +2441,52 @@
                 "World-of-Waterfalls"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "location": "Cascada de Cheonjeyeon (Estanque de los Dioses)",
+                "caption": "Cascada de Cheonjeyeon (Estanque de los Dioses) — photo 1",
+                "alt": "Cascada de Cheonjeyeon (Estanque de los Dioses) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "location": "Cascada de Cheonjeyeon (Estanque de los Dioses)",
+                "caption": "Cascada de Cheonjeyeon (Estanque de los Dioses) — photo 2",
+                "alt": "Cascada de Cheonjeyeon (Estanque de los Dioses) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "location": "Cascada de Cheonjeyeon (Estanque de los Dioses)",
+                "caption": "Cascada de Cheonjeyeon (Estanque de los Dioses) — photo 3",
+                "alt": "Cascada de Cheonjeyeon (Estanque de los Dioses) — gallery image 3"
+              }
+            ]
           },
           {
             "number": 7,
@@ -1869,7 +2495,7 @@
             "name": "Museo del Té O'sulloc + Campos de Té Verde",
             "category": "Museo de Cultura del Té",
             "description": "La icónica finca de té verde de Jeju, fundada en 1979. El museo repasa la cultura tetera coreana; los campos de té circundantes son un escenario fotográfico emblemático. Entrada gratuita. La cafetería del recinto sirve helado de té verde, pasteles de hojas de té y lattes de matcha.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
             "highlights": [
               "Museo de cultura del té coreano",
               "Escenario fotográfico en los campos de té verde",
@@ -1906,7 +2532,169 @@
                 ""
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "location": "Museo del Té O'sulloc + Campos de Té Verde",
+                "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 1",
+                "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "location": "Museo del Té O'sulloc + Campos de Té Verde",
+                "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 2",
+                "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "location": "Museo del Té O'sulloc + Campos de Té Verde",
+                "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 3",
+                "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "location": "Museo del Té O'sulloc + Campos de Té Verde",
+                "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 4",
+                "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "location": "Museo del Té O'sulloc + Campos de Té Verde",
+                "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 5",
+                "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "location": "Museo del Té O'sulloc + Campos de Té Verde",
+                "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 6",
+                "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "location": "Museo del Té O'sulloc + Campos de Té Verde",
+                "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 7",
+                "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "location": "Museo del Té O'sulloc + Campos de Té Verde",
+                "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 8",
+                "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "location": "Museo del Té O'sulloc + Campos de Té Verde",
+                "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 9",
+                "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "location": "Museo del Té O'sulloc + Campos de Té Verde",
+                "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 10",
+                "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "location": "Museo del Té O'sulloc + Campos de Té Verde",
+                "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 11",
+                "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 11"
+              },
+              {
+                "id": 12,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "location": "Museo del Té O'sulloc + Campos de Té Verde",
+                "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 12",
+                "alt": "Museo del Té O'sulloc + Campos de Té Verde — gallery image 12"
+              }
+            ]
           },
           {
             "number": 8,
@@ -1915,7 +2703,7 @@
             "name": "Playa de Hyeopjae + franja de cafeterías de la costa oeste",
             "category": "Playa de Arena Blanca",
             "description": "La parada final y el momento de 'ambiente de cafetería' que define la ruta. La playa de Hyeopjae es una de las playas de arena blanca más fotografiadas de Jeju, con vistas a la isla de Biyangdo en el mar. La franja de cafeterías adyacente — conocida localmente como el distrito de cafeterías de Hyeopjae o Geumneung — es uno de los conjuntos de cafeterías costeras más queridos de Jeju. Tiempo libre para tomar un café al atardecer o un helado antes del regreso en coche a la ciudad de Jeju.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "highlights": [
               "Playa de arena blanca + vistas a Biyangdo",
               "Franja de cafeterías de la costa oeste",
@@ -1949,7 +2737,52 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated visitor info"
-            }
+            },
+            "images": [
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+                "location": "Playa de Hyeopjae + franja de cafeterías de la costa oeste",
+                "caption": "Playa de Hyeopjae + franja de cafeterías de la costa oeste — photo 1",
+                "alt": "Playa de Hyeopjae + franja de cafeterías de la costa oeste — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+                "location": "Playa de Hyeopjae + franja de cafeterías de la costa oeste",
+                "caption": "Playa de Hyeopjae + franja de cafeterías de la costa oeste — photo 2",
+                "alt": "Playa de Hyeopjae + franja de cafeterías de la costa oeste — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+                "location": "Playa de Hyeopjae + franja de cafeterías de la costa oeste",
+                "caption": "Playa de Hyeopjae + franja de cafeterías de la costa oeste — photo 3",
+                "alt": "Playa de Hyeopjae + franja de cafeterías de la costa oeste — gallery image 3"
+              }
+            ]
           },
           {
             "number": 9,

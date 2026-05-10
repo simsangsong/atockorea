@@ -20,7 +20,7 @@
   },
   "catalog_card": {
     "slug": "east-signature-nature-core",
-    "title": "東済州火山・海岸・民俗村少人数日帰りツアー",
+    "title": "東済州：火山・海岸・民俗村",
     "subtitle": "石の文化から海岸、城山日出峰まで — 東済州で最もバランスの良い初訪問者向けルート",
     "region": "東済州",
     "duration": "8時間",
@@ -44,8 +44,8 @@
       "初めてでも安心"
     ]
   },
-  "headlineLine1": "東済州の火山、海岸",
-  "headlineLine2": "そして民俗村 — 少人数日帰りツアー",
+  "headlineLine1": "東済州",
+  "headlineLine2": "火山・海岸・民俗村",
   "price": {
     "amountLabel": "58",
     "currency": "USD",
@@ -1665,8 +1665,8 @@
       "id": "hero",
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "東済州の火山、海岸",
-        "headlineLine2": "そして民俗村 — 少人数日帰りツアー",
+        "headlineLine1": "東済州",
+        "headlineLine2": "火山・海岸・民俗村",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80",
           "imagePosition": "center 35%",

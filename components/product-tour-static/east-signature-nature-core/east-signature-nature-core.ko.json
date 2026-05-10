@@ -20,7 +20,7 @@
   },
   "catalog_card": {
     "slug": "east-signature-nature-core",
-    "title": "제주 동부 화산·해안·민속마을 소그룹 일일 투어",
+    "title": "제주 동부: 화산·해안·민속마을",
     "subtitle": "제주돌문화공원을 시작으로 성산일출봉까지, 첫 방문자를 위한 제주 동부 균형 코스를 소그룹으로 이동합니다.",
     "region": "동제주",
     "duration": "8시간",
@@ -44,8 +44,8 @@
       "첫 방문 추천"
     ]
   },
-  "headlineLine1": "제주 동부 화산, 해안",
-  "headlineLine2": "그리고 민속마을 소그룹 투어",
+  "headlineLine1": "제주 동부",
+  "headlineLine2": "화산·해안·민속마을",
   "price": {
     "amountLabel": "58",
     "currency": "USD",
@@ -1658,8 +1658,8 @@
       "id": "hero",
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "제주 동부 화산, 해안",
-        "headlineLine2": "그리고 민속마을 소그룹 투어",
+        "headlineLine1": "제주 동부",
+        "headlineLine2": "화산·해안·민속마을",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80",
           "imagePosition": "center 35%",

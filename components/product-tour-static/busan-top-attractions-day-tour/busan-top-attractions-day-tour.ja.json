@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "釜山 人気観光地 小グループ 日帰りツアー | AtoC Korea",
     "metaDescription": "10.5時間の釜山小グループ定番ツアー：海東龍宮寺、チョンサポ・ブルーライン、国連記念公園、甘川文化村、チャガルチ市場。乗車場所3か所。",
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+    "ogImage": "https://www.atockorea.com/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
     "primaryKeywords": [
       "釜山日帰りツアー",
       "海東龍宮寺",
@@ -18,7 +18,7 @@
   },
   "catalog_card": {
     "slug": "busan-top-attractions-day-tour",
-    "title": "釜山 人気観光地 1日小グループツアー",
+    "title": "釜山トップ観光地・日帰りツアー",
     "subtitle": "乗車場所3か所で、1日バランスよく巡る釜山の定番7スポットツアー。",
     "region": "釜山",
     "duration": "10.5時間",
@@ -31,8 +31,8 @@
       "釜山定番",
       "通年催行"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+    "heroImage": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+    "thumbnail": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
     "priceLabel": "",
     "shortCardDescription": "釜山の定番スポットを巡る1日7か所の小グループツアー：海辺に立つ海東龍宮寺、チョンサポ＆ブルーラインパーク（スカイカプセルはオプション）、釜山の地元ランチ、国連記念公園、甘川文化村の色鮮やかな丘の街並み、チャガルチ魚市場。釜山中心部の3か所から乗車可能。公認英語ガイド付き、ミニコーチ（最大約12名）。各観光地の入場料は無料。ランチとオプション券のみ当日払い。",
     "tags": [
@@ -43,8 +43,8 @@
       "year_round"
     ]
   },
-  "headlineLine1": "海辺の寺院、ブルーラインの海岸、色彩豊かな丘、魚市場 —",
-  "headlineLine2": "バランスの取れた1日で巡る釜山の定番7スポット",
+  "headlineLine1": "釜山トップ観光地・日帰りツアー",
+  "headlineLine2": "ツアー",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -52,7 +52,7 @@
     "priceNote": ""
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+    "imageUrl": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
     "imagePosition": "center 40%",
     "tagline": "小グループで1日で回る、釜山で最もリクエストの多い7か所",
     "pills": [
@@ -130,58 +130,116 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
-      "alt": "海東龍宮寺の、東海を見下ろす断崖に立つ仏教寺院の建物群",
-      "caption": "海東龍宮寺 — 1376年創建の基盤の上に1930年代に再建された、韓国で最も個性的な海辺の寺院。",
-      "location": "海東龍宮寺、機張郡",
-      "atmosphere": "波しぶき、花崗岩の断崖、線香の香り"
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — on-route photo",
+      "caption": "海東龍宮寺"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/61/2702561_image2_1.JPG",
-      "alt": "広い砂浜の脇を沿岸の線路上に走るオープンエアのビーチトレイン",
-      "caption": "チョンサポ・ブルーラインパーク — 1934年に敷設された鉄道を2020年に全長4.8kmの海岸沿いビーチトレインコリドーとして転用した施設。",
-      "location": "チョンサポ・ブルーラインパーク、海雲台",
-      "atmosphere": "開けた海岸、穏やかな風、列車の汽笛"
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+      "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+      "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — gallery image 1",
+      "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "location": "韓国国連記念公園",
+      "alt": "韓国国連記念公園 — gallery image 1",
+      "caption": "韓国国連記念公園 — photo 1"
+    },
+    {
+      "id": 4,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
-      "alt": "国連記念公園に整然と並ぶ統一された墓石",
-      "caption": "国連記念公園 — 21カ国の兵士2,300人以上が眠る、世界で唯一の国連墓地。",
-      "location": "国連記念公園、南区",
-      "atmosphere": "静寂、厳粛、瞑想的"
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
     },
     {
-      "id": "g4",
+      "id": 5,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
-      "alt": "甘川文化村の丘の斜面を流れ落ちるように広がるパステルカラーの家々",
-      "caption": "甘川文化村 — 戦後の難民集落を2009年にパブリックアートプロジェクトとして生まれ変わらせた地区。",
-      "location": "甘川文化村、沙下区",
-      "atmosphere": "鮮やかなパステルカラー、細い路地、丘を上る階段"
+      "location": "ジャガルチ水産市場",
+      "alt": "ジャガルチ水産市場 — on-route photo",
+      "caption": "ジャガルチ水産市場"
     },
     {
-      "id": "g5",
+      "id": 6,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
-      "alt": "チャガルチ市場に氷の上にずらりと並ぶ新鮮な海産物",
-      "caption": "チャガルチ — 複数の世代にわたって主に女性たちが営む、韓国最大の海産物市場。",
-      "location": "チャガルチ市場、中区",
-      "atmosphere": "活魚の水槽、市場の喧騒、潮の香り"
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+      "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+      "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — gallery image 2",
+      "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — photo 2"
     },
     {
-      "id": "g6",
+      "id": 7,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/29/2617829_image2_1.JPG",
-      "alt": "釜山の食堂のテーブルに小鉢の副菜とともに並んだデジグクパプ（豚汁ご飯）の丼",
-      "caption": "ランチは地元の味 — 釜山の食堂でデジグクパプ、ミルミョン（小麦麺）、または海鮮チヂミを。",
-      "location": "釜山の地元食堂",
-      "atmosphere": "手軽で飾らない、地域ならではの味"
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+      "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+      "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — gallery image 3",
+      "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+      "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+      "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — gallery image 4",
+      "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+      "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+      "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — gallery image 5",
+      "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — photo 5"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+      "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+      "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — gallery image 6",
+      "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — photo 6"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+      "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+      "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — gallery image 7",
+      "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — photo 7"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+      "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+      "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — gallery image 8",
+      "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — photo 8"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+      "location": "韓国国連記念公園",
+      "alt": "韓国国連記念公園 — gallery image 2",
+      "caption": "韓国国連記念公園 — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+      "location": "韓国国連記念公園",
+      "alt": "韓国国連記念公園 — gallery image 3",
+      "caption": "韓国国連記念公園 — photo 3"
     }
   ],
   "itineraryStops": [
@@ -332,7 +390,117 @@
           "Busan Metropolitan City Tourism"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/61/2702561_image2_1.JPG"
+      "image": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+      "images": [
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+          "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+          "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — photo 1",
+          "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+          "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+          "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — photo 2",
+          "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+          "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — photo 3",
+          "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+          "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+          "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — photo 4",
+          "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+          "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — photo 5",
+          "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+          "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+          "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — photo 6",
+          "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+          "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+          "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — photo 7",
+          "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+          "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+          "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — photo 8",
+          "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。 — gallery image 8"
+        }
+      ]
     },
     {
       "number": 4,
@@ -422,7 +590,52 @@
           "UN Memorial Cemetery in Korea Official Site"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG"
+      "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "images": [
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 1",
+          "alt": "韓国国連記念公園 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 2",
+          "alt": "韓国国連記念公園 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 3",
+          "alt": "韓国国連記念公園 — gallery image 3"
+        }
+      ]
     },
     {
       "number": 6,
@@ -1206,8 +1419,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "海辺の寺院、ブルーラインの海岸、色彩豊かな丘、魚市場 —",
-        "headlineLine2": "釜山の7スポットを一日でめぐる、バランスの取れた定番ツアー",
+        "headlineLine1": "釜山トップ観光地・日帰りツアー",
+        "headlineLine2": "ツアー",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
           "imagePosition": "center 40%",
@@ -1407,7 +1620,7 @@
             "duration": "60分",
             "name": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク",
             "category": "海岸＆ビーチトレイン",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/61/2702561_image2_1.JPG",
+            "image": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
             "description": "東海南部線（1934年から運行していた釜山・東海岸の旧鉄道路線で、2013年に旅客営業を廃止）は、海雲台ブルーラインパークとして整備されました。美浦（海雲台）と松亭を結ぶ全長4.8kmの海岸沿いの遊歩道＆トラム路線で、2020年10月に開業しています。2種類の有料トラムが運行しています：ビーチトレイン（往復₩7,000、幅の広いオープンエアの車両、随時運行）とスカイカプセル（高架上を走る4人乗りガラス張りカプセル、最大4名で1カプセルあたり₩30,000〜₩35,000の片道料金。週末は売り切れることが多いため2〜3日前の予約を推奨）。中間地点の青沙浦は、岩場の上にガラス張りの展望デッキが設けられた小さな漁村です。この地点での滞在時間は海岸散策約45分＋村の散策約15分；トラム乗車はオプションであり、料金はツアーに含まれていません。",
             "timeUsed": [
               "海岸沿いの散策と展望スポット",
@@ -1420,7 +1633,117 @@
               "fee_krw": 0,
               "optional_beach_train_krw": 7000,
               "optional_sky_capsule_krw_per_capsule": 30000
-            }
+            },
+            "images": [
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+                "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク",
+                "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク — photo 1",
+                "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+                "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク",
+                "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク — photo 2",
+                "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+                "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク",
+                "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク — photo 3",
+                "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+                "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク",
+                "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク — photo 4",
+                "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク",
+                "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク — photo 5",
+                "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+                "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク",
+                "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク — photo 6",
+                "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+                "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク",
+                "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク — photo 7",
+                "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+                "location": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク",
+                "caption": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク — photo 8",
+                "alt": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク — gallery image 8"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1446,7 +1769,7 @@
             "duration": "60分",
             "name": "国連記念公園",
             "category": "記念施設",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "世界で唯一の国連墓地で、朝鮮戦争中の1951年に設立され、1955年に国連総会によって恒久的な国連施設としての地位が付与されました。国連軍の指揮下で戦った21か国の兵士2,300名以上が眠っており、イギリス・トルコ・カナダ・オーストラリアからの戦没者数が最も多くなっています。記念館には多言語対応の展示があり、追悼の壁には国連軍の全戦没者40,896名の名前が刻まれています。毎日10:00に旗の式典が行われますが、このルートでは間に合わない場合があります。静粛で荘厳な敷地内では、適切な服装と静かな言動が求められます。入場無料；韓国の旧正月（ソルラル）およびチュソク（秋夕）は休園。",
             "timeUsed": [
               "追悼の散策",
@@ -1457,7 +1780,52 @@
               "poi_key": "un_memorial_cemetery",
               "is_attraction": true,
               "fee_krw": 0
-            }
+            },
+            "images": [
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+                "location": "国連記念公園",
+                "caption": "国連記念公園 — photo 1",
+                "alt": "国連記念公園 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+                "location": "国連記念公園",
+                "caption": "国連記念公園 — photo 2",
+                "alt": "国連記念公園 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+                "location": "国連記念公園",
+                "caption": "国連記念公園 — photo 3",
+                "alt": "国連記念公園 — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,

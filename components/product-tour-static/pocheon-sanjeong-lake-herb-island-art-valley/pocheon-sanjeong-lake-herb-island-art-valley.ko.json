@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "포천 당일 여행: 호수, 허브아일랜드 & 아트밸리 | AtoC Korea",
     "metaDescription": "서울에서 출발하는 여유로운 포천 10시간 당일 여행: 산정호수 트레일, 지중해풍 허브아일랜드, 에메랄드빛 천주호 위를 달리는 아트밸리 모노레일.",
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "primaryKeywords": [
       "서울 출발 포천 당일 투어",
       "산정호수 투어",
@@ -19,7 +19,7 @@
   },
   "catalog_card": {
     "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-    "title": "포천 당일 여행: 산정호수, 허브아일랜드 & 포천 아트밸리",
+    "title": "포천: 산정호수·허브아일랜드·아트밸리",
     "subtitle": "산속 호수, 지중해풍 허브 정원, 채석장이 변신한 아트파크—서울에서 떠나는 가장 여유로운 계절 당일 여행.",
     "region": "포천 (서울 당일 여행)",
     "duration": "10시간",
@@ -31,8 +31,8 @@
       "계절별 볼거리",
       "낭만적인 야간 조명"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+    "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "priceLabel": "",
     "shortCardDescription": "호수, 허브 정원, 그리고 인상적인 아트파크 풍경으로 유명한 경기도 포천으로 떠나는 여유로운 계절 당일 여행. 산으로 둘러싸인 산정호수, 지중해풍 정원과 야간 조명이 매력적인 허브아일랜드, 모노레일로 오르는 포천 아트밸리 채석장 전망대를 차례로 둘러봅니다. 남이섬보다 한적하며, 명소를 빠르게 도는 것이 아닌 사진 중심의 여유로운 일정으로 구성되어 있습니다.",
     "tags": [
@@ -41,8 +41,8 @@
       "romantic_evening_lights"
     ]
   },
-  "headlineLine1": "포천 당일 여행: 산정호수,",
-  "headlineLine2": "허브아일랜드 & 아트밸리",
+  "headlineLine1": "포천",
+  "headlineLine2": "산정호수·허브아일랜드·아트밸리",
   "price": {
     "amountLabel": "",
     "originalPriceUsd": null,
@@ -54,7 +54,7 @@
     "priceNote": ""
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+    "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "imagePosition": "center 50%",
     "tagline": "산속 호수, 지중해풍 허브 마을, 그리고 화강암 채석장이 변신한 아트파크—서울 당일 여행으로 즐기는 포천의 가장 아름답고 포토제닉한 세 곳.",
     "pills": [
@@ -132,49 +132,60 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
-      "alt": "흰 벽과 허브 화단, 계절별 라벤더 전시가 어우러진 지중해풍 정원 구역",
-      "caption": "허브아일랜드 지중해 허브 정원 (포천)",
-      "location": "허브아일랜드",
-      "atmosphere": "계절별 라벤더, 데이지, 핑크뮬리가 가득한 지중해풍 허브 정원"
-    },
-    {
-      "id": "g2",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG",
-      "alt": "산으로 둘러싸인 호수, 평탄한 호숫가 산책로와 수면에 비친 숲 절벽",
-      "caption": "명성산 산정호수 (포천)",
+      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "location": "산정호수",
-      "atmosphere": "산책로와 호숫가 카페가 있는 산으로 둘러싸인 호수"
+      "alt": "산정호수 — gallery image 1",
+      "caption": "산정호수 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG",
-      "alt": "깎아지른 화강암 절벽으로 둘러싸인 에메랄드빛 채석장 호수",
-      "caption": "포천 아트밸리 채석장 내 천주호",
+      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+      "location": "포천 허브아일랜드",
+      "alt": "포천 허브아일랜드 — gallery image 1",
+      "caption": "포천 허브아일랜드 — photo 1"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
       "location": "포천 아트밸리",
-      "atmosphere": "옛 화강암 채석장 안의 에메랄드빛 천주호"
+      "alt": "포천 아트밸리 — gallery image 1",
+      "caption": "포천 아트밸리 — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/01/2791401_image2_1.JPG",
-      "alt": "줄전구와 테마 조형물로 빛나는 저녁의 정원 산책로",
-      "caption": "허브아일랜드 빛 축제 저녁 (연중 산타마을 구역)",
-      "location": "허브아일랜드 저녁 조명",
-      "atmosphere": "일몰 후 낭만적인 빛 전시"
+      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+      "location": "산정호수",
+      "alt": "산정호수 — gallery image 2",
+      "caption": "산정호수 — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
-      "alt": "바위 턱을 타고 웅덩이로 떨어지는 숲속 폭포",
-      "caption": "비둘기낭 폭포 — 포천 인근 계절 대체 방문지",
-      "location": "비둘기낭 폭포",
-      "atmosphere": "루트의 계절 버전에서 선택적 폭포 방문"
+      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+      "location": "포천 허브아일랜드",
+      "alt": "포천 허브아일랜드 — gallery image 2",
+      "caption": "포천 허브아일랜드 — photo 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+      "location": "포천 허브아일랜드",
+      "alt": "포천 허브아일랜드 — gallery image 3",
+      "caption": "포천 허브아일랜드 — photo 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+      "location": "포천 아트밸리",
+      "alt": "포천 아트밸리 — gallery image 2",
+      "caption": "포천 아트밸리 — photo 2"
     }
   ],
   "itineraryStops": [
@@ -233,7 +244,39 @@
           "NamuWiki (en.namu.wiki/w/산정호수 — Korean-language verified facts on construction date + depth + 1945-armistice administrative history)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG"
+      "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "images": [
+        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "location": "산정호수",
+          "caption": "산정호수 — photo 1",
+          "alt": "산정호수 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "location": "산정호수",
+          "caption": "산정호수 — photo 2",
+          "alt": "산정호수 — gallery image 2"
+        }
+      ]
     },
     {
       "number": 2,
@@ -291,7 +334,52 @@
           "Visit Gyeonggi (ggtour.or.kr — provincial tourism portal on Pocheon herb-themed attraction cluster)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG"
+      "image": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+      "images": [
+        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+          "location": "포천 허브아일랜드",
+          "caption": "포천 허브아일랜드 — photo 1",
+          "alt": "포천 허브아일랜드 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+          "location": "포천 허브아일랜드",
+          "caption": "포천 허브아일랜드 — photo 2",
+          "alt": "포천 허브아일랜드 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+          "location": "포천 허브아일랜드",
+          "caption": "포천 허브아일랜드 — photo 3",
+          "alt": "포천 허브아일랜드 — gallery image 3"
+        }
+      ]
     },
     {
       "number": 3,
@@ -350,7 +438,39 @@
           "Inquirer Lifestyle / Korea Times (Cheong Wa Dae + National Assembly + Incheon Airport granite-source historical reporting)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG"
+      "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+      "images": [
+        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "location": "포천 아트밸리",
+          "caption": "포천 아트밸리 — photo 1",
+          "alt": "포천 아트밸리 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "location": "포천 아트밸리",
+          "caption": "포천 아트밸리 — photo 2",
+          "alt": "포천 아트밸리 — gallery image 2"
+        }
+      ]
     }
   ],
   "routeFlowStops": [
@@ -1009,8 +1129,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "포천 당일치기: 산정호수,",
-        "headlineLine2": "허브 아일랜드 & 아트 밸리",
+        "headlineLine1": "포천",
+        "headlineLine2": "산정호수·허브아일랜드·아트밸리",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
           "imagePosition": "center 50%",
@@ -1170,7 +1290,7 @@
             "name": "산정호수",
             "category": "산으로 둘러싸인 산책 호수",
             "description": "산정호수(산정호)는 명성산 기슭에 위치한 인공 호수로, 웅장한 절벽과 울창한 숲으로 둘러싸여 있습니다. 둘레 4킬로미터의 산책로는 경기도에서 가장 사랑받는 완만한 산책 코스 중 하나로, 호숫가 카페, 오리 모양 페달 보트, 소규모 놀이 시설을 갖추고 있습니다. 가을에는 주변의 은빛 억새가 황금빛으로 물들고, 겨울에는 얼어붙은 호수에서 오리썰매와 얼음 놀이를 즐길 수 있습니다.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG",
+            "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "highlights": [
               "고도 변화가 거의 없는 4km 호숫가 산책로",
               "산으로 둘러싸인 경치와 현장 카페",
@@ -1205,7 +1325,39 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated visitor info"
-            }
+            },
+            "images": [
+              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "location": "산정호수",
+                "caption": "산정호수 — photo 1",
+                "alt": "산정호수 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "location": "산정호수",
+                "caption": "산정호수 — photo 2",
+                "alt": "산정호수 — gallery image 2"
+              }
+            ]
           },
           {
             "number": 2,
@@ -1214,7 +1366,7 @@
             "name": "허브아일랜드",
             "category": "지중해풍 허브 식물원",
             "description": "한국 최대의 허브 테마 식물원으로, 흰 벽과 올리브 나무, 테마별 정원 구역을 갖춰 지중해 마을 분위기로 설계되었습니다. 140여 종 이상의 허브가 정원 곳곳에 자라고 있으며, 원내에서는 향수 만들기, 캔들 만들기, 허브 빵 베이커리 체험이 가능합니다. 해가 진 후에는 허브아일랜드가 낭만적인 빛의 공간으로 변신하며, 연중 운영되는 유명한 '산타마을'을 만날 수 있습니다.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+            "image": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
             "highlights": [
               "허브 정원과 함께하는 지중해풍 마을 분위기",
               "계절별 꽃 전시: 라벤더, 데이지, 핑크뮬리",
@@ -1249,7 +1401,52 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated tour info"
-            }
+            },
+            "images": [
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+                "location": "허브아일랜드",
+                "caption": "허브아일랜드 — photo 1",
+                "alt": "허브아일랜드 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+                "location": "허브아일랜드",
+                "caption": "허브아일랜드 — photo 2",
+                "alt": "허브아일랜드 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+                "location": "허브아일랜드",
+                "caption": "허브아일랜드 — photo 3",
+                "alt": "허브아일랜드 — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1258,7 +1455,7 @@
             "name": "포천 아트밸리",
             "category": "모노레일이 있는 채석장 아트파크",
             "description": "과거 화강암 채석장을 예술과 자연이 어우러진 공원으로 탈바꿈한 곳입니다. 모노레일을 타고 언덕을 오르면 옛 채석장 벽 안에 자리한 에메랄드빛 호수 천주호와 조각 설치 작품들, 전망대를 만날 수 있습니다. 웅장한 절벽과 호수의 영화 같은 풍경 덕분에 수많은 드라마와 뮤직비디오의 촬영지로 등장했습니다.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG",
+            "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
             "highlights": [
               "채석장 전망대까지 모노레일 탑승",
               "천주호: 극적인 절벽 사이에 펼쳐진 에메랄드빛 호수",
@@ -1297,7 +1494,39 @@
                 "Soul of Seoul"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "location": "포천 아트밸리",
+                "caption": "포천 아트밸리 — photo 1",
+                "alt": "포천 아트밸리 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "location": "포천 아트밸리",
+                "caption": "포천 아트밸리 — photo 2",
+                "alt": "포천 아트밸리 — gallery image 2"
+              }
+            ]
           }
         ]
       }

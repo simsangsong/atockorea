@@ -14,11 +14,11 @@
       "Tour en crucero por Taejongdae",
       "Tour por el Mercado de Jagalchi"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG"
+    "ogImage": "https://www.atockorea.com/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp"
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
-    "title": "Tour turístico en grupo pequeño por Busan para pasajeros de crucero",
+    "thumbnail": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "title": "Busan Crucero: Grupo Pequeño",
     "priceLabel": "",
     "shortCardDescription": "Tour de día en furgoneta compartida desde la terminal de cruceros de Busan que incluye las cinco paradas más solicitadas de la ciudad en una ventana de 9 horas: Cementerio Memorial de la ONU (contexto de la Guerra de Corea), acantilados costeros de Taejongdae, almuerzo en un restaurante local de Busan, Pueblo Cultural de Gamcheon (la ladera pintada), Parque Yongdusan con observatorio opcional en la Torre de Busan, y Mercado de Jagalchi. Recogida coordinada con el desembarco específico de su barco. Guía certificado con habla inglesa y china.",
     "tags": [
@@ -41,10 +41,10 @@
       "Recogida en el puerto",
       "Ventana de 9 horas"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG"
+    "heroImage": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp"
   },
-  "headlineLine1": "Del puerto de cruceros a los callejones pintados, del mercado al memorial —",
-  "headlineLine2": "El circuito estrella de Busan en un único día en furgoneta compartida",
+  "headlineLine1": "Busan Crucero",
+  "headlineLine2": "Grupo Pequeño",
   "price": {
     "amountLabel": "",
     "originalPriceUsd": null,
@@ -56,7 +56,7 @@
     "priceNote": ""
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+    "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
     "imagePosition": "center 35%",
     "tagline": "Cinco lugares emblemáticos de Busan coordinados con el horario de su barco, en una furgoneta compartida con otros cruceristas",
     "pills": [
@@ -134,49 +134,132 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
-      "alt": "Casas de colores que se despliegan en cascada por la ladera de una colina en el Pueblo Cultural de Gamcheon",
-      "caption": "Pueblo Cultural de Gamcheon — pintado en 2009 como parte de la renovación de arte público de Busan en el barrio de refugiados de posguerra.",
-      "location": "Pueblo Cultural de Gamcheon, Saha-gu",
-      "atmosphere": "Colores pastel brillantes, callejones estrechos, escaleras en la ladera"
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "location": "Cementerio Memorial de la ONU (Guerra de Corea)",
+      "alt": "Cementerio Memorial de la ONU (Guerra de Corea) — gallery image 1",
+      "caption": "Cementerio Memorial de la ONU (Guerra de Corea) — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
-      "alt": "Acantilados costeros con un faro blanco en el horizonte",
-      "caption": "Parque costero de Taejongdae, extremo sur de la isla de Yeongdo. La isla Tsushima es visible en días despejados de invierno.",
-      "location": "Taejongdae, Yeongdo-gu",
-      "atmosphere": "Océano abierto, borde del acantilado, brisa marina"
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+      "location": "Acantilados costeros de Taejongdae",
+      "alt": "Acantilados costeros de Taejongdae — gallery image 1",
+      "caption": "Acantilados costeros de Taejongdae — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
-      "alt": "Filas de lápidas blancas idénticas con banderas nacionales en el Cementerio Memorial de las Naciones Unidas",
-      "caption": "Cementerio Memorial de las Naciones Unidas — el único cementerio de la ONU en el mundo, con más de 2.300 tumbas de soldados de 21 naciones.",
-      "location": "Cementerio Memorial de las Naciones Unidas, Nam-gu",
-      "atmosphere": "Tranquilo, formal, contemplativo"
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "Aldea Cultural de Gamcheon",
+      "alt": "Aldea Cultural de Gamcheon — gallery image 1",
+      "caption": "Aldea Cultural de Gamcheon — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+      "location": "Parque Yongdusan y Torre de Busan",
+      "alt": "Parque Yongdusan y Torre de Busan — gallery image 1",
+      "caption": "Parque Yongdusan y Torre de Busan — photo 1"
+    },
+    {
+      "id": 5,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
-      "alt": "Vendedores del Mercado Jagalchi con exhibiciones de pescado fresco sobre hielo",
-      "caption": "Mercado Jagalchi — el mercado de mariscos más grande de Corea, en funcionamiento desde 1889 en el paseo marítimo de Busan.",
-      "location": "Mercado Jagalchi, Jung-gu",
-      "atmosphere": "Puestos de pescado vivo, bullicio animado del mercado, restaurantes en el segundo piso"
+      "location": "Nampo-dong y Mercado de Pescado Jagalchi",
+      "alt": "Nampo-dong y Mercado de Pescado Jagalchi — on-route photo",
+      "caption": "Nampo-dong y Mercado de Pescado Jagalchi"
     },
     {
-      "id": "g5",
+      "id": 6,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
-      "alt": "La Torre de Busan se eleva sobre los pinos del Parque Yongdusan y el horizonte urbano de edificios de mediana altura",
-      "caption": "Parque Yongdusan y Torre de Busan (120 m, construida en 1973) — el mirador del centro de Busan.",
-      "location": "Parque Yongdusan, Jung-gu",
-      "atmosphere": "Cima cubierta de pinos, vistas panorámicas de la ciudad"
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+      "location": "Cementerio Memorial de la ONU (Guerra de Corea)",
+      "alt": "Cementerio Memorial de la ONU (Guerra de Corea) — gallery image 2",
+      "caption": "Cementerio Memorial de la ONU (Guerra de Corea) — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+      "location": "Cementerio Memorial de la ONU (Guerra de Corea)",
+      "alt": "Cementerio Memorial de la ONU (Guerra de Corea) — gallery image 3",
+      "caption": "Cementerio Memorial de la ONU (Guerra de Corea) — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+      "location": "Acantilados costeros de Taejongdae",
+      "alt": "Acantilados costeros de Taejongdae — gallery image 2",
+      "caption": "Acantilados costeros de Taejongdae — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+      "location": "Acantilados costeros de Taejongdae",
+      "alt": "Acantilados costeros de Taejongdae — gallery image 3",
+      "caption": "Acantilados costeros de Taejongdae — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+      "location": "Acantilados costeros de Taejongdae",
+      "alt": "Acantilados costeros de Taejongdae — gallery image 4",
+      "caption": "Acantilados costeros de Taejongdae — photo 4"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+      "location": "Acantilados costeros de Taejongdae",
+      "alt": "Acantilados costeros de Taejongdae — gallery image 5",
+      "caption": "Acantilados costeros de Taejongdae — photo 5"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+      "location": "Acantilados costeros de Taejongdae",
+      "alt": "Acantilados costeros de Taejongdae — gallery image 6",
+      "caption": "Acantilados costeros de Taejongdae — photo 6"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "Aldea Cultural de Gamcheon",
+      "alt": "Aldea Cultural de Gamcheon — gallery image 2",
+      "caption": "Aldea Cultural de Gamcheon — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+      "location": "Aldea Cultural de Gamcheon",
+      "alt": "Aldea Cultural de Gamcheon — gallery image 3",
+      "caption": "Aldea Cultural de Gamcheon — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+      "location": "Parque Yongdusan y Torre de Busan",
+      "alt": "Parque Yongdusan y Torre de Busan — gallery image 2",
+      "caption": "Parque Yongdusan y Torre de Busan — photo 2"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
+      "location": "Parque Yongdusan y Torre de Busan",
+      "alt": "Parque Yongdusan y Torre de Busan — gallery image 3",
+      "caption": "Parque Yongdusan y Torre de Busan — photo 3"
     }
   ],
   "itineraryStops": [
@@ -246,7 +329,7 @@
           "UN General Assembly Resolution 977(X) (December 15, 1955)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+      "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
       "visitBasics": {
         "hours": "09:00–18:00 (may–sep) / 09:00–17:00 (oct–abr)",
         "closed": "Abierto todo el año (el Salón de Servicios Conmemorativos cierra durante las ceremonias)",
@@ -260,7 +343,52 @@
       "smartNotes": {
         "photo": "**Muro del Recuerdo** (40.896 nombres en 140 paneles de mármol), **Área Simbólica** con las banderas de los 22 países contribuyentes, y el **Monumento de Frank Gaylord a la Guerra de Corea (2013)** — el mismo escultor que el memorial del National Mall de Washington DC. Se permite fotografiar; se solicita guardar silencio respetuoso.",
         "tip": "**Único cementerio de la ONU en el mundo** bajo territorio protegido administrado por la ONU (Resolución 977(X) de la AG de la ONU, 1955). La ceremonia anual **'Vuelta hacia Busan' el 11 de noviembre a las 11:00 a. m.** es la única ocasión en que las 22 banderas de los países contribuyentes descienden al unísono."
-      }
+      },
+      "images": [
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "location": "Cementerio Memorial de la ONU (Guerra de Corea)",
+          "caption": "Cementerio Memorial de la ONU (Guerra de Corea) — photo 1",
+          "alt": "Cementerio Memorial de la ONU (Guerra de Corea) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "location": "Cementerio Memorial de la ONU (Guerra de Corea)",
+          "caption": "Cementerio Memorial de la ONU (Guerra de Corea) — photo 2",
+          "alt": "Cementerio Memorial de la ONU (Guerra de Corea) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "location": "Cementerio Memorial de la ONU (Guerra de Corea)",
+          "caption": "Cementerio Memorial de la ONU (Guerra de Corea) — photo 3",
+          "alt": "Cementerio Memorial de la ONU (Guerra de Corea) — gallery image 3"
+        }
+      ]
     },
     {
       "number": 3,
@@ -301,7 +429,7 @@
           "Busan National Geopark official (busan.go.kr/geopark)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+      "image": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
       "visitBasics": {
         "hours": "Parque 04:00–24:00 (mar–oct) / 05:00–24:00 (nov–feb); Tren Danubi 09:00–atardecer",
         "closed": "Abierto todo el año (el Tren Danubi se suspende con lluvia intensa o viento fuerte)",
@@ -315,7 +443,91 @@
       "smartNotes": {
         "photo": "**Mirador de 3 plantas** (panorámica hasta la **isla de Tsushima, Japón, a 50 km al sureste** en días despejados), **Faro de Yeongdo — el más antiguo de Busan, construido en 1906**, y la **plataforma de roca Sinseon tallada por las olas (~120.000 años de antigüedad, 4.º período interglacial)** bajo el faro.",
         "tip": "Evite la exigente caminata de 4,3 km — suba al **Tren Danubi** para el circuito de 5 paradas. El **Festival de Hortensias del Templo Taejongsa** se celebra de finales de junio a principios de julio. La zona del faro tiene muchas escaleras empinadas — no es apta para cochecitos de bebé."
-      }
+      },
+      "images": [
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+          "location": "Acantilados costeros de Taejongdae",
+          "caption": "Acantilados costeros de Taejongdae — photo 1",
+          "alt": "Acantilados costeros de Taejongdae — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+          "location": "Acantilados costeros de Taejongdae",
+          "caption": "Acantilados costeros de Taejongdae — photo 2",
+          "alt": "Acantilados costeros de Taejongdae — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+          "location": "Acantilados costeros de Taejongdae",
+          "caption": "Acantilados costeros de Taejongdae — photo 3",
+          "alt": "Acantilados costeros de Taejongdae — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+          "location": "Acantilados costeros de Taejongdae",
+          "caption": "Acantilados costeros de Taejongdae — photo 4",
+          "alt": "Acantilados costeros de Taejongdae — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+          "location": "Acantilados costeros de Taejongdae",
+          "caption": "Acantilados costeros de Taejongdae — photo 5",
+          "alt": "Acantilados costeros de Taejongdae — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+          "location": "Acantilados costeros de Taejongdae",
+          "caption": "Acantilados costeros de Taejongdae — photo 6",
+          "alt": "Acantilados costeros de Taejongdae — gallery image 6"
+        }
+      ]
     },
     {
       "number": 4,
@@ -390,7 +602,7 @@
           "Korea Tourism Organization (100 Must-Visit Tourist Spots in Korea designation)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
       "visitBasics": {
         "hours": "09:00–18:00 (mar–oct) / 09:00–17:00 (nov–feb); centro de información en el mismo horario",
         "closed": "Abierto todo el año",
@@ -404,7 +616,52 @@
       "smartNotes": {
         "photo": "**'Banco del Principito y el Zorro'** en Sky Garden (mirador Haneul Maru — larga cola, gratuito), **panorámica del techo arcoíris** desde la Sala de Observación de Estrellas, y los **callejones de murales con escaleras**. **Prohibidos los drones y la fotografía con flash en los callejones**.",
         "tip": "**Aquí siguen viviendo residentes** (~10.000 personas, asentamiento de refugiados taegeukdo de 1955) — **habla en voz baja**, no entres en las casas, llévate tu basura. **Premio UN-HABITAT al Paisaje Urbano Asiático 2012**; ~1,4 millones de visitantes al año. KTO 100 lugares imprescindibles 5 veces consecutivas."
-      }
+      },
+      "images": [
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "location": "Aldea Cultural de Gamcheon",
+          "caption": "Aldea Cultural de Gamcheon — photo 1",
+          "alt": "Aldea Cultural de Gamcheon — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "location": "Aldea Cultural de Gamcheon",
+          "caption": "Aldea Cultural de Gamcheon — photo 2",
+          "alt": "Aldea Cultural de Gamcheon — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+          "location": "Aldea Cultural de Gamcheon",
+          "caption": "Aldea Cultural de Gamcheon — photo 3",
+          "alt": "Aldea Cultural de Gamcheon — gallery image 3"
+        }
+      ]
     },
     {
       "number": 6,
@@ -444,7 +701,7 @@
           "Busan Metropolitan City heritage records"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+      "image": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
       "visitBasics": {
         "hours": "Parque abierto 24h; **observatorio de la Torre Diamond de Busan 10:00–22:00 (última admisión 21:30)**",
         "closed": "Torre abierta todo el año (cierres ocasionales por seguridad en caso de vientos extremos)",
@@ -458,7 +715,52 @@
       "smartNotes": {
         "photo": "Desde el **observatorio de la Torre Diamond de Busan a 120 m** (elevación total de la cima: 189 m) — **panorama de 360°** hacia el Puerto de Busan, el Puente Yeongdo y Tsushima en días despejados. Cima de la torre **inspirada en el baldaquino de la Dabotap de Bulguksa (Tesoro Nacional 20)** en Gyeongju. Mejor al **atardecer y después del anochecer**.",
         "tip": "Combine la visita a la torre con la **estatua del Almirante Yi Sun-sin** (héroe de los barcos tortuga en la Guerra Imjin, que nunca perdió una nave) y la **Campana Ciudadana** (repicada **33 veces en Nochevieja y el 1 de marzo**, en conmemoración de los 33 firmantes de la Declaración de Independencia de 1919)."
-      }
+      },
+      "images": [
+        "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+        "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+        "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+          "location": "Parque Yongdusan y Torre de Busan",
+          "caption": "Parque Yongdusan y Torre de Busan — photo 1",
+          "alt": "Parque Yongdusan y Torre de Busan — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+          "location": "Parque Yongdusan y Torre de Busan",
+          "caption": "Parque Yongdusan y Torre de Busan — photo 2",
+          "alt": "Parque Yongdusan y Torre de Busan — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
+          "location": "Parque Yongdusan y Torre de Busan",
+          "caption": "Parque Yongdusan y Torre de Busan — photo 3",
+          "alt": "Parque Yongdusan y Torre de Busan — gallery image 3"
+        }
+      ]
     },
     {
       "number": 7,
@@ -1265,8 +1567,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Del puerto de cruceros a los callejones pintados, del mercado al memorial —",
-        "headlineLine2": "El recorrido emblemático de Busan en un día en furgoneta compartida",
+        "headlineLine1": "Busan Crucero",
+        "headlineLine2": "Grupo Pequeño",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
           "imagePosition": "center 35%",
@@ -1437,7 +1739,7 @@
             "duration": "60 min",
             "name": "Cementerio Memorial de las Naciones Unidas (Guerra de Corea)",
             "category": "Memorial e Historia",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "El único cementerio de las Naciones Unidas en el mundo, establecido en 1951 durante la Guerra de Corea y al que la Asamblea General otorgó estatus permanente de la ONU en 1955. Alberga más de 2.300 tumbas de soldados de 21 naciones que combatieron bajo el Mando de la ONU, con los grupos nacionales más numerosos del Reino Unido (885), Turquía (462), Canadá (378) y Australia (281). Los terrenos incluyen un Salón Memorial con exposiciones en varios idiomas, un Muro del Recuerdo que lista los 40.896 caídos del Mando de la ONU, y la ceremonia diaria de banderas a las 10:00 (sujeta a condiciones meteorológicas). El cementerio se encuentra en Nam-gu, a aproximadamente 30 minutos al este de Yeongdo por carretera. Entrada gratuita; abierto todos los días de 09:00 a 17:00, excepto Año Nuevo Coreano y Chuseok.",
             "timeUsed": [
               "Llegada, orientación y sesión informativa introductoria",
@@ -1449,7 +1751,52 @@
               "is_attraction": true,
               "fee_krw": 0,
               "closed": "Korean New Year, Chuseok"
-            }
+            },
+            "images": [
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+                "location": "Cementerio Memorial de las Naciones Unidas (Guerra de Corea)",
+                "caption": "Cementerio Memorial de las Naciones Unidas (Guerra de Corea) — photo 1",
+                "alt": "Cementerio Memorial de las Naciones Unidas (Guerra de Corea) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+                "location": "Cementerio Memorial de las Naciones Unidas (Guerra de Corea)",
+                "caption": "Cementerio Memorial de las Naciones Unidas (Guerra de Corea) — photo 2",
+                "alt": "Cementerio Memorial de las Naciones Unidas (Guerra de Corea) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+                "location": "Cementerio Memorial de las Naciones Unidas (Guerra de Corea)",
+                "caption": "Cementerio Memorial de las Naciones Unidas (Guerra de Corea) — photo 3",
+                "alt": "Cementerio Memorial de las Naciones Unidas (Guerra de Corea) — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1457,7 +1804,7 @@
             "duration": "75 min",
             "name": "Acantilados costeros de Taejongdae",
             "category": "Costa",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+            "image": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
             "description": "Parque costero en el extremo sur de la isla de Yeongdo, nombrado en honor al rey Taejong Muyeol de Silla (r. 654–661 d. C.), el monarca que se alió con la China Tang para unificar la península coreana. El sendero circular de 4,3 km rodea acantilados que caen unos 100 m hasta el Mar del Este, pasando por el Faro de Yeongdo (1906) y un mirador desde el que, en los días despejados de invierno, se puede ver la isla de Tsushima (Japón) a unos 50 km de la costa. La mayoría de los visitantes de cruceros utilizan el Tren Danubi (₩4.000 adultos, ₩3.000 jóvenes, opcional, ≈30 min de recorrido) en lugar de recorrer el circuito completo a pie. Entrada al parque gratuita; la zona del faro es accesible en silla de ruedas, pero el sendero del acantilado no lo es.",
             "timeUsed": [
               "Llegada, orientación y sesión informativa introductoria",
@@ -1470,7 +1817,91 @@
               "is_attraction": true,
               "fee_krw": 0,
               "optional_train_krw": 4000
-            }
+            },
+            "images": [
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+                "location": "Acantilados costeros de Taejongdae",
+                "caption": "Acantilados costeros de Taejongdae — photo 1",
+                "alt": "Acantilados costeros de Taejongdae — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+                "location": "Acantilados costeros de Taejongdae",
+                "caption": "Acantilados costeros de Taejongdae — photo 2",
+                "alt": "Acantilados costeros de Taejongdae — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+                "location": "Acantilados costeros de Taejongdae",
+                "caption": "Acantilados costeros de Taejongdae — photo 3",
+                "alt": "Acantilados costeros de Taejongdae — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+                "location": "Acantilados costeros de Taejongdae",
+                "caption": "Acantilados costeros de Taejongdae — photo 4",
+                "alt": "Acantilados costeros de Taejongdae — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+                "location": "Acantilados costeros de Taejongdae",
+                "caption": "Acantilados costeros de Taejongdae — photo 5",
+                "alt": "Acantilados costeros de Taejongdae — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+                "location": "Acantilados costeros de Taejongdae",
+                "caption": "Acantilados costeros de Taejongdae — photo 6",
+                "alt": "Acantilados costeros de Taejongdae — gallery image 6"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1496,7 +1927,7 @@
             "duration": "75 min",
             "name": "Pueblo Cultural de Gamcheon",
             "category": "Pueblo de Arte en Ladera",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+            "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
             "description": "Pueblo en ladera construido originalmente en la década de 1950 por refugiados de la Guerra de Corea, hoy el barrio más fotografiado de Busan. Su colorida apariencia actual data de 2009, cuando la ciudad patrocinó el proyecto de arte público 'Soñando con Machu Picchu en Busan': artistas locales pintaron las casas, instalaron murales y pequeñas esculturas (el banco del Principito y el Zorro es el más fotografiado) y añadieron mosaicos en las escalinatas. Las casas siguen habitadas; el pueblo pide a los visitantes que mantengan un tono de voz bajo en los callejones residenciales. El recorrido fotográfico principal es un paseo de 30 a 40 minutos por empinados callejones y escaleras: subida al inicio y bajada de regreso. La mayoría de los miradores principales son accesibles desde la parada del autobús; la exploración más profunda requiere subir más escaleras. Mapa opcional del 'recorrido de sellos' por ₩2.000.",
             "timeUsed": [
               "Llegada, orientación y sesión informativa introductoria",
@@ -1509,7 +1940,52 @@
               "is_attraction": true,
               "fee_krw": 0,
               "optional_stamp_map": 2000
-            }
+            },
+            "images": [
+              "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+              "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+              "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+                "location": "Pueblo Cultural de Gamcheon",
+                "caption": "Pueblo Cultural de Gamcheon — photo 1",
+                "alt": "Pueblo Cultural de Gamcheon — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+                "location": "Pueblo Cultural de Gamcheon",
+                "caption": "Pueblo Cultural de Gamcheon — photo 2",
+                "alt": "Pueblo Cultural de Gamcheon — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+                "location": "Pueblo Cultural de Gamcheon",
+                "caption": "Pueblo Cultural de Gamcheon — photo 3",
+                "alt": "Pueblo Cultural de Gamcheon — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1517,7 +1993,7 @@
             "duration": "45 min",
             "name": "Parque Yongdusan y Torre Busan",
             "category": "Mirador de la Ciudad",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "image": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
             "description": "Yongdusan ('Montaña Cabeza de Dragón') se ubica en el centro de Busan, sobre el barrio de Nampo-dong; la Torre Diamante de 120 metros (construida en 1973, rebautizada como Torre Busan; el observatorio fue reabierto al público en 2021 tras su cierre en 2017) alcanza los 159 m sobre el nivel del mar y ofrece una vista panorámica del puerto, Yeongdo, el Puente Gwangan y, en días despejados, hasta Taejongdae. La entrada al parque es gratuita e incluye la estatua del Almirante Yi Sun-sin y la Campana de los Ciudadanos; la entrada al observatorio cuesta ₩12,000 para adultos y es el único elemento de pago. Para llegar al parque desde la Estación Nampo: 8 minutos a pie cuesta arriba, o una escalera mecánica cubierta al aire libre desde el nivel de la calle.",
             "timeUsed": [
               "Llegada, compra de entradas y sesión de orientación",
@@ -1529,7 +2005,52 @@
               "is_attraction": true,
               "fee_krw": 0,
               "optional_observatory_krw": 12000
-            }
+            },
+            "images": [
+              "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+              "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+              "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+                "location": "Parque Yongdusan y Torre Busan",
+                "caption": "Parque Yongdusan y Torre Busan — photo 1",
+                "alt": "Parque Yongdusan y Torre Busan — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+                "location": "Parque Yongdusan y Torre Busan",
+                "caption": "Parque Yongdusan y Torre Busan — photo 2",
+                "alt": "Parque Yongdusan y Torre Busan — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
+                "location": "Parque Yongdusan y Torre Busan",
+                "caption": "Parque Yongdusan y Torre Busan — photo 3",
+                "alt": "Parque Yongdusan y Torre Busan — gallery image 3"
+              }
+            ]
           },
           {
             "number": 7,

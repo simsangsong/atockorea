@@ -13,12 +13,12 @@
       "인천항에서 서울까지 프라이빗 차량",
       "한국 크루즈 기항지 투어"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "ogImage": "https://www.atockorea.com/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "title": "인천 → 서울 프라이빗 크루즈 기항지 투어 · 8시간 도어 투 도어 데이"
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-    "title": "크루즈 여행객을 위한 인천-서울 프라이빗 차량 기항지 투어",
+    "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "title": "인천 크루즈 → 서울 프라이빗 차량",
     "priceLabel": "",
     "shortCardDescription": "정해진 일정이 아닌, 출항 시간에 맞춰 설계된 8시간 프라이빗 차량 투어. 인천 크루즈 터미널 갱웨이 픽업, 영어 구사 드라이버 가이드, 경복궁, 북촌 한옥마을 + 인사동, 원하시는 점심 식사, N서울타워, 명동 또는 조계사로 이어지는 맞춤형 코스. 드라이버 가이드가 출항 전 60분의 교통 여유 시간을 확보하여 절대 배를 놓치지 않습니다.",
     "tags": [
@@ -44,10 +44,10 @@
       "맞춤형",
       "귀선 보장"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+    "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
-  "headlineLine1": "크루즈 항구에서 궁궐까지, 출항 시간에 맞춰 설계된 —",
-  "headlineLine2": "우리 그룹만을 위한 서울 하루, 귀선 보장까지 포함된",
+  "headlineLine1": "인천 크루즈 → 서울 프라이빗 차량",
+  "headlineLine2": "투어",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -57,7 +57,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "imagePosition": "center 35%",
     "tagline": "갱웨이에서 60분이면 경복궁 — 출항 시간에 맞춰 설계된 프라이빗 서울 투어",
     "pills": [
@@ -135,58 +135,124 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-      "alt": "인천 크루즈 터미널 도착 홀 갱웨이 옆 픽업",
-      "caption": "경복궁 정전(근정전)",
-      "location": "인천 크루즈 터미널",
-      "atmosphere": "크루즈 터미널 직접 픽업"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "location": "경복궁 + 왕궁 수문장 교대식",
+      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 1",
+      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/15/2002115_image2_1.JPG",
-      "alt": "경복궁 정전 및 수문장 교대 의식",
-      "caption": "경복궁 수문장 교대 의식",
-      "location": "경복궁, 서울",
-      "atmosphere": "조선 왕궁"
+      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "location": "북촌 한옥마을 + 인사동",
+      "alt": "북촌 한옥마을 + 인사동 — gallery image 1",
+      "caption": "북촌 한옥마을 + 인사동 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
-      "alt": "북촌 능선을 따라 펼쳐진 돌담과 기와 한옥 지붕",
-      "caption": "북촌 한옥마을의 전통 지붕선",
-      "location": "북촌 한옥마을, 서울",
-      "atmosphere": "보존된 조선 시대 주거 골목"
-    },
-    {
-      "id": "g4",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
-      "alt": "남산에서 바라본 서울 전경과 위로 솟은 N서울타워",
-      "caption": "조계사 대웅전과 연등 전시",
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
       "location": "N서울타워 (남산)",
-      "atmosphere": "도시 전망대"
+      "alt": "N서울타워 (남산) — gallery image 1",
+      "caption": "N서울타워 (남산) — photo 1"
     },
     {
-      "id": "g5",
+      "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
-      "alt": "황혼 무렵 명동 쇼핑 거리를 따라 불 켜진 길거리 음식 포장마차들",
-      "caption": "남산에서 바라본 일몰의 N서울타워",
-      "location": "서울 명동",
-      "atmosphere": "쇼핑과 길거리 음식"
+      "src": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
+      "location": "명동 또는 조계사 (선택)",
+      "alt": "명동 또는 조계사 (선택) — gallery image 1",
+      "caption": "명동 또는 조계사 (선택) — photo 1"
     },
     {
-      "id": "g6",
+      "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG",
-      "alt": "인천 크루즈터미널 하차 구역에서 대기 중인 전용 차량",
-      "caption": "명동 길거리 음식과 쇼핑",
-      "location": "인천 크루즈터미널",
-      "atmosphere": "출항 전 여유 시간 귀환"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+      "location": "경복궁 + 왕궁 수문장 교대식",
+      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 2",
+      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+      "location": "경복궁 + 왕궁 수문장 교대식",
+      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 3",
+      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+      "location": "경복궁 + 왕궁 수문장 교대식",
+      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 4",
+      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 4"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+      "location": "경복궁 + 왕궁 수문장 교대식",
+      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 5",
+      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 5"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+      "location": "경복궁 + 왕궁 수문장 교대식",
+      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 6",
+      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 6"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+      "location": "경복궁 + 왕궁 수문장 교대식",
+      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 7",
+      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 7"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+      "location": "경복궁 + 왕궁 수문장 교대식",
+      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 8",
+      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 8"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+      "location": "경복궁 + 왕궁 수문장 교대식",
+      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 9",
+      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 9"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-57-27.webp",
+      "location": "N서울타워 (남산)",
+      "alt": "N서울타워 (남산) — gallery image 2",
+      "caption": "N서울타워 (남산) — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-06.webp",
+      "location": "N서울타워 (남산)",
+      "alt": "N서울타워 (남산) — gallery image 3",
+      "caption": "N서울타워 (남산) — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-10.webp",
+      "location": "N서울타워 (남산)",
+      "alt": "N서울타워 (남산) — gallery image 4",
+      "caption": "N서울타워 (남산) — photo 4"
     }
   ],
   "itineraryStops": [
@@ -292,7 +358,130 @@
           "Wikipedia (Gyeongbokgung Palace)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "images": [
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+          "location": "경복궁 + 왕궁 수문장 교대식",
+          "caption": "경복궁 + 왕궁 수문장 교대식 — photo 1",
+          "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+          "location": "경복궁 + 왕궁 수문장 교대식",
+          "caption": "경복궁 + 왕궁 수문장 교대식 — photo 2",
+          "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+          "location": "경복궁 + 왕궁 수문장 교대식",
+          "caption": "경복궁 + 왕궁 수문장 교대식 — photo 3",
+          "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+          "location": "경복궁 + 왕궁 수문장 교대식",
+          "caption": "경복궁 + 왕궁 수문장 교대식 — photo 4",
+          "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+          "location": "경복궁 + 왕궁 수문장 교대식",
+          "caption": "경복궁 + 왕궁 수문장 교대식 — photo 5",
+          "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+          "location": "경복궁 + 왕궁 수문장 교대식",
+          "caption": "경복궁 + 왕궁 수문장 교대식 — photo 6",
+          "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+          "location": "경복궁 + 왕궁 수문장 교대식",
+          "caption": "경복궁 + 왕궁 수문장 교대식 — photo 7",
+          "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+          "location": "경복궁 + 왕궁 수문장 교대식",
+          "caption": "경복궁 + 왕궁 수문장 교대식 — photo 8",
+          "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+          "location": "경복궁 + 왕궁 수문장 교대식",
+          "caption": "경복궁 + 왕궁 수문장 교대식 — photo 9",
+          "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 9"
+        }
+      ]
     },
     {
       "number": 3,
@@ -353,7 +542,26 @@
           "Wikipedia (Bukchon Hanok Village)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "images": [
+        "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+          "location": "북촌 한옥마을 + 인사동",
+          "caption": "북촌 한옥마을 + 인사동 — photo 1",
+          "alt": "북촌 한옥마을 + 인사동 — gallery image 1"
+        }
+      ]
     },
     {
       "number": 4,
@@ -451,7 +659,65 @@
           "Wikipedia (N Seoul Tower)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG"
+      "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+      "images": [
+        "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
+        "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-57-27.webp",
+        "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-06.webp",
+        "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-10.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-57-27.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-10.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
+          "location": "N서울타워 (남산)",
+          "caption": "N서울타워 (남산) — photo 1",
+          "alt": "N서울타워 (남산) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-57-27.webp",
+          "location": "N서울타워 (남산)",
+          "caption": "N서울타워 (남산) — photo 2",
+          "alt": "N서울타워 (남산) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-06.webp",
+          "location": "N서울타워 (남산)",
+          "caption": "N서울타워 (남산) — photo 3",
+          "alt": "N서울타워 (남산) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-10.webp",
+          "location": "N서울타워 (남산)",
+          "caption": "N서울타워 (남산) — photo 4",
+          "alt": "N서울타워 (남산) — gallery image 4"
+        }
+      ]
     },
     {
       "number": 6,
@@ -509,7 +775,27 @@
           "Lotte Department Store official (Myeongdong main branch)",
           "Wikipedia (Myeongdong)"
         ]
-      }
+      },
+      "image": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
+      "images": [
+        "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
+          "location": "명동 또는 조계사 (선택)",
+          "caption": "명동 또는 조계사 (선택) — photo 1",
+          "alt": "명동 또는 조계사 (선택) — gallery image 1"
+        }
+      ]
     },
     {
       "number": 7,
@@ -1177,8 +1463,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "크루즈 항구에서 궁궐까지, 출항 시간에 맞춰 완벽하게 조율된 —",
-        "headlineLine2": "오직 여러분의 그룹만을 위한 서울에서의 하루, 선박 귀환 보장 포함",
+        "headlineLine1": "인천 크루즈 → 서울 프라이빗 차량",
+        "headlineLine2": "투어",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
           "imagePosition": "center 35%",

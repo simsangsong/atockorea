@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "済州島南西部アジサイ祭り日帰りツアー | AtoC Korea",
     "metaDescription": "夏季限定・済州島南西部日帰りツアー：ヒョプジェビーチ、翰林公園アジサイ祭り、柱状節理帯、天帝淵瀑布、カメリアヒル、オソルロク茶畑。",
-    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "primaryKeywords": [
       "済州島アジサイ祭りツアー",
       "済州島夏の花ツアー",
@@ -19,7 +19,7 @@
   },
   "catalog_card": {
     "slug": "jeju-hydrangea-festival-tour-southwest-route",
-    "title": "済州島南西部アジサイ祭り少人数ツアー",
+    "title": "済州アジサイ祭り・南西ルート",
     "subtitle": "ビーチから柱状節理帯へ、そしてアジサイのトンネルへ。",
     "region": "済州島南西部",
     "duration": "9時間",
@@ -31,8 +31,8 @@
       "アジサイのシーズン",
       "済州島南西部"
     ],
-    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+    "heroImage": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+    "thumbnail": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "priceLabel": "",
     "shortCardDescription": "夏季限定・済州島南西部ルート — エメラルドのビーチ、アジサイ祭りの庭園、ユネスコ世界遺産の柱状節理帯、三段の滝、アジサイのトンネル、そして茶畑。",
     "tags": [
@@ -41,15 +41,15 @@
       "southwest_jeju"
     ]
   },
-  "headlineLine1": "アジサイ、柱状節理帯、そして茶畑",
-  "headlineLine2": "済州島南西部の夏の一日で",
+  "headlineLine1": "済州アジサイ祭り・南西ルート",
+  "headlineLine2": "ツアー",
   "price": {
     "amountLabel": "",
     "currency": "USD",
     "per": "person"
   },
   "hero": {
-    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+    "imageUrl": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "imagePosition": "center 35%",
     "tagline": "ビーチから柱状節理帯へ、そしてアジサイのトンネルへ。",
     "pills": [
@@ -127,58 +127,180 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+      "location": "ヒョプジェ海水浴場",
+      "alt": "ヒョプジェ海水浴場 — gallery image 1",
+      "caption": "ヒョプジェ海水浴場 — photo 1"
+    },
+    {
+      "id": 2,
       "type": "photo",
       "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
-      "alt": "ハリムパークの紫陽花",
-      "caption": "ハリムパークの紫陽花",
-      "location": "ハリムパーク",
-      "atmosphere": "紫陽花祭り満開"
+      "location": "翰林公園（アジサイ祭り）",
+      "alt": "翰林公園（アジサイ祭り） — on-route photo",
+      "caption": "翰林公園（アジサイ祭り）"
     },
     {
-      "id": "g2",
+      "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-      "alt": "カメリアヒルの紫陽花トンネル",
-      "caption": "カメリアヒルの紫陽花トンネル",
-      "location": "カメリアヒル",
-      "atmosphere": "紫陽花トンネルの散策"
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "柱状節理帯 ＆ 天帝淵瀑布",
+      "alt": "柱状節理帯 ＆ 天帝淵瀑布 — gallery image 1",
+      "caption": "柱状節理帯 ＆ 天帝淵瀑布 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 4,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-      "alt": "ヒョプジェビーチのターコイズブルーの海",
-      "caption": "ヒョプジェビーチのターコイズブルーの海",
-      "location": "ヒョプジェビーチ",
-      "atmosphere": "エメラルドの海と白い砂浜"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "カメリアヒル（アジサイトンネル）",
+      "alt": "カメリアヒル（アジサイトンネル） — gallery image 1",
+      "caption": "カメリアヒル（アジサイトンネル） — photo 1"
     },
     {
-      "id": "g4",
+      "id": 5,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
-      "alt": "チュサンジョルリ柱状節理の断崖",
-      "caption": "チュサンジョルリ柱状節理の断崖",
-      "location": "チュサンジョルリ断崖",
-      "atmosphere": "柱状節理の地形"
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+      "location": "オスルロック・ティーミュージアム＆茶畑",
+      "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 1",
+      "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 1"
     },
     {
-      "id": "g5",
+      "id": 6,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
-      "alt": "チョンジェヨン三段の滝",
-      "caption": "チョンジェヨン三段の滝",
-      "location": "天帝淵の滝（チョンジェヨン）",
-      "atmosphere": "三段の滝"
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+      "location": "ヒョプジェ海水浴場",
+      "alt": "ヒョプジェ海水浴場 — gallery image 2",
+      "caption": "ヒョプジェ海水浴場 — photo 2"
     },
     {
-      "id": "g6",
+      "id": 7,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
-      "alt": "オソルロック緑茶畑",
-      "caption": "オソルロック緑茶畑",
-      "location": "オソルロック茶博物館",
-      "atmosphere": "どこまでも続く緑茶畑"
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+      "location": "ヒョプジェ海水浴場",
+      "alt": "ヒョプジェ海水浴場 — gallery image 3",
+      "caption": "ヒョプジェ海水浴場 — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "柱状節理帯 ＆ 天帝淵瀑布",
+      "alt": "柱状節理帯 ＆ 天帝淵瀑布 — gallery image 2",
+      "caption": "柱状節理帯 ＆ 天帝淵瀑布 — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "柱状節理帯 ＆ 天帝淵瀑布",
+      "alt": "柱状節理帯 ＆ 天帝淵瀑布 — gallery image 3",
+      "caption": "柱状節理帯 ＆ 天帝淵瀑布 — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "柱状節理帯 ＆ 天帝淵瀑布",
+      "alt": "柱状節理帯 ＆ 天帝淵瀑布 — gallery image 4",
+      "caption": "柱状節理帯 ＆ 天帝淵瀑布 — photo 4"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+      "location": "カメリアヒル（アジサイトンネル）",
+      "alt": "カメリアヒル（アジサイトンネル） — gallery image 2",
+      "caption": "カメリアヒル（アジサイトンネル） — photo 2"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+      "location": "オスルロック・ティーミュージアム＆茶畑",
+      "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 2",
+      "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+      "location": "オスルロック・ティーミュージアム＆茶畑",
+      "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 3",
+      "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+      "location": "オスルロック・ティーミュージアム＆茶畑",
+      "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 4",
+      "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 4"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+      "location": "オスルロック・ティーミュージアム＆茶畑",
+      "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 5",
+      "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 5"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+      "location": "オスルロック・ティーミュージアム＆茶畑",
+      "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 6",
+      "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 6"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+      "location": "オスルロック・ティーミュージアム＆茶畑",
+      "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 7",
+      "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 7"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+      "location": "オスルロック・ティーミュージアム＆茶畑",
+      "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 8",
+      "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 8"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+      "location": "オスルロック・ティーミュージアム＆茶畑",
+      "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 9",
+      "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 9"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+      "location": "オスルロック・ティーミュージアム＆茶畑",
+      "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 10",
+      "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 10"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+      "location": "オスルロック・ティーミュージアム＆茶畑",
+      "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 11",
+      "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 11"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+      "location": "オスルロック・ティーミュージアム＆茶畑",
+      "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 12",
+      "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 12"
     }
   ],
   "itineraryStops": [
@@ -189,7 +311,7 @@
       "name": "ヒョプジェ海水浴場",
       "category": "西海岸エメラルドビーチ＋飛揚島（ビヤンド）の眺め",
       "description": "**ヒョプジェ海水浴場（협재 해수욕장）** は**済州島西海岸トップ3ビーチ**のひとつであり、島全体でも広く**トップ10ビーチ**にランクされています。その特徴は**独特の銀白色の砂**で、**砕けた貝殻＋珊瑚の破片と細かい砂が混ざり合って**形成されており、朝鮮半島では稀な輝きを放っています。このビーチは、南に隣接する**双子ビーチの金陵ビーチ（すぐ南、同じ海岸沿いを歩いてアクセス可能、人が少ない）**と合わせると**9kmの海岸線**を形成しており、このビーチペアリングはカタログ随一の撮影スポットとなっています。定番の眺めは**飛揚島（비양도）**— **沖合1.2kmの火山島で常住人口は約200人**、**翰林港から20分のフェリー**でアクセスできます。飛揚島では**韓国初の炭素フリー島認定プロセス**が進行中であり、環境政策のショーケースとなっています。ビーチの**エメラルドターコイズの海**は浅い珊瑚砂の海底に由来し、**干潮時には潮だまりにヤドカリ・小エビ・稚魚**が現れます — 浅瀬の広がりにより飛揚島まで「歩いていけそう」に見えます。ビーチ背後には**松林（ソンリム）**が広がり、無料のキャンプ場や木陰の散策路があります。砂丘の背後には済州島で最も発達した**西海岸カフェストリート**があり、国内観光客向けのカフェ・レストラン・ブティックが軒を連ねています。**飛揚島越しにエメラルドの海へ沈む夕日**は象徴的な風景であり、カタログ随一の西海岸サンセットフレームです。**入場無料**；**ライフガード付き遊泳期間は7月1日〜8月31日**；ビーチ複数箇所にスロープ式**車椅子アクセス**あり；年間を通じて公衆トイレ・更衣室・シャワー・機材レンタルを完備。隣接する**翰林公園**（植物園＋溶岩洞窟＋民俗村、別途₩10,000の入場料、1.5km先）は冬季に代替される場合があります。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+      "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
       "highlights": [
         "**済州島西海岸トップ3 / 総合トップ10** — エメラルドターコイズの海＋銀白色の砂",
         "**独特の銀白色の砂** — 砕けた貝殻＋珊瑚の破片",
@@ -235,7 +357,52 @@
         "photo": "飛揚島のシルエットを背景にした夕日の撮影スポット；ターコイズブルーの色は直射日光の当たる正午が最も鮮やか",
         "facilities": "ビーチ沿いにカフェが複数あり；コンビニエンスストアも利用可能",
         "tip": "翰林公園と組み合わせ可能（徒歩5分）；混雑を避けるため夏の週末は避けることを推奨"
-      }
+      },
+      "images": [
+        "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+        "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+        "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+          "location": "ヒョプジェ海水浴場",
+          "caption": "ヒョプジェ海水浴場 — photo 1",
+          "alt": "ヒョプジェ海水浴場 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+          "location": "ヒョプジェ海水浴場",
+          "caption": "ヒョプジェ海水浴場 — photo 2",
+          "alt": "ヒョプジェ海水浴場 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+          "location": "ヒョプジェ海水浴場",
+          "caption": "ヒョプジェ海水浴場 — photo 3",
+          "alt": "ヒョプジェ海水浴場 — gallery image 3"
+        }
+      ]
     },
     {
       "number": 2,
@@ -342,7 +509,7 @@
       "name": "柱状節理帯 ＆ 天帝淵瀑布",
       "category": "複合停車 — 天然記念物第443号 柱状節理 ＋ 天然記念物第378号 三段の滝",
       "description": "**こちらは組み合わせ停車**であり、中文（チュンムン）を代表する2つの天然記念物を約75分の徒歩コースとして一括して巡ります。これはオペレーターが採用する南西部の標準的な組み合わせ方法で、**車で約7分（約3km）**の距離にある2つのアンカーをひとまとめにしています。停車A地点は**大浦柱状節理帯（대포 주상절리、「大浦柱状節理」）**で、2005年1月6日に**天然記念物第443号**に指定された（済州島の海岸線における天然記念物としては最も新しい指定）、**多角形の黒い玄武岩柱が並ぶ全長1.75kmの海岸断崖**です。約14万〜25万年前に**漢拏山（ハルラサン）噴火による溶岩が太平洋の海水と急速に接触して冷却**され、玄武岩が**高さ30〜40mの六角形・五角形の柱状**に割れて形成されました。この地域は**済州火山島と溶岩洞窟群ユネスコ世界ジオパーク（2010年）**の一部です。南からのうねりが最大となる時期には波高が**20メートル以上**に達し、柱状節理の基部に打ち寄せる姿が済州玄武岩断崖の象徴的な風景を生み出します。停車B地点は**天帝淵瀑布（천제연、「天の皇帝の池」）**で、希少な三段滝と亜熱帯〜暖温帯移行林が組み合わさった生態系が評価され、**天然記念物第378号（1993年）**に指定されています。その名は、**朝鮮時代の道教の伝説に由来し、七人の天女（선녀、*ソンニョ*）が毎晩上の池に舞い降りて水浴びをした**とされています。この地の象徴的な見どころは**仙臨橋（선임교、「七仙女橋」）**で、七体の天女像が上滝に向かって並ぶ全長128mのアーチ型歩道橋です。**オペレーターがこの2か所を組み合わせる理由**：75分の単一停車として両地点を訪れることで、その日の咸林＋カメリア＋オソルロクの花めぐりのペースを崩すことなく、2区間に分けた移動も不要になるためです。また、**柱状節理の地質＋天帝淵の滝と森という重層的な体験**が、その日の三つの庭園アンカーに対して南西ルートが必要とする**非花的な対比要素**を提供します。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "**複合停車** — 2つの天然記念物を75分の徒歩コースで一括見学（両地点間：3km / 車で7分）",
         "**大浦柱状節理帯 — 天然記念物第443号（2005年）** — 済州島海岸線の天然記念物として最も新しい指定",
@@ -395,16 +562,62 @@
         "facilities": "入口付近に小規模な地質展示；土産物店あり"
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-        "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1772268354899-1f3bf5014b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1739932413542-dc2597d7d764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "柱状節理帯 ＆ 天帝淵瀑布",
+          "caption": "柱状節理帯 ＆ 天帝淵瀑布 — photo 1",
+          "alt": "柱状節理帯 ＆ 天帝淵瀑布 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "柱状節理帯 ＆ 天帝淵瀑布",
+          "caption": "柱状節理帯 ＆ 天帝淵瀑布 — photo 2",
+          "alt": "柱状節理帯 ＆ 天帝淵瀑布 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "柱状節理帯 ＆ 天帝淵瀑布",
+          "caption": "柱状節理帯 ＆ 天帝淵瀑布 — photo 3",
+          "alt": "柱状節理帯 ＆ 天帝淵瀑布 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "柱状節理帯 ＆ 天帝淵瀑布",
+          "caption": "柱状節理帯 ＆ 天帝淵瀑布 — photo 4",
+          "alt": "柱状節理帯 ＆ 天帝淵瀑布 — gallery image 4"
+        }
       ]
     },
     {
@@ -414,7 +627,7 @@
       "name": "カメリアヒル（アジサイトンネル）",
       "category": "アジサイトンネル＋東洋最大172,000㎡の椿樹木園",
       "description": "**カメリアヒル（카멜리아힐、済州椿樹木園）**は、安徳にある**172,000㎡の植物園**で、面積・種類数において**東洋最大の椿樹木園**である。創設者ヤン・ジョンムンが**30年以上**かけて収集した、**80カ国から集めた500種以上を代表する6,000本の椿**を有する。この庭園の特徴は**年間を通じた開花カレンダー**で、どの季節に訪れても異なる色彩が楽しめるよう意図的に設計されている。**11月〜3月＝椿のピーク**（赤・ピンク・白・クリームベージュの品種 ― 庭園の名にちなむシーズン）；**3月〜5月＝桜＋チューリップ＋晩咲きの椿**が層をなして咲き誇る；**6月〜8月＝アジサイ**（屋外エリアと温度管理されたガラス温室での通年展示の両方）；**9月〜10月＝紅葉＋晩秋の花**。散策路はテーマ別エリアを縫うように続き ―**ヨーロピアンガーデン、韓国在来樹林ゾーン、桜並木、アジサイ畑** ― 全長2.5kmのループをゆっくり歩くと約60〜75分かかる。注目すべき建築的スポットは、入口にある**ガラス温室＋ギャラリー＋カフェ**の複合施設で、屋内の雨天回避スペース（訪問全体の約15%が屋内）として機能するほか、庭園を眺めながらお茶やコーヒーを楽しめる憩いの場となっている。**ドラマ撮影地として**：バラエティ番組**「EXchange／トランジット・ラブ3」（환승연애）**がカメリアヒルを舞台に、ジュウォンとユジョンの印象的なデートシーンを撮影 ― K-リアリティファンを引きつける魅力でもある。**365日営業**；**屋外照明なし**のため日没とともに閉園（冬季約17:00、夏季約19:00）。入場料：**大人₩12,000／青少年・シニア₩10,000／子ども（4〜11歳）₩9,000／3歳未満無料**。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
+      "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "highlights": [
         "**172,000㎡** ― 東洋最大の椿樹木園",
         "**6,000本／80カ国由来の500種以上** ― 30年以上かけて収集",
@@ -460,7 +673,39 @@
         "photo": "6月はアジサイトンネル；10月はピンクのムーリーグラス畑；椿の各品種は11月〜4月がピーク",
         "tip": "ピークシーズンは午前10時前か午後4時以降の訪問で混雑を回避；オスルロック（車で約10分）と組み合わせがおすすめ",
         "facilities": "屋内温室カフェ、ギフトショップ、ピクニックエリア"
-      }
+      },
+      "images": [
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "location": "カメリアヒル（アジサイトンネル）",
+          "caption": "カメリアヒル（アジサイトンネル） — photo 1",
+          "alt": "カメリアヒル（アジサイトンネル） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "location": "カメリアヒル（アジサイトンネル）",
+          "caption": "カメリアヒル（アジサイトンネル） — photo 2",
+          "alt": "カメリアヒル（アジサイトンネル） — gallery image 2"
+        }
+      ]
     },
     {
       "number": 6,
@@ -469,7 +714,7 @@
       "name": "オスルロック・ティーミュージアム＆茶畑",
       "category": "アモーレパシフィックのお茶文化フラッグシップ＋緑茶畑フィナーレ",
       "description": "**オスルロック・ティーミュージアム（오설록 티 뮤지엄、「오설록」は「雪との出会い＋緑」の意）**は、**アモーレパシフィック**（韓国最大の美容企業）が誇るお茶文化のフラッグシップ。創業者**ソ・スンファンが1979年に自ら先頭に立ってこのプロジェクトを開始**し、韓国では商業的にお茶の栽培が不可能とされていた常識を覆しながら、済州島のソグァン台地にある火山灰の農地を茶畑へと開拓した。現在、**ソグァン茶園（서광다원）**は**韓国最大の緑茶畑**となり、アモーレパシフィックの済州3農場で**年間約700トン**を生産している。ミュージアム棟は**2001年に茶畑の中心部にオープン**し、茶の畝に溶け込むミニマリストの緑の屋根を持つパビリオンデザインで**designboomのアートミュージアム・トップ10**に選出された。**入場無料**、毎日**9:00〜18:00**営業、**年間約200万人**が訪れる。訪問は自然と3つのパートに分かれる：**(1) ミュージアム内部** — 茶の製造プロセス、唐代（618〜907年）以降のアンティーク茶器コレクション、茶畑が一望できる屋上展望デッキ；**(2) ティーハウスカフェ** — シグネチャーの**緑茶ロールケーキ（오설록 롤케이크）**と、その年の茶葉で作られた**緑茶アイスクリーム**；**(3) 農園ウォーキングパス** — 茶木の列の間を歩く砂利道で、西端での夕日写真が人気。**イニスフリー済州ハウス**（アモーレパシフィックの自然派コスメブランド）は**徒歩5分**で、ブランドの世界観に興味があるゲストにも最適 — 入場無料、任意でタンジェリンソープDIYワークショップ（₩15,000）も体験可能。ミュージアム棟は韓国の建築家**マス・スタディーズ（チョ・ミンスク）**が設計し、茶の畝の幾何学模様を映しつつ農業景観と競合しない意図的に低くフラットな水平フォルムが採用されている。この建築的な謙虚さが、designboomトップ10選定と、韓国現代ミュージアムデザインのケーススタディとしての継続的な注目につながっている。任意追加：**オスルロック・ティークラス（1人₩30,000、60分、要事前予約）** — 韓国陶器を用いた抽出技術のデモンストレーション付きティーフライトテイスティング、毎日**10:00〜16:00**開催、水・土曜のセッションは英語対応講師あり。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+      "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "highlights": [
         "**アモーレパシフィック**のフラッグシップ — 韓国最大の美容企業；創業者ソ・スンファンが**1979年**に済州の茶栽培を開拓",
         "**ソグァン茶園＝韓国最大の緑茶畑**；年間約700トン生産",
@@ -515,7 +760,169 @@
         "photo": "ティーカップ型の博物館建物を背景に広がる茶畑、屋外席エリア、ショルダーシーズンには桜が見頃",
         "tip": "観光バスラッシュを避けるため10:30前に到着を推奨、カフェタイムと茶畑散策を含め1.5〜2時間を確保",
         "facilities": "カフェ（抹茶アイスクリームは必食）、ギフトショップ、隣接するイニスフリー済州ハウス、茶畑を見渡す展望デッキ"
-      }
+      },
+      "images": [
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "location": "オスルロック・ティーミュージアム＆茶畑",
+          "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 1",
+          "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "location": "オスルロック・ティーミュージアム＆茶畑",
+          "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 2",
+          "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "location": "オスルロック・ティーミュージアム＆茶畑",
+          "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 3",
+          "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "location": "オスルロック・ティーミュージアム＆茶畑",
+          "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 4",
+          "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "location": "オスルロック・ティーミュージアム＆茶畑",
+          "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 5",
+          "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "location": "オスルロック・ティーミュージアム＆茶畑",
+          "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 6",
+          "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "location": "オスルロック・ティーミュージアム＆茶畑",
+          "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 7",
+          "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "location": "オスルロック・ティーミュージアム＆茶畑",
+          "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 8",
+          "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "location": "オスルロック・ティーミュージアム＆茶畑",
+          "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 9",
+          "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "location": "オスルロック・ティーミュージアム＆茶畑",
+          "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 10",
+          "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "location": "オスルロック・ティーミュージアム＆茶畑",
+          "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 11",
+          "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "location": "オスルロック・ティーミュージアム＆茶畑",
+          "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 12",
+          "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 12"
+        }
+      ]
     }
   ],
   "routeFlowStops": [
@@ -1283,8 +1690,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "アジサイ、柱状節理、そして茶畑",
-        "headlineLine2": "済州島南西部の夏の一日で",
+        "headlineLine1": "済州アジサイ祭り・南西ルート",
+        "headlineLine2": "ツアー",
         "hero": {
           "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
           "imagePosition": "center 35%",
@@ -1448,7 +1855,7 @@
             "name": "ヒョプジェビーチ",
             "category": "海岸＆ビーチ",
             "description": "済州島で最も写真映えするビーチのひとつ。エメラルドグリーンの海、白い砂浜、そして沖合に浮かぶ飛揚島が魅力です。その日のメインとなる花の名所へ向かう前の、気軽な朝のウォームアップに最適です。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "highlights": [
               "エメラルドターコイズの海",
               "飛揚島（ビヤンド）の眺望",
@@ -1481,7 +1888,52 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated visitor info"
-            }
+            },
+            "images": [
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+                "location": "ヒョプジェビーチ",
+                "caption": "ヒョプジェビーチ — photo 1",
+                "alt": "ヒョプジェビーチ — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+                "location": "ヒョプジェビーチ",
+                "caption": "ヒョプジェビーチ — photo 2",
+                "alt": "ヒョプジェビーチ — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+                "location": "ヒョプジェビーチ",
+                "caption": "ヒョプジェビーチ — photo 3",
+                "alt": "ヒョプジェビーチ — gallery image 3"
+              }
+            ]
           },
           {
             "number": 2,
@@ -1574,7 +2026,7 @@
             "name": "柱状節理帯 ＆ 天帝淵瀑布",
             "category": "地質 ＆ 滝",
             "description": "柱状節理帯のユネスコジオパーク柱状玄武岩の崖と、近隣の三段式天帝淵瀑布を組み合わせたスポット。隣接する2つのユネスコ認定地質サイト。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
             "highlights": [
               "六角柱状玄武岩の崖",
               "亜熱帯林に広がる三段式瀑布",
@@ -1611,16 +2063,62 @@
               "verified_date": "2026-04-27"
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-              "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1772268354899-1f3bf5014b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1739932413542-dc2597d7d764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "location": "柱状節理帯 ＆ 天帝淵瀑布",
+                "caption": "柱状節理帯 ＆ 天帝淵瀑布 — photo 1",
+                "alt": "柱状節理帯 ＆ 天帝淵瀑布 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "location": "柱状節理帯 ＆ 天帝淵瀑布",
+                "caption": "柱状節理帯 ＆ 天帝淵瀑布 — photo 2",
+                "alt": "柱状節理帯 ＆ 天帝淵瀑布 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "location": "柱状節理帯 ＆ 天帝淵瀑布",
+                "caption": "柱状節理帯 ＆ 天帝淵瀑布 — photo 3",
+                "alt": "柱状節理帯 ＆ 天帝淵瀑布 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "location": "柱状節理帯 ＆ 天帝淵瀑布",
+                "caption": "柱状節理帯 ＆ 天帝淵瀑布 — photo 4",
+                "alt": "柱状節理帯 ＆ 天帝淵瀑布 — gallery image 4"
+              }
             ]
           },
           {
@@ -1630,7 +2128,7 @@
             "name": "カメリアヒル（アジサイトンネル）",
             "category": "ガーデン＆アジサイトンネル",
             "description": "アジサイのトンネルで知られる植物園。青・紫・ピンクの大きな花々がトンネル状の天蓋を形成する、長い散策路が特徴です。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
+            "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
             "highlights": [
               "アジサイトンネルの散策",
               "ツバキとバラのガーデンゾーン（ツバキはオフシーズン）",
@@ -1666,7 +2164,39 @@
                 ""
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "location": "カメリアヒル（アジサイトンネル）",
+                "caption": "カメリアヒル（アジサイトンネル） — photo 1",
+                "alt": "カメリアヒル（アジサイトンネル） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "location": "カメリアヒル（アジサイトンネル）",
+                "caption": "カメリアヒル（アジサイトンネル） — photo 2",
+                "alt": "カメリアヒル（アジサイトンネル） — gallery image 2"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1675,7 +2205,7 @@
             "name": "オスルロック・ティーミュージアム＆茶畑",
             "category": "茶文化とガーデン",
             "description": "漢拏山を遠景に、広大な緑茶畑が幾重にも広がります。オスルロックのティーミュージアムとティーハウスを楽しみながら、茶文化に触れつつゆったりとした雰囲気で一日を締めくくります。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
             "highlights": [
               "広大な緑茶畑での撮影スポット",
               "ティーミュージアムの展示",
@@ -1712,7 +2242,169 @@
                 ""
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "location": "オスルロック・ティーミュージアム＆茶畑",
+                "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 1",
+                "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "location": "オスルロック・ティーミュージアム＆茶畑",
+                "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 2",
+                "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "location": "オスルロック・ティーミュージアム＆茶畑",
+                "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 3",
+                "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "location": "オスルロック・ティーミュージアム＆茶畑",
+                "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 4",
+                "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "location": "オスルロック・ティーミュージアム＆茶畑",
+                "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 5",
+                "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "location": "オスルロック・ティーミュージアム＆茶畑",
+                "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 6",
+                "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "location": "オスルロック・ティーミュージアム＆茶畑",
+                "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 7",
+                "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "location": "オスルロック・ティーミュージアム＆茶畑",
+                "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 8",
+                "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "location": "オスルロック・ティーミュージアム＆茶畑",
+                "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 9",
+                "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "location": "オスルロック・ティーミュージアム＆茶畑",
+                "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 10",
+                "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "location": "オスルロック・ティーミュージアム＆茶畑",
+                "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 11",
+                "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 11"
+              },
+              {
+                "id": 12,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "location": "オスルロック・ティーミュージアム＆茶畑",
+                "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 12",
+                "alt": "オスルロック・ティーミュージアム＆茶畑 — gallery image 12"
+              }
+            ]
           }
         ]
       }

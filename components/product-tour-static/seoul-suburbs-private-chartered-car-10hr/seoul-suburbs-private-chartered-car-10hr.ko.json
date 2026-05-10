@@ -19,7 +19,7 @@
   },
   "catalog_card": {
     "slug": "seoul-suburbs-private-chartered-car-10hr",
-    "title": "서울 교외 프라이빗 차량 투어 · 10시간",
+    "title": "서울 프라이빗 차량 투어",
     "subtitle": "서울 호텔 출발, 10시간 프라이빗 차량으로 나만의 서울 근교 하루를 구성합니다.",
     "region": "서울 & 근교",
     "duration": "10시간",
@@ -41,8 +41,8 @@
       "서울 호텔 무료 픽업"
     ]
   },
-  "headlineLine1": "서울 시내 또는 교외 프라이빗",
-  "headlineLine2": "전용 차량 투어 10시간",
+  "headlineLine1": "서울 프라이빗 차량 투어",
+  "headlineLine2": "투어",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -995,8 +995,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "서울 시내 또는 교외 프라이빗",
-        "headlineLine2": "전용 차량 투어 10시간",
+        "headlineLine1": "서울 프라이빗 차량 투어",
+        "headlineLine2": "투어",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1920&q=80",
           "imagePosition": "center 40%",

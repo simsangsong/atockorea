@@ -14,13 +14,13 @@
       "海女博物館ツアー",
       "済州日出峰日帰りツアー"
     ],
-    "ogImage": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+    "ogImage": "https://www.atockorea.com/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "済州東部ユネスコ日帰りツアー・全入場料込み | AtoC",
     "description": "東済州日帰りツアー：城山日出峰（済州島（チェジュ島）ユネスコ世界自然遺産）→ 城邑民俗村 → 海女博物館 → 密川洞窟溶岩トンネル → 咸徳ビーチ。全入場料込み、少人数、認定ガイド。4.9/5（1,148件のクチコミ）。"
   },
   "catalog_card": {
-    "thumbnail": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
-    "title": "済州東部ユネスコ世界遺産日帰りツアー",
+    "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+    "title": "済州東部ユネスコ日帰りツアー",
     "priceLabel": "",
     "shortCardDescription": "東済州のユネスコ遺産見どころを9時間で巡る少人数日帰りツアー。咸徳ビーチ、城邑民俗村（ユネスコ）、密川洞窟溶岩トンネル（万丈窟閉鎖中の代替見どころ）、城山日出峰（ユネスコ自然遺産）、海女博物館を一日で網羅。全入場料込み、英語・中国語対応の認定ガイド付き。1,148件のクチコミで4.9/5の高評価。",
     "tags": [
@@ -46,10 +46,10 @@
       "お得",
       "全入場料込み"
     ],
-    "heroImage": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg"
+    "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp"
   },
-  "headlineLine1": "日出峰から溶岩洞窟、ビーチから海女博物館まで —",
-  "headlineLine2": "済州東部ユネスコ世界遺産ループ、全入場料込み",
+  "headlineLine1": "済州東部ユネスコ日帰りツアー",
+  "headlineLine2": "ツアー",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -59,7 +59,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+    "imageUrl": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "imagePosition": "center 35%",
     "tagline": "済州東部で最も口コミが多いツアー — 1,148件のクチコミで4.9/5、全入場料込み",
     "pills": [
@@ -137,49 +137,260 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
-      "alt": "White sand and turquoise waters at Hamdeok Beach, Jeju",
-      "caption": "城山日出峰（ソンサン・イルチュルボン）— ユネスコ世界自然遺産",
-      "location": "咸徳海岸（済州市北部）",
-      "atmosphere": "済州トップビーチのひとつ — エメラルドの浅瀬との丘"
+      "src": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+      "location": "お迎え（済州市内4か所）",
+      "alt": "お迎え（済州市内4か所） — on-route photo",
+      "caption": "お迎え（済州市内4か所）"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "城邑民俗村の石垣と茅葺き屋根の伝統家屋",
-      "caption": "咸徳ビーチ — エメラルドの浅瀬と火山丘陵",
-      "location": "城邑民俗村",
-      "atmosphere": "朝鮮時代の生きた城郭都市 — 1423年創建"
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+      "location": "咸徳ビーチ",
+      "alt": "咸徳ビーチ — gallery image 1",
+      "caption": "咸徳ビーチ — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "日出ランド・密川洞窟の照明が映える溶岩トンネル内部",
-      "caption": "城邑民俗村 — 保存された玄武岩の石垣と茅葺き屋根",
-      "location": "密川洞窟・日出ランド（城山）",
-      "atmosphere": "日出ランド内の天然溶岩チューブ — 常温18°C"
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+      "location": "城邑民俗村（ユネスコ遺産）",
+      "alt": "城邑民俗村（ユネスコ遺産） — gallery image 1",
+      "caption": "城邑民俗村（ユネスコ遺産） — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "城山日出峰ユネスコ火口リムから東シナ海を望む眺望",
-      "caption": "密川洞窟溶岩トンネル（万丈窟閉鎖中の代替見どころ）",
-      "location": "城山日出峰（ソンサン）",
-      "atmosphere": "ユネスコ世界自然遺産 — 済州の旗艦見どころ"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+      "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 1",
+      "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 1"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "済州海女博物館に展示された海女（ヘニョ）の潜水道具",
-      "caption": "海女博物館 — ユネスコ無形文化遺産に登録された済州の海女文化を讃える",
-      "location": "韓国",
-      "atmosphere": "文化的な体験"
+      "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "location": "昼食（済州の地元レストラン）",
+      "alt": "昼食（済州の地元レストラン） — on-route photo",
+      "caption": "昼食（済州の地元レストラン）"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "城山日出峰（ユネスコ世界自然遺産・日出峰）",
+      "alt": "城山日出峰（ユネスコ世界自然遺産・日出峰） — gallery image 1",
+      "caption": "城山日出峰（ユネスコ世界自然遺産・日出峰） — photo 1"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+      "location": "海女博物館（海女の世界）",
+      "alt": "海女博物館（海女の世界） — gallery image 1",
+      "caption": "海女博物館（海女の世界） — photo 1"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1549144511-f099e773c147",
+      "location": "解散（2か所＋東門市場オプション）",
+      "alt": "解散（2か所＋東門市場オプション） — on-route photo",
+      "caption": "解散（2か所＋東門市場オプション）"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+      "location": "咸徳ビーチ",
+      "alt": "咸徳ビーチ — gallery image 2",
+      "caption": "咸徳ビーチ — photo 2"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+      "location": "咸徳ビーチ",
+      "alt": "咸徳ビーチ — gallery image 3",
+      "caption": "咸徳ビーチ — photo 3"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+      "location": "咸徳ビーチ",
+      "alt": "咸徳ビーチ — gallery image 4",
+      "caption": "咸徳ビーチ — photo 4"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+      "location": "城邑民俗村（ユネスコ遺産）",
+      "alt": "城邑民俗村（ユネスコ遺産） — gallery image 2",
+      "caption": "城邑民俗村（ユネスコ遺産） — photo 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+      "location": "城邑民俗村（ユネスコ遺産）",
+      "alt": "城邑民俗村（ユネスコ遺産） — gallery image 3",
+      "caption": "城邑民俗村（ユネスコ遺産） — photo 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+      "location": "城邑民俗村（ユネスコ遺産）",
+      "alt": "城邑民俗村（ユネスコ遺産） — gallery image 4",
+      "caption": "城邑民俗村（ユネスコ遺産） — photo 4"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+      "location": "城邑民俗村（ユネスコ遺産）",
+      "alt": "城邑民俗村（ユネスコ遺産） — gallery image 5",
+      "caption": "城邑民俗村（ユネスコ遺産） — photo 5"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+      "location": "城邑民俗村（ユネスコ遺産）",
+      "alt": "城邑民俗村（ユネスコ遺産） — gallery image 6",
+      "caption": "城邑民俗村（ユネスコ遺産） — photo 6"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+      "location": "城邑民俗村（ユネスコ遺産）",
+      "alt": "城邑民俗村（ユネスコ遺産） — gallery image 7",
+      "caption": "城邑民俗村（ユネスコ遺産） — photo 7"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+      "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+      "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 2",
+      "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 2"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+      "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+      "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 3",
+      "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 3"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+      "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+      "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 4",
+      "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 4"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+      "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+      "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 5",
+      "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 5"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+      "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+      "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 6",
+      "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 6"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+      "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+      "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 7",
+      "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 7"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+      "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+      "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 8",
+      "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 8"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+      "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+      "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 9",
+      "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 9"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+      "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+      "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 10",
+      "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 10"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "城山日出峰（ユネスコ世界自然遺産・日出峰）",
+      "alt": "城山日出峰（ユネスコ世界自然遺産・日出峰） — gallery image 2",
+      "caption": "城山日出峰（ユネスコ世界自然遺産・日出峰） — photo 2"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "城山日出峰（ユネスコ世界自然遺産・日出峰）",
+      "alt": "城山日出峰（ユネスコ世界自然遺産・日出峰） — gallery image 3",
+      "caption": "城山日出峰（ユネスコ世界自然遺産・日出峰） — photo 3"
+    },
+    {
+      "id": 29,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "城山日出峰（ユネスコ世界自然遺産・日出峰）",
+      "alt": "城山日出峰（ユネスコ世界自然遺産・日出峰） — gallery image 4",
+      "caption": "城山日出峰（ユネスコ世界自然遺産・日出峰） — photo 4"
+    },
+    {
+      "id": 30,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "城山日出峰（ユネスコ世界自然遺産・日出峰）",
+      "alt": "城山日出峰（ユネスコ世界自然遺産・日出峰） — gallery image 5",
+      "caption": "城山日出峰（ユネスコ世界自然遺産・日出峰） — photo 5"
+    },
+    {
+      "id": 31,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
+      "location": "海女博物館（海女の世界）",
+      "alt": "海女博物館（海女の世界） — gallery image 2",
+      "caption": "海女博物館（海女の世界） — photo 2"
+    },
+    {
+      "id": 32,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
+      "location": "海女博物館（海女の世界）",
+      "alt": "海女博物館（海女の世界） — gallery image 3",
+      "caption": "海女博物館（海女の世界） — photo 3"
     }
   ],
   "itineraryStops": [
@@ -218,7 +429,7 @@
       "name": "咸徳ビーチ",
       "category": "ビーチ — 済州屈指の透明度",
       "description": "**咸徳西牛峰海水浴場 (함덕 서우봉 해변)** は**済州島ベスト3ビーチ**に常時ランクインする海岸で、**白砂のビーチ(メインストレッチ約500m、3つの連続する入江を合わせ全長約900m)** と東端から直接立ち上がる**寄生火山「西牛峰 (서우봉、「牛の頭のような形の牛望み峰」)」**のコントラストが魅力です。海の特徴的な**エメラルド・ターコイズ色**は、浅いサンゴ砂の海底が透き通った水を通して反射するために生まれます — 韓国では稀な地中海のようなコントラストが、咸徳を国内最も多く撮影されるビーチの一つに押し上げました。ピーク時の夏には**1日5万人**を吸収可能ですが、春・秋の訪問は通常それほど混雑しません。**西牛峰**(山頂まで約1時間)は**3~4月にかけて菜の花の黄色いスロープ**をまとい、**東の万丈窟方面を望むパノラマ展望**が開けます。**歴史的レイヤー**: 西牛峰のすぐ西の海食崖には**第二次世界大戦中の植民地占領期に日本軍が掘削したトンネル**(神風自爆艇のシェルターと弾薬庫、城山日出峰の18洞窟と類似)があります。トンネルは公開されており、歴史的背景の解説看板が設置されています。ビーチは**済州オルレ19コース(朝天 → 金寧)**の中央区間で、トレイルの青オレンジリボンが目印です。**カフェ デルムンド (델문도 카페)** がビーチフロントの中心で、広いテラスとオーシャンビューを備え、インスタ映えとカジュアルな立ち寄りに人気です。**入場無料**、ビーチは**済州国際空港から20km / 車で約40分**(ルート1132経由)。",
-      "image": "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
+      "image": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "highlights": [
         "**済州ベスト3ビーチ** — エメラルドターコイズの水+白いサンゴ砂",
         "**メインビーチ500m** + 3つの連続する入江(全長約900m)",
@@ -266,79 +477,61 @@
         "walking": "難易度は易しい — ビーチは平坦な砂地。西牛峰登山は難易度中程度(階段あり)"
       },
       "images": [
-        "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
-        "/images/tours/hamdeok-beach/hamdeok-beach-buskers-palms.webp",
-        "/images/tours/hamdeok-beach/hamdeok-beach-evening-wading.webp",
-        "/images/tours/hamdeok-beach/hamdeok-beach-sunset-crowd.webp",
-        "/images/tours/hamdeok-beach/hamdeok-beach-golden-hour-aerial.webp"
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp"
       ],
       "imageCredits": [
         {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+          "source": "atoc-korea"
         },
         {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-buskers-palms.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+          "source": "atoc-korea"
         },
         {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-evening-wading.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+          "source": "atoc-korea"
         },
         {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-sunset-crowd.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
-        },
-        {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-golden-hour-aerial.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
         {
-          "id": "hamdeok-1",
+          "id": 1,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
-          "location": "Hamdeok Beach",
-          "caption": "White sand and turquoise waters",
-          "alt": "Elevated view of white sand and turquoise sea, Hamdeok Beach"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+          "location": "咸徳ビーチ",
+          "caption": "咸徳ビーチ — photo 1",
+          "alt": "咸徳ビーチ — gallery image 1"
         },
         {
-          "id": "hamdeok-2",
+          "id": 2,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-buskers-palms.webp",
-          "location": "Hamdeok Beach",
-          "caption": "Beachside buskers under palm trees",
-          "alt": "Buskers performing on white sand with palm trees, Hamdeok Beach"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+          "location": "咸徳ビーチ",
+          "caption": "咸徳ビーチ — photo 2",
+          "alt": "咸徳ビーチ — gallery image 2"
         },
         {
-          "id": "hamdeok-3",
+          "id": 3,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-evening-wading.webp",
-          "location": "Hamdeok Beach",
-          "caption": "Evening waders at Hamdeok",
-          "alt": "Families wading in shallow water at dusk, Hamdeok Beach"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+          "location": "咸徳ビーチ",
+          "caption": "咸徳ビーチ — photo 3",
+          "alt": "咸徳ビーチ — gallery image 3"
         },
         {
-          "id": "hamdeok-4",
+          "id": 4,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-sunset-crowd.webp",
-          "location": "Hamdeok Beach",
-          "caption": "Sunset over Hamdeok Beach",
-          "alt": "Orange sunset with crowd on Hamdeok Beach, buoys visible"
-        },
-        {
-          "id": "hamdeok-5",
-          "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-golden-hour-aerial.webp",
-          "location": "Hamdeok Beach",
-          "caption": "Golden hour aerial view",
-          "alt": "Aerial golden hour view of Hamdeok Beach and Jeju City"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+          "location": "咸徳ビーチ",
+          "caption": "咸徳ビーチ — photo 4",
+          "alt": "咸徳ビーチ — gallery image 4"
         }
       ]
     },
@@ -349,7 +542,7 @@
       "name": "城邑民俗村（ユネスコ遺産）",
       "category": "文化遺産 — 朝鮮時代の生きた城下町",
       "description": "**城邑民俗村**は**1423年、世宗大王の治世に鄭義縣の行政中心として築かれた、朝鮮時代の生きた城下町**です。1914年まで約500年にわたって行政の中枢として機能し、玄武岩の城壁（邑城）の内側に**伝統的な建造物110棟**が今なお住居として使われています。済州独自の建築様式 — 茅葺き屋根・玄武岩の石垣・風に傾いた木々 — が圧倒的な保存状態で残っており、国の民俗文化財に指定されています。",
-      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+      "image": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
       "highlights": [
         "**1423年創建** — 世宗大王による行政中心地、**1914年まで約500年**存続",
         "**伝統的な建造物110棟**が元の邑城（城壁都市）内に現存",
@@ -393,7 +586,104 @@
         "closed": "Open year-round",
         "admission": "Free for general village; some private homes charge for guided visits",
         "walking": "Easy — flat dirt and stone paths through the village"
-      }
+      },
+      "images": [
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+          "location": "城邑民俗村（ユネスコ遺産）",
+          "caption": "城邑民俗村（ユネスコ遺産） — photo 1",
+          "alt": "城邑民俗村（ユネスコ遺産） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+          "location": "城邑民俗村（ユネスコ遺産）",
+          "caption": "城邑民俗村（ユネスコ遺産） — photo 2",
+          "alt": "城邑民俗村（ユネスコ遺産） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+          "location": "城邑民俗村（ユネスコ遺産）",
+          "caption": "城邑民俗村（ユネスコ遺産） — photo 3",
+          "alt": "城邑民俗村（ユネスコ遺産） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+          "location": "城邑民俗村（ユネスコ遺産）",
+          "caption": "城邑民俗村（ユネスコ遺産） — photo 4",
+          "alt": "城邑民俗村（ユネスコ遺産） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+          "location": "城邑民俗村（ユネスコ遺産）",
+          "caption": "城邑民俗村（ユネスコ遺産） — photo 5",
+          "alt": "城邑民俗村（ユネスコ遺産） — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+          "location": "城邑民俗村（ユネスコ遺産）",
+          "caption": "城邑民俗村（ユネスコ遺産） — photo 6",
+          "alt": "城邑民俗村（ユネスコ遺産） — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+          "location": "城邑民俗村（ユネスコ遺産）",
+          "caption": "城邑民俗村（ユネスコ遺産） — photo 7",
+          "alt": "城邑民俗村（ユネスコ遺産） — gallery image 7"
+        }
+      ]
     },
     {
       "number": 4,
@@ -402,7 +692,7 @@
       "name": "密川洞窟（日出ランド）— 万丈窟の代替",
       "category": "地質 — 溶岩トンネル体験",
       "description": "**日出ランド (일출랜드)** は城山に位置する**40万m²の自然テーマパーク**で、**2002年**にオープンしました。中心となるのは**美川窟 (미천굴)** という溶岩洞窟で、**全長1,700mのうち365mが人工的に整地され見学可能な区間**として開放されています(所要約25分)。この洞窟は**ユネスコ世界自然遺産である万丈窟と同じ溶岩洞窟系**に属し、**万丈窟が保全工事や荒天(台風・凍結)で閉鎖される際の代替訪問先**として機能しています。万丈窟が自然のままの不整地の床を残し本来の地質体験を提供するのに対し、美川窟は床を整地することで**高齢の方、ベビーカー利用のご家族、移動に制限のあるお客様も安心して見学できる**ように工夫されています。これは溶岩洞窟体験をより幅広い層に届けるための意図的な設計判断です。洞窟内部は**七色の装飾照明(金・銀・銅・赤・黒・青・白)**で岩の造形を浮かび上がらせており、純粋な地質愛好家からは賛否両論があるものの、一般のお客様の写真撮影には実用的です。洞窟外には**水蓮公園、復元された伝統的な済州村落、野生花盆栽園、サボテン温室、彫刻通り、足湯カフェ(アロマフットスパ)**が広がり、**済州島で唯一、館内にムスリム祈祷室を備えた観光施設**でもあります(意図的なアクセシビリティ投資です)。ドラマロケ地としては**『ランニングマン』(런닝맨, SBS)第89話(不思議の国のアリスをテーマにした2012年放送回)**が知られています。入場料は**大人₩12,000 / 青少年₩9,000 / 子ども₩7,000**。**屋内30%(洞窟+温室)/屋外70%(園内)**の構成で、天候に応じた柔軟なプランニングがしやすい点も特徴です。",
-      "image": "https://images.unsplash.com/photo-1502780402662-acc01917a3a4",
+      "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
       "highlights": [
         "**全長1,700m**の溶岩洞窟、**365mの開放区間**(約25分の歩行)",
         "**万丈窟ユネスコ代替地** — 同じ溶岩洞窟系で、万丈窟閉鎖時に開放",
@@ -448,7 +738,143 @@
         "closed": "日出ランドの運営スケジュールに準ずる — 運営者にご確認ください",
         "admission": "日出ランド入場料に含まれる — 料金は運営者にご確認ください",
         "walking": "難易度はやや高め — 洞窟入口へ階段を下り、年間通じて約12℃、洞窟区間は凹凸のある火山岩の床面"
-      }
+      },
+      "images": [
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+          "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+          "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 1",
+          "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+          "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+          "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 2",
+          "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+          "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+          "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 3",
+          "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+          "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+          "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 4",
+          "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+          "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 5",
+          "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+          "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 6",
+          "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+          "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 7",
+          "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+          "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+          "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 8",
+          "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+          "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+          "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 9",
+          "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+          "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+          "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 10",
+          "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 10"
+        }
+      ]
     },
     {
       "number": 5,
@@ -481,7 +907,7 @@
       "name": "城山日出峰（ユネスコ世界自然遺産・日出峰）",
       "category": "ユネスコ自然遺産 — 済州のシンボル",
       "description": "**城山日出峰**は**5,000年前の水成噴火（スルツェイ式）で誕生した火山凝灰岩丘（タフコーン）**です。水蒸気爆発によりマグマと海水が激しく反応して形成されたこの希少な地形は、**ユネスコ世界自然遺産（2007年）・済州道ユネスコ生物圏保護区（2002年）・ユネスコ世界地質公園（2010年）**という三重の指定を受けています。標高180mの山頂には直径90mの火口が広がり、外洋に面した絶壁と済州島の田園風景を一望できます。",
-      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+      "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "highlights": [
         "**ユネスコ三重指定**：世界自然遺産（2007年）・生物圏保護区（2002年）・世界地質公園（2010年）",
         "**5,000年前** — 水成噴火（スルツェイ式）、マグマと海水の水蒸気爆発による誕生",
@@ -524,7 +950,78 @@
         "closed": "Open year-round (weather closures possible)",
         "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
         "walking": "Moderate — 20–30 min steady stair climb (≈ 600 stairs); benches every few minutes for rest"
-      }
+      },
+      "images": [
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "location": "城山日出峰（ユネスコ世界自然遺産・日出峰）",
+          "caption": "城山日出峰（ユネスコ世界自然遺産・日出峰） — photo 1",
+          "alt": "城山日出峰（ユネスコ世界自然遺産・日出峰） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "location": "城山日出峰（ユネスコ世界自然遺産・日出峰）",
+          "caption": "城山日出峰（ユネスコ世界自然遺産・日出峰） — photo 2",
+          "alt": "城山日出峰（ユネスコ世界自然遺産・日出峰） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "location": "城山日出峰（ユネスコ世界自然遺産・日出峰）",
+          "caption": "城山日出峰（ユネスコ世界自然遺産・日出峰） — photo 3",
+          "alt": "城山日出峰（ユネスコ世界自然遺産・日出峰） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "location": "城山日出峰（ユネスコ世界自然遺産・日出峰）",
+          "caption": "城山日出峰（ユネスコ世界自然遺産・日出峰） — photo 4",
+          "alt": "城山日出峰（ユネスコ世界自然遺産・日出峰） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "location": "城山日出峰（ユネスコ世界自然遺産・日出峰）",
+          "caption": "城山日出峰（ユネスコ世界自然遺産・日出峰） — photo 5",
+          "alt": "城山日出峰（ユネスコ世界自然遺産・日出峰） — gallery image 5"
+        }
+      ]
     },
     {
       "number": 7,
@@ -533,7 +1030,7 @@
       "name": "海女博物館（海女の世界）",
       "category": "ユネスコ無形文化遺産 — 済州の海女文化",
       "description": "**済州海女博物館(제주 해녀 박물관)** は、**「済州海女文化」**(2016年ユネスコ無形文化遺産登録)の制度的アンカー施設です。**旧左邑(クジャウプ)** に位置し、済州島で最も海女活動が活発な東部海岸村の中心に立地。済州の女性ダイバーに関する最古の文字記録は **1629年**、李健(이건)による **『済州風土記』『苟全集』** に遡り、当時は **「潜女(ジャムニョ、潜る女)」** と呼ばれました — 口承伝統では、潜水の慣習は朝鮮王朝以前から数世紀さかのぼる可能性も伝わっています。博物館は **3つの展示室** で海女の独特な実践を記録します:**(1) 日常生活+用具** — 伝統的な潜水ギア(ゴム製スーツ以前の綿製スーツ、浮き具の **テワク** ひょうたん、手槍の **ピチャン**、おもり付きの網)、台所道具、6〜7歳から母が娘を訓練する **母系の潜水教授系譜**、**(2) 潜水実践+階級** — 海女は **下軍(ハグン、見習い)、中軍(ジュングン、中堅)、上軍(サンググン、リーダー的シニア)** に正式に格付けされ、深度と息止め能力で階級が決まります。シニア海女は **60秒の息止めで水深10mまで潜り**、**1日約7時間、年間約90日** 稼働します。**(3) 共同体+未来** — 村の協同組合、儀式歌、**減少する人口(現役は4,000人未満、多くが70代以上)**、保全への取り組みなどを紹介。屋外には彫刻庭園+漁船レプリカが入口の中庭にあり。入場料:**大人₩1,100 / ユース₩500 / 7歳未満と65歳以上は無料**。営業:**09:00–18:00**、**火曜・旧正月・秋夕休館**。屋内比率は約80% — 雨天時の強力なフォールバックアンカーです。",
-      "image": "https://images.unsplash.com/photo-1551883040-7d23ea4f1f87",
+      "image": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
       "highlights": [
         "**ユネスコ無形文化遺産(2016年)** — 制度的アンカー",
         "**最古の文字記録は1629年** — 李健『済州風土記』『苟全集』(当時は「潜女」と表記)",
@@ -580,7 +1077,52 @@
         "closed": "月曜、元旦、ソルラル(旧正月)、秋夕(チュソク)",
         "admission": "大人 1,100ウォン / ティーン 800ウォン / 子ども 500ウォン",
         "walking": "易しい — エレベーター完備のモダンな博物館"
-      }
+      },
+      "images": [
+        "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+        "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
+        "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+          "location": "海女博物館（海女の世界）",
+          "caption": "海女博物館（海女の世界） — photo 1",
+          "alt": "海女博物館（海女の世界） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
+          "location": "海女博物館（海女の世界）",
+          "caption": "海女博物館（海女の世界） — photo 2",
+          "alt": "海女博物館（海女の世界） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
+          "location": "海女博物館（海女の世界）",
+          "caption": "海女博物館（海女の世界） — photo 3",
+          "alt": "海女博物館（海女の世界） — gallery image 3"
+        }
+      ]
     },
     {
       "number": 8,
@@ -1447,8 +1989,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "日出峰から溶岩洞窟、ビーチから海女博物館まで —",
-        "headlineLine2": "済州東部ユネスコ世界遺産ループ、全入場料込み",
+        "headlineLine1": "済州東部ユネスコ日帰りツアー",
+        "headlineLine2": "ツアー",
         "hero": {
           "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
           "imagePosition": "center 35%",
@@ -1627,7 +2169,7 @@
             "name": "咸徳ビーチ",
             "category": "ビーチ — 済州屈指の透明度",
             "description": "**咸徳ビーチ**は**済州のビーチランキング常連トップ3**で、**500mのメインビーチ（白珊瑚砂）と3つの入り江（合計約900m）**の間でエメラルドターコイズの海と浅瀬のコントラストが際立ちます。ビーチ北側にはユネスコ世界自然遺産に指定された****火山丘陵が連なり、春には黄色い菜の花が斜面を覆います。済州市中心部から車で25〜30分というアクセスの良さから、地元客と観光客の双方に人気です。",
-            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+            "image": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
             "highlights": [
               "**済州ビーチトップ3** — エメラルドターコイズの海と白珊瑚砂",
               "**500mのメインビーチ**＋3つの入り江（合計約900m）",
@@ -1654,7 +2196,65 @@
                 "Korea Tourism Organization — Top 3 Jeju Beaches ranking",
                 "Jocheon-eup local cultural office — Seoubong oreum trail records"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+                "location": "咸徳ビーチ",
+                "caption": "咸徳ビーチ — photo 1",
+                "alt": "咸徳ビーチ — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+                "location": "咸徳ビーチ",
+                "caption": "咸徳ビーチ — photo 2",
+                "alt": "咸徳ビーチ — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+                "location": "咸徳ビーチ",
+                "caption": "咸徳ビーチ — photo 3",
+                "alt": "咸徳ビーチ — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+                "location": "咸徳ビーチ",
+                "caption": "咸徳ビーチ — photo 4",
+                "alt": "咸徳ビーチ — gallery image 4"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1663,7 +2263,7 @@
             "name": "城邑民俗村（ユネスコ遺産）",
             "category": "文化遺産 — 朝鮮時代の生きた城下町",
             "description": "**城邑民俗村**は**1423年、世宗大王の治世に鄭義縣の行政中心として築かれた、朝鮮時代の生きた城下町**です。1914年まで約500年にわたって行政の中枢として機能し、玄武岩の城壁（邑城）の内側に**伝統的な建造物110棟**が今なお住居として使われています。済州独自の建築様式 — 茅葺き屋根・玄武岩の石垣・風に傾いた木々 — が圧倒的な保存状態で残っており、国の民俗文化財に指定されています。",
-            "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+            "image": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
             "highlights": [
               "**1423年創建** — 世宗大王による行政中心地、**1914年まで約500年**存続",
               "**伝統的な建造物110棟**が元の邑城（城壁都市）内に現存",
@@ -1692,7 +2292,104 @@
                 "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
                 "Jeju Folklore Society — Omegisul brewing tradition documentation"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+                "location": "城邑民俗村（ユネスコ遺産）",
+                "caption": "城邑民俗村（ユネスコ遺産） — photo 1",
+                "alt": "城邑民俗村（ユネスコ遺産） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+                "location": "城邑民俗村（ユネスコ遺産）",
+                "caption": "城邑民俗村（ユネスコ遺産） — photo 2",
+                "alt": "城邑民俗村（ユネスコ遺産） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+                "location": "城邑民俗村（ユネスコ遺産）",
+                "caption": "城邑民俗村（ユネスコ遺産） — photo 3",
+                "alt": "城邑民俗村（ユネスコ遺産） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+                "location": "城邑民俗村（ユネスコ遺産）",
+                "caption": "城邑民俗村（ユネスコ遺産） — photo 4",
+                "alt": "城邑民俗村（ユネスコ遺産） — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+                "location": "城邑民俗村（ユネスコ遺産）",
+                "caption": "城邑民俗村（ユネスコ遺産） — photo 5",
+                "alt": "城邑民俗村（ユネスコ遺産） — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+                "location": "城邑民俗村（ユネスコ遺産）",
+                "caption": "城邑民俗村（ユネスコ遺産） — photo 6",
+                "alt": "城邑民俗村（ユネスコ遺産） — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+                "location": "城邑民俗村（ユネスコ遺産）",
+                "caption": "城邑民俗村（ユネスコ遺産） — photo 7",
+                "alt": "城邑民俗村（ユネスコ遺産） — gallery image 7"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1701,7 +2398,7 @@
             "name": "密川洞窟（日出ランド）— 万丈窟の代替",
             "category": "地質 — 溶岩トンネル体験",
             "description": "**日出ランド**は2002年開園の**40万m²の自然テーマパーク**で、済州東部のソンサン地区に位置し、万丈窟と同じ溶岩トンネル一帯にに建設されています。メインアトラクションの**密川洞窟**は総延長1,700m（公開区間365m）の溶岩トンネルで、7色のLED照明を使った演出展示が施されています。**万丈窟が安全修復工事のため閉鎖中**のため、現在は最も信頼性の高い溶岩体験として役立っています。",
-            "image": "https://images.unsplash.com/photo-1502780402662-acc01917a3a4",
+            "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
             "highlights": [
               "**総延長1,700m**の溶岩トンネル。**公開区間365m**（約25分の見学）",
               "**万丈窟ユネスコ代替** — 同一の溶岩トンネル体系。万丈窟閉鎖時に活躍",
@@ -1728,7 +2425,143 @@
                 "SBS Variety Archive — Running Man Episode 89 (2012)",
                 "Jeju Tourism Organization — accessibility-friendly attraction registry"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+                "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+                "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 1",
+                "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+                "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+                "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 2",
+                "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+                "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+                "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 3",
+                "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+                "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+                "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 4",
+                "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+                "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+                "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 5",
+                "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+                "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+                "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 6",
+                "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+                "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+                "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 7",
+                "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+                "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+                "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 8",
+                "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+                "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+                "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 9",
+                "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+                "location": "密川洞窟（日出ランド）— 万丈窟の代替",
+                "caption": "密川洞窟（日出ランド）— 万丈窟の代替 — photo 10",
+                "alt": "密川洞窟（日出ランド）— 万丈窟の代替 — gallery image 10"
+              }
+            ]
           },
           {
             "number": 5,
@@ -1758,7 +2591,7 @@
             "name": "城山日出峰（ユネスコ世界自然遺産・日出峰）",
             "category": "ユネスコ自然遺産 — 済州のシンボル",
             "description": "**城山日出峰**は**5,000年前の水成噴火（スルツェイ式）で誕生した火山凝灰岩丘（タフコーン）**です。水蒸気爆発によりマグマと海水が激しく反応して形成されたこの希少な地形は、**ユネスコ世界自然遺産（2007年）・済州道ユネスコ生物圏保護区（2002年）・ユネスコ世界地質公園（2010年）**という三重の指定を受けています。標高180mの山頂には直径90mの火口が広がり、外洋に面した絶壁と済州島の田園風景を一望できます。",
-            "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+            "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
             "highlights": [
               "**ユネスコ三重指定**：世界自然遺産（2007年）・生物圏保護区（2002年）・世界地質公園（2010年）",
               "**5,000年前** — 水成噴火（スルツェイ式）、マグマと海水の水蒸気爆発による誕生",
@@ -1786,7 +2619,78 @@
                 "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
                 "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "location": "城山日出峰（ユネスコ世界自然遺産・日出峰）",
+                "caption": "城山日出峰（ユネスコ世界自然遺産・日出峰） — photo 1",
+                "alt": "城山日出峰（ユネスコ世界自然遺産・日出峰） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "location": "城山日出峰（ユネスコ世界自然遺産・日出峰）",
+                "caption": "城山日出峰（ユネスコ世界自然遺産・日出峰） — photo 2",
+                "alt": "城山日出峰（ユネスコ世界自然遺産・日出峰） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "location": "城山日出峰（ユネスコ世界自然遺産・日出峰）",
+                "caption": "城山日出峰（ユネスコ世界自然遺産・日出峰） — photo 3",
+                "alt": "城山日出峰（ユネスコ世界自然遺産・日出峰） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "location": "城山日出峰（ユネスコ世界自然遺産・日出峰）",
+                "caption": "城山日出峰（ユネスコ世界自然遺産・日出峰） — photo 4",
+                "alt": "城山日出峰（ユネスコ世界自然遺産・日出峰） — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "location": "城山日出峰（ユネスコ世界自然遺産・日出峰）",
+                "caption": "城山日出峰（ユネスコ世界自然遺産・日出峰） — photo 5",
+                "alt": "城山日出峰（ユネスコ世界自然遺産・日出峰） — gallery image 5"
+              }
+            ]
           },
           {
             "number": 7,
@@ -1795,7 +2699,7 @@
             "name": "海女博物館（海女の世界）",
             "category": "ユネスコ無形文化遺産 — 済州の海女文化",
             "description": "**済州海女博物館**は**「済州海女（ヘニョ）の文化」**のユネスコ無形文化遺産（2016年登録）の中核的施設です。2006年に下道里に開館した博物館は、3つの常設展示ホールで海女の生活・潜水技術・社会史を詳しく紹介しています。最古の文献記録は1629年（李健著『耽羅誌』）に遡ります。現在も活動する海女は約3,000〜4,000名（2020年代推計）で、その90%以上が60歳以上です。",
-            "image": "https://images.unsplash.com/photo-1551883040-7d23ea4f1f87",
+            "image": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
             "highlights": [
               "**ユネスコ無形文化遺産（2016年）** — 海女文化の中核的施設",
               "**最古の文献記録1629年** — 李健著『耽羅誌』に「潜女」として記載",
@@ -1824,7 +2728,52 @@
                 "Korea Maritime History Society — Jamnyeo records (1629 onward)",
                 "Jeju Special Self-Governing Province — haenyeo population census records"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+              "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
+              "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+                "location": "海女博物館（海女の世界）",
+                "caption": "海女博物館（海女の世界） — photo 1",
+                "alt": "海女博物館（海女の世界） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
+                "location": "海女博物館（海女の世界）",
+                "caption": "海女博物館（海女の世界） — photo 2",
+                "alt": "海女博物館（海女の世界） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
+                "location": "海女博物館（海女の世界）",
+                "caption": "海女博物館（海女の世界） — photo 3",
+                "alt": "海女博物館（海女の世界） — gallery image 3"
+              }
+            ]
           },
           {
             "number": 8,

@@ -13,11 +13,11 @@
       "Excursión de un día a Seúl desde Incheon",
       "Tour en crucero al Palacio Gyeongbokgung"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+    "ogImage": "https://www.atockorea.com/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-    "title": "Desde Incheon: Excursión de un día a Seúl para Pasajeros de Crucero (Grupo Pequeño)",
+    "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "title": "Incheon→Seúl: Tour de Crucero",
     "priceLabel": "",
     "shortCardDescription": "Excursión de un día en furgoneta compartida desde la Terminal de Cruceros de Incheon visitando los principales puntos turísticos del centro de Seúl en una ventana de 9 horas: Palacio Gyeongbokgung (o Changdeokgung los martes), Pueblo Hanok de Bukchon, almuerzo en el Mercado Gwangjang (el callejón de comida callejera más fotografiado de la ciudad) y la calle cultural de Insadong. Recogida coordinada con el desembarco específico de su barco; guía certificado con inglés y chino; ≈75 min de trayecto de regreso incluidos.",
     "tags": [
@@ -40,10 +40,10 @@
       "Recogida en el puerto de Incheon",
       "Ventana de 9 horas"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+    "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
-  "headlineLine1": "Del puerto de cruceros al palacio real, de los callejones hanok a la comida callejera —",
-  "headlineLine2": "El circuito central destacado de Seúl en un solo día en furgoneta compartida",
+  "headlineLine1": "Incheon→Seúl",
+  "headlineLine2": "Tour de Crucero",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -53,7 +53,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "imagePosition": "center 35%",
     "tagline": "Cuatro paradas en el centro de Seúl coordinadas con el horario de su barco",
     "pills": [
@@ -131,49 +131,100 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "location": "Palacio de Gyeongbokgung",
+      "alt": "Palacio de Gyeongbokgung — gallery image 1",
+      "caption": "Palacio de Gyeongbokgung — photo 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "location": "Bukchon Hanok Village",
+      "alt": "Bukchon Hanok Village — gallery image 1",
+      "caption": "Bukchon Hanok Village — photo 1"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+      "location": "Almuerzo en el Mercado Gwangjang",
+      "alt": "Almuerzo en el Mercado Gwangjang — gallery image 1",
+      "caption": "Almuerzo en el Mercado Gwangjang — photo 1"
+    },
+    {
+      "id": 4,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-      "alt": "El salón del trono Geunjeongjeon del Palacio Gyeongbokgung con telón de fondo montañoso",
-      "caption": "Gyeongbokgung — el salón del trono Geunjeongjeon, Tesoro Nacional n.º 223. Construido en 1395, reconstruido en 1867.",
-      "location": "Palacio Gyeongbokgung, Seúl",
-      "atmosphere": "Amplio patio de piedra, aleros pintados, telón de fondo montañoso"
+      "location": "Calle cultural de Insadong",
+      "alt": "Calle cultural de Insadong — on-route photo",
+      "caption": "Calle cultural de Insadong"
     },
     {
-      "id": "g2",
+      "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/15/2002115_image2_1.JPG",
-      "alt": "Casas hanok con tejados de teja a lo largo de un callejón en pendiente en Bukchon",
-      "caption": "Bukchon Hanok Village — ≈600 casas tradicionales en una zona de conservación designada desde 1976.",
-      "location": "Bukchon Hanok Village, Seúl",
-      "atmosphere": "Callejones tranquilos de hanok, zona residencial, pendientes suaves"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+      "location": "Palacio de Gyeongbokgung",
+      "alt": "Palacio de Gyeongbokgung — gallery image 2",
+      "caption": "Palacio de Gyeongbokgung — photo 2"
     },
     {
-      "id": "g3",
+      "id": 6,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
-      "alt": "Vendedores y clientes apiñados alrededor de un puesto de comida callejera en el Mercado Gwangjang",
-      "caption": "Mercado Gwangjang — el primer mercado interior permanente de Corea (1905). El bindae-tteok y el mayak gimbap son sus especialidades.",
-      "location": "Mercado Gwangjang, Jongno-gu",
-      "atmosphere": "Mostradores comunitarios, puestos chisporroteantes, animado bullicio del mercado"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+      "location": "Palacio de Gyeongbokgung",
+      "alt": "Palacio de Gyeongbokgung — gallery image 3",
+      "caption": "Palacio de Gyeongbokgung — photo 3"
     },
     {
-      "id": "g4",
+      "id": 7,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
-      "alt": "Calle peatonal con tiendas de artesanía tradicional y señalización en Insadong",
-      "caption": "Insadong — la calle de artesanía tradicional y antigüedades de Seúl; designada Calle Cultural en 1988.",
-      "location": "Insadong, Jongno-gu",
-      "atmosphere": "Solo peatones, letreros de caligrafía y artesanía, callejones con casas de té"
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+      "location": "Palacio de Gyeongbokgung",
+      "alt": "Palacio de Gyeongbokgung — gallery image 4",
+      "caption": "Palacio de Gyeongbokgung — photo 4"
     },
     {
-      "id": "g5",
+      "id": 8,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
-      "alt": "Crucero atracado en la terminal internacional de pasajeros del Puerto de Incheon",
-      "caption": "Terminal de Cruceros de Incheon en Songdo — punto de recogida y entrega.",
-      "location": "Terminal Internacional de Pasajeros del Puerto de Incheon",
-      "atmosphere": "Puerto activo, flujo de pasajeros de cruceros"
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+      "location": "Palacio de Gyeongbokgung",
+      "alt": "Palacio de Gyeongbokgung — gallery image 5",
+      "caption": "Palacio de Gyeongbokgung — photo 5"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+      "location": "Palacio de Gyeongbokgung",
+      "alt": "Palacio de Gyeongbokgung — gallery image 6",
+      "caption": "Palacio de Gyeongbokgung — photo 6"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+      "location": "Palacio de Gyeongbokgung",
+      "alt": "Palacio de Gyeongbokgung — gallery image 7",
+      "caption": "Palacio de Gyeongbokgung — photo 7"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+      "location": "Palacio de Gyeongbokgung",
+      "alt": "Palacio de Gyeongbokgung — gallery image 8",
+      "caption": "Palacio de Gyeongbokgung — photo 8"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+      "location": "Palacio de Gyeongbokgung",
+      "alt": "Palacio de Gyeongbokgung — gallery image 9",
+      "caption": "Palacio de Gyeongbokgung — photo 9"
     }
   ],
   "itineraryStops": [
@@ -279,7 +330,130 @@
           "Wikipedia (Gyeongbokgung Palace)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "images": [
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+          "location": "Palacio de Gyeongbokgung",
+          "caption": "Palacio de Gyeongbokgung — photo 1",
+          "alt": "Palacio de Gyeongbokgung — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+          "location": "Palacio de Gyeongbokgung",
+          "caption": "Palacio de Gyeongbokgung — photo 2",
+          "alt": "Palacio de Gyeongbokgung — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+          "location": "Palacio de Gyeongbokgung",
+          "caption": "Palacio de Gyeongbokgung — photo 3",
+          "alt": "Palacio de Gyeongbokgung — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+          "location": "Palacio de Gyeongbokgung",
+          "caption": "Palacio de Gyeongbokgung — photo 4",
+          "alt": "Palacio de Gyeongbokgung — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+          "location": "Palacio de Gyeongbokgung",
+          "caption": "Palacio de Gyeongbokgung — photo 5",
+          "alt": "Palacio de Gyeongbokgung — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+          "location": "Palacio de Gyeongbokgung",
+          "caption": "Palacio de Gyeongbokgung — photo 6",
+          "alt": "Palacio de Gyeongbokgung — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+          "location": "Palacio de Gyeongbokgung",
+          "caption": "Palacio de Gyeongbokgung — photo 7",
+          "alt": "Palacio de Gyeongbokgung — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+          "location": "Palacio de Gyeongbokgung",
+          "caption": "Palacio de Gyeongbokgung — photo 8",
+          "alt": "Palacio de Gyeongbokgung — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+          "location": "Palacio de Gyeongbokgung",
+          "caption": "Palacio de Gyeongbokgung — photo 9",
+          "alt": "Palacio de Gyeongbokgung — gallery image 9"
+        }
+      ]
     },
     {
       "number": 3,
@@ -336,7 +510,26 @@
           "Wikipedia (Bukchon Hanok Village)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "images": [
+        "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+          "location": "Bukchon Hanok Village",
+          "caption": "Bukchon Hanok Village — photo 1",
+          "alt": "Bukchon Hanok Village — gallery image 1"
+        }
+      ]
     },
     {
       "number": 4,
@@ -393,7 +586,26 @@
           "Wikipedia (Gwangjang Market)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+      "images": [
+        "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+          "location": "Almuerzo en el Mercado Gwangjang",
+          "caption": "Almuerzo en el Mercado Gwangjang — photo 1",
+          "alt": "Almuerzo en el Mercado Gwangjang — gallery image 1"
+        }
+      ]
     },
     {
       "number": 5,
@@ -1108,8 +1320,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Del puerto de cruceros al palacio real, callejones hanok hasta la comida callejera —",
-        "headlineLine2": "El circuito central de Seúl en un solo día en furgoneta compartida",
+        "headlineLine1": "Incheon→Seúl",
+        "headlineLine2": "Tour de Crucero",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
           "imagePosition": "center 35%",
@@ -1280,7 +1492,7 @@
             "duration": "90 min",
             "name": "Palacio Gyeongbokgung",
             "category": "Palacio Real",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "description": "Construido en 1395 por el rey Taejo, fundador de la dinastía Joseon, como palacio principal de la nueva dinastía en el auspicioso emplazamiento geomántico al norte de la ciudad. Fue destruido por las llamas durante la Guerra Imjin (1592–98) y abandonado durante 273 años, hasta que el regente del rey Gojong lo restauró a partir de 1865, levantando más de 330 edificios. La mayoría de las estructuras fueron demolidas durante el período colonial japonés (1910–45); la restauración en curso desde la década de 1990 ha reconstruido el eje principal. Puntos destacados: el salón del trono Geunjeongjeon (Tesoro Nacional n.º 223, sede de las coronaciones reales y las principales ceremonias de Estado), el pabellón de banquetes Gyeonghoeru (Tesoro Nacional n.º 224, sobre un estanque artificial) y el pabellón Hyangwonjeon. Ceremonia de cambio de guardia real en la Puerta Gwanghwamun a las 10:00 y las 14:00 (excepto los martes y según las condiciones meteorológicas). Entrada de adultos ₩3.000; gratuita para portadores de hanbok, menores de 7 años y mayores de 64. Cerrado los martes. **Los martes, el tour cambia al Palacio Changdeokgung + Jardín Secreto** (Patrimonio Mundial de la UNESCO; entrada adicional al Jardín Secreto ₩5.000).",
             "timeUsed": [
               "Llegada, compra de entradas e información de orientación",
@@ -1294,7 +1506,130 @@
               "fee_krw": 3000,
               "closed": "Tuesday",
               "free_for_hanbok": true
-            }
+            },
+            "images": [
+              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+              "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+                "location": "Palacio Gyeongbokgung",
+                "caption": "Palacio Gyeongbokgung — photo 1",
+                "alt": "Palacio Gyeongbokgung — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+                "location": "Palacio Gyeongbokgung",
+                "caption": "Palacio Gyeongbokgung — photo 2",
+                "alt": "Palacio Gyeongbokgung — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+                "location": "Palacio Gyeongbokgung",
+                "caption": "Palacio Gyeongbokgung — photo 3",
+                "alt": "Palacio Gyeongbokgung — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+                "location": "Palacio Gyeongbokgung",
+                "caption": "Palacio Gyeongbokgung — photo 4",
+                "alt": "Palacio Gyeongbokgung — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+                "location": "Palacio Gyeongbokgung",
+                "caption": "Palacio Gyeongbokgung — photo 5",
+                "alt": "Palacio Gyeongbokgung — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+                "location": "Palacio Gyeongbokgung",
+                "caption": "Palacio Gyeongbokgung — photo 6",
+                "alt": "Palacio Gyeongbokgung — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+                "location": "Palacio Gyeongbokgung",
+                "caption": "Palacio Gyeongbokgung — photo 7",
+                "alt": "Palacio Gyeongbokgung — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+                "location": "Palacio Gyeongbokgung",
+                "caption": "Palacio Gyeongbokgung — photo 8",
+                "alt": "Palacio Gyeongbokgung — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+                "location": "Palacio Gyeongbokgung",
+                "caption": "Palacio Gyeongbokgung — photo 9",
+                "alt": "Palacio Gyeongbokgung — gallery image 9"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1302,7 +1637,7 @@
             "duration": "75 min",
             "name": "Pueblo Hanok de Bukchon",
             "category": "Barrio Residencial Hanok",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
             "description": "Barrio hanok entre los palacios de Gyeongbokgung y Changdeokgung, designado Área de Conservación Hanok desde 1976. Aproximadamente 600 casas tradicionales; la mayoría siguen siendo residencias privadas (algunas son casas de té, talleres artesanales y pequeños museos) y la ciudad pide a los visitantes mantener la voz baja — se respetan horas de silencio de 22:00 a 10:00. Las «8 Vistas Hanok de Bukchon» son los puntos fotográficos oficialmente designados; el más conocido es el mirador de Bukchon-ro 11-gil, donde los tejados hanok descienden en pendiente hacia el paisaje urbano de Seúl con la Torre N Seoul al fondo. La mayoría de las casas datan de finales de los años 1920–1930, cuando la élite coreana construyó hanoks modernizados durante el período colonial japonés. Se puede recorrer gratuitamente; callejuelas hanok planas con algunas pendientes suaves.",
             "timeUsed": [
               "Paseo por los miradores fotográficos",
@@ -1314,7 +1649,26 @@
               "is_attraction": true,
               "fee_krw": 0,
               "quiet_hours": "22:00-10:00 daily"
-            }
+            },
+            "images": [
+              "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+                "location": "Pueblo Hanok de Bukchon",
+                "caption": "Pueblo Hanok de Bukchon — photo 1",
+                "alt": "Pueblo Hanok de Bukchon — gallery image 1"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1322,7 +1676,7 @@
             "duration": "75 min",
             "name": "Almuerzo en el Mercado Gwangjang",
             "category": "Almuerzo en el Mercado y Comida Callejera",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
             "description": "El primer mercado cubierto permanente de Corea, inaugurado en 1905. El mercado es conocido principalmente por su pasillo de comida, donde el almuerzo es la comida principal del día: bindae-tteok (tortitas de judía mungo, aprox. ₩5.000), mayak gimbap (rollitos de arroz con alga tamaño bocado conocidos como «narcóticos», aprox. ₩3.000–₩4.000 por paquete), yukhoe (tartar de ternera cruda, aprox. ₩15.000–₩20.000) y kalguksu (fideos cortados a cuchillo, aprox. ₩7.000). Los puestos comparten asientos en barra comunitarios. Además de la comida, el mercado cuenta con una gran sala de tejidos y seda en una planta separada, que se omite en este tour por falta de tiempo. Abierto aprox. 09:00–23:00 todos los días; algunos puestos de comida cierran los domingos. Presupuesto de ₩10.000–₩20.000 por persona para el almuerzo. 75 minutos incluyen pedir, comer y un recorrido de 15 minutos por los callejones de comida cercanos.",
             "timeUsed": [
               "Almuerzo de comida callejera (a cargo del cliente)",
@@ -1334,7 +1688,26 @@
               "is_attraction": true,
               "fee_krw": 0,
               "lunch_budget_krw": "10000-20000"
-            }
+            },
+            "images": [
+              "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+                "location": "Almuerzo en el Mercado Gwangjang",
+                "caption": "Almuerzo en el Mercado Gwangjang — photo 1",
+                "alt": "Almuerzo en el Mercado Gwangjang — gallery image 1"
+              }
+            ]
           },
           {
             "number": 5,

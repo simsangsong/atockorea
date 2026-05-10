@@ -20,7 +20,7 @@
   },
   "catalog_card": {
     "slug": "jeju-cruise-shore-excursion-bus-tour",
-    "title": "Excursión en Escala de Crucero en Jeju - Excursión en autocar (autocar grande)",
+    "title": "Jeju Crucero: Autocar",
     "subtitle": "Excursión de día para cruceristas, ajustada al puerto, con rutas alternativas para Jeju y Gangjeong.",
     "region": "Jeju (según el puerto)",
     "duration": "8 horas",
@@ -44,8 +44,8 @@
       "Autobús grande"
     ]
   },
-  "headlineLine1": "Excursión de crucero en Jeju — tour en autocar (autocar grande)",
-  "headlineLine2": "Dos rutas según su puerto de atraque",
+  "headlineLine1": "Jeju Crucero",
+  "headlineLine2": "Autocar",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -2212,8 +2212,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Excursión de crucero en Jeju — tour en autocar (autocar grande)",
-        "headlineLine2": "Dos rutas según su puerto de atraque",
+        "headlineLine1": "Jeju Crucero",
+        "headlineLine2": "Autocar",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
           "imagePosition": "center 35%",

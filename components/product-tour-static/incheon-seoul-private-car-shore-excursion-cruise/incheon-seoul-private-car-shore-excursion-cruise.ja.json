@@ -13,12 +13,12 @@
       "仁川港からソウルへのプライベート送迎",
       "クルーズ寄港地ツアー 韓国"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "ogImage": "https://www.atockorea.com/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "title": "仁川 → ソウル プライベートクルーズ寄港地観光・8時間ドア・トゥ・ドア日帰り"
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-    "title": "クルーズ旅客向け 仁川〜ソウル プライベートカー寄港地観光",
+    "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "title": "仁川→ソウル・クルーズプライベートカー",
     "priceLabel": "",
     "shortCardDescription": "船の出港時刻に合わせて組み立てる、8時間のプライベート専用車チャーター。固定スケジュールはありません。仁川クルーズターミナルのタラップでお出迎えし、英語対応のドライバーガイドが景福宮・北村韓屋村＋仁寺洞・お好みのランチ・Nソウルタワー・明洞または曹渓寺をご案内します。ドライバーガイドは出港時刻の60分前を交通渋滞バッファーとして確保するため、乗り遅れの心配はありません。",
     "tags": [
@@ -44,10 +44,10 @@
       "カスタマイズ可能",
       "帰船保証"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+    "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
-  "headlineLine1": "クルーズ港から宮殿へ、出港時刻に合わせてカスタム設計 —",
-  "headlineLine2": "あなたのグループだけのソウル観光、帰船保証付き",
+  "headlineLine1": "仁川→ソウル・クルーズプライベートカー",
+  "headlineLine2": "ツアー",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -57,7 +57,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "imagePosition": "center 35%",
     "tagline": "タラップから60分で景福宮へ — 出港時刻に合わせて計画されたプライベートソウル観光",
     "pills": [
@@ -135,58 +135,92 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-      "alt": "仁川クルーズターミナル到着ホールのタラップ側お迎え",
-      "caption": "景福宮の正殿（勤政殿）",
-      "location": "仁川クルーズターミナル",
-      "atmosphere": "クルーズターミナル直接お迎え"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "location": "景福宮 ＋ 王宮守門将交代儀式",
+      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 1",
+      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/15/2002115_image2_1.JPG",
-      "alt": "景福宮の正殿と王宮守門将交代儀式",
-      "caption": "景福宮の守門将交代式",
-      "location": "景福宮（ソウル）",
-      "atmosphere": "朝鮮王朝の王宮"
+      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "location": "北村韓屋村 ＋ 仁寺洞",
+      "alt": "北村韓屋村 ＋ 仁寺洞 — gallery image 1",
+      "caption": "北村韓屋村 ＋ 仁寺洞 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
-      "alt": "北村の尾根沿いに続く石垣と韓屋の瓦屋根",
-      "caption": "北村韓屋村の伝統的な屋根のシルエット",
-      "location": "北村韓屋村（ソウル）",
-      "atmosphere": "保存された朝鮮時代の住宅路地"
-    },
-    {
-      "id": "g4",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
-      "alt": "南山から望むソウルのパノラマとNソウルタワー",
-      "caption": "曹渓寺の本堂と提灯の飾り",
       "location": "Nソウルタワー（南山）",
-      "atmosphere": "市内展望スポット"
+      "alt": "Nソウルタワー（南山） — on-route photo",
+      "caption": "Nソウルタワー（南山）"
     },
     {
-      "id": "g5",
+      "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
-      "alt": "夕暮れ時の明洞ショッピングストリートに灯る屋台の明かり",
-      "caption": "南山から望む、夕日に染まるNソウルタワー",
-      "location": "ソウル・明洞",
-      "atmosphere": "ショッピングとストリートフード"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+      "location": "景福宮 ＋ 王宮守門将交代儀式",
+      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 2",
+      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 2"
     },
     {
-      "id": "g6",
+      "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG",
-      "alt": "仁川クルーズターミナルの降車ゾーンで待機するプライベートカー",
-      "caption": "明洞のストリートフードとショッピング",
-      "location": "仁川クルーズターミナル",
-      "atmosphere": "出港前の余裕を持った帰船"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+      "location": "景福宮 ＋ 王宮守門将交代儀式",
+      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 3",
+      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 3"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+      "location": "景福宮 ＋ 王宮守門将交代儀式",
+      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 4",
+      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 4"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+      "location": "景福宮 ＋ 王宮守門将交代儀式",
+      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 5",
+      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 5"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+      "location": "景福宮 ＋ 王宮守門将交代儀式",
+      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 6",
+      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 6"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+      "location": "景福宮 ＋ 王宮守門将交代儀式",
+      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 7",
+      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 7"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+      "location": "景福宮 ＋ 王宮守門将交代儀式",
+      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 8",
+      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 8"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+      "location": "景福宮 ＋ 王宮守門将交代儀式",
+      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 9",
+      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 9"
     }
   ],
   "itineraryStops": [
@@ -292,7 +326,130 @@
           "Wikipedia (Gyeongbokgung Palace)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "images": [
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+          "location": "景福宮 ＋ 王宮守門将交代儀式",
+          "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 1",
+          "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+          "location": "景福宮 ＋ 王宮守門将交代儀式",
+          "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 2",
+          "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+          "location": "景福宮 ＋ 王宮守門将交代儀式",
+          "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 3",
+          "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+          "location": "景福宮 ＋ 王宮守門将交代儀式",
+          "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 4",
+          "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+          "location": "景福宮 ＋ 王宮守門将交代儀式",
+          "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 5",
+          "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+          "location": "景福宮 ＋ 王宮守門将交代儀式",
+          "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 6",
+          "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+          "location": "景福宮 ＋ 王宮守門将交代儀式",
+          "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 7",
+          "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+          "location": "景福宮 ＋ 王宮守門将交代儀式",
+          "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 8",
+          "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+          "location": "景福宮 ＋ 王宮守門将交代儀式",
+          "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 9",
+          "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 9"
+        }
+      ]
     },
     {
       "number": 3,
@@ -353,7 +510,26 @@
           "Wikipedia (Bukchon Hanok Village)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "images": [
+        "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+          "location": "北村韓屋村 ＋ 仁寺洞",
+          "caption": "北村韓屋村 ＋ 仁寺洞 — photo 1",
+          "alt": "北村韓屋村 ＋ 仁寺洞 — gallery image 1"
+        }
+      ]
     },
     {
       "number": 4,
@@ -1177,8 +1353,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "クルーズ港から宮殿まで、出航時刻に合わせてカスタマイズ —",
-        "headlineLine2": "お客様グループだけのソウルの一日、船への帰還保証付き",
+        "headlineLine1": "仁川→ソウル・クルーズプライベートカー",
+        "headlineLine2": "ツアー",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
           "imagePosition": "center 35%",

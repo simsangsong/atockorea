@@ -20,7 +20,7 @@
   },
   "catalog_card": {
     "slug": "east-signature-nature-core",
-    "title": "Tour Jeju Este: Volcán, Costa Fotogénica y Aldea Folclórica",
+    "title": "Jeju Este: Volcán, Costa y Aldea",
     "subtitle": "De la cultura de la piedra y la costa abierta hasta el cráter volcánico — el itinerario más equilibrado del este de Jeju.",
     "region": "Jeju Este",
     "duration": "Un día (recogida en hotel)",
@@ -45,8 +45,8 @@
       "Recomendado para primera visita"
     ]
   },
-  "headlineLine1": "Volcán, costa, cueva de lava y aldea joseonesa —",
-  "headlineLine2": "el tour más equilibrado del este de Jeju",
+  "headlineLine1": "Jeju Este",
+  "headlineLine2": "Volcán, Costa y Aldea",
   "price": {
     "amountLabel": "58",
     "currency": "USD",
@@ -1641,8 +1641,8 @@
       "id": "hero",
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Volcán, costa, cueva de lava y aldea joseonesa —",
-        "headlineLine2": "el tour más equilibrado del este de Jeju",
+        "headlineLine1": "Jeju Este",
+        "headlineLine2": "Volcán, Costa y Aldea",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80",
           "imagePosition": "center 35%",

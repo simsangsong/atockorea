@@ -14,13 +14,13 @@
       "Hueree hydrangea",
       "Jeju summer tour"
     ],
-    "ogImage": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+    "ogImage": "https://www.atockorea.com/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "Jeju Hydrangea Festival · East Route · Summer | AtoC Korea",
     "description": "East Jeju hydrangea summer tour: Hamdeok Beach → Seongeup Folk Village → Seongsan Ilchulbong (UNESCO) → Ilchul Land hydrangea festival + lava tube → Hueree Natural Park. June–mid-July only. Hotel pickup."
   },
   "catalog_card": {
-    "thumbnail": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
-    "title": "Jeju Hydrangea Festival Tour: East Route",
+    "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+    "title": "Jeju Hydrangea Festival: East",
     "priceLabel": "Price varies — confirm at booking",
     "shortCardDescription": "A seasonal small-group day-tour of east Jeju built around the island's hydrangea festivals (late May to mid-July, peak mid-June) at Hueree Natural Park and Ilchul Land. The route also covers two UNESCO World Heritage sites — Seongsan Ilchulbong (Sunrise Peak) and Seongeup Folk Village — plus Hamdeok Beach and the Micheon Cave lava tube. Hotel pickup in Jeju City, English/Chinese-speaking licensed guide-driver.",
     "tags": [
@@ -48,10 +48,10 @@
       "UNESCO",
       "Festival"
     ],
-    "heroImage": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg"
+    "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp"
   },
-  "headlineLine1": "Hydrangea blue and Sunrise Peak gold —",
-  "headlineLine2": "east Jeju's summer route, in a single 9-hour loop",
+  "headlineLine1": "Jeju Hydrangea Festival",
+  "headlineLine2": "East",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -61,7 +61,7 @@
     "discountPercent": 10
   },
   "hero": {
-    "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+    "imageUrl": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "imagePosition": "center 35%",
     "tagline": "East Jeju at peak hydrangea bloom — UNESCO heritage plus a sea of flowers in 9 hours",
     "pills": [
@@ -138,49 +138,236 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
-      "alt": "Seongsan Ilchulbong (Sunrise Peak) — UNESCO Natural Heritage",
-      "caption": "Seongsan Ilchulbong (Sunrise Peak) — UNESCO Natural Heritage",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+      "location": "Hamdeok Seoubong Beach",
+      "alt": "Hamdeok Seoubong Beach — gallery image 1",
+      "caption": "Hamdeok Seoubong Beach — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "Hueree Natural Park hydrangea field — peak season late May to mid-July (peak mid-June)",
-      "caption": "Hueree Natural Park hydrangea field — peak season late May to mid-July (peak mid-June)",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+      "location": "Seongeup Folk Village",
+      "alt": "Seongeup Folk Village — gallery image 1",
+      "caption": "Seongeup Folk Village — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "Ilchul Land's Micheon lava-tube cave (alternate to closed Manjanggul)",
-      "caption": "Ilchul Land's Micheon lava-tube cave (alternate to closed Manjanggul)",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 1",
+      "caption": "Seongsan Ilchulbong — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "Seongeup Folk Village's traditional stone houses, UNESCO heritage",
-      "caption": "Seongeup Folk Village's traditional stone houses, UNESCO heritage",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+      "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 1",
+      "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 1"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
-      "alt": "White sand and turquoise waters at Hamdeok Beach, Jeju",
-      "caption": "Hamdeok Beach, ranked among Jeju's top three beaches",
-      "location": "",
-      "atmosphere": ""
+      "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+      "location": "Hueree Natural Park — Hydrangea highlight",
+      "alt": "Hueree Natural Park — Hydrangea highlight — gallery image 1",
+      "caption": "Hueree Natural Park — Hydrangea highlight — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+      "location": "Hamdeok Seoubong Beach",
+      "alt": "Hamdeok Seoubong Beach — gallery image 2",
+      "caption": "Hamdeok Seoubong Beach — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+      "location": "Hamdeok Seoubong Beach",
+      "alt": "Hamdeok Seoubong Beach — gallery image 3",
+      "caption": "Hamdeok Seoubong Beach — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+      "location": "Hamdeok Seoubong Beach",
+      "alt": "Hamdeok Seoubong Beach — gallery image 4",
+      "caption": "Hamdeok Seoubong Beach — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+      "location": "Seongeup Folk Village",
+      "alt": "Seongeup Folk Village — gallery image 2",
+      "caption": "Seongeup Folk Village — photo 2"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+      "location": "Seongeup Folk Village",
+      "alt": "Seongeup Folk Village — gallery image 3",
+      "caption": "Seongeup Folk Village — photo 3"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+      "location": "Seongeup Folk Village",
+      "alt": "Seongeup Folk Village — gallery image 4",
+      "caption": "Seongeup Folk Village — photo 4"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+      "location": "Seongeup Folk Village",
+      "alt": "Seongeup Folk Village — gallery image 5",
+      "caption": "Seongeup Folk Village — photo 5"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+      "location": "Seongeup Folk Village",
+      "alt": "Seongeup Folk Village — gallery image 6",
+      "caption": "Seongeup Folk Village — photo 6"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+      "location": "Seongeup Folk Village",
+      "alt": "Seongeup Folk Village — gallery image 7",
+      "caption": "Seongeup Folk Village — photo 7"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 2",
+      "caption": "Seongsan Ilchulbong — photo 2"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 3",
+      "caption": "Seongsan Ilchulbong — photo 3"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 4",
+      "caption": "Seongsan Ilchulbong — photo 4"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 5",
+      "caption": "Seongsan Ilchulbong — photo 5"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+      "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+      "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 2",
+      "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 2"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+      "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+      "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 3",
+      "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 3"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+      "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+      "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 4",
+      "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 4"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+      "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+      "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 5",
+      "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 5"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+      "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+      "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 6",
+      "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 6"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+      "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+      "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 7",
+      "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 7"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+      "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+      "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 8",
+      "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 8"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+      "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+      "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 9",
+      "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 9"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+      "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+      "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 10",
+      "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 10"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43.webp",
+      "location": "Hueree Natural Park — Hydrangea highlight",
+      "alt": "Hueree Natural Park — Hydrangea highlight — gallery image 2",
+      "caption": "Hueree Natural Park — Hydrangea highlight — photo 2"
+    },
+    {
+      "id": 29,
+      "type": "photo",
+      "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46.webp",
+      "location": "Hueree Natural Park — Hydrangea highlight",
+      "alt": "Hueree Natural Park — Hydrangea highlight — gallery image 3",
+      "caption": "Hueree Natural Park — Hydrangea highlight — photo 3"
     }
   ],
   "itineraryStops": [
@@ -225,7 +412,7 @@
       "name": "Hamdeok Seoubong Beach",
       "category": "Coastal photo stop — emerald turquoise + Seoubong Oreum",
       "description": "**Hamdeok Seoubong Beach (함덕 서우봉 해변)** is consistently ranked among **Jeju's top 3 beaches**, defined by the contrast between **white-sand beach (~500 m main stretch, 3 connected coves totaling ~900 m)** and the **adjacent volcanic cone Seoubong (서우봉, 'Cow Looking Like a Cow's Head' parasitic cone)** rising directly from the eastern end. The water's signature **emerald-turquoise color** comes from shallow coral-sand seabed reflecting through clear ocean — the Mediterranean-like contrast (rare in Korea) is what made Hamdeok one of the country's most photographed domestic beach destinations. The beach can absorb up to **50,000 daily visitors** at peak summer, but spring + autumn visits are typically uncrowded. **Seoubong Peak** (climbable ~1 hour to summit) wears **canola-yellow slopes in spring (March–April)** and offers a **panoramic eastward view to Manjanggul lava-tube area**. **Historical layer**: the sea cliffs immediately west of Seoubong hold **Imperial Japanese Army tunnels carved during WWII colonial occupation** — kamikaze suicide-boat shelters and ammunition stores, similar to the 18 caves at Seongsan Ilchulbong. The tunnels are publicly accessible (with signage explaining the historical context). The beach is the **central segment of Jeju Olle Trail Course 19 (조천 → 김녕)**, marked with the trail's signature blue-orange ribbons. **Cafe Delmoondo (델문도 카페)** sits directly on the beachfront — large terraces, sea-view, popular for photo and casual stops. **FREE admission**; the beach is **20 km / ~40-min drive from Jeju International Airport** on Route 1132.",
-      "image": "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
+      "image": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "highlights": [
         "**Top 3 Jeju beaches** — emerald-turquoise water + white coral sand",
         "**500 m main beach** + 3 connected coves (~900 m total length)",
@@ -273,79 +460,61 @@
         "walking": "Easy — beach is flat sand; Seoubong hike is moderate (steps)"
       },
       "images": [
-        "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
-        "/images/tours/hamdeok-beach/hamdeok-beach-buskers-palms.webp",
-        "/images/tours/hamdeok-beach/hamdeok-beach-evening-wading.webp",
-        "/images/tours/hamdeok-beach/hamdeok-beach-sunset-crowd.webp",
-        "/images/tours/hamdeok-beach/hamdeok-beach-golden-hour-aerial.webp"
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp"
       ],
       "imageCredits": [
         {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+          "source": "atoc-korea"
         },
         {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-buskers-palms.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+          "source": "atoc-korea"
         },
         {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-evening-wading.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+          "source": "atoc-korea"
         },
         {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-sunset-crowd.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
-        },
-        {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-golden-hour-aerial.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
         {
-          "id": "hamdeok-1",
+          "id": 1,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
-          "location": "Hamdeok Beach",
-          "caption": "White sand and turquoise waters",
-          "alt": "Elevated view of white sand and turquoise sea, Hamdeok Beach"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+          "location": "Hamdeok Seoubong Beach",
+          "caption": "Hamdeok Seoubong Beach — photo 1",
+          "alt": "Hamdeok Seoubong Beach — gallery image 1"
         },
         {
-          "id": "hamdeok-2",
+          "id": 2,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-buskers-palms.webp",
-          "location": "Hamdeok Beach",
-          "caption": "Beachside buskers under palm trees",
-          "alt": "Buskers performing on white sand with palm trees, Hamdeok Beach"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+          "location": "Hamdeok Seoubong Beach",
+          "caption": "Hamdeok Seoubong Beach — photo 2",
+          "alt": "Hamdeok Seoubong Beach — gallery image 2"
         },
         {
-          "id": "hamdeok-3",
+          "id": 3,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-evening-wading.webp",
-          "location": "Hamdeok Beach",
-          "caption": "Evening waders at Hamdeok",
-          "alt": "Families wading in shallow water at dusk, Hamdeok Beach"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+          "location": "Hamdeok Seoubong Beach",
+          "caption": "Hamdeok Seoubong Beach — photo 3",
+          "alt": "Hamdeok Seoubong Beach — gallery image 3"
         },
         {
-          "id": "hamdeok-4",
+          "id": 4,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-sunset-crowd.webp",
-          "location": "Hamdeok Beach",
-          "caption": "Sunset over Hamdeok Beach",
-          "alt": "Orange sunset with crowd on Hamdeok Beach, buoys visible"
-        },
-        {
-          "id": "hamdeok-5",
-          "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-golden-hour-aerial.webp",
-          "location": "Hamdeok Beach",
-          "caption": "Golden hour aerial view",
-          "alt": "Aerial golden hour view of Hamdeok Beach and Jeju City"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+          "location": "Hamdeok Seoubong Beach",
+          "caption": "Hamdeok Seoubong Beach — photo 4",
+          "alt": "Hamdeok Seoubong Beach — gallery image 4"
         }
       ]
     },
@@ -356,7 +525,7 @@
       "name": "Seongeup Folk Village",
       "category": "Joseon-era folk heritage — UNESCO/National Folklore designation",
       "description": "**Seongeup Folk Village (성읍 민속마을)** is a **living Joseon-era walled town founded in 1423** during the reign of **Sejong the Great** as Jeong-eui-hyeon (정의현), one of the three administrative seats of Joseon-era Jeju. The village served continuously as a **county administrative center until 1914** — nearly **500 years** — and retains **110 traditional structures** today within the original eupseong (읍성) walled-town footprint, designed on **Korean feng shui principles** typical of Joseon county capitals. The entire village is designated **Important Folklore Cultural Heritage of South Korea**, with **multiple individual buildings** carrying separate heritage status. At the village center stand **two ancient trees designated Natural Monuments of South Korea** — a **Saw-leaf Zelkova (느티나무)** and a **Japanese Hackberry (팽나무)**, both estimated **600+ years old** and revered as the village's spiritual highlight. Historical scars are visible: a **major fire in 1826 destroyed ~80 buildings**, and the village suffered fire damage **during the Jeju Uprising in 1948** — both events preserved as historical record on village signage. The **peak household count (historical, pre-modern) was ~1,500** — today the village remains inhabited by ~250 families, many actively maintaining traditional crafts. Drama filming credit: **'Dae Jang Geum (Jewel in the Palace)' (MBC, 2003–2004)**, the international K-drama hit. Local specialty: **Omegisul (오메기술)** — a **rice-based traditional Jeju liquor** brewed by **one family for multiple generations**, with the brewing demonstrated and tasted free of charge at the home-brewery within the village. **FREE admission**; outdoor walking dominates (~70% outdoor / 30% indoor for individual hanok visits).",
-      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+      "image": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
       "highlights": [
         "**Founded 1423** by Sejong the Great — administrative center until **1914 (~500 years)**",
         "**110 traditional structures** within original eupseong walled-town footprint",
@@ -403,7 +572,104 @@
         "closed": "Open year-round",
         "admission": "Free for general village; some private homes charge for guided visits",
         "walking": "Easy — flat dirt and stone paths through the village"
-      }
+      },
+      "images": [
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+          "location": "Seongeup Folk Village",
+          "caption": "Seongeup Folk Village — photo 1",
+          "alt": "Seongeup Folk Village — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+          "location": "Seongeup Folk Village",
+          "caption": "Seongeup Folk Village — photo 2",
+          "alt": "Seongeup Folk Village — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+          "location": "Seongeup Folk Village",
+          "caption": "Seongeup Folk Village — photo 3",
+          "alt": "Seongeup Folk Village — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+          "location": "Seongeup Folk Village",
+          "caption": "Seongeup Folk Village — photo 4",
+          "alt": "Seongeup Folk Village — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+          "location": "Seongeup Folk Village",
+          "caption": "Seongeup Folk Village — photo 5",
+          "alt": "Seongeup Folk Village — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+          "location": "Seongeup Folk Village",
+          "caption": "Seongeup Folk Village — photo 6",
+          "alt": "Seongeup Folk Village — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+          "location": "Seongeup Folk Village",
+          "caption": "Seongeup Folk Village — photo 7",
+          "alt": "Seongeup Folk Village — gallery image 7"
+        }
+      ]
     },
     {
       "number": 4,
@@ -446,7 +712,7 @@
       "name": "Seongsan Ilchulbong",
       "category": "UNESCO triple-designated tuff cone — climb to the rim",
       "description": "**Seongsan Ilchulbong (성산일출봉, 'Sunrise Peak')** is a **5,000-year-old Surtseyan-type hydrovolcanic tuff cone** — a rare landform created when an underwater basalt eruption broke the sea surface, the magma met seawater, and the resulting steam-explosive ash built a **182 m fortress-shaped crater** rim instead of a typical lava cone. The result is what UNESCO formally calls **'an exceptional example of an emergent Surtseyan-type volcanic edifice'**. The crater is **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** that local lore likens to a stone crown. Seongsan carries the **Triple UNESCO designation**: **World Natural Heritage (inscribed 2007-07-02)** as part of the **'Jeju Volcanic Island and Lava Tubes' property**, **Biosphere Reserve (2002)**, and **Global Geopark (2010-10)** — a stack matched only by Hallasan itself among Korean sites. **18 Imperial Japanese WWII caves** (kamikaze suicide-boat shelters, 1945) are tunneled into the seaward base. Trail: **0.8 km one-way, ~140 m elevation gain, 60 min round trip** on wide stone steps. **Haenyeo (해녀) demonstrations** run **daily at 13:30 and 15:00** at the rocky cove below the cone — Jeju women divers (UNESCO Intangible Cultural Heritage 2016) descend without scuba gear. Admission updated **April 2025**: **Adult ₩5,000 / Youth+Child ₩2,500 / Group adult ₩1,600**, free under 7 and over 65. The summit deck is also part of the **Yeongjusipgyeong (Jeju 10 Scenic Wonders) canon**, and remains Korea's premier **annual New Year sunrise pilgrimage** destination — 50,000+ visitors ascend before dawn on January 1, with municipal sunrise-festival programming since 1995. **Udo Island (우도, 'Cow Island')** — Korea's largest secondary volcanic island — is clearly visible 4 km offshore from the summit, accessible by **15-min ferry from Seongsan Port** (₩10,500 round-trip) for guests with extra time on a different itinerary.",
-      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+      "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "highlights": [
         "**Triple UNESCO**: World Heritage 2007-07-02 + Biosphere Reserve 2002 + Global Geopark 2010-10",
         "**5,000 years old** — Surtseyan-type hydrovolcanic eruption, magma-meets-seawater steam-explosive birth",
@@ -492,7 +758,78 @@
         "closed": "Open year-round (weather closures possible)",
         "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
         "walking": "Moderate — 20–30 min steady stair climb (≈600 stairs); benches every few minutes for rest"
-      }
+      },
+      "images": [
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "location": "Seongsan Ilchulbong",
+          "caption": "Seongsan Ilchulbong — photo 1",
+          "alt": "Seongsan Ilchulbong — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "location": "Seongsan Ilchulbong",
+          "caption": "Seongsan Ilchulbong — photo 2",
+          "alt": "Seongsan Ilchulbong — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "location": "Seongsan Ilchulbong",
+          "caption": "Seongsan Ilchulbong — photo 3",
+          "alt": "Seongsan Ilchulbong — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "location": "Seongsan Ilchulbong",
+          "caption": "Seongsan Ilchulbong — photo 4",
+          "alt": "Seongsan Ilchulbong — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "location": "Seongsan Ilchulbong",
+          "caption": "Seongsan Ilchulbong — photo 5",
+          "alt": "Seongsan Ilchulbong — gallery image 5"
+        }
+      ]
     },
     {
       "number": 6,
@@ -501,7 +838,7 @@
       "name": "Ilchul Land — Hydrangea Festival + Micheon Cave",
       "category": "Hydrangea festival garden + lava-tube cave (June peak)",
       "description": "**Ilchul Land (일출랜드)** is a **400,000 m² nature theme park** in Seongsan, opened **2002**, built around the **Micheon Cave (미천굴)** lava tube — a **1,700 m total length cave** with a **365 m artificially leveled walk-through section** open to visitors (~25-minute traverse). The cave is part of Jeju's **lava-tube system that shares geological lineage with Manjanggul Cave** — the UNESCO World Natural Heritage lava tube — and **functions as the practical alternative when Manjanggul closes for conservation maintenance or weather (typhoons, freezing)**. Where Manjanggul preserves its uneven natural floor as an authentic geological experience, Micheon's leveled walkway makes the cave **accessible to elderly visitors, families with strollers, and guests with mobility limitations** — a deliberate engineering choice that broadens the lava-tube experience to audiences who couldn't navigate Manjanggul. The interior is lit with **decorative seven-color lighting (gold, silver, bronze, red, black, blue, white)** highlighting cave formations — controversial among purists but practical for non-specialist tourist photography. Outside the cave, the park extends across **Subyeon Park, a reconstructed traditional Jeju village, Wild Flower Bonsai Garden, Cactus Greenhouse, Sculpture Street, and a Footbath Cafe (aroma foot spa)** — making this the **only Jeju attraction with an on-site Muslim prayer room** (a deliberate accessibility investment). Drama filming credit: **'Running Man' (런닝맨, SBS) Episode 89 (Alice-in-Wonderland themed, 2012)**. Admission: **Adult ₩12,000 / Youth ₩9,000 / Child ₩7,000**. Indoor/outdoor split is **30% indoor (cave + greenhouse)** / **70% outdoor (park grounds)** — useful if the day brings light rain or strong sun.",
-      "image": "https://images.unsplash.com/photo-1502780402662-acc01917a3a4",
+      "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
       "highlights": [
         "**1,700 m total** lava tube; **365 m open section** (~25-min walk-through)",
         "**Micheon Cave lava-tube visit** — an easier cave walk that complements Jeju's famous volcanic geology",
@@ -535,7 +872,143 @@
       },
       "smartNotes": {},
       "convenience": {},
-      "visitBasics": {}
+      "visitBasics": {},
+      "images": [
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+          "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+          "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 1",
+          "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+          "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+          "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 2",
+          "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+          "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+          "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 3",
+          "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+          "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+          "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 4",
+          "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+          "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 5",
+          "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+          "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 6",
+          "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+          "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 7",
+          "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+          "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+          "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 8",
+          "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+          "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+          "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 9",
+          "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+          "location": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+          "caption": "Ilchul Land — Hydrangea Festival + Micheon Cave — photo 10",
+          "alt": "Ilchul Land — Hydrangea Festival + Micheon Cave — gallery image 10"
+        }
+      ]
     },
     {
       "number": 7,
@@ -544,7 +1017,7 @@
       "name": "Hueree Natural Park — Hydrangea highlight",
       "category": "Hydrangea highlight + signature Jeju Black Pig Show",
       "description": "**Hueree Natural Life Park (휴애리 자연생활공원)** is a year-round flower park on the southern foot of Hallasan, known for seasonal gardens with a Hallasan backdrop. The park rotates several flower events through the year, including plum blossoms, spring and summer hydrangeas, pink muhly, and camellias. **For the east-route hydrangea tour, the June season is the key draw**, with outdoor hydrangea paths and greenhouse areas that can still be useful if afternoon rain appears. The park is also known for the **Jeju Black Pig Show**, commonly scheduled several times a day; exact show times should be checked on the day. Other family-friendly areas may include a Jeju cultural village, traditional games, insect exhibits, wildflower areas, and small indoor photo spaces. Because much of Hueree is outdoors, the greenhouse, exhibit halls, and cafe-style spaces help the guide keep the stop comfortable in light rain or strong sun.",
-      "image": "https://images.unsplash.com/photo-1565538810643-b5bdb714032a",
+      "image": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
       "highlights": [
         "**'Island within an island'** — Hallasan-backdropped flower park, year-round festival rotation",
         "**5 named festivals** rotate across the year — visitors land inside an active festival ~320 days/year",
@@ -590,7 +1063,52 @@
         "closed": "Open year-round",
         "admission": "Adult ≈13,000 KRW / Child ≈10,000 KRW (subject to seasonal variation)",
         "walking": "Moderate — large grounds with hill paths; partially stroller-accessible"
-      }
+      },
+      "images": [
+        "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+        "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43.webp",
+        "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+          "location": "Hueree Natural Park — Hydrangea highlight",
+          "caption": "Hueree Natural Park — Hydrangea highlight — photo 1",
+          "alt": "Hueree Natural Park — Hydrangea highlight — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43.webp",
+          "location": "Hueree Natural Park — Hydrangea highlight",
+          "caption": "Hueree Natural Park — Hydrangea highlight — photo 2",
+          "alt": "Hueree Natural Park — Hydrangea highlight — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46.webp",
+          "location": "Hueree Natural Park — Hydrangea highlight",
+          "caption": "Hueree Natural Park — Hydrangea highlight — photo 3",
+          "alt": "Hueree Natural Park — Hydrangea highlight — gallery image 3"
+        }
+      ]
     },
     {
       "number": 8,
@@ -1431,8 +1949,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Hydrangea blue and Sunrise Peak gold —",
-        "headlineLine2": "east Jeju's summer route, in a single 9-hour loop",
+        "headlineLine1": "Jeju Hydrangea Festival",
+        "headlineLine2": "East",
         "hero": {
           "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
           "imagePosition": "center 35%",
@@ -1617,7 +2135,7 @@
             "name": "Hamdeok Seoubong Beach",
             "category": "Coastal photo stop — emerald turquoise + Seoubong Oreum",
             "description": "**Hamdeok Seoubong Beach (함덕 서우봉 해변)** is consistently ranked among **Jeju's top 3 beaches**, defined by the contrast between **white-sand beach (~500 m main stretch, 3 connected coves totaling ~900 m)** and the **adjacent volcanic cone Seoubong (서우봉, 'Cow Looking Like a Cow's Head' parasitic cone)** rising directly from the eastern end. The water's signature **emerald-turquoise color** comes from shallow coral-sand seabed reflecting through clear ocean — the Mediterranean-like contrast (rare in Korea) is what made Hamdeok one of the country's most photographed domestic beach destinations. The beach can absorb up to **50,000 daily visitors** at peak summer, but spring + autumn visits are typically uncrowded. **Seoubong Peak** (climbable ~1 hour to summit) wears **canola-yellow slopes in spring (March–April)** and offers a **panoramic eastward view to Manjanggul lava-tube area**. **Historical layer**: the sea cliffs immediately west of Seoubong hold **Imperial Japanese Army tunnels carved during WWII colonial occupation** — kamikaze suicide-boat shelters and ammunition stores, similar to the 18 caves at Seongsan Ilchulbong. The tunnels are publicly accessible (with signage explaining the historical context). The beach is the **central segment of Jeju Olle Trail Course 19 (조천 → 김녕)**, marked with the trail's signature blue-orange ribbons. **Cafe Delmoondo (델문도 카페)** sits directly on the beachfront — large terraces, sea-view, popular for photo and casual stops. **FREE admission**; the beach is **20 km / ~40-min drive from Jeju International Airport** on Route 1132.",
-            "image": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "image": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
             "highlights": [
               "Top-3 Jeju beach",
               "Seoubong volcanic cone",
@@ -1651,7 +2169,65 @@
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated visitor info"
             },
-            "_image_status": "placeholder_removed_v8"
+            "_image_status": "placeholder_removed_v8",
+            "images": [
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+                "location": "Hamdeok Seoubong Beach",
+                "caption": "Hamdeok Seoubong Beach — photo 1",
+                "alt": "Hamdeok Seoubong Beach — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+                "location": "Hamdeok Seoubong Beach",
+                "caption": "Hamdeok Seoubong Beach — photo 2",
+                "alt": "Hamdeok Seoubong Beach — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+                "location": "Hamdeok Seoubong Beach",
+                "caption": "Hamdeok Seoubong Beach — photo 3",
+                "alt": "Hamdeok Seoubong Beach — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+                "location": "Hamdeok Seoubong Beach",
+                "caption": "Hamdeok Seoubong Beach — photo 4",
+                "alt": "Hamdeok Seoubong Beach — gallery image 4"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1660,7 +2236,7 @@
             "name": "Seongeup Folk Village",
             "category": "Joseon-era folk heritage — UNESCO/National Folklore designation",
             "description": "**Seongeup Folk Village (성읍 민속마을)** is a **living Joseon-era walled town founded in 1423** during the reign of **Sejong the Great** as Jeong-eui-hyeon (정의현), one of the three administrative seats of Joseon-era Jeju. The village served continuously as a **county administrative center until 1914** — nearly **500 years** — and retains **110 traditional structures** today within the original eupseong (읍성) walled-town footprint, designed on **Korean feng shui principles** typical of Joseon county capitals. The entire village is designated **Important Folklore Cultural Heritage of South Korea**, with **multiple individual buildings** carrying separate heritage status. At the village center stand **two ancient trees designated Natural Monuments of South Korea** — a **Saw-leaf Zelkova (느티나무)** and a **Japanese Hackberry (팽나무)**, both estimated **600+ years old** and revered as the village's spiritual highlight. Historical scars are visible: a **major fire in 1826 destroyed ~80 buildings**, and the village suffered fire damage **during the Jeju Uprising in 1948** — both events preserved as historical record on village signage. The **peak household count (historical, pre-modern) was ~1,500** — today the village remains inhabited by ~250 families, many actively maintaining traditional crafts. Drama filming credit: **'Dae Jang Geum (Jewel in the Palace)' (MBC, 2003–2004)**, the international K-drama hit. Local specialty: **Omegisul (오메기술)** — a **rice-based traditional Jeju liquor** brewed by **one family for multiple generations**, with the brewing demonstrated and tasted free of charge at the home-brewery within the village. **FREE admission**; outdoor walking dominates (~70% outdoor / 30% indoor for individual hanok visits).",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "image": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
             "highlights": [
               "Lived-in heritage village",
               "Volcanic stone walls",
@@ -1694,7 +2270,104 @@
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated visitor info; verify with operator"
             },
-            "_image_status": "placeholder_removed_v8"
+            "_image_status": "placeholder_removed_v8",
+            "images": [
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+                "location": "Seongeup Folk Village",
+                "caption": "Seongeup Folk Village — photo 1",
+                "alt": "Seongeup Folk Village — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+                "location": "Seongeup Folk Village",
+                "caption": "Seongeup Folk Village — photo 2",
+                "alt": "Seongeup Folk Village — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+                "location": "Seongeup Folk Village",
+                "caption": "Seongeup Folk Village — photo 3",
+                "alt": "Seongeup Folk Village — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+                "location": "Seongeup Folk Village",
+                "caption": "Seongeup Folk Village — photo 4",
+                "alt": "Seongeup Folk Village — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+                "location": "Seongeup Folk Village",
+                "caption": "Seongeup Folk Village — photo 5",
+                "alt": "Seongeup Folk Village — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+                "location": "Seongeup Folk Village",
+                "caption": "Seongeup Folk Village — photo 6",
+                "alt": "Seongeup Folk Village — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+                "location": "Seongeup Folk Village",
+                "caption": "Seongeup Folk Village — photo 7",
+                "alt": "Seongeup Folk Village — gallery image 7"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1734,7 +2407,7 @@
             "name": "Seongsan Ilchulbong",
             "category": "UNESCO triple-designated tuff cone — climb to the rim",
             "description": "**Seongsan Ilchulbong (성산일출봉, 'Sunrise Peak')** is a **5,000-year-old Surtseyan-type hydrovolcanic tuff cone** — a rare landform created when an underwater basalt eruption broke the sea surface, the magma met seawater, and the resulting steam-explosive ash built a **182 m fortress-shaped crater** rim instead of a typical lava cone. The result is what UNESCO formally calls **'an exceptional example of an emergent Surtseyan-type volcanic edifice'**. The crater is **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** that local lore likens to a stone crown. Seongsan carries the **Triple UNESCO designation**: **World Natural Heritage (inscribed 2007-07-02)** as part of the **'Jeju Volcanic Island and Lava Tubes' property**, **Biosphere Reserve (2002)**, and **Global Geopark (2010-10)** — a stack matched only by Hallasan itself among Korean sites. **18 Imperial Japanese WWII caves** (kamikaze suicide-boat shelters, 1945) are tunneled into the seaward base. Trail: **0.8 km one-way, ~140 m elevation gain, 60 min round trip** on wide stone steps. **Haenyeo (해녀) demonstrations** run **daily at 13:30 and 15:00** at the rocky cove below the cone — Jeju women divers (UNESCO Intangible Cultural Heritage 2016) descend without scuba gear. Admission updated **April 2025**: **Adult ₩5,000 / Youth+Child ₩2,500 / Group adult ₩1,600**, free under 7 and over 65. The summit deck is also part of the **Yeongjusipgyeong (Jeju 10 Scenic Wonders) canon**, and remains Korea's premier **annual New Year sunrise pilgrimage** destination — 50,000+ visitors ascend before dawn on January 1, with municipal sunrise-festival programming since 1995. **Udo Island (우도, 'Cow Island')** — Korea's largest secondary volcanic island — is clearly visible 4 km offshore from the summit, accessible by **15-min ferry from Seongsan Port** (₩10,500 round-trip) for guests with extra time on a different itinerary.",
-            "image": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+            "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
             "highlights": [
               "UNESCO Natural Heritage",
               "180 m volcanic tuff cone",
@@ -1772,7 +2445,78 @@
                 "AllTrails"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "location": "Seongsan Ilchulbong",
+                "caption": "Seongsan Ilchulbong — photo 1",
+                "alt": "Seongsan Ilchulbong — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "location": "Seongsan Ilchulbong",
+                "caption": "Seongsan Ilchulbong — photo 2",
+                "alt": "Seongsan Ilchulbong — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "location": "Seongsan Ilchulbong",
+                "caption": "Seongsan Ilchulbong — photo 3",
+                "alt": "Seongsan Ilchulbong — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "location": "Seongsan Ilchulbong",
+                "caption": "Seongsan Ilchulbong — photo 4",
+                "alt": "Seongsan Ilchulbong — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "location": "Seongsan Ilchulbong",
+                "caption": "Seongsan Ilchulbong — photo 5",
+                "alt": "Seongsan Ilchulbong — gallery image 5"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1813,7 +2557,7 @@
             "name": "Hueree Natural Park — Hydrangea highlight",
             "category": "Hydrangea highlight + signature Jeju Black Pig Show",
             "description": "**Hueree Natural Life Park (휴애리 자연생활공원)** is a year-round flower park on the southern foot of Hallasan, known for seasonal gardens with a Hallasan backdrop. The park rotates several flower events through the year, including plum blossoms, spring and summer hydrangeas, pink muhly, and camellias. **For the east-route hydrangea tour, the June season is the key draw**, with outdoor hydrangea paths and greenhouse areas that can still be useful if afternoon rain appears. The park is also known for the **Jeju Black Pig Show**, commonly scheduled several times a day; exact show times should be checked on the day. Other family-friendly areas may include a Jeju cultural village, traditional games, insect exhibits, wildflower areas, and small indoor photo spaces. Because much of Hueree is outdoors, the greenhouse, exhibit halls, and cafe-style spaces help the guide keep the stop comfortable in light rain or strong sun.",
-            "image": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "image": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
             "highlights": [
               "Densely planted hydrangea hills",
               "Small animal park",
@@ -1848,7 +2592,52 @@
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated tour-operator info"
             },
-            "_image_status": "placeholder_removed_v8"
+            "_image_status": "placeholder_removed_v8",
+            "images": [
+              "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+              "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43.webp",
+              "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+                "location": "Hueree Natural Park — Hydrangea highlight",
+                "caption": "Hueree Natural Park — Hydrangea highlight — photo 1",
+                "alt": "Hueree Natural Park — Hydrangea highlight — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43.webp",
+                "location": "Hueree Natural Park — Hydrangea highlight",
+                "caption": "Hueree Natural Park — Hydrangea highlight — photo 2",
+                "alt": "Hueree Natural Park — Hydrangea highlight — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46.webp",
+                "location": "Hueree Natural Park — Hydrangea highlight",
+                "caption": "Hueree Natural Park — Hydrangea highlight — photo 3",
+                "alt": "Hueree Natural Park — Hydrangea highlight — gallery image 3"
+              }
+            ]
           },
           {
             "number": 8,

@@ -13,11 +13,11 @@
       "부산 출발 불국사",
       "신라 왕국 문화유산 투어"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG"
+    "ogImage": "https://www.atockorea.com/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp"
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
-    "title": "부산 출발: 경주 고도(古都) 당일 투어",
+    "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+    "title": "부산 → 경주 고도 일일 투어",
     "priceLabel": "",
     "shortCardDescription": "신라 왕국의 고도(古都) 경주(기원전 57년~935년)로 떠나는 부산 출발 소규모 당일 투어. 유네스코 레거시 버전과 동일한 클래식 6개 명소 코스(아홉산 숲 대나무숲 → 불국사 유네스코 → 경주 쌈밥 점심 → 국립박물관 → 교촌 한옥마을 → 월정교)로 진행되지만, 여유로운 페이스와 이른 귀환(약 18:50)이 특징입니다. 영어·중국어 가능 공인 가이드, 미니밴 제공, 전 일정 입장료 무료(아홉산 ₩5,000 및 점심 식사는 현장 결제).",
     "tags": [
@@ -40,10 +40,10 @@
       "부산 출발",
       "이른 귀환"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG"
+    "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp"
   },
-  "headlineLine1": "한국의 천년 고도, 여유로운 페이스 —",
-  "headlineLine2": "부산 출발 10.5시간으로 즐기는 경주의 클래식 6개 명소",
+  "headlineLine1": "부산 → 경주 고도 일일 투어",
+  "headlineLine2": "투어",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -53,7 +53,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+    "imageUrl": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
     "imagePosition": "center 35%",
     "tagline": "불국사, 박물관, 교촌, 다리 — 여유로운 페이스, 이른 귀환",
     "pills": [
@@ -131,49 +131,116 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
-      "alt": "오후 빛 속 불국사의 석교와 다보탑",
-      "caption": "불국사 — 유네스코 세계문화유산. 다보탑과 석가탑은 각각 국보 제20호와 제21호입니다.",
-      "location": "경주 불국사",
-      "atmosphere": "돌, 나무, 그리고 8세기 탑의 실루엣"
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+      "location": "아홉산숲",
+      "alt": "아홉산숲 — gallery image 1",
+      "caption": "아홉산숲 — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/23/2028423_image2_1.JPG",
-      "alt": "교촌마을의 고요한 골목을 따라 늘어선 기와 한옥들",
-      "caption": "교촌 한옥마을 — 최씨 고택과 경주향교 유교 학교.",
-      "location": "경주 교촌 한옥마을",
-      "atmosphere": "복원된 한옥 골목, 한적한 분위기"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "location": "불국사 (유네스코 세계문화유산)",
+      "alt": "불국사 (유네스코 세계문화유산) — gallery image 1",
+      "caption": "불국사 (유네스코 세계문화유산) — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/00/2024200_image2_1.JPG",
-      "alt": "숲길을 따라 빽빽한 대나무 줄기 사이로 스며드는 빛",
-      "caption": "아홉산 대나무숲 — 1638년부터 문씨 가문이 사유지로 보존해 온 곳.",
-      "location": "부산 기장군 아홉산숲",
-      "atmosphere": "시원하고 푸른, 은은한 빛"
-    },
-    {
-      "id": "g4",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG",
-      "alt": "전시 조명 아래 유리 케이스에 진열된 신라 황금 유물",
-      "caption": "국립경주박물관 — 천마총 금관을 비롯한 신라 유물 소장.",
+      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
       "location": "국립경주박물관",
-      "atmosphere": "고요한 전시실, 단일 유물에 집중"
+      "alt": "국립경주박물관 — gallery image 1",
+      "caption": "국립경주박물관 — photo 1"
     },
     {
-      "id": "g5",
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+      "location": "교촌 한옥마을",
+      "alt": "교촌 한옥마을 — gallery image 1",
+      "caption": "교촌 한옥마을 — photo 1"
+    },
+    {
+      "id": 5,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/49/2390749_image2_1.JPG",
-      "alt": "잔잔한 강물에 비치는 목조 다리 누각",
-      "caption": "월정교 — 2018년에 완공된 66미터 길이의 신라 양식 복원 다리.",
-      "location": "경주 월정교",
-      "atmosphere": "나무, 물, 부드러운 오후의 빛"
+      "location": "월정교",
+      "alt": "월정교 — on-route photo",
+      "caption": "월정교"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+      "location": "아홉산숲",
+      "alt": "아홉산숲 — gallery image 2",
+      "caption": "아홉산숲 — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+      "location": "아홉산숲",
+      "alt": "아홉산숲 — gallery image 3",
+      "caption": "아홉산숲 — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+      "location": "불국사 (유네스코 세계문화유산)",
+      "alt": "불국사 (유네스코 세계문화유산) — gallery image 2",
+      "caption": "불국사 (유네스코 세계문화유산) — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "location": "불국사 (유네스코 세계문화유산)",
+      "alt": "불국사 (유네스코 세계문화유산) — gallery image 3",
+      "caption": "불국사 (유네스코 세계문화유산) — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+      "location": "국립경주박물관",
+      "alt": "국립경주박물관 — gallery image 2",
+      "caption": "국립경주박물관 — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+      "location": "국립경주박물관",
+      "alt": "국립경주박물관 — gallery image 3",
+      "caption": "국립경주박물관 — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+      "location": "교촌 한옥마을",
+      "alt": "교촌 한옥마을 — gallery image 2",
+      "caption": "교촌 한옥마을 — photo 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+      "location": "교촌 한옥마을",
+      "alt": "교촌 한옥마을 — gallery image 3",
+      "caption": "교촌 한옥마을 — photo 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+      "location": "교촌 한옥마을",
+      "alt": "교촌 한옥마을 — gallery image 4",
+      "caption": "교촌 한옥마을 — photo 4"
     }
   ],
   "itineraryStops": [
@@ -242,7 +309,7 @@
           "Cultural Heritage Administration of Korea (Nampyeong Moon clan working forest)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/23/2028423_image2_1.JPG",
+      "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "visitBasics": {
         "hours": "매일 09:00–18:00 (마지막 입장 약 17:00)",
         "closed": "매주 월요일",
@@ -257,7 +324,52 @@
         "photo": "9번 포인트 (맹종죽 대나무 숲) — 수관 사이로 측광이 드리우는 10:00–11:30이 최적; 사당 인근 초가 대문; 하단 순환로의 400년 된 소나무 길",
         "facilities": "입구 앞 소규모 농산물 직판장 (제철 로컬 농산물, 간단한 음료 판매); 숲 내부에 카페 없음",
         "tip": "밝은 대나무와의 사진 대비 효과를 위해 어두운 색 상의 착용 권장; 표시된 탐방로 이탈 금지 (산림 복원 진행 중); 드론 사용 금지"
-      }
+      },
+      "images": [
+        "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+        "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+        "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+          "location": "아홉산숲",
+          "caption": "아홉산숲 — photo 1",
+          "alt": "아홉산숲 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+          "location": "아홉산숲",
+          "caption": "아홉산숲 — photo 2",
+          "alt": "아홉산숲 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+          "location": "아홉산숲",
+          "caption": "아홉산숲 — photo 3",
+          "alt": "아홉산숲 — gallery image 3"
+        }
+      ]
     },
     {
       "number": 3,
@@ -312,7 +424,52 @@
         "photo": "자하문 아래 청운교/백운교 계단 (국보 23호); 대웅전 앞뜰의 다보탑 (국보 20호)과 석가탑 (국보 21호); 진입로의 봄 벚꽃",
         "facilities": "입구의 관광안내소; 불국사박물관 (별도 입장권 2,000 / 1,000원, 월요일 휴관)",
         "tip": "단정한 복장 착용; 전각 입장 시 신발 탈착; 드론 금지; 스님 또는 예불객 촬영 금지 (안내판 명시); 해당 사찰은 현재에도 조계종 본사 (제11교구)로 활발히 운영 중"
-      }
+      },
+      "images": [
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "location": "불국사 (유네스코 세계문화유산)",
+          "caption": "불국사 (유네스코 세계문화유산) — photo 1",
+          "alt": "불국사 (유네스코 세계문화유산) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "location": "불국사 (유네스코 세계문화유산)",
+          "caption": "불국사 (유네스코 세계문화유산) — photo 2",
+          "alt": "불국사 (유네스코 세계문화유산) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "location": "불국사 (유네스코 세계문화유산)",
+          "caption": "불국사 (유네스코 세계문화유산) — photo 3",
+          "alt": "불국사 (유네스코 세계문화유산) — gallery image 3"
+        }
+      ]
     },
     {
       "number": 4,
@@ -393,7 +550,52 @@
         "photo": "야외 종각의 성덕대왕신종 (오후 측면 채광); 신라관 내 천마총 금관 전시 (저조도, 플래시 금지); 석탑 부재가 있는 박물관 정원",
         "facilities": "금관 복제 장신구를 판매하는 박물관 기념품점; 본관 내 카페; 물품 보관소 이용 가능",
         "tip": "플래시 촬영 금지; 일부 특별 전시는 모든 사진 촬영 금지 (안내문 확인 필수); 종각만을 위해 약 10분 할애 권장 — 신라 최고의 유물"
-      }
+      },
+      "images": [
+        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+          "location": "국립경주박물관",
+          "caption": "국립경주박물관 — photo 1",
+          "alt": "국립경주박물관 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+          "location": "국립경주박물관",
+          "caption": "국립경주박물관 — photo 2",
+          "alt": "국립경주박물관 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+          "location": "국립경주박물관",
+          "caption": "국립경주박물관 — photo 3",
+          "alt": "국립경주박물관 — gallery image 3"
+        }
+      ]
     },
     {
       "number": 6,
@@ -448,7 +650,65 @@
         "photo": "황금빛 시간대의 한옥 기와지붕; 교동 법주 양조장 대문; 마을 남서쪽 모퉁이에서 멀리 보이는 월정교 (7번 정류지 예고); 계림의 오래된 버드나무",
         "facilities": "교동 법주 상점 (기념품 병); 중심 골목을 따라 소규모 공방 상점 (전통 떡, 황남빵); 요석궁 1779 (고급 레스토랑, 예약 필수)",
         "tip": "주류 세관 허용량이 있다면 교동 법주를 기념품으로 구매하세요 (본인 국가의 수입 한도 확인 필요); 평일 오후에는 마을이 한산할 수 있어 — 여유로운 사진 촬영에 안성맞춤"
-      }
+      },
+      "images": [
+        "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+        "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+        "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+        "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+          "location": "교촌 한옥마을",
+          "caption": "교촌 한옥마을 — photo 1",
+          "alt": "교촌 한옥마을 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+          "location": "교촌 한옥마을",
+          "caption": "교촌 한옥마을 — photo 2",
+          "alt": "교촌 한옥마을 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+          "location": "교촌 한옥마을",
+          "caption": "교촌 한옥마을 — photo 3",
+          "alt": "교촌 한옥마을 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+          "location": "교촌 한옥마을",
+          "caption": "교촌 한옥마을 — photo 4",
+          "alt": "교촌 한옥마을 — gallery image 4"
+        }
+      ]
     },
     {
       "number": 7,
@@ -1246,8 +1506,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "한국의 천년 고도, 여유로운 여행 —",
-        "headlineLine2": "부산에서 출발하는 10.5시간 경주 핵심 코스 6곳",
+        "headlineLine1": "부산 → 경주 고도 일일 투어",
+        "headlineLine2": "투어",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
           "imagePosition": "center 35%",
@@ -1418,7 +1678,7 @@
             "duration": "60분",
             "name": "아홉산 대나무 숲",
             "category": "대나무 숲",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/23/2028423_image2_1.JPG",
+            "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
             "description": "부산 기장군에 위치한 남평 문씨 종택 내 사유 대나무 숲으로, 1638년부터 문씨 가문이 소유·관리해 오고 있습니다. 드라마 '미스터 션샤인'(2018)의 대나무 복도 장면을 포함하여 여러 한국 드라마가 이곳에서 촬영되었습니다. 산책 코스는 평탄한 흙길 약 1km로, 천천히 걸으면 45~60분 소요됩니다. 수목 캐노피가 대부분의 직사광선을 차단하여 여름에도 시원하게 즐길 수 있습니다. 성인 입장료 ₩5,000 (현금; 투어 요금 미포함). 봄 벚꽃 시즌에는 이 코스가 해운대 달맞이 언덕으로 대체됩니다.",
             "timeUsed": [
               "도착 및 안내",
@@ -1430,7 +1690,52 @@
               "poi_key": "ahopsan_bamboo_forest",
               "is_attraction": true,
               "fee_krw": 5000
-            }
+            },
+            "images": [
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+                "location": "아홉산 대나무 숲",
+                "caption": "아홉산 대나무 숲 — photo 1",
+                "alt": "아홉산 대나무 숲 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+                "location": "아홉산 대나무 숲",
+                "caption": "아홉산 대나무 숲 — photo 2",
+                "alt": "아홉산 대나무 숲 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+                "location": "아홉산 대나무 숲",
+                "caption": "아홉산 대나무 숲 — photo 3",
+                "alt": "아홉산 대나무 숲 — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1451,7 +1756,52 @@
               "is_attraction": true,
               "fee_krw": 0,
               "unesco": "world_heritage"
-            }
+            },
+            "images": [
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "location": "불국사 (유네스코 세계문화유산)",
+                "caption": "불국사 (유네스코 세계문화유산) — photo 1",
+                "alt": "불국사 (유네스코 세계문화유산) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "location": "불국사 (유네스코 세계문화유산)",
+                "caption": "불국사 (유네스코 세계문화유산) — photo 2",
+                "alt": "불국사 (유네스코 세계문화유산) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "location": "불국사 (유네스코 세계문화유산)",
+                "caption": "불국사 (유네스코 세계문화유산) — photo 3",
+                "alt": "불국사 (유네스코 세계문화유산) — gallery image 3"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1489,7 +1839,52 @@
               "is_attraction": true,
               "fee_krw": 0,
               "closed": "Monday"
-            }
+            },
+            "images": [
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+                "location": "국립경주박물관",
+                "caption": "국립경주박물관 — photo 1",
+                "alt": "국립경주박물관 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+                "location": "국립경주박물관",
+                "caption": "국립경주박물관 — photo 2",
+                "alt": "국립경주박물관 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+                "location": "국립경주박물관",
+                "caption": "국립경주박물관 — photo 3",
+                "alt": "국립경주박물관 — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1509,7 +1904,65 @@
               "poi_key": "gyochon_hanok_village",
               "is_attraction": true,
               "fee_krw": 0
-            }
+            },
+            "images": [
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+                "location": "교촌 한옥마을",
+                "caption": "교촌 한옥마을 — photo 1",
+                "alt": "교촌 한옥마을 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+                "location": "교촌 한옥마을",
+                "caption": "교촌 한옥마을 — photo 2",
+                "alt": "교촌 한옥마을 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+                "location": "교촌 한옥마을",
+                "caption": "교촌 한옥마을 — photo 3",
+                "alt": "교촌 한옥마을 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+                "location": "교촌 한옥마을",
+                "caption": "교촌 한옥마을 — photo 4",
+                "alt": "교촌 한옥마을 — gallery image 4"
+              }
+            ]
           },
           {
             "number": 7,

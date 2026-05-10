@@ -19,7 +19,7 @@
   },
   "catalog_card": {
     "slug": "jeju-island-private-car-charter-tour",
-    "title": "済州島プライベートチャーター車ツアー",
+    "title": "済州プライベートカーチャーター",
     "subtitle": "公認ドライバーガイドとエアコン付きプライベート車両で、自分だけの済州の一日をデザインしましょう。",
     "region": "済州（東・西・南）",
     "duration": "9時間",
@@ -41,8 +41,8 @@
       "hotel_pickup_included"
     ]
   },
-  "headlineLine1": "済州島プライベート",
-  "headlineLine2": "チャーター車ツアー",
+  "headlineLine1": "済州プライベートカーチャーター",
+  "headlineLine2": "ツアー",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -951,8 +951,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "済州島プライベート",
-        "headlineLine2": "チャーター車ツアー",
+        "headlineLine1": "済州プライベートカーチャーター",
+        "headlineLine2": "ツアー",
         "hero": {
           "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
           "imagePosition": "center 45%",

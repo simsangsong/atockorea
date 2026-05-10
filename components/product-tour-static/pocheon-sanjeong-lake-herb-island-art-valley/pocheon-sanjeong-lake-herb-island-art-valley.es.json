@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Excursión de un día a Pocheon: Lago, Herb Island y Art Valley | AtoC Korea",
     "metaDescription": "Excursión relajada de 10 horas desde Seúl a Pocheon: senderos del Lago Sanjeong, Herb Island de estilo mediterráneo y el monorraíl de Art Valley sobre el esmeralda Lago Cheonjuho.",
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "primaryKeywords": [
       "Tour de un día a Pocheon desde Seúl",
       "Tour por el Lago Sanjeong",
@@ -19,7 +19,7 @@
   },
   "catalog_card": {
     "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-    "title": "Excursión de un día a Pocheon: Lago Sanjeong, Herb Island y Pocheon Art Valley",
+    "title": "Pocheon: Lago, Hierbas y Cantera",
     "subtitle": "Lago de montaña, jardines de hierbas mediterráneos y una cantera convertida en parque de arte: la excursión de día más tranquila y estacional desde Seúl.",
     "region": "Pocheon (Excursión de un día desde Seúl)",
     "duration": "10 horas",
@@ -31,8 +31,8 @@
       "Destacados de Temporada",
       "Luces Románticas Nocturnas"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+    "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "priceLabel": "",
     "shortCardDescription": "Una relajada excursión estacional de un día desde Seúl a Pocheon, el campo de Gyeonggi conocido por sus lagos, jardines de hierbas y dramáticos paisajes de parque artístico. El recorrido combina las aguas rodeadas de montañas del Lago Sanjeong, los jardines de estilo mediterráneo y las luces nocturnas de Herb Island, y el observatorio de la cantera de Pocheon Art Valley accesible en monorraíl. Menos concurrido que la Isla Nami y pensado para disfrutar de la calma fotográfica en lugar de ir de atracción en atracción.",
     "tags": [
@@ -41,8 +41,8 @@
       "romantic_evening_lights"
     ]
   },
-  "headlineLine1": "Excursión de un día a Pocheon: Lago Sanjeong,",
-  "headlineLine2": "Herb Island y Art Valley",
+  "headlineLine1": "Pocheon",
+  "headlineLine2": "Lago, Hierbas y Cantera",
   "price": {
     "amountLabel": "",
     "originalPriceUsd": null,
@@ -54,7 +54,7 @@
     "priceNote": ""
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+    "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "imagePosition": "center 50%",
     "tagline": "Lago de montaña, aldea de hierbas de estilo mediterráneo y una antigua cantera de granito transformada en parque de arte: las tres paradas más serenas y fotogénicas de Pocheon en una excursión de un día desde Seúl.",
     "pills": [
@@ -132,49 +132,60 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
-      "alt": "Zonas de jardín de estilo mediterráneo con paredes encaladas, arriates de hierbas y exhibiciones estacionales de lavanda",
-      "caption": "Jardines de hierbas mediterráneos de Herb Island (Pocheon)",
-      "location": "Herb Island",
-      "atmosphere": "Jardines de hierbas de estilo mediterráneo con lavanda estacional, margaritas y muhly rosa"
-    },
-    {
-      "id": "g2",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG",
-      "alt": "Lago rodeado de montañas con un sendero llano a orillas del lago y acantilados boscosos reflejados en el agua",
-      "caption": "Lago Sanjeong en el Monte Myeongseongsan (Pocheon)",
+      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "location": "Lago Sanjeong",
-      "atmosphere": "Lago rodeado de montañas con senderos peatonales y cafeterías a orillas del lago"
+      "alt": "Lago Sanjeong — gallery image 1",
+      "caption": "Lago Sanjeong — photo 1"
     },
     {
-      "id": "g3",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG",
-      "alt": "Lago de cantera de color verde esmeralda rodeado de verticales paredes de granito",
-      "caption": "Lago Cheonjuho dentro de la cantera de Pocheon Art Valley",
-      "location": "Pocheon Art Valley",
-      "atmosphere": "Lago Esmeralda Cheonjuho dentro de la antigua cantera de granito"
+      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+      "location": "Isla de Hierbas de Pocheon",
+      "alt": "Isla de Hierbas de Pocheon — gallery image 1",
+      "caption": "Isla de Hierbas de Pocheon — photo 1"
     },
     {
-      "id": "g4",
+      "id": 3,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/01/2791401_image2_1.JPG",
-      "alt": "Senderos del jardín iluminados con guirnaldas de luces nocturnas e instalaciones temáticas",
-      "caption": "Velada del festival de luces de Herb Island (zona de Santa Village durante todo el año)",
-      "location": "Luces Nocturnas de Herb Island",
-      "atmosphere": "Románticas exhibiciones de luces después del atardecer"
+      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+      "location": "Valle de Arte de Pocheon",
+      "alt": "Valle de Arte de Pocheon — gallery image 1",
+      "caption": "Valle de Arte de Pocheon — photo 1"
     },
     {
-      "id": "g5",
+      "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
-      "alt": "Cascada forestal que desciende en cascada sobre repisas rocosas hasta una poza",
-      "caption": "Cascada Bidulginang — parada sustituta de temporada cerca de Pocheon",
-      "location": "Cascada Bidulginang",
-      "atmosphere": "Parada opcional en cascada en versiones de temporada de la ruta"
+      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+      "location": "Lago Sanjeong",
+      "alt": "Lago Sanjeong — gallery image 2",
+      "caption": "Lago Sanjeong — photo 2"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+      "location": "Isla de Hierbas de Pocheon",
+      "alt": "Isla de Hierbas de Pocheon — gallery image 2",
+      "caption": "Isla de Hierbas de Pocheon — photo 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+      "location": "Isla de Hierbas de Pocheon",
+      "alt": "Isla de Hierbas de Pocheon — gallery image 3",
+      "caption": "Isla de Hierbas de Pocheon — photo 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+      "location": "Valle de Arte de Pocheon",
+      "alt": "Valle de Arte de Pocheon — gallery image 2",
+      "caption": "Valle de Arte de Pocheon — photo 2"
     }
   ],
   "itineraryStops": [
@@ -233,7 +244,39 @@
           "NamuWiki (en.namu.wiki/w/산정호수 — Korean-language verified facts on construction date + depth + 1945-armistice administrative history)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG"
+      "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "images": [
+        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "location": "Lago Sanjeong",
+          "caption": "Lago Sanjeong — photo 1",
+          "alt": "Lago Sanjeong — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "location": "Lago Sanjeong",
+          "caption": "Lago Sanjeong — photo 2",
+          "alt": "Lago Sanjeong — gallery image 2"
+        }
+      ]
     },
     {
       "number": 2,
@@ -291,7 +334,52 @@
           "Visit Gyeonggi (ggtour.or.kr — provincial tourism portal on Pocheon herb-themed attraction cluster)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG"
+      "image": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+      "images": [
+        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+          "location": "Isla de Hierbas de Pocheon",
+          "caption": "Isla de Hierbas de Pocheon — photo 1",
+          "alt": "Isla de Hierbas de Pocheon — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+          "location": "Isla de Hierbas de Pocheon",
+          "caption": "Isla de Hierbas de Pocheon — photo 2",
+          "alt": "Isla de Hierbas de Pocheon — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+          "location": "Isla de Hierbas de Pocheon",
+          "caption": "Isla de Hierbas de Pocheon — photo 3",
+          "alt": "Isla de Hierbas de Pocheon — gallery image 3"
+        }
+      ]
     },
     {
       "number": 3,
@@ -350,7 +438,39 @@
           "Inquirer Lifestyle / Korea Times (Cheong Wa Dae + National Assembly + Incheon Airport granite-source historical reporting)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG"
+      "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+      "images": [
+        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "location": "Valle de Arte de Pocheon",
+          "caption": "Valle de Arte de Pocheon — photo 1",
+          "alt": "Valle de Arte de Pocheon — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "location": "Valle de Arte de Pocheon",
+          "caption": "Valle de Arte de Pocheon — photo 2",
+          "alt": "Valle de Arte de Pocheon — gallery image 2"
+        }
+      ]
     }
   ],
   "routeFlowStops": [
@@ -1009,8 +1129,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Excursión de un día a Pocheon: Lago Sanjeong,",
-        "headlineLine2": "Herb Island y Art Valley",
+        "headlineLine1": "Pocheon",
+        "headlineLine2": "Lago, Hierbas y Cantera",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
           "imagePosition": "center 50%",
@@ -1170,7 +1290,7 @@
             "name": "Lago Sanjeong",
             "category": "Lago Peatonal Rodeado de Montañas",
             "description": "El lago Sanjeong (Sanjeong-ho) es un lago artificial a los pies del monte Myeongseongsan, rodeado de imponentes acantilados y exuberante bosque. El sendero perimetral de 4 kilómetros es uno de los paseos más queridos de Gyeonggi, con cafés a orillas del lago, botes de pedales con forma de pato y una pequeña zona de atracciones. En otoño, la hierba plateada circundante se torna dorada; en invierno, el lago helado acoge actividades de trineo con patitos y juegos sobre el hielo.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG",
+            "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "highlights": [
               "Sendero peatonal de 4 km a orillas del lago con escasa variación de altitud",
               "Paisajes rodeados de montañas y cafés en el lugar",
@@ -1205,7 +1325,39 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated visitor info"
-            }
+            },
+            "images": [
+              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "location": "Lago Sanjeong",
+                "caption": "Lago Sanjeong — photo 1",
+                "alt": "Lago Sanjeong — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "location": "Lago Sanjeong",
+                "caption": "Lago Sanjeong — photo 2",
+                "alt": "Lago Sanjeong — gallery image 2"
+              }
+            ]
           },
           {
             "number": 2,
@@ -1214,7 +1366,7 @@
             "name": "Herb Island",
             "category": "Parque Botánico de Hierbas de Estilo Mediterráneo",
             "description": "El parque botánico temático de hierbas más grande de Corea, diseñado para evocar un pueblo mediterráneo con paredes encaladas, olivares y zonas de jardín temáticas. Más de 140 variedades de hierbas crecen en los jardines; las experiencias en el lugar incluyen elaboración de perfumes, fabricación de velas y una panadería de pan de hierbas. Tras el atardecer, Herb Island se transforma en una romántica zona de exhibición de luces con el famoso «Santa Village», abierto todo el año.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+            "image": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
             "highlights": [
               "Ambiente de pueblo de estilo mediterráneo con jardines de hierbas",
               "Exhibiciones de flores de temporada: lavanda, margaritas, hierba muhly rosa",
@@ -1249,7 +1401,52 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated tour info"
-            }
+            },
+            "images": [
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+                "location": "Herb Island",
+                "caption": "Herb Island — photo 1",
+                "alt": "Herb Island — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+                "location": "Herb Island",
+                "caption": "Herb Island — photo 2",
+                "alt": "Herb Island — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+                "location": "Herb Island",
+                "caption": "Herb Island — photo 3",
+                "alt": "Herb Island — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1258,7 +1455,7 @@
             "name": "Pocheon Art Valley",
             "category": "Antigua Cantera Convertida en Parque de Arte con Monorraíl",
             "description": "Una antigua cantera de granito transformada en un parque de arte y naturaleza. Un monorraíl lleva a los visitantes ladera arriba hasta el impresionante lago Cheonjuho, un lago de color verde esmeralda enclavado dentro de las antiguas paredes de la cantera, rodeado de instalaciones escultóricas y un observatorio. El lugar ha aparecido en numerosos k-dramas y videoclips musicales gracias a su cinematográfico paisaje de acantilados y lago.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG",
+            "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
             "highlights": [
               "Paseo en monorraíl hasta el observatorio de la cantera",
               "Lago Cheonjuho: aguas esmeralda entre imponentes paredes de acantilado",
@@ -1297,7 +1494,39 @@
                 "Soul of Seoul"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "location": "Pocheon Art Valley",
+                "caption": "Pocheon Art Valley — photo 1",
+                "alt": "Pocheon Art Valley — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "location": "Pocheon Art Valley",
+                "caption": "Pocheon Art Valley — photo 2",
+                "alt": "Pocheon Art Valley — gallery image 2"
+              }
+            ]
           }
         ]
       }

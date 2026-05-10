@@ -13,12 +13,12 @@
       "仁川港至首尔私人用车",
       "韩国邮轮靠港游"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "ogImage": "https://www.atockorea.com/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "title": "仁川 → 首尔私人邮轮靠港游 · 8小时全程接送一日游"
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-    "title": "仁川至首尔邮轮旅客私人包车靠港游",
+    "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "title": "仁川→首尔 邮轮私人包车",
     "priceLabel": "",
     "shortCardDescription": "8小时私人包车行程完全以您的船只返航时间为准，而非固定日程安排。在仁川邮轮码头登船口接送，配备英语导游司机，路线灵活可定制，途经景福宫、北村韩屋村及仁寺洞，自选午餐地点，游览首尔塔及明洞或曹溪寺。导游司机在返航前预留60分钟交通缓冲时间，确保您绝不错过班船。",
     "tags": [
@@ -44,10 +44,10 @@
       "可定制",
       "保证返船"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+    "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
-  "headlineLine1": "从邮轮港口直抵皇宫，完全围绕您的出港时间量身定制——",
-  "headlineLine2": "您的首尔专属之旅，仅属您的团队，内含返船时间保障",
+  "headlineLine1": "仁川→首尔 邮轮私人包车",
+  "headlineLine2": "一日游",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -57,7 +57,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "imagePosition": "center 35%",
     "tagline": "从登船口到景福宫仅需60分钟——以您的出港时间为基准的私人首尔一日游",
     "pills": [
@@ -135,58 +135,92 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-      "alt": "在仁川邮轮码头到达大厅舷梯旁接送",
-      "caption": "景福宫主殿勤政殿",
-      "location": "仁川邮轮码头",
-      "atmosphere": "邮轮码头直接接送"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "location": "景福宫 + 王宫守卫换岗仪式",
+      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 1",
+      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/15/2002115_image2_1.JPG",
-      "alt": "景福宫正殿与王宫守卫仪式",
-      "caption": "景福宫王宫守卫交接仪式",
-      "location": "首尔景福宫",
-      "atmosphere": "朝鲜王朝皇家宫殿"
+      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "location": "北村韩屋村 + 仁寺洞",
+      "alt": "北村韩屋村 + 仁寺洞 — gallery image 1",
+      "caption": "北村韩屋村 + 仁寺洞 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
-      "alt": "北村山脊沿线的石墙与韩屋瓦片屋顶",
-      "caption": "北村韩屋村的传统屋顶轮廓",
-      "location": "首尔北村韩屋村",
-      "atmosphere": "保存完好的朝鲜时代住宅小巷"
-    },
-    {
-      "id": "g4",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
-      "alt": "从南山俯瞰首尔全景，N首尔塔耸立其上",
-      "caption": "曹溪寺主殿与灯笼展示",
       "location": "N首尔塔（南山）",
-      "atmosphere": "城市观景点"
+      "alt": "N首尔塔（南山） — on-route photo",
+      "caption": "N首尔塔（南山）"
     },
     {
-      "id": "g5",
+      "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
-      "alt": "黄昏时分，明洞购物街沿途灯火通明的街头小吃摊",
-      "caption": "从南山眺望夕阳下的首尔N塔",
-      "location": "首尔明洞",
-      "atmosphere": "购物与街头美食"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+      "location": "景福宫 + 王宫守卫换岗仪式",
+      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 2",
+      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 2"
     },
     {
-      "id": "g6",
+      "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG",
-      "alt": "私家车在仁川邮轮码头落客区等候",
-      "caption": "明洞街头美食与购物",
-      "location": "仁川邮轮码头",
-      "atmosphere": "返船缓冲时间"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+      "location": "景福宫 + 王宫守卫换岗仪式",
+      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 3",
+      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 3"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+      "location": "景福宫 + 王宫守卫换岗仪式",
+      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 4",
+      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 4"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+      "location": "景福宫 + 王宫守卫换岗仪式",
+      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 5",
+      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 5"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+      "location": "景福宫 + 王宫守卫换岗仪式",
+      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 6",
+      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 6"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+      "location": "景福宫 + 王宫守卫换岗仪式",
+      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 7",
+      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 7"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+      "location": "景福宫 + 王宫守卫换岗仪式",
+      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 8",
+      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 8"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+      "location": "景福宫 + 王宫守卫换岗仪式",
+      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 9",
+      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 9"
     }
   ],
   "itineraryStops": [
@@ -292,7 +326,130 @@
           "Wikipedia (Gyeongbokgung Palace)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "images": [
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+          "location": "景福宫 + 王宫守卫换岗仪式",
+          "caption": "景福宫 + 王宫守卫换岗仪式 — photo 1",
+          "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+          "location": "景福宫 + 王宫守卫换岗仪式",
+          "caption": "景福宫 + 王宫守卫换岗仪式 — photo 2",
+          "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+          "location": "景福宫 + 王宫守卫换岗仪式",
+          "caption": "景福宫 + 王宫守卫换岗仪式 — photo 3",
+          "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+          "location": "景福宫 + 王宫守卫换岗仪式",
+          "caption": "景福宫 + 王宫守卫换岗仪式 — photo 4",
+          "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+          "location": "景福宫 + 王宫守卫换岗仪式",
+          "caption": "景福宫 + 王宫守卫换岗仪式 — photo 5",
+          "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+          "location": "景福宫 + 王宫守卫换岗仪式",
+          "caption": "景福宫 + 王宫守卫换岗仪式 — photo 6",
+          "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+          "location": "景福宫 + 王宫守卫换岗仪式",
+          "caption": "景福宫 + 王宫守卫换岗仪式 — photo 7",
+          "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+          "location": "景福宫 + 王宫守卫换岗仪式",
+          "caption": "景福宫 + 王宫守卫换岗仪式 — photo 8",
+          "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+          "location": "景福宫 + 王宫守卫换岗仪式",
+          "caption": "景福宫 + 王宫守卫换岗仪式 — photo 9",
+          "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 9"
+        }
+      ]
     },
     {
       "number": 3,
@@ -353,7 +510,26 @@
           "Wikipedia (Bukchon Hanok Village)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "images": [
+        "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+          "location": "北村韩屋村 + 仁寺洞",
+          "caption": "北村韩屋村 + 仁寺洞 — photo 1",
+          "alt": "北村韩屋村 + 仁寺洞 — gallery image 1"
+        }
+      ]
     },
     {
       "number": 4,
@@ -1177,8 +1353,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "从邮轮港口到宫殿，完全根据您的离港时间量身定制——",
-        "headlineLine2": "您的首尔专属之旅，仅限您的团队，内含准时返船保障",
+        "headlineLine1": "仁川→首尔 邮轮私人包车",
+        "headlineLine2": "一日游",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
           "imagePosition": "center 35%",

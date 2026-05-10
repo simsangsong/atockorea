@@ -13,11 +13,11 @@
       "From Incheon Seoul day tour",
       "Gyeongbokgung cruise tour"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+    "ogImage": "https://www.atockorea.com/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-    "title": "From Incheon: Seoul Day Tour for Cruise Guests (Small Group)",
+    "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "title": "Incheon to Seoul: Cruise Day Tour",
     "priceLabel": "Price TBD — confirm small-group rate from GetYourGuide listing",
     "shortCardDescription": "Shared-van day tour from Incheon Cruise Terminal hitting Seoul's headline central-city stops in a single 9-hour window: Gyeongbokgung Palace (or Changdeokgung on Tuesdays), Bukchon Hanok Village, lunch at Gwangjang Market (the city's most-photographed streetfood alley), and Insadong cultural street. Pickup calibrated to your specific ship's disembarkation; certified English/Chinese-speaking guide; ≈75 min return drive built in.",
     "tags": [
@@ -40,10 +40,10 @@
       "Pickup at Incheon port",
       "9-hour window"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+    "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
-  "headlineLine1": "Cruise port to royal palace, hanok lanes to streetfood —",
-  "headlineLine2": "Seoul's central headline circuit in a single shared-van day",
+  "headlineLine1": "Incheon to Seoul",
+  "headlineLine2": "Cruise Day Tour",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -53,7 +53,7 @@
     "discountPercent": 10
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "imagePosition": "center 35%",
     "tagline": "Four central-Seoul stops coordinated with your ship's schedule",
     "pills": [
@@ -131,49 +131,92 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "location": "Gyeongbokgung Palace",
+      "alt": "Gyeongbokgung Palace — gallery image 1",
+      "caption": "Gyeongbokgung Palace — photo 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "location": "Bukchon Hanok Village",
+      "alt": "Bukchon Hanok Village — gallery image 1",
+      "caption": "Bukchon Hanok Village — photo 1"
+    },
+    {
+      "id": 3,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-      "alt": "Gyeongbokgung's Geunjeongjeon throne hall with mountain backdrop",
-      "caption": "Gyeongbokgung — the throne hall Geunjeongjeon, National Treasure No. 223. Built 1395, rebuilt 1867.",
-      "location": "Gyeongbokgung Palace, Seoul",
-      "atmosphere": "Wide stone courtyard, painted eaves, mountain backdrop"
+      "location": "Insadong cultural street",
+      "alt": "Insadong cultural street — on-route photo",
+      "caption": "Insadong cultural street"
     },
     {
-      "id": "g2",
+      "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/15/2002115_image2_1.JPG",
-      "alt": "Tile-roofed hanok houses along a sloping lane in Bukchon",
-      "caption": "Bukchon Hanok Village — ≈600 traditional houses in a designated conservation area since 1976.",
-      "location": "Bukchon Hanok Village, Seoul",
-      "atmosphere": "Quiet hanok lanes, residential, soft slopes"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+      "location": "Gyeongbokgung Palace",
+      "alt": "Gyeongbokgung Palace — gallery image 2",
+      "caption": "Gyeongbokgung Palace — photo 2"
     },
     {
-      "id": "g3",
+      "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
-      "alt": "Vendors and customers crowded around a streetfood stall at Gwangjang Market",
-      "caption": "Gwangjang Market — Korea's first permanent indoor market (1905). Bindae-tteok and mayak gimbap are the signatures.",
-      "location": "Gwangjang Market, Jongno-gu",
-      "atmosphere": "Communal counters, sizzling stalls, market chatter"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+      "location": "Gyeongbokgung Palace",
+      "alt": "Gyeongbokgung Palace — gallery image 3",
+      "caption": "Gyeongbokgung Palace — photo 3"
     },
     {
-      "id": "g4",
+      "id": 6,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
-      "alt": "Pedestrianized street with traditional craft shops and signage in Insadong",
-      "caption": "Insadong — Seoul's traditional craft and antiques street; designated a Cultural Street in 1988.",
-      "location": "Insadong, Jongno-gu",
-      "atmosphere": "Pedestrian-only, calligraphy and craft signage, tea-house alleys"
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+      "location": "Gyeongbokgung Palace",
+      "alt": "Gyeongbokgung Palace — gallery image 4",
+      "caption": "Gyeongbokgung Palace — photo 4"
     },
     {
-      "id": "g5",
+      "id": 7,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
-      "alt": "Cruise ship docked at Incheon Port's international passenger terminal",
-      "caption": "Incheon Cruise Terminal in Songdo — pickup and drop-off point.",
-      "location": "Incheon Port International Passenger Terminal",
-      "atmosphere": "Working port, cruise-passenger flow"
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+      "location": "Gyeongbokgung Palace",
+      "alt": "Gyeongbokgung Palace — gallery image 5",
+      "caption": "Gyeongbokgung Palace — photo 5"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+      "location": "Gyeongbokgung Palace",
+      "alt": "Gyeongbokgung Palace — gallery image 6",
+      "caption": "Gyeongbokgung Palace — photo 6"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+      "location": "Gyeongbokgung Palace",
+      "alt": "Gyeongbokgung Palace — gallery image 7",
+      "caption": "Gyeongbokgung Palace — photo 7"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+      "location": "Gyeongbokgung Palace",
+      "alt": "Gyeongbokgung Palace — gallery image 8",
+      "caption": "Gyeongbokgung Palace — photo 8"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+      "location": "Gyeongbokgung Palace",
+      "alt": "Gyeongbokgung Palace — gallery image 9",
+      "caption": "Gyeongbokgung Palace — photo 9"
     }
   ],
   "itineraryStops": [
@@ -279,7 +322,130 @@
           "Wikipedia (Gyeongbokgung Palace)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "images": [
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+          "location": "Gyeongbokgung Palace",
+          "caption": "Gyeongbokgung Palace — photo 1",
+          "alt": "Gyeongbokgung Palace — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+          "location": "Gyeongbokgung Palace",
+          "caption": "Gyeongbokgung Palace — photo 2",
+          "alt": "Gyeongbokgung Palace — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+          "location": "Gyeongbokgung Palace",
+          "caption": "Gyeongbokgung Palace — photo 3",
+          "alt": "Gyeongbokgung Palace — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+          "location": "Gyeongbokgung Palace",
+          "caption": "Gyeongbokgung Palace — photo 4",
+          "alt": "Gyeongbokgung Palace — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+          "location": "Gyeongbokgung Palace",
+          "caption": "Gyeongbokgung Palace — photo 5",
+          "alt": "Gyeongbokgung Palace — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+          "location": "Gyeongbokgung Palace",
+          "caption": "Gyeongbokgung Palace — photo 6",
+          "alt": "Gyeongbokgung Palace — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+          "location": "Gyeongbokgung Palace",
+          "caption": "Gyeongbokgung Palace — photo 7",
+          "alt": "Gyeongbokgung Palace — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+          "location": "Gyeongbokgung Palace",
+          "caption": "Gyeongbokgung Palace — photo 8",
+          "alt": "Gyeongbokgung Palace — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+          "location": "Gyeongbokgung Palace",
+          "caption": "Gyeongbokgung Palace — photo 9",
+          "alt": "Gyeongbokgung Palace — gallery image 9"
+        }
+      ]
     },
     {
       "number": 3,
@@ -336,7 +502,26 @@
           "Wikipedia (Bukchon Hanok Village)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "images": [
+        "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+          "location": "Bukchon Hanok Village",
+          "caption": "Bukchon Hanok Village — photo 1",
+          "alt": "Bukchon Hanok Village — gallery image 1"
+        }
+      ]
     },
     {
       "number": 4,
@@ -393,7 +578,26 @@
           "Wikipedia (Gwangjang Market)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+      "images": [
+        "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+          "location": "Lunch at Gwangjang Market",
+          "caption": "Lunch at Gwangjang Market — photo 1",
+          "alt": "Lunch at Gwangjang Market — gallery image 1"
+        }
+      ]
     },
     {
       "number": 5,
@@ -1115,8 +1319,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Cruise port to royal palace, hanok lanes to streetfood —",
-        "headlineLine2": "Seoul's central headline circuit in a single shared-van day",
+        "headlineLine1": "Incheon to Seoul",
+        "headlineLine2": "Cruise Day Tour",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
           "imagePosition": "center 35%",
@@ -1287,7 +1491,7 @@
             "duration": "90 min",
             "name": "Gyeongbokgung Palace",
             "category": "Royal Palace",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "description": "Built in 1395 by King Taejo, founder of the Joseon dynasty, as the new dynasty's main palace at the auspicious geomantic site north of the city. Burned in the 1592–98 Imjin War and abandoned for 273 years before King Gojong's regent restored it from 1865 to 330+ buildings. Most structures were dismantled during the Japanese colonial period (1910–45); ongoing restoration since the 1990s has rebuilt the main axis. Highlights: Geunjeongjeon throne hall (National Treasure No. 223, the site of royal coronations and major state ceremonies), Gyeonghoeru banquet pavilion (National Treasure No. 224, on an artificial pond), and Hyangwonjeon pavilion. Royal Guard Changing Ceremony at Gwanghwamun Gate at 10:00 and 14:00 (except Tuesdays and weather-permitting). Adult admission ₩3,000; free for hanbok wearers, children under 7, adults over 64. Closed Tuesdays. **On Tuesdays the tour swaps to Changdeokgung Palace + Secret Garden** (UNESCO World Heritage; additional ₩5,000 Secret Garden ticket).",
             "timeUsed": [
               "Arrival, ticketing, and orientation briefing",
@@ -1301,7 +1505,130 @@
               "fee_krw": 3000,
               "closed": "Tuesday",
               "free_for_hanbok": true
-            }
+            },
+            "images": [
+              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+              "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+                "location": "Gyeongbokgung Palace",
+                "caption": "Gyeongbokgung Palace — photo 1",
+                "alt": "Gyeongbokgung Palace — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+                "location": "Gyeongbokgung Palace",
+                "caption": "Gyeongbokgung Palace — photo 2",
+                "alt": "Gyeongbokgung Palace — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+                "location": "Gyeongbokgung Palace",
+                "caption": "Gyeongbokgung Palace — photo 3",
+                "alt": "Gyeongbokgung Palace — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+                "location": "Gyeongbokgung Palace",
+                "caption": "Gyeongbokgung Palace — photo 4",
+                "alt": "Gyeongbokgung Palace — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+                "location": "Gyeongbokgung Palace",
+                "caption": "Gyeongbokgung Palace — photo 5",
+                "alt": "Gyeongbokgung Palace — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+                "location": "Gyeongbokgung Palace",
+                "caption": "Gyeongbokgung Palace — photo 6",
+                "alt": "Gyeongbokgung Palace — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+                "location": "Gyeongbokgung Palace",
+                "caption": "Gyeongbokgung Palace — photo 7",
+                "alt": "Gyeongbokgung Palace — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+                "location": "Gyeongbokgung Palace",
+                "caption": "Gyeongbokgung Palace — photo 8",
+                "alt": "Gyeongbokgung Palace — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+                "location": "Gyeongbokgung Palace",
+                "caption": "Gyeongbokgung Palace — photo 9",
+                "alt": "Gyeongbokgung Palace — gallery image 9"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1309,7 +1636,7 @@
             "duration": "75 min",
             "name": "Bukchon Hanok Village",
             "category": "Hanok Residential District",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
             "description": "Hanok district between Gyeongbokgung and Changdeokgung palaces, designated a Hanok Conservation Area since 1976. Approximately 600 traditional houses; most are still private residences (some are tea houses, craft workshops, and small museums) and the city asks visitors to keep voices low — quiet hours are observed 22:00–10:00. The eight 'Bukchon Hanok 8 Views' are the officially designated photo spots; the best-known is the Bukchon-ro 11-gil viewpoint where the hanok rooflines slope down toward the Seoul cityscape with N Seoul Tower in the background. Most houses date from the late 1920s–1930s, when Korean elite built modernized hanoks during the Japanese colonial period. Free to walk through; flat hanok lanes with some gentle slopes.",
             "timeUsed": [
               "Photo viewpoints walk",
@@ -1321,7 +1648,26 @@
               "is_attraction": true,
               "fee_krw": 0,
               "quiet_hours": "22:00-10:00 daily"
-            }
+            },
+            "images": [
+              "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+                "location": "Bukchon Hanok Village",
+                "caption": "Bukchon Hanok Village — photo 1",
+                "alt": "Bukchon Hanok Village — gallery image 1"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1329,7 +1675,7 @@
             "duration": "75 min",
             "name": "Lunch at Gwangjang Market",
             "category": "Market & Streetfood Lunch",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
             "description": "Korea's first permanent indoor market, opened in 1905. The market is best known for its food alley, where lunch is the day's main meal: bindae-tteok (mung-bean pancakes, ≈₩5,000), mayak gimbap ('narcotic' bite-sized seaweed rice rolls, ≈₩3,000–₩4,000 per bundle), yukhoe (raw beef tartare, ≈₩15,000–₩20,000), and kalguksu (knife-cut noodles, ≈₩7,000). Stalls share communal counter seating. Beyond food, the market also has a large textile/silk hall on a separate floor — skipped on this tour for time. Open ≈09:00–23:00 daily; some food stalls closed Sundays. Budget ₩10,000–₩20,000 per person for lunch. 75 minutes covers ordering, eating, and a 15-minute browse of nearby food alleys.",
             "timeUsed": [
               "Streetfood lunch (paid by guest)",
@@ -1341,7 +1687,26 @@
               "is_attraction": true,
               "fee_krw": 0,
               "lunch_budget_krw": "10000-20000"
-            }
+            },
+            "images": [
+              "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+                "location": "Lunch at Gwangjang Market",
+                "caption": "Lunch at Gwangjang Market — photo 1",
+                "alt": "Lunch at Gwangjang Market — gallery image 1"
+              }
+            ]
           },
           {
             "number": 5,

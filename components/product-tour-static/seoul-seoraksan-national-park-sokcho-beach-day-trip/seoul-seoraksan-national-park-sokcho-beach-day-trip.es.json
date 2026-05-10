@@ -20,7 +20,7 @@
   },
   "catalog_card": {
     "thumbnail": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
-    "title": "Tour Seúl→Seoraksan: Parque Nacional UNESCO, Mercado de Sokcho y Playa",
+    "title": "Seoraksan y Sokcho: Día",
     "priceLabel": "Consulte el precio al reservar",
     "shortCardDescription": "Excursión intensa de un día desde Seúl al Parque Nacional Seoraksan (Reserva de la Biosfera UNESCO, las montañas de granito más espectaculares de Corea) y la ciudad costera de Sokcho: cablecar hasta los 800 m + Templo Sinheungsa y Buda de Bronce → Mercado Pesquero de Sokcho (marisco de primera mano) → Playa de Sokcho (Mar del Este, arena blanca). 14-16 horas de ida y vuelta. Solo para quien quiera una jornada intensa.",
     "tags": [
@@ -50,8 +50,8 @@
     ],
     "heroImage": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800"
   },
-  "headlineLine1": "Montaña de granito por la mañana, Mar del Este al mediodía —",
-  "headlineLine2": "Seoraksan y Sokcho en un día intenso desde Seúl",
+  "headlineLine1": "Seoraksan y Sokcho",
+  "headlineLine2": "Día",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -1078,8 +1078,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Montaña de granito por la mañana, Mar del Este al mediodía —",
-        "headlineLine2": "Seoraksan y Sokcho en un día intenso desde Seúl",
+        "headlineLine1": "Seoraksan y Sokcho",
+        "headlineLine2": "Día",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1600",
           "imagePosition": "center 35%",

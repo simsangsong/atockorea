@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "濟州郵輪靠港觀光：小團體遊覽 | AtoC Korea",
     "metaDescription": "以小團體迷你巴士進行8小時濟州郵輪靠港觀光，依靠港地點彈性規劃路線：濟州港走東部UNESCO路線，江汀港走漢拏山路線。",
-    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "primaryKeywords": [
       "濟州靠港觀光小團體",
       "濟州郵輪一日遊",
@@ -19,7 +19,7 @@
   },
   "catalog_card": {
     "slug": "jeju-cruise-shore-excursion-small-group-tour",
-    "title": "濟州郵輪靠港觀光 — 小團體遊覽",
+    "title": "濟州郵輪岸上 小團遊",
     "subtitle": "依靠港地點彈性規劃路線的郵輪一日遊，提供濟州港及江汀港兩種路線選擇",
     "region": "濟州（依靠港地點而定）",
     "duration": "8小時",
@@ -32,8 +32,8 @@
       "頂級郵輪",
       "小團體"
     ],
-    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+    "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "priceLabel": "",
     "shortCardDescription": "此小團體郵輪靠港觀光行程可依您的靠港地點彈性調整路線。濟州港（北部）走東海岸UNESCO路線，途經城山日出峰；江汀港（南部）走漢拏山1100高地＋南海岸地質景觀＋偶來市場路線。兩條路線均保留充裕時間返回郵輪碼頭。",
     "tags": [
@@ -43,15 +43,15 @@
       "small_group"
     ]
   },
-  "headlineLine1": "濟州郵輪靠港觀光 — 小團體遊覽",
-  "headlineLine2": "兩種路線選擇 — 依您的靠港地點選擇最適合的行程",
+  "headlineLine1": "濟州郵輪岸上 小團遊",
+  "headlineLine2": "一日遊",
   "price": {
     "amountLabel": "",
     "currency": "USD",
     "per": "person"
   },
   "hero": {
-    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "imageUrl": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "imagePosition": "center 35%",
     "tagline": "選擇您的靠港地點：濟州港走東部UNESCO路線，江汀港走漢拏山＋偶來市場路線。同一營運商，小團體迷你巴士形式，均為8小時。",
     "pills": [
@@ -129,58 +129,148 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-      "alt": "郵輪停靠濟州港，前景為車輛接送區",
-      "caption": "濟州郵輪碼頭",
-      "location": "郵輪碼頭",
-      "atmosphere": "出發"
-    },
-    {
-      "id": "g2",
-      "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/9df6665f-e0cf-4b8a-8d1c-2ec895745448.webp",
-      "alt": "從城山日出峰UNESCO山頂俯瞰火山口邊緣",
-      "caption": "城山凝灰岩錐",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "location": "城山日出峰",
-      "atmosphere": "UNESCO日出峰"
+      "alt": "城山日出峰 — gallery image 1",
+      "caption": "城山日出峰 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 2,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/cf7e9f6b-178f-4d3d-b978-91beb5145a10.webp",
-      "alt": "涉地可支海岬的海岸懸崖步道",
-      "caption": "柱狀節理玄武岩懸崖",
-      "location": "柱狀節理",
-      "atmosphere": "火山柱狀海岸"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+      "location": "涉地可支（東岬角）",
+      "alt": "涉地可支（東岬角） — gallery image 1",
+      "caption": "涉地可支（東岬角） — photo 1"
     },
     {
-      "id": "g4",
+      "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/20/a397a498-7bc9-4730-963a-cfa29ccffe7d.webp",
-      "alt": "城邑民俗村的石牆茅草屋",
-      "caption": "漢拏山1100高地濕地",
-      "location": "漢拏山1100高地",
-      "atmosphere": "高山木棧道"
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 1",
+      "caption": "城邑民俗村 — photo 1"
     },
     {
-      "id": "g5",
+      "id": 4,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201810/17/654ec69c-ca81-443d-9b10-3cfe4a8e98f0.webp",
-      "alt": "大浦柱狀節理海岸的六角玄武岩石柱",
-      "caption": "天地淵瀑布",
-      "location": "天地淵瀑布",
-      "atmosphere": "瀑布與森林"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 2",
+      "caption": "城山日出峰 — photo 2"
     },
     {
-      "id": "g6",
+      "id": 5,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
-      "alt": "西歸浦市中心偶來每日市場的攤位",
-      "caption": "偶來每日市場",
-      "location": "偶來每日市場",
-      "atmosphere": "當地市場壓軸體驗"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 3",
+      "caption": "城山日出峰 — photo 3"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 4",
+      "caption": "城山日出峰 — photo 4"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 5",
+      "caption": "城山日出峰 — photo 5"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+      "location": "涉地可支（東岬角）",
+      "alt": "涉地可支（東岬角） — gallery image 2",
+      "caption": "涉地可支（東岬角） — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+      "location": "涉地可支（東岬角）",
+      "alt": "涉地可支（東岬角） — gallery image 3",
+      "caption": "涉地可支（東岬角） — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+      "location": "涉地可支（東岬角）",
+      "alt": "涉地可支（東岬角） — gallery image 4",
+      "caption": "涉地可支（東岬角） — photo 4"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+      "location": "涉地可支（東岬角）",
+      "alt": "涉地可支（東岬角） — gallery image 5",
+      "caption": "涉地可支（東岬角） — photo 5"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+      "location": "涉地可支（東岬角）",
+      "alt": "涉地可支（東岬角） — gallery image 6",
+      "caption": "涉地可支（東岬角） — photo 6"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 2",
+      "caption": "城邑民俗村 — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 3",
+      "caption": "城邑民俗村 — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 4",
+      "caption": "城邑民俗村 — photo 4"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 5",
+      "caption": "城邑民俗村 — photo 5"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 6",
+      "caption": "城邑民俗村 — photo 6"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 7",
+      "caption": "城邑民俗村 — photo 7"
     }
   ],
   "itineraryStops": [
@@ -230,7 +320,7 @@
       "name": "城山日出峰",
       "category": "聯合國教科文組織凝灰岩火山錐——日出峰（三重聯合國教科文組織認證）",
       "description": "**城山日出峰（성산일출봉，「日出峰」）**是一座**距今5,000年的蘇特塞型水火山凝灰岩錐**——一種罕見地貌，由水下玄武岩噴發突破海面時形成：岩漿遇海水後產生蒸汽爆炸，堆積出高達**182公尺的要塞狀火山口**邊緣，而非典型的熔岩錐。其成果正是聯合國教科文組織正式描述的**「新生蘇特塞型火山構造的傑出典範」**。火山口**寬600公尺、深90公尺**，環繞著**99塊嶙峋礁岩**，當地傳說將其比擬為石冠。城山日出峰擁有**三重聯合國教科文組織認證**：**世界自然遺產（2007年7月2日列入）**，隸屬**「濟州火山島與熔岩隧道」**保護地；**生物圈保護區（2002年）**；以及**全球地質公園（2010年10月）**——此三重認證在韓國景點中僅與漢拿山並列。濱海基部鑿有**18座日本帝國二戰洞穴**（1945年神風特攻隊自殺艇掩體）。步道：**單程0.8公里，爬升約140公尺，寬闊石階來回60分鐘**。**海女（해녀）表演**每日**13:30及15:00**在火山錐下方礁石灣舉行——濟州女性潛水員（2016年聯合國教科文組織非物質文化遺產）不使用水肺潛水。**門票已於2025年4月更新**：**成人 ₩5,000／青少年及兒童 ₩2,500／團體成人 ₩1,600**，7歲以下及65歲以上免費。山頂觀景台亦列入**瀛洲十景（濟州十大勝景）**之中，並長年是韓國最重要的**元旦日出朝聖地**——每年1月1日黎明前有逾5萬名遊客登頂，自1995年起更有官方日出慶典活動。從山頂清晰可見4公里外的**牛島（우도，「牛島」）**——韓國最大的次生火山島，可從城山港搭乘**15分鐘渡輪**抵達（來回票價 ₩10,500），適合行程有餘裕的旅客另日前往。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+      "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "highlights": [
         "**三重聯合國教科文組織認證**：世界遺產 2007年7月2日 ＋ 生物圈保護區 2002年 ＋ 全球地質公園 2010年10月",
         "**距今5,000年**——蘇特塞型水火山噴發，岩漿遇海水產生蒸汽爆炸而形成",
@@ -278,16 +368,75 @@
         "facilities": "附近咖啡廳（Fritz Coffee，距離1.3公里，擁有欣賞山峰的最佳外景視角）；可從城山港搭乘渡輪前往牛島（步行約1.5公里／15分鐘）"
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-        "https://images.unsplash.com/photo-1616798249081-30877e213b16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1593104197164-96718e943b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1584263577189-f86c4b105154?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1710006876254-48250c2dbcfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1584802530491-65fad8b1b92c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1743685889737-d699283d139c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 1",
+          "alt": "城山日出峰 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 2",
+          "alt": "城山日出峰 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 3",
+          "alt": "城山日出峰 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 4",
+          "alt": "城山日出峰 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 5",
+          "alt": "城山日出峰 — gallery image 5"
+        }
       ]
     },
     {
@@ -297,7 +446,7 @@
       "name": "涉地可支（東岬角）",
       "category": "火山岬角 — 安藤忠雄建築 + 方頭浦燈塔 + 韓劇拍攝聖地",
       "description": "**涉地可支（섭지코지）**是濟州島東海岸的一處狹長火山岬角——地名結合了**「섭지」（狹窄地帶）+「코지」（濟州方言，意為「岬角」）**。**2.1公里懸崖步道（約30分鐘，僅14公尺爬升）**是島上最常被拍攝的海岸步道之一，以三處文化建築景點為核心亮點。**(1) 붉은오름（紅岳）** — 位於岬角頂端的紅色火山寄生火山錐，錐頂聳立著**八角形方頭浦燈塔（방두포 등대）**，**每4秒閃爍一次**，目前仍作為沿海航行導航設施持續運作。**(2) 협자연대（協資烽燧）** — **以火山石砌成的朝鮮時代烽火台，高4公尺、直徑9公尺**，被濟州道指定為**第23-2號特別紀念物** — 是環繞全島38座烽燧之一，曾於16至18世紀作為抵禦海盜入侵的早期預警系統。**(3) 安藤忠雄建築** — 普立茲克獎得主、日本建築師**安藤忠雄（안도 다다오）**在此設計了兩座建築：**Glass House（글라스 하우스）**餐廳與**由民美術館（유민 미술관）**，均展現了安藤標誌性的清水混凝土與光影極簡主義風格，作為鳳凰島度假區開發項目建成。離岸處，**高10公尺的火山頸地貌선바위（선바위，「立岩」）**出現於當地**龍王幼子**的傳說之中。此地韓劇拍攝作品包括**《All In》（2003，SBS）、《我的女孩》（2005，SBS）、《銀杏樹床邊故事》、《黃山伐》及《千一夜》**。**春季油菜花**於**3至4月（黃色）**盛開漫山遍野；**夏季繡球花**緊隨其後，於**6月（藍紫色）**綻放。岬角**免費入場**；由民美術館及Glass House餐廳分開售票／預約。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/9df6665f-e0cf-4b8a-8d1c-2ec895745448.webp",
+      "image": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
       "highlights": [
         "**2.1公里岬角步道**（約30分鐘，僅爬升14公尺）— 部分路段適合輪椅／嬰兒車通行",
         "**方頭浦燈塔** — 八角形，**每4秒閃爍一次**，聳立於붉은오름（紅岳）火山錐頂端",
@@ -345,16 +494,88 @@
         "tip": "可與城山日出峰（車程約10分鐘）合併遊覽；春季（油菜花）與秋季（芒草）為最佳拍攝季節"
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/9df6665f-e0cf-4b8a-8d1c-2ec895745448.webp",
-        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9wamlrb2ppJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1590085309112-f67167e8da6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxTZW9wamlrb2ppJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1593726222205-21404ff4e5fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxTZW9wamlrb2ppJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1666328756682-ab6ad7a4df03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxTZW9wamlrb2ppJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665071407550-57acf1755a72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxTZW9wamlrb2ppJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1503932885469-ad7ee1671a37?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxTZW9wamlrb2ppJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1723707304010-15f5db159b6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxTZW9wamlrb2ppJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1514625796505-dba9ebaf5816?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxTZW9wamlrb2ppJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1657938143548-dbc1e39fcf4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxTZW9wamlrb2ppJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU0N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+        "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+          "location": "涉地可支（東岬角）",
+          "caption": "涉地可支（東岬角） — photo 1",
+          "alt": "涉地可支（東岬角） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+          "location": "涉地可支（東岬角）",
+          "caption": "涉地可支（東岬角） — photo 2",
+          "alt": "涉地可支（東岬角） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+          "location": "涉地可支（東岬角）",
+          "caption": "涉地可支（東岬角） — photo 3",
+          "alt": "涉地可支（東岬角） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+          "location": "涉地可支（東岬角）",
+          "caption": "涉地可支（東岬角） — photo 4",
+          "alt": "涉地可支（東岬角） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+          "location": "涉地可支（東岬角）",
+          "caption": "涉地可支（東岬角） — photo 5",
+          "alt": "涉地可支（東岬角） — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+          "location": "涉地可支（東岬角）",
+          "caption": "涉地可支（東岬角） — photo 6",
+          "alt": "涉地可支（東岬角） — gallery image 6"
+        }
       ]
     },
     {
@@ -404,7 +625,7 @@
       "name": "城邑民俗村",
       "category": "朝鮮時代邑城——重要民俗文化財（1423 年建立）",
       "description": "**城邑民俗村（성읍 민속마을）** 是一座**於 1423 年朝鮮世宗大王在位期間所建立的活態朝鮮時代邑城**，當時稱為旌義縣（정의현），是朝鮮時代濟州三大行政治所之一。該村作為**縣治行政中心持續運作至 1914 年**，歷時近 **500 年**，至今在原邑城（읍성）範圍內仍保存 **110 座傳統建築**，整體格局依**朝鮮縣治典型的韓國風水原則**規劃。全村被指定為**韓國重要民俗文化財**，另有**多棟個別建築**各自獲得獨立文化財地位。村落中心矗立著**兩棵被指定為韓國天然紀念物的古樹**——**欅樹（느티나무）**與**朴樹（팽나무）**，樹齡均估計超過 **600 年**，被視為村落的精神象徵。歷史傷痕清晰可見：**1826 年的一場大火燒毀了約 80 棟建築**，**1948 年濟州四三事件期間**村落亦遭受火災破壞——兩段歷史均記錄於村內說明牌上。**歷史上（前現代時期）戶數高峰約達 1,500 戶**——如今村內仍有約 250 戶居民，許多人仍積極傳承傳統工藝。戲劇拍攝紀錄：**《大長今（宮中珍饌）》（MBC，2003–2004 年）**，享譽國際的韓劇代表作。當地特色：**五梅酒（오메기술）**——一種以**糯米為基底的濟州傳統酒**，由**單一家族世代釀造**，可在村內的釀酒坊免費體驗釀造過程並品嚐。**免費入場**；以戶外步行為主（約 70% 戶外 / 30% 室內韓屋參觀）。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/cf7e9f6b-178f-4d3d-b978-91beb5145a10.webp",
+      "image": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
       "highlights": [
         "**1423 年由世宗大王創立**——行政中心延續至 **1914 年（約 500 年）**",
         "原邑城範圍內保存 **110 座傳統建築**",
@@ -453,16 +674,101 @@
         "tip": "可在入口處聘請免費志工導覽員以了解文化背景；請尊重此地居民實際生活於此的事實——未受邀請切勿擅自進入民宅"
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/cf7e9f6b-178f-4d3d-b978-91beb5145a10.webp",
-        "https://images.unsplash.com/photo-1746431565374-77fd0e8a02b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1769433471231-939e6c9d24a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1674142338030-3edf28f79322?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1659090833777-fcdb820ce4e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1757357921301-6a0ec0947c7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1660782556788-02f7539c0524?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1748092821079-ba4e8abff5e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1719985968360-15b822c49a03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1734961592183-6904430d3f3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxTZW9uZ2V1cCUyMEplanUlMjB0aGF0Y2hlZCUyMHJvb2YlMjBob3VzZXN8ZW58MHwwfHx8MTc3NzkxMDU0OXww&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 1",
+          "alt": "城邑民俗村 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 2",
+          "alt": "城邑民俗村 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 3",
+          "alt": "城邑民俗村 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 4",
+          "alt": "城邑民俗村 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 5",
+          "alt": "城邑民俗村 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 6",
+          "alt": "城邑民俗村 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 7",
+          "alt": "城邑民俗村 — gallery image 7"
+        }
       ]
     },
     {
@@ -1957,8 +2263,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "濟州郵輪岸上觀光——小團體行程",
-        "headlineLine2": "兩種路線方案——選擇符合您郵輪靠港地點的方案",
+        "headlineLine1": "濟州郵輪岸上 小團遊",
+        "headlineLine2": "一日遊",
         "hero": {
           "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
           "imagePosition": "center 35%",

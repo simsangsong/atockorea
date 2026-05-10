@@ -14,13 +14,13 @@
       "Gyeongju UNESCO day tour",
       "Silla Kingdom heritage tour"
     ],
-    "ogImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+    "ogImage": "https://www.atockorea.com/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
     "title": "Busan to Gyeongju UNESCO Heritage Day Tour | AtoC Korea",
     "description": "Full-day Gyeongju tour from Busan with Ahopsan Forest, Bulguksa Temple, Gyochon Village, royal tombs, National Museum or Donggung Palace, and Woljeonggyo Bridge."
   },
   "catalog_card": {
-    "thumbnail": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800",
-    "title": "Busan to Gyeongju UNESCO Heritage Full-Day Tour",
+    "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+    "title": "Busan to Gyeongju: UNESCO Heritage Day Tour",
     "priceLabel": "Price confirmed after date and group size selection",
     "shortCardDescription": "A culture-rich Gyeongju day trip from Busan. Start with Ahopsan Forest, continue to Bulguksa Temple, walk through Gyochon Village and the House of Choi area, see Silla royal-tomb scenery around Daereungwon and Hwangnidan-gil, then finish with the National Museum or Donggung Palace option and Woljeonggyo Bridge.",
     "tags": [
@@ -44,10 +44,10 @@
       "Small group",
       "From Busan"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=800"
+    "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp"
   },
-  "headlineLine1": "Ahopsan forest, Bulguksa, royal tombs and Woljeonggyo —",
-  "headlineLine2": "Gyeongju’s Silla heritage in one full day from Busan",
+  "headlineLine1": "Busan to Gyeongju",
+  "headlineLine2": "UNESCO Heritage Day Tour",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -57,7 +57,7 @@
     "discountPercent": 10
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
+    "imageUrl": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
     "imagePosition": "center 35%",
     "tagline": "Gyeongju in one day — UNESCO heritage, Silla history, and restored night scenery from Busan",
     "pills": [
@@ -135,49 +135,108 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "Stone bridges and Dabotap pagoda at Bulguksa Temple, late afternoon light",
-      "caption": "Bulguksa — UNESCO World Heritage. The two pagodas are National Treasures No. 20 and 21.",
-      "location": "Bulguksa Temple, Gyeongju",
-      "atmosphere": "Stone, wood, and 8th-century pagoda silhouettes"
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+      "location": "Ahopsan Bamboo Forest (아홉산숲)",
+      "alt": "Ahopsan Bamboo Forest (아홉산숲) — gallery image 1",
+      "caption": "Ahopsan Bamboo Forest (아홉산숲) — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "Silla gold crown displayed in glass case under museum lighting",
-      "caption": "Gyeongju National Museum — gold crown from Cheonmachong tomb (National Treasure No. 188).",
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "location": "Bulguksa Temple (UNESCO World Heritage)",
+      "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 1",
+      "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 1"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
       "location": "Gyeongju National Museum",
-      "atmosphere": "Quiet gallery, single object focus"
+      "alt": "Gyeongju National Museum — gallery image 1",
+      "caption": "Gyeongju National Museum — photo 1"
     },
     {
-      "id": "g3",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "Tile-roofed hanok houses and a stone wall along a quiet alley in Gyochon village",
-      "caption": "Gyochon Hanok Village — the Choi family compound and Confucian school.",
-      "location": "Gyochon Hanok Village, Gyeongju",
-      "atmosphere": "Restored hanok lanes, low traffic"
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+      "location": "Gyochon Hanok Village",
+      "alt": "Gyochon Hanok Village — gallery image 1",
+      "caption": "Gyochon Hanok Village — photo 1"
     },
     {
-      "id": "g4",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=1200",
-      "alt": "Light filtering through dense bamboo stalks along a forest path",
-      "caption": "Ahopsan Bamboo Forest — privately preserved by the Mun clan since 1638.",
-      "location": "Ahopsan Forest, Gijang-gun, Busan",
-      "atmosphere": "Cool, green, filtered light"
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+      "location": "Ahopsan Bamboo Forest (아홉산숲)",
+      "alt": "Ahopsan Bamboo Forest (아홉산숲) — gallery image 2",
+      "caption": "Ahopsan Bamboo Forest (아홉산숲) — photo 2"
     },
     {
-      "id": "g5",
+      "id": 6,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
-      "alt": "Wooden bridge pavilion reflected in water at dusk",
-      "caption": "Woljeonggyo Bridge — 66-meter Silla-style reconstruction completed in 2018.",
-      "location": "Woljeonggyo Bridge, Gyeongju",
-      "atmosphere": "Wood, water, soft evening light"
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+      "location": "Ahopsan Bamboo Forest (아홉산숲)",
+      "alt": "Ahopsan Bamboo Forest (아홉산숲) — gallery image 3",
+      "caption": "Ahopsan Bamboo Forest (아홉산숲) — photo 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+      "location": "Bulguksa Temple (UNESCO World Heritage)",
+      "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 2",
+      "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 2"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "location": "Bulguksa Temple (UNESCO World Heritage)",
+      "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 3",
+      "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 3"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+      "location": "Gyeongju National Museum",
+      "alt": "Gyeongju National Museum — gallery image 2",
+      "caption": "Gyeongju National Museum — photo 2"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+      "location": "Gyeongju National Museum",
+      "alt": "Gyeongju National Museum — gallery image 3",
+      "caption": "Gyeongju National Museum — photo 3"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+      "location": "Gyochon Hanok Village",
+      "alt": "Gyochon Hanok Village — gallery image 2",
+      "caption": "Gyochon Hanok Village — photo 2"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+      "location": "Gyochon Hanok Village",
+      "alt": "Gyochon Hanok Village — gallery image 3",
+      "caption": "Gyochon Hanok Village — photo 3"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+      "location": "Gyochon Hanok Village",
+      "alt": "Gyochon Hanok Village — gallery image 4",
+      "caption": "Gyochon Hanok Village — photo 4"
     }
   ],
   "itineraryStops": [
@@ -267,7 +326,53 @@
         "closed": "Mondays",
         "walking": "Moderate — gravel paths and gentle slopes; partial wooden walkway; comfortable shoes recommended",
         "admission": "Adult ₩8,000 / Child ₩5,000"
-      }
+      },
+      "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+      "images": [
+        "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+        "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+        "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+          "location": "Ahopsan Bamboo Forest (아홉산숲)",
+          "caption": "Ahopsan Bamboo Forest (아홉산숲) — photo 1",
+          "alt": "Ahopsan Bamboo Forest (아홉산숲) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+          "location": "Ahopsan Bamboo Forest (아홉산숲)",
+          "caption": "Ahopsan Bamboo Forest (아홉산숲) — photo 2",
+          "alt": "Ahopsan Bamboo Forest (아홉산숲) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+          "location": "Ahopsan Bamboo Forest (아홉산숲)",
+          "caption": "Ahopsan Bamboo Forest (아홉산숲) — photo 3",
+          "alt": "Ahopsan Bamboo Forest (아홉산숲) — gallery image 3"
+        }
+      ]
     },
     {
       "name": "Bulguksa Temple (UNESCO World Heritage)",
@@ -323,7 +428,53 @@
         "closed": "Open year-round",
         "walking": "Moderate — stone steps, slopes and gravel paths; comfortable shoes recommended",
         "admission": "Free (since 2023, per the revised Cultural Heritage Protection Act)"
-      }
+      },
+      "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "images": [
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "location": "Bulguksa Temple (UNESCO World Heritage)",
+          "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 1",
+          "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "location": "Bulguksa Temple (UNESCO World Heritage)",
+          "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 2",
+          "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "location": "Bulguksa Temple (UNESCO World Heritage)",
+          "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 3",
+          "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 3"
+        }
+      ]
     },
     {
       "name": "Lunch (Gyeongju local restaurant)",
@@ -411,7 +562,53 @@
         "closed": "Mondays + Jan 1 + Lunar New Year + Chuseok",
         "walking": "Mostly indoor + paved outdoor; fully wheelchair-accessible",
         "admission": "Free (special exhibitions may charge a small fee)"
-      }
+      },
+      "image": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+      "images": [
+        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+          "location": "Gyeongju National Museum",
+          "caption": "Gyeongju National Museum — photo 1",
+          "alt": "Gyeongju National Museum — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+          "location": "Gyeongju National Museum",
+          "caption": "Gyeongju National Museum — photo 2",
+          "alt": "Gyeongju National Museum — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+          "location": "Gyeongju National Museum",
+          "caption": "Gyeongju National Museum — photo 3",
+          "alt": "Gyeongju National Museum — gallery image 3"
+        }
+      ]
     },
     {
       "name": "Gyochon Hanok Village",
@@ -467,7 +664,66 @@
         "closed": "Some individual houses close on Mondays — main lanes always open",
         "walking": "Easy — gravel and stone-flag lanes; main spine partially wheelchair-friendly",
         "admission": "Free for most houses; Choi Clan main hall has a small donation box"
-      }
+      },
+      "image": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+      "images": [
+        "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+        "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+        "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+        "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+          "location": "Gyochon Hanok Village",
+          "caption": "Gyochon Hanok Village — photo 1",
+          "alt": "Gyochon Hanok Village — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+          "location": "Gyochon Hanok Village",
+          "caption": "Gyochon Hanok Village — photo 2",
+          "alt": "Gyochon Hanok Village — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+          "location": "Gyochon Hanok Village",
+          "caption": "Gyochon Hanok Village — photo 3",
+          "alt": "Gyochon Hanok Village — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+          "location": "Gyochon Hanok Village",
+          "caption": "Gyochon Hanok Village — photo 4",
+          "alt": "Gyochon Hanok Village — gallery image 4"
+        }
+      ]
     },
     {
       "name": "Woljeonggyo Bridge",
@@ -1251,8 +1507,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Ahopsan forest, Bulguksa, royal tombs and Woljeonggyo —",
-        "headlineLine2": "Gyeongju’s Silla heritage in one full day from Busan",
+        "headlineLine1": "Busan to Gyeongju",
+        "headlineLine2": "UNESCO Heritage Day Tour",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1600",
           "imagePosition": "center 35%",
@@ -1424,7 +1680,7 @@
             "duration": "60 min",
             "name": "Ahopsan Forest",
             "category": "Nature / Film location",
-            "image": "",
+            "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
             "description": "Ahopsan Forest is a privately managed bamboo and woodland area in Gijang, Busan. It gives the day a quiet natural start before the longer drive to Gyeongju and is known for bamboo paths, old trees, and filming locations used in Korean dramas and movies.",
             "timeUsed": [
               "60 min",
@@ -1436,7 +1692,52 @@
               "poi_key": "ahopsan_bamboo_forest",
               "is_attraction": true,
               "fee_krw": 5000
-            }
+            },
+            "images": [
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+                "location": "Ahopsan Forest",
+                "caption": "Ahopsan Forest — photo 1",
+                "alt": "Ahopsan Forest — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+                "location": "Ahopsan Forest",
+                "caption": "Ahopsan Forest — photo 2",
+                "alt": "Ahopsan Forest — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+                "location": "Ahopsan Forest",
+                "caption": "Ahopsan Forest — photo 3",
+                "alt": "Ahopsan Forest — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1444,7 +1745,7 @@
             "duration": "75 min",
             "name": "Bulguksa Temple (UNESCO World Heritage)",
             "category": "UNESCO / Temple",
-            "image": "",
+            "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
             "description": "Bulguksa Temple is the key Buddhist heritage stop of the day. Guests can see the temple courtyards, stone bridges, and pagodas while the guide explains how Silla Buddhist architecture shaped Gyeongju’s identity.",
             "timeUsed": [
               "75 min",
@@ -1461,7 +1762,52 @@
                 "No. 20 Dabotap",
                 "No. 21 Seokgatap"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "location": "Bulguksa Temple (UNESCO World Heritage)",
+                "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 1",
+                "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "location": "Bulguksa Temple (UNESCO World Heritage)",
+                "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 2",
+                "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "location": "Bulguksa Temple (UNESCO World Heritage)",
+                "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 3",
+                "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 3"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1488,7 +1834,7 @@
             "duration": "60 min",
             "name": "Gyochon Hanok Village & House of Choi area",
             "category": "Historic village",
-            "image": "",
+            "image": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
             "description": "Gyochon Hanok Village introduces Gyeongju’s traditional houses and the story of the Gyeongju Choi family, one of Korea’s well-known historic families. It adds a human, village-level layer after the temple stop.",
             "timeUsed": [
               "60 min",
@@ -1505,7 +1851,52 @@
                 "No. 29 Sacred Bell",
                 "No. 188 Gold Crown"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+                "location": "Gyochon Hanok Village & House of Choi area",
+                "caption": "Gyochon Hanok Village & House of Choi area — photo 1",
+                "alt": "Gyochon Hanok Village & House of Choi area — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+                "location": "Gyochon Hanok Village & House of Choi area",
+                "caption": "Gyochon Hanok Village & House of Choi area — photo 2",
+                "alt": "Gyochon Hanok Village & House of Choi area — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+                "location": "Gyochon Hanok Village & House of Choi area",
+                "caption": "Gyochon Hanok Village & House of Choi area — photo 3",
+                "alt": "Gyochon Hanok Village & House of Choi area — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1513,7 +1904,7 @@
             "duration": "70 min",
             "name": "Daereungwon Tomb Complex & Hwangnidan-gil",
             "category": "Royal tombs / Local street",
-            "image": "",
+            "image": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
             "description": "Daereungwon shows the large grass-covered royal tombs of ancient Silla. Nearby Hwangnidan-gil adds a lighter break with cafés, small shops, and modern hanok-style streets, giving guests both history and a sense of today’s Gyeongju.",
             "timeUsed": [
               "70 min",
@@ -1525,7 +1916,65 @@
               "poi_key": "gyochon_hanok_village",
               "is_attraction": true,
               "fee_krw": 0
-            }
+            },
+            "images": [
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+                "location": "Daereungwon Tomb Complex & Hwangnidan-gil",
+                "caption": "Daereungwon Tomb Complex & Hwangnidan-gil — photo 1",
+                "alt": "Daereungwon Tomb Complex & Hwangnidan-gil — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+                "location": "Daereungwon Tomb Complex & Hwangnidan-gil",
+                "caption": "Daereungwon Tomb Complex & Hwangnidan-gil — photo 2",
+                "alt": "Daereungwon Tomb Complex & Hwangnidan-gil — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+                "location": "Daereungwon Tomb Complex & Hwangnidan-gil",
+                "caption": "Daereungwon Tomb Complex & Hwangnidan-gil — photo 3",
+                "alt": "Daereungwon Tomb Complex & Hwangnidan-gil — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+                "location": "Daereungwon Tomb Complex & Hwangnidan-gil",
+                "caption": "Daereungwon Tomb Complex & Hwangnidan-gil — photo 4",
+                "alt": "Daereungwon Tomb Complex & Hwangnidan-gil — gallery image 4"
+              }
+            ]
           },
           {
             "number": 7,

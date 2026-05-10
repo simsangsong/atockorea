@@ -14,11 +14,11 @@
       "慶州ユネスコ日帰りツアー",
       "新羅王国遺産ツアー"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG"
+    "ogImage": "https://www.atockorea.com/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp"
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
-    "title": "釜山から慶州へ：国立博物館付きユネスコ遺産ツアー",
+    "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+    "title": "釜山発・慶州ユネスコ遺産ツアー",
     "priceLabel": "",
     "shortCardDescription": "釜山発・少人数制慶州日帰りツアー。慶州は992年間（紀元前57年〜935年）にわたり新羅王国の都として栄え、韓国で最もユネスコ世界遺産が集中するエリアです。ルート：アホプサン竹林 → 仏国寺（ユネスコ）→ 慶州サムパプランチ → 慶州国立博物館 → 校村韓屋村 → 月精橋。英語・中国語対応の公認ガイド付き、ミニバン使用、仏国寺・博物館の入場料は無料。",
     "tags": [
@@ -42,10 +42,10 @@
       "少人数制",
       "釜山発"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG"
+    "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp"
   },
-  "headlineLine1": "仏国寺から国立博物館へ、竹林から橋まで —",
-  "headlineLine2": "釜山から行く、韓国の千年の都を1日で",
+  "headlineLine1": "釜山発・慶州ユネスコ遺産ツアー",
+  "headlineLine2": "ツアー",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -55,7 +55,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+    "imageUrl": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
     "imagePosition": "center 35%",
     "tagline": "韓国の「壁のない博物館」— 7つのユネスコ遺産が15km圏内に集まる慶州",
     "pills": [
@@ -133,49 +133,116 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
-      "alt": "仏国寺の石橋と多宝塔、午後遅い時間帯の柔らかな光",
-      "caption": "仏国寺 — ユネスコ世界遺産。二基の塔は国宝第20号・第21号。",
-      "location": "慶州・仏国寺",
-      "atmosphere": "石、木、そして8世紀の塔のシルエット"
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+      "location": "アホプサン竹林（아홉산숲）",
+      "alt": "アホプサン竹林（아홉산숲） — gallery image 1",
+      "caption": "アホプサン竹林（아홉산숲） — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/23/2028423_image2_1.JPG",
-      "alt": "博物館の照明のもとガラスケースに展示された新羅の金冠",
-      "caption": "慶州国立博物館 — 天馬塚出土の金冠（国宝第188号）。",
-      "location": "慶州国立博物館",
-      "atmosphere": "静寂な展示室、一点に絞った展示"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "location": "仏国寺（ユネスコ世界遺産）",
+      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 1",
+      "caption": "仏国寺（ユネスコ世界遺産） — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/00/2024200_image2_1.JPG",
-      "alt": "校村の静かな路地に並ぶ瓦屋根の韓屋と石塀",
-      "caption": "校村韓屋村 — 崔氏の邸宅と儒教の学堂。",
-      "location": "慶州・校村韓屋村",
-      "atmosphere": "復元された韓屋の路地、静かで人通りが少ない"
+      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+      "location": "国立慶州博物館",
+      "alt": "国立慶州博物館 — gallery image 1",
+      "caption": "国立慶州博物館 — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG",
-      "alt": "森の小道沿いに密集した竹の間から差し込む光",
-      "caption": "アホプサン竹林 — 1638年から文氏一族によって代々守られてきた竹林。",
-      "location": "釜山・機張郡、アホプサンの森",
-      "atmosphere": "涼やかな、緑あふれる、柔らかな光"
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+      "location": "校村ハノク村",
+      "alt": "校村ハノク村 — gallery image 1",
+      "caption": "校村ハノク村 — photo 1"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/49/2390749_image2_1.JPG",
-      "alt": "夕暮れ時に水面に映し出される木造橋の楼閣",
-      "caption": "月精橋 — 2018年に完成した全長66メートルの新羅様式の復元橋。",
-      "location": "慶州・月精橋",
-      "atmosphere": "木、水、そして柔らかな夕暮れの光"
+      "location": "月精橋（ウォルジョンギョ）",
+      "alt": "月精橋（ウォルジョンギョ） — on-route photo",
+      "caption": "月精橋（ウォルジョンギョ）"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+      "location": "アホプサン竹林（아홉산숲）",
+      "alt": "アホプサン竹林（아홉산숲） — gallery image 2",
+      "caption": "アホプサン竹林（아홉산숲） — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+      "location": "アホプサン竹林（아홉산숲）",
+      "alt": "アホプサン竹林（아홉산숲） — gallery image 3",
+      "caption": "アホプサン竹林（아홉산숲） — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+      "location": "仏国寺（ユネスコ世界遺産）",
+      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 2",
+      "caption": "仏国寺（ユネスコ世界遺産） — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "location": "仏国寺（ユネスコ世界遺産）",
+      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 3",
+      "caption": "仏国寺（ユネスコ世界遺産） — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+      "location": "国立慶州博物館",
+      "alt": "国立慶州博物館 — gallery image 2",
+      "caption": "国立慶州博物館 — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+      "location": "国立慶州博物館",
+      "alt": "国立慶州博物館 — gallery image 3",
+      "caption": "国立慶州博物館 — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+      "location": "校村ハノク村",
+      "alt": "校村ハノク村 — gallery image 2",
+      "caption": "校村ハノク村 — photo 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+      "location": "校村ハノク村",
+      "alt": "校村ハノク村 — gallery image 3",
+      "caption": "校村ハノク村 — photo 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+      "location": "校村ハノク村",
+      "alt": "校村ハノク村 — gallery image 4",
+      "caption": "校村ハノク村 — photo 4"
     }
   ],
   "itineraryStops": [
@@ -266,7 +333,52 @@
           "Korea Tourism Organization (Ahopsan filming location designation)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/23/2028423_image2_1.JPG"
+      "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+      "images": [
+        "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+        "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+        "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+          "location": "アホプサン竹林（아홉산숲）",
+          "caption": "アホプサン竹林（아홉산숲） — photo 1",
+          "alt": "アホプサン竹林（아홉산숲） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+          "location": "アホプサン竹林（아홉산숲）",
+          "caption": "アホプサン竹林（아홉산숲） — photo 2",
+          "alt": "アホプサン竹林（아홉산숲） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+          "location": "アホプサン竹林（아홉산숲）",
+          "caption": "アホプサン竹林（아홉산숲） — photo 3",
+          "alt": "アホプサン竹林（아홉산숲） — gallery image 3"
+        }
+      ]
     },
     {
       "number": 3,
@@ -323,7 +435,52 @@
           "Visit Gyeongju official"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG"
+      "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+      "images": [
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "location": "仏国寺（ユネスコ世界遺産）",
+          "caption": "仏国寺（ユネスコ世界遺産） — photo 1",
+          "alt": "仏国寺（ユネスコ世界遺産） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "location": "仏国寺（ユネスコ世界遺産）",
+          "caption": "仏国寺（ユネスコ世界遺産） — photo 2",
+          "alt": "仏国寺（ユネスコ世界遺産） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "location": "仏国寺（ユネスコ世界遺産）",
+          "caption": "仏国寺（ユネスコ世界遺産） — photo 3",
+          "alt": "仏国寺（ユネスコ世界遺産） — gallery image 3"
+        }
+      ]
     },
     {
       "number": 4,
@@ -412,7 +569,52 @@
           "National Museum of Korea (Gyeongju Branch)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/00/2024200_image2_1.JPG"
+      "image": "https://tong.visitkorea.or.kr/cms/resource/00/2024200_image2_1.JPG",
+      "images": [
+        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+          "location": "国立慶州博物館",
+          "caption": "国立慶州博物館 — photo 1",
+          "alt": "国立慶州博物館 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+          "location": "国立慶州博物館",
+          "caption": "国立慶州博物館 — photo 2",
+          "alt": "国立慶州博物館 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+          "location": "国立慶州博物館",
+          "caption": "国立慶州博物館 — photo 3",
+          "alt": "国立慶州博物館 — gallery image 3"
+        }
+      ]
     },
     {
       "number": 6,
@@ -469,7 +671,65 @@
           "Cultural Heritage Administration of Korea (Gyeongju Choi Clan Family Designation)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG"
+      "image": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG",
+      "images": [
+        "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+        "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+        "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+        "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+          "location": "校村ハノク村",
+          "caption": "校村ハノク村 — photo 1",
+          "alt": "校村ハノク村 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+          "location": "校村ハノク村",
+          "caption": "校村ハノク村 — photo 2",
+          "alt": "校村ハノク村 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+          "location": "校村ハノク村",
+          "caption": "校村ハノク村 — photo 3",
+          "alt": "校村ハノク村 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+          "location": "校村ハノク村",
+          "caption": "校村ハノク村 — photo 4",
+          "alt": "校村ハノク村 — gallery image 4"
+        }
+      ]
     },
     {
       "number": 7,
@@ -1224,8 +1484,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "仏国寺から国立博物館へ、竹林から橋まで ―",
-        "headlineLine2": "釜山発、韓国千年の都を一日で巡る",
+        "headlineLine1": "釜山発・慶州ユネスコ遺産ツアー",
+        "headlineLine2": "ツアー",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
           "imagePosition": "center 35%",
@@ -1397,7 +1657,7 @@
             "duration": "60分",
             "name": "アホプサン竹林（阿甲山竹林）",
             "category": "竹林",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/23/2028423_image2_1.JPG",
+            "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
             "description": "釜山市機張郡にある南平文氏の宗家敷地内に位置する、一族が1638年（約400年前）から所有・管理する竹林です。韓国の人気ドラマの撮影地として知られており、特に『ミスター・サンシャイン』（2018年）の竹林の回廊シーンで広く有名になりました。散策ルートは平坦な固い土の上を約1kmのループ状で、ゆっくり写真を撮りながら歩くと45〜60分ほどかかります。竹の林冠が直射日光の大部分を遮るため、夏でも涼しく過ごせます。大人入場料5,000ウォン（現金払い、ツアー料金に含まれません）。春（桜の季節）のみ例外として、このスポットの代わりに海雲台タルマジの丘に立ち寄ります（季節に関する注意事項を参照）。",
             "timeUsed": [
               "到着、チケット購入、オリエンテーション説明",
@@ -1409,7 +1669,52 @@
               "poi_key": "ahopsan_bamboo_forest",
               "is_attraction": true,
               "fee_krw": 5000
-            }
+            },
+            "images": [
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+                "location": "アホプサン竹林（阿甲山竹林）",
+                "caption": "アホプサン竹林（阿甲山竹林） — photo 1",
+                "alt": "アホプサン竹林（阿甲山竹林） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+                "location": "アホプサン竹林（阿甲山竹林）",
+                "caption": "アホプサン竹林（阿甲山竹林） — photo 2",
+                "alt": "アホプサン竹林（阿甲山竹林） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+                "location": "アホプサン竹林（阿甲山竹林）",
+                "caption": "アホプサン竹林（阿甲山竹林） — photo 3",
+                "alt": "アホプサン竹林（阿甲山竹林） — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1434,7 +1739,52 @@
                 "No. 20 Dabotap",
                 "No. 21 Seokgatap"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "location": "仏国寺（ユネスコ世界遺産）",
+                "caption": "仏国寺（ユネスコ世界遺産） — photo 1",
+                "alt": "仏国寺（ユネスコ世界遺産） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "location": "仏国寺（ユネスコ世界遺産）",
+                "caption": "仏国寺（ユネスコ世界遺産） — photo 2",
+                "alt": "仏国寺（ユネスコ世界遺産） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "location": "仏国寺（ユネスコ世界遺産）",
+                "caption": "仏国寺（ユネスコ世界遺産） — photo 3",
+                "alt": "仏国寺（ユネスコ世界遺産） — gallery image 3"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1478,7 +1828,52 @@
                 "No. 29 Sacred Bell",
                 "No. 188 Gold Crown"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+                "location": "慶州国立博物館",
+                "caption": "慶州国立博物館 — photo 1",
+                "alt": "慶州国立博物館 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+                "location": "慶州国立博物館",
+                "caption": "慶州国立博物館 — photo 2",
+                "alt": "慶州国立博物館 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+                "location": "慶州国立博物館",
+                "caption": "慶州国立博物館 — photo 3",
+                "alt": "慶州国立博物館 — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1498,7 +1893,65 @@
               "poi_key": "gyochon_hanok_village",
               "is_attraction": true,
               "fee_krw": 0
-            }
+            },
+            "images": [
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+                "location": "校村韓屋村",
+                "caption": "校村韓屋村 — photo 1",
+                "alt": "校村韓屋村 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+                "location": "校村韓屋村",
+                "caption": "校村韓屋村 — photo 2",
+                "alt": "校村韓屋村 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+                "location": "校村韓屋村",
+                "caption": "校村韓屋村 — photo 3",
+                "alt": "校村韓屋村 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+                "location": "校村韓屋村",
+                "caption": "校村韓屋村 — photo 4",
+                "alt": "校村韓屋村 — gallery image 4"
+              }
+            ]
           },
           {
             "number": 7,

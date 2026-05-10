@@ -13,11 +13,11 @@
       "從仁川出發首爾一日遊",
       "景福宮郵輪觀光"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+    "ogImage": "https://www.atockorea.com/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-    "title": "從仁川出發：專為郵輪旅客設計的首爾一日遊（小團體）",
+    "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "title": "仁川郵輪→首爾一日遊",
     "priceLabel": "",
     "shortCardDescription": "從仁川郵輪碼頭出發的共乘廂型車一日遊，在9小時內暢遊首爾市中心精華景點：景福宮（週二改訪昌德宮）、北村韓屋村、廣藏市場午餐（全市最具話題的街頭美食巷弄），以及仁寺洞文化街。接送時間依您所搭船隻的靠港時程調整；配備英語／中文認證導遊；回程車程約75分鐘已含在內。",
     "tags": [
@@ -40,10 +40,10 @@
       "於仁川港接送",
       "9小時行程"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+    "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
-  "headlineLine1": "從郵輪碼頭到皇家宮殿，從韓屋巷弄到街頭美食——",
-  "headlineLine2": "共乘廂型車一日暢遊首爾市中心精華行程",
+  "headlineLine1": "仁川郵輪→首爾一日遊",
+  "headlineLine2": "一日遊",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -53,7 +53,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "imagePosition": "center 35%",
     "tagline": "四個首爾市中心景點，行程配合您的船隻時刻表",
     "pills": [
@@ -131,49 +131,100 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "location": "景福宮",
+      "alt": "景福宮 — gallery image 1",
+      "caption": "景福宮 — photo 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "location": "北村韓屋村",
+      "alt": "北村韓屋村 — gallery image 1",
+      "caption": "北村韓屋村 — photo 1"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+      "location": "廣藏市場午餐",
+      "alt": "廣藏市場午餐 — gallery image 1",
+      "caption": "廣藏市場午餐 — photo 1"
+    },
+    {
+      "id": 4,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-      "alt": "景福宮勤政殿與山脈為背景",
-      "caption": "景福宮——勤政殿，國寶第223號。建於1395年，1867年重建。",
-      "location": "首爾景福宮",
-      "atmosphere": "寬闊石庭、彩繪屋簷、山脈為背景"
+      "location": "仁寺洞文化街",
+      "alt": "仁寺洞文化街 — on-route photo",
+      "caption": "仁寺洞文化街"
     },
     {
-      "id": "g2",
+      "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/15/2002115_image2_1.JPG",
-      "alt": "北村斜坡巷道上瓦頂韓屋林立",
-      "caption": "北村韓屋村——自1976年起被列為保護區，約有600棟傳統韓屋。",
-      "location": "首爾北村韓屋村",
-      "atmosphere": "寧靜韓屋小巷、住宅區、和緩坡道"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+      "location": "景福宮",
+      "alt": "景福宮 — gallery image 2",
+      "caption": "景福宮 — photo 2"
     },
     {
-      "id": "g3",
+      "id": 6,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
-      "alt": "廣藏市場街頭小吃攤前人潮擁擠的攤販與顧客",
-      "caption": "廣藏市場——韓國首座永久性室內市場（1905年）。綠豆煎餅與麻藥紫菜飯捲是招牌美食。",
-      "location": "鐘路區廣藏市場",
-      "atmosphere": "共用吧台、煎炸攤位、市場喧嚷"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+      "location": "景福宮",
+      "alt": "景福宮 — gallery image 3",
+      "caption": "景福宮 — photo 3"
     },
     {
-      "id": "g4",
+      "id": 7,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
-      "alt": "仁寺洞行人專用街道兩側林立傳統工藝店與招牌",
-      "caption": "仁寺洞——首爾傳統工藝與古董街，1988年被指定為文化街。",
-      "location": "鐘路區仁寺洞",
-      "atmosphere": "行人專區、書法與工藝招牌、茶館小巷"
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+      "location": "景福宮",
+      "alt": "景福宮 — gallery image 4",
+      "caption": "景福宮 — photo 4"
     },
     {
-      "id": "g5",
+      "id": 8,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
-      "alt": "郵輪停靠仁川港國際客運碼頭",
-      "caption": "松島仁川郵輪碼頭——旅客接送停靠點。",
-      "location": "仁川港國際客運碼頭",
-      "atmosphere": "運作中的港口、郵輪旅客人潮"
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+      "location": "景福宮",
+      "alt": "景福宮 — gallery image 5",
+      "caption": "景福宮 — photo 5"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+      "location": "景福宮",
+      "alt": "景福宮 — gallery image 6",
+      "caption": "景福宮 — photo 6"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+      "location": "景福宮",
+      "alt": "景福宮 — gallery image 7",
+      "caption": "景福宮 — photo 7"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+      "location": "景福宮",
+      "alt": "景福宮 — gallery image 8",
+      "caption": "景福宮 — photo 8"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+      "location": "景福宮",
+      "alt": "景福宮 — gallery image 9",
+      "caption": "景福宮 — photo 9"
     }
   ],
   "itineraryStops": [
@@ -279,7 +330,130 @@
           "Wikipedia (Gyeongbokgung Palace)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "images": [
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+          "location": "景福宮",
+          "caption": "景福宮 — photo 1",
+          "alt": "景福宮 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+          "location": "景福宮",
+          "caption": "景福宮 — photo 2",
+          "alt": "景福宮 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+          "location": "景福宮",
+          "caption": "景福宮 — photo 3",
+          "alt": "景福宮 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+          "location": "景福宮",
+          "caption": "景福宮 — photo 4",
+          "alt": "景福宮 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+          "location": "景福宮",
+          "caption": "景福宮 — photo 5",
+          "alt": "景福宮 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+          "location": "景福宮",
+          "caption": "景福宮 — photo 6",
+          "alt": "景福宮 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+          "location": "景福宮",
+          "caption": "景福宮 — photo 7",
+          "alt": "景福宮 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+          "location": "景福宮",
+          "caption": "景福宮 — photo 8",
+          "alt": "景福宮 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+          "location": "景福宮",
+          "caption": "景福宮 — photo 9",
+          "alt": "景福宮 — gallery image 9"
+        }
+      ]
     },
     {
       "number": 3,
@@ -336,7 +510,26 @@
           "Wikipedia (Bukchon Hanok Village)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "images": [
+        "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+          "location": "北村韓屋村",
+          "caption": "北村韓屋村 — photo 1",
+          "alt": "北村韓屋村 — gallery image 1"
+        }
+      ]
     },
     {
       "number": 4,
@@ -393,7 +586,26 @@
           "Wikipedia (Gwangjang Market)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+      "images": [
+        "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+          "location": "廣藏市場午餐",
+          "caption": "廣藏市場午餐 — photo 1",
+          "alt": "廣藏市場午餐 — gallery image 1"
+        }
+      ]
     },
     {
       "number": 5,
@@ -1108,8 +1320,8 @@
       "section_html_id": null,
       "component": "行程主視覺區塊（TourHeroSection）",
       "props": {
-        "headlineLine1": "從郵輪碼頭到皇家宮殿，韓屋小巷到街頭美食——",
-        "headlineLine2": "首爾核心亮點巡覽，一日共乘廂型車之旅",
+        "headlineLine1": "仁川郵輪→首爾一日遊",
+        "headlineLine2": "一日遊",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
           "imagePosition": "center 35%",
@@ -1280,7 +1492,7 @@
             "duration": "90分鐘",
             "name": "景福宮",
             "category": "王宮",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "description": "景福宮由朝鮮王朝開國君主太祖李成桂於1395年興建，作為新王朝在城北風水吉地上的正宮。壬辰倭亂（1592至1598年）中遭焚毀，此後荒廢273年，直至高宗攝政王興宣大院君於1865年起主持重建，規模達330餘棟建築。日本殖民時期（1910至1945年），大部分建築遭拆除；自1990年代起持續修復，主要中軸線已陸續重建。景點亮點：勤政殿（國寶第223號，歷代王朝舉行登基大典及重大國家典禮之所）、慶會樓（國寶第224號，建於人工池塘之上）及香遠亭。光化門守門將交接儀式每日10:00及14:00舉行（週二及天氣不佳時除外）。成人門票₩3,000；穿韓服者、7歲以下兒童及64歲以上長者免費。週二休館。**週二時，行程改換至昌德宮＋秘苑**（聯合國教科文組織世界遺產；秘苑另需₩5,000門票）。",
             "timeUsed": [
               "抵達、購票及行程說明導覽",
@@ -1294,7 +1506,130 @@
               "fee_krw": 3000,
               "closed": "Tuesday",
               "free_for_hanbok": true
-            }
+            },
+            "images": [
+              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+              "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+                "location": "景福宮",
+                "caption": "景福宮 — photo 1",
+                "alt": "景福宮 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+                "location": "景福宮",
+                "caption": "景福宮 — photo 2",
+                "alt": "景福宮 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+                "location": "景福宮",
+                "caption": "景福宮 — photo 3",
+                "alt": "景福宮 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+                "location": "景福宮",
+                "caption": "景福宮 — photo 4",
+                "alt": "景福宮 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+                "location": "景福宮",
+                "caption": "景福宮 — photo 5",
+                "alt": "景福宮 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+                "location": "景福宮",
+                "caption": "景福宮 — photo 6",
+                "alt": "景福宮 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+                "location": "景福宮",
+                "caption": "景福宮 — photo 7",
+                "alt": "景福宮 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+                "location": "景福宮",
+                "caption": "景福宮 — photo 8",
+                "alt": "景福宮 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+                "location": "景福宮",
+                "caption": "景福宮 — photo 9",
+                "alt": "景福宮 — gallery image 9"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1302,7 +1637,7 @@
             "duration": "75分鐘",
             "name": "北村韓屋村",
             "category": "韓屋住宅區",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
             "description": "位於景福宮與昌德宮之間的韓屋街區，自1976年起被指定為韓屋保護區。此處約有600棟傳統建築，大多數仍為私人住宅（部分作為茶館、工藝坊及小型博物館使用），市府呼籲遊客保持安靜——每日22:00至翌日10:00為靜音時段。「北村韓屋八景」為官方指定拍照景點，其中最著名的是北村路11街巷的觀景點，韓屋屋脊沿坡而下，背景可見首爾市景與N首爾塔。大部分建築建於1920年代末至1930年代，是韓國上流階層在日本殖民時期所建的現代化韓屋。全區免費步行參觀；韓屋小巷地勢平坦，略有緩坡。",
             "timeUsed": [
               "步行尋訪拍照景點",
@@ -1314,7 +1649,26 @@
               "is_attraction": true,
               "fee_krw": 0,
               "quiet_hours": "22:00-10:00 daily"
-            }
+            },
+            "images": [
+              "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+                "location": "北村韓屋村",
+                "caption": "北村韓屋村 — photo 1",
+                "alt": "北村韓屋村 — gallery image 1"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1322,7 +1676,7 @@
             "duration": "75分鐘",
             "name": "廣藏市場午餐",
             "category": "市場街頭美食午餐",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
             "description": "韓國第一座永久室內市場，開業於1905年。市場以美食街最為著名，午餐為當日主食：綠豆煎餅（빈대떡，約₩5,000）、毒藥紫菜飯捲（마약김밥，一口大小的小紫菜飯捲，每份約₩3,000–₩4,000）、生牛肉韃靼（육회，約₩15,000–₩20,000），以及刀切麵（칼국수，約₩7,000）。攤位設有共用吧台座位。除美食外，市場另設一層規模龐大的紡織品／絲綢展示廳——本行程因時間關係略過。營業時間約09:00–23:00，每日開放；部分美食攤位週日休息。午餐預算每人₩10,000–₩20,000。75分鐘包含點餐、用餐及瀏覽周邊美食街約15分鐘。",
             "timeUsed": [
               "街頭美食午餐（費用自理）",
@@ -1334,7 +1688,26 @@
               "is_attraction": true,
               "fee_krw": 0,
               "lunch_budget_krw": "10000-20000"
-            }
+            },
+            "images": [
+              "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+                "location": "廣藏市場午餐",
+                "caption": "廣藏市場午餐 — photo 1",
+                "alt": "廣藏市場午餐 — gallery image 1"
+              }
+            ]
           },
           {
             "number": 5,

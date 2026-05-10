@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Pocheon Day Trip: Lake, Herb Island & Art Valley | AtoC Korea",
     "metaDescription": "Relaxed 10-hour Pocheon day trip from Seoul: Sanjeong Lake trails, Mediterranean-style Herb Island, and the Art Valley monorail above emerald Cheonjuho Lake.",
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "primaryKeywords": [
       "Pocheon day tour from Seoul",
       "Sanjeong Lake tour",
@@ -19,7 +19,7 @@
   },
   "catalog_card": {
     "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-    "title": "Pocheon Day Trip: Sanjeong Lake, Herb Island & Pocheon Art Valley",
+    "title": "Pocheon: Lake, Herb Island & Art Valley",
     "subtitle": "Mountain lake, Mediterranean herb gardens, and a quarry-turned-art-park—the calmest seasonal day-trip from Seoul.",
     "region": "Pocheon (Seoul Day Trip)",
     "duration": "10 hours",
@@ -31,8 +31,8 @@
       "Seasonal Highlights",
       "Romantic Evening Lights"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+    "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "priceLabel": "From US$55.80 per person (10% off, was $62)",
     "shortCardDescription": "A relaxed seasonal day-trip from Seoul to Pocheon, the Gyeonggi countryside known for its lakes, herb gardens, and dramatic art-park landscapes. The route combines Sanjeong Lake's mountain-circled waters, Herb Island's Mediterranean-style gardens and evening lights, and Pocheon Art Valley's monorail-accessed quarry observatory. Less crowded than Nami Island and built around photo-led calm rather than landmark sprint.",
     "tags": [
@@ -41,8 +41,8 @@
       "romantic_evening_lights"
     ]
   },
-  "headlineLine1": "Pocheon Day Trip: Sanjeong Lake,",
-  "headlineLine2": "Herb Island & Art Valley",
+  "headlineLine1": "Pocheon",
+  "headlineLine2": "Lake, Herb Island & Art Valley",
   "price": {
     "amountLabel": "55.80",
     "originalPriceUsd": 62,
@@ -54,7 +54,7 @@
     "priceNote": "Original price 62 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+    "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "imagePosition": "center 50%",
     "tagline": "Mountain lake, Mediterranean-style herb village, and a former granite quarry transformed into an art park—Pocheon's three softest-and-most-photogenic stops in one Seoul day-trip.",
     "pills": [
@@ -132,49 +132,60 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
-      "alt": "Mediterranean-style garden zones with whitewashed walls, herb beds, and seasonal lavender displays",
-      "caption": "Herb Island Mediterranean herb gardens (Pocheon)",
-      "location": "Herb Island",
-      "atmosphere": "Mediterranean-style herb gardens with seasonal lavender, daisies, and pink muhly"
-    },
-    {
-      "id": "g2",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG",
-      "alt": "Mountain-circled lake with a flat lakeside path and forested cliffs reflected in the water",
-      "caption": "Sanjeong Lake at Mount Myeongseongsan (Pocheon)",
+      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "location": "Sanjeong Lake",
-      "atmosphere": "Mountain-circled lake with walking paths and lakeside cafes"
+      "alt": "Sanjeong Lake — gallery image 1",
+      "caption": "Sanjeong Lake — photo 1"
     },
     {
-      "id": "g3",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG",
-      "alt": "Emerald-green quarry lake surrounded by sheer granite cliff walls",
-      "caption": "Cheonjuho Lake inside Pocheon Art Valley quarry",
+      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+      "location": "Pocheon Herb Island",
+      "alt": "Pocheon Herb Island — gallery image 1",
+      "caption": "Pocheon Herb Island — photo 1"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
       "location": "Pocheon Art Valley",
-      "atmosphere": "Emerald Cheonjuho Lake inside the former granite quarry"
+      "alt": "Pocheon Art Valley — gallery image 1",
+      "caption": "Pocheon Art Valley — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/01/2791401_image2_1.JPG",
-      "alt": "Garden paths illuminated with strings of evening lights and themed installations",
-      "caption": "Herb Island light festival evening (year-round Santa Village area)",
-      "location": "Herb Island Evening Lights",
-      "atmosphere": "Romantic light displays after sunset"
+      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+      "location": "Sanjeong Lake",
+      "alt": "Sanjeong Lake — gallery image 2",
+      "caption": "Sanjeong Lake — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
-      "alt": "Forest waterfall cascading over rock ledges into a pool",
-      "caption": "Bidulginang Cascade — seasonal substitute stop near Pocheon",
-      "location": "Bidulginang Cascade",
-      "atmosphere": "Optional waterfall stop on seasonal versions of the route"
+      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+      "location": "Pocheon Herb Island",
+      "alt": "Pocheon Herb Island — gallery image 2",
+      "caption": "Pocheon Herb Island — photo 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+      "location": "Pocheon Herb Island",
+      "alt": "Pocheon Herb Island — gallery image 3",
+      "caption": "Pocheon Herb Island — photo 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+      "location": "Pocheon Art Valley",
+      "alt": "Pocheon Art Valley — gallery image 2",
+      "caption": "Pocheon Art Valley — photo 2"
     }
   ],
   "itineraryStops": [
@@ -233,7 +244,39 @@
           "NamuWiki (en.namu.wiki/w/산정호수 — Korean-language verified facts on construction date + depth + 1945-armistice administrative history)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG"
+      "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "images": [
+        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "location": "Sanjeong Lake",
+          "caption": "Sanjeong Lake — photo 1",
+          "alt": "Sanjeong Lake — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "location": "Sanjeong Lake",
+          "caption": "Sanjeong Lake — photo 2",
+          "alt": "Sanjeong Lake — gallery image 2"
+        }
+      ]
     },
     {
       "number": 2,
@@ -291,7 +334,52 @@
           "Visit Gyeonggi (ggtour.or.kr — provincial tourism portal on Pocheon herb-themed attraction cluster)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG"
+      "image": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+      "images": [
+        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+          "location": "Pocheon Herb Island",
+          "caption": "Pocheon Herb Island — photo 1",
+          "alt": "Pocheon Herb Island — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+          "location": "Pocheon Herb Island",
+          "caption": "Pocheon Herb Island — photo 2",
+          "alt": "Pocheon Herb Island — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+          "location": "Pocheon Herb Island",
+          "caption": "Pocheon Herb Island — photo 3",
+          "alt": "Pocheon Herb Island — gallery image 3"
+        }
+      ]
     },
     {
       "number": 3,
@@ -350,7 +438,39 @@
           "Inquirer Lifestyle / Korea Times (Cheong Wa Dae + National Assembly + Incheon Airport granite-source historical reporting)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG"
+      "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+      "images": [
+        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "location": "Pocheon Art Valley",
+          "caption": "Pocheon Art Valley — photo 1",
+          "alt": "Pocheon Art Valley — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "location": "Pocheon Art Valley",
+          "caption": "Pocheon Art Valley — photo 2",
+          "alt": "Pocheon Art Valley — gallery image 2"
+        }
+      ]
     }
   ],
   "routeFlowStops": [
@@ -1009,8 +1129,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Pocheon Day Trip: Sanjeong Lake,",
-        "headlineLine2": "Herb Island & Art Valley",
+        "headlineLine1": "Pocheon",
+        "headlineLine2": "Lake, Herb Island & Art Valley",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
           "imagePosition": "center 50%",
@@ -1170,7 +1290,7 @@
             "name": "Sanjeong Lake",
             "category": "Mountain-Circled Walking Lake",
             "description": "Sanjeong Lake (Sanjeong-ho) is an artificial lake at the base of Mount Myeongseongsan, surrounded by towering cliffs and lush forest. The 4-kilometer perimeter trail is one of Gyeonggi's most-loved gentle walks, with lakeside cafes, duck-shaped pedal boats, and a small amusement zone. In autumn the surrounding silver grass turns gold; in winter the frozen lake hosts duck-sled and ice activities.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG",
+            "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "highlights": [
               "4 km lakeside walking trail with low elevation change",
               "Mountain-circled scenery and on-site cafes",
@@ -1205,7 +1325,39 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated visitor info"
-            }
+            },
+            "images": [
+              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "location": "Sanjeong Lake",
+                "caption": "Sanjeong Lake — photo 1",
+                "alt": "Sanjeong Lake — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "location": "Sanjeong Lake",
+                "caption": "Sanjeong Lake — photo 2",
+                "alt": "Sanjeong Lake — gallery image 2"
+              }
+            ]
           },
           {
             "number": 2,
@@ -1214,7 +1366,7 @@
             "name": "Herb Island",
             "category": "Mediterranean-Style Herb Botanical Park",
             "description": "Korea's largest herb-themed botanical park, designed to evoke a Mediterranean village with whitewashed walls, olive groves, and themed garden zones. More than 140 herb varieties grow across the gardens; on-site experiences include perfume making, candle making, and a herb-bread bakery. After sunset, Herb Island transforms into a romantic light-display zone with the famous 'Santa Village' open year-round.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+            "image": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
             "highlights": [
               "Mediterranean-style village atmosphere with herb gardens",
               "Seasonal flower displays: lavender, daisies, pink muhly grass",
@@ -1249,7 +1401,52 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated tour info"
-            }
+            },
+            "images": [
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+                "location": "Herb Island",
+                "caption": "Herb Island — photo 1",
+                "alt": "Herb Island — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
+                "location": "Herb Island",
+                "caption": "Herb Island — photo 2",
+                "alt": "Herb Island — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
+                "location": "Herb Island",
+                "caption": "Herb Island — photo 3",
+                "alt": "Herb Island — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1258,7 +1455,7 @@
             "name": "Pocheon Art Valley",
             "category": "Quarry-Turned-Art-Park with Monorail",
             "description": "A former granite quarry transformed into an art-and-nature park. A monorail carries visitors up the hillside to the dramatic Cheonjuho Lake, an emerald-green lake nestled inside the old quarry walls, surrounded by sculpture installations and an observatory. The site has appeared in many K-dramas and music videos thanks to its cinematic cliff-and-lake setting.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG",
+            "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
             "highlights": [
               "Monorail ride up to the quarry observatory",
               "Cheonjuho Lake: emerald water inside dramatic cliff walls",
@@ -1297,7 +1494,39 @@
                 "Soul of Seoul"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "location": "Pocheon Art Valley",
+                "caption": "Pocheon Art Valley — photo 1",
+                "alt": "Pocheon Art Valley — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "location": "Pocheon Art Valley",
+                "caption": "Pocheon Art Valley — photo 2",
+                "alt": "Pocheon Art Valley — gallery image 2"
+              }
+            ]
           }
         ]
       }

@@ -14,12 +14,12 @@
       "Tour a las cascadas Cheonjiyeon",
       "Tour a Jusangjeolli"
     ],
-    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "Gran Circuito de Jeju · Grupo Reducido 10 horas · UNESCO + Cascadas + Acantilados"
   },
   "catalog_card": {
     "slug": "jeju-grand-highlights-loop",
-    "title": "Tour en Grupo Reducido de un Día por el Gran Circuito de Jeju",
+    "title": "Jeju Completo: Hitos del Día",
     "subtitle": "De Hallasan a Seongsan Ilchulbong, descubre los principales atractivos de Jeju en un solo día.",
     "region": "Ruta por toda la isla de Jeju",
     "duration": "9–9,5 horas",
@@ -30,8 +30,8 @@
       "Ideal para Visitantes de un Solo Día",
       "Atractivos a Ritmo Acelerado"
     ],
-    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+    "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+    "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "priceLabel": "",
     "shortCardDescription": "Una ruta de alta eficiencia por toda la isla de Jeju para viajeros con tiempo limitado, que une Hallasan, la costa sur y Seongsan Ilchulbong en un solo día.",
     "tags": [
@@ -43,8 +43,8 @@
       "destacados"
     ]
   },
-  "headlineLine1": "Gran Circuito de los Mejores Atractivos de Jeju",
-  "headlineLine2": "Tour en Grupo Reducido de un Día",
+  "headlineLine1": "Jeju Completo",
+  "headlineLine2": "Hitos del Día",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -54,7 +54,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+    "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "imagePosition": "center 35%",
     "tagline": "Diseñado para viajeros con tiempo limitado, este itinerario de alta densidad cubre Hallasan, los espectaculares paisajes de la costa sur, una cascada y Seongsan Ilchulbong en un solo día.",
     "pills": [
@@ -134,47 +134,122 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-      "location": "Ruta general",
-      "atmosphere": "Descubre los paisajes más emblemáticos de Jeju en un solo día",
-      "alt": "Ambiente general de un tour de un día por los lugares destacados de Jeju",
-      "caption": "Ambiente general de un tour de un día por los lugares destacados de Jeju"
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "location": "Hallasan Eoseungsaengak",
+      "alt": "Hallasan Eoseungsaengak — gallery image 1",
+      "caption": "Hallasan Eoseungsaengak — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-      "location": "Primera parada en Hallasan",
-      "atmosphere": "Aire fresco de montaña en altura",
-      "alt": "Ambiente del sendero Eoseungsaengak del Hallasan",
-      "caption": "Ambiente del sendero Eoseungsaengak del Hallasan"
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "Acantilado de Daepo Jusangjeolli",
+      "alt": "Acantilado de Daepo Jusangjeolli — gallery image 1",
+      "caption": "Acantilado de Daepo Jusangjeolli — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-      "location": "Costa de Jusangjeolli",
-      "atmosphere": "Un dramático contraste entre olas y acantilados",
-      "alt": "Acantilado Daepo Jusangjeolli en la costa de Jeju",
-      "caption": "Acantilado Daepo Jusangjeolli en la costa de Jeju"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
+      "location": "Almuerzo — Local de Seogwipo",
+      "alt": "Almuerzo — Local de Seogwipo — on-route photo",
+      "caption": "Almuerzo — Local de Seogwipo"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-      "location": "Cascada junto al mar",
-      "atmosphere": "Un cambio de paisaje en la ruta de la tarde",
-      "alt": "Paisaje costero en la cascada Jeongbang",
-      "caption": "Paisaje costero en la cascada Jeongbang"
+      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+      "location": "Cascada Jeongbang",
+      "alt": "Cascada Jeongbang — gallery image 1",
+      "caption": "Cascada Jeongbang — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
-      "location": "Final en el cráter",
-      "atmosphere": "Una vista de cierre simbólica con impacto real",
-      "alt": "Cráter y costa de Seongsan Ilchulbong",
-      "caption": "Cráter y costa de Seongsan Ilchulbong"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 1",
+      "caption": "Seongsan Ilchulbong — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+      "location": "Hallasan Eoseungsaengak",
+      "alt": "Hallasan Eoseungsaengak — gallery image 2",
+      "caption": "Hallasan Eoseungsaengak — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "Acantilado de Daepo Jusangjeolli",
+      "alt": "Acantilado de Daepo Jusangjeolli — gallery image 2",
+      "caption": "Acantilado de Daepo Jusangjeolli — photo 2"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "Acantilado de Daepo Jusangjeolli",
+      "alt": "Acantilado de Daepo Jusangjeolli — gallery image 3",
+      "caption": "Acantilado de Daepo Jusangjeolli — photo 3"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "Acantilado de Daepo Jusangjeolli",
+      "alt": "Acantilado de Daepo Jusangjeolli — gallery image 4",
+      "caption": "Acantilado de Daepo Jusangjeolli — photo 4"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+      "location": "Cascada Jeongbang",
+      "alt": "Cascada Jeongbang — gallery image 2",
+      "caption": "Cascada Jeongbang — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+      "location": "Cascada Jeongbang",
+      "alt": "Cascada Jeongbang — gallery image 3",
+      "caption": "Cascada Jeongbang — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 2",
+      "caption": "Seongsan Ilchulbong — photo 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 3",
+      "caption": "Seongsan Ilchulbong — photo 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 4",
+      "caption": "Seongsan Ilchulbong — photo 4"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 5",
+      "caption": "Seongsan Ilchulbong — photo 5"
     }
   ],
   "itineraryStops": [
@@ -185,7 +260,7 @@
       "name": "Hallasan Eoseungsaengak",
       "category": "Sendero del Piedemonte de Hallasan (Eorimok) — Experiencia del Patrimonio Mundial de la UNESCO",
       "description": "**Eoseungsaengak (어승생악, 1.169 m)** es un cono parásito (오름 / *oreum*) en el flanco occidental de **Hallasan (한라산, 1.950 m)** — el pico más alto de Corea y el corazón geológico de Jeju. El propio Hallasan cuenta con una **incomparable acumulación de designaciones**: **Patrimonio Natural Mundial de la UNESCO (inscrito el 02/07/2007)**, **Reserva de la Biosfera de la UNESCO (2002)**, **Parque Nacional de Corea (designado el 24/03/1970)** y **Monumento Natural N.º 182 (1966)** — convirtiéndolo en el único sitio coreano que ostenta simultáneamente las tres designaciones naturales de la UNESCO. El acceso al sendero de Eoseungsaengak desde el **Centro de Visitantes de Eorimok** asciende **solo ~200 m a lo largo de 1,3 km** hasta una amplia plataforma en la cima — una excursión de ida y vuelta de 60 minutos que ofrece el **'sabor UNESCO de Hallasan'** sin necesidad de realizar el ascenso completo de 9 horas al cráter Baengnokdam. Desde la plataforma, en días despejados, se puede ver el **Mar Amarillo, la caldera cumbre Baengnokdam de Hallasan (백록담) y el campo de conos parásitos** que se extiende hacia el sur. Destaque botánico: esta franja de altitud (1.000–1.300 m) es la **zona de transición entre el bosque caducifolio de hoja ancha y el cinturón del abeto coreano (구상나무, *Abies koreana* — Casi Amenazado según la UICN, endémico de las montañas de Corea del Sur)** que se encuentra más arriba. Hallasan alberga más de **2.000 especies de plantas** en total — aproximadamente **la mitad de todas las plantas de la Península Coreana**. En la plataforma de la cima se encuentra un dato histórico notable: una **tochika imperial japonesa de 1945 (토치카, búnker de hormigón / puesto de comunicaciones)** construida en los últimos meses de la guerra — una de las fortificaciones japonesas de la Segunda Guerra Mundial más altas que se conservan en Corea. La entrada y el aparcamiento son **gratuitos**; **no se requiere reserva** para Eoseungsaengak (a diferencia de la cumbre de Baengnokdam, que limita el acceso diario a 1.000 visitantes).",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
       "highlights": [
         "**Hallasan = único sitio coreano con Triple Designación Natural**: Patrimonio Mundial UNESCO 2007 + Reserva de la Biosfera 2002 + Parque Nacional 1970",
         "**Cumbre de Eoseungsaengak a 1.169 m** — cono parásito (oreum), uno de los más de 360 en Jeju",
@@ -233,16 +308,36 @@
         "tip": "Especialmente tras la lluvia o en épocas más frías, el agarre y el abrigo importan más aquí que en la mayoría de las otras paradas."
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-        "https://images.unsplash.com/photo-1696440869866-b90626f1bf7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1590085309112-f67167e8da6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665071407550-57acf1755a72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1666328756682-ab6ad7a4df03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665688523217-852dde114c46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1593726222205-21404ff4e5fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1657938143548-dbc1e39fcf4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1664004922437-cf175d580b9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "location": "Hallasan Eoseungsaengak",
+          "caption": "Hallasan Eoseungsaengak — photo 1",
+          "alt": "Hallasan Eoseungsaengak — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "location": "Hallasan Eoseungsaengak",
+          "caption": "Hallasan Eoseungsaengak — photo 2",
+          "alt": "Hallasan Eoseungsaengak — gallery image 2"
+        }
       ]
     },
     {
@@ -252,7 +347,7 @@
       "name": "Acantilado de Daepo Jusangjeolli",
       "category": "Costa Volcánica — Lava con Juntas Columnares Hexagonales",
       "description": "**Daepo Jusangjeolli (대포 주상절리, 'Jisatgae')** es un **tramo de 1 km de acantilado de basalto con juntas columnares hexagonales** en la costa de Jungmun — declarado **Monumento Natural n.º 443 el 6 de enero de 2005**. Las columnas se elevan **30–40 m** sobre el mar, dispuestas en **polígonos de 5 a 7 lados** perfectamente encajados (principalmente hexágonos) — una geometría producida cuando **la lava basáltica fundida de una erupción en el flanco del Hallasan (~250 000–140 000 años atrás) alcanzó el océano y se contrajo al enfriarse**, fracturándose de forma perpendicular a la superficie de enfriamiento. A nivel mundial, las juntas columnares son más conocidas en **Giant's Causeway (Reino Unido)**, **Devils Postpile (EE. UU.)** y **la Cueva de Fingal (Escocia)** — Jusangjeolli es el **ejemplo más destacado de Asia Oriental** y el más accesible. El **paseo marítimo de 800 m en bucle** lleva a los visitantes hasta el borde del acantilado con barandilla, directamente sobre las columnas; **en días de marea alta, las olas rompen contra las columnas y lanzan spray hasta 20 m de altura**, en ocasiones por encima de la barandilla. Entrada: **Adultos ₩2 000 / Jóvenes ₩1 000 / GRATIS menores de 7 años y mayores de 65**. El lugar forma parte del **Geoparque Global de Jeju (designación UNESCO octubre de 2010)** — uno de los **13 geositios oficiales** de la isla, junto a Seongsan Ilchulbong, el Tubo de Lava de Manjanggul y Suwolbong. La plataforma superior del acantilado es **totalmente accesible** (para sillas de ruedas y cochecitos). Tres miradores a lo largo del recorrido ofrecen distintos ángulos de las columnas: el **primer mirador** muestra las columnas de perfil (ideal para capturar la geometría hexagonal), el **mirador intermedio** permite mirar directamente hacia abajo para ver los patrones en la parte superior de las columnas, y el **mirador del fondo** capta el trazado costero de 1 km con el Hallasan de fondo en días despejados. **Ventana óptima para fotografía: 14:00–16:00**, cuando la luz del sol en descenso ilumina de frente las caras de las columnas; las visitas al atardecer ofrecen composiciones en silueta, pero pierden la textura del detalle columnar. Horario: **09:00–18:00 (última entrada 17:30)**, abierto todo el año.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "**Monumento Natural n.º 443** — declarado el **6 de enero de 2005**, el Monumento Natural costero de Jeju más reciente",
         "Las columnas se elevan **30–40 m**, dispuestas en **polígonos de 5 a 7 lados** (principalmente hexágonos) a lo largo de **1 km** de costa",
@@ -300,16 +395,62 @@
         "tip": "Incluso en un día soleado, la costa suele sentirse más fría y ventosa que el interior de Jeju."
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-        "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1772268354899-1f3bf5014b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1739932413542-dc2597d7d764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "Acantilado de Daepo Jusangjeolli",
+          "caption": "Acantilado de Daepo Jusangjeolli — photo 1",
+          "alt": "Acantilado de Daepo Jusangjeolli — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "Acantilado de Daepo Jusangjeolli",
+          "caption": "Acantilado de Daepo Jusangjeolli — photo 2",
+          "alt": "Acantilado de Daepo Jusangjeolli — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "Acantilado de Daepo Jusangjeolli",
+          "caption": "Acantilado de Daepo Jusangjeolli — photo 3",
+          "alt": "Acantilado de Daepo Jusangjeolli — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "Acantilado de Daepo Jusangjeolli",
+          "caption": "Acantilado de Daepo Jusangjeolli — photo 4",
+          "alt": "Acantilado de Daepo Jusangjeolli — gallery image 4"
+        }
       ]
     },
     {
@@ -361,7 +502,7 @@
       "name": "Cascada Jeongbang",
       "category": "Cascada Costera — Cae Directamente al Océano (Única en Asia)",
       "description": "**Las Cataratas Jeongbang (정방폭포, 'cataratas que caen directamente al mar')** son la **única cascada en Asia que cae directamente al océano** — una **caída vertical de 23 m** desde un acantilado de basalto al Pacífico, sin poza intermedia ni desembocadura de lecho fluvial. La cascada mide **8 m de ancho** con una poza basal de 5 m que alcanza el mar abierto en cada marea. Esta distinción geográfica única es la razón por la que Jeongbang es una de las **'Yeongjusipgyeong (영주십경, Las 10 Maravillas Escénicas de Jeju)'** — un canon literario de la era Joseon de los paisajes más poéticos de la isla. La lista Yeongjusipgyeong, codificada por el **erudito confuciano del siglo XVIII Lee Won-jo (이원조)**, incluye también el Amanecer de Seongsan, la cima del Hallasan y Cheonjeyeon — lo que significa que el circuito de hoy abarca **3 de las 10** en un solo día. Tallada en la cara del acantilado junto a las cataratas se encuentra la inscripción **'Seobulgwacha (서불과차, Seobul se dirigió de vuelta al oeste)'**, atribuida a **Xu Fu (서복)**, el legendario alquimista de la dinastía Qin enviado por el **Emperador Qin Shi Huang (~219 a. C.)** en busca del elixir de la inmortalidad. La tradición local cuenta que pasó por aquí en su camino de regreso — la inscripción es la raíz etimológica del topónimo **'Seogwipo' (서귀포, 'donde Seo se dirigió de regreso')**. El acceso es a través de **130 escalones de piedra** que descienden a la cala (bastante empinados — se recomienda calzado cómodo para las rodillas). Entrada: **Adulto ₩2.000 / Joven ₩1.000 / GRATIS para menores de 7 años y mayores de 65**. El fresco microclima generado por el estruendoso oleaje en la base es un reconocido refugio en verano. Las **haenyeo locales (해녀, mujeres buceadoras — Patrimonio Cultural Inmaterial de la UNESCO 2016)** venden a veces erizo de mar fresco, abulón y caracola directamente en la cala en días de mar en calma — una rara oportunidad fotográfica para ver a la comunidad de buceo trabajando fuera de su contexto formal de museo.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+      "image": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
       "highlights": [
         "**La única cascada de Asia que cae directamente al océano** — caída vertical de 23 m, sin lecho fluvial",
         "Las cataratas miden **8 m de ancho** con una poza basal de 5 m que desemboca en el Pacífico con cada marea",
@@ -409,13 +550,49 @@
         "tip": "Debido a las escaleras y el camino rocoso, la visita suele sentirse más activa físicamente sobre el terreno de lo que parece en el mapa."
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-        "https://images.unsplash.com/photo-1674606042265-c9f03a77e286?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1674606055132-15e511a3ac2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1761303505953-df6647dd3a46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1562680829-7927493f7a50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "location": "Cascada Jeongbang",
+          "caption": "Cascada Jeongbang — photo 1",
+          "alt": "Cascada Jeongbang — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "location": "Cascada Jeongbang",
+          "caption": "Cascada Jeongbang — photo 2",
+          "alt": "Cascada Jeongbang — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "location": "Cascada Jeongbang",
+          "caption": "Cascada Jeongbang — photo 3",
+          "alt": "Cascada Jeongbang — gallery image 3"
+        }
       ]
     },
     {
@@ -425,7 +602,7 @@
       "name": "Seongsan Ilchulbong",
       "category": "Cono de Tobas UNESCO — Pico del Amanecer (Triple Designación UNESCO)",
       "description": "**Seongsan Ilchulbong (성산일출봉, 'Pico del Amanecer')** es un **cono hidrovolcánico de tipo surtseyano de 5.000 años de antigüedad** — una rara forma de relieve creada cuando una erupción basáltica submarina irrumpió en la superficie del mar, el magma encontró el agua del océano y la explosión de vapor resultante formó un **cráter en forma de fortaleza de 182 m** de altura en lugar de un cono de lava típico. El resultado es lo que la UNESCO denomina formalmente **'un ejemplo excepcional de un edificio volcánico emergente de tipo surtseyano'**. El cráter mide **600 m de ancho × 90 m de profundidad**, rodeado por **99 rocas dentadas en el borde** que la tradición local compara con una corona de piedra. Seongsan posee la **triple designación UNESCO**: **Patrimonio Natural Mundial (inscrito el 02-07-2007)** como parte de la propiedad **'Isla Volcánica de Jeju y Tubos de Lava'**, **Reserva de la Biosfera (2002)** y **Geoparque Mundial (10-2010)** — una combinación igualada únicamente por el propio Hallasan entre los sitios coreanos. **18 cuevas militares japonesas de la Segunda Guerra Mundial** (refugios para embarcaciones kamikazes, 1945) están excavadas en la base marítima. Sendero: **0,8 km de ida, ~140 m de desnivel, 60 min de ida y vuelta** por amplios escalones de piedra. Las **demostraciones de haenyeo (해녀)** se realizan **diariamente a las 13:30 y a las 15:00** en la cala rocosa bajo el cono — las buceadoras de Jeju (Patrimonio Cultural Inmaterial de la UNESCO 2016) se sumergen sin equipo de buceo. Entrada actualizada en **abril de 2025**: **Adultos ₩5.000 / Jóvenes y niños ₩2.500 / Grupo adultos ₩1.600**, gratis menores de 7 años y mayores de 65. La plataforma de la cumbre también forma parte del canon de las **Yeongjusipgyeong (Las 10 Vistas Panorámicas de Jeju)**, y sigue siendo el principal destino de **peregrinación anual al amanecer de Año Nuevo** en Corea — más de 50.000 visitantes ascienden antes del alba el 1 de enero, con programación del festival municipal del amanecer desde 1995. La **Isla Udo (우도, 'Isla de la Vaca')** — la mayor isla volcánica secundaria de Corea — se distingue claramente a 4 km de la costa desde la cima, accesible en **ferry de 15 min desde el Puerto de Seongsan** (₩10.500 ida y vuelta) para los visitantes con tiempo extra en otro itinerario.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+      "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "highlights": [
         "**Triple UNESCO**: Patrimonio Mundial 02-07-2007 + Reserva de la Biosfera 2002 + Geoparque Mundial 10-2010",
         "**5.000 años de antigüedad** — erupción hidrovolcánica de tipo surtseyano, nacida de la explosión de vapor al encontrarse el magma con el agua del mar",
@@ -473,16 +650,75 @@
         "tip": "La afluencia de visitantes, el estado del tiempo y el nivel físico del grupo pueden influir en la exigencia y el disfrute de la experiencia en la cima."
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-        "https://images.unsplash.com/photo-1616798249081-30877e213b16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1593104197164-96718e943b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1584263577189-f86c4b105154?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1710006876254-48250c2dbcfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1584802530491-65fad8b1b92c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1743685889737-d699283d139c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "location": "Seongsan Ilchulbong",
+          "caption": "Seongsan Ilchulbong — photo 1",
+          "alt": "Seongsan Ilchulbong — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "location": "Seongsan Ilchulbong",
+          "caption": "Seongsan Ilchulbong — photo 2",
+          "alt": "Seongsan Ilchulbong — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "location": "Seongsan Ilchulbong",
+          "caption": "Seongsan Ilchulbong — photo 3",
+          "alt": "Seongsan Ilchulbong — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "location": "Seongsan Ilchulbong",
+          "caption": "Seongsan Ilchulbong — photo 4",
+          "alt": "Seongsan Ilchulbong — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "location": "Seongsan Ilchulbong",
+          "caption": "Seongsan Ilchulbong — photo 5",
+          "alt": "Seongsan Ilchulbong — gallery image 5"
+        }
       ]
     }
   ],
@@ -1233,8 +1469,8 @@
       "id": "hero",
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Gran Circuito de Atracciones de Jeju",
-        "headlineLine2": "Tour en Grupo Pequeño de un Día",
+        "headlineLine1": "Jeju Completo",
+        "headlineLine2": "Hitos del Día",
         "hero": {
           "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
           "imagePosition": "center 35%",

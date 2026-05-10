@@ -13,11 +13,11 @@
       "인천 출발 서울 당일 투어",
       "경복궁 크루즈 투어"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+    "ogImage": "https://www.atockorea.com/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-    "title": "인천 출발: 크루즈 여행객을 위한 서울 당일 투어 (소그룹)",
+    "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "title": "인천 크루즈 → 서울 일일 투어",
     "priceLabel": "",
     "shortCardDescription": "인천 크루즈 터미널 출발, 9시간 일정으로 서울의 대표 도심 명소를 소형 밴으로 둘러보는 당일 투어: 경복궁(화요일에는 창덕궁 방문), 북촌 한옥마을, 광장시장 점심(서울에서 가장 많이 촬영되는 길거리 음식 골목), 인사동 문화거리. 승선하신 선박의 하선 시간에 맞춰 픽업 조정; 공인 영어·중국어 가이드 동행; 왕복 약 75분 이동 시간 포함.",
     "tags": [
@@ -40,10 +40,10 @@
       "인천 항구 픽업",
       "9시간 일정"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+    "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
-  "headlineLine1": "크루즈 항구에서 왕궁으로, 한옥 골목에서 길거리 음식까지 —",
-  "headlineLine2": "소형 밴으로 하루에 완성하는 서울 핵심 코스",
+  "headlineLine1": "인천 크루즈 → 서울 일일 투어",
+  "headlineLine2": "투어",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -53,7 +53,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "imagePosition": "center 35%",
     "tagline": "선박 일정에 맞춰 구성된 서울 도심 4개 명소",
     "pills": [
@@ -131,49 +131,92 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "location": "경복궁",
+      "alt": "경복궁 — gallery image 1",
+      "caption": "경복궁 — photo 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "location": "북촌한옥마을",
+      "alt": "북촌한옥마을 — gallery image 1",
+      "caption": "북촌한옥마을 — photo 1"
+    },
+    {
+      "id": 3,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-      "alt": "산을 배경으로 한 경복궁 근정전",
-      "caption": "경복궁 — 근정전, 국보 제223호. 1395년 창건, 1867년 중건.",
-      "location": "경복궁, 서울",
-      "atmosphere": "넓은 석조 마당, 단청 처마, 산 배경"
+      "location": "인사동 문화 거리",
+      "alt": "인사동 문화 거리 — on-route photo",
+      "caption": "인사동 문화 거리"
     },
     {
-      "id": "g2",
+      "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/15/2002115_image2_1.JPG",
-      "alt": "북촌 경사로를 따라 늘어선 기와지붕 한옥",
-      "caption": "북촌한옥마을 — 1976년부터 지정 보존 구역 내 약 600채의 전통 한옥.",
-      "location": "북촌한옥마을, 서울",
-      "atmosphere": "조용한 한옥 골목, 주거 지역, 완만한 경사"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+      "location": "경복궁",
+      "alt": "경복궁 — gallery image 2",
+      "caption": "경복궁 — photo 2"
     },
     {
-      "id": "g3",
+      "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
-      "alt": "광장시장 길거리 음식 노점 주변에 몰려든 상인과 손님들",
-      "caption": "광장시장 — 한국 최초의 상설 실내 시장(1905년). 빈대떡과 마약김밥이 대표 먹거리.",
-      "location": "광장시장, 종로구",
-      "atmosphere": "공용 카운터, 지글지글 노점, 시장의 왁자지껄한 소음"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+      "location": "경복궁",
+      "alt": "경복궁 — gallery image 3",
+      "caption": "경복궁 — photo 3"
     },
     {
-      "id": "g4",
+      "id": 6,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
-      "alt": "전통 공예품 상점과 간판이 늘어선 인사동 보행자 전용 거리",
-      "caption": "인사동 — 서울의 전통 공예·골동품 거리; 1988년 문화의 거리로 지정.",
-      "location": "인사동, 종로구",
-      "atmosphere": "보행자 전용, 서예·공예 간판, 찻집 골목"
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+      "location": "경복궁",
+      "alt": "경복궁 — gallery image 4",
+      "caption": "경복궁 — photo 4"
     },
     {
-      "id": "g5",
+      "id": 7,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
-      "alt": "인천항 국제여객터미널에 정박한 크루즈선",
-      "caption": "송도 인천 크루즈 터미널 — 승하차 지점.",
-      "location": "인천항 국제여객터미널",
-      "atmosphere": "운영 중인 항구, 크루즈 승객 이동"
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+      "location": "경복궁",
+      "alt": "경복궁 — gallery image 5",
+      "caption": "경복궁 — photo 5"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+      "location": "경복궁",
+      "alt": "경복궁 — gallery image 6",
+      "caption": "경복궁 — photo 6"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+      "location": "경복궁",
+      "alt": "경복궁 — gallery image 7",
+      "caption": "경복궁 — photo 7"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+      "location": "경복궁",
+      "alt": "경복궁 — gallery image 8",
+      "caption": "경복궁 — photo 8"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+      "location": "경복궁",
+      "alt": "경복궁 — gallery image 9",
+      "caption": "경복궁 — photo 9"
     }
   ],
   "itineraryStops": [
@@ -279,7 +322,130 @@
           "Wikipedia (Gyeongbokgung Palace)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "images": [
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+          "location": "경복궁",
+          "caption": "경복궁 — photo 1",
+          "alt": "경복궁 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+          "location": "경복궁",
+          "caption": "경복궁 — photo 2",
+          "alt": "경복궁 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+          "location": "경복궁",
+          "caption": "경복궁 — photo 3",
+          "alt": "경복궁 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+          "location": "경복궁",
+          "caption": "경복궁 — photo 4",
+          "alt": "경복궁 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+          "location": "경복궁",
+          "caption": "경복궁 — photo 5",
+          "alt": "경복궁 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+          "location": "경복궁",
+          "caption": "경복궁 — photo 6",
+          "alt": "경복궁 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+          "location": "경복궁",
+          "caption": "경복궁 — photo 7",
+          "alt": "경복궁 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+          "location": "경복궁",
+          "caption": "경복궁 — photo 8",
+          "alt": "경복궁 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+          "location": "경복궁",
+          "caption": "경복궁 — photo 9",
+          "alt": "경복궁 — gallery image 9"
+        }
+      ]
     },
     {
       "number": 3,
@@ -336,7 +502,26 @@
           "Wikipedia (Bukchon Hanok Village)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "images": [
+        "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+          "location": "북촌한옥마을",
+          "caption": "북촌한옥마을 — photo 1",
+          "alt": "북촌한옥마을 — gallery image 1"
+        }
+      ]
     },
     {
       "number": 4,
@@ -393,7 +578,26 @@
           "Wikipedia (Gwangjang Market)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+      "images": [
+        "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+          "location": "광장시장에서 점심 식사",
+          "caption": "광장시장에서 점심 식사 — photo 1",
+          "alt": "광장시장에서 점심 식사 — gallery image 1"
+        }
+      ]
     },
     {
       "number": 5,
@@ -1108,8 +1312,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "크루즈 항구에서 왕궁까지, 한옥 골목부터 길거리 음식까지 —",
-        "headlineLine2": "하루 공유 밴으로 떠나는 서울 중심부 핵심 코스",
+        "headlineLine1": "인천 크루즈 → 서울 일일 투어",
+        "headlineLine2": "투어",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
           "imagePosition": "center 35%",
@@ -1280,7 +1484,7 @@
             "duration": "90분",
             "name": "경복궁",
             "category": "왕궁",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "description": "1395년 조선 왕조의 창건자 태조가 도성 북쪽의 풍수지리적 명당에 새 왕조의 법궁으로 건립하였습니다. 1592~98년 임진왜란으로 소실된 후 273년간 폐허로 남아 있다가, 고종의 섭정인 흥선대원군이 1865년부터 복원하여 330여 동의 건물을 세웠습니다. 일제강점기(1910~45년)에 대부분의 건물이 철거되었으며, 1990년대 이후 지속적인 복원 사업으로 주요 축이 재건되었습니다. 주요 볼거리: 근정전(국보 제223호, 왕의 즉위식과 주요 국가 행사 장소), 경회루(국보 제224호, 인공 연못 위의 연회용 누각), 향원정. 광화문 수문장 교대의식은 매일 10:00·14:00에 거행됩니다(화요일 및 기상 악화 시 제외). 성인 입장료 ₩3,000; 한복 착용자·7세 미만 어린이·65세 이상 무료. 화요일 휴관. **화요일에는 투어가 창덕궁 + 후원으로 대체됩니다** (유네스코 세계문화유산; 후원 별도 입장권 ₩5,000 추가).",
             "timeUsed": [
               "도착, 티켓 구매 및 오리엔테이션 브리핑",
@@ -1294,7 +1498,130 @@
               "fee_krw": 3000,
               "closed": "Tuesday",
               "free_for_hanbok": true
-            }
+            },
+            "images": [
+              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+              "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+              "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+                "location": "경복궁",
+                "caption": "경복궁 — photo 1",
+                "alt": "경복궁 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+                "location": "경복궁",
+                "caption": "경복궁 — photo 2",
+                "alt": "경복궁 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+                "location": "경복궁",
+                "caption": "경복궁 — photo 3",
+                "alt": "경복궁 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+                "location": "경복궁",
+                "caption": "경복궁 — photo 4",
+                "alt": "경복궁 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+                "location": "경복궁",
+                "caption": "경복궁 — photo 5",
+                "alt": "경복궁 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+                "location": "경복궁",
+                "caption": "경복궁 — photo 6",
+                "alt": "경복궁 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+                "location": "경복궁",
+                "caption": "경복궁 — photo 7",
+                "alt": "경복궁 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+                "location": "경복궁",
+                "caption": "경복궁 — photo 8",
+                "alt": "경복궁 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+                "location": "경복궁",
+                "caption": "경복궁 — photo 9",
+                "alt": "경복궁 — gallery image 9"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1302,7 +1629,7 @@
             "duration": "75분",
             "name": "북촌한옥마을",
             "category": "한옥 주거지구",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
             "description": "경복궁과 창덕궁 사이에 위치한 한옥지구로, 1976년부터 한옥보전지역으로 지정되어 있습니다. 약 600채의 전통 가옥이 있으며, 대부분은 여전히 개인 주택이고 일부는 찻집, 공예 공방, 소규모 박물관으로 운영됩니다. 서울시는 방문객들에게 조용히 해줄 것을 당부하고 있으며, 오후 10시부터 오전 10시까지는 정숙 시간으로 운영됩니다. '북촌한옥 8경'은 공식 지정 포토 스팟으로, 그 중 가장 유명한 곳은 북촌로 11길 전망 포인트로, 한옥 지붕선 너머로 N서울타워가 보이는 서울 도심 전경을 감상할 수 있습니다. 대부분의 가옥은 일제강점기인 1920년대 후반~1930년대에 한국 상류층이 근대화된 한옥을 지어 조성되었습니다. 도보 관람 무료이며, 한옥 골목은 대체로 평탄하고 일부 완만한 경사가 있습니다.",
             "timeUsed": [
               "포토 뷰포인트 도보 관람",
@@ -1314,7 +1641,26 @@
               "is_attraction": true,
               "fee_krw": 0,
               "quiet_hours": "22:00-10:00 daily"
-            }
+            },
+            "images": [
+              "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+                "location": "북촌한옥마을",
+                "caption": "북촌한옥마을 — photo 1",
+                "alt": "북촌한옥마을 — gallery image 1"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1322,7 +1668,7 @@
             "duration": "75분",
             "name": "광장시장 점심",
             "category": "시장 & 길거리 음식 점심",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
             "description": "1905년 개장한 한국 최초의 상설 실내시장입니다. 이 시장은 음식 골목으로 가장 유명하며, 점심이 하루의 주 식사입니다: 빈대떡(녹두전, 약 5,000원), 마약 김밥(한 입 크기 해초 밥말이, 한 묶음 약 3,000~4,000원), 육회(약 15,000~20,000원), 칼국수(약 7,000원) 등을 즐길 수 있습니다. 가판대는 공용 카운터 좌석을 공유합니다. 음식 외에도 별도 층에 대형 직물·실크 홀이 있으나, 이번 투어에서는 시간 관계상 생략합니다. 영업시간은 매일 오전 9시~오후 11시이며, 일부 음식 가판대는 일요일에 휴무입니다. 점심 예산은 1인당 10,000~20,000원으로 예상하세요. 75분 동안 주문·식사 및 인근 음식 골목 15분 탐방이 가능합니다.",
             "timeUsed": [
               "길거리 음식 점심 (게스트 개인 부담)",
@@ -1334,7 +1680,26 @@
               "is_attraction": true,
               "fee_krw": 0,
               "lunch_budget_krw": "10000-20000"
-            }
+            },
+            "images": [
+              "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+                "location": "광장시장 점심",
+                "caption": "광장시장 점심 — photo 1",
+                "alt": "광장시장 점심 — gallery image 1"
+              }
+            ]
           },
           {
             "number": 5,

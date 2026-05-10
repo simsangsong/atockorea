@@ -19,7 +19,7 @@
   },
   "catalog_card": {
     "slug": "jeju-island-private-car-charter-tour",
-    "title": "제주도 프라이빗 전세 차량 투어",
+    "title": "제주 프라이빗 차량 투어",
     "subtitle": "공인 드라이버 가이드와 에어컨이 구비된 프라이빗 차량으로 나만의 제주 하루를 설계하세요.",
     "region": "제주 (동부, 서부, 또는 남부)",
     "duration": "9시간",
@@ -41,8 +41,8 @@
       "hotel_pickup_included"
     ]
   },
-  "headlineLine1": "제주도 프라이빗",
-  "headlineLine2": "전세 차량 투어",
+  "headlineLine1": "제주 프라이빗 차량 투어",
+  "headlineLine2": "투어",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -951,8 +951,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "제주도 프라이빗",
-        "headlineLine2": "차량 전세 투어",
+        "headlineLine1": "제주 프라이빗 차량 투어",
+        "headlineLine2": "투어",
         "hero": {
           "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
           "imagePosition": "center 45%",

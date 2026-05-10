@@ -14,12 +14,12 @@
       "涯月海岸咖啡廳之旅",
       "協在海灘之旅"
     ],
-    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "濟州西南部漢拿山＋雪綠茶＋涯月之旅・9小時小團體"
   },
   "catalog_card": {
     "slug": "southwest-hallasan-osulloc-aewol",
-    "title": "濟州西南部小團體之旅：漢拿山、雪綠茶與涯月",
+    "title": "濟州西南：漢拿山·Osulloc·涯月",
     "subtitle": "短程漢拿山健行、火山懸崖、瀑布步道、茶園，以悠閒的涯月作為完美收尾。",
     "region": "濟州西南部",
     "duration": "8小時",
@@ -30,8 +30,8 @@
       "非常適合初次造訪濟州的旅客",
       "濟州西南部"
     ],
-    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
+    "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+    "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "priceLabel": "",
     "shortCardDescription": "行程均衡的濟州西南路線，串聯短程漢拿山健行、火山海岸線、天帝淵瀑布、雪綠茶園與涯月咖啡街。",
     "tags": [
@@ -43,8 +43,8 @@
       "漢拿山"
     ]
   },
-  "headlineLine1": "濟州西南部：漢拿山、茶園與涯月",
-  "headlineLine2": "小團體一日遊",
+  "headlineLine1": "濟州西南",
+  "headlineLine2": "漢拿山·Osulloc·涯月",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -54,7 +54,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
+    "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "imagePosition": "center 35%",
     "tagline": "短程漢拿山健行、火山懸崖、瀑布步道、茶園，以悠閒的涯月作為完美收尾。",
     "pills": [
@@ -132,57 +132,219 @@
   "galleryItems": [
     {
       "id": 1,
-      "type": "video",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
-      "location": "整體路線",
-      "atmosphere": "全天路線流程概覽",
-      "alt": "濟州西南路線整體氛圍",
-      "caption": "濟州西南路線整體氛圍"
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "location": "漢拿山魚乘生岳",
+      "alt": "漢拿山魚乘生岳 — gallery image 1",
+      "caption": "漢拿山魚乘生岳 — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/2fc1d5d9-d5af-43a1-ae26-c72afa3b544e.webp",
-      "location": "漢拿山起始站",
-      "atmosphere": "清新的山間空氣",
-      "alt": "漢拿山御乘生岳步道",
-      "caption": "漢拿山御乘生岳步道"
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "大浦柱狀節理海岸",
+      "alt": "大浦柱狀節理海岸 — gallery image 1",
+      "caption": "大浦柱狀節理海岸 — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-      "location": "火山海岸線",
-      "atmosphere": "壯觀的玄武岩海岸線",
-      "alt": "大浦柱狀節理帶玄武岩海崖",
-      "caption": "大浦柱狀節理帶玄武岩海崖"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
+      "location": "午餐 — 西歸浦／中文",
+      "alt": "午餐 — 西歸浦／中文 — on-route photo",
+      "caption": "午餐 — 西歸浦／中文"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
-      "location": "森林步道與瀑布",
-      "atmosphere": "清涼寧靜的中段路程",
-      "alt": "天帝淵瀑布森林步道",
-      "caption": "天帝淵瀑布森林步道"
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "天帝淵瀑布",
+      "alt": "天帝淵瀑布 — gallery image 1",
+      "caption": "天帝淵瀑布 — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-      "location": "茶園休憩",
-      "atmosphere": "開闊翠綠的景色，氛圍更為柔和",
-      "alt": "奧雪綠茶博物館及茶田周邊氛圍",
-      "caption": "奧雪綠茶博物館及茶田周邊氛圍"
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+      "location": "O'Sulloc茶博物館",
+      "alt": "O'Sulloc茶博物館 — gallery image 1",
+      "caption": "O'Sulloc茶博物館 — photo 1"
     },
     {
       "id": 6,
-      "type": "video",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-      "location": "涯月海岸終章",
-      "atmosphere": "悠閒愜意地結束一天",
-      "alt": "涯月海岸咖啡街",
-      "caption": "涯月海岸咖啡街"
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+      "location": "涯月咖啡街（翰潭海岸步道）",
+      "alt": "涯月咖啡街（翰潭海岸步道） — gallery image 1",
+      "caption": "涯月咖啡街（翰潭海岸步道） — photo 1"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+      "location": "漢拿山魚乘生岳",
+      "alt": "漢拿山魚乘生岳 — gallery image 2",
+      "caption": "漢拿山魚乘生岳 — photo 2"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "大浦柱狀節理海岸",
+      "alt": "大浦柱狀節理海岸 — gallery image 2",
+      "caption": "大浦柱狀節理海岸 — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "大浦柱狀節理海岸",
+      "alt": "大浦柱狀節理海岸 — gallery image 3",
+      "caption": "大浦柱狀節理海岸 — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "大浦柱狀節理海岸",
+      "alt": "大浦柱狀節理海岸 — gallery image 4",
+      "caption": "大浦柱狀節理海岸 — photo 4"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "location": "天帝淵瀑布",
+      "alt": "天帝淵瀑布 — gallery image 2",
+      "caption": "天帝淵瀑布 — photo 2"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+      "location": "天帝淵瀑布",
+      "alt": "天帝淵瀑布 — gallery image 3",
+      "caption": "天帝淵瀑布 — photo 3"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+      "location": "O'Sulloc茶博物館",
+      "alt": "O'Sulloc茶博物館 — gallery image 2",
+      "caption": "O'Sulloc茶博物館 — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+      "location": "O'Sulloc茶博物館",
+      "alt": "O'Sulloc茶博物館 — gallery image 3",
+      "caption": "O'Sulloc茶博物館 — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+      "location": "O'Sulloc茶博物館",
+      "alt": "O'Sulloc茶博物館 — gallery image 4",
+      "caption": "O'Sulloc茶博物館 — photo 4"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+      "location": "O'Sulloc茶博物館",
+      "alt": "O'Sulloc茶博物館 — gallery image 5",
+      "caption": "O'Sulloc茶博物館 — photo 5"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+      "location": "O'Sulloc茶博物館",
+      "alt": "O'Sulloc茶博物館 — gallery image 6",
+      "caption": "O'Sulloc茶博物館 — photo 6"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+      "location": "O'Sulloc茶博物館",
+      "alt": "O'Sulloc茶博物館 — gallery image 7",
+      "caption": "O'Sulloc茶博物館 — photo 7"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+      "location": "O'Sulloc茶博物館",
+      "alt": "O'Sulloc茶博物館 — gallery image 8",
+      "caption": "O'Sulloc茶博物館 — photo 8"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+      "location": "O'Sulloc茶博物館",
+      "alt": "O'Sulloc茶博物館 — gallery image 9",
+      "caption": "O'Sulloc茶博物館 — photo 9"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+      "location": "O'Sulloc茶博物館",
+      "alt": "O'Sulloc茶博物館 — gallery image 10",
+      "caption": "O'Sulloc茶博物館 — photo 10"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+      "location": "O'Sulloc茶博物館",
+      "alt": "O'Sulloc茶博物館 — gallery image 11",
+      "caption": "O'Sulloc茶博物館 — photo 11"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+      "location": "O'Sulloc茶博物館",
+      "alt": "O'Sulloc茶博物館 — gallery image 12",
+      "caption": "O'Sulloc茶博物館 — photo 12"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25.webp",
+      "location": "涯月咖啡街（翰潭海岸步道）",
+      "alt": "涯月咖啡街（翰潭海岸步道） — gallery image 2",
+      "caption": "涯月咖啡街（翰潭海岸步道） — photo 2"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26.webp",
+      "location": "涯月咖啡街（翰潭海岸步道）",
+      "alt": "涯月咖啡街（翰潭海岸步道） — gallery image 3",
+      "caption": "涯月咖啡街（翰潭海岸步道） — photo 3"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27.webp",
+      "location": "涯月咖啡街（翰潭海岸步道）",
+      "alt": "涯月咖啡街（翰潭海岸步道） — gallery image 4",
+      "caption": "涯月咖啡街（翰潭海岸步道） — photo 4"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/chatgpt-image-2026-5-11-01-14-08.webp",
+      "location": "涯月咖啡街（翰潭海岸步道）",
+      "alt": "涯月咖啡街（翰潭海岸步道） — gallery image 5",
+      "caption": "涯月咖啡街（翰潭海岸步道） — photo 5"
     }
   ],
   "itineraryStops": [
@@ -193,7 +355,7 @@
       "name": "漢拿山魚乘生岳",
       "category": "漢拿山山麓步道（御林木）——UNESCO世界遺產體驗",
       "description": "**魚乘生岳（어승생악，1,169公尺）**是位於**漢拿山（한라산，1,950公尺）**——韓國最高峰，濟州地質核心——西側山坡上的寄生火山錐（오름／*oreum*）。漢拿山擁有**無可比擬的重量級認定組合**：**UNESCO世界自然遺產（2007-07-02登錄）**、**UNESCO生物圈保護區（2002年）**、**韓國國立公園（1970-03-24指定）**，以及**天然紀念物第182號（1966年）**——是韓國唯一同時獲得三項UNESCO自然認定的地點。位於**御林木遊客中心**的魚乘生岳登山口，**僅需在1.3公里的路程中爬升約200公尺**即可抵達寬闊的山頂觀景台，來回約60分鐘，即可體驗**「漢拿山UNESCO風情」**，無需進行長達9小時的白鹿潭火山口全程攀登。晴天時站在觀景台上，可眺望**黃海、漢拿山白鹿潭山頂火山口（백록담），以及向南延伸的寄生火山錐群**。植物亮點：此海拔帶（1,000至1,300公尺）是**落葉闊葉林與韓國冷杉（구상나무，*Abies koreana*——IUCN近危物種，為韓國高山特有種）林帶**之間的過渡地帶。漢拿山共庇護**逾2,000種植物**——約佔**朝鮮半島全部植物的一半**。山頂觀景台上留有一段歷史印記：一座建於**1945年、日本帝國主義戰爭末期的碉堡（토치카，混凝土機槍陣地／通訊站）**——是韓國現存海拔最高的二戰日本軍事設施之一。魚乘生岳**免費入場，停車亦免費**；**無需預約**（不同於每日限制登山人數1,000人的白鹿潭山頂路線）。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
       "highlights": [
         "**漢拿山＝韓國唯一獲得三重自然認定的地點**：UNESCO世界遺產（2007）＋生物圈保護區（2002）＋國立公園（1970）",
         "**魚乘生岳山頂海拔1,169公尺**——寄生火山錐（oreum），為濟州360餘座火山錐之一",
@@ -239,7 +401,39 @@
         "photo": "抵達較高的觀景台後，寬幅風景照通常比近距離人像更為出色。",
         "facilities": "入口處的設施遠優於步道沿途。",
         "tip": "此景點最適合作為專注的風景步行，而非悠閒漫步。"
-      }
+      },
+      "images": [
+        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "location": "漢拿山魚乘生岳",
+          "caption": "漢拿山魚乘生岳 — photo 1",
+          "alt": "漢拿山魚乘生岳 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "location": "漢拿山魚乘生岳",
+          "caption": "漢拿山魚乘生岳 — photo 2",
+          "alt": "漢拿山魚乘生岳 — gallery image 2"
+        }
+      ]
     },
     {
       "number": 2,
@@ -248,7 +442,7 @@
       "name": "大浦柱狀節理海岸",
       "category": "火山海岸線——六角柱狀節理熔岩",
       "description": "**大浦柱狀節理（대포 주상절리，「Jisatgae」）**是位於中文海岸的**1公里長六角柱狀節理玄武岩懸崖**——於**2005年1月6日被指定為天然紀念物第443號**。岩柱從海面聳立**30至40公尺**，緊密排列呈**5至7邊形多邊形**（多為六邊形）——此幾何形態由**漢拿山側翼噴發的玄武岩熔岩（約25萬至14萬年前）流入海洋後冷卻收縮、垂直冷卻面斷裂**所形成。全球最著名的柱狀節理地形包括**巨人堤道（英國）**、**魔鬼柱群（美國）**及**芬加爾洞（蘇格蘭）**——柱狀節理是**東亞首屈一指的代表景點**，亦是最易到訪之處。全長800公尺的**木棧道環線**將遊客引至緊鄰岩柱頂部的有欄杆崖邊；**大潮日海浪拍打岩柱，浪花最高可達20公尺**，偶爾越過護欄。門票：**成人₩2,000 / 青少年₩1,000 / 7歲以下及65歲以上免費**。此景點隸屬**濟州世界地質公園（聯合國教科文組織2010年10月認定）**，是島上**13處官方地質景點**之一，與城山日出峰、萬丈窟熔岩管及水月峰並列。崖頂步道為**無障礙設施**（輪椅／嬰兒車可通行）。環線設有三處觀景台，提供不同角度欣賞岩柱：**第一觀景台**從側面觀賞岩柱（最適合拍攝六邊形幾何構圖）；**中間觀景台**可從正上方俯瞰柱頂圖案；**遠端觀景台**則可將1公里海岸全景盡收眼底，晴天時漢拿山作為遠景背景。**最佳攝影時段：14:00至16:00**，此時西斜陽光正面照亮柱面；日落時分可拍攝剪影構圖，但會損失岩柱細節質感。開放時間：**09:00–18:00（最後入場17:30）**，全年運營。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "**天然紀念物第443號**——指定於**2005年1月6日**，為濟州最新指定的海岸天然紀念物",
         "岩柱高達**30至40公尺**，沿**1公里**海岸線排列，呈**5至7邊形多邊形**（多為六邊形）",
@@ -294,7 +488,65 @@
         "photo": "稍微側角通常比正面拍攝更能捕捉玄武岩的紋理與海浪的動感。",
         "facilities": "設施簡單，但入口區域實用且足夠。",
         "tip": "由於風與海霧可能迅速改變景點的氛圍，保持穩定的節奏效果最佳。"
-      }
+      },
+      "images": [
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "大浦柱狀節理海岸",
+          "caption": "大浦柱狀節理海岸 — photo 1",
+          "alt": "大浦柱狀節理海岸 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "大浦柱狀節理海岸",
+          "caption": "大浦柱狀節理海岸 — photo 2",
+          "alt": "大浦柱狀節理海岸 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "大浦柱狀節理海岸",
+          "caption": "大浦柱狀節理海岸 — photo 3",
+          "alt": "大浦柱狀節理海岸 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "大浦柱狀節理海岸",
+          "caption": "大浦柱狀節理海岸 — photo 4",
+          "alt": "大浦柱狀節理海岸 — gallery image 4"
+        }
+      ]
     },
     {
       "number": 3,
@@ -342,7 +594,7 @@
       "name": "天帝淵瀑布",
       "category": "三層瀑布＋森林 — 「天帝之淵」",
       "description": "**天帝淵瀑布（천제연，'연 = 潭 + 천제 = 天帝'）** 是位於中文洞火山峽谷中的**三段式瀑布**，因其罕見的生態組合，於1993年被指定為**天然紀念物第378號**。其名稱源於**朝鮮時代的道教傳說——七位仙女（선녀，*seonnyeo*）每夜從天而降，在上層水潭沐浴**——這一神話因此地長年瀰漫薄霧的微氣候而更顯真實。**第一段（瀑高22公尺，潭深21公尺）**落入圓形玄武岩水潭，僅在大雨過後才有水流——大多數日子裡，上層水潭平靜如鏡、倒影清晰。**第二段（瀑高30公尺）終年流水不斷**，是最具代表性的拍攝主題。第三段則延伸至海岸完成整段落差。**全長120公尺、橋高78公尺的仙臨橋（선임교，「七仙女之橋」）**橫跨峽谷中段——橋身兩側鑄有銅製浮雕，描繪**七位仙女凌空飛翔**的姿態，將建廟傳說以建築形式具象化。周圍森林為**珍稀植物棲息地**，包含**台灣油點草（*Tricyrtis macropoda*）**及瀕危物種**濟州滿葵蕨（*Mankyua chejuense*）**（濟州特有種，IUCN極危等級）。環形步道全長**0.8公里，步行約30分鐘**，途中設有多處陡峭階梯。門票：**成人₩2,500 / 青少年₩1,350 / 7歲以下及65歲以上免費**。天帝淵亦是朝鮮時代文人評選的**「瀛洲十景（영주십경）」**之一——與漢拏山山頂、城山日出及正房瀑布並列——意即今日的西南環線單日即可涵蓋**十景中的兩景（漢拏山 + 天帝淵）**。每兩年在橋畔舉辦一次的**濟州七仙女節（Jeju Chilseonyeo Festival）**於五月（單數年）舉行，以傳統舞蹈與音樂演出重現仙女降凡的傳說——若節慶與行程日期重疊，需提前預訂。開放時間：全年**09:00–18:00**（最後入場17:30）。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+      "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "highlights": [
         "**天然紀念物第378號（1993年指定）** — 三段式瀑布 + 珍稀植物棲息地",
         "名稱**「天帝淵」=「天帝之潭」** — 朝鮮道教傳說",
@@ -388,7 +640,52 @@
         "photo": "比起將所有元素塞入同一畫面，以橋梁與瀑布構成層次感的構圖通常效果更佳。",
         "facilities": "基本設施集中於入口附近。",
         "tip": "由於設有階梯且部分路段可能濕滑，保持穩定的步伐通常能讓這個景點的遊覽體驗更為愉快。"
-      }
+      },
+      "images": [
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "location": "天帝淵瀑布",
+          "caption": "天帝淵瀑布 — photo 1",
+          "alt": "天帝淵瀑布 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "location": "天帝淵瀑布",
+          "caption": "天帝淵瀑布 — photo 2",
+          "alt": "天帝淵瀑布 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "location": "天帝淵瀑布",
+          "caption": "天帝淵瀑布 — photo 3",
+          "alt": "天帝淵瀑布 — gallery image 3"
+        }
+      ]
     },
     {
       "number": 5,
@@ -397,7 +694,7 @@
       "name": "O'Sulloc茶博物館",
       "category": "茶文化與西廣茶園 — 愛茉莉太平洋品牌遺產",
       "description": "**O'Sulloc茶博物館（오설록 티 뮤지엄，「오설록」意為「遇雪 + 翠綠」）**是**愛茉莉太平洋集團**（韓國最大美妝企業）旗下的茶文化旗艦品牌。創辦人**徐成煥於1979年親自開創此項目**，在傳統認知認為韓國不適合商業種茶之時，將濟州西廣高原上的火山灰農地加以開墾利用。如今，**西廣茶園（서광다원）**是**韓國最大的綠茶茶園**，每年透過愛茉莉太平洋旗下三座濟州茶莊生產約**700公噸**茶葉。博物館建築於**2001年**在茶園中心落成，以其**極簡主義綠頂亭閣置身茶行之間**的設計，入選**designboom全球十大藝術博物館**。**免費入場**，每日開放時間**09:00–18:00**，年訪客量約**200萬人次**。參觀行程自然分為三部分：**(1) 館內展覽** — 茶葉生產流程、唐代（618–907年）起的古董茶器收藏，及俯瞰茶園全景的屋頂觀景台；**(2) 茶屋咖啡廳** — 提供招牌**綠茶捲蛋糕（오설록 롤케이크）**及以當季採摘茶葉製成的**抹茶冰淇淋**；**(3) 茶園步道** — 穿梭於茶樹行列間的碎石小徑，西側邊緣是拍攝日落的熱門地點。**Innisfree濟州之家**（愛茉莉太平洋旗下天然美妝品牌）步行僅需**5分鐘**，歡迎對品牌生態系感興趣的旅客前往參觀——同樣免費入場，並可選擇參加濟州柑橘香皂DIY工作坊（₩15,000）。博物館建築由韓國建築師**Mass Studies（趙敏碩）**設計，刻意採用低調的水平形態，呼應茶行的幾何美學，而非與農業景觀相互爭奪焦點——這份建築上的謙遜之姿不僅為其贏得designboom十大排名，至今仍是韓國當代博物館設計的經典案例。可選擇加購：**O'Sulloc茶藝課程（每人₩30,000，60分鐘，需提前預訂）** — 在韓式陶瓷器皿上進行導覽品茶體驗，含泡茶技法示範，每日**10:00–16:00**開課，週三及週六場次提供英語授課。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+      "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "highlights": [
         "**愛茉莉太平洋**旗艦品牌 — 韓國最大美妝企業；創辦人徐成煥於**1979年**在濟州開創種茶先河",
         "**西廣茶園＝韓國最大綠茶茶園**；年產量約 700 公噸",
@@ -443,7 +740,169 @@
         "photo": "咖啡廳附近的廣角茶田視野及側面角度，通常比單純的特寫拍攝更具視覺效果。",
         "facilities": "設有洗手間、飲品供應及休憩座位，是下午行程中最舒適的景點之一。",
         "tip": "比起只匆匆參觀博物館，同時享受景色與咖啡廳氛圍，通常會讓整趟旅程更加充實滿足。"
-      }
+      },
+      "images": [
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "location": "O'Sulloc茶博物館",
+          "caption": "O'Sulloc茶博物館 — photo 1",
+          "alt": "O'Sulloc茶博物館 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "location": "O'Sulloc茶博物館",
+          "caption": "O'Sulloc茶博物館 — photo 2",
+          "alt": "O'Sulloc茶博物館 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "location": "O'Sulloc茶博物館",
+          "caption": "O'Sulloc茶博物館 — photo 3",
+          "alt": "O'Sulloc茶博物館 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "location": "O'Sulloc茶博物館",
+          "caption": "O'Sulloc茶博物館 — photo 4",
+          "alt": "O'Sulloc茶博物館 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "location": "O'Sulloc茶博物館",
+          "caption": "O'Sulloc茶博物館 — photo 5",
+          "alt": "O'Sulloc茶博物館 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "location": "O'Sulloc茶博物館",
+          "caption": "O'Sulloc茶博物館 — photo 6",
+          "alt": "O'Sulloc茶博物館 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "location": "O'Sulloc茶博物館",
+          "caption": "O'Sulloc茶博物館 — photo 7",
+          "alt": "O'Sulloc茶博物館 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "location": "O'Sulloc茶博物館",
+          "caption": "O'Sulloc茶博物館 — photo 8",
+          "alt": "O'Sulloc茶博物館 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "location": "O'Sulloc茶博物館",
+          "caption": "O'Sulloc茶博物館 — photo 9",
+          "alt": "O'Sulloc茶博物館 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "location": "O'Sulloc茶博物館",
+          "caption": "O'Sulloc茶博物館 — photo 10",
+          "alt": "O'Sulloc茶博物館 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "location": "O'Sulloc茶博物館",
+          "caption": "O'Sulloc茶博物館 — photo 11",
+          "alt": "O'Sulloc茶博物館 — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "location": "O'Sulloc茶博物館",
+          "caption": "O'Sulloc茶博物館 — photo 12",
+          "alt": "O'Sulloc茶博物館 — gallery image 12"
+        }
+      ]
     },
     {
       "number": 6,
@@ -452,7 +911,7 @@
       "name": "涯月咖啡街（翰潭海岸步道）",
       "category": "海岸咖啡帶——日落壓軸 ＋ 偶來小路 15A 路段",
       "description": "**涯月咖啡街（애월 카페거리）**是位於濟州西北海岸、沿**翰潭海岸步道（한담해안산책로）**延伸的**5 公里海岸帶**——這裡是韓國最密集的**「海景咖啡廳」目的地**，超過 30 家設計感十足的咖啡廳聚集於翰潭海灘至郭支海灘之間的懸崖邊。這條步道正式名稱為**張漢哲散步路（장한철산책로）**，得名自**張漢哲（장한철，1744–?）**——一位出身濟州的朝鮮時代學者，其著作**《漂海錄（표해록）》**是韓國最早的海上求生紀事之一，記錄了他於 1771 年在太平洋上漂流的親身經歷。步道是**濟州偶來小路 15A（翰林→科內）的 30 分鐘單程海岸路段**——黑色玄武岩懸崖、潮池、小規模六角柱狀節理，加上無遮蔽的西向地平線，是濟州首屈一指的觀日落勝地。**依季節輪替的代表性咖啡廳**：**봄날카페（春日咖啡）**——曾出現於 **2014 年韓劇《來自星星的你》**，使涯月一夜之間成為粉絲朝聖地；**Randy's Donuts**（洛杉磯品牌、韓國加盟店——設有寬敞屋頂平台）；**Cafe Knotted**（招牌奶油甜甜圈＋海景）；**해지개 카페（海之蓋咖啡，即夕陽咖啡廳）**（專為傍晚光線而設的服務理念）；**Aewol the Sunset**（屋頂露台，定價較高）。步道及海灘**免費**入場；咖啡廳飲品＋甜點定價約 ₩6,000–12,000。**張漢哲的《漂海錄》**——即步道命名之典故——被視為**韓國海洋文學的奠基文本之一**，記錄了他在 **1770 年 12 月**搭乘前往濟州的船隻遭暴風吹離航道後，在太平洋上漂流 29 天的遭遇。他最終獲琉球（今沖繩）漁民救起，並輾轉經長崎回國，其紀述比西方同類求生回憶錄早了數十年，對現代韓國海洋史學研究具有重要參考價值。沿懸崖步道設有引用該書韓英雙語段落的說明牌——是罕見的文學遺產現地標記。給**攝影愛好者**的提示：沿涯月海岸使用無人機，**在濟州國際機場 9 公里進場航道管制區以外**的區域是被允許的——飛行前請透過「韓國無人機地圖」App 確認精確禁飛範圍。**偶來小路 15A** 全程官方路線為翰林港 → 涯月 → 科內港，全長 13 公里；今日行程步行其中央段，即翰潭至郭支之間約 1.5 公里。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
+      "image": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
       "highlights": [
         "翰潭與郭支海灘之間的**5 公里海岸咖啡帶**——韓國密度最高的海景咖啡廳聚集地",
         "**張漢哲散步路**——以濟州出身的朝鮮學者（1744–?）、《**漂海錄**》求生回憶錄作者之名命名",
@@ -498,7 +957,78 @@
         "photo": "午後的逆光效果與面海露臺，通常是此處拍攝最佳照片的黃金條件。",
         "facilities": "舒適度取決於所選咖啡廳，因此彈性安排比過度固定單一場地效果更佳。",
         "tip": "當旅客享有較自由的節奏、而非被過度引導時，此站通常獲得更高評價。"
-      }
+      },
+      "images": [
+        "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+        "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25.webp",
+        "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26.webp",
+        "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27.webp",
+        "/images/tours/aewol-cafe-street/chatgpt-image-2026-5-11-01-14-08.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/aewol-cafe-street/chatgpt-image-2026-5-11-01-14-08.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+          "location": "涯月咖啡街（翰潭海岸步道）",
+          "caption": "涯月咖啡街（翰潭海岸步道） — photo 1",
+          "alt": "涯月咖啡街（翰潭海岸步道） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25.webp",
+          "location": "涯月咖啡街（翰潭海岸步道）",
+          "caption": "涯月咖啡街（翰潭海岸步道） — photo 2",
+          "alt": "涯月咖啡街（翰潭海岸步道） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26.webp",
+          "location": "涯月咖啡街（翰潭海岸步道）",
+          "caption": "涯月咖啡街（翰潭海岸步道） — photo 3",
+          "alt": "涯月咖啡街（翰潭海岸步道） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27.webp",
+          "location": "涯月咖啡街（翰潭海岸步道）",
+          "caption": "涯月咖啡街（翰潭海岸步道） — photo 4",
+          "alt": "涯月咖啡街（翰潭海岸步道） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/aewol-cafe-street/chatgpt-image-2026-5-11-01-14-08.webp",
+          "location": "涯月咖啡街（翰潭海岸步道）",
+          "caption": "涯月咖啡街（翰潭海岸步道） — photo 5",
+          "alt": "涯月咖啡街（翰潭海岸步道） — gallery image 5"
+        }
+      ]
     }
   ],
   "routeFlowStops": [
@@ -1295,8 +1825,8 @@
       "id": "hero",
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "濟州西南：漢拿山、茶田與涯月",
-        "headlineLine2": "小團體一日遊",
+        "headlineLine1": "濟州西南",
+        "headlineLine2": "漢拿山·Osulloc·涯月",
         "hero": {
           "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
           "imagePosition": "center 35%",

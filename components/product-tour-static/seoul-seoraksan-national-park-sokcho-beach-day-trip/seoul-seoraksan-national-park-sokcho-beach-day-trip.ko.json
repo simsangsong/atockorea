@@ -19,7 +19,7 @@
   },
   "catalog_card": {
     "thumbnail": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800",
-    "title": "서울 출발 설악산·속초해변 일일 투어",
+    "title": "설악산·속초해변 일일 투어",
     "priceLabel": "가격은 예약 시 확인",
     "shortCardDescription": "설악산국립공원(유네스코 생물권보전지역, 신흥사, 케이블카 선택), 속초관광수산시장(동해 해산물), 속초해변을 소그룹으로 하루에. 서울 왕복 차량 포함.",
     "tags": [
@@ -49,8 +49,8 @@
     ],
     "heroImage": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=800"
   },
-  "headlineLine1": "오전엔 산, 점심엔 동해:",
-  "headlineLine2": "설악산과 속초, 한국에서 가장 야생적인 해안에서",
+  "headlineLine1": "설악산·속초해변 일일 투어",
+  "headlineLine2": "투어",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -1096,8 +1096,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "오전엔 산, 점심엔 동해:",
-        "headlineLine2": "설악산과 속초, 한국에서 가장 야생적인 해안에서",
+        "headlineLine1": "설악산·속초해변 일일 투어",
+        "headlineLine2": "투어",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1600",
           "imagePosition": "center 35%",

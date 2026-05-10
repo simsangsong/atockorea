@@ -14,11 +14,11 @@
       "태종대 크루즈 투어",
       "자갈치시장 투어"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG"
+    "ogImage": "https://www.atockorea.com/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp"
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
-    "title": "크루즈 승객을 위한 부산 소그룹 관광 투어",
+    "thumbnail": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "title": "부산 크루즈 기항지 소그룹 투어",
     "priceLabel": "",
     "shortCardDescription": "부산 크루즈 터미널에서 출발해 9시간 동안 가장 인기 있는 다섯 곳을 공유 밴으로 둘러보는 당일 투어: 유엔기념공원(한국전쟁 역사), 태종대 해안 절벽, 현지 부산 식당에서의 점심, 감천문화마을(색채 가득한 산복 마을), 부산타워 전망대 관람이 가능한 용두산공원, 그리고 자갈치시장. 승선한 선박의 하선 일정에 맞춰 픽업 시간을 조율해 드립니다. 영어·중국어 공인 가이드 동행.",
     "tags": [
@@ -41,10 +41,10 @@
       "항구 픽업",
       "9시간 일정"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG"
+    "heroImage": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp"
   },
-  "headlineLine1": "크루즈 항구에서 색채 골목, 시장에서 기념공원까지 —",
-  "headlineLine2": "공유 밴 하루 일정으로 완성하는 부산 대표 코스",
+  "headlineLine1": "부산 크루즈 기항지 소그룹 투어",
+  "headlineLine2": "투어",
   "price": {
     "amountLabel": "",
     "originalPriceUsd": null,
@@ -56,7 +56,7 @@
     "priceNote": ""
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+    "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
     "imagePosition": "center 35%",
     "tagline": "공유 밴으로 다른 크루즈 여행자들과 함께, 선박 일정에 맞춰 조율된 부산 5대 명소 투어",
     "pills": [
@@ -134,49 +134,132 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
-      "alt": "감천문화마을 언덕을 따라 펼쳐진 형형색색의 집들",
-      "caption": "감천문화마을 — 전후 피난민 마을 재생을 위한 부산 공공미술 프로젝트의 일환으로 2009년에 채색되었습니다.",
-      "location": "감천문화마을, 사하구",
-      "atmosphere": "밝은 파스텔 색상, 좁은 골목, 언덕 계단"
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "location": "유엔기념공원 (한국전쟁)",
+      "alt": "유엔기념공원 (한국전쟁) — gallery image 1",
+      "caption": "유엔기념공원 (한국전쟁) — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
-      "alt": "수평선 위의 하얀 등대와 해안 절벽",
-      "caption": "영도 남단에 위치한 태종대 해안공원. 맑은 겨울날에는 쓰시마섬이 보입니다.",
-      "location": "태종대, 영도구",
-      "atmosphere": "탁 트인 바다, 절벽 끝, 바닷바람"
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+      "location": "태종대 해안 절벽",
+      "alt": "태종대 해안 절벽 — gallery image 1",
+      "caption": "태종대 해안 절벽 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
-      "alt": "UN기념공원에 국기와 함께 줄지어 선 하얀 묘비들",
-      "caption": "UN기념공원 — 세계 유일의 UN 묘지로, 21개국 2,300여 명의 군인들이 잠들어 있습니다.",
-      "location": "UN기념공원, 남구",
-      "atmosphere": "고요하고 엄숙하며 사색적인"
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 1",
+      "caption": "감천문화마을 — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+      "location": "용두산공원 & 부산타워",
+      "alt": "용두산공원 & 부산타워 — gallery image 1",
+      "caption": "용두산공원 & 부산타워 — photo 1"
+    },
+    {
+      "id": 5,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
-      "alt": "얼음 위에 신선한 생선을 진열한 자갈치시장 상인들",
-      "caption": "자갈치시장 — 1889년부터 부산 해안가에서 운영되어 온 대한민국 최대의 수산시장.",
-      "location": "자갈치시장, 중구",
-      "atmosphere": "살아있는 생선 좌판, 활기찬 시장 소리, 2층 식당들"
+      "location": "남포동 & 자갈치 수산시장",
+      "alt": "남포동 & 자갈치 수산시장 — on-route photo",
+      "caption": "남포동 & 자갈치 수산시장"
     },
     {
-      "id": "g5",
+      "id": 6,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
-      "alt": "용두산공원 소나무들과 도심 스카이라인 위로 우뚝 솟은 부산타워",
-      "caption": "용두산공원 & 부산타워 (120m, 1973년 건립) — 부산 중심가의 전망 명소.",
-      "location": "용두산공원, 중구",
-      "atmosphere": "소나무가 우거진 언덕 정상, 탁 트인 도시 전경 파노라마"
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+      "location": "유엔기념공원 (한국전쟁)",
+      "alt": "유엔기념공원 (한국전쟁) — gallery image 2",
+      "caption": "유엔기념공원 (한국전쟁) — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+      "location": "유엔기념공원 (한국전쟁)",
+      "alt": "유엔기념공원 (한국전쟁) — gallery image 3",
+      "caption": "유엔기념공원 (한국전쟁) — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+      "location": "태종대 해안 절벽",
+      "alt": "태종대 해안 절벽 — gallery image 2",
+      "caption": "태종대 해안 절벽 — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+      "location": "태종대 해안 절벽",
+      "alt": "태종대 해안 절벽 — gallery image 3",
+      "caption": "태종대 해안 절벽 — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+      "location": "태종대 해안 절벽",
+      "alt": "태종대 해안 절벽 — gallery image 4",
+      "caption": "태종대 해안 절벽 — photo 4"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+      "location": "태종대 해안 절벽",
+      "alt": "태종대 해안 절벽 — gallery image 5",
+      "caption": "태종대 해안 절벽 — photo 5"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+      "location": "태종대 해안 절벽",
+      "alt": "태종대 해안 절벽 — gallery image 6",
+      "caption": "태종대 해안 절벽 — photo 6"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 2",
+      "caption": "감천문화마을 — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 3",
+      "caption": "감천문화마을 — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+      "location": "용두산공원 & 부산타워",
+      "alt": "용두산공원 & 부산타워 — gallery image 2",
+      "caption": "용두산공원 & 부산타워 — photo 2"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
+      "location": "용두산공원 & 부산타워",
+      "alt": "용두산공원 & 부산타워 — gallery image 3",
+      "caption": "용두산공원 & 부산타워 — photo 3"
     }
   ],
   "itineraryStops": [
@@ -246,7 +329,7 @@
           "UN General Assembly Resolution 977(X) (December 15, 1955)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+      "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
       "visitBasics": {
         "hours": "09:00–18:00 (5월–9월) / 09:00–17:00 (10월–4월)",
         "closed": "연중 개방 (추모관은 행사 중 폐쇄)",
@@ -260,7 +343,52 @@
       "smartNotes": {
         "photo": "**추모의 벽** (140개 대리석 패널에 새겨진 40,896명의 이름), 22개 참전국 국기가 게양된 **상징 구역**, 그리고 **프랭크 게이로드 미국 한국전쟁 기념 조형물(2013)** — 워싱턴 DC 내셔널몰 한국전 기념관과 동일한 조각가 작품. 사진 촬영 가능; 경건한 묵념 요청.",
         "tip": "**세계 유일의 UN 관리 보호 구역 내 UN 묘지** (1955년 UN 총회 결의 977(X)). 매년 **11월 11일 오전 11시에 열리는 '부산을 향하여(Turn Toward Busan)' 행사**는 22개 참전국 국기가 일제히 내려지는 유일한 시간입니다."
-      }
+      },
+      "images": [
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "location": "유엔기념공원 (한국전쟁)",
+          "caption": "유엔기념공원 (한국전쟁) — photo 1",
+          "alt": "유엔기념공원 (한국전쟁) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "location": "유엔기념공원 (한국전쟁)",
+          "caption": "유엔기념공원 (한국전쟁) — photo 2",
+          "alt": "유엔기념공원 (한국전쟁) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "location": "유엔기념공원 (한국전쟁)",
+          "caption": "유엔기념공원 (한국전쟁) — photo 3",
+          "alt": "유엔기념공원 (한국전쟁) — gallery image 3"
+        }
+      ]
     },
     {
       "number": 3,
@@ -301,7 +429,7 @@
           "Busan National Geopark official (busan.go.kr/geopark)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+      "image": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
       "visitBasics": {
         "hours": "공원 04:00–24:00 (3월–10월) / 05:00–24:00 (11월–2월); 다누비 열차 09:00–일몰",
         "closed": "연중 운영 (다누비 열차는 폭우 또는 강풍 시 운행 중단)",
@@ -315,7 +443,91 @@
       "smartNotes": {
         "photo": "**3층 전망대** (맑은 날 **남동쪽 약 50km 거리의 일본 쓰시마섬**까지 파노라마 조망 가능), **영도등대 — 1906년 건립된 부산 최고(最古)의 등대**, 등대 아래로 파도가 깎아 만든 **신선암 파식대(약 12만 년 전, 제4 간빙기)** 가 있습니다.",
         "tip": "힘든 4.3km 도보 구간은 건너뛰고 **다누비 열차**를 타고 5개 정류장 순환 코스를 즐기세요. **태종사 수국 축제**는 6월 하순부터 7월 초순까지 열립니다. 등대 구역은 가파른 계단이 많아 유모차 이용이 어렵습니다."
-      }
+      },
+      "images": [
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+          "location": "태종대 해안 절벽",
+          "caption": "태종대 해안 절벽 — photo 1",
+          "alt": "태종대 해안 절벽 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+          "location": "태종대 해안 절벽",
+          "caption": "태종대 해안 절벽 — photo 2",
+          "alt": "태종대 해안 절벽 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+          "location": "태종대 해안 절벽",
+          "caption": "태종대 해안 절벽 — photo 3",
+          "alt": "태종대 해안 절벽 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+          "location": "태종대 해안 절벽",
+          "caption": "태종대 해안 절벽 — photo 4",
+          "alt": "태종대 해안 절벽 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+          "location": "태종대 해안 절벽",
+          "caption": "태종대 해안 절벽 — photo 5",
+          "alt": "태종대 해안 절벽 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+          "location": "태종대 해안 절벽",
+          "caption": "태종대 해안 절벽 — photo 6",
+          "alt": "태종대 해안 절벽 — gallery image 6"
+        }
+      ]
     },
     {
       "number": 4,
@@ -390,7 +602,7 @@
           "Korea Tourism Organization (100 Must-Visit Tourist Spots in Korea designation)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
       "visitBasics": {
         "hours": "09:00–18:00 (3월–10월) / 09:00–17:00 (11월–2월); 안내센터 동일 시간 운영",
         "closed": "연중 개방",
@@ -404,7 +616,52 @@
       "smartNotes": {
         "photo": "하늘마루(하늘마루 전망대)의 **'어린 왕자와 여우 벤치'** (대기 줄 길지만 무료), 별빛 전망대의 **무지개 지붕 파노라마**, 그리고 **계단 벽화 골목**. **드론 촬영 금지, 골목 내 플래시 촬영 금지**.",
         "tip": "**주민이 실제 거주하는 마을** (약 1만 명, 1955년 태극도 피난민 정착지) — **소음 자제**, 가옥 출입 금지, 쓰레기 되가져가기. **UN-HABITAT 아시아 도시 경관상 2012년 수상**; 연간 방문객 약 140만 명. 한국관광공사 '한국 관광 100선' 5회 연속 선정."
-      }
+      },
+      "images": [
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 1",
+          "alt": "감천문화마을 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 2",
+          "alt": "감천문화마을 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 3",
+          "alt": "감천문화마을 — gallery image 3"
+        }
+      ]
     },
     {
       "number": 6,
@@ -444,7 +701,7 @@
           "Busan Metropolitan City heritage records"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+      "image": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
       "visitBasics": {
         "hours": "공원 24시간 개방; **부산 다이아몬드 타워 전망대 10:00–22:00 (마지막 입장 21:30)**",
         "closed": "타워 연중무휴 운영 (강풍 시 안전을 위한 임시 폐관 있음)",
@@ -458,7 +715,52 @@
       "smartNotes": {
         "photo": "**부산 다이아몬드 타워 전망대(높이 120m)**(총 정상 해발 189m)에서 — 맑은 날에는 부산항, 영도다리, 쓰시마까지 **360° 파노라마** 조망 가능. 타워 상단은 경주 **불국사 다보탑 보개(국보 제20호)를 모티프**로 설계. **일몰 및 야간**에 가장 아름다움.",
         "tip": "타워 방문 시 **이순신 장군 동상**(임진왜란 거북선 영웅, 단 한 척의 배도 잃지 않은 장군)과 **시민의 종**(새해 전날 밤과 3월 1일에 **33번 타종**하며 1919년 독립선언서에 서명한 33인의 민족대표를 기념)도 함께 관람하세요."
-      }
+      },
+      "images": [
+        "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+        "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+        "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+          "location": "용두산공원 & 부산타워",
+          "caption": "용두산공원 & 부산타워 — photo 1",
+          "alt": "용두산공원 & 부산타워 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+          "location": "용두산공원 & 부산타워",
+          "caption": "용두산공원 & 부산타워 — photo 2",
+          "alt": "용두산공원 & 부산타워 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
+          "location": "용두산공원 & 부산타워",
+          "caption": "용두산공원 & 부산타워 — photo 3",
+          "alt": "용두산공원 & 부산타워 — gallery image 3"
+        }
+      ]
     },
     {
       "number": 7,
@@ -1265,8 +1567,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "크루즈 항구에서 채색 골목으로, 시장에서 기념관으로 —",
-        "headlineLine2": "합승 밴 하루로 만나는 부산의 대표 코스",
+        "headlineLine1": "부산 크루즈 기항지 소그룹 투어",
+        "headlineLine2": "투어",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
           "imagePosition": "center 35%",
@@ -1437,7 +1739,7 @@
             "duration": "60분",
             "name": "유엔기념공원 (한국전쟁)",
             "category": "기념관 & 역사",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "1951년 한국전쟁 중 설립되어 1955년 유엔총회에서 영구 유엔 지위를 부여받은, 세계 유일의 유엔 묘지입니다. 유엔군 사령부 소속으로 참전한 21개국 군인 2,300여 명의 묘소가 안장되어 있으며, 국가별 최다 안장 국가는 영국(885기), 튀르키예(462기), 캐나다(378기), 호주(281기)입니다. 부지 내에는 다국어 전시물을 갖춘 기념관, 유엔군 전사자 40,896명 전원의 이름이 새겨진 추모의 벽, 그리고 매일 오전 10시에 거행되는 국기 게양식(날씨에 따라 변동 가능)이 있습니다. 공원은 남구에 위치하며 영도에서 차로 약 30분 거리입니다. 입장 무료; 매일 09:00~17:00 개방, 설날 및 추석 연휴 제외.",
             "timeUsed": [
               "도착, 입장권 구매 및 오리엔테이션 안내",
@@ -1449,7 +1751,52 @@
               "is_attraction": true,
               "fee_krw": 0,
               "closed": "Korean New Year, Chuseok"
-            }
+            },
+            "images": [
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+                "location": "유엔기념공원 (한국전쟁)",
+                "caption": "유엔기념공원 (한국전쟁) — photo 1",
+                "alt": "유엔기념공원 (한국전쟁) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+                "location": "유엔기념공원 (한국전쟁)",
+                "caption": "유엔기념공원 (한국전쟁) — photo 2",
+                "alt": "유엔기념공원 (한국전쟁) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+                "location": "유엔기념공원 (한국전쟁)",
+                "caption": "유엔기념공원 (한국전쟁) — photo 3",
+                "alt": "유엔기념공원 (한국전쟁) — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1457,7 +1804,7 @@
             "duration": "75분",
             "name": "태종대 해안 절벽",
             "category": "해안",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+            "image": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
             "description": "신라 태종 무열왕(재위 654~661년)의 이름에서 유래한 영도 남단의 해안 공원입니다. 당나라와 연합해 한반도를 통일한 왕으로 알려져 있습니다. 4.3km 순환 산책로는 동해를 향해 약 100m 아래로 깎아지른 절벽을 따라 이어지며, 영도등대(1906년)와 전망대를 지납니다. 맑은 겨울날에는 약 50km 떨어진 일본 쓰시마섬이 보이기도 합니다. 크루즈 방문객 대부분은 전체 코스를 걷는 대신 다누비 열차(성인 ₩4,000, 청소년 ₩3,000, 선택 사항, 약 30분 순환)를 이용합니다. 공원 입장 무료; 등대 구역은 휠체어 접근이 가능하나 절벽 산책로는 불가합니다.",
             "timeUsed": [
               "도착, 입장권 구매 및 오리엔테이션 안내",
@@ -1470,7 +1817,91 @@
               "is_attraction": true,
               "fee_krw": 0,
               "optional_train_krw": 4000
-            }
+            },
+            "images": [
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+                "location": "태종대 해안 절벽",
+                "caption": "태종대 해안 절벽 — photo 1",
+                "alt": "태종대 해안 절벽 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+                "location": "태종대 해안 절벽",
+                "caption": "태종대 해안 절벽 — photo 2",
+                "alt": "태종대 해안 절벽 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+                "location": "태종대 해안 절벽",
+                "caption": "태종대 해안 절벽 — photo 3",
+                "alt": "태종대 해안 절벽 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+                "location": "태종대 해안 절벽",
+                "caption": "태종대 해안 절벽 — photo 4",
+                "alt": "태종대 해안 절벽 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+                "location": "태종대 해안 절벽",
+                "caption": "태종대 해안 절벽 — photo 5",
+                "alt": "태종대 해안 절벽 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+                "location": "태종대 해안 절벽",
+                "caption": "태종대 해안 절벽 — photo 6",
+                "alt": "태종대 해안 절벽 — gallery image 6"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1496,7 +1927,7 @@
             "duration": "75분",
             "name": "감천문화마을",
             "category": "산비탈 예술 마을",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+            "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
             "description": "1950년대 한국전쟁 피난민들이 형성한 산동네로, 현재 부산에서 가장 많이 촬영되는 명소입니다. 지금의 알록달록한 모습은 2009년 부산시가 후원한 '꿈꾸는 부산의 마추픽추' 공공미술 프로젝트에서 비롯되었으며, 지역 예술가들이 집집마다 색을 칠하고 벽화와 소형 조각품(가장 인기 있는 촬영 포인트인 어린왕자와 여우 벤치 포함)을 설치하며 계단 모자이크를 추가했습니다. 주민들이 여전히 거주하고 있으므로, 주거 골목에서는 조용히 해달라는 안내가 있습니다. 주요 사진 코스는 가파른 골목과 계단을 따라 30~40분 소요되며, 출발 시 오르막이고 돌아올 때 내리막입니다. 주요 전망 포인트 대부분은 버스 하차 지점에서 접근 가능하나, 더 깊이 탐방하려면 추가로 계단을 올라야 합니다. 선택 사항인 '스탬프 투어' 지도는 ₩2,000입니다.",
             "timeUsed": [
               "도착, 입장권 구매 및 오리엔테이션 안내",
@@ -1509,7 +1940,52 @@
               "is_attraction": true,
               "fee_krw": 0,
               "optional_stamp_map": 2000
-            }
+            },
+            "images": [
+              "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+              "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+              "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+                "location": "감천문화마을",
+                "caption": "감천문화마을 — photo 1",
+                "alt": "감천문화마을 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+                "location": "감천문화마을",
+                "caption": "감천문화마을 — photo 2",
+                "alt": "감천문화마을 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+                "location": "감천문화마을",
+                "caption": "감천문화마을 — photo 3",
+                "alt": "감천문화마을 — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1517,7 +1993,7 @@
             "duration": "45분",
             "name": "용두산 공원 & 부산 타워",
             "category": "도심 전망 명소",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "image": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
             "description": "용두산('용의 머리 산')은 남포동 위 부산 중심부에 위치해 있습니다. 120미터 높이의 다이아몬드 타워(1973년 건립, 이후 부산 타워로 개칭; 2017년 폐쇄 후 2021년 일반에 재개방)는 해발 159m에 달하며 항구, 영도, 광안대교, 맑은 날에는 태종대까지 파노라마 전망을 제공합니다. 공원 입장은 무료이며 이순신 장군 동상과 시민의 종이 포함되어 있습니다. 전망대 입장권은 성인 기준 ₩12,000이며 유일한 유료 항목입니다. 남포역에서 공원까지: 오르막 도보 8분, 또는 지상에서 야외 지붕형 에스컬레이터 이용 가능.",
             "timeUsed": [
               "도착, 입장권 구매 및 오리엔테이션 안내",
@@ -1529,7 +2005,52 @@
               "is_attraction": true,
               "fee_krw": 0,
               "optional_observatory_krw": 12000
-            }
+            },
+            "images": [
+              "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+              "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+              "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+                "location": "용두산 공원 & 부산 타워",
+                "caption": "용두산 공원 & 부산 타워 — photo 1",
+                "alt": "용두산 공원 & 부산 타워 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+                "location": "용두산 공원 & 부산 타워",
+                "caption": "용두산 공원 & 부산 타워 — photo 2",
+                "alt": "용두산 공원 & 부산 타워 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
+                "location": "용두산 공원 & 부산 타워",
+                "caption": "용두산 공원 & 부산 타워 — photo 3",
+                "alt": "용두산 공원 & 부산 타워 — gallery image 3"
+              }
+            ]
           },
           {
             "number": 7,

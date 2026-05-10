@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "济州岛西南绣球花节一日游 | AtoC Korea",
     "metaDescription": "仅限夏季的济州岛西南一日游：协才海滩、翰林公园绣球花节、柱状节理带、天帝渊瀑布、山茶花之丘、雪绿茶园。",
-    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "primaryKeywords": [
       "济州绣球花节游览",
       "济州夏季赏花游",
@@ -19,7 +19,7 @@
   },
   "catalog_card": {
     "slug": "jeju-hydrangea-festival-tour-southwest-route",
-    "title": "济州西南绣球花节小团体游",
+    "title": "济州绣球花节：西南",
     "subtitle": "从海滩到柱状峭壁，再到绣球花隧道。",
     "region": "济州西南",
     "duration": "9小时",
@@ -31,8 +31,8 @@
       "绣球花季",
       "济州西南"
     ],
-    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+    "heroImage": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+    "thumbnail": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "priceLabel": "",
     "shortCardDescription": "仅限夏季的济州岛西南路线——翠绿海滩、绣球花节花园、联合国教科文组织柱状节理带、三级瀑布、绣球花隧道及茶园。",
     "tags": [
@@ -41,15 +41,15 @@
       "southwest_jeju"
     ]
   },
-  "headlineLine1": "绣球花、柱状节理带与茶园",
-  "headlineLine2": "尽享济州西南夏日一天",
+  "headlineLine1": "济州绣球花节",
+  "headlineLine2": "西南",
   "price": {
     "amountLabel": "",
     "currency": "USD",
     "per": "person"
   },
   "hero": {
-    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+    "imageUrl": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "imagePosition": "center 35%",
     "tagline": "从海滩到柱状峭壁，再到绣球花隧道。",
     "pills": [
@@ -127,58 +127,180 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+      "location": "协才海滩",
+      "alt": "协才海滩 — gallery image 1",
+      "caption": "协才海滩 — photo 1"
+    },
+    {
+      "id": 2,
       "type": "photo",
       "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
-      "alt": "翰林公园绣球花盛开",
-      "caption": "翰林公园绣球花盛开",
-      "location": "翰林公园",
-      "atmosphere": "绣球花节盛放"
+      "location": "翰林公园（绣球花节）",
+      "alt": "翰林公园（绣球花节） — on-route photo",
+      "caption": "翰林公园（绣球花节）"
     },
     {
-      "id": "g2",
+      "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-      "alt": "山茶花山丘绣球花隧道",
-      "caption": "山茶花山丘绣球花隧道",
-      "location": "山茶花山丘",
-      "atmosphere": "绣球花隧道漫步"
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "柱状节理绝壁与天帝渊瀑布",
+      "alt": "柱状节理绝壁与天帝渊瀑布 — gallery image 1",
+      "caption": "柱状节理绝壁与天帝渊瀑布 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 4,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-      "alt": "协才海滩碧绿海水",
-      "caption": "协才海滩碧绿海水",
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "茶美利亚山丘（绣球花隧道）",
+      "alt": "茶美利亚山丘（绣球花隧道） — gallery image 1",
+      "caption": "茶美利亚山丘（绣球花隧道） — photo 1"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+      "location": "雪绿茶博物馆及茶田",
+      "alt": "雪绿茶博物馆及茶田 — gallery image 1",
+      "caption": "雪绿茶博物馆及茶田 — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
       "location": "协才海滩",
-      "atmosphere": "翡翠海水与白色沙滩"
+      "alt": "协才海滩 — gallery image 2",
+      "caption": "协才海滩 — photo 2"
     },
     {
-      "id": "g4",
+      "id": 7,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
-      "alt": "柱状节理带玄武岩峭壁",
-      "caption": "柱状节理带玄武岩峭壁",
-      "location": "柱状节理带峭壁",
-      "atmosphere": "柱状玄武岩地貌"
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+      "location": "协才海滩",
+      "alt": "协才海滩 — gallery image 3",
+      "caption": "协才海滩 — photo 3"
     },
     {
-      "id": "g5",
+      "id": 8,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
-      "alt": "天帝渊三级瀑布",
-      "caption": "天帝渊三级瀑布",
-      "location": "天帝渊瀑布",
-      "atmosphere": "三级瀑布"
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "柱状节理绝壁与天帝渊瀑布",
+      "alt": "柱状节理绝壁与天帝渊瀑布 — gallery image 2",
+      "caption": "柱状节理绝壁与天帝渊瀑布 — photo 2"
     },
     {
-      "id": "g6",
+      "id": 9,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
-      "alt": "雪绿茶园",
-      "caption": "雪绿茶园",
-      "location": "雪绿茶博物馆",
-      "atmosphere": "一望无际的茶田"
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "柱状节理绝壁与天帝渊瀑布",
+      "alt": "柱状节理绝壁与天帝渊瀑布 — gallery image 3",
+      "caption": "柱状节理绝壁与天帝渊瀑布 — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "柱状节理绝壁与天帝渊瀑布",
+      "alt": "柱状节理绝壁与天帝渊瀑布 — gallery image 4",
+      "caption": "柱状节理绝壁与天帝渊瀑布 — photo 4"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+      "location": "茶美利亚山丘（绣球花隧道）",
+      "alt": "茶美利亚山丘（绣球花隧道） — gallery image 2",
+      "caption": "茶美利亚山丘（绣球花隧道） — photo 2"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+      "location": "雪绿茶博物馆及茶田",
+      "alt": "雪绿茶博物馆及茶田 — gallery image 2",
+      "caption": "雪绿茶博物馆及茶田 — photo 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+      "location": "雪绿茶博物馆及茶田",
+      "alt": "雪绿茶博物馆及茶田 — gallery image 3",
+      "caption": "雪绿茶博物馆及茶田 — photo 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+      "location": "雪绿茶博物馆及茶田",
+      "alt": "雪绿茶博物馆及茶田 — gallery image 4",
+      "caption": "雪绿茶博物馆及茶田 — photo 4"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+      "location": "雪绿茶博物馆及茶田",
+      "alt": "雪绿茶博物馆及茶田 — gallery image 5",
+      "caption": "雪绿茶博物馆及茶田 — photo 5"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+      "location": "雪绿茶博物馆及茶田",
+      "alt": "雪绿茶博物馆及茶田 — gallery image 6",
+      "caption": "雪绿茶博物馆及茶田 — photo 6"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+      "location": "雪绿茶博物馆及茶田",
+      "alt": "雪绿茶博物馆及茶田 — gallery image 7",
+      "caption": "雪绿茶博物馆及茶田 — photo 7"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+      "location": "雪绿茶博物馆及茶田",
+      "alt": "雪绿茶博物馆及茶田 — gallery image 8",
+      "caption": "雪绿茶博物馆及茶田 — photo 8"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+      "location": "雪绿茶博物馆及茶田",
+      "alt": "雪绿茶博物馆及茶田 — gallery image 9",
+      "caption": "雪绿茶博物馆及茶田 — photo 9"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+      "location": "雪绿茶博物馆及茶田",
+      "alt": "雪绿茶博物馆及茶田 — gallery image 10",
+      "caption": "雪绿茶博物馆及茶田 — photo 10"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+      "location": "雪绿茶博物馆及茶田",
+      "alt": "雪绿茶博物馆及茶田 — gallery image 11",
+      "caption": "雪绿茶博物馆及茶田 — photo 11"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+      "location": "雪绿茶博物馆及茶田",
+      "alt": "雪绿茶博物馆及茶田 — gallery image 12",
+      "caption": "雪绿茶博物馆及茶田 — photo 12"
     }
   ],
   "itineraryStops": [
@@ -189,7 +311,7 @@
       "name": "协才海滩",
       "category": "西海岸翡翠海滩 + 飞扬岛景观",
       "description": "**协才海水浴场（협재 해수욕장）**是**济州岛西海岸三大海滩之一**，在全岛海滩总体排名中位列**前十**，以其**独特的银白色沙滩**著称——由**碎贝壳与珊瑚碎片混合细沙**形成，呈现出朝鲜半岛罕见的光泽感。与紧邻的姊妹海滩**金陵海滩（正南方向，沿同一海岸线步行可达，人流较少）**相连，共同构成**9公里的海岸线**——这对姊妹海滩是本目录中标志性摄影取景地之一。标志性景观为**飞扬岛（비양도）**——一座**距岸1.2公里的火山岛，约有200名常住居民**，可从翰林港乘坐**20分钟渡轮**前往。飞扬岛正在推进**韩国首个无碳岛屿认证**，是环保政策的示范典范。海滩的**翡翠绿色海水**源自浅层珊瑚沙质海床，**退潮时潮汐池中可见寄居蟹、小虾和幼鱼**——浅滩宽阔，飞扬岛在视觉上仿佛\"触手可及\"。海滩后方的**松林（Songlim）**提供免费露营地和遮阴步道。沙丘后方是济州岛最发达的**西海岸咖啡街**——咖啡馆、餐厅与精品店林立，主要面向国内游客。**飞扬岛夕阳映照翡翠海水**是本地视觉标志，也是本目录首选的西海岸日落取景地。**免费入场**；**救生员值守游泳期为7月1日至8月31日**；多处海滩设有坡道式**无障碍通道**；全年提供公共卫生间、更衣室、淋浴间及设备租赁服务。附近的**翰林公园**（植物园 + 熔岩洞穴 + 民俗村，另收₩10,000门票，距此1.5公里）偶尔在冬季作为替代景点。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+      "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
       "highlights": [
         "**济州岛西海岸三大海滩之一 / 全岛前十**——翡翠绿色海水 + 银白色沙滩",
         "**独特的银白色沙滩**——碎贝壳 + 珊瑚碎片",
@@ -235,7 +357,52 @@
         "photo": "可拍摄带有飞扬岛剪影的日落美景；正午阳光直射时，碧绿色海水最为鲜艳",
         "facilities": "海滩沿岸有多家咖啡馆；便利店",
         "tip": "可与翰林公园联游（步行5分钟）；夏季周末人流较多，建议避开"
-      }
+      },
+      "images": [
+        "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+        "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+        "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+          "location": "协才海滩",
+          "caption": "协才海滩 — photo 1",
+          "alt": "协才海滩 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+          "location": "协才海滩",
+          "caption": "协才海滩 — photo 2",
+          "alt": "协才海滩 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+          "location": "协才海滩",
+          "caption": "协才海滩 — photo 3",
+          "alt": "协才海滩 — gallery image 3"
+        }
+      ]
     },
     {
       "number": 2,
@@ -342,7 +509,7 @@
       "name": "柱状节理绝壁与天帝渊瀑布",
       "category": "综合停靠——天然纪念物第443号柱状节理 + 天然纪念物第378号三级瀑布",
       "description": "**本站为组合停靠**，将中文旅游区两处标志性天然纪念物合并为约75分钟的步行游览——这是经营者针对相距**车程7分钟（约3公里）**的两处核心景点所采用的标准西南线方案。A站为**大浦柱状节理（대포 주상절리，\"大浦柱状节理\"）**——被列为**2005年1月6日指定的天然纪念物第443号**（济州海岸天然纪念物中最近期的一项指定），这是一片**长约1.75公里的海岸悬崖，由多边形黑色玄武岩柱构成**，形成于约**14万至25万年前汉拿山喷发的熔岩与太平洋海水急速冷却接触**，将玄武岩断裂成**高达30–40米的六边形及五边形柱体**。该遗址隶属**济州火山岛与熔岩洞穴联合国教科文组织全球地质公园（2010年）**。在南向涌浪高峰期，浪高冲击柱状岩基可达**20米以上**，构成标志性的济州玄武岩海岸景观。B站为**天帝渊瀑布（천제연，\"天帝之渊\"）**——因其三级瀑布与亚热带-暖温带过渡林的稀有生态组合，于**1993年被列为天然纪念物第378号**。其名称源于**朝鲜时代的道教传说，相传七位天仙（선녀，*seonnyeo*）每夜降临上池沐浴**。该遗址的标志性景观为**仙人桥（선임교，\"七仙女桥\"）**——一座全长128米的拱形步行桥，桥上矗立七尊仙女雕像，面朝上层瀑布。**经营者将两处配对的逻辑**在于：将其合并为75分钟停靠，可在不增加额外转场的情况下保持当天翰林+山茶花+雪绿茶的花卉游览节奏，而**柱状节理的地质景观与天帝渊的瀑布+森林层次**，也为这条以园林为主轴的西南线提供了必要的**非花卉景观对比**。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "**组合停靠** — 2处天然纪念物，合并为75分钟步行游览（两处相距3公里／车程7分钟）",
         "**大浦柱状节理 — 天然纪念物第443号（2005年）** — 济州海岸天然纪念物中最近期的指定",
@@ -395,16 +562,62 @@
         "facilities": "入口附近有小型地质展览；纪念品商店"
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-        "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1772268354899-1f3bf5014b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1739932413542-dc2597d7d764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "柱状节理绝壁与天帝渊瀑布",
+          "caption": "柱状节理绝壁与天帝渊瀑布 — photo 1",
+          "alt": "柱状节理绝壁与天帝渊瀑布 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "柱状节理绝壁与天帝渊瀑布",
+          "caption": "柱状节理绝壁与天帝渊瀑布 — photo 2",
+          "alt": "柱状节理绝壁与天帝渊瀑布 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "柱状节理绝壁与天帝渊瀑布",
+          "caption": "柱状节理绝壁与天帝渊瀑布 — photo 3",
+          "alt": "柱状节理绝壁与天帝渊瀑布 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "柱状节理绝壁与天帝渊瀑布",
+          "caption": "柱状节理绝壁与天帝渊瀑布 — photo 4",
+          "alt": "柱状节理绝壁与天帝渊瀑布 — gallery image 4"
+        }
       ]
     },
     {
@@ -414,7 +627,7 @@
       "name": "茶美利亚山丘（绣球花隧道）",
       "category": "绣球花隧道＋172,000平方米东方最大茶花树木园",
       "description": "**茶美利亚山丘（카멜리아힐，济州茶花树木园）** 是位于安德的一座**172,000平方米植物园**，按占地面积和物种数量计，是**东方最大的茶花树木园**：**来自80个国家的6,000棵茶花树，代表500余个品种**，由创始人梁钟文历经**30余年**精心收藏培育。该园的特色是**全年开花日历**，经过精心设计，确保任何季节到访都能呈现不同的色彩调色盘：**11月至3月=茶花盛开**（红、粉、白、奶油米色等品种——园区的命名季节）；**3月至5月=樱花＋郁金香＋晚期茶花**，浓密色块层层叠加；**6月至8月=绣球花**（户外花圃及气候控制温室全年展示）；**9月至10月=秋叶＋晚季花卉**。步行小径穿越主题区——**欧洲花园、韩国原生林区、樱花步道、绣球花田**——由蜿蜒的2.5公里环线连接，悠闲漫步约需60–75分钟。值得注意的建筑亮点：入口处的**玻璃温室＋画廊＋咖啡厅**综合体，既是室内避雨避风之所（游览中约15%的室内部分），也是可俯瞰花园的茶饮/咖啡休闲空间。**影视拍摄记录**：综艺节目**《换乘恋爱3》（환승연애）**将茶美利亚山丘选为朱元与俞正难忘约会场景的拍摄地——深受韩式真人秀爱好者追捧。**全年365天开放**；**无室外照明**意味着花园日落关闭（冬季约17:00，夏季约19:00）。门票：**成人₩12,000 / 青少年＋老年人₩10,000 / 儿童（4–11岁）₩9,000 / 3岁以下免费**。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
+      "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "highlights": [
         "**172,000平方米**——东方最大茶花树木园",
         "**6,000棵树 / 来自80个国家的500余个品种**——历经30余年积累",
@@ -460,7 +673,39 @@
         "photo": "6月绣球花隧道；10月粉黛乱子草花田；山茶花品种11月至4月达到盛期",
         "tip": "旺季建议上午10点前或下午4点后游览以避开人流；可与雪绿茶博物馆搭配游览（车程约10分钟）",
         "facilities": "室内温室咖啡厅、礼品店、野餐区"
-      }
+      },
+      "images": [
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+        "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+          "location": "茶美利亚山丘（绣球花隧道）",
+          "caption": "茶美利亚山丘（绣球花隧道） — photo 1",
+          "alt": "茶美利亚山丘（绣球花隧道） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+          "location": "茶美利亚山丘（绣球花隧道）",
+          "caption": "茶美利亚山丘（绣球花隧道） — photo 2",
+          "alt": "茶美利亚山丘（绣球花隧道） — gallery image 2"
+        }
+      ]
     },
     {
       "number": 6,
@@ -469,7 +714,7 @@
       "name": "雪绿茶博物馆及茶田",
       "category": "爱茉莉太平洋茶文化旗舰品牌 + 绿茶田收官之旅",
       "description": "**雪绿茶博物馆（오설록 티 뮤지엄，\"오설록\"意为\"遇雪·绿\"）**是**爱茉莉太平洋集团**——韩国最大美妆企业——的茶文化旗舰品牌。创始人**徐成焕于1979年亲自开拓此项目**，在济州西光高原开垦火山灰农地，彼时业界普遍认为茶叶无法在韩国进行商业种植。如今，**西光茶园（서광다원）**已成为**韩国最大的绿茶产地**，依托爱茉莉太平洋在济州的三处庄园，**年产量约700吨**。博物馆建筑**于2001年**在茶园腹地正式开放，以其极简主义绿色屋顶茶行间亭台设计荣登**designboom全球十大艺术博物馆**。**免费入场**，每日**09:00–18:00**，年访客量约**200万人次**。游览自然分为三个部分：**（1）博物馆内部**——茶叶生产工艺展示、自唐代（618–907年）起的古董茶器珍藏，以及可俯瞰茶园全景的屋顶观景台；**（2）茶室咖啡厅**——以当年鲜采茶叶直接制作的招牌**绿茶卷蛋糕（오설록 롤케이크）**与**绿茶冰淇淋**；**（3）茶园步行小径**——穿行于茶丛间的碎石小路，西侧边缘是日落摄影的热门地点。**悦诗风吟济州之家**（爱茉莉太平洋旗下天然美妆品牌）步行仅需**5分钟**，对品牌生态感兴趣的游客可顺道前往——同样免费入场，并可选择参与橘子香皂DIY工坊（₩15,000）。博物馆建筑由韩国建筑师**Mass Studies（赵敏硕）**设计，刻意采用低调的水平线条形态，与茶行的几何排列相呼应，而非与农业景观争夺视觉焦点——这种建筑谦逊姿态既为其赢得了designboom十大排名，也使其持续作为韩国当代博物馆设计的经典案例。可选附加项目：**雪绿茶课程（每人₩30,000，60分钟，需提前预约）**——在韩国陶瓷器皿上体验引导式品茶及冲泡技法演示，每日**10:00–16:00**开放，周三/周六场次提供英语讲解。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+      "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "highlights": [
         "**爱茉莉太平洋**旗舰品牌——韩国最大美妆企业；创始人徐成焕于**1979年**率先开拓济州茶产业",
         "**西光茶园 = 韩国最大绿茶产地**；年产量约700吨",
@@ -515,7 +760,169 @@
         "photo": "茶杯造型博物馆建筑搭配茶园景观；户外休息区；肩季樱花盛开",
         "tip": "10:30前到达以避开旅游大巴高峰；含咖啡厅时间及茶园步行共预留1.5–2小时",
         "facilities": "咖啡厅（必试绿茶冰淇淋）、礼品店、隔壁爱茉莉济州之家、俯瞰茶园的观景台"
-      }
+      },
+      "images": [
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "location": "雪绿茶博物馆及茶田",
+          "caption": "雪绿茶博物馆及茶田 — photo 1",
+          "alt": "雪绿茶博物馆及茶田 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "location": "雪绿茶博物馆及茶田",
+          "caption": "雪绿茶博物馆及茶田 — photo 2",
+          "alt": "雪绿茶博物馆及茶田 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "location": "雪绿茶博物馆及茶田",
+          "caption": "雪绿茶博物馆及茶田 — photo 3",
+          "alt": "雪绿茶博物馆及茶田 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "location": "雪绿茶博物馆及茶田",
+          "caption": "雪绿茶博物馆及茶田 — photo 4",
+          "alt": "雪绿茶博物馆及茶田 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "location": "雪绿茶博物馆及茶田",
+          "caption": "雪绿茶博物馆及茶田 — photo 5",
+          "alt": "雪绿茶博物馆及茶田 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "location": "雪绿茶博物馆及茶田",
+          "caption": "雪绿茶博物馆及茶田 — photo 6",
+          "alt": "雪绿茶博物馆及茶田 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "location": "雪绿茶博物馆及茶田",
+          "caption": "雪绿茶博物馆及茶田 — photo 7",
+          "alt": "雪绿茶博物馆及茶田 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "location": "雪绿茶博物馆及茶田",
+          "caption": "雪绿茶博物馆及茶田 — photo 8",
+          "alt": "雪绿茶博物馆及茶田 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "location": "雪绿茶博物馆及茶田",
+          "caption": "雪绿茶博物馆及茶田 — photo 9",
+          "alt": "雪绿茶博物馆及茶田 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "location": "雪绿茶博物馆及茶田",
+          "caption": "雪绿茶博物馆及茶田 — photo 10",
+          "alt": "雪绿茶博物馆及茶田 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "location": "雪绿茶博物馆及茶田",
+          "caption": "雪绿茶博物馆及茶田 — photo 11",
+          "alt": "雪绿茶博物馆及茶田 — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "location": "雪绿茶博物馆及茶田",
+          "caption": "雪绿茶博物馆及茶田 — photo 12",
+          "alt": "雪绿茶博物馆及茶田 — gallery image 12"
+        }
+      ]
     }
   ],
   "routeFlowStops": [
@@ -1283,8 +1690,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "绣球花、柱状悬崖与茶田",
-        "headlineLine2": "济州西南部的一个夏日",
+        "headlineLine1": "济州绣球花节",
+        "headlineLine2": "西南",
         "hero": {
           "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
           "imagePosition": "center 35%",
@@ -1448,7 +1855,7 @@
             "name": "挟才海滩",
             "category": "海岸与海滩",
             "description": "济州岛最上镜的海滩之一——翡翠色海水、洁白沙滩，以及近海的飞扬岛。清晨轻松热身，为当天主要的花卉景点做好准备。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "highlights": [
               "翡翠碧绿色海水",
               "飞扬岛景观",
@@ -1481,7 +1888,52 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated visitor info"
-            }
+            },
+            "images": [
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+                "location": "挟才海滩",
+                "caption": "挟才海滩 — photo 1",
+                "alt": "挟才海滩 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+                "location": "挟才海滩",
+                "caption": "挟才海滩 — photo 2",
+                "alt": "挟才海滩 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+                "location": "挟才海滩",
+                "caption": "挟才海滩 — photo 3",
+                "alt": "挟才海滩 — gallery image 3"
+              }
+            ]
           },
           {
             "number": 2,
@@ -1574,7 +2026,7 @@
             "name": "柱状节理海岸 & 天帝渊瀑布",
             "category": "地质与瀑布",
             "description": "柱状节理处的联合国教科文组织地质公园玄武岩柱状节理海岸，与附近三级天帝渊瀑布相结合。两处相邻的联合国教科文组织认定地质景点。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
             "highlights": [
               "六角柱状玄武岩海岸",
               "亚热带森林中的三级瀑布",
@@ -1611,16 +2063,62 @@
               "verified_date": "2026-04-27"
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-              "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1772268354899-1f3bf5014b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1739932413542-dc2597d7d764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "location": "柱状节理海岸 & 天帝渊瀑布",
+                "caption": "柱状节理海岸 & 天帝渊瀑布 — photo 1",
+                "alt": "柱状节理海岸 & 天帝渊瀑布 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "location": "柱状节理海岸 & 天帝渊瀑布",
+                "caption": "柱状节理海岸 & 天帝渊瀑布 — photo 2",
+                "alt": "柱状节理海岸 & 天帝渊瀑布 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "location": "柱状节理海岸 & 天帝渊瀑布",
+                "caption": "柱状节理海岸 & 天帝渊瀑布 — photo 3",
+                "alt": "柱状节理海岸 & 天帝渊瀑布 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "location": "柱状节理海岸 & 天帝渊瀑布",
+                "caption": "柱状节理海岸 & 天帝渊瀑布 — photo 4",
+                "alt": "柱状节理海岸 & 天帝渊瀑布 — gallery image 4"
+              }
             ]
           },
           {
@@ -1630,7 +2128,7 @@
             "name": "山茶花山丘（绣球花隧道）",
             "category": "花园与绣球花隧道",
             "description": "以茂密绣球花隧道闻名的植物园——一条长长的小径两侧种满大朵蓝色、紫色和粉色花朵，形成隧道状花廊。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
+            "image": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
             "highlights": [
               "绣球花隧道漫步",
               "山茶花与玫瑰花园区（山茶花非花季）",
@@ -1666,7 +2164,39 @@
                 ""
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+                "location": "山茶花山丘（绣球花隧道）",
+                "caption": "山茶花山丘（绣球花隧道） — photo 1",
+                "alt": "山茶花山丘（绣球花隧道） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "location": "山茶花山丘（绣球花隧道）",
+                "caption": "山茶花山丘（绣球花隧道） — photo 2",
+                "alt": "山茶花山丘（绣球花隧道） — gallery image 2"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1675,7 +2205,7 @@
             "name": "雪绿茶博物馆与茶园",
             "category": "茶文化与花园",
             "description": "无边无际的绿茶田层叠铺展，远处以汉拿山为背景，还有雪绿茶博物馆与茶室。以茶文化为主题，在轻松的节奏中为一天行程画上句点。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
             "highlights": [
               "广阔绿茶田拍照区",
               "茶博物馆展览",
@@ -1712,7 +2242,169 @@
                 ""
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "location": "雪绿茶博物馆与茶园",
+                "caption": "雪绿茶博物馆与茶园 — photo 1",
+                "alt": "雪绿茶博物馆与茶园 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "location": "雪绿茶博物馆与茶园",
+                "caption": "雪绿茶博物馆与茶园 — photo 2",
+                "alt": "雪绿茶博物馆与茶园 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "location": "雪绿茶博物馆与茶园",
+                "caption": "雪绿茶博物馆与茶园 — photo 3",
+                "alt": "雪绿茶博物馆与茶园 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "location": "雪绿茶博物馆与茶园",
+                "caption": "雪绿茶博物馆与茶园 — photo 4",
+                "alt": "雪绿茶博物馆与茶园 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "location": "雪绿茶博物馆与茶园",
+                "caption": "雪绿茶博物馆与茶园 — photo 5",
+                "alt": "雪绿茶博物馆与茶园 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "location": "雪绿茶博物馆与茶园",
+                "caption": "雪绿茶博物馆与茶园 — photo 6",
+                "alt": "雪绿茶博物馆与茶园 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "location": "雪绿茶博物馆与茶园",
+                "caption": "雪绿茶博物馆与茶园 — photo 7",
+                "alt": "雪绿茶博物馆与茶园 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "location": "雪绿茶博物馆与茶园",
+                "caption": "雪绿茶博物馆与茶园 — photo 8",
+                "alt": "雪绿茶博物馆与茶园 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "location": "雪绿茶博物馆与茶园",
+                "caption": "雪绿茶博物馆与茶园 — photo 9",
+                "alt": "雪绿茶博物馆与茶园 — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "location": "雪绿茶博物馆与茶园",
+                "caption": "雪绿茶博物馆与茶园 — photo 10",
+                "alt": "雪绿茶博物馆与茶园 — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "location": "雪绿茶博物馆与茶园",
+                "caption": "雪绿茶博物馆与茶园 — photo 11",
+                "alt": "雪绿茶博物馆与茶园 — gallery image 11"
+              },
+              {
+                "id": 12,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "location": "雪绿茶博物馆与茶园",
+                "caption": "雪绿茶博物馆与茶园 — photo 12",
+                "alt": "雪绿茶博物馆与茶园 — gallery image 12"
+              }
+            ]
           }
         ]
       }

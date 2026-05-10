@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Busan Top Attractions Small-Group Day Tour | AtoC Korea",
     "metaDescription": "10.5-hour Busan small-group classic: Haedong Yonggungsa Temple, Cheongsapo Blue Line, UN Memorial, Gamcheon Culture Village, Jagalchi Market. 3 pickup points.",
-    "ogImage": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1920&q=80",
+    "ogImage": "https://www.atockorea.com/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
     "primaryKeywords": [
       "Busan day tour",
       "Haedong Yonggungsa Temple",
@@ -20,7 +20,7 @@
   },
   "catalog_card": {
     "slug": "busan-top-attractions-day-tour",
-    "title": "Busan Top Attractions Authentic One-Day Guided Tour",
+    "title": "Busan Top Attractions Day Tour",
     "subtitle": "A 9.5-hour Busan highlights route with Haedong Yonggungsa Temple, Cheongsapo, Haeundae Blue Line Park area, UN Memorial Cemetery, Gamcheon Culture Village, and Jagalchi Market.",
     "region": "Busan",
     "duration": "10.5 hours",
@@ -33,8 +33,8 @@
       "Busan classic",
       "Year-round"
     ],
-    "heroImage": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1920&q=80",
-    "thumbnail": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=600&q=80",
+    "heroImage": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+    "thumbnail": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
     "priceLabel": "Price varies — confirm at booking",
     "shortCardDescription": "A balanced Busan city tour for first-time visitors: seaside temple, Cheongsapo coastal viewpoint, optional Blue Line Park/Sky Capsule area, Korean War memorial history, colorful Gamcheon Culture Village, and a market-area finish near Jagalchi/Nampo-dong.",
     "tags": [
@@ -45,8 +45,8 @@
       "Year-round"
     ]
   },
-  "headlineLine1": "Seaside temple, Cheongsapo coast, UN history and Gamcheon —",
-  "headlineLine2": "Busan’s classic highlights in one guided day",
+  "headlineLine1": "Busan Top Attractions",
+  "headlineLine2": "Day Tour",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -54,7 +54,7 @@
     "priceNote": "Final rate is confirmed after selecting your travel date and group size. Direct booking is handled by AtoC Korea."
   },
   "hero": {
-    "imageUrl": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1920&q=80",
+    "imageUrl": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
     "imagePosition": "center 40%",
     "tagline": "Busan's most-asked-for seven stops in a single small-group day",
     "pills": [
@@ -132,58 +132,116 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1200",
-      "alt": "Buddhist temple buildings perched on cliffs above the East Sea at Haedong Yonggungsa",
-      "caption": "Haedong Yonggungsa — Korea's most distinctive coastal temple, rebuilt in the 1930s on a 1376 foundation.",
-      "location": "Haedong Yonggungsa, Gijang-gun",
-      "atmosphere": "Sea spray, granite cliffs, smell of incense"
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+      "location": "Cheongsapo & Haeundae Blue Line Park",
+      "alt": "Cheongsapo & Haeundae Blue Line Park — gallery image 1",
+      "caption": "Cheongsapo & Haeundae Blue Line Park — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=1200",
-      "alt": "Open-air beach train running on a coastal track beside a wide sandy beach",
-      "caption": "Cheongsapo Blue Line Park — repurposed 1934 railway converted into a 4.8 km coastal beach-train corridor in 2020.",
-      "location": "Cheongsapo Blue Line Park, Haeundae",
-      "atmosphere": "Open coast, gentle wind, train horn"
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "location": "UN Memorial Cemetery in Korea",
+      "alt": "UN Memorial Cemetery in Korea — gallery image 1",
+      "caption": "UN Memorial Cemetery in Korea — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601171291096-87099c2c4625?w=1200",
-      "alt": "Identical headstones in formal rows at the UN Memorial Cemetery",
-      "caption": "UN Memorial Cemetery — 2,300+ graves of soldiers from 21 nations, the only UN cemetery in the world.",
-      "location": "UN Memorial Cemetery, Nam-gu",
-      "atmosphere": "Quiet, formal, contemplative"
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "Gamcheon Culture Village",
+      "alt": "Gamcheon Culture Village — gallery image 1",
+      "caption": "Gamcheon Culture Village — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1200",
-      "alt": "Pastel-colored houses cascading down a hillside in Gamcheon Culture Village",
-      "caption": "Gamcheon Culture Village — postwar refugee neighborhood transformed into a public-art project in 2009.",
-      "location": "Gamcheon Culture Village, Saha-gu",
-      "atmosphere": "Bright pastels, narrow alleys, hillside stairs"
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+      "location": "Cheongsapo & Haeundae Blue Line Park",
+      "alt": "Cheongsapo & Haeundae Blue Line Park — gallery image 2",
+      "caption": "Cheongsapo & Haeundae Blue Line Park — photo 2"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1572883454114-1cf0031ede2a?w=1200",
-      "alt": "Rows of fresh seafood on ice at Jagalchi Fish Market",
-      "caption": "Jagalchi — Korea's largest seafood market, run mostly by women across multiple generations.",
-      "location": "Jagalchi Market, Jung-gu",
-      "atmosphere": "Live tanks, market chatter, sea-salt smell"
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+      "location": "Cheongsapo & Haeundae Blue Line Park",
+      "alt": "Cheongsapo & Haeundae Blue Line Park — gallery image 3",
+      "caption": "Cheongsapo & Haeundae Blue Line Park — photo 3"
     },
     {
-      "id": "g6",
+      "id": 6,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "A bowl of dwaeji-gukbap with side dishes on a Busan restaurant table",
-      "caption": "Lunch is local — dwaeji-gukbap, milmyeon, or seafood pancake at a Busan restaurant.",
-      "location": "Local Busan restaurant",
-      "atmosphere": "Quick, no-frills, regional flavors"
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+      "location": "Cheongsapo & Haeundae Blue Line Park",
+      "alt": "Cheongsapo & Haeundae Blue Line Park — gallery image 4",
+      "caption": "Cheongsapo & Haeundae Blue Line Park — photo 4"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+      "location": "Cheongsapo & Haeundae Blue Line Park",
+      "alt": "Cheongsapo & Haeundae Blue Line Park — gallery image 5",
+      "caption": "Cheongsapo & Haeundae Blue Line Park — photo 5"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+      "location": "Cheongsapo & Haeundae Blue Line Park",
+      "alt": "Cheongsapo & Haeundae Blue Line Park — gallery image 6",
+      "caption": "Cheongsapo & Haeundae Blue Line Park — photo 6"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+      "location": "Cheongsapo & Haeundae Blue Line Park",
+      "alt": "Cheongsapo & Haeundae Blue Line Park — gallery image 7",
+      "caption": "Cheongsapo & Haeundae Blue Line Park — photo 7"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+      "location": "Cheongsapo & Haeundae Blue Line Park",
+      "alt": "Cheongsapo & Haeundae Blue Line Park — gallery image 8",
+      "caption": "Cheongsapo & Haeundae Blue Line Park — photo 8"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+      "location": "UN Memorial Cemetery in Korea",
+      "alt": "UN Memorial Cemetery in Korea — gallery image 2",
+      "caption": "UN Memorial Cemetery in Korea — photo 2"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+      "location": "UN Memorial Cemetery in Korea",
+      "alt": "UN Memorial Cemetery in Korea — gallery image 3",
+      "caption": "UN Memorial Cemetery in Korea — photo 3"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "Gamcheon Culture Village",
+      "alt": "Gamcheon Culture Village — gallery image 2",
+      "caption": "Gamcheon Culture Village — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+      "location": "Gamcheon Culture Village",
+      "alt": "Gamcheon Culture Village — gallery image 3",
+      "caption": "Gamcheon Culture Village — photo 3"
     }
   ],
   "itineraryStops": [
@@ -332,7 +390,118 @@
         "closed": "Operations weather-dependent; check the day of",
         "walking": "Easy along the wooden Green Railway boardwalk (Mipo↔Cheongsapo 2.3 km, ~30 min); flat at stations",
         "admission": "Free area; Sky Capsule 30,000 KRW (2 ppl) / 39,000 (3) / 44,000 (4) one-way; Beach Train ₩7,000 single / ₩10,000 re-board once"
-      }
+      },
+      "image": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+      "images": [
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+          "location": "Cheongsapo & Haeundae Blue Line Park",
+          "caption": "Cheongsapo & Haeundae Blue Line Park — photo 1",
+          "alt": "Cheongsapo & Haeundae Blue Line Park — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+          "location": "Cheongsapo & Haeundae Blue Line Park",
+          "caption": "Cheongsapo & Haeundae Blue Line Park — photo 2",
+          "alt": "Cheongsapo & Haeundae Blue Line Park — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "location": "Cheongsapo & Haeundae Blue Line Park",
+          "caption": "Cheongsapo & Haeundae Blue Line Park — photo 3",
+          "alt": "Cheongsapo & Haeundae Blue Line Park — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+          "location": "Cheongsapo & Haeundae Blue Line Park",
+          "caption": "Cheongsapo & Haeundae Blue Line Park — photo 4",
+          "alt": "Cheongsapo & Haeundae Blue Line Park — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "location": "Cheongsapo & Haeundae Blue Line Park",
+          "caption": "Cheongsapo & Haeundae Blue Line Park — photo 5",
+          "alt": "Cheongsapo & Haeundae Blue Line Park — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+          "location": "Cheongsapo & Haeundae Blue Line Park",
+          "caption": "Cheongsapo & Haeundae Blue Line Park — photo 6",
+          "alt": "Cheongsapo & Haeundae Blue Line Park — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+          "location": "Cheongsapo & Haeundae Blue Line Park",
+          "caption": "Cheongsapo & Haeundae Blue Line Park — photo 7",
+          "alt": "Cheongsapo & Haeundae Blue Line Park — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+          "location": "Cheongsapo & Haeundae Blue Line Park",
+          "caption": "Cheongsapo & Haeundae Blue Line Park — photo 8",
+          "alt": "Cheongsapo & Haeundae Blue Line Park — gallery image 8"
+        }
+      ]
     },
     {
       "name": "Lunch (local Busan restaurant)",
@@ -421,7 +590,53 @@
         "closed": "Open year-round",
         "walking": "Easy — flat grass paths and paved walkways across 14 ha of grounds; 100% wheelchair-accessible",
         "admission": "Free"
-      }
+      },
+      "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "images": [
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "location": "UN Memorial Cemetery in Korea",
+          "caption": "UN Memorial Cemetery in Korea — photo 1",
+          "alt": "UN Memorial Cemetery in Korea — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "location": "UN Memorial Cemetery in Korea",
+          "caption": "UN Memorial Cemetery in Korea — photo 2",
+          "alt": "UN Memorial Cemetery in Korea — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "location": "UN Memorial Cemetery in Korea",
+          "caption": "UN Memorial Cemetery in Korea — photo 3",
+          "alt": "UN Memorial Cemetery in Korea — gallery image 3"
+        }
+      ]
     },
     {
       "name": "Gamcheon Culture Village",
@@ -479,7 +694,53 @@
         "closed": "Open year-round (a living residential community)",
         "walking": "Strenuous — very steep alleys and stairs; not stroller- or wheelchair-friendly in many sections",
         "admission": "Free village entry; optional Stamp Map ≈ 2,000 KRW"
-      }
+      },
+      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "images": [
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "location": "Gamcheon Culture Village",
+          "caption": "Gamcheon Culture Village — photo 1",
+          "alt": "Gamcheon Culture Village — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "location": "Gamcheon Culture Village",
+          "caption": "Gamcheon Culture Village — photo 2",
+          "alt": "Gamcheon Culture Village — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+          "location": "Gamcheon Culture Village",
+          "caption": "Gamcheon Culture Village — photo 3",
+          "alt": "Gamcheon Culture Village — gallery image 3"
+        }
+      ]
     },
     {
       "name": "Jagalchi Fish Market",
@@ -1212,8 +1473,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Seaside temple, Cheongsapo coast, UN history and Gamcheon —",
-        "headlineLine2": "Busan’s classic highlights in one guided day",
+        "headlineLine1": "Busan Top Attractions",
+        "headlineLine2": "Day Tour",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=1920&q=80",
           "imagePosition": "center 40%",
@@ -1413,7 +1674,7 @@
             "duration": "75 min",
             "name": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area",
             "category": "Coastal Park / Photo Spot",
-            "image": "",
+            "image": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
             "description": "Cheongsapo combines coastal views, Daritdol Observatory, and the Haeundae Blue Line Park area. Guests can enjoy the coastal scenery, take photos of the Sky Capsule/Beach Train area, or purchase optional tickets on site if available. During busy periods, tickets may sell out.",
             "timeUsed": [
               "Drop-off at Cheongsapo Station (~5 min)",
@@ -1426,7 +1687,117 @@
               "fee_krw": 0,
               "optional_beach_train_krw": 7000,
               "optional_sky_capsule_krw_per_capsule": 30000
-            }
+            },
+            "images": [
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+                "location": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area",
+                "caption": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area — photo 1",
+                "alt": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+                "location": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area",
+                "caption": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area — photo 2",
+                "alt": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+                "location": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area",
+                "caption": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area — photo 3",
+                "alt": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+                "location": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area",
+                "caption": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area — photo 4",
+                "alt": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "location": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area",
+                "caption": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area — photo 5",
+                "alt": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+                "location": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area",
+                "caption": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area — photo 6",
+                "alt": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+                "location": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area",
+                "caption": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area — photo 7",
+                "alt": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+                "location": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area",
+                "caption": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area — photo 8",
+                "alt": "Cheongsapo Daritdol Observatory & Haeundae Blue Line Park area — gallery image 8"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1452,7 +1823,7 @@
             "duration": "60 min",
             "name": "UN Memorial Cemetery in Korea",
             "category": "Memorial / War History",
-            "image": "",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "**The UN Memorial Cemetery in Korea (재한유엔기념공원, UNMCK)** is the **only United Nations memorial cemetery anywhere in the world** — established January 18, 1951 by the UN Command during the Korean War, dedicated April 6, 1951 by US General Matthew Ridgway, and formally donated to the United Nations by the Republic of Korea in **1959** in gratitude for the UN forces who died defending South Korea. **22 sending nations participated in the Korean War (1950-1953)** under the UN flag — 16 nations sent combat troops + 5 sent medical aid + 1 sent observers. Initially up to **11,000 graves** were here; most fallen were repatriated post-armistice, leaving today **2,300 graves from 11 countries** (UK, US, Türkiye, Canada, Australia, Netherlands, France, Norway, South Korea, New Zealand, South Africa). The visit walks the cemetery's main monumental sequence: (1) the **Main Gate** (designed by Korean architect Kim Joong-up, built by Busan City in 1966 — the eight roof-supporting pillars symbolize the moment and eternity of soldiers' standing watch); (2) the **Memorial Service Hall** featuring a 12-minute documentary in English/Korean on the cemetery's history; (3) the **Symbolic Area** where the **22 sending-state flags + Korean + UN flag** fly daily; (4) the **Wall of Remembrance**, completed **2006**, with all **40,896 UN casualty names inscribed on 140 marble panels** — many veterans' relatives find their ancestors here for the first time; and (5) the **US Korean War Memorial**, dedicated **2013** with the Frank Gaylord sculpture commissioned by the American Battle Monuments Commission. **Hours: 09:00-18:00 (May-Sep) / 09:00-17:00 (Oct-Apr); FREE; 100% wheelchair-accessible**. Annual **'Turn Toward Busan' silent ceremony** Nov 11 11:00 AM, where the world turns symbolically toward this cemetery.",
             "timeUsed": [
               "Coach drop-off + walk to Memorial Hall (~5 min)",
@@ -1463,7 +1834,52 @@
               "poi_key": "un_memorial_cemetery",
               "is_attraction": true,
               "fee_krw": 0
-            }
+            },
+            "images": [
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+                "location": "UN Memorial Cemetery in Korea",
+                "caption": "UN Memorial Cemetery in Korea — photo 1",
+                "alt": "UN Memorial Cemetery in Korea — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+                "location": "UN Memorial Cemetery in Korea",
+                "caption": "UN Memorial Cemetery in Korea — photo 2",
+                "alt": "UN Memorial Cemetery in Korea — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+                "location": "UN Memorial Cemetery in Korea",
+                "caption": "UN Memorial Cemetery in Korea — photo 3",
+                "alt": "UN Memorial Cemetery in Korea — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1471,7 +1887,7 @@
             "duration": "75 min",
             "name": "Gamcheon Culture Village",
             "category": "Cultural Village / Mural Art",
-            "image": "",
+            "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
             "description": "**Gamcheon Culture Village (감천문화마을)** — nicknamed both **'Korea's Machu Picchu'** and **'Korea's Santorini'** — is a hillside neighborhood in Saha-gu, west Busan, whose pastel-painted houses cascade down in stepped rows over the slope. The settlement began in the **1920s-1930s** when the Busan administration relocated working-class residents away from the port. The village's character was set in **1955** when **~800 families (about 4,000 people) of the Taegeukdo religious community** — a uniquely Korean syncretic religion blending Buddhist, Confucian, and yin-yang elements, founded by **Jo Cheol-je** during the Japanese colonial period — settled here as Korean War refugees fleeing the North. The Taegeukdo philosophy of '**allowing others to prosper**' directly shaped the village's most distinctive feature: houses are intentionally tiered so that **no roof blocks the view of the house behind it**, with the entire community visible to the sky and the sea. Gamcheon remained one of Busan's poorest neighborhoods until **2009**, when the Korean Ministry of Culture launched the **'Dreaming of Machu Picchu in Busan'** public-art revitalization project, followed by the **'Miro Miro' (maze) project in 2010** — adding 22+ commissioned murals, sculptures, and art installations including the iconic **'Little Prince and Fox' bench** at the Sky Garden viewpoint. Gamcheon won the **2012 UN-HABITAT Asian Townscape Award** and now welcomes **~1.4 million visitors annually**. The visit follows the village's signature stamp-map walking route: from the entrance at the **Tourist Information Center**, up to **Sky Garden viewpoint** for the panoramic rainbow-roof shot, then down through the labyrinthine alleys past murals, hanbok rental shops, craft workshops, and small cafes. **The village is a living residential community** — quiet voices required, no drones, no flash photography into homes, and rubbish carried out. Hours **09:00-18:00 Mar-Oct / 09:00-17:00 Nov-Feb (info center)**; **village itself open 24h, FREE entry**.",
             "timeUsed": [
               "Coach drop-off at Public Parking Lot 2 + walk to entrance (~5 min)",
@@ -1484,7 +1900,52 @@
               "is_attraction": true,
               "fee_krw": 0,
               "optional_stamp_map_krw": 2000
-            }
+            },
+            "images": [
+              "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+              "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+              "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+                "location": "Gamcheon Culture Village",
+                "caption": "Gamcheon Culture Village — photo 1",
+                "alt": "Gamcheon Culture Village — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+                "location": "Gamcheon Culture Village",
+                "caption": "Gamcheon Culture Village — photo 2",
+                "alt": "Gamcheon Culture Village — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+                "location": "Gamcheon Culture Village",
+                "caption": "Gamcheon Culture Village — photo 3",
+                "alt": "Gamcheon Culture Village — gallery image 3"
+              }
+            ]
           },
           {
             "number": 7,

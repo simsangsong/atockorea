@@ -14,12 +14,12 @@
       "협재 해변 투어",
       "제주 카페 거리 투어"
     ],
-    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "title": "제주 서부 & 남부 정통 일일 투어 | AtoC Korea"
   },
   "catalog_card": {
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-    "title": "제주 서부 & 남부 정통 일일 투어",
+    "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "title": "제주 서·남부 정통 일일 투어",
     "priceLabel": "",
     "shortCardDescription": "제주의 서부와 남부 해안을 하나의 코스로 연결하는 소그룹 일일 투어 — 한라산 1100 고지 습지 (유네스코), 육각형 주상절리대, 송악산 파노라마 전망대, 천제연 폭포, 오설록 티 뮤지엄, 그리고 서쪽 해안의 협재 해변 카페 거리. 남부 유네스코 투어와 동일한 운영사이지만, 보다 라이프스타일 지향적인 콘셉트 — '화산 지형과 웅장한 해안선, 그리고 트렌디한 바닷가 카페의 만남.'",
     "tags": [
@@ -45,10 +45,10 @@
       "카페 문화",
       "해안"
     ],
-    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp"
+    "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp"
   },
-  "headlineLine1": "1100 습지에서 주상절리까지, 차밭에서 바닷가 카페까지 —",
-  "headlineLine2": "제주의 서부와 남부를, 여유롭고 진정성 있는 하루에 담다",
+  "headlineLine1": "제주 서·남부 정통 일일 투어",
+  "headlineLine2": "투어",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -58,7 +58,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+    "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "imagePosition": "center 35%",
     "tagline": "화산 지형과 웅장한 해안선, 트렌디한 바닷가 카페의 만남 — 제주 서남부 코스, 제대로 즐기다",
     "pills": [
@@ -135,49 +135,212 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+      "location": "한라산 1100고지 습지 (람사르 + 유네스코)",
+      "alt": "한라산 1100고지 습지 (람사르 + 유네스코) — gallery image 1",
+      "caption": "한라산 1100고지 습지 (람사르 + 유네스코) — photo 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "주상절리대 (유네스코 세계지질공원)",
+      "alt": "주상절리대 (유네스코 세계지질공원) — gallery image 1",
+      "caption": "주상절리대 (유네스코 세계지질공원) — photo 1"
+    },
+    {
+      "id": 3,
       "type": "photo",
       "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-      "alt": "낮은 관목이 있는 1100고지 습지를 가로지르는 나무 데크 산책로, 멀리 한라산 능선이 보임",
-      "caption": "한라산 1100고지 습지 — 유네스코 생물권 나무 데크 산책로",
-      "location": "한라산 1100고지 습지, 제주 중앙부 (해발 1,100m)",
-      "atmosphere": "시원한 고원 공기; 유네스코 보호 산악 생태계와 조용한 데크 산책로"
+      "location": "송악산 (파노라마 전망 포인트)",
+      "alt": "송악산 (파노라마 전망 포인트) — on-route photo",
+      "caption": "송악산 (파노라마 전망 포인트)"
     },
     {
-      "id": "g2",
+      "id": 4,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-      "alt": "난간이 있는 데크 산책로에서 바라보는 바다에서 수직으로 솟아오른 육각형 주상절리 절벽",
-      "caption": "주상절리대 — 유네스코 세계지질공원 육각형 기둥",
-      "location": "주상절리대, 중문 해안, 제주 남부",
-      "atmosphere": "파도가 몰아치는 현무암 절벽; 제주에서 가장 많이 사진에 담기는 해안 명소 중 하나"
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "천제연폭포 (신들의 연못)",
+      "alt": "천제연폭포 (신들의 연못) — gallery image 1",
+      "caption": "천제연폭포 (신들의 연못) — photo 1"
     },
     {
-      "id": "g3",
+      "id": 5,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-      "alt": "평평한 정상 둘레길이 있는 해안 화산 분화구, 뒤로 바다와 인근 섬들이 보임",
-      "caption": "송악산 둘레길 — 남해안 파노라마 코스",
-      "location": "송악산, 제주 남서쪽 끝",
-      "atmosphere": "탁 트인 해안 초원; 내륙의 한라산과 앞바다의 마라도가 보이는 360° 파노라마 산책"
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+      "location": "오설록 티 뮤지엄 + 녹차밭",
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 1",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 1"
     },
     {
-      "id": "g4",
+      "id": 6,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
-      "alt": "낮은 박물관 건물까지 가지런한 줄이 이어지는 완만한 녹차밭",
-      "caption": "오설록 티 뮤지엄과 녹차밭",
-      "location": "오설록, 제주 중서부",
-      "atmosphere": "한국 최대의 방문 가능한 차 농원; 박물관 + 카페 + 사진 찍기 좋은 밭"
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+      "location": "협재 해수욕장 + 서쪽 해안 카페 거리",
+      "alt": "협재 해수욕장 + 서쪽 해안 카페 거리 — gallery image 1",
+      "caption": "협재 해수욕장 + 서쪽 해안 카페 거리 — photo 1"
     },
     {
-      "id": "g5",
+      "id": 7,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
-      "alt": "에메랄드빛 바다와 하얀 모래사장, 해안가를 따라 늘어선 카페 거리 건물들, 근해에 보이는 작은 섬",
-      "caption": "협재해수욕장 + 서쪽 해안 카페 거리",
-      "location": "협재해수욕장, 한림, 제주 서부",
-      "atmosphere": "일몰 카페 거리 마지막 코스; 근해에 비양도가 보임"
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+      "location": "한라산 1100고지 습지 (람사르 + 유네스코)",
+      "alt": "한라산 1100고지 습지 (람사르 + 유네스코) — gallery image 2",
+      "caption": "한라산 1100고지 습지 (람사르 + 유네스코) — photo 2"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+      "location": "한라산 1100고지 습지 (람사르 + 유네스코)",
+      "alt": "한라산 1100고지 습지 (람사르 + 유네스코) — gallery image 3",
+      "caption": "한라산 1100고지 습지 (람사르 + 유네스코) — photo 3"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "주상절리대 (유네스코 세계지질공원)",
+      "alt": "주상절리대 (유네스코 세계지질공원) — gallery image 2",
+      "caption": "주상절리대 (유네스코 세계지질공원) — photo 2"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "주상절리대 (유네스코 세계지질공원)",
+      "alt": "주상절리대 (유네스코 세계지질공원) — gallery image 3",
+      "caption": "주상절리대 (유네스코 세계지질공원) — photo 3"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "주상절리대 (유네스코 세계지질공원)",
+      "alt": "주상절리대 (유네스코 세계지질공원) — gallery image 4",
+      "caption": "주상절리대 (유네스코 세계지질공원) — photo 4"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "location": "천제연폭포 (신들의 연못)",
+      "alt": "천제연폭포 (신들의 연못) — gallery image 2",
+      "caption": "천제연폭포 (신들의 연못) — photo 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+      "location": "천제연폭포 (신들의 연못)",
+      "alt": "천제연폭포 (신들의 연못) — gallery image 3",
+      "caption": "천제연폭포 (신들의 연못) — photo 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+      "location": "오설록 티 뮤지엄 + 녹차밭",
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 2",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 2"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+      "location": "오설록 티 뮤지엄 + 녹차밭",
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 3",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 3"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+      "location": "오설록 티 뮤지엄 + 녹차밭",
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 4",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 4"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+      "location": "오설록 티 뮤지엄 + 녹차밭",
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 5",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 5"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+      "location": "오설록 티 뮤지엄 + 녹차밭",
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 6",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 6"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+      "location": "오설록 티 뮤지엄 + 녹차밭",
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 7",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 7"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+      "location": "오설록 티 뮤지엄 + 녹차밭",
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 8",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 8"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+      "location": "오설록 티 뮤지엄 + 녹차밭",
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 9",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 9"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+      "location": "오설록 티 뮤지엄 + 녹차밭",
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 10",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 10"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+      "location": "오설록 티 뮤지엄 + 녹차밭",
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 11",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 11"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+      "location": "오설록 티 뮤지엄 + 녹차밭",
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 12",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 12"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+      "location": "협재 해수욕장 + 서쪽 해안 카페 거리",
+      "alt": "협재 해수욕장 + 서쪽 해안 카페 거리 — gallery image 2",
+      "caption": "협재 해수욕장 + 서쪽 해안 카페 거리 — photo 2"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+      "location": "협재 해수욕장 + 서쪽 해안 카페 거리",
+      "alt": "협재 해수욕장 + 서쪽 해안 카페 거리 — gallery image 3",
+      "caption": "협재 해수욕장 + 서쪽 해안 카페 거리 — photo 3"
     }
   ],
   "itineraryStops": [
@@ -216,7 +379,7 @@
       "name": "한라산 1100고지 습지 (람사르 + 유네스코)",
       "category": "고산 습지 — 람사르 습지 + 한라산 유네스코 세계자연유산 내 위치",
       "description": "**한라산 1100고지 습지(한라산 1100고지 습지)**는 한라산 고원지대에 위치한 고지대 고산 습지로, 제주시와 서귀포 중문을 잇는 **한국에서 가장 높은 국도인 1100도로**를 따라 **해발 정확히 1,100m**에 자리하고 있습니다. 이 습지는 **람사르 국제 중요 습지(람사르 습지 제1893호, 2009년 10월 12일 지정)**로, **한라산 유네스코 세계자연유산(2007년)**, **제주도 유네스코 생물권 보전지역(2002년)**, **한라산국립공원(1970년)** 내에 속하여, 전 세계적으로도 드문 **4중 국제·국가 지정 중복 보호 지역** 중 하나입니다. 습지는 저경사 고원 구간에 걸쳐 분포하는 **16개 이상의 불연속 담수 소택지와 웅덩이**로 구성되며, 빗물을 포집·저류하여 **소규모 영구 호수와 이탄지**를 형성하고, 제주 고유 식물종이 다수 포함된 다양한 식물군락을 부양합니다. 기록된 생물 다양성으로는 **국내 멸종위기 조류 3종 및 식물 1종** 외에도 제주도 고유 포유류·파충류·곤충류가 있습니다. 이 지역은 **2008년 한 해에만 90만 명의 방문객**을 기록했습니다(한라산 방문자센터 자료). 방문 시설로는 전망대와 안내 표지판, 등산로 입구의 소규모 자연사 전시관을 갖춘 **1km 목재 데크 산책로**가 있습니다. **가을 단풍(10~11월)**과 **겨울 설경(12~2월)**이 가장 많이 촬영되는 계절이며, **봄·여름**에는 습지 식물과 고유종을 관찰하기 좋습니다. **무료 입장**이며, 인근 **1100휴게소**에서는 실내 화장실, 카페, 소규모 기념품점을 이용할 수 있습니다. 람사르 등재 기록에는 산수신앙과 관련된 무속 순례 등 지역 공동체의 **문화·종교적 중요성**도 명시되어 있습니다.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
       "highlights": [
         "**람사르 습지 제1893호** (2009년 10월 12일 지정) — 국제 중요 습지",
         "**해발 1,100m** — 한국의 **최고 고도 국도**(1100도로) 위",
@@ -263,16 +426,49 @@
         "tip": "여러 겹 옷차림 필수 — 해안 제주보다 5–10°C 낮음; 겨울철 도로 상황 사전 확인; 남쪽으로 하산 시 천제연 폭포와 연계 추천"
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-        "https://images.unsplash.com/photo-1672306145001-a9a193ed5573?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1579677475701-5c1cc28581ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1732446402420-36f8e1a31ca9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1648467179706-bb1617dddb81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1635252273211-d0d5fb502c8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1676377962839-8fb92dfa4fd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1615129718947-5de7ddb45143?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1634641683828-73bd90bd9503?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1621844143414-f1d0bb21702e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+          "location": "한라산 1100고지 습지 (람사르 + 유네스코)",
+          "caption": "한라산 1100고지 습지 (람사르 + 유네스코) — photo 1",
+          "alt": "한라산 1100고지 습지 (람사르 + 유네스코) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+          "location": "한라산 1100고지 습지 (람사르 + 유네스코)",
+          "caption": "한라산 1100고지 습지 (람사르 + 유네스코) — photo 2",
+          "alt": "한라산 1100고지 습지 (람사르 + 유네스코) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+          "location": "한라산 1100고지 습지 (람사르 + 유네스코)",
+          "caption": "한라산 1100고지 습지 (람사르 + 유네스코) — photo 3",
+          "alt": "한라산 1100고지 습지 (람사르 + 유네스코) — gallery image 3"
+        }
       ]
     },
     {
@@ -282,7 +478,7 @@
       "name": "주상절리대 (유네스코 세계지질공원)",
       "category": "주상 절리 — 천연기념물 제443호 (2005년)",
       "description": "**대포 주상절리(일명 '지삿개')**는 중문 해안에 위치한 **1km 길이의 육각형 주상절리 현무암 절벽**으로, **2005년 1월 6일 천연기념물 제443호**로 지정되었습니다. 기둥들은 **5~7각형**(대부분 육각형)의 촘촘한 형태로 해수면에서 **30~40m** 높이로 솟아 있습니다. 이는 **약 25만~14만 년 전 한라산 측면 화산 분출 시 흘러내린 현무암질 용암이 바다에 닿아 냉각·수축되면서 냉각면에 수직으로 균열**이 생겨 형성된 지형입니다. 주상 절리는 세계적으로 **자이언츠 코즈웨이(영국)**, **데블스 포스트파일(미국)**, **핑갈 동굴(스코틀랜드)**로 유명하며, 주상절리대는 **동아시아 최고(最高)의 사례**이자 가장 접근하기 쉬운 곳입니다. **800m 데크 순환로**를 따라 절벽 가장자리 난간까지 이어지며, **만조 시에는 파도가 기둥을 때리며 최대 20m 높이의 물보라**를 만들어 내 난간 너머까지 튀기도 합니다. 입장료: **성인 ₩2,000 / 청소년 ₩1,000 / 7세 미만 및 65세 이상 무료**. 이 명소는 **제주 세계지질공원(유네스코 2010년 10월 지정)**의 일원으로, 성산일출봉·만장굴·수월봉 등과 함께 섬 전체 **13개 공식 지질 명소** 중 하나입니다. 절벽 위 데크는 **무장애 시설**(휠체어·유모차 접근 가능)로 조성되어 있습니다. 순환로를 따라 세 곳의 전망대가 있으며 각각 다른 각도의 기둥을 감상할 수 있습니다: **첫 번째 전망대**는 측면에서 기둥을 조망(육각형 구조 촬영에 최적), **중간 전망대**는 기둥 상단부를 수직으로 내려다보며 단면 패턴 감상 가능, **끝 전망대**에서는 맑은 날 한라산을 배경으로 1km 해안 전경을 담을 수 있습니다. **최적 촬영 시간대: 오후 2시–4시**, 서쪽으로 기울어진 햇빛이 기둥 면을 정면으로 비추는 시간대; 일몰 방문 시 실루엣 연출이 가능하나 기둥 세부 질감 표현은 어려움. 운영 시간: **09:00–18:00 (마지막 입장 17:30)**, 연중 운영.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "**천연기념물 제443호** — **2005년 1월 6일** 지정, 제주 해안 천연기념물 중 가장 최근 지정",
         "기둥 높이 **30–40m**, **5~7각형**(주로 육각형)으로 촘촘하게 **1km** 해안을 따라 분포",
@@ -330,16 +526,62 @@
         "tip": "관광 버스 혼잡을 피하려면 오전 11시 이전 또는 오후 4시 이후 방문 권장; 반나절 코스로 중문 색달 해변(5분 거리)과 함께 즐기기"
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-        "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1772268354899-1f3bf5014b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1739932413542-dc2597d7d764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "주상절리대 (유네스코 세계지질공원)",
+          "caption": "주상절리대 (유네스코 세계지질공원) — photo 1",
+          "alt": "주상절리대 (유네스코 세계지질공원) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "주상절리대 (유네스코 세계지질공원)",
+          "caption": "주상절리대 (유네스코 세계지질공원) — photo 2",
+          "alt": "주상절리대 (유네스코 세계지질공원) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "주상절리대 (유네스코 세계지질공원)",
+          "caption": "주상절리대 (유네스코 세계지질공원) — photo 3",
+          "alt": "주상절리대 (유네스코 세계지질공원) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "주상절리대 (유네스코 세계지질공원)",
+          "caption": "주상절리대 (유네스코 세계지질공원) — photo 4",
+          "alt": "주상절리대 (유네스코 세계지질공원) — gallery image 4"
+        }
       ]
     },
     {
@@ -431,7 +673,7 @@
       "name": "천제연폭포 (신들의 연못)",
       "category": "3단 폭포 — 천연기념물 제378호 (1993년)",
       "description": "**천제연 폭포(천제연, '연 = 연못 + 천제 = 옥황상제')** 는 중문의 화산 협곡에 위치한 **3단 폭포**로, 희귀한 생태적 조합을 인정받아 **천연기념물 제378호(1993년)**로 지정되었습니다. 이름은 **조선 시대 도교 전설에서 유래한 것으로, 일곱 선녀(선녀, *seonnyeo*)가 매일 밤 하늘에서 내려와 윗못에서 목욕했다는 신화**에서 비롯되었으며, 이 신화는 끊임없이 안개가 피어오르는 이 극적인 장소의 미기후에 의해 더욱 강화됩니다. **제1폭포(낙차 22m, 수심 21m의 연못)**는 원형 현무암 웅덩이로 떨어지며 폭우 후에만 흐릅니다 — 대부분의 날에는 윗못이 유리처럼 잔잔하고 맑습니다. **제2폭포(낙차 30m)는 연중 흐르며** 가장 대표적인 사진 촬영 명소입니다. 제3폭포는 바다까지 이어지는 마지막 구간을 완성합니다. **길이 120m, 높이 78m의 선임교(선임교, '일곱 선녀의 다리')**는 순환 코스 중간에 협곡을 가로지르며, 양쪽 청동 부조 패널에는 **일곱 선녀가 하늘을 나는 모습 전체**가 묘사되어 창건 전설을 건축적으로 구현하고 있습니다. 주변 숲은 **뻐꾹나리(***Tricyrtis macropoda***)**와 멸종 위기종인 **제주고사리삼(Mankyua chejuense)**(제주 고유종, IUCN 위급 등급)을 포함한 **희귀 식물 서식지**입니다. 순환 코스 길이: **0.8km, 도보 약 30분**, 가파른 계단 구간 다수 포함. 입장료: **성인 2,500원 / 청소년 1,350원 / 7세 이하 + 65세 이상 무료**. 천제연은 또한 **'영주십경(영주십경, 제주의 10대 절경)'** 이라는 조선 시대 문인의 정전에 포함되어 있으며 — 한라산 정상, 성산 일출봉, 정방폭포와 함께 — 오늘날의 남서부 순환 코스 하루에 **10경 중 2경(한라산 + 천제연)**을 감상할 수 있음을 뜻합니다. 격년으로 열리는 **제주 칠선녀(일곱 선녀) 축제**는 5월(홀수 해)에 다리에서 개최되며, 전통 무용과 음악 공연으로 하강 전설을 재현합니다 — 축제가 투어 날짜와 겹칠 경우 예약이 필요합니다. 운영 시간 **연중 09:00~18:00** (마지막 입장 17:30).",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+      "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "highlights": [
         "**천연기념물 제378호(1993년 지정)** — 3단 폭포 + 희귀 식물 서식지",
         "이름 **'천제연' = '옥황상제의 연못'** — 조선 도교 전설",
@@ -477,7 +719,52 @@
         "photo": "전망대에서 바라본 제2폭포가 상징적인 30m 폭포 촬영 명소; 일곱 선녀가 새겨진 선임교도 인상적임",
         "facilities": "입구에 작은 기념품 가게와 카페 있음",
         "tip": "제1폭포는 폭우 후를 제외하고는 물이 흐르지 않으므로 당황하지 마세요; 3단 폭포를 모두 보려면 1.5~2시간을 여유 있게 잡으세요; 천제연 폭포와 천지연 폭포(서귀포에 있는 별개의 폭포)를 혼동하지 마세요"
-      }
+      },
+      "images": [
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "location": "천제연폭포 (신들의 연못)",
+          "caption": "천제연폭포 (신들의 연못) — photo 1",
+          "alt": "천제연폭포 (신들의 연못) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "location": "천제연폭포 (신들의 연못)",
+          "caption": "천제연폭포 (신들의 연못) — photo 2",
+          "alt": "천제연폭포 (신들의 연못) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "location": "천제연폭포 (신들의 연못)",
+          "caption": "천제연폭포 (신들의 연못) — photo 3",
+          "alt": "천제연폭포 (신들의 연못) — gallery image 3"
+        }
+      ]
     },
     {
       "number": 7,
@@ -486,7 +773,7 @@
       "name": "오설록 티 뮤지엄 + 녹차밭",
       "category": "차 문화 박물관 — 한국 최대 녹차밭 (서광다원)",
       "description": "**오설록 티 뮤지엄(오설록 티 뮤지엄, '오설록'은 '눈과의 만남 + 초록'을 의미)**은 한국 최대 뷰티 기업인 **아모레퍼시픽**의 차 문화 대표 브랜드입니다. 창업자 **서성환 회장이 1979년 직접 이 프로젝트를 개척**하여, 한국에서 녹차를 상업적으로 재배할 수 없다는 통념을 깨고 제주 서광 고원의 화산재 농지를 개간했습니다. 오늘날 **서광다원**은 **한국 최대의 녹차밭**으로, 아모레퍼시픽의 제주 3개 다원에서 **연간 약 700톤**을 생산합니다. 박물관 건물은 **2001년 다원 중심부에 개관**했으며, 녹차 밭 사이에 자리 잡은 녹색 지붕의 미니멀리스트 파빌리온 디자인으로 **designboom 10대 미술관**에 선정되었습니다. **무료 입장**, 매일 **09:00~18:00**, 연간 약 **200만 명** 방문. 방문은 크게 세 부분으로 나뉩니다: **(1) 박물관 내부** — 차 생산 과정, 당나라(618~907년)부터 이어지는 고대 다기 컬렉션, 다원 전경을 감상할 수 있는 옥상 전망대; **(2) 티하우스 카페** — 당해 찻잎 수확분으로 만든 시그니처 **녹차 롤케이크(오설록 롤케이크)**와 **녹차 아이스크림** 제공; **(3) 다원 산책로** — 자갈이 깔린 차나무 줄 사이의 산책로, 서쪽 끝에서 석양 사진 명소로 인기. **이니스프리 제주 하우스**(아모레퍼시픽의 자연 화장품 브랜드)는 **도보 5분 거리**에 있어 브랜드 생태계에 관심 있는 방문객에게 추천 — 무료 입장, 귤 비누 만들기 체험(15,000원) 선택 가능. 한국 건축가 **매스스터디스(조민석)**가 설계한 박물관 건물은 의도적으로 낮은 수평 형태를 취해 농업 경관과 경쟁하는 대신 차나무 줄의 기하학적 형태를 반영합니다 — 이러한 건축적 겸손함으로 designboom 상위 10위에 선정되었으며, 한국 현대 박물관 설계의 사례 연구로 지속적으로 활용되고 있습니다. 선택 프로그램: **오설록 티 클래스(1인 30,000원, 60분, 사전 예약 필수)** — 한국 도자기를 활용한 우리기 기술 시연이 포함된 가이드 티 플라이트 테이스팅, 매일 **10:00~16:00** 운영, 수요일·토요일 세션은 영어 강의 제공.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+      "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "highlights": [
         "**아모레퍼시픽** 플래그십 — 한국 최대 뷰티 기업; 창업자 서성환이 **1979년** 제주 차(茶) 사업을 개척",
         "**서광다원 = 한국 최대 녹차밭**; 연간 생산량 약 700톤",
@@ -532,7 +819,169 @@
         "photo": "찻잔 모양 뮤지엄 건물과 어우러진 차밭; 야외 좌석 공간; 벚꽃 절정 시즌(봄·가을 중간 시즌)",
         "facilities": "카페 (강추: 녹차 아이스크림), 기프트숍, 바로 옆 이니스프리 제주하우스, 다원을 내려다보는 전망 데크",
         "tip": "투어 버스 혼잡 시간대 전인 10:30 이전 도착 권장; 카페 이용 및 차밭 산책 포함 약 1.5–2시간 여유"
-      }
+      },
+      "images": [
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "location": "오설록 티 뮤지엄 + 녹차밭",
+          "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 1",
+          "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "location": "오설록 티 뮤지엄 + 녹차밭",
+          "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 2",
+          "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "location": "오설록 티 뮤지엄 + 녹차밭",
+          "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 3",
+          "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "location": "오설록 티 뮤지엄 + 녹차밭",
+          "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 4",
+          "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "location": "오설록 티 뮤지엄 + 녹차밭",
+          "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 5",
+          "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "location": "오설록 티 뮤지엄 + 녹차밭",
+          "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 6",
+          "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "location": "오설록 티 뮤지엄 + 녹차밭",
+          "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 7",
+          "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "location": "오설록 티 뮤지엄 + 녹차밭",
+          "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 8",
+          "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "location": "오설록 티 뮤지엄 + 녹차밭",
+          "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 9",
+          "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "location": "오설록 티 뮤지엄 + 녹차밭",
+          "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 10",
+          "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "location": "오설록 티 뮤지엄 + 녹차밭",
+          "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 11",
+          "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "location": "오설록 티 뮤지엄 + 녹차밭",
+          "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 12",
+          "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 12"
+        }
+      ]
     },
     {
       "number": 8,
@@ -541,7 +990,7 @@
       "name": "협재 해수욕장 + 서쪽 해안 카페 거리",
       "category": "서해안 일몰 해변 — 쌍둥이 해변 + 비양도 파노라마",
       "description": "**협재 해수욕장(협재 해수욕장)**은 **제주 서해안 Top 3 해변** 중 하나이자 제주도 전체 **Top 10 해변**에 드는 곳으로, **은빛 흰모래**가 특징입니다 — 이 모래는 **부서진 조개껍데기 + 산호 조각 + 고운 모래가 혼합**되어 형성된 것으로, 한반도에서 보기 드문 빛나는 광택을 냅니다. 해변은 **남쪽의 쌍둥이 해변인 금능 해수욕장(바로 이웃하며 같은 해안선을 따라 도보 이동 가능, 인파 적음)**과 함께 **9km 해안선**을 이룹니다 — 이 두 해변의 조합은 이 카탈로그에서 손꼽히는 사진 명소입니다. 대표 뷰는 **비양도(비양도)** — **약 200명의 상주 주민이 사는 해안에서 1.2km 거리의 화산섬**으로, **한림항에서 20분 소요 페리**로 이동 가능합니다. 비양도는 현재 **국내 최초 탄소 없는 섬 인증 과정**을 밟고 있는 환경 정책 시범 사례입니다. 해변의 **에메랄드빛 청록색 바다**는 얕은 산호 모래 해저에서 비롯되며, **썰물 때 조수웅덩이에서 집게게·소형 새우·치어**를 관찰할 수 있습니다 — 비양도가 마치 걸어갈 수 있을 것처럼 가깝게 느껴지기도 합니다. 해변 뒤편의 **솔숲(송림)**은 무료 캠핑장과 그늘진 산책로를 제공합니다. 모래언덕 뒤로는 국내 관광객을 위한 카페·식당·부티크가 밀집한 제주 최대 규모의 **서해안 카페 거리**가 이어집니다. **비양도 너머로 에메랄드빛 바다에 지는 일몰**은 이 해변의 시각적 상징이자 이 카탈로그 최고의 서해안 일몰 프레임입니다. **무료 입장**; **7월 1일–8월 31일 해수욕 기간 안전요원 배치**; 해변 여러 지점에 **경사로형 휠체어 접근 시설** 구비; 연중 공용 화장실·탈의실·샤워실·장비 대여 운영. 인근 **한림공원** (식물원 + 용암동굴 + 민속촌, 별도 입장료 ₩10,000, 1.5km 거리)은 겨울철 대체 코스로 활용되기도 합니다.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+      "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
       "highlights": [
         "**제주 서해안 Top 3 / 전체 Top 10** 해변 — 에메랄드빛 청록색 바다 + 은빛 모래",
         "**독특한 은빛 흰모래** — 부서진 조개껍데기 + 산호 조각 혼합",
@@ -587,7 +1036,52 @@
         "photo": "비양도 실루엣과 함께하는 일몰 촬영; 청록빛은 한낮 직사광선 아래에서 가장 선명함",
         "facilities": "해변을 따라 카페 다수; 편의점",
         "tip": "한림공원과 연계(도보 5분); 혼잡 피하려면 여름 주말 방문 자제"
-      }
+      },
+      "images": [
+        "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+        "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+        "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+          "location": "협재 해수욕장 + 서쪽 해안 카페 거리",
+          "caption": "협재 해수욕장 + 서쪽 해안 카페 거리 — photo 1",
+          "alt": "협재 해수욕장 + 서쪽 해안 카페 거리 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+          "location": "협재 해수욕장 + 서쪽 해안 카페 거리",
+          "caption": "협재 해수욕장 + 서쪽 해안 카페 거리 — photo 2",
+          "alt": "협재 해수욕장 + 서쪽 해안 카페 거리 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+          "location": "협재 해수욕장 + 서쪽 해안 카페 거리",
+          "caption": "협재 해수욕장 + 서쪽 해안 카페 거리 — photo 3",
+          "alt": "협재 해수욕장 + 서쪽 해안 카페 거리 — gallery image 3"
+        }
+      ]
     },
     {
       "number": 9,
@@ -1453,8 +1947,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "1100 고지 습지에서 주상절리까지, 차밭에서 바닷가 카페까지 —",
-        "headlineLine2": "제주 서부와 남부를 하루에, 여유롭고 알차게",
+        "headlineLine1": "제주 서·남부 정통 일일 투어",
+        "headlineLine2": "투어",
         "hero": {
           "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
           "imagePosition": "center 35%",
@@ -1638,7 +2132,7 @@
             "name": "한라산 1100고지 습지 (유네스코)",
             "category": "유네스코 습지",
             "description": "해발 1,100m에 위치한 한라산의 가장 높은 접근 가능 지점 중 하나입니다. 이 습지는 람사르 협약 지정 습지이며 한라산 유네스코 생물권 보전지역의 일부입니다. 목재 데크 산책로(약 1km, 평탄)가 설치되어 있어 본격적인 등산 없이도 고지대 생태계를 걸어볼 수 있습니다. 1100도로를 따라 올라가는 드라이브 코스 자체도 경관이 뛰어나며, 폭설이나 도로 통제 시 경로가 변경될 수 있습니다.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "highlights": [
               "해발 1,100m",
               "람사르 협약 지정 습지",
@@ -1674,16 +2168,49 @@
               "note": "Operational details based on national park info"
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-              "https://images.unsplash.com/photo-1672306145001-a9a193ed5573?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1579677475701-5c1cc28581ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1732446402420-36f8e1a31ca9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1648467179706-bb1617dddb81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1635252273211-d0d5fb502c8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1676377962839-8fb92dfa4fd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1615129718947-5de7ddb45143?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1634641683828-73bd90bd9503?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1621844143414-f1d0bb21702e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+                "location": "한라산 1100고지 습지 (유네스코)",
+                "caption": "한라산 1100고지 습지 (유네스코) — photo 1",
+                "alt": "한라산 1100고지 습지 (유네스코) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+                "location": "한라산 1100고지 습지 (유네스코)",
+                "caption": "한라산 1100고지 습지 (유네스코) — photo 2",
+                "alt": "한라산 1100고지 습지 (유네스코) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "location": "한라산 1100고지 습지 (유네스코)",
+                "caption": "한라산 1100고지 습지 (유네스코) — photo 3",
+                "alt": "한라산 1100고지 습지 (유네스코) — gallery image 3"
+              }
             ]
           },
           {
@@ -1693,7 +2220,7 @@
             "name": "주상절리대 (유네스코 세계지질공원)",
             "category": "유네스코 세계지질공원 절벽",
             "description": "제주 남해안을 따라 펼쳐진 육각형 주상절리 절벽으로, 한라산의 용암류가 바다와 접촉하며 급격히 냉각되어 형성되었습니다. 기하학적인 절벽은 한국에서 가장 많이 사진에 담기는 해안 경관 중 하나이며, 제주 유네스코 세계지질공원의 일부입니다. 난간이 설치된 데크 산책로로 구성되어 있으며, 파도 물보라를 감상할 수 있는 평탄한 코스입니다.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
             "highlights": [
               "육각형 용암 기둥",
               "유네스코 세계지질공원",
@@ -1731,16 +2258,62 @@
               "verified_date": "2026-04-27"
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-              "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1772268354899-1f3bf5014b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1739932413542-dc2597d7d764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "location": "주상절리대 (유네스코 세계지질공원)",
+                "caption": "주상절리대 (유네스코 세계지질공원) — photo 1",
+                "alt": "주상절리대 (유네스코 세계지질공원) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "location": "주상절리대 (유네스코 세계지질공원)",
+                "caption": "주상절리대 (유네스코 세계지질공원) — photo 2",
+                "alt": "주상절리대 (유네스코 세계지질공원) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "location": "주상절리대 (유네스코 세계지질공원)",
+                "caption": "주상절리대 (유네스코 세계지질공원) — photo 3",
+                "alt": "주상절리대 (유네스코 세계지질공원) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "location": "주상절리대 (유네스코 세계지질공원)",
+                "caption": "주상절리대 (유네스코 세계지질공원) — photo 4",
+                "alt": "주상절리대 (유네스코 세계지질공원) — gallery image 4"
+              }
             ]
           },
           {
@@ -1822,7 +2395,7 @@
             "name": "천제연 폭포 (신들의 연못)",
             "category": "폭포",
             "description": "화산 계곡의 울창한 숲속에 자리한 3단 폭포로, 현지에서는 '신들의 연못'이라 불립니다. 전설에 따르면 하늘에서 일곱 선녀가 내려와 상단 연못에서 목욕을 즐겼다고 합니다. 협곡 위에 놓인 선임교(仙臨橋)는 일곱 선녀의 조각으로 장식되어 있습니다.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
             "highlights": [
               "3단 폭포",
               "일곱 선녀 전설",
@@ -1860,7 +2433,52 @@
                 "World-of-Waterfalls"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "location": "천제연 폭포 (신들의 연못)",
+                "caption": "천제연 폭포 (신들의 연못) — photo 1",
+                "alt": "천제연 폭포 (신들의 연못) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "location": "천제연 폭포 (신들의 연못)",
+                "caption": "천제연 폭포 (신들의 연못) — photo 2",
+                "alt": "천제연 폭포 (신들의 연못) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "location": "천제연 폭포 (신들의 연못)",
+                "caption": "천제연 폭포 (신들의 연못) — photo 3",
+                "alt": "천제연 폭포 (신들의 연못) — gallery image 3"
+              }
+            ]
           },
           {
             "number": 7,
@@ -1869,7 +2487,7 @@
             "name": "오설록 티 뮤지엄 + 녹차밭",
             "category": "차 문화 박물관",
             "description": "1979년에 설립된 제주의 대표적인 녹차 농원입니다. 박물관에서는 한국의 차 문화를 살펴볼 수 있으며, 주변 녹차밭은 인생 사진 명소로 유명합니다. 입장료는 무료이며, 원내 카페에서는 녹차 아이스크림, 차 잎 케이크, 말차 라테를 즐길 수 있습니다",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
             "highlights": [
               "한국 차 문화 박물관",
               "녹차밭 포토 스폿",
@@ -1906,7 +2524,169 @@
                 ""
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "location": "오설록 티 뮤지엄 + 녹차밭",
+                "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 1",
+                "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "location": "오설록 티 뮤지엄 + 녹차밭",
+                "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 2",
+                "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "location": "오설록 티 뮤지엄 + 녹차밭",
+                "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 3",
+                "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "location": "오설록 티 뮤지엄 + 녹차밭",
+                "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 4",
+                "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "location": "오설록 티 뮤지엄 + 녹차밭",
+                "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 5",
+                "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "location": "오설록 티 뮤지엄 + 녹차밭",
+                "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 6",
+                "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "location": "오설록 티 뮤지엄 + 녹차밭",
+                "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 7",
+                "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "location": "오설록 티 뮤지엄 + 녹차밭",
+                "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 8",
+                "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "location": "오설록 티 뮤지엄 + 녹차밭",
+                "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 9",
+                "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "location": "오설록 티 뮤지엄 + 녹차밭",
+                "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 10",
+                "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "location": "오설록 티 뮤지엄 + 녹차밭",
+                "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 11",
+                "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 11"
+              },
+              {
+                "id": 12,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "location": "오설록 티 뮤지엄 + 녹차밭",
+                "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 12",
+                "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 12"
+              }
+            ]
           },
           {
             "number": 8,
@@ -1915,7 +2695,7 @@
             "name": "협재해수욕장 + 서쪽 해안 카페 거리",
             "category": "백사장 해변",
             "description": "이번 코스의 마지막 코스이자 '카페 감성'을 만끽할 수 있는 하이라이트 장소입니다. 협재해수욕장은 제주에서 가장 많이 사진 찍히는 백사장 해변 중 하나로, 바다 너머 비양도의 풍경이 한눈에 펼쳐집니다. 인접한 카페 거리는 협재 또는 금능 카페 지구로 불리며 제주에서 가장 사랑받는 해안 카페 클러스터 중 하나입니다. 제주시로 돌아가기 전, 석양을 바라보며 커피 한 잔이나 아이스크림을 즐기는 자유 시간이 주어집니다",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "highlights": [
               "백사장 해변 + 비양도 전망",
               "서쪽 해안 카페 거리",
@@ -1949,7 +2729,52 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated visitor info"
-            }
+            },
+            "images": [
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+                "location": "협재해수욕장 + 서쪽 해안 카페 거리",
+                "caption": "협재해수욕장 + 서쪽 해안 카페 거리 — photo 1",
+                "alt": "협재해수욕장 + 서쪽 해안 카페 거리 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+                "location": "협재해수욕장 + 서쪽 해안 카페 거리",
+                "caption": "협재해수욕장 + 서쪽 해안 카페 거리 — photo 2",
+                "alt": "협재해수욕장 + 서쪽 해안 카페 거리 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+                "location": "협재해수욕장 + 서쪽 해안 카페 거리",
+                "caption": "협재해수욕장 + 서쪽 해안 카페 거리 — photo 3",
+                "alt": "협재해수욕장 + 서쪽 해안 카페 거리 — gallery image 3"
+              }
+            ]
           },
           {
             "number": 9,

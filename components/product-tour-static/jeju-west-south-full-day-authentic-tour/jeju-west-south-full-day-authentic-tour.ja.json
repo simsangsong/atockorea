@@ -14,12 +14,12 @@
       "協財海岸ツアー",
       "済州島カフェエリアツアー"
     ],
-    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "title": "済州島西部・南部 本格日帰りツアー | AtoC Korea"
   },
   "catalog_card": {
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-    "title": "済州島西部・南部 本格日帰りツアー",
+    "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "title": "済州西南部・オーセンティック日帰り",
     "priceLabel": "",
     "shortCardDescription": "済州島の西海岸と南海岸を一度に巡る少人数日帰りツアー。漢拏山1100高地湿地（ユネスコ）、六角形の柱状節理帯、松岳山のパノラマ展望台、天帝淵滝、オソルロックティーミュージアム、そして西海岸の協財海岸カフェエリアをご案内します。南部ユネスコツアーと同じ運営会社ですが、よりライフスタイル志向のコンセプトで構成——「火山の景観とドラマティックな海岸線、トレンディな海辺カフェが融合する」旅をお届けします。",
     "tags": [
@@ -45,10 +45,10 @@
       "カフェ文化",
       "海岸"
     ],
-    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp"
+    "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp"
   },
-  "headlineLine1": "1100湿地から柱状節理帯へ、茶畑から海辺のカフェへ——",
-  "headlineLine2": "済州島の西部と南部を、ゆったりとしたペースで本格的に巡る1日",
+  "headlineLine1": "済州西南部・オーセンティック日帰り",
+  "headlineLine2": "ツアー",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -58,7 +58,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+    "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "imagePosition": "center 35%",
     "tagline": "火山の景観と壮大な海岸線、トレンディな海辺カフェが融合——済州島西部・南部を、理想的なルートで体験",
     "pills": [
@@ -135,49 +135,220 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
       "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-      "alt": "低木が広がる1100高地湿原を横断する木製遊歩道のループ、遠くに漢拏山の稜線が望める",
-      "caption": "漢拏山1100高地湿原 — ユネスコ生物圏保護区の遊歩道",
-      "location": "漢拏山1100湿原、済州中央部（標高1,100m）",
-      "atmosphere": "涼やかな高原の空気；静かな遊歩道ループを備えたユネスコ保護の山岳生態系"
+      "location": "ピックアップ（済州市内4カ所）",
+      "alt": "ピックアップ（済州市内4カ所） — on-route photo",
+      "caption": "ピックアップ（済州市内4カ所）"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-      "alt": "柵付き遊歩道から望む、海から垂直にそびえる六角形の柱状溶岩の断崖",
-      "caption": "柱状節理帯 — ユネスコジオパークの六角柱状岩",
-      "location": "柱状節理帯、中文海岸、済州南部",
-      "atmosphere": "波が打ち寄せる玄武岩の断崖；済州で最も写真に収められる海岸スポットの一つ"
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+      "location": "한라산1100高地湿地（ラムサール条約＋ユネスコ）",
+      "alt": "한라산1100高地湿地（ラムサール条約＋ユネスコ） — gallery image 1",
+      "caption": "한라산1100高地湿地（ラムサール条約＋ユネスコ） — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
-      "alt": "平坦な頂上のリムトレイルを持つ海岸の火山丘、背後に海と沖合の島々が望める",
-      "caption": "松岳山の稜線 — 南海岸のパノラマループ",
-      "location": "松岳山、済州南西端",
-      "atmosphere": "広大な沿岸草原；内陸に漢拏山、沖合に馬羅島を望む360°パノラマウォーク"
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "柱状節理帯（ユネスコ・ジオパーク）",
+      "alt": "柱状節理帯（ユネスコ・ジオパーク） — gallery image 1",
+      "caption": "柱状節理帯（ユネスコ・ジオパーク） — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
-      "alt": "低い博物館の建物まで整然と続く、起伏のある緑の茶畑",
-      "caption": "オソルロク茶博物館と茶畑",
-      "location": "オソルロク、済州中西部",
-      "atmosphere": "韓国最大の見学可能な茶園；博物館＋カフェ＋写真映えする茶畑"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
+      "location": "ランチ — 大静／安徳 ローカル",
+      "alt": "ランチ — 大静／安徳 ローカル — on-route photo",
+      "caption": "ランチ — 大静／安徳 ローカル"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
-      "alt": "エメラルドブルーの海と白砂のビーチ、海岸沿いに並ぶカフェ街の建物、沖合に小さな島が見える",
-      "caption": "협재海水浴場（ヒョプジェビーチ）＋西海岸カフェストリート",
-      "location": "협재海水浴場、翰林（ハルリム）、済州島西部",
-      "atmosphere": "夕暮れ時のカフェストリート最終立ち寄りスポット；沖合に飛揚島（ビヤンド）が見える"
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "チョンジェヨン滝（神の池）",
+      "alt": "チョンジェヨン滝（神の池） — gallery image 1",
+      "caption": "チョンジェヨン滝（神の池） — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+      "location": "オソルロク・ティーミュージアム＋緑茶畑",
+      "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 1",
+      "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 1"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+      "location": "ヒョプチェビーチ＋西海岸カフェ通り",
+      "alt": "ヒョプチェビーチ＋西海岸カフェ通り — gallery image 1",
+      "caption": "ヒョプチェビーチ＋西海岸カフェ通り — photo 1"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+      "location": "한라산1100高地湿地（ラムサール条約＋ユネスコ）",
+      "alt": "한라산1100高地湿地（ラムサール条約＋ユネスコ） — gallery image 2",
+      "caption": "한라산1100高地湿地（ラムサール条約＋ユネスコ） — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+      "location": "한라산1100高地湿地（ラムサール条約＋ユネスコ）",
+      "alt": "한라산1100高地湿地（ラムサール条約＋ユネスコ） — gallery image 3",
+      "caption": "한라산1100高地湿地（ラムサール条約＋ユネスコ） — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "柱状節理帯（ユネスコ・ジオパーク）",
+      "alt": "柱状節理帯（ユネスコ・ジオパーク） — gallery image 2",
+      "caption": "柱状節理帯（ユネスコ・ジオパーク） — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "柱状節理帯（ユネスコ・ジオパーク）",
+      "alt": "柱状節理帯（ユネスコ・ジオパーク） — gallery image 3",
+      "caption": "柱状節理帯（ユネスコ・ジオパーク） — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "柱状節理帯（ユネスコ・ジオパーク）",
+      "alt": "柱状節理帯（ユネスコ・ジオパーク） — gallery image 4",
+      "caption": "柱状節理帯（ユネスコ・ジオパーク） — photo 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "location": "チョンジェヨン滝（神の池）",
+      "alt": "チョンジェヨン滝（神の池） — gallery image 2",
+      "caption": "チョンジェヨン滝（神の池） — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+      "location": "チョンジェヨン滝（神の池）",
+      "alt": "チョンジェヨン滝（神の池） — gallery image 3",
+      "caption": "チョンジェヨン滝（神の池） — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+      "location": "オソルロク・ティーミュージアム＋緑茶畑",
+      "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 2",
+      "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 2"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+      "location": "オソルロク・ティーミュージアム＋緑茶畑",
+      "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 3",
+      "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 3"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+      "location": "オソルロク・ティーミュージアム＋緑茶畑",
+      "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 4",
+      "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 4"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+      "location": "オソルロク・ティーミュージアム＋緑茶畑",
+      "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 5",
+      "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 5"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+      "location": "オソルロク・ティーミュージアム＋緑茶畑",
+      "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 6",
+      "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 6"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+      "location": "オソルロク・ティーミュージアム＋緑茶畑",
+      "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 7",
+      "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 7"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+      "location": "オソルロク・ティーミュージアム＋緑茶畑",
+      "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 8",
+      "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 8"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+      "location": "オソルロク・ティーミュージアム＋緑茶畑",
+      "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 9",
+      "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 9"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+      "location": "オソルロク・ティーミュージアム＋緑茶畑",
+      "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 10",
+      "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 10"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+      "location": "オソルロク・ティーミュージアム＋緑茶畑",
+      "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 11",
+      "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 11"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+      "location": "オソルロク・ティーミュージアム＋緑茶畑",
+      "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 12",
+      "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 12"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+      "location": "ヒョプチェビーチ＋西海岸カフェ通り",
+      "alt": "ヒョプチェビーチ＋西海岸カフェ通り — gallery image 2",
+      "caption": "ヒョプチェビーチ＋西海岸カフェ通り — photo 2"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+      "location": "ヒョプチェビーチ＋西海岸カフェ通り",
+      "alt": "ヒョプチェビーチ＋西海岸カフェ通り — gallery image 3",
+      "caption": "ヒョプチェビーチ＋西海岸カフェ通り — photo 3"
     }
   ],
   "itineraryStops": [
@@ -216,7 +387,7 @@
       "name": "한라산1100高地湿地（ラムサール条約＋ユネスコ）",
       "category": "高山湿地 — ラムサール条約登録地＋한라산ユネスコ世界遺産内",
       "description": "**한라산1100高地湿地（한라산 1100고지 습지）**は、한라산高原上に広がる高標高の高山湿地システムで、済州市と西帰浦・中文を結ぶ**韓国最高標高の国道Route 1100**沿い、**海抜ちょうど1,100m**に位置しています。この地は**ラムサール国際重要湿地（登録番号第1893号、2009年10月12日指定）**であり、**한라산ユネスコ世界遺産（2007年）**、**済州島ユネスコ生物圏保護区（2002年）**、**한라산国立公園（1970年）**の範囲内に含まれています — 世界でも**国際・国内4つの指定が重なる**数少ない地点のひとつです。湿地は、雨水を捕捉・保持する緩傾斜の高原部に広がる**16カ所以上の不連続な淡水湿地と池**で構成され、**小規模な恒久的湖沼と泥炭湿地**を形成し、済州固有種を多く含む多様な植生を支えています。記録された生物多様性には**韓国内の絶滅危惧鳥類3種と絶滅危惧植物1種**のほか、済州島固有の哺乳類・爬虫類・昆虫類が含まれます。2008年には**90万人が来訪**しています（한라산ビジターセンターデータ）。来訪体験：展望デッキ・解説案内板・トレイルヘッドの小規模自然史展示を備えた**木製遊歩道1kmのループコース**。**紅葉シーズン（10〜11月）**と**冬の雪景色（12〜2月）**が最も多く撮影される季節であり、**春・夏**は湿地植生と固有種の観察に適しています。**入場無料**；隣接する**1100休憩所（1100 휴게소）**には屋内トイレ・カフェ・小規模土産店があります。**地域社会における文化的・宗教的重要性**はラムサール登録に記録されており、山の水の精霊にまつわる歴史的なシャーマン巡礼の地でもあります。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
       "highlights": [
         "**ラムサール登録番号第1893号**（2009年10月12日指定）— 国際重要湿地",
         "**海抜1,100m** — 韓国の**最高標高国道**（Route 1100）沿い",
@@ -263,16 +434,49 @@
         "tip": "重ね着をご用意ください――沿岸部の済州より5〜10℃低い；冬季は道路状況を事前確認；南下する場合は天帝淵滝とのセット観光がおすすめ"
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-        "https://images.unsplash.com/photo-1672306145001-a9a193ed5573?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1579677475701-5c1cc28581ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1732446402420-36f8e1a31ca9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1648467179706-bb1617dddb81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1635252273211-d0d5fb502c8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1676377962839-8fb92dfa4fd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1615129718947-5de7ddb45143?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1634641683828-73bd90bd9503?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1621844143414-f1d0bb21702e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+          "location": "한라산1100高地湿地（ラムサール条約＋ユネスコ）",
+          "caption": "한라산1100高地湿地（ラムサール条約＋ユネスコ） — photo 1",
+          "alt": "한라산1100高地湿地（ラムサール条約＋ユネスコ） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+          "location": "한라산1100高地湿地（ラムサール条約＋ユネスコ）",
+          "caption": "한라산1100高地湿地（ラムサール条約＋ユネスコ） — photo 2",
+          "alt": "한라산1100高地湿地（ラムサール条約＋ユネスコ） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+          "location": "한라산1100高地湿地（ラムサール条約＋ユネスコ）",
+          "caption": "한라산1100高地湿地（ラムサール条約＋ユネスコ） — photo 3",
+          "alt": "한라산1100高地湿地（ラムサール条約＋ユネスコ） — gallery image 3"
+        }
       ]
     },
     {
@@ -282,7 +486,7 @@
       "name": "柱状節理帯（ユネスコ・ジオパーク）",
       "category": "柱状節理 — 天然記念物第443号（2005年）",
       "description": "**テポ・チュサンジョルリ（대포 주상절리、「ジサッケ」）**は、中文海岸に広がる**六角柱状節理の玄武岩断崖が1kmにわたって続く**景観で、**2005年1月6日に天然記念物第443号**に指定されました。柱は海面から**30〜40m**の高さにそびえ、ぴったりと並んだ**5〜7角形（主に六角形）**が連なっています。この幾何学的形状は、**漢拏山の側面で噴出した溶岩（約25万〜14万年前）が海に達し、冷却による収縮で冷却面に垂直に亀裂が入る**ことで形成されました。世界的に柱状節理の名所といえば**ジャイアンツ・コーズウェー（英国）**・**デビルス・ポストパイル（米国）**・**フィンガルの洞窟（スコットランド）**が挙げられますが、チュサンジョルリは**東アジア最高峰の柱状節理地形**であり、最もアクセスしやすい場所です。800mの**遊歩道ループ**を歩けば欄干付きの断崖縁まで到達でき、**満潮時には波が柱に打ちつけ最大20mの飛沫が舞い上がる**こともあります。入場料：**大人₩2,000 / 青少年₩1,000 / 7歳未満・65歳以上は無料**。当サイトは**済州グローバルジオパーク（ユネスコ認定2010年10月）**の一部であり、城山日出峰・万丈窟溶岩洞窟・水月峰などとともに島内**13か所の公式ジオサイト**の一つです。断崖上のデッキは**バリアフリー**（車椅子・ベビーカー対応）。ループ沿い3か所の展望台からは異なる角度で柱を観賞できます：**第1展望台**では柱を横から望め（六角形の幾何学模様の撮影に最適）、**中間展望台**では柱の頂上を真上から見下ろすことができ、**奥の展望台**では晴れた日に漢拏山を背景にした1kmの海岸線を一望できます。**撮影のベストタイム：14:00〜16:00**（西日が柱の正面を照らす時間帯）；夕暮れ時はシルエット写真が撮れますが柱の質感は失われます。営業時間：**09:00〜18:00（最終入場17:30）**、年中無休。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "highlights": [
         "**天然記念物第443号** — **2005年1月6日**指定、済州沿岸部の天然記念物の中で最も新しい",
         "柱は海面から**30〜40m**の高さに立ち並び、**1km**の海岸線に沿って**5〜7角形（主に六角形）**が密集",
@@ -330,16 +534,62 @@
         "tip": "観光バスの混雑を避けるため午前11時前または午後4時以降に訪問；中文色達海岸（5分）と組み合わせてハーフデイに"
       },
       "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-        "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1772268354899-1f3bf5014b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1739932413542-dc2597d7d764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "location": "柱状節理帯（ユネスコ・ジオパーク）",
+          "caption": "柱状節理帯（ユネスコ・ジオパーク） — photo 1",
+          "alt": "柱状節理帯（ユネスコ・ジオパーク） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "location": "柱状節理帯（ユネスコ・ジオパーク）",
+          "caption": "柱状節理帯（ユネスコ・ジオパーク） — photo 2",
+          "alt": "柱状節理帯（ユネスコ・ジオパーク） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "location": "柱状節理帯（ユネスコ・ジオパーク）",
+          "caption": "柱状節理帯（ユネスコ・ジオパーク） — photo 3",
+          "alt": "柱状節理帯（ユネスコ・ジオパーク） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "location": "柱状節理帯（ユネスコ・ジオパーク）",
+          "caption": "柱状節理帯（ユネスコ・ジオパーク） — photo 4",
+          "alt": "柱状節理帯（ユネスコ・ジオパーク） — gallery image 4"
+        }
       ]
     },
     {
@@ -431,7 +681,7 @@
       "name": "チョンジェヨン滝（神の池）",
       "category": "三段の滝 ― 天然記念物第378号（1993年）",
       "description": "**天帝淵瀑布（천제연、「연＝池＋천제＝天の皇帝」）**は、中文（チュンムン）の火山性峡谷にある**三段の滝**で、稀少な生態系の組み合わせにより**天然記念物第378号（1993年）**に指定されています。その名は、**朝鮮時代の道教伝説に由来し、七人の天女（선녀、*seonnyeo*）が毎夜天から降り立ち、上の池で水浴びをしたという神話**に基づいており、絶えず霧が漂うこの場所の微気候がその伝説をさらに際立たせています。**第1段（落差22m・水深21mの池）**は円形の玄武岩の窪みへ落ち込み、大雨の後にのみ流れます――普段は上の池が静かに鏡のように光を反射しています。**第2段（落差30m）は年間を通じて流れ**、最も人気の高い撮影スポットです。第3段は海への最後の落下を果たします。**全長120m・高さ78mの仙臨橋（선임교、「七仙女の橋」）**がループの中間で峡谷を渡り――両側のブロンズレリーフパネルには**七人の天女が飛翔する姿**が彫られており、創建伝説を建築として体現しています。周囲の森は**希少植物の生息地**で、**ヤマホトトギス（*Tricyrtis macropoda*）**や絶滅危惧種の**マンキュア・チェジュエンスシダ（*Mankyua chejuense*）**（済州固有種、IUCNの絶滅危惧IA類）が自生しています。ループ全長：**0.8km・約30分の歩行**（急な階段区間あり）。入場料：**大人₩2,500／青少年₩1,350／7歳未満・65歳以上無料**。天帝淵はまた、漢拏山山頂・城山日出・正房瀑布と並ぶ**「瀛洲十景（영주십경、済州の十大絶景）」**という朝鮮時代の文人の定番にも名を連ねており、今日の南西ループでは**1日で10景のうち2景（漢拏山＋天帝淵）**を巡ることができます。隔年5月（奇数年）に橋で開催される**「済州七仙女フェスティバル（Jeju Chilseonyeo Festival）」**では、伝統舞踊と音楽演奏で天女の降臨伝説が再現されます――ツアー日程とフェスティバルが重なる場合は要予約。営業時間：**年間を通じて09:00〜18:00**（最終入場17:30）。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+      "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "highlights": [
         "**天然記念物第378号（1993年指定）** ― 三段の滝＋希少植物の生息地",
         "名称**「天帝淵」＝「天の皇帝の池」** ― 朝鮮時代の道教伝説",
@@ -477,7 +727,52 @@
         "photo": "展望台からの第2段が定番の30m滝の撮影スポット；七仙女が描かれた仙臨橋も見どころ",
         "facilities": "入口付近に小さな土産物店とカフェあり",
         "tip": "第1段は大雨後を除いて流れていない――流れていなくても驚かないこと；3段すべてを見るには1.5〜2時間を見込むこと；天池淵瀑布（チョンジヨン、西帰浦市内の別の滝）と絶対に混同しないこと"
-      }
+      },
+      "images": [
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "location": "チョンジェヨン滝（神の池）",
+          "caption": "チョンジェヨン滝（神の池） — photo 1",
+          "alt": "チョンジェヨン滝（神の池） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "location": "チョンジェヨン滝（神の池）",
+          "caption": "チョンジェヨン滝（神の池） — photo 2",
+          "alt": "チョンジェヨン滝（神の池） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "location": "チョンジェヨン滝（神の池）",
+          "caption": "チョンジェヨン滝（神の池） — photo 3",
+          "alt": "チョンジェヨン滝（神の池） — gallery image 3"
+        }
+      ]
     },
     {
       "number": 7,
@@ -486,7 +781,7 @@
       "name": "オソルロク・ティーミュージアム＋緑茶畑",
       "category": "茶文化遺産ミュージアム ― 韓国最大の緑茶畑（西光茶園）",
       "description": "**オソルロク・ティーミュージアム（오설록 티 뮤지엄、「오설록」は「雪と緑の出会い」を意味する）**は、韓国最大の美容企業**アモーレパシフィック（Amorepacific）**の茶文化フラッグシップ施設です。創業者の**徐成煥（ソ・ソンファン）が1979年に自ら先駆けてこのプロジェクトを立ち上げ**、韓国では商業的なお茶栽培は不可能という常識を覆し、済州の西光高原の火山灰農地を開墾しました。今日、**西光茶園（서광다원）**は**韓国最大の緑茶畑**となり、アモーレパシフィックの済州3カ所の農園で**年間約700トン**を生産しています。ミュージアムの建物は**2001年に農園の中心部でオープン**し、茶畑の列の中に建つミニマリストな緑の屋根のパビリオンデザインで**designboomのアートミュージアムTop 10**に選ばれました。**入場無料**、毎日**09:00〜18:00**、**年間約200万人**が来場します。見学は自然に3つのセクションに分かれます：**（1）ミュージアム内部** ― お茶の製造工程、唐代（618〜907年）以降の古い茶器コレクション、農園を一望する屋上展望台；**（2）ティーハウスカフェ** ― その年に収穫した茶葉から作られる**緑茶ロールケーキ（오설록 롤케이크）**と**緑茶アイスクリーム**；**（3）農園の散策路** ― 茶の木の列の間の砂利道で、西端での夕焼け撮影に人気。**イニスフリー済州ハウス**（アモーレパシフィックの自然派コスメブランド）は**徒歩5分**の場所にあり、ブランドエコシステム全体に関心のあるゲストは無料で入場できます（みかん石鹸DIYワークショップはオプション、₩15,000）。ミュージアムの建物は韓国の建築家**マス・スタディーズ（Mass Studies、趙敏錫）**が設計し、農業景観と競合するのではなく茶畑の列の幾何学を映す、意図的に低いプロフィールの水平フォームを採用しています――この建築的謙虚さが、designboom Top 10入りと韓国現代ミュージアムデザインのケーススタディとしての継続的な評価をもたらしています。オプションの追加体験：**オソルロク・ティークラス（1人₩30,000、60分、要事前予約）** ― 韓国の陶磁器を使った茶のフライトテイスティングと淹れ方のデモンストレーション、毎日**10:00〜16:00**（英語対応は水曜・土曜日のセッション）。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+      "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "highlights": [
         "**アモーレパシフィック**旗艦 — 韓国最大の美容企業；創業者の徐成煥（ソ・ソンファン）が**1979年**に済州茶を開拓",
         "**西光茶苑（ソグァンダウォン）＝韓国最大の緑茶畑**；年間生産量約700トン",
@@ -532,7 +827,169 @@
         "photo": "ティーカップ型のミュージアム建築と茶畑；屋外席エリア；桜はショルダーシーズンにピーク",
         "facilities": "カフェ（抹茶アイスクリームは必食）、ギフトショップ、隣接のイニスフリー済州ハウス、茶畑を見渡す展望デッキ",
         "tip": "観光バスの混雑を避けるため10:30前に到着；カフェと茶畑散策を含め1.5〜2時間を確保"
-      }
+      },
+      "images": [
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "location": "オソルロク・ティーミュージアム＋緑茶畑",
+          "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 1",
+          "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "location": "オソルロク・ティーミュージアム＋緑茶畑",
+          "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 2",
+          "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "location": "オソルロク・ティーミュージアム＋緑茶畑",
+          "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 3",
+          "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "location": "オソルロク・ティーミュージアム＋緑茶畑",
+          "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 4",
+          "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+          "location": "オソルロク・ティーミュージアム＋緑茶畑",
+          "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 5",
+          "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+          "location": "オソルロク・ティーミュージアム＋緑茶畑",
+          "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 6",
+          "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+          "location": "オソルロク・ティーミュージアム＋緑茶畑",
+          "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 7",
+          "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+          "location": "オソルロク・ティーミュージアム＋緑茶畑",
+          "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 8",
+          "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+          "location": "オソルロク・ティーミュージアム＋緑茶畑",
+          "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 9",
+          "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+          "location": "オソルロク・ティーミュージアム＋緑茶畑",
+          "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 10",
+          "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+          "location": "オソルロク・ティーミュージアム＋緑茶畑",
+          "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 11",
+          "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "location": "オソルロク・ティーミュージアム＋緑茶畑",
+          "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 12",
+          "alt": "オソルロク・ティーミュージアム＋緑茶畑 — gallery image 12"
+        }
+      ]
     },
     {
       "number": 8,
@@ -541,7 +998,7 @@
       "name": "ヒョプチェビーチ＋西海岸カフェ通り",
       "category": "西海岸サンセットビーチ — ツインビーチ＋飛揚島パノラマ",
       "description": "**ヒョプチェビーチ（협재 해수욕장）**は**済州西海岸トップ3ビーチ**のひとつで、島内全体でも**トップ10ビーチ**に広く数えられ、**独特の銀白色の砂**で知られる — **砕けた貝殻＋珊瑚の欠片と細かい砂が混ざり合い**、朝鮮半島では稀な輝きを生み出す。ツインビーチとなる**クムヌンビーチ（すぐ南、同じ海岸沿いに徒歩アクセス可能、比較的空いている）**と合わせると**全長9kmの海岸線**を形成 — このツインビーチの組み合わせはカタログ屈指のフォトスポット。シグネチャービューは**飛揚島（비양도）** — **常住人口約200人が暮らす沖合1.2kmの火山島**で、**翰林港からフェリーで20分**でアクセス可能。飛揚島は**韓国初のカーボンフリー島認証プロセス**を推進中の環境政策のショーケース。ビーチの**エメラルドグリーンの海水**は浅い珊瑚砂の海底に由来し、**干潮時には潮だまりにヤドカリ・小エビ・稚魚が現れ**、飛揚島が浅い水面の向こうに「歩いて渡れそう」に見える。**背後に広がる松林（ソンニム）**は無料のキャンプ場と日陰の散策路を提供。砂丘の後ろには済州で最も発達した**西海岸カフェ通り**が走り、国内観光客向けのカフェ・レストラン・ブティックが立ち並ぶ。**飛揚島を背景にエメラルドの海に沈む夕日**はビーチのビジュアルシグネチャーであり、カタログ随一の西海岸サンセットフレーミング。**入場無料**；**ライフガード配置の遊泳期間は7月1日〜8月31日**；複数ポイントにスロープ型**車椅子対応**アクセス；年中利用可能な公衆トイレ＋更衣室＋シャワー＋用具レンタル。隣接する**翰林公園**（植物園＋溶岩洞窟＋民俗村、別途入場料₩10,000、1.5km先）は冬季に代替スポットとして利用される場合あり。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+      "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
       "highlights": [
         "**済州西海岸トップ3ビーチ / 全体トップ10** — エメラルドグリーンの海水＋銀白色の砂",
         "**独特の銀白色の砂** — 砕けた貝殻＋珊瑚の欠片",
@@ -587,7 +1044,52 @@
         "photo": "飛揚島シルエットを活かしたサンセット撮影。ターコイズブルーの色は直射日光が当たる正午頃が最も鮮やか",
         "facilities": "ビーチ沿いに複数のカフェあり。コンビニエンスストアも利用可能",
         "tip": "ハルリム公園（徒歩5分）との組み合わせ観光がおすすめ。夏の週末は混雑するため避けることを推奨"
-      }
+      },
+      "images": [
+        "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+        "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+        "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+          "location": "ヒョプチェビーチ＋西海岸カフェ通り",
+          "caption": "ヒョプチェビーチ＋西海岸カフェ通り — photo 1",
+          "alt": "ヒョプチェビーチ＋西海岸カフェ通り — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+          "location": "ヒョプチェビーチ＋西海岸カフェ通り",
+          "caption": "ヒョプチェビーチ＋西海岸カフェ通り — photo 2",
+          "alt": "ヒョプチェビーチ＋西海岸カフェ通り — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+          "location": "ヒョプチェビーチ＋西海岸カフェ通り",
+          "caption": "ヒョプチェビーチ＋西海岸カフェ通り — photo 3",
+          "alt": "ヒョプチェビーチ＋西海岸カフェ通り — gallery image 3"
+        }
+      ]
     },
     {
       "number": 9,
@@ -1453,8 +1955,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "1100高地湿地から柱状節理（チュサンジョルリ）へ、茶畑から海辺のカフェへ —",
-        "headlineLine2": "済州の西と南を、ゆったりとした充実の一日で",
+        "headlineLine1": "済州西南部・オーセンティック日帰り",
+        "headlineLine2": "ツアー",
         "hero": {
           "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
           "imagePosition": "center 35%",
@@ -1638,7 +2140,7 @@
             "name": "漢拏山1100高地湿地（ユネスコ）",
             "category": "ユネスコ湿地",
             "description": "標高1,100mに位置する漢拏山の中でも最もアクセスしやすい高所のひとつ。この湿地はラムサール条約の指定地であり、漢拏山ユネスコ生物圏保護区の一部です。約1kmの平坦な木道ループにより、本格的な登山なしで高地の生態系を散策できます。1100道路のドライブも景観のハイライト — 大雪や道路閉鎖時にはルートが変更される場合があります。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "highlights": [
               "標高1,100m",
               "ラムサール条約湿地",
@@ -1674,16 +2176,49 @@
               "note": "Operational details based on national park info"
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-              "https://images.unsplash.com/photo-1672306145001-a9a193ed5573?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1579677475701-5c1cc28581ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1732446402420-36f8e1a31ca9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1648467179706-bb1617dddb81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1635252273211-d0d5fb502c8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1676377962839-8fb92dfa4fd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1615129718947-5de7ddb45143?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1634641683828-73bd90bd9503?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1621844143414-f1d0bb21702e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxIYWxsYXNhbiUyMG1vdW50YWluJTIwSmVqdSUyMHRyYWlsfGVufDB8MHx8fDE3Nzc5MTA1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+                "location": "漢拏山1100高地湿地（ユネスコ）",
+                "caption": "漢拏山1100高地湿地（ユネスコ） — photo 1",
+                "alt": "漢拏山1100高地湿地（ユネスコ） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+                "location": "漢拏山1100高地湿地（ユネスコ）",
+                "caption": "漢拏山1100高地湿地（ユネスコ） — photo 2",
+                "alt": "漢拏山1100高地湿地（ユネスコ） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "location": "漢拏山1100高地湿地（ユネスコ）",
+                "caption": "漢拏山1100高地湿地（ユネスコ） — photo 3",
+                "alt": "漢拏山1100高地湿地（ユネスコ） — gallery image 3"
+              }
             ]
           },
           {
@@ -1693,7 +2228,7 @@
             "name": "柱状節理帯（ユネスコ世界ジオパーク）",
             "category": "ユネスコジオパークの断崖",
             "description": "済州島南海岸に広がる六角形の柱状溶岩断崖 — 漢拏山の溶岩流が海水に触れて急激に冷却されることで形成されました。この幾何学的な崖は韓国で最も撮影される海岸景観のひとつであり、済州ユネスコ世界ジオパークの一部です。手すり付きの木道で平坦な歩行が可能で、波しぶきを間近に望む展望ポイントもあります。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
             "highlights": [
               "六角形の溶岩柱",
               "ユネスコ世界ジオパーク",
@@ -1731,16 +2266,62 @@
               "verified_date": "2026-04-27"
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
-              "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1772268354899-1f3bf5014b4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1739932413542-dc2597d7d764?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "location": "柱状節理帯（ユネスコ世界ジオパーク）",
+                "caption": "柱状節理帯（ユネスコ世界ジオパーク） — photo 1",
+                "alt": "柱状節理帯（ユネスコ世界ジオパーク） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "location": "柱状節理帯（ユネスコ世界ジオパーク）",
+                "caption": "柱状節理帯（ユネスコ世界ジオパーク） — photo 2",
+                "alt": "柱状節理帯（ユネスコ世界ジオパーク） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "location": "柱状節理帯（ユネスコ世界ジオパーク）",
+                "caption": "柱状節理帯（ユネスコ世界ジオパーク） — photo 3",
+                "alt": "柱状節理帯（ユネスコ世界ジオパーク） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "location": "柱状節理帯（ユネスコ世界ジオパーク）",
+                "caption": "柱状節理帯（ユネスコ世界ジオパーク） — photo 4",
+                "alt": "柱状節理帯（ユネスコ世界ジオパーク） — gallery image 4"
+              }
             ]
           },
           {
@@ -1822,7 +2403,7 @@
             "name": "天帝淵瀑布（神の池）",
             "category": "滝",
             "description": "火山性の森の谷にある三段の滝で、地元では「神の池」と呼ばれています。伝説によれば、7人の天女が空から舞い降り、上段の池で水浴びをしたとされています。渓谷の上にかかる仙人橋（ソニムギョ橋）には、7人の天女の彫刻が施されています。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
             "highlights": [
               "三段の滝",
               "七天女伝説",
@@ -1860,7 +2441,52 @@
                 "World-of-Waterfalls"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "location": "天帝淵瀑布（神の池）",
+                "caption": "天帝淵瀑布（神の池） — photo 1",
+                "alt": "天帝淵瀑布（神の池） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "location": "天帝淵瀑布（神の池）",
+                "caption": "天帝淵瀑布（神の池） — photo 2",
+                "alt": "天帝淵瀑布（神の池） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "location": "天帝淵瀑布（神の池）",
+                "caption": "天帝淵瀑布（神の池） — photo 3",
+                "alt": "天帝淵瀑布（神の池） — gallery image 3"
+              }
+            ]
           },
           {
             "number": 7,
@@ -1869,7 +2495,7 @@
             "name": "オソルロック茶博物館＋緑茶畑",
             "category": "お茶文化博物館",
             "description": "1979年創業、済州を代表する緑茶農園。博物館では韓国のお茶文化を紹介しており、周囲に広がる茶畑は定番の写真スポットとして人気。入館無料。併設カフェでは緑茶アイスクリーム、茶葉ケーキ、抹茶ラテを提供。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
             "highlights": [
               "韓国のお茶文化博物館",
               "緑茶畑での写真撮影スポット",
@@ -1906,7 +2532,169 @@
                 ""
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "location": "オソルロック茶博物館＋緑茶畑",
+                "caption": "オソルロック茶博物館＋緑茶畑 — photo 1",
+                "alt": "オソルロック茶博物館＋緑茶畑 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "location": "オソルロック茶博物館＋緑茶畑",
+                "caption": "オソルロック茶博物館＋緑茶畑 — photo 2",
+                "alt": "オソルロック茶博物館＋緑茶畑 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "location": "オソルロック茶博物館＋緑茶畑",
+                "caption": "オソルロック茶博物館＋緑茶畑 — photo 3",
+                "alt": "オソルロック茶博物館＋緑茶畑 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "location": "オソルロック茶博物館＋緑茶畑",
+                "caption": "オソルロック茶博物館＋緑茶畑 — photo 4",
+                "alt": "オソルロック茶博物館＋緑茶畑 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+                "location": "オソルロック茶博物館＋緑茶畑",
+                "caption": "オソルロック茶博物館＋緑茶畑 — photo 5",
+                "alt": "オソルロック茶博物館＋緑茶畑 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
+                "location": "オソルロック茶博物館＋緑茶畑",
+                "caption": "オソルロック茶博物館＋緑茶畑 — photo 6",
+                "alt": "オソルロック茶博物館＋緑茶畑 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
+                "location": "オソルロック茶博物館＋緑茶畑",
+                "caption": "オソルロック茶博物館＋緑茶畑 — photo 7",
+                "alt": "オソルロック茶博物館＋緑茶畑 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
+                "location": "オソルロック茶博物館＋緑茶畑",
+                "caption": "オソルロック茶博物館＋緑茶畑 — photo 8",
+                "alt": "オソルロック茶博物館＋緑茶畑 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
+                "location": "オソルロック茶博物館＋緑茶畑",
+                "caption": "オソルロック茶博物館＋緑茶畑 — photo 9",
+                "alt": "オソルロック茶博物館＋緑茶畑 — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
+                "location": "オソルロック茶博物館＋緑茶畑",
+                "caption": "オソルロック茶博物館＋緑茶畑 — photo 10",
+                "alt": "オソルロック茶博物館＋緑茶畑 — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
+                "location": "オソルロック茶博物館＋緑茶畑",
+                "caption": "オソルロック茶博物館＋緑茶畑 — photo 11",
+                "alt": "オソルロック茶博物館＋緑茶畑 — gallery image 11"
+              },
+              {
+                "id": 12,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "location": "オソルロック茶博物館＋緑茶畑",
+                "caption": "オソルロック茶博物館＋緑茶畑 — photo 12",
+                "alt": "オソルロック茶博物館＋緑茶畑 — gallery image 12"
+              }
+            ]
           },
           {
             "number": 8,
@@ -1915,7 +2703,7 @@
             "name": "協在（ヒョプジェ）ビーチ＋西海岸カフェ通り",
             "category": "白砂のビーチ",
             "description": "ツアーの締めくくりとなるスポットであり、このルートのハイライト「カフェ気分」の時間。ヒョプジェビーチは済州で最も写真映えする白砂ビーチのひとつで、沖合に飛揚島（ビヤンド）を望む。隣接するカフェ通り（ヒョプジェまたはクムヌンカフェ地区として知られる）は、済州で人気の海辺カフェ集積地。済州市への帰路前に、夕暮れのコーヒーやアイスクリームを楽しむ自由時間。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "highlights": [
               "白砂ビーチ＋飛揚島（ビヤンド）の眺め",
               "西海岸カフェ通り",
@@ -1949,7 +2737,52 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details based on aggregated visitor info"
-            }
+            },
+            "images": [
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+                "location": "協在（ヒョプジェ）ビーチ＋西海岸カフェ通り",
+                "caption": "協在（ヒョプジェ）ビーチ＋西海岸カフェ通り — photo 1",
+                "alt": "協在（ヒョプジェ）ビーチ＋西海岸カフェ通り — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+                "location": "協在（ヒョプジェ）ビーチ＋西海岸カフェ通り",
+                "caption": "協在（ヒョプジェ）ビーチ＋西海岸カフェ通り — photo 2",
+                "alt": "協在（ヒョプジェ）ビーチ＋西海岸カフェ通り — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+                "location": "協在（ヒョプジェ）ビーチ＋西海岸カフェ通り",
+                "caption": "協在（ヒョプジェ）ビーチ＋西海岸カフェ通り — photo 3",
+                "alt": "協在（ヒョプジェ）ビーチ＋西海岸カフェ通り — gallery image 3"
+              }
+            ]
           },
           {
             "number": 9,

@@ -14,11 +14,11 @@
       "太宗台邮轮游览",
       "札嘎其市场游览"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG"
+    "ogImage": "https://www.atockorea.com/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp"
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
-    "title": "邮轮旅客釜山小团体观光游",
+    "thumbnail": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "title": "釜山邮轮岸上小团游",
     "priceLabel": "",
     "shortCardDescription": "从釜山邮轮码头出发的共乘面包车一日游，9小时内涵盖城市最受欢迎的五大景点：联合国纪念公墓（朝鲜战争背景）、太宗台海岸悬崖、在釜山当地餐厅用午餐、甘川文化村（彩绘山城）、龙头山公园（可选釜山塔瞭望台）以及札嘎其市场。接送时间根据您所乘船只的下船时间灵活调配。持证英语／中文导游随行。",
     "tags": [
@@ -41,10 +41,10 @@
       "码头接送",
       "9小时行程"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG"
+    "heroImage": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp"
   },
-  "headlineLine1": "从邮轮码头到彩绘小巷，从市场到纪念公墓——",
-  "headlineLine2": "一天共乘面包车游遍釜山精华线路",
+  "headlineLine1": "釜山邮轮岸上小团游",
+  "headlineLine2": "一日游",
   "price": {
     "amountLabel": "",
     "originalPriceUsd": null,
@@ -56,7 +56,7 @@
     "priceNote": ""
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+    "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
     "imagePosition": "center 35%",
     "tagline": "与同船游客共乘面包车，根据船期安排游览釜山五大标志性景点",
     "pills": [
@@ -134,49 +134,100 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
-      "alt": "甘川文化村色彩缤纷的房屋沿山坡层叠而下",
-      "caption": "甘川文化村——2009年作为釜山战后难民区公共艺术复兴项目粉刷一新。",
-      "location": "甘川文化村，沙下区",
-      "atmosphere": "明亮的粉彩色调、狭窄的小巷、山坡阶梯"
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "location": "联合国纪念公墓（朝鲜战争）",
+      "alt": "联合国纪念公墓（朝鲜战争） — gallery image 1",
+      "caption": "联合国纪念公墓（朝鲜战争） — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+      "location": "太宗台海岸悬崖",
+      "alt": "太宗台海岸悬崖 — gallery image 1",
+      "caption": "太宗台海岸悬崖 — photo 1"
+    },
+    {
+      "id": 3,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
-      "alt": "海崖之上，地平线处耸立着一座白色灯塔",
-      "caption": "太宗台海岸公园，位于影岛南端。晴朗的冬日可望见对马岛。",
-      "location": "太宗台，影岛区",
-      "atmosphere": "开阔的大海、悬崖边缘、习习海风"
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
     },
     {
-      "id": "g3",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
-      "alt": "联合国纪念公墓内排列整齐的白色墓碑与各国国旗",
-      "caption": "联合国纪念公墓——世界上唯一的联合国公墓，安葬着来自21个国家的2,300余名士兵。",
-      "location": "联合国纪念公墓，南区",
-      "atmosphere": "静谧、庄严、令人沉思"
-    },
-    {
-      "id": "g4",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
-      "alt": "札嘎其市场摊贩展示着冰鲜活鱼",
-      "caption": "札嘎其市场——韩国最大的海鲜市场，自1889年起在釜山海滨运营至今。",
-      "location": "札嘎其市场，中区",
-      "atmosphere": "活鱼摊位、市场喧嚣、二楼餐厅"
-    },
-    {
-      "id": "g5",
+      "id": 4,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
-      "alt": "釜山塔耸立于龙头山公园的松树与城市中层天际线之上",
-      "caption": "龙头山公园与釜山塔（高120米，建于1973年）——釜山市中心绝佳观景点。",
-      "location": "龙头山公园，中区",
-      "atmosphere": "松树覆盖的山顶，城市全景视野"
+      "location": "龙头山公园＆釜山塔",
+      "alt": "龙头山公园＆釜山塔 — on-route photo",
+      "caption": "龙头山公园＆釜山塔"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+      "location": "南浦洞与札嘎其水产市场",
+      "alt": "南浦洞与札嘎其水产市场 — on-route photo",
+      "caption": "南浦洞与札嘎其水产市场"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+      "location": "联合国纪念公墓（朝鲜战争）",
+      "alt": "联合国纪念公墓（朝鲜战争） — gallery image 2",
+      "caption": "联合国纪念公墓（朝鲜战争） — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+      "location": "联合国纪念公墓（朝鲜战争）",
+      "alt": "联合国纪念公墓（朝鲜战争） — gallery image 3",
+      "caption": "联合国纪念公墓（朝鲜战争） — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+      "location": "太宗台海岸悬崖",
+      "alt": "太宗台海岸悬崖 — gallery image 2",
+      "caption": "太宗台海岸悬崖 — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+      "location": "太宗台海岸悬崖",
+      "alt": "太宗台海岸悬崖 — gallery image 3",
+      "caption": "太宗台海岸悬崖 — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+      "location": "太宗台海岸悬崖",
+      "alt": "太宗台海岸悬崖 — gallery image 4",
+      "caption": "太宗台海岸悬崖 — photo 4"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+      "location": "太宗台海岸悬崖",
+      "alt": "太宗台海岸悬崖 — gallery image 5",
+      "caption": "太宗台海岸悬崖 — photo 5"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+      "location": "太宗台海岸悬崖",
+      "alt": "太宗台海岸悬崖 — gallery image 6",
+      "caption": "太宗台海岸悬崖 — photo 6"
     }
   ],
   "itineraryStops": [
@@ -246,7 +297,7 @@
           "UN General Assembly Resolution 977(X) (December 15, 1955)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+      "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
       "visitBasics": {
         "hours": "09:00–18:00（5月–9月）/ 09:00–17:00（10月–4月）",
         "closed": "全年开放（举行祭典期间追悼礼堂关闭）",
@@ -260,7 +311,52 @@
       "smartNotes": {
         "photo": "**铭记之墙**（140块大理石板刻有40,896个名字）、**象征区**（设有22个参战国国旗），以及**弗兰克·盖洛德美国朝鲜战争纪念雕塑（2013年）**——与华盛顿特区国家广场纪念碑出自同一位雕塑家。允许拍照；请保持肃静。",
         "tip": "**全球唯一一座**受联合国行政管辖领土保护的联合国墓园（联合国大会第977(X)号决议，1955年）。每年**11月11日上午11时举行\"转身向釜山\"纪念仪式**，是22个参战国国旗唯一一次同时降旗。"
-      }
+      },
+      "images": [
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "location": "联合国纪念公墓（朝鲜战争）",
+          "caption": "联合国纪念公墓（朝鲜战争） — photo 1",
+          "alt": "联合国纪念公墓（朝鲜战争） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "location": "联合国纪念公墓（朝鲜战争）",
+          "caption": "联合国纪念公墓（朝鲜战争） — photo 2",
+          "alt": "联合国纪念公墓（朝鲜战争） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "location": "联合国纪念公墓（朝鲜战争）",
+          "caption": "联合国纪念公墓（朝鲜战争） — photo 3",
+          "alt": "联合国纪念公墓（朝鲜战争） — gallery image 3"
+        }
+      ]
     },
     {
       "number": 3,
@@ -301,7 +397,7 @@
           "Busan National Geopark official (busan.go.kr/geopark)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+      "image": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
       "visitBasics": {
         "hours": "公园04:00–24:00（3月–10月）/ 05:00–24:00（11月–2月）；达努比小火车09:00至日落",
         "closed": "全年开放（大雨或强风时达努比小火车暂停运营）",
@@ -315,7 +411,91 @@
       "smartNotes": {
         "photo": "**三层观景台**（晴天可远眺**位于东南方向约50公里处的日本对马岛**），**影岛灯塔——釜山最古老的灯塔，建于1906年**，以及灯塔下方由海浪侵蚀而成的**神仙岩海蚀台地（约12万年前，第四间冰期）**。",
         "tip": "无需挑战全程4.3公里徒步——乘坐**多瑙比小火车**游览5站环线。**太宗寺绣球花节**于每年6月下旬至7月初举行。灯塔区域台阶陡峭，**不适合推婴儿车**。"
-      }
+      },
+      "images": [
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+          "location": "太宗台海岸悬崖",
+          "caption": "太宗台海岸悬崖 — photo 1",
+          "alt": "太宗台海岸悬崖 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+          "location": "太宗台海岸悬崖",
+          "caption": "太宗台海岸悬崖 — photo 2",
+          "alt": "太宗台海岸悬崖 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+          "location": "太宗台海岸悬崖",
+          "caption": "太宗台海岸悬崖 — photo 3",
+          "alt": "太宗台海岸悬崖 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+          "location": "太宗台海岸悬崖",
+          "caption": "太宗台海岸悬崖 — photo 4",
+          "alt": "太宗台海岸悬崖 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+          "location": "太宗台海岸悬崖",
+          "caption": "太宗台海岸悬崖 — photo 5",
+          "alt": "太宗台海岸悬崖 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+          "location": "太宗台海岸悬崖",
+          "caption": "太宗台海岸悬崖 — photo 6",
+          "alt": "太宗台海岸悬崖 — gallery image 6"
+        }
+      ]
     },
     {
       "number": 4,
@@ -1265,8 +1445,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "从邮轮码头到彩色小巷，从市场到纪念馆 —",
-        "headlineLine2": "单日共乘面包车，玩转釜山精华",
+        "headlineLine1": "釜山邮轮岸上小团游",
+        "headlineLine2": "一日游",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
           "imagePosition": "center 35%",
@@ -1437,7 +1617,7 @@
             "duration": "60分钟",
             "name": "联合国纪念公墓（朝鲜战争）",
             "category": "纪念与历史",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "世界上唯一的联合国公墓，建立于1951年朝鲜战争期间，1955年由联合国大会授予永久联合国地位。园区安葬着来自21个国家、在联合国军指挥下作战的2,300余名士兵，其中以英国（885人）、土耳其（462人）、加拿大（378人）和澳大利亚（281人）的人数最多。园区内设有多语言展品的纪念馆、刻有全部40,896名联合国军阵亡将士名字的纪念墙，以及每日上午10:00举行的升旗仪式（视天气情况而定）。公墓位于南区，距影岛向东约30分钟车程。免费入场；每日09:00–17:00开放，朝鲜新年及秋夕节假日除外。",
             "timeUsed": [
               "抵达、取票及行程说明",
@@ -1449,7 +1629,52 @@
               "is_attraction": true,
               "fee_krw": 0,
               "closed": "Korean New Year, Chuseok"
-            }
+            },
+            "images": [
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+                "location": "联合国纪念公墓（朝鲜战争）",
+                "caption": "联合国纪念公墓（朝鲜战争） — photo 1",
+                "alt": "联合国纪念公墓（朝鲜战争） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+                "location": "联合国纪念公墓（朝鲜战争）",
+                "caption": "联合国纪念公墓（朝鲜战争） — photo 2",
+                "alt": "联合国纪念公墓（朝鲜战争） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+                "location": "联合国纪念公墓（朝鲜战争）",
+                "caption": "联合国纪念公墓（朝鲜战争） — photo 3",
+                "alt": "联合国纪念公墓（朝鲜战争） — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1457,7 +1682,7 @@
             "duration": "75分钟",
             "name": "太宗台海岸悬崖",
             "category": "海岸",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+            "image": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
             "description": "位于影岛南端的海岸公园，以新罗太宗武烈王（公元654–661年在位）命名，他与唐朝联手完成了朝鲜半岛的统一大业。4.3公里的环形步道沿悬崖而行，悬崖高约100米俯瞰东海，途经影岛灯塔（建于1906年）和一处观景台——晴朗的冬日里，可望见约50公里外日本的对马岛。大多数邮轮游客选择乘坐\"多努比小火车\"（成人₩4,000，青少年₩3,000，可选，约30分钟一圈）代替步行全程。公园免费入场；灯塔区域适合轮椅通行，但悬崖步道不适合。",
             "timeUsed": [
               "抵达、取票及行程说明",
@@ -1470,7 +1695,91 @@
               "is_attraction": true,
               "fee_krw": 0,
               "optional_train_krw": 4000
-            }
+            },
+            "images": [
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+                "location": "太宗台海岸悬崖",
+                "caption": "太宗台海岸悬崖 — photo 1",
+                "alt": "太宗台海岸悬崖 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+                "location": "太宗台海岸悬崖",
+                "caption": "太宗台海岸悬崖 — photo 2",
+                "alt": "太宗台海岸悬崖 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+                "location": "太宗台海岸悬崖",
+                "caption": "太宗台海岸悬崖 — photo 3",
+                "alt": "太宗台海岸悬崖 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+                "location": "太宗台海岸悬崖",
+                "caption": "太宗台海岸悬崖 — photo 4",
+                "alt": "太宗台海岸悬崖 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+                "location": "太宗台海岸悬崖",
+                "caption": "太宗台海岸悬崖 — photo 5",
+                "alt": "太宗台海岸悬崖 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+                "location": "太宗台海岸悬崖",
+                "caption": "太宗台海岸悬崖 — photo 6",
+                "alt": "太宗台海岸悬崖 — gallery image 6"
+              }
+            ]
           },
           {
             "number": 4,

@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "釜山热门景点小团一日游 | AtoC Korea",
     "metaDescription": "10.5小时釜山小团经典之旅：海东龙宫寺、青沙浦蓝线公园、联合国纪念公墓、甘川文化村、札嘎其市场。3个接送地点。",
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+    "ogImage": "https://www.atockorea.com/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
     "primaryKeywords": [
       "釜山一日游",
       "海东龙宫寺",
@@ -18,7 +18,7 @@
   },
   "catalog_card": {
     "slug": "busan-top-attractions-day-tour",
-    "title": "釜山热门景点小团一日游",
+    "title": "釜山精华景点一日游",
     "subtitle": "一天游览釜山经典七站，行程均衡，设三个接送地点。",
     "region": "釜山",
     "duration": "10.5小时",
@@ -31,8 +31,8 @@
       "釜山经典",
       "全年开放"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+    "heroImage": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+    "thumbnail": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
     "priceLabel": "",
     "shortCardDescription": "一日七站小团游，涵盖釜山经典线路：海东龙宫寺海边寺庙、青沙浦及蓝线公园（可选天空胶囊缆车）、釜山本地午餐、联合国纪念公墓、甘川文化村彩绘山坡，以及札嘎其海鲜市场。釜山市中心设三个接送地点；持证英语导游；小型巴士（最多约12人）。所有景点门票均免费，仅午餐及可选项目需当日现场付款。",
     "tags": [
@@ -43,8 +43,8 @@
       "year_round"
     ]
   },
-  "headlineLine1": "海边寺庙、蓝线海岸、彩绘山坡、海鲜市场——",
-  "headlineLine2": "一天游览釜山经典七站，行程均衡",
+  "headlineLine1": "釜山精华景点一日游",
+  "headlineLine2": "一日游",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -52,7 +52,7 @@
     "priceNote": ""
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+    "imageUrl": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
     "imagePosition": "center 40%",
     "tagline": "釜山最受欢迎的七大景点，小团一日尽览",
     "pills": [
@@ -130,58 +130,116 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
-      "alt": "海东龙宫寺悬崖上俯瞰东海的佛教寺庙建筑",
-      "caption": "海东龙宫寺——韩国最具特色的海滨寺庙，建于1376年，1930年代重建。",
-      "location": "海东龙宫寺，机张郡",
-      "atmosphere": "海浪飞溅、花岗岩悬崖、香火气息"
+      "location": "海东龙宫寺",
+      "alt": "海东龙宫寺 — on-route photo",
+      "caption": "海东龙宫寺"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/61/2702561_image2_1.JPG",
-      "alt": "露天海滩小火车沿宽阔沙滩旁的海岸轨道运行",
-      "caption": "青沙浦蓝线公园——1934年旧铁路改造而成，2020年转变为4.8公里的沿海海滩列车走廊。",
-      "location": "青沙浦蓝线公园，海云台",
-      "atmosphere": "开阔海岸、轻柔海风、列车鸣笛"
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+      "location": "青沙浦 & 海云台蓝线公园",
+      "alt": "青沙浦 & 海云台蓝线公园 — gallery image 1",
+      "caption": "青沙浦 & 海云台蓝线公园 — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "location": "驻韩联合国纪念公墓",
+      "alt": "驻韩联合国纪念公墓 — gallery image 1",
+      "caption": "驻韩联合国纪念公墓 — photo 1"
+    },
+    {
+      "id": 4,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
-      "alt": "联合国纪念公墓整齐排列的统一墓碑",
-      "caption": "联合国纪念公墓——安葬了来自21个国家的2,300余名士兵，是世界上唯一的联合国公墓。",
-      "location": "联合国纪念公墓，南区",
-      "atmosphere": "宁静、庄重、沉思"
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
     },
     {
-      "id": "g4",
+      "id": 5,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
-      "alt": "甘川文化村色彩柔和的彩色房屋沿山坡层叠而下",
-      "caption": "甘川文化村——战后难民聚居地，2009年转型为公共艺术项目。",
-      "location": "甘川文化村，沙下区",
-      "atmosphere": "明亮的粉彩色调、狭窄的小巷、山坡阶梯"
+      "location": "札嘎其鱼市场",
+      "alt": "札嘎其鱼市场 — on-route photo",
+      "caption": "札嘎其鱼市场"
     },
     {
-      "id": "g5",
+      "id": 6,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
-      "alt": "扎嘎其鱼市场货架上一排排摆放在冰块上的新鲜海鲜",
-      "caption": "扎嘎其——韩国最大的海鲜市场，数代以来主要由女性经营。",
-      "location": "札嘎其市场，中区",
-      "atmosphere": "活鲜水箱、市场嘈杂声、海盐气息"
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+      "location": "青沙浦 & 海云台蓝线公园",
+      "alt": "青沙浦 & 海云台蓝线公园 — gallery image 2",
+      "caption": "青沙浦 & 海云台蓝线公园 — photo 2"
     },
     {
-      "id": "g6",
+      "id": 7,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/29/2617829_image2_1.JPG",
-      "alt": "釜山餐厅桌上摆着一碗猪肉汤饭及各式小菜",
-      "caption": "午餐融入当地风味——在釜山餐厅品尝猪肉汤饭、密面或海鲜煎饼。",
-      "location": "釜山本地餐厅",
-      "atmosphere": "快捷实惠，地道风味"
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+      "location": "青沙浦 & 海云台蓝线公园",
+      "alt": "青沙浦 & 海云台蓝线公园 — gallery image 3",
+      "caption": "青沙浦 & 海云台蓝线公园 — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+      "location": "青沙浦 & 海云台蓝线公园",
+      "alt": "青沙浦 & 海云台蓝线公园 — gallery image 4",
+      "caption": "青沙浦 & 海云台蓝线公园 — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+      "location": "青沙浦 & 海云台蓝线公园",
+      "alt": "青沙浦 & 海云台蓝线公园 — gallery image 5",
+      "caption": "青沙浦 & 海云台蓝线公园 — photo 5"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+      "location": "青沙浦 & 海云台蓝线公园",
+      "alt": "青沙浦 & 海云台蓝线公园 — gallery image 6",
+      "caption": "青沙浦 & 海云台蓝线公园 — photo 6"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+      "location": "青沙浦 & 海云台蓝线公园",
+      "alt": "青沙浦 & 海云台蓝线公园 — gallery image 7",
+      "caption": "青沙浦 & 海云台蓝线公园 — photo 7"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+      "location": "青沙浦 & 海云台蓝线公园",
+      "alt": "青沙浦 & 海云台蓝线公园 — gallery image 8",
+      "caption": "青沙浦 & 海云台蓝线公园 — photo 8"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+      "location": "驻韩联合国纪念公墓",
+      "alt": "驻韩联合国纪念公墓 — gallery image 2",
+      "caption": "驻韩联合国纪念公墓 — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+      "location": "驻韩联合国纪念公墓",
+      "alt": "驻韩联合国纪念公墓 — gallery image 3",
+      "caption": "驻韩联合国纪念公墓 — photo 3"
     }
   ],
   "itineraryStops": [
@@ -332,7 +390,117 @@
           "Busan Metropolitan City Tourism"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/61/2702561_image2_1.JPG"
+      "image": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+      "images": [
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+          "location": "青沙浦 & 海云台蓝线公园",
+          "caption": "青沙浦 & 海云台蓝线公园 — photo 1",
+          "alt": "青沙浦 & 海云台蓝线公园 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+          "location": "青沙浦 & 海云台蓝线公园",
+          "caption": "青沙浦 & 海云台蓝线公园 — photo 2",
+          "alt": "青沙浦 & 海云台蓝线公园 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "location": "青沙浦 & 海云台蓝线公园",
+          "caption": "青沙浦 & 海云台蓝线公园 — photo 3",
+          "alt": "青沙浦 & 海云台蓝线公园 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+          "location": "青沙浦 & 海云台蓝线公园",
+          "caption": "青沙浦 & 海云台蓝线公园 — photo 4",
+          "alt": "青沙浦 & 海云台蓝线公园 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "location": "青沙浦 & 海云台蓝线公园",
+          "caption": "青沙浦 & 海云台蓝线公园 — photo 5",
+          "alt": "青沙浦 & 海云台蓝线公园 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+          "location": "青沙浦 & 海云台蓝线公园",
+          "caption": "青沙浦 & 海云台蓝线公园 — photo 6",
+          "alt": "青沙浦 & 海云台蓝线公园 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+          "location": "青沙浦 & 海云台蓝线公园",
+          "caption": "青沙浦 & 海云台蓝线公园 — photo 7",
+          "alt": "青沙浦 & 海云台蓝线公园 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+          "location": "青沙浦 & 海云台蓝线公园",
+          "caption": "青沙浦 & 海云台蓝线公园 — photo 8",
+          "alt": "青沙浦 & 海云台蓝线公园 — gallery image 8"
+        }
+      ]
     },
     {
       "number": 4,
@@ -422,7 +590,52 @@
           "UN Memorial Cemetery in Korea Official Site"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG"
+      "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "images": [
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "location": "驻韩联合国纪念公墓",
+          "caption": "驻韩联合国纪念公墓 — photo 1",
+          "alt": "驻韩联合国纪念公墓 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "location": "驻韩联合国纪念公墓",
+          "caption": "驻韩联合国纪念公墓 — photo 2",
+          "alt": "驻韩联合国纪念公墓 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "location": "驻韩联合国纪念公墓",
+          "caption": "驻韩联合国纪念公墓 — photo 3",
+          "alt": "驻韩联合国纪念公墓 — gallery image 3"
+        }
+      ]
     },
     {
       "number": 6,
@@ -1206,8 +1419,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "海边寺庙、蓝线海岸、彩绘山坡、鱼市场——",
-        "headlineLine2": "釜山七大经典景点，一日尽享完美之旅",
+        "headlineLine1": "釜山精华景点一日游",
+        "headlineLine2": "一日游",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
           "imagePosition": "center 40%",
@@ -1407,7 +1620,7 @@
             "duration": "60分钟",
             "name": "青沙浦与海云台蓝线公园",
             "category": "海岸与海滩小火车",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/61/2702561_image2_1.JPG",
+            "image": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
             "description": "东海南部线（原釜山-东海铁路，1934年通车，2013年停止旅客运营）改建为海云台蓝线公园——一条从尾浦（海云台）至松亭、全长4.8公里的海岸步行与电车走廊，于2020年10月开放。园内运营两条付费电车线路：海滩小火车（来回₩7,000，宽敞开放式车厢，持续运行）和天空胶囊（高架四人玻璃舱，单程每舱₩30,000–₩35,000，最多4人，周末常售罄——建议提前2–3天预订）。中间站青沙浦是一座小渔村，设有悬于礁石之上的玻璃地板观景步道。此站停留约45分钟海滩漫步＋15分钟村庄游览；电车票为自选项目，不含在内。",
             "timeUsed": [
               "海岸漫步与观景",
@@ -1420,7 +1633,117 @@
               "fee_krw": 0,
               "optional_beach_train_krw": 7000,
               "optional_sky_capsule_krw_per_capsule": 30000
-            }
+            },
+            "images": [
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+                "location": "青沙浦与海云台蓝线公园",
+                "caption": "青沙浦与海云台蓝线公园 — photo 1",
+                "alt": "青沙浦与海云台蓝线公园 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+                "location": "青沙浦与海云台蓝线公园",
+                "caption": "青沙浦与海云台蓝线公园 — photo 2",
+                "alt": "青沙浦与海云台蓝线公园 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+                "location": "青沙浦与海云台蓝线公园",
+                "caption": "青沙浦与海云台蓝线公园 — photo 3",
+                "alt": "青沙浦与海云台蓝线公园 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+                "location": "青沙浦与海云台蓝线公园",
+                "caption": "青沙浦与海云台蓝线公园 — photo 4",
+                "alt": "青沙浦与海云台蓝线公园 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "location": "青沙浦与海云台蓝线公园",
+                "caption": "青沙浦与海云台蓝线公园 — photo 5",
+                "alt": "青沙浦与海云台蓝线公园 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+                "location": "青沙浦与海云台蓝线公园",
+                "caption": "青沙浦与海云台蓝线公园 — photo 6",
+                "alt": "青沙浦与海云台蓝线公园 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+                "location": "青沙浦与海云台蓝线公园",
+                "caption": "青沙浦与海云台蓝线公园 — photo 7",
+                "alt": "青沙浦与海云台蓝线公园 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+                "location": "青沙浦与海云台蓝线公园",
+                "caption": "青沙浦与海云台蓝线公园 — photo 8",
+                "alt": "青沙浦与海云台蓝线公园 — gallery image 8"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1446,7 +1769,7 @@
             "duration": "60分钟",
             "name": "联合国纪念公墓",
             "category": "纪念场所",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "世界上唯一的联合国公墓，于朝鲜战争期间1951年设立，1955年经联合国大会决议授予永久性联合国地位。安葬着来自21个国家、在联合国军麾下战死的2,300余名士兵，其中以英国、土耳其、加拿大和澳大利亚籍士兵最多。纪念馆设有多语言展览；纪念墙上刻有全部40,896名联合国军阵亡将士的名字。每日10:00举行升旗仪式（按本行程安排，届时您将错过）。园区庄严肃穆，请着装得体并保持低声。免费入场；韩国农历新年及秋夕期间闭园。",
             "timeUsed": [
               "纪念漫步",
@@ -1457,7 +1780,52 @@
               "poi_key": "un_memorial_cemetery",
               "is_attraction": true,
               "fee_krw": 0
-            }
+            },
+            "images": [
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+                "location": "联合国纪念公墓",
+                "caption": "联合国纪念公墓 — photo 1",
+                "alt": "联合国纪念公墓 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+                "location": "联合国纪念公墓",
+                "caption": "联合国纪念公墓 — photo 2",
+                "alt": "联合国纪念公墓 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+                "location": "联合国纪念公墓",
+                "caption": "联合国纪念公墓 — photo 3",
+                "alt": "联合国纪念公墓 — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,

@@ -13,12 +13,12 @@
       "Incheon port to Seoul private car",
       "cruise shore tour Korea"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "ogImage": "https://www.atockorea.com/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "title": "Incheon → Seoul Private Cruise Shore Excursion · 8-hour Door-to-Door Day"
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-    "title": "Incheon to Seoul Private Car Shore Excursion for Cruise Guests",
+    "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "title": "Incheon to Seoul: Cruise Private Car",
     "priceLabel": "Price varies by vehicle / group size — confirm at booking",
     "shortCardDescription": "An 8-hour private car charter built around your ship's all-aboard time, not a fixed schedule. Gangway pickup at Incheon Cruise Terminal, English-speaking driver-guide, and a customizable route through Gyeongbokgung Palace, Bukchon Hanok Village + Insadong, lunch of your choice, N Seoul Tower, and Myeongdong or Jogyesa Temple. The driver-guide holds a 60-minute traffic buffer before sailaway so you never miss the ship.",
     "tags": [
@@ -44,10 +44,10 @@
       "Customizable",
       "Guaranteed return"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+    "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
-  "headlineLine1": "Cruise port to palace, custom-built around your sail-away time —",
-  "headlineLine2": "your Seoul day, just for your group, with the ship-return guarantee built in",
+  "headlineLine1": "Incheon to Seoul",
+  "headlineLine2": "Cruise Private Car",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -57,7 +57,7 @@
     "discountPercent": 10
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "imagePosition": "center 35%",
     "tagline": "From the gangway to Gyeongbokgung in 60 minutes — a private Seoul day calibrated to your sailaway",
     "pills": [
@@ -135,58 +135,124 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-      "alt": "Gangway-side pickup at Incheon Cruise Terminal arrival hall",
-      "caption": "Gyeongbokgung Palace's main throne hall",
-      "location": "Incheon Cruise Terminal",
-      "atmosphere": "Direct cruise terminal pickup"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+      "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 1",
+      "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/15/2002115_image2_1.JPG",
-      "alt": "Gyeongbokgung Palace throne hall and royal guard ceremony",
-      "caption": "Royal guard changing ceremony at Gyeongbokgung",
-      "location": "Gyeongbokgung, Seoul",
-      "atmosphere": "Joseon royal palace"
+      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "location": "Bukchon Hanok Village + Insadong",
+      "alt": "Bukchon Hanok Village + Insadong — gallery image 1",
+      "caption": "Bukchon Hanok Village + Insadong — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
-      "alt": "Stone walls and tiled hanok roofs along Bukchon ridge",
-      "caption": "Bukchon Hanok Village's traditional rooflines",
-      "location": "Bukchon Hanok Village, Seoul",
-      "atmosphere": "Preserved Joseon-era residential alleys"
-    },
-    {
-      "id": "g4",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
-      "alt": "Panoramic view of Seoul from Namsan with N Seoul Tower above",
-      "caption": "Jogyesa Temple's main hall and lantern displays",
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
       "location": "N Seoul Tower (Namsan)",
-      "atmosphere": "City viewpoint"
+      "alt": "N Seoul Tower (Namsan) — gallery image 1",
+      "caption": "N Seoul Tower (Namsan) — photo 1"
     },
     {
-      "id": "g5",
+      "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
-      "alt": "Lit street-food stalls along Myeongdong shopping street at dusk",
-      "caption": "N Seoul Tower at sunset, viewed from Namsan",
-      "location": "Myeongdong, Seoul",
-      "atmosphere": "Shopping and street food"
+      "src": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
+      "location": "Myeongdong OR Jogyesa Temple (your choice)",
+      "alt": "Myeongdong OR Jogyesa Temple (your choice) — gallery image 1",
+      "caption": "Myeongdong OR Jogyesa Temple (your choice) — photo 1"
     },
     {
-      "id": "g6",
+      "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG",
-      "alt": "Private car waiting at Incheon Cruise Terminal drop-off zone",
-      "caption": "Myeongdong street food and shopping",
-      "location": "Incheon Cruise Terminal",
-      "atmosphere": "Sailaway buffer return"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+      "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+      "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 2",
+      "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+      "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+      "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 3",
+      "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+      "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+      "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 4",
+      "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 4"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+      "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+      "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 5",
+      "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 5"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+      "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+      "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 6",
+      "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 6"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+      "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+      "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 7",
+      "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 7"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+      "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+      "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 8",
+      "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 8"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+      "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+      "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 9",
+      "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 9"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-57-27.webp",
+      "location": "N Seoul Tower (Namsan)",
+      "alt": "N Seoul Tower (Namsan) — gallery image 2",
+      "caption": "N Seoul Tower (Namsan) — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-06.webp",
+      "location": "N Seoul Tower (Namsan)",
+      "alt": "N Seoul Tower (Namsan) — gallery image 3",
+      "caption": "N Seoul Tower (Namsan) — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-10.webp",
+      "location": "N Seoul Tower (Namsan)",
+      "alt": "N Seoul Tower (Namsan) — gallery image 4",
+      "caption": "N Seoul Tower (Namsan) — photo 4"
     }
   ],
   "itineraryStops": [
@@ -292,7 +358,130 @@
           "Wikipedia (Gyeongbokgung Palace)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "images": [
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+        "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+        "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+          "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+          "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 1",
+          "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+          "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+          "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 2",
+          "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+          "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+          "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 3",
+          "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+          "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+          "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 4",
+          "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+          "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+          "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 5",
+          "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+          "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+          "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 6",
+          "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+          "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+          "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 7",
+          "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+          "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+          "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 8",
+          "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+          "location": "Gyeongbokgung Palace + Royal Guard ceremony",
+          "caption": "Gyeongbokgung Palace + Royal Guard ceremony — photo 9",
+          "alt": "Gyeongbokgung Palace + Royal Guard ceremony — gallery image 9"
+        }
+      ]
     },
     {
       "number": 3,
@@ -353,7 +542,26 @@
           "Wikipedia (Bukchon Hanok Village)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "images": [
+        "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+          "location": "Bukchon Hanok Village + Insadong",
+          "caption": "Bukchon Hanok Village + Insadong — photo 1",
+          "alt": "Bukchon Hanok Village + Insadong — gallery image 1"
+        }
+      ]
     },
     {
       "number": 4,
@@ -451,7 +659,65 @@
           "Wikipedia (N Seoul Tower)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG"
+      "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+      "images": [
+        "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
+        "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-57-27.webp",
+        "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-06.webp",
+        "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-10.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-57-27.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-10.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
+          "location": "N Seoul Tower (Namsan)",
+          "caption": "N Seoul Tower (Namsan) — photo 1",
+          "alt": "N Seoul Tower (Namsan) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-57-27.webp",
+          "location": "N Seoul Tower (Namsan)",
+          "caption": "N Seoul Tower (Namsan) — photo 2",
+          "alt": "N Seoul Tower (Namsan) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-06.webp",
+          "location": "N Seoul Tower (Namsan)",
+          "caption": "N Seoul Tower (Namsan) — photo 3",
+          "alt": "N Seoul Tower (Namsan) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-10.webp",
+          "location": "N Seoul Tower (Namsan)",
+          "caption": "N Seoul Tower (Namsan) — photo 4",
+          "alt": "N Seoul Tower (Namsan) — gallery image 4"
+        }
+      ]
     },
     {
       "number": 6,
@@ -509,7 +775,27 @@
           "Lotte Department Store official (Myeongdong main branch)",
           "Wikipedia (Myeongdong)"
         ]
-      }
+      },
+      "image": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
+      "images": [
+        "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
+          "location": "Myeongdong OR Jogyesa Temple (your choice)",
+          "caption": "Myeongdong OR Jogyesa Temple (your choice) — photo 1",
+          "alt": "Myeongdong OR Jogyesa Temple (your choice) — gallery image 1"
+        }
+      ]
     },
     {
       "number": 7,
@@ -1184,8 +1470,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Cruise port to palace, custom-built around your sail-away time —",
-        "headlineLine2": "your Seoul day, just for your group, with the ship-return guarantee built in",
+        "headlineLine1": "Incheon to Seoul",
+        "headlineLine2": "Cruise Private Car",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
           "imagePosition": "center 35%",

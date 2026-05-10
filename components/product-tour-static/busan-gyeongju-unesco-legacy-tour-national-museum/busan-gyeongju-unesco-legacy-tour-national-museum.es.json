@@ -14,11 +14,11 @@
       "Tour de un día por los sitios UNESCO de Gyeongju",
       "Tour por el patrimonio del Reino Silla"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG"
+    "ogImage": "https://www.atockorea.com/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp"
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
-    "title": "De Busan a Gyeongju: Tour del Legado UNESCO con Museo Nacional",
+    "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+    "title": "Busan→Gyeongju: Patrimonio UNESCO",
     "priceLabel": "",
     "shortCardDescription": "Tour de un día en grupo reducido de Busan a Gyeongju, capital del Reino Silla durante 992 años (57 a. C.–935 d. C.) y la mayor concentración de sitios Patrimonio de la Humanidad de la UNESCO en Corea. Ruta: Bosque de Bambú de Ahopsan → Templo Bulguksa (UNESCO) → Almuerzo ssambap en Gyeongju → Museo Nacional de Gyeongju → Aldea Hanok de Gyochon → Puente Woljeonggyo. Guía certificado con dominio del inglés y chino; minivan; entrada gratuita al Templo Bulguksa y al museo.",
     "tags": [
@@ -42,10 +42,10 @@
       "Grupo reducido",
       "Desde Busan"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG"
+    "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp"
   },
-  "headlineLine1": "Del Templo Bulguksa al Museo Nacional, del bosque de bambú al puente —",
-  "headlineLine2": "La capital milenaria de Corea en un solo día desde Busan",
+  "headlineLine1": "Busan→Gyeongju",
+  "headlineLine2": "Patrimonio UNESCO",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -55,7 +55,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+    "imageUrl": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
     "imagePosition": "center 35%",
     "tagline": "El «museo sin paredes» de Corea — Gyeongju, donde siete sitios UNESCO se concentran en 15 km",
     "pills": [
@@ -133,49 +133,116 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
-      "alt": "Puentes de piedra y pagoda Dabotap en el Templo Bulguksa, luz de última hora de la tarde",
-      "caption": "Bulguksa — Patrimonio Mundial de la UNESCO. Las dos pagodas son Tesoros Nacionales n.º 20 y 21.",
-      "location": "Templo Bulguksa, Gyeongju",
-      "atmosphere": "Piedra, madera y siluetas de pagodas del siglo VIII"
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+      "location": "Bosque de Bambú de Ahopsan (아홉산숲)",
+      "alt": "Bosque de Bambú de Ahopsan (아홉산숲) — gallery image 1",
+      "caption": "Bosque de Bambú de Ahopsan (아홉산숲) — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/23/2028423_image2_1.JPG",
-      "alt": "Corona de oro de Silla exhibida en vitrina bajo iluminación de museo",
-      "caption": "Museo Nacional de Gyeongju — corona de oro de la tumba Cheonmachong (Tesoro Nacional n.º 188).",
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "location": "Templo Bulguksa (Patrimonio Mundial de la UNESCO)",
+      "alt": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — gallery image 1",
+      "caption": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — photo 1"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
       "location": "Museo Nacional de Gyeongju",
-      "atmosphere": "Galería tranquila, enfoque en un solo objeto"
+      "alt": "Museo Nacional de Gyeongju — gallery image 1",
+      "caption": "Museo Nacional de Gyeongju — photo 1"
     },
     {
-      "id": "g3",
+      "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/00/2024200_image2_1.JPG",
-      "alt": "Casas hanok con tejado de tejas y un muro de piedra a lo largo de un callejón tranquilo en el pueblo de Gyochon",
-      "caption": "Aldea Hanok de Gyochon — el recinto de la familia Choi y la escuela confuciana.",
-      "location": "Aldea Hanok de Gyochon, Gyeongju",
-      "atmosphere": "Calles hanok restauradas, poco tráfico"
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+      "location": "Aldea Hanok de Gyochon",
+      "alt": "Aldea Hanok de Gyochon — gallery image 1",
+      "caption": "Aldea Hanok de Gyochon — photo 1"
     },
     {
-      "id": "g4",
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG",
-      "alt": "Luz filtrándose entre densas cañas de bambú a lo largo de un sendero forestal",
-      "caption": "Bosque de Bambú de Ahopsan — conservado de forma privada por el clan Mun desde 1638.",
-      "location": "Bosque de Ahopsan, Gijang-gun, Busan",
-      "atmosphere": "Luz fresca, verde y filtrada"
-    },
-    {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
       "src": "https://tong.visitkorea.or.kr/cms/resource/49/2390749_image2_1.JPG",
-      "alt": "Pabellón de puente de madera reflejado en el agua al anochecer",
-      "caption": "Puente Woljeonggyo — reconstrucción de estilo Silla de 66 metros completada en 2018.",
-      "location": "Puente Woljeonggyo, Gyeongju",
-      "atmosphere": "Madera, agua y suave luz vespertina"
+      "location": "Puente Woljeonggyo",
+      "alt": "Puente Woljeonggyo — on-route photo",
+      "caption": "Puente Woljeonggyo"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+      "location": "Bosque de Bambú de Ahopsan (아홉산숲)",
+      "alt": "Bosque de Bambú de Ahopsan (아홉산숲) — gallery image 2",
+      "caption": "Bosque de Bambú de Ahopsan (아홉산숲) — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+      "location": "Bosque de Bambú de Ahopsan (아홉산숲)",
+      "alt": "Bosque de Bambú de Ahopsan (아홉산숲) — gallery image 3",
+      "caption": "Bosque de Bambú de Ahopsan (아홉산숲) — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+      "location": "Templo Bulguksa (Patrimonio Mundial de la UNESCO)",
+      "alt": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — gallery image 2",
+      "caption": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "location": "Templo Bulguksa (Patrimonio Mundial de la UNESCO)",
+      "alt": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — gallery image 3",
+      "caption": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+      "location": "Museo Nacional de Gyeongju",
+      "alt": "Museo Nacional de Gyeongju — gallery image 2",
+      "caption": "Museo Nacional de Gyeongju — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+      "location": "Museo Nacional de Gyeongju",
+      "alt": "Museo Nacional de Gyeongju — gallery image 3",
+      "caption": "Museo Nacional de Gyeongju — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+      "location": "Aldea Hanok de Gyochon",
+      "alt": "Aldea Hanok de Gyochon — gallery image 2",
+      "caption": "Aldea Hanok de Gyochon — photo 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+      "location": "Aldea Hanok de Gyochon",
+      "alt": "Aldea Hanok de Gyochon — gallery image 3",
+      "caption": "Aldea Hanok de Gyochon — photo 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+      "location": "Aldea Hanok de Gyochon",
+      "alt": "Aldea Hanok de Gyochon — gallery image 4",
+      "caption": "Aldea Hanok de Gyochon — photo 4"
     }
   ],
   "itineraryStops": [
@@ -266,7 +333,52 @@
           "Korea Tourism Organization (Ahopsan filming location designation)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/23/2028423_image2_1.JPG"
+      "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+      "images": [
+        "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+        "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+        "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+          "location": "Bosque de Bambú de Ahopsan (아홉산숲)",
+          "caption": "Bosque de Bambú de Ahopsan (아홉산숲) — photo 1",
+          "alt": "Bosque de Bambú de Ahopsan (아홉산숲) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+          "location": "Bosque de Bambú de Ahopsan (아홉산숲)",
+          "caption": "Bosque de Bambú de Ahopsan (아홉산숲) — photo 2",
+          "alt": "Bosque de Bambú de Ahopsan (아홉산숲) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+          "location": "Bosque de Bambú de Ahopsan (아홉산숲)",
+          "caption": "Bosque de Bambú de Ahopsan (아홉산숲) — photo 3",
+          "alt": "Bosque de Bambú de Ahopsan (아홉산숲) — gallery image 3"
+        }
+      ]
     },
     {
       "number": 3,
@@ -323,7 +435,52 @@
           "Visit Gyeongju official"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG"
+      "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+      "images": [
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+          "location": "Templo Bulguksa (Patrimonio Mundial de la UNESCO)",
+          "caption": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — photo 1",
+          "alt": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+          "location": "Templo Bulguksa (Patrimonio Mundial de la UNESCO)",
+          "caption": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — photo 2",
+          "alt": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+          "location": "Templo Bulguksa (Patrimonio Mundial de la UNESCO)",
+          "caption": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — photo 3",
+          "alt": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — gallery image 3"
+        }
+      ]
     },
     {
       "number": 4,
@@ -412,7 +569,52 @@
           "National Museum of Korea (Gyeongju Branch)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/00/2024200_image2_1.JPG"
+      "image": "https://tong.visitkorea.or.kr/cms/resource/00/2024200_image2_1.JPG",
+      "images": [
+        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+          "location": "Museo Nacional de Gyeongju",
+          "caption": "Museo Nacional de Gyeongju — photo 1",
+          "alt": "Museo Nacional de Gyeongju — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+          "location": "Museo Nacional de Gyeongju",
+          "caption": "Museo Nacional de Gyeongju — photo 2",
+          "alt": "Museo Nacional de Gyeongju — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+          "location": "Museo Nacional de Gyeongju",
+          "caption": "Museo Nacional de Gyeongju — photo 3",
+          "alt": "Museo Nacional de Gyeongju — gallery image 3"
+        }
+      ]
     },
     {
       "number": 6,
@@ -469,7 +671,65 @@
           "Cultural Heritage Administration of Korea (Gyeongju Choi Clan Family Designation)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG"
+      "image": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG",
+      "images": [
+        "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+        "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+        "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+        "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+          "location": "Aldea Hanok de Gyochon",
+          "caption": "Aldea Hanok de Gyochon — photo 1",
+          "alt": "Aldea Hanok de Gyochon — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+          "location": "Aldea Hanok de Gyochon",
+          "caption": "Aldea Hanok de Gyochon — photo 2",
+          "alt": "Aldea Hanok de Gyochon — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+          "location": "Aldea Hanok de Gyochon",
+          "caption": "Aldea Hanok de Gyochon — photo 3",
+          "alt": "Aldea Hanok de Gyochon — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+          "location": "Aldea Hanok de Gyochon",
+          "caption": "Aldea Hanok de Gyochon — photo 4",
+          "alt": "Aldea Hanok de Gyochon — gallery image 4"
+        }
+      ]
     },
     {
       "number": 7,
@@ -1224,8 +1484,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "De Bulguksa al Museo Nacional, del bosque de bambú al puente —",
-        "headlineLine2": "La capital milenaria de Corea en un solo día desde Busan",
+        "headlineLine1": "Busan→Gyeongju",
+        "headlineLine2": "Patrimonio UNESCO",
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
           "imagePosition": "center 35%",
@@ -1397,7 +1657,7 @@
             "duration": "60 min",
             "name": "Bosque de Bambú Ahopsan",
             "category": "Bosque de Bambú",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/23/2028423_image2_1.JPG",
+            "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
             "description": "Arboleda de bambú conservada de forma privada dentro de la finca ancestral del clan Nampyeong Mun en Gijang-gun, Busan — la familia ha sido propietaria y ha mantenido el bosque desde 1638 (aproximadamente 400 años). Varias icónicas series coreanas se han filmado aquí, la más famosa siendo las escenas del corredor de bambú en 'Mr. Sunshine' (2018). El recorrido circular es de aproximadamente 1 km sobre tierra compactada llana, toma entre 45 y 60 minutos a un ritmo fotográfico tranquilo, y se mantiene fresco en verano porque el dosel filtra la mayor parte de la luz solar directa. Entrada para adultos ₩5.000 (en efectivo; no incluida en el precio del tour). La primavera (temporada de flores de cerezo) es la única excepción, cuando la ruta sustituye esta parada por la Colina Dalmaji de Haeundae (consulte las notas estacionales).",
             "timeUsed": [
               "Llegada, compra de entradas y orientación introductoria",
@@ -1409,7 +1669,52 @@
               "poi_key": "ahopsan_bamboo_forest",
               "is_attraction": true,
               "fee_krw": 5000
-            }
+            },
+            "images": [
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+                "location": "Bosque de Bambú Ahopsan",
+                "caption": "Bosque de Bambú Ahopsan — photo 1",
+                "alt": "Bosque de Bambú Ahopsan — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+                "location": "Bosque de Bambú Ahopsan",
+                "caption": "Bosque de Bambú Ahopsan — photo 2",
+                "alt": "Bosque de Bambú Ahopsan — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+                "location": "Bosque de Bambú Ahopsan",
+                "caption": "Bosque de Bambú Ahopsan — photo 3",
+                "alt": "Bosque de Bambú Ahopsan — gallery image 3"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1434,7 +1739,52 @@
                 "No. 20 Dabotap",
                 "No. 21 Seokgatap"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+                "location": "Templo Bulguksa (Patrimonio Mundial de la UNESCO)",
+                "caption": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — photo 1",
+                "alt": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+                "location": "Templo Bulguksa (Patrimonio Mundial de la UNESCO)",
+                "caption": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — photo 2",
+                "alt": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "location": "Templo Bulguksa (Patrimonio Mundial de la UNESCO)",
+                "caption": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — photo 3",
+                "alt": "Templo Bulguksa (Patrimonio Mundial de la UNESCO) — gallery image 3"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1478,7 +1828,52 @@
                 "No. 29 Sacred Bell",
                 "No. 188 Gold Crown"
               ]
-            }
+            },
+            "images": [
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+                "location": "Museo Nacional de Gyeongju",
+                "caption": "Museo Nacional de Gyeongju — photo 1",
+                "alt": "Museo Nacional de Gyeongju — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+                "location": "Museo Nacional de Gyeongju",
+                "caption": "Museo Nacional de Gyeongju — photo 2",
+                "alt": "Museo Nacional de Gyeongju — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+                "location": "Museo Nacional de Gyeongju",
+                "caption": "Museo Nacional de Gyeongju — photo 3",
+                "alt": "Museo Nacional de Gyeongju — gallery image 3"
+              }
+            ]
           },
           {
             "number": 6,
@@ -1498,7 +1893,65 @@
               "poi_key": "gyochon_hanok_village",
               "is_attraction": true,
               "fee_krw": 0
-            }
+            },
+            "images": [
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+                "location": "Aldea Hanok de Gyochon",
+                "caption": "Aldea Hanok de Gyochon — photo 1",
+                "alt": "Aldea Hanok de Gyochon — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+                "location": "Aldea Hanok de Gyochon",
+                "caption": "Aldea Hanok de Gyochon — photo 2",
+                "alt": "Aldea Hanok de Gyochon — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+                "location": "Aldea Hanok de Gyochon",
+                "caption": "Aldea Hanok de Gyochon — photo 3",
+                "alt": "Aldea Hanok de Gyochon — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+                "location": "Aldea Hanok de Gyochon",
+                "caption": "Aldea Hanok de Gyochon — photo 4",
+                "alt": "Aldea Hanok de Gyochon — gallery image 4"
+              }
+            ]
           },
           {
             "number": 7,

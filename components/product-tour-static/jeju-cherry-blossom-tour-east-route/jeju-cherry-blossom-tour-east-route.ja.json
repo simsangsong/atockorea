@@ -20,7 +20,7 @@
   },
   "catalog_card": {
     "slug": "jeju-cherry-blossom-tour-east-route",
-    "title": "済州桜ツアー・東ルート・春限定",
+    "title": "済州東部・桜ツアー",
     "subtitle": "桜並木、菜の花ロード、溶岩洞窟 — 東済州の春の一日。",
     "region": "済州東部",
     "duration": "春限定（催行期間は開花状況による）",
@@ -44,8 +44,8 @@
       "済州東部"
     ]
   },
-  "headlineLine1": "桜並木、菜の花、溶岩洞窟 —",
-  "headlineLine2": "済州東部の春を一日で",
+  "headlineLine1": "済州東部・桜ツアー",
+  "headlineLine2": "ツアー",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -1521,8 +1521,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "桜並木、菜の花、溶岩洞窟 —",
-        "headlineLine2": "済州東部の春を一日で",
+        "headlineLine1": "済州東部・桜ツアー",
+        "headlineLine2": "ツアー",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
           "imagePosition": "center 40%",

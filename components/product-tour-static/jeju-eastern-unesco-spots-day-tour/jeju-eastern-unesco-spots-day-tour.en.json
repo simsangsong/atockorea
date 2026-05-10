@@ -14,13 +14,13 @@
       "Haenyeo Museum tour",
       "Jeju Sunrise Peak day tour"
     ],
-    "ogImage": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+    "ogImage": "https://www.atockorea.com/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "Jeju East UNESCO Day Tour · All Admissions · 4.9/5 | AtoC",
     "description": "East Jeju UNESCO day tour: Seongsan Ilchulbong → Seongeup Folk Village → Haenyeo Museum → Micheon Cave lava tube → Hamdeok Beach. All admissions included, small group, certified guide. 4.9/5 (1,148 reviews)."
   },
   "catalog_card": {
-    "thumbnail": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
-    "title": "Jeju Eastern UNESCO Spots Day Tour",
+    "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+    "title": "Jeju East UNESCO Day Tour",
     "priceLabel": "Price varies — confirm at booking",
     "shortCardDescription": "A small-group day tour covering eastern Jeju's UNESCO and signature stops in a single 9-hour loop — Hamdeok Seoubong Beach, Seongeup Folk Village, the Micheon Cave lava tube system (current alternate to closed Manjanggul), Seongsan Ilchulbong (UNESCO Sunrise Peak), and the Haenyeo Museum dedicated to Jeju's UNESCO-listed women divers. ALL admissions included; certified English/Chinese-speaking guide; rated 4.9/5 across 1,148 reviews.",
     "tags": [
@@ -46,10 +46,10 @@
       "Value priced",
       "All admissions included"
     ],
-    "heroImage": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg"
+    "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp"
   },
-  "headlineLine1": "Sunrise Peak to lava tube, beach to women-diver museum —",
-  "headlineLine2": "eastern Jeju's UNESCO loop, all admissions included",
+  "headlineLine1": "Jeju East UNESCO",
+  "headlineLine2": "Day Tour",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -59,7 +59,7 @@
     "discountPercent": 10
   },
   "hero": {
-    "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+    "imageUrl": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "imagePosition": "center 35%",
     "tagline": "The most reviewed eastern Jeju tour — 4.9/5 across 1,148 reviews, all admissions included",
     "pills": [
@@ -136,49 +136,236 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
-      "alt": "White sand and turquoise waters at Hamdeok Beach, Jeju",
-      "caption": "Seongsan Ilchulbong (Sunrise Peak) — UNESCO Natural Heritage",
-      "location": "Hamdeok-ri, Jocheon-eup, Jeju",
-      "atmosphere": "Coastal opener"
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+      "location": "Hamdeok Seoubong Beach",
+      "alt": "Hamdeok Seoubong Beach — gallery image 1",
+      "caption": "Hamdeok Seoubong Beach — photo 1"
     },
     {
-      "id": "g2",
+      "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
-      "alt": "Stone-walled thatched houses inside Seongeup Folk Village",
-      "caption": "Hamdeok Seoubong Beach — emerald shallows and the Seoubong volcanic cone",
-      "location": "Seongeup, Pyoseon-myeon, Seogwipo",
-      "atmosphere": "600-year Joseon-era folk village"
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+      "location": "Seongeup Folk Village (UNESCO heritage)",
+      "alt": "Seongeup Folk Village (UNESCO heritage) — gallery image 1",
+      "caption": "Seongeup Folk Village (UNESCO heritage) — photo 1"
     },
     {
-      "id": "g3",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
-      "alt": "Illuminated lava tube interior at Micheon Cave, Ilchul Land",
-      "caption": "Seongeup Folk Village — preserved volcanic-stone walls and thatched roofs",
-      "location": "Ilchul Land, Pyoseon-myeon",
-      "atmosphere": "Indoor lava-tube break"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+      "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 1",
+      "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 1"
     },
     {
-      "id": "g4",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
-      "alt": "View from Seongsan Ilchulbong UNESCO crater rim across the East Sea",
-      "caption": "Micheon Cave lava tube (current alternate to closed Manjanggul)",
-      "location": "Seongsan Ilchulbong UNESCO World Heritage Site",
-      "atmosphere": "Day centerpiece — crater climb"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "Seongsan Ilchulbong (UNESCO Sunrise Peak)",
+      "alt": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — gallery image 1",
+      "caption": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — photo 1"
     },
     {
-      "id": "g5",
+      "id": 5,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
-      "alt": "Haenyeo diving equipment display at Jeju Haenyeo Museum",
-      "caption": "Haenyeo Museum — celebrating Jeju's UNESCO-listed women divers",
-      "location": "Hado-ri, Gujwa-eup, Jeju",
-      "atmosphere": "UNESCO Intangible Cultural Heritage"
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+      "location": "Haenyeo Museum (women divers)",
+      "alt": "Haenyeo Museum (women divers) — gallery image 1",
+      "caption": "Haenyeo Museum (women divers) — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+      "location": "Hamdeok Seoubong Beach",
+      "alt": "Hamdeok Seoubong Beach — gallery image 2",
+      "caption": "Hamdeok Seoubong Beach — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+      "location": "Hamdeok Seoubong Beach",
+      "alt": "Hamdeok Seoubong Beach — gallery image 3",
+      "caption": "Hamdeok Seoubong Beach — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+      "location": "Hamdeok Seoubong Beach",
+      "alt": "Hamdeok Seoubong Beach — gallery image 4",
+      "caption": "Hamdeok Seoubong Beach — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+      "location": "Seongeup Folk Village (UNESCO heritage)",
+      "alt": "Seongeup Folk Village (UNESCO heritage) — gallery image 2",
+      "caption": "Seongeup Folk Village (UNESCO heritage) — photo 2"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+      "location": "Seongeup Folk Village (UNESCO heritage)",
+      "alt": "Seongeup Folk Village (UNESCO heritage) — gallery image 3",
+      "caption": "Seongeup Folk Village (UNESCO heritage) — photo 3"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+      "location": "Seongeup Folk Village (UNESCO heritage)",
+      "alt": "Seongeup Folk Village (UNESCO heritage) — gallery image 4",
+      "caption": "Seongeup Folk Village (UNESCO heritage) — photo 4"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+      "location": "Seongeup Folk Village (UNESCO heritage)",
+      "alt": "Seongeup Folk Village (UNESCO heritage) — gallery image 5",
+      "caption": "Seongeup Folk Village (UNESCO heritage) — photo 5"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+      "location": "Seongeup Folk Village (UNESCO heritage)",
+      "alt": "Seongeup Folk Village (UNESCO heritage) — gallery image 6",
+      "caption": "Seongeup Folk Village (UNESCO heritage) — photo 6"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+      "location": "Seongeup Folk Village (UNESCO heritage)",
+      "alt": "Seongeup Folk Village (UNESCO heritage) — gallery image 7",
+      "caption": "Seongeup Folk Village (UNESCO heritage) — photo 7"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+      "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+      "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 2",
+      "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 2"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+      "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+      "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 3",
+      "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 3"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+      "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+      "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 4",
+      "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 4"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+      "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+      "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 5",
+      "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 5"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+      "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+      "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 6",
+      "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 6"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+      "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+      "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 7",
+      "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 7"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+      "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+      "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 8",
+      "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 8"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+      "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+      "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 9",
+      "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 9"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+      "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+      "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 10",
+      "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 10"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "Seongsan Ilchulbong (UNESCO Sunrise Peak)",
+      "alt": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — gallery image 2",
+      "caption": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — photo 2"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "Seongsan Ilchulbong (UNESCO Sunrise Peak)",
+      "alt": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — gallery image 3",
+      "caption": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — photo 3"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "Seongsan Ilchulbong (UNESCO Sunrise Peak)",
+      "alt": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — gallery image 4",
+      "caption": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — photo 4"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "Seongsan Ilchulbong (UNESCO Sunrise Peak)",
+      "alt": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — gallery image 5",
+      "caption": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — photo 5"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
+      "location": "Haenyeo Museum (women divers)",
+      "alt": "Haenyeo Museum (women divers) — gallery image 2",
+      "caption": "Haenyeo Museum (women divers) — photo 2"
+    },
+    {
+      "id": 29,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
+      "location": "Haenyeo Museum (women divers)",
+      "alt": "Haenyeo Museum (women divers) — gallery image 3",
+      "caption": "Haenyeo Museum (women divers) — photo 3"
     }
   ],
   "itineraryStops": [
@@ -217,7 +404,7 @@
       "name": "Hamdeok Seoubong Beach",
       "category": "Top-3 Jeju Beach — Olle Trail 19 + WWII Coastal History",
       "description": "**Hamdeok Seoubong Beach (함덕 서우봉 해변)** is one of Jeju's best-known east-coast beaches, loved for its bright sand, shallow emerald water, and the small volcanic cone of **Seoubong (서우봉)** rising at the eastern end. The main beach and connected coves give guests an easy first look at Jeju's coastal scenery without a long walk, and the seaside promenade is suitable for families and seniors. In spring, the slopes around Seoubong often turn yellow with canola flowers; in clear weather, the short upper path gives a broad view over the eastern coastline. The area also has a historical layer: coastal caves and wartime remains around Seoubong are connected with Japan's late-colonial military presence on Jeju, adding context beyond the beach view. Hamdeok is also part of **Jeju Olle Trail Course 19**, so guests can experience a small piece of Jeju's walking culture before moving inland. Admission is free, and the stop works well as a relaxed photo and orientation point at the beginning of the eastern route.",
-      "image": "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
+      "image": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "highlights": [
         "**Top 3 Jeju beaches** — emerald-turquoise water + white coral sand",
         "**500 m main beach** + 3 connected coves (~900 m total length)",
@@ -265,79 +452,61 @@
         "walking": "Easy — beach is flat sand; Seoubong hike is moderate (steps)"
       },
       "images": [
-        "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
-        "/images/tours/hamdeok-beach/hamdeok-beach-buskers-palms.webp",
-        "/images/tours/hamdeok-beach/hamdeok-beach-evening-wading.webp",
-        "/images/tours/hamdeok-beach/hamdeok-beach-sunset-crowd.webp",
-        "/images/tours/hamdeok-beach/hamdeok-beach-golden-hour-aerial.webp"
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp"
       ],
       "imageCredits": [
         {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+          "source": "atoc-korea"
         },
         {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-buskers-palms.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+          "source": "atoc-korea"
         },
         {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-evening-wading.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+          "source": "atoc-korea"
         },
         {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-sunset-crowd.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
-        },
-        {
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-golden-hour-aerial.webp",
-          "source": "atoc-korea",
-          "credit": "ATOC Korea"
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
         {
-          "id": "hamdeok-1",
+          "id": 1,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-white-sand-turquoise.webp",
-          "location": "Hamdeok Beach",
-          "caption": "White sand and turquoise waters",
-          "alt": "Elevated view of white sand and turquoise sea, Hamdeok Beach"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+          "location": "Hamdeok Seoubong Beach",
+          "caption": "Hamdeok Seoubong Beach — photo 1",
+          "alt": "Hamdeok Seoubong Beach — gallery image 1"
         },
         {
-          "id": "hamdeok-2",
+          "id": 2,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-buskers-palms.webp",
-          "location": "Hamdeok Beach",
-          "caption": "Beachside buskers under palm trees",
-          "alt": "Buskers performing on white sand with palm trees, Hamdeok Beach"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+          "location": "Hamdeok Seoubong Beach",
+          "caption": "Hamdeok Seoubong Beach — photo 2",
+          "alt": "Hamdeok Seoubong Beach — gallery image 2"
         },
         {
-          "id": "hamdeok-3",
+          "id": 3,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-evening-wading.webp",
-          "location": "Hamdeok Beach",
-          "caption": "Evening waders at Hamdeok",
-          "alt": "Families wading in shallow water at dusk, Hamdeok Beach"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+          "location": "Hamdeok Seoubong Beach",
+          "caption": "Hamdeok Seoubong Beach — photo 3",
+          "alt": "Hamdeok Seoubong Beach — gallery image 3"
         },
         {
-          "id": "hamdeok-4",
+          "id": 4,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-sunset-crowd.webp",
-          "location": "Hamdeok Beach",
-          "caption": "Sunset over Hamdeok Beach",
-          "alt": "Orange sunset with crowd on Hamdeok Beach, buoys visible"
-        },
-        {
-          "id": "hamdeok-5",
-          "type": "photo",
-          "src": "/images/tours/hamdeok-beach/hamdeok-beach-golden-hour-aerial.webp",
-          "location": "Hamdeok Beach",
-          "caption": "Golden hour aerial view",
-          "alt": "Aerial golden hour view of Hamdeok Beach and Jeju City"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+          "location": "Hamdeok Seoubong Beach",
+          "caption": "Hamdeok Seoubong Beach — photo 4",
+          "alt": "Hamdeok Seoubong Beach — gallery image 4"
         }
       ]
     },
@@ -348,7 +517,7 @@
       "name": "Seongeup Folk Village (UNESCO heritage)",
       "category": "Joseon-era Walled Town — Important Folklore Cultural Heritage (1423 founding)",
       "description": "**Seongeup Folk Village (성읍 민속마을)** is an inhabited Joseon-era village that preserves old Jeju stone walls, thatched-roof houses, narrow alleys, and traditional household layouts. Historically, the village served as the administrative center of Jeongui-hyeon, one of the main local districts of Joseon-era Jeju, and its heritage value is recognized as an Important Folklore Cultural Heritage site. Unlike a staged folk park, people still live here, so the visit must be respectful and quiet around private homes. The village is also known for its old zelkova and hackberry trees near the center, traditional Jeju architecture, and local stories about daily life in a windy volcanic island environment. For visitors, this stop gives a grounded cultural contrast after Hamdeok's coast: guests see how Jeju people historically built homes, protected villages with stone walls, and adapted to a harsh island climate.",
-      "image": "https://images.unsplash.com/photo-1517400508447-f8dd518b86db",
+      "image": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
       "highlights": [
         "**Founded 1423** by Sejong the Great — administrative center until **1914 (~500 years)**",
         "**110 traditional structures** within original eupseong walled-town footprint",
@@ -395,7 +564,104 @@
         "closed": "Open year-round",
         "admission": "Free for general village; some private homes charge for guided visits",
         "walking": "Easy — flat dirt and stone paths through the village"
-      }
+      },
+      "images": [
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+        "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+          "location": "Seongeup Folk Village (UNESCO heritage)",
+          "caption": "Seongeup Folk Village (UNESCO heritage) — photo 1",
+          "alt": "Seongeup Folk Village (UNESCO heritage) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+          "location": "Seongeup Folk Village (UNESCO heritage)",
+          "caption": "Seongeup Folk Village (UNESCO heritage) — photo 2",
+          "alt": "Seongeup Folk Village (UNESCO heritage) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+          "location": "Seongeup Folk Village (UNESCO heritage)",
+          "caption": "Seongeup Folk Village (UNESCO heritage) — photo 3",
+          "alt": "Seongeup Folk Village (UNESCO heritage) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+          "location": "Seongeup Folk Village (UNESCO heritage)",
+          "caption": "Seongeup Folk Village (UNESCO heritage) — photo 4",
+          "alt": "Seongeup Folk Village (UNESCO heritage) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+          "location": "Seongeup Folk Village (UNESCO heritage)",
+          "caption": "Seongeup Folk Village (UNESCO heritage) — photo 5",
+          "alt": "Seongeup Folk Village (UNESCO heritage) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+          "location": "Seongeup Folk Village (UNESCO heritage)",
+          "caption": "Seongeup Folk Village (UNESCO heritage) — photo 6",
+          "alt": "Seongeup Folk Village (UNESCO heritage) — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+          "location": "Seongeup Folk Village (UNESCO heritage)",
+          "caption": "Seongeup Folk Village (UNESCO heritage) — photo 7",
+          "alt": "Seongeup Folk Village (UNESCO heritage) — gallery image 7"
+        }
+      ]
     },
     {
       "number": 4,
@@ -404,7 +670,7 @@
       "name": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
       "category": "Lava Tube + Theme Park — Manjanggul Alternate (UNESCO-property adjacent)",
       "description": "**Ilchul Land (일출랜드)** is a large nature theme park in Seongsan built around **Micheon Cave (미천굴)**, a lava-tube cave with a visitor walkway open to the public. It is not Manjanggul Cave, but it offers a practical lava-cave experience when Manjanggul is unavailable or when guests need an easier walking surface. Micheon Cave's maintained path, lighting, and controlled route make it more accessible for families, older guests, and visitors who may not be comfortable with rougher cave floors. Outside the cave, Ilchul Land includes gardens, traditional-style Jeju displays, sculptures, and rest areas, so the stop functions as both a geology stop and a weather-friendly break in the middle of the route. The cave is cooler than the outside temperature, so a light jacket can be useful even in warmer seasons.",
-      "image": "https://images.unsplash.com/photo-1502780402662-acc01917a3a4",
+      "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
       "highlights": [
         "**1,700 m total** lava tube; **365 m open section** (~25-min walk-through)",
         "**Manjanggul UNESCO alternate** — same lava-tube system; opens when Manjanggul closes",
@@ -450,7 +716,143 @@
         "closed": "Per Ilchul Land park schedule — verify with operator",
         "admission": "Included in Ilchul Land park admission — verify ticket pricing with operator",
         "walking": "Moderate — descending stairs into cave, ≈ 12°C year-round; uneven volcanic floor inside cave section"
-      }
+      },
+      "images": [
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+          "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+          "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 1",
+          "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+          "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+          "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 2",
+          "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+          "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+          "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 3",
+          "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+          "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+          "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 4",
+          "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+          "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 5",
+          "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+          "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 6",
+          "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+          "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 7",
+          "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+          "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+          "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 8",
+          "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+          "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+          "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 9",
+          "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+          "location": "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+          "caption": "Micheon Cave at Ilchul Land (Manjanggul alternate) — photo 10",
+          "alt": "Micheon Cave at Ilchul Land (Manjanggul alternate) — gallery image 10"
+        }
+      ]
     },
     {
       "number": 5,
@@ -485,7 +887,7 @@
       "name": "Seongsan Ilchulbong (UNESCO Sunrise Peak)",
       "category": "UNESCO Tuff Cone — Sunrise Peak (Triple UNESCO Designation)",
       "description": "**Seongsan Ilchulbong (성산일출봉, 'Sunrise Peak')** is a **5,000-year-old Surtseyan-type hydrovolcanic tuff cone** — a rare landform created when an underwater basalt eruption broke the sea surface, the magma met seawater, and the resulting steam-explosive ash built a **182 m fortress-shaped crater** rim instead of a typical lava cone. The result is what UNESCO formally calls **'an exceptional example of an emergent Surtseyan-type volcanic edifice'**. The crater is **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** that local lore likens to a stone crown. Seongsan carries the **Triple UNESCO designation**: **World Natural Heritage (inscribed 2007-07-02)** as part of the **'Jeju Volcanic Island and Lava Tubes' property**, **Biosphere Reserve (2002)**, and **Global Geopark (2010-10)** — a stack matched only by Hallasan itself among Korean sites. **18 Imperial Japanese WWII caves** (kamikaze suicide-boat shelters, 1945) are tunneled into the seaward base. Trail: **0.8 km one-way, ~140 m elevation gain, 60 min round trip** on wide stone steps. **Haenyeo (해녀) demonstrations** run **daily at 13:30 and 15:00** at the rocky cove below the cone — Jeju women divers (UNESCO Intangible Cultural Heritage 2016) descend without scuba gear. Admission updated **April 2025**: **Adult ₩5,000 / Youth+Child ₩2,500 / Group adult ₩1,600**, free under 7 and over 65. The summit deck is also part of the **Yeongjusipgyeong (Jeju 10 Scenic Wonders) canon**, and remains Korea's premier **annual New Year sunrise pilgrimage** destination — 50,000+ visitors ascend before dawn on January 1, with municipal sunrise-festival programming since 1995. **Udo Island (우도, 'Cow Island')** — Korea's largest secondary volcanic island — is clearly visible 4 km offshore from the summit, accessible by **15-min ferry from Seongsan Port** (₩10,500 round-trip) for guests with extra time on a different itinerary.",
-      "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd",
+      "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "highlights": [
         "**Triple UNESCO**: World Heritage 2007-07-02 + Biosphere Reserve 2002 + Global Geopark 2010-10",
         "**5,000 years old** — Surtseyan-type hydrovolcanic eruption, magma-meets-seawater steam-explosive birth",
@@ -531,7 +933,78 @@
         "closed": "Open year-round (weather closures possible)",
         "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
         "walking": "Moderate — 20–30 min steady stair climb (≈ 600 stairs); benches every few minutes for rest"
-      }
+      },
+      "images": [
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "location": "Seongsan Ilchulbong (UNESCO Sunrise Peak)",
+          "caption": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — photo 1",
+          "alt": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "location": "Seongsan Ilchulbong (UNESCO Sunrise Peak)",
+          "caption": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — photo 2",
+          "alt": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "location": "Seongsan Ilchulbong (UNESCO Sunrise Peak)",
+          "caption": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — photo 3",
+          "alt": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "location": "Seongsan Ilchulbong (UNESCO Sunrise Peak)",
+          "caption": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — photo 4",
+          "alt": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "location": "Seongsan Ilchulbong (UNESCO Sunrise Peak)",
+          "caption": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — photo 5",
+          "alt": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — gallery image 5"
+        }
+      ]
     },
     {
       "number": 7,
@@ -540,7 +1013,7 @@
       "name": "Haenyeo Museum (women divers)",
       "category": "UNESCO Intangible Cultural Heritage — Jeju Diving Culture (2016)",
       "description": "**Jeju Haenyeo Museum (제주 해녀 박물관)** introduces the lives and culture of Jeju's women divers, whose community practice was inscribed by UNESCO as Intangible Cultural Heritage of Humanity in 2016. Located in Gujwa-eup on the east side of Jeju, the museum is close to coastal villages where haenyeo culture remains especially visible. Exhibitions explain diving tools, work clothes, sea-harvesting methods, village cooperatives, family transmission, songs, rituals, and the strong role women divers played in Jeju's island economy. The museum also helps guests understand that haenyeo are not simply a photo subject: their work reflects breath-hold diving skill, ecological knowledge, community discipline, and a long tradition of women's labor. This is a mostly indoor stop, useful after Seongsan Ilchulbong and helpful in rainy or windy weather.",
-      "image": "https://images.unsplash.com/photo-1551883040-7d23ea4f1f87",
+      "image": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
       "highlights": [
         "**UNESCO Intangible Cultural Heritage of Humanity (2016)** — Jeju women-diver culture",
         "**First written record 1629** — Lee Geon's 'Description of Jeju' / 'Guchang' (recorded as 'Jamnyeo')",
@@ -587,7 +1060,52 @@
         "closed": "Mondays, Jan 1, Seollal, Chuseok",
         "admission": "Adult 1,100 KRW / Teen 800 KRW / Child 500 KRW",
         "walking": "Easy — modern museum with elevators"
-      }
+      },
+      "images": [
+        "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+        "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
+        "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+          "location": "Haenyeo Museum (women divers)",
+          "caption": "Haenyeo Museum (women divers) — photo 1",
+          "alt": "Haenyeo Museum (women divers) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
+          "location": "Haenyeo Museum (women divers)",
+          "caption": "Haenyeo Museum (women divers) — photo 2",
+          "alt": "Haenyeo Museum (women divers) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
+          "location": "Haenyeo Museum (women divers)",
+          "caption": "Haenyeo Museum (women divers) — photo 3",
+          "alt": "Haenyeo Museum (women divers) — gallery image 3"
+        }
+      ]
     },
     {
       "number": 8,
@@ -1449,8 +1967,8 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Sunrise Peak to lava tube, beach to women-diver museum —",
-        "headlineLine2": "eastern Jeju's UNESCO loop, all admissions included",
+        "headlineLine1": "Jeju East UNESCO",
+        "headlineLine2": "Day Tour",
         "hero": {
           "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
           "imagePosition": "center 35%",
