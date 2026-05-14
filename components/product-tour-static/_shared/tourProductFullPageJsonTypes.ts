@@ -39,6 +39,12 @@ export const TOUR_PRODUCT_VIEW_MODEL_KEYS = [
   "pickup_dropoff",
   /** Optional — cruise shore-excursion tours carry per-docking-port itineraries. */
   "routeVariants",
+  /** Optional — private/charter tours with pax × duration pricing matrix. */
+  "pricingTiers",
+  /** Optional — opt-in section rendered above the itinerary for tours with a
+   *  live external status feed (currently only `"haenyeo"` for Jeju east tours
+   *  that include the haenyeo-show stop). */
+  "liveStatusSection",
 ] as const;
 
 export type TourProductViewModelKey = (typeof TOUR_PRODUCT_VIEW_MODEL_KEYS)[number];

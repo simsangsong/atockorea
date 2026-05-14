@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "济州绣球花节：东部",
-    "priceLabel": "",
+    "priceLabel": "每人 US$59（原价$69，14% 优惠）",
     "shortCardDescription": "夏季限定东济州小团一日游，以岛内绣球花节庆为主题：城山日出峰（UNESCO）、山房山绣球花节、涉地可支海岸及成音浦港游船。6月下旬至7月下旬运营，正值绣球花盛放期。",
     "tags": [
       "小团",
@@ -53,12 +53,12 @@
   "headlineLine1": "济州绣球花节",
   "headlineLine2": "东部",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
-    "per": "人",
-    "priceSource": "",
-    "priceNote": "",
-    "discountPercent": null
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
@@ -738,7 +738,7 @@
         "登顶观景台（0.8公里/高差140米）——约30分钟",
         "顶部观景+火山口边缘拍照——约20分钟",
         "下山——约20分钟",
-        "可选：在底部观看海女表演（15:00场次）——约10分钟"
+        "可选：在底部观看海女表演（每日1场，下午2点；恶劣天气时可能取消）——约10分钟"
       ],
       "whyOnRoute": "**全日的UNESCO顶峰核心亮点和东部路线的核心景点**。城山是下午第一站（12:50抵达）的三个理由：（1）**三重UNESCO份量**：城山是全济州唯一同时获得UNESCO世界自然遗产＋生物圈保护区＋全球地质公园三重指定的景点；（2）**体力管理**：将城山安排在绣球花午后之前，确保宾客以最饱满的体力完成城山登顶；（3）**光线时机**：12:50至14:30的光线以侧光角度照射凝灰岩锥面，比下午晚段的低角光线更能呈现锥体的几何感。",
       "_poi_meta": {
@@ -838,7 +838,8 @@
           "caption": "城山日出峰 — photo 5",
           "alt": "城山日出峰 — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     },
     {
       "number": 6,
@@ -1532,12 +1533,12 @@
   "sticky_booking_bar": {
     "note": "可订状态将在支付步骤中确认。",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
-      "per": "人",
-      "priceSource": "",
-      "priceNote": "",
-      "discountPercent": null
+      "per": "person"
     }
   },
   "pickup_dropoff": {
@@ -2438,7 +2439,7 @@
               "登顶观景台（0.8公里/高差140米）——约30分钟",
               "顶部观景+火山口边缘拍照——约20分钟",
               "下山——约20分钟",
-              "可选：在底部观看海女表演（15:00场次）——约10分钟"
+              "可选：在底部观看海女表演（每日1场，下午2点；恶劣天气时可能取消）——约10分钟"
             ],
             "whyOnRoute": "**全日的UNESCO顶峰核心亮点和东部路线的核心景点**。城山是下午第一站（12:50抵达）的三个理由：（1）**三重UNESCO份量**：城山是全济州唯一同时获得UNESCO世界自然遗产＋生物圈保护区＋全球地质公园三重指定的景点；（2）**体力管理**：将城山安排在绣球花午后之前，确保宾客以最饱满的体力完成城山登顶；（3）**光线时机**：12:50至14:30的光线以侧光角度照射凝灰岩锥面，比下午晚段的低角光线更能呈现锥体的几何感。",
             "_poi_meta": {

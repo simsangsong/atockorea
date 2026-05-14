@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "Jeju East UNESCO Day Tour",
-    "priceLabel": "Price varies — confirm at booking",
+    "priceLabel": "From US$59 per person (was $69, 14% off)",
     "shortCardDescription": "A small-group day tour covering eastern Jeju's UNESCO and signature stops in a single 9-hour loop — Hamdeok Seoubong Beach, Seongeup Folk Village, the Micheon Cave lava tube system (current alternate to closed Manjanggul), Seongsan Ilchulbong (UNESCO Sunrise Peak), and the Haenyeo Museum dedicated to Jeju's UNESCO-listed women divers. ALL admissions included; certified English/Chinese-speaking guide; rated 4.9/5 across 1,148 reviews.",
     "tags": [
       "Small group",
@@ -51,12 +51,12 @@
   "headlineLine1": "Jeju East UNESCO",
   "headlineLine2": "Day Tour",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
-    "per": "person",
-    "priceSource": "AtoC Korea direct rate",
-    "priceNote": "Final rate is confirmed after selecting your travel date and group size. Direct booking is handled by AtoC Korea.",
-    "discountPercent": 10
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
@@ -894,7 +894,7 @@
         "Crater **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** (the 'stone crown')",
         "**182 m above sea level** — 0.8 km / ~140 m gain, 60-min round trip on stone-step trail",
         "**18 Imperial Japanese WWII caves** at base — 1945 kamikaze suicide-boat shelters",
-        "**Haenyeo demonstrations daily 13:30 + 15:00** at the seaside cove — UNESCO Intangible 2016",
+        "**Haenyeo demonstration once daily at 14:00 (subject to bad-weather cancellation)** at the seaside cove — UNESCO Intangible 2016",
         "**Admission updated April 2025**: Adult ₩5,000 / Youth ₩2,500 / FREE under 7 + over 65",
         "Spring/autumn hours **05:00–19:00** (last entry 18:20)",
         "**Closes for first Monday of each month** (occasional rest day)"
@@ -904,7 +904,7 @@
         "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min",
         "Summit views + crater rim photos — ~20 min",
         "Descent — ~20 min",
-        "Optional haenyeo viewing at base (15:00 demo) — ~10 min"
+        "Optional haenyeo viewing at base (14:00 show; may be canceled in bad weather) — ~10 min"
       ],
       "whyOnRoute": "**Main UNESCO natural-heritage highlight of the eastern route.** Seongsan Ilchulbong gives the day its strongest volcanic landscape: a dramatic tuff cone formed by underwater volcanic activity and recognized as part of Jeju's UNESCO World Natural Heritage landscape. The stop works well after the morning's village and cave visits because guests can now see the volcanic story at full scale above the sea. When timing and weather allow, the visit may also connect naturally with a haenyeo performance near the base before the route continues to the Haenyeo Museum for deeper cultural context.",
       "_poi_meta": {
@@ -1004,7 +1004,8 @@
           "caption": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — photo 5",
           "alt": "Seongsan Ilchulbong (UNESCO Sunrise Peak) — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     },
     {
       "number": 7,
@@ -1523,12 +1524,12 @@
   "sticky_booking_bar": {
     "note": "Select your date and group size to check live availability and complete your booking.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
-      "per": "person",
-      "priceSource": "AtoC Korea direct rate",
-      "priceNote": "Final rate is confirmed after selecting your travel date and group size. Direct booking is handled by AtoC Korea.",
-      "discountPercent": 10
+      "per": "person"
     }
   },
   "pickup_dropoff": {
@@ -2918,5 +2919,6 @@
         }
       }
     }
-  }
+  },
+  "liveStatusSection": "haenyeo"
 }

@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "濟州東部UNESCO一日遊",
-    "priceLabel": "",
+    "priceLabel": "每人 US$59（原價$69，14% 優惠）",
     "shortCardDescription": "涵蓋東濟州UNESCO及代表性景點的小團體一日遊：濟州石文化公園、城山日出峰（UNESCO）、涉地可支海岸、萬丈窟熔岩洞穴（UNESCO）及私人馬場體驗。透過合理安排遊覽順序，盡量避開旺季人流。",
     "tags": [
       "小團",
@@ -51,12 +51,12 @@
   "headlineLine1": "濟州東部UNESCO一日遊",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
-    "per": "人",
-    "priceSource": "",
-    "priceNote": "",
-    "discountPercent": null
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
@@ -927,7 +927,7 @@
         "登頂觀景臺（0.8公里/高差140米）——約30分鐘",
         "頂部觀景+火山口邊緣拍照——約20分鐘",
         "下山——約20分鐘",
-        "可選：在底部觀看海女表演（15:00場次）——約10分鐘"
+        "可選：在底部觀看海女表演（每日1場，下午2點；惡劣天氣時可能取消）——約10分鐘"
       ],
       "whyOnRoute": "**東部UNESCO路線的UNESCO三重冠高潮**。與自然核心姊妹行程（城山作為下午中段，夾在涉地可支早晨和日出樂園下午之間）不同，本UNESCO行程將城山定位為**全日景色制高點兼參觀脈絡高潮**（90分鐘停留，13:35抵達）——午餐後緊接登場，確保高潮清晰醒目。海女博物館作為「UNESCO無形遺產壓軸」置於城山之後，讓全日的UNESCO參觀脈絡閉環完整。",
       "_poi_meta": {
@@ -1027,7 +1027,8 @@
           "caption": "城山日出峰 — photo 5",
           "alt": "城山日出峰 — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     },
     {
       "number": 7,
@@ -1545,12 +1546,12 @@
   "sticky_booking_bar": {
     "note": "可訂狀態會在付款步驟中確認。",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
-      "per": "人",
-      "priceSource": "",
-      "priceNote": "",
-      "discountPercent": null
+      "per": "person"
     }
   },
   "pickup_dropoff": {
@@ -2619,7 +2620,7 @@
               "登頂觀景臺（0.8公里/高差140米）——約30分鐘",
               "頂部觀景+火山口邊緣拍照——約20分鐘",
               "下山——約20分鐘",
-              "可選：在底部觀看海女表演（15:00場次）——約10分鐘"
+              "可選：在底部觀看海女表演（每日1場，下午2點；惡劣天氣時可能取消）——約10分鐘"
             ],
             "whyOnRoute": "**東部UNESCO路線的UNESCO三重冠高潮**。與自然核心姊妹行程（城山作為下午中段，夾在涉地可支早晨和日出樂園下午之間）不同，本UNESCO行程將城山定位為**全日景色制高點兼參觀脈絡高潮**（90分鐘停留，13:35抵達）——午餐後緊接登場，確保高潮清晰醒目。海女博物館作為「UNESCO無形遺產壓軸」置於城山之後，讓全日的UNESCO參觀脈絡閉環完整。",
             "_poi_meta": {
@@ -3421,5 +3422,6 @@
         }
       }
     }
-  }
+  },
+  "liveStatusSection": "haenyeo"
 }

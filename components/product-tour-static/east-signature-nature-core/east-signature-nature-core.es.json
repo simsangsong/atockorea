@@ -34,7 +34,7 @@
     ],
     "heroImage": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
     "thumbnail": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
-    "priceLabel": "Consulte el precio al reservar",
+    "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
     "shortCardDescription": "Tour en grupo pequeño por el este de Jeju siguiendo la ruta más equilibrada de la isla: Parque de Cultura de Piedra de Jeju (mitología de la creación) → Cabo Seopjikoji (2,1 km de costa volcánica y escenario de K-dramas) → Seongsan Ilchulbong (Patrimonio Natural UNESCO) → Cueva Micheon en Ilchul Land → Aldea Folclórica Seongeup (ciudad joseonesa viva desde 1423). Recogida en hotel, todas las entradas incluidas.",
     "tags": [
       "grupo reducido",
@@ -48,12 +48,12 @@
   "headlineLine1": "Jeju Este",
   "headlineLine2": "Volcán, Costa y Aldea",
   "price": {
-    "amountLabel": "58",
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
-    "per": "persona",
-    "priceSource": "internal",
-    "priceNote": "Tour bilingüe en grupo pequeño. Venta directa AtoC Korea; descuento del 10% respecto al operador.",
-    "discountPercent": 10
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
@@ -821,7 +821,8 @@
           "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 5",
           "alt": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     },
     {
       "number": 5,
@@ -1628,12 +1629,12 @@
   "sticky_booking_bar": {
     "note": "La disponibilidad se confirma en el paso de pago.",
     "price": {
-      "amountLabel": "58",
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
-      "per": "persona",
-      "priceSource": "internal",
-      "priceNote": "Tour bilingüe en grupo pequeño. Venta directa de AtoC Korea con 10% de descuento frente al precio base del operador.",
-      "discountPercent": 10
+      "per": "person"
     }
   },
   "page_sections": [

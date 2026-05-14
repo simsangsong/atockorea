@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
     "thumbnail": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
-    "priceLabel": "每人 US$58起/每人",
+    "priceLabel": "每人 US$59（原价$69，14% 优惠）",
     "shortCardDescription": "结构清晰的东济州一日路线，以石头文化与火山为起点，途经东部沿海核心景点：济州石文化公园、城山日出峰（UNESCO）、涉地可支及私人马场体验。通过合理安排游览顺序，尽量避开旺季人流。",
     "tags": [
       "小团",
@@ -47,12 +47,12 @@
   "headlineLine1": "济州东部",
   "headlineLine2": "火山·海岸·民俗村",
   "price": {
-    "amountLabel": "58",
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
-    "per": "人",
-    "priceSource": "internal",
-    "priceNote": "小团双语讲解。AtoC Korea直售，较旅游服务团队底价享9折优惠。",
-    "discountPercent": 10
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
@@ -732,7 +732,7 @@
         "登顶观景台（0.8公里/高差140米）——约30分钟",
         "顶部观景+火山口边缘拍照——约20分钟",
         "下山——约20分钟",
-        "可选：在底部观看海女表演（15:00场次）——约10分钟"
+        "可选：在底部观看海女表演（每日1场，下午2点；恶劣天气时可能取消）——约10分钟"
       ],
       "whyOnRoute": "**东部招牌路线的下午UNESCO高潮**。与大环线姊妹团（城山日出峰是全日东端压轴）不同，本行程中城山排在**下午中段（13:35抵达，停留90分钟）**——夹在涉地可支（前站）与日出乐园（后站）之间。这种安排避免了以UNESCO高潮收尾、后半程让人意犹未尽的常见问题；相反，先以城山作为全日景色制高点，再透过日出乐园的溶洞段及城邑民俗村来降低节奏，让全日行程弧线感更完整。",
       "_poi_meta": {
@@ -832,7 +832,8 @@
           "caption": "城山日出峰 — photo 5",
           "alt": "城山日出峰 — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     },
     {
       "number": 5,
@@ -1652,12 +1653,12 @@
   "sticky_booking_bar": {
     "note": "可订状态将在支付步骤中确认。",
     "price": {
-      "amountLabel": "58",
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
-      "per": "人",
-      "priceSource": "internal",
-      "priceNote": "小团双语旅游。AtoC Korea直营售价较当地团队基础价享受10%折扣。",
-      "discountPercent": 10
+      "per": "person"
     }
   },
   "page_sections": [
@@ -2100,7 +2101,7 @@
               "登顶观景台（0.8公里/高差140米）——约30分钟",
               "顶部观景+火山口边缘拍照——约20分钟",
               "下山——约20分钟",
-              "可选：在底部观看海女表演（15:00场次）——约10分钟"
+              "可选：在底部观看海女表演（每日1场，下午2点；恶劣天气时可能取消）——约10分钟"
             ],
             "whyOnRoute": "**东部招牌路线的下午UNESCO高潮**。与大环线姊妹团（城山日出峰是全日东端压轴）不同，本行程中城山排在**下午中段（13:35抵达，停留90分钟）**——夹在涉地可支（前站）与日出乐园（后站）之间。这种安排避免了以UNESCO高潮收尾、后半程让人意犹未尽的常见问题；相反，先以城山作为全日景色制高点，再透过日出乐园的溶洞段及城邑民俗村来降低节奏，让全日行程弧线感更完整。",
             "_poi_meta": {

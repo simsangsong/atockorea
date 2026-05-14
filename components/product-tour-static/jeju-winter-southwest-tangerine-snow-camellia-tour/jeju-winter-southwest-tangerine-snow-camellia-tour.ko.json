@@ -20,7 +20,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
     "title": "제주 겨울: 감귤·설경·동백 투어",
-    "priceLabel": "가격은 예약 시 확인",
+    "priceLabel": "1인 US$59 (정가 $69, 14% 할인)",
     "shortCardDescription": "한라산 어리목 트레일(겨울 설경), 감귤(귤) 따기 체험(겨울 할라봉 절정), 카멜리아힐(동백꽃 절정), 대포주상절리(유네스코), 천제연폭포를 포함한 제주 겨울 한정 소그룹 투어.",
     "tags": [
       "소그룹",
@@ -52,12 +52,12 @@
   "headlineLine1": "제주 겨울",
   "headlineLine2": "감귤·설경·동백 투어",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
-    "per": "인",
-    "priceSource": "direct_rate",
-    "priceNote": "리스팅 스니펫에서 소그룹 가격 미확정. 자매 투어(핑크 뮬리 루트) 기준.",
-    "discountPercent": 10
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
@@ -1100,12 +1100,12 @@
   "sticky_booking_bar": {
     "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
-      "per": "인",
-      "priceSource": "direct_rate",
-      "priceNote": "소그룹 가격은 아직 상품 정보에서 확정되지 않았습니다. 자매 상품인 핑크뮬리 가을 코스는 1인 약 111달러입니다. 가격 확정 후 AtoC Korea 직접 판매가는 10% 할인이 적용됩니다.",
-      "discountPercent": 10
+      "per": "person"
     }
   },
   "pickup_dropoff": {

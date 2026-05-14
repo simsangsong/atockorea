@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
     "thumbnail": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
-    "priceLabel": "",
+    "priceLabel": "From US$59 per person (was $69, 14% off)",
     "shortCardDescription": "A easy-to-follow East Jeju day route that starts with stone culture and volcanic context, moves through the coast and Seongsan Ilchulbong, and finishes with Ilchulland and Seongeup Folk Village for a more complete day.",
     "tags": [
       "Small group",
@@ -47,12 +47,12 @@
   "headlineLine1": "East Jeju",
   "headlineLine2": "Volcano, Coast & Folk Village",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
-    "per": "person",
-    "priceSource": "",
-    "priceNote": "",
-    "discountPercent": null
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
@@ -723,7 +723,7 @@
         "Crater **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** (the 'stone crown')",
         "**182 m above sea level** — 0.8 km / ~140 m gain, 60-min round trip on stone-step trail",
         "**18 Imperial Japanese WWII caves** at base — 1945 kamikaze suicide-boat shelters",
-        "**Haenyeo demonstrations are often scheduled in the afternoon** at the seaside cove, subject to weather and local operation.",
+        "**haenyeo demonstrations run once daily at 14:00 (1 show/day) and may be canceled in bad weather** at the seaside cove, subject to weather and local operation.",
         "**Admission updated April 2025**: Adult ₩5,000 / Youth ₩2,500 / FREE under 7 + over 65",
         "Spring/autumn hours **05:00–19:00** (last entry 18:20)",
         "**Closes for first Monday of each month** (occasional rest day)"
@@ -733,7 +733,7 @@
         "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min",
         "Summit views + crater rim photos — ~20 min",
         "Descent — ~20 min",
-        "Optional haenyeo viewing at base (15:00 demo) — ~10 min"
+        "Optional haenyeo viewing at base (14:00 show; may be canceled in bad weather) — ~10 min"
       ],
       "whyOnRoute": "**Mid-afternoon UNESCO highlight of the east signature route.** On this course, Seongsan sits after lunch rather than at the very end of the day, giving guests enough time for the crater climb before continuing to Ilchul Land and Seongeup. The timing also leaves room to see the afternoon haenyeo demonstration when it is operating, while keeping the climb before the later east-coast wind often strengthens. The summit panorama ties the day together: Hallasan to the west, the eastern oreum field below, and Udo Island offshore.",
       "_poi_meta": {
@@ -833,7 +833,8 @@
           "caption": "Seongsan Ilchulbong — photo 5",
           "alt": "Seongsan Ilchulbong — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     },
     {
       "number": 5,
@@ -1653,12 +1654,12 @@
   "sticky_booking_bar": {
     "note": "Select your date and group size to check live availability and complete your booking.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
-      "per": "person",
-      "priceSource": "",
-      "priceNote": "",
-      "discountPercent": null
+      "per": "person"
     }
   },
   "page_sections": [

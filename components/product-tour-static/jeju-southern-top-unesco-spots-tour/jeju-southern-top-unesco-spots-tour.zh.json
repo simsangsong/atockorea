@@ -22,7 +22,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "济州南部UNESCO一日游",
-    "priceLabel": "每人 US$38.70起/每人 （九折优惠，原价$43）",
+    "priceLabel": "每人 US$59（原价$69，14% 优惠）",
     "shortCardDescription": "小团一日游，游览南济州代表性景点：御乘生态步道（汉拿山UNESCO预留时间区）、天帝渊三瀑、柱状节理带悬崖（UNESCO）、大浦主相节理带及西归浦正方瀑布。全程约9小时。",
     "tags": [
       "小团",
@@ -52,14 +52,12 @@
   "headlineLine1": "济州南部UNESCO一日游",
   "headlineLine2": "一日游",
   "price": {
-    "amountLabel": "38.70",
-    "originalPriceUsd": 43,
-    "salePriceUsd": 38.7,
-    "discountPercent": 10,
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
-    "per": "人",
-    "priceSource": "direct_rate",
-    "priceNote": "价格以 AtoC Korea 官网直售价为准。"
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
@@ -1421,14 +1419,12 @@
   "sticky_booking_bar": {
     "note": "可订状态将在支付步骤中确认。",
     "price": {
-      "amountLabel": "38.70",
-      "originalPriceUsd": 43,
-      "salePriceUsd": 38.7,
-      "discountPercent": 10,
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
-      "per": "人",
-      "priceSource": "direct_rate",
-      "priceNote": "价格以 AtoC Korea 官网直售价为准。"
+      "per": "person"
     }
   },
   "pickup_dropoff": {

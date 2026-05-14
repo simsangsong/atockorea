@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
     "thumbnail": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-    "priceLabel": "",
+    "priceLabel": "車輛1輛8小時 $359（原價 $379，1–6人）· 7–12人 2倍 · 13人以上 3倍",
     "shortCardDescription": "專為釜山郵輪旅客提供的8小時私人包車服務，配備持牌英語司機導遊。預設行程涵蓋聯合國紀念公墓、太宗臺懸崖、甘川文化村、龍頭山公園及札嘎其市場。全程可客製化。可於郵輪碼頭、KTX車站或釜山市區任意飯店接送，保證準時返回郵輪。",
     "tags": [
       "private_tour",
@@ -45,9 +45,12 @@
   "headlineLine1": "釜山郵輪岸上私人包車",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "359",
     "currency": "USD",
-    "per": "vehicle"
+    "per": "vehicle",
+    "salePriceUsd": 359,
+    "originalPriceUsd": 379,
+    "discountPercent": 5
   },
   "hero": {
     "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
@@ -994,9 +997,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 於執行時從 Supabase／環境變數解析，不屬於靜態 JSONB 的一部分。",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "359",
       "currency": "USD",
-      "per": "vehicle"
+      "per": "vehicle",
+      "salePriceUsd": 359,
+      "originalPriceUsd": 379,
+      "discountPercent": 5
     }
   },
   "pickup_dropoff": {
@@ -2102,5 +2108,38 @@
         "fields_already_float": 42
       }
     }
+  },
+  "pricingTiers": {
+    "currency": "USD",
+    "unit": "vehicle",
+    "durations": [
+      "8h"
+    ],
+    "tiers": [
+      {
+        "paxLabel": "1–6 pax",
+        "paxMin": 1,
+        "paxMax": 6,
+        "prices": {
+          "8h": 359
+        }
+      },
+      {
+        "paxLabel": "7–12 pax",
+        "paxMin": 7,
+        "paxMax": 12,
+        "prices": {
+          "8h": 718
+        }
+      },
+      {
+        "paxLabel": "13+ pax",
+        "paxMin": 13,
+        "paxMax": 20,
+        "prices": {
+          "8h": 1077
+        }
+      }
+    ]
   }
 }

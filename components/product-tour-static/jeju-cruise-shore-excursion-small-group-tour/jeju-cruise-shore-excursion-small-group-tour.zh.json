@@ -6,16 +6,16 @@
   "product_id": "jeju-cruise-shore-excursion-small-group-tour",
   "seo": {
     "pageTitle": "济州邮轮靠港游：小团游 | AtoC Korea",
-    "metaDescription": "8小时济州邮轮靠港小团迷你巴士游，智能港口路线规划：济州港走东线UNESCO路线，江汀港走汉拿山路线。",
+    "metaDescription": "8小时济州邮轮靠港小团迷您巴士游，智能港口路线规划：济州港走东线UNESCO路线，江汀港走汉拿山路线。",
     "ogImage": "https://www.atockorea.com/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "primaryKeywords": [
       "济州靠港游小团",
       "济州邮轮一日游",
       "济州邮轮小团游",
-      "济州迷你巴士靠港游",
+      "济州迷您巴士靠港游",
       "济州私人邮轮游"
     ],
-    "title": "济州邮轮靠港游 · 小团迷你巴士 · 智能港口路线"
+    "title": "济州邮轮靠港游 · 小团迷您巴士 · 智能港口路线"
   },
   "catalog_card": {
     "slug": "jeju-cruise-shore-excursion-small-group-tour",
@@ -34,7 +34,7 @@
     ],
     "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-    "priceLabel": "",
+    "priceLabel": "每人 US$79（原价$85，7% 优惠）",
     "shortCardDescription": "根据邮轮靠港口灵活调整路线的小团靠港游。济州港（北部）走东海岸UNESCO路线，途经城山日出峰；江汀港（南部）走汉拿山1100高地＋南海岸地质奇观＋偶来市场路线。两条线路均留有充裕时间返回邮轮码头。",
     "tags": [
       "cruise_excursion",
@@ -46,14 +46,17 @@
   "headlineLine1": "济州邮轮岸上 小团游",
   "headlineLine2": "一日游",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "79",
     "currency": "USD",
-    "per": "person"
+    "per": "person",
+    "salePriceUsd": 79,
+    "originalPriceUsd": 85,
+    "discountPercent": 7
   },
   "hero": {
     "imageUrl": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "imagePosition": "center 35%",
-    "tagline": "选择您的邮轮靠港口：济州港走东线UNESCO路线，江汀港走汉拿山＋偶来市场路线。同一运营商，小团迷你巴士，均为8小时。",
+    "tagline": "选择您的邮轮靠港口：济州港走东线UNESCO路线，江汀港走汉拿山＋偶来市场路线。同一运营商，小团迷您巴士，均为8小时。",
     "pills": [
       "cruise_excursion",
       "port_aware_routing",
@@ -337,7 +340,7 @@
         "攀登至山顶观景台（0.8公里 / 爬升140米）— 约30分钟",
         "山顶观景 + 火山口边缘拍照 — 约20分钟",
         "下山 — 约20分钟",
-        "可选：山脚观看海女表演（15:00场次）— 约10分钟"
+        "可选：山脚观看海女表演（每日1场，下午2点；恶劣天气时可能取消）— 约10分钟"
       ],
       "whyOnRoute": "**城山日出峰小团游的节奏优势** — 90分钟的游览时间（相比大巴团的75分钟）让导游得以在火山口边缘步道的三处知名拍照点从容停留，无时间压力地讲解**距今5000年、单次喷发形成的凝灰岩火山锥**，并可照顾希望沿南坡替代木栈道下山、欣赏离岛日出视角的游客。**三重联合国教科文组织认定**（世界遗产2007年 + 生物圈保护区2002年 + 地质公园2010年）是当日含金量最高的亮点——小团游形式意味着导游对**连接济州本岛的连岛沙洲**的讲解，以及步道山脚的海女表演（视时间安排），均以面对面方式呈现，而非通过大巴广播喇叭传达。",
       "_poi_meta": {
@@ -437,7 +440,8 @@
           "caption": "城山日出峰 — photo 5",
           "alt": "城山日出峰 — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     },
     {
       "number": 3,
@@ -1807,9 +1811,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 在运行时从 Supabase / 环境变量解析，不属于静态 JSONB 的一部分。user_port 在预订时从邮轮行程中解析。",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "79",
       "currency": "USD",
-      "per": "person"
+      "per": "person",
+      "salePriceUsd": 79,
+      "originalPriceUsd": 85,
+      "discountPercent": 7
     }
   },
   "pickup_dropoff": {
@@ -2772,7 +2779,7 @@
               "iconColor": "text-amber-600",
               "items": [
                 {
-                  "label": "迷你巴士小团体",
+                  "label": "迷您巴士小团体",
                   "detail": "团体人数更少，导游关注度更高，各景点游览节奏更快。"
                 }
               ]

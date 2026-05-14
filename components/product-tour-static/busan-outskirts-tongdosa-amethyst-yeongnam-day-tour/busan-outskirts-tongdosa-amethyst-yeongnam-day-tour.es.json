@@ -1,0 +1,1110 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
+  "locale": "es",
+  "product_id": "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
+  "seo": {
+    "pageTitle": "Excursión de un día por los alrededores de Busan: Tongdosa (UNESCO), Cueva de Amatista, Valle de Hielo de los Alpes de Yeongnam | AtoC Korea",
+    "metaDescription": "Excursión de un día de 11 horas por los alrededores de Busan: Templo Tongdosa (Patrimonio Mundial UNESCO 2018), Cueva de Amatista de Ulsan, Teleférico del Valle de Hielo de los Alpes de Yeongnam y Pueblo Cultural de Gamcheon. Recogida desde Busan/Seomyeon/Haeundae.",
+    "primaryKeywords": [
+      "Excursión de un día por los alrededores de Busan",
+      "Visita al Templo Tongdosa",
+      "Teleférico del Valle de Hielo",
+      "Yeongnam Alps Eoreumgol",
+      "Excursión a la Cueva de Amatista de Ulsan",
+      "Excursión de un día UNESCO desde Busan"
+    ],
+    "ogImage": "https://www.atockorea.com/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+    "title": "Excursión de un día por los alrededores de Busan · Tongdosa + Amatista + Alpes de Yeongnam | AtoC Korea",
+    "description": "Una excursión de un día en autobús desde Busan hacia Yangsan, Ulsan y Miryang — Templo Tongdosa (UNESCO), la Cueva de Amatista subterránea (paseo en bote opcional), el Teleférico del Valle de Hielo de los Alpes de Yeongnam y cierre en el Pueblo Cultural de Gamcheon."
+  },
+  "catalog_card": {
+    "thumbnail": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+    "title": "Alrededores de Busan: Tongdosa + Cueva de Amatista + Alpes de Yeongnam",
+    "priceLabel": "",
+    "shortCardDescription": "Una excursión de un día de 11 horas en autobús por los alrededores de Busan hacia Yangsan (Templo Tongdosa, Patrimonio Mundial UNESCO 2018), Ulsan (Parque Temático Cueva de Amatista con paseo en bote opcional), Miryang (Teleférico del Valle de Hielo de los Alpes de Yeongnam) y con final en el Pueblo Cultural de Gamcheon en Busan. Tres puntos de recogida (Estación de Busan / Seomyeon / Haeundae); bajada opcional en Jagalchi al final.",
+    "tags": [
+      "Excursión de un día",
+      "Alrededores de Busan",
+      "UNESCO",
+      "Excursión en autobús",
+      "Opción de teleférico"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "slug": "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
+    "subtitle": "Templo UNESCO, cueva de amatista, teleférico del valle de hielo y Gamcheon — los alrededores de Busan en un solo día de 11 horas en autobús.",
+    "region": "Busan → Yangsan → Ulsan → Miryang → Busan",
+    "duration": "11 horas",
+    "stopsCount": 4,
+    "badges": [
+      "Patrimonio Mundial UNESCO",
+      "Excursión en autobús",
+      "Recogida en 3 estaciones",
+      "Día de 11 horas"
+    ],
+    "heroImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp"
+  },
+  "headlineLine1": "Excursión de un día por los alrededores de Busan",
+  "headlineLine2": "Tongdosa + Cueva de Amatista + Alpes de Yeongnam",
+  "price": {
+    "amountLabel": "",
+    "currency": "USD",
+    "per": "person",
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
+  },
+  "hero": {
+    "imageUrl": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+    "imagePosition": "center 40%",
+    "tagline": "Cuatro paradas imprescindibles en un solo día de 11 horas desde Busan: el Templo Tongdosa (Patrimonio de la UNESCO), la Cueva de Amatista subterránea de Ulsan, el teleférico del Valle de Hielo de los Alpes de Yeongnam en Miryang y el Pueblo Cultural de Gamcheon",
+    "pills": [
+      "Patrimonio de la UNESCO",
+      "Opción de teleférico",
+      "Tour en autobús"
+    ],
+    "meta": {
+      "duration": "11 horas",
+      "region": "Busan → Yangsan → Ulsan → Miryang → Busan",
+      "stops": "4 paradas",
+      "rating": 5,
+      "ratingStars": 5
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Descripción general"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerario"
+    },
+    {
+      "id": "details",
+      "label": "Detalles"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ"
+    },
+    {
+      "id": "reviews",
+      "label": "Reseñas"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "Duración",
+      "value": "11 horas"
+    },
+    {
+      "icon": "camera",
+      "label": "Potencial fotográfico",
+      "value": "Muy alto",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "Paisaje",
+      "value": "Muy alto",
+      "level": 5
+    },
+    {
+      "icon": "footprints",
+      "label": "Caminata",
+      "value": "Moderada",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Adecuación para la lluvia",
+      "value": "Moderada",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "Adecuación para familias",
+      "value": "Buena",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Ritmo",
+      "value": "Equilibrado",
+      "level": 4
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "Aldea Cultural de Gamcheon",
+      "alt": "Aldea Cultural de Gamcheon — galería 1",
+      "caption": "Aldea Cultural de Gamcheon — ladera de colores pastel"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "Aldea Cultural de Gamcheon",
+      "alt": "Aldea Cultural de Gamcheon — galería 2",
+      "caption": "Aldea Cultural de Gamcheon — Jardín del Cielo"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+      "location": "Aldea Cultural de Gamcheon",
+      "alt": "Aldea Cultural de Gamcheon — galería 3",
+      "caption": "Aldea Cultural de Gamcheon — callejón de murales"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "name": "Recogida (Estación de Busan / Seomyeon / Haeundae)",
+      "time": "08:20 / 08:40 / 09:20",
+      "number": 1,
+      "category": "Recogida en autobús",
+      "duration": "Ventana de 60 min",
+      "timeUsed": [
+        "Estación de Busan, Salida 4 (NO la puerta KTX) — 08:20 (~5 min)",
+        "Estación de Seomyeon, Salida 4 — 08:40 (~5 min)",
+        "Estación de Haeundae, Salida 5 — 09:20 (~5 min)",
+        "Tarjeta de itinerario impresa en coreano e inglés distribuida al abordar"
+      ],
+      "whyOnRoute": "Los tres puntos de recogida cubren las tres zonas hoteleras principales de Busan — la Estación de Busan para estancias en KTX/Choryang/Nampo-dong, Seomyeon para los hoteles del intercambiador del centro y Haeundae para el conjunto de resorts frente al mar — sin obligar a los huéspedes a cruzar la ciudad en zigzag. La secuencia de oeste a este (Busan → Seomyeon → Haeundae) coloca el autobús en la Autopista Gyeongbu hacia Yangsan tras la última recogida, situando Tongdosa a solo ~30 min en coche desde Haeundae.",
+      "description": "La recogida se consolida en tres puntos de tránsito de Busan: **Estación de Busan, Salida 4 a las 08:20** (Salida 4, NO la salida de la terminal del lado KTX), **Estación de Seomyeon, Salida 4 a las 08:40** (el intercambiador más concurrido de Busan — por favor, esté en la calle antes de las 08:35) y **Estación de Haeundae, Salida 5 a las 09:20** (el distrito de resorts frente al mar, cerca del Westin Josun y el Signiel Busan). El autobús recoge en este orden y avanza hacia el noroeste por la Autopista Gyeongbu hacia Yangsan para la primera parada del día en el Templo Tongdosa. Esté en su punto de recogida **5 minutos antes de la hora prevista** para garantizar la salida puntual — el orden del día depende de llegar a Tongdosa antes de la avalancha de autobuses turísticos."
+    },
+    {
+      "name": "Templo Tongdosa (Yangsan)",
+      "time": "≈ 10:00",
+      "number": 2,
+      "category": "Templo Budista / Patrimonio Mundial de la UNESCO",
+      "duration": "90 min",
+      "timeUsed": [
+        "Bajada del autobús en la entrada principal de Tongdosa (~5 min)",
+        "Paseo por el camino de acceso arbolado (puente Mubunhamhae hasta la primera puerta) (~15 min)",
+        "Recinto principal: Sala Daeungjeon + Altar del Diamante Geumgang Gyedan (~30 min)",
+        "Capillas laterales + Museo Tongdosa (opcional) (~20 min)",
+        "Regreso al autobús a pie (~15 min)"
+      ],
+      "_poi_meta": {
+        "match": "exact",
+        "poi_key": "tongdosa_temple",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea — Tongdosa Temple official listing)",
+          "UNESCO World Heritage Centre (Sansa, Buddhist Mountain Monasteries in Korea — inscribed 2018)",
+          "Tongdosa Official (tongdosa.or.kr)",
+          "Wikipedia (Tongdosa — corpus on 646 CE founding + Three Jewel Temples + Geumgang Gyedan)",
+          "Jogye Order of Korean Buddhism (head temple records)"
+        ],
+        "verified": true,
+        "kb_version": "1.27",
+        "verified_date": "2026-05-14"
+      },
+      "highlights": [
+        "**Fundado en el año 646 d.C.** por el Maestro Jajang-yulsa durante el Reino Silla, a su regreso de la China Tang",
+        "**Uno de los 'Tres Templos Joya' de Corea (Sambo Sachal)** — representa la Joya del Buda; los otros dos son Haeinsa (Dharma) y Songgwangsa (Sangha)",
+        "**Patrimonio Mundial de la UNESCO desde 2018** como parte de 'Sansa, Monasterios Budistas de Montaña en Corea' (inscripción de grupo de 7 templos)",
+        "**'El Templo Sin Buda'** — no hay estatuas de Buda al aire libre; el templo venera en cambio las reliquias del Buda consagradas en el Geumgang Gyedan",
+        "**Geumgang Gyedan (Altar de Diamante)** — sagrado altar de ordenación que alberga la túnica, el cuenco de limosnas y la reliquia del hueso craneal del Buda, traídos por Jajang desde China",
+        "**65 edificios** en el complejo del templo, incluido el icónico Salón Daeungjeon (sin estatua de Buda en su interior — en cambio se abre hacia el Geumgang Gyedan)",
+        "**~794 bienes culturales** registrados en el templo, entre ellos Tesoros Nacionales (ménsula del tejado del Daeungjeon, Geumgang Gyedan)",
+        "**Horario diario 05:00–19:30 (mar–oct) / 06:30–18:00 (nov–feb)**; entrada ₩3.000 adultos; aparcamiento público gratuito",
+        "**Museo Tongdosa** en los terrenos del templo alberga arte budista, escrituras y objetos rituales (mar–dom 09:30–17:00, ₩2.000)"
+      ],
+      "smartNotes": {
+        "tip": "El camino de acceso de 1 km desde el aparcamiento a través de un bosque de pinos es uno de los senderos de templo más evocadores de Corea — se recomienda calzado cerrado; los tramos de grava y pavimento de piedra pueden ser irregulares. Visitar en el Cumpleaños de Buda (abr–may) trae el festival de faroles por todo el recinto.",
+        "photo": "Las distintivas inscripciones del 'salón de cuatro nombres' del Salón Daeungjeon (Daeungjeon / Daebanggwangjeon / Geumgang Gyedan / Jeongmukseon) en sus cuatro lados; el altar Geumgang Gyedan (no subir los escalones del altar); el camino de acceso entre túneles de pinos.",
+        "facilities": "Centro de información para visitantes en la entrada principal; aseos distribuidos por el recinto; casa de té budista (다실) y cafetería vegetariana disponibles con solicitud previa; pequeña tienda de recuerdos."
+      },
+      "whyOnRoute": "Tongdosa es el **templo más grande de Corea por superficie de recinto** y uno de solo siete templos en todo el país con estatus de Patrimonio Mundial de la UNESCO (inscripción 'Sansa' de 2018). Para quienes visitan Corea por primera vez, Tongdosa tiene mayor peso histórico y espiritual que cualquier templo al que se pueda llegar desde Busan — y el trayecto de 30 minutos desde Haeundae lo hace considerablemente más eficiente que la alternativa de Bulguksa (Gyeongju, ~90 min en cada sentido). Visitar a primera hora del día permite aprovechar el aire fresco del bosque en el camino de acceso y llegar antes de la avalancha de autobuses turísticos del mediodía.",
+      "convenience": {
+        "parking": "Gran aparcamiento público gratuito en la entrada del templo",
+        "restroom": "En el aparcamiento, en la entrada del templo y dentro del recinto principal"
+      },
+      "description": "**El Templo Tongdosa (통도사, 通度寺)** es el **templo budista más grande de Corea por superficie de recinto** y uno de los **'Tres Templos Joya' del país (Sambo Sachal, 삼보사찰)** — representa la **Joya del Buda** (el propio Buda), junto al Templo Haeinsa (Joya del Dharma, las escrituras del Tripitaka Koreana) y el Templo Songgwangsa (Joya del Sangha, la comunidad monástica). El templo fue **fundado en el año 646 d.C.** por el **Maestro Jajang-yulsa (자장율사, 590–658)**, uno de los monjes más venerados del Reino Silla, a su regreso de la China Tang, donde había recibido la túnica del Buda, su cuenco de limosnas y un fragmento óseo de su cráneo en el Monte Wutai. Jajang consagró estas sagradas reliquias en el **Geumgang Gyedan (금강계단, 'Altar de Ordenación de Diamante')** situado detrás del Salón Principal Daeungjeon — convirtiendo a Tongdosa en el único templo de Corea donde se custodian las **reliquias físicas reales del Buda Sakyamuni**, razón por la cual Tongdosa es conocido de forma única como **'El Templo Sin Buda'**: no hay estatuas de Buda al aire libre en ningún punto del recinto y el interior del Daeungjeon no tiene imagen del Buda — en su lugar, el salón se abre a través de ventanas transparentes directamente hacia el Geumgang Gyedan, donde se considera que el Buda vivo está presente. El templo fue **inscrito como Patrimonio Mundial de la UNESCO en 2018** como parte del grupo de siete templos **'Sansa, Monasterios Budistas de Montaña en Corea'**, reconocido por encarnar la tradición budista Seon (Zen) coreana de vida monástica en la montaña, inalterada durante más de mil años. Hoy el complejo del templo abarca **~65 edificios** en las laderas del **Monte Yeongchuksan**, con el famoso **camino de acceso forestal de 1 kilómetro** bordeado de viejos pinos desde el Iljumun (Puerta de Un Pilar) hasta el recinto principal. El **Museo Tongdosa** en los terrenos alberga ~794 bienes culturales registrados, entre ellos los Tesoros Nacionales n.º 290 (Salón Daeungjeon) y n.º 290-1 (Geumgang Gyedan). **Horario 05:00–19:30 (mar–oct) / 06:30–18:00 (nov–feb); entrada ₩3.000 adultos — INCLUIDA en este tour.**",
+      "visitBasics": {
+        "hours": "Diario 05:00–19:30 (mar–oct) / 06:30–18:00 (nov–feb); Museo Tongdosa mar–dom 09:30–17:00",
+        "closed": "Abierto todo el año (el museo cierra los lunes)",
+        "admission": "Adultos ₩3.000 — INCLUIDO en este tour; Museo Tongdosa ₩2.000 (gasto personal)",
+        "walking": "Moderado — camino de acceso forestal llano de 1 km; pavimento de grava/piedra; mayormente plano con pequeños desniveles"
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/41/2667141_image2_1.jpg",
+      "images": [
+        "https://tong.visitkorea.or.kr/cms/resource/41/2667141_image2_1.jpg"
+      ]
+    },
+    {
+      "name": "Almuerzo en restaurante coreano local (opcional, no incluido)",
+      "time": "≈ 12:00",
+      "number": 3,
+      "category": "Almuerzo / Gastronomía local — opcional",
+      "duration": "60 min",
+      "timeUsed": [
+        "Traslado en autobús al restaurante (~5 min)",
+        "Pedido + comida (~40 min)",
+        "Baño + reagrupación en el autobús (~15 min)"
+      ],
+      "highlights": [
+        "**Complemento opcional, pago en el lugar (₩10.000–₩15.000 por persona)** — los huéspedes pueden volver al autobús y omitir esta parada si lo prefieren",
+        "Menú típico: **bulgogi estilo Eonyang** (ternera marinada a la parrilla, especialidad de Ulsan), estofado coreano (jjigae) o bibimbap vegetariano bajo petición",
+        "La elección del restaurante depende del recorrido del autobús ese día — el guía-conductor lo confirma en el briefing matutino",
+        "Sustituciones vegetarianas y aptas para halal disponibles con aviso previo"
+      ],
+      "whyOnRoute": "El almuerzo está programado a las 12:00 para enlazar Tongdosa (Yangsan) con la Cueva de Amatista (Ulsan) — ambas paradas se encuentran a ~30 min entre sí y el almuerzo aprovecha el punto intermedio natural. La elección del **bulgogi estilo Eonyang**, cuando está disponible, responde a la prioridad de cocina regional del recorrido: Eonyang (un barrio de Ulsan a ~10 km de la Cueva de Amatista) es el origen histórico del estilo de carne marinada a la parrilla que hoy se exporta a todo el mundo, con raíces en los mercados de carne de la era Joseon. **El almuerzo corre por cuenta del huésped; la parada en sí es OPCIONAL** — notifíquelo al guía-conductor en el punto de recogida y se omitirá el tiempo del almuerzo, liberando ese margen para las paradas de la tarde.",
+      "description": "El almuerzo es en un restaurante local accesible para autobuses, en ruta entre el Templo Tongdosa (Yangsan) y el Parque Temático de la Cueva de Amatista (Ulsan). Opciones regionales típicas según el recorrido del autobús: (1) **bulgogi estilo Eonyang (언양 불고기)** — la ternera marinada a la parrilla, emblema de Ulsan, originaria del **distrito de Eonyang**, cuna histórica del bulgogi coreano moderno (~12.000–15.000 KRW por porción); o (2) **set de bibimbap / jjigae** en un restaurante coreano general (~10.000–12.000 KRW). **El almuerzo lo paga el huésped en el lugar** — las opciones vegetarianas, aptas para halal y sin gluten son posibles con aviso previo al hacer la reserva. La parada en sí es **opcional**; los huéspedes con crucero u horario ajustado pueden notificarlo al guía y se omitirá el almuerzo, liberando ~45 minutos para las paradas de la tarde."
+    },
+    {
+      "name": "Parque Temático de la Cueva de Amatista (Ulsan)",
+      "time": "≈ 13:30",
+      "number": 4,
+      "category": "Mina subterránea / Parque temático",
+      "duration": "60 min",
+      "timeUsed": [
+        "Bajada del autobús en el Parque Temático de la Cueva de Amatista (~5 min)",
+        "Entrada a la cueva + visita guiada subterránea a pie (~25 min)",
+        "Paseo opcional en barca subterránea por el lago interior (~15 min, ₩4.000 a cargo del huésped)",
+        "Tienda de recuerdos + recinto del parque temático (~10 min)",
+        "Reagrupación en el autobús (~5 min)"
+      ],
+      "_poi_meta": {
+        "match": "exact",
+        "poi_key": "amethyst_cave_themepark",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea — Amethyst Cave Theme Park listing)",
+          "Ulju-gun Tourism (Ulsan Metropolitan City — official heritage records)",
+          "Amethyst Cave Theme Park Official (jasujungcave.com)",
+          "Wikipedia (Korean Amethyst — gemological corpus on the Eonyang mine)"
+        ],
+        "verified": true,
+        "kb_version": "1.27",
+        "verified_date": "2026-05-14"
+      },
+      "highlights": [
+        "**La cueva de amatista más grande de Asia** — reconvertida desde una mina de amatista activa que operó hasta la década de 1980 en la zona de Eonyang/Sangbuk, Ulju-gun, Ulsan",
+        "**La 'Amatista coreana' (한국자수정)** goza de reconocimiento internacional por su profundo tono morado — la mina de Eonyang produjo piedras de calidad gemológica que figuraron en joyería de la realeza coreana y se exportaron a nivel mundial durante las décadas de 1970 y 1980",
+        "**~2,5 km de galerías subterráneas transitables** con exhibiciones temáticas a lo largo del recorrido (herramientas mineras, exposición de piedras preciosas, túneles iluminados con amatistas, dioramas de fantasía)",
+        "**Paseo opcional en barca subterránea** por el lago interior de la mina — ~15 min de ida y vuelta en una pequeña embarcación eléctrica (₩4.000 adultos; no incluido en el tour)",
+        "**Temperatura constante de 15 °C durante todo el año** en el interior — lleve una prenda ligera independientemente de la temporada",
+        "**Horario: diario de 09:00 a 18:00 (última entrada 17:00); entrada ₩8.000 adultos — INCLUIDA en este tour**",
+        "Dirección: 24, Daebok-gil, Sangbuk-myeon, Ulju-gun, Ulsan"
+      ],
+      "smartNotes": {
+        "tip": "El suelo de la cueva es irregular y en algunos tramos húmedo — es imprescindible calzado cerrado y resistente. La temperatura interior se mantiene en ~15 °C durante todo el año, por lo que los visitantes de verano deben traer una prenda ligera. El paseo opcional en barca dura 15 min de ida y vuelta sobre aguas tranquilas; no es agotador, pero los niños pequeños deben ir acompañados.",
+        "photo": "El 'Salón de Cristal' iluminado con amatistas (techo de LEDs morados reflejados en el lago interior); el arco de entrada con el cartel de 'la cueva de amatista más grande de Asia'; la sección de la cascada subterránea a mitad del recorrido.",
+        "facilities": "Cafetería + tienda de recuerdos + pequeño restaurante en la superficie; baños solo en la entrada (no dentro de la cueva); la cueva es mayormente accesible con cochecito en el camino principal, pero el muelle del bote requiere algunos escalones."
+      },
+      "whyOnRoute": "La Cueva de Amatista es **una atracción únicamente coreana** — no existe ningún parque temático comparable de mina de amatista convertida en otra parte de Asia a esta escala — y la **reputación gemológica de la mina de amatista de Eonyang** (el término 'Amatista Coreana' se refiere específicamente a las piedras de esta región) otorga a la visita un peso histórico y cultural más allá de un recorrido típico por cuevas. Programarla después del almuerzo y antes del teleférico de los Alpes de Yeongnam aprovecha la parte más cálida del día para la única parada cubierta, conservando la luz solar exterior para el recorrido en teleférico que sigue. El presupuesto de 60 min incluye el recorrido a pie, pero excluye el paseo opcional en bote si el tiempo es ajustado — los visitantes pueden votar en la entrada si desean agregar la extensión de 15 min en bote.",
+      "convenience": {
+        "parking": "Gran estacionamiento público gratuito para autobuses",
+        "restroom": "En la plaza de entrada y el centro de visitantes (ninguno dentro de la cueva)"
+      },
+      "description": "**El Parque Temático Cueva de Amatista (자수정동굴나라, Jasujeong Donggul Nara)** en **Sangbuk-myeon, Ulju-gun, Ulsan** está construido alrededor de lo que fue, durante las décadas de 1970–80, una de las **minas de amatista** más productivas de Asia. El yacimiento de amatista de Eonyang/Sangbuk fue reconocido internacionalmente por sus **piedras de profundo color púrpura y alta claridad** — conocidas en el comercio gemológico como **'Amatista Coreana' (한국자수정)** — que se exportaban a nivel mundial y figuraban en colecciones de joyería real coreana. Cuando la minería comercial cesó en la década de 1980, los operadores convirtieron los **~2,5 km de galerías mineras** en una atracción subterránea de estilo parque temático público, que abrió al público en **1995**. Hoy los visitantes recorren un circuito subterráneo iluminado a través de cámaras con artefactos originales de la mina (vías de tren, herramientas de perforación), salas de exposición de amatista con piedras en bruto y pulidas, **'Salas de Cristal' iluminadas con amatista** con techos de LED morado que se reflejan en aguas tranquilas, y dioramas de fantasía temáticos añadidos para el disfrute familiar. La extensión opcional insignia es un **paseo en bote eléctrico sobre el lago interior de la mina** — formado cuando el agua subterránea llenó la cámara de excavación más profunda — un viaje de ida y vuelta de 15 min que añade una inusual dimensión de recorrido por cueva submarina a la visita (₩4.000 adulto; gasto propio). El interior mantiene una temperatura constante de **~15 °C durante todo el año** independientemente de la estación, por lo que se recomienda llevar una capa ligera incluso en verano. **Horario: 09:00–18:00 todos los días (última entrada 17:00); entrada ₩8.000 adulto — INCLUIDA en este tour.** Dirección: 24, Daebok-gil, Sangbuk-myeon, Ulju-gun, Ulsan.",
+      "visitBasics": {
+        "hours": "Todos los días de 09:00 a 18:00 (última entrada a las 17:00)",
+        "closed": "Abierto todo el año (posibles cierres por seguridad en lluvias extremas)",
+        "admission": "Adulto ₩8.000 — INCLUIDO en este tour; paseo en bote subterráneo ₩4.000 gasto propio (opcional)",
+        "walking": "Moderado — suelo de cueva irregular, algunas secciones húmedas, mayormente plano con pequeños escalones; calzado cerrado imprescindible"
+      }
+    },
+    {
+      "name": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)",
+      "time": "≈ 15:00",
+      "number": 5,
+      "category": "Teleférico / Paisaje de Montaña",
+      "duration": "90 min",
+      "timeUsed": [
+        "Bajada del autobús en la estación inferior del teleférico (~5 min)",
+        "Cola del teleférico + recorrido de 10 min de ida hasta la estación superior de Cheonhwangsan (~30 min incluyendo la cola)",
+        "Mirador de la estación superior + Sky Walk + inicio del sendero de montaña (~30 min)",
+        "Regreso en teleférico (~15 min)",
+        "Reunión en el autobús (~10 min)"
+      ],
+      "_poi_meta": {
+        "match": "exact",
+        "poi_key": "yeongnam_alps_ice_valley_cable_car",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea — Yeongnam Alps Ice Valley Cable Car listing)",
+          "Miryang City Tourism (Sannae-myeon area)",
+          "Yeongnam Alps Ice Valley Cable Car Official (yacablecar.co.kr)",
+          "Wikipedia (Yeongnam Alps — corpus on Gajisan/Cheonhwangsan/Sinbulsan peaks and Eoreumgol ice phenomenon)",
+          "Cultural Heritage Administration of Korea (Eoreumgol Natural Monument No. 224, designated 1970)"
+        ],
+        "verified": true,
+        "kb_version": "1.27",
+        "verified_date": "2026-05-14"
+      },
+      "highlights": [
+        "**Alpes de Yeongnam** — una cordillera periférica de las Montañas Taebaek que abarca Miryang / Cheongdo / Condado de Ulju / Yangsan con 8 picos de más de 1.000 m, incluyendo **Gajisan (1.241 m, el más alto), Cheonhwangsan (1.189 m), Sinbulsan (1.159 m), Unmunsan (1.188 m)**",
+        "**Teleférico** — en funcionamiento desde **2012**, asciende desde los 256 m hasta los **1.019 m de altitud** en la estación superior de **Cheonhwangsan**, uno de los teleféricos de montaña más largos de Corea (~1,8 km de recorrido horizontal, ~10 min de ida)",
+        "**Eoreumgol (얼음골, 'Valle de Hielo')** en la base — designado **Monumento Natural N.º 224 (1970)** por el fenómeno geológico de bolsas de aire frío que producen **hielo natural en verano** en los campos de cantos rodados, con el fenómeno inverso de calor en invierno",
+        "**Sky Walk de la estación superior** — voladizo con suelo de cristal que se extiende desde la terraza de observación con vistas sobre el Valle de Sannae, la cresta de los Alpes de Yeongnam, y en días despejados hasta Eonyang y Tongdosa al sur",
+        "**Horario de funcionamiento del teleférico: 09:30–17:30 todos los días** (cierres por vientos fuertes / nevadas intensas); **ida y vuelta Adulto ₩18.000 / Niño ₩13.000 — INCLUIDO en este tour**",
+        "**Sky Walk accesible sin cargo adicional** para los titulares del billete de teleférico",
+        "Dirección: 86, Cheonhwango-ro, Sannae-myeon, Miryang-si, Gyeongsangnam-do"
+      ],
+      "smartNotes": {
+        "tip": "El teleférico puede estar **cerrado por vientos fuertes o nevadas intensas** — el guía verifica el estado operativo por la mañana y sustituirá el recorrido por el **Valle de Eoreumgol** (sendero de Monumento Natural en la base, circuito de 40 min) si el teleférico está suspendido. Lleve un cortavientos incluso en verano: la estación superior a 1.019 m es sistemáticamente 8–10 °C más fresca que la base.",
+        "photo": "El segmento de suelo de vidrio del Sky Walk con el valle debajo; la vista de la cresta de Cheonhwangsan desde la estación superior (especialmente con el follaje otoñal de mediados de octubre a principios de noviembre); el cartel del Monumento Natural 'Eoreumgol' en la estación inferior con el campo de pedreras al fondo.",
+        "facilities": "Restaurante + cafetería en la estación inferior; cafetería en la terraza de observación de la estación superior; baños en ambas estaciones; pequeño templo budista (Cheonhwangsa) accesible por un sendero de 5 minutos desde la estación superior, como alternativa para quienes no tomen el teleférico."
+      },
+      "whyOnRoute": "El Teleférico del Valle de Hielo de los Alpes de Yeongnam es el **atractivo escénico principal** del día — Miryang raramente aparece en los itinerarios de excursiones de un día desde Busan, y el teleférico ofrece a los visitantes acceso a una **vista desde la cima de la montaña a 1.019 m** en ~30 minutos de ida y vuelta, lo que de otro modo requeriría una caminata de 4 a 5 horas. La combinación con la **geología del Monumento Natural de Eoreumgol** (el único lugar en Corea donde el hielo estival se forma en campos de pedreras durante todo el año) convierte este destino en una parada científicamente única en Corea. La programación a las 15:00 aprovecha la luz más suave de la tarde en la montaña para fotografiar la cresta. El presupuesto de 90 minutos está dimensionado para el viaje de ida y vuelta en teleférico más el Sky Walk — los visitantes que omitan el teleférico por condiciones climáticas pueden utilizar ese tiempo en el paseo por el valle de Eoreumgol en la base.",
+      "convenience": {
+        "parking": "Gran estacionamiento gratuito para autocares en la estación inferior del teleférico",
+        "restroom": "En ambas estaciones, inferior y superior, del teleférico"
+      },
+      "description": "**El Teleférico del Valle de Hielo de los Alpes de Yeongnam (영남알프스얼음골케이블카)** asciende desde la estación base a **256 m** hasta la **estación superior a 1.019 m en Cheonhwangsan (천황산, pico de 1.189 m)** — uno de los **ocho picos de más de 1.000 m** que conforman los **Alpes de Yeongnam**, una cadena montañosa secundaria de las Montañas Taebaek que abarca los límites de Miryang (Gyeongsangnam-do), Cheongdo (Gyeongsangbuk-do), el Condado de Ulju (Ulsan) y Yangsan. El teleférico lleva en operación desde **2012** y es uno de los **teleféricos de montaña más largos de Corea**, con ~1,8 km de recorrido horizontal y un trayecto de ~10 minutos en cada sentido. En la estación superior, un **Sky Walk en voladizo** con segmentos de suelo de vidrio se extiende sobre el Valle de Sannae, ofreciendo panorámicas de la cresta de los Alpes de Yeongnam (Gajisan / Cheonhwangsan / Jaeyaksan) y —en días despejados— hacia el sur hasta Eonyang, Tongdosa y el Mar del Este. La base del teleférico lleva el nombre de **Eoreumgol (얼음골, 'Valle de Hielo')**, el fenómeno geológico designado **Monumento Natural N.º 224 (1970)** por el que el campo de pedreras local produce **hielo natural en pleno verano** (el aire frío atrapado bajo las rocas genera hielo que perdura hasta julio-agosto) y, a la inversa, vapor cálido en invierno — un raro fenómeno de inversión térmica que se da en muy pocos lugares del mundo. El paseo por el valle en la base es un recorrido circular de 40 minutos con puentes sobre la zona de formación de hielo. **Horario del teleférico: 09:30–17:30 diariamente; ida y vuelta Adulto ₩18.000 — INCLUIDO en este tour.** El teleférico puede cerrarse con vientos fuertes o nevadas intensas; el guía lo verifica la mañana del día y sustituye por el paseo por el valle de Eoreumgol si es necesario. Dirección: 86, Cheonhwango-ro, Sannae-myeon, Miryang-si.",
+      "visitBasics": {
+        "hours": "Teleférico 09:30–17:30 diariamente; valle de Eoreumgol siempre abierto",
+        "closed": "El teleférico cierra con vientos fuertes / nevadas intensas (sujeto a condiciones climáticas)",
+        "admission": "Teleférico ida y vuelta Adulto ₩18.000 / Niño ₩13.000 — INCLUIDO en este tour; paseo por el valle de Eoreumgol GRATUITO",
+        "walking": "Fácil — el teleférico realiza el ascenso; el Sky Walk y la terraza de observación son de terreno llano; el paseo por el valle es de terreno suave"
+      }
+    },
+    {
+      "name": "Pueblo Cultural de Gamcheon",
+      "time": "≈ 17:30",
+      "number": 6,
+      "category": "Pueblo Cultural / Arte Mural",
+      "duration": "60 min",
+      "timeUsed": [
+        "Descenso del autocar en el Estacionamiento Público N.º 2 + caminata hasta la entrada (~5 min)",
+        "Centro de Información Turística + compra del Mapa de Sellos (~5 min)",
+        "Mirador del Sky Garden + banco del Principito (~20 min)",
+        "Paseo por los callejones con murales + pausa en pequeña cafetería (~20 min)",
+        "Reunirse en el autocar (~10 min)"
+      ],
+      "_poi_meta": {
+        "poi_key": "gamcheon_culture_village",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Wikipedia",
+          "CNN",
+          "Visit Busan",
+          "Hapskorea",
+          "Columban Society",
+          "Lifeguin",
+          "Busan Cultural Foundation"
+        ]
+      },
+      "highlights": [
+        "**'La Machu Picchu de Corea' / 'La Santorini de Corea'** — Premio Paisaje Urbano Asiático de ONU-Hábitat 2012",
+        "Orígenes: **décadas de 1920-1930** reubicación administrativa de Busan + **refugiados Taegeukdo de 1955** (~800 familias)",
+        "**La filosofía Taegeukdo de 'permitir que otros prosperen'** = ninguna casa bloquea la vista de la que está detrás",
+        "**2009 'Soñando con Machu Picchu' + 2010 'Miro Miro'** — proyectos de arte público del Ministerio de Cultura",
+        "**Banco del 'Principito y el Zorro'** en el Jardín del Cielo — el rincón más fotografiado del pueblo",
+        "**~1,4 millones de visitantes anuales** desde la revitalización del arte público",
+        "**Comunidad residencial viva** — hablar en voz baja, no usar drones, no fotografiar el interior de las casas",
+        "Entrada al pueblo gratuita; Mapa de Sellos opcional ~₩2.000",
+        "**Premio Paisaje Urbano Asiático de ONU-Hábitat 2012** — reconocimiento al proyecto artístico de 2009 'Soñando con Machu Picchu' que transformó el asentamiento de refugiados Taegeukdo de 1955 en el emblemático pueblo de murales de Busan"
+      ],
+      "smartNotes": {
+        "photo": "Banco del Principito y el Zorro (larga cola de espera) y Haneul Maru / Observatorio del Jardín del Cielo para vistas panorámicas de los tejados de colores y la bahía",
+        "facilities": "Alquiler de hanbok, talleres de artesanía, puestos de caramelos coreanos, cafeterías; pequeño museo del pueblo en la entrada; el mapa de sellos es la manera más sencilla de orientarse",
+        "tip": "Los residentes viven aquí — mantener la voz baja, no usar drones, llevarse la basura; usar calzado con suela antideslizante en los callejones empinados; la hora dorada de la tarde ~16:00-17:00 ofrece la mejor luz del pueblo"
+      },
+      "whyOnRoute": "La parada **más colorida y singular** del recorrido — no existe ningún otro barrio igual en todo Corea. La narrativa de los refugiados de la Guerra de Corea conecta directamente el Cementerio Memorial de las Naciones Unidas (el memorial moral) → Gamcheon (la consecuencia vivida: un asentamiento de refugiados que se convirtió en comunidad) → Jagalchi (la consecuencia económica: las ajumma vendedoras de pescado que sustentaban a sus familias). La llegada a las 15:30 se produce antes del cierre del centro de información a las 18:00, brindando a los visitantes ~1 hora de luz dorada sobre los tejados de arco iris, el momento más fotogénico del pueblo.",
+      "convenience": {
+        "restroom": "Aseos públicos en el Centro de Información Turística y cerca de los principales miradores",
+        "parking": "Aparcamiento Público de Gamcheon nº 2 (de pago)"
+      },
+      "description": "**El Pueblo Cultural de Gamcheon (감천문화마을)** — apodado tanto **'el Machu Picchu de Corea'** como **'la Santorini de Corea'** — es un barrio en ladera en Saha-gu, al oeste de Busán, cuyas casas pintadas en colores pastel descienden en hileras escalonadas por la pendiente. El asentamiento comenzó en las **décadas de 1920-1930** cuando la administración de Busán reubicó a residentes de clase trabajadora alejándolos del puerto. El carácter del pueblo quedó definido en **1955** cuando **~800 familias (unas 4.000 personas) de la comunidad religiosa Taegeukdo** — una religión sincrética únicamente coreana que mezcla elementos budistas, confucianos y del yin-yang, fundada por **Jo Cheol-je** durante el período colonial japonés — se asentaron aquí como refugiados de la Guerra de Corea que huían del Norte. La filosofía Taegeukdo de '**permitir que los demás prosperen**' modeló directamente la característica más distintiva del pueblo: las casas están intencionalmente escalonadas de modo que **ningún techo bloquee la vista de la casa que hay detrás**, con toda la comunidad visible hacia el cielo y el mar. Gamcheon siguió siendo uno de los barrios más pobres de Busán hasta **2009**, cuando el Ministerio de Cultura de Corea lanzó el proyecto de revitalización de arte público **'Soñando con Machu Picchu en Busán'**, seguido del **proyecto 'Miro Miro' (laberinto) en 2010** — añadiendo más de 22 murales, esculturas e instalaciones artísticas encargadas, incluido el icónico **banco del 'Principito y el Zorro'** en el mirador del Sky Garden. Gamcheon ganó el **Premio al Paisaje Urbano Asiático de ONU-HABITAT 2012** y ahora recibe **~1,4 millones de visitantes anuales**. La visita sigue la emblemática ruta de caminata con mapa de sellos del pueblo: desde la entrada en el **Centro de Información Turística**, hasta el **mirador Sky Garden** para la fotografía panorámica de los tejados de colores del arcoíris, luego por los laberínticos callejones pasando por murales, tiendas de alquiler de hanbok, talleres de artesanía y pequeños cafés. **El pueblo es una comunidad residencial viva** — se requiere hablar en voz baja, no se permiten drones, no se hacen fotografías con flash dentro de las casas y la basura debe retirarse. Horario **09:00-18:00 mar-oct / 09:00-17:00 nov-feb (centro de información)**; **el pueblo en sí está abierto 24h, entrada GRATUITA**.",
+      "visitBasics": {
+        "hours": "Diariamente 09:00–18:00 (mar–oct) / 09:00–17:00 (nov–feb); algunas tiendas y cafeterías tienen su propio horario",
+        "closed": "Abierto todo el año (comunidad residencial viva)",
+        "admission": "Entrada al pueblo gratuita; Mapa de Sellos opcional ≈ 2.000 KRW",
+        "walking": "Exigente físicamente — callejones y escaleras muy empinados; en muchas secciones no es apto para cochecitos ni sillas de ruedas"
+      },
+      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "images": [
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "location": "Pueblo Cultural de Gamcheon",
+          "caption": "Pueblo Cultural de Gamcheon — photo 1",
+          "alt": "Pueblo Cultural de Gamcheon — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "location": "Pueblo Cultural de Gamcheon",
+          "caption": "Pueblo Cultural de Gamcheon — photo 2",
+          "alt": "Pueblo Cultural de Gamcheon — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+          "location": "Pueblo Cultural de Gamcheon",
+          "caption": "Pueblo Cultural de Gamcheon — photo 3",
+          "alt": "Pueblo Cultural de Gamcheon — gallery image 3"
+        }
+      ]
+    },
+    {
+      "name": "Regreso a Busan (Nampo/Jagalchi / Estación de Busan / Seomyeon / Haeundae)",
+      "time": "18:30 / 18:40 / 19:00 / 19:30",
+      "number": 7,
+      "category": "Parada de regreso",
+      "duration": "Secuencia de 60 min",
+      "timeUsed": [
+        "Parada opcional en Nampo-dong / Mercado Jagalchi — 18:30 (~1 min)",
+        "Bajada en Estación de Busan — 18:40",
+        "Bajada en Estación de Seomyeon — 19:00",
+        "Bajada en Estación de Haeundae — 19:30"
+      ],
+      "whyOnRoute": "El regreso sigue el orden inverso de recogida con una parada opcional adicional en **Nampo-dong / Mercado Jagalchi** (~1 min) para los viajeros que deseen continuar de forma independiente por el distrito gastronómico del centro de Busan tras visitar Gamcheon. El intervalo de 18:30–19:30 garantiza a los hoteles de las tres estaciones de recogida una bajada directa y sin necesidad de transbordos.",
+      "description": "El autocar sale de Gamcheon a las aproximadamente 18:25 y recorre el centro de Busan con cuatro paradas de bajada: **(1) Nampo-dong / Mercado Jagalchi a las 18:30** — una breve parada de 1 minuto para los viajeros que deseen seguir explorando el distrito gastronómico del centro de Busan; **(2) Estación de Busan a las 18:40**; **(3) Estación de Seomyeon a las 19:00**; **(4) Estación de Haeundae a las 19:30**. Los viajeros con reservas de cena en Nampo-dong o Haeundae deben planificar sus reservas para las 19:30 o más tarde como margen de seguridad."
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Recogida (3 paradas)",
+      "type": "origin",
+      "theme": "Recogida estilo Seúl"
+    },
+    {
+      "name": "Templo Tongdosa",
+      "type": "primary",
+      "theme": "Templo budista Patrimonio de la UNESCO"
+    },
+    {
+      "name": "Almuerzo (opcional)",
+      "type": "meal",
+      "theme": "Comida"
+    },
+    {
+      "name": "Parque Temático de la Cueva de Amatista",
+      "type": "primary",
+      "theme": "Cueva subterránea"
+    },
+    {
+      "name": "Teleférico del Valle de Hielo de los Alpes de Yeongnam",
+      "type": "primary",
+      "theme": "Teleférico de montaña"
+    },
+    {
+      "name": "Pueblo Cultural de Gamcheon",
+      "type": "primary",
+      "theme": "Pueblo de arte"
+    },
+    {
+      "name": "Regreso al punto de partida",
+      "type": "return",
+      "theme": "Bajada"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "Recogida → Yangsan",
+      "duration": "≈ 1,5 horas",
+      "description": "Recogidas a las 08:20 en la Estación de Busan / 08:40 en Seomyeon / 09:20 en Haeundae, luego dirección noroeste por la Autopista Gyeongbu hacia el Templo Tongdosa."
+    },
+    {
+      "phase": "Templo Tongdosa",
+      "duration": "≈ 1,5 horas",
+      "description": "Tongdosa, inscrito en la UNESCO: sendero de acceso por el bosque, Daeungjeon + Geumgang Gyedan, museo opcional."
+    },
+    {
+      "phase": "Almuerzo + Cueva de Amatista",
+      "duration": "≈ 2 horas",
+      "description": "Almuerzo opcional de bulgogi estilo Eonyang de camino, luego 60 min en el Parque Temático de la Cueva de Amatista en Ulsan."
+    },
+    {
+      "phase": "Teleférico de los Alpes de Yeongnam",
+      "duration": "≈ 1,5 horas",
+      "description": "Conducir al Cheonhwangsan de Miryang; teleférico hasta 1.019 m + Sky Walk."
+    },
+    {
+      "phase": "Gamcheon + regreso",
+      "duration": "≈ 2 horas",
+      "description": "60 min en el Pueblo Cultural de Gamcheon (hora dorada), luego traslados de regreso de 18:30 a 19:30."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "Cómo transcurre este día en los alrededores de Busan",
+    "subtitle": "Recogida a las 08:20 en Busan / 08:40 en Seomyeon / 09:20 en Haeundae; Autopista Gyeongbu hasta el Templo Tongdosa (Patrimonio UNESCO) en Yangsan; almuerzo opcional en ruta; Cueva de Amatista subterránea en Ulsan; Teleférico del Valle de Hielo de los Alpes Yeongnam en Miryang; regreso a Busan para el Pueblo Cultural de Gamcheon en la hora dorada; traslados de regreso antes de las 19:30."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "Visitantes por primera vez en Corea que deseen disfrutar de Patrimonio UNESCO + naturaleza + cultura en un solo día desde Busan",
+      "Parejas y viajeros enfocados en la fotografía (teleférico, Gamcheon en hora dorada, Sky Walk)",
+      "Viajeros cómodos con un día de 11 horas en autocar para máxima cobertura",
+      "Viajeros culturales interesados en el budismo coreano (Los Tres Templos Joya)"
+    ],
+    "lessIdealFor": [
+      "Viajeros que prefieren una experiencia tranquila en un solo destino",
+      "Huéspedes con sensibilidad severa a las alturas (suelo de cristal del Sky Walk, teleférico)",
+      "Viajeros con movilidad reducida (cuesta de Gamcheon; suelo irregular de la Cueva de Amatista)",
+      "Pasajeros de crucero con horario ajustado (esta no es una excursión de escala de crucero)"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Ritmo y geografía",
+        "icon": "sun",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "Circuito periférico sin retrocesos",
+            "detail": "Busan → Yangsan (Tongdosa, ~50 km al noroeste) → Ulsan (Cueva de Amatista, ~30 km al norte) → Miryang (Teleférico, ~40 km al noroeste) → Busan (Gamcheon, ~80 km al sur). Cada tramo dista ≤60 min entre sí por autopista."
+          },
+          {
+            "label": "Equilibrio entre interior y exterior",
+            "detail": "Tongdosa (paseo por templo al aire libre) → almuerzo (en interior) → Cueva de Amatista (interior, 15 °C) → teleférico (exterior en altitud) → Gamcheon (pueblo al aire libre). Programado de modo que el calor o la lluvia afecte solo una o dos paradas, nunca el día completo."
+          },
+          {
+            "label": "Gamcheon en la hora dorada por diseño",
+            "detail": "La llegada a Gamcheon a las 17:30 aprovecha la ventana más fotogénica del pueblo, de 17:00 a 18:00. Situar Gamcheon al final, tras el circuito periférico, coloca la oportunidad fotográfica más popular en el momento de mejor luz del día."
+          }
+        ]
+      },
+      {
+        "title": "Por qué esto funciona en 11 horas",
+        "icon": "clock",
+        "iconBg": "bg-pink-50/80",
+        "iconColor": "text-pink-600",
+        "items": [
+          {
+            "label": "Todas las entradas principales incluidas > **Nota:** Las líneas **16** (`bg-amber-50/80`) y **24** (`bg-pink-50/80`) son clases de código CSS (Tailwind), por lo que se mantienen sin traducir.",
+            "detail": "Tongdosa (₩3,000) + Cueva de Amatista (₩8,000) + Teleférico ida y vuelta (₩18,000) = ₩29,000 en entradas están incluidas en el precio del tour. Solo el barco opcional de la Cueva de Amatista (₩4,000) y la entrada al museo de Tongdosa (₩2,000) corren por cuenta del viajero."
+          },
+          {
+            "label": "Tres puntos de recogida en toda Busan",
+            "detail": "Estación de Busan Salida 4 / Seomyeon Salida 4 / Haeundae Salida 5 — cubre los tres principales grupos de alojamiento. Elija el más cercano a su hotel; la duración efectiva del tour varía ±70 min según el orden de recogida."
+          },
+          {
+            "label": "Bajada opcional en Jagalchi al final",
+            "detail": "Los viajeros que deseen continuar de forma independiente por Nampo-dong / Mercado de Jagalchi tras Gamcheon pueden desembarcar allí a las 18:30; de lo contrario, el autocar para en Busan Station, Seomyeon y Haeundae en ese orden."
+          }
+        ]
+      },
+      {
+        "title": "Ventajas e inconvenientes con total honestidad",
+        "icon": "info",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "El teleférico depende de las condiciones meteorológicas",
+            "detail": "El teleférico de los Alpes de Yeongnam cierra con viento fuerte o nieve intensa. El guía consulta el estado operativo por la mañana y, si es necesario, sustituye el trayecto por el paseo por el valle de Eoreumgol (Monumento Natural n.º 224) en la base. El reembolso solo aplica si se cancela por completo el tramo en teleférico y no se ofrece ninguna alternativa."
+          },
+          {
+            "label": "La ladera de Gamcheon es empinada",
+            "detail": "Use calzado con agarre y tómese su tiempo cuesta arriba. La zona principal de fotografía es accesible por un camino suave; la exploración más profunda requiere las escaleras más pronunciadas. El presupuesto de 60 min asume un ritmo moderado."
+          },
+          {
+            "label": "El almuerzo corre por cuenta del viajero y es opcional",
+            "detail": "El almuerzo (₩10,000–15,000) se paga en el lugar. Los viajeros con crucero u horario ajustado pueden omitir este tiempo en el briefing matutino y ese margen se redistribuye a las paradas de la tarde."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "Recogida y regreso",
+      "preview": "Tres puntos de recogida: Estación de Busan Salida 4 (08:20), Estación de Seomyeon Salida 4 (08:40), Estación de Haeundae Salida 5 (09:20)…",
+      "content": [
+        "Tres puntos de recogida: **Estación de Busan Salida 4 a las 08:20** (NO la puerta KTX), **Estación de Seomyeon Salida 4 a las 08:40**, **Estación de Haeundae Salida 5 a las 09:20**.",
+        "Regresos en orden inverso: **Nampo-dong / Jagalchi (opcional) 18:30, Busan Station 18:40, Seomyeon 19:00, Haeundae 19:30**.",
+        "La duración efectiva del tour depende del punto de recogida: Busan Station ≈ 11,2 h, Haeundae ≈ 10,2 h.",
+        "Por favor, esté en su punto de recogida 5 minutos antes de la hora indicada."
+      ]
+    },
+    {
+      "id": "what-to-bring",
+      "title": "Qué ponerse y qué llevar",
+      "preview": "Calzado cerrado resistente con suela antideslizante — los senderos de grava de Tongdosa, el suelo irregular de la Cueva de Amatista y la ladera de Gamcheon requieren buen agarre…",
+      "content": [
+        "Calzado cerrado resistente con suela antideslizante — los senderos de grava de Tongdosa, el suelo irregular de la Cueva de Amatista y la ladera de Gamcheon requieren buen agarre.",
+        "Una capa ligera o cortavientos para la cueva (15 °C todo el año) y el teleférico (8-10 °C más frío a 1.019 m de altitud).",
+        "Cámara o smartphone (el sendero forestal de Tongdosa, el suelo de vidrio del Sky Walk y la hora dorada en Gamcheon son los mejores momentos fotográficos).",
+        "Efectivo para el almuerzo (₩10,000–15,000) y el barco opcional de la Cueva de Amatista (₩4,000) — la mayoría de las demás entradas están incluidas.",
+        "Lleve un tentempié ligero si sale sin desayunar — la primera parada para comer es alrededor del mediodía (12:00)."
+      ]
+    },
+    {
+      "id": "weather-policy",
+      "title": "Política meteorológica",
+      "preview": "Operación durante todo el año. Con lluvia ligera, el tour se realiza según lo programado. El teleférico cierra con viento fuerte o nieve intensa — el guía sustituye el recorrido por el valle de Eoreumgol.",
+      "content": [
+        "Operación durante todo el año.",
+        "Lluvia ligera: el tour se realiza según lo programado — todas las paradas son transitables con el calzado adecuado.",
+        "Lluvia intensa: los caminos de piedra de Tongdosa pueden ser resbaladizos; las escaleras de Gamcheon resultan inseguras; el teleférico puede suspenderse con viento fuerte.",
+        "Si el teleférico está suspendido, el guía sustituye el recorrido por el **paseo por el valle de Eoreumgol** (Monumento Natural n.º 224, circuito de ~40 min en la base) sin coste adicional.",
+        "Clima de nivel tifón: se ofrece reembolso completo o cambio de reserva."
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "Qué está incluido",
+      "preview": "Recogida en 3 estaciones de Busan, autobús climatizado, guía en inglés, todas las entradas principales (Tongdosa, Cueva de Amatista, Teleférico)…",
+      "content": [
+        "Recogida en 3 estaciones de Busan + bajada en los mismos puntos, autocar grande climatizado, guía oficial de habla inglesa.",
+        "**Entrada al Templo Tongdosa (₩3.000) — INCLUIDA**.",
+        "**Entrada al Parque Temático de la Cueva de Amatista (₩8.000) — INCLUIDA**.",
+        "**Teleférico de ida y vuelta al Valle de Hielo de los Alpes de Yeongnam (₩18.000) — INCLUIDO**.",
+        "**Aldea Cultural de Gamcheon — entrada al pueblo GRATUITA, sin cargo**.",
+        "**NO incluido**: almuerzo (₩10.000-15.000 a cargo del viajero), Museo Tongdosa (₩2.000), bote opcional en la Cueva de Amatista (₩4.000), Mapa de Sellos de Gamcheon (₩2.000)."
+      ]
+    },
+    {
+      "id": "language",
+      "title": "Idioma",
+      "preview": "Idioma principal del tour: inglés. Guía en chino disponible con solicitud anticipada.",
+      "content": [
+        "Idioma principal del tour: inglés.",
+        "Guía en chino disponible bajo petición — reserve con 3 o más días de antelación.",
+        "Se habla coreano a lo largo del día para menús, señalización e interacciones en puestos; el guía se encarga de la traducción.",
+        "Tarjeta de itinerario impresa en varios idiomas distribuida en el punto de recogida."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "Caminata y terreno",
+      "preview": "Moderado. Tongdosa: camino forestal de 1 km; Cueva de Amatista: 2,5 km de suelo irregular; teleférico plano en ambos extremos; Gamcheon: ladera empinada.",
+      "content": [
+        "Moderado en general.",
+        "Tongdosa: 1 km de suave camino forestal de acceso + recorrido a pie por el recinto principal (~30 min en total).",
+        "Cueva de Amatista: circuito de 2,5 km, suelo irregular en la cueva, secciones húmedas.",
+        "Teleférico: llano en ambas estaciones; el Sky Walk es accesible para sillas de ruedas.",
+        "Gamcheon: callejones empinados en ladera y escaleras a lo largo de la ruta fotográfica — calzado con agarre imprescindible.",
+        "Caminata total ≈ 4-5 km más la exploración de la estación superior del teleférico."
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "Cancelación",
+      "preview": "Cancelación gratuita hasta 24 horas antes de la recogida.",
+      "content": [
+        "Cancelación gratuita hasta 24 horas antes de la recogida.",
+        "Con menos de 24 horas de antelación: reembolso del 50 %.",
+        "No presentarse o perder la recogida: sin reembolso — sin embargo, contacte con las operaciones de AtoC Korea en los 10 minutos siguientes a la hora de recogida y el autobús podría esperar brevemente."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "Ver notas estacionales"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "Ver notas estacionales"
+    },
+    "_seasonalSummary": "Busan + outskirts: mild winters (5-10 °C), humid summers, peak rainfall in July monsoon. Yeongnam Alps upper station is 8-10 °C cooler than the base regardless of season."
+  },
+  "seasonalVariations": [
+    {
+      "season": "Primavera (mar–may)",
+      "description": "Cerezos en flor a lo largo del camino forestal de Tongdosa a principios de abril; azaleas en los Alpes de Yeongnam a finales de abril – principios de mayo. Temperatura más agradable para el día completo en autobús. El cumpleaños de Buda (mayo) trae el festival de linternas Yeondunhoe a Tongdosa."
+    },
+    {
+      "season": "Verano (jun–ago)",
+      "description": "El fenómeno del hielo natural de Eoreumgol en su punto álgido (mediados de julio). El bosque de pinos de Tongdosa en pleno verdor; la estación superior del teleférico ofrece un aire ~10 °C más fresco. El monzón de julio puede acortar el tramo en teleférico."
+    },
+    {
+      "season": "Otoño (sep–nov)",
+      "description": "La temporada de follaje más emblemática de Corea — el colorido otoñal de los Alpes de Yeongnam, de mediados de octubre a principios de noviembre, es de los mejores de Gyeongsang-do; el acceso de pinos y arces de Tongdosa es muy fotogénico a mediados de noviembre. Mayor demanda — reserve con 2+ semanas de antelación."
+    },
+    {
+      "season": "Invierno (dic–feb)",
+      "description": "El fenómeno inverso de vapor cálido de Eoreumgol visible de diciembre a febrero; Tongdosa con nieve sobre las tejas resulta espectacular; el teleférico puede cerrar con nevadas intensas (se ofrece caminata alternativa). Gamcheon menos concurrido; lleve ropa en capas."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "Todas las entradas principales incluidas",
+      "description": "Tongdosa + Cueva de Amatista + Teleférico en un solo paquete",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "Tongdosa (₩3,000), la Cueva de Amatista (₩8,000) y el teleférico de ida y vuelta de los Alpes de Yeongnam (₩18,000) están incluidos en el precio del tour — un ahorro total de ₩29,000 en entradas. Solo los servicios opcionales (bote en la cueva, Museo Tongdosa) y el almuerzo corren por cuenta del viajero."
+    },
+    {
+      "icon": "shield",
+      "title": "Alternativa climática incluida",
+      "description": "Paseo por el valle de Eoreumgol si el teleférico cierra",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600",
+      "body": "Si el teleférico queda suspendido por vientos fuertes o nevadas intensas, el guía sustituye la actividad por un paseo por el valle de Eoreumgol (Monumento Natural n.º 224) en la base — sin problemas de reembolso, sin tiempo perdido, con el mismo contexto geológico de los Alpes de Yeongnam."
+    },
+    {
+      "icon": "users",
+      "title": "Guía oficial con dominio del inglés",
+      "description": "Guía turístico con licencia en Corea",
+      "iconBg": "bg-pink-50/80",
+      "iconColor": "text-pink-600",
+      "body": "Guía con licencia de la Organización de Turismo de Corea y dominio del inglés; guía en chino disponible con solicitud previa. La narración del guía abarca la fundación de Tongdosa en el año 646 d.C., la historia de la gemología de la amatista coreana y la geología de los Alpes de Yeongnam."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Inmediatamente",
+      "title": "Confirmación instantánea",
+      "detail": "Confirmación de reserva con selección de punto de recogida",
+      "description": "Confirmación de reserva instantánea con selección del punto de recogida: Estación de Busan / Seomyeon / Haeundae."
+    },
+    {
+      "timing": "El día anterior",
+      "title": "Detalles de recogida",
+      "detail": "Matrícula del autobús + foto del punto de encuentro por WhatsApp",
+      "description": "Verificación del clima (estado del teleférico), número de matrícula del autobús y notas estacionales de la ruta enviadas el día anterior."
+    },
+    {
+      "timing": "La mañana del tour",
+      "title": "Confirmación de recogida",
+      "detail": "Guía en el punto de recogida 10 minutos antes de la salida",
+      "description": "El guía espera en la Salida 4 de la Estación de Busan desde las 08:10, en la Salida 4 de Seomyeon desde las 08:30 y en la Salida 5 de Haeundae desde las 09:10."
+    },
+    {
+      "timing": "Durante el tour",
+      "title": "Asistencia durante el recorrido",
+      "detail": "Narración del guía en cada parada",
+      "description": "El guía ofrece narración en el lugar sobre la fundación de Tongdosa en el año 646 d.C. por el Reino Silla + los Tres Templos de las Joyas + la inscripción en la UNESCO en 2018, el legado de la minería de amatista coreana en Eonyang y el fenómeno natural de hielo de Eoreumgol en los Alpes de Yeongnam (Monumento Natural n.º 224)."
+    },
+    {
+      "timing": "Fin del día",
+      "title": "Cuatro puntos de bajada",
+      "detail": "Nampo/Jagalchi 18:30 / Busan 18:40 / Seomyeon 19:00 / Haeundae 19:30",
+      "description": "El autobús para en los cuatro puntos en orden; elija el más cercano a su hotel."
+    },
+    {
+      "timing": "Después del tour",
+      "title": "Reseña y seguimiento",
+      "detail": "Reseña opcional posterior al tour",
+      "description": "Solicitud de comentarios enviada tras el tour; se responden el mismo día recomendaciones de restaurantes o atracciones para el resto de su estancia en Busan."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "duration",
+      "question": "¿Cuánto dura este tour?",
+      "answer": "11 horas de puerta a puerta desde la recogida en la Estación de Busan a las 08:20; regresa antes de las 19:30 a Haeundae (o 18:40 Estación de Busan / 19:00 Seomyeon)."
+    },
+    {
+      "id": "pickup",
+      "question": "¿Dónde es exactamente la recogida?",
+      "answer": "Tres puntos de recogida: (1) **Salida 4 de la Estación de Busan** (NO la puerta KTX) a las 08:20; (2) **Salida 4 de la Estación de Seomyeon** a las 08:40; (3) **Salida 5 de la Estación de Haeundae** a las 09:20. Elija el más cercano a su hotel al hacer la reserva."
+    },
+    {
+      "id": "drop-off",
+      "question": "¿Dónde es la bajada?",
+      "answer": "Cuatro puntos de bajada en orden inverso: **Nampo-dong / Jagalchi a las 18:30** (bajada opcional), Estación de Busan 18:40, Seomyeon 19:00, Haeundae 19:30."
+    },
+    {
+      "id": "admissions",
+      "question": "¿Están incluidas las entradas?",
+      "answer": "**Tongdosa (₩3.000), la Cueva de Amatista (₩8.000) y el teleférico de ida y vuelta de los Alpes de Yeongnam (₩18.000) están INCLUIDOS** — ₩29.000 en entradas ahorradas. **Opcional por cuenta propia**: Museo de Tongdosa (₩2.000), barca subterránea de la Cueva de Amatista (₩4.000), Mapa de Sellos de Gamcheon (₩2.000)."
+    },
+    {
+      "id": "lunch",
+      "question": "¿Está incluido el almuerzo?",
+      "answer": "No — el almuerzo corre por cuenta del cliente (₩10.000-15.000 por persona). La opción habitual en ruta entre Tongdosa y la Cueva de Amatista es **bulgogi estilo Eonyang** (especialidad regional de Ulsan: ternera marinada a la parrilla). Se pueden organizar opciones vegetarianas y aptas para halal con aviso previo. La parada para almorzar es **opcional** — los clientes con poco tiempo pueden omitirla y volver a subir al autobús."
+    },
+    {
+      "id": "cable-car-weather",
+      "question": "¿Qué ocurre si el teleférico está cerrado?",
+      "answer": "El teleférico de los Alpes de Yeongnam cierra con viento fuerte o nieve intensa. El guía comprueba el estado operativo por la mañana y **sustituye la actividad por el paseo por el valle de Eoreumgol** (Monumento Natural n.º 224, circuito de ~40 min en la base) — mismo contexto geológico de los Alpes de Yeongnam, sin problemas de reembolso ni pérdida de tiempo. Reembolso completo únicamente si se cancela toda la parte del teleférico Y no se ofrece ninguna alternativa."
+    },
+    {
+      "id": "tongdosa-significance",
+      "question": "¿Por qué visitar Tongdosa en lugar de Bulguksa?",
+      "answer": "Ambos templos son Patrimonio Mundial de la UNESCO, pero **Tongdosa es uno de los \"Tres Templos Joya\" de Corea** (representa al propio Buda — el único templo en Corea que alberga reliquias físicas reales de Buda), mientras que **Bulguksa es un templo 'Sansa' que representa la arquitectura budista clásica**. Tongdosa está a ~30 min de Haeundae; Bulguksa está a ~90 min en cada sentido en Gyeongju. Tongdosa permite incluir dos atracciones periféricas adicionales (Cueva de Amatista + Alpes de Yeongnam) dentro del mismo presupuesto de 11 horas."
+    },
+    {
+      "id": "amethyst-cave",
+      "question": "¿Qué tiene de especial la Cueva de Amatista?",
+      "answer": "Es una **mina de amatista reconvertida** — la zona de Eonyang produjo la reconocida internacionalmente \"Amatista Coreana\" (púrpura intenso, alta claridad) durante los años 70-80, exportada a todo el mundo y presente en las joyas reales coreanas. Cuando la minería cesó, los 2,5 km de galerías de la mina se abrieron al público como parque temático. La excursión opcional en barca subterránea (₩4.000) por el lago interior de la mina es una extensión única."
+    },
+    {
+      "id": "eoreumgol",
+      "question": "¿Qué es Eoreumgol (Valle del Hielo)?",
+      "answer": "**Eoreumgol** es un fenómeno geológico situado en la base del teleférico donde **el campo de bloques de talud produce hielo natural a mediados del verano** — las bolsas de aire frío atrapadas bajo las rocas forman hielo que perdura hasta julio-agosto, con el efecto inverso de vapor cálido en invierno. Declarado **Monumento Natural n.º 224 (1970)**, es un sitio de inversión térmica sumamente raro que solo se encuentra en unos pocos lugares del mundo."
+    },
+    {
+      "id": "kids",
+      "question": "¿Es apto para niños?",
+      "answer": "Sí, a partir de 6 años. La jornada de 11 horas con múltiples paradas resulta entretenida para niños en edad escolar. Los pequeños suelen disfrutar del viaje en teleférico, el suelo de cristal del Sky Walk, la Cueva de Amatista subterránea (especialmente el paseo opcional en bote) y los murales de Gamcheon. Los niños más pequeños pueden tener dificultades con el largo tiempo en autobús."
+    },
+    {
+      "id": "seniors",
+      "question": "¿Es adecuado para personas mayores?",
+      "answer": "Las personas mayores activas no tendrán problemas — el teleférico elimina la necesidad de escalar, el sendero del bosque de Tongdosa es suave y el suelo de la Cueva de Amatista es mayormente plano. La ladera de Gamcheon es la principal exigencia física. Los viajeros con movilidad reducida deberían considerar un tour privado en coche alquilado con itinerario adaptable."
+    },
+    {
+      "id": "language",
+      "question": "¿Qué idiomas habla el guía?",
+      "answer": "Principalmente inglés. Se puede disponer de un guía en chino con reserva anticipada — reserve con al menos 3 días de antelación. Se entrega una tarjeta de itinerario impresa en varios idiomas en el punto de recogida."
+    },
+    {
+      "id": "best-season",
+      "question": "¿Cuál es la mejor temporada para este tour?",
+      "answer": "**Otoño (mediados de octubre a principios de noviembre)** para el follaje de los Alpes de Yeongnam y el acceso bordeado de pinos y arces de Tongdosa. **Verano (mediados de julio a mediados de agosto)** para contemplar el fenómeno del hielo natural de Eoreumgol en su apogeo. **Primavera (abril-mayo)** para los cerezos en flor de Tongdosa y el festival de linternas del cumpleaños de Buda. El invierno es espectacular, pero el teleférico puede cerrarse con fuertes nevadas."
+    },
+    {
+      "id": "private",
+      "question": "¿En qué se diferencia esto de un tour privado en coche alquilado?",
+      "answer": "Este es un tour grupal en autobús a $85 por persona. Nuestra opción de **tour privado en coche alquilado de un día** incluye recogida en la puerta del hotel, horarios flexibles, itinerario personalizable y vehículo privado, con un precio habitual de $359–$1.077 por grupo según el número de pasajeros. Elija el tour en autobús si busca economía; elija el privado para mayor flexibilidad, comodidad y la posibilidad de omitir o ampliar las paradas."
+    },
+    {
+      "id": "walking",
+      "question": "¿Cuánto hay que caminar?",
+      "answer": "Aproximadamente 4-5 km en total entre las cuatro paradas, más el circuito interno de 2,5 km de la Cueva de Amatista. Se recomienda calzado cerrado y resistente (gravilla en Tongdosa, suelo húmedo de la cueva, ladera de Gamcheon)."
+    },
+    {
+      "id": "tipping",
+      "question": "¿Se espera propina?",
+      "answer": "No se espera (la propina no es una práctica habitual en Corea), pero se agradece para el guía y el conductor — la propina habitual es de $5–10 USD por persona si lo desea. No está incluida en el precio del tour."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 5,
+    "totalReviews": 8,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 8,
+        "percentage": 100
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "pickup_dropoff": {
+    "primary": {
+      "name": "Salida 4 de la Estación de Busan (NO la puerta del KTX)",
+      "address": "Jungang-daero, Dong-gu, Busan",
+      "time": "08:20 pickup / 18:40 drop-off",
+      "instructions": "Encuéntrese con el guía a nivel de calle sobre la Salida 4 de la Estación de Busan — el guía sostendrá el cartel de AtoC Korea. Nota: esta NO es la salida del lado del KTX."
+    },
+    "alternates": [
+      {
+        "name": "Salida 4 de la Estación de Seomyeon (LoveKorea Seomyeon)",
+        "address": "Jungang-daero, Busanjin-gu, Busan",
+        "time": "08:40 pickup / 19:00 drop-off",
+        "instructions": "Encuéntrese con el guía a nivel de calle sobre la Salida 4 de la Estación de Seomyeon — el intercambiador de metro más concurrido de Busan."
+      },
+      {
+        "name": "Salida 5 de la Estación de Haeundae (LoveKorea Haeundae)",
+        "address": "Haeundaehaebyeon-ro, Haeundae-gu, Busan",
+        "time": "09:20 pickup / 19:30 drop-off",
+        "instructions": "Encuéntrese con el guía a nivel de calle sobre la Salida 5 de la Estación de Haeundae — cerca del distrito de centros turísticos junto al mar."
+      },
+      {
+        "name": "Nampo-dong / Mercado de Jagalchi (solo bajada opcional)",
+        "address": "Jung-gu, Busan",
+        "time": "18:30 drop-off (optional)",
+        "instructions": "Parada opcional de 1 minuto para los huéspedes que deseen continuar de forma independiente hacia el distrito gastronómico del centro de Busan."
+      }
+    ]
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
+    "product_type": "bus_tour",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "busan_outskirts",
+    "vehicle_type": "large_coach",
+    "duration_hours": 11,
+    "region_tags": [
+      "busan_jung",
+      "busan_seo",
+      "busan_haeundae",
+      "yangsan",
+      "ulsan_ulju",
+      "miryang"
+    ],
+    "theme_tags": [
+      "unesco_world_heritage",
+      "buddhist_temple",
+      "cable_car",
+      "mountain",
+      "natural_monument",
+      "underground_cave",
+      "mural_village",
+      "three_jewel_temple"
+    ],
+    "poi_tags": [
+      "tongdosa_temple",
+      "amethyst_cave_themepark",
+      "yeongnam_alps_ice_valley_cable_car",
+      "gamcheon_culture_village"
+    ],
+    "pace_level": 0.75,
+    "walking_level": 0.65,
+    "scenic_level": 1,
+    "photo_level": 1,
+    "culture_level": 0.95,
+    "relax_level": 0.5,
+    "first_time_fit": 1,
+    "family_fit": 0.85,
+    "senior_fit": 0.7,
+    "couple_fit": 1,
+    "solo_traveler_fit": 0.85,
+    "active_traveler_fit": 0.8,
+    "adult_family_fit": 0.95,
+    "family_with_teens_fit": 0.95,
+    "young_kids_fit": 0.5,
+    "senior_active_fit": 0.75,
+    "senior_general_fit": 0.55,
+    "mobility_friendly_fit": 0.4,
+    "stroller_fit": 0.45,
+    "one_day_fit": 1,
+    "same_day_flight_fit": 0.25,
+    "rain_fit": 0.55,
+    "value_for_money_fit": 1,
+    "iconic_landmark_fit": 1,
+    "cafe_fit": 0.5,
+    "food_fit": 0.7,
+    "nature_fit": 0.95,
+    "beach_fit": 0.2,
+    "nightlife_fit": 0.1,
+    "shopping_fit": 0.3,
+    "no_shopping_fit": 1,
+    "local_culture_fit": 0.95,
+    "storytelling_fit": 0.9,
+    "unesco_fit": 1,
+    "intangible_heritage_fit": 0.5,
+    "indoor_ratio": 0.25,
+    "weather_sensitivity": 0.65,
+    "comfort_level": 0.55,
+    "budget_fit": 0.95,
+    "premium_fit": 0.25,
+    "small_group_fit": 0.15,
+    "private_fit": 0.05,
+    "bus_fit": 1,
+    "price_band": "mid",
+    "pickup_base": "busan_central",
+    "return_time_band": "18:30-19:30",
+    "duration_band": "11h",
+    "min_recommended_age": 8,
+    "hard_constraints": {
+      "avoidIf": [
+        "mobility_limited"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "young_kids_under_6"
+      ]
+    },
+    "walking_notes": [
+      "11-hour day with ~4-5 km total walking plus Amethyst Cave 2.5-km internal circuit.",
+      "Tongdosa gravel paths + Gamcheon hillside steps are the main demands.",
+      "Cable car removes the mountain climbing."
+    ],
+    "keywords": [
+      "busan outskirts tour",
+      "tongdosa temple tour",
+      "ice valley cable car",
+      "yeongnam alps eoreumgol",
+      "amethyst cave ulsan",
+      "busan unesco day tour"
+    ],
+    "synonym_hints": [
+      "busan to tongdosa day trip",
+      "busan side trip unesco",
+      "miryang cable car tour"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "busan",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "tongdosa_temple",
+      "amethyst_cave_themepark",
+      "yeongnam_alps_ice_valley_cable_car",
+      "gamcheon_culture_village"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.1,
+    "flexibility_fit": 0.25,
+    "fixed_itinerary_fit": 1,
+    "national_park_fit": 0.5,
+    "buddhist_temple_fit": 1,
+    "scenic_temple_fit": 1,
+    "mural_village_fit": 1,
+    "history_culture_fit": 1,
+    "religious_history_fit": 1,
+    "premium_dining_fit": 0.2,
+    "seasonal_fit": 0.9,
+    "autumn_foliage_fit": 1,
+    "summer_natural_ice_fit": 1,
+    "china_mainland_market_fit": 0.85,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
+    "china_diaspora_overseas_market_fit": 1,
+    "se_asia_market_fit": 1,
+    "us_market_fit": 0.9,
+    "europe_market_fit": 0.9,
+    "australia_market_fit": 0.9,
+    "japan_market_fit": 0.95,
+    "first_time_korea_fit": 1,
+    "busan_signature_route_fit": 1,
+    "no_inter_city_travel_fit": 1,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "embedded_for": "atockorea_tour_marketplace",
+    "source_of_truth_note": "Busan outskirts coach day tour: Tongdosa Temple (UNESCO 2018) + Amethyst Cave Theme Park Ulsan + Yeongnam Alps Ice Valley Cable Car Miryang + Gamcheon Culture Village. Sources: KTO VisitKorea, UNESCO World Heritage Centre, Tongdosa official, Miryang City Tourism, Yeongnam Alps Cable Car official, Cultural Heritage Administration Natural Monument No. 224, Wikipedia.",
+    "audit_summary": "11-hour Busan-base coach tour covering UNESCO temple + amethyst-mine theme park + 1,019m cable car + Gamcheon. All main admissions bundled. Gamcheon content reused from busan-top-attractions-day-tour. Direct GetYourGuide equivalent positioned at $94; this tour priced $85/$93."
+  }
+}

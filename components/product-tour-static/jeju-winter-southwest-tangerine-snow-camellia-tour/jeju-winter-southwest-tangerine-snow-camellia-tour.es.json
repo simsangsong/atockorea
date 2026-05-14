@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
     "title": "Jeju Invierno: Mandarina y Camelia",
-    "priceLabel": "Consulte el precio al reservar",
+    "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
     "shortCardDescription": "Las tres experiencias únicas del invierno de Jeju en un día: senderismo en el sendero nevado Eorimok del Hallasan (árboles cubiertos de escarcha y nieve en la montaña más alta de Corea) → recogida de mandarinas Hallabong de invierno en una granja local → almuerzo → Camellia Hill (las camelias rojas en su pico de diciembre-enero) → Acantilado Jusangjeolli → Cascadas Cheonjeyeon. Diciembre-febrero, grupo pequeño, recogida en hotel.",
     "tags": [
       "grupo reducido",
@@ -50,12 +50,12 @@
   "headlineLine1": "Jeju Invierno",
   "headlineLine2": "Mandarina y Camelia",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
-    "per": "persona",
-    "priceSource": "direct_rate",
-    "priceNote": "Precio de grupo pequeño aún no confirmado. Consultar el precio comparable.",
-    "discountPercent": 10
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
@@ -1094,12 +1094,12 @@
   "sticky_booking_bar": {
     "note": "La disponibilidad se confirma en el paso de pago.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
-      "per": "persona",
-      "priceSource": "direct_rate",
-      "priceNote": "El precio del grupo reducido aún no está confirmado en la ficha. El tour hermano de otoño con pink muhly cuesta aproximadamente 111 USD por persona. Una vez confirmado, el precio directo de AtoC Korea aplica un 10% de descuento fijo.",
-      "discountPercent": 10
+      "per": "person"
     }
   },
   "pickup_dropoff": {

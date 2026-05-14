@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "제주 남부 유네스코 일일 투어",
-    "priceLabel": "가격은 예약 시 확인",
+    "priceLabel": "1인 US$59 (정가 $69, 14% 할인)",
     "shortCardDescription": "제주 남부 핵심 유네스코 명소와 자연 경관을 소그룹으로 일주하는 투어입니다. 어승생악 트레일(한라산 기생화산), 카멜리아힐 꽃 정원, 천제연폭포(3단 폭포), 대포주상절리(유네스코), 오설록 티뮤지엄 포함. 전 입장료 포함, 공인 가이드, 648건 기준 4.9/5 평점.",
     "tags": [
       "소그룹",
@@ -51,14 +51,12 @@
   "headlineLine1": "제주 남부 유네스코 일일 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "38.70",
-    "originalPriceUsd": 43,
-    "salePriceUsd": 38.7,
-    "discountPercent": 10,
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
-    "per": "인",
-    "priceSource": "direct_rate",
-    "priceNote": "AtoC Korea 공식 판매가 기준입니다."
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
@@ -1399,14 +1397,12 @@
   "sticky_booking_bar": {
     "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
     "price": {
-      "amountLabel": "38.70",
-      "originalPriceUsd": 43,
-      "salePriceUsd": 38.7,
-      "discountPercent": 10,
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
-      "per": "인",
-      "priceSource": "direct_rate",
-      "priceNote": "AtoC Korea 공식 판매가 기준입니다."
+      "per": "person"
     }
   },
   "pickup_dropoff": {

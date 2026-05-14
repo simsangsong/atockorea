@@ -138,6 +138,7 @@ export type TourTimelineSectionProps = Pick<
   routeVariants?: readonly PortRouteVariant[];
   selectedPortIndex?: number;
   onPortChange?: (index: number) => void;
+  locale?: "en" | "ko" | "ja" | "zh" | "zh-TW" | "es";
 };
 
 export function TourTimelineSection({
@@ -147,6 +148,7 @@ export function TourTimelineSection({
   routeVariants,
   selectedPortIndex = 0,
   onPortChange,
+  locale = "en",
 }: TourTimelineSectionProps) {
   const [drawerStop, setDrawerStop] = useState<TourStopDrawerStop | null>(null);
   const [internalPortIndex, setInternalPortIndex] = useState(0);
@@ -215,6 +217,7 @@ export function TourTimelineSection({
         open={drawerStop !== null}
         onClose={() => setDrawerStop(null)}
         sectionUi={sectionUi}
+        locale={locale}
       />
     </div>
   );

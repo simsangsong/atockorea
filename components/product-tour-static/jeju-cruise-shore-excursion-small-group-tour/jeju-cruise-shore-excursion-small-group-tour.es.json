@@ -34,7 +34,7 @@
     ],
     "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-    "priceLabel": "",
+    "priceLabel": "Desde US$79 por persona (antes $85, 7% descuento)",
     "shortCardDescription": "Un tour en grupo pequeño desde crucero que adapta la ruta según el puerto de llegada. El Puerto de Jeju (norte) sigue una ruta costera este del Patrimonio UNESCO con parada en Seongsan Ilchulbong; el Puerto de Gangjeong (sur) incluye la ruta Hallasan 1100 + geología de la costa sur + Mercado Olle. Ambas rutas regresan a la terminal del crucero con tiempo de margen confortable.",
     "tags": [
       "cruise_excursion",
@@ -46,9 +46,12 @@
   "headlineLine1": "Jeju Crucero",
   "headlineLine2": "Grupo Pequeño",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "79",
     "currency": "USD",
-    "per": "person"
+    "per": "person",
+    "salePriceUsd": 79,
+    "originalPriceUsd": 85,
+    "discountPercent": 7
   },
   "hero": {
     "imageUrl": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
@@ -437,7 +440,8 @@
           "caption": "Seongsan Ilchulbong — photo 5",
           "alt": "Seongsan Ilchulbong — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     },
     {
       "number": 3,
@@ -947,7 +951,7 @@
             "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min",
             "Summit views + crater rim photos — ~20 min",
             "Descent — ~20 min",
-            "Optional haenyeo viewing at base (15:00 demo) — ~10 min"
+            "Optional haenyeo viewing at base (14:00, 1 función/día; puede cancelarse por mal tiempo) — ~10 min"
           ],
           "whyOnRoute": "**Seongsan Ilchulbong with a small-group pacing premium** — the 90-minute window (vs 75 min on the bus product) lets the guide pause at three documented photo viewpoints on the rim trail, explain the **5,000-year-old single-eruption tuff cone formation** without time pressure, and accommodate guests who want to descend the alternate boardwalk path on the southern flank for the offshore-island sunrise vantage. **Triple-UNESCO designation** (World Heritage 2007 + Biosphere 2002 + Geopark 2010) is the day's highest-credential anchor — and small-group framing means the guide narration on the **tombolo connection to mainland Jeju** + the haenyeo demonstration at the foot of the trail (when scheduled) is delivered face-to-face, not over a coach PA system.",
           "_poi_meta": {
@@ -1807,9 +1811,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático. user_port se resuelve en el momento de la reserva a partir del itinerario del crucero.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "79",
       "currency": "USD",
-      "per": "person"
+      "per": "person",
+      "salePriceUsd": 79,
+      "originalPriceUsd": 85,
+      "discountPercent": 7
     }
   },
   "pickup_dropoff": {

@@ -21,6 +21,9 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
+import { HaenyeoStatusButton } from "./HaenyeoStatusButton";
+
+type DrawerLocale = "en" | "ko" | "ja" | "zh" | "zh-TW" | "es";
 
 /** Light-weight superset shape that both `ItineraryStop` (full) and `PortVariantStop`
  * (cruise shore-excursion subset) satisfy without conversion. The drawer renders
@@ -53,6 +56,8 @@ export type TourStopDrawerStop = {
     tip?: string;
   };
   timeUsed?: readonly string[] | string;
+  /** When set to "haenyeo", renders a live-status check button (haenyeoshow.com) in the drawer. */
+  liveStatusWidget?: "haenyeo" | string;
 };
 
 const drawerEase = [0.16, 1, 0.3, 1] as const;
@@ -351,6 +356,7 @@ export type TourStopDetailDrawerProps = {
   open: boolean;
   onClose: () => void;
   sectionUi: TourProductSectionUiV1;
+  locale?: DrawerLocale;
 };
 
 /**
@@ -362,7 +368,7 @@ export type TourStopDetailDrawerProps = {
 const HIGHLIGHTS_DEFAULT_COUNT = 5;
 const SHORT_WHY_THRESHOLD = 140;
 
-export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourStopDetailDrawerProps) {
+export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = "en" }: TourStopDetailDrawerProps) {
   const [highlightsExpanded, setHighlightsExpanded] = useState(false);
   const [whyExpanded, setWhyExpanded] = useState(false);
   const [descModalOpen, setDescModalOpen] = useState(false);
@@ -682,6 +688,11 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi }: TourSto
                     </div>
                   );
                 })()}
+
+                {/* Live status widget — currently only haenyeo show (Seongsan Ilchulbong) */}
+                {stop.liveStatusWidget === "haenyeo" && (
+                  <HaenyeoStatusButton locale={locale} />
+                )}
 
                 {/* Why on route — clamped to 3 lines for long copy, "Read more" reveals full */}
                 {stop.whyOnRoute && (() => {

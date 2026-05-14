@@ -32,7 +32,7 @@
     ],
     "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-    "priceLabel": "",
+    "priceLabel": "1인 US$79 (정가 $89, 11% 할인)",
     "shortCardDescription": "시간이 부족한 여행객을 위한 고효율 제주 전 지역 코스로, 한라산, 남쪽 해안, 성산일출봉을 하루에 연결합니다.",
     "tags": [
       "small_group",
@@ -46,12 +46,12 @@
   "headlineLine1": "제주 그랜드 하이라이트 일일 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "79",
+    "originalPriceUsd": 89,
+    "salePriceUsd": 79,
+    "discountPercent": 11,
     "currency": "USD",
-    "per": "person",
-    "priceSource": "",
-    "priceNote": "",
-    "discountPercent": null
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
@@ -611,7 +611,7 @@
         "정상 전망대까지 등반 (0.8km / 고도차 140m) — 약 30분",
         "정상 전망 감상 + 분화구 능선 사진 촬영 — 약 20분",
         "하산 — 약 20분",
-        "입구 부근 해녀 시연 선택 관람 (15:00 시연) — 약 10분"
+        "입구 부근 해녀공연 1일 1회 오후 2시 (악천후 시 취소될 수 있음) 오후 2시 (악천후 시 취소될 수 있음) 2시 (악천후 시 취소될 수 있음)연) — 약 10분"
       ],
       "whyOnRoute": "**하이라이트 루프의 마무리 지점** — 제주에서 유네스코 유산이 가장 집중된 단일 장소이자, 이날 일정 중 **5,000년 된 수성화산 지형** 위에 서서 **섬·바다·한라산을 한눈에** 조망할 수 있는 유일한 곳입니다. 지리적으로는 동해안의 피날레이며, 지질학적으로는 한라산 기원과 주상절리 주상 용암에 이은 **세 번째 화산 챕터**입니다. 오후 늦은 도착(15:25)으로 등반 전 입구에서 **15:00 해녀 시연**을 관람하고, **16:30경 분화구 능선의 부드러운 골든아워 빛**을 담으며, **19:00 공원 폐장** 전에 정상을 내려올 수 있습니다. 봄·가을 저녁 보너스: 하산 타이밍이 맞으면 능선에 서쪽 석양빛이 물들 무렵 **일출봉 마을**에서 저녁 식사 또는 버스 귀환이 가능합니다. 일출 방문(인기 있지만 04:30 출발 필요, 낮 시간 루프 불가)과 비교할 때, 오후 성산 방문은 일출 장관 대신 하루 종일 섬 전체 유네스코 여정을 온전히 즐길 수 있습니다.",
       "_poi_meta": {
@@ -711,7 +711,8 @@
           "caption": "성산일출봉 — photo 5",
           "alt": "성산일출봉 — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     }
   ],
   "routeFlowStops": [
@@ -1086,12 +1087,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id는 런타임 시 Supabase / 환경 변수에서 확인되며, 정적 JSONB의 일부가 아닙니다.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "79",
+      "originalPriceUsd": 89,
+      "salePriceUsd": 79,
+      "discountPercent": 11,
       "currency": "USD",
-      "per": "person",
-      "priceSource": "",
-      "priceNote": "",
-      "discountPercent": null
+      "per": "person"
     }
   },
   "matching_profile": {

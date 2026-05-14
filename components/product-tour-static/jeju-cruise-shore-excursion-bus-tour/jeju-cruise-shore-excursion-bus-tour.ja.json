@@ -36,7 +36,7 @@
     ],
     "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-    "priceLabel": "料金は予約時にご確認ください",
+    "priceLabel": "1名様 US$52（定価$59、12%オフ）",
     "shortCardDescription": "寄港地に合わせて選べる済州日帰りツアーです。済州港（北）発は東部ユネスコルート（城山日出峰・ソプチコジ・城邑民俗村）、江汀港（南）発は漢拏山高地＋オルレ市場ルート。クルーズの停泊時間に合わせた8時間構成です。",
     "tags": [
       "クルーズ寄港地観光",
@@ -48,9 +48,12 @@
   "headlineLine1": "済州クルーズ寄港地・大型バスツアー",
   "headlineLine2": "ツアー",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "52",
     "currency": "USD",
-    "per": "人"
+    "per": "person",
+    "salePriceUsd": 52,
+    "originalPriceUsd": 59,
+    "discountPercent": 12
   },
   "hero": {
     "imageUrl": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
@@ -443,7 +446,8 @@
           "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 5",
           "alt": "城山日出峰（ソンサン・イルチュルボン） — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     },
     {
       "number": 3,
@@ -954,7 +958,7 @@
             "山頂デッキへの登頂（0.8km/140m）— 約30分",
             "山頂の眺め＋クレーターの縁の写真撮影 — 約20分",
             "下山 — 約20分",
-            "麓での海女パフォーマンス観覧（15:00公演） — 約10分（オプション）"
+            "麓での海女パフォーマンス観覧（1日1回14:00、悪天候時は中止の可能性あり） — 約10分（オプション）"
           ],
           "whyOnRoute": "**城山日出峰のユネスコ三重指定** (世界遺産2007+生物圏保護区2002+ジオパーク2010)がこのクレーターを東海岸ルートの最強の見どころにしています。",
           "_poi_meta": {
@@ -1734,9 +1738,12 @@
   "sticky_booking_bar": {
     "note": "予約可否とクルーズ港は予約ステップで確認されます。",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "52",
       "currency": "USD",
-      "per": "人"
+      "per": "person",
+      "salePriceUsd": 52,
+      "originalPriceUsd": 59,
+      "discountPercent": 12
     }
   },
   "pickup_dropoff": {

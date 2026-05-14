@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
     "thumbnail": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-    "priceLabel": "",
+    "priceLabel": "車両1台8時間 $359（定価 $379、1–6名）· 7–12名は2倍 · 13名以上は3倍",
     "shortCardDescription": "公認英語対応ドライバーガイド付きの、釜山クルーズ乗客向け8時間プライベートカーチャーター。標準行程はUN記念公園、太宗台、甘川文化村、龍頭山公園、チャガルチ市場をカバー。完全カスタマイズ可能。クルーズターミナル、KTX駅、釜山市内の主要ホテルからの送迎；時間厳守での帰港を保証。",
     "tags": [
       "private_tour",
@@ -45,9 +45,12 @@
   "headlineLine1": "釜山クルーズ寄港地・プライベートカー",
   "headlineLine2": "ツアー",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "359",
     "currency": "USD",
-    "per": "vehicle"
+    "per": "vehicle",
+    "salePriceUsd": 359,
+    "originalPriceUsd": 379,
+    "discountPercent": 5
   },
   "hero": {
     "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
@@ -994,9 +997,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_idはSupabase／環境変数から実行時に解決されます。静的JSONBには含まれません。",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "359",
       "currency": "USD",
-      "per": "vehicle"
+      "per": "vehicle",
+      "salePriceUsd": 359,
+      "originalPriceUsd": 379,
+      "discountPercent": 5
     }
   },
   "pickup_dropoff": {
@@ -2102,5 +2108,38 @@
         "fields_already_float": 42
       }
     }
+  },
+  "pricingTiers": {
+    "currency": "USD",
+    "unit": "vehicle",
+    "durations": [
+      "8h"
+    ],
+    "tiers": [
+      {
+        "paxLabel": "1–6 pax",
+        "paxMin": 1,
+        "paxMax": 6,
+        "prices": {
+          "8h": 359
+        }
+      },
+      {
+        "paxLabel": "7–12 pax",
+        "paxMin": 7,
+        "paxMax": 12,
+        "prices": {
+          "8h": 718
+        }
+      },
+      {
+        "paxLabel": "13+ pax",
+        "paxMin": 13,
+        "paxMax": 20,
+        "prices": {
+          "8h": 1077
+        }
+      }
+    ]
   }
 }

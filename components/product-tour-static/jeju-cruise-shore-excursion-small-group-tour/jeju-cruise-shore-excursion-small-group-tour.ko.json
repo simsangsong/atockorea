@@ -34,7 +34,7 @@
     ],
     "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-    "priceLabel": "",
+    "priceLabel": "1인 US$79 (정가 $85, 7% 할인)",
     "shortCardDescription": "입항 항구에 따라 루트가 달라지는 소그룹 크루즈 기항지 투어입니다. 제주항(북쪽)은 성산일출봉을 경유하는 동해안 유네스코 루트로, 강정항(남쪽)은 한라산 1100고지 + 남해안 지질 명소 + 올레시장 루트로 운행됩니다. 두 루트 모두 여유 있게 크루즈 터미널로 귀환합니다.",
     "tags": [
       "cruise_excursion",
@@ -46,9 +46,12 @@
   "headlineLine1": "제주 크루즈 기항지 소그룹 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "79",
     "currency": "USD",
-    "per": "person"
+    "per": "person",
+    "salePriceUsd": 79,
+    "originalPriceUsd": 85,
+    "discountPercent": 7
   },
   "hero": {
     "imageUrl": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
@@ -337,7 +340,7 @@
         "정상 전망대까지 오르기 (0.8km / 고도 140m 상승) — 약 30분",
         "정상 전망 감상 + 분화구 능선 사진 촬영 — 약 20분",
         "하산 — 약 20분",
-        "기슭에서 해녀 시연 관람 선택사항 (15:00 시연) — 약 10분"
+        "기슭에서 해녀공연 1일 1회 오후 2시 (악천후 시 취소될 수 있음) 오후 2시 (악천후 시 취소될 수 있음) 2시 (악천후 시 취소될 수 있음)연) — 약 10분"
       ],
       "whyOnRoute": "**소규모 그룹 맞춤 페이스의 성산일출봉** — 90분의 여유 시간(버스 상품 75분 대비)을 통해 가이드는 능선 탐방로의 세 곳 촬영 포인트에서 여유롭게 멈추고, 시간 압박 없이 **5,000년 전 단일 폭발로 형성된 응회구**를 설명하며, 해상 섬 일출 전망을 위해 남쪽 사면의 대체 데크 탐방로로 하산하길 원하는 게스트를 배려할 수 있습니다. **유네스코 3관왕 지정** (세계유산 2007 + 생물권보전지역 2002 + 세계지질공원 2010)은 당일 최고의 권위를 자랑하는 랜드마크이며, 소규모 그룹 운영 방식 덕분에 **제주 본토와의 육계도(tombolo) 연결**에 대한 가이드 설명과 탐방로 입구에서의 해녀 시연(일정에 포함된 경우)이 대형 버스 PA 시스템이 아닌 직접 대면 방식으로 전달됩니다.",
       "_poi_meta": {
@@ -437,7 +440,8 @@
           "caption": "성산일출봉 — photo 5",
           "alt": "성산일출봉 — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     },
     {
       "number": 3,
@@ -1807,9 +1811,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id는 런타임 시 Supabase / 환경 변수에서 확인됩니다. 정적 JSONB의 일부가 아닙니다. user_port는 크루즈 일정에서 예약 시 확인됩니다.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "79",
       "currency": "USD",
-      "per": "person"
+      "per": "person",
+      "salePriceUsd": 79,
+      "originalPriceUsd": 85,
+      "discountPercent": 7
     }
   },
   "pickup_dropoff": {

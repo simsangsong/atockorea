@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
     "thumbnail": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-    "priceLabel": "",
+    "priceLabel": "From US$59 per person (was $69, 14% off)",
     "shortCardDescription": "Spring-only east Jeju route through cherry blossom streets, the 10km canola road, a lava tube cave, and the iconic Seongsan crater.",
     "tags": [
       "spring_only",
@@ -44,7 +44,10 @@
   "headlineLine1": "Jeju East",
   "headlineLine2": "Cherry Blossom Tour",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
     "per": "person"
   },
@@ -941,7 +944,7 @@
         "**18 Japanese WWII caves** carved into slopes (1945)",
         "**0.8 km / 300–500 wooden steps / 20–30 min** summit climb (round trip 45–60 min)",
         "**Admission Adult ₩5,000 / Youth+Child ₩2,500** (Apr 2025 rate update)",
-        "**Haenyeo demonstrations 13:30 + 15:00 daily** at south coast cove",
+        "**Haenyeo demonstration once daily at 14:00 (subject to bad-weather cancellation) daily** at south coast cove",
         "**Seongsan Ilchulbong is one of only ~30 sites worldwide holding a Triple UNESCO designation** — World Natural Heritage 2007 + Biosphere Reserve 2002 + Global Geopark 2010 — and the **only such triple-designated site in Korea**; closing the day here gives the route its singular UNESCO World-Heritage credential, distinguishing it from the rural-spring-road Noksan-ro and the festival-walk Jeonnong-ro"
       ],
       "timeUsed": [
@@ -1054,7 +1057,8 @@
           "caption": "Seongsan Ilchulbong (UNESCO Photo Stop) — photo 5",
           "alt": "Seongsan Ilchulbong (UNESCO Photo Stop) — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     }
   ],
   "routeFlowStops": [
@@ -1428,7 +1432,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
       "per": "person"
     }

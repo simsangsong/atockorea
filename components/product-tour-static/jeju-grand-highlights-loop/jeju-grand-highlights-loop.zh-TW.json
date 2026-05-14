@@ -32,7 +32,7 @@
     ],
     "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-    "priceLabel": "",
+    "priceLabel": "每人 US$79（原價$89，11% 優惠）",
     "shortCardDescription": "專為時間有限的旅客設計的高效率濟州全島路線，一天串聯漢拏山、南海岸與城山日出峰。",
     "tags": [
       "small_group",
@@ -46,12 +46,12 @@
   "headlineLine1": "濟州全島精華一日遊",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "79",
+    "originalPriceUsd": 89,
+    "salePriceUsd": 79,
+    "discountPercent": 11,
     "currency": "USD",
-    "per": "person",
-    "priceSource": "",
-    "priceNote": "",
-    "discountPercent": null
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
@@ -619,7 +619,7 @@
         "登上山頂觀景台（0.8公里 / 爬升140公尺）— 約30分鐘",
         "山頂景觀 + 火山口邊緣拍照 — 約20分鐘",
         "下山 — 約20分鐘",
-        "可選擇在山腳欣賞海女表演（15:00場次）— 約10分鐘"
+        "可選擇在山腳欣賞海女表演（每日1場，下午2點；惡劣天氣時可能取消）— 約10分鐘"
       ],
       "whyOnRoute": "**精華路線的壓軸之站** — 島上聯合國教科文組織遺址密度最高的單一地點，也是當日行程中唯一能讓旅客站在**5,000年歷史的水火山地質構造**上，同時飽覽**全島、大海與漢拏山**的地方。地理位置上是東海岸的終點，地質上則是繼漢拏山火山源地與柱狀節理壁玄武岩熔岩之後的**第三座火山篇章**。下午抵達（15:25）可於登山前欣賞山腳的**15:00海女表演**，在**16:30左右**捕捉火山口邊緣的**柔和黃金時刻光線**，並在**19:00公園關閉**前完成登頂。春秋傍晚額外驚喜：下山時間剛好讓旅客抵達**城山日出峰村**用餐或搭車返回，此時山脊正映著西方夕陽餘暉。相較於日出時分的到訪（雖受歡迎，但需04:30出發且錯失白天遊覽行程），下午遊覽城山以放棄日出壯景為代價，換來一整天的濟州聯合國教科文組織全島深度體驗。",
       "_poi_meta": {
@@ -719,7 +719,8 @@
           "caption": "城山日出峰 — photo 5",
           "alt": "城山日出峰 — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     }
   ],
   "routeFlowStops": [
@@ -1094,12 +1095,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 於執行時從 Supabase／環境變數解析；不屬於靜態 JSONB 的一部分。",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "79",
+      "originalPriceUsd": 89,
+      "salePriceUsd": 79,
+      "discountPercent": 11,
       "currency": "USD",
-      "per": "person",
-      "priceSource": "",
-      "priceNote": "",
-      "discountPercent": null
+      "per": "person"
     }
   },
   "matching_profile": {

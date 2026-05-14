@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-    "priceLabel": "From US$78 per person",
+    "priceLabel": "From US$79 per person (was $89, 11% off)",
     "shortCardDescription": "A high-efficiency Jeju full-island route for travelers with limited time, linking Hallasan, the south coast, and Seongsan Ilchulbong in one day.",
     "tags": [
       "Small group",
@@ -47,12 +47,12 @@
   "headlineLine1": "Jeju Grand Highlights Loop",
   "headlineLine2": "Small Group Day Tour",
   "price": {
-    "amountLabel": "78",
+    "amountLabel": "79",
+    "originalPriceUsd": 89,
+    "salePriceUsd": 79,
+    "discountPercent": 11,
     "currency": "USD",
-    "per": "person",
-    "priceSource": "AtoC Korea direct rate",
-    "priceNote": "Final rate is confirmed after selecting your travel date and group size. Direct booking is handled by AtoC Korea.",
-    "discountPercent": 10
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
@@ -599,7 +599,7 @@
         "Crater **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** (the 'stone crown')",
         "**182 m above sea level** — 0.8 km / ~140 m gain, 60-min round trip on stone-step trail",
         "**18 Imperial Japanese WWII caves** at base — 1945 kamikaze suicide-boat shelters",
-        "**Haenyeo demonstrations daily 13:30 + 15:00** at the seaside cove — UNESCO Intangible 2016",
+        "**Haenyeo demonstration once daily at 14:00 (subject to bad-weather cancellation)** at the seaside cove — UNESCO Intangible 2016",
         "**Admission updated April 2025**: Adult ₩5,000 / Youth ₩2,500 / FREE under 7 + over 65",
         "Spring/autumn hours **05:00–19:00** (last entry 18:20)",
         "**Closes for first Monday of each month** (occasional rest day)"
@@ -609,7 +609,7 @@
         "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min",
         "Summit views + crater rim photos — ~20 min",
         "Descent — ~20 min",
-        "Optional haenyeo viewing at base (15:00 demo) — ~10 min"
+        "Optional haenyeo viewing at base (14:00 show; may be canceled in bad weather) — ~10 min"
       ],
       "whyOnRoute": "**Seongsan Ilchulbong is the closing highlight of the full-island loop.** Ending here gives the day a strong east-coast finish after Hallasan, the south-coast cliffs, lunch, and Jeongbang Falls. The tuff cone is one of Jeju's most recognizable volcanic landscapes, and the late-afternoon timing often gives softer light for photos. Guests can choose the crater walk if conditions and fitness allow, or enjoy the lower viewing areas at a gentler pace.",
       "_poi_meta": {
@@ -709,7 +709,8 @@
           "caption": "Seongsan Ilchulbong — photo 5",
           "alt": "Seongsan Ilchulbong — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     }
   ],
   "routeFlowStops": [
@@ -1093,12 +1094,12 @@
   "sticky_booking_bar": {
     "note": "Select your date and group size to check live availability and complete your booking.",
     "price": {
-      "amountLabel": "78",
+      "amountLabel": "79",
+      "originalPriceUsd": 89,
+      "salePriceUsd": 79,
+      "discountPercent": 11,
       "currency": "USD",
-      "per": "person",
-      "priceSource": "AtoC Korea direct rate",
-      "priceNote": "Final rate is confirmed after selecting your travel date and group size. Direct booking is handled by AtoC Korea.",
-      "discountPercent": 10
+      "per": "person"
     }
   },
   "matching_profile": {

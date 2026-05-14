@@ -32,7 +32,7 @@
     ],
     "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-    "priceLabel": "",
+    "priceLabel": "Desde US$79 por persona (antes $89, 11% descuento)",
     "shortCardDescription": "Una ruta de alta eficiencia por toda la isla de Jeju para viajeros con tiempo limitado, que une Hallasan, la costa sur y Seongsan Ilchulbong en un solo día.",
     "tags": [
       "small_group",
@@ -46,12 +46,12 @@
   "headlineLine1": "Jeju Completo",
   "headlineLine2": "Hitos del Día",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "79",
+    "originalPriceUsd": 89,
+    "salePriceUsd": 79,
+    "discountPercent": 11,
     "currency": "USD",
-    "per": "person",
-    "priceSource": "",
-    "priceNote": "",
-    "discountPercent": null
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
@@ -719,7 +719,8 @@
           "caption": "Seongsan Ilchulbong — photo 5",
           "alt": "Seongsan Ilchulbong — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     }
   ],
   "routeFlowStops": [
@@ -1094,12 +1095,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "79",
+      "originalPriceUsd": 89,
+      "salePriceUsd": 79,
+      "discountPercent": 11,
       "currency": "USD",
-      "per": "person",
-      "priceSource": "",
-      "priceNote": "",
-      "discountPercent": null
+      "per": "person"
     }
   },
   "matching_profile": {

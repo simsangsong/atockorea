@@ -24,6 +24,18 @@ import busanPlumCherryBlossomZh from "@/components/product-tour-static/busan-plu
 import busanPlumCherryBlossomZhTw from "@/components/product-tour-static/busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju/busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju.zh-TW.json";
 import busanPlumCherryBlossomEs from "@/components/product-tour-static/busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju/busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju.es.json";
 import busanPlumCherryBlossomJa from "@/components/product-tour-static/busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju/busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju.ja.json";
+import busanCruiseShoreExcursionBusTourEn from "@/components/product-tour-static/busan-cruise-shore-excursion-bus-tour/busan-cruise-shore-excursion-bus-tour.en.json";
+import busanOutskirtsTongdosaEn from "@/components/product-tour-static/busan-outskirts-tongdosa-amethyst-yeongnam-day-tour/busan-outskirts-tongdosa-amethyst-yeongnam-day-tour.en.json";
+import busanOutskirtsTongdosaKo from "@/components/product-tour-static/busan-outskirts-tongdosa-amethyst-yeongnam-day-tour/busan-outskirts-tongdosa-amethyst-yeongnam-day-tour.ko.json";
+import busanOutskirtsTongdosaZh from "@/components/product-tour-static/busan-outskirts-tongdosa-amethyst-yeongnam-day-tour/busan-outskirts-tongdosa-amethyst-yeongnam-day-tour.zh.json";
+import busanOutskirtsTongdosaZhTw from "@/components/product-tour-static/busan-outskirts-tongdosa-amethyst-yeongnam-day-tour/busan-outskirts-tongdosa-amethyst-yeongnam-day-tour.zh-TW.json";
+import busanOutskirtsTongdosaEs from "@/components/product-tour-static/busan-outskirts-tongdosa-amethyst-yeongnam-day-tour/busan-outskirts-tongdosa-amethyst-yeongnam-day-tour.es.json";
+import busanOutskirtsTongdosaJa from "@/components/product-tour-static/busan-outskirts-tongdosa-amethyst-yeongnam-day-tour/busan-outskirts-tongdosa-amethyst-yeongnam-day-tour.ja.json";
+import busanCruiseShoreExcursionBusTourKo from "@/components/product-tour-static/busan-cruise-shore-excursion-bus-tour/busan-cruise-shore-excursion-bus-tour.ko.json";
+import busanCruiseShoreExcursionBusTourZh from "@/components/product-tour-static/busan-cruise-shore-excursion-bus-tour/busan-cruise-shore-excursion-bus-tour.zh.json";
+import busanCruiseShoreExcursionBusTourZhTw from "@/components/product-tour-static/busan-cruise-shore-excursion-bus-tour/busan-cruise-shore-excursion-bus-tour.zh-TW.json";
+import busanCruiseShoreExcursionBusTourEs from "@/components/product-tour-static/busan-cruise-shore-excursion-bus-tour/busan-cruise-shore-excursion-bus-tour.es.json";
+import busanCruiseShoreExcursionBusTourJa from "@/components/product-tour-static/busan-cruise-shore-excursion-bus-tour/busan-cruise-shore-excursion-bus-tour.ja.json";
 import busanPrivateCarCharterCruiseShoreEn from "@/components/product-tour-static/busan-private-car-charter-cruise-shore/busan-private-car-charter-cruise-shore.en.json";
 import busanPrivateCarCharterCruiseShoreKo from "@/components/product-tour-static/busan-private-car-charter-cruise-shore/busan-private-car-charter-cruise-shore.ko.json";
 import busanPrivateCarCharterCruiseShoreZh from "@/components/product-tour-static/busan-private-car-charter-cruise-shore/busan-private-car-charter-cruise-shore.zh.json";
@@ -156,6 +168,12 @@ import seoulPrivateNamiMorningCalmZh from "@/components/product-tour-static/seou
 import seoulPrivateNamiMorningCalmZhTw from "@/components/product-tour-static/seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.zh-TW.json";
 import seoulPrivateNamiMorningCalmEs from "@/components/product-tour-static/seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.es.json";
 import seoulPrivateNamiMorningCalmJa from "@/components/product-tour-static/seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.ja.json";
+import seoulSeoraksanNamiMorningCalmEn from "@/components/product-tour-static/seoul-seoraksan-nami-island-morning-calm-day-tour/seoul-seoraksan-nami-island-morning-calm-day-tour.en.json";
+import seoulSeoraksanNamiMorningCalmKo from "@/components/product-tour-static/seoul-seoraksan-nami-island-morning-calm-day-tour/seoul-seoraksan-nami-island-morning-calm-day-tour.ko.json";
+import seoulSeoraksanNamiMorningCalmZh from "@/components/product-tour-static/seoul-seoraksan-nami-island-morning-calm-day-tour/seoul-seoraksan-nami-island-morning-calm-day-tour.zh.json";
+import seoulSeoraksanNamiMorningCalmZhTw from "@/components/product-tour-static/seoul-seoraksan-nami-island-morning-calm-day-tour/seoul-seoraksan-nami-island-morning-calm-day-tour.zh-TW.json";
+import seoulSeoraksanNamiMorningCalmEs from "@/components/product-tour-static/seoul-seoraksan-nami-island-morning-calm-day-tour/seoul-seoraksan-nami-island-morning-calm-day-tour.es.json";
+import seoulSeoraksanNamiMorningCalmJa from "@/components/product-tour-static/seoul-seoraksan-nami-island-morning-calm-day-tour/seoul-seoraksan-nami-island-morning-calm-day-tour.ja.json";
 import seoulSeoraksanSokchoBeachEn from "@/components/product-tour-static/seoul-seoraksan-national-park-sokcho-beach-day-trip/seoul-seoraksan-national-park-sokcho-beach-day-trip.en.json";
 import seoulSeoraksanSokchoBeachKo from "@/components/product-tour-static/seoul-seoraksan-national-park-sokcho-beach-day-trip/seoul-seoraksan-national-park-sokcho-beach-day-trip.ko.json";
 import seoulSeoraksanSokchoBeachZh from "@/components/product-tour-static/seoul-seoraksan-national-park-sokcho-beach-day-trip/seoul-seoraksan-national-park-sokcho-beach-day-trip.zh.json";
@@ -249,6 +267,22 @@ export const STATIC_TOUR_PRODUCT_BUNDLES: Record<StaticTourProductBundleSlug, To
     "zh-TW": asBundleEntry(busanPlumCherryBlossomZhTw),
     es: asBundleEntry(busanPlumCherryBlossomEs),
     ja: asBundleEntry(busanPlumCherryBlossomJa),
+  },
+  "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour": {
+    en: asBundleEntry(busanOutskirtsTongdosaEn),
+    ko: asBundleEntry(busanOutskirtsTongdosaKo),
+    zh: asBundleEntry(busanOutskirtsTongdosaZh),
+    "zh-TW": asBundleEntry(busanOutskirtsTongdosaZhTw),
+    es: asBundleEntry(busanOutskirtsTongdosaEs),
+    ja: asBundleEntry(busanOutskirtsTongdosaJa),
+  },
+  "busan-cruise-shore-excursion-bus-tour": {
+    en: asBundleEntry(busanCruiseShoreExcursionBusTourEn),
+    ko: asBundleEntry(busanCruiseShoreExcursionBusTourKo),
+    zh: asBundleEntry(busanCruiseShoreExcursionBusTourZh),
+    "zh-TW": asBundleEntry(busanCruiseShoreExcursionBusTourZhTw),
+    es: asBundleEntry(busanCruiseShoreExcursionBusTourEs),
+    ja: asBundleEntry(busanCruiseShoreExcursionBusTourJa),
   },
   "busan-private-car-charter-cruise-shore": {
     en: asBundleEntry(busanPrivateCarCharterCruiseShoreEn),
@@ -425,6 +459,14 @@ export const STATIC_TOUR_PRODUCT_BUNDLES: Record<StaticTourProductBundleSlug, To
     "zh-TW": asBundleEntry(seoulPrivateNamiMorningCalmZhTw),
     es: asBundleEntry(seoulPrivateNamiMorningCalmEs),
     ja: asBundleEntry(seoulPrivateNamiMorningCalmJa),
+  },
+  "seoul-seoraksan-nami-island-morning-calm-day-tour": {
+    en: asBundleEntry(seoulSeoraksanNamiMorningCalmEn),
+    ko: asBundleEntry(seoulSeoraksanNamiMorningCalmKo),
+    zh: asBundleEntry(seoulSeoraksanNamiMorningCalmZh),
+    "zh-TW": asBundleEntry(seoulSeoraksanNamiMorningCalmZhTw),
+    es: asBundleEntry(seoulSeoraksanNamiMorningCalmEs),
+    ja: asBundleEntry(seoulSeoraksanNamiMorningCalmJa),
   },
   "seoul-seoraksan-national-park-sokcho-beach-day-trip": {
     en: asBundleEntry(seoulSeoraksanSokchoBeachEn),

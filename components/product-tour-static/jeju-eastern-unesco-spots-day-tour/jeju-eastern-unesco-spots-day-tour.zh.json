@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "济州东部UNESCO一日游",
-    "priceLabel": "",
+    "priceLabel": "每人 US$59（原价$69，14% 优惠）",
     "shortCardDescription": "涵盖东济州UNESCO及代表性景点的小团一日游：济州石文化公园、城山日出峰（UNESCO）、涉地可支海岸、万丈窟熔岩洞穴（UNESCO）及私人马场体验。通过合理安排游览顺序，尽量避开旺季人流。",
     "tags": [
       "小团",
@@ -51,12 +51,12 @@
   "headlineLine1": "济州东部UNESCO一日游",
   "headlineLine2": "一日游",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
-    "per": "人",
-    "priceSource": "",
-    "priceNote": "",
-    "discountPercent": null
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
@@ -927,7 +927,7 @@
         "登顶观景台（0.8公里/高差140米）——约30分钟",
         "顶部观景+火山口边缘拍照——约20分钟",
         "下山——约20分钟",
-        "可选：在底部观看海女表演（15:00场次）——约10分钟"
+        "可选：在底部观看海女表演（每日1场，下午2点；恶劣天气时可能取消）——约10分钟"
       ],
       "whyOnRoute": "**东部UNESCO路线的UNESCO三重冠高潮**。与自然核心姊妹行程（城山作为下午中段，夹在涉地可支早晨和日出乐园下午之间）不同，本UNESCO行程将城山定位为**全日景色制高点兼参观脉络高潮**（90分钟停留，13:35抵达）——午餐后紧接登场，确保高潮清晰醒目。海女博物馆作为「UNESCO无形遗产压轴」置于城山之后，让全日的UNESCO参观脉络闭环完整。",
       "_poi_meta": {
@@ -1027,7 +1027,8 @@
           "caption": "城山日出峰 — photo 5",
           "alt": "城山日出峰 — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     },
     {
       "number": 7,
@@ -1545,12 +1546,12 @@
   "sticky_booking_bar": {
     "note": "可订状态将在支付步骤中确认。",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
-      "per": "人",
-      "priceSource": "",
-      "priceNote": "",
-      "discountPercent": null
+      "per": "person"
     }
   },
   "pickup_dropoff": {
@@ -2619,7 +2620,7 @@
               "登顶观景台（0.8公里/高差140米）——约30分钟",
               "顶部观景+火山口边缘拍照——约20分钟",
               "下山——约20分钟",
-              "可选：在底部观看海女表演（15:00场次）——约10分钟"
+              "可选：在底部观看海女表演（每日1场，下午2点；恶劣天气时可能取消）——约10分钟"
             ],
             "whyOnRoute": "**东部UNESCO路线的UNESCO三重冠高潮**。与自然核心姊妹行程（城山作为下午中段，夹在涉地可支早晨和日出乐园下午之间）不同，本UNESCO行程将城山定位为**全日景色制高点兼参观脉络高潮**（90分钟停留，13:35抵达）——午餐后紧接登场，确保高潮清晰醒目。海女博物馆作为「UNESCO无形遗产压轴」置于城山之后，让全日的UNESCO参观脉络闭环完整。",
             "_poi_meta": {
@@ -3421,5 +3422,6 @@
         }
       }
     }
-  }
+  },
+  "liveStatusSection": "haenyeo"
 }

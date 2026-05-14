@@ -35,7 +35,7 @@
     ],
     "heroImage": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
     "thumbnail": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-    "priceLabel": "Consulte el precio al reservar",
+    "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
     "shortCardDescription": "Los cerezos del este de Jeju en tres formatos distintos: la calle Jeonnong-ro (el bulevar de cerezos más antiguo de Jeju, 1,2 km de túnel floral) → la carretera Noksan-ro de Gasi-ri (10 km de cerezos + colza amarilla, la imagen de primavera más reproducida de Jeju) → almuerzo → Cueva Micheon en Ilchul Land → jardines de primavera → Seongsan Ilchulbong (triple UNESCO) como foto final.",
     "tags": [
       "Solo primavera",
@@ -46,9 +46,12 @@
   "headlineLine1": "Jeju Este",
   "headlineLine2": "Cerezos",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
-    "per": "persona"
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
@@ -752,7 +755,8 @@
           "caption": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — photo 5",
           "alt": "Seongsan Ilchulbong (UNESCO — parada fotográfica) — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     }
   ],
   "routeFlowStops": [
@@ -1133,9 +1137,12 @@
   "sticky_booking_bar": {
     "note": "La disponibilidad se confirma en el paso de pago.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
-      "per": "persona"
+      "per": "person"
     }
   },
   "matching_profile": {

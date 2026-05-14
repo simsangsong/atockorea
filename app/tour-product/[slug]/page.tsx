@@ -15,6 +15,16 @@ import { loadTourProductViewModelBySlugFromSupabase } from "@/lib/tour-product/l
 import { resolveTourProductDbLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 
 type RouteParams = { slug: string };
+type RouteSearchParams = { locale?: string | string[] };
+
+/**
+ * Always re-render on each request — admin saves to `tour_product_pages` must
+ * surface immediately on the live page without manual cache invalidation. The
+ * page is small enough that SSR every time is fine, and CDN-level caching
+ * (Vercel) still kicks in for unauthenticated visitors.
+ */
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 /**
  * Generic small-group tour detail — East template layout.
@@ -36,9 +46,16 @@ async function resolveRegisteredSlug(params: Promise<RouteParams>): Promise<stri
   return slug;
 }
 
-export async function generateMetadata({ params }: { params: Promise<RouteParams> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: {
+  params: Promise<RouteParams>;
+  searchParams?: Promise<RouteSearchParams>;
+}): Promise<Metadata> {
   const slug = await resolveRegisteredSlug(params);
-  const locale = await resolveTourProductDbLocale();
+  const sp = (await searchParams) ?? {};
+  const locale = await resolveTourProductDbLocale(sp.locale);
   const doc = getStaticTourProductFullPageJson(slug, locale);
   const seo = (doc?.seo ?? null) as { pageTitle?: string; metaDescription?: string } | null;
   return {
@@ -49,11 +66,14 @@ export async function generateMetadata({ params }: { params: Promise<RouteParams
 
 export default async function RegisteredTourProductPage({
   params,
+  searchParams,
 }: {
   params: Promise<RouteParams>;
+  searchParams?: Promise<RouteSearchParams>;
 }) {
   const slug = await resolveRegisteredSlug(params);
-  const locale = await resolveTourProductDbLocale();
+  const sp = (await searchParams) ?? {};
+  const locale = await resolveTourProductDbLocale(sp.locale);
 
   // Resolution order: Supabase locale → static JSON locale → Supabase EN fallback.
   // Falling through to the static JSON for the requested locale before trying
@@ -91,6 +111,24 @@ export default async function RegisteredTourProductPage({
     notFound();
   }
 
+  // Overlay static-JSON-only extension fields onto the (possibly Supabase-loaded)
+  // viewmodel. These are pass-through opt-in flags the Supabase tour row does
+  // not carry (e.g. `liveStatusSection: "haenyeo"` on the Jeju east tour).
+  try {
+    const staticDoc = getStaticTourProductFullPageJson(slug, locale);
+    if (staticDoc) {
+      const extensions: Array<keyof typeof staticDoc> = ["liveStatusSection", "pricingTiers", "price"];
+      for (const k of extensions) {
+        const v = (staticDoc as Record<string, unknown>)[k as string];
+        if (v !== undefined && (viewModel as Record<string, unknown>)[k as string] === undefined) {
+          (viewModel as Record<string, unknown>)[k as string] = v;
+        }
+      }
+    }
+  } catch {
+    // best-effort overlay; ignore errors
+  }
+
   let checkout: Awaited<ReturnType<typeof getTourProductCheckoutContext>> = null;
   try {
     checkout = await getTourProductCheckoutContext(slug);
@@ -122,6 +160,7 @@ export default async function RegisteredTourProductPage({
         checkout={checkout}
         tourProductSlug={slug}
         recommendations={recommendations}
+        locale={locale}
       />
     </>
   );

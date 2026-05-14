@@ -34,7 +34,7 @@
     ],
     "heroImage": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
     "thumbnail": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-    "priceLabel": "Per-vehicle pricing — confirm at booking",
+    "priceLabel": "From US$359 per vehicle (was $379, 1–6 pax, 8h) · 7–12 pax 2× · 13+ pax 3×",
     "shortCardDescription": "A private Busan shore excursion for cruise guests. Choose the places that matter most — Haedong Yonggungsa, Cheongsapo, Blue Line Park, UN Memorial Cemetery, Gamcheon Culture Village, Songdo, Nampo-dong, Jagalchi Market, and more — then adjust the day with your guide around your ship schedule.",
     "tags": [
       "Private tour",
@@ -46,9 +46,12 @@
   "headlineLine1": "Busan Cruise Shore",
   "headlineLine2": "Private Car Charter",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "359",
     "currency": "USD",
-    "per": "vehicle"
+    "per": "vehicle",
+    "salePriceUsd": 359,
+    "originalPriceUsd": 379,
+    "discountPercent": 5
   },
   "hero": {
     "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
@@ -1042,9 +1045,12 @@
   "sticky_booking_bar": {
     "note": "Select your date and group size to check live availability and complete your booking.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "359",
       "currency": "USD",
-      "per": "vehicle"
+      "per": "vehicle",
+      "salePriceUsd": 359,
+      "originalPriceUsd": 379,
+      "discountPercent": 5
     }
   },
   "pickup_dropoff": {
@@ -2150,5 +2156,38 @@
         "fields_already_float": 42
       }
     }
+  },
+  "pricingTiers": {
+    "currency": "USD",
+    "unit": "vehicle",
+    "durations": [
+      "8h"
+    ],
+    "tiers": [
+      {
+        "paxLabel": "1–6 pax",
+        "paxMin": 1,
+        "paxMax": 6,
+        "prices": {
+          "8h": 359
+        }
+      },
+      {
+        "paxLabel": "7–12 pax",
+        "paxMin": 7,
+        "paxMax": 12,
+        "prices": {
+          "8h": 718
+        }
+      },
+      {
+        "paxLabel": "13+ pax",
+        "paxMin": 13,
+        "paxMax": 20,
+        "prices": {
+          "8h": 1077
+        }
+      }
+    ]
   }
 }

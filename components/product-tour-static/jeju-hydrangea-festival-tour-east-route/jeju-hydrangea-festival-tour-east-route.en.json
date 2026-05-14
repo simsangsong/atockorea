@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "Jeju Hydrangea Festival: East",
-    "priceLabel": "Price varies — confirm at booking",
+    "priceLabel": "From US$59 per person (was $69, 14% off)",
     "shortCardDescription": "A seasonal small-group day-tour of east Jeju built around the island's hydrangea festivals (late May to mid-July, peak mid-June) at Hueree Natural Park and Ilchul Land. The route also covers two UNESCO World Heritage sites — Seongsan Ilchulbong (Sunrise Peak) and Seongeup Folk Village — plus Hamdeok Beach and the Micheon Cave lava tube. Hotel pickup in Jeju City, English/Chinese-speaking licensed guide-driver.",
     "tags": [
       "Small group",
@@ -53,12 +53,12 @@
   "headlineLine1": "Jeju Hydrangea Festival",
   "headlineLine2": "East",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
-    "per": "person",
-    "priceSource": "AtoC Korea direct rate",
-    "priceNote": "Final rate is confirmed after selecting your travel date and group size. Direct booking is handled by AtoC Korea.",
-    "discountPercent": 10
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
@@ -719,7 +719,7 @@
         "Crater **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** (the 'stone crown')",
         "**182 m above sea level** — 0.8 km / ~140 m gain, 60-min round trip on stone-step trail",
         "**18 Imperial Japanese WWII caves** at base — 1945 kamikaze suicide-boat shelters",
-        "**Haenyeo demonstrations daily 13:30 + 15:00** at the seaside cove — UNESCO Intangible 2016",
+        "**Haenyeo demonstration once daily at 14:00 (subject to bad-weather cancellation)** at the seaside cove — UNESCO Intangible 2016",
         "**Admission updated April 2025**: Adult ₩5,000 / Youth ₩2,500 / FREE under 7 + over 65",
         "Spring/autumn hours **05:00–19:00** (last entry 18:20)",
         "**Closes for first Monday of each month** (occasional rest day)"
@@ -729,7 +729,7 @@
         "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min",
         "Summit views + crater rim photos — ~20 min",
         "Descent — ~20 min",
-        "Optional haenyeo viewing at base (15:00 demo) — ~10 min"
+        "Optional haenyeo viewing at base (14:00 show; may be canceled in bad weather) — ~10 min"
       ],
       "whyOnRoute": "**The day's UNESCO summit highlight and main eastern landmark.** Seongsan gives the tour its strongest non-floral landmark: a dramatic volcanic tuff cone with World Heritage and Geopark value, plus one of Jeju's most recognizable coastal panoramas. Placing it after lunch gives guests energy for the stone-step climb, then lets the afternoon ease into Ilchul Land and Hueree for the hydrangea-focused finale.",
       "_poi_meta": {
@@ -829,7 +829,8 @@
           "caption": "Seongsan Ilchulbong — photo 5",
           "alt": "Seongsan Ilchulbong — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     },
     {
       "number": 6,
@@ -1511,12 +1512,12 @@
   "sticky_booking_bar": {
     "note": "Select your date and group size to check live availability and complete your booking.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
-      "per": "person",
-      "priceSource": "AtoC Korea direct rate",
-      "priceNote": "Final rate is confirmed after selecting your travel date and group size. Direct booking is handled by AtoC Korea.",
-      "discountPercent": 10
+      "per": "person"
     }
   },
   "pickup_dropoff": {

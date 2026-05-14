@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
     "thumbnail": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-    "priceLabel": "",
+    "priceLabel": "Desde US$359 por vehículo (antes $379, 1–6 pax, 8h) · 7–12 pax 2× · 13+ pax 3×",
     "shortCardDescription": "Alquiler privado de auto de 8 horas para pasajeros de crucero en Busan con conductor-guía autorizado de habla inglesa. El itinerario predeterminado incluye el Cementerio Memorial de las Naciones Unidas, los acantilados de Taejongdae, la Aldea Cultural de Gamcheon, el Parque Yongdusan y el Mercado de Jagalchi. Totalmente personalizable. Recogida en la terminal de cruceros, la estación KTX o cualquier hotel céntrico de Busan; el regreso puntual al barco está garantizado.",
     "tags": [
       "private_tour",
@@ -45,9 +45,12 @@
   "headlineLine1": "Busan Crucero",
   "headlineLine2": "Coche Privado",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "359",
     "currency": "USD",
-    "per": "vehicle"
+    "per": "vehicle",
+    "salePriceUsd": 359,
+    "originalPriceUsd": 379,
+    "discountPercent": 5
   },
   "hero": {
     "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
@@ -1116,9 +1119,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "359",
       "currency": "USD",
-      "per": "vehicle"
+      "per": "vehicle",
+      "salePriceUsd": 359,
+      "originalPriceUsd": 379,
+      "discountPercent": 5
     }
   },
   "pickup_dropoff": {
@@ -2224,5 +2230,38 @@
         "fields_already_float": 42
       }
     }
+  },
+  "pricingTiers": {
+    "currency": "USD",
+    "unit": "vehicle",
+    "durations": [
+      "8h"
+    ],
+    "tiers": [
+      {
+        "paxLabel": "1–6 pax",
+        "paxMin": 1,
+        "paxMax": 6,
+        "prices": {
+          "8h": 359
+        }
+      },
+      {
+        "paxLabel": "7–12 pax",
+        "paxMin": 7,
+        "paxMax": 12,
+        "prices": {
+          "8h": 718
+        }
+      },
+      {
+        "paxLabel": "13+ pax",
+        "paxMin": 13,
+        "paxMax": 20,
+        "prices": {
+          "8h": 1077
+        }
+      }
+    ]
   }
 }

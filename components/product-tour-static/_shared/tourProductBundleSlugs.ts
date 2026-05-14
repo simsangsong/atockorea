@@ -13,6 +13,8 @@
 export const STATIC_TOUR_PRODUCT_BUNDLE_SLUG_LIST = [
   "busan-gyeongju-unesco-legacy-tour-national-museum",
   "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
+  "busan-cruise-shore-excursion-bus-tour",
+  "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
   "busan-private-car-charter-cruise-shore",
   "busan-small-group-sightseeing-tour-cruise-passengers",
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
@@ -35,6 +37,7 @@ export const STATIC_TOUR_PRODUCT_BUNDLE_SLUG_LIST = [
   "pocheon-sanjeong-lake-herb-island-art-valley",
   "seoul-dmz-private-3rd-tunnel-suspension-bridge",
   "seoul-private-nami-morning-calm-petite-france",
+  "seoul-seoraksan-nami-island-morning-calm-day-tour",
   "seoul-seoraksan-national-park-sokcho-beach-day-trip",
   "seoul-suburbs-private-chartered-car-10hr",
   "seoul-suwon-hwaseong-folk-village-starfield-library",

@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "Jeju Este: UNESCO Día",
-    "priceLabel": "",
+    "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
     "shortCardDescription": "Excursión de un día en grupo pequeño por el este de Jeju cubriendo los hitos UNESCO y los puntos representativos en un único recorrido de 9 horas: Playa Hamdeok Seoubong, Aldea Folclórica Seongeup, Cueva Micheon en Ilchul Land, Seongsan Ilchulbong (Pico del Amanecer, Patrimonio Natural UNESCO) y el Museo Haenyeo. Todas las entradas incluidas, guía certificado.",
     "tags": [
       "grupo reducido",
@@ -50,12 +50,12 @@
   "headlineLine1": "Jeju Este",
   "headlineLine2": "UNESCO Día",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
-    "per": "persona",
-    "priceSource": "",
-    "priceNote": "",
-    "discountPercent": null
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
@@ -1013,7 +1013,8 @@
           "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 5",
           "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     },
     {
       "number": 7,
@@ -1523,12 +1524,12 @@
   "sticky_booking_bar": {
     "note": "La disponibilidad se confirma en el paso de pago.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
-      "per": "persona",
-      "priceSource": "",
-      "priceNote": "",
-      "discountPercent": null
+      "per": "person"
     }
   },
   "pickup_dropoff": {
@@ -3366,5 +3367,6 @@
         }
       }
     }
-  }
+  },
+  "liveStatusSection": "haenyeo"
 }

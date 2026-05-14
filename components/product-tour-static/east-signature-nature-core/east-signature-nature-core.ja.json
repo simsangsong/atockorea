@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
     "thumbnail": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
-    "priceLabel": "お一人様US$58〜",
+    "priceLabel": "1名様 US$59（定価$69、14%オフ）",
     "shortCardDescription": "石の文化と火山の背景から始まり、海岸と城山日出峰を経て、日出ランドと城邑民俗村で締めくくる、東済州の一日を丁寧に構成したルートです。初めて済州を訪れる方に最適な6見どころ構成。",
     "tags": [
       "少人数ツアー",
@@ -47,12 +47,12 @@
   "headlineLine1": "東済州",
   "headlineLine2": "火山・海岸・民俗村",
   "price": {
-    "amountLabel": "58",
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
-    "per": "人",
-    "priceSource": "internal",
-    "priceNote": "少人数バイリンガルツアー。AtoC Korea直販価格（10%割引適用）。詳細は予約時にご確認ください。",
-    "discountPercent": 10
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
@@ -741,9 +741,9 @@
         "山頂デッキまでの登山（0.8km/標高差140m） — 約30分",
         "山頂の眺め＋火口縁の写真撮影 — 約20分",
         "下山 — 約20分",
-        "オプション：麓での海女実演見学（15:00の回） — 約10分"
+        "オプション：麓での海女実演見学（1日1回14:00、悪天候時は中止の可能性あり） — 約10分"
       ],
-      "whyOnRoute": "**東シグネチャールートの午後ユネスコハイライト。**このコースでは城山日出峰が昼食後に設定されているため、登山前に体力を補充した状態で臨めます。午後の時間帯配置は、運営日には午後の海女実演を見られる余裕も生み出しつつ、東海岸で午後に強まりがちな風の前に登頂を終えられるというメリットもあります。山頂のパノラマは一日をまとめる役割を担っています：西に漢拏山、眼下に東部オルム地帯、沖合には牛島。",
+      "whyOnRoute": "**東シグネチャールートの午後ユネスコハイライト。**このコースでは城山日出峰が昼食後に設定されているため、登山前に体力を補充した状態で臨めます。午後の時間帯配置は、運営日には午後の海女ショーは1日1回、14時に開催（悪天候時は中止の可能性あり）に強まりがちな風の前に登頂を終えられるというメリットもあります。山頂のパノラマは一日をまとめる役割を担っています：西に漢拏山、眼下に東部オルム地帯、沖合には牛島。",
       "_poi_meta": {
         "poi_key": "seongsan_ilchulbong",
         "kb_version": "1.19",
@@ -841,7 +841,8 @@
           "caption": "城山日出峰（ユネスコ世界自然遺産） — photo 5",
           "alt": "城山日出峰（ユネスコ世界自然遺産） — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     },
     {
       "number": 5,
@@ -1652,12 +1653,12 @@
   "sticky_booking_bar": {
     "note": "予約可否は決済ステップで確認されます。",
     "price": {
-      "amountLabel": "58",
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
-      "per": "人",
-      "priceSource": "internal",
-      "priceNote": "少人数制の多言語ツアー。AtoC Korea直販価格として、催行会社基本価格から10％割引が適用されます。",
-      "discountPercent": 10
+      "per": "person"
     }
   },
   "page_sections": [
@@ -2085,7 +2086,7 @@
               "サミットデッキまでの登山（0.8km／高低差140m）——約30分",
               "山頂の眺め＋火口縁の写真——約20分",
               "下山——約20分",
-              "オプション：麓での海女実演見学（15:00デモ）——約10分"
+              "オプション：麓での海女実演見学（1日1回14:00、悪天候時は中止の可能性あり）——約10分"
             ],
             "whyOnRoute": "城山日出峰は東済州ルートの核心見どころです。一日で最も体力を使う見どころを昼食直後に配置することで、エネルギーが充填された状態で挑めます。",
             "_poi_meta": {

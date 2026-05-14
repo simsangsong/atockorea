@@ -36,7 +36,7 @@
     ],
     "heroImage": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
     "thumbnail": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-    "priceLabel": "料金は予約時にご確認ください",
+    "priceLabel": "1名様 US$59（定価$69、14%オフ）",
     "shortCardDescription": "済州の春を象徴する東ルート桜ツアー：全農路（済州市内最古の桜並木）→緑山路（加時里10kmの桜＋菜の花の絶景ロード）→密川洞窟→日出ランドのテーマ庭園→城山日出峰（ユネスコ）。春のベスト撮影ポイントを一日で。",
     "tags": [
       "春限定",
@@ -47,9 +47,12 @@
   "headlineLine1": "済州東部・桜ツアー",
   "headlineLine2": "ツアー",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
-    "per": "人"
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
@@ -740,7 +743,8 @@
           "caption": "城山日出峰（ソンサン・イルチュルボン）（ユネスコフォトストップ） — photo 5",
           "alt": "城山日出峰（ソンサン・イルチュルボン）（ユネスコフォトストップ） — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     }
   ],
   "routeFlowStops": [
@@ -1113,9 +1117,12 @@
   "sticky_booking_bar": {
     "note": "予約可否は決済ステップで確認されます。",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
-      "per": "人"
+      "per": "person"
     }
   },
   "matching_profile": {

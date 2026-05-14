@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
     "thumbnail": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-    "priceLabel": "",
+    "priceLabel": "차량 1대 8시간 기준 $359 (정가 $379, 1–6인) · 7–12인 2배 · 13인 이상 3배",
     "shortCardDescription": "공인 영어 구사 드라이버 가이드와 함께하는 크루즈 승객을 위한 8시간 부산 프라이빗 전세차. 기본 일정은 UN기념공원, 태종대 절벽, 감천문화마을, 용두산공원, 자갈치시장으로 구성됩니다. 완전 맞춤 변경 가능. 크루즈 터미널, KTX역, 또는 부산 시내 호텔 어디서든 픽업 가능; 선박으로의 정시 귀환 보장.",
     "tags": [
       "private_tour",
@@ -45,9 +45,12 @@
   "headlineLine1": "부산 크루즈 기항지 프라이빗 차량",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "359",
     "currency": "USD",
-    "per": "vehicle"
+    "per": "vehicle",
+    "salePriceUsd": 359,
+    "originalPriceUsd": 379,
+    "discountPercent": 5
   },
   "hero": {
     "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
@@ -1116,9 +1119,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id는 런타임 시 Supabase / 환경 변수에서 확인되며, 정적 JSONB의 일부가 아닙니다.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "359",
       "currency": "USD",
-      "per": "vehicle"
+      "per": "vehicle",
+      "salePriceUsd": 359,
+      "originalPriceUsd": 379,
+      "discountPercent": 5
     }
   },
   "pickup_dropoff": {
@@ -2224,5 +2230,38 @@
         "fields_already_float": 42
       }
     }
+  },
+  "pricingTiers": {
+    "currency": "USD",
+    "unit": "vehicle",
+    "durations": [
+      "8h"
+    ],
+    "tiers": [
+      {
+        "paxLabel": "1–6 pax",
+        "paxMin": 1,
+        "paxMax": 6,
+        "prices": {
+          "8h": 359
+        }
+      },
+      {
+        "paxLabel": "7–12 pax",
+        "paxMin": 7,
+        "paxMax": 12,
+        "prices": {
+          "8h": 718
+        }
+      },
+      {
+        "paxLabel": "13+ pax",
+        "paxMin": 13,
+        "paxMax": 20,
+        "prices": {
+          "8h": 1077
+        }
+      }
+    ]
   }
 }

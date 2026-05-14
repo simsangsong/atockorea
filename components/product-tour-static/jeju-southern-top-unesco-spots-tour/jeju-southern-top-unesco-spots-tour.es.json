@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "Jeju Sur: UNESCO Día",
-    "priceLabel": "Consulte el precio al reservar",
+    "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
     "shortCardDescription": "Circuito de un día en grupo pequeño por el sur de Jeju: senderismo en el Hallasan (Patrimonio UNESCO), jardín botánico Camellia Hill (flores todo el año), Cascadas Cheonjeyeon (Monumento Natural), Acantilado Jusangjeolli de basalto hexagonal (Monumento Natural + Geoparque UNESCO), campos de té y Museo. Entradas incluidas, sin paradas de compras.",
     "tags": [
       "grupo reducido",
@@ -50,14 +50,12 @@
   "headlineLine1": "Jeju Sur",
   "headlineLine2": "UNESCO Día",
   "price": {
-    "amountLabel": "38.70",
-    "originalPriceUsd": 43,
-    "salePriceUsd": 38.7,
-    "discountPercent": 10,
+    "amountLabel": "59",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 59,
+    "discountPercent": 14,
     "currency": "USD",
-    "per": "persona",
-    "priceSource": "direct_rate",
-    "priceNote": "Precio basado en la tarifa directa de AtoC Korea."
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
@@ -1400,14 +1398,12 @@
   "sticky_booking_bar": {
     "note": "La disponibilidad se confirma en el paso de pago.",
     "price": {
-      "amountLabel": "38.70",
-      "originalPriceUsd": 43,
-      "salePriceUsd": 38.7,
-      "discountPercent": 10,
+      "amountLabel": "59",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 59,
+      "discountPercent": 14,
       "currency": "USD",
-      "per": "persona",
-      "priceSource": "direct_rate",
-      "priceNote": "Precio basado en la tarifa directa de AtoC Korea."
+      "per": "person"
     }
   },
   "pickup_dropoff": {

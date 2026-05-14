@@ -192,9 +192,16 @@ function TourListCard({ tour, detailHref, formatPriceFn }: TourListCardProps) {
             {originalStr ? (
               <p className="text-[10px] font-medium text-slate-400 line-through">{originalStr}</p>
             ) : null}
-            <p className="truncate text-[14px] font-semibold tracking-[-0.04em] text-slate-950 sm:text-[15px]">
-              {priceStr}
-            </p>
+            <div className="flex items-baseline gap-1.5">
+              <p className="truncate text-[14px] font-semibold tracking-[-0.04em] text-slate-950 sm:text-[15px]">
+                {priceStr}
+              </p>
+              {showDiscountBadge ? (
+                <span className="shrink-0 rounded-md bg-rose-50 px-1.5 py-[1px] text-[10.5px] font-bold leading-[1.2] text-rose-600 ring-1 ring-inset ring-rose-200">
+                  -{discountPct}%
+                </span>
+              ) : null}
+            </div>
           </div>
         </div>
           </div>

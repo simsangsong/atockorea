@@ -6,16 +6,16 @@
   "product_id": "jeju-cruise-shore-excursion-small-group-tour",
   "seo": {
     "pageTitle": "濟州郵輪靠港觀光：小團體遊覽 | AtoC Korea",
-    "metaDescription": "以小團體迷你巴士進行8小時濟州郵輪靠港觀光，依靠港地點彈性規劃路線：濟州港走東部UNESCO路線，江汀港走漢拏山路線。",
+    "metaDescription": "以小團體迷您巴士進行8小時濟州郵輪靠港觀光，依靠港地點彈性規劃路線：濟州港走東部UNESCO路線，江汀港走漢拏山路線。",
     "ogImage": "https://www.atockorea.com/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "primaryKeywords": [
       "濟州靠港觀光小團體",
       "濟州郵輪一日遊",
       "濟州郵輪出發小團體遊覽",
-      "濟州迷你巴士靠港觀光",
+      "濟州迷您巴士靠港觀光",
       "濟州郵輪私人遊覽"
     ],
-    "title": "濟州郵輪靠港觀光・小團體迷你巴士・依港彈性路線"
+    "title": "濟州郵輪靠港觀光・小團體迷您巴士・依港彈性路線"
   },
   "catalog_card": {
     "slug": "jeju-cruise-shore-excursion-small-group-tour",
@@ -34,7 +34,7 @@
     ],
     "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-    "priceLabel": "",
+    "priceLabel": "每人 US$79（原價$85，7% 優惠）",
     "shortCardDescription": "此小團體郵輪靠港觀光行程可依您的靠港地點彈性調整路線。濟州港（北部）走東海岸UNESCO路線，途經城山日出峰；江汀港（南部）走漢拏山1100高地＋南海岸地質景觀＋偶來市場路線。兩條路線均保留充裕時間返回郵輪碼頭。",
     "tags": [
       "cruise_excursion",
@@ -46,14 +46,17 @@
   "headlineLine1": "濟州郵輪岸上 小團遊",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "79",
     "currency": "USD",
-    "per": "person"
+    "per": "person",
+    "salePriceUsd": 79,
+    "originalPriceUsd": 85,
+    "discountPercent": 7
   },
   "hero": {
     "imageUrl": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "imagePosition": "center 35%",
-    "tagline": "選擇您的靠港地點：濟州港走東部UNESCO路線，江汀港走漢拏山＋偶來市場路線。同一營運商，小團體迷你巴士形式，均為8小時。",
+    "tagline": "選擇您的靠港地點：濟州港走東部UNESCO路線，江汀港走漢拏山＋偶來市場路線。同一營運商，小團體迷您巴士形式，均為8小時。",
     "pills": [
       "cruise_excursion",
       "port_aware_routing",
@@ -337,7 +340,7 @@
         "登頂觀景台（0.8公里／爬升140公尺）— 約30分鐘",
         "山頂景觀 + 火山口邊緣拍照 — 約20分鐘",
         "下山 — 約20分鐘",
-        "可選：入口處觀賞海女表演（15:00場次）— 約10分鐘"
+        "可選：入口處觀賞海女表演（每日1場，下午2點；惡劣天氣時可能取消）— 約10分鐘"
       ],
       "whyOnRoute": "**城山日出峰小團深度遊** — 90分鐘行程（比巴士團的75分鐘更從容），讓導遊得以在環形步道上的三個攝影機位停留，從容講解**5,000年前單次噴發形成的凝灰岩錐**，並可帶想欣賞海上島嶼日出的旅客沿南坡木棧道替代路線下山。**三重UNESCO認定**（2007年世界遺產 + 2002年生物圈保護區 + 2010年地質公園）是當日行程最高規格的亮點——小團形式讓導遊能面對面講解**與濟州本島相連的連島沙洲**以及步道入口的海女表演（依排程），而非透過遊覽車廣播系統傳達。",
       "_poi_meta": {
@@ -437,7 +440,8 @@
           "caption": "城山日出峰 — photo 5",
           "alt": "城山日出峰 — gallery image 5"
         }
-      ]
+      ],
+      "liveStatusWidget": "haenyeo"
     },
     {
       "number": 3,
@@ -1807,9 +1811,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 於執行時從 Supabase／環境變數解析；不屬於靜態 JSONB 的一部分。user_port 於預訂時從郵輪行程解析。",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "79",
       "currency": "USD",
-      "per": "person"
+      "per": "person",
+      "salePriceUsd": 79,
+      "originalPriceUsd": 85,
+      "discountPercent": 7
     }
   },
   "pickup_dropoff": {
@@ -2772,7 +2779,7 @@
               "iconColor": "text-amber-600",
               "items": [
                 {
-                  "label": "迷你巴士小團體",
+                  "label": "迷您巴士小團體",
                   "detail": "人數較少、導遊關注更多、各景點行程節奏更快。"
                 }
               ]
