@@ -22,6 +22,35 @@ type TourTypeFilter = 'all' | 'private' | 'join' | 'bus';
 type SortFilter = 'popular' | 'newest' | 'rating' | 'sales' | 'priceAsc' | 'priceDesc';
 type DestinationOption = { city: string; count: number };
 
+function isTourTypeFilter(value: string): value is TourTypeFilter {
+  return value === 'all' || value === 'private' || value === 'join' || value === 'bus';
+}
+
+function isSortFilter(value: string): value is SortFilter {
+  return (
+    value === 'popular' ||
+    value === 'newest' ||
+    value === 'rating' ||
+    value === 'sales' ||
+    value === 'priceAsc' ||
+    value === 'priceDesc'
+  );
+}
+
+function readSortFilter(params: URLSearchParams): SortFilter {
+  const sort = params.get('sort');
+  if (sort && isSortFilter(sort)) return sort;
+
+  const sortBy = params.get('sortBy');
+  const sortOrder = params.get('sortOrder') ?? 'desc';
+  const useScoreSort = params.get('useScoreSort');
+  if (sortBy === 'rating') return 'rating';
+  if (sortBy === 'bookings') return 'sales';
+  if (sortBy === 'price') return sortOrder === 'asc' ? 'priceAsc' : 'priceDesc';
+  if (sortBy === 'created_at' && useScoreSort === 'false') return 'newest';
+  return 'popular';
+}
+
 function getCurrencySymbol(code: string): string {
   return CURRENCY_LIST.find((c) => c.code === code)?.symbol ?? '$';
 }
@@ -95,6 +124,7 @@ export default function ToursListPage() {
   const [sortBy, setSortBy] = useState<SortFilter>('popular');
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
+  const [features, setFeatures] = useState('');
   const [showPricePanel, setShowPricePanel] = useState(false);
 
   const priceAnchorRef = useRef<HTMLDivElement>(null);
@@ -114,31 +144,23 @@ export default function ToursListPage() {
   // --- URL → state (handles first mount and back/forward navigation) --------------------
   useEffect(() => {
     const q = searchParams.get('q') || '';
-    const destinationFromUrl = searchParams.get('destination') || 'all';
-    const typeFromUrl = (searchParams.get('type') as TourTypeFilter | null) || 'all';
-    const sortFromUrl = (searchParams.get('sort') as SortFilter | null) || 'popular';
+    const destinationFromUrl =
+      searchParams.get('destination') || searchParams.get('destinations') || 'all';
+    const typeRaw = searchParams.get('type') || searchParams.get('tourType') || 'all';
+    const typeFromUrl: TourTypeFilter = isTourTypeFilter(typeRaw) ? typeRaw : 'all';
+    const sortFromUrl = readSortFilter(searchParams);
     const minFromUrl = searchParams.get('minPrice') || '';
     const maxFromUrl = searchParams.get('maxPrice') || '';
+    const featuresFromUrl = searchParams.get('features') || '';
 
     setSearchInput(q);
     setDebouncedSearch(q);
     setDestination(destinationFromUrl);
-    setTourType(
-      typeFromUrl === 'private' || typeFromUrl === 'join' || typeFromUrl === 'bus'
-        ? typeFromUrl
-        : 'all',
-    );
-    setSortBy(
-      sortFromUrl === 'newest' ||
-        sortFromUrl === 'rating' ||
-        sortFromUrl === 'sales' ||
-        sortFromUrl === 'priceAsc' ||
-        sortFromUrl === 'priceDesc'
-        ? sortFromUrl
-        : 'popular',
-    );
+    setTourType(typeFromUrl);
+    setSortBy(sortFromUrl);
     setMinPrice(minFromUrl);
     setMaxPrice(maxFromUrl);
+    setFeatures(featuresFromUrl);
   }, [searchParams]);
 
   // --- Debounce search input ------------------------------------------------------------
@@ -204,6 +226,7 @@ export default function ToursListPage() {
     if (debouncedSearch) params.set('search', debouncedSearch);
     if (destination !== 'all') params.set('destinations', destination);
     if (tourType !== 'all') params.set('tourType', tourType);
+    if (features.trim()) params.set('features', features.trim());
 
     const minNum = parseFloat(minPrice);
     const maxNum = parseFloat(maxPrice);
@@ -248,6 +271,7 @@ export default function ToursListPage() {
     debouncedSearch,
     destination,
     tourType,
+    features,
     minPrice,
     maxPrice,
     currencyCode,
@@ -264,6 +288,7 @@ export default function ToursListPage() {
         sort?: SortFilter;
         minPrice?: string;
         maxPrice?: string;
+        features?: string;
       } = {},
     ) => {
       const q = 'q' in overrides ? overrides.q ?? '' : debouncedSearch;
@@ -272,6 +297,7 @@ export default function ToursListPage() {
       const so = 'sort' in overrides ? overrides.sort ?? 'popular' : sortBy;
       const mn = 'minPrice' in overrides ? overrides.minPrice ?? '' : minPrice.trim();
       const mx = 'maxPrice' in overrides ? overrides.maxPrice ?? '' : maxPrice.trim();
+      const ft = 'features' in overrides ? overrides.features ?? '' : features.trim();
 
       const p = new URLSearchParams();
       if (q) p.set('q', q);
@@ -280,10 +306,11 @@ export default function ToursListPage() {
       if (so !== 'popular') p.set('sort', so);
       if (mn) p.set('minPrice', mn);
       if (mx) p.set('maxPrice', mx);
+      if (ft) p.set('features', ft);
       const next = p.toString();
       return next ? `/tours/list?${next}` : '/tours/list';
     },
-    [debouncedSearch, destination, tourType, sortBy, minPrice, maxPrice],
+    [debouncedSearch, destination, tourType, sortBy, minPrice, maxPrice, features],
   );
 
   const push = useCallback(
@@ -302,6 +329,7 @@ export default function ToursListPage() {
     setSortBy('popular');
     setMinPrice('');
     setMaxPrice('');
+    setFeatures('');
     setShowPricePanel(false);
     router.replace('/tours/list');
   }, [router]);
@@ -374,7 +402,8 @@ export default function ToursListPage() {
     tourType !== 'all' ||
     sortBy !== 'popular' ||
     minPrice !== '' ||
-    maxPrice !== '';
+    maxPrice !== '' ||
+    features.trim() !== '';
   const hasPriceFilter = minPrice !== '' || maxPrice !== '';
 
   const priceChipLabel = useMemo(() => {
@@ -779,6 +808,7 @@ export default function ToursListPage() {
                     tour={tour}
                     detailHref={consumerTourDetailHref(tour.id, tour.slug)}
                     formatPriceFn={formatPrice}
+                    imageSizes="(min-width: 1024px) 496px, 50vw"
                   />
                 ))}
               </div>

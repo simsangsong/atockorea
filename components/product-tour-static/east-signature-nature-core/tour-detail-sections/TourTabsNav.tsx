@@ -110,7 +110,12 @@ export function TourTabsNav({ subnavItems }: TourTabsNavProps) {
       /** `.tour-subnav-sticky` (tour-product-v2-scope.css) hard-sets `position: sticky; top: 3rem; md: 3.5rem; z-index: 40;`
        * to match Header (`components/Header.tsx`) `h-12 md:h-14`. Do not rely on Tailwind `sticky top-12` here. */
       className={cn(
-        "tour-subnav-sticky bg-white/98 backdrop-blur-md border-b border-border/80 transition-[box-shadow] duration-200",
+        // Drop backdrop-blur on this sticky bar: the global Header is already
+        // sticky + blurred above it, and stacking two backdrop-filters on a
+        // mobile scroll path is a known iOS Safari / Android jank source
+        // (every frame must re-rasterize the blurred region). The bg was
+        // bg-white/98 (98% opaque) so the blur was barely visible anyway.
+        "tour-subnav-sticky bg-white border-b border-border/80 transition-[box-shadow] duration-200",
         isPastHero ? "shadow-md" : "shadow-none",
       )}
     >

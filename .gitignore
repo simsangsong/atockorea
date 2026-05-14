@@ -52,6 +52,13 @@ next-env.d.ts
 /ios
 /.capacitor
 
+# Claude Code agent data — worktrees + session transcripts (~3GB, never commit)
+/.claude/
+
+# generated / scratch script artifacts
+scripts/*.log
+scripts/translate_queue*.json
+
 # data pipeline: large/generated files (GitHub 100MB limit)
 atoc-data-pipeline/visitkorea.nt
 atoc-data-pipeline/**/places.db

@@ -75,10 +75,13 @@ export type TourPracticalDetailsProps = Pick<
   "practicalAccordionItems" | "practicalWeatherStatic" | "seasonalVariations" | "sectionUi"
 > & {
   /**
-   * Open-Meteo via `/api/weather/forecast` (좌표는 동쪽 앵커, 표시는 “동쪽 지역”).
+   * Open-Meteo via `/api/weather/forecast`. slug가 있으면 슬러그별 대표 명소
+   * 좌표·라벨로 응답하고, 없으면 동쪽 앵커로 폴백.
    * false면 정적 practicalWeatherStatic 만 사용.
    */
   useLiveWeather?: boolean;
+  /** 슬러그 → 대표 명소 좌표 매핑(`lib/weather/tour-weather-anchor`)에 사용. */
+  tourProductSlug?: string;
 };
 
 export function TourPracticalDetails({
@@ -87,6 +90,7 @@ export function TourPracticalDetails({
   seasonalVariations,
   sectionUi,
   useLiveWeather = true,
+  tourProductSlug,
 }: TourPracticalDetailsProps) {
   const { locale } = useI18n();
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
@@ -97,10 +101,11 @@ export function TourPracticalDetails({
     let cancelled = false;
     (async () => {
       try {
-        const res = await fetch(
-          `/api/weather/forecast?locale=${encodeURIComponent(locale)}`,
-          { cache: "no-store" },
-        );
+        const qs = new URLSearchParams({ locale });
+        if (tourProductSlug) qs.set("slug", tourProductSlug);
+        const res = await fetch(`/api/weather/forecast?${qs.toString()}`, {
+          cache: "no-store",
+        });
         if (!res.ok || cancelled) return;
         const data = (await res.json()) as ForecastApiPayload & { error?: string };
         if (cancelled || data.error || !data?.current || !data?.days?.length) return;
@@ -112,7 +117,7 @@ export function TourPracticalDetails({
     return () => {
       cancelled = true;
     };
-  }, [useLiveWeather, locale]);
+  }, [useLiveWeather, locale, tourProductSlug]);
 
   const toggleItem = (id: string) => {
     setExpandedItems((prev) => (prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]));

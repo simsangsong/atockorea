@@ -5,7 +5,7 @@
  * attacker page does fetch('https://atockorea.com/api/...', {method:'POST'})
  * with the user's cookies attached.
  *
- * Webhook routes (Stripe / PayPal / Resend) MUST NOT use this — they verify
+ * Webhook routes (Stripe / Resend) MUST NOT use this — they verify
  * the request via the provider signature instead.
  */
 import { NextRequest, NextResponse } from "next/server";

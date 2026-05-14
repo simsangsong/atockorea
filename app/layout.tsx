@@ -32,8 +32,8 @@ const playfairDisplay = Playfair_Display({
 import { generateMetadata as generateSEOMetadata, generateStructuredData } from '@/lib/seo';
 
 export const metadata = generateSEOMetadata({
-  title: "AtoC Korea - Licensed Korea-based Platform for Day Tours",
-  description: "Direct connection to trusted Korea tours. Licensed Korean travel agencies, certified guides, and lower prices through direct partnerships.",
+  title: "AtoC Korea - Korea Day Tours, Hand-Picked by Our Team",
+  description: "Korea day tours hand-picked by our team. Same operators trusted by Klook, GetYourGuide, and Viator — book direct here, compare prices anytime.",
   url: '/',
 });
 
@@ -48,7 +48,7 @@ export default async function RootLayout({
   const htmlLang = rootHtmlLangFromNextLocaleCookie(jar.get("NEXT_LOCALE")?.value);
 
   return (
-    <html lang={htmlLang} className="font-sans" suppressHydrationWarning>
+    <html lang={htmlLang} className="font-sans" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         {/* Preconnect to webfont CDNs so DNS + TLS finish before the stylesheet links resolve. */}
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
@@ -109,4 +109,3 @@ export default async function RootLayout({
     </html>
   );
 }
-

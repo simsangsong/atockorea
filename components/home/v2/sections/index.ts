@@ -5,6 +5,4 @@ export { ChooseTravelStyle } from "./choose-travel-style";
 export { FeaturedProductsShowcase } from "./featured-products-showcase";
 export { WhyAtockorea } from "./why-atockorea";
 export { ProcessOperational } from "./process-operational";
-export { VisualBreak } from "./visual-break";
-export { TravelerReviews } from "./traveler-reviews";
 export { FinalCTA } from "./final-cta";

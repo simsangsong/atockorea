@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
 const siteName = 'AtoC Korea';
-const defaultDescription = 'Direct connection to trusted Korea tours. Licensed Korean travel agencies, certified guides, and lower prices through direct partnerships.';
+const defaultDescription = 'Korea day tours hand-picked by our team. Same operators trusted by Klook, GetYourGuide, and Viator — book direct here, compare prices anytime.';
 const defaultImage = `${siteUrl}/og-image.jpg`;
 
 export interface SEOConfig {

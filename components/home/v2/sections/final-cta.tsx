@@ -11,7 +11,6 @@ import {
   HOME_CTA_MATCHING_HREF,
 } from "@/lib/home/home-cta-routes";
 import { useTranslations } from "@/lib/i18n";
-import { useHomeV2ReviewSummary } from "@/components/home/v2/HomeV2ReviewSummaryProvider";
 
 const finalCtaPrimaryStyle: CSSProperties = {
   boxShadow: "var(--home-shadow-btn-primary)",
@@ -23,11 +22,7 @@ const finalCtaSecondaryStyle: CSSProperties = {
 
 export function FinalCTA() {
   const t = useTranslations("home");
-  const { data, loading, error } = useHomeV2ReviewSummary();
   const blockRef = useRef<HTMLDivElement>(null);
-
-  const showLiveRating =
-    !loading && !error && data?.hasPublicReviews && data.stats.avgRating != null;
 
   useEffect(() => {
     if (blockRef.current) {
@@ -58,11 +53,7 @@ export function FinalCTA() {
               <div className="flex items-center gap-2 justify-center">
                 <Star className="w-4 h-4 fill-amber-400 text-amber-400" aria-hidden />
                 <span className="text-[12px] md:text-sm font-semibold text-slate-700">
-                  {showLiveRating
-                    ? t("premium.v2.finalCtaBlock.trust1RatedParam", {
-                        rating: data!.stats.avgRating!.toFixed(1),
-                      })
-                    : t("premium.v2.finalCtaBlock.trust1Fallback")}
+                  {t("premium.v2.finalCtaBlock.trust1Fallback")}
                 </span>
               </div>
               <div className="flex items-center gap-2 justify-center">

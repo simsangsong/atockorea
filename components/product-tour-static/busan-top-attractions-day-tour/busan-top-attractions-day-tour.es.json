@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Tour en Grupo Pequeño por las Principales Atracciones de Busan | AtoC Korea",
     "metaDescription": "Clásico en grupo pequeño de 10,5 horas por Busan: Templo Haedong Yonggungsa, Costa Blue Line de Cheongsapo, Memorial de la ONU, Pueblo Cultural de Gamcheon, Mercado Jagalchi. 3 puntos de recogida.",
-    "ogImage": "https://www.atockorea.com/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
     "primaryKeywords": [
       "Tour de un día por Busan",
       "Templo Haedong Yonggungsa",
@@ -31,9 +31,9 @@
       "Clásico de Busan",
       "Todo el año"
     ],
-    "heroImage": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
-    "thumbnail": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
-    "priceLabel": "",
+    "heroImage": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+    "thumbnail": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+    "priceLabel": "Desde US$29 por persona (antes $41, 29% descuento)",
     "shortCardDescription": "Tour de un día en grupo pequeño con 7 paradas que recorre el circuito clásico de Busan: el templo costero de Haedong Yonggungsa, Cheongsapo y el Parque Blue Line (Sky Capsule opcional), almuerzo local en Busan, Cementerio Memorial de la ONU, las laderas pintadas del Pueblo Cultural de Gamcheon y el Mercado de Pescado Jagalchi. Tres puntos de recogida en el centro de Busan; guía certificado de habla inglesa; minibús (≈12 personas máx.). La entrada a todos los sitios es gratuita; solo el almuerzo y las entradas opcionales se pagan el día del tour.",
     "tags": [
       "small_group",
@@ -46,13 +46,15 @@
   "headlineLine1": "Busan",
   "headlineLine2": "Imprescindibles del Día",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "29",
     "currency": "USD",
     "per": "person",
-    "priceNote": ""
+    "salePriceUsd": 29,
+    "originalPriceUsd": 41,
+    "discountPercent": 29
   },
   "hero": {
-    "imageUrl": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+    "imageUrl": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
     "imagePosition": "center 40%",
     "tagline": "Las siete paradas más solicitadas de Busan en un solo día en grupo pequeño",
     "pills": [
@@ -138,14 +140,6 @@
       "caption": "Templo Haedong Yonggungsa"
     },
     {
-      "id": 2,
-      "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
-      "location": "Cheongsapo y Haeundae Blue Line Park",
-      "alt": "Cheongsapo y Haeundae Blue Line Park — gallery image 1",
-      "caption": "Cheongsapo y Haeundae Blue Line Park — photo 1"
-    },
-    {
       "id": 3,
       "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
@@ -168,14 +162,6 @@
       "location": "Mercado de Pescado Jagalchi",
       "alt": "Mercado de Pescado Jagalchi — on-route photo",
       "caption": "Mercado de Pescado Jagalchi"
-    },
-    {
-      "id": 6,
-      "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
-      "location": "Cheongsapo y Haeundae Blue Line Park",
-      "alt": "Cheongsapo y Haeundae Blue Line Park — gallery image 2",
-      "caption": "Cheongsapo y Haeundae Blue Line Park — photo 2"
     },
     {
       "id": 7,
@@ -265,7 +251,7 @@
       "duration": "30 min",
       "name": "Recogida (3 estaciones centrales de Busan)",
       "category": "Tránsito / Recogida",
-      "description": "La recogida está centralizada en tres nodos de transporte del centro de Busan para facilitar el día sin tener que cruzar la ciudad de un extremo a otro: **Estación de Busan (Línea 1)** para los huéspedes alojados cerca de la terminal KTX o en la zona de Choryang/Nampo-dong; **Estación de Seomyeon (Líneas 1 y 2)** — el intercambiador de metro más transitado de Busan, céntrico para los huéspedes en hoteles del centro como el Lotte Hotel Busan o la calle médica de Seomyeon; y **Estación de Haeundae (Línea 2)** para los huéspedes en el distrito turístico frente al mar cerca del Westin Josun, Park Hyatt o Signiel Busan. El autobús recoge en los tres puntos en secuencia (generalmente Estación de Busan primero ~09:00, Seomyeon ~09:15, Haeundae ~09:30) y luego se dirige al noreste por la ruta costera del Puente Gwangan hacia Gijang-gun para la primera parada del día. Tiempo total de tránsito desde la última recogida hasta Haedong Yonggungsa: ~30-40 minutos según el tráfico. El conductor repartirá una tarjeta impresa con el itinerario en coreano e inglés con los horarios; por favor, esté en su punto de recogida 5 minutos antes de la hora programada para mantener el ritmo del día, especialmente en las paradas posteriores del Cementerio Memorial de la ONU y Gamcheon, que tienen horarios de funcionamiento más estrictos.",
+      "description": "La recogida está centralizada en tres nodos de transporte del centro de Busan para facilitar el día sin tener que cruzar la ciudad de un extremo a otro: **Estación de Busan (Línea 1)** para los huéspedes alojados cerca de la terminal KTX o en la zona de Choryang/Nampo-dong; **Estación de Seomyeon (Líneas 1 y 2)** — el intercambiador de metro más transitado de Busan, céntrico para los huéspedes en hoteles del centro como el Lotte Hotel Busan o la calle médica de Seomyeon; y **Estación de Haeundae (Línea 2)** para los huéspedes en el distrito turístico frente al mar cerca del Westin Josun, Park Hyatt o Signiel Busan. \n\nEl autobús recoge en los tres puntos en secuencia (generalmente Estación de Busan primero ~09:00, Seomyeon ~09:15, Haeundae ~09:30) y luego se dirige al noreste por la ruta costera del Puente Gwangan hacia Gijang-gun para la primera parada del día. Tiempo total de tránsito desde la última recogida hasta Haedong Yonggungsa: ~30-40 minutos según el tráfico. \n\nEl conductor repartirá una tarjeta impresa con el itinerario en coreano e inglés con los horarios; por favor, esté en su punto de recogida 5 minutos antes de la hora programada para mantener el ritmo del día, especialmente en las paradas posteriores del Cementerio Memorial de la ONU y Gamcheon, que tienen horarios de funcionamiento más estrictos.",
       "highlights": [
         "Tres opciones de recogida en el centro de Busan (Estación de Busan, Seomyeon, Haeundae)",
         "El autobús es de grupo reducido (máx. ~14 personas)",
@@ -298,7 +284,7 @@
       "duration": "75 min",
       "name": "Templo Haedong Yonggungsa",
       "category": "Templo Budista / Costero",
-      "description": "**Haedong Yonggungsa (해동 용궁사) — el templo budista costero más famoso de Corea** — se asienta sobre los acantilados rocosos de Gijang-gun en la costa noreste de Busan, uno de los muy pocos grandes templos coreanos que NO está ubicado en las montañas. Fundado originalmente en **1376 durante la Dinastía Goryeo por el gran maestro budista Naong Hyegeun (나옹 혜근, 1320-1376)** — consejero real y maestro que contribuyó a moldear el budismo coreano en los albores de la era Joseon. Según la leyenda, Naong practicaba el ascetismo en el Templo Bunhwangsa en Gyeongju durante una sequía nacional; el dios del Mar del Este se le apareció en sueños y le dijo que construir un templo en el Monte Bongrae (el nombre original de este acantilado costero) restauraría la prosperidad del reino. Naong fundó el templo y lo llamó **Bomunsa**, dedicado a Gwanseum-bosal (관세음보살, el Bodhisattva de la Compasión). El templo fue destruido durante la **Invasión Japonesa Imjin de 1592** y permaneció en ruinas durante más de 300 años hasta que **el monje Ungang del Templo Tongdosa comenzó la reconstrucción a principios de la década de 1930**. El nombre actual, **Haedong Yonggungsa (Templo del Palacio del Dragón Coreano)**, data únicamente de **1974** — cuando el Monje Principal Jeong-am, durante una oración de 100 días (jeong-geon kido), tuvo una visión de la Diosa de la Misericordia descendiendo sobre el lomo de un dragón, emanando luz multicolor. El templo fue renombrado en honor a esta visión. La visita sigue el camino procesional característico del templo: a través de la hilera de **12 Sibiji-shin (Doce Generales del Zodíaco)** en la plaza de entrada, pasando la **Pagoda de los 7 Pisos 'Sin Accidentes'** (donde los conductores dejan ofrendas de monedas bajo un santuario de rueda de piedra), bajando los famosos **108 escalones de piedra** (que representan las 108 ilusiones de la mente budista) a través de un pequeño bosque de bambú, y saliendo a las terrazas junto al mar y al salón principal Daeungjeon. El **Haesu Gwaneum Daebul** (estatua de la Diosa del Mar de la Misericordia) en el acantilado superior es la vista más fotografiada, enmarcando tanto los tejados del templo como el Mar del Este. Horario: **04:30-19:20 diariamente, última entrada 18:50, ENTRADA GRATUITA**. **El Cumpleaños de Buda (mayo)** trae exhibiciones del festival de linternas Yeondunhoe.",
+      "description": "**Haedong Yonggungsa (해동 용궁사) — el templo budista costero más famoso de Corea** — se asienta sobre los acantilados rocosos de Gijang-gun en la costa noreste de Busan, uno de los muy pocos grandes templos coreanos que NO está ubicado en las montañas. Fundado originalmente en **1376 durante la Dinastía Goryeo por el gran maestro budista Naong Hyegeun (나옹 혜근, 1320-1376)** — consejero real y maestro que contribuyó a moldear el budismo coreano en los albores de la era Joseon. \n\nSegún la leyenda, Naong practicaba el ascetismo en el Templo Bunhwangsa en Gyeongju durante una sequía nacional; el dios del Mar del Este se le apareció en sueños y le dijo que construir un templo en el Monte Bongrae (el nombre original de este acantilado costero) restauraría la prosperidad del reino. \n\nNaong fundó el templo y lo llamó **Bomunsa**, dedicado a Gwanseum-bosal (관세음보살, el Bodhisattva de la Compasión). El templo fue destruido durante la **Invasión Japonesa Imjin de 1592** y permaneció en ruinas durante más de 300 años hasta que **el monje Ungang del Templo Tongdosa comenzó la reconstrucción a principios de la década de 1930**. \n\nEl nombre actual, **Haedong Yonggungsa (Templo del Palacio del Dragón Coreano)**, data únicamente de **1974** — cuando el Monje Principal Jeong-am, durante una oración de 100 días (jeong-geon kido), tuvo una visión de la Diosa de la Misericordia descendiendo sobre el lomo de un dragón, emanando luz multicolor. \n\nEl templo fue renombrado en honor a esta visión. La visita sigue el camino procesional característico del templo: a través de la hilera de **12 Sibiji-shin (Doce Generales del Zodíaco)** en la plaza de entrada, pasando la **Pagoda de los 7 Pisos 'Sin Accidentes'** (donde los conductores dejan ofrendas de monedas bajo un santuario de rueda de piedra), bajando los famosos **108 escalones de piedra** (que representan las 108 ilusiones de la mente budista) a través de un pequeño bosque de bambú, y saliendo a las terrazas junto al mar y al salón principal Daeungjeon. \n\nEl **Haesu Gwaneum Daebul** (estatua de la Diosa del Mar de la Misericordia) en el acantilado superior es la vista más fotografiada, enmarcando tanto los tejados del templo como el Mar del Este. Horario: **04:30-19:20 diariamente, última entrada 18:50, ENTRADA GRATUITA**. \n\n**El Cumpleaños de Buda (mayo)** trae exhibiciones del festival de linternas Yeondunhoe.",
       "highlights": [
         "**Fundado en 1376** por el maestro budista Naong Hyegeun (originalmente 'Bomunsa')",
         "Uno de los muy pocos grandes templos coreanos ubicados junto al mar (la mayoría están en las montañas)",
@@ -356,7 +342,7 @@
       "duration": "75 min",
       "name": "Cheongsapo y Haeundae Blue Line Park",
       "category": "Parque Costero / Lugar para Fotos",
-      "description": "**Haeundae Blue Line Park (해운대 블루라인파크)** es una rehabilitación ecológica del **abandonado ferrocarril costero Donghae Nambu**, inaugurado al público en **2020**. El complejo abarca 4,8 km de la costa más fotogénica de Busan, entre la **Estación Mipo** (cerca de la playa de Haeundae) y la **Estación Songjeong** (cerca de la playa de Songjeong), con tres formas de disfrutar el mismo paisaje: (1) la **Sky Capsule** — cabinas para 4 personas en colores pastel sobre un carril elevado de 7–10 metros sobre la costa, recorriendo 2,3 km entre Mipo y Cheongsapo, (2) el **Beach Train** — un tren ecológico de batería con asientos de cristal orientados al mar que recorre los 4,8 km completos en 6 paradas (Mipo → Túnel Dalmaji → Cheongsapo → Pasarela Daritdol → Gudeokpo → Songjeong), y (3) el **Busan Green Railway** — un paseo marítimo de madera de 4,8 km que ganó el Premio de Paisajismo de Corea del Ministerio de Territorio en 2021. La parada de hoy se centra en **Cheongsapo (청사포)** — una pequeña estación de pueblo pesquero que es una de las ocho vistas panorámicas de Busan — con dos atracciones destacadas gratuitas: (1) la **Pasarela Cheongsapo Daritdol**, inaugurada en **agosto de 2017**, un observatorio de suelo de cristal con forma de semiluna inspirada en un dragón azul de 72,5 m de longitud y 20 m de altura, entrada GRATUITA con fundas de zapatillas para proteger el cristal, y (2) los **Faros Gemelos de Cheongsapo** (rojo + blanco) y el famoso **paso de peatones de la estación** que se ha vuelto viral por su parecido con el anime Slam Dunk. Los visitantes disponen de tiempo libre para (a) subir a la **Sky Capsule en sentido único Mipo→Cheongsapo (₩30.000 para 2 pers., ₩39.000 para 3, ₩44.000 para 4)** si se reserva con antelación, o (b) caminar por el Green Railway de madera ~30 min desde Mipo hasta Cheongsapo. **Las reservas de la Sky Capsule deben realizarse a través del sitio oficial bluelinepark.com con 1–2 semanas de antelación** para los turnos al atardecer; el personal del tour puede ayudar con los quioscos automáticos en el lugar si están disponibles.",
+      "description": "**Haeundae Blue Line Park (해운대 블루라인파크)** es una rehabilitación ecológica del **abandonado ferrocarril costero Donghae Nambu**, inaugurado al público en **2020**. \n\nEl complejo abarca 4,8 km de la costa más fotogénica de Busan, entre la **Estación Mipo** (cerca de la playa de Haeundae) y la **Estación Songjeong** (cerca de la playa de Songjeong), con tres formas de disfrutar el mismo paisaje: (1) la **Sky Capsule** — cabinas para 4 personas en colores pastel sobre un carril elevado de 7–10 metros sobre la costa, recorriendo 2,3 km entre Mipo y Cheongsapo, (2) el **Beach Train** — un tren ecológico de batería con asientos de cristal orientados al mar que recorre los 4,8 km completos en 6 paradas (Mipo → Túnel Dalmaji → Cheongsapo → Pasarela Daritdol → Gudeokpo → Songjeong), y (3) el **Busan Green Railway** — un paseo marítimo de madera de 4,8 km que ganó el Premio de Paisajismo de Corea del Ministerio de Territorio en 2021. \n\nLa parada de hoy se centra en **Cheongsapo (청사포)** — una pequeña estación de pueblo pesquero que es una de las ocho vistas panorámicas de Busan — con dos atracciones destacadas gratuitas: (1) la **Pasarela Cheongsapo Daritdol**, inaugurada en **agosto de 2017**, un observatorio de suelo de cristal con forma de semiluna inspirada en un dragón azul de 72,5 m de longitud y 20 m de altura, entrada GRATUITA con fundas de zapatillas para proteger el cristal, y (2) los **Faros Gemelos de Cheongsapo** (rojo + blanco) y el famoso **paso de peatones de la estación** que se ha vuelto viral por su parecido con el anime Slam Dunk. \n\nLos visitantes disponen de tiempo libre para (a) subir a la **Sky Capsule en sentido único Mipo→Cheongsapo (₩30.000 para 2 pers., ₩39.000 para 3, ₩44.000 para 4)** si se reserva con antelación, o (b) caminar por el Green Railway de madera ~30 min desde Mipo hasta Cheongsapo. \n\n**Las reservas de la Sky Capsule deben realizarse a través del sitio oficial bluelinepark.com con 1–2 semanas de antelación** para los turnos al atardecer; el personal del tour puede ayudar con los quioscos automáticos en el lugar si están disponibles.",
       "highlights": [
         "**Haeundae Blue Line Park inaugurado en 2020** sobre el abandonado ferrocarril costero Donghae Nambu",
         "**Sky Capsule** (2,3 km elevado) + **Beach Train** (4,8 km, 6 paradas) + paseo marítimo Green Railway",
@@ -406,10 +392,8 @@
           "Busan Metropolitan City Tourism"
         ]
       },
-      "image": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+      "image": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
       "images": [
-        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
-        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
         "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
         "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
         "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
@@ -419,11 +403,11 @@
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
           "source": "atoc-korea"
         },
         {
@@ -452,22 +436,6 @@
         }
       ],
       "galleryItems": [
-        {
-          "id": 1,
-          "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
-          "location": "Cheongsapo y Haeundae Blue Line Park",
-          "caption": "Cheongsapo y Haeundae Blue Line Park — photo 1",
-          "alt": "Cheongsapo y Haeundae Blue Line Park — gallery image 1"
-        },
-        {
-          "id": 2,
-          "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
-          "location": "Cheongsapo y Haeundae Blue Line Park",
-          "caption": "Cheongsapo y Haeundae Blue Line Park — photo 2",
-          "alt": "Cheongsapo y Haeundae Blue Line Park — gallery image 2"
-        },
         {
           "id": 3,
           "type": "photo",
@@ -524,7 +492,7 @@
       "duration": "60 min",
       "name": "Almuerzo (restaurante local de Busan)",
       "category": "Almuerzo / Gastronomía Local",
-      "description": "El almuerzo se realiza en un restaurante local accesible para autobuses, en el trayecto desde Haeundae de vuelta por el centro de Busan hacia el Cementerio Memorial de la ONU en Nam-gu. Dos opciones habituales según el recorrido del autobús y las preferencias del grupo: (1) **Dwaeji Gukbap (돼지국밥)** — la sopa de arroz con caldo de huesos de cerdo, plato emblemático de Busan, alimento reconfortante de la clase trabajadora desde la época de los refugiados de la Guerra de Corea, servida con kimchi de rábano kkakdugi, pasta de gambas saeujeot, cebollino buchu y arroz (~9.000-12.000 KRW por bol); recomendada en los barrios de Seomyeon o Daeyeon-dong, o bien (2) **Milmyeon (밀면)** — fideos fríos de harina de trigo de Busan, una adaptación del naengmyeon de Pyongyang realizada por refugiados norcoreanos que no encontraban trigo sarraceno en Busan durante la guerra, servidos en caldo frío de ternera o en estilo picante bibim (~8.000-11.000 KRW). Ambos son **especialidades regionales exclusivas de Busan y poco frecuentes en Seúl**. El almuerzo corre por cuenta del visitante; las opciones vegetarianas y aptas para halal son limitadas en la mayoría de restaurantes de dwaeji-gukbap — informe al guía al hacer la reserva si necesita adaptaciones dietéticas y se sustituirá por un restaurante alternativo (habitualmente un bufé de bibimbap o hansik). Tiempo total ~60 min incluyendo aparcamiento + pedido + comida + aseo + embarque en el autobús.",
+      "description": "El almuerzo se realiza en un restaurante local accesible para autobuses, en el trayecto desde Haeundae de vuelta por el centro de Busan hacia el Cementerio Memorial de la ONU en Nam-gu. Dos opciones habituales según el recorrido del autobús y las preferencias del grupo: (1) **Dwaeji Gukbap (돼지국밥)** — la sopa de arroz con caldo de huesos de cerdo, plato emblemático de Busan, alimento reconfortante de la clase trabajadora desde la época de los refugiados de la Guerra de Corea, servida con kimchi de rábano kkakdugi, pasta de gambas saeujeot, cebollino buchu y arroz (~9.000-12.000 KRW por bol); recomendada en los barrios de Seomyeon o Daeyeon-dong, o bien (2) **Milmyeon (밀면)** — fideos fríos de harina de trigo de Busan, una adaptación del naengmyeon de Pyongyang realizada por refugiados norcoreanos que no encontraban trigo sarraceno en Busan durante la guerra, servidos en caldo frío de ternera o en estilo picante bibim (~8.000-11.000 KRW). \n\nAmbos son **especialidades regionales exclusivas de Busan y poco frecuentes en Seúl**. El almuerzo corre por cuenta del visitante; las opciones vegetarianas y aptas para halal son limitadas en la mayoría de restaurantes de dwaeji-gukbap — informe al guía al hacer la reserva si necesita adaptaciones dietéticas y se sustituirá por un restaurante alternativo (habitualmente un bufé de bibimbap o hansik). \n\nTiempo total ~60 min incluyendo aparcamiento + pedido + comida + aseo + embarque en el autobús.",
       "highlights": [
         "**Dwaeji-gukbap** (sopa de hueso de cerdo de Busan) o **milmyeon** (fideos fríos de trigo de Busan) — ambas especialidades regionales",
         "Ambos platos tienen su origen en los refugiados de la Guerra de Corea, únicos de Busan",
@@ -556,7 +524,7 @@
       "duration": "60 min",
       "name": "Cementerio Memorial de la ONU en Corea",
       "category": "Memorial / Historia de Guerra",
-      "description": "**El Cementerio Memorial de la ONU en Corea (재한유엔기념공원, UNMCK)** es el **único cementerio memorial de las Naciones Unidas en el mundo** — establecido el 18 de enero de 1951 por el Comando de la ONU durante la Guerra de Corea, dedicado el 6 de abril de 1951 por el general estadounidense Matthew Ridgway, y donado formalmente a las Naciones Unidas por la República de Corea en **1959** en agradecimiento por las fuerzas de la ONU que murieron defendiendo Corea del Sur. **22 naciones contribuyentes participaron en la Guerra de Corea (1950-1953)** bajo la bandera de la ONU — 16 naciones enviaron tropas de combate + 5 enviaron ayuda médica + 1 envió observadores. Inicialmente había hasta **11.000 tumbas**; la mayoría de los caídos fueron repatriados tras el armisticio, quedando hoy **2.300 tumbas de 11 países** (Reino Unido, EE.UU., Türkiye, Canadá, Australia, Países Bajos, Francia, Noruega, Corea del Sur, Nueva Zelanda, Sudáfrica). La visita recorre la secuencia monumental principal del cementerio: (1) la **Puerta Principal** (diseñada por el arquitecto coreano Kim Joong-up, construida por la Ciudad de Busán en 1966 — los ocho pilares que soportan el techo simbolizan el momento y la eternidad de la guardia de los soldados); (2) el **Memorial Service Hall** con un documental de 12 minutos en inglés/coreano sobre la historia del cementerio; (3) el **Área Simbólica** donde ondean diariamente las **banderas de las 22 naciones contribuyentes + la bandera coreana + la bandera de la ONU**; (4) el **Muro del Recuerdo**, completado en **2006**, con los **40.896 nombres de bajas de la ONU inscritos en 140 paneles de mármol** — muchos familiares de veteranos encuentran aquí a sus antepasados por primera vez; y (5) el **Memorial de la Guerra de Corea de EE.UU.**, dedicado en **2013** con la escultura de Frank Gaylord encargada por la American Battle Monuments Commission. **Horario: 09:00-18:00 (may-sep) / 09:00-17:00 (oct-abr); GRATUITO; 100% accesible para sillas de ruedas**. Ceremonia silenciosa anual **'Vuelta hacia Busán'** el 11 de nov. a las 11:00 AM, donde el mundo se vuelve simbólicamente hacia este cementerio.",
+      "description": "**El Cementerio Memorial de la ONU en Corea (재한유엔기념공원, UNMCK)** es el **único cementerio memorial de las Naciones Unidas en el mundo** — establecido el 18 de enero de 1951 por el Comando de la ONU durante la Guerra de Corea, dedicado el 6 de abril de 1951 por el general estadounidense Matthew Ridgway, y donado formalmente a las Naciones Unidas por la República de Corea en **1959** en agradecimiento por las fuerzas de la ONU que murieron defendiendo Corea del Sur. \n\n**22 naciones contribuyentes participaron en la Guerra de Corea (1950-1953)** bajo la bandera de la ONU — 16 naciones enviaron tropas de combate + 5 enviaron ayuda médica + 1 envió observadores. Inicialmente había hasta **11.000 tumbas**; la mayoría de los caídos fueron repatriados tras el armisticio, quedando hoy **2.300 tumbas de 11 países** (Reino Unido, EE.UU., Türkiye, Canadá, Australia, Países Bajos, Francia, Noruega, Corea del Sur, Nueva Zelanda, Sudáfrica). \n\nLa visita recorre la secuencia monumental principal del cementerio: (1) la **Puerta Principal** (diseñada por el arquitecto coreano Kim Joong-up, construida por la Ciudad de Busán en 1966 — los ocho pilares que soportan el techo simbolizan el momento y la eternidad de la guardia de los soldados); (2) el **Memorial Service Hall** con un documental de 12 minutos en inglés/coreano sobre la historia del cementerio; (3) el **Área Simbólica** donde ondean diariamente las **banderas de las 22 naciones contribuyentes + la bandera coreana + la bandera de la ONU**; (4) el **Muro del Recuerdo**, completado en **2006**, con los **40.896 nombres de bajas de la ONU inscritos en 140 paneles de mármol** — muchos familiares de veteranos encuentran aquí a sus antepasados por primera vez; y (5) el **Memorial de la Guerra de Corea de EE.UU.**, dedicado en **2013** con la escultura de Frank Gaylord encargada por la American Battle Monuments Commission. \n\n**Horario: 09:00-18:00 (may-sep) / 09:00-17:00 (oct-abr); GRATUITO; 100% accesible para sillas de ruedas**. Ceremonia silenciosa anual **'Vuelta hacia Busán'** el 11 de nov. a las 11:00 AM, donde el mundo se vuelve simbólicamente hacia este cementerio.",
       "highlights": [
         "**El único cementerio memorial de la ONU en el mundo** — establecido en enero de 1951 por el Comando de la ONU",
         "Terreno donado por la República de Corea a las Naciones Unidas en **1959**",
@@ -659,7 +627,7 @@
       "duration": "75 min",
       "name": "Pueblo Cultural de Gamcheon",
       "category": "Pueblo Cultural / Arte Mural",
-      "description": "**El Pueblo Cultural de Gamcheon (감천문화마을)** — apodado tanto **'el Machu Picchu de Corea'** como **'la Santorini de Corea'** — es un barrio en ladera en Saha-gu, al oeste de Busán, cuyas casas pintadas en colores pastel descienden en hileras escalonadas por la pendiente. El asentamiento comenzó en las **décadas de 1920-1930** cuando la administración de Busán reubicó a residentes de clase trabajadora alejándolos del puerto. El carácter del pueblo quedó definido en **1955** cuando **~800 familias (unas 4.000 personas) de la comunidad religiosa Taegeukdo** — una religión sincrética únicamente coreana que mezcla elementos budistas, confucianos y del yin-yang, fundada por **Jo Cheol-je** durante el período colonial japonés — se asentaron aquí como refugiados de la Guerra de Corea que huían del Norte. La filosofía Taegeukdo de '**permitir que los demás prosperen**' modeló directamente la característica más distintiva del pueblo: las casas están intencionalmente escalonadas de modo que **ningún techo bloquee la vista de la casa que hay detrás**, con toda la comunidad visible hacia el cielo y el mar. Gamcheon siguió siendo uno de los barrios más pobres de Busán hasta **2009**, cuando el Ministerio de Cultura de Corea lanzó el proyecto de revitalización de arte público **'Soñando con Machu Picchu en Busán'**, seguido del **proyecto 'Miro Miro' (laberinto) en 2010** — añadiendo más de 22 murales, esculturas e instalaciones artísticas encargadas, incluido el icónico **banco del 'Principito y el Zorro'** en el mirador del Sky Garden. Gamcheon ganó el **Premio al Paisaje Urbano Asiático de ONU-HABITAT 2012** y ahora recibe **~1,4 millones de visitantes anuales**. La visita sigue la emblemática ruta de caminata con mapa de sellos del pueblo: desde la entrada en el **Centro de Información Turística**, hasta el **mirador Sky Garden** para la fotografía panorámica de los tejados de colores del arcoíris, luego por los laberínticos callejones pasando por murales, tiendas de alquiler de hanbok, talleres de artesanía y pequeños cafés. **El pueblo es una comunidad residencial viva** — se requiere hablar en voz baja, no se permiten drones, no se hacen fotografías con flash dentro de las casas y la basura debe retirarse. Horario **09:00-18:00 mar-oct / 09:00-17:00 nov-feb (centro de información)**; **el pueblo en sí está abierto 24h, entrada GRATUITA**.",
+      "description": "**El Pueblo Cultural de Gamcheon (감천문화마을)** — apodado tanto **'el Machu Picchu de Corea'** como **'la Santorini de Corea'** — es un barrio en ladera en Saha-gu, al oeste de Busán, cuyas casas pintadas en colores pastel descienden en hileras escalonadas por la pendiente. \n\nEl asentamiento comenzó en las **décadas de 1920-1930** cuando la administración de Busán reubicó a residentes de clase trabajadora alejándolos del puerto. \n\nEl carácter del pueblo quedó definido en **1955** cuando **~800 familias (unas 4.000 personas) de la comunidad religiosa Taegeukdo** — una religión sincrética únicamente coreana que mezcla elementos budistas, confucianos y del yin-yang, fundada por **Jo Cheol-je** durante el período colonial japonés — se asentaron aquí como refugiados de la Guerra de Corea que huían del Norte. \n\nLa filosofía Taegeukdo de '**permitir que los demás prosperen**' modeló directamente la característica más distintiva del pueblo: las casas están intencionalmente escalonadas de modo que **ningún techo bloquee la vista de la casa que hay detrás**, con toda la comunidad visible hacia el cielo y el mar. \n\nGamcheon siguió siendo uno de los barrios más pobres de Busán hasta **2009**, cuando el Ministerio de Cultura de Corea lanzó el proyecto de revitalización de arte público **'Soñando con Machu Picchu en Busán'**, seguido del **proyecto 'Miro Miro' (laberinto) en 2010** — añadiendo más de 22 murales, esculturas e instalaciones artísticas encargadas, incluido el icónico **banco del 'Principito y el Zorro'** en el mirador del Sky Garden. \n\nGamcheon ganó el **Premio al Paisaje Urbano Asiático de ONU-HABITAT 2012** y ahora recibe **~1,4 millones de visitantes anuales**. La visita sigue la emblemática ruta de caminata con mapa de sellos del pueblo: desde la entrada en el **Centro de Información Turística**, hasta el **mirador Sky Garden** para la fotografía panorámica de los tejados de colores del arcoíris, luego por los laberínticos callejones pasando por murales, tiendas de alquiler de hanbok, talleres de artesanía y pequeños cafés. \n\n**El pueblo es una comunidad residencial viva** — se requiere hablar en voz baja, no se permiten drones, no se hacen fotografías con flash dentro de las casas y la basura debe retirarse. Horario **09:00-18:00 mar-oct / 09:00-17:00 nov-feb (centro de información)**; **el pueblo en sí está abierto 24h, entrada GRATUITA**.",
       "highlights": [
         "**'La Machu Picchu de Corea' / 'La Santorini de Corea'** — Premio Paisaje Urbano Asiático de ONU-Hábitat 2012",
         "Orígenes: **décadas de 1920-1930** reubicación administrativa de Busan + **refugiados Taegeukdo de 1955** (~800 familias)",
@@ -763,7 +731,7 @@
       "duration": "60 min",
       "name": "Mercado de Pescado Jagalchi",
       "category": "Mercado de Pescado / Cultura Local",
-      "description": "**Mercado Jagalchi (자갈치시장)** — **el mayor mercado de mariscos de Corea** y uno de los diez hitos de Busan — se sitúa en el paseo marítimo del Puerto de Nampo, en Jung-gu, a 7 minutos a pie de la Estación Jagalchi (Línea 1) o de la Estación Nampo. El nombre **'Jagalchi'** proviene de **'jagal' (자갈, grava)**, en referencia a la orilla pedregosa que bordeaba la zona. El carácter moderno del mercado se forjó tras la **Guerra de Corea (1950-1953)**: cuando muchos hombres estaban combatiendo o habían perecido en combate, **mujeres viudas y desplazadas — las legendarias 'Ajumma de Jagalchi' (자갈치 아주머니)** — se convirtieron en el sostén de sus familias vendiendo pescado sobre cajas de madera a lo largo del muelle. Las ajumma han sido el **alma económica y cultural de Busan desde entonces**, encarnando tanto la historia de recuperación de la posguerra de la ciudad como la cultura coreana del '**jeong (정)**', ese vínculo de confianza personal a largo plazo entre vendedor y cliente. El actual **edificio principal con forma de gaviota reabrió en 2006** y alberga a ~400 vendedores en 66.000 m² de superficie bruta: la **planta baja (1F)** es el mercado de mariscos vivos (pulpo, cangrejo de las nieves, abulón, tunicados, anguilas babosas vivas, caballa, pepinos de mar, lenguados de calidad para hoe) donde los visitantes pueden **comprar marisco fresco por peso y llevarlo al restaurante de la planta superior (2F) por una pequeña tarifa de cocinado** — así es como comen los locales en Jagalchi. La **2F** es el nivel de sashimi y restaurantes. La sección de mariscos secos (anchoas, alga laver, algas kombu, calamar seco) se extiende a lo largo del muelle exterior y es la más fotogénica para instantáneas de viaje. **Horario: diariamente 05:00-22:00; CERRADO el 1er y 3er martes de cada mes**. **Festival Anual de Turismo Cultural de Jagalchi** cada octubre. El tiempo de visita está deliberadamente programado durante la calma de última hora de la tarde (después de la afluencia del almuerzo y antes de la del anochecer) para que los pasillos y el **Parque Cielo** de la azotea sean cómodos para pasear.",
+      "description": "**Mercado Jagalchi (자갈치시장)** — **el mayor mercado de mariscos de Corea** y uno de los diez hitos de Busan — se sitúa en el paseo marítimo del Puerto de Nampo, en Jung-gu, a 7 minutos a pie de la Estación Jagalchi (Línea 1) o de la Estación Nampo. \n\nEl nombre **'Jagalchi'** proviene de **'jagal' (자갈, grava)**, en referencia a la orilla pedregosa que bordeaba la zona. El carácter moderno del mercado se forjó tras la **Guerra de Corea (1950-1953)**: cuando muchos hombres estaban combatiendo o habían perecido en combate, **mujeres viudas y desplazadas — las legendarias 'Ajumma de Jagalchi' (자갈치 아주머니)** — se convirtieron en el sostén de sus familias vendiendo pescado sobre cajas de madera a lo largo del muelle. \n\nLas ajumma han sido el **alma económica y cultural de Busan desde entonces**, encarnando tanto la historia de recuperación de la posguerra de la ciudad como la cultura coreana del '**jeong (정)**', ese vínculo de confianza personal a largo plazo entre vendedor y cliente. \n\nEl actual **edificio principal con forma de gaviota reabrió en 2006** y alberga a ~400 vendedores en 66.000 m² de superficie bruta: la **planta baja (1F)** es el mercado de mariscos vivos (pulpo, cangrejo de las nieves, abulón, tunicados, anguilas babosas vivas, caballa, pepinos de mar, lenguados de calidad para hoe) donde los visitantes pueden **comprar marisco fresco por peso y llevarlo al restaurante de la planta superior (2F) por una pequeña tarifa de cocinado** — así es como comen los locales en Jagalchi. \n\nLa **2F** es el nivel de sashimi y restaurantes. La sección de mariscos secos (anchoas, alga laver, algas kombu, calamar seco) se extiende a lo largo del muelle exterior y es la más fotogénica para instantáneas de viaje. \n\n**Horario: diariamente 05:00-22:00; CERRADO el 1er y 3er martes de cada mes**. **Festival Anual de Turismo Cultural de Jagalchi** cada octubre. \n\nEl tiempo de visita está deliberadamente programado durante la calma de última hora de la tarde (después de la afluencia del almuerzo y antes de la del anochecer) para que los pasillos y el **Parque Cielo** de la azotea sean cómodos para pasear.",
       "highlights": [
         "**El mayor mercado de mariscos de Corea** — cubre 66.000 m² con ~400 vendedores",
         "**'Jagalchi'** = 'grava' (자갈) por la orilla pedregosa original",
@@ -1220,10 +1188,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "29",
       "currency": "USD",
       "per": "person",
-      "priceNote": ""
+      "salePriceUsd": 29,
+      "originalPriceUsd": 41,
+      "discountPercent": 29
     }
   },
   "matching_profile": {
@@ -1681,7 +1651,7 @@
             "duration": "60 min",
             "name": "Cheongsapo y Haeundae Blue Line Park",
             "category": "Costa y Tren de Playa",
-            "image": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+            "image": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
             "description": "La Línea Donghae Nambu (antiguo ferrocarril Busan-Mar del Este, en servicio desde 1934 y cerrado al tráfico de pasajeros en 2013) fue convertida en el Haeundae Blue Line Park, un corredor costero de 4,8 km para caminatas y tranvía entre Mipo (Haeundae) y Songjeong, inaugurado en octubre de 2020. Por él circulan dos servicios de tranvía de pago: el Tren de Playa (₩7.000 ida y vuelta, vagones abiertos más amplios, circula de forma continua) y la Sky Capsule (cápsulas de vidrio elevadas para 4 personas, ₩30.000–₩35.000 por cápsula en un solo sentido para hasta 4 personas, con entradas agotadas los fines de semana; se recomienda reservar con 2–3 días de antelación). Cheongsapo, en el punto intermedio, es un pequeño pueblo pesquero con un paseo mirador de suelo de cristal sobre las rocas. La parada aquí ofrece aproximadamente 45 minutos de paseo por la playa y 15 minutos de recorrido por el pueblo; los billetes del tranvía son opcionales y no están incluidos.",
             "timeUsed": [
               "Paseo costero y miradores",
@@ -1696,8 +1666,6 @@
               "optional_sky_capsule_krw_per_capsule": 30000
             },
             "images": [
-              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
-              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
               "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
               "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
               "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
@@ -1707,11 +1675,11 @@
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1740,22 +1708,6 @@
               }
             ],
             "galleryItems": [
-              {
-                "id": 1,
-                "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
-                "location": "Cheongsapo y Haeundae Blue Line Park",
-                "caption": "Cheongsapo y Haeundae Blue Line Park — photo 1",
-                "alt": "Cheongsapo y Haeundae Blue Line Park — gallery image 1"
-              },
-              {
-                "id": 2,
-                "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
-                "location": "Cheongsapo y Haeundae Blue Line Park",
-                "caption": "Cheongsapo y Haeundae Blue Line Park — photo 2",
-                "alt": "Cheongsapo y Haeundae Blue Line Park — gallery image 2"
-              },
               {
                 "id": 3,
                 "type": "photo",

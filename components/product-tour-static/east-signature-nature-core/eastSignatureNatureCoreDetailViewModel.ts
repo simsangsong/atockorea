@@ -30,6 +30,7 @@ import type {
   SubnavItem,
   TourProductHero,
   TourProductPrice,
+  TourProductPricingTiers,
   WhyTourWorks,
 } from "@/components/product-tour-static/_shared/tourProductDetailSectionTypes";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
@@ -60,4 +61,6 @@ export type EastSignatureNatureCoreDetailViewModel = {
   pickup_dropoff?: PickupDropoffSection;
   /** Optional — cruise shore-excursion products toggle stops by docking port. */
   routeVariants?: readonly PortRouteVariant[];
+  /** Optional — private/charter products with per-vehicle pricing that varies by pax + duration. */
+  pricingTiers?: TourProductPricingTiers;
 };

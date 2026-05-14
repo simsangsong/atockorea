@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
 
@@ -123,10 +124,10 @@ export async function PATCH(
         );
       }
       const sv = Number((body.detail_payload as { schema_version?: unknown }).schema_version);
-      if (!Number.isFinite(sv) || sv !== 1) {
+      if (!Number.isFinite(sv) || sv < 1) {
         return NextResponse.json(
           {
-            error: 'detail_payload.schema_version must equal 1',
+            error: 'detail_payload.schema_version must be a positive integer',
             code: 'INVALID_PAYLOAD_SCHEMA',
           },
           { status: 400 },
@@ -189,6 +190,49 @@ export async function PATCH(
         { error: 'Failed to update page', details: updateError.message },
         { status: 400 },
       );
+    }
+
+    // Mirror image edits to the legacy `tours` table so the home page,
+    // /tours/list, admin v1 list, catalog cards, etc. all pick up the same
+    // images without a separate save. Skipped if neither image field was
+    // touched in this PATCH. Title stays per-locale on `tour_product_pages`
+    // only — we never overwrite tours.title from non-EN locales.
+    const toursPatch: Record<string, unknown> = {};
+    if (Object.prototype.hasOwnProperty.call(updates, 'thumbnail_url')) {
+      toursPatch.image_url = updates.thumbnail_url ?? updates.hero_image_url ?? null;
+    } else if (Object.prototype.hasOwnProperty.call(updates, 'hero_image_url')) {
+      toursPatch.image_url = updates.hero_image_url ?? null;
+    }
+    if (Object.prototype.hasOwnProperty.call(updates, 'detail_payload')) {
+      const payload = updates.detail_payload as Record<string, unknown> | undefined;
+      if (payload && Array.isArray(payload.galleryItems)) {
+        const urls = (payload.galleryItems as Array<Record<string, unknown>>)
+          .map((g) => (typeof g?.src === 'string' ? (g.src as string) : ''))
+          .filter((u) => u.length > 0);
+        toursPatch.gallery_images = urls;
+      }
+    }
+    if (Object.keys(toursPatch).length > 0) {
+      toursPatch.updated_at = new Date().toISOString();
+      const { error: toursErr } = await supabase
+        .from('tours')
+        .update(toursPatch)
+        .eq('slug', slug);
+      if (toursErr) {
+        console.warn('[PATCH /api/admin/tour-product-pages] tours mirror failed', slug, toursErr.message);
+      }
+    }
+
+    // Invalidate cached customer-facing pages so changes surface on the next
+    // visit. `force-dynamic` on the route handles SSR; this also nudges
+    // CDN/RSC cache layers above it.
+    try {
+      revalidatePath(`/tour-product/${slug}`);
+      revalidatePath('/tour-product/[slug]', 'page');
+      revalidatePath('/');
+      revalidatePath('/tours/list');
+    } catch (e) {
+      console.warn('[PATCH /api/admin/tour-product-pages] revalidate hint failed', e);
     }
 
     return NextResponse.json({ data: updated, message: 'Page updated successfully' });

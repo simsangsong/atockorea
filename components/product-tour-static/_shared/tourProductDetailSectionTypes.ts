@@ -229,4 +229,38 @@ export type TourProductPrice = {
   amountLabel: string;
   currency: string;
   per: string;
+  /** Original (compare-at) price in USD — when > sale, renders strikethrough on the booking surfaces. */
+  originalPriceUsd?: number | null;
+  /** Sale price in USD; mirrors `amountLabel` numerically. */
+  salePriceUsd?: number | null;
+  /** Discount percent (rounded integer) — renders a badge when > 0. */
+  discountPercent?: number | null;
+  /** Free-form note shown below the price (e.g. source attribution). */
+  priceNote?: string;
+};
+
+/** Variable pricing matrix — used by private/charter products priced by group size × duration. */
+export type TourProductPricingTier = {
+  paxLabel: string;
+  paxMin: number;
+  paxMax: number;
+  /** Price per duration key, e.g. { "4h": 179, "10h": 259 }. */
+  prices: Record<string, number>;
+};
+
+export type TourProductPricingTiers = {
+  currency: string;
+  unit: string;
+  /** Ordered duration keys to display, e.g. ["4h", "10h"] or ["flat"] for single-rate. */
+  durations: readonly string[];
+  tiers: readonly TourProductPricingTier[];
+  /**
+   * Optional extension — when guestCount exceeds the last tier's paxMax, price scales linearly.
+   * Formula: basePrice + perPaxAdd × (guestCount - anchorPax) for guestCount > anchorPax.
+   */
+  extraPerPaxAbove?: {
+    anchorPax: number;
+    basePrice: number;
+    perPaxAdd: number;
+  };
 };

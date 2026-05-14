@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AtoC Korea — Concierge Mockup</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #d1d5db;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+    }
+    .phone {
+      width: 390px;
+      height: 844px;
+      background: #f9f7f4;
+      border-radius: 52px;
+      overflow: hidden;
+      box-shadow:
+        0 50px 140px rgba(0,0,0,0.45),
+        0 0 0 1px rgba(0,0,0,0.12),
+        inset 0 0 0 1px rgba(255,255,255,0.06);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .status-bar {
+      height: 50px;
+      background: #0c1a2e;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .notch {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 126px;
+      height: 32px;
+      background: #000;
+      border-radius: 0 0 22px 22px;
+    }
+    .scroll-area {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+    .scroll-area::-webkit-scrollbar { display: none; }
+    .bottom-nav {
+      height: 80px;
+      background: #fff;
+      border-top: 1px solid rgba(0,0,0,0.07);
+      display: flex;
+      flex-shrink: 0;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useRef } = React;
+
+const C = {
+  bg:     '#f9f7f4',
+  navy:   '#0c1a2e',
+  orange: '#e07832',
+  green:  '#10b981',
+  text:   '#374151',
+  muted:  '#9ca3af',
+  card:   '#ffffff',
+  border: 'rgba(0,0,0,0.07)',
+};
+const F = `-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif`;
+
+// ── Data ────────────────────────────────────────────────────────────────────
+
+const TESTIMONIALS = [
+  {
+    name: 'Sarah M.',
+    flag: '🇦🇺',
+    tour: 'Jeju Eastern UNESCO Tour',
+    quote: "Didn't want to risk a random tour company. AtoC's curation gave me confidence — and the tour exceeded expectations.",
+  },
+  {
+    name: 'James K.',
+    flag: '🇺🇸',
+    tour: 'Busan Small Group Day Tour',
+    quote: "Every other site had 500 options. AtoC had 4 Busan tours and I trusted every single one of them.",
+  },
+  {
+    name: 'Yuki T.',
+    flag: '🇯🇵',
+    tour: 'Seoul Palaces & Han River',
+    quote: "The guide was exactly as described — licensed, English-fluent, genuinely knowledgeable. No surprises at all.",
+  },
+];
+
+const PICKS = [
+  {
+    id: 1,
+    title: 'Jeju Eastern UNESCO Spots Day Tour',
+    city: 'JEJU',
+    type: 'SMALL GROUP',
+    rating: 4.9,
+    reviews: 124,
+    dur: '9h',
+    price: 59,
+    badge: '🏆 Staff Favorite',
+    imgUrl: 'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=700&q=80',
+    imgFb: 'linear-gradient(135deg,#0d9488,#0c1a2e)',
+  },
+  {
+    id: 2,
+    title: 'Busan: Temples, Gamcheon & Sea',
+    city: 'BUSAN',
+    type: 'SMALL GROUP',
+    rating: 4.8,
+    reviews: 89,
+    dur: '9h',
+    price: 58,
+    badge: '⭐ Most Booked',
+    imgUrl: 'https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=700&q=80',
+    imgFb: 'linear-gradient(135deg,#1d4ed8,#0c1a2e)',
+  },
+  {
+    id: 3,
+    title: 'Seoul Palaces & Han River Evening',
+    city: 'SEOUL',
+    type: 'PRIVATE',
+    rating: 4.9,
+    reviews: 61,
+    dur: '10h',
+    price: 89,
+    badge: '✨ Newly Added',
+    imgUrl: 'https://images.unsplash.com/photo-1540560886989-f4e47cfa7d2f?w=700&q=80',
+    imgFb: 'linear-gradient(135deg,#4f46e5,#0c1a2e)',
+  },
+];
+
+const MATCH_STEPS = [
+  {
+    key: 'dest',
+    q: 'Where are you visiting?',
+    opts: [
+      { v: 'jeju',  l: '🌋  Jeju Island' },
+      { v: 'busan', l: '⚓  Busan' },
+      { v: 'seoul', l: '🏯  Seoul' },
+      { v: 'multi', l: '🗺  Multiple cities' },
+    ],
+  },
+  {
+    key: 'group',
+    q: "Who's traveling?",
+    opts: [
+      { v: 'solo',    l: '🧍  Solo' },
+      { v: 'couple',  l: '👫  Couple' },
+      { v: 'family',  l: '👨‍👩‍👧  Family' },
+      { v: 'friends', l: '👥  Friends' },
+    ],
+  },
+  {
+    key: 'style',
+    q: 'Your travel style?',
+    opts: [
+      { v: 'smallgroup', l: '🤝  Small group' },
+      { v: 'private',    l: '🚗  Private' },
+      { v: 'bus',        l: '🚌  Bus tour' },
+      { v: 'flex',       l: "🤷  I'm flexible" },
+    ],
+  },
+];
+
+// ── Shared components ────────────────────────────────────────────────────────
+
+function MatchWidget({ onNav }) {
+  const [step, setStep]       = useState(0);
+  const [answers, setAnswers] = useState({});
+  const [done, setDone]       = useState(false);
+
+  const current = MATCH_STEPS[step];
+
+  function pick(val) {
+    const next = { ...answers, [current.key]: val };
+    setAnswers(next);
+    if (step < MATCH_STEPS.length - 1) {
+      setStep(step + 1);
+    } else {
+      setDone(true);
+    }
+  }
+
+  if (done) {
+    return (
+      <div style={{ background: C.card, borderRadius: 22, padding: '22px 20px', boxShadow: '0 4px 28px rgba(0,0,0,0.1)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
+          <div style={{ width: 42, height: 42, background: C.green, borderRadius: 14, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20 }}>✓</div>
+          <div>
+            <p style={{ fontFamily: F, fontWeight: 800, fontSize: 15, color: C.navy }}>We found 3 tours for you</p>
+            <p style={{ fontFamily: F, fontSize: 12, color: C.muted }}>Matched to your preferences</p>
+          </div>
+        </div>
+        <button
+          onClick={() => onNav('match')}
+          style={{ width: '100%', background: C.navy, color: '#fff', fontFamily: F, fontWeight: 700, fontSize: 14, padding: '14px 0', borderRadius: 14, border: 'none', cursor: 'pointer' }}
+        >
+          See my matches →
+        </button>
+        <button
+          onClick={() => { setStep(0); setAnswers({}); setDone(false); }}
+          style={{ width: '100%', background: 'transparent', color: C.muted, fontFamily: F, fontSize: 12, padding: '8px 0', border: 'none', cursor: 'pointer', marginTop: 4 }}
+        >
+          Start over
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div style={{ background: C.card, borderRadius: 22, padding: '20px 20px 22px', boxShadow: '0 4px 28px rgba(0,0,0,0.1)' }}>
+      {/* Progress bar */}
+      <div style={{ display: 'flex', gap: 6, marginBottom: 18 }}>
+        {MATCH_STEPS.map((_, i) => (
+          <div
+            key={i}
+            style={{ height: 3, flex: 1, borderRadius: 2, background: i <= step ? C.orange : '#e5e7eb', transition: 'background .25s' }}
+          />
+        ))}
+      </div>
+
+      {/* Chat bubble */}
+      <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 18 }}>
+        <div style={{ width: 34, height: 34, background: C.navy, borderRadius: 11, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15, flexShrink: 0 }}>✨</div>
+        <div style={{ background: '#eff6ff', borderRadius: '4px 16px 16px 16px', padding: '11px 14px', flex: 1 }}>
+          <p style={{ fontFamily: F, fontSize: 13.5, fontWeight: 700, color: C.navy, lineHeight: 1.4 }}>{current.q}</p>
+        </div>
+      </div>
+
+      {/* Option buttons */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 9 }}>
+        {current.opts.map(opt => (
+          <button
+            key={opt.v}
+            onClick={() => pick(opt.v)}
+            style={{
+              background: C.bg,
+              border: `1.5px solid ${C.border}`,
+              borderRadius: 14,
+              padding: '11px 10px',
+              fontFamily: F,
+              fontSize: 12.5,
+              fontWeight: 600,
+              color: C.navy,
+              cursor: 'pointer',
+              textAlign: 'center',
+              lineHeight: 1.3,
+            }}
+          >
+            {opt.l}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function EditorPickCard({ tour }) {
+  const [liked, setLiked] = useState(false);
+  const [err, setErr]     = useState(false);
+
+  return (
+    <div style={{ background: C.card, borderRadius: 22, overflow: 'hidden', boxShadow: '0 2px 24px rgba(0,0,0,0.08)', marginBottom: 16 }}>
+      <div
+        style={{
+          height: 168,
+          background: tour.imgFb,
+          backgroundImage: (tour.imgUrl && !err) ? `url(${tour.imgUrl})` : undefined,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          position: 'relative',
+        }}
+      >
+        {tour.imgUrl && !err && <img src={tour.imgUrl} onError={() => setErr(true)} style={{ display: 'none' }} alt="" />}
+        <span style={{ position: 'absolute', top: 12, left: 12, background: 'rgba(12,26,46,0.82)', color: '#fff', fontFamily: F, fontSize: 11, fontWeight: 700, padding: '5px 11px', borderRadius: 20, backdropFilter: 'blur(6px)' }}>
+          {tour.badge}
+        </span>
+        <button
+          onClick={() => setLiked(!liked)}
+          style={{ position: 'absolute', top: 10, right: 12, background: 'rgba(255,255,255,0.92)', border: 'none', borderRadius: '50%', width: 34, height: 34, fontSize: 15, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 10px rgba(0,0,0,0.14)' }}
+        >
+          {liked ? '❤️' : '🤍'}
+        </button>
+        <span style={{ position: 'absolute', bottom: 10, left: 12, background: 'rgba(0,0,0,0.55)', color: '#fff', fontFamily: F, fontSize: 9, fontWeight: 700, padding: '3px 9px', borderRadius: 7, letterSpacing: .6, textTransform: 'uppercase' }}>
+          {tour.type}
+        </span>
+      </div>
+
+      <div style={{ padding: '14px 18px 18px' }}>
+        <p style={{ fontFamily: F, fontSize: 10, color: C.muted, textTransform: 'uppercase', letterSpacing: .8, marginBottom: 5 }}>📍 {tour.city}</p>
+        <p style={{ fontFamily: F, fontSize: 14.5, fontWeight: 700, color: C.navy, lineHeight: 1.35, marginBottom: 9 }}>{tour.title}</p>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
+          <span style={{ color: '#f59e0b', fontSize: 12, fontWeight: 700, fontFamily: F }}>★ {tour.rating}</span>
+          <span style={{ fontFamily: F, fontSize: 11.5, color: C.muted }}>({tour.reviews})</span>
+          <span style={{ fontFamily: F, fontSize: 11.5, color: C.muted }}>· ⏱ {tour.dur}</span>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div>
+            <span style={{ fontFamily: F, fontSize: 11, color: C.muted }}>from </span>
+            <span style={{ fontFamily: F, fontSize: 22, fontWeight: 800, color: C.navy }}>${tour.price}</span>
+            <span style={{ fontFamily: F, fontSize: 11, color: C.muted }}> /person</span>
+          </div>
+          <button style={{ background: C.navy, color: '#fff', border: 'none', borderRadius: 13, padding: '10px 18px', fontFamily: F, fontWeight: 700, fontSize: 12.5, cursor: 'pointer' }}>
+            View →
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── HOME TAB ────────────────────────────────────────────────────────────────
+
+function HomeTab({ onNav }) {
+  return (
+    <div style={{ background: C.bg }}>
+
+      {/* ① HERO — brand narrative, not product */}
+      <div style={{ position: 'relative', height: 300, overflow: 'hidden', background: C.navy }}>
+        <img
+          src="https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=900&q=85&fm=jpg&fit=crop"
+          alt="Seongsan Ilchulbong, Jeju"
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', opacity: .38 }}
+        />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, rgba(12,26,46,0.2) 0%, rgba(12,26,46,0.92) 100%)' }} />
+
+        <div style={{ position: 'relative', padding: '40px 24px 28px', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+          <span style={{
+            display: 'inline-flex', alignItems: 'center', gap: 5,
+            background: 'rgba(224,120,50,0.18)', border: '1px solid rgba(224,120,50,0.35)',
+            color: C.orange, fontFamily: F, fontSize: 10, fontWeight: 700, letterSpacing: 1.5,
+            padding: '4px 12px', borderRadius: 20, marginBottom: 14, width: 'fit-content', textTransform: 'uppercase',
+          }}>
+            🇰🇷 Korea's Most Proven Day Tours
+          </span>
+
+          <h1 style={{ fontFamily: F, fontSize: 30, fontWeight: 900, color: '#fff', lineHeight: 1.12, letterSpacing: '-0.04em', marginBottom: 12 }}>
+            100,000+ bookings.<br />4.9 stars.<br />
+            <span style={{ color: C.orange }}>We curated the best.</span>
+          </h1>
+
+          <p style={{ fontFamily: F, fontSize: 12.5, color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, maxWidth: 300 }}>
+            Sourced from Korea's highest-rated tours across global platforms.<br />
+            <strong style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 600 }}>Every operator KTO-licensed. Every tour market-proven.</strong>
+          </p>
+        </div>
+      </div>
+
+      {/* ② AI MATCH — primary interaction, right after hero */}
+      <div style={{ padding: '24px 20px 0' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <p style={{ fontFamily: F, fontSize: 10.5, fontWeight: 700, color: C.orange, textTransform: 'uppercase', letterSpacing: 1.5, marginBottom: 3 }}>✨ Find your perfect match</p>
+            <p style={{ fontFamily: F, fontSize: 11, color: C.muted }}>3 quick questions → 3 curated tours</p>
+          </div>
+        </div>
+        <MatchWidget onNav={onNav} />
+      </div>
+
+      {/* ③ TRUST NUMBERS */}
+      <div style={{ padding: '20px 20px 0' }}>
+        <div style={{ background: C.card, borderRadius: 20, padding: '20px 16px', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8, boxShadow: '0 1px 16px rgba(0,0,0,0.06)' }}>
+          {[
+            { num: '100K+',  label: 'bookings on global OTAs' },
+            { num: '4.9 ★',  label: 'avg rating across platforms' },
+            { num: '100%',   label: 'KTO-licensed operators' },
+          ].map(s => (
+            <div key={s.label} style={{ textAlign: 'center' }}>
+              <p style={{ fontFamily: F, fontSize: 19, fontWeight: 900, color: C.navy, letterSpacing: '-0.03em' }}>{s.num}</p>
+              <p style={{ fontFamily: F, fontSize: 10, color: C.muted, marginTop: 3, lineHeight: 1.35 }}>{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ④ WHY WE'RE DIFFERENT */}
+      <div style={{ padding: '32px 20px 0' }}>
+        <p style={{ fontFamily: F, fontSize: 10.5, fontWeight: 700, color: C.orange, textTransform: 'uppercase', letterSpacing: 1.5, marginBottom: 8 }}>Why AtoC</p>
+        <h2 style={{ fontFamily: F, fontSize: 24, fontWeight: 900, color: C.navy, letterSpacing: '-0.04em', lineHeight: 1.18, marginBottom: 6 }}>
+          These tours didn't<br />start here.
+        </h2>
+        <p style={{ fontFamily: F, fontSize: 15, color: C.muted, lineHeight: 1.65, marginBottom: 22, maxWidth: 300 }}>
+          They already had <strong style={{ color: C.navy }}>100,000+ bookings and 4.9★</strong> across global platforms. We just built the best way to find your perfect one.
+        </p>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          {[
+            {
+              icon: '🌐',
+              title: 'Market-validated across global OTAs',
+              desc: 'Every tour on AtoC is already proven on major global booking platforms — consistently earning 4.9★ across thousands of real bookings.',
+            },
+            {
+              icon: '📋',
+              title: 'KTO-licensed operators only',
+              desc: 'All operators hold Korea Tourism Organization certification. No freelancers, no pop-up guides — only established, verified agencies.',
+            },
+            {
+              icon: '✨',
+              title: 'Deep partnership, not just listing',
+              desc: 'We work directly with each operator. That means better briefings, English quality control, and accountability you won\'t get on a big OTA.',
+            },
+          ].map(p => (
+            <div key={p.title} style={{ background: C.card, borderRadius: 18, padding: '16px 18px', display: 'flex', gap: 14, boxShadow: '0 1px 12px rgba(0,0,0,0.055)', alignItems: 'flex-start' }}>
+              <span style={{ fontSize: 24, flexShrink: 0, marginTop: 1 }}>{p.icon}</span>
+              <div>
+                <p style={{ fontFamily: F, fontSize: 13.5, fontWeight: 700, color: C.navy, marginBottom: 5 }}>{p.title}</p>
+                <p style={{ fontFamily: F, fontSize: 12, color: C.muted, lineHeight: 1.65 }}>{p.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ⑤ TESTIMONIALS */}
+      <div style={{ padding: '32px 0 0' }}>
+        <div style={{ padding: '0 20px', marginBottom: 16 }}>
+          <p style={{ fontFamily: F, fontSize: 10.5, fontWeight: 700, color: C.orange, textTransform: 'uppercase', letterSpacing: 1.5, marginBottom: 6 }}>Traveler stories</p>
+          <h2 style={{ fontFamily: F, fontSize: 22, fontWeight: 900, color: C.navy, letterSpacing: '-0.04em' }}>What real travelers say</h2>
+        </div>
+        <div style={{ display: 'flex', overflowX: 'auto', padding: '4px 20px 16px', gap: 0 }}>
+          {TESTIMONIALS.map(t => (
+            <div
+              key={t.name}
+              style={{
+                background: C.card, borderRadius: 20, padding: '18px 18px 16px',
+                boxShadow: '0 2px 18px rgba(0,0,0,0.07)',
+                minWidth: 264, marginRight: 12, flexShrink: 0,
+              }}
+            >
+              <div style={{ display: 'flex', gap: 2, marginBottom: 10 }}>
+                {'★★★★★'.split('').map((s, i) => (
+                  <span key={i} style={{ color: '#f59e0b', fontSize: 14 }}>{s}</span>
+                ))}
+              </div>
+              <p style={{ fontFamily: F, fontSize: 13, color: C.text, lineHeight: 1.65, marginBottom: 14, fontStyle: 'italic' }}>
+                "{t.quote}"
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <div style={{ width: 34, height: 34, background: `linear-gradient(135deg,${C.navy},#1d4ed8)`, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>{t.flag}</div>
+                <div>
+                  <p style={{ fontFamily: F, fontWeight: 700, fontSize: 12.5, color: C.navy }}>{t.name}</p>
+                  <p style={{ fontFamily: F, fontSize: 11, color: C.muted }}>{t.tour}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ⑥ EDITOR'S PICKS — tours appear last, as editorial recommendations */}
+      <div style={{ padding: '20px 20px 0' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 18 }}>
+          <div>
+            <p style={{ fontFamily: F, fontSize: 10.5, fontWeight: 700, color: C.orange, textTransform: 'uppercase', letterSpacing: 1.5, marginBottom: 6 }}>Handpicked for you</p>
+            <h2 style={{ fontFamily: F, fontSize: 22, fontWeight: 900, color: C.navy, letterSpacing: '-0.04em' }}>Editor's picks</h2>
+          </div>
+          <button style={{ background: 'transparent', border: `1.5px solid rgba(0,0,0,0.1)`, borderRadius: 20, padding: '7px 14px', fontFamily: F, fontSize: 12, fontWeight: 600, color: C.navy, cursor: 'pointer' }}>
+            All 29 tours →
+          </button>
+        </div>
+        {PICKS.map(t => <EditorPickCard key={t.id} tour={t} />)}
+      </div>
+
+      {/* ⑦ DESTINATIONS — editorial feel */}
+      <div style={{ padding: '20px 20px 40px' }}>
+        <p style={{ fontFamily: F, fontSize: 10.5, fontWeight: 700, color: C.orange, textTransform: 'uppercase', letterSpacing: 1.5, marginBottom: 6 }}>Explore Korea</p>
+        <h2 style={{ fontFamily: F, fontSize: 22, fontWeight: 900, color: C.navy, letterSpacing: '-0.04em', marginBottom: 16 }}>By destination</h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          {[
+            { name: 'Jeju Island',       count: 5, sub: 'Volcanic peaks, UNESCO craters & turquoise coasts', imgUrl: 'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=700&q=80', imgFb: 'linear-gradient(135deg,#0d9488,#0c1a2e)' },
+            { name: 'Busan',             count: 4, sub: 'Ancient temples, beaches & renowned street food',   imgUrl: 'https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=700&q=80', imgFb: 'linear-gradient(135deg,#1d4ed8,#0c1a2e)' },
+            { name: 'Seoul & Day Trips', count: 3, sub: 'Royal palaces, hanok villages & scenic escapes',   imgUrl: 'https://images.unsplash.com/photo-1540560886989-f4e47cfa7d2f?w=700&q=80', imgFb: 'linear-gradient(135deg,#4f46e5,#0c1a2e)' },
+          ].map(d => (
+            <div key={d.name} style={{ borderRadius: 20, overflow: 'hidden', height: 108, position: 'relative', cursor: 'pointer' }}>
+              <div style={{ position: 'absolute', inset: 0, background: d.imgFb }} />
+              <img
+                src={d.imgUrl}
+                alt={d.name}
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                onError={e => { e.target.style.display = 'none'; }}
+              />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(12,26,46,0.82) 0%, rgba(12,26,46,0.18) 100%)' }} />
+              <div style={{ position: 'absolute', inset: 0, padding: '0 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div>
+                  <p style={{ fontFamily: F, fontSize: 17, fontWeight: 800, color: '#fff', letterSpacing: '-0.025em', marginBottom: 3 }}>{d.name}</p>
+                  <p style={{ fontFamily: F, fontSize: 11, color: 'rgba(255,255,255,0.7)' }}>{d.count} curated tours</p>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.14)', border: '1px solid rgba(255,255,255,0.22)', borderRadius: 20, padding: '7px 14px', backdropFilter: 'blur(6px)' }}>
+                  <span style={{ fontFamily: F, fontSize: 12, fontWeight: 700, color: '#fff' }}>Explore →</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  );
+}
+
+// ── MATCH TAB ───────────────────────────────────────────────────────────────
+
+function MatchTab() {
+  return (
+    <div style={{ padding: '30px 20px 40px' }}>
+      <p style={{ fontFamily: F, fontSize: 10.5, fontWeight: 700, color: C.orange, textTransform: 'uppercase', letterSpacing: 1.5, marginBottom: 8 }}>AI Matching</p>
+      <h2 style={{ fontFamily: F, fontSize: 24, fontWeight: 900, color: C.navy, letterSpacing: '-0.04em', lineHeight: 1.2, marginBottom: 6 }}>Tell us about<br />your trip</h2>
+      <p style={{ fontFamily: F, fontSize: 12.5, color: C.muted, lineHeight: 1.7, marginBottom: 24 }}>We'll narrow our 29 curated tours down to the 3 that fit your travel style best.</p>
+
+      <div style={{ background: C.card, borderRadius: 22, padding: '20px', boxShadow: '0 4px 28px rgba(0,0,0,0.09)', marginBottom: 16 }}>
+        <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 16 }}>
+          <div style={{ width: 34, height: 34, background: C.navy, borderRadius: 11, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15, flexShrink: 0 }}>✨</div>
+          <div style={{ background: '#eff6ff', borderRadius: '4px 16px 16px 16px', padding: '12px 14px', flex: 1 }}>
+            <p style={{ fontFamily: F, fontSize: 13.5, fontWeight: 700, color: C.navy }}>Describe your ideal Korea day tour</p>
+          </div>
+        </div>
+        <textarea
+          placeholder={'e.g. "I\'m visiting Jeju for 2 days with my partner. We love nature and photography but hate large crowds. Looking for something off the beaten path..."'}
+          style={{
+            width: '100%', height: 110, border: `1.5px solid ${C.border}`,
+            borderRadius: 14, padding: '13px 14px', fontFamily: F, fontSize: 12.5,
+            color: C.text, resize: 'none', outline: 'none', background: C.bg, lineHeight: 1.6,
+          }}
+        />
+        <button style={{ width: '100%', marginTop: 12, background: C.navy, color: '#fff', border: 'none', borderRadius: 14, padding: '14px', fontFamily: F, fontWeight: 700, fontSize: 14, cursor: 'pointer' }}>
+          ✨ Find my match →
+        </button>
+      </div>
+
+      <p style={{ fontFamily: F, fontSize: 11.5, color: C.muted, textAlign: 'center', lineHeight: 1.65 }}>
+        Powered by AI + 10 years of Korea travel expertise
+      </p>
+    </div>
+  );
+}
+
+// ── CART TAB ────────────────────────────────────────────────────────────────
+
+function CartTab() {
+  return (
+    <div style={{ padding: '30px 20px 40px' }}>
+      <h2 style={{ fontFamily: F, fontSize: 24, fontWeight: 900, color: C.navy, letterSpacing: '-0.04em', marginBottom: 22 }}>Your cart</h2>
+
+      <div style={{ background: C.card, borderRadius: 22, overflow: 'hidden', boxShadow: '0 2px 20px rgba(0,0,0,0.08)', marginBottom: 14 }}>
+        <div style={{ height: 90, background: 'linear-gradient(135deg,#0d9488,#134e4a)' }} />
+        <div style={{ padding: '16px 18px' }}>
+          <p style={{ fontFamily: F, fontSize: 14, fontWeight: 700, color: C.navy, marginBottom: 5 }}>Jeju Eastern UNESCO Spots</p>
+          <p style={{ fontFamily: F, fontSize: 12, color: C.muted }}>📅 Jun 15, 2025 · 👥 2 travelers</p>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 14 }}>
+            <div>
+              <span style={{ fontFamily: F, fontSize: 11, color: C.muted }}>Total </span>
+              <span style={{ fontFamily: F, fontSize: 20, fontWeight: 800, color: C.navy }}>$118</span>
+            </div>
+            <button style={{ background: C.orange, color: '#fff', border: 'none', borderRadius: 13, padding: '10px 18px', fontFamily: F, fontWeight: 700, fontSize: 12.5, cursor: 'pointer' }}>
+              Book →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ background: C.card, borderRadius: 20, padding: '18px 20px', boxShadow: '0 1px 12px rgba(0,0,0,0.06)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
+          <span style={{ fontFamily: F, fontSize: 14, fontWeight: 700, color: C.navy }}>Order total</span>
+          <span style={{ fontFamily: F, fontSize: 20, fontWeight: 800, color: C.navy }}>$118</span>
+        </div>
+        <button style={{ width: '100%', background: C.navy, color: '#fff', border: 'none', borderRadius: 14, padding: '14px', fontFamily: F, fontWeight: 700, fontSize: 14, cursor: 'pointer' }}>
+          Proceed to checkout →
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ── MY PAGE TAB ─────────────────────────────────────────────────────────────
+
+function MyPageTab() {
+  return (
+    <div style={{ padding: '30px 20px 40px' }}>
+      <div style={{ textAlign: 'center', marginBottom: 30 }}>
+        <div style={{ width: 72, height: 72, background: `linear-gradient(135deg,${C.navy},#1d4ed8)`, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 28, margin: '0 auto 14px' }}>👤</div>
+        <p style={{ fontFamily: F, fontSize: 18, fontWeight: 800, color: C.navy, marginBottom: 4 }}>Welcome back</p>
+        <p style={{ fontFamily: F, fontSize: 12.5, color: C.muted }}>simsangsong@gmail.com</p>
+      </div>
+      {[
+        { icon: '📋', label: 'My bookings',   sub: '2 upcoming tours' },
+        { icon: '❤️', label: 'Saved tours',   sub: '5 tours in your wishlist' },
+        { icon: '✨', label: 'Match history', sub: 'Last matched: Jeju Eastern' },
+        { icon: '⭐', label: 'My reviews',    sub: '3 reviews written' },
+        { icon: '⚙️', label: 'Settings',      sub: 'Language, notifications' },
+      ].map(item => (
+        <div key={item.label} style={{ background: C.card, borderRadius: 16, padding: '15px 18px', display: 'flex', alignItems: 'center', gap: 14, marginBottom: 10, boxShadow: '0 1px 10px rgba(0,0,0,0.05)', cursor: 'pointer' }}>
+          <span style={{ fontSize: 22 }}>{item.icon}</span>
+          <div style={{ flex: 1 }}>
+            <p style={{ fontFamily: F, fontSize: 13.5, fontWeight: 700, color: C.navy }}>{item.label}</p>
+            <p style={{ fontFamily: F, fontSize: 11.5, color: C.muted }}>{item.sub}</p>
+          </div>
+          <span style={{ color: C.muted, fontSize: 18 }}>›</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ── ROOT ────────────────────────────────────────────────────────────────────
+
+function App() {
+  const [tab, setTab] = useState('home');
+  const scrollRef = useRef(null);
+
+  function handleNav(t) {
+    setTab(t);
+    setTimeout(() => { if (scrollRef.current) scrollRef.current.scrollTop = 0; }, 50);
+  }
+
+  const TABS = [
+    { id: 'home',   icon: '🏠', label: 'Home' },
+    { id: 'match',  icon: '✨', label: 'AI Match' },
+    { id: 'cart',   icon: '🛒', label: 'Cart' },
+    { id: 'mypage', icon: '👤', label: 'My Page' },
+  ];
+
+  return (
+    <div className="phone">
+      {/* Status bar */}
+      <div className="status-bar">
+        <div className="notch" />
+        <span style={{ fontFamily: F, fontSize: 12, fontWeight: 600, color: '#fff', zIndex: 1 }}>9:41</span>
+        <span style={{ fontFamily: F, fontSize: 12, color: 'rgba(255,255,255,0.6)', zIndex: 1 }}>···</span>
+      </div>
+
+      {/* Top nav */}
+      {tab === 'home' ? (
+        <div style={{ background: C.navy, padding: '10px 20px 12px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
+            <div style={{ width: 30, height: 30, background: C.orange, borderRadius: 9, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: F, fontSize: 14, fontWeight: 900, color: '#fff' }}>A</div>
+            <span style={{ fontFamily: F, fontSize: 16, fontWeight: 800, color: '#fff', letterSpacing: '-0.025em' }}>AtoC Korea</span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <span style={{ fontFamily: F, fontSize: 11, color: 'rgba(255,255,255,0.65)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 7, padding: '3px 8px' }}>us EN</span>
+            <div style={{ position: 'relative' }}>
+              <span style={{ fontSize: 20 }}>🛒</span>
+              <span style={{ position: 'absolute', top: -6, right: -6, background: C.orange, color: '#fff', borderRadius: '50%', width: 16, height: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: F, fontSize: 9, fontWeight: 700 }}>2</span>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div style={{ background: C.card, padding: '14px 20px', display: 'flex', alignItems: 'center', borderBottom: `1px solid ${C.border}`, flexShrink: 0 }}>
+          <span style={{ fontFamily: F, fontSize: 17, fontWeight: 800, color: C.navy }}>
+            {tab === 'match' ? '✨ AI Match' : tab === 'cart' ? '🛒 Cart' : '👤 My Page'}
+          </span>
+        </div>
+      )}
+
+      {/* Scroll area */}
+      <div className="scroll-area" ref={scrollRef}>
+        {tab === 'home'   && <HomeTab onNav={handleNav} />}
+        {tab === 'match'  && <MatchTab />}
+        {tab === 'cart'   && <CartTab />}
+        {tab === 'mypage' && <MyPageTab />}
+      </div>
+
+      {/* Bottom nav */}
+      <div className="bottom-nav">
+        {TABS.map(t => (
+          <button
+            key={t.id}
+            onClick={() => handleNav(t.id)}
+            style={{
+              flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center',
+              justifyContent: 'center', gap: 3, border: 'none', background: 'transparent', cursor: 'pointer',
+            }}
+          >
+            <span style={{ fontSize: 20 }}>{t.icon}</span>
+            <span style={{ fontFamily: F, fontSize: 10.5, fontWeight: tab === t.id ? 700 : 500, color: tab === t.id ? C.navy : C.muted }}>
+              {t.label}
+            </span>
+            {tab === t.id && <div style={{ width: 20, height: 2.5, background: C.orange, borderRadius: 2 }} />}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

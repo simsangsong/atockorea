@@ -181,23 +181,6 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
           {/* Desktop Navigation Menu */}
           <nav className="hidden md:flex items-center gap-1 flex-shrink-0">
             <Link
-              href="/"
-              className={cn(
-                "rounded-lg px-4 py-2 text-sm font-medium transition-colors",
-                pathname === "/"
-                  ? pt
-                    ? "bg-stone-200/35 text-stone-900"
-                    : "bg-blue-50 text-blue-600"
-                  : isDarkPage
-                    ? "text-gray-300 hover:bg-white/5 hover:text-blue-400"
-                    : pt
-                      ? "text-stone-600 hover:bg-stone-100/55 hover:text-stone-900"
-                      : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
-              )}
-            >
-              Home
-            </Link>
-            <Link
               href="/tours/list"
               className={cn(
                 "rounded-lg px-4 py-2 text-sm font-medium transition-colors",
@@ -212,7 +195,41 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
                       : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
               )}
             >
-              Tours
+              {t('nav.tours')}
+            </Link>
+            <Link
+              href="/about"
+              className={cn(
+                "rounded-lg px-4 py-2 text-sm font-medium transition-colors",
+                pathname === "/about" || pathname.startsWith("/about/")
+                  ? pt
+                    ? "bg-stone-200/35 text-stone-900"
+                    : "bg-blue-50 text-blue-600"
+                  : isDarkPage
+                    ? "text-gray-300 hover:bg-white/5 hover:text-blue-400"
+                    : pt
+                      ? "text-stone-600 hover:bg-stone-100/55 hover:text-stone-900"
+                      : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+              )}
+            >
+              {t('nav.whyAtoc')}
+            </Link>
+            <Link
+              href="/support"
+              className={cn(
+                "rounded-lg px-4 py-2 text-sm font-medium transition-colors",
+                pathname === "/support" || pathname.startsWith("/support/")
+                  ? pt
+                    ? "bg-stone-200/35 text-stone-900"
+                    : "bg-blue-50 text-blue-600"
+                  : isDarkPage
+                    ? "text-gray-300 hover:bg-white/5 hover:text-blue-400"
+                    : pt
+                      ? "text-stone-600 hover:bg-stone-100/55 hover:text-stone-900"
+                      : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+              )}
+            >
+              {t('nav.support')}
             </Link>
             <Link
               href="/cart"
@@ -229,7 +246,7 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
                       : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
               )}
             >
-              Cart
+              {t('nav.cart')}
             </Link>
           </nav>
 

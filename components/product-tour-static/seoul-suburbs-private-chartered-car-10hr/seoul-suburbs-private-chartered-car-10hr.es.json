@@ -34,7 +34,7 @@
     ],
     "heroImage": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1920&q=80",
     "thumbnail": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=600&q=80",
-    "priceLabel": "Consulte el precio al reservar",
+    "priceLabel": "Desde US$179 por vehículo (1–6 pers. · 4h)",
     "shortCardDescription": "Coche privado con conductor-guía certificado por 10 horas desde Seúl — elija entre tres rutas recomendadas: Ruta 1 (Gapyeong: Nami + Achimsogwon + Petite France), Ruta 2 (DMZ: 3er Túnel + Observatorio Dora + Paju Outlets) o Ruta 3 (Yongin: Everland + Pueblo Folclórico Coreano) — o diseñe su propio itinerario completamente a medida. Recogida gratuita en hotel de Seúl. 10 horas de coche privado para solo su grupo.",
     "tags": [
       "tour privado",
@@ -45,9 +45,10 @@
   "headlineLine1": "Seúl",
   "headlineLine2": "Coche Privado",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "179",
     "currency": "USD",
-    "per": "vehículo"
+    "per": "vehicle",
+    "salePriceUsd": 179
   },
   "hero": {
     "imageUrl": "https://images.unsplash.com/photo-1538485399081-7c8970d8e7c8?w=1920&q=80",
@@ -172,7 +173,7 @@
       "number": 1,
       "name": "Ruta 1: Circuito Naturaleza y Cultura de Gapyeong (Isla Nami + Achimsogwon + Petite France)",
       "category": "La ruta más fotogénica y romántica al norte de Seúl — ~60-90 min desde Seúl",
-      "description": "La ruta más diversa escénicamente, recorriendo el clúster naturaleza-y-cultura emblemático de Gapyeong, a unos 60–90 minutos al noreste de Seúl. La Isla Nami es una isla fluvial en forma de media luna de 460.000 m² accesible en un ferri de 5 minutos, mundialmente famosa desde el K-drama Winter Sonata (2002) por sus avenidas arboladas (metasecuoyas, ginkgos y cerezos). El Jardín de la Calma Matutina es un arboreto de 330.000 m² que cultiva unas 5.000 especies vegetales — inaugurado en 1996 por Han Sang-kyung, de la Universidad Sahmyook, y sede del primer festival de iluminación en entorno natural de Corea (5 de diciembre a 15 de marzo), donde más de 30.000 LED cubren el jardín tras la puesta de sol. Petite France, abierta en 2008, es una villa cultural de temática francesa con 16 edificios construida en torno a 'flores, estrellas y el Principito' — los fans del drama coreano la reconocerán como set de rodaje de Beethoven Virus, Secret Garden, My Love from the Star y, más recientemente, Bon Appétit Your Majesty (2025). El Gangchon Rail Park / Bike añade un trayecto pedaleado de 30–40 minutos por las vías abandonadas de la línea Gyeongchun, junto al Río Bukhangang. La ruta funciona todo el año, con cada estación entregando una firma distinta: cerezos en flor (abril), túneles verdes (verano), follaje (octubre–principios de noviembre) y nieve + festival de luces (diciembre–febrero).",
+      "description": "La ruta más diversa escénicamente, recorriendo el **clúster naturaleza-y-cultura emblemático de Gapyeong**, a unos 60–90 minutos al noreste de Seúl. \n\nLa **Isla Nami** es una isla fluvial en forma de media luna de **460.000 m²** accesible en un ferri de 5 minutos, mundialmente famosa desde el **K-drama Winter Sonata (2002)** por sus avenidas arboladas (metasecuoyas, ginkgos y cerezos). \n\nEl **Jardín de la Calma Matutina** es un **arboreto de 330.000 m²** que cultiva unas 5.000 especies vegetales — inaugurado en 1996 por Han Sang-kyung, de la Universidad Sahmyook, y sede del primer festival de iluminación en entorno natural de Corea (5 de diciembre a 15 de marzo), donde **más de 30.000 LED** cubren el jardín tras la puesta de sol. \n\n**Petite France, abierta en 2008**, es una villa cultural de temática francesa con 16 edificios construida en torno a 'flores, estrellas y el Principito' — los fans del drama coreano la reconocerán como set de rodaje de Beethoven Virus, Secret Garden, My Love from the Star y, más recientemente, Bon Appétit Your Majesty (2025). \n\nEl **Gangchon Rail Park** / Bike añade un trayecto pedaleado de 30–40 minutos por las vías abandonadas de la línea Gyeongchun, junto al Río Bukhangang. \n\nLa ruta funciona todo el año, con cada estación entregando una firma distinta: cerezos en flor (abril), túneles verdes (verano), follaje (octubre–principios de noviembre) y nieve + festival de luces (diciembre–febrero).",
       "highlights": [
         "Isla Nami: 460.000 m² de isla fluvial, ferri de 5 min, avenida de metasecuoyas y calle de ginkgos de Winter Sonata; precio de día completo 18.000 KRW adulto incluye ferri",
         "Jardín de la Calma Matutina: arboreto de 330.000 m², 5.000 especies vegetales, festival de luces de invierno 5 dic – 15 mar con más de 30.000 LED; entrada 11.000 KRW adulto",
@@ -216,7 +217,7 @@
       "number": 2,
       "name": "Ruta 2: DMZ Historia y Paju Shopping",
       "category": "La ruta más histórica — el DMZ + opciones de compras en Paju",
-      "description": "La ruta de mayor carga histórica, que combina medio día en la Zona Desmilitarizada de Corea con una tarde en el mayor centro de outlet premium del país. La parte de la DMZ suele cubrir el Parque de la Paz Imjingak (el Puente de la Libertad y el oxidado Bridge of Freedom), el Tercer Túnel de Infiltración (un túnel de 1.635 m construido por Corea del Norte y descubierto en 1978), el Observatorio Dora (vistas con telescopios de gran aumento hacia la región de Kaesong, en Corea del Norte) y la Estación Dorasan (la inutilizada 'última estación hacia el Norte' del proyectado ferrocarril intercoreano). Algunos sub-itinerarios incluyen el Puente Colgante de Paju o el parque histórico Camp Greaves. Los Paju Premium Outlets, abiertos en 2011 y, en su momento, el mayor outlet premium de Corea, albergan más de 230 marcas distribuidas en dos propiedades adyacentes (Premium Outlets + Lotte Premium Outlets) con descuentos típicos del 25–50 % en marcas estadounidenses y europeas. Heyri Art Valley — un pueblo artístico de 100.000 m² con galerías, cafés y museos — es una tercera parada frecuente cuando el grupo prefiere el arte a las compras. Atención: los pasaportes son obligatorios para los extranjeros en los puntos de entrada de la DMZ; algunas sub-zonas (andén de la Estación Dorasan) están sujetas a cierres por operativa militar.",
+      "description": "La ruta de mayor carga histórica, que combina medio día en la **Zona Desmilitarizada de Corea** con una tarde en el mayor centro de outlet premium del país. \n\nLa parte de la DMZ suele cubrir el **Parque de la Paz Imjingak** (el Puente de la Libertad y el oxidado Bridge of Freedom), el **Tercer Túnel de Infiltración** (un **túnel de 1.635 m construido por Corea del Norte y descubierto en 1978**), el **Observatorio Dora** (vistas con telescopios de gran aumento hacia la región de Kaesong, en Corea del Norte) y la **Estación Dorasan** (la inutilizada 'última estación hacia el Norte' del proyectado ferrocarril intercoreano). \n\nAlgunos sub-itinerarios incluyen el Puente Colgante de Paju o el parque histórico Camp Greaves. Los **Paju Premium Outlets, abiertos en 2011** y, en su momento, el mayor outlet premium de Corea, albergan **más de 230 marcas** distribuidas en dos propiedades adyacentes (Premium Outlets + Lotte Premium Outlets) con descuentos típicos del 25–50 % en marcas estadounidenses y europeas. \n\n**Heyri Art Valley** — un pueblo artístico de 100.000 m² con galerías, cafés y museos — es una tercera parada frecuente cuando el grupo prefiere el arte a las compras. Atención: los pasaportes son obligatorios para los extranjeros en los puntos de entrada de la DMZ; algunas sub-zonas (andén de la Estación Dorasan) están sujetas a cierres por operativa militar.",
       "highlights": [
         "Tercer Túnel de Infiltración: túnel de 1.635 m construido por Corea del Norte, descubierto el 17 de octubre de 1978; los visitantes descienden ~73 m en monorraíl o por rampa empinada",
         "Observatorio Dora: vistas con telescopios de gran aumento a Kaesong (Corea del Norte); en días despejados se ve el Complejo Industrial de Kaesong",
@@ -260,7 +261,7 @@
       "number": 3,
       "name": "Ruta 3: Everland + Pueblo Folclórico Coreano",
       "category": "La ruta más familiar — el mayor parque temático + el mayor museo al aire libre de Corea",
-      "description": "La ruta más orientada a familias, que combina el mayor parque temático de Corea del Sur con el primer museo al aire libre de cultura folclórica de Corea — ambos en Yongin, ~36 km al sur de Seúl. Everland, inaugurado en 1976 y operado por Samsung C&T, atrae entre 5,85 y 6,6 millones de visitantes anuales (ocupó el puesto 19.º mundial en asistencia a parques de atracciones en 2018) en cinco zonas temáticas (Global Fair, American Adventure, Magic Land, Zootopia, European Adventure). La atracción emblemática es T Express — la primera montaña rusa de madera de Corea, inaugurada en marzo de 2008 — con 1,64 km de recorrido, una caída de 46 m a 77° (una de las más pronunciadas del mundo en montañas rusas de madera) y una velocidad punta de 104 km/h. Zootopia alberga ~2.000 animales de 200 especies, incluida la familia panda Aibao + Lebao (Fubao, nacida en 2020, fue el primer panda gigante nacido en Corea del Sur; sus hermanas gemelas Ruibao y Huibao llegaron en 2023). El Pueblo Folclórico Coreano, a solo 20 minutos por la misma carretera de Yongin, es un complejo de 991.735 m² (245 acres) con más de 260 casas tradicionales de la era Joseon que representan distintas regiones y clases sociales. Las actuaciones diarias incluyen Jultagi (caminata sobre la cuerda floja, reconocida por la UNESCO), Nong-ak (música de percusión campesina), artes marciales acrobáticas a caballo y reconstrucciones de bodas Joseon. Numerosos K-dramas (La Joya del Palacio, Sungkyunkwan Scandal, etc.) han rodado escenas sageuk aquí. Como Everland por sí solo llena un día completo, el chárter típico de 10 horas hace UNO de los dos a fondo en lugar de ambos — el conductor-guía lo señala al reservar.",
+      "description": "La ruta más orientada a familias, que combina **el mayor parque temático de Corea del Sur** con el primer museo al aire libre de cultura folclórica de Corea — ambos en Yongin, ~36 km al sur de Seúl. **Everland, inaugurado en 1976 y operado por Samsung C&T**, atrae **entre 5,85 y 6,6 millones de visitantes anuales** (ocupó el puesto 19.º mundial en asistencia a parques de atracciones en 2018) en cinco zonas temáticas (Global Fair, American Adventure, Magic Land, Zootopia, European Adventure). \n\nLa atracción emblemática es **T Express** — **la primera montaña rusa de madera de Corea**, inaugurada en marzo de 2008 — con 1,64 km de recorrido, una caída de 46 m a 77° (una de las más pronunciadas del mundo en montañas rusas de madera) y una **velocidad punta de 104 km/h**. Zootopia alberga ~2.000 animales de 200 especies, incluida la familia panda Aibao + Lebao (Fubao, nacida en 2020, fue el primer panda gigante nacido en Corea del Sur; sus hermanas gemelas Ruibao y Huibao llegaron en 2023). \n\nEl **Pueblo Folclórico Coreano**, a solo 20 minutos por la misma carretera de Yongin, es un **complejo de 991.735 m² (245 acres)** con **más de 260 casas tradicionales de la era Joseon** que representan distintas regiones y clases sociales. \n\nLas actuaciones diarias incluyen Jultagi (caminata sobre la cuerda floja, reconocida por la UNESCO), Nong-ak (música de percusión campesina), artes marciales acrobáticas a caballo y reconstrucciones de bodas Joseon. Numerosos K-dramas (La Joya del Palacio, Sungkyunkwan Scandal, etc.) \n\nhan rodado escenas sageuk aquí. Como Everland por sí solo llena un día completo, el chárter típico de 10 horas hace UNO de los dos a fondo en lugar de ambos — el conductor-guía lo señala al reservar.",
       "highlights": [
         "Everland — T Express: la primera montaña rusa de madera de Corea, 1,64 km / caída de 46 m a 77° / 104 km/h, inaugurada en 2008",
         "Everland — Zootopia + Panda World: ~2.000 animales, incluida la familia panda Aibao-Fubao-Ruibao-Huibao; safari ecológico anfibio en Lost Valley",
@@ -301,7 +302,7 @@
       "number": 4,
       "name": "Ruta 4: Itinerario Personalizado",
       "category": "10 horas completamente a medida — combine paradas de las 3 rutas o diseñe la suya",
-      "description": "Más allá de las tres rutas recomendadas, la ventana de 10 horas del charter es totalmente personalizable — combine paradas entre Gapyeong/DMZ/Yongin o envíenos un plan completamente a medida con antelación. Adiciones habituales: la Fortaleza Hwaseong de Suwon (Patrimonio Mundial UNESCO 1997 — 5,7 km de murallas restauradas del siglo XVIII en el centro de Suwon), Pocheon Sanjeong Lake / Herb Island / Art Valley (a 1,5 horas en coche al noreste), la Cueva de Gwangmyeong (antigua mina de oro reconvertida en atracción temática con LED), la Starfield Library de Suwon (con sus arquitectónicas estanterías de 13 m), el Chinatown de Incheon + Songdo Central Park, los recorridos por el distrito de entretenimiento K-pop en Hannam-dong / Gangnam, los parques del río Han (la fuente arcoíris del puente Banpo) y mercados tradicionales como Gwangjang o Tongin. El conductor-guía secuencia las paradas según los patrones de tráfico (evitando las horas punta de Seúl, 07:00-09:00 y 17:00-20:00) y los horarios de apertura. Las visitas con vuelo el mismo día están bien soportadas — la ruta puede orientarse al final hacia el aeropuerto de Incheon dentro de las 10 horas (indíquelo en la reserva).",
+      "description": "Más allá de las tres rutas recomendadas, **la ventana de 10 horas del charter es totalmente personalizable** — combine paradas entre Gapyeong/DMZ/Yongin o envíenos un plan completamente a medida con antelación. Adiciones habituales: la **Fortaleza Hwaseong de Suwon** (**Patrimonio Mundial UNESCO 1997** — **5,7 km de murallas restauradas del siglo XVIII** en el centro de Suwon), Pocheon Sanjeong Lake / Herb Island / Art Valley (a 1,5 horas en coche al noreste), la **Cueva de Gwangmyeong** (antigua mina de oro reconvertida en atracción temática con LED), la **Starfield Library de Suwon** (con sus arquitectónicas estanterías de 13 m), el **Chinatown de Incheon + Songdo Central Park**, los recorridos por el distrito de entretenimiento K-pop en Hannam-dong / Gangnam, los parques del río Han (la fuente arcoíris del puente Banpo) y mercados tradicionales como Gwangjang o Tongin. \n\nEl conductor-guía secuencia las paradas según los patrones de tráfico (evitando las horas punta de Seúl, 07:00-09:00 y 17:00-20:00) y los horarios de apertura. \n\nLas visitas con vuelo el mismo día están bien soportadas — la ruta puede orientarse al final hacia el **aeropuerto de Incheon** dentro de las 10 horas (indíquelo en la reserva).",
       "highlights": [
         "Combinar Gapyeong + Fortaleza Hwaseong de Suwon: isla de Nami por la mañana + fortaleza por la tarde — patrimonio UNESCO con gran retorno fotográfico",
         "Día Pocheon: lago Sanjeong + Herb Island + Pocheon Art Valley — más tranquilo que Gapyeong, con la fotogenia de la cantera de granito",
@@ -736,9 +737,10 @@
   "sticky_booking_bar": {
     "note": "La disponibilidad se confirma en el paso de pago.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "179",
       "currency": "USD",
-      "per": "vehículo"
+      "per": "vehicle",
+      "salePriceUsd": 179
     }
   },
   "pickup_dropoff": {
@@ -1863,5 +1865,42 @@
         }
       }
     }
+  },
+  "pricingTiers": {
+    "currency": "USD",
+    "unit": "vehicle",
+    "durations": [
+      "4h",
+      "10h"
+    ],
+    "tiers": [
+      {
+        "paxLabel": "1–6 pax",
+        "paxMin": 1,
+        "paxMax": 6,
+        "prices": {
+          "4h": 179,
+          "10h": 259
+        }
+      },
+      {
+        "paxLabel": "7–9 pax",
+        "paxMin": 7,
+        "paxMax": 9,
+        "prices": {
+          "4h": 209,
+          "10h": 259
+        }
+      },
+      {
+        "paxLabel": "10–13 pax",
+        "paxMin": 10,
+        "paxMax": 13,
+        "prices": {
+          "4h": 279,
+          "10h": 449
+        }
+      }
+    ]
   }
 }

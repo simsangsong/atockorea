@@ -25,9 +25,16 @@ export interface TourListCardProps {
   tour: TourCardViewModel;
   detailHref: string;
   formatPriceFn?: (price: number) => string;
+  /**
+   * `sizes` for the card's `next/image`. Must match the call site's actual
+   * column layout — too small a value ships an upscaled, blurry thumbnail.
+   * Default `"50vw"` is the safe-sharp choice (2-up grids); pass a precise
+   * value where the layout differs (e.g. 3-up home rail).
+   */
+  imageSizes?: string;
 }
 
-function TourListCard({ tour, detailHref, formatPriceFn }: TourListCardProps) {
+function TourListCard({ tour, detailHref, formatPriceFn, imageSizes }: TourListCardProps) {
   const t = useTranslations();
   const { locale } = useI18n();
   const copy = useCopy();
@@ -119,7 +126,8 @@ function TourListCard({ tour, detailHref, formatPriceFn }: TourListCardProps) {
               src={displayImage}
               alt={displayTitle}
               fill
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              sizes={imageSizes ?? '50vw'}
+              quality={90}
               className={cn(
                 'object-cover transition-[transform,filter] duration-[420ms] ease-[cubic-bezier(0.34,1.35,0.64,1)] brightness-100 group-hover:scale-[1.08] motion-reduce:group-hover:scale-100',
                 'motion-reduce:brightness-100 motion-reduce:transition-none',

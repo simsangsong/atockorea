@@ -401,7 +401,7 @@ export async function POST(req: NextRequest) {
       console.error('Error updating inventory:', inventoryError);
     }
 
-    // Confirmation email: only sent on payment success (Stripe/PayPal webhooks).
+    // Confirmation email: only sent from the Stripe webhook/payment confirmation flow.
     // Do not send here on booking create — 결제 완료 시에만 확인 메일 발송.
 
     // Create notification for booking creation
@@ -443,4 +443,3 @@ export async function POST(req: NextRequest) {
     );
   }
 }
-

@@ -67,9 +67,11 @@ export type TourStickyBookingBarProps = Pick<EastSignatureNatureCoreDetailViewMo
    * omitted, English defaults are used.
    */
   sectionUi?: TourProductSectionUiV1;
+  /** Optional — private/charter products price by group size × duration. */
+  pricingTiers?: EastSignatureNatureCoreDetailViewModel["pricingTiers"];
 };
 
-export function TourStickyBookingBar({ price, checkout, selectedPortLabel, sectionUi }: TourStickyBookingBarProps) {
+export function TourStickyBookingBar({ price, checkout, selectedPortLabel, sectionUi, pricingTiers }: TourStickyBookingBarProps) {
   const portCtaPrefix = sectionUi?.portSelectorCtaPrefix ?? "Docking at";
   const router = useRouter();
   const currencyCtx = useCurrencyOptional();
@@ -83,6 +85,28 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
   const guestFieldEditingRef = useRef(false);
   const [preferredLanguage, setPreferredLanguage] = useState<PreferredLanguage>("en");
   const [availability, setAvailability] = useState<AvailabilityState>({ status: "idle" });
+  const [selectedDuration, setSelectedDuration] = useState<string | null>(
+    pricingTiers && pricingTiers.durations.length > 0 ? pricingTiers.durations[0]! : null,
+  );
+
+  /** Match the active tier by guestCount; scale linearly via extraPerPaxAbove when overflow. */
+  const tierPriceUsd = useMemo(() => {
+    if (!pricingTiers || !selectedDuration) return null;
+    const matched = pricingTiers.tiers.find(
+      (tr) => guestCount >= tr.paxMin && guestCount <= tr.paxMax,
+    );
+    if (matched) {
+      const v = matched.prices[selectedDuration];
+      return typeof v === "number" && v > 0 ? v : null;
+    }
+    const e = pricingTiers.extraPerPaxAbove;
+    if (e && guestCount > e.anchorPax) {
+      return e.basePrice + e.perPaxAdd * (guestCount - e.anchorPax);
+    }
+    const last = pricingTiers.tiers[pricingTiers.tiers.length - 1];
+    const v = last?.prices[selectedDuration];
+    return typeof v === "number" && v > 0 ? v : null;
+  }, [pricingTiers, selectedDuration, guestCount]);
 
   const minYmd = todayYmdLocal();
   const minDateObj = useMemo(() => ymdToLocalDate(minYmd), [minYmd]);
@@ -138,14 +162,15 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
     };
   }, [drawerOpen, checkout?.tourId, dateYmd, guestCount, minYmd]);
 
-  /** Resolved unit price, prefers live priceOverride from availability when present. */
+  /** Tier-based pricing wins over availability so guest changes update the headline price. */
   const unitPriceUsd = useMemo(() => {
+    if (tierPriceUsd != null) return tierPriceUsd;
     if (availability.status === "available" && availability.priceUsd != null && availability.priceUsd > 0) {
       return availability.priceUsd;
     }
     if (checkout?.unitPriceUsd != null && checkout.unitPriceUsd > 0) return checkout.unitPriceUsd;
     return parseListUnitUsd(price);
-  }, [availability, checkout, price]);
+  }, [availability, checkout, price, tierPriceUsd]);
 
   const estimatedTotal = useMemo(() => {
     if (!checkout || unitPriceUsd == null) return null;
@@ -164,6 +189,29 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
       maximumFractionDigits: 0,
     }).format(unitPriceUsd);
   }, [unitPriceUsd, currencyCtx]);
+
+  /** Strikethrough anchor price (compare-at) when authored on the price object. */
+  const originalUnitPriceUsd =
+    typeof price.originalPriceUsd === "number" && price.originalPriceUsd > 0
+      ? price.originalPriceUsd
+      : null;
+  const showOriginalPrice =
+    originalUnitPriceUsd != null && unitPriceUsd != null && originalUnitPriceUsd > unitPriceUsd;
+  const ctaOriginalFormatted = useMemo(() => {
+    if (!showOriginalPrice || originalUnitPriceUsd == null) return null;
+    if (currencyCtx) return currencyCtx.formatPrice(originalUnitPriceUsd);
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 0,
+    }).format(originalUnitPriceUsd);
+  }, [showOriginalPrice, originalUnitPriceUsd, currencyCtx]);
+  const discountPercent =
+    typeof price.discountPercent === "number" && price.discountPercent > 0
+      ? Math.round(price.discountPercent)
+      : showOriginalPrice && originalUnitPriceUsd != null && unitPriceUsd != null
+        ? Math.round(((originalUnitPriceUsd - unitPriceUsd) / originalUnitPriceUsd) * 100)
+        : 0;
 
   const perUnitLabel = checkout?.priceType === "group" ? "group" : price.per;
 
@@ -377,6 +425,27 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
                 </div>
 
                 <div className="tour-booking-drawer-footer shrink-0 overflow-visible border-t border-border/60 px-3 py-2 sm:px-5">
+                  {pricingTiers && pricingTiers.durations.length > 1 && (
+                    <div className="mb-2 flex items-center justify-between gap-2">
+                      <span className={`${fieldLabelClass}`}>Duration</span>
+                      <div className="inline-flex rounded-full bg-white p-0.5 shadow-sm ring-1 ring-slate-200">
+                        {pricingTiers.durations.map((d) => (
+                          <button
+                            key={d}
+                            type="button"
+                            onClick={() => setSelectedDuration(d)}
+                            className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
+                              selectedDuration === d
+                                ? "bg-foreground text-white"
+                                : "text-muted-foreground hover:text-foreground"
+                            }`}
+                          >
+                            {d}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                   <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3">
                     <div>
                       <span className={`${fieldLabelClass} mb-0.5 block`}>Guests</span>
@@ -448,6 +517,18 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
                   ? `Total · ${guestCount} guests`
                   : "From"}
               </p>
+              {showOriginalPrice && ctaOriginalFormatted ? (
+                <div className="mb-0.5 flex items-center gap-1.5 leading-none">
+                  <span className="text-[11px] text-muted-foreground line-through tabular-nums sm:text-xs">
+                    {ctaOriginalFormatted}
+                  </span>
+                  {discountPercent > 0 && (
+                    <span className="rounded bg-red-500 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white sm:text-[11px]">
+                      {discountPercent}% OFF
+                    </span>
+                  )}
+                </div>
+              ) : null}
               <p className="text-lg font-semibold text-foreground tabular-nums sm:text-2xl">
                 {estimatedTotalFormatted && checkout?.priceType === "person" && guestCount > 1 ? (
                   <>

@@ -19,8 +19,8 @@ type DestinationsApiResponse = {
 };
 
 /**
- * "Most loved this week" — popular product rail.
- * Replaces the v0 VisualBreak slot. Reuses production `<TourListCard>` so
+ * "Most loved this week" popular product rail.
+ * Reuses production `<TourListCard>` so
  * card pricing/currency/wishlist behaviour matches `/tours/list`. Hides itself
  * silently when fewer than 3 tours are returned (avoids a sad half-row).
  */
@@ -60,7 +60,16 @@ export function FeaturedProductsShowcase() {
       .then((r) => (r.ok ? r.json() : { tours: [] }))
       .then((data) => {
         if (controller.signal.aborted) return;
-        setTours(adaptToursListResponse(data));
+        const adapted = adaptToursListResponse(data);
+        // Data guard — only render tours that have a real price, image, and title.
+        // Half-populated cards (₩0, missing thumbnail) erode trust on the homepage.
+        const validTours = adapted.filter((tour) => {
+          const hasPrice = typeof tour.priceFrom === "number" && tour.priceFrom > 0;
+          const hasImage = Boolean(tour.imageUrl);
+          const hasTitle = Boolean(tour.title && tour.title.trim());
+          return hasPrice && hasImage && hasTitle;
+        });
+        setTours(validTours);
       })
       .catch((err) => {
         if (controller.signal.aborted) return;

@@ -35,7 +35,9 @@
     "signout": "Sign Out",
     "mypage": "My Page",
     "cart": "Cart",
-    "wishlist": "Wishlist"
+    "wishlist": "Wishlist",
+    "whyAtoc": "Why AtoC",
+    "support": "Support"
   },
   "tour": {
     "title": "Tours",
@@ -81,6 +83,14 @@
     "freeCancellation": "Free cancellation up to 24 hours",
     "instantConfirmation": "Instant confirmation",
     "customerSupport": "24/7 customer support",
+    "platformCompare": {
+      "title": "Same tour on other platforms",
+      "subtitle": "Same operator. Same itinerary. Compare prices anytime.",
+      "cta": "Compare on {platform}",
+      "fromUsd": "from ${price}",
+      "lastChecked": "Last checked: {date}",
+      "directNote": "Book direct here for our operations team support and flexible adjustments."
+    },
     "backToTours": "Back to Tours",
     "tourNotFound": "Tour not found",
     "tickets": "Tickets",
@@ -844,9 +854,9 @@
       "hero": {
         "glassBrandPill": "KOREA DAY TOUR FINDER",
         "matchEyebrow": "",
-        "headlineLine1": "Find Your Best-Fit Korea Day Tour",
+        "headlineLine1": "Korea tours, matched to the way you travel.",
         "headlineLine2": "",
-        "atfHeroSubhead": "Korea's most-proven day tours, curated and matched to your style.",
+        "atfHeroSubhead": "Hand-picked by our team. Compare anytime.",
         "intentInputAria": "Your trip preferences in one line",
         "matchSubtitle": "Tell us your style. We’ll match the right destination, tour type, and plan.",
         "destinationSectionTitle": "Destination",
@@ -1045,11 +1055,15 @@
         "hero": {
           "plannerTitle": "Tell us what matters to you",
           "preCtaLine": "Compare small group, private, and bus options next.",
+          "smartMatchMicrocopy": "No sign-up required · About 30 seconds",
+          "matcherEyebrow": "ATOC ONLY",
+          "matcherHeadline": "Korea tour matching, not keyword search.",
+          "matcherSubline": "Search boxes only match keywords. We listen to what you like.",
           "trustMatched": "Matched to you",
           "trustPickup": "Clear pickup",
           "trustCompare": "Compare all types",
           "licensedTrustStrip": "Verified local tour operators · Free cancellation up to 24h · Hotel pickup included",
-          "credentialKto": "KTO-Licensed Operators",
+          "credentialKto": "Verified Local Operators",
           "credentialExperience": "10+ Years Curating Korea",
           "credentialSupport": "Multilingual care · AI to human"
         },
@@ -1089,22 +1103,22 @@
           "subtitle": "Each city showcases only operators we vet in person, on location.",
           "seoul": {
             "name": "Seoul",
-            "tagline": "Palaces, K-culture, and night markets",
+            "tagline": "Palaces, K-culture, food markets, night views",
             "alt": "Seoul cityscape with palaces and modern skyline"
           },
           "busan": {
             "name": "Busan",
-            "tagline": "Beaches, seafood, and coastal vistas",
+            "tagline": "Beaches, seafood, hillside villages, coastal scenery",
             "alt": "Busan coast with beaches and city skyline"
           },
           "jeju": {
             "name": "Jeju",
-            "tagline": "Volcanic coast, UNESCO sites, and Hallasan",
+            "tagline": "Volcanic coast, UNESCO sites, scenic drives, nature",
             "alt": "Jeju Island volcanic coast and natural scenery"
           }
         },
         "featuredProducts": {
-          "eyebrow": "TRENDING NOW · UPDATED DAILY",
+          "eyebrow": "MOST LOVED · UPDATED WEEKLY",
           "title": "Most",
           "titleAccent": "loved this week",
           "subtitle": "Real bookings, fresh weekly — hand-picked by our Korea-inbound team.",
@@ -1113,29 +1127,29 @@
         },
         "whyAtockorea": {
           "eyebrow": "BUILT FOR INTERNATIONAL VISITORS",
-          "title": "Why Korea travelers",
-          "titleAccent": "choose us",
-          "subtitle": "Not a marketplace — a curated platform. Every tour verified. Every match earned.",
-          "tagline": "Stop searching. Start matching.",
+          "title": "We don't hide.",
+          "titleAccent": "We compare.",
+          "subtitle": "Same tours, listed on major platforms. We chose the operators, validated by years of real bookings, and offer them with direct support and flexible adjustments.",
+          "tagline": "Same tour. Same operator. Transparent prices.",
           "pillar1": {
-            "title": "passes our audit",
-            "titleAccent": "Every tour",
-            "body": "We vet every operator. No pay-to-list, no self-submissions — 4.9★ across 100K+ bookings shows it."
+            "title": "by our team",
+            "titleAccent": "Hand-picked",
+            "body": "Every operator is chosen by our Korea team — no pay-to-list, no self-submissions."
           },
           "pillar2": {
-            "title": "not to advertisers",
-            "titleAccent": "Matched to you,",
-            "body": "Tell us your style. Our AI scores tours against your input and surfaces the strongest fit first."
+            "title": "on Klook, GetYourGuide, Viator",
+            "titleAccent": "Validated",
+            "body": "Same tours, listed on major global platforms — proven by years of real bookings."
           },
           "pillar3": {
-            "title": "Direct.",
-            "titleAccent": "100% KTO-licensed.",
-            "body": "Every agency holds Korea's official tourism license. We partner direct — no reseller, no markup."
+            "title": "real humans 9–9",
+            "titleAccent": "Direct support,",
+            "body": "AI concierge 24/7. When AI can't decide, a real person steps in (9 AM–9 PM KST)."
           },
           "pillar4": {
-            "title": "fast",
-            "titleAccent": "Real support,",
-            "body": "AI answers instantly. Our team handles the complex — multilingual, no ticket queue."
+            "title": "anytime",
+            "titleAccent": "Compare prices",
+            "body": "We link you to the same tour on other platforms. We don't hide — we welcome comparison."
           }
         },
         "chooseStyle": {
@@ -1144,7 +1158,7 @@
           "subtitle": "We recommend small group for most travelers, with private and traditional bus as strong alternatives depending on your priorities.",
           "recommended": "RECOMMENDED",
           "smallGroupTitle": "Small Group Tour",
-          "smallGroupDesc": "Ideal for travelers seeking a smoother pace, fewer crowds, and a more personal experience.",
+          "smallGroupDesc": "For couples, solo travelers, and those who want a relaxed pace.",
           "from": "From",
           "perPerson": "per person",
           "sgFeature1": "Comfortable pacing",
@@ -1155,15 +1169,15 @@
           "privateTitle": "Private Tour",
           "privatePerVehicle": "/vehicle",
           "perPersonShort": "/person",
-          "privateDesc": "Perfect for families or groups who want a dedicated vehicle and flexible pacing.",
+          "privateDesc": "For families, parents, and groups who want a dedicated vehicle and flexible pacing.",
           "privateF1": "Dedicated vehicle",
           "privateF2": "Flexible pacing",
           "privateF3": "Private comfort",
           "privateCta": "Explore private tours",
-          "busBadge": "TRUSTED CLASSIC",
+          "busBadge": "BEST VALUE",
           "busTitle": "Traditional Bus Tour",
           "busPerPerson": "/person",
-          "busDesc": "Dependable routes with clear structure and strong value — a smart choice for straightforward sightseeing.",
+          "busDesc": "For first-time visitors who want a clear route at a fair price.",
           "busF1": "Proven route",
           "busF2": "Structured day",
           "busF3": "Easy value",
@@ -1176,14 +1190,14 @@
           "step1Title": "Tell us your style",
           "step1Body": "Destination, pace, must-sees, who you're with — done in under a minute.",
           "step2Label": "Step 2",
-          "step2Title": "We score the options",
-          "step2Body": "Our AI ranks every verified tour against your input. Best fit comes first.",
+          "step2Title": "We compare the options",
+          "step2Body": "Our team and matching system compare verified tours against your input — best fit comes first.",
           "step3Label": "Step 3",
           "step3Title": "Review, compare, decide",
           "step3Body": "Pricing, inclusions, real reviews — all in one place, no tab-switching.",
           "step4Label": "Step 4",
           "step4Title": "Book direct",
-          "step4Body": "Straight to the licensed agency. No middleman, no markup — 100K+ bookings of proof.",
+          "step4Body": "Book direct with a registered local operator. Secure payment and personal follow-up from our team.",
           "trustPanelTitle": "Why travelers feel more confident here",
           "trust1Title": "Fewer wrong turns",
           "trust1Body": "Too many choices can make the wrong one easier to pick. We shortlist tours with proven track records.",
@@ -1232,14 +1246,14 @@
           "reviewCardStarsAria": "{rating} out of 5 stars"
         },
         "finalCtaBlock": {
-          "title": "Ready to plan your Korea trip the smarter way?",
-          "subtitle": "Start with your preferences and discover the tour style that fits you best.",
+          "title": "Start with your style. Find your Korea tour — compare anytime.",
+          "subtitle": "Hand-picked operators, transparent prices, real human support.",
           "trust1RatedParam": "{rating} rated",
-          "trust1Fallback": "Guest-loved experiences",
-          "trust2": "Free cancellation",
-          "trust3": "24hr response",
-          "trust4": "Deposit only",
-          "primaryCta": "Plan a custom private tour",
+          "trust1Fallback": "Verified tours",
+          "trust2": "Free cancellation when available",
+          "trust3": "Operations team support",
+          "trust4": "Listed on Klook · GetYourGuide · Viator",
+          "primaryCta": "Plan your custom tour",
           "secondaryCta": "Browse all tour styles",
           "orDivider": "or"
         }

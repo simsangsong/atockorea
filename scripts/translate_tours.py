@@ -218,7 +218,11 @@ _PRICE_CLEAR = {
 def log(msg: str, level: str = "INFO"):
     ts   = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     line = f"[{ts}] [{level}] {msg}"
-    print(line, flush=True)
+    try:
+        print(line, flush=True)
+    except UnicodeEncodeError:
+        sys.stdout.buffer.write((line + "\n").encode("utf-8", errors="replace"))
+        sys.stdout.buffer.flush()
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(line + "\n")
 

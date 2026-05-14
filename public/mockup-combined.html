@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AtoC — Combined Mockup</title>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: linear-gradient(135deg, #d0d8e4, #e8edf5); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+  ::-webkit-scrollbar { display: none; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useRef, useEffect } = React;
+
+/* ─── DATA ────────────────────────────────────────── */
+const TOURS = {
+  jeju: [
+    { id:1, title:"Jeju Eastern UNESCO Spots", type:"Small Group", price:58, rating:4.9, reviews:1148, badge:"BEST SELLER", img:"🌋" },
+    { id:2, title:"East Volcano, Coast & Folk Village", type:"Small Group", price:69, rating:4.8, reviews:127, badge:"FIRST-TIME", img:"🌊" },
+    { id:3, title:"SW Halla, Aewol & Olle Trail", type:"Small Group", price:58, rating:4.8, reviews:94, badge:"SCENIC", img:"🏔️" },
+    { id:4, title:"Jeju Private Family Charter", type:"Private", price:229, rating:5.0, reviews:87, badge:"PRIVATE", img:"🚐" },
+    { id:5, title:"Hamdeok Beach & Sunrise", type:"Small Group", price:49, rating:4.7, reviews:203, badge:"MORNING", img:"🌅" },
+  ],
+  busan: [
+    { id:6, title:"Small-Group Tour for Cruise", type:"Small Group", price:58, rating:4.9, reviews:32, badge:"CRUISE", img:"⚓" },
+    { id:7, title:"Busan → Gyeongju UNESCO Legacy", type:"Bus Tour", price:65, rating:4.8, reviews:58, badge:"UNESCO", img:"🏛️" },
+    { id:8, title:"Busan Top Attractions Small Group", type:"Small Group", price:55, rating:4.7, reviews:41, badge:"NEW", img:"🎨" },
+    { id:9, title:"Seafood Market & Temple", type:"Small Group", price:75, rating:4.9, reviews:193, badge:"FOOD", img:"🦞" },
+  ],
+  seoul: [
+    { id:10, title:"Pocheon: Lake, Herb Island & Art", type:"Small Group", price:55, rating:4.8, reviews:76, badge:"NATURE", img:"🌿" },
+    { id:11, title:"Seoul Day Tour for Cruise Guests", type:"Small Group", price:69, rating:4.7, reviews:29, badge:"CRUISE", img:"🏯" },
+    { id:12, title:"Incheon → Seoul Shore Excursion", type:"Small Group", price:75, rating:4.8, reviews:18, badge:"NEW", img:"🚢" },
+  ],
+};
+
+const ALL_TOURS = [...TOURS.jeju, ...TOURS.busan, ...TOURS.seoul];
+
+const SEASONS = [
+  { label:"여름 특가", icon:"☀️", color:"#FF6B35" },
+  { label:"야경 투어", icon:"🌃", color:"#4A3F8F" },
+  { label:"미식 투어", icon:"🍱", color:"#E85D4A" },
+  { label:"커플 추천", icon:"💕", color:"#D4548A" },
+  { label:"아이와 함께", icon:"🧒", color:"#3B9E77" },
+  { label:"비 와도 OK", icon:"🌧️", color:"#4A90D9" },
+];
+
+const DEST_TABS = [
+  { id:"all", label:"전체", count:12 },
+  { id:"jeju", label:"🌋 Jeju", count:5 },
+  { id:"busan", label:"⚓ Busan", count:4 },
+  { id:"seoul", label:"🏯 Seoul", count:3 },
+];
+
+const STYLE_TAGS = ["First time", "Scenic", "Nature + café", "Family", "Rain safer", "With parents", "Less walking", "Private", "Food lover", "Night tour", "K-pop fan", "History buff"];
+
+/* ─── COMPONENTS ──────────────────────────────────── */
+
+function TourCard({ tour }) {
+  const [liked, setLiked] = useState(false);
+  return (
+    <div style={{ minWidth:188, background:"#fff", borderRadius:18, overflow:"hidden", boxShadow:"0 2px 16px rgba(0,0,0,0.09)", flexShrink:0, position:"relative" }}>
+      <div style={{ height:108, background:"linear-gradient(135deg,#0d2b35,#0d5c63)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:42, position:"relative" }}>
+        {tour.img}
+        <button onClick={()=>setLiked(!liked)} style={{ position:"absolute", top:9, right:9, background:"rgba(255,255,255,0.92)", border:"none", borderRadius:"50%", width:30, height:30, cursor:"pointer", fontSize:14, display:"flex", alignItems:"center", justifyContent:"center", boxShadow:"0 1px 6px rgba(0,0,0,0.15)" }}>
+          {liked ? "❤️" : "🤍"}
+        </button>
+        <span style={{ position:"absolute", bottom:9, left:9, background:"rgba(0,0,0,0.55)", color:"#fff", fontSize:9, padding:"2px 8px", borderRadius:10, fontFamily:"'DM Sans',sans-serif", fontWeight:600, letterSpacing:0.5 }}>{tour.type.toUpperCase()}</span>
+        <span style={{ position:"absolute", top:9, left:9, background:"#1a8a7a", color:"#fff", fontSize:8, padding:"2px 7px", borderRadius:10, fontFamily:"'DM Sans',sans-serif", fontWeight:700, letterSpacing:0.8 }}>{tour.badge}</span>
+      </div>
+      <div style={{ padding:"10px 13px 13px" }}>
+        <p style={{ margin:0, fontFamily:"'Fraunces',serif", fontWeight:600, fontSize:12.5, color:"#1a1a2e", lineHeight:1.35, minHeight:34 }}>{tour.title}</p>
+        <div style={{ display:"flex", alignItems:"center", gap:4, marginTop:5 }}>
+          <span style={{ color:"#f5a623", fontSize:11 }}>★</span>
+          <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, color:"#555", fontWeight:500 }}>{tour.rating} <span style={{color:"#aaa"}}>({tour.reviews})</span></span>
+        </div>
+        <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginTop:6 }}>
+          <p style={{ margin:0, fontFamily:"'DM Sans',sans-serif", fontWeight:800, fontSize:14, color:"#0d5c63" }}>from ${tour.price}</p>
+          <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, color:"#999" }}>/person</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SeeAllCard({ city, count, onClick }) {
+  return (
+    <div onClick={onClick} style={{ minWidth:100, borderRadius:18, border:"2px dashed #d0d5de", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:8, cursor:"pointer", flexShrink:0, padding:"0 16px" }}>
+      <div style={{ width:40, height:40, borderRadius:"50%", background:"#f0f9f8", display:"flex", alignItems:"center", justifyContent:"center", fontSize:18 }}>→</div>
+      <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, color:"#888", textAlign:"center", fontWeight:600, lineHeight:1.4 }}>전체 보기<br/><span style={{color:"#0d5c63"}}>{count}개</span></span>
+    </div>
+  );
+}
+
+function HScroll({ children, px=20 }) {
+  return (
+    <div style={{ display:"flex", gap:12, overflowX:"auto", paddingLeft:px, paddingRight:px, paddingBottom:4 }}>
+      {children}
+    </div>
+  );
+}
+
+function SectionHeader({ icon, title, sub, count, onSeeAll }) {
+  return (
+    <div style={{ display:"flex", alignItems:"flex-end", justifyContent:"space-between", padding:"0 20px", marginBottom:13 }}>
+      <div>
+        <p style={{ margin:0, fontFamily:"'DM Sans',sans-serif", fontSize:10.5, color:"#0d5c63", fontWeight:700, letterSpacing:1, textTransform:"uppercase" }}>{sub}</p>
+        <h2 style={{ margin:"1px 0 0", fontFamily:"'Fraunces',serif", fontSize:21, color:"#1a1a2e", fontWeight:700 }}>{icon} {title}</h2>
+      </div>
+      {onSeeAll && (
+        <button onClick={onSeeAll} style={{ background:"none", border:"1.5px solid #0d5c63", color:"#0d5c63", fontSize:10.5, fontFamily:"'DM Sans',sans-serif", fontWeight:700, padding:"4px 13px", borderRadius:20, cursor:"pointer" }}>
+          전체 보기 →
+        </button>
+      )}
+    </div>
+  );
+}
+
+/* ─── TABS ─────────────────────────────────────────── */
+
+function HomeTab({ onNav }) {
+  const [destTab, setDestTab] = useState("all");
+
+  const visible = {
+    jeju:  destTab === "all" || destTab === "jeju",
+    busan: destTab === "all" || destTab === "busan",
+    seoul: destTab === "all" || destTab === "seoul",
+  };
+
+  return (
+    <div style={{ overflowY:"auto", height:"100%", paddingBottom:80 }}>
+
+      {/* HERO */}
+      <div style={{ background:"linear-gradient(160deg,#0d2b35 0%,#0d5c63 55%,#1a8a7a 100%)", padding:"26px 20px 28px", position:"relative", overflow:"hidden" }}>
+        <div style={{ position:"absolute", top:-40, right:-30, width:220, height:220, borderRadius:"50%", background:"rgba(255,255,255,0.035)" }} />
+        <div style={{ position:"absolute", bottom:-50, left:-40, width:180, height:180, borderRadius:"50%", background:"rgba(255,255,255,0.025)" }} />
+
+        <p style={{ margin:"0 0 5px", fontFamily:"'DM Sans',sans-serif", fontSize:10.5, color:"rgba(255,255,255,0.55)", letterSpacing:2.5, textTransform:"uppercase" }}>Korea Day Tours</p>
+        <h1 style={{ margin:"0 0 4px", fontFamily:"'Fraunces',serif", fontStyle:"italic", fontSize:30, color:"#fff", lineHeight:1.18, fontWeight:400 }}>
+          Find Your<br/>
+          <span style={{ fontStyle:"normal", fontWeight:700 }}>Perfect Match</span>
+        </h1>
+        <p style={{ margin:"0 0 20px", fontFamily:"'DM Sans',sans-serif", fontSize:12.5, color:"rgba(255,255,255,0.7)", lineHeight:1.55 }}>Jeju · Busan · Seoul<br/>KTO-Licensed operators only</p>
+
+        {/* AI CTA card */}
+        <button onClick={()=>onNav("match")} style={{ display:"flex", alignItems:"center", gap:12, background:"#fff", border:"none", borderRadius:16, padding:"14px 18px", width:"100%", cursor:"pointer", boxShadow:"0 6px 24px rgba(0,0,0,0.22)", textAlign:"left" }}>
+          <div style={{ width:42, height:42, borderRadius:12, background:"linear-gradient(135deg,#0d5c63,#1a8a7a)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:20, flexShrink:0 }}>✨</div>
+          <div style={{ flex:1 }}>
+            <p style={{ margin:0, fontFamily:"'Fraunces',serif", fontSize:14.5, fontWeight:700, color:"#0d2b35" }}>AI 투어 매칭 시작하기</p>
+            <p style={{ margin:"2px 0 0", fontFamily:"'DM Sans',sans-serif", fontSize:11, color:"#888" }}>목적지 + 한 줄 설명 → 3초 안에 매칭</p>
+          </div>
+          <span style={{ fontSize:18, color:"#0d5c63", fontWeight:700 }}>→</span>
+        </button>
+
+        {/* Trust strip */}
+        <div style={{ display:"flex", gap:14, marginTop:16, flexWrap:"wrap" }}>
+          {["✓ KTO 인증","✓ 영어 가이드","✓ 소그룹","✓ 출발 보장"].map(t=>(
+            <span key={t} style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10.5, color:"rgba(255,255,255,0.65)", fontWeight:500 }}>{t}</span>
+          ))}
+        </div>
+      </div>
+
+      {/* DEST FILTER TABS */}
+      <div style={{ background:"#fff", borderBottom:"1px solid #eff0f3", paddingTop:2 }}>
+        <div style={{ display:"flex", overflowX:"auto", padding:"0 16px" }}>
+          {DEST_TABS.map(tab=>(
+            <button key={tab.id} onClick={()=>setDestTab(tab.id)} style={{
+              flexShrink:0, padding:"12px 14px 11px", background:"none", border:"none", cursor:"pointer",
+              fontFamily:"'DM Sans',sans-serif", fontSize:12.5, fontWeight: destTab===tab.id ? 700 : 500,
+              color: destTab===tab.id ? "#0d5c63" : "#888",
+              borderBottom: destTab===tab.id ? "2.5px solid #0d5c63" : "2.5px solid transparent",
+              transition:"all 0.15s",
+            }}>
+              {tab.label} <span style={{ fontSize:10, color: destTab===tab.id ? "#0d5c63" : "#bbb" }}>{tab.count}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* TOUR STRIPS */}
+      <div style={{ paddingTop:28 }}>
+
+        {visible.jeju && (
+          <div style={{ marginBottom:28 }}>
+            <SectionHeader icon="🌋" title="제주도" sub="Volcanic Coast · UNESCO" onSeeAll={()=>{}} />
+            <HScroll>
+              {TOURS.jeju.map(t=><TourCard key={t.id} tour={t}/>)}
+              <SeeAllCard city="jeju" count={10} onClick={()=>{}}/>
+            </HScroll>
+          </div>
+        )}
+
+        {visible.busan && (
+          <div style={{ marginBottom:28 }}>
+            <SectionHeader icon="⚓" title="부산" sub="Coastal City · Temples · Seafood" onSeeAll={()=>{}} />
+            <HScroll>
+              {TOURS.busan.map(t=><TourCard key={t.id} tour={t}/>)}
+              <SeeAllCard city="busan" count={5} onClick={()=>{}}/>
+            </HScroll>
+          </div>
+        )}
+
+        {visible.seoul && (
+          <div style={{ marginBottom:28 }}>
+            <SectionHeader icon="🏯" title="서울 & 근교" sub="Palaces · K-Culture · Day Trips" onSeeAll={()=>{}} />
+            <HScroll>
+              {TOURS.seoul.map(t=><TourCard key={t.id} tour={t}/>)}
+              <SeeAllCard city="seoul" count={3} onClick={()=>{}}/>
+            </HScroll>
+          </div>
+        )}
+      </div>
+
+      {/* SEASON CHIPS */}
+      <div style={{ marginBottom:28 }}>
+        <div style={{ padding:"0 20px 13px" }}>
+          <p style={{ margin:0, fontFamily:"'DM Sans',sans-serif", fontSize:10.5, color:"#0d5c63", fontWeight:700, letterSpacing:1, textTransform:"uppercase" }}>By Season & Mood</p>
+          <h2 style={{ margin:"1px 0 0", fontFamily:"'Fraunces',serif", fontSize:21, color:"#1a1a2e", fontWeight:700 }}>시즌 & 테마</h2>
+        </div>
+        <HScroll>
+          {SEASONS.map(s=>(
+            <div key={s.label} style={{ minWidth:96, height:88, borderRadius:18, flexShrink:0, background:s.color, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:6, cursor:"pointer", boxShadow:`0 4px 16px ${s.color}55` }}>
+              <span style={{ fontSize:26 }}>{s.icon}</span>
+              <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10.5, fontWeight:700, color:"#fff", textAlign:"center", lineHeight:1.2 }}>{s.label}</span>
+            </div>
+          ))}
+        </HScroll>
+      </div>
+
+      {/* WHY ATOC — compact 4-col */}
+      <div style={{ margin:"0 16px 12px", background:"linear-gradient(135deg,#f8f9fb,#f0f4f8)", borderRadius:20, padding:"18px 16px" }}>
+        <p style={{ margin:"0 0 14px", fontFamily:"'Fraunces',serif", fontSize:16, fontWeight:700, color:"#1a1a2e", textAlign:"center" }}>왜 AtoC Korea인가요?</p>
+        <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr 1fr", gap:8 }}>
+          {[
+            { icon:"🏅", label:"KTO 인증", sub:"공식 면허" },
+            { icon:"✨", label:"AI 매칭", sub:"3초 추천" },
+            { icon:"🌐", label:"다국어", sub:"EN·KO·ZH·JA" },
+            { icon:"✅", label:"출발 보장", sub:"취소 없음" },
+          ].map(w=>(
+            <div key={w.label} style={{ textAlign:"center" }}>
+              <div style={{ fontSize:24, marginBottom:4 }}>{w.icon}</div>
+              <p style={{ margin:0, fontFamily:"'DM Sans',sans-serif", fontSize:10.5, fontWeight:700, color:"#1a1a2e" }}>{w.label}</p>
+              <p style={{ margin:"1px 0 0", fontFamily:"'DM Sans',sans-serif", fontSize:9.5, color:"#888" }}>{w.sub}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  );
+}
+
+function MatchTab() {
+  const [dests, setDests] = useState([]);
+  const [tags, setTags] = useState([]);
+  const toggle = (arr, setArr, v) => setArr(p => p.includes(v) ? p.filter(x=>x!==v) : [...p,v]);
+
+  return (
+    <div style={{ overflowY:"auto", height:"100%", paddingBottom:80 }}>
+
+      {/* Header */}
+      <div style={{ padding:"24px 20px 0" }}>
+        <p style={{ margin:"0 0 3px", fontFamily:"'DM Sans',sans-serif", fontSize:10.5, color:"#0d5c63", fontWeight:700, letterSpacing:1, textTransform:"uppercase" }}>AI Matching</p>
+        <h2 style={{ margin:"0 0 6px", fontFamily:"'Fraunces',serif", fontSize:25, color:"#1a1a2e", fontWeight:700, lineHeight:1.2 }}>어떤 투어를<br/>찾으세요?</h2>
+        <p style={{ margin:"0 0 24px", fontFamily:"'DM Sans',sans-serif", fontSize:12.5, color:"#777", lineHeight:1.6 }}>목적지와 스타일을 선택하면<br/>AI가 최적 투어를 매칭해드려요.</p>
+      </div>
+
+      <div style={{ padding:"0 20px" }}>
+        {/* Dest */}
+        <p style={{ margin:"0 0 10px", fontFamily:"'DM Sans',sans-serif", fontSize:13, fontWeight:700, color:"#1a1a2e" }}>📍 목적지</p>
+        <div style={{ display:"flex", gap:8, marginBottom:22 }}>
+          {["🌋 Jeju","⚓ Busan","🏯 Seoul"].map(d=>{
+            const active = dests.includes(d);
+            return (
+              <button key={d} onClick={()=>toggle(dests,setDests,d)} style={{
+                flex:1, padding:"12px 0", borderRadius:14,
+                border: active ? "2px solid #0d5c63" : "2px solid #e5e7eb",
+                background: active ? "#f0faf9" : "#fff",
+                color: active ? "#0d5c63" : "#666",
+                fontFamily:"'DM Sans',sans-serif", fontSize:12.5, fontWeight:700, cursor:"pointer",
+              }}>{d}</button>
+            );
+          })}
+        </div>
+
+        {/* Style tags */}
+        <p style={{ margin:"0 0 10px", fontFamily:"'DM Sans',sans-serif", fontSize:13, fontWeight:700, color:"#1a1a2e" }}>🏷️ 여행 스타일</p>
+        <div style={{ display:"flex", flexWrap:"wrap", gap:8, marginBottom:26 }}>
+          {STYLE_TAGS.map(t=>{
+            const active = tags.includes(t);
+            return (
+              <button key={t} onClick={()=>toggle(tags,setTags,t)} style={{
+                padding:"7px 15px", borderRadius:22,
+                border: active ? "2px solid #0d5c63" : "2px solid #e8eaf0",
+                background: active ? "#0d5c63" : "#fff",
+                color: active ? "#fff" : "#555",
+                fontFamily:"'DM Sans',sans-serif", fontSize:12, fontWeight:500, cursor:"pointer",
+              }}>{t}</button>
+            );
+          })}
+        </div>
+
+        <button disabled={dests.length===0} style={{
+          width:"100%", padding:"16px",
+          background: dests.length>0 ? "linear-gradient(135deg,#0d5c63,#1a8a7a)" : "#e8eaf0",
+          color: dests.length>0 ? "#fff" : "#aaa",
+          border:"none", borderRadius:16,
+          fontFamily:"'DM Sans',sans-serif", fontSize:15, fontWeight:800, cursor: dests.length>0 ? "pointer" : "default",
+          boxShadow: dests.length>0 ? "0 4px 20px rgba(13,92,99,0.35)" : "none",
+        }}>
+          {dests.length>0 ? `✨ ${dests.map(d=>d.split(" ")[1]).join(" · ")} 매칭 시작 →` : "목적지를 선택해주세요"}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function CartTab() {
+  const items = [
+    { title:"Jeju Eastern UNESCO Spots Day Tour", date:"2025.08.15 (목)", guests:"2 adults", price:116, img:"🌋" },
+    { title:"Busan Small-Group Tour for Cruise Passengers", date:"2025.08.18 (일)", guests:"2 adults · 1 child", price:174, img:"⚓" },
+  ];
+
+  return (
+    <div style={{ overflowY:"auto", height:"100%", paddingBottom:80 }}>
+      <div style={{ padding:"24px 20px 16px" }}>
+        <p style={{ margin:"0 0 3px", fontFamily:"'DM Sans',sans-serif", fontSize:10.5, color:"#0d5c63", fontWeight:700, letterSpacing:1, textTransform:"uppercase" }}>My Cart</p>
+        <h2 style={{ margin:0, fontFamily:"'Fraunces',serif", fontSize:25, color:"#1a1a2e", fontWeight:700 }}>장바구니 <span style={{ fontSize:14, fontWeight:500, color:"#888" }}>2 items</span></h2>
+      </div>
+
+      <div style={{ padding:"0 20px" }}>
+        {items.map((item,i)=>(
+          <div key={i} style={{ background:"#fff", borderRadius:18, marginBottom:12, overflow:"hidden", boxShadow:"0 2px 14px rgba(0,0,0,0.07)" }}>
+            <div style={{ height:70, background:"linear-gradient(135deg,#0d2b35,#0d5c63)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:36 }}>{item.img}</div>
+            <div style={{ padding:"12px 16px 16px" }}>
+              <p style={{ margin:"0 0 6px", fontFamily:"'Fraunces',serif", fontSize:13, fontWeight:700, color:"#1a1a2e", lineHeight:1.3 }}>{item.title}</p>
+              <p style={{ margin:"0 0 2px", fontFamily:"'DM Sans',sans-serif", fontSize:11.5, color:"#777" }}>📅 {item.date}</p>
+              <p style={{ margin:"0 0 10px", fontFamily:"'DM Sans',sans-serif", fontSize:11.5, color:"#777" }}>👤 {item.guests}</p>
+              <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center" }}>
+                <p style={{ margin:0, fontFamily:"'DM Sans',sans-serif", fontWeight:800, fontSize:16, color:"#0d5c63" }}>${item.price}</p>
+                <button style={{ background:"#fff0ef", color:"#e85d4a", border:"none", borderRadius:10, padding:"6px 14px", fontFamily:"'DM Sans',sans-serif", fontSize:11.5, fontWeight:700, cursor:"pointer" }}>삭제</button>
+              </div>
+            </div>
+          </div>
+        ))}
+
+        <div style={{ background:"#f8f9fb", borderRadius:16, padding:"14px 18px", marginBottom:16 }}>
+          <div style={{ display:"flex", justifyContent:"space-between", marginBottom:6 }}>
+            <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:12.5, color:"#666" }}>소계</span>
+            <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:12.5, color:"#333", fontWeight:600 }}>$290</span>
+          </div>
+          <div style={{ display:"flex", justifyContent:"space-between" }}>
+            <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:12.5, color:"#666" }}>수수료</span>
+            <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:12.5, color:"#0d5c63", fontWeight:600 }}>무료</span>
+          </div>
+        </div>
+
+        <button style={{
+          width:"100%", padding:"16px",
+          background:"linear-gradient(135deg,#0d5c63,#1a8a7a)",
+          color:"#fff", border:"none", borderRadius:16,
+          fontFamily:"'DM Sans',sans-serif", fontSize:15, fontWeight:800, cursor:"pointer",
+          boxShadow:"0 4px 20px rgba(13,92,99,0.35)",
+        }}>예약 진행하기 · $290 →</button>
+      </div>
+    </div>
+  );
+}
+
+function MyPageTab() {
+  return (
+    <div style={{ overflowY:"auto", height:"100%", paddingBottom:80 }}>
+      <div style={{ margin:"20px 20px 16px", background:"linear-gradient(135deg,#0d2b35,#0d5c63)", borderRadius:20, padding:"22px 20px", display:"flex", alignItems:"center", gap:16 }}>
+        <div style={{ width:54, height:54, borderRadius:"50%", background:"rgba(255,255,255,0.18)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:24 }}>👤</div>
+        <div>
+          <p style={{ margin:0, fontFamily:"'Fraunces',serif", fontSize:17, color:"#fff", fontWeight:700 }}>로그인 / 회원가입</p>
+          <p style={{ margin:"3px 0 0", fontFamily:"'DM Sans',sans-serif", fontSize:11.5, color:"rgba(255,255,255,0.65)" }}>예약 내역, 위시리스트, 리뷰 관리</p>
+        </div>
+      </div>
+
+      <div style={{ padding:"0 20px" }}>
+        {[
+          { icon:"📋", label:"내 예약 내역", sub:"Booking history" },
+          { icon:"❤️", label:"위시리스트", sub:"Saved tours" },
+          { icon:"⭐", label:"내 리뷰", sub:"My reviews" },
+          { icon:"💬", label:"문의 내역", sub:"Support tickets" },
+          { icon:"🌐", label:"언어 / 통화", sub:"Language & currency" },
+          { icon:"📞", label:"고객센터", sub:"Help & support" },
+        ].map(item=>(
+          <div key={item.label} style={{ display:"flex", alignItems:"center", gap:14, padding:"14px 0", borderBottom:"1px solid #f0f0f4", cursor:"pointer" }}>
+            <span style={{ fontSize:22, width:32, textAlign:"center" }}>{item.icon}</span>
+            <div style={{ flex:1 }}>
+              <p style={{ margin:0, fontFamily:"'DM Sans',sans-serif", fontSize:13.5, fontWeight:600, color:"#1a1a2e" }}>{item.label}</p>
+              <p style={{ margin:"1px 0 0", fontFamily:"'DM Sans',sans-serif", fontSize:11, color:"#aaa" }}>{item.sub}</p>
+            </div>
+            <span style={{ color:"#d0d5de", fontSize:18 }}>›</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ─── APP SHELL ────────────────────────────────────── */
+
+function App() {
+  const [tab, setTab] = useState("home");
+  const cartCount = 2;
+
+  const isHome = tab === "home";
+
+  const NAV = [
+    { id:"home",   icon:"🏠", label:"홈" },
+    { id:"match",  icon:"✨", label:"AI 매칭" },
+    { id:"cart",   icon:"🛒", label:"장바구니" },
+    { id:"mypage", icon:"👤", label:"마이페이지" },
+  ];
+
+  return (
+    <div style={{ display:"flex", justifyContent:"center", alignItems:"center", minHeight:"100vh" }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+        * { box-sizing:border-box; }
+        ::-webkit-scrollbar { display:none; }
+        button { -webkit-tap-highlight-color:transparent; }
+      `}</style>
+
+      {/* Phone frame */}
+      <div style={{
+        width:390, height:844,
+        background:"#f4f5f8",
+        borderRadius:52,
+        boxShadow:"0 32px 80px rgba(0,0,0,0.38), 0 0 0 10px #1c1c1e, 0 0 0 11px #3a3a3c",
+        overflow:"hidden", display:"flex", flexDirection:"column",
+      }}>
+        {/* Status bar */}
+        <div style={{ background: isHome ? "#0d2b35" : "#fff", height:50, display:"flex", alignItems:"center", justifyContent:"space-between", padding:"0 28px", flexShrink:0, position:"relative" }}>
+          <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:14, fontWeight:700, color: isHome ? "#fff" : "#1a1a2e" }}>9:41</span>
+          <div style={{ width:124, height:30, background:"#1c1c1e", borderRadius:20, position:"absolute", left:"50%", transform:"translateX(-50%)", top:7 }} />
+          <div style={{ display:"flex", gap:5, alignItems:"center" }}>
+            <span style={{ fontSize:12, color: isHome ? "rgba(255,255,255,0.8)" : "#1a1a2e" }}>●●●</span>
+          </div>
+        </div>
+
+        {/* App header */}
+        <div style={{
+          background: isHome ? "#0d2b35" : "#fff",
+          padding:"2px 20px 13px",
+          display:"flex", alignItems:"center", justifyContent:"space-between",
+          flexShrink:0,
+          borderBottom: !isHome ? "1px solid #eff0f3" : "none",
+        }}>
+          <p style={{ margin:0, fontFamily:"'Fraunces',serif", fontSize:21, fontWeight:700, color: isHome ? "#fff" : "#1a1a2e", letterSpacing:"-0.5px" }}>
+            AtoC<span style={{ color:"#1a8a7a" }}>.</span>
+          </p>
+          <div style={{ display:"flex", gap:14, alignItems:"center" }}>
+            <button style={{ background:"none", border:"none", cursor:"pointer", fontFamily:"'DM Sans',sans-serif", fontSize:12, fontWeight:600, color: isHome ? "rgba(255,255,255,0.65)" : "#666", display:"flex", alignItems:"center", gap:4 }}>
+              🇺🇸 <span>EN</span>
+            </button>
+            <button onClick={()=>setTab("cart")} style={{ position:"relative", background:"none", border:"none", cursor:"pointer", padding:0 }}>
+              <span style={{ fontSize:23 }}>🛒</span>
+              <span style={{ position:"absolute", top:-4, right:-5, background:"#e85d4a", color:"#fff", width:18, height:18, borderRadius:"50%", fontSize:10, display:"flex", alignItems:"center", justifyContent:"center", fontFamily:"'DM Sans',sans-serif", fontWeight:800 }}>{cartCount}</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Content area */}
+        <div style={{ flex:1, overflow:"hidden", position:"relative" }}>
+          {tab === "home"   && <HomeTab   onNav={setTab} />}
+          {tab === "match"  && <MatchTab  />}
+          {tab === "cart"   && <CartTab   />}
+          {tab === "mypage" && <MyPageTab />}
+        </div>
+
+        {/* Bottom nav */}
+        <div style={{ background:"#fff", borderTop:"1px solid #eef0f4", display:"flex", paddingBottom:22, flexShrink:0, boxShadow:"0 -6px 24px rgba(0,0,0,0.07)" }}>
+          {NAV.map(n=>{
+            const active = tab === n.id;
+            return (
+              <button key={n.id} onClick={()=>setTab(n.id)} style={{ flex:1, display:"flex", flexDirection:"column", alignItems:"center", gap:3, padding:"10px 0 0", background:"none", border:"none", cursor:"pointer", position:"relative" }}>
+                {active && <div style={{ position:"absolute", top:0, left:"50%", transform:"translateX(-50%)", width:28, height:3, background:"#0d5c63", borderRadius:3 }} />}
+                <span style={{ fontSize:21, filter: active ? "none" : "grayscale(0.9)", opacity: active ? 1 : 0.45 }}>
+                  {n.id === "cart" && cartCount > 0 && !active
+                    ? <span style={{ position:"relative", display:"inline-block" }}>{n.icon}<span style={{ position:"absolute", top:-3, right:-5, background:"#e85d4a", color:"#fff", width:14, height:14, borderRadius:"50%", fontSize:8, display:"flex", alignItems:"center", justifyContent:"center", fontWeight:800 }}>{cartCount}</span></span>
+                    : n.icon}
+                </span>
+                <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:9.5, fontWeight: active ? 800 : 500, color: active ? "#0d5c63" : "#aaa" }}>{n.label}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

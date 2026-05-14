@@ -68,43 +68,61 @@ const heroSlideVariants = {
   exit: (direction: number) => ({ opacity: 0, x: -direction * 24, scale: 1.02 }),
 };
 
+/** Tiered classification of a `**bold**` term's inner text. Locale-agnostic —
+ *  works purely on the term content so all 6 languages get the same hierarchy:
+ *  prices, times, measurements, cautions, and named entities each read distinctly. */
+type TermTier = "price" | "time" | "metric" | "caution" | "keyterm";
+
+const RX_PRICE = /[₩$€¥£]\s?[\d,]|[\d,]+\s?(?:USD|KRW|won|원|円|元)\b/i;
+const RX_TIME = /\b\d{1,2}:\d{2}\b/;
+const RX_METRIC =
+  /\d[\d.,\s/–-]*\s*(?:m²|km²|km|m|ha|hr|hrs|h|min|mins|%|kg|°C|°F|pyeong|평)\b/i;
+/** Cross-locale caution lexicon (en/ko/ja/zh/zh-TW/es): closures, prohibitions,
+ *  advance-booking requirements — the facts a guest must not miss. */
+const RX_CAUTION =
+  /\b(?:closed|prohibited|forbidden|not allowed|no entry|advance (?:booking|permission|reservation)|reservation required|booking required|by reservation only)\b|휴무|금지|불가|입장\s*불가|사전\s*(?:예약|허가|신청)|예약\s*필수|定休|休業|禁止|不可|事前\s*(?:予約|許可|申請)|要予約|立入禁止|休息日|關閉|关闭|謝絕|谢绝|禁止|需\s*提前|cerrado|prohibid[oa]|no se permite|reserva previa|se requiere|solo con reserva/i;
+
+function classifyTerm(inner: string): TermTier {
+  const t = inner.trim();
+  if (RX_PRICE.test(t)) return "price";
+  if (RX_CAUTION.test(t)) return "caution";
+  if (RX_TIME.test(t)) return "time";
+  if (RX_METRIC.test(t)) return "metric";
+  return "keyterm";
+}
+
+/** Premium chip styles per tier — used inside the full-description modal. */
+const TIER_MODAL_CLASS: Record<TermTier, string> = {
+  price:
+    "rounded-[3px] bg-emerald-50/70 px-[3px] py-[0.5px] font-semibold text-emerald-700 ring-1 ring-emerald-600/15 tabular-nums",
+  time: "rounded-[3px] bg-sky-50/70 px-[3px] py-[0.5px] font-semibold text-sky-700 ring-1 ring-sky-600/15 tabular-nums",
+  metric: "rounded-[3px] bg-primary/[0.06] px-[3px] py-[0.5px] font-semibold text-primary tabular-nums",
+  caution:
+    "font-semibold text-amber-800 underline decoration-amber-500/50 decoration-1 underline-offset-[3px]",
+  keyterm: "font-semibold tracking-tight text-foreground",
+};
+
+/** Lighter, color-only styles per tier — used in bullet lists / callouts where
+ *  chip backgrounds would clutter the layout (highlights, whyOnRoute, smart notes). */
+const TIER_INLINE_CLASS: Record<TermTier, string> = {
+  price: "font-semibold text-emerald-700 tabular-nums",
+  time: "font-semibold text-sky-700 tabular-nums",
+  metric: "font-semibold text-primary tabular-nums",
+  caution: "font-semibold text-amber-800",
+  keyterm: "font-semibold text-foreground",
+};
+
 /** Inline `**bold**` → `<strong>` parser. Authors write descriptions/highlights
- *  in light markdown; this turns the markers into typographic emphasis instead
- *  of rendering literal asterisks. */
+ *  in light markdown; this turns the markers into tier-colored typographic
+ *  emphasis instead of rendering literal asterisks. */
 function renderInlineMarkdown(text: string): React.ReactNode[] {
   if (!text) return [];
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
   return parts.map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
-      return (
-        <strong key={i} className="font-semibold text-foreground">
-          {part.slice(2, -2)}
-        </strong>
-      );
-    }
-    return <Fragment key={i}>{part}</Fragment>;
-  });
-}
-
-/** Premium-styled inline markdown for the description modal.
- *  ALL `**bold**` terms get a consistent soft primary-tinted highlight so
- *  key facts, locations, and named entities pop uniformly. */
-function renderModalInline(text: string): React.ReactNode[] {
-  if (!text) return [];
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((part, i) => {
-    if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
       const inner = part.slice(2, -2);
-      const isMeasurement = /^[0-9][\d.,\s/–\-]*\s*(?:m²|m\b|km\b|hr\b|min\b|%|kg|₩|\$|€|¥|°C|°F|pyeong|평)/i.test(inner.trim());
       return (
-        <strong
-          key={i}
-          className={cn(
-            "font-semibold text-foreground",
-            isMeasurement && "tabular-nums",
-            "rounded-[3px] bg-primary/[0.07] px-[3px] py-[0.5px]",
-          )}
-        >
+        <strong key={i} className={TIER_INLINE_CLASS[classifyTerm(inner)]}>
           {inner}
         </strong>
       );
@@ -113,50 +131,175 @@ function renderModalInline(text: string): React.ReactNode[] {
   });
 }
 
-/** Splits the long-form description into readable paragraphs.
- *  Priority: explicit `\n\n` → natural sentence-boundary starters → bold-led
- *  phrase breaks → single block fallback. */
-function splitDescriptionToParagraphs(text: string): string[] {
+/** Premium-styled inline markdown for the description modal. Each `**bold**`
+ *  term is classified into a tier (price / time / metric / caution / key term)
+ *  and styled distinctly. `seen` tracks key terms already shown in this modal so
+ *  repeat mentions render quietly — emphasis without visual noise. */
+function renderModalInline(text: string, seen: Set<string>): React.ReactNode[] {
   if (!text) return [];
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
+      const inner = part.slice(2, -2);
+      const tier = classifyTerm(inner);
+      let className: string = TIER_MODAL_CLASS[tier];
+      if (tier === "keyterm") {
+        const key = inner.trim().toLowerCase().replace(/\s+/g, " ");
+        if (seen.has(key)) {
+          // Repeat mention — keep it emphasized but drop the editorial accent.
+          className = "font-medium text-foreground";
+        } else {
+          seen.add(key);
+          className = cn(className, "border-b-[1.5px] border-primary/30");
+        }
+      }
+      return (
+        <strong key={i} className={className}>
+          {inner}
+        </strong>
+      );
+    }
+    return <Fragment key={i}>{part}</Fragment>;
+  });
+}
 
-  // 1. Explicit paragraph breaks
+/** Sentences-per-paragraph + size targets for the balanced grouper. */
+const PARA_TARGET_WEIGHT = 280;
+const PARA_MAX_SENTENCES = 4;
+const PARA_STARTER_MIN_WEIGHT = 140;
+const PARA_ORPHAN_MIN_WEIGHT = 80;
+
+/** Latin-script "new topic" sentence starters — flushing a paragraph just
+ *  before one of these reproduces the natural editorial rhythm of the copy. */
+const EN_PARA_STARTERS =
+  /^(?:The |This |These |Those |That |Total |Adjacent |An? |Beyond |Admission|Hours|Its |With |Within |In |At |On |Of |For |From |Each |Both |Guests?\b|Visitors?\b|When |Where |While |Nearby |Unlike |Despite |After |Before |During |Here |There |Today|Note|Photography|Parking|Entry|Tickets?\b|Plan |Allow |Wear |Bring |\*\*)/;
+const ES_PARA_STARTERS =
+  /^(?:La |El |Los |Las |Una?\b|Este |Esta |Estos |Estas |Con |En |Para |Por |Desde |Cada |Ambos |Cuando |Donde |Aunque |Después |Antes |Durante |Aquí |Cerca |Además |También |Tenga |Lleve |Reserve |\*\*)/;
+
+/** Per-locale sentence joiner — CJK runs sentences without inter-spacing;
+ *  Latin scripts and Korean keep a single space. */
+function sentenceJoiner(locale: DrawerLocale): string {
+  return locale === "ja" || locale === "zh" || locale === "zh-TW" ? "" : " ";
+}
+
+/** Approximate rendered width — CJK / Kana / Hangul glyphs are wider and denser
+ *  than Latin, so they count for more when balancing paragraph length. */
+function visualWeight(s: string): number {
+  let w = 0;
+  for (const c of s) {
+    w += /[　-〿぀-ヿ㐀-鿿가-힯豈-﫿＀-￯]/.test(c)
+      ? 1.8
+      : 1;
+  }
+  return w;
+}
+
+/** Splits text into sentences across Latin + CJK scripts. Guards: never breaks
+ *  inside a `**bold**` span, never breaks a decimal point (e.g. "1.5 km"). Every
+ *  input character is preserved in exactly one output sentence. */
+function tokenizeSentences(text: string): string[] {
+  const sentences: string[] = [];
+  let buf = "";
+  let inBold = false;
+  let i = 0;
+  while (i < text.length) {
+    const ch = text[i];
+    if (ch === "*" && text[i + 1] === "*") {
+      inBold = !inBold;
+      buf += "**";
+      i += 2;
+      continue;
+    }
+    buf += ch;
+    i += 1;
+    if (inBold) continue;
+    const isAsciiEnd = ch === "." || ch === "!" || ch === "?";
+    const isCjkEnd = ch === "。" || ch === "！" || ch === "？";
+    if (!isAsciiEnd && !isCjkEnd) continue;
+    // Decimal guard: a "." flanked by digits is not a sentence end.
+    if (ch === "." && /\d/.test(text[i - 2] ?? "") && /\d/.test(text[i] ?? "")) continue;
+    // Absorb trailing closing quotes / brackets into this sentence.
+    while (i < text.length && /[)\]"'”』」）]/.test(text[i])) {
+      buf += text[i];
+      i += 1;
+    }
+    // ASCII terminators need trailing whitespace/EOL; CJK terminators stand alone.
+    if (isCjkEnd || i >= text.length || /\s/.test(text[i])) {
+      const trimmed = buf.trim();
+      if (trimmed) sentences.push(trimmed);
+      buf = "";
+    }
+  }
+  const tail = buf.trim();
+  if (tail) sentences.push(tail);
+  return sentences;
+}
+
+/** Groups sentences into balanced, readable paragraphs. Latin scripts flush
+ *  before "new topic" starter sentences for editorial rhythm; all scripts cap
+ *  paragraphs by sentence count and visual weight so nothing becomes a wall. */
+function groupSentences(sentences: string[], locale: DrawerLocale): string[] {
+  if (sentences.length <= 1) return sentences;
+  const joiner = sentenceJoiner(locale);
+  const starters =
+    locale === "es" ? ES_PARA_STARTERS : locale === "en" ? EN_PARA_STARTERS : null;
+
+  const paragraphs: string[] = [];
+  let buf: string[] = [];
+  let weight = 0;
+  for (const sentence of sentences) {
+    if (
+      starters &&
+      buf.length > 0 &&
+      weight >= PARA_STARTER_MIN_WEIGHT &&
+      starters.test(sentence)
+    ) {
+      paragraphs.push(buf.join(joiner));
+      buf = [];
+      weight = 0;
+    }
+    buf.push(sentence);
+    weight += visualWeight(sentence);
+    if (weight >= PARA_TARGET_WEIGHT || buf.length >= PARA_MAX_SENTENCES) {
+      paragraphs.push(buf.join(joiner));
+      buf = [];
+      weight = 0;
+    }
+  }
+  if (buf.length) paragraphs.push(buf.join(joiner));
+
+  // Fold a short orphan tail back into the previous paragraph.
+  if (paragraphs.length >= 2) {
+    const last = paragraphs[paragraphs.length - 1];
+    if (visualWeight(last) < PARA_ORPHAN_MIN_WEIGHT) {
+      paragraphs[paragraphs.length - 2] += joiner + last;
+      paragraphs.pop();
+    }
+  }
+  return paragraphs;
+}
+
+/** Splits the long-form description into readable paragraphs.
+ *  Priority: explicit `\n\n` (authored) → sentence tokenization + balanced
+ *  grouping (works for every locale, including CJK full-width punctuation). */
+function splitDescriptionToParagraphs(text: string, locale: DrawerLocale): string[] {
+  if (!text) return [];
   if (text.includes("\n\n")) {
     return text.split(/\n\n+/).map((s) => s.trim()).filter(Boolean);
   }
-
-  // 2. Split at end-of-sentence before natural new-paragraph starters
-  const byStarter = text
-    .split(
-      /(?<=[\.\!\?])\s+(?=(?:The |This |Total |Adjacent |A[n]? |Beyond |Admission|Hours|Its |With |In |At |On |For |From |Each |Both |Guests?|Visitors?|When |Where |Nearby |Unlike |Despite |After |Before |During |Here |There |\*\*[A-Z]))/g,
-    )
-    .map((s) => s.trim())
-    .filter(Boolean);
-  if (byStarter.length > 1) return byStarter;
-
-  // 3. Bold-led phrase breaks (original fallback)
-  const byBold = text
-    .split(/(?<=\.)\s+(?=\*\*|\(\d+\))/g)
-    .map((s) => s.trim())
-    .filter(Boolean);
-  return byBold.length > 1 ? byBold : [text];
+  const sentences = tokenizeSentences(text);
+  if (sentences.length <= 1) return [text];
+  return groupSentences(sentences, locale);
 }
 
-/** Extracts short bold terms (≤35 chars) from a description for the key-facts
- *  chip strip. Deduplicates and caps at 7 chips. */
-function extractKeyBoldTerms(text: string): string[] {
-  if (!text) return [];
-  const seen = new Set<string>();
-  const result: string[] = [];
-  for (const m of text.matchAll(/\*\*([^*]{2,35})\*\*/g)) {
-    const term = m[1].trim();
-    const key = term.toLowerCase().replace(/\s+/g, " ");
-    if (!seen.has(key)) {
-      seen.add(key);
-      result.push(term);
-    }
-    if (result.length >= 7) break;
-  }
-  return result;
+/** Peels the first sentence off a paragraph for the modal's lead-in treatment. */
+function splitLeadSentence(
+  paragraph: string,
+  locale: DrawerLocale,
+): { lead: string; rest: string } {
+  const sentences = tokenizeSentences(paragraph);
+  if (sentences.length <= 1) return { lead: paragraph, rest: "" };
+  return { lead: sentences[0], rest: sentences.slice(1).join(sentenceJoiner(locale)) };
 }
 
 /** Strip a trailing colon / fullwidth colon / Japanese colon for use as a
@@ -950,43 +1093,49 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                     </button>
                   </div>
 
-                  {/* Key facts chip strip — fixed above scroll area, shown when ≥ 2 chips */}
-                  {(() => {
-                    const chips = extractKeyBoldTerms(stop.description);
-                    if (chips.length < 2) return null;
-                    return (
-                      <div className="flex-shrink-0 border-b border-border/40 bg-[#f8f8fb] px-5 py-3 sm:px-6">
-                        <div className="flex gap-1.5 overflow-x-auto scrollbar-hide pb-0.5">
-                          {chips.map((chip, ci) => (
-                            <span
-                              key={ci}
-                              className="flex-shrink-0 whitespace-nowrap rounded-full bg-primary/[0.08] px-2.5 py-[4.5px] text-[11px] font-medium text-primary/90 ring-1 ring-primary/10"
-                            >
-                              {chip}
-                            </span>
-                          ))}
-                          <span className="flex-shrink-0 w-1" aria-hidden />
-                        </div>
-                      </div>
-                    );
-                  })()}
-
                   {/* Modal body — premium typographic description */}
                   <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain bg-white">
                     <article className="px-5 py-6 sm:px-6 sm:py-8">
-                      {splitDescriptionToParagraphs(stop.description).map((p, i) => (
-                        <p
-                          key={i}
-                          className={cn(
+                      {(() => {
+                        // One `seen` set per modal render: a key term gets the
+                        // editorial accent on first mention, then renders quietly.
+                        const seen = new Set<string>();
+                        const isLatin = locale === "en" || locale === "es";
+                        return splitDescriptionToParagraphs(stop.description, locale).map((p, i) => {
+                          const paragraphClass = cn(
                             "break-words [overflow-wrap:anywhere] hyphens-auto text-foreground/88",
                             i === 0
                               ? "text-[15px] leading-[1.82] tracking-[-0.004em]"
                               : "mt-5 text-[14px] leading-[1.8] tracking-[-0.003em]",
-                          )}
-                        >
-                          {renderModalInline(p)}
-                        </p>
-                      ))}
+                          );
+                          if (i === 0) {
+                            const { lead, rest } = splitLeadSentence(p, locale);
+                            return (
+                              <p key={i} className={paragraphClass}>
+                                <span
+                                  className="text-[15.5px] font-medium text-foreground"
+                                  style={
+                                    isLatin ? { fontFamily: "var(--font-display-serif)" } : undefined
+                                  }
+                                >
+                                  {renderModalInline(lead, seen)}
+                                </span>
+                                {rest ? (
+                                  <>
+                                    {sentenceJoiner(locale)}
+                                    {renderModalInline(rest, seen)}
+                                  </>
+                                ) : null}
+                              </p>
+                            );
+                          }
+                          return (
+                            <p key={i} className={paragraphClass}>
+                              {renderModalInline(p, seen)}
+                            </p>
+                          );
+                        });
+                      })()}
                     </article>
                   </div>
                 </motion.div>

@@ -5,6 +5,28 @@
 
 export type TourCatalogType = "private" | "join" | "bus";
 
+const KNOWN_BUS_TOUR_SLUGS = new Set([
+  "busan-gyeongju-unesco-legacy-tour-national-museum",
+  "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
+  "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
+  "busan-top-attractions-day-tour",
+  "jeju-cruise-shore-excursion-bus-tour",
+  "seoul-seoraksan-national-park-sokcho-beach-day-trip",
+  "seoul-suwon-hwaseong-folk-village-starfield-library",
+  "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+]);
+
+/**
+ * Product detail profiles mark these as `vehicle_type: coach` / `vehicle_type_legacy: bus_coach`.
+ * They are fixed-route join products, but should be surfaced as bus/coach tours rather than
+ * small-group minicoach products.
+ */
+export function isKnownBusTourSlug(slug: string | undefined | null): boolean {
+  const s = (slug ?? "").trim().toLowerCase();
+  if (!s) return false;
+  return KNOWN_BUS_TOUR_SLUGS.has(s);
+}
+
 /**
  * SKUs shipped as curated small-group / join rails (titles vary by locale).
  */
@@ -27,6 +49,19 @@ export function tagIndicatesSmallGroupJoin(tag: string | undefined | null): bool
   const t = (tag ?? "").trim().toLowerCase();
   if (!t) return false;
   return /small\s*group|소그룹|拼团|少人数|grupo\s*pequeño|small-group/i.test(t);
+}
+
+export function titleForCatalogType(title: string, type: TourCatalogType): string {
+  if (type === "join") return title;
+  const cleanTitle = title.replace(/\s*(?:\u00b7|-)?\s*Small[- ]Group(?:\s*Tour)?\s*$/i, "").trim();
+  if (type !== "bus") return cleanTitle || title;
+  if (/\b(?:bus|coach)\b/i.test(cleanTitle)) return cleanTitle;
+  return `${cleanTitle || title} \u00b7 Bus Tour`;
+}
+
+export function tagsForCatalogType(tags: string[], type: TourCatalogType): string[] {
+  if (type === "join") return tags;
+  return tags.filter((tag) => !/\bsmall\s*[- ]?\s*group\b/i.test(String(tag)));
 }
 
 function badgeIndicatesSmallGroup(badges: string[]): boolean {
@@ -63,21 +98,45 @@ function titleIndicatesClassicBusTour(title: string, slug?: string): boolean {
   );
 }
 
+function badgeIndicatesClassicBusTour(badges: string[]): boolean {
+  return badges.some((b) =>
+    /\blarge\s*coach\b|\bcoach\b|\bbus\s*tour\b|\bclassic\s*bus\b|\bbudget\s*cruise\b/i.test(String(b)),
+  );
+}
+
 export function inferTourCatalogType(item: {
   title?: string;
   badges?: string[];
   slug?: string | null;
   tag?: string | null;
+  priceType?: string | null;
+  groupSize?: string | null;
 }): TourCatalogType {
   const slug = typeof item.slug === "string" ? item.slug.trim() : undefined;
   const title = typeof item.title === "string" ? item.title.trim() : "";
   const badges = Array.isArray(item.badges) ? item.badges.map((b) => String(b)) : [];
   const tag = typeof item.tag === "string" ? item.tag : null;
+  const priceType = typeof item.priceType === "string" ? item.priceType.trim().toLowerCase() : "";
+  const groupSize = typeof item.groupSize === "string" ? item.groupSize.trim().toLowerCase() : "";
 
+  if (isKnownBusTourSlug(slug)) return "bus";
   if (isKnownJoinTourSlug(slug)) return "join";
-  if (tagIndicatesSmallGroupJoin(tag)) return "join";
 
   const smallGroupCue = titleIndicatesSmallGroup(title) || badgeIndicatesSmallGroup(badges);
+  const privateCue =
+    priceType === "vehicle" ||
+    priceType === "group" ||
+    /private|charter|customi[sz]able|exclusive/i.test(title) ||
+    /private|charter|customi[sz]able|exclusive/i.test(groupSize) ||
+    badges.some((b) => /private|charter|customi[sz]able|exclusive/i.test(String(b)));
+
+  if (privateCue) return "private";
+
+  if (titleIndicatesClassicBusTour(title, slug) || badgeIndicatesClassicBusTour(badges)) {
+    return "bus";
+  }
+
+  if (tagIndicatesSmallGroupJoin(tag)) return "join";
 
   if (
     /private|프라이빗|私人|プライベート|privado|전용\b|包车|包車/i.test(title) ||
@@ -89,8 +148,6 @@ export function inferTourCatalogType(item: {
   }
 
   if (smallGroupCue) return "join";
-
-  if (titleIndicatesClassicBusTour(title, slug)) return "bus";
 
   return "bus";
 }

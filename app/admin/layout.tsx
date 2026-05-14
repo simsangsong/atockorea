@@ -9,7 +9,8 @@ import { useTranslations } from '@/lib/i18n';
 const adminMenuItems = [
   { path: '/admin', label: '대시보드', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
   { path: '/admin/merchants', label: '업체 관리', icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' },
-  { path: '/admin/products', label: '상품 관리', icon: 'M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z' },
+  { path: '/admin/products/v2', label: '상품 관리', badge: 'NEW', icon: 'M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z' },
+  { path: '/admin/products', label: '상품 관리 (v1)', icon: 'M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z' },
   { path: '/admin/orders', label: '주문 관리', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01' },
   { path: '/admin/contacts', label: '문의 관리', icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
   { path: '/admin/emails', label: '받은 메일', icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
@@ -22,7 +23,8 @@ const adminMenuItems = [
 const pathToBreadcrumb: Record<string, string> = {
   '/admin': '대시보드',
   '/admin/merchants': '업체 관리',
-  '/admin/products': '상품 관리',
+  '/admin/products': '상품 관리 (v1)',
+  '/admin/products/v2': '상품 관리',
   '/admin/orders': '주문 관리',
   '/admin/contacts': '문의 관리',
   '/admin/emails': '받은 메일',
@@ -159,21 +161,34 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <span className="px-2 py-0.5 text-xs font-medium bg-slate-600 text-slate-200 rounded">Admin</span>
         </div>
         <nav className="flex-1 py-4 px-2 overflow-y-auto">
-          {adminMenuItems.map((item) => {
-            const isActive = pathname === item.path || (item.path !== '/admin' && pathname.startsWith(item.path));
-            return (
-              <Link
-                key={item.path}
-                href={item.path}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                  isActive ? 'bg-blue-600 text-white' : 'text-slate-300 hover:bg-slate-700/80 hover:text-white'
-                }`}
-              >
-                <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon.startsWith('M') ? item.icon : 'M9 12l2 2 4-4m6 2a9 5 0 11-10 0 5 5 0 0110 0z'} /></svg>
-                <span>{item.label}</span>
-              </Link>
-            );
-          })}
+          {(() => {
+            // Pick the BEST-matching menu item (longest matching path) so that
+            // `/admin/products/v2` doesn't also light up `/admin/products`.
+            const bestMatch = adminMenuItems
+              .filter((m) => pathname === m.path || (m.path !== '/admin' && pathname.startsWith(`${m.path}/`)))
+              .sort((a, b) => b.path.length - a.path.length)[0]?.path;
+            return adminMenuItems.map((item) => {
+              const isActive = item.path === bestMatch;
+              const badge = (item as { badge?: string }).badge;
+              return (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                    isActive ? 'bg-blue-600 text-white' : 'text-slate-300 hover:bg-slate-700/80 hover:text-white'
+                  }`}
+                >
+                  <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon.startsWith('M') ? item.icon : 'M9 12l2 2 4-4m6 2a9 5 0 11-10 0 5 5 0 0110 0z'} /></svg>
+                  <span className="flex-1">{item.label}</span>
+                  {badge && (
+                    <span className="px-1.5 py-0.5 text-[9px] font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded">
+                      {badge}
+                    </span>
+                  )}
+                </Link>
+              );
+            });
+          })()}
         </nav>
         <div className="p-3 border-t border-slate-700/80">
           <p className="text-xs text-slate-400 truncate px-2" title={user?.email}>{user?.email || 'Admin'}</p>

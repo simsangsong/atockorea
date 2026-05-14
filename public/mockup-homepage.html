@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AtoC Korea — Homepage Mockup (New)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8f9fa; color: #0f172a; }
+
+  /* ── HEADER ── */
+  .header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.96); backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e2e8f0;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 16px; height: 52px;
+  }
+  .logo { font-size: 17px; font-weight: 800; letter-spacing: -0.03em; }
+  .logo span { color: #f97316; }
+  .header-right { display: flex; align-items: center; gap: 12px; font-size: 13px; color: #64748b; }
+  .header-right .lang { border: 1px solid #e2e8f0; border-radius: 20px; padding: 3px 8px; font-size: 11px; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 280px;
+    background: url('https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=1200&q=80') center/cover no-repeat;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 0 20px;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(10,20,40,0.55) 0%, rgba(10,20,40,0.45) 60%, rgba(248,249,250,0.6) 100%);
+  }
+  .hero-content { position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px; padding: 4px 12px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.08em; color: rgba(255,255,255,0.9);
+    text-transform: uppercase; backdrop-filter: blur(8px);
+    margin-bottom: 12px;
+  }
+  .hero h1 {
+    font-size: 26px; font-weight: 900; color: white; letter-spacing: -0.04em;
+    line-height: 1.1; margin-bottom: 8px; text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .hero-sub {
+    font-size: 12.5px; color: rgba(255,255,255,0.78); margin-bottom: 18px; line-height: 1.5;
+  }
+  .hero-ctas { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .btn-match {
+    display: flex; align-items: center; gap: 6px;
+    background: #f97316; color: white; border: none;
+    border-radius: 100px; padding: 11px 20px;
+    font-size: 13px; font-weight: 700; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(249,115,22,0.45);
+    transition: all 0.2s;
+  }
+  .btn-browse {
+    display: flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.15); color: white;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    border-radius: 100px; padding: 11px 18px;
+    font-size: 13px; font-weight: 600; cursor: pointer;
+    backdrop-filter: blur(8px);
+  }
+  .hero-trust {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(0,0,0,0.06);
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+    padding: 8px 16px; font-size: 10.5px; color: #64748b;
+  }
+  .trust-item { display: flex; align-items: center; gap: 4px; }
+  .trust-icon { color: #22c55e; font-size: 11px; }
+
+  /* ── DESTINATION TABS ── */
+  .dest-tabs {
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex; gap: 0; overflow-x: auto; padding: 0 4px;
+    scrollbar-width: none;
+  }
+  .dest-tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    flex-shrink: 0; padding: 13px 16px;
+    font-size: 13px; font-weight: 600; color: #94a3b8;
+    border-bottom: 2.5px solid transparent;
+    cursor: pointer; white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .tab.active { color: #f97316; border-bottom-color: #f97316; }
+  .tab-count {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #f1f5f9; color: #64748b; border-radius: 10px;
+    font-size: 9px; padding: 1px 5px; margin-left: 4px; font-weight: 700;
+  }
+  .tab.active .tab-count { background: #fff7ed; color: #f97316; }
+
+  /* ── SECTION WRAPPER ── */
+  .section { padding: 20px 0 8px; }
+  .section-header {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 0 16px; margin-bottom: 12px;
+  }
+  .section-left { display: flex; align-items: center; gap: 8px; }
+  .section-icon { font-size: 18px; }
+  .section-title { font-size: 17px; font-weight: 800; letter-spacing: -0.03em; }
+  .section-sub { font-size: 11px; color: #94a3b8; margin-top: 2px; }
+  .see-all { font-size: 12px; font-weight: 700; color: #f97316; text-decoration: none; white-space: nowrap; }
+
+  /* ── TOUR CARDS STRIP ── */
+  .cards-strip {
+    display: flex; gap: 10px; overflow-x: auto; padding: 0 16px 16px;
+    scrollbar-width: none;
+  }
+  .cards-strip::-webkit-scrollbar { display: none; }
+  .tour-card {
+    flex-shrink: 0; width: 200px;
+    background: white; border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(15,23,42,0.1);
+    overflow: hidden; cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .tour-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(15,23,42,0.18); }
+  .card-img {
+    position: relative; height: 130px;
+    background: #e2e8f0; overflow: hidden;
+  }
+  .card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .card-badge {
+    position: absolute; top: 7px; left: 7px;
+    background: rgba(0,0,0,0.5); color: white;
+    font-size: 8px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.06em; padding: 3px 7px; border-radius: 6px;
+    backdrop-filter: blur(4px);
+  }
+  .card-rating {
+    position: absolute; bottom: 7px; right: 7px;
+    background: rgba(0,0,0,0.55); color: white;
+    font-size: 10px; font-weight: 700;
+    padding: 3px 7px; border-radius: 6px; backdrop-filter: blur(4px);
+    display: flex; align-items: center; gap: 3px;
+  }
+  .star { color: #fbbf24; }
+  .card-body { padding: 10px 11px 12px; }
+  .card-loc { font-size: 10px; color: #94a3b8; margin-bottom: 4px; display: flex; align-items: center; gap: 3px; }
+  .card-title { font-size: 12px; font-weight: 700; line-height: 1.35; color: #0f172a; margin-bottom: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 2.7em; }
+  .card-price { font-size: 14px; font-weight: 800; color: #0f172a; letter-spacing: -0.04em; }
+  .card-price .from { font-size: 9px; font-weight: 500; color: #94a3b8; }
+  .card-duration { font-size: 10px; color: #94a3b8; margin-top: 2px; display: flex; align-items: center; gap: 3px; }
+
+  /* NEW BADGE */
+  .new-badge { background: #eff6ff; color: #3b82f6; border-radius: 6px; padding: 2px 5px; font-size: 8px; font-weight: 700; text-transform: uppercase; }
+
+  /* ── MATCH BANNER ── */
+  .match-banner {
+    margin: 4px 16px 20px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+    border-radius: 20px; padding: 18px 20px;
+    display: flex; align-items: center; gap: 14px;
+    position: relative; overflow: hidden;
+    cursor: pointer;
+  }
+  .match-banner::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(249,115,22,0.25) 0%, transparent 60%);
+  }
+  .match-icon {
+    width: 46px; height: 46px; background: rgba(249,115,22,0.15);
+    border: 1.5px solid rgba(249,115,22,0.4);
+    border-radius: 14px; display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+  }
+  .match-text { flex: 1; position: relative; }
+  .match-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #f97316; margin-bottom: 3px; }
+  .match-title { font-size: 15px; font-weight: 800; color: white; letter-spacing: -0.03em; line-height: 1.2; }
+  .match-sub { font-size: 11px; color: rgba(255,255,255,0.55); margin-top: 3px; }
+  .match-arrow {
+    width: 36px; height: 36px; background: #f97316;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 16px; color: white; flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(249,115,22,0.5);
+  }
+
+  /* ── TOUR STYLE PILLS ── */
+  .style-section { padding: 0 16px 20px; }
+  .style-title { font-size: 13px; font-weight: 700; color: #64748b; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.06em; font-size: 10px; }
+  .style-pills { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+  .style-pills::-webkit-scrollbar { display: none; }
+  .style-pill {
+    flex-shrink: 0; display: flex; align-items: center; gap: 8px;
+    border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 9px 14px;
+    cursor: pointer; background: white;
+    transition: all 0.15s;
+  }
+  .style-pill:hover { border-color: #f97316; background: #fff7ed; }
+  .pill-icon { font-size: 18px; }
+  .pill-label { font-size: 12px; font-weight: 700; color: #0f172a; }
+  .pill-from { font-size: 10px; color: #94a3b8; margin-top: 1px; }
+
+  /* ── WHY SECTION ── */
+  .why-section {
+    margin: 4px 16px 20px;
+    background: #f8fafc; border: 1px solid #e2e8f0;
+    border-radius: 16px; padding: 16px;
+  }
+  .why-title { font-size: 13px; font-weight: 800; margin-bottom: 12px; color: #0f172a; }
+  .why-items { display: flex; gap: 8px; }
+  .why-item { flex: 1; text-align: center; }
+  .why-item-icon { font-size: 20px; margin-bottom: 4px; }
+  .why-item-label { font-size: 10px; font-weight: 700; color: #0f172a; }
+  .why-item-sub { font-size: 9px; color: #94a3b8; margin-top: 1px; }
+
+  /* ── BOTTOM NAV ── */
+  .bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+    border-top: 1px solid #e2e8f0;
+    display: flex; height: 60px;
+  }
+  .nav-item {
+    flex: 1; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 3px; cursor: pointer;
+    font-size: 9.5px; font-weight: 600; color: #94a3b8;
+  }
+  .nav-item.active { color: #f97316; }
+  .nav-item svg { width: 22px; height: 22px; }
+  .nav-icon { font-size: 20px; line-height: 1; }
+
+  /* ── DIVIDER ── */
+  .divider { height: 8px; background: #f1f5f9; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+
+  /* ── ANNOTATION ── */
+  .annotation {
+    position: fixed; top: 60px; right: 0;
+    background: #0f172a; color: white;
+    font-size: 10px; padding: 6px 10px; border-radius: 0 0 0 8px;
+    opacity: 0.85;
+  }
+
+  .pb-nav { padding-bottom: 72px; }
+
+  /* placeholder image colors */
+  .img-jeju { background: linear-gradient(135deg, #0d9488, #065f46); }
+  .img-busan { background: linear-gradient(135deg, #1d4ed8, #1e40af); }
+  .img-seoul { background: linear-gradient(135deg, #7c3aed, #4c1d95); }
+  .img-cruise { background: linear-gradient(135deg, #0369a1, #0c4a6e); }
+</style>
+</head>
+<body>
+
+<div class="annotation">📐 Mockup — New Homepage</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">AtoC<span>Korea</span></div>
+  <div class="header-right">
+    <span class="lang">🇰🇷 US</span>
+    <span class="lang">USD</span>
+    <span>🔍</span>
+    <span>👤</span>
+  </div>
+</header>
+
+<div class="pb-nav">
+
+  <!-- ━━━━━ 1. HERO — Compact ━━━━━ -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🇰🇷 18 curated tours · Licensed agencies</div>
+      <h1>Korea Day Tours,<br>Hand-Picked for You</h1>
+      <p class="hero-sub">Jeju · Busan · Seoul · Cruise — from $55/person</p>
+      <div class="hero-ctas">
+        <button class="btn-match">🤖 AI로 내 투어 찾기</button>
+        <button class="btn-browse">투어 직접 보기 ↓</button>
+      </div>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><span class="trust-icon">✓</span> KTO-Licensed</div>
+      <div class="trust-item"><span class="trust-icon">✓</span> English guides</div>
+      <div class="trust-item"><span class="trust-icon">✓</span> Small groups</div>
+      <div class="trust-item"><span class="trust-icon">✓</span> Guaranteed departure</div>
+    </div>
+  </section>
+
+  <!-- ━━━━━ 2. AI MATCH BANNER ━━━━━ -->
+  <div class="match-banner">
+    <div class="match-icon">🤖</div>
+    <div class="match-text">
+      <div class="match-label">✨ AI Tour Matching</div>
+      <div class="match-title">내 여행 스타일에 맞는<br>투어 찾아드려요</div>
+      <div class="match-sub">목적지 + 한 줄 설명 → 3초 안에 매칭</div>
+    </div>
+    <div class="match-arrow">→</div>
+  </div>
+
+  <!-- ━━━━━ 3. DESTINATION TABS ━━━━━ -->
+  <div class="dest-tabs">
+    <div class="tab active">전체 <span class="tab-count">18</span></div>
+    <div class="tab">🌋 Jeju <span class="tab-count">10</span></div>
+    <div class="tab">⚓ Busan <span class="tab-count">5</span></div>
+    <div class="tab">🏯 Seoul <span class="tab-count">3</span></div>
+    <div class="tab">🚢 Cruise <span class="tab-count">5</span></div>
+  </div>
+
+  <!-- ━━━━━ 4. JEJU STRIP ━━━━━ -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-left">
+        <span class="section-icon">🌋</span>
+        <div>
+          <div class="section-title">Jeju Island</div>
+          <div class="section-sub">UNESCO 화산섬 · 해안 · 폭포</div>
+        </div>
+      </div>
+      <a class="see-all" href="#">전체 보기 →</a>
+    </div>
+    <div class="cards-strip">
+      <!-- Card 1 -->
+      <div class="tour-card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=400&q=80" alt="">
+          <div class="card-badge">SMALL GROUP</div>
+          <div class="card-rating"><span class="star">★</span> 4.9 (1,148)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-loc">📍 Jeju · 9h</div>
+          <div class="card-title">Jeju Eastern UNESCO Spots Day Tour</div>
+          <div class="card-price">$58 <span class="from">/ person</span></div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="tour-card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=400&q=85" alt="">
+          <div class="card-badge">FIRST-TIME</div>
+          <div class="card-rating"><span class="star">★</span> 4.8 (127)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-loc">📍 Jeju · 8h</div>
+          <div class="card-title">East Jeju Volcano, Coast & Folk Village Tour</div>
+          <div class="card-price">$69 <span class="from">/ person</span></div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="tour-card">
+        <div class="card-img img-jeju" style="display:flex;align-items:center;justify-content:center;font-size:32px;">🌿</div>
+        <div class="card-body">
+          <div class="card-loc">📍 Jeju · 8h</div>
+          <div class="card-title">Jeju SW: Hallasan, O'Sulloc & Aewol</div>
+          <div class="card-price">$58 <span class="from">/ person</span></div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="tour-card">
+        <div class="card-img img-jeju" style="display:flex;align-items:center;justify-content:center;font-size:32px;">🗺️</div>
+        <div class="card-body">
+          <div class="card-loc">📍 Jeju · 9h</div>
+          <div class="card-title">Jeju Grand Highlights Loop Small Group</div>
+          <div class="card-price">$78 <span class="from">/ person</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ━━━━━ 5. BUSAN STRIP ━━━━━ -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-left">
+        <span class="section-icon">⚓</span>
+        <div>
+          <div class="section-title">Busan</div>
+          <div class="section-sub">항구도시 · 사찰 · 해운대 · 크루즈</div>
+        </div>
+      </div>
+      <a class="see-all" href="#">전체 보기 →</a>
+    </div>
+    <div class="cards-strip">
+      <div class="tour-card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=400&q=80" alt="">
+          <div class="card-badge">CRUISE</div>
+          <div class="card-rating"><span class="star">★</span> 4.9 (32)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-loc">📍 Busan · 9h</div>
+          <div class="card-title">Busan Small-Group Tour for Cruise Passengers</div>
+          <div class="card-price">$58.50 <span class="from">/ person</span></div>
+        </div>
+      </div>
+      <div class="tour-card">
+        <div class="card-img img-busan" style="display:flex;align-items:center;justify-content:center;font-size:32px;">🏛️</div>
+        <div class="card-body">
+          <div class="card-loc">📍 Busan · 11.5h</div>
+          <div class="card-title">Busan → Gyeongju UNESCO Legacy Tour</div>
+          <div class="card-price"><span class="new-badge">NEW</span></div>
+        </div>
+      </div>
+      <div class="tour-card">
+        <div class="card-img img-busan" style="display:flex;align-items:center;justify-content:center;font-size:32px;">🌆</div>
+        <div class="card-body">
+          <div class="card-loc">📍 Busan · 10.5h</div>
+          <div class="card-title">Busan Top Attractions One-Day Small Group</div>
+          <div class="card-price"><span class="new-badge">NEW</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ━━━━━ 6. SEOUL STRIP ━━━━━ -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-left">
+        <span class="section-icon">🏯</span>
+        <div>
+          <div class="section-title">Seoul & Day Trips</div>
+          <div class="section-sub">고궁 · 한옥마을 · 근교 자연</div>
+        </div>
+      </div>
+      <a class="see-all" href="#">전체 보기 →</a>
+    </div>
+    <div class="cards-strip">
+      <div class="tour-card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80" alt="">
+          <div class="card-badge">NATURE</div>
+          <div class="card-rating"><span class="star">★</span> 4.8</div>
+        </div>
+        <div class="card-body">
+          <div class="card-loc">📍 Seoul · 10h</div>
+          <div class="card-title">Pocheon Day Trip: Lake, Herb Island & Art Valley</div>
+          <div class="card-price">$55.80 <span class="from">/ person</span></div>
+        </div>
+      </div>
+      <div class="tour-card">
+        <div class="card-img img-seoul" style="display:flex;align-items:center;justify-content:center;font-size:32px;">🚢</div>
+        <div class="card-body">
+          <div class="card-loc">📍 Incheon Port · 9h</div>
+          <div class="card-title">Seoul Day Tour for Cruise Guests (Small Group)</div>
+          <div class="card-price"><span class="new-badge">NEW</span></div>
+        </div>
+      </div>
+      <div class="tour-card">
+        <div class="card-img img-seoul" style="display:flex;align-items:center;justify-content:center;font-size:32px;">🚐</div>
+        <div class="card-body">
+          <div class="card-loc">📍 Incheon Port · 8h</div>
+          <div class="card-title">Incheon → Seoul Private Car Shore Excursion</div>
+          <div class="card-price"><span class="new-badge">NEW</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ━━━━━ 7. TOUR STYLE — Condensed pills ━━━━━ -->
+  <section class="section" style="padding-bottom:16px;">
+    <div class="section-header" style="margin-bottom:10px;">
+      <div style="font-size:12px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.06em;">투어 방식 선택</div>
+    </div>
+    <div class="style-section" style="padding-top:0;">
+      <div class="style-pills">
+        <div class="style-pill">
+          <span class="pill-icon">👥</span>
+          <div>
+            <div class="pill-label">Small Group</div>
+            <div class="pill-from">From $55/person · RECOMMENDED</div>
+          </div>
+        </div>
+        <div class="style-pill">
+          <span class="pill-icon">🚐</span>
+          <div>
+            <div class="pill-label">Private Charter</div>
+            <div class="pill-from">From $198/vehicle</div>
+          </div>
+        </div>
+        <div class="style-pill">
+          <span class="pill-icon">🚌</span>
+          <div>
+            <div class="pill-label">Classic Bus</div>
+            <div class="pill-from">Budget option</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ━━━━━ 8. WHY ATOC — 3-column micro ━━━━━ -->
+  <section style="padding: 16px 16px 24px;">
+    <div class="why-section">
+      <div class="why-title">왜 AtoC Korea인가요?</div>
+      <div class="why-items">
+        <div class="why-item">
+          <div class="why-item-icon">🏅</div>
+          <div class="why-item-label">KTO 인증</div>
+          <div class="why-item-sub">공식 면허 업체만</div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon">🤖</div>
+          <div class="why-item-label">AI 매칭</div>
+          <div class="why-item-sub">3초 개인화 추천</div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon">🌏</div>
+          <div class="why-item-label">다국어 지원</div>
+          <div class="why-item-sub">EN · KO · ZH · JA</div>
+        </div>
+        <div class="why-item">
+          <div class="why-item-icon">✅</div>
+          <div class="why-item-label">출발 보장</div>
+          <div class="why-item-sub">취소 없는 운행</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- pb-nav -->
+
+<!-- ━━━━━ BOTTOM NAV — NEW ━━━━━ -->
+<nav class="bottom-nav">
+  <div class="nav-item active">
+    <span class="nav-icon">🏠</span>
+    <span>Home</span>
+  </div>
+  <div class="nav-item">
+    <span class="nav-icon">🤖</span>
+    <span>AI Match</span>
+  </div>
+  <div class="nav-item">
+    <span class="nav-icon">🛒</span>
+    <span>Cart</span>
+  </div>
+  <div class="nav-item">
+    <span class="nav-icon">👤</span>
+    <span>My Page</span>
+  </div>
+</nav>
+
+<script>
+// Tab filtering demo
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1087 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
+  "locale": "en",
+  "product_id": "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
+  "seo": {
+    "pageTitle": "Seoul Day Tour: Seoraksan & Naksansa Temple | AtoC Korea",
+    "metaDescription": "12-hour coach day trip from Seoul to the East Sea coast: Seoraksan National Park, cliffside Naksansa Temple, and Naksan Beach. Guided, transfers included.",
+    "primaryKeywords": [
+      "Seoul Seoraksan day tour",
+      "Naksansa Temple tour",
+      "Seoraksan day trip from Seoul",
+      "Naksan Beach tour",
+      "Seoraksan Naksansa one-day tour"
+    ],
+    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG",
+    "title": "Seoul Day Tour · Seoraksan + Naksansa Temple + Naksan Beach | AtoC Korea",
+    "description": "Coach day tour from Seoul to Korea's most iconic national park (Seoraksan), a thousand-year cliffside temple above the sea (Naksansa), and the pine-backed sands of Naksan Beach — a mountain-to-ocean day on the East Sea coast."
+  },
+  "catalog_card": {
+    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG",
+    "title": "Seoul: Seoraksan + Naksansa Temple + Naksan Beach",
+    "priceLabel": "From US$52 per person (was $58, 10% off)",
+    "shortCardDescription": "A 12-hour coach day trip from Seoul to the East Sea coast: hike Seoraksan National Park, visit the cliffside Naksansa Temple, and walk pine-backed Naksan Beach. Departs Mondays and Thursdays with an English-speaking guide and round-trip transfers from Hongik or Myeongdong.",
+    "tags": [
+      "Day trip from Seoul",
+      "Coach tour",
+      "Nature & temples",
+      "East Sea coast",
+      "Autumn foliage"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "slug": "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
+    "subtitle": "Seoraksan's granite peaks, a thousand-year seaside temple, and a pine-backed East Sea beach in a single 12-hour Seoul day trip.",
+    "region": "Seoul → Gangwon (Seoraksan & Yangyang)",
+    "duration": "12 hours",
+    "stopsCount": 3,
+    "badges": [
+      "Day trip from Seoul",
+      "Air-conditioned coach",
+      "Mondays & Thursdays",
+      "12-hour day"
+    ],
+    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG"
+  },
+  "headlineLine1": "Seoul Day Tour",
+  "headlineLine2": "Seoraksan + Naksansa Temple + Naksan Beach",
+  "price": {
+    "amountLabel": "52",
+    "currency": "USD",
+    "per": "person",
+    "salePriceUsd": 52,
+    "originalPriceUsd": 58,
+    "discountPercent": 10
+  },
+  "hero": {
+    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG",
+    "imagePosition": "center 38%",
+    "tagline": "Korea's most iconic mountain, a thousand-year temple above the sea, and a pine-backed beach — one 12-hour coach day from Seoul to the East Sea coast",
+    "pills": [
+      "Day trip from Seoul",
+      "Mountain + Temple + Coast",
+      "Coach tour"
+    ],
+    "meta": {
+      "duration": "12 hours",
+      "region": "Seoul → Gangwon-do (Seoraksan & Yangyang)",
+      "stops": "3 stops",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Overview"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerary"
+    },
+    {
+      "id": "details",
+      "label": "Details"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ"
+    },
+    {
+      "id": "reviews",
+      "label": "Reviews"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "Duration",
+      "value": "12 hours"
+    },
+    {
+      "icon": "camera",
+      "label": "Photo Potential",
+      "value": "Very High",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "Scenery",
+      "value": "Very High",
+      "level": 5
+    },
+    {
+      "icon": "footprints",
+      "label": "Walking",
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Rain Suitability",
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "Family Suitability",
+      "value": "Good",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Pace",
+      "value": "Balanced",
+      "level": 4
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "photo",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG",
+      "location": "Seoraksan National Park",
+      "alt": "Seoraksan National Park — granite ridge",
+      "caption": "Seoraksan National Park — granite peaks"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/89/3080589_image2_1.JPG",
+      "location": "Naksansa Temple",
+      "alt": "Naksansa Temple — cliffside temple over the East Sea",
+      "caption": "Naksansa Temple — a thousand-year temple above the sea"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/31/2745231_image2_1.jpg",
+      "location": "Naksan Beach",
+      "alt": "Naksan Beach — pine-backed East Sea beach",
+      "caption": "Naksan Beach — soft sand and pine forest"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/28/2745228_image2_1.jpg",
+      "location": "Naksan Beach",
+      "alt": "Naksan Beach — East Sea coastline",
+      "caption": "Naksan Beach — East Sea coastline"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "https://tong.visitkorea.or.kr/cms/resource/33/2745233_image2_1.jpg",
+      "location": "Naksan Beach",
+      "alt": "Naksan Beach — sunrise coast",
+      "caption": "Naksan Beach — a premier East Sea sunrise spot"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "name": "Pickup (Hongik University Station or Myeongdong Station)",
+      "time": "07:00 / 07:30",
+      "number": 1,
+      "category": "Coach pickup",
+      "duration": "30 min window",
+      "timeUsed": [
+        "Arrive at your chosen pickup point 5–10 min before scheduled time (~5 min)",
+        "Identify the AtoC Korea coach at the marked Starbucks / NorthFace front (~5 min)",
+        "Board the air-conditioned coach in the pickup queue (~10 min)",
+        "Printed Korean–English itinerary card distributed at boarding"
+      ],
+      "whyOnRoute": "Two early pickup points cover Seoul's two main accommodation clusters: the Hongik University area (Mapo-gu, popular with younger and short-stay travelers) and Myeongdong (Jung-gu, the legacy tourist district near the Lotte/Shilla/Westin hotels). Departure at 07:00 from Hongik or 07:30 from Myeongdong is the earliest practical pickup that still respects Seoul subway operating hours — and is the only way to reach Seoraksan before noon for a meaningful 2-hour park visit. Hongik first, Myeongdong second is the natural northeast-bound route onto the Seoul–Yangyang Expressway. This tour departs only on **Mondays and Thursdays**, so booking the correct date is essential.",
+      "description": "Pickup is at one of two Seoul meeting points: **(1) Starbucks Hongik University Station Exit 8 (Mapo-gu)** at 07:00 — the Starbucks storefront is immediately at the top of Exit 8; OR **(2) Myeongdong Station Exit 2 (Jung-gu)** at 07:30 — the NorthFace flagship store is the visible landmark beside the exit. \n\nBoth pickup points share the same air-conditioned coach, and Hongik passengers board first. Please be at your chosen pickup point **5–10 minutes before scheduled time** — latecomers cannot be accommodated and are non-refundable. The driver-guide distributes a printed Korean–English itinerary card at boarding and confirms the day's running order, restroom stops, and the typical return time. \n\nThis tour runs **only on Mondays and Thursdays**. From Myeongdong (the final pickup point), the coach takes the Seoul–Yangyang Expressway northeast — passing through the **Inje-Yangyang Tunnel (11 km, Korea's longest road tunnel)** — for the roughly 2.5-hour drive to Seoraksan, with a restroom break at a service area en route.",
+      "_poi_meta": {
+        "poi_key": "OPS_seoul_pickup_default",
+        "verified": false,
+        "match": "operational_default",
+        "note": "Operational pickup stop — Seoul departure (fixed station pickup, Hongik / Myeongdong); not a sightseeing POI"
+      }
+    },
+    {
+      "name": "Seoraksan National Park",
+      "time": "≈ 10:00",
+      "number": 2,
+      "category": "National Park (Mountain)",
+      "duration": "120 min (2 hours)",
+      "timeUsed": [
+        "Arrival at Seorakdong Entrance + driver-guide orientation (~10 min)",
+        "Walk to Tongildaebul + Sinheungsa Temple (~15-20 min from main parking)",
+        "Optional cable car to Gwongeumseong (~30-45 min including queue) OR Biseondae streamside walk",
+        "Photo time + reassembly at vehicle (~15 min)",
+        "Optional 800-year-old Pine Tree photo stop near Sinheungsa (~5 min)"
+      ],
+      "_poi_meta": {
+        "poi_key": "seoraksan_national_park",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea — Seoraksan National Park (Outer Seorak) listing + IUCN Green List confirmation)",
+          "IUCN Green List of Protected and Conserved Areas (iucngreenlist.org — Seoraksan official entry + 2014 designation + 398.24 km² area)",
+          "Korea National Park Service (KNPS — Seoraksan National Park Office official site + endangered species management plan)",
+          "UNESCO World Heritage Centre (Mt. Sorak Biosphere Reserve 1982 designation + tentative World Heritage listing)",
+          "Wikipedia (Seoraksan National Park — corpus on 30 peaks, 2,000+ animal species, 1,400+ plant species)"
+        ]
+      },
+      "highlights": [
+        "Korea's 5th national park (1970) and only UNESCO Biosphere Reserve (Aug 1982)",
+        "Tongildaebul: 14.6 m / 108 tons bronze — world's largest seated bronze Buddha (1997)",
+        "Sinheungsa Temple (652 CE Silla) — head temple of the Jogye Order; world's oldest Seon (Zen) temple",
+        "Optional Seorak Cable Car 1,132 m to Gwongeumseong Fortress platform (700 m, 1253 legend)",
+        "30 peaks, 2,000+ animal species, 1,400-1,562 plant species; rare wildlife (musk deer, goral, Asian black bear)",
+        "Park entrance FREE since recent abolition (was 3,500 KRW); cable car still paid",
+        "**IUCN Category II (National Park) since 2005 + IUCN Green List of Protected Areas since 2014** — Korea's first national park to enter the Green List during the Pilot Phase, alongside Odaesan and Jirisan",
+        "**Korea's only UNESCO Biosphere Reserve since August 1982** + **listed as UNESCO World Heritage tentative site** — combined recognition unmatched by any other Korean national park",
+        "**Long-tailed goral conservation centerpiece**: stable population of ~260 individuals (vulnerable on IUCN Red List) — the park manages 10 Special Protection Zones covering 39 km² (10% of total park area) for endangered species"
+      ],
+      "smartNotes": {
+        "photo": "Tongildaebul (14.6 m bronze Buddha) is the iconic single shot. Cable car ride frames Sinheungsa + Ulsanbawi Rock + Sokcho City + East Sea. October foliage against granite peaks is world-famous.",
+        "facilities": "Visitor center, cafes (Dahyang Cafe), restaurants, gift shops at Seorakdong Entrance. Free hiking equipment rental 9:00-14:00 (return by 16:00). Asiatic Black Bear Statue mascot near entrance.",
+        "tip": "Cable car tickets ARE NOT bookable in advance — queues can exceed 1-2 hours in October. If skies are foggy, skip the cable car entirely (no view). Best 2-hour budget: Tongildaebul + Sinheungsa + a short Biseondae streamside walk. Wear sturdy closed-toe shoes — paths are rocky and damp in places."
+      },
+      "whyOnRoute": "The 2.5-hour drive northeast is justified by the centerpiece: Korea's 5th national park (1970) and the country's only UNESCO Biosphere Reserve (1982) — combined with the world's largest seated bronze Buddha and the world's oldest Zen Buddhist temple, all within a 15-minute walk of the Sogongwon entrance. Seoraksan is placed first so the day's most physically active stop uses the freshest morning energy, with the seaside Naksansa Temple and Naksan Beach sequenced afterward as flatter coastal stops on the natural return route. Seoraksan's combined IUCN Green List + UNESCO Biosphere Reserve + tentative World Heritage status makes it **Korea's most-recognized natural-heritage park** — the mountain anchor that earns this day trip its place for first-time-Korea travelers.",
+      "convenience": {
+        "restroom": "At main entrance area, cable car station, Sinheungsa Temple grounds, along major trails",
+        "parking": "Available at Sogongwon main entrance (paid)"
+      },
+      "description": "Seoraksan was Korea's 5th national park — designated March 1970 — and remains the country's only UNESCO Biosphere Reserve, recognized in August 1982 for its exceptional mountain biodiversity. \n\nThe park spans approximately 398 km² across four cities and counties, with 30 named peaks anchored by Daecheongbong (1,708 m, Korea's 3rd highest peak) and the famous six-pillared granite formation of Ulsanbawi Rock. Park entrance is FREE since the recent abolition of the 3,500-KRW fee that was historically collected on behalf of Sinheungsa Temple — now public funds maintain the temple instead. \n\nFrom the Sogongwon (Outer Seorak / Oeseorak) main entrance, the typical 2-hour visit covers the area's signature sights: the **Tongildaebul (Great Unification Buddha)** — at 14.6 m and 108 tons of bronze, the world's largest seated bronze Buddha, erected 1997 in prayer for Korean reunification, with a small Bodhisattva Guan Yin shrine inside its base; **Sinheungsa Temple** itself, founded 652 by Jajangyulsa during the Silla Kingdom and considered the world's oldest Seon (Zen) temple plus head temple of the Jogye Order; and the optional **Seorak Cable Car** (1,132 m travel distance, ~10 min one-way to the 700 m Gwongeumseong Fortress platform — round-trip Adult 16,000 KRW / Child 12,000 KRW, on-site ticketing only, no advance reservation, often hours-long queues during October autumn-foliage peak). \n\nGwongeumseong Fortress at the top carries a vivid legend: erected in a single day during the 1253 Mongolian invasion of the Goryeo Dynasty by two generals named Kwon and Kim — hence Gwon-geum-seong. Active hikers who skip the cable car can instead choose the easy Biseondae Rock streamside walk (paved most of the way), the Heundeulbawi 'rocking rock' loop (stone steps), or the 600 m Geumganggul Cave climb.",
+      "visitBasics": {
+        "hours": "Park always open; Cable car typically 08:00-17:30 (weather-dependent); Sinheungsa Temple 06:00-sunset",
+        "closed": "Open year-round; some trails may close periodically for restoration",
+        "admission": "Park entrance FREE (was 3,500 KRW until recent abolition); Cable car RT Adult 16,000 / Child 12,000 KRW (on-site only, no advance booking; NOT included in this tour)",
+        "walking": "Easy paths at base (Sinheungsa, cable-car base); moderate to challenging hikes (Biseondae 3 km, Ulsanbawi steep stairs, Heundeulbawi 1.5 hr each way)"
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG",
+      "images": [
+        "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG"
+      ]
+    },
+    {
+      "name": "Naksansa Temple",
+      "time": "≈ 13:30",
+      "number": 3,
+      "category": "Seaside Buddhist Temple",
+      "duration": "75 min",
+      "timeUsed": [
+        "Coach arrival at Naksansa + driver-guide orientation (~10 min)",
+        "Walk to the Haesu Gwaneum-sang (16 m seaside Avalokitesvara statue) — the temple's signature viewpoint (~20 min)",
+        "Hongnyeonam Hermitage over the sea cave + Uisangdae cliff pavilion (~25 min)",
+        "Wontongbo-jeon main hall, Seven-Story Stone Pagoda, bronze bell pavilion (~15 min)",
+        "Photo time on the cliff-top paths + reassembly at vehicle (~5 min)"
+      ],
+      "_poi_meta": {
+        "poi_key": "naksansa_temple",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-05-14",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea English — Naksansa Temple listing, founding by Uisang 671 CE, key features)",
+          "Cultural Heritage Administration of Korea (Historic Site No. 495 designation 2008; Seven-Story Stone Pagoda and Naksansa heritage records)",
+          "Yangyang County official tourism (tour.yangyang.go.kr — Naksansa / Uisangdae, operating hours, parking)",
+          "Wikipedia (Naksansa + Naksansa bronze bell — corpus on 2005 Yangyang wildfire, reconstruction completed ~2015, bell recast 2006)",
+          "Korean travel reports 2023-2026 confirming free admission since the revised Cultural Heritage Protection Act (effective 2023-05-04)"
+        ]
+      },
+      "highlights": [
+        "Founded 671 CE by the monk Uisang — a thousand-year temple built directly above the East Sea",
+        "One of Korea's three great Gwaneum (Avalokitesvara) sanctuaries; the name 'Naksan' renders Mount Potalaka",
+        "Counted among the Eight Sights of Gwandong — the classic scenic spots of Korea's east coast",
+        "**Haesu Gwaneum-sang** — a 16 m white granite seaside statue of Avalokitesvara on a lotus pedestal (1977), facing the ocean",
+        "**Hongnyeonam Hermitage** — built by Uisang over a sea cave; a glass floor panel shows the waves below",
+        "**Uisangdae** — an octagonal cliff pavilion (rebuilt 1925) and one of Korea's most famous sunrise viewpoints",
+        "Bronze bell originally cast 1469; melted in the 2005 fire and recast — first rung again October 2006",
+        "Seven-Story Stone Pagoda (expanded to seven stories in 1467) and the Wontongbo-jeon main hall with its clay-tile boundary wall",
+        "Designated a Historic Site (No. 495) in 2008; rebuilt after the April 2005 Yangyang wildfire, guided by a 1778 Kim Hongdo painting"
+      ],
+      "smartNotes": {
+        "photo": "The classic shot is the Haesu Gwaneum-sang framed against the open East Sea. Hongnyeonam perched on its cliff and the stone lanterns along the temple paths are equally photogenic. Quiet light is best on the cliff-top walk.",
+        "facilities": "Restrooms and a small temple shop on the grounds. Wish-writing tiles and ribbons are sold throughout. Cafes and restaurants are clustered at the Naksan Beach / Naksanhang Port area just below.",
+        "tip": "The grounds are spread along the cliffs with stairs and coastal paths — wear comfortable shoes. The route from the Haesu Gwaneum-sang to Hongnyeonam is the must-do loop if time is short. Admission is free since 2023, so there are no ticket queues."
+      },
+      "whyOnRoute": "Naksansa is the day's cultural and coastal pivot — about 40 minutes from Seoraksan, it trades granite ridges for a thousand-year temple set directly above the sea. Few places in Korea pair Buddhist heritage with an open-ocean horizon this dramatically: founded in 671 CE by the monk Uisang, the temple is one of the country's three great Avalokitesvara sanctuaries and its very name evokes Mount Potalaka, the mythical sea-mountain of the bodhisattva of compassion. Placing it after Seoraksan and before Naksan Beach lets the day flow naturally from mountain energy to coastal calm, with the temple's cliff-top paths as the bridge between the two — and because admission has been free since 2023, the 75-minute stop is spent entirely on sightseeing, not ticket lines.",
+      "convenience": {
+        "restroom": "On the temple grounds and at the Naksan Beach area below",
+        "parking": "Coach parking at the Naksansa main gate area; nearby Naksanhang Port lot is free"
+      },
+      "description": "Naksansa is a rare thing — a thousand-year Buddhist temple built directly above the sea. It was founded in **671 CE** by the monk **Uisang**, who had just returned from years of study in Tang China; by tradition he received a vision of Avalokitesvara near a seaside cave and built the temple on that spot. Naksansa belongs to the **Jogye Order** and is dedicated to **Avalokitesvara** — Gwanseeum Bosal, the bodhisattva of compassion. Its name is short for **'Botarakgasan,'** the Korean rendering of **Mount Potalaka**, Avalokitesvara's mythical sea-mountain home, so the whole site is conceived as Korea's own Potalaka. It is counted among **Korea's three great Gwaneum sanctuaries** and among the classic **Eight Sights of Gwandong**, the east-coast scenic spots celebrated in centuries of Korean poetry. \n\nThe temple has been destroyed and rebuilt many times — by the Mongol invasions, by the Korean War, and most recently by the **April 2005 Yangyang wildfire**, which burned more than twenty buildings and even the temple's historic bronze bell. Reconstruction, completed around 2015, was guided in part by a **1778 painting by the master artist Kim Hongdo**. Naksansa was designated a **Historic Site (No. 495)** in 2008. \n\nToday visitors walk cliff-top paths between the restored halls and the open East Sea. The signature sight is the **Haesu Gwaneum-sang**, a 16-meter white granite statue of Avalokitesvara on a lotus pedestal, completed in 1977 and facing the ocean. Other highlights include **Hongnyeonam**, a hermitage perched over a sea cave with a glass floor panel revealing the waves below; **Uisangdae**, an octagonal cliff pavilion that is one of Korea's most beloved sunrise points; the **Seven-Story Stone Pagoda**; the recast **bronze bell**, whose 1469 original melted in the 2005 fire and was rung again from October 2006; and the **Wontongbo-jeon** main hall with its distinctive clay-tile boundary wall.",
+      "visitBasics": {
+        "hours": "Approximately 06:00-18:30 daily (last entry around 17:30); open year-round with no regular closing day",
+        "closed": "Open year-round",
+        "admission": "FREE — Naksansa has had no admission fee since 4 May 2023, when the revised Cultural Heritage Protection Act removed cultural-property viewing fees at traditional temples. (Older sources listing 4,000 KRW are outdated.)",
+        "walking": "Moderate — the grounds spread along coastal cliffs with stairs and uneven stone paths between the main hall, the Haesu Gwaneum-sang, and Hongnyeonam"
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/89/3080589_image2_1.JPG",
+      "images": [
+        "https://tong.visitkorea.or.kr/cms/resource/89/3080589_image2_1.JPG"
+      ]
+    },
+    {
+      "name": "Naksan Beach",
+      "time": "≈ 15:00",
+      "number": 4,
+      "category": "East Sea Beach",
+      "duration": "60 min",
+      "timeUsed": [
+        "Short transfer down from Naksansa Temple (~5 min)",
+        "Free walking time on the soft-sand beach and pine-forest paths (~40 min)",
+        "Photo time — coastline, the temple pavilions on the cliff above, the East Sea horizon (~10 min)",
+        "Reassemble at the coach for the return drive to Seoul (~5 min)"
+      ],
+      "_poi_meta": {
+        "poi_key": "naksan_beach",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-05-14",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea English — Naksan Beach listing: ~4 km length, water under 1.5 m deep, opened 1963, 1M+ annual visitors)",
+          "VisitKorea destination corpus (Naksanhang Port and Namdaecheon Stream delta bounding the beach; pine-forest backing)",
+          "Yangyang County official tourism + Yangyang Sunrise Festival records (New Year sunrise venue, bell-tolling and beach fireworks)",
+          "Korean and international travel guides 2023-2026 (free parking ~150 spaces, July-August swimming season, year-round sunrise destination)"
+        ]
+      },
+      "highlights": [
+        "A broad ~4 km sweep of soft sand backed by a low pine forest — calm and park-like, not concrete beachfront",
+        "Sits **directly below Naksansa Temple** — the temple's cliff and pavilions look down over the sand",
+        "Shallow, gentle water (under ~1.5 m deep for a long way out) — a longtime favourite of Korean families",
+        "Bounded by **Naksanhang Port** at one end and the **Namdaecheon Stream** lagoon at the other — the stream begins up in Seoraksan, quietly linking the day's two landscapes",
+        "Open since 1963; draws more than a million visitors a year",
+        "One of Korea's premier **East Sea sunrise** spots and the centerpiece of the **Yangyang Sunrise Festival** each New Year",
+        "Naksanhang Port beside the beach is known for fresh raw fish (hoe) and East Sea seafood"
+      ],
+      "smartNotes": {
+        "photo": "Wet-sand reflections, the pine belt for framing and shade, and the classic upward shot of Naksansa's pavilions on the cliff above the beach. Sunrise is the signature image — though that is a winter early-morning subject, not a tour-time one.",
+        "facilities": "Restrooms, cafes, convenience stores and restaurants line the Naksan Beach area; free parking (~150 spaces). The Naksanhang Port side has seafood restaurants.",
+        "tip": "Official swimming season is July-August only — for this tour the beach is a walking and photography stop, not a swim stop. Bring a light layer: the East Sea breeze can be cool even when Seoul is warm."
+      },
+      "whyOnRoute": "Naksan Beach is the day's gentlest closing chapter — and it is right below Naksansa Temple, so the transfer is only a few minutes. After the climb-and-stairs energy of Seoraksan and the cliff paths of Naksansa, the beach is a flat, open, slow stop: time to feel the East Sea air and let the day settle before the drive back to Seoul. It also quietly ties the route together — the Namdaecheon Stream that meets the sea at one end of the beach begins up in Seoraksan, so the mountain and the coast are literally connected by water. Sixty minutes is enough for an unhurried walk on the sand and pine paths without pushing the return-to-Seoul timing.",
+      "convenience": {
+        "restroom": "Public restrooms along the Naksan Beach area",
+        "parking": "Free beach parking, approximately 150 car spaces"
+      },
+      "description": "Directly below the temple — Naksan Mountain, which Naksansa crowns, rises straight from the shore — **Naksan Beach** is the day's gentlest chapter. Open since **1963** and drawing more than a million visitors a year, it is a broad **4-kilometer sweep of soft sand** backed not by concrete but by a low **pine forest**, which gives the whole shore a calm, park-like feel. The water is shallow — under about **1.5 meters deep** for a long way out — which is why Korean families have loved it for generations. \n\nOne end of the beach is anchored by **Naksanhang Port**; the other by a lagoon where the **Namdaecheon Stream** — which begins up in Seoraksan — meets the sea. So the day's two landscapes, the mountain and the coast, quietly join here. \n\nThe official swimming season runs **July to August**, but for this tour Naksan Beach is a **year-round walking and photography stop**: time to feel the East Sea air, photograph the coastline and the temple pavilions on the cliff above, and slow down before the return drive. It is also one of Korea's premier **sunrise** destinations — the centerpiece of the **Yangyang Sunrise Festival** each New Year, when a bell-tolling ceremony at Naksansa is followed by fireworks over the sand — and the Naksanhang Port side is known for fresh raw fish (hoe) and East Sea seafood.",
+      "visitBasics": {
+        "hours": "Beach open 24 hours; official swimming season July-August with supervised swimming roughly 09:00-18:00",
+        "closed": "Open year-round",
+        "admission": "FREE — no admission fee for the beach",
+        "walking": "Easy — flat, soft sand and level pine-forest paths; a short signed footpath connects the beach up to Naksansa Temple"
+      },
+      "image": "https://tong.visitkorea.or.kr/cms/resource/31/2745231_image2_1.jpg",
+      "images": [
+        "https://tong.visitkorea.or.kr/cms/resource/31/2745231_image2_1.jpg",
+        "https://tong.visitkorea.or.kr/cms/resource/28/2745228_image2_1.jpg",
+        "https://tong.visitkorea.or.kr/cms/resource/33/2745233_image2_1.jpg"
+      ]
+    },
+    {
+      "name": "Return to Seoul (Myeongdong Station or Hongik University Station)",
+      "time": "≈ 16:10",
+      "number": 5,
+      "category": "Return drop-off",
+      "duration": "≈ 2.5 hour drive",
+      "timeUsed": [
+        "Coach departs Naksan Beach (~16:10)",
+        "Drive to Seoul via the Seoul-Yangyang Expressway and Inje-Yangyang Tunnel (~2.5 hours depending on traffic)",
+        "Drop-off at Myeongdong Station Exit 2 (~18:45)",
+        "Drop-off at Hongik University Station Exit 8 (~19:15)"
+      ],
+      "whyOnRoute": "The return runs in reverse-pickup order: **Myeongdong drop-off first** (~18:45), then **Hongik University Station** (~19:15). The 12-hour tour length is calibrated around this timing — guests with evening dinner reservations should book for 20:00 or later to allow a safety buffer for traffic. Friday and Sunday evenings run heavier on the expressway, but this tour departs only Mondays and Thursdays, so traffic on the return leg is usually moderate; still, notify the driver-guide if you have a flight or hard appointment.",
+      "description": "After Naksan Beach, the coach takes the **Seoul-Yangyang Expressway** westbound back into Seoul, passing again through the Inje-Yangyang Tunnel. Drop-offs are sequenced in reverse-pickup order: **Myeongdong Station Exit 2 first at approximately 18:45**, then **Hongik University Station Exit 8 at approximately 19:15**. \n\nBoth drop-off points are at the same locations as the morning pickup. Guests connecting to evening plans in Hongdae or Myeongdong should allow a comfortable buffer for traffic. Exact arrival times depend on East Sea coast and Seoul traffic on the day.",
+      "_poi_meta": {
+        "poi_key": "OPS_return",
+        "verified": false,
+        "match": "operational_default",
+        "note": "Operational return stop — Seoul drop-off (Myeongdong / Hongik); not a sightseeing POI"
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Pickup (Hongik / Myeongdong)",
+      "type": "origin",
+      "theme": "Seoul pickup"
+    },
+    {
+      "name": "Seoraksan National Park",
+      "type": "primary",
+      "theme": "Mountain & temple"
+    },
+    {
+      "name": "Naksansa Temple",
+      "type": "primary",
+      "theme": "Seaside temple"
+    },
+    {
+      "name": "Naksan Beach",
+      "type": "primary",
+      "theme": "East Sea beach"
+    },
+    {
+      "name": "Return to Seoul",
+      "type": "return",
+      "theme": "Drop-off"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "Seoul → Seoraksan",
+      "duration": "≈ 2.5 hours",
+      "description": "Pickup at 07:00 Hongik / 07:30 Myeongdong, then a ~2.5-hour drive northeast via the Seoul-Yangyang Expressway and the 11 km Inje-Yangyang Tunnel to arrive at Seoraksan around 10:00."
+    },
+    {
+      "phase": "Seoraksan National Park",
+      "duration": "≈ 2 hours",
+      "description": "Sogongwon entrance: Tongildaebul, Sinheungsa Temple, and the optional cable car to Gwongeumseong or a short Biseondae streamside walk."
+    },
+    {
+      "phase": "Seoraksan → Naksansa (incl. lunch)",
+      "duration": "≈ 1.5 hours",
+      "description": "Roughly a 40-minute drive toward the Yangyang coast, with a lunch stop en route at a local restaurant (own expense)."
+    },
+    {
+      "phase": "Naksansa Temple & Naksan Beach",
+      "duration": "≈ 2.5 hours",
+      "description": "75 minutes at the cliffside Naksansa Temple, then a short transfer down to Naksan Beach for an hour on the sand and pine paths."
+    },
+    {
+      "phase": "Return to Seoul",
+      "duration": "≈ 2.5 hours",
+      "description": "Depart Naksan Beach around 16:10 and drive back to Seoul via the Seoul-Yangyang Expressway — Myeongdong ~18:45, Hongik ~19:15."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "How this Seoul day moves",
+    "subtitle": "Early Hongik/Myeongdong pickup at 07:00/07:30; ~2.5 hr northeast drive to Seoraksan for the day's mountain anchor; ~40 min to the Yangyang coast (lunch en route) for the cliffside Naksansa Temple; a few minutes down to Naksan Beach for the day's gentlest chapter; return to Seoul by 18:45-19:15. Departs Mondays and Thursdays only."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "First-time visitors to Korea wanting a mountain-and-coast day from a Seoul base",
+      "Travelers drawn to Seoraksan's autumn foliage and granite peaks",
+      "Anyone interested in Korean Buddhist heritage — Naksansa is a thousand-year seaside temple",
+      "Photography enthusiasts wanting mountain, temple, and East Sea coastline in one day"
+    ],
+    "lessIdealFor": [
+      "Travelers who want a slow-paced single-stop experience",
+      "Guests who can't travel on a Monday or Thursday (the only departure days)",
+      "Mobility-limited travelers — Seoraksan and Naksansa both have stairs and uneven paths",
+      "Visitors hoping to swim — Naksan Beach is a walking stop here, not a swim stop (and the tour runs year-round)"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Pacing & geography",
+        "icon": "sun",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "Mountain first, coast after",
+            "detail": "Seoraksan is the farthest and most physical stop, so it is visited first while energy is freshest. Naksansa Temple and Naksan Beach sit together on the Yangyang coast on the natural return route — no backtracking."
+          },
+          {
+            "label": "Mountain → temple → beach",
+            "detail": "The day moves from highest energy (Seoraksan stairs and optional cable car) to medium (Naksansa's cliff paths) to lowest (a flat hour on Naksan Beach). Photo style progresses from granite ridge to seaside temple to open coastline."
+          },
+          {
+            "label": "Two landscapes, one stream",
+            "detail": "The Namdaecheon Stream that meets the sea at Naksan Beach begins up in Seoraksan — the mountain and the coast on this itinerary are literally linked by water."
+          }
+        ]
+      },
+      {
+        "title": "Why this works in 12 hours",
+        "icon": "clock",
+        "iconBg": "bg-pink-50/80",
+        "iconColor": "text-pink-600",
+        "items": [
+          {
+            "label": "All three stops are free to enter",
+            "detail": "Seoraksan park entrance, Naksansa Temple (free since 2023), and Naksan Beach all have no admission fee — the only optional paid item is the Seorak Cable Car (₩16,000 round-trip, own expense)."
+          },
+          {
+            "label": "Two pickup points across Seoul",
+            "detail": "Hongik (Mapo-gu) at 07:00 and Myeongdong (Jung-gu) at 07:30 cover Seoul's two main accommodation clusters — guests choose the exit closest to their hotel."
+          },
+          {
+            "label": "Tight coastal cluster",
+            "detail": "Naksansa Temple and Naksan Beach are adjacent on the Yangyang coast, so the afternoon spends time at the stops rather than in transit between them."
+          }
+        ]
+      },
+      {
+        "title": "Trade-offs honestly",
+        "icon": "info",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "Seoraksan has stairs (cable car is optional)",
+            "detail": "The Tongildaebul + Sinheungsa walk is flat and accessible; steeper trails and the Gwongeumseong platform have rocky steps. The cable car is on-site own-expense and not bookable in advance."
+          },
+          {
+            "label": "Departs Mondays & Thursdays only",
+            "detail": "This is a fixed-schedule coach tour with two departure days a week. Book the correct date — Monday or Thursday — when you reserve."
+          },
+          {
+            "label": "Long day from an early start",
+            "detail": "This is a coach group tour — about 12 hours total including ~5 hours of coach time. Guests wanting fewer hours or unlimited stop time should consider a private chartered car day trip."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "Pickup & drop-off",
+      "preview": "Two Seoul pickup points: Starbucks Hongik University Station Exit 8 at 07:00…",
+      "content": [
+        "Two Seoul pickup points: **Starbucks Hongik University Station Exit 8 at 07:00** (Mapo-gu), and **Myeongdong Station Exit 2 (NorthFace flagship) at 07:30** (Jung-gu).",
+        "Both pickups share the same air-conditioned coach; please be at your chosen point 5-10 minutes early. Latecomers cannot be accommodated and are non-refundable.",
+        "Return drop-offs in reverse order: **Myeongdong ~18:45, Hongik ~19:15**.",
+        "Exact return times depend on East Sea coast and Seoul traffic on the day — notify the guide if you have a flight or hard appointment."
+      ]
+    },
+    {
+      "id": "schedule",
+      "title": "Departure days",
+      "preview": "This tour departs on Mondays and Thursdays only.",
+      "content": [
+        "This tour departs **on Mondays and Thursdays only** — please book a Monday or Thursday date.",
+        "It is a fixed-schedule coach group tour; the itinerary and timing are the same on both departure days.",
+        "If you need a different day or a flexible schedule, consider a private chartered car day trip instead."
+      ]
+    },
+    {
+      "id": "what-to-bring",
+      "title": "What to wear & bring",
+      "preview": "Comfortable closed-toe walking shoes for Seoraksan and Naksansa paths…",
+      "content": [
+        "Comfortable closed-toe walking shoes — Seoraksan paths are rocky in places and Naksansa has stairs and uneven stone paths.",
+        "Warm layers October-March; Seoraksan runs 5-7°C colder than Seoul, and the East Sea breeze at Naksan Beach can be cool year-round.",
+        "Camera or smartphone — Seoraksan's peaks, Naksansa above the sea, and the Naksan Beach coastline are the photo highlights.",
+        "Cash and card for lunch (~₩10,000-15,000) and the optional Seorak Cable Car (₩16,000) if you plan to ride.",
+        "Light snacks if you start without breakfast — the first food stop is around lunchtime en route to the coast."
+      ]
+    },
+    {
+      "id": "weather-policy",
+      "title": "Weather policy",
+      "preview": "Year-round operation.",
+      "content": [
+        "Year-round operation on the scheduled Monday and Thursday departures.",
+        "Light rain: the tour runs as scheduled — Naksansa and Naksan Beach both have atmosphere in rain, and Seoraksan's lower paths remain walkable with grip shoes.",
+        "Heavy rain: the Seorak Cable Car is typically suspended in storm conditions; the guide will steer guests to a Sinheungsa-area walk instead.",
+        "Typhoon-level weather or expressway closure: full refund or rebooking offered."
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "What's included",
+      "preview": "Air-conditioned coach, round-trip transfer, English/Chinese-speaking guide…",
+      "content": [
+        "Transportation by **air-conditioned coach** and **round-trip transfer** between Seoul and the East Sea coast.",
+        "**English/Chinese-speaking guide** for the day.",
+        "**Admission and tax** — Seoraksan park entrance, Naksansa Temple, and Naksan Beach are all free to enter, so there are no ticket queues.",
+        "**NOT included**: meals and drinks (lunch ~₩10,000-15,000 en route, own expense), personal expenses, tips, and the optional **Seoraksan Cable Car** (₩16,000 round-trip, on-site ticketing only)."
+      ]
+    },
+    {
+      "id": "language",
+      "title": "Language",
+      "preview": "Tour guiding in English and Chinese.",
+      "content": [
+        "The guide provides commentary in **English and Chinese**.",
+        "Korean is spoken throughout the day for menus, signage, and stall interactions; the guide handles translation.",
+        "Please let us know your preferred language at booking so the right guide is assigned."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "Walking & terrain",
+      "preview": "Moderate.",
+      "content": [
+        "Moderate overall.",
+        "Seoraksan: easy at the Sinheungsa Temple base; moderate to challenging if you choose a longer trail or the cable-car platform (rocky steps).",
+        "Naksansa Temple: cliff-top paths with stairs and uneven stone surfaces between the main hall, the Haesu Gwaneum-sang, and Hongnyeonam.",
+        "Naksan Beach: flat, easy walking on soft sand and level pine-forest paths.",
+        "Total walking is moderate; sturdy closed-toe shoes are recommended."
+      ]
+    },
+    {
+      "id": "lunch",
+      "title": "Lunch (own expense)",
+      "preview": "Lunch is taken en route between Seoraksan and Naksansa, around midday…",
+      "content": [
+        "Lunch is taken en route between Seoraksan and the Yangyang coast, around midday, at a local restaurant (own expense, ~₩10,000-15,000).",
+        "The Seoraksan and Yangyang area is known for sanchae bibimbap (mountain-vegetable bibimbap), buckwheat dishes, and — near the coast — fresh East Sea seafood.",
+        "Vegetarian and halal-friendly options may be possible with advance notice — please let us know at booking."
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "Cancellation",
+      "preview": "Free cancellation up to 24 hours before pickup.",
+      "content": [
+        "Free cancellation up to 24 hours before pickup.",
+        "Inside 24 hours: 50% refund.",
+        "No-show or missed pickup: no refund — but contact AtoC Korea operations within 10 minutes of pickup time and the coach may briefly wait if running ahead of schedule."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "See seasonal notes"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "See seasonal notes"
+    },
+    "_seasonalSummary": "Seoul + Gangwon East Sea coast: temperate four-season climate. Seoraksan is 5-7°C cooler than Seoul year-round, and the East Sea breeze at Naksan Beach can be cool even on warm days. Hot humid summers (Jun-Aug), crisp cold winters (Dec-Feb), with prime seasons in spring (April) and autumn (October-November foliage)."
+  },
+  "seasonalVariations": [
+    {
+      "season": "Spring (Mar-May)",
+      "description": "Seoraksan azaleas and forsythia bloom late April; the East Sea coast is fresh and uncrowded. The most comfortable temperatures for the long coach day."
+    },
+    {
+      "season": "Summer (Jun-Aug)",
+      "description": "Lush green Seoraksan trails and Naksansa's pine-shaded paths; Naksan Beach is in full swimming season (though this tour is a walking stop). July monsoon rain may shorten Seoraksan time."
+    },
+    {
+      "season": "Autumn (Sep-Nov)",
+      "description": "Korea's signature season — Seoraksan's mid-October to early-November foliage is world-famous, and the clear autumn light is ideal for Naksansa above the sea. Highest demand; book 2+ weeks ahead."
+    },
+    {
+      "season": "Winter (Dec-Feb)",
+      "description": "Snow on Seoraksan's granite peaks and a quiet, dramatic East Sea coast. Naksan Beach is a famous New Year sunrise spot — the Yangyang Sunrise Festival pairs a bell-tolling ceremony at Naksansa with fireworks on the beach. Dress warmly."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "All three stops free to enter",
+      "description": "No admission fees, no ticket queues",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "Seoraksan National Park entrance (recently abolished), Naksansa Temple (free since May 2023), and Naksan Beach all have no admission fee. The only optional paid item is the Seorak Cable Car (₩16,000 round-trip, own expense)."
+    },
+    {
+      "icon": "users",
+      "title": "English/Chinese-speaking guide",
+      "description": "Guided day with round-trip transfer",
+      "iconBg": "bg-pink-50/80",
+      "iconColor": "text-pink-600",
+      "body": "A guide accompanies the group in English and Chinese, with commentary on Seoraksan's UNESCO Biosphere Reserve status, Naksansa's 671 CE founding by the monk Uisang, and the Yangyang coast — plus all logistics on the air-conditioned coach."
+    },
+    {
+      "icon": "shield",
+      "title": "Transparent pricing",
+      "description": "No hidden shopping stops",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "No ginseng shops, no duty-free, no commissioned souvenir detours. Every minute of the 12-hour day is at an attraction or in transit — what you book is what you experience."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Immediately",
+      "title": "Instant Confirmation",
+      "detail": "Booking confirmation with pickup point selection",
+      "description": "Instant booking confirmation with Hongik/Myeongdong pickup point selection. Please confirm your Monday or Thursday departure date."
+    },
+    {
+      "timing": "Day before",
+      "title": "Pickup Details",
+      "detail": "Exact pickup location and vehicle info via WhatsApp/SMS",
+      "description": "Weather check, coach plate number, and any seasonal route notes (Seoraksan foliage peak, winter conditions) sent the day before."
+    },
+    {
+      "timing": "Morning of",
+      "title": "Pickup Confirmation",
+      "detail": "Guide identification at pickup point ahead of departure",
+      "description": "The guide waits at Starbucks Hongik Exit 8 from ~06:50 and at Myeongdong Exit 2 (NorthFace) from ~07:20."
+    },
+    {
+      "timing": "During tour",
+      "title": "On-tour Support",
+      "detail": "Guide narration at each stop + ops support",
+      "description": "Guide commentary on Seoraksan's Silla-era Sinheungsa Temple, Naksansa's 671 CE founding and 2005 reconstruction, and the Yangyang coast's sunrise tradition."
+    },
+    {
+      "timing": "End of day",
+      "title": "Two Drop-off Points",
+      "detail": "Myeongdong ~18:45 / Hongik ~19:15",
+      "description": "The coach drops at both pickup points in reverse order on return."
+    },
+    {
+      "timing": "After tour",
+      "title": "Review & Follow-up",
+      "detail": "Optional post-tour review",
+      "description": "Post-tour feedback request sent; restaurant or attraction recommendations for the rest of your stay answered same day."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "duration",
+      "question": "How long is this tour?",
+      "answer": "About 12 hours door-to-door from a 07:00 Hongik or 07:30 Myeongdong pickup. It returns to Seoul between approximately 18:45 (Myeongdong) and 19:15 (Hongik)."
+    },
+    {
+      "id": "departure-days",
+      "question": "What days does this tour run?",
+      "answer": "This tour departs **on Mondays and Thursdays only**. Please book a Monday or Thursday date — the itinerary and timing are the same on both days."
+    },
+    {
+      "id": "pickup",
+      "question": "Where exactly is the pickup?",
+      "answer": "Two pickup points: (1) **Starbucks Hongik University Station Exit 8** (Mapo-gu) at 07:00 — the Starbucks at the top of the exit; or (2) **Myeongdong Station Exit 2** (Jung-gu) at 07:30 — the NorthFace flagship store at the top of the exit. Choose the one closest to your hotel at booking."
+    },
+    {
+      "id": "drop-off",
+      "question": "Where is the drop-off?",
+      "answer": "Drop-off is at the same two locations in reverse order: Myeongdong Exit 2 first at approximately 18:45, then Hongik University Exit 8 at approximately 19:15. Exact times depend on traffic on the day."
+    },
+    {
+      "id": "admissions",
+      "question": "Are admissions included?",
+      "answer": "Yes — and in practice all three stops are free to enter. Seoraksan National Park entrance was recently abolished, Naksansa Temple has been free since May 2023, and Naksan Beach has no admission fee. The **only optional paid item is the Seorak Cable Car** (₩16,000 round-trip), which is on-site ticketing only and own-expense."
+    },
+    {
+      "id": "cable-car",
+      "question": "Should I ride the Seorak Cable Car?",
+      "answer": "It's a fantastic ridge view if the weather is clear, but tickets are NOT bookable in advance and on-site queues can exceed 1-2 hours during the October autumn-foliage peak. If skies are foggy, skip it (no view). With a 2-hour Seoraksan stop, the cable car is realistic mainly when queues are short — otherwise the Tongildaebul + Sinheungsa walk and a short Biseondae streamside path are the recommended use of the time."
+    },
+    {
+      "id": "naksansa",
+      "question": "What is Naksansa Temple?",
+      "answer": "Naksansa is a thousand-year Buddhist temple built directly above the East Sea, founded in 671 CE by the monk Uisang. It is one of Korea's three great Avalokitesvara (Gwaneum) sanctuaries, and its signature sight is the 16-meter white granite Haesu Gwaneum-sang statue facing the ocean. The temple was rebuilt after the April 2005 Yangyang wildfire and has been free to enter since 2023."
+    },
+    {
+      "id": "naksan-beach-swim",
+      "question": "Can I swim at Naksan Beach?",
+      "answer": "Naksan Beach's official swimming season is July-August only, with supervised swimming roughly 09:00-18:00. This tour runs year-round and treats the beach as a walking and photography stop, not a swim stop — there is about an hour to stroll the soft sand and pine-forest paths."
+    },
+    {
+      "id": "kids",
+      "question": "Is this tour suitable for children?",
+      "answer": "Yes, age 6 and up. The 12-hour day with an early start and ~5 hours of coach time is long for younger children — please consider age 8+ for comfort. Kids tend to enjoy the open space of Naksan Beach. Seoraksan and Naksansa both have stairs and rocky or uneven paths."
+    },
+    {
+      "id": "seniors",
+      "question": "Is this OK for seniors?",
+      "answer": "Active seniors are fine — the day's main demands are the walking circuits at Seoraksan and Naksansa, both of which have stairs and uneven surfaces. Naksan Beach is flat and easy. Mobility-limited travelers should consider a private chartered car day trip instead."
+    },
+    {
+      "id": "lunch",
+      "question": "Is lunch included?",
+      "answer": "No — lunch is paid by the guest (~₩10,000-15,000 per person). The coach stops at a local restaurant en route between Seoraksan and the Yangyang coast around midday. The region is known for sanchae (mountain-vegetable) bibimbap, buckwheat dishes, and East Sea seafood near the coast. Vegetarian and halal-friendly options may be possible with advance notice."
+    },
+    {
+      "id": "language",
+      "question": "What languages does the guide speak?",
+      "answer": "The guide provides commentary in English and Chinese. The guide handles all menu translation and stall interactions during the day. Please note your preferred language at booking."
+    },
+    {
+      "id": "best-season",
+      "question": "What's the best season for this tour?",
+      "answer": "**Autumn (mid-October to early November)** is Korea's signature foliage season and Seoraksan's foliage is world-famous. **Spring (April)** is fresh and uncrowded. **Winter** brings snow on Seoraksan's peaks and a dramatic East Sea coast — Naksan Beach is a famous New Year sunrise spot. Book 2+ weeks ahead for October."
+    },
+    {
+      "id": "rain",
+      "question": "What if it rains?",
+      "answer": "Light rain: the tour runs as scheduled — all three stops are walkable in rain with the right footwear. Heavy rain: the Seorak Cable Car is typically suspended (the guide pivots to a Sinheungsa-area walk); Naksansa and Naksan Beach still operate. Typhoon-level weather or expressway closure: full refund or rebooking offered."
+    },
+    {
+      "id": "private",
+      "question": "How does this compare to a private chartered tour?",
+      "answer": "This is a fixed-schedule coach group tour at a budget price point, departing Mondays and Thursdays. A private chartered car day trip provides door-of-hotel pickup, flexible timing and departure day, and a customizable route — better for travelers who want comfort and flexibility, or who can't travel on a Monday or Thursday."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "pickup_dropoff": {
+    "primary": {
+      "name": "Starbucks Hongik University Station Exit 8",
+      "address": "Yanghwa-ro, Mapo-gu, Seoul (in front of the Starbucks at Hongik University Station Exit 8)",
+      "time": "07:00 pickup / 19:15 drop-off",
+      "instructions": "Meet the guide at the Starbucks storefront immediately above Hongik University Station Exit 8. Look for the AtoC Korea sign and the air-conditioned coach in the pickup queue."
+    },
+    "alternates": [
+      {
+        "name": "Myeongdong Station Exit 2 (NorthFace flagship)",
+        "address": "Toegye-ro, Jung-gu, Seoul (NorthFace flagship store at Myeongdong Station Exit 2)",
+        "time": "07:30 pickup / 18:45 drop-off",
+        "instructions": "Meet the guide in front of the NorthFace flagship store at the top of Myeongdong Station Exit 2."
+      }
+    ]
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "korea_mainland",
+    "region_type": "gangwon_seoraksan",
+    "vehicle_type": "coach",
+    "duration_hours": 12,
+    "region_tags": [
+      "gangwon_seoraksan",
+      "gangwon_yangyang"
+    ],
+    "theme_tags": [
+      "mountain",
+      "national_park",
+      "buddhist_temple",
+      "beach",
+      "hiking",
+      "cable_car",
+      "photogenic",
+      "east_coast"
+    ],
+    "poi_tags": [
+      "seoraksan_national_park",
+      "sinheungsa_temple",
+      "naksansa_temple",
+      "naksan_beach"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.6,
+    "scenic_level": 1,
+    "photo_level": 1,
+    "culture_level": 0.7,
+    "relax_level": 0.6,
+    "first_time_fit": 0.9,
+    "family_fit": 0.7,
+    "senior_fit": 0.5,
+    "couple_fit": 1,
+    "solo_traveler_fit": 1,
+    "active_traveler_fit": 0.8,
+    "adult_family_fit": 0.85,
+    "family_with_teens_fit": 0.85,
+    "young_kids_fit": 0.55,
+    "senior_active_fit": 0.65,
+    "senior_general_fit": 0.55,
+    "mobility_friendly_fit": 0.4,
+    "stroller_fit": 0.4,
+    "one_day_fit": 1,
+    "same_day_flight_fit": 0.2,
+    "rain_fit": 0.55,
+    "value_for_money_fit": 0.9,
+    "iconic_landmark_fit": 1,
+    "cafe_fit": 0.4,
+    "food_fit": 0.5,
+    "nature_fit": 1,
+    "beach_fit": 0.8,
+    "nightlife_fit": 0.1,
+    "shopping_fit": 0.2,
+    "no_shopping_fit": 1,
+    "local_culture_fit": 0.8,
+    "storytelling_fit": 0.9,
+    "unesco_fit": 0.6,
+    "intangible_heritage_fit": 0.4,
+    "indoor_ratio": 0.1,
+    "weather_sensitivity": 0.7,
+    "comfort_level": 0.6,
+    "budget_fit": 0.9,
+    "premium_fit": 0.3,
+    "small_group_fit": 1,
+    "private_fit": 0.1,
+    "bus_fit": 1,
+    "price_band": "mid",
+    "pickup_base": "seoul_central",
+    "return_time_band": "18:30-19:30",
+    "duration_band": "12h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "tight_same_day_departure"
+      ],
+      "notIdealFor": [
+        "very_low_mobility"
+      ]
+    },
+    "walking_notes": [
+      "12-hour day with about 5 hours of coach time.",
+      "Seoraksan paths rocky in places; Naksansa has cliff-top stairs and uneven stone paths; Naksan Beach is flat.",
+      "Closed-toe shoes recommended.",
+      "Cable car at Seoraksan is optional and not included."
+    ],
+    "keywords": [
+      "seoul seoraksan day tour",
+      "naksansa temple tour",
+      "seoraksan naksansa naksan beach day trip",
+      "seoul east coast day trip",
+      "korea_mainland day tour"
+    ],
+    "synonym_hints": [
+      "seoul to seoraksan and naksan temple day tour",
+      "mt seorak naksan temple day trip from seoul",
+      "seoraksan east sea coast one day tour"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "seoul",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "seoraksan_national_park",
+      "naksansa_temple",
+      "naksan_beach"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.05,
+    "flexibility_fit": 0.15,
+    "history_culture_fit": 0.8,
+    "autumn_foliage_fit": 1,
+    "mountain_fit": 1,
+    "seasonal_fit": 0.95,
+    "china_mainland_market_fit": 0.85,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
+    "china_diaspora_overseas_market_fit": 1,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.9,
+    "europe_market_fit": 0.9,
+    "australia_market_fit": 0.9,
+    "japan_market_fit": 0.9,
+    "seoul_day_trip_pair_fit": 1,
+    "seoul_central_hotel_pickup_fit": 1,
+    "return_to_seoul_central_fit": 1,
+    "day_trip_2_3_hour_drive_each_way_fit": 1,
+    "small_group_format_fit": 1,
+    "fixed_schedule_format_fit": 1,
+    "affordable_format_vs_charter_fit": 1,
+    "solo_traveler_friendly_fit": 1,
+    "mountain_to_ocean_pivot_fit": 1,
+    "unesco_biosphere_reserve_visit_fit": 1,
+    "iucn_green_list_protected_area_fit": 1,
+    "iucn_category_ii_national_park_fit": 1,
+    "third_highest_peak_in_korea_anchor_fit": 1,
+    "world_largest_seated_bronze_buddha_fit": 1,
+    "jogye_order_zen_temple_visit_fit": 1,
+    "long_tailed_goral_conservation_anchor_fit": 1,
+    "endangered_species_special_protection_zone_fit": 1,
+    "seoul_to_east_sea_inje_yangyang_tunnel_fit": 1,
+    "seaside_buddhist_temple_fit": 1,
+    "naksansa_uisang_671ce_founding_fit": 1,
+    "three_great_gwaneum_sanctuary_fit": 1,
+    "gwandong_eight_sights_fit": 1,
+    "haesu_gwaneum_seaside_statue_fit": 1,
+    "hongnyeonam_sea_cave_hermitage_fit": 1,
+    "east_sea_sunrise_coast_fit": 1,
+    "pine_backed_beach_walk_fit": 1,
+    "free_admission_all_stops_fit": 1,
+    "fixed_departure_monday_thursday": true,
+    "differentiates_from_dmz_day_trip": true,
+    "differentiates_from_nami_morning_calm_petite_france": true,
+    "differentiates_from_seoraksan_sokcho_beach_day_trip": true,
+    "available_days_signature": [
+      "monday",
+      "thursday"
+    ],
+    "available_months_signature": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "signature_window_label": "Year-round, departing Mondays and Thursdays (peak: October Seoraksan autumn foliage; January New Year sunrise on the East Sea coast)",
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": false
+  },
+  "matching_metadata": {
+    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "embedded_for": "atockorea_tour_marketplace",
+    "primary_themes": [
+      "nature",
+      "scenic",
+      "buddhist_heritage",
+      "east_coast"
+    ],
+    "secondary_themes": [
+      "beach",
+      "autumn_foliage",
+      "national_park",
+      "seaside_temple"
+    ],
+    "best_for": [
+      "couples",
+      "solo_travelers",
+      "nature_lovers",
+      "culture_travelers",
+      "photographers",
+      "autumn_visitors"
+    ],
+    "not_recommended_for": [
+      "mobility_limited",
+      "very_young_children",
+      "shoppers",
+      "travelers_needing_non_monday_thursday_dates"
+    ],
+    "anchor_pois": [
+      "Seoraksan National Park",
+      "Naksansa Temple",
+      "Naksan Beach"
+    ],
+    "anchor_poi_keys": [
+      "seoraksan_national_park",
+      "naksansa_temple",
+      "naksan_beach"
+    ],
+    "competing_products": [
+      "seoul-seoraksan-nami-island-morning-calm-day-tour",
+      "seoul-suburbs-private-chartered-car-10hr",
+      "pocheon-sanjeong-lake-herb-island-art-valley"
+    ],
+    "source_of_truth_note": "Coach day-trip from Seoul combining Seoraksan National Park + Naksansa Temple + Naksan Beach on the Gangwon East Sea coast. Replaces the now-inactive seoul-seoraksan-national-park-sokcho-beach-day-trip. Seoraksan attraction content reused from the verified east-coast Seoraksan tours; Naksansa Temple and Naksan Beach content researched and verified 2026-05-14. Sources: KTO VisitKorea, Cultural Heritage Administration of Korea, Yangyang County official tourism, UNESCO, IUCN Green List, KNPS, Wikipedia.",
+    "audit_summary": "Seoul-based 12-hour coach day trip on the Seoraksan + Naksansa Temple + Naksan Beach route, departing Mondays and Thursdays. Direct equivalent on the GetYourGuide market is the 'From Seoul: Mt. Seorak & Naksan Temple Day Trip' listing (t1051985), priced around US$58 with a US$52 sale rate."
+  }
+}

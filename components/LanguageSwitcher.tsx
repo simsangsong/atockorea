@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
+import { Globe } from 'lucide-react';
 import { useI18n, Locale } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
 
@@ -12,6 +13,15 @@ const localeFlags: Record<Locale, string> = {
   'zh-TW': '🇹🇼',
   es: '🇪🇸',
   ja: '🇯🇵',
+};
+
+const localeShortLabels: Record<Locale, string> = {
+  en: 'EN',
+  ko: 'KR',
+  zh: '简中',
+  'zh-TW': '繁中',
+  es: 'ES',
+  ja: 'JP',
 };
 
 type RouteLocale = 'en' | 'zh-CN' | 'zh-TW' | 'ja' | 'es' | 'ko';
@@ -140,11 +150,15 @@ export default function LanguageSwitcher({ premiumTourDetail = false }: Language
             : 'min-h-10 border border-gray-200/55 bg-white/88 px-1.5 py-1 font-semibold text-gray-800 shadow-[0_1px_2px_rgba(15,23,42,0.04)] hover:border-gray-300/75 hover:bg-white focus-visible:border-blue-400/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/25 focus-visible:ring-offset-1 sm:min-h-0 sm:px-1.5 sm:py-1 md:px-2 md:py-1.5 lg:px-3 lg:py-2'
         )}
       >
-        <span className={cn('flex-shrink-0', premiumTourDetail ? 'text-[13px] sm:text-sm' : 'text-xs sm:text-sm')}>
-          {localeFlags[locale]}
-        </span>
+        <Globe
+          aria-hidden
+          className={cn(
+            'flex-shrink-0',
+            premiumTourDetail ? 'h-3.5 w-3.5 text-stone-600 sm:h-4 sm:w-4' : 'h-3.5 w-3.5 text-gray-700 sm:h-4 sm:w-4',
+          )}
+        />
         <span className="hidden md:inline whitespace-nowrap">{localeNames[locale]}</span>
-        <span className="hidden sm:inline md:hidden whitespace-nowrap">{locale.toUpperCase()}</span>
+        <span className="hidden sm:inline md:hidden whitespace-nowrap">{localeShortLabels[locale]}</span>
         <svg
           className={cn(
             'flex-shrink-0 transition-transform duration-200',

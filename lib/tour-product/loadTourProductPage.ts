@@ -73,7 +73,12 @@ export function isDbTourProductViewModelComplete(
   vm: EastSignatureNatureCoreDetailViewModel,
 ): boolean {
   const heroUrl = typeof vm.hero?.imageUrl === "string" ? vm.hero.imageUrl.trim() : "";
-  if (!heroUrl.startsWith("http")) return false;
+  // Accept absolute (http/https) URLs OR site-relative paths (/images/...).
+  // Phase 1 migration stores site-relative paths so the same URLs work on
+  // localhost & production; previously only http(s) was accepted which caused
+  // every page to silently fall through to the static bundle.
+  const heroLooksValid = heroUrl.startsWith("http") || heroUrl.startsWith("/");
+  if (!heroLooksValid) return false;
   if (!vm.headlineLine1?.trim()) return false;
   if (!Array.isArray(vm.subnavItems) || vm.subnavItems.length < 3) return false;
   if (!Array.isArray(vm.glanceItems) || vm.glanceItems.length < 3) return false;
@@ -129,6 +134,18 @@ export function mergeTourProductPageToViewModel(
       amountLabel,
       currency: defaultOffer?.currency ?? page.price_currency ?? "KRW",
       per: page.price_per ?? "person",
+      ...(payload.price && typeof payload.price === "object"
+        ? {
+            originalPriceUsd:
+              (payload.price as { originalPriceUsd?: number | null }).originalPriceUsd ?? null,
+            salePriceUsd:
+              (payload.price as { salePriceUsd?: number | null }).salePriceUsd ?? null,
+            discountPercent:
+              (payload.price as { discountPercent?: number | null }).discountPercent ?? null,
+            priceNote:
+              (payload.price as { priceNote?: string }).priceNote ?? undefined,
+          }
+        : {}),
     },
     subnavItems: payload.subnavItems ?? [],
     glanceItems: payload.glanceItems ?? [],
@@ -158,6 +175,10 @@ export function mergeTourProductPageToViewModel(
     ...(payload.pickup_dropoff != null ? { pickup_dropoff: payload.pickup_dropoff } : {}),
     ...(Array.isArray(payload.routeVariants) && payload.routeVariants.length > 0
       ? { routeVariants: payload.routeVariants }
+      : {}),
+    ...((payload as { pricingTiers?: unknown }).pricingTiers &&
+    typeof (payload as { pricingTiers?: unknown }).pricingTiers === "object"
+      ? { pricingTiers: (payload as { pricingTiers?: unknown }).pricingTiers }
       : {}),
   };
 

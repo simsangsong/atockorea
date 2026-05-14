@@ -20,8 +20,6 @@ import { MyPageAuthGate } from '@/components/mypage/MyPageAuthGate';
 import { ConfirmDialog } from '@/components/mypage/ConfirmDialog';
 import {
   MYPAGE_SHELL,
-  MYPAGE_SURFACE_PAGE,
-  MYPAGE_SURFACE,
   MYPAGE_SIDEBAR_PROFILE_CARD,
   MYPAGE_SIDEBAR_NAV,
   MYPAGE_SIDEBAR_PRIMARY_TEXT,

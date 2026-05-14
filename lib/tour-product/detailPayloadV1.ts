@@ -78,6 +78,7 @@ export type TourProductDetailPayloadV1 = {
   headlineLine1?: string;
   headlineLine2?: string;
   hero?: TourProductHero;
+  price?: TourProductPrice;
   subnavItems?: readonly SubnavItem[];
   glanceItems?: readonly GlanceItem[];
   galleryItems?: readonly GalleryMediaItem[];

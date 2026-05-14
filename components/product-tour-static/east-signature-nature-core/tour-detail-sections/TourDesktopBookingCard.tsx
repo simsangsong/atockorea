@@ -63,6 +63,7 @@ export type TourDesktopBookingCardProps = Pick<EastSignatureNatureCoreDetailView
   checkout?: TourProductCheckoutContext | null;
   selectedPortLabel?: string;
   sectionUi?: TourProductSectionUiV1;
+  pricingTiers?: EastSignatureNatureCoreDetailViewModel["pricingTiers"];
 };
 
 /**
@@ -75,6 +76,7 @@ export function TourDesktopBookingCard({
   checkout,
   selectedPortLabel,
   sectionUi,
+  pricingTiers,
 }: TourDesktopBookingCardProps) {
   const portCtaPrefix = sectionUi?.portSelectorCtaPrefix ?? "Docking at";
   const router = useRouter();
@@ -88,6 +90,33 @@ export function TourDesktopBookingCard({
   const guestFieldEditingRef = useRef(false);
   const [preferredLanguage, setPreferredLanguage] = useState<PreferredLanguage>("en");
   const [availability, setAvailability] = useState<AvailabilityState>({ status: "idle" });
+  /** Selected duration key for pricingTiers (charter/private products only). */
+  const [selectedDuration, setSelectedDuration] = useState<string | null>(
+    pricingTiers && pricingTiers.durations.length > 0 ? pricingTiers.durations[0]! : null,
+  );
+
+  /**
+   * For private/charter products with `pricingTiers`, resolve the matched tier
+   * price based on the current guestCount + selectedDuration. When guestCount
+   * exceeds the last tier and `extraPerPaxAbove` is set, scale linearly.
+   */
+  const tierPriceUsd = useMemo(() => {
+    if (!pricingTiers || !selectedDuration) return null;
+    const matched = pricingTiers.tiers.find(
+      (tr) => guestCount >= tr.paxMin && guestCount <= tr.paxMax,
+    );
+    if (matched) {
+      const v = matched.prices[selectedDuration];
+      return typeof v === "number" && v > 0 ? v : null;
+    }
+    const e = pricingTiers.extraPerPaxAbove;
+    if (e && guestCount > e.anchorPax) {
+      return e.basePrice + e.perPaxAdd * (guestCount - e.anchorPax);
+    }
+    const last = pricingTiers.tiers[pricingTiers.tiers.length - 1];
+    const v = last?.prices[selectedDuration];
+    return typeof v === "number" && v > 0 ? v : null;
+  }, [pricingTiers, selectedDuration, guestCount]);
 
   const minYmd = todayYmdLocal();
   const minDateObj = useMemo(() => ymdToLocalDate(minYmd), [minYmd]);
@@ -144,12 +173,15 @@ export function TourDesktopBookingCard({
   }, [checkout?.tourId, dateYmd, guestCount, minYmd]);
 
   const unitPriceUsd = useMemo(() => {
+    /** Tier-based pricing is authoritative — guest/duration changes must always win over the
+     * coarse availability-API price (which returns the DB base price regardless of group size). */
+    if (tierPriceUsd != null) return tierPriceUsd;
     if (availability.status === "available" && availability.priceUsd != null && availability.priceUsd > 0) {
       return availability.priceUsd;
     }
     if (checkout?.unitPriceUsd != null && checkout.unitPriceUsd > 0) return checkout.unitPriceUsd;
     return parseListUnitUsd(price);
-  }, [availability, checkout, price]);
+  }, [availability, checkout, price, tierPriceUsd]);
 
   const estimatedTotal = useMemo(() => {
     if (!checkout || unitPriceUsd == null) return null;
@@ -168,6 +200,29 @@ export function TourDesktopBookingCard({
       maximumFractionDigits: 0,
     }).format(unitPriceUsd);
   }, [unitPriceUsd, currencyCtx]);
+
+  /** Compare-at (strikethrough) anchor; only shown when authored and higher than sale. */
+  const originalUnitPriceUsd =
+    typeof price.originalPriceUsd === "number" && price.originalPriceUsd > 0
+      ? price.originalPriceUsd
+      : null;
+  const showOriginalPrice =
+    originalUnitPriceUsd != null && unitPriceUsd != null && originalUnitPriceUsd > unitPriceUsd;
+  const ctaOriginalFormatted = useMemo(() => {
+    if (!showOriginalPrice || originalUnitPriceUsd == null) return null;
+    if (currencyCtx) return currencyCtx.formatPrice(originalUnitPriceUsd);
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 0,
+    }).format(originalUnitPriceUsd);
+  }, [showOriginalPrice, originalUnitPriceUsd, currencyCtx]);
+  const discountPercent =
+    typeof price.discountPercent === "number" && price.discountPercent > 0
+      ? Math.round(price.discountPercent)
+      : showOriginalPrice && originalUnitPriceUsd != null && unitPriceUsd != null
+        ? Math.round(((originalUnitPriceUsd - unitPriceUsd) / originalUnitPriceUsd) * 100)
+        : 0;
 
   const perUnitLabel = checkout?.priceType === "group" ? "group" : price.per;
 
@@ -257,12 +312,29 @@ export function TourDesktopBookingCard({
         <p className="text-[10.5px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
           {t("tour.stickyPriceFrom")}
         </p>
+        {showOriginalPrice && ctaOriginalFormatted ? (
+          <div className="mt-0.5 flex items-center gap-2">
+            <span className="text-sm text-muted-foreground line-through tabular-nums">
+              {ctaOriginalFormatted}
+            </span>
+            {discountPercent > 0 && (
+              <span className="rounded bg-red-500 px-1.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-white">
+                {discountPercent}% OFF
+              </span>
+            )}
+          </div>
+        ) : null}
         <p className="mt-1 flex items-baseline gap-1.5 tabular-nums">
           <span className="text-3xl font-bold tracking-tight text-foreground">
             {ctaUnitFormatted ?? `${price.amountLabel}${price.currency ? " " + price.currency : ""}`}
           </span>
           <span className="text-sm font-medium text-muted-foreground">/ {perUnitLabel}</span>
         </p>
+        {price.priceNote ? (
+          <p className="mt-1 text-[11px] text-muted-foreground">
+            {price.priceNote}
+          </p>
+        ) : null}
         {estimatedTotal != null && checkout?.priceType === "person" && estimatedTotalFormatted && guestCount > 1 && (
           <p className="mt-0.5 text-[12px] text-muted-foreground tabular-nums">
             <span className="font-semibold text-foreground">{estimatedTotalFormatted}</span>
@@ -271,6 +343,81 @@ export function TourDesktopBookingCard({
           </p>
         )}
       </div>
+
+      {/* Pricing tiers — duration toggle (when >1) + full matrix (private/charter products) */}
+      {pricingTiers && pricingTiers.tiers.length > 0 && (
+        <div className="mb-4 rounded-2xl border border-slate-200/70 bg-slate-50/60 p-3">
+          {pricingTiers.durations.length > 1 && (
+            <div className="mb-2 flex items-center justify-between">
+              <span className={`${fieldLabelClass}`}>Duration</span>
+              <div className="inline-flex rounded-full bg-white p-0.5 shadow-sm ring-1 ring-slate-200">
+                {pricingTiers.durations.map((d) => (
+                  <button
+                    key={d}
+                    type="button"
+                    onClick={() => setSelectedDuration(d)}
+                    className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
+                      selectedDuration === d
+                        ? "bg-foreground text-white"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {d}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+          <div className="overflow-hidden rounded-xl border border-slate-200/70 bg-white">
+            <table className="w-full text-[12px]">
+              <thead className="bg-slate-100/70 text-[10.5px] uppercase tracking-wide text-muted-foreground">
+                <tr>
+                  <th className="px-2.5 py-1.5 text-left font-semibold">Group size</th>
+                  {pricingTiers.durations.map((d) => (
+                    <th key={d} className="px-2.5 py-1.5 text-right font-semibold">
+                      {pricingTiers.durations.length === 1 ? "Price" : d}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {pricingTiers.tiers.map((tr) => {
+                  const isMatchedPax = guestCount >= tr.paxMin && guestCount <= tr.paxMax;
+                  return (
+                    <tr key={tr.paxLabel} className={isMatchedPax ? "bg-amber-50/70" : ""}>
+                      <td className="px-2.5 py-1.5 font-medium text-foreground">
+                        {tr.paxLabel}
+                      </td>
+                      {pricingTiers.durations.map((d) => {
+                        const v = tr.prices[d];
+                        const isMatched = isMatchedPax && d === selectedDuration;
+                        return (
+                          <td
+                            key={d}
+                            className={`px-2.5 py-1.5 text-right tabular-nums ${
+                              isMatched ? "font-bold text-foreground" : "text-foreground"
+                            }`}
+                          >
+                            {typeof v === "number" ? `$${v}` : "—"}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          {pricingTiers.extraPerPaxAbove ? (
+            <p className="mt-2 text-[10.5px] text-muted-foreground">
+              {pricingTiers.extraPerPaxAbove.anchorPax + 1}+ pax: +${pricingTiers.extraPerPaxAbove.perPaxAdd} per extra guest
+            </p>
+          ) : null}
+          <p className="mt-2 text-[10.5px] text-muted-foreground">
+            Per {pricingTiers.unit} · price updates with the guest count below
+          </p>
+        </div>
+      )}
 
       {/* Calendar */}
       <div className="card-premium-calendar-wrap card-premium-calendar-wrap--compact mb-3">

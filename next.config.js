@@ -90,6 +90,24 @@ const nextConfig = {
     if (dev && !isServer && config.output) {
       config.output.chunkLoadTimeout = 180000;
     }
+    /**
+     * Exclude `.claude/` from the dev file watcher. The agent harness keeps git
+     * worktrees + session data under `.claude/` (tens of thousands of files);
+     * without this, webpack's watcher churns through them and triggers an
+     * endless rebuild loop that interrupts client hydration on large pages.
+     * Glob strings only — this webpack version's schema rejects RegExp entries.
+     */
+    if (dev) {
+      config.watchOptions = {
+        ...config.watchOptions,
+        ignored: [
+          '**/node_modules/**',
+          '**/.git/**',
+          '**/.next/**',
+          '**/.claude/**',
+        ],
+      };
+    }
     return config;
   },
   // Static export for Capacitor (uncomment when building for mobile)
@@ -130,10 +148,13 @@ const nextConfig = {
       { protocol: 'https', hostname: 'cdn.visitbusan.net', pathname: '/**' },
       { protocol: 'https', hostname: 'lh3.googleusercontent.com', pathname: '/**' },
       { protocol: 'https', hostname: 'maps.googleapis.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'res.cloudinary.com', pathname: '/**' },
     ],
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    /** Allowed `quality` values for `next/image` (Next 16 rejects values not listed). */
+    qualities: [75, 90],
     minimumCacheTTL: 60,
   },
   compress: true,

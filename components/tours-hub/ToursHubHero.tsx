@@ -6,9 +6,9 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const DESTINATION_CHIPS = [
-  { label: 'Jeju Island', href: '/tours/list?destinations=Jeju', emoji: '🌋' },
-  { label: 'Busan', href: '/tours/list?destinations=Busan', emoji: '⚓' },
-  { label: 'Seoul & Day Trips', href: '/tours/list?destinations=Seoul', emoji: '🏯' },
+  { label: 'Jeju Island', href: '/tours/list?destination=Jeju', emoji: '🌋' },
+  { label: 'Busan', href: '/tours/list?destination=Busan', emoji: '⚓' },
+  { label: 'Seoul & Day Trips', href: '/tours/list?destination=Seoul', emoji: '🏯' },
 ];
 
 const TRUST_BADGES = [

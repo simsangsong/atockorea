@@ -148,10 +148,10 @@ export function TourHeroSection({
         )}
 
         <h1 className="text-foreground">
-          <span className="tour-hero-headline-line block text-[23px] font-bold leading-[1.08] tracking-[-0.022em] sm:text-[28px] sm:leading-[1.05] sm:tracking-[-0.02em] lg:text-[31px] lg:leading-[1.06]">
+          <span className="tour-hero-headline-line block text-[19px] font-bold leading-[1.18] tracking-[-0.018em] sm:text-[22px] sm:leading-[1.15] sm:tracking-[-0.016em] lg:text-[24px] lg:leading-[1.16]">
             {headlineLine1}
           </span>
-          <span className="tour-hero-headline-line mt-0.5 block text-[23px] font-bold leading-[1.08] tracking-[-0.022em] sm:mt-1 sm:text-[28px] sm:leading-[1.05] sm:tracking-[-0.02em] lg:text-[31px] lg:leading-[1.06]">
+          <span className="tour-hero-headline-line mt-0.5 block text-[13.5px] font-semibold leading-[1.3] tracking-[-0.008em] text-[#1a2332]/65 sm:mt-1 sm:text-[15px] sm:leading-[1.28] lg:text-[16px]">
             {headlineLine2}
           </span>
         </h1>

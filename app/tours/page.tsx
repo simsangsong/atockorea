@@ -145,7 +145,7 @@ export default async function ToursHubPage() {
               title="Top Picks"
               subtitle="Highest-rated tours with verified reviews"
               tours={hub.topPicks}
-              seeAllHref="/tours/list?sortBy=rating&sortOrder=desc"
+              seeAllHref="/tours/list?sort=rating"
               seeAllLabel="All top-rated"
               accentColor="amber"
             />
@@ -163,7 +163,7 @@ export default async function ToursHubPage() {
               title="Jeju Island Tours"
               subtitle="Korea's volcanic island — UNESCO craters, waterfalls & coastal drives"
               tours={hub.jeju}
-              seeAllHref="/tours/list?destinations=Jeju"
+              seeAllHref="/tours/list?destination=Jeju"
               seeAllLabel="All Jeju tours"
               accentColor="emerald"
             />
@@ -176,7 +176,7 @@ export default async function ToursHubPage() {
               title="Busan Tours"
               subtitle="Korea's port city — temples, beaches & street food culture"
               tours={hub.busan}
-              seeAllHref="/tours/list?destinations=Busan"
+              seeAllHref="/tours/list?destination=Busan"
               seeAllLabel="All Busan tours"
               accentColor="blue"
             />
@@ -189,7 +189,7 @@ export default async function ToursHubPage() {
               title="Seoul & Day Trips"
               subtitle="Palaces, hanok villages & countryside escapes from the capital"
               tours={hub.seoul}
-              seeAllHref="/tours/list?destinations=Seoul"
+              seeAllHref="/tours/list?destination=Seoul"
               seeAllLabel="All Seoul tours"
               accentColor="violet"
             />
@@ -241,7 +241,7 @@ export default async function ToursHubPage() {
               title="Private & Charter Tours"
               subtitle="Your own vehicle, your own pace — fully customisable itineraries"
               tours={hub.private}
-              seeAllHref="/tours/list?tourType=private"
+              seeAllHref="/tours/list?type=private"
               seeAllLabel="All private tours"
               accentColor="violet"
             />

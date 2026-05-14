@@ -5,23 +5,23 @@
   "locale": "ko",
   "product_id": "jeju-cherry-blossom-tour-east-route",
   "seo": {
-    "pageTitle": "제주 동쪽 봄 벚꽃 소그룹 투어 | AtoC Korea",
-    "metaDescription": "봄 전용 동제주 투어: 전농로 벚꽃 거리, 가시리 10km 유채+벚꽃 도로, 만장굴(유네스코), 성산일출봉(유네스코).",
+    "pageTitle": "제주 동부 벚꽃 봄 당일 투어 | AtoC Korea",
+    "metaDescription": "봄 한정 제주 동부 당일 투어: 전농로 벚꽃 거리, 가시리 10km 유채꽃·벚꽃 길, 미천굴 용암 동굴, 성산일출봉. 3월 중순~4월.",
     "ogImage": "https://www.atockorea.com/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
     "primaryKeywords": [
       "제주 벚꽃 투어",
-      "제주 동부 봄 투어",
-      "녹산로 벚꽃 유채 투어",
-      "전농로 벚꽃 투어"
+      "제주 봄 투어",
+      "성산일출봉 투어",
+      "제주 동부 코스 당일 투어",
+      "제주 한복 벚꽃"
     ],
-    "title": "제주 동부 봄 벚꽃·유채 시즌 투어 | AtoC Korea",
-    "description": "제주 동부 봄 시즌 투어: 전농로 벚꽃거리 → 녹산로 벚꽃+유채 10km → 미천굴 → 성산일출봉(유네스코). 3/25~4/10 한정. 소그룹."
+    "title": "제주 벚꽃 투어 · 동부 코스 · 봄 한정 당일 투어"
   },
   "catalog_card": {
     "slug": "jeju-cherry-blossom-tour-east-route",
-    "title": "제주 동부 봄 벚꽃 투어",
-    "subtitle": "전농로 벚꽃거리, 녹산로 10km 벚꽃+유채 도로, 미천굴, 성산일출봉(유네스코)을 봄 시즌 한정으로.",
-    "region": "동제주",
+    "title": "제주 동부: 벚꽃 투어",
+    "subtitle": "벚꽃 거리에서 용암 동굴을 지나 일출봉까지.",
+    "region": "제주 동부",
     "duration": "8시간",
     "stopsCount": 6,
     "rating": 0,
@@ -33,37 +33,37 @@
     ],
     "heroImage": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
     "thumbnail": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-    "priceLabel": "1인 US$59 (정가 $69, 14% 할인)",
-    "shortCardDescription": "전농로(제주 최고 벚꽃 거리), 녹산로(가시리 10km 벚꽃+유채 도로), 미천굴 용암동굴(일출랜드), 성산일출봉(유네스코) 포토 스톱을 소그룹으로 봄 하루에 일주합니다.",
+    "priceLabel": "",
+    "shortCardDescription": "봄에만 운영하는 제주 동부 코스: 벚꽃 거리, 10km 유채꽃 길, 용암 동굴, 그리고 상징적인 성산 분화구를 둘러봅니다.",
     "tags": [
-      "봄 한정",
-      "벚꽃 시즌",
-      "제주 동부"
+      "spring_only",
+      "cherry_blossom_season",
+      "east_jeju"
     ]
   },
-  "headlineLine1": "제주 동부 봄 벚꽃 투어",
-  "headlineLine2": "투어",
+  "headlineLine1": "제주 동부",
+  "headlineLine2": "벚꽃 투어",
   "price": {
-    "amountLabel": "59",
-    "originalPriceUsd": 69,
-    "salePriceUsd": 59,
-    "discountPercent": 14,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
     "imagePosition": "center 40%",
-    "tagline": "벚꽃 거리에서 용암동굴을 지나 일출봉까지.",
+    "tagline": "벚꽃 거리에서 용암 동굴을 지나 일출봉까지.",
     "pills": [
       "봄 한정",
       "벚꽃 시즌",
-      "동제주"
+      "제주 동부"
     ],
     "meta": {
       "duration": "8시간",
-      "region": "동제주",
-      "stops": "6개 코스",
+      "region": "제주 동부",
+      "stops": "6개 명소",
       "rating": 0,
       "ratingStars": 0
     }
@@ -71,177 +71,415 @@
   "subnavItems": [
     {
       "id": "overview",
-      "label": "투어 개요"
+      "label": "개요"
     },
     {
       "id": "itinerary",
-      "label": "상세 일정"
+      "label": "여행 일정"
     },
     {
-      "id": "details",
-      "label": "유의사항"
-    },
-    {
-      "id": "faq",
-      "label": "자주 묻는 질문"
+      "id": "practical",
+      "label": "실용 정보"
     },
     {
       "id": "reviews",
-      "label": "여행자 후기"
+      "label": "리뷰"
+    },
+    {
+      "id": "booking",
+      "label": "예약"
     }
   ],
   "glanceItems": [
     {
       "icon": "camera",
-      "label": "사진 포인트",
-      "value": "매우 높음"
+      "label": "사진 가치",
+      "value": "훌륭함",
+      "level": 5
     },
     {
-      "icon": "calendar",
-      "label": "권장 시즌",
-      "value": "3월 25 - 4월 10"
-    },
-    {
-      "icon": "users",
-      "label": "최대 인원",
-      "value": "소그룹"
-    },
-    {
-      "icon": "clock",
-      "label": "소요 시간",
-      "value": "8시간"
-    },
-    {
-      "icon": "map-pin",
-      "label": "투어 지역",
-      "value": "제주 동부"
+      "icon": "mountain",
+      "label": "경치 좋음",
+      "value": "좋음",
+      "level": 4
     },
     {
       "icon": "footprints",
-      "label": "도보 난이도",
-      "value": "보통"
+      "label": "도보",
+      "value": "보통",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "우천 안전도",
+      "value": "낮음",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "가족 적합도",
+      "value": "좋음",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "균형",
+      "value": "균형 잡힘",
+      "level": 4
     }
   ],
   "galleryItems": [
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-      "location": "미천굴 (일출랜드)",
-      "alt": "미천굴 (일출랜드) — gallery image 1",
-      "caption": "미천굴 (일출랜드) — photo 1"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/9df6665f-e0cf-4b8a-8d1c-2ec895745448.webp",
+      "location": "전농로 벚꽃길",
+      "alt": "전농로 벚꽃길 — 경로 내 사진",
+      "caption": "전농로 벚꽃길"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-      "location": "성산일출봉 (유네스코 포토 스톱)",
-      "alt": "성산일출봉 (유네스코 포토 스톱) — gallery image 1",
-      "caption": "성산일출봉 (유네스코 포토 스톱) — photo 1"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "location": "미천굴 (일출랜드)",
+      "alt": "미천굴 (일출랜드) — 갤러리 이미지 1",
+      "caption": "미천굴 (일출랜드) — 사진 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-      "location": "미천굴 (일출랜드)",
-      "alt": "미천굴 (일출랜드) — gallery image 2",
-      "caption": "미천굴 (일출랜드) — photo 2"
+      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
+      "location": "일출랜드 테마 정원",
+      "alt": "일출랜드 테마 정원 — 경로 내 사진",
+      "caption": "일출랜드 테마 정원"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-      "location": "미천굴 (일출랜드)",
-      "alt": "미천굴 (일출랜드) — gallery image 3",
-      "caption": "미천굴 (일출랜드) — photo 3"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "성산일출봉 (유네스코 포토 스팟)",
+      "alt": "성산일출봉 (유네스코 포토 스팟) — 갤러리 이미지 1",
+      "caption": "성산일출봉 (유네스코 포토 스팟) — 사진 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-      "location": "미천굴 (일출랜드)",
-      "alt": "미천굴 (일출랜드) — gallery image 4",
-      "caption": "미천굴 (일출랜드) — photo 4"
+      "src": "https://images.unsplash.com/photo-1675002369691-23cacf99fb8e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "전농로 벚꽃길",
+      "alt": "전농로 벚꽃길 — 이동 중 사진",
+      "caption": "전농로 벚꽃길"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-      "location": "미천굴 (일출랜드)",
-      "alt": "미천굴 (일출랜드) — gallery image 5",
-      "caption": "미천굴 (일출랜드) — photo 5"
+      "src": "https://images.unsplash.com/photo-1585554555426-3b8b62fcfb11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "전농로 벚꽃길",
+      "alt": "전농로 벚꽃길 — 이동 중 사진",
+      "caption": "전농로 벚꽃길"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-      "location": "미천굴 (일출랜드)",
-      "alt": "미천굴 (일출랜드) — gallery image 6",
-      "caption": "미천굴 (일출랜드) — photo 6"
+      "src": "https://images.unsplash.com/photo-1680385985562-046bed50b4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "전농로 벚꽃길",
+      "alt": "전농로 벚꽃길 — 이동 중 사진",
+      "caption": "전농로 벚꽃길"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-      "location": "미천굴 (일출랜드)",
-      "alt": "미천굴 (일출랜드) — gallery image 7",
-      "caption": "미천굴 (일출랜드) — photo 7"
+      "src": "https://images.unsplash.com/photo-1775116305368-2a4b53c1aa40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "전농로 벚꽃길",
+      "alt": "전농로 벚꽃길 — 이동 중 사진",
+      "caption": "전농로 벚꽃길"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
-      "location": "미천굴 (일출랜드)",
-      "alt": "미천굴 (일출랜드) — gallery image 8",
-      "caption": "미천굴 (일출랜드) — photo 8"
+      "src": "https://images.unsplash.com/photo-1712831713785-25970d124a92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "전농로 벚꽃길",
+      "alt": "전농로 벚꽃길 — 이동 중 사진",
+      "caption": "전농로 벚꽃길"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
-      "location": "미천굴 (일출랜드)",
-      "alt": "미천굴 (일출랜드) — gallery image 9",
-      "caption": "미천굴 (일출랜드) — photo 9"
+      "src": "https://images.unsplash.com/photo-1680792521306-b3f8bb79d2ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "전농로 벚꽃길",
+      "alt": "전농로 벚꽃길 — 이동 중 사진",
+      "caption": "전농로 벚꽃길"
     },
     {
       "id": 11,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
-      "location": "미천굴 (일출랜드)",
-      "alt": "미천굴 (일출랜드) — gallery image 10",
-      "caption": "미천굴 (일출랜드) — photo 10"
+      "src": "https://images.unsplash.com/photo-1617413757675-a60d030d30fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "전농로 벚꽃길",
+      "alt": "전농로 벚꽃길 — 이동 중 사진",
+      "caption": "전농로 벚꽃길"
     },
     {
       "id": 12,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-      "location": "성산일출봉 (유네스코 포토 스톱)",
-      "alt": "성산일출봉 (유네스코 포토 스톱) — gallery image 2",
-      "caption": "성산일출봉 (유네스코 포토 스톱) — photo 2"
+      "src": "https://images.unsplash.com/photo-1680279257583-5bb568d8b396?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "전농로 벚꽃길",
+      "alt": "전농로 벚꽃길 — 이동 중 촬영",
+      "caption": "전농로 벚꽃길"
     },
     {
       "id": 13,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-      "location": "성산일출봉 (유네스코 포토 스톱)",
-      "alt": "성산일출봉 (유네스코 포토 스톱) — gallery image 3",
-      "caption": "성산일출봉 (유네스코 포토 스톱) — photo 3"
+      "src": "https://images.unsplash.com/photo-1652335016925-732823d15b23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "전농로 벚꽃길",
+      "alt": "전농로 벚꽃길 — 이동 중 촬영",
+      "caption": "전농로 벚꽃길"
     },
     {
       "id": 14,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-      "location": "성산일출봉 (유네스코 포토 스톱)",
-      "alt": "성산일출봉 (유네스코 포토 스톱) — gallery image 4",
-      "caption": "성산일출봉 (유네스코 포토 스톱) — photo 4"
+      "src": "https://images.unsplash.com/photo-1739482409416-f9cba9a56073?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로)",
+      "alt": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로) — 이동 중 촬영",
+      "caption": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로)"
     },
     {
       "id": 15,
       "type": "photo",
+      "src": "https://images.unsplash.com/photo-1730026140087-93ebef75d29e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로)",
+      "alt": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로) — 이동 중 촬영",
+      "caption": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로)"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1590085309112-f67167e8da6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로)",
+      "alt": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로) — 이동 중 촬영",
+      "caption": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로)"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1593726222205-21404ff4e5fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로)",
+      "alt": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로) — 이동 중 촬영",
+      "caption": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로)"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1514625796505-dba9ebaf5816?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로)",
+      "alt": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로) — 이동 중 촬영",
+      "caption": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로)"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1719176373136-9cdb6ef43212?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로)",
+      "alt": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로) — 이동 중 촬영",
+      "caption": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로)"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1709497701757-3a1caf6600dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "녹산로 (가시리 10km 벚꽃 + 유채꽃 도로)",
+      "alt": "녹산로 (가시리 10km 벚꽃 + 유채꽃길) — 이동 중 촬영 사진",
+      "caption": "녹산로 (가시리 10km 벚꽃 + 유채꽃길)"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1723707304010-15f5db159b6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "녹산로 (가시리 10km 벚꽃 + 유채꽃길)",
+      "alt": "녹산로 (가시리 10km 벚꽃 + 유채꽃길) — 이동 중 촬영 사진",
+      "caption": "녹산로 (가시리 10km 벚꽃 + 유채꽃길)"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1666328756682-ab6ad7a4df03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "녹산로 (가시리 10km 벚꽃 + 유채꽃길)",
+      "alt": "녹산로 (가시리 10km 벚꽃 + 유채꽃길) — 이동 중 촬영 사진",
+      "caption": "녹산로 (가시리 10km 벚꽃 + 유채꽃길)"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+      "location": "미천굴 (일출랜드)",
+      "alt": "미천굴 (일출랜드) — 갤러리 이미지 2",
+      "caption": "미천굴 (일출랜드) — 사진 2"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+      "location": "미천굴 (일출랜드)",
+      "alt": "미천굴 (일출랜드) — 갤러리 이미지 3",
+      "caption": "미천굴 (일출랜드) — 사진 3"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+      "location": "미천굴 (일출랜드)",
+      "alt": "미천굴 (일출랜드) — 갤러리 이미지 4",
+      "caption": "미천굴 (일출랜드) — 사진 4"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+      "location": "미천굴 (일출랜드)",
+      "alt": "미천굴 (일출랜드) — 갤러리 이미지 5",
+      "caption": "미천굴 (일출랜드) — 사진 5"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+      "location": "미천굴 (일출랜드)",
+      "alt": "미천굴 (일출랜드) — 갤러리 이미지 6",
+      "caption": "미천굴 (일출랜드) — 사진 6"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+      "location": "미천굴 (일출랜드)",
+      "alt": "미천굴 (일출랜드) — 갤러리 이미지 7",
+      "caption": "미천굴 (일출랜드) — 사진 7"
+    },
+    {
+      "id": 29,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+      "location": "미천굴 (일출랜드)",
+      "alt": "미천굴 (일출랜드) — 갤러리 이미지 8",
+      "caption": "미천굴 (일출랜드) — 사진 8"
+    },
+    {
+      "id": 30,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+      "location": "미천굴 (일출랜드)",
+      "alt": "미천굴 (일출랜드) — 갤러리 이미지 9",
+      "caption": "미천굴 (일출랜드) — 사진 9"
+    },
+    {
+      "id": 31,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+      "location": "미천굴 (일출랜드)",
+      "alt": "미천굴 (일출랜드) — 갤러리 이미지 10",
+      "caption": "미천굴 (일출랜드) — 사진 10"
+    },
+    {
+      "id": 32,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1666328756682-ab6ad7a4df03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "일출랜드 테마 정원",
+      "alt": "일출랜드 테마 정원 — 경로 사진",
+      "caption": "일출랜드 테마 정원"
+    },
+    {
+      "id": 33,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1718958505977-6f5790f1cf1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "일출랜드 테마 정원",
+      "alt": "일출랜드 테마 정원 — 경로 사진",
+      "caption": "일출랜드 테마 정원"
+    },
+    {
+      "id": 34,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1747587241381-c952b679edf5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "일출랜드 테마 정원",
+      "alt": "일출랜드 테마 정원 — 경로 사진",
+      "caption": "일출랜드 테마 정원"
+    },
+    {
+      "id": 35,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1584802590409-181a9b3186f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "일출랜드 테마 정원",
+      "alt": "일출랜드 테마 정원 — 경로 사진",
+      "caption": "일출랜드 테마 정원"
+    },
+    {
+      "id": 36,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1747587356640-c9fb02acdd29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "일출랜드 테마 정원",
+      "alt": "일출랜드 테마 정원 — 경로 사진",
+      "caption": "일출랜드 테마 정원"
+    },
+    {
+      "id": 37,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1718958506421-a686b6ce3a64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "일출랜드 테마 정원",
+      "alt": "일출랜드 테마 정원 — 이동 중 촬영 사진",
+      "caption": "일출랜드 테마 정원"
+    },
+    {
+      "id": 38,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1747487023570-aaf7d94581b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "일출랜드 테마 정원",
+      "alt": "일출랜드 테마 정원 — 이동 중 촬영 사진",
+      "caption": "일출랜드 테마 정원"
+    },
+    {
+      "id": 39,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1503932953040-b6085c4fd82e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "일출랜드 테마 정원",
+      "alt": "일출랜드 테마 정원 — 이동 중 촬영 사진",
+      "caption": "일출랜드 테마 정원"
+    },
+    {
+      "id": 40,
+      "type": "photo",
+      "src": "https://images.unsplash.com/photo-1663687609883-07ef1a0b58ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "location": "일출랜드 테마 정원",
+      "alt": "일출랜드 테마 정원 — 이동 중 촬영 사진",
+      "caption": "일출랜드 테마 정원"
+    },
+    {
+      "id": 41,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "성산일출봉 (유네스코 포토 스톱)",
+      "alt": "성산일출봉 (유네스코 포토 스톱) — 갤러리 이미지 2",
+      "caption": "성산일출봉 (유네스코 포토 스톱) — 사진 2"
+    },
+    {
+      "id": 42,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "성산일출봉 (유네스코 포토 스톱)",
+      "alt": "성산일출봉 (유네스코 포토 스톱) — 갤러리 이미지 3",
+      "caption": "성산일출봉 (유네스코 포토 스톱) — 사진 3"
+    },
+    {
+      "id": 43,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "성산일출봉 (유네스코 포토 스톱)",
+      "alt": "성산일출봉 (유네스코 포토 스톱) — 갤러리 이미지 4",
+      "caption": "성산일출봉 (유네스코 포토 스톱) — 사진 4"
+    },
+    {
+      "id": 44,
+      "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
       "location": "성산일출봉 (유네스코 포토 스톱)",
-      "alt": "성산일출봉 (유네스코 포토 스톱) — gallery image 5",
-      "caption": "성산일출봉 (유네스코 포토 스톱) — photo 5"
+      "alt": "성산일출봉 (유네스코 포토 스톱) — 갤러리 이미지 5",
+      "caption": "성산일출봉 (유네스코 포토 스톱) — 사진 5"
     }
   ],
   "itineraryStops": [
@@ -249,28 +487,28 @@
       "number": 1,
       "time": "09:00",
       "duration": "75분",
-      "name": "전농로 벚꽃 거리",
-      "category": "왕벚나무 가로수길 — 제주 시내",
-      "description": "**전농로**는 **제주에서 가로수가 가장 오래된 벚꽃길**로, 제주 시내 중심부에 자리한 **1.2km 축제 회랑**입니다. 길 양옆으로 자생 **왕벚나무 수백 그루**가 늘어서 있으며, **수령 100년이 넘는 노목**도 다수 포함되어 있습니다. 왕벚나무는 **제주도가 원산지**로, **1908년 프랑스 선교사 에밀 타케가 한라산에서 처음 채집·기록**한 종이며, 일본의 요시노 벚나무와는 유전적으로 구분되는 별개 품종입니다(한국·일본 식물학계 사이의 학술 논의가 이어지고 있는 주제). 왕벚 꽃잎은 요시노 꽃잎보다 **눈에 띄게 크고 풍성하며, 분홍빛이 더 진합니다**. 절정 개화는 **단 3–5일**이며, 시기는 통상 3월 25–30일 전후입니다(2026년에는 평년보다 따뜻한 겨울로 한국관광공사가 **평균보다 2–7일 이른 개화**를 발표 — 첫 개화 약 3월 25일 예상). **제주 왕벚꽃축제**는 **2026년에 19회를 맞이하는** 연례 축제로, 1.2km 회랑의 차량을 통제하고 **빨강·파랑 청사초롱**을 걸며 야간 점등도 함께 진행합니다. **주소: 제주시 전농로 40**; 무료 입장(공공 도로); 축제 운영 시간은 보통 10:00–22:00이며 무대 행사가 함께 열립니다. 30–60분 산책 코스로, 유모차와 시니어에게도 무난합니다. **삼성혈**(제주 시조 신화의 동굴)이 도보 거리에 있어 함께 묶기 좋으며, 그 벚나무들은 동굴 쪽으로 기울어진 모습이 마치 시조신께 절을 올리듯 자라 있습니다. 축제 차량 통제 회랑은 **개화 절정기 약 2주간** 운영되며, 1.2km 전 구간에 한국 전통 청사초롱이 걸리고 **18:00–22:00 야간 점등**으로 벚꽃 터널을 환하게 비춰 줍니다 — **한국 다른 어느 벚꽃 명소에서도 만나기 어려운** 저녁 촬영 옵션입니다. 축제 기간 내내 노점(전, 떡볶이, 호떡, 막걸리)과 주말 전통 풍물 공연이 함께 어우러져 **낮·저녁 2회차** 촬영 경험을 제공합니다.",
+      "name": "전농로 벚꽃길",
+      "category": "왕벚꽃 거리 — 제주시",
+      "description": "**전농로(Jeonnong-ro)**는 **제주에서 가장 오래된 가로수 벚꽃길**로, 제주시 중심부에 위치한 **1.2km 축제 거리**입니다. 이 길에는 **수령 100년이 넘는 왕벚나무(Prunus × nudiflora, *wangbeotnamu*) 수백 그루**가 줄지어 서 있습니다. 왕벚나무는 **제주도 자생종**으로, **1908년 프랑스 선교사 에밀 타케(Émile Taquet)에 의해 한라산에서 처음 학술 기록**되었습니다. 이 품종은 일본의 요시노 벚꽃(소메이요시노)과 유전적으로 구별되며, 이는 한국과 일본 식물학자들 사이에서 지속적인 학술 논쟁의 주제가 되고 있습니다. 왕벚꽃 꽃잎은 요시노 벚꽃에 비해 **눈에 띄게 크고 풍성하며 더욱 진한 분홍빛**을 띱니다. 절정 개화 기간은 불과 **3~5일로, 보통 3월 25일~30일**경입니다(2026년의 경우, 한국관광공사는 예년보다 포근한 겨울로 인해 **평년 대비 2~7일 일찍** 개화할 것으로 예보하며, 첫 개화는 3월 25일경 예상). **매년 열리는 제주 왕벚꽃축제**(2026년은 제19회)는 1.2km 구간을 차 없는 거리로 운영하며, 나무마다 **홍청 등롱**을 걸고 야간 조명을 밝힙니다. **주소: 제주시 전농로 40**; 입장 무료(공공 도로); 축제 운영 시간은 통상 10:00~22:00이며 무대 행사가 함께 진행됩니다. 유모차와 어르신도 편안하게 즐길 수 있는 30~60분 산책 코스입니다. **삼성혈**(제주 삼신인 탄생 전설의 신화적 동굴 성지)이 도보 거리 내에 위치하며, 경내 벚나무들이 마치 경배하듯 동굴 쪽으로 기울어져 있습니다. 차 없는 축제 거리는 **절정 개화 기간 약 2주간** 운영되며, 1.2km 전 구간에 한국 전통 등롱인 청사초롱(청사초롱, 靑紗燈籠)이 내걸리고 **18:00~22:00 야간 조명**으로 벚꽃 터널을 밝혀 저녁 사진 촬영을 가능하게 합니다. 이는 **국내 다른 벚꽃 명소에서는 찾아볼 수 없는** 특별한 경험입니다. 축제 기간 주말에는 노점(전, 떡볶이, 호떡, 막걸리)과 전통 사물놀이 공연이 펼쳐져, **낮과 저녁 두 가지 분위기**의 사진 촬영을 즐길 수 있습니다.",
       "highlights": [
-        "**제주에서 가장 오래된 가로수 벚꽃길** — 수령 100년 이상 노목 다수",
-        "**1.2km 축제 회랑** — 자생 **왕벚나무** 수백 그루",
-        "왕벚나무, **1908년 프랑스 선교사 에밀 타케가 한라산에서 첫 기록**",
-        "요시노 벚꽃 대비 **꽃잎이 크고 풍성하며 분홍빛이 진함**",
-        "**절정 개화 3–5일**, 약 3월 25–30일(2026년은 2–7일 이른 개화 예상)",
-        "**2026년 제19회 제주 왕벚꽃축제** — 차량 통제 회랑 + 청사초롱 + 야간 점등",
-        "**무료 공공 도로**; 주소 **제주시 전농로 40**",
-        "유모차·시니어 친화적 평지 1.2km 코스",
-        "**왕벚나무는 일본 요시노 벚나무와 유전적으로 구분되는 별개 품종** — 한일 식물학계 학술 논의 주제로, 한국 유전학 연구(2018 Genome Research, KAIST)는 한라산 자생 기원을 확인했고 일본은 요시노를 별도 재배 품종으로 분류함 — 자생지 방문 자체가 단순한 관상 관광을 넘어 식물학적 의미를 담음"
+        "**제주에서 가장 오래된 가로수 벚꽃길** — 수령 100년이 넘는 나무들",
+        "자생 **왕벚나무** 수백 그루가 늘어선 **1.2km 축제 거리**",
+        "**1908년 프랑스 선교사 에밀 타케에 의해 한라산에서 처음 학술 기록**된 왕벚나무",
+        "**꽃잎이 더 크고 풍성하며 더욱 진한 분홍빛** — 요시노 벚꽃과의 차이",
+        "**절정 개화 기간 3~5일**, 약 3월 25~30일(2026년 예보: 평년 대비 2~7일 이른 개화)",
+        "**2026년 제19회 제주 왕벚꽃축제** — 차 없는 거리 + 등롱 장식 + 야간 조명",
+        "무료 공개 도로; 주소 **제주시 전농로 40**",
+        "유모차·어르신도 편안한 평탄한 1.2km 코스",
+        "**왕벚나무(왕벚나무)는 일본 요시노 벚꽃과 유전적으로 구별되는 별개 종** — 한국과 일본 식물학자들 사이의 지속적인 학술 논쟁 주제; 한국 유전체 연구(2018년 Genome Research, KAIST)는 한라산 자생 기원을 확인한 반면, 일본은 요시노를 별개의 재배종으로 분류함 — 이 종의 자생지를 직접 방문하는 것은 관상 관광을 넘어선 식물학적 의미를 지님"
       ],
       "timeUsed": [
-        "코치 제주 월드컵 경기장 주차 하차 (~5분)",
-        "코리도 서쪽 끝 산책 + 촬영 시간 (~25분)",
-        "벚꽃 터널 동쪽으로 천천히 산책 (~30분)",
-        "축제 부스 음식/음료 선택 (~10분)",
-        "코치에 집결 (~5분)"
+        "제주종합경기장 주차장에서 코치 하차(약 5분 소요)",
+        "거리 서쪽 끝 도보 이동 및 사진 촬영(약 25분)",
+        "동쪽 방향으로 벚꽃 터널 따라 천천히 산책(약 30분)",
+        "축제 노점 음식·음료 선택 시간(약 10분)",
+        "코치 탑승 집결(약 5분)"
       ],
-      "whyOnRoute": "전농로는 **모든 제주 벚꽃 투어의 카탈로그 대표 거점**으로, 한국에서 자생 왕벚나무 밀도가 가장 높은 평지 1.2km 축제 회랑입니다. 09:00 첫 거점으로 시작하면 11:00 무렵 단체 버스가 몰리기 전, **부드러운 아침 빛 + 가장 한산한 인구 밀도**를 동시에 잡을 수 있습니다. **제주대학교 벚꽃길**(평일 캠퍼스 출입 제한)이나 **한라수목원**(식물 다양성은 좋지만 벚꽃 밀도는 낮음) 대신 전농로를 택한 이유입니다. 11:00 단체 버스 인파 이전 09:00 도착 윈도는 저밀도 촬영을 위한 **카탈로그 최적 시간대**이며, 오후의 시골 녹산로와 묶이면 **두 가지 결의 벚꽃 경험(도심 축제의 밀도 + 시골 목가적 한적함)**을 한 코스 안에서 만들어 — 다른 어느 제주 코스도 제공하지 못하는 조합이 됩니다. 70분 체류로는 회랑 전체 산책 + 축제 노점 시식까지 서두름 없이 가능합니다. 본 투어는 단발 투어 묶음 안에서 1번 — 카탈로그의 봄 한정 동부 제주 거점입니다.",
+      "whyOnRoute": "전농로는 **제주 벚꽃 투어의 대표적인 핵심 코스**입니다 — 한국 내 자생 왕벚나무 최밀집 지역으로, 평탄한 1.2km 축제 거리에 자리합니다. 오전 09:00 도착은 **부드러운 아침 빛과 가장 낮은 혼잡도**를 활용할 수 있으며, 11:00경 단체 관광버스가 몰리기 전에 여유로운 감상이 가능합니다. **제주대학교 벚꽃길**(유명하지만 평일 캠퍼스 출입 제한)과 **한라수목원**(식물 혼합 구성으로 벚꽃 집중도 낮음)을 검토한 끝에 선정된 코스입니다. 오전 시간대(관광버스 집중 전인 09:00 도착)는 **저밀도 사진 촬영을 위한 최적 타이밍**으로, 오후 녹산로와 연계하여 **도심 축제의 활기와 농촌 목가적 고요함이라는 두 가지 대조적인 벚꽃 경험**을 제공합니다 — 이는 제주의 어떤 다른 코스에서도 불가능한 구성입니다. 70분의 체류 시간으로 거리 전체를 여유 있게 걸으며 축제 노점도 즐길 수 있습니다. 이번 단일 투어 배치의 투어 1/1 — 카탈로그의 봄 한정 제주 동부 대표 코스.",
       "_poi_meta": {
         "poi_key": "jeonnong_ro_cherry_blossom_street",
         "kb_version": "1.29",
@@ -287,49 +525,62 @@
           "Wikipedia (Prunus × yedoensis — King Cherry vs Yoshino Cherry botanical classification debate)"
         ]
       },
-      "convenience": {
-        "restroom": "주변 카페 이용",
-        "parking": "노상 주차 제한적"
-      },
-      "smartNotes": {
-        "photo": "아침 부드러운 빛이 꽃잎을 가장 화사하게 살려 줍니다.",
-        "facilities": "출발 전 픽업 지점 화장실 이용 권장.",
-        "tip": "벚꽃 윈도는 7–10일 정도로 짧으므로, 가능하면 여행 1일 차에 다녀오시는 편이 좋습니다."
-      },
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/9df6665f-e0cf-4b8a-8d1c-2ec895745448.webp",
       "visitBasics": {
-        "hours": "상시 개방",
+        "hours": "자유 입장",
         "closed": "없음",
         "admission": "무료",
-        "walking": "난이도 하 (평지 도심)"
-      }
+        "walking": "쉬움 (평탄한 도심 코스)"
+      },
+      "convenience": {
+        "restroom": "인근 카페 다수",
+        "parking": "노상 주차 제한"
+      },
+      "smartNotes": {
+        "photo": "아침의 낮은 빛이 가장 부드러운 벚꽃 빛깔을 연출합니다.",
+        "facilities": "출발 전 픽업 장소에서 화장실을 미리 이용해 주세요.",
+        "tip": "벚꽃 시기는 단 7~10일뿐이므로 — 가능하면 여행 첫째 날에 방문하세요."
+      },
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/9df6665f-e0cf-4b8a-8d1c-2ec895745448.webp",
+        "https://images.unsplash.com/photo-1675002369691-23cacf99fb8e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1585554555426-3b8b62fcfb11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1680385985562-046bed50b4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1775116305368-2a4b53c1aa40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1712831713785-25970d124a92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1680792521306-b3f8bb79d2ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1617413757675-a60d030d30fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1680279257583-5bb568d8b396?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1652335016925-732823d15b23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     },
     {
       "number": 2,
       "time": "10:30",
       "duration": "90분",
-      "name": "녹산로 (가시리 10km 벚꽃+유채 도로)",
-      "category": "벚꽃 + 유채꽃 드라이브 — 조선 왕실 목장",
-      "description": "**녹산로(녹산로)** 는 **가시리(가시리, 표선면, 서귀포시)** 에 자리한 **'제주에서 가장 아름다운 봄길'** 이자 **한국 100대 아름다운 길** 가운데 하나로, **왕벚꽃(분홍)과 유채꽃(노랑)이 동시에 피어나는 10 km 시골 드라이브 코스** — 한국 어디에서도 볼 수 없는 색감 조합입니다. 이 길은 역사적인 **녹산장과 갑마장**을 가로지릅니다 — **조선 왕실 최고의 마정 목장**으로 화산 고지에 뿌리내린 **600년 유목 문화**의 본거지입니다. 지금은 길의 중심에 자리한 **제주마문화체험공원(조랑말 체험공원)** 이 이 유산을 잇고 있으며, **한국 최초의 마을 운영 국가 박물관(제주마박물관)**, **따라비 승마 트랙**, **마음 카페**, **몽골 게르 게스트하우스**, **캠핑장**을 보유합니다. 길은 또한 **가시리 풍력 발전소**(현대식 풍력 터빈), **따라비오름** + **큰사슴이오름**(기생화산), **'유채꽃 광장'** 도 지나갑니다. 유채꽃 절정과 벚꽃 절정의 중첩은 약 5~7일이며, 일반적으로 **3월 29일~4월 1일** 사이입니다. **제주 촬영 헤리티지**: **'폭싹 속았수다'(2024 넷플릭스), '오 마이 비너스'와 같은 시기의 '맘마미아!' 로케이션(2015 KBS '맘마미아'), '웰컴투 삼달리'(2023 JTBC)** 의 일부 장면이 이 일대 유채밭에서 촬영되었습니다. **대중교통 접근 불가** — 길은 **전세 차량 또는 렌터카 전용 영역**으로, 전농로 대비 군중 밀도가 현저히 낮습니다. 600년 마정 헤리티지는 한국 어떤 순수 벚꽃길에도 없는 **깊은 문화 차원**을 더합니다. 손님은 벚꽃-유채 터널 풍경을 **조선 시대 돌담(밭담, 밭담)** 과 **방목 중인 말**을 배경 요소로 두고 촬영합니다 — 제주 동부 목장에서만 가능한 구도입니다. **일몰 정렬**(16:00~17:30 한라산 방향 서향 전망)도 절정기 동안 사진이 잘 나옵니다.",
+      "name": "녹산로 (가시리 10km 벚꽃 + 유채꽃 드라이브 코스)",
+      "category": "벚꽃 + 유채꽃 시골 드라이브 — 조선시대 목마장",
+      "description": "**서귀포시 표선면 가시리(가시리마을, 표선면, 서귀포시)에 위치한 녹산로(綠山路)**는 **'제주에서 가장 아름다운 봄길'**이자 **'한국의 아름다운 길 100선'** 중 하나로, **왕벚꽃(분홍)과 유채꽃(노랑)이 동시에 만개하는 10km의 시골 드라이브 코스**입니다. 이 꽃의 조합은 **한국 그 어디에서도 찾아볼 수 없는** 독특한 풍경입니다. 이 길은 역사적인 **녹산장과 갑마장 목마장**을 지나는데, 이곳은 **조선시대 최고의 왕실 목마 생산지**로서 이 화산 고원에 **600년간의 유목 문화**가 깊이 뿌리내리고 있습니다. 현재 도로 중심부에 자리한 **제주마 공원(조랑말 체험공원)**은 **한국 최초의 주민 운영 국립박물관(제주마 박물관)**, **따라비 승마 트랙**, **마음 카페**, **몽골 게르 게스트하우스**, **캠핑장** 등을 통해 이 유산을 이어가고 있습니다. 이 길을 따라 **가시리 풍력발전단지**(현대식 풍력 터빈), **따라비 오름** + **큰사슴이 오름**(기생 화산), **'유채꽃 광장'**도 만날 수 있습니다. 유채꽃 절정기는 벚꽃 절정기와 약 5~7일 겹치며, 보통 **3월 29일~4월 1일**이 그 시기입니다. **제주 촬영지 역사**: **'폭싹 속았수다'(2024년 넷플릭스), '맨도롱 또똣'(2015년 KBS), '웰컴투 삼달리'(2023년 JTBC)**의 장면들이 인근 유채꽃밭에서 촬영되었습니다. **대중버스 미운행** — 이 도로는 **전세 차량 또는 렌터카로만 이용 가능**하여, 방문객 밀도가 전농로에 비해 현저히 낮습니다. 600년 목마장 유산은 한국의 순수 벚꽃 드라이브 코스에서는 찾아볼 수 없는 **더 깊은 문화적 차원**을 더해줍니다 — 여행객들은 **조선시대 돌담(밭담)**과 **방목하는 말**을 배경으로 벚꽃-유채꽃 터널을 촬영하며, 제주 동부 목가적 풍경만의 독특한 요소를 만끽합니다. **일몰 방향**(한라산을 향한 서쪽 조망, 오후 4시~5시 30분)은 절정 개화 기간 동안 사진 찍기에 아름다운 풍경을 연출합니다.",
       "highlights": [
-        "**'한국 100대 아름다운 길'** — **벚꽃+유채꽃 10 km 드라이브 코스**",
-        "**봄철 한국에서 분홍+노랑 동시 개화를 볼 수 있는 유일한 길**",
-        "조선 시대 **녹산장+갑마장 왕실 마정 목장** 통과(600년 역사)",
-        "**제주마문화체험공원(조랑말)** — 한국 최초의 마을 운영 국가 박물관",
-        "**가시리 풍력 발전소** 터빈 + **따라비오름** 기생화산",
-        "**'폭싹 속았수다'**(2024 넷플릭스), **'웰컴투 삼달리'**(2023 JTBC) 촬영",
-        "벚꽃+유채꽃 절정 중첩: **3월 29일~4월 1일**(5~7일 창)",
-        "**대중교통 접근 불가** — 군중 밀도 낮게 유지",
-        "**2006년 산림청 지정** 한국 100대 아름다운 길 — 초기 명단의 유일한 제주 길이자, **분홍 벚꽃과 노란 유채꽃이 동시에 피는 한국 유일의 길** / 3월 29일~4월 1일의 5~7일 절정 중첩 창에서 한국에서 가장 사진이 잘 나오는 봄 도로 여행"
+        "**'한국의 아름다운 길 100선'** — **10km 벚꽃 + 유채꽃 드라이브 코스**",
+        "봄철 **한국 어디에서도 볼 수 없는 분홍 + 노랑 동시 개화**",
+        "조선시대 **녹산장 + 갑마장 왕실 목마장** 통과 (600년 역사)",
+        "**제주마 공원(조랑말 체험공원)** — 한국 최초의 주민 운영 국립박물관",
+        "**가시리 풍력발전단지** 터빈 + **따라비 오름** 기생 화산",
+        "**폭싹 속았수다** (2024년 넷플릭스), **웰컴투 삼달리** (2023년 JTBC) 촬영지",
+        "벚꽃 + 유채꽃 동시 절정: **3월 29일 ~ 4월 1일** (5~7일 기간)",
+        "**대중버스 미운행** — 방문객 밀도를 낮게 유지",
+        "**2006년 산림청 지정** '한국의 아름다운 길 100선' 중 하나로, 최초 선정 목록에서 제주 유일의 도로이며, **한국에서 유일하게 분홍 왕벚꽃과 노랑 유채꽃이 동시에 피어나는 도로**입니다. 3월 29일~4월 1일의 5~7일 절정 겹침 기간 동안 한국에서 가장 사진 찍기 좋은 봄 드라이브 코스가 됩니다."
       ],
       "timeUsed": [
-        "전농로에서 녹산로 진입까지 이동 (1132번 도로 경유, 약 50분)",
-        "사진 포인트 1: 제주 마방목지 주차장 + 유채꽃 광장 — 약 25분",
-        "10km 구간 서행 드라이브 (2~3개 풀아웃 포함) — 약 25분",
-        "사진 코스 #2: 풍력발전기 + 벚꽃 터널 중간 구간 (~15분)",
-        "조랑말체험공원 인근 마지막 사진 + 산책 (~15분)",
-        "점심 장소까지 이동 (~10분)"
+        "전농로에서 녹산로 입구까지 드라이브 (1132호 + 1116호 도로 경유, 약 50분)",
+        "포토 스팟 #1: 제주마 공원 주차장 + 유채꽃 광장 (약 25분)",
+        "2~3곳 정차하며 10km 구간 천천히 드라이브 (약 25분)",
+        "포토 스팟 #2: 풍력 터빈 + 벚꽃 터널 중간 구간 (약 15분)",
+        "조랑말 체험공원 인근 마지막 사진 촬영 + 산책 (약 15분)",
+        "점심 식당으로 이동 (약 10분)"
       ],
-      "whyOnRoute": "녹산로는 **제주의 시그너처 벚꽃 드라이브 체험**으로, 도시형 전농로 축제(고정 산책 회랑)와 본질적으로 다른 거점입니다. 두 곳을 같은 오전에 짝지으면 손님은 **도시형 축제 밀도와 시골 목가적 한적함을 한 일정에서** 체험할 수 있으며, 이는 다른 동제주 코스에서는 만날 수 없는 대비입니다. 90분 체류는 10 km 드라이브를 따라 다수의 사진 거점을 가능하게 합니다. 녹산로의 **차량 전용 접근**(대중교통·KTX·철도 부재)은 본 투어의 **의도된 강점**이지 한계가 아닙니다. 비운전형 대중 관광을 거르고 10 km 회랑이 군중 관리 타협 없이도 사진이 잘 나오는 저밀도 체험을 보존하기 때문입니다. 90분 체류 창은 **한국 벚꽃 개화 예보**에도 맞춰져 있어, 2026년 기상청 예보 기준 시즌 초반 2~7일 일찍 예약하는 손님도 절정 중첩을 80% 이상 잡을 수 있습니다.",
+      "whyOnRoute": "녹산로는 **제주의 대표 벚꽃 드라이브 명소**로, 도심 벚꽃 축제 장소인 전농로(도보 감상 코스)와는 근본적으로 다른 경험을 제공합니다. 같은 오전에 두 곳을 함께 방문하면 제주 벚꽃 시즌의 **도심 축제 활기와 시골 목가적 고요함**을 모두 체험할 수 있으며, 이는 제주 동부의 다른 어느 루트에서도 누릴 수 없는 대비입니다. 90분의 체류 시간은 10km 드라이브 중 여러 포토 스팟에서 여유롭게 촬영할 수 있도록 구성되었습니다. 녹산로의 **드라이브 전용 접근 방식**(대중버스 없음, KTX·철도 노선 없음)은 이 투어의 **의도적인 강점**이지 단점이 아닙니다 — 운전을 하지 않는 대규모 관광객을 자연스럽게 걸러내어, 10km 구간을 군중 관리 없이도 사진 찍기 좋은 저밀도 환경으로 유지합니다. 또한 90분 체류 시간은 **한국 벚꽃 개화 예보**(2026년 기상청 예보 기준)에 맞게 조정되어, 시즌 2~7일 전에 예약한 여행객도 80% 이상의 절정 겹침 기간에 방문할 수 있도록 합니다.",
       "_poi_meta": {
         "poi_key": "noksan_ro_gasiri_blossom_road",
         "kb_version": "1.29",
@@ -346,58 +597,71 @@
           "Wikipedia (Gasi-ri — When Life Gives You Tangerines 2024 Netflix + Welcome to Samdal-ri 2023 JTBC filming credits)"
         ]
       },
-      "convenience": {
-        "restroom": "시골 구간으로 시설 제한적",
-        "parking": "도로변 갓길 정차"
-      },
-      "smartNotes": {
-        "photo": "와이드 구도가 분홍/노랑이 겹치는 레이어드 효과를 잘 담습니다.",
-        "facilities": "이 거점 전에 화장실을 이용하시기 바랍니다 — 시골 구간입니다.",
-        "tip": "최적 시기는 3월 말~4월 초이며, 유채꽃은 벚꽃보다 1~2주 더 오래 갑니다."
-      },
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/9df6665f-e0cf-4b8a-8d1c-2ec895745448.webp",
       "visitBasics": {
-        "hours": "상시 개방(주간)",
+        "hours": "개방 (주간)",
         "closed": "없음",
         "admission": "무료",
         "walking": "쉬움~보통"
-      }
+      },
+      "convenience": {
+        "restroom": "농촌 시설 제한적",
+        "parking": "도로변 갓길 정차"
+      },
+      "smartNotes": {
+        "photo": "넓은 구도로 촬영하면 분홍·노랑이 층층이 겹치는 색감 효과를 담을 수 있습니다.",
+        "facilities": "이 정차 전에 화장실을 미리 이용하세요 — 농촌 구간입니다.",
+        "tip": "최적 시기는 3월 하순~4월 초순; 유채꽃은 벚꽃보다 1~2주 더 오래 피어 있을 수 있습니다."
+      },
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/9df6665f-e0cf-4b8a-8d1c-2ec895745448.webp",
+        "https://images.unsplash.com/photo-1739482409416-f9cba9a56073?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1730026140087-93ebef75d29e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1590085309112-f67167e8da6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1593726222205-21404ff4e5fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1514625796505-dba9ebaf5816?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1719176373136-9cdb6ef43212?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1709497701757-3a1caf6600dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1723707304010-15f5db159b6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1666328756682-ab6ad7a4df03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     },
     {
       "number": 3,
       "time": "12:15",
       "duration": "60분",
-      "name": "점심 (제주 동부 현지 식당)",
-      "category": "식사",
-      "description": "점심은 **표선면·성산읍 권역**의 가이드 큐레이션 향토 식당에서 동제주 향토 음식을 즐기는 일정입니다. 일반적인 메뉴 옵션은 **전복돌솥밥(전복돌솥밥)** — 해녀가 채취한 전복을 활용한 제주 시그너처 메뉴 — 또는 **흑돼지 삼겹살**(2015년 문화재자료 제5호로 지정된 제주 토종 흑돼지)입니다. 채식 옵션은 요청 시 가능. 비용은 1인당 ₩15,000~₩22,000으로 투어 요금에 포함되지 않습니다. 60분 슬롯은 녹산로 드라이브 직후 점심 시점으로 설계되어 있어, 손님은 보통 벚꽃·유채 사진 일정 후 허기를 느끼며 따뜻한 식사를 반깁니다.",
+      "name": "점심 식사 (제주 동부 향토 요리)",
+      "category": "중식 — 제주 동부 지역 특선",
+      "description": "점심 식사는 **표선면 / 성산읍 일대**의 가이드 엄선 향토 식당에서 진행되며, 제주 동부 향토 요리를 선보입니다. 대표 메뉴로는 **전복돌솥밥** — 해녀가 직접 채취한 전복을 활용한 제주의 대표 음식 — 또는 **흑돼지 삼겹살** (2015년 제주특별자치도 민속문화재 제5호로 지정된 제주 재래 흑돼지)이 있습니다. 요청 시 채식 메뉴도 제공됩니다. 비용은 1인당 ₩15,000–₩22,000이며, 투어 요금에 포함되지 않습니다. 60분의 식사 시간은 녹산로 드라이브 직후로 계획되어 있어 — 벚꽃·유채꽃 포토 세션을 마친 게스트들이 따뜻한 식사를 즐기기에 좋은 타이밍입니다.",
       "highlights": [
-        "가이드 큐레이션 동제주 향토 식당(표선·성산 권역)",
-        "**전복돌솥밥**(제주 해녀 시그너처) 또는 **제주 흑돼지 삼겹살**",
-        "제주 **흑돼지 = 문화재자료 제5호**(2015년 지정)",
-        "채식 옵션 요청 가능",
-        "비용 1인당 ₩15,000~₩22,000, 투어 요금 미포함"
+        "가이드 엄선 제주 동부 향토 식당 (표선·성산 일대)",
+        "**전복돌솥밥** (제주 해녀의 대표 메뉴) 또는 **제주 흑돼지 삼겹살**",
+        "제주 **흑돼지 = 민속문화재 제5호** (2015년 지정)",
+        "요청 시 채식 메뉴 제공 가능",
+        "비용 1인당 ₩15,000–₩22,000, 투어 요금 미포함"
       ],
       "timeUsed": [
-        "녹산로에서 점심 장소까지 드라이브 (~10분)",
+        "녹산로에서 점심 식당까지 이동 (~10분)",
         "주문 + 식사 (~50분)",
-        "코치에 집결 (~5분)"
+        "버스로 재집결 (~5분)"
       ],
-      "whyOnRoute": "점심은 오전 벚꽃 드라이브와 오후 일출랜드+성산일출봉 구간의 지리적 중간 지점에 자리해, 우회 동선을 최소화하면서 두 야외 일정 사이에 따뜻한 식사 휴식을 부여합니다.",
+      "whyOnRoute": "점심 식사 장소는 오전 벚꽃 드라이브와 오후 일출랜드·성산일출봉 일정의 지리적 중간 지점에 위치해 있어 불필요한 이동을 최소화하고, 두 야외 일정 사이에 따뜻한 식사 휴식을 제공합니다.",
       "_poi_meta": {
         "poi_key": "OPS_east_jeju_lunch",
         "kb_version": "1.17",
         "verified_date": "2026-04-29"
       },
+      "visitBasics": {
+        "hours": "보통 12:00–14:00",
+        "admission": "점심 비용 별도 결제 (약 ₩12,000–18,000 / 1인)",
+        "walking": "최소"
+      },
       "convenience": {
         "restroom": "식당 내",
-        "parking": "이용 가능"
+        "parking": "가능"
       },
       "smartNotes": {
-        "tip": "채식 옵션 요청은 전날까지 알려주시기 바랍니다."
-      },
-      "visitBasics": {
-        "hours": "12:00~14:00 일반",
-        "admission": "점심 비용 별도 결제(1인당 약 ₩12,000~18,000)",
-        "walking": "최소"
+        "tip": "채식 메뉴는 요청 시 제공 — 전날까지 사전 알림 필요."
       }
     },
     {
@@ -405,27 +669,27 @@
       "time": "13:30",
       "duration": "60분",
       "name": "미천굴 (일출랜드)",
-      "category": "용암 동굴 + 테마파크 — 만장굴 대체 (유네스코 인접 지역)",
-      "description": "**일출랜드(일출랜드)** 는 성산에 자리한 **40만 ㎡ 규모의 자연 테마파크**로, **2002년 개장** 이후 **미천굴(미천굴)** 용암동굴을 중심으로 조성된 명소입니다. 미천굴은 **총 길이 1,700 m의 용암동굴**이며, 이 가운데 **365 m 구간이 인공적으로 평탄화되어 일반에 개방**되어 있습니다(도보 약 25분 소요). 이 동굴은 유네스코 세계자연유산으로 지정된 만장굴과 **지질학적으로 같은 계통의 용암동굴 시스템**에 속하며, **만장굴이 보존 정비나 기상 악화(태풍·결빙)로 폐쇄될 때 운영상 대체 코스로 활용**됩니다. 만장굴이 거친 자연 그대로의 바닥을 유지해 정통 지질 체험을 제공한다면, 미천굴은 평탄화된 통로를 통해 **고령 방문객, 유아차를 동반한 가족, 거동이 불편한 손님까지 폭넓게 수용**합니다. 만장굴을 답사하기 어려운 분들에게도 용암동굴 체험의 문턱을 낮춘 의도적 설계입니다. 동굴 내부는 **금·은·동·적·흑·청·백 일곱 빛깔의 장식 조명**으로 종유석을 강조해 정통파에게는 호불호가 갈리지만, 일반 관광객의 사진 촬영에는 매우 실용적입니다. 동굴 외부에는 **수변공원, 복원된 제주 전통 마을, 야생화 분재정원, 선인장 온실, 조각거리, 족욕 카페(아로마 풋스파)** 가 펼쳐져 있으며, **제주도에서 유일하게 무슬림 기도실을 갖춘 관광지**(접근성 강화를 위한 의도적 투자)입니다. 드라마 촬영 이력으로는 **'런닝맨'(SBS) 89회(이상한 나라의 앨리스 테마, 2012년)** 가 있습니다. 입장료: **성인 ₩12,000 / 청소년 ₩9,000 / 어린이 ₩7,000**. 실내·외 비율은 **실내 30%(동굴+온실) / 야외 70%(공원 부지)** 로, 날씨에 따른 일정 조정이 용이합니다.",
+      "category": "용암동굴 — 만장굴 대안",
+      "description": "**일출랜드**의 **미천굴(미천굴)**은 **제주를 대표하는 용암동굴 중 하나**로, 전체 길이 **1,700m이며 현재까지 개방된 공개 구간은 365m**입니다 (나머지 1,340m는 향후 연구 및 개방을 위해 보존 중). 이 동굴은 **제주도 15개 동굴군 중 하나**이자 **삼달리 동부 동굴군**에서 가장 중요한 동굴입니다. 내부에서는 **용암 표석**, **용암 석순**, 그리고 벽면을 따라 이어지는 **특유의 용암동굴 줄무늬**를 볼 수 있으며, 이 동굴은 **만장굴** (거문오름 용암동굴계의 유네스코 구성 동굴)과 형성 역사를 공유합니다. 만장굴의 자연 그대로의 내부와 달리, 미천굴은 **예술적인 7가지 색 조명(금, 은, 동, 적, 흑, 청, 백)**으로 연출되어 있어 호불호가 갈리는 선택이지만, 일반 관람객에게는 시각적 흥미를 크게 높여 줍니다. **동굴 내부 온도: 연중 약 14°C 일정** — 가벼운 재킷을 지참하세요. **일부 구간은 몸을 숙여야 합니다** (가장 좁은 부분의 천장 높이 1.5m). 개방 구간 왕복 총 소요 시간: 약 30분. **폭우로 침수가 발생할 경우 동굴이 폐쇄**됩니다; 우천 시 가이드에게 미리 확인하세요. 폭풍우가 지나간 후 **맑음+비=안개 효과**가 나타나 동굴 분위기가 더욱 신비롭습니다. 일출랜드는 **2002년 개장** (2026년 기준 개장 24주년); 입장료 **성인 ₩9,000 / 청소년 ₩6,000 / 어린이 ₩5,000 / 경로 ₩8,000**; 단체 할인 가능 (30인 이상). **운영 시간: 매일 09:00–18:00, 연중 365일 (일몰 1시간 전 마지막 입장)**. **만장굴** (유네스코 세계자연유산 대표 용암동굴)과 비교했을 때, 미천굴은 **30분 대기나 입장 정원 초과 대기 없이 동등한 용암동굴 체험을 제공**합니다 — 2023년 만장굴 주요 공개 구간이 생태 복원을 위해 폐쇄된 이후 그 운영적 강점이 더욱 부각되고 있습니다.",
       "highlights": [
-        "**총 길이 1,700 m** 용암동굴 / **365 m 개방 구간**(도보 약 25분)",
-        "**만장굴 유네스코 대체 코스** — 동일 용암동굴 계통, 만장굴 휴장 시 운영",
-        "**바닥 평탄화 처리** — 고령자, 유아차, 거동이 불편한 분도 접근 가능",
-        "**일곱 빛깔 장식 조명** — 금/은/동/적/흑/청/백",
-        "**40만 ㎡ 공원 부지** — 분재, 선인장, 조각, 전통 마을, 족욕 카페",
-        "**제주에서 유일하게 무슬림 기도실 보유** — 의도된 접근성 투자",
-        "**'런닝맨' 89회** 촬영지(2012년, 이상한 나라의 앨리스 테마)",
-        "입장료 **성인 ₩12,000 / 청소년 ₩9,000 / 어린이 ₩7,000**",
-        "**실내 30% / 야외 70%** — 날씨에 유연한 구성"
+        "**제주 15개 동굴군 중 하나** — 삼달리 동부 동굴군",
+        "**전체 길이 1,700m / 공개 구간 365m**",
+        "**만장굴** (유네스코 거문오름 용암동굴계)과 형성 역사를 공유",
+        "**예술적 7가지 색 조명** — 금, 은, 동, 적, 흑, 청, 백",
+        "**용암 표석 + 용암 석순 + 줄무늬 벽면**",
+        "연중 **약 14°C 일정** — 가벼운 재킷 지참 권장",
+        "가장 좁은 구간 천장 높이 1.5m — 몸을 숙여야 함",
+        "일출랜드 **2002년** 개장; 입장료 성인 ₩9,000",
+        "**연중 운영 시간 09:00–18:00** (일몰 1시간 전 마지막 입장)"
       ],
       "timeUsed": [
-        "주차 + 매표 + 입장 — 약 5분",
-        "미천굴 통과 (365m / 약 25분) — 약 30분",
-        "수변공원 + 조각 거리 — 약 20분",
-        "선택: 분재·선인장 정원 + 족욕 카페 — 약 15분",
-        "이동 완충 — 약 5분"
+        "일출랜드 입구에서 버스 하차 + 티켓 구매 (약 10분)",
+        "입구 광장을 지나 동굴 입구까지 도보 이동 (약 5분)",
+        "동굴 탐방 (왕복 365m × 2) 및 사진 촬영 포함 (약 30분)",
+        "출구 이동 + 화장실 이용 + 다음 목적지 집결 (약 15분)",
+        "다음 목적지로 이동 전, 블루라인 연결 경로를 통한 일출랜드 테마 정원 광장 선택적 통과 (약 5분)"
       ],
-      "whyOnRoute": "**오전 식전 용암동굴 거점**으로, 이날의 유네스코 테마 가운데 **유네스코 자산에 인접한 챕터**로 명확히 자리매김합니다. 자연 중심의 자매 투어가 일출랜드를 오후 중반의 날씨 유연 거점으로 활용한다면, 본 유네스코 명소 코스에서는 일정의 앞쪽에 배치해 **'유네스코+문화유산' 서사를 촘촘하게** 이어 갑니다. 함덕(올레 19코스, 준유네스코급 도보 유산) → 성읍(국가민속문화재) → **일출랜드 미천굴(만장굴과 같은 용암동굴 계통 — 만장굴과 동일한 유네스코 자산)** → 오후 성산(트리플 유네스코) → 마무리 해녀박물관(2016년 유네스코 인류무형문화유산)으로 흐릅니다. 오전 시간대 배치는 동굴 내부 기온의 쾌적함도 확보합니다(연중 13~15℃ 유지 — 여름엔 시원하고 겨울엔 적당히 선선). 가장 더운 야외 일정 전 동굴부터 거치는 흐름입니다.",
+      "whyOnRoute": "미천굴은 제주 동부 코스 어디서든 활용 가능한 **우천 대비 보험**과 같은 존재입니다 — 날씨가 비로 바뀌더라도, 30분간의 동굴 탐방은 제주의 화산 지질을 생생하게 체험할 수 있는 신뢰할 만한 실내 콘텐츠입니다. **만장굴** (유네스코 등재 동굴이지만 접근성이 다소 떨어지는 대안)보다 이곳을 선택한 이유는, 만장굴의 주요 공개 구간이 **생태 복원을 위해 폐쇄**된 반면, 미천굴은 동등한 용암동굴 체험에 더해 주변 일출랜드 테마 정원까지 함께 제공하기 때문입니다. 60분 일정은 동굴 탐방만 포함하며, 다음 목적지는 같은 일출랜드 공원 내에서 이어집니다.",
       "_poi_meta": {
         "poi_key": "ilchulland_micheon_cave",
         "kb_version": "1.29",
@@ -442,22 +706,22 @@
           "Wikipedia (Ilchul Land — Micheon Cave geology + ~14°C constant temperature + Jeju lava tube formation)"
         ]
       },
+      "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "visitBasics": {
+        "hours": "09:00-18:00",
+        "closed": "계절별 확인 필요",
+        "admission": "성인 9,000원",
+        "walking": "쉬움 (포장된 동굴 탐방로)"
+      },
       "convenience": {
-        "restroom": "일출랜드 입구에 화장실 이용 가능",
-        "parking": "일출랜드 무료 주차장 이용 가능"
+        "restroom": "입구",
+        "parking": "이용 가능"
       },
       "smartNotes": {
-        "photo": "조명이 비추는 동굴 구간과 주변 식물원 — 현재 일출랜드 입장권에 어떤 포토 존이 포함되는지 확인하시기 바랍니다",
-        "facilities": "일출랜드 부대시설(카페, 기념품점, 화장실)",
-        "tip": "공식 만장굴이 안전 점검 등으로 폐쇄될 때 표준 대체 코스로 운영됩니다. 단체 입장권에 일출랜드 동굴 구간이 포함되어 있는지 사전 확인하시기 바랍니다."
+        "photo": "삼각대 또는 흔들림 없는 손이 필요합니다 — 주변 조도가 낮습니다.",
+        "facilities": "동굴 내부 온도는 연중 약 14°C를 유지합니다. 얇은 겉옷을 챙겨 오세요.",
+        "tip": "일출랜드와 통합 티켓으로 연결됩니다 — 5번 스팟과 묶음으로 제공됩니다."
       },
-      "visitBasics": {
-        "hours": "일출랜드 운영 시간 기준 — 운영자에게 확인 필요",
-        "closed": "일출랜드 운영 일정 기준 — 운영자에게 확인 필요",
-        "admission": "일출랜드 입장권에 포함 — 요금은 운영자에게 확인",
-        "walking": "보통 — 동굴 진입 시 계단 하강, 연중 약 12℃; 동굴 구간 내부는 화산암 바닥이 다소 울퉁불퉁"
-      },
-      "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
       "images": [
         "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
         "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
@@ -518,80 +782,80 @@
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
           "location": "미천굴 (일출랜드)",
-          "caption": "미천굴 (일출랜드) — photo 1",
-          "alt": "미천굴 (일출랜드) — gallery image 1"
+          "caption": "미천굴 (일출랜드) — 사진 1",
+          "alt": "미천굴 (일출랜드) — 갤러리 이미지 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
           "location": "미천굴 (일출랜드)",
-          "caption": "미천굴 (일출랜드) — photo 2",
-          "alt": "미천굴 (일출랜드) — gallery image 2"
+          "caption": "미천굴 (일출랜드) — 사진 2",
+          "alt": "미천굴 (일출랜드) — 갤러리 이미지 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
           "location": "미천굴 (일출랜드)",
-          "caption": "미천굴 (일출랜드) — photo 3",
-          "alt": "미천굴 (일출랜드) — gallery image 3"
+          "caption": "미천굴 (일출랜드) — 사진 3",
+          "alt": "미천굴 (일출랜드) — 갤러리 이미지 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
           "location": "미천굴 (일출랜드)",
-          "caption": "미천굴 (일출랜드) — photo 4",
-          "alt": "미천굴 (일출랜드) — gallery image 4"
+          "caption": "미천굴 (일출랜드) — 사진 4 > **참고:** 5–14번 항목(이미지 파일 경로)은 기술적 경로이므로 원문 그대로 유지했습니다.",
+          "alt": "미천굴 (일출랜드) — 갤러리 이미지 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
           "location": "미천굴 (일출랜드)",
-          "caption": "미천굴 (일출랜드) — photo 5",
-          "alt": "미천굴 (일출랜드) — gallery image 5"
+          "caption": "미천굴 (일출랜드) — 사진 5",
+          "alt": "미천굴 (일출랜드) — 갤러리 이미지 5"
         },
         {
           "id": 6,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
           "location": "미천굴 (일출랜드)",
-          "caption": "미천굴 (일출랜드) — photo 6",
-          "alt": "미천굴 (일출랜드) — gallery image 6"
+          "caption": "미천굴 (일출랜드) — 사진 6",
+          "alt": "미천굴 (일출랜드) — 갤러리 이미지 6"
         },
         {
           "id": 7,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
           "location": "미천굴 (일출랜드)",
-          "caption": "미천굴 (일출랜드) — photo 7",
-          "alt": "미천굴 (일출랜드) — gallery image 7"
+          "caption": "미천굴 (일출랜드) — 사진 7",
+          "alt": "미천굴 (일출랜드) — 갤러리 이미지 7"
         },
         {
           "id": 8,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
           "location": "미천굴 (일출랜드)",
-          "caption": "미천굴 (일출랜드) — photo 8",
-          "alt": "미천굴 (일출랜드) — gallery image 8"
+          "caption": "미천굴 (일출랜드) — 사진 8",
+          "alt": "미천굴 (일출랜드) — 갤러리 이미지 8"
         },
         {
           "id": 9,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
           "location": "미천굴 (일출랜드)",
-          "caption": "미천굴 (일출랜드) — photo 9",
-          "alt": "미천굴 (일출랜드) — gallery image 9"
+          "caption": "미천굴 (일출랜드) — 사진 9",
+          "alt": "미천굴 (일출랜드) — 갤러리 이미지 9"
         },
         {
           "id": 10,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
           "location": "미천굴 (일출랜드)",
-          "caption": "미천굴 (일출랜드) — photo 10",
-          "alt": "미천굴 (일출랜드) — gallery image 10"
+          "caption": "미천굴 (일출랜드) — 사진 10",
+          "alt": "미천굴 (일출랜드) — 갤러리 이미지 10"
         }
       ]
     },
@@ -601,26 +865,26 @@
       "duration": "75분",
       "name": "일출랜드 테마 정원",
       "category": "테마 정원 — 민속마을 + 선인장 + 분재 + 조각 산책로",
-      "description": "**일출랜드의 테마 정원 단지**는 미천굴과 같은 부지 안에 펼쳐져 있으며, 모든 시설을 잇는 **공원의 시그니처 블루 라인 산책길**을 따라 이동합니다. **민속마을**은 전통 제주 초가 가옥을 복원해 놓은 공간으로, **제주 흑돼지 살아 있는 개체**(문화재자료 제5호로 지정된 같은 토종 품종)가 마을 안에서 실제로 사육되고 있습니다. 방문객은 **돌하르방 석상**, **연자방아**, **전통 부엌과 안방의 재현**, 그리고 **'응태석'** — 오른쪽으로 3번 쓰다듬으면 딸을, 왼쪽으로 3번 쓰다듬으면 아들을 점지해 준다는 '알을 낳는 돌' 전설의 돌도 만나 볼 수 있습니다. 마을 너머에는 **야생화 분재원**, **선인장 온실**(아열대·사막 식물), **수변공원**(폭포 + 반영 연못 + 첨성대 전망 정자), **조각의 길**(한국 조각가들의 야외 전시 회전), **아로마 족욕 카페**(별도 ₩5,000–8,000 / 30분 족욕, 도보 일정이 길었던 오전 후 인기 시설)가 자리합니다. 일출랜드는 **'런닝맨' 89회(2012, 이상한 나라의 앨리스 테마)**와 **MBC 드라마 '어느 별에서 왔니'(2006)**의 촬영지였으며, 촬영 포인트마다 안내판이 설치되어 있어 팬들이 정확한 장면 위치를 짚어 볼 수 있습니다. 공원 안에는 제주에서 비교적 드문 **무슬림 기도실**도 있어 할랄 여행객들에게 호평을 받습니다. 봄에 방문하면 **동백, 진달래, 벚꽃**이 산책길과 함께 어우러지는 경관이 백미입니다.",
+      "description": "**일출랜드의 테마 정원 단지**는 미천굴과 같은 부지에 펼쳐져 있으며, 원내 모든 명소를 연결하는 **파란색 라인 산책로**를 통해 이동할 수 있습니다. **민속마을**은 복원된 제주 전통 초가집 마을로, **문화재자료 제5호**로 지정된 **제주 흑돼지**가 재현된 마을 환경 속에서 자유롭게 돌아다닙니다. 방문객은 **돌하르방 석상**, **맷돌**, **전통 부엌 및 침실 재현물**, 그리고 **'응태석'** — 오른쪽으로 세 번 쓰다듬으면 딸을, 왼쪽으로 세 번 쓰다듬으면 아들을 낳는다는 전설의 '알 낳는 돌' — 을 만나볼 수 있습니다. 마을을 지나면 **야생화 분재원**, **선인장 온실** (유리 온실 내 아열대·사막 식물), **수변공원** (폭포 + 연못 + 첨성대 전망 정자), **조각 산책로** (국내 조각가 작품 야외 순환 전시), 그리고 **아로마 족욕 카페** (별도 입장료 5,000~8,000원, 30분 족욕 — 긴 산책 후 특히 인기)가 이어집니다. 일출랜드는 **런닝맨 89회(2012년, 이상한 나라의 앨리스 테마)**와 **드라마 《어느 별에서 왔니》(2006년, MBC)**의 촬영지로, 촬영 장소마다 안내판이 설치되어 있어 팬들이 정확한 장면 위치를 확인할 수 있습니다. 또한 제주에서 보기 드문 **무슬림 기도실**을 갖추고 있어 할랄 여행객들 사이에서도 호평을 받고 있습니다. 봄철 방문 시에는 산책로를 따라 **동백꽃, 진달래, 벚꽃**이 만개하는 아름다운 풍경을 즐길 수 있습니다.",
       "highlights": [
-        "**민속마을** — 살아 있는 제주 흑돼지(문화재자료 제5호) 사육",
-        "**'응태석'** = '알을 낳는 돌' — 자손 점지 전설",
+        "살아있는 제주 흑돼지(문화재자료 제5호)가 노니는 **민속마을**",
+        "**'응태석'** = 전설의 '알 낳는 돌' — 출산·다산 관련 민속 전설",
         "**야생화 분재원** + **선인장 온실** + **수변공원 폭포**",
-        "**조각의 길** — 한국 작가들의 야외 회전 전시",
-        "**아로마 족욕 카페**(별도 ₩5,000–8,000)",
-        "**'런닝맨' 89회(2012, 이상한 나라의 앨리스)** + **'어느 별에서 왔니'(2006 MBC)** 촬영지",
-        "**무슬림 기도실** — 제주에서 흔치 않은 시설",
-        "**봄 개화**: 동백 + 진달래 + 벚꽃이 공원 곳곳에",
-        "**아로마 족욕 카페**(수변공원 인근) — 제주 명소에서는 드문 **온수 침지 시설**(별도 ₩5,000–₩8,000, 수건 제공)로, 추운 시즌(겨울 벚꽃 직전 어깨 시즌) 여행객이 코스 도중 체온을 회복할 수 있는 동부 제주 유일의 편의 시설"
+        "**조각 산책로** — 한국 작가들의 야외 순환 전시",
+        "**아로마 족욕 카페** (별도 요금 ₩5,000–8,000)",
+        "**런닝맨 89화 (2012년, 이상한 나라의 앨리스)** + **'어느 별에서 왔나요' (2006년 MBC)** 촬영지",
+        "**무슬림 기도실** — 제주에서 보기 드문 시설",
+        "**봄꽃**: 동백꽃 + 철쭉 + 벚꽃이 공원 전체에 만개",
+        "**아로마 족욕 카페** (수변공원 구역) — 제주 관광지 내 **보기 드문 현장 온수 족욕 시설** (별도 요금 ₩5,000–₩8,000, 수건 제공)로, 추운 날씨의 여행객 (겨울 벚꽃 비수기 시즌)이 동선 중간에 체온을 회복할 수 있게 해주는 기능 — 제주 동부 다른 어떤 관광지에도 없는 서비스"
       ],
       "timeUsed": [
-        "블루라인 탐방로 경유 민속마을까지 도보 (~5분)",
-        "민속마을 + 흑돼지 + 을파소 (~20분)",
-        "분재원 + 선인장 온실 + 수변공원 (~25분)",
-        "조각 탐방로 + 봄꽃 산책 + 촬영 시간 (~15분)",
-        "선택: 아로마 족욕 또는 자유 시간 + 집결 (~10분)"
+        "블루라인 경로를 따라 민속마을까지 도보 이동 (약 5분)",
+        "민속마을 + 흑돼지 + 응태석 (약 20분)",
+        "분재원 + 선인장 온실 + 수변공원 (약 25분)",
+        "조각 산책로 + 봄꽃 산책 + 사진 촬영 (약 15분)",
+        "선택: 아로마 족욕 또는 자유 시간 + 집합 (약 10분)"
       ],
-      "whyOnRoute": "일출랜드의 테마 정원은 어두운 동굴 오전과 절정의 성산일출봉 일몰 사이에 자리한 **이상적인 페이스 전환 거점**입니다 — 다양한 정원을 75분간 천천히 거닐며 일행의 페이스가 한번 리셋됩니다. 민속마을과 흑돼지는 오늘 일정에서 **유일한 문화·유산 거점**(전농로와 녹산로는 자연 중심, 성산은 지질 중심)이라는 의미도 갖습니다. **제주민속촌박물관**(규모는 훨씬 크지만 별도 2.5시간이 필요)이 아닌 일출랜드를 택한 이유는, 일출랜드의 콤팩트한 구성이 오늘의 야외 페이스에 어울리기 때문입니다.",
+      "whyOnRoute": "일출랜드의 테마 정원은 어두운 동굴 오전 일정과 성산일출봉 일몰 클라이맥스 사이의 **최적의 완급 조절 지점**입니다 — 다양한 정원을 75분간 야외에서 걸으며 게스트가 재충전할 수 있습니다. 민속마을 + 흑돼지 코너는 당일 일정의 **유일한 문화유산 탐방 구간**이기도 합니다 (전농로·녹산로는 자연 중심, 성산은 지질 중심). **제주민속촌 박물관** (규모는 훨씬 크지만 별도 2.5시간 방문 필요)이 아닌 이곳을 선택한 이유는, 일출랜드의 압축된 구성이 하루 일정의 야외 완급을 유지해주기 때문입니다.",
       "_poi_meta": {
         "poi_key": "ilchulland_themed_gardens",
         "kb_version": "1.29",
@@ -637,47 +901,60 @@
           "Wikipedia (Jeju Black Pig — Cultural Heritage Material No. 5 designation 2015)"
         ]
       },
-      "convenience": {
-        "restroom": "다수",
-        "parking": "주차 가능"
-      },
-      "smartNotes": {
-        "photo": "오후 빛 아래 자연과 조각이 어우러진 구도가 잘 어울립니다.",
-        "tip": "미천굴 통합권으로 약 20% 절약 가능."
-      },
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
       "visitBasics": {
         "hours": "08:30–18:00",
         "closed": "없음",
         "admission": "성인 12,000원 (미천굴 통합권)",
-        "walking": "난이도 하 (평지 정원 산책길)"
-      }
+        "walking": "쉬움 (평탄한 정원 산책로)"
+      },
+      "convenience": {
+        "restroom": "다수",
+        "parking": "이용 가능"
+      },
+      "smartNotes": {
+        "photo": "자연 구성과 조각 구성의 조화는 오후 빛에서 가장 잘 살아납니다.",
+        "tip": "미천굴 통합권 구매 시 약 20% 할인."
+      },
+      "images": [
+        "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
+        "https://images.unsplash.com/photo-1666328756682-ab6ad7a4df03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1718958505977-6f5790f1cf1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1747587241381-c952b679edf5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1584802590409-181a9b3186f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1747587356640-c9fb02acdd29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1718958506421-a686b6ce3a64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1747487023570-aaf7d94581b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1503932953040-b6085c4fd82e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1663687609883-07ef1a0b58ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     },
     {
       "number": 6,
       "time": "16:15",
       "duration": "75분",
-      "name": "성산일출봉 (유네스코 포토 스톱)",
-      "category": "유네스코 응회암 분화구 — 일출봉 (유네스코 3중 지정)",
-      "description": "**성산일출봉(Seongsan Ilchulbong, '해돋이 봉우리')**은 **5,000년 전 형성된 서트시안형(Surtseyan-type) 수성화산 응회구**입니다. 해저에서 분출한 현무암질 마그마가 해수면을 뚫고 올라와 바닷물을 만나면서 발생한 수증기 폭발로, 일반적인 용암 원추구가 아닌 **해발 182m의 요새 모양 분화구** 분지를 만들어낸 희귀한 지형입니다. 유네스코는 이를 공식적으로 **'서트시안형 수성화산체의 탁월한 사례'**로 평가합니다. 분화구는 **너비 600m × 깊이 90m** 규모로, 주변을 둘러싼 **99개의 뾰족한 암봉**은 현지에서 '돌 왕관'으로 비유됩니다. 성산일출봉은 한국 내에서 한라산과 더불어 **유네스코 3중 지정**을 받은 곳으로, **세계자연유산(2007년 7월 2일 등재, '제주 화산섬과 용암동굴' 일부)**, **생물권보전지역(2002년)**, **세계지질공원(2010년 10월)**의 위상을 동시에 갖추고 있습니다. 분화구 바다 쪽 기슭에는 **1945년 일제강점기에 굴착된 자폭 보트(가미카제) 동굴 18개**가 남아 있습니다. 탐방로는 **편도 0.8km, 고도차 약 140m, 왕복 60분**의 폭이 넓은 돌계단 코스입니다. **해녀(海女) 물질 시연**은 분화구 아래 갯바위 코지에서 **매일 13:30, 15:00**에 진행되며, 제주 해녀(2016년 유네스코 인류무형문화유산)는 스쿠버 장비 없이 잠수합니다. **2025년 4월 갱신된 입장료**는 **성인 5,000원 / 청소년·어린이 2,500원 / 단체 성인 1,600원**이며, 7세 미만과 65세 이상은 무료입니다. 정상 전망대는 **영주십경(瀛州十景)**의 하나로 꼽히며, 한국에서 가장 대표적인 **새해 일출 명소**로 1995년 이후 매년 1월 1일 새벽에 5만 명 이상이 운집하는 일출 축제가 시청 주관으로 열립니다. 정상에서 4km 떨어진 해상에는 한국 최대의 부속 화산섬 **우도(牛島, '소섬')**가 또렷이 보이며, 일정에 여유가 있을 경우 **성산항에서 페리 15분(왕복 ₩10,500)**으로 접근할 수 있습니다.",
+      "name": "성산일출봉 (유네스코 포토 스탑)",
+      "category": "유네스코 세계자연유산 — 응회구",
+      "description": "**성산일출봉(성산일출봉, '일출봉')**은 **제주에서 가장 상징적인 랜드마크**로, **해발 182m**에 솟은 **5,000년 된 수르트세이안형 수성화산 응회구**이며, 정상에는 **600m × 깊이 90m의 웅장한 분화구**가 있고, 이를 둘러싼 **99개의 날카로운 암봉**이 봉우리에 '왕관' 형태를 부여합니다. 이 지역은 **유네스코 3중 지정**을 보유하고 있습니다: '제주 화산섬과 용암동굴' 등재의 일환인 **세계자연유산 (2007-07-02)**, **유네스코 생물권보전지역**, **유네스코 세계지질공원 (2010-10)**. 응회구는 **상승하는 마그마가 해수와 만나** 폭발적인 수증기 분출을 일으키며 뚜렷한 화산재 층으로 원뿔 형태를 이루었으며, 오늘날 기저부의 **황갈색 층상 응회암 절벽**에서 그 흔적을 확인할 수 있습니다. 정상 탐방로는 편도 0.8km (고도차 140m, **목재 데크 300–500계단**)로 오르는 데 20–30분, 왕복 45–60분이 소요됩니다. **2000년 7월 19일 국가지정문화재(천연기념물) 지정**. 또한 이 봉우리에는 1945년 일본 제국군이 사면에 굴착한 **태평양전쟁 시기 일본군 동굴진지 18개**가 남아 있습니다. **입장료: 성인 ₩5,000 / 청소년·어린이 ₩2,500** (2025년 4월 기준); 7세 미만 및 65세 이상 무료. **운영시간: 3–4월 05:00–19:00** (첫빛 감상을 위해 일출 1시간 전 개장). **매일 13:30·15:00 남쪽 해안 코브에서 해녀 물질 시연** — 현장 잠수 + 전통 민요 + 갓 잡은 해산물 회 판매. **이 투어는 포토 스탑으로 방문** (75분 일정에 정상 등반 미포함) — 게스트는 (a) **무료 입장 광장 루프** 산책으로 왕관 측면 대표 사진 촬영, (b) 부분 탐방로 등반으로 높은 곳에서 전망 감상, (c) 시간과 체력이 허락하면 정상 완등 중 선택할 수 있습니다.",
       "highlights": [
-        "**유네스코 3중 지정**: 세계유산(2007년 7월 2일) + 생물권보전지역(2002) + 세계지질공원(2010년 10월)",
-        "**5,000년 전 형성** — 서트시안형 수성화산, 마그마와 바닷물의 만남이 빚은 수증기 폭발의 산물",
-        "분화구 **너비 600m × 깊이 90m**, 둘레를 두른 **99개의 뾰족한 암봉**(이른바 '돌 왕관')",
-        "**해발 182m** — 편도 0.8km / 고도차 약 140m, 왕복 60분 돌계단 코스",
-        "기슭에 자리한 **1945년 일제강점기 가미카제 자살 보트 동굴 18개**",
-        "**해녀 물질 시연 1일 1회 오후 2시 (악천후 시 취소 가능)** 갯바위 코지에서 진행 — 2016년 유네스코 인류무형문화유산",
-        "**2025년 4월 입장료 갱신**: 성인 5,000원 / 청소년 2,500원 / 7세 미만·65세 이상 무료",
-        "봄·가을 운영시간 **05:00–19:00** (마지막 입장 18:20)",
-        "**매월 첫째 주 월요일 휴무** (간헐적 정기 휴일)"
+        "**유네스코 3관왕 지정**: 세계자연유산 2007년 + 생물권보전지역 + 세계지질공원 2010년",
+        "**형성 약 5,000년의 수르트세이식 응회구** — 마그마와 바닷물의 만남 = 폭발적 수증기 분출",
+        "**해발 182m**, **600m × 90m 분화구** + **99개의 '왕관' 외륜암**",
+        "**천연기념물** 지정일: 2000년 7월 19일",
+        "**일제강점기 군사 동굴 18개** 사면에 굴착 (1945년)",
+        "**0.8km / 목조 계단 300~500개 / 20~30분** 정상 오르기 (왕복 45~60분)",
+        "**입장료 성인 ₩5,000 / 청소년·어린이 ₩2,500** (2025년 4월 요금 기준)",
+        "**해녀 시연 매일 1회 14:00 진행 (악천후 시 취소 가능)** 남쪽 해안 작은 만에서",
+        "**성산일출봉은 유네스코 3관왕을 보유한 전 세계 약 30곳 중 하나**로 — 세계자연유산 2007년 + 생물권보전지역 2002년 + 세계지질공원 2010년 — **국내 유일의 유네스코 3관왕 지정지**입니다. 이곳에서 하루 일정을 마무리함으로써 이 코스는 독보적인 유네스코 세계유산의 가치를 지니며, 농촌 봄길 코스 녹산로, 축제 산책로 전농로와 차별화됩니다."
       ],
       "timeUsed": [
-        "주차 + 매표 + 현장 안내 — 약 10분",
-        "정상 데크까지 등반 (0.8km / 고도 차 140m) — 약 30분",
-        "정상 조망 + 분화구 테두리 사진 — 약 20분",
-        "하산 — 약 20분",
-        "선택: 해녀 공연 관람 (1일 1회 오후 2시, 악천후 시 취소 가능) — 약 10분"
+        "일출랜드에서 성산 주차장까지 이동 (약 10분)",
+        "입장 광장 자유 산책 및 왕관 측면 사진 촬영 (약 15분)",
+        "선택: 탐방로 일부 구간 오르기 또는 해안 작은 만에서 해녀 시연 관람 (약 30분)",
+        "자유 시간 + 입구 주변 기념품 쇼핑 (약 15분)",
+        "버스 앞 집결 (약 5분)"
       ],
-      "whyOnRoute": "**오늘 일정의 유네스코 정상 거점이자 동부 코스의 핵심 명소.** 성산일출봉을 12:50 오후 첫 거점으로 두는 세 가지 이유는 다음과 같습니다. (1) **유네스코 3중 지정의 무게**: 성산일출봉은 오늘 동선 위에서 유일하게 **세계유산(2007) + 세계지질공원(2010) + 생물권보전지역(2002)**의 3중 지정을 동시에 보유한 명소입니다. 수국 축제 투어임에도 본 코스는 비(非)꽃 거점 가운데 가장 큰 비중을 갖는 곳이며, 카탈로그에서 'plus UNESCO' 포지셔닝의 근거가 됩니다. (2) **빛과 등반 타이밍의 최적 조합**: 점심 직후 12:50–14:05 구간은 25분 분화구 등반에 가장 적합한 시간대입니다. 식사로 에너지를 회복한 직후이면서도 한낮 더위가 도래하기 전이며(특히 6월 수국 시즌의 더위에 효과적), 이른 오후 남남서향 광선이 동향 분화구 벽면에 부드럽게 떨어져 응회구의 디테일을 살린 사진에 유리합니다. (3) **꽃 피날레로 이어지는 페이스 전환**: 성산일출봉은 하루 일정에서 가장 신체적으로 활동적인 순간(등반)을 제공하여, 뒤이어 진행되는 **일출랜드 수국 프리뷰**와 **휴애리 수국 피날레**의 차분한 정원 감상으로 자연스럽게 호흡을 전환시키는 거점이 됩니다. 지질에서 꽃으로 자연스럽게 이어지도록 짜인 동부 코스의 핵심 길목입니다.",
+      "whyOnRoute": "성산일출봉은 동제주 코스의 **유일한 유네스코 세계자연유산 거점**으로, 한국을 대표하는 화산 명소에서 하루를 마무리합니다. 16:15 도착은 **의도적으로 늦게 설정**되어, 방문객이 **황금빛 오후 햇살** 속 봉우리를 배경으로 사진을 남길 수 있습니다 (일출 인파는 이미 오래전에 해산). 75분 일정은 **포토 스톱 형식**으로, 입장 광장 순환 코스와 탐방로 일부 조망 포인트를 충분히 즐길 수 있으며, 체력에 자신 있는 분은 정상까지 오를 수 있습니다. **섭지코지** (남쪽 5km, 목가적 풍경이나 유네스코 미지정) 대신 이곳을 선정한 것은, 이 투어의 벚꽃+유채꽃+유네스코로 이어지는 흐름이 일출봉에서 가장 강렬하게 완성되기 때문입니다.",
       "_poi_meta": {
         "poi_key": "seongsan_ilchulbong",
         "kb_version": "1.29",
@@ -694,22 +971,22 @@
           "Wikipedia (Seongsan Ilchulbong — Surtseyan-type hydrovolcanic eruption + 18 Japanese WWII caves + haenyeo demonstrations)"
         ]
       },
+      "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "visitBasics": {
+        "hours": "3~4월 및 9~10월: 05:00~19:00; 5~8월: 04:30~20:00; 11~2월: 06:00~18:00 (매표 마감 폐장 1시간 전)",
+        "closed": "연중무휴 운영 (기상 악화 시 임시 휴장 가능)",
+        "admission": "성인 5,000원 / 청소년·어린이 2,500원 (비짓코리아 기준)",
+        "walking": "보통 난이도 — 20~30분의 꾸준한 계단 오르기 (약 600개 계단); 중간중간 벤치에서 휴식 가능"
+      },
       "convenience": {
-        "restroom": "입구와 기슭에 화장실 이용 가능",
-        "parking": "대형 무료 주차장 운영"
+        "restroom": "입구 및 탐방로 초입에 비치",
+        "parking": "대형 무료 주차장"
       },
       "smartNotes": {
-        "photo": "맑은 날 정상에서는 서쪽 한라산과 북쪽 우도 전경 조망 가능; 하산 길에서는 해녀 활동 무대인 검은 모래 해변 뷰 포착",
-        "facilities": "프리츠 커피(Fritz Coffee)는 봉우리 외관 조망이 가장 좋은 카페로 1.3km 거리; 우도행 페리는 성산항(도보 1.5km/15분)에서 출발",
-        "tip": "전 구간 계단이지만 정비 상태가 양호해 평상복으로도 부담 없음; 중간 휴식 포인트가 많아 가족 단위 탐방에도 적합; 일출 시간대는 인기가 높아 동트기 전부터 인파가 몰림"
+        "photo": "맑은 날 정상에서 서쪽으로 한라산, 북쪽으로 우도 조망 가능; 하산 길에서 해녀의 검은 모래 해변 풍경 감상",
+        "tip": "전 구간 계단이나 잘 정비되어 있어 일상복으로도 충분; 중간 휴식 공간이 있어 가족 단위 방문에 적합; 일출 관람 인기 명소로 새벽부터 인파 몰림",
+        "facilities": "카페 (1.3km 거리의 프릿츠 커피에서 봉우리 외관 조망 최고); 성산항에서 우도행 페리 이용 가능 (도보 1.5km / 약 15분)"
       },
-      "visitBasics": {
-        "hours": "3–4월·9–10월: 05:00–19:00 / 5–8월: 04:30–20:00 / 11–2월: 06:00–18:00 (마감 1시간 전 매표 종료)",
-        "closed": "연중무휴 (기상 상황에 따라 일시 폐쇄 가능)",
-        "admission": "성인 5,000원 / 청소년·어린이 2,500원 (한국관광공사 기준)",
-        "walking": "난이도 보통 — 약 600개 계단을 꾸준히 오르는 20–30분 코스; 몇 분 간격으로 휴식용 벤치 배치"
-      },
-      "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "images": [
         "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
         "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
@@ -744,56 +1021,56 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-          "location": "성산일출봉 (유네스코 포토 스톱)",
-          "caption": "성산일출봉 (유네스코 포토 스톱) — photo 1",
-          "alt": "성산일출봉 (유네스코 포토 스톱) — gallery image 1"
+          "location": "성산일출봉 (유네스코 포토 스팟)",
+          "caption": "성산일출봉 (유네스코 포토 스팟) — 사진 1",
+          "alt": "성산일출봉 (유네스코 포토 스팟) — 갤러리 이미지 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-          "location": "성산일출봉 (유네스코 포토 스톱)",
-          "caption": "성산일출봉 (유네스코 포토 스톱) — photo 2",
-          "alt": "성산일출봉 (유네스코 포토 스톱) — gallery image 2"
+          "location": "성산일출봉 (유네스코 포토 스팟)",
+          "caption": "성산일출봉 (유네스코 포토 스팟) — 사진 2",
+          "alt": "성산일출봉 (유네스코 포토 스팟) — 갤러리 이미지 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-          "location": "성산일출봉 (유네스코 포토 스톱)",
-          "caption": "성산일출봉 (유네스코 포토 스톱) — photo 3",
-          "alt": "성산일출봉 (유네스코 포토 스톱) — gallery image 3"
+          "location": "성산일출봉 (유네스코 포토 스팟)",
+          "caption": "성산일출봉 (유네스코 포토 스팟) — 사진 3",
+          "alt": "성산일출봉 (유네스코 포토 스팟) — 갤러리 이미지 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-          "location": "성산일출봉 (유네스코 포토 스톱)",
-          "caption": "성산일출봉 (유네스코 포토 스톱) — photo 4",
-          "alt": "성산일출봉 (유네스코 포토 스톱) — gallery image 4"
+          "location": "성산일출봉 (유네스코 포토 스팟)",
+          "caption": "성산일출봉 (유네스코 포토 스팟) — 사진 4",
+          "alt": "성산일출봉 (유네스코 포토 스팟) — 갤러리 이미지 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-          "location": "성산일출봉 (유네스코 포토 스톱)",
-          "caption": "성산일출봉 (유네스코 포토 스톱) — photo 5",
-          "alt": "성산일출봉 (유네스코 포토 스톱) — gallery image 5"
+          "location": "성산일출봉 (유네스코 포토 스팟)",
+          "caption": "성산일출봉 (유네스코 포토 스팟) — 사진 5",
+          "alt": "성산일출봉 (유네스코 포토 스팟) — 갤러리 이미지 5"
         }
       ],
-      "liveStatusWidget": "haenyeo"
+      "liveStatusWidget": "해녀"
     }
   ],
   "routeFlowStops": [
     {
       "name": "전농로",
       "type": "origin",
-      "theme": "도심 벚꽃"
+      "theme": "도심 꽃길"
     },
     {
       "name": "녹산로",
       "type": "primary",
-      "theme": "시골 꽃길"
+      "theme": "시골 꽃길 > **참고:** 1–5번은 파일 경로이므로 원문 그대로 유지했습니다."
     },
     {
       "name": "점심",
@@ -801,7 +1078,7 @@
       "theme": "식사"
     },
     {
-      "name": "미천굴",
+      "name": "미청굴",
       "type": "primary",
       "theme": "동굴"
     },
@@ -819,313 +1096,304 @@
   "routePhases": [
     {
       "phase": "벚꽃 절정",
-      "duration": "정류장 1–2",
-      "description": "전농로 벚꽃거리 → 녹산로 10km 벚꽃+유채 도로."
+      "duration": "코스 1–2",
+      "description": "오전: 벚꽃 절정"
     },
     {
       "phase": "점심",
-      "duration": "정류장 3",
-      "description": "표선·성산 인근 제주 동부 현지 식당."
+      "duration": "코스 3",
+      "description": "정오: 점심"
     },
     {
-      "phase": "동굴에서 분화구까지",
-      "duration": "정류장 4–6",
-      "description": "미천굴(일출랜드) → 일출랜드 테마 정원 → 성산일출봉 포토 스톱."
+      "phase": "동굴에서 정원, 분화구까지",
+      "duration": "코스 4–6",
+      "description": "오후: 동굴에서 정원, 분화구까지"
     }
   ],
   "routeShapeIntro": {
-    "title": "이 봄날의 흐름",
-    "subtitle": "빛이 부드러운 오전에 먼저 벚꽃, 오후에 용암 동굴과 정원, 성산으로 마무리합니다. 오전 9시 출발, 오후 5시 30분 귀환."
+    "title": "이 봄날의 하루 흐름",
+    "subtitle": "빛이 부드러운 아침에 먼저 벚꽃을 즐기고, 오후에는 용암 동굴과 정원을 거쳐 성산으로 마무리합니다. 09:00~17:30."
   },
   "whyTourWorks": {
     "bestFor": [
-      "봄 첫 방문자",
+      "봄철 첫 방문객",
       "커플 및 사진 중심 여행자",
-      "성인 가족 단위",
-      "벚꽃 절정을 쫓는 여행자"
+      "성인 가족",
+      "벚꽃 절정을 찾아다니는 여행자"
     ],
     "routeLogicSections": [
       {
-        "title": "일정 속도 & 구조",
+        "title": "속도감 & 구성",
         "icon": "sun",
-        "iconBg": "bg-amber-50/80",
+        "iconBg": "bg-amber-50/80 > **참고:** 3번 *미청굴*은 로마자 표기 그대로 음역했습니다. 실제 한국어 표기(예: 만장굴, 협재굴 등)를 확인해 주시면 정확히 반영하겠습니다. 25번 `bg-amber-50/80`은 Tailwind CSS 클래스명으로, 번역 없이 원문을 유지했습니다.",
         "iconColor": "text-amber-600",
         "items": [
           {
-            "label": "열 오르기 전 오전에 벚꽃 먼저",
-            "detail": "벚꽃 코스가 정오 전에 배치되어 빛이 부드럽고 오후 바람에 꽃잎이 떨어지기 전에 방문합니다."
+            "label": "꽃이 먼저, 더위 전에",
+            "detail": "벚꽃 명소 두 곳 모두 정오 이전에 방문하므로 빛이 더 부드럽고 오후 바람에 꽃잎이 떨어지기 전에 감상할 수 있습니다."
           },
           {
-            "label": "날씨 완충으로서의 동굴",
-            "detail": "정오의 미천굴은 안정적인 실내 코스로, 오후 날씨가 나빠질 경우 유용한 보험 역할을 합니다."
+            "label": "동굴, 날씨 완충 역할",
+            "detail": "미천굴 동굴은 정오에 안정적인 실내 휴식처를 제공합니다 — 오후 날씨가 나빠질 경우를 대비한 유용한 보험입니다."
           },
           {
-            "label": "마지막 코스로 성산일출봉, 핵심 명소로서",
-            "detail": "성산이 루트 마지막에 동제주의 눈에 보이는 핵심 명소로서 등장하며, 하루 끝에 정상 등반을 추가하지 않습니다."
+            "label": "분화구는 마지막으로, 닻으로서",
+            "detail": "성산은 하루 끝에 정상 등반 없이도 동제주의 상징적인 랜드마크로서 루트를 마무리합니다."
           }
         ]
       },
       {
-        "title": "왜 봄 시즌 한정인가",
+        "title": "봄에만 가능한 이유",
         "icon": "flower",
         "iconBg": "bg-pink-50/80",
         "iconColor": "text-pink-600",
         "items": [
           {
-            "label": "벚꽃 시기는 7~10일",
-            "detail": "왕벚꽃은 3월 말에서 4월 초 사이 잠깐 절정에 달합니다. 제주 여행 첫날로 예약하는 것이 좋습니다."
+            "label": "벚꽃 시즌은 7~10일",
+            "detail": "왕벚꽃은 3월 말에서 4월 초 사이에 짧게 절정을 이룹니다 — 가능하다면 제주 여행 첫째 날로 예약하세요."
           },
           {
-            "label": "유채꽃은 1~2주 연장",
-            "detail": "유채꽃밭은 벚꽃보다 1~2주 더 지속되므로 녹산로 코스의 눈에 보이는 효과가 조금 더 유지됩니다."
+            "label": "유채꽃은 1~2주 더",
+            "detail": "유채꽃밭은 벚꽃보다 1~2주 더 오래 피어 있는 경우가 많아, 녹산로 코스는 시각적 볼거리를 조금 더 오래 유지합니다."
           },
           {
-            "label": "개화 시기 외에는 동쪽 소그룹 투어로",
-            "detail": "날짜가 벚꽃 시즌 밖이라면 저희 동쪽 유네스코 투어가 동일 지역을 연중 커버합니다."
+            "label": "개화 시즌 외에는 동쪽 소규모 코스 선택",
+            "detail": "벚꽃 시즌을 벗어난 날짜라면, 저희의 jeju-eastern-unesco-spots-day-tour 루트가 연중 방문 가능한 명소(돌문화공원, 섭지코지, 민속촌)와 함께 동일 지역을 커버합니다."
           }
         ]
       },
       {
-        "title": "솔직한 트레이드오프",
+        "title": "솔직한 장단점",
         "icon": "info",
         "iconBg": "bg-sky-50/80",
         "iconColor": "text-sky-600",
         "items": [
           {
             "label": "성산 정상 등반 없음",
-            "detail": "베이스 전망대 사진 코스만 진행합니다. 벚꽃 거리 시간을 위해 가파른 정상 등반을 생략합니다."
+            "detail": "벚꽃 거리 관람 시간을 확보하기 위해 가파른 정상 등반 없이 기저 전망대 포토 스톱만 진행합니다."
           },
           {
-            "label": "비는 실질적인 리스크",
-            "detail": "폭우 시 벚꽃 감상 효과가 급격히 떨어집니다. 2~3일 전 예보를 확인하고 폭풍이 예상되면 재예약을 고려하세요."
+            "label": "비 가능성, 실질적인 위험",
+            "detail": "폭우 시 벚꽃 감상 효과가 크게 떨어집니다. 2~3일 전에 날씨 예보를 확인하고 폭풍우가 예상되면 일정 변경을 고려하세요."
           },
           {
-            "label": "절정기 인파",
-            "detail": "3월 마지막 주말과 4월 첫 주말이 가장 혼잡합니다. 평일 출발이 더 여유롭습니다."
+            "label": "성수기 혼잡",
+            "detail": "3월 마지막 주말과 4월 첫째 주말이 가장 붐빕니다. 평일 출발 시 더 여유롭게 즐길 수 있습니다."
           }
         ]
       }
     ],
     "lessIdealFor": [
-      "비시즌 방문자 주의 (4월 15일 이후)",
-      "동굴 기피 그룹 주의",
-      "유모차 이용 그룹 주의 (시골 도로변)"
+      "비성수기 방문객 (4월 15일 이후)",
+      "동굴을 피하는 그룹",
+      "유모차가 많은 그룹 (농촌 도로변)"
     ]
   },
   "practicalAccordionItems": [
     {
       "id": "pickup",
-      "title": "픽업 & 하차",
-      "preview": "제주 시내 호텔 로비 픽업",
+      "title": "픽업 및 드롭오프",
+      "preview": "제주시 지역 호텔 로비 픽업",
       "content": [
-        "08:30~09:00 사이 호텔 로비 픽업.",
-        "귀환·하차 약 17:30.",
-        "공항 픽업 요청 시 가능.",
-        "제주시 외 픽업(서귀포, 애월)은 추가 요금; 예약 시 확인."
+        "오전 08:30–09:00 사이 호텔 로비에서 픽업",
+        "오후 17:30경 드롭오프 완료",
+        "요청 시 공항 픽업 가능",
+        "제주시 외 지역(서귀포, 애월) 픽업 — 추가 요금 적용; 예약 시 요금 확인"
       ]
     },
     {
       "id": "what-to-bring",
-      "title": "복장 & 준비물",
-      "preview": "편한 신발, 얇은 겉옷, 카메라",
+      "title": "복장 및 준비물",
+      "preview": "편한 신발, 가벼운 겉옷, 카메라",
       "content": [
-        "편안한 워킹화 (짧은 도보 여러 구간).",
-        "가벼운 재킷 — 봄 기온 약 10~18°C.",
-        "꽃 사진 촬영을 위한 카메라/간편한폰.",
-        "점심 및 입장료용 현금 또는 카드."
+        "편한 워킹화 (짧은 도보 구간 다수)",
+        "가벼운 재킷 — 봄철 기온 10–18°C",
+        "벚꽃 사진 촬영을 위한 카메라 또는 스마트폰",
+        "점심 식사 및 입장료를 위한 현금 또는 카드"
       ]
     },
     {
       "id": "season",
       "title": "벚꽃 시즌 기간",
-      "preview": "3월 말~4월 초",
+      "preview": "3월 하순 ~ 4월 초",
       "content": [
-        "절정 시기: 약 3월 25일~4월 10일 (연도별 변동).",
-        "유채꽃은 벚꽃 절정 이후 1~2주 연장.",
-        "제주 여행 첫날에 이 투어를 예약하는 것을 추천합니다.",
-        "시즌 외 날짜라면 연중 동쪽 유네스코 투어를 고려해 주세요."
+        "절정 시기: 약 3월 25일 ~ 4월 10일 (매년 상이)",
+        "유채꽃은 벚꽃 절정 이후 1–2주 더 감상 가능",
+        "제주 여행 첫날을 해당 시즌 기간 내에 예약하실 것을 권장합니다",
+        "여행 일정이 시즌 기간을 벗어나는 경우, 제주 동부 유네스코 명소 당일 투어 코스를 대신 고려해 보세요"
       ]
     },
     {
       "id": "weather-policy",
       "title": "날씨 정책",
-      "preview": "폭우 시 재예약 가능성",
+      "preview": "폭우 시 일정 변경이 적용될 수 있습니다",
       "content": [
-        "가벼운 비: 일정대로 진행.",
-        "폭우: 시즌 내 무료 일정 변경 가능.",
-        "시즌 외 취소는 표준 AtoC Korea 약관을 따릅니다."
+        "가벼운 비: 예정대로 투어 진행",
+        "폭우: 시즌 기간 내 무료 일정 변경 가능",
+        "시즌 기간 외 취소 정책은 atockorea 표준 약관을 따릅니다 (예약 지원 참고)"
       ]
     },
     {
       "id": "inclusions",
       "title": "포함 사항",
-      "preview": "교통, 가이드, 주요 입장료",
+      "preview": "교통편, 가이드, 주요 입장료",
       "content": [
-        "호텔 픽업·하차 (제주시)",
-        "에어컨 밴 교통",
+        "호텔 픽업 및 드롭오프 (제주시)",
+        "에어컨 밴 이동",
         "공인 영어 가이드",
-        "주요 입장료 (미천굴 + 일출랜드 콤보)",
-        "점심은 별도 결제. 성산 입장료는 이 투어에 해당 없음 (베이스 레벨에서 관람)."
+        "주요 입장료 포함 (미천굴 + 일출랜드 통합권)",
+        "점심식사는 별도 결제입니다. 성산 입장료는 본 투어에 해당되지 않습니다 (정상 등반이 아닌 기슭에서 사진 촬영 후 이동합니다)."
       ]
     }
   ],
   "practicalWeatherStatic": {
     "today": {
       "label": "봄철 날씨 안내",
-      "temp": "벚꽃 시즌 낮 기온 약 12~18°C",
+      "temp": "벚꽃 시즌 낮 기온 약 12–18°C",
       "icon": "cloud-sun"
     },
     "tomorrow": {
-      "label": "여행사 예약 페이지에서 실시간 예보 확인 가능",
+      "label": "운영사 예약 페이지에서 실시간 날씨 예보 확인 가능",
       "temp": "—",
       "icon": "cloud"
     }
   },
   "seasonalVariations": [
     {
-      "season": "봄 (3~4월)",
+      "season": "봄 (3–4월)",
       "title": "투어 운영",
-      "description": "성수기 — 벚꽃과 유채꽃 절정",
+      "description": "성수기 — 벚꽃과 유채꽃 만개",
       "icon": "flower"
     },
     {
       "season": "늦봄 (5월)",
-      "title": "비시즌",
-      "description": "벚꽃 시즌 종료; 연중 동쪽 유네스코 투어를 추천합니다",
+      "title": "비수기",
+      "description": "벚꽃 시즌 종료; 연중 운영하는 동부 유네스코 투어를 추천드립니다",
       "icon": "leaf"
     },
     {
-      "season": "여름~가을 (6~11월)",
-      "title": "비시즌",
-      "description": "시즌 외 — 연중 동쪽 유네스코 투어 루트 추천",
+      "season": "여름–가을 (6–11월)",
+      "title": "비수기",
+      "description": "시즌 외 기간 — 연중 운영하는 동부 유네스코 투어 코스를 추천드립니다",
       "icon": "sun"
     },
     {
-      "season": "겨울 (12~2월)",
-      "title": "비시즌",
-      "description": "시즌 외 — 연중 동쪽 유네스코 투어 루트 추천",
+      "season": "겨울 (12–2월)",
+      "title": "비수기",
+      "description": "시즌 외 기간 — 연중 운영하는 동부 유네스코 투어 코스를 추천드립니다",
       "icon": "snowflake"
     }
   ],
   "bookingTrustItems": [
     {
       "icon": "check-circle",
-      "title": "봄 시즌 전문 여행사",
-      "description": "제주 자격증 가이드",
+      "title": "공인 현지 가이드",
+      "description": "제주 공인 가이드 진행",
       "iconBg": "bg-emerald-50/80",
-      "iconColor": "text-emerald-600",
-      "body": "3/25~4/10 제주 벚꽃 시즌 한정 투어."
+      "iconColor": "text-emerald-600"
     },
     {
       "icon": "calendar",
-      "title": "코스 전문",
+      "title": "시즌 기간 유동 적용 > **참고:** 24번 `bg-emerald-50/80`은 Tailwind CSS 클래스명으로, 번역 없이 원문 그대로 유지했습니다.",
       "description": "개화 기간 내 무료 일정 변경",
       "iconBg": "bg-pink-50/80",
-      "iconColor": "text-pink-600",
-      "body": "전농로 벚꽃 거리부터 한국에서 가장 아름다운 봄 드라이브 도로인 녹산로까지 하루에 이어지는 코스."
+      "iconColor": "text-pink-600"
     },
     {
       "icon": "shield",
-      "title": "그룹 규모 관리",
+      "title": "날씨 보장",
       "description": "폭우 시 무료 일정 변경",
       "iconBg": "bg-sky-50/80",
-      "iconColor": "text-sky-600",
-      "body": "소그룹으로 녹산로 포토 스톱을 여유 있게 즐깁니다."
+      "iconColor": "text-sky-600"
     }
   ],
   "bookingSupportSteps": [
     {
       "timing": "즉시",
-      "title": "즉시 확인",
-      "detail": "행정 요약 포함 예약 확인서 발송",
-      "description": "픽업 정보 포함 즉시 예약 확인서 발송."
+      "title": "즉시 예약 확정",
+      "detail": "여행 일정 요약이 포함된 예약 확인"
     },
     {
       "timing": "2일 전",
-      "title": "12시간 전 알림",
-      "detail": "예보를 모니터링하고 예약 변경이 권장되면 연락드립니다.",
-      "description": "벚꽃 개화 상태 및 날씨 사전 안내."
+      "title": "날씨 체크인",
+      "detail": "저희가 날씨 예보를 모니터링하여 일정 변경이 권장될 경우 연락드립니다"
     },
     {
       "timing": "전날",
-      "title": "최종 픽업 안내",
-      "detail": "픽업 시간, 차량 번호, 가이드 이름을 WhatsApp으로 발송.",
-      "description": "출발 전날 저녁 최종 픽업 시각 확인."
+      "title": "차량 및 가이드 정보",
+      "detail": "픽업 시간, 차량 번호판, 가이드 이름을 WhatsApp으로 안내해 드립니다"
     },
     {
-      "timing": "투어 당일 오전",
-      "title": "당일 코스 안내",
-      "detail": "드라이버가 도착 10분 전에 연락합니다.",
-      "description": "개화 상태 및 날씨 아침 메시지 전달."
+      "timing": "당일 아침",
+      "title": "픽업 확인",
+      "detail": "드라이버가 도착 10분 전에 연락드립니다"
     },
     {
       "timing": "투어 중",
-      "title": "경유지별 심층 안내",
-      "detail": "문제 발생 시 운영팀에 직접 연락 가능",
-      "description": "녹산로 유채와 벚꽃의 생태, 성산일출봉 지질 배경 설명."
+      "title": "투어 중 지원",
+      "detail": "문제 발생 시 운영팀 직통 연결"
     },
     {
-      "timing": "투어 종료 후",
-      "title": "투어 후 지원",
-      "detail": "선택적 리뷰 및 다음 여행 팁",
-      "description": "투어 후 피드백 요청 전송."
+      "timing": "투어 후",
+      "title": "리뷰 및 후속 안내",
+      "detail": "선택적 리뷰 작성 및 다음 여행 팁 제공"
     }
   ],
   "staticQuestions": [
     {
       "id": "first-time",
-      "question": "제주를 처음 방문하는 분에게 좋은가요?",
-      "answer": "봄 시즌(3월 말~4월 초)에 방문하신다면 네. 그 외 시기에는 연중 운행되는 동부 유네스코 투어를 추천합니다."
+      "question": "제주를 처음 방문하는 분들에게도 적합한가요?",
+      "answer": "네, 벚꽃 시즌(3월 말~4월 초)에 방문하시는 분들께 적합합니다. 그 기간 외에는 저희의 연중 동부 유네스코 투어에서 동일 지역을 연중 방문 가능한 명소들과 함께 둘러보실 수 있습니다."
     },
     {
       "id": "season-timing",
       "question": "벚꽃 시즌은 정확히 언제인가요?",
-      "answer": "제주 벚꽃 절정은 약 3월 25일~4월 10일. 매년 5~7일 정도 변동합니다. 예약 페이지에서 최신 개화 정보를 안내합니다."
+      "answer": "대략 3월 25일부터 4월 10일까지입니다. 정확한 날짜는 해마다 5~7일 정도 차이가 날 수 있습니다. 3월 초에 당해 연도 예측 일정을 예약 페이지에 업데이트합니다."
     },
     {
       "id": "rain",
       "question": "비가 오면 어떻게 되나요?",
-      "answer": "가벼운 비: 운행합니다. 강우 시 시즌 기간 중 출발 2일 전에 무료 일정 변경 또는 환불을 안내합니다."
+      "answer": "가벼운 비라면 투어를 진행합니다. 시즌 기간 내에 폭우 예보가 있을 경우, 출발 2일 전에 연락드려 무료 일정 변경을 안내해 드립니다. 시즌 외 기간에는 이 투어가 운영되지 않습니다."
     },
     {
       "id": "summit",
       "question": "성산일출봉을 등반하나요?",
-      "answer": "이 투어는 분화구 기슭 포토 스톱만 진행합니다. 등반을 원하신다면 연중 운행 동부 유네스코 투어를 이용하세요."
+      "answer": "아니요 — 정상 등반 없이 기슭 전망 포인트에서 사진 촬영만 진행합니다. 정상 등반은 연중 운영되는 '동부 유네스코 투어'에 포함되어 있으며, 이번 봄 투어에는 포함되지 않습니다."
     },
     {
       "id": "kids",
-      "question": "어린이와 함께할 수 있나요?",
-      "answer": "만 6세 이상 추천. 벚꽃 거리 도보가 가장 길며, 유모차는 대부분 구간에서 가능합니다."
+      "question": "어린이도 참여할 수 있나요?",
+      "answer": "네, 만 6세 이상 참여 가능합니다. 가장 긴 도보 구간은 벚꽃 거리입니다. 대부분의 방문지에서 유모차 이용이 가능하지만, 녹산로 시골 길가의 노면 상태는 미리 확인해 주세요."
     },
     {
       "id": "seniors",
-      "question": "어르신도 참여할 수 있나요?",
-      "answer": "대부분 구간이 가볍고 평탄합니다. 일출랜드 동굴 입구까지 짧은 계단이 있습니다."
+      "question": "어르신도 참여하기에 괜찮을까요?",
+      "answer": "대부분 괜찮습니다. 도보 난이도는 쉬움에서 보통 수준이며, 대부분 평탄한 지형으로 하나의 긴 하이킹 대신 짧은 도보 구간 여러 곳으로 구성되어 있습니다. 동굴 내부는 포장 길로 되어 있습니다."
     },
     {
       "id": "cave-claustrophobia",
-      "question": "동굴이 폐소공포증에 영향을 줄까요?",
-      "answer": "미천굴은 넓은 개방형 공간으로, 가벼운 폐소공포증이 있으신 분도 대부분 괜찮습니다."
+      "question": "동굴이 폐소공포증을 유발하지는 않나요?",
+      "answer": "미천굴은 좁은 통로가 아닌 넓은 개방형 공간으로 이루어져 있어, 가벼운 폐소공포증이 있으신 분들도 대체로 괜찮습니다. 건너뛰고 싶으신 경우 미리 가이드에게 말씀해 주세요."
     },
     {
       "id": "pickup-area",
-      "question": "픽업 장소는 어디인가요?",
-      "answer": "제주시 호텔 로비 픽업 포함. 서귀포·애월 픽업은 추가 비용이 있습니다."
+      "question": "픽업 장소가 어디인가요?",
+      "answer": "제주 시내 호텔 로비 픽업이 포함되어 있습니다. 서귀포 또는 애월에서의 픽업은 추가 요금이 발생하며, 예약 시 요금을 확인해 주세요."
     },
     {
       "id": "lunch",
-      "question": "점심이 포함되어 있나요?",
-      "answer": "포함되지 않습니다. 약 ₩12,000~18,000."
+      "question": "점심이 포함되나요?",
+      "answer": "점심 비용은 별도입니다. 가이드가 그룹을 현지 식당으로 안내하며, 메뉴에 따라 1인당 12,000~18,000원 정도를 예상하시면 됩니다."
     },
     {
       "id": "admission-fees",
       "question": "입장료가 포함되어 있나요?",
-      "answer": "미천굴+일출랜드 통합 입장권(약 ₩12,000)이 포함됩니다."
+      "answer": "주요 입장료(미천굴 + 일출랜드 통합 입장권, 약 ₩12,000)는 투어 요금에 포함되어 있습니다. 점심 식사 및 기타 선택 구매(예: 벚꽃 거리 한복 대여, 카페 주문 등)는 별도 결제입니다."
     },
     {
       "id": "compare-eastern-unesco",
-      "question": "연중 동부 유네스코 투어와 어떻게 다른가요?",
-      "answer": "이 투어는 봄 시즌 한정으로 전농로·녹산로 벚꽃 경관이 추가됩니다. 연중 투어는 제주돌문화공원·섭지코지·성읍민속마을을 방문합니다."
+      "question": "연중 운영되는 '동부 유네스코 투어'와 어떤 차이가 있나요?",
+      "answer": "방문지와 시즌이 다릅니다. 동부 유네스코 투어는 연중 운영되며 돌문화공원, 섭지코지, 성읍민속마을, 일출랜드, 성산 정상을 방문합니다. 이번 투어는 봄 한정으로 벚꽃 거리, 녹산로, 미천굴, 일출랜드, 성산 기슭을 방문합니다. 벚꽃 시즌 외이거나 민속마을·정상 등반이 더 중요하다면 연중 운영 동부 유네스코 투어를 선택하세요."
     }
   ],
   "guestReviews": [],
@@ -1162,12 +1430,12 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
+    "note": "checkout_tour_id는 런타임 시 Supabase / 환경 변수에서 확인됩니다. 정적 JSONB에는 포함되지 않습니다.",
     "price": {
-      "amountLabel": "59",
-      "originalPriceUsd": 69,
-      "salePriceUsd": 59,
-      "discountPercent": 14,
+      "amountLabel": "",
+      "originalPriceUsd": null,
+      "salePriceUsd": null,
+      "discountPercent": null,
       "currency": "USD",
       "per": "person"
     }
@@ -1496,7 +1764,7 @@
   "matching_metadata": {
     "matching_schema": "tour_matching_profiles_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
-    "source_of_truth_note": "Internal note: product profile checked against current route-selection rules. This product uses one fixed route.",
+    "source_of_truth_note": "matching_profile fields scored against atockorea matching algorithm v2. Variant-level overrides are not used for this product (single fixed route).",
     "audit_summary": "Spring-only east Jeju cherry+canola route. Strong substitution relationship with jeju-eastern-unesco-spots-day-tour (off-season fallback). Hard constraint on cherry season dates; weather_sensitivity=0.85 reflects bloom dependency. New POI added in v1.17: ilchulland_themed_gardens (separated from cave, prior version mistakenly used same key).",
     "score_rationale": {
       "high_scores": {
@@ -1586,20 +1854,20 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "제주 동부 봄 벚꽃 투어",
-        "headlineLine2": "투어",
+        "headlineLine1": "제주 동부",
+        "headlineLine2": "벚꽃 투어",
         "hero": {
-          "imageUrl": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920&q=80",
+          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/201810/17/654ec69c-ca81-443d-9b10-3cfe4a8e98f0.webp",
           "imagePosition": "center 40%",
-          "tagline": "벚꽃 거리에서 용암동굴을 지나 일출봉까지.",
+          "tagline": "벚꽃 거리에서 용암 동굴, 그리고 일출 봉우리까지.",
           "pills": [
             "봄 한정",
             "벚꽃 시즌",
-            "동제주"
+            "제주 동부"
           ],
           "meta": {
             "duration": "8시간",
-            "region": "동제주",
+            "region": "제주 동부",
             "stops": "6개 코스",
             "rating": 0,
             "ratingStars": 0
@@ -1610,28 +1878,28 @@
     {
       "id": "subnav",
       "section_html_id": null,
-      "component": "TourTabsNav",
+      "component": "투어 탭 메뉴",
       "props": {
         "subnavItems": [
           {
             "id": "overview",
-            "label": "투어 개요"
+            "label": "개요"
           },
           {
             "id": "itinerary",
-            "label": "상세 일정"
+            "label": "일정"
           },
           {
-            "id": "details",
-            "label": "유의사항"
-          },
-          {
-            "id": "faq",
-            "label": "자주 묻는 질문"
+            "id": "practical",
+            "label": "실용 정보"
           },
           {
             "id": "reviews",
-            "label": "여행자 후기"
+            "label": "리뷰"
+          },
+          {
+            "id": "booking",
+            "label": "예약"
           }
         ]
       }
@@ -1639,23 +1907,23 @@
     {
       "id": "overview",
       "section_html_id": "overview",
-      "component": "TourAtAGlance",
+      "component": "투어 한눈에 보기",
       "props": {
         "glanceItems": [
           {
             "icon": "camera",
-            "label": "사진 포인트",
+            "label": "사진 가치",
             "value": "매우 높음"
           },
           {
             "icon": "calendar",
-            "label": "권장 시즌",
-            "value": "3월 25 - 4월 10"
+            "label": "시즌",
+            "value": "3월 25일 - 4월 10일"
           },
           {
             "icon": "users",
-            "label": "최대 인원",
-            "value": "소그룹"
+            "label": "그룹 규모",
+            "value": "소규모 그룹"
           },
           {
             "icon": "clock",
@@ -1664,13 +1932,13 @@
           },
           {
             "icon": "map-pin",
-            "label": "투어 지역",
+            "label": "지역",
             "value": "제주 동부"
           },
           {
             "icon": "footprints",
-            "label": "도보 난이도",
-            "value": "보통"
+            "label": "도보",
+            "value": "보통 난이도"
           }
         ]
       }
@@ -1678,41 +1946,41 @@
     {
       "id": "atmosphere",
       "section_html_id": null,
-      "component": "TourAtmosphereGallery",
+      "component": "투어 분위기 갤러리",
       "props": {
         "galleryItems": [
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
-            "alt": "제주시 전농로를 뒤덮은 분홍 벚꽃 터널",
-            "caption": "제주 시내 벚꽃 거리",
-            "location": "Jeonnong-ro",
-            "atmosphere": "제주 시내 벚꽃 터널"
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201810/17/654ec69c-ca81-443d-9b10-3cfe4a8e98f0.webp",
+            "alt": "제주시 벚꽃 거리",
+            "caption": "제주시 벚꽃 거리",
+            "location": "전농로",
+            "atmosphere": "제주시 벚꽃 터널"
           },
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&q=80",
-            "alt": "가시리 녹산로 벚나무와 노란 유채밭",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/9df6665f-e0cf-4b8a-8d1c-2ec895745448.webp",
+            "alt": "녹산로 벚꽃과 유채꽃",
             "caption": "녹산로 벚꽃과 유채꽃",
             "location": "녹산로 / 가시리",
-            "atmosphere": "벚꽃과 유채가 이어지는 10km 꽃길"
+            "atmosphere": "10km의 벚꽃과 유채꽃"
           },
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1200&q=80",
-            "alt": "일출랜드 미천굴 내부의 용암동굴과 종유석",
-            "caption": "미천굴 용암동굴 내부",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
+            "alt": "미천굴 용암 동굴 내부",
+            "caption": "미천굴 용암 동굴 내부",
             "location": "미천굴",
-            "atmosphere": "용암동굴 내부"
+            "atmosphere": "용암 동굴 내부"
           },
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=1200&q=80",
-            "alt": "일출랜드 정원 봄꽃 사이의 조형물",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/cf7e9f6b-178f-4d3d-b978-91beb5145a10.webp",
+            "alt": "일출랜드 테마 식물원",
             "caption": "일출랜드 테마 식물원",
             "location": "일출랜드",
             "atmosphere": "테마 정원"
@@ -1720,20 +1988,20 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1551649001-7a2482d98d05?w=1200&q=80",
-            "alt": "기저 전망 지점에서 바라본 성산일출봉 응회구 실루엣",
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/20/a397a498-7bc9-4730-963a-cfa29ccffe7d.webp",
+            "alt": "성산일출봉 유네스코 분화구",
             "caption": "성산일출봉 유네스코 분화구",
             "location": "성산일출봉",
-            "atmosphere": "일출봉 분화구 능선"
+            "atmosphere": "일출 분화구 능선"
           },
           {
             "id": "g6",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&q=80",
-            "alt": "동제주 현지 식당의 흑돼지 비빔밥",
-            "caption": "동제주 벚꽃 코스 한눈에 보기",
-            "location": "코스 흐름",
-            "atmosphere": "하루 한눈에 보기"
+            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201810/17/41209f96-3700-4de3-8545-347a602229e2.webp",
+            "alt": "제주 동부 벚꽃 코스 전체 보기",
+            "caption": "제주 동부 벚꽃 코스 전체 보기",
+            "location": "코스 전체 보기",
+            "atmosphere": "하루 일정 한눈에 보기"
           }
         ]
       }
@@ -1741,458 +2009,271 @@
     {
       "id": "itinerary",
       "section_html_id": "itinerary",
-      "component": "TourTimelineSection",
+      "component": "투어 타임라인 섹션",
       "props": {
         "itineraryStops": [
           {
             "number": 1,
             "time": "09:00",
-            "duration": "75분",
-            "name": "전농로 벚꽃 거리",
-            "category": "왕벚나무 가로수길 — 제주 시내",
-            "description": "전농로는 제주시 중심부를 가로지르는 1.2km 벚꽃 거리로, 제주에서 가장 오래된 벚꽃 명소입니다. 수백 그루의 왕벚나무(제주 자생종)가 도로 양쪽에 터널을 만들어 봄마다 인상적인 벚꽃 산책로를 연출합니다. 방문 시간: 약 40분.",
+            "duration": "60분",
+            "name": "전농로 벚꽃거리",
+            "category": "봄꽃 & 도심",
+            "description": "제주시 중심부 전농로를 따라 약 1.2km에 걸쳐 왕벚나무가 줄지어 서 있으며, 매년 제주에서 가장 일찍 개화하는 명소 중 하나입니다 (제주는 보통 3월 말경 한국의 벚꽃 시즌을 가장 먼저 엽니다). 이 도로는 제주도청 동쪽에 위치하며, 매년 열리는 제주 벚꽃 축제의 중심지입니다. 인도가 넓고 평탄하여 등산이 아닌 산책 코스로 즐기기에 제격입니다.",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/9df6665f-e0cf-4b8a-8d1c-2ec895745448.webp",
             "highlights": [
-              "**제주에서 가장 오래된 가로수 벚꽃길** — 수령 100년 이상의 나무",
-              "**1.2km 축제 코리도** — 수백 그루의 자생 **왕벚나무** 가로수",
-              "왕벚나무 **1908년 프랑스 선교사 에밀 타케에 의해 한라산에서 처음 기록됨**",
-              "**꽃잎이 더 크고 풍성하며 더 진한 분홍** — 요시노 벚꽃과 다름",
-              "**절정 개화 3~5일** ~3월 25~30일 (2026 예측 2~7일 이른)",
-              "**2026년 제19회 제주 왕벚나무 축제** — 차 없는 거리 + 랜턴 + 야간 조명",
-              "**무료** 공공 도로; 주소 **제주시 전농로 40**",
-              "유모차·시니어 친화 평탄 1.2km 루프",
-              "**왕벚나무 일본 요시노 벚꽃과 유전적으로 구별되는 종** — 제주 원산지 증명됨"
+              "제주시 도심의 벚꽃 터널",
+              "걸어서 즐기는 도심 벚꽃 거리",
+              "픽업 장소에서 가까워 사진 촬영이 편리"
             ],
             "timeUsed": [
-              "코치 제주 월드컵 경기장 주차 하차 (~5분)",
-              "코리도 서쪽 끝 산책 + 촬영 시간 (~25분)",
-              "벚꽃 터널 동쪽으로 천천히 산책 (~30분)",
-              "축제 부스 음식/음료 선택 (~10분)",
-              "코치에 집결 (~5분)"
+              "벚꽃 메인 거리 산책",
+              "다양한 각도에서 사진 촬영",
+              "제주 봄 기후에 대한 간략한 소개"
             ],
-            "whyOnRoute": "전농로는 **모든 제주 벚꽃 투어의 카탈로그 선도 핵심 명소** — 제주 시내에서 왕벚나무 가장 밀집된 곳.",
-            "_poi_meta": {
-              "poi_key": "jeonnong_ro_cherry_blossom_street",
-              "kb_version": "1.29",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "Visit Jeju official",
-                "Korea Tourism Organization 2026 forecast",
-                "Best of Korea 2026 cherry blossom guide",
-                "90DayKorean cherry blossom guide",
-                "Visit Jeju official (visitjeju.net — Jeonnong-ro Cherry Blossom Festival listing + 1.2 km corridor + Sin-jeju location)",
-                "Korea Tourism Organization (english.visitkorea.or.kr — Jeju Cherry Blossom Festival 2026 forecast + bloom timing)",
-                "Jeju Cherry Blossom Festival official organizing committee (Jeonnong-ro 19th edition 2026 — car-free corridor + lanterns + night illumination)",
-                "Korea Forest Service (forest.go.kr — King Cherry / Wangbeotnamu native species record + 1908 Émile Taquet Hallasan documentation)",
-                "Wikipedia (Prunus × yedoensis — King Cherry vs Yoshino Cherry botanical classification debate)"
-              ]
-            }
+            "whyOnRoute": "외곽 명소에 인파가 몰리기 전, 벚꽃이 가장 싱그러운 시간에 하루를 시작합니다.",
+            "visitBasics": {
+              "hours": "자유 입장",
+              "closed": "없음",
+              "admission": "무료",
+              "walking": "쉬움 (평탄한 도심)"
+            },
+            "convenience": {
+              "restroom": "인근 카페",
+              "parking": "노상 주차 제한"
+            },
+            "smartNotes": {
+              "photo": "아침의 부드러운 빛이 벚꽃을 가장 아름답게 빛냅니다.",
+              "facilities": "도심을 떠나기 전 픽업 장소에서 화장실을 미리 이용하세요.",
+              "tip": "벚꽃 절정 기간은 단 7~10일뿐입니다 — 가능하다면 여행 첫날에 방문하세요."
+            },
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/9df6665f-e0cf-4b8a-8d1c-2ec895745448.webp",
+              "https://images.unsplash.com/photo-1675002369691-23cacf99fb8e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1585554555426-3b8b62fcfb11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1680385985562-046bed50b4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1775116305368-2a4b53c1aa40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1712831713785-25970d124a92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1680792521306-b3f8bb79d2ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1617413757675-a60d030d30fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1680279257583-5bb568d8b396?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1652335016925-732823d15b23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxKZW9ubm9uZy1ybyUyMENoZXJyeSUyMEJsb3Nzb20lMjBTdHJlZXQlMjBLb3JlYSUyMG5hdHVyZXxlbnwwfDB8fHwxNzc3OTEwNTM5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+            ]
           },
           {
             "number": 2,
             "time": "10:30",
             "duration": "90분",
-            "name": "녹산로 (가시리 10km 벚꽃+유채 도로)",
-            "category": "벚꽃 + 유채꽃 드라이브 — 조선 왕실 목장",
-            "description": "녹산로(가시리, 표선면)는 '제주에서 가장 아름다운 봄 드라이브 도로'로 꼽히며, 한국의 '아름다운 길 100선'에 선정된 10km 구간입니다. 벚꽃과 유채꽃이 동시에 만개하는 이 도로는 두 꽃의 핑크·노란 대비가 압권입니다. 가시리 갈중이 목장과 함께 제주 목가적 봄 풍경을 연출합니다. 방문 시간: 약 50분.",
+            "name": "녹산로 (가시리 10km 벚꽃길)",
+            "category": "봄꽃 & 전원",
+            "description": "표선면 가시리 마을을 가로지르는 약 10km의 시골 도로로, 머리 위로는 벚나무가, 발 아래로는 선명한 노란 유채(카놀라)밭이 펼쳐집니다 — 분홍과 노란빛이 겹겹이 어우러진 이 풍경은 제주 봄을 대표하는 가장 많이 촬영된 장면입니다. 농촌 도로 특성상 연속된 인도가 없어, 방문은 주로 갓길 정차 지점 근처에서 이루어집니다. 코스를 따라 정석항공관과 유수암을 지나게 됩니다.",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/9df6665f-e0cf-4b8a-8d1c-2ec895745448.webp",
             "highlights": [
-              "**'한국의 아름다운 길 100선'** — **10km 벚꽃 + 유채꽃 드라이브**",
-              "**한국 어디에도 없는 핑크 + 노란 이중 개화** 봄 시즌",
-              "조선 시대 **녹산장 + 감마장 왕실 목장** 통과 (600년 역사)",
-              "**제주 말 공원 (조랑말)** — 한국 최초 지역 사회 운영 국립 박물관",
-              "**가시리 풍력 발전소** 터빈 + **따라비 오름** 기생 화산",
-              "**웰컴 투 삼달리** (2022), **웰컴 투 삼달리** 외 여러 드라마·넷플릭스 촬영지",
-              "벚꽃 + 유채 최고 겹침 시기: **3월 29일~4월 1일** (5~7일 창)",
-              "**대중교통 미접근** — 혼잡도 낮게 유지",
-              "**2006년 산림청이 한국 '아름다운 100대 길'** 지정"
+              "10km 벚꽃 + 유채꽃 도로",
+              "분홍과 노랑이 겹겹이 펼쳐지는 꽃길",
+              "탁 트인 시골 전원 풍경"
             ],
             "timeUsed": [
-              "전농로에서 녹산로 진입까지 이동 (1132번 도로 경유, 약 50분)",
-              "사진 포인트 1: 제주 마방목지 주차장 + 유채꽃 광장 — 약 25분",
-              "10km 구간 서행 드라이브 (2~3개 풀아웃 포함) — 약 25분",
-              "사진 코스 #2: 풍력발전기 + 벚꽃 터널 중간 구간 (~15분)",
-              "조랑말체험공원 인근 마지막 사진 + 산책 (~15분)",
-              "점심 장소까지 이동 (~10분)"
+              "여러 곳에서 차를 세우며 즐기는 포토 스폿",
+              "주요 전망 포인트에서의 도보 구간",
+              "유채꽃밭 탐방 시간"
             ],
-            "whyOnRoute": "녹산로는 **제주 대표 벚꽃 드라이브 경험**.",
-            "_poi_meta": {
-              "poi_key": "noksan_ro_gasiri_blossom_road",
-              "kb_version": "1.29",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "Visit Korea (Korea Tourism Organization)",
-                "Jeju Horse Park official",
-                "The Soul of Seoul Jeju spring guide",
-                "Calm Chronicle Jeju guide",
-                "Visit Korea (Korea Tourism Organization — Noksan-ro 'Jeju's Most Beautiful Spring Road' + Korea's 100 Most Beautiful Roads listing)",
-                "Jeju Horse Park (jejuhorsepark.com — Jorangmal Experience Center + first community-run national museum in Korea)",
-                "Korea Forest Service (forest.go.kr — Korea's 100 Most Beautiful Roads designation methodology)",
-                "Visit Jeju official (visitjeju.net — Gasi-ri Village + Noksanjang/Gammajang royal horse pasture heritage + 600-year history)",
-                "Wikipedia (Gasi-ri — When Life Gives You Tangerines 2024 Netflix + Welcome to Samdal-ri 2023 JTBC filming credits)"
-              ]
-            }
+            "whyOnRoute": "하루 중 가장 아름다운 절정의 순간 — 유채꽃 위로 벚꽃이 내려앉는 풍경은 제주 봄만의 독특한 조화입니다.",
+            "visitBasics": {
+              "hours": "상시 개방 (일출~일몰)",
+              "closed": "없음",
+              "admission": "무료",
+              "walking": "쉬움~보통"
+            },
+            "convenience": {
+              "restroom": "농촌 지역으로 편의시설 부족",
+              "parking": "도로변 갓길 주차"
+            },
+            "smartNotes": {
+              "photo": "넓은 구도로 촬영하면 분홍과 노랑의 겹겹이 쌓인 효과를 담을 수 있습니다.",
+              "facilities": "이 구간은 농촌 지역이므로 이전 장소에서 미리 화장실을 이용해 주세요.",
+              "tip": "최적 관람 시기는 3월 말~4월 초이며, 유채꽃은 벚꽃보다 1~2주 더 오래 핍니다."
+            },
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/9df6665f-e0cf-4b8a-8d1c-2ec895745448.webp",
+              "https://images.unsplash.com/photo-1739482409416-f9cba9a56073?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1730026140087-93ebef75d29e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1590085309112-f67167e8da6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1593726222205-21404ff4e5fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1514625796505-dba9ebaf5816?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1719176373136-9cdb6ef43212?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1709497701757-3a1caf6600dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1723707304010-15f5db159b6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1666328756682-ab6ad7a4df03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxOb2tzYW4tcm8lMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+            ]
           },
           {
             "number": 3,
             "time": "12:15",
             "duration": "60분",
-            "name": "점심 (제주 동부 현지 식당)",
+            "name": "점심식사 (제주 동부 향토 음식)",
             "category": "식사",
-            "description": "표선·성산읍 인근 현지 식당에서 흑돼지, 전복죽, 갈치 등 제주 동부 향토 음식. 점심 식사비 별도(약 ₩12,000~18,000).",
+            "description": "표선 인근 현지 식당 — 제주 동부의 대표 점심 메뉴로는 흑돼지 비빔밥, 전복죽, 또는 제철 해산물 요리를 즐길 수 있습니다. 오후 일정을 앞두고 그룹 전체가 여유롭게 휴식하는 시간이며, 식사 비용은 별도 부담입니다.",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201810/17/654ec69c-ca81-443d-9b10-3cfe4a8e98f0.webp",
             "highlights": [
-              "가이드 추천 구성 동제주 현지 식당 (표선/성산 지역)",
-              "**전복 돌솥밥** (제주 해녀 대표) 또는 **제주 흑돼지 삼겹살**",
-              "제주 흑돼지 = 문화재 자료 제5호 (2015년 지정)",
-              "사전 요청 시 채식 옵션 가능",
-              "비용 1인당 ₩15,000~₩22,000, 투어 가격 미포함"
+              "제주 전통 향토 음식",
+              "표선 인근 지역 식당"
             ],
             "timeUsed": [
-              "녹산로에서 점심 장소까지 드라이브 (~10분)",
-              "주문 + 식사 (~50분)",
-              "코치에 집결 (~5분)"
+              "점심 주문 및 식사",
+              "짧은 그룹 정비 시간"
             ],
-            "whyOnRoute": "점심이 오전 벚꽃 드라이브와 오후 일출랜드/성읍 사이 지리적 중간 지점에 배치됩니다.",
-            "_poi_meta": {
-              "poi_key": "OPS_east_jeju_lunch",
-              "kb_version": "1.17",
-              "verified_date": "2026-04-29"
+            "whyOnRoute": "점심시간을 활용한 중간 정비로, 오후 동굴·분화구 탐방 전 컨디션을 재정비할 수 있습니다.",
+            "visitBasics": {
+              "hours": "12:00–14:00 (일반적)",
+              "admission": "점심 비용 별도 부담 (1인당 약 12,000–18,000원)",
+              "walking": "최소한"
+            },
+            "convenience": {
+              "restroom": "식당에서",
+              "parking": "이용 가능"
+            },
+            "smartNotes": {
+              "tip": "요청 시 채식 옵션 제공 — 전날까지 사전 알림 필요."
             }
           },
           {
             "number": 4,
             "time": "13:30",
             "duration": "60분",
-            "name": "미천굴 (일출랜드)",
-            "category": "용암 동굴 + 테마파크 — 만장굴 대체 (유네스코 인접 지역)",
-            "description": "일출랜드 내 미천굴은 제주 대표 용암동굴 중 하나로, 공개 구간 365m를 탐방합니다. 총 길이 1,700m, 상시 서늘한 기온으로 봄 더위를 식히기에 좋습니다. 입장료 포함. 방문 시간: 약 50분.",
+            "name": "미천굴 (일출랜드 내)",
+            "category": "용암동굴 & 지질",
+            "description": "표선 인근 일출랜드 테마파크 내에 위치한 사설 용암동굴로, 제주 북쪽 해안의 유네스코 세계자연유산 만장굴과는 별개의 장소입니다. 탐방 가능 구간은 약 365m이며 동굴 내 최고 높이는 30m에 달합니다. 내부 온도는 연중 약 13°C를 유지하여, 비 오거나 더운 날 실내에서 잠시 쉬어가기에 적합한 장소입니다. 포장된 탐방로를 따라 용암석순과 냉각 흐름 구조물이 조명으로 밝혀져 있습니다.",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
             "highlights": [
-              "**총 길이 1,700m** 용암 동굴; **365m 공개 구간** (약 25분 통과)",
-              "**만장굴 유네스코 대체** — 같은 용암동굴 계통; 만장굴 폐쇄 시 개방",
-              "**바닥 인위 평탄화** — 노약자, 유모차, 거동 불편자 접근 가능",
-              "**7색 장식 조명** — 금/은/청동/빨강/검정/파랑/흰색",
-              "**40만 m² 공원** — 분재, 선인장, 조각, 전통 마을, 족욕 카페",
-              "**제주 내 무슬림 기도실 갖춘 유일한 관광 명소** — 의도적 접근성 배려",
-              "**런닝맨 89회** 촬영지 (2012, 이상한 나라의 앨리스 테마)",
-              "입장료: **성인 ₩12,000 / 청소년 ₩9,000 / 어린이 ₩7,000**",
-              "**실내 30% / 야외 70%** — 날씨에 유연한 구성"
+              "넓은 용암동굴 내부",
+              "용암석순과 바닥 지형",
+              "연중 안정적인 온도"
             ],
             "timeUsed": [
-              "주차 + 매표 + 입장 — 약 5분",
-              "미천굴 통과 (365m / 약 25분) — 약 30분",
-              "수변공원 + 조각 거리 — 약 20분",
-              "선택: 분재·선인장 정원 + 족욕 카페 — 약 15분",
-              "이동 완충 — 약 5분"
+              "가이드 동반 동굴 탐방",
+              "지질 해설",
+              "주요 동굴 내부에서 사진 촬영"
             ],
-            "whyOnRoute": "미천굴은 모든 동제주 루트의 **우천 보험** — 날씨가 나빠져도 항상 사진 찍기 좋은하고 편안.",
-            "_poi_meta": {
-              "poi_key": "ilchulland_micheon_cave",
-              "kb_version": "1.29",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "Visit Jeju official (Micheongul Cave page)",
-                "Visit Korea Ilchul Land page",
-                "Creatrip Ilchul Land guide",
-                "Wanderlog Ilchul Land reviews",
-                "Visit Jeju official (visitjeju.net — Micheongul Cave + Samdal-ri eastern cave group of 15 Jeju cave systems)",
-                "Visit Korea (Korea Tourism Organization — Ilchul Land + Micheon Cave 1,700m total / 365m public-access listing)",
-                "Ilchul Land official (ilchulland.com — 2002 opening + admission + 09:00-18:00 hours + 7-color lighting installation)",
-                "Korea Heritage Service (cha.go.kr — Jeju lava-tube cave systems + UNESCO Geomunoreum lava-tube system inheritance)",
-                "Wikipedia (Ilchul Land — Micheon Cave geology + ~14°C constant temperature + Jeju lava tube formation)"
-              ]
+            "whyOnRoute": "화산 이야기에 지질학적 깊이를 더하며, 오후에 비가 내릴 경우 날씨에 구애받지 않는 실내 방문지가 됩니다.",
+            "visitBasics": {
+              "hours": "09:00–18:00",
+              "closed": "시즌별 확인 필요",
+              "admission": "성인 9,000원",
+              "walking": "쉬움 (포장된 동굴 탐방로)"
             },
-            "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+            "convenience": {
+              "restroom": "입구에서",
+              "parking": "이용 가능"
+            },
+            "smartNotes": {
+              "photo": "삼각대 또는 안정된 손 필요 — 주변 광량이 적습니다.",
+              "facilities": "동굴 내부 온도는 연중 약 14°C입니다. 얇은 겉옷을 챙겨오세요.",
+              "tip": "일출랜드와 통합권으로 연결 — 5번 정류장과 묶음 구성."
+            },
             "images": [
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp"
-            ],
-            "imageCredits": [
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
-                "source": "atoc-korea"
-              }
-            ],
-            "galleryItems": [
-              {
-                "id": 1,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-                "location": "미천굴 (일출랜드)",
-                "caption": "미천굴 (일출랜드) — photo 1",
-                "alt": "미천굴 (일출랜드) — gallery image 1"
-              },
-              {
-                "id": 2,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-                "location": "미천굴 (일출랜드)",
-                "caption": "미천굴 (일출랜드) — photo 2",
-                "alt": "미천굴 (일출랜드) — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-                "location": "미천굴 (일출랜드)",
-                "caption": "미천굴 (일출랜드) — photo 3",
-                "alt": "미천굴 (일출랜드) — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-                "location": "미천굴 (일출랜드)",
-                "caption": "미천굴 (일출랜드) — photo 4",
-                "alt": "미천굴 (일출랜드) — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-                "location": "미천굴 (일출랜드)",
-                "caption": "미천굴 (일출랜드) — photo 5",
-                "alt": "미천굴 (일출랜드) — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-                "location": "미천굴 (일출랜드)",
-                "caption": "미천굴 (일출랜드) — photo 6",
-                "alt": "미천굴 (일출랜드) — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-                "location": "미천굴 (일출랜드)",
-                "caption": "미천굴 (일출랜드) — photo 7",
-                "alt": "미천굴 (일출랜드) — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
-                "location": "미천굴 (일출랜드)",
-                "caption": "미천굴 (일출랜드) — photo 8",
-                "alt": "미천굴 (일출랜드) — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
-                "location": "미천굴 (일출랜드)",
-                "caption": "미천굴 (일출랜드) — photo 9",
-                "alt": "미천굴 (일출랜드) — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
-                "location": "미천굴 (일출랜드)",
-                "caption": "미천굴 (일출랜드) — photo 10",
-                "alt": "미천굴 (일출랜드) — gallery image 10"
-              }
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
+              "https://images.unsplash.com/photo-1749382872044-b9da36fe9117?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1726905064646-e61b5b68e5aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1562680829-7927493f7a50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1745504779500-0e95c1b4d58c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1674606059344-68bdc8cd06d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1595015975293-6f5c68bcdbaa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1609766418260-38c07e7ae69c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1646187582419-a8c67b3170ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1745504540086-06fa137c27db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxsYXZhJTIwY2F2ZSUyMEplanUlMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQzfDA&ixlib=rb-4.1.0&q=80&w=1080"
             ]
           },
           {
             "number": 5,
             "time": "15:00",
-            "duration": "75분",
+            "duration": "60분",
             "name": "일출랜드 테마 정원",
-            "category": "테마 정원 — 민속마을 + 선인장 + 분재 + 조각 산책로",
-            "description": "미천굴과 동일 부지 내 아열대 식물원과 봄꽃 정원. 미천굴 입장료에 포함. 방문 시간: 약 20분.",
+            "category": "정원 & 조각",
+            "description": "미천굴과 동일 단지 내 조각 설치 작품이 어우러진 테마 정원 (콤보 티켓). 약 50,000㎡ 규모의 산책로에 아열대 식물이 조성되어 있으며, 봄철에는 벚꽃과 유채꽃이 만개해 꽃 투어 테마와 맞닿아 있습니다. 평탄한 정원 산책로를 따라 편안하게 걸을 수 있습니다.",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
             "highlights": [
-              "**민속마을** — 살아있는 제주 흑돼지 (문화재 자료 제5호)",
-              "**'응태석'** = 전설적인 '알 낳는 돌' — 풍요 민속 신앙",
-              "**야생화 분재 정원** + **선인장 온실** + **수변 공원 폭포**",
-              "**조각 산책로** — 한국 작가 야외 순환 전시",
-              "**아로마 족욕 카페** (별도 ₩5,000~8,000)",
-              "**런닝맨 89회 (2012, 이상한 나라의 앨리스)** + **'별에서 온 그대'** 촬영지",
-              "**무슬림 기도실** — 제주 드문 시설",
-              "**봄 꽃**: 동백꽃 + 철쭉 + 벚꽃 공원 전역 개화",
-              "**아로마 족욕 카페** (수변 공원 구역) — 현장 **따뜻한 물 족욕** 드문 경험"
+              "테마 정원 구역",
+              "조각 및 예술 설치 작품",
+              "조각 작품과 어우러진 계절 꽃"
             ],
             "timeUsed": [
-              "블루라인 탐방로 경유 민속마을까지 도보 (~5분)",
-              "민속마을 + 흑돼지 + 을파소 (~20분)",
-              "분재원 + 선인장 온실 + 수변공원 (~25분)",
-              "조각 탐방로 + 봄꽃 산책 + 촬영 시간 (~15분)",
-              "선택: 아로마 족욕 또는 자유 시간 + 집결 (~10분)"
+              "주요 정원 구역 산책",
+              "조각 설치 작품 포토 타임",
+              "정원 카페 또는 휴게 공간"
             ],
-            "whyOnRoute": "일출랜드 테마 정원은 어두운 동굴 오전과 절벽 지질학 오후 사이 **이상적인 페이싱 피봇**.",
-            "_poi_meta": {
-              "poi_key": "ilchulland_themed_gardens",
-              "kb_version": "1.29",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "Visit Korea Ilchul Land page",
-                "Creatrip Ilchul Land guide",
-                "Wanderlog Ilchul Land reviews",
-                "Ilchul Land listing",
-                "Visit Korea (Korea Tourism Organization — Ilchul Land themed-garden complex + Folk Village + Wild Flower Bonsai Garden)",
-                "Ilchul Land official (ilchulland.com — blue-line walking path + Folk Village + Cactus Greenhouse + Subyeon Park)",
-                "Visit Jeju official (visitjeju.net — Eung Tae-seok 'stones that lay eggs' fertility folklore + Sculpture Path)",
-                "Korea Tourism Organization Filming Locations Guide (Running Man Episode 89 2012 + What Star Do You Come From 2006 MBC)",
-                "Wikipedia (Jeju Black Pig — Cultural Heritage Material No. 5 designation 2015)"
-              ]
-            }
+            "whyOnRoute": "활동적인 동굴 탐방 후 여유로운 시간을 제공하며, 선택 코스인 성산 정류장을 앞두고 그룹이 편안히 준비할 수 있도록 합니다.",
+            "visitBasics": {
+              "hours": "08:30–18:00",
+              "closed": "없음",
+              "admission": "성인 12,000원 (미천굴 통합권 기준)",
+              "walking": "쉬움 (평탄한 정원 산책로)"
+            },
+            "convenience": {
+              "restroom": "다수",
+              "parking": "이용 가능"
+            },
+            "smartNotes": {
+              "photo": "자연과 조각이 어우러진 풍경은 오후 빛 아래에서 가장 아름답습니다.",
+              "tip": "미천굴 통합권 이용 시 약 20% 할인 혜택이 있습니다."
+            },
+            "images": [
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202207/14/4bcd710c-1b9c-46a2-8d52-d41907853ded.webp",
+              "https://images.unsplash.com/photo-1666328756682-ab6ad7a4df03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1718958505977-6f5790f1cf1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1747587241381-c952b679edf5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1584802590409-181a9b3186f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1747587356640-c9fb02acdd29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1718958506421-a686b6ce3a64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1747487023570-aaf7d94581b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1503932953040-b6085c4fd82e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1663687609883-07ef1a0b58ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxJbGNodWwlMjBMYW5kJTIwVGhlbWVkJTIwR2FyZGVucyUyMEplanUlMjBTb3V0aCUyMEtvcmVhfGVufDB8MHx8fDE3Nzc5MTA1NDR8MA&ixlib=rb-4.1.0&q=80&w=1080"
+            ]
           },
           {
             "number": 6,
             "time": "16:15",
-            "duration": "75분",
-            "name": "성산일출봉 (유네스코 포토 스톱)",
-            "category": "유네스코 응회암 분화구 — 일출봉 (유네스코 3중 지정)",
-            "description": "유네스코 세계자연유산. 이 투어에서는 분화구 등반 없이 해안 전망 포토 스톱만 진행합니다. 방문 시간: 약 40분.",
+            "duration": "45분",
+            "name": "성산일출봉 (포토 스톱)",
+            "category": "유네스코 화산",
+            "description": "유네스코 세계자연유산에 등재된 응회암 분석구로, 약 5,000년 전 수중 화산 폭발로 형성되어 해발 약 180m 높이로 솟아 있습니다. 이 투어는 정상 등반 없이 기슭의 포토 뷰포인트만 방문하며, 동쪽 하늘을 배경으로 한 분화구 능선의 실루엣이 하루를 마무리합니다. 정상 등반은 연중 운영되는 동부 유네스코 투어 일정에 포함되어 있습니다.",
+            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
             "highlights": [
-              "**유네스코 3중 지정**: 세계유산 2007-07-02 + 생물권보전지역 2002 + 세계지질공원 2010-10",
-              "**5,000년 전** 형성 — 마그마가 바닷물과 만나 폭발한 수성화산 활동, 이후 육지와 연결",
-              "분화구 **지름 600m × 깊이 90m**, **99개의 날카로운 암봉**으로 둘러싸인 '돌 왕관'",
-              "**해발 182m** — 0.8km / 고도 차 약 140m, 석계 트레일 왕복 60분",
-              "**18개의 일제 WWII 동굴** — 1945년 가미카제 자살 특공선 은신처",
-              "**해녀 공연 1일 1회 오후 2시 (악천후 시 취소 가능)** — 유네스코 무형유산(2016년 등재)",
-              "**2025년 4월 기준 입장료**: 성인 ₩5,000 / 청소년 ₩2,500 / 7세 이하·65세 이상 무료",
-              "봄·가을 운영 **05:00~19:00** (마지막 입장 18:20)",
-              "**매월 첫 번째 월요일 휴관**"
+              "유네스코 분화구 실루엣",
+              "해안 전망대 사진 촬영",
+              "동제주 하루 마무리 거점"
             ],
             "timeUsed": [
-              "주차 + 매표 + 현장 안내 — 약 10분",
-              "정상 데크까지 등반 (0.8km / 고도 차 140m) — 약 30분",
-              "정상 조망 + 분화구 테두리 사진 — 약 20분",
-              "하산 — 약 20분",
-              "선택: 해녀 공연 관람 (1일 1회 오후 2시, 악천후 시 취소 가능) — 약 10분"
+              "기점 전망대까지 도보 이동",
+              "대표 앵글에서 포토 스톱",
+              "화산 지형 형성에 대한 간략한 설명"
             ],
-            "whyOnRoute": "성산일출봉은 이 동제주 루트의 **유일한 유네스코 세계자연유산 핵심 명소**.",
-            "_poi_meta": {
-              "poi_key": "seongsan_ilchulbong",
-              "kb_version": "1.29",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "UNESCO World Heritage Centre",
-                "Visit Jeju official",
-                "Inside Jeju 2026 admission guide",
-                "Cultural Heritage Administration of Korea",
-                "UNESCO World Heritage Centre (whc.unesco.org — Jeju Volcanic Island and Lava Tubes inscription 2007-07-02)",
-                "Visit Jeju official (visitjeju.net — Seongsan Ilchulbong Sunrise Peak listing + 99-crown-rocks + 5,000-year tuff cone)",
-                "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Natural Monument designation 2000-07-19)",
-                "UNESCO Global Geoparks Network (Jeju Island Global Geopark inscription 2010-10)",
-                "Wikipedia (Seongsan Ilchulbong — Surtseyan-type hydrovolcanic eruption + 18 Japanese WWII caves + haenyeo demonstrations)"
-              ]
+            "whyOnRoute": "하루 일정 말미에 가파른 정상 등반 없이 동제주에서 가장 널리 알려진 랜드마크로 루트를 마무리합니다.",
+            "visitBasics": {
+              "hours": "3~4월 & 9~10월: 05:00~19:00; 5~8월: 04:30~20:00; 11~2월: 06:00~18:00 (마감 1시간 전 매표 마감)",
+              "closed": "연중 개방 (기상 악화 시 휴장 가능)",
+              "admission": "성인 5,000원 / 청소년 및 어린이 2,500원 (비짓코리아 기준)",
+              "walking": "중간 난이도 — 20~30분 꾸준한 계단 오르기 (약 600계단); 중간중간 휴식용 벤치 있음"
             },
-            "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+            "convenience": {
+              "restroom": "입구 및 기점에서 이용 가능",
+              "parking": "대형 무료 주차장"
+            },
+            "smartNotes": {
+              "photo": "맑은 날 정상에서 서쪽으로 한라산, 북쪽으로 우도 조망 가능; 하산 길에서 해녀 흑사장 풍경 감상 가능",
+              "tip": "전 구간 계단이지만 잘 정비되어 있어 일상복으로도 무리 없음; 휴식 공간을 갖춘 가족 친화적 코스; 일출 방문이 인기이나 새벽부터 인파가 몰림",
+              "facilities": "카페 (프리츠 커피 1.3km 거리, 봉우리 외관 조망 최적 장소); 성산항에서 우도행 페리 탑승 가능 (도보 1.5km / 약 15분)"
+            },
             "images": [
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
-            ],
-            "imageCredits": [
-              {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-                "source": "atoc-korea"
-              }
-            ],
-            "galleryItems": [
-              {
-                "id": 1,
-                "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-                "location": "성산일출봉 (유네스코 포토 스톱)",
-                "caption": "성산일출봉 (유네스코 포토 스톱) — photo 1",
-                "alt": "성산일출봉 (유네스코 포토 스톱) — gallery image 1"
-              },
-              {
-                "id": 2,
-                "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-                "location": "성산일출봉 (유네스코 포토 스톱)",
-                "caption": "성산일출봉 (유네스코 포토 스톱) — photo 2",
-                "alt": "성산일출봉 (유네스코 포토 스톱) — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-                "location": "성산일출봉 (유네스코 포토 스톱)",
-                "caption": "성산일출봉 (유네스코 포토 스톱) — photo 3",
-                "alt": "성산일출봉 (유네스코 포토 스톱) — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-                "location": "성산일출봉 (유네스코 포토 스톱)",
-                "caption": "성산일출봉 (유네스코 포토 스톱) — photo 4",
-                "alt": "성산일출봉 (유네스코 포토 스톱) — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-                "location": "성산일출봉 (유네스코 포토 스톱)",
-                "caption": "성산일출봉 (유네스코 포토 스톱) — photo 5",
-                "alt": "성산일출봉 (유네스코 포토 스톱) — gallery image 5"
-              }
+              "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+              "https://images.unsplash.com/photo-1616798249081-30877e213b16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1593104197164-96718e943b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1683123236565-4e5f3e2af586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw0fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1584263577189-f86c4b105154?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw1fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1710006876254-48250c2dbcfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw2fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1584802530491-65fad8b1b92c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw3fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1743685889737-d699283d139c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw4fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+              "https://images.unsplash.com/photo-1702040093476-2446d4ea1d50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHw5fHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080"
             ]
           }
         ]
@@ -2205,56 +2286,65 @@
       "props": {
         "routeFlowStops": [
           {
+            "id": "01",
             "name": "전농로",
-            "type": "origin",
-            "theme": "도심 벚꽃"
+            "theme": "도심 꽃길"
           },
           {
+            "id": "02",
             "name": "녹산로",
-            "type": "primary",
-            "theme": "시골 꽃길"
+            "theme": "전원 꽃길"
           },
           {
+            "id": "03",
             "name": "점심",
-            "type": "meal",
             "theme": "식사"
           },
           {
+            "id": "04",
             "name": "미천굴",
-            "type": "primary",
             "theme": "동굴"
           },
           {
+            "id": "05",
             "name": "일출랜드",
-            "type": "primary",
             "theme": "정원"
           },
           {
+            "id": "06",
             "name": "성산",
-            "type": "return",
             "theme": "유네스코 화산"
           }
         ],
         "routePhases": [
           {
-            "phase": "벚꽃 절정",
-            "duration": "정류장 1–2",
-            "description": "전농로 벚꽃거리 → 녹산로 10km 벚꽃+유채 도로."
+            "label": "오전",
+            "range": "1-2",
+            "theme": "벚꽃 절정",
+            "bgClass": "bg-pink-50/70",
+            "textClass": "text-pink-700",
+            "dotClass": "bg-pink-500"
           },
           {
-            "phase": "점심",
-            "duration": "정류장 3",
-            "description": "표선·성산 인근 제주 동부 현지 식당."
+            "label": "한낮",
+            "range": "3",
+            "theme": "점심",
+            "bgClass": "bg-amber-50/70",
+            "textClass": "text-amber-700",
+            "dotClass": "bg-amber-500"
           },
           {
-            "phase": "동굴에서 분화구까지",
-            "duration": "정류장 4–6",
-            "description": "미천굴(일출랜드) → 일출랜드 테마 정원 → 성산일출봉 포토 스톱."
+            "label": "오후",
+            "range": "4-6",
+            "theme": "동굴에서 정원, 분화구까지",
+            "bgClass": "bg-emerald-50/70",
+            "textClass": "text-emerald-700",
+            "dotClass": "bg-emerald-500"
           }
         ],
         "routeShapeIntro": {
           "title": "이 봄날의 흐름",
-          "subtitle": "빛이 부드러운 오전에 먼저 벚꽃, 오후에 용암 동굴과 정원, 성산으로 마무리합니다. 오전 9시 출발, 오후 5시 30분 귀환."
+          "subtitle": "빛이 부드러울 때 먼저 벚꽃을, 오후에는 용암 동굴과 정원, 성산으로 마무리. 09:00~17:30."
         }
       }
     },
@@ -2265,77 +2355,77 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "봄 첫 방문자",
-            "커플 및 사진 중심 여행자",
-            "성인 가족 단위",
-            "벚꽃 절정을 쫓는 여행자"
+            "봄 첫 방문객",
+            "커플 및 사진 중심 여행객",
+            "성인 가족",
+            "벚꽃 절정을 쫓는 여행객"
           ],
           "routeLogicSections": [
             {
-              "title": "일정 속도 & 구조",
+              "title": "페이싱 & 구성",
               "icon": "sun",
               "iconBg": "bg-amber-50/80",
               "iconColor": "text-amber-600",
               "items": [
                 {
-                  "label": "열 오르기 전 오전에 벚꽃 먼저",
-                  "detail": "벚꽃 코스가 정오 전에 배치되어 빛이 부드럽고 오후 바람에 꽃잎이 떨어지기 전에 방문합니다."
+                  "label": "더위 전에, 꽃부터 > **참고:** 7, 11, 15, 24번(Tailwind CSS 클래스), 5·9·13번(숫자), 18번(컴포넌트명)은 코드 요소이므로 원문 그대로 유지했습니다.",
+                  "detail": "벚꽃 관람 구간 두 곳 모두 정오 이전에 방문하므로 빛이 부드럽고 오후 바람에 꽃잎이 떨어지기 전에 감상할 수 있습니다."
                 },
                 {
-                  "label": "날씨 완충으로서의 동굴",
-                  "detail": "정오의 미천굴은 안정적인 실내 코스로, 오후 날씨가 나빠질 경우 유용한 보험 역할을 합니다."
+                  "label": "날씨 완충재로서의 동굴",
+                  "detail": "정오에 방문하는 미천굴은 실내에서 안정적으로 머물 수 있는 구간으로, 오후 날씨가 나빠질 경우를 대비한 유용한 보험 역할을 합니다."
                 },
                 {
-                  "label": "마지막 코스로 성산일출봉, 핵심 명소로서",
-                  "detail": "성산이 루트 마지막에 동제주의 눈에 보이는 핵심 명소로서 등장하며, 하루 끝에 정상 등반을 추가하지 않습니다."
+                  "label": "분화구, 마지막 하이라이트로",
+                  "detail": "성산은 하루 일정 끝에 정상 등반 없이도 제주 동쪽을 상징하는 시각적 랜드마크로서 코스를 마무리합니다."
                 }
               ]
             },
             {
-              "title": "왜 봄 시즌 한정인가",
+              "title": "이 코스가 봄 한정인 이유",
               "icon": "flower",
               "iconBg": "bg-pink-50/80",
               "iconColor": "text-pink-600",
               "items": [
                 {
-                  "label": "벚꽃 시기는 7~10일",
-                  "detail": "왕벚꽃은 3월 말에서 4월 초 사이 잠깐 절정에 달합니다. 제주 여행 첫날로 예약하는 것이 좋습니다."
+                  "label": "벚꽃 시즌은 7~10일",
+                  "detail": "왕벚꽃은 3월 말부터 4월 초 사이에 짧게 절정을 맞이합니다 — 가능하다면 제주 여행 첫날로 일정을 잡으세요."
                 },
                 {
-                  "label": "유채꽃은 1~2주 연장",
-                  "detail": "유채꽃밭은 벚꽃보다 1~2주 더 지속되므로 녹산로 코스의 눈에 보이는 효과가 조금 더 유지됩니다."
+                  "label": "유채꽃은 1~2주 더",
+                  "detail": "유채꽃밭은 벚꽃보다 1~2주 더 오래 피어 있는 경우가 많아, 녹산로 구간은 조금 더 오랫동안 아름다운 풍경을 감상할 수 있습니다."
                 },
                 {
-                  "label": "개화 시기 외에는 동쪽 소그룹 투어로",
-                  "detail": "날짜가 벚꽃 시즌 밖이라면 저희 동쪽 유네스코 투어가 동일 지역을 연중 커버합니다."
+                  "label": "개화 시기를 벗어난 경우, 제주 동부 소규모 코스를 선택하세요",
+                  "detail": "벚꽃 시즌 외에 방문하신다면, 동일 지역을 연중 주요 명소(돌문화공원, 섭지코지, 민속촌)로 구성한 '제주 동부 유네스코 명소 당일 투어' 코스를 추천드립니다."
                 }
               ]
             },
             {
-              "title": "솔직한 트레이드오프",
+              "title": "솔직한 단점 안내",
               "icon": "info",
               "iconBg": "bg-sky-50/80",
               "iconColor": "text-sky-600",
               "items": [
                 {
                   "label": "성산 정상 등반 없음",
-                  "detail": "베이스 전망대 사진 코스만 진행합니다. 벚꽃 거리 시간을 위해 가파른 정상 등반을 생략합니다."
+                  "detail": "벚꽃 거리 관람 시간을 확보하기 위해 정상 등반 없이 아래 전망 포인트에서의 사진 촬영만 진행합니다."
                 },
                 {
-                  "label": "비는 실질적인 리스크",
-                  "detail": "폭우 시 벚꽃 감상 효과가 급격히 떨어집니다. 2~3일 전 예보를 확인하고 폭풍이 예상되면 재예약을 고려하세요."
+                  "label": "비 올 가능성이 있습니다",
+                  "detail": "폭우 시 벚꽃 감상 효과가 크게 떨어집니다. 출발 2~3일 전 날씨 예보를 확인하시고, 폭풍이 예보된 경우 일정 변경을 고려해 주세요."
                 },
                 {
-                  "label": "절정기 인파",
-                  "detail": "3월 마지막 주말과 4월 첫 주말이 가장 혼잡합니다. 평일 출발이 더 여유롭습니다."
+                  "label": "성수기 혼잡",
+                  "detail": "3월 마지막 주말과 4월 첫 주말이 가장 붐빕니다. 평일 출발 시 좀 더 여유롭게 즐기실 수 있습니다."
                 }
               ]
             }
           ],
           "lessIdealFor": [
-            "비시즌 방문자 주의 (4월 15일 이후)",
-            "동굴 기피 그룹 주의",
-            "유모차 이용 그룹 주의 (시골 도로변)"
+            "비수기 방문객 (4월 15일 이후)",
+            "동굴 방문을 원하지 않는 그룹",
+            "유모차 동반 그룹 (시골 도로변 코스)"
           ]
         }
       }
@@ -2343,50 +2433,50 @@
     {
       "id": "practical",
       "section_html_id": null,
-      "component": "TourPracticalDetails",
+      "component": "투어 실용 정보",
       "props": {
         "practicalAccordionItems": [
           {
             "id": "pickup",
-            "title": "픽업 & 하차",
-            "preview": "제주 시내 호텔 로비 픽업",
+            "title": "픽업 & 드롭오프",
+            "preview": "제주시 지역 호텔 로비 픽업",
             "content": [
-              "08:30~09:00 사이 호텔 로비 픽업.",
-              "귀환·하차 약 17:30.",
-              "공항 픽업 요청 시 가능.",
-              "제주시 외 픽업(서귀포, 애월)은 추가 요금; 예약 시 확인."
+              "오전 08:30~09:00 사이 호텔 로비에서 픽업",
+              "오후 17:30경 귀환 드롭오프",
+              "요청 시 공항 픽업 가능",
+              "제주시 외 지역(서귀포, 애월) 픽업 — 추가 요금 발생; 예약 시 요금 확정."
             ]
           },
           {
             "id": "what-to-bring",
-            "title": "복장 & 준비물",
-            "preview": "편한 신발, 얇은 겉옷, 카메라",
+            "title": "복장 및 준비물",
+            "preview": "편한 신발, 가벼운 겉옷, 카메라",
             "content": [
-              "편안한 워킹화 (짧은 도보 여러 구간).",
-              "가벼운 재킷 — 봄 기온 약 10~18°C.",
-              "꽃 사진 촬영을 위한 카메라/간편한폰.",
-              "점심 및 입장료용 현금 또는 카드."
+              "편안한 워킹화 (짧은 도보 구간 다수)",
+              "가벼운 재킷 — 봄철 기온 10~18°C",
+              "꽃 사진 촬영을 위한 카메라 또는 스마트폰",
+              "점심 및 입장료를 위한 현금 또는 카드"
             ]
           },
           {
             "id": "season",
-            "title": "벚꽃 시즌 기간",
-            "preview": "3월 말~4월 초",
+            "title": "벚꽃 시즌",
+            "preview": "3월 하순~4월 초순",
             "content": [
-              "절정 시기: 약 3월 25일~4월 10일 (연도별 변동).",
-              "유채꽃은 벚꽃 절정 이후 1~2주 연장.",
-              "제주 여행 첫날에 이 투어를 예약하는 것을 추천합니다.",
-              "시즌 외 날짜라면 연중 동쪽 유네스코 투어를 고려해 주세요."
+              "절정 시기: 약 3월 25일~4월 10일 (연도별 상이)",
+              "유채꽃은 벚꽃 절정 이후 1~2주 더 감상 가능",
+              "제주 여행 첫째 날을 해당 시즌에 맞춰 예약하시길 권장합니다",
+              "여행 일정이 시즌을 벗어나는 경우, 대신 jeju-eastern-unesco-spots-day-tour 코스를 고려해 보세요"
             ]
           },
           {
             "id": "weather-policy",
             "title": "날씨 정책",
-            "preview": "폭우 시 재예약 가능성",
+            "preview": "폭우 시 일정 변경이 필요할 수 있습니다",
             "content": [
-              "가벼운 비: 일정대로 진행.",
-              "폭우: 시즌 내 무료 일정 변경 가능.",
-              "시즌 외 취소는 표준 AtoC Korea 약관을 따릅니다."
+              "가벼운 비: 정상 운행",
+              "폭우: 시즌 내 무료 일정 변경 가능",
+              "시즌 외 취소 정책은 atockorea 표준 약관을 따릅니다 (예약 지원 참조)."
             ]
           },
           {
@@ -2394,11 +2484,11 @@
             "title": "포함 사항",
             "preview": "교통, 가이드, 주요 입장료",
             "content": [
-              "호텔 픽업·하차 (제주시)",
-              "에어컨 밴 교통",
-              "공인 영어 가이드",
-              "주요 입장료 (미천굴 + 일출랜드 콤보)",
-              "점심은 별도 결제. 성산 입장료는 이 투어에 해당 없음 (베이스 레벨에서 관람)."
+              "호텔 픽업 및 드롭오프 (제주시)",
+              "에어컨 완비 밴 이동",
+              "공인 영어 구사 가이드",
+              "주요 입장료 포함 (미천굴 + 일출랜드 콤보)",
+              "점심은 별도 결제입니다. 성산 입장료는 본 투어에 포함되지 않습니다 (정상 등반이 아닌 하단 포토 스톱으로 진행됩니다)."
             ]
           }
         ],
@@ -2409,35 +2499,43 @@
             "icon": "cloud-sun"
           },
           "tomorrow": {
-            "label": "여행사 예약 페이지에서 실시간 예보 확인 가능",
+            "label": "실시간 날씨 예보는 운영사 예약 페이지에서 확인 가능합니다",
             "temp": "—",
             "icon": "cloud"
           }
         },
         "seasonalVariations": [
           {
-            "season": "봄 (3~4월)",
-            "title": "투어 운영",
-            "description": "성수기 — 벚꽃과 유채꽃 절정",
-            "icon": "flower"
+            "name": "봄 (3~4월)",
+            "icon": "flower",
+            "description": "성수기 — 벚꽃과 유채꽃밭",
+            "tag": "투어 운영 중",
+            "bgClass": "bg-pink-100/70",
+            "iconColor": "text-pink-500"
           },
           {
-            "season": "늦봄 (5월)",
-            "title": "비시즌",
-            "description": "벚꽃 시즌 종료; 연중 동쪽 유네스코 투어를 추천합니다",
-            "icon": "leaf"
+            "name": "늦봄 (5월)",
+            "icon": "leaf",
+            "description": "벚꽃 시즌 종료; 연중 운영되는 동부 유네스코 투어를 추천합니다",
+            "tag": "비수기",
+            "bgClass": "bg-emerald-50/70",
+            "iconColor": "text-emerald-500"
           },
           {
-            "season": "여름~가을 (6~11월)",
-            "title": "비시즌",
-            "description": "시즌 외 — 연중 동쪽 유네스코 투어 루트 추천",
-            "icon": "sun"
+            "name": "여름~가을 (6~11월)",
+            "icon": "sun",
+            "description": "비시즌 — 연중 운영 동부 유네스코 투어 루트를 추천합니다",
+            "tag": "비수기",
+            "bgClass": "bg-amber-50/70",
+            "iconColor": "text-amber-500"
           },
           {
-            "season": "겨울 (12~2월)",
-            "title": "비시즌",
-            "description": "시즌 외 — 연중 동쪽 유네스코 투어 루트 추천",
-            "icon": "snowflake"
+            "name": "겨울 (12~2월)",
+            "icon": "snowflake",
+            "description": "비시즌 — 연중 운영 동부 유네스코 투어 루트를 추천합니다",
+            "tag": "비수기",
+            "bgClass": "bg-sky-50/70 > **참고:** 13번·17번·21번·25번은 Tailwind CSS 클래스명으로, 코드에서 그대로 사용해야 하므로 번역 없이 원문을 유지했습니다.",
+            "iconColor": "text-sky-500"
           }
         ]
       }
@@ -2445,70 +2543,61 @@
     {
       "id": "booking_support",
       "section_html_id": null,
-      "component": "TourBookingSupportSection",
+      "component": "TourBookingSupportSection → **투어 예약 지원 섹션**",
       "props": {
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "봄 시즌 전문 여행사",
-            "description": "제주 자격증 가이드",
-            "iconBg": "bg-emerald-50/80",
-            "iconColor": "text-emerald-600",
-            "body": "3/25~4/10 제주 벚꽃 시즌 한정 투어."
+            "title": "Licensed local → **공인 현지 가이드**",
+            "description": "Jeju-licensed guiding → **제주 공인 가이드 운영**",
+            "iconBg": "bg-emerald-50/80 → **bg-emerald-50/80** *(UI 클래스명 — 번역 불필요)*",
+            "iconColor": "text-emerald-600"
           },
           {
             "icon": "calendar",
-            "title": "코스 전문",
-            "description": "개화 기간 내 무료 일정 변경",
-            "iconBg": "bg-pink-50/80",
-            "iconColor": "text-pink-600",
-            "body": "전농로 벚꽃 거리부터 한국에서 가장 아름다운 봄 드라이브 도로인 녹산로까지 하루에 이어지는 코스."
+            "title": "Season window flex → **시즌 일정 유연 변경**",
+            "description": "Free rescheduling within bloom window → **개화 시기 내 무료 일정 변경**",
+            "iconBg": "bg-pink-50/80 → **bg-pink-50/80** *(UI 클래스명 — 번역 불필요)*",
+            "iconColor": "text-pink-600"
           },
           {
             "icon": "shield",
-            "title": "그룹 규모 관리",
-            "description": "폭우 시 무료 일정 변경",
-            "iconBg": "bg-sky-50/80",
-            "iconColor": "text-sky-600",
-            "body": "소그룹으로 녹산로 포토 스톱을 여유 있게 즐깁니다."
+            "title": "Weather guarantee → **날씨 보장**",
+            "description": "Free reschedule on heavy rain → **폭우 시 무료 일정 변경**",
+            "iconBg": "bg-sky-50/80 → **bg-sky-50/80** *(UI 클래스명 — 번역 불필요)*",
+            "iconColor": "text-sky-600"
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "즉시",
-            "title": "즉시 확인",
-            "detail": "행정 요약 포함 예약 확인서 발송",
-            "description": "픽업 정보 포함 즉시 예약 확인서 발송."
+            "timing": "Immediately → **즉시**",
+            "title": "Instant Confirmation → **즉시 예약 확정**",
+            "detail": "Booking confirmation with itinerary summary → **일정 요약이 포함된 예약 확인서 발송**"
           },
           {
-            "timing": "2일 전",
-            "title": "12시간 전 알림",
-            "detail": "예보를 모니터링하고 예약 변경이 권장되면 연락드립니다.",
-            "description": "벚꽃 개화 상태 및 날씨 사전 안내."
+            "timing": "2 days before → **출발 2일 전**",
+            "title": "Weather Check-in → **날씨 사전 확인**",
+            "detail": "We monitor forecast and reach out if rebooking is recommended → **날씨 예보를 모니터링하여 일정 변경이 권장될 경우 안내해 드립니다**"
           },
           {
-            "timing": "전날",
-            "title": "최종 픽업 안내",
-            "detail": "픽업 시간, 차량 번호, 가이드 이름을 WhatsApp으로 발송.",
-            "description": "출발 전날 저녁 최종 픽업 시각 확인."
+            "timing": "Day before → **출발 전날**",
+            "title": "Vehicle & Guide Info → **차량 및 가이드 정보 안내**",
+            "detail": "Pickup time, vehicle plate, and guide name via WhatsApp → **픽업 시간, 차량 번호, 가이드 이름을 WhatsApp으로 전송**"
           },
           {
-            "timing": "투어 당일 오전",
-            "title": "당일 코스 안내",
-            "detail": "드라이버가 도착 10분 전에 연락합니다.",
-            "description": "개화 상태 및 날씨 아침 메시지 전달."
+            "timing": "Morning of → **당일 아침**",
+            "title": "Pickup Confirmation → **픽업 확인**",
+            "detail": "Driver checks in 10 minutes before arrival → **기사가 도착 10분 전에 연락드립니다**"
           },
           {
-            "timing": "투어 중",
-            "title": "경유지별 심층 안내",
-            "detail": "문제 발생 시 운영팀에 직접 연락 가능",
-            "description": "녹산로 유채와 벚꽃의 생태, 성산일출봉 지질 배경 설명."
+            "timing": "During tour → **투어 진행 중**",
+            "title": "On-tour Support → **투어 중 지원**",
+            "detail": "Direct line to operations if anything comes up → **문제 발생 시 운영팀 직통 연결** --- > **참고:** 항목 4, 7, 10 (`bg-emerald-50/80`, `bg-pink-50/80`, `bg-sky-50/80`)은 Tailwind CSS 클래스명으로, 번역 대신 원문 그대로 유지하는 것이 적합합니다."
           },
           {
-            "timing": "투어 종료 후",
-            "title": "투어 후 지원",
-            "detail": "선택적 리뷰 및 다음 여행 팁",
-            "description": "투어 후 피드백 요청 전송."
+            "timing": "투어 후",
+            "title": "리뷰 & 사후 관리",
+            "detail": "선택적 리뷰 및 다음 여행 팁"
           }
         ]
       }
@@ -2516,63 +2605,63 @@
     {
       "id": "faq",
       "section_html_id": "faq",
-      "component": "TourFaqSection",
+      "component": "투어 자주 묻는 질문(FAQ) 섹션",
       "props": {
         "staticQuestions": [
           {
             "id": "first-time",
-            "question": "제주를 처음 방문하는 분에게 좋은가요?",
-            "answer": "봄 시즌(3월 말~4월 초)에 방문하신다면 네. 그 외 시기에는 연중 운행되는 동부 유네스코 투어를 추천합니다."
+            "question": "제주를 처음 방문하는 분들에게도 적합한가요?",
+            "answer": "네, 벚꽃 시즌(3월 말~4월 초)에 방문하신다면 적합합니다. 해당 기간 외에는 동일 지역을 연중 운영하는 '동부 유네스코 연중 투어'를 통해 같은 명소들을 만나보실 수 있습니다."
           },
           {
             "id": "season-timing",
             "question": "벚꽃 시즌은 정확히 언제인가요?",
-            "answer": "제주 벚꽃 절정은 약 3월 25일~4월 10일. 매년 5~7일 정도 변동합니다. 예약 페이지에서 최신 개화 정보를 안내합니다."
+            "answer": "대략 3월 25일부터 4월 10일까지입니다. 정확한 날짜는 해마다 5~7일 정도 차이가 있습니다. 매년 3월 초에 예약 페이지에 해당 연도 예상 개화 시기를 업데이트해 드립니다."
           },
           {
             "id": "rain",
             "question": "비가 오면 어떻게 되나요?",
-            "answer": "가벼운 비: 운행합니다. 강우 시 시즌 기간 중 출발 2일 전에 무료 일정 변경 또는 환불을 안내합니다."
+            "answer": "가벼운 비 — 정상 운행합니다. 시즌 기간 중 폭우 예보가 있을 경우 — 출발 2일 전에 연락드려 무료 일정 변경을 안내해 드립니다. 시즌 외 기간에는 본 투어가 운행되지 않습니다."
           },
           {
             "id": "summit",
-            "question": "성산일출봉을 등반하나요?",
-            "answer": "이 투어는 분화구 기슭 포토 스톱만 진행합니다. 등반을 원하신다면 연중 운행 동부 유네스코 투어를 이용하세요."
+            "question": "성산일출봉을 올라가나요?",
+            "answer": "아니요 — 정상 등반 없이 기슭 전망 포인트에서 사진 촬영만 진행합니다. 정상 등반은 '동부 유네스코 연중 투어(연중 운행)'에 포함되며, 이 봄 투어에는 포함되지 않습니다."
           },
           {
             "id": "kids",
-            "question": "어린이와 함께할 수 있나요?",
-            "answer": "만 6세 이상 추천. 벚꽃 거리 도보가 가장 길며, 유모차는 대부분 구간에서 가능합니다."
+            "question": "어린이도 참여할 수 있나요?",
+            "answer": "네, 만 6세 이상 참여 가능합니다. 가장 긴 도보 구간은 벚꽃길입니다. 대부분의 정류장에서 유모차 이용이 가능하지만, 녹산로 시골 갓길 상태는 미리 확인하시기 바랍니다."
           },
           {
             "id": "seniors",
-            "question": "어르신도 참여할 수 있나요?",
-            "answer": "대부분 구간이 가볍고 평탄합니다. 일출랜드 동굴 입구까지 짧은 계단이 있습니다."
+            "question": "어르신도 참여하실 수 있나요?",
+            "answer": "대부분의 경우 가능합니다. 도보 코스는 쉬움~보통 난이도이며, 대부분 평탄한 지형으로 이루어져 있습니다. 하나의 긴 하이킹 대신 여러 번의 짧은 도보로 구성됩니다. 동굴 내부는 포장 길로 되어 있습니다."
           },
           {
             "id": "cave-claustrophobia",
-            "question": "동굴이 폐소공포증에 영향을 줄까요?",
-            "answer": "미천굴은 넓은 개방형 공간으로, 가벼운 폐소공포증이 있으신 분도 대부분 괜찮습니다."
+            "question": "동굴이 폐소공포증을 유발하지 않나요?",
+            "answer": "미천굴은 좁은 통로보다는 넓고 개방된 공간으로 이루어져 있어, 가벼운 폐소공포증이 있는 분들도 대체로 불편함 없이 이용하실 수 있습니다. 건너뛰고 싶으신 분은 미리 가이드에게 말씀해 주세요."
           },
           {
             "id": "pickup-area",
             "question": "픽업 장소는 어디인가요?",
-            "answer": "제주시 호텔 로비 픽업 포함. 서귀포·애월 픽업은 추가 비용이 있습니다."
+            "answer": "제주시 내 호텔 로비 픽업이 포함되어 있습니다. 서귀포 또는 애월 지역 픽업은 추가 요금이 부과되며, 정확한 요금은 예약 시 확인해 주시기 바랍니다."
           },
           {
             "id": "lunch",
-            "question": "점심이 포함되어 있나요?",
-            "answer": "포함되지 않습니다. 약 ₩12,000~18,000."
+            "question": "점심이 포함되나요?",
+            "answer": "점심 비용은 별도입니다. 가이드가 그룹을 현지 식당으로 안내하며, 메뉴에 따라 1인당 12,000~18,000원 정도를 예상하시면 됩니다."
           },
           {
             "id": "admission-fees",
-            "question": "입장료가 포함되어 있나요?",
-            "answer": "미천굴+일출랜드 통합 입장권(약 ₩12,000)이 포함됩니다."
+            "question": "입장료가 포함되나요?",
+            "answer": "주요 입장료(미천굴 + 일출랜드 통합권, 약 ₩12,000)는 투어 가격에 포함되어 있습니다. 점심 및 개별 구매 비용(예: 벚꽃길 한복 대여, 카페 음료 등)은 별도로 지불하셔야 합니다."
           },
           {
             "id": "compare-eastern-unesco",
-            "question": "연중 동부 유네스코 투어와 어떻게 다른가요?",
-            "answer": "이 투어는 봄 시즌 한정으로 전농로·녹산로 벚꽃 경관이 추가됩니다. 연중 투어는 제주돌문화공원·섭지코지·성읍민속마을을 방문합니다."
+            "question": "'동부 유네스코 연중 투어'와 어떤 차이가 있나요?",
+            "answer": "방문 명소와 계절성이 다릅니다. 동부-소형 투어는 연중 운영되며 돌공원, 섭지코지, 성읍민속마을, 일출랜드, 성산 정상을 방문합니다. 이 투어는 봄 한정으로 벚꽃 거리, 녹산로, 미천굴, 일출랜드, 성산 기슭을 방문합니다. 개화 시즌이 아니거나 민속마을·정상 방문이 벚꽃보다 중요하다면, 연중 운영되는 동부 유네스코 투어를 선택하세요."
           }
         ]
       }
@@ -2580,7 +2669,7 @@
     {
       "id": "reviews",
       "section_html_id": "reviews",
-      "component": "TourReviewsSection",
+      "component": "투어 리뷰 섹션",
       "props": {
         "guestReviews": [],
         "reviewsSummary": {
@@ -2620,13 +2709,13 @@
     {
       "id": "sticky_booking",
       "section_html_id": null,
-      "component": "TourStickyBookingBar",
+      "component": "투어 예약 고정 바",
       "props": {
-        "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
+        "note": "checkout_tour_id는 런타임에 Supabase / 환경 변수에서 결정되며, 정적 JSONB에 포함되지 않습니다.",
         "price": {
           "amountLabel": "",
           "currency": "USD",
-          "per": "인"
+          "per": "person"
         }
       }
     }
@@ -2636,18 +2725,18 @@
       {
         "order": 1,
         "time": "08:30",
-        "name": "오션스위츠 제주 호텔",
+        "name": "오션 스위트 제주 호텔",
         "type": "hotel",
-        "note": "호텔 로비에서 대기해 주세요. 가이드는 AtoCKorea 표지판을 들고 있습니다.",
+        "note": "호텔 로비에서 만나세요 — 가이드가 AtoCKorea 안내판을 들고 있습니다.",
         "lat": 33.4944,
         "lng": 126.4808
       },
       {
         "order": 2,
         "time": "08:45",
-        "name": "제주국제공항 (3층 3번 게이트)",
+        "name": "제주국제공항 (3층, 3번 게이트)",
         "type": "airport",
-        "note": "3층 출발층 — 3번 게이트 방향 안내판을 따라 이동하세요.",
+        "note": "3층 출발 구역입니다. 안내 표지판을 따라 3번 게이트로 이동하세요.",
         "lat": 33.5108,
         "lng": 126.4932
       },
@@ -2656,16 +2745,16 @@
         "time": "08:55",
         "name": "롯데시티호텔 제주",
         "type": "hotel",
-        "note": "메인 로비에서 대기해 주세요. 가이드가 성함을 불러드립니다.",
+        "note": "메인 로비에서 기다려 주세요 — 가이드가 성함을 불러드립니다.",
         "lat": 33.4963,
         "lng": 126.4865
       },
       {
         "order": 4,
         "time": "09:05",
-        "name": "신라면세점 제주점",
+        "name": "신라면세점 (제주점)",
         "type": "shopping",
-        "note": "신라면세점 제주점 정문 밖에서 가이드를 만나세요.",
+        "note": "신라면세점 제주점 정문 밖에서 만나세요.",
         "lat": 33.4958,
         "lng": 126.5252
       }
@@ -2673,14 +2762,14 @@
     "return": [
       {
         "order": 1,
-        "name": "오션스위츠 제주 호텔",
+        "name": "오션 스위트 제주 호텔",
         "type": "hotel",
         "lat": 33.4944,
         "lng": 126.4808
       },
       {
         "order": 2,
-        "name": "제주국제공항 (3층 3번 게이트)",
+        "name": "제주국제공항 (3층, 3번 게이트)",
         "type": "airport",
         "lat": 33.5108,
         "lng": 126.4932
@@ -2694,27 +2783,27 @@
       },
       {
         "order": 4,
-        "name": "신라면세점 제주점",
+        "name": "신라면세점 (제주점)",
         "type": "shopping",
         "lat": 33.4958,
         "lng": 126.5252
       },
       {
         "order": 5,
-        "name": "동문재래시장",
+        "name": "동문 전통시장",
         "type": "market",
         "lat": 33.5136,
         "lng": 126.5296
       }
     ],
     "notes": [
-      "귀환은 보통 17:30–18:00 사이에 진행됩니다."
+      "복귀는 보통 17:30~18:00경입니다."
     ]
   },
   "itinerary_variants": [],
   "priceSource": {
     "discountPct": 10,
-    "discountNote": "마켓플레이스 기준가 대비 10% 할인",
+    "discountNote": "마켓플레이스 기본가 대비 10% 할인",
     "amount": null,
     "currency": "USD"
   },
@@ -2737,14 +2826,14 @@
       "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
       },
       "v17_batch4_enhancement": {
         "date": "2026-04-29",
-        "description": "Batch 4 deep enhancement — descriptions raised to 700-1300+ chars; KB-backed metadata on all attraction stops; product profile recalibrated with verified-fact 0-1 float scores. Time-weighted indoor_ratio computation per Fix 1 methodology.",
+        "description": "Batch 4 deep enhancement — descriptions raised to 700-1300+ chars; KB-backed metadata on all attraction stops; matching_profile recalibrated with verified-fact 0-1 float scores. Time-weighted indoor_ratio computation per Fix 1 methodology.",
         "_score_audit": {
           "_methodology": "0-1 float scale. Indoor ratio computed time-weighted using KB indoor_ratio_at_stop methodology. Note this tour SPLITS the Ilchul Land visit into two stops — the cave (high indoor ratio at 100%) and the gardens (low indoor ratio at 20%) — so the average works out to ~30% across the combined Ilchul Land time, consistent with KB.",
           "deltas_applied": {
@@ -2831,8 +2920,8 @@
           "VisitKorea",
           "Visit Jeju",
           "Jeju Tourism Organization",
-          "시장 참고 자료",
-          "시장 참고 자료",
+          "",
+          "",
           "NOL World",
           "Hueree Park official"
         ]

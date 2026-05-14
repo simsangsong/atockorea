@@ -10,10 +10,14 @@ import { appendIntentPhraseToIntentField } from "@/lib/home/services/hero-intent
 import type { HeroDestination } from "@/lib/home/types/hero-planner";
 import { HOME_STYLE_OPTIONS } from "@/src/components/home/home-style-options";
 import { useHomeV2Match } from "@/components/home/v2/HomeV2MatchProvider";
-import { HOME_V2_HERO_VIDEO_POSTER } from "@/lib/home/home-v2-visual-media";
 import { cn } from "@/lib/utils";
 
 const VALID_DESTINATIONS: ReadonlyArray<HeroDestination> = ["jeju", "seoul", "busan"];
+const HERO_SLIDES = [
+  { src: "/images/hero/jeju-hero.jpg", alt: "Jeju coastline and sky" },
+  { src: "/images/hero/seoul-hero.jpg", alt: "Seoul city travel scene" },
+  { src: "/images/hero/busan-hero.jpg", alt: "Busan coastal travel scene" },
+] as const;
 
 function readDestinationFromParams(value: string | null): HeroDestination | null {
   if (!value) return null;
@@ -85,44 +89,59 @@ export function HeroSection() {
           .hero-proof-badge { animation: none; }
         }
       `}</style>
-      {/* ~40% taller than 18/19/24vh (was read as “half” on some viewports; more ATF for photo+video). */}
-      <div className="relative min-h-[25.2vh] sm:min-h-[26.6vh] md:min-h-[33.6vh] flex flex-col justify-end overflow-hidden pb-3 md:pb-5">
+      {/* Hero height: -15% from the previous 38/40/46vh per design feedback.
+          The black base lets the photo crossfade read as a cinematic panel. */}
+      <div className="relative min-h-[32vh] sm:min-h-[34vh] md:min-h-[39vh] flex flex-col justify-end overflow-hidden bg-black pb-2 md:pb-3">
         <div className="absolute inset-0">
-          {/* Static photo layer with Ken Burns subtle zoom — feels alive without video weight. */}
-          <Image
-            src={HOME_V2_HERO_VIDEO_POSTER}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover hero-kenburns"
-            aria-hidden
-          />
-          {/* Targeted gradient — transparent at top so photo shines, dark only at bottom where text sits */}
-          <div className="absolute inset-0 z-[2] bg-gradient-to-t from-black/80 via-black/30 to-black/5" aria-hidden />
+          <div className="absolute inset-0 overflow-hidden" aria-hidden>
+            {HERO_SLIDES.map((slide, index) => (
+              <Image
+                key={slide.src}
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                priority={index === 0}
+                loading={index === 0 ? "eager" : "lazy"}
+                sizes="100vw"
+                className="home-hero-slide object-cover object-center"
+                style={{ animationDelay: `${index * 4.5}s` }}
+              />
+            ))}
+          </div>
+          {/* The previous full-width scrim is gone; legibility is handled by a
+              discrete text panel so the photography stays bright. */}
           <div
             className="pointer-events-none absolute inset-x-0 bottom-0 z-[3] h-7 bg-gradient-to-t from-[#faf9f7] to-transparent md:h-9"
             aria-hidden
           />
         </div>
 
-        <div className="relative z-10 mx-auto mb-3 w-full max-w-2xl px-4 pb-1 text-center sm:px-5 md:mb-4 md:px-8">
-          <h1
-            className="mb-2.5 text-[1.55rem] font-bold leading-snug tracking-[-0.02em] text-white md:mb-3 md:text-[2rem] lg:text-[2.65rem]"
-            style={{
-              textShadow: "0 2px 20px rgba(0,0,0,0.45)",
-              fontFamily: "var(--font-sans)",
-            }}
-          >
-            {t("premium.hero.headlineLine1")}
-          </h1>
+        {/* Headline block: a soft radial gradient sits behind the text and
+            feathers out past the text edges. Pure CSS keeps the photo layer
+            bright without a per-frame backdrop-filter pass. */}
+        <div className="relative z-10 mx-auto mb-1 w-full max-w-2xl px-3 pb-0.5 text-center sm:px-5 md:mb-2 md:px-8">
+          <div className="relative inline-block max-w-full px-5 py-3 md:px-7 md:py-4">
+            <span
+              aria-hidden
+              className="pointer-events-none absolute -inset-x-10 -inset-y-6 -z-10 rounded-[3rem] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.72)_35%,rgba(0,0,0,0.45)_60%,rgba(0,0,0,0.18)_80%,transparent_95%)] md:-inset-x-16 md:-inset-y-8"
+            />
+            <h1
+              className="text-[1.4rem] font-bold leading-tight tracking-[-0.02em] text-white md:text-[1.85rem] lg:text-[2.4rem]"
+              style={{
+                textShadow: "0 2px 14px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.55)",
+                fontFamily: "var(--font-sans)",
+              }}
+            >
+              {t("premium.hero.headlineLine1")}
+            </h1>
 
-          <p
-            className="mx-auto max-w-md text-[14px] font-medium leading-snug tracking-wide text-white/90 md:text-[16px] md:leading-relaxed"
-            style={{ textShadow: "0 1px 12px rgba(0,0,0,0.5)" }}
-          >
-            {t("premium.hero.atfHeroSubhead")}
-          </p>
+            <p
+              className="mx-auto mt-1.5 max-w-md text-[12.5px] font-medium leading-snug tracking-wide text-white/95 md:mt-2 md:text-[14.5px] md:leading-relaxed"
+              style={{ textShadow: "0 1px 10px rgba(0,0,0,0.6), 0 1px 2px rgba(0,0,0,0.5)" }}
+            >
+              {t("premium.hero.atfHeroSubhead")}
+            </p>
+          </div>
         </div>
       </div>
 
@@ -159,7 +178,7 @@ export function HeroSection() {
               <div className="rounded-xl border border-amber-100 bg-white/80 px-2.5 py-3 text-center shadow-[0_1px_4px_rgba(180,130,60,0.07)]">
                 <span className="block text-[18px] font-extrabold leading-none tracking-tight text-slate-900">8</span>
                 <span className="mt-1.5 block text-[9px] font-semibold uppercase tracking-wide text-slate-600">platforms</span>
-                <span className="mt-1 block text-[9px] font-medium leading-tight text-slate-500">KLO*** · KKD***+6</span>
+                <span className="mt-1 block text-[9px] font-medium leading-tight text-slate-500">Klook · GetYourGuide · Viator</span>
               </div>
             </div>
 
@@ -172,12 +191,30 @@ export function HeroSection() {
                 <span className="text-amber-400" aria-hidden>★</span> 4.9 · 100K+ verified
               </span>
               <span className="inline-flex items-center gap-1 rounded-full border border-emerald-200/60 bg-emerald-50 px-2.5 py-1 text-[10.5px] font-semibold text-emerald-700">
-                <span aria-hidden>✓</span> KTO-licensed
+                <span aria-hidden>✓</span> Verified operators
               </span>
             </div>
           </div>
         </div>
         {/* ────────────────────────────────────────────────────────── */}
+
+        {/* Differentiator section header — sits above the planner card so the
+            "this is a new way, not on any OTA" message lands before the user
+            engages with the form. Outside the card on purpose so the planner
+            card itself stays clean and task-focused. */}
+        <div className="mx-auto mb-4 max-w-lg px-1 text-center md:mb-5">
+          <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-amber-700 md:text-[11px]">
+            <span aria-hidden className="h-1 w-1 rounded-full bg-amber-500" />
+            {t("premium.v2.hero.matcherEyebrow")}
+            <span aria-hidden className="h-1 w-1 rounded-full bg-amber-500" />
+          </span>
+          <h2 className="mt-2 text-balance text-[18px] font-bold leading-snug tracking-tight text-slate-900 md:text-[22px]">
+            {t("premium.v2.hero.matcherHeadline")}
+          </h2>
+          <p className="mt-1.5 text-[12px] font-medium leading-relaxed text-slate-600 md:text-[13px]">
+            {t("premium.v2.hero.matcherSubline")}
+          </p>
+        </div>
 
         <div className="relative mx-auto max-w-lg">
           <div
@@ -339,15 +376,19 @@ export function HeroSection() {
               {t("premium.hero.findMatchCta")}
               <ChevronRight className="w-4 h-4 ml-1.5" />
             </V0ShadcnButton>
+
+            <p className="mt-2.5 text-center text-[11px] font-medium text-slate-500 md:text-[12px]">
+              {t("premium.v2.hero.smartMatchMicrocopy")}
+            </p>
           </div>
         </div>
 
         <div className="mt-4 md:mt-5 flex items-center justify-center gap-1 text-[10.5px] md:text-[11px] font-medium text-slate-500 flex-wrap text-center leading-relaxed">
           <span className="font-bold text-slate-700">100K+ bookings</span>
           <span className="text-slate-300 mx-0.5">·</span>
-          <span className="text-slate-500">KLO*** · KKD***+6</span>
+          <span className="text-slate-500">Klook · GetYourGuide · Viator</span>
           <span className="text-slate-300 mx-0.5">·</span>
-          <span className="font-semibold text-emerald-700">KTO-Licensed</span>
+          <span className="font-semibold text-emerald-700">Verified operators</span>
         </div>
       </div>
     </section>

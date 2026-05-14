@@ -146,7 +146,7 @@ export function consumerTourDetailHref(tourId: string | null | undefined, slug?:
   return `/tour/${tourId}`;
 }
 
-/** Stripe/PayPal-style checkout under `/tour/[id]/checkout`; blocked IDs fall back to `/tours/list`. */
+/** Stripe checkout under `/tour/[id]/checkout`; blocked IDs fall back to `/tours/list`. */
 export function consumerTourCheckoutHref(tourId: string | null | undefined, slug?: string | null): string {
   if (tourId == null || tourId === "") return "/tours/list";
   if (isTourBlockedFromConsumerSurfaces(tourId, slug ?? null)) return "/tours/list";

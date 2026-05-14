@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AtoC Korea — Premium Mockup</title>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#c9cfd8; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:28px; }
+  ::-webkit-scrollbar { display:none; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState } = React;
+
+/* ── DESIGN TOKENS (matching current AtoC site) ── */
+const C = {
+  bg:      '#f9f7f4',   /* warm cream — current site bg */
+  navy:    '#0c1a2e',   /* dark navy — primary */
+  navyMid: '#1e3a5f',
+  orange:  '#e07832',   /* accent orange */
+  green:   '#10b981',   /* RECOMMENDED green */
+  text:    '#374151',
+  muted:   '#9ca3af',
+  card:    '#ffffff',
+  border:  'rgba(0,0,0,0.07)',
+};
+const F = `-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif`;
+
+/* ── TOUR DATA ── */
+const TOURS = {
+  jeju: [
+    { id:1, city:'Jeju', title:'Jeju Eastern UNESCO Spots Day Tour',        badge:'BEST SELLER', type:'Small Group', price:58,  rating:4.9, reviews:1148, dur:'9h',   imgUrl:'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=400&q=80', imgFb:'linear-gradient(155deg,#0d3a4a,#0d6a5a)' },
+    { id:2, city:'Jeju', title:'East Jeju Volcano, Coast & Folk Village',   badge:'FIRST-TIME',  type:'Small Group', price:69,  rating:4.8, reviews:127,  dur:'8h',   imgUrl:null, imgFb:'linear-gradient(155deg,#1a3a2a,#2d6a4f)' },
+    { id:3, city:'Jeju', title:'SW Halla, Aewol & Olle Trail Tour',         badge:'SCENIC',      type:'Small Group', price:58,  rating:4.8, reviews:94,   dur:'8h',   imgUrl:null, imgFb:'linear-gradient(155deg,#0d2a3a,#1a5a6a)' },
+    { id:4, city:'Jeju', title:'Jeju Private Car Charter — Full Day',       badge:'PRIVATE',     type:'Private',     price:229, rating:5.0, reviews:87,   dur:'10h',  imgUrl:null, imgFb:'linear-gradient(155deg,#1a1a2e,#2a2a4a)' },
+    { id:5, city:'Jeju', title:'Hamdeok Beach & Sunrise Morning Tour',      badge:'NATURE',      type:'Small Group', price:49,  rating:4.7, reviews:203,  dur:'7h',   imgUrl:null, imgFb:'linear-gradient(155deg,#0d3a5a,#1a6a9a)' },
+  ],
+  busan: [
+    { id:6, city:'Busan', title:'Small-Group Tour for Cruise Passengers',   badge:'CRUISE',      type:'Small Group', price:58,  rating:4.9, reviews:32,   dur:'9h',   imgUrl:'https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=400&q=80', imgFb:'linear-gradient(155deg,#1a1a2e,#2a2a4a)' },
+    { id:7, city:'Busan', title:'Busan → Gyeongju UNESCO Legacy Tour',      badge:'UNESCO',      type:'Bus Tour',    price:65,  rating:4.8, reviews:58,   dur:'11.5h',imgUrl:null, imgFb:'linear-gradient(155deg,#2a1a0a,#4a3020)' },
+    { id:8, city:'Busan', title:'Busan Top Attractions Small Group',        badge:'NEW',         type:'Small Group', price:55,  rating:4.7, reviews:41,   dur:'10.5h',imgUrl:null, imgFb:'linear-gradient(155deg,#1a0a2a,#3a2050)' },
+    { id:9, city:'Busan', title:'Gamcheon Culture Village & Seafood',       badge:'FOOD',        type:'Small Group', price:75,  rating:4.9, reviews:193,  dur:'9h',   imgUrl:null, imgFb:'linear-gradient(155deg,#2a0a0a,#5a2020)' },
+  ],
+  seoul: [
+    { id:10, city:'Seoul', title:'Pocheon: Lake, Herb Island & Art Valley',  badge:'NATURE',     type:'Small Group', price:55,  rating:4.8, reviews:76,  dur:'10h',  imgUrl:null, imgFb:'linear-gradient(155deg,#1a2a1a,#3a4a2a)' },
+    { id:11, city:'Seoul', title:'Seoul Day Tour for Cruise Guests',         badge:'CRUISE',     type:'Small Group', price:69,  rating:4.7, reviews:29,  dur:'9h',   imgUrl:null, imgFb:'linear-gradient(155deg,#2a1a1a,#4a2a1a)' },
+    { id:12, city:'Seoul', title:'Incheon → Seoul Shore Excursion',         badge:'NEW',        type:'Small Group', price:75,  rating:4.8, reviews:18,  dur:'9h',   imgUrl:null, imgFb:'linear-gradient(155deg,#1a1a2a,#2a3a4a)' },
+  ],
+};
+
+const DEST_TABS = [
+  { id:'all',   label:'전체',  count:12 },
+  { id:'jeju',  label:'Jeju',  count:5  },
+  { id:'busan', label:'Busan', count:4  },
+  { id:'seoul', label:'Seoul', count:3  },
+];
+
+const STYLE_TAGS = ['First time','Scenic','Nature + café','Family','Rain safer','With parents','Less walking','Private','Food lover','Night tour','K-pop fan','History buff'];
+
+/* ── TOUR CARD (matching current site card style) ── */
+function TourCard({ tour }) {
+  const [liked, setLiked] = useState(false);
+  const [err,   setErr]   = useState(false);
+
+  return (
+    <div style={{ minWidth:192, width:192, background:C.card, borderRadius:18, overflow:'hidden', boxShadow:'0 2px 20px rgba(0,0,0,0.08)', flexShrink:0 }}>
+      {/* Photo */}
+      <div style={{ height:126, background:tour.imgFb, backgroundImage: (tour.imgUrl && !err) ? `url(${tour.imgUrl})` : undefined, backgroundSize:'cover', backgroundPosition:'center', position:'relative' }}>
+        {tour.imgUrl && !err && <img src={tour.imgUrl} onError={()=>setErr(true)} style={{display:'none'}} alt="" />}
+        {/* type badge */}
+        <span style={{ position:'absolute', bottom:9, left:9, background:'rgba(0,0,0,0.52)', color:'#fff', fontFamily:F, fontSize:9, fontWeight:600, padding:'3px 8px', borderRadius:6, letterSpacing:.5, textTransform:'uppercase' }}>{tour.type}</span>
+        {/* heart */}
+        <button onClick={()=>setLiked(!liked)} style={{ position:'absolute', top:9, right:9, background:'rgba(255,255,255,0.93)', border:'none', borderRadius:'50%', width:30, height:30, cursor:'pointer', fontSize:13, display:'flex', alignItems:'center', justifyContent:'center', boxShadow:'0 1px 6px rgba(0,0,0,0.14)' }}>{liked?'❤️':'🤍'}</button>
+      </div>
+      {/* Content */}
+      <div style={{ padding:'11px 13px 14px' }}>
+        <p style={{ margin:'0 0 3px', fontFamily:F, fontSize:9.5, color:C.muted, fontWeight:600, letterSpacing:.5, textTransform:'uppercase' }}>📍 {tour.city}</p>
+        <p style={{ margin:'0 0 7px', fontFamily:F, fontSize:12.5, fontWeight:600, color:C.navy, lineHeight:1.38, minHeight:34 }}>{tour.title}</p>
+        <div style={{ display:'flex', alignItems:'center', gap:5, marginBottom:6 }}>
+          <span style={{ color:'#f59e0b', fontSize:11 }}>★</span>
+          <span style={{ fontFamily:F, fontSize:11, color:C.text, fontWeight:500 }}>{tour.rating}</span>
+          <span style={{ fontFamily:F, fontSize:11, color:C.muted }}>({tour.reviews.toLocaleString()})</span>
+          <span style={{ color:C.border }}>·</span>
+          <span style={{ fontFamily:F, fontSize:11, color:C.muted }}>⏱ {tour.dur}</span>
+        </div>
+        <p style={{ margin:0, fontFamily:F, fontWeight:800, fontSize:15, color:C.navy }}>
+          ${tour.price} <span style={{ fontSize:10, fontWeight:400, color:C.muted }}>/person</span>
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/* ── STRIP HEADER ── */
+function StripHead({ eyebrow, title, onSeeAll }) {
+  return (
+    <div style={{ padding:'0 20px 13px', display:'flex', justifyContent:'space-between', alignItems:'flex-end' }}>
+      <div>
+        <p style={{ margin:0, fontFamily:F, fontSize:9.5, color:C.orange, fontWeight:700, letterSpacing:1.8, textTransform:'uppercase' }}>{eyebrow}</p>
+        <h2 style={{ margin:'2px 0 0', fontFamily:F, fontSize:20, fontWeight:800, color:C.navy, letterSpacing:'-0.4px' }}>{title}</h2>
+      </div>
+      <button onClick={onSeeAll} style={{ fontFamily:F, fontSize:11.5, fontWeight:600, color:C.navy, background:'none', border:`1.5px solid ${C.border}`, borderRadius:20, padding:'5px 13px', cursor:'pointer' }}>See all →</button>
+    </div>
+  );
+}
+
+/* ── HOME TAB ── */
+function HomeTab({ onNav }) {
+  const [destTab, setDestTab] = useState('all');
+  const show = { jeju: destTab==='all'||destTab==='jeju', busan: destTab==='all'||destTab==='busan', seoul: destTab==='all'||destTab==='seoul' };
+
+  return (
+    <div style={{ overflowY:'auto', height:'100%', background:C.bg, paddingBottom:80 }}>
+
+      {/* HERO — real photo */}
+      <div style={{ position:'relative', height:330, backgroundImage:"url(https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=800&q=85&fit=crop)", backgroundColor:C.navy, backgroundSize:'cover', backgroundPosition:'center', overflow:'hidden' }}>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(to bottom, rgba(12,26,46,.5) 0%, rgba(12,26,46,.2) 35%, rgba(12,26,46,.82) 100%)' }} />
+
+        <div style={{ position:'absolute', inset:0, padding:'0 22px', display:'flex', flexDirection:'column', justifyContent:'flex-end', paddingBottom:22 }}>
+          <p style={{ margin:'0 0 5px', fontFamily:F, fontSize:10, color:'rgba(255,255,255,.55)', letterSpacing:2.5, textTransform:'uppercase', fontWeight:600 }}>Korea Day Tours</p>
+          <h1 style={{ margin:'0 0 16px', fontFamily:F, fontSize:28, color:'#fff', fontWeight:900, lineHeight:1.13, letterSpacing:'-0.6px' }}>
+            Find Your<br/>Best-Fit Korea<br/>Day Tour
+          </h1>
+
+          {/* AI CTA — white card matching current site */}
+          <button onClick={()=>onNav('match')} style={{ display:'flex', alignItems:'center', gap:12, background:'rgba(255,255,255,.97)', border:'none', borderRadius:14, padding:'13px 16px', width:'100%', cursor:'pointer', boxShadow:'0 8px 32px rgba(0,0,0,.25)', textAlign:'left', backdropFilter:'blur(10px)' }}>
+            <div style={{ width:38, height:38, borderRadius:10, background:C.navy, display:'flex', alignItems:'center', justifyContent:'center', fontSize:16, flexShrink:0 }}>✨</div>
+            <div style={{ flex:1 }}>
+              <p style={{ margin:0, fontFamily:F, fontSize:13.5, fontWeight:700, color:C.navy, letterSpacing:'-.2px' }}>Tell us what you want</p>
+              <p style={{ margin:'2px 0 0', fontFamily:F, fontSize:11, color:C.muted }}>We'll match the best option in 3 seconds</p>
+            </div>
+            <div style={{ width:28, height:28, borderRadius:'50%', background:C.navy, display:'flex', alignItems:'center', justifyContent:'center' }}>
+              <span style={{ color:'#fff', fontSize:14, lineHeight:1 }}>↑</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      {/* Trust strip — matching current site */}
+      <div style={{ background:'#fff', borderBottom:`1px solid ${C.border}` }}>
+        <div style={{ display:'flex', overflowX:'auto' }}>
+          {[
+            { icon:'✦', label:'KTO-Licensed Operators' },
+            { icon:'✦', label:'10+ Years Curating Korea' },
+            { icon:'✦', label:'Multilingual · AI to human' },
+          ].map((t,i)=>(
+            <div key={i} style={{ display:'flex', alignItems:'center', gap:7, padding:'11px 16px', flexShrink:0, borderRight:i<2?`1px solid ${C.border}`:'none' }}>
+              <span style={{ color:C.green, fontSize:9, fontWeight:900 }}>{t.icon}</span>
+              <span style={{ fontFamily:F, fontSize:10.5, fontWeight:600, color:C.navy, whiteSpace:'nowrap' }}>{t.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Dest filter tabs — sticky */}
+      <div style={{ background:'#fff', borderBottom:`1px solid ${C.border}`, position:'sticky', top:0, zIndex:10 }}>
+        <div style={{ display:'flex', padding:'0 16px' }}>
+          {DEST_TABS.map(tab=>(
+            <button key={tab.id} onClick={()=>setDestTab(tab.id)} style={{ flexShrink:0, padding:'12px 14px 10px', background:'none', border:'none', cursor:'pointer', fontFamily:F, fontSize:13, fontWeight:destTab===tab.id?700:500, color:destTab===tab.id?C.navy:C.muted, borderBottom:destTab===tab.id?`2.5px solid ${C.navy}`:'2.5px solid transparent' }}>
+              {tab.label} <span style={{ fontSize:10, color:destTab===tab.id?C.orange:'#ccc' }}>{tab.count}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Tour strips */}
+      <div style={{ paddingTop:28 }}>
+
+        {show.jeju && (
+          <div style={{ marginBottom:28 }}>
+            <StripHead eyebrow="Volcanic Island · UNESCO" title="Jeju Island" onSeeAll={()=>{}} />
+            <div style={{ display:'flex', gap:12, overflowX:'auto', padding:'0 20px' }}>
+              {TOURS.jeju.map(t=><TourCard key={t.id} tour={t}/>)}
+              <div style={{ minWidth:96, borderRadius:18, border:`2px dashed ${C.border}`, display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:6, cursor:'pointer', flexShrink:0 }}>
+                <span style={{ fontSize:20, color:C.muted }}>→</span>
+                <span style={{ fontFamily:F, fontSize:10, color:C.muted, textAlign:'center', lineHeight:1.4 }}>All<br/>Jeju</span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {show.busan && (
+          <div style={{ marginBottom:28 }}>
+            <StripHead eyebrow="Port City · Temples · Seafood" title="Busan" onSeeAll={()=>{}} />
+            <div style={{ display:'flex', gap:12, overflowX:'auto', padding:'0 20px' }}>
+              {TOURS.busan.map(t=><TourCard key={t.id} tour={t}/>)}
+            </div>
+          </div>
+        )}
+
+        {show.seoul && (
+          <div style={{ marginBottom:28 }}>
+            <StripHead eyebrow="Palaces · K-Culture · Day Trips" title="Seoul & Day Trips" onSeeAll={()=>{}} />
+            <div style={{ display:'flex', gap:12, overflowX:'auto', padding:'0 20px' }}>
+              {TOURS.seoul.map(t=><TourCard key={t.id} tour={t}/>)}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Three ways to explore — matching current site section */}
+      <div style={{ background:'#fff', borderTop:`1px solid ${C.border}`, borderBottom:`1px solid ${C.border}`, padding:'28px 0 32px', marginBottom:28 }}>
+        <div style={{ padding:'0 20px 18px' }}>
+          <p style={{ margin:'0 0 3px', fontFamily:F, fontSize:9.5, color:C.orange, fontWeight:700, letterSpacing:1.8, textTransform:'uppercase' }}>Choose Your Style</p>
+          <h2 style={{ margin:0, fontFamily:F, fontSize:20, fontWeight:800, color:C.navy, letterSpacing:'-.4px' }}>Three ways to explore</h2>
+          <p style={{ margin:'5px 0 0', fontFamily:F, fontSize:12, color:C.muted, lineHeight:1.5 }}>We recommend small group for most travelers.</p>
+        </div>
+        <div style={{ display:'flex', gap:12, overflowX:'auto', padding:'0 20px' }}>
+          {/* Small Group — RECOMMENDED — dark card matching current site */}
+          <div style={{ minWidth:188, borderRadius:20, padding:'18px 18px 20px', background:C.navy, boxShadow:'0 4px 24px rgba(12,26,46,.22)', flexShrink:0 }}>
+            <span style={{ display:'inline-block', marginBottom:12, fontFamily:F, fontSize:8.5, fontWeight:700, letterSpacing:.8, color:'#fff', background:C.green, padding:'3px 9px', borderRadius:6 }}>✦ RECOMMENDED</span>
+            <p style={{ margin:'0 0 6px', fontFamily:F, fontSize:18, fontWeight:800, color:'#fff', letterSpacing:'-.3px' }}>Small Group</p>
+            <p style={{ margin:'0 0 14px', fontFamily:F, fontSize:11, color:'rgba(255,255,255,.55)', lineHeight:1.55 }}>Ideal for travelers seeking a smoother pace, fewer crowds & personal experience.</p>
+            <p style={{ margin:'0 0 16px', fontFamily:F, fontSize:16, fontWeight:900, color:'#fff' }}>from $59 <span style={{ fontSize:10, fontWeight:400, opacity:.6 }}>/person</span></p>
+            <button style={{ width:'100%', padding:'10px', background:'#fff', color:C.navy, border:'none', borderRadius:10, fontFamily:F, fontSize:12, fontWeight:700, cursor:'pointer' }}>Explore small group →</button>
+          </div>
+          {/* Private Tour */}
+          <div style={{ minWidth:188, borderRadius:20, padding:'18px 18px 20px', background:'#fff', border:`1.5px solid ${C.border}`, boxShadow:'0 2px 12px rgba(0,0,0,.05)', flexShrink:0 }}>
+            <span style={{ display:'inline-block', marginBottom:12, fontFamily:F, fontSize:8.5, fontWeight:700, letterSpacing:.8, color:C.orange, background:`${C.orange}18`, padding:'3px 9px', borderRadius:6 }}>MORE FLEXIBILITY</span>
+            <p style={{ margin:'0 0 6px', fontFamily:F, fontSize:18, fontWeight:800, color:C.navy, letterSpacing:'-.3px' }}>Private Tour</p>
+            <p style={{ margin:'0 0 14px', fontFamily:F, fontSize:11, color:C.muted, lineHeight:1.55 }}>Your own vehicle, fully flexible schedule for families & groups.</p>
+            <p style={{ margin:'0 0 16px', fontFamily:F, fontSize:16, fontWeight:900, color:C.navy }}>from $198 <span style={{ fontSize:10, fontWeight:400, color:C.muted }}>/vehicle</span></p>
+            <button style={{ width:'100%', padding:'10px', background:'transparent', color:C.navy, border:`1.5px solid ${C.navy}`, borderRadius:10, fontFamily:F, fontSize:12, fontWeight:700, cursor:'pointer' }}>Explore private tours →</button>
+          </div>
+          {/* Bus Tour */}
+          <div style={{ minWidth:188, borderRadius:20, padding:'18px 18px 20px', background:'#fff', border:`1.5px solid ${C.border}`, boxShadow:'0 2px 12px rgba(0,0,0,.05)', flexShrink:0 }}>
+            <span style={{ display:'inline-block', marginBottom:12, fontFamily:F, fontSize:8.5, fontWeight:700, letterSpacing:.8, color:'#6b7280', background:'#6b728018', padding:'3px 9px', borderRadius:6 }}>TRUSTED CLASSIC</span>
+            <p style={{ margin:'0 0 6px', fontFamily:F, fontSize:18, fontWeight:800, color:C.navy, letterSpacing:'-.3px' }}>Traditional Bus</p>
+            <p style={{ margin:'0 0 14px', fontFamily:F, fontSize:11, color:C.muted, lineHeight:1.55 }}>Scheduled routes, dependable structure & strong value.</p>
+            <p style={{ margin:'0 0 16px', fontFamily:F, fontSize:16, fontWeight:900, color:C.navy }}>from $39 <span style={{ fontSize:10, fontWeight:400, color:C.muted }}>/person</span></p>
+            <button style={{ width:'100%', padding:'10px', background:'transparent', color:C.navy, border:`1.5px solid ${C.navy}`, borderRadius:10, fontFamily:F, fontSize:12, fontWeight:700, cursor:'pointer' }}>Browse bus tours →</button>
+          </div>
+        </div>
+      </div>
+
+      {/* Destination showcase — editorial photos */}
+      <div style={{ padding:'0 0 28px' }}>
+        <div style={{ padding:'0 20px 16px' }}>
+          <p style={{ margin:'0 0 3px', fontFamily:F, fontSize:9.5, color:C.orange, fontWeight:700, letterSpacing:1.8, textTransform:'uppercase' }}>★ Destinations</p>
+          <h2 style={{ margin:0, fontFamily:F, fontSize:20, fontWeight:800, color:C.navy, letterSpacing:'-.4px', lineHeight:1.25 }}>
+            Seoul · Busan · Jeju<br/>
+            <span style={{ color:C.orange }}>Where will you begin?</span>
+          </h2>
+          <p style={{ margin:'5px 0 0', fontFamily:F, fontSize:12, color:C.muted }}>Only operators vetted in person, on location.</p>
+        </div>
+        <div style={{ display:'flex', gap:10, overflowX:'auto', padding:'0 20px' }}>
+          {[
+            { name:'Seoul',      sub:'Palaces · Han River',    imgUrl:'https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=400&q=80', fb:'linear-gradient(155deg,#1a0d20,#3a1a40)' },
+            { name:'Busan',      sub:'Coast · Temples',        imgUrl:'https://images.unsplash.com/photo-1538669715315-155098f0fb1d?w=400&q=80', fb:'linear-gradient(155deg,#0a1a2a,#1a3a5a)' },
+            { name:'Jeju',       sub:'Volcano · UNESCO',       imgUrl:'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=400&q=80', fb:'linear-gradient(155deg,#0a2a1a,#1a5a3a)' },
+          ].map((d,i)=>{
+            const [e,setE]=useState(false);
+            return (
+              <div key={d.name} style={{ minWidth:155, height:204, borderRadius:20, flexShrink:0, background:(!e&&d.imgUrl)?undefined:d.fb, backgroundImage:(!e&&d.imgUrl)?`url(${d.imgUrl})`:undefined, backgroundSize:'cover', backgroundPosition:'center', position:'relative', overflow:'hidden', cursor:'pointer' }}>
+                {d.imgUrl&&!e&&<img src={d.imgUrl} onError={()=>setE(true)} style={{display:'none'}} alt="" />}
+                <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top, rgba(0,0,0,.78) 0%, transparent 60%)' }} />
+                <div style={{ position:'absolute', bottom:14, left:14 }}>
+                  <p style={{ margin:0, fontFamily:F, fontSize:19, fontWeight:800, color:'#fff', letterSpacing:'-.3px' }}>{d.name}</p>
+                  <p style={{ margin:'2px 0 0', fontFamily:F, fontSize:10.5, color:'rgba(255,255,255,.65)' }}>{d.sub}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Why AtoC — compact */}
+      <div style={{ margin:'0 18px 16px', background:'#fff', borderRadius:20, padding:'20px 16px', border:`1px solid ${C.border}` }}>
+        <p style={{ margin:'0 0 16px', fontFamily:F, fontSize:13, fontWeight:700, color:C.navy, textAlign:'center', letterSpacing:'-.2px' }}>Why AtoC Korea?</p>
+        <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr 1fr', gap:8 }}>
+          {[
+            { icon:'🛡️', label:'KTO Licensed',  sub:'Official only'  },
+            { icon:'✨', label:'AI Match',       sub:'3-sec match'    },
+            { icon:'🌐', label:'EN·KO·ZH·JA',   sub:'Multilingual'   },
+            { icon:'✅', label:'Guaranteed',     sub:'No cancels'     },
+          ].map(w=>(
+            <div key={w.label} style={{ textAlign:'center' }}>
+              <div style={{ fontSize:22, marginBottom:5 }}>{w.icon}</div>
+              <p style={{ margin:0, fontFamily:F, fontSize:9.5, fontWeight:700, color:C.navy, lineHeight:1.3 }}>{w.label}</p>
+              <p style={{ margin:'2px 0 0', fontFamily:F, fontSize:9, color:C.muted }}>{w.sub}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  );
+}
+
+/* ── MATCH TAB — matching current site style ── */
+function MatchTab() {
+  const [dests,setDests]=useState([]);
+  const [tags, setTags] =useState([]);
+  const toggle=(arr,set,v)=>set(p=>p.includes(v)?p.filter(x=>x!==v):[...p,v]);
+
+  return (
+    <div style={{ overflowY:'auto', height:'100%', background:C.bg, paddingBottom:80 }}>
+      <div style={{ background:C.navy, padding:'26px 22px 28px' }}>
+        <p style={{ margin:'0 0 4px', fontFamily:F, fontSize:10, color:'rgba(255,255,255,.45)', letterSpacing:2, textTransform:'uppercase', fontWeight:600 }}>AI Matching</p>
+        <h2 style={{ margin:'0 0 6px', fontFamily:F, fontSize:26, color:'#fff', fontWeight:900, letterSpacing:'-.5px', lineHeight:1.15 }}>Find your best-fit<br/>tour in 3 seconds.</h2>
+        <p style={{ margin:0, fontFamily:F, fontSize:12.5, color:'rgba(255,255,255,.5)', lineHeight:1.6 }}>Tell us what matters. We match the strongest option right here.</p>
+      </div>
+
+      <div style={{ padding:'24px 20px' }}>
+        <p style={{ margin:'0 0 10px', fontFamily:F, fontSize:13, fontWeight:700, color:C.navy }}>Destination</p>
+        <div style={{ display:'flex', gap:8, marginBottom:24 }}>
+          {['Jeju','Seoul','Busan'].map(d=>{
+            const on=dests.includes(d);
+            return (
+              <button key={d} onClick={()=>toggle(dests,setDests,d)} style={{ flex:1, padding:'13px 0', borderRadius:14, border:`2px solid ${on?C.navy:C.border}`, background:on?C.navy:'#fff', color:on?'#fff':C.text, fontFamily:F, fontSize:13, fontWeight:700, cursor:'pointer' }}>
+                <div>{d}</div>
+                <div style={{ fontSize:10, fontWeight:400, color:on?'rgba(255,255,255,.5)':C.muted, marginTop:2 }}>● Open now</div>
+              </button>
+            );
+          })}
+        </div>
+
+        <p style={{ margin:'0 0 10px', fontFamily:F, fontSize:13, fontWeight:700, color:C.navy }}>Quick add (optional)</p>
+        <div style={{ display:'flex', flexWrap:'wrap', gap:8, marginBottom:26 }}>
+          {STYLE_TAGS.map(t=>{
+            const on=tags.includes(t);
+            return <button key={t} onClick={()=>toggle(tags,setTags,t)} style={{ padding:'7px 15px', borderRadius:22, border:`1.5px solid ${on?C.navy:C.border}`, background:on?C.navy:'#fff', color:on?'#fff':C.text, fontFamily:F, fontSize:12, fontWeight:500, cursor:'pointer' }}>{t}</button>;
+          })}
+        </div>
+
+        <p style={{ margin:'0 0 14px', fontFamily:F, fontSize:11, color:C.muted, textAlign:'center' }}>Compare small group, private, and bus options next.</p>
+        <button disabled={!dests.length} style={{ width:'100%', padding:'16px', background:dests.length?C.navy:'#e5e7eb', color:dests.length?'#fff':'#aaa', border:'none', borderRadius:14, fontFamily:F, fontSize:15, fontWeight:800, cursor:dests.length?'pointer':'default', display:'flex', alignItems:'center', justifyContent:'center', gap:8 }}>
+          Start matching {dests.length?<span style={{fontSize:16}}>↑</span>:null}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* ── CART TAB ── */
+function CartTab() {
+  const items=[
+    { title:'Jeju Eastern UNESCO Spots Day Tour',           date:'2025.08.15 (목)', guests:'2 adults',         price:116, fb:'linear-gradient(135deg,#0d3a4a,#0d6a5a)' },
+    { title:'Busan Small-Group Tour for Cruise Passengers', date:'2025.08.18 (일)', guests:'2 adults · 1 child',price:174, fb:'linear-gradient(135deg,#1a1a2e,#2a2a4a)' },
+  ];
+  return (
+    <div style={{ overflowY:'auto', height:'100%', background:C.bg, paddingBottom:80 }}>
+      <div style={{ padding:'24px 20px 20px', background:'#fff', borderBottom:`1px solid ${C.border}` }}>
+        <p style={{ margin:'0 0 2px', fontFamily:F, fontSize:10, color:C.muted, fontWeight:600, letterSpacing:1, textTransform:'uppercase' }}>My Cart</p>
+        <h2 style={{ margin:0, fontFamily:F, fontSize:24, color:C.navy, fontWeight:900, letterSpacing:'-.5px' }}>장바구니 <span style={{ fontSize:14, fontWeight:400, color:C.muted }}>2 items</span></h2>
+      </div>
+      <div style={{ padding:'20px' }}>
+        {items.map((item,i)=>(
+          <div key={i} style={{ background:'#fff', borderRadius:20, marginBottom:12, overflow:'hidden', boxShadow:'0 2px 16px rgba(0,0,0,.07)', border:`1px solid ${C.border}` }}>
+            <div style={{ height:66, background:item.fb }} />
+            <div style={{ padding:'14px 18px 18px' }}>
+              <p style={{ margin:'0 0 8px', fontFamily:F, fontSize:13, fontWeight:700, color:C.navy, lineHeight:1.4 }}>{item.title}</p>
+              <p style={{ margin:'0 0 2px', fontFamily:F, fontSize:11.5, color:C.muted }}>📅 {item.date}</p>
+              <p style={{ margin:'0 0 12px', fontFamily:F, fontSize:11.5, color:C.muted }}>👤 {item.guests}</p>
+              <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+                <p style={{ margin:0, fontFamily:F, fontWeight:900, fontSize:18, color:C.navy }}>${item.price}</p>
+                <button style={{ background:'#fef2f2', color:'#ef4444', border:'none', borderRadius:10, padding:'7px 16px', fontFamily:F, fontSize:12, fontWeight:700, cursor:'pointer' }}>삭제</button>
+              </div>
+            </div>
+          </div>
+        ))}
+        <div style={{ background:'#fff', borderRadius:16, padding:'14px 18px 16px', marginBottom:16, border:`1px solid ${C.border}` }}>
+          <div style={{ display:'flex', justifyContent:'space-between', marginBottom:8 }}>
+            <span style={{ fontFamily:F, fontSize:13, color:C.muted }}>Subtotal</span>
+            <span style={{ fontFamily:F, fontSize:13, fontWeight:600, color:C.text }}>$290</span>
+          </div>
+          <div style={{ display:'flex', justifyContent:'space-between', paddingTop:8, borderTop:`1px solid ${C.border}` }}>
+            <span style={{ fontFamily:F, fontSize:14, fontWeight:700, color:C.navy }}>Total</span>
+            <span style={{ fontFamily:F, fontSize:17, fontWeight:900, color:C.navy }}>$290</span>
+          </div>
+        </div>
+        <button style={{ width:'100%', padding:'17px', background:C.navy, color:'#fff', border:'none', borderRadius:14, fontFamily:F, fontSize:15, fontWeight:800, cursor:'pointer' }}>Proceed to checkout →</button>
+      </div>
+    </div>
+  );
+}
+
+/* ── MY PAGE TAB ── */
+function MyPageTab() {
+  const sections=[
+    [{ icon:'📋', label:'내 예약 내역', sub:'Booking history' },{ icon:'❤️', label:'위시리스트', sub:'Saved tours' },{ icon:'⭐', label:'내 리뷰', sub:'My reviews' },{ icon:'💬', label:'문의 내역', sub:'Support tickets' }],
+    [{ icon:'🌐', label:'언어 / 통화', sub:'English · USD' },{ icon:'📞', label:'고객센터', sub:'Help & support' }],
+  ];
+  return (
+    <div style={{ overflowY:'auto', height:'100%', background:C.bg, paddingBottom:80 }}>
+      <div style={{ background:C.navy, padding:'26px 22px 28px', display:'flex', alignItems:'center', gap:16 }}>
+        <div style={{ width:56, height:56, borderRadius:'50%', background:'rgba(255,255,255,.12)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:24 }}>👤</div>
+        <div>
+          <p style={{ margin:0, fontFamily:F, fontSize:18, color:'#fff', fontWeight:800, letterSpacing:'-.3px' }}>로그인 / 회원가입</p>
+          <p style={{ margin:'3px 0 0', fontFamily:F, fontSize:12, color:'rgba(255,255,255,.45)' }}>예약 내역, 위시리스트, 리뷰 관리</p>
+        </div>
+      </div>
+      {sections.map((grp,gi)=>(
+        <div key={gi} style={{ background:'#fff', margin:'16px 18px 0', borderRadius:20, border:`1px solid ${C.border}` }}>
+          {grp.map((item,i)=>(
+            <div key={item.label} style={{ display:'flex', alignItems:'center', gap:14, padding:'14px 18px', borderBottom:i<grp.length-1?`1px solid ${C.border}`:'none', cursor:'pointer' }}>
+              <span style={{ fontSize:20, width:30, textAlign:'center' }}>{item.icon}</span>
+              <div style={{ flex:1 }}>
+                <p style={{ margin:0, fontFamily:F, fontSize:13.5, fontWeight:600, color:C.navy }}>{item.label}</p>
+                <p style={{ margin:'1px 0 0', fontFamily:F, fontSize:11, color:C.muted }}>{item.sub}</p>
+              </div>
+              <span style={{ color:'#d1d5db', fontSize:18 }}>›</span>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ── APP SHELL ── */
+function App() {
+  const [tab,setTab]=useState('home');
+  const cartCount=2;
+  const dark=tab==='home'||tab==='match'||tab==='mypage';
+
+  return (
+    <div style={{ display:'flex', justifyContent:'center', alignItems:'center', minHeight:'100vh' }}>
+      <style>{`::-webkit-scrollbar{display:none} button{-webkit-tap-highlight-color:transparent}`}</style>
+
+      <div style={{ width:390, height:844, background:C.bg, borderRadius:52, boxShadow:'0 32px 80px rgba(0,0,0,.38), 0 0 0 10px #1c1c1e, 0 0 0 11px #3a3a3c', overflow:'hidden', display:'flex', flexDirection:'column' }}>
+
+        {/* Status bar */}
+        <div style={{ background:dark?C.navy:'#fff', height:50, display:'flex', alignItems:'center', justifyContent:'space-between', padding:'0 28px', flexShrink:0, position:'relative' }}>
+          <span style={{ fontFamily:F, fontSize:14, fontWeight:700, color:dark?'#fff':C.navy }}>9:41</span>
+          <div style={{ width:124, height:30, background:'#1c1c1e', borderRadius:20, position:'absolute', left:'50%', transform:'translateX(-50%)', top:7 }} />
+          <span style={{ fontFamily:F, fontSize:12, color:dark?'rgba(255,255,255,.7)':C.navy }}>●●●</span>
+        </div>
+
+        {/* Header */}
+        <div style={{ background:dark?C.navy:'#fff', padding:'2px 20px 13px', display:'flex', alignItems:'center', justifyContent:'space-between', flexShrink:0, borderBottom:tab==='cart'?`1px solid ${C.border}`:'none' }}>
+          <div style={{ display:'flex', alignItems:'center', gap:8 }}>
+            <div style={{ width:28, height:28, borderRadius:8, background:dark?'rgba(255,255,255,.15)':C.navy, display:'flex', alignItems:'center', justifyContent:'center' }}>
+              <span style={{ fontFamily:F, fontSize:13, fontWeight:800, color:'#fff' }}>A</span>
+            </div>
+            <p style={{ margin:0, fontFamily:F, fontSize:16, fontWeight:800, color:dark?'#fff':C.navy, letterSpacing:'-.4px' }}>AtoC Korea</p>
+          </div>
+          <div style={{ display:'flex', gap:14, alignItems:'center' }}>
+            <button style={{ background:'none', border:'none', cursor:'pointer', fontFamily:F, fontSize:11.5, fontWeight:600, color:dark?'rgba(255,255,255,.5)':C.muted }}>🇺🇸 EN</button>
+            <button onClick={()=>setTab('cart')} style={{ position:'relative', background:'none', border:'none', cursor:'pointer' }}>
+              <span style={{ fontSize:22, opacity:dark?.65:1 }}>🛒</span>
+              <span style={{ position:'absolute', top:-4, right:-5, background:'#ef4444', color:'#fff', width:17, height:17, borderRadius:'50%', fontSize:9.5, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:F, fontWeight:800 }}>{cartCount}</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div style={{ flex:1, overflow:'hidden' }}>
+          {tab==='home'   && <HomeTab   onNav={setTab}/>}
+          {tab==='match'  && <MatchTab  />}
+          {tab==='cart'   && <CartTab   />}
+          {tab==='mypage' && <MyPageTab />}
+        </div>
+
+        {/* Bottom nav */}
+        <div style={{ background:'#fff', borderTop:`1px solid ${C.border}`, display:'flex', paddingBottom:22, flexShrink:0, boxShadow:'0 -4px 20px rgba(0,0,0,.06)' }}>
+          {[{ id:'home', icon:'🏠', label:'Home' },{ id:'match', icon:'✨', label:'AI Match' },{ id:'cart', icon:'🛒', label:'Cart' },{ id:'mypage', icon:'👤', label:'My Page' }].map(n=>{
+            const on=tab===n.id;
+            return (
+              <button key={n.id} onClick={()=>setTab(n.id)} style={{ flex:1, display:'flex', flexDirection:'column', alignItems:'center', gap:3, padding:'10px 0 0', background:'none', border:'none', cursor:'pointer', position:'relative' }}>
+                {on && <div style={{ position:'absolute', top:0, left:'50%', transform:'translateX(-50%)', width:28, height:3, background:C.navy, borderRadius:3 }} />}
+                <span style={{ fontSize:21, opacity:on?1:.38 }}>{n.icon}</span>
+                <span style={{ fontFamily:F, fontSize:9.5, fontWeight:on?800:500, color:on?C.navy:C.muted }}>{n.label}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

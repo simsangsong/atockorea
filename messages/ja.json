@@ -35,7 +35,9 @@
     "signout": "ログアウト",
     "mypage": "マイページ",
     "cart": "カート",
-    "wishlist": "ウィッシュリスト"
+    "wishlist": "ウィッシュリスト",
+    "whyAtoc": "AtoCについて",
+    "support": "サポート"
   },
   "tour": {
     "title": "ツアー",
@@ -81,6 +83,14 @@
     "freeCancellation": "24時間前まで無料キャンセル",
     "instantConfirmation": "即座に確認",
     "customerSupport": "24/7カスタマーサポート",
+    "platformCompare": {
+      "title": "同じツアー、他のプラットフォーム",
+      "subtitle": "同じ運営会社が提供します。いつでも価格を比較できます。",
+      "cta": "{platform}で比較",
+      "fromUsd": "${price}から",
+      "lastChecked": "最終確認: {date}",
+      "directNote": "ここから直接予約すると、運営チームのサポートと柔軟な調整が付きます。"
+    },
     "backToTours": "ツアーに戻る",
     "tourNotFound": "ツアーが見つかりません",
     "tickets": "チケット",
@@ -487,9 +497,9 @@
       "hero": {
         "glassBrandPill": "韓国日帰りツアー検索",
         "matchEyebrow": "",
-        "headlineLine1": "旅のスタイルに最適な韓国の日帰りツアーを見つける",
+        "headlineLine1": "あなたの旅スタイルに合わせた、韓国ツアー",
         "headlineLine2": "",
-        "atfHeroSubhead": "韓国で最も実績のあるデイツアー。あなたのスタイルに合わせてキュレーション。",
+        "atfHeroSubhead": "韓国チームが厳選。いつでも比較できます。",
         "intentInputAria": "旅の希望を一行で入力",
         "matchSubtitle": "旅のスタイルと、どんな一日にしたいかを教えてください。目的地・ツアー形式・プランに合う最適な提案をお届けします。\n\n済州は現在ご利用いただけます。ソウルと釜山は近日対応予定です。",
         "destinationSectionTitle": "目的地",
@@ -688,11 +698,15 @@
         "hero": {
           "plannerTitle": "大切にしたいことを教えてください",
           "preCtaLine": "次に、少人数・プライベート・バスの選択肢を比較します。",
+          "smartMatchMicrocopy": "登録不要 · 約30秒",
+          "matcherEyebrow": "ATOC 限定",
+          "matcherHeadline": "キーワード検索ではなく、韓国ツアーのマッチング。",
+          "matcherSubline": "検索ボックスはキーワードを照合するだけ。私たちはあなたの好みに耳を傾けます。",
           "trustMatched": "あなた向け",
           "trustPickup": "明確な乗り合い",
           "trustCompare": "全タイプを比較",
           "licensedTrustStrip": "検証済み現地ツアーオペレーター ・ 24時間前まで無料キャンセル ・ ホテル送迎込み",
-          "credentialKto": "KTO 認可運営会社",
+          "credentialKto": "検証済み現地運営会社",
           "credentialExperience": "10年以上の韓国厳選",
           "credentialSupport": "多言語サポート · AI から担当者へ"
         },
@@ -732,22 +746,22 @@
           "subtitle": "各都市で、現地で丁寧に確認した運営パートナーのみをご案内します。",
           "seoul": {
             "name": "ソウル",
-            "tagline": "宮殿、Kカルチャー、夜市",
+            "tagline": "宮殿、Kカルチャー、市場、夜景",
             "alt": "宮殿と現代的な摩天楼が並ぶソウル市街"
           },
           "busan": {
             "name": "釜山",
-            "tagline": "ビーチ、海鮮、沿岸の景観",
+            "tagline": "ビーチ、海鮮、丘の街並み、海岸の景観",
             "alt": "海雲台ビーチと釜山の海沿いの街並み"
           },
           "jeju": {
             "name": "済州",
-            "tagline": "火山海岸、世界遺産、漢拏山",
+            "tagline": "火山海岸、世界遺産、ドライブ、自然",
             "alt": "済州島の火山海岸と自然景観"
           }
         },
         "featuredProducts": {
-          "eyebrow": "今、人気 · 毎日更新",
+          "eyebrow": "今、人気 · 毎週更新",
           "title": "今週、最も",
           "titleAccent": "選ばれた",
           "subtitle": "実際の予約データに基づき、韓国インバウンドチームが毎週厳選しています。",
@@ -756,29 +770,29 @@
         },
         "whyAtockorea": {
           "eyebrow": "海外からの旅行者のために",
-          "title": "韓国の旅行者が",
-          "titleAccent": "選ぶ理由",
-          "subtitle": "マーケットプレイスではありません — キュレーションプラットフォームです。全ツアー検証済み。全マッチングは実績の証。",
-          "tagline": "検索はもう終わり。マッチングを始めましょう。",
+          "title": "隠しません。",
+          "titleAccent": "比較を歓迎します。",
+          "subtitle": "同じツアーが世界の主要プラットフォームにも掲載されています。韓国チームが運営会社を選び、長年の実績で検証された商品を、直接サポートと柔軟な調整付きで提供します。",
+          "tagline": "同じツアー、同じ運営会社、透明な価格。",
           "pillar1": {
-            "title": "審査を通過しています",
-            "titleAccent": "すべてのツアーは",
-            "body": "全運営会社を直接審査。有料掲載も自己申請もなし — 100K+予約の4.9★がその証拠です。"
+            "title": "直接厳選",
+            "titleAccent": "韓国チームが",
+            "body": "運営会社は韓国チームが選定します — 有料掲載も自己申請もありません。"
           },
           "pillar2": {
-            "title": "広告主ではなく",
-            "titleAccent": "あなたに合わせたマッチング、",
-            "body": "スタイルを教えてください。AIが入力内容をもとにツアーを採点し、最適なものを最初に表示します。"
+            "title": "で長年検証",
+            "titleAccent": "Klook、GetYourGuide、Viator",
+            "body": "同じツアーが世界の主要プラットフォームに掲載されています — 長年の実績で検証されています。"
           },
           "pillar3": {
-            "title": "直接パートナーシップ。",
-            "titleAccent": "100% KTO認定。",
-            "body": "全パートナーが韓国観光公社（KTO）の公式認定を保有。直接提携 — 再販業者なし、上乗せなし。"
+            "title": "人が対応 9–21時",
+            "titleAccent": "直接サポート、",
+            "body": "AIコンシェルジュが24時間対応。判断が必要な場合は、9:00〜21:00（KST）に担当者が直接対応します。"
           },
           "pillar4": {
-            "title": "迅速に",
-            "titleAccent": "リアルサポート、",
-            "body": "AIがすぐに回答。複雑な件はチームが対応 — 多言語対応、待ち時間なし。"
+            "title": "比較可能",
+            "titleAccent": "いつでも価格",
+            "body": "同じツアーの他プラットフォームへ直接リンクします。隠しません — 比較を歓迎します。"
           }
         },
         "chooseStyle": {
@@ -787,7 +801,7 @@
           "subtitle": "多くの方には少人数をおすすめし、状況に応じてプライベートや伝統的なバスも有力な代替になります。",
           "recommended": "おすすめ",
           "smallGroupTitle": "少人数ツアー",
-          "smallGroupDesc": "ゆったりしたペース、混雑の少なさ、よりパーソナルな体験を重視する方に。",
+          "smallGroupDesc": "カップル、お一人旅、ゆったりしたペースを好む方に。",
           "from": "から",
           "perPerson": "お一人",
           "sgFeature1": "快適なペース",
@@ -798,15 +812,15 @@
           "privateTitle": "プライベートツアー",
           "privatePerVehicle": "/台",
           "perPersonShort": "/人",
-          "privateDesc": "専用車と柔軟なペースを望む家族やグループに。",
+          "privateDesc": "ご家族、ご両親同伴、柔軟な行程が必要なグループに。",
           "privateF1": "専用車",
           "privateF2": "柔軟なペース",
           "privateF3": "プライベートの快適さ",
           "privateCta": "プライベートを見る",
-          "busBadge": "定番",
+          "busBadge": "ベストバリュー",
           "busTitle": "伝統的なバスツアー",
           "busPerPerson": "/人",
-          "busDesc": "定番のルートと分かりやすい設計、コスパ—王道の観光向け。",
+          "busDesc": "明確なコースと納得の価格を求める初訪問の方に最適です。",
           "busF1": "実績のルート",
           "busF2": "分かりやすい1日",
           "busF3": "手頃な価格",
@@ -819,14 +833,14 @@
           "step1Title": "スタイルを教えてください",
           "step1Body": "目的地、ペース、行きたい場所、同行者 — 1分以内で完了。",
           "step2Label": "ステップ2",
-          "step2Title": "オプションを採点します",
-          "step2Body": "AIが検証済みの全ツアーを入力内容で順位付け。最適なものが最初に来ます。",
+          "step2Title": "オプションを比較します",
+          "step2Body": "チームとマッチングシステムが入力内容と検証済みツアーを比較します — 最適なものが最初に来ます。",
           "step3Label": "ステップ3",
           "step3Title": "確認、比較、決定",
           "step3Body": "料金、含まれるもの、実際の口コミ — すべて一か所で、タブ切り替え不要。",
           "step4Label": "ステップ4",
           "step4Title": "直接予約",
-          "step4Body": "認定旅行会社へ直接つながります。仲介業者なし、上乗せなし — 100K+予約が証拠。",
+          "step4Body": "正式に登録された現地運営会社と直接予約。安全な決済と運営チームによるフォローアップ付き。",
           "trustPanelTitle": "ここで心強さを感じる理由",
           "trust1Title": "外れにくい",
           "trust1Body": "選択肢が多いほど、的外れを選びやすくなります。実績のあるツアーに整理します。",
@@ -875,14 +889,14 @@
           "reviewCardStarsAria": "5点満点中 {rating}"
         },
         "finalCtaBlock": {
-          "title": "もっと賢く韓国旅行を計画しますか？",
-          "subtitle": "好みから始めて、合うスタイルのツアーを選びましょう。",
+          "title": "スタイルから始めましょう。韓国ツアーを見つけ、いつでも比較。",
+          "subtitle": "厳選された運営会社、透明な価格、人によるサポート。",
           "trust1RatedParam": "評価 {rating}",
-          "trust1Fallback": "ゲストに選ばれた体験",
-          "trust2": "無料キャンセル",
-          "trust3": "24時間以内に返信",
-          "trust4": "手付金のみ",
-          "primaryCta": "オーダーメイドのプライベートツアーを相談",
+          "trust1Fallback": "検証済みツアー",
+          "trust2": "対象商品は無料キャンセル",
+          "trust3": "運営チームのサポート",
+          "trust4": "Klook · GetYourGuide · Viator に掲載",
+          "primaryCta": "オーダーメイドのツアーを相談",
           "secondaryCta": "全スタイルのツアーを見る",
           "orDivider": "または"
         }

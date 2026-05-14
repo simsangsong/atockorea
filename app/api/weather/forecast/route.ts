@@ -7,37 +7,36 @@ import {
 } from "@/lib/weather/forecast-logic"
 import type { OpenMeteoForecastJson } from "@/lib/weather/open-meteo"
 import { resolveAdvisoryBlocksFromDb } from "@/lib/weather/resolve-advisory-copy"
-import { WEATHER_ANCHOR_EAST_SEONGSAN } from "@/lib/weather/tour-weather-anchor"
-
-const DEFAULT_LAT = WEATHER_ANCHOR_EAST_SEONGSAN.latitude
-const DEFAULT_LON = WEATHER_ANCHOR_EAST_SEONGSAN.longitude
-const DEFAULT_AREA = WEATHER_ANCHOR_EAST_SEONGSAN.areaLabel
-const EAST_ANCHOR_EPS = 0.02
-
-function isNearEastAnchor(lat: number, lon: number): boolean {
-  return (
-    Math.abs(lat - DEFAULT_LAT) < EAST_ANCHOR_EPS &&
-    Math.abs(lon - DEFAULT_LON) < EAST_ANCHOR_EPS
-  )
-}
+import {
+  localizedAreaLabel,
+  resolveTourWeatherAnchorBySlug,
+  WEATHER_ANCHOR_EAST_SEONGSAN,
+} from "@/lib/weather/tour-weather-anchor"
 
 export async function GET(req: NextRequest) {
   const sp = req.nextUrl.searchParams
-  const lat = Number(sp.get("lat") ?? DEFAULT_LAT)
-  const lon = Number(sp.get("lon") ?? DEFAULT_LON)
-  const areaParamRaw = sp.get("area")
-  const areaFromQuery = (areaParamRaw ?? DEFAULT_AREA).trim() || DEFAULT_AREA
+  const slugParam = sp.get("slug")?.trim() || null
   const locale: Locale = normalizeLocaleQueryParam(sp.get("locale")) ?? defaultLocale
 
-  /** 표시용: 동쪽 앵커 + 명시적 area 없음 → KO는 “제주 동쪽 지역” (성산 단일 지명 미사용). */
-  let areaLabel = areaFromQuery
-  if (
-    !areaParamRaw?.trim() &&
-    locale === "ko" &&
-    isNearEastAnchor(lat, lon)
-  ) {
-    areaLabel = "제주 동쪽 지역"
-  }
+  /**
+   * 좌표 결정 순서:
+   *   1) 명시적 lat/lon 쿼리 → 그대로 사용
+   *   2) slug 쿼리 → 슬러그 앵커
+   *   3) 기본값(동쪽 성산)
+   */
+  const anchor = resolveTourWeatherAnchorBySlug(slugParam)
+  const latParam = sp.get("lat")
+  const lonParam = sp.get("lon")
+  const lat = latParam != null ? Number(latParam) : anchor.latitude
+  const lon = lonParam != null ? Number(lonParam) : anchor.longitude
+
+  /** area 라벨도 동일 순서: 쿼리 → 슬러그 앵커(locale) → 기본 앵커(locale). */
+  const areaParamRaw = sp.get("area")?.trim() || null
+  const areaLabel =
+    areaParamRaw ??
+    (slugParam
+      ? localizedAreaLabel(anchor, locale)
+      : localizedAreaLabel(WEATHER_ANCHOR_EAST_SEONGSAN, locale))
 
   if (!Number.isFinite(lat) || !Number.isFinite(lon)) {
     return NextResponse.json({ error: "Invalid lat or lon" }, { status: 400 })

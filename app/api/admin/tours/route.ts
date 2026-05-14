@@ -172,9 +172,31 @@ export async function GET(request: NextRequest) {
       return handleApiError(error);
     }
 
+    // Augment each tour with `product_type` from tour_matching_profiles
+    // (joined by product_id = slug). Used by the v2 list pane to show
+    // 소그룹 / 프라이빗 / 버스 badges at a glance.
+    let enriched = tours ?? [];
+    if (enriched.length > 0) {
+      const slugs = enriched.map((t: { slug: string }) => t.slug).filter(Boolean);
+      const { data: profiles } = await supabase
+        .from('tour_matching_profiles')
+        .select('product_id, product_type')
+        .in('product_id', slugs);
+      const profileMap = new Map<string, string>();
+      for (const p of profiles ?? []) {
+        if (p?.product_id && typeof p.product_type === 'string') {
+          profileMap.set(p.product_id, p.product_type);
+        }
+      }
+      enriched = enriched.map((t: { slug: string }) => ({
+        ...t,
+        product_type: profileMap.get(t.slug) ?? null,
+      }));
+    }
+
     return NextResponse.json({
       success: true,
-      data: tours,
+      data: enriched,
     });
 
   } catch (error) {

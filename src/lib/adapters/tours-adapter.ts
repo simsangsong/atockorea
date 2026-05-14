@@ -13,7 +13,7 @@ import { TourDetailViewModelSchema } from "../schemas/tours";
 import { BookingTimelineSchema } from "../schemas/booking";
 import { COPY } from "@/src/design/copy";
 import { shouldCoerceEastSignatureNatureCoreJoin } from "@/src/lib/east-signature-nature-core-match";
-import { inferTourCatalogType } from "@/lib/tour-catalog-type-infer";
+import { inferTourCatalogType, tagsForCatalogType, titleForCatalogType } from "@/lib/tour-catalog-type-infer";
 
 export function adaptBuildTourResponse(raw: unknown): BuildTourResponse {
   const parsed = BuildTourResponseSchema.safeParse(raw);
@@ -106,7 +106,10 @@ export function adaptToursListResponse(raw: unknown): TourCardViewModel[] {
       badges: item?.badges,
       slug: listSlug,
       tag: listTag,
+      priceType: typeof item?.priceType === "string" ? item.priceType : typeof item?.price_type === "string" ? item.price_type : null,
+      groupSize: typeof item?.groupSize === "string" ? item.groupSize : typeof item?.group_size === "string" ? item.group_size : null,
     });
+    const displayTitle = titleForCatalogType(title, type);
     const priceFrom =
       typeof item?.price === "number"
         ? item.price
@@ -129,6 +132,7 @@ export function adaptToursListResponse(raw: unknown): TourCardViewModel[] {
     });
     const tags = Array.isArray(item?.badges) ? item.badges.map(String) : [];
     if (item?.highlight && typeof item.highlight === "string") tags.push(item.highlight);
+    const displayTags = tagsForCatalogType(tags, type);
 
     const imageUrl =
       typeof item?.image === "string"
@@ -164,9 +168,9 @@ export function adaptToursListResponse(raw: unknown): TourCardViewModel[] {
         : undefined;
     const view: TourCardViewModel = {
       id,
-      title,
+      title: displayTitle,
       type,
-      tags,
+      tags: displayTags,
       priceFrom,
       originalPrice,
       currency: "KRW",
@@ -217,7 +221,20 @@ export function adaptTourDetailResponse(raw: unknown, routeTourId?: string | nul
     badges: (tour.badges as string[]) ?? [],
     slug: slugForInference,
     tag: tagRaw,
+    priceType:
+      typeof tour.priceType === "string"
+        ? tour.priceType
+        : typeof tour.price_type === "string"
+          ? tour.price_type
+          : null,
+    groupSize:
+      typeof tour.groupSize === "string"
+        ? tour.groupSize
+        : typeof tour.group_size === "string"
+          ? tour.group_size
+          : null,
   });
+  const displayTitle = titleForCatalogType(title, type);
   const price = typeof tour.price === "number" ? tour.price : Number(tour.price) || 0;
   const originalPrice =
     tour.originalPrice != null ? Number(tour.originalPrice) : null;
@@ -268,13 +285,13 @@ export function adaptTourDetailResponse(raw: unknown, routeTourId?: string | nul
   const view = {
     id,
     ...(slug ? { slug } : {}),
-    title,
+    title: displayTitle,
     type,
     tagline: tour.tagline as string | undefined,
     city,
     rating: typeof tour.rating === "number" ? tour.rating : Number(tour.rating) || 0,
     reviewCount: Number(tour.reviewCount ?? tour.review_count ?? 0) || 0,
-    badges: Array.isArray(tour.badges) ? tour.badges.map(String) : [],
+    badges: tagsForCatalogType(Array.isArray(tour.badges) ? tour.badges.map(String) : [], type),
     price,
     originalPrice,
     priceType: (tour.priceType ?? tour.price_type ?? "person") === "group" ? "group" : "person",

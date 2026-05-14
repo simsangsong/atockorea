@@ -1,6 +1,3 @@
-"use client";
-
-import type { CSSProperties } from "react";
 import {
   HeroSection,
   BestMatchPreview,
@@ -12,18 +9,6 @@ import {
   FinalCTA,
 } from "@/components/home/v2/sections";
 import { HomeV2MatchProvider } from "@/components/home/v2/HomeV2MatchProvider";
-import { HomeV2ReviewSummaryProvider } from "@/components/home/v2/HomeV2ReviewSummaryProvider";
-
-/** v0 page shell: atmospheric background only (no v0 header/footer/sticky bar). */
-const HOME_V2_ATMOSPHERE_STYLE: CSSProperties = {
-  background: `
-    radial-gradient(ellipse 100% 50% at 20% 15%, rgba(219, 234, 254, 0.3) 0%, transparent 50%),
-    radial-gradient(ellipse 70% 50% at 85% 25%, rgba(254, 215, 170, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 40% at 50% 85%, rgba(233, 213, 255, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 50% at 10% 70%, rgba(167, 243, 208, 0.08) 0%, transparent 50%),
-    linear-gradient(180deg, #FFFDFB 0%, #FDF9F5 40%, #F9F4ED 100%)
-  `,
-};
 
 /**
  * v0-derived homepage main content (presentation-only).
@@ -34,22 +19,19 @@ const HOME_V2_ATMOSPHERE_STYLE: CSSProperties = {
 export default function HomeV2Page() {
   return (
     <div className="relative min-w-0">
-      <div className="pointer-events-none fixed inset-0 -z-10" style={HOME_V2_ATMOSPHERE_STYLE} aria-hidden />
       <HomeV2MatchProvider>
-        <HomeV2ReviewSummaryProvider>
-          <div className="home-v2-body-isolate relative z-0">
-            <HeroSection />
-            <BestMatchPreview />
-            <DestinationsShowcase />
-            <ChooseTravelStyle />
-            <FeaturedProductsShowcase />
-            <WhyAtockorea />
-            <div className="h-10 bg-gradient-to-b from-[#FDF8F0] to-[#1C1810]" aria-hidden />
-            <ProcessOperational />
-            <div className="h-10 bg-gradient-to-b from-[#141008] to-white" aria-hidden />
-            <FinalCTA />
-          </div>
-        </HomeV2ReviewSummaryProvider>
+        <div className="home-v2-body-isolate relative z-0">
+          <HeroSection />
+          <BestMatchPreview />
+          <DestinationsShowcase />
+          <ChooseTravelStyle />
+          <FeaturedProductsShowcase />
+          <WhyAtockorea />
+          <div className="h-10 bg-gradient-to-b from-[#FDF8F0] to-[#1C1810]" aria-hidden />
+          <ProcessOperational />
+          <div className="h-10 bg-gradient-to-b from-[#141008] to-white" aria-hidden />
+          <FinalCTA />
+        </div>
       </HomeV2MatchProvider>
     </div>
   );

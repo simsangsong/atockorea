@@ -10,8 +10,8 @@ import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
  */
 
 export const metadata = generateSEOMetadata({
-  title: 'AtoC Korea - Licensed Korea-based Platform for Day Tours',
-  description: 'Book authentic Korean day tours with licensed travel agencies. Explore Seoul, Busan, and Jeju with certified guides. Best prices guaranteed through direct partnerships.',
+  title: 'AtoC Korea - Korea Day Tours, Hand-Picked by Our Team',
+  description: 'Korea day tours hand-picked by our team. Same operators trusted by Klook, GetYourGuide, and Viator — book direct here, compare prices anytime.',
   url: '/',
   tags: ['Korea tours', 'Seoul tours', 'Busan tours', 'Jeju tours', 'day tours', 'travel Korea'],
 });

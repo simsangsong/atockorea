@@ -1,10 +1,10 @@
 "use client";
 
 import type { CSSProperties, ReactNode } from "react";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
-import { ArrowUp, ChevronRight, Clock, Sparkles, Star, Users } from "lucide-react";
+import { ChevronRight, Clock, Star, Users } from "lucide-react";
 import Image from "next/image";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -116,28 +116,6 @@ export function BestMatchPreview() {
     }
     return buildV2BestMatchResultViewModel((key: string) => t(key), locale);
   }, [matchResult, t, locale]);
-
-  /** Smoothly scroll back to the hero planner so the user can describe their trip. */
-  const scrollToHeroPlanner = useCallback(() => {
-    analytics.homeCtaClick({ source: "best_match_empty_start" });
-    const section =
-      document.querySelector("section[data-home-hero]") ??
-      document.querySelector("main section:first-of-type");
-    if (section instanceof HTMLElement) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-    window.setTimeout(() => {
-      // Hero intent field may be rendered as either <input> or <textarea> (it
-      // expands into a multi-line drawer on focus). Query by data attribute so
-      // either element receives focus correctly.
-      const field = document.querySelector<HTMLInputElement | HTMLTextAreaElement>(
-        "[data-home-hero-intent]"
-      );
-      field?.focus({ preventScroll: true });
-    }, 450);
-  }, []);
 
   const meta = useMemo(() => {
     const groupMaxFor = (p: NonNullable<ReturnType<typeof getStaticTourProductBySlug>>) =>

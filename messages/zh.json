@@ -35,7 +35,9 @@
     "signout": "登出",
     "mypage": "我的",
     "cart": "购物车",
-    "wishlist": "收藏"
+    "wishlist": "收藏",
+    "whyAtoc": "关于 AtoC",
+    "support": "支持"
   },
   "tour": {
     "title": "旅游",
@@ -81,6 +83,14 @@
     "freeCancellation": "24小时前免费取消",
     "instantConfirmation": "即时确认",
     "customerSupport": "24/7客户支持",
+    "platformCompare": {
+      "title": "同一行程，其他平台",
+      "subtitle": "由同一运营商运营。随时比较价格。",
+      "cta": "在 {platform} 上比较",
+      "fromUsd": "${price} 起",
+      "lastChecked": "最近确认：{date}",
+      "directNote": "在此直接预订可享受我们的运营团队支持与灵活调整。"
+    },
     "backToTours": "返回旅游",
     "tourNotFound": "未找到旅游",
     "tickets": "门票",
@@ -487,9 +497,9 @@
       "hero": {
         "glassBrandPill": "韩国一日游查找",
         "matchEyebrow": "",
-        "headlineLine1": "找到最契合您旅行风格的韩国一日游",
+        "headlineLine1": "按您的旅行风格，匹配最合适的韩国行程",
         "headlineLine2": "",
-        "atfHeroSubhead": "韩国最受验证的当日游，精心策划，匹配您的风格。",
+        "atfHeroSubhead": "韩国团队亲选。随时比价。",
         "intentInputAria": "用一行输入旅行偏好",
         "matchSubtitle": "告诉我们您想如何旅行、想要怎样的一天。我们会推荐最契合的目的地、行程形式与安排。\n\n济州现已开放；首尔与釜山即将上线。",
         "destinationSectionTitle": "目的地",
@@ -688,11 +698,15 @@
         "hero": {
           "plannerTitle": "告诉我们您最在意什么",
           "preCtaLine": "接下来比较小团、私人包车与传统巴士方案。",
+          "smartMatchMicrocopy": "无需注册 · 约 30 秒",
+          "matcherEyebrow": "ATOC 独家",
+          "matcherHeadline": "韩国行程匹配，而非关键词搜索。",
+          "matcherSubline": "搜索框只匹配关键字，我们倾听您的喜好。",
           "trustMatched": "为您匹配",
           "trustPickup": "接送清晰",
           "trustCompare": "对比全部类型",
           "licensedTrustStrip": "经过验证的当地旅游运营商 · 24小时前免费取消 · 含酒店接送",
-          "credentialKto": "KTO 持牌运营商",
+          "credentialKto": "经验证的本地运营商",
           "credentialExperience": "10+ 年韩国精选",
           "credentialSupport": "多语客服 · AI 转人工"
         },
@@ -732,22 +746,22 @@
           "subtitle": "三座城市的合作运营商均经本地实地核验。",
           "seoul": {
             "name": "首尔",
-            "tagline": "古宫、韩流文化与夜市",
+            "tagline": "古宫、K-文化、市场、夜景",
             "alt": "古宫与现代摩天楼并存的首尔市景"
           },
           "busan": {
             "name": "釜山",
-            "tagline": "海滩、海鲜与海岸风光",
+            "tagline": "海滩、海鲜、山坡村落、海岸风光",
             "alt": "海云台海滩与釜山滨海都市"
           },
           "jeju": {
             "name": "济州",
-            "tagline": "火山海岸、世遗景点与汉拿山",
+            "tagline": "火山海岸、世遗景点、自驾路线、自然",
             "alt": "济州岛火山海岸与自然风光"
           }
         },
         "featuredProducts": {
-          "eyebrow": "本周热门 · 每日更新",
+          "eyebrow": "本周热门 · 每周更新",
           "title": "本周",
           "titleAccent": "最受欢迎",
           "subtitle": "基于真实预订数据，韩国入境团队每周亲自精选。",
@@ -756,29 +770,29 @@
         },
         "whyAtockorea": {
           "eyebrow": "为海外旅客而生",
-          "title": "韩国旅客为何",
-          "titleAccent": "选择我们",
-          "subtitle": "不是市场平台——是精心策划的平台。每个行程均经过验证。每次匹配都有据可查。",
-          "tagline": "别再搜索，开始匹配。",
+          "title": "我们不隐藏，",
+          "titleAccent": "我们欢迎比价。",
+          "subtitle": "相同的行程也上架在全球主要平台。我们亲自挑选运营商，经过多年实际预订验证，并提供直接支持与灵活调整。",
+          "tagline": "同样的行程、同一运营商、透明的价格。",
           "pillar1": {
-            "title": "均通过审核",
-            "titleAccent": "每个行程",
-            "body": "我们审查每一家运营商。不存在付费列入、自主申请 — 10万+预订的4.9★就是证明。"
+            "title": "亲选",
+            "titleAccent": "韩国团队",
+            "body": "运营商均由韩国团队亲自挑选 — 无付费上架，无自我推荐。"
           },
           "pillar2": {
-            "title": "而非广告商",
-            "titleAccent": "匹配您，",
-            "body": "告诉我们您的风格。我们的AI根据您的输入为行程评分，将最合适的优先展示。"
+            "title": "多年验证",
+            "titleAccent": "Klook、GetYourGuide、Viator 上",
+            "body": "相同行程也上架在全球主要平台 — 多年真实预订佐证。"
           },
           "pillar3": {
-            "title": "直接合作。",
-            "titleAccent": "100% KTO认证。",
-            "body": "所有合作方持有韩国旅游局官方认证。直接合作 — 无中间商，无溢价。"
+            "title": "真人对应 9–21 点",
+            "titleAccent": "直接支持，",
+            "body": "AI 客服 24 小时回应。AI 难以判断时，9:00–21:00（韩国时间）由真人处理。"
           },
           "pillar4": {
-            "title": "快速响应",
-            "titleAccent": "真实支持，",
-            "body": "AI即时解答。复杂问题由我们的团队处理 — 多语言，无需排队等待。"
+            "title": "比价",
+            "titleAccent": "随时",
+            "body": "我们直接链接到同一行程的其他平台。我们不隐藏 — 欢迎比价。"
           }
         },
         "chooseStyle": {
@@ -787,7 +801,7 @@
           "subtitle": "多数情况下我们推荐小团；视需求不同，私人包车与经典巴士也是很好的替代。",
           "recommended": "推荐",
           "smallGroupTitle": "小团行程",
-          "smallGroupDesc": "适合更从容的节奏、更少拥挤、更有私人感的体验。",
+          "smallGroupDesc": "适合情侣、独自旅行者，以及想要从容节奏的旅人。",
           "from": "低至",
           "perPerson": "每人",
           "sgFeature1": "舒适节奏",
@@ -798,15 +812,15 @@
           "privateTitle": "私人行程",
           "privatePerVehicle": "/辆",
           "perPersonShort": "/人",
-          "privateDesc": "适合需要专车与更灵活排期的家庭或团队。",
+          "privateDesc": "适合家庭、长辈同行、需要灵活行程的小团体。",
           "privateF1": "专属车辆",
           "privateF2": "节奏可调",
           "privateF3": "私密舒适",
           "privateCta": "浏览私人行程",
-          "busBadge": "经典之选",
+          "busBadge": "实惠之选",
           "busTitle": "传统巴士游",
           "busPerPerson": "/人",
-          "busDesc": "路线稳定、结构清晰、性价比高，适合想轻松观光的旅人。",
+          "busDesc": "适合首次造访韩国、希望路线清晰且价格合理的旅人。",
           "busF1": "成熟路线",
           "busF2": "一天安排明确",
           "busF3": "轻松好价",
@@ -819,14 +833,14 @@
           "step1Title": "告诉我们您的风格",
           "step1Body": "目的地、节奏、必去景点、同行者 — 一分钟内完成。",
           "step2Label": "第2步",
-          "step2Title": "我们为选项评分",
-          "step2Body": "AI根据您的输入对所有经验证的行程进行排名。最合适的优先显示。",
+          "step2Title": "我们比较选项",
+          "step2Body": "团队与匹配系统会将您的输入与经验证的行程进行比较 — 最合适的优先显示。",
           "step3Label": "第3步",
           "step3Title": "查看、比较、决定",
           "step3Body": "价格、含项、真实评价 — 一站式，无需切换标签页。",
           "step4Label": "第4步",
           "step4Title": "直接预订",
-          "step4Body": "直接对接认证旅行社。无中间商，无溢价 — 10万+预订为证。",
+          "step4Body": "与正式登记的本地运营商直接预订。安全支付，运营团队提供后续协助。",
           "trustPanelTitle": "为什么旅人更安心",
           "trust1Title": "更少的弯路",
           "trust1Body": "选择太多时更容易选错。我们先筛出口碑扎实的产品。",
@@ -875,14 +889,14 @@
           "reviewCardStarsAria": "5 分制 {rating} 分"
         },
         "finalCtaBlock": {
-          "title": "准备更聪明地规划韩国行程了吗？",
-          "subtitle": "从偏好出发，找到最适合您的行程类型。",
+          "title": "从您的风格开始。找到您的韩国行程 - 随时比价。",
+          "subtitle": "亲选运营商、透明价格、真人客服支持。",
           "trust1RatedParam": "{rating} 分",
-          "trust1Fallback": "深受客人喜爱",
-          "trust2": "免费取消",
-          "trust3": "24 小时内回复",
-          "trust4": "仅需订金",
-          "primaryCta": "定制私人行程咨询",
+          "trust1Fallback": "经验证的行程",
+          "trust2": "适用商品免费取消",
+          "trust3": "运营团队支持",
+          "trust4": "Klook · GetYourGuide · Viator 上架",
+          "primaryCta": "定制行程咨询",
           "secondaryCta": "浏览所有行程类型",
           "orDivider": "或"
         }

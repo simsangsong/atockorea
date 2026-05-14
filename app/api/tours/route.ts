@@ -9,7 +9,11 @@ import { isTourRowHiddenFromPublicTourApi } from '@/lib/tour-consumer-visibility
 import {
   expandDestinationCsvForCityInFilter,
   inferTourCatalogType,
+  tagsForCatalogType,
+  titleForCatalogType,
 } from '@/lib/tour-catalog-type-infer';
+import { getStaticTourProductBySlug } from '@/components/product-tour-static/catalog/staticTourProductRegistry';
+import type { TourProductPageLocale } from '@/lib/tour-product/resolveTourProductDbLocale';
 
 const SUPPORTED_LOCALES = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'] as const;
 type SupportedLocale = typeof SUPPORTED_LOCALES[number];
@@ -58,16 +62,43 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
     const isActive = searchParams.get('isActive') !== 'false'; // Default to true
     
     // New filter parameters
-    const destinations = searchParams.get('destinations'); // Comma-separated cities
+    const destinations =
+      searchParams.get('destinations') ?? searchParams.get('destination'); // Comma-separated cities
     const destinationCityVariants = destinations?.trim()
       ? expandDestinationCsvForCityInFilter(destinations)
       : [];
     const durations = searchParams.get('durations'); // Comma-separated duration keywords
     const features = searchParams.get('features'); // Comma-separated feature keywords
-    const sortBy = searchParams.get('sortBy') || 'created_at'; // created_at, price, rating, bookings
-    const sortOrder = searchParams.get('sortOrder') || 'desc'; // asc, desc
-    const useScoreSort = searchParams.get('useScoreSort') !== 'false'; // when false, keep requested sortBy/sortOrder
-    const typeParam = searchParams.get('tourType');
+    const sortAlias = searchParams.get('sort');
+    const explicitSortRequested = searchParams.has('sort') || searchParams.has('sortBy');
+    let sortBy = searchParams.get('sortBy') || 'created_at'; // created_at, price, rating, bookings
+    let sortOrder = searchParams.get('sortOrder') || 'desc'; // asc, desc
+    if (!searchParams.has('sortBy')) {
+      if (sortAlias === 'rating') {
+        sortBy = 'rating';
+        sortOrder = 'desc';
+      } else if (sortAlias === 'sales') {
+        sortBy = 'bookings';
+        sortOrder = 'desc';
+      } else if (sortAlias === 'priceAsc') {
+        sortBy = 'price';
+        sortOrder = 'asc';
+      } else if (sortAlias === 'priceDesc') {
+        sortBy = 'price';
+        sortOrder = 'desc';
+      } else if (sortAlias === 'newest') {
+        sortBy = 'created_at';
+        sortOrder = 'desc';
+      }
+    }
+    if (sortBy === 'popular') {
+      sortBy = 'created_at';
+      sortOrder = 'desc';
+    }
+    const useScoreSort = searchParams.has('useScoreSort')
+      ? searchParams.get('useScoreSort') !== 'false'
+      : !explicitSortRequested || sortAlias === 'popular' || searchParams.get('sortBy') === 'popular';
+    const typeParam = searchParams.get('tourType') ?? searchParams.get('type');
     const tourTypeFilter: TourTypeFilter | null =
       typeParam === 'private' || typeParam === 'join' || typeParam === 'bus' ? typeParam : null;
     const limit = parseInt(searchParams.get('limit') || '100');
@@ -149,14 +180,9 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       }
     }
 
-    // Features filter - sanitize to prevent injection in JSONB path
-    if (features) {
-      const featureList = features.split(',').map(f => sanitizeKeyword(f.trim().toLowerCase())).filter(Boolean);
-      if (featureList.length > 0) {
-        const featureConditions = featureList.map(feature => `badges.cs.["${feature}"]`).join(',');
-        query = query.or(featureConditions);
-      }
-    }
+    // Features are filtered after transformation below. Keeping this out of the
+    // SQL JSONB exact-match path lets links like `features=UNESCO` or
+    // `features=Cruise excursion` match partial/cased badge text reliably.
 
     // Sorting
     const ascending = sortOrder === 'asc';
@@ -169,7 +195,7 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
     }
 
     const widenForCatalogHeuristic =
-      tourTypeFilter != null || destinationCityVariants.length > 0;
+      tourTypeFilter != null || destinationCityVariants.length > 0 || Boolean(features?.trim());
     const fetchSpan = widenForCatalogHeuristic
       ? Math.min(Math.max(limit, 900), 2200)
       : limit;
@@ -214,25 +240,69 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
         },
         krwPerUsd
       );
+
+      const slugStr = typeof tour.slug === 'string' ? tour.slug.trim() : '';
+      const localeForCard = (localeParam ?? 'en') as TourProductPageLocale;
+      const staticCard = slugStr ? getStaticTourProductBySlug(slugStr, localeForCard) : undefined;
+
+      let listImage =
+        tour.image_url ||
+        (tour.gallery_images && Array.isArray(tour.gallery_images) && tour.gallery_images.length > 0
+          ? tour.gallery_images[0]
+          : '') ||
+        '';
+      let galleryOut = Array.isArray(tour.gallery_images) ? [...tour.gallery_images] : [];
+      if (staticCard?.thumbnail?.trim()) {
+        const thumb = staticCard.thumbnail.trim();
+        listImage = thumb;
+        if (galleryOut.length === 0) galleryOut = [thumb];
+        else if (galleryOut[0] !== thumb) {
+          galleryOut = [thumb, ...galleryOut.filter((u: string) => u !== thumb)];
+        }
+      }
+
+      let priceOut = priceUsd;
+      let originalOut = originalPriceUsd;
+      if (staticCard) {
+        if (staticCard.listPriceUsd > 0 && (!Number.isFinite(priceOut) || priceOut <= 0)) {
+          priceOut = staticCard.listPriceUsd;
+        }
+        const cap = staticCard.compareAtPriceUsd;
+        if (typeof cap === 'number' && cap > priceOut && (originalOut == null || cap > originalOut)) {
+          originalOut = cap;
+        }
+      }
+
+      const tag = typeof tour.tag === 'string' && tour.tag.trim() !== '' ? tour.tag.trim() : null;
+      const catalogType = inferTourCatalogType({
+        title,
+        badges,
+        slug: tour.slug,
+        tag,
+        priceType: typeof tour.price_type === 'string' ? tour.price_type : null,
+        groupSize: typeof tour.group_size === 'string' ? tour.group_size : null,
+      });
+
       return {
         id: tour.id,
         slug: tour.slug,
-        tag: typeof tour.tag === 'string' && tour.tag.trim() !== '' ? tour.tag.trim() : null,
-        title,
+        tag,
+        title: titleForCatalogType(title, catalogType),
+        catalogType,
         location: tour.city,
         city: tour.city,
-        price: priceUsd,
-        originalPrice: originalPriceUsd,
+        price: priceOut,
+        originalPrice: originalOut,
         priceType: tour.price_type,
-        image: tour.image_url || (tour.gallery_images && Array.isArray(tour.gallery_images) && tour.gallery_images.length > 0 ? tour.gallery_images[0] : '') || '',
-        images: tour.gallery_images || [],
+        image: listImage,
+        images: galleryOut,
         rating: tour.rating ? parseFloat(tour.rating.toString()) : 0,
         reviewCount: tour.review_count || 0,
         duration: durationStr,
         difficulty: tour.difficulty || '',
         groupSize: tour.group_size || '',
         highlight: (tr?.highlight ?? tour.highlight ?? '') as string,
-        badges,
+        badges: tagsForCatalogType(badges, catalogType),
         description,
         location_detail: tour.location || '',
         pickupPoints,
@@ -271,6 +341,8 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
           badges: Array.isArray(tour.badges) ? tour.badges.map(String) : [],
           slug: typeof tour.slug === 'string' ? tour.slug : undefined,
           tag: typeof tour.tag === 'string' ? tour.tag : null,
+          priceType: typeof tour.priceType === 'string' ? tour.priceType : null,
+          groupSize: typeof tour.groupSize === 'string' ? tour.groupSize : null,
         }) === tourTypeFilter
       );
     }

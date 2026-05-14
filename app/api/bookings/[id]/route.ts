@@ -11,6 +11,7 @@ const BOOKING_DETAIL_SELECT = `
   *,
   tours (
     id,
+    slug,
     title,
     city,
     image_url,
@@ -268,14 +269,17 @@ export async function PUT(
       );
     }
 
-    // Update booking
-    const updateData: { status?: string; payment_status?: string } = {};
-    if (body.status !== undefined) {
-      updateData.status = body.status;
+    if (body.payment_status !== undefined || body.status !== 'cancelled') {
+      return NextResponse.json(
+        {
+          error: 'Only customer-initiated cancellation is allowed from this endpoint',
+          code: 'CUSTOMER_BOOKING_UPDATE_NOT_ALLOWED',
+        },
+        { status: 403 }
+      );
     }
-    if (body.payment_status !== undefined) {
-      updateData.payment_status = body.payment_status;
-    }
+
+    const updateData = { status: 'cancelled' };
 
     const { data: booking, error } = await supabase
       .from('bookings')
@@ -285,6 +289,7 @@ export async function PUT(
         *,
         tours (
           id,
+          slug,
           title,
           city,
           image_url,
@@ -365,7 +370,7 @@ export async function PUT(
               const specialRequests = JSON.parse(bookingWithDetails.special_requests || '{}');
               customerEmail = specialRequests.email || specialRequests.customer_email;
               customerName = specialRequests.name || specialRequests.customer_name || customerName;
-            } catch (e) {
+            } catch {
               // Ignore parse errors
             }
           }
@@ -474,4 +479,3 @@ export async function PUT(
     );
   }
 }
-

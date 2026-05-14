@@ -1,11 +1,15 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 import PickupPointSelector from '@/components/maps/PickupPointSelector';
 import { CHILD_ELIGIBILITY_RULES, CHILD_SEAT_OPTIONS, STROLLER_WHEELCHAIR_OPTIONS } from '@/lib/participant-rules';
+import {
+  collectProductImageCandidates,
+  toAbsoluteSiteImageUrl,
+} from '@/lib/admin/collect-product-image-urls';
 
 /**
  * Master template detail row (tour_product_pages). The full payload is large;
@@ -158,7 +162,7 @@ export default function ProductsPage() {
     try {
       const res = await fetch(
         `/api/admin/tour-product-pages/${encodeURIComponent(slug)}?locale=${encodeURIComponent(locale)}`,
-        { credentials: 'include' },
+        { credentials: 'include', cache: 'no-store' },
       );
       const json = await res.json();
       if (!res.ok) {
@@ -190,8 +194,8 @@ export default function ProductsPage() {
         }
         parsedPayload = parsed as Record<string, unknown>;
         const sv = Number((parsedPayload as { schema_version?: unknown }).schema_version);
-        if (!Number.isFinite(sv) || sv !== 1) {
-          throw new Error('schema_version must equal 1');
+        if (!Number.isFinite(sv) || sv < 1) {
+          throw new Error('schema_version must be a positive integer');
         }
       } catch (e: any) {
         setMasterPayloadJsonError(e?.message || 'Invalid JSON');
@@ -254,6 +258,43 @@ export default function ProductsPage() {
     }
   }, [editingTour, masterPayloadJson, masterRow]);
 
+  const masterImageCandidates = useMemo(() => {
+    if (!masterPayloadJson.trim()) return [];
+    try {
+      const p = JSON.parse(masterPayloadJson);
+      if (typeof p !== 'object' || p === null || Array.isArray(p)) return [];
+      return collectProductImageCandidates(p as Record<string, unknown>);
+    } catch {
+      return [];
+    }
+  }, [masterPayloadJson]);
+
+  const applyMasterThumbnailFromUrl = useCallback((picked: string) => {
+    const abs = toAbsoluteSiteImageUrl(picked);
+    setMasterRow((r) => (r ? { ...r, thumbnail_url: abs, hero_image_url: abs } : r));
+    setMasterPayloadJson((json) => {
+      try {
+        const p = JSON.parse(json) as Record<string, unknown>;
+        const cc = { ...((p.catalog_card as Record<string, unknown>) || {}) };
+        cc.thumbnail = picked;
+        cc.heroImage = picked;
+        p.catalog_card = cc;
+        const hero = { ...((p.hero as Record<string, unknown>) || {}) };
+        hero.imageUrl = picked;
+        const prevIm = Array.isArray(hero.images) ? (hero.images as string[]) : [];
+        hero.images = [picked, ...prevIm.filter((u) => u !== picked)].slice(0, 8);
+        p.hero = hero;
+        const seo = { ...((p.seo as Record<string, unknown>) || {}) };
+        seo.ogImage = abs;
+        p.seo = seo;
+        return JSON.stringify(p, null, 2);
+      } catch {
+        return json;
+      }
+    });
+    setMasterPayloadJsonError(null);
+  }, []);
+
   // Load master row when tab opens or locale changes
   useEffect(() => {
     if (activeTab !== 'master') return;
@@ -304,6 +345,7 @@ export default function ProductsPage() {
           'Authorization': `Bearer ${session.access_token}`,
         },
         credentials: 'include',
+        cache: 'no-store',
       });
 
       if (!response.ok) {
@@ -654,7 +696,7 @@ export default function ProductsPage() {
         return;
       }
 
-      const response = await fetch(`/api/tours/${tourId}`, {
+      const response = await fetch(`/api/admin/tours/${tourId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${session.access_token}`,
@@ -742,26 +784,28 @@ export default function ProductsPage() {
 
   return (
     <div className="space-y-6">
-      {/* v2 migration notice — admin must edit detail-page tab to affect customer-facing pages */}
-      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+      {/* v2 promo banner — premium 3-pane editor with live preview */}
+      <Link
+        href="/admin/products/v2"
+        className="block bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 rounded-xl p-4 text-white hover:shadow-lg transition-shadow group"
+      >
         <div className="flex items-start gap-3">
-          <span className="text-amber-600 text-xl shrink-0" aria-hidden>⚠️</span>
+          <span className="text-2xl shrink-0" aria-hidden>✨</span>
           <div className="flex-1">
-            <h3 className="text-sm font-semibold text-amber-900">
-              편집 동선 안내 (catalog v2 마이그레이션 진행 중)
+            <h3 className="text-sm font-semibold flex items-center gap-2">
+              새로워진 상품 편집기 v2 — 사이드 패널 + 라이브 미리보기
+              <span className="px-1.5 py-0.5 text-[10px] font-bold bg-white/20 rounded">NEW</span>
             </h3>
-            <p className="text-sm text-amber-800 mt-1">
-              실제 고객 상품 상세 페이지는 <strong>"⭐ 디테일 페이지"</strong> 탭의{" "}
-              <code className="px-1 bg-amber-100 rounded text-xs">tour_product_pages.detail_payload</code> JSON에서만 렌더링됩니다.
+            <p className="text-sm text-white/90 mt-1">
+              검색 가능한 리스트, locale 스위처, 저장 즉시 미리보기 반영, sonner 토스트.
+              곧 미디어 매니저 · autosave · 섹션별 폼이 추가됩니다.
             </p>
-            <p className="text-sm text-amber-800 mt-1">
-              <strong>기본 정보 / 이미지 / 일정 / 상세 정보 / 콘텐츠 / 다국어</strong> 탭의 변경은 레거시{" "}
-              <code className="px-1 bg-amber-100 rounded text-xs">tours</code> 테이블에만 저장되며,
-              <strong> 현재 상세 페이지에는 반영되지 않습니다</strong>. 가격, 활성 상태(<code className="px-1 bg-amber-100 rounded text-xs">is_active</code>), 픽업 장소만 영향이 있습니다.
+            <p className="text-xs text-white/75 mt-1">
+              → <span className="underline group-hover:text-white">/admin/products/v2 로 이동</span>
             </p>
           </div>
         </div>
-      </div>
+      </Link>
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
@@ -2238,6 +2282,50 @@ export default function ProductsPage() {
                           </div>
                         </div>
 
+                        {masterImageCandidates.length > 0 && (
+                          <div className="rounded-lg border border-gray-200 bg-gray-50/80 p-4">
+                            <p className="text-sm font-medium text-gray-900 mb-1">
+                              썸네일·히어로 이미지 빠른 선택
+                            </p>
+                            <p className="text-xs text-gray-500 mb-3">
+                              아래는 현재 detail_payload 안의 갤러리·일정 사진입니다. 클릭하면 카드 썸네일, 히어로,
+                              OG 이미지 필드가 함께 갱신됩니다.
+                            </p>
+                            <div className="flex flex-wrap gap-2 max-h-[220px] overflow-y-auto">
+                              {masterImageCandidates.map((src) => {
+                                const abs = toAbsoluteSiteImageUrl(src);
+                                const thumbUrl = masterRow?.thumbnail_url ?? '';
+                                const heroUrl = masterRow?.hero_image_url ?? '';
+                                const isActive =
+                                  thumbUrl === abs ||
+                                  thumbUrl === src ||
+                                  heroUrl === abs ||
+                                  heroUrl === src;
+                                return (
+                                  <button
+                                    key={src}
+                                    type="button"
+                                    onClick={() => applyMasterThumbnailFromUrl(src)}
+                                    className={`relative h-16 w-24 flex-shrink-0 overflow-hidden rounded-md ring-2 transition-shadow ${
+                                      isActive
+                                        ? 'ring-indigo-600 shadow-md'
+                                        : 'ring-transparent hover:ring-gray-300'
+                                    }`}
+                                    title={src}
+                                  >
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
+                                      src={abs}
+                                      alt=""
+                                      className="h-full w-full object-cover"
+                                    />
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        )}
+
                         <div>
                           <label className="block text-sm font-medium text-gray-700 mb-1">Card short description</label>
                           <textarea
@@ -2324,11 +2412,11 @@ export default function ProductsPage() {
                             <label className="block text-sm font-semibold text-gray-900">
                               detail_payload (JSON · 고급)
                             </label>
-                            <span className="text-xs text-gray-500">schema_version: 1</span>
+                            <span className="text-xs text-gray-500">schema_version ≥ 1</span>
                           </div>
                           <p className="text-xs text-gray-500 mb-2">
                             마스터 템플릿 섹션(itinerary, glance, gallery, FAQ, why-tour-works, practical, reviews 등)을 JSON으로 직접 편집합니다.
-                            잘못된 JSON 또는 schema_version ≠ 1 인 경우 저장이 거부됩니다.
+                            잘못된 JSON 또는 schema_version이 없는 경우 저장이 거부됩니다.
                           </p>
                           <textarea
                             value={masterPayloadJson}

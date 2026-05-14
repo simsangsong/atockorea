@@ -4,6 +4,10 @@ import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
 import { mapNestedTourRowsToUsd, mapNestedTourToUsdRow } from '@/lib/tour-list-price-usd.server';
 import { getAuthUser } from '@/lib/auth';
 
+function errorMessage(error: unknown): string {
+  return error instanceof Error ? error.message : String(error);
+}
+
 /**
  * GET /api/wishlist
  * Get current user's wishlist (authentication required)
@@ -27,6 +31,7 @@ export async function GET(req: NextRequest) {
         *,
         tours (
           id,
+          slug,
           title,
           city,
           price,
@@ -53,10 +58,10 @@ export async function GET(req: NextRequest) {
 
     const mapped = await mapNestedTourRowsToUsd(wishlist || []);
     return NextResponse.json({ wishlist: mapped });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Unexpected error:', error);
     return NextResponse.json(
-      { error: 'Internal server error', details: error.message },
+      { error: 'Internal server error', details: errorMessage(error) },
       { status: 500 }
     );
   }
@@ -130,6 +135,7 @@ export async function POST(req: NextRequest) {
         *,
         tours (
           id,
+          slug,
           title,
           city,
           price,
@@ -160,10 +166,10 @@ export async function POST(req: NextRequest) {
       { wishlistItem: mappedItem, message: 'Added to wishlist successfully' },
       { status: 201 }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Unexpected error:', error);
     return NextResponse.json(
-      { error: 'Internal server error', details: error.message },
+      { error: 'Internal server error', details: errorMessage(error) },
       { status: 500 }
     );
   }
@@ -212,10 +218,10 @@ export async function DELETE(req: NextRequest) {
     }
 
     return NextResponse.json({ message: 'Removed from wishlist successfully' });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Unexpected error:', error);
     return NextResponse.json(
-      { error: 'Internal server error', details: error.message },
+      { error: 'Internal server error', details: errorMessage(error) },
       { status: 500 }
     );
   }
