@@ -104,7 +104,13 @@ Order matters — earlier items make later ones easier:
    `text-amber-700 font-extrabold` accent word. Also swept those two
    sections' H2 + eyebrow + subtitle typography to the Phase 1 tokens
    (`.text-h2`, `.text-eyebrow`, `.text-body`).
-2. **Hero trust panel compression** — 5 trust items → 3 strongest.
+2. [x] **Hero trust panel compression** — dropped the 3 redundant pill
+   badges (Direct partnerships / 4.9 · 100K+ verified / Verified operators)
+   that duplicated stat-card content. Hero now leads with headline + one
+   tightened body line + 3 stat cards (4.9★ / 100K+ / 8 platforms).
+   Card radii migrated to `rounded-card` / `rounded-image`; inline shadows
+   replaced with `.shadow-1`; typography migrated to `.text-h3`,
+   `.text-caption`, `.text-micro`.
 3. **Card radius / shadow / focus-ring migration** to Phase 1 tokens.
 4. **Snap-scroll edge fade + peek + dot indicator** — Destinations,
    Choose Travel Style, Featured.
@@ -192,7 +198,8 @@ phase rollup honest.
 
 ## Working Order — Next Up
 
-**Phase 1 complete** ✅, **Phase 2 Step 1 (H2 accent unification) complete** ✅.
+**Phase 1 complete** ✅, **Phase 2 Steps 1–2 complete** ✅.
 
-Next concrete step: **Phase 2 Step 2 — Hero trust panel compression**
-(5 trust items → 3 strongest, restructure for clearer hierarchy).
+Next concrete step: **Phase 2 Step 3 — Card radius / shadow / focus-ring
+sweep** across all home sections that still use `rounded-home-card` /
+`shadow-home-*` / inline shadow strings.

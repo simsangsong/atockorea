@@ -150,49 +150,45 @@ export function HeroSection() {
         style={{ background: "linear-gradient(to bottom, #faf9f7, #fdfcfb, #ffffff)" }}
       >
         {/* ── Value Bridge ─────────────────────────────────────────── */}
+        {/*
+          Trust panel — compressed to exactly 3 stat cards (4.9★ rating, 100K+
+          bookings, 8 platforms with Klook/GYG/Viator microcopy). The earlier
+          version stacked redundant pill badges below the stats ("Direct
+          partnerships", "4.9 · 100K+ verified", "Verified operators") that
+          duplicated information already in the stat cards. Hero now leads
+          with one clear lockup: headline + one-sentence body + 3 stats.
+        */}
         <div className="mx-auto max-w-lg pt-5 pb-6">
-          <div className="rounded-2xl border border-amber-200/50 bg-gradient-to-br from-amber-50/90 via-orange-50/40 to-amber-50/60 px-5 py-5 shadow-[0_2px_12px_rgba(180,130,60,0.10),0_1px_3px_rgba(180,130,60,0.06)]">
-            <h2 className="mb-1.5 text-[16px] font-bold leading-snug tracking-[-0.02em] text-slate-900 md:text-[18px]">
+          <div className="rounded-card border border-amber-200/50 bg-gradient-to-br from-amber-50/90 via-orange-50/40 to-amber-50/60 px-5 py-5 shadow-1">
+            <h2 className="mb-1.5 text-h3 text-slate-900">
               Stop searching. We already did it for you.
             </h2>
-            <p className="mb-4 text-[12.5px] leading-relaxed text-slate-700 md:text-[13px]">
-              Every tour independently verified by us — proven by{" "}
-              <span className="font-semibold text-slate-900">100K+ travelers</span> on{" "}
-              <span className="font-semibold text-slate-900">8 global platforms</span>.
+            <p className="mb-4 text-caption text-slate-700">
+              Hand-picked tours run by the{" "}
+              <span className="font-semibold text-slate-900">same operators</span>{" "}
+              trusted by Klook, GetYourGuide and Viator.
             </p>
 
-            {/* Stat cards — 3 equal columns */}
+            {/* Stat cards — 3 equal columns. Only social-proof surface
+                above the matcher. */}
             <div className="grid grid-cols-3 gap-2">
-              <div className="rounded-xl border border-amber-100 bg-white/80 px-2.5 py-3 text-center shadow-[0_1px_4px_rgba(180,130,60,0.07)]">
+              <div className="rounded-image border border-amber-100 bg-white/80 px-2.5 py-3 text-center shadow-1">
                 <span className="block text-[18px] font-extrabold leading-none tracking-tight text-slate-900">
                   4.9<span className="text-[11px] text-amber-400">★</span>
                 </span>
-                <span className="mt-1.5 block text-[9px] font-semibold uppercase tracking-wide text-slate-600">avg. rating</span>
+                <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-600">avg. rating</span>
               </div>
 
-              <div className="rounded-xl border border-amber-100 bg-white/80 px-2.5 py-3 text-center shadow-[0_1px_4px_rgba(180,130,60,0.07)]">
+              <div className="rounded-image border border-amber-100 bg-white/80 px-2.5 py-3 text-center shadow-1">
                 <span className="block text-[18px] font-extrabold leading-none tracking-tight text-slate-900">100K+</span>
-                <span className="mt-1.5 block text-[9px] font-semibold uppercase tracking-wide text-slate-600">bookings</span>
+                <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-600">bookings</span>
               </div>
 
-              <div className="rounded-xl border border-amber-100 bg-white/80 px-2.5 py-3 text-center shadow-[0_1px_4px_rgba(180,130,60,0.07)]">
+              <div className="rounded-image border border-amber-100 bg-white/80 px-2.5 py-3 text-center shadow-1">
                 <span className="block text-[18px] font-extrabold leading-none tracking-tight text-slate-900">8</span>
-                <span className="mt-1.5 block text-[9px] font-semibold uppercase tracking-wide text-slate-600">platforms</span>
-                <span className="mt-1 block text-[9px] font-medium leading-tight text-slate-500">Klook · GetYourGuide · Viator</span>
+                <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-600">platforms</span>
+                <span className="mt-1 block text-micro font-medium leading-tight text-slate-500">Klook · GetYourGuide · Viator</span>
               </div>
-            </div>
-
-            {/* Trust pill badges */}
-            <div className="mt-3 flex flex-wrap items-center gap-1.5 border-t border-amber-100 pt-3">
-              <span className="inline-flex items-center gap-1 rounded-full border border-amber-100/80 bg-white/60 px-2.5 py-1 text-[10.5px] font-semibold text-slate-700">
-                <span aria-hidden>🤝</span> Direct partnerships
-              </span>
-              <span className="inline-flex items-center gap-1 rounded-full border border-amber-100/80 bg-white/60 px-2.5 py-1 text-[10.5px] font-semibold text-slate-700">
-                <span className="text-amber-400" aria-hidden>★</span> 4.9 · 100K+ verified
-              </span>
-              <span className="inline-flex items-center gap-1 rounded-full border border-emerald-200/60 bg-emerald-50 px-2.5 py-1 text-[10.5px] font-semibold text-emerald-700">
-                <span aria-hidden>✓</span> Verified operators
-              </span>
             </div>
           </div>
         </div>
