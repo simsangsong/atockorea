@@ -142,7 +142,12 @@ Order matters — earlier items make later ones easier:
       scrolls past, darken overlay opacity 0 → 0.5, headline drifts +36px
       with opacity 1 → 0.55. Built on framer-motion `useScroll` +
       `useTransform`; `useReducedMotion` collapses transforms to identity.
-- [ ] Process Operational mobile vertical timeline.
+- [x] Process Operational mobile vertical timeline — added a single
+      vertical rail on the left of the mobile/sm card column with each
+      icon-badge sitting on the rail as a node. Cards refactored from 4
+      duplicated blocks to a data-driven `STEPS` config + `StepIconBadge`
+      helper. md (2-col) and lg (4-col with horizontal connector) layouts
+      untouched. H2 migrated to `.text-h2`.
 - [ ] AI match thinking visualization.
 - [ ] Sticky bottom CTA after scroll past hero.
 - [ ] Section transitions reworked from 10px gradient to organic dividers.
@@ -223,10 +228,9 @@ phase rollup honest.
 
 ## Working Order — Next Up
 
-**Phase 2 complete** ✅, **Phase 3 Step 1 (hero scroll parallax) complete** ✅.
+**Phase 2 complete** ✅, **Phase 3 Steps 1–2 complete** ✅.
 
-Next: **Phase 3 Step 2 — Process Operational mobile vertical timeline**.
-The dark "How AtoC works" section currently shows a 4-step horizontal
-connector line on lg only (`hidden lg:block`); mobile/tablet just get
-four isolated cards. Add a left-side vertical timeline rail with stepped
-nodes on mobile so the journey reads as a sequence.
+Next: **Phase 3 Step 3 — AI match thinking visualization** (BestMatchPreview
+loading phase currently shows a generic skeleton; replace with a thinking
+animation that surfaces the matcher's progress — "checking 30 verified
+tours · scoring on photo / itinerary / season..." style).
