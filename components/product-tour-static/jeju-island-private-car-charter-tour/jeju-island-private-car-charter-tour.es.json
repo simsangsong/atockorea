@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Tour en Auto Privado con Chofer por la Isla de Jeju (9 h) | AtoC Korea",
     "metaDescription": "Alquiler privado de auto de 9 horas totalmente personalizable en Jeju con conductor-guía licenciado de habla inglesa. Elige la ruta Este (Seongsan, Manjanggul), Oeste (Hyeopjae) o Sur.",
-    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "ogImage": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
     "primaryKeywords": [
       "Alquiler de auto privado en Jeju",
       "Tour privado de día en Jeju",
@@ -31,8 +31,8 @@
       "Ruta Personalizable",
       "Recogida en el Hotel Incluida"
     ],
-    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "heroImage": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
+    "thumbnail": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
     "priceLabel": "",
     "shortCardDescription": "Alquiler de auto privado de 9 horas en Jeju con conductor-guía licenciado. Tres rutas recomendadas (Este, Oeste, Sur) recorren los lugares más emblemáticos de la isla, o crea la tuya propia entre monumentos de la UNESCO, escenarios de k-dramas, playas, campos de té y mercados tradicionales. La recogida en el hotel está incluida en cualquier punto de la isla.",
     "tags": [
@@ -52,7 +52,7 @@
     "discountPercent": 0
   },
   "hero": {
-    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "imageUrl": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
     "imagePosition": "center 45%",
     "tagline": "Desde el Pico del Amanecer de Seongsan hasta la Playa de Hyeopjae y las Cataratas de Cheonjiyeon—nueve horas privadas, tu ruta, tu ritmo, con un conductor-guía licenciado.",
     "pills": [
@@ -130,49 +130,76 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-      "alt": "Pico del amanecer Seongsan Ilchulbong",
-      "caption": "Pico del amanecer Seongsan Ilchulbong",
+      "src": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
+      "location": "Tour privado en Jeju",
+      "alt": "Tour privado en Jeju — familia frente a la costa con Hallasan al fondo",
+      "caption": "Tour privado en Jeju — familia frente a la costa con Hallasan al fondo"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "location": "Seongsan Ilchulbong",
-      "atmosphere": "El monumento UNESCO más emblemático de Jeju, parada principal de la ruta Este"
+      "alt": "Seongsan Ilchulbong — cráter UNESCO al amanecer en la costa este",
+      "caption": "Seongsan Ilchulbong — cráter UNESCO al amanecer en la costa este"
     },
     {
-      "id": "g2",
+      "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-      "alt": "Acantilado de basalto Jusangjeolli",
-      "caption": "Acantilado de basalto Jusangjeolli",
-      "location": "Acantilado Jusangjeolli",
-      "atmosphere": "Columnas de basalto hexagonales en la costa sur"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+      "location": "Seopjikoji",
+      "alt": "Seopjikoji — cabo con flores silvestres sobre el mar",
+      "caption": "Seopjikoji — cabo con flores silvestres sobre el mar"
     },
     {
-      "id": "g3",
+      "id": 4,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
-      "alt": "Playa Hyeopjae, oeste de Jeju",
-      "caption": "Playa Hyeopjae, oeste de Jeju",
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "location": "Hallasan Eoseungsaengak",
+      "alt": "Hallasan Eoseungsaengak — ascenso suave a un cráter panorámico",
+      "caption": "Hallasan Eoseungsaengak — ascenso suave a un cráter panorámico"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "Cataratas Cheonjeyeon",
+      "alt": "Cataratas Cheonjeyeon — cascada de tres niveles y leyenda de hadas",
+      "caption": "Cataratas Cheonjeyeon — cascada de tres niveles y leyenda de hadas"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "Camellia Hill",
+      "alt": "Camellia Hill — el mayor jardín de camelias de Asia",
+      "caption": "Camellia Hill — el mayor jardín de camelias de Asia"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
       "location": "Playa Hyeopjae",
-      "atmosphere": "Aguas esmeralda y arena blanca en la costa oeste"
+      "alt": "Playa Hyeopjae — aguas turquesa y arena blanca de conchas",
+      "caption": "Playa Hyeopjae — aguas turquesa y arena blanca de conchas"
     },
     {
-      "id": "g4",
+      "id": 8,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
-      "alt": "Museo y campos de té O'sulloc",
-      "caption": "Museo y campos de té O'sulloc",
-      "location": "Campos de té O'sulloc",
-      "atmosphere": "Hileras de campos de té verde y un relajante descanso de mediodía"
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "Acantilados Jusangjeolli",
+      "alt": "Jusangjeolli — acantilados columnares de basalto en Daepo",
+      "caption": "Jusangjeolli — acantilados columnares de basalto en Daepo"
     },
     {
-      "id": "g5",
+      "id": 9,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
-      "alt": "Cascada Cheonjiyeon en Seogwipo",
-      "caption": "Cascada Cheonjiyeon en Seogwipo",
-      "location": "Cataratas Cheonjiyeon",
-      "atmosphere": "Cascada en el bosque en la ruta sur"
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+      "location": "Calle de cafés de Aewol",
+      "alt": "Calle de cafés de Aewol — modernos cafés costeros con vista al mar",
+      "caption": "Calle de cafés de Aewol — modernos cafés costeros con vista al mar"
     }
   ],
   "itineraryStops": [

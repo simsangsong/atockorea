@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "濟州島私人包車遊（9小時）| AtoC Korea",
     "metaDescription": "9小時全程可自訂的濟州私人包車，配備持牌英語司機導遊。可選東部（城山、萬丈窟）、西部（挾才）或南部路線。",
-    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "ogImage": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
     "primaryKeywords": [
       "濟州私人包車",
       "濟州私人一日遊",
@@ -31,8 +31,8 @@
       "可自訂路線",
       "含飯店接送"
     ],
-    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "heroImage": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
+    "thumbnail": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
     "priceLabel": "",
     "shortCardDescription": "濟州9小時私人包車，配備持牌司機導遊。三條推薦路線（東部、西部、南部）涵蓋島上最受歡迎的景點，亦可自由選搭聯合國教科文組織世界遺產、韓劇取景地、海灘、茶園及傳統市場。全島任何地點均含飯店接送服務。",
     "tags": [
@@ -52,7 +52,7 @@
     "discountPercent": 0
   },
   "hero": {
-    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "imageUrl": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
     "imagePosition": "center 45%",
     "tagline": "從城山日出峰到挾才海灘，再到天地淵瀑布——九小時專屬時光，您的路線，您的節奏，全程由持牌司機導遊陪同。",
     "pills": [
@@ -130,49 +130,76 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-      "alt": "城山日出峰頂",
-      "caption": "城山日出峰頂",
+      "src": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
+      "location": "濟州私家車包車遊",
+      "alt": "濟州私家車包車遊 — 海岸與漢拏山為背景的家庭之旅",
+      "caption": "濟州私家車包車遊 — 海岸與漢拏山為背景的家庭之旅"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "location": "城山日出峰",
-      "atmosphere": "濟州最具代表性的UNESCO世界遺產，東線旗艦景點"
+      "alt": "城山日出峰 — 東海岸的UNESCO日出火山口",
+      "caption": "城山日出峰 — 東海岸的UNESCO日出火山口"
     },
     {
-      "id": "g2",
+      "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-      "alt": "柱狀節理壁玄武岩懸崖",
-      "caption": "柱狀節理壁玄武岩懸崖",
-      "location": "柱狀節理壁",
-      "atmosphere": "南海岸六角形玄武岩石柱群"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+      "location": "涉地岬",
+      "alt": "涉地岬 — 野花與海洋交織的海岬",
+      "caption": "涉地岬 — 野花與海洋交織的海岬"
     },
     {
-      "id": "g3",
+      "id": 4,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
-      "alt": "挾才海灘 濟州西部",
-      "caption": "挾才海灘 濟州西部",
-      "location": "挾才海灘",
-      "atmosphere": "西海岸翡翠色海水與白色沙灘"
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "location": "漢拏山御乘生岳",
+      "alt": "漢拏山 御乘生岳 — 輕鬆登山與火山口全景",
+      "caption": "漢拏山 御乘生岳 — 輕鬆登山與火山口全景"
     },
     {
-      "id": "g4",
+      "id": 5,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
-      "alt": "O'sulloc綠茶博物館與茶園",
-      "caption": "O'sulloc綠茶博物館與茶園",
-      "location": "O'sulloc茶園",
-      "atmosphere": "整齊茶田排列，令人心曠神怡的午間休憩"
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "天帝淵瀑布",
+      "alt": "天帝淵瀑布 — 仙女傳說的三層瀑布",
+      "caption": "天帝淵瀑布 — 仙女傳說的三層瀑布"
     },
     {
-      "id": "g5",
+      "id": 6,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
-      "alt": "西歸浦天地淵瀑布",
-      "caption": "西歸浦天地淵瀑布",
-      "location": "天地淵瀑布",
-      "atmosphere": "南部路線的森林瀑布"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "茶花山",
+      "alt": "茶花山 — 亞洲最大山茶花園",
+      "caption": "茶花山 — 亞洲最大山茶花園"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+      "location": "挾才海水浴場",
+      "alt": "挾才海水浴場 — 翠綠大海與雪白貝殼沙",
+      "caption": "挾才海水浴場 — 翠綠大海與雪白貝殼沙"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "柱狀節理",
+      "alt": "柱狀節理 — 大浦海岸玄武岩柱狀節理",
+      "caption": "柱狀節理 — 大浦海岸玄武岩柱狀節理"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+      "location": "涯月咖啡街",
+      "alt": "涯月咖啡街 — 海景現代咖啡街",
+      "caption": "涯月咖啡街 — 海景現代咖啡街"
     }
   ],
   "itineraryStops": [

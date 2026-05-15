@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Jeju Island Private Car Charter Tour (9hr) | AtoC Korea",
     "metaDescription": "9-hour fully customizable Jeju private car charter with licensed EN-speaking driver-guide. Pick East (Seongsan, Manjanggul), West (Hyeopjae), or South route.",
-    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "ogImage": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
     "primaryKeywords": [
       "Jeju private car charter",
       "Jeju private day tour",
@@ -32,8 +32,8 @@
       "Customizable Route",
       "Hotel Pickup Included"
     ],
-    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/thumbnailpath/202409/20/b9661064-af2f-4197-aef0-d3d44bf6c2b5.webp",
+    "heroImage": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
+    "thumbnail": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
     "priceLabel": "Per-vehicle pricing — confirm at booking",
     "shortCardDescription": "A 9-hour private car charter for Jeju with a licensed driver-guide. Three recommended routes (East, West, South) cover the island's most-loved sights, or build your own from UNESCO landmarks, K-drama spots, beaches, tea fields, and traditional markets. Hotel pickup is included anywhere on the island.",
     "tags": [
@@ -53,7 +53,7 @@
     "discountPercent": 0
   },
   "hero": {
-    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "imageUrl": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
     "imagePosition": "center 45%",
     "tagline": "From Seongsan Sunrise Peak to Hyeopjae Beach to Cheonjiyeon Falls—nine private hours, your route, your pace, with a licensed driver-guide.",
     "pills": [
@@ -131,49 +131,76 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-      "alt": "Seongsan Ilchulbong sunrise peak",
-      "caption": "Seongsan Ilchulbong sunrise peak",
+      "src": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
+      "location": "Jeju Private Tour",
+      "alt": "Private Jeju tour — your family by the coast with Hallasan beyond",
+      "caption": "Private Jeju tour — your family by the coast with Hallasan beyond"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "location": "Seongsan Ilchulbong",
-      "atmosphere": "Jeju's most iconic UNESCO landmark, a flagship East-route stop"
+      "alt": "Seongsan Ilchulbong — UNESCO sunrise peak on the east coast",
+      "caption": "Seongsan Ilchulbong — UNESCO sunrise peak on the east coast"
     },
     {
-      "id": "g2",
+      "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
-      "alt": "Jusangjeolli basalt cliff",
-      "caption": "Jusangjeolli basalt cliff",
-      "location": "Jusangjeolli Cliff",
-      "atmosphere": "Hexagonal basalt columns on the South coast"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+      "location": "Seopjikoji",
+      "alt": "Seopjikoji — wildflower headland over the sea",
+      "caption": "Seopjikoji — wildflower headland over the sea"
     },
     {
-      "id": "g3",
+      "id": 4,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
-      "alt": "Hyeopjae Beach West Jeju",
-      "caption": "Hyeopjae Beach West Jeju",
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "location": "Hallasan Eoseungsaengak",
+      "alt": "Hallasan Eoseungsaengak — gentle ascent to a panoramic crater",
+      "caption": "Hallasan Eoseungsaengak — gentle ascent to a panoramic crater"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "Cheonjeyeon Falls",
+      "alt": "Cheonjeyeon Falls — three-tier waterfall and the legend of fairies",
+      "caption": "Cheonjeyeon Falls — three-tier waterfall and the legend of fairies"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "Camellia Hill",
+      "alt": "Camellia Hill — Asia’s largest camellia garden",
+      "caption": "Camellia Hill — Asia’s largest camellia garden"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
       "location": "Hyeopjae Beach",
-      "atmosphere": "Emerald water and white sand on the West coast"
+      "alt": "Hyeopjae Beach — turquoise water and white shell sand",
+      "caption": "Hyeopjae Beach — turquoise water and white shell sand"
     },
     {
-      "id": "g4",
+      "id": 8,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
-      "alt": "O'sulloc tea museum and fields",
-      "caption": "O'sulloc tea museum and fields",
-      "location": "O'sulloc Tea Fields",
-      "atmosphere": "Green tea-field rows and a calming midday reset"
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "Jusangjeolli Cliff",
+      "alt": "Jusangjeolli — basalt columnar cliffs of the Daepo coast",
+      "caption": "Jusangjeolli — basalt columnar cliffs of the Daepo coast"
     },
     {
-      "id": "g5",
+      "id": 9,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
-      "alt": "Cheonjiyeon waterfall in Seogwipo",
-      "caption": "Cheonjiyeon waterfall in Seogwipo",
-      "location": "Cheonjiyeon Falls",
-      "atmosphere": "Forest waterfall on the South route"
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+      "location": "Aewol Cafe Street",
+      "alt": "Aewol Cafe Street — modern coastal cafes with ocean views",
+      "caption": "Aewol Cafe Street — modern coastal cafes with ocean views"
     }
   ],
   "itineraryStops": [

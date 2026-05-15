@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "済州島プライベートチャーター車ツアー（9時間）| AtoC Korea",
     "metaDescription": "英語対応の公認ドライバーガイド付き、9時間完全カスタマイズ可能な済州プライベートチャーター。東（城山・万丈窟）、西（挟才）、南コースからお選びいただけます。",
-    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "ogImage": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
     "primaryKeywords": [
       "済州プライベートチャーター車",
       "済州プライベートデイツアー",
@@ -31,8 +31,8 @@
       "カスタマイズ可能なルート",
       "ホテル送迎込み"
     ],
-    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "heroImage": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
+    "thumbnail": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
     "priceLabel": "",
     "shortCardDescription": "公認ドライバーガイド付きの済州9時間プライベートチャーター車。おすすめの3コース（東・西・南）では島の人気スポットを巡ることができます。また、ユネスコ世界遺産、韓国ドラマのロケ地、ビーチ、茶畑、伝統市場からオリジナルコースを自由に組み立てることも可能です。島内どこでもホテル送迎が含まれています。",
     "tags": [
@@ -52,7 +52,7 @@
     "discountPercent": 0
   },
   "hero": {
-    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "imageUrl": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
     "imagePosition": "center 45%",
     "tagline": "城山日出峰から挟才ビーチ、天地淵瀑布まで——公認ドライバーガイドと共に、あなたのルートで、あなたのペースで過ごす9時間のプライベートな旅。",
     "pills": [
@@ -130,49 +130,76 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-      "alt": "城山日出峰の日の出スポット",
-      "caption": "城山日出峰の日の出スポット",
+      "src": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
+      "location": "済州プライベートツアー",
+      "alt": "済州プライベートツアー — 海岸と漢拏山を背景にした家族旅行",
+      "caption": "済州プライベートツアー — 海岸と漢拏山を背景にした家族旅行"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "location": "城山日出峰",
-      "atmosphere": "済州島を象徴するユネスコの世界遺産、東ルートの主要スポット"
+      "alt": "城山日出峰 — 東海岸のUNESCO日の出火口",
+      "caption": "城山日出峰 — 東海岸のUNESCO日の出火口"
     },
     {
-      "id": "g2",
+      "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-      "alt": "柱状節理の玄武岩断崖",
-      "caption": "柱状節理の玄武岩断崖",
-      "location": "柱状節理の断崖",
-      "atmosphere": "南海岸に並ぶ六角形の玄武岩柱"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+      "location": "涉地岬",
+      "alt": "涉地岬 — 野花と海が広がる岬",
+      "caption": "涉地岬 — 野花と海が広がる岬"
     },
     {
-      "id": "g3",
+      "id": 4,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
-      "alt": "挾才海岸（ヒョプジェビーチ）西済州",
-      "caption": "挾才海岸（ヒョプジェビーチ）西済州",
-      "location": "挾才海岸（ヒョプジェビーチ）",
-      "atmosphere": "西海岸のエメラルドの海と白砂のビーチ"
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "location": "漢拏山御乗生岳",
+      "alt": "漢拏山 御乗生岳 — 楽な登山と火口パノラマ",
+      "caption": "漢拏山 御乗生岳 — 楽な登山と火口パノラマ"
     },
     {
-      "id": "g4",
+      "id": 5,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
-      "alt": "オソルロク茶博物館と茶畑",
-      "caption": "オソルロク茶博物館と茶畑",
-      "location": "オソルロク茶畑",
-      "atmosphere": "緑茶畑の畝と穏やかな昼の休息"
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "天帝淵滝",
+      "alt": "天帝淵滝 — 天女伝説の三段の滝",
+      "caption": "天帝淵滝 — 天女伝説の三段の滝"
     },
     {
-      "id": "g5",
+      "id": 6,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
-      "alt": "西帰浦の天地淵の滝",
-      "caption": "西帰浦の天地淵の滝",
-      "location": "天地淵の滝",
-      "atmosphere": "南ルートの森の滝"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "カメリアヒル",
+      "alt": "カメリアヒル — アジア最大の椿庭園",
+      "caption": "カメリアヒル — アジア最大の椿庭園"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+      "location": "挾才ビーチ",
+      "alt": "挾才ビーチ — エメラルドの海と白い貝殻砂",
+      "caption": "挾才ビーチ — エメラルドの海と白い貝殻砂"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "柱状節理",
+      "alt": "柱状節理 — 大浦海岸の玄武岩柱状節理",
+      "caption": "柱状節理 — 大浦海岸の玄武岩柱状節理"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+      "location": "涯月カフェ通り",
+      "alt": "涯月カフェ通り — 海を望むモダンカフェ街",
+      "caption": "涯月カフェ通り — 海を望むモダンカフェ街"
     }
   ],
   "itineraryStops": [

@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "济州岛私人包车游（9小时）| AtoC Korea",
     "metaDescription": "9小时全程可定制济州私人包车，配备持牌英语司导。可选东线（城山、万丈窟）、西线（协才）或南线路线。",
-    "ogImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "ogImage": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
     "primaryKeywords": [
       "济州私人包车",
       "济州私人一日游",
@@ -31,8 +31,8 @@
       "可定制路线",
       "含酒店接送"
     ],
-    "heroImage": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-    "thumbnail": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "heroImage": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
+    "thumbnail": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
     "priceLabel": "",
     "shortCardDescription": "济州9小时私人包车，配备持牌司导。三条推荐路线（东线、西线、南线）涵盖岛上最受欢迎的景点，也可从联合国教科文组织地标、韩剧取景地、海滩、茶田及传统市场中自由搭配行程。全岛范围内均含酒店接送服务。",
     "tags": [
@@ -52,7 +52,7 @@
     "discountPercent": 0
   },
   "hero": {
-    "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+    "imageUrl": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
     "imagePosition": "center 45%",
     "tagline": "从城山日出峰到协才海滩，再到天地渊瀑布——九小时专属时光，您的路线，您的节奏，全程由持牌司导陪同。",
     "pills": [
@@ -130,49 +130,76 @@
   ],
   "galleryItems": [
     {
-      "id": "g1",
+      "id": 1,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
-      "alt": "城山日出峰日出顶峰",
-      "caption": "城山日出峰日出顶峰",
+      "src": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
+      "location": "济州私家车包车游",
+      "alt": "济州私家车包车游 — 海岸与汉拿山为背景的家庭之旅",
+      "caption": "济州私家车包车游 — 海岸与汉拿山为背景的家庭之旅"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "location": "城山日出峰",
-      "atmosphere": "济州最具代表性的联合国教科文组织地标，东线核心必游之地"
+      "alt": "城山日出峰 — 东海岸的UNESCO日出火山口",
+      "caption": "城山日出峰 — 东海岸的UNESCO日出火山口"
     },
     {
-      "id": "g2",
+      "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-      "alt": "柱状节理壁玄武岩悬崖",
-      "caption": "柱状节理壁玄武岩悬崖",
-      "location": "柱状节理壁",
-      "atmosphere": "南海岸六边形玄武岩柱群"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+      "location": "涉地岬",
+      "alt": "涉地岬 — 野花与海洋交织的海岬",
+      "caption": "涉地岬 — 野花与海洋交织的海岬"
     },
     {
-      "id": "g3",
+      "id": 4,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
-      "alt": "挟才海滩（济州西部）",
-      "caption": "挟才海滩（济州西部）",
-      "location": "挟才海滩",
-      "atmosphere": "西海岸碧绿海水与洁白沙滩"
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "location": "汉拿山御乘生岳",
+      "alt": "汉拿山 御乘生岳 — 轻松登山与火山口全景",
+      "caption": "汉拿山 御乘生岳 — 轻松登山与火山口全景"
     },
     {
-      "id": "g4",
+      "id": 5,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
-      "alt": "雪绿茶博物馆与茶园",
-      "caption": "雪绿茶博物馆与茶园",
-      "location": "雪绿茶园",
-      "atmosphere": "绿茶园成排延伸，午间宁静放松之所"
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "天帝渊瀑布",
+      "alt": "天帝渊瀑布 — 仙女传说的三层瀑布",
+      "caption": "天帝渊瀑布 — 仙女传说的三层瀑布"
     },
     {
-      "id": "g5",
+      "id": 6,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
-      "alt": "西归浦天地渊瀑布",
-      "caption": "西归浦天地渊瀑布",
-      "location": "天地渊瀑布",
-      "atmosphere": "南部路线的森林瀑布"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "茶花山",
+      "alt": "茶花山 — 亚洲最大山茶花园",
+      "caption": "茶花山 — 亚洲最大山茶花园"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+      "location": "挟才海水浴场",
+      "alt": "挟才海水浴场 — 翠绿大海与雪白贝壳沙",
+      "caption": "挟才海水浴场 — 翠绿大海与雪白贝壳沙"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "柱状节理",
+      "alt": "柱状节理 — 大浦海岸玄武岩柱状节理",
+      "caption": "柱状节理 — 大浦海岸玄武岩柱状节理"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+      "location": "涯月咖啡街",
+      "alt": "涯月咖啡街 — 海景现代咖啡街",
+      "caption": "涯月咖啡街 — 海景现代咖啡街"
     }
   ],
   "itineraryStops": [
