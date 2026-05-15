@@ -121,11 +121,12 @@ export function HeroSection() {
           .hero-proof-badge { animation: none; }
         }
       `}</style>
-      {/* Hero height: -15% from the previous 38/40/46vh per design feedback.
-          The black base lets the photo crossfade read as a cinematic panel. */}
+      {/* Hero height: Apple-grade photography presence. Mobile 56vh keeps
+          the matcher panel hint visible just below the fold; desktop 68-72vh
+          lets the photo do the heavy lifting like apple.com/iphone. */}
       <div
         ref={heroPanelRef}
-        className="relative min-h-[32vh] sm:min-h-[34vh] md:min-h-[39vh] flex flex-col justify-end overflow-hidden bg-black pb-2 md:pb-3"
+        className="relative min-h-[56vh] sm:min-h-[60vh] md:min-h-[68vh] lg:min-h-[72vh] flex flex-col justify-end overflow-hidden bg-black pb-3 md:pb-5"
       >
         <div className="absolute inset-0">
           {/* Photo crossfade — slides up under parallax as the user scrolls,
