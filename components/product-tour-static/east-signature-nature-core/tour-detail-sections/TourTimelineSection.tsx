@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Clock, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { TourPhotoOverlay } from "@/components/tour/TourPhotoOverlay";
 import type { ItineraryStop } from "@/components/product-tour-static/_shared/tourProductDetailSectionTypes";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 import { PickupOnlyCards, DropoffOnlyCard } from "@/components/product-tour-static/_shared/pickup-dropoff/PickupDropoffCards";
@@ -97,7 +96,8 @@ function StopCard({
                     onContextMenu={(e) => e.preventDefault()}
                     className="w-full h-full object-cover tour-photo-grade tour-photo-protected"
                   />
-                  <TourPhotoOverlay src={src} size="xs" />
+                  {/* No region badge / stop name overlay on timeline mini thumbs —
+                      too small for either label to read cleanly. */}
                 </div>
               ))}
             </div>
