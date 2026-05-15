@@ -55,7 +55,7 @@ export function ChooseTravelStyle() {
         <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-none md:mx-0 md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0 md:snap-none">
           {/* Small Group — featured (dark navy, emerald accent) */}
           <div
-            className="relative w-[68vw] flex-none snap-start overflow-hidden rounded-home-card border border-slate-700/50 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 p-4 md:p-5 shadow-home-offer-smgroup transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-home-offer-smgroup-hover scroll-animate flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
+            className="relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-slate-700/50 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 p-4 md:p-5 shadow-home-offer-smgroup transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-home-offer-smgroup-hover scroll-animate flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
             data-animate
           >
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-400" />
@@ -113,7 +113,7 @@ export function ChooseTravelStyle() {
 
           {/* Private — amber accent */}
           <div
-            className="group relative w-[68vw] flex-none snap-start overflow-hidden scroll-animate rounded-home-card border border-slate-200/70 bg-white p-4 md:p-5 shadow-home-offer-private transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-slate-300/90 hover:shadow-home-offer-private-hover flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
+            className="group relative w-[68vw] flex-none snap-start overflow-hidden scroll-animate rounded-card border border-slate-200/70 bg-white p-4 md:p-5 shadow-home-offer-private transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-slate-300/90 hover:shadow-home-offer-private-hover flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
             data-animate
           >
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-300" />
@@ -162,13 +162,13 @@ export function ChooseTravelStyle() {
 
           {/* Bus — stone/amber warm */}
           <div
-            className="group relative w-[68vw] flex-none snap-start overflow-hidden scroll-animate rounded-home-card border border-amber-200/60 bg-gradient-to-br from-amber-50/40 via-stone-50 to-orange-50/30 p-4 md:p-5 shadow-home-offer-bus transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-amber-300/70 hover:shadow-home-offer-bus-hover flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
+            className="group relative w-[68vw] flex-none snap-start overflow-hidden scroll-animate rounded-card border border-amber-200/60 bg-gradient-to-br from-amber-50/40 via-stone-50 to-orange-50/30 p-4 md:p-5 shadow-home-offer-bus transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-amber-300/70 hover:shadow-home-offer-bus-hover flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
             data-animate
           >
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-300/80 via-stone-400 to-amber-300/80" />
 
             <div className="flex items-center justify-between mb-4 mt-1">
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-gradient-to-br from-amber-100 to-stone-100 flex items-center justify-center border border-amber-200/60 shadow-[0_2px_8px_rgba(180,130,60,0.15)]">
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-gradient-to-br from-amber-100 to-stone-100 flex items-center justify-center border border-amber-200/60 shadow-1">
                 <Bus className="w-4 h-4 md:w-5 md:h-5 text-amber-700" />
               </div>
               <span className="text-[9px] md:text-[10px] font-bold text-amber-800 bg-amber-100/90 border border-amber-200/70 px-2.5 py-1 rounded-full tracking-wide shadow-sm">

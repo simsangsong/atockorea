@@ -157,7 +157,7 @@ function SkeletonGrid() {
       {Array.from({ length: 6 }).map((_, i) => (
         <div
           key={i}
-          className="w-[44vw] flex-shrink-0 animate-pulse overflow-hidden rounded-[1.6rem] border border-white/80 bg-white shadow-[0_16px_38px_-24px_rgba(15,23,42,0.34)] md:w-auto"
+          className="w-[44vw] flex-shrink-0 animate-pulse overflow-hidden rounded-card border border-white/80 bg-white shadow-2 md:w-auto"
         >
           <div className="aspect-[4/3.15] w-full bg-slate-200/70 sm:aspect-[4/3.35]" />
           <div className="space-y-2 p-3">

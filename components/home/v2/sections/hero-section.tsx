@@ -256,9 +256,9 @@ export function HeroSection() {
                       role="radio"
                       aria-checked={active}
                       onClick={() => setDestination(id)}
-                      className={`rounded-xl px-2 py-3 text-center font-medium transition-all duration-[250ms] md:rounded-2xl md:px-3 md:py-3.5 ${
+                      className={`focus-ring rounded-xl px-2 py-3 text-center font-medium transition-all duration-[250ms] md:rounded-2xl md:px-3 md:py-3.5 ${
                         active
-                          ? "bg-slate-900 text-white shadow-[0_2px_8px_rgba(0,0,0,0.12),0_6px_20px_rgba(0,0,0,0.08)]"
+                          ? "bg-slate-900 text-white shadow-2"
                           : "border border-slate-200/60 bg-slate-50/80 text-slate-600 hover:bg-slate-100/80"
                       }`}
                     >
@@ -334,9 +334,9 @@ export function HeroSection() {
                       type="button"
                       aria-pressed={isSelected}
                       onClick={() => appendChip(tag.label)}
-                      className={`flex-none rounded-full px-3.5 py-2 text-xs font-medium transition-all duration-200 md:px-4 md:py-2.5 md:text-sm ${
+                      className={`focus-ring flex-none rounded-full px-3.5 py-2 text-xs font-medium transition-all duration-200 md:px-4 md:py-2.5 md:text-sm ${
                         isSelected
-                          ? "bg-slate-800 text-white shadow-[0_1px_4px_rgba(0,0,0,0.1)]"
+                          ? "bg-slate-800 text-white shadow-1"
                           : "text-slate-600 hover:bg-slate-100/80"
                       }`}
                       style={

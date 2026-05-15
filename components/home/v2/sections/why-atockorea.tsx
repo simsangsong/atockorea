@@ -123,7 +123,7 @@ export function WhyAtockorea() {
               <div
                 key={pillar.id}
                 data-pillar
-                className="group relative overflow-hidden scroll-animate home-neutral-card rounded-home-card p-4 md:p-5 transition-all duration-300 ease-out hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 motion-reduce:transition-none"
+                className="group relative overflow-hidden scroll-animate home-neutral-card rounded-card p-4 md:p-5 transition-all duration-300 ease-out hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 motion-reduce:transition-none"
               >
                 <div className="flex items-start gap-3">
                   <div

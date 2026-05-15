@@ -24,8 +24,9 @@
   --section-py-md: 80px;
   --section-py-lg: 112px;
 
-  /* Radius — three steps + pill. */
-  --radius-card: 20px;
+  /* Radius — three steps + pill. Card at 24px is the modern "premium soft"
+     sweet spot (24 reads as polished without the heaviness of 28+). */
+  --radius-card: 24px;
   --radius-button: 14px;
   --radius-image: 12px;
 

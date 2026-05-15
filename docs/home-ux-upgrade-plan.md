@@ -111,7 +111,15 @@ Order matters — earlier items make later ones easier:
    Card radii migrated to `rounded-card` / `rounded-image`; inline shadows
    replaced with `.shadow-1`; typography migrated to `.text-h3`,
    `.text-caption`, `.text-micro`.
-3. **Card radius / shadow / focus-ring migration** to Phase 1 tokens.
+3. [x] **Card radius / shadow / focus-ring sweep** —
+   - Bumped `--radius-card` 20 → 24px (premium-soft sweet spot).
+   - All home v2 sections: `rounded-home-card` → `.rounded-card`.
+   - `rounded-[1.6rem]` skeleton → `.rounded-card`.
+   - Inline shadow strings on hero radio/chip buttons + skeleton + icon
+     badge → `.shadow-1` / `.shadow-2` tokens.
+   - Hero destination radio + style-chip buttons gained `.focus-ring`.
+   - `shadow-home-offer-*` / `shadow-home-hero-match` named tokens
+     intentionally kept (tuned for premium photo offer cards).
 4. **Snap-scroll edge fade + peek + dot indicator** — Destinations,
    Choose Travel Style, Featured.
 5. **Hero H1 editorial italic** (Playfair Display) with single accent word.
@@ -198,8 +206,8 @@ phase rollup honest.
 
 ## Working Order — Next Up
 
-**Phase 1 complete** ✅, **Phase 2 Steps 1–2 complete** ✅.
+**Phase 1 complete** ✅, **Phase 2 Steps 1–3 complete** ✅.
 
-Next concrete step: **Phase 2 Step 3 — Card radius / shadow / focus-ring
-sweep** across all home sections that still use `rounded-home-card` /
-`shadow-home-*` / inline shadow strings.
+Next concrete step: **Phase 2 Step 4 — Mobile snap-scroll affordance**
+(right-edge fade + ≥20% next-card peek + optional dot-progress) across
+Destinations, Choose Travel Style, Featured Products.

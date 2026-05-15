@@ -35,7 +35,7 @@ export function FinalCTA() {
       <div className="max-w-2xl mx-auto">
         <div ref={blockRef} className="relative scroll-animate">
           <div
-            className="absolute -inset-2 rounded-home-card bg-gradient-to-br from-primary/[0.07] via-sky-400/[0.04] to-amber-400/[0.05] opacity-45 blur-xl"
+            className="absolute -inset-2 rounded-card bg-gradient-to-br from-primary/[0.07] via-sky-400/[0.04] to-amber-400/[0.05] opacity-45 blur-xl"
             aria-hidden
           />
 

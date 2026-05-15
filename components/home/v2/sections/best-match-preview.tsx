@@ -19,10 +19,10 @@ import { getFeaturedJoinTourProduct } from "@/lib/home/featured-join-tour-offer"
 
 /** Shell for idle + result cards — matches `home-premium` hero-match offer depth (group hover). */
 const bestMatchCardShellClassName =
-  "relative overflow-hidden rounded-home-card border border-white/90 bg-white shadow-home-hero-match transition-shadow duration-300 ease-out group-hover:shadow-home-hero-match-hover";
+  "relative overflow-hidden rounded-card border border-white/90 bg-white shadow-home-hero-match transition-shadow duration-300 ease-out group-hover:shadow-home-hero-match-hover";
 
 const bestMatchCardShellLoadingClassName =
-  "rounded-home-card border border-white/90 bg-white/95 shadow-home-hero-match backdrop-blur-sm";
+  "rounded-card border border-white/90 bg-white/95 shadow-home-hero-match backdrop-blur-sm";
 
 const bestMatchPrimaryCtaClassName =
   "h-auto w-full rounded-xl py-4 text-[13px] font-semibold transition-all duration-300 md:py-6 md:text-sm bg-primary hover:bg-primary/95 text-white";
