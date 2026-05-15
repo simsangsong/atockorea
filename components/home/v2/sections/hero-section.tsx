@@ -175,25 +175,27 @@ export function HeroSection() {
               aria-hidden
               className="pointer-events-none absolute -inset-x-10 -inset-y-6 -z-10 rounded-[3rem] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.72)_35%,rgba(0,0,0,0.45)_60%,rgba(0,0,0,0.18)_80%,transparent_95%)] md:-inset-x-16 md:-inset-y-8"
             />
-            {/* Hero H1 — Apple-style sans (Inter semibold, very tight tracking,
-                no italic). Hierarchy comes from size + weight, not style. */}
+            {/* Hero H1 — Apple SF Pro Display (system) at medium weight.
+                Smaller sizes so the headline lands in one line on desktop
+                and feels mature rather than shouty. */}
             <h1
-              className="text-[2rem] leading-[1.05] text-white md:text-[2.6rem] lg:text-[3.4rem]"
+              className="text-[1.35rem] leading-[1.15] text-white md:text-[1.75rem] lg:text-[2.15rem]"
               style={{
-                fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'SF Pro Display', Inter, system-ui, sans-serif",
-                fontWeight: 600,
-                letterSpacing: "-0.028em",
-                textShadow: "0 2px 14px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.55)",
+                fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', var(--font-sans), Inter, system-ui, sans-serif",
+                fontWeight: 500,
+                letterSpacing: "-0.022em",
+                textShadow: "0 2px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.45)",
               }}
             >
               {t("premium.hero.headlineLine1")}
             </h1>
 
             <p
-              className="mx-auto mt-2.5 max-w-md text-[13px] font-normal leading-snug text-white/90 md:mt-3.5 md:text-[15px] md:leading-relaxed"
+              className="mx-auto mt-2 max-w-md text-[12px] font-normal leading-snug text-white/85 md:mt-3 md:text-[13.5px] md:leading-relaxed"
               style={{
-                letterSpacing: "-0.012em",
-                textShadow: "0 1px 10px rgba(0,0,0,0.6), 0 1px 2px rgba(0,0,0,0.5)",
+                fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', var(--font-sans), Inter, system-ui, sans-serif",
+                letterSpacing: "-0.01em",
+                textShadow: "0 1px 8px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.45)",
               }}
             >
               {t("premium.hero.atfHeroSubhead")}
