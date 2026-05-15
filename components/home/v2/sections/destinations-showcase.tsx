@@ -51,7 +51,7 @@ export function DestinationsShowcase() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden px-4 py-12 md:px-6 md:py-16 bg-white border-t border-slate-100">
+    <section className="relative overflow-hidden px-4 md:px-6 section-py-md bg-white border-t border-slate-100">
       <div
         className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-200/60 to-transparent"
         aria-hidden

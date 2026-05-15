@@ -19,10 +19,12 @@
  * app/home-premium.css for back-compat but new code uses the aliases below.
  * ========================================================================== */
 :root {
-  /* Section vertical rhythm — only three steps. */
+  /* Section vertical rhythm — only three steps.
+     Mobile values stay tight (~content-first). Desktop inflates for
+     Apple-grade breathing room. Override happens below in @layer utilities. */
   --section-py-sm: 56px;
-  --section-py-md: 80px;
-  --section-py-lg: 112px;
+  --section-py-md: 72px;
+  --section-py-lg: 96px;
 
   /* Radius — three steps + pill. Card at 24px is the modern "premium soft"
      sweet spot (24 reads as polished without the heaviness of 28+). */
@@ -69,11 +71,18 @@
   --focus-ring-offset: 2px;
 }
 
-/* Section padding utilities — drop-in for any home section. */
+/* Section padding utilities — drop-in for any home section.
+   Mobile uses the :root values (compact). Desktop bumps to Apple-grade
+   inflation (96/128/160) where breathing room reads as confidence. */
 @layer utilities {
   .section-py-sm { padding-top: var(--section-py-sm); padding-bottom: var(--section-py-sm); }
   .section-py-md { padding-top: var(--section-py-md); padding-bottom: var(--section-py-md); }
   .section-py-lg { padding-top: var(--section-py-lg); padding-bottom: var(--section-py-lg); }
+  @media (min-width: 768px) {
+    .section-py-sm { padding-top: 96px; padding-bottom: 96px; }
+    .section-py-md { padding-top: 128px; padding-bottom: 128px; }
+    .section-py-lg { padding-top: 160px; padding-bottom: 160px; }
+  }
 
   .shadow-1 { box-shadow: var(--shadow-1); }
   .shadow-2 { box-shadow: var(--shadow-2); }

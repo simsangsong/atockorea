@@ -92,7 +92,7 @@ export function FeaturedProductsShowcase() {
   if (tours != null && tours.length < 3) return null;
 
   return (
-    <section className="relative overflow-hidden px-4 py-12 md:px-6 md:py-16 bg-white border-t border-slate-100">
+    <section className="relative overflow-hidden px-4 md:px-6 section-py-md bg-white border-t border-slate-100">
 
       <div ref={containerRef} className="relative mx-auto max-w-6xl scroll-animate">
         <div className="mb-7 text-center md:mb-9">

@@ -31,7 +31,7 @@ export function FinalCTA() {
   }, []);
 
   return (
-    <section data-home-final-cta className="py-14 md:py-20 px-4 bg-white">
+    <section data-home-final-cta className="section-py-lg px-4 bg-white">
       <div className="max-w-2xl mx-auto">
         <div ref={blockRef} className="relative scroll-animate">
           <div
