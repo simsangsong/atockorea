@@ -4,12 +4,9 @@ import { useEffect, useRef } from "react";
 import { Sparkles, Wand2, ShieldCheck, Headphones } from "lucide-react";
 import { useTranslations } from "@/lib/i18n";
 
-type PillarAccent = "navy" | "emerald" | "amber" | "sky";
-
 type Pillar = {
   id: string;
   icon: React.ComponentType<{ className?: string }>;
-  accent: PillarAccent;
   titleKey: string;
   titleAccentKey: string;
   bodyKey: string;
@@ -19,7 +16,6 @@ const PILLARS: ReadonlyArray<Pillar> = [
   {
     id: "curated",
     icon: Sparkles,
-    accent: "navy",
     titleKey: "premium.v2.whyAtockorea.pillar1.title",
     titleAccentKey: "premium.v2.whyAtockorea.pillar1.titleAccent",
     bodyKey: "premium.v2.whyAtockorea.pillar1.body",
@@ -27,7 +23,6 @@ const PILLARS: ReadonlyArray<Pillar> = [
   {
     id: "ai-match",
     icon: Wand2,
-    accent: "emerald",
     titleKey: "premium.v2.whyAtockorea.pillar2.title",
     titleAccentKey: "premium.v2.whyAtockorea.pillar2.titleAccent",
     bodyKey: "premium.v2.whyAtockorea.pillar2.body",
@@ -35,7 +30,6 @@ const PILLARS: ReadonlyArray<Pillar> = [
   {
     id: "licensed",
     icon: ShieldCheck,
-    accent: "amber",
     titleKey: "premium.v2.whyAtockorea.pillar3.title",
     titleAccentKey: "premium.v2.whyAtockorea.pillar3.titleAccent",
     bodyKey: "premium.v2.whyAtockorea.pillar3.body",
@@ -43,38 +37,11 @@ const PILLARS: ReadonlyArray<Pillar> = [
   {
     id: "support",
     icon: Headphones,
-    accent: "sky",
     titleKey: "premium.v2.whyAtockorea.pillar4.title",
     titleAccentKey: "premium.v2.whyAtockorea.pillar4.titleAccent",
     bodyKey: "premium.v2.whyAtockorea.pillar4.body",
   },
 ];
-
-const ACCENT_STYLES: Record<
-  PillarAccent,
-  { bg: string; ringShadow: string; text: string }
-> = {
-  navy: {
-    bg: "from-slate-700 to-slate-900",
-    ringShadow: "shadow-md shadow-slate-900/20",
-    text: "text-slate-900",
-  },
-  emerald: {
-    bg: "from-emerald-500 to-emerald-700",
-    ringShadow: "shadow-md shadow-emerald-500/25",
-    text: "text-emerald-700",
-  },
-  amber: {
-    bg: "from-amber-500 to-orange-600",
-    ringShadow: "shadow-md shadow-amber-500/25",
-    text: "text-amber-700",
-  },
-  sky: {
-    bg: "from-sky-500 to-sky-700",
-    ringShadow: "shadow-md shadow-sky-500/25",
-    text: "text-sky-700",
-  },
-};
 
 export function WhyAtockorea() {
   const t = useTranslations("home");
@@ -115,7 +82,6 @@ export function WhyAtockorea() {
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4">
           {PILLARS.map((pillar) => {
             const Icon = pillar.icon;
-            const accent = ACCENT_STYLES[pillar.accent];
             return (
               <div
                 key={pillar.id}
@@ -123,9 +89,7 @@ export function WhyAtockorea() {
                 className="group relative overflow-hidden scroll-animate home-neutral-card rounded-card p-4 md:p-5 transition-all duration-300 ease-out hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 motion-reduce:transition-none"
               >
                 <div className="flex items-start gap-3">
-                  <div
-                    className={`flex-shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br text-white ${accent.bg} ${accent.ringShadow}`}
-                  >
+                  <div className="flex-shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 text-white">
                     <Icon className="h-4 w-4" />
                   </div>
                   <div className="min-w-0 flex-1">

@@ -35,12 +35,12 @@ export function FinalCTA() {
       <div className="max-w-2xl mx-auto">
         <div ref={blockRef} className="relative scroll-animate">
           <div
-            className="absolute -inset-2 rounded-card bg-gradient-to-br from-primary/[0.07] via-sky-400/[0.04] to-amber-400/[0.05] opacity-45 blur-xl"
+            className="absolute -inset-2 rounded-card bg-amber-400/[0.04] opacity-60 blur-xl"
             aria-hidden
           />
 
           <div className="home-panel-elevated relative overflow-hidden p-6 text-center md:p-10">
-            <div className="absolute left-1/4 right-1/4 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+            <div className="absolute left-1/4 right-1/4 top-0 h-px bg-gradient-to-r from-transparent via-slate-300/40 to-transparent" />
 
             <h2 className="mb-2 text-balance text-2xl font-bold leading-snug tracking-tight text-slate-800 md:text-3xl">
               {t("premium.v2.finalCtaBlock.title")}
@@ -57,19 +57,19 @@ export function FinalCTA() {
                 </span>
               </div>
               <div className="flex items-center gap-2 justify-center">
-                <CheckCircle className="w-4 h-4 text-emerald-600" />
+                <CheckCircle className="w-4 h-4 text-slate-500" />
                 <span className="text-[12px] md:text-sm font-semibold text-slate-700">
                   {t("premium.v2.finalCtaBlock.trust2")}
                 </span>
               </div>
               <div className="flex items-center gap-2 justify-center md:col-span-2 md:col-auto">
-                <Clock className="w-4 h-4 text-primary" />
+                <Clock className="w-4 h-4 text-slate-500" />
                 <span className="text-[12px] md:text-sm font-semibold text-slate-700">
                   {t("premium.v2.finalCtaBlock.trust3")}
                 </span>
               </div>
               <div className="flex items-center gap-2 justify-center md:col-span-2 md:col-auto">
-                <Users className="w-4 h-4 text-sky-600" />
+                <Users className="w-4 h-4 text-slate-500" />
                 <span className="text-[12px] md:text-sm font-semibold text-slate-700">
                   {t("premium.v2.finalCtaBlock.trust4")}
                 </span>
