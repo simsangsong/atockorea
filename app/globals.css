@@ -19,6 +19,19 @@
     filter: saturate(0.78) contrast(0.91) sepia(0.06) brightness(0.99);
   }
 
+  /* Tour photo download/right-click protection. Used together with
+     onContextMenu={preventDefault} on the wrapping container and
+     draggable={false} on the <img>. The image itself does NOT capture
+     pointer events; clicks still fire on the parent button/link. */
+  .tour-photo-protected {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+  }
+
   .hv2-section-title {
     @apply text-2xl font-bold tracking-tight text-slate-900 md:text-3xl lg:text-4xl;
   }

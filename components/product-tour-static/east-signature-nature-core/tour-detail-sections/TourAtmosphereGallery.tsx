@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { TourPhotoOverlay } from "@/components/tour/TourPhotoOverlay";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
 export type TourAtmosphereGalleryProps = Pick<EastSignatureNatureCoreDetailViewModel, "galleryItems" | "sectionUi">;
@@ -91,6 +92,7 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                   type="button"
                   key={item.id}
                   onClick={() => openLightbox(i)}
+                  onContextMenu={(e) => e.preventDefault()}
                   aria-label={item.alt ?? `Open photo ${i + 1}`}
                   className="group relative overflow-hidden rounded-lg cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30"
                   style={{ gridColumn: tile.col, gridRow: tile.row }}
@@ -100,7 +102,9 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                     alt={item.alt ?? ""}
                     loading={i === 0 ? "eager" : "lazy"}
                     decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05] tour-photo-grade"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05] tour-photo-grade tour-photo-protected"
                     style={{ objectPosition: tile.objectPos }}
                   />
                   {item.type === "video" && (
@@ -110,6 +114,7 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                       </div>
                     </div>
                   )}
+                  <TourPhotoOverlay src={item.src} size={i === 0 ? "md" : "sm"} />
                   <div aria-hidden className="pointer-events-none absolute inset-0 rounded-lg ring-1 ring-inset ring-black/[0.05]" />
                 </button>
               );
@@ -146,13 +151,18 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                     "hover:ring-border hover:shadow-[0_2px_4px_rgba(26,35,50,0.06),0_14px_28px_-12px_rgba(26,35,50,0.26)]",
                   )}
                 >
-                  <div className="aspect-[4/3] relative">
+                  <div
+                    className="aspect-[4/3] relative"
+                    onContextMenu={(e) => e.preventDefault()}
+                  >
                     <img
                       src={item.src}
                       alt={item.alt ?? ""}
                       loading="lazy"
                       decoding="async"
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06] tour-photo-grade"
+                      draggable={false}
+                      onContextMenu={(e) => e.preventDefault()}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06] tour-photo-grade tour-photo-protected"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0c1622]/65 via-[#0c1622]/10 to-transparent" />
                     <div aria-hidden className="absolute inset-0 pointer-events-none rounded-xl ring-1 ring-inset ring-white/10" />
@@ -163,9 +173,7 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                         </div>
                       </div>
                     )}
-                    <span className="absolute bottom-1 left-1 right-1 text-[9.5px] font-semibold text-white truncate drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
-                      {item.location}
-                    </span>
+                    <TourPhotoOverlay src={item.src} size="sm" />
                   </div>
                 </button>
               ))}
@@ -223,18 +231,20 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
             <ChevronRight className="h-6 w-6 text-white" strokeWidth={2} />
           </button>
 
-          <div className="relative max-w-4xl max-h-[80vh] mx-16" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="relative max-w-4xl max-h-[80vh] mx-16"
+            onClick={(e) => e.stopPropagation()}
+            onContextMenu={(e) => e.preventDefault()}
+          >
             <img
               src={galleryItems[activeIndex].src}
               alt={galleryItems[activeIndex].alt ?? ""}
               decoding="async"
-              className="max-h-[80vh] w-auto rounded-xl shadow-2xl tour-photo-grade"
+              draggable={false}
+              onContextMenu={(e) => e.preventDefault()}
+              className="max-h-[80vh] w-auto rounded-xl shadow-2xl tour-photo-grade tour-photo-protected"
             />
-            <div className="absolute bottom-4 left-4 right-4 text-center">
-              <span className="inline-block rounded-full bg-black/40 backdrop-blur-sm px-4 py-2 text-sm font-medium text-white">
-                {galleryItems[activeIndex].location}
-              </span>
-            </div>
+            <TourPhotoOverlay src={galleryItems[activeIndex].src} size="lg" className="p-5" />
             {galleryItems[activeIndex].type === "video" && (
               <div className="absolute inset-0 flex items-center justify-center rounded-xl">
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/95 shadow-xl cursor-pointer hover:scale-105 transition-transform">
@@ -259,7 +269,15 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                     : "opacity-45 hover:opacity-75",
                 )}
               >
-                <img src={item.src} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
+                <img
+                  src={item.src}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                  className="h-full w-full object-cover tour-photo-protected"
+                />
               </button>
             ))}
           </div>

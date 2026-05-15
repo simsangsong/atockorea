@@ -83,6 +83,7 @@ function StopCard({
                 <div
                   key={`${src}-${i}`}
                   className="flex-shrink-0 w-20 h-14 rounded-md overflow-hidden bg-slate-100 ring-1 ring-slate-900/5"
+                  onContextMenu={(e) => e.preventDefault()}
                 >
                   <img
                     src={src}
@@ -91,7 +92,9 @@ function StopCard({
                     height={56}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover tour-photo-grade"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
+                    className="w-full h-full object-cover tour-photo-grade tour-photo-protected"
                   />
                 </div>
               ))}

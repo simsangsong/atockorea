@@ -20,6 +20,7 @@ import {
   X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { TourPhotoOverlay } from "@/components/tour/TourPhotoOverlay";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
 import { HaenyeoStatusButton } from "./HaenyeoStatusButton";
 
@@ -652,7 +653,10 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
             {/* Hero image area — slide+fade crossfade between photos. The image
                 surface itself is the click target for the lightbox; the close
                 button sits as a sibling so it doesn't nest inside another button. */}
-            <div className="group relative h-56 flex-shrink-0 overflow-hidden bg-muted">
+            <div
+              className="group relative h-56 flex-shrink-0 overflow-hidden bg-muted"
+              onContextMenu={(e) => e.preventDefault()}
+            >
               <button
                 type="button"
                 onClick={openImageLightbox}
@@ -668,18 +672,22 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                       alt={stop.name}
                       loading="eager"
                       decoding="async"
+                      draggable={false}
+                      onContextMenu={(e) => e.preventDefault()}
                       custom={imageDirection}
                       variants={heroSlideVariants}
                       initial="enter"
                       animate="center"
                       exit="exit"
                       transition={{ duration: 0.5, ease: drawerEase }}
-                      className="absolute inset-0 h-full w-full object-cover tour-photo-grade"
+                      className="absolute inset-0 h-full w-full object-cover tour-photo-grade tour-photo-protected"
                     />
                   </AnimatePresence>
                 ) : null}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0c1622]/55 via-[#0c1622]/10 to-transparent pointer-events-none" />
               </button>
+              {/* Editorial overlays — region top-left omitted (the stop-number pill already lives there) */}
+              <TourPhotoOverlay src={activeImage} size="md" hideRegion className="p-4" />
 
               <div className="pointer-events-none absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white text-sm font-semibold text-foreground shadow-lg ring-[3px] ring-white/70">
                 {String(stop.number).padStart(2, "0")}
@@ -738,8 +746,10 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                           alt=""
                           loading="lazy"
                           decoding="async"
+                          draggable={false}
+                          onContextMenu={(e) => e.preventDefault()}
                           className={cn(
-                            "h-full w-full object-cover transition-transform duration-500",
+                            "h-full w-full object-cover transition-transform duration-500 tour-photo-protected",
                             isActive ? "scale-[1.04]" : "hover:scale-[1.05]",
                           )}
                         />
@@ -1205,6 +1215,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                 <div
                   className="relative mx-4 max-h-[82vh] max-w-5xl"
                   onClick={(e) => e.stopPropagation()}
+                  onContextMenu={(e) => e.preventDefault()}
                 >
                   <AnimatePresence initial={false} mode="popLayout">
                     <motion.img
@@ -1212,13 +1223,16 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                       src={galleryPhotos[lightboxIndex]}
                       alt={stop.name}
                       decoding="async"
+                      draggable={false}
+                      onContextMenu={(e) => e.preventDefault()}
                       initial={{ opacity: 0, scale: 0.985 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.985 }}
                       transition={{ duration: 0.32, ease: drawerEase }}
-                      className="max-h-[82vh] w-auto rounded-xl shadow-2xl"
+                      className="max-h-[82vh] w-auto rounded-xl shadow-2xl tour-photo-grade tour-photo-protected"
                     />
                   </AnimatePresence>
+                  <TourPhotoOverlay src={galleryPhotos[lightboxIndex]} size="lg" className="p-5" />
                 </div>
 
                 {galleryPhotos.length > 1 && (
@@ -1240,7 +1254,15 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                             : "opacity-50 hover:opacity-80",
                         )}
                       >
-                        <img src={src} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover tour-photo-grade" />
+                        <img
+                          src={src}
+                          alt=""
+                          loading="lazy"
+                          decoding="async"
+                          draggable={false}
+                          onContextMenu={(e) => e.preventDefault()}
+                          className="h-full w-full object-cover tour-photo-grade tour-photo-protected"
+                        />
                       </button>
                     ))}
                   </div>

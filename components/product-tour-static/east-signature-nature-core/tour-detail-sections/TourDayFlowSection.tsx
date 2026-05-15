@@ -54,7 +54,9 @@ export function TourDayFlowSection({ routeFlowStops, routeShapeIntro, itineraryS
                             alt=""
                             loading="lazy"
                             decoding="async"
-                            className="h-full w-full object-cover"
+                            draggable={false}
+                            onContextMenu={(e) => e.preventDefault()}
+                            className="h-full w-full object-cover tour-photo-protected"
                           />
                         ) : (
                           <div className="flex h-full w-full items-center justify-center text-[11px] font-semibold text-muted-foreground">
