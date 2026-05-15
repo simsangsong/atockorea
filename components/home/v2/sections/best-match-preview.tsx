@@ -313,25 +313,31 @@ export function BestMatchPreview() {
                       </div>
                     </div>
                     <div className="flex items-center gap-3 text-white/90 text-xs">
-                      <div
-                        className="flex items-center gap-1"
-                        role="img"
-                        aria-label={t("premium.v2.bestMatch.matchMetaRowRatingAria", {
-                          rating: meta.rating,
-                          count: meta.reviews,
-                        })}
-                      >
-                        <Star className="w-3.5 h-3.5 fill-amber-300 text-amber-300" aria-hidden />
-                        <span className="font-semibold" aria-hidden>
-                          {meta.rating}
-                        </span>
-                        <span className="text-white/60" aria-hidden>
-                          ({meta.reviews})
-                        </span>
-                      </div>
-                      <span className="text-white/40" aria-hidden>
-                        ·
-                      </span>
+                      {Number(meta.rating) > 0 ? (
+                        <>
+                          <div
+                            className="flex items-center gap-1"
+                            role="img"
+                            aria-label={t("premium.v2.bestMatch.matchMetaRowRatingAria", {
+                              rating: meta.rating,
+                              count: meta.reviews,
+                            })}
+                          >
+                            <Star className="w-3.5 h-3.5 fill-amber-300 text-amber-300" aria-hidden />
+                            <span className="font-semibold" aria-hidden>
+                              {meta.rating}
+                            </span>
+                            {Number(meta.reviews) > 0 ? (
+                              <span className="text-white/60" aria-hidden>
+                                ({meta.reviews})
+                              </span>
+                            ) : null}
+                          </div>
+                          <span className="text-white/40" aria-hidden>
+                            ·
+                          </span>
+                        </>
+                      ) : null}
                       <div className="flex items-center gap-1">
                         <Clock className="w-3 h-3" aria-hidden />
                         <span>{meta.duration}</span>

@@ -90,8 +90,11 @@ function TourListCard({ tour, detailHref, formatPriceFn, imageSizes, layout = 'v
   const displayTitle = tour.title;
   const displayImage =
     tour.imageUrl || 'https://images.unsplash.com/photo-1534008897995-27a23e859048?w=600&q=80';
-  const displayRating = tour.rating ?? 4.5;
+  // Show rating only when we actually have one. Previously this defaulted
+  // to 4.5 when null — that printed a fake star on every card.
+  const displayRating = typeof tour.rating === 'number' && tour.rating > 0 ? tour.rating : null;
   const displayReviewCount = tour.reviewCount ?? 0;
+  const showRating = displayRating !== null;
   const displayDuration = formatTourDurationForCard(tour.duration, locale);
   const showBookingCount = tour.bookingCount != null && tour.bookingCount > 0;
 
@@ -237,15 +240,17 @@ function TourListCard({ tour, detailHref, formatPriceFn, imageSizes, layout = 'v
             isHorizontal ? 'mt-2' : 'mt-1.5',
           )}
         >
-          <span className="inline-flex items-center gap-1 rounded-full border border-amber-100 bg-amber-50/90 px-2 py-0.5 font-medium text-amber-700">
-            <svg className="h-3.5 w-3.5 text-amber-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.034 3.182a1 1 0 0 0 .95.69h3.347c.969 0 1.371 1.24.588 1.81l-2.708 1.967a1 1 0 0 0-.364 1.118l1.034 3.182c.3.922-.755 1.688-1.538 1.118l-2.708-1.967a1 1 0 0 0-1.176 0l-2.708 1.967c-.783.57-1.838-.196-1.539-1.118l1.035-3.182a1 1 0 0 0-.364-1.118L2.18 8.609c-.783-.57-.38-1.81.588-1.81h3.347a1 1 0 0 0 .951-.69l1.034-3.182Z" />
-            </svg>
-            <span className="font-semibold text-slate-900">{displayRating.toFixed(1)}</span>
-            {displayReviewCount > 0 ? (
-              <span className="text-amber-700/80">({displayReviewCount.toLocaleString()})</span>
-            ) : null}
-          </span>
+          {showRating ? (
+            <span className="inline-flex items-center gap-1 rounded-full border border-amber-100 bg-amber-50/90 px-2 py-0.5 font-medium text-amber-700">
+              <svg className="h-3.5 w-3.5 text-amber-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.034 3.182a1 1 0 0 0 .95.69h3.347c.969 0 1.371 1.24.588 1.81l-2.708 1.967a1 1 0 0 0-.364 1.118l1.034 3.182c.3.922-.755 1.688-1.538 1.118l-2.708-1.967a1 1 0 0 0-1.176 0l-2.708 1.967c-.783.57-1.838-.196-1.539-1.118l1.035-3.182a1 1 0 0 0-.364-1.118L2.18 8.609c-.783-.57-.38-1.81.588-1.81h3.347a1 1 0 0 0 .951-.69l1.034-3.182Z" />
+              </svg>
+              <span className="font-semibold text-slate-900">{displayRating!.toFixed(1)}</span>
+              {displayReviewCount > 0 ? (
+                <span className="text-amber-700/80">({displayReviewCount.toLocaleString()})</span>
+              ) : null}
+            </span>
+          ) : null}
           {displayDuration ? (
             <span className="inline-flex items-center gap-1 rounded-full border border-slate-200/85 bg-white/90 px-2 py-0.5 font-medium text-slate-600">
               <svg className="h-3.5 w-3.5 text-slate-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
