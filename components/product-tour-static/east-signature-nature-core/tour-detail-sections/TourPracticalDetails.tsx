@@ -1,9 +1,62 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { ChevronDown, CloudSun, CloudRain, Check, X, Flower2, Sun, Leaf, Snowflake } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+
+/**
+ * If a body line is a run-on of "Label (HH:MM), Label (HH:MM), Label (HH:MM)"
+ * — typical for pickup/drop-off lists — split it into one sub-item per time
+ * so they render as discrete bullets instead of a wall of commas.
+ *
+ * Conservative: requires ≥3 time refs AND ≥70% of comma-split parts to
+ * contain a time, otherwise returns the line unchanged.
+ */
+function splitTimeSequences(line: string): string[] {
+  const timeMatches = line.match(/\b\d{1,2}:\d{2}\b/g) ?? [];
+  if (timeMatches.length < 3) return [line];
+  const parts = line.split(/,\s+/).map((p) => p.trim()).filter(Boolean);
+  if (parts.length < 3) return [line];
+  const withTime = parts.filter((p) => /\d{1,2}:\d{2}/.test(p)).length;
+  if (withTime < Math.ceil(parts.length * 0.7)) return [line];
+  // Restore trailing period that may have been on the last part
+  return parts;
+}
+
+// Times (08:30, ≈17:50), KRW prices (₩10,000, ₩10,000–₩20,000), hour-units
+// (10 h, 9.5 h), Korean equivalents (시간/분), and lone ≈ approximation marks.
+const INLINE_HIGHLIGHT_RE =
+  /(₩[\d,]+(?:\s*[-–~]\s*₩?[\d,]+)?|\b\d{1,2}:\d{2}\b|\b\d+(?:\.\d+)?\s*h\b|\d+(?:\.\d+)?\s*(?:시간|분|hours?|min(?:utes?)?)\b|≈|~)/g;
+
+function renderInline(text: string): React.ReactNode[] {
+  const out: React.ReactNode[] = [];
+  let lastIdx = 0;
+  let key = 0;
+  let m: RegExpExecArray | null;
+  // Reset state for each call (global regex shares lastIndex across calls).
+  INLINE_HIGHLIGHT_RE.lastIndex = 0;
+  while ((m = INLINE_HIGHLIGHT_RE.exec(text)) !== null) {
+    if (m.index > lastIdx) out.push(<Fragment key={key++}>{text.slice(lastIdx, m.index)}</Fragment>);
+    const token = m[0];
+    if (token === "≈" || token === "~") {
+      out.push(
+        <span key={key++} className="mx-px text-[0.85em] text-slate-400">
+          {token}
+        </span>,
+      );
+    } else {
+      out.push(
+        <strong key={key++} className="font-semibold tabular-nums text-slate-900">
+          {token}
+        </strong>,
+      );
+    }
+    lastIdx = m.index + token.length;
+  }
+  if (lastIdx < text.length) out.push(<Fragment key={key++}>{text.slice(lastIdx)}</Fragment>);
+  return out;
+}
 import type { ForecastApiPayload } from "@/lib/weather/forecast-logic";
 import { isWmoPrecipitationCode } from "@/lib/weather/open-meteo";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
@@ -299,70 +352,92 @@ export function TourPracticalDetails({
       </div>
 
       <div className="card-premium overflow-hidden divide-y divide-border/60">
-        {practicalAccordionItems.map((item) => (
-          <div key={item.id}>
-            <button
-              onClick={() => toggleItem(item.id)}
-              className="flex w-full items-center justify-between p-4 text-left hover:bg-muted/20 transition-colors"
-            >
-              <div className="pr-4 min-w-0">
-                <h3 className="text-sm font-semibold text-foreground">{item.title}</h3>
-                <p className="text-xs text-muted-foreground mt-0.5 truncate">{item.preview}</p>
-              </div>
+        {practicalAccordionItems.map((item) => {
+          const isOpen = expandedItems.includes(item.id);
+          return (
+            <div key={item.id}>
+              <button
+                onClick={() => toggleItem(item.id)}
+                aria-expanded={isOpen}
+                className="flex w-full items-center justify-between p-4 text-left hover:bg-muted/20 transition-colors"
+              >
+                <div className="pr-4 min-w-0">
+                  <h3 className="text-[15px] font-bold tracking-tight text-slate-900">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1 truncate text-[12px] leading-snug text-slate-500">
+                    {item.preview}
+                  </p>
+                </div>
+                <div
+                  className={cn(
+                    "flex-shrink-0 rounded-full p-1 transition-all duration-200",
+                    isOpen ? "bg-primary/10 rotate-180" : "",
+                  )}
+                >
+                  <ChevronDown
+                    className={cn(
+                      "h-4 w-4 transition-colors",
+                      isOpen ? "text-primary" : "text-muted-foreground",
+                    )}
+                  />
+                </div>
+              </button>
+
               <div
                 className={cn(
-                  "flex-shrink-0 p-1 rounded-full transition-all duration-200",
-                  expandedItems.includes(item.id) ? "bg-primary/10 rotate-180" : "",
+                  "grid transition-all duration-200 ease-out",
+                  isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
                 )}
               >
-                <ChevronDown
-                  className={cn("h-4 w-4 transition-colors", expandedItems.includes(item.id) ? "text-primary" : "text-muted-foreground")}
-                />
-              </div>
-            </button>
-
-            <div
-              className={cn(
-                "grid transition-all duration-200 ease-out",
-                expandedItems.includes(item.id) ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
-              )}
-            >
-              <div className="overflow-hidden">
-                <div className="px-4 pb-5">
-                  <ul className="space-y-2.5">
-                    {(item.content ?? []).map((line, i) => {
-                      if (item.variant === "included") {
-                        const splitAt = item.includedCount ?? 5;
-                        const isIncluded = i < splitAt;
-                        return (
-                          <li key={i} className="flex items-start gap-2.5 text-sm">
-                            {isIncluded ? (
-                              <>
-                                <Check className="h-4 w-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                                <span className="text-foreground">{line}</span>
-                              </>
-                            ) : (
-                              <>
-                                <X className="h-4 w-4 text-muted-foreground/50 mt-0.5 flex-shrink-0" />
-                                <span className="text-muted-foreground">{line}</span>
-                              </>
-                            )}
+                <div className="overflow-hidden">
+                  <div className="px-4 pb-5">
+                    {/* Left accent rail visually separates answer from question */}
+                    <ul className="ml-1 space-y-3 border-l-2 border-amber-200/60 pl-4">
+                      {(item.content ?? []).flatMap((rawLine, i) => {
+                        // included variant keeps its check/X iconography unchanged
+                        if (item.variant === "included") {
+                          const splitAt = item.includedCount ?? 5;
+                          const isIncluded = i < splitAt;
+                          return [
+                            <li
+                              key={i}
+                              className="-ml-[1.4rem] flex items-start gap-2.5 text-[13.5px] leading-[1.65]"
+                            >
+                              {isIncluded ? (
+                                <>
+                                  <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-500" />
+                                  <span className="text-slate-700">{rawLine}</span>
+                                </>
+                              ) : (
+                                <>
+                                  <X className="mt-0.5 h-4 w-4 flex-shrink-0 text-muted-foreground/50" />
+                                  <span className="text-muted-foreground">{rawLine}</span>
+                                </>
+                              )}
+                            </li>,
+                          ];
+                        }
+                        // For prose lines: optionally split comma-time sequences
+                        // into discrete sub-bullets, then auto-bold inline times/
+                        // prices/durations and dim the ≈ approximation marks.
+                        const subLines = splitTimeSequences(rawLine);
+                        return subLines.map((sub, j) => (
+                          <li
+                            key={`${i}-${j}`}
+                            className="text-[13px] leading-[1.7] text-slate-600"
+                          >
+                            {renderInline(sub)}
                           </li>
-                        );
-                      }
-                      return (
-                        <li key={i} className="flex items-start gap-2.5 text-sm text-foreground">
-                          <div className="h-1.5 w-1.5 rounded-full bg-primary/60 mt-2 flex-shrink-0" />
-                          <span>{line}</span>
-                        </li>
-                      );
-                    })}
-                  </ul>
+                        ));
+                      })}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
