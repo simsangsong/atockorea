@@ -4,7 +4,7 @@ import type { CSSProperties, ReactNode } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
-import { ChevronRight, Clock, Star, Users } from "lucide-react";
+import { Check, ChevronRight, Clock, Sparkles, Star, Users } from "lucide-react";
 import Image from "next/image";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -187,34 +187,102 @@ export function BestMatchPreview() {
             aria-live="polite"
             aria-busy="true"
           >
-            {/** Skeleton card — mirrors the result layout (hero image + tags + text + button) so there's no layout shift. */}
-            <div className="relative aspect-[3/2] md:aspect-[16/9] overflow-hidden bg-slate-100">
-              <div className="absolute inset-0 bg-gradient-to-tr from-slate-200/70 via-slate-100/40 to-slate-200/60 animate-pulse" />
-              <div className="absolute bottom-0 left-0 right-0 z-[2] p-3 md:p-5 flex items-end justify-between gap-3">
-                <div className="flex-1 space-y-2">
-                  <div className="h-5 w-3/5 rounded bg-white/70 animate-pulse" />
-                  <div className="h-3 w-2/5 rounded bg-white/60 animate-pulse" />
+            {/* Match thinking visualization — replaces the generic gradient
+                skeleton with a deliberate "the matcher is actually doing
+                something" UI: animated sparkle in the hero slot, then a
+                3-step checklist below that lights up sequentially. Layout
+                still mirrors the result card so the transition into the
+                result has no shift. */}
+            <div className="relative aspect-[3/2] md:aspect-[16/9] overflow-hidden bg-gradient-to-br from-slate-50 via-sky-50/60 to-amber-50/40">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(56,189,248,0.18),transparent_55%),radial-gradient(circle_at_75%_70%,rgba(251,191,36,0.14),transparent_55%)]" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative">
+                  {/* Outer ring — spins */}
+                  <div
+                    className="h-20 w-20 rounded-full border-2 border-sky-200 border-t-sky-500 animate-spin md:h-24 md:w-24"
+                    aria-hidden
+                  />
+                  {/* Inner pulsing halo */}
+                  <span
+                    className="pointer-events-none absolute inset-3 rounded-full bg-sky-400/15 animate-ping md:inset-4"
+                    aria-hidden
+                  />
+                  {/* Sparkles icon centered */}
+                  <span
+                    className="pointer-events-none absolute inset-0 flex items-center justify-center"
+                    aria-hidden
+                  >
+                    <Sparkles className="h-7 w-7 text-sky-600 md:h-8 md:w-8" strokeWidth={1.8} />
+                  </span>
                 </div>
-                <div className="h-6 w-16 rounded bg-white/70 animate-pulse" />
               </div>
             </div>
-            <div className="p-3 md:p-5">
-              <div className="flex gap-1.5 mb-3 md:mb-4">
-                <div className="h-5 w-20 rounded-full bg-slate-100 animate-pulse" />
-                <div className="h-5 w-24 rounded-full bg-slate-100 animate-pulse" />
-                <div className="h-5 w-20 rounded-full bg-slate-100 animate-pulse" />
+            <div className="p-4 md:p-5">
+              <div className="mb-3 flex items-center gap-2">
+                <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-sky-700">
+                  Smart Match
+                </span>
+                <span className="h-1 w-1 rounded-full bg-sky-400" aria-hidden />
+                <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-slate-500">
+                  analyzing
+                </span>
               </div>
-              <div className="space-y-2 mb-4 md:mb-5">
-                <div className="h-3 w-full rounded bg-slate-100 animate-pulse" />
-                <div className="h-3 w-11/12 rounded bg-slate-100 animate-pulse" />
-                <div className="h-3 w-3/5 rounded bg-slate-100 animate-pulse" />
-              </div>
-              <div className="flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-sky-500/10 via-sky-500/15 to-sky-500/10 py-4 md:py-5 border border-sky-200/60">
-                <span
-                  className="h-4 w-4 animate-spin rounded-full border-2 border-sky-300 border-t-sky-600"
-                  aria-hidden
+
+              <ol className="mb-4 space-y-2.5">
+                {(
+                  [
+                    "premium.hero.matchLoadingAnalyzing",
+                    "premium.hero.matchLoadingMatching",
+                    "premium.hero.matchLoadingComplete",
+                  ] as const
+                ).map((key, idx) => {
+                  const state =
+                    idx < loadingStep ? "done" : idx === loadingStep ? "active" : "pending";
+                  return (
+                    <li key={key} className="flex items-center gap-3">
+                      {/* Step indicator */}
+                      {state === "done" ? (
+                        <span
+                          className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white"
+                          aria-hidden
+                        >
+                          <Check className="h-3 w-3" strokeWidth={3} />
+                        </span>
+                      ) : state === "active" ? (
+                        <span className="relative flex h-4 w-4 flex-shrink-0 items-center justify-center" aria-hidden>
+                          <span className="absolute inset-0 rounded-full bg-sky-400/40 animate-ping" />
+                          <span className="relative h-2.5 w-2.5 rounded-full bg-sky-500 shadow-[0_0_10px_rgba(56,189,248,0.55)]" />
+                        </span>
+                      ) : (
+                        <span
+                          className="h-4 w-4 flex-shrink-0 rounded-full border-2 border-slate-200"
+                          aria-hidden
+                        />
+                      )}
+                      <span
+                        className={cn(
+                          "text-[13px] transition-colors",
+                          state === "done" && "text-slate-700",
+                          state === "active" && "font-semibold text-slate-900",
+                          state === "pending" && "text-slate-400",
+                        )}
+                      >
+                        {t(key)}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ol>
+
+              {/* Progress bar — fills with loadingStep */}
+              <div
+                className="h-1 w-full overflow-hidden rounded-full bg-slate-100"
+                aria-hidden
+              >
+                <div
+                  className="h-full rounded-full bg-gradient-to-r from-sky-400 via-sky-500 to-sky-600 transition-[width] duration-500 ease-out"
+                  style={{ width: `${Math.min(loadingStep + 1, 3) * 33.33}%` }}
                 />
-                <span className="text-[13px] font-semibold tracking-tight text-slate-700">{loadingLabel}</span>
               </div>
             </div>
           </div>

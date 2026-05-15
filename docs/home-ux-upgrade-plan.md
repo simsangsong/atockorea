@@ -148,7 +148,12 @@ Order matters — earlier items make later ones easier:
       duplicated blocks to a data-driven `STEPS` config + `StepIconBadge`
       helper. md (2-col) and lg (4-col with horizontal connector) layouts
       untouched. H2 migrated to `.text-h2`.
-- [ ] AI match thinking visualization.
+- [x] AI match thinking visualization — replaced BestMatchPreview's
+      gradient skeleton with a deliberate "matcher thinking" UI: spinner
+      + pulsing sparkle in the hero slot, 3-step checklist (Analyzing →
+      Matching → Match ready) using the existing translation keys, and
+      a progress bar that tracks `loadingStep`. Layout still mirrors the
+      result card so there's no shift on transition.
 - [ ] Sticky bottom CTA after scroll past hero.
 - [ ] Section transitions reworked from 10px gradient to organic dividers.
 - [ ] Snap-scroll dot-progress indicator (deferred from Phase 2 Step 4).
@@ -228,9 +233,8 @@ phase rollup honest.
 
 ## Working Order — Next Up
 
-**Phase 2 complete** ✅, **Phase 3 Steps 1–2 complete** ✅.
+**Phase 2 complete** ✅, **Phase 3 Steps 1–3 complete** ✅.
 
-Next: **Phase 3 Step 3 — AI match thinking visualization** (BestMatchPreview
-loading phase currently shows a generic skeleton; replace with a thinking
-animation that surfaces the matcher's progress — "checking 30 verified
-tours · scoring on photo / itinerary / season..." style).
+Next: **Phase 3 Step 4 — Sticky bottom CTA after hero**. Once a user
+scrolls past the hero, a slim sticky bottom bar appears with "Match me"
++ "Browse all tours" so conversion is always one tap away even mid-page.
