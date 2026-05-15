@@ -129,10 +129,14 @@ export function TourPhotoOverlay({
 
   // Bigger insets so badges and stop names breathe away from the photo edges.
   const insetClass =
-    size === "xs" ? "p-2" :
-    size === "sm" ? "p-3.5" :
-    size === "lg" ? "p-8" :
-    "p-4";
+    size === "xs" ? "p-1.5" :
+    size === "sm" ? "p-4" :
+    size === "lg" ? "p-12" :
+    "p-5";
+
+  // Tiny thumbnails (timeline mini-cards) can't comfortably show the magazine
+  // stop name — even at 6px the text overflows the 80px frame. Hide it on xs.
+  const showStopName = !hideStopName && resolvedName && size !== "xs";
 
   return (
     <div
@@ -152,7 +156,7 @@ export function TourPhotoOverlay({
 
       {/* bottom-right: stop name — Playfair Display italic 700 (dramatic
           magazine headline italic, bolder than Cormorant Garamond). */}
-      {!hideStopName && resolvedName ? (
+      {showStopName ? (
         <span
           className={cn(
             "absolute bottom-0 right-0 italic text-white whitespace-nowrap",
