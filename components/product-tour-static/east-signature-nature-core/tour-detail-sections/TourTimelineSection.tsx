@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Clock, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { TourPhotoOverlay } from "@/components/tour/TourPhotoOverlay";
 import type { ItineraryStop } from "@/components/product-tour-static/_shared/tourProductDetailSectionTypes";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 import { PickupOnlyCards, DropoffOnlyCard } from "@/components/product-tour-static/_shared/pickup-dropoff/PickupDropoffCards";
@@ -82,7 +83,7 @@ function StopCard({
               {photos.map((src, i) => (
                 <div
                   key={`${src}-${i}`}
-                  className="flex-shrink-0 w-20 h-14 rounded-md overflow-hidden bg-slate-100 ring-1 ring-slate-900/5"
+                  className="relative flex-shrink-0 w-20 h-14 rounded-md overflow-hidden bg-slate-100 ring-1 ring-slate-900/5"
                   onContextMenu={(e) => e.preventDefault()}
                 >
                   <img
@@ -96,6 +97,7 @@ function StopCard({
                     onContextMenu={(e) => e.preventDefault()}
                     className="w-full h-full object-cover tour-photo-grade tour-photo-protected"
                   />
+                  <TourPhotoOverlay src={src} size="xs" />
                 </div>
               ))}
             </div>

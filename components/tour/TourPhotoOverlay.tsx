@@ -6,8 +6,9 @@ import { deriveEnStopName, deriveRegion } from "@/lib/tour-photo-overlay";
 
 /**
  * Editorial overlays for tour-detail photos:
- *   - top-left: region label, white "cloud" pill (Jeju / Busan / Seoul / …)
- *   - bottom-right: stop name in English, italic serif, magazine style
+ *   - top-right: region label, white "cloud" pill (Jeju / Busan / Seoul / …)
+ *       — dark text floating on a soft white cloud (not glass)
+ *   - bottom-right: stop name in English, italic Cormorant Garamond
  *
  * Drop this absolutely-positioned inside any image container. The component
  * itself is pointer-events: none so it never blocks clicks on the photo.
@@ -16,10 +17,16 @@ export type TourPhotoOverlayProps = {
   src?: string | null;
   region?: string | null;
   stopName?: string | null;
-  /** Size variant — defaults to `md`. Use `sm` on cards/thumbnails. */
-  size?: "sm" | "md" | "lg";
+  /**
+   * Size variant — defaults to `md`.
+   *   xs: timeline-card mini thumbs (80×56)
+   *   sm: drawer hero, gallery bento tiles
+   *   md: gallery bento hero
+   *   lg: lightbox / full-screen
+   */
+  size?: "xs" | "sm" | "md" | "lg";
   className?: string;
-  /** If true, top-left region is omitted (e.g. drawer hero already has a number pill). */
+  /** Skip the region pill (e.g. drawer hero already has a number pill). */
   hideRegion?: boolean;
   hideStopName?: boolean;
 };
@@ -38,39 +45,47 @@ export function TourPhotoOverlay({
 
   if (!resolvedRegion && !resolvedName) return null;
 
+  // Region pill — white cloud feel (not glass): solid white-ish bg, soft
+  // floating shadow, dark text on top so it reads cleanly.
   const regionSize =
-    size === "sm" ? "text-[8px] tracking-[0.18em] px-1.5 py-[1px]" :
-    size === "lg" ? "text-[11px] tracking-[0.22em] px-2.5 py-0.5" :
-    "text-[9.5px] tracking-[0.2em] px-2 py-0.5";
+    size === "xs" ? "text-[7px] tracking-[0.16em] px-1 py-[1px]" :
+    size === "sm" ? "text-[8.5px] tracking-[0.18em] px-1.5 py-[1.5px]" :
+    size === "lg" ? "text-[10.5px] tracking-[0.22em] px-2.5 py-0.5" :
+    "text-[9px] tracking-[0.2em] px-2 py-0.5";
 
   const stopSize =
+    size === "xs" ? "text-[9px]" :
     size === "sm" ? "text-[11px]" :
-    size === "lg" ? "text-[18px]" :
+    size === "lg" ? "text-[20px]" :
     "text-[14px]";
 
   const insetClass =
-    size === "sm" ? "p-1" :
-    size === "lg" ? "p-3" :
+    size === "xs" ? "p-1" :
+    size === "sm" ? "p-1.5" :
+    size === "lg" ? "p-4" :
     "p-2";
 
   return (
-    <div className={cn("pointer-events-none absolute inset-0 z-10", insetClass, className)} aria-hidden="true">
-      {/* top-left: region (white cloud pill) */}
+    <div
+      className={cn("pointer-events-none absolute inset-0 z-10", insetClass, className)}
+      aria-hidden="true"
+    >
+      {/* top-right: region — soft white cloud pill */}
       {!hideRegion && resolvedRegion ? (
         <span
           className={cn(
-            "absolute left-0 top-0 inline-flex items-center rounded-full uppercase font-light text-white",
-            "bg-white/22 backdrop-blur-md ring-1 ring-white/30",
-            "shadow-[0_2px_8px_-2px_rgba(0,0,0,0.35)] drop-shadow-[0_1px_3px_rgba(0,0,0,0.35)]",
+            "absolute right-0 top-0 inline-flex items-center rounded-full uppercase font-medium text-slate-700",
+            "bg-white/95",
+            // Multi-layer shadow: short close shadow + diffused glow ≈ floating cloud
+            "shadow-[inset_0_0_0_1px_rgba(255,255,255,0.7),0_1px_3px_-1px_rgba(15,23,42,0.18),0_8px_22px_-6px_rgba(15,23,42,0.22)]",
             regionSize,
           )}
-          style={{ left: undefined, top: undefined }}
         >
           {resolvedRegion}
         </span>
       ) : null}
 
-      {/* bottom-right: stop name (magazine italic serif) */}
+      {/* bottom-right: stop name — Cormorant Garamond italic */}
       {!hideStopName && resolvedName ? (
         <span
           className={cn(
@@ -79,9 +94,10 @@ export function TourPhotoOverlay({
             stopSize,
           )}
           style={{
-            fontFamily: "'Cormorant Garamond','Playfair Display',Georgia,'Times New Roman',serif",
-            letterSpacing: "0.02em",
-            textShadow: "0 1px 2px rgba(0,0,0,0.5)",
+            fontFamily: "var(--font-editorial-serif), 'Cormorant Garamond', 'Playfair Display', Georgia, 'Times New Roman', serif",
+            fontWeight: 500,
+            letterSpacing: "0.012em",
+            textShadow: "0 1px 2px rgba(0,0,0,0.55), 0 0 1px rgba(0,0,0,0.4)",
           }}
         >
           {resolvedName}
@@ -90,7 +106,3 @@ export function TourPhotoOverlay({
     </div>
   );
 }
-
-/* TourPhotoOverlay is rendered absolutely INSIDE a container that already
-   positions the photo. The wrapping container should set `position: relative`
-   and use `onContextMenu={preventDefault}` for right-click suppression. */

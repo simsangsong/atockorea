@@ -173,7 +173,7 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                         </div>
                       </div>
                     )}
-                    <TourPhotoOverlay src={item.src} size="sm" />
+                    {/* Strip thumbs are too narrow for readable overlay text — keep clean */}
                   </div>
                 </button>
               ))}

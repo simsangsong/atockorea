@@ -686,8 +686,9 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                 ) : null}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0c1622]/55 via-[#0c1622]/10 to-transparent pointer-events-none" />
               </button>
-              {/* Editorial overlays — region top-left omitted (the stop-number pill already lives there) */}
-              <TourPhotoOverlay src={activeImage} size="md" hideRegion className="p-4" />
+              {/* Editorial overlay — only stop name at bottom-right; top-right is
+                  already occupied by the photo counter + close button. */}
+              <TourPhotoOverlay src={activeImage} size="sm" hideRegion className="p-4" />
 
               <div className="pointer-events-none absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white text-sm font-semibold text-foreground shadow-lg ring-[3px] ring-white/70">
                 {String(stop.number).padStart(2, "0")}
