@@ -24,8 +24,8 @@
     "region": "済州島南西部",
     "duration": "8時間",
     "stopsCount": 6,
-    "rating": 4.8,
-    "reviewCount": 127,
+    "rating": 0,
+    "reviewCount": 0,
     "badges": [
       "済州島初訪問者に最適",
       "済州島南西部"
@@ -65,7 +65,7 @@
       "duration": "8時間",
       "region": "済州島南西部",
       "stops": "6か所",
-      "rating": 4.8,
+      "rating": 0,
       "ratingStars": 5
     }
   },
@@ -1754,7 +1754,7 @@
       "osulloc_tea_museum",
       "aewol_cafe_street"
     ],
-    "reviews_attribution": "Reviews curated from AtoC Korea operator feedback. 4.8/5 average across 142 verified bookings.",
+    "reviews_attribution": null,
     "unesco_fit_note": "unesco_fit=3: Hallasan is a UNESCO Biosphere Reserve and the centerpiece of the Jeju Volcanic Island and Lava Tubes World Heritage inscription, but the tour visits the 1100 Highland scenic zone (drive-up viewing area), not the inscribed lava tube system or the summit hike.",
     "competing_products": [
       "jeju-grand-highlights-loop",
@@ -1831,7 +1831,7 @@
             "duration": "8時間",
             "region": "済州島南西部",
             "stops": "6か所",
-            "rating": 4.8,
+            "rating": 0,
             "ratingStars": 5
           }
         }
@@ -2574,117 +2574,38 @@
       "id": "reviews",
       "component": "TourReviewsSection",
       "props": {
-        "guestReviews": [
-          {
-            "id": 1,
-            "author": "Sarah M. > **注記：** 行 2・5（CSS クラス名）、行 6・29（コンポーネント名）、行 30（固有名）は原文のまま保持しました。",
-            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
-            "location": "シンガポール",
-            "date": "2024年3月",
-            "rating": 5,
-            "title": "済州島南西部を1日で巡る、本当にバランスの取れたコース",
-            "text": "コースの流れが素晴らしかったです。漢拏山からスタートしたことで一日に力強い勢いが生まれ、その後の柱状節理（ジュサンジョルリ）がさらに印象的に感じられました。オ・スルロックからエウォルへと続くルートが特に気に入りました。午後は自然とゆったりとした空気に変わり、一日全体がとても心地よいペースで進んだように感じました。",
-            "helpful": 24,
-            "verified": true,
-            "tripType": "カップル",
-            "photos": [
-              "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
-              "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80"
-            ]
-          },
-          {
-            "id": 2,
-            "author": "James K.",
-            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-            "location": "香港",
-            "date": "2024年3月",
-            "rating": 5,
-            "title": "特に心地よいフィナーレが印象的な、素晴らしい南西コース",
-            "text": "韓国でいくつかのツアーに参加しましたが、このツアーはコースの順序設計が秀逸で際立っていました。漢拏山、断崖、天帝淵（チョンジェヨン）の間のリズムをガイドさんが非常にスムーズに調整してくれ、オ・スルロックからエウォルへの締めくくりが一日を疲れではなくバランスよく感じさせてくれました。",
-            "helpful": 18,
-            "verified": true,
-            "tripType": "家族",
-            "photos": []
-          },
-          {
-            "id": 3,
-            "author": "Yuki T.",
-            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-            "location": "東京",
-            "date": "2024年2月",
-            "rating": 4,
-            "title": "エウォルで一日を締めくくれたことが特に良かったです",
-            "text": "全体的な体験はとても良かったです。オスンセンアク（Eoseungsaengak）は期待以上に印象的なスタートで、オ・スルロックはエウォルの前に立ち寄る完璧な場所でした。エウォルでもう少し時間を過ごしたかったという気持ちから星4つにしましたが、スケジュールに制約があることは理解しています。",
-            "helpful": 12,
-            "verified": true,
-            "tripType": "ひとり旅",
-            "photos": [
-              "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&q=80"
-            ]
-          },
-          {
-            "id": 4,
-            "author": "Michael R.",
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-            "location": "シドニー",
-            "date": "2024年2月",
-            "rating": 5,
-            "title": "コースは予想以上に変化に富んでいました",
-            "text": "主に景色目当てで参加しましたが、最も心に残ったのは一日全体のつながりの良さでした。漢拏山、玄武岩の断崖、滝、茶畑、そしてエウォルの海岸が、すべて一つの連続したストーリーのように感じられ、少人数制のスタイルがすべての移動をスムーズにしてくれました。",
-            "helpful": 31,
-            "verified": true,
-            "tripType": "友人",
-            "photos": []
-          }
-        ],
+        "guestReviews": [],
         "reviewsSummary": {
-          "averageRating": 4.8,
-          "totalReviews": 127,
+          "averageRating": 0,
+          "totalReviews": 0,
           "ratingDistribution": [
             {
               "stars": 5,
-              "count": 98,
-              "percentage": 77
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 4,
-              "count": 21,
-              "percentage": 17
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 3,
-              "count": 6,
-              "percentage": 5
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 2,
-              "count": 1,
-              "percentage": 1
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 1,
-              "count": 1,
-              "percentage": 1
+              "count": 0,
+              "percentage": 0
             }
           ],
-          "highlights": [
-            {
-              "label": "景色",
-              "count": 89
-            },
-            {
-              "label": "ガイド",
-              "count": 76
-            },
-            {
-              "label": "ペース",
-              "count": 54
-            },
-            {
-              "label": "エウォルのフィナーレ",
-              "count": 41
-            }
-          ]
+          "highlights": []
         }
       }
     },

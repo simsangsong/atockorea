@@ -743,16 +743,36 @@
   ],
   "guestReviews": [],
   "reviewsSummary": {
-    "totalReviews": 0,
     "averageRating": 0,
-    "ratingDistribution": {
-      "1": 0,
-      "2": 0,
-      "3": 0,
-      "4": 0,
-      "5": 0
-    },
-    "lastUpdated": "2026-04-28"
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
   },
   "sticky_booking_bar": {
     "note": "checkout_tour_idは実行時にSupabase / envから解決されるものであり、静的なJSONBには含まれません。",

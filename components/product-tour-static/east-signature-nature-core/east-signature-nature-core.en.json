@@ -71,7 +71,7 @@
       "duration": "8 hours",
       "region": "East Jeju",
       "stops": "6 stops",
-      "rating": 4.8,
+      "rating": 0,
       "ratingStars": 4
     }
   },
@@ -1535,117 +1535,38 @@
       "answer": "After Seongsan, Ilchulland slows the pace down, and Seongeup Folk Village adds a cultural finish. That makes the whole day feel more complete instead of stacking scenic stops at the same intensity all the way through."
     }
   ],
-  "guestReviews": [
-    {
-      "id": 1,
-      "author": "Sarah M.",
-      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
-      "location": "Singapore",
-      "date": "March 2024",
-      "rating": 5,
-      "title": "The pacing on this East Jeju tour felt really comfortable",
-      "text": "The route order made a lot of sense. Starting at Stone Park gave real background to everything we saw later, and the guide connected the geology story so Seongsan and Ilchulland felt like part of one bigger narrative rather than random stops. Lunch was timed perfectly too, so I still had plenty of energy for Seongsan in the afternoon.",
-      "helpful": 24,
-      "verified": true,
-      "tripType": "Couple",
-      "photos": [
-        "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=400&q=80",
-        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=80"
-      ]
-    },
-    {
-      "id": 2,
-      "author": "James K.",
-      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-      "location": "Hong Kong",
-      "date": "March 2024",
-      "rating": 5,
-      "title": "Great value for seeing East Jeju in one day",
-      "text": "I have joined a few day tours in Korea, and what stood out here was how carefully the route was sequenced. The guide clearly knew when to slow things down and when to move the day forward. Ending at the folk village was a smart touch too. After so much natural scenery, the cultural finish gave the day a different kind of depth.",
-      "helpful": 18,
-      "verified": true,
-      "tripType": "Family",
-      "photos": []
-    },
-    {
-      "id": 3,
-      "author": "Yuki T.",
-      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-      "location": "Tokyo",
-      "date": "February 2024",
-      "rating": 4,
-      "title": "Excellent route, though I wanted a little more time at Seongsan",
-      "text": "Overall it was a very strong day. Stone Park was more interesting than I expected, and Ilchulland was exactly the right follow-up after Seongsan. I gave it four stars only because I personally would have liked another fifteen minutes at Seongsan, though I also understand the time limits of a full-day route.",
-      "helpful": 12,
-      "verified": true,
-      "tripType": "Solo",
-      "photos": [
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80"
-      ]
-    },
-    {
-      "id": 4,
-      "author": "Michael R.",
-      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-      "location": "Sydney",
-      "date": "February 2024",
-      "rating": 5,
-      "title": "More complete than I expected",
-      "text": "I joined mainly for the scenery, but what stayed with me most was how the guide turned each stop into part of one complete story. From stone and coastline to crater and finally the village, the day felt like it had a real beginning, middle, and end rather than just a checklist. The small-group size also made the explanations much easier to follow.",
-      "helpful": 31,
-      "verified": true,
-      "tripType": "Friends",
-      "photos": []
-    }
-  ],
+  "guestReviews": [],
   "reviewsSummary": {
-    "averageRating": 4.8,
-    "totalReviews": 127,
+    "averageRating": 0,
+    "totalReviews": 0,
     "ratingDistribution": [
       {
         "stars": 5,
-        "count": 98,
-        "percentage": 77
+        "count": 0,
+        "percentage": 0
       },
       {
         "stars": 4,
-        "count": 21,
-        "percentage": 17
+        "count": 0,
+        "percentage": 0
       },
       {
         "stars": 3,
-        "count": 6,
-        "percentage": 5
+        "count": 0,
+        "percentage": 0
       },
       {
         "stars": 2,
-        "count": 1,
-        "percentage": 1
+        "count": 0,
+        "percentage": 0
       },
       {
         "stars": 1,
-        "count": 1,
-        "percentage": 1
+        "count": 0,
+        "percentage": 0
       }
     ],
-    "highlights": [
-      {
-        "label": "Scenery",
-        "count": 89
-      },
-      {
-        "label": "Guide",
-        "count": 76
-      },
-      {
-        "label": "Pacing",
-        "count": 54
-      },
-      {
-        "label": "Photo Spots",
-        "count": 48
-      }
-    ]
+    "highlights": []
   },
   "sticky_booking_bar": {
     "note": "Select your date and group size to check live availability and complete your booking.",
@@ -1678,7 +1599,7 @@
             "duration": "8 hours",
             "region": "East Jeju",
             "stops": "6 stops",
-            "rating": 4.8,
+            "rating": 0,
             "ratingStars": 4
           }
         }
@@ -2658,117 +2579,38 @@
       "id": "reviews",
       "component": "TourReviewsSection",
       "props": {
-        "guestReviews": [
-          {
-            "id": 1,
-            "author": "Sarah M.",
-            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
-            "location": "Singapore",
-            "date": "March 2024",
-            "rating": 5,
-            "title": "The pacing on this East Jeju tour felt really comfortable",
-            "text": "The route order made a lot of sense. Starting at Stone Park gave real background to everything we saw later, and the guide connected the geology story so Seongsan and Ilchulland felt like part of one bigger narrative rather than random stops. Lunch was timed perfectly too, so I still had plenty of energy for Seongsan in the afternoon.",
-            "helpful": 24,
-            "verified": true,
-            "tripType": "Couple",
-            "photos": [
-              "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=400&q=80",
-              "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=80"
-            ]
-          },
-          {
-            "id": 2,
-            "author": "James K.",
-            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-            "location": "Hong Kong",
-            "date": "March 2024",
-            "rating": 5,
-            "title": "Great value for seeing East Jeju in one day",
-            "text": "I have joined a few day tours in Korea, and what stood out here was how carefully the route was sequenced. The guide clearly knew when to slow things down and when to move the day forward. Ending at the folk village was a smart touch too. After so much natural scenery, the cultural finish gave the day a different kind of depth.",
-            "helpful": 18,
-            "verified": true,
-            "tripType": "Family",
-            "photos": []
-          },
-          {
-            "id": 3,
-            "author": "Yuki T.",
-            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-            "location": "Tokyo",
-            "date": "February 2024",
-            "rating": 4,
-            "title": "Excellent route, though I wanted a little more time at Seongsan",
-            "text": "Overall it was a very strong day. Stone Park was more interesting than I expected, and Ilchulland was exactly the right follow-up after Seongsan. I gave it four stars only because I personally would have liked another fifteen minutes at Seongsan, though I also understand the time limits of a full-day route.",
-            "helpful": 12,
-            "verified": true,
-            "tripType": "Solo",
-            "photos": [
-              "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80"
-            ]
-          },
-          {
-            "id": 4,
-            "author": "Michael R.",
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-            "location": "Sydney",
-            "date": "February 2024",
-            "rating": 5,
-            "title": "More complete than I expected",
-            "text": "I joined mainly for the scenery, but what stayed with me most was how the guide turned each stop into part of one complete story. From stone and coastline to crater and finally the village, the day felt like it had a real beginning, middle, and end rather than just a checklist. The small-group size also made the explanations much easier to follow.",
-            "helpful": 31,
-            "verified": true,
-            "tripType": "Friends",
-            "photos": []
-          }
-        ],
+        "guestReviews": [],
         "reviewsSummary": {
-          "averageRating": 4.8,
-          "totalReviews": 127,
+          "averageRating": 0,
+          "totalReviews": 0,
           "ratingDistribution": [
             {
               "stars": 5,
-              "count": 98,
-              "percentage": 77
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 4,
-              "count": 21,
-              "percentage": 17
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 3,
-              "count": 6,
-              "percentage": 5
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 2,
-              "count": 1,
-              "percentage": 1
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 1,
-              "count": 1,
-              "percentage": 1
+              "count": 0,
+              "percentage": 0
             }
           ],
-          "highlights": [
-            {
-              "label": "Scenery",
-              "count": 89
-            },
-            {
-              "label": "Guide",
-              "count": 76
-            },
-            {
-              "label": "Pacing",
-              "count": 54
-            },
-            {
-              "label": "Photo Spots",
-              "count": 48
-            }
-          ]
+          "highlights": []
         }
       }
     },
@@ -3122,7 +2964,7 @@
       "ilchulland_micheon_cave",
       "seongeup_folk_village"
     ],
-    "reviews_attribution": "Reviews curated from AtoC Korea operator feedback. 4.8/5 average across 127 verified bookings.",
+    "reviews_attribution": null,
     "unesco_fit_note": "unesco_fit=5: two UNESCO Natural Heritage sites on route — Manjanggul Cave (lava tube system, inscribed 2007) and Seongsan Ilchulbong (Sunrise Peak, inscribed 2007). Note: Manjanggul currently subject to seasonal closure; alternate cave (Micheon) used when closed.",
     "competing_products": [
       "jeju-eastern-unesco-spots-day-tour",

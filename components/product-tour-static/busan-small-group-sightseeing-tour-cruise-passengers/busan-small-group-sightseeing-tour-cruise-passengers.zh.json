@@ -28,8 +28,8 @@
       "from_cruise",
       "shared_van"
     ],
-    "rating": 4.9,
-    "reviewCount": 32,
+    "rating": 0,
+    "reviewCount": 0,
     "slug": "busan-small-group-sightseeing-tour-cruise-passengers",
     "subtitle": "从邮轮码头出发，9小时共乘面包车游览釜山五大标志性景点。",
     "region": "釜山",
@@ -66,7 +66,7 @@
       "duration": "约9小时，根据邮轮靠港时间灵活安排",
       "region": "釜山",
       "stops": "8个景点",
-      "rating": 4.9,
+      "rating": 0,
       "ratingStars": 5
     }
   },
@@ -1492,7 +1492,7 @@
             "duration": "约 9 小时，根据您的邮轮靠港时间调整",
             "region": "釜山",
             "stops": "8 个景点",
-            "rating": 4.9,
+            "rating": 0,
             "ratingStars": 5
           }
         }
@@ -2287,18 +2287,18 @@
       "props": {
         "guestReviews": [],
         "reviewsSummary": {
-          "averageRating": 4.9,
-          "totalReviews": 32,
+          "averageRating": 0,
+          "totalReviews": 0,
           "ratingDistribution": [
             {
               "stars": 5,
-              "count": 30,
-              "percentage": 93.8
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 4,
-              "count": 2,
-              "percentage": 6.2
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 3,
@@ -2316,8 +2316,7 @@
               "percentage": 0
             }
           ],
-          "highlights": [],
-          "source_attribution": "综合评分来源于运营商的产品列表；用户个人评价文本尚未导入。"
+          "highlights": []
         }
       }
     },

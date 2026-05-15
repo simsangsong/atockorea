@@ -24,8 +24,8 @@
     "region": "济州岛西南部",
     "duration": "8小时",
     "stopsCount": 6,
-    "rating": 4.8,
-    "reviewCount": 127,
+    "rating": 0,
+    "reviewCount": 0,
     "badges": [
       "非常适合初次游览济州岛的旅客",
       "济州岛西南部"
@@ -65,7 +65,7 @@
       "duration": "8小时",
       "region": "济州岛西南部",
       "stops": "6个景点",
-      "rating": 4.8,
+      "rating": 0,
       "ratingStars": 5
     }
   },
@@ -1754,7 +1754,7 @@
       "osulloc_tea_museum",
       "aewol_cafe_street"
     ],
-    "reviews_attribution": "Reviews curated from AtoC Korea operator feedback. 4.8/5 average across 142 verified bookings.",
+    "reviews_attribution": null,
     "unesco_fit_note": "unesco_fit=3: Hallasan is a UNESCO Biosphere Reserve and the centerpiece of the Jeju Volcanic Island and Lava Tubes World Heritage inscription, but the tour visits the 1100 Highland scenic zone (drive-up viewing area), not the inscribed lava tube system or the summit hike.",
     "competing_products": [
       "jeju-grand-highlights-loop",
@@ -1831,7 +1831,7 @@
             "duration": "8小时",
             "region": "济州西南",
             "stops": "6个景点",
-            "rating": 4.8,
+            "rating": 0,
             "ratingStars": 5
           }
         }
@@ -2574,117 +2574,38 @@
       "id": "reviews",
       "component": "TourReviewsSection",
       "props": {
-        "guestReviews": [
-          {
-            "id": 1,
-            "author": "Sarah M.",
-            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
-            "location": "新加坡",
-            "date": "2024年3月",
-            "rating": 5,
-            "title": "一日游览济州西南部的绝佳平衡路线",
-            "text": "路线的流畅性非常出色。从汉拿山出发为这一天注入了真正的动力，也让随后的柱状节理带显得更加震撼。我特别喜欢从奥雪绿到涯月的过渡方式。下午的节奏自然地舒缓下来，让整天的行程显得格外从容。",
-            "helpful": 24,
-            "verified": true,
-            "tripType": "情侣",
-            "photos": [
-              "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
-              "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80"
-            ]
-          },
-          {
-            "id": 2,
-            "author": "James K.",
-            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-            "location": "香港",
-            "date": "2024年3月",
-            "rating": 5,
-            "title": "精彩的西南路线，收尾尤为舒适惬意",
-            "text": "我在韩国参加了多个旅游团，这次脱颖而出，因为行程顺序设计得非常出色。导游非常流畅地把控了汉拿山、悬崖与天帝渊之间的节奏，从奥雪绿到涯月的收尾让整天的感觉平衡而不疲惫。",
-            "helpful": 18,
-            "verified": true,
-            "tripType": "家庭",
-            "photos": []
-          },
-          {
-            "id": 3,
-            "author": "Yuki T.",
-            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-            "location": "东京",
-            "date": "2024年2月",
-            "rating": 4,
-            "title": "我尤其喜欢在涯月结束这一天",
-            "text": "整体体验非常好。御乘生岳的开场比我预期的更精彩，奥雪绿也是前往涯月前完美的中途停留。我给了四星，仅仅是因为希望能在涯月多停留一会儿，尽管我理解行程有时间上的限制。",
-            "helpful": 12,
-            "verified": true,
-            "tripType": "独自出行",
-            "photos": [
-              "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&q=80"
-            ]
-          },
-          {
-            "id": 4,
-            "author": "Michael R.",
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-            "location": "悉尼",
-            "date": "2024年2月",
-            "rating": 5,
-            "title": "路线的丰富多样超出了我的预期",
-            "text": "我主要是为风景而来，但令我印象最深的是整天行程的连贯性。汉拿山、玄武岩悬崖、瀑布、茶田与涯月海岸，一切都像是一个连续故事的组成部分，小团制的形式让每次过渡都非常顺畅。",
-            "helpful": 31,
-            "verified": true,
-            "tripType": "朋友",
-            "photos": []
-          }
-        ],
+        "guestReviews": [],
         "reviewsSummary": {
-          "averageRating": 4.8,
-          "totalReviews": 127,
+          "averageRating": 0,
+          "totalReviews": 0,
           "ratingDistribution": [
             {
               "stars": 5,
-              "count": 98,
-              "percentage": 77
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 4,
-              "count": 21,
-              "percentage": 17
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 3,
-              "count": 6,
-              "percentage": 5
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 2,
-              "count": 1,
-              "percentage": 1
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 1,
-              "count": 1,
-              "percentage": 1
+              "count": 0,
+              "percentage": 0
             }
           ],
-          "highlights": [
-            {
-              "label": "风景",
-              "count": 89
-            },
-            {
-              "label": "导游",
-              "count": 76
-            },
-            {
-              "label": "节奏",
-              "count": 54
-            },
-            {
-              "label": "涯月收尾",
-              "count": 41
-            }
-          ]
+          "highlights": []
         }
       }
     },

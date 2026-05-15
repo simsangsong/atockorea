@@ -71,7 +71,7 @@
       "duration": "8時間",
       "region": "東済州",
       "stops": "6か所",
-      "rating": 4.8,
+      "rating": 0,
       "ratingStars": 4
     }
   },
@@ -1535,117 +1535,38 @@
       "answer": "城山の後、イルチュルランドでペースをゆるめ、城邑（ソンウプ）民俗村で文化的な締めくくりを迎えます。同じ強度の絶景スポットを連続させるのではなく、一日全体がより充実した流れになります。"
     }
   ],
-  "guestReviews": [
-    {
-      "id": 1,
-      "author": "Sarah M.",
-      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
-      "location": "Singapore",
-      "date": "March 2024",
-      "rating": 5,
-      "title": "The pacing on this East Jeju tour felt really comfortable",
-      "text": "The route order made a lot of sense. Starting at Stone Park gave real background to everything we saw later, and the guide connected the geology story so Seongsan and Ilchulland felt like part of one bigger narrative rather than random stops. Lunch was timed perfectly too, so I still had plenty of energy for Seongsan in the afternoon.",
-      "helpful": 24,
-      "verified": true,
-      "tripType": "Couple",
-      "photos": [
-        "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=400&q=80",
-        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=80"
-      ]
-    },
-    {
-      "id": 2,
-      "author": "James K.",
-      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-      "location": "Hong Kong",
-      "date": "March 2024",
-      "rating": 5,
-      "title": "Great value for seeing East Jeju in one day",
-      "text": "I have joined a few day tours in Korea, and what stood out here was how carefully the route was sequenced. The guide clearly knew when to slow things down and when to move the day forward. Ending at the folk village was a smart touch too. After so much natural scenery, the cultural finish gave the day a different kind of depth.",
-      "helpful": 18,
-      "verified": true,
-      "tripType": "Family",
-      "photos": []
-    },
-    {
-      "id": 3,
-      "author": "Yuki T.",
-      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-      "location": "Tokyo",
-      "date": "February 2024",
-      "rating": 4,
-      "title": "Excellent route, though I wanted a little more time at Seongsan",
-      "text": "Overall it was a very strong day. Stone Park was more interesting than I expected, and Ilchulland was exactly the right follow-up after Seongsan. I gave it four stars only because I personally would have liked another fifteen minutes at Seongsan, though I also understand the time limits of a full-day route.",
-      "helpful": 12,
-      "verified": true,
-      "tripType": "Solo",
-      "photos": [
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80"
-      ]
-    },
-    {
-      "id": 4,
-      "author": "Michael R.",
-      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-      "location": "Sydney",
-      "date": "February 2024",
-      "rating": 5,
-      "title": "More complete than I expected",
-      "text": "I joined mainly for the scenery, but what stayed with me most was how the guide turned each stop into part of one complete story. From stone and coastline to crater and finally the village, the day felt like it had a real beginning, middle, and end rather than just a checklist. The small-group size also made the explanations much easier to follow.",
-      "helpful": 31,
-      "verified": true,
-      "tripType": "Friends",
-      "photos": []
-    }
-  ],
+  "guestReviews": [],
   "reviewsSummary": {
-    "averageRating": 4.8,
-    "totalReviews": 127,
+    "averageRating": 0,
+    "totalReviews": 0,
     "ratingDistribution": [
       {
         "stars": 5,
-        "count": 98,
-        "percentage": 77
+        "count": 0,
+        "percentage": 0
       },
       {
         "stars": 4,
-        "count": 21,
-        "percentage": 17
+        "count": 0,
+        "percentage": 0
       },
       {
         "stars": 3,
-        "count": 6,
-        "percentage": 5
+        "count": 0,
+        "percentage": 0
       },
       {
         "stars": 2,
-        "count": 1,
-        "percentage": 1
+        "count": 0,
+        "percentage": 0
       },
       {
         "stars": 1,
-        "count": 1,
-        "percentage": 1
+        "count": 0,
+        "percentage": 0
       }
     ],
-    "highlights": [
-      {
-        "label": "景色",
-        "count": 89
-      },
-      {
-        "label": "ガイド",
-        "count": 76
-      },
-      {
-        "label": "ペース配分",
-        "count": 54
-      },
-      {
-        "label": "写真スポット",
-        "count": 48
-      }
-    ]
+    "highlights": []
   },
   "sticky_booking_bar": {
     "note": "日程と参加人数を選択して、空き状況をリアルタイムで確認し、ご予約を完了してください。",
@@ -1678,7 +1599,7 @@
             "duration": "8時間",
             "region": "済州島東部",
             "stops": "6か所",
-            "rating": 4.8,
+            "rating": 0,
             "ratingStars": 4
           }
         }
@@ -2658,117 +2579,38 @@
       "id": "reviews",
       "component": "ツアーレビューセクション",
       "props": {
-        "guestReviews": [
-          {
-            "id": 1,
-            "author": "サラ・M.",
-            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
-            "location": "シンガポール",
-            "date": "2024年3月",
-            "rating": 5,
-            "title": "この東済州ツアーのペース配分はとても快適でした",
-            "text": "ルートの順番はとても理にかなっていました。石文化公園から始めたことで、その後に見るすべてのものに確かな背景知識が生まれ、ガイドが地質の物語をつなげてくれたおかげで、城山とイルチュルランドがバラバラな立ち寄りスポットではなく、一つの大きな物語の一部として感じられました。昼食のタイミングも完璧で、午後の城山に向けて十分なエネルギーを保てました。",
-            "helpful": 24,
-            "verified": true,
-            "tripType": "カップル",
-            "photos": [
-              "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=400&q=80",
-              "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=80"
-            ]
-          },
-          {
-            "id": 2,
-            "author": "ジェームズ・K.",
-            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-            "location": "香港",
-            "date": "2024年3月",
-            "rating": 5,
-            "title": "東済州を一日で巡るのに素晴らしいコストパフォーマンス",
-            "text": "韓国でいくつかの日帰りツアーに参加しましたが、ここで際立っていたのは、ルートの順番がいかに丁寧に組まれていたかという点です。ガイドはペースを落とすべき時と、日程を前に進めるべき時を明確に心得ていました。民俗村で締めくくるのも秀逸な演出でした。これほどの自然の景色を楽しんだ後、文化的なフィナーレが一日に別の深みを与えてくれました。",
-            "helpful": 18,
-            "verified": true,
-            "tripType": "ファミリー",
-            "photos": []
-          },
-          {
-            "id": 3,
-            "author": "ユキ・T.",
-            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-            "location": "東京",
-            "date": "2024年2月",
-            "rating": 4,
-            "title": "素晴らしいルートですが、城山でもう少し時間が欲しかったです",
-            "text": "全体的にとても充実した一日でした。石文化公園は期待以上に興味深く、イルチュルランドは城山の後にぴったりの続きでした。4つ星にしたのは、個人的に城山でもう15分ほど過ごしたかったからだけです。ただ、一日がかりのルートならではの時間的制約も十分理解しています。",
-            "helpful": 12,
-            "verified": true,
-            "tripType": "ひとり旅",
-            "photos": [
-              "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80"
-            ]
-          },
-          {
-            "id": 4,
-            "author": "マイケル・R.",
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-            "location": "シドニー",
-            "date": "2024年2月",
-            "rating": 5,
-            "title": "思っていた以上に充実した内容でした",
-            "text": "主に景色目当てで参加しましたが、最も印象に残ったのは、ガイドが各立ち寄りスポットをひとつの完結したストーリーの一部として結びつけてくれたことです。溶岩石と海岸線から火口へ、そして最後に村へと続く流れの中で、その日はただのスポット巡りではなく、しっかりとした始まり・中盤・終わりのある一日のように感じられました。少人数制のおかげで、説明もとても聞き取りやすかったです。",
-            "helpful": 31,
-            "verified": true,
-            "tripType": "友人",
-            "photos": []
-          }
-        ],
+        "guestReviews": [],
         "reviewsSummary": {
-          "averageRating": 4.8,
-          "totalReviews": 127,
+          "averageRating": 0,
+          "totalReviews": 0,
           "ratingDistribution": [
             {
               "stars": 5,
-              "count": 98,
-              "percentage": 77
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 4,
-              "count": 21,
-              "percentage": 17
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 3,
-              "count": 6,
-              "percentage": 5
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 2,
-              "count": 1,
-              "percentage": 1
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 1,
-              "count": 1,
-              "percentage": 1
+              "count": 0,
+              "percentage": 0
             }
           ],
-          "highlights": [
-            {
-              "label": "景色",
-              "count": 89
-            },
-            {
-              "label": "ガイド",
-              "count": 76
-            },
-            {
-              "label": "ペース配分",
-              "count": 54
-            },
-            {
-              "label": "撮影スポット",
-              "count": 48
-            }
-          ]
+          "highlights": []
         }
       }
     },
@@ -3122,7 +2964,7 @@
       "ilchulland_micheon_cave",
       "seongeup_folk_village"
     ],
-    "reviews_attribution": "Reviews curated from AtoC Korea operator feedback. 4.8/5 average across 127 verified bookings.",
+    "reviews_attribution": null,
     "unesco_fit_note": "unesco_fit=5: two UNESCO Natural Heritage sites on route — Manjanggul Cave (lava tube system, inscribed 2007) and Seongsan Ilchulbong (Sunrise Peak, inscribed 2007). Note: Manjanggul currently subject to seasonal closure; alternate cave (Micheon) used when closed.",
     "competing_products": [
       "jeju-eastern-unesco-spots-day-tour",

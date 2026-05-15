@@ -66,7 +66,7 @@
       "duration": "약 9시간 (크루즈 기항 시간에 맞춰 조율)",
       "region": "부산",
       "stops": "8개 코스",
-      "rating": 4.9,
+      "rating": 0,
       "ratingStars": 5
     }
   },
@@ -1572,7 +1572,7 @@
             "duration": "약 9시간, 크루즈 기항 일정에 맞춤",
             "region": "부산",
             "stops": "8개 방문지",
-            "rating": 4.9,
+            "rating": 0,
             "ratingStars": 5
           }
         }
@@ -2457,18 +2457,18 @@
       "props": {
         "guestReviews": [],
         "reviewsSummary": {
-          "averageRating": 4.9,
-          "totalReviews": 32,
+          "averageRating": 0,
+          "totalReviews": 0,
           "ratingDistribution": [
             {
               "stars": 5,
-              "count": 30,
-              "percentage": 93.8
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 4,
-              "count": 2,
-              "percentage": 6.2
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 3,
@@ -2486,8 +2486,7 @@
               "percentage": 0
             }
           ],
-          "highlights": [],
-          "source_attribution": "운영사 리스팅의 종합 평점 지표이며, 개별 리뷰 텍스트는 아직 가져오지 않은 상태입니다."
+          "highlights": []
         }
       }
     },

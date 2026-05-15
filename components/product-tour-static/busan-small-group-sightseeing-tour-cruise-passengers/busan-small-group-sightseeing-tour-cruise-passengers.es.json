@@ -28,8 +28,8 @@
       "from_cruise",
       "shared_van"
     ],
-    "rating": 4.9,
-    "reviewCount": 32,
+    "rating": 0,
+    "reviewCount": 0,
     "slug": "busan-small-group-sightseeing-tour-cruise-passengers",
     "subtitle": "Cinco lugares emblemáticos de Busan desde su terminal de cruceros en un día de 9 horas en furgoneta compartida.",
     "region": "Busan",
@@ -66,7 +66,7 @@
       "duration": "≈ 9 horas, coordinadas con la escala en puerto de su crucero",
       "region": "Busan",
       "stops": "8 paradas",
-      "rating": 4.9,
+      "rating": 0,
       "ratingStars": 5
     }
   },
@@ -1537,7 +1537,7 @@
             "duration": "≈ 9 horas, adaptadas a la ventana de escala en puerto de su crucero",
             "region": "Busan",
             "stops": "8 paradas",
-            "rating": 4.9,
+            "rating": 0,
             "ratingStars": 5
           }
         }
@@ -2422,18 +2422,18 @@
       "props": {
         "guestReviews": [],
         "reviewsSummary": {
-          "averageRating": 4.9,
-          "totalReviews": 32,
+          "averageRating": 0,
+          "totalReviews": 0,
           "ratingDistribution": [
             {
               "stars": 5,
-              "count": 30,
-              "percentage": 93.8
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 4,
-              "count": 2,
-              "percentage": 6.2
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 3,
@@ -2451,8 +2451,7 @@
               "percentage": 0
             }
           ],
-          "highlights": [],
-          "source_attribution": "Métrica agregada del listado del operador; el texto de las reseñas individuales aún no ha sido importado."
+          "highlights": []
         }
       }
     },

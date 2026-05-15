@@ -70,7 +70,7 @@
       "duration": "10 hours",
       "region": "Gyeonggi-do (south of Seoul)",
       "stops": "6 stops",
-      "rating": 4.9,
+      "rating": 0,
       "ratingStars": 5
     }
   },
@@ -1487,7 +1487,7 @@
             "duration": "10 hours",
             "region": "Gyeonggi-do (south of Seoul)",
             "stops": "6 stops",
-            "rating": 4.9,
+            "rating": 0,
             "ratingStars": 5
           }
         }
@@ -2428,23 +2428,23 @@
       "props": {
         "guestReviews": [],
         "reviewsSummary": {
-          "averageRating": 4.9,
-          "totalReviews": 79,
+          "averageRating": 0,
+          "totalReviews": 0,
           "ratingDistribution": [
             {
               "stars": 5,
-              "count": 73,
-              "percentage": 92.4
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 4,
-              "count": 5,
-              "percentage": 6.3
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 3,
-              "count": 1,
-              "percentage": 1.3
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 2,

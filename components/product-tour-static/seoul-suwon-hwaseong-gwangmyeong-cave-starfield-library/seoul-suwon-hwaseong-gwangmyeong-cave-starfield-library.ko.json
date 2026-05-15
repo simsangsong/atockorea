@@ -70,7 +70,7 @@
       "duration": "9시간",
       "region": "경기도 (서울 남쪽)",
       "stops": "7개 방문지",
-      "rating": 4.6,
+      "rating": 0,
       "ratingStars": 5
     }
   },
@@ -1638,7 +1638,7 @@
             "duration": "9시간",
             "region": "경기도 (서울 남쪽)",
             "stops": "7개 방문지",
-            "rating": 4.6,
+            "rating": 0,
             "ratingStars": 5
           }
         }
@@ -2662,33 +2662,33 @@
       "props": {
         "guestReviews": [],
         "reviewsSummary": {
-          "averageRating": 4.6,
-          "totalReviews": 137,
+          "averageRating": 0,
+          "totalReviews": 0,
           "ratingDistribution": [
             {
               "stars": 5,
-              "count": 102,
-              "percentage": 74.5
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 4,
-              "count": 25,
-              "percentage": 18.2
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 3,
-              "count": 7,
-              "percentage": 5.1
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 2,
-              "count": 2,
-              "percentage": 1.5
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 1,
-              "count": 1,
-              "percentage": 0.7
+              "count": 0,
+              "percentage": 0
             }
           ],
           "highlights": []

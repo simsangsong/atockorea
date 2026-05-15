@@ -28,8 +28,8 @@
       "from_cruise",
       "shared_van"
     ],
-    "rating": 4.9,
-    "reviewCount": 32,
+    "rating": 0,
+    "reviewCount": 0,
     "slug": "busan-small-group-sightseeing-tour-cruise-passengers",
     "subtitle": "從郵輪碼頭出發，一趟9小時的共乘廂型車一日遊，盡覽釜山五大代表性景點。",
     "region": "釜山",
@@ -66,7 +66,7 @@
       "duration": "約9小時，依您的郵輪靠港時間彈性調整",
       "region": "釜山",
       "stops": "8個景點",
-      "rating": 4.9,
+      "rating": 0,
       "ratingStars": 5
     }
   },
@@ -1492,7 +1492,7 @@
             "duration": "約 9 小時，依您郵輪的靠港時間窗口彈性調整",
             "region": "釜山",
             "stops": "8 個景點",
-            "rating": 4.9,
+            "rating": 0,
             "ratingStars": 5
           }
         }
@@ -2287,18 +2287,18 @@
       "props": {
         "guestReviews": [],
         "reviewsSummary": {
-          "averageRating": 4.9,
-          "totalReviews": 32,
+          "averageRating": 0,
+          "totalReviews": 0,
           "ratingDistribution": [
             {
               "stars": 5,
-              "count": 30,
-              "percentage": 93.8
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 4,
-              "count": 2,
-              "percentage": 6.2
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 3,
@@ -2316,8 +2316,7 @@
               "percentage": 0
             }
           ],
-          "highlights": [],
-          "source_attribution": "評分數據來自業者掛牌資訊；個別評論文字尚未匯入。"
+          "highlights": []
         }
       }
     },

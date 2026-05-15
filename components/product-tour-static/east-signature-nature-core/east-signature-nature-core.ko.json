@@ -71,7 +71,7 @@
       "duration": "8시간",
       "region": "제주 동부",
       "stops": "6개 코스",
-      "rating": 4.8,
+      "rating": 0,
       "ratingStars": 4
     }
   },
@@ -1535,117 +1535,38 @@
       "answer": "성산 이후에는 일출랜드에서 여유롭게 페이스를 낮추고, 성읍민속마을에서 문화적인 마무리를 더합니다. 이렇게 하면 하루 내내 같은 강도로 경치 좋은 장소만 연속으로 방문하는 것이 아니라, 하루 전체가 더욱 완성도 있게 느껴집니다."
     }
   ],
-  "guestReviews": [
-    {
-      "id": 1,
-      "author": "Sarah M.",
-      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
-      "location": "Singapore",
-      "date": "March 2024",
-      "rating": 5,
-      "title": "The pacing on this East Jeju tour felt really comfortable",
-      "text": "The route order made a lot of sense. Starting at Stone Park gave real background to everything we saw later, and the guide connected the geology story so Seongsan and Ilchulland felt like part of one bigger narrative rather than random stops. Lunch was timed perfectly too, so I still had plenty of energy for Seongsan in the afternoon.",
-      "helpful": 24,
-      "verified": true,
-      "tripType": "Couple",
-      "photos": [
-        "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=400&q=80",
-        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=80"
-      ]
-    },
-    {
-      "id": 2,
-      "author": "James K.",
-      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-      "location": "Hong Kong",
-      "date": "March 2024",
-      "rating": 5,
-      "title": "Great value for seeing East Jeju in one day",
-      "text": "I have joined a few day tours in Korea, and what stood out here was how carefully the route was sequenced. The guide clearly knew when to slow things down and when to move the day forward. Ending at the folk village was a smart touch too. After so much natural scenery, the cultural finish gave the day a different kind of depth.",
-      "helpful": 18,
-      "verified": true,
-      "tripType": "Family",
-      "photos": []
-    },
-    {
-      "id": 3,
-      "author": "Yuki T.",
-      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-      "location": "Tokyo",
-      "date": "February 2024",
-      "rating": 4,
-      "title": "Excellent route, though I wanted a little more time at Seongsan",
-      "text": "Overall it was a very strong day. Stone Park was more interesting than I expected, and Ilchulland was exactly the right follow-up after Seongsan. I gave it four stars only because I personally would have liked another fifteen minutes at Seongsan, though I also understand the time limits of a full-day route.",
-      "helpful": 12,
-      "verified": true,
-      "tripType": "Solo",
-      "photos": [
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80"
-      ]
-    },
-    {
-      "id": 4,
-      "author": "Michael R.",
-      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-      "location": "Sydney",
-      "date": "February 2024",
-      "rating": 5,
-      "title": "More complete than I expected",
-      "text": "I joined mainly for the scenery, but what stayed with me most was how the guide turned each stop into part of one complete story. From stone and coastline to crater and finally the village, the day felt like it had a real beginning, middle, and end rather than just a checklist. The small-group size also made the explanations much easier to follow.",
-      "helpful": 31,
-      "verified": true,
-      "tripType": "Friends",
-      "photos": []
-    }
-  ],
+  "guestReviews": [],
   "reviewsSummary": {
-    "averageRating": 4.8,
-    "totalReviews": 127,
+    "averageRating": 0,
+    "totalReviews": 0,
     "ratingDistribution": [
       {
         "stars": 5,
-        "count": 98,
-        "percentage": 77
+        "count": 0,
+        "percentage": 0
       },
       {
         "stars": 4,
-        "count": 21,
-        "percentage": 17
+        "count": 0,
+        "percentage": 0
       },
       {
         "stars": 3,
-        "count": 6,
-        "percentage": 5
+        "count": 0,
+        "percentage": 0
       },
       {
         "stars": 2,
-        "count": 1,
-        "percentage": 1
+        "count": 0,
+        "percentage": 0
       },
       {
         "stars": 1,
-        "count": 1,
-        "percentage": 1
+        "count": 0,
+        "percentage": 0
       }
     ],
-    "highlights": [
-      {
-        "label": "경치",
-        "count": 89
-      },
-      {
-        "label": "가이드",
-        "count": 76
-      },
-      {
-        "label": "일정 흐름",
-        "count": 54
-      },
-      {
-        "label": "포토 스팟",
-        "count": 48
-      }
-    ]
+    "highlights": []
   },
   "sticky_booking_bar": {
     "note": "날짜와 인원을 선택하여 실시간 예약 가능 여부를 확인하고 예약을 완료하세요.",
@@ -1678,7 +1599,7 @@
             "duration": "8시간",
             "region": "제주 동부",
             "stops": "6개 방문지",
-            "rating": 4.8,
+            "rating": 0,
             "ratingStars": 4
           }
         }
@@ -2658,117 +2579,38 @@
       "id": "reviews",
       "component": "투어 리뷰 섹션",
       "props": {
-        "guestReviews": [
-          {
-            "id": 1,
-            "author": "사라 M.",
-            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
-            "location": "싱가포르",
-            "date": "2024년 3월",
-            "rating": 5,
-            "title": "이 동제주 투어의 일정 진행이 정말 편안하게 느껴졌습니다",
-            "text": "코스 순서가 매우 합리적이었습니다. 돌문화공원에서 시작한 덕분에 이후에 보게 된 모든 것에 대한 탄탄한 배경 지식을 얻을 수 있었고, 가이드가 지질 이야기를 잘 연결해줘서 성산과 일출랜드가 단순히 별개의 방문지가 아닌 하나의 큰 이야기의 일부처럼 느껴졌습니다. 점심 타이밍도 완벽해서 오후에 성산을 오를 때 체력이 충분히 남아 있었습니다.",
-            "helpful": 24,
-            "verified": true,
-            "tripType": "커플",
-            "photos": [
-              "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=400&q=80",
-              "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=80"
-            ]
-          },
-          {
-            "id": 2,
-            "author": "제임스 K.",
-            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-            "location": "홍콩",
-            "date": "2024년 3월",
-            "rating": 5,
-            "title": "하루에 동제주를 둘러보기에 훌륭한 가성비",
-            "text": "한국에서 몇 차례 당일 투어에 참여해봤는데, 이번 투어에서 특히 돋보였던 점은 코스가 얼마나 세심하게 구성되어 있었는가 하는 것이었습니다. 가이드는 언제 속도를 늦추고 언제 하루를 앞으로 나아가야 할지 분명히 잘 알고 있었습니다. 민속마을로 마무리한 것도 탁월한 선택이었습니다. 자연 경관을 많이 본 뒤라, 문화적인 마무리가 하루에 색다른 깊이를 더해주었습니다.",
-            "helpful": 18,
-            "verified": true,
-            "tripType": "가족",
-            "photos": []
-          },
-          {
-            "id": 3,
-            "author": "유키 T.",
-            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-            "location": "도쿄",
-            "date": "2024년 2월",
-            "rating": 4,
-            "title": "훌륭한 코스였지만, 성산에서 조금 더 시간을 보내고 싶었습니다",
-            "text": "전반적으로 매우 알찬 하루였습니다. 돌문화공원은 기대했던 것보다 훨씬 흥미로웠고, 일출랜드는 성산 이후 이어지기에 딱 알맞은 장소였습니다. 별 네 개를 드린 것은 순전히 개인적으로 성산에서 15분 정도 더 머물고 싶었기 때문이며, 하루 종일 진행되는 코스의 시간적 한계도 충분히 이해합니다.",
-            "helpful": 12,
-            "verified": true,
-            "tripType": "솔로",
-            "photos": [
-              "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80"
-            ]
-          },
-          {
-            "id": 4,
-            "author": "마이클 R.",
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-            "location": "시드니",
-            "date": "2024년 2월",
-            "rating": 5,
-            "title": "기대 이상으로 알찼어요",
-            "text": "주로 경치를 보러 참가했는데, 가장 기억에 남는 건 가이드가 각 방문지를 하나의 완결된 이야기로 엮어준 방식이었어요. 돌과 해안에서 시작해 분화구를 지나 마을로 마무리되는 하루가, 단순히 명소를 체크하는 것이 아닌 진짜 시작과 중반, 끝이 있는 여정처럼 느껴졌어요. 소그룹으로 진행되어 설명도 훨씬 잘 이해할 수 있었고요.",
-            "helpful": 31,
-            "verified": true,
-            "tripType": "친구",
-            "photos": []
-          }
-        ],
+        "guestReviews": [],
         "reviewsSummary": {
-          "averageRating": 4.8,
-          "totalReviews": 127,
+          "averageRating": 0,
+          "totalReviews": 0,
           "ratingDistribution": [
             {
               "stars": 5,
-              "count": 98,
-              "percentage": 77
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 4,
-              "count": 21,
-              "percentage": 17
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 3,
-              "count": 6,
-              "percentage": 5
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 2,
-              "count": 1,
-              "percentage": 1
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 1,
-              "count": 1,
-              "percentage": 1
+              "count": 0,
+              "percentage": 0
             }
           ],
-          "highlights": [
-            {
-              "label": "풍경",
-              "count": 89
-            },
-            {
-              "label": "가이드",
-              "count": 76
-            },
-            {
-              "label": "진행 흐름",
-              "count": 54
-            },
-            {
-              "label": "포토 스팟",
-              "count": 48
-            }
-          ]
+          "highlights": []
         }
       }
     },
@@ -3122,7 +2964,7 @@
       "ilchulland_micheon_cave",
       "seongeup_folk_village"
     ],
-    "reviews_attribution": "Reviews curated from AtoC Korea operator feedback. 4.8/5 average across 127 verified bookings.",
+    "reviews_attribution": null,
     "unesco_fit_note": "unesco_fit=5: two UNESCO Natural Heritage sites on route — Manjanggul Cave (lava tube system, inscribed 2007) and Seongsan Ilchulbong (Sunrise Peak, inscribed 2007). Note: Manjanggul currently subject to seasonal closure; alternate cave (Micheon) used when closed.",
     "competing_products": [
       "jeju-eastern-unesco-spots-day-tour",

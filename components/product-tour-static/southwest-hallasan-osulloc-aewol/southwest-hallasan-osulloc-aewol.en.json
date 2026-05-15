@@ -25,8 +25,8 @@
     "region": "Jeju Southwest",
     "duration": "8 hours",
     "stopsCount": 6,
-    "rating": 4.8,
-    "reviewCount": 127,
+    "rating": 0,
+    "reviewCount": 0,
     "badges": [
       "Great for First-Time Jeju Visitors",
       "Jeju Southwest"
@@ -66,7 +66,7 @@
       "duration": "8 hours",
       "region": "Jeju Southwest",
       "stops": "6 stops",
-      "rating": 4.8,
+      "rating": 0,
       "ratingStars": 5
     }
   },
@@ -1384,117 +1384,38 @@
       "answer": "Lunch and Cheonjeyeon settle the rhythm after the more open morning section, O’Sulloc adds a lighter tea-field break, and Aewol closes the day without making the ending feel heavy."
     }
   ],
-  "guestReviews": [
-    {
-      "id": 1,
-      "author": "Sarah M.",
-      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
-      "location": "Singapore",
-      "date": "March 2024",
-      "rating": 5,
-      "title": "A really well-balanced way to see Jeju Southwest in one day",
-      "text": "The flow of the route was excellent. Starting at Hallasan gave the day real momentum, and that made Jusangjeolli feel even more impressive afterward. I especially loved how the route moved from O’Sulloc into Aewol. The afternoon softened naturally, and that made the whole day feel very well paced.",
-      "helpful": 24,
-      "verified": true,
-      "tripType": "Couple",
-      "photos": [
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80"
-      ]
-    },
-    {
-      "id": 2,
-      "author": "James K.",
-      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-      "location": "Hong Kong",
-      "date": "March 2024",
-      "rating": 5,
-      "title": "A great southwest route with an especially comfortable finish",
-      "text": "I joined several tours in Korea, and this one stood out because the order was so well designed. The guide handled the rhythm between Hallasan, the cliffs, and Cheonjeyeon very smoothly, and the O’Sulloc-to-Aewol ending made the day feel balanced rather than tiring.",
-      "helpful": 18,
-      "verified": true,
-      "tripType": "Family",
-      "photos": []
-    },
-    {
-      "id": 3,
-      "author": "Yuki T.",
-      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-      "location": "Tokyo",
-      "date": "February 2024",
-      "rating": 4,
-      "title": "I especially liked ending the day in Aewol",
-      "text": "The overall experience was very good. Eoseungsaengak was a better start than I expected, and O’Sulloc was the perfect stop before Aewol. I gave it four stars only because I would have loved a little more time in Aewol, although I understand that the schedule has limits.",
-      "helpful": 12,
-      "verified": true,
-      "tripType": "Solo",
-      "photos": [
-        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&q=80"
-      ]
-    },
-    {
-      "id": 4,
-      "author": "Michael R.",
-      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-      "location": "Sydney",
-      "date": "February 2024",
-      "rating": 5,
-      "title": "The route had more variety than I expected",
-      "text": "I joined mainly for the scenery, but what stayed with me most was how well the whole day was connected. Hallasan, basalt cliffs, the waterfall, tea fields, and the Aewol coast all felt like part of one continuous story, and the small-group format kept every transition smooth.",
-      "helpful": 31,
-      "verified": true,
-      "tripType": "Friends",
-      "photos": []
-    }
-  ],
+  "guestReviews": [],
   "reviewsSummary": {
-    "averageRating": 4.8,
-    "totalReviews": 127,
+    "averageRating": 0,
+    "totalReviews": 0,
     "ratingDistribution": [
       {
         "stars": 5,
-        "count": 98,
-        "percentage": 77
+        "count": 0,
+        "percentage": 0
       },
       {
         "stars": 4,
-        "count": 21,
-        "percentage": 17
+        "count": 0,
+        "percentage": 0
       },
       {
         "stars": 3,
-        "count": 6,
-        "percentage": 5
+        "count": 0,
+        "percentage": 0
       },
       {
         "stars": 2,
-        "count": 1,
-        "percentage": 1
+        "count": 0,
+        "percentage": 0
       },
       {
         "stars": 1,
-        "count": 1,
-        "percentage": 1
+        "count": 0,
+        "percentage": 0
       }
     ],
-    "highlights": [
-      {
-        "label": "Scenery",
-        "count": 89
-      },
-      {
-        "label": "Guide",
-        "count": 76
-      },
-      {
-        "label": "Pace",
-        "count": 54
-      },
-      {
-        "label": "Aewol Finale",
-        "count": 41
-      }
-    ]
+    "highlights": []
   },
   "sticky_booking_bar": {
     "note": "Select your date and group size to check live availability and complete your booking.",
@@ -1843,7 +1764,7 @@
       "osulloc_tea_museum",
       "aewol_cafe_street"
     ],
-    "reviews_attribution": "Reviews curated from AtoC Korea operator feedback. 4.8/5 average across 142 verified bookings.",
+    "reviews_attribution": null,
     "unesco_fit_note": "unesco_fit=3: Hallasan is a UNESCO Biosphere Reserve and the centerpiece of the Jeju Volcanic Island and Lava Tubes World Heritage inscription, but the tour visits the 1100 Highland scenic zone (drive-up viewing area), not the inscribed lava tube system or the summit hike.",
     "competing_products": [
       "jeju-grand-highlights-loop",
@@ -1920,7 +1841,7 @@
             "duration": "8 hours",
             "region": "Jeju Southwest",
             "stops": "6 stops",
-            "rating": 4.8,
+            "rating": 0,
             "ratingStars": 5
           }
         }
@@ -2663,117 +2584,38 @@
       "id": "reviews",
       "component": "TourReviewsSection",
       "props": {
-        "guestReviews": [
-          {
-            "id": 1,
-            "author": "Sarah M.",
-            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
-            "location": "Singapore",
-            "date": "March 2024",
-            "rating": 5,
-            "title": "A really well-balanced way to see Jeju Southwest in one day",
-            "text": "The flow of the route was excellent. Starting at Hallasan gave the day real momentum, and that made Jusangjeolli feel even more impressive afterward. I especially loved how the route moved from O’Sulloc into Aewol. The afternoon softened naturally, and that made the whole day feel very well paced.",
-            "helpful": 24,
-            "verified": true,
-            "tripType": "Couple",
-            "photos": [
-              "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
-              "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80"
-            ]
-          },
-          {
-            "id": 2,
-            "author": "James K.",
-            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-            "location": "Hong Kong",
-            "date": "March 2024",
-            "rating": 5,
-            "title": "A great southwest route with an especially comfortable finish",
-            "text": "I joined several tours in Korea, and this one stood out because the order was so well designed. The guide handled the rhythm between Hallasan, the cliffs, and Cheonjeyeon very smoothly, and the O’Sulloc-to-Aewol ending made the day feel balanced rather than tiring.",
-            "helpful": 18,
-            "verified": true,
-            "tripType": "Family",
-            "photos": []
-          },
-          {
-            "id": 3,
-            "author": "Yuki T.",
-            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-            "location": "Tokyo",
-            "date": "February 2024",
-            "rating": 4,
-            "title": "I especially liked ending the day in Aewol",
-            "text": "The overall experience was very good. Eoseungsaengak was a better start than I expected, and O’Sulloc was the perfect stop before Aewol. I gave it four stars only because I would have loved a little more time in Aewol, although I understand that the schedule has limits.",
-            "helpful": 12,
-            "verified": true,
-            "tripType": "Solo",
-            "photos": [
-              "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&q=80"
-            ]
-          },
-          {
-            "id": 4,
-            "author": "Michael R.",
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-            "location": "Sydney",
-            "date": "February 2024",
-            "rating": 5,
-            "title": "The route had more variety than I expected",
-            "text": "I joined mainly for the scenery, but what stayed with me most was how well the whole day was connected. Hallasan, basalt cliffs, the waterfall, tea fields, and the Aewol coast all felt like part of one continuous story, and the small-group format kept every transition smooth.",
-            "helpful": 31,
-            "verified": true,
-            "tripType": "Friends",
-            "photos": []
-          }
-        ],
+        "guestReviews": [],
         "reviewsSummary": {
-          "averageRating": 4.8,
-          "totalReviews": 127,
+          "averageRating": 0,
+          "totalReviews": 0,
           "ratingDistribution": [
             {
               "stars": 5,
-              "count": 98,
-              "percentage": 77
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 4,
-              "count": 21,
-              "percentage": 17
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 3,
-              "count": 6,
-              "percentage": 5
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 2,
-              "count": 1,
-              "percentage": 1
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 1,
-              "count": 1,
-              "percentage": 1
+              "count": 0,
+              "percentage": 0
             }
           ],
-          "highlights": [
-            {
-              "label": "Scenery",
-              "count": 89
-            },
-            {
-              "label": "Guide",
-              "count": 76
-            },
-            {
-              "label": "Pace",
-              "count": 54
-            },
-            {
-              "label": "Aewol Finale",
-              "count": 41
-            }
-          ]
+          "highlights": []
         }
       }
     },

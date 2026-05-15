@@ -24,8 +24,8 @@
     "region": "Suroeste de Jeju",
     "duration": "8 horas",
     "stopsCount": 6,
-    "rating": 4.8,
-    "reviewCount": 127,
+    "rating": 0,
+    "reviewCount": 0,
     "badges": [
       "Ideal para visitantes de Jeju por primera vez",
       "Suroeste de Jeju"
@@ -65,7 +65,7 @@
       "duration": "8 horas",
       "region": "Suroeste de Jeju",
       "stops": "6 paradas",
-      "rating": 4.8,
+      "rating": 0,
       "ratingStars": 5
     }
   },
@@ -1754,7 +1754,7 @@
       "osulloc_tea_museum",
       "aewol_cafe_street"
     ],
-    "reviews_attribution": "Reviews curated from AtoC Korea operator feedback. 4.8/5 average across 142 verified bookings.",
+    "reviews_attribution": null,
     "unesco_fit_note": "unesco_fit=3: Hallasan is a UNESCO Biosphere Reserve and the centerpiece of the Jeju Volcanic Island and Lava Tubes World Heritage inscription, but the tour visits the 1100 Highland scenic zone (drive-up viewing area), not the inscribed lava tube system or the summit hike.",
     "competing_products": [
       "jeju-grand-highlights-loop",
@@ -1831,7 +1831,7 @@
             "duration": "8 horas",
             "region": "Suroeste de Jeju",
             "stops": "6 paradas",
-            "rating": 4.8,
+            "rating": 0,
             "ratingStars": 5
           }
         }
@@ -2574,117 +2574,38 @@
       "id": "reviews",
       "component": "TourReviewsSection",
       "props": {
-        "guestReviews": [
-          {
-            "id": 1,
-            "author": "Sarah M. > **Notas:** Los elementos **2**, **5**, **6** y **29** son identificadores de código (clases CSS y nombres de componentes) que se mantienen sin traducir. El elemento **30** es un nombre propio y también se conserva tal cual.",
-            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
-            "location": "Singapur",
-            "date": "Marzo de 2024",
-            "rating": 5,
-            "title": "Una forma realmente muy equilibrada de ver el suroeste de Jeju en un día",
-            "text": "El recorrido de la ruta fue excelente. Comenzar en Hallasan le dio al día un impulso real, y eso hizo que Jusangjeolli se sintiera aún más impresionante después. Me encantó especialmente cómo la ruta pasó de O'Sulloc a Aewol. La tarde se suavizó de forma natural, y eso hizo que todo el día tuviera un ritmo muy bien logrado.",
-            "helpful": 24,
-            "verified": true,
-            "tripType": "Pareja",
-            "photos": [
-              "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
-              "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80"
-            ]
-          },
-          {
-            "id": 2,
-            "author": "James K.",
-            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-            "location": "Hong Kong",
-            "date": "Marzo de 2024",
-            "rating": 5,
-            "title": "Una excelente ruta por el suroeste con un final especialmente cómodo",
-            "text": "Me uní a varios tours en Corea, y este destacó porque el orden estaba muy bien diseñado. El guía manejó el ritmo entre Hallasan, los acantilados y Cheonjeyeon de manera muy fluida, y el final de O'Sulloc a Aewol hizo que el día se sintiera equilibrado en lugar de agotador.",
-            "helpful": 18,
-            "verified": true,
-            "tripType": "Familia",
-            "photos": []
-          },
-          {
-            "id": 3,
-            "author": "Yuki T.",
-            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-            "location": "Tokio",
-            "date": "Febrero de 2024",
-            "rating": 4,
-            "title": "Me gustó especialmente terminar el día en Aewol",
-            "text": "La experiencia general fue muy buena. Eoseungsaengak fue un comienzo mejor de lo que esperaba, y O'Sulloc fue la parada perfecta antes de Aewol. Le di cuatro estrellas solo porque me hubiera encantado tener un poco más de tiempo en Aewol, aunque entiendo que el horario tiene sus límites.",
-            "helpful": 12,
-            "verified": true,
-            "tripType": "Solo",
-            "photos": [
-              "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&q=80"
-            ]
-          },
-          {
-            "id": 4,
-            "author": "Michael R.",
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-            "location": "Sídney",
-            "date": "Febrero de 2024",
-            "rating": 5,
-            "title": "La ruta tuvo más variedad de lo que esperaba",
-            "text": "Me uní principalmente por el paisaje, pero lo que más me quedó fue lo bien que estuvo conectado todo el día. Hallasan, los acantilados de basalto, la cascada, los campos de té y la costa de Aewol se sintieron como parte de una historia continua, y el formato de grupo pequeño hizo que cada transición fuera fluida.",
-            "helpful": 31,
-            "verified": true,
-            "tripType": "Amigos",
-            "photos": []
-          }
-        ],
+        "guestReviews": [],
         "reviewsSummary": {
-          "averageRating": 4.8,
-          "totalReviews": 127,
+          "averageRating": 0,
+          "totalReviews": 0,
           "ratingDistribution": [
             {
               "stars": 5,
-              "count": 98,
-              "percentage": 77
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 4,
-              "count": 21,
-              "percentage": 17
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 3,
-              "count": 6,
-              "percentage": 5
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 2,
-              "count": 1,
-              "percentage": 1
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 1,
-              "count": 1,
-              "percentage": 1
+              "count": 0,
+              "percentage": 0
             }
           ],
-          "highlights": [
-            {
-              "label": "Paisaje",
-              "count": 89
-            },
-            {
-              "label": "Guía",
-              "count": 76
-            },
-            {
-              "label": "Ritmo",
-              "count": 54
-            },
-            {
-              "label": "Final en Aewol",
-              "count": 41
-            }
-          ]
+          "highlights": []
         }
       }
     },

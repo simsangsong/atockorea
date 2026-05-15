@@ -65,7 +65,7 @@
       "duration": "8시간",
       "region": "제주 서남부",
       "stops": "6개 방문지",
-      "rating": 4.8,
+      "rating": 0,
       "ratingStars": 5
     }
   },
@@ -1754,7 +1754,7 @@
       "osulloc_tea_museum",
       "aewol_cafe_street"
     ],
-    "reviews_attribution": "Reviews curated from AtoC Korea operator feedback. 4.8/5 average across 142 verified bookings.",
+    "reviews_attribution": null,
     "unesco_fit_note": "unesco_fit=3: Hallasan is a UNESCO Biosphere Reserve and the centerpiece of the Jeju Volcanic Island and Lava Tubes World Heritage inscription, but the tour visits the 1100 Highland scenic zone (drive-up viewing area), not the inscribed lava tube system or the summit hike.",
     "competing_products": [
       "jeju-grand-highlights-loop",
@@ -1831,7 +1831,7 @@
             "duration": "8시간",
             "region": "제주 서남부",
             "stops": "6개 코스",
-            "rating": 4.8,
+            "rating": 0,
             "ratingStars": 5
           }
         }
@@ -2574,117 +2574,38 @@
       "id": "reviews",
       "component": "TourReviewsSection",
       "props": {
-        "guestReviews": [
-          {
-            "id": 1,
-            "author": "Sarah M. > **참고:** 항목 2, 5는 CSS 클래스명, 항목 6, 29는 컴포넌트명, 항목 30은 인명으로 원문을 그대로 유지했습니다.",
-            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
-            "location": "싱가포르",
-            "date": "2024년 3월",
-            "rating": 5,
-            "title": "하루 만에 제주 서남부를 균형 있게 둘러보는 코스",
-            "text": "코스의 흐름이 훌륭했습니다. 한라산에서 시작한 덕분에 하루 전체에 활기가 생겼고, 그 덕에 이후 주상절리가 더욱 인상적으로 느껴졌습니다. 특히 오설록에서 애월로 이어지는 동선이 마음에 들었습니다. 오후가 자연스럽게 여유로워지면서 하루 일정 전체가 매우 잘 짜여 있다는 느낌이 들었습니다.",
-            "helpful": 24,
-            "verified": true,
-            "tripType": "커플",
-            "photos": [
-              "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
-              "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80"
-            ]
-          },
-          {
-            "id": 2,
-            "author": "James K.",
-            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-            "location": "홍콩",
-            "date": "2024년 3월",
-            "rating": 5,
-            "title": "마무리가 특히 편안한, 훌륭한 서남부 코스",
-            "text": "한국에서 여러 투어에 참가해 봤는데, 이번 투어는 순서가 매우 잘 짜여 있어 단연 돋보였습니다. 가이드가 한라산, 절벽, 천제연 사이의 리듬을 매우 자연스럽게 조율해 주었고, 오설록에서 애월로 이어지는 마무리 덕분에 피곤하지 않고 균형 있는 하루로 느껴졌습니다.",
-            "helpful": 18,
-            "verified": true,
-            "tripType": "가족",
-            "photos": []
-          },
-          {
-            "id": 3,
-            "author": "Yuki T.",
-            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-            "location": "도쿄",
-            "date": "2024년 2월",
-            "rating": 4,
-            "title": "특히 하루를 애월에서 마무리한 것이 좋았습니다",
-            "text": "전반적인 경험이 매우 좋았습니다. 어승생악은 기대 이상의 출발지였고, 오설록은 애월 전 들르기에 완벽한 장소였습니다. 별 네 개를 준 이유는 애월에서 조금 더 시간을 보내고 싶었기 때문이지만, 일정상 한계가 있다는 점도 충분히 이해합니다.",
-            "helpful": 12,
-            "verified": true,
-            "tripType": "혼자 여행",
-            "photos": [
-              "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&q=80"
-            ]
-          },
-          {
-            "id": 4,
-            "author": "Michael R.",
-            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-            "location": "시드니",
-            "date": "2024년 2월",
-            "rating": 5,
-            "title": "예상보다 훨씬 다채로운 코스였습니다",
-            "text": "주로 경치를 보러 참가했는데, 가장 인상 깊었던 것은 하루 전체가 얼마나 잘 연결되어 있는가였습니다. 한라산, 주상절리, 폭포, 차밭, 그리고 애월 해안이 모두 하나의 이야기처럼 자연스럽게 이어졌고, 소규모 그룹 방식 덕분에 모든 이동이 매끄러웠습니다.",
-            "helpful": 31,
-            "verified": true,
-            "tripType": "친구들",
-            "photos": []
-          }
-        ],
+        "guestReviews": [],
         "reviewsSummary": {
-          "averageRating": 4.8,
-          "totalReviews": 127,
+          "averageRating": 0,
+          "totalReviews": 0,
           "ratingDistribution": [
             {
               "stars": 5,
-              "count": 98,
-              "percentage": 77
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 4,
-              "count": 21,
-              "percentage": 17
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 3,
-              "count": 6,
-              "percentage": 5
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 2,
-              "count": 1,
-              "percentage": 1
+              "count": 0,
+              "percentage": 0
             },
             {
               "stars": 1,
-              "count": 1,
-              "percentage": 1
+              "count": 0,
+              "percentage": 0
             }
           ],
-          "highlights": [
-            {
-              "label": "경치",
-              "count": 89
-            },
-            {
-              "label": "가이드",
-              "count": 76
-            },
-            {
-              "label": "여행 속도",
-              "count": 54
-            },
-            {
-              "label": "애월 마무리",
-              "count": 41
-            }
-          ]
+          "highlights": []
         }
       }
     },
