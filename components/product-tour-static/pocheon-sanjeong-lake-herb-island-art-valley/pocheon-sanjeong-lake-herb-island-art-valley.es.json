@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Excursión de un día a Pocheon: Lago, Herb Island y Art Valley | AtoC Korea",
     "metaDescription": "Excursión relajada de 10 horas desde Seúl a Pocheon: senderos del Lago Sanjeong, Herb Island de estilo mediterráneo y el monorraíl de Art Valley sobre el esmeralda Lago Cheonjuho.",
-    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "ogImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "primaryKeywords": [
       "Tour de un día a Pocheon desde Seúl",
       "Tour por el Lago Sanjeong",
@@ -1079,7 +1079,7 @@
     "japanese_speaking_guide_available_on_advance_notice": true
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": [
       "authoring",
       "review",
@@ -1132,7 +1132,7 @@
         "headlineLine1": "Pocheon",
         "headlineLine2": "Lago, Hierbas y Cantera",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+          "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
           "imagePosition": "center 50%",
           "tagline": "Lago de montaña, pueblo de hierbas de estilo mediterráneo y una antigua cantera de granito transformada en parque de arte: las tres paradas más tranquilas y fotogénicas de Pocheon en una excursión de un día desde Seúl.",
           "pills": [
@@ -1232,7 +1232,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "Zonas de jardín de estilo mediterráneo con paredes encaladas, arriates de hierbas y exhibiciones de lavanda de temporada",
             "caption": "Jardines de hierbas mediterráneas de Herb Island (Pocheon)",
             "location": "Herb Island",
@@ -1241,7 +1241,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "Lago rodeado de montañas con un sendero llano junto a la orilla y acantilados boscosos reflejados en el agua",
             "caption": "Lago Sanjeong en el Monte Myeongseongsan (Pocheon)",
             "location": "Lago Sanjeong",
@@ -1250,7 +1250,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "Lago de cantera verde esmeralda rodeado de escarpadas paredes de granito",
             "caption": "Lago Cheonjuho dentro de la cantera de Pocheon Art Valley",
             "location": "Valle de Arte de Pocheon",
@@ -1259,7 +1259,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/01/2791401_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "Senderos del jardín iluminados con guirnaldas de luces nocturnas e instalaciones temáticas",
             "caption": "Noche del festival de luces de Herb Island (zona de la Villa de Papá Noel durante todo el año)",
             "location": "Luces Nocturnas de Herb Island",
@@ -1268,7 +1268,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "Cascada forestal que cae sobre salientes rocosos hacia una poza",
             "caption": "Cascada Bidulginang — parada sustituta de temporada cerca de Pocheon",
             "location": "Cascada Bidulginang",
@@ -1993,7 +1993,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

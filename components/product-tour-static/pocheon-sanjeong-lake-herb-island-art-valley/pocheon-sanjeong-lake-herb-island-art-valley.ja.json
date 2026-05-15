@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "ポチョン日帰り旅行：湖・ハーブアイランド＆アートバレー | AtoC Korea",
     "metaDescription": "ソウルから10時間のゆったりポチョン日帰り旅行：山井湖（サンジョン湖）のトレイル、地中海スタイルのハーブアイランド、エメラルドグリーンの天柱湖（チョンジュホ）を見渡すアートバレーのモノレール。",
-    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "ogImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "primaryKeywords": [
       "ソウル発ポチョン日帰りツアー",
       "山井湖ツアー",
@@ -1079,7 +1079,7 @@
     "japanese_speaking_guide_available_on_advance_notice": true
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": [
       "authoring",
       "review",
@@ -1132,7 +1132,7 @@
         "headlineLine1": "抱川",
         "headlineLine2": "山正湖・ハーブ・アートバレー",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+          "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
           "imagePosition": "center 50%",
           "tagline": "山上の湖、地中海スタイルのハーブ村、そしてアートパークへと生まれ変わった元御影石採石場 — ソウル発の日帰り旅行で訪れる、抱川のくつろげて写真映えする3大スポット。",
           "pills": [
@@ -1232,7 +1232,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "白壁、ハーブ畑、季節のラベンダーが彩る地中海風庭園ゾーン",
             "caption": "ハーブアイランド 地中海風ハーブガーデン（ポチョン）",
             "location": "ハーブアイランド",
@@ -1241,7 +1241,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "平坦な湖畔の遊歩道と水面に映る森の断崖に囲まれた山間の湖",
             "caption": "ミョンソンサン山のサンジョン湖（ポチョン）",
             "location": "サンジョン湖",
@@ -1250,7 +1250,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "切り立った花崗岩の断崖に囲まれたエメラルドグリーンの採石場湖",
             "caption": "ポチョン・アートバレー採石場内のチョンジュホ湖",
             "location": "ポチョン・アートバレー",
@@ -1259,7 +1259,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/01/2791401_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "テーマ別イルミネーションと電球が連なる、夜の光に彩られたガーデンパス",
             "caption": "ハーブアイランドの光の祭典の夜（年中開催のサンタビレッジエリア）",
             "location": "ハーブアイランドのイブニングライト",
@@ -1268,7 +1268,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "岩の棚を伝って滝壺へ流れ落ちる、森の中の滝",
             "caption": "ビドゥルギナン滝 ― ポチョン近郊の季節限定代替スポット",
             "location": "ビドゥルギナン滝",
@@ -1993,7 +1993,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

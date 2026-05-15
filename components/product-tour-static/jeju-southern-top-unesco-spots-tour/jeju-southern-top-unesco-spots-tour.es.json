@@ -14,7 +14,7 @@
       "Acantilado Jusangjeolli",
       " Jeju"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+    "ogImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "Tour Jeju Sur: Hallasan, Cascadas y Té | AtoC",
     "description": "Excursión de un día por el sur de Jeju: Hallasan Eoseungsaengak → Camellia Hill → Cascadas Cheonjeyeon → Acantilado Jusangjeolli →. Grupo pequeño, 9 horas, entradas incluidas."
   },
@@ -138,21 +138,13 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
-      "location": "Recogida (4 puntos en Ciudad de Jeju)",
-      "alt": "Recogida (4 puntos en Ciudad de Jeju) — on-route photo",
-      "caption": "Recogida (4 puntos en Ciudad de Jeju)"
-    },
-    {
-      "id": 2,
-      "type": "photo",
       "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
       "location": "Sendero Eoseungsaengak (Hallasan UNESCO)",
       "alt": "Sendero Eoseungsaengak (Hallasan UNESCO) — gallery image 1",
       "caption": "Sendero Eoseungsaengak (Hallasan UNESCO) — photo 1"
     },
     {
-      "id": 3,
+      "id": 2,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "location": "Camellia Hill (jardín botánico, flores todo el año)",
@@ -160,15 +152,7 @@
       "caption": "Camellia Hill (jardín botánico, flores todo el año) — photo 1"
     },
     {
-      "id": 4,
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
-      "location": "Almuerzo — Restaurante local del sur de Jeju",
-      "alt": "Almuerzo — Restaurante local del sur de Jeju — on-route photo",
-      "caption": "Almuerzo — Restaurante local del sur de Jeju"
-    },
-    {
-      "id": 5,
+      "id": 3,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "location": "Cascadas Cheonjeyeon (Estanque de los Dioses)",
@@ -176,7 +160,7 @@
       "caption": "Cascadas Cheonjeyeon (Estanque de los Dioses) — photo 1"
     },
     {
-      "id": 6,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "location": "Acantilado Jusangjeolli de Daepo (Columnas volcánicas)",
@@ -184,7 +168,7 @@
       "caption": "Acantilado Jusangjeolli de Daepo (Columnas volcánicas) — photo 1"
     },
     {
-      "id": 7,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "location": "Museo de Té y Campos de Té Verde",
@@ -192,15 +176,7 @@
       "caption": "Museo de Té y Campos de Té Verde — photo 1"
     },
     {
-      "id": 8,
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1549144511-f099e773c147",
-      "location": "Regreso (5 puntos en Ciudad de Jeju)",
-      "alt": "Regreso (5 puntos en Ciudad de Jeju) — on-route photo",
-      "caption": "Regreso (5 puntos en Ciudad de Jeju)"
-    },
-    {
-      "id": 9,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
       "location": "Sendero Eoseungsaengak (Hallasan UNESCO)",
@@ -208,7 +184,7 @@
       "caption": "Sendero Eoseungsaengak (Hallasan UNESCO) — photo 2"
     },
     {
-      "id": 10,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
       "location": "Camellia Hill (jardín botánico, flores todo el año)",
@@ -216,7 +192,7 @@
       "caption": "Camellia Hill (jardín botánico, flores todo el año) — photo 2"
     },
     {
-      "id": 11,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
       "location": "Cascadas Cheonjeyeon (Estanque de los Dioses)",
@@ -224,7 +200,7 @@
       "caption": "Cascadas Cheonjeyeon (Estanque de los Dioses) — photo 2"
     },
     {
-      "id": 12,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
       "location": "Cascadas Cheonjeyeon (Estanque de los Dioses)",
@@ -232,7 +208,7 @@
       "caption": "Cascadas Cheonjeyeon (Estanque de los Dioses) — photo 3"
     },
     {
-      "id": 13,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "Acantilado Jusangjeolli de Daepo (Columnas volcánicas)",
@@ -240,7 +216,7 @@
       "caption": "Acantilado Jusangjeolli de Daepo (Columnas volcánicas) — photo 2"
     },
     {
-      "id": 14,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "Acantilado Jusangjeolli de Daepo (Columnas volcánicas)",
@@ -248,7 +224,7 @@
       "caption": "Acantilado Jusangjeolli de Daepo (Columnas volcánicas) — photo 3"
     },
     {
-      "id": 15,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "Acantilado Jusangjeolli de Daepo (Columnas volcánicas)",
@@ -256,7 +232,7 @@
       "caption": "Acantilado Jusangjeolli de Daepo (Columnas volcánicas) — photo 4"
     },
     {
-      "id": 16,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
       "location": "Museo de Té y Campos de Té Verde",
@@ -264,7 +240,7 @@
       "caption": "Museo de Té y Campos de Té Verde — photo 2"
     },
     {
-      "id": 17,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
       "location": "Museo de Té y Campos de Té Verde",
@@ -272,7 +248,7 @@
       "caption": "Museo de Té y Campos de Té Verde — photo 3"
     },
     {
-      "id": 18,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
       "location": "Museo de Té y Campos de Té Verde",
@@ -280,7 +256,7 @@
       "caption": "Museo de Té y Campos de Té Verde — photo 4"
     },
     {
-      "id": 19,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
       "location": "Museo de Té y Campos de Té Verde",
@@ -288,7 +264,7 @@
       "caption": "Museo de Té y Campos de Té Verde — photo 5"
     },
     {
-      "id": 20,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
       "location": "Museo de Té y Campos de Té Verde",
@@ -296,7 +272,7 @@
       "caption": "Museo de Té y Campos de Té Verde — photo 6"
     },
     {
-      "id": 21,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
       "location": "Museo de Té y Campos de Té Verde",
@@ -304,7 +280,7 @@
       "caption": "Museo de Té y Campos de Té Verde — photo 7"
     },
     {
-      "id": 22,
+      "id": 19,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
       "location": "Museo de Té y Campos de Té Verde",
@@ -312,7 +288,7 @@
       "caption": "Museo de Té y Campos de Té Verde — photo 8"
     },
     {
-      "id": 23,
+      "id": 20,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
       "location": "Museo de Té y Campos de Té Verde",
@@ -320,7 +296,7 @@
       "caption": "Museo de Té y Campos de Té Verde — photo 9"
     },
     {
-      "id": 24,
+      "id": 21,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
       "location": "Museo de Té y Campos de Té Verde",
@@ -328,7 +304,7 @@
       "caption": "Museo de Té y Campos de Té Verde — photo 10"
     },
     {
-      "id": 25,
+      "id": 22,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
       "location": "Museo de Té y Campos de Té Verde",
@@ -336,7 +312,7 @@
       "caption": "Museo de Té y Campos de Té Verde — photo 11"
     },
     {
-      "id": 26,
+      "id": 23,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
       "location": "Museo de Té y Campos de Té Verde",
@@ -352,7 +328,7 @@
       "name": "Recogida (4 puntos en Ciudad de Jeju)",
       "category": "Salida — 4 puntos de recogida en Ciudad de Jeju",
       "description": "Recogida consolidada en cuatro puntos de Ciudad de Jeju: **Aeropuerto Internacional de Jeju** para llegadas ese día; **Jeju Ayuntamiento** para hoteles del casco urbano; **Hagwi-dong** como punto más occidental; **Shilla Duty-Free / Ocean Suites (08:30)**. Orden: Ocean Suites → Aeropuerto Puerta 3, Planta 3 (salidas nacionales, 08:45) → Ayuntamiento (09:00) → Hagwi (09:15) → Ruta 1132 sur hacia Eoseungsaengak (~50 min).",
-      "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+      "image": null,
       "highlights": [
         "4 puntos de recogida en Ciudad de Jeju",
         "Minibús de grupo pequeño, guía certificado inglés/chino",
@@ -547,7 +523,7 @@
       "name": "Almuerzo — Restaurante local del sur de Jeju",
       "category": "Pausa para comer — Zona costera Andeok-Seogwipo",
       "description": "**Pausa de 60 minutos** en la franja costera sur entre Camellia Hill y las Cascadas Cheonjeyeon. La costa sur de Jeju es una de las principales zonas pesqueras de Corea, con descargas diarias de abulón, mariscos y pez aguja. Menú habitual: **galchi-jorim** o **haemul jeongsik**. Precio orientativo: ≈ ₩15.000/persona. **Almuerzo no incluido — pago directo.**",
-      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "image": null,
       "highlights": [
         "**Galchi-jorim** — guiso de pez sable, especialidad del sur de Jeju",
         "**Haemul jeongsik** — menú completo de marisco fresco",
@@ -993,7 +969,7 @@
       "name": "Regreso (5 puntos en Ciudad de Jeju)",
       "category": "Regreso — 5 puntos de llegada en Ciudad de Jeju",
       "description": "El regreso invierte el orden de las recogidas con un punto adicional: Mercado Dongmun → Ayuntamiento de Jeju → Hagwi-dong → Aeropuerto Internacional de Jeju, con parada previa opcional en el centro comercial **Shilla Duty-Free**. Hora estimada de llegada al aeropuerto: **17:40-18:00 h** según tráfico.",
-      "image": "https://images.unsplash.com/photo-1549144511-f099e773c147",
+      "image": null,
       "highlights": [
         "5 puntos de llegada incluyendo Shilla Duty-Free (opcional)",
         "Hora estimada de llegada al aeropuerto: **17:40-18:00 h**"
@@ -3026,7 +3002,7 @@
       "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

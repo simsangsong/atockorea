@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "부산 출발 경주 벚꽃 당일 투어 (3월 28일–4월 10일) | AtoC Korea",
     "metaDescription": "부산 출발 경주 봄 벚꽃 셔틀 투어 8.5시간. 보문호, 대릉원 돌담길, 불국사. 3월 28일~4월 10일 한정 운행.",
-    "ogImage": "https://www.atockorea.com/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+    "ogImage": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "primaryKeywords": [
       "부산 출발 경주 벚꽃 투어",
       "보문호 벚꽃 당일 투어",
@@ -132,21 +132,13 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/87/2661487_image2_1.JPG",
-      "location": "보문호 (벚꽃 중심지)",
-      "alt": "보문호 (벚꽃 중심지) — 경로상 사진",
-      "caption": "보문호 (벚꽃 중심지)"
-    },
-    {
-      "id": 2,
-      "type": "photo",
       "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
       "location": "첨성대 + 대릉원",
       "alt": "첨성대 + 대릉원 — 갤러리 이미지 1",
       "caption": "첨성대 + 대릉원 — 사진 1"
     },
     {
-      "id": 3,
+      "id": 2,
       "type": "photo",
       "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
       "location": "불국사 (유네스코 세계문화유산)",
@@ -154,7 +146,7 @@
       "caption": "불국사 (유네스코 세계문화유산) — 사진 1"
     },
     {
-      "id": 4,
+      "id": 3,
       "type": "photo",
       "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
       "location": "첨성대 + 대릉원",
@@ -162,7 +154,7 @@
       "caption": "첨성대 + 대릉원 — 사진 2"
     },
     {
-      "id": 5,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
       "location": "불국사 (유네스코 세계문화유산)",
@@ -170,7 +162,7 @@
       "caption": "불국사 (유네스코 세계문화유산) — 사진 2"
     },
     {
-      "id": 6,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
       "location": "불국사 (유네스코 세계문화유산)",
@@ -269,7 +261,7 @@
           "Gyeongju Tourism Organization"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/87/2661487_image2_1.JPG"
+      "image": null
     },
     {
       "number": 3,
@@ -453,7 +445,7 @@
           "Visit Gyeongju official"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+      "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
       "images": [
         "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
         "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
@@ -853,7 +845,7 @@
     "product_id": "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
     "product_type": "small_group",
     "route_type": "fixed_route",
-    "destination_region": "korea_mainland",
+    "destination_region": "busan_gyeongju",
     "region_type": "gyeongsang_north",
     "vehicle_type": "coach",
     "duration_hours": 10.25,
@@ -1084,7 +1076,7 @@
         "headlineLine1": "부산에서 경주로",
         "headlineLine2": "벚꽃 투어",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+          "imageUrl": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
           "imagePosition": "center 35%",
           "tagline": "한국의 '지붕 없는 박물관' — 반경 15km 안에 7개의 유네스코 유산이 모여 있는 경주",
           "pills": [
@@ -1179,7 +1171,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+            "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "alt": "**Stone bridges and Dabotap pagoda at Bulguksa Temple, late afternoon light** → 불국사 석교와 다보탑, 늦은 오후의 햇살",
             "caption": "**Bulguksa — UNESCO World Heritage. The two pagodas are National Treasures No. 20 and 21.** → 불국사 — 유네스코 세계문화유산. 두 탑은 각각 국보 제20호와 제21호.",
             "location": "**Bulguksa Temple, Gyeongju** → 경주 불국사",
@@ -1188,7 +1180,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/87/2661487_image2_1.JPG",
+            "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "alt": "**Silla gold crown displayed in glass case under museum lighting** → 박물관 조명 아래 유리 케이스에 전시된 신라 금관",
             "caption": "**Gyeongju National Museum — gold crown from Cheonmachong tomb (National Treasure No. 188).** → 국립경주박물관 — 천마총 출토 금관 (국보 제188호).",
             "location": "국립경주박물관",
@@ -1197,7 +1189,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/16/2565716_image2_1.JPG",
+            "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "alt": "교촌마을 고즈넉한 골목을 따라 늘어선 기와 한옥과 돌담",
             "caption": "교촌 한옥마을 — 최씨 고택과 향교",
             "location": "경주 교촌 한옥마을",
@@ -1206,7 +1198,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/25/3083925_image2_1.JPG",
+            "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "alt": "숲길을 따라 빽빽한 대나무 사이로 스며드는 빛",
             "caption": "아홉산 대나무숲 — 1638년부터 문씨 가문이 사유지로 보존해 온 곳",
             "location": "부산 기장군 아홉산숲",
@@ -1215,7 +1207,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG",
+            "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "alt": "황혼 무렵 수면에 비치는 목조 교량 누각",
             "caption": "월정교 — 2018년 완공된 66미터 길이의 신라 양식 복원 교량",
             "location": "경주 월정교",
@@ -1236,7 +1228,7 @@
             "duration": "60분",
             "name": "부산 픽업 (지하철 3개 역)",
             "category": "출발",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "description": "부산 지하철 1호선을 따라 순차 픽업: 부산역 4번 출구 (08:10), 서면역 4번 출구 (08:30), 해운대역 5번 출구 (09:10). 해운대 픽업은 부산역 출발 기준으로 약 30분이 추가되는데, 픽업 차량이 경주 방면으로 북상하기 전 동쪽으로 우회하기 때문입니다. 숙소에서 가장 가까운 출구를 선택하세요.",
             "timeUsed": [
               "운영 물류 (픽업/식사/이동/귀환)",
@@ -1319,7 +1311,7 @@
             "duration": "75분",
             "name": "불국사 (유네스코 세계문화유산)",
             "category": "유네스코 불교 사찰",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/87/2661487_image2_1.JPG",
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "description": "1995년 12월 석굴암과 함께 유네스코 세계문화유산으로 등재되었습니다. 불국사는 528년 신라 법흥왕 시대에 창건되었으며, 751년 재상 김대성에 의해 현재의 규모로 확장되었습니다. 1592~98년 임진왜란 때 소실되었다가 1920년부터 단계적으로 복원되었으며, 현재 볼 수 있는 목조 건축물들은 대부분 원래의 석조 기단 위에 1973년에 재건된 것입니다. 대웅전 앞마당의 두 석탑인 화려한 다보탑과 단아한 석가탑은 모두 8세기에 조성되었으며, 각각 국보 제20호와 제21호로 지정되어 있습니다. 하단 테라스의 두 석교인 청운교와 백운교는 각각 33계단으로 이루어져 있으며, 이는 불교 우주론의 33천(天)을 상징합니다. 2023년 5월부터 입장료가 무료로 전환되었습니다(주차료 1,000~2,000원). 관람 시간은 60~75분 정도 여유 있게 잡으시고, 주말 오전에는 부산·대구발 관광버스가 몰려 혼잡할 수 있으므로 평일 방문이 훨씬 한산합니다.",
             "timeUsed": [
               "도착, 입장권 구매 및 오리엔테이션 안내",
@@ -1389,7 +1381,7 @@
             "duration": "60분",
             "name": "점심 식사 (경주 현지 식당)",
             "category": "식사",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "description": "불국사에서 차로 5분 이내 거리의 식당으로, 영어·중국어 메뉴와 단체 좌석이 가능한 곳을 선정합니다. 주요 메뉴: 경주 쌈밥(다양한 반찬을 곁들인 쌈·밥 정식, 경주의 대표 향토 요리, 약 ₩15,000~₩20,000), 불고기 세트, 또는 요청 시 채식 반찬 플래터. 점심 비용은 당일 현장에서 결제하며, 1인당 ₩15,000~₩25,000을 예산으로 준비해 주세요. 할랄·채식·글루텐 프리 등 식이 제한 사항은 예약 시 알려 주시면 가이드가 적합한 식당으로 안내해 드립니다.",
             "timeUsed": [
               "운영 물류 (픽업/식사/이동/귀환)",
@@ -1408,7 +1400,7 @@
             "duration": "75분",
             "name": "국립경주박물관",
             "category": "국립박물관 (신라)",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "description": "신라 시대 유물을 소장한 한국 최대의 박물관으로, 2008년 11월부터 무료 입장이 가능합니다. 3개의 상설 전시실에서 신라역사관, 신라미술관, 월지관(과거 안압지로 불리던 월지 궁터 발굴 유물 전시)의 주요 주제를 다룹니다. 관람객들이 가장 많이 찾는 두 유물은 천마총 금관(국보 제188호, 1973년 '천마총'에서 출토)과 성덕대왕신종(국보 제29호, 771년 주조, 무게 18.9톤 — 현존하는 한국 최대의 종으로 입구 근처 야외에 전시)입니다. 전시실 전반에 걸쳐 영어·중국어 안내판이 마련되어 있습니다. 매주 월요일 휴관. 평일 10:00~18:00, 토요일 19:00까지 운영.",
             "timeUsed": [
               "도착, 입장권 구매 및 안내 브리핑",
@@ -1478,7 +1470,7 @@
             "duration": "60분",
             "name": "교촌 한옥마을",
             "category": "한옥 문화유산 마을",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG",
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "description": "경주 최씨 가문의 종택을 중심으로 복원된 조선 시대 한옥 마을입니다. '최부자'로 널리 알려진 이 가문은 12대에 걸쳐 지켜온 생활 수칙으로 한국인의 기억 속에 깊이 남아 있습니다: 흉년에는 이웃이 굶주리지 않게 할 것, 100리 밖의 땅은 사지 말 것, 소작인이 감당할 수 없는 소작료는 받지 말 것. 최씨 고택은 소규모 박물관(무료 입장)으로 보존되어 있으며, 주변 골목에는 찻집, 전통 공예 공방, 그리고 경주 향교(현재 건물이 1492년으로 거슬러 올라가는 유교 교육기관)가 자리하고 있습니다. 대부분의 방문객은 중심 순환로를 30~40분이면 둘러볼 수 있으며, 한옥 골목길은 평탄하여 유모차도 편하게 다닐 수 있습니다.",
             "timeUsed": [
               "도착, 티켓 구매 및 오리엔테이션 안내",
@@ -1556,7 +1548,7 @@
             "duration": "40분",
             "name": "월정교",
             "category": "복원된 신라 다리",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/49/2390749_image2_1.JPG",
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "description": "교촌 옆 남천(南川)을 가로지르는 목조 다리입니다. 원래 신라 시대의 다리는 서기 760년부터 이 자리에 있었으나 13세기 몽골 침입 때 파괴되었습니다. 현재의 66미터짜리 복원 다리는 1986년에 시작된 발굴 조사를 바탕으로 2018년에 완공되었으며, 양 끝에 2층 누각이 있고 매일 밤 일몰부터 약 22:00까지 조명이 켜집니다. **계절별 유의사항**: 예정된 17:00 도착 시 3월 하순부터 10월 초까지는 다리가 낮빛 속에 있습니다 — 홍보 사진에서 흔히 볼 수 있는 일몰 후 '반영' 사진은 해가 17:15~17:30 사이에 지는 겨울(11월~2월)에 주로 촬영된 것입니다. 다리 자체는 어떤 빛에서도 사진 찍을 가치가 충분합니다. 무료 입장.",
             "timeUsed": [
               "주요 명소 탐방 및 포토 타임",
@@ -1576,7 +1568,7 @@
             "duration": "75분",
             "name": "부산으로 귀환",
             "category": "귀환",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "description": "평상시 기준 경부고속도로로 약 80km / 75분 소요; 금요일 저녁 또는 일요일 귀경 시 약 90분. 하차는 탑승의 역순: 해운대역 5번 출구 약 19:00, 서면역 4번 출구 약 19:25, 부산역 4번 출구 약 19:45.",
             "timeUsed": [
               "운영 물류 (픽업 / 식사 / 이동 / 귀환)",
@@ -2012,7 +2004,7 @@
       "v15.4_new_tour_creation": "Created new tour from GYG product ID t1192332 (Busan-Gyeongju spring cherry blossom day tour). Structural template: busan-gyeongju-unesco-legacy-tour-national-museum (same Busan→Gyeongju logistics, shuttle small_group format). Content layered with cherry-blossom-specific POIs added to KB v1.1: bomun_lake, daereungwon_tomb_complex, cheomseongdae. POI operational data sourced from VisitKorea, Visit Busan, Gyeongju City tourism office, listings,, listings (cross-verified across 4–6 sources per POI). SEASONALITY is STRICT: spring=1.0, summer/autumn/winter=0.0 — tour operates only Mar 28–Apr 10 (verified from GYG t1192332 dating and listings 2024–2026). MATCHING-PROFILE SCORING METHODOLOGY: All 68 fields scored from verified facts about the actual stops in the default itinerary (walking distances measured, accessibility per VisitKorea + AllTrails, hours/admission per official tourism boards, UNESCO designations per UNESCO World Heritage List). Inline reasoning for each non-trivial score is captured as comments in the generator script step3b_create_cherry_blossom_tour.py — Jason can review or adjust any specific score by editing the generator and re-running. Key derivations: (1) walking_level=0.50 from measured 3–5km total walking with mostly flat paths and one stair section; (2) unesco_fit=0.95 from 3-of-4 stops being UNESCO-listed; (3) seasonality.spring=1.0 + others=0.0 from verified seasonal-only operating dates; (4) couple_fit=0.95 vs young_kids_fit=0.50 from cherry blossom romance vs 8.5h day length tradeoff; (5) value_for_money_fit=0.85 from 4 free admissions + shuttle pricing in peak demand season. REASONABLE-ASSUMPTION FIELDS that may need patching once the live GYG page is reviewed: (a) price.amountLabel left empty (per-person pricing TBD); (b) catalog_card.priceFromUSD null; (c) exact pickup times (08:00/08:15/08:30) assumed from typical shuttle schedule; (d) reviewsSummary populated with zeros — actual GYG reviews not imported in this pass; (e) hero/og images deferred per v15 P3 image workflow.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 0,
         "fields_skipped": 0,
         "fields_already_float": 42

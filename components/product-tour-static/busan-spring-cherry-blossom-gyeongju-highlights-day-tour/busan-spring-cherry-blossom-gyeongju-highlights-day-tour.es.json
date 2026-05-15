@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Tour Cerezos Busan→Gyeongju: Bomun, Cheomseongdae y Bulguksa | AtoC",
     "metaDescription": "Tour flor de cerezo desde Busan a Gyeongju (28 mar – 10 abr): Lago Bomun (9.000 cerezos) → Cheomseongdae + Daereungwon (UNESCO) → almuerzo → Bulguksa (UNESCO). Solo primavera.",
-    "ogImage": "https://www.atockorea.com/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+    "ogImage": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "primaryKeywords": [
       "tour cerezos Gyeongju Busan",
       "Lago Bomun cerezos tour",
@@ -128,33 +128,33 @@
       "id": 1,
       "type": "photo",
       "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
-      "location": "Cheomseongdae + Complejo de Túmulos Daereungwon",
-      "alt": "Cheomseongdae + Complejo de Túmulos Daereungwon — gallery image 1",
-      "caption": "Cheomseongdae + Complejo de Túmulos Daereungwon — photo 1"
-    },
-    {
-      "id": 2,
-      "type": "photo",
-      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
       "location": "Templo Bulguksa (Patrimonio UNESCO)",
       "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 1",
       "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 1"
     },
     {
-      "id": 3,
+      "id": 2,
       "type": "photo",
-      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
       "location": "Cheomseongdae + Complejo de Túmulos Daereungwon",
       "alt": "Cheomseongdae + Complejo de Túmulos Daereungwon — gallery image 2",
       "caption": "Cheomseongdae + Complejo de Túmulos Daereungwon — photo 2"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+      "location": "Templo Bulguksa (Patrimonio UNESCO)",
+      "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 2",
+      "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 2"
     },
     {
       "id": 4,
       "type": "photo",
       "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
       "location": "Templo Bulguksa (Patrimonio UNESCO)",
-      "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 2",
-      "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 2"
+      "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 3",
+      "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 3"
     },
     {
       "id": 5,
@@ -247,7 +247,8 @@
           "Gyeongju.go.kr",
           "Gyeongju Tourism Organization"
         ]
-      }
+      },
+      "image": null
     },
     {
       "number": 3,
@@ -822,7 +823,7 @@
     "product_id": "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
     "product_type": "small_group",
     "route_type": "fixed_route",
-    "destination_region": "korea_mainland",
+    "destination_region": "busan_gyeongju",
     "region_type": "gyeongsang_north",
     "vehicle_type": "coach",
     "duration_hours": 10.25,
@@ -1861,7 +1862,7 @@
       "v15.4_new_tour_creation": "Created new tour from external reference product t1192332 (Busan-Gyeongju spring cherry blossom day tour). Structural template: busan-gyeongju-unesco-legacy-tour-national-museum (same Busan→Gyeongju logistics, traslado compartido small_group format). Content layered with cherry-blossom-specific POIs added to KB v1.1: bomun_lake, daereungwon_tomb_complex, cheomseongdae. POI operational data sourced from VisitKorea, Visit Busan, Gyeongju City tourism office, Referencia de mercado listings, KoreaTravelEasy, Seúl Pass listings (cross-verified across 4–6 sources per POI). SEASONALITY is STRICT: spring=1.0, summer/autumn/winter=0.0 — tour operates only Mar 28–Apr 10 (verified from external reference t1192332 dating and Referencia de mercado listings 2024–2026). MATCHING-PROFILE SCORING METHODOLOGY: All 68 fields scored from verified facts about the actual stops in the default itinerary (walking distances measured, accessibility per VisitKorea + AllTrails, hours/admission per official tourism boards, UNESCO designations per UNESCO World Heritage List). Inline reasoning for each non-trivial score is captured as comments in the generator script step3b_create_cherry_blossom_tour.py — Jason can review or adjust any specific score by editing the generator and re-running. Key derivations: (1) walking_level=0.50 from measured 3–5km total walking with mostly flat paths and one stair section; (2) unesco_fit=0.95 from 3-of-4 stops being UNESCO-listed; (3) seasonality.spring=1.0 + others=0.0 from verified seasonal-only operating dates; (4) couple_fit=0.95 vs young_kids_fit=0.50 from cherry blossom romance vs 8.5h day length tradeoff; (5) value_for_money_fit=0.85 from 4 free admissions + traslado compartido pricing in peak demand season. REASONABLE-ASSUMPTION FIELDS that may need patching once the live external reference page is reviewed: (a) price.amountLabel left empty (per-person pricing TBD); (b) catalog_card.priceFromUSD null; (c) exact pickup times (08:00/08:15/08:30) assumed from typical traslado compartido schedule; (d) reviewsSummary populated with zeros — actual external reference reviews not imported in this pass; (e) hero/og images deferred per v15 P3 image workflow.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 0,
         "fields_skipped": 0,
         "fields_already_float": 42

@@ -14,7 +14,7 @@
       "Seoul day tour Seoraksan",
       "Seoraksan Nami one-day tour"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+    "ogImage": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
     "title": "Seoul Day Tour · Seoraksan + Nami + Morning Calm | AtoC Korea",
     "description": "Coach day tour from Seoul to Korea's most-celebrated mountain (Seoraksan), most-photographed island (Nami), and signature private garden (Morning Calm), all in a single 13-hour day."
   },
@@ -193,14 +193,6 @@
       "location": "The Garden of Morning Calm",
       "alt": "Garden of Morning Calm — gallery image 4",
       "caption": "Garden of Morning Calm — botanical paths"
-    },
-    {
-      "id": 8,
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG",
-      "location": "Seoraksan National Park",
-      "alt": "Seoraksan — gallery image 1",
-      "caption": "Seoraksan — granite ridge"
     }
   ],
   "itineraryStops": [
@@ -274,10 +266,8 @@
         "admission": "Park entrance FREE (was 3,500 KRW until recent abolition); Cable car RT Adult 16,000 / Child 12,000 KRW (on-site only, no advance booking; NOT included in this tour)",
         "walking": "Easy paths at base (Sinheungsa, cable-car base); moderate to challenging hikes (Biseondae 3 km, Ulsanbawi steep stairs, Heundeulbawi 1.5 hr each way)"
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG",
-      "images": [
-        "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG"
-      ]
+      "image": null,
+      "images": []
     },
     {
       "name": "Nami Island (Namiseom)",
@@ -867,7 +857,7 @@
     "product_id": "seoul-seoraksan-nami-island-morning-calm-day-tour",
     "product_type": "bus",
     "route_type": "fixed_route",
-    "destination_region": "korea_mainland",
+    "destination_region": "seoul_gangwon",
     "region_type": "gangwon_seoraksan",
     "vehicle_type": "large_coach",
     "duration_hours": 13,
@@ -897,36 +887,36 @@
     "culture_level": 0.85,
     "relax_level": 0.5,
     "first_time_fit": 1,
-    "family_fit": 0.85,
-    "senior_fit": 0.7,
+    "family_fit": 0.7,
+    "senior_fit": 0.6,
     "couple_fit": 1,
     "solo_traveler_fit": 0.9,
     "active_traveler_fit": 0.85,
     "adult_family_fit": 0.95,
     "family_with_teens_fit": 0.95,
-    "young_kids_fit": 0.5,
+    "young_kids_fit": 0.4,
     "senior_active_fit": 0.75,
     "senior_general_fit": 0.55,
     "mobility_friendly_fit": 0.4,
     "stroller_fit": 0.55,
     "one_day_fit": 1,
-    "same_day_flight_fit": 0.2,
+    "same_day_flight_fit": 0.1,
     "rain_fit": 0.5,
     "value_for_money_fit": 1,
     "iconic_landmark_fit": 1,
     "cafe_fit": 0.5,
-    "food_fit": 0.65,
+    "food_fit": 0.5,
     "nature_fit": 1,
-    "beach_fit": 0.3,
+    "beach_fit": 0.1,
     "nightlife_fit": 0.1,
     "shopping_fit": 0.25,
     "no_shopping_fit": 1,
-    "local_culture_fit": 0.85,
+    "local_culture_fit": 0.7,
     "storytelling_fit": 0.9,
-    "unesco_fit": 0.9,
+    "unesco_fit": 0.55,
     "intangible_heritage_fit": 0.5,
     "indoor_ratio": 0.1,
-    "weather_sensitivity": 0.6,
+    "weather_sensitivity": 0.65,
     "comfort_level": 0.55,
     "budget_fit": 1,
     "premium_fit": 0.2,
@@ -979,12 +969,12 @@
     "flexibility_fit": 0.2,
     "fixed_itinerary_fit": 1,
     "national_park_fit": 1,
-    "buddhist_temple_fit": 1,
+    "buddhist_temple_fit": 0.6,
     "k_drama_filming_fit": 1,
     "winter_sonata_fit": 1,
     "themed_garden_fit": 1,
-    "history_culture_fit": 0.85,
-    "religious_history_fit": 0.7,
+    "history_culture_fit": 0.65,
+    "religious_history_fit": 0.45,
     "premium_dining_fit": 0.15,
     "seasonal_fit": 1,
     "winter_lighting_festival_fit": 1,
@@ -1007,8 +997,34 @@
     "japanese_speaking_guide_available_on_advance_notice": true
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
+    "primary_themes": [
+      "nature",
+      "scenic",
+      "national_park",
+      "k_drama_filming"
+    ],
+    "secondary_themes": [
+      "buddhist_temple",
+      "themed_garden",
+      "hallyu_landmark",
+      "mountain"
+    ],
+    "best_for": [
+      "first_time_korea",
+      "couples",
+      "solo_travelers",
+      "nature_lovers",
+      "photographers",
+      "k_drama_fans"
+    ],
+    "not_recommended_for": [
+      "mobility_limited",
+      "very_young_children",
+      "shoppers",
+      "nightlife_seekers"
+    ],
     "source_of_truth_note": "Coach-tour combining Seoraksan + Nami Island + Garden of Morning Calm from Seoul. Attraction content reused from seoul-seoraksan-national-park-sokcho-beach-day-trip (Seoraksan) and seoul-private-nami-morning-calm-petite-france (Nami, Morning Calm). Sources: KTO VisitKorea, IUCN Green List, UNESCO, KNPS, Garden of Morning Calm official, Naminara Republic official, KBS Winter Sonata records, Wikipedia.",
     "audit_summary": "Seoul-based 13-hour coach day trip on the classic Seoraksan + Nami + Morning Calm circuit. Direct equivalent on GetYourGuide market is the $82 'From Seoul: Seoraksan, Nami Island, Garden of Morning Calm' (t1137310)."
   }

@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "서울 시내 또는 근교 프라이빗 10시간 전세 차량 | AtoC Korea",
     "metaDescription": "영어 가능 드라이버 가이드와 함께하는 프라이빗 10시간 서울 근교 전세 투어: 가평(남이섬, 아침고요수목원), DMZ + 파주, 또는 에버랜드 + 민속촌. 서울 픽업 무료.",
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "ogImage": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
     "primaryKeywords": [
       "서울 근교 프라이빗 차량",
       "서울 프라이빗 10시간 투어",
@@ -31,8 +31,8 @@
       "완전 맞춤형",
       "서울 호텔 픽업 무료"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "heroImage": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
+    "thumbnail": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
     "priceLabel": "",
     "shortCardDescription": "나만의 서울 근교 하루를 완성할 수 있는 프리미엄 10시간 프라이빗 전세 차량 투어입니다. 세 가지 추천 코스 중 선택하세요—남이섬 + 아침고요수목원 + 쁘띠프랑스 + 강촌레일바이크, DMZ + 파주 아울렛, 에버랜드 + 한국민속촌—또는 직접 원하는 일정을 보내주셔도 됩니다. 서울 도심 숙박 고객에게는 호텔 픽업이 무료로 제공됩니다.",
     "tags": [
@@ -50,7 +50,7 @@
     "salePriceUsd": null
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "imageUrl": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
     "imagePosition": "center 40%",
     "tagline": "최대 10시간 동안 공인 드라이버 가이드, 프라이빗 차량과 함께 나만의 속도로 서울 근교 하루를 즐기세요.",
     "pills": [
@@ -130,10 +130,42 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG",
-      "location": "루트 3: 에버랜드 + 한국민속촌",
-      "alt": "루트 3: 에버랜드 + 한국민속촌 — 루트 현장 사진",
-      "caption": "루트 3: 에버랜드 + 한국민속촌"
+      "src": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
+      "location": "서울 프라이빗 차량 투어",
+      "alt": "한강변 프라이빗 카니발과 N서울타워 야경",
+      "caption": "한강변 프라이빗 카니발 — N서울타워 야경"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/seoul-private-charter/seoul-private-gyeongbokgung-from-car.webp",
+      "location": "경복궁",
+      "alt": "프라이빗 차량에서 본 황혼의 경복궁",
+      "caption": "프라이빗 차량에서 본 황혼의 경복궁"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/seoul-private-charter/seoul-private-gyeongbokgung-heungnyemun.webp",
+      "location": "경복궁",
+      "alt": "경복궁 흥례문과 한복 차림 방문객",
+      "caption": "경복궁 흥례문 — 한복 차림 방문객"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/seoul-private-charter/seoul-private-n-seoul-tower-treat.webp",
+      "location": "N서울타워 (남산)",
+      "alt": "N서울타워 앞에서 즐기는 디저트",
+      "caption": "N서울타워 — 타워 앞에서 즐기는 디저트"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/seoul-private-charter/seoul-private-lotte-tower-songpa.webp",
+      "location": "롯데월드타워 (송파)",
+      "alt": "골목 위로 솟은 롯데월드타워",
+      "caption": "롯데월드타워 — 송파 거리에서 올려다본 풍경"
     }
   ],
   "itineraryStops": [
@@ -916,7 +948,7 @@
     "japan_market_fit": 0.85
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": [
       "authoring",
       "review",
@@ -1788,7 +1820,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

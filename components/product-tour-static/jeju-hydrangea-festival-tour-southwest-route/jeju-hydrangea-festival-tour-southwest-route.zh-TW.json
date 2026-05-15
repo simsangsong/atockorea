@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "濟州西南繡球花節一日遊 | AtoC Korea",
     "metaDescription": "夏季限定濟州西南一日遊：協才海灘、翰林公園繡球花節、柱狀節理海岸、天帝淵瀑布、山茶花山、雪綠茶田。",
-    "ogImage": "https://www.atockorea.com/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+    "ogImage": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "primaryKeywords": [
       "濟州繡球花節行程",
       "濟州夏季賞花行程",
@@ -140,21 +140,13 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
-      "location": "翰林公園（繡球花節）",
-      "alt": "翰林公園（繡球花節） — on-route photo",
-      "caption": "翰林公園（繡球花節）"
-    },
-    {
-      "id": 3,
-      "type": "photo",
       "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "location": "柱狀節理海岸及天帝淵瀑布",
       "alt": "柱狀節理海岸及天帝淵瀑布 — gallery image 1",
       "caption": "柱狀節理海岸及天帝淵瀑布 — photo 1"
     },
     {
-      "id": 4,
+      "id": 3,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "location": "椿花丘（繡球花隧道）",
@@ -162,7 +154,7 @@
       "caption": "椿花丘（繡球花隧道） — photo 1"
     },
     {
-      "id": 5,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "location": "奧雪綠茶博物館暨茶園",
@@ -170,7 +162,7 @@
       "caption": "奧雪綠茶博物館暨茶園 — photo 1"
     },
     {
-      "id": 6,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
       "location": "挾才海水浴場",
@@ -178,7 +170,7 @@
       "caption": "挾才海水浴場 — photo 2"
     },
     {
-      "id": 7,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
       "location": "挾才海水浴場",
@@ -186,7 +178,7 @@
       "caption": "挾才海水浴場 — photo 3"
     },
     {
-      "id": 8,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "柱狀節理海岸及天帝淵瀑布",
@@ -194,7 +186,7 @@
       "caption": "柱狀節理海岸及天帝淵瀑布 — photo 2"
     },
     {
-      "id": 9,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "柱狀節理海岸及天帝淵瀑布",
@@ -202,7 +194,7 @@
       "caption": "柱狀節理海岸及天帝淵瀑布 — photo 3"
     },
     {
-      "id": 10,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "柱狀節理海岸及天帝淵瀑布",
@@ -210,7 +202,7 @@
       "caption": "柱狀節理海岸及天帝淵瀑布 — photo 4"
     },
     {
-      "id": 11,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
       "location": "椿花丘（繡球花隧道）",
@@ -218,7 +210,7 @@
       "caption": "椿花丘（繡球花隧道） — photo 2"
     },
     {
-      "id": 12,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
       "location": "奧雪綠茶博物館暨茶園",
@@ -226,7 +218,7 @@
       "caption": "奧雪綠茶博物館暨茶園 — photo 2"
     },
     {
-      "id": 13,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
       "location": "奧雪綠茶博物館暨茶園",
@@ -234,7 +226,7 @@
       "caption": "奧雪綠茶博物館暨茶園 — photo 3"
     },
     {
-      "id": 14,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
       "location": "奧雪綠茶博物館暨茶園",
@@ -242,7 +234,7 @@
       "caption": "奧雪綠茶博物館暨茶園 — photo 4"
     },
     {
-      "id": 15,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
       "location": "奧雪綠茶博物館暨茶園",
@@ -250,7 +242,7 @@
       "caption": "奧雪綠茶博物館暨茶園 — photo 5"
     },
     {
-      "id": 16,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
       "location": "奧雪綠茶博物館暨茶園",
@@ -258,7 +250,7 @@
       "caption": "奧雪綠茶博物館暨茶園 — photo 6"
     },
     {
-      "id": 17,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
       "location": "奧雪綠茶博物館暨茶園",
@@ -266,7 +258,7 @@
       "caption": "奧雪綠茶博物館暨茶園 — photo 7"
     },
     {
-      "id": 18,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
       "location": "奧雪綠茶博物館暨茶園",
@@ -274,7 +266,7 @@
       "caption": "奧雪綠茶博物館暨茶園 — photo 8"
     },
     {
-      "id": 19,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
       "location": "奧雪綠茶博物館暨茶園",
@@ -282,7 +274,7 @@
       "caption": "奧雪綠茶博物館暨茶園 — photo 9"
     },
     {
-      "id": 20,
+      "id": 19,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
       "location": "奧雪綠茶博物館暨茶園",
@@ -290,7 +282,7 @@
       "caption": "奧雪綠茶博物館暨茶園 — photo 10"
     },
     {
-      "id": 21,
+      "id": 20,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
       "location": "奧雪綠茶博物館暨茶園",
@@ -298,7 +290,7 @@
       "caption": "奧雪綠茶博物館暨茶園 — photo 11"
     },
     {
-      "id": 22,
+      "id": 21,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
       "location": "奧雪綠茶博物館暨茶園",
@@ -414,7 +406,7 @@
       "name": "翰林公園（繡球花節）",
       "category": "繡球花主景＋9座主題庭園＋2座熔岩管洞窟",
       "description": "**翰林公園（한림공원，創立於1971年）** 是濟州島西南海岸最重要的植物公園——這座 **佔地約99,000平方公尺（原規劃為10萬坪／330,580平方公尺）的大型庭園綜合體**，由 **創辦人宋奉奎歷經半世紀引入土壤、種植棕櫚種子，將一片沙地荒原改造為綠色樂園**。公園每年吸引 **約120萬名遊客到訪**，並規劃為 **九大主題庭園**：**亞熱帶植物園**、**棕櫚樹大道**、**野草與花卉庭園**、**狹才洞窟＋雙龍洞窟**、**濟州石與盆景庭園**、**在岩民俗村**（朝鮮時代石牆韓屋，附設石爺爺餐廳）、**鳥類庭園**、**濟州石展示館**，以及 **水庭園**。\n\n翰林公園最具特色的規劃是其 **月度節慶日曆**——**1月水仙花→2月梅花→3月鬱金香→4月櫻花→5月野花／九重葛→6月繡球花→7至9月蓮花＋睡蓮→10月波斯菊／粉黛亂子草→11月菊花→12月山茶花**——12個月的輪替確保 **全年每個月都有指定節慶舉辦**。公園內兩大地質地標為 **狹才洞窟（長約200公尺、寬10公尺、高5公尺，形成於約2,500萬年前）** 與 **雙龍洞窟（長約400公尺、寬6公尺、高3公尺，意為「雙龍」）**——兩者同屬 **全長17公里的熔岩管系統**，但因熔岩管壁後來被 **從上方土壤中滲漏的石灰岩（碳酸鈣）** 所包覆，形成全球罕見的 **熔岩管形態＋石灰岩鐘乳石／石筍** 共存於同一洞窟系統的奇特景觀，因此被特別歸類為 **「二次元洞穴」**。\n\n洞內溫度 **全年維持17至18°C**，是夏季的天然避暑勝地。從訪客名單可見其外交地位之高：中國前國家主席江澤民、日本前首相中曾根康弘、韓國前總統金大中、三星前會長李健熙，以及現代集團前會長鄭周永均曾蒞臨造訪。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+      "image": null,
       "highlights": [
         "**創立於1971年**，由宋奉奎一手打造——將沙地荒原改造為綠色樂園",
         "**約99,000平方公尺／80英畝**——9座主題庭園，每年約120萬名訪客",
@@ -469,7 +461,7 @@
       "name": "午餐（濟州西南部）",
       "category": "行程停靠站——濟州西南部在地午餐",
       "description": "**午餐地點為翰林／涯月尾／安德走廊一帶的濟州風格在地餐廳**，從業者審核精選名單中挑選，所有家庭式餐廳均獲業者認可，提供**英文友善菜單、飲食需求配合（如需可提供素食及清真友善雞肉／海鮮選項），以及公道的濟州西海岸團體用餐定價**。典型午餐選項包括：**白帶魚燉煮（갈치조림）**、**濟州黑豬燒烤（흑돼지불고기）**、**濟州海藻豬肉湯（몸국，mom-guk）**及**時蔬拌飯**。\n\n**몸국尤為濟州西南部地方特色菜**，東海岸行程中並無此選項。如同東線午餐安排，確切餐廳將於前一日根據團體人數、飲食需求及廚房供應情況決定，並於早晨簡報時通知旅客。**午餐費用由旅客自行負擔**（約₩12,000至₩18,000／人），**不含**於行程費用內。飲料及米飯／小菜續添均隨餐附上。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
+      "image": null,
       "highlights": [
         "**濟州西南部在地餐廳**——翰林／涯月尾／安德走廊",
         "精選名單：**英文友善菜單** ＋ 飲食需求配合",
@@ -1560,7 +1552,7 @@
     "japan_market_fit": 0.85
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
     "source_of_truth_note": "matching_profile fields scored against atockorea matching algorithm v2. Single fixed route; no variant overrides.",
     "audit_summary": "Southwest-Jeju Hydrangea Festival route — 9-hr small-group minicoach loop. 5 substantive POI anchors + 1 compound-stop pairing: 1 west-coast emerald beach (Hyeopjae) + 1 120-min hydrangea festival anchor (Hallim Park, June Hydrangea Festival, 9 themed gardens + 2 lava-tube limestone caves) + 1 compound stop (Jusangjeolli columnar + Cheonjeyeon waterfall, Natural Monuments 443 + 378) + 1 hydrangea tunnel anchor (Camellia Hill — 172,000 m², Korea's earliest hydrangeas) + 1 tea-culture finale (Osulloc / Amorepacific). Designed for **June peak hydrangea window (June 10–25)** with Hallim caves + Camellia Hall + Osulloc museum as the 3-tier indoor weather-fallback stack. **Catalog-novel pattern**: Jusangjeolli+Cheonjeyeon compound stop is the first of its kind in the catalog. Cross-batch reuse: 3 of 5 substantive bodies imported verbatim (15a T2 Hyeopjae, 15a T1 Camellia Hill, 14a T2 Osulloc); Hallim Park authored fresh + compound stop authored fresh.",
@@ -1699,7 +1691,7 @@
         "headlineLine1": "濟州繡球花節",
         "headlineLine2": "西南",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+          "imageUrl": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
           "imagePosition": "center 35%",
           "tagline": "從海灘到柱狀懸崖，再到繡球花隧道。",
           "pills": [
@@ -1794,7 +1786,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "翰林公園的繡球花盛開",
             "caption": "翰林公園的繡球花盛開",
             "location": "翰林公園",
@@ -1803,7 +1795,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "山茶花之丘的繡球花隧道",
             "caption": "山茶花之丘的繡球花隧道",
             "location": "山茶花之丘",
@@ -1812,7 +1804,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "狹才海灘的碧綠海水",
             "caption": "狹才海灘的碧綠海水",
             "location": "狹才海灘",
@@ -1821,7 +1813,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "柱狀節理玄武岩峭壁",
             "caption": "柱狀節理壁玄武岩懸崖",
             "location": "柱狀節理壁",
@@ -1830,7 +1822,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "天帝淵三層瀑布",
             "caption": "天帝淵三層瀑布",
             "location": "天帝淵瀑布",
@@ -1839,7 +1831,7 @@
           {
             "id": "g6",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "雪綠茶茶園",
             "caption": "雪綠茶茶園",
             "location": "雪綠茶博物館",
@@ -1948,7 +1940,7 @@
             "name": "翰林公園（繡球花節）",
             "category": "花園與繡球花節",
             "description": "植物園綜合設施，於初夏舉辦濟州島最大規模的繡球花節——園內設有多個主題花園、熔岩洞穴系統，繡球花色彩豐富多樣。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "highlights": [
               "繡球花節主花園",
               "園內熔岩管洞穴系統",
@@ -1994,7 +1986,7 @@
             "name": "午餐（濟州島西南部）",
             "category": "用餐",
             "description": "翰林或大靜附近的在地餐廳——黑豬肉、鮑魚粥或當季海鮮。下午行程前的團體休息時間。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "highlights": [
               "濟州傳統料理",
               "在地餐廳"
@@ -2912,7 +2904,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

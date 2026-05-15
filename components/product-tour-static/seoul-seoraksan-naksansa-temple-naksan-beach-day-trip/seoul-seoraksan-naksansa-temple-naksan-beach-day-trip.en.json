@@ -5,7 +5,7 @@
   "locale": "en",
   "product_id": "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
   "seo": {
-    "pageTitle": "Seoul Day Tour: Seoraksan & Naksansa Temple | AtoC Korea",
+    "pageTitle": "Gangwon-do Day Tour from Seoul: Seoraksan & Naksansa Temple | AtoC Korea",
     "metaDescription": "12-hour coach day trip from Seoul to the East Sea coast: Seoraksan National Park, cliffside Naksansa Temple, and Naksan Beach. Guided, transfers included.",
     "primaryKeywords": [
       "Seoul Seoraksan day tour",
@@ -14,13 +14,13 @@
       "Naksan Beach tour",
       "Seoraksan Naksansa one-day tour"
     ],
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG",
-    "title": "Seoul Day Tour · Seoraksan + Naksansa Temple + Naksan Beach | AtoC Korea",
+    "ogImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+    "title": "Gangwon-do Day Tour from Seoul · Seoraksan + Naksansa Temple + Naksan Beach | AtoC Korea",
     "description": "Coach day tour from Seoul to Korea's most iconic national park (Seoraksan), a thousand-year cliffside temple above the sea (Naksansa), and the pine-backed sands of Naksan Beach — a mountain-to-ocean day on the East Sea coast."
   },
   "catalog_card": {
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG",
-    "title": "Seoul: Seoraksan + Naksansa Temple + Naksan Beach",
+    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+    "title": "Gangwon-do Day Tour from Seoul: Seoraksan + Naksansa Temple + Naksan Beach",
     "priceLabel": "From US$52 per person (was $58, 10% off)",
     "shortCardDescription": "A 12-hour coach day trip from Seoul to the East Sea coast: hike Seoraksan National Park, visit the cliffside Naksansa Temple, and walk pine-backed Naksan Beach. Departs Mondays and Thursdays with an English-speaking guide and round-trip transfers from Hongik or Myeongdong.",
     "tags": [
@@ -43,9 +43,9 @@
       "Mondays & Thursdays",
       "12-hour day"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG"
+    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp"
   },
-  "headlineLine1": "Seoul Day Tour",
+  "headlineLine1": "Gangwon-do Day Tour from Seoul",
   "headlineLine2": "Seoraksan + Naksansa Temple + Naksan Beach",
   "price": {
     "amountLabel": "52",
@@ -56,7 +56,7 @@
     "discountPercent": 10
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG",
+    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "imagePosition": "center 38%",
     "tagline": "Korea's most iconic mountain, a thousand-year temple above the sea, and a pine-backed beach — one 12-hour coach day from Seoul to the East Sea coast",
     "pills": [
@@ -141,42 +141,58 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "location": "Seoraksan National Park",
-      "alt": "Seoraksan National Park — granite ridge",
-      "caption": "Seoraksan National Park — granite peaks"
+      "alt": "Seoraksan National Park — panoramic ridge view",
+      "caption": "Seoraksan National Park — panoramic granite ridge"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/89/3080589_image2_1.JPG",
-      "location": "Naksansa Temple",
-      "alt": "Naksansa Temple — cliffside temple over the East Sea",
-      "caption": "Naksansa Temple — a thousand-year temple above the sea"
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "Seoraksan National Park",
+      "alt": "Seoraksan National Park — Sinheungsa Temple and Ulsanbawi granite peak",
+      "caption": "Seoraksan National Park — Sinheungsa Temple beneath granite peaks"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/31/2745231_image2_1.jpg",
+      "src": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
+      "location": "Naksansa Temple",
+      "alt": "Naksansa Temple — Uisangdae pavilion above the East Sea",
+      "caption": "Naksansa Temple — Uisangdae cliffside pavilion over the sea"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/naksansa-temple/naksansa-main-hall.webp",
+      "location": "Naksansa Temple",
+      "alt": "Naksansa Temple — Wontongbojeon main hall",
+      "caption": "Naksansa Temple — colorful Wontongbojeon main hall"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/naksansa-temple/naksansa-haesu-gwaneum.webp",
+      "location": "Naksansa Temple",
+      "alt": "Naksansa Temple — Haesu Gwaneum statue overlooking the East Sea",
+      "caption": "Naksansa Temple — Haesu Gwaneum statue facing the sea"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/naksan-beach/naksan-beach-sign.webp",
       "location": "Naksan Beach",
       "alt": "Naksan Beach — pine-backed East Sea beach",
       "caption": "Naksan Beach — soft sand and pine forest"
     },
     {
-      "id": 4,
+      "id": 7,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/28/2745228_image2_1.jpg",
+      "src": "/images/tours/naksan-beach/naksan-beach-summer-crowd.webp",
       "location": "Naksan Beach",
       "alt": "Naksan Beach — East Sea coastline",
       "caption": "Naksan Beach — East Sea coastline"
-    },
-    {
-      "id": 5,
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/33/2745233_image2_1.jpg",
-      "location": "Naksan Beach",
-      "alt": "Naksan Beach — sunrise coast",
-      "caption": "Naksan Beach — a premier East Sea sunrise spot"
     }
   ],
   "itineraryStops": [
@@ -256,9 +272,10 @@
         "admission": "Park entrance FREE (was 3,500 KRW until recent abolition); Cable car RT Adult 16,000 / Child 12,000 KRW (on-site only, no advance booking; NOT included in this tour)",
         "walking": "Easy paths at base (Sinheungsa, cable-car base); moderate to challenging hikes (Biseondae 3 km, Ulsanbawi steep stairs, Heundeulbawi 1.5 hr each way)"
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG",
+      "image": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "images": [
-        "https://tong.visitkorea.or.kr/cms/resource/01/2365701_image2_1.JPG"
+        "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
       ]
     },
     {
@@ -316,9 +333,11 @@
         "admission": "FREE — Naksansa has had no admission fee since 4 May 2023, when the revised Cultural Heritage Protection Act removed cultural-property viewing fees at traditional temples. (Older sources listing 4,000 KRW are outdated.)",
         "walking": "Moderate — the grounds spread along coastal cliffs with stairs and uneven stone paths between the main hall, the Haesu Gwaneum-sang, and Hongnyeonam"
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/89/3080589_image2_1.JPG",
+      "image": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
       "images": [
-        "https://tong.visitkorea.or.kr/cms/resource/89/3080589_image2_1.JPG"
+        "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
+        "/images/tours/naksansa-temple/naksansa-main-hall.webp",
+        "/images/tours/naksansa-temple/naksansa-haesu-gwaneum.webp"
       ]
     },
     {
@@ -372,11 +391,10 @@
         "admission": "FREE — no admission fee for the beach",
         "walking": "Easy — flat, soft sand and level pine-forest paths; a short signed footpath connects the beach up to Naksansa Temple"
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/31/2745231_image2_1.jpg",
+      "image": "/images/tours/naksan-beach/naksan-beach-sign.webp",
       "images": [
-        "https://tong.visitkorea.or.kr/cms/resource/31/2745231_image2_1.jpg",
-        "https://tong.visitkorea.or.kr/cms/resource/28/2745228_image2_1.jpg",
-        "https://tong.visitkorea.or.kr/cms/resource/33/2745233_image2_1.jpg"
+        "/images/tours/naksan-beach/naksan-beach-sign.webp",
+        "/images/tours/naksan-beach/naksan-beach-summer-crowd.webp"
       ]
     },
     {
@@ -853,13 +871,18 @@
       }
     ]
   },
+  "sql_overrides": {
+    "tours": {
+      "original_price": 58
+    }
+  },
   "matching_profile": {
     "profile_version": 6,
     "is_active": true,
     "product_id": "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
-    "product_type": "small_group",
+    "product_type": "bus",
     "route_type": "fixed_route",
-    "destination_region": "korea_mainland",
+    "destination_region": "seoul_gangwon",
     "region_type": "gangwon_seoraksan",
     "vehicle_type": "coach",
     "duration_hours": 12,
@@ -897,14 +920,14 @@
     "active_traveler_fit": 0.8,
     "adult_family_fit": 0.85,
     "family_with_teens_fit": 0.85,
-    "young_kids_fit": 0.55,
+    "young_kids_fit": 0.5,
     "senior_active_fit": 0.65,
     "senior_general_fit": 0.55,
     "mobility_friendly_fit": 0.4,
     "stroller_fit": 0.4,
     "one_day_fit": 1,
-    "same_day_flight_fit": 0.2,
-    "rain_fit": 0.55,
+    "same_day_flight_fit": 0.1,
+    "rain_fit": 0.45,
     "value_for_money_fit": 0.9,
     "iconic_landmark_fit": 1,
     "cafe_fit": 0.4,
@@ -916,17 +939,17 @@
     "no_shopping_fit": 1,
     "local_culture_fit": 0.8,
     "storytelling_fit": 0.9,
-    "unesco_fit": 0.6,
+    "unesco_fit": 0.55,
     "intangible_heritage_fit": 0.4,
     "indoor_ratio": 0.1,
     "weather_sensitivity": 0.7,
     "comfort_level": 0.6,
-    "budget_fit": 0.9,
-    "premium_fit": 0.3,
-    "small_group_fit": 1,
+    "budget_fit": 1,
+    "premium_fit": 0.15,
+    "small_group_fit": 0.15,
     "private_fit": 0.1,
     "bus_fit": 1,
-    "price_band": "mid",
+    "price_band": "budget",
     "pickup_base": "seoul_central",
     "return_time_band": "18:30-19:30",
     "duration_band": "12h",
@@ -987,7 +1010,7 @@
     "seoul_central_hotel_pickup_fit": 1,
     "return_to_seoul_central_fit": 1,
     "day_trip_2_3_hour_drive_each_way_fit": 1,
-    "small_group_format_fit": 1,
+    "small_group_format_fit": 0.15,
     "fixed_schedule_format_fit": 1,
     "affordable_format_vs_charter_fit": 1,
     "solo_traveler_friendly_fit": 1,
@@ -1038,7 +1061,7 @@
     "japanese_speaking_guide_available_on_advance_notice": false
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
     "primary_themes": [
       "nature",
@@ -1048,7 +1071,7 @@
     ],
     "secondary_themes": [
       "beach",
-      "autumn_foliage",
+      "mountain",
       "national_park",
       "seaside_temple"
     ],

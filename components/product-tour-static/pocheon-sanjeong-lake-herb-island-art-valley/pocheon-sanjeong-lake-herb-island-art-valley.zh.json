@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "抱川一日游：湖泊、香草岛与艺术谷 | AtoC Korea",
     "metaDescription": "从首尔出发轻松的10小时抱川一日游：山井湖步道、地中海风情香草岛，以及俯瞰翡翠色天柱湖的艺术谷单轨列车。",
-    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "ogImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "primaryKeywords": [
       "从首尔出发的抱川一日游",
       "山井湖游览",
@@ -1079,7 +1079,7 @@
     "japanese_speaking_guide_available_on_advance_notice": true
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": [
       "authoring",
       "review",
@@ -1132,7 +1132,7 @@
         "headlineLine1": "抱川",
         "headlineLine2": "山亭湖·香草岛·艺术谷",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+          "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
           "imagePosition": "center 50%",
           "tagline": "山间湖泊、地中海风情草本村落，以及一处由昔日花岗岩采石场改造而成的艺术公园——首尔一日游，尽览抱川最柔美、最上镜的三大景点。",
           "pills": [
@@ -1232,7 +1232,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "地中海风格花园区，设有白色粉墙、香草花圃及季节性薰衣草展示",
             "caption": "香草岛地中海香草花园（抱川）",
             "location": "香草岛",
@@ -1241,7 +1241,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "群山环抱的湖泊，设有平坦的湖畔步道，郁郁葱葱的山崖倒映湖中",
             "caption": "明星山山井湖（抱川）",
             "location": "山井湖",
@@ -1250,7 +1250,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "被垂直花岗岩峭壁环绕的翡翠绿采石场湖泊",
             "caption": "抱川艺术谷采石场内的天柱湖",
             "location": "抱川艺术谷",
@@ -1259,7 +1259,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/01/2791401_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "串串夜灯与主题装置点亮的花园步道",
             "caption": "香草岛灯光节夜晚（全年开放的圣诞村区域）",
             "location": "香草岛夜间灯光",
@@ -1268,7 +1268,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "森林瀑布从岩石台阶飞泻而下，注入水潭",
             "caption": "比杜尔基囊瀑布——抱川附近的季节性替代景点",
             "location": "比杜尔基囊瀑布",
@@ -1993,7 +1993,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

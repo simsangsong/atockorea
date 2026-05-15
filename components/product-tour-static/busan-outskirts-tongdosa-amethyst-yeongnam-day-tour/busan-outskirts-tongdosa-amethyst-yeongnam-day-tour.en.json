@@ -15,7 +15,7 @@
       "Amethyst Cave Ulsan tour",
       "Busan UNESCO day tour"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+    "ogImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
     "title": "Busan Outskirts Day Tour · Tongdosa + Amethyst + Yeongnam Alps | AtoC Korea",
     "description": "A coach day tour from Busan into Yangsan, Ulsan, and Miryang — UNESCO Tongdosa Temple, the underground Amethyst Cave (optional boat), the Yeongnam Alps Ice Valley Cable Car, and a Gamcheon Culture Village close."
   },
@@ -74,25 +74,143 @@
     }
   },
   "subnavItems": [
-    { "id": "overview",  "label": "Overview" },
-    { "id": "itinerary", "label": "Itinerary" },
-    { "id": "details",   "label": "Details" },
-    { "id": "faq",       "label": "FAQ" },
-    { "id": "reviews",   "label": "Reviews" }
+    {
+      "id": "overview",
+      "label": "Overview"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerary"
+    },
+    {
+      "id": "details",
+      "label": "Details"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ"
+    },
+    {
+      "id": "reviews",
+      "label": "Reviews"
+    }
   ],
   "glanceItems": [
-    { "icon": "clock",       "label": "Duration",          "value": "11 hours" },
-    { "icon": "camera",      "label": "Photo Potential",   "value": "Very High", "level": 5 },
-    { "icon": "mountain",    "label": "Scenery",           "value": "Very High", "level": 5 },
-    { "icon": "footprints",  "label": "Walking",           "value": "Moderate",  "level": 3 },
-    { "icon": "cloud-rain",  "label": "Rain Suitability",  "value": "Moderate",  "level": 3 },
-    { "icon": "users",       "label": "Family Suitability","value": "Good",      "level": 4 },
-    { "icon": "gauge",       "label": "Pace",              "value": "Balanced",  "level": 4 }
+    {
+      "icon": "clock",
+      "label": "Duration",
+      "value": "11 hours"
+    },
+    {
+      "icon": "camera",
+      "label": "Photo Potential",
+      "value": "Very High",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "Scenery",
+      "value": "Very High",
+      "level": 5
+    },
+    {
+      "icon": "footprints",
+      "label": "Walking",
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Rain Suitability",
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "Family Suitability",
+      "value": "Good",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Pace",
+      "value": "Balanced",
+      "level": 4
+    }
   ],
   "galleryItems": [
-    { "id": 1, "type": "photo", "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp", "location": "Gamcheon Culture Village", "alt": "Gamcheon Culture Village — gallery 1", "caption": "Gamcheon Culture Village — pastel hillside" },
-    { "id": 2, "type": "photo", "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp", "location": "Gamcheon Culture Village", "alt": "Gamcheon Culture Village — gallery 2", "caption": "Gamcheon Culture Village — Sky Garden" },
-    { "id": 3, "type": "photo", "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp", "location": "Gamcheon Culture Village", "alt": "Gamcheon Culture Village — gallery 3", "caption": "Gamcheon Culture Village — mural alley" }
+    {
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "Gamcheon Culture Village",
+      "alt": "Gamcheon Culture Village — gallery 1",
+      "caption": "Gamcheon Culture Village — pastel hillside"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "Gamcheon Culture Village",
+      "alt": "Gamcheon Culture Village — gallery 2",
+      "caption": "Gamcheon Culture Village — Sky Garden"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+      "location": "Gamcheon Culture Village",
+      "alt": "Gamcheon Culture Village — gallery 3",
+      "caption": "Gamcheon Culture Village — mural alley"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+      "location": "Amethyst Cave Theme Park (Ulsan)",
+      "alt": "Amethyst Cave — colorful underground hall with water",
+      "caption": "Amethyst Cave Theme Park — colorful underground hall"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/amethyst-cave/amethyst-cave-entrance-corridor.webp",
+      "location": "Amethyst Cave Theme Park (Ulsan)",
+      "alt": "Amethyst Cave — illuminated entrance corridor",
+      "caption": "Amethyst Cave Theme Park — illuminated entrance corridor"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/amethyst-cave/amethyst-cave-boat-passage.webp",
+      "location": "Amethyst Cave Theme Park (Ulsan)",
+      "alt": "Amethyst Cave — boat ride through colored passages",
+      "caption": "Amethyst Cave Theme Park — boat ride through the cave"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+      "location": "Yeongnam Alps Ice Valley Cable Car (Miryang)",
+      "alt": "Yeongnam Alps Cable Car — gondola above the forested valley",
+      "caption": "Yeongnam Alps Cable Car — gondola above the forested valley"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
+      "location": "Yeongnam Alps Ice Valley Cable Car (Miryang)",
+      "alt": "Yeongnam Alps Cable Car — cabin amid lush green ridges",
+      "caption": "Yeongnam Alps — cable car between green ridges"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
+      "location": "Yeongnam Alps Ice Valley Cable Car (Miryang)",
+      "alt": "Yeongnam Alps — summit viewpoint over endless mountain ridges",
+      "caption": "Yeongnam Alps — summit viewpoint over endless ridges"
+    }
   ],
   "itineraryStops": [
     {
@@ -165,10 +283,8 @@
         "admission": "Adult ₩3,000 — INCLUDED in this tour; Tongdosa Museum ₩2,000 (own expense)",
         "walking": "Moderate — 1-km gentle forest approach path; gravel/stone paving; mostly flat with small rises"
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/41/2667141_image2_1.jpg",
-      "images": [
-        "https://tong.visitkorea.or.kr/cms/resource/41/2667141_image2_1.jpg"
-      ]
+      "image": null,
+      "images": []
     },
     {
       "name": "Lunch at local Korean restaurant (optional, not included)",
@@ -241,7 +357,13 @@
         "closed": "Open year-round (occasional safety closures in extreme rain)",
         "admission": "Adult ₩8,000 — INCLUDED in this tour; underground boat ride ₩4,000 own expense (optional)",
         "walking": "Moderate — uneven cave floor, some damp sections, mostly flat with small steps; closed-toe shoes essential"
-      }
+      },
+      "image": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+      "images": [
+        "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+        "/images/tours/amethyst-cave/amethyst-cave-entrance-corridor.webp",
+        "/images/tours/amethyst-cave/amethyst-cave-boat-passage.webp"
+      ]
     },
     {
       "name": "Yeongnam Alps Ice Valley Cable Car (Miryang)",
@@ -295,7 +417,13 @@
         "closed": "Cable car closes in high wind / heavy snow (weather-dependent)",
         "admission": "Cable car RT Adult ₩18,000 / Child ₩13,000 — INCLUDED in this tour; Eoreumgol valley walk FREE",
         "walking": "Easy — cable car does the climbing; Sky Walk + observation deck flat; valley walk gentle terrain"
-      }
+      },
+      "image": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+      "images": [
+        "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+        "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
+        "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp"
+      ]
     },
     {
       "name": "Gamcheon Culture Village (Busan)",
@@ -377,25 +505,68 @@
     }
   ],
   "routeFlowStops": [
-    { "name": "Pickup (3 stations)",                  "type": "origin",  "theme": "Seoul-style pickup" },
-    { "name": "Tongdosa Temple",                      "type": "primary", "theme": "UNESCO Buddhist temple" },
-    { "name": "Lunch (optional)",                     "type": "meal",    "theme": "Meal" },
-    { "name": "Amethyst Cave Theme Park",             "type": "primary", "theme": "Underground cave" },
-    { "name": "Yeongnam Alps Ice Valley Cable Car",   "type": "primary", "theme": "Mountain cable car" },
-    { "name": "Gamcheon Culture Village",             "type": "primary", "theme": "Art village" },
-    { "name": "Return drop-off",                      "type": "return",  "theme": "Drop-off" }
+    {
+      "name": "Pickup (3 stations)",
+      "type": "origin",
+      "theme": "Seoul-style pickup"
+    },
+    {
+      "name": "Tongdosa Temple",
+      "type": "primary",
+      "theme": "UNESCO Buddhist temple"
+    },
+    {
+      "name": "Lunch (optional)",
+      "type": "meal",
+      "theme": "Meal"
+    },
+    {
+      "name": "Amethyst Cave Theme Park",
+      "type": "primary",
+      "theme": "Underground cave"
+    },
+    {
+      "name": "Yeongnam Alps Ice Valley Cable Car",
+      "type": "primary",
+      "theme": "Mountain cable car"
+    },
+    {
+      "name": "Gamcheon Culture Village",
+      "type": "primary",
+      "theme": "Art village"
+    },
+    {
+      "name": "Return drop-off",
+      "type": "return",
+      "theme": "Drop-off"
+    }
   ],
   "routePhases": [
-    { "phase": "Pickup → Yangsan", "duration": "≈ 1.5 hours",
-      "description": "08:20 Busan Station / 08:40 Seomyeon / 09:20 Haeundae pickups, then Gyeongbu Expressway northwest to Tongdosa Temple." },
-    { "phase": "Tongdosa Temple",   "duration": "≈ 1.5 hours",
-      "description": "UNESCO-listed Tongdosa: forest approach path, Daeungjeon + Geumgang Gyedan, optional museum." },
-    { "phase": "Lunch + Amethyst Cave", "duration": "≈ 2 hours",
-      "description": "Optional Eonyang-style bulgogi lunch en route, then 60 min at the Amethyst Cave Theme Park in Ulsan." },
-    { "phase": "Yeongnam Alps cable car", "duration": "≈ 1.5 hours",
-      "description": "Drive to Miryang's Cheonhwangsan; cable car to 1,019 m + Sky Walk." },
-    { "phase": "Gamcheon + return", "duration": "≈ 2 hours",
-      "description": "60 min at Gamcheon Culture Village (golden hour), then 18:30-19:30 reverse-pickup drop-offs." }
+    {
+      "phase": "Pickup → Yangsan",
+      "duration": "≈ 1.5 hours",
+      "description": "08:20 Busan Station / 08:40 Seomyeon / 09:20 Haeundae pickups, then Gyeongbu Expressway northwest to Tongdosa Temple."
+    },
+    {
+      "phase": "Tongdosa Temple",
+      "duration": "≈ 1.5 hours",
+      "description": "UNESCO-listed Tongdosa: forest approach path, Daeungjeon + Geumgang Gyedan, optional museum."
+    },
+    {
+      "phase": "Lunch + Amethyst Cave",
+      "duration": "≈ 2 hours",
+      "description": "Optional Eonyang-style bulgogi lunch en route, then 60 min at the Amethyst Cave Theme Park in Ulsan."
+    },
+    {
+      "phase": "Yeongnam Alps cable car",
+      "duration": "≈ 1.5 hours",
+      "description": "Drive to Miryang's Cheonhwangsan; cable car to 1,019 m + Sky Walk."
+    },
+    {
+      "phase": "Gamcheon + return",
+      "duration": "≈ 2 hours",
+      "description": "60 min at Gamcheon Culture Village (golden hour), then 18:30-19:30 reverse-pickup drop-offs."
+    }
   ],
   "routeShapeIntro": {
     "title": "How this Busan-outskirts day moves",
@@ -421,12 +592,18 @@
         "iconBg": "bg-amber-50/80",
         "iconColor": "text-amber-600",
         "items": [
-          { "label": "Outskirts loop with no backtracking",
-            "detail": "Busan → Yangsan (Tongdosa, ~50 km northwest) → Ulsan (Amethyst Cave, ~30 km north) → Miryang (Cable Car, ~40 km northwest) → Busan (Gamcheon, ~80 km south). Each leg sits ≤60 min apart by expressway." },
-          { "label": "Indoor-outdoor balance",
-            "detail": "Tongdosa (outdoor temple walk) → lunch (indoor) → Amethyst Cave (indoor, 15 °C) → cable car (outdoor at altitude) → Gamcheon (outdoor village). Sequenced so heat or rain affects only one or two stops, never the whole day." },
-          { "label": "Gamcheon at golden hour by design",
-            "detail": "17:30 Gamcheon arrival catches the village's most photogenic 17:00-18:00 window. Placing Gamcheon last after the outskirts loop puts the most-Instagrammed photo opportunity at the day's peak light." }
+          {
+            "label": "Outskirts loop with no backtracking",
+            "detail": "Busan → Yangsan (Tongdosa, ~50 km northwest) → Ulsan (Amethyst Cave, ~30 km north) → Miryang (Cable Car, ~40 km northwest) → Busan (Gamcheon, ~80 km south). Each leg sits ≤60 min apart by expressway."
+          },
+          {
+            "label": "Indoor-outdoor balance",
+            "detail": "Tongdosa (outdoor temple walk) → lunch (indoor) → Amethyst Cave (indoor, 15 °C) → cable car (outdoor at altitude) → Gamcheon (outdoor village). Sequenced so heat or rain affects only one or two stops, never the whole day."
+          },
+          {
+            "label": "Gamcheon at golden hour by design",
+            "detail": "17:30 Gamcheon arrival catches the village's most photogenic 17:00-18:00 window. Placing Gamcheon last after the outskirts loop puts the most-Instagrammed photo opportunity at the day's peak light."
+          }
         ]
       },
       {
@@ -435,12 +612,18 @@
         "iconBg": "bg-pink-50/80",
         "iconColor": "text-pink-600",
         "items": [
-          { "label": "All main admissions included",
-            "detail": "Tongdosa (₩3,000) + Amethyst Cave (₩8,000) + Cable Car round-trip (₩18,000) = ₩29,000 in admissions are bundled into the tour price. Only the Amethyst Cave optional boat (₩4,000) and the museum entry at Tongdosa (₩2,000) are own-expense." },
-          { "label": "Three pickup points across Busan",
-            "detail": "Busan Station Exit 4 / Seomyeon Exit 4 / Haeundae Exit 5 — covers all three main accommodation clusters. Choose the closest to your hotel; effective tour duration adjusts ±70 min based on pickup order." },
-          { "label": "Optional Jagalchi hop-off at the end",
-            "detail": "Guests who want to continue independently into Nampo-dong / Jagalchi Market after Gamcheon can disembark there at 18:30; otherwise the coach drops at Busan Station, Seomyeon, and Haeundae in sequence." }
+          {
+            "label": "All main admissions included",
+            "detail": "Tongdosa (₩3,000) + Amethyst Cave (₩8,000) + Cable Car round-trip (₩18,000) = ₩29,000 in admissions are bundled into the tour price. Only the Amethyst Cave optional boat (₩4,000) and the museum entry at Tongdosa (₩2,000) are own-expense."
+          },
+          {
+            "label": "Three pickup points across Busan",
+            "detail": "Busan Station Exit 4 / Seomyeon Exit 4 / Haeundae Exit 5 — covers all three main accommodation clusters. Choose the closest to your hotel; effective tour duration adjusts ±70 min based on pickup order."
+          },
+          {
+            "label": "Optional Jagalchi hop-off at the end",
+            "detail": "Guests who want to continue independently into Nampo-dong / Jagalchi Market after Gamcheon can disembark there at 18:30; otherwise the coach drops at Busan Station, Seomyeon, and Haeundae in sequence."
+          }
         ]
       },
       {
@@ -449,12 +632,18 @@
         "iconBg": "bg-sky-50/80",
         "iconColor": "text-sky-600",
         "items": [
-          { "label": "Cable car is weather-dependent",
-            "detail": "The Yeongnam Alps cable car closes in high wind or heavy snow. The guide checks operational status the morning of and substitutes the Eoreumgol valley walk (Natural Monument No. 224) at the base if needed. Refund only if the entire cable-car portion is canceled and no substitute is offered." },
-          { "label": "Gamcheon's hillside is steep",
-            "detail": "Wear shoes with grip and pace yourself uphill. The main photo zone reaches on a gentle path; deeper exploration requires the steepest stairs. The 60-min budget assumes a moderate pace." },
-          { "label": "Lunch is own-expense and optional",
-            "detail": "Lunch (₩10,000–15,000) is paid on-site. Cruise- or schedule-pressed guests may skip the slot at morning briefing and the time releases to the afternoon stops." }
+          {
+            "label": "Cable car is weather-dependent",
+            "detail": "The Yeongnam Alps cable car closes in high wind or heavy snow. The guide checks operational status the morning of and substitutes the Eoreumgol valley walk (Natural Monument No. 224) at the base if needed. Refund only if the entire cable-car portion is canceled and no substitute is offered."
+          },
+          {
+            "label": "Gamcheon's hillside is steep",
+            "detail": "Wear shoes with grip and pace yourself uphill. The main photo zone reaches on a gentle path; deeper exploration requires the steepest stairs. The 60-min budget assumes a moderate pace."
+          },
+          {
+            "label": "Lunch is own-expense and optional",
+            "detail": "Lunch (₩10,000–15,000) is paid on-site. Cruise- or schedule-pressed guests may skip the slot at morning briefing and the time releases to the afternoon stops."
+          }
         ]
       }
     ]
@@ -544,19 +733,33 @@
     }
   ],
   "practicalWeatherStatic": {
-    "today": { "temp": "—", "label": "See seasonal notes" },
-    "tomorrow": { "temp": "—", "label": "See seasonal notes" },
+    "today": {
+      "temp": "—",
+      "label": "See seasonal notes"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "See seasonal notes"
+    },
     "_seasonalSummary": "Busan + outskirts: mild winters (5-10 °C), humid summers, peak rainfall in July monsoon. Yeongnam Alps upper station is 8-10 °C cooler than the base regardless of season."
   },
   "seasonalVariations": [
-    { "season": "Spring (Mar–May)",
-      "description": "Cherry blossoms along Tongdosa's forest approach in early April; Yeongnam Alps azaleas late April – early May. Most comfortable temperature for the full coach day. Buddha's Birthday (May) brings the Yeondunhoe lantern festival to Tongdosa." },
-    { "season": "Summer (Jun–Aug)",
-      "description": "Eoreumgol's natural-ice phenomenon at its peak (mid-July). Tongdosa's pine forest at full green; cable car upper station provides ~10 °C cooler air. July monsoon may shorten the cable car portion." },
-    { "season": "Autumn (Sep–Nov)",
-      "description": "Korea's signature foliage season — Yeongnam Alps foliage mid-Oct to early-Nov is among the best in Gyeongsang-do; Tongdosa's pine + maple approach photogenic in mid-Nov. Highest demand — book 2+ weeks ahead." },
-    { "season": "Winter (Dec–Feb)",
-      "description": "Eoreumgol's inverse warm-steam phenomenon visible Dec–Feb; Tongdosa with snow on roof tiles is dramatic; cable car may close in heavy snow (substitute walk available). Gamcheon less crowded; bring layered clothing." }
+    {
+      "season": "Spring (Mar–May)",
+      "description": "Cherry blossoms along Tongdosa's forest approach in early April; Yeongnam Alps azaleas late April – early May. Most comfortable temperature for the full coach day. Buddha's Birthday (May) brings the Yeondunhoe lantern festival to Tongdosa."
+    },
+    {
+      "season": "Summer (Jun–Aug)",
+      "description": "Eoreumgol's natural-ice phenomenon at its peak (mid-July). Tongdosa's pine forest at full green; cable car upper station provides ~10 °C cooler air. July monsoon may shorten the cable car portion."
+    },
+    {
+      "season": "Autumn (Sep–Nov)",
+      "description": "Korea's signature foliage season — Yeongnam Alps foliage mid-Oct to early-Nov is among the best in Gyeongsang-do; Tongdosa's pine + maple approach photogenic in mid-Nov. Highest demand — book 2+ weeks ahead."
+    },
+    {
+      "season": "Winter (Dec–Feb)",
+      "description": "Eoreumgol's inverse warm-steam phenomenon visible Dec–Feb; Tongdosa with snow on roof tiles is dramatic; cable car may close in heavy snow (substitute walk available). Gamcheon less crowded; bring layered clothing."
+    }
   ],
   "bookingTrustItems": [
     {
@@ -585,63 +788,155 @@
     }
   ],
   "bookingSupportSteps": [
-    { "timing": "Immediately", "title": "Instant Confirmation",  "detail": "Booking confirmation with pickup point selection",
-      "description": "Instant booking confirmation with Busan Station / Seomyeon / Haeundae pickup point selection." },
-    { "timing": "Day before",   "title": "Pickup Details",         "detail": "Coach plate + meeting-point photo via WhatsApp",
-      "description": "Weather check (cable car status), coach plate number, and any seasonal route notes sent the day before." },
-    { "timing": "Morning of",   "title": "Pickup Confirmation",    "detail": "Guide at pickup point 10 min before departure",
-      "description": "Guide waits at Busan Station Exit 4 from 08:10, Seomyeon Exit 4 from 08:30, Haeundae Exit 5 from 09:10." },
-    { "timing": "During tour",  "title": "On-tour Support",        "detail": "Guide narration at each stop",
-      "description": "Guide provides on-site narration on Tongdosa's 646 CE Silla founding + Three Jewel Temples + 2018 UNESCO inscription, the Korean Amethyst mining legacy at Eonyang, and the Yeongnam Alps Eoreumgol natural ice phenomenon (Natural Monument No. 224)." },
-    { "timing": "End of day",   "title": "Four Drop-off Points",   "detail": "Nampo/Jagalchi 18:30 / Busan 18:40 / Seomyeon 19:00 / Haeundae 19:30",
-      "description": "Coach drops at all four points in sequence; choose the one closest to your hotel." },
-    { "timing": "After tour",   "title": "Review & Follow-up",     "detail": "Optional post-tour review",
-      "description": "Post-tour feedback request sent; restaurant or attraction recommendations for the rest of your Busan stay answered same day." }
+    {
+      "timing": "Immediately",
+      "title": "Instant Confirmation",
+      "detail": "Booking confirmation with pickup point selection",
+      "description": "Instant booking confirmation with Busan Station / Seomyeon / Haeundae pickup point selection."
+    },
+    {
+      "timing": "Day before",
+      "title": "Pickup Details",
+      "detail": "Coach plate + meeting-point photo via WhatsApp",
+      "description": "Weather check (cable car status), coach plate number, and any seasonal route notes sent the day before."
+    },
+    {
+      "timing": "Morning of",
+      "title": "Pickup Confirmation",
+      "detail": "Guide at pickup point 10 min before departure",
+      "description": "Guide waits at Busan Station Exit 4 from 08:10, Seomyeon Exit 4 from 08:30, Haeundae Exit 5 from 09:10."
+    },
+    {
+      "timing": "During tour",
+      "title": "On-tour Support",
+      "detail": "Guide narration at each stop",
+      "description": "Guide provides on-site narration on Tongdosa's 646 CE Silla founding + Three Jewel Temples + 2018 UNESCO inscription, the Korean Amethyst mining legacy at Eonyang, and the Yeongnam Alps Eoreumgol natural ice phenomenon (Natural Monument No. 224)."
+    },
+    {
+      "timing": "End of day",
+      "title": "Four Drop-off Points",
+      "detail": "Nampo/Jagalchi 18:30 / Busan 18:40 / Seomyeon 19:00 / Haeundae 19:30",
+      "description": "Coach drops at all four points in sequence; choose the one closest to your hotel."
+    },
+    {
+      "timing": "After tour",
+      "title": "Review & Follow-up",
+      "detail": "Optional post-tour review",
+      "description": "Post-tour feedback request sent; restaurant or attraction recommendations for the rest of your Busan stay answered same day."
+    }
   ],
   "staticQuestions": [
-    { "id": "duration", "question": "How long is this tour?",
-      "answer": "11 hours door-to-door from a 08:20 Busan Station pickup; returns by 19:30 to Haeundae (or 18:40 Busan Station / 19:00 Seomyeon)." },
-    { "id": "pickup", "question": "Where exactly is the pickup?",
-      "answer": "Three pickup points: (1) **Busan Station Exit 4** (NOT KTX gate) at 08:20; (2) **Seomyeon Station Exit 4** at 08:40; (3) **Haeundae Station Exit 5** at 09:20. Choose the one closest to your hotel at booking." },
-    { "id": "drop-off", "question": "Where is the drop-off?",
-      "answer": "Four drop-off points in reverse order: **Nampo-dong / Jagalchi at 18:30** (optional hop-off), Busan Station 18:40, Seomyeon 19:00, Haeundae 19:30." },
-    { "id": "admissions", "question": "Are admissions included?",
-      "answer": "**Tongdosa (₩3,000), Amethyst Cave (₩8,000), and Yeongnam Alps Cable Car round-trip (₩18,000) are all INCLUDED** — ₩29,000 in admissions saved. **Optional own-expense**: Tongdosa Museum (₩2,000), Amethyst Cave underground boat (₩4,000), Gamcheon Stamp Map (₩2,000)." },
-    { "id": "lunch", "question": "Is lunch included?",
-      "answer": "No — lunch is paid by the guest (₩10,000-15,000 per person). Typical option en route between Tongdosa and the Amethyst Cave is **Eonyang-style bulgogi** (Ulsan's regional specialty marinated grilled beef). Vegetarian and halal-friendly options possible with advance notice. The lunch stop itself is **optional** — guests on a tight schedule may skip and reboard the coach." },
-    { "id": "cable-car-weather", "question": "What if the cable car is closed?",
-      "answer": "The Yeongnam Alps cable car closes in high wind or heavy snow. The guide checks operational status the morning of and **substitutes the Eoreumgol valley walk** (Natural Monument No. 224, ~40-min loop at the base) — same Yeongnam Alps geology context, no refund issue, no missed time. Full refund only if the entire cable car portion is canceled AND no substitute is offered." },
-    { "id": "tongdosa-significance", "question": "Why visit Tongdosa instead of Bulguksa?",
-      "answer": "Both temples are UNESCO World Heritage Sites, but **Tongdosa is one of Korea's 'Three Jewel Temples'** (representing the Buddha himself — the only temple in Korea housing Buddha's actual physical relics) while **Bulguksa is a 'Sansa' temple representing classical Buddhist architecture**. Tongdosa is ~30 min from Haeundae; Bulguksa is ~90 min each way in Gyeongju. Tongdosa lets the day reach two additional outskirts attractions (Amethyst Cave + Yeongnam Alps) within the same 11-hour budget." },
-    { "id": "amethyst-cave", "question": "What's special about the Amethyst Cave?",
-      "answer": "It's a **converted amethyst mine** — the Eonyang area produced internationally recognized 'Korean Amethyst' (deep purple, high-clarity) through the 1970s-80s, exported globally and featured in royal Korean jewelry. When mining wound down, the 2.5-km of mine passages were opened to the public as a theme park. The optional ₩4,000 underground boat ride on the inner mine lake is a unique extension." },
-    { "id": "eoreumgol", "question": "What is Eoreumgol (Ice Valley)?",
-      "answer": "**Eoreumgol** is a geological phenomenon at the base of the cable car where **the talus boulder field produces natural ice in mid-summer** — cold air pockets trapped beneath the rocks form ice that lasts into July-August, with the inverse warm steam in winter. Designated **Natural Monument No. 224 (1970)**, it's a rare temperature-inversion site found in only a few places worldwide." },
-    { "id": "kids", "question": "Is this suitable for children?",
-      "answer": "Yes, age 6 and up. The 11-hour day with multiple stops is engaging for school-age children. Kids tend to enjoy the cable car ride, the Sky Walk glass floor, the underground Amethyst Cave (especially the optional boat ride), and Gamcheon's murals. Younger children may struggle with the long coach time." },
-    { "id": "seniors", "question": "Is this OK for seniors?",
-      "answer": "Active seniors are fine — the cable car removes the climbing, Tongdosa's forest path is gentle, and the Amethyst Cave floor is mostly flat. Gamcheon's hillside is the main physical demand. Mobility-limited travelers should consider a private chartered car tour where the route can be adjusted." },
-    { "id": "language", "question": "What languages does the guide speak?",
-      "answer": "English primarily. Chinese-speaking guide available on advance request — book 3+ days ahead. Multi-language printed itinerary card distributed at pickup." },
-    { "id": "best-season", "question": "What's the best season for this tour?",
-      "answer": "**Autumn (mid-Oct to early-Nov)** for Yeongnam Alps foliage and Tongdosa's pine + maple approach. **Summer (mid-July to mid-Aug)** to see Eoreumgol's natural ice phenomenon at peak. **Spring (Apr-May)** for cherry blossoms at Tongdosa and Buddha's Birthday lantern festival. Winter is dramatic but the cable car may close in heavy snow." },
-    { "id": "private", "question": "How does this compare to a private chartered tour?",
-      "answer": "This is a coach group tour at $85/person. Our **private chartered car day tour** option provides door-of-hotel pickup, flexible timing, customizable route, and a private vehicle for typically $359-$1,077 per group depending on pax. Choose the coach tour for budget; choose private for flexibility, comfort, and the option to skip or extend stops." },
-    { "id": "walking", "question": "How much walking is there?",
-      "answer": "Approximately 4-5 km total across the four stops, plus the Amethyst Cave 2.5-km internal circuit. Sturdy closed-toe shoes recommended (Tongdosa gravel, cave damp floor, Gamcheon hillside)." },
-    { "id": "tipping", "question": "Is tipping expected?",
-      "answer": "Not expected (tipping is not standard practice in Korea) but appreciated for the guide and driver — typical guest tip $5-10 USD per person if you wish to. Not built into the tour price." }
+    {
+      "id": "duration",
+      "question": "How long is this tour?",
+      "answer": "11 hours door-to-door from a 08:20 Busan Station pickup; returns by 19:30 to Haeundae (or 18:40 Busan Station / 19:00 Seomyeon)."
+    },
+    {
+      "id": "pickup",
+      "question": "Where exactly is the pickup?",
+      "answer": "Three pickup points: (1) **Busan Station Exit 4** (NOT KTX gate) at 08:20; (2) **Seomyeon Station Exit 4** at 08:40; (3) **Haeundae Station Exit 5** at 09:20. Choose the one closest to your hotel at booking."
+    },
+    {
+      "id": "drop-off",
+      "question": "Where is the drop-off?",
+      "answer": "Four drop-off points in reverse order: **Nampo-dong / Jagalchi at 18:30** (optional hop-off), Busan Station 18:40, Seomyeon 19:00, Haeundae 19:30."
+    },
+    {
+      "id": "admissions",
+      "question": "Are admissions included?",
+      "answer": "**Tongdosa (₩3,000), Amethyst Cave (₩8,000), and Yeongnam Alps Cable Car round-trip (₩18,000) are all INCLUDED** — ₩29,000 in admissions saved. **Optional own-expense**: Tongdosa Museum (₩2,000), Amethyst Cave underground boat (₩4,000), Gamcheon Stamp Map (₩2,000)."
+    },
+    {
+      "id": "lunch",
+      "question": "Is lunch included?",
+      "answer": "No — lunch is paid by the guest (₩10,000-15,000 per person). Typical option en route between Tongdosa and the Amethyst Cave is **Eonyang-style bulgogi** (Ulsan's regional specialty marinated grilled beef). Vegetarian and halal-friendly options possible with advance notice. The lunch stop itself is **optional** — guests on a tight schedule may skip and reboard the coach."
+    },
+    {
+      "id": "cable-car-weather",
+      "question": "What if the cable car is closed?",
+      "answer": "The Yeongnam Alps cable car closes in high wind or heavy snow. The guide checks operational status the morning of and **substitutes the Eoreumgol valley walk** (Natural Monument No. 224, ~40-min loop at the base) — same Yeongnam Alps geology context, no refund issue, no missed time. Full refund only if the entire cable car portion is canceled AND no substitute is offered."
+    },
+    {
+      "id": "tongdosa-significance",
+      "question": "Why visit Tongdosa instead of Bulguksa?",
+      "answer": "Both temples are UNESCO World Heritage Sites, but **Tongdosa is one of Korea's 'Three Jewel Temples'** (representing the Buddha himself — the only temple in Korea housing Buddha's actual physical relics) while **Bulguksa is a 'Sansa' temple representing classical Buddhist architecture**. Tongdosa is ~30 min from Haeundae; Bulguksa is ~90 min each way in Gyeongju. Tongdosa lets the day reach two additional outskirts attractions (Amethyst Cave + Yeongnam Alps) within the same 11-hour budget."
+    },
+    {
+      "id": "amethyst-cave",
+      "question": "What's special about the Amethyst Cave?",
+      "answer": "It's a **converted amethyst mine** — the Eonyang area produced internationally recognized 'Korean Amethyst' (deep purple, high-clarity) through the 1970s-80s, exported globally and featured in royal Korean jewelry. When mining wound down, the 2.5-km of mine passages were opened to the public as a theme park. The optional ₩4,000 underground boat ride on the inner mine lake is a unique extension."
+    },
+    {
+      "id": "eoreumgol",
+      "question": "What is Eoreumgol (Ice Valley)?",
+      "answer": "**Eoreumgol** is a geological phenomenon at the base of the cable car where **the talus boulder field produces natural ice in mid-summer** — cold air pockets trapped beneath the rocks form ice that lasts into July-August, with the inverse warm steam in winter. Designated **Natural Monument No. 224 (1970)**, it's a rare temperature-inversion site found in only a few places worldwide."
+    },
+    {
+      "id": "kids",
+      "question": "Is this suitable for children?",
+      "answer": "Yes, age 6 and up. The 11-hour day with multiple stops is engaging for school-age children. Kids tend to enjoy the cable car ride, the Sky Walk glass floor, the underground Amethyst Cave (especially the optional boat ride), and Gamcheon's murals. Younger children may struggle with the long coach time."
+    },
+    {
+      "id": "seniors",
+      "question": "Is this OK for seniors?",
+      "answer": "Active seniors are fine — the cable car removes the climbing, Tongdosa's forest path is gentle, and the Amethyst Cave floor is mostly flat. Gamcheon's hillside is the main physical demand. Mobility-limited travelers should consider a private chartered car tour where the route can be adjusted."
+    },
+    {
+      "id": "language",
+      "question": "What languages does the guide speak?",
+      "answer": "English primarily. Chinese-speaking guide available on advance request — book 3+ days ahead. Multi-language printed itinerary card distributed at pickup."
+    },
+    {
+      "id": "best-season",
+      "question": "What's the best season for this tour?",
+      "answer": "**Autumn (mid-Oct to early-Nov)** for Yeongnam Alps foliage and Tongdosa's pine + maple approach. **Summer (mid-July to mid-Aug)** to see Eoreumgol's natural ice phenomenon at peak. **Spring (Apr-May)** for cherry blossoms at Tongdosa and Buddha's Birthday lantern festival. Winter is dramatic but the cable car may close in heavy snow."
+    },
+    {
+      "id": "private",
+      "question": "How does this compare to a private chartered tour?",
+      "answer": "This is a coach group tour at $85/person. Our **private chartered car day tour** option provides door-of-hotel pickup, flexible timing, customizable route, and a private vehicle for typically $359-$1,077 per group depending on pax. Choose the coach tour for budget; choose private for flexibility, comfort, and the option to skip or extend stops."
+    },
+    {
+      "id": "walking",
+      "question": "How much walking is there?",
+      "answer": "Approximately 4-5 km total across the four stops, plus the Amethyst Cave 2.5-km internal circuit. Sturdy closed-toe shoes recommended (Tongdosa gravel, cave damp floor, Gamcheon hillside)."
+    },
+    {
+      "id": "tipping",
+      "question": "Is tipping expected?",
+      "answer": "Not expected (tipping is not standard practice in Korea) but appreciated for the guide and driver — typical guest tip $5-10 USD per person if you wish to. Not built into the tour price."
+    }
   ],
   "guestReviews": [],
   "reviewsSummary": {
     "averageRating": 5,
     "totalReviews": 8,
     "ratingDistribution": [
-      { "stars": 5, "count": 8, "percentage": 100 },
-      { "stars": 4, "count": 0, "percentage": 0 },
-      { "stars": 3, "count": 0, "percentage": 0 },
-      { "stars": 2, "count": 0, "percentage": 0 },
-      { "stars": 1, "count": 0, "percentage": 0 }
+      {
+        "stars": 5,
+        "count": 8,
+        "percentage": 100
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
     ],
     "highlights": []
   },
@@ -679,20 +974,41 @@
     "product_id": "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
     "product_type": "bus",
     "route_type": "fixed_route",
-    "destination_region": "korea_mainland",
+    "destination_region": "busan_gyeongju",
     "region_type": "gyeongsang_north",
     "vehicle_type": "large_coach",
     "duration_hours": 11,
-    "region_tags": ["busan_jung", "busan_seo", "busan_haeundae", "yangsan", "ulsan_ulju", "miryang"],
-    "theme_tags": ["unesco_world_heritage", "buddhist_temple", "cable_car", "mountain", "natural_monument", "underground_cave", "mural_village", "three_jewel_temple"],
-    "poi_tags": ["tongdosa_temple", "amethyst_cave_themepark", "yeongnam_alps_ice_valley_cable_car", "gamcheon_culture_village"],
+    "region_tags": [
+      "busan_jung",
+      "busan_seo",
+      "busan_haeundae",
+      "yangsan",
+      "ulsan_ulju",
+      "miryang"
+    ],
+    "theme_tags": [
+      "unesco_world_heritage",
+      "buddhist_temple",
+      "cable_car",
+      "mountain",
+      "natural_monument",
+      "underground_cave",
+      "mural_village",
+      "three_jewel_temple"
+    ],
+    "poi_tags": [
+      "tongdosa_temple",
+      "amethyst_cave_themepark",
+      "yeongnam_alps_ice_valley_cable_car",
+      "gamcheon_culture_village"
+    ],
     "pace_level": 0.75,
     "walking_level": 0.65,
     "scenic_level": 1,
     "photo_level": 1,
     "culture_level": 0.95,
     "relax_level": 0.5,
-    "first_time_fit": 1,
+    "first_time_fit": 0.85,
     "family_fit": 0.85,
     "senior_fit": 0.7,
     "couple_fit": 1,
@@ -706,12 +1022,12 @@
     "mobility_friendly_fit": 0.4,
     "stroller_fit": 0.45,
     "one_day_fit": 1,
-    "same_day_flight_fit": 0.25,
+    "same_day_flight_fit": 0.15,
     "rain_fit": 0.55,
     "value_for_money_fit": 1,
     "iconic_landmark_fit": 1,
     "cafe_fit": 0.5,
-    "food_fit": 0.7,
+    "food_fit": 0.55,
     "nature_fit": 0.95,
     "beach_fit": 0.2,
     "nightlife_fit": 0.1,
@@ -724,7 +1040,7 @@
     "indoor_ratio": 0.25,
     "weather_sensitivity": 0.65,
     "comfort_level": 0.55,
-    "budget_fit": 0.95,
+    "budget_fit": 0.6,
     "premium_fit": 0.25,
     "small_group_fit": 0.15,
     "private_fit": 0.05,
@@ -734,23 +1050,47 @@
     "return_time_band": "18:30-19:30",
     "duration_band": "11h",
     "min_recommended_age": 8,
-    "hard_constraints": { "avoidIf": ["mobility_limited"], "notIdealFor": ["very_low_mobility", "young_kids_under_6"] },
+    "hard_constraints": {
+      "avoidIf": [
+        "mobility_limited"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "young_kids_under_6"
+      ]
+    },
     "walking_notes": [
       "11-hour day with ~4-5 km total walking plus Amethyst Cave 2.5-km internal circuit.",
       "Tongdosa gravel paths + Gamcheon hillside steps are the main demands.",
       "Cable car removes the mountain climbing."
     ],
-    "keywords": ["busan outskirts tour", "tongdosa temple tour", "ice valley cable car", "yeongnam alps eoreumgol", "amethyst cave ulsan", "busan unesco day tour"],
-    "synonym_hints": ["busan to tongdosa day trip", "busan side trip unesco", "miryang cable car tour"],
+    "keywords": [
+      "busan outskirts tour",
+      "tongdosa temple tour",
+      "ice valley cable car",
+      "yeongnam alps eoreumgol",
+      "amethyst cave ulsan",
+      "busan unesco day tour"
+    ],
+    "synonym_hints": [
+      "busan to tongdosa day trip",
+      "busan side trip unesco",
+      "miryang cable car tour"
+    ],
     "seasonality": "year_round",
     "pickup_base_normalized": "busan",
     "vehicle_type_legacy": "bus_coach",
-    "anchor_poi_keys": ["tongdosa_temple", "amethyst_cave_themepark", "yeongnam_alps_ice_valley_cable_car", "gamcheon_culture_village"],
+    "anchor_poi_keys": [
+      "tongdosa_temple",
+      "amethyst_cave_themepark",
+      "yeongnam_alps_ice_valley_cable_car",
+      "gamcheon_culture_village"
+    ],
     "private_tour_fit": 0.05,
     "customizable_route_fit": 0.1,
     "flexibility_fit": 0.25,
     "fixed_itinerary_fit": 1,
-    "national_park_fit": 0.5,
+    "national_park_fit": 0.25,
     "buddhist_temple_fit": 1,
     "scenic_temple_fit": 1,
     "mural_village_fit": 1,
@@ -772,15 +1112,41 @@
     "australia_market_fit": 0.9,
     "japan_market_fit": 0.95,
     "first_time_korea_fit": 1,
-    "busan_signature_route_fit": 1,
-    "no_inter_city_travel_fit": 1,
+    "busan_signature_route_fit": 0.4,
+    "no_inter_city_travel_fit": 0.1,
     "english_speaking_guide_provided": true,
     "chinese_speaking_guide_available_on_advance_notice": true,
     "japanese_speaking_guide_available_on_advance_notice": true
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
+    "primary_themes": [
+      "unesco",
+      "buddhist_temple",
+      "nature",
+      "cable_car"
+    ],
+    "secondary_themes": [
+      "mountain",
+      "underground_cave",
+      "mural_village",
+      "natural_monument"
+    ],
+    "best_for": [
+      "first_time_korea",
+      "couples",
+      "nature_lovers",
+      "culture_lovers",
+      "photographers",
+      "history_lovers"
+    ],
+    "not_recommended_for": [
+      "mobility_limited",
+      "very_young_children",
+      "shoppers_only",
+      "nightlife_seekers"
+    ],
     "source_of_truth_note": "Busan outskirts coach day tour: Tongdosa Temple (UNESCO 2018) + Amethyst Cave Theme Park Ulsan + Yeongnam Alps Ice Valley Cable Car Miryang + Gamcheon Culture Village. Sources: KTO VisitKorea, UNESCO World Heritage Centre, Tongdosa official, Miryang City Tourism, Yeongnam Alps Cable Car official, Cultural Heritage Administration Natural Monument No. 224, Wikipedia.",
     "audit_summary": "11-hour Busan-base coach tour covering UNESCO temple + amethyst-mine theme park + 1,019m cable car + Gamcheon. All main admissions bundled. Gamcheon content reused from busan-top-attractions-day-tour. Direct GetYourGuide equivalent positioned at $94; this tour priced $85/$93."
   }

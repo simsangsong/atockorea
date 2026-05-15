@@ -13,7 +13,7 @@
       "從仁川出發首爾一日遊",
       "景福宮郵輪觀光"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
+    "ogImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
   "catalog_card": {
     "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
@@ -157,21 +157,13 @@
     {
       "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-      "location": "仁寺洞文化街",
-      "alt": "仁寺洞文化街 — on-route photo",
-      "caption": "仁寺洞文化街"
-    },
-    {
-      "id": 5,
-      "type": "photo",
       "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
       "location": "景福宮",
       "alt": "景福宮 — gallery image 2",
       "caption": "景福宮 — photo 2"
     },
     {
-      "id": 6,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
       "location": "景福宮",
@@ -179,7 +171,7 @@
       "caption": "景福宮 — photo 3"
     },
     {
-      "id": 7,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
       "location": "景福宮",
@@ -187,7 +179,7 @@
       "caption": "景福宮 — photo 4"
     },
     {
-      "id": 8,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
       "location": "景福宮",
@@ -195,7 +187,7 @@
       "caption": "景福宮 — photo 5"
     },
     {
-      "id": 9,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
       "location": "景福宮",
@@ -203,7 +195,7 @@
       "caption": "景福宮 — photo 6"
     },
     {
-      "id": 10,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
       "location": "景福宮",
@@ -211,7 +203,7 @@
       "caption": "景福宮 — photo 7"
     },
     {
-      "id": 11,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
       "location": "景福宮",
@@ -219,7 +211,7 @@
       "caption": "景福宮 — photo 8"
     },
     {
-      "id": 12,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
       "location": "景福宮",
@@ -662,7 +654,7 @@
           "Wikipedia (Insadong)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": null
     },
     {
       "number": 6,
@@ -1323,7 +1315,7 @@
         "headlineLine1": "仁川郵輪→首爾一日遊",
         "headlineLine2": "一日遊",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+          "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
           "imagePosition": "center 35%",
           "tagline": "四個首爾市中心景點，配合您的郵輪靠港時間",
           "pills": [
@@ -1418,7 +1410,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "景福宮勤政殿，以山脈為背景",
             "caption": "景福宮——正殿勤政殿，國寶第223號。建於1395年，重建於1867年。",
             "location": "首爾景福宮 > **Notes:** Items 9 (`TourTabsNav`), 14 (`TourAtAGlance`), and 27 (`TourAtmosphereGallery`) are UI component identifiers and have been left untranslated as they are likely used as code keys.",
@@ -1427,7 +1419,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/15/2002115_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "北村瓦頂韓屋沿坡道而立",
             "caption": "北村韓屋村——自1976年起被列為保護區，擁有約600棟傳統韓屋。",
             "location": "首爾北村韓屋村",
@@ -1436,7 +1428,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "廣藏市場攤販與顧客擠滿街頭小食攤",
             "caption": "廣藏市場——韓國首座永久性室內市場（1905年）。綠豆煎餅與麻藥紫菜飯捲為其招牌美食。",
             "location": "鍾路區廣藏市場",
@@ -1445,7 +1437,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "仁寺洞步行街，林立傳統工藝商店與招牌",
             "caption": "仁寺洞——首爾傳統工藝與古董街；1988年被指定為文化街。",
             "location": "鍾路區仁寺洞",
@@ -1454,7 +1446,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "郵輪停靠仁川港國際旅客碼頭",
             "caption": "松島仁川郵輪碼頭——接送地點。",
             "location": "仁川港國際旅客碼頭",
@@ -1475,7 +1467,7 @@
             "duration": "30分鐘",
             "name": "仁川郵輪碼頭接送",
             "category": "出發",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "description": "團體在仁川港國際旅客碼頭（松島）入境大廳與導遊會合。接送時間依您所搭乘船隻的實際下船時間調整，並非固定出發——此處09:00僅為典型示例。預訂時請提供船名、靠港日期、預計下船時間及返船時間；導遊將追蹤行程並自動調整接送時間。約30分鐘含碼頭緩衝時間（出入境時間差異及集合時間）。",
             "timeUsed": [
               "行程後勤安排（接送、碼頭緩衝時間）"
@@ -1715,7 +1707,7 @@
             "duration": "75分鐘",
             "name": "仁寺洞文化街",
             "category": "工藝與文化購物街",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "description": "首爾市中心的步行街，以傳統工藝品店、茶館、書法文具及建於1920年代的Ssamziegil商場（一座設有小型藝廊與工藝坊的四層螺旋形購物空間）聞名。仁寺洞自朝鮮王朝末期起便是首爾主要的古董與工藝品集散地——當時沒落的兩班貴族在此出售家傳珍藏，並於1988年正式被指定為「文化街」。導遊推薦必訪景點包括：品嚐韓國傳統茶的茶館、選購平價陶瓷或文具的仁寺洞紀念品店，以及Ssamziegil商場頂層露台。全程步行；地勢平坦，免費參觀。",
             "timeUsed": [
               "主街漫步",
@@ -1734,7 +1726,7 @@
             "duration": "75分鐘",
             "name": "返回仁川郵輪碼頭",
             "category": "返程",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "description": "從首爾市中心至仁川港（松島）約50公里，經仁川高速公路及110號公路行駛。一般交通狀況下需60–75分鐘；尖峰時段或雨天可能延長至75–90分鐘。在郵輪「最後登船時間」前至少預留60分鐘緩衝，抵達仁川港國際旅客碼頭接送。導遊將追蹤每位旅客各自的船班時刻表；若有多艘船班在不同時間出發，最早開船的旅客將優先送達。",
             "timeUsed": [
               "行程後勤安排（返程交通＋郵輪碼頭緩衝時間）"
@@ -2151,7 +2143,7 @@
       "v15.3_operational_fill": "Filled operational data (visitBasics, convenience, smartNotes) for 4 attraction stops from centralized POI knowledge base. Sources: VisitKorea, VisitBusan, VisitSeoul, official tourism boards.\n  - Stop #2 Gyeongbokgung Palace: filled [visitBasics, convenience, smartNotes]\n  - Stop #3 Bukchon Hanok Village: filled [visitBasics, convenience, smartNotes]\n  - Stop #4 Lunch at Gwangjang Market: filled [visitBasics, convenience, smartNotes]\n  - Stop #5 Insadong cultural street: filled [visitBasics, convenience, smartNotes]",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

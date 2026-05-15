@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Jeju Cruise Shore Excursion: Bus Tour (Coach) | AtoC Korea",
     "metaDescription": "8-hour Jeju cruise shore excursion in a large coach with port-based routing: Jeju Port runs the east UNESCO route, Gangjeong Port runs Hallasan + Olle Market.",
-    "ogImage": "https://www.atockorea.com/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+    "ogImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "primaryKeywords": [
       "Jeju shore excursion",
       "Jeju cruise port tour",
@@ -2041,14 +2041,14 @@
     "japan_market_fit": 0.85
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": [
       "authoring",
       "review",
       "backfill",
       "sql_upsert_generation"
     ],
-    "source_of_truth_note": "Runtime recommendation reads booking system tour_matching_profiles. Cruise products require user_port parameter for route option selection.",
+    "source_of_truth_note": "Runtime recommendation reads Supabase match_tours.matching_profile. Cruise products require user_port parameter for route option selection.",
     "port_routing_split": {
       "applied_at": "2026-04-27",
       "previous_state": "Single itineraryStops representing one generic cruise route.",
@@ -3026,7 +3026,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

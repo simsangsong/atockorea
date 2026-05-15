@@ -14,7 +14,7 @@
       "协涯海滩游",
       "济州咖啡街游"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "ogImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "title": "济州西部与南部全日正宗游 | AtoC Korea"
   },
   "catalog_card": {
@@ -137,21 +137,13 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-      "location": "接送（济州市内4个接送点）",
-      "alt": "接送（济州市内4个接送点） — on-route photo",
-      "caption": "接送（济州市内4个接送点）"
-    },
-    {
-      "id": 2,
-      "type": "photo",
       "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
       "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
       "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 1",
       "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 1"
     },
     {
-      "id": 3,
+      "id": 2,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "location": "柱状节理壁（UNESCO地质公园）",
@@ -159,15 +151,7 @@
       "caption": "柱状节理壁（UNESCO地质公园） — photo 1"
     },
     {
-      "id": 4,
-      "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
-      "location": "午餐 — 大静/安德当地餐厅",
-      "alt": "午餐 — 大静/安德当地餐厅 — on-route photo",
-      "caption": "午餐 — 大静/安德当地餐厅"
-    },
-    {
-      "id": 5,
+      "id": 3,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "location": "天帝渊瀑布（神明之池）",
@@ -175,7 +159,7 @@
       "caption": "天帝渊瀑布（神明之池） — photo 1"
     },
     {
-      "id": 6,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "location": "雪绿茶博物馆 + 绿茶田",
@@ -183,7 +167,7 @@
       "caption": "雪绿茶博物馆 + 绿茶田 — photo 1"
     },
     {
-      "id": 7,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
       "location": "협재海滩 + 西海岸咖啡街",
@@ -191,7 +175,7 @@
       "caption": "협재海滩 + 西海岸咖啡街 — photo 1"
     },
     {
-      "id": 8,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
       "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
@@ -199,7 +183,7 @@
       "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 2"
     },
     {
-      "id": 9,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
       "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
@@ -207,7 +191,7 @@
       "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 3"
     },
     {
-      "id": 10,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "柱状节理壁（UNESCO地质公园）",
@@ -215,7 +199,7 @@
       "caption": "柱状节理壁（UNESCO地质公园） — photo 2"
     },
     {
-      "id": 11,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "柱状节理壁（UNESCO地质公园）",
@@ -223,7 +207,7 @@
       "caption": "柱状节理壁（UNESCO地质公园） — photo 3"
     },
     {
-      "id": 12,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "柱状节理壁（UNESCO地质公园）",
@@ -231,7 +215,7 @@
       "caption": "柱状节理壁（UNESCO地质公园） — photo 4"
     },
     {
-      "id": 13,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
       "location": "天帝渊瀑布（神明之池）",
@@ -239,7 +223,7 @@
       "caption": "天帝渊瀑布（神明之池） — photo 2"
     },
     {
-      "id": 14,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
       "location": "天帝渊瀑布（神明之池）",
@@ -247,7 +231,7 @@
       "caption": "天帝渊瀑布（神明之池） — photo 3"
     },
     {
-      "id": 15,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
       "location": "雪绿茶博物馆 + 绿茶田",
@@ -255,7 +239,7 @@
       "caption": "雪绿茶博物馆 + 绿茶田 — photo 2"
     },
     {
-      "id": 16,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
       "location": "雪绿茶博物馆 + 绿茶田",
@@ -263,7 +247,7 @@
       "caption": "雪绿茶博物馆 + 绿茶田 — photo 3"
     },
     {
-      "id": 17,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
       "location": "雪绿茶博物馆 + 绿茶田",
@@ -271,7 +255,7 @@
       "caption": "雪绿茶博物馆 + 绿茶田 — photo 4"
     },
     {
-      "id": 18,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
       "location": "雪绿茶博物馆 + 绿茶田",
@@ -279,7 +263,7 @@
       "caption": "雪绿茶博物馆 + 绿茶田 — photo 5"
     },
     {
-      "id": 19,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
       "location": "雪绿茶博物馆 + 绿茶田",
@@ -287,7 +271,7 @@
       "caption": "雪绿茶博物馆 + 绿茶田 — photo 6"
     },
     {
-      "id": 20,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
       "location": "雪绿茶博物馆 + 绿茶田",
@@ -295,7 +279,7 @@
       "caption": "雪绿茶博物馆 + 绿茶田 — photo 7"
     },
     {
-      "id": 21,
+      "id": 19,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
       "location": "雪绿茶博物馆 + 绿茶田",
@@ -303,7 +287,7 @@
       "caption": "雪绿茶博物馆 + 绿茶田 — photo 8"
     },
     {
-      "id": 22,
+      "id": 20,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
       "location": "雪绿茶博物馆 + 绿茶田",
@@ -311,7 +295,7 @@
       "caption": "雪绿茶博物馆 + 绿茶田 — photo 9"
     },
     {
-      "id": 23,
+      "id": 21,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
       "location": "雪绿茶博物馆 + 绿茶田",
@@ -319,7 +303,7 @@
       "caption": "雪绿茶博物馆 + 绿茶田 — photo 10"
     },
     {
-      "id": 24,
+      "id": 22,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
       "location": "雪绿茶博物馆 + 绿茶田",
@@ -327,7 +311,7 @@
       "caption": "雪绿茶博物馆 + 绿茶田 — photo 11"
     },
     {
-      "id": 25,
+      "id": 23,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
       "location": "雪绿茶博物馆 + 绿茶田",
@@ -335,7 +319,7 @@
       "caption": "雪绿茶博物馆 + 绿茶田 — photo 12"
     },
     {
-      "id": 26,
+      "id": 24,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
       "location": "협재海滩 + 西海岸咖啡街",
@@ -343,7 +327,7 @@
       "caption": "협재海滩 + 西海岸咖啡街 — photo 2"
     },
     {
-      "id": 27,
+      "id": 25,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
       "location": "협재海滩 + 西海岸咖啡街",
@@ -359,7 +343,7 @@
       "name": "接送（济州市内4个接送点）",
       "category": "接送 — 济州市酒店/枢纽接送顺序",
       "description": "**接送集中于济州市四个中心接送点**，以减少早上的往返绕路：**济州国际机场（제주공항）**供当日抵达的旅客使用；**济州市政厅（제주시청）**服务莲洞/吾罗峰/旧城区酒店群；**下贵洞（하귀동）**为南行途中最西端的接送点；**东门传统市场（동문시장）**为济州市东部的可选接送点。接送顺序为下贵 → 机场 → 市政厅 → 东门 → 沿1100号国道南行，前往汉拿山1100高地湿地登山口。\n\n小型客车为**小团队（最多约14人）**，配备英语导游。**双语行程卡**于接送时发放，并在第一站进行天气及1100号国道封路简报。出发前将进行**1100号国道封路检查**——若因积雪/结冰封路，1100湿地站将改为低海拔替代景点（通常为神秘公路或安德溪谷）。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": null,
       "highlights": [
         "**4个接送点** — 机场、市政厅、下贵、东门",
         "由西向东的顺序可最大限度减少早上的客车行驶距离",
@@ -599,7 +583,7 @@
       "name": "午餐 — 大静/安德当地餐厅",
       "category": "午间休整 — 济州西南部当地美食",
       "description": "**柱状节理至松岳山之间60分钟午餐休整** — 大静/安德走廊距两站均约10–15分钟。默认轮换菜单：**갈치조림（辣炖带鱼）** — 济州南海岸是韩国主要带鱼产地，大静港每日新鲜供货；**물회（冷拌生鱼片）** 夏季供应；**흑돼지구이（济州黑猪烤肉）** 全年供应（2015年文化遗产资料第5号）；或 — **西南特色** — **고사리 육개장（蕨菜牛肉辣汤）** 源于济州山区蕨菜采摘传统，大静邑尤为常见。\n\n**素食及清真友好选项**可在轮换中的一处餐厅提供 — 上车时请告知。午餐餐厅距**松岳山登山口乘车约10分钟**。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
+      "image": null,
       "highlights": [
         "**济州西南部海鲜 + 山区美食走廊** — 大静/安德",
         "**갈치조림（辣炖带鱼）** — 大静港主要产地",
@@ -625,7 +609,7 @@
       "name": "松岳山（全景观景台）",
       "category": "双重火山口火山锥——九十九峰 + 偶来小路第10路 + 二战历史",
       "description": "**松岳山（송악산）**是位于济州岛西南端大静邑的一座**海拔104米的双重火山口寄生火山锥**。该山以**\"九十九峰\"（구십구봉）**民间称谓闻名——这是对从主山向外辐射的密集小型火山锥群的诗意命名，由多次顺序喷发事件形成，在火山口边缘内至今仍可见**黑色与红色火山灰沉积层**。从地质学角度而言，松岳山呈现出**双重火山口结构**：**外部火山口（直径约500米，周长约1.7公里）**与由后期次级喷发在第一个火山口内部形成的**内部火山口（直径约400米，深约69米）**。\n\n游览体验的核心是沿悬崖边缘的**2.8公里沿海环形步道**，几乎全程铺设**维护良好的木制栈道＋缓坡阶梯**，以中等速度步行约**75分钟**即可完成。该步道是**济州偶来小路第10路（花顺→摹瑟浦）**的核心路段。沿环形路线可欣赏全景——向南可见**马罗岛（韩国最南端，距岸1.7公里）**和**加波岛（大麦田平坦小岛，距岸5.5公里）**；向东南可见**兄弟岩（具有独特柱状节理双岩的\"兄弟岛屿\"）**；向东北可见**山房山（395米凝灰岩熔岩锥）**和**汉拿山（1,950米，全岛最高峰）**。\n\n**历史层面**：南侧海岸悬崖中保存有**二战占领期间日本帝国陆军开凿的地道**——神风特攻队自杀艇掩体与弹药库，与城山日出峰的18个洞穴相似。地道对公众开放并设有解说标牌。野生动物方面：**自由放牧的马匹与小马**在山坡上吃草（这是可追溯至传统牧场土地利用方式的济州标志性景观）。**山顶步道偶尔关闭**以进行环境保育轮休；沿海环形步道全年开放。**免费入场**；小型停车场（高峰时段常满）。晴天也可能遭遇强劲海风——全年建议携带防风外套。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": null,
       "highlights": [
         "**104米双重火山口火山**——外部500米×周长1.7公里，内部400米×深69米",
         "**\"九十九峰\"（구십구봉）**民间称谓——密集分布的寄生火山锥群",
@@ -1098,7 +1082,7 @@
       "name": "送客（济州市内5个站点）",
       "category": "送客 — 济州市枢纽站点顺序",
       "description": "**送客路线与早晨接客路线相同，另增一个选项**：协才→经西海岸1132号公路→济州市（大巴约40分钟）。送客顺序：下贵洞（最接近西海岸回程）→济州国际机场→济州市政厅→可选莲洞/老衡站→东门传统市场。预计抵达时间：下贵约19:30，机场约19:40，市政厅约19:50，莲洞约19:55，东门约20:05。**当天晚间从济州国际机场出发的航班**通常可行（末班约21:30），但时间比第1路线（南部世遗路线）更紧张——有当天晚间航班的客人应在接客时提前告知，以便导游优先安排日落时间窗口。全程大巴提供Wi-Fi。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": null,
       "highlights": [
         "**5个送客站点** — 下贵（第一站）、机场、市政厅、莲洞/老衡、东门",
         "大巴协才→经西海岸1132号公路→济州市（约40分钟）",
@@ -1958,7 +1942,7 @@
         "headlineLine1": "济州西南深度一日游",
         "headlineLine2": "一日游",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+          "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
           "imagePosition": "center 35%",
           "tagline": "火山地貌与壮观海岸线交相辉映，时尚海边咖啡馆点缀其间——济州西南环线，精彩呈现",
           "pills": [
@@ -2052,7 +2036,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "alt": "木质环形栈道穿越1100高地湿地，低矮灌木丛生，远处汉拿山山脊清晰可见 --- **说明：** - 第4、8、11、16、29项为技术标识符/组件名称，保留原文不译。 - 地名（协涯 Hyeopjae、汉拿山 Hallasan、柱状节理 Jusangjeolli）采用通用中文译名。 - \"1100湿地\"和\"1100高地\"保留数字编号，符合该景点的惯用称呼。",
             "caption": "汉拿山1100高地湿地——联合国教科文组织生物圈木栈道",
             "location": "汉拿山1100湿地，济州岛中部（海拔1,100米）",
@@ -2061,7 +2045,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "alt": "六角柱状熔岩峭壁从海面垂直耸立，可从设有护栏的木栈道近距离观赏",
             "caption": "柱状节理海岸——联合国教科文组织世界地质公园六角柱",
             "location": "柱状节理，中文海岸，济州岛南部",
@@ -2070,7 +2054,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "alt": "海岸火山锥，顶部平坦的环形步道，身后可见大海与近海岛屿",
             "caption": "松岳山山顶环形步道——南海岸全景游",
             "location": "松岳山，济州岛西南端",
@@ -2079,7 +2063,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "alt": "连绵起伏的绿色茶田，整齐茶垄延伸至一座低矮的博物馆建筑",
             "caption": "雪绿茶博物馆与茶田",
             "location": "雪绿，济州岛中西部",
@@ -2088,7 +2072,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "alt": "白沙滩，碧绿海水，岸边林立咖啡馆，远处隐约可见一座小岛",
             "caption": "协才海滩＋西海岸咖啡一条街",
             "location": "协才海滩，翰林，济州岛西部",
@@ -2110,7 +2094,7 @@
             "name": "接送上车（济州市4个上车点）",
             "category": "出发",
             "description": "与运营商其他旅游产品相同的接送模式：济州海洋套房酒店（08:30）、济州国际机场3号门国内出发3楼（08:45）、乐天城市酒店济州（08:55）、新罗免税店济州店（09:05）。预订时请选择距离最近的上车点。机场接送站点对携带行李的早班航班抵达旅客十分友好。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "highlights": [
               "4个依序上车点",
               "机场行李友好型接送",
@@ -2331,7 +2315,7 @@
             "name": "午餐（济州当地餐厅）",
             "category": "用餐",
             "description": "在导游推荐的济州餐厅自由用餐。当地特色美食：黑猪肉（济州黑猪）烤肉、妈妈汤（艾草鲍鱼汤），或全福粥（鲍鱼粥）。如需素食、纯素或清真选项，请提前告知。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "highlights": [
               "黑猪肉烤肉",
               "素食/纯素/清真选项",
@@ -2361,7 +2345,7 @@
             "name": "松岳山（全景观景台）",
             "category": "海岸观景山",
             "description": "位于济州岛西南端的一座小型火山锥，设有2.6公里的海岸环形步道。观景台可俯瞰全景——远处的汉拿山、近海的马罗岛以及南海岸悬崖。与主要UNESCO景点相比人流较少，深受摄影爱好者喜爱。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "highlights": [
               "2.6 公里海岸环形步道",
               "汉拿山 + 马罗岛景观",
@@ -2791,7 +2775,7 @@
             "name": "送客（济州市内5个下车点）",
             "category": "返回",
             "description": "五个下车选项：新罗免税店、乐天城市酒店、济州机场、济州海洋套房酒店及东门传统市场。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "highlights": [
               "5个下车选项",
               "便于前往机场的下车点"
@@ -3273,7 +3257,7 @@
       "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

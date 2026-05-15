@@ -13,11 +13,11 @@
       "인천항에서 서울까지 프라이빗 차량",
       "한국 크루즈 기항지 투어"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "ogImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
     "title": "인천 → 서울 프라이빗 크루즈 기항지 투어 · 8시간 도어 투 도어 데이"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "thumbnail": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
     "title": "인천 크루즈 → 서울 프라이빗 차량",
     "priceLabel": "차량당 US$419부터",
     "shortCardDescription": "정해진 일정이 아닌, 출항 시간에 맞춰 설계된 8시간 프라이빗 차량 투어. 인천 크루즈 터미널 갱웨이 픽업, 영어 구사 드라이버 가이드, 경복궁, 북촌 한옥마을 + 인사동, 원하시는 점심 식사, N서울타워, 명동 또는 조계사로 이어지는 맞춤형 코스. 드라이버 가이드가 출항 전 60분의 교통 여유 시간을 확보하여 절대 배를 놓치지 않습니다.",
@@ -44,7 +44,7 @@
       "맞춤형",
       "귀선 보장"
     ],
-    "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
+    "heroImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp"
   },
   "headlineLine1": "인천 크루즈 → 서울 프라이빗 차량",
   "headlineLine2": "투어",
@@ -55,7 +55,7 @@
     "salePriceUsd": 419
   },
   "hero": {
-    "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "imageUrl": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
     "imagePosition": "center 35%",
     "tagline": "갱웨이에서 60분이면 경복궁 — 출항 시간에 맞춰 설계된 프라이빗 서울 투어",
     "pills": [
@@ -135,122 +135,82 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
-      "location": "경복궁 + 왕궁 수문장 교대식",
-      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 1",
-      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 1"
+      "src": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
+      "location": "인천 크루즈 터미널",
+      "alt": "인천 크루즈 터미널 — 프라이빗 카니발로 갱웨이 픽업",
+      "caption": "인천 크루즈 터미널 — 프라이빗 카니발로 갱웨이 픽업"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
-      "location": "북촌 한옥마을 + 인사동",
-      "alt": "북촌 한옥마을 + 인사동 — gallery image 1",
-      "caption": "북촌 한옥마을 + 인사동 — photo 1"
+      "src": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
+      "location": "한강 & N서울타워",
+      "alt": "한강변 프라이빗 카니발 — N서울타워 야경",
+      "caption": "한강변 프라이빗 카니발 — N서울타워 야경"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
-      "location": "N서울타워 (남산)",
-      "alt": "N서울타워 (남산) — gallery image 1",
-      "caption": "N서울타워 (남산) — photo 1"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "location": "경복궁",
+      "alt": "경복궁 — 서울 도심의 왕실 건축",
+      "caption": "경복궁 — 서울 도심의 왕실 건축"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
-      "location": "명동 또는 조계사 (선택)",
-      "alt": "명동 또는 조계사 (선택) — gallery image 1",
-      "caption": "명동 또는 조계사 (선택) — photo 1"
+      "src": "/images/tours/seoul-private-charter/seoul-private-gyeongbokgung-heungnyemun.webp",
+      "location": "경복궁",
+      "alt": "경복궁 흥례문 — 한복 차림 방문객",
+      "caption": "경복궁 흥례문 — 한복 차림 방문객"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
-      "location": "경복궁 + 왕궁 수문장 교대식",
-      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 2",
-      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 2"
+      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "location": "북촌한옥마을",
+      "alt": "북촌한옥마을 — 전통 골목길",
+      "caption": "북촌한옥마을 — 전통 골목길"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
-      "location": "경복궁 + 왕궁 수문장 교대식",
-      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 3",
-      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 3"
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
+      "location": "N서울타워 (남산)",
+      "alt": "남산 N서울타워",
+      "caption": "남산 N서울타워"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
-      "location": "경복궁 + 왕궁 수문장 교대식",
-      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 4",
-      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 4"
+      "src": "/images/tours/seoul-private-charter/seoul-private-n-seoul-tower-treat.webp",
+      "location": "N서울타워 (남산)",
+      "alt": "N서울타워 — 타워 앞에서 즐기는 디저트",
+      "caption": "N서울타워 — 타워 앞에서 즐기는 디저트"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
-      "location": "경복궁 + 왕궁 수문장 교대식",
-      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 5",
-      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 5"
+      "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+      "location": "광장시장",
+      "alt": "광장시장 — 서울 노포 먹자골목",
+      "caption": "광장시장 — 서울 노포 먹자골목"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
-      "location": "경복궁 + 왕궁 수문장 교대식",
-      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 6",
-      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 6"
+      "src": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
+      "location": "명동",
+      "alt": "명동 — 서울의 활기찬 쇼핑 거리",
+      "caption": "명동 — 서울의 활기찬 쇼핑 거리"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
-      "location": "경복궁 + 왕궁 수문장 교대식",
-      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 7",
-      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 7"
-    },
-    {
-      "id": 11,
-      "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
-      "location": "경복궁 + 왕궁 수문장 교대식",
-      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 8",
-      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 8"
-    },
-    {
-      "id": 12,
-      "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
-      "location": "경복궁 + 왕궁 수문장 교대식",
-      "alt": "경복궁 + 왕궁 수문장 교대식 — gallery image 9",
-      "caption": "경복궁 + 왕궁 수문장 교대식 — photo 9"
-    },
-    {
-      "id": 13,
-      "type": "photo",
-      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-57-27.webp",
-      "location": "N서울타워 (남산)",
-      "alt": "N서울타워 (남산) — gallery image 2",
-      "caption": "N서울타워 (남산) — photo 2"
-    },
-    {
-      "id": 14,
-      "type": "photo",
-      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-06.webp",
-      "location": "N서울타워 (남산)",
-      "alt": "N서울타워 (남산) — gallery image 3",
-      "caption": "N서울타워 (남산) — photo 3"
-    },
-    {
-      "id": 15,
-      "type": "photo",
-      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-10.webp",
-      "location": "N서울타워 (남산)",
-      "alt": "N서울타워 (남산) — gallery image 4",
-      "caption": "N서울타워 (남산) — photo 4"
+      "src": "/images/tours/seoul-private-charter/seoul-private-lotte-tower-songpa.webp",
+      "location": "롯데월드타워 (송파)",
+      "alt": "롯데월드타워 — 송파 위로 솟은 한국 최고층",
+      "caption": "롯데월드타워 — 송파 위로 솟은 한국 최고층"
     }
   ],
   "itineraryStops": [
@@ -657,7 +617,7 @@
           "Wikipedia (N Seoul Tower)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+      "image": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
       "images": [
         "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
         "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-57-27.webp",
@@ -1462,7 +1422,7 @@
         "headlineLine1": "인천 크루즈 → 서울 프라이빗 차량",
         "headlineLine2": "투어",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+          "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
           "imagePosition": "center 35%",
           "tagline": "갱웨이에서 경복궁까지 60분 — 출항 시간에 맞게 조율된 프라이빗 서울 하루 투어",
           "pills": [
@@ -1561,7 +1521,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "인천 크루즈 터미널 도착 홀 갱웨이 측 픽업",
             "caption": "경복궁 정전 (근정전)",
             "location": "인천 크루즈 터미널",
@@ -1570,7 +1530,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/15/2002115_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "경복궁 정전 및 수문장 교대식",
             "caption": "경복궁 수문장 교대식",
             "location": "경복궁, 서울",
@@ -1579,7 +1539,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "북촌 능선을 따라 펼쳐진 돌담과 기와 한옥 지붕",
             "caption": "북촌 한옥마을의 전통 지붕선",
             "location": "북촌 한옥마을, 서울",
@@ -1588,7 +1548,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "남산에서 바라본 서울 파노라마 전경과 위에 솟은 N서울타워",
             "caption": "조계사 대웅전과 연등 장식",
             "location": "N서울타워 (남산)",
@@ -1597,7 +1557,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "황혼 무렵 명동 쇼핑 거리를 따라 불 밝힌 길거리 음식 노점들",
             "caption": "남산에서 바라본 일몰 무렵의 N서울타워",
             "location": "서울 명동",
@@ -1606,7 +1566,7 @@
           {
             "id": "g6",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "인천 크루즈 터미널 하차 구역에서 대기 중인 전용 차량",
             "caption": "명동 길거리 음식과 쇼핑",
             "location": "인천 크루즈 터미널",
@@ -1628,7 +1588,7 @@
             "name": "크루즈 터미널 픽업",
             "category": "출발",
             "description": "드라이버 겸 가이드가 이름 팻말을 들고 인천 크루즈 터미널 도착 홀에서 일행을 맞이합니다. 출항(전원 탑승) 시간을 빠르게 확인한 후, 서울 도심까지 약 1시간을 이동합니다. 이동 시간은 그 자체로 오리엔테이션이 되며, 첫 번째 방문지에 도착하기 전에 환전, 음식, 역사에 관한 일반적인 질문들을 해결합니다.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "승선 게이트 앞 픽업",
               "서울까지 1시간 이동",
@@ -1650,7 +1610,7 @@
             "name": "경복궁 + 왕궁 수문장 교대식",
             "category": "조선 왕궁",
             "description": "조선 왕조(1395~1910)의 정궁으로, 서울에서 가장 많이 사진 찍히는 명소입니다. 왕궁 수문장 교대식은 매일 10:00와 14:00에 진행됩니다(화요일 휴무 — 화요일에는 창덕궁이 대체 장소가 됩니다). 가이드가 입장권을 처리하고 근정전, 경회루, 그리고 시간이 허락하면 후원까지 안내해 드립니다.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "조선 시대 정궁",
               "왕궁 수문장 교대식",
@@ -1686,7 +1646,7 @@
             "name": "북촌한옥마을 + 인사동",
             "category": "한옥 문화유산 마을",
             "description": "궁궐에서 차로 잠깐, 또는 도보 10분 거리에 위치합니다. 북촌의 보존된 15세기 골목길에는 지금도 주민들이 거주하고 있어, 표시된 구역에서는 조용히 해주시기 바랍니다. 바로 아래쪽에 위치한 인사동은 서울의 대표적인 전통 예술·공예 거리로, 도자기, 서예 용품, 전통차, 한지, 한복 대여점, 그리고 개성 있는 쌈지길 쇼핑 복합공간을 만나볼 수 있습니다.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "15세기 한옥 골목길",
               "전통 공예품 및 차",
@@ -1722,7 +1682,7 @@
             "name": "점심식사 (자유 선택)",
             "category": "식사",
             "description": "자유 선택: 인사동 레스토랑에서 전통 한국 궁중요리 및 비빔밥; 경복궁 인근 토속촌에서 삼계탕; 또는 북촌 인근에서 가벼운 한국식 BBQ. 드라이버 가이드가 식이 요건에 맞춰 구체적인 장소를 추천함 (할랄, 채식, 알레르기 — 사전에 말씀해 주시면 할랄 친화적 코스로 조정 가능).",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "인사동 궁중요리",
               "토속촌 삼계탕",
@@ -1745,7 +1705,7 @@
             "name": "N서울타워 (남산) — 선택적 전망 포인트",
             "category": "상징적 타워 (전망 포인트)",
             "description": "남산 드라이브 후 타워 입구에서 서울 도심, 한강, 주변 산줄기를 한눈에 내려다보는 파노라마 전망 감상. 선택적 전망대 탑승 요금은 1인당 약 ₩21,000이며 현장 별도 결제. 출항 시간이 촉박할 경우 드라이버가 전망대 탑승을 생략하고 입구 사진 포인트만 들러 30분 이상 절약 가능.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "파노라마 도시 전망",
               "자물쇠 포토 스팟",
@@ -1780,7 +1740,7 @@
             "name": "명동(쇼핑 & 길거리 음식) 또는 조계사",
             "category": "쇼핑 & 지역 문화",
             "description": "관심사에 따라 두 가지 옵션 제공. 명동(한국 대표 쇼핑 거리)에서는 K-뷰티 매장, 길거리 음식 노점(계란빵, 호떡, 토네이도 감자) 및 세금 환급 카운터 이용 가능. 조계사(한국 조계종 총본산)는 보다 차분한 마무리를 위한 선택지 — 국내 최대 단일 목재 석가모니 불상과 계절별 연등 장식으로 꾸며지는 마당이 인상적입니다.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "명동 길거리 음식 & K-뷰티",
               "또는 조계사 방문",
@@ -1802,7 +1762,7 @@
             "name": "크루즈 터미널로 귀환",
             "category": "귀환",
             "description": "서울 → 인천 크루즈 터미널 직행, 약 60분 소요. 드라이버 가이드는 예정 하차 시간과 승선 마감 시간 사이에 60분의 여유를 확보하여 교통 지연으로 인한 승선 차질이 없도록 합니다. 터미널 게이트 앞에서 직접 하차.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "인천까지 1시간 드라이브",
               "승선 전 60분 안전 여유 시간",
@@ -2227,7 +2187,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

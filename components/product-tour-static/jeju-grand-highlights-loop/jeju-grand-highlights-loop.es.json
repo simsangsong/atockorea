@@ -14,7 +14,7 @@
       "Tour a las cascadas Cheonjiyeon",
       "Tour a Jusangjeolli"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+    "ogImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "Gran Circuito de Jeju · Grupo Reducido 10 horas · UNESCO + Cascadas + Acantilados"
   },
   "catalog_card": {
@@ -150,21 +150,13 @@
     {
       "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
-      "location": "Almuerzo — Local de Seogwipo",
-      "alt": "Almuerzo — Local de Seogwipo — on-route photo",
-      "caption": "Almuerzo — Local de Seogwipo"
-    },
-    {
-      "id": 4,
-      "type": "photo",
       "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
       "location": "Cascada Jeongbang",
       "alt": "Cascada Jeongbang — gallery image 1",
       "caption": "Cascada Jeongbang — photo 1"
     },
     {
-      "id": 5,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "location": "Seongsan Ilchulbong",
@@ -172,7 +164,7 @@
       "caption": "Seongsan Ilchulbong — photo 1"
     },
     {
-      "id": 6,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
       "location": "Hallasan Eoseungsaengak",
@@ -180,7 +172,7 @@
       "caption": "Hallasan Eoseungsaengak — photo 2"
     },
     {
-      "id": 7,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "Acantilado de Daepo Jusangjeolli",
@@ -188,7 +180,7 @@
       "caption": "Acantilado de Daepo Jusangjeolli — photo 2"
     },
     {
-      "id": 8,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "Acantilado de Daepo Jusangjeolli",
@@ -196,7 +188,7 @@
       "caption": "Acantilado de Daepo Jusangjeolli — photo 3"
     },
     {
-      "id": 9,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "Acantilado de Daepo Jusangjeolli",
@@ -204,7 +196,7 @@
       "caption": "Acantilado de Daepo Jusangjeolli — photo 4"
     },
     {
-      "id": 10,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
       "location": "Cascada Jeongbang",
@@ -212,7 +204,7 @@
       "caption": "Cascada Jeongbang — photo 2"
     },
     {
-      "id": 11,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
       "location": "Cascada Jeongbang",
@@ -220,7 +212,7 @@
       "caption": "Cascada Jeongbang — photo 3"
     },
     {
-      "id": 12,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
       "location": "Seongsan Ilchulbong",
@@ -228,7 +220,7 @@
       "caption": "Seongsan Ilchulbong — photo 2"
     },
     {
-      "id": 13,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
       "location": "Seongsan Ilchulbong",
@@ -236,7 +228,7 @@
       "caption": "Seongsan Ilchulbong — photo 3"
     },
     {
-      "id": 14,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
       "location": "Seongsan Ilchulbong",
@@ -244,7 +236,7 @@
       "caption": "Seongsan Ilchulbong — photo 4"
     },
     {
-      "id": 15,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
       "location": "Seongsan Ilchulbong",
@@ -460,7 +452,7 @@
       "name": "Almuerzo — Local de Seogwipo",
       "category": "Pausa de Mediodía — Gastronomía Local de Seogwipo",
       "description": "**Pausa de 60 minutos en el centro de Seogwipo (서귀포)** — la ciudad sureña de Jeju, famosa por los mariscos frescos desembarcados en el **Mercado Maeil Olle de Seogwipo (서귀포매일올레시장)** y la costa rica en abulones. Rotación predeterminada según la temporada y el tamaño del grupo: **galchi-jorim (갈치조림, guiso de pez sable estofado)** en un restaurante especializado de Seogwipo cuando los barcos desembarcan en temporada (sep–feb), **jeonbok-bibimbap (전복비빔밥, abulón sobre arroz)** durante todo el año en un local frente al mercado, o **heuk-doeji gui (흑돼지구이, BBQ de cerdo negro de Jeju)** para los huéspedes que prefieren carne a la parrilla. \n\nEl cerdo negro (***Sus scrofa* domesticus, variedad negra de Jeju**) fue designado **Material del Patrimonio Cultural N.º 5 (2015)** y sigue siendo una raza protegida de Jeju. Alternativa vegetariana bajo petición: **bibim-guksu (비빔국수, fideos fríos picantes)** con verduras de temporada. \n\nEl lugar del almuerzo se encuentra **a 5 minutos a pie de las Cataratas Jeongbang** — los huéspedes con ganas de un café rápido tras el almuerzo pueden detenerse en la hilera de teterías/cafés del mercado antes de continuar a pie.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
+      "image": null,
       "highlights": [
         "**Seogwipo** central — capital pesquera y marisquera del sur de Jeju",
         "**Galchi-jorim (pez sable)** en temporada (sep–feb), **jeonbok-bibimbap** durante todo el año",
@@ -491,9 +483,7 @@
         "facilities": "Las instalaciones relacionadas con la restauración suelen ser más que suficientes.",
         "tip": "Es mejor comer aquí a un ritmo tranquilo que apresurarse y perder energía para la tarde."
       },
-      "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp"
-      ]
+      "images": []
     },
     {
       "number": 4,
@@ -1473,7 +1463,7 @@
         "headlineLine1": "Jeju Completo",
         "headlineLine2": "Hitos del Día",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+          "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
           "imagePosition": "center 35%",
           "tagline": "Diseñada para viajeros con tiempo limitado, esta ruta de alta densidad cubre Hallasan, los impresionantes paisajes de la costa sur, una cascada y Seongsan Ilchulbong en un solo día.",
           "pills": [
@@ -1565,7 +1555,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "location": "Ruta General",
             "atmosphere": "Descubre los paisajes más emblemáticos de Jeju en un solo día",
             "alt": "Ambiente general de un tour de día por los mejores atractivos de Jeju",
@@ -1574,7 +1564,7 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "location": "Primera Parada: Hallasan",
             "atmosphere": "Aire de montaña fresco a mayor altitud",
             "alt": "Ambiente del sendero Eoseungsaengak del Hallasan",
@@ -1583,7 +1573,7 @@
           {
             "id": 3,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "location": "Costa de Jusangjeolli",
             "atmosphere": "Un dramático contraste entre olas y acantilados",
             "alt": "Acantilado Daepo Jusangjeolli en la costa de Jeju",
@@ -1592,7 +1582,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "location": "Cascada junto al Mar",
             "atmosphere": "Un cambio de paisaje en la ruta de la tarde",
             "alt": "Paisaje costero en la Cascada Jeongbang > **Notes:** > - Items **2** and **15** appear to be UI component keys — translated in compound format (`ResumenDelTour`, `GaleríaDeAmbienteDelTour`) to match the original style. > - Proper nouns (Hallasan, Jusangjeolli, Eoseungsaengak, Jeongbang, Jeju, Daepo) are kept as-is, as they are Korean geographic names. > - Items **18–19** and **22–23** and **26–27** are identical pairs — translated consistently.",
@@ -1601,7 +1591,7 @@
           {
             "id": 5,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "location": "Final en el Cráter",
             "atmosphere": "Una vista final simbólica con un impacto real",
             "alt": "Cráter y costa de Seongsan Ilchulbong",
@@ -1622,7 +1612,7 @@
             "name": "Hallasan Eoseungsaengak",
             "category": "Sendero de las Estribaciones del Hallasan",
             "description": "El día comienza en el fresco aire de las tierras altas del Hallasan. Eoseungsaengak conecta senderos forestales, laderas volcánicas y miradores, dando a la ruta un potente comienzo desde la primera parada.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "Uno de los miradores emblemáticos más accesibles del Hallasan",
               "Un comienzo revitalizante construido en torno a senderos forestales y aire de montaña",
@@ -1651,7 +1641,6 @@
               "tip": "Especialmente tras la lluvia o en las estaciones más frías, el calzado con agarre y el abrigo son más importantes aquí que en la mayoría de las otras paradas."
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
               "https://images.unsplash.com/photo-1696440869866-b90626f1bf7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
               "https://images.unsplash.com/photo-1590085309112-f67167e8da6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
               "https://images.unsplash.com/photo-1665071407550-57acf1755a72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -1670,7 +1659,7 @@
             "name": "Acantilado Daepo Jusangjeolli",
             "category": "Costa de Basalto",
             "description": "Después de bajar del Hallasan, el ambiente cambia drásticamente en la costa sur. Las olas, las columnas de basalto y el contraste del acantilado costero hacen de esta una parada de gran impacto que eleva rápidamente la intensidad visual del día antes del almuerzo.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "Columnas hexagonales de basalto que se extienden a lo largo de la orilla",
               "Un impresionante contraste de acantilado marino tras la sección del Hallasan",
@@ -1699,7 +1688,6 @@
               "tip": "Incluso en un día soleado, la costa suele sentirse más fría y ventosa que el interior de Jeju."
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
               "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
               "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
               "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -1718,7 +1706,7 @@
             "name": "Almuerzo",
             "category": "Parada para almorzar",
             "description": "Esto no es simplemente un descanso en el itinerario. Es el punto de recuperación clave que ayuda a conservar energía para la Cascada Jeongbang y el Seongsan Ilchulbong en la segunda mitad del día.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "Un punto de recuperación claramente definido en una ruta de ritmo acelerado",
               "Tiempo para recuperar energías antes de dirigirse al este",
@@ -1746,9 +1734,7 @@
               "facilities": "Las instalaciones relacionadas con la gastronomía suelen ser más que suficientes.",
               "tip": "Es mejor comer a un ritmo tranquilo aquí que apresurarse y perder energía para la tarde."
             },
-            "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp"
-            ]
+            "images": []
           },
           {
             "number": 4,
@@ -1757,7 +1743,7 @@
             "name": "Cascada de Jeongbang",
             "category": "La cascada que se encuentra con el mar",
             "description": "Después del almuerzo, la cascada de Jeongbang añade una textura muy diferente a la ruta. Los escalones de piedra, la bruma marina y una cascada que cae hacia la costa crean uno de los paisajes más característicos del sur de Jeju.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "Una escena compacta donde la cascada y la orilla rocosa están en el mismo encuadre",
               "Un cambio notable en el ambiente después del almuerzo",
@@ -1786,7 +1772,6 @@
               "tip": "Debido a las escaleras y al camino rocoso, el recorrido suele sentirse más físicamente activo sobre el terreno de lo que parece en el mapa."
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
               "https://images.unsplash.com/photo-1674606042265-c9f03a77e286?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
               "https://images.unsplash.com/photo-1674606055132-15e511a3ac2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
               "https://images.unsplash.com/photo-1761303505953-df6647dd3a46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -1802,7 +1787,7 @@
             "name": "Seongsan Ilchulbong",
             "category": "Final en el Cráter Volcánico",
             "description": "Terminar en Seongsan Ilchulbong le otorga a esta ruta su final más emblemático. Tras Hallasan, la costa sur y la Cascada Jeongbang, cerrar el día en uno de los monumentos más icónicos de Jeju hace que el recorrido completo se sienta verdaderamente redondo.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "El monumento emblema de Jeju como parada de cierre",
               "Un poderoso remate visual al final de un día de alta intensidad",
@@ -1831,7 +1816,6 @@
               "tip": "La afluencia de visitantes, el clima y el nivel de condición física del grupo pueden influir en lo exigente y satisfactoria que resulta la experiencia de llegar a la cima."
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
               "https://images.unsplash.com/photo-1616798249081-30877e213b16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
               "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
               "https://images.unsplash.com/photo-1593104197164-96718e943b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -2298,8 +2282,8 @@
         "date": "2026-04-28",
         "description": "Batch 1 deep enhancement — descriptions raised to 700-1100+ chars from ~210 chars; KB-backed visitBasics/convenience/smartNotes/_poi_meta on all attraction stops; matching_profile adjusted with verified-fact reasoning (see _score_audit).",
         "_score_audit": {
-          "_methodology": "Scores on 1-5 integer scale (existing tours convention). Each delta anchored to a verified fact.",
-          "scale_note": "1-5 integer scale matches 24 of 30 tours; 3 new Step3 tours use 0-1 float scale (separate harmonization task).",
+          "_methodology": "Scores use the current 0-1 float scale.",
+          "scale_note": "Current live matching uses 0-1 float scores in match_tours.matching_profile.",
           "deltas_applied": {
             "unesco_fit": {
               "old": 5,
@@ -2387,7 +2371,7 @@
       },
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

@@ -25,12 +25,21 @@ const MAJOR_CURRENCIES = [
 ] as const;
 
 const CACHE_MS = 10 * 60 * 1000;
+const FAILURE_COOLDOWN_MS = 30 * 60 * 1000;
 const FALLBACK_KRW_PER_USD = 1480;
 
 const upstreamFetchInit: RequestInit = { cache: 'no-store' };
 
-type Cached = { rates: Record<string, number>; updatedAt: string };
-let cached: Cached | null = null;
+type Cached = { rates: Record<string, number>; updatedAt: string; isFallback?: boolean };
+// Persist on globalThis so dev HMR module reloads don't reset the cache and
+// re-hammer the upstream API while it's rate-limited.
+const cacheStore = globalThis as unknown as { __usdRatesCache?: Cached | null };
+function getCached(): Cached | null {
+  return cacheStore.__usdRatesCache ?? null;
+}
+function setCached(value: Cached | null): void {
+  cacheStore.__usdRatesCache = value;
+}
 
 const FALLBACK_RATES: Record<string, number> = {
   USD: 1,
@@ -62,8 +71,19 @@ export type UsdBasedRatesResult = {
 
 export async function getUsdBasedRates(): Promise<UsdBasedRatesResult> {
   try {
-    if (cached && Date.now() - new Date(cached.updatedAt).getTime() < CACHE_MS) {
-      return { rates: cached.rates, updatedAt: cached.updatedAt, source: 'cache' };
+    const cached = getCached();
+    if (cached) {
+      const age = Date.now() - new Date(cached.updatedAt).getTime();
+      // Negative cache: if we last fell back, hold the fallback for the cooldown
+      // window so we don't re-hammer a rate-limited upstream.
+      const ttl = cached.isFallback ? FAILURE_COOLDOWN_MS : CACHE_MS;
+      if (age < ttl) {
+        return {
+          rates: cached.rates,
+          updatedAt: cached.updatedAt,
+          source: cached.isFallback ? 'fallback' : 'cache',
+        };
+      }
     }
 
     const apiKey = process.env.EXCHANGE_RATE_API_KEY;
@@ -103,7 +123,7 @@ export async function getUsdBasedRates(): Promise<UsdBasedRatesResult> {
     if (filtered.KRW == null) filtered.KRW = FALLBACK_KRW_PER_USD;
     if (filtered.USD == null) filtered.USD = 1;
 
-    cached = { rates: filtered, updatedAt };
+    setCached({ rates: filtered, updatedAt });
 
     return {
       rates: filtered,
@@ -112,8 +132,11 @@ export async function getUsdBasedRates(): Promise<UsdBasedRatesResult> {
     };
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Failed to fetch exchange rate';
-    console.error('[usdBasedRates]', message);
+    // warn (not error) so Next.js dev doesn't surface this as a red overlay —
+    // the fallback rates still serve the page correctly.
+    console.warn('[usdBasedRates]', message, '— using fallback rates');
     const updatedAt = new Date().toISOString();
+    setCached({ rates: FALLBACK_RATES, updatedAt, isFallback: true });
     return {
       rates: FALLBACK_RATES,
       updatedAt,

@@ -14,7 +14,7 @@
       "太宗台クルーズツアー",
       "チャガルチ市場ツアー"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp"
+    "ogImage": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp"
   },
   "catalog_card": {
     "thumbnail": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
@@ -134,7 +134,7 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "location": "国連記念公園（朝鮮戦争）",
       "alt": "国連記念公園（朝鮮戦争） — gallery image 1",
       "caption": "国連記念公園（朝鮮戦争） — photo 1"
@@ -150,7 +150,7 @@
     {
       "id": 3,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
       "location": "甘川文化村",
       "alt": "甘川文化村 — on-route photo",
       "caption": "甘川文化村"
@@ -158,7 +158,7 @@
     {
       "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
       "location": "龍頭山公園＆釜山タワー",
       "alt": "龍頭山公園＆釜山タワー — on-route photo",
       "caption": "龍頭山公園＆釜山タワー"
@@ -166,21 +166,13 @@
     {
       "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
-      "location": "南浦洞＆チャガルチ水産市場",
-      "alt": "南浦洞＆チャガルチ水産市場 — on-route photo",
-      "caption": "南浦洞＆チャガルチ水産市場"
-    },
-    {
-      "id": 6,
-      "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
       "location": "国連記念公園（朝鮮戦争）",
       "alt": "国連記念公園（朝鮮戦争） — gallery image 2",
       "caption": "国連記念公園（朝鮮戦争） — photo 2"
     },
     {
-      "id": 7,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
       "location": "国連記念公園（朝鮮戦争）",
@@ -188,7 +180,7 @@
       "caption": "国連記念公園（朝鮮戦争） — photo 3"
     },
     {
-      "id": 8,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
       "location": "テジョンデ（太宗台）沿岸断崖",
@@ -196,7 +188,7 @@
       "caption": "テジョンデ（太宗台）沿岸断崖 — photo 2"
     },
     {
-      "id": 9,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
       "location": "テジョンデ（太宗台）沿岸断崖",
@@ -204,7 +196,7 @@
       "caption": "テジョンデ（太宗台）沿岸断崖 — photo 3"
     },
     {
-      "id": 10,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
       "location": "テジョンデ（太宗台）沿岸断崖",
@@ -212,7 +204,7 @@
       "caption": "テジョンデ（太宗台）沿岸断崖 — photo 4"
     },
     {
-      "id": 11,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
       "location": "テジョンデ（太宗台）沿岸断崖",
@@ -220,12 +212,44 @@
       "caption": "テジョンデ（太宗台）沿岸断崖 — photo 5"
     },
     {
-      "id": 12,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
       "location": "テジョンデ（太宗台）沿岸断崖",
       "alt": "テジョンデ（太宗台）沿岸断崖 — gallery image 6",
       "caption": "テジョンデ（太宗台）沿岸断崖 — photo 6"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "テジョンデ（太宗台）沿岸断崖",
+      "alt": "テジョンデ（太宗台）沿岸断崖 — gallery image 6",
+      "caption": "テジョンデ（太宗台）沿岸断崖 — photo 6"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 3",
+      "caption": "감천문화마을 — photo 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+      "location": "용두산공원 & 부산타워",
+      "alt": "용두산공원 & 부산타워 — gallery image 2",
+      "caption": "용두산공원 & 부산타워 — photo 2"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
+      "location": "용두산공원 & 부산타워",
+      "alt": "용두산공원 & 부산타워 — gallery image 3",
+      "caption": "용두산공원 & 부산타워 — photo 3"
     }
   ],
   "itineraryStops": [
@@ -253,7 +277,7 @@
           "CruiseMapper"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG"
+      "image": null
     },
     {
       "number": 2,
@@ -570,7 +594,7 @@
           "Korea Tourism Organization (100 Must-Visit Tourist Spots in Korea designation)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
       "visitBasics": {
         "hours": "9:00〜18:00（3〜10月）／9:00〜17:00（11〜2月）；インフォメーションセンターも同時間",
         "closed": "年中無休",
@@ -584,7 +608,12 @@
       "smartNotes": {
         "photo": "スカイガーデン（ハヌルマル展望台）の**「星の王子さまとキツネのベンチ」**（長い行列あり、無料）、星見台からの**虹色屋根のパノラマ**、そして**階段壁画の路地**。**ドローン禁止、路地でのフラッシュ撮影禁止**。",
         "tip": "**現在も約1万人の住民が生活しています**（1955年・太極道難民集落）——**声を落として**ください、住宅への立ち入り禁止、ゴミは持ち帰ること。**国連ハビタット・アジア都市景観賞2012年受賞**；年間約140万人来訪。韓国観光公社100選に5年連続選出。"
-      }
+      },
+      "images": [
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp"
+      ]
     },
     {
       "number": 6,
@@ -624,7 +653,7 @@
           "Busan Metropolitan City heritage records"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+      "image": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
       "visitBasics": {
         "hours": "公園は24時間オープン；**釜山ダイヤモンドタワー展望台 10:00〜22:00（最終入場21:30）**",
         "closed": "タワーは年中無休（強風時に安全上の理由で臨時閉鎖あり）",
@@ -638,7 +667,12 @@
       "smartNotes": {
         "photo": "**釜山ダイヤモンドタワー展望台（高さ120m）**（山頂の総標高189m）から — 晴れた日には釜山港、影島大橋（ヨンドテギョ）、対馬まで望む**360°パノラマ**。タワー頂部は**慶州・仏国寺多宝塔（韓国国宝第20号）の宝蓋**をモデルに設計。**夕暮れ時と夜間**が最もおすすめ。",
         "tip": "タワー観光を**李舜臣（イ・スンシン）将軍像**（壬辰倭乱〈文禄・慶長の役〉で亀甲船を率い、一度も船を失わなかった英雄）と**市民の鐘**（**大晦日と3月1日に33回打ち鳴らされ、1919年の独立宣言書に署名した33名の署名者を記念**）とセットでお楽しみください。"
-      }
+      },
+      "images": [
+        "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+        "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+        "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp"
+      ]
     },
     {
       "number": 7,
@@ -679,7 +713,7 @@
           "Busan Tourism Organization (Jagalchi Sannakji designation)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+      "image": null,
       "visitBasics": {
         "hours": "**チャガルチ市場 毎日05:00〜22:00**；活魚オークションは04:00開始（観光見学は事前予約制）；南浦洞ショッピングストリート 10:30〜22:00",
         "closed": "**チャガルチ：毎月第1・第3火曜日**定休；南浦洞は年中無休",
@@ -713,7 +747,7 @@
         "kb_version": "1.15",
         "verified_date": "2026-04-29"
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG"
+      "image": null
     }
   ],
   "routeFlowStops": [
@@ -1152,7 +1186,7 @@
     "product_id": "busan-small-group-sightseeing-tour-cruise-passengers",
     "product_type": "small_group",
     "route_type": "fixed_route",
-    "destination_region": "korea_mainland",
+    "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "minicoach",
     "duration_hours": 9,
@@ -1446,7 +1480,7 @@
         "headlineLine1": "釜山クルーズ寄港地・少人数ツアー",
         "headlineLine2": "ツアー",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+          "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
           "imagePosition": "center 35%",
           "tagline": "船のスケジュールに合わせ、クルーズ仲間との相乗りバンで訪れる釜山の魅力5選",
           "pills": [
@@ -1541,7 +1575,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "甘川文化村の丘の斜面に連なるカラフルな家々",
             "caption": "甘川文化村 ― 戦後の難民街を再生する釜山のパブリックアート事業の一環として、2009年に彩色された。",
             "location": "甘川文化村、沙下区",
@@ -1550,7 +1584,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "水平線に白い灯台が見える海の断崖",
             "caption": "影島南端の太宗台海岸公園。晴れた冬の日には対馬が見える。",
             "location": "太宗台、影島区",
@@ -1559,7 +1593,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "国連記念公園に整然と並ぶ、国旗をあしらった白い墓石の列",
             "caption": "国連記念公園 ― 世界で唯一の国連墓地であり、21か国の兵士2,300名以上が眠る。",
             "location": "国連記念公園、南区",
@@ -1568,7 +1602,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "氷の上に新鮮な魚を並べるチャガルチ市場の露店商",
             "caption": "チャガルチ市場 ― 1889年から釜山のウォーターフロントで営業する、韓国最大の水産市場。",
             "location": "チャガルチ市場、中区",
@@ -1577,7 +1611,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "竜頭山公園の松林と中層ビルの街並みの上にそびえる釜山タワー",
             "caption": "竜頭山公園と釜山タワー（高さ120m、1973年建設）― 釜山中心部のビュースポット。",
             "location": "竜頭山公園、中区",
@@ -1598,7 +1632,7 @@
             "duration": "30分",
             "name": "釜山港ピックアップ（クルーズターミナル到着ホール）",
             "category": "出発",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "グループは釜山港国際旅客ターミナルの到着ホールでガイドと合流します。ピックアップ時刻は固定の08:30ではなく、お客様の船の実際の下船時刻に合わせて調整されます ― ここでの08:30はあくまでも典型例です。予約時に船名・寄港日・予定到着時刻・全員帰船時刻をお知らせください。ガイドがスケジュールを把握し、ピックアップ時刻を自動的に調整します。07:00より前に入港する船の場合は早朝ピックアップオプション（早朝出発に伴うガイドへの追加料金₩10,000／人）が適用され、ターミナルで2時間以上待たずに済みます。",
             "timeUsed": [
               "運営上の手配（ピックアップ／移動）"
@@ -1785,7 +1819,7 @@
             "duration": "60分",
             "name": "昼食（釜山の地元レストラン）",
             "category": "食事",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "英語・中国語メニューを備え、次の訪問先に近いレストランを選定しています。定番の地元料理：テジクッパ（釜山名物の豚肉ご飯スープ、約₩10,000）、ミルミョン（冷たい小麦麺、約₩9,000）、またはビビンバセット。昼食代はゲスト負担で、1人あたり₩10,000〜₩20,000が目安です。ベジタリアン・ハラール・グルテンフリー対応は、ご予約時に事前にご連絡いただければ可能です。",
             "timeUsed": [
               "運営上の段取り（食事休憩）"
@@ -1803,7 +1837,7 @@
             "duration": "75分",
             "name": "甘川文化村",
             "category": "丘の上のアートビレッジ",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "1950年代の朝鮮戦争避難民によって形成された丘の上の村で、現在は釜山で最も多く写真に収められる地区となっています。現在のカラフルな景観は2009年に始まり、市が「釜山でマチュピチュを夢見て」という公共アートプロジェクトを後援したことがきっかけです。地元アーティストたちが家々を色鮮やかに塗装し、壁画や小さな彫刻（最も人気の撮影スポットは「星の王子さまとキツネ」のベンチ）を設置し、階段のモザイクアートも加えました。現在も住民が暮らしており、住宅街の路地では静かに行動するよう案内されています。メインの撮影ルートは急な路地や階段を30〜40分歩くコースで、行きは上り坂、帰りは下り坂です。主な展望スポットのほとんどはバス降車場から徒歩圏内ですが、奥まで探索するにはさらに多くの階段を上る必要があります。オプションの「スタンプラリー」マップは₩2,000。",
             "timeUsed": [
               "到着・チケット購入・オリエンテーション",
@@ -1824,7 +1858,7 @@
             "duration": "45分",
             "name": "龍頭山公園＆釜山タワー",
             "category": "市街地展望スポット",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "龍頭山（「龍の頭の山」）は釜山中心部の南浦洞上方に位置し、高さ120メートルのダイヤモンドタワー（1973年建設、後に釜山タワーへ改名。2017年の閉鎖を経て2021年に展望台として一般公開を再開）は海抜159メートルに達し、港・影島・広安大橋、晴れた日には太宗台まで見渡すパノラマビューを提供します。公園への入場は無料で、李舜臣将軍の銅像や市民の鐘も含まれます。展望台の入場料は大人₩12,000で、唯一の有料要素となっています。南浦駅から公園へのアクセスは徒歩約8分（上り坂）、または地上階からの屋根付き屋外エスカレーターを利用する方法があります。",
             "timeUsed": [
               "到着・チケット購入・オリエンテーション説明",
@@ -1844,7 +1878,7 @@
             "duration": "60分",
             "name": "南浦洞＆チャガルチ魚市場",
             "category": "市場＆屋台グルメ",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "韓国最大の水産市場で、1889年から影島側の海岸沿いで営業しています（1945年以降、日本統治時代の市場が朝鮮人の女性行商人たちによって再編・正式化されました。「チャガルチ」とは元の浜辺にあった「砂利のある場所」を意味します）。現代的な屋内建物は2フロア構成で、1階のスタンドでは生魚・貝類・干物を販売し、2階のレストランでは1階で購入した魚を₩10,000〜₩20,000の調理代で調理してもらうことができます（刺身〈フェ〉・焼き・煮付けなど）。スタンドは同じ家族の複数世代にわたる女性たちを中心に運営されています。営業時間は毎日約05:00〜22:00、毎月第1・第3火曜日は定休日。南浦洞のBIFF広場（ハリウッドのウォーク・オブ・フェームに似た韓国映画スターの手形スポット）と国際市場は徒歩5分以内です。",
             "timeUsed": [
               "到着・チケット購入・オリエンテーション説明",
@@ -1864,7 +1898,7 @@
             "duration": "30分",
             "name": "釜山港への帰路",
             "category": "帰路",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "チャガルチ／南浦洞から釜山港国際旅客ターミナルまでは約5km、車で15〜25分です。下車はターミナル入口となり、乗船締切時刻の最低60分前のバッファを確保します。ガイドは各乗客の乗船スケジュールを個別に把握し、複数の船が異なる時刻に出航する場合は帰路の優先順位を調整します。",
             "timeUsed": [
               "運営上の手配（帰路）"
@@ -2326,7 +2360,7 @@
       "v15.3_operational_fill": "Filled operational data (visitBasics, convenience, smartNotes) for 5 attraction stops from centralized POI knowledge base. Sources: VisitKorea, VisitBusan, VisitSeoul, official tourism boards.\n  - Stop #2 UN Memorial Cemetery (Korean War): filled [visitBasics, convenience, smartNotes]\n  - Stop #3 Taejongdae coastal cliffs: filled [visitBasics, convenience, smartNotes]\n  - Stop #5 Gamcheon Culture Village: filled [visitBasics, convenience, smartNotes]\n  - Stop #6 Yongdusan Park & Busan Tower: filled [visitBasics, convenience, smartNotes]\n  - Stop #7 Nampo-dong & Jagalchi Fish Market: filled [visitBasics, convenience, smartNotes]",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

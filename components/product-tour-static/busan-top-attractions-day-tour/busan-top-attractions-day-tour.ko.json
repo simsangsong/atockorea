@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "부산 핵심 명소 소그룹 당일 투어 | AtoC Korea",
     "metaDescription": "10.5시간 부산 소그룹 클래식: 해동 용궁사, 청사포 블루라인, UN 기념관, 감천문화마을, 자갈치 시장. 픽업 포인트 3곳.",
-    "ogImage": "https://www.atockorea.com/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+    "ogImage": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
     "primaryKeywords": [
       "부산 당일 투어",
       "해동 용궁사",
@@ -134,21 +134,13 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
-      "location": "해동 용궁사",
-      "alt": "해동 용궁사 — on-route photo",
-      "caption": "해동 용궁사"
-    },
-    {
-      "id": 3,
-      "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
       "location": "재한유엔기념공원",
       "alt": "재한유엔기념공원 — gallery image 1",
       "caption": "재한유엔기념공원 — photo 1"
     },
     {
-      "id": 4,
+      "id": 2,
       "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
       "location": "감천문화마을",
@@ -156,15 +148,7 @@
       "caption": "감천문화마을 — photo 1"
     },
     {
-      "id": 5,
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
-      "location": "자갈치 어시장",
-      "alt": "자갈치 어시장 — on-route photo",
-      "caption": "자갈치 어시장"
-    },
-    {
-      "id": 7,
+      "id": 3,
       "type": "photo",
       "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
       "location": "청사포 & 해운대 블루라인파크",
@@ -172,7 +156,7 @@
       "caption": "청사포 & 해운대 블루라인파크 — photo 3"
     },
     {
-      "id": 8,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
       "location": "청사포 & 해운대 블루라인파크",
@@ -180,7 +164,7 @@
       "caption": "청사포 & 해운대 블루라인파크 — photo 4"
     },
     {
-      "id": 9,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
       "location": "청사포 & 해운대 블루라인파크",
@@ -188,7 +172,7 @@
       "caption": "청사포 & 해운대 블루라인파크 — photo 5"
     },
     {
-      "id": 10,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
       "location": "청사포 & 해운대 블루라인파크",
@@ -196,7 +180,7 @@
       "caption": "청사포 & 해운대 블루라인파크 — photo 6"
     },
     {
-      "id": 11,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
       "location": "청사포 & 해운대 블루라인파크",
@@ -204,7 +188,7 @@
       "caption": "청사포 & 해운대 블루라인파크 — photo 7"
     },
     {
-      "id": 12,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
       "location": "청사포 & 해운대 블루라인파크",
@@ -212,7 +196,7 @@
       "caption": "청사포 & 해운대 블루라인파크 — photo 8"
     },
     {
-      "id": 13,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
       "location": "재한유엔기념공원",
@@ -220,7 +204,7 @@
       "caption": "재한유엔기념공원 — photo 2"
     },
     {
-      "id": 14,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
       "location": "재한유엔기념공원",
@@ -228,7 +212,7 @@
       "caption": "재한유엔기념공원 — photo 3"
     },
     {
-      "id": 15,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
       "location": "감천문화마을",
@@ -236,7 +220,7 @@
       "caption": "감천문화마을 — photo 2"
     },
     {
-      "id": 16,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
       "location": "감천문화마을",
@@ -334,7 +318,14 @@
           "Korea Tourism Organization Official"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG"
+      "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "images": [
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp"
+      ]
     },
     {
       "number": 3,
@@ -782,7 +773,7 @@
           "Korean Heritage Service / Cultural Heritage Administration"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG"
+      "image": null
     }
   ],
   "routeFlowStops": [
@@ -1202,7 +1193,7 @@
     "product_id": "busan-top-attractions-day-tour",
     "product_type": "small_group",
     "route_type": "fixed_route",
-    "destination_region": "korea_mainland",
+    "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "coach",
     "duration_hours": 9,
@@ -1357,7 +1348,7 @@
     "japanese_speaking_guide_available_on_advance_notice": true
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
     "source_of_truth_note": "matching_profile fields scored against atockorea matching algorithm v2. island=busan introduces new island filter. Single fixed route; no variant overrides.",
     "audit_summary": "Year-round Busan classic 5-stop route. First Busan product in catalog — establishes busan_ region_tag prefix convention parallel to jeju_ used elsewhere. value_for_money_fit=5 reflects $41-47 GetYourGuide market rate.",
@@ -1453,7 +1444,7 @@
         "headlineLine1": "부산 핵심 명소 일일 투어",
         "headlineLine2": "투어",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+          "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
           "imagePosition": "center 40%",
           "tagline": "부산에서 가장 많이 찾는 일곱 코스를 소규모 그룹 하루 일정으로",
           "pills": [
@@ -1548,7 +1539,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "해동 용궁사의 동해 절벽 위에 자리한 불교 사찰 건물들",
             "caption": "해동 용궁사 — 1376년에 창건되어 1930년대에 재건된 한국에서 가장 독특한 해안 사찰.",
             "location": "해동 용궁사, 기장군",
@@ -1557,7 +1548,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/61/2702561_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "넓은 모래사장 옆 해안 선로를 달리는 개방형 해변 열차",
             "caption": "청사포 블루라인파크 — 1934년 철도를 2020년에 4.8km 해안 비치 트레인 구간으로 재탄생시킨 공원.",
             "location": "청사포 블루라인파크, 해운대",
@@ -1566,7 +1557,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "UN기념공원에 가지런히 늘어선 동일한 형태의 묘비들",
             "caption": "UN기념공원 — 21개국 2,300여 명의 군인이 잠든, 세계 유일의 UN 묘지.",
             "location": "UN기념공원, 남구",
@@ -1575,7 +1566,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "감천문화마을 언덕을 따라 층층이 펼쳐진 파스텔 색조의 집들",
             "caption": "감천문화마을 — 전쟁 후 피난민 마을이 2009년 공공 예술 프로젝트로 탈바꿈한 곳.",
             "location": "감천문화마을, 사하구",
@@ -1584,7 +1575,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "자갈치 시장에 얼음 위에 즐비하게 놓인 신선한 해산물",
             "caption": "자갈치 — 여러 세대에 걸쳐 주로 여성들이 운영해 온 한국 최대의 수산물 시장.",
             "location": "자갈치 시장, 중구",
@@ -1593,7 +1584,7 @@
           {
             "id": "g6",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/29/2617829_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "부산 식당 테이블 위에 놓인 돼지국밥 한 그릇과 반찬들",
             "caption": "점심은 현지식 — 부산 식당에서 즐기는 돼지국밥, 밀면, 또는 해물파전.",
             "location": "부산 현지 식당",
@@ -1614,7 +1605,7 @@
             "duration": "60분",
             "name": "픽업 (부산 중심가 3개 역)",
             "category": "출발",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "부산 지하철 1호선/2호선을 따라 순차 픽업: 서면역 4번 출구 (08:30), 부산역 4번 출구 (08:50), 해운대역 5번 출구 (09:30). 숙소에서 가장 가까운 출구를 선택하세요. 해운대 승객이 마지막으로 탑승하는 이유는 이후 노선이 동쪽으로 이동하여 기장군에 위치한 용궁사로 향하기 때문입니다 (해운대에서 약 25분 소요).",
             "timeUsed": [
               "운영 안내 (픽업)"
@@ -1631,7 +1622,7 @@
             "duration": "75분",
             "name": "해동 용궁사",
             "category": "해안 불교 사찰",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+            "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
             "description": "고려 공민왕의 왕사(王師)인 나옹 스님이 1376년에 창건. 임진왜란(1592~98) 때 소실되었다가 1930년대에 재건되었습니다. 한국의 대부분의 불교 사찰이 깊은 산속에 자리한 것과 달리, 용궁사는 동해 위 절벽에 직접 지어진 해안 사찰로, 한국에서 가장 많이 사진에 담기는 해안 사찰입니다. 상단 광장에서 사찰까지 이어지는 108개의 돌계단은 불교에서 말하는 108번뇌를 상징하며, 계단을 내려갔다 올라오는 것은 선택 사항으로 필수가 아닙니다 — 사찰 위의 전망대는 계단을 오르지 않아도 관람이 가능합니다. 입구 길에는 열두 간지(干支) 동물 석상이 줄지어 있습니다. 무료 입장; 운영 시간 약 05:00~19:30 (계절에 따라 다름; 새해 인파를 위해 1월 1일 일출 시각에 개장).",
             "timeUsed": [
               "도착, 입장권 구매 및 안내 브리핑",
@@ -1643,7 +1634,14 @@
               "poi_key": "haedong_yonggungsa",
               "is_attraction": true,
               "fee_krw": 0
-            }
+            },
+            "images": [
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp"
+            ]
           },
           {
             "number": 3,
@@ -1764,7 +1762,7 @@
             "duration": "60분",
             "name": "점심 (부산 현지 식당)",
             "category": "식사",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "영어·중국어 메뉴와 단체 좌석을 갖춘 식당으로, 해안 해운대와 부산 중심가 코스 사이에 위치합니다. 대표 현지 음식: 돼지국밥(부산식 돼지고기 밥국, 이 지역 대표 음식, 약 ₩10,000), 밀면(냉 밀국수, 약 ₩9,000), 또는 해물파전(해산물 파전, 약 ₩15,000). 사전 요청 시 채식·할랄·글루텐 프리 옵션 가능. 예산 1인당 ₩10,000~₩20,000; 점심 비용은 게스트 부담.",
             "timeUsed": [
               "운영 안내 (식사 시간)"
@@ -1912,7 +1910,7 @@
             "duration": "75분",
             "name": "자갈치 시장",
             "category": "수산 시장",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "1889년부터 부산 해안가를 지켜온 한국 최대 규모의 수산 시장입니다. 현대식 실내 건물은 2층 구조로, 1층에는 활어·조개류·건어물이, 2층에는 식당이 자리하고 있어 아래층에서 구입한 생선을 ₩10,000~₩20,000의 조리비를 내고 회·구이·찜 등으로 조리해 먹을 수 있습니다. 대부분의 좌판은 같은 가문의 여러 세대 여성들이 운영하고 있으며, 이는 전쟁 후 시장을 이끌어 온 여성 어판 상인들의 전통을 이어받은 것입니다. 영업시간 ≈05:00~22:00, 매월 첫째·셋째 화요일 휴무. BIFF 광장(한국 영화배우 핸드프린팅)과 국제시장은 도보 5분 거리에 있습니다.",
             "timeUsed": [
               "시장 구경 및 길거리 음식",
@@ -2408,7 +2406,7 @@
       "v15.3_operational_fill": "Filled operational data (visitBasics, convenience, smartNotes) for 5 attraction stops from centralized POI knowledge base. Sources: VisitKorea, VisitBusan, VisitSeoul, official tourism boards.\n  - Stop #2 Haedong Yonggungsa Temple: filled [visitBasics, convenience, smartNotes]\n  - Stop #3 Cheongsapo & Haeundae Blue Line Park: filled [visitBasics, convenience, smartNotes]\n  - Stop #5 UN Memorial Cemetery: filled [visitBasics, convenience, smartNotes]\n  - Stop #6 Gamcheon Culture Village: filled [visitBasics, convenience, smartNotes]\n  - Stop #7 Jagalchi Fish Market: filled [visitBasics, convenience, smartNotes]",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

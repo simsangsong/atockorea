@@ -825,13 +825,18 @@
       "Arrive 10 minutes early. Latecomers cannot be accommodated and are non-refundable."
     ]
   },
+  "sql_overrides": {
+    "tours": {
+      "is_active": false
+    }
+  },
   "matching_profile": {
     "profile_version": 6,
-    "is_active": true,
+    "is_active": false,
     "product_id": "seoul-seoraksan-national-park-sokcho-beach-day-trip",
     "product_type": "small_group",
     "route_type": "fixed_route",
-    "destination_region": "korea_mainland",
+    "destination_region": "seoul_gangwon",
     "region_type": "gangwon_seoraksan",
     "vehicle_type": "coach",
     "duration_hours": 12,
@@ -1789,7 +1794,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

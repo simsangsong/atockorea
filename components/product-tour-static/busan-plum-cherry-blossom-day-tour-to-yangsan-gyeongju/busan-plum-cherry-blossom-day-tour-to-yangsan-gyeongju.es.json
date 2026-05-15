@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Tour Primavera Busan: Ciruelos y Cerezos en Tongdosa y Gyeongju | AtoC",
     "metaDescription": "Tour de primavera desde Busan: Templo Tongdosa (UNESCO + ciruelo Jajangmae de 350 años) → almuerzo minari-samgyeopsal → Bulguksa (UNESCO) → Lago Bomun (9.000 cerezos). Solo 25 feb – 10 abr.",
-    "ogImage": "https://www.atockorea.com/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+    "ogImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
     "primaryKeywords": [
       "tour ciruelos cerezos Busan primavera",
       "Tongdosa ciruelo Jajangmae tour",
@@ -131,8 +131,8 @@
       "type": "photo",
       "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
       "location": "Templo Bulguksa (Patrimonio UNESCO)",
-      "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 1",
-      "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 1"
+      "alt": "Templo Bulguksa (Patrimonio UNESCO) — gallery image 2",
+      "caption": "Templo Bulguksa (Patrimonio UNESCO) — photo 2"
     },
     {
       "id": 2,
@@ -234,7 +234,8 @@
           "Busanpedia",
           "VisitKorea"
         ]
-      }
+      },
+      "image": null
     },
     {
       "number": 3,
@@ -410,7 +411,8 @@
           "Gyeongju.go.kr",
           "Gyeongju Tourism Organization"
         ]
-      }
+      },
+      "image": null
     },
     {
       "number": 6,
@@ -787,7 +789,7 @@
     "product_id": "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
     "product_type": "small_group",
     "route_type": "fixed_route",
-    "destination_region": "korea_mainland",
+    "destination_region": "busan_gyeongju",
     "region_type": "gyeongsang_north",
     "vehicle_type": "coach",
     "duration_hours": 10,
@@ -1801,7 +1803,7 @@
       "v15.4_new_tour_creation": "Created new tour from external reference product t1199329 (Busan plum + cherry blossom day tour to Yangsan + Gyeongju). Structural template: busan-spring-cherry-blossom-gyeongju-highlights-day-tour (Step 3b — same Busan-departure traslado compartido pattern, same 8.5h, same fact-grounded review method). POI knowledge base extended to v1.2 (19 → 21 POIs): added tongdosa_temple, wondong_plum_blossom_village. Wonhyoam Hermitage was researched but EXCLUDED from KB — its 8 km mountain road approach + 900 m elevation makes it unsuitable for a day tour with mixed-mobility traslado compartido group. POI operational data sourced from VisitKorea, Yangsan City tourism office, Korean Sansa World Heritage Committee, Referencia de mercado plum blossom listings, Referencia de mercado Yangsan moments, Wondong Plum Festival annual reports (cross-verified across 5–7 sources per POI). OPERATING WINDOW: Approximately Feb 25 – Apr 10 each year (~6 weeks, wider than the cherry-only Step 3b tour at Mar 28 – Apr 10) due to dual-season coverage (plum peak ~Mar 1–15 + cherry peak ~Mar 28 – Apr 10). MATCHING-PROFILE SCORING METHODOLOGY (per Jason's directive: 'matching scores grounded in facts and actual attraction info, carefully calibrated'): All 68 fields scored from verified facts about the actual stops in the default itinerary. Inline reasoning for each non-trivial score is captured as comments in the generator script step3c_create_plum_cherry_tour.py — Jason can review or adjust any specific score by editing the generator and re-running. Key derivations vs Step 3b cherry-only: (1) walking_level=0.55 (vs Step 3b 0.50) — Tongdosa's 1.2 km riverside approach adds walking distance; (2) culture_level=0.90 (vs Step 3b 0.85) — Tongdosa is a Three Jewel Temple with the unique 'no Buddha image' Daeungjeon NT#290 + 1,400-year continuous monastic practice; (3) intangible_heritage_fit=0.65 (vs Step 3b 0.30) — Tongdosa Sansa designation is specifically for living intangible monastic heritage; (4) food_fit=0.70 (vs Step 3b 0.55) — Wondong's Minari Samgyeopsal is a documented seasonal regional dish, not generic lunch; (5) unesco_fit=0.85 (vs Step 3b 0.95) — 2 of 4 stops UNESCO (Tongdosa Sansa 2018 + Bulguksa 1995), one less than Step 3b; (6) value_for_money_fit=0.90 (vs Step 3b 0.85) — wider operating window = same price for more booking flexibility; (7) mobility_friendly_fit=0.60 (vs Step 3b 0.55) — Tongdosa flat barefoot-friendly approach (verified VisitKorea) is more accessible than Cheomseongdae/Daereungwon's grass paths; (8) seasonality.spring=1.0 (operating Feb 25 – Apr 10), others=0.0 (does not operate). REASONABLE-ASSUMPTION FIELDS that may need patching once the live external reference page is reviewed: (a) price.amountLabel left empty (per-person pricing TBD); (b) catalog_card.priceFromUSD null; (c) exact pickup times (08:00/08:15/08:30) and Nopo Station as third pickup point assumed from typical Busan-Yangsan traslado compartido schedule; (d) reviewsSummary populated with zeros — actual external reference reviews not imported in this pass; (e) hero/og images deferred per v15 P3 image workflow.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 0,
         "fields_skipped": 0,
         "fields_already_float": 42

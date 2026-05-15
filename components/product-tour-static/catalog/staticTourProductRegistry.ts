@@ -169,6 +169,12 @@ import seoulPrivateNamiMorningCalmZh from "../seoul-private-nami-morning-calm-pe
 import seoulPrivateNamiMorningCalmZhTw from "../seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.zh-TW.json";
 import seoulPrivateNamiMorningCalmEs from "../seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.es.json";
 import seoulPrivateNamiMorningCalmJa from "../seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.ja.json";
+import seoulSeoraksanNaksansaBeachEn from "../seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.en.json";
+import seoulSeoraksanNaksansaBeachKo from "../seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.ko.json";
+import seoulSeoraksanNaksansaBeachZh from "../seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.zh.json";
+import seoulSeoraksanNaksansaBeachZhTw from "../seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.zh-TW.json";
+import seoulSeoraksanNaksansaBeachEs from "../seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.es.json";
+import seoulSeoraksanNaksansaBeachJa from "../seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.ja.json";
 import seoulSeoraksanNamiMorningCalmEn from "../seoul-seoraksan-nami-island-morning-calm-day-tour/seoul-seoraksan-nami-island-morning-calm-day-tour.en.json";
 import seoulSeoraksanNamiMorningCalmKo from "../seoul-seoraksan-nami-island-morning-calm-day-tour/seoul-seoraksan-nami-island-morning-calm-day-tour.ko.json";
 import seoulSeoraksanNamiMorningCalmZh from "../seoul-seoraksan-nami-island-morning-calm-day-tour/seoul-seoraksan-nami-island-morning-calm-day-tour.zh.json";
@@ -289,6 +295,7 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandEn as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelEn as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmEn as PageJsonShape,
+    "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachEn as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmEn as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachEn as PageJsonShape,
     "seoul-suburbs-private-chartered-car-10hr": seoulSuburbsPrivateCharteredCarEn as PageJsonShape,
@@ -324,6 +331,7 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandKo as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelKo as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmKo as PageJsonShape,
+    "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachKo as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmKo as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachKo as PageJsonShape,
     "seoul-suburbs-private-chartered-car-10hr": seoulSuburbsPrivateCharteredCarKo as PageJsonShape,
@@ -359,6 +367,7 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandZh as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelZh as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmZh as PageJsonShape,
+    "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachZh as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmZh as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachZh as PageJsonShape,
     "seoul-suburbs-private-chartered-car-10hr": seoulSuburbsPrivateCharteredCarZh as PageJsonShape,
@@ -394,6 +403,7 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandZhTw as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelZhTw as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmZhTw as PageJsonShape,
+    "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachZhTw as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmZhTw as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachZhTw as PageJsonShape,
     "seoul-suburbs-private-chartered-car-10hr": seoulSuburbsPrivateCharteredCarZhTw as PageJsonShape,
@@ -429,6 +439,7 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandEs as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelEs as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmEs as PageJsonShape,
+    "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachEs as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmEs as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachEs as PageJsonShape,
     "seoul-suburbs-private-chartered-car-10hr": seoulSuburbsPrivateCharteredCarEs as PageJsonShape,
@@ -464,6 +475,7 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandJa as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelJa as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmJa as PageJsonShape,
+    "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachJa as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmJa as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachJa as PageJsonShape,
     "seoul-suburbs-private-chartered-car-10hr": seoulSuburbsPrivateCharteredCarJa as PageJsonShape,
@@ -501,6 +513,7 @@ const SLUG_ORDER: readonly string[] = [
   "pocheon-sanjeong-lake-herb-island-art-valley",
   "seoul-dmz-private-3rd-tunnel-suspension-bridge",
   "seoul-private-nami-morning-calm-petite-france",
+  "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
   "seoul-seoraksan-nami-island-morning-calm-day-tour",
   "seoul-seoraksan-national-park-sokcho-beach-day-trip",
   "seoul-suburbs-private-chartered-car-10hr",
@@ -541,6 +554,7 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "pocheon-sanjeong-lake-herb-island-art-valley": { listPriceUsd: 49, compareAtPriceUsd: 62, maxGroupSize: 8 },
   "seoul-dmz-private-3rd-tunnel-suspension-bridge": { listPriceUsd: 419, maxGroupSize: 15 },
   "seoul-private-nami-morning-calm-petite-france": { listPriceUsd: 189 },
+  "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": { listPriceUsd: 52, compareAtPriceUsd: 58, maxGroupSize: 8 },
   "seoul-seoraksan-national-park-sokcho-beach-day-trip": { listPriceUsd: 49, compareAtPriceUsd: 57, maxGroupSize: 8 },
   "seoul-suburbs-private-chartered-car-10hr": { listPriceUsd: 179, maxGroupSize: 13 },
   "seoul-suwon-hwaseong-folk-village-starfield-library": { listPriceUsd: 59, compareAtPriceUsd: 66, maxGroupSize: 8 },

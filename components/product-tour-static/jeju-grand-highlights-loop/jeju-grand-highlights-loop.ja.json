@@ -14,7 +14,7 @@
       "天地淵瀑布ツアー",
       "柱状節理ツアー"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+    "ogImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "済州グランドハイライトループ・10時間少人数制・ユネスコ＋滝＋断崖"
   },
   "catalog_card": {
@@ -150,21 +150,13 @@
     {
       "id": 3,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
-      "location": "ランチ — 西帰浦ローカル",
-      "alt": "ランチ — 西帰浦ローカル — on-route photo",
-      "caption": "ランチ — 西帰浦ローカル"
-    },
-    {
-      "id": 4,
-      "type": "photo",
       "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
       "location": "正房瀑布（チョンバン滝）",
       "alt": "正房瀑布（チョンバン滝） — gallery image 1",
       "caption": "正房瀑布（チョンバン滝） — photo 1"
     },
     {
-      "id": 5,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "location": "城山日出峰（ソンサン・イルチュルボン）",
@@ -172,7 +164,7 @@
       "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 1"
     },
     {
-      "id": 6,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
       "location": "漢拏山 オスンセンアク",
@@ -180,7 +172,7 @@
       "caption": "漢拏山 オスンセンアク — photo 2"
     },
     {
-      "id": 7,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "大浦柱状節理帯",
@@ -188,7 +180,7 @@
       "caption": "大浦柱状節理帯 — photo 2"
     },
     {
-      "id": 8,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "大浦柱状節理帯",
@@ -196,7 +188,7 @@
       "caption": "大浦柱状節理帯 — photo 3"
     },
     {
-      "id": 9,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "大浦柱状節理帯",
@@ -204,7 +196,7 @@
       "caption": "大浦柱状節理帯 — photo 4"
     },
     {
-      "id": 10,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
       "location": "正房瀑布（チョンバン滝）",
@@ -212,7 +204,7 @@
       "caption": "正房瀑布（チョンバン滝） — photo 2"
     },
     {
-      "id": 11,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
       "location": "正房瀑布（チョンバン滝）",
@@ -220,7 +212,7 @@
       "caption": "正房瀑布（チョンバン滝） — photo 3"
     },
     {
-      "id": 12,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
       "location": "城山日出峰（ソンサン・イルチュルボン）",
@@ -228,7 +220,7 @@
       "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 2"
     },
     {
-      "id": 13,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
       "location": "城山日出峰（ソンサン・イルチュルボン）",
@@ -236,7 +228,7 @@
       "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 3"
     },
     {
-      "id": 14,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
       "location": "城山日出峰（ソンサン・イルチュルボン）",
@@ -244,7 +236,7 @@
       "caption": "城山日出峰（ソンサン・イルチュルボン） — photo 4"
     },
     {
-      "id": 15,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
       "location": "城山日出峰（ソンサン・イルチュルボン）",
@@ -460,7 +452,7 @@
       "name": "ランチ — 西帰浦ローカル",
       "category": "昼の休息 — 西帰浦の郷土料理",
       "description": "**西帰浦（서귀포）中心部での60分のリセット** — 済州南部の都市で、**西帰浦毎日オルレ市場（서귀포매일올레시장）**に水揚げされる新鮮な魚介類とアワビが豊富な海岸で知られています。季節とグループ規模に応じたデフォルトのローテーション：漁期（9〜2月）に船が入港する時期は西帰浦専門店で**カルチジョリム（갈치조림、タチウオの煮付け）**、市場に面した食堂では年間を通じて**チョンボクビビンバップ（전복비빔밥、アワビのせご飯）**、焼き肉を好むゲストには**フクテジグイ（흑돼지구이、済州黒豚のBBQ）**。\n\n黒豚（***Sus scrofa* domesticus、済州黒豚種**）は**文化財資料第5号（2015年）**に指定されており、済州の保護品種です。ご希望に応じてベジタリアン向けの代替メニューあり：季節野菜を添えた**ビビムグクス（비빔국수、冷たい辛い素麺）**。ランチスポットは**チョンバン滝から徒歩5分** — 食後に軽くコーヒーを楽しみたいゲストは、引き続き徒歩で向かう前に市場のお茶・カフェ通りに立ち寄ることもできます。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
+      "image": null,
       "highlights": [
         "**西帰浦（서귀포）**中心部 — 済州南部の漁業・海鮮の中心都市",
         "旬の時期（9〜2月）は**カルチジョリム（タチウオ）**、年間を通じて**チョンボクビビンバップ**",
@@ -491,9 +483,7 @@
         "facilities": "食事関連の施設は通常十分以上に整っています。",
         "tip": "午後のエネルギーを確保するためにも、ここではゆったりとしたペースで食事されることをお勧めします。"
       },
-      "images": [
-        "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp"
-      ]
+      "images": []
     },
     {
       "number": 4,
@@ -1473,7 +1463,7 @@
         "headlineLine1": "済州グランドハイライトツアー",
         "headlineLine2": "ツアー",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+          "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
           "imagePosition": "center 35%",
           "tagline": "時間が限られた旅行者のために設計されたこの高密度ルートは、漢拏山・迫力ある南海岸の景色・滝・城山日出峰を1日でカバーします。",
           "pills": [
@@ -1565,7 +1555,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "location": "全体ルート",
             "atmosphere": "済州の代表的な絶景を一日で巡る",
             "alt": "済州ハイライトデイツアーの全体的な雰囲気",
@@ -1574,7 +1564,7 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "location": "漢拏山・最初の立ち寄りスポット",
             "atmosphere": "高地で味わう清々しい山の空気",
             "alt": "漢拏山オルスンセンアクトレイルの雰囲気",
@@ -1583,7 +1573,7 @@
           {
             "id": 3,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "location": "柱状節理帯の海岸",
             "atmosphere": "波と断崖の劇的なコントラスト",
             "alt": "済州の海岸に広がる大浦柱状節理帯",
@@ -1592,7 +1582,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "location": "海辺の滝",
             "atmosphere": "午後のルートに変化をもたらす景観",
             "alt": "正房瀑布の海岸風景",
@@ -1601,7 +1591,7 @@
           {
             "id": 5,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "location": "クレーターフィナーレ",
             "atmosphere": "強い印象を残す象徴的な締めくくりの景観",
             "alt": "城山日出峰のクレーターと海岸線",
@@ -1622,7 +1612,7 @@
             "name": "漢拏山・オスンセンアク",
             "category": "漢拏山麓トレイル",
             "description": "漢拏山の澄んだ高原の空気の中で一日が始まります。オスンセンアクは森林トレイル、火山の斜面、展望スポットをつなぎ、最初の立ち寄り地からルートに力強い幕開けをもたらします。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "漢拏山の中でも最も気軽に訪れられる代表的な展望地のひとつ",
               "森林トレイルと山の空気に包まれた爽やかなスタート",
@@ -1651,7 +1641,6 @@
               "tip": "特に雨の後や寒い季節は、他の多くの立ち寄り地よりも、グリップ力のある靴と防寒対策が重要です。"
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
               "https://images.unsplash.com/photo-1696440869866-b90626f1bf7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
               "https://images.unsplash.com/photo-1590085309112-f67167e8da6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
               "https://images.unsplash.com/photo-1665071407550-57acf1755a72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxIYWxsYXNhbiUyMEVvc2V1bmdzYWVuZ2FrJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU2MXww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -1670,7 +1659,7 @@
             "name": "大浦柱状節理帯",
             "category": "玄武岩の海岸線",
             "description": "漢拏山を下山した後、南海岸では雰囲気が一変します。波、玄武岩の柱、断崖の対比が強烈な印象を与えるスポットで、昼食前に一日の視覚的な高揚感を一気に高めます。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "海岸線に沿って続く六角形の玄武岩柱群",
               "漢拏山セクションの後に広がる、印象的な海食崖のコントラスト",
@@ -1699,7 +1688,6 @@
               "tip": "晴れた日でも、海岸は済州の内陸部より肌寒く、風が強く感じられることが多いです。"
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
               "https://images.unsplash.com/photo-1613186345065-a027c5d1e2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
               "https://images.unsplash.com/photo-1774676998600-772db62596a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
               "https://images.unsplash.com/photo-1665070062104-1e5ded66ea0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxEYWVwbyUyMEp1c2FuZ2plb2xsaSUyMENsaWZmJTIwSmVqdSUyMFNvdXRoJTIwS29yZWF8ZW58MHwwfHx8MTc3NzkxMDU1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -1718,7 +1706,7 @@
             "name": "昼食",
             "category": "昼食休憩",
             "description": "これはスケジュールの単なる休憩ではありません。午後の正房瀑布と城山日出峰に備えて体力を回復させるための、重要なリセットポイントです。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "テンポの速いルートの中で、明確に設けられた回復ポイント",
               "東へ向かう前にエネルギーをリセットする時間",
@@ -1746,9 +1734,7 @@
               "facilities": "食事関連の施設は通常、十分すぎるほど揃っています。",
               "tip": "午後のエネルギーを失わないよう、ここでは急がずゆったりとしたペースで食事をする方が良いでしょう。"
             },
-            "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp"
-            ]
+            "images": []
           },
           {
             "number": 4,
@@ -1757,7 +1743,7 @@
             "name": "正房瀑布（チョンバン滝）",
             "category": "海と出会う滝",
             "description": "昼食後、正房瀑布はルートに全く異なるテクスチャーを加えます。石段、潮霧、そして海岸へと落ちる滝が、済州南部で最も個性的な景観のひとつを作り出しています。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "滝と岩礁が同じフレームに収まるコンパクトな景観",
               "昼食後に雰囲気が大きく転換する",
@@ -1786,7 +1772,6 @@
               "tip": "階段や岩場の道があるため、地図上で見るよりも実際には体力的な負担をより感じることが多いです。"
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
               "https://images.unsplash.com/photo-1674606042265-c9f03a77e286?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
               "https://images.unsplash.com/photo-1674606055132-15e511a3ac2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
               "https://images.unsplash.com/photo-1761303505953-df6647dd3a46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxKZW9uZ2JhbmclMjBXYXRlcmZhbGwlMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -1802,7 +1787,7 @@
             "name": "城山日出峰（ソンサン・イルチュルボン）",
             "category": "火山クレーターでのフィナーレ",
             "description": "城山日出峰で締めくくることで、このルートは最も印象的なフィナーレを迎えます。漢拏山、南海岸、正房瀑布を巡った後、済州を代表するランドマークのひとつで一日を終えることで、ルート全体が完結したと感じられます。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "締めくくりの地となる、済州を代表するランドマーク",
               "充実した一日の最後を飾る、圧倒的な絶景",
@@ -1831,7 +1816,6 @@
               "tip": "混雑状況・天候・グループの体力レベルによって、山頂体験の難易度と満足度は大きく変わります。"
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
               "https://images.unsplash.com/photo-1616798249081-30877e213b16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
               "https://images.unsplash.com/photo-1621352973597-a53f65a96336?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwyfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
               "https://images.unsplash.com/photo-1593104197164-96718e943b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwzfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBKZWp1JTIwU291dGglMjBLb3JlYXxlbnwwfDB8fHwxNzc3OTEwNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -2298,8 +2282,8 @@
         "date": "2026-04-28",
         "description": "Batch 1 deep enhancement — descriptions raised to 700-1100+ chars from ~210 chars; KB-backed visitBasics/convenience/smartNotes/_poi_meta on all attraction stops; matching_profile adjusted with verified-fact reasoning (see _score_audit).",
         "_score_audit": {
-          "_methodology": "Scores on 1-5 integer scale (existing tours convention). Each delta anchored to a verified fact.",
-          "scale_note": "1-5 integer scale matches 24 of 30 tours; 3 new Step3 tours use 0-1 float scale (separate harmonization task).",
+          "_methodology": "Scores use the current 0-1 float scale.",
+          "scale_note": "Current live matching uses 0-1 float scores in match_tours.matching_profile.",
           "deltas_applied": {
             "unesco_fit": {
               "old": 5,
@@ -2387,7 +2371,7 @@
       },
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

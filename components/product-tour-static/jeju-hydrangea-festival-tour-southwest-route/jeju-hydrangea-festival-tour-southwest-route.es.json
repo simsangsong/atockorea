@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Tour de un día por el Festival de Hortensias del Suroeste de Jeju | AtoC Korea",
     "metaDescription": "Tour de un día por el suroeste de Jeju exclusivo en verano: Playa Hyeopjae, festival de hortensias del Parque Hallim, Acantilado Jusangjeolli, Cascadas Cheonjeyeon, Camellia Hill, campos de té Osulloc.",
-    "ogImage": "https://www.atockorea.com/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+    "ogImage": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "primaryKeywords": [
       "Tour del festival de hortensias de Jeju",
       "Tour de flores de verano en Jeju",
@@ -140,21 +140,13 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
-      "location": "Parque Hallim (Festival de las Hortensias)",
-      "alt": "Parque Hallim (Festival de las Hortensias) — on-route photo",
-      "caption": "Parque Hallim (Festival de las Hortensias)"
-    },
-    {
-      "id": 3,
-      "type": "photo",
       "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
       "alt": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — gallery image 1",
       "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 1"
     },
     {
-      "id": 4,
+      "id": 3,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "location": "Camellia Hill (Túnel de Hortensias)",
@@ -162,7 +154,7 @@
       "caption": "Camellia Hill (Túnel de Hortensias) — photo 1"
     },
     {
-      "id": 5,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "location": "Museo del Té Osulloc y Campos de Té",
@@ -170,7 +162,7 @@
       "caption": "Museo del Té Osulloc y Campos de Té — photo 1"
     },
     {
-      "id": 6,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
       "location": "Playa Hyeopjae",
@@ -178,7 +170,7 @@
       "caption": "Playa Hyeopjae — photo 2"
     },
     {
-      "id": 7,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
       "location": "Playa Hyeopjae",
@@ -186,7 +178,7 @@
       "caption": "Playa Hyeopjae — photo 3"
     },
     {
-      "id": 8,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
@@ -194,7 +186,7 @@
       "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 2"
     },
     {
-      "id": 9,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
@@ -202,7 +194,7 @@
       "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 3"
     },
     {
-      "id": 10,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
@@ -210,7 +202,7 @@
       "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 4"
     },
     {
-      "id": 11,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
       "location": "Camellia Hill (Túnel de Hortensias)",
@@ -218,7 +210,7 @@
       "caption": "Camellia Hill (Túnel de Hortensias) — photo 2"
     },
     {
-      "id": 12,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
       "location": "Museo del Té Osulloc y Campos de Té",
@@ -226,7 +218,7 @@
       "caption": "Museo del Té Osulloc y Campos de Té — photo 2"
     },
     {
-      "id": 13,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
       "location": "Museo del Té Osulloc y Campos de Té",
@@ -234,7 +226,7 @@
       "caption": "Museo del Té Osulloc y Campos de Té — photo 3"
     },
     {
-      "id": 14,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
       "location": "Museo del Té Osulloc y Campos de Té",
@@ -242,7 +234,7 @@
       "caption": "Museo del Té Osulloc y Campos de Té — photo 4"
     },
     {
-      "id": 15,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
       "location": "Museo del Té Osulloc y Campos de Té",
@@ -250,7 +242,7 @@
       "caption": "Museo del Té Osulloc y Campos de Té — photo 5"
     },
     {
-      "id": 16,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
       "location": "Museo del Té Osulloc y Campos de Té",
@@ -258,7 +250,7 @@
       "caption": "Museo del Té Osulloc y Campos de Té — photo 6"
     },
     {
-      "id": 17,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
       "location": "Museo del Té Osulloc y Campos de Té",
@@ -266,7 +258,7 @@
       "caption": "Museo del Té Osulloc y Campos de Té — photo 7"
     },
     {
-      "id": 18,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
       "location": "Museo del Té Osulloc y Campos de Té",
@@ -274,7 +266,7 @@
       "caption": "Museo del Té Osulloc y Campos de Té — photo 8"
     },
     {
-      "id": 19,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
       "location": "Museo del Té Osulloc y Campos de Té",
@@ -282,7 +274,7 @@
       "caption": "Museo del Té Osulloc y Campos de Té — photo 9"
     },
     {
-      "id": 20,
+      "id": 19,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
       "location": "Museo del Té Osulloc y Campos de Té",
@@ -290,7 +282,7 @@
       "caption": "Museo del Té Osulloc y Campos de Té — photo 10"
     },
     {
-      "id": 21,
+      "id": 20,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
       "location": "Museo del Té Osulloc y Campos de Té",
@@ -298,7 +290,7 @@
       "caption": "Museo del Té Osulloc y Campos de Té — photo 11"
     },
     {
-      "id": 22,
+      "id": 21,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
       "location": "Museo del Té Osulloc y Campos de Té",
@@ -414,7 +406,7 @@
       "name": "Parque Hallim (Festival de las Hortensias)",
       "category": "Ancla de hortensias + 9 jardines temáticos + 2 cuevas de tubo de lava",
       "description": "**El Parque Hallim (한림공원, fundado en 1971)** es el parque botánico ancla de la costa suroeste — un **complejo de jardines de ~99.000 m² (originalmente 100.000 pyeong / 330.580 m²)** que **el fundador Song Bong-gyu transformó de un páramo arenoso en un paraíso verde** importando tierra y plantando semillas de palma a lo largo de medio siglo. \n\nEl parque atrae a **~1,2 millones de visitantes al año** y organiza su espacio en **nueve jardines temáticos**: el **Jardín Botánico Subtropical**, la **Avenida de las Palmeras**, el **Jardín de Hierbas Silvestres y Flores**, las **Cuevas Hyeopjaegul + Ssangyonggul**, el **Jardín de Piedras y Bonsáis de Jeju**, el **Pueblo Folclórico Jae-Am** (hanok de muros de piedra de la era Joseon con el Restaurante Dolharubang en el lugar), el **Jardín de las Aves**, la **Sala de Exposición de Piedras de Jeju** y el **Jardín Acuático**. \n\nLa decisión estructural definitoria de Hallim es su **calendario mensual de festivales** — **Enero: Narcisos → Febrero: Flor de Ciruelo → Marzo: Tulipanes → Abril: Flor de Cerezo → Mayo: Flores Silvestres / Buganvilla → Junio: Hortensias → Julio–Septiembre: Loto + Nenúfar → Octubre: Cosmos / Pink Muhly → Noviembre: Crisantemos → Diciembre: Camelias** — un ciclo de 12 meses que garantiza un **festival activo con nombre propio cada mes del año**. \n\nLos dos hitos geológicos del parque son la **Cueva Hyeopjaegul (~200m × 10m × 5m, ~25 millones de años de antigüedad)** y la **Cueva Ssangyonggul (~400m × 6m × 3m, 'Dos Dragones')** — ambas parte del mismo **sistema de tubos de lava de 17 km**, pero clasificadas de forma única como **'cuevas bidimensionales'** porque las paredes de los tubos de lava fueron posteriormente recubiertas de **caliza (carbonato de calcio) lixiviada de conchas en el suelo superior**, produciendo la rara combinación mundial de **morfología de tubo de lava + estalactitas/estalagmitas de caliza** en un único sistema de cuevas. \n\nLa temperatura de las cuevas se mantiene a **17–18°C durante todo el año**, convirtiéndolas en refugios naturales de verano. La lista de visitantes ilustres del parque refleja su estatura diplomática: el ex presidente chino Jiang Zemin, el ex primer ministro japonés Nakasone Yasuhiro, el ex presidente surcoreano Kim Dae-jung, el ex presidente de Samsung Lee Kun-hee y el ex presidente del Grupo Hyundai Chung Ju-yung han visitado el parque.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+      "image": null,
       "highlights": [
         "**Fundado en 1971** por Song Bong-gyu — páramo arenoso transformado en un paraíso verde",
         "**~99.000 m² / 80 acres** — 9 jardines temáticos + ~1,2 millones de visitantes al año",
@@ -469,7 +461,7 @@
       "name": "Almuerzo (Suroeste de Jeju)",
       "category": "Parada operativa — almuerzo local en el suroeste de Jeju",
       "description": "**El almuerzo se realiza en un restaurante local de estilo Jeju en el corredor Hallim / Aewol-tail / Andeok**, seleccionado de una lista aprobada de establecimientos familiares que el operador ha validado por sus **menús en inglés, adaptación dietética (opciones vegetarianas y aptas para halal de pollo/mariscos bajo petición) y especialidades de la costa oeste de Jeju** a precios grupales justos. \n\nLas opciones típicas de almuerzo incluyen **galchi-jorim (pez cinta plateado estofado)**, **heuk-dwaeji bulgogi (bulgogi de cerdo negro de Jeju)**, **mom-guk (sopa de algas con cerdo de Jeju)** y **bibimbap con namul de temporada**. \n\n**El mom-guk en particular es una especialidad regional del suroeste de Jeju** que no aparece en los tours de la costa este. Al igual que el almuerzo de la ruta este, el restaurante exacto se selecciona el día anterior según el tamaño del grupo, las solicitudes dietéticas y la disponibilidad de cocina — los huéspedes son notificados en el briefing matutino. \n\n**El costo del almuerzo corre por cuenta de los huéspedes** (~₩12,000–₩18,000 por persona) y **no está incluido** en la tarifa del tour. Las bebidas y los recargas de arroz/banchan siempre están incluidos con la comida.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
+      "image": null,
       "highlights": [
         "**Restaurante local del suroeste de Jeju** — corredor Hallim / Aewol-tail / Andeok",
         "Lista aprobada: **menús en inglés** + adaptación dietética",
@@ -1560,7 +1552,7 @@
     "japan_market_fit": 0.85
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
     "source_of_truth_note": "matching_profile fields scored against atockorea matching algorithm v2. Single fixed route; no variant overrides.",
     "audit_summary": "Southwest-Jeju Hydrangea Festival route — 9-hr small-group minicoach loop. 5 substantive POI anchors + 1 compound-stop pairing: 1 west-coast emerald beach (Hyeopjae) + 1 120-min hydrangea festival anchor (Hallim Park, June Hydrangea Festival, 9 themed gardens + 2 lava-tube limestone caves) + 1 compound stop (Jusangjeolli columnar + Cheonjeyeon waterfall, Natural Monuments 443 + 378) + 1 hydrangea tunnel anchor (Camellia Hill — 172,000 m², Korea's earliest hydrangeas) + 1 tea-culture finale (Osulloc / Amorepacific). Designed for **June peak hydrangea window (June 10–25)** with Hallim caves + Camellia Hall + Osulloc museum as the 3-tier indoor weather-fallback stack. **Catalog-novel pattern**: Jusangjeolli+Cheonjeyeon compound stop is the first of its kind in the catalog. Cross-batch reuse: 3 of 5 substantive bodies imported verbatim (15a T2 Hyeopjae, 15a T1 Camellia Hill, 14a T2 Osulloc); Hallim Park authored fresh + compound stop authored fresh.",
@@ -1699,7 +1691,7 @@
         "headlineLine1": "Hortensias Jeju Suroeste",
         "headlineLine2": "Tour del Día",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+          "imageUrl": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
           "imagePosition": "center 35%",
           "tagline": "De la playa al acantilado columnar al túnel de hortensias.",
           "pills": [
@@ -1794,7 +1786,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "Flores de hortensia en el Parque Hallim",
             "caption": "Flores de hortensia en el Parque Hallim",
             "location": "Parque Hallim",
@@ -1803,7 +1795,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "Túnel de hortensias en Camellia Hill",
             "caption": "Túnel de hortensias en Camellia Hill",
             "location": "Camellia Hill",
@@ -1812,7 +1804,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "Agua turquesa de la Playa Hyeopjae",
             "caption": "Agua turquesa de la Playa Hyeopjae",
             "location": "Playa Hyeopjae",
@@ -1821,7 +1813,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "Acantilado de basalto columnar de Jusangjeolli",
             "caption": "Acantilado de basalto columnar Jusangjeolli",
             "location": "Acantilado Jusangjeolli",
@@ -1830,7 +1822,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "Cascada de tres niveles Cheonjeyeon",
             "caption": "Cascada de tres niveles Cheonjeyeon",
             "location": "Cataratas Cheonjeyeon",
@@ -1839,7 +1831,7 @@
           {
             "id": "g6",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "Campos de té verde Osulloc",
             "caption": "Campos de té verde Osulloc",
             "location": "Museo del Té Osulloc",
@@ -1948,7 +1940,7 @@
             "name": "Parque Hallim (Festival de las Hortensias)",
             "category": "Jardín y Festival de las Hortensias",
             "description": "Complejo de jardines botánicos que alberga el mayor festival de hortensias de Jeju a principios del verano — múltiples jardines temáticos, un sistema de cuevas de lava en el lugar y variados colores de flores.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "highlights": [
               "Jardines principales del festival de hortensias",
               "Sistema de cuevas de tubo de lava en el lugar",
@@ -1994,7 +1986,7 @@
             "name": "Almuerzo (suroeste de Jeju)",
             "category": "Comida",
             "description": "Restaurante local cerca de Hallim o Daejeong — cerdo negro, gachas de abulón o mariscos de temporada. Reagrupación del grupo antes de las paradas de la tarde.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "highlights": [
               "Cocina tradicional de Jeju",
               "Restaurante regional"
@@ -2912,7 +2904,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

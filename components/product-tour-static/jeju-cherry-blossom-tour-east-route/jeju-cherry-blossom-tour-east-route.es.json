@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Tour Cerezos Jeju Este: Calles en Flor, Canola y Seongsan | AtoC",
     "metaDescription": "Tour de cerezos por el este de Jeju (mar-abr): Calle Jeonnong-ro → Noksan-ro (canola + cerezos, 10 km) → almuerzo → Cueva Micheon → Ilchul Land → Seongsan Ilchulbong (UNESCO). Primavera.",
-    "ogImage": "https://www.atockorea.com/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+    "ogImage": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
     "primaryKeywords": [
       "tour cerezos Jeju primavera",
       "Jeonnong-ro cerezos Jeju",
@@ -1460,7 +1460,7 @@
     "japanese_speaking_guide_available_on_advance_notice": true
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
     "source_of_truth_note": "Internal note: product profile checked against current route-selection rules. This product uses one fixed route.",
     "audit_summary": "Spring-only east Jeju cherry+canola route. Strong substitution relationship with jeju-eastern-unesco-lugares-day-tour (off-season fallback). Hard constraint on cherry season dates; weather_sensitivity=0.85 reflects bloom dependency. New POI added in v1.17: ilchulland_themed_gardens (separated from cave, prior version mistakenly used same key).",
@@ -2648,7 +2648,7 @@
       "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

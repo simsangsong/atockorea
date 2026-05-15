@@ -14,7 +14,7 @@
       "Taejongdae cruise tour",
       "Jagalchi Market tour"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "ogImage": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
     "title": "Busan Small-Group Cruise Shore Excursion | AtoC Korea",
     "description": "Small-group Busan shore excursion for cruise guests with port pickup, local guide, Busan highlights, and return planned around your ship schedule."
   },
@@ -136,7 +136,7 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "location": "Haedong Yonggungsa Temple",
       "alt": "Haedong Yonggungsa Temple — gallery image 1",
       "caption": "Haedong Yonggungsa Temple — photo 1"
@@ -144,7 +144,7 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
       "location": "UN Memorial Cemetery in Korea",
       "alt": "UN Memorial Cemetery in Korea — gallery image 1",
       "caption": "UN Memorial Cemetery in Korea — photo 1"
@@ -152,7 +152,7 @@
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
       "location": "Haedong Yonggungsa Temple",
       "alt": "Haedong Yonggungsa Temple — gallery image 2",
       "caption": "Haedong Yonggungsa Temple — photo 2"
@@ -160,7 +160,7 @@
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
       "location": "Haedong Yonggungsa Temple",
       "alt": "Haedong Yonggungsa Temple — gallery image 3",
       "caption": "Haedong Yonggungsa Temple — photo 3"
@@ -170,40 +170,88 @@
       "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
       "location": "UN Memorial Cemetery in Korea",
-      "alt": "UN Memorial Cemetery in Korea — gallery image 2",
-      "caption": "UN Memorial Cemetery in Korea — photo 2"
+      "alt": "UN Memorial Cemetery in Korea — gallery image 3",
+      "caption": "UN Memorial Cemetery in Korea — photo 3"
     },
     {
       "id": 6,
       "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
       "location": "UN Memorial Cemetery in Korea",
-      "alt": "UN Memorial Cemetery in Korea — gallery image 3",
-      "caption": "UN Memorial Cemetery in Korea — photo 3"
-    },
-    {
-      "id": 7,
-      "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-      "location": "UN Memorial Cemetery in Korea",
       "alt": "UN Memorial Cemetery in Korea — gallery image 4",
       "caption": "UN Memorial Cemetery in Korea — photo 4"
     },
     {
-      "id": 8,
+      "id": 7,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
       "location": "UN Memorial Cemetery in Korea",
       "alt": "UN Memorial Cemetery in Korea — gallery image 5",
       "caption": "UN Memorial Cemetery in Korea — photo 5"
     },
     {
-      "id": 9,
+      "id": 8,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
       "location": "UN Memorial Cemetery in Korea",
       "alt": "UN Memorial Cemetery in Korea — gallery image 6",
       "caption": "UN Memorial Cemetery in Korea — photo 6"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+      "location": "UN Memorial Cemetery in Korea",
+      "alt": "UN Memorial Cemetery in Korea — gallery image 6",
+      "caption": "UN Memorial Cemetery in Korea — photo 6"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+      "location": "태종대 해안 절벽",
+      "alt": "태종대 해안 절벽 — gallery image 5",
+      "caption": "태종대 해안 절벽 — photo 5"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+      "location": "태종대 해안 절벽",
+      "alt": "태종대 해안 절벽 — gallery image 6",
+      "caption": "태종대 해안 절벽 — photo 6"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 2",
+      "caption": "감천문화마을 — photo 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 3",
+      "caption": "감천문화마을 — photo 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+      "location": "용두산공원 & 부산타워",
+      "alt": "용두산공원 & 부산타워 — gallery image 2",
+      "caption": "용두산공원 & 부산타워 — photo 2"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
+      "location": "용두산공원 & 부산타워",
+      "alt": "용두산공원 & 부산타워 — gallery image 3",
+      "caption": "용두산공원 & 부산타워 — photo 3"
     }
   ],
   "itineraryStops": [
@@ -230,7 +278,8 @@
           "Busan Port Authority",
           "CruiseMapper"
         ]
-      }
+      },
+      "image": null
     },
     {
       "number": 2,
@@ -286,11 +335,13 @@
         "admission": "FREE admission",
         "walking": "100% wheelchair-accessible — flat paved paths across the 14-hectare grounds"
       },
-      "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "images": [
-        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp"
       ],
       "imageCredits": [
         {
@@ -389,11 +440,14 @@
         "walking": "Easy — flat grass paths and paved walkways across 14 ha of grounds; 100% wheelchair-accessible",
         "admission": "Free"
       },
-      "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "image": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
       "images": [
-        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp"
       ],
       "imageCredits": [
         {
@@ -522,7 +576,13 @@
         "closed": "Open year-round",
         "admission": "FREE village entry; **Stamp Tour Map ₩2,000** (optional, 9 numbered installations)",
         "walking": "Steep stair-streets and narrow alleys — **moderate-to-high** difficulty; **NOT stroller- or wheelchair-friendly**; grippy shoes essential"
-      }
+      },
+      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "images": [
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp"
+      ]
     },
     {
       "number": 6,
@@ -575,7 +635,13 @@
         "closed": "Tower open year-round (occasional safety closures in extreme wind)",
         "admission": "Park FREE; **Busan Diamond Tower ₩12,000 adult / ₩9,000 senior 65+ or child 3–12**",
         "walking": "**Covered escalator from Gwangbok-ro Fashion Street** for ascent (no return escalator — descend by stairs)"
-      }
+      },
+      "image": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+      "images": [
+        "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+        "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+        "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp"
+      ]
     },
     {
       "number": 7,
@@ -629,7 +695,8 @@
         "closed": "**Jagalchi: 1st and 3rd Tuesdays of each month**; Nampo-dong open year-round",
         "admission": "FREE access; **2nd-floor hoe restaurants ~₩30,000+ set menus** (price varies by fish)",
         "walking": "Flat shopping street + market floor — easy; **2nd-floor hoe restaurants** require a short stair climb"
-      }
+      },
+      "image": null
     },
     {
       "number": 8,
@@ -648,7 +715,8 @@
         "poi_key": "OPS_busan_port_return",
         "kb_version": "1.15",
         "verified_date": "2026-04-29"
-      }
+      },
+      "image": null
     }
   ],
   "routeFlowStops": [
@@ -1103,7 +1171,7 @@
     "product_id": "busan-small-group-sightseeing-tour-cruise-passengers",
     "product_type": "small_group",
     "route_type": "fixed_route",
-    "destination_region": "korea_mainland",
+    "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "minicoach",
     "duration_hours": 9,
@@ -1566,7 +1634,7 @@
             "duration": "60–80 min",
             "name": "Haedong Yonggungsa Temple",
             "category": "Seaside temple",
-            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+            "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
             "description": "Haedong Yonggungsa is Busan’s best-known seaside temple, set along the rocky coast. It gives the tour a strong first visual highlight and a clear contrast between Buddhist culture and ocean scenery.",
             "timeUsed": [
               "60–80 min",
@@ -1580,9 +1648,11 @@
               "closed": "Korean New Year, Chuseok"
             },
             "images": [
-              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp"
             ],
             "imageCredits": [
               {
@@ -2277,7 +2347,7 @@
       "v15.3_operational_fill": "Filled operational data (visitBasics, convenience, smartNotes) for 5 attraction stops from centralized POI knowledge base. Sources: VisitKorea, VisitBusan, VisitSeoul, official tourism boards.\n  - Stop #2 UN Memorial Cemetery (Korean War): filled [visitBasics, convenience, smartNotes]\n  - Stop #3 Taejongdae coastal cliffs: filled [visitBasics, convenience, smartNotes]\n  - Stop #5 Gamcheon Culture Village: filled [visitBasics, convenience, smartNotes]\n  - Stop #6 Yongdusan Park & Busan Tower: filled [visitBasics, convenience, smartNotes]\n  - Stop #7 Nampo-dong & Jagalchi Fish Market: filled [visitBasics, convenience, smartNotes]",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

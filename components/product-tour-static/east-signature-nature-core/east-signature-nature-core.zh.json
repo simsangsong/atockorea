@@ -2,71 +2,75 @@
   "document_kind": "tour_product_full_page_v1",
   "schema_version": 7,
   "slug": "east-signature-nature-core",
-  "locale": "zh-CN",
+  "locale": "zh",
   "product_id": "east-signature-nature-core",
   "seo": {
-    "pageTitle": "东济州自然核心小团一日游 | AtoC Korea",
-    "metaDescription": "9小时东济州小团游：济州石文化公园、咸德海滩、万丈窟熔岩洞穴、城山日出峰（UNESCO）、城邑民俗村。",
+    "pageTitle": "济州岛东部经典自然之旅 | AtoC Korea",
+    "metaDescription": "济州岛东部小团9小时游：济州石文化公园、咸德海滩、万丈窟熔岩洞、城山日出峰（联合国教科文组织遗址）、城邑民俗村。",
     "primaryKeywords": [
-      "东济州小团游",
+      "济州岛东部小团游",
       "济州石文化公园游",
-      "万丈窟洞穴游",
-      "城山日出峰旅游",
+      "万丈窟游",
+      "城山日出峰游",
       "城邑民俗村游"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
-    "title": "东济州东部特色自然路线 · 9小时小团 · UNESCO城山日出峰 | AtoC Korea",
-    "description": "济州东部特色路线：城山日出峰UNESCO世界遗产→万丈窟熔岩管→城邑民俗村→日出乐园。全程含门票，小团英语导游，全年开团，9小时。"
+    "ogImage": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+    "title": "济州岛东部自然之旅：联合国教科文组织遗址 + 熔岩洞 + 民俗村 | AtoC",
+    "description": "济州岛东部经典小团一日游：济州石文化公园 → 涉地可支东海岬 → 城山日出峰（联合国教科文组织遗址）→ 美千窟熔岩洞 → 城邑民俗村。全程9小时，含所有门票。4.8/5（127条评价）。"
   },
   "catalog_card": {
     "slug": "east-signature-nature-core",
-    "title": "济州东部：火山·海岸·民俗村",
-    "subtitle": "从济州石文化公园到城山日出峰，东济州最均衡的火山与海岸路线。",
-    "region": "济州东部",
+    "title": "济州岛东部：火山、海岸与民俗村",
+    "subtitle": "从济州石文化公园到城山日出峰，畅游济州岛东部最均衡的初访路线。",
+    "region": "济州岛东部",
     "duration": "8小时",
     "stopsCount": 6,
     "rating": 0,
     "reviewCount": 0,
     "badges": [
-      "初访友善",
-      "济州东部招牌"
+      "适合初次游客",
+      "济州岛东部经典"
     ],
     "heroImage": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
     "thumbnail": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
-    "priceLabel": "每人 US$59（原价$69，14% 优惠）",
-    "shortCardDescription": "结构清晰的东济州一日路线，以石头文化与火山为起点，途经东部沿海核心景点：济州石文化公园、城山日出峰（UNESCO）、涉地可支及私人马场体验。通过合理安排游览顺序，尽量避开旺季人流。",
+    "priceLabel": "",
+    "shortCardDescription": "这条轻松易行的济州岛东部一日游路线，从石文化与火山地貌出发，途经海岸与城山日出峰，最后以日出乐园和城邑民俗村收尾，让整日行程更加丰富完整。",
     "tags": [
       "小团",
-      "jeju",
-      "济州东部",
-      "unesco",
+      "济州岛",
+      "济州岛东部",
+      "UNESCO",
       "自然",
-      "适合首次到访"
+      "适合初次游客"
     ]
   },
-  "headlineLine1": "济州东部",
-  "headlineLine2": "火山·海岸·民俗村",
+  "headlineLine1": "济州岛东部",
+  "headlineLine2": "火山、海岸与民俗村",
   "price": {
-    "amountLabel": "59",
-    "originalPriceUsd": 69,
-    "salePriceUsd": 59,
-    "discountPercent": 14,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
     "imagePosition": "center 35%",
-    "tagline": "从石头文化与开阔海岸，到火山口、熔岩管庭园与民俗村——济州东部最完整的自然人文一日路线",
+    "images": [
+      "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+      "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=1920&q=85&fm=jpg&fit=crop"
+    ],
+    "tagline": "从石文化与开阔海岸线，到火山口、熔岩洞园区与传统村落，这条均衡的济州岛东部路线专为不满足于走马观花、渴望深度体验的初次游客而设计。",
     "pills": [
-      "初访友善",
-      "济州东部招牌",
+      "适合初次游览",
+      "济州东部精华",
       "小团一日游"
     ],
     "meta": {
       "duration": "8小时",
       "region": "济州东部",
-      "stops": "6 个景点",
+      "stops": "6个景点",
       "rating": 4.8,
       "ratingStars": 4
     }
@@ -74,23 +78,23 @@
   "subnavItems": [
     {
       "id": "overview",
-      "label": "行程总览"
+      "label": "概览"
     },
     {
       "id": "itinerary",
-      "label": "详细行程"
+      "label": "行程安排"
     },
     {
       "id": "details",
-      "label": "注意事项"
+      "label": "详情"
     },
     {
       "id": "faq",
-      "label": "常见问题"
+      "label": "FAQ"
     },
     {
       "id": "reviews",
-      "label": "旅客评价"
+      "label": "评价"
     }
   ],
   "glanceItems": [
@@ -102,13 +106,13 @@
     },
     {
       "icon": "mountain",
-      "label": "景点丰富度",
+      "label": "景观密度",
       "value": "高",
       "level": 5
     },
     {
       "icon": "footprints",
-      "label": "步行强度",
+      "label": "步行难度",
       "value": "中等",
       "level": 3
     },
@@ -120,13 +124,13 @@
     },
     {
       "icon": "users",
-      "label": "亲子适合度",
+      "label": "家庭适合度",
       "value": "良好",
       "level": 4
     },
     {
       "icon": "gauge",
-      "label": "行程节奏",
+      "label": "节奏",
       "value": "均衡",
       "level": 4
     }
@@ -136,303 +140,295 @@
       "id": 1,
       "type": "photo",
       "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
-      "location": "济州石文化公园",
-      "alt": "济州石文化公园 — gallery image 1",
-      "caption": "济州石文化公园 — photo 1"
+      "location": "济州石头公园（石头文化公园）",
+      "alt": "济州石头公园（石头文化公园）— 图库图片 1",
+      "caption": "济州石头公园（石头文化公园）— 照片 1"
     },
     {
       "id": 2,
       "type": "photo",
       "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
-      "location": "涉地可支（东海岬）",
-      "alt": "涉地可支（东海岬） — gallery image 1",
-      "caption": "涉地可支（东海岬） — photo 1"
+      "location": "涉地可支（东岬）",
+      "alt": "涉地可支（东岬）— 图库图片 1",
+      "caption": "涉地可支（东岬）— 照片 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
-      "location": "午餐——东海岸本地菜",
-      "alt": "午餐——东海岸本地菜 — on-route photo",
-      "caption": "午餐——东海岸本地菜"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "日出乐园（米川熔岩管洞窟）",
+      "alt": "日出乐园（米川熔岩管洞窟）— 图库图片 1",
+      "caption": "日出乐园（米川熔岩管洞窟）— 照片 1"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — gallery image 1",
-      "caption": "城山日出峰 — photo 1"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — 图库图片 1",
+      "caption": "城邑民俗村 — 照片 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-      "location": "日出乐园（米川窟熔岩洞穴）",
-      "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 1",
-      "caption": "日出乐园（米川窟熔岩洞穴） — photo 1"
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+      "location": "济州石文化公园（石头文化公园）",
+      "alt": "济州石文化公园（石头文化公园）— 图库图片 2",
+      "caption": "济州石文化公园（石头文化公园）— 照片 2"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
-      "location": "城邑民俗村",
-      "alt": "城邑民俗村 — gallery image 1",
-      "caption": "城邑民俗村 — photo 1"
+      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
+      "location": "济州石文化公园（石头文化公园）",
+      "alt": "济州石文化公园（石头文化公园）— 图库图片 3",
+      "caption": "济州石文化公园（石头文化公园）— 照片 3"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
-      "location": "济州石文化公园",
-      "alt": "济州石文化公园 — gallery image 2",
-      "caption": "济州石文化公园 — photo 2"
+      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
+      "location": "济州石文化公园（石头文化公园）",
+      "alt": "济州石文化公园（石头文化公园）— 图库图片 4",
+      "caption": "济州石文化公园（石头文化公园）— 照片 4"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
-      "location": "济州石文化公园",
-      "alt": "济州石文化公园 — gallery image 3",
-      "caption": "济州石文化公园 — photo 3"
+      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
+      "location": "济州石文化公园（石头文化公园）",
+      "alt": "济州石文化公园（石头文化公园）— 图库图片 5",
+      "caption": "济州石文化公园（石头文化公园）— 照片 5"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
-      "location": "济州石文化公园",
-      "alt": "济州石文化公园 — gallery image 4",
-      "caption": "济州石文化公园 — photo 4"
+      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp",
+      "location": "涉地可支（东岬）",
+      "alt": "涉地可支（东角）— 画廊图片 2",
+      "caption": "涉地可支（东角）— 照片 2"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp",
-      "location": "济州石文化公园",
-      "alt": "济州石文化公园 — gallery image 5",
-      "caption": "济州石文化公园 — photo 5"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+      "location": "涉地可支（东角）",
+      "alt": "涉地可支（东角）— 画廊图片 3",
+      "caption": "涉地可支（东角）— 照片 3"
     },
     {
       "id": 11,
       "type": "photo",
-      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
-      "location": "涉地可支（东海岬）",
-      "alt": "涉地可支（东海岬） — gallery image 2",
-      "caption": "涉地可支（东海岬） — photo 2"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+      "location": "涉地可支（东角）",
+      "alt": "涉地可支（东角）— 画廊图片 4",
+      "caption": "涉地可支（东角）— 照片 4"
     },
     {
       "id": 12,
       "type": "photo",
-      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
-      "location": "涉地可支（东海岬）",
-      "alt": "涉地可支（东海岬） — gallery image 3",
-      "caption": "涉地可支（东海岬） — photo 3"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+      "location": "涉地可支（东角）",
+      "alt": "涉地可支（东角）— 画廊图片 5",
+      "caption": "涉地可支（东角）— 照片 5"
     },
     {
       "id": 13,
       "type": "photo",
-      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
-      "location": "涉地可支（东海岬）",
-      "alt": "涉地可支（东海岬） — gallery image 4",
-      "caption": "涉地可支（东海岬） — photo 4"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+      "location": "涉地可支（东角）",
+      "alt": "涉地可支（东角）— 画廊图片 6",
+      "caption": "涉地可支（东角）— 照片 6"
     },
     {
       "id": 14,
       "type": "photo",
-      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
-      "location": "涉地可支（东海岬）",
-      "alt": "涉地可支（东海岬） — gallery image 5",
-      "caption": "涉地可支（东海岬） — photo 5"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — 画廊图片 2",
+      "caption": "城山日出峰 — 照片 2"
     },
     {
       "id": 15,
       "type": "photo",
-      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
-      "location": "涉地可支（东海岬）",
-      "alt": "涉地可支（东海岬） — gallery image 6",
-      "caption": "涉地可支（东海岬） — photo 6"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — 画廊图片 3",
+      "caption": "城山日出峰 — 照片 3"
     },
     {
       "id": 16,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
       "location": "城山日出峰",
-      "alt": "城山日出峰 — gallery image 2",
-      "caption": "城山日出峰 — photo 2"
+      "alt": "城山日出峰 — 画廊图片 4",
+      "caption": "城山日出峰 — 照片 4"
     },
     {
       "id": 17,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
       "location": "城山日出峰",
-      "alt": "城山日出峰 — gallery image 3",
-      "caption": "城山日出峰 — photo 3"
+      "alt": "城山日出峰 — 画廊图片 5",
+      "caption": "城山日出峰 — 照片 5"
     },
     {
       "id": 18,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — gallery image 4",
-      "caption": "城山日出峰 — photo 4"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "日出乐园（米川洞熔岩管）",
+      "alt": "日出乐园（米川洞熔岩管）— 图库图片 2",
+      "caption": "日出乐园（米川洞熔岩管）— 照片 2"
     },
     {
       "id": 19,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — gallery image 5",
-      "caption": "城山日出峰 — photo 5"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+      "location": "日出乐园（米川洞熔岩管）",
+      "alt": "日出乐园（米川洞熔岩管）— 图库图片 3",
+      "caption": "日出乐园（米川洞熔岩管）— 照片 3"
     },
     {
       "id": 20,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-      "location": "日出乐园（米川窟熔岩洞穴）",
-      "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 2",
-      "caption": "日出乐园（米川窟熔岩洞穴） — photo 2"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+      "location": "日出乐园（米川洞熔岩管）",
+      "alt": "日出乐园（米川洞熔岩管）— 图库图片 4",
+      "caption": "日出乐园（米川洞熔岩管）— 照片 4"
     },
     {
       "id": 21,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-      "location": "日出乐园（米川窟熔岩洞穴）",
-      "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 3",
-      "caption": "日出乐园（米川窟熔岩洞穴） — photo 3"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+      "location": "日出乐园（米川洞熔岩管）",
+      "alt": "日出乐园（米川洞熔岩管）— 图库图片 5",
+      "caption": "日出乐园（米川洞熔岩管）— 照片 5"
     },
     {
       "id": 22,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-      "location": "日出乐园（米川窟熔岩洞穴）",
-      "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 4",
-      "caption": "日出乐园（米川窟熔岩洞穴） — photo 4"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+      "location": "日出乐园（米川洞熔岩管）",
+      "alt": "日出乐园（米川洞熔岩管）— 图库图片 6",
+      "caption": "日出乐园（米川洞熔岩管）— 照片 6"
     },
     {
       "id": 23,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-      "location": "日出乐园（米川窟熔岩洞穴）",
-      "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 5",
-      "caption": "日出乐园（米川窟熔岩洞穴） — photo 5"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+      "location": "日出乐园（米川洞熔岩管）",
+      "alt": "日出乐园（米川洞熔岩管）— 图库图片 7",
+      "caption": "日出乐园（米川洞熔岩管）— 照片 7"
     },
     {
       "id": 24,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-      "location": "日出乐园（米川窟熔岩洞穴）",
-      "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 6",
-      "caption": "日出乐园（米川窟熔岩洞穴） — photo 6"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+      "location": "日出乐园（米川洞熔岩管）",
+      "alt": "日出乐园（米川洞熔岩管）— 图库图片 8",
+      "caption": "日出乐园（米川洞熔岩管）— 照片 8"
     },
     {
       "id": 25,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-      "location": "日出乐园（米川窟熔岩洞穴）",
-      "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 7",
-      "caption": "日出乐园（米川窟熔岩洞穴） — photo 7"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+      "location": "日出乐园（米川洞熔岩管）",
+      "alt": "日出乐园（米川洞熔岩管）— 图库图片 9",
+      "caption": "日出乐园（米川洞熔岩管）— 照片 9"
     },
     {
       "id": 26,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
-      "location": "日出乐园（米川窟熔岩洞穴）",
-      "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 8",
-      "caption": "日出乐园（米川窟熔岩洞穴） — photo 8"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+      "location": "日出之地（米千洞熔岩管）",
+      "alt": "日出之地（米千洞熔岩管）— 图库图片 10",
+      "caption": "日出之地（米千洞熔岩管）— 照片 10"
     },
     {
       "id": 27,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
-      "location": "日出乐园（米川窟熔岩洞穴）",
-      "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 9",
-      "caption": "日出乐园（米川窟熔岩洞穴） — photo 9"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — 图库图片 2",
+      "caption": "城邑民俗村 — 照片 2"
     },
     {
       "id": 28,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
-      "location": "日出乐园（米川窟熔岩洞穴）",
-      "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 10",
-      "caption": "日出乐园（米川窟熔岩洞穴） — photo 10"
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — 图库图片 3",
+      "caption": "城邑民俗村 — 照片 3"
     },
     {
       "id": 29,
       "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
       "location": "城邑民俗村",
-      "alt": "城邑民俗村 — gallery image 2",
-      "caption": "城邑民俗村 — photo 2"
+      "alt": "城邑民俗村 — 图库图片 4",
+      "caption": "城邑民俗村 — 照片 4"
     },
     {
       "id": 30,
       "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
       "location": "城邑民俗村",
-      "alt": "城邑民俗村 — gallery image 3",
-      "caption": "城邑民俗村 — photo 3"
+      "alt": "城邑民俗村 — 图库图片 5",
+      "caption": "城邑民俗村 — 照片 5"
     },
     {
       "id": 31,
       "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
       "location": "城邑民俗村",
-      "alt": "城邑民俗村 — gallery image 4",
-      "caption": "城邑民俗村 — photo 4"
+      "alt": "城邑民俗村 — 图库图片 6",
+      "caption": "城邑民俗村 — 照片 6"
     },
     {
       "id": 32,
       "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
       "location": "城邑民俗村",
-      "alt": "城邑民俗村 — gallery image 5",
-      "caption": "城邑民俗村 — photo 5"
+      "alt": "城邑民俗村 — 图库图片 7",
+      "caption": "城邑民俗村 — 照片 7"
     },
     {
       "id": 33,
       "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
-      "location": "城邑民俗村",
-      "alt": "城邑民俗村 — gallery image 6",
-      "caption": "城邑民俗村 — photo 6"
-    },
-    {
-      "id": 34,
-      "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
       "location": "城邑民俗村",
-      "alt": "城邑民俗村 — gallery image 7",
-      "caption": "城邑民俗村 — photo 7"
+      "alt": "城邑民俗村 — 图库图片 7",
+      "caption": "城邑民俗村 — 照片 7"
     }
   ],
   "itineraryStops": [
     {
       "number": 1,
       "time": "09:30",
-      "duration": "75分钟",
-      "name": "济州石文化公园",
-      "category": "神话+火山石文化——30万坪露天博物馆",
-      "description": "**济州石头文化公园(제주 돌문화공원,Jeju Dolmunhwa Gongwon)** 是位于朝天的 **30 万坪(约 99 万平方米)露天博物馆**,致力于呈现济州的开天创世神话:**雪门台姥姥(설문대 할망,巨人女神)** 的传说——根据济州口传,**她将围裙中的石头撒落,创造了这座岛屿**——汉拿山在最大石块落下处隆起,而 **岛上 360 余座寄生火山(오름)即是她行走时洒落的较小石块**。\n\n园区的石材收藏 **历经 30 余年精挑细选**,从济州各地汇集,以保护岛屿的火山岩文化遗产。三条游览路径展开整个体验:**第 1 条(约 1 小时)** 涵盖核心博物馆 + 天空潭 + 母亲之屋;**全部三条(约 2 小时 40 分钟)** 走完整片园区,包含五百将军画廊、石头博物馆、传统济州茅草屋村,以及雪门台姥姥展示馆。园区的当代建筑亮点是 **'母亲之屋(어머니의 방)'**——一处圆筒形混凝土室,头顶天窗将变化的日光投在中央石雕上,将抽象的女神神话化为冥想性的建筑体验。\n\n门票:**成人 ₩5,000 / 青少年 ₩3,500 / 13 岁以下及 65 岁以上免费**;**每月最后一个周三为免费文化日**。开放时间:**09:00–18:00(末次入场 17:00)**,**每月第一个周一闭园**。室内比例约 30%(博物馆 + 室内厅);其余为户外步行——舒适的鞋具必不可少。",
+      "duration": "75 分钟",
+      "name": "济州石头公园（石文化公园）",
+      "category": "神话 + 火山石文化 — 30万坪露天博物馆",
+      "description": "**济州石头公园（제주 돌문화공원，Jeju Dolmunhwa Gongwon）**是位于朝天的一座**30万坪（约99万平方米）露天博物馆**，专门呈现济州岛的创世神话：**雪门大奶奶（설문대 할망，女巨神）**——根据济州口头传统，她**从围裙中撒落岩石，创造了这座岛屿**——她扔下最大石块之处，汉拿山拔地而起，而她行走时散落的较小石块，则成为了**遍布全岛的360余座寄生火山锥（oreum）**。\n\n公园的石头收藏历经**逾30年**精心打造，从济州各地汇集而来，旨在保护这座岛屿的火山岩文化遗产。园内设有三条步行路线：**路线1（约1小时）**涵盖主体博物馆、天空池塘与母亲之室；**三条路线全程（约2小时40分钟）**可走遍全园，包括五百将军（오백 장군）展廊、石头博物馆、济州传统茅草屋村落及雪门大奶奶展览馆。\n\n园区最具代表性的当代建筑亮点是**\"母亲之室（어머니의 방）\"**——一座圆柱形混凝土空间，顶部单一天窗将流动的自然光投射至中央石雕之上，将抽象的女巨神神话化作一场静思的建筑体验。\n\n门票：**成人 ₩5,000 / 青少年 ₩3,500 / 13岁以下及65岁以上免费**；**每月最后一个周三为免费文化日**。开放时间：**09:00–18:00（最晚入场17:00）**，**每月第一个周一闭馆**。室内区域约占30%（博物馆及室内展厅），其余为户外步行区域——请务必穿着舒适的鞋子。",
       "image": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
       "highlights": [
-        "**30 万坪露天博物馆**——济州规模最大的火山岩文化遗产地",
-        "**雪门台姥姥神话**——济州的开天创世传说,汉拿山 + 360 寄生火山起源",
-        "**第 1 条路径(约 1 小时)** vs 全程(约 2 小时 40 分钟)——可灵活分配步行时间",
-        "**母亲之屋(어머니의 방)**——圆筒形混凝土室配天窗与中央石雕",
-        "**五百将军画廊**——以神话为灵感的石雕阵列",
-        "**30 余年** 在济州各地精选的火山岩收藏",
-        "园区一角重建的 **传统济州茅草屋村**",
-        "门票 **成人 ₩5,000 / 青少年 ₩3,500 / 13 岁以下及 65 岁以上免费**;**每月最后一个周三免费**",
-        "**每月第一个周一闭园**;预订前请确认"
+        "**30万坪露天博物馆** — 济州最大的火山岩石文化遗址",
+        "**雪门大奶奶神话** — 济州岛的创世传说，汉拿山与360座寄生火山的起源",
+        "**路线1（约1小时）** vs 完整路线（约2小时40分钟）— 可灵活安排时间的步行选择",
+        "**母亲之房（어머니의 방）** — 带天窗与石雕的圆柱形混凝土空间",
+        "**五百将军（Obaek Janggun）展馆** — 以神话为灵感的石雕群",
+        "**超过30年** 精心汇聚的全济州火山岩藏品",
+        "公园边缘重建还原的**济州传统茅草屋顶（jip）村落**",
+        "门票 **₩5,000 成人 / ₩3,500 青少年 / 13岁以下及65岁以上免费**；**每月最后一个周三免费**",
+        "每月**第一个周一休馆**；预订前请确认"
       ],
       "timeUsed": [
-        "停车+入场+课程简介——约10分钟",
-        "课程1游览：博物馆+天空之湖——约30分钟",
-        "母亲之房冥想空间——约10分钟",
-        "集合——约5分钟",
-        "卫生间 / 集合 — 约10分钟"
+        "停车 + 入场 + 路线简介 — 约10分钟",
+        "路线1步行：博物馆 + 天空湖 — 约30分钟",
+        "母亲之房冥想空间 — 约10分钟",
+        "五百将军展馆 + 茅草屋村落 — 约15分钟",
+        "缓冲 / 洗手间 / 集合整队 — 约10分钟"
       ],
-      "whyOnRoute": "**东线神话与文化的开篇核心。** 同主题精选环线在汉拿山 UNESCO 地质处开篇,本'自然主线'路线则以汉拿山的 **神话起源故事** 开篇——同一座火山岛,以口传创世而非 UNESCO 地质来呈现。将雪门台姥姥设为当日叙事的首章,意味着此后每一站(涉地可支的火山颈仙岩、城山日出峰的火山凝灰岩、日出乐园的熔岩管、城邑民俗村的石墙韩屋)都成为女神神话的下游章节。**30 万坪的户外步行** 也将当日的户外暴露集中前置——在午后可能的天气变化前完成步行配额。相比于 **翰林公园(同为 30 万坪,门票 ₩15,000,植物体验更分散)**,石头文化公园 **门票 ₩5,000、聚焦神话、建筑感经过策展**——是东济州性价比最高的文化开篇站。",
+      "whyOnRoute": "**东部路线的神话与文化开篇亮点**。精华路线以汉拿山联合国教科文组织地质景观开场，而这条以自然为核心的路线则以汉拿山的**神话起源故事**作为起点——同一座火山岛，以口传创世传说而非UNESCO地质学的视角呈现。将雪门大奶奶设定为全天的第一个叙事主轴，意味着后续每一站（涉地可支的火山颈仙岩、城山的凝灰岩锥、日出乐园的熔岩隧道、城邑的石墙韩屋）都将呈现为这位女巨人神话的后续篇章。**30万坪的露天步行**也将户外活动集中于行程前段——在下午可能出现的天气变化之前充分利用户外时光。与**翰林公园（30万坪，₩15,000，植物景观体验较为分散）**相比，石头公园**票价仅₩5,000，以神话为主题，建筑设计精良**——是济州东部文化游览中性价比最高的开场选择。",
       "_poi_meta": {
         "poi_key": "jeju_stone_park",
         "kb_version": "1.19",
@@ -445,63 +441,6 @@
           "Architectural Institute of Korea — Mother's Room sculpture/architecture documentation"
         ]
       },
-      "convenience": {
-        "restroom": "入口与园内设施处均设洗手间",
-        "parking": "园区设有停车场"
-      },
-      "smartNotes": {
-        "photo": "宽阔的风景构图通常比近景人像表现更佳。",
-        "facilities": "在早段几个站点中,这一处的洗手间与室内设施总体最完善。",
-        "tip": "这一站作为沉静开篇效果最佳,而非匆忙打卡之地。"
-      },
-      "visitBasics": {
-        "hours": "09:00–18:00",
-        "closed": "週一闭馆",
-        "admission": "成人 5,000 韩元 / 青少年 3,500 韩元",
-        "walking": "轻松至中等"
-      },
-      "galleryItems": [
-        {
-          "id": 1,
-          "type": "photo",
-          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
-          "location": "济州石文化公园",
-          "caption": "济州石文化公园 — photo 1",
-          "alt": "济州石文化公园 — gallery image 1"
-        },
-        {
-          "id": 2,
-          "type": "photo",
-          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
-          "location": "济州石文化公园",
-          "caption": "济州石文化公园 — photo 2",
-          "alt": "济州石文化公园 — gallery image 2"
-        },
-        {
-          "id": 3,
-          "type": "photo",
-          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
-          "location": "济州石文化公园",
-          "caption": "济州石文化公园 — photo 3",
-          "alt": "济州石文化公园 — gallery image 3"
-        },
-        {
-          "id": 4,
-          "type": "photo",
-          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
-          "location": "济州石文化公园",
-          "caption": "济州石文化公园 — photo 4",
-          "alt": "济州石文化公园 — gallery image 4"
-        },
-        {
-          "id": 5,
-          "type": "photo",
-          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp",
-          "location": "济州石文化公园",
-          "caption": "济州石文化公园 — photo 5",
-          "alt": "济州石文化公园 — gallery image 5"
-        }
-      ],
       "images": [
         "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
         "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
@@ -530,35 +469,92 @@
           "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp",
           "source": "atoc-korea"
         }
+      ],
+      "smartNotes": {
+        "photo": "在此地，宽阔的风景构图通常比近景人像拍摄效果更佳。",
+        "facilities": "在行程早期的各站点中，这里通常拥有最为完善的洗手间及室内设施。",
+        "tip": "这一站最适合作为从容沉稳的开场体验，而非匆忙打卡拍照后即离开的停留。"
+      },
+      "convenience": {
+        "restroom": "在入口处及设施内部",
+        "parking": "提供停车场"
+      },
+      "visitBasics": {
+        "hours": "09:00–18:00",
+        "closed": "周一",
+        "admission": "成人 5,000韩元 / 青少年 3,500韩元",
+        "walking": "轻松至中等难度"
+      },
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+          "location": "济州石文化公园（石头文化公园）",
+          "caption": "济州石文化公园（石头文化公园）— 照片 1",
+          "alt": "济州石文化公园（石头文化公园）— 图库图片 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
+          "location": "济州石文化公园（石头文化公园）",
+          "caption": "济州石文化公园（石头文化公园）— 照片 2",
+          "alt": "济州石文化公园（石头文化公园）— 图库图片 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
+          "location": "济州石文化公园（石头文化公园）",
+          "caption": "济州石文化公园（石头文化公园）— 照片 3",
+          "alt": "济州石文化公园（石头文化公园）— 图库图片 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
+          "location": "济州石文化公园（石头文化公园）",
+          "caption": "济州石文化公园（石头文化公园）— 照片 4",
+          "alt": "济州石文化公园（石头文化公园）— 图库图片 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp",
+          "location": "济州石文化公园（石头文化公园）",
+          "caption": "济州石文化公园（石头文化公园）— 照片 5",
+          "alt": "济州石文化公园（石头文化公园）— 图库图片 5"
+        }
       ]
     },
     {
       "number": 2,
       "time": "11:15",
-      "duration": "60分钟",
-      "name": "涉地可支（东海岬）",
-      "category": "火山海岬——安藤忠雄建筑+防头浦灯塔+韩剧拍摄地",
-      "description": "**涉地可支（涉地可支）**是济州东海岸一处狭长的火山岬角。地名通常解释为：‘’指狭长土地或这一带的旧地名，‘’是济州方言，意为伸向海面的岬角。沿着海岸步道，可以看到玄武岩海崖、开阔海景和远处的城山日出峰。岬角一带还有灯塔、朝鲜时代烽火台遗迹，也因韩剧《All In》等拍摄地而知名。此处海风较强，建议穿好走的鞋并准备薄外套。",
+      "duration": "60 分钟",
+      "name": "涉地可支（东岬角）",
+      "category": "火山岬角 — 安藤忠雄建筑 + 防头浦灯塔 + 影视拍摄地",
+      "description": "**涉地可支（섭지코지）**是济州岛东海岸一处狭长的火山岬角——其名称由**\"涉地\"（狭窄的土地）+\"可支\"（济州方言，意为\"岬角\"）**组合而成。\n\n这条**沿崖步道全长2.1公里（约需30分钟，海拔落差仅14米）**，是岛上最具摄影价值的海岸步道之一，由三处文化建筑地标共同塑造其独特魅力。\n\n**(1) 红岳（붉은 오름）**——位于岬角顶端的红色火山寄生锥，顶部设有**八角形防头浦灯塔（방두포 등대）**，该灯塔**每4秒闪烁一次**，至今仍作为沿海航行导标持续运行。\n\n**(2) 协字烟台（협자연대）**——一座**高4米、直径9米的朝鲜时代火山石烟火信号台**，被济州道指定为**特别纪念物第23-2号**——是环绕全岛38处烟台之一，曾作为16至18世纪防范海盗袭扰的早期预警系统。\n\n**(3) 安藤忠雄建筑作品**——普利兹克奖得主、日本建筑师**安藤忠雄（안도 다다오）**在此设计了两座建筑：**玻璃之家（글라스 하우스）**餐厅和**유민美术馆（유민 미술관）**，两者均体现了安藤标志性的清水混凝土与光影极简主义风格，为凤凰岛度假区开发项目而建。\n\n近海处，**高10米的火山颈\"仙岩\"（선바위）**是当地**龙王之子**传说的主角。此地曾作为多部韩剧的拍摄地，包括**《全力以赴》（2003年，SBS）、《我的女孩》（2005年，SBS）、《银杏传说》、《起义》及《千一夜》**。\n\n**春季油菜花田**于**3月至4月（黄色）**铺满山坡；**夏季绣球花**紧随其后，于**6月（蓝色/紫色）**盛开。岬角**免费入场**；유민美术馆和玻璃之家餐厅需另行购票/预约。",
       "image": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
       "highlights": [
-        "**2.1公里岬角步道**（约30分钟，仅14米爬升）— 部分路段轮椅及婴儿车可通行",
-        "**方头浦灯塔** — 八角形，**每4秒闪光**，矗立于红色火山锥红色火山丘顶端",
-        "**侠子烽火台（烽火台）** — 高4米 × 直径9米的朝鲜烽火丘，**特别纪念物第23-2号**",
-        "**安藤忠雄建筑** — 玻璃屋餐厅 + Yumin美术馆（凤凰岛渡假村）",
-        "**仙岩（仙岩）** — 10米海外火山颈，龙王么子传说",
+        "**2.1公里海角步道**（约30分钟，仅14米爬升）——设有适合轮椅/婴儿车通行的路段",
+        "**防斗浦灯塔**——八角形，**每4秒闪烁一次**，位于不根岳红色火山锥顶部",
+        "**协子烟台烽燧站**——朝鲜时代4米×9米烽燧台，**特别纪念物第23-2号**",
+        "**安藤忠雄建筑**——Glass House餐厅 + 裕民美术馆（凤凰岛）",
+        "**선바위（仙岩）**——距岸10米的火山颈，龙王幼子传说",
         "**影视拍摄地**：《All In》（2003年）、《我的女孩》（2005年）等",
-        "**油菜花季3至4月**（黄色山坡）；**绣球花6月**（蓝/紫色）",
-        "**岬角免费入场**；Yumin美术馆 + 玻璃屋餐厅需另行购票",
-        "城山日出峰在岬角顶端**清晰可见于4公里外**——UNESCO三重认定的完美背景"
+        "**油菜花季3至4月**（黄色山坡）；**绣球花6月**（蓝色/紫色）",
+        "**海角免费入场**；裕民美术馆 + Glass House单独收费",
+        "城山日出峰**在海角尖端以北4公里处清晰可见**——绝佳的三重联合国教科文组织全景背景"
       ],
       "timeUsed": [
-        "停车+入场——约5分钟",
-        "海岬步道漫步——约25分钟",
-        "灯塔+烽燧台拍照——约10分钟",
-        "安藤忠雄建筑外观观赏——约10分钟",
-        "返回大巴＋集合时间——约10分钟"
+        "停车 + 入场——约5分钟",
+        "海角步道行走——约25分钟",
+        "灯塔 + 协子烟台拍照——约10分钟",
+        "安藤忠雄建筑外观参观——约10分钟",
+        "返回大巴 + 缓冲时间——约10分钟"
       ],
-      "whyOnRoute": "**东环线的建筑＋风景核心亮点**。涉地可支是本系列行程中唯一在60分钟内呈现**三层不同遗产**的景点：朝鲜时代的烽燧台（16至18世纪）、日治时期的灯塔（1900年代现役），以及安藤忠雄设计的玻璃教堂（1994年建成）。加上韩剧取景地身份（《那年冬天风在吹》等），为行程前半增添了强烈的景色层次，同时让城山日出峰在下午登场时具备更清晰的对比感。",
+      "whyOnRoute": "**东线环路的建筑与风景亮点**。涉地可支是本次旅程中唯一一个能让游客在60分钟内领略**三重不同历史层次**的站点：朝鲜时代烽燧台（16至18世纪）、近代灯塔（1900年代实用型），以及当代普利兹克奖得主建筑（安藤忠雄，2000年代）——所有景观均以**北方4公里处的城山日出峰三重联合国教科文组织全景**为背景框架。从地理位置而言，海角是从济州石苑内陆腹地通往城山日出峰海岸终点的天然转折点，将两者与当日最受欢迎的摄影景观连接起来。与**月汀里海滩（北海岸，需额外绕行30分钟以上）**或**城山日出峰山顶（当天稍后登顶）**相比，涉地可支**在路线上、免费且步行30分钟可完成**——是东海岸每分钟性价比最高的景点。上午晚些时候（11:15）到访，可在正午强烈阳光之前捕捉到**柔和的午前光线**，是拍摄海角美景的最佳时机。",
       "_poi_meta": {
         "poi_key": "seopjikoji",
         "kb_version": "1.19",
@@ -567,24 +563,9 @@
           "Jeju Provincial Cultural Heritage — Special Monument No. 23-2 designation",
           "VisitJeju — Seopjikoji official listing",
           "Korea Lighthouse Service — Bangdupo Lighthouse operation records",
-          "安藤忠雄 Architect & Associates — Phoenix Island project documentation",
-          "SBS Drama Archive — '《All In》' (2003) and 'My Girl' (2005) filming locations"
+          "Tadao Ando Architect & Associates — Phoenix Island project documentation",
+          "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
         ]
-      },
-      "smartNotes": {
-        "photo": "Because the sky is wide and the wind is strong, side angles and wider framing often look better than straightforward posed shots.",
-        "facilities": "Facilities are limited, with restrooms mainly near the entrance zone.",
-        "tip": "Compared with the previous stop, this section feels much more exposed to wind and sun."
-      },
-      "convenience": {
-        "restroom": "Near the entrance area",
-        "parking": "Parking available"
-      },
-      "visitBasics": {
-        "hours": "Open 24 hours",
-        "closed": "Open year-round",
-        "admission": "Free",
-        "walking": "Easy to moderate"
       },
       "images": [
         "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
@@ -620,121 +601,137 @@
           "source": "atoc-korea"
         }
       ],
+      "smartNotes": {
+        "photo": "由于天空开阔、风力强劲，侧角拍摄与更宽广的构图往往比正面摆拍效果更好。",
+        "facilities": "设施有限，洗手间主要集中在入口区域附近。",
+        "tip": "与上一站相比，此处更加暴露于风吹日晒之中。"
+      },
+      "convenience": {
+        "restroom": "靠近入口区域",
+        "parking": "提供停车场"
+      },
+      "visitBasics": {
+        "hours": "24小时开放",
+        "closed": "全年开放",
+        "admission": "免费",
+        "walking": "轻松至中等难度"
+      },
       "galleryItems": [
         {
           "id": 1,
           "type": "photo",
           "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
-          "location": "涉地可支（东海岬）",
-          "caption": "涉地可支（东海岬） — photo 1",
-          "alt": "涉地可支（东海岬） — gallery image 1"
+          "location": "涉地可支（东端）",
+          "caption": "涉地可支（东端）— 照片 1",
+          "alt": "涉地可支（东端）— 图库图片 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
-          "location": "涉地可支（东海岬）",
-          "caption": "涉地可支（东海岬） — photo 2",
-          "alt": "涉地可支（东海岬） — gallery image 2"
+          "location": "涉地可支（东端）",
+          "caption": "涉地可支（东端）— 照片 2",
+          "alt": "涉地可支（东端）— 图库图片 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
-          "location": "涉地可支（东海岬）",
-          "caption": "涉地可支（东海岬） — photo 3",
-          "alt": "涉地可支（东海岬） — gallery image 3"
+          "location": "涉地可支（东端）",
+          "caption": "涉地可支（东端）— 照片 3",
+          "alt": "涉地可支（东端）— 图库图片 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
-          "location": "涉地可支（东海岬）",
-          "caption": "涉地可支（东海岬） — photo 4",
-          "alt": "涉地可支（东海岬） — gallery image 4"
+          "location": "涉地可支（东端）",
+          "caption": "涉地可支（东端）— 照片 4",
+          "alt": "涉地可支（东端）— 图库图片 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
-          "location": "涉地可支（东海岬）",
-          "caption": "涉地可支（东海岬） — photo 5",
-          "alt": "涉地可支（东海岬） — gallery image 5"
+          "location": "涉地可支（东端）",
+          "caption": "涉地可支（东端）— 照片 5",
+          "alt": "涉地可支（东端）— 图库图片 5"
         },
         {
           "id": 6,
           "type": "photo",
           "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
-          "location": "涉地可支（东海岬）",
-          "caption": "涉地可支（东海岬） — photo 6",
-          "alt": "涉地可支（东海岬） — gallery image 6"
+          "location": "涉地可支（东端）",
+          "caption": "涉地可支（东端）— 照片 6",
+          "alt": "涉地可支（东端）— 图库图片 6"
         }
       ]
     },
     {
       "number": 3,
       "time": "12:25",
-      "duration": "60分钟",
-      "name": "午餐——东海岸本地菜",
-      "category": "午间休息——东济州本地菜",
-      "description": "**城山日出峰前的东海岸午餐休息**——东海岸用餐定位意味着午餐后**仅需10分钟即可抵达城山日出峰**，为下午登顶保留体力。轮替菜式依季节而定：**（冷汤生鱼片）**是东济州的地区特色料理（在济州市较少见），搭配时令海鲜食材；**（鲍鱼石锅）**年供应；或**（烤鲜鱼）**定食套餐。素食及清真餐选项（食材已披露）可在部分轮替餐厅提供——请于接送时提出。餐厅均邻近城山日出峰停车区，使下午主要景点的过渡流畅高效。",
-      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "duration": "60 分钟",
+      "name": "午餐 — 东海岸本地美食",
+      "category": "午间休整 — 济州岛东部本地美食",
+      "description": "**东海岸60分钟休整**，位于涉地可支与城山日出峰之间 — 城山邑是济州岛顶级海鲜卸货港之一，每日渔获供应港口旁的餐厅街。默认轮换菜单：夏季（6月至9月）供应**物回（물회，冷鱼生汤）**，这是济州岛夏季必备美食，将时令白肉鱼（黄尾鱼、鲈鱼）盛于冰镇醋汤中；冬季（10月至2月）供应**带鱼炖（갈치조림，红烧带鱼）**；或全年供应**黑猪烤肉（흑돼지구이，济州黑猪烧烤）**，这一传统品种被列为**文化遗产材料第5号（2015年）**。\n\n**素食替代选项**：配时令济州蔬菜的**拌面（비빔국수）**。轮换餐厅中有一家提供**清真友好选项** — 请于上车时告知。\n\n午餐地点距**城山日出峰入口乘车仅需10分钟**，客人可充分保留下午游览火山锥的体力。",
       "highlights": [
-        "**物（冷汤生鱼片）**——东济州特有地区料理（济州市较少见）",
-        "**（鲍鱼石锅）**全年供应",
-        "**素食及清真餐**选项可应要求提供",
-        "餐厅距城山日出峰**车程10分钟**——保留下午登顶体力",
-        "接送时收集饮食需求；部分餐厅可预先确认菜单"
+        "**济州岛东部海鲜走廊** — 城山邑港口旁餐厅街",
+        "夏季（6月至9月）供应**物回（물회）**，冬季轮换**带鱼炖（갈치조림）**",
+        "**黑猪（济州黑猪）**全年供应 — 文化遗产材料第5号（2015年）",
+        "可应要求提供**素食及清真友好**选项（上车时告知）",
+        "**乘车约10分钟抵达城山日出峰** — 午餐后交通时间极短",
+        "上车时收集团体饮食需求"
       ],
       "timeUsed": [
-        "大巴前往午餐地点 — 约5分钟",
-        "点餐 + 用餐 — 约45分钟",
-        "大巴前往城山日出峰入口 — 约10分钟"
+        "乘车前往午餐地点 — 约5分钟",
+        "点餐及用餐 — 约45分钟",
+        "乘车前往城山日出峰入口 — 约10分钟"
       ],
-      "whyOnRoute": "东海岸定位意味着午餐后**仅需10分钟即可抵达城山日出峰**——为下午的登顶保留体力。（冷生鱼片汤饭）也是东济州的地区特色（济州市较少见），在城山附近用餐，也能顺路品尝东济州特色料理。",
+      "whyOnRoute": "东海岸的地理位置意味着餐后**仅需10分钟即可抵达城山日出峰** — 有效保留攀登火山锥的体力。物回也是济州岛东部的地区特色（在济州市较为少见），因此这一地理布局赋予午餐时间独特的饮食文化色彩。此节奏安排同时起到缓冲作用，衔接上午的石头公园与涉地可支徒步，以及下午的城山登顶与溶洞探索。",
       "smartNotes": {
-        "photo": "If you want food photos, local Jeju dishes usually make the strongest images.",
-        "facilities": "Restaurant facilities are generally sufficient.",
-        "tip": "The most important function here is to reset the pace well, not to compress the schedule as much as possible."
+        "photo": "如果想拍摄美食照片，济州当地菜肴通常是最佳拍摄对象。",
+        "facilities": "餐厅设施整体上较为完善。",
+        "tip": "此处最重要的作用是充分调整节奏，而非尽可能压缩行程。"
       },
       "convenience": {
-        "restroom": "Inside the restaurant",
-        "parking": "Parking available"
+        "restroom": "餐厅内部",
+        "parking": "提供停车位"
       },
       "visitBasics": {
-        "hours": "Depends on the restaurant",
-        "closed": "Varies by venue",
-        "admission": "Included or paid on site depending on product setup",
-        "walking": "Minimal"
-      }
+        "hours": "视餐厅而定",
+        "closed": "因场所而异",
+        "admission": "根据产品设置，费用已含或现场支付",
+        "walking": "极少"
+      },
+      "image": null
     },
     {
       "number": 4,
       "time": "13:35",
       "duration": "90分钟",
       "name": "城山日出峰",
-      "category": "UNESCO凝灰岩锥——日出峰（三重UNESCO认定）",
-      "description": "**城山日出峰（城山日出峰，「日出峰」）**是一座**距今5,000年的苏尔特塞式（Surtseyan）水成火山凝灰岩锥**——形成于海底玄武岩喷发冲出海面之时，岩浆接触海水引发蒸汽爆炸，堆积的火山灰形成**182米高、形如城堡的火口**边缘，而非典型的熔岩锥。UNESCO将其正式定义为**「萨托谢安式火山构造典型范例」**。火口**直径600米、深90米**，周围环绕着**99块锯齿状的边缘岩石**，当地传说将其比喻为石冠。\n\n城山日出峰拥有**UNESCO三重认定**：**世界自然遗产（2007年7月2日列入）**，是**「济州火山岛与熔岩洞窟」**遗址的组成部分；**生物圈保护区（2002年）**；以及**全球地质公园（2010-10）**——这一荣衔仅与汉拏山本身并列，为韩国景点中的最高规格。峰体向海一侧隧道有**18座帝国日本二战地下掩体**（1945年神风特攻队自杀艇掩体）。\n\n步道：**单程0.8公里，爬升约140米，来回60分钟**，沿宽阔石阶攀登。**海女表演**每日在峰下岩石海湾**13:30和15:00**各举行一场——无需氧气罐的济州女性潜水员（UNESCO 2016年非物质文化遗产）。门票于**2025年4月更新**：**成人₩5,000 / 青少年+儿童₩2,500 / 团体成人₩1,600**，7岁以下及65岁以上免费。山顶观景台同属**瀛洲十景**，长期以来是韩国**元旦日出朝圣**的首选地——每年1月1日有逾5万人在黎明前登顶，自1995年起设有市政日出节活动。\n\n**牛岛** —— 韩国最大的次级火山岛——在山顶可清晰看见，位于4公里外海域，搭乘**15分钟渡轮自城山港出发**可前往（来回₩10,500）。",
+      "category": "联合国教科文组织凝灰岩火山锥 — 日出峰（三重联合国教科文组织认定）",
+      "description": "**城山日出峰（성산일출봉，\"日出峰\"）**是一座**有5,000年历史的苏特塞火山型水岩浆凝灰岩火山锥** — 这是一种罕见地貌，形成于水下玄武岩喷发冲破海面之时，岩浆与海水相遇，由此产生的蒸汽爆炸性火山灰堆积成**182米高的堡垒状火山口**边缘，而非典型的熔岩锥。\n\n正是这一结果，让联合国教科文组织将其正式定义为**\"新生苏特塞型火山构造的杰出典范\"**。火山口**宽600米、深90米**，周围环绕着**99块锯齿状岩石**，当地传说将其比作石制王冠。城山日出峰荣获**联合国教科文组织三重认定**：作为**\"济州火山岛与熔岩洞穴\"**遗产的一部分，被列为**世界自然遗产（2007年7月2日入录）**、**生物圈保护区（2002年）**及**全球地质公园（2010年10月）** — 在韩国景点中，唯有汉拿山本身可与之媲美。\n\n海向山基内开凿有**18处日本帝国二战时期洞穴**（1945年神风特攻队自杀艇藏身处）。步道信息：**单程0.8公里，爬升约140米，全程往返约60分钟**，沿宽阔石阶攀登。\n\n**海女（해녀）表演**每日在火山锥下方的岩礁海湾举行，时间为**13:30和15:00** — 济州女性潜水员（2016年联合国教科文组织非物质文化遗产）不借助水肺装备下潜。\n\n门票已于**2025年4月**更新：**成人₩5,000 / 青少年及儿童₩2,500 / 团体成人₩1,600**，7岁以下及65岁以上免费。山顶观景台也是**瀛洲十景（济州十大名景）**之一，同时也是韩国最受瞩目的**年度元旦日出朝圣地** — 每年1月1日黎明前有逾5万名游客登顶，自1995年起设有市级日出节庆活动。\n\n**牛岛（우도，\"牛岛\"）** — 韩国最大的次生火山岛 — 从山顶清晰可见，位于近海4公里处，游客可乘**城山港15分钟渡轮**前往（往返₩10,500），适合其他行程中有多余时间的旅客。",
       "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "highlights": [
-        "**UNESCO三重认定**：世界遗产2007-07-02 + 生物圈保护区2002年 + 全球地质公园2010-10",
-        "**距今5,000年** — 萨托谢安式水火山喷发，岩浆遇海水引发蒸汽爆炸诞生",
-        "火口**直径600米、深90米**，环绕着**99块锯齿状边缘岩石**（「石冠」）",
-        "**海拔182米** — 单程0.8公里 / 爬升约140米，石阶步道来回60分钟",
-        "峰体基部有**18座帝国日本二战地下掩体** — 1945年神风特攻队自杀艇掩体",
-        "**每日13:30 + 15:00海女表演**，在海滨海湾举行 — UNESCO非物质文化遗产2016年",
-        "**门票2025年4月更新**：成人₩5,000 / 青少年₩2,500 / 7岁以下及65岁以上免费",
-        "春秋季开放时间 **05:00至19:00**（最后入场18:20）",
-        "**每月第一个星期一休馆**（偶尔休息日）"
+        "**三重联合国教科文组织认证**：世界遗产（2007年7月2日）+ 生物圈保护区（2002年）+ 全球地质公园（2010年10月）",
+        "**形成于5,000年前** — 苏特西式水火山喷发，岩浆与海水相遇，蒸汽爆炸式诞生",
+        "火山口**直径600米×深90米**，周围环绕着**99块锯齿状环形岩石**（\"石冠\"）",
+        "**海拔182米** — 单程0.8公里／爬升约140米，石阶小径往返约60分钟",
+        "山脚处有**18座日本帝国二战地下洞穴** — 1945年神风特攻队自杀艇掩体",
+        "**海女表演每天14:00举行一场（每日1场），恶劣天气可能取消**，地点在海边小湾，视天气及当地运营情况而定。",
+        "**门票价格（2025年4月更新）**：成人₩5,000 ／ 青少年₩2,500 ／ 7岁以下及65岁以上免费",
+        "春秋季开放时间**05:00–19:00**（最后入场18:20）",
+        "**每月第一个周一闭园**（不定期休息日）"
       ],
       "timeUsed": [
-        "停车+购票+底部简介——约10分钟",
-        "登顶观景台（0.8公里/高差140米）——约30分钟",
-        "顶部观景+火山口边缘拍照——约20分钟",
-        "下山——约20分钟",
-        "可选：在底部观看海女表演（每日1场，下午2点；恶劣天气时可能取消）——约10分钟"
+        "停车 + 购票 + 山脚介绍 — 约10分钟",
+        "攀登至山顶观景台（0.8公里／爬升140米）— 约30分钟",
+        "山顶观景 + 火山口边缘拍照 — 约20分钟",
+        "下山 — 约20分钟",
+        "可选：在山脚观看海女表演（14:00场次；恶劣天气可能取消）— 约10分钟"
       ],
-      "whyOnRoute": "**东部招牌路线的下午UNESCO高潮**。与大环线姊妹团（城山日出峰是全日东端压轴）不同，本行程中城山排在**下午中段（13:35抵达，停留90分钟）**——夹在涉地可支（前站）与日出乐园（后站）之间。这种安排避免了以UNESCO高潮收尾、后半程让人意犹未尽的常见问题；相反，先以城山作为全日景色制高点，再透过日出乐园的溶洞段及城邑民俗村来降低节奏，让全日行程弧线感更完整。",
+      "whyOnRoute": "**东部精选路线的午后联合国教科文组织亮点。** 在此行程中，城山日出峰安排在午餐后而非一天的最末尾，让游客在前往日出乐园和城邑民俗村之前有充足时间攀登火山口。这样的时间安排也为下午的海女表演留有余地（若当日有演出），同时确保在东海岸风力通常增强之前完成攀登。山顶全景将这一天融为一体：西望汉拿山，俯瞰东部火山丘群，远眺海上牛岛。",
       "_poi_meta": {
         "poi_key": "seongsan_ilchulbong",
         "kb_version": "1.19",
@@ -746,21 +743,6 @@
           "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
           "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
         ]
-      },
-      "smartNotes": {
-        "photo": "Wide-angle framing that includes both the crater and coastline usually feels stronger than summit selfies alone.",
-        "facilities": "Facilities are more developed near the base and more basic higher up.",
-        "tip": "Wind, crowd levels, and group fitness can all shift this stop toward more walking, more viewing, or more haenyeo-focused time."
-      },
-      "convenience": {
-        "restroom": "At the base area and some upper sections",
-        "parking": "Large parking lot available"
-      },
-      "visitBasics": {
-        "hours": "Varies by season; last ticketing is typically 1 hour before closing",
-        "closed": "First Monday of each month (or the following day if Monday is a holiday)",
-        "admission": "KRW 5,000 adults / KRW 2,500 teens and children",
-        "walking": "Moderate, or moderately demanding if the group chooses the summit"
       },
       "images": [
         "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
@@ -791,77 +773,92 @@
           "source": "atoc-korea"
         }
       ],
+      "smartNotes": {
+        "photo": "构图时将火山口与海岸线同时纳入画面，通常比单纯的山顶自拍更具视觉冲击力。",
+        "facilities": "山脚附近的设施较为完善，越往上设施越简陋。",
+        "tip": "风力、人流量和团队体能状况，都可能使这一站转向更多步行、更多观景，或以海女表演为主。"
+      },
+      "convenience": {
+        "restroom": "在山脚区域及部分较高路段",
+        "parking": "提供大型停车场"
+      },
+      "visitBasics": {
+        "hours": "随季节而异；最后售票时间通常为闭馆前1小时",
+        "closed": "每月第一个周一（若周一为节假日，则顺延至次日）",
+        "admission": "成人5,000韩元 / 青少年及儿童2,500韩元",
+        "walking": "中等难度，若团队选择登顶则难度适中偏高"
+      },
       "galleryItems": [
         {
           "id": 1,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
           "location": "城山日出峰",
-          "caption": "城山日出峰 — photo 1",
-          "alt": "城山日出峰 — gallery image 1"
+          "caption": "城山日出峰 — 照片1",
+          "alt": "城山日出峰 — 图库图片1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
           "location": "城山日出峰",
-          "caption": "城山日出峰 — photo 2",
-          "alt": "城山日出峰 — gallery image 2"
+          "caption": "城山日出峰 — 照片2",
+          "alt": "城山日出峰 — 图库图片2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
           "location": "城山日出峰",
-          "caption": "城山日出峰 — photo 3",
-          "alt": "城山日出峰 — gallery image 3"
+          "caption": "城山日出峰 — 照片3",
+          "alt": "城山日出峰 — 图库图片3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
           "location": "城山日出峰",
-          "caption": "城山日出峰 — photo 4",
-          "alt": "城山日出峰 — gallery image 4"
+          "caption": "城山日出峰 — 照片4",
+          "alt": "城山日出峰 — 图库图片4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
           "location": "城山日出峰",
-          "caption": "城山日出峰 — photo 5",
-          "alt": "城山日出峰 — gallery image 5"
+          "caption": "城山日出峰 — 照片5",
+          "alt": "城山日出峰 — 图库图片5"
         }
       ],
-      "liveStatusWidget": "haenyeo"
+      "liveStatusWidget": "海女"
     },
     {
       "number": 5,
       "time": "15:20",
       "duration": "75分钟",
-      "name": "日出乐园（米川窟熔岩洞穴）",
-      "category": "熔岩洞穴+主题公园——万丈窟备选（紧邻UNESCO认定区域）",
-      "description": "**日出乐园 (일출랜드)** 是位于城山的 **40 万平方米自然主题公园**,**2002 年开业**,围绕 **美川窟 (미천굴)** 熔岩洞而建——这是一条 **总长 1,700 米的熔岩洞**,其中 **365 米经人工平整后开放参观**(穿越用时约 25 分钟)。该洞穴属于济州 **与万丈窟同源的熔岩洞系统**——万丈窟为联合国教科文组织世界自然遗产熔岩洞——并 **在万丈窟因保护性维护或天气原因(台风、冰冻)关闭时,作为标准替代景点对外开放**。\n\n万丈窟保留崎岖的天然洞底,提供原汁原味的地质体验;美川窟则通过平整步道,**让长者、推婴儿车的家庭以及行动不便的客人也能进入参观**——这是一项有意为之的工程设计,使熔岩洞体验向无法穿行万丈窟的群体开放。洞内布有 **七色装饰灯光(金、银、铜、红、黑、蓝、白)** 来突出洞穴造型——纯粹派人士对此颇有微词,但对非专业游客的拍照而言相当实用。\n\n洞穴之外,园区延展至 **水边公园、复原的济州传统民俗村、野花盆景园、仙人掌温室、雕塑街、足浴咖啡馆(芳香足疗)** 等区域——也是 **济州唯一设有穆斯林祈祷室的景点**(有意为之的无障碍配套投资)。综艺取景:**SBS《Running Man (런닝맨)》第 89 集(爱丽丝梦游仙境主题,2012 年)**。门票:**成人 ₩12,000 / 青少年 ₩9,000 / 儿童 ₩7,000**。\n\n室内 / 室外比例 **室内 30%(洞穴 + 温室)/ 室外 70%(园区步道)**——便于您依据天气灵活安排行程。",
+      "name": "日出乐园（米千洞熔岩管）",
+      "category": "熔岩管 + 主题公园 — 万丈窟替代方案（毗邻联合国教科文组织世界遗产地）",
+      "description": "**日出乐园（일출랜드）**是位于城山的一座**占地40万平方米的自然主题公园**，**2002年**开业，以**米千洞（미천굴）**熔岩管为核心而建——该洞穴**总长1,700米**，其中**365米经人工整平的游览通道**对游客开放（穿行时间约25分钟）。\n\n该洞穴隶属济州岛**熔岩管系统**，与**万丈窟洞穴**——联合国教科文组织世界自然遗产熔岩管——**具有相同的地质渊源**，并**在万丈窟因保护性维护或恶劣天气（台风、结冰）关闭时，充当实用的替代游览场所**。\n\n万丈窟保留了凹凸不平的天然地面，呈现真实的地质体验；而米千洞经整平的步道则使洞穴**对老年游客、推婴儿车的家庭以及行动不便的旅客实现无障碍游览**——这一刻意的工程设计选择，将熔岩管体验惠及了无法穿行万丈窟的广大游客群体。\n\n洞穴内部安装了**七彩装饰灯光（金、银、铜、红、黑、蓝、白）**，用以烘托洞穴景观——在岩洞纯粹主义者眼中颇具争议，但对普通游客拍照而言十分实用。洞穴之外，公园还延伸至**水边公园、重建的济州传统村落、野花盆景园、仙人掌温室、雕塑街以及足浴咖啡厅（香薰足浴）**，使其成为**济州唯一设有穆斯林祈祷室的景点**（一项体现包容性的专项配套投入）。\n\n影视拍摄记录：**《Running Man》（런닝맨，SBS）第89集（爱丽丝梦游仙境主题，2012年）**。门票：**成人₩12,000 / 青少年₩9,000 / 儿童₩7,000**。室内外面积比例为**30%室内（洞穴+温室）** / **70%室外（园区地面）**——对行程天气弹性规划具有重要参考价值。",
       "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
       "highlights": [
-        "**总长 1,700 米** 熔岩洞;**365 米开放段**(穿越约 25 分钟)",
-        "**万丈窟世遗替代点**——同一熔岩洞系统;万丈窟闭园时启用",
-        "**地面经过人工平整**——长者、婴儿车、行动不便者皆可入内",
-        "**七色装饰灯光**——金 / 银 / 铜 / 红 / 黑 / 蓝 / 白",
-        "**40 万平方米园区**——盆景、仙人掌、雕塑、传统村、足浴咖啡馆",
-        "**济州唯一设有穆斯林祈祷室的景点**——有意为之的无障碍配套",
-        "**《Running Man》第 89 集** 取景(2012 年,爱丽丝梦游仙境主题)",
-        "门票 **成人 ₩12,000 / 青少年 ₩9,000 / 儿童 ₩7,000**",
-        "**室内 30% / 室外 70%**——便于您按天气灵活搭配"
+        "**熔岩隧道全长1,700米**；**开放游览段365米**（约25分钟穿行）",
+        "**米川洞穴——熔岩隧道替代选项** — 当万丈窟不在行程范围内时，提供游客友好型熔岩隧道体验",
+        "**地面经过人工平整** — 适合老年人、婴儿车及行动不便的游客",
+        "**七彩装饰灯光** — 金/银/铜/红/黑/蓝/白",
+        "**40万平方米园区** — 盆景、仙人掌、雕塑、传统村落、足浴咖啡馆",
+        "**济州唯一设有清真祈祷室的景点** — 充分体现无障碍包容理念",
+        "**《Running Man》第89集**取景地（2012年，爱丽丝梦游仙境主题）",
+        "门票 **₩12,000 成人 / ₩9,000 青少年 / ₩7,000 儿童**",
+        "**室内占30% / 室外占70%** — 灵活应对天气变化的游览组合"
       ],
       "timeUsed": [
-        "停车+购票+入场——约5分钟",
-        "米川窟穿越（365米/约25分钟）——约30分钟",
-        "水边公园+雕塑街——约20分钟",
-        "可选：盆景/仙人掌园+足浴咖啡馆——约15分钟",
-        "集合时间——约5分钟"
+        "停车 + 购票 + 入场 — 约5分钟",
+        "米川洞穴穿行（365米 / 约25分钟）— 约30分钟",
+        "水边公园 + 雕塑街 — 约20分钟",
+        "可选：盆景/仙人掌花园 + 足浴咖啡馆 — 约15分钟",
+        "缓冲 / 集合整队 — 约5分钟"
       ],
-      "whyOnRoute": "**午前的熔岩洞主轴**——明确定位为当日联合国教科文组织主题中 **'与世界遗产同源'** 的篇章。同系列的自然主轴线路将日出乐园安排为午后随天气灵活调整的站点;本条联合国教科文组织线路则将其前置,使 **'世界遗产 + 文化遗产'的叙事弧线更紧凑**:咸德(Olle 19 号路线、半世遗级步行遗产)→ 城邑(国家重要民俗文化遗产)→ **日出乐园美川窟(与万丈窟同属同一世界遗产熔岩洞系统)**→ 下午城山(三重世界遗产)→ 压轴海女博物馆(2016 年人类非物质文化遗产)。午前安排同时确保洞内温度的舒适感(洞穴常年 13–15°C,夏日凉爽宜人,冬日仅微凉),先于全日最暖的户外段进行。",
+      "whyOnRoute": "**东线行程的熔岩隧道核心亮点。** 这是本次行程中唯一一处带领游客深入济州地下火山地貌的景点。与万丈窟相比，米川洞穴提供更短、更适合大众游览的熔岩隧道体验，配有灯光照明、周边花园、卫生间设施，节奏更为舒缓，尤其适合家庭及年长旅客。将其安排在城山日出峰之后，也为全天行程带来了丰富的节奏变化：迎风的山顶、幽深的熔岩洞穴、精致的园林公园，最后以传统村落收尾。",
       "_poi_meta": {
         "poi_key": "ilchulland_micheon_cave",
         "kb_version": "1.19",
@@ -873,21 +870,6 @@
           "SBS Variety Archive — Running Man Episode 89 (2012)",
           "Jeju Tourism Organization — accessibility-friendly attraction registry"
         ]
-      },
-      "convenience": {
-        "restroom": "日出乐园园区入口处提供洗手间",
-        "parking": "日出乐园免费停车"
-      },
-      "smartNotes": {
-        "photo": "灯光照明的洞穴段 + 周边植物园——请向运营方确认当前日出乐园门票包含的具体拍照区域",
-        "facilities": "日出乐园园区配套(咖啡馆、礼品店、洗手间)",
-        "tip": "当公开开放的万丈窟因安全检查闭园时,这里是标准替代点。请确认您的团体票包含日出乐园洞穴段的入园权限。"
-      },
-      "visitBasics": {
-        "hours": "依日出乐园园区开放时间——请向运营方确认",
-        "closed": "依日出乐园园区时间表——请向运营方确认",
-        "admission": "包含在日出乐园门票内——票价请向运营方确认",
-        "walking": "中等——下行台阶进入洞穴,常年约 12°C;洞穴段内地面为不平整的火山岩"
       },
       "images": [
         "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
@@ -943,117 +925,132 @@
           "source": "atoc-korea"
         }
       ],
+      "smartNotes": {
+        "photo": "室内外混合光线非常适合拍摄氛围感照片，但曝光控制比开阔的海岸景点更为复杂。",
+        "facilities": "基本设施集中在入口附近。",
+        "tip": "离开城山后，许多游客会立即感受到这里的体力消耗明显降低。"
+      },
+      "convenience": {
+        "restroom": "入口附近区域",
+        "parking": "提供停车位"
+      },
+      "visitBasics": {
+        "hours": "08:30–18:00",
+        "closed": "全年开放",
+        "admission": "成人9,000韩元 / 青少年6,000韩元 / 儿童5,000韩元",
+        "walking": "中等"
+      },
       "galleryItems": [
         {
           "id": 1,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-          "location": "日出乐园（米川窟熔岩洞穴）",
-          "caption": "日出乐园（米川窟熔岩洞穴） — photo 1",
-          "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 1"
+          "location": "日出乐园（米千洞熔岩洞穴）",
+          "caption": "日出乐园（米千洞熔岩洞穴）— 照片1",
+          "alt": "日出乐园（米千洞熔岩洞穴）— 图库图片1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-          "location": "日出乐园（米川窟熔岩洞穴）",
-          "caption": "日出乐园（米川窟熔岩洞穴） — photo 2",
-          "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 2"
+          "location": "日出乐园（米千洞熔岩洞穴）",
+          "caption": "日出乐园（米千洞熔岩洞穴）— 照片2",
+          "alt": "日出乐园（米千洞熔岩洞穴）— 图库图片2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-          "location": "日出乐园（米川窟熔岩洞穴）",
-          "caption": "日出乐园（米川窟熔岩洞穴） — photo 3",
-          "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 3"
+          "location": "日出乐园（米千洞熔岩洞穴）",
+          "caption": "日出乐园（米千洞熔岩洞穴）— 照片3",
+          "alt": "日出乐园（米千洞熔岩洞穴）— 图库图片3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-          "location": "日出乐园（米川窟熔岩洞穴）",
-          "caption": "日出乐园（米川窟熔岩洞穴） — photo 4",
-          "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 4"
+          "location": "日出乐园（米千洞熔岩洞穴）",
+          "caption": "日出乐园（米千洞熔岩洞穴）— 照片4",
+          "alt": "日出乐园（米千洞熔岩洞穴）— 图库图片4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-          "location": "日出乐园（米川窟熔岩洞穴）",
-          "caption": "日出乐园（米川窟熔岩洞穴） — photo 5",
-          "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 5"
+          "location": "日出乐园（米千洞熔岩洞穴）",
+          "caption": "日出乐园（米千洞熔岩洞穴）— 照片5",
+          "alt": "日出乐园（米千洞熔岩洞穴）— 图库图片5"
         },
         {
           "id": 6,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-          "location": "日出乐园（米川窟熔岩洞穴）",
-          "caption": "日出乐园（米川窟熔岩洞穴） — photo 6",
-          "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 6"
+          "location": "日出乐园（米川洞熔岩隧道）",
+          "caption": "日出乐园（米川洞熔岩隧道）— 照片 6",
+          "alt": "日出乐园（米川洞熔岩隧道）— 图库图片 6"
         },
         {
           "id": 7,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-          "location": "日出乐园（米川窟熔岩洞穴）",
-          "caption": "日出乐园（米川窟熔岩洞穴） — photo 7",
-          "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 7"
+          "location": "日出乐园（米川洞熔岩隧道）",
+          "caption": "日出乐园（米川洞熔岩隧道）— 照片 7",
+          "alt": "日出乐园（米川洞熔岩隧道）— 图库图片 7"
         },
         {
           "id": 8,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
-          "location": "日出乐园（米川窟熔岩洞穴）",
-          "caption": "日出乐园（米川窟熔岩洞穴） — photo 8",
-          "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 8"
+          "location": "日出乐园（米川洞熔岩隧道）",
+          "caption": "日出乐园（米川洞熔岩隧道）— 照片 8",
+          "alt": "日出乐园（米川洞熔岩隧道）— 图库图片 8"
         },
         {
           "id": 9,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
-          "location": "日出乐园（米川窟熔岩洞穴）",
-          "caption": "日出乐园（米川窟熔岩洞穴） — photo 9",
-          "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 9"
+          "location": "日出乐园（米川洞熔岩隧道）",
+          "caption": "日出乐园（米川洞熔岩隧道）— 照片 9",
+          "alt": "日出乐园（米川洞熔岩隧道）— 图库图片 9"
         },
         {
           "id": 10,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
-          "location": "日出乐园（米川窟熔岩洞穴）",
-          "caption": "日出乐园（米川窟熔岩洞穴） — photo 10",
-          "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 10"
+          "location": "日出乐园（米川洞熔岩隧道）",
+          "caption": "日出乐园（米川洞熔岩隧道）— 照片 10",
+          "alt": "日出乐园（米川洞熔岩隧道）— 图库图片 10"
         }
       ]
     },
     {
       "number": 6,
       "time": "16:50",
-      "duration": "60分钟",
+      "duration": "60 分钟",
       "name": "城邑民俗村",
-      "category": "朝鲜时代城郭城镇——重要民俗文化遗产（1423年创立）",
-      "description": "**城邑民俗村**是**朝鲜时代的城郭式城镇，始建于1423年世宗大王年间**，当时称为旌义县，是朝鲜时代济州三大行政中心之一。村落持续作为**县政中心长达近500年，直至1914年**，至今在原有邑城城郭范围内保存著**110栋传统建筑**，整体按照朝鲜县政中心典型的**韩国风水原则**规划布局。整座村落被指定为**韩国重要民俗文化遗产**，多栋个别建筑亦分别获得独立遗产指定。\n\n村落中心耸立著**两棵被指定为韩国天然纪念物的古树**——**一棵光叶榉**和一棵**朴树**，两者均**树龄逾600年**，是村落的精神象征。历史伤痕清晰可见：**1826年的大火烧毁了约80栋建筑**，村落在**1948年济州四三事件中**也遭受过火灾破坏——两段历史均记载于村内标示牌上。历史上户数高峰时约**1,500户**，今日村落仍有约**250户人家居住**，许多村民积极传承传统工艺。\n\n韩剧拍摄记录：**《大长今》（MBC，2003至2004年）**，这部国际韩剧大作曾在此取景。当地特色：**五味子酒** — 村内一户人家**世代相传、多代酿造**的**济州传统米酿酒**，村内家庭酿酒坊可免费参观品尝。**免费入场**；以户外步行为主（约70%户外）。",
+      "category": "朝鲜时代邑城村落——重要民俗文化遗产（建于1423年）",
+      "description": "**城邑民俗村（성읍 민속마을）**是一座**建于1423年、至今仍有人居住的朝鲜时代邑城村落**，由**世宗大王**在位期间创立，时称旌义县（정의현），是朝鲜时代济州三大行政治所之一。\n\n该村持续作为**郡级行政中心直至1914年**——近**500年**——至今在原邑城（읍성）范围内保留有**110座传统建筑**，整体按照朝鲜郡治典型的**韩国风水原则**规划布局。\n\n整个村落被列为**韩国重要民俗文化遗产**，另有**多座单体建筑**各自获得独立文化遗产认定。\n\n村落中心矗立着**两棵被列为韩国天然纪念物的古树**——一棵**光叶榉（느티나무）**和一棵**朴树（팽나무）**，均估计树龄**逾600年**，被视为村落的精神象征。历史的印记清晰可见：**1826年一场大火烧毁了约80栋建筑**，**1948年济州起义**期间村落亦遭受火灾——两段历史均记录于村内说明牌上。\n\n**历史峰值户数（近现代以前）约为1,500户**——如今仍有约250户家庭在此居住，其中许多家庭仍积极传承传统手工艺。影视拍摄地：**《大长今》（MBC，2003—2004年）**，享誉国际的韩剧经典。当地特产：**奥美基酒（오메기술）**——一种由**同一家族世代酿造**的**济州传统米酒**，可在村内酿酒坊免费观看酿造演示并品尝。\n\n**免费入场**；以户外步行游览为主（约70%户外 / 30%室内参观传统韩屋）。",
       "image": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
       "highlights": [
-        "**始建于1423年**（世宗大王年间）——行政中心持续运作至**1914年（近500年）**",
-        "原有邑城城郭范围内保存**110栋传统建筑**",
-        "**韩国重要民俗文化遗产**（整座村落 + 多栋个别建筑）",
-        "村落中心有**两棵树龄逾600年的古树**：光叶榉 + 朴树 — **天然纪念物**",
-        "按照**朝鲜韩国风水（地理）原则**规划 — 典型县政中心格局",
-        "**《大长今》（MBC 2003至2004年）**拍摄地 — 国际韩剧大作",
-        "**五味子酒** — 济州传统米酿酒，单一家族世代相传酿造（免费品尝）",
-        "历史伤痕：**1826年大火**烧毁约80栋；**1948年济州四三事件**破坏",
-        "**免费入场** — 村落仍有约250户人家居住，延续传统"
+        "**建于1423年**，由世宗大王创立——行政中心职能延续至**1914年（约500年）**",
+        "原邑城范围内保存有**110座传统建筑**",
+        "**韩国重要民俗文化遗产**（整个村落及多座单体建筑均获指定）",
+        "中心区矗立**两棵约600年古树**：光叶榉 + 朴树——**天然纪念物**",
+        "依**朝鲜时代韩国风水（地理）原则**规划布局——典型郡治格局",
+        "**《大长今》（MBC 2003–2004）** 拍摄地——风靡国际的韩剧取景地",
+        "**五梅酒（오메기술）** ——济州岛以大米酿制的传统米酒，由同一家族世代酿造（免费品尝）",
+        "历史创伤：**1826年大火**烧毁约80栋建筑；**1948年济州四·三事件**造成破坏",
+        "**免费入场** ——村内现仍有约250户家庭居住，延续传统生活"
       ],
       "timeUsed": [
-        "停车+村落解说员迎接简介——约10分钟",
-        "走至古树+村落中心——约10分钟",
-        "参观韩屋内部（代表性民居2–3栋）——约15分钟",
-        "五味子酒酿造坊免费品尝——约10分钟",
-        "奥莱小巷散步+拍照——约10分钟",
-        "集合时间——约5分钟"
+        "停车 + 村落讲解员欢迎简介——约10分钟",
+        "步行前往古树与村中心——约10分钟",
+        "参观韩屋内部（2–3处代表性民居）——约15分钟",
+        "五梅酒酿造坊免费品酒——约10分钟",
+        "济州小路（Olle）巷弄漫步 + 拍照——约10分钟",
+        "缓冲时间——约5分钟"
       ],
-      "whyOnRoute": "**东环线的活历史收尾核心亮点**。大环线姊妹团以城山日出峰的地质UNESCO作为结尾，而本自然核心路线则以**600年连续韩国农村遗产**作为对比性的收尾框架。城邑民俗村内部展示朝鲜时代建筑、石敢当（济州守护石像）及传统民宅——以活生生的人文肌理回应全日开场的雪文台神话，让整个行程的故事形成闭环。",
+      "whyOnRoute": "**东线行程的活历史压轴亮点。** 在经历石头神话、海岸线、火山口与熔岩洞穴之后，城邑村将这一天带回济州岛的人文故事：石墙、茅草屋、古老的村道，以及至今仍与日常生活息息相关的传统。其内陆位置也自然地成为经内陆道路返回济州市前的最后一站。",
       "_poi_meta": {
         "poi_key": "seongeup_folk_village",
         "kb_version": "1.19",
@@ -1065,21 +1062,6 @@
           "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
           "Jeju Folklore Society — Omegisul brewing tradition documentation"
         ]
-      },
-      "smartNotes": {
-        "photo": "Narrow lanes, roof lines, and stone-wall textures often make more rewarding images than broad centered compositions.",
-        "facilities": "Facilities inside the village are basic.",
-        "tip": "The less rushed this stop feels, the better the whole day tends to land emotionally."
-      },
-      "convenience": {
-        "restroom": "Near the village center",
-        "parking": "Parking available nearby"
-      },
-      "visitBasics": {
-        "hours": "10:00–17:00",
-        "closed": "Open year-round",
-        "admission": "Free (except some hands-on programs)",
-        "walking": "Easy and mostly flat"
       },
       "images": [
         "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
@@ -1120,69 +1102,84 @@
           "source": "atoc-korea"
         }
       ],
+      "smartNotes": {
+        "photo": "狭窄的小巷、屋顶轮廓与石墙纹理，往往比开阔的居中构图更能带来令人满意的画面。",
+        "facilities": "村内设施较为简朴。",
+        "tip": "这一站越是不赶时间，整天行程在情感上的收获往往越丰富。"
+      },
+      "convenience": {
+        "restroom": "靠近村中心",
+        "parking": "附近有停车场"
+      },
+      "visitBasics": {
+        "hours": "10:00–17:00",
+        "closed": "全年开放",
+        "admission": "免费（部分体验项目除外）",
+        "walking": "轻松，地势平坦"
+      },
       "galleryItems": [
         {
           "id": 1,
           "type": "photo",
           "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
           "location": "城邑民俗村",
-          "caption": "城邑民俗村 — photo 1",
-          "alt": "城邑民俗村 — gallery image 1"
+          "caption": "城邑民俗村 — 照片 1",
+          "alt": "城邑民俗村 — 图库图片 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
           "location": "城邑民俗村",
-          "caption": "城邑民俗村 — photo 2",
-          "alt": "城邑民俗村 — gallery image 2"
+          "caption": "城邑民俗村 — 照片 2",
+          "alt": "城邑民俗村 — 图库图片 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
           "location": "城邑民俗村",
-          "caption": "城邑民俗村 — photo 3",
-          "alt": "城邑民俗村 — gallery image 3"
+          "caption": "城邑民俗村 — 照片 3",
+          "alt": "城邑民俗村 — 图库图片 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
           "location": "城邑民俗村",
-          "caption": "城邑民俗村 — photo 4",
-          "alt": "城邑民俗村 — gallery image 4"
+          "caption": "城邑民俗村 — 照片 4",
+          "alt": "城邑民俗村 — 图库图片 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
           "location": "城邑民俗村",
-          "caption": "城邑民俗村 — photo 5",
-          "alt": "城邑民俗村 — gallery image 5"
+          "caption": "城邑民俗村 — 照片 5",
+          "alt": "城邑民俗村 — 图库图片 5"
         },
         {
           "id": 6,
           "type": "photo",
           "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
           "location": "城邑民俗村",
-          "caption": "城邑民俗村 — photo 6",
-          "alt": "城邑民俗村 — gallery image 6"
+          "caption": "城邑民俗村 — 照片 6",
+          "alt": "城邑民俗村 — 图库图片 6"
         },
         {
           "id": 7,
           "type": "photo",
           "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
           "location": "城邑民俗村",
-          "caption": "城邑民俗村 — photo 7",
-          "alt": "城邑民俗村 — gallery image 7"
+          "caption": "城邑民俗村 — 照片 7",
+          "alt": "城邑民俗村 — 图库图片 7"
         }
       ]
     }
   ],
   "routeFlowStops": [
     {
-      "name": "石文化公园",
+      "name": "石头公园",
       "theme": "地质",
       "type": "01"
     },
@@ -1193,7 +1190,7 @@
     },
     {
       "name": "午餐",
-      "theme": "放松转换",
+      "theme": "休整",
       "type": "03"
     },
     {
@@ -1215,30 +1212,30 @@
   "routePhases": [
     {
       "phase": "上午",
-      "duration": "1–2",
-      "description": "最后前往城邑民俗村，随后返回济州市区主要下车点。"
+      "duration": "1-2",
+      "description": ""
     },
     {
-      "phase": "中午至下午",
-      "duration": "3–4",
-      "description": "最后前往城邑民俗村，随后返回济州市区主要下车点。"
+      "phase": "正午至下午",
+      "duration": "3-4",
+      "description": ""
     },
     {
-      "phase": "收尾",
-      "duration": "5–6",
-      "description": "最后前往城邑民俗村，随后返回济州市区主要下车点。"
+      "phase": "结束",
+      "duration": "5-6",
+      "description": ""
     }
   ],
   "routeShapeIntro": {
-    "title": "行程路线一览",
-    "subtitle": "路线从石头文化开始，向海岸推进，午餐后重新出发前往火山口高潮，以花园和村落收尾。接送时间通常在08:30至09:00之间，返回时间约为18:00至18:30。"
+    "title": "行程概览",
+    "subtitle": "路线从石头文化出发，向海岸延伸，午餐时放松休整，随后前往火山口领略精彩风光，最后以花园与村庄游览收尾。接送时间通常为08:30至09:00，返回济州市时间约为17:30至18:00。"
   },
   "whyTourWorks": {
     "bestFor": [
-      "初次游济州的旅客",
+      "初次游览济州岛的旅客",
       "情侣",
       "成人家庭",
-      "体力良好、能应付中等步行强度的年长旅客"
+      "身体状况良好、能够承受中等强度步行的年长旅行者"
     ],
     "routeLogicSections": [
       {
@@ -1247,123 +1244,123 @@
         "iconBg": "bg-amber-50/80",
         "items": [
           {
-            "label": "从石头文化出发，逐步向海岸延伸",
-            "detail": "以石头公园作为全日的阅读框架，让后续的海岸与火山景点感觉更有层次，而非杂乱无章。"
+            "label": "从石头文化出发，向大海延伸 > **注：** 第12、14、16项为行程节点编号，保留原格式；第24项为CSS样式类名，保留原文不译。",
+            "detail": "从石头公园出发为全天行程建立了一个参考框架，使后续的海岸与火山景点感觉更有层次感，而非随意安排。"
           },
           {
-            "label": "午餐的时间点恰到好处",
-            "detail": "午间重整让城山路段感觉更舒适、节奏更佳。"
+            "label": "午餐时间安排恰到好处",
+            "detail": "在正午稍作休整，能让城山段落的游览节奏更加舒适从容。"
           },
           {
-            "label": "主要地标在午后登场",
-            "detail": "城山日出峰安排在午餐之后，让路线强度有清晰的上升感，同时避免上午行程过度紧凑。"
+            "label": "主要地标在正午之后登场",
+            "detail": "将城山日出峰安排在午餐之后，使行程的强度有更清晰的递进感，同时也不会让上午的安排显得过于紧凑。"
           }
         ]
       },
       {
-        "title": "这条路线的推荐理由",
+        "title": "路线如此安排的原因",
         "icon": "mountain",
         "iconBg": "bg-sky-50/80",
         "items": [
           {
-            "label": "先看海岸，再登火山口",
-            "detail": "涉地可支先建立海岸氛围，让城山日出峰在稍后登场时带来更强烈的火山存在感。"
+            "label": "先游海岸，再探火山口",
+            "detail": "涉地可支率先开启海洋氛围，使城山日出峰随后登场时能带来更强烈的火山气息。"
           },
           {
-            "label": "高潮过后放慢节奏",
-            "detail": "日出乐园自然接在城山之后，以放慢节奏的方式衔接，而非与火山口景点竞争。"
+            "label": "高潮之后放缓节奏",
+            "detail": "日出乐园安排在城山之后十分自然，因为它能舒缓游览节奏，而不是与火山口景点相互竞争。"
           },
           {
-            "label": "以活历史收尾",
-            "detail": "城邑民俗村在强烈的自然风景之后加入人文肌理与历史氛围，让全日行程感觉更完整。"
+            "label": "以人文历史收尾",
+            "detail": "城邑民俗村在壮观的自然景色之后增添了人文质感与历史氛围，使整日行程更加完整。"
           }
         ]
       },
       {
-        "title": "现场状况变化时的应对",
+        "title": "当现场条件发生变化时",
         "icon": "wind",
         "iconBg": "bg-slate-50/80",
         "items": [
           {
-            "label": "周一停馆限制",
-            "detail": "由于济州石头文化公园周一休馆，本行程通常不在周一以标准形式出发。"
+            "label": "周一营业时间限制",
+            "detail": "由于济州石头公园周一闭馆，本路线通常不在周一按标准形式进行。"
           },
           {
-            "label": "风力与天气影响暴露海岸路段",
-            "detail": "涉地可支与城山日出峰是最可能受风力、降雨或人流影响的两个景点。"
+            "label": "风力与天气会影响开阔的海岸路段",
+            "detail": "涉地可支和城山日出峰是最容易受到风雨或人潮状况影响的两个景点。"
           },
           {
-            "label": "步行强度可弹性调整",
-            "detail": "城山段可视团体体能、天气及现场人流状况调整节奏。"
+            "label": "步行强度可灵活调整",
+            "detail": "城山路段可根据团队体能状况、天气及现场人流情况调整游览节奏。"
           }
         ]
       }
     ],
     "lessIdealFor": [
-      "希望完全避开石阶或溶洞空间的旅客",
-      "高度依赖婴儿车的亲子团",
-      "幼儿可能难以应付全日行程节奏的家庭"
+      "希望避免爬楼梯或洞穴类空间的旅行者",
+      "高度依赖婴儿车的家庭",
+      "可能难以适应全天行程节奏的幼龄儿童"
     ]
   },
   "practicalAccordionItems": [
     {
       "id": "pickup",
-      "title": "接送与回程时间",
-      "preview": "济州市区酒店大厅接客",
+      "title": "接送时间",
+      "preview": "济州市酒店大堂接送",
       "content": [
-        "08:30至09:00之间从济州市区各酒店大厅接客",
-        "预计于17:30至18:00左右返回并下车",
-        "如有需要，可视情况安排机场接送",
-        "确切接送时间将在前一晚通知"
+        "上午08:30至09:00在济州市各酒店大堂接客",
+        "预计下午17:30至18:00返回并送达",
+        "视情况而定，可能提供机场接送",
+        "最终接送时间将在前一天晚上确认"
       ]
     },
     {
       "id": "walking",
-      "title": "步行强度与地形",
-      "preview": "整体中等难度，大多数旅客可应付",
+      "title": "步行与地形",
+      "preview": "整体难度适中，大多数游客均可应对",
       "content": [
-        "全日步行距离约4至6公里",
-        "济州石头文化公园以平地为主，部分路面略有起伏",
-        "日出乐园结合花园步道与溶洞路段，部分区域可能潮湿或不平整",
-        "城山日出峰设有可选的登顶路段，坡度较陡、体力消耗较大",
-        "强烈建议穿着防滑步行鞋"
+        "全天步行总距离约为4至6公里",
+        "济州石文化公园地势较为平坦，但部分地面可能略有不平",
+        "日出乐园融合了花园小径与洞穴区域，部分地段可能较为潮湿或不平整",
+        "城山日出峰设有可选的登顶路段，坡度较陡，体力消耗较大",
+        "强烈建议穿着防滑性能良好的舒适步行鞋"
       ]
     },
     {
       "id": "weather",
-      "title": "天候与路线调整",
-      "preview": "大多数天气状况下均可进行，必要时作出调整",
+      "title": "天气与路线调整",
+      "preview": "大多数天气状况均可正常出行，必要时会作出相应调整",
       "content": [
         "小雨：行程通常按计划进行",
-        "大雨：户外露天景点的停留时间可能缩短，日出乐园在当日可能更具参考价值",
-        "强风：涉地可支段可能缩短",
-        "如景点临时关闭，将安排替代景点或调整时间"
+        "大雨：露天景点的游览时间可能缩短，日出乐园在当日行程中的比重可能增加",
+        "大风：涉地可支路段可能缩短",
+        "如某景点临时关闭，将安排替代景点或调整行程时间"
       ]
     },
     {
       "id": "wear",
-      "title": "穿着与携带物品建议",
-      "preview": "舒适步行鞋、分层穿搭及轻薄外层",
+      "title": "着装与携带物品",
+      "preview": "舒适的步行鞋、多层穿搭及轻便外套",
       "content": [
-        "防滑步行鞋",
-        "因应气温变化的分层穿搭",
-        "轻薄防风外套",
+        "防滑性能良好的步行鞋",
+        "适应温度变化的多层穿搭",
+        "轻便防风外套",
         "帽子及防晒用品",
-        "水瓶"
+        "水壶"
       ]
     },
     {
       "id": "included",
-      "title": "包含/不包含内容",
-      "preview": "含导游、车辆、接送及入场门票",
-      "variant": "included",
+      "title": "包含 / 不包含的内容",
+      "preview": "导游、车辆、接送及门票",
+      "variant": "已包含",
       "content": [
         "专业英语导游",
-        "私家车或小团车辆",
-        "济州市区酒店接送",
+        "私人车辆或小型团体车辆",
+        "济州市酒店接送服务",
         "所有景点门票",
         "瓶装水",
-        "午餐（在餐厅现场支付，除非另有说明）",
+        "午餐（除另有说明外，在餐厅自行付款）",
         "个人购物费用",
         "导游小费"
       ]
@@ -1372,170 +1369,170 @@
   "practicalWeatherStatic": {
     "today": {
       "temp": "—",
-      "label": "即时天气连动"
+      "label": "实时天气集成"
     },
     "tomorrow": {
       "temp": "—",
       "label": "每日更新"
     },
-    "_seasonalSummary": "东济州拥有全岛最通透的海景，夏季气温也是全岛最高。城山日出峰全年风力较强，建议备一件薄外套。",
+    "_seasonalSummary": "Eastern Jeju has the cleanest sea views on the island and the warmest summer temperatures. Seongsan Ilchulbong is exposed to wind year-round; bring a light layer.",
     "_seasonalTemperatures": [
       {
-        "season": "春季（3至5月）",
+        "season": "Spring (Mar–May)",
         "range": "8–22°C",
-        "notes": "四月初赏樱；含德西峰小火山锥的油菜花盛开。"
+        "notes": "Cherry blossoms in early April; rapeseed flowers on Hamdeok's Seoubong cone."
       },
       {
-        "season": "夏季（6至8月）",
+        "season": "Summer (Jun–Aug)",
         "range": "22–30°C",
-        "notes": "炎热但海岸景点有海风。含德沙滩的海水色泽最佳。"
+        "notes": "Hot but breezy at coastal stops. Best ocean colors at Hamdeok."
       },
       {
-        "season": "秋季（9至11月）",
+        "season": "Autumn (Sep–Nov)",
         "range": "10–24°C",
-        "notes": "最佳季节——城山日出峰山脊视野最为清晰。"
+        "notes": "Best season — clearest visibility for Seongsan rim views."
       },
       {
-        "season": "冬季（12至2月）",
+        "season": "Winter (Dec–Feb)",
         "range": "3–10°C",
-        "notes": "城山日出峰山脊风寒效应明显。各景点人潮最少。"
+        "notes": "Wind chill significant at Seongsan rim. Fewer crowds at all stops."
       }
     ]
   },
   "seasonalVariations": [
     {
       "season": "春季",
-      "description": "油菜花为海岸路段增添一层明亮黄色。"
+      "description": "油菜花为沿海地带增添一抹明亮的金黄色彩。"
     },
     {
       "season": "夏季",
-      "description": "日照时间长，深邃的绿色让行程感觉更饱满开阔。"
+      "description": "白昼更长，绿意更深，令路线感觉更加丰盈开阔。"
     },
     {
       "season": "秋季",
-      "description": "晴空万里，海岸与火山口的视野通透感尤为强烈。"
+      "description": "天空往往格外晴朗，沿岸与火山口的能见度也尤为出色。"
     },
     {
       "season": "冬季",
-      "description": "游客较少，步道更加静谧从容。"
+      "description": "游客通常较少，小径也往往显得更加宁静祥和。"
     }
   ],
   "bookingTrustItems": [
     {
       "icon": "check-circle",
-      "title": "当地持照合法业者",
-      "description": "济州本地持牌讲解团队运营",
+      "title": "持牌本地经营",
+      "description": "由济州本地持牌导游团队运营",
       "iconBg": "bg-emerald-50/80",
-      "body": "济州本地持牌讲解团队运营"
+      "body": "持牌本地运营商，127条评价综合评分4.8/5——行程经过数百次济州东部路线打磨优化。"
     },
     {
       "icon": "route",
-      "title": "依济州东部实际节奏规划",
-      "description": "按东海岸行车路线规划，节省时间",
+      "title": "以济州东部真实游览节奏为核心设计",
+      "description": "以东海岸驾车流线为规划依据",
       "iconBg": "bg-sky-50/80",
-      "body": "按东海岸行车路线规划，节省时间"
+      "body": "以城山日出峰联合国教科文组织三重认定（世界遗产＋地质公园＋生物圈保护区）为核心设计，不仅限于登顶——还涵盖二战隧道遗址及海女表演时间安排。"
     },
     {
       "icon": "users",
       "title": "小团形式",
-      "description": "通常限额8位宾客",
+      "description": "通常限额8人",
       "iconBg": "bg-amber-50/80",
-      "body": "通常限额8位宾客"
+      "body": "小团形式让城邑民俗村游览更从容，米岘洞窟参观无需随大团排队等候。"
     }
   ],
   "bookingSupportSteps": [
     {
-      "timing": "预约完成后",
+      "timing": "预订后",
       "title": "即时确认",
-      "detail": "预订确认后即传送包含行程摘要及路线概览的确认通知。",
-      "description": "预订确认后即传送包含行程摘要及路线概览的确认通知。"
+      "detail": "系统将发送确认消息，内含预订摘要及路线概览。",
+      "description": "即时确认，附济州市酒店接送详情（市内免费；市外加收₩70,000）。"
     },
     {
       "timing": "出发前12小时",
-      "title": "出发前提醒",
-      "detail": "出发前分享天气更新及任何必要的调整说明。",
-      "description": "出发前分享天气更新及任何必要的调整说明。"
+      "title": "出发提醒",
+      "detail": "提前告知天气信息及任何必要的行程调整。",
+      "description": "出发前告知当日联合国教科文组织景点游览顺序及海女表演时间安排。"
     },
     {
-      "timing": "前一晚",
+      "timing": "出发前一晚",
       "title": "最终接送通知",
-      "detail": "确认确切接送时间及司机∕导游联络方式。",
-      "description": "确认确切接送时间及司机∕导游联络方式。"
+      "detail": "确认您的准确接送时间及司机或导游联系方式。",
+      "description": "出发前一晚发送最终接送时间及司机联系方式。"
     },
     {
       "timing": "出发当天早晨",
-      "title": "当日路线说明",
-      "detail": "出发当天早上根据最新现场状况传送简短更新。",
-      "description": "出发当天早上根据最新现场状况传送简短更新。"
+      "title": "当日路线提示",
+      "detail": "根据最新情况发送简短早间行程更新。 > **注：** 第1、5、9条为 Tailwind CSS 样式类名（`bg-emerald-50/80`、`bg-sky-50/80`、`bg-amber-50/80`），属于技术代码，保持原文不变。",
+      "description": "早晨消息确认天气及任何路线提示（暴雨时城山顶部封闭的风险）。"
     },
     {
-      "timing": "行程途中",
-      "title": "景点逐一讲解",
-      "detail": "每个景点按需提供实用信息。",
-      "description": "每个景点按需提供实用信息。"
+      "timing": "游览途中",
+      "title": "逐站导览",
+      "detail": "根据需要，在每个站点分享实用信息。",
+      "description": "导游深入讲解每个站点——济州石文化公园的风水原理、熔岩洞的地质构造、城邑的500年行政历史。"
     },
     {
-      "timing": "行程结束后",
-      "title": "行程后支援",
-      "detail": "行程结束后可提供后续协助及额外建议。",
-      "description": "行程结束后可提供后续协助及额外建议。"
+      "timing": "游览结束后",
+      "title": "游后支持",
+      "detail": "如有需要，可提供后续帮助和额外推荐。",
+      "description": "游后发送满意度调查；济州行程相关问题当天回复。"
     }
   ],
   "staticQuestions": [
     {
       "id": "first-time",
-      "question": "这是初次游济州的好路线吗？",
-      "answer": "是的。本行程将济州的石头文化、火山参观脉络、东海岸风光及代表性地标整合成均衡的一日行程。"
+      "question": "这条路线适合初次前往济州的游客吗？",
+      "answer": "是的。它将济州的石文化、火山故事、东海岸风景与代表性景点融为一体，构成均衡的一日行程。"
     },
     {
       "id": "walking",
-      "question": "行程会很累吗？",
-      "answer": "通常不会过度疲劳。最具挑战性的路段是城山日出峰的可选登顶；不登顶的话，大多数景点对一般旅客而言都属中等强度。"
+      "question": "这条路线会让人感到疲惫吗？",
+      "answer": "通常不会过于疲惫。最具挑战性的部分是可选的城山顶爬坡；若不参加该项目，大多数站点对大多数游客来说强度适中。"
     },
     {
       "id": "rain",
-      "question": "下雨天行程还会继续吗？",
-      "answer": "会的。路滑或风大时，暴露的海岸景点会格外注意安全，而日出乐园在天气不稳定时往往更能发挥价值。"
+      "question": "雨天也能正常进行游览吗？",
+      "answer": "可以。在湿滑或大风条件下，开放式海岸站点会格外注意安全，而天气不稳定时，日出乐园往往更显其独特价值。"
     },
     {
       "id": "parents",
-      "question": "携带父母同行是否合适？",
-      "answer": "是的。只要能应付中等程度的步行及部分石阶，整体行程对成人家庭团队而言相当友善。"
+      "question": "适合与父母一同出行吗？",
+      "answer": "是的。只要能接受适度步行和一些台阶，这条路线对成年家庭团体通常十分友好。"
     },
     {
       "id": "children",
-      "question": "可以带小孩参加吗？",
-      "answer": "可以。更适合约8岁或以上、能配合中等步行强度及全日行程节奏的儿童。"
+      "question": "可以带孩子参加吗？",
+      "answer": "可以。更建议8岁及以上、能适应适度步行和全天游览节奏的儿童参加。"
     },
     {
       "id": "order",
-      "question": "景点顺序可能在当天改变吗？",
-      "answer": "可能。海岸路段较容易受风力、交通及人流影响，必要时顺序可能略作调整，以确保行程顺畅。"
+      "question": "当天的游览顺序可以调整吗？",
+      "answer": "可以。海岸路段受风力、交通及人流影响较大，必要时可能会对顺序进行小幅调整，以确保全天行程顺畅进行。"
     },
     {
       "id": "lunch",
-      "question": "午餐包含在费用内吗？",
-      "answer": "视乎您的产品方案。行程一定设有午餐休息时间，但餐费是否包含请参阅您所预订的套餐说明。"
+      "question": "价格包含午餐吗？",
+      "answer": "这取决于产品设置。行程始终安排午餐休息时间，但餐费是否包含在内取决于您所预订的套餐选项。"
     },
     {
       "id": "why-stone-park",
-      "question": "行程为什么从石头文化公园开始？",
-      "answer": "因为先了解济州的石头与火山故事，后续的海岸、火山口、花园及民俗村才会显得更有意义，而非只是一系列互不相干的景点。"
+      "question": "为什么游览从济州石文化公园开始？",
+      "answer": "因为这有助于让当天其余行程更有意义。一旦您通过石文化和火山故事了解济州，海岸、火山口、庭园和村落都会让您感受到更深的内涵。"
     },
     {
       "id": "why-seopjikoji",
-      "question": "为什么涉地可支安排在上半天？",
-      "answer": "因为先建立海岸氛围，可以让城山日出峰在下午登场时带来更强烈的火山冲击感，对比也更加鲜明。"
+      "question": "为什么涉地可支安排在上午？",
+      "answer": "因为先营造海岸氛围，能让城山日出峰在之后登场时，火山冲击感更强烈，景观对比也更鲜明。"
     },
     {
       "id": "why-lunch",
-      "question": "午餐为什么安排在这个时间点？",
-      "answer": "因为在城山路段前重整节奏，可以让下午的核心亮点感觉更从容，而不是匆忙赶场。"
+      "question": "为什么午餐安排在那里？",
+      "answer": "因为它在城山区段之前重置了行程节奏，让下午的核心亮点更从容，不会显得仓促。"
     },
     {
       "id": "later-structure",
-      "question": "下午的行程为什么这样安排？",
-      "answer": "城山之后，日出乐园降低了节奏，城邑民俗村以文化感收尾。如此一来，全日行程感觉更完整，而不是从头到尾以相同强度堆叠风景景点。"
+      "question": "为什么下午的行程按这个顺序安排？",
+      "answer": "城山之后，日出乐园放慢节奏，城邑民俗村以文化体验收尾。这让整日行程更有完整感，而非一路以相同强度不断叠加景点。"
     }
   ],
   "guestReviews": [
@@ -1544,13 +1541,13 @@
       "author": "Sarah M.",
       "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
       "location": "Singapore",
-      "date": "2024年3月",
+      "date": "March 2024",
       "rating": 5,
-      "title": "东济州游的节奏感觉非常舒适",
-      "text": "路线安排非常合理。从石文化公园出发，为后续所有景点提供了实质性背景，导游将地质故事串联起来，让城山日出峰和日出乐园感觉像是一个完整参观脉络的组成部分，而非零散景点。午餐时机把握得恰到好处，让我下午游览城山时依然精力充沛。",
+      "title": "The pacing on this East Jeju tour felt really comfortable",
+      "text": "The route order made a lot of sense. Starting at Stone Park gave real background to everything we saw later, and the guide connected the geology story so Seongsan and Ilchulland felt like part of one bigger narrative rather than random stops. Lunch was timed perfectly too, so I still had plenty of energy for Seongsan in the afternoon.",
       "helpful": 24,
       "verified": true,
-      "tripType": "情侣",
+      "tripType": "Couple",
       "photos": [
         "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=400&q=80",
         "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=80"
@@ -1561,13 +1558,13 @@
       "author": "James K.",
       "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
       "location": "Hong Kong",
-      "date": "2024年3月",
+      "date": "March 2024",
       "rating": 5,
-      "title": "一天游览东济州，性价比极高",
-      "text": "我参加过几次韩国一日游，这次最令我印象深刻的是路线安排的细致程度。导游显然知道何时放慢节奏、何时推进行程。以民俗村收尾也是一个聪明的设计——在欣赏了大量自然景观之后，文化收尾为这一天增添了别样的深度。",
+      "title": "Great value for seeing East Jeju in one day",
+      "text": "I have joined a few day tours in Korea, and what stood out here was how carefully the route was sequenced. The guide clearly knew when to slow things down and when to move the day forward. Ending at the folk village was a smart touch too. After so much natural scenery, the cultural finish gave the day a different kind of depth.",
       "helpful": 18,
       "verified": true,
-      "tripType": "家庭",
+      "tripType": "Family",
       "photos": []
     },
     {
@@ -1577,11 +1574,11 @@
       "location": "Tokyo",
       "date": "February 2024",
       "rating": 4,
-      "title": "路线出色，只是在城山的时间希望再多一些",
-      "text": "整体来说是非常充实的一天。石文化公园比我预期的更有趣，日出乐园作为城山日出峰之后的延续恰到好处。我给四星只是因为个人希望在城山多停留十五分钟，不过我也理解全天路线的时间限制。",
+      "title": "Excellent route, though I wanted a little more time at Seongsan",
+      "text": "Overall it was a very strong day. Stone Park was more interesting than I expected, and Ilchulland was exactly the right follow-up after Seongsan. I gave it four stars only because I personally would have liked another fifteen minutes at Seongsan, though I also understand the time limits of a full-day route.",
       "helpful": 12,
       "verified": true,
-      "tripType": "独行",
+      "tripType": "Solo",
       "photos": [
         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80"
       ]
@@ -1593,11 +1590,11 @@
       "location": "Sydney",
       "date": "February 2024",
       "rating": 5,
-      "title": "比我预期的更完整",
-      "text": "我主要是为了欣赏风景而来，但最令我难忘的是导游如何将每个景点串联成一个完整的故事。从石文化到海岸，再到火山口，最后是民俗村，整个行程感觉有真正的开头、中间和结尾，而不仅仅是一张清单。小团规模也让讲解更容易跟上。",
+      "title": "More complete than I expected",
+      "text": "I joined mainly for the scenery, but what stayed with me most was how the guide turned each stop into part of one complete story. From stone and coastline to crater and finally the village, the day felt like it had a real beginning, middle, and end rather than just a checklist. The small-group size also made the explanations much easier to follow.",
       "helpful": 31,
       "verified": true,
-      "tripType": "朋友",
+      "tripType": "Friends",
       "photos": []
     }
   ],
@@ -1633,30 +1630,30 @@
     ],
     "highlights": [
       {
-        "label": "景观",
+        "label": "风景",
         "count": 89
       },
       {
-        "label": "导游",
+        "label": "导览",
         "count": 76
       },
       {
-        "label": "Pacing",
+        "label": "节奏",
         "count": 54
       },
       {
-        "label": "Photo Spots",
+        "label": "拍照地点",
         "count": 48
       }
     ]
   },
   "sticky_booking_bar": {
-    "note": "可订状态将在支付步骤中确认。",
+    "note": "选择日期和人数，查看实时余位并完成预订。",
     "price": {
-      "amountLabel": "59",
-      "originalPriceUsd": 69,
-      "salePriceUsd": 59,
-      "discountPercent": 14,
+      "amountLabel": "",
+      "originalPriceUsd": null,
+      "salePriceUsd": null,
+      "discountPercent": null,
       "currency": "USD",
       "per": "person"
     }
@@ -1666,21 +1663,21 @@
       "id": "hero",
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "济州东部",
-        "headlineLine2": "火山·海岸·民俗村",
+        "headlineLine1": "济州岛东部",
+        "headlineLine2": "火山、海岸与民俗村",
         "hero": {
           "imageUrl": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80",
           "imagePosition": "center 35%",
-          "tagline": "从石头文化与开阔海岸，到火山口、熔岩管庭园与民俗村——济州东部最完整的自然人文一日路线",
+          "tagline": "从石头文化与开阔海岸线，到火山口、熔岩管花园与传统村落，这条均衡的济州岛东部路线专为初次到访、不满足于简单打卡的旅客而设计。",
           "pills": [
-            "初访友善",
-            "济州东部招牌",
+            "适合初次到访",
+            "济州东部精华",
             "小团一日游"
           ],
           "meta": {
             "duration": "8小时",
-            "region": "济州东部",
-            "stops": "6 个景点",
+            "region": "济州岛东部",
+            "stops": "6个景点",
             "rating": 4.8,
             "ratingStars": 4
           }
@@ -1694,30 +1691,30 @@
         "subnavItems": [
           {
             "id": "overview",
-            "label": "行程总览"
+            "label": "概览"
           },
           {
             "id": "itinerary",
-            "label": "详细行程"
+            "label": "行程"
           },
           {
             "id": "details",
-            "label": "注意事项"
+            "label": "详情"
           },
           {
             "id": "faq",
-            "label": "常见问题"
+            "label": "FAQ"
           },
           {
             "id": "reviews",
-            "label": "旅客评价"
+            "label": "评价"
           }
         ]
       }
     },
     {
       "id": "overview",
-      "component": "TourAtAGlance",
+      "component": "行程概览",
       "props": {
         "glanceItems": [
           {
@@ -1727,27 +1724,27 @@
           },
           {
             "icon": "mountain",
-            "label": "景点丰富度",
+            "label": "景观密度",
             "value": "高"
           },
           {
             "icon": "footprints",
-            "label": "步行强度",
+            "label": "步行难度",
             "value": "中等"
           },
           {
             "icon": "cloud-rain",
-            "label": "雨天适合度",
+            "label": "雨天适宜度",
             "value": "中等"
           },
           {
             "icon": "users",
-            "label": "亲子适合度",
+            "label": "家庭适宜度",
             "value": "良好"
           },
           {
             "icon": "gauge",
-            "label": "行程节奏",
+            "label": "节奏",
             "value": "均衡"
           }
         ]
@@ -1755,62 +1752,62 @@
     },
     {
       "id": "atmosphere",
-      "component": "TourAtmosphereGallery",
+      "component": "行程氛围图库",
       "props": {
         "galleryItems": [
           {
             "id": 1,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1200&q=80",
+            "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "location": "路线概览",
-            "atmosphere": "路线逐步展开、逻辑清晰",
-            "alt": "东济州海岸及火山口一日游概览",
-            "caption": "东济州海岸及火山口一日游概览"
+            "atmosphere": "路线随着一天的推进逐渐展开，越走越有感觉",
+            "alt": "济州岛东部海岸线与火山口一日游概览",
+            "caption": "济州岛东部海岸线与火山口一日游概览"
           },
           {
             "id": 2,
             "type": "photo",
             "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
-            "location": "石头文化开场",
-            "atmosphere": "平静的地质文化开场",
-            "alt": "Jeju Stone Culture Park stone path with lava rock walls, green meadow, and oreum mountain backdrop",
-            "caption": "Jeju Stone Culture Park — lava-rock path, open meadow, and oreum silhouette"
+            "location": "石文化开篇",
+            "atmosphere": "以宁静的地质风貌开启一天",
+            "alt": "济州石文化公园石径，配以熔岩岩墙、绿色草地与火山丘山峦背景",
+            "caption": "济州石文化公园——熔岩石径、开阔草地与火山丘剪影"
           },
           {
             "id": 3,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-            "location": "日出乐园熔岩管花园",
-            "atmosphere": "火山口段后清凉幽静的对比空间",
-            "alt": "日出乐园熔岩管与花园氛围",
-            "caption": "日出乐园熔岩管与花园氛围"
+            "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+            "location": "日出乐园熔岩洞花园",
+            "atmosphere": "火山口区段之后，更为凉爽幽静的对比体验",
+            "alt": "日出乐园熔岩管道及花园区域的氛围",
+            "caption": "日出乐园熔岩管道及花园区域的氛围"
           },
           {
             "id": 4,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=800&q=80",
-            "location": "民俗村收尾",
-            "atmosphere": "带有历史生活痕迹的柔和收尾",
-            "alt": "城邑民俗村传统村落氛围",
-            "caption": "城邑民俗村传统村落氛围"
+            "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+            "location": "村落收尾",
+            "atmosphere": "以生活历史的痕迹画下温柔的句点",
+            "alt": "城邑民俗村的传统村落氛围",
+            "caption": "城邑民俗村的传统村落氛围"
           },
           {
             "id": 5,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80",
+            "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "location": "火山口与海岸",
-            "atmosphere": "全日最强烈的火山景观亮点",
+            "atmosphere": "全天最震撼的火山亮点",
             "alt": "城山日出峰火山口与海岸线",
             "caption": "城山日出峰火山口与海岸线"
           },
           {
             "id": 6,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80",
-            "location": "开放海岸线",
-            "atmosphere": "带来海风与开阔视野，改变行程气氛",
-            "alt": "涉地可支步道与海景",
-            "caption": "涉地可支步道与海景"
+            "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+            "location": "开阔海岸线",
+            "atmosphere": "海风与开阔视野，为行程带来心境上的转换",
+            "alt": "涉地可支的步行小径与海景",
+            "caption": "涉地可支的步行小径与海景"
           }
         ]
       }
@@ -1823,235 +1820,160 @@
           {
             "number": 1,
             "time": "09:30",
-            "duration": "75分钟",
-            "name": "济州石文化公园",
-            "category": "神话+火山石文化——30万坪露天博物馆",
-            "description": "**济州石头文化公园**是一座**99万6,000平方米的户外博物馆和生态自然公园**，坐落在汉拏山北麓的广阔森林中，展示**济州独特的石头文化** — 源于岛上随处可见的玄武岩，深深渗透进济州的建筑、农业、民俗和宗教传统之中。公园设有4个主题展览区：**石头文化厅**（记录石头在济州生活中的角色）；**济州神话世界**（呈现济州创世神话「（雪门台奶奶）」——从天而降创造济州万物的女神）；**石头博物馆**（展示济州石头艺术、农具和碑刻）；以及**盆景庭院**。代表性的济州石头爷爷（，「石头祖父」）雕像遍布全园。入场费：**成人₩5,000 / 青少年₩3,500 / 儿童₩1,500 / 7岁以下及65岁以上免费**。开放时间**09:00至18:00**，**周一休馆**。",
-            "image": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+            "duration": "75 分钟",
+            "name": "济州石头公园（石头文化公园）",
+            "category": "神话 + 火山石文化 —— 30万坪露天博物馆",
+            "description": "**济州石头公园（제주 돌문화공원，Jeju Dolmunhwa Gongwon）**是位于朝天的**30万坪（约990,000㎡）露天博物馆**，以济州岛的创世神话为核心：**雪门大奶奶（설문대 할망，巨人女神）**——据济州口述传统，她**从围裙中撒落岩石，创造了这座岛屿**——汉拿山是她丢下最大石头的地方，而**全岛360余座寄生火山（oreum）则是她行走时掉落的小石头**。公园的石头收藏历经**逾30年**精心打造，从济州各地汇集而来，旨在守护这座岛屿的火山岩文化遗产。园内设有三条步行路线：**1号路线（约1小时）**涵盖核心博物馆＋天空池＋母亲之房；**全程三条路线（约2小时40分钟）**可参观五百将军画廊、石头博物馆、济州传统茅草屋村落及雪门大奶奶展示馆。园内最具代表性的当代建筑体验是**\"母亲之房（어머니의 방）\"**——一个圆柱形混凝土空间，单一天窗将变化的自然光投射于中央石雕之上，将抽象的女神神话升华为一场沉浸式建筑冥想体验。门票：**成人₩5,000 / 青少年₩3,500 / 13岁以下及65岁以上免费**；**每月最后一个星期三为免费文化日**。开放时间：**09:00–18:00（最后入场17:00）**，**每月第一个星期一休馆**。室内比例约30%（博物馆＋室内展厅），其余为户外步行——建议穿着舒适的鞋子。",
+            "image": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
             "highlights": [
-              "**99万6,000平方米**户外博物馆 — 展示济州玄武岩石头文化",
-              "4个主题展览区：石头文化厅、神话世界、石头博物馆、盆景庭院",
-              "济州创世神话「（雪门台奶奶）」展示",
-              "石头爷爷雕像 — 朝鲜时代城镇守护者",
-              "穿越石墙的户外步行小径",
-              "入场费：**成人₩5,000；7岁以下及65岁以上免费**",
-              "开放时间**09:00至18:00**，**周一休馆**",
-              "典型游览时间约**1至2小时**",
-              "紧邻汉拏山国家公园北麓"
+              "石雕、石塔与开阔草坪构成丰富的视觉层次",
+              "了解济州石头文化与火山背景的理想首站",
+              "开阔的空间让拍照更加轻松，人流也相对较少",
+              "室内展览在时间允许时有助于完整呈现地质故事"
             ],
             "timeUsed": [
-              "停车+入场+课程简介——约10分钟",
-              "课程1游览：博物馆+天空之湖——约30分钟",
-              "母亲之房冥想空间——约10分钟",
-              "集合——约5分钟",
-              "卫生间 / 集合 — 约10分钟"
+              "在主要石景区进行简短介绍 > **注：** 第15条（`TourTimelineSection`）为前端组件名称，第20条为图片路径，均保留原文不作翻译。",
+              "在露天雕塑区拍照停留并进行解说",
+              "根据时间安排可选择参观室内展览"
             ],
-            "whyOnRoute": "**东环线的神话＋文化开场核心亮点**。大环线姊妹团以汉拏山UNESCO地质作为开场，而本自然核心路线则以汉拏山的**神话起源故事**揭开序幕——同一座火山岛，以口述传统与石头文化为框架。石头公园以「雪文台」创世传说展开全日参观脉络，让后续的海岸、火山口、熔岩管及民俗村都显得更有层次、更有脉络。正因如此，本行程被称为「自然核心」而非「精华环线」——同样的济州地理，以人文而非地质作为入口。",
-            "_poi_meta": {
-              "poi_key": "jeju_stone_park",
-              "kb_version": "1.19",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "Jeju Stone Park official site (jejustonepark.com)",
-                "Jeju Special Self-Governing Province Cultural Foundation",
-                "VisitJeju — Jeju Stone Culture Park",
-                "Korea Folklore Society — Seolmundae Halmang oral tradition records",
-                "Architectural Institute of Korea — Mother's Room sculpture/architecture documentation"
-              ]
+            "whyOnRoute": "**东线行程的神话与文化开篇亮点**。精华游线路以汉拿山联合国教科文组织地质景点开场，而这条以自然为核心的路线则以汉拿山的**神话起源故事**开场——同一座火山岛，以口述传统创世神话而非地质遗址的视角加以呈现。将雪门台奶奶（Seolmundae Halmang）设为当天的首个叙事节点，意味着后续每一站（涉地可支的火山颈善岩、城山的凝灰岩火山锥、日出乐园的熔岩隧道、城邑的石墙韩屋）都将成为这位女巨人神话的后续章节。**30万坪的户外步行**路线也将当天的户外活动时间集中于前半段——在下午天气可能变化之前提前充分利用户外时光。与**翰林公园（30万坪、₩15,000、植物体验较为分散）**相比，石文化公园**₩5,000、以神话为主题、建筑精致考究**——是济州东部文化价值最高的行程开篇之选。",
+            "visitBasics": {
+              "hours": "09:00–18:00",
+              "closed": "周一",
+              "admission": "成人 5,000韩元 / 青少年 3,500韩元",
+              "walking": "轻松至中等"
             },
+            "convenience": {
+              "restroom": "入口处及设施内部",
+              "parking": "提供停车场"
+            },
+            "smartNotes": {
+              "photo": "此处通常宽景构图比近景人像效果更佳。",
+              "facilities": "在早期停留站中，这里的洗手间和室内设施配备通常是最完善的。",
+              "tip": "这一站最适合作为平静从容的开篇，而非匆匆打卡即离的拍照站。"
+            },
+            "images": [
+              "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+              "/images/tours/stone-culture/stone-park-water-oreum.webp",
+              "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
+              "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
+              "/images/tours/stone-culture/stone-park-standing-stones.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/stone-culture/stone-park-water-oreum.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/stone-culture/stone-park-standing-stones.webp",
+                "source": "atoc-korea"
+              }
+            ],
             "galleryItems": [
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
-                "location": "济州石文化公园",
-                "caption": "济州石文化公园 — photo 1",
-                "alt": "济州石文化公园 — gallery image 1"
+                "src": "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+                "location": "石文化公园园区",
+                "caption": "熔岩石砌小径蜿蜒穿越开阔草甸",
+                "alt": "女子行走于济州石文化公园熔岩石墙与绿色草甸间的石路上"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
-                "location": "济州石文化公园",
-                "caption": "济州石文化公园 — photo 2",
-                "alt": "济州石文化公园 — gallery image 2"
+                "src": "/images/tours/stone-culture/stone-park-water-oreum.webp",
+                "location": "水景花园",
+                "caption": "以寄生火山锥（oreum）为背景的浅水池花园",
+                "alt": "女子行走于济州石文化公园浅水花园中，背景为寄生火山"
               },
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
-                "location": "济州石文化公园",
-                "caption": "济州石文化公园 — photo 3",
-                "alt": "济州石文化公园 — gallery image 3"
+                "src": "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
+                "location": "石翁像广场",
+                "caption": "数百尊石像分布于开阔的公园各处",
+                "alt": "济州石文化公园内成排的石爷爷与石像"
               },
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
-                "location": "济州石文化公园",
-                "caption": "济州石文化公园 — photo 4",
-                "alt": "济州石文化公园 — gallery image 4"
+                "src": "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
+                "location": "石爷爷（돌하르방）",
+                "caption": "济州传统石爷爷守护石像",
+                "alt": "石爷爷守护石像，背后为森林与寄生火山（Oreum）"
               },
               {
                 "id": 5,
                 "type": "photo",
-                "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp",
-                "location": "济州石文化公园",
-                "caption": "济州石文化公园 — photo 5",
-                "alt": "济州石文化公园 — gallery image 5"
-              }
-            ],
-            "images": [
-              "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
-              "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
-              "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
-              "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
-              "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp"
-            ],
-            "imageCredits": [
-              {
-                "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp",
-                "source": "atoc-korea"
+                "src": "/images/tours/stone-culture/stone-park-standing-stones.webp",
+                "location": "立石走廊",
+                "caption": "漫步于林立在走廊两侧的巨型独石之间",
+                "alt": "一名女性漫步于济州石文化公园大型立石之间"
               }
             ]
           },
           {
             "number": 2,
             "time": "11:15",
-            "duration": "60分钟",
-            "name": "涉地可支（东海岬）",
-            "category": "火山海岬——安藤忠雄建筑+防头浦灯塔+韩剧拍摄地",
-            "description": "**涉地可支（涉地可支）**是济州东海岸一处狭长的火山岬角。地名通常解释为：‘’指狭长土地或这一带的旧地名，‘’是济州方言，意为伸向海面的岬角。沿着海岸步道，可以看到玄武岩海崖、开阔海景和远处的城山日出峰。岬角一带还有灯塔、朝鲜时代烽火台遗迹，也因韩剧《All In》等拍摄地而知名。此处海风较强，建议穿好走的鞋并准备薄外套。",
-            "image": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+            "duration": "60 分钟",
+            "name": "涉地可支（东部海岬）",
+            "category": "火山海岬——安藤忠雄建筑 + 方斗浦灯塔 + 影视拍摄地",
+            "description": "**涉地可支（섭지코지）**是济州岛东海岸一处狭长的火山海岬——其名称由**\"涉支\"（狭长陆地）+\"可支\"（济州方言，意为\"海岬\"）**组合而成。**全长2.1公里的崖边步道（约30分钟，海拔仅上升14米）**是岛上拍照最多的海岸徒步路线之一，由三处文化建筑节点共同塑造其独特魅力。**(1) 红岳（붉은 오름）**——海岬尖端一座呈红色调的寄生火山锥，顶部矗立着**八角形方斗浦灯塔（방두포 등대）**，灯塔**每4秒闪烁一次**，至今仍作为海岸航行导标运作。**(2) 协字烽燧台（협자연대）**——**高4米、直径9米的朝鲜时代玄武岩烽火台**，被济州道指定为**特别纪念物第23-2号**，是环绕济州岛38座烽燧台之一，曾于16至18世纪作为抗倭预警系统使用。**(3) 安藤忠雄建筑**——普利兹克建筑奖得主、日本建筑师**安藤忠雄（안도 다다오）**在此设计了两座建筑：**玻璃屋（글라스 하우스）**餐厅与**裕民美术馆（유민 미술관）**，两者均体现了安藤标志性的混凝土与光影极简主义风格，为菲尼克斯岛度假村开发项目而建。近岸处，**高10米的火山颈地貌\"仙岩\"（선바위）**与当地**龙王小儿子**传说相关。曾在此取景的影视作品包括**《全力以赴》（2003，SBS）、《我的女孩》（2005，SBS）、《银杏的传说》、《起义》及《千日夜》**。**春季油菜花田**于**3至4月（黄色）**铺满山坡；**夏季绣球花**随后于**6月盛开（蓝色/紫色）**。海岬**免费入场**；裕民美术馆与玻璃屋餐厅分别单独购票/预约。",
+            "image": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "highlights": [
-              "**2.1公里岬角步道**（约30分钟，仅14米爬升）— 部分路段轮椅及婴儿车可通行",
-              "**方头浦灯塔** — 八角形，**每4秒闪光**，矗立于红色火山锥红色火山丘顶端",
-              "**侠子烽火台（烽火台）** — 高4米 × 直径9米的朝鲜烽火丘，**特别纪念物第23-2号**",
-              "**安藤忠雄建筑** — 玻璃屋餐厅 + Yumin美术馆（凤凰岛渡假村）",
-              "**仙岩（仙岩）** — 10米海外火山颈，龙王么子传说",
-              "**影视拍摄地**：《All In》（2003年）、《我的女孩》（2005年）等",
-              "**油菜花季3至4月**（黄色山坡）；**绣球花6月**（蓝/紫色）",
-              "**岬角免费入场**；Yumin美术馆 + 玻璃屋餐厅需另行购票",
-              "城山日出峰在岬角顶端**清晰可见于4公里外**——UNESCO三重认定的完美背景"
+              "开阔的海岬与海岸步道，尽显济州东部独特风情",
+              "根据季节不同，可欣赏到相应的花卉景观",
+              "灯塔景观与宽阔的海洋背景，尤为适合拍照留念",
+              "在参观朴实厚重的石文化公园之后，此处带来令人耳目一新的视觉对比"
             ],
             "timeUsed": [
-              "停车+入场——约5分钟",
-              "海岬步道漫步——约25分钟",
-              "灯塔+烽燧台拍照——约10分钟",
-              "安藤忠雄建筑外观观赏——约10分钟",
-              "返回大巴＋集合时间——约10分钟"
+              "抵达后进行简短的步行路线介绍",
+              "海岸漫步及主要观景点停留",
+              "返程前的轻松拍照时间"
             ],
-            "whyOnRoute": "**东环线的建筑＋风景核心亮点**。涉地可支是本系列行程中唯一在60分钟内呈现**三层不同遗产**的景点：朝鲜时代的烽燧台（16至18世纪）、日治时期的灯塔（1900年代现役），以及安藤忠雄设计的玻璃教堂（1994年建成）。加上韩剧取景地身份（《那年冬天风在吹》等），为行程前半增添了强烈的景色层次，同时让城山日出峰在下午登场时具备更清晰的对比感。",
-            "_poi_meta": {
-              "poi_key": "seopjikoji",
-              "kb_version": "1.19",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "Jeju Provincial Cultural Heritage — Special Monument No. 23-2 designation",
-                "VisitJeju — Seopjikoji official listing",
-                "Korea Lighthouse Service — Bangdupo Lighthouse operation records",
-                "安藤忠雄 Architect & Associates — Phoenix Island project documentation",
-                "SBS Drama Archive — '《All In》' (2003) and 'My Girl' (2005) filming locations"
-              ]
+            "whyOnRoute": "**东部环线的建筑与风景亮点**。涉地可支是本次行程中唯一一处可在**60分钟内体验三个不同文化遗产层次**的景点：朝鲜时代烽燧台（16至18世纪）、近代灯塔（19世纪末至20世纪初仍在运作）以及当代普利兹克奖获奖建筑（安藤忠雄，2000年代）——三者共同映衬于**北方4公里处城山日出峰的三重联合国教科文组织全景**之中。从地理位置上看，此海岬是连接济州石文化公园内陆景点与城山日出峰海岸终点的自然枢纽，串联起全日行程中拍照最多的景观。与**月汀里海滩（北海岸，需额外绕行30分钟以上）**或**城山日出峰山顶（当日稍后攀登）**相比，涉地可支**顺路、免费且步行30分钟可完成**——是东海岸单位时间效益最高的景点。上午晚些时候（11:15）抵达，可在强烈的正午阳光来临前捕捉到**柔和的午前光线**，从容完成海岬拍摄。",
+            "visitBasics": {
+              "hours": "全天24小时开放",
+              "closed": "全年开放",
+              "admission": "免费",
+              "walking": "轻松至适中"
             },
-            "images": [
-              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
-              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
-              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
-              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
-              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
-              "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp"
-            ],
+            "convenience": {
+              "restroom": "靠近入口区域",
+              "parking": "提供停车位"
+            },
+            "smartNotes": {
+              "photo": "由于天空开阔、风力较强，侧面角度与更宽的构图往往比正面摆拍效果更好。",
+              "facilities": "设施有限，卫生间主要位于入口区域附近。",
+              "tip": "与上一站相比，这一区段受风吹日晒的暴露程度明显更强。"
+            },
+            "images": [],
             "imageCredits": [
               {
-                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
-                "source": "atoc-korea"
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
+                "source": "visitjeju",
+                "title": "涉地可支"
               },
               {
-                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
-                "source": "atoc-korea"
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201908/08/9d19a7d3-97a8-4999-b849-123e46fc88bc.webp",
+                "source": "visitjeju",
+                "title": "新阳涉地海水浴场"
               },
               {
-                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
-                "source": "atoc-korea"
-              }
-            ],
-            "galleryItems": [
-              {
-                "id": 1,
-                "type": "photo",
-                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
-                "location": "涉地可支（东海岬）",
-                "caption": "涉地可支（东海岬） — photo 1",
-                "alt": "涉地可支（东海岬） — gallery image 1"
-              },
-              {
-                "id": 2,
-                "type": "photo",
-                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
-                "location": "涉地可支（东海岬）",
-                "caption": "涉地可支（东海岬） — photo 2",
-                "alt": "涉地可支（东海岬） — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
-                "location": "涉地可支（东海岬）",
-                "caption": "涉地可支（东海岬） — photo 3",
-                "alt": "涉地可支（东海岬） — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
-                "location": "涉地可支（东海岬）",
-                "caption": "涉地可支（东海岬） — photo 4",
-                "alt": "涉地可支（东海岬） — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
-                "location": "涉地可支（东海岬）",
-                "caption": "涉地可支（东海岬） — photo 5",
-                "alt": "涉地可支（东海岬） — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
-                "location": "涉地可支（东海岬）",
-                "caption": "涉地可支（东海岬） — photo 6",
-                "alt": "涉地可支（东海岬） — gallery image 6"
+                "url": "https://pixabay.com/get/g58bbbe80bb67eb0a32a6e60a6931f0e77d2b2c342b890c9aaf73e87edffcf3af7cedd6ca98cbae1e5fe157fd6658ce642a1c0c5ca621591b1f85cec6e987313d_1280.jpg",
+                "source": "pixabay"
               }
             ]
           },
@@ -2059,308 +1981,222 @@
             "number": 3,
             "time": "12:25",
             "duration": "60分钟",
-            "name": "午餐——东海岸本地菜",
-            "category": "午间休息——东济州本地菜",
-            "description": "**城山日出峰前的东海岸午餐休息**——东海岸用餐定位意味着午餐后**仅需10分钟即可抵达城山日出峰**，为下午登顶保留体力。轮替菜式依季节而定：**（冷汤生鱼片）**是东济州的地区特色料理（在济州市较少见），搭配时令海鲜食材；**（鲍鱼石锅）**年供应；或**（烤鲜鱼）**定食套餐。素食及清真餐选项（食材已披露）可在部分轮替餐厅提供——请于接送时提出。餐厅均邻近城山日出峰停车区，使下午主要景点的过渡流畅高效。",
-            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+            "name": "午餐——东海岸本地料理",
+            "category": "午间休整——济州东部本地美食",
+            "description": "在涉地可支与城山日出峰之间进行**60分钟东海岸午间休整**——城山邑是济州岛最重要的海鲜卸货地之一，每日渔获供应港口边的餐厅街。默认轮换菜单：夏季（6月至9月）供应**물회（mulhoe，冷生鱼汤）**，这是济州夏日必备料理，以应季白肉鱼（鰤鱼、鲈鱼）盛于冰镇酸味汤底中；冬季（10月至2月）供应**갈치조림（galchi-jorim，红烧带鱼）**；或全年供应**흑돼지구이（heuk-doeji gui，济州黑猪烤肉）**，该品种为**2015年认定的文化遗产素材第5号**。**素食替代选项**：配有应季济州蔬菜的**비빔국수（bibim-guksu，拌面）**。轮换餐厅中有一家提供**清真友好选项**——请在接送时提前告知。午餐地点距**城山日出峰入口仅需10分钟车程**，可为游客充分保留下午登顶所需体力。",
             "highlights": [
-              "**物（冷汤生鱼片）**——东济州特有地区料理（济州市较少见）",
-              "**（鲍鱼石锅）**全年供应",
-              "**素食及清真餐**选项可应要求提供",
-              "餐厅距城山日出峰**车程10分钟**——保留下午登顶体力",
-              "接送时收集饮食需求；部分餐厅可预先确认菜单"
+              "在全天最活跃的景点前进行有效的体力补充",
+              "自然地将海岸徒步与火山口游览区段分隔开来",
+              "更适合不同年龄段的混合团队",
+              "让下午行程节奏更清晰、更从容"
             ],
             "timeUsed": [
-              "大巴前往午餐地点 — 约5分钟",
-              "点餐 + 用餐 — 约45分钟",
-              "大巴前往城山日出峰入口 — 约10分钟"
+              "抵达与就座",
+              "用餐与短暂休息",
+              "准备出发前往城山日出峰"
             ],
-            "whyOnRoute": "东海岸定位意味着午餐后**仅需10分钟即可抵达城山日出峰**——为下午的登顶保留体力。（冷生鱼片汤饭）也是东济州的地区特色（济州市较少见），在城山附近用餐，也能顺路品尝东济州特色料理。"
+            "whyOnRoute": "东海岸的地理位置意味着餐后**仅需10分钟即可抵达城山日出峰**——有助于保留登顶体力。물회同时也是济州东部的地方特色（在济州市较为少见），因此这一地理位置赋予了午餐时段独特的饮食文化属性。此外，午餐节点也恰好衔接了上午的石头公园与涉地可支步行，以及下午的城山登顶与洞窟探索。",
+            "visitBasics": {
+              "hours": "视餐厅而定",
+              "closed": "因场地而异",
+              "admission": "根据产品方案，费用或已包含，或需现场支付",
+              "walking": "极少"
+            },
+            "convenience": {
+              "restroom": "餐厅内部",
+              "parking": "提供停车位"
+            },
+            "smartNotes": {
+              "photo": "如果想拍摄美食照片，当地济州料理通常能呈现最佳效果。",
+              "facilities": "餐厅设施总体上较为完善。",
+              "tip": "这里最重要的作用是充分调整节奏，而非尽量压缩行程。"
+            }
           },
           {
             "number": 4,
             "time": "13:35",
-            "duration": "90分钟",
+            "duration": "90 分钟",
             "name": "城山日出峰",
-            "category": "UNESCO凝灰岩锥——日出峰（三重UNESCO认定）",
-            "description": "**城山日出峰（城山日出峰，「日出峰」）**是一座**距今5,000年的苏尔特塞式（Surtseyan）水成火山凝灰岩锥**——形成于海底玄武岩喷发冲出海面之时，岩浆接触海水引发蒸汽爆炸，堆积的火山灰形成**182米高、形如城堡的火口**边缘，而非典型的熔岩锥。UNESCO将其正式定义为**「萨托谢安式火山构造典型范例」**。火口**直径600米、深90米**，周围环绕着**99块锯齿状的边缘岩石**，当地传说将其比喻为石冠。城山日出峰拥有**UNESCO三重认定**：**世界自然遗产（2007年7月2日列入）**，是**「济州火山岛与熔岩洞窟」**遗址的组成部分；**生物圈保护区（2002年）**；以及**全球地质公园（2010-10）**——这一荣衔仅与汉拏山本身并列，为韩国景点中的最高规格。峰体向海一侧隧道有**18座帝国日本二战地下掩体**（1945年神风特攻队自杀艇掩体）。步道：**单程0.8公里，爬升约140米，来回60分钟**，沿宽阔石阶攀登。**海女表演**每日在峰下岩石海湾**13:30和15:00**各举行一场——无需氧气罐的济州女性潜水员（UNESCO 2016年非物质文化遗产）。门票于**2025年4月更新**：**成人₩5,000 / 青少年+儿童₩2,500 / 团体成人₩1,600**，7岁以下及65岁以上免费。山顶观景台同属**瀛洲十景**，长期以来是韩国**元旦日出朝圣**的首选地——每年1月1日有逾5万人在黎明前登顶，自1995年起设有市政日出节活动。**牛岛** —— 韩国最大的次级火山岛——在山顶可清晰看见，位于4公里外海域，搭乘**15分钟渡轮自城山港出发**可前往（来回₩10,500）。",
-            "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+            "category": "联合国教科文组织凝灰岩锥——日出峰（三重联合国教科文组织认定）",
+            "description": "**城山日出峰（성산일출봉，\"日出峰\"）**是一座**有着5,000年历史的苏特塞式水火山凝灰岩锥**——这是一种罕见的地貌，由水下玄武岩喷发冲破海面后，岩浆与海水相遇，由此产生的蒸汽爆炸性火山灰堆积而成，形成了高达**182米、形似堡垒的火山口**边缘，而非典型的熔岩锥。这一地貌正是联合国教科文组织正式认定的**\"苏特塞式火山构造的杰出典范\"**。火山口**宽600米、深90米**，周围环绕着**99块嶙峋的岩石**，当地传说将其比作一顶石冠。城山日出峰荣获**联合国教科文组织三重认定**：作为**\"济州火山岛与熔岩洞群\"**遗产地的组成部分，被列为**世界自然遗产（2007年7月2日列入）**，以及**生物圈保护区（2002年）**和**全球地质公园（2010年10月）**——在韩国，仅汉拿山能同享这一殊荣。**18座日本帝国二战时期的洞穴**（1945年神风特攻队自杀艇掩体）被凿入面向大海的山基。步道：**单程0.8公里，海拔高差约140米，往返需60分钟**，沿宽阔的石阶攀爬。**海女（해녀）表演**每日**13:30和15:00**在岩锥下方的岩石海湾举行——济州女性潜水员（2016年联合国教科文组织非物质文化遗产）不借助水肺潜水下海。门票已于**2025年4月**更新：**成人₩5,000 / 青少年及儿童₩2,500 / 团体成人₩1,600**，7岁以下及65岁以上免票。山顶观景台也是**灵洲十景（济州十大胜景）**的经典之一，并始终是韩国最具代表性的**元旦迎日出朝圣**目的地——每年1月1日黎明前有逾5万名游客登顶，自1995年起设有市级日出庆典活动。从山顶可清晰望见距离约4公里的**牛岛（우도，\"牛岛\"）**——韩国最大的次级火山岛，可从城山港乘坐**15分钟渡轮**（₩10,500往返）前往，适合行程较为宽裕的游客。",
+            "image": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "highlights": [
-              "**UNESCO三重认定**：世界遗产2007-07-02 + 生物圈保护区2002年 + 全球地质公园2010-10",
-              "**距今5,000年** — 萨托谢安式水火山喷发，岩浆遇海水引发蒸汽爆炸诞生",
-              "火口**直径600米、深90米**，环绕着**99块锯齿状边缘岩石**（「石冠」）",
-              "**海拔182米** — 单程0.8公里 / 爬升约140米，石阶步道来回60分钟",
-              "峰体基部有**18座帝国日本二战地下掩体** — 1945年神风特攻队自杀艇掩体",
-              "**每日13:30 + 15:00海女表演**，在海滨海湾举行 — UNESCO非物质文化遗产2016年",
-              "**门票2025年4月更新**：成人₩5,000 / 青少年₩2,500 / 7岁以下及65岁以上免费",
-              "春秋季开放时间 **05:00至19:00**（最后入场18:20）",
-              "**每月第一个星期一休馆**（偶尔休息日）"
+              "联合国教科文组织认定的火山口地标",
+              "从山脚区域和上坡步行段均可欣赏到层次丰富的景色",
+              "济州最典型的海岸火山地质景观之一",
+              "若时间恰好与海女表演时间吻合，此站的体验将更加丰富"
             ],
             "timeUsed": [
-              "停车+购票+底部简介——约10分钟",
-              "登顶观景台（0.8公里/高差140米）——约30分钟",
-              "顶部观景+火山口边缘拍照——约20分钟",
-              "下山——约20分钟",
-              "可选：在底部观看海女表演（每日1场，下午2点；恶劣天气时可能取消）——约10分钟"
+              "抵达后进行路线及集合地点说明",
+              "主要步行路段根据团队节奏灵活调整",
+              "可灵活组合火山口观览、低处观景点游览及海女表演时间"
             ],
-            "whyOnRoute": "**东部招牌路线的下午UNESCO高潮**。与大环线姊妹团（城山日出峰是全日东端压轴）不同，本行程中城山排在**下午中段（13:35抵达，停留90分钟）**——夹在涉地可支（前站）与日出乐园（后站）之间。这种安排避免了以UNESCO高潮收尾、后半程让人意犹未尽的常见问题；相反，先以城山作为全日景色制高点，再透过日出乐园的溶洞段及城邑民俗村来降低节奏，让全日行程弧线感更完整。",
-            "_poi_meta": {
-              "poi_key": "seongsan_ilchulbong",
-              "kb_version": "1.19",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
-                "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
-                "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
-                "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
-                "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
-              ]
+            "whyOnRoute": "**东部特色线路的午后联合国教科文组织精华站。**在本线路中，城山日出峰安排在午餐之后而非一天的最末，为游客留出足够时间完成火山口攀登，再继续前往日出乐园和城邑民俗村。这一时间安排也为欣赏下午的海女表演留有余地（在表演正常开放时），同时将攀登安排在东海岸风力通常增强之前。山顶全景将一天的行程融为一体：西望汉拿山，俯瞰东部岳野，远眺近海的牛岛。",
+            "visitBasics": {
+              "hours": "因季节而异；最后售票时间通常为闭园前1小时",
+              "closed": "每月第一个周一（若周一为节假日，则顺延至次日）",
+              "admission": "成人5,000韩元 / 青少年及儿童2,500韩元",
+              "walking": "中等难度，若团队选择登顶则稍具挑战性"
+            },
+            "convenience": {
+              "restroom": "山脚区域及部分上坡路段设有",
+              "parking": "提供大型停车场"
+            },
+            "smartNotes": {
+              "photo": "同时纳入火山口与海岸线的广角构图，通常比单纯在山顶自拍更具视觉冲击力。",
+              "facilities": "山脚附近设施较为完善，越往上越趋于基础。",
+              "tip": "风力、人流量和团队体能状况均可能影响此站的安排，使其偏向更多步行、更多观景或以海女表演为主。"
             },
             "images": [
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+              "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBzdW5yaXNlJTIwY3JhdGVyfGVufDB8MHx8fDE3NzgwNzgzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-                "source": "atoc-korea"
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
+                "source": "visitjeju",
+                "title": "城山日出峰（联合国教科文组织世界自然遗产）"
               },
               {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-                "source": "atoc-korea"
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/bfc943f0-5372-4a9f-8d07-97c3793808db.webp",
+                "source": "visitjeju",
+                "title": "城山至细花海岸公路"
               },
               {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-                "source": "atoc-korea"
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202306/19/51f1c895-032f-4b18-9e47-a1a0cb21511f.webp",
+                "source": "visitjeju",
+                "title": "城山潜水度假村"
               },
               {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-                "source": "atoc-korea"
+                "url": "https://live.staticflickr.com/65535/53953518745_a91884d6e2_b.jpg",
+                "source": "flickr",
+                "author": "xiquinhosilva",
+                "license": "CC BY 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/7138083@N04/53953518745",
+                "title": "城山日出峰"
               },
               {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-                "source": "atoc-korea"
-              }
-            ],
-            "galleryItems": [
-              {
-                "id": 1,
-                "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-                "location": "城山日出峰",
-                "caption": "城山日出峰 — photo 1",
-                "alt": "城山日出峰 — gallery image 1"
+                "url": "https://live.staticflickr.com/5247/5370777099_5053f69108_b.jpg",
+                "source": "flickr",
+                "author": "-Jérôme-",
+                "license": "CC BY 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/76474448@N00/5370777099",
+                "title": "火山半岛"
               },
               {
-                "id": 2,
-                "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-                "location": "城山日出峰",
-                "caption": "城山日出峰 — photo 2",
-                "alt": "城山日出峰 — gallery image 2"
+                "url": "https://live.staticflickr.com/5169/5370774765_8c1e200d19_b.jpg",
+                "source": "flickr",
+                "author": "-Jérôme-",
+                "license": "CC BY 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/76474448@N00/5370774765",
+                "title": "熔岩过后，植被重生"
               },
               {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-                "location": "城山日出峰",
-                "caption": "城山日出峰 — photo 3",
-                "alt": "城山日出峰 — gallery image 3"
+                "url": "https://live.staticflickr.com/5089/5370768533_3662b7d908_b.jpg",
+                "source": "flickr",
+                "author": "-Jérôme-",
+                "license": "CC BY 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/76474448@N00/5370768533",
+                "title": "火山口"
               },
               {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-                "location": "城山日出峰",
-                "caption": "城山日出峰 — photo 4",
-                "alt": "城山日出峰 — gallery image 4"
+                "url": "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBzdW5yaXNlJTIwY3JhdGVyfGVufDB8MHx8fDE3NzgwNzgzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+                "source": "unsplash"
               },
               {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-                "location": "城山日出峰",
-                "caption": "城山日出峰 — photo 5",
-                "alt": "城山日出峰 — gallery image 5"
+                "url": "https://pixabay.com/get/gd4d8b6155182b4d2c2fc04952137adb1e3dc7431b2f950f7a50ba799393e122c3edd772a230b42cc71890517bd0898cbd5e207a844e1dafba34600088b9ab2c0_1280.jpg",
+                "source": "pixabay"
               }
             ]
           },
           {
             "number": 5,
             "time": "15:20",
-            "duration": "75分钟",
-            "name": "日出乐园（米川窟熔岩洞穴）",
-            "category": "熔岩洞穴+主题公园——万丈窟备选（紧邻UNESCO认定区域）",
-            "description": "**日出乐园（日出乐园）**是2002年在城山开业的一座**40万平方米自然主题公园**，围绕**弥天窟（美千窟）**熔岩管而建——全长**1,700米**，其中**365米人工平整路段**开放（约25分钟穿越）。洞穴与UNESCO世界自然遗产**万丈窟**属同一熔岩管体系，在**万丈窟因保育或天气关闭时作为备用方案**。人工平整的步道使洞穴对老年游客、婴儿车和行动不便旅客更易到达。洞穴内部以**七色装饰灯光**（金、银、铜、红、黑、蓝、白）照明。洞穴外设有传统济州村落、野花盆景园、仙人掌温室和泡脚咖啡厅。日出乐园是**济州唯一设有现场穆斯林祈祷室**的景点。入场费：**成人₩12,000 / 青少年₩9,000 / 儿童₩7,000**。室内/户外比例**30%室内 / 70%户外**。",
-            "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+            "duration": "75分钟 > **注：** 品牌名（visitjeju、flickr、unsplash、pixabay）、摄影师名（xiquinhosilva、-Jérôme-）及版权标识（CC BY 2.0）均保留原文不译。",
+            "name": "日出乐园（米千洞熔岩隧道）",
+            "category": "熔岩隧道 + 主题公园——万丈窟替代景点（毗邻联合国教科文组织遗产地）",
+            "description": "**日出乐园（일출랜드）** 是位于城山的一座 **40万平方米自然主题公园**，于 **2002年** 开放，以 **米千洞（미천굴）** 熔岩隧道为核心而建——该洞穴总长 **1,700米**，其中 **365米** 经人工整平，开放供游客穿行（单程约需25分钟）。该洞穴属于济州岛 **熔岩隧道体系**，与联合国世界自然遗产熔岩洞——**万丈窟** 拥有相同的地质渊源，**可在万丈窟因保护性维护或恶劣天气（台风、结冰）关闭时作为实际替代选择**。万丈窟保留了崎岖不平的天然洞底，呈现原真的地质体验；而米千洞整平的步道则使洞穴**对老年游客、携婴儿车的家庭以及行动不便的访客更加友好**——这是一项有意为之的工程决策，将熔岩隧道体验延伸至原本无法游览万丈窟的人群。洞内设有**七彩装饰灯光（金、银、铜、红、黑、蓝、白）** 照亮洞穴景观——在纯粹主义者看来或许存在争议，但对非专业旅游摄影而言颇为实用。洞穴之外，公园还涵盖**水边公园、复原传统济州村落、野花盆景园、仙人掌温室、雕塑街及泡脚咖啡馆（香薰足浴）**——使其成为**济州岛唯一设有穆斯林祈祷室的景点**（一项有意为之的无障碍设施投入）。影视拍摄记录：**《Running Man》（런닝맨，SBS）第89集（爱丽丝梦游仙境主题，2012年）**。门票：**成人 ₩12,000 / 青少年 ₩9,000 / 儿童 ₩7,000**。室内外比例为**室内30%（洞穴+温室）** / **室外70%（公园地面）**——对天气灵活性规划具有重要参考价值。",
+            "image": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "highlights": [
-              "**全长1,700米**熔岩管；**365米开放路段**（约25分钟穿行）",
-              "**万丈窟UNESCO备用方案** — 万丈窟关闭时开放",
-              "**洞底人工平整** — 适合老年游客、婴儿车和行动不便旅客",
-              "**七色装饰灯光** — 金/银/铜/红/黑/蓝/白",
-              "**40万平方米公园场地** — 盆景、仙人掌、传统村落、泡脚咖啡厅",
-              "**济州唯一设有现场穆斯林祈祷室**",
-              "**《Running Man》第89集**拍摄（2012年，爱丽丝主题）",
-              "入场费 **₩12,000 / 成人；₩7,000 / 儿童**",
-              "**30%室内 / 70%户外**"
+              "在花园式环境中体验熔岩隧道氛围的难得机会",
+              "与开阔暴露的城山段形成强烈对比",
+              "遮阴更充分，步行体验更为轻松",
+              "作为最大地标站点后的过渡游览，效果尤佳"
             ],
             "timeUsed": [
-              "停车+购票+入场——约5分钟",
-              "米川窟穿越（365米/约25分钟）——约30分钟",
-              "水边公园+雕塑街——约20分钟",
-              "可选：盆景/仙人掌园+足浴咖啡馆——约15分钟",
-              "集合时间——约5分钟"
+              "进入园区后的路线说明",
+              "参观主熔岩隧道或主题区域",
+              "集合离开前的短暂花园漫步"
             ],
-            "whyOnRoute": "**东环线的熔岩管核心亮点**——也是本行程中唯一让宾客体验**济州地下火山身份**的景点（万丈窟熔岩管体系）。相比**万丈窟（UNESCO指定地，频繁关闭，现场无相关主题设施）**，日出乐园组合了**弥天窟熔岩管＋主题花园＋绣球花庭院**，以城山日出峰后降低节奏的「过渡核心亮点」形式呈现。免费入场的花园让不希望进入溶洞的宾客也有充裕的活动空间。",
-            "_poi_meta": {
-              "poi_key": "ilchulland_micheon_cave",
-              "kb_version": "1.19",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "Ilchul Land official site (ilchulland.com)",
-                "VisitJeju — Ilchul Land Micheon Cave",
-                "Korea Cave Research Institute — Manjanggul lava-tube system documentation",
-                "SBS Variety Archive — Running Man Episode 89 (2012)",
-                "Jeju Tourism Organization — accessibility-friendly attraction registry"
-              ]
+            "whyOnRoute": "**东线环游的熔岩隧道亮点。** 这是本次行程中唯一让游客踏入济州岛地下火山地貌的站点。米千洞提供比万丈窟更短、更适合游客的熔岩隧道步行体验，配有灯光照明、周边花园及卫生间，节奏也更适合家庭和年长旅行者。将其安排在城山之后，亦使全天游览节奏得以调整：迎风的山顶、封闭的熔岩洞穴、景观花园，最后是传统村落。",
+            "visitBasics": {
+              "hours": "08:30–18:00",
+              "closed": "全年开放",
+              "admission": "成人 9,000韩元 / 青少年 6,000韩元 / 儿童 5,000韩元",
+              "walking": "适中"
+            },
+            "convenience": {
+              "restroom": "靠近入口区域",
+              "parking": "提供停车场"
+            },
+            "smartNotes": {
+              "photo": "室内外混合光线适合拍摄氛围照，但曝光控制比开阔的海岸景点更具挑战性。",
+              "facilities": "基本设施集中于入口附近。",
+              "tip": "游览城山后，许多旅行者会立刻感受到这里的体力消耗明显减少。"
             },
             "images": [
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp"
+              "https://images.unsplash.com/photo-1596617345904-f0b8677f5a8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZWp1JTIwbGF2YSUyMGNhdmUlMjBhdG1vc3BoZXJpY3xlbnwwfDB8fHwxNzc4MDc4NDI3fDA&ixlib=rb-4.1.0&q=80&w=1080"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-                "source": "atoc-korea"
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
+                "source": "visitjeju",
+                "title": "일출랜드 아트센터"
               },
               {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-                "source": "atoc-korea"
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202205/30/8d1fb97b-1ad0-48cc-9aa0-2ec519e9575c.webp",
+                "source": "visitjeju",
+                "title": "일출랜드"
               },
               {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-                "source": "atoc-korea"
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202112/21/5d2e84f4-d58b-4fa0-b7bb-a2f32cf63428.webp",
+                "source": "visitjeju > **译注：** 第21–25条为品牌名称及韩文固有名词（来源标注/景点名称），保留原文不译。",
+                "title": "米川窟"
               },
               {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-                "source": "atoc-korea"
+                "url": "https://live.staticflickr.com/65535/53953062566_80ce9e16af_b.jpg",
+                "source": "flickr",
+                "author": "xiquinhosilva",
+                "license": "CC BY 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/7138083@N04/53953062566",
+                "title": "济州火山岛与熔岩洞穴"
               },
               {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-                "source": "atoc-korea"
+                "url": "https://live.staticflickr.com/7534/27767696885_e3b15614a5_b.jpg",
+                "source": "flickr",
+                "author": "lnevay",
+                "license": "CC BY-SA 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/98901717@N08/27767696885",
+                "title": "万丈窟"
               },
               {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-                "source": "atoc-korea"
+                "url": "https://live.staticflickr.com/7430/27733577536_8ecebd8480_b.jpg",
+                "source": "flickr",
+                "author": "lnevay",
+                "license": "CC BY-SA 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/98901717@N08/27733577536",
+                "title": "万丈窟"
               },
               {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-                "source": "atoc-korea"
+                "url": "https://live.staticflickr.com/7262/27733580686_b5c66c7b9d_b.jpg",
+                "source": "flickr",
+                "author": "lnevay",
+                "license": "CC BY-SA 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/98901717@N08/27733580686",
+                "title": "万丈窟"
               },
               {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
-                "source": "atoc-korea"
-              }
-            ],
-            "galleryItems": [
-              {
-                "id": 1,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-                "location": "日出乐园（米川窟熔岩洞穴）",
-                "caption": "日出乐园（米川窟熔岩洞穴） — photo 1",
-                "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 1"
-              },
-              {
-                "id": 2,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-                "location": "日出乐园（米川窟熔岩洞穴）",
-                "caption": "日出乐园（米川窟熔岩洞穴） — photo 2",
-                "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-                "location": "日出乐园（米川窟熔岩洞穴）",
-                "caption": "日出乐园（米川窟熔岩洞穴） — photo 3",
-                "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-                "location": "日出乐园（米川窟熔岩洞穴）",
-                "caption": "日出乐园（米川窟熔岩洞穴） — photo 4",
-                "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-                "location": "日出乐园（米川窟熔岩洞穴）",
-                "caption": "日出乐园（米川窟熔岩洞穴） — photo 5",
-                "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-                "location": "日出乐园（米川窟熔岩洞穴）",
-                "caption": "日出乐园（米川窟熔岩洞穴） — photo 6",
-                "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-                "location": "日出乐园（米川窟熔岩洞穴）",
-                "caption": "日出乐园（米川窟熔岩洞穴） — photo 7",
-                "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
-                "location": "日出乐园（米川窟熔岩洞穴）",
-                "caption": "日出乐园（米川窟熔岩洞穴） — photo 8",
-                "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
-                "location": "日出乐园（米川窟熔岩洞穴）",
-                "caption": "日出乐园（米川窟熔岩洞穴） — photo 9",
-                "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
-                "location": "日出乐园（米川窟熔岩洞穴）",
-                "caption": "日出乐园（米川窟熔岩洞穴） — photo 10",
-                "alt": "日出乐园（米川窟熔岩洞穴） — gallery image 10"
+                "url": "https://images.unsplash.com/photo-1596617345904-f0b8677f5a8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZWp1JTIwbGF2YSUyMGNhdmUlMjBhdG1vc3BoZXJpY3xlbnwwfDB8fHwxNzc4MDc4NDI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+                "source": "unsplash"
               }
             ]
           },
@@ -2369,136 +2205,70 @@
             "time": "16:50",
             "duration": "60分钟",
             "name": "城邑民俗村",
-            "category": "朝鲜时代城郭城镇——重要民俗文化遗产（1423年创立）",
-            "description": "**城邑民俗村**是**朝鲜时代的城郭式城镇，始建于1423年世宗大王年间**，当时称为旌义县，是朝鲜时代济州三大行政中心之一。村落持续作为**县政中心长达近500年，直至1914年**，至今在原有邑城城郭范围内保存著**110栋传统建筑**，整体按照朝鲜县政中心典型的**韩国风水原则**规划布局。整座村落被指定为**韩国重要民俗文化遗产**，多栋个别建筑亦分别获得独立遗产指定。村落中心耸立著**两棵被指定为韩国天然纪念物的古树**——**一棵光叶榉**和一棵**朴树**，两者均**树龄逾600年**，是村落的精神象征。历史伤痕清晰可见：**1826年的大火烧毁了约80栋建筑**，村落在**1948年济州四三事件中**也遭受过火灾破坏——两段历史均记载于村内标示牌上。历史上户数高峰时约**1,500户**，今日村落仍有约**250户人家居住**，许多村民积极传承传统工艺。韩剧拍摄记录：**《大长今》（MBC，2003至2004年）**，这部国际韩剧大作曾在此取景。当地特色：**五味子酒** — 村内一户人家**世代相传、多代酿造**的**济州传统米酿酒**，村内家庭酿酒坊可免费参观品尝。**免费入场**；以户外步行为主（约70%户外）。",
-            "image": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+            "category": "朝鲜时代城郭村落 — 重要民俗文化遗产（1423年建立）",
+            "description": "**城邑民俗村（성읍 민속마을）**是一座**仍有居民居住的朝鲜时代城郭村落，建立于1423年**，即**世宗大王**在位期间，时称旌义县（정의현），是朝鲜时代济州三大行政中心之一。该村落持续作为**郡级行政中心直至1914年**——历时近**500年**——至今在原邑城（읍성）城郭范围内保留着**110座传统建筑**，布局遵循朝鲜郡县首府典型的**韩国风水原则**。整座村落被指定为**韩国重要民俗文化遗产**，其中**多座单体建筑**另有独立文化遗产身份。村落中心矗立着**两棵被指定为韩国天然纪念物的古树**——一棵**榉树（느티나무）**和一棵**朴树（팽나무）**，据估计均已有**600年以上树龄**，被视为村落的精神象征。历史的创伤清晰可见：**1826年的一场大火烧毁了约80座建筑**，村落还在**1948年济州四三事件期间**遭受火灾损毁——两段历史均通过村内标识牌得以留存记录。**历史上户数最多时（近现代以前）约达1,500户**——如今仍有约250户家庭在此居住，许多家庭积极传承传统手工艺。影视拍摄记录：**《大长今（宫中珍馐）》（MBC，2003–2004年）**，这部享誉国际的韩剧曾在此取景。当地特产：**五味子酒（오메기술）**——一种由**某一家族世代酿造**的**济州传统米酒**，游客可在村内家庭酿造坊免费观看酿造过程并品尝。**免费入场**；以户外步行游览为主（约70%户外 / 30%室内参观个人韩屋）。",
+            "image": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "highlights": [
-              "**始建于1423年**（世宗大王年间）——行政中心持续运作至**1914年（近500年）**",
-              "原有邑城城郭范围内保存**110栋传统建筑**",
-              "**韩国重要民俗文化遗产**（整座村落 + 多栋个别建筑）",
-              "村落中心有**两棵树龄逾600年的古树**：光叶榉 + 朴树 — **天然纪念物**",
-              "按照**朝鲜韩国风水（地理）原则**规划 — 典型县政中心格局",
-              "**《大长今》（MBC 2003至2004年）**拍摄地 — 国际韩剧大作",
-              "**五味子酒** — 济州传统米酿酒，单一家族世代相传酿造（免费品尝）",
-              "历史伤痕：**1826年大火**烧毁约80栋；**1948年济州四三事件**破坏",
-              "**免费入场** — 村落仍有约250户人家居住，延续传统"
+              "茅草屋顶与石墙赋予其浓郁的济州传统氛围",
+              "相较于纯粹的自然景点，文化气息更为浓厚",
+              "节奏舒缓，非常适合作为一天行程的收尾",
+              "与路线前段更为壮阔的自然风光形成富有意义的对比"
             ],
             "timeUsed": [
-              "停车+村落解说员迎接简介——约10分钟",
-              "走至古树+村落中心——约10分钟",
-              "参观韩屋内部（代表性民居2–3栋）——约15分钟",
-              "五味子酒酿造坊免费品尝——约10分钟",
-              "奥莱小巷散步+拍照——约10分钟",
-              "集合时间——约5分钟"
+              "抵达时的简短介绍",
+              "沿主要村道漫步，欣赏传统建筑与日常生活留下的痕迹",
+              "离站前的讲解总结与短暂自由参观时间"
             ],
-            "whyOnRoute": "**东环线的活历史收尾核心亮点**。大环线姊妹团以城山日出峰的地质UNESCO作为结尾，而本自然核心路线则以**600年连续韩国农村遗产**作为对比性的收尾框架。城邑民俗村内部展示朝鲜时代建筑、石敢当（济州守护石像）及传统民宅——以活生生的人文肌理回应全日开场的雪文台神话，让整个行程的故事形成闭环。",
-            "_poi_meta": {
-              "poi_key": "seongeup_folk_village",
-              "kb_version": "1.19",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "Cultural Heritage Administration — Important Folklore Cultural Heritage designation",
-                "Korea Cultural Heritage Foundation — Seongeup Folk Village historical records",
-                "VisitJeju — Seongeup Minsok Maeul",
-                "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
-                "Jeju Folklore Society — Omegisul brewing tradition documentation"
-              ]
+            "whyOnRoute": "**东线行程的活态历史压轴亮点。** 历经石头神话、海岸线、火山口与熔岩洞窟之后，城邑将这一天重新拉回济州的人文故事：石墙、茅草屋、古老的村道，以及至今仍与日常生活息息相关的传统习俗。其内陆位置也使其自然而然地成为经内陆公路返回济州市前的最后一站。",
+            "visitBasics": {
+              "hours": "10:00–17:00",
+              "closed": "全年开放",
+              "admission": "免费（部分体验项目除外）",
+              "walking": "轻松平坦，几乎无坡度"
+            },
+            "convenience": {
+              "restroom": "靠近村庄中心",
+              "parking": "附近设有停车场"
+            },
+            "smartNotes": {
+              "photo": "狭窄的小巷、屋脊线条与石墙纹理，往往比宽幅居中的构图更能带来令人满意的画面。",
+              "facilities": "村内基础设施较为简陋。",
+              "tip": "在这一站越是从容不迫，整日行程在情感上的落脚便越圆满。"
             },
             "images": [
-              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
-              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
-              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
-              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
-              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
-              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
-              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+              "https://images.unsplash.com/photo-1777543331241-a80f9cd409ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxLb3JlYW4lMjB0cmFkaXRpb25hbCUyMHZpbGxhZ2UlMjB0aGF0Y2hlZHxlbnwwfDB8fHwxNzc4MDc4NDYxfDA&ixlib=rb-4.1.0&q=80&w=1080"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
-                "source": "atoc-korea"
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
+                "source": "visitjeju",
+                "title": "성읍민속마을"
               },
               {
-                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
-                "source": "atoc-korea"
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/d3665aa5-bb00-472d-9886-06e3337d9515.webp",
+                "source": "visitjeju",
+                "title": "성읍목장"
               },
               {
-                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
-                "source": "atoc-korea"
+                "url": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/69a0bd54-97fa-49b5-b59e-5986b8e48ecf.webp",
+                "source": "visitjeju",
+                "title": "성읍승마장"
               },
               {
-                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
-                "source": "atoc-korea"
+                "url": "https://live.staticflickr.com/1446/25727012660_f652a7494e_b.jpg",
+                "source": "flickr",
+                "author": "anokarina",
+                "license": "CC BY-SA 2.0",
+                "sourceUrl": "https://www.flickr.com/photos/30760976@N04/25727012660",
+                "title": "\"闭上眼睛，生活便轻松自在。\" ―约翰·列侬 🌴"
               },
               {
-                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
-                "source": "atoc-korea"
+                "url": "https://images.unsplash.com/photo-1777543331241-a80f9cd409ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxLb3JlYW4lMjB0cmFkaXRpb25hbCUyMHZpbGxhZ2UlMjB0aGF0Y2hlZHxlbnwwfDB8fHwxNzc4MDc4NDYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+                "source": "unsplash"
               },
               {
-                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
-                "source": "atoc-korea"
-              }
-            ],
-            "galleryItems": [
-              {
-                "id": 1,
-                "type": "photo",
-                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
-                "location": "城邑民俗村",
-                "caption": "城邑民俗村 — photo 1",
-                "alt": "城邑民俗村 — gallery image 1"
-              },
-              {
-                "id": 2,
-                "type": "photo",
-                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
-                "location": "城邑民俗村",
-                "caption": "城邑民俗村 — photo 2",
-                "alt": "城邑民俗村 — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
-                "location": "城邑民俗村",
-                "caption": "城邑民俗村 — photo 3",
-                "alt": "城邑民俗村 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
-                "location": "城邑民俗村",
-                "caption": "城邑民俗村 — photo 4",
-                "alt": "城邑民俗村 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
-                "location": "城邑民俗村",
-                "caption": "城邑民俗村 — photo 5",
-                "alt": "城邑民俗村 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
-                "location": "城邑民俗村",
-                "caption": "城邑民俗村 — photo 6",
-                "alt": "城邑民俗村 — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
-                "location": "城邑民俗村",
-                "caption": "城邑民俗村 — photo 7",
-                "alt": "城邑民俗村 — gallery image 7"
+                "url": "https://pixabay.com/get/gc781d5c3ef50ea89a6bdfedaf270b199fd3a4168f2358667c660d28ef8ba7257108f84be87a22e9ce96ff035aca4ebb68139baf8cc26b7a22e47a28e931e9591_1280.jpg",
+                "source": "pixabay"
               }
             ]
           }
@@ -2511,7 +2281,7 @@
       "props": {
         "routeFlowStops": [
           {
-            "name": "石文化公园",
+            "name": "石头公园",
             "theme": "地质",
             "type": "01"
           },
@@ -2522,7 +2292,7 @@
           },
           {
             "name": "午餐",
-            "theme": "放松转换",
+            "theme": "休整",
             "type": "03"
           },
           {
@@ -2544,23 +2314,23 @@
         "routePhases": [
           {
             "phase": "上午",
-            "duration": "1–2",
-            "description": "最后前往城邑民俗村，随后返回济州市区主要下车点。"
+            "duration": "1-2",
+            "description": ""
           },
           {
             "phase": "中午至下午",
-            "duration": "3–4",
-            "description": "最后前往城邑民俗村，随后返回济州市区主要下车点。"
+            "duration": "3-4",
+            "description": ""
           },
           {
-            "phase": "收尾",
-            "duration": "5–6",
-            "description": "最后前往城邑民俗村，随后返回济州市区主要下车点。"
+            "phase": "结束",
+            "duration": "5-6",
+            "description": ""
           }
         ],
         "routeShapeIntro": {
-          "title": "行程路线一览",
-          "subtitle": "路线从石头文化开始，向海岸推进，午餐后重新出发前往火山口高潮，以花园和村落收尾。接送时间通常在08:30至09:00之间，返回时间约为18:00至18:30。"
+          "title": "全天行程安排",
+          "subtitle": "行程以石文化为起点，延伸至海岸，午餐时段稍作休整，随后进入火山口核心景点，最后以花园与村落收尾。接送通常在08:30至09:00之间出发，约17:30–18:00返回济州市。"
         }
       }
     },
@@ -2570,10 +2340,10 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "初次游济州的旅客",
-            "情侣",
+            "首次游览济州的旅客",
+            "情侣 --- **翻译备注：** - **pixabay / TourDayFlowSection / TourFitSection** — 保留原文（品牌名 / UI 组件名） - **涉地可支（Seopjikoji）/ 城山（Seongsan）/ 城邑（Seongeup）** — 采用济州地名的通行汉字写法 - **日出乐园（Ilchulland）** — 意译自韩语\"일출랜드\"（日出 + Land） - **1-2 / 3-4 / 5-6** — 保留原文（时间段序号）",
             "成人家庭",
-            "体力良好、能应付中等步行强度的年长旅客"
+            "身体状况良好、适合适度步行的年长旅行者"
           ],
           "routeLogicSections": [
             {
@@ -2582,129 +2352,129 @@
               "iconBg": "bg-amber-50/80",
               "items": [
                 {
-                  "label": "从石头文化出发，逐步向海岸延伸",
-                  "detail": "以石头公园作为全日的阅读框架，让后续的海岸与火山景点感觉更有层次，而非杂乱无章。"
+                  "label": "从石文化开始，然后向大海延伸",
+                  "detail": "从石头公园出发，为全天行程构建了一个解读框架，使后续的海岸和火山景点更具层次感，而非显得随机散漫。"
                 },
                 {
-                  "label": "午餐的时间点恰到好处",
-                  "detail": "午间重整让城山路段感觉更舒适、节奏更佳。"
+                  "label": "午餐在恰当的时机到来",
+                  "detail": "在正午重整状态，使城山段落感觉更舒适、节奏更流畅。"
                 },
                 {
-                  "label": "主要地标在午后登场",
-                  "detail": "城山日出峰安排在午餐之后，让路线强度有清晰的上升感，同时避免上午行程过度紧凑。"
+                  "label": "主要地标在午后出现",
+                  "detail": "将城山日出峰安排在午餐之后，使路线强度更有层次感，同时避免上午行程过于紧凑。"
                 }
               ]
             },
             {
-              "title": "这条路线的推荐理由",
+              "title": "路线如此安排的原因",
               "icon": "mountain",
               "iconBg": "bg-sky-50/80",
               "items": [
                 {
-                  "label": "先看海岸，再登火山口",
-                  "detail": "涉地可支先建立海岸氛围，让城山日出峰在稍后登场时带来更强烈的火山存在感。"
+                  "label": "先游海岸，再探火山口",
+                  "detail": "涉地可支先营造出海洋氛围，使城山日出峰随后以更强烈的火山气息登场。"
                 },
                 {
-                  "label": "高潮过后放慢节奏",
-                  "detail": "日出乐园自然接在城山之后，以放慢节奏的方式衔接，而非与火山口景点竞争。"
+                  "label": "在高潮之后放缓节奏",
+                  "detail": "日出乐园安排在城山之后十分自然，因为它能放缓节奏，而不是与火山口景点相互竞争。"
                 },
                 {
-                  "label": "以活历史收尾",
-                  "detail": "城邑民俗村在强烈的自然风景之后加入人文肌理与历史氛围，让全日行程感觉更完整。"
+                  "label": "以鲜活的历史收尾",
+                  "detail": "城邑民俗村在雄浑的自然风光之后增添了人文气息与历史氛围，使整日行程更加完整。"
                 }
               ]
             },
             {
-              "title": "现场状况变化时的应对",
+              "title": "当现场条件发生变化时",
               "icon": "wind",
               "iconBg": "bg-slate-50/80",
               "items": [
                 {
-                  "label": "周一停馆限制",
-                  "detail": "由于济州石头文化公园周一休馆，本行程通常不在周一以标准形式出发。"
+                  "label": "周一营业时间限制",
+                  "detail": "由于济州石头公园周一闭园，此路线通常不在周一以标准形式运行。"
                 },
                 {
-                  "label": "风力与天气影响暴露海岸路段",
-                  "detail": "涉地可支与城山日出峰是最可能受风力、降雨或人流影响的两个景点。"
+                  "label": "风力和天气会影响开阔的海岸地段",
+                  "detail": "涉地可支和城山日出峰是最容易受到风、雨或人流状况影响的两个景点。"
                 },
                 {
-                  "label": "步行强度可弹性调整",
-                  "detail": "城山段可视团体体能、天气及现场人流状况调整节奏。"
+                  "label": "步行强度可以灵活调整",
+                  "detail": "城山段的行程节奏可根据团队体能、天气状况及现场人流情况灵活调整。"
                 }
               ]
             }
           ],
           "lessIdealFor": [
-            "希望完全避开石阶或溶洞空间的旅客",
-            "高度依赖婴儿车的亲子团",
-            "幼儿可能难以应付全日行程节奏的家庭"
+            "希望避免爬楼梯或洞穴类空间的旅客",
+            "高度依赖婴儿车出行的家庭",
+            "可能难以承受全天行程强度的幼龄儿童"
           ]
         }
       }
     },
     {
       "id": "practical",
-      "component": "TourPracticalDetails",
+      "component": "行程实用信息",
       "props": {
         "practicalAccordionItems": [
           {
             "id": "pickup",
-            "title": "接送与回程时间",
-            "preview": "济州市区酒店大厅接客",
+            "title": "接送时间",
+            "preview": "济州市酒店大堂接送",
             "content": [
-              "08:30至09:00之间从济州市区各酒店大厅接客",
-              "预计于17:30至18:00左右返回并下车",
-              "如有需要，可视情况安排机场接送",
-              "确切接送时间将在前一晚通知"
+              "08:30至09:00之间于济州市各酒店大堂接客",
+              "预计于17:30至18:00左右返回并送达目的地",
+              "视情况而定，可能提供机场接送服务",
+              "最终接送时间将于前一天晚上确认"
             ]
           },
           {
             "id": "walking",
-            "title": "步行强度与地形",
-            "preview": "整体中等难度，大多数旅客可应付",
+            "title": "步行路况与地形",
+            "preview": "整体难度适中，大多数旅客均可应对",
             "content": [
-              "全日步行距离约4至6公里",
-              "济州石头文化公园以平地为主，部分路面略有起伏",
-              "日出乐园结合花园步道与溶洞路段，部分区域可能潮湿或不平整",
-              "城山日出峰设有可选的登顶路段，坡度较陡、体力消耗较大",
-              "强烈建议穿着防滑步行鞋"
+              "全天步行总距离约为4至6公里",
+              "济州石文化公园地势较为平坦，但部分路面可能略有起伏",
+              "日出乐园融合了花园小径与洞穴区域，部分区域地面可能较为潮湿或不平整",
+              "城山日出峰设有可选择的登顶路段，该路段坡度较陡，体力要求较高",
+              "强烈建议穿着舒适且防滑性能良好的步行鞋"
             ]
           },
           {
             "id": "weather",
-            "title": "天候与路线调整",
-            "preview": "大多数天气状况下均可进行，必要时作出调整",
+            "title": "天气与路线调整",
+            "preview": "大多数天气条件下行程照常进行，必要时将作相应调整",
             "content": [
-              "小雨：行程通常按计划进行",
-              "大雨：户外露天景点的停留时间可能缩短，日出乐园在当日可能更具参考价值",
-              "强风：涉地可支段可能缩短",
-              "如景点临时关闭，将安排替代景点或调整时间"
+              "小雨：行程通常按计划正常进行",
+              "大雨：露天户外景点的停留时间可能缩短，日出乐园可能成为当日行程的重点",
+              "强风：涉地可支路段可能缩短游览时间",
+              "若某景点突然关闭，将安排替代景点或调整行程时间"
             ]
           },
           {
             "id": "wear",
-            "title": "穿着与携带物品建议",
-            "preview": "舒适步行鞋、分层穿搭及轻薄外层",
+            "title": "着装与携带物品建议",
+            "preview": "舒适的步行鞋、多层穿搭及轻便外套",
             "content": [
-              "防滑步行鞋",
-              "因应气温变化的分层穿搭",
-              "轻薄防风外套",
+              "防滑性好的步行鞋",
+              "适应温差变化的多层穿搭",
+              "轻便防风外套",
               "帽子及防晒用品",
-              "水瓶"
+              "水壶"
             ]
           },
           {
             "id": "included",
-            "title": "包含/不包含内容",
-            "preview": "含导游、车辆、接送及入场门票",
-            "variant": "included",
+            "title": "含/不含项目",
+            "preview": "导游、车辆、接送及门票",
+            "variant": "含",
             "content": [
               "专业英语导游",
-              "私家车或小团车辆",
-              "济州市区酒店接送",
-              "所有景点门票",
+              "私家车或小团体车辆",
+              "济州市酒店接送",
+              "全部门票",
               "瓶装水",
-              "午餐（在餐厅现场支付，除非另有说明）",
+              "午餐（除特别说明外，在餐厅自费）",
               "个人购物费用",
               "导游小费"
             ]
@@ -2713,119 +2483,110 @@
         "practicalWeatherStatic": {
           "today": {
             "temp": "—",
-            "label": "即时天气连动"
+            "label": "实时天气数据"
           },
           "tomorrow": {
             "temp": "—",
             "label": "每日更新"
           },
-          "_seasonalSummary": "东济州拥有全岛最通透的海景，夏季气温也是全岛最高。城山日出峰全年风力较强，建议备一件薄外套。",
+          "_seasonalSummary": "Eastern Jeju has the cleanest sea views on the island and the warmest summer temperatures. Seongsan Ilchulbong is exposed to wind year-round; bring a light layer.",
           "_seasonalTemperatures": [
             {
-              "season": "春季（3至5月）",
+              "season": "Spring (Mar–May)",
               "range": "8–22°C",
-              "notes": "四月初赏樱；含德西峰小火山锥的油菜花盛开。"
+              "notes": "Cherry blossoms in early April; rapeseed flowers on Hamdeok's Seoubong cone."
             },
             {
-              "season": "夏季（6至8月）",
+              "season": "Summer (Jun–Aug)",
               "range": "22–30°C",
-              "notes": "炎热但海岸景点有海风。含德沙滩的海水色泽最佳。"
+              "notes": "Hot but breezy at coastal stops. Best ocean colors at Hamdeok."
             },
             {
-              "season": "秋季（9至11月）",
+              "season": "Autumn (Sep–Nov)",
               "range": "10–24°C",
-              "notes": "最佳季节——城山日出峰山脊视野最为清晰。"
+              "notes": "Best season — clearest visibility for Seongsan rim views."
             },
             {
-              "season": "冬季（12至2月）",
+              "season": "Winter (Dec–Feb)",
               "range": "3–10°C",
-              "notes": "城山日出峰山脊风寒效应明显。各景点人潮最少。"
+              "notes": "Wind chill significant at Seongsan rim. Fewer crowds at all stops."
             }
           ]
         },
         "seasonalVariations": [
           {
             "season": "春季",
-            "description": "油菜花为海岸路段增添一层明亮黄色。"
+            "description": "油菜花为沿海路段增添一抹明亮的黄色。"
           },
           {
             "season": "夏季",
-            "description": "日照时间长，深邃的绿色让行程感觉更饱满开阔。"
+            "description": "更长的日照时间与更深的绿意，让路线显得更加丰盈开阔。"
           },
           {
             "season": "秋季",
-            "description": "晴空万里，海岸与火山口的视野通透感尤为强烈。"
+            "description": "天空通常更为清澈，海岸与火山口的能见度往往格外出色。"
           },
           {
             "season": "冬季",
-            "description": "游客较少，步道更加静谧从容。"
+            "description": "游客通常较少，小径往往显得更加宁静安详。"
           }
         ]
       }
     },
     {
       "id": "booking_support",
-      "component": "TourBookingSupportSection",
+      "component": "行程预订支持版块",
       "props": {
         "bookingSupportSteps": [
           {
-            "timing": "预约完成后",
+            "timing": "预订后",
             "title": "即时确认",
-            "detail": "预订确认后即传送包含行程摘要及路线概览的确认通知。",
-            "description": "预订确认后即传送包含行程摘要及路线概览的确认通知。"
+            "detail": "系统将发送确认消息，包含您的预订摘要及路线概览。"
           },
           {
             "timing": "出发前12小时",
             "title": "出发前提醒",
-            "detail": "出发前分享天气更新及任何必要的调整说明。",
-            "description": "出发前分享天气更新及任何必要的调整说明。"
+            "detail": "天气情况及任何必要的调整事项将提前告知。"
           },
           {
-            "timing": "前一晚",
+            "timing": "出发前一晚",
             "title": "最终接送通知",
-            "detail": "确认确切接送时间及司机∕导游联络方式。",
-            "description": "确认确切接送时间及司机∕导游联络方式。"
+            "detail": "您的准确接送时间及司机或导游的联系方式将予以确认。"
           },
           {
             "timing": "出发当天早晨",
-            "title": "当日路线说明",
-            "detail": "出发当天早上根据最新现场状况传送简短更新。",
-            "description": "出发当天早上根据最新现场状况传送简短更新。"
+            "title": "当日路线提示",
+            "detail": "将根据最新情况，于早晨发送简短更新。"
           },
           {
-            "timing": "行程途中",
-            "title": "景点逐一讲解",
-            "detail": "每个景点按需提供实用信息。",
-            "description": "每个景点按需提供实用信息。"
+            "timing": "行程期间",
+            "title": "逐站导览",
+            "detail": "在每个停留点按需分享实用信息。"
           },
           {
             "timing": "行程结束后",
-            "title": "行程后支援",
-            "detail": "行程结束后可提供后续协助及额外建议。",
-            "description": "行程结束后可提供后续协助及额外建议。"
+            "title": "行程后支持",
+            "detail": "如有需要，可提供后续协助及额外建议。"
           }
         ],
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "当地持照合法业者",
-            "description": "济州本地持牌讲解团队运营",
-            "iconBg": "bg-emerald-50/80",
-            "body": "济州本地持牌讲解团队运营"
+            "title": "持牌本地运营",
+            "description": "由济州本地持牌导览团队运营",
+            "iconBg": "bg-emerald-50/80"
           },
           {
             "icon": "route",
-            "title": "依济州东部实际节奏规划",
-            "description": "按东海岸行车路线规划，节省时间",
-            "iconBg": "bg-sky-50/80",
-            "body": "按东海岸行车路线规划，节省时间"
+            "title": "围绕济州东部真实节奏打造",
+            "description": "以东海岸驾车路线流程为规划基础",
+            "iconBg": "bg-sky-50/80"
           },
           {
             "icon": "users",
             "title": "小团形式",
-            "description": "通常限额8位宾客",
-            "iconBg": "bg-amber-50/80",
-            "body": "通常限额8位宾客"
+            "description": "通常限额8名游客",
+            "iconBg": "bg-amber-50/80"
           }
         ]
       }
@@ -2837,76 +2598,76 @@
         "staticQuestions": [
           {
             "id": "first-time",
-            "question": "这是初次游济州的好路线吗？",
-            "answer": "是的。本行程将济州的石头文化、火山参观脉络、东海岸风光及代表性地标整合成均衡的一日行程。"
+            "question": "这条路线适合第一次来济州岛的游客吗？",
+            "answer": "是的。这条路线将济州的石文化、火山叙事、东海岸风光与代表性景点融为一体，构成一个均衡的全天行程。"
           },
           {
             "id": "walking",
-            "question": "行程会很累吗？",
-            "answer": "通常不会过度疲劳。最具挑战性的路段是城山日出峰的可选登顶；不登顶的话，大多数景点对一般旅客而言都属中等强度。"
+            "question": "这条路线会让人感到疲惫吗？",
+            "answer": "通常不会过于疲惫。最具挑战性的部分是可选的城山顶峰攀登；不选择该项目的话，大多数景点对大多数游客来说难度适中。"
           },
           {
             "id": "rain",
-            "question": "下雨天行程还会继续吗？",
-            "answer": "会的。路滑或风大时，暴露的海岸景点会格外注意安全，而日出乐园在天气不稳定时往往更能发挥价值。"
+            "question": "雨天行程仍可正常进行吗？",
+            "answer": "是的。在湿滑或大风天气下，会在开阔的海岸景点采取额外的安全措施，而且天气不稳定时，日出乐园往往会更显珍贵。"
           },
           {
             "id": "parents",
-            "question": "携带父母同行是否合适？",
-            "answer": "是的。只要能应付中等程度的步行及部分石阶，整体行程对成人家庭团队而言相当友善。"
+            "question": "适合与父母同行吗？",
+            "answer": "是的。只要能接受适度步行和一些台阶，这条路线总体上适合成年家庭团体。"
           },
           {
             "id": "children",
-            "question": "可以带小孩参加吗？",
-            "answer": "可以。更适合约8岁或以上、能配合中等步行强度及全日行程节奏的儿童。"
+            "question": "可以带孩子参加吗？",
+            "answer": "是的。更强烈推荐8岁及以上、能够应对适度步行和全天行程节奏的儿童参加。"
           },
           {
             "id": "order",
-            "question": "景点顺序可能在当天改变吗？",
-            "answer": "可能。海岸路段较容易受风力、交通及人流影响，必要时顺序可能略作调整，以确保行程顺畅。"
+            "question": "当天的景点顺序可以更改吗？",
+            "answer": "是的。海岸路段受风向、交通和人流影响较大，因此在必要时可能会对顺序进行小幅调整，以确保全天行程顺畅进行。"
           },
           {
             "id": "lunch",
-            "question": "午餐包含在费用内吗？",
-            "answer": "视乎您的产品方案。行程一定设有午餐休息时间，但餐费是否包含请参阅您所预订的套餐说明。"
+            "question": "午餐包含在价格中吗？",
+            "answer": "这取决于产品设置。行程中始终包含午餐时间，但餐食本身是否包含在内取决于您所预订的选项。"
           },
           {
             "id": "why-stone-park",
-            "question": "行程为什么从石头文化公园开始？",
-            "answer": "因为先了解济州的石头与火山故事，后续的海岸、火山口、花园及民俗村才会显得更有意义，而非只是一系列互不相干的景点。"
+            "question": "为什么行程从济州石头公园开始？",
+            "answer": "因为这有助于让一天的其余行程更有意义。一旦通过石头与火山的故事了解了济州，海岸、火山口、花园和村落都会让人感受更加深刻。"
           },
           {
             "id": "why-seopjikoji",
             "question": "为什么涉地可支安排在上半天？",
-            "answer": "因为先建立海岸氛围，可以让城山日出峰在下午登场时带来更强烈的火山冲击感，对比也更加鲜明。"
+            "answer": "因为行程先开启海岸氛围，让城山日出峰在后半段以更强烈的火山冲击感和更鲜明的对比登场。"
           },
           {
             "id": "why-lunch",
-            "question": "午餐为什么安排在这个时间点？",
-            "answer": "因为在城山路段前重整节奏，可以让下午的核心亮点感觉更从容，而不是匆忙赶场。"
+            "question": "为什么午餐安排在那里？",
+            "answer": "因为这能在城山段之前重置行程节奏，让下午的核心亮点体验起来更从容、不那么仓促。"
           },
           {
             "id": "later-structure",
-            "question": "下午的行程为什么这样安排？",
-            "answer": "城山之后，日出乐园降低了节奏，城邑民俗村以文化感收尾。如此一来，全日行程感觉更完整，而不是从头到尾以相同强度堆叠风景景点。"
+            "question": "为什么后半段按这个顺序安排？",
+            "answer": "城山之后，日出乐园放慢了节奏，城邑民俗村则以文化体验收尾。这让整天的行程更有层次感，而不是将所有景点以同样的强度一路叠加。"
           }
         ]
       }
     },
     {
       "id": "reviews",
-      "component": "TourReviewsSection",
+      "component": "游客评价区",
       "props": {
         "guestReviews": [
           {
             "id": 1,
             "author": "Sarah M.",
             "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
-            "location": "Singapore",
+            "location": "新加坡",
             "date": "2024年3月",
             "rating": 5,
-            "title": "东济州游的节奏感觉非常舒适",
-            "text": "路线安排非常合理。从石文化公园出发，为后续所有景点提供了实质性背景，导游将地质故事串联起来，让城山日出峰和日出乐园感觉像是一个完整参观脉络的组成部分，而非零散景点。午餐时机把握得恰到好处，让我下午游览城山时依然精力充沛。",
+            "title": "这次济州东部之旅的节奏安排非常舒适",
+            "text": "路线顺序很合理。从石头公园出发，为之后看到的一切奠定了真实的背景，导游将地质故事串联起来，让城山和日出乐园感觉像是一个更大叙事的组成部分，而不是随机的几个景点。午餐时机也恰到好处，让我下午游览城山时仍然精力充沛。",
             "helpful": 24,
             "verified": true,
             "tripType": "情侣",
@@ -2919,11 +2680,11 @@
             "id": 2,
             "author": "James K.",
             "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-            "location": "Hong Kong",
+            "location": "香港",
             "date": "2024年3月",
             "rating": 5,
-            "title": "一天游览东济州，性价比极高",
-            "text": "我参加过几次韩国一日游，这次最令我印象深刻的是路线安排的细致程度。导游显然知道何时放慢节奏、何时推进行程。以民俗村收尾也是一个聪明的设计——在欣赏了大量自然景观之后，文化收尾为这一天增添了别样的深度。",
+            "title": "一天游览济州东部，性价比极高",
+            "text": "我在韩国参加过几次一日游，这次让我印象深刻的是路线安排得多么用心。导游清楚地知道何时放慢脚步、何时推进行程。以民俗村收尾也是个明智之举。在欣赏了大量自然风光之后，文化收尾为这一天增添了别样的深度。",
             "helpful": 18,
             "verified": true,
             "tripType": "家庭",
@@ -2933,14 +2694,14 @@
             "id": 3,
             "author": "Yuki T.",
             "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
-            "location": "Tokyo",
-            "date": "February 2024",
+            "location": "东京",
+            "date": "2024年2月",
             "rating": 4,
-            "title": "路线出色，只是在城山的时间希望再多一些",
-            "text": "整体来说是非常充实的一天。石文化公园比我预期的更有趣，日出乐园作为城山日出峰之后的延续恰到好处。我给四星只是因为个人希望在城山多停留十五分钟，不过我也理解全天路线的时间限制。",
+            "title": "路线出色，只是希望在城山能多停留一会儿",
+            "text": "总体来说这是非常精彩的一天。石头公园比我预想的更有趣，日出乐园也是城山之后恰到好处的续篇。我给四星，仅仅是因为个人希望能在城山多待十五分钟，当然我也理解全天行程的时间限制。",
             "helpful": 12,
             "verified": true,
-            "tripType": "独行",
+            "tripType": "独行旅客",
             "photos": [
               "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80"
             ]
@@ -2949,11 +2710,11 @@
             "id": 4,
             "author": "Michael R.",
             "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-            "location": "Sydney",
-            "date": "February 2024",
+            "location": "悉尼",
+            "date": "2024年2月",
             "rating": 5,
             "title": "比我预期的更完整",
-            "text": "我主要是为了欣赏风景而来，但最令我难忘的是导游如何将每个景点串联成一个完整的故事。从石文化到海岸，再到火山口，最后是民俗村，整个行程感觉有真正的开头、中间和结尾，而不仅仅是一张清单。小团规模也让讲解更容易跟上。",
+            "text": "我参加这次旅游主要是为了欣赏风景，但令我印象最深的是导游如何将每一站串联成一个完整的故事。从岩石与海岸线，到火山口，再到最后的村庄，整天的行程有真正的开始、中段与结尾，而不只是一份打卡清单。小团体的规模也让讲解更容易听懂。",
             "helpful": 31,
             "verified": true,
             "tripType": "朋友",
@@ -2992,7 +2753,7 @@
           ],
           "highlights": [
             {
-              "label": "景观",
+              "label": "风景",
               "count": 89
             },
             {
@@ -3000,11 +2761,11 @@
               "count": 76
             },
             {
-              "label": "Pacing",
+              "label": "行程节奏",
               "count": 54
             },
             {
-              "label": "Photo Spots",
+              "label": "拍照地点",
               "count": 48
             }
           ]
@@ -3015,13 +2776,13 @@
       "id": "sticky_booking",
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "可订状态将在支付步骤中确认。",
+        "note": "请选择您的出行日期和团体人数，以查看实时空位并完成预订。",
         "price": {
           "amountLabel": "58",
           "currency": "USD",
-          "per": "人",
-          "priceSource": "internal",
-          "priceNote": "小团双语旅游。AtoC Korea直营售价较当地团队基础价享受10%折扣。",
+          "per": "person",
+          "priceSource": "AtoC Korea direct rate",
+          "priceNote": "最终价格将在选择出行日期和团体人数后确认。预订直接由 AtoC Korea 处理。",
           "discountPercent": 10
         }
       }
@@ -3361,17 +3122,17 @@
       "ilchulland_micheon_cave",
       "seongeup_folk_village"
     ],
-    "reviews_attribution": "Reseñas verificadas por AtoC Korea. 4.8/5 average across 127 verified bookings.",
+    "reviews_attribution": "Reviews curated from AtoC Korea operator feedback. 4.8/5 average across 127 verified bookings.",
     "unesco_fit_note": "unesco_fit=5: two UNESCO Natural Heritage sites on route — Manjanggul Cave (lava tube system, inscribed 2007) and Seongsan Ilchulbong (Sunrise Peak, inscribed 2007). Note: Manjanggul currently subject to seasonal closure; alternate cave (Micheon) used when closed.",
     "competing_products": [
       "jeju-eastern-unesco-spots-day-tour",
       "jeju-grand-highlights-loop",
       "jeju-southern-top-unesco-spots-tour"
     ],
-    "audit_summary": "East Jeju signature nature loop covering 600 years of layered Korean heritage: mythological origin (Seolmundae Halmang at Jeju Stone Park), Joseon yeondae beacon (Seopjikoji Hyeopja), Pulitzer-laureate contemporary architecture (安藤忠雄), Triple UNESCO tuff cone (Seongsan Ilchulbong), Manjanggul-system lava tube (Ilchulland Micheon Cave), and 1423-founded living walled town (Seongeup Folk Village). Mythology + architecture-anchored counterpart to the eastern-UNESCO-spots sister tour, which emphasizes Hamdeok beach + Haenyeo Museum UNESCO Intangible heritage.",
+    "audit_summary": "East Jeju signature nature loop covering 600 years of layered Korean heritage: mythological origin (Seolmundae Halmang at Jeju Stone Park), Joseon yeondae beacon (Seopjikoji Hyeopja), Pulitzer-laureate contemporary architecture (Tadao Ando), Triple UNESCO tuff cone (Seongsan Ilchulbong), Manjanggul-system lava tube (Ilchulland Micheon Cave), and 1423-founded living walled town (Seongeup Folk Village). Mythology + architecture-anchored counterpart to the eastern-UNESCO-spots sister tour, which emphasizes Hamdeok beach + Haenyeo Museum UNESCO Intangible heritage.",
     "score_rationale": {
       "high_scores": {
-        "k_drama_filming_fit=0.95": "4 separate K-drama filming sites in one day (Dae Jang Geum, 《All In》, My Girl, Running Man)",
+        "k_drama_filming_fit=0.95": "4 separate K-drama filming sites in one day (Dae Jang Geum, All In, My Girl, Running Man)",
         "tadao_ando_architecture_fit=1.0": "Pulitzer-laureate concrete-minimalism — only Jeju tour with Ando architecture",
         "mythology_fit=1.0": "Seolmundae Halmang creation legend front-loads the day's narrative arc",
         "joseon_walled_town_fit=1.0": "Seongeup = 1423 founding, ~500 years administrative function until 1914",
@@ -3384,7 +3145,7 @@
         "wheelchair_accessible_anchor_fit=0.55": "Seongsan ascent blocks pure-wheelchair full coverage"
       }
     },
-    "differentiation_vs_eastern_unesco_sister": "Same Seongsan + Seongeup + Ilchulland anchors, but **mythology + architecture emphasis** (Jeju Stone Park Seolmundae + 安藤忠雄 Seopjikoji) vs. sister's **UNESCO Intangible emphasis** (Hamdeok WWII tunnels + Haenyeo Museum 2016 inscription). Both routes appropriate for different guest temperaments — pair complementarily for guests with 2 days.",
+    "differentiation_vs_eastern_unesco_sister": "Same Seongsan + Seongeup + Ilchulland anchors, but **mythology + architecture emphasis** (Jeju Stone Park Seolmundae + Tadao Ando Seopjikoji) vs. sister's **UNESCO Intangible emphasis** (Hamdeok WWII tunnels + Haenyeo Museum 2016 inscription). Both routes appropriate for different guest temperaments — pair complementarily for guests with 2 days.",
     "seasonal_window": {
       "best_months": [
         "April",
@@ -3414,18 +3175,18 @@
     "type": "hotel_lobby",
     "meeting_points": [
       {
-        "name": "济州市区各酒店大厅",
+        "name": "济州市酒店大堂",
         "time": "08:30–09:00"
       }
     ],
     "dropoff_points": [
       {
-        "name": "返回济州市酒店",
+        "name": "济州市酒店（返回）",
         "approx_time": "≈ 17:30–18:00"
       }
     ],
     "hotel_pickup_available": true,
-    "notes": "接送时段08:30–09:00，于济州市区各酒店大厅上车；确切时间前一晚通知。如有需要，可视情况安排机场接送。"
+    "notes": "接送时间通常为08:30至09:00，从济州市各酒店大堂出发；具体时间将在前一天晚上确认。视情况而定，也可能提供机场接送服务。"
   },
   "itinerary_variants": [],
   "_publication": {
@@ -3436,17 +3197,17 @@
       "v15_unified"
     ],
     "fix_passes": {
-      "v15_unified": "Migrated from small-group v1 schema to v15 canonical: schema_version 1→7; SEO expanded (primaryKeywords, ogImage, title); price expanded (priceSource, priceNote, discountPercent); routeFlowStops id→type; routePhases stripped of Tailwind classes (bgClass/dotClass/textClass), reshaped to {phase,duration,description}; seasonalVariations stripped of Tailwind, reshaped to {season,description}; whyTourWorks.lessIdeal→lessIdealFor; practicalWeatherStatic gained _seasonalSummary and _seasonalTemperatures; product profile expanded to v15 canonical (≥40 fields with anchor_poi_keys, vehicle_type_legacy, seasonality, fit-vector full set); matching_metadata reformatted to anchor_pois/anchor_poi_keys/primary_themes/secondary_themes/best_for/not_recommended_for/reviews_attribution/unesco_fit_note shape; pickup_dropoff added (Schema A.1); itinerary_variants=[]; _publication block added. PRESERVED from source (richer than catalog v15): itineraryStops[*].visitBasics, .convenience, .smartNotes (operational data), guestReviews[4 each], reviewsSummary.highlights.",
+      "v15_unified": "Migrated from small-group v1 schema to v15 standard: schema_version 1→7; SEO expanded (primaryKeywords, ogImage, title); price expanded (priceSource, priceNote, discountPercent); routeFlowStops id→type; routePhases stripped of Tailwind classes (bgClass/dotClass/textClass), reshaped to {phase,duration,description}; seasonalVariations stripped of Tailwind, reshaped to {season,description}; whyTourWorks.lessIdeal→lessIdealFor; practicalWeatherStatic gained _seasonalSummary and _seasonalTemperatures; matching_profile expanded to v15 standard (≥40 fields with anchor_poi_keys, vehicle_type_legacy, seasonality, fit-vector full set); matching_metadata reformatted to anchor_pois/anchor_poi_keys/primary_themes/secondary_themes/best_for/not_recommended_for/reviews_attribution/unesco_fit_note shape; pickup_dropoff added (Schema A.1); itinerary_variants=[]; _publication block added. PRESERVED from source (richer than catalog v15): itineraryStops[*].visitBasics,.convenience,.smartNotes (operational data), guestReviews[4 each], reviewsSummary.highlights.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
       },
       "v17_batch2_enhancement": {
         "date": "2026-04-28",
-        "description": "Batch 2 deep enhancement — descriptions raised to 700-1100+ chars; KB-backed visitBasics/convenience/smartNotes/_poi_meta on all attraction stops; product profile recalibrated with verified-fact 0-1 float scores (replacing Phase 1 mechanical conversion).",
+        "description": "Batch 2 deep enhancement — descriptions raised to 700-1100+ chars; KB-backed visitBasics/convenience/smartNotes/_poi_meta on all attraction stops; matching_profile recalibrated with verified-fact 0-1 float scores (replacing Phase 1 mechanical conversion).",
         "_score_audit": {
           "_methodology": "0-1 float scale (post Phase 1 unification). Each score grounded in verified facts from KB v1.4 sources.",
           "deltas_applied": {

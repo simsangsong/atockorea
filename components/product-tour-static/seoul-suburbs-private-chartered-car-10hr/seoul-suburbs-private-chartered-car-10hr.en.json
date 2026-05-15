@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Seoul City or Suburbs Private 10HR Charter | AtoC Korea",
     "metaDescription": "Private 10-hour Seoul-area charter with EN-speaking driver-guide: Gapyeong (Nami, Morning Calm), DMZ + Paju, or Everland + Folk Village. Free Seoul pickup.",
-    "ogImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "ogImage": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
     "primaryKeywords": [
       "Seoul suburbs private car",
       "Seoul private 10-hour tour",
@@ -31,8 +31,8 @@
       "Fully Customizable",
       "Free Seoul Hotel Pickup"
     ],
-    "heroImage": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-    "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "heroImage": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
+    "thumbnail": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
     "priceLabel": "From US$179 per vehicle (1–6 pax · 4hr)",
     "shortCardDescription": "A premium 10-hour private car charter that lets you build your own Seoul-area day. Choose one of three recommended routes—Nami Island + Morning Calm + Petite France + Gangchon Railbike, DMZ + Paju Outlet, or Everland + Korean Folk Village—or send your own itinerary. Free hotel pickup is included for Seoul downtown stays.",
     "tags": [
@@ -50,7 +50,7 @@
     "salePriceUsd": 179
   },
   "hero": {
-    "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+    "imageUrl": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
     "imagePosition": "center 40%",
     "tagline": "Build your own Seoul-area day at your own pace, with a licensed driver-guide and a private vehicle for up to 10 hours.",
     "pills": [
@@ -130,10 +130,42 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG",
-      "location": "Route 3: Everland + Korean Folk Village",
-      "alt": "Route 3: Everland + Korean Folk Village — on-route photo",
-      "caption": "Route 3: Everland + Korean Folk Village"
+      "src": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
+      "location": "Seoul Private Charter",
+      "alt": "Private KIA Carnival by the Han River with N Seoul Tower at night",
+      "caption": "Private KIA Carnival at the Han River — N Seoul Tower at night"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/seoul-private-charter/seoul-private-gyeongbokgung-from-car.webp",
+      "location": "Gyeongbokgung Palace",
+      "alt": "Gyeongbokgung Palace seen from your private car at golden hour",
+      "caption": "Gyeongbokgung Palace from your private car at golden hour"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/seoul-private-charter/seoul-private-gyeongbokgung-heungnyemun.webp",
+      "location": "Gyeongbokgung Palace",
+      "alt": "Gyeongbokgung Palace — Heungnyemun gate with hanbok visitors",
+      "caption": "Gyeongbokgung — Heungnyemun gate with hanbok visitors"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/seoul-private-charter/seoul-private-n-seoul-tower-treat.webp",
+      "location": "N Seoul Tower (Namsan)",
+      "alt": "N Seoul Tower with a sweet treat in hand",
+      "caption": "N Seoul Tower — sweet treats at the foot of the tower"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/seoul-private-charter/seoul-private-lotte-tower-songpa.webp",
+      "location": "Lotte World Tower (Songpa)",
+      "alt": "Lotte World Tower towering over Seoul neighborhoods",
+      "caption": "Lotte World Tower towering over Songpa streets"
     }
   ],
   "itineraryStops": [
@@ -916,7 +948,7 @@
     "japan_market_fit": 0.85
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": [
       "authoring",
       "review",
@@ -1788,7 +1820,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

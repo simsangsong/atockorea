@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Pocheon Day Trip: Lake, Herb Island & Art Valley | AtoC Korea",
     "metaDescription": "Relaxed 10-hour Pocheon day trip from Seoul: Sanjeong Lake trails, Mediterranean-style Herb Island, and the Art Valley monorail above emerald Cheonjuho Lake.",
-    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "ogImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "primaryKeywords": [
       "Pocheon day tour from Seoul",
       "Sanjeong Lake tour",
@@ -1079,7 +1079,7 @@
     "japanese_speaking_guide_available_on_advance_notice": true
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": [
       "authoring",
       "review",
@@ -1132,7 +1132,7 @@
         "headlineLine1": "Pocheon",
         "headlineLine2": "Lake, Herb Island & Art Valley",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+          "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
           "imagePosition": "center 50%",
           "tagline": "Mountain lake, Mediterranean-style herb village, and a former granite quarry transformed into an art park—Pocheon's three softest-and-most-photogenic stops in one Seoul day-trip.",
           "pills": [
@@ -1232,7 +1232,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "Mediterranean-style garden zones with whitewashed walls, herb beds, and seasonal lavender displays",
             "caption": "Herb Island Mediterranean herb gardens (Pocheon)",
             "location": "Herb Island",
@@ -1241,7 +1241,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "Mountain-circled lake with a flat lakeside path and forested cliffs reflected in the water",
             "caption": "Sanjeong Lake at Mount Myeongseongsan (Pocheon)",
             "location": "Sanjeong Lake",
@@ -1250,7 +1250,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "Emerald-green quarry lake surrounded by sheer granite cliff walls",
             "caption": "Cheonjuho Lake inside Pocheon Art Valley quarry",
             "location": "Pocheon Art Valley",
@@ -1259,7 +1259,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/01/2791401_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "Garden paths illuminated with strings of evening lights and themed installations",
             "caption": "Herb Island light festival evening (year-round Santa Village area)",
             "location": "Herb Island Evening Lights",
@@ -1268,7 +1268,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "Forest waterfall cascading over rock ledges into a pool",
             "caption": "Bidulginang Cascade — seasonal substitute stop near Pocheon",
             "location": "Bidulginang Cascade",
@@ -1993,7 +1993,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

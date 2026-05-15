@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "남이섬, 아침고요수목원 & 쁘띠프랑스 프라이빗 투어 | AtoC Korea",
     "metaDescription": "가평의 세 명소—남이섬·아침고요수목원·쁘띠프랑스를 하루에 둘러보는 9~10시간 프라이빗 당일 투어. 서울 호텔 픽업 무료, 영어 가이드 제공.",
-    "ogImage": "https://www.atockorea.com/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+    "ogImage": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
     "primaryKeywords": [
       "남이섬 프라이빗 투어",
       "아침고요수목원 투어",
@@ -1110,7 +1110,7 @@
     "japanese_speaking_guide_available_on_advance_notice": true
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": [
       "authoring",
       "review",
@@ -1161,7 +1161,7 @@
         "headlineLine1": "서울 프라이빗",
         "headlineLine2": "남이섬, 아침고요수목원 & 쁘띠프랑스",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
+          "imageUrl": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
           "imagePosition": "center 45%",
           "tagline": "남이섬 페리 승선부터 아침고요수목원의 테마 정원, 그리고 알록달록한 마을 쁘띠프랑스까지 — 완전한 프라이빗 형식으로 즐기는 가평의 클래식 코스.",
           "pills": [
@@ -1261,7 +1261,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
+            "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
             "alt": "남이섬의 곧게 뻗은 길을 따라 늘어선 키 큰 메타세쿼이아 가로수길",
             "caption": "남이섬 메타세쿼이아 가로수길 (겨울연가 촬영지)",
             "location": "남이섬",
@@ -1270,7 +1270,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/27/2380427_image2_1.JPG",
+            "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
             "alt": "잘 가꾼 식물 화단, 포장된 산책로, 한반도 모양의 연못이 있는 테마 정원 풍경",
             "caption": "아침고요수목원 (1996년 개원, 33만 m², 20개 테마 정원)",
             "location": "아침고요수목원",
@@ -1279,7 +1279,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
+            "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
             "alt": "호수 위 언덕에 자리한 밝은 색상의 프랑스풍 마을 건물들",
             "caption": "쁘띠 프랑스 — 어린 왕자 테마의 언덕 마을",
             "location": "쁘띠 프랑스",
@@ -1288,7 +1288,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+            "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
             "alt": "넓은 호수 건너 숲이 우거진 섬으로 접근하는 페리",
             "caption": "청평호에서 남이섬으로 향하는 페리",
             "location": "청평호",
@@ -1297,7 +1297,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
             "alt": "야간에 수천 개의 LED 조명으로 빛나는 정원 산책로, 테마 조형물이 곳곳에 설치된 모습",
             "caption": "아침고요수목원 겨울 빛 축제 (12월~3월 중순)",
             "location": "겨울 빛 축제",
@@ -2056,7 +2056,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

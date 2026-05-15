@@ -104,13 +104,15 @@ function SearchResults() {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-x-3 gap-y-4 pt-1 sm:gap-x-4 sm:gap-y-5 md:gap-x-5 md:gap-y-6">
+          <div className="grid grid-cols-1 gap-y-5 pt-1 sm:gap-y-6 lg:grid-cols-2 lg:gap-x-6 lg:gap-y-7">
             {results.map((tour) => (
               <TourListCard
                 key={tour.id}
                 tour={tour}
                 detailHref={consumerTourDetailHref(tour.id, tour.slug)}
                 formatPriceFn={formatPrice}
+                layout="horizontal"
+                imageSizes="(min-width: 1024px) 240px, 38vw"
               />
             ))}
           </div>

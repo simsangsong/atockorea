@@ -13,11 +13,11 @@
       "仁川港至首尔私人用车",
       "韩国邮轮靠港游"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "ogImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
     "title": "仁川 → 首尔私人邮轮靠港游 · 8小时全程接送一日游"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "thumbnail": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
     "title": "仁川→首尔 邮轮私人包车",
     "priceLabel": "每车 US$419 起",
     "shortCardDescription": "8小时私人包车行程完全以您的船只返航时间为准，而非固定日程安排。在仁川邮轮码头登船口接送，配备英语导游司机，路线灵活可定制，途经景福宫、北村韩屋村及仁寺洞，自选午餐地点，游览首尔塔及明洞或曹溪寺。导游司机在返航前预留60分钟交通缓冲时间，确保您绝不错过班船。",
@@ -44,7 +44,7 @@
       "可定制",
       "保证返船"
     ],
-    "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
+    "heroImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp"
   },
   "headlineLine1": "仁川→首尔 邮轮私人包车",
   "headlineLine2": "一日游",
@@ -55,7 +55,7 @@
     "salePriceUsd": 419
   },
   "hero": {
-    "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "imageUrl": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
     "imagePosition": "center 35%",
     "tagline": "从登船口到景福宫仅需60分钟——以您的出港时间为基准的私人首尔一日游",
     "pills": [
@@ -135,90 +135,82 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
-      "location": "景福宫 + 王宫守卫换岗仪式",
-      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 1",
-      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 1"
+      "src": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
+      "location": "仁川邮轮码头",
+      "alt": "仁川邮轮码头 — 私家车舷梯接送",
+      "caption": "仁川邮轮码头 — 私家车舷梯接送"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
-      "location": "北村韩屋村 + 仁寺洞",
-      "alt": "北村韩屋村 + 仁寺洞 — gallery image 1",
-      "caption": "北村韩屋村 + 仁寺洞 — photo 1"
+      "src": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
+      "location": "汉江 & N首尔塔",
+      "alt": "汉江畔的私家车 — N首尔塔夜景",
+      "caption": "汉江畔的私家车 — N首尔塔夜景"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
-      "location": "N首尔塔（南山）",
-      "alt": "N首尔塔（南山） — on-route photo",
-      "caption": "N首尔塔（南山）"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "location": "景福宫",
+      "alt": "景福宫 — 首尔市中心王宫",
+      "caption": "景福宫 — 首尔市中心王宫"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
-      "location": "景福宫 + 王宫守卫换岗仪式",
-      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 2",
-      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 2"
+      "src": "/images/tours/seoul-private-charter/seoul-private-gyeongbokgung-heungnyemun.webp",
+      "location": "景福宫",
+      "alt": "景福宫 兴礼门 — 韩服访客",
+      "caption": "景福宫 兴礼门 — 韩服访客"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
-      "location": "景福宫 + 王宫守卫换岗仪式",
-      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 3",
-      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 3"
+      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "location": "北村韩屋村",
+      "alt": "北村韩屋村 — 韩国传统巷道",
+      "caption": "北村韩屋村 — 韩国传统巷道"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
-      "location": "景福宫 + 王宫守卫换岗仪式",
-      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 4",
-      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 4"
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
+      "location": "N首尔塔（南山）",
+      "alt": "南山的N首尔塔",
+      "caption": "南山的N首尔塔"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
-      "location": "景福宫 + 王宫守卫换岗仪式",
-      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 5",
-      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 5"
+      "src": "/images/tours/seoul-private-charter/seoul-private-n-seoul-tower-treat.webp",
+      "location": "N首尔塔（南山）",
+      "alt": "N首尔塔 — 塔下的甜蜜时刻",
+      "caption": "N首尔塔 — 塔下的甜蜜时刻"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
-      "location": "景福宫 + 王宫守卫换岗仪式",
-      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 6",
-      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 6"
+      "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+      "location": "广藏市场",
+      "alt": "广藏市场 — 首尔传统美食街",
+      "caption": "广藏市场 — 首尔传统美食街"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
-      "location": "景福宫 + 王宫守卫换岗仪式",
-      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 7",
-      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 7"
+      "src": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
+      "location": "明洞",
+      "alt": "明洞 — 首尔热闹购物街",
+      "caption": "明洞 — 首尔热闹购物街"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
-      "location": "景福宫 + 王宫守卫换岗仪式",
-      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 8",
-      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 8"
-    },
-    {
-      "id": 11,
-      "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
-      "location": "景福宫 + 王宫守卫换岗仪式",
-      "alt": "景福宫 + 王宫守卫换岗仪式 — gallery image 9",
-      "caption": "景福宫 + 王宫守卫换岗仪式 — photo 9"
+      "src": "/images/tours/seoul-private-charter/seoul-private-lotte-tower-songpa.webp",
+      "location": "乐天世界塔（松坡）",
+      "alt": "乐天世界塔 — 高耸于松坡的韩国第一高楼",
+      "caption": "乐天世界塔 — 高耸于松坡的韩国第一高楼"
     }
   ],
   "itineraryStops": [
@@ -625,7 +617,13 @@
           "Wikipedia (N Seoul Tower)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG"
+      "image": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
+      "images": [
+        "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
+        "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-57-27.webp",
+        "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-06.webp",
+        "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-10.webp"
+      ]
     },
     {
       "number": 6,
@@ -683,7 +681,11 @@
           "Lotte Department Store official (Myeongdong main branch)",
           "Wikipedia (Myeongdong)"
         ]
-      }
+      },
+      "image": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
+      "images": [
+        "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp"
+      ]
     },
     {
       "number": 7,
@@ -1352,7 +1354,7 @@
         "headlineLine1": "仁川→首尔 邮轮私人包车",
         "headlineLine2": "一日游",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+          "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
           "imagePosition": "center 35%",
           "tagline": "从舷梯到景福宫仅需60分钟——一段专为您的离港时间精心安排的首尔私人之旅",
           "pills": [
@@ -1451,7 +1453,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "在仁川邮轮码头到达大厅舷梯旁接送",
             "caption": "景福宫正殿",
             "location": "仁川邮轮码头",
@@ -1460,7 +1462,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/15/2002115_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "景福宫正殿及皇家卫队仪式",
             "caption": "景福宫皇家卫队换岗仪式",
             "location": "首尔景福宫",
@@ -1469,7 +1471,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "北村山脊沿线的石墙与韩屋瓦顶",
             "caption": "北村韩屋村的传统屋脊线",
             "location": "首尔北村韩屋村",
@@ -1478,7 +1480,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "从南山俯瞰首尔全景，N首尔塔耸立其上",
             "caption": "曹溪寺大雄殿与灯笼展示",
             "location": "N首尔塔（南山）",
@@ -1487,7 +1489,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "黄昏时分明洞购物街上点亮的街头小吃摊",
             "caption": "从南山眺望日落时分的N首尔塔",
             "location": "首尔明洞",
@@ -1496,7 +1498,7 @@
           {
             "id": "g6",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "停在仁川邮轮码头落客区等候的私家车",
             "caption": "明洞街头小吃与购物",
             "location": "仁川邮轮码头",
@@ -1518,7 +1520,7 @@
             "name": "邮轮码头接送",
             "category": "出发",
             "description": "司机兼导游将在仁川邮轮码头到达大厅举牌迎接您的团队。迅速确认您的离港（全员上船）时间，随后驱车约一小时前往首尔市中心。途中顺带进行行程导览——关于货币、美食和历史的常见问题将在抵达第一个景点前一一解答。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "船门接送",
               "1小时转乘至首尔",
@@ -1540,7 +1542,7 @@
             "name": "景福宫 + 王宫守卫换岗仪式",
             "category": "朝鲜王朝王宫",
             "description": "朝鲜王朝（1395–1910年）的主要王宫，也是首尔拍照最多的景点。王宫守卫换岗仪式每日10:00和14:00举行（周二休馆——周二以昌德宫代替）。导游负责购票，并带您参观勤政殿、庆会楼，如时间允许还可游览后苑。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "朝鲜时代主王宫",
               "王宫守卫换岗仪式",
@@ -1576,7 +1578,7 @@
             "name": "北村韩屋村 + 仁寺洞",
             "category": "韩屋文化遗产村",
             "description": "距宫殿仅需短暂车程——或步行10分钟即可抵达。北村保存完好的15世纪胡同至今仍有居民居住（因此村内部分标注区域请压低音量）。仁寺洞位于山下不远处，是首尔主要的传统艺术与手工艺街区：陶瓷、书法用品、传统茶饮、韩纸、韩服租借，以及精品购物中心Ssamziegil。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "15世纪韩屋胡同",
               "传统手工艺与茶饮",
@@ -1612,7 +1614,7 @@
             "name": "午餐（自选）",
             "category": "餐饮",
             "description": "自由活动，您来决定：仁寺洞餐厅可享用传统韩式宫廷料理和拌饭；景福宫附近的土俗村专供参鸡汤（人参鸡汤）；或在北村附近享用休闲韩式烤肉。司机兼导游将根据饮食需求（清真、素食、过敏——请提前告知，可规划清真友好路线）提供具体建议。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "仁寺洞宫廷料理",
               "土俗村参鸡汤",
@@ -1635,7 +1637,7 @@
             "name": "N首尔塔（南山）——可选观景点",
             "category": "标志性塔楼（观景点）",
             "description": "驱车前往南山至塔底，俯瞰首尔市中心、汉江及周边山脊的全景。可选乘坐观景台费用约₩21,000／人，需另行支付。若时间紧张，司机可跳过观景台，仅在塔基层停留拍照，节省30分钟以上。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "城市全景",
               "爱情锁拍照点",
@@ -1670,7 +1672,7 @@
             "name": "明洞（购物与街头美食）或曹溪寺",
             "category": "购物与当地文化",
             "description": "根据您的兴趣提供两个选择。明洞（韩国首屈一指的购物街）汇聚韩流美妆店、街头小吃摊（鸡蛋面包、厚煎饼、龙卷风薯条）及退税柜台。曹溪寺（韩国曹溪宗佛教总本山）则提供更为宁静的收尾——这里供奉着韩国最高的整块木雕释迦摩尼佛，庭院中常设应季彩灯装置。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "明洞街头美食与韩流美妆",
               "或游览曹溪寺",
@@ -1692,7 +1694,7 @@
             "name": "返回邮轮码头",
             "category": "返程",
             "description": "直接驾车首尔→仁川邮轮码头，约60分钟。司机兼导游在预定送达时间与登船截止时间之间预留60分钟缓冲，确保交通延误不会导致您错过邮轮。直接在码头门口下车。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "驾车约1小时至仁川",
               "登船前60分钟安全缓冲时间",
@@ -2117,7 +2119,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

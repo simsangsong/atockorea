@@ -14,7 +14,7 @@
       "Tour por la playa Hyeopjae",
       "Tour por la franja de cafés de Jeju"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "ogImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "title": "Tour auténtico de día completo por el oeste y sur de Jeju | AtoC Korea"
   },
   "catalog_card": {
@@ -137,21 +137,13 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-      "location": "Recogida (4 puntos en toda la ciudad de Jeju)",
-      "alt": "Recogida (4 puntos en toda la ciudad de Jeju) — on-route photo",
-      "caption": "Recogida (4 puntos en toda la ciudad de Jeju)"
-    },
-    {
-      "id": 2,
-      "type": "photo",
       "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
       "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
       "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 1",
       "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 1"
     },
     {
-      "id": 3,
+      "id": 2,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
@@ -159,15 +151,7 @@
       "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 1"
     },
     {
-      "id": 4,
-      "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
-      "location": "Almuerzo — Daejeong / Gastronomía Local de Andeok",
-      "alt": "Almuerzo — Daejeong / Gastronomía Local de Andeok — on-route photo",
-      "caption": "Almuerzo — Daejeong / Gastronomía Local de Andeok"
-    },
-    {
-      "id": 5,
+      "id": 3,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
@@ -175,7 +159,7 @@
       "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 1"
     },
     {
-      "id": 6,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "location": "Museo del Té O'sulloc + Campos de Té Verde",
@@ -183,7 +167,7 @@
       "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 1"
     },
     {
-      "id": 7,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
       "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
@@ -191,7 +175,7 @@
       "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 1"
     },
     {
-      "id": 8,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
       "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
@@ -199,7 +183,7 @@
       "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 2"
     },
     {
-      "id": 9,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
       "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
@@ -207,7 +191,7 @@
       "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 3"
     },
     {
-      "id": 10,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
@@ -215,7 +199,7 @@
       "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 2"
     },
     {
-      "id": 11,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
@@ -223,7 +207,7 @@
       "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 3"
     },
     {
-      "id": 12,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
@@ -231,7 +215,7 @@
       "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 4"
     },
     {
-      "id": 13,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
       "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
@@ -239,7 +223,7 @@
       "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 2"
     },
     {
-      "id": 14,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
       "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
@@ -247,7 +231,7 @@
       "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 3"
     },
     {
-      "id": 15,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
       "location": "Museo del Té O'sulloc + Campos de Té Verde",
@@ -255,7 +239,7 @@
       "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 2"
     },
     {
-      "id": 16,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
       "location": "Museo del Té O'sulloc + Campos de Té Verde",
@@ -263,7 +247,7 @@
       "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 3"
     },
     {
-      "id": 17,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
       "location": "Museo del Té O'sulloc + Campos de Té Verde",
@@ -271,7 +255,7 @@
       "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 4"
     },
     {
-      "id": 18,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
       "location": "Museo del Té O'sulloc + Campos de Té Verde",
@@ -279,7 +263,7 @@
       "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 5"
     },
     {
-      "id": 19,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
       "location": "Museo del Té O'sulloc + Campos de Té Verde",
@@ -287,7 +271,7 @@
       "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 6"
     },
     {
-      "id": 20,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
       "location": "Museo del Té O'sulloc + Campos de Té Verde",
@@ -295,7 +279,7 @@
       "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 7"
     },
     {
-      "id": 21,
+      "id": 19,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
       "location": "Museo del Té O'sulloc + Campos de Té Verde",
@@ -303,7 +287,7 @@
       "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 8"
     },
     {
-      "id": 22,
+      "id": 20,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
       "location": "Museo del Té O'sulloc + Campos de Té Verde",
@@ -311,7 +295,7 @@
       "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 9"
     },
     {
-      "id": 23,
+      "id": 21,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
       "location": "Museo del Té O'sulloc + Campos de Té Verde",
@@ -319,7 +303,7 @@
       "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 10"
     },
     {
-      "id": 24,
+      "id": 22,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
       "location": "Museo del Té O'sulloc + Campos de Té Verde",
@@ -327,7 +311,7 @@
       "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 11"
     },
     {
-      "id": 25,
+      "id": 23,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
       "location": "Museo del Té O'sulloc + Campos de Té Verde",
@@ -335,7 +319,7 @@
       "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 12"
     },
     {
-      "id": 26,
+      "id": 24,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
       "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
@@ -343,7 +327,7 @@
       "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 2"
     },
     {
-      "id": 27,
+      "id": 25,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
       "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
@@ -359,7 +343,7 @@
       "name": "Recogida (4 puntos en toda la ciudad de Jeju)",
       "category": "Recogida — Secuencia de hoteles/centros en la ciudad de Jeju",
       "description": "**La recogida se concentra en cuatro puntos centrales de la ciudad de Jeju** para minimizar los desplazamientos matutinos: **Aeropuerto Internacional de Jeju (제주공항)** para los huéspedes con llegadas el mismo día; **Ayuntamiento de Jeju (제주시청)** para el grupo de hoteles de Yeon-dong / Nohyeong / Ciudad Antigua; **Hagwi-dong (하귀동)** como punto de recogida más occidental antes del tramo hacia el sur; y **Mercado Tradicional Dongmun (동문시장)** como punto de recogida opcional en el este de la ciudad de Jeju. \n\nLa secuencia es Hagwi → Aeropuerto → Ayuntamiento → Dongmun → Ruta 1100 hacia el sur en dirección al sendero del Humedal de Altitud 1100 de Hallasan. \n\nEl minibús es de **grupo reducido (máx. ~14 personas)** con guía de habla inglesa. **Tarjeta de itinerario bilingüe** distribuida en la recogida, informe meteorológico + aviso de cierre de la Ruta 1100 en la primera parada. \n\n**La verificación de cierre de la Ruta 1100** se realiza antes de la salida — si está cerrada por nieve/hielo, la parada en el Humedal 1100 se sustituye por una alternativa a menor altitud (generalmente la Carretera Misteriosa o el Valle de Andeok).",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": null,
       "highlights": [
         "**4 puntos de recogida** — Aeropuerto, Ayuntamiento, Hagwi, Dongmun",
         "La secuencia oeste→este minimiza la distancia del autobús por la mañana",
@@ -599,7 +583,7 @@
       "name": "Almuerzo — Daejeong / Gastronomía Local de Andeok",
       "category": "Pausa del mediodía — Cocina Local del Suroeste de Jeju",
       "description": "**Pausa de 60 minutos entre Jusangjeolli y Songaksan** — el corredor Daejeong / Andeok se encuentra a 10–15 min de ambas paradas. Rotación habitual: **galchi-jorim (갈치조림, pescado sable estofado)** — la costa sur de Jeju es el principal punto de desembarco de pez sable de Corea, con capturas diarias entregadas desde el puerto de Daejeong; **mulhoe (물회)** en verano; **heuk-doeji gui (흑돼지구이, barbacoa de cerdo negro de Jeju)** durante todo el año (Bien del Patrimonio Cultural Material n.º 5, 2015); o — **especialidad del oeste-sur** — **gosari yukgaejang (고사리 육개장, sopa picante de helecho + ternera)** arraigada en la tradición de recolección de helechos de montaña de Jeju, especialmente común en Daejeong-eup. \n\n**Opciones vegetarianas y aptas para halal** disponibles en un restaurante de la rotación — informar al recoger. El restaurante del almuerzo está a **10 min en autobús del trailhead de Songaksan**.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
+      "image": null,
       "highlights": [
         "**Corredor de gastronomía marítima y de montaña del oeste-sur de Jeju** — Daejeong / Andeok",
         "**Galchi-jorim (갈치조림)** — principal punto de desembarco del puerto de Daejeong",
@@ -625,7 +609,7 @@
       "name": "Monte Songaksan (mirador panorámico)",
       "category": "Cono volcánico de doble cráter — 99 Picos + Ruta Olle 10 + Historia de la II Guerra Mundial",
       "description": "**El monte Songaksan (송악산)** es un **cono volcánico parásito de doble cráter de 104 m** que se eleva en el extremo suroeste de Jeju, en Daejeong-eup. \n\nLa montaña es famosa por su cuenta popular de los **'99 Picos' (구십구봉)** — una denominación poética del denso conjunto de pequeños conos volcánicos que irradian desde la montaña principal, formados por erupciones sucesivas que dejaron **depósitos de ceniza volcánica negra y roja** aún visibles en los bordes del cráter. \n\nGeológicamente, Songaksan presenta una **estructura de doble cráter**: un **cráter exterior (~500 m de diámetro, ~1,7 km de circunferencia)** y un **cráter interior (~400 m de diámetro, ~69 m de profundidad)** excavado por una erupción subsidiaria posterior dentro del primero. \n\nLa experiencia para el visitante es el **sendero costero circular de 2,8 km** a lo largo de los bordes del acantilado, casi en su totalidad sobre **pasarelas de madera bien conservadas + escaleras suaves**, que se completa en **~75 minutos** a un ritmo moderado. \n\nEl sendero es el **tramo central de la Ruta 10 del Camino Olle de Jeju (Hwasun → Moseulpo)**. Las vistas panorámicas desde el circuito incluyen — al sur — **la isla Marado (el punto más meridional de Corea, a 1,7 km de la costa)** y **la isla Gapado (isla llana de campos de cebada, a 5,5 km de la costa)**; al sureste — **el islote Hyeongje ('Islas Hermanas') con sus características rocas gemelas de disyunción columnar**; y al noreste — **el monte Sanbangsan (cono de lava tobácea de 395 m)** y **Hallasan (1.950 m, centro de la isla)**. \n\n**Capa histórica**: los acantilados costeros del sur albergan **túneles del Ejército Imperial Japonés excavados durante la ocupación de la II Guerra Mundial** — refugios para botes suicidas kamikaze y almacenes de municiones, similares a las 18 cuevas de Seongsan Ilchulbong. \n\nLos túneles son de acceso público con señalización interpretativa. Fauna: **caballos y ponis en libertad** pastan en las laderas (una imagen característica de Jeju que data del uso tradicional de las tierras de pastoreo). \n\nEl **sendero a la cima cierra ocasionalmente** por rotación de conservación medioambiental; el circuito costero permanece accesible durante todo el año. \n\n**Entrada GRATUITA**; pequeño aparcamiento (a menudo lleno en horas punta). Fuertes vientos marinos incluso en días soleados — se recomienda cortavientos durante todo el año.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": null,
       "highlights": [
         "**Volcán de doble cráter de 104 m** — exterior 500 m × 1,7 km de circunferencia, interior 400 m × 69 m de profundidad",
         "Cuenta popular de los **'99 Picos' (구십구봉)** — denso conjunto de conos subsidiarios",
@@ -1098,7 +1082,7 @@
       "name": "Bajada (5 puntos en toda la ciudad de Jeju)",
       "category": "Bajada — Secuencia del hub de Jeju City",
       "description": "**La bajada refleja la recogida matutina con una opción adicional**: Hyeopjae → Jeju City por la Ruta costera oeste 1132 (~40 min en autobús). Secuencia de paradas: Hagwi-dong (la más cercana al regreso por la costa oeste) → Aeropuerto Internacional de Jeju → Ayuntamiento de Jeju City → parada opcional en Yeon-dong / Nohyeong → Mercado Tradicional Dongmun. \n\nHora estimada de llegada: Hagwi ~19:30, Aeropuerto ~19:40, Ayuntamiento ~19:50, Yeon-dong ~19:55, Dongmun ~20:05. **Los vuelos vespertinos del mismo día desde JIA** son generalmente viables (última salida ~21:30), aunque el margen es más ajustado que en la ruta sur-UNESCO del Tour 1 — los pasajeros con vuelos vespertinos el mismo día deben comunicarlo en el momento de la recogida para que el guía pueda gestionar los tiempos del atardecer con prioridad. Wi-Fi en el autobús durante todo el trayecto.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": null,
       "highlights": [
         "**5 puntos de bajada** — Hagwi (primero), Aeropuerto, Ayuntamiento, Yeon-dong/Nohyeong, Dongmun",
         "Autobús Hyeopjae → Jeju City por la Ruta costera oeste 1132 (~40 min)",
@@ -1958,7 +1942,7 @@
         "headlineLine1": "Jeju Oeste-Sur",
         "headlineLine2": "Auténtico",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+          "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
           "imagePosition": "center 35%",
           "tagline": "Paisajes volcánicos se encuentran con costas dramáticas y elegantes cafeterías junto al mar — el circuito oeste-sur de Jeju en su máxima expresión",
           "pills": [
@@ -2052,7 +2036,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "alt": "Pasarela de madera en bucle que atraviesa el Humedal de Altitud 1100 con arbustos bajos y la cima del Hallasan visible a lo lejos",
             "caption": "Humedal de Altitud 1100 de Hallasan — pasarela de la Reserva de la Biosfera UNESCO",
             "location": "Humedal 1100 de Hallasan, centro de Jeju (1.100 m de altitud)",
@@ -2061,7 +2045,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "alt": "Acantilados de lava columnar hexagonal que se elevan verticalmente desde el mar, vistos desde una pasarela con barandilla",
             "caption": "Acantilado de Jusangjeolli — columnas hexagonales del Geoparque UNESCO",
             "location": "Jusangjeolli, costa de Jungmun, sur de Jeju",
@@ -2070,7 +2054,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "alt": "Cono volcánico costero con sendero de borde plano, océano e islas marinas visibles al fondo",
             "caption": "Borde de Songaksan — recorrido panorámico de la costa sur",
             "location": "Songaksan, extremo suroeste de Jeju",
@@ -2079,7 +2063,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "alt": "Ondulantes campos de té verde con hileras ordenadas que se extienden hasta un edificio de museo de baja altura",
             "caption": "Museo del Té O'sulloc y campos de té",
             "location": "O'sulloc, centro-oeste de Jeju",
@@ -2088,7 +2072,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "alt": "Playa de arena blanca con aguas turquesas, zona de cafés en la orilla, pequeña isla visible en el horizonte marino",
             "caption": "Playa de Hyeopjae + zona de cafés de la costa oeste",
             "location": "Playa de Hyeopjae, Hallim, oeste de Jeju",
@@ -2110,7 +2094,7 @@
             "name": "Recogida (4 puntos en Jeju City)",
             "category": "Salida",
             "description": "El mismo patrón de recogida que en los demás tours del operador: Ocean Suites Jeju (08:30), Aeropuerto Internacional de Jeju, Puerta 3, 3.ª planta, Salidas Domésticas (08:45), LOTTE City Hotel Jeju (08:55), Tienda Shilla Duty-Free Jeju (09:05). Elija el punto más cercano al hacer su reserva. La recogida en el aeropuerto es apta para equipaje, ideal para llegadas en vuelos de primera hora de la mañana.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "highlights": [
               "4 puntos de recogida secuenciales",
               "Recogida en el aeropuerto apta para equipaje",
@@ -2331,7 +2315,7 @@
             "name": "Almuerzo (restaurante local de Jeju)",
             "category": "Comida",
             "description": "Tiempo libre en un restaurante de Jeju recomendado por el guía. Especialidades locales: heuk-dwaeji (cerdo negro de Jeju) a la parrilla, mom-guk (sopa de artemisa con abulón) o jeon-bok-juk (gachas de abulón). Opciones vegetarianas, veganas y halal disponibles con aviso previo.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "highlights": [
               "Cerdo negro heuk-dwaeji",
               "Opciones vegetarianas/veganas/halal",
@@ -2361,7 +2345,7 @@
             "name": "Montaña Songaksan (mirador panorámico)",
             "category": "Montaña con mirador costero",
             "description": "Un pequeño cono volcánico en el extremo suroeste de Jeju con un paseo costero de 2,6 km alrededor del borde. El mirador ofrece vistas panorámicas: el Hallasan a lo lejos, la isla Marado en alta mar y los acantilados de la costa sur. Menos concurrido que las principales paradas UNESCO; popular entre los fotógrafos.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "highlights": [
               "Caminata de 2,6 km por el borde costero",
               "Vistas del Hallasan + isla Marado",
@@ -2791,7 +2775,7 @@
             "name": "Puntos de llegada (5 puntos en Jeju City)",
             "category": "Regreso",
             "description": "Cinco opciones de llegada: Shilla Duty-Free, LOTTE City Hotel, Aeropuerto de Jeju, Ocean Suites Jeju y Mercado Tradicional Dongmun.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "highlights": [
               "5 opciones de llegada",
               "Llegada conveniente al aeropuerto"
@@ -3273,7 +3257,7 @@
       "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

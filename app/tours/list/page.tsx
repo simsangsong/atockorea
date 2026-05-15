@@ -797,7 +797,7 @@ export default function ToursListPage() {
           ) : (
             <>
               <div
-                className={`grid grid-cols-2 gap-x-3 gap-y-4 transition-opacity duration-200 sm:gap-x-4 sm:gap-y-5 md:gap-x-5 md:gap-y-6 ${
+                className={`grid grid-cols-1 gap-y-5 transition-opacity duration-200 sm:gap-y-6 lg:grid-cols-2 lg:gap-x-6 lg:gap-y-7 ${
                   isRefetching ? 'opacity-60' : 'opacity-100'
                 }`}
                 aria-busy={isRefetching}
@@ -808,7 +808,8 @@ export default function ToursListPage() {
                     tour={tour}
                     detailHref={consumerTourDetailHref(tour.id, tour.slug)}
                     formatPriceFn={formatPrice}
-                    imageSizes="(min-width: 1024px) 496px, 50vw"
+                    layout="horizontal"
+                    imageSizes="(min-width: 1024px) 240px, 38vw"
                   />
                 ))}
               </div>
@@ -833,28 +834,30 @@ export default function ToursListPage() {
   );
 }
 
-/** Card skeleton grid — mirrors TourListCard proportions so the layout doesn't jump. */
+/** Card skeleton grid — mirrors TourListCard horizontal proportions so the layout doesn't jump. */
 function SkeletonGrid({ count }: { count: number }) {
   return (
     <div
-      className="grid grid-cols-2 gap-x-3 gap-y-4 sm:gap-x-4 sm:gap-y-5 md:gap-x-5 md:gap-y-6"
+      className="grid grid-cols-1 gap-y-5 sm:gap-y-6 lg:grid-cols-2 lg:gap-x-6 lg:gap-y-7"
       aria-hidden="true"
     >
       {Array.from({ length: count }).map((_, i) => (
         <div
           key={i}
-          className="overflow-hidden rounded-[1.6rem] border border-white/80 bg-white/95 shadow-[0_16px_38px_-24px_rgba(15,23,42,0.22)]"
+          className="flex flex-row overflow-hidden rounded-[1.6rem] border border-white/80 bg-white/95 shadow-[0_16px_38px_-24px_rgba(15,23,42,0.22)]"
         >
-          <div className="aspect-[4/3.15] w-full animate-pulse bg-slate-200/70 sm:aspect-[4/3.35]" />
-          <div className="space-y-2 px-3 py-3">
+          <div className="m-2.5 aspect-square w-[36%] min-w-[112px] max-w-[168px] shrink-0 animate-pulse rounded-2xl bg-slate-200/70 sm:m-3 sm:max-w-[188px]" />
+          <div className="flex min-w-0 flex-1 flex-col gap-2 px-3 py-3 sm:px-4 sm:py-3.5">
             <div className="h-3 w-1/3 animate-pulse rounded-full bg-slate-200/70" />
-            <div className="h-3 w-4/5 animate-pulse rounded-full bg-slate-200/80" />
-            <div className="h-3 w-3/5 animate-pulse rounded-full bg-slate-200/70" />
-            <div className="flex gap-2 pt-1">
-              <div className="h-4 w-14 animate-pulse rounded-full bg-slate-200/70" />
-              <div className="h-4 w-12 animate-pulse rounded-full bg-slate-200/70" />
+            <div className="h-3.5 w-4/5 animate-pulse rounded-full bg-slate-200/80" />
+            <div className="h-3.5 w-3/5 animate-pulse rounded-full bg-slate-200/70" />
+            <div className="mt-auto space-y-2">
+              <div className="flex gap-2">
+                <div className="h-4 w-14 animate-pulse rounded-full bg-slate-200/70" />
+                <div className="h-4 w-12 animate-pulse rounded-full bg-slate-200/70" />
+              </div>
+              <div className="h-5 w-28 animate-pulse rounded-md bg-slate-200/80" />
             </div>
-            <div className="h-4 w-24 animate-pulse rounded-md bg-slate-200/80" />
           </div>
         </div>
       ))}

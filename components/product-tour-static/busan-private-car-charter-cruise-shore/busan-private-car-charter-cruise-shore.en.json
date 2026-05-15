@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Busan Private Car Charter for Cruise Shore (8hr) | AtoC Korea",
     "metaDescription": "8-hour fully customizable Busan private car charter for cruise passengers. English-speaking driver, on-time return planned, hotel/KTX/cruise port pickup.",
-    "ogImage": "https://www.atockorea.com/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "ogImage": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
     "primaryKeywords": [
       "Busan private car charter",
       "Busan cruise shore excursion",
@@ -32,8 +32,8 @@
       "Customizable Route",
       "Cruise Pickup Included"
     ],
-    "heroImage": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-    "thumbnail": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "heroImage": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
+    "thumbnail": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
     "priceLabel": "From US$359 per vehicle (was $379, 1–6 pax, 8h) · 7–12 pax 2× · 13+ pax 3×",
     "shortCardDescription": "A private Busan shore excursion for cruise guests. Choose the places that matter most — Haedong Yonggungsa, Cheongsapo, Blue Line Park, UN Memorial Cemetery, Gamcheon Culture Village, Songdo, Nampo-dong, Jagalchi Market, and more — then adjust the day with your guide around your ship schedule.",
     "tags": [
@@ -54,7 +54,7 @@
     "discountPercent": 5
   },
   "hero": {
-    "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "imageUrl": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
     "imagePosition": "center 50%",
     "tagline": "From UN Memorial Cemetery to Taejongdae cliffs to Gamcheon's painted alleys to Jagalchi's working harbor — eight private hours, your route, your pace, with return planned around your ship time.",
     "pills": [
@@ -134,98 +134,82 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-      "location": "Route planning with your guide",
-      "alt": "Route planning with your guide — gallery image 1",
-      "caption": "Route planning with your guide — photo 1"
+      "src": "/images/tours/busan-private/busan-private-thumbnail-gwangalli.webp",
+      "location": "Gwangalli & Gwangan Bridge",
+      "alt": "Private Busan tour — family at Gwangalli with Gwangan Bridge",
+      "caption": "Private Busan tour — family at Gwangalli with Gwangan Bridge"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-      "location": "East coast highlights option",
-      "alt": "East coast highlights option — gallery image 1",
-      "caption": "East coast highlights option — photo 1"
+      "src": "/images/tours/gamcheon-culture-village/gamcheon-panorama.webp",
+      "location": "Gamcheon Culture Village",
+      "alt": "Gamcheon Culture Village — colorful hillside panorama",
+      "caption": "Gamcheon Culture Village — colorful hillside panorama"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
-      "location": "Yongdusan Park & Busan Tower",
-      "alt": "Yongdusan Park & Busan Tower — gallery image 1",
-      "caption": "Yongdusan Park & Busan Tower — photo 1"
+      "src": "/images/tours/gamcheon-culture-village/gamcheon-vibrant-viewpoint.webp",
+      "location": "Gamcheon Culture Village",
+      "alt": "Gamcheon Culture Village — vibrant rooftop viewpoint",
+      "caption": "Gamcheon Culture Village — vibrant rooftop viewpoint"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-      "location": "Route planning with your guide",
-      "alt": "Route planning with your guide — gallery image 2",
-      "caption": "Route planning with your guide — photo 2"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "location": "Haedong Yonggungsa Temple",
+      "alt": "Haedong Yonggungsa — sunrise cliff temple over the sea",
+      "caption": "Haedong Yonggungsa — sunrise cliff temple over the sea"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
-      "location": "Route planning with your guide",
-      "alt": "Route planning with your guide — gallery image 3",
-      "caption": "Route planning with your guide — photo 3"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+      "location": "Haedong Yonggungsa Temple",
+      "alt": "Haedong Yonggungsa — Haesu Gwaneum statue facing the sea",
+      "caption": "Haedong Yonggungsa — Haesu Gwaneum statue facing the sea"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
-      "location": "East coast highlights option",
-      "alt": "East coast highlights option — gallery image 2",
-      "caption": "East coast highlights option — photo 2"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "location": "Haedong Yonggungsa Temple",
+      "alt": "Haedong Yonggungsa — dragon hall and signature sculpture",
+      "caption": "Haedong Yonggungsa — dragon hall and signature sculpture"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
-      "location": "East coast highlights option",
-      "alt": "East coast highlights option — gallery image 3",
-      "caption": "East coast highlights option — photo 3"
+      "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+      "location": "Cheongsapo Sky Capsule",
+      "alt": "Cheongsapo Sky Capsule — seaside ride in capsule no. 04",
+      "caption": "Cheongsapo Sky Capsule — seaside ride in capsule no. 04"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
-      "location": "East coast highlights option",
-      "alt": "East coast highlights option — gallery image 4",
-      "caption": "East coast highlights option — photo 4"
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+      "location": "Haeundae Blue Line Park",
+      "alt": "Haeundae Blue Line Park — coastal train route",
+      "caption": "Haeundae Blue Line Park — coastal train route"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
-      "location": "East coast highlights option",
-      "alt": "East coast highlights option — gallery image 5",
-      "caption": "East coast highlights option — photo 5"
+      "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+      "location": "Busan Tower (Yongdusan Park)",
+      "alt": "Busan Tower & Yongdusan Park — Korea bell pavilion at night",
+      "caption": "Busan Tower & Yongdusan Park — Korea bell pavilion at night"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
-      "location": "East coast highlights option",
-      "alt": "East coast highlights option — gallery image 6",
-      "caption": "East coast highlights option — photo 6"
-    },
-    {
-      "id": 11,
-      "type": "photo",
-      "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
-      "location": "Yongdusan Park & Busan Tower",
-      "alt": "Yongdusan Park & Busan Tower — gallery image 2",
-      "caption": "Yongdusan Park & Busan Tower — photo 2"
-    },
-    {
-      "id": 12,
-      "type": "photo",
-      "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
-      "location": "Yongdusan Park & Busan Tower",
-      "alt": "Yongdusan Park & Busan Tower — gallery image 3",
-      "caption": "Yongdusan Park & Busan Tower — photo 3"
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+      "location": "Taejongdae",
+      "alt": "Taejongdae — dramatic coastal cliffs at the southern tip",
+      "caption": "Taejongdae — dramatic coastal cliffs at the southern tip"
     }
   ],
   "itineraryStops": [
@@ -252,7 +236,8 @@
           "CruiseMapper",
           "NamuWiki"
         ]
-      }
+      },
+      "image": null
     },
     {
       "number": 2,
@@ -580,7 +565,13 @@
         "closed": "Open year-round",
         "admission": "FREE village entry; **Stamp Tour Map ₩2,000** (optional, 9 numbered installations)",
         "walking": "Steep stair-streets and narrow alleys — **moderate-to-high** difficulty; **NOT stroller- or wheelchair-friendly**; grippy shoes essential"
-      }
+      },
+      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "images": [
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp"
+      ]
     },
     {
       "number": 6,
@@ -733,7 +724,8 @@
         "closed": "**Jagalchi: 1st and 3rd Tuesdays of each month**; Nampo-dong open year-round",
         "admission": "FREE access; **2nd-floor hoe restaurants ~₩30,000+ set menus** (price varies by fish)",
         "walking": "Flat shopping street + market floor — easy; **2nd-floor hoe restaurants** require a short stair climb"
-      }
+      },
+      "image": null
     },
     {
       "number": 8,
@@ -752,7 +744,8 @@
         "poi_key": "OPS_busan_cruise_return",
         "kb_version": "1.15",
         "verified_date": "2026-04-29"
-      }
+      },
+      "image": null
     }
   ],
   "routeFlowStops": [
@@ -1093,7 +1086,7 @@
     "product_id": "busan-private-car-charter-cruise-shore",
     "product_type": "private",
     "route_type": "customizable",
-    "destination_region": "korea_mainland",
+    "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "private_vehicle",
     "duration_hours": 8,
@@ -2150,7 +2143,7 @@
       "v15.4_new_tour_creation": "Created new tour from GYG product ID t899592 (Busan private car charter for cruise shore). Structural template: jeju-island-private-car-charter-tour. Content template: busan-small-group-sightseeing-tour-cruise-passengers. POI operational data (visitBasics/convenience/smartNotes) sourced from poi_knowledge_base.json (centralized KB built in Step 2). REASONABLE-ASSUMPTION FIELDS that may need patching once the live GYG page is reviewed: (1) price.amountLabel left empty per jeju-charter convention (per-vehicle pricing confirmed at booking); (2) catalog_card.priceFromUSD null; (3) vehicle capacity assumed 1-3 sedan / 4-7 van based on industry standard, not GYG-confirmed; (4) 8-hour duration assumed based on typical Busan cruise dwell time (6-9h common); (5) reviewsSummary populated with zeros — actual GYG reviews not imported in this pass; (6) hero/og images deferred per v15 P3 workflow. Pickup rule applied per Jason's directive: cruise terminal + KTX + central Busan hotel; Gimhae Airport pickup is a paid add-on, not bundled.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 0,
         "fields_skipped": 0,
         "fields_already_float": 42

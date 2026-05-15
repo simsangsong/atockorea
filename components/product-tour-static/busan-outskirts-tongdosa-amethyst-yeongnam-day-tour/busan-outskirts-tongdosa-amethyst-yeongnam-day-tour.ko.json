@@ -15,7 +15,7 @@
       "울산 자수정 동굴 투어",
       "부산 유네스코 당일 투어"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+    "ogImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
     "title": "부산 외곽 당일 투어 · 통도사 + 자수정 + 영남 알프스 | AtoC Korea",
     "description": "부산에서 출발해 양산, 울산, 밀양을 돌아보는 코치 당일 투어 — 유네스코 통도사, 지하 자수정 동굴 (선택 보트), 영남 알프스 얼음골 케이블카, 그리고 감천문화마을 마무리."
   },
@@ -162,6 +162,54 @@
       "location": "감천문화마을",
       "alt": "감천문화마을 — 갤러리 3",
       "caption": "감천문화마을 — 벽화 골목"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+      "location": "울산 자수정 동굴 테마파크",
+      "alt": "자수정 동굴 — 형형색색 지하 홀과 수로",
+      "caption": "울산 자수정 동굴 — 형형색색 지하 홀"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/amethyst-cave/amethyst-cave-entrance-corridor.webp",
+      "location": "울산 자수정 동굴 테마파크",
+      "alt": "자수정 동굴 — 조명이 빛나는 입구 통로",
+      "caption": "울산 자수정 동굴 — 빛이 흐르는 입구 통로"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/amethyst-cave/amethyst-cave-boat-passage.webp",
+      "location": "울산 자수정 동굴 테마파크",
+      "alt": "자수정 동굴 — 형형색색 보트 탐험",
+      "caption": "울산 자수정 동굴 — 동굴 보트 탐험"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+      "location": "영남알프스 얼음골 케이블카 (밀양)",
+      "alt": "영남알프스 얼음골 케이블카 — 숲 위를 나는 곤돌라",
+      "caption": "영남알프스 얼음골 케이블카 — 숲 위를 나는 곤돌라"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
+      "location": "영남알프스 얼음골 케이블카 (밀양)",
+      "alt": "영남알프스 케이블카 — 푸른 능선 사이를 가로지르는 곤돌라",
+      "caption": "영남알프스 — 푸른 능선 사이의 케이블카"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
+      "location": "영남알프스 얼음골 케이블카 (밀양)",
+      "alt": "영남알프스 — 끝없는 능선이 펼쳐진 정상 전망대",
+      "caption": "영남알프스 — 능선이 펼쳐진 정상 전망대"
     }
   ],
   "itineraryStops": [
@@ -235,10 +283,8 @@
         "admission": "성인 ₩3,000 — 투어 요금에 포함; 통도사박물관 ₩2,000 (개인 부담)",
         "walking": "보통 — 1km 완만한 숲길 진입로; 자갈·돌 포장; 대체로 평탄하며 소폭 오르막 있음"
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/41/2667141_image2_1.jpg",
-      "images": [
-        "https://tong.visitkorea.or.kr/cms/resource/41/2667141_image2_1.jpg"
-      ]
+      "image": null,
+      "images": []
     },
     {
       "name": "현지 한식당에서 점심 식사 (선택 사항, 불포함)",
@@ -311,7 +357,13 @@
         "closed": "연중 운영(폭우 시 안전상의 이유로 일시 폐쇄될 수 있음)",
         "admission": "성인 ₩8,000 — 본 투어 포함; 지하 보트 탑승 ₩4,000 개인 부담(선택)",
         "walking": "보통 수준 — 고르지 않은 동굴 바닥, 일부 습한 구간, 대체로 평탄하나 작은 계단 있음; 앞이 막힌 신발 필수"
-      }
+      },
+      "image": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+      "images": [
+        "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+        "/images/tours/amethyst-cave/amethyst-cave-entrance-corridor.webp",
+        "/images/tours/amethyst-cave/amethyst-cave-boat-passage.webp"
+      ]
     },
     {
       "name": "영남알프스 얼음골 케이블카(밀양)",
@@ -365,7 +417,13 @@
         "closed": "강풍 또는 폭설 시 케이블카 운행 중단 가능(기상 조건에 따라 변동)",
         "admission": "케이블카 왕복 성인 ₩18,000 / 어린이 ₩13,000 — **본 투어 포함**; 얼음골 계곡 산책 무료",
         "walking": "난이도 쉬움 — 케이블카로 고도 이동; 스카이워크·전망대는 평탄한 지형; 계곡 산책로는 완만한 코스"
-      }
+      },
+      "image": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+      "images": [
+        "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+        "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
+        "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp"
+      ]
     },
     {
       "name": "감천문화마을",
@@ -957,7 +1015,7 @@
     "product_id": "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
     "product_type": "bus",
     "route_type": "fixed_route",
-    "destination_region": "korea_mainland",
+    "destination_region": "busan_gyeongju",
     "region_type": "gyeongsang_north",
     "vehicle_type": "large_coach",
     "duration_hours": 11,
@@ -991,7 +1049,7 @@
     "photo_level": 1,
     "culture_level": 0.95,
     "relax_level": 0.5,
-    "first_time_fit": 1,
+    "first_time_fit": 0.85,
     "family_fit": 0.85,
     "senior_fit": 0.7,
     "couple_fit": 1,
@@ -1005,12 +1063,12 @@
     "mobility_friendly_fit": 0.4,
     "stroller_fit": 0.45,
     "one_day_fit": 1,
-    "same_day_flight_fit": 0.25,
+    "same_day_flight_fit": 0.15,
     "rain_fit": 0.55,
     "value_for_money_fit": 1,
     "iconic_landmark_fit": 1,
     "cafe_fit": 0.5,
-    "food_fit": 0.7,
+    "food_fit": 0.55,
     "nature_fit": 0.95,
     "beach_fit": 0.2,
     "nightlife_fit": 0.1,
@@ -1023,7 +1081,7 @@
     "indoor_ratio": 0.25,
     "weather_sensitivity": 0.65,
     "comfort_level": 0.55,
-    "budget_fit": 0.95,
+    "budget_fit": 0.6,
     "premium_fit": 0.25,
     "small_group_fit": 0.15,
     "private_fit": 0.05,
@@ -1073,7 +1131,7 @@
     "customizable_route_fit": 0.1,
     "flexibility_fit": 0.25,
     "fixed_itinerary_fit": 1,
-    "national_park_fit": 0.5,
+    "national_park_fit": 0.25,
     "buddhist_temple_fit": 1,
     "scenic_temple_fit": 1,
     "mural_village_fit": 1,
@@ -1095,15 +1153,41 @@
     "australia_market_fit": 0.9,
     "japan_market_fit": 0.95,
     "first_time_korea_fit": 1,
-    "busan_signature_route_fit": 1,
-    "no_inter_city_travel_fit": 1,
+    "busan_signature_route_fit": 0.4,
+    "no_inter_city_travel_fit": 0.1,
     "english_speaking_guide_provided": true,
     "chinese_speaking_guide_available_on_advance_notice": true,
     "japanese_speaking_guide_available_on_advance_notice": true
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
+    "primary_themes": [
+      "unesco",
+      "buddhist_temple",
+      "nature",
+      "cable_car"
+    ],
+    "secondary_themes": [
+      "mountain",
+      "underground_cave",
+      "mural_village",
+      "natural_monument"
+    ],
+    "best_for": [
+      "first_time_korea",
+      "couples",
+      "nature_lovers",
+      "culture_lovers",
+      "photographers",
+      "history_lovers"
+    ],
+    "not_recommended_for": [
+      "mobility_limited",
+      "very_young_children",
+      "shoppers_only",
+      "nightlife_seekers"
+    ],
     "source_of_truth_note": "Busan outskirts coach day tour: Tongdosa Temple (UNESCO 2018) + Amethyst Cave Theme Park Ulsan + Yeongnam Alps Ice Valley Cable Car Miryang + Gamcheon Culture Village. Sources: KTO VisitKorea, UNESCO World Heritage Centre, Tongdosa official, Miryang City Tourism, Yeongnam Alps Cable Car official, Cultural Heritage Administration Natural Monument No. 224, Wikipedia.",
     "audit_summary": "11-hour Busan-base coach tour covering UNESCO temple + amethyst-mine theme park + 1,019m cable car + Gamcheon. All main admissions bundled. Gamcheon content reused from busan-top-attractions-day-tour. Direct GetYourGuide equivalent positioned at $94; this tour priced $85/$93."
   }

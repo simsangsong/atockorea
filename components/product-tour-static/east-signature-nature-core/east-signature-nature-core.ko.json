@@ -14,7 +14,7 @@
       "성산일출봉 투어",
       "성읍민속마을 투어"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+    "ogImage": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
     "title": "제주 동부 자연 투어: 유네스코 + 용암 동굴 + 민속마을 | AtoC",
     "description": "제주 동부 시그니처 소그룹 당일 투어: 제주 돌문화공원 → 섭지코지 → 성산일출봉(유네스코) → 미천굴 용암 동굴 → 성읍민속마을. 9시간, 모든 입장료 포함. 4.8/5 (리뷰 127개)."
   },
@@ -59,11 +59,7 @@
     "imagePosition": "center 35%",
     "images": [
       "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
-      "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=1920&q=85&fm=jpg&fit=crop",
-      "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
-      "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
-      "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
-      "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/bfc943f0-5372-4a9f-8d07-97c3793808db.webp"
+      "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=1920&q=85&fm=jpg&fit=crop"
     ],
     "tagline": "돌문화와 탁 트인 해안선부터 화산 분화구, 용암 동굴 정원, 전통 마을까지, 단순한 사진 투어 이상을 원하는 첫 여행자를 위해 설계된 균형 잡힌 제주 동부 코스입니다. > **참고:** 24번 이미지 경로는 기술적 파일 경로이므로 원문 그대로 유지했습니다.",
     "pills": [
@@ -160,241 +156,241 @@
       "id": 3,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-      "location": "성산일출봉",
-      "alt": "성산일출봉 — 갤러리 이미지 1",
-      "caption": "성산일출봉 — 사진 1"
-    },
-    {
-      "id": 4,
-      "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
       "location": "일출랜드 (미천굴 용암동굴)",
       "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 1",
       "caption": "일출랜드 (미천굴 용암동굴) — 사진 1"
     },
     {
-      "id": 5,
+      "id": 4,
       "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
       "location": "성읍민속마을",
       "alt": "성읍민속마을 — 갤러리 이미지 1",
       "caption": "성읍민속마을 — 사진 1"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+      "location": "제주돌문화공원 (돌문화공원)",
+      "alt": "제주돌문화공원 (돌문화공원) — 갤러리 이미지 2",
+      "caption": "제주돌문화공원 (돌문화공원) — 사진 2"
     },
     {
       "id": 6,
       "type": "photo",
       "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
       "location": "제주돌문화공원 (돌문화공원)",
-      "alt": "제주돌문화공원 (돌문화공원) — 갤러리 이미지 2",
-      "caption": "제주돌문화공원 (돌문화공원) — 사진 2"
+      "alt": "제주돌문화공원 (돌문화공원) — 갤러리 이미지 3",
+      "caption": "제주돌문화공원 (돌문화공원) — 사진 3"
     },
     {
       "id": 7,
       "type": "photo",
       "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
       "location": "제주돌문화공원 (돌문화공원)",
-      "alt": "제주돌문화공원 (돌문화공원) — 갤러리 이미지 3",
-      "caption": "제주돌문화공원 (돌문화공원) — 사진 3"
+      "alt": "제주돌문화공원 (돌문화공원) — 갤러리 이미지 4",
+      "caption": "제주돌문화공원 (돌문화공원) — 사진 4"
     },
     {
       "id": 8,
       "type": "photo",
       "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
       "location": "제주돌문화공원 (돌문화공원)",
-      "alt": "제주돌문화공원 (돌문화공원) — 갤러리 이미지 4",
-      "caption": "제주돌문화공원 (돌문화공원) — 사진 4"
+      "alt": "제주돌문화공원 (돌문화공원) — 갤러리 이미지 5",
+      "caption": "제주돌문화공원 (돌문화공원) — 사진 5"
     },
     {
       "id": 9,
       "type": "photo",
       "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp",
-      "location": "제주돌문화공원 (돌문화공원)",
-      "alt": "제주돌문화공원 (돌문화공원) — 갤러리 이미지 5",
-      "caption": "제주돌문화공원 (돌문화공원) — 사진 5"
+      "location": "섭지코지 (동쪽 곶)",
+      "alt": "섭지코지 (동쪽 곶) — 갤러리 이미지 2",
+      "caption": "섭지코지 (동쪽 곶) — 사진 2"
     },
     {
       "id": 10,
       "type": "photo",
       "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
       "location": "섭지코지 (동쪽 곶)",
-      "alt": "섭지코지 (동쪽 곶) — 갤러리 이미지 2",
-      "caption": "섭지코지 (동쪽 곶) — 사진 2"
+      "alt": "섭지코지 (동쪽 곶) — 갤러리 이미지 3",
+      "caption": "섭지코지 (동쪽 곶) — 사진 3"
     },
     {
       "id": 11,
       "type": "photo",
       "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
       "location": "섭지코지 (동쪽 곶)",
-      "alt": "섭지코지 (동쪽 곶) — 갤러리 이미지 3",
-      "caption": "섭지코지 (동쪽 곶) — 사진 3"
+      "alt": "섭지코지 (동쪽 곶) — 갤러리 이미지 4",
+      "caption": "섭지코지 (동쪽 곶) — 사진 4"
     },
     {
       "id": 12,
       "type": "photo",
       "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
       "location": "섭지코지 (동쪽 곶)",
-      "alt": "섭지코지 (동쪽 곶) — 갤러리 이미지 4",
-      "caption": "섭지코지 (동쪽 곶) — 사진 4"
+      "alt": "섭지코지 (동쪽 곶) — 갤러리 이미지 5",
+      "caption": "섭지코지 (동쪽 곶) — 사진 5"
     },
     {
       "id": 13,
       "type": "photo",
       "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
       "location": "섭지코지 (동쪽 곶)",
-      "alt": "섭지코지 (동쪽 곶) — 갤러리 이미지 5",
-      "caption": "섭지코지 (동쪽 곶) — 사진 5"
+      "alt": "섭지코지 (동쪽 곶) — 갤러리 이미지 6",
+      "caption": "섭지코지 (동쪽 곶) — 사진 6"
     },
     {
       "id": 14,
       "type": "photo",
       "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
-      "location": "섭지코지 (동쪽 곶)",
-      "alt": "섭지코지 (동쪽 곶) — 갤러리 이미지 6",
-      "caption": "섭지코지 (동쪽 곶) — 사진 6"
+      "location": "성산일출봉",
+      "alt": "성산일출봉 — 갤러리 이미지 2",
+      "caption": "성산일출봉 — 사진 2"
     },
     {
       "id": 15,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
       "location": "성산일출봉",
-      "alt": "성산일출봉 — 갤러리 이미지 2",
-      "caption": "성산일출봉 — 사진 2"
+      "alt": "성산일출봉 — 갤러리 이미지 3",
+      "caption": "성산일출봉 — 사진 3"
     },
     {
       "id": 16,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
       "location": "성산일출봉",
-      "alt": "성산일출봉 — 갤러리 이미지 3",
-      "caption": "성산일출봉 — 사진 3"
+      "alt": "성산일출봉 — 갤러리 이미지 4",
+      "caption": "성산일출봉 — 사진 4"
     },
     {
       "id": 17,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
       "location": "성산일출봉",
-      "alt": "성산일출봉 — 갤러리 이미지 4",
-      "caption": "성산일출봉 — 사진 4"
+      "alt": "성산일출봉 — 갤러리 이미지 5",
+      "caption": "성산일출봉 — 사진 5"
     },
     {
       "id": 18,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-      "location": "성산일출봉",
-      "alt": "성산일출봉 — 갤러리 이미지 5",
-      "caption": "성산일출봉 — 사진 5"
+      "location": "일출랜드 (미천굴 용암동굴)",
+      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 2",
+      "caption": "일출랜드 (미천굴 용암동굴) — 사진 2"
     },
     {
       "id": 19,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
       "location": "일출랜드 (미천굴 용암동굴)",
-      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 2",
-      "caption": "일출랜드 (미천굴 용암동굴) — 사진 2"
+      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 3",
+      "caption": "일출랜드 (미천굴 용암동굴) — 사진 3"
     },
     {
       "id": 20,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
       "location": "일출랜드 (미천굴 용암동굴)",
-      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 3",
-      "caption": "일출랜드 (미천굴 용암동굴) — 사진 3"
+      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 4",
+      "caption": "일출랜드 (미천굴 용암동굴) — 사진 4"
     },
     {
       "id": 21,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
       "location": "일출랜드 (미천굴 용암동굴)",
-      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 4",
-      "caption": "일출랜드 (미천굴 용암동굴) — 사진 4"
+      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 5",
+      "caption": "일출랜드 (미천굴 용암동굴) — 사진 5"
     },
     {
       "id": 22,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
       "location": "일출랜드 (미천굴 용암동굴)",
-      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 5",
-      "caption": "일출랜드 (미천굴 용암동굴) — 사진 5"
+      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 6",
+      "caption": "일출랜드 (미천굴 용암동굴) — 사진 6"
     },
     {
       "id": 23,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
       "location": "일출랜드 (미천굴 용암동굴)",
-      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 6",
-      "caption": "일출랜드 (미천굴 용암동굴) — 사진 6"
+      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 7",
+      "caption": "일출랜드 (미천굴 용암동굴) — 사진 7"
     },
     {
       "id": 24,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
       "location": "일출랜드 (미천굴 용암동굴)",
-      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 7",
-      "caption": "일출랜드 (미천굴 용암동굴) — 사진 7"
+      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 8",
+      "caption": "일출랜드 (미천굴 용암동굴) — 사진 8"
     },
     {
       "id": 25,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
       "location": "일출랜드 (미천굴 용암동굴)",
-      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 8",
-      "caption": "일출랜드 (미천굴 용암동굴) — 사진 8"
+      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 9",
+      "caption": "일출랜드 (미천굴 용암동굴) — 사진 9"
     },
     {
       "id": 26,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
       "location": "일출랜드 (미천굴 용암동굴)",
-      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 9",
-      "caption": "일출랜드 (미천굴 용암동굴) — 사진 9"
+      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 10",
+      "caption": "일출랜드 (미천굴 용암동굴) — 사진 10"
     },
     {
       "id": 27,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
-      "location": "일출랜드 (미천굴 용암동굴)",
-      "alt": "일출랜드 (미천굴 용암동굴) — 갤러리 이미지 10",
-      "caption": "일출랜드 (미천굴 용암동굴) — 사진 10"
+      "location": "성읍 민속마을",
+      "alt": "성읍 민속마을 — 갤러리 이미지 2",
+      "caption": "성읍 민속마을 — 사진 2"
     },
     {
       "id": 28,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
       "location": "성읍 민속마을",
-      "alt": "성읍 민속마을 — 갤러리 이미지 2",
-      "caption": "성읍 민속마을 — 사진 2"
+      "alt": "성읍 민속마을 — 갤러리 이미지 3",
+      "caption": "성읍 민속마을 — 사진 3"
     },
     {
       "id": 29,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
       "location": "성읍 민속마을",
-      "alt": "성읍 민속마을 — 갤러리 이미지 3",
-      "caption": "성읍 민속마을 — 사진 3"
+      "alt": "성읍 민속마을 — 갤러리 이미지 4",
+      "caption": "성읍 민속마을 — 사진 4"
     },
     {
       "id": 30,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
       "location": "성읍 민속마을",
-      "alt": "성읍 민속마을 — 갤러리 이미지 4",
-      "caption": "성읍 민속마을 — 사진 4"
+      "alt": "성읍 민속마을 — 갤러리 이미지 5",
+      "caption": "성읍 민속마을 — 사진 5"
     },
     {
       "id": 31,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
       "location": "성읍 민속마을",
-      "alt": "성읍 민속마을 — 갤러리 이미지 5",
-      "caption": "성읍 민속마을 — 사진 5"
+      "alt": "성읍 민속마을 — 갤러리 이미지 6",
+      "caption": "성읍 민속마을 — 사진 6"
     },
     {
       "id": 32,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
       "location": "성읍 민속마을",
-      "alt": "성읍 민속마을 — 갤러리 이미지 6",
-      "caption": "성읍 민속마을 — 사진 6"
+      "alt": "성읍 민속마을 — 갤러리 이미지 7",
+      "caption": "성읍 민속마을 — 사진 7"
     },
     {
       "id": 33,
@@ -446,11 +442,11 @@
         ]
       },
       "images": [
-        "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-17.webp",
-        "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-18.webp",
         "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
         "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
-        "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp"
+        "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
+        "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
+        "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp"
       ],
       "imageCredits": [
         {
@@ -707,7 +703,7 @@
         "admission": "상품 구성에 따라 포함 또는 현장 결제",
         "walking": "최소"
       },
-      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0"
+      "image": null
     },
     {
       "number": 4,
@@ -1762,7 +1758,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
+            "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "location": "루트 개요",
             "atmosphere": "하루가 펼쳐질수록 점차 열리며 완성되는 루트",
             "alt": "제주 동부 해안과 분화구 당일 투어 개요",
@@ -1780,7 +1776,7 @@
           {
             "id": 3,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
+            "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "location": "일출랜드 용암 동굴 정원",
             "atmosphere": "분화구 구간 이후 더 시원하고 아늑한 분위기의 대조적 공간",
             "alt": "일출랜드 용암동굴 및 정원 구역의 분위기",
@@ -1789,7 +1785,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
+            "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "location": "마을 피날레",
             "atmosphere": "삶의 흔적이 깃든 잔잔한 마무리",
             "alt": "성읍민속마을의 전통 마을 분위기",
@@ -1798,7 +1794,7 @@
           {
             "id": 5,
             "type": "photo",
-            "src": "https://live.staticflickr.com/65535/53953518745_a91884d6e2_b.jpg",
+            "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "location": "분화구와 해안",
             "atmosphere": "당일 가장 강렬한 화산 하이라이트",
             "alt": "성산일출봉 분화구와 해안선",
@@ -1807,7 +1803,7 @@
           {
             "id": 6,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
+            "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "location": "탁 트인 해안선",
             "atmosphere": "코스의 분위기를 바꾸는 해풍과 탁 트인 전망",
             "alt": "섭지코지의 산책로와 바다 전망",
@@ -1935,7 +1931,7 @@
             "name": "섭지코지 (동쪽 곶)",
             "category": "화산 곶 — 안도 다다오 건축 + 방두포 등대 + 드라마 촬영지",
             "description": "**섭지코지(섭지코지)**는 제주 동쪽 해안의 좁은 화산 곶으로, 이름은 **'섭지'(좁은 땅) + '코지'(제주 방언으로 '곶')**가 합쳐진 말입니다. **2.1km의 절벽길 트레일(약 30분, 고도차 14m)**은 섬에서 가장 많이 사진에 담기는 해안 산책로 중 하나로, 세 가지 문화·건축적 특징으로 형성됩니다. **(1) 붉은 오름** — 곶 끝부분에 위치한 붉은빛 화산 기생화산으로, 꼭대기에는 **4초마다 섬광을 발하는 팔각형 방두포 등대(방두포 등대)**가 있으며 연안 항행 보조시설로 현재도 운영 중입니다. **(2) 협자연대(협자연대)** — **화산석으로 쌓은 높이 4m × 지름 9m의 조선시대 봉화 연기 신호대**로, 제주도 **지방기념물 제23-2호**로 지정되었으며, 16~18세기 왜구 침입에 대비한 조기 경보 체계로 섬을 둘러싼 38기의 연대 봉화대 중 하나입니다. **(3) 안도 다다오 건축** — 프리츠커상 수상 일본 건축가 **안도 다다오(안도 다다오)**가 현장에 두 건물을 설계했습니다: **글라스 하우스(글라스 하우스)** 레스토랑과 **유민 미술관(유민 미술관)**으로, 둘 다 안도 특유의 콘크리트와 빛의 미니멀리즘 양식을 담아 피닉스 아일랜드 리조트 개발을 위해 완공되었습니다. 앞바다에는 **10m 높이의 화산 암경 선바위(선바위, '선 바위')**가 있으며, 현지 **용왕의 막내아들** 전설에 등장합니다. 드라마 촬영지로는 **'올인'(2003, SBS), '마이 걸'(2005, SBS), '은행나무 침대', '이재수의 난', '천일야'** 등이 있습니다. **봄 유채꽃**은 **3~4월(노란색)**에 비탈을 가득 물들이고, **여름 수국**은 **6월(파란색/보라색)**에 만발합니다. 곶 입장은 **무료**이며, 유민 미술관과 글라스 하우스 레스토랑은 별도 입장권/예약이 필요합니다.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
+            "image": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "highlights": [
               "제주 동쪽 특유의 분위기가 느껴지는 탁 트인 곶과 해안 산책로",
               "방문 시기에 따라 계절 꽃 풍경을 감상할 수 있음",
@@ -1963,11 +1959,7 @@
               "facilities": "편의시설이 제한적이며, 화장실은 주로 입구 구역 근처에 있습니다.",
               "tip": "이전 방문지와 비교했을 때, 이 구간은 바람과 햇빛에 훨씬 더 많이 노출되는 느낌입니다."
             },
-            "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
-              "https://api.cdn.visitjeju.net/photomng/imgpath/201908/08/9d19a7d3-97a8-4999-b849-123e46fc88bc.webp",
-              "https://pixabay.com/get/g58bbbe80bb67eb0a32a6e60a6931f0e77d2b2c342b890c9aaf73e87edffcf3af7cedd6ca98cbae1e5fe157fd6658ce642a1c0c5ca621591b1f85cec6e987313d_1280.jpg"
-            ],
+            "images": [],
             "imageCredits": [
               {
                 "url": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
@@ -2027,7 +2019,7 @@
             "name": "성산일출봉",
             "category": "유네스코 응회구 — 일출봉 (유네스코 트리플 지정)",
             "description": "**성산일출봉(성산일출봉, '일출봉')**은 **5,000년 된 수르트세이식 수성화산 응회구**로, 수중 현무암 분화가 해수면을 뚫고 올라오면서 마그마가 바닷물과 만나 증기폭발로 형성된 화산재가 일반적인 용암 분화구 대신 **182m 높이의 요새형 분화구** 테두리를 만들어낸 희귀한 지형입니다. 그 결과물을 유네스코는 공식적으로 **'수면 위로 솟아오른 수르트세이식 화산체의 탁월한 사례'**라 칭합니다. 분화구는 **폭 600m × 깊이 90m**이며, **99개의 들쭉날쭉한 테두리 바위**가 이를 둘러싸고 있어 현지에서는 돌로 만든 왕관에 비유합니다. 성산일출봉은 **유네스코 트리플 지정**을 보유하고 있습니다: **세계자연유산(2007년 7월 2일 등재)** — **'제주 화산섬과 용암동굴'** 자산의 일부로, **생물권보전지역(2002년)**, **세계지질공원(2010년 10월)** — 이는 한국 내에서 한라산과 함께 유일하게 세 가지를 모두 보유한 사례입니다. **일제강점기 제2차 세계대전 동굴 18개**(가미카제 자살 보트 격납고, 1945년)가 바다 쪽 기저부에 굴착되어 있습니다. 탐방로: **편도 0.8km, 고도 약 140m, 왕복 60분** 소요, 넓은 돌계단으로 이루어져 있습니다. **해녀 공연**은 분화구 아래 바위 해안에서 **매일 13:30 및 15:00**에 진행됩니다 — 제주 여성 잠수사(2016년 유네스코 무형문화유산)들이 스쿠버 장비 없이 잠수합니다. **2025년 4월 기준** 입장료 개정: **성인 ₩5,000 / 청소년·어린이 ₩2,500 / 단체 성인 ₩1,600**, 7세 미만 및 65세 이상 무료. 정상 데크는 **영주십경(제주 10대 절경)** 목록에도 포함되어 있으며, 한국 최고의 **연례 신년 일출 성지순례** 명소로, 1월 1일 새벽에 5만 명 이상의 방문객이 찾으며 1995년부터 시 주도의 일출 축제 프로그램이 운영되고 있습니다. **우도(우도, '소섬')** — 한국 최대의 이차 화산섬 — 는 정상에서 약 4km 해상에 뚜렷하게 보이며, 다른 일정으로 여유가 있는 여행객은 **성산항에서 15분 페리**(왕복 ₩10,500)로 이동할 수 있습니다.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
+            "image": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "highlights": [
               "유네스코가 인정한 화산 분화구 명소",
               "기저부와 오르막 도보 구간 모두에서 즐길 수 있는 다층적 경관",
@@ -2056,15 +2048,7 @@
               "tip": "바람, 혼잡도, 그룹의 체력에 따라 이 코스에서의 시간이 더 많은 도보, 더 많은 경관 감상, 또는 해녀 중심의 시간으로 유동적으로 조정될 수 있습니다."
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
-              "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/bfc943f0-5372-4a9f-8d07-97c3793808db.webp",
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202306/19/51f1c895-032f-4b18-9e47-a1a0cb21511f.webp",
-              "https://live.staticflickr.com/65535/53953518745_a91884d6e2_b.jpg",
-              "https://live.staticflickr.com/5247/5370777099_5053f69108_b.jpg",
-              "https://live.staticflickr.com/5169/5370774765_8c1e200d19_b.jpg",
-              "https://live.staticflickr.com/5089/5370768533_3662b7d908_b.jpg",
-              "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBzdW5yaXNlJTIwY3JhdGVyfGVufDB8MHx8fDE3NzgwNzgzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://pixabay.com/get/gd4d8b6155182b4d2c2fc04952137adb1e3dc7431b2f950f7a50ba799393e122c3edd772a230b42cc71890517bd0898cbd5e207a844e1dafba34600088b9ab2c0_1280.jpg"
+              "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxTZW9uZ3NhbiUyMElsY2h1bGJvbmclMjBzdW5yaXNlJTIwY3JhdGVyfGVufDB8MHx8fDE3NzgwNzgzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080"
             ],
             "imageCredits": [
               {
@@ -2131,7 +2115,7 @@
             "name": "일출랜드 (미천굴 용암동굴)",
             "category": "용암동굴 + 테마파크 — 만장굴 대안지 (유네스코 유산 인접)",
             "description": "**일출랜드(일출랜드)**는 성산에 위치한 **400,000㎡ 규모의 자연 테마파크**로, **2002년** 개장하였으며 **미천굴**을 중심으로 조성되었습니다. 미천굴은 **전체 길이 1,700m**의 용암동굴로, 방문객에게 개방된 **인공 평탄화 탐방 구간 365m**(약 25분 소요)이 마련되어 있습니다. 이 동굴은 유네스코 세계자연유산 용암동굴인 **만장굴과 지질학적 계보를 공유하는 제주 용암동굴 시스템**의 일부로, **만장굴이 보존 정비나 기상 악화(태풍, 결빙)로 폐쇄될 때 실질적인 대안 명소 역할**을 합니다. 만장굴이 자연 그대로의 울퉁불퉁한 바닥을 정통 지질 체험으로 보존하는 반면, 미천굴은 평탄화된 탐방로를 통해 **노약자, 유아차를 동반한 가족, 거동이 불편한 방문객**도 용암동굴을 체험할 수 있도록 설계되었으며, 이는 더 넓은 관람객층을 고려한 의도적인 설계입니다. 동굴 내부는 **금·은·동·적·흑·청·백 7가지 색상의 장식 조명**으로 동굴 지형을 연출하며, 전문가들 사이에서는 논란이 있으나 일반 관광객의 사진 촬영에는 유리합니다. 동굴 외부에는 **수변공원, 복원된 제주 전통마을, 야생화 분재원, 선인장 온실, 조각 거리, 족욕 카페(아로마 족욕 스파)**가 이어지며, 특히 **무슬림 기도실을 갖춘 제주도 유일의 관광지**로 접근성에 대한 의도적인 투자가 돋보입니다. 드라마 촬영 이력: **'런닝맨'(SBS) 89화(이상한 나라의 앨리스 테마, 2012년)**. 입장료: **성인 ₩12,000 / 청소년 ₩9,000 / 어린이 ₩7,000**. 실내외 비율은 **실내 30%(동굴 + 온실)** / **실외 70%(공원 부지)**로, 날씨를 고려한 일정 계획 수립 시 참고할 수 있습니다.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
+            "image": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "highlights": [
               "정원형 공간 안에서 용암동굴의 분위기를 체험할 수 있는 기회",
               "탁 트인 성산 구간과 뚜렷한 대비를 이루는 코스",
@@ -2160,13 +2144,6 @@
               "tip": "성산 이후 많은 여행객들이 이곳에서 체력적인 부담이 확연히 줄어드는 것을 느낍니다."
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202205/30/8d1fb97b-1ad0-48cc-9aa0-2ec519e9575c.webp",
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202112/21/5d2e84f4-d58b-4fa0-b7bb-a2f32cf63428.webp",
-              "https://live.staticflickr.com/65535/53953062566_80ce9e16af_b.jpg",
-              "https://live.staticflickr.com/7534/27767696885_e3b15614a5_b.jpg",
-              "https://live.staticflickr.com/7430/27733577536_8ecebd8480_b.jpg",
-              "https://live.staticflickr.com/7262/27733580686_b5c66c7b9d_b.jpg",
               "https://images.unsplash.com/photo-1596617345904-f0b8677f5a8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxKZWp1JTIwbGF2YSUyMGNhdmUlMjBhdG1vc3BoZXJpY3xlbnwwfDB8fHwxNzc4MDc4NDI3fDA&ixlib=rb-4.1.0&q=80&w=1080"
             ],
             "imageCredits": [
@@ -2230,7 +2207,7 @@
             "name": "성읍 민속마을",
             "category": "조선시대 읍성 마을 — 중요 민속 문화재 (1423년 창설)",
             "description": "**성읍 민속마을(성읍 민속마을)**은 **세종대왕** 재위 시절인 **1423년에 창설된 살아있는 조선시대 읍성 마을**로, 조선시대 제주의 세 행정 중심지 중 하나인 정의현(정의현)이었습니다. 이 마을은 **1914년까지 군 행정 중심지**로서 지속적으로 기능했으며 — 거의 **500년** 동안 — 조선시대 군현 도시에서 전형적으로 나타나는 **한국 풍수지리 원칙**에 따라 설계된 원래의 읍성(읍성) 담장 마을 터 안에 오늘날 **110채의 전통 건물**을 보존하고 있습니다. 마을 전체가 **대한민국 중요 민속 문화재**로 지정되어 있으며, **여러 개별 건물**이 별도의 문화재 지위를 보유하고 있습니다. 마을 중심에는 **대한민국 천연기념물로 지정된 두 그루의 고목**이 서 있습니다 — 수령 **600년 이상**으로 추정되며 마을의 정신적 상징으로 추앙받는 **느티나무**와 **팽나무**입니다. 역사의 상처도 남아 있습니다: **1826년 대화재로 약 80채의 건물이 소실**되었고, 마을은 **1948년 제주 4·3 사건 당시** 화재 피해를 입었으며 — 두 사건 모두 마을 안내판에 역사적 기록으로 보존되어 있습니다. **최대 가구 수(역사적·전근대적 기준)는 약 1,500가구**였으며 — 오늘날 마을에는 약 250가구가 거주하고 있고, 많은 주민들이 전통 공예를 적극적으로 이어가고 있습니다. 드라마 촬영지: 국제적으로 큰 인기를 끈 K-드라마 **'대장금 (Jewel in the Palace)' (MBC, 2003~2004)**. 지역 특산물: **오메기술(오메기술)** — 마을 내 양조장에서 **대대로 한 가문이 빚어온 제주 전통 쌀 발효주**로, 양조 과정을 무료로 시연하고 시음할 수 있습니다. **무료 입장**; 야외 도보 중심 (개별 한옥 방문 시 야외 약 70% / 실내 30%).",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
+            "image": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "highlights": [
               "초가지붕과 돌담이 어우러져 제주 고유의 전통적인 분위기를 물씬 풍깁니다",
               "순수한 자연 명소보다 문화적 성격이 더 강합니다",
@@ -2259,12 +2236,7 @@
               "tip": "이 코스를 여유롭게 느낄수록, 하루 전체가 감정적으로 더 깊이 마무리되는 경향이 있습니다."
             },
             "images": [
-              "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
-              "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/d3665aa5-bb00-472d-9886-06e3337d9515.webp",
-              "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/69a0bd54-97fa-49b5-b59e-5986b8e48ecf.webp",
-              "https://live.staticflickr.com/1446/25727012660_f652a7494e_b.jpg",
-              "https://images.unsplash.com/photo-1777543331241-a80f9cd409ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxLb3JlYW4lMjB0cmFkaXRpb25hbCUyMHZpbGxhZ2UlMjB0aGF0Y2hlZHxlbnwwfDB8fHwxNzc4MDc4NDYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-              "https://pixabay.com/get/gc781d5c3ef50ea89a6bdfedaf270b199fd3a4168f2358667c660d28ef8ba7257108f84be87a22e9ce96ff035aca4ebb68139baf8cc26b7a22e47a28e931e9591_1280.jpg"
+              "https://images.unsplash.com/photo-1777543331241-a80f9cd409ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDI0Mzd8MHwxfHNlYXJjaHwxfHxLb3JlYW4lMjB0cmFkaXRpb25hbCUyMHZpbGxhZ2UlMjB0aGF0Y2hlZHxlbnwwfDB8fHwxNzc4MDc4NDYxfDA&ixlib=rb-4.1.0&q=80&w=1080"
             ],
             "imageCredits": [
               {
@@ -3228,7 +3200,7 @@
       "v15_unified": "Migrated from small-group v1 schema to v15 standard: schema_version 1→7; SEO expanded (primaryKeywords, ogImage, title); price expanded (priceSource, priceNote, discountPercent); routeFlowStops id→type; routePhases stripped of Tailwind classes (bgClass/dotClass/textClass), reshaped to {phase,duration,description}; seasonalVariations stripped of Tailwind, reshaped to {season,description}; whyTourWorks.lessIdeal→lessIdealFor; practicalWeatherStatic gained _seasonalSummary and _seasonalTemperatures; matching_profile expanded to v15 standard (≥40 fields with anchor_poi_keys, vehicle_type_legacy, seasonality, fit-vector full set); matching_metadata reformatted to anchor_pois/anchor_poi_keys/primary_themes/secondary_themes/best_for/not_recommended_for/reviews_attribution/unesco_fit_note shape; pickup_dropoff added (Schema A.1); itinerary_variants=[]; _publication block added. PRESERVED from source (richer than catalog v15): itineraryStops[*].visitBasics,.convenience,.smartNotes (operational data), guestReviews[4 each], reviewsSummary.highlights.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

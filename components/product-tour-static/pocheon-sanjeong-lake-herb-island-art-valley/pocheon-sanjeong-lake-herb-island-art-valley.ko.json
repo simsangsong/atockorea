@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "포천 당일 여행: 호수, 허브아일랜드 & 아트밸리 | AtoC Korea",
     "metaDescription": "서울에서 출발하는 여유로운 포천 10시간 당일 여행: 산정호수 트레일, 지중해풍 허브아일랜드, 에메랄드빛 천주호 위를 달리는 아트밸리 모노레일.",
-    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "ogImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "primaryKeywords": [
       "서울 출발 포천 당일 투어",
       "산정호수 투어",
@@ -1079,7 +1079,7 @@
     "japanese_speaking_guide_available_on_advance_notice": true
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": [
       "authoring",
       "review",
@@ -1132,7 +1132,7 @@
         "headlineLine1": "포천",
         "headlineLine2": "산정호수·허브아일랜드·아트밸리",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+          "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
           "imagePosition": "center 50%",
           "tagline": "산정호수, 지중해풍 허브 마을, 그리고 예술 공원으로 탈바꿈한 옛 화강암 채석장 — 포천의 가장 아름답고 포토제닉한 세 곳을 하루에 즐기는 서울 근교 당일치기 코스.",
           "pills": [
@@ -1232,7 +1232,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/46/2513346_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "하얀 회벽과 허브 화단, 계절별 라벤더 전시가 어우러진 지중해풍 정원 구역",
             "caption": "허브아일랜드 지중해 허브 정원 (포천)",
             "location": "허브아일랜드",
@@ -1241,7 +1241,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/1925694_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "평탄한 호숫가 산책로와 수면에 비치는 울창한 절벽이 있는 산으로 둘러싸인 호수",
             "caption": "명성산 산정호수 (포천)",
             "location": "산정호수",
@@ -1250,7 +1250,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/91/2618591_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "깎아지른 화강암 절벽으로 둘러싸인 에메랄드빛 채석장 호수",
             "caption": "포천 아트밸리 채석장 내 천주호",
             "location": "포천 아트밸리",
@@ -1259,7 +1259,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/01/2791401_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "저녁 조명 줄과 테마 설치물로 빛나는 정원 산책로",
             "caption": "허브아일랜드 빛 축제 야간 (연중 운영 산타마을 구역)",
             "location": "허브아일랜드 야간 조명",
@@ -1268,7 +1268,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "암반 위를 흘러 웅덩이로 떨어지는 숲속 폭포",
             "caption": "비둘기낭 폭포 — 포천 인근 계절별 대체 방문지",
             "location": "비둘기낭 폭포",
@@ -1993,7 +1993,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

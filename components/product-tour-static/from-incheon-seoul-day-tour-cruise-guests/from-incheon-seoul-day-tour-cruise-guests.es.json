@@ -13,7 +13,7 @@
       "Excursión de un día a Seúl desde Incheon",
       "Tour en crucero al Palacio Gyeongbokgung"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
+    "ogImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
   "catalog_card": {
     "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
@@ -157,21 +157,13 @@
     {
       "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-      "location": "Calle cultural de Insadong",
-      "alt": "Calle cultural de Insadong — on-route photo",
-      "caption": "Calle cultural de Insadong"
-    },
-    {
-      "id": 5,
-      "type": "photo",
       "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
       "location": "Palacio de Gyeongbokgung",
       "alt": "Palacio de Gyeongbokgung — gallery image 2",
       "caption": "Palacio de Gyeongbokgung — photo 2"
     },
     {
-      "id": 6,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
       "location": "Palacio de Gyeongbokgung",
@@ -179,7 +171,7 @@
       "caption": "Palacio de Gyeongbokgung — photo 3"
     },
     {
-      "id": 7,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
       "location": "Palacio de Gyeongbokgung",
@@ -187,7 +179,7 @@
       "caption": "Palacio de Gyeongbokgung — photo 4"
     },
     {
-      "id": 8,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
       "location": "Palacio de Gyeongbokgung",
@@ -195,7 +187,7 @@
       "caption": "Palacio de Gyeongbokgung — photo 5"
     },
     {
-      "id": 9,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
       "location": "Palacio de Gyeongbokgung",
@@ -203,7 +195,7 @@
       "caption": "Palacio de Gyeongbokgung — photo 6"
     },
     {
-      "id": 10,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
       "location": "Palacio de Gyeongbokgung",
@@ -211,7 +203,7 @@
       "caption": "Palacio de Gyeongbokgung — photo 7"
     },
     {
-      "id": 11,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
       "location": "Palacio de Gyeongbokgung",
@@ -219,7 +211,7 @@
       "caption": "Palacio de Gyeongbokgung — photo 8"
     },
     {
-      "id": 12,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
       "location": "Palacio de Gyeongbokgung",
@@ -662,7 +654,7 @@
           "Wikipedia (Insadong)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG"
+      "image": null
     },
     {
       "number": 6,
@@ -1323,7 +1315,7 @@
         "headlineLine1": "Incheon→Seúl",
         "headlineLine2": "Tour de Crucero",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+          "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
           "imagePosition": "center 35%",
           "tagline": "Cuatro paradas en el centro de Seúl coordinadas con el horario de su crucero",
           "pills": [
@@ -1418,7 +1410,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "El salón del trono Geunjeongjeon de Gyeongbokgung con fondo de montaña",
             "caption": "Palacio Gyeongbokgung — el salón del trono Geunjeongjeon, Tesoro Nacional n.º 223. Construido en 1395, reconstruido en 1867.",
             "location": "Palacio Gyeongbokgung, Seúl",
@@ -1427,7 +1419,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/15/2002115_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "Casas hanok de tejado de tejas a lo largo de una calle inclinada en Bukchon",
             "caption": "Aldea Hanok de Bukchon — ≈600 casas tradicionales en una zona de conservación designada desde 1976.",
             "location": "Aldea Hanok de Bukchon, Seúl",
@@ -1436,7 +1428,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "Vendedores y clientes agolpados alrededor de un puesto de comida callejera en el Mercado Gwangjang",
             "caption": "Mercado Gwangjang — el primer mercado cubierto permanente de Corea (1905). El bindae-tteok y el mayak gimbap son sus especialidades.",
             "location": "Mercado Gwangjang, Jongno-gu",
@@ -1445,7 +1437,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "Calle peatonal con tiendas de artesanía tradicional y carteles en Insadong",
             "caption": "Insadong — la calle de artesanía tradicional y antigüedades de Seúl; designada Calle Cultural en 1988.",
             "location": "Insadong, Jongno-gu",
@@ -1454,7 +1446,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "Crucero atracado en la terminal internacional de pasajeros del Puerto de Incheon",
             "caption": "Terminal de Cruceros de Incheon en Songdo — punto de recogida y entrega.",
             "location": "Terminal Internacional de Pasajeros del Puerto de Incheon",
@@ -1475,7 +1467,7 @@
             "duration": "30 min",
             "name": "Recogida en la Terminal de Cruceros de Incheon",
             "category": "Salida",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "description": "El grupo se reúne con el guía en la sala de llegadas de la Terminal Internacional de Pasajeros del Puerto de Incheon (Songdo). La recogida se adapta al desembarco real de su barco, no a un horario fijo — las 09:00 indicadas aquí son un ejemplo típico. Al realizar la reserva, proporcione el nombre del barco, la fecha de escala, la hora prevista de desembarco y la hora de regreso a bordo; el guía hace un seguimiento del horario y ajusta la recogida automáticamente. ≈30 minutos contemplan el margen en la terminal (variabilidad en inmigración, reunión del grupo).",
             "timeUsed": [
               "Logística operativa (recogida, margen en la terminal)"
@@ -1715,7 +1707,7 @@
             "duration": "75 min",
             "name": "Calle cultural de Insadong",
             "category": "Calle de Artesanía y Compras Culturales",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "description": "Calle peatonal en el centro de Seúl conocida por sus tiendas de artesanía tradicional, casas de té, materiales de caligrafía y la galería Ssamziegil de los años 1920 (un centro comercial en espiral de cuatro plantas con pequeñas galerías de arte y estudios artesanales). Insadong ha sido el principal barrio de antigüedades y artesanía de Seúl desde el período tardío de Joseon, cuando familias yangban desplazadas vendían aquí sus objetos heredados, y fue formalmente designada «Calle Cultural» en 1988. Paradas recomendadas habituales: una casa de té con tés coreanos tradicionales, una tienda de souvenirs de Insa-dong con cerámica o papelería asequible, y la azotea de Ssamziegil. Solo a pie; llano. Visita gratuita.",
             "timeUsed": [
               "Paseo por la calle principal",
@@ -1734,7 +1726,7 @@
             "duration": "75 min",
             "name": "Regreso en vehículo a la Terminal de Cruceros de Incheon",
             "category": "Regreso",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "description": "Aprox. 50 km desde el centro de Seúl hasta el Puerto de Incheon (Songdo) por la Autopista de Incheon y la Carretera 110. Con tráfico normal, 60–75 min; en hora punta o con lluvia, puede extenderse a 75–90 min. Bajada en la Terminal Internacional de Pasajeros del Puerto de Incheon con un margen mínimo de 60 minutos antes de la hora límite de embarque de su barco. El guía controla el horario específico de cada pasajero; si varios barcos zarpan en distintos horarios, se desembarca primero a los pasajeros con la salida más temprana.",
             "timeUsed": [
               "Logística operativa (trayecto de regreso + margen en la terminal de cruceros)"
@@ -2151,7 +2143,7 @@
       "v15.3_operational_fill": "Filled operational data (visitBasics, convenience, smartNotes) for 4 attraction stops from centralized POI knowledge base. Sources: VisitKorea, VisitBusan, VisitSeoul, official tourism boards.\n  - Stop #2 Gyeongbokgung Palace: filled [visitBasics, convenience, smartNotes]\n  - Stop #3 Bukchon Hanok Village: filled [visitBasics, convenience, smartNotes]\n  - Stop #4 Lunch at Gwangjang Market: filled [visitBasics, convenience, smartNotes]\n  - Stop #5 Insadong cultural street: filled [visitBasics, convenience, smartNotes]",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "釜山郵輪靠港私人包車（8小時）| AtoC Korea",
     "metaDescription": "專為郵輪旅客設計的8小時全程客製化釜山私人包車服務。英語司機，保證準時返回，可於飯店／KTX車站／郵輪碼頭接送。",
-    "ogImage": "https://www.atockorea.com/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "ogImage": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
     "primaryKeywords": [
       "釜山私人包車",
       "釜山郵輪靠港觀光",
@@ -31,8 +31,8 @@
       "路線可客製化",
       "含郵輪碼頭接送"
     ],
-    "heroImage": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-    "thumbnail": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "heroImage": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
+    "thumbnail": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
     "priceLabel": "車輛1輛8小時 $359（原價 $379，1–6人）· 7–12人 2倍 · 13人以上 3倍",
     "shortCardDescription": "專為釜山郵輪旅客提供的8小時私人包車服務，配備持牌英語司機導遊。預設行程涵蓋聯合國紀念公墓、太宗臺懸崖、甘川文化村、龍頭山公園及札嘎其市場。全程可客製化。可於郵輪碼頭、KTX車站或釜山市區任意飯店接送，保證準時返回郵輪。",
     "tags": [
@@ -53,7 +53,7 @@
     "discountPercent": 5
   },
   "hero": {
-    "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "imageUrl": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
     "imagePosition": "center 50%",
     "tagline": "從聯合國紀念公墓到太宗臺懸崖，從甘川彩繪巷弄到札嘎其生鮮漁港——八小時私人專屬時光，您的路線，您的節奏，保證準時送您返回郵輪。",
     "pills": [
@@ -133,98 +133,82 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-      "location": "聯合國紀念公墓（韓戰）",
-      "alt": "聯合國紀念公墓（韓戰） — gallery image 1",
-      "caption": "聯合國紀念公墓（韓戰） — photo 1"
+      "src": "/images/tours/busan-private/busan-private-thumbnail-gwangalli.webp",
+      "location": "廣安里 & 廣安大橋",
+      "alt": "釜山私家車包車遊 — 廣安里大橋前的家庭合影",
+      "caption": "釜山私家車包車遊 — 廣安里大橋前的家庭合影"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-      "location": "太宗台海岸峭壁",
-      "alt": "太宗台海岸峭壁 — gallery image 1",
-      "caption": "太宗台海岸峭壁 — photo 1"
+      "src": "/images/tours/gamcheon-culture-village/gamcheon-panorama.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — 繽紛山坡全景",
+      "caption": "甘川文化村 — 繽紛山坡全景"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+      "src": "/images/tours/gamcheon-culture-village/gamcheon-vibrant-viewpoint.webp",
       "location": "甘川文化村",
-      "alt": "甘川文化村 — on-route photo",
-      "caption": "甘川文化村"
+      "alt": "甘川文化村 — 黃牆天台彩色全景",
+      "caption": "甘川文化村 — 黃牆天台彩色全景"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
-      "location": "龍頭山公園與釜山塔",
-      "alt": "龍頭山公園與釜山塔 — on-route photo",
-      "caption": "龍頭山公園與釜山塔"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — 東海日出懸崖寺院",
+      "caption": "海東龍宮寺 — 東海日出懸崖寺院"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
-      "location": "南浦洞與札嘎其水產市場",
-      "alt": "南浦洞與札嘎其水產市場 — on-route photo",
-      "caption": "南浦洞與札嘎其水產市場"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — 守望大海的海水觀音像",
+      "caption": "海東龍宮寺 — 守望大海的海水觀音像"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-      "location": "聯合國紀念公墓（韓戰）",
-      "alt": "聯合國紀念公墓（韓戰） — gallery image 2",
-      "caption": "聯合國紀念公墓（韓戰） — photo 2"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — 龍形雕像與正殿",
+      "caption": "海東龍宮寺 — 龍形雕像與正殿"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
-      "location": "聯合國紀念公墓（韓戰）",
-      "alt": "聯合國紀念公墓（韓戰） — gallery image 3",
-      "caption": "聯合國紀念公墓（韓戰） — photo 3"
+      "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+      "location": "青沙浦天空膠囊",
+      "alt": "青沙浦天空膠囊 — 4號艙海岸觀光",
+      "caption": "青沙浦天空膠囊 — 4號艙海岸觀光"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
-      "location": "太宗台海岸峭壁",
-      "alt": "太宗台海岸峭壁 — gallery image 2",
-      "caption": "太宗台海岸峭壁 — photo 2"
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+      "location": "海雲台藍線公園",
+      "alt": "海雲台藍線公園 — 海岸觀光列車",
+      "caption": "海雲台藍線公園 — 海岸觀光列車"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
-      "location": "太宗台海岸峭壁",
-      "alt": "太宗台海岸峭壁 — gallery image 3",
-      "caption": "太宗台海岸峭壁 — photo 3"
+      "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+      "location": "釜山塔（龍頭山公園）",
+      "alt": "釜山塔 & 龍頭山公園 — 夜色中的韓國鐘閣",
+      "caption": "釜山塔 & 龍頭山公園 — 夜色中的韓國鐘閣"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
-      "location": "太宗台海岸峭壁",
-      "alt": "太宗台海岸峭壁 — gallery image 4",
-      "caption": "太宗台海岸峭壁 — photo 4"
-    },
-    {
-      "id": 11,
-      "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
-      "location": "太宗台海岸峭壁",
-      "alt": "太宗台海岸峭壁 — gallery image 5",
-      "caption": "太宗台海岸峭壁 — photo 5"
-    },
-    {
-      "id": 12,
-      "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
-      "location": "太宗台海岸峭壁",
-      "alt": "太宗台海岸峭壁 — gallery image 6",
-      "caption": "太宗台海岸峭壁 — photo 6"
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+      "location": "太宗台",
+      "alt": "太宗台 — 釜山南端的絕景海崖",
+      "caption": "太宗台 — 釜山南端的絕景海崖"
     }
   ],
   "itineraryStops": [
@@ -252,7 +236,7 @@
           "NamuWiki"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG"
+      "image": null
     },
     {
       "number": 2,
@@ -567,7 +551,7 @@
           "Korea Tourism Organization (100 Must-Visit Tourist Spots in Korea designation)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
       "visitBasics": {
         "hours": "09:00–18:00（3–10月）／09:00–17:00（11–2月）；諮詢中心同時段開放",
         "closed": "全年開放",
@@ -581,7 +565,12 @@
       "smartNotes": {
         "photo": "天空花園（하늘마루展望台）的**「小王子與狐狸長椅」**（排隊人多，免費）、星光展望台的**彩虹屋頂全景**，以及**階梯壁畫巷弄**。**禁止使用無人機；禁止在巷弄內使用閃光燈拍攝**。",
         "tip": "**此地目前仍有居民居住**（約10,000人，1955年太極道難民聚落）——**請壓低音量**，勿擅入民宅，請自行帶走垃圾。**2012年聯合國人居署亞洲都市景觀獎**；年訪客約140萬人次。韓國觀光公社百大必訪景點連續5次入選。"
-      }
+      },
+      "images": [
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp"
+      ]
     },
     {
       "number": 6,
@@ -621,7 +610,7 @@
           "Busan Metropolitan City heritage records"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+      "image": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
       "visitBasics": {
         "hours": "公園全天24小時開放；**釜山鑽石塔瞭望台開放時間為10:00–22:00（最後入場21:30）**",
         "closed": "瞭望塔全年開放（強風極端天氣時偶有安全關閉）",
@@ -635,7 +624,12 @@
       "smartNotes": {
         "photo": "站在**釜山鑽石塔120公尺高瞭望台**（山頂總海拔189公尺）俯瞰——晴天可盡覽**360°全景**，遠及釜山港、影島大橋乃至對馬島。塔頂設計**仿照慶州佛國寺多寶塔華蓋（國寶第20號）**。最佳觀賞時機為**日落及夜晚入夜後**。",
         "tip": "建議將登塔行程與**李舜臣將軍銅像**（壬辰倭亂龜船英雄，從未折損一艘戰艦）及**市民之鐘**（**除夕夜與三一節各敲響33下**，紀念1919年《獨立宣言》33位署名代表）搭配遊覽。"
-      }
+      },
+      "images": [
+        "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+        "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+        "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp"
+      ]
     },
     {
       "number": 7,
@@ -676,7 +670,7 @@
           "Busan Tourism Organization (Jagalchi Sannakji designation)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+      "image": null,
       "visitBasics": {
         "hours": "**札嘎其市場每日05:00–22:00**；活魚拍賣從04:00開始（觀光參觀需提前預約）；南浦洞購物街10:30–22:00",
         "closed": "**札嘎其：每月第一及第三個星期二休市**；南浦洞全年開放",
@@ -710,7 +704,7 @@
         "kb_version": "1.15",
         "verified_date": "2026-04-29"
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG"
+      "image": null
     }
   ],
   "routeFlowStops": [
@@ -1045,7 +1039,7 @@
     "product_id": "busan-private-car-charter-cruise-shore",
     "product_type": "private",
     "route_type": "customizable",
-    "destination_region": "korea_mainland",
+    "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "private_vehicle",
     "duration_hours": 8,
@@ -1352,7 +1346,7 @@
         "headlineLine1": "釜山郵輪岸上私人包車",
         "headlineLine2": "一日遊",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+          "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
           "imagePosition": "center 45%",
           "tagline": "從城山日出峰到挾才海灘，再到天地淵瀑布——九個小時的私人專屬時光，您的路線，您的節奏，由持牌司機導遊全程陪同。",
           "pills": [
@@ -1447,7 +1441,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "城山日出峰",
             "caption": "城山日出峰",
             "location": "城山日出峰",
@@ -1456,7 +1450,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "柱狀節理玄武岩峭壁 --- **Notes:** - Items **7, 12, 25** are React/UI component identifiers — left untranslated as they are code strings. - **城山日出峰** is the established Traditional Chinese rendering of *Seongsan Ilchulbong* used in Taiwanese/HK travel media. - **柱狀節理** is the standard geological term for *columnar jointing* (basalt columns) used in Traditional Chinese.",
             "caption": "柱狀節理玄武岩峭壁",
             "location": "柱狀節理海岸",
@@ -1465,7 +1459,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "協在海灘 · 濟州西部",
             "caption": "協在海灘 · 濟州西部",
             "location": "協在海灘",
@@ -1474,7 +1468,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "雪綠茶博物館與茶園",
             "caption": "雪綠茶博物館與茶園",
             "location": "雪綠茶園",
@@ -1483,7 +1477,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "西歸浦天地淵瀑布",
             "caption": "西歸浦天地淵瀑布",
             "location": "天地淵瀑布",
@@ -1505,7 +1499,7 @@
             "name": "東部路線：UNESCO世界遺產與韓劇海岸",
             "category": "城山、牛島、萬丈窟、涉地可支",
             "description": "景點密度最高的路線選項，涵蓋濟州最具代表性的UNESCO世界遺產與韓劇取景地。主要景點包括城山日出峰（UNESCO日出名峰）、牛島（搭乘渡輪前往、擁有美麗海灘的島嶼）、萬丈窟熔岩洞（UNESCO洞穴）、涉地可支（以韓劇聞名的海岸海角）、城邑民俗村及咸德海灘。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "highlights": [
               "城山日出峰：UNESCO世界自然遺產，濟州最具代表性的日出名峰",
               "牛島：搭乘渡輪前往的島嶼，擁有白沙灘與燈塔美景",
@@ -1548,7 +1542,7 @@
             "name": "西線：海灘、茶園與咖啡海岸",
             "category": "狹才、翰林公園、雪綠、涯月",
             "description": "最具拍攝魅力與輕鬆氛圍的路線。主要景點包括狹才海水浴場（濟州最具代表性的翠綠海灘）、翰林公園（亞熱帶花園與熔岩洞窟）、雪綠茶博物館（茶田與咖啡廳）及涯月咖啡街（夕陽海岸咖啡館）。特別適合情侶與攝影愛好者。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "highlights": [
               "狹才海水浴場：翠綠海水、白色沙灘及飛揚島景致",
               "翰林公園：亞熱帶花園，園內設有兩座熔岩洞窟",
@@ -1591,7 +1585,7 @@
             "name": "南部路線：瀑布與火山海岸",
             "category": "天地淵瀑布、柱狀節理帶、山房山、奧勒市場",
             "description": "景色最為壯麗的路線。主要景點包括天地淵瀑布（森林瀑布）、柱狀節理帶（玄武岩柱海岸線）、藥泉寺（東亞最大寺廟之一）、山房山（擁有海景的火山穹丘）、正房瀑布（亞洲少數直接注入大海的瀑布之一），以及西歸浦奧勒市場。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "highlights": [
               "天地淵瀑布：西歸浦經典的森林瀑布",
               "柱狀節理帶：南部海岸的六角形玄武岩柱",
@@ -1634,7 +1628,7 @@
             "name": "自訂路線：打造專屬行程",
             "category": "傳送您的專屬行程給我們",
             "description": "除三條推薦路線外，您亦可自由搭配景點或提供專屬行程。可新增的選項包括：濟州水族館星球、ECO Land 主題樂園、森爾岳火山口、咸德海灘、山茶花山丘、泰迪熊大自然、西歸浦潛水艇（文島水中觀光）、海豚遊艇之旅、松岳山、懸崖咖啡廳，以及亂打秀。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202311/22/c42559a5-c909-4603-ae16-24c2e03893a0.webp",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "highlights": [
               "如時間許可，可結合東海岸聯合國教科文組織景點與西海岸茶園",
               "任一路線均可加入海女（女性潛水員）海鮮午餐體驗",
@@ -2102,7 +2096,7 @@
       "v15.4_new_tour_creation": "Created new tour from GYG product ID t899592 (Busan private car charter for cruise shore). Structural template: jeju-island-private-car-charter-tour. Content template: busan-small-group-sightseeing-tour-cruise-passengers. POI operational data (visitBasics/convenience/smartNotes) sourced from poi_knowledge_base.json (centralized KB built in Step 2). REASONABLE-ASSUMPTION FIELDS that may need patching once the live GYG page is reviewed: (1) price.amountLabel left empty per jeju-charter convention (per-vehicle pricing confirmed at booking); (2) catalog_card.priceFromUSD null; (3) vehicle capacity assumed 1-3 sedan / 4-7 van based on industry standard, not GYG-confirmed; (4) 8-hour duration assumed based on typical Busan cruise dwell time (6-9h common); (5) reviewsSummary populated with zeros — actual GYG reviews not imported in this pass; (6) hero/og images deferred per v15 P3 workflow. Pickup rule applied per Jason's directive: cruise terminal + KTX + central Busan hotel; Gimhae Airport pickup is a paid add-on, not bundled.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 0,
         "fields_skipped": 0,
         "fields_already_float": 42

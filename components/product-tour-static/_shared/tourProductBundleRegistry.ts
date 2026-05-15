@@ -168,6 +168,12 @@ import seoulPrivateNamiMorningCalmZh from "@/components/product-tour-static/seou
 import seoulPrivateNamiMorningCalmZhTw from "@/components/product-tour-static/seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.zh-TW.json";
 import seoulPrivateNamiMorningCalmEs from "@/components/product-tour-static/seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.es.json";
 import seoulPrivateNamiMorningCalmJa from "@/components/product-tour-static/seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.ja.json";
+import seoulSeoraksanNaksansaBeachEn from "@/components/product-tour-static/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.en.json";
+import seoulSeoraksanNaksansaBeachKo from "@/components/product-tour-static/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.ko.json";
+import seoulSeoraksanNaksansaBeachZh from "@/components/product-tour-static/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.zh.json";
+import seoulSeoraksanNaksansaBeachZhTw from "@/components/product-tour-static/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.zh-TW.json";
+import seoulSeoraksanNaksansaBeachEs from "@/components/product-tour-static/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.es.json";
+import seoulSeoraksanNaksansaBeachJa from "@/components/product-tour-static/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.ja.json";
 import seoulSeoraksanNamiMorningCalmEn from "@/components/product-tour-static/seoul-seoraksan-nami-island-morning-calm-day-tour/seoul-seoraksan-nami-island-morning-calm-day-tour.en.json";
 import seoulSeoraksanNamiMorningCalmKo from "@/components/product-tour-static/seoul-seoraksan-nami-island-morning-calm-day-tour/seoul-seoraksan-nami-island-morning-calm-day-tour.ko.json";
 import seoulSeoraksanNamiMorningCalmZh from "@/components/product-tour-static/seoul-seoraksan-nami-island-morning-calm-day-tour/seoul-seoraksan-nami-island-morning-calm-day-tour.zh.json";
@@ -459,6 +465,14 @@ export const STATIC_TOUR_PRODUCT_BUNDLES: Record<StaticTourProductBundleSlug, To
     "zh-TW": asBundleEntry(seoulPrivateNamiMorningCalmZhTw),
     es: asBundleEntry(seoulPrivateNamiMorningCalmEs),
     ja: asBundleEntry(seoulPrivateNamiMorningCalmJa),
+  },
+  "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": {
+    en: asBundleEntry(seoulSeoraksanNaksansaBeachEn),
+    ko: asBundleEntry(seoulSeoraksanNaksansaBeachKo),
+    zh: asBundleEntry(seoulSeoraksanNaksansaBeachZh),
+    "zh-TW": asBundleEntry(seoulSeoraksanNaksansaBeachZhTw),
+    es: asBundleEntry(seoulSeoraksanNaksansaBeachEs),
+    ja: asBundleEntry(seoulSeoraksanNaksansaBeachJa),
   },
   "seoul-seoraksan-nami-island-morning-calm-day-tour": {
     en: asBundleEntry(seoulSeoraksanNamiMorningCalmEn),

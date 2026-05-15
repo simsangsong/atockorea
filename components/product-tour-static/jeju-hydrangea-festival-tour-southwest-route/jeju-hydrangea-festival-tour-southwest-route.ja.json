@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "済州島南西部アジサイ祭り日帰りツアー | AtoC Korea",
     "metaDescription": "夏季限定・済州島南西部日帰りツアー：ヒョプジェビーチ、翰林公園アジサイ祭り、柱状節理帯、天帝淵瀑布、カメリアヒル、オソルロク茶畑。",
-    "ogImage": "https://www.atockorea.com/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+    "ogImage": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "primaryKeywords": [
       "済州島アジサイ祭りツアー",
       "済州島夏の花ツアー",
@@ -140,21 +140,13 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
-      "location": "翰林公園（アジサイ祭り）",
-      "alt": "翰林公園（アジサイ祭り） — on-route photo",
-      "caption": "翰林公園（アジサイ祭り）"
-    },
-    {
-      "id": 3,
-      "type": "photo",
       "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "location": "柱状節理帯 ＆ 天帝淵瀑布",
       "alt": "柱状節理帯 ＆ 天帝淵瀑布 — gallery image 1",
       "caption": "柱状節理帯 ＆ 天帝淵瀑布 — photo 1"
     },
     {
-      "id": 4,
+      "id": 3,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "location": "カメリアヒル（アジサイトンネル）",
@@ -162,7 +154,7 @@
       "caption": "カメリアヒル（アジサイトンネル） — photo 1"
     },
     {
-      "id": 5,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "location": "オスルロック・ティーミュージアム＆茶畑",
@@ -170,7 +162,7 @@
       "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 1"
     },
     {
-      "id": 6,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
       "location": "ヒョプジェ海水浴場",
@@ -178,7 +170,7 @@
       "caption": "ヒョプジェ海水浴場 — photo 2"
     },
     {
-      "id": 7,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
       "location": "ヒョプジェ海水浴場",
@@ -186,7 +178,7 @@
       "caption": "ヒョプジェ海水浴場 — photo 3"
     },
     {
-      "id": 8,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "柱状節理帯 ＆ 天帝淵瀑布",
@@ -194,7 +186,7 @@
       "caption": "柱状節理帯 ＆ 天帝淵瀑布 — photo 2"
     },
     {
-      "id": 9,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "柱状節理帯 ＆ 天帝淵瀑布",
@@ -202,7 +194,7 @@
       "caption": "柱状節理帯 ＆ 天帝淵瀑布 — photo 3"
     },
     {
-      "id": 10,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "柱状節理帯 ＆ 天帝淵瀑布",
@@ -210,7 +202,7 @@
       "caption": "柱状節理帯 ＆ 天帝淵瀑布 — photo 4"
     },
     {
-      "id": 11,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
       "location": "カメリアヒル（アジサイトンネル）",
@@ -218,7 +210,7 @@
       "caption": "カメリアヒル（アジサイトンネル） — photo 2"
     },
     {
-      "id": 12,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
       "location": "オスルロック・ティーミュージアム＆茶畑",
@@ -226,7 +218,7 @@
       "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 2"
     },
     {
-      "id": 13,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
       "location": "オスルロック・ティーミュージアム＆茶畑",
@@ -234,7 +226,7 @@
       "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 3"
     },
     {
-      "id": 14,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
       "location": "オスルロック・ティーミュージアム＆茶畑",
@@ -242,7 +234,7 @@
       "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 4"
     },
     {
-      "id": 15,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
       "location": "オスルロック・ティーミュージアム＆茶畑",
@@ -250,7 +242,7 @@
       "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 5"
     },
     {
-      "id": 16,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
       "location": "オスルロック・ティーミュージアム＆茶畑",
@@ -258,7 +250,7 @@
       "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 6"
     },
     {
-      "id": 17,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
       "location": "オスルロック・ティーミュージアム＆茶畑",
@@ -266,7 +258,7 @@
       "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 7"
     },
     {
-      "id": 18,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
       "location": "オスルロック・ティーミュージアム＆茶畑",
@@ -274,7 +266,7 @@
       "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 8"
     },
     {
-      "id": 19,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
       "location": "オスルロック・ティーミュージアム＆茶畑",
@@ -282,7 +274,7 @@
       "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 9"
     },
     {
-      "id": 20,
+      "id": 19,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
       "location": "オスルロック・ティーミュージアム＆茶畑",
@@ -290,7 +282,7 @@
       "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 10"
     },
     {
-      "id": 21,
+      "id": 20,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
       "location": "オスルロック・ティーミュージアム＆茶畑",
@@ -298,7 +290,7 @@
       "caption": "オスルロック・ティーミュージアム＆茶畑 — photo 11"
     },
     {
-      "id": 22,
+      "id": 21,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
       "location": "オスルロック・ティーミュージアム＆茶畑",
@@ -414,7 +406,7 @@
       "name": "翰林公園（アジサイ祭り）",
       "category": "アジサイのメインスポット＋9つのテーマガーデン＋2つの溶岩洞窟",
       "description": "**翰林公園（한림공원、1971年創設）**は済州島南西海岸を代表する植物公園であり、**約99,000㎡（元々は10万坪／約330,580㎡）のガーデン複合施設**です。**創設者の宋奉圭氏が砂だらけの荒地に土を運び込み、ヤシの種を植えて半世紀をかけて緑豊かな楽園へと変貌させました**。年間**約120万人**が訪れるこの公園は、**9つのテーマガーデン**で構成されています：**亜熱帯植物園**、**ヤシ並木**、**野草と花の庭**、**挟才窟・双龍窟（洞窟）**、**済州石・盆栽庭園**、**済岩民俗村**（朝鮮時代の石垣韓屋と敷地内のドルハルバン・レストラン）、**バードガーデン**、**済州石展示館**、**ウォーターガーデン**。\n\n翰林公園の最大の特徴は**毎月開催される祭りのカレンダー**です——**1月：水仙 → 2月：梅 → 3月：チューリップ → 4月：桜 → 5月：野の花・ブーゲンビリア → 6月：アジサイ → 7〜9月：蓮・スイレン → 10月：コスモス・ピンクミューリー → 11月：菊 → 12月：椿**——という12ヶ月サイクルで、**毎月必ず名称のある祭りが開催されます**。\n\n公園の二大地質学的名所は**挟才窟（全長約200m×幅10m×高さ5m、約2,500万年前形成）**と**双龍窟（全長約400m×幅6m×高さ3m、「二匹の龍」の意）**で、どちらも同じ**全長17kmの溶岩トンネル系**の一部ですが、**「二次元洞窟」**として独自に分類されています。これは溶岩トンネルの壁面が後から上部の土壌中の貝殻から溶け出した**石灰岩（炭酸カルシウム）**で覆われたためで、世界でも極めて稀な**溶岩トンネルの形態＋石灰岩の鍾乳石・石筍**が一つの洞窟系に共存する組み合わせです。\n\n洞窟内の温度は**年間を通じて17〜18℃**に保たれており、夏の天然の避暑スポットとなっています。著名な訪問者として、中国の江沢民元国家主席、中曽根康弘元日本首相、金大中元韓国大統領、李健熙元サムスン会長、鄭周永元現代グループ会長などが挙げられます。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+      "image": null,
       "highlights": [
         "**1971年創設**、宋奉圭氏により砂だらけの荒地が緑豊かな楽園へと変貌",
         "**約99,000㎡／80エーカー** — 9つのテーマガーデン＋年間約120万人の来場者",
@@ -469,7 +461,7 @@
       "name": "昼食（済州島南西部）",
       "category": "運営上の停車 — 済州島南西部の地元昼食",
       "description": "**昼食は、咸林（ハルリム）/ 涯月（エウォル）西端 / 安徳（アンドク）エリアにある地元済州スタイルのレストランにて**、オペレーターが承認した家族経営の飲食店の厳選リストから選定して提供されます。選定基準は**英語対応メニュー、食事制限への配慮（リクエストによりベジタリアン＋ハラールフレンドリーなチキン・魚介オプションあり）、公正な団体料金での済州西海岸名物料理**です。\n\n代表的なランチメニューは**カルチジョリム（太刀魚の煮付け）**、**フクテジブルゴギ（済州黒豚プルコギ）**、**モムグク（済州の海藻と豚肉のスープ）**、**季節のナムルビビンバ**などです。**特にモムグクは済州島南西部の地域名物**であり、東海岸ツアーには登場しません。東ルートの昼食と同様に、具体的なレストランはグループ人数・食事制限リクエスト・当日の厨房の状況に応じて前日に決定され、朝のブリーフィングにてゲストへご案内します。\n\n**昼食費はゲスト各自のご負担**（約₩12,000〜₩18,000／人）となり、ツアー料金には**含まれません**。飲み物およびご飯・おかずのおかわりは食事代に含まれます。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
+      "image": null,
       "highlights": [
         "**済州島南西部の地元レストラン** — 咸林 / 涯月西端 / 安徳エリア",
         "厳選リスト：**英語対応メニュー** ＋ 食事制限への配慮",
@@ -1560,7 +1552,7 @@
     "japan_market_fit": 0.85
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
     "source_of_truth_note": "matching_profile fields scored against atockorea matching algorithm v2. Single fixed route; no variant overrides.",
     "audit_summary": "Southwest-Jeju Hydrangea Festival route — 9-hr small-group minicoach loop. 5 substantive POI anchors + 1 compound-stop pairing: 1 west-coast emerald beach (Hyeopjae) + 1 120-min hydrangea festival anchor (Hallim Park, June Hydrangea Festival, 9 themed gardens + 2 lava-tube limestone caves) + 1 compound stop (Jusangjeolli columnar + Cheonjeyeon waterfall, Natural Monuments 443 + 378) + 1 hydrangea tunnel anchor (Camellia Hill — 172,000 m², Korea's earliest hydrangeas) + 1 tea-culture finale (Osulloc / Amorepacific). Designed for **June peak hydrangea window (June 10–25)** with Hallim caves + Camellia Hall + Osulloc museum as the 3-tier indoor weather-fallback stack. **Catalog-novel pattern**: Jusangjeolli+Cheonjeyeon compound stop is the first of its kind in the catalog. Cross-batch reuse: 3 of 5 substantive bodies imported verbatim (15a T2 Hyeopjae, 15a T1 Camellia Hill, 14a T2 Osulloc); Hallim Park authored fresh + compound stop authored fresh.",
@@ -1699,7 +1691,7 @@
         "headlineLine1": "済州アジサイ祭り・南西ルート",
         "headlineLine2": "ツアー",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+          "imageUrl": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
           "imagePosition": "center 35%",
           "tagline": "ビーチから柱状節理、そしてアジサイのトンネルへ。",
           "pills": [
@@ -1794,7 +1786,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "翰林公園のアジサイの花",
             "caption": "翰林公園のアジサイの花",
             "location": "翰林公園",
@@ -1803,7 +1795,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "カメリアヒルのアジサイトンネル",
             "caption": "カメリアヒルのアジサイトンネル",
             "location": "カメリアヒル",
@@ -1812,7 +1804,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "ヒョプジェビーチのターコイズブルーの海",
             "caption": "ヒョプジェビーチのターコイズブルーの海",
             "location": "ヒョプジェビーチ",
@@ -1821,7 +1813,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "柱状節理の玄武岩の断崖 --- **翻訳メモ：** - **写真映え度**（#5）：「Photo Value」をInstagram・SNS文脈で自然な日本語表現に意訳 - **易しい〜普通**（#16）：トレッキング難易度として一般的な表現を使用 - **翰林公園**（#20）：韓国語の漢字表記「한림공원」をそのまま漢字に対応 - **柱状節理**（#30）：地質学的正式用語を使用（주상절리の日本語訳）",
             "caption": "チュサンジョルリ柱状節理の玄武岩の崖",
             "location": "チュサンジョルリ（柱状節理帯）",
@@ -1830,7 +1822,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "天帝淵（チョンジェヨン）三段の滝",
             "caption": "天帝淵（チョンジェヨン）三段の滝",
             "location": "天帝淵の滝",
@@ -1839,7 +1831,7 @@
           {
             "id": "g6",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "オスルロック緑茶畑",
             "caption": "オスルロック緑茶畑",
             "location": "オスルロック茶博物館",
@@ -1948,7 +1940,7 @@
             "name": "翰林公園（アジサイ祭り）",
             "category": "ガーデン＆アジサイ祭り",
             "description": "初夏に済州最大のアジサイ祭りを開催する植物園複合施設。複数のテーマ別ガーデン、園内溶岩洞窟システム、そして多彩な花の色が楽しめる。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "highlights": [
               "アジサイ祭りのメインガーデン",
               "園内溶岩トンネル洞窟システム",
@@ -1994,7 +1986,7 @@
             "name": "ランチ（済州南西部）",
             "category": "食事",
             "description": "翰林または大静近くのローカルレストラン — 黒豚、アワビ粥、または旬の海鮮料理。午後の観光スポットへ向かう前にグループで一息つく。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "highlights": [
               "伝統的な済州料理",
               "地元レストラン"
@@ -2912,7 +2904,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Tour Suwon: Fortaleza UNESCO, Templo Pan-Asiático y Starfield | AtoC",
     "metaDescription": "Tour de un día Seúl→Suwon: Fortaleza Hwaseong (UNESCO) → Biblioteca Starfield → Templo Waujeongsa (templo budista pan-asiático, 3.000 estatuas, entrada gratuita). Patrimonio, modernidad y espiritualidad.",
-    "ogImage": "https://www.atockorea.com/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+    "ogImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "primaryKeywords": [
       "tour Suwon Hwaseong Waujeongsa",
       "templo Waujeongsa tour",
@@ -1225,7 +1225,7 @@
     "japanese_speaking_guide_available_on_advance_notice": true
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": [
       "authoring",
       "review",
@@ -2245,7 +2245,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

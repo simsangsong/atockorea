@@ -14,7 +14,7 @@
       "Aldea Seongeup tour",
       "Jeju grupo pequeño un día"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+    "ogImage": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
     "title": "Jeju Este: Volcán, Costa y Aldea Folclórica | AtoC",
     "description": "Tour en grupo pequeño por el este de Jeju: Parque de Piedra → Cabo Seopjikoji → Seongsan Ilchulbong (UNESCO) → Cueva Micheon → Aldea Seongeup. Recogida en hotel, entradas incluidas."
   },
@@ -60,11 +60,7 @@
     "imagePosition": "center 35%",
     "images": [
       "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
-      "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=1920&q=85&fm=jpg&fit=crop",
-      "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
-      "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
-      "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
-      "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/bfc943f0-5372-4a9f-8d07-97c3793808db.webp"
+      "https://images.unsplash.com/photo-1777647978830-1b07f6aed022?w=1920&q=85&fm=jpg&fit=crop"
     ],
     "tagline": "De la cultura de la piedra a la costa volcánica, del cráter de lava a la aldea viva — el este de Jeju en un día",
     "pills": [
@@ -160,21 +156,13 @@
     {
       "id": 3,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
-      "location": "Almuerzo — Costa este local",
-      "alt": "Almuerzo — Costa este local — on-route photo",
-      "caption": "Almuerzo — Costa este local"
-    },
-    {
-      "id": 4,
-      "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
       "alt": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — gallery image 1",
       "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 1"
     },
     {
-      "id": 5,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
       "location": "Ilchul Land (Cueva Micheon — Tubo de lava)",
@@ -182,7 +170,7 @@
       "caption": "Ilchul Land (Cueva Micheon — Tubo de lava) — photo 1"
     },
     {
-      "id": 6,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
       "location": "Aldea Folclórica Seongeup",
@@ -190,7 +178,7 @@
       "caption": "Aldea Folclórica Seongeup — photo 1"
     },
     {
-      "id": 7,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
       "location": "Parque de la Cultura de Piedra de Jeju",
@@ -198,7 +186,7 @@
       "caption": "Parque de la Cultura de Piedra de Jeju — photo 2"
     },
     {
-      "id": 8,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
       "location": "Parque de la Cultura de Piedra de Jeju",
@@ -206,7 +194,7 @@
       "caption": "Parque de la Cultura de Piedra de Jeju — photo 3"
     },
     {
-      "id": 9,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
       "location": "Parque de la Cultura de Piedra de Jeju",
@@ -214,7 +202,7 @@
       "caption": "Parque de la Cultura de Piedra de Jeju — photo 4"
     },
     {
-      "id": 10,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp",
       "location": "Parque de la Cultura de Piedra de Jeju",
@@ -222,7 +210,7 @@
       "caption": "Parque de la Cultura de Piedra de Jeju — photo 5"
     },
     {
-      "id": 11,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
       "location": "Cabo Seopjikoji (Costa Este)",
@@ -230,7 +218,7 @@
       "caption": "Cabo Seopjikoji (Costa Este) — photo 2"
     },
     {
-      "id": 12,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
       "location": "Cabo Seopjikoji (Costa Este)",
@@ -238,7 +226,7 @@
       "caption": "Cabo Seopjikoji (Costa Este) — photo 3"
     },
     {
-      "id": 13,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
       "location": "Cabo Seopjikoji (Costa Este)",
@@ -246,7 +234,7 @@
       "caption": "Cabo Seopjikoji (Costa Este) — photo 4"
     },
     {
-      "id": 14,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
       "location": "Cabo Seopjikoji (Costa Este)",
@@ -254,7 +242,7 @@
       "caption": "Cabo Seopjikoji (Costa Este) — photo 5"
     },
     {
-      "id": 15,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
       "location": "Cabo Seopjikoji (Costa Este)",
@@ -262,7 +250,7 @@
       "caption": "Cabo Seopjikoji (Costa Este) — photo 6"
     },
     {
-      "id": 16,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
       "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
@@ -270,7 +258,7 @@
       "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 2"
     },
     {
-      "id": 17,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
       "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
@@ -278,7 +266,7 @@
       "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 3"
     },
     {
-      "id": 18,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
       "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
@@ -286,7 +274,7 @@
       "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 4"
     },
     {
-      "id": 19,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
       "location": "Seongsan Ilchulbong (Patrimonio Natural UNESCO)",
@@ -294,7 +282,7 @@
       "caption": "Seongsan Ilchulbong (Patrimonio Natural UNESCO) — photo 5"
     },
     {
-      "id": 20,
+      "id": 19,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
       "location": "Ilchul Land (Cueva Micheon — Tubo de lava)",
@@ -302,7 +290,7 @@
       "caption": "Ilchul Land (Cueva Micheon — Tubo de lava) — photo 2"
     },
     {
-      "id": 21,
+      "id": 20,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
       "location": "Ilchul Land (Cueva Micheon — Tubo de lava)",
@@ -310,7 +298,7 @@
       "caption": "Ilchul Land (Cueva Micheon — Tubo de lava) — photo 3"
     },
     {
-      "id": 22,
+      "id": 21,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
       "location": "Ilchul Land (Cueva Micheon — Tubo de lava)",
@@ -318,7 +306,7 @@
       "caption": "Ilchul Land (Cueva Micheon — Tubo de lava) — photo 4"
     },
     {
-      "id": 23,
+      "id": 22,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
       "location": "Ilchul Land (Cueva Micheon — Tubo de lava)",
@@ -326,7 +314,7 @@
       "caption": "Ilchul Land (Cueva Micheon — Tubo de lava) — photo 5"
     },
     {
-      "id": 24,
+      "id": 23,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
       "location": "Ilchul Land (Cueva Micheon — Tubo de lava)",
@@ -334,7 +322,7 @@
       "caption": "Ilchul Land (Cueva Micheon — Tubo de lava) — photo 6"
     },
     {
-      "id": 25,
+      "id": 24,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
       "location": "Ilchul Land (Cueva Micheon — Tubo de lava)",
@@ -342,7 +330,7 @@
       "caption": "Ilchul Land (Cueva Micheon — Tubo de lava) — photo 7"
     },
     {
-      "id": 26,
+      "id": 25,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
       "location": "Ilchul Land (Cueva Micheon — Tubo de lava)",
@@ -350,7 +338,7 @@
       "caption": "Ilchul Land (Cueva Micheon — Tubo de lava) — photo 8"
     },
     {
-      "id": 27,
+      "id": 26,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
       "location": "Ilchul Land (Cueva Micheon — Tubo de lava)",
@@ -358,7 +346,7 @@
       "caption": "Ilchul Land (Cueva Micheon — Tubo de lava) — photo 9"
     },
     {
-      "id": 28,
+      "id": 27,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
       "location": "Ilchul Land (Cueva Micheon — Tubo de lava)",
@@ -366,7 +354,7 @@
       "caption": "Ilchul Land (Cueva Micheon — Tubo de lava) — photo 10"
     },
     {
-      "id": 29,
+      "id": 28,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
       "location": "Aldea Folclórica Seongeup",
@@ -374,7 +362,7 @@
       "caption": "Aldea Folclórica Seongeup — photo 2"
     },
     {
-      "id": 30,
+      "id": 29,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
       "location": "Aldea Folclórica Seongeup",
@@ -382,7 +370,7 @@
       "caption": "Aldea Folclórica Seongeup — photo 3"
     },
     {
-      "id": 31,
+      "id": 30,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
       "location": "Aldea Folclórica Seongeup",
@@ -390,7 +378,7 @@
       "caption": "Aldea Folclórica Seongeup — photo 4"
     },
     {
-      "id": 32,
+      "id": 31,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
       "location": "Aldea Folclórica Seongeup",
@@ -398,7 +386,7 @@
       "caption": "Aldea Folclórica Seongeup — photo 5"
     },
     {
-      "id": 33,
+      "id": 32,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
       "location": "Aldea Folclórica Seongeup",
@@ -406,7 +394,7 @@
       "caption": "Aldea Folclórica Seongeup — photo 6"
     },
     {
-      "id": 34,
+      "id": 33,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
       "location": "Aldea Folclórica Seongeup",
@@ -679,7 +667,7 @@
       "name": "Almuerzo — Costa este local",
       "category": "Pausa para comer — Zona Seongsan-eup",
       "description": "Pausa de 60 minutos en la zona de restaurantes junto al puerto de Seongsan. Menú habitual: **mulhoe** en verano o **haemul jeongsik** el resto del año. **Almuerzo no incluido — pago directo** (~₩15.000/persona).",
-      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "image": null,
       "highlights": [
         "Mulhoe o haemul jeongsik fresco",
         "**Almuerzo no incluido** (~₩15.000/persona)"
@@ -1737,7 +1725,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/b2087c57-7cb6-420d-a840-c6e7e581072e.webp",
+            "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "location": "Jeju Este (vista general)",
             "atmosphere": "Una ruta que se va revelando poco a poco y que cobra sentido al avanzar el día",
             "alt": "Imagen de Visión general de la ruta — el este de Jeju en un día",
@@ -1755,7 +1743,7 @@
           {
             "id": 3,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202002/24/0a302cd6-2523-4934-96ce-d7ac536b6f5a.webp",
+            "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "location": "Seopjikoji, costa este de Jeju",
             "atmosphere": "Perspectiva costera: el cráter de Seongsan visto desde la lengua de tierra de Seopjikoji",
             "alt": "Imagen de Cabo Seopjikoji — el cono volcánico de Seongsan se yergue al fondo",
@@ -1764,7 +1752,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/840e4c6b-c729-488b-bc2c-2bb946f85677.webp",
+            "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "location": "Ilchul Land, Seongsan",
             "atmosphere": "Pausa subterránea: temperatura constante de 18°C en la cueva de lava",
             "alt": "Imagen de Cueva Micheon en Ilchul Land — contraste fresco y oscuro después del cráter",
@@ -1773,7 +1761,7 @@
           {
             "id": 5,
             "type": "photo",
-            "src": "https://live.staticflickr.com/65535/53953518745_a91884d6e2_b.jpg",
+            "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "location": "Aldea Folclórica Seongeup, Pyoseon-myeon",
             "atmosphere": "Cierre suave: historia y vida cotidiana joseonesa al final de la jornada",
             "alt": "Imagen de Aldea Seongeup — ciudad joseonesa viva que cierra el día con historia",
@@ -1782,7 +1770,7 @@
           {
             "id": 6,
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/6efa0dd8-7e17-47b9-8265-caf514b7ccef.webp",
+            "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
             "location": "Seongsan Ilchulbong, costa este de Jeju",
             "atmosphere": "Punto culminante del día: el cráter más fotogénico de la isla",
             "alt": "Imagen de Seongsan Ilchulbong — el gran volcán del este de Jeju",
@@ -3357,7 +3345,7 @@
       "v15_unified": "Migrated from small-group v1 schema to v15 canonical: schema_version 1→7; SEO expanded (primaryKeywords, ogImage, title); price expanded (priceSource, priceNote, discountPercent); routeFlowStops id→type; routePhases stripped of Tailwind classes (bgClass/dotClass/textClass), reshaped to {phase,duration,description}; seasonalVariations stripped of Tailwind, reshaped to {season,description}; whyTourWorks.lessIdeal→lessIdealFor; practicalWeatherStatic gained _seasonalSummary and _seasonalTemperatures; product profile expanded to v15 canonical (≥40 fields with anchor_poi_keys, vehicle_type_legacy, seasonality, fit-vector full set); matching_metadata reformatted to anchor_pois/anchor_poi_keys/primary_themes/secondary_themes/best_for/not_recommended_for/reviews_attribution/unesco_fit_note shape; pickup_dropoff added (Schema A.1); itinerary_variants=[]; _publication block added. PRESERVED from source (richer than catalog v15): itineraryStops[*].visitBasics,.convenience,.smartNotes (operational data), guestReviews[4 each], reviewsSummary.highlights.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

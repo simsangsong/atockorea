@@ -14,7 +14,7 @@
       "Gamcheon cruise tour",
       "Yonggungsa cruise tour"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+    "ogImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
     "title": "Busan Cruise Shore Excursion · Coastal Bus Tour | AtoC Korea",
     "description": "Large-coach Busan coastal day tour for cruise passengers: 8 signature stops with cruise-terminal pickup and a return-before-sail-away guarantee."
   },
@@ -149,7 +149,7 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "location": "Haedong Yonggungsa Temple",
       "alt": "Haedong Yonggungsa Temple — gallery image 1",
       "caption": "Haedong Yonggungsa — seaside temple"
@@ -157,7 +157,7 @@
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
       "location": "Haedong Yonggungsa Temple",
       "alt": "Haedong Yonggungsa Temple — gallery image 2",
       "caption": "Haedong Yonggungsa — cliff path"
@@ -165,7 +165,7 @@
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
       "location": "Haedong Yonggungsa Temple",
       "alt": "Haedong Yonggungsa Temple — gallery image 3",
       "caption": "Haedong Yonggungsa — Daeungjeon"
@@ -280,11 +280,13 @@
         "walking": "Moderate — 108 steps through pine grove, multiple seaside terraces and stairs",
         "admission": "Free; coach parking is paid"
       },
-      "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "images": [
-        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp"
       ]
     },
     {
@@ -1195,7 +1197,7 @@
     "product_id": "busan-cruise-shore-excursion-bus-tour",
     "product_type": "bus",
     "route_type": "fixed_route",
-    "destination_region": "korea_mainland",
+    "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "large_coach",
     "duration_hours": 9,
@@ -1233,7 +1235,7 @@
     "culture_level": 0.95,
     "relax_level": 0.4,
     "first_time_fit": 1,
-    "family_fit": 0.8,
+    "family_fit": 0.7,
     "senior_fit": 0.6,
     "couple_fit": 0.9,
     "solo_traveler_fit": 0.9,
@@ -1250,10 +1252,10 @@
     "rain_fit": 0.5,
     "value_for_money_fit": 1,
     "iconic_landmark_fit": 1,
-    "cafe_fit": 0.5,
+    "cafe_fit": 0.4,
     "food_fit": 0.85,
-    "nature_fit": 0.7,
-    "beach_fit": 0.7,
+    "nature_fit": 0.55,
+    "beach_fit": 0.45,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.75,
     "no_shopping_fit": 0.3,
@@ -1351,8 +1353,34 @@
     "japanese_speaking_guide_available_on_advance_notice": true
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
+    "primary_themes": [
+      "cruise_shore_excursion",
+      "busan_highlights",
+      "bus_tour",
+      "value_priced"
+    ],
+    "secondary_themes": [
+      "culture_village",
+      "seafood_market",
+      "korean_war_heritage",
+      "coastal_temple",
+      "city_viewpoint"
+    ],
+    "best_for": [
+      "cruise_passengers",
+      "value_seekers",
+      "first_time_busan",
+      "solo_cruisers",
+      "couples_on_budget"
+    ],
+    "not_recommended_for": [
+      "mobility_limited",
+      "stroller_heavy_groups",
+      "private_tour_seekers",
+      "premium_seekers"
+    ],
     "source_of_truth_note": "Bus-tour variant of busan-small-group-sightseeing-tour-cruise-passengers. Same 8 stops, larger coach (28-45 seats), lower price ($49 vs $79), shorter stop times. Sources: Visit Busan official, VisitKorea, Wikipedia, UNMCK official, Busan Diamond Tower official, Songdo Marine Cable Car official, Busan International Film Festival official.",
     "audit_summary": "Cruise-shore excursion bus tour from Busan Port International Cruise Terminal, 9-hour day, 8 signature stops with optional lunch. Return-by-19:15 guarantee sized for 19:30+ sail-away. Direct equivalent on GetYourGuide market is the $55 'Busan for Cruise Passengers Sightseeing Tour' (t864813)."
   }

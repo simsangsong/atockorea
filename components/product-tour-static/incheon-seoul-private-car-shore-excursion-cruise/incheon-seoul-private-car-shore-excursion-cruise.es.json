@@ -13,11 +13,11 @@
       "Traslado privado en auto del puerto de Incheon a Seúl",
       "Tour en tierra de crucero en Corea"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "ogImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
     "title": "Incheon → Seúl Excursión Privada en Tierra desde Crucero · Día Puerta a Puerta de 8 Horas"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "thumbnail": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
     "title": "Incheon→Seúl: Coche Privado Crucero",
     "priceLabel": "Desde US$419 por vehículo",
     "shortCardDescription": "Un alquiler de auto privado de 8 horas diseñado en torno a la hora de embarque de su crucero, no a un horario fijo. Recogida en la pasarela de la Terminal de Cruceros de Incheon, guía-conductor de habla inglesa e itinerario personalizable por el Palacio Gyeongbokgung, el Pueblo Hanok de Bukchon + Insadong, almuerzo a su elección, la Torre N de Seúl y Myeongdong o el Templo Jogyesa. El guía-conductor mantiene un margen de 60 minutos antes del zarpe para que nunca pierda el barco.",
@@ -44,7 +44,7 @@
       "Personalizable",
       "Regreso garantizado"
     ],
-    "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
+    "heroImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp"
   },
   "headlineLine1": "Incheon→Seúl",
   "headlineLine2": "Coche Privado Crucero",
@@ -55,7 +55,7 @@
     "salePriceUsd": 419
   },
   "hero": {
-    "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "imageUrl": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
     "imagePosition": "center 35%",
     "tagline": "De la pasarela al Gyeongbokgung en 60 minutos — un día privado en Seúl calibrado según su hora de zarpe",
     "pills": [
@@ -135,122 +135,82 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
-      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
-      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 1",
-      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 1"
+      "src": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
+      "location": "Terminal de Cruceros de Incheon",
+      "alt": "Terminal de Cruceros de Incheon — recogida en pasarela con tu KIA Carnival privado",
+      "caption": "Terminal de Cruceros de Incheon — recogida en pasarela con tu KIA Carnival privado"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
-      "location": "Pueblo Hanok de Bukchon + Insadong",
-      "alt": "Pueblo Hanok de Bukchon + Insadong — gallery image 1",
-      "caption": "Pueblo Hanok de Bukchon + Insadong — photo 1"
+      "src": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
+      "location": "Río Han y Torre N Seoul",
+      "alt": "Vehículo privado junto al río Han — Torre N Seoul de noche",
+      "caption": "Vehículo privado junto al río Han — Torre N Seoul de noche"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
-      "location": "Torre N de Seúl (Namsan)",
-      "alt": "Torre N de Seúl (Namsan) — gallery image 1",
-      "caption": "Torre N de Seúl (Namsan) — photo 1"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "location": "Palacio Gyeongbokgung",
+      "alt": "Palacio Gyeongbokgung — arquitectura real en el corazón de Seúl",
+      "caption": "Palacio Gyeongbokgung — arquitectura real en el corazón de Seúl"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
-      "location": "Myeongdong O Templo Jogyesa (a su elección)",
-      "alt": "Myeongdong O Templo Jogyesa (a su elección) — gallery image 1",
-      "caption": "Myeongdong O Templo Jogyesa (a su elección) — photo 1"
+      "src": "/images/tours/seoul-private-charter/seoul-private-gyeongbokgung-heungnyemun.webp",
+      "location": "Palacio Gyeongbokgung",
+      "alt": "Palacio Gyeongbokgung — puerta Heungnyemun con visitantes en hanbok",
+      "caption": "Palacio Gyeongbokgung — puerta Heungnyemun con visitantes en hanbok"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
-      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
-      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 2",
-      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 2"
+      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "location": "Aldea Hanok de Bukchon",
+      "alt": "Aldea Hanok de Bukchon — callejones tradicionales coreanos",
+      "caption": "Aldea Hanok de Bukchon — callejones tradicionales coreanos"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
-      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
-      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 3",
-      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 3"
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
+      "location": "Torre N Seoul (Namsan)",
+      "alt": "Torre N Seoul en la cima de Namsan",
+      "caption": "Torre N Seoul en la cima de Namsan"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
-      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
-      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 4",
-      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 4"
+      "src": "/images/tours/seoul-private-charter/seoul-private-n-seoul-tower-treat.webp",
+      "location": "Torre N Seoul (Namsan)",
+      "alt": "Torre N Seoul — un dulce al pie de la torre",
+      "caption": "Torre N Seoul — un dulce al pie de la torre"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
-      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
-      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 5",
-      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 5"
+      "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+      "location": "Mercado Gwangjang",
+      "alt": "Mercado Gwangjang — legendaria calle de comida callejera",
+      "caption": "Mercado Gwangjang — legendaria calle de comida callejera"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
-      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
-      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 6",
-      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 6"
+      "src": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
+      "location": "Myeongdong",
+      "alt": "Myeongdong — vibrante distrito comercial de Seúl",
+      "caption": "Myeongdong — vibrante distrito comercial de Seúl"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
-      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
-      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 7",
-      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 7"
-    },
-    {
-      "id": 11,
-      "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
-      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
-      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 8",
-      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 8"
-    },
-    {
-      "id": 12,
-      "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
-      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
-      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 9",
-      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 9"
-    },
-    {
-      "id": 13,
-      "type": "photo",
-      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-57-27.webp",
-      "location": "Torre N de Seúl (Namsan)",
-      "alt": "Torre N de Seúl (Namsan) — gallery image 2",
-      "caption": "Torre N de Seúl (Namsan) — photo 2"
-    },
-    {
-      "id": 14,
-      "type": "photo",
-      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-06.webp",
-      "location": "Torre N de Seúl (Namsan)",
-      "alt": "Torre N de Seúl (Namsan) — gallery image 3",
-      "caption": "Torre N de Seúl (Namsan) — photo 3"
-    },
-    {
-      "id": 15,
-      "type": "photo",
-      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-10.webp",
-      "location": "Torre N de Seúl (Namsan)",
-      "alt": "Torre N de Seúl (Namsan) — gallery image 4",
-      "caption": "Torre N de Seúl (Namsan) — photo 4"
+      "src": "/images/tours/seoul-private-charter/seoul-private-lotte-tower-songpa.webp",
+      "location": "Torre Lotte World (Songpa)",
+      "alt": "Torre Lotte World — el rascacielos más alto de Corea sobre Songpa",
+      "caption": "Torre Lotte World — el rascacielos más alto de Corea sobre Songpa"
     }
   ],
   "itineraryStops": [
@@ -657,7 +617,7 @@
           "Wikipedia (N Seoul Tower)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+      "image": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
       "images": [
         "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
         "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-57-27.webp",
@@ -1462,7 +1422,7 @@
         "headlineLine1": "Incheon→Seúl",
         "headlineLine2": "Coche Privado Crucero",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+          "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
           "imagePosition": "center 35%",
           "tagline": "Desde la pasarela hasta Gyeongbokgung en 60 minutos — un día privado en Seúl calibrado a su hora de partida",
           "pills": [
@@ -1561,7 +1521,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "**Recogida en la pasarela del vestíbulo de llegadas de la Terminal de Cruceros de Incheon**",
             "caption": "**Salón del trono principal del Palacio Gyeongbokgung**",
             "location": "**Terminal de Cruceros de Incheon**",
@@ -1570,7 +1530,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/15/2002115_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "**Salón del trono del Palacio Gyeongbokgung y ceremonia de la guardia real**",
             "caption": "**Ceremonia del cambio de guardia real en Gyeongbokgung**",
             "location": "**Gyeongbokgung, Seúl**",
@@ -1579,7 +1539,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "**Muros de piedra y tejados de hanok con tejas a lo largo de la cresta de Bukchon**",
             "caption": "**Las líneas de tejados tradicionales del Pueblo Hanok de Bukchon**",
             "location": "**Pueblo Hanok de Bukchon, Seúl**",
@@ -1588,7 +1548,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "Vista panorámica de Seúl desde Namsan con la Torre N Seoul en lo alto",
             "caption": "Sala principal y exhibición de linternas del Templo Jogyesa",
             "location": "Torre N Seoul (Namsan)",
@@ -1597,7 +1557,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "Puestos de comida callejera iluminados a lo largo de la calle comercial de Myeongdong al anochecer",
             "caption": "Torre N Seoul al atardecer, vista desde Namsan",
             "location": "Myeongdong, Seúl",
@@ -1606,7 +1566,7 @@
           {
             "id": "g6",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "Vehículo privado esperando en la zona de embarque de la Terminal de Cruceros de Incheon",
             "caption": "Comida callejera y compras en Myeongdong",
             "location": "Terminal de Cruceros de Incheon",
@@ -1628,7 +1588,7 @@
             "name": "Recogida en la terminal de cruceros",
             "category": "Salida",
             "description": "El conductor-guía recibirá a su grupo en la sala de llegadas de la Terminal de Cruceros de Incheon con un letrero con su nombre. Se verifica rápidamente la hora de zarpe (hora límite de regreso al barco), seguida de un viaje de una hora al centro de Seúl. El trayecto sirve a su vez como orientación: las preguntas habituales sobre moneda, gastronomía e historia se responden antes de la primera parada.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "Recogida a pie de barco",
               "Traslado de 1 hora a Seúl",
@@ -1650,7 +1610,7 @@
             "name": "Palacio Gyeongbokgung + ceremonia de la guardia real",
             "category": "Palacio Real de Joseon",
             "description": "El palacio real principal de la Dinastía Joseon (1395–1910) y el lugar más fotografiado de Seúl. La ceremonia del cambio de guardia real se celebra a las 10:00 y a las 14:00 todos los días (cerrado los martes — el Palacio Changdeokgung es la alternativa los martes). Su guía se encarga de las entradas y le lleva por la sala del trono, el pabellón Gyeonghoeru y el jardín trasero si el tiempo lo permite.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "Palacio principal de la era Joseon",
               "Ceremonia de la guardia real",
@@ -1686,7 +1646,7 @@
             "name": "Pueblo Hanok de Bukchon + Insadong",
             "category": "Pueblo Patrimonial Hanok",
             "description": "A poca distancia en coche — o a 10 minutos a pie — del palacio. Los callejones del siglo XV conservados de Bukchon siguen siendo habitados (por lo que el pueblo solicita hablar en voz baja en las secciones señalizadas). Insadong, justo cuesta abajo, es el principal distrito de artes y artesanías tradicionales de la ciudad: cerámica, material de caligrafía, tés tradicionales, papel hanji, alquiler de hanbok y el exclusivo complejo comercial Ssamziegil.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "Callejones hanok del siglo XV",
               "Artesanías tradicionales y tés",
@@ -1722,7 +1682,7 @@
             "name": "Almuerzo (a su elección)",
             "category": "Comida",
             "description": "Tiempo libre a su criterio: restaurantes de Insadong con cocina tradicional de la corte coreana y bibimbap; Tosokchon para samgyetang (sopa de pollo con ginseng) cerca del palacio; o una barbacoa coreana informal cerca de Bukchon. El guía-conductor hace recomendaciones específicas según necesidades dietéticas (halal, vegetariano, alergias — indíquelo con antelación y se puede planificar una ruta apta para halal).",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "Cocina de la corte coreana en Insadong",
               "Samgyetang en Tosokchon",
@@ -1745,7 +1705,7 @@
             "name": "Torre N de Seúl (Namsan) — mirador opcional",
             "category": "Torre icónica (Mirador)",
             "description": "Se sube en vehículo al monte Namsan hasta la base de la torre para disfrutar de una vista panorámica del centro de Seúl, el río Han y las crestas circundantes. El paseo opcional al mirador del observatorio cuesta aprox. ₩21,000 por persona, abonado por separado. En caso de horarios de salida ajustados, el conductor puede omitir la subida al observatorio y detenerse únicamente en el mirador de la base para ahorrar más de 30 minutos.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "Vista panorámica de la ciudad",
               "Punto fotográfico de los candados del amor",
@@ -1780,7 +1740,7 @@
             "name": "Myeongdong (compras y comida callejera) o Templo Jogyesa",
             "category": "Compras y cultura local",
             "description": "Dos opciones según su interés. Myeongdong (la calle comercial emblemática de Corea) para tiendas de K-beauty, puestos de comida callejera (pan de huevo, hotteok, papa tornado) y mostradores de devolución de impuestos. Templo Jogyesa (templo principal del budismo de la Orden Jogye de Corea) para un final más tranquilo — el Buda Seokgamoni de madera de una sola pieza más alto del país y un patio frecuentemente decorado con instalaciones de linternas de temporada.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "Comida callejera de Myeongdong y K-beauty",
               "O el templo budista Jogyesa",
@@ -1802,7 +1762,7 @@
             "name": "Regreso a la terminal de cruceros",
             "category": "Regreso",
             "description": "Viaje directo Seúl → Terminal de Cruceros de Incheon, ≈ 60 minutos. El conductor-guía establece un margen de 60 minutos entre la hora de llegada programada y su hora de embarque para que los retrasos por tráfico no le hagan perder el barco. Llegada directamente a la puerta de la terminal.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "1 hora de viaje a Incheon",
               "Margen de seguridad de 60 minutos antes del embarque",
@@ -2227,7 +2187,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

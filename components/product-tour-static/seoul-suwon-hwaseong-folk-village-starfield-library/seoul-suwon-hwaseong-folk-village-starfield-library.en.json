@@ -13,7 +13,7 @@
       "Starfield Library Suwon tour",
       "UNESCO Korea day tour"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+    "ogImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "title": "Suwon Hwaseong, Korean Folk Village & Starfield Library Day Tour from Seoul | AtoC Korea"
   },
   "catalog_card": {
@@ -1476,7 +1476,7 @@
         "headlineLine1": "Suwon Heritage Day",
         "headlineLine2": "Hwaseong, Folk Village & Starfield",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+          "imageUrl": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
           "imagePosition": "center 35%",
           "tagline": "Korea's only walled fortress, a folk village, and the library that's all over Instagram",
           "pills": [
@@ -1570,7 +1570,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
             "alt": "Section of the 5.7 km UNESCO-listed Suwon Hwaseong Fortress wall winding along a ridgeline with stone bastions and a major gate visible",
             "caption": "Suwon Hwaseong Fortress — UNESCO since 1997",
             "location": "Suwon Hwaseong Fortress, Janganmun-Hwaseomun section, Suwon",
@@ -1579,7 +1579,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/19/2598719_image2_1.JPG",
+            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
             "alt": "Hwaseong Haenggung Palace courtyard with traditional Korean wooden buildings, painted eaves, and stone-flagged ground",
             "caption": "Hwaseong Haenggung — Korea's largest detached palace",
             "location": "Hwaseong Haenggung Palace, inside the fortress, Suwon",
@@ -1588,7 +1588,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG",
+            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
             "alt": "Royal-guard reenactment performers in Joseon-era armor lined up in the Haenggung Palace courtyard",
             "caption": "Royal guard ceremony at Haenggung",
             "location": "Hwaseong Haenggung Palace courtyards",
@@ -1597,7 +1597,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
             "alt": "Korean Folk Village's traditional thatched-roof houses set along a wooded path with working artisan demonstrations",
             "caption": "Korean Folk Village — 270+ traditional houses",
             "location": "Korean Folk Village, Yongin, Gyeonggi-do",
@@ -1606,7 +1606,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
+            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
             "alt": "Starfield Library Suwon's four-story atrium with 22-meter-tall floor-to-ceiling bookshelves and reading lounges below",
             "caption": "Starfield Library Suwon — 22 m bookshelves",
             "location": "Starfield Suwon Library, Yeongtong-gu, Suwon",
@@ -1628,7 +1628,7 @@
             "name": "Seoul departure",
             "category": "Pickup & departure",
             "description": "Pickup from Hongik University Station (Exit 8) or Myeongdong Station (Exit 2 or 4). About one hour by coach south to Suwon, the old fortress city of Joseon's King Jeongjo.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+            "image": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
             "highlights": [
               "Central Seoul meeting points",
               "1-hour transfer south"
@@ -2070,7 +2070,7 @@
             "name": "Return to Seoul",
             "category": "Return",
             "description": "Coach back to central Seoul, with drop-off at the same morning meeting points. Arrival around 18:00 depending on traffic.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+            "image": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
             "highlights": [
               "Drop-off in central Seoul"
             ],
@@ -2498,7 +2498,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

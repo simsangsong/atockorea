@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Alquiler Privado de Auto en Busan para Escala de Crucero (8 h) | AtoC Korea",
     "metaDescription": "Alquiler privado de auto de 8 horas totalmente personalizable en Busan para pasajeros de crucero. Conductor de habla inglesa, regreso puntual garantizado, recogida en hotel/KTX/puerto de crucero.",
-    "ogImage": "https://www.atockorea.com/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "ogImage": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
     "primaryKeywords": [
       "Alquiler privado de auto en Busan",
       "Excursión en escala de crucero en Busan",
@@ -31,8 +31,8 @@
       "Ruta Personalizable",
       "Recogida en Crucero Incluida"
     ],
-    "heroImage": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-    "thumbnail": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "heroImage": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
+    "thumbnail": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
     "priceLabel": "Desde US$359 por vehículo (antes $379, 1–6 pax, 8h) · 7–12 pax 2× · 13+ pax 3×",
     "shortCardDescription": "Alquiler privado de auto de 8 horas para pasajeros de crucero en Busan con conductor-guía autorizado de habla inglesa. El itinerario predeterminado incluye el Cementerio Memorial de las Naciones Unidas, los acantilados de Taejongdae, la Aldea Cultural de Gamcheon, el Parque Yongdusan y el Mercado de Jagalchi. Totalmente personalizable. Recogida en la terminal de cruceros, la estación KTX o cualquier hotel céntrico de Busan; el regreso puntual al barco está garantizado.",
     "tags": [
@@ -53,7 +53,7 @@
     "discountPercent": 5
   },
   "hero": {
-    "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "imageUrl": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
     "imagePosition": "center 50%",
     "tagline": "Desde el Cementerio Memorial de las Naciones Unidas hasta los acantilados de Taejongdae, los coloridos callejones de Gamcheon y el animado puerto de Jagalchi — ocho horas privadas, tu ruta, tu ritmo, con regreso puntual a tu barco garantizado.",
     "pills": [
@@ -133,130 +133,82 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-      "location": "Cementerio Conmemorativo de las Naciones Unidas (Guerra de Corea)",
-      "alt": "Cementerio Conmemorativo de las Naciones Unidas (Guerra de Corea) — gallery image 1",
-      "caption": "Cementerio Conmemorativo de las Naciones Unidas (Guerra de Corea) — photo 1"
+      "src": "/images/tours/busan-private/busan-private-thumbnail-gwangalli.webp",
+      "location": "Gwangalli y Puente Gwangan",
+      "alt": "Tour privado en Busan — familia frente al puente Gwangan",
+      "caption": "Tour privado en Busan — familia frente al puente Gwangan"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-      "location": "Acantilados costeros de Taejongdae",
-      "alt": "Acantilados costeros de Taejongdae — gallery image 1",
-      "caption": "Acantilados costeros de Taejongdae — photo 1"
+      "src": "/images/tours/gamcheon-culture-village/gamcheon-panorama.webp",
+      "location": "Aldea Cultural Gamcheon",
+      "alt": "Aldea Cultural Gamcheon — panorámica colorida de la ladera",
+      "caption": "Aldea Cultural Gamcheon — panorámica colorida de la ladera"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-      "location": "Pueblo Cultural de Gamcheon",
-      "alt": "Pueblo Cultural de Gamcheon — gallery image 1",
-      "caption": "Pueblo Cultural de Gamcheon — photo 1"
+      "src": "/images/tours/gamcheon-culture-village/gamcheon-vibrant-viewpoint.webp",
+      "location": "Aldea Cultural Gamcheon",
+      "alt": "Aldea Cultural Gamcheon — vista vibrante desde el mirador amarillo",
+      "caption": "Aldea Cultural Gamcheon — vista vibrante desde el mirador amarillo"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
-      "location": "Parque Yongdusan y Torre de Busan",
-      "alt": "Parque Yongdusan y Torre de Busan — gallery image 1",
-      "caption": "Parque Yongdusan y Torre de Busan — photo 1"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "location": "Templo Haedong Yonggungsa",
+      "alt": "Templo Haedong Yonggungsa — acantilado al amanecer sobre el mar",
+      "caption": "Templo Haedong Yonggungsa — acantilado al amanecer sobre el mar"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
-      "location": "Nampo-dong y Mercado de Pescado Jagalchi",
-      "alt": "Nampo-dong y Mercado de Pescado Jagalchi — on-route photo",
-      "caption": "Nampo-dong y Mercado de Pescado Jagalchi"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+      "location": "Templo Haedong Yonggungsa",
+      "alt": "Templo Haedong Yonggungsa — estatua Haesu Gwaneum frente al mar",
+      "caption": "Templo Haedong Yonggungsa — estatua Haesu Gwaneum frente al mar"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-      "location": "Cementerio Conmemorativo de las Naciones Unidas (Guerra de Corea)",
-      "alt": "Cementerio Conmemorativo de las Naciones Unidas (Guerra de Corea) — gallery image 2",
-      "caption": "Cementerio Conmemorativo de las Naciones Unidas (Guerra de Corea) — photo 2"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "location": "Templo Haedong Yonggungsa",
+      "alt": "Templo Haedong Yonggungsa — sala del dragón",
+      "caption": "Templo Haedong Yonggungsa — sala del dragón"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
-      "location": "Cementerio Conmemorativo de las Naciones Unidas (Guerra de Corea)",
-      "alt": "Cementerio Conmemorativo de las Naciones Unidas (Guerra de Corea) — gallery image 3",
-      "caption": "Cementerio Conmemorativo de las Naciones Unidas (Guerra de Corea) — photo 3"
+      "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+      "location": "Sky Capsule de Cheongsapo",
+      "alt": "Sky Capsule de Cheongsapo — paseo costero en la cabina nº 04",
+      "caption": "Sky Capsule de Cheongsapo — paseo costero en la cabina nº 04"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
-      "location": "Acantilados costeros de Taejongdae",
-      "alt": "Acantilados costeros de Taejongdae — gallery image 2",
-      "caption": "Acantilados costeros de Taejongdae — photo 2"
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+      "location": "Parque Blue Line de Haeundae",
+      "alt": "Parque Blue Line de Haeundae — ruta costera del tren",
+      "caption": "Parque Blue Line de Haeundae — ruta costera del tren"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
-      "location": "Acantilados costeros de Taejongdae",
-      "alt": "Acantilados costeros de Taejongdae — gallery image 3",
-      "caption": "Acantilados costeros de Taejongdae — photo 3"
+      "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+      "location": "Torre Busan (Parque Yongdusan)",
+      "alt": "Torre Busan y Parque Yongdusan — pabellón de la campana de Corea de noche",
+      "caption": "Torre Busan y Parque Yongdusan — pabellón de la campana de Corea de noche"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
-      "location": "Acantilados costeros de Taejongdae",
-      "alt": "Acantilados costeros de Taejongdae — gallery image 4",
-      "caption": "Acantilados costeros de Taejongdae — photo 4"
-    },
-    {
-      "id": 11,
-      "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
-      "location": "Acantilados costeros de Taejongdae",
-      "alt": "Acantilados costeros de Taejongdae — gallery image 5",
-      "caption": "Acantilados costeros de Taejongdae — photo 5"
-    },
-    {
-      "id": 12,
-      "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
-      "location": "Acantilados costeros de Taejongdae",
-      "alt": "Acantilados costeros de Taejongdae — gallery image 6",
-      "caption": "Acantilados costeros de Taejongdae — photo 6"
-    },
-    {
-      "id": 13,
-      "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-      "location": "Pueblo Cultural de Gamcheon",
-      "alt": "Pueblo Cultural de Gamcheon — gallery image 2",
-      "caption": "Pueblo Cultural de Gamcheon — photo 2"
-    },
-    {
-      "id": 14,
-      "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
-      "location": "Pueblo Cultural de Gamcheon",
-      "alt": "Pueblo Cultural de Gamcheon — gallery image 3",
-      "caption": "Pueblo Cultural de Gamcheon — photo 3"
-    },
-    {
-      "id": 15,
-      "type": "photo",
-      "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
-      "location": "Parque Yongdusan y Torre de Busan",
-      "alt": "Parque Yongdusan y Torre de Busan — gallery image 2",
-      "caption": "Parque Yongdusan y Torre de Busan — photo 2"
-    },
-    {
-      "id": 16,
-      "type": "photo",
-      "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
-      "location": "Parque Yongdusan y Torre de Busan",
-      "alt": "Parque Yongdusan y Torre de Busan — gallery image 3",
-      "caption": "Parque Yongdusan y Torre de Busan — photo 3"
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+      "location": "Taejongdae",
+      "alt": "Taejongdae — espectaculares acantilados al sur de Busan",
+      "caption": "Taejongdae — espectaculares acantilados al sur de Busan"
     }
   ],
   "itineraryStops": [
@@ -284,7 +236,7 @@
           "NamuWiki"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG"
+      "image": null
     },
     {
       "number": 2,
@@ -798,7 +750,7 @@
           "Busan Tourism Organization (Jagalchi Sannakji designation)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+      "image": null,
       "visitBasics": {
         "hours": "**Mercado de Jagalchi: abierto todos los días de 05:00 a 22:00**; las subastas de pescado vivo comienzan a las 04:00 (reserva anticipada para visitas turísticas); calles comerciales de Nampo-dong de 10:30 a 22:00",
         "closed": "**Jagalchi: cerrado el 1.er y 3.er martes de cada mes**; Nampo-dong abierto todo el año",
@@ -832,7 +784,7 @@
         "kb_version": "1.15",
         "verified_date": "2026-04-29"
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG"
+      "image": null
     }
   ],
   "routeFlowStops": [
@@ -1167,7 +1119,7 @@
     "product_id": "busan-private-car-charter-cruise-shore",
     "product_type": "private",
     "route_type": "customizable",
-    "destination_region": "korea_mainland",
+    "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "private_vehicle",
     "duration_hours": 8,
@@ -1474,7 +1426,7 @@
         "headlineLine1": "Busan Crucero",
         "headlineLine2": "Coche Privado",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+          "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
           "imagePosition": "center 45%",
           "tagline": "Desde el Pico Seongsan Ilchulbong hasta la Playa Hyeopjae y las Cataratas Cheonjiyeon — nueve horas privadas, su ruta, su ritmo, con un conductor-guía con licencia.",
           "pills": [
@@ -1569,7 +1521,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "Pico del Amanecer de Seongsan Ilchulbong",
             "caption": "Pico del Amanecer de Seongsan Ilchulbong",
             "location": "Seongsan Ilchulbong *(proper noun — kept as-is)*",
@@ -1578,7 +1530,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "Acantilado de Basalto de Jusangjeolli > **Notas:** Los nombres de componentes de UI (#7, #12, #25) y los topónimos coreanos (#28) se han conservado en su forma original, ya que son identificadores de código o nombres propios sin equivalente en español.",
             "caption": "Acantilado de basalto Jusangjeolli",
             "location": "Acantilado Jusangjeolli",
@@ -1587,7 +1539,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "Playa Hyeopjae, oeste de Jeju",
             "caption": "Playa Hyeopjae, oeste de Jeju",
             "location": "Playa Hyeopjae",
@@ -1596,7 +1548,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "Museo y campos de té O'sulloc",
             "caption": "Museo y campos de té O'sulloc",
             "location": "Campos de Té O'sulloc",
@@ -1605,7 +1557,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "Cascada Cheonjiyeon en Seogwipo",
             "caption": "Cascada Cheonjiyeon en Seogwipo",
             "location": "Cataratas Cheonjiyeon",
@@ -1627,7 +1579,7 @@
             "name": "Ruta Este: Costa UNESCO y K-Drama",
             "category": "Seongsan, Udo, Manjanggul, Seopjikoji",
             "description": "La opción de ruta con mayor densidad de monumentos, que abarca los puntos más destacados de Jeju en cuanto a la UNESCO y los K-dramas. Las paradas habituales incluyen Seongsan Ilchulbong (pico del amanecer de la UNESCO), la isla de Udo (isla accesible en ferry con playas), el Tubo de Lava Manjanggul (cueva de la UNESCO), Seopjikoji (cabo costero famoso por los dramas), el Pueblo Folclórico de Seongeup y la Playa Hamdeok.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "highlights": [
               "Seongsan Ilchulbong: Patrimonio Natural Mundial de la UNESCO y el principal pico del amanecer de Jeju",
               "Isla Udo: isla accesible en ferry con playas de arena blanca y vistas al faro",
@@ -1670,7 +1622,7 @@
             "name": "Ruta Oeste: Playas, Té y Costa de Cafeterías.",
             "category": "Hyeopjae, Hallim Park, O'sulloc, Aewol.",
             "description": "La ruta más fotogénica y tranquila. Las paradas habituales incluyen la playa de Hyeopjae (la playa de aguas esmeralda más icónica de Jeju), Hallim Park (jardines subtropicales y cuevas de lava), el Museo del Té O'sulloc (campos de té y cafetería) y la Calle de Cafeterías de Aewol (cafeterías costeras al atardecer). Muy recomendada para parejas y fotógrafos.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "highlights": [
               "Playa de Hyeopjae: aguas esmeralda, arena blanca y vistas a la isla de Biyangdo.",
               "Hallim Park: jardín subtropical con dos cuevas de lava en el recinto.",
@@ -1713,7 +1665,7 @@
             "name": "Ruta Sur: Cascadas y Costa Volcánica",
             "category": "Cheonjiyeon, Jusangjeolli, Sanbangsan, Mercado Olle",
             "description": "La ruta de mayor dramatismo paisajístico. Las paradas habituales incluyen las Cascadas Cheonjiyeon (cascada en bosque), el Acantilado Jusangjeolli (costa de columnas de basalto), el Templo Yakcheonsa (uno de los templos más grandes de Asia Oriental), la Montaña Sanbangsan (domo volcánico con vistas al mar), la Cascada Jeongbang (una de las pocas cascadas de Asia que fluye directamente al mar) y el Mercado Olle de Seogwipo.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "highlights": [
               "Cascadas Cheonjiyeon: una clásica cascada en el bosque de Seogwipo",
               "Acantilado Jusangjeolli: columnas de basalto hexagonal en la costa sur",
@@ -1756,7 +1708,7 @@
             "name": "Ruta Personalizada: Diseña Tu Propio Día",
             "category": "Envíanos Tu Propio Itinerario",
             "description": "Más allá de las tres rutas recomendadas, puedes combinar paradas o enviarnos tu propio itinerario. Las incorporaciones posibles incluyen el Acuario Planet de Jeju, el Parque Temático ECO Land, el Cráter Sangumburi, la Playa Hamdeok, Camellia Hill, Teddy Bear Safari, el Submarino de Seogwipo (recorrido submarino por Munseom), tours en yate con delfines, Songaksan, Cafe the Cliff y el espectáculo Nanta.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202311/22/c42559a5-c909-4603-ae16-24c2e03893a0.webp",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "highlights": [
               "Combina el Patrimonio UNESCO de la costa este con los campos de té de la costa oeste si el tiempo lo permite",
               "Añade un almuerzo de mariscos con haenyeo (buceadoras) a cualquier ruta",
@@ -2224,7 +2176,7 @@
       "v15.4_new_tour_creation": "Created new tour from GYG product ID t899592 (Busan private car charter for cruise shore). Structural template: jeju-island-private-car-charter-tour. Content template: busan-small-group-sightseeing-tour-cruise-passengers. POI operational data (visitBasics/convenience/smartNotes) sourced from poi_knowledge_base.json (centralized KB built in Step 2). REASONABLE-ASSUMPTION FIELDS that may need patching once the live GYG page is reviewed: (1) price.amountLabel left empty per jeju-charter convention (per-vehicle pricing confirmed at booking); (2) catalog_card.priceFromUSD null; (3) vehicle capacity assumed 1-3 sedan / 4-7 van based on industry standard, not GYG-confirmed; (4) 8-hour duration assumed based on typical Busan cruise dwell time (6-9h common); (5) reviewsSummary populated with zeros — actual GYG reviews not imported in this pass; (6) hero/og images deferred per v15 P3 workflow. Pickup rule applied per Jason's directive: cruise terminal + KTX + central Busan hotel; Gimhae Airport pickup is a paid add-on, not bundled.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 0,
         "fields_skipped": 0,
         "fields_already_float": 42

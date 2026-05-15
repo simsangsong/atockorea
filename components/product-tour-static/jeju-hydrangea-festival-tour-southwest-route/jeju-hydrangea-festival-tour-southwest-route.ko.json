@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "제주 서부 수국 축제 당일 투어 | AtoC Korea",
     "metaDescription": "여름 한정 제주 서부 당일 투어: 협재해수욕장, 한림공원 수국 축제, 주상절리대, 천제연폭포, 카멜리아힐, 오설록 차밭.",
-    "ogImage": "https://www.atockorea.com/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+    "ogImage": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "primaryKeywords": [
       "제주 수국 축제 투어",
       "제주 여름 꽃 투어",
@@ -140,21 +140,13 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
-      "location": "한림공원 (수국 축제)",
-      "alt": "한림공원 (수국 축제) — on-route photo",
-      "caption": "한림공원 (수국 축제)"
-    },
-    {
-      "id": 3,
-      "type": "photo",
       "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "location": "주상절리 절벽 & 천제연 폭포",
       "alt": "주상절리 절벽 & 천제연 폭포 — gallery image 1",
       "caption": "주상절리 절벽 & 천제연 폭포 — photo 1"
     },
     {
-      "id": 4,
+      "id": 3,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "location": "카멜리아힐 (수국 터널)",
@@ -162,7 +154,7 @@
       "caption": "카멜리아힐 (수국 터널) — photo 1"
     },
     {
-      "id": 5,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "location": "오설록 티 뮤지엄 & 차밭",
@@ -170,7 +162,7 @@
       "caption": "오설록 티 뮤지엄 & 차밭 — photo 1"
     },
     {
-      "id": 6,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
       "location": "협재 해수욕장",
@@ -178,7 +170,7 @@
       "caption": "협재 해수욕장 — photo 2"
     },
     {
-      "id": 7,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
       "location": "협재 해수욕장",
@@ -186,7 +178,7 @@
       "caption": "협재 해수욕장 — photo 3"
     },
     {
-      "id": 8,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "주상절리 절벽 & 천제연 폭포",
@@ -194,7 +186,7 @@
       "caption": "주상절리 절벽 & 천제연 폭포 — photo 2"
     },
     {
-      "id": 9,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "주상절리 절벽 & 천제연 폭포",
@@ -202,7 +194,7 @@
       "caption": "주상절리 절벽 & 천제연 폭포 — photo 3"
     },
     {
-      "id": 10,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "주상절리 절벽 & 천제연 폭포",
@@ -210,7 +202,7 @@
       "caption": "주상절리 절벽 & 천제연 폭포 — photo 4"
     },
     {
-      "id": 11,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
       "location": "카멜리아힐 (수국 터널)",
@@ -218,7 +210,7 @@
       "caption": "카멜리아힐 (수국 터널) — photo 2"
     },
     {
-      "id": 12,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
       "location": "오설록 티 뮤지엄 & 차밭",
@@ -226,7 +218,7 @@
       "caption": "오설록 티 뮤지엄 & 차밭 — photo 2"
     },
     {
-      "id": 13,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
       "location": "오설록 티 뮤지엄 & 차밭",
@@ -234,7 +226,7 @@
       "caption": "오설록 티 뮤지엄 & 차밭 — photo 3"
     },
     {
-      "id": 14,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
       "location": "오설록 티 뮤지엄 & 차밭",
@@ -242,7 +234,7 @@
       "caption": "오설록 티 뮤지엄 & 차밭 — photo 4"
     },
     {
-      "id": 15,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
       "location": "오설록 티 뮤지엄 & 차밭",
@@ -250,7 +242,7 @@
       "caption": "오설록 티 뮤지엄 & 차밭 — photo 5"
     },
     {
-      "id": 16,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
       "location": "오설록 티 뮤지엄 & 차밭",
@@ -258,7 +250,7 @@
       "caption": "오설록 티 뮤지엄 & 차밭 — photo 6"
     },
     {
-      "id": 17,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
       "location": "오설록 티 뮤지엄 & 차밭",
@@ -266,7 +258,7 @@
       "caption": "오설록 티 뮤지엄 & 차밭 — photo 7"
     },
     {
-      "id": 18,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
       "location": "오설록 티 뮤지엄 & 차밭",
@@ -274,7 +266,7 @@
       "caption": "오설록 티 뮤지엄 & 차밭 — photo 8"
     },
     {
-      "id": 19,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
       "location": "오설록 티 뮤지엄 & 차밭",
@@ -282,7 +274,7 @@
       "caption": "오설록 티 뮤지엄 & 차밭 — photo 9"
     },
     {
-      "id": 20,
+      "id": 19,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
       "location": "오설록 티 뮤지엄 & 차밭",
@@ -290,7 +282,7 @@
       "caption": "오설록 티 뮤지엄 & 차밭 — photo 10"
     },
     {
-      "id": 21,
+      "id": 20,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
       "location": "오설록 티 뮤지엄 & 차밭",
@@ -298,7 +290,7 @@
       "caption": "오설록 티 뮤지엄 & 차밭 — photo 11"
     },
     {
-      "id": 22,
+      "id": 21,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
       "location": "오설록 티 뮤지엄 & 차밭",
@@ -414,7 +406,7 @@
       "name": "한림공원 (수국 축제)",
       "category": "수국 앵커 + 9개 테마 정원 + 용암 동굴 2개",
       "description": "**한림공원 (한림공원, 1971년 개원)**은 제주 서남부 해안의 핵심 식물 공원으로, **약 99,000㎡(원래 10만 평 / 330,580㎡) 규모의 정원 복합 단지**입니다. 창립자 **송봉규**는 반세기에 걸쳐 흙을 들여오고 야자 씨앗을 심어 **모래 황무지를 녹색 낙원으로 탈바꿈**시켰습니다. 이 공원은 **연간 약 120만 명의 방문객**을 유치하며, 공간을 **9개의 테마 정원**으로 구성하고 있습니다: **아열대 식물원**, **야자수 길**, **야생초화 정원**, **협재굴 + 쌍용굴**, **제주 돌 및 분재 정원**, **재암 민속 마을**(조선시대 돌담 한옥과 현장 돌하르방 레스토랑), **조류 공원**, **제주 돌 전시관**, **수생 정원**. \n\n한림공원의 두드러진 구성적 특징은 **월별 축제 캘린더**입니다 — **1월 수선화 → 2월 매화 → 3월 튤립 → 4월 벚꽃 → 5월 야생화/부겐빌레아 → 6월 수국 → 7~9월 연꽃 + 수련 → 10월 코스모스/핑크 뮬리 → 11월 국화 → 12월 동백** — 연중 12개월 매달 **이름 붙은 축제가 진행**되는 순환 캘린더입니다. 공원의 두 지질학적 명소는 **협재굴(길이 약 200m × 폭 10m × 높이 5m, 약 2,500만 년 전 형성)**과 **쌍용굴(길이 약 400m × 폭 6m × 높이 3m, '두 마리 용')**로, 둘 다 동일한 **17km 용암 동굴계**에 속하지만 독특하게 **'이차원 동굴'**로 분류됩니다. \n\n이는 용암 동굴 벽면이 이후 **위쪽 토양의 패각에서 용출된 석회암(탄산칼슘)으로 코팅**되어, **용암 동굴 형태 + 석회암 종유석/석순**이 하나의 동굴 시스템 안에 공존하는 세계적으로 희귀한 조합을 이루기 때문입니다. 동굴 온도는 **연중 17~18°C**로 유지되어 천연 여름 피서지 역할을 합니다. 공원의 방문객 명단은 그 외교적 위상을 반영합니다: 전 중국 국가주석 장쩌민, 전 일본 총리 나카소네 야스히로, 전 한국 대통령 김대중, 전 삼성그룹 회장 이건희, 전 현대그룹 회장 정주영이 모두 다녀갔습니다.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+      "image": null,
       "highlights": [
         "**1971년 창립** — 송봉규가 모래 황무지를 녹색 낙원으로 변모시킴",
         "**약 99,000㎡ / 80에이커** — 9개 테마 정원 + 연간 약 120만 명 방문",
@@ -469,7 +461,7 @@
       "name": "점심 식사 (제주 서남부)",
       "category": "운영 정차 — 제주 서남부 현지 점심 식사",
       "description": "**점심 식사는 할림 / 애월 끝자락 / 안덕 구간의 현지 제주 스타일 식당**에서 진행되며, 운영사가 **영어 메뉴 제공, 식이 요건 배려 (요청 시 채식 및 할랄 친화적 닭고기·해산물 옵션), 서부 해안 제주 향토 요리**를 갖춘 가족 운영 식당 중 검증된 후보 목록에서 선정합니다. 대표 점심 메뉴로는 **갈치조림**, **흑돼지 불고기**, **몸국 (제주 해초·돼지 수프)**, **계절 나물 비빔밥** 등이 있습니다. \n\n**특히 몸국은 제주 서남부 지역 향토 음식**으로, 동부 코스 투어에서는 제공되지 않습니다. 동부 코스 점심과 마찬가지로, 정확한 식당은 단체 인원 수, 식이 요청 사항, 주방 가용성을 바탕으로 전날 선정되며, 당일 오전 브리핑에서 안내됩니다. **점심 비용은 참가자 개인 부담**이며 (~₩12,000~₩18,000/인), 투어 요금에 **포함되지 않습니다**. 음료와 공기밥·반찬 리필은 식사에 항상 포함됩니다.",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
+      "image": null,
       "highlights": [
         "**제주 서남부 현지 식당** — 할림 / 애월 끝자락 / 안덕 구간",
         "검증된 후보 목록: **영어 메뉴 제공** + 식이 요건 배려",
@@ -1560,7 +1552,7 @@
     "japan_market_fit": 0.85
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
     "source_of_truth_note": "matching_profile fields scored against atockorea matching algorithm v2. Single fixed route; no variant overrides.",
     "audit_summary": "Southwest-Jeju Hydrangea Festival route — 9-hr small-group minicoach loop. 5 substantive POI anchors + 1 compound-stop pairing: 1 west-coast emerald beach (Hyeopjae) + 1 120-min hydrangea festival anchor (Hallim Park, June Hydrangea Festival, 9 themed gardens + 2 lava-tube limestone caves) + 1 compound stop (Jusangjeolli columnar + Cheonjeyeon waterfall, Natural Monuments 443 + 378) + 1 hydrangea tunnel anchor (Camellia Hill — 172,000 m², Korea's earliest hydrangeas) + 1 tea-culture finale (Osulloc / Amorepacific). Designed for **June peak hydrangea window (June 10–25)** with Hallim caves + Camellia Hall + Osulloc museum as the 3-tier indoor weather-fallback stack. **Catalog-novel pattern**: Jusangjeolli+Cheonjeyeon compound stop is the first of its kind in the catalog. Cross-batch reuse: 3 of 5 substantive bodies imported verbatim (15a T2 Hyeopjae, 15a T1 Camellia Hill, 14a T2 Osulloc); Hallim Park authored fresh + compound stop authored fresh.",
@@ -1699,7 +1691,7 @@
         "headlineLine1": "제주 서남부 수국 축제 투어",
         "headlineLine2": "투어",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+          "imageUrl": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
           "imagePosition": "center 35%",
           "tagline": "해변에서 주상절리, 그리고 수국 터널까지.",
           "pills": [
@@ -1794,7 +1786,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "한림공원 수국 꽃",
             "caption": "한림공원 수국 꽃",
             "location": "한림공원",
@@ -1803,7 +1795,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "카멜리아힐 수국 터널",
             "caption": "카멜리아힐 수국 터널",
             "location": "카멜리아힐",
@@ -1812,7 +1804,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "협재해변 에메랄드빛 바다",
             "caption": "협재해변 에메랄드빛 바다",
             "location": "협재해변",
@@ -1821,7 +1813,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "주상절리 현무암 절벽",
             "caption": "주상절리 현무암 절벽",
             "location": "주상절리 절벽",
@@ -1830,7 +1822,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "천제연 3단 폭포",
             "caption": "천제연 3단 폭포",
             "location": "천제연폭포",
@@ -1839,7 +1831,7 @@
           {
             "id": "g6",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/25/dae5f548-d5de-41e8-b47b-37490c5238ad.webp",
+            "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "alt": "오설록 녹차밭",
             "caption": "오설록 녹차밭",
             "location": "오설록 티 뮤지엄",
@@ -1948,7 +1940,7 @@
             "name": "한림공원 (수국 축제)",
             "category": "정원 & 수국 축제",
             "description": "초여름 제주 최대 수국 축제가 열리는 식물원 복합 공간 — 테마별 다양한 정원, 원내 용암 동굴 시스템, 다채로운 색상의 꽃들을 감상할 수 있음.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "highlights": [
               "수국 축제 메인 정원",
               "원내 용암 튜브 동굴 시스템",
@@ -1994,7 +1986,7 @@
             "name": "점심 (제주 서남부)",
             "category": "식사",
             "description": "한림 또는 대정 인근 지역 식당 — 흑돼지, 전복죽, 또는 제철 해산물. 오후 일정 전 단체 휴식 겸 식사.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "image": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
             "highlights": [
               "제주 전통 향토 음식",
               "지역 식당"
@@ -2912,7 +2904,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

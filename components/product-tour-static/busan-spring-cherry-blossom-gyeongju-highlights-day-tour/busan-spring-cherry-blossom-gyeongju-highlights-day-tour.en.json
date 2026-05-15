@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Busan to Gyeongju Cherry Blossom Day Tour (Mar 28–Apr 10) | AtoC Korea",
     "metaDescription": "8.5-hour Busan-departure spring cherry blossom shuttle tour to Gyeongju. Bomun Lake, Daereungwon Stone Wall Road, Bulguksa. Operates Mar 28 to Apr 10 only.",
-    "ogImage": "https://www.atockorea.com/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+    "ogImage": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "primaryKeywords": [
       "Gyeongju cherry blossom tour from Busan",
       "Bomun Lake cherry blossom day tour",
@@ -132,21 +132,13 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/87/2661487_image2_1.JPG",
-      "location": "Bomun Lake (cherry blossom centerpiece)",
-      "alt": "Bomun Lake (cherry blossom centerpiece) — on-route photo",
-      "caption": "Bomun Lake (cherry blossom centerpiece)"
-    },
-    {
-      "id": 2,
-      "type": "photo",
       "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
       "location": "Cheomseongdae Observatory + Daereungwon Tomb Complex",
       "alt": "Cheomseongdae Observatory + Daereungwon Tomb Complex — gallery image 1",
       "caption": "Cheomseongdae Observatory + Daereungwon Tomb Complex — photo 1"
     },
     {
-      "id": 3,
+      "id": 2,
       "type": "photo",
       "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
       "location": "Bulguksa Temple (UNESCO World Heritage)",
@@ -154,7 +146,7 @@
       "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 1"
     },
     {
-      "id": 4,
+      "id": 3,
       "type": "photo",
       "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
       "location": "Cheomseongdae Observatory + Daereungwon Tomb Complex",
@@ -162,7 +154,7 @@
       "caption": "Cheomseongdae Observatory + Daereungwon Tomb Complex — photo 2"
     },
     {
-      "id": 5,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
       "location": "Bulguksa Temple (UNESCO World Heritage)",
@@ -170,7 +162,7 @@
       "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 2"
     },
     {
-      "id": 6,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
       "location": "Bulguksa Temple (UNESCO World Heritage)",
@@ -269,7 +261,7 @@
           "Gyeongju Tourism Organization"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/87/2661487_image2_1.JPG"
+      "image": null
     },
     {
       "number": 3,
@@ -453,7 +445,7 @@
           "Visit Gyeongju official"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+      "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
       "images": [
         "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
         "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
@@ -853,7 +845,7 @@
     "product_id": "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
     "product_type": "small_group",
     "route_type": "fixed_route",
-    "destination_region": "korea_mainland",
+    "destination_region": "busan_gyeongju",
     "region_type": "gyeongsang_north",
     "vehicle_type": "coach",
     "duration_hours": 10.25,
@@ -1084,7 +1076,7 @@
         "headlineLine1": "Busan to Gyeongju",
         "headlineLine2": "Cherry Blossom Tour",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+          "imageUrl": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
           "imagePosition": "center 35%",
           "tagline": "Korea's 'museum without walls' — Gyeongju, where seven UNESCO sites cluster within 15 km",
           "pills": [
@@ -1179,7 +1171,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+            "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "alt": "Stone bridges and Dabotap pagoda at Bulguksa Temple, late afternoon light",
             "caption": "Bulguksa — UNESCO World Heritage. The two pagodas are National Treasures No. 20 and 21.",
             "location": "Bulguksa Temple, Gyeongju",
@@ -1188,7 +1180,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/87/2661487_image2_1.JPG",
+            "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "alt": "Silla gold crown displayed in glass case under museum lighting",
             "caption": "Gyeongju National Museum — gold crown from Cheonmachong tomb (National Treasure No. 188).",
             "location": "Gyeongju National Museum",
@@ -1197,7 +1189,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/16/2565716_image2_1.JPG",
+            "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "alt": "Tile-roofed hanok houses and a stone wall along a quiet alley in Gyochon village",
             "caption": "Gyochon Hanok Village — the Choi family compound and Confucian school.",
             "location": "Gyochon Hanok Village, Gyeongju",
@@ -1206,7 +1198,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/25/3083925_image2_1.JPG",
+            "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "alt": "Light filtering through dense bamboo stalks along a forest path",
             "caption": "Ahopsan Bamboo Forest — privately preserved by the Mun clan since 1638.",
             "location": "Ahopsan Forest, Gijang-gun, Busan",
@@ -1215,7 +1207,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG",
+            "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "alt": "Wooden bridge pavilion reflected in water at dusk",
             "caption": "Woljeonggyo Bridge — 66-meter Silla-style reconstruction completed in 2018.",
             "location": "Woljeonggyo Bridge, Gyeongju",
@@ -1236,7 +1228,7 @@
             "duration": "60 min",
             "name": "Busan pickup (3 subway stations)",
             "category": "Departure",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "description": "Sequential pickup along Busan Subway Line 1: Busan Station Exit 4 (08:10), Seomyeon Station Exit 4 (08:30), Haeundae Station Exit 5 (09:10). The Haeundae pickup adds ≈30 min relative to the Busan-Station start because the pickup vehicle loops east before turning north toward Gyeongju. Choose the exit closest to your hotel.",
             "timeUsed": [
               "Operational logistics (pickup/meal/transfer/return)",
@@ -1319,7 +1311,7 @@
             "duration": "75 min",
             "name": "Bulguksa Temple (UNESCO World Heritage)",
             "category": "UNESCO Buddhist Temple",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/87/2661487_image2_1.JPG",
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "description": "Inscribed by UNESCO together with Seokguram Grotto in December 1995. The temple was founded in 528 CE under Silla King Beopheung, expanded to its current scale in 751 CE by chief minister Kim Daeseong, burned in the 1592–98 Imjin War, and progressively restored from 1920 onward; the wooden structures visible today were largely rebuilt in 1973 around the original stone foundations. The two pagodas in the main courtyard — ornate Dabotap and austere Seokgatap, both dating to the 8th century — are National Treasures No. 20 and No. 21. The two stone bridges at the lower terrace, Cheongun-gyo and Baegun-gyo, each have 33 steps representing the 33 heavens of Buddhist cosmology. Admission was made FREE in May 2023 (parking ₩1,000–₩2,000). Allow 60–75 minutes; weekend mornings get coach traffic from Busan/Daegu so a weekday visit is meaningfully quieter.",
             "timeUsed": [
               "Arrival, ticketing, and orientation briefing",
@@ -1389,7 +1381,7 @@
             "duration": "60 min",
             "name": "Lunch (Gyeongju local restaurant)",
             "category": "Meal",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "description": "Sit-down restaurant within 5 minutes' drive of Bulguksa, chosen for English/Chinese menus and group-friendly seating. Typical options: Gyeongju ssambap (banchan-heavy rice-and-leaf wraps, the local signature, ≈₩15,000–₩20,000), bulgogi set, or vegetarian banchan platter on request. Lunch is paid on the day; budget ₩15,000–₩25,000 per person. Advise dietary requirements (halal, vegetarian, gluten-free) at booking — the guide can route to a suitable kitchen.",
             "timeUsed": [
               "Operational logistics (pickup/meal/transfer/return)",
@@ -1408,7 +1400,7 @@
             "duration": "75 min",
             "name": "Gyeongju National Museum",
             "category": "National Museum (Silla)",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "description": "Korea's primary repository of Silla-era artifacts, free admission since November 2008. Three permanent halls cover the main themes: Silla History, Silla Art, and the Wolji Hall (artifacts excavated from the Wolji Pond palace site, formerly called Anapji). The two single objects most visitors come to see are the Cheonmachong gold crown (National Treasure No. 188, recovered 1973 from the 'Heavenly Horse Tomb') and the Sacred Bell of Great King Seongdeok (National Treasure No. 29, cast 771 CE, 18.9 metric tons — the largest existing Korean bell, displayed outdoors near the entrance). English and Chinese exhibit panels are present throughout. Closed Mondays. Open 10:00–18:00 weekdays, 19:00 Saturdays.",
             "timeUsed": [
               "Arrival, ticketing, and orientation briefing",
@@ -1478,7 +1470,7 @@
             "duration": "60 min",
             "name": "Gyochon Hanok Village",
             "category": "Hanok Heritage Village",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/62/2477062_image2_1.JPG",
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "description": "Restored Joseon-era hanok district built around the ancestral home of the Gyeongju Choi family — the 'Choi the Wealthy' (최부자) clan, famous in Korean civic memory for their twelve-generation rules of conduct: never let neighbors starve in famine years, never hold land beyond a 100-ri radius, never accept rent that tenants couldn't afford. The Choi residence has been preserved as a small museum (free entry) and the surrounding alleys hold tea houses, traditional craft workshops, and the Gyeongju Hyanggyo (Confucian school whose current buildings date to 1492). Most visitors walk the central loop in 30–40 minutes; the hanok lanes are flat and stroller-friendly.",
             "timeUsed": [
               "Arrival, ticketing, and orientation briefing",
@@ -1556,7 +1548,7 @@
             "duration": "40 min",
             "name": "Woljeonggyo Bridge",
             "category": "Reconstructed Silla Bridge",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/49/2390749_image2_1.JPG",
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "description": "Wooden bridge crossing the Namcheon stream beside Gyochon. The original Silla bridge stood here from 760 CE until the Mongol invasions of the 13th century destroyed it. The current 66-meter reconstruction was completed in 2018 after archaeological excavations begun in 1986; it has two-story gate pavilions on each end and is illuminated nightly from sunset until ≈22:00. **Important seasonal note**: at the scheduled 17:00 arrival the bridge is in daylight from late March through early October — the post-sunset 'reflection' shot you'll see in promotional photos is primarily a winter (November–February) experience when the sun sets between 17:15 and 17:30. The bridge structure itself is worth photographing in any light. Free entry.",
             "timeUsed": [
               "Main attraction exploration with photo time",
@@ -1576,7 +1568,7 @@
             "duration": "75 min",
             "name": "Return drive to Busan",
             "category": "Return",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "description": "≈80 km / 75 min on the Gyeongbu Expressway in normal traffic; 90 min in Friday-evening or Sunday-return traffic. Drop-off in reverse pickup order: Haeundae Station Exit 5 ≈19:00, Seomyeon Station Exit 4 ≈19:25, Busan Station Exit 4 ≈19:45.",
             "timeUsed": [
               "Operational logistics (pickup/meal/transfer/return)",
@@ -2012,7 +2004,7 @@
       "v15.4_new_tour_creation": "Created new tour from GYG product ID t1192332 (Busan-Gyeongju spring cherry blossom day tour). Structural template: busan-gyeongju-unesco-legacy-tour-national-museum (same Busan→Gyeongju logistics, shuttle small_group format). Content layered with cherry-blossom-specific POIs added to KB v1.1: bomun_lake, daereungwon_tomb_complex, cheomseongdae. POI operational data sourced from VisitKorea, Visit Busan, Gyeongju City tourism office, listings,, listings (cross-verified across 4–6 sources per POI). SEASONALITY is STRICT: spring=1.0, summer/autumn/winter=0.0 — tour operates only Mar 28–Apr 10 (verified from GYG t1192332 dating and listings 2024–2026). MATCHING-PROFILE SCORING METHODOLOGY: All 68 fields scored from verified facts about the actual stops in the default itinerary (walking distances measured, accessibility per VisitKorea + AllTrails, hours/admission per official tourism boards, UNESCO designations per UNESCO World Heritage List). Inline reasoning for each non-trivial score is captured as comments in the generator script step3b_create_cherry_blossom_tour.py — Jason can review or adjust any specific score by editing the generator and re-running. Key derivations: (1) walking_level=0.50 from measured 3–5km total walking with mostly flat paths and one stair section; (2) unesco_fit=0.95 from 3-of-4 stops being UNESCO-listed; (3) seasonality.spring=1.0 + others=0.0 from verified seasonal-only operating dates; (4) couple_fit=0.95 vs young_kids_fit=0.50 from cherry blossom romance vs 8.5h day length tradeoff; (5) value_for_money_fit=0.85 from 4 free admissions + shuttle pricing in peak demand season. REASONABLE-ASSUMPTION FIELDS that may need patching once the live GYG page is reviewed: (a) price.amountLabel left empty (per-person pricing TBD); (b) catalog_card.priceFromUSD null; (c) exact pickup times (08:00/08:15/08:30) assumed from typical shuttle schedule; (d) reviewsSummary populated with zeros — actual GYG reviews not imported in this pass; (e) hero/og images deferred per v15 P3 image workflow.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 0,
         "fields_skipped": 0,
         "fields_already_float": 42

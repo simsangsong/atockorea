@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "수원 화성, 와우정사 & 스타필드 당일 투어 | AtoC Korea",
     "metaDescription": "서울 출발 9~10시간 당일 여행: 유네스코 수원 화성, 스타필드 수원 도서관, 그리고 거대한 야외 불상이 있는 와우정사. 영어 가이드 및 이동 수단 포함.",
-    "ogImage": "https://www.atockorea.com/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+    "ogImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "primaryKeywords": [
       "수원 화성 당일 투어",
       "용인 와우정사",
@@ -140,7 +140,7 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
       "location": "와우정사",
       "alt": "와우정사 — 갤러리 이미지 1",
       "caption": "와우정사 — 사진 1"
@@ -148,7 +148,7 @@
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
       "location": "수원 화성",
       "alt": "수원 화성 — 갤러리 이미지 2",
       "caption": "수원 화성 — 사진 2"
@@ -156,7 +156,7 @@
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
       "location": "수원 화성",
       "alt": "수원 화성 — 갤러리 이미지 3",
       "caption": "수원 화성 — 사진 3"
@@ -164,7 +164,7 @@
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
       "location": "수원 화성",
       "alt": "수원 화성 — 갤러리 이미지 4",
       "caption": "수원 화성 — 사진 4"
@@ -172,7 +172,7 @@
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
       "location": "수원 화성",
       "alt": "수원 화성 — 갤러리 이미지 5",
       "caption": "수원 화성 — 사진 5"
@@ -180,7 +180,7 @@
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
       "location": "와우정사",
       "alt": "와우정사 — 갤러리 이미지 2",
       "caption": "와우정사 — 사진 2"
@@ -188,7 +188,7 @@
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
       "location": "와우정사",
       "alt": "와우정사 — 갤러리 이미지 3",
       "caption": "와우정사 — 사진 3"
@@ -196,7 +196,7 @@
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
       "location": "와우정사",
       "alt": "와우정사 — 갤러리 이미지 4",
       "caption": "와우정사 — 사진 4"
@@ -204,10 +204,42 @@
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
       "location": "와우정사",
       "alt": "와우정사 — 갤러리 이미지 5",
       "caption": "와우정사 — 사진 5"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+      "location": "Templo Waujeongsa",
+      "alt": "Templo Waujeongsa — gallery image 2",
+      "caption": "Templo Waujeongsa — photo 2"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+      "location": "Templo Waujeongsa",
+      "alt": "Templo Waujeongsa — gallery image 3",
+      "caption": "Templo Waujeongsa — photo 3"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+      "location": "Templo Waujeongsa",
+      "alt": "Templo Waujeongsa — gallery image 4",
+      "caption": "Templo Waujeongsa — photo 4"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
+      "location": "Templo Waujeongsa",
+      "alt": "Templo Waujeongsa — gallery image 5",
+      "caption": "Templo Waujeongsa — photo 5"
     }
   ],
   "itineraryStops": [
@@ -1235,7 +1267,7 @@
     "japanese_speaking_guide_available_on_advance_notice": true
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": [
       "authoring",
       "review",
@@ -2265,7 +2297,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

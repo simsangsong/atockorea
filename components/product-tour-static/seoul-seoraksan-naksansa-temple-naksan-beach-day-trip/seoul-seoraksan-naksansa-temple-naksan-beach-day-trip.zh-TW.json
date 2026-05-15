@@ -1,0 +1,1105 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
+  "locale": "zh-TW",
+  "product_id": "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
+  "seo": {
+    "pageTitle": "首爾出發 江原道一日遊：雪嶽山與洛山寺 | AtoC Korea",
+    "metaDescription": "從首爾出發的12小時豪華巴士一日遊，前往東海岸：雪嶽山國家公園、懸崖上的洛山寺及洛山海灘。含導覽及接送服務。",
+    "primaryKeywords": [
+      "首爾雪嶽山一日遊",
+      "洛山寺遊覽",
+      "從首爾出發的雪嶽山一日遊",
+      "洛山海灘遊覽",
+      "雪嶽山洛山寺一日遊"
+    ],
+    "ogImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+    "title": "首爾出發 江原道一日遊・雪嶽山＋洛山寺＋洛山海灘 | AtoC Korea",
+    "description": "從首爾出發的巴士一日遊，探訪韓國最具代表性的國家公園（雪嶽山）、海崖上千年古寺（洛山寺），以及松林環抱的洛山海灘——一趟從山岳到海洋的東海岸一日之旅。"
+  },
+  "catalog_card": {
+    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+    "title": "首爾出發 江原道：雪嶽山＋洛山寺＋洛山海灘",
+    "priceLabel": "From US$52 per person (was $58, 10% off)",
+    "shortCardDescription": "從首爾出發前往東海岸的12小時巴士一日遊：健行雪嶽山國家公園、參觀懸崖上的洛山寺，以及漫步松林環繞的洛山海灘。每週一及週四出發，配備英語導遊，並提供弘大或明洞的來回接送服務。",
+    "tags": [
+      "首爾出發一日遊",
+      "巴士觀光遊",
+      "自然美景與寺廟",
+      "東海岸",
+      "秋日紅葉"
+    ],
+    "rating": 0,
+    "reviewCount": 0,
+    "slug": "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
+    "subtitle": "雪嶽山的花崗岩峰巒、千年海邊古寺，以及松林環抱的東海灘，盡在首爾出發的12小時一日遊中一次飽覽。",
+    "region": "首爾 → 江原道（雪嶽山與襄陽）",
+    "duration": "12小時",
+    "stopsCount": 3,
+    "badges": [
+      "首爾出發一日遊",
+      "附冷暖空調豪華巴士",
+      "每週一及週四",
+      "12小時全日行程"
+    ],
+    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp"
+  },
+  "headlineLine1": "首爾出發 江原道一日遊",
+  "headlineLine2": "雪嶽山＋洛山寺＋洛山海灘",
+  "price": {
+    "amountLabel": "52",
+    "currency": "USD",
+    "per": "person",
+    "salePriceUsd": 52,
+    "originalPriceUsd": 58,
+    "discountPercent": 10
+  },
+  "hero": {
+    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+    "imagePosition": "center 38%",
+    "tagline": "韓國最具代表性的山岳、矗立海畔的千年古剎，以及松林環抱的海灘——從首爾出發，一趟12小時巴士之旅直達東海岸",
+    "pills": [
+      "首爾出發一日遊",
+      "山岳＋寺廟＋海岸",
+      "巴士旅遊"
+    ],
+    "meta": {
+      "duration": "12小時",
+      "region": "首爾 → 江原道（雪嶽山與襄陽）",
+      "stops": "3個景點",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "概覽"
+    },
+    {
+      "id": "itinerary",
+      "label": "行程"
+    },
+    {
+      "id": "details",
+      "label": "詳情"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ"
+    },
+    {
+      "id": "reviews",
+      "label": "評價"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "時長",
+      "value": "12小時"
+    },
+    {
+      "icon": "camera",
+      "label": "拍照潛力",
+      "value": "非常高",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "風景",
+      "value": "非常高",
+      "level": 5
+    },
+    {
+      "icon": "footprints",
+      "label": "步行量",
+      "value": "適中",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "雨天適合度",
+      "value": "適中",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "親子適合度",
+      "value": "良好",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "行程節奏",
+      "value": "均衡",
+      "level": 4
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "location": "雪嶽山國家公園",
+      "alt": "雪嶽山國家公園 — 山脊全景",
+      "caption": "雪嶽山國家公園 — 花崗岩山脊全景"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "雪嶽山國家公園",
+      "alt": "雪嶽山國家公園 — 新興寺與蔚山岩",
+      "caption": "雪嶽山國家公園 — 山下新興寺與花崗岩峰"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
+      "location": "洛山寺",
+      "alt": "洛山寺 — 俯瞰東海的義湘台",
+      "caption": "洛山寺 — 臨海懸崖上的義湘台"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/naksansa-temple/naksansa-main-hall.webp",
+      "location": "洛山寺",
+      "alt": "洛山寺 — 圓通寶殿正殿",
+      "caption": "洛山寺 — 彩繪華麗的圓通寶殿"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/naksansa-temple/naksansa-haesu-gwaneum.webp",
+      "location": "洛山寺",
+      "alt": "洛山寺 — 凝望東海的海水觀音像",
+      "caption": "洛山寺 — 守望大海的海水觀音像"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/naksan-beach/naksan-beach-sign.webp",
+      "location": "洛山海灘",
+      "alt": "洛山海灘 — 松林環抱的東海海灘",
+      "caption": "洛山海灘 — 細沙與松林"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/naksan-beach/naksan-beach-summer-crowd.webp",
+      "location": "洛山海灘",
+      "alt": "洛山海灘 — 東海海岸線",
+      "caption": "洛山海灘 — 東海海岸線"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "name": "接送地點（弘益大學站或明洞站）",
+      "time": "07:00 / 07:30",
+      "number": 1,
+      "category": "巴士接送",
+      "duration": "30分鐘時間窗口",
+      "timeUsed": [
+        "請提前5至10分鐘抵達所選接送地點（約5分鐘）",
+        "在標示的星巴克／North Face門前找到AtoC Korea巴士（約5分鐘）",
+        "依序排隊搭乘冷氣巴士（約10分鐘）",
+        "上車時發放韓英雙語印刷行程卡"
+      ],
+      "whyOnRoute": "兩個早班接送地點涵蓋首爾兩大主要住宿集中區：弘益大學區（麻浦區，深受年輕旅客及短期旅客歡迎）與明洞（中區，位於樂天、新羅、威斯汀等酒店附近的傳統觀光區）。弘益大學07:00出發、明洞07:30出發，是在不影響首爾地鐵運行時間的前提下，最早可行的接送時段，也是在中午前抵達雪嶽山、享有充裕兩小時遊覽時間的唯一方式。先停弘益大學、再停明洞，是前往首爾—襄陽高速公路東北方向的自然路線。本行程**僅於週一及週四**出發，請務必確認預訂日期正確。",
+      "description": "接送地點為首爾兩處集合地點之一：**(1) 星巴克弘益大學站8號出口（麻浦區）**，07:00出發——星巴克門市位於8號出口正上方；或 **(2) 明洞站2號出口（中區）**，07:30出發——North Face旗艦店是出口旁的顯眼地標。\n\n兩個接送地點共乘同一輛冷氣巴士，弘益大學旅客優先上車。請在預定時間**提前5至10分鐘**抵達所選地點——遲到者恕無法候車，費用不予退還。司機兼導遊將於上車時發放韓英雙語印刷行程卡，並確認當日行程順序、廁所休息站及預計返回時間。\n\n本行程**僅於週一及週四**出發。巴士從明洞（最後一個接送地點）沿首爾—襄陽高速公路向東北方行駛，途經**麟蹄—襄陽隧道（全長11公里，韓國最長公路隧道）**，車程約2.5小時抵達雪嶽山，途中於休息站安排廁所休息。",
+      "_poi_meta": {
+        "poi_key": "OPS_seoul_pickup_default",
+        "verified": false,
+        "match": "operational_default",
+        "note": "Operational pickup stop — Seoul departure (fixed station pickup, Hongik / Myeongdong); not a sightseeing POI"
+      }
+    },
+    {
+      "name": "雪嶽山國家公園",
+      "time": "≈ 10:00",
+      "number": 2,
+      "category": "國家公園（山岳）",
+      "duration": "120分鐘（2小時）",
+      "timeUsed": [
+        "抵達雪嶽洞入口 + 司機導遊說明（約10分鐘）",
+        "步行前往統一大佛 + 神興寺（從主停車場約15-20分鐘）",
+        "可選乘纜車至權金城（含排隊約30-45分鐘）或飛仙台溪邊漫步",
+        "拍照時間 + 集合返回車輛（約15分鐘）",
+        "可選在神興寺附近的800年古松拍照（約5分鐘）"
+      ],
+      "_poi_meta": {
+        "poi_key": "seoraksan_national_park",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea — Seoraksan National Park (Outer Seorak) listing + IUCN Green List confirmation)",
+          "IUCN Green List of Protected and Conserved Areas (iucngreenlist.org — Seoraksan official entry + 2014 designation + 398.24 km² area)",
+          "Korea National Park Service (KNPS — Seoraksan National Park Office official site + endangered species management plan)",
+          "UNESCO World Heritage Centre (Mt. Sorak Biosphere Reserve 1982 designation + tentative World Heritage listing)",
+          "Wikipedia (Seoraksan National Park — corpus on 30 peaks, 2,000+ animal species, 1,400+ plant species)"
+        ]
+      },
+      "highlights": [
+        "韓國第 5 座國家公園（1970 年）暨國內唯一聯合國教科文組織生物圈保護區（1982 年 8 月）",
+        "統一大佛：14.6 公尺／108 公噸青銅——世界最大青銅坐佛（1997 年）",
+        "神興寺（西元 652 年新羅時代）——曹溪宗本山；世界最古老的禪宗寺院",
+        "選用雪嶽纜車 1,132 公尺至權金城堡平台（700 公尺，1253 年傳說）",
+        "30 座峰巒，2,000＋ 動物物種，1,400–1,562 植物物種；珍稀野生動物（麝香鹿、長尾斑羚、亞洲黑熊）",
+        "公園入場目前免費（過去 3,500 韓元已廢除）；纜車仍需付費",
+        "**自 2005 年起列為 IUCN 第二類（國家公園）＋自 2014 年起列為 IUCN 保護區綠色名錄**——韓國第一座於試行階段加入綠色名錄的國家公園，與五臺山、智異山並列",
+        "**韓國唯一自 1982 年 8 月起獲列聯合國教科文組織生物圈保護區**＋**列入聯合國教科文組織世界遺產預備名單**——綜合認可度為韓國其他國家公園所不及",
+        "**長尾斑羚保育核心地**：穩定族群約 260 隻（IUCN 紅色名錄易危物種）——公園劃設 10 處特別保護區，總面積 39 平方公里（佔全園 10%）保育瀕危物種"
+      ],
+      "smartNotes": {
+        "photo": "統一大佛（14.6 公尺青銅佛）是不可錯過的單一畫面。纜車車廂可同時納入神興寺＋蔚山岩＋束草市＋東海。10 月紅葉襯著花崗岩峰巒的景緻舉世聞名。",
+        "facilities": "雪嶽洞入口設有遊客中心、咖啡廳（茶香咖啡）、餐廳與紀念品店。9:00–14:00 提供免費登山裝備租借（16:00 前歸還）。入口附近設有亞洲黑熊吉祥物雕像。",
+        "tip": "纜車票不可預購——十月份排隊時間可能超過1-2小時。若天色霧濛濛，請直接跳過纜車（無景可賞）。最佳2小時行程建議：統一大佛＋神興寺＋飛仙台短程溪邊漫步。請穿著堅固的包頭鞋——部分路段崎嶇且潮濕。"
+      },
+      "whyOnRoute": "往東北方向2.5小時的車程自有其價值：這裡是韓國第5座國家公園（1970年）及全國唯一的聯合國教科文組織生物圈保護區（1982年），加上世界最大的銅製坐佛與世界最古老的禪宗佛寺，全部景點均在小公園入口步行15分鐘範圍內。雪嶽山被安排為第一站，讓一天中體力消耗最大的行程在精力最充沛的早晨進行，之後在自然回程路線上依序前往海邊的洛山寺與洛山海水浴場，作為較為平坦的海岸景點。雪嶽山集世界自然保護聯盟綠色名錄＋聯合國教科文組織生物圈保護區＋世界遺產候補地位於一身，使其成為**韓國最受國際認可的自然遺產公園**——這座山嶽地標，是初訪韓國旅人此次一日遊不可錯過的行程核心。",
+      "convenience": {
+        "restroom": "主入口區、纜車站、神興寺寺院區、主要步道沿線",
+        "parking": "小公園正門設有付費停車場"
+      },
+      "description": "雪嶽山是韓國第5座國家公園，於1970年3月設立，迄今仍是全國唯一的聯合國教科文組織生物圈保護區，於1982年8月以其卓越的山地生物多樣性獲得認定。\n\n公園橫跨四個市縣，面積約398平方公里，擁有30座命名山峰，以大青峰（海拔1,708公尺，韓國第3高峰）為核心，並以著名的六柱花崗岩地貌蔚山岩聞名。公園入場費自近期廢除原代神興寺徵收的3,500韓元門票後，現已免費開放——寺院維護費用現改由公共資金支付。\n\n從小公園（外雪嶽）主入口出發，典型的2小時遊覽涵蓋以下特色景點：**統一大佛**——高14.6公尺、重108噸銅製，為世界最大的銅製坐佛，於1997年建造以祈願朝鮮半島統一，佛像底座內設有小型觀音菩薩祠；**神興寺**——由慈藏律師於新羅王國652年創建，被認為是世界最古老的禪宗寺院，同時為曹溪宗本寺；以及可選擇的**雪嶽纜車**（全程1,132公尺，單程約10分鐘抵達海拔700公尺的權金城堡壘平台——來回票價：成人16,000韓元／兒童12,000韓元，現場購票，不可預訂，十月賞楓旺季常需排隊數小時）。\n\n山頂的權金城堡壘有一段生動的傳說：據說在1253年蒙古入侵高麗王朝期間，由名為權與金的兩位將軍在一天之內建成——因此得名「權金城」。選擇不乘纜車的健行愛好者，可改走輕鬆的飛仙台溪邊步道（大部分路段已鋪設路面）、搖晃岩環形步道（石階路），或攀登600公尺的金剛窟洞穴。",
+      "visitBasics": {
+        "hours": "公園全日開放；纜車通常 08:00–17:30（依天候）；神興寺 06:00 至日落",
+        "closed": "全年開放；部分步道可能因復育不定期關閉",
+        "admission": "公園入場 **免費**（過去 3,500 韓元已廢除）；纜車來回成人 16,000／兒童 12,000 韓元（僅現場購票，不接受預約）",
+        "walking": "山腳難度輕鬆（神興寺、纜車基地）；中度至挑戰性健行（飛仙台 3 公里、蔚山岩陡峭石階、晃動岩單程 1.5 小時）"
+      },
+      "image": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "images": [
+        "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
+      ]
+    },
+    {
+      "name": "洛山寺",
+      "time": "≈ 13:30",
+      "number": 3,
+      "category": "海濱佛教寺院",
+      "duration": "75分鐘",
+      "timeUsed": [
+        "遊覽車抵達洛山寺＋司機導覽說明（約10分鐘）",
+        "步行前往海水觀音像（16公尺高的海濱觀音立像）——寺院最具代表性的景觀（約20分鐘）",
+        "海蝕洞上方的紅蓮庵＋義湘臺崖邊亭閣（約25分鐘）",
+        "圓通寶殿主殿、七層石塔、銅鐘閣（約15分鐘）",
+        "崖頂步道拍照留念＋返回車輛集合（約5分鐘）"
+      ],
+      "_poi_meta": {
+        "poi_key": "naksansa_temple",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-05-14",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea English — Naksansa Temple listing, founding by Uisang 671 CE, key features)",
+          "Cultural Heritage Administration of Korea (Historic Site No. 495 designation 2008; Seven-Story Stone Pagoda and Naksansa heritage records)",
+          "Yangyang County official tourism (tour.yangyang.go.kr — Naksansa / Uisangdae, operating hours, parking)",
+          "Wikipedia (Naksansa + Naksansa bronze bell — corpus on 2005 Yangyang wildfire, reconstruction completed ~2015, bell recast 2006)",
+          "Korean travel reports 2023-2026 confirming free admission since the revised Cultural Heritage Protection Act (effective 2023-05-04)"
+        ]
+      },
+      "highlights": [
+        "由僧侶義湘於公元671年創建——一座直立於東海之上的千年古剎",
+        "韓國三大觀音聖地之一；「洛山」之名源自觀音菩薩的神話聖地補陀洛迦山",
+        "列入關東八景之一——韓國東海岸的經典名勝",
+        "**海水觀音像** — 建於1977年，16公尺高的白色花崗岩海濱觀音立像，矗立於蓮花台座上，面朝大海",
+        "**紅蓮庵** — 由義湘建於海蝕洞之上；地板設有玻璃窗，可俯瞰腳下翻湧的波浪",
+        "**義湘臺** — 八角形崖邊亭閣（1925年重建），為韓國最著名的日出觀賞勝地之一",
+        "銅鐘原鑄於1469年；於2005年火災中熔毀後重新鑄造——2006年10月重新鳴響",
+        "七層石塔（1467年擴建為七層）與圓通寶殿主殿及其瓦片圍牆",
+        "2008年被列為史蹟第495號；於2005年4月襄陽山林大火後，依據1778年金弘道所繪畫作重建復原"
+      ],
+      "smartNotes": {
+        "photo": "經典拍攝角度是以廣闊東海為背景的海水觀音像。懸於崖壁的紅蓮庵及寺院步道旁的石燈籠同樣極具攝影魅力。崖頂步道在柔和光線下景致最為迷人。",
+        "facilities": "寺院內設有洗手間及小型寺廟商店。各處均有販售許願瓦片與祈願絲帶。咖啡廳與餐廳集中於下方的洛山海水浴場／洛山港一帶。",
+        "tip": "寺院範圍沿崖壁延伸，設有石階與海濱步道——請穿著舒適的鞋子。時間有限時，從海水觀音像至紅蓮庵的路線是必走的環形步道。自2023年起免費入場，無需排隊購票。"
+      },
+      "whyOnRoute": "洛山寺是當天行程中文化與海岸景觀的核心節點——距雪嶽山約40分鐘車程，以花崗岩山脊換作直立於大海之上的千年古剎。韓國少有其他地方能如此震撼地將佛教文化遺產與開闊的海洋地平線融為一體：寺院由僧侶義湘於公元671年創建，是韓國三大觀音聖地之一，其名稱本身即令人聯想到觀自在菩薩的神話聖地補陀洛迦山。將洛山寺安排於雪嶽山之後、洛山海水浴場之前，讓全天行程自然地從山嶽的磅礴氣勢過渡至海岸的寧靜悠閒，而寺院的崖頂步道恰好成為兩者之間的橋樑——且自2023年起免費入場，75分鐘的停留時間得以全部用於觀光，而非等候排隊購票。",
+      "convenience": {
+        "restroom": "位於寺院範圍內及下方洛山海水浴場一帶",
+        "parking": "遊覽車停於洛山寺正門附近；鄰近的洛山港停車場免費"
+      },
+      "description": "洛山寺是一處罕見之地——一座千年古剎，直接建於海崖之上。寺院由僧人**義湘**創建於**西元671年**，彼時他剛結束多年在唐朝的求法之旅歸國；據傳他在一處海邊洞窟附近獲得觀世音菩薩的顯靈，遂於此地建寺。洛山寺隸屬**曹溪宗**，奉祀**觀世音菩薩**——慈悲的菩薩「觀世音菩薩」。其名為**「寶陀洛迦山」**的縮稱，乃**補陀洛迦山**的韓語音譯，即觀世音菩薩神話中居所的海上聖山，因此整座寺院被視為韓國的補陀洛迦。洛山寺被列為**韓國三大觀音聖地**之一，亦為以歷代韓國詩文所歌頌的東海岸勝景——**關東八景**之一。\n\n寺院歷經多次毀損與重建——先受蒙古入侵之禍，再經朝鮮戰爭之殤，最近一次則是**2005年4月襄陽山火**，大火燒毀二十餘座建築，連寺內珍貴的古銅鐘亦未能�倖免。重建工程以**1778年畫壇宗師金弘道的畫作**為參考依據，約於2015年竣工。洛山寺於2008年被指定為**史蹟（第495號）**。\n\n今日，遊客可沿崖頂小徑，穿行於修復後的各殿堂與開闊的東海之間。最具代表性的景觀為**海水觀音像**——一尊高16公尺、以白色花崗岩雕成、立於蓮花座上、面朝大海的觀音立像，建成於1977年。其他亮點包括：**紅蓮庵**，一座凌空建於海蝕洞上方的庵堂，設有玻璃地板可透視下方的浪濤；**義湘臺**，一座八角形崖上亭台，是韓國最受喜愛的日出觀賞地之一；**七層石塔**；重新鑄造的**銅鐘**，其1469年的前身於2005年火災中熔毀，新鐘自2006年10月起再度鳴響；以及以獨特泥瓦圍牆為標誌的**圓通寶殿**正殿。",
+      "visitBasics": {
+        "hours": "約每日06:00至18:30（最後入場約17:30）；全年無休，無固定公休日",
+        "closed": "全年開放",
+        "admission": "免費——自2023年5月4日起，洛山寺不再收取入場費，緣由是修訂後的《文化遺產保護法》廢除了傳統寺院文化財觀覽費用。（舊資料所載的4,000韓元門票已屬過時資訊。）",
+        "walking": "中等難度——園區沿海岸懸崖展開，各殿堂、海水觀音像與紅蓮庵之間有石階與高低不平的石板路相連"
+      },
+      "image": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
+      "images": [
+        "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
+        "/images/tours/naksansa-temple/naksansa-main-hall.webp",
+        "/images/tours/naksansa-temple/naksansa-haesu-gwaneum.webp"
+      ]
+    },
+    {
+      "name": "洛山海水浴場",
+      "time": "≈ 15:00",
+      "number": 4,
+      "category": "東海海濱",
+      "duration": "60分鐘",
+      "timeUsed": [
+        "從洛山寺短程下行至海灘（約5分鐘）",
+        "在細沙海灘與松林步道上自由漫步（約40分鐘）",
+        "拍照時間——海岸線、崖上寺院亭台、東海水平線（約10分鐘）",
+        "在遊覽車集合，返回首爾（約5分鐘）"
+      ],
+      "_poi_meta": {
+        "poi_key": "naksan_beach",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-05-14",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea English — Naksan Beach listing: ~4 km length, water under 1.5 m deep, opened 1963, 1M+ annual visitors)",
+          "VisitKorea destination corpus (Naksanhang Port and Namdaecheon Stream delta bounding the beach; pine-forest backing)",
+          "Yangyang County official tourism + Yangyang Sunrise Festival records (New Year sunrise venue, bell-tolling and beach fireworks)",
+          "Korean and international travel guides 2023-2026 (free parking ~150 spaces, July-August swimming season, year-round sunrise destination)"
+        ]
+      },
+      "highlights": [
+        "一片綿延約4公里的寬闊細沙海灘，背倚低矮松林——環境清幽宜人，猶如公園，絕非水泥叢林式的海濱勝地",
+        "位於**洛山寺正下方**——寺院的懸崖與亭台從高處俯瞰沙灘",
+        "水深較淺、水流和緩（向外延伸頗長一段距離，深度不足約1.5公尺）——長久以來深受韓國家庭喜愛",
+        "一端毗鄰**洛山港**，另一端連接**南大川**潟湖——南大川發源於雪嶽山，以靜謐的流淌方式，悄然串聯起當日行程中的兩片山海風景",
+        "自1963年對外開放，每年吸引逾百萬名遊客到訪",
+        "韓國頂級**東海日出**觀賞地之一，亦是每年新年**襄陽日出祭**的核心場域",
+        "緊鄰海灘的洛山港以新鮮生魚片（刺身）及東海海鮮聞名"
+      ],
+      "smartNotes": {
+        "photo": "濕沙倒影、可供取景與遮蔭的松林林帶，以及仰拍崖上洛山寺亭台的經典角度。日出是最具代表性的拍攝主題——但那屬於冬季清晨的專屬畫面，並非本次行程的拍攝時機。",
+        "facilities": "洛山海水浴場周邊設有洗手間、咖啡廳、便利商店及餐廳，並提供免費停車場（約150個車位）。洛山港一側有多家海鮮餐廳。",
+        "tip": "官方游泳開放季節僅限7月至8月——本次行程中，海灘為步行與拍照景點，並非游泳停留點。建議攜帶薄外套：即便首爾天氣暖和，東海海風有時仍帶有涼意。"
+      },
+      "whyOnRoute": "洛山海水浴場是這一天最輕鬆愜意的收尾——而它就在洛山寺的正下方，轉移只需短短幾分鐘。歷經雪嶽山的攀爬與石階，再走過洛山寺的崖邊步道，這片海灘是一處平坦、開闊、節奏舒緩的停靠點：讓你在返回首爾之前，好好感受東海的氣息，讓這一天靜靜沉澱。海灘也悄然串起了整條路線的脈絡——在海灘一端入海的南大川，其源頭正在雪嶽山，山與海由此因水相連。六十分鐘，足以在沙灘與松林步道上從容漫步，又不致拖延返回首爾的行程。",
+      "convenience": {
+        "restroom": "洛山海水浴場沿線設有公共洗手間",
+        "parking": "免費海灘停車場，約可容納150輛車"
+      },
+      "description": "就在寺廟正下方——洛山寺所在的洛山，從海岸線拔地而起——**洛山海水浴場**是這一天最溫柔的篇章。自**1963年**開放以來，每年吸引逾百萬名遊客，這片廣闊的**4公里細沙海岸**背後不是混凝土建築，而是一片低矮的**松樹林**，讓整片海岸散發出寧靜如公園般的氣息。海水極淺——向外延伸很長一段距離水深都不足**1.5公尺**——這也是韓國家庭幾代人深愛此地的原因。\n\n海灘的一端以**洛山港**為地標；另一端則是**南大川**——發源自雪嶽山——注入大海的潟湖所在。就這樣，這一天的兩種風景，山與海岸，在此悄然交會。\n\n官方游泳季節為**七月至八月**，但在本次行程中，洛山海水浴場是**全年皆宜的散步與攝影景點**：感受東海的海風，拍攝海岸線與上方懸崖上的寺廟樓閣，在返程前放慢腳步。這裡也是韓國最著名的**日出**勝地之一——每年新年**襄陽日出節**的核心，屆時洛山寺的敲鐘儀式結束後，沙灘上空將綻放煙火——而洛山港一側更以新鮮生魚片（회）和東海海鮮聞名。",
+      "visitBasics": {
+        "hours": "海灘全天24小時開放；官方游泳季節為七月至八月，有救生員監管的游泳時間約為09:00至18:00",
+        "closed": "全年開放",
+        "admission": "免費——海灘無需門票",
+        "walking": "輕鬆——平坦的細沙海岸與平緩的松樹林步道；一條有標示的短程步道可從海灘直達洛山寺"
+      },
+      "image": "/images/tours/naksan-beach/naksan-beach-sign.webp",
+      "images": [
+        "/images/tours/naksan-beach/naksan-beach-sign.webp",
+        "/images/tours/naksan-beach/naksan-beach-summer-crowd.webp"
+      ]
+    },
+    {
+      "name": "返回首爾（明洞站或弘益大學站）",
+      "time": "≈ 16:10",
+      "number": 5,
+      "category": "返程下車地點",
+      "duration": "約2.5小時車程",
+      "timeUsed": [
+        "巴士從洛山海水浴場出發（約16:10）",
+        "經首爾—襄陽高速公路及麟蹄—襄陽隧道驅車返回首爾（約2.5小時，視交通狀況而定）",
+        "於明洞站2號出口下車（約18:45）",
+        "於弘益大學站8號出口下車（約19:15）"
+      ],
+      "whyOnRoute": "返程路線按接送順序逆向行駛：**先在明洞下車**（約18:45），再前往**弘益大學站**（約19:15）。全程12小時的行程安排即以此時間為基準——若當晚有餐廳預訂，建議訂在20:00或之後，以保留應對交通狀況的緩衝時間。週五與週日晚間高速公路通常較為壅塞，但本行程僅於週一及週四出發，因此返程交通通常較為順暢；即便如此，若您有航班或重要行程，請務必提前告知司機導遊。",
+      "description": "離開洛山海水浴場後，巴士將沿**首爾—襄陽高速公路**向西返回首爾，再次穿越麟蹄—襄陽隧道。下車地點按接送順序逆向安排：**首先於明洞站2號出口，預計約18:45抵達**，接著前往**弘益大學站8號出口，預計約19:15抵達**。\n\n兩個下車地點與早上接送地點相同。若當晚有前往弘大或明洞的計畫，建議保留充裕的交通緩衝時間。實際抵達時間視當日東海岸及首爾交通狀況而定。",
+      "_poi_meta": {
+        "poi_key": "OPS_return",
+        "verified": false,
+        "match": "operational_default",
+        "note": "Operational return stop — Seoul drop-off (Myeongdong / Hongik); not a sightseeing POI"
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "接送（弘大／明洞）",
+      "type": "origin",
+      "theme": "首爾接送"
+    },
+    {
+      "name": "雪嶽山國立公園",
+      "type": "primary",
+      "theme": "山岳與寺廟"
+    },
+    {
+      "name": "洛山寺",
+      "type": "primary",
+      "theme": "海邊寺廟"
+    },
+    {
+      "name": "洛山海水浴場",
+      "type": "primary",
+      "theme": "東海海灘"
+    },
+    {
+      "name": "返回首爾",
+      "type": "return",
+      "theme": "下車地點"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "首爾 → 雪嶽山",
+      "duration": "約 2.5 小時",
+      "description": "07:00 弘大接送 / 07:30 明洞接送，隨後沿首爾－襄陽高速公路及 11 公里長的麟蹄－襄陽隧道向東北行駛約 2.5 小時，於 10:00 左右抵達雪嶽山。"
+    },
+    {
+      "phase": "雪嶽山國立公園",
+      "duration": "約 2 小時",
+      "description": "小公園入口：統一大佛、神興寺，以及可選擇搭乘纜車前往權金城，或漫步飛仙臺溪畔小徑。"
+    },
+    {
+      "phase": "雪嶽山 → 洛山寺（含午餐）",
+      "duration": "約 1.5 小時",
+      "description": "車程約 40 分鐘前往襄陽海岸，途中在當地餐廳停留用餐（費用自理）。"
+    },
+    {
+      "phase": "洛山寺與洛山海水浴場",
+      "duration": "約 2.5 小時",
+      "description": "在懸崖邊的洛山寺遊覽 75 分鐘，隨後短暫驅車前往洛山海水浴場，在沙灘與松林小徑上悠閒漫步約一小時。"
+    },
+    {
+      "phase": "返回首爾",
+      "duration": "約 2.5 小時",
+      "description": "約 16:10 從洛山海水浴場出發，沿首爾－襄陽高速公路返回首爾——明洞約 18:45 抵達，弘大約 19:15 抵達。"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "首爾一日遊行程概覽",
+    "subtitle": "07:00／07:30 於弘大／明洞早班接送；向東北行駛約 2.5 小時抵達雪嶽山，作為當日山嶽遊覽主站；再行駛約 40 分鐘前往襄陽海岸（途中用餐），遊覽懸崖邊的洛山寺；隨後數分鐘即達洛山海水浴場，迎接全日最悠閒的尾聲；18:45–19:15 返抵首爾。僅週一及週四出發。"
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "首次來韓、希望以首爾為據點享受山海一日遊的旅客",
+      "嚮往雪嶽山秋楓與花崗岩山峰的旅行者",
+      "對韓國佛教文化遺產感興趣的人士——洛山寺是一座千年海邊古剎",
+      "希望在一天之內盡覽山嶽、寺廟與東海海岸線的攝影愛好者"
+    ],
+    "lessIdealFor": [
+      "偏好節奏舒緩、單一景點體驗的旅客",
+      "無法在週一或週四出行的旅客（此行程僅此兩日出發）",
+      "行動不便的旅客——雪嶽山與洛山寺均設有樓梯及崎嶇路段",
+      "期待游泳的旅客——洛山海水浴場在此行程中僅供步行觀賞，並非游泳場所（且全年均有行程）"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "行程節奏與地理位置",
+        "icon": "sun",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "先山後海",
+            "detail": "雪嶽山是距離最遠、體力消耗最大的景點，因此在精力最旺盛時優先前往。洛山寺與洛山海水浴場同在襄陽海岸，位於自然的返程路線上——無需走回頭路。"
+          },
+          {
+            "label": "山 → 寺廟 → 海灘",
+            "detail": "行程從體力消耗最高（雪嶽山石階與自選纜車）到中等（洛山寺懸崖步道），再到最輕鬆（洛山海灘悠閒漫步一小時）。拍攝風格依序從花崗岩山脊，到臨海寺廟，再到開闊海岸線。"
+          },
+          {
+            "label": "兩種風景，一條溪流",
+            "detail": "在洛山海灘注入大海的南大川，發源自雪嶽山——此行程中的山脈與海岸，在字面意義上以水相連。"
+          }
+        ]
+      },
+      {
+        "title": "為何能在12小時內完成此行程",
+        "icon": "clock",
+        "iconBg": "bg-pink-50/80",
+        "iconColor": "text-pink-600",
+        "items": [
+          {
+            "label": "三個景點均免費入場",
+            "detail": "雪嶽山公園入口、洛山寺（自2023年起免費）及洛山海灘均無需門票——唯一的自費選項為雪嶽纜車（來回₩16,000，自費）。"
+          },
+          {
+            "label": "首爾兩處接車地點",
+            "detail": "弘益（麻浦區）07:00及明洞（中區）07:30，涵蓋首爾兩大住宿集中區——旅客可選擇距離飯店最近的出口上車。"
+          },
+          {
+            "label": "海岸景點緊密相連",
+            "detail": "洛山寺與洛山海灘緊鄰於襄陽海岸，因此下午的時間皆用於遊覽景點，而非往返奔波。"
+          }
+        ]
+      },
+      {
+        "title": "誠實說明行程取捨",
+        "icon": "info",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "雪嶽山有石階（纜車為自選項目）",
+            "detail": "統一大佛＋神興寺步道平坦易行；較陡的山徑與權金城平台則有崎嶇石階。纜車為現場自費項目，無法提前預訂。"
+          },
+          {
+            "label": "僅週一及週四出發",
+            "detail": "此為固定班次的巴士團，每週兩天出發。預訂時請確認正確日期——週一或週四。"
+          },
+          {
+            "label": "早出發的漫長一天",
+            "detail": "此為巴士團體行程——全程約12小時，其中約5小時為乘車時間。希望縮短行程時間或自由延長停留的旅客，可考慮私人包車一日遊。"
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "接送服務",
+      "preview": "首爾兩處接車地點：弘益大學站8號出口星巴克，07:00……",
+      "content": [
+        "首爾兩個上車地點：**弘益大學站8號出口星巴克，07:00**（麻浦區），以及**明洞站2號出口（NorthFace旗艦店），07:30**（中區）。",
+        "兩個上車地點共乘同一輛冷氣巴士；請提前5至10分鐘抵達您選擇的地點。遲到者恕不等候，亦不予退款。",
+        "回程下車順序相反：**明洞約18:45，弘大約19:15**。",
+        "確切回程時間視當日東海岸及首爾交通狀況而定——若您有航班或固定行程，請提前告知導遊。"
+      ]
+    },
+    {
+      "id": "schedule",
+      "title": "出發日期",
+      "preview": "本行程僅於每週一及週四出發。",
+      "content": [
+        "本行程**僅於每週一及週四出發**——請選擇週一或週四的日期進行預訂。",
+        "本行程為固定時刻表的巴士團體遊；兩個出發日的行程安排與時間均相同。",
+        "若您需要其他日期或彈性行程，可考慮改選私人包車一日遊。"
+      ]
+    },
+    {
+      "id": "what-to-bring",
+      "title": "穿著與攜帶物品",
+      "preview": "請穿著舒適的包頭運動鞋，以利行走雪嶽山與洛山寺路段……",
+      "content": [
+        "請穿著舒適的包頭運動鞋——雪嶽山部分路段地面崎嶇多石，洛山寺則有階梯與不平整的石板路。",
+        "10月至3月請攜帶保暖衣物；雪嶽山氣溫比首爾低5至7°C，洛山海灘的東海海風全年均可能偏涼。",
+        "相機或智慧型手機——雪嶽山山峰、俯瞰大海的洛山寺，以及洛山海灘海岸線是最佳拍照亮點。",
+        "請備妥現金與信用卡，用於午餐（約₩10,000至15,000）及可自選搭乘的雪嶽山空中纜車（₩16,000）。",
+        "若未吃早餐即出發，請自備輕食點心——首個用餐站約在前往海岸途中的午餐時間。"
+      ]
+    },
+    {
+      "id": "weather-policy",
+      "title": "天氣政策",
+      "preview": "全年運營。",
+      "content": [
+        "按排定班次全年運營，每週一及週四出發。",
+        "小雨：行程照常進行——雨中的洛山寺與洛山海灘別有氣氛，穿著防滑鞋亦可行走雪嶽山低海拔路段。",
+        "大雨：雪嶽山空中纜車通常於暴風雨天氣停運；導遊將改安排賓客前往神興寺一帶步行遊覽。",
+        "颱風級別天氣或高速公路封閉：提供全額退款或免費改期服務。"
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "費用包含",
+      "preview": "冷氣巴士、來回接送、英語／中文導遊……",
+      "content": [
+        "以**冷氣巴士**提供首爾與東海岸之間的**來回接送**交通服務。",
+        "當日提供**英語／中文導遊**服務。",
+        "**門票與稅費** — 雪嶽山國家公園入口、洛山寺及洛山海灘均免費入場，無需排隊購票。",
+        "**不含項目**：餐飲費用（途中午餐約₩10,000–15,000，自費）、個人消費、小費，以及可選的**雪嶽山纜車**（來回₩16,000，僅限現場購票）。"
+      ]
+    },
+    {
+      "id": "language",
+      "title": "語言",
+      "preview": "以英語及中文提供導覽服務。",
+      "content": [
+        "導遊以**英語及中文**進行解說。",
+        "全天行程中，菜單、指示牌及攤位互動均以韓語呈現，導遊將負責翻譯。",
+        "預訂時請告知您的語言偏好，以便安排合適的導遊。"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "步行與地形",
+      "preview": "中等難度。",
+      "content": [
+        "整體為中等難度。",
+        "雪嶽山：神興寺山麓路段輕鬆平緩；若選擇較長步道或前往纜車站台（石階崎嶇），難度將提升至中等至挑戰級別。",
+        "洛山寺：懸崖頂端路徑設有台階，大雄寶殿、海水觀音像與紅蓮庵之間鋪設高低不平的石面。",
+        "洛山海灘：地勢平坦，步行輕鬆，沙灘細軟，松林小徑平整易行。",
+        "全程步行量為中等程度，建議穿著包趾的防滑鞋。"
+      ]
+    },
+    {
+      "id": "lunch",
+      "title": "午餐（自費）",
+      "preview": "午餐於雪嶽山前往洛山寺途中、約正午時分享用……",
+      "content": [
+        "午餐於雪嶽山前往襄陽海岸途中、約正午時分，在當地餐廳享用（自費，約₩10,000–15,000）。",
+        "雪嶽山及襄陽地區以山菜拌飯（山野菜拌飯）、蕎麥料理著稱，靠近海岸一帶更可品嚐新鮮的東海海鮮。",
+        "如需素食或清真友好選項，可提前告知，預訂時說明即可，我們將盡力安排。"
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "取消政策",
+      "preview": "於接送前24小時取消可免費退款。",
+      "content": [
+        "於接送前24小時取消可免費退款。",
+        "接送前24小時內取消：退款50%。",
+        "未出現或錯過接送：不予退款——但若在接送時間10分鐘內聯絡AtoC Korea客服團隊，如行程進度超前，車輛或可短暫等候。"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "請見季節說明"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "請見季節說明"
+    },
+    "_seasonalSummary": "Seoul + Gangwon East Sea coast: temperate four-season climate. Seoraksan is 5-7°C cooler than Seoul year-round, and the East Sea breeze at Naksan Beach can be cool even on warm days. Hot humid summers (Jun-Aug), crisp cold winters (Dec-Feb), with prime seasons in spring (April) and autumn (October-November foliage)."
+  },
+  "seasonalVariations": [
+    {
+      "season": "春季（3月－5月）",
+      "description": "雪嶽山的杜鵑花與連翹花於四月下旬盛開；東海岸清新而不擁擠，是漫長包車旅遊日中溫度最為舒適的季節。"
+    },
+    {
+      "season": "夏季（6月－8月）",
+      "description": "蒼翠的雪嶽山步道與洛山寺松蔭小徑；洛山海水浴場正值游泳旺季（本行程為步行停留）。七月梅雨季降雨可能縮短遊覽雪嶽山的時間。"
+    },
+    {
+      "season": "秋季（9月－11月）",
+      "description": "韓國最具代表性的季節——雪嶽山十月中旬至十一月初的楓葉聞名全球，清澈的秋光更映襯出面海洛山寺的絕美景致。需求最為旺盛，請提前兩週以上預訂。"
+    },
+    {
+      "season": "冬季（12月－2月）",
+      "description": "雪嶽山花崗岩山峰覆上白雪，東海岸靜謐而壯闊。洛山海水浴場是著名的新年日出勝地——襄陽日出節在洛山寺舉行撞鐘儀式，並於海灘施放煙火。請注意保暖。"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "三處景點全數免費入場",
+      "description": "免門票、免排隊",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "雪嶽山國立公園入場費（近期已廢除）、洛山寺（自2023年5月起免費）及洛山海水浴場均無需門票。唯一可選的付費項目為雪嶽山纜車（來回₩16,000，費用自理）。"
+    },
+    {
+      "icon": "users",
+      "title": "英語／中文導遊",
+      "description": "全程導覽含來回接送",
+      "iconBg": "bg-pink-50/80",
+      "iconColor": "text-pink-600",
+      "body": "導遊全程以英語及中文陪同，詳細介紹雪嶽山的聯合國教科文組織生物圈保護區地位、義湘大師於公元671年創建洛山寺的歷史，以及襄陽海岸風光——並於冷氣舒適的遊覽車上統籌所有行程事宜。"
+    },
+    {
+      "icon": "shield",
+      "title": "價格透明",
+      "description": "無隱藏購物行程",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "不進人蔘店、不進免稅店、不安排抽佣紀念品繞路行程。12小時全程的每一分鐘均用於景點遊覽或交通接駁——所訂即所見，毫無保留。"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "立即",
+      "title": "即時確認",
+      "detail": "含接送地點選擇的預訂確認",
+      "description": "即時預訂確認，可選擇弘大／明洞接送地點。請確認您出發的星期一或星期四日期。"
+    },
+    {
+      "timing": "出發前一天",
+      "title": "接送詳情",
+      "detail": "透過 WhatsApp／簡訊提供確切接送地點及車輛資訊",
+      "description": "出發前一天將傳送天氣確認、巴士車牌號碼，以及任何季節性路線注意事項（雪嶽山楓葉高峰期、冬季路況）。"
+    },
+    {
+      "timing": "出發當天早上",
+      "title": "接送確認",
+      "detail": "導遊於出發前在接送地點等候識別",
+      "description": "導遊約於 06:50 起在弘大 8 號出口星巴克等候，約於 07:20 起在明洞 2 號出口（NorthFace）等候。"
+    },
+    {
+      "timing": "行程期間",
+      "title": "全程隨行支援",
+      "detail": "每站導覽解說＋營運支援",
+      "description": "導遊將介紹雪嶽山新羅時代的神興寺、洛山寺西元 671 年創建及 2005 年重建的歷史，以及襄陽海岸的日出傳統。"
+    },
+    {
+      "timing": "行程結束",
+      "title": "兩個下車地點",
+      "detail": "明洞約 18:45／弘大約 19:15",
+      "description": "巴士返程時依接送地點的相反順序依序下車。"
+    },
+    {
+      "timing": "行程結束後",
+      "title": "評價與後續跟進",
+      "detail": "可選擇的行程後評價",
+      "description": "行程結束後將傳送意見回饋邀請；同日回覆您在剩餘行程中的餐廳或景點推薦諮詢。"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "duration",
+      "question": "這個行程需要多長時間？",
+      "answer": "從弘大 07:00 或明洞 07:30 接送起，全程約 12 小時門到門。返回首爾時間約為 18:45（明洞）至 19:15（弘大）。"
+    },
+    {
+      "id": "departure-days",
+      "question": "這個行程在哪幾天出發？",
+      "answer": "本行程**僅於週一及週四**出發。請選擇週一或週四的日期預訂——兩天的行程內容與時間安排完全相同。"
+    },
+    {
+      "id": "pickup",
+      "question": "接送地點在哪裡？",
+      "answer": "共有兩個上車地點：(1) **弘大入口站8號出口星巴克**（麻浦區），07:00出發——位於出口頂端的星巴克；或 (2) **明洞站2號出口**（中區），07:30出發——出口頂端的 North Face 旗艦店。預訂時請選擇距您住宿最近的地點。"
+    },
+    {
+      "id": "drop-off",
+      "question": "下車地點在哪裡？",
+      "answer": "返程下車地點與上車相同，順序相反：先於約18:45抵達明洞2號出口，再於約19:15抵達弘大8號出口。確切時間視當日交通狀況而定。"
+    },
+    {
+      "id": "admissions",
+      "question": "門票是否包含在內？",
+      "answer": "是的——實際上三個景點均免費入場。雪嶽山國家公園入場費近期已取消，洛山寺自2023年5月起免費開放，洛山海灘亦無需門票。**唯一的自選付費項目為雪嶽纜車**（來回₩16,000），僅可現場購票，費用自理。"
+    },
+    {
+      "id": "cable-car",
+      "question": "我應該搭乘雪嶽纜車嗎？",
+      "answer": "天氣晴朗時山脊景色十分壯觀，但門票**無法提前預購**，10月賞楓旺季時現場排隊可能超過1至2小時。若天空有霧，建議略過（視野不佳）。雪嶽山停留時間約2小時，搭乘纜車主要在排隊較短時才可行——否則建議以統一大佛＋神興寺步行路線及飛仙台短程溪邊小徑來善用時間。"
+    },
+    {
+      "id": "naksansa",
+      "question": "洛山寺是什麼樣的地方？",
+      "answer": "洛山寺是一座直接矗立於東海之上的千年佛寺，由高僧義湘於西元671年創建。它是韓國三大觀音聖地之一，標誌性景觀為面朝大海的16公尺白色花崗岩「海水觀音像」。寺廟在2005年4月襄陽山火後重建，自2023年起免費開放。"
+    },
+    {
+      "id": "naksan-beach-swim",
+      "question": "我可以在洛山海灘游泳嗎？",
+      "answer": "洛山海灘的官方游泳季節僅限7至8月，有救生員監管的游泳時間約為09:00至18:00。本行程全年皆有，將海灘定位為散步與攝影景點而非游泳地點——約有一小時可漫步細沙灘與松林小徑。"
+    },
+    {
+      "id": "kids",
+      "question": "這個行程適合兒童嗎？",
+      "answer": "適合，6歲以上均可參加。全天12小時、需早起且約5小時巴士車程，對年幼兒童可能較為漫長——為舒適起見，建議8歲以上更為合適。小朋友通常喜歡洛山海灘寬闊的空間。雪嶽山和洛山寺均有階梯及崎嶇不平的路段。"
+    },
+    {
+      "id": "seniors",
+      "question": "這個行程適合年長者嗎？",
+      "answer": "活動能力良好的年長者可以參加——全天主要體力需求為雪嶽山和洛山寺的步行路線，兩處皆有階梯及不平坦路面。洛山海灘地勢平坦，輕鬆易行。行動不便的旅客建議改為考慮包車一日遊。"
+    },
+    {
+      "id": "lunch",
+      "question": "午餐是否包含在內？",
+      "answer": "不包含——午餐費用由旅客自理（每人約₩10,000至15,000）。巴士於雪嶽山前往襄陽海岸途中，約正午時分在當地餐廳停留。該地區以山菜拌飯、蕎麥料理及東海沿岸海鮮著名。素食及清真友善選項可提前告知安排。"
+    },
+    {
+      "id": "language",
+      "question": "導遊會說哪些語言？",
+      "answer": "導遊提供英語及中文講解，全程負責所有菜單翻譯及攤位溝通。請於預訂時註明您偏好的語言。"
+    },
+    {
+      "id": "best-season",
+      "question": "這個行程最適合哪個季節前往？",
+      "answer": "**秋季（10月中旬至11月初）**是韓國著名的賞楓季節，雪嶽山的紅葉景色享譽全球。**春季（4月）**清新宜人且人潮較少。**冬季**雪嶽山山峰覆雪，東海岸景色壯闊——洛山海灘更是知名的新年日出勝地。10月出遊請提前2週以上預訂。"
+    },
+    {
+      "id": "rain",
+      "question": "如果當天下雨怎麼辦？",
+      "answer": "小雨：行程照常進行——只要穿著適合的鞋履，三個景點均可在雨中步行遊覽。大雨：雪嶽山纜車通常暫停營運（導遊將改走神興寺周邊路線）；洛山寺與洛山海水浴場仍正常開放。颱風等級天氣或高速公路封閉：提供全額退款或改期服務。"
+    },
+    {
+      "id": "private",
+      "question": "與包車私人遊相比，這個行程有何不同？",
+      "answer": "這是一個按固定時刻表出發的大巴團體遊，價格實惠，每週一及週四出發。包車私人一日遊則提供飯店門口接送、彈性出發時間與出發日期，以及可自訂的行程路線——更適合追求舒適與彈性的旅客，或無法於週一、週四出行的旅客。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "pickup_dropoff": {
+    "primary": {
+      "name": "弘益大學站8號出口星巴克",
+      "address": "首爾市麻浦區楊花路（弘益大學站8號出口星巴克前）",
+      "time": "07:00 pickup / 19:15 drop-off",
+      "instructions": "請在弘益大學站8號出口正上方的星巴克門口與導遊集合。請留意AtoC Korea的指示牌，以及在接送隊列中的冷氣遊覽車。"
+    },
+    "alternates": [
+      {
+        "name": "明洞站2號出口（The North Face旗艦店）",
+        "address": "首爾市中區退溪路（明洞站2號出口The North Face旗艦店）",
+        "time": "07:30 pickup / 18:45 drop-off",
+        "instructions": "請在明洞站2號出口出地面處的The North Face旗艦店前與導遊集合。"
+      }
+    ]
+  },
+  "matching_profile": {
+    "profile_version": 6,
+    "is_active": true,
+    "product_id": "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
+    "product_type": "bus",
+    "route_type": "fixed_route",
+    "destination_region": "seoul_gangwon",
+    "region_type": "gangwon_seoraksan",
+    "vehicle_type": "coach",
+    "duration_hours": 12,
+    "region_tags": [
+      "gangwon_seoraksan",
+      "gangwon_yangyang"
+    ],
+    "theme_tags": [
+      "mountain",
+      "national_park",
+      "buddhist_temple",
+      "beach",
+      "hiking",
+      "cable_car",
+      "photogenic",
+      "east_coast"
+    ],
+    "poi_tags": [
+      "seoraksan_national_park",
+      "sinheungsa_temple",
+      "naksansa_temple",
+      "naksan_beach"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.6,
+    "scenic_level": 1,
+    "photo_level": 1,
+    "culture_level": 0.7,
+    "relax_level": 0.6,
+    "first_time_fit": 0.9,
+    "family_fit": 0.7,
+    "senior_fit": 0.5,
+    "couple_fit": 1,
+    "solo_traveler_fit": 1,
+    "active_traveler_fit": 0.8,
+    "adult_family_fit": 0.85,
+    "family_with_teens_fit": 0.85,
+    "young_kids_fit": 0.5,
+    "senior_active_fit": 0.65,
+    "senior_general_fit": 0.55,
+    "mobility_friendly_fit": 0.4,
+    "stroller_fit": 0.4,
+    "one_day_fit": 1,
+    "same_day_flight_fit": 0.1,
+    "rain_fit": 0.45,
+    "value_for_money_fit": 0.9,
+    "iconic_landmark_fit": 1,
+    "cafe_fit": 0.4,
+    "food_fit": 0.5,
+    "nature_fit": 1,
+    "beach_fit": 0.8,
+    "nightlife_fit": 0.1,
+    "shopping_fit": 0.2,
+    "no_shopping_fit": 1,
+    "local_culture_fit": 0.8,
+    "storytelling_fit": 0.9,
+    "unesco_fit": 0.55,
+    "intangible_heritage_fit": 0.4,
+    "indoor_ratio": 0.1,
+    "weather_sensitivity": 0.7,
+    "comfort_level": 0.6,
+    "budget_fit": 1,
+    "premium_fit": 0.15,
+    "small_group_fit": 0.15,
+    "private_fit": 0.1,
+    "bus_fit": 1,
+    "price_band": "budget",
+    "pickup_base": "seoul_central",
+    "return_time_band": "18:30-19:30",
+    "duration_band": "12h",
+    "min_recommended_age": 6,
+    "hard_constraints": {
+      "avoidIf": [
+        "tight_same_day_departure"
+      ],
+      "notIdealFor": [
+        "very_low_mobility"
+      ]
+    },
+    "walking_notes": [
+      "12-hour day with about 5 hours of coach time.",
+      "Seoraksan paths rocky in places; Naksansa has cliff-top stairs and uneven stone paths; Naksan Beach is flat.",
+      "Closed-toe shoes recommended.",
+      "Cable car at Seoraksan is optional and not included."
+    ],
+    "keywords": [
+      "seoul seoraksan day tour",
+      "naksansa temple tour",
+      "seoraksan naksansa naksan beach day trip",
+      "seoul east coast day trip",
+      "korea_mainland day tour"
+    ],
+    "synonym_hints": [
+      "seoul to seoraksan and naksan temple day tour",
+      "mt seorak naksan temple day trip from seoul",
+      "seoraksan east sea coast one day tour"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "seoul",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "seoraksan_national_park",
+      "naksansa_temple",
+      "naksan_beach"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.05,
+    "flexibility_fit": 0.15,
+    "history_culture_fit": 0.8,
+    "autumn_foliage_fit": 1,
+    "mountain_fit": 1,
+    "seasonal_fit": 0.95,
+    "china_mainland_market_fit": 0.85,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
+    "china_diaspora_overseas_market_fit": 1,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.9,
+    "europe_market_fit": 0.9,
+    "australia_market_fit": 0.9,
+    "japan_market_fit": 0.9,
+    "seoul_day_trip_pair_fit": 1,
+    "seoul_central_hotel_pickup_fit": 1,
+    "return_to_seoul_central_fit": 1,
+    "day_trip_2_3_hour_drive_each_way_fit": 1,
+    "small_group_format_fit": 0.15,
+    "fixed_schedule_format_fit": 1,
+    "affordable_format_vs_charter_fit": 1,
+    "solo_traveler_friendly_fit": 1,
+    "mountain_to_ocean_pivot_fit": 1,
+    "unesco_biosphere_reserve_visit_fit": 1,
+    "iucn_green_list_protected_area_fit": 1,
+    "iucn_category_ii_national_park_fit": 1,
+    "third_highest_peak_in_korea_anchor_fit": 1,
+    "world_largest_seated_bronze_buddha_fit": 1,
+    "jogye_order_zen_temple_visit_fit": 1,
+    "long_tailed_goral_conservation_anchor_fit": 1,
+    "endangered_species_special_protection_zone_fit": 1,
+    "seoul_to_east_sea_inje_yangyang_tunnel_fit": 1,
+    "seaside_buddhist_temple_fit": 1,
+    "naksansa_uisang_671ce_founding_fit": 1,
+    "three_great_gwaneum_sanctuary_fit": 1,
+    "gwandong_eight_sights_fit": 1,
+    "haesu_gwaneum_seaside_statue_fit": 1,
+    "hongnyeonam_sea_cave_hermitage_fit": 1,
+    "east_sea_sunrise_coast_fit": 1,
+    "pine_backed_beach_walk_fit": 1,
+    "free_admission_all_stops_fit": 1,
+    "fixed_departure_monday_thursday": true,
+    "differentiates_from_dmz_day_trip": true,
+    "differentiates_from_nami_morning_calm_petite_france": true,
+    "differentiates_from_seoraksan_sokcho_beach_day_trip": true,
+    "available_days_signature": [
+      "monday",
+      "thursday"
+    ],
+    "available_months_signature": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "signature_window_label": "Year-round, departing Mondays and Thursdays (peak: October Seoraksan autumn foliage; January New Year sunrise on the East Sea coast)",
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": false
+  },
+  "matching_metadata": {
+    "matching_schema": "match_tours_embedded_v2",
+    "embedded_for": "atockorea_tour_marketplace",
+    "primary_themes": [
+      "nature",
+      "scenic",
+      "buddhist_heritage",
+      "east_coast"
+    ],
+    "secondary_themes": [
+      "beach",
+      "mountain",
+      "national_park",
+      "seaside_temple"
+    ],
+    "best_for": [
+      "couples",
+      "solo_travelers",
+      "nature_lovers",
+      "culture_travelers",
+      "photographers",
+      "autumn_visitors"
+    ],
+    "not_recommended_for": [
+      "mobility_limited",
+      "very_young_children",
+      "shoppers",
+      "travelers_needing_non_monday_thursday_dates"
+    ],
+    "anchor_pois": [
+      "Seoraksan National Park",
+      "Naksansa Temple",
+      "Naksan Beach"
+    ],
+    "anchor_poi_keys": [
+      "seoraksan_national_park",
+      "naksansa_temple",
+      "naksan_beach"
+    ],
+    "competing_products": [
+      "seoul-seoraksan-nami-island-morning-calm-day-tour",
+      "seoul-suburbs-private-chartered-car-10hr",
+      "pocheon-sanjeong-lake-herb-island-art-valley"
+    ],
+    "source_of_truth_note": "Coach day-trip from Seoul combining Seoraksan National Park + Naksansa Temple + Naksan Beach on the Gangwon East Sea coast. Replaces the now-inactive seoul-seoraksan-national-park-sokcho-beach-day-trip. Seoraksan attraction content reused from the verified east-coast Seoraksan tours; Naksansa Temple and Naksan Beach content researched and verified 2026-05-14. Sources: KTO VisitKorea, Cultural Heritage Administration of Korea, Yangyang County official tourism, UNESCO, IUCN Green List, KNPS, Wikipedia.",
+    "audit_summary": "Seoul-based 12-hour coach day trip on the Seoraksan + Naksansa Temple + Naksan Beach route, departing Mondays and Thursdays. Direct equivalent on the GetYourGuide market is the 'From Seoul: Mt. Seorak & Naksan Temple Day Trip' listing (t1051985), priced around US$58 with a US$52 sale rate."
+  }
+}

@@ -37,6 +37,7 @@ export const STATIC_TOUR_PRODUCT_BUNDLE_SLUG_LIST = [
   "pocheon-sanjeong-lake-herb-island-art-valley",
   "seoul-dmz-private-3rd-tunnel-suspension-bridge",
   "seoul-private-nami-morning-calm-petite-france",
+  "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
   "seoul-seoraksan-nami-island-morning-calm-day-tour",
   "seoul-seoraksan-national-park-sokcho-beach-day-trip",
   "seoul-suburbs-private-chartered-car-10hr",

@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "釜山熱門景點小團體一日遊 | AtoC Korea",
     "metaDescription": "10.5小時釜山小團體經典行程：海東龍宮寺、青沙浦藍線公園、聯合國紀念公園、甘川文化村、札嘎其市場。3個接送地點。",
-    "ogImage": "https://www.atockorea.com/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+    "ogImage": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
     "primaryKeywords": [
       "釜山一日遊",
       "海東龍宮寺",
@@ -134,37 +134,21 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
-      "location": "海東龍宮寺",
-      "alt": "海東龍宮寺 — on-route photo",
-      "caption": "海東龍宮寺"
-    },
-    {
-      "id": 3,
-      "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
       "location": "韓國聯合國紀念公墓",
       "alt": "韓國聯合國紀念公墓 — gallery image 1",
       "caption": "韓國聯合國紀念公墓 — photo 1"
     },
     {
-      "id": 4,
+      "id": 2,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
       "location": "甘川文化村",
       "alt": "甘川文化村 — on-route photo",
       "caption": "甘川文化村"
     },
     {
-      "id": 5,
-      "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
-      "location": "札嘉其魚市場",
-      "alt": "札嘉其魚市場 — on-route photo",
-      "caption": "札嘉其魚市場"
-    },
-    {
-      "id": 7,
+      "id": 3,
       "type": "photo",
       "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
       "location": "青沙浦及海雲台藍線公園",
@@ -172,7 +156,7 @@
       "caption": "青沙浦及海雲台藍線公園 — photo 3"
     },
     {
-      "id": 8,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
       "location": "青沙浦及海雲台藍線公園",
@@ -180,7 +164,7 @@
       "caption": "青沙浦及海雲台藍線公園 — photo 4"
     },
     {
-      "id": 9,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
       "location": "青沙浦及海雲台藍線公園",
@@ -188,7 +172,7 @@
       "caption": "青沙浦及海雲台藍線公園 — photo 5"
     },
     {
-      "id": 10,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
       "location": "青沙浦及海雲台藍線公園",
@@ -196,7 +180,7 @@
       "caption": "青沙浦及海雲台藍線公園 — photo 6"
     },
     {
-      "id": 11,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
       "location": "青沙浦及海雲台藍線公園",
@@ -204,7 +188,7 @@
       "caption": "青沙浦及海雲台藍線公園 — photo 7"
     },
     {
-      "id": 12,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
       "location": "青沙浦及海雲台藍線公園",
@@ -212,7 +196,7 @@
       "caption": "青沙浦及海雲台藍線公園 — photo 8"
     },
     {
-      "id": 13,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
       "location": "韓國聯合國紀念公墓",
@@ -220,9 +204,25 @@
       "caption": "韓國聯合國紀念公墓 — photo 2"
     },
     {
-      "id": 14,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+      "location": "韓國聯合國紀念公墓",
+      "alt": "韓國聯合國紀念公墓 — gallery image 3",
+      "caption": "韓國聯合國紀念公墓 — photo 3"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "韓國聯合國紀念公墓",
+      "alt": "韓國聯合國紀念公墓 — gallery image 2",
+      "caption": "韓國聯合國紀念公墓 — photo 2"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
       "location": "韓國聯合國紀念公墓",
       "alt": "韓國聯合國紀念公墓 — gallery image 3",
       "caption": "韓國聯合國紀念公墓 — photo 3"
@@ -318,7 +318,14 @@
           "Korea Tourism Organization Official"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG"
+      "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "images": [
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp"
+      ]
     },
     {
       "number": 3,
@@ -662,7 +669,12 @@
           "Busan Cultural Foundation"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG"
+      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "images": [
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp"
+      ]
     },
     {
       "number": 7,
@@ -721,7 +733,7 @@
           "Korean Heritage Service / Cultural Heritage Administration"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG"
+      "image": null
     }
   ],
   "routeFlowStops": [
@@ -1141,7 +1153,7 @@
     "product_id": "busan-top-attractions-day-tour",
     "product_type": "small_group",
     "route_type": "fixed_route",
-    "destination_region": "korea_mainland",
+    "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "coach",
     "duration_hours": 9,
@@ -1296,7 +1308,7 @@
     "japanese_speaking_guide_available_on_advance_notice": true
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
     "source_of_truth_note": "matching_profile fields scored against atockorea matching algorithm v2. island=busan introduces new island filter. Single fixed route; no variant overrides.",
     "audit_summary": "Year-round Busan classic 5-stop route. First Busan product in catalog — establishes busan_ region_tag prefix convention parallel to jeju_ used elsewhere. value_for_money_fit=5 reflects $41-47 GetYourGuide market rate.",
@@ -1392,7 +1404,7 @@
         "headlineLine1": "釜山精華景點一日遊",
         "headlineLine2": "一日遊",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+          "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
           "imagePosition": "center 40%",
           "tagline": "釜山最受歡迎的七大景點，小團體一日精華遊",
           "pills": [
@@ -1487,7 +1499,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "海東龍宮寺佛教建築群矗立於東海懸崖之上",
             "caption": "海東龍宮寺——韓國最具特色的海岸寺廟，建於1376年，1930年代重建。",
             "location": "海東龍宮寺，機張郡",
@@ -1496,7 +1508,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/61/2702561_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "露天海岸列車沿著寬闊沙灘旁的沿海軌道行駛",
             "caption": "青沙浦藍線公園——1934年舊鐵路改建而成，2020年轉型為4.8公里海岸列車走廊。",
             "location": "青沙浦藍線公園，海雲台",
@@ -1505,7 +1517,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "聯合國紀念公墓內整齊排列的一排排墓碑",
             "caption": "聯合國紀念公墓——安葬來自21個國家逾2,300名士兵，是全球唯一的聯合國公墓。",
             "location": "聯合國紀念公墓，南區",
@@ -1514,7 +1526,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "甘川文化村五彩繽紛的粉彩色房屋層疊於山坡之上",
             "caption": "甘川文化村——戰後難民聚居地，2009年轉型為公共藝術計畫。",
             "location": "甘川文化村，沙下區",
@@ -1523,7 +1535,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "札嘎其魚市場內擺放於碎冰上的一排排新鮮海鮮",
             "caption": "札嘎其——韓國最大的海鮮市場，世代以來主要由女性經營。",
             "location": "札嘎其市場，中區",
@@ -1532,7 +1544,7 @@
           {
             "id": "g6",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/29/2617829_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "釜山餐廳桌上一碗豬肉湯飯配各式小菜",
             "caption": "午餐品嚐在地美食——豬肉湯飯、密麵或海鮮煎餅，於釜山當地餐廳享用。",
             "location": "釜山在地餐廳",
@@ -1553,7 +1565,7 @@
             "duration": "60 分鐘",
             "name": "接送（釜山市中心3個站點）",
             "category": "出發",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "沿釜山地鐵1號線／2號線依序接送：西面站4號出口（08:30）、釜山站4號出口（08:50）、海雲台站5號出口（09:30）。請選擇距離您飯店最近的出口搭車。海雲台的旅客最後上車，因為行程隨後往東前往龍宮寺，該寺位於機張郡（距海雲台約25分鐘）。",
             "timeUsed": [
               "行程後勤安排（接送）"
@@ -1570,7 +1582,7 @@
             "duration": "75分鐘",
             "name": "海東龍宮寺",
             "category": "海濱佛教寺廟",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+            "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
             "description": "建於1376年，由高麗恭愍王的王師懶翁禪師所創建。壬辰倭亂（1592–98年）期間遭到破壞，1930年代重建。在韓國寺廟中極為獨特，以其濱海環境著稱——韓國大多數佛教寺廟深藏山中，而龍宮寺則直接建於東海海崖之上，是全國最多人拍攝的海濱寺廟。從上方廣場通往寺廟的108級石階，象徵佛教教義中的108種煩惱；下行再上行為自由選擇，並非強制——寺廟上方的觀景台無需爬階即可到達。入口步道兩側排列著十二生肖石像。免費入場；開放時間約05:00–19:30（依季節而異；元旦日出時開放，迎接新年人潮）。",
             "timeUsed": [
               "抵達、購票及行程說明",
@@ -1582,7 +1594,14 @@
               "poi_key": "haedong_yonggungsa",
               "is_attraction": true,
               "fee_krw": 0
-            }
+            },
+            "images": [
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp"
+            ]
           },
           {
             "number": 3,
@@ -1703,7 +1722,7 @@
             "duration": "60分鐘",
             "name": "午餐（釜山在地餐廳）",
             "category": "用餐",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "餐廳備有英文／中文菜單，座位適合團體用餐，位於海雲台海岸地區與釜山市中心景點之間的過渡地帶。典型在地料理：豬肉湯飯（釜山風格豬肉米飯湯，為當地代表性美食，約₩10,000）、密麵（冷小麥麵條，約₩9,000）或海鮮蔥餅（海鮮大蔥煎餅，約₩15,000）。素食、清真及無麩質選項可提前告知安排。午餐預算每人₩10,000–₩20,000，費用由旅客自付。",
             "timeUsed": [
               "行程後勤安排（用餐休息）"
@@ -1785,7 +1804,7 @@
             "duration": "120 分鐘",
             "name": "甘川文化村",
             "category": "山坡藝術村",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "這座山坡村莊建於1950年代，由韓戰難民聚居於沙下區山坡之上，現已成為釜山拍照次數最多的街區。如今色彩繽紛的面貌源自2009年「在釜山夢見馬丘比丘」公共藝術計畫——當時當地藝術家為房屋粉刷彩繪、裝置壁畫與小型雕塑（小王子與狐狸長椅為最受歡迎的拍照景點），並鋪設了階梯馬賽克。這些房屋至今仍有居民居住，訪客在住宅巷弄中請保持輕聲細語。主要拍照路線沿陡峭小巷和階梯行走，約需30至40分鐘；若要深度探索（藝術工作室、咖啡廳、天空步道觀景台），則需安排完整的2小時。可選購「集章遊覽」地圖，費用₩2,000。",
             "timeUsed": [
               "拍照路線漫步",
@@ -1806,7 +1825,7 @@
             "duration": "75 分鐘",
             "name": "札嘎其魚市場",
             "category": "海鮮市場",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "description": "韓國最大的海鮮市場，自1889年起便坐落於釜山海濱。現代室內建築共分兩層：一樓販售活魚、貝類及乾貨海鮮；二樓設有餐廳，可將在樓下購買的魚帶上烹調（韓式生魚片、燒烤或燉煮），另收烹飪費用₩10,000至₩20,000。攤位大多由同一家族的多代女性經營，這一傳統自戰後流離失所的女性魚販重整市場以來從未中斷。營業時間約05:00至22:00；每月第一及第三個週二休市。BIFF廣場（韓國電影明星手印）及國際市場均在步行5分鐘範圍內。",
             "timeUsed": [
               "市場瀏覽與街頭小吃",
@@ -2302,7 +2321,7 @@
       "v15.3_operational_fill": "Filled operational data (visitBasics, convenience, smartNotes) for 5 attraction stops from centralized POI knowledge base. Sources: VisitKorea, VisitBusan, VisitSeoul, official tourism boards.\n  - Stop #2 Haedong Yonggungsa Temple: filled [visitBasics, convenience, smartNotes]\n  - Stop #3 Cheongsapo & Haeundae Blue Line Park: filled [visitBasics, convenience, smartNotes]\n  - Stop #5 UN Memorial Cemetery: filled [visitBasics, convenience, smartNotes]\n  - Stop #6 Gamcheon Culture Village: filled [visitBasics, convenience, smartNotes]\n  - Stop #7 Jagalchi Fish Market: filled [visitBasics, convenience, smartNotes]",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

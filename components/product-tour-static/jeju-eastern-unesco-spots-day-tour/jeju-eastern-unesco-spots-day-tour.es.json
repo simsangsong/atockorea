@@ -14,7 +14,7 @@
       "tour Aldea Seongeup",
       "Jeju grupo pequeño"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+    "ogImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "Tour Jeju Este: UNESCO, Lava y Haenyeo | AtoC",
     "description": "Excursión de un día en Jeju Este: Playa Hamdeok → Aldea Seongeup (UNESCO) → Cueva Micheon → Seongsan Ilchulbong (UNESCO) → Museo Haenyeo. Grupo pequeño, 9 horas, entradas incluidas."
   },
@@ -138,21 +138,13 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
-      "location": "Recogida (4 puntos en Ciudad de Jeju)",
-      "alt": "Recogida (4 puntos en Ciudad de Jeju) — on-route photo",
-      "caption": "Recogida (4 puntos en Ciudad de Jeju)"
-    },
-    {
-      "id": 2,
-      "type": "photo",
       "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "location": "Playa Hamdeok Seoubong",
       "alt": "Playa Hamdeok Seoubong — gallery image 1",
       "caption": "Playa Hamdeok Seoubong — photo 1"
     },
     {
-      "id": 3,
+      "id": 2,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
@@ -160,7 +152,7 @@
       "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 1"
     },
     {
-      "id": 4,
+      "id": 3,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -168,15 +160,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 1"
     },
     {
-      "id": 5,
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
-      "location": "Almuerzo (restaurante local de Jeju)",
-      "alt": "Almuerzo (restaurante local de Jeju) — on-route photo",
-      "caption": "Almuerzo (restaurante local de Jeju)"
-    },
-    {
-      "id": 6,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
@@ -184,7 +168,7 @@
       "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 1"
     },
     {
-      "id": 7,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
       "location": "Museo Haenyeo (buceadoras de Jeju)",
@@ -192,15 +176,7 @@
       "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 1"
     },
     {
-      "id": 8,
-      "type": "photo",
-      "src": "https://images.unsplash.com/photo-1549144511-f099e773c147",
-      "location": "Regreso (2 puntos + Mercado Dongmun)",
-      "alt": "Regreso (2 puntos + Mercado Dongmun) — on-route photo",
-      "caption": "Regreso (2 puntos + Mercado Dongmun)"
-    },
-    {
-      "id": 9,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
       "location": "Playa Hamdeok Seoubong",
@@ -208,7 +184,7 @@
       "caption": "Playa Hamdeok Seoubong — photo 2"
     },
     {
-      "id": 10,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
       "location": "Playa Hamdeok Seoubong",
@@ -216,7 +192,7 @@
       "caption": "Playa Hamdeok Seoubong — photo 3"
     },
     {
-      "id": 11,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
       "location": "Playa Hamdeok Seoubong",
@@ -224,7 +200,7 @@
       "caption": "Playa Hamdeok Seoubong — photo 4"
     },
     {
-      "id": 12,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
@@ -232,7 +208,7 @@
       "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 2"
     },
     {
-      "id": 13,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
@@ -240,7 +216,7 @@
       "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 3"
     },
     {
-      "id": 14,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
@@ -248,7 +224,7 @@
       "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 4"
     },
     {
-      "id": 15,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
@@ -256,7 +232,7 @@
       "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 5"
     },
     {
-      "id": 16,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
@@ -264,7 +240,7 @@
       "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 6"
     },
     {
-      "id": 17,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
@@ -272,7 +248,7 @@
       "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 7"
     },
     {
-      "id": 18,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -280,7 +256,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 2"
     },
     {
-      "id": 19,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -288,7 +264,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 3"
     },
     {
-      "id": 20,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -296,7 +272,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 4"
     },
     {
-      "id": 21,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -304,7 +280,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 5"
     },
     {
-      "id": 22,
+      "id": 19,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -312,7 +288,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 6"
     },
     {
-      "id": 23,
+      "id": 20,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -320,7 +296,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 7"
     },
     {
-      "id": 24,
+      "id": 21,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -328,7 +304,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 8"
     },
     {
-      "id": 25,
+      "id": 22,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -336,7 +312,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 9"
     },
     {
-      "id": 26,
+      "id": 23,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -344,7 +320,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 10"
     },
     {
-      "id": 27,
+      "id": 24,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
       "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
@@ -352,7 +328,7 @@
       "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 2"
     },
     {
-      "id": 28,
+      "id": 25,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
       "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
@@ -360,7 +336,7 @@
       "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 3"
     },
     {
-      "id": 29,
+      "id": 26,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
       "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
@@ -368,7 +344,7 @@
       "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 4"
     },
     {
-      "id": 30,
+      "id": 27,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
       "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
@@ -376,7 +352,7 @@
       "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 5"
     },
     {
-      "id": 31,
+      "id": 28,
       "type": "photo",
       "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
       "location": "Museo Haenyeo (buceadoras de Jeju)",
@@ -384,7 +360,7 @@
       "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 2"
     },
     {
-      "id": 32,
+      "id": 29,
       "type": "photo",
       "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
       "location": "Museo Haenyeo (buceadoras de Jeju)",
@@ -400,7 +376,7 @@
       "name": "Recogida (4 puntos en Ciudad de Jeju)",
       "category": "Salida — 4 puntos de recogida en Ciudad de Jeju",
       "description": "La recogida se concentra en cuatro puntos centrales de Ciudad de Jeju para evitar desplazamientos innecesarios por la mañana: **Aeropuerto Internacional de Jeju** para huéspedes con llegadas ese mismo día u hoteles cerca del aeropuerto; **Ayuntamiento de Jeju**, zona de hoteles de Yongdong/Nohyeon/casco antiguo; **Hagwi-dong**, punto más occidental antes de partir hacia el este; **Mercado Tradicional Dongmun**, zona de hoteles de la costa este de Ciudad de Jeju. \n\nOrden de recogida: Hagwi → Aeropuerto → Ayuntamiento → Dongmun → Ruta 1132 en dirección este hacia Hamdeok. Minibús de **grupo pequeño (máx. aprox. 14 personas)** con guía de habla inglesa. Se reparte **tarjeta de itinerario bilingüe** en la primera parada.",
-      "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+      "image": null,
       "highlights": [
         "**4 puntos de recogida** en Ciudad de Jeju — Aeropuerto, Ayuntamiento, Hagwi, Dongmun",
         "Minibús de grupo pequeño (máx. aprox. 14 personas), guía certificado en inglés",
@@ -878,7 +854,7 @@
       "name": "Almuerzo (restaurante local de Jeju)",
       "category": "Pausa para comer — Zona del puerto de Seongsan-eup",
       "description": "**Pausa de 60 minutos** entre Ilchul Land y Seongsan Ilchulbong en el cinturón de restaurantes junto al puerto de Seongsan-eup, que recibe descargas diarias de pescado fresco. Rotación habitual: **mulhoe** en verano; **haemul jeongsik** en el resto de estaciones. Precio orientativo: ≈ ₩15.000 por persona. \n\nEl guía recomienda el restaurante del día y ayuda con restricciones alimentarias. **Almuerzo no incluido — pago directo.**",
-      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "image": null,
       "highlights": [
         "**Mulhoe** — sopa fría de pescado crudo, especialidad del este de Jeju en verano",
         "**Haemul jeongsik** — menú completo de marisco fresco",
@@ -1122,7 +1098,7 @@
       "name": "Regreso (2 puntos + Mercado Dongmun)",
       "category": "Regreso — Ciudad de Jeju con parada opcional en Mercado Dongmun",
       "description": "**El regreso invierte el orden de las recogidas de la mañana**, con parada opcional en el Mercado Dongmun al final del día: **Mercado Tradicional Dongmun** se encuentra a ~25 min en autobús desde el Museo Haenyeo y ofrece el mercado nocturno más popular de Jeju, con puestos de comida hasta las 23:00 h aproximadamente. \n\nEspecialidades del mercado: halabong (mandarinas de Jeju), galletas de gambas (saeu-pang), tteok (pasteles de arroz) y zumos de cítricos. Los huéspedes que prefieran volver directamente al hotel o al aeropuerto son dejados en sus puntos de recogida habituales. Hora estimada de llegada al aeropuerto: **18:00-18:30 h** según el tráfico.",
-      "image": "https://images.unsplash.com/photo-1549144511-f099e773c147",
+      "image": null,
       "highlights": [
         "Regreso a Ciudad de Jeju con parada opcional en **Mercado Tradicional Dongmun**",
         "Dongmun: mercado nocturno con puestos de comida hasta las 23:00 h",
@@ -1971,7 +1947,7 @@
         "headlineLine1": "Jeju Este",
         "headlineLine2": "UNESCO Día",
         "hero": {
-          "imageUrl": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+          "imageUrl": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
           "imagePosition": "center 35%",
           "tagline": "El tour del este de Jeju con más reseñas — 4,9/5 con 1.148 opiniones, todas las entradas incluidas",
           "pills": [
@@ -2066,7 +2042,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://www.visitjeju.net/image/main/2024/seongsan-ilchulbong.jpg",
+            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
             "alt": "Imagen de Playa Hamdeok Seoubong — entre las tres mejores playas de Jeju",
             "caption": "Playa Hamdeok Seoubong — entre las tres mejores playas de Jeju",
             "location": "Hamdeok-ri, Jocheon-eup, Jeju",
@@ -3229,7 +3205,7 @@
       "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted product profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

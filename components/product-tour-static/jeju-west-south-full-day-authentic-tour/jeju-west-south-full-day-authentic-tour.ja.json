@@ -14,7 +14,7 @@
       "協財海岸ツアー",
       "済州島カフェエリアツアー"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "ogImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "title": "済州島西部・南部 本格日帰りツアー | AtoC Korea"
   },
   "catalog_card": {
@@ -137,21 +137,13 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
-      "location": "ピックアップ（済州市内4カ所）",
-      "alt": "ピックアップ（済州市内4カ所） — on-route photo",
-      "caption": "ピックアップ（済州市内4カ所）"
-    },
-    {
-      "id": 2,
-      "type": "photo",
       "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
       "location": "한라산1100高地湿地（ラムサール条約＋ユネスコ）",
       "alt": "한라산1100高地湿地（ラムサール条約＋ユネスコ） — gallery image 1",
       "caption": "한라산1100高地湿地（ラムサール条約＋ユネスコ） — photo 1"
     },
     {
-      "id": 3,
+      "id": 2,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "location": "柱状節理帯（ユネスコ・ジオパーク）",
@@ -159,15 +151,7 @@
       "caption": "柱状節理帯（ユネスコ・ジオパーク） — photo 1"
     },
     {
-      "id": 4,
-      "type": "photo",
-      "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
-      "location": "ランチ — 大静／安徳 ローカル",
-      "alt": "ランチ — 大静／安徳 ローカル — on-route photo",
-      "caption": "ランチ — 大静／安徳 ローカル"
-    },
-    {
-      "id": 5,
+      "id": 3,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "location": "チョンジェヨン滝（神の池）",
@@ -175,7 +159,7 @@
       "caption": "チョンジェヨン滝（神の池） — photo 1"
     },
     {
-      "id": 6,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "location": "オソルロク・ティーミュージアム＋緑茶畑",
@@ -183,7 +167,7 @@
       "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 1"
     },
     {
-      "id": 7,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
       "location": "ヒョプチェビーチ＋西海岸カフェ通り",
@@ -191,7 +175,7 @@
       "caption": "ヒョプチェビーチ＋西海岸カフェ通り — photo 1"
     },
     {
-      "id": 8,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
       "location": "한라산1100高地湿地（ラムサール条約＋ユネスコ）",
@@ -199,7 +183,7 @@
       "caption": "한라산1100高地湿地（ラムサール条約＋ユネスコ） — photo 2"
     },
     {
-      "id": 9,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
       "location": "한라산1100高地湿地（ラムサール条約＋ユネスコ）",
@@ -207,7 +191,7 @@
       "caption": "한라산1100高地湿地（ラムサール条約＋ユネスコ） — photo 3"
     },
     {
-      "id": 10,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "柱状節理帯（ユネスコ・ジオパーク）",
@@ -215,7 +199,7 @@
       "caption": "柱状節理帯（ユネスコ・ジオパーク） — photo 2"
     },
     {
-      "id": 11,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "柱状節理帯（ユネスコ・ジオパーク）",
@@ -223,7 +207,7 @@
       "caption": "柱状節理帯（ユネスコ・ジオパーク） — photo 3"
     },
     {
-      "id": 12,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "柱状節理帯（ユネスコ・ジオパーク）",
@@ -231,7 +215,7 @@
       "caption": "柱状節理帯（ユネスコ・ジオパーク） — photo 4"
     },
     {
-      "id": 13,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
       "location": "チョンジェヨン滝（神の池）",
@@ -239,7 +223,7 @@
       "caption": "チョンジェヨン滝（神の池） — photo 2"
     },
     {
-      "id": 14,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
       "location": "チョンジェヨン滝（神の池）",
@@ -247,7 +231,7 @@
       "caption": "チョンジェヨン滝（神の池） — photo 3"
     },
     {
-      "id": 15,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
       "location": "オソルロク・ティーミュージアム＋緑茶畑",
@@ -255,7 +239,7 @@
       "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 2"
     },
     {
-      "id": 16,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
       "location": "オソルロク・ティーミュージアム＋緑茶畑",
@@ -263,7 +247,7 @@
       "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 3"
     },
     {
-      "id": 17,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
       "location": "オソルロク・ティーミュージアム＋緑茶畑",
@@ -271,7 +255,7 @@
       "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 4"
     },
     {
-      "id": 18,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
       "location": "オソルロク・ティーミュージアム＋緑茶畑",
@@ -279,7 +263,7 @@
       "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 5"
     },
     {
-      "id": 19,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
       "location": "オソルロク・ティーミュージアム＋緑茶畑",
@@ -287,7 +271,7 @@
       "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 6"
     },
     {
-      "id": 20,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
       "location": "オソルロク・ティーミュージアム＋緑茶畑",
@@ -295,7 +279,7 @@
       "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 7"
     },
     {
-      "id": 21,
+      "id": 19,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
       "location": "オソルロク・ティーミュージアム＋緑茶畑",
@@ -303,7 +287,7 @@
       "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 8"
     },
     {
-      "id": 22,
+      "id": 20,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
       "location": "オソルロク・ティーミュージアム＋緑茶畑",
@@ -311,7 +295,7 @@
       "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 9"
     },
     {
-      "id": 23,
+      "id": 21,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
       "location": "オソルロク・ティーミュージアム＋緑茶畑",
@@ -319,7 +303,7 @@
       "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 10"
     },
     {
-      "id": 24,
+      "id": 22,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
       "location": "オソルロク・ティーミュージアム＋緑茶畑",
@@ -327,7 +311,7 @@
       "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 11"
     },
     {
-      "id": 25,
+      "id": 23,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
       "location": "オソルロク・ティーミュージアム＋緑茶畑",
@@ -335,7 +319,7 @@
       "caption": "オソルロク・ティーミュージアム＋緑茶畑 — photo 12"
     },
     {
-      "id": 26,
+      "id": 24,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
       "location": "ヒョプチェビーチ＋西海岸カフェ通り",
@@ -343,7 +327,7 @@
       "caption": "ヒョプチェビーチ＋西海岸カフェ通り — photo 2"
     },
     {
-      "id": 27,
+      "id": 25,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
       "location": "ヒョプチェビーチ＋西海岸カフェ通り",
@@ -359,7 +343,7 @@
       "name": "ピックアップ（済州市内4カ所）",
       "category": "ピックアップ — 済州市ホテル／ハブ巡回順序",
       "description": "朝の無駄な往復を最小限に抑えるため、**ピックアップは済州市内の4カ所に集約**されています：当日到着のゲスト向け**済州国際空港（제주공항）**；蓮洞／老衡洞／旧市街ホテルエリア向け**済州市庁（제주시청）**；南下ルート前の最西端ピックアップ地点**下貴洞（하귀동）**；そして任意の済州市東部ピックアップ地点**東門伝統市場（동문시장）**。\n\n順序は下貴 → 空港 → 市庁 → 東門 → Route 1100を南下して한라산1100高地湿地トレイルヘッドへ向かいます。ミニコーチは英語ガイド付きの**少人数制（最大約14名）**です。ピックアップ時に**バイリンガルの旅程カード**を配布し、最初の停留所で天候＋Route 1100通行止め情報を案内します。**Route 1100通行止め確認**は出発前に実施 — 雪・凍結で通行止めの場合、1100湿地の立ち寄りは低標高の代替地（通常はミステリーロードまたは安徳渓谷）に変更となります。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": null,
       "highlights": [
         "**ピックアップ4カ所** — 空港、市庁、下貴、東門",
         "西→東の順序で朝のコーチ移動距離を最小化",
@@ -599,7 +583,7 @@
       "name": "ランチ — 大静／安徳 ローカル",
       "category": "昼の休憩 — 済州西南部のローカル料理",
       "description": "**柱状節理と松岳山の間の60分リセット** — 大静／安徳コリドーは両スポットから10〜15分の距離。デフォルトのローテーション：**カルチジョリム（갈치조림、タチウオの煮付け）** — 済州の南海岸は韓国随一のタチウオ水揚げ地で、大静港から毎日水揚げされる；夏は**ムルフェ（물회）**；年間を通じて**フクトジグイ（흑돼지구이、済州黒豚BBQ）**（文化財資料第5号、2015年）；または西南部のスペシャルティとして**コサリユッケジャン（고사리 육개장、シダ＋牛肉の辛いスープ）** — 済州の山岳シダ採取の伝統に根ざし、大静邑で特によく見られる。\n\n**ベジタリアン＋ハラール対応オプション**はローテーション内の1会場で提供 — 送迎時に開示。ランチ会場は**コーチで10分で松岳山**登山口へ。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/5dabd625-523b-48c7-9b02-35ac1e3bd741.webp",
+      "image": null,
       "highlights": [
         "**済州西南部シーフード＋山の料理コリドー** — 大静／安徳",
         "**カルチジョリム（갈치조림）** — 大静港の主要水揚げ",
@@ -625,7 +609,7 @@
       "name": "ソンアクサン山（パノラマ展望スポット）",
       "category": "二重火口の火山丘 — 99峰 + オルレトレイル10 + 第二次世界大戦の歴史",
       "description": "**ソンアクサン（송악산）**は、済州島南西端の大静邑（テジョン邑）に位置する**標高104mの二重火口寄生火山丘**です。この山は**「九十九峰（구십구봉）」**という民間の呼び名で有名で、主山から放射状に広がる小さな火山丘の密な集まりを詩的に表現したものです。連続した噴火活動によって形成されており、火口縁の内側には今も**黒と赤の火山灰の堆積層**が見られます。\n\n地質学的に、ソンアクサンは**二重火口構造**を持ちます：**外側火口（直径約500m、周囲約1.7km）**と、最初の火口の内部で後の副次的噴火によって形成された**内側火口（直径約400m、深さ約69m）**です。訪問の中心となる体験は、崖の縁沿いに続く**2.8kmの海岸ループトレイル**で、ほぼ全体が**よく整備された木製遊歩道と緩やかな階段**からなり、ゆったりとしたペースで**約75分**で完歩できます。\n\nこのトレイルは**済州オルレトレイル第10コース（ファスン → モスルポ）の中心区間**です。ループからのパノラマビューには、南方向に**馬羅島（韓国最南端の島、沖合1.7km）**と**カパ島（平らな麦畑の島、沖合5.5km）**、南東方向に**ヒョンジェ島（「兄弟島」、特徴的な柱状節理の双子岩）**、北東方向に**サンバンサン（395m、凝灰岩溶岩丘）**と**ハルラ山（1,950m、島の中央）**が含まれます。\n\n**歴史的な側面**として、南側の海岸崖には**第二次世界大戦中の日本占領期に掘られた帝国陸軍のトンネル**があります — 特攻艇の掩体壕と弾薬庫で、ソンサン日出峰の18の洞窟と同様のものです。トンネルは解説案内板とともに一般公開されています。**放し飼いの馬やポニー**が斜面で草を食んでおり（伝統的な牧草地利用に由来する済州らしい光景）、**山頂トレイルは環境保全のためのローテーションにより時折閉鎖**されることがありますが、海岸ループは年間を通じてアクセス可能です。\n\n**入場無料**；小さな駐車場あり（ピーク時は満車になることが多い）。晴れた日でも強い海風が吹くため、年間を通じてウィンドブレーカーをお勧めします。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": null,
       "highlights": [
         "**標高104mの二重火口火山** — 外側：直径500m×周囲1.7km、内側：直径400m×深さ69m",
         "**「九十九峰（구십구봉）」**民間の呼び名 — 密集した副次的火山丘の散らばり",
@@ -1098,7 +1082,7 @@
       "name": "降車（済州市内5か所）",
       "category": "降車 — 済州市ハブ順序",
       "description": "**降車は朝の乗車と同じルートに1か所追加したもの**：ヒョプジェ → 西海岸1132号線経由 → 済州市（コーチ所要約40分）。降車順序：霞貴洞（ハグィドン）（西海岸帰路の最初の降車地）→ 済州国際空港 → 済州市庁 → 淵洞/ノヒョン（任意）→ 東門伝統市場。到着予定時刻：ハグィ約19時30分、空港約19時40分、市庁約19時50分、淵洞約19時55分、東門約20時05分。\n\n**済州国際空港からの当日夕方便**は通常利用可能（最終便約21時30分）ですが、ツアー1の南ユネスコルートと比べると時間的余裕は少なめです。当日夕方便をご利用のお客様は、乗車時にガイドへお知らせください（夕日撮影時間の調整のため）。コーチ車内はWi-Fi完備。",
-      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+      "image": null,
       "highlights": [
         "**降車地点5か所** — ハグィ（最初）、空港、市庁、淵洞/ノヒョン、東門",
         "コーチ：ヒョプジェ → 西海岸1132号線経由 → 済州市（約40分）",
@@ -1958,7 +1942,7 @@
         "headlineLine1": "済州西南部・オーセンティック日帰り",
         "headlineLine2": "ツアー",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+          "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
           "imagePosition": "center 35%",
           "tagline": "火山の景観がドラマチックな海岸線とトレンディな海辺のカフェと出会う — 済州の西南エリアを贅沢に巡る旅",
           "pills": [
@@ -2052,7 +2036,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "alt": "低木が茂り、遠くに漢拏山（ハルラサン）の稜線が望める1100高地湿地を横断する木製遊歩道",
             "caption": "漢拏山1100高地湿地 — ユネスコ生物圏保護区の木道",
             "location": "漢拏山1100高地湿地、済州中央部（標高1,100m）",
@@ -2061,7 +2045,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/21/1690de57-e791-4712-84e9-3963a82de0f1.webp",
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "alt": "海から垂直にそびえる六角形の柱状溶岩崖、手すり付き木道から眺める",
             "caption": "柱状節理帯 — ユネスコジオパークの六角形の柱状節理",
             "location": "柱状節理帯、中文海岸、済州南部",
@@ -2070,7 +2054,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/27/617daa5f-d818-47c1-b80d-59f45e96371b.webp",
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "alt": "平らな頂上部のリムトレイルを持つ海岸火山丘、背後に海と沖合の島々を望む",
             "caption": "松岳山リム — 南海岸パノラマループ",
             "location": "松岳山、済州最南西端",
@@ -2079,7 +2063,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "alt": "きれいに並ぶ茶畑の畝が低い美術館建物まで広がるなだらかな緑の茶畑",
             "caption": "オソロック茶博物館と茶畑",
             "location": "オソロック、済州中西部",
@@ -2088,7 +2072,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "alt": "ターコイズブルーの海が広がる白砂のビーチ、海岸沿いのカフェ街と沖合に見える小島",
             "caption": "挟才海岸＋西海岸カフェ街",
             "location": "挟才海岸、翰林、済州西部",
@@ -2110,7 +2094,7 @@
             "name": "ピックアップ（済州市内4か所）",
             "category": "出発",
             "description": "運営会社の他のツアーと同じピックアップパターン：オーシャンスイーツ済州（08:30）、済州国際空港第3ゲート・3階国内線出発ロビー（08:45）、ロッテシティホテル済州（08:55）、新羅免税店済州店（09:05）。ご予約時に最寄りのポイントをお選びください。空港ピックアップは早朝フライト到着のお客様の荷物にも対応しています。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "highlights": [
               "4か所の順次ピックアップポイント",
               "空港荷物対応ピックアップ",
@@ -2331,7 +2315,7 @@
             "name": "昼食（済州地元レストラン）",
             "category": "食事",
             "description": "ガイドおすすめの済州レストランで自由時間。地元名物：フックテジ（済州黒豚）BBQ、モムグク（ヨモギとアワビのスープ）、チョンボクジュク（アワビ粥）。ベジタリアン・ヴィーガン・ハラール対応は事前予約で可能。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "highlights": [
               "黒豚（흑돼지／フックテジ）",
               "ベジタリアン／ヴィーガン／ハラールオプション",
@@ -2361,7 +2345,7 @@
             "name": "松岳山（ソンアクサン）（パノラマ展望台）",
             "category": "海岸パノラマ展望の山",
             "description": "済州島南西端にある小さな火山丘で、外輪山沿いに2.6kmの海岸遊歩道が延びています。展望台からは漢拏山を遠望し、沖合には馬羅島、南岸の断崖絶壁が一望できます。主要なユネスコスポットより混雑が少なく、写真愛好家に人気です。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "highlights": [
               "2.6km海岸外輪山ウォーク",
               "漢拏山＋馬羅島の眺望",
@@ -2791,7 +2775,7 @@
             "name": "降車（済州市内5か所）",
             "category": "帰着",
             "description": "降車場所は5か所：新羅免税店・ロッテシティホテル・済州空港・オーシャンスイーツ済州・東門伝統市場",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "highlights": [
               "降車場所5か所",
               "空港アクセス便利な降車地点"
@@ -3273,7 +3257,7 @@
       "v15.2_charter_consolidation": "Removed \"jeju-popular-sightseeing-private-car-charter-tour\" from competing_products per Jason's one-charter-per-region rule (jeju-island-private-car-charter-tour remains as canonical Jeju charter).",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Jeju Southwest Hydrangea Festival Day Tour | AtoC Korea",
     "metaDescription": "Summer-only southwest Jeju day tour: Hyeopjae Beach, Hallim Park hydrangea festival, Jusangjeolli Cliff, Cheonjeyeon Falls, Camellia Hill, Osulloc tea fields.",
-    "ogImage": "https://www.atockorea.com/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+    "ogImage": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "primaryKeywords": [
       "Jeju hydrangea festival tour",
       "Jeju summer flower tour",
@@ -137,21 +137,13 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "https://images.unsplash.com/photo-1599598425947-5219dc1d4e93",
-      "location": "Hallim Park (Hydrangea Festival)",
-      "alt": "Hallim Park (Hydrangea Festival) — on-route photo",
-      "caption": "Hallim Park (Hydrangea Festival)"
-    },
-    {
-      "id": 3,
-      "type": "photo",
       "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
       "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 1",
       "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 1"
     },
     {
-      "id": 4,
+      "id": 3,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "location": "Camellia Hill (Hydrangea Tunnel)",
@@ -159,7 +151,7 @@
       "caption": "Camellia Hill (Hydrangea Tunnel) — photo 1"
     },
     {
-      "id": 5,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
       "location": "Osulloc Tea Museum & Tea Fields",
@@ -167,7 +159,7 @@
       "caption": "Osulloc Tea Museum & Tea Fields — photo 1"
     },
     {
-      "id": 6,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
       "location": "Hyeopjae Beach",
@@ -175,7 +167,7 @@
       "caption": "Hyeopjae Beach — photo 2"
     },
     {
-      "id": 7,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
       "location": "Hyeopjae Beach",
@@ -183,7 +175,7 @@
       "caption": "Hyeopjae Beach — photo 3"
     },
     {
-      "id": 8,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
@@ -191,7 +183,7 @@
       "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 2"
     },
     {
-      "id": 9,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
@@ -199,7 +191,7 @@
       "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 3"
     },
     {
-      "id": 10,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
@@ -207,7 +199,7 @@
       "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 4"
     },
     {
-      "id": 11,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
       "location": "Camellia Hill (Hydrangea Tunnel)",
@@ -215,7 +207,7 @@
       "caption": "Camellia Hill (Hydrangea Tunnel) — photo 2"
     },
     {
-      "id": 12,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
       "location": "Osulloc Tea Museum & Tea Fields",
@@ -223,7 +215,7 @@
       "caption": "Osulloc Tea Museum & Tea Fields — photo 2"
     },
     {
-      "id": 13,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
       "location": "Osulloc Tea Museum & Tea Fields",
@@ -231,7 +223,7 @@
       "caption": "Osulloc Tea Museum & Tea Fields — photo 3"
     },
     {
-      "id": 14,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
       "location": "Osulloc Tea Museum & Tea Fields",
@@ -239,7 +231,7 @@
       "caption": "Osulloc Tea Museum & Tea Fields — photo 4"
     },
     {
-      "id": 15,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
       "location": "Osulloc Tea Museum & Tea Fields",
@@ -247,7 +239,7 @@
       "caption": "Osulloc Tea Museum & Tea Fields — photo 5"
     },
     {
-      "id": 16,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
       "location": "Osulloc Tea Museum & Tea Fields",
@@ -255,7 +247,7 @@
       "caption": "Osulloc Tea Museum & Tea Fields — photo 6"
     },
     {
-      "id": 17,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
       "location": "Osulloc Tea Museum & Tea Fields",
@@ -263,7 +255,7 @@
       "caption": "Osulloc Tea Museum & Tea Fields — photo 7"
     },
     {
-      "id": 18,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
       "location": "Osulloc Tea Museum & Tea Fields",
@@ -271,7 +263,7 @@
       "caption": "Osulloc Tea Museum & Tea Fields — photo 8"
     },
     {
-      "id": 19,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
       "location": "Osulloc Tea Museum & Tea Fields",
@@ -279,7 +271,7 @@
       "caption": "Osulloc Tea Museum & Tea Fields — photo 9"
     },
     {
-      "id": 20,
+      "id": 19,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
       "location": "Osulloc Tea Museum & Tea Fields",
@@ -287,7 +279,7 @@
       "caption": "Osulloc Tea Museum & Tea Fields — photo 10"
     },
     {
-      "id": 21,
+      "id": 20,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
       "location": "Osulloc Tea Museum & Tea Fields",
@@ -295,7 +287,7 @@
       "caption": "Osulloc Tea Museum & Tea Fields — photo 11"
     },
     {
-      "id": 22,
+      "id": 21,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
       "location": "Osulloc Tea Museum & Tea Fields",
@@ -411,7 +403,7 @@
       "name": "Hallim Park (Hydrangea Festival)",
       "category": "Hydrangea highlight + 9 themed gardens + 2 lava-tube caves",
       "description": "**Hallim Park (한림공원, founded 1971)** is one of the southwest coast's major botanical parks — a **~99,000 m² (originally 100,000 pyeong / 330,580 sqm) garden complex** that **founder Song Bong-gyu transformed from a sandy wasteland into a green paradise** by importing soil and planting palm seeds across a half-century. \n\nThe park draws **~1.2 million visitors annually** and organizes its space into **nine themed gardens**: the **Subtropical Botanic Garden**, the **Palm Tree Avenue**, the **Wild Grass and Flower Garden**, the **Hyeopjaegul + Ssangyonggul Caves**, the **Jeju Stone and Bonsai Garden**, the **Jae-Am Folk Village** (Joseon-era stone-walled hanok with on-site Dolharubang Restaurant), the **Bird Garden**, the **Jeju Stone Exhibit Hall**, and the **Water Garden**. \n\nHallim's defining structural decision is its **monthly festival calendar** — **January Daffodil → February Plum Flower → March Tulip → April Cherry Blossom → May Wild Flower / Bougainvillea → **June Hydrangea** → July–September Lotus + Water Lily → October Cosmos / Pink Muhly → November Chrysanthemum → December Camellia** — a 12-month cycle that usually offers a **named seasonal flower theme throughout the year**. \n\nThe park's two geological landmarks are **Hyeopjaegul Cave (~200m × 10m × 5m, ~25 million years old)** and **Ssangyonggul Cave (~400m × 6m × 3m, 'Two Dragons')** — both part of the same **17 km lava-tube system** but uniquely classified as **'lava-tube and limestone cave features'** because lava-tube walls were later coated with **limestone (calcium carbonate) leached from shells in the soil above**, producing the rare global combination of **lava-tube morphology + limestone stalactites/stalagmites** in a single cave area. \n\nCave temperature holds at **17–18°C year-round**, making them natural summer refuges. The park's guest list reflects its diplomatic stature: former Chinese President Jiang Zemin, former Japanese Prime Minister Nakasone Yasuhiro, former Korean President Kim Dae-jung, former Samsung Chairman Lee Kun-hee, and former Hyundai Group Chairman Chung Ju-yung have all visited.",
-      "image": "https://images.unsplash.com/photo-1599598425947-5219dc1d4e93",
+      "image": null,
       "highlights": [
         "**Founded 1971** by Song Bong-gyu — sandy wasteland transformed into a green paradise",
         "**~99,000 m² / 80 acres** — 9 themed gardens + ~1.2 million visitors per year",
@@ -466,7 +458,7 @@
       "name": "Lunch (Southwest Jeju)",
       "category": "Operational stop — local southwest-Jeju lunch",
       "description": "**Lunch is at a local Jeju-style restaurant in the Hallim / Aewol-tail / Andeok corridor**, selected from a vetted shortlist of family-run establishments that the operator has approved for **English-friendly menus, dietary accommodation (vegetarian + halal-friendly chicken/seafood options on request), and west-coast Jeju specialties** at fair group pricing. \n\nTypical lunch options include **galchi-jorim (braised silver hairtail)**, **heuk-dwaeji bulgogi (Jeju black pork bulgogi)**, **mom-guk (Jeju seaweed-pork soup)**, and **bibimbap with seasonal namul**. \n\n**Mom-guk in particular is a southwest-Jeju regional specialty** that doesn't appear on east-coast tours. Like the east-route lunch, the exact restaurant is selected the day before based on group size, dietary requests, and kitchen availability — guests are notified at the morning briefing. \n\n**Lunch cost is at guests' own expense** (~₩12,000–₩18,000 per person) and is **not included** in the tour fee. Beverages and rice/banchan refills are always included with the meal.",
-      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "image": null,
       "highlights": [
         "**Southwest-Jeju local restaurant** — Hallim / Aewol-tail / Andeok corridor",
         "Vetted shortlist: **English-friendly menus** + dietary accommodation",
@@ -1566,7 +1558,7 @@
     "japan_market_fit": 0.85
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
     "source_of_truth_note": "matching_profile fields scored against atockorea traveler-fit algorithm v2. Single fixed route; no route option overrides.",
     "audit_summary": "Southwest-Jeju Hydrangea Festival route — 9-hr small-group minicoach loop. 5 substantive POI anchors + 1 compound-stop pairing: 1 west-coast emerald beach (Hyeopjae) + 1 120-min hydrangea festival anchor (Hallim Park, June Hydrangea Festival, 9 themed gardens + 2 lava-tube limestone caves) + 1 compound stop (Jusangjeolli columnar + Cheonjeyeon waterfall, Natural Monuments 443 + 378) + 1 hydrangea tunnel anchor (Camellia Hill — 172,000 m², Korea's earliest hydrangeas) + 1 tea-culture finale (Osulloc / Amorepacific). Designed for **June peak hydrangea window (June 10–25)** with Hallim caves + Camellia Hall + Osulloc museum as the 3-tier indoor weather-alternative stack. **Catalog-novel pattern**: Jusangjeolli+Cheonjeyeon compound stop is the first of its kind in the catalog. Cross-batch reuse: 3 of 5 substantive bodies imported verbatim (15a T2 Hyeopjae, 15a T1 Camellia Hill, 14a T2 Osulloc); Hallim Park authored fresh + compound stop authored fresh.",
@@ -2965,7 +2957,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

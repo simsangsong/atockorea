@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "서울 DMZ 프라이빗 투어: 제3땅굴 + 출렁다리 | AtoC Korea",
     "metaDescription": "서울 출발 8~9시간 DMZ 프라이빗 당일 투어: 임진각 평화공원, 제3침투 땅굴, 도라산 전망대, 220m 감악산 붉은 출렁다리.",
-    "ogImage": "https://www.atockorea.com/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+    "ogImage": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
     "primaryKeywords": [
       "서울 DMZ 프라이빗 투어",
       "DMZ 제3땅굴 투어",
@@ -318,7 +318,7 @@
       "images": [
         "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
         "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp > **참고**: 22~25번 항목은 이미지 파일 경로로, 번역 없이 원문 그대로 유지했습니다."
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
       ],
       "imageCredits": [
         {
@@ -1190,7 +1190,7 @@
     "japanese_speaking_guide_available_on_advance_notice": true
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v1",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": [
       "authoring",
       "review",
@@ -1245,7 +1245,7 @@
         "headlineLine1": "서울 DMZ 프라이빗",
         "headlineLine2": "제3땅굴 & 다리",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2493203_image2_1.JPG",
+          "imageUrl": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
           "imagePosition": "center 40%",
           "tagline": "세계에서 가장 견고한 국경에서 220미터 산악 출렁다리까지—프라이빗 하루로 만나는 완전히 다른 두 가지 한국의 모습.",
           "pills": [
@@ -1345,7 +1345,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/03/2493203_image2_1.JPG",
+            "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
             "alt": "임진각 망배단과 자유의 다리, 리본과 추모 현판",
             "caption": "임진각 평화공원 (1972년 조성된 추모 공간)",
             "location": "임진각 평화공원",
@@ -1354,7 +1354,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/98/1977698_image2_1.JPG",
+            "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
             "alt": "선반에 안전모가 쌓여 있는 지하 터널 콘크리트 입구",
             "caption": "제3땅굴 입구 (1978년 발견)",
             "location": "제3땅굴",
@@ -1363,7 +1363,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/03/2493203_image2_1.JPG",
+            "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
             "alt": "DMZ 전경이 내려다보이는 고배율 망원경이 설치된 개방형 전망대",
             "caption": "북한 국경 너머를 바라보는 도라전망대",
             "location": "도라전망대",
@@ -1372,7 +1372,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
             "alt": "울창한 산골짜기를 가로질러 뻗은 긴 빨간 현수교",
             "caption": "감악산 빨간 현수교 — 220미터, 한국에서 가장 긴 빨간 현수교",
             "location": "감악산 빨간 현수교",
@@ -1381,7 +1381,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
+            "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
             "alt": "비무장지대와 감악산 사이 시골길과 농지가 펼쳐진 파주 시골 풍경",
             "caption": "파주 시골 — 비무장지대와 감악산 사이의 드라이브",
             "location": "파주 시골",
@@ -2236,7 +2236,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0

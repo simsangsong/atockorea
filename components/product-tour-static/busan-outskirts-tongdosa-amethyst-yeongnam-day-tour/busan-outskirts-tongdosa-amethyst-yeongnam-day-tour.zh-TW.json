@@ -15,7 +15,7 @@
       "蔚山紫水晶洞窟之旅",
       "釜山UNESCO世界遺產一日遊"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+    "ogImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
     "title": "釜山近郊一日遊・通度寺 + 紫水晶 + 嶺南阿爾卑斯 | AtoC Korea",
     "description": "從釜山出發的巴士一日遊，途經梁山、蔚山及密陽——UNESCO通度寺、地下紫水晶洞窟（可選搭船）、嶺南阿爾卑斯冰谷纜車，最後以甘川文化村作結。"
   },
@@ -162,6 +162,54 @@
       "location": "甘川文化村",
       "alt": "甘川文化村 — 藝廊 3",
       "caption": "甘川文化村 — 壁畫巷弄"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+      "location": "蔚山紫水晶洞窟主題公園",
+      "alt": "紫水晶洞窟 — 多彩地下大廳與水道",
+      "caption": "蔚山紫水晶洞窟 — 多彩地下大廳"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/amethyst-cave/amethyst-cave-entrance-corridor.webp",
+      "location": "蔚山紫水晶洞窟主題公園",
+      "alt": "紫水晶洞窟 — 燈光閃耀的入口通道",
+      "caption": "蔚山紫水晶洞窟 — 燈光通道"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/amethyst-cave/amethyst-cave-boat-passage.webp",
+      "location": "蔚山紫水晶洞窟主題公園",
+      "alt": "紫水晶洞窟 — 多彩泛舟探險",
+      "caption": "蔚山紫水晶洞窟 — 洞窟泛舟探險"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+      "location": "嶺南阿爾卑斯冰谷纜車 (密陽)",
+      "alt": "嶺南阿爾卑斯冰谷纜車 — 飛越森林的纜車",
+      "caption": "嶺南阿爾卑斯冰谷纜車 — 飛越森林的纜車"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
+      "location": "嶺南阿爾卑斯冰谷纜車 (密陽)",
+      "alt": "嶺南阿爾卑斯纜車 — 穿越翠綠山嶺",
+      "caption": "嶺南阿爾卑斯 — 翠綠山嶺間的纜車"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
+      "location": "嶺南阿爾卑斯冰谷纜車 (密陽)",
+      "alt": "嶺南阿爾卑斯 — 連綿山脊的山頂觀景台",
+      "caption": "嶺南阿爾卑斯 — 山頂觀景台遠眺連綿山脊"
     }
   ],
   "itineraryStops": [
@@ -235,10 +283,8 @@
         "admission": "成人₩3,000——已含於本行程費用中；通度寺博物館₩2,000（自費）",
         "walking": "輕鬆至中等——1公里平緩松林參道；碎石／石板鋪面；地勢大致平坦，局部稍有起伏"
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/41/2667141_image2_1.jpg",
-      "images": [
-        "https://tong.visitkorea.or.kr/cms/resource/41/2667141_image2_1.jpg"
-      ]
+      "image": null,
+      "images": []
     },
     {
       "name": "於當地韓式餐廳用午餐（自由參加，費用自理）",
@@ -311,7 +357,13 @@
         "closed": "全年開放（豪雨時偶有安全關閉）",
         "admission": "成人₩8,000——本行程已含；地下遊船₩4,000自費（選購）",
         "walking": "中等難度——洞穴地面不平，部分路段潮濕，整體以平路為主但有小台階；必須穿著包頭鞋"
-      }
+      },
+      "image": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+      "images": [
+        "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+        "/images/tours/amethyst-cave/amethyst-cave-entrance-corridor.webp",
+        "/images/tours/amethyst-cave/amethyst-cave-boat-passage.webp"
+      ]
     },
     {
       "name": "嶺南阿爾卑斯冰谷纜車（密陽）",
@@ -365,7 +417,13 @@
         "closed": "纜車於強風／大雪時停駛（視天候狀況而定）",
         "admission": "纜車來回票價 成人₩18,000 / 兒童₩13,000 — 已含於本行程費用中；冰谷谷地步道免費入場",
         "walking": "輕鬆 — 纜車代替攀爬；天空步道及觀景台地勢平坦；谷地步道地形平緩"
-      }
+      },
+      "image": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+      "images": [
+        "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+        "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
+        "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp"
+      ]
     },
     {
       "name": "甘川文化村",
@@ -424,7 +482,7 @@
         "admission": "入村免費；可選購蓋章地圖約2,000韓元",
         "walking": "體力負擔較大 — 巷道及階梯極為陡峭；多數路段不適合推嬰兒車或輪椅通行"
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
       "images": [
         "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
         "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
@@ -917,7 +975,7 @@
     "product_id": "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
     "product_type": "bus",
     "route_type": "fixed_route",
-    "destination_region": "korea_mainland",
+    "destination_region": "busan_gyeongju",
     "region_type": "gyeongsang_north",
     "vehicle_type": "large_coach",
     "duration_hours": 11,
@@ -951,7 +1009,7 @@
     "photo_level": 1,
     "culture_level": 0.95,
     "relax_level": 0.5,
-    "first_time_fit": 1,
+    "first_time_fit": 0.85,
     "family_fit": 0.85,
     "senior_fit": 0.7,
     "couple_fit": 1,
@@ -965,12 +1023,12 @@
     "mobility_friendly_fit": 0.4,
     "stroller_fit": 0.45,
     "one_day_fit": 1,
-    "same_day_flight_fit": 0.25,
+    "same_day_flight_fit": 0.15,
     "rain_fit": 0.55,
     "value_for_money_fit": 1,
     "iconic_landmark_fit": 1,
     "cafe_fit": 0.5,
-    "food_fit": 0.7,
+    "food_fit": 0.55,
     "nature_fit": 0.95,
     "beach_fit": 0.2,
     "nightlife_fit": 0.1,
@@ -983,7 +1041,7 @@
     "indoor_ratio": 0.25,
     "weather_sensitivity": 0.65,
     "comfort_level": 0.55,
-    "budget_fit": 0.95,
+    "budget_fit": 0.6,
     "premium_fit": 0.25,
     "small_group_fit": 0.15,
     "private_fit": 0.05,
@@ -1033,7 +1091,7 @@
     "customizable_route_fit": 0.1,
     "flexibility_fit": 0.25,
     "fixed_itinerary_fit": 1,
-    "national_park_fit": 0.5,
+    "national_park_fit": 0.25,
     "buddhist_temple_fit": 1,
     "scenic_temple_fit": 1,
     "mural_village_fit": 1,
@@ -1055,15 +1113,41 @@
     "australia_market_fit": 0.9,
     "japan_market_fit": 0.95,
     "first_time_korea_fit": 1,
-    "busan_signature_route_fit": 1,
-    "no_inter_city_travel_fit": 1,
+    "busan_signature_route_fit": 0.4,
+    "no_inter_city_travel_fit": 0.1,
     "english_speaking_guide_provided": true,
     "chinese_speaking_guide_available_on_advance_notice": true,
     "japanese_speaking_guide_available_on_advance_notice": true
   },
   "matching_metadata": {
-    "matching_schema": "tour_matching_profiles_embedded_v2",
+    "matching_schema": "match_tours_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
+    "primary_themes": [
+      "unesco",
+      "buddhist_temple",
+      "nature",
+      "cable_car"
+    ],
+    "secondary_themes": [
+      "mountain",
+      "underground_cave",
+      "mural_village",
+      "natural_monument"
+    ],
+    "best_for": [
+      "first_time_korea",
+      "couples",
+      "nature_lovers",
+      "culture_lovers",
+      "photographers",
+      "history_lovers"
+    ],
+    "not_recommended_for": [
+      "mobility_limited",
+      "very_young_children",
+      "shoppers_only",
+      "nightlife_seekers"
+    ],
     "source_of_truth_note": "Busan outskirts coach day tour: Tongdosa Temple (UNESCO 2018) + Amethyst Cave Theme Park Ulsan + Yeongnam Alps Ice Valley Cable Car Miryang + Gamcheon Culture Village. Sources: KTO VisitKorea, UNESCO World Heritage Centre, Tongdosa official, Miryang City Tourism, Yeongnam Alps Cable Car official, Cultural Heritage Administration Natural Monument No. 224, Wikipedia.",
     "audit_summary": "11-hour Busan-base coach tour covering UNESCO temple + amethyst-mine theme park + 1,019m cable car + Gamcheon. All main admissions bundled. Gamcheon content reused from busan-top-attractions-day-tour. Direct GetYourGuide equivalent positioned at $94; this tour priced $85/$93."
   }

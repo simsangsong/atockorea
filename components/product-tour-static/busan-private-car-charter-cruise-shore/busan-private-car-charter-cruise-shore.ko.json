@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "크루즈 기항지를 위한 부산 프라이빗 전세차 (8시간) | AtoC Korea",
     "metaDescription": "크루즈 승객을 위한 8시간 완전 맞춤형 부산 프라이빗 전세차. 영어 구사 드라이버, 정시 귀환 보장, 호텔/KTX/크루즈 터미널 픽업.",
-    "ogImage": "https://www.atockorea.com/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "ogImage": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
     "primaryKeywords": [
       "부산 프라이빗 전세차",
       "부산 크루즈 기항지 투어",
@@ -31,8 +31,8 @@
       "맞춤형 루트",
       "크루즈 픽업 포함"
     ],
-    "heroImage": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-    "thumbnail": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "heroImage": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
+    "thumbnail": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
     "priceLabel": "차량 1대 8시간 기준 $359 (정가 $379, 1–6인) · 7–12인 2배 · 13인 이상 3배",
     "shortCardDescription": "공인 영어 구사 드라이버 가이드와 함께하는 크루즈 승객을 위한 8시간 부산 프라이빗 전세차. 기본 일정은 UN기념공원, 태종대 절벽, 감천문화마을, 용두산공원, 자갈치시장으로 구성됩니다. 완전 맞춤 변경 가능. 크루즈 터미널, KTX역, 또는 부산 시내 호텔 어디서든 픽업 가능; 선박으로의 정시 귀환 보장.",
     "tags": [
@@ -53,7 +53,7 @@
     "discountPercent": 5
   },
   "hero": {
-    "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "imageUrl": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
     "imagePosition": "center 50%",
     "tagline": "UN기념공원에서 태종대 절벽, 감천의 색채 넘치는 골목, 자갈치의 활기찬 항구까지 — 8시간의 프라이빗 시간, 나만의 루트, 나만의 페이스, 그리고 정시 귀환 보장.",
     "pills": [
@@ -133,130 +133,82 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-      "location": "유엔기념공원 (한국전쟁)",
-      "alt": "유엔기념공원 (한국전쟁) — gallery image 1",
-      "caption": "유엔기념공원 (한국전쟁) — photo 1"
+      "src": "/images/tours/busan-private/busan-private-thumbnail-gwangalli.webp",
+      "location": "광안리 & 광안대교",
+      "alt": "부산 프라이빗 투어 — 광안리 광안대교와 함께한 가족",
+      "caption": "부산 프라이빗 투어 — 광안리 광안대교와 함께한 가족"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-      "location": "태종대 해안 절벽",
-      "alt": "태종대 해안 절벽 — gallery image 1",
-      "caption": "태종대 해안 절벽 — photo 1"
+      "src": "/images/tours/gamcheon-culture-village/gamcheon-panorama.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — 알록달록 산비탈 파노라마",
+      "caption": "감천문화마을 — 알록달록 산비탈 파노라마"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "src": "/images/tours/gamcheon-culture-village/gamcheon-vibrant-viewpoint.webp",
       "location": "감천문화마을",
-      "alt": "감천문화마을 — gallery image 1",
-      "caption": "감천문화마을 — photo 1"
+      "alt": "감천문화마을 — 노란벽 옥상 전망대의 컬러풀 풍경",
+      "caption": "감천문화마을 — 노란벽 옥상 전망대의 컬러풀 풍경"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
-      "location": "용두산공원 & 부산타워",
-      "alt": "용두산공원 & 부산타워 — gallery image 1",
-      "caption": "용두산공원 & 부산타워 — photo 1"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "location": "해동용궁사",
+      "alt": "해동용궁사 — 동해 일출의 절벽 사찰",
+      "caption": "해동용궁사 — 동해 일출의 절벽 사찰"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
-      "location": "남포동 & 자갈치 수산시장",
-      "alt": "남포동 & 자갈치 수산시장 — on-route photo",
-      "caption": "남포동 & 자갈치 수산시장"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+      "location": "해동용궁사",
+      "alt": "해동용궁사 — 바다를 향한 해수관음상",
+      "caption": "해동용궁사 — 바다를 향한 해수관음상"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-      "location": "유엔기념공원 (한국전쟁)",
-      "alt": "유엔기념공원 (한국전쟁) — gallery image 2",
-      "caption": "유엔기념공원 (한국전쟁) — photo 2"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "location": "해동용궁사",
+      "alt": "해동용궁사 — 용 조각과 본전",
+      "caption": "해동용궁사 — 용 조각과 본전"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
-      "location": "유엔기념공원 (한국전쟁)",
-      "alt": "유엔기념공원 (한국전쟁) — gallery image 3",
-      "caption": "유엔기념공원 (한국전쟁) — photo 3"
+      "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+      "location": "청사포 스카이캡슐",
+      "alt": "청사포 스카이캡슐 — 4호 캡슐의 해안 라이드",
+      "caption": "청사포 스카이캡슐 — 4호 캡슐의 해안 라이드"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
-      "location": "태종대 해안 절벽",
-      "alt": "태종대 해안 절벽 — gallery image 2",
-      "caption": "태종대 해안 절벽 — photo 2"
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+      "location": "해운대 블루라인파크",
+      "alt": "해운대 블루라인파크 — 해안 열차 코스",
+      "caption": "해운대 블루라인파크 — 해안 열차 코스"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
-      "location": "태종대 해안 절벽",
-      "alt": "태종대 해안 절벽 — gallery image 3",
-      "caption": "태종대 해안 절벽 — photo 3"
+      "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+      "location": "부산타워 (용두산공원)",
+      "alt": "부산타워 & 용두산공원 — 야경 속 한국 종각",
+      "caption": "부산타워 & 용두산공원 — 야경 속 한국 종각"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
-      "location": "태종대 해안 절벽",
-      "alt": "태종대 해안 절벽 — gallery image 4",
-      "caption": "태종대 해안 절벽 — photo 4"
-    },
-    {
-      "id": 11,
-      "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
-      "location": "태종대 해안 절벽",
-      "alt": "태종대 해안 절벽 — gallery image 5",
-      "caption": "태종대 해안 절벽 — photo 5"
-    },
-    {
-      "id": 12,
-      "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
-      "location": "태종대 해안 절벽",
-      "alt": "태종대 해안 절벽 — gallery image 6",
-      "caption": "태종대 해안 절벽 — photo 6"
-    },
-    {
-      "id": 13,
-      "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-      "location": "감천문화마을",
-      "alt": "감천문화마을 — gallery image 2",
-      "caption": "감천문화마을 — photo 2"
-    },
-    {
-      "id": 14,
-      "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
-      "location": "감천문화마을",
-      "alt": "감천문화마을 — gallery image 3",
-      "caption": "감천문화마을 — photo 3"
-    },
-    {
-      "id": 15,
-      "type": "photo",
-      "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
-      "location": "용두산공원 & 부산타워",
-      "alt": "용두산공원 & 부산타워 — gallery image 2",
-      "caption": "용두산공원 & 부산타워 — photo 2"
-    },
-    {
-      "id": 16,
-      "type": "photo",
-      "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
-      "location": "용두산공원 & 부산타워",
-      "alt": "용두산공원 & 부산타워 — gallery image 3",
-      "caption": "용두산공원 & 부산타워 — photo 3"
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+      "location": "태종대",
+      "alt": "태종대 — 부산 남단의 절경 해안 절벽",
+      "caption": "태종대 — 부산 남단의 절경 해안 절벽"
     }
   ],
   "itineraryStops": [
@@ -284,7 +236,7 @@
           "NamuWiki"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG"
+      "image": null
     },
     {
       "number": 2,
@@ -798,7 +750,7 @@
           "Busan Tourism Organization (Jagalchi Sannakji designation)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+      "image": null,
       "visitBasics": {
         "hours": "**자갈치시장 매일 05:00–22:00**; 활어 경매는 04:00 시작 (관광객 견학은 사전 예약 필요); 남포동 쇼핑 거리 10:30–22:00",
         "closed": "**자갈치: 매월 첫째·셋째 화요일 휴무**; 남포동은 연중무휴",
@@ -832,7 +784,7 @@
         "kb_version": "1.15",
         "verified_date": "2026-04-29"
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG"
+      "image": null
     }
   ],
   "routeFlowStops": [
@@ -1167,7 +1119,7 @@
     "product_id": "busan-private-car-charter-cruise-shore",
     "product_type": "private",
     "route_type": "customizable",
-    "destination_region": "korea_mainland",
+    "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "private_vehicle",
     "duration_hours": 8,
@@ -1474,7 +1426,7 @@
         "headlineLine1": "부산 크루즈 기항지 프라이빗 차량",
         "headlineLine2": "투어",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+          "imageUrl": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
           "imagePosition": "center 45%",
           "tagline": "성산일출봉에서 협재해수욕장, 천지연 폭포까지 — 전용 9시간, 나만의 루트, 나만의 속도로, 전문 드라이버 가이드와 함께합니다.",
           "pills": [
@@ -1569,7 +1521,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/25/1925825_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "성산일출봉 일출 명소",
             "caption": "성산일출봉 일출 명소",
             "location": "성산일출봉",
@@ -1578,7 +1530,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "주상절리대 현무암 절벽 > **참고:** 7번(TourTabsNav), 12번(TourAtAGlance), 25번(TourAtmosphereGallery)은 코드 컴포넌트 식별자로 판단되어 원문 그대로 유지했습니다. 번역이 필요하시면 말씀해 주세요.",
             "caption": "주상절리 현무암 절벽",
             "location": "주상절리 절벽",
@@ -1587,7 +1539,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "협재해수욕장 제주 서부",
             "caption": "협재해수욕장 제주 서부",
             "location": "협재해수욕장",
@@ -1596,7 +1548,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/16/2356516_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "오설록 티 뮤지엄과 차밭",
             "caption": "오설록 티 뮤지엄과 차밭",
             "location": "오설록 차밭",
@@ -1605,7 +1557,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
+            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "서귀포 천지연 폭포",
             "caption": "서귀포 천지연 폭포",
             "location": "천지연 폭포",
@@ -1627,7 +1579,7 @@
             "name": "동쪽 코스: 유네스코 & K-드라마 해안",
             "category": "성산, 우도, 만장굴, 섭지코지",
             "description": "제주의 유네스코 및 K-드라마 대표 명소를 가장 촘촘하게 담은 코스입니다. 주요 방문지로는 성산일출봉(유네스코 일출 봉우리), 우도(페리로 이동하는 해변 섬), 만장굴(유네스코 동굴), 섭지코지(드라마로 유명한 해안 곶), 성읍민속마을, 함덕해수욕장이 포함됩니다.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/08/2505108_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "highlights": [
               "성산일출봉: 유네스코 세계자연유산이자 제주의 대표 일출 명소",
               "우도: 페리로 이동하는 섬으로 백사장 해변과 등대 전망을 감상할 수 있는 곳",
@@ -1670,7 +1622,7 @@
             "name": "서쪽 코스: 해변, 차(茶) & 카페 해안",
             "category": "협재, 한림공원, 오설록, 애월",
             "description": "가장 사진이 아름답고 여유로운 코스입니다. 주요 탐방지로는 협재 해수욕장(제주에서 가장 상징적인 에메랄드빛 해변), 한림공원(아열대 정원과 용암동굴), 오설록 티 뮤지엄(차밭과 카페), 애월 카페 거리(석양 해안과 감성 카페)가 포함됩니다. 커플 여행객과 사진을 즐기는 여행객에게 최적입니다.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/64/2608964_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "highlights": [
               "협재 해수욕장: 에메랄드빛 물빛, 백사장, 비양도 조망",
               "한림공원: 원내 용암동굴 2개를 갖춘 아열대 정원",
@@ -1713,7 +1665,7 @@
             "name": "남부 코스: 폭포 & 화산 해안",
             "category": "천지연, 주상절리, 산방산, 올레시장",
             "description": "가장 경치가 압도적인 코스입니다. 주요 방문지로는 천지연폭포(숲속 폭포), 주상절리대(현무암 기둥 해안), 약천사(동아시아 최대 사찰 중 하나), 산방산(바다 전망의 화산 돔), 정방폭포(아시아에서 바다로 직접 떨어지는 몇 안 되는 폭포 중 하나), 서귀포 올레시장 등이 있습니다.",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/24/3083924_image2_1.JPG",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "highlights": [
               "천지연폭포: 서귀포의 대표적인 숲속 폭포",
               "주상절리대: 남해안의 육각형 현무암 기둥",
@@ -1756,7 +1708,7 @@
             "name": "맞춤 코스: 나만의 하루 일정 만들기",
             "category": "직접 일정을 보내주세요",
             "description": "세 가지 추천 코스 외에도, 방문지를 조합하거나 직접 일정을 보내주실 수 있습니다. 추가 가능한 명소로는 제주 아쿠아플라넷, 에코랜드 테마파크, 산굼부리 분화구, 함덕 해수욕장, 카멜리아 힐, 테디베어 사파리, 서귀포 잠수함(문섬 수중 투어), 돌고래 요트 투어, 송악산, 카페 더 클리프, 난타 공연 등이 있습니다.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202311/22/c42559a5-c909-4603-ae16-24c2e03893a0.webp",
+            "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "highlights": [
               "시간이 허락한다면 동부 유네스코 명소와 서부 차밭을 함께 즐겨보세요",
               "어떤 코스에든 해녀 해산물 점심을 추가해보세요",
@@ -2224,7 +2176,7 @@
       "v15.4_new_tour_creation": "Created new tour from GYG product ID t899592 (Busan private car charter for cruise shore). Structural template: jeju-island-private-car-charter-tour. Content template: busan-small-group-sightseeing-tour-cruise-passengers. POI operational data (visitBasics/convenience/smartNotes) sourced from poi_knowledge_base.json (centralized KB built in Step 2). REASONABLE-ASSUMPTION FIELDS that may need patching once the live GYG page is reviewed: (1) price.amountLabel left empty per jeju-charter convention (per-vehicle pricing confirmed at booking); (2) catalog_card.priceFromUSD null; (3) vehicle capacity assumed 1-3 sedan / 4-7 van based on industry standard, not GYG-confirmed; (4) 8-hour duration assumed based on typical Busan cruise dwell time (6-9h common); (5) reviewsSummary populated with zeros — actual GYG reviews not imported in this pass; (6) hero/og images deferred per v15 P3 workflow. Pickup rule applied per Jason's directive: cruise terminal + KTX + central Busan hotel; Gimhae Airport pickup is a paid add-on, not bundled.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 0,
         "fields_skipped": 0,
         "fields_already_float": 42

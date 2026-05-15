@@ -13,11 +13,11 @@
       "仁川港からソウルへのプライベート送迎",
       "クルーズ寄港地ツアー 韓国"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "ogImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
     "title": "仁川 → ソウル プライベートクルーズ寄港地観光・8時間ドア・トゥ・ドア日帰り"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "thumbnail": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
     "title": "仁川→ソウル・クルーズプライベートカー",
     "priceLabel": "1台あたり US$419〜",
     "shortCardDescription": "船の出港時刻に合わせて組み立てる、8時間のプライベート専用車チャーター。固定スケジュールはありません。仁川クルーズターミナルのタラップでお出迎えし、英語対応のドライバーガイドが景福宮・北村韓屋村＋仁寺洞・お好みのランチ・Nソウルタワー・明洞または曹渓寺をご案内します。ドライバーガイドは出港時刻の60分前を交通渋滞バッファーとして確保するため、乗り遅れの心配はありません。",
@@ -44,7 +44,7 @@
       "カスタマイズ可能",
       "帰船保証"
     ],
-    "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
+    "heroImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp"
   },
   "headlineLine1": "仁川→ソウル・クルーズプライベートカー",
   "headlineLine2": "ツアー",
@@ -55,7 +55,7 @@
     "salePriceUsd": 419
   },
   "hero": {
-    "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "imageUrl": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
     "imagePosition": "center 35%",
     "tagline": "タラップから60分で景福宮へ — 出港時刻に合わせて計画されたプライベートソウル観光",
     "pills": [
@@ -135,90 +135,82 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
-      "location": "景福宮 ＋ 王宮守門将交代儀式",
-      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 1",
-      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 1"
+      "src": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
+      "location": "仁川クルーズターミナル",
+      "alt": "仁川クルーズターミナル — プライベートカーニバルでギャングウェイ送迎",
+      "caption": "仁川クルーズターミナル — プライベートカーニバルでギャングウェイ送迎"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
-      "location": "北村韓屋村 ＋ 仁寺洞",
-      "alt": "北村韓屋村 ＋ 仁寺洞 — gallery image 1",
-      "caption": "北村韓屋村 ＋ 仁寺洞 — photo 1"
+      "src": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
+      "location": "漢江 & Nソウルタワー",
+      "alt": "漢江沿いのプライベートカーニバル — Nソウルタワーの夜景",
+      "caption": "漢江沿いのプライベートカーニバル — Nソウルタワーの夜景"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
-      "location": "Nソウルタワー（南山）",
-      "alt": "Nソウルタワー（南山） — on-route photo",
-      "caption": "Nソウルタワー（南山）"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "location": "景福宮",
+      "alt": "景福宮 — ソウル中心の王宮建築",
+      "caption": "景福宮 — ソウル中心の王宮建築"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
-      "location": "景福宮 ＋ 王宮守門将交代儀式",
-      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 2",
-      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 2"
+      "src": "/images/tours/seoul-private-charter/seoul-private-gyeongbokgung-heungnyemun.webp",
+      "location": "景福宮",
+      "alt": "景福宮 興禮門 — 韓服姿の観光客",
+      "caption": "景福宮 興禮門 — 韓服姿の観光客"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
-      "location": "景福宮 ＋ 王宮守門将交代儀式",
-      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 3",
-      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 3"
+      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "location": "北村韓屋村",
+      "alt": "北村韓屋村 — 伝統の路地",
+      "caption": "北村韓屋村 — 伝統の路地"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
-      "location": "景福宮 ＋ 王宮守門将交代儀式",
-      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 4",
-      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 4"
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
+      "location": "Nソウルタワー（南山）",
+      "alt": "南山のNソウルタワー",
+      "caption": "南山のNソウルタワー"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
-      "location": "景福宮 ＋ 王宮守門将交代儀式",
-      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 5",
-      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 5"
+      "src": "/images/tours/seoul-private-charter/seoul-private-n-seoul-tower-treat.webp",
+      "location": "Nソウルタワー（南山）",
+      "alt": "Nソウルタワー — 麓で味わう甘いひととき",
+      "caption": "Nソウルタワー — 麓で味わう甘いひととき"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
-      "location": "景福宮 ＋ 王宮守門将交代儀式",
-      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 6",
-      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 6"
+      "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+      "location": "広蔵市場",
+      "alt": "広蔵市場 — ソウルの伝統屋台横丁",
+      "caption": "広蔵市場 — ソウルの伝統屋台横丁"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
-      "location": "景福宮 ＋ 王宮守門将交代儀式",
-      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 7",
-      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 7"
+      "src": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
+      "location": "明洞",
+      "alt": "明洞 — 賑やかなショッピング街",
+      "caption": "明洞 — 賑やかなショッピング街"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
-      "location": "景福宮 ＋ 王宮守門将交代儀式",
-      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 8",
-      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 8"
-    },
-    {
-      "id": 11,
-      "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
-      "location": "景福宮 ＋ 王宮守門将交代儀式",
-      "alt": "景福宮 ＋ 王宮守門将交代儀式 — gallery image 9",
-      "caption": "景福宮 ＋ 王宮守門将交代儀式 — photo 9"
+      "src": "/images/tours/seoul-private-charter/seoul-private-lotte-tower-songpa.webp",
+      "location": "ロッテワールドタワー（松坡）",
+      "alt": "ロッテワールドタワー — 松坡にそびえる韓国一の超高層",
+      "caption": "ロッテワールドタワー — 松坡にそびえる韓国一の超高層"
     }
   ],
   "itineraryStops": [
@@ -625,7 +617,13 @@
           "Wikipedia (N Seoul Tower)"
         ]
       },
-      "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG"
+      "image": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
+      "images": [
+        "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
+        "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-57-27.webp",
+        "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-06.webp",
+        "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-10.webp"
+      ]
     },
     {
       "number": 6,
@@ -683,7 +681,11 @@
           "Lotte Department Store official (Myeongdong main branch)",
           "Wikipedia (Myeongdong)"
         ]
-      }
+      },
+      "image": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
+      "images": [
+        "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp"
+      ]
     },
     {
       "number": 7,
@@ -1352,7 +1354,7 @@
         "headlineLine1": "仁川→ソウル・クルーズプライベートカー",
         "headlineLine2": "ツアー",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+          "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
           "imagePosition": "center 35%",
           "tagline": "タラップからわずか60分で景福宮へ — 出航時刻に合わせた完全プライベートなソウルの一日",
           "pills": [
@@ -1451,7 +1453,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "仁川クルーズターミナル到着ホールのタラップ側でのお迎え",
             "caption": "景福宮の正殿",
             "location": "仁川クルーズターミナル",
@@ -1460,7 +1462,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/15/2002115_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "景福宮の正殿と王宮守門将交代儀式",
             "caption": "景福宮での王宮守門将交代儀式",
             "location": "景福宮、ソウル",
@@ -1469,7 +1471,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "北村の尾根沿いに連なる石垣と韓屋の瓦屋根",
             "caption": "北村韓屋村の伝統的な屋根の輪郭",
             "location": "北村韓屋村、ソウル",
@@ -1478,7 +1480,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "南山から望むソウルの全景とNソウルタワー",
             "caption": "曹渓寺の本堂とランタン展示",
             "location": "Nソウルタワー（南山）",
@@ -1487,7 +1489,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2510006_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "夕暮れ時の明洞ショッピングストリートに連なる屋台の灯り",
             "caption": "南山から眺める夕暮れのNソウルタワー",
             "location": "ソウル・明洞",
@@ -1496,7 +1498,7 @@
           {
             "id": "g6",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/48/2493748_image2_1.JPG",
+            "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "alt": "仁川クルーズターミナルの降車ゾーンで待機する専用車",
             "caption": "明洞の屋台グルメとショッピング",
             "location": "仁川クルーズターミナル",
@@ -1518,7 +1520,7 @@
             "name": "クルーズターミナルでのお迎え",
             "category": "出発",
             "description": "ドライバーガイドが名前入りのサインを持って仁川クルーズターミナルの到着ホールでお出迎えします。まず出港（全員乗船）時刻を確認したのち、ソウル中心部まで約1時間のドライブへ。車内はオリエンテーションを兼ねており、通貨・食事・歴史に関するよくある質問に最初の観光スポット到着前にお答えします。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "乗船口でのお迎え",
               "ソウルへ1時間の移動",
@@ -1540,7 +1542,7 @@
             "name": "景福宮＋守門将交代式",
             "category": "朝鮮王朝の王宮",
             "description": "朝鮮王朝（1395〜1910年）の正宮であり、ソウルで最も多く写真に収められる観光スポットです。守門将交代式は毎日10:00と14:00に実施されます（火曜日は休止 — 火曜日は昌徳宮が代替スポットになります）。ガイドがチケットを手配し、正殿・慶会楼・後苑（時間が許せば）をご案内します。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "朝鮮時代の正宮",
               "守門将交代式",
@@ -1576,7 +1578,7 @@
             "name": "北村韓屋村＋仁寺洞",
             "category": "韓屋文化遺産村",
             "description": "宮殿から車で少し、または徒歩約10分の距離。北村の保存された15世紀の路地には今も住民が暮らしており（そのため、指定エリアでは静かにするようお願いしています）。少し下った仁寺洞は、ソウル最大の伝統芸術・工芸地区で、陶磁器、書道用品、伝統茶、韓紙、韓服レンタル、そして回廊型のサムジキル・ショッピングコンプレックスが揃っています。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "15世紀の韓屋路地",
               "伝統工芸品とお茶",
@@ -1612,7 +1614,7 @@
             "name": "昼食（お好みで）",
             "category": "お食事",
             "description": "自由時間・ご自身でお選びください：インサドンのレストランで伝統的な韓国宮廷料理やビビンバを、景福宮近くのトソクチョンでサムゲタン（参鶏湯）を、または北村近くのカジュアルな韓国焼肉もございます。食事制限（ハラール・ベジタリアン・アレルギーなど）に応じてドライバーガイドが具体的にご提案します。事前にお申し付けいただければ、ハラール対応ルートの手配も可能です",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "インサドンの宮廷料理",
               "トソクチョンのサムゲタン",
@@ -1635,7 +1637,7 @@
             "name": "Nソウルタワー（南山）— 任意の展望スポット",
             "category": "象徴的なタワー（展望スポット）",
             "description": "車で南山を上り、タワー基部からソウル中心部・漢江・周辺の山並みを一望できます。任意の展望台入場料は1人あたり約₩21,000（別途お支払い）。出港時刻が迫っている場合は、展望台入場を省略してタワー基部の写真スポットのみに立ち寄ることで、30分以上の時間を節約できます",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/29/2005629_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "市街地のパノラマビュー",
               "ラブロック（南京錠）の写真スポット",
@@ -1670,7 +1672,7 @@
             "name": "明洞（ショッピング＆屋台グルメ）または曹渓寺",
             "category": "ショッピング＆地元文化",
             "description": "ご興味に合わせた2つの選択肢。明洞（韓国を代表するショッピングストリート）では、Kビューティーショップ、屋台グルメ（エッグパン・ホットク・トルネードポテト）、免税カウンターをお楽しみいただけます。曹渓寺（韓国曹渓宗の総本山）では、国内最大の一木造り釈迦如来仏と、季節ごとのランタン装飾で彩られる中庭が静かなひとときを演出します。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "明洞の屋台グルメとKビューティー",
               "または曹渓寺（仏教寺院）",
@@ -1692,7 +1694,7 @@
             "name": "クルーズターミナルへ帰着",
             "category": "帰着",
             "description": "ソウル→仁川クルーズターミナルへ直行、約60分。ドライバー兼ガイドが予定の降車時刻と乗船締め切り時刻の間に60分のバッファーを設けているため、交通渋滞で乗船が遅れる心配はありません。ターミナルゲート前に直接お降りいただけます。",
-            "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "image": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
             "highlights": [
               "仁川まで約1時間のドライブ",
               "乗船締め切り60分前の安全バッファー",
@@ -2117,7 +2119,7 @@
       "v15": "P3 round 1 — SEO trim. seo.pageTitle rewritten to ≤65 chars (was 14/25 over 70); seo.metaDescription rewritten to ≤168 chars (was 25/25 over 170). primaryKeywords and ogImage unchanged. Hero/OG images, POI verification, review imports, and routePhases enrichment deferred to later P3 rounds.",
       "v17_schema_unification": {
         "date": "2026-04-28",
-        "description": "Phase 1: Converted matching_profile scores from 1-5 int scale to 0-1 float scale to match the 3 Step 3 new tours. Mapping 1→0.20, 2→0.40, 3→0.60, 4→0.80, 5→1.00. Mechanical conversion preserves ordinal information; verified-fact recalibration happens in subsequent enhancement batches.",
+        "description": "Phase 1: Standardized matching_profile scores to the current 0-1 float scale used by match_tours.matching_profile.",
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
