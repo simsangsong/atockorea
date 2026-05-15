@@ -1214,7 +1214,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                 )}
 
                 <motion.div
-                  className="relative mx-4 max-h-[82vh] max-w-5xl touch-pan-y"
+                  className="relative mx-4 max-h-[90vh] w-[min(95vw,1400px)] touch-pan-y sm:mx-10"
                   onClick={(e) => e.stopPropagation()}
                   onContextMenu={(e) => e.preventDefault()}
                   drag="x"
@@ -1236,14 +1236,14 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                       decoding="async"
                       draggable={false}
                       onContextMenu={(e) => e.preventDefault()}
-                      initial={{ opacity: 0, scale: 0.72, filter: "blur(10px)" }}
-                      animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                      exit={{ opacity: 0, scale: 0.86, filter: "blur(6px)" }}
-                      transition={{ duration: 0.46, ease: [0.34, 1.35, 0.64, 1] }}
-                      className="max-h-[82vh] w-auto rounded-xl shadow-2xl tour-photo-grade tour-photo-protected"
+                      initial={{ opacity: 0, scale: 0.28, y: 180, filter: "blur(14px)" }}
+                      animate={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
+                      exit={{ opacity: 0, scale: 0.86, y: 0, filter: "blur(6px)" }}
+                      transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
+                      className="mx-auto block max-h-[90vh] w-auto max-w-full rounded-xl shadow-2xl tour-photo-grade tour-photo-protected"
                     />
                   </AnimatePresence>
-                  <TourPhotoOverlay src={galleryPhotos[lightboxIndex]} size="lg" className="p-5" />
+                  <TourPhotoOverlay src={galleryPhotos[lightboxIndex]} size="lg" />
                 </motion.div>
 
                 {galleryPhotos.length > 1 && (

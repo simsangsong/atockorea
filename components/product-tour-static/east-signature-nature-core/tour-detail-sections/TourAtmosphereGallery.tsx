@@ -8,18 +8,26 @@ import { TourPhotoOverlay } from "@/components/tour/TourPhotoOverlay";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
 const LIGHTBOX_EASE = [0.34, 1.35, 0.64, 1] as const;
+/** "Fly from album": first open lifts the photo up from below at small scale
+ *  with strong blur, settling into focus. Subsequent next/prev navigations
+ *  slide horizontally with the lighter scale+blur transition. */
 const LIGHTBOX_VARIANTS = {
-  enter: (dir: number) => ({
-    opacity: 0,
-    scale: 0.72,
-    x: dir > 0 ? 40 : dir < 0 ? -40 : 0,
-    filter: "blur(10px)",
-  }),
-  center: { opacity: 1, scale: 1, x: 0, filter: "blur(0px)" },
+  enter: (dir: number) =>
+    dir === 0
+      ? { opacity: 0, scale: 0.28, x: 0, y: 180, filter: "blur(14px)" }
+      : {
+          opacity: 0,
+          scale: 0.78,
+          x: dir > 0 ? 50 : -50,
+          y: 0,
+          filter: "blur(10px)",
+        },
+  center: { opacity: 1, scale: 1, x: 0, y: 0, filter: "blur(0px)" },
   exit: (dir: number) => ({
     opacity: 0,
     scale: 0.86,
     x: dir > 0 ? -28 : dir < 0 ? 28 : 0,
+    y: 0,
     filter: "blur(6px)",
   }),
 } as const;
@@ -259,7 +267,7 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
           </button>
 
           <motion.div
-            className="relative max-w-4xl max-h-[80vh] mx-16 touch-pan-y"
+            className="relative mx-4 max-h-[90vh] w-[min(95vw,1400px)] touch-pan-y sm:mx-10"
             onClick={(e) => e.stopPropagation()}
             onContextMenu={(e) => e.preventDefault()}
             drag="x"
@@ -281,16 +289,19 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                 decoding="async"
                 draggable={false}
                 onContextMenu={(e) => e.preventDefault()}
-                className="max-h-[80vh] w-auto rounded-xl shadow-2xl tour-photo-grade tour-photo-protected"
+                className="mx-auto block max-h-[90vh] w-auto max-w-full rounded-xl shadow-2xl tour-photo-grade tour-photo-protected"
                 custom={navDirection}
                 variants={LIGHTBOX_VARIANTS}
                 initial="enter"
                 animate="center"
                 exit="exit"
-                transition={{ duration: 0.46, ease: LIGHTBOX_EASE }}
+                transition={{
+                  duration: navDirection === 0 ? 0.58 : 0.46,
+                  ease: navDirection === 0 ? [0.22, 1, 0.36, 1] : LIGHTBOX_EASE,
+                }}
               />
             </AnimatePresence>
-            <TourPhotoOverlay src={galleryItems[activeIndex].src} size="lg" className="p-5" />
+            <TourPhotoOverlay src={galleryItems[activeIndex].src} size="lg" />
             {galleryItems[activeIndex].type === "video" && (
               <div className="absolute inset-0 flex items-center justify-center rounded-xl">
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/95 shadow-xl cursor-pointer hover:scale-105 transition-transform">

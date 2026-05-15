@@ -118,20 +118,20 @@ export function TourPhotoOverlay({
   const cloud =
     size === "xs" ? { text: "text-[5.5px] tracking-[0.12em]", px: 5, py: 2.5 } :
     size === "sm" ? { text: "text-[6px] tracking-[0.14em]", px: 7, py: 3 } :
-    size === "lg" ? { text: "text-[11px] tracking-[0.22em]", px: 20, py: 8 } :
+    size === "lg" ? { text: "text-[8px] tracking-[0.18em]", px: 11, py: 4.5 } :
     { text: "text-[6.5px] tracking-[0.16em]", px: 8, py: 3.5 };
 
   const stopSize =
     size === "xs" ? "text-[7px]" :
     size === "sm" ? "text-[8.5px]" :
-    size === "lg" ? "text-[22px]" :
+    size === "lg" ? "text-[14px]" :
     "text-[10px]";
 
   // Bigger insets so badges and stop names breathe away from the photo edges.
   const insetClass =
     size === "xs" ? "p-2" :
     size === "sm" ? "p-3.5" :
-    size === "lg" ? "p-7" :
+    size === "lg" ? "p-8" :
     "p-4";
 
   return (
