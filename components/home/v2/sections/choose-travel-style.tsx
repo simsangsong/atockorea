@@ -52,7 +52,10 @@ export function ChooseTravelStyle() {
           </h2>
         </div>
 
-        <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-none md:mx-0 md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0 md:snap-none">
+        {/* relative wrapper hosts the right-edge fade overlay so users see
+            "more →" on mobile where the scrollbar is hidden. */}
+        <div className="relative -mx-4 md:mx-0">
+        <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-none md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0 md:snap-none">
           {/* Small Group — featured (dark navy, emerald accent) */}
           <div
             className="relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-slate-700/50 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 p-4 md:p-5 shadow-home-offer-smgroup transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-home-offer-smgroup-hover scroll-animate flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
@@ -210,6 +213,11 @@ export function ChooseTravelStyle() {
               </Link>
             </V0ShadcnButton>
           </div>
+        </div>
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-slate-50 via-slate-50/90 to-transparent md:hidden"
+          />
         </div>
       </div>
     </section>

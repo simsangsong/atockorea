@@ -120,8 +120,13 @@ Order matters — earlier items make later ones easier:
    - Hero destination radio + style-chip buttons gained `.focus-ring`.
    - `shadow-home-offer-*` / `shadow-home-hero-match` named tokens
      intentionally kept (tuned for premium photo offer cards).
-4. **Snap-scroll edge fade + peek + dot indicator** — Destinations,
-   Choose Travel Style, Featured.
+4. [x] **Snap-scroll edge fade** — Destinations, Choose Travel Style,
+   Featured Products each got a `w-14` right-edge gradient overlay
+   (mobile only, hidden md+) that fades the section background over the
+   rightmost cards. Signals "more →" since the scrollbar is hidden.
+   Existing peek widths (39 / 68 / 44 vw) already met the ≥20% next-card
+   rule, no card width changes. Dot indicator deferred to Phase 3
+   (needs scroll-driven state + IntersectionObserver).
 5. **Hero H1 editorial italic** (Playfair Display) with single accent word.
 
 ### 🚀 Phase 3 — Differentiating Motion & Storytelling (2–3 weeks)
@@ -206,8 +211,9 @@ phase rollup honest.
 
 ## Working Order — Next Up
 
-**Phase 1 complete** ✅, **Phase 2 Steps 1–3 complete** ✅.
+**Phase 1 complete** ✅, **Phase 2 Steps 1–4 complete** ✅.
 
-Next concrete step: **Phase 2 Step 4 — Mobile snap-scroll affordance**
-(right-edge fade + ≥20% next-card peek + optional dot-progress) across
-Destinations, Choose Travel Style, Featured Products.
+Next concrete step: **Phase 2 Step 5 — Hero H1 editorial italic**
+(introduce Playfair Display italic for the hero headline with a single
+amber-700 accent word; reshape headline copy if needed to land in two
+crisp lines).

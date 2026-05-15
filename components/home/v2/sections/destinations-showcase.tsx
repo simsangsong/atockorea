@@ -75,21 +75,31 @@ export function DestinationsShowcase() {
           </p>
         </div>
 
-        <div className="-mx-4 flex snap-x snap-mandatory gap-3.5 overflow-x-auto px-4 pb-3 scrollbar-hide md:mx-auto md:grid md:max-w-4xl md:auto-rows-fr md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
-          {DESTINATIONS.map((dest) => (
-            <div
-              key={dest.id}
-              className="w-[39vw] flex-shrink-0 snap-start md:w-auto"
-            >
-              <DestinationCard
-                name={t(dest.nameKey)}
-                imageSrc={dest.imageSrc}
-                imageAlt={t(dest.altKey)}
-                badge={t(dest.taglineKey)}
-                href={`/tours/list?destination=${encodeURIComponent(dest.id)}`}
-              />
-            </div>
-          ))}
+        {/* Mobile snap-scroll wrapped in `relative` so the right-edge fade can
+            absolutely position. The fade signals "more content →" since the
+            scrollbar is hidden. Hidden on md+ where the grid layout shows
+            everything at once. */}
+        <div className="relative -mx-4 md:mx-auto md:max-w-4xl">
+          <div className="flex snap-x snap-mandatory gap-3.5 overflow-x-auto px-4 pb-3 scrollbar-hide md:grid md:auto-rows-fr md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
+            {DESTINATIONS.map((dest) => (
+              <div
+                key={dest.id}
+                className="w-[39vw] flex-shrink-0 snap-start md:w-auto"
+              >
+                <DestinationCard
+                  name={t(dest.nameKey)}
+                  imageSrc={dest.imageSrc}
+                  imageAlt={t(dest.altKey)}
+                  badge={t(dest.taglineKey)}
+                  href={`/tours/list?destination=${encodeURIComponent(dest.id)}`}
+                />
+              </div>
+            ))}
+          </div>
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-white via-white/90 to-transparent md:hidden"
+          />
         </div>
       </div>
     </section>
