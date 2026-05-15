@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { cookies } from "next/headers";
-import { Inter, Playfair_Display, Cormorant_Garamond } from "next/font/google";
+import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 // home-v2.css and home-v2-fidelity.css are imported by components/home/HomeMainBody so they
@@ -18,25 +18,6 @@ import { rootHtmlLangFromNextLocaleCookie } from "@/lib/rootHtmlLangFromCookie";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap",
-});
-
-/** Latin display — brand mark & editorial accents (tour-product / premium surfaces).
-    Italic variants power the tour photo stop-name overlays. */
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-display-serif",
-  weight: ["500", "600", "700", "800"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-/** Editorial italic serif for tour photo stop-name overlays (magazine feel) */
-const cormorantGaramond = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-editorial-serif",
-  weight: ["400", "500", "600"],
-  style: ["italic", "normal"],
   display: "swap",
 });
 
@@ -83,7 +64,7 @@ export default async function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap"
         />
       </head>
-      <body className={`${inter.variable} ${playfairDisplay.variable} ${cormorantGaramond.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
