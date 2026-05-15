@@ -44,9 +44,12 @@
   "headlineLine1": "済州プライベートカーチャーター",
   "headlineLine2": "ツアー",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "119",
     "currency": "USD",
-    "per": "vehicle"
+    "per": "vehicle",
+    "salePriceUsd": 119,
+    "originalPriceUsd": 119,
+    "discountPercent": 0
   },
   "hero": {
     "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
@@ -1813,6 +1816,12 @@
           }
         }
       }
+    }
+  },
+  "sql_overrides": {
+    "tours": {
+      "price": 119,
+      "original_price": 119
     }
   }
 }
