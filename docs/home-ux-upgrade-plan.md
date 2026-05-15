@@ -1,7 +1,34 @@
 # AtoC Korea — Home UX Upgrade Plan & Rules
 
 > Living document. Every UI/UX upgrade on the home page (and adjacent surfaces)
-> must read and follow this file. Last reviewed: 2026-05-15.
+> must read and follow this file. Last reviewed: 2026-05-15 (post-Apple-audit).
+
+## North Star — premium vs tacky
+
+Two anchor terms to align every micro-decision:
+
+**🟢 PREMIUM (Apple-grade) means restraint.**
+- One accent colour, used 2–3 times on the page max.
+- Type hierarchy comes from size + weight, **never** from style swaps (no italic
+  serif for emphasis, no gradient text, no rainbow tinted icons).
+- Letter-spacing is tight on display sizes (-0.02em to -0.04em).
+- Whitespace is the primary design tool. If unsure, add 16px more.
+- Animation curves are smooth `cubic-bezier(0.4, 0, 0.2, 1)`, never bouncy.
+- Photography fills the frame. Overlays/badges are minimal or absent.
+- Shadows are subtle, single-layer, monochrome.
+- Buttons are solid + tight + a single shape across the page.
+
+**🔴 TACKY (avoid) means decoration.**
+- Multi-stop gradient text on headlines.
+- Italic serif (Playfair, Cormorant, Lora) for "magazine feel" — almost always
+  reads cheap on the web.
+- Eyebrow labels wrapped in dotted decoration ( ●  WHY ATOC KOREA  ● ).
+- Multi-layer drop shadows with colour tints (cyan, amber, etc).
+- Rainbow icon palette (navy + emerald + sky + amber on the same row).
+- Bouncy spring animations with overshoot — they read as toy-app, not Apple.
+- Mixed button shapes/colours on one page.
+- Costume-jewelry decorative badges (e.g. clouds, ribbons) over photography.
+- Inflated rating/booking numbers used as decoration.
 
 ## Initial Audit (executive summary)
 
@@ -50,14 +77,22 @@ modern scroll/motion choreography.
    - `--shadow-3` — elevated lightbox / modal (8+24px close, 40px diffuse)
 
 6. **Typography stack:**
-   - Display headlines (Hero H1, section eyebrow accents): Playfair Display
-     italic via `--font-display-serif`.
-   - Section H2 / card titles: Inter `font-bold` `tracking-tight`.
+   - **Single family — Inter** (with system fallbacks `-apple-system`,
+     `BlinkMacSystemFont`, `SF Pro Display`). Apple-grade homes don't mix
+     a serif display face with a sans body — the unity is what makes them
+     feel premium.
+   - Hero H1: Inter italic 500, `letter-spacing: -0.025em`, large sizes.
+   - Section H2 / card titles: Inter `font-bold tracking-tight`.
    - Body: Inter, 14–16px, `leading-relaxed`.
-   - Editorial captions / photo overlays: Playfair Display Italic 700.
+   - Photo overlays / captions: Inter italic 500 (not Playfair / Cormorant
+     — italic serif reads as 2010s wedding-invitation).
+   - **Never** use gradient text on a headline. Hierarchy is size+weight.
 
 7. **Motion discipline:**
+   - **Default ease**: `cubic-bezier(0.4, 0, 0.2, 1)` (smooth, no overshoot).
+     Reserve overshoot eases for genuine "bounce" gestures only.
    - Hover lift: `-translate-y-0.5` + `shadow-2` on cards, 220ms.
+   - Lightbox / open-from-thumbnail: scale 0.95 → 1, not 0.28 → 1. Subtle.
    - Scroll-linked: introduce as a Phase 3 pattern, not piecemeal.
    - Always pair with `prefers-reduced-motion` fallback.
 
@@ -163,6 +198,87 @@ Order matters — earlier items make later ones easier:
 - [ ] Section transitions reworked from 10px gradient to organic dividers.
 - [ ] Snap-scroll dot-progress indicator (deferred from Phase 2 Step 4).
 
+### 🍎 Phase 4 — Apple-grade Polish (post-audit, 2026-05-15)
+
+After scoring Phases 1–3 against the "premium vs tacky" north star, the home
+still carries decorative tells that block the Apple grade. Phase 4 strips
+them out, in priority order.
+
+**Typography**
+
+- [ ] Drop Playfair Display + Cormorant Garamond from the project. Replace
+      `--font-display-serif` (where still in use) with Inter italic.
+- [ ] Hero H1 (already converted to Inter italic in this session) — verify
+      sizes at 1.85 / 2.4 / 3.1rem with `-0.025em` tracking on every
+      breakpoint.
+- [ ] Tour photo bottom-right captions (`TourPhotoOverlay`) move from
+      `--font-display-serif` italic 700 → Inter italic 500 with
+      `letter-spacing: -0.015em`.
+
+**Decoration purge**
+
+- [ ] Remove the SVG cumulus cloud badge from `TourPhotoOverlay`. Replace
+      with a single thin uppercase region label (10px, tracking 0.18em,
+      white at 70% opacity) — no fill, no stroke, no SVG. Or remove the
+      region label entirely; the bottom-right stop name carries enough.
+- [ ] Eyebrow labels across all sections — drop the bracketing dots
+      ( ●  ATOC ONLY  ● ) and the inner shadow pill. Use plain uppercase
+      label at 10–11px, accent colour, letter-spacing 0.18em.
+- [ ] Hero trust-panel amber gradient background → single soft neutral
+      (`--surface-card-soft`). Apple-grade trust signals don't shout.
+- [ ] Emoji icons (🤝) — remove. Use Lucide outline if a glyph is needed.
+
+**Colour reduction**
+
+- [ ] Why-AtoC pillar icons (navy / emerald / amber / sky gradients) →
+      one monochrome treatment (slate-900 outline on white, or white on
+      slate-900 fill). Visual differentiation comes from the icon shape
+      alone.
+- [ ] Process Operational step-icon gradients (primary / emerald / sky /
+      amber) → same neutral treatment, with the small uppercase step
+      label as the accent.
+- [ ] Final CTA trust-tile icons (amber star / emerald check / blue
+      clock / sky user) → single monochrome slate-700 set.
+- [ ] `shadow-home-offer-*` shadow tokens currently carry colored tints
+      (cyan, violet). Either drop the tint (single greyscale shadow) or
+      retire the token in favour of `--shadow-2`.
+
+**Shape + button consistency**
+
+- [ ] Canonical button shape: `rounded-full` for primary/secondary,
+      `rounded-card` only for full-bleed cards/panels. Audit every
+      `<button>` / `<Link>` and align.
+- [ ] Single primary button visual: solid black (`bg-slate-900`,
+      `text-white`), rounded-full, no gradient, no inset white highlight.
+      Use this across hero matcher CTA, Final CTA primary, Sticky CTA,
+      "View all tours" outline.
+
+**Spacing inflation**
+
+- [ ] Section vertical padding scale bumped: `--section-py-sm: 64px`
+      (was 56), `--section-py-md: 96px` (was 80), `--section-py-lg: 144px`
+      (was 112). Apple uses 96–160px between sections on most marketing
+      pages.
+- [ ] Eyebrow → H2 margin: bump from `mb-2` (8px) to `mb-3 md:mb-4`
+      (12/16px). H2 → subtitle margin: same.
+
+**Photography presence**
+
+- [ ] Hero minimum height — bump 32 / 34 / 39vh → 56 / 60 / 72vh. The
+      current hero is so short the photo barely registers; Apple landing
+      pages routinely use 80vh+ hero.
+- [ ] Destinations cards (currently 39vw mobile) — consider portrait
+      cards filling 70vw on mobile so each destination photo gets real
+      presence.
+
+**Animation calm-down**
+
+- [ ] Lightbox open animation (scale 0.28 → 1, y +180) — too theatrical.
+      Reduce to scale 0.95 → 1, no y offset, 0.32s `cubic-bezier(0.4, 0, 0.2, 1)`.
+- [ ] Hero parallax — verify the -22% photo translate isn't too aggressive
+      on long-form scroll. Consider -12% to -15%.
+- [ ] All current overshoot eases `[0.34, 1.35, 0.64, 1]` → standard ease.
+
 ## Definition of Done (every PR)
 
 Before merging any home upgrade work, verify:
@@ -240,8 +356,17 @@ phase rollup honest.
 
 **Phase 2 complete** ✅, **Phase 3 Steps 1–4 complete** ✅.
 
-Next: **Phase 3 Step 5 — Organic section transitions**. Replace the
-two `<div className="h-10 bg-gradient-to-b ...">` color-band dividers
-between cream → dark → white sections with something less perfunctory —
-options include a thin photo strip, an SVG organic shape, or a single
-typographic divider mark.
+**Pivot:** rather than finishing Phase 3 Step 5 (organic section
+transitions) next, do **Phase 4 — Apple-grade Polish** because the
+current home has too many "tacky tells" that block premium read. The
+biggest visual wins are:
+
+1. **Decoration purge** (cumulus cloud SVG, eyebrow dots, emoji, gradient
+   trust panel). Quick + huge readability gain.
+2. **Colour reduction** (4-colour pillar/step icons → monochrome). One
+   commit, transforms the whole feel.
+3. **Typography unification** (drop Playfair + Cormorant, Inter italic
+   only). Already started — hero H1 just migrated this session.
+
+Run those three first, then revisit Phase 3 Step 5 and the snap-scroll
+dot indicator.

@@ -175,18 +175,15 @@ export function HeroSection() {
               aria-hidden
               className="pointer-events-none absolute -inset-x-10 -inset-y-6 -z-10 rounded-[3rem] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.72)_35%,rgba(0,0,0,0.45)_60%,rgba(0,0,0,0.18)_80%,transparent_95%)] md:-inset-x-16 md:-inset-y-8"
             />
-            {/* Hero H1 — Playfair Display italic at weight 500 reads as a
-                magazine cover line over the photo crossfade. Tight leading +
-                slight positive letter-spacing offsets italic's compressed
-                visual rhythm; multi-layer drop shadow preserves contrast
-                against bright Ken Burns frames. */}
+            {/* Hero H1 — Apple-style sans italic (Inter italic at 500 weight
+                with very tight tracking). Editorial italic without the
+                magazine-poster shoutiness of a display serif. */}
             <h1
-              className="text-[1.7rem] italic leading-[1.05] text-white md:text-[2.2rem] lg:text-[2.85rem]"
+              className="text-[1.85rem] italic leading-[1.05] text-white md:text-[2.4rem] lg:text-[3.1rem]"
               style={{
-                fontFamily:
-                  "var(--font-display-serif), 'Playfair Display', Georgia, 'Times New Roman', serif",
+                fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'SF Pro Display', Inter, system-ui, sans-serif",
                 fontWeight: 500,
-                letterSpacing: "0.005em",
+                letterSpacing: "-0.025em",
                 textShadow: "0 2px 14px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.55)",
               }}
             >
@@ -194,8 +191,11 @@ export function HeroSection() {
             </h1>
 
             <p
-              className="mx-auto mt-2 max-w-md text-[12.5px] font-medium leading-snug tracking-wide text-white/95 md:mt-3 md:text-[14.5px] md:leading-relaxed"
-              style={{ textShadow: "0 1px 10px rgba(0,0,0,0.6), 0 1px 2px rgba(0,0,0,0.5)" }}
+              className="mx-auto mt-2.5 max-w-md text-[13px] font-normal leading-snug text-white/95 md:mt-3.5 md:text-[15px] md:leading-relaxed"
+              style={{
+                letterSpacing: "-0.012em",
+                textShadow: "0 1px 10px rgba(0,0,0,0.6), 0 1px 2px rgba(0,0,0,0.5)",
+              }}
             >
               {t("premium.hero.atfHeroSubhead")}
             </p>
