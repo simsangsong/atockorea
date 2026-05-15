@@ -99,9 +99,11 @@ modern scroll/motion choreography.
 
 Order matters — earlier items make later ones easier:
 
-1. **H2 accent unification** — single pattern (solid `text-slate-900` with
-   one `text-amber-700` accent word). Drop the home-only gradient text on
-   Destinations / Featured.
+1. [x] **H2 accent unification** — Destinations + Featured Products
+   gradient-text accents replaced with solid `text-slate-900` + single
+   `text-amber-700 font-extrabold` accent word. Also swept those two
+   sections' H2 + eyebrow + subtitle typography to the Phase 1 tokens
+   (`.text-h2`, `.text-eyebrow`, `.text-body`).
 2. **Hero trust panel compression** — 5 trust items → 3 strongest.
 3. **Card radius / shadow / focus-ring migration** to Phase 1 tokens.
 4. **Snap-scroll edge fade + peek + dot indicator** — Destinations,
@@ -190,9 +192,7 @@ phase rollup honest.
 
 ## Working Order — Next Up
 
-**Phase 1 complete** ✅ — tokens live, pilot section migrated.
+**Phase 1 complete** ✅, **Phase 2 Step 1 (H2 accent unification) complete** ✅.
 
-Next: **Phase 2 — Section Polishing**. First concrete step is
-**H2 accent unification** (drop the gradient-text accent on Destinations
-and Featured-Products headers; use solid `text-slate-900` + single
-`text-amber-700` accent word across all section H2s).
+Next concrete step: **Phase 2 Step 2 — Hero trust panel compression**
+(5 trust items → 3 strongest, restructure for clearer hierarchy).

@@ -98,17 +98,17 @@ export function FeaturedProductsShowcase() {
         <div className="mb-7 text-center md:mb-9">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-stone-200/80 bg-gradient-to-b from-white/95 to-stone-50/80 px-3.5 py-1.5 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_12px_36px_-22px_rgba(15,23,42,0.14)] backdrop-blur-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.18)]" />
-            <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-slate-600">
+            <span className="text-eyebrow">
               {t("premium.v2.featuredProducts.eyebrow")}
             </span>
           </div>
-          <h2 className="mb-2 text-xl font-bold tracking-tight text-slate-900 md:text-2xl lg:text-3xl">
+          <h2 className="mb-2 text-h2 text-slate-900">
             {t("premium.v2.featuredProducts.title")}{" "}
-            <span className="bg-gradient-to-r from-amber-800 via-amber-700 to-amber-800 bg-clip-text font-extrabold text-transparent">
+            <span className="font-extrabold text-amber-700">
               {t("premium.v2.featuredProducts.titleAccent")}
             </span>
           </h2>
-          <p className="mx-auto max-w-lg text-[13px] font-medium leading-relaxed text-slate-600 md:text-[14px]">
+          <p className="mx-auto max-w-lg text-body text-slate-600">
             {t("premium.v2.featuredProducts.subtitle")}
           </p>
         </div>

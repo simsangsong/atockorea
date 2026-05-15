@@ -60,17 +60,17 @@ export function DestinationsShowcase() {
         <div className="mb-8 text-center md:mb-11">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-stone-200/90 bg-gradient-to-b from-white to-stone-50/85 px-4 py-1.5 shadow-[0_1px_0_rgba(255,255,255,0.95)_inset,0_14px_42px_-26px_rgba(15,23,42,0.18)] backdrop-blur-sm">
             <span className="h-1 w-1 rounded-full bg-amber-500/90 shadow-[0_0_0_3px_rgba(245,158,11,0.2)]" />
-            <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-600">
+            <span className="text-eyebrow">
               {t("premium.v2.destinations.eyebrow")}
             </span>
           </div>
-          <h2 className="mx-auto mb-3 max-w-2xl text-balance text-xl font-bold tracking-tight text-slate-900 md:mb-4 md:text-2xl lg:text-3xl">
+          <h2 className="mx-auto mb-3 max-w-2xl text-balance text-h2 text-slate-900 md:mb-4">
             {t("premium.v2.destinations.title")}{" "}
-            <span className="bg-gradient-to-r from-amber-800 via-amber-700 to-orange-900/90 bg-clip-text font-bold text-transparent">
+            <span className="font-extrabold text-amber-700">
               {t("premium.v2.destinations.titleAccent")}
             </span>
           </h2>
-          <p className="mx-auto max-w-md text-[14px] font-medium leading-relaxed text-slate-500 md:max-w-lg md:text-[15px] md:leading-[1.65]">
+          <p className="mx-auto max-w-md text-body text-slate-600 md:max-w-lg">
             {t("premium.v2.destinations.subtitle")}
           </p>
         </div>
