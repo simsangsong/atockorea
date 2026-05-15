@@ -258,10 +258,8 @@ export function HeroSection() {
             engages with the form. Outside the card on purpose so the planner
             card itself stays clean and task-focused. */}
         <div className="mx-auto mb-4 max-w-lg px-1 text-center md:mb-5">
-          <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-amber-700 md:text-[11px]">
-            <span aria-hidden className="h-1 w-1 rounded-full bg-amber-500" />
+          <span className="text-eyebrow">
             {t("premium.v2.hero.matcherEyebrow")}
-            <span aria-hidden className="h-1 w-1 rounded-full bg-amber-500" />
           </span>
           <h2 className="mt-2 text-balance text-[18px] font-bold leading-snug tracking-tight text-slate-900 md:text-[22px]">
             {t("premium.v2.hero.matcherHeadline")}

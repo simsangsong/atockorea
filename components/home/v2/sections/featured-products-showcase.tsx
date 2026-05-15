@@ -96,12 +96,9 @@ export function FeaturedProductsShowcase() {
 
       <div ref={containerRef} className="relative mx-auto max-w-6xl scroll-animate">
         <div className="mb-7 text-center md:mb-9">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-stone-200/80 bg-gradient-to-b from-white/95 to-stone-50/80 px-3.5 py-1.5 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_12px_36px_-22px_rgba(15,23,42,0.14)] backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.18)]" />
-            <span className="text-eyebrow">
-              {t("premium.v2.featuredProducts.eyebrow")}
-            </span>
-          </div>
+          <p className="mb-3 text-eyebrow md:mb-4">
+            {t("premium.v2.featuredProducts.eyebrow")}
+          </p>
           <h2 className="mb-2 text-h2 text-slate-900">
             {t("premium.v2.featuredProducts.title")}{" "}
             <span className="font-extrabold text-amber-700">

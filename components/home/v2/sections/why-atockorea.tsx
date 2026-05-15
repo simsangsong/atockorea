@@ -98,12 +98,9 @@ export function WhyAtockorea() {
     >
       <div ref={containerRef} className="relative z-[1] mx-auto max-w-5xl">
         <div className="mb-7 text-center md:mb-9">
-          <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-white/80 bg-white/95 px-3 py-1.5 shadow-home-neutral-card backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
-            <span className="text-eyebrow">
-              {t("premium.v2.whyAtockorea.eyebrow")}
-            </span>
-          </div>
+          <p className="mb-3 text-eyebrow md:mb-4">
+            {t("premium.v2.whyAtockorea.eyebrow")}
+          </p>
           <h2 className="mb-2 text-balance text-h2 text-slate-900">
             {t("premium.v2.whyAtockorea.title")}{" "}
             <span className="font-extrabold text-amber-700">

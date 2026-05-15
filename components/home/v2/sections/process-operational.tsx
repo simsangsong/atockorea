@@ -86,12 +86,9 @@ export function ProcessOperational() {
     >
       <div ref={containerRef} className="max-w-5xl mx-auto scroll-animate">
         <div className="text-center mb-8 md:mb-10">
-          <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
-            <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-slate-300">
-              {t("premium.v2.process.eyebrow")}
-            </span>
-          </div>
+          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.14em] text-amber-400 md:mb-4">
+            {t("premium.v2.process.eyebrow")}
+          </p>
           <h2 className="text-h2 text-white">
             {t("premium.v2.process.title")}
           </h2>

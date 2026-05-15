@@ -41,13 +41,10 @@ export function ChooseTravelStyle() {
     <section className="py-10 md:py-14 px-4 md:px-6 bg-slate-50 border-t border-slate-100">
       <div ref={containerRef} className="max-w-4xl mx-auto">
         <div className="text-center mb-7 md:mb-9">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 mb-3 rounded-full border border-white/80 bg-white/95 shadow-home-neutral-card backdrop-blur-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary/70" />
-            <span className="text-[10px] font-semibold text-slate-600 uppercase tracking-[0.08em]">
-              {t("premium.v2.chooseStyle.eyebrow")}
-            </span>
-          </div>
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-800 tracking-tight mb-2">
+          <p className="mb-3 text-eyebrow md:mb-4">
+            {t("premium.v2.chooseStyle.eyebrow")}
+          </p>
+          <h2 className="text-h2 text-slate-900">
             {t("premium.v2.chooseStyle.title")}
           </h2>
         </div>

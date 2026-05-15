@@ -58,12 +58,9 @@ export function DestinationsShowcase() {
       />
       <div ref={containerRef} className="relative mx-auto max-w-6xl scroll-animate">
         <div className="mb-8 text-center md:mb-11">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-stone-200/90 bg-gradient-to-b from-white to-stone-50/85 px-4 py-1.5 shadow-[0_1px_0_rgba(255,255,255,0.95)_inset,0_14px_42px_-26px_rgba(15,23,42,0.18)] backdrop-blur-sm">
-            <span className="h-1 w-1 rounded-full bg-amber-500/90 shadow-[0_0_0_3px_rgba(245,158,11,0.2)]" />
-            <span className="text-eyebrow">
-              {t("premium.v2.destinations.eyebrow")}
-            </span>
-          </div>
+          <p className="mb-3 text-eyebrow md:mb-4">
+            {t("premium.v2.destinations.eyebrow")}
+          </p>
           <h2 className="mx-auto mb-3 max-w-2xl text-balance text-h2 text-slate-900 md:mb-4">
             {t("premium.v2.destinations.title")}{" "}
             <span className="font-extrabold text-amber-700">

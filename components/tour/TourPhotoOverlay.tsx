@@ -5,12 +5,13 @@ import { cn } from "@/lib/utils";
 import { deriveEnStopName, deriveRegion } from "@/lib/tour-photo-overlay";
 
 /**
- * Editorial overlays for tour-detail photos:
- *   - top-right: region label sitting on a fluffy CUMULUS cloud
- *     (inline SVG with light-blue gradient + outline + soft highlight)
- *   - bottom-right: stop name in English — Cormorant Garamond italic
+ * Minimal photo-overlay labels — Apple-grade restraint:
+ *   - top-right:   region label, plain uppercase white text with a soft drop
+ *                  shadow. No cloud badge, no pill, no SVG decoration.
+ *   - bottom-right: stop name in Inter, medium weight (not italic, not a
+ *                  display serif). Tight tracking. Drop shadow for legibility.
  *
- * The whole overlay is pointer-events: none so it never blocks photo clicks.
+ * The container is pointer-events: none so it never blocks photo clicks.
  */
 export type TourPhotoOverlayProps = {
   src?: string | null;
@@ -18,88 +19,17 @@ export type TourPhotoOverlayProps = {
   stopName?: string | null;
   /**
    * Size variant — defaults to `md`.
-   *   xs: timeline-card mini thumbs (80×56)
+   *   xs: timeline-card mini thumbs (80×56) — region only, stop name hidden
    *   sm: drawer hero, gallery bento tiles
    *   md: gallery bento hero
    *   lg: lightbox / full-screen
    */
   size?: "xs" | "sm" | "md" | "lg";
   className?: string;
-  /** Skip the region pill (e.g. drawer hero already has a number pill). */
+  /** Skip the region label (drawer hero already has a number pill). */
   hideRegion?: boolean;
   hideStopName?: boolean;
 };
-
-// Cumulus silhouette in a 200×110 viewBox: 5 puffy lobes on top, soft
-// undulating underside. Drawn with cubic curves for smooth roundness.
-const CLOUD_PATH =
-  "M 22 88 " +
-  "C 6 88 2 72 12 60 " +     // left side rising from base
-  "C 4 48 18 32 36 38 " +    // left puff
-  "C 36 18 66 14 78 32 " +   // second puff (upper-left)
-  "C 84 8 128 6 136 28 " +   // top center puff (biggest)
-  "C 152 18 180 26 178 48 " + // upper-right puff
-  "C 196 52 196 76 178 82 " + // right side falling
-  "C 180 96 158 102 144 92 " + // small under-bump (right)
-  "C 142 105 116 106 108 95 " + // bottom waves
-  "C 100 108 70 106 68 92 " +
-  "C 55 104 34 100 22 88 Z";
-
-function CloudBadge({
-  label,
-  textClass,
-  pad,
-}: {
-  label: string;
-  textClass: string;
-  pad: { px: number; py: number };
-}) {
-  // React.useId so each instance gets unique gradient IDs (defs are global).
-  const uid = React.useId().replace(/:/g, "");
-  const gradStroke = `cb-stroke-${uid}`;
-
-  return (
-    <span
-      className="relative inline-flex items-center justify-center"
-      style={{
-        padding: `${pad.py}px ${pad.px}px`,
-        filter:
-          "drop-shadow(0 2px 4px rgba(15,23,42,0.14)) drop-shadow(0 10px 24px rgba(15,23,42,0.20))",
-      }}
-    >
-      <svg
-        className="absolute inset-0 h-full w-full"
-        preserveAspectRatio="none"
-        viewBox="0 0 200 110"
-        aria-hidden
-      >
-        <defs>
-          {/* Pale outline gradient — soft, no strong tint */}
-          <linearGradient id={gradStroke} x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#dcebf5" />
-            <stop offset="100%" stopColor="#a9c9dc" />
-          </linearGradient>
-        </defs>
-        {/* Pure white cloud body with light pale outline */}
-        <path
-          d={CLOUD_PATH}
-          fill="#ffffff"
-          stroke={`url(#${gradStroke})`}
-          strokeWidth="2"
-          strokeLinejoin="round"
-        />
-      </svg>
-      <span
-        className={cn(
-          "relative z-10 uppercase font-medium tracking-[0.16em] text-sky-700/80",
-          textClass,
-        )}
-      >
-        {label}
-      </span>
-    </span>
-  );
-}
 
 export function TourPhotoOverlay({
   src,
@@ -115,27 +45,33 @@ export function TourPhotoOverlay({
 
   if (!resolvedRegion && !resolvedName) return null;
 
-  const cloud =
-    size === "xs" ? { text: "text-[5.5px] tracking-[0.12em]", px: 5, py: 2.5 } :
-    size === "sm" ? { text: "text-[6px] tracking-[0.14em]", px: 7, py: 3 } :
-    size === "lg" ? { text: "text-[8px] tracking-[0.18em]", px: 11, py: 4.5 } :
-    { text: "text-[6.5px] tracking-[0.16em]", px: 8, py: 3.5 };
+  const regionClass =
+    size === "xs"
+      ? "text-[7.5px] tracking-[0.2em]"
+      : size === "sm"
+        ? "text-[8.5px] tracking-[0.22em]"
+        : size === "lg"
+          ? "text-[11px] tracking-[0.26em]"
+          : "text-[9.5px] tracking-[0.22em]";
 
-  const stopSize =
-    size === "xs" ? "text-[7px]" :
-    size === "sm" ? "text-[8.5px]" :
-    size === "lg" ? "text-[14px]" :
-    "text-[10px]";
+  const stopClass =
+    size === "xs"
+      ? "text-[10px] tracking-[-0.005em]"
+      : size === "sm"
+        ? "text-[12px] tracking-[-0.008em]"
+        : size === "lg"
+          ? "text-[18px] tracking-[-0.015em]"
+          : "text-[13px] tracking-[-0.01em]";
 
-  // Bigger insets so badges and stop names breathe away from the photo edges.
   const insetClass =
-    size === "xs" ? "p-1.5" :
-    size === "sm" ? "p-4" :
-    size === "lg" ? "p-12" :
-    "p-5";
+    size === "xs"
+      ? "p-2"
+      : size === "sm"
+        ? "p-3"
+        : size === "lg"
+          ? "p-10"
+          : "p-4";
 
-  // Tiny thumbnails (timeline mini-cards) can't comfortably show the magazine
-  // stop name — even at 6px the text overflows the 80px frame. Hide it on xs.
   const showStopName = !hideStopName && resolvedName && size !== "xs";
 
   return (
@@ -143,32 +79,36 @@ export function TourPhotoOverlay({
       className={cn("pointer-events-none absolute inset-0 z-10", insetClass, className)}
       aria-hidden="true"
     >
-      {/* top-right: region — fluffy SVG cumulus cloud */}
+      {/* top-right: region label — plain uppercase white text. No background,
+          no border, no SVG. Drop shadow keeps it legible on any photo. */}
       {!hideRegion && resolvedRegion ? (
-        <span className="absolute right-0 top-0">
-          <CloudBadge
-            label={resolvedRegion}
-            textClass={cloud.text}
-            pad={{ px: cloud.px, py: cloud.py }}
-          />
-        </span>
-      ) : null}
-
-      {/* bottom-right: stop name — Playfair Display italic 700 (dramatic
-          magazine headline italic, bolder than Cormorant Garamond). */}
-      {showStopName ? (
         <span
           className={cn(
-            "absolute bottom-0 right-0 italic text-white whitespace-nowrap",
-            "drop-shadow-[0_2px_6px_rgba(0,0,0,0.78)]",
-            stopSize,
+            "absolute right-0 top-0 uppercase font-medium text-white/95",
+            regionClass,
           )}
           style={{
             fontFamily:
-              "var(--font-display-serif), 'Playfair Display', 'Cormorant Garamond', Georgia, 'Times New Roman', serif",
-            fontWeight: 700,
-            letterSpacing: "0.005em",
-            textShadow: "0 1px 2px rgba(0,0,0,0.6), 0 0 1px rgba(0,0,0,0.45)",
+              "-apple-system, BlinkMacSystemFont, 'SF Pro Display', var(--font-sans), Inter, system-ui, sans-serif",
+            textShadow: "0 1px 4px rgba(0,0,0,0.55), 0 0 1px rgba(0,0,0,0.4)",
+          }}
+        >
+          {resolvedRegion}
+        </span>
+      ) : null}
+
+      {/* bottom-right: stop name — Inter medium, no italic. Hierarchy from
+          size + tight tracking + drop shadow only. */}
+      {showStopName ? (
+        <span
+          className={cn(
+            "absolute bottom-0 right-0 whitespace-nowrap font-medium text-white",
+            stopClass,
+          )}
+          style={{
+            fontFamily:
+              "-apple-system, BlinkMacSystemFont, 'SF Pro Display', var(--font-sans), Inter, system-ui, sans-serif",
+            textShadow: "0 1px 4px rgba(0,0,0,0.6), 0 0 1px rgba(0,0,0,0.45)",
           }}
         >
           {resolvedName}
