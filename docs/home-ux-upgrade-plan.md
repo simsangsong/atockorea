@@ -90,8 +90,10 @@ modern scroll/motion choreography.
       `.text-h3`, `.text-body`, `.text-caption`, `.text-eyebrow`,
       `.text-micro`).
 - [x] Add `.focus-ring` utility for consistent interactive focus.
-- [ ] **Pilot migration:** sweep one section (Why AtoC Korea) to the new
-      tokens to validate the system, then move to Phase 2.
+- [x] **Pilot migration:** swept `why-atockorea.tsx` to the new tokens —
+      `section-py-sm`, `text-eyebrow`, `text-h2`, `text-h3`, `text-body`,
+      `text-caption`, and `--surface-section-warm`. `home-neutral-card` /
+      `rounded-home-card` left in place for Phase 2 sweep.
 
 ### 🎯 Phase 2 — Section Polishing (1 week)
 
@@ -123,6 +125,29 @@ Before merging any home upgrade work, verify:
 4. `prefers-reduced-motion` handled for any new animation.
 5. Mobile (≤390px), tablet (768px), desktop (≥1280px) verified.
 6. Lighthouse a11y score not regressed.
+
+## Per-Step Summary Deliverable (required)
+
+After every step in any phase, deliver a **visual changelog** the user can
+scan without opening files. Format:
+
+```
+## Step N — <name>
+**Section(s) touched:** <list>
+
+| Element | Before | After |
+|---|---|---|
+| Section padding | py-10 md:py-14 (40/56px) | section-py-sm (56px both) |
+| H2 typography | text-xl md:text-2xl lg:text-3xl | text-h2 |
+| ...           | ...                              | ...               |
+
+**Visual diff:** <one-line summary of what the user will see change>
+**Files:** <slug list>
+**Commit:** <hash>
+```
+
+This makes each merged step its own preview-able artifact and keeps the
+phase rollup honest.
 
 ## Typography Size Scale (fixed)
 
@@ -165,7 +190,9 @@ Before merging any home upgrade work, verify:
 
 ## Working Order — Next Up
 
-Currently in: **Phase 1 — Design Tokens (pilot migration pending)**.
-Tokens are live in `app/globals.css`. Next concrete step: migrate
-`components/home/v2/sections/why-atockorea.tsx` to the new tokens as the
-pilot, validate, then sweep the remaining 7 sections in Phase 2.
+**Phase 1 complete** ✅ — tokens live, pilot section migrated.
+
+Next: **Phase 2 — Section Polishing**. First concrete step is
+**H2 accent unification** (drop the gradient-text accent on Destinations
+and Featured-Products headers; use solid `text-slate-900` + single
+`text-amber-700` accent word across all section H2s).

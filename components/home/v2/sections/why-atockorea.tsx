@@ -93,24 +93,24 @@ export function WhyAtockorea() {
 
   return (
     <section
-      className="relative overflow-hidden px-4 py-10 md:py-14 border-t border-amber-100/70"
-      style={{ background: "#FDF8F0" }}
+      className="relative overflow-hidden border-t border-amber-100/70 px-4 section-py-sm"
+      style={{ background: "var(--surface-section-warm)" }}
     >
       <div ref={containerRef} className="relative z-[1] mx-auto max-w-5xl">
         <div className="mb-7 text-center md:mb-9">
           <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-white/80 bg-white/95 px-3 py-1.5 shadow-home-neutral-card backdrop-blur-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
-            <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-slate-600">
+            <span className="text-eyebrow">
               {t("premium.v2.whyAtockorea.eyebrow")}
             </span>
           </div>
-          <h2 className="mb-2 text-balance text-xl font-bold tracking-tight text-slate-900 md:text-2xl lg:text-3xl">
+          <h2 className="mb-2 text-balance text-h2 text-slate-900">
             {t("premium.v2.whyAtockorea.title")}{" "}
             <span className="font-extrabold text-amber-700">
               {t("premium.v2.whyAtockorea.titleAccent")}
             </span>
           </h2>
-          <p className="mx-auto max-w-xl text-[13px] font-medium leading-relaxed text-slate-600 md:text-[14px]">
+          <p className="mx-auto max-w-xl text-body text-slate-600">
             {t("premium.v2.whyAtockorea.subtitle")}
           </p>
         </div>
@@ -132,13 +132,13 @@ export function WhyAtockorea() {
                     <Icon className="h-4 w-4" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <h3 className="mb-1 text-[15px] font-bold tracking-tight text-slate-900 md:text-base">
-                      <span className={`font-extrabold ${accent.text}`}>
+                    <h3 className="mb-1 text-h3 text-slate-900">
+                      <span className="font-extrabold text-slate-900">
                         {t(pillar.titleAccentKey)}
                       </span>{" "}
                       {t(pillar.titleKey)}
                     </h3>
-                    <p className="text-[12.5px] leading-relaxed text-slate-600 md:text-[13px]">
+                    <p className="text-caption text-slate-600">
                       {t(pillar.bodyKey)}
                     </p>
                   </div>
@@ -148,7 +148,7 @@ export function WhyAtockorea() {
           })}
         </div>
 
-        <p className="mt-6 text-center text-[12px] font-medium tracking-wide text-slate-500 md:mt-7 md:text-[13px]">
+        <p className="mt-6 text-center text-caption text-slate-500 md:mt-7">
           {t("premium.v2.whyAtockorea.tagline")}
         </p>
       </div>
