@@ -175,15 +175,14 @@ export function HeroSection() {
               aria-hidden
               className="pointer-events-none absolute -inset-x-10 -inset-y-6 -z-10 rounded-[3rem] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.72)_35%,rgba(0,0,0,0.45)_60%,rgba(0,0,0,0.18)_80%,transparent_95%)] md:-inset-x-16 md:-inset-y-8"
             />
-            {/* Hero H1 — Apple-style sans italic (Inter italic at 500 weight
-                with very tight tracking). Editorial italic without the
-                magazine-poster shoutiness of a display serif. */}
+            {/* Hero H1 — Apple-style sans (Inter semibold, very tight tracking,
+                no italic). Hierarchy comes from size + weight, not style. */}
             <h1
-              className="text-[1.85rem] italic leading-[1.05] text-white md:text-[2.4rem] lg:text-[3.1rem]"
+              className="text-[2rem] leading-[1.05] text-white md:text-[2.6rem] lg:text-[3.4rem]"
               style={{
                 fontFamily: "var(--font-sans), -apple-system, BlinkMacSystemFont, 'SF Pro Display', Inter, system-ui, sans-serif",
-                fontWeight: 500,
-                letterSpacing: "-0.025em",
+                fontWeight: 600,
+                letterSpacing: "-0.028em",
                 textShadow: "0 2px 14px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.55)",
               }}
             >
@@ -191,7 +190,7 @@ export function HeroSection() {
             </h1>
 
             <p
-              className="mx-auto mt-2.5 max-w-md text-[13px] font-normal leading-snug text-white/95 md:mt-3.5 md:text-[15px] md:leading-relaxed"
+              className="mx-auto mt-2.5 max-w-md text-[13px] font-normal leading-snug text-white/90 md:mt-3.5 md:text-[15px] md:leading-relaxed"
               style={{
                 letterSpacing: "-0.012em",
                 textShadow: "0 1px 10px rgba(0,0,0,0.6), 0 1px 2px rgba(0,0,0,0.5)",
