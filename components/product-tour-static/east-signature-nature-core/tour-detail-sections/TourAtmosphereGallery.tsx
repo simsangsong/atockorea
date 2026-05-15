@@ -7,28 +7,27 @@ import { cn } from "@/lib/utils";
 import { TourPhotoOverlay } from "@/components/tour/TourPhotoOverlay";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
-const LIGHTBOX_EASE = [0.34, 1.35, 0.64, 1] as const;
-/** "Fly from album": first open lifts the photo up from below at small scale
- *  with strong blur, settling into focus. Subsequent next/prev navigations
- *  slide horizontally with the lighter scale+blur transition. */
+const LIGHTBOX_EASE = [0.22, 1, 0.36, 1] as const;
+/** Open: gentle fade-up with a touch of scale + blur. Next/prev: short
+ *  horizontal slide. No overshoot, no large scale jumps. */
 const LIGHTBOX_VARIANTS = {
   enter: (dir: number) =>
     dir === 0
-      ? { opacity: 0, scale: 0.28, x: 0, y: 180, filter: "blur(14px)" }
+      ? { opacity: 0, scale: 0.95, x: 0, y: 24, filter: "blur(6px)" }
       : {
           opacity: 0,
-          scale: 0.78,
-          x: dir > 0 ? 50 : -50,
+          scale: 0.97,
+          x: dir > 0 ? 36 : -36,
           y: 0,
-          filter: "blur(10px)",
+          filter: "blur(4px)",
         },
   center: { opacity: 1, scale: 1, x: 0, y: 0, filter: "blur(0px)" },
   exit: (dir: number) => ({
     opacity: 0,
-    scale: 0.86,
-    x: dir > 0 ? -28 : dir < 0 ? 28 : 0,
+    scale: 0.97,
+    x: dir > 0 ? -24 : dir < 0 ? 24 : 0,
     y: 0,
-    filter: "blur(6px)",
+    filter: "blur(2px)",
   }),
 } as const;
 

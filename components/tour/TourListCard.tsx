@@ -125,7 +125,7 @@ function TourListCard({ tour, detailHref, formatPriceFn, imageSizes, layout = 'v
           href={detailHref}
           className={cn(
             'group h-full touch-manipulation overflow-hidden rounded-[1.6rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.97)_0%,rgba(248,250,252,0.96)_100%)] shadow-[0_16px_38px_-24px_rgba(15,23,42,0.34),0_4px_16px_-12px_rgba(15,23,42,0.16)]',
-            'transition-[transform,box-shadow,border-color,filter,background-color] duration-[420ms] ease-[cubic-bezier(0.34,1.35,0.64,1)] hover:-translate-y-1 hover:border-blue-200/80 hover:shadow-[0_30px_64px_-22px_rgba(15,23,42,0.42),0_16px_34px_-16px_rgba(59,130,246,0.22)]',
+            'transition-[transform,box-shadow,border-color,filter,background-color] duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-blue-200/80 hover:shadow-[0_30px_64px_-22px_rgba(15,23,42,0.42),0_16px_34px_-16px_rgba(59,130,246,0.22)]',
             'focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-blue-400/55 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50',
             'motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:shadow-[0_16px_38px_-24px_rgba(15,23,42,0.34),0_4px_16px_-12px_rgba(15,23,42,0.16)]',
             isHorizontal ? 'flex flex-row' : 'block',
@@ -146,7 +146,7 @@ function TourListCard({ tour, detailHref, formatPriceFn, imageSizes, layout = 'v
               sizes={imageSizes ?? (isHorizontal ? '180px' : '50vw')}
               quality={90}
               className={cn(
-                'object-cover transition-[transform,filter] duration-[420ms] ease-[cubic-bezier(0.34,1.35,0.64,1)] brightness-100 group-hover:scale-[1.08] motion-reduce:group-hover:scale-100',
+                'object-cover transition-[transform,filter] duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] brightness-100 group-hover:scale-[1.03] motion-reduce:group-hover:scale-100',
                 'motion-reduce:brightness-100 motion-reduce:transition-none',
               )}
               loading="lazy"

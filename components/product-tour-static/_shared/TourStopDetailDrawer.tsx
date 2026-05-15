@@ -1236,10 +1236,10 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                       decoding="async"
                       draggable={false}
                       onContextMenu={(e) => e.preventDefault()}
-                      initial={{ opacity: 0, scale: 0.28, y: 180, filter: "blur(14px)" }}
+                      initial={{ opacity: 0, scale: 0.95, y: 24, filter: "blur(6px)" }}
                       animate={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
-                      exit={{ opacity: 0, scale: 0.86, y: 0, filter: "blur(6px)" }}
-                      transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
+                      exit={{ opacity: 0, scale: 0.97, y: 0, filter: "blur(2px)" }}
+                      transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
                       className="mx-auto block max-h-[90vh] w-auto max-w-full rounded-xl shadow-2xl tour-photo-grade tour-photo-protected"
                     />
                   </AnimatePresence>
