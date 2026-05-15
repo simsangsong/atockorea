@@ -9,12 +9,13 @@ import {
   FinalCTA,
 } from "@/components/home/v2/sections";
 import { HomeV2MatchProvider } from "@/components/home/v2/HomeV2MatchProvider";
+import { StickyHomeCta } from "@/components/home/v2/StickyHomeCta";
 
 /**
  * v0-derived homepage main content (presentation-only).
  * Render inside site `<main>` under the existing Header; Footer/BottomNav stay in shell.
  *
- * Match: `HomeV2MatchProvider` calls `POST /api/tour-product/match` (Gemini intent + `tour_matching_profiles` scoring).
+ * Match: `HomeV2MatchProvider` calls `POST /api/tour-product/match` (Gemini intent + `match_tours.matching_profile` scoring).
  */
 export default function HomeV2Page() {
   return (
@@ -32,6 +33,7 @@ export default function HomeV2Page() {
           <div className="h-10 bg-gradient-to-b from-[#141008] to-white" aria-hidden />
           <FinalCTA />
         </div>
+        <StickyHomeCta />
       </HomeV2MatchProvider>
     </div>
   );

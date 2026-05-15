@@ -154,7 +154,12 @@ Order matters — earlier items make later ones easier:
       Matching → Match ready) using the existing translation keys, and
       a progress bar that tracks `loadingStep`. Layout still mirrors the
       result card so there's no shift on transition.
-- [ ] Sticky bottom CTA after scroll past hero.
+- [x] Sticky bottom CTA after scroll past hero — new
+      `StickyHomeCta` floats a slim dark bar (max-w-md centered, bottom-3
+      mobile / bottom-5 md+) with "See My Best Matches" (white primary)
+      + "Browse all tours" (ghost text). IntersectionObserver shows it
+      once the hero exits and hides it once the FinalCTA enters. Match
+      button smooth-scrolls to hero + focuses the intent textarea.
 - [ ] Section transitions reworked from 10px gradient to organic dividers.
 - [ ] Snap-scroll dot-progress indicator (deferred from Phase 2 Step 4).
 
@@ -233,8 +238,10 @@ phase rollup honest.
 
 ## Working Order — Next Up
 
-**Phase 2 complete** ✅, **Phase 3 Steps 1–3 complete** ✅.
+**Phase 2 complete** ✅, **Phase 3 Steps 1–4 complete** ✅.
 
-Next: **Phase 3 Step 4 — Sticky bottom CTA after hero**. Once a user
-scrolls past the hero, a slim sticky bottom bar appears with "Match me"
-+ "Browse all tours" so conversion is always one tap away even mid-page.
+Next: **Phase 3 Step 5 — Organic section transitions**. Replace the
+two `<div className="h-10 bg-gradient-to-b ...">` color-band dividers
+between cream → dark → white sections with something less perfunctory —
+options include a thin photo strip, an SVG organic shape, or a single
+typographic divider mark.
