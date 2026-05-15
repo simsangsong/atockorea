@@ -44,11 +44,11 @@
   "headlineLine1": "Jeju",
   "headlineLine2": "Coche Privado",
   "price": {
-    "amountLabel": "119",
+    "amountLabel": "249",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 119,
-    "originalPriceUsd": 119,
+    "salePriceUsd": 249,
+    "originalPriceUsd": 249,
     "discountPercent": 0
   },
   "hero": {
@@ -1820,8 +1820,8 @@
   },
   "sql_overrides": {
     "tours": {
-      "price": 119,
-      "original_price": 119
+      "price": 249,
+      "original_price": 249
     }
   }
 }
