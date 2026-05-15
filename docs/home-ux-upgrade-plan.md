@@ -127,7 +127,15 @@ Order matters — earlier items make later ones easier:
    Existing peek widths (39 / 68 / 44 vw) already met the ≥20% next-card
    rule, no card width changes. Dot indicator deferred to Phase 3
    (needs scroll-driven state + IntersectionObserver).
-5. **Hero H1 editorial italic** (Playfair Display) with single accent word.
+5. [x] **Hero H1 editorial italic** — H1 swapped from Inter bold to
+   Playfair Display italic at weight 500, sizes nudged up
+   (1.7 / 2.2 / 2.85rem from 1.4 / 1.85 / 2.4rem) so the italic serif
+   doesn't read smaller than the previous bold sans. Leading tightened
+   to 1.05; letter-spacing +0.005em offsets italic compression.
+   Subhead stays Inter — supports the magazine-cover lead/body contrast.
+   Amber accent word was dropped because amber-700 is unreadable on the
+   bright Ken Burns photo background; the italic treatment itself is the
+   editorial differentiator.
 
 ### 🚀 Phase 3 — Differentiating Motion & Storytelling (2–3 weeks)
 - Scroll-linked Ken Burns / parallax / reveal-on-view.
@@ -211,9 +219,12 @@ phase rollup honest.
 
 ## Working Order — Next Up
 
-**Phase 1 complete** ✅, **Phase 2 Steps 1–4 complete** ✅.
+**Phase 2 complete** ✅. All 5 Phase 2 steps shipped.
 
-Next concrete step: **Phase 2 Step 5 — Hero H1 editorial italic**
-(introduce Playfair Display italic for the hero headline with a single
-amber-700 accent word; reshape headline copy if needed to land in two
-crisp lines).
+Next: **Phase 3 — Differentiating Motion & Storytelling**.
+First concrete step recommendation:
+- Scroll-linked Ken Burns / parallax on hero (extends KenBurns into a
+  scroll-driven parallax + darken).
+Other Phase 3 candidates: Process Operational mobile vertical timeline;
+AI match thinking visualization; sticky bottom CTA; organic section
+transitions.

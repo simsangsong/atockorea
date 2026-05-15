@@ -125,18 +125,26 @@ export function HeroSection() {
               aria-hidden
               className="pointer-events-none absolute -inset-x-10 -inset-y-6 -z-10 rounded-[3rem] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.72)_35%,rgba(0,0,0,0.45)_60%,rgba(0,0,0,0.18)_80%,transparent_95%)] md:-inset-x-16 md:-inset-y-8"
             />
+            {/* Hero H1 — Playfair Display italic at weight 500 reads as a
+                magazine cover line over the photo crossfade. Tight leading +
+                slight positive letter-spacing offsets italic's compressed
+                visual rhythm; multi-layer drop shadow preserves contrast
+                against bright Ken Burns frames. */}
             <h1
-              className="text-[1.4rem] font-bold leading-tight tracking-[-0.02em] text-white md:text-[1.85rem] lg:text-[2.4rem]"
+              className="text-[1.7rem] italic leading-[1.05] text-white md:text-[2.2rem] lg:text-[2.85rem]"
               style={{
+                fontFamily:
+                  "var(--font-display-serif), 'Playfair Display', Georgia, 'Times New Roman', serif",
+                fontWeight: 500,
+                letterSpacing: "0.005em",
                 textShadow: "0 2px 14px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.55)",
-                fontFamily: "var(--font-sans)",
               }}
             >
               {t("premium.hero.headlineLine1")}
             </h1>
 
             <p
-              className="mx-auto mt-1.5 max-w-md text-[12.5px] font-medium leading-snug tracking-wide text-white/95 md:mt-2 md:text-[14.5px] md:leading-relaxed"
+              className="mx-auto mt-2 max-w-md text-[12.5px] font-medium leading-snug tracking-wide text-white/95 md:mt-3 md:text-[14.5px] md:leading-relaxed"
               style={{ textShadow: "0 1px 10px rgba(0,0,0,0.6), 0 1px 2px rgba(0,0,0,0.5)" }}
             >
               {t("premium.hero.atfHeroSubhead")}
