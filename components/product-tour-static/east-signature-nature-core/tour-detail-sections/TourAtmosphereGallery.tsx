@@ -1,10 +1,28 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TourPhotoOverlay } from "@/components/tour/TourPhotoOverlay";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
+
+const LIGHTBOX_EASE = [0.34, 1.35, 0.64, 1] as const;
+const LIGHTBOX_VARIANTS = {
+  enter: (dir: number) => ({
+    opacity: 0,
+    scale: 0.72,
+    x: dir > 0 ? 40 : dir < 0 ? -40 : 0,
+    filter: "blur(10px)",
+  }),
+  center: { opacity: 1, scale: 1, x: 0, filter: "blur(0px)" },
+  exit: (dir: number) => ({
+    opacity: 0,
+    scale: 0.86,
+    x: dir > 0 ? -28 : dir < 0 ? 28 : 0,
+    filter: "blur(6px)",
+  }),
+} as const;
 
 export type TourAtmosphereGalleryProps = Pick<EastSignatureNatureCoreDetailViewModel, "galleryItems" | "sectionUi">;
 
@@ -28,21 +46,24 @@ const COLLAGE_TILES = [
 export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmosphereGalleryProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  /** Direction of the most recent navigation: +1 next, -1 prev, 0 initial open. */
+  const [navDirection, setNavDirection] = useState<1 | -1 | 0>(0);
   const stripRef = useRef<HTMLDivElement>(null);
 
   const openLightbox = (index: number) => {
     setActiveIndex(index);
+    setNavDirection(0);
     setLightboxOpen(true);
   };
   const closeLightbox = useCallback(() => setLightboxOpen(false), []);
-  const goNext = useCallback(
-    () => setActiveIndex((prev) => (prev + 1) % galleryItems.length),
-    [galleryItems.length],
-  );
-  const goPrev = useCallback(
-    () => setActiveIndex((prev) => (prev - 1 + galleryItems.length) % galleryItems.length),
-    [galleryItems.length],
-  );
+  const goNext = useCallback(() => {
+    setNavDirection(1);
+    setActiveIndex((prev) => (prev + 1) % galleryItems.length);
+  }, [galleryItems.length]);
+  const goPrev = useCallback(() => {
+    setNavDirection(-1);
+    setActiveIndex((prev) => (prev - 1 + galleryItems.length) % galleryItems.length);
+  }, [galleryItems.length]);
 
   useEffect(() => {
     if (!lightboxOpen) return;
@@ -193,14 +214,20 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
       </div>
 
       {/* ── Lightbox ── */}
-      {lightboxOpen && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label="Photo gallery"
-          className="fixed inset-0 z-50 bg-[#1A2332]/96 flex items-center justify-center backdrop-blur-sm"
-          onClick={closeLightbox}
-        >
+      <AnimatePresence>
+        {lightboxOpen && (
+          <motion.div
+            key="atmosphere-lightbox"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Photo gallery"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.28, ease: "easeOut" }}
+            className="fixed inset-0 z-50 bg-[#1A2332]/96 flex items-center justify-center backdrop-blur-sm"
+            onClick={closeLightbox}
+          >
           <div className="absolute top-4 left-4 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold tabular-nums text-white">
             {activeIndex + 1} / {galleryItems.length}
           </div>
@@ -231,19 +258,38 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
             <ChevronRight className="h-6 w-6 text-white" strokeWidth={2} />
           </button>
 
-          <div
-            className="relative max-w-4xl max-h-[80vh] mx-16"
+          <motion.div
+            className="relative max-w-4xl max-h-[80vh] mx-16 touch-pan-y"
             onClick={(e) => e.stopPropagation()}
             onContextMenu={(e) => e.preventDefault()}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.18}
+            onDragEnd={(_, info) => {
+              if (galleryItems.length < 2) return;
+              const offsetX = info.offset.x;
+              const velocityX = info.velocity.x;
+              if (offsetX < -70 || velocityX < -500) goNext();
+              else if (offsetX > 70 || velocityX > 500) goPrev();
+            }}
           >
-            <img
-              src={galleryItems[activeIndex].src}
-              alt={galleryItems[activeIndex].alt ?? ""}
-              decoding="async"
-              draggable={false}
-              onContextMenu={(e) => e.preventDefault()}
-              className="max-h-[80vh] w-auto rounded-xl shadow-2xl tour-photo-grade tour-photo-protected"
-            />
+            <AnimatePresence mode="popLayout" initial={false} custom={navDirection}>
+              <motion.img
+                key={activeIndex}
+                src={galleryItems[activeIndex].src}
+                alt={galleryItems[activeIndex].alt ?? ""}
+                decoding="async"
+                draggable={false}
+                onContextMenu={(e) => e.preventDefault()}
+                className="max-h-[80vh] w-auto rounded-xl shadow-2xl tour-photo-grade tour-photo-protected"
+                custom={navDirection}
+                variants={LIGHTBOX_VARIANTS}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.46, ease: LIGHTBOX_EASE }}
+              />
+            </AnimatePresence>
             <TourPhotoOverlay src={galleryItems[activeIndex].src} size="lg" className="p-5" />
             {galleryItems[activeIndex].type === "video" && (
               <div className="absolute inset-0 flex items-center justify-center rounded-xl">
@@ -252,14 +298,18 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                 </div>
               </div>
             )}
-          </div>
+          </motion.div>
 
           <div className="absolute bottom-5 left-0 right-0 flex justify-center gap-2">
             {galleryItems.map((item, index) => (
               <button
                 type="button"
                 key={item.id}
-                onClick={(e) => { e.stopPropagation(); setActiveIndex(index); }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setNavDirection(index > activeIndex ? 1 : index < activeIndex ? -1 : 0);
+                  setActiveIndex(index);
+                }}
                 aria-label={`View image ${index + 1}`}
                 aria-current={activeIndex === index ? "true" : undefined}
                 className={cn(
@@ -281,8 +331,9 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
               </button>
             ))}
           </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

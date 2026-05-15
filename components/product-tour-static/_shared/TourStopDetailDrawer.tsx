@@ -1213,10 +1213,20 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                   </>
                 )}
 
-                <div
-                  className="relative mx-4 max-h-[82vh] max-w-5xl"
+                <motion.div
+                  className="relative mx-4 max-h-[82vh] max-w-5xl touch-pan-y"
                   onClick={(e) => e.stopPropagation()}
                   onContextMenu={(e) => e.preventDefault()}
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.18}
+                  onDragEnd={(_, info) => {
+                    if (galleryPhotos.length < 2) return;
+                    const offsetX = info.offset.x;
+                    const velocityX = info.velocity.x;
+                    if (offsetX < -70 || velocityX < -500) lightboxNext();
+                    else if (offsetX > 70 || velocityX > 500) lightboxPrev();
+                  }}
                 >
                   <AnimatePresence initial={false} mode="popLayout">
                     <motion.img
@@ -1226,15 +1236,15 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                       decoding="async"
                       draggable={false}
                       onContextMenu={(e) => e.preventDefault()}
-                      initial={{ opacity: 0, scale: 0.985 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.985 }}
-                      transition={{ duration: 0.32, ease: drawerEase }}
+                      initial={{ opacity: 0, scale: 0.72, filter: "blur(10px)" }}
+                      animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                      exit={{ opacity: 0, scale: 0.86, filter: "blur(6px)" }}
+                      transition={{ duration: 0.46, ease: [0.34, 1.35, 0.64, 1] }}
                       className="max-h-[82vh] w-auto rounded-xl shadow-2xl tour-photo-grade tour-photo-protected"
                     />
                   </AnimatePresence>
                   <TourPhotoOverlay src={galleryPhotos[lightboxIndex]} size="lg" className="p-5" />
-                </div>
+                </motion.div>
 
                 {galleryPhotos.length > 1 && (
                   <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 px-4">
