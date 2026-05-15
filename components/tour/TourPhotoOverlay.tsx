@@ -116,22 +116,23 @@ export function TourPhotoOverlay({
   if (!resolvedRegion && !resolvedName) return null;
 
   const cloud =
-    size === "xs" ? { text: "text-[6px] tracking-[0.12em]", px: 6, py: 3 } :
-    size === "sm" ? { text: "text-[7px] tracking-[0.14em]", px: 8, py: 3.5 } :
+    size === "xs" ? { text: "text-[5.5px] tracking-[0.12em]", px: 5, py: 2.5 } :
+    size === "sm" ? { text: "text-[6px] tracking-[0.14em]", px: 7, py: 3 } :
     size === "lg" ? { text: "text-[11px] tracking-[0.22em]", px: 20, py: 8 } :
-    { text: "text-[7.5px] tracking-[0.16em]", px: 10, py: 4.5 };
+    { text: "text-[6.5px] tracking-[0.16em]", px: 8, py: 3.5 };
 
   const stopSize =
-    size === "xs" ? "text-[8px]" :
-    size === "sm" ? "text-[10px]" :
+    size === "xs" ? "text-[7px]" :
+    size === "sm" ? "text-[8.5px]" :
     size === "lg" ? "text-[22px]" :
-    "text-[12px]";
+    "text-[10px]";
 
+  // Bigger insets so badges and stop names breathe away from the photo edges.
   const insetClass =
-    size === "xs" ? "p-1.5" :
-    size === "sm" ? "p-2.5" :
-    size === "lg" ? "p-6" :
-    "p-3";
+    size === "xs" ? "p-2" :
+    size === "sm" ? "p-3.5" :
+    size === "lg" ? "p-7" :
+    "p-4";
 
   return (
     <div
@@ -149,7 +150,8 @@ export function TourPhotoOverlay({
         </span>
       ) : null}
 
-      {/* bottom-right: stop name — Cormorant Garamond italic, semibold */}
+      {/* bottom-right: stop name — Playfair Display italic 700 (dramatic
+          magazine headline italic, bolder than Cormorant Garamond). */}
       {!hideStopName && resolvedName ? (
         <span
           className={cn(
@@ -159,10 +161,10 @@ export function TourPhotoOverlay({
           )}
           style={{
             fontFamily:
-              "var(--font-editorial-serif), 'Cormorant Garamond', 'Playfair Display', Georgia, 'Times New Roman', serif",
-            fontWeight: 600,
-            letterSpacing: "0.012em",
-            textShadow: "0 1px 2px rgba(0,0,0,0.55), 0 0 1px rgba(0,0,0,0.4)",
+              "var(--font-display-serif), 'Playfair Display', 'Cormorant Garamond', Georgia, 'Times New Roman', serif",
+            fontWeight: 700,
+            letterSpacing: "0.005em",
+            textShadow: "0 1px 2px rgba(0,0,0,0.6), 0 0 1px rgba(0,0,0,0.45)",
           }}
         >
           {resolvedName}

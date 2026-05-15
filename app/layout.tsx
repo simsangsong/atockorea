@@ -21,11 +21,13 @@ const inter = Inter({
   display: "swap",
 });
 
-/** Latin display — brand mark & editorial accents (tour-product / premium surfaces) */
+/** Latin display — brand mark & editorial accents (tour-product / premium surfaces).
+    Italic variants power the tour photo stop-name overlays. */
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-display-serif",
-  weight: ["500", "600", "700"],
+  weight: ["500", "600", "700", "800"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
