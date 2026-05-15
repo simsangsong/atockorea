@@ -418,12 +418,10 @@ export function HeroSection() {
               disabled={matchPhase === "loading"}
               aria-busy={matchPhase === "loading"}
               onClick={handleSubmit}
-              className="h-auto w-full rounded-xl py-4 text-[15px] font-semibold transition-all duration-300 disabled:opacity-70 md:py-5 md:text-base"
+              className="h-auto w-full rounded-full bg-slate-900 py-4 text-[15px] font-semibold text-white transition-colors duration-300 hover:bg-slate-800 disabled:opacity-70 md:py-5 md:text-base"
               style={{
-                background: "linear-gradient(to bottom, #1e293b, #0f172a)",
                 boxShadow: "var(--home-shadow-btn-primary)",
                 border: "none",
-                color: "#fff",
               }}
             >
               {t("premium.hero.findMatchCta")}

@@ -139,7 +139,7 @@ export function FeaturedProductsShowcase() {
           <V0ShadcnButton
             asChild
             variant="outline"
-            className="inline-flex h-auto items-center gap-2 rounded-xl border-slate-200/80 bg-white/95 px-6 py-2.5 font-semibold text-slate-800 backdrop-blur-sm transition-all hover:border-slate-300/90 hover:bg-white"
+            className="inline-flex h-auto items-center gap-2 rounded-full border-slate-200/80 bg-white/95 px-6 py-2.5 font-semibold text-slate-800 backdrop-blur-sm transition-colors hover:border-slate-300/90 hover:bg-white"
           >
             <Link href={HOME_CTA_BROWSE_TOURS_HREF}>
               {totalCount != null && totalCount > 0

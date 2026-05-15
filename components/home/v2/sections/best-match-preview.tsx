@@ -25,7 +25,7 @@ const bestMatchCardShellLoadingClassName =
   "rounded-card border border-white/90 bg-white/95 shadow-home-hero-match backdrop-blur-sm";
 
 const bestMatchPrimaryCtaClassName =
-  "h-auto w-full rounded-xl py-4 text-[13px] font-semibold transition-all duration-300 md:py-6 md:text-sm bg-primary hover:bg-primary/95 text-white";
+  "h-auto w-full rounded-full py-4 text-[13px] font-semibold transition-colors duration-300 md:py-6 md:text-sm bg-slate-900 hover:bg-slate-800 text-white";
 
 const bestMatchPrimaryCtaStyle: CSSProperties = {
   boxShadow: "var(--home-shadow-btn-primary)",
@@ -407,12 +407,12 @@ export function BestMatchPreview() {
               <V0ShadcnButton
                 type="button"
                 variant="outline"
-                className="rounded-xl font-semibold h-auto py-3 px-4"
+                className="rounded-full font-semibold h-auto py-3 px-4"
                 onClick={() => resetMatchToIdle()}
               >
                 {resultVm.matchResultBackCta}
               </V0ShadcnButton>
-              <V0ShadcnButton asChild variant="outline" className="rounded-xl font-semibold h-auto py-3 px-4">
+              <V0ShadcnButton asChild variant="outline" className="rounded-full font-semibold h-auto py-3 px-4">
                 <Link href={resultVm.browseToursHref}>{resultVm.seeOtherToursCta}</Link>
               </V0ShadcnButton>
             </div>

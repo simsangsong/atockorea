@@ -96,7 +96,7 @@ export function ChooseTravelStyle() {
             <V0ShadcnButton
               asChild
               size="lg"
-              className="w-full rounded-xl bg-white py-3 text-[13px] font-semibold text-slate-900 transition-all duration-300 hover:bg-white/95 h-auto"
+              className="w-full rounded-full bg-white py-3 text-[13px] font-semibold text-slate-900 transition-colors duration-300 hover:bg-white/95 h-auto"
               style={chooseStyleFeaturedWhiteCtaStyle}
             >
               <Link
@@ -144,9 +144,8 @@ export function ChooseTravelStyle() {
 
             <V0ShadcnButton
               asChild
-              variant="outline"
               size="lg"
-              className="w-full border-amber-300/80 bg-amber-50/50 text-amber-800 hover:bg-amber-100 hover:border-amber-400 font-semibold py-3 rounded-xl text-[13px] transition-all h-auto mt-4"
+              className="w-full bg-slate-900 text-white hover:bg-slate-800 font-semibold py-3 rounded-full text-[13px] transition-colors h-auto mt-4"
             >
               <Link
                 href={HOME_CTA_MATCHING_HREF}
@@ -195,9 +194,8 @@ export function ChooseTravelStyle() {
 
             <V0ShadcnButton
               asChild
-              variant="outline"
               size="lg"
-              className="w-full border-amber-300/70 bg-white text-amber-800 hover:bg-amber-50 hover:border-amber-400 font-semibold py-3 rounded-xl text-[13px] transition-all h-auto mt-4"
+              className="w-full bg-slate-900 text-white hover:bg-slate-800 font-semibold py-3 rounded-full text-[13px] transition-colors h-auto mt-4"
             >
               <Link
                 href={HOME_CTA_BROWSE_TOURS_HREF}
