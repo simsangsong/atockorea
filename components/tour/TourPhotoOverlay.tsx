@@ -56,8 +56,6 @@ function CloudBadge({
 }) {
   // React.useId so each instance gets unique gradient IDs (defs are global).
   const uid = React.useId().replace(/:/g, "");
-  const gradFill = `cb-grad-${uid}`;
-  const gradHi = `cb-hi-${uid}`;
   const gradStroke = `cb-stroke-${uid}`;
 
   return (
@@ -76,40 +74,26 @@ function CloudBadge({
         aria-hidden
       >
         <defs>
-          {/* Body: light blue at bottom, brighter white near the top of the puffs */}
-          <linearGradient id={gradFill} x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#ffffff" />
-            <stop offset="55%" stopColor="#f1f8ff" />
-            <stop offset="100%" stopColor="#b9dcef" />
-          </linearGradient>
-          {/* Stroke: stronger blue at edges (esp. underside) for definition */}
+          {/* Pale outline gradient — soft, no strong tint */}
           <linearGradient id={gradStroke} x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#a4cee5" />
-            <stop offset="100%" stopColor="#5fa1c8" />
+            <stop offset="0%" stopColor="#dcebf5" />
+            <stop offset="100%" stopColor="#a9c9dc" />
           </linearGradient>
-          {/* Soft white highlight over the upper-middle puffs */}
-          <radialGradient id={gradHi} cx="0.5" cy="0.32" r="0.55">
-            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.85" />
-            <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
-          </radialGradient>
         </defs>
-        {/* Main cloud body */}
+        {/* Pure white cloud body with light pale outline */}
         <path
           d={CLOUD_PATH}
-          fill={`url(#${gradFill})`}
+          fill="#ffffff"
           stroke={`url(#${gradStroke})`}
-          strokeWidth="2.5"
+          strokeWidth="2"
           strokeLinejoin="round"
         />
-        {/* Glossy highlight overlay */}
-        <path d={CLOUD_PATH} fill={`url(#${gradHi})`} />
       </svg>
       <span
         className={cn(
-          "relative z-10 uppercase font-semibold tracking-[0.18em] text-sky-900",
+          "relative z-10 uppercase font-medium tracking-[0.16em] text-sky-700/80",
           textClass,
         )}
-        style={{ textShadow: "0 1px 0 rgba(255,255,255,0.5)" }}
       >
         {label}
       </span>
@@ -132,22 +116,22 @@ export function TourPhotoOverlay({
   if (!resolvedRegion && !resolvedName) return null;
 
   const cloud =
-    size === "xs" ? { text: "text-[7px] tracking-[0.14em]", px: 8, py: 4 } :
-    size === "sm" ? { text: "text-[9px] tracking-[0.16em]", px: 12, py: 5 } :
-    size === "lg" ? { text: "text-[12px] tracking-[0.22em]", px: 22, py: 9 } :
-    { text: "text-[10px] tracking-[0.18em]", px: 15, py: 7 };
+    size === "xs" ? { text: "text-[6px] tracking-[0.12em]", px: 6, py: 3 } :
+    size === "sm" ? { text: "text-[7px] tracking-[0.14em]", px: 8, py: 3.5 } :
+    size === "lg" ? { text: "text-[11px] tracking-[0.22em]", px: 20, py: 8 } :
+    { text: "text-[7.5px] tracking-[0.16em]", px: 10, py: 4.5 };
 
   const stopSize =
-    size === "xs" ? "text-[10px]" :
-    size === "sm" ? "text-[12px]" :
+    size === "xs" ? "text-[8px]" :
+    size === "sm" ? "text-[10px]" :
     size === "lg" ? "text-[22px]" :
-    "text-[15px]";
+    "text-[12px]";
 
   const insetClass =
     size === "xs" ? "p-1.5" :
-    size === "sm" ? "p-3" :
+    size === "sm" ? "p-2.5" :
     size === "lg" ? "p-6" :
-    "p-4";
+    "p-3";
 
   return (
     <div
