@@ -138,11 +138,15 @@ Order matters — earlier items make later ones easier:
    editorial differentiator.
 
 ### 🚀 Phase 3 — Differentiating Motion & Storytelling (2–3 weeks)
-- Scroll-linked Ken Burns / parallax / reveal-on-view.
-- Process Operational mobile vertical timeline.
-- AI match thinking visualization.
-- Sticky bottom CTA after scroll past hero.
-- Section transitions reworked from 10px gradient to organic dividers.
+- [x] Scroll-linked hero parallax — photo translates -22% as the user
+      scrolls past, darken overlay opacity 0 → 0.5, headline drifts +36px
+      with opacity 1 → 0.55. Built on framer-motion `useScroll` +
+      `useTransform`; `useReducedMotion` collapses transforms to identity.
+- [ ] Process Operational mobile vertical timeline.
+- [ ] AI match thinking visualization.
+- [ ] Sticky bottom CTA after scroll past hero.
+- [ ] Section transitions reworked from 10px gradient to organic dividers.
+- [ ] Snap-scroll dot-progress indicator (deferred from Phase 2 Step 4).
 
 ## Definition of Done (every PR)
 
@@ -219,12 +223,10 @@ phase rollup honest.
 
 ## Working Order — Next Up
 
-**Phase 2 complete** ✅. All 5 Phase 2 steps shipped.
+**Phase 2 complete** ✅, **Phase 3 Step 1 (hero scroll parallax) complete** ✅.
 
-Next: **Phase 3 — Differentiating Motion & Storytelling**.
-First concrete step recommendation:
-- Scroll-linked Ken Burns / parallax on hero (extends KenBurns into a
-  scroll-driven parallax + darken).
-Other Phase 3 candidates: Process Operational mobile vertical timeline;
-AI match thinking visualization; sticky bottom CTA; organic section
-transitions.
+Next: **Phase 3 Step 2 — Process Operational mobile vertical timeline**.
+The dark "How AtoC works" section currently shows a 4-step horizontal
+connector line on lg only (`hidden lg:block`); mobile/tablet just get
+four isolated cards. Add a left-side vertical timeline rail with stepped
+nodes on mobile so the journey reads as a sequence.

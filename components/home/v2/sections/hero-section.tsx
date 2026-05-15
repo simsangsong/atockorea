@@ -3,6 +3,7 @@
 import { useCallback, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
 import { ChevronRight } from "lucide-react";
 import { useI18n, useTranslations } from "@/lib/i18n";
@@ -43,6 +44,37 @@ export function HeroSection() {
   const intentInputRef = useRef<HTMLTextAreaElement>(null);
 
   const heroSectionRef = useRef<HTMLElement>(null);
+  const heroPanelRef = useRef<HTMLDivElement>(null);
+
+  // Scroll-linked parallax: as the user scrolls past the hero, the photo
+  // slides up faster than the text, and a black overlay dims the photo —
+  // gives the hero a cinematic "fade to dark" handoff instead of just
+  // disappearing off the top of the viewport.
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: heroPanelRef,
+    offset: ["start start", "end start"],
+  });
+  const photoY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    reduceMotion ? ["0%", "0%"] : ["0%", "-22%"],
+  );
+  const darkenOpacity = useTransform(
+    scrollYProgress,
+    [0, 1],
+    reduceMotion ? [0, 0] : [0, 0.5],
+  );
+  const headlineY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    reduceMotion ? [0, 0] : [0, 36],
+  );
+  const headlineOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.6, 1],
+    reduceMotion ? [1, 1, 1] : [1, 0.85, 0.55],
+  );
 
   const styleChipOptions = useMemo(
     () =>
@@ -91,9 +123,15 @@ export function HeroSection() {
       `}</style>
       {/* Hero height: -15% from the previous 38/40/46vh per design feedback.
           The black base lets the photo crossfade read as a cinematic panel. */}
-      <div className="relative min-h-[32vh] sm:min-h-[34vh] md:min-h-[39vh] flex flex-col justify-end overflow-hidden bg-black pb-2 md:pb-3">
+      <div
+        ref={heroPanelRef}
+        className="relative min-h-[32vh] sm:min-h-[34vh] md:min-h-[39vh] flex flex-col justify-end overflow-hidden bg-black pb-2 md:pb-3"
+      >
         <div className="absolute inset-0">
-          <div className="absolute inset-0 overflow-hidden" aria-hidden>
+          {/* Photo crossfade — slides up under parallax as the user scrolls,
+              creating depth between photo and headline. Ken Burns CSS
+              animation still plays on the inner images. */}
+          <motion.div className="absolute inset-0 overflow-hidden" aria-hidden style={{ y: photoY }}>
             {HERO_SLIDES.map((slide, index) => (
               <Image
                 key={slide.src}
@@ -107,7 +145,14 @@ export function HeroSection() {
                 style={{ animationDelay: `${index * 4.5}s` }}
               />
             ))}
-          </div>
+          </motion.div>
+          {/* Darken overlay — fades from 0 → 0.5 over the scroll range, giving
+              a cinematic "lights fade" handoff into the trust panel below. */}
+          <motion.div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 z-[2] bg-black"
+            style={{ opacity: darkenOpacity }}
+          />
           {/* The previous full-width scrim is gone; legibility is handled by a
               discrete text panel so the photography stays bright. */}
           <div
@@ -118,8 +163,13 @@ export function HeroSection() {
 
         {/* Headline block: a soft radial gradient sits behind the text and
             feathers out past the text edges. Pure CSS keeps the photo layer
-            bright without a per-frame backdrop-filter pass. */}
-        <div className="relative z-10 mx-auto mb-1 w-full max-w-2xl px-3 pb-0.5 text-center sm:px-5 md:mb-2 md:px-8">
+            bright without a per-frame backdrop-filter pass. The whole block
+            drifts down slightly + fades during scroll-past so it doesn't
+            compete with sections below. */}
+        <motion.div
+          className="relative z-10 mx-auto mb-1 w-full max-w-2xl px-3 pb-0.5 text-center sm:px-5 md:mb-2 md:px-8"
+          style={{ y: headlineY, opacity: headlineOpacity }}
+        >
           <div className="relative inline-block max-w-full px-5 py-3 md:px-7 md:py-4">
             <span
               aria-hidden
@@ -150,7 +200,7 @@ export function HeroSection() {
               {t("premium.hero.atfHeroSubhead")}
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <div
