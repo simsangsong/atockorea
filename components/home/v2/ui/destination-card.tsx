@@ -29,14 +29,14 @@ export function DestinationCard({
   return (
     <Link
       href={href}
-      className="group relative block aspect-[3/4] overflow-hidden rounded-card shadow-2 transition-[box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:shadow-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/35 motion-reduce:transition-shadow motion-reduce:hover:translate-y-0"
+      className="group relative block aspect-[4/5] overflow-hidden rounded-card shadow-2 transition-[box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:shadow-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/35 motion-reduce:transition-shadow motion-reduce:hover:translate-y-0"
     >
       <div className="absolute inset-0">
         <Image
           src={imageSrc}
           alt={imageAlt}
           fill
-          sizes="(max-width: 768px) 70vw, 33vw"
+          sizes="(max-width: 768px) 60vw, 33vw"
           className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
         />
       </div>
