@@ -18,7 +18,7 @@
 | **Current phase** | Phase 3 — Map UI + `/tours` restructure + home v2 entry 🔄 in progress |
 | **Blocked on** | — (open follow-ups: i18n auto-translate tool choice [§F P3 task], visual review checkpoints during build) |
 | **Last updated** | 2026-05-17 |
-| **Last commit touching this feature** | `9a873013` — docs(itinerary-builder): sync planner with Phase 2 commit hash e84d15ba |
+| **Last commit touching this feature** | `2205e28f` — feat(itinerary-builder): Phase 3a — map UI scaffold |
 | **Owner** | simsangsong |
 | **Reviewers** | — |
 
@@ -70,6 +70,7 @@ One line per material change to this doc or per phase deliverable.
 | 2026-05-16 | `e7666abf` | Google Maps API key + vector Map ID setup completed externally; §B decisions D1–D8 logged; §F revised from 6 → 7 phases (new Phase 5 = auto-quote engine; old Phases 5/6 renumbered to 6/7; Phase 3 expanded to include `/tours` restructure + home v2 entry; Phase 4 expanded to include Q&A intake with private/cruise branching) |
 | 2026-05-17 | `98bb99ef` | Phase 1 — POI catalog seed complete. Migration `20260517120000_add_match_pois_geo_and_profile.sql` applied (adds lat/lng/matching_profile/default_stay_minutes/category/names_other_locales + region+stop_role indexes). Seed script `scripts/seed-match-pois-from-tour-jsons.mjs` walked 36 tour dirs / 204 locale files and upserted **82 unique attraction POIs**. Verification: 82 rows with name_en, **49 in busan+jeju** (≥40 acceptance ✓), 0 missing region, 0 operational rows (is_operational is generated column = poi_key LIKE 'OPS_%'). 6-locale names populated; 64/82 have default_image_url, 74/82 have parseable default_stay_minutes. Original audit-derived threshold of "≥100" was based on raw audit count of 102 that included operational keys; filtered attraction count is 82 — acceptance threshold updated to reflect reality. |
 | 2026-05-17 | (Phase 3 start) | Phase 3 started — implementation plan: (a) audit current `/tours` and 5 legacy private-tour routes; (b) install `@googlemaps/markerclusterer` if not present; (c) build `/itinerary-builder` landing + `/itinerary-builder/[region]` SSR shell with cluster filter (busan-cluster vs jeju); (d) `<POICatalogMap />` client with vector Map ID + AdvancedMarker + clusterer + InfoWindow; (e) EN messages under `itineraryBuilder.*`; (f) i18n auto-translate pipeline TBD; (g) `/tours` restructure with private-tour CTA card + 301 redirects; (h) new home v2 entry section; (i) responsive + Lighthouse check. Will land in 5–8 small commits with visual review checkpoints. |
+| 2026-05-17 | `2205e28f` | Phase 3a — Map UI scaffold landed. New routes `/itinerary-builder` (region selector landing) and `/itinerary-builder/[region]` (SSR shell with cluster-filtered Supabase fetch). Client `<POICatalogMap />` uses `useLoadScript` with marker+places libraries, renders `<GoogleMap mapId>` for vector, creates `AdvancedMarkerElement` + `PinElement` in useEffect, wraps with `MarkerClusterer`, opens InfoWindow on pin click with image + name (en+ko) + summary + disabled Add CTA. New deps: `@googlemaps/markerclusterer`. Middleware patch: added `itinerary-builder` to `RESERVED_ROOT_SEGMENTS` to prevent the bare-segment-to-tour-slug rewrite from redirecting `/itinerary-builder` → `/tour/itinerary-builder` (307). SSR-level verification via curl: all 3 routes (`/itinerary-builder`, `/busan`, `/jeju`) return 200 with expected content markers (Busan Map, Haedong, Tongdosa, Yangsan, Hallasan, Seongsan, UNESCO, etc.). Client-side Google Maps JS rendering not auto-verified (user's existing dev server held the `.next/dev` lock so a parallel preview server couldn't start) — user to verify in browser at `localhost:3000/itinerary-builder/busan`. Remaining Phase 3 work: i18n EN keys + auto-translate, `/tours` restructure, home v2 entry section, final visual + Lighthouse pass. |
 | 2026-05-17 | `e84d15ba` | Phase 2 — Coordinate enrichment complete. **74 attractions all have lat/lng inside Korea bbox** (33.0–38.7 lat, 124.6–131.0 lng). Pipeline: (1) created separate **server-side Google Maps API key** (`GOOGLE_MAPS_API_KEY`, no app restrictions, Geocoding/Places/Distance/Directions enabled) since the public `NEXT_PUBLIC_*` key is referrer-restricted and Google rejects it from servers. (2) `scripts/geocode-match-pois.mjs` ran forward geocoding (`<name_ko> 한국` primary, `<name_en> South Korea` fallback, 250 ms throttle) → 82 OK / 0 MISS / 0 OUT_OF_BBOX, but inspection revealed 11 hits at Korea-center fallback (35.9078, 127.7669) and `jagalchi_market` mismapped to Cheonan. (3) `scripts/poi-coord-overrides.csv` built with 8 manual coords (`jagalchi`, `hallasan_1100_wetland`, `gyochon_hanok_village`, `hallim_park`, `ilchulland_*` ×2, `incheon_cruise_terminal`, `jeju_tangerine_picking`) re-geocoded with specific Korean queries (yielded ROOFTOP-grade results); applied via `--apply-overrides`. (4) **Region quality pass** (`scripts/audit-poi-regions.mjs` + `reclassify-poi-regions-from-csv.mjs`) — reverse-geocoded all 74 POIs, used `administrative_area_level_1` as authoritative source with word-boundary regex (avoiding the bug where "Minsokchon-ro" hit substring `sokcho`). Discovered **37 region corrections** needed from Phase 1's naive tour-level region tagging: `incheon → seoul` ×6, `seoul → gyeonggi` ×16, `seoul → gangwon` ×4, `busan → gyeongju` ×6, `busan → yangsan/ulsan/miryang` ×3, `seoraksan → gangwon` ×2. All 37 UPDATEs + 8 `route_variant_*` DELETEs (non-POI tour metadata) applied. (5) **Spot-check 15 famous POIs** all match known coords. Final distribution: jeju 25 / gyeonggi 16 / busan 11 / seoul 6 / gyeongju 6 / gangwon 6 / yangsan/ulsan/incheon/miryang 1 each = 74. **Busan-cluster** (busan+yangsan+gyeongju+ulsan+miryang) = **20**, **Jeju** = **25**, MVP-renderable = **45** (≥40 acceptance ✓). Seed script also patched to exclude `route_variant_*` for future runs. |
 
 ---
@@ -178,16 +179,19 @@ Each phase delivers a shippable artifact and has a clear "stop here if needed" c
 **Deliverable:** `/itinerary-builder/[region]` renders the map with POI pins; `/tours` page restructured to surface the builder as the canonical path; home v2 has a new entry section.
 
 **Tasks — map UI:**
-- [ ] New route `app/itinerary-builder/[region]/page.tsx` (SSR shell, client child component)
-- [ ] Resolve `region` param against allowed list (`busan | jeju` per D1); 404 otherwise.
-- [ ] Read `match_pois` for region via Supabase server client.
-- [ ] Build `<POICatalogMap />` client component:
-  - Google Map with `mapId={NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID}` (vector rendering, tilt/rotate OFF — set in code via `gestureHandling`/`disableDefaultUI` partials)
-  - Centered on region centroid (Busan 35.1796,129.0756; Jeju 33.4996,126.5312)
-  - **AdvancedMarkerElement** per POI (vector path requires this, not legacy Marker)
-  - `@googlemaps/markerclusterer` for cluster behavior on zoom-out
-  - InfoWindow on marker click: image (`default_image_url`), name (locale-aware), summary line (first 140 chars of POI description), "Add to itinerary" button (disabled in Phase 3, enabled in Phase 4)
-- [ ] Mobile-first sizing: map 100vh on mobile, side-by-side on md+.
+- [x] New route `app/itinerary-builder/[region]/page.tsx` (SSR shell, client child component) — `2205e28f`
+- [x] Resolve `region` param against allowed list (`busan | jeju` per D1); 404 otherwise. Used `isRegionSlug` from `lib/itinerary-builder/regions.ts`.
+- [x] Read `match_pois` for region via Supabase server client — uses **REGION_CLUSTER** (busan cluster = busan+yangsan+gyeongju+ulsan+miryang; jeju = jeju) per Phase 2 close-out note.
+- [x] Build `<POICatalogMap />` client component:
+  - Google Map with `mapId={NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID}` (vector rendering)
+  - Tilt/heading 0 + standard pan/zoom; `gestureHandling: greedy`
+  - Centered on region centroid via `REGION_CENTER`
+  - `AdvancedMarkerElement` + `PinElement` created in useEffect (since `@react-google-maps/api 2.20.7` doesn't expose an AdvancedMarker React component)
+  - `@googlemaps/markerclusterer` (newly installed) wraps the markers
+  - InfoWindow on marker click: image (`default_image_url`), name_en + name_ko, summary, disabled "Add to itinerary" button (Phase 4 will enable)
+- [x] Landing page `app/itinerary-builder/page.tsx` with 2 region cards (Busan, Jeju) — server component with hardcoded EN copy (will move to messages/ in Phase 3 i18n task).
+- [x] Middleware fix — added `itinerary-builder` to `RESERVED_ROOT_SEGMENTS` (the bare-segment-to-tour-slug rewrite was redirecting `/itinerary-builder` → `/tour/itinerary-builder`).
+- [x] Mobile-first sizing: map 100vh / 70vh on mobile, 78vh on md+.
 
 **Tasks — i18n pipeline (D6):**
 - [ ] Author EN strings in `messages/en.json` under `itineraryBuilder.*` (page title, intro copy, marker popup labels, CTA labels).
