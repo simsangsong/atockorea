@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Sparkles, Wand2, ShieldCheck, Headphones } from "lucide-react";
+import { Sparkles, ShieldCheck, Headphones } from "lucide-react";
 import { useTranslations } from "@/lib/i18n";
 
 type Pillar = {
@@ -21,25 +21,18 @@ const PILLARS: ReadonlyArray<Pillar> = [
     bodyKey: "premium.v2.whyAtockorea.pillar1.body",
   },
   {
-    id: "ai-match",
-    icon: Wand2,
+    id: "trusted-globally",
+    icon: ShieldCheck,
     titleKey: "premium.v2.whyAtockorea.pillar2.title",
     titleAccentKey: "premium.v2.whyAtockorea.pillar2.titleAccent",
     bodyKey: "premium.v2.whyAtockorea.pillar2.body",
   },
   {
-    id: "licensed",
-    icon: ShieldCheck,
+    id: "support",
+    icon: Headphones,
     titleKey: "premium.v2.whyAtockorea.pillar3.title",
     titleAccentKey: "premium.v2.whyAtockorea.pillar3.titleAccent",
     bodyKey: "premium.v2.whyAtockorea.pillar3.body",
-  },
-  {
-    id: "support",
-    icon: Headphones,
-    titleKey: "premium.v2.whyAtockorea.pillar4.title",
-    titleAccentKey: "premium.v2.whyAtockorea.pillar4.titleAccent",
-    bodyKey: "premium.v2.whyAtockorea.pillar4.body",
   },
 ];
 
@@ -79,7 +72,7 @@ export function WhyAtockorea() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4">
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-3 md:gap-4">
           {PILLARS.map((pillar) => {
             const Icon = pillar.icon;
             return (
