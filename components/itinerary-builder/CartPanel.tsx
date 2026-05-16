@@ -1,34 +1,140 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, ChevronUp, MapPin, Trash2, X } from "lucide-react";
+import { GripVertical, MapPin, Trash2, X } from "lucide-react";
+import {
+  DndContext,
+  PointerSensor,
+  TouchSensor,
+  closestCenter,
+  useSensor,
+  useSensors,
+  type DragEndEvent,
+} from "@dnd-kit/core";
+import {
+  SortableContext,
+  arrayMove,
+  useSortable,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 import { useTranslations } from "@/lib/i18n";
+import { formatMinutes, totalDriveMinutes } from "@/lib/itinerary-builder/distance";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 
 interface Props {
   cart: string[]; // ordered poi_keys
   pois: MatchPoiRow[]; // all available POIs (look up by key)
   onRemove: (key: string) => void;
+  onReorder: (next: string[]) => void;
   onGetQuote: () => void;
   /** Phase 4d wires the actual submit — Phase 4a leaves it as no-op. */
   getQuoteEnabled?: boolean;
+  /** Cruise track time budget in minutes (e.g. 6h cruise window = 360). */
+  cruiseBudgetMinutes?: number | null;
 }
 
-export default function CartPanel({ cart, pois, onRemove, onGetQuote, getQuoteEnabled = false }: Props) {
+function SortableRow({
+  poi,
+  index,
+  onRemove,
+  removeLabel,
+}: {
+  poi: MatchPoiRow;
+  index: number;
+  onRemove: () => void;
+  removeLabel: string;
+}) {
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+    id: poi.poi_key,
+  });
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.6 : 1,
+  };
+
+  return (
+    <li
+      ref={setNodeRef}
+      style={style}
+      className="flex items-start gap-2 rounded-lg bg-slate-50 p-3 ring-1 ring-slate-100"
+    >
+      <button
+        type="button"
+        {...attributes}
+        {...listeners}
+        aria-label="Reorder"
+        className="touch-none cursor-grab rounded p-0.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 active:cursor-grabbing"
+      >
+        <GripVertical className="h-4 w-4" aria-hidden />
+      </button>
+      <span
+        aria-hidden
+        className="mt-0.5 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-amber-100 text-xs font-bold text-amber-800"
+      >
+        {index + 1}
+      </span>
+      <div className="min-w-0 flex-1">
+        <p className="truncate text-sm font-semibold text-slate-900">{poi.name_en}</p>
+        {poi.name_ko ? (
+          <p className="truncate text-[11px] text-slate-500">{poi.name_ko}</p>
+        ) : null}
+        {poi.default_stay_minutes ? (
+          <p className="mt-0.5 text-[11px] text-slate-500">~{poi.default_stay_minutes} min</p>
+        ) : null}
+      </div>
+      <button
+        type="button"
+        onClick={onRemove}
+        aria-label={removeLabel}
+        className="flex-shrink-0 rounded p-1 text-slate-400 transition-colors hover:bg-slate-100 hover:text-rose-600"
+      >
+        <Trash2 className="h-4 w-4" aria-hidden />
+      </button>
+    </li>
+  );
+}
+
+export default function CartPanel({
+  cart,
+  pois,
+  onRemove,
+  onReorder,
+  onGetQuote,
+  getQuoteEnabled = false,
+  cruiseBudgetMinutes,
+}: Props) {
   const t = useTranslations("itineraryBuilder.cart");
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const poiByKey = new Map(pois.map((p) => [p.poi_key, p]));
   const cartPois = cart.map((k) => poiByKey.get(k)).filter((x): x is MatchPoiRow => !!x);
 
-  const totalMinutes = cartPois.reduce(
+  const stayMinutes = cartPois.reduce(
     (sum, p) => sum + (p.default_stay_minutes ?? 0),
     0
   );
-  const hours = Math.floor(totalMinutes / 60);
-  const mins = totalMinutes % 60;
+  const driveMin = totalDriveMinutes(cartPois.map((p) => ({ lat: p.lat, lng: p.lng })));
+  const totalMin = stayMinutes + driveMin;
+  const overBudget =
+    cruiseBudgetMinutes != null && cruiseBudgetMinutes > 0 && totalMin > cruiseBudgetMinutes;
 
   const isEmpty = cartPois.length === 0;
+
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
+    useSensor(TouchSensor, { activationConstraint: { delay: 100, tolerance: 5 } })
+  );
+
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+    if (!over || active.id === over.id) return;
+    const oldIndex = cart.indexOf(active.id as string);
+    const newIndex = cart.indexOf(over.id as string);
+    if (oldIndex < 0 || newIndex < 0) return;
+    onReorder(arrayMove(cart, oldIndex, newIndex));
+  };
 
   // Shared list body used in both desktop side panel and mobile bottom sheet
   const listBody = (
@@ -39,53 +145,65 @@ export default function CartPanel({ cart, pois, onRemove, onGetQuote, getQuoteEn
           <p className="text-sm text-slate-500">{t("empty")}</p>
         </div>
       ) : (
-        <ul className="space-y-2 px-4 pb-4">
-          {cartPois.map((p, idx) => (
-            <li
-              key={p.poi_key}
-              className="flex items-start gap-3 rounded-lg bg-slate-50 p-3 ring-1 ring-slate-100"
-            >
-              <span
-                aria-hidden
-                className="mt-0.5 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-amber-100 text-xs font-bold text-amber-800"
-              >
-                {idx + 1}
-              </span>
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-semibold text-slate-900">{p.name_en}</p>
-                {p.name_ko ? (
-                  <p className="truncate text-[11px] text-slate-500">{p.name_ko}</p>
-                ) : null}
-                {p.default_stay_minutes ? (
-                  <p className="mt-0.5 text-[11px] text-slate-500">
-                    ~{p.default_stay_minutes} min
-                  </p>
-                ) : null}
-              </div>
-              <button
-                type="button"
-                onClick={() => onRemove(p.poi_key)}
-                aria-label={t("remove")}
-                className="flex-shrink-0 rounded p-1 text-slate-400 transition-colors hover:bg-slate-100 hover:text-rose-600"
-              >
-                <Trash2 className="h-4 w-4" aria-hidden />
-              </button>
-            </li>
-          ))}
-        </ul>
+        <DndContext
+          sensors={sensors}
+          collisionDetection={closestCenter}
+          onDragEnd={handleDragEnd}
+        >
+          <SortableContext items={cart} strategy={verticalListSortingStrategy}>
+            <ul className="space-y-2 px-4 pb-4">
+              {cartPois.map((p, idx) => (
+                <SortableRow
+                  key={p.poi_key}
+                  poi={p}
+                  index={idx}
+                  onRemove={() => onRemove(p.poi_key)}
+                  removeLabel={t("remove")}
+                />
+              ))}
+            </ul>
+          </SortableContext>
+        </DndContext>
       )}
     </>
   );
 
   const footer = !isEmpty && (
     <div className="border-t border-slate-200 bg-slate-50/80 px-4 py-3">
-      {totalMinutes > 0 ? (
-        <div className="mb-3 flex items-center justify-between text-xs text-slate-600">
-          <span>{t("stayTotal")}</span>
-          <span className="font-semibold text-slate-900">
-            {hours > 0 ? `${hours}h ` : ""}{mins}m
-          </span>
-        </div>
+      <div className="mb-2 space-y-1 text-xs text-slate-600">
+        {stayMinutes > 0 ? (
+          <div className="flex items-center justify-between">
+            <span>{t("stayTotal")}</span>
+            <span className="font-semibold text-slate-900">{formatMinutes(stayMinutes)}</span>
+          </div>
+        ) : null}
+        {driveMin > 0 ? (
+          <div className="flex items-center justify-between">
+            <span>{t("driveTotal")}</span>
+            <span className="font-semibold text-slate-900">≈ {formatMinutes(driveMin)}</span>
+          </div>
+        ) : null}
+        {totalMin > 0 ? (
+          <div className="flex items-center justify-between border-t border-slate-200 pt-1">
+            <span className="font-semibold text-slate-700">{t("totalDuration")}</span>
+            <span className={`font-bold ${overBudget ? "text-rose-700" : "text-slate-900"}`}>
+              {formatMinutes(totalMin)}
+            </span>
+          </div>
+        ) : null}
+        {cruiseBudgetMinutes != null && cruiseBudgetMinutes > 0 ? (
+          <div className="flex items-center justify-between text-[11px]">
+            <span className="text-slate-500">{t("cruiseBudget")}</span>
+            <span className={overBudget ? "font-bold text-rose-700" : "font-semibold text-slate-700"}>
+              {formatMinutes(cruiseBudgetMinutes)}
+            </span>
+          </div>
+        ) : null}
+      </div>
+      {overBudget ? (
+        <p className="mb-3 rounded-md bg-rose-50 px-2 py-1.5 text-[11px] font-semibold text-rose-700 ring-1 ring-rose-100">
+          {t("cruiseOverBudget", { over: formatMinutes(totalMin - (cruiseBudgetMinutes ?? 0)) })}
+        </p>
       ) : null}
       <button
         type="button"

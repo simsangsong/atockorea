@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { GoogleMap, InfoWindow, useLoadScript } from "@react-google-maps/api";
+import { GoogleMap, InfoWindow, Polyline, useLoadScript } from "@react-google-maps/api";
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
 import { useTranslations } from "@/lib/i18n";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
@@ -52,6 +52,16 @@ export default function POICatalogMap({
   const markersRef = useRef<google.maps.marker.AdvancedMarkerElement[]>([]);
 
   const initialCenter = useMemo(() => ({ lat: center.lat, lng: center.lng }), [center.lat, center.lng]);
+
+  // Polyline path: cart POIs in order. Empty when cart < 2 items.
+  const polylinePath = useMemo(() => {
+    if (!cart || cart.length < 2) return [];
+    const byKey = new Map(pois.map((p) => [p.poi_key, p]));
+    return cart
+      .map((k) => byKey.get(k))
+      .filter((p): p is MatchPoiRow => !!p)
+      .map((p) => ({ lat: p.lat, lng: p.lng }));
+  }, [cart, pois]);
 
   const handleMapLoad = useCallback((m: google.maps.Map) => {
     setMap(m);
@@ -151,6 +161,24 @@ export default function POICatalogMap({
           gestureHandling: "greedy",
         }}
       >
+        {polylinePath.length >= 2 ? (
+          <Polyline
+            path={polylinePath}
+            options={{
+              strokeColor: "#0f172a",
+              strokeOpacity: 0.85,
+              strokeWeight: 3,
+              geodesic: true,
+              icons: [
+                {
+                  icon: { path: "M 0,-1 0,1", strokeOpacity: 1, scale: 3 },
+                  offset: "0",
+                  repeat: "12px",
+                },
+              ],
+            }}
+          />
+        ) : null}
         {selected ? (
           <InfoWindow
             position={{ lat: selected.lat, lng: selected.lng }}

@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
+import { useSearchParams } from "next/navigation";
 import { useCart } from "@/lib/itinerary-builder/cart";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 import type { RegionSlug } from "@/lib/itinerary-builder/regions";
@@ -21,7 +22,18 @@ interface Props {
  * full-bleed map + floating bottom-sheet handle.
  */
 export default function BuilderShell({ region, pois, center, mapId, apiKey }: Props) {
-  const { cart, add, remove, has } = useCart();
+  const { cart, add, remove, reorder, has } = useCart();
+  const searchParams = useSearchParams();
+
+  // Phase 4b — cruise track time budget: if `?track=cruise&hours=N` is set,
+  // CartPanel renders the budget + warning when total exceeds.
+  const cruiseBudgetMinutes = useMemo(() => {
+    if (!searchParams) return null;
+    if (searchParams.get("track") !== "cruise") return null;
+    const hours = Number(searchParams.get("hours"));
+    if (!Number.isFinite(hours) || hours <= 0) return null;
+    return Math.round(hours * 60);
+  }, [searchParams]);
 
   const handleGetQuote = useCallback(() => {
     // Phase 4d wires the quote modal + POST /api/itinerary/quote here.
@@ -48,8 +60,10 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
         cart={cart}
         pois={pois}
         onRemove={remove}
+        onReorder={reorder}
         onGetQuote={handleGetQuote}
         getQuoteEnabled={false}
+        cruiseBudgetMinutes={cruiseBudgetMinutes}
       />
     </div>
   );
