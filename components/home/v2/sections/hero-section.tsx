@@ -213,44 +213,30 @@ export function HeroSection() {
       >
         {/* ── Value Bridge ─────────────────────────────────────────── */}
         {/*
-          Trust panel — compressed to exactly 3 stat cards (4.9★ rating, 100K+
-          bookings, 8 platforms with Klook/GYG/Viator microcopy). The earlier
-          version stacked redundant pill badges below the stats ("Direct
-          partnerships", "4.9 · 100K+ verified", "Verified operators") that
-          duplicated information already in the stat cards. Hero now leads
-          with one clear lockup: headline + one-sentence body + 3 stats.
+          Inline 3-stat row sitting on the page background. Earlier this was
+          wrapped in its own white card, which created a stacked-panel
+          composition with the matcher card directly below — two equal-weight
+          surfaces fighting for the eye. Flattened to a divider-separated row
+          so the matcher reads as the single focal card on the hero.
         */}
-        <div className="mx-auto max-w-lg pt-5 pb-6">
-          <div className="rounded-card border border-slate-200/70 bg-white px-5 py-5 shadow-1">
-            <h2 className="mb-1.5 text-h3 text-slate-900">
-              Stop searching. We already did it for you.
-            </h2>
-            <p className="mb-4 text-caption text-slate-700">
-              Hand-picked tours run by the{" "}
-              <span className="font-semibold text-slate-900">same operators</span>{" "}
-              trusted by Klook, GetYourGuide and Viator.
-            </p>
+        <div className="mx-auto max-w-lg pt-6 pb-7 md:pt-7 md:pb-8">
+          <div className="grid grid-cols-3 divide-x divide-slate-200/70 text-center">
+            <div className="px-2">
+              <span className="block text-h3 font-extrabold leading-none text-slate-900">
+                4.9<span className="text-[11px] text-amber-400">★</span>
+              </span>
+              <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-500">avg. rating</span>
+            </div>
 
-            {/* Stat cards — 3 equal columns. Only social-proof surface
-                above the matcher. */}
-            <div className="grid grid-cols-3 gap-2">
-              <div className="rounded-image border border-slate-100 bg-slate-50/60 px-2.5 py-3 text-center">
-                <span className="block text-h3 font-extrabold leading-none text-slate-900">
-                  4.9<span className="text-[11px] text-amber-400">★</span>
-                </span>
-                <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-600">avg. rating</span>
-              </div>
+            <div className="px-2">
+              <span className="block text-h3 font-extrabold leading-none text-slate-900">100K+</span>
+              <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-500">bookings</span>
+            </div>
 
-              <div className="rounded-image border border-slate-100 bg-slate-50/60 px-2.5 py-3 text-center">
-                <span className="block text-h3 font-extrabold leading-none text-slate-900">100K+</span>
-                <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-600">bookings</span>
-              </div>
-
-              <div className="rounded-image border border-slate-100 bg-slate-50/60 px-2.5 py-3 text-center">
-                <span className="block text-h3 font-extrabold leading-none text-slate-900">8</span>
-                <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-600">platforms</span>
-                <span className="mt-1 block text-micro font-medium leading-tight text-slate-500">Klook · GetYourGuide · Viator</span>
-              </div>
+            <div className="px-2">
+              <span className="block text-h3 font-extrabold leading-none text-slate-900">8</span>
+              <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-500">platforms</span>
+              <span className="mt-1 block text-micro font-medium leading-tight text-slate-400">Klook · GetYourGuide · Viator</span>
             </div>
           </div>
         </div>
@@ -431,18 +417,10 @@ export function HeroSection() {
               <ChevronRight className="w-4 h-4 ml-1.5" />
             </V0ShadcnButton>
 
-            <p className="mt-2.5 text-center text-[11px] font-medium text-slate-500 md:text-[12px]">
+            <p className="mt-2.5 text-center text-micro font-medium text-slate-500">
               {t("premium.v2.hero.smartMatchMicrocopy")}
             </p>
           </div>
-        </div>
-
-        <div className="mt-4 md:mt-5 flex items-center justify-center gap-1 text-[10.5px] md:text-[11px] font-medium text-slate-500 flex-wrap text-center leading-relaxed">
-          <span className="font-bold text-slate-700">100K+ bookings</span>
-          <span className="text-slate-300 mx-0.5">·</span>
-          <span className="text-slate-500">Klook · GetYourGuide · Viator</span>
-          <span className="text-slate-300 mx-0.5">·</span>
-          <span className="font-semibold text-slate-700">Verified operators</span>
         </div>
       </div>
     </section>
