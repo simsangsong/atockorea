@@ -7,6 +7,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
 import { ChevronRight } from "lucide-react";
 import { homeBtnPrimary } from "@/lib/home/home-button-classes";
+import { getCurrentSeason } from "@/lib/home/season";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import { appendIntentPhraseToIntentField } from "@/lib/home/services/hero-intent-append-chip";
 import type { HeroDestination } from "@/lib/home/types/hero-planner";
@@ -85,6 +86,12 @@ export function HeroSection() {
       })),
     [t],
   );
+
+  // Season pill — auto-rotates by current month. Initialized lazily so the
+  // server-rendered HTML matches whatever month the request lands in.
+  const season = useMemo(() => getCurrentSeason(), []);
+  const SeasonIcon = season.Icon;
+  const seasonLabel = t(season.labelKey);
 
   const appendChip = useCallback((phrase: string) => {
     setIntent((prev) => appendIntentPhraseToIntentField(prev, phrase));
@@ -178,6 +185,16 @@ export function HeroSection() {
               aria-hidden
               className="pointer-events-none absolute -inset-x-10 -inset-y-6 -z-10 rounded-[3rem] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.72)_35%,rgba(0,0,0,0.45)_60%,rgba(0,0,0,0.18)_80%,transparent_95%)] md:-inset-x-16 md:-inset-y-8"
             />
+            {/* Season pill — auto-rotates by month. Tiny glassy chip over the
+                photo, just above the H1. Communicates "this is relevant
+                NOW" — Korea's strongest commercial signal is its seasonal
+                rhythm (cherry blossom, autumn foliage, winter). */}
+            <div className="mb-2.5 inline-flex items-center gap-1.5 rounded-full bg-white/15 px-2.5 py-1 ring-1 ring-white/25 backdrop-blur-md md:mb-3">
+              <SeasonIcon className="h-3 w-3 text-amber-200" aria-hidden />
+              <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-white/95">
+                {seasonLabel}
+              </span>
+            </div>
             {/* Hero H1 — Inter at medium weight via Next.js-loaded
                 --font-inter. Previously used a system SF Pro stack which
                 rendered as SF on Mac/iOS and Segoe/Roboto on Win/Android
