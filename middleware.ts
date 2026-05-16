@@ -26,6 +26,7 @@ const RESERVED_ROOT_SEGMENTS = new Set([
   'dsa',
   'forgot-id',
   'forgot-password',
+  'itinerary-builder',
   'jeju',
   'legal',
   'merchant',
