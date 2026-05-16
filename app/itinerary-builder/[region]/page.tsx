@@ -10,7 +10,7 @@ import {
   type RegionSlug,
 } from "@/lib/itinerary-builder/regions";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
-import POICatalogMap from "@/components/itinerary-builder/POICatalogMap";
+import BuilderShell from "@/components/itinerary-builder/BuilderShell";
 
 // Force runtime fetch — match_pois is small and refreshed rarely; serve from
 // CDN-edge with 5-minute ISR for performance.
@@ -91,9 +91,9 @@ export default async function ItineraryBuilderRegionPage({
           </div>
         </header>
 
-        <section className="px-4 pb-12 md:px-6">
-          <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-slate-200">
-            <POICatalogMap
+        <section className="px-0 pb-12 md:px-6">
+          <div className="mx-auto max-w-7xl overflow-hidden border-y border-slate-200 bg-white md:rounded-2xl md:border md:shadow-md md:ring-1 md:ring-slate-200">
+            <BuilderShell
               region={region}
               pois={pois}
               center={center}
@@ -101,7 +101,7 @@ export default async function ItineraryBuilderRegionPage({
               apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}
             />
           </div>
-          <p className="mt-3 text-center text-xs text-slate-500">
+          <p className="mt-3 px-4 text-center text-xs text-slate-500 md:px-0">
             {pois.length} curated points of interest in this region.
           </p>
         </section>

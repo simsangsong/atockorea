@@ -21,9 +21,24 @@ interface Props {
   center: { lat: number; lng: number; zoom: number };
   mapId: string;
   apiKey: string;
+  /** Phase 4a wiring — cart state owned by parent (`BuilderShell`). */
+  cart?: string[];
+  onAdd?: (key: string) => void;
+  onRemove?: (key: string) => void;
+  hasInCart?: (key: string) => boolean;
 }
 
-export default function POICatalogMap({ region, pois, center, mapId, apiKey }: Props) {
+export default function POICatalogMap({
+  region,
+  pois,
+  center,
+  mapId,
+  apiKey,
+  cart,
+  onAdd,
+  onRemove,
+  hasInCart,
+}: Props) {
   const t = useTranslations("itineraryBuilder.map");
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: apiKey,
@@ -144,7 +159,12 @@ export default function POICatalogMap({ region, pois, center, mapId, apiKey }: P
               pixelOffset: typeof window !== "undefined" ? new google.maps.Size(0, -34) : undefined,
             }}
           >
-            <POIInfoWindowContent poi={selected} />
+            <POIInfoWindowContent
+              poi={selected}
+              inCart={hasInCart?.(selected.poi_key) ?? false}
+              onAdd={onAdd ? () => onAdd(selected.poi_key) : undefined}
+              onRemove={onRemove ? () => onRemove(selected.poi_key) : undefined}
+            />
           </InfoWindow>
         ) : null}
       </GoogleMap>

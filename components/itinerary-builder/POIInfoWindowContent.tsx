@@ -5,14 +5,16 @@ import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 
 interface Props {
   poi: MatchPoiRow;
+  inCart?: boolean;
+  onAdd?: () => void;
+  onRemove?: () => void;
 }
 
 /**
  * Content rendered inside a Google Maps InfoWindow.
- * Phase 3: read-only preview with disabled "Add to itinerary" CTA.
- * Phase 4 will enable the Add button and wire to cart state.
+ * Phase 4a: Add button enabled, toggles to "In itinerary — Remove" when in cart.
  */
-export default function POIInfoWindowContent({ poi }: Props) {
+export default function POIInfoWindowContent({ poi, inCart = false, onAdd, onRemove }: Props) {
   const t = useTranslations("itineraryBuilder.map");
   const summary = (() => {
     const desc = poi.poi_meta && typeof poi.poi_meta === "object" ? (poi.poi_meta as Record<string, unknown>) : null;
@@ -21,6 +23,12 @@ export default function POIInfoWindowContent({ poi }: Props) {
     if (poi.category) return poi.category;
     return "";
   })();
+
+  const buttonLabel = inCart ? t("removeFromItinerary") : t("addCta");
+  const buttonHandler = inCart ? onRemove : onAdd;
+  const buttonClass = inCart
+    ? "mt-3 w-full rounded-md bg-rose-50 px-3 py-2 text-xs font-semibold text-rose-700 ring-1 ring-rose-200 transition-colors hover:bg-rose-100"
+    : "mt-3 w-full rounded-md bg-amber-500 px-3 py-2 text-xs font-bold text-white shadow-sm transition-colors hover:bg-amber-600";
 
   return (
     <div className="max-w-[280px] p-1 font-sans">
@@ -48,11 +56,11 @@ export default function POIInfoWindowContent({ poi }: Props) {
       </div>
       <button
         type="button"
-        disabled
-        title={t("addCtaTooltip")}
-        className="mt-3 w-full cursor-not-allowed rounded-md bg-slate-200 px-3 py-2 text-xs font-semibold text-slate-500"
+        onClick={buttonHandler}
+        disabled={!buttonHandler}
+        className={buttonClass}
       >
-        {t("addCta")}
+        {buttonLabel}
       </button>
     </div>
   );
