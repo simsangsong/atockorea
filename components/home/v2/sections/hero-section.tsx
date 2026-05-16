@@ -334,7 +334,11 @@ export function HeroSection() {
                     "w-full resize-none rounded-button border border-slate-200/70 bg-slate-50 px-3.5 text-caption text-slate-800 transition-[height,padding,border-color,background-color] duration-300 ease-out placeholder:text-slate-400 focus:border-slate-300 focus:bg-white focus-ring md:px-4",
                     intentExpanded
                       ? "h-32 overflow-auto py-3 md:h-40 md:py-4"
-                      : "h-12 overflow-hidden py-3.5 md:h-14 md:py-4",
+                      // Collapsed state must accommodate the long EN placeholder
+                      // ("Pace, sights, and who you're traveling with…", ~48 chars)
+                      // wrapping to 2 lines on narrow viewports without clipping.
+                      // h-16 (64px) = 2 lines of text-caption + py-3 (12px each).
+                      : "h-16 overflow-hidden py-3 md:h-14 md:py-4",
                   )}
                 />
               </div>
