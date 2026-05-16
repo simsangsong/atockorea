@@ -12,6 +12,8 @@ import { useCurrencyOptional } from "@/lib/currency";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import { HOME_CTA_BROWSE_TOURS_HREF } from "@/lib/home/home-cta-routes";
 import { SnapScrollDots } from "@/components/home/v2/ui/SnapScrollDots";
+import { homeBtnSecondary } from "@/lib/home/home-button-classes";
+import { cn } from "@/lib/utils";
 
 const FEATURED_LIMIT = 6;
 
@@ -147,7 +149,7 @@ export function FeaturedProductsShowcase() {
           <V0ShadcnButton
             asChild
             variant="outline"
-            className="inline-flex h-auto items-center gap-2 rounded-full border-slate-200/80 bg-white/95 px-6 py-2.5 font-semibold text-slate-800 backdrop-blur-sm transition-colors hover:border-slate-300/90 hover:bg-white"
+            className={cn(homeBtnSecondary, "inline-flex w-auto items-center gap-2 px-6")}
           >
             <Link href={HOME_CTA_BROWSE_TOURS_HREF}>
               {totalCount != null && totalCount > 0

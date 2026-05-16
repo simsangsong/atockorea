@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
 import { ChevronRight } from "lucide-react";
+import { homeBtnPrimary } from "@/lib/home/home-button-classes";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import { appendIntentPhraseToIntentField } from "@/lib/home/services/hero-intent-append-chip";
 import type { HeroDestination } from "@/lib/home/types/hero-planner";
@@ -385,11 +386,8 @@ export function HeroSection() {
               disabled={matchPhase === "loading"}
               aria-busy={matchPhase === "loading"}
               onClick={handleSubmit}
-              className="h-auto w-full rounded-full bg-slate-900 py-4 text-[15px] font-semibold text-white transition-colors duration-300 hover:bg-slate-800 disabled:opacity-70 md:py-5 md:text-base"
-              style={{
-                boxShadow: "var(--home-shadow-btn-primary)",
-                border: "none",
-              }}
+              className={homeBtnPrimary}
+              style={{ boxShadow: "var(--home-shadow-btn-primary)", border: "none" }}
             >
               {t("premium.hero.findMatchCta")}
               <ChevronRight className="w-4 h-4 ml-1.5" />

@@ -11,6 +11,7 @@ import {
   HOME_CTA_MATCHING_HREF,
 } from "@/lib/home/home-cta-routes";
 import { useTranslations } from "@/lib/i18n";
+import { homeBtnPrimary, homeBtnSecondary } from "@/lib/home/home-button-classes";
 
 const finalCtaPrimaryStyle: CSSProperties = {
   boxShadow: "var(--home-shadow-btn-primary)",
@@ -73,7 +74,7 @@ export function FinalCTA() {
               <V0ShadcnButton
                 asChild
                 size="lg"
-                className="h-auto w-full rounded-full bg-slate-900 py-6 text-[14px] font-semibold text-white transition-colors duration-300 hover:bg-slate-800 md:py-7 md:text-base"
+                className={homeBtnPrimary}
                 style={finalCtaPrimaryStyle}
               >
                 <Link
@@ -97,7 +98,7 @@ export function FinalCTA() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="h-auto w-full rounded-full border-slate-200/75 bg-white/95 py-5 text-[13px] font-semibold text-slate-800 backdrop-blur-sm transition-colors duration-300 hover:border-slate-300/90 hover:bg-white md:py-6 md:text-sm"
+                className={homeBtnSecondary}
                 style={finalCtaSecondaryStyle}
               >
                 <Link

@@ -16,6 +16,8 @@ import { useCurrency } from "@/lib/currency";
 import { getFeaturedJoinTourProduct } from "@/lib/home/featured-join-tour-offer";
 import { CHOOSE_STYLE_CARD_USD } from "@/lib/home/choose-style-card-usd";
 import { SnapScrollDots } from "@/components/home/v2/ui/SnapScrollDots";
+import { homeBtnInverse, homeBtnPrimary } from "@/lib/home/home-button-classes";
+import { cn } from "@/lib/utils";
 
 const chooseStyleFeaturedWhiteCtaStyle: CSSProperties = {
   boxShadow: "var(--home-shadow-btn-secondary)",
@@ -95,7 +97,7 @@ export function ChooseTravelStyle() {
             <V0ShadcnButton
               asChild
               size="lg"
-              className="w-full rounded-full bg-white py-3 text-[13px] font-semibold text-slate-900 transition-colors duration-300 hover:bg-white/95 h-auto"
+              className={homeBtnInverse}
               style={chooseStyleFeaturedWhiteCtaStyle}
             >
               <Link
@@ -142,7 +144,7 @@ export function ChooseTravelStyle() {
             <V0ShadcnButton
               asChild
               size="lg"
-              className="w-full bg-slate-900 text-white hover:bg-slate-800 font-semibold py-3 rounded-full text-[13px] transition-colors h-auto mt-4"
+              className={cn(homeBtnPrimary, "mt-4")}
             >
               <Link
                 href={HOME_CTA_MATCHING_HREF}
@@ -190,7 +192,7 @@ export function ChooseTravelStyle() {
             <V0ShadcnButton
               asChild
               size="lg"
-              className="w-full bg-slate-900 text-white hover:bg-slate-800 font-semibold py-3 rounded-full text-[13px] transition-colors h-auto mt-4"
+              className={cn(homeBtnPrimary, "mt-4")}
             >
               <Link
                 href={HOME_CTA_BROWSE_TOURS_HREF}

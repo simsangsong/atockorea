@@ -16,6 +16,7 @@ import {
   buildV2BestMatchResultViewModelFromApi,
 } from "@/lib/home/adapters/v2-best-match-result-vm";
 import { getFeaturedJoinTourProduct } from "@/lib/home/featured-join-tour-offer";
+import { homeBtnPrimary, homeBtnSecondary } from "@/lib/home/home-button-classes";
 
 /** Shell for idle + result cards — matches `home-premium` hero-match offer depth (group hover). */
 const bestMatchCardShellClassName =
@@ -23,9 +24,6 @@ const bestMatchCardShellClassName =
 
 const bestMatchCardShellLoadingClassName =
   "rounded-card border border-white/90 bg-white/95 shadow-home-hero-match backdrop-blur-sm";
-
-const bestMatchPrimaryCtaClassName =
-  "h-auto w-full rounded-full py-4 text-[13px] font-semibold transition-colors duration-300 md:py-6 md:text-sm bg-slate-900 hover:bg-slate-800 text-white";
 
 const bestMatchPrimaryCtaStyle: CSSProperties = {
   boxShadow: "var(--home-shadow-btn-primary)",
@@ -373,7 +371,7 @@ export function BestMatchPreview() {
                   <V0ShadcnButton
                     asChild
                     size="lg"
-                    className={bestMatchPrimaryCtaClassName}
+                    className={homeBtnPrimary}
                     style={bestMatchPrimaryCtaStyle}
                   >
                     <Link
@@ -398,12 +396,12 @@ export function BestMatchPreview() {
               <V0ShadcnButton
                 type="button"
                 variant="outline"
-                className="rounded-full font-semibold h-auto py-3 px-4"
+                className={cn(homeBtnSecondary, "sm:w-auto sm:px-5")}
                 onClick={() => resetMatchToIdle()}
               >
                 {resultVm.matchResultBackCta}
               </V0ShadcnButton>
-              <V0ShadcnButton asChild variant="outline" className="rounded-full font-semibold h-auto py-3 px-4">
+              <V0ShadcnButton asChild variant="outline" className={cn(homeBtnSecondary, "sm:w-auto sm:px-5")}>
                 <Link href={resultVm.browseToursHref}>{resultVm.seeOtherToursCta}</Link>
               </V0ShadcnButton>
             </div>
