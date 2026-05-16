@@ -105,10 +105,10 @@ export function ProcessOperational() {
                   <span className="block md:hidden text-[10px] font-bold uppercase tracking-wider mb-1.5 text-amber-300">
                     {t(step.labelKey)}
                   </span>
-                  <h4 className="text-[14px] font-semibold text-white mb-1">
+                  <h4 className="text-body font-semibold text-white mb-1">
                     {t(step.titleKey)}
                   </h4>
-                  <p className="text-slate-400 text-[12.5px] leading-relaxed">
+                  <p className="text-caption text-slate-400">
                     {t(step.bodyKey)}
                   </p>
                 </div>

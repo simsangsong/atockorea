@@ -64,7 +64,7 @@ export function ChooseTravelStyle() {
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center">
                 <Users className="w-4 h-4 md:w-5 md:h-5 text-white" />
               </div>
-              <span className="text-[9px] md:text-[10px] font-bold text-amber-300 bg-white/5 border border-white/15 px-2.5 py-1 rounded-full tracking-wide flex items-center gap-1">
+              <span className="text-micro font-bold text-amber-300 bg-white/5 border border-white/15 px-2.5 py-1 rounded-full tracking-wide flex items-center gap-1">
                 <Award className="w-3 h-3" />
                 {t("premium.v2.chooseStyle.recommended")}
               </span>
@@ -73,12 +73,12 @@ export function ChooseTravelStyle() {
             <h3 className="text-base md:text-lg font-bold text-white mb-1">
               {t("premium.v2.chooseStyle.smallGroupTitle")}
             </h3>
-            <p className="text-[12.5px] text-slate-300 mb-3 leading-relaxed line-clamp-3 flex-1">
+            <p className="text-caption text-slate-300 mb-3 leading-relaxed line-clamp-3 flex-1">
               {t("premium.v2.chooseStyle.smallGroupDesc")}
             </p>
 
             <div className="mb-4">
-              <p className="text-[10px] text-slate-400 mb-0.5 uppercase tracking-wider">{t("premium.v2.chooseStyle.from")}</p>
+              <p className="text-micro text-slate-400 mb-0.5 uppercase tracking-wider">{t("premium.v2.chooseStyle.from")}</p>
               <div className="flex items-baseline gap-2">
                 {featuredJoin.compareAtPriceUsd != null ? (
                   <span className="text-sm text-slate-500 line-through">
@@ -88,7 +88,7 @@ export function ChooseTravelStyle() {
                 <span className="text-xl md:text-2xl font-bold text-white tracking-tight">
                   {formatPrice(featuredJoin.listPriceUsd)}
                 </span>
-                <span className="text-[11px] text-white/70 font-semibold">{t("premium.v2.chooseStyle.perPerson")}</span>
+                <span className="text-micro text-white/70 font-semibold">{t("premium.v2.chooseStyle.perPerson")}</span>
               </div>
             </div>
 
@@ -119,23 +119,23 @@ export function ChooseTravelStyle() {
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center">
                 <Car className="w-4 h-4 md:w-5 md:h-5 text-slate-700" />
               </div>
-              <span className="text-[9px] md:text-[10px] font-bold text-slate-700 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full tracking-wide">
+              <span className="text-micro font-bold text-slate-700 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full tracking-wide">
                 {t("premium.v2.chooseStyle.privateBadge")}
               </span>
             </div>
 
             <h3 className="text-base md:text-lg font-bold text-slate-900 mb-1">{t("premium.v2.chooseStyle.privateTitle")}</h3>
-            <p className="text-[12.5px] text-slate-600 mb-3 leading-relaxed line-clamp-3 flex-1">
+            <p className="text-caption text-slate-600 mb-3 leading-relaxed line-clamp-3 flex-1">
               {t("premium.v2.chooseStyle.privateDesc")}
             </p>
 
             <div className="mb-4">
-              <p className="text-[10px] text-slate-400 mb-0.5 uppercase tracking-wider">{t("premium.v2.chooseStyle.from")}</p>
+              <p className="text-micro text-slate-400 mb-0.5 uppercase tracking-wider">{t("premium.v2.chooseStyle.from")}</p>
               <div className="flex items-baseline gap-1.5">
                 <span className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">
                   {formatPrice(CHOOSE_STYLE_CARD_USD.private.list)}
                 </span>
-                <span className="text-slate-500 text-[11px] font-semibold">{t("premium.v2.chooseStyle.privatePerVehicle")}</span>
+                <span className="text-slate-500 text-micro font-semibold">{t("premium.v2.chooseStyle.privatePerVehicle")}</span>
               </div>
             </div>
 
@@ -165,7 +165,7 @@ export function ChooseTravelStyle() {
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center">
                 <Bus className="w-4 h-4 md:w-5 md:h-5 text-slate-700" />
               </div>
-              <span className="text-[9px] md:text-[10px] font-bold text-slate-700 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full tracking-wide">
+              <span className="text-micro font-bold text-slate-700 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full tracking-wide">
                 {t("premium.v2.chooseStyle.busBadge")}
               </span>
             </div>
@@ -173,17 +173,17 @@ export function ChooseTravelStyle() {
             <h3 className="text-base md:text-lg font-bold text-slate-900 tracking-tight mb-1">
               {t("premium.v2.chooseStyle.busTitle")}
             </h3>
-            <p className="text-[12.5px] text-slate-600 mb-3 leading-relaxed line-clamp-3 flex-1">
+            <p className="text-caption text-slate-600 mb-3 leading-relaxed line-clamp-3 flex-1">
               {t("premium.v2.chooseStyle.busDesc")}
             </p>
 
             <div className="mb-4">
-              <p className="text-[10px] text-slate-400 mb-0.5 uppercase tracking-wider">{t("premium.v2.chooseStyle.from")}</p>
+              <p className="text-micro text-slate-400 mb-0.5 uppercase tracking-wider">{t("premium.v2.chooseStyle.from")}</p>
               <div className="flex items-baseline gap-1.5">
                 <span className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">
                   {formatPrice(CHOOSE_STYLE_CARD_USD.bus.from)}
                 </span>
-                <span className="text-slate-500 text-[11px] font-semibold">{t("premium.v2.chooseStyle.busPerPerson")}</span>
+                <span className="text-slate-500 text-micro font-semibold">{t("premium.v2.chooseStyle.busPerPerson")}</span>
               </div>
             </div>
 

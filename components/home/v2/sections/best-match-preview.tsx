@@ -65,7 +65,7 @@ function MatchResultHeroImageSlot({
         />
       ) : (
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-3 bg-slate-100 px-4 text-center">
-          <p className="text-[13px] font-medium text-slate-600">{t("premium.v2.bestMatch.imageErrorBody")}</p>
+          <p className="text-caption font-medium">{t("premium.v2.bestMatch.imageErrorBody")}</p>
           <V0ShadcnButton
             type="button"
             variant="outline"
@@ -169,7 +169,7 @@ export function BestMatchPreview() {
                   : t("premium.v2.bestMatch.emptyBadge")}
             </span>
           </div>
-          <p className="text-slate-600 text-[13px] md:text-[14px] font-medium max-w-sm mx-auto leading-snug md:leading-relaxed">
+          <p className="text-body font-medium text-slate-600 max-w-sm mx-auto">
             {phase === "loading"
               ? loadingLabel
               : phase === "result"
@@ -357,18 +357,18 @@ export function BestMatchPreview() {
                     {resultVm.chipLabels.map((label: string, index: number) => (
                       <span
                         key={`${label}-${index}`}
-                        className="px-2.5 py-1 text-[10px] font-medium rounded-full bg-slate-100 text-slate-700"
+                        className="px-2.5 py-1 text-micro font-medium rounded-full bg-slate-100 text-slate-700"
                       >
                         {label}
                       </span>
                     ))}
                   </div>
 
-                  <p className="text-[13px] text-slate-600 mb-2 leading-relaxed">
+                  <p className="text-caption mb-2">
                     <span className="font-medium text-slate-700">{t("premium.v2.bestMatch.matchSummaryLead")}</span>{" "}
                     {resultVm.matchSummary}
                   </p>
-                  <p className="text-[11px] text-slate-500 mb-4 text-center md:mb-5">{resultVm.priceCaption}</p>
+                  <p className="text-micro text-slate-500 mb-4 text-center md:mb-5">{resultVm.priceCaption}</p>
 
                   <V0ShadcnButton
                     asChild
@@ -390,7 +390,7 @@ export function BestMatchPreview() {
               </div>
             </div>
 
-            <p className="text-center text-[13px] font-medium text-slate-600 mt-3 leading-snug px-1 md:mt-5">
+            <p className="text-center text-caption font-medium mt-3 px-1 md:mt-5">
               {resultVm.matchResultRecommendLine}
             </p>
 
@@ -408,7 +408,7 @@ export function BestMatchPreview() {
               </V0ShadcnButton>
             </div>
 
-            <p className="text-center text-[11px] text-slate-500 mt-3 leading-relaxed md:mt-5">
+            <p className="text-center text-micro text-slate-500 mt-3 leading-relaxed md:mt-5">
               <span className="mr-1 font-semibold uppercase tracking-[0.12em] text-slate-400">
                 {resultVm.alsoConsiderLabel}
               </span>

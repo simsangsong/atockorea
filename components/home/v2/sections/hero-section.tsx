@@ -194,7 +194,7 @@ export function HeroSection() {
             </h1>
 
             <p
-              className="mx-auto mt-2 max-w-md text-[12px] font-normal leading-snug text-white/85 md:mt-3 md:text-[13.5px] md:leading-relaxed"
+              className="mx-auto mt-2 max-w-md text-caption font-normal text-white/85 md:mt-3"
               style={{
                 fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', var(--font-sans), Inter, system-ui, sans-serif",
                 letterSpacing: "-0.01em",
@@ -235,19 +235,19 @@ export function HeroSection() {
                 above the matcher. */}
             <div className="grid grid-cols-3 gap-2">
               <div className="rounded-image border border-slate-100 bg-slate-50/60 px-2.5 py-3 text-center">
-                <span className="block text-[18px] font-extrabold leading-none tracking-tight text-slate-900">
+                <span className="block text-h3 font-extrabold leading-none text-slate-900">
                   4.9<span className="text-[11px] text-amber-400">★</span>
                 </span>
                 <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-600">avg. rating</span>
               </div>
 
               <div className="rounded-image border border-slate-100 bg-slate-50/60 px-2.5 py-3 text-center">
-                <span className="block text-[18px] font-extrabold leading-none tracking-tight text-slate-900">100K+</span>
+                <span className="block text-h3 font-extrabold leading-none text-slate-900">100K+</span>
                 <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-600">bookings</span>
               </div>
 
               <div className="rounded-image border border-slate-100 bg-slate-50/60 px-2.5 py-3 text-center">
-                <span className="block text-[18px] font-extrabold leading-none tracking-tight text-slate-900">8</span>
+                <span className="block text-h3 font-extrabold leading-none text-slate-900">8</span>
                 <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-600">platforms</span>
                 <span className="mt-1 block text-micro font-medium leading-tight text-slate-500">Klook · GetYourGuide · Viator</span>
               </div>
@@ -264,10 +264,10 @@ export function HeroSection() {
           <span className="text-eyebrow">
             {t("premium.v2.hero.matcherEyebrow")}
           </span>
-          <h2 className="mt-2 text-balance text-[18px] font-bold leading-snug tracking-tight text-slate-900 md:text-[22px]">
+          <h2 className="mt-2 text-balance text-h3 font-bold text-slate-900">
             {t("premium.v2.hero.matcherHeadline")}
           </h2>
-          <p className="mt-1.5 text-[12px] font-medium leading-relaxed text-slate-600 md:text-[13px]">
+          <p className="mt-1.5 text-caption font-medium">
             {t("premium.v2.hero.matcherSubline")}
           </p>
         </div>
