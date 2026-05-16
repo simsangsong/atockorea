@@ -1,13 +1,14 @@
 import {
   HeroSection,
-  BestMatchPreview,
   DestinationsShowcase,
   ChooseTravelStyle,
   FeaturedProductsShowcase,
   WhyAtockorea,
   ProcessOperational,
   FinalCTA,
+  ItineraryBuilderEntry,
 } from "@/components/home/v2/sections";
+import { DeferredBestMatchPreview } from "@/components/home/v2/DeferredBestMatchPreview";
 import { HomeV2MatchProvider } from "@/components/home/v2/HomeV2MatchProvider";
 import { StickyHomeCta } from "@/components/home/v2/StickyHomeCta";
 
@@ -23,8 +24,9 @@ export default function HomeV2Page() {
       <HomeV2MatchProvider>
         <div className="home-v2-body-isolate relative z-0">
           <HeroSection />
-          <BestMatchPreview />
+          <DeferredBestMatchPreview />
           <DestinationsShowcase />
+          <ItineraryBuilderEntry />
           <ChooseTravelStyle />
           <FeaturedProductsShowcase />
           <WhyAtockorea />

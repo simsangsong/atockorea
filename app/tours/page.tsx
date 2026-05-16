@@ -6,6 +6,7 @@ import { TourCollectionStrip } from '@/components/tours-hub/TourCollectionStrip'
 import { DestinationGrid } from '@/components/tours-hub/DestinationGrid';
 import type { HubTourItem } from '@/app/api/tours/hub/route';
 import Link from 'next/link';
+import { unstable_cache } from 'next/cache';
 
 // Revalidate every 5 minutes — tour catalogue changes infrequently.
 export const revalidate = 300;
@@ -57,7 +58,13 @@ function toItem(row: RawTourRow): HubTourItem {
   };
 }
 
-async function fetchHubData() {
+const MAX_SECTION_TOURS = 6;
+
+function takeSection(tours: HubTourItem[]): HubTourItem[] {
+  return tours.slice(0, MAX_SECTION_TOURS);
+}
+
+const fetchHubData = unstable_cache(async () => {
   const supabase = createServerClient();
   const { data, error } = await supabase
     .from('tours')
@@ -100,21 +107,20 @@ async function fetchHubData() {
       matchesTitle(t.title, 'hydrangea', 'winter', 'festival', 'seasonal'),
   );
 
-  const privateTours = all.filter(
-    (t) =>
-      hasBadge(t.badges, 'private tour', 'private') ||
-      matchesTitle(t.title, 'private', 'charter'),
-  );
+  // Per D7 2026-05-17 (itinerary-builder planner): the "Private & Charter Tours"
+  // section is removed from the hub. Pure private-tour landings live in the
+  // catalogue (still bookable via /tour-product/<slug>); the canonical entry
+  // for custom itineraries is now /itinerary-builder. Cruise+private overlap
+  // tours stay surfaced under the cruise section.
 
   return {
     topPicks,
-    jeju,
-    busan,
-    seoul,
-    cruise,
-    heritage,
-    seasonal,
-    private: privateTours,
+    jeju: takeSection(jeju),
+    busan: takeSection(busan),
+    seoul: takeSection(seoul),
+    cruise: takeSection(cruise),
+    heritage: takeSection(heritage),
+    seasonal: takeSection(seasonal),
     counts: {
       jeju: jeju.length,
       busan: busan.length,
@@ -122,7 +128,7 @@ async function fetchHubData() {
       total: all.length,
     },
   };
-}
+}, ['tours-hub-page-data-v2'], { revalidate: 300 });
 
 // ─── page ────────────────────────────────────────────────────────────────────
 
@@ -137,6 +143,32 @@ export default async function ToursHubPage() {
 
         {/* ── Sections ── */}
         <div className="mx-auto max-w-[1400px] space-y-14 py-12 pb-20">
+
+          {/* Want a private tour? — Direct CTA to the itinerary builder.
+              Per D7 2026-05-17: legacy /tours/private section removed; users
+              wanting custom routes go to /itinerary-builder instead. */}
+          <Link
+            href="/itinerary-builder"
+            className="group relative block overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900 px-6 py-7 shadow-xl ring-1 ring-amber-700/30 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl md:px-10 md:py-9"
+          >
+            <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
+              <div className="max-w-2xl">
+                <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.2em] text-amber-300">
+                  Want a private tour?
+                </p>
+                <h2 className="text-xl font-bold leading-tight text-white md:text-2xl">
+                  Build your own day on the map — Busan or Jeju
+                </h2>
+                <p className="mt-2 text-[13.5px] text-slate-300 md:text-[14.5px]">
+                  Pick stops you actually want to visit. Drag-to-sequence with a custom quote. No package required.
+                </p>
+              </div>
+              <span className="inline-flex items-center gap-2 rounded-full bg-amber-400 px-5 py-2.5 text-[13px] font-bold text-slate-900 shadow-md transition-all group-hover:gap-3 group-hover:bg-amber-300">
+                Open the map
+                <span aria-hidden>→</span>
+              </span>
+            </div>
+          </Link>
 
           {/* Top Picks */}
           {hub && hub.topPicks.length > 0 && (
@@ -197,15 +229,31 @@ export default async function ToursHubPage() {
 
           {/* Cruise Shore Excursions */}
           {hub && hub.cruise.length > 0 && (
-            <TourCollectionStrip
-              icon="🚢"
-              title="Cruise Shore Excursions"
-              subtitle="Port-to-port tours with guaranteed return times — designed for cruise guests"
-              tours={hub.cruise}
-              seeAllHref="/tours/list?features=Cruise+excursion"
-              seeAllLabel="All cruise tours"
-              accentColor="blue"
-            />
+            <>
+              <TourCollectionStrip
+                icon="🚢"
+                title="Cruise Shore Excursions"
+                subtitle="Port-to-port tours with guaranteed return times — designed for cruise guests"
+                tours={hub.cruise}
+                seeAllHref="/tours/list?features=Cruise+excursion"
+                seeAllLabel="All cruise tours"
+                accentColor="blue"
+              />
+              {/* Inline match CTA inside cruise — per D7: cruise guests get matched
+                  via the same itinerary builder (cruise track will branch in Phase 4). */}
+              <div className="-mt-6 mx-4 rounded-xl bg-sky-50 px-5 py-4 ring-1 ring-sky-100 md:mx-0 md:flex md:items-center md:justify-between">
+                <p className="text-[13.5px] text-slate-700 md:text-sm">
+                  <span className="font-semibold text-slate-900">On a cruise?</span>{" "}
+                  Tell us your port + hours and we'll match an itinerary that gets you back to the ship.
+                </p>
+                <Link
+                  href="/itinerary-builder"
+                  className="mt-2 inline-flex items-center gap-1.5 text-[13px] font-bold text-sky-700 hover:text-sky-900 md:mt-0"
+                >
+                  Match a cruise itinerary →
+                </Link>
+              </div>
+            </>
           )}
 
           {/* UNESCO & Heritage */}
@@ -231,19 +279,6 @@ export default async function ToursHubPage() {
               seeAllHref="/tours/list"
               seeAllLabel="Browse all"
               accentColor="rose"
-            />
-          )}
-
-          {/* Private & Charter */}
-          {hub && hub.private.length > 0 && (
-            <TourCollectionStrip
-              icon="🚐"
-              title="Private & Charter Tours"
-              subtitle="Your own vehicle, your own pace — fully customisable itineraries"
-              tours={hub.private}
-              seeAllHref="/tours/list?type=private"
-              seeAllLabel="All private tours"
-              accentColor="violet"
             />
           )}
 

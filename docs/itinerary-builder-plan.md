@@ -57,6 +57,7 @@ Append a new row whenever a §5 question gets answered or a new architectural ca
 | 2026-05-16 | D6 | i18n strategy: author **EN messages first**; auto-translate pipeline produces `ko / ja / zh / zh-TW / es` | Reduces Phase 3 i18n authoring cost; human review pass before locale release (see §H R8) |
 | 2026-05-16 | D7 | Entry points: (a) new **home v2 section** linking to builder; (b) restructure `/tours` — **remove busan/seoul/jeju private-tour static pages**, keep only shore excursions (with match CTA inside); (c) add "Want a private tour?" **CTA card on top of `/tours`** linking to Q&A intake | Single canonical path to the builder; legacy 5 private-tour static pages superseded. Retirement strategy: 301 redirects to `/itinerary-builder/<region>` to preserve SEO (see §H R7). |
 | 2026-05-16 | D8 | Q&A intake has **two branches**: (i) **private-tour track** = land itinerary builder (our main flow), (ii) **cruise track** = shore excursion sequencer with shorter time window (back-to-ship constraint). Branched at first form question | Cruise has a distinct price model + hard time constraint; separate pricing presets in Phase 5 |
+| 2026-05-17 | D9 | **Defer 301 redirects from 6 legacy private-tour `/tour-product/<slug>` pages → `/itinerary-builder`** until Phase 4 ships (cart + manual quote ready). Phase 3 only removes the "Private & Charter" section from `/tours` hub navigation. Legacy product pages stay accessible at their canonical URLs (still bookable). | Redirecting now would leave users stranded — the builder has no booking/quote flow yet. Affected slugs: `busan-private-car-charter-cruise-shore`, `jeju-island-private-car-charter-tour`, `incheon-seoul-private-car-shore-excursion-cruise`, `seoul-dmz-private-3rd-tunnel-suspension-bridge`, `seoul-private-nami-morning-calm-petite-france`, `seoul-suburbs-private-chartered-car-10hr`. The two cruise-overlap slugs (busan + incheon-seoul) remain visible under `/tours` "Cruise Shore Excursions" section per user request "쇼어 익스커션만 남기되". |
 
 ---
 
@@ -199,16 +200,16 @@ Each phase delivers a shippable artifact and has a clear "stop here if needed" c
 - [ ] Human review pass on `ko` (highest traffic) before merge; other 4 locales reviewed async.
 
 **Tasks — `/tours` restructure (D7):**
-- [ ] Audit existing `/tours` page content + 5 legacy private-tour detail routes (busan, jeju, seoul-suburbs, incheon-seoul, seoul-dmz).
-- [ ] Remove private-tour cards from `/tours` grid; keep shore excursions section + add Match CTA banner inside shore excursions.
-- [ ] Add **"Want a private tour?" CTA card on top of `/tours`** linking to `/itinerary-builder` Q&A intake (intake form lands in Phase 4 — Phase 3 lands the card with `href` pointing to an interim "coming soon" or direct to `/itinerary-builder/[region]` selector).
-- [ ] Add 301 redirects in `next.config.js` from legacy private-tour slugs → `/itinerary-builder/<region>` (where region matches) or `/itinerary-builder` selector (where not). SEO preservation.
-- [ ] Delete the 5 legacy static-tour page components only after redirects verified live.
+- [x] Audit existing `/tours` page content + 6 legacy private-tour detail routes (DB query confirmed 6 active rows with private/charter badges).
+- [x] Remove private-tour cards from `/tours` grid; keep shore excursions section + **inline match CTA banner** inside shore excursions ("On a cruise? Tell us your port + hours...").
+- [x] Add **"Want a private tour?" CTA card on top of `/tours`** (dark gradient with amber accent) linking to `/itinerary-builder`.
+- [ ] ~~Add 301 redirects in `next.config.js` from legacy private-tour slugs~~ → **DEFERRED to Phase 4 close-out** (D9 2026-05-17): builder has no booking flow yet; redirecting now would strand users. Legacy pages remain accessible.
+- [ ] ~~Delete the 5 legacy static-tour page components~~ → **DEFERRED to Phase 4 close-out** (same reason as above).
 
 **Tasks — home v2 entry section:**
-- [ ] New home v2 section (under `components/home/v2/sections/`) headlining the builder. Visual treatment follows memory `feedback_home_visual_energy.md` (amber eyebrow default, premium feel — not muted).
-- [ ] Wire section into `components/home/v2/HomeV2Page.tsx` section order; default position TBD (recommend above ProcessSection).
-- [ ] Section CTA → `/itinerary-builder` selector → user picks busan/jeju → routes to `/itinerary-builder/[region]`.
+- [x] New home v2 section `components/home/v2/sections/itinerary-builder-entry.tsx` — amber eyebrow ("Custom itinerary builder"), display-size title ("Or build your own Korea day"), 2-up region cards (Busan, Jeju) with stop-count badges, mobile snap rail + desktop grid.
+- [x] Wired into `components/home/v2/HomeV2Page.tsx` after `DestinationsShowcase` (natural extension — explore destinations → realize you can customize).
+- [x] Section CTAs → `/itinerary-builder/<slug>` directly (skips selector for one-click flow).
 
 **Acceptance:**
 - [ ] Page loads at `/itinerary-builder/busan` and `/itinerary-builder/jeju`; map shows ≥ 20 pins each.
