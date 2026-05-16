@@ -66,35 +66,35 @@
     rgba(241, 245, 249, 0.9) 100%
   );
 
-  /* Image-backed offer cards */
+  /* Image-backed offer cards — monochrome slate shadows so color lives in
+     the photo/accent strip, not the depth. */
   --home-shadow-offer-base:
     0 26px 56px -16px rgba(15, 23, 42, 0.36),
     0 12px 32px -14px rgba(15, 23, 42, 0.22),
-    0 6px 16px -8px rgba(14, 165, 233, 0.12),
+    0 6px 16px -8px rgba(15, 23, 42, 0.12),
     inset 0 1px 0 0 rgba(255, 255, 255, 0.22);
   --home-shadow-offer-featured-hover:
     0 40px 80px -18px rgba(15, 23, 42, 0.45),
-    0 22px 52px -16px rgba(14, 165, 233, 0.2),
+    0 22px 52px -16px rgba(15, 23, 42, 0.24),
     inset 0 1px 0 0 rgba(255, 255, 255, 0.34);
 
-  /* Image offer cards — role-based depth */
   --home-shadow-offer-smgroup:
     0 36px 72px -20px rgba(15, 23, 42, 0.44),
     0 18px 46px -16px rgba(15, 23, 42, 0.3),
-    0 10px 28px -12px rgba(14, 165, 233, 0.22),
+    0 10px 28px -12px rgba(15, 23, 42, 0.22),
     inset 0 1px 0 0 rgba(255, 255, 255, 0.32);
   --home-shadow-offer-smgroup-hover:
     0 48px 92px -22px rgba(15, 23, 42, 0.5),
-    0 26px 58px -18px rgba(14, 165, 233, 0.26),
+    0 26px 58px -18px rgba(15, 23, 42, 0.28),
     inset 0 1px 0 0 rgba(255, 255, 255, 0.4);
   --home-shadow-offer-private:
     0 28px 58px -18px rgba(15, 23, 42, 0.38),
-    0 12px 32px -14px rgba(30, 27, 45, 0.18),
-    0 6px 18px -8px rgba(139, 92, 246, 0.12),
+    0 12px 32px -14px rgba(15, 23, 42, 0.2),
+    0 6px 18px -8px rgba(15, 23, 42, 0.14),
     inset 0 1px 0 0 rgba(255, 255, 255, 0.24);
   --home-shadow-offer-private-hover:
     0 34px 68px -18px rgba(15, 23, 42, 0.42),
-    0 16px 40px -14px rgba(91, 33, 182, 0.14),
+    0 16px 40px -14px rgba(15, 23, 42, 0.18),
     inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
   --home-shadow-offer-bus:
     0 22px 48px -16px rgba(15, 23, 42, 0.32),
@@ -106,11 +106,11 @@
     inset 0 1px 0 0 rgba(255, 255, 255, 0.22);
   --home-shadow-hero-match:
     0 38px 76px -22px rgba(15, 23, 42, 0.46),
-    0 20px 48px -16px rgba(14, 165, 233, 0.2),
+    0 20px 48px -16px rgba(15, 23, 42, 0.22),
     inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
   --home-shadow-hero-match-hover:
     0 48px 90px -22px rgba(15, 23, 42, 0.52),
-    0 24px 56px -16px rgba(14, 165, 233, 0.24),
+    0 24px 56px -16px rgba(15, 23, 42, 0.26),
     inset 0 1px 0 0 rgba(255, 255, 255, 0.38);
 
   /* Primary / secondary CTAs — tactile depth + crisp edge */
