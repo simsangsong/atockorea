@@ -1909,5 +1909,30 @@
     "pushNotifDesc": "Receive browser push notifications",
     "marketingNotif": "Marketing emails",
     "marketingNotifDesc": "Receive promotional offers and updates"
+  },
+  "itineraryBuilder": {
+    "home": {
+      "eyebrow": "オーダーメイド旅程作成",
+      "title": "あなただけの韓国の旅をデザインしましょう",
+      "subtitle": "地図からお好みのスポットを選択。お見積もりをご提示します。",
+      "busanName": "Busan",
+      "busanTagline": "海の寺院＋古都＋市場巡り",
+      "busanStops": "20の厳選スポット",
+      "jejuName": "Jeju Island",
+      "jejuTagline": "UNESCOトリプルクラウン — 朝焼けの峰々、溶岩洞窟、海岸ドライブ",
+      "jejuStops": "25の厳選スポット",
+      "browseTheMap": "地図を見る",
+      "open": "開く",
+      "comingSoonNote": "MVPリリース後、SeoulとDMZの展開を予定しています。"
+    },
+    "map": {
+      "loadingLabel": "地図を読み込み中…",
+      "errorTitle": "地図を読み込めませんでした",
+      "errorBody": "ページを更新するか、接続状況を確認してください。",
+      "addCta": "旅程に追加 — 近日公開",
+      "addCtaTooltip": "Phase 4で登場予定（カート＋手動見積もり）",
+      "stayMinutesPattern": "目安：約{minutes}分",
+      "regionFallback": "{region}"
+    }
   }
 }

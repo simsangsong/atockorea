@@ -1909,5 +1909,30 @@
     "pushNotifDesc": "Receive browser push notifications",
     "marketingNotif": "Marketing emails",
     "marketingNotifDesc": "Receive promotional offers and updates"
+  },
+  "itineraryBuilder": {
+    "home": {
+      "eyebrow": "Diseñador de itinerarios personalizados",
+      "title": "O crea tu propio día en Corea",
+      "subtitle": "Elige las paradas que realmente quieres en el mapa. Nosotros te lo cotizamos.",
+      "busanName": "Busan",
+      "busanTagline": "Templos marinos + capitales antiguas + recorridos por mercados",
+      "busanStops": "20 paradas seleccionadas",
+      "jejuName": "Jeju Island",
+      "jejuTagline": "UNESCO Triple Crown — picos al amanecer, cuevas de lava, rutas costeras",
+      "jejuStops": "25 paradas seleccionadas",
+      "browseTheMap": "Explorar el mapa",
+      "open": "Abrir",
+      "comingSoonNote": "Lanzamiento de Seoul + DMZ previsto después del MVP."
+    },
+    "map": {
+      "loadingLabel": "Cargando mapa…",
+      "errorTitle": "No se pudo cargar el mapa",
+      "errorBody": "Actualiza la página o revisa tu conexión.",
+      "addCta": "Agregar al itinerario — próximamente",
+      "addCtaTooltip": "Próximamente en Phase 4 (carrito + cotización manual)",
+      "stayMinutesPattern": "~{minutes} min sugeridos",
+      "regionFallback": "{region}"
+    }
   }
 }

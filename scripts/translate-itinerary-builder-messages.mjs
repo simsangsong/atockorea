@@ -17,6 +17,7 @@ import { readFileSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -71,16 +72,9 @@ function writeLocale(code, obj) {
   writeFileSync(path, JSON.stringify(obj, null, 2) + "\n", "utf8");
 }
 
-async function translate(client, locale, direction) {
+function buildPrompt(locale, direction) {
   const sourceJson = JSON.stringify(EN_NAMESPACE, null, 2);
-
-  const message = await client.messages.create({
-    model: "claude-haiku-4-5",
-    max_tokens: 2000,
-    messages: [
-      {
-        role: "user",
-        content: `You are translating UI strings for a Korean tour-booking website's "custom itinerary builder" feature.
+  return `You are translating UI strings for a Korean tour-booking website's "custom itinerary builder" feature.
 
 Source language: English
 Target language: ${locale}
@@ -95,15 +89,30 @@ Rules:
 - Tone: warm, premium travel marketing. Concise.
 
 Source JSON:
-${sourceJson}`,
-      },
-    ],
-  });
+${sourceJson}`;
+}
 
+function stripJsonFence(text) {
+  return text
+    .replace(/^```(?:json)?\s*/i, "")
+    .replace(/```\s*$/i, "")
+    .trim();
+}
+
+async function translateViaAnthropic(client, locale, direction) {
+  const message = await client.messages.create({
+    model: "claude-haiku-4-5",
+    max_tokens: 2000,
+    messages: [{ role: "user", content: buildPrompt(locale, direction) }],
+  });
   const text = message.content?.[0]?.type === "text" ? message.content[0].text : "";
-  // Strip any accidental markdown fences
-  const cleaned = text.replace(/^```(?:json)?\s*/i, "").replace(/```\s*$/i, "").trim();
-  return JSON.parse(cleaned);
+  return JSON.parse(stripJsonFence(text));
+}
+
+async function translateViaGemini(model, locale, direction) {
+  const result = await model.generateContent(buildPrompt(locale, direction));
+  const text = result.response.text();
+  return JSON.parse(stripJsonFence(text));
 }
 
 async function main() {
@@ -116,21 +125,39 @@ async function main() {
     console.log("EN updated.");
   }
 
-  // 2. Translate to each target locale (requires ANTHROPIC_API_KEY)
+  // 2. Translate to each target locale.
+  // Prefers ANTHROPIC_API_KEY (Claude Haiku) — falls back to GEMINI_API_KEY
+  // (Gemini 2.5 Flash) so we're not blocked on a single provider.
   const targetLocalesToRun = TARGET_LOCALES.filter((t) => !onlySet || onlySet.has(t.code));
   if (targetLocalesToRun.length === 0) {
     console.log("Done (EN-only run).");
     return;
   }
 
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) throw new Error("Missing ANTHROPIC_API_KEY (required for translation)");
+  const anthropicKey = process.env.ANTHROPIC_API_KEY;
+  const geminiKey = process.env.GEMINI_API_KEY;
 
-  const client = new Anthropic({ apiKey });
+  let provider;
+  let runTranslate;
+  if (anthropicKey) {
+    provider = "anthropic (claude-haiku-4-5)";
+    const client = new Anthropic({ apiKey: anthropicKey });
+    runTranslate = (locale, direction) => translateViaAnthropic(client, locale, direction);
+  } else if (geminiKey) {
+    provider = "gemini (gemini-2.5-flash)";
+    const genAI = new GoogleGenerativeAI(geminiKey);
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+    runTranslate = (locale, direction) => translateViaGemini(model, locale, direction);
+  } else {
+    throw new Error("Missing ANTHROPIC_API_KEY or GEMINI_API_KEY (one is required for translation)");
+  }
+
+  console.log(`Using ${provider}`);
+
   for (const t of targetLocalesToRun) {
     process.stdout.write(`Translating to ${t.code}... `);
     try {
-      const translated = await translate(client, t.name, t.direction);
+      const translated = await runTranslate(t.name, t.direction);
       const fullLocale = readLocale(t.code);
       fullLocale.itineraryBuilder = translated;
       writeLocale(t.code, fullLocale);

@@ -739,7 +739,7 @@
           "imageErrorBody": "無法載入行程預覽圖。請確認網路後再試。",
           "tryAgain": "重試",
           "matchMetaRowRatingAria": "5 分制 {rating} 分，根據 {count} 則公開評價",
-          "groupMaxParam": "最多{n}人",
+          "groupMaxParam": "最多{n}人",
           "emptyBadge": "行程配對預覽",
           "emptyTitle": "描述您的行程，找到最適合您的方案",
           "emptyBody": "告訴我們您的偏好，我們將立即為您配對最佳方案 — 通常在3秒內。",
@@ -1909,5 +1909,30 @@
     "pushNotifDesc": "Receive browser push notifications",
     "marketingNotif": "Marketing emails",
     "marketingNotifDesc": "Receive promotional offers and updates"
+  },
+  "itineraryBuilder": {
+    "home": {
+      "eyebrow": "自訂行程規劃",
+      "title": "打造您專屬的韓國旅程",
+      "subtitle": "在地圖上挑選您想去的地點，我們將為您報價。",
+      "busanName": "Busan",
+      "busanTagline": "海濱古寺 + 歷史名城 + 市場探索",
+      "busanStops": "20 個精選景點",
+      "jejuName": "Jeju Island",
+      "jejuTagline": "UNESCO 三冠王 — 日出峰、熔岩洞、海岸兜風",
+      "jejuStops": "25 個精選景點",
+      "browseTheMap": "探索地圖",
+      "open": "開啟",
+      "comingSoonNote": "Seoul + DMZ 服務將於 MVP 之後推出。"
+    },
+    "map": {
+      "loadingLabel": "地圖載入中…",
+      "errorTitle": "地圖載入失敗",
+      "errorBody": "請重新整理頁面或檢查您的網路連線。",
+      "addCta": "加入行程 — 即將推出",
+      "addCtaTooltip": "將於 Phase 4 推出 (購物車 + 人工報價)",
+      "stayMinutesPattern": "建議停留約 {minutes} 分鐘",
+      "regionFallback": "{region}"
+    }
   }
 }

@@ -739,7 +739,7 @@
           "imageErrorBody": "无法加载行程预览图。请检查网络后重试。",
           "tryAgain": "重试",
           "matchMetaRowRatingAria": "5 分制 {rating} 分，基于 {count} 条公开评价",
-          "groupMaxParam": "最多{n}人",
+          "groupMaxParam": "最多{n}人",
           "emptyBadge": "行程匹配预览",
           "emptyTitle": "描述您的行程，找到最适合您的方案",
           "emptyBody": "告诉我们您的偏好，我们将立即为您匹配最佳方案 — 通常在3秒内。",
@@ -1909,5 +1909,30 @@
     "pushNotifDesc": "Receive browser push notifications",
     "marketingNotif": "Marketing emails",
     "marketingNotifDesc": "Receive promotional offers and updates"
+  },
+  "itineraryBuilder": {
+    "home": {
+      "eyebrow": "专属行程定制",
+      "title": "打造专属韩国行程",
+      "subtitle": "在地图上挑选您心仪的景点。我们将为您定制报价。",
+      "busanName": "Busan",
+      "busanTagline": "海边寺庙 + 古都遗韵 + 市场漫游",
+      "busanStops": "20个精选景点",
+      "jejuName": "Jeju Island",
+      "jejuTagline": "UNESCO三冠王 — 日出峰峦、熔岩洞窟、海滨驾车",
+      "jejuStops": "25个精选景点",
+      "browseTheMap": "浏览地图",
+      "open": "打开",
+      "comingSoonNote": "Seoul + DMZ 计划于 MVP 后推出。"
+    },
+    "map": {
+      "loadingLabel": "地图加载中…",
+      "errorTitle": "地图加载失败",
+      "errorBody": "请刷新页面或检查您的网络连接。",
+      "addCta": "添加到行程 — 即将上线",
+      "addCtaTooltip": "Phase 4 将推出此功能（购物车 + 人工报价）",
+      "stayMinutesPattern": "建议停留时长：约 {minutes} 分钟",
+      "regionFallback": "{region}"
+    }
   }
 }
