@@ -41,7 +41,7 @@ const STEPS: ReadonlyArray<ProcessStep> = [
 function StepIconBadge({ step }: { step: ProcessStep }) {
   const { Icon } = step;
   return (
-    <div className="relative w-9 h-9 rounded-button bg-slate-900 text-white flex items-center justify-center flex-shrink-0">
+    <div className="relative w-9 h-9 rounded-button bg-white/10 text-white/90 flex items-center justify-center ring-1 ring-white/15 flex-shrink-0">
       <Icon className="w-3.5 h-3.5" />
     </div>
   );
@@ -58,13 +58,16 @@ export function ProcessOperational() {
   }, []);
 
   return (
-    <section className="section-py-md px-4 bg-white">
+    <section
+      className="section-py-md px-4"
+      style={{ background: "linear-gradient(to bottom, #1C1810, #141008)" }}
+    >
       <div ref={containerRef} className="max-w-5xl mx-auto scroll-animate">
         <div className="text-center mb-10 md:mb-12">
-          <p className="mb-3 text-eyebrow md:mb-4">
+          <p className="mb-3 text-eyebrow text-amber-300 md:mb-4">
             {t("premium.v2.process.eyebrow")}
           </p>
-          <h2 className="text-balance text-display text-slate-900">
+          <h2 className="text-balance text-display text-white">
             {t("premium.v2.process.title")}
           </h2>
         </div>
@@ -77,11 +80,11 @@ export function ProcessOperational() {
           */}
           <div
             aria-hidden
-            className="absolute left-[18px] top-5 bottom-5 w-px bg-slate-200 md:hidden"
+            className="absolute left-[18px] top-5 bottom-5 w-px bg-gradient-to-b from-white/5 via-white/25 to-white/5 md:hidden"
           />
 
           {/* Desktop horizontal connector */}
-          <div className="hidden lg:block absolute top-[24px] left-[40px] right-[40px] h-px bg-slate-200 z-0" />
+          <div className="hidden lg:block absolute top-[24px] left-[40px] right-[40px] h-px bg-gradient-to-r from-white/5 via-white/15 to-white/5 z-0" />
 
           <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-3 lg:grid-cols-4 relative z-10">
             {STEPS.map((step, i) => (
@@ -90,22 +93,22 @@ export function ProcessOperational() {
                 <div className="md:hidden mt-0.5">
                   <StepIconBadge step={step} />
                 </div>
-                <div className="flex-1 min-w-0 md:flex-initial rounded-card border border-slate-200/70 bg-slate-50 p-4 transition-all duration-300 ease-out hover:-translate-y-0.5 motion-reduce:hover:translate-y-0">
+                <div className="flex-1 min-w-0 md:flex-initial rounded-card border border-white/10 bg-white/[0.06] p-4 backdrop-blur-sm transition-all duration-300 ease-out hover:-translate-y-0.5 motion-reduce:hover:translate-y-0">
                   {/* md+ inline icon + label */}
                   <div className="hidden md:flex items-center gap-2.5 mb-2.5">
                     <StepIconBadge step={step} />
-                    <span className="text-eyebrow text-amber-700">
+                    <span className="text-eyebrow text-amber-300">
                       {t(step.labelKey)}
                     </span>
                   </div>
                   {/* Mobile: label without icon (icon lives on the rail) */}
-                  <span className="block md:hidden text-eyebrow text-amber-700 mb-1.5">
+                  <span className="block md:hidden text-eyebrow text-amber-300 mb-1.5">
                     {t(step.labelKey)}
                   </span>
-                  <h4 className="text-h3 text-slate-900 mb-1.5">
+                  <h4 className="text-h3 text-white mb-1.5">
                     {t(step.titleKey)}
                   </h4>
-                  <p className="text-caption text-slate-600">
+                  <p className="text-caption text-slate-400">
                     {t(step.bodyKey)}
                   </p>
                 </div>

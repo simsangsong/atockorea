@@ -114,11 +114,12 @@
      muted body grey should add `text-slate-600` explicitly. */
   .text-caption { font-size: 12px; line-height: 1.5; }
   @media (min-width: 768px) { .text-caption { font-size: 13px; } }
-  /* Eyebrow defaults to a quiet slate label. Earlier this defaulted to
-     the amber accent which made 5+ section eyebrows compete for "look at
-     me" attention and diluted the amber accent itself. Sections that
-     genuinely want an accent eyebrow can override with text-amber-700. */
-  .text-eyebrow { font-size: 11px; line-height: 1.2; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: theme('colors.slate.500'); }
+  /* Eyebrow uses the amber accent by default — the section-identity
+     signal the user wants to see across the page. (Briefly muted to
+     slate-500 to "reduce accent load" but the page read as flat without
+     it; the amber is what differentiates each section header.) Dark-bg
+     sections override with text-amber-300 for contrast. */
+  .text-eyebrow { font-size: 11px; line-height: 1.2; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); }
   .text-micro { font-size: 10px; line-height: 1.4; }
 }
 
