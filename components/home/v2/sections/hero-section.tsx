@@ -286,24 +286,27 @@ export function HeroSection() {
                       role="radio"
                       aria-checked={active}
                       onClick={() => setDestination(id)}
-                      className={`focus-ring rounded-xl px-2 py-3 text-center font-medium transition-all duration-[250ms] md:rounded-2xl md:px-3 md:py-3.5 ${
+                      className={cn(
+                        "focus-ring rounded-button border px-2 py-3 text-center font-medium transition-colors duration-200 md:px-3 md:py-3.5",
                         active
-                          ? "bg-slate-900 text-white shadow-2"
-                          : "border border-slate-200/60 bg-slate-50/80 text-slate-600 hover:bg-slate-100/80"
-                      }`}
+                          ? "border-slate-900 bg-slate-900 text-white"
+                          : "border-slate-200/70 bg-slate-50 text-slate-600 hover:bg-slate-100",
+                      )}
                     >
-                      <span className="block text-[13px] font-semibold tracking-[-0.01em] md:text-[14px]">
+                      <span className="block text-caption font-semibold">
                         {t(`premium.hero.${labelKey}`)}
                       </span>
                       <span
-                        className={`mt-1 flex items-center justify-center gap-1 text-[10px] font-medium tracking-wide md:text-[11px] ${
-                          active ? "text-white/70" : "text-slate-500"
-                        }`}
+                        className={cn(
+                          "mt-1 flex items-center justify-center gap-1 text-micro font-medium",
+                          active ? "text-white/70" : "text-slate-500",
+                        )}
                       >
                         <span
-                          className={`h-1 w-1 rounded-full md:h-1.5 md:w-1.5 ${
-                            active ? "bg-white/70" : "bg-slate-400"
-                          }`}
+                          className={cn(
+                            "h-1 w-1 rounded-full md:h-1.5 md:w-1.5",
+                            active ? "bg-white/70" : "bg-slate-400",
+                          )}
                         />
                         {t("premium.hero.destSegmentLabelAvailable")}
                       </span>
@@ -338,17 +341,15 @@ export function HeroSection() {
                   autoComplete="off"
                   aria-label={t("premium.hero.intentInputAria")}
                   className={cn(
-                    // Compact mobile typography so the long placeholder (EN is
-                    // the outlier at ~44 chars) fits on ~260–320px viewports
-                    // without horizontal clipping while collapsed. Placeholder
-                    // is rendered a touch smaller than the typed content, so
-                    // real user text stays comfortably readable at 12.5px while
-                    // the hint shrinks to 11.5px to avoid the trailing ellipsis
-                    // getting truncated. Desktop keeps the standard size.
-                    "w-full resize-none rounded-2xl border border-slate-200/90 bg-white px-3.5 text-[12.5px] leading-[1.45] tracking-[-0.012em] text-slate-800 shadow-[inset_0_1px_2px_rgba(15,23,42,0.04)] transition-[height,padding,box-shadow,border-color] duration-300 ease-out placeholder:text-[11.5px] placeholder:tracking-[-0.02em] placeholder:text-slate-400 focus:border-primary/35 focus:outline-none focus:ring-2 focus:ring-primary/15 md:px-4 md:text-[15px] md:leading-[1.5] md:tracking-normal md:placeholder:text-[15px] md:placeholder:tracking-normal",
+                    // Matcher form system: rounded-button (14px) + bg-slate-50
+                    // + border-slate-200/70 — same shell as the destination
+                    // radio above. Placeholder and content both render at the
+                    // same scale (text-caption) so users don't feel the input
+                    // "downshift" when they start typing.
+                    "w-full resize-none rounded-button border border-slate-200/70 bg-slate-50 px-3.5 text-caption text-slate-800 transition-[height,padding,border-color,background-color] duration-300 ease-out placeholder:text-slate-400 focus:border-slate-300 focus:bg-white focus-ring md:px-4",
                     intentExpanded
                       ? "h-32 overflow-auto py-3 md:h-40 md:py-4"
-                      : "h-12 overflow-hidden py-[14.75px] md:h-14 md:py-[17px]",
+                      : "h-12 overflow-hidden py-3.5 md:h-14 md:py-4",
                   )}
                 />
               </div>
@@ -364,19 +365,12 @@ export function HeroSection() {
                       type="button"
                       aria-pressed={isSelected}
                       onClick={() => appendChip(tag.label)}
-                      className={`focus-ring flex-none rounded-full px-3.5 py-2 text-xs font-medium transition-all duration-200 md:px-4 md:py-2.5 md:text-sm ${
+                      className={cn(
+                        "focus-ring flex-none rounded-full border px-3.5 py-2 text-caption font-medium transition-colors duration-200 md:px-4 md:py-2.5",
                         isSelected
-                          ? "bg-slate-800 text-white shadow-1"
-                          : "text-slate-600 hover:bg-slate-100/80"
-                      }`}
-                      style={
-                        !isSelected
-                          ? {
-                              background: "linear-gradient(to bottom, #fafafa, #f5f5f5)",
-                              border: "1px solid rgba(0,0,0,0.06)",
-                            }
-                          : undefined
-                      }
+                          ? "border-slate-900 bg-slate-900 text-white"
+                          : "border-slate-200/70 bg-slate-50 text-slate-600 hover:bg-slate-100",
+                      )}
                     >
                       {tag.label}
                     </button>
