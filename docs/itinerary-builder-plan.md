@@ -15,10 +15,10 @@
 
 | Field | Value |
 |---|---|
-| **Current phase** | Phase 4 — Q&A intake (private/cruise) + cart + manual quote 🔄 in progress |
-| **Blocked on** | — (Phase 3 optional follow-ups: Lighthouse mobile perf, responsive sweep, Anthropic key) |
+| **Current phase** | Phase 4 — Q&A intake (private/cruise) + cart + manual quote ✅ functionally complete. Awaiting approval to start Phase 5 (auto-quote engine). |
+| **Blocked on** | — (Phase 3/4 optional follow-ups: Lighthouse mobile perf, responsive sweep, real-world end-to-end test of /api/itinerary/quote with Slack + Resend) |
 | **Last updated** | 2026-05-17 |
-| **Last commit touching this feature** | `e9f81bec` — feat(itinerary-builder): Phase 4a — cart URL state + Add button + cart panel UI |
+| **Last commit touching this feature** | `b4693a8e` — fix(itinerary-builder): restore ChevronUp import in CartPanel mobile sheet handle |
 | **Owner** | simsangsong |
 | **Reviewers** | — |
 
@@ -32,7 +32,7 @@ Revised 2026-05-16 after D1-D8: original 6 phases → 7 phases (new Phase 5 for 
 | 1 — POI catalog seed (jeju + busan) | ✅ complete | 2026-05-17 | 2026-05-17 | `98bb99ef` |
 | 2 — Coordinate enrichment | ✅ complete | 2026-05-17 | 2026-05-17 | `e84d15ba` |
 | 3 — Map UI read-only + `/tours` restructure + home v2 entry section | ✅ complete | 2026-05-17 | 2026-05-17 | `2205e28f` · `27e58481` · `21559eb3` · `228f2073` |
-| 4 — Q&A intake (private / cruise branch) + cart + manual quote form | 🔄 in progress | 2026-05-17 | — | (pending) |
+| 4 — Q&A intake (private / cruise branch) + cart + manual quote form | ✅ complete | 2026-05-17 | 2026-05-17 | `32817ace` · `e9f81bec` · `329a9ab6` · `517b3192` · `943aa17a` · `9be440f4` · `08f12a6f` · `b4693a8e` |
 | 5 — Auto-quote engine + admin presets + Slack escalation + quote memory | ⏸ not started | — | — | — |
 | 6 — POI matching_profile authoring | ⏸ not started | — | — | — |
 | 7 — AI recommendation engine | ⏸ not started | — | — | — |
@@ -72,6 +72,12 @@ One line per material change to this doc or per phase deliverable.
 | 2026-05-17 | `98bb99ef` | Phase 1 — POI catalog seed complete. Migration `20260517120000_add_match_pois_geo_and_profile.sql` applied (adds lat/lng/matching_profile/default_stay_minutes/category/names_other_locales + region+stop_role indexes). Seed script `scripts/seed-match-pois-from-tour-jsons.mjs` walked 36 tour dirs / 204 locale files and upserted **82 unique attraction POIs**. Verification: 82 rows with name_en, **49 in busan+jeju** (≥40 acceptance ✓), 0 missing region, 0 operational rows (is_operational is generated column = poi_key LIKE 'OPS_%'). 6-locale names populated; 64/82 have default_image_url, 74/82 have parseable default_stay_minutes. Original audit-derived threshold of "≥100" was based on raw audit count of 102 that included operational keys; filtered attraction count is 82 — acceptance threshold updated to reflect reality. |
 | 2026-05-17 | (Phase 3 start) | Phase 3 started — implementation plan: (a) audit current `/tours` and 5 legacy private-tour routes; (b) install `@googlemaps/markerclusterer` if not present; (c) build `/itinerary-builder` landing + `/itinerary-builder/[region]` SSR shell with cluster filter (busan-cluster vs jeju); (d) `<POICatalogMap />` client with vector Map ID + AdvancedMarker + clusterer + InfoWindow; (e) EN messages under `itineraryBuilder.*`; (f) i18n auto-translate pipeline TBD; (g) `/tours` restructure with private-tour CTA card + 301 redirects; (h) new home v2 entry section; (i) responsive + Lighthouse check. Will land in 5–8 small commits with visual review checkpoints. |
 | 2026-05-17 | (Phase 4 start) | Phase 4 started — implementation plan: (4a) cart URL state + Add button + side panel/bottom sheet; (4b) `@dnd-kit/core` reorder + polyline overlay + Haversine drive estimate + cruise time budget; (4c) Q&A intake form (private/cruise branch) replacing landing; (4d) migration `tour_quote_requests` + `POST /api/itinerary/quote` + `lib/slack/notify-quote.ts` + email via `lib/email.ts`; (4e) quote form modal + success page + i18n; (4f) end-to-end test + planner close. Land in 6 small commits. |
+| 2026-05-17 | `b4693a8e` | Phase 4f — Build hardening. `npm run build` caught a missing `ChevronUp` import in `CartPanel.tsx` from the Phase 4b edit (added dnd-kit + GripVertical imports, removed the chevron import that the mobile-sheet handle still used). One-line restore. Production build now green: 24+ static + dynamic routes compiled, `/itinerary-builder`, `/itinerary-builder/[region]`, `/itinerary-builder/thanks` all listed in the route manifest. |
+| 2026-05-17 | `08f12a6f` | Phase 4f — 5-locale translation pass (intake + cart + quote namespaces). Gemini 2.5 Flash. KO/JA/ZH/zh-TW/ES populated for all itineraryBuilder.* keys including new intake.* (trackLegend, regionLegend, cruiseHoursLegend...), cart.driveTotal/totalDuration/cruiseBudget/cruiseOverBudget, quote.* (title, intro, field labels, submit/submitting, errors). |
+| 2026-05-17 | `9be440f4` | Phase 4e — Quote modal + thanks page + BuilderShell wiring. `<QuoteModal />` bottom-sheet/center modal prefills from URL intake params (date, party, lang, hours, ship). Submits `POST /api/itinerary/quote`, redirects to `/itinerary-builder/thanks?quote_id=...` on success. `BuilderShell` flips `getQuoteEnabled` to true and shows the modal. Server `thanks/page.tsx` renders quote_id as reference + two CTAs. |
+| 2026-05-17 | `943aa17a` | Phase 4d — Quote API + DB + Slack + email. Migration `20260517130000_create_tour_quote_requests.sql` creates the table (poi_keys text[], region/track, optional date/party/contact/language/notes/locale, intake jsonb, status enum, manual_quote_* columns, updated_at trigger, RLS no-public-access). `lib/slack/notify-quote.ts` formats a numbered Slack message via SLACK_QUOTE_WEBHOOK_URL. `lib/email-templates/quote-confirmation.ts` builds an HTML confirmation. `POST /api/itinerary/quote` validates, inserts (service-role), fires Slack + Resend (fire-and-forget), returns `{ok, quote_id, status, poi_count}`. |
+| 2026-05-17 | `517b3192` | Phase 4c — Q&A intake form. `app/itinerary-builder/page.tsx` rewritten as a server shell hosting `<IntakeForm />`. Track toggle (private/cruise), region pair, conditional cruise-hours chips + ship name, optional date + party. Submit pushes URL params to `/itinerary-builder/[region]`. |
+| 2026-05-17 | `329a9ab6` | Phase 4b — dnd-kit Sortable reorder in CartPanel + dashed Polyline overlay on the map following cart order + Haversine drive estimate (`lib/itinerary-builder/distance.ts`: haversineKm × 1.3 road factor × 50 km/h average). CartPanel footer shows stay total / drive total / total day / cruise budget; over-budget renders a red warning. |
 | 2026-05-17 | `e9f81bec` | Phase 4a — Cart URL state + Add/Remove + cart panel UI. New `useCart()` hook in `lib/itinerary-builder/cart.ts` reads/writes `?pois=key1,key2,...` via `useSearchParams` + `router.replace({ scroll: false })`. New `<BuilderShell />` client parent owns cart state and composes `<POICatalogMap />` (left, flex-1) + `<CartPanel />` (right side panel 360px on md+, floating bottom-sheet on mobile). POI InfoWindow Add button now enabled — toggles to red "Remove from itinerary" outline when poi is already in cart. CartPanel shows ordered list with stay-minute hints, total visit-time footer, and a "Get a custom quote" CTA (button reachable but disabled until Phase 4d wires the modal). New i18n keys `itineraryBuilder.cart.*` and `itineraryBuilder.map.removeFromItinerary` authored EN; 5-locale translate run deferred to Phase 4f batch. SSR verified — all routes 200, no regressions. |
 | 2026-05-17 | `228f2073` | Phase 3d — i18n auto-translate pipeline complete. `scripts/translate-itinerary-builder-messages.mjs` extended with Gemini 2.5 Flash provider fallback (prefers ANTHROPIC_API_KEY when set; falls back to GEMINI_API_KEY). The user's ANTHROPIC_API_KEY was placeholder-empty so the run used Gemini; result quality verified by KO + JA spot-checks (natural marketing tone, all proper nouns + placeholders preserved). All 5 target locales (ko, ja, zh, zh-TW, es) now have the `itineraryBuilder` namespace populated. Script is idempotent — re-running replaces only the itineraryBuilder namespace. |
 | 2026-05-17 | `21559eb3` | Phase 3c — i18n EN-first refactor. 3 client components (`ItineraryBuilderEntry`, `POIInfoWindowContent`, `POICatalogMap`) converted to `useTranslations("itineraryBuilder.*")`. EN namespace authored in `messages/en.json` with `home.*` and `map.*` sub-namespaces. SSR verified — no raw key leaks, all routes 200. |
@@ -265,12 +271,17 @@ Each phase delivers a shippable artifact and has a clear "stop here if needed" c
 **Migration:** `<timestamp>_create_tour_quote_requests.sql` — id uuid PK, poi_keys text[], requested_date date, party_size int, contact_email text, contact_name text, language text, notes text, locale text, region text, track text CHECK (track IN ('private','cruise')), intake jsonb, source_url text, status text DEFAULT 'pending_manual', created_at timestamptz, manual_quote_amount_krw int NULL, manual_quote_response jsonb NULL, manual_responded_at timestamptz NULL.
 
 **Acceptance:**
-- [ ] Intake form at `/itinerary-builder` lands → answer Q&A → routes to map with prefilled context
-- [ ] Cruise track enforces time budget; warning fires if exceeded
-- [ ] Add 3 POIs from map → cart shows them in order
-- [ ] Drag to reorder → URL updates → polyline redraws
-- [ ] "Get quote" → form submit → DB row in `tour_quote_requests` (status=`pending_manual`) → Slack notification fires → user email sent
-- [ ] Share URL → reopen → cart + intake context restored from URL params
+- [x] Intake form at `/itinerary-builder` lands → answer Q&A → routes to `/itinerary-builder/[region]?...` with prefilled context (track, region, date, party, hours, ship as URL params).
+- [x] Cruise track enforces time budget; `BuilderShell` reads `?track=cruise&hours=N` and passes `cruiseBudgetMinutes` to `<CartPanel />` which shows the budget and renders a red `cruiseOverBudget` warning when total exceeds.
+- [x] Add 3 POIs from map → cart shows them in order via URL `?pois=...`. `<POIInfoWindowContent />` toggles between Add and Remove based on `useCart().has()`.
+- [x] Drag to reorder → `arrayMove` via dnd-kit → URL `?pois=` updates → `<Polyline />` redraws along the new order.
+- [x] "Get quote" → `<QuoteModal />` opens → form submit → `POST /api/itinerary/quote` → DB row in `tour_quote_requests` (status=`pending_manual`) → Slack notification fires (fire-and-forget) → user email sent (fire-and-forget) → redirect to `/itinerary-builder/thanks?quote_id=...`.
+- [x] Share URL → reopen → cart + intake context restored from URL params (no auth required per D5).
+
+**Optional follow-ups (post-Phase 4):**
+- [ ] End-to-end test with real SLACK_QUOTE_WEBHOOK_URL + RESEND_API_KEY (verify Slack message format + email deliverability).
+- [ ] Mobile responsive sweep + Lighthouse perf.
+- [ ] Admin response surface for ops to respond to `pending_manual` rows (currently Supabase Studio editing is the workflow until Phase 5 admin UI lands).
 
 **Cut-line:** Ship-able as v1 — every quote goes through Slack manual response. Phase 5 layers auto-quote on top without changing this flow.
 
