@@ -36,10 +36,10 @@ export function FinalCTA() {
       <div className="max-w-2xl mx-auto">
         <div ref={blockRef} className="relative scroll-animate">
           <div className="home-panel-elevated relative overflow-hidden p-6 text-center md:p-10">
-            <h2 className="mb-2 text-balance text-h2 text-slate-900">
+            <h2 className="mb-3 text-balance text-display text-slate-900">
               {t("premium.v2.finalCtaBlock.title")}
             </h2>
-            <p className="mb-6 text-body font-medium text-slate-600">
+            <p className="mb-6 text-h3 font-medium text-slate-600">
               {t("premium.v2.finalCtaBlock.subtitle")}
             </p>
 

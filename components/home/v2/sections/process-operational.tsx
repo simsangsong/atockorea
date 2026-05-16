@@ -60,11 +60,11 @@ export function ProcessOperational() {
   return (
     <section className="section-py-md px-4 bg-white">
       <div ref={containerRef} className="max-w-5xl mx-auto scroll-animate">
-        <div className="text-center mb-8 md:mb-10">
+        <div className="text-center mb-10 md:mb-12">
           <p className="mb-3 text-eyebrow md:mb-4">
             {t("premium.v2.process.eyebrow")}
           </p>
-          <h2 className="text-h2 text-slate-900">
+          <h2 className="text-balance text-display text-slate-900">
             {t("premium.v2.process.title")}
           </h2>
         </div>
@@ -94,15 +94,15 @@ export function ProcessOperational() {
                   {/* md+ inline icon + label */}
                   <div className="hidden md:flex items-center gap-2.5 mb-2.5">
                     <StepIconBadge step={step} />
-                    <span className="text-eyebrow">
+                    <span className="text-eyebrow text-amber-700">
                       {t(step.labelKey)}
                     </span>
                   </div>
                   {/* Mobile: label without icon (icon lives on the rail) */}
-                  <span className="block md:hidden text-eyebrow mb-1.5">
+                  <span className="block md:hidden text-eyebrow text-amber-700 mb-1.5">
                     {t(step.labelKey)}
                   </span>
-                  <h4 className="text-body font-semibold text-slate-900 mb-1">
+                  <h4 className="text-h3 text-slate-900 mb-1.5">
                     {t(step.titleKey)}
                   </h4>
                   <p className="text-caption text-slate-600">
