@@ -856,7 +856,7 @@
         "matchEyebrow": "",
         "headlineLine1": "Korea tours, matched to the way you travel.",
         "headlineLine2": "",
-        "atfHeroSubhead": "Hand-picked by our team. Compare anytime.",
+        "atfHeroSubhead": "Hand-picked by our team in Seoul.",
         "intentInputAria": "Your trip preferences in one line",
         "matchSubtitle": "Tell us your style. We’ll match the right destination, tour type, and plan.",
         "destinationSectionTitle": "Destination",
@@ -1126,30 +1126,30 @@
           "viewAllCtaGeneric": "Browse all tours"
         },
         "whyAtockorea": {
-          "eyebrow": "BUILT FOR INTERNATIONAL VISITORS",
-          "title": "We don't hide.",
-          "titleAccent": "We compare.",
-          "subtitle": "Same tours, listed on major platforms. We chose the operators, validated by years of real bookings, and offer them with direct support and flexible adjustments.",
-          "tagline": "Same tour. Same operator. Transparent prices.",
+          "eyebrow": "WHY WE'RE DIFFERENT",
+          "title": "The shortcut to a tour",
+          "titleAccent": "worth booking.",
+          "subtitle": "Korea has hundreds of day-tour listings. We list the ones our Seoul team has actually ridden, vetted, and trust.",
+          "tagline": "We don't list everyone. We list the right ones.",
           "pillar1": {
-            "title": "by our team",
-            "titleAccent": "Hand-picked",
-            "body": "Every operator is chosen by our Korea team — no pay-to-list, no self-submissions."
+            "title": "in person",
+            "titleAccent": "Hand-picked,",
+            "body": "Every operator vetted on the ground by our Seoul team. No algorithm-only listings, no pay-to-list."
           },
           "pillar2": {
-            "title": "on Klook, GetYourGuide, Viator",
-            "titleAccent": "Validated",
-            "body": "Same tours, listed on major global platforms — proven by years of real bookings."
+            "title": "globally",
+            "titleAccent": "Trusted",
+            "body": "The same operators travelers find on the world's largest platforms — we chose them first."
           },
           "pillar3": {
-            "title": "real humans 9–9",
-            "titleAccent": "Direct support,",
-            "body": "AI concierge 24/7. When AI can't decide, a real person steps in (9 AM–9 PM KST)."
+            "title": "9–9 KST",
+            "titleAccent": "Real humans,",
+            "body": "AI concierge 24/7. When AI hits its limit, a Korean-speaking team takes over (9 AM–9 PM KST)."
           },
           "pillar4": {
-            "title": "anytime",
-            "titleAccent": "Compare prices",
-            "body": "We link you to the same tour on other platforms. We don't hide — we welcome comparison."
+            "title": "from day one",
+            "titleAccent": "Transparent",
+            "body": "Clear prices, clear inclusions, secure direct booking — what you see is what you pay."
           }
         },
         "chooseStyle": {
@@ -1190,14 +1190,14 @@
           "step1Title": "Tell us your style",
           "step1Body": "Destination, pace, must-sees, who you're with — done in under a minute.",
           "step2Label": "Step 2",
-          "step2Title": "We compare the options",
-          "step2Body": "Our team and matching system compare verified tours against your input — best fit comes first.",
+          "step2Title": "We do the matching",
+          "step2Body": "Our Seoul team and matcher surface the best-fit tour first — no scrolling through 200 listings.",
           "step3Label": "Step 3",
-          "step3Title": "Review, compare, decide",
-          "step3Body": "Pricing, inclusions, real reviews — all in one place, no tab-switching.",
+          "step3Title": "Decide in one place",
+          "step3Body": "Pricing, inclusions, real reviews — everything you need, no tab-switching.",
           "step4Label": "Step 4",
-          "step4Title": "Book direct",
-          "step4Body": "Book direct with a registered local operator. Secure payment and personal follow-up from our team.",
+          "step4Title": "Book with confidence",
+          "step4Body": "Secure payment, registered local operator, personal follow-up from a real person on our team.",
           "trustPanelTitle": "Why travelers feel more confident here",
           "trust1Title": "Fewer wrong turns",
           "trust1Body": "Too many choices can make the wrong one easier to pick. We shortlist tours with proven track records.",
@@ -1246,15 +1246,15 @@
           "reviewCardStarsAria": "{rating} out of 5 stars"
         },
         "finalCtaBlock": {
-          "title": "Start with your style. Find your Korea tour — compare anytime.",
-          "subtitle": "Hand-picked operators, transparent prices, real human support.",
+          "title": "Your Korea day, picked in 30 seconds.",
+          "subtitle": "Hand-picked operators. Real human support. Direct booking.",
           "trust1RatedParam": "{rating} rated",
-          "trust1Fallback": "Verified tours",
-          "trust2": "Free cancellation when available",
-          "trust3": "Operations team support",
-          "trust4": "Listed on Klook · GetYourGuide · Viator",
-          "primaryCta": "Plan your custom tour",
-          "secondaryCta": "Browse all tour styles",
+          "trust1Fallback": "4.9★ · 100K+ travelers",
+          "trust2": "Free cancellation up to 24h",
+          "trust3": "Seoul team support 9–9 KST",
+          "trust4": "Secure direct booking",
+          "primaryCta": "Find my tour",
+          "secondaryCta": "Browse all tours",
           "orDivider": "or"
         }
       }
