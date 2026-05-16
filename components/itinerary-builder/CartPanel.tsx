@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { GripVertical, MapPin, Trash2, X } from "lucide-react";
+import { ChevronUp, GripVertical, MapPin, Trash2, X } from "lucide-react";
 import {
   DndContext,
   PointerSensor,
