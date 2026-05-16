@@ -2156,6 +2156,22 @@
       "stayMinutesPattern": "~{minutes} min suggested",
       "regionFallback": "{region}"
     },
+    "intake": {
+      "trackLegend": "How are you traveling?",
+      "trackPrivateLabel": "Private car / land trip",
+      "trackPrivateHint": "Hotel pickup, your own pace",
+      "trackCruiseLabel": "On a cruise",
+      "trackCruiseHint": "Back-to-ship before sail",
+      "regionLegend": "Which region?",
+      "cruiseHoursLegend": "How many hours ashore?",
+      "cruiseHoursHint": "Pick the window between your ship's arrival and last-call.",
+      "dateLabel": "Travel date",
+      "partyLabel": "Party size",
+      "shipLabel": "Ship name",
+      "optionalSuffix": "(optional)",
+      "submit": "Open the map",
+      "browsePackagesInstead": "Or browse fixed packages instead →"
+    },
     "cart": {
       "title": "Your itinerary",
       "empty": "Tap pins on the map to add stops",
