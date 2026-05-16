@@ -20,11 +20,12 @@
  * ========================================================================== */
 :root {
   /* Section vertical rhythm — only three steps.
-     Mobile values stay tight (~content-first). Desktop inflates for
-     Apple-grade breathing room. Override happens below in @layer utilities. */
-  --section-py-sm: 56px;
-  --section-py-md: 72px;
-  --section-py-lg: 96px;
+     Phase 4 inflation: mobile bumped 56/72/96 → 64/96/144 so even on
+     phones the sections breathe like a premium marketing page. Desktop
+     stays at 96/128/160 (already Apple-grade) — see @layer utilities. */
+  --section-py-sm: 64px;
+  --section-py-md: 96px;
+  --section-py-lg: 144px;
 
   /* Radius — three steps + pill. Card at 24px is the modern "premium soft"
      sweet spot (24 reads as polished without the heaviness of 28+). */
