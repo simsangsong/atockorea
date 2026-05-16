@@ -29,12 +29,17 @@ export type SeasonConfig = {
   Icon: LucideIcon;
 };
 
+// Korea-local season framing (not the US/EU calendar one). May reads as
+// early summer to Koreans — temps often hit 25°C+, festival season
+// ramps, cherry blossom is long gone. `lateSpring` config kept defined
+// below for future day-level granularity (e.g., late April) but no
+// month currently maps to it.
 const SEASON_BY_MONTH: Record<number, SeasonKey> = {
   0: "winter", // Jan
   1: "winter", // Feb
   2: "springBlossom", // Mar
   3: "springBlossom", // Apr
-  4: "lateSpring", // May
+  4: "summer", // May — Korean local: early summer
   5: "summer", // Jun
   6: "summer", // Jul
   7: "summer", // Aug
