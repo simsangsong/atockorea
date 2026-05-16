@@ -253,7 +253,7 @@ export function HeroSection() {
           <h2 className="mt-2 text-balance text-h3 font-bold text-slate-900">
             {t("premium.v2.hero.matcherHeadline")}
           </h2>
-          <p className="mt-1.5 text-caption font-medium">
+          <p className="mt-1.5 text-caption font-medium text-slate-600">
             {t("premium.v2.hero.matcherSubline")}
           </p>
         </div>
@@ -288,29 +288,13 @@ export function HeroSection() {
                       aria-checked={active}
                       onClick={() => setDestination(id)}
                       className={cn(
-                        "focus-ring rounded-button border px-2 py-3 text-center font-medium transition-colors duration-200 md:px-3 md:py-3.5",
+                        "focus-ring rounded-button border px-2 py-3.5 text-center text-[15px] font-semibold tracking-tight transition-colors duration-200 md:py-4 md:text-base",
                         active
                           ? "border-slate-900 bg-slate-900 text-white"
-                          : "border-slate-200/70 bg-slate-50 text-slate-600 hover:bg-slate-100",
+                          : "border-slate-200/70 bg-slate-50 text-slate-900 hover:bg-slate-100",
                       )}
                     >
-                      <span className="block text-caption font-semibold">
-                        {t(`premium.hero.${labelKey}`)}
-                      </span>
-                      <span
-                        className={cn(
-                          "mt-1 flex items-center justify-center gap-1 text-micro font-medium",
-                          active ? "text-white/70" : "text-slate-500",
-                        )}
-                      >
-                        <span
-                          className={cn(
-                            "h-1 w-1 rounded-full md:h-1.5 md:w-1.5",
-                            active ? "bg-white/70" : "bg-slate-400",
-                          )}
-                        />
-                        {t("premium.hero.destSegmentLabelAvailable")}
-                      </span>
+                      {t(`premium.hero.${labelKey}`)}
                     </button>
                   );
                 })}

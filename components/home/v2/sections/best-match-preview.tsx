@@ -63,7 +63,7 @@ function MatchResultHeroImageSlot({
         />
       ) : (
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-3 bg-slate-100 px-4 text-center">
-          <p className="text-caption font-medium">{t("premium.v2.bestMatch.imageErrorBody")}</p>
+          <p className="text-caption font-medium text-slate-600">{t("premium.v2.bestMatch.imageErrorBody")}</p>
           <V0ShadcnButton
             type="button"
             variant="outline"
@@ -362,7 +362,7 @@ export function BestMatchPreview() {
                     ))}
                   </div>
 
-                  <p className="text-caption mb-2">
+                  <p className="text-caption text-slate-600 mb-2">
                     <span className="font-medium text-slate-700">{t("premium.v2.bestMatch.matchSummaryLead")}</span>{" "}
                     {resultVm.matchSummary}
                   </p>
@@ -388,7 +388,7 @@ export function BestMatchPreview() {
               </div>
             </div>
 
-            <p className="text-center text-caption font-medium mt-3 px-1 md:mt-5">
+            <p className="text-center text-caption font-medium text-slate-600 mt-3 px-1 md:mt-5">
               {resultVm.matchResultRecommendLine}
             </p>
 

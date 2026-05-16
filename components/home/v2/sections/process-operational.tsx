@@ -105,7 +105,7 @@ export function ProcessOperational() {
                   <h4 className="text-body font-semibold text-slate-900 mb-1">
                     {t(step.titleKey)}
                   </h4>
-                  <p className="text-caption">
+                  <p className="text-caption text-slate-600">
                     {t(step.bodyKey)}
                   </p>
                 </div>

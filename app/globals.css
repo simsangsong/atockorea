@@ -107,7 +107,12 @@
   @media (min-width: 768px) { .text-h3 { font-size: 20px; } }
   .text-body { font-size: 14px; line-height: 1.6; }
   @media (min-width: 768px) { .text-body { font-size: 15px; } }
-  .text-caption { font-size: 12px; line-height: 1.5; color: var(--text-secondary); }
+  /* Caption inherits color so it composes correctly inside elements that
+     set their own foreground (active buttons, dark cards). Earlier this
+     hardcoded slate-600 which made the destination radio's active state
+     render slate-600-on-slate-900 (near-invisible). Sites that want the
+     muted body grey should add `text-slate-600` explicitly. */
+  .text-caption { font-size: 12px; line-height: 1.5; }
   @media (min-width: 768px) { .text-caption { font-size: 13px; } }
   /* Eyebrow defaults to a quiet slate label. Earlier this defaulted to
      the amber accent which made 5+ section eyebrows compete for "look at
