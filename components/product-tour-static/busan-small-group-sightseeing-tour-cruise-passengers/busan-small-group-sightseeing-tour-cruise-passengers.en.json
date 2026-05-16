@@ -579,9 +579,9 @@
       },
       "image": "/images/itinerary/jagalchi-harbor-sign.webp",
       "images": [
-        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp"
+        "/images/itinerary/jagalchi-harbor-sign.webp",
+        "/images/itinerary/jagalchi-market-interior.webp",
+        "/images/itinerary/jagalchi-night-building.webp"
       ]
     },
     {
@@ -744,7 +744,12 @@
       "name": "Jagalchi, BIFF Square & Gukje Market area",
       "type": "primary",
       "theme": "Market / Downtown",
-      "image": "/images/itinerary/jagalchi-harbor-sign.webp"
+      "image": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "images": [
+        "/images/itinerary/jagalchi-harbor-sign.webp",
+        "/images/itinerary/jagalchi-market-interior.webp",
+        "/images/itinerary/jagalchi-night-building.webp"
+      ]
     },
     {
       "name": "Gamcheon Culture Village",
@@ -1837,7 +1842,12 @@
               "is_attraction": true,
               "fee_krw": 0,
               "optional_stamp_map": 2000
-            }
+            },
+            "images": [
+              "/images/itinerary/jagalchi-harbor-sign.webp",
+              "/images/itinerary/jagalchi-market-interior.webp",
+              "/images/itinerary/jagalchi-night-building.webp"
+            ]
           },
           {
             "number": 6,
@@ -1939,7 +1949,12 @@
             "id": "rf_nampo",
             "name": "Nampo-dong + Jagalchi Market",
             "theme": "Market & streetfood",
-            "image": "/images/itinerary/jagalchi-harbor-sign.webp"
+            "image": "/images/itinerary/jagalchi-harbor-sign.webp",
+            "images": [
+              "/images/itinerary/jagalchi-harbor-sign.webp",
+              "/images/itinerary/jagalchi-market-interior.webp",
+              "/images/itinerary/jagalchi-night-building.webp"
+            ]
           },
           {
             "id": "rf_return",

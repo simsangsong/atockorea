@@ -420,7 +420,12 @@
         "walking": "Moderate — ground floor flat (wet, can be slippery); stairs to 2F sashimi/restaurant level",
         "admission": "Free entry; pay-as-you-go for seafood and 2F cooking-fee"
       },
-      "image": "/images/itinerary/jagalchi-harbor-sign.webp"
+      "image": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "images": [
+        "/images/itinerary/jagalchi-harbor-sign.webp",
+        "/images/itinerary/jagalchi-market-interior.webp",
+        "/images/itinerary/jagalchi-night-building.webp"
+      ]
     },
     {
       "name": "BIFF Square",
@@ -740,7 +745,12 @@
       "name": "Jagalchi Market",
       "type": "primary",
       "theme": "Seafood market",
-      "image": "/images/itinerary/jagalchi-harbor-sign.webp"
+      "image": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "images": [
+        "/images/itinerary/jagalchi-harbor-sign.webp",
+        "/images/itinerary/jagalchi-market-interior.webp",
+        "/images/itinerary/jagalchi-night-building.webp"
+      ]
     },
     {
       "name": "BIFF Square",

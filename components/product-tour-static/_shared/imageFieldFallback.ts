@@ -32,20 +32,30 @@ export function isImageUrl(v: unknown): v is string {
   return IMAGE_HOST_PATTERN.test(v);
 }
 
+/** True when the value is an array of image URL strings (gallery field). */
+function isImageUrlArray(v: unknown): v is string[] {
+  return Array.isArray(v) && v.length > 0 && v.every((item) => isImageUrl(item));
+}
+
+/** True when the value should be considered an image asset (single URL or gallery array). */
+function isImageAsset(v: unknown): v is string | string[] {
+  return isImageUrl(v) || isImageUrlArray(v);
+}
+
 /**
- * Recursively replace image-URL string fields in `target` with the value from
- * `enSource` at the same structural path. Non-image strings, numbers, booleans,
- * and structurally-mismatched branches are left as-is.
+ * Recursively replace image-URL fields in `target` with the value from
+ * `enSource` at the same structural path. Handles both single-URL strings
+ * (e.g. stop.image) and arrays of URLs (e.g. stop.images[]).
  *
  * Three cases the function handles:
- * 1. Target has an image URL + EN has an image URL → use EN (locale photos
- *    were auto-generated Unsplash placeholders; EN is the curator).
- * 2. Target has an empty/missing/null image value + EN has an image URL →
- *    populate from EN. This lets authoring write image paths only in the EN
- *    file and have all other locales inherit at load time.
- * 3. EN has an image URL at a key that does not exist in target at all →
- *    add it to target. Same intent as case 2; supports "EN-only" authoring
- *    where the locale JSON simply hasn't been touched to include the field.
+ * 1. Target has an image asset + EN has one → use EN (locale photos were
+ *    auto-generated Unsplash placeholders; EN is the curator).
+ * 2. Target has empty/missing/null image value (incl. empty array) + EN
+ *    has one → populate from EN. Lets authoring write image paths only in
+ *    the EN file and have all other locales inherit at load time.
+ * 3. EN has an image asset at a key that does not exist in target at all
+ *    → add it to target. Same intent as case 2; supports "EN-only"
+ *    authoring where the locale JSON hasn't been touched.
  *
  * The function returns a new object/array tree; the input is not mutated.
  */
@@ -69,12 +79,18 @@ export function overrideImageFieldsFromEn<T>(target: T, enSource: unknown): T {
     for (const k of localeKeys) {
       const tv = (target as Record<string, unknown>)[k];
       const sv = enObj?.[k];
-      if (isImageUrl(tv)) {
-        if (isImageUrl(sv)) out[k] = sv;
-        // EN doesn't have a value at this path → leave the locale value alone.
-      } else if (tv === "" || tv === null || tv === undefined) {
-        // Empty/missing image slot — populate from EN if EN has one.
-        if (isImageUrl(sv)) out[k] = sv;
+      if (isImageAsset(tv)) {
+        // Case 1: locale already has an image asset — replace with EN's
+        // version (also asset) so the gallery composition stays curated.
+        if (isImageAsset(sv)) out[k] = sv;
+      } else if (
+        tv === "" ||
+        tv === null ||
+        tv === undefined ||
+        (Array.isArray(tv) && tv.length === 0)
+      ) {
+        // Case 2: empty slot — populate from EN if EN has an asset.
+        if (isImageAsset(sv)) out[k] = sv;
       } else if (typeof tv === "object" && tv !== null) {
         out[k] = overrideImageFieldsFromEn(tv, sv);
       }
@@ -85,7 +101,7 @@ export function overrideImageFieldsFromEn<T>(target: T, enSource: unknown): T {
       for (const k of Object.keys(enObj)) {
         if (localeKeys.has(k)) continue;
         const sv = enObj[k];
-        if (isImageUrl(sv)) out[k] = sv;
+        if (isImageAsset(sv)) out[k] = sv;
       }
     }
 
