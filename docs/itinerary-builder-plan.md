@@ -15,8 +15,8 @@
 
 | Field | Value |
 |---|---|
-| **Current phase** | Phase 0 — audit & plan ✅ complete. Awaiting approval to start Phase 1. |
-| **Blocked on** | User decision on §B open questions (region scope, vendor, table shape, quote model, auth). |
+| **Current phase** | Phase 1 — POI catalog seed ⏸ ready (planner sync pending commit) |
+| **Blocked on** | — all §B questions resolved 2026-05-16; awaiting planner commit before Phase 1 migration |
 | **Last updated** | 2026-05-16 |
 | **Last commit touching this feature** | `a732e63f` — docs: itinerary-builder full audit + 6-phase plan |
 | **Owner** | simsangsong |
@@ -24,15 +24,18 @@
 
 ### Phase progress
 
+Revised 2026-05-16 after D1-D8: original 6 phases → 7 phases (new Phase 5 for auto-quote engine; Phase 3 absorbs /tours restructure + home v2 entry; Phase 4 absorbs Q&A intake with cruise/private branch).
+
 | Phase | Status | Started | Done | Commit hash(es) |
 |---|---|---|---|---|
 | 0 — Audit & plan | ✅ complete | 2026-05-16 | 2026-05-16 | `a732e63f` |
-| 1 — POI catalog seed | ⏸ not started | — | — | — |
+| 1 — POI catalog seed (jeju + busan) | ⏸ not started | — | — | — |
 | 2 — Coordinate enrichment | ⏸ not started | — | — | — |
-| 3 — Map UI read-only | ⏸ not started | — | — | — |
-| 4 — Cart + sequencing + quote | ⏸ not started | — | — | — |
-| 5 — POI matching_profile authoring | ⏸ not started | — | — | — |
-| 6 — AI recommendation engine | ⏸ not started | — | — | — |
+| 3 — Map UI read-only + `/tours` restructure + home v2 entry section | ⏸ not started | — | — | — |
+| 4 — Q&A intake (private / cruise branch) + cart + manual quote form | ⏸ not started | — | — | — |
+| 5 — Auto-quote engine + admin presets + Slack escalation + quote memory | ⏸ not started | — | — | — |
+| 6 — POI matching_profile authoring | ⏸ not started | — | — | — |
+| 7 — AI recommendation engine | ⏸ not started | — | — | — |
 
 Legend: ⏸ not started · 🔄 in progress · ✅ complete · ⚠️ blocked · ❌ abandoned
 
@@ -45,10 +48,15 @@ Append a new row whenever a §5 question gets answered or a new architectural ca
 | Date | Decision ID | Decision | Reason / context |
 |---|---|---|---|
 | 2026-05-16 | — | Audit complete; Google Maps confirmed as map vendor (already integrated) | `@react-google-maps/api 2.20.7` + env key already in place — switching cost zero |
-| | D1 | (region scope for MVP) | pending |
-| | D3 | (extend `match_pois` vs new tables) | pending — recommendation: extend |
-| | D4 | (quote endpoint model) | pending — recommendation: email + Slack + DB row |
-| | D5 | (auth requirement) | pending — recommendation: no auth, URL params carry state |
+| 2026-05-16 | — | Map ID created with **vector** rendering, tilt OFF, rotation OFF | Premium feel, GPU-accelerated cluster perf, top-down clarity for planning UX; mobile gesture safety (§G.2) |
+| 2026-05-16 | — | New env var `NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID` (Vercel: Production + Preview + Development) | Map ID is not a secret; security enforced by API-key HTTP referrer restrictions |
+| 2026-05-16 | D1 | **jeju + busan** (2 regions for MVP); seoul deferred | Focuses MVP on highest-tourism regions; seoul DMZ/suburbs complexity deferred to post-MVP |
+| 2026-05-16 | D3 | **Extend** `match_pois` (add `lat`, `lng`, `matching_profile`, `default_stay_minutes`, `category` cols) — no new tables for POI catalog | Single source of truth; simpler schema; reuses existing `poi_key` indexing |
+| 2026-05-16 | D4 | **Auto-quote engine** — admin pre-configures base conditions via Q&A; user intent within scope → auto-quote computed; intent outside scope → Slack escalation to ops; manual quotes saved and reused as precedent for future same-condition requests | **Revises original "email+Slack+DB row" simple model.** Significantly larger scope — promoted to dedicated Phase 5 (was a sub-task of old Phase 4). |
+| 2026-05-16 | D5 | **No auth**; URL params carry cart state (share-able links) | Confirmed recommendation |
+| 2026-05-16 | D6 | i18n strategy: author **EN messages first**; auto-translate pipeline produces `ko / ja / zh / zh-TW / es` | Reduces Phase 3 i18n authoring cost; human review pass before locale release (see §H R8) |
+| 2026-05-16 | D7 | Entry points: (a) new **home v2 section** linking to builder; (b) restructure `/tours` — **remove busan/seoul/jeju private-tour static pages**, keep only shore excursions (with match CTA inside); (c) add "Want a private tour?" **CTA card on top of `/tours`** linking to Q&A intake | Single canonical path to the builder; legacy 5 private-tour static pages superseded. Retirement strategy: 301 redirects to `/itinerary-builder/<region>` to preserve SEO (see §H R7). |
+| 2026-05-16 | D8 | Q&A intake has **two branches**: (i) **private-tour track** = land itinerary builder (our main flow), (ii) **cruise track** = shore excursion sequencer with shorter time window (back-to-ship constraint). Branched at first form question | Cruise has a distinct price model + hard time constraint; separate pricing presets in Phase 5 |
 
 ---
 
@@ -59,6 +67,7 @@ One line per material change to this doc or per phase deliverable.
 | Date | Commit | Change |
 |---|---|---|
 | 2026-05-16 | `a732e63f` | Initial audit + plan written (Phase 0) |
+| 2026-05-16 | (pending) | Google Maps API key + vector Map ID setup completed externally; §B decisions D1–D8 logged; §F revised from 6 → 7 phases (new Phase 5 = auto-quote engine; old Phases 5/6 renumbered to 6/7; Phase 3 expanded to include `/tours` restructure + home v2 entry; Phase 4 expanded to include Q&A intake with private/cruise branching) |
 
 ---
 
@@ -88,10 +97,14 @@ Things that came up during this work but aren't in the 6-phase plan. Park them h
 
 | Date | Idea | Why parked | Owner / next step |
 |---|---|---|---|
-| 2026-05-16 | Merge `poi_search_profile` (TourAPI 576-row table) with `match_pois` | Different ID scheme (TourAPI content_id vs poi_key); not blocking MVP | After Phase 6 ships and beta feedback in |
-| 2026-05-16 | `/admin/pois` browse + edit UI | Nice-to-have for tuning; not user-facing | Phase 7 (post-MVP) |
-| 2026-05-16 | Auto-pricing for quotes (vehicle + driver + distance) | Requires ops costing logic; out of scope | Real product call, post-MVP |
-| 2026-05-16 | Save itinerary to user account | Requires auth flow; URL params carry MVP value | Phase 8 (post-MVP) |
+| 2026-05-16 | Merge `poi_search_profile` (TourAPI 576-row table) with `match_pois` | Different ID scheme (TourAPI content_id vs poi_key); not blocking MVP | Post-MVP, after Phase 7 ships and beta feedback in |
+| 2026-05-16 | `/admin/pois` browse + edit UI | Nice-to-have for tuning; not user-facing | Post-MVP |
+| 2026-05-16 | ~~Auto-pricing for quotes (vehicle + driver + distance)~~ **PROMOTED → Phase 5 (D4 revised 2026-05-16)** | Originally parked as out-of-scope; D4 revision made it core | — |
+| 2026-05-16 | Save itinerary to user account | Requires auth flow; URL params carry MVP value | Post-MVP |
+| 2026-05-16 | Seoul region rollout (DMZ + suburbs + main) | D1 limited MVP to jeju + busan | After Phase 7 beta validates jeju/busan |
+| 2026-05-16 | Admin UI for Phase 5 base-condition Q&A setup | Phase 5 may start with config-as-data (Supabase jsonb) before building an admin page | Decide during Phase 5 — escalate to admin UI only if rules get complex enough that JSON editing is error-prone |
+| 2026-05-16 | Cruise shore-excursion match flow detail (reuse `/match` page or new surface?) | D8 split cruise into a separate intake branch but the result surface is TBD | Phase 4 design step |
+| 2026-05-16 | Legacy private-tour static pages (busan, jeju, seoul-suburbs, incheon-seoul, seoul-dmz) — retirement timing & redirect map | D7 says remove from `/tours`; redirect mapping detail deferred | Phase 3 task — 301 redirects to `/itinerary-builder/<region>` (where region exists) or to `/itinerary-builder` landing |
 
 ---
 
@@ -101,7 +114,9 @@ Each phase delivers a shippable artifact and has a clear "stop here if needed" c
 
 ### Phase 1 — POI catalog seed (1-2 days)
 
-**Deliverable:** `match_pois` rows fully populated for all ~102 unique poi_keys.
+**Scope per D1 2026-05-16:** jeju + busan only for MVP seed. (Seoul rows in source JSONs are seeded as-is for future, but Phase 3/4 UIs only render jeju + busan.)
+
+**Deliverable:** `match_pois` rows fully populated for all unique poi_keys from tour JSONs.
 
 **Migration to write first:** `supabase/migrations/<timestamp>_add_match_pois_geo_and_profile.sql`
 - `ALTER TABLE match_pois ADD COLUMN lat numeric, ADD COLUMN lng numeric, ADD COLUMN matching_profile jsonb, ADD COLUMN default_stay_minutes integer, ADD COLUMN category text;`
@@ -110,11 +125,12 @@ Each phase delivers a shippable artifact and has a clear "stop here if needed" c
 - [ ] Write migration `supabase/migrations/<timestamp>_add_match_pois_geo_and_profile.sql`
 - [ ] Apply migration via `mcp__atockorea__apply_migration`
 - [ ] Write `scripts/seed-match-pois-from-tour-jsons.mjs` — walk all `components/product-tour-static/**/<slug>.<locale>.json`, dedupe by `_poi_meta.poi_key`, write `name_en, name_ko, names_other_locales jsonb, region, default_image_url, poi_meta, stop_role='attraction'` to `match_pois`. Skip operational keys (prefix `OPS_`).
-- [ ] Run script; verify row count ≥ 100; spot-check 5 POIs across 6 locales.
+- [ ] Run script; verify row count ≥ 100 (all regions seeded, even though jeju/busan are the MVP-rendered ones); spot-check 5 POIs across 6 locales.
 - [ ] Add a verification SQL block to the script that prints (a) total rows (b) per-region count (c) any poi_keys without name_en (should be 0).
 
 **Acceptance:**
 - [ ] `SELECT COUNT(DISTINCT poi_key) FROM match_pois WHERE name_en IS NOT NULL;` ≥ 100
+- [ ] `SELECT COUNT(*) FROM match_pois WHERE region IN ('busan', 'jeju') AND name_en IS NOT NULL;` ≥ 40 (MVP-relevant subset is real)
 - [ ] Every populated row has `region IN ('seoul', 'busan', 'jeju', 'gyeongju', 'incheon', 'yangsan', ...)` (no nulls)
 - [ ] No row has `stop_role = 'operational'` (filtered at seed time)
 
@@ -143,63 +159,166 @@ Each phase delivers a shippable artifact and has a clear "stop here if needed" c
 
 ---
 
-### Phase 3 — Map UI read-only (2-3 days)
+### Phase 3 — Map UI read-only + `/tours` restructure + home v2 entry (3-4 days)
 
-**Deliverable:** `/itinerary-builder/[region]` renders a map with all POI pins; click → popup with photo + name + short description + "Add" button (button no-op for now).
+**Per D6/D7 2026-05-16:** expanded from "just the map page" to include i18n pipeline, `/tours` restructure, and home v2 entry section.
 
-**Tasks:**
+**Deliverable:** `/itinerary-builder/[region]` renders the map with POI pins; `/tours` page restructured to surface the builder as the canonical path; home v2 has a new entry section.
+
+**Tasks — map UI:**
 - [ ] New route `app/itinerary-builder/[region]/page.tsx` (SSR shell, client child component)
-- [ ] Resolve `region` param against allowed list (`seoul | busan | jeju`); 404 otherwise.
+- [ ] Resolve `region` param against allowed list (`busan | jeju` per D1); 404 otherwise.
 - [ ] Read `match_pois` for region via Supabase server client.
 - [ ] Build `<POICatalogMap />` client component:
-  - Google Map centered on region centroid (Seoul 37.5665,126.9780; Busan 35.1796,129.0756; Jeju 33.4996,126.5312)
-  - Marker per POI
+  - Google Map with `mapId={NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID}` (vector rendering, tilt/rotate OFF — set in code via `gestureHandling`/`disableDefaultUI` partials)
+  - Centered on region centroid (Busan 35.1796,129.0756; Jeju 33.4996,126.5312)
+  - **AdvancedMarkerElement** per POI (vector path requires this, not legacy Marker)
   - `@googlemaps/markerclusterer` for cluster behavior on zoom-out
-  - InfoWindow on marker click: image (`default_image_url`), name (locale-aware via next-intl pattern), summary line (first 140 chars of POI description), "Add to itinerary" button (disabled in Phase 3, enabled in Phase 4)
-- [ ] i18n keys under `messages/<locale>.json` key `itineraryBuilder.*`: page title, intro, marker popup labels.
-- [ ] Add CTA to existing private-tour detail pages (one new section component) → "Build your own itinerary on the map" link to `/itinerary-builder/<region>`.
+  - InfoWindow on marker click: image (`default_image_url`), name (locale-aware), summary line (first 140 chars of POI description), "Add to itinerary" button (disabled in Phase 3, enabled in Phase 4)
 - [ ] Mobile-first sizing: map 100vh on mobile, side-by-side on md+.
 
+**Tasks — i18n pipeline (D6):**
+- [ ] Author EN strings in `messages/en.json` under `itineraryBuilder.*` (page title, intro copy, marker popup labels, CTA labels).
+- [ ] Wire auto-translate pipeline (existing? new?) to fan out → `messages/{ko,ja,zh,zh-TW,es}.json`. Confirm pipeline location/tooling first.
+- [ ] Human review pass on `ko` (highest traffic) before merge; other 4 locales reviewed async.
+
+**Tasks — `/tours` restructure (D7):**
+- [ ] Audit existing `/tours` page content + 5 legacy private-tour detail routes (busan, jeju, seoul-suburbs, incheon-seoul, seoul-dmz).
+- [ ] Remove private-tour cards from `/tours` grid; keep shore excursions section + add Match CTA banner inside shore excursions.
+- [ ] Add **"Want a private tour?" CTA card on top of `/tours`** linking to `/itinerary-builder` Q&A intake (intake form lands in Phase 4 — Phase 3 lands the card with `href` pointing to an interim "coming soon" or direct to `/itinerary-builder/[region]` selector).
+- [ ] Add 301 redirects in `next.config.js` from legacy private-tour slugs → `/itinerary-builder/<region>` (where region matches) or `/itinerary-builder` selector (where not). SEO preservation.
+- [ ] Delete the 5 legacy static-tour page components only after redirects verified live.
+
+**Tasks — home v2 entry section:**
+- [ ] New home v2 section (under `components/home/v2/sections/`) headlining the builder. Visual treatment follows memory `feedback_home_visual_energy.md` (amber eyebrow default, premium feel — not muted).
+- [ ] Wire section into `components/home/v2/HomeV2Page.tsx` section order; default position TBD (recommend above ProcessSection).
+- [ ] Section CTA → `/itinerary-builder` selector → user picks busan/jeju → routes to `/itinerary-builder/[region]`.
+
 **Acceptance:**
-- [ ] Page loads at `/itinerary-builder/busan`; map shows ≥ 20 pins (Busan catalog size).
-- [ ] Clicking any pin opens InfoWindow with image + name + 1-line desc + Add button.
+- [ ] Page loads at `/itinerary-builder/busan` and `/itinerary-builder/jeju`; map shows ≥ 20 pins each.
+- [ ] Vector rendering confirmed (smooth zoom, AdvancedMarker visible).
+- [ ] Clicking any pin opens InfoWindow with image + name + 1-line desc + (disabled) Add button.
+- [ ] `/tours` shows shore excursions only + "Want private tour?" CTA card on top; private-tour cards removed.
+- [ ] Legacy private-tour URLs return 301 → builder route (curl `-I` verifies).
+- [ ] Home v2 has new section visible in screenshot.
+- [ ] `messages/en.json` complete; `messages/ko.json` reviewed; other 4 locales auto-translated.
 - [ ] Page is responsive (DevTools mobile + tablet + desktop tested).
 - [ ] No console errors; Lighthouse perf ≥ 70 on mobile.
 
-**Cut-line:** Users can browse the curated POI map. Can't build/save yet.
+**Cut-line:** Users can browse the curated POI map AND can find it from home + `/tours`. Can't build/save yet.
 
 ---
 
-### Phase 4 — Cart + manual sequencing + quote (2-3 days)
+### Phase 4 — Q&A intake (private/cruise) + cart + manual quote form (3-4 days)
 
-**Deliverable:** End-to-end manual builder. User picks POIs, reorders, sees drive estimate, submits a quote request.
+**Per D8 2026-05-16:** intake branches into private-tour vs cruise tracks at the first question (cruise has a shorter time window and different price model). Auto-quote pricing logic is **NOT** in this phase — that's Phase 5. Phase 4 only saves the request and routes to Slack (manual quote fallback) until Phase 5 lands the auto-quote engine.
 
-**Tasks:**
-- [ ] Cart state in URL params: `?pois=tongdosa,bulguksa&date=2026-05-20&party=4` (so itineraries are share-able without auth).
+**Deliverable:** End-to-end manual builder. User answers intake Q&A → routed to private OR cruise flow → picks POIs, reorders, sees drive estimate, submits a quote request that creates a DB row + Slack notification.
+
+**Tasks — intake Q&A:**
+- [ ] New route `app/itinerary-builder/page.tsx` (intake landing — region + cruise question + party + date).
+- [ ] First question: "Are you arriving by cruise?" → branches:
+  - **No (private-tour track):** standard land builder. Region question (busan/jeju). Party size. Date. Language. Special interests (multi-select).
+  - **Yes (cruise track):** which port? (busan-cruise-port / jeju-cruise-port). Ship name + date. Time available (e.g., 6h / 8h / 10h). Onward language.
+- [ ] Form persists answers to URL params (consistent with D5 share-able links): `?track=private&region=busan&date=...&party=4&lang=en&interests=temples,markets`
+- [ ] On submit → route to `/itinerary-builder/[region]?...` (map view) with intake context preloaded into cart prompt.
+
+**Tasks — cart + sequencing (carried over from old Phase 4):**
+- [ ] Cart state in URL params: `?pois=tongdosa,bulguksa&date=2026-05-20&party=4&track=private` (so itineraries are share-able without auth).
 - [ ] Cart UI: side panel on desktop, bottom-sheet on mobile (snap points 30%/90%).
 - [ ] Drag-and-drop reorder via `@dnd-kit/core` (install if not present).
 - [ ] Drive estimate: Haversine distance × 1.3 road factor × 50 km/h average → ETA per leg. Show total drive minutes + summed POI `default_stay_minutes`.
+- [ ] **Cruise track only:** enforce hard time-budget — sum(stay + drive) ≤ user-selected window; warn if exceeded; refuse submit if exceeded by >30 min.
 - [ ] Polyline overlay on map showing selected POI sequence in order.
-- [ ] Quote form modal: name / email / requested date / party size / language / notes.
+
+**Tasks — manual quote form (Phase 5 will layer auto-quote on top):**
+- [ ] Quote form modal: name / email / requested date / party size / language / notes (intake answers prefilled).
 - [ ] `POST /api/itinerary/quote` route:
-  - Write to new `tour_quote_requests` table (migration in this phase)
-  - Send Slack webhook notification to ops channel
+  - Write to new `tour_quote_requests` table (migration in this phase) with intake answers as `intake jsonb` column
+  - Send Slack webhook notification to ops channel (`SLACK_QUOTE_WEBHOOK_URL`)
   - Send confirmation email to user via existing email service (`lib/email.ts`)
+  - Return `{ quote_id, status: 'pending_manual' }` — auto-quote status added in Phase 5
 - [ ] Success page: "We'll respond within X hours" + saved URL of the itinerary.
 
-**Migration:** `<timestamp>_create_tour_quote_requests.sql` — id uuid PK, poi_keys text[], requested_date date, party_size int, contact_email text, contact_name text, language text, notes text, locale text, region text, source_url text, created_at timestamptz.
+**Migration:** `<timestamp>_create_tour_quote_requests.sql` — id uuid PK, poi_keys text[], requested_date date, party_size int, contact_email text, contact_name text, language text, notes text, locale text, region text, track text CHECK (track IN ('private','cruise')), intake jsonb, source_url text, status text DEFAULT 'pending_manual', created_at timestamptz, manual_quote_amount_krw int NULL, manual_quote_response jsonb NULL, manual_responded_at timestamptz NULL.
 
 **Acceptance:**
+- [ ] Intake form at `/itinerary-builder` lands → answer Q&A → routes to map with prefilled context
+- [ ] Cruise track enforces time budget; warning fires if exceeded
 - [ ] Add 3 POIs from map → cart shows them in order
 - [ ] Drag to reorder → URL updates → polyline redraws
-- [ ] "Get quote" → form submit → DB row appears → Slack notification fires → email sent
-- [ ] Share URL → reopen → cart restored from URL params
+- [ ] "Get quote" → form submit → DB row in `tour_quote_requests` (status=`pending_manual`) → Slack notification fires → user email sent
+- [ ] Share URL → reopen → cart + intake context restored from URL params
 
-**Cut-line:** Ship-able as v1 even if AI recommendation (Phases 5-6) lags.
+**Cut-line:** Ship-able as v1 — every quote goes through Slack manual response. Phase 5 layers auto-quote on top without changing this flow.
 
 ---
 
-### Phase 5 — POI matching_profile authoring (1-2 days)
+### Phase 5 — Auto-quote engine + admin presets + Slack escalation + quote memory (3-5 days)
+
+**Per D4 2026-05-16 (revised):** admin pre-configures base pricing conditions; in-scope itineraries get auto-quoted instantly; out-of-scope ones escalate to Slack; manual responses become reusable precedent.
+
+**Deliverable:** Quote submission either returns an instant computed price OR escalates with a precedent reference; admin can configure presets without code changes.
+
+**Architecture sketch:**
+```
+POST /api/itinerary/quote
+  ├─ classify(intake + cart) → in_scope | out_of_scope (rule engine over admin presets)
+  ├─ if in_scope:
+  │   ├─ price = computeQuote(presets, intake, cart)   // base + per-POI + per-hour + per-person
+  │   ├─ status = 'auto_quoted'
+  │   └─ email user with price + "book" CTA, log row
+  └─ if out_of_scope:
+      ├─ lookup precedent in quote_memory (similar past quotes)
+      ├─ Slack ops with intake + cart + suggested-precedent-price
+      ├─ status = 'pending_manual'
+      └─ email user "we'll respond within X hours"
+
+POST /api/admin/quotes/[id]/respond  (ops manually responds via admin route)
+  ├─ writes manual_quote_amount + condition_fingerprint
+  ├─ emails user with quote
+  └─ adds row to quote_memory keyed by fingerprint (track, region, party_band, hours_band, has_temple, ...)
+```
+
+**Tasks — schema:**
+- [ ] Migration `<timestamp>_create_quote_presets_and_memory.sql`:
+  - `quote_presets` (id, track, region, base_krw, per_poi_krw, per_hour_krw, per_person_krw, in_scope_rules jsonb, active boolean, updated_at) — admin-editable rows
+  - `quote_memory` (id, condition_fingerprint text, intake jsonb, cart_poi_keys text[], manual_amount_krw int, notes, created_by, created_at) — precedent log
+  - Extend `tour_quote_requests` (Phase 4 table): add `auto_quote_amount_krw`, `auto_quote_breakdown jsonb`, `precedent_quote_id uuid REFERENCES quote_memory(id)`.
+
+**Tasks — admin Q&A presets (config-as-data first; admin UI parked in §E):**
+- [ ] Define preset schema. Seed two rows: `track=private,region=busan` and `track=private,region=jeju` (+ later `track=cruise,*`).
+- [ ] `in_scope_rules` jsonb examples: `{"max_hours": 10, "max_pois": 8, "party_size_max": 8, "allowed_categories": ["temple","nature","market","viewpoint"], "disallowed_pois": ["restricted_military_zone_*"]}`.
+- [ ] Document seed values in `docs/quote-presets-seed.md` (separate file) so ops can review.
+
+**Tasks — classification + auto-quote pipeline:**
+- [ ] `lib/quote-engine/classify.ts` — pure function `classify(presets, intake, cart) → { in_scope: bool, violations: string[] }`.
+- [ ] `lib/quote-engine/compute.ts` — pure function `computeQuote(preset, intake, cart) → { amount_krw, breakdown }`.
+- [ ] `lib/quote-engine/fingerprint.ts` — produces stable hash of normalized intake+cart for memory lookup.
+- [ ] `lib/quote-engine/memory-lookup.ts` — k-nearest precedent fetch (start with exact fingerprint match; expand to similarity later).
+- [ ] Wire into `POST /api/itinerary/quote` (extending Phase 4 route — not replacing it).
+
+**Tasks — Slack escalation + admin response:**
+- [ ] Slack message includes: intake summary, cart POI list, suggested precedent price (if any), "Respond" link → `/admin/quotes/[id]`.
+- [ ] `/admin/quotes/[id]` route — auth-gated (existing admin auth pattern); ops sees request + precedent; submits final price + notes.
+- [ ] On ops submit: writes `quote_memory` row + emails user + closes request.
+
+**Tasks — user UX:**
+- [ ] Auto-quoted: instant price card on success page, "Book now" CTA → Stripe (reuse existing flow if exists in Phase 5 scope, else stub).
+- [ ] Manual-pending: "We'll respond within X hours" + optimistic precedent estimate if available ("similar past quotes ranged $X-Y").
+
+**Acceptance:**
+- [ ] **In-scope private-tour request** (jeju, 6h, party 4, 3 POIs all in allowed categories) → auto-quote within <500ms, email contains computed price.
+- [ ] **Out-of-scope request** (party 12, 12h, includes a disallowed POI) → Slack message fires within <2s, includes suggested precedent if memory has one.
+- [ ] **Admin responds via `/admin/quotes/[id]`** → user email fires + `quote_memory` row created with fingerprint.
+- [ ] **Second similar out-of-scope request** → Slack message references precedent_quote_id with prior amount.
+- [ ] **Preset editing in Supabase Studio** (no admin UI yet) → next quote uses new prices without redeploy.
+
+**Cut-line:** Auto-quote engine live for jeju+busan private track. Cruise auto-quote rules can be added incrementally as ops collects manual cruise quotes.
+
+---
+
+### Phase 6 — POI matching_profile authoring (1-2 days)
 
 **Deliverable:** Every POI in `match_pois` has a `matching_profile` jsonb populated.
 
@@ -218,11 +337,11 @@ Each phase delivers a shippable artifact and has a clear "stop here if needed" c
 - [ ] Spot-check: `scenic_level` is high for viewpoints, `nature_fit` high for parks/mountains, `iconic_landmark_fit` high for UNESCO sites
 - [ ] No tour-wrapper dimensions leaked into POI profiles
 
-**Cut-line:** POI catalog is now matchable. Phase 6 becomes possible.
+**Cut-line:** POI catalog is now matchable. Phase 7 becomes possible.
 
 ---
 
-### Phase 6 — AI recommendation engine (2-3 days)
+### Phase 7 — AI recommendation engine (2-3 days)
 
 **Deliverable:** "AI 추천 받기" button calls Gemini Haiku, parses intent, returns a recommended 5-7 POI sequence with rationale + drive route.
 
@@ -237,15 +356,16 @@ Each phase delivers a shippable artifact and has a clear "stop here if needed" c
     5. Sequence: greedy nearest-neighbor TSP starting from region centroid
     6. Time budget: trim from the tail until `sum(stay) + sum(drive) ≤ max_hours`
   - Output: `{ recommended_pois: poi_key[], per_poi_score_breakdown, total_drive_time_min, rationale }`
-- [ ] UI: "AI 추천 받기" button on `/itinerary-builder/[region]` → calls endpoint → fills cart with recommended POIs in order → map polyline updates
+- [ ] UI: "AI 추천 받기" button on `/itinerary-builder/[region]` → calls endpoint → fills cart with recommended POIs in order → map polyline updates → flows through Phase 5 auto-quote engine
 - [ ] Optional 2nd Haiku pass via `explainer-haiku.ts` for natural-language rationale shown above the cart
 - [ ] Telemetry: log to existing `match_queries` table with `flow='itinerary_builder'` tag
 
 **Acceptance:**
 - [ ] EN intent "first time / family / scenic / Busan" → returns 5-7 POIs in Busan, ≤6 hours, mix of UNESCO + nature + market
-- [ ] KO intent "벚꽃 시즌 / 커플 / 경주" → returns Gyeongju cherry-blossom POI set
+- [ ] KO intent "벚꽃 시즌 / 커플 / 제주" → returns Jeju POI set with seasonal weighting
 - [ ] Swap one POI manually → polyline updates; rationale section updates if Haiku 2nd-pass enabled
 - [ ] Cost telemetry shows Haiku spend per request (~$0.001-0.003)
+- [ ] Recommended itinerary auto-quotes via Phase 5 engine without manual step
 
 **Cut-line:** Full feature. Ship internal beta, gather feedback, iterate `match_pois.matching_profile` quality.
 
@@ -282,23 +402,32 @@ Each phase delivers a shippable artifact and has a clear "stop here if needed" c
 | R1 | POI profiles derived from tour profiles are lossy | Ship derived, instrument click-through, manually retune worst | — |
 | R2 | Mobile UX hard (map+cart+popup) | Phase 3 desktop-first to soft URL; Phase 4 adds mobile sheet | — |
 | R3 | Distance Matrix API cost at scale | Haversine for previews; Distance Matrix only at quote submit | — |
-| R4 | Manual tuning is long-tail | Ship Phase 6 derived-only; tune bottom 10% based on engagement | — |
+| R4 | Manual tuning is long-tail | Ship Phase 7 derived-only; tune bottom 10% based on engagement | — |
 | R5 | `poi_search_profile` (TourAPI) overlap | Treat as separate; revisit post-MVP | — |
+| R6 | **Auto-quote engine (Phase 5) misconfigures pricing rules → wrong auto-quote sent to customer** | Hard threshold: auto-quote requires ALL preset rules satisfied (any uncertainty → escalate). Email user before any payment step. Admin sees auto-quotes-issued log daily. Dry-run mode for new presets before enabling `active=true`. | — |
+| R7 | **`/tours` restructure (Phase 3) breaks SEO from inbound links to legacy private-tour slugs** | 301 redirects from all 5 legacy slugs → builder route or selector. Audit Search Console for top inbound URLs before deletion. Keep redirects live ≥ 12 months. | — |
+| R8 | **Auto-translation pipeline (Phase 3 D6) produces awkward KO/JA/ZH copy** | Human review pass on `ko` (highest traffic) before merge. `ja/zh/zh-TW/es` flagged for async review; gate locale-switcher visibility on review-complete flag if needed. | — |
+| R9 | **Quote-memory precedent reuse misleads ops** (old quote for different party size used as anchor) | Fingerprint MUST include party_size_band + hours_band + has_premium_poi flags. Slack message shows precedent confidence score, never auto-applies the price. | — |
 
 ---
 
 ## I · Cost estimate
 
+Revised 2026-05-16 after §B decisions D1-D8 — Phases 3/4 expanded, new Phase 5 added.
+
 | Phase | Person-days | Cumulative |
 |---|---|---|
-| 1 — POI catalog seed | 1-2 | 1-2 |
+| 1 — POI catalog seed (jeju + busan) | 1-2 | 1-2 |
 | 2 — Coordinate enrichment | 0.5-1 | 1.5-3 |
-| 3 — Map UI read-only | 2-3 | 3.5-6 |
-| 4 — Cart + manual sequencing + quote | 2-3 | 5.5-9 |
-| 5 — POI matching_profile derivation | 1-2 | 6.5-11 |
-| 6 — AI recommendation engine | 2-3 | 8.5-14 |
-| **Total (full feature, 1 region MVP)** | **8.5-14 days** | **~2 weeks focused** |
-| Polish + 3-region rollout | +3-7 days | **3-4 weeks total** |
+| 3 — Map UI + `/tours` restructure + home v2 entry + i18n pipeline | 3-4 | 4.5-7 |
+| 4 — Q&A intake (private/cruise) + cart + manual quote | 3-4 | 7.5-11 |
+| 5 — Auto-quote engine + presets + Slack escalation + memory | 3-5 | 10.5-16 |
+| 6 — POI matching_profile derivation | 1-2 | 11.5-18 |
+| 7 — AI recommendation engine | 2-3 | 13.5-21 |
+| **Total (full feature, jeju+busan MVP)** | **13.5-21 days** | **~3-4 weeks focused** |
+| Polish + Seoul rollout post-MVP | +3-7 days | **4-5 weeks total** |
+
+**Cost delta vs original plan** (was 8.5-14 days): +5-7 days from D4 auto-quote engine (3-5d new) + D7 `/tours` restructure (~1d added to Phase 3) + D8 cruise branch + Q&A intake (~1d added to Phase 4) + D6 i18n pipeline (~0.5d added to Phase 3).
 
 ---
 
