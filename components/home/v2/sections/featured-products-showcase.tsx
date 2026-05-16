@@ -11,6 +11,7 @@ import { consumerTourDetailHref } from "@/lib/tour-consumer-visibility";
 import { useCurrencyOptional } from "@/lib/currency";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import { HOME_CTA_BROWSE_TOURS_HREF } from "@/lib/home/home-cta-routes";
+import { SnapScrollDots } from "@/components/home/v2/ui/SnapScrollDots";
 
 const FEATURED_LIMIT = 6;
 
@@ -29,6 +30,7 @@ export function FeaturedProductsShowcase() {
   const { locale } = useI18n();
   const currencyCtx = useCurrencyOptional();
   const containerRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const [tours, setTours] = useState<TourCardViewModel[] | null>(null);
   const [error, setError] = useState(false);
@@ -113,26 +115,32 @@ export function FeaturedProductsShowcase() {
         {tours == null ? (
           <SkeletonGrid />
         ) : (
-          <div className="relative -mx-4 md:mx-0">
-            <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-hide md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
-              {tours.slice(0, FEATURED_LIMIT).map((tour) => (
-                <div
-                  key={tour.id}
-                  className="w-[44vw] flex-shrink-0 snap-start md:w-auto"
-                >
-                  <TourListCard
-                    tour={tour}
-                    detailHref={consumerTourDetailHref(tour.id, tour.slug)}
-                    formatPriceFn={formatPrice}
-                  />
-                </div>
-              ))}
+          <>
+            <div className="relative -mx-4 md:mx-0">
+              <div ref={scrollRef} className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-hide md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
+                {tours.slice(0, FEATURED_LIMIT).map((tour) => (
+                  <div
+                    key={tour.id}
+                    className="w-[44vw] flex-shrink-0 snap-start md:w-auto"
+                  >
+                    <TourListCard
+                      tour={tour}
+                      detailHref={consumerTourDetailHref(tour.id, tour.slug)}
+                      formatPriceFn={formatPrice}
+                    />
+                  </div>
+                ))}
+              </div>
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-white via-white/90 to-transparent md:hidden"
+              />
             </div>
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-white via-white/90 to-transparent md:hidden"
+            <SnapScrollDots
+              containerRef={scrollRef}
+              count={Math.min(tours.length, FEATURED_LIMIT)}
             />
-          </div>
+          </>
         )}
 
         <div className="mt-8 text-center md:mt-10">

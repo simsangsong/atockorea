@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { DestinationCard } from "@/components/home/v2/ui/destination-card";
+import { SnapScrollDots } from "@/components/home/v2/ui/SnapScrollDots";
 import { useTranslations } from "@/lib/i18n";
 
 type DestinationDef = {
@@ -43,6 +44,7 @@ const DESTINATIONS: ReadonlyArray<DestinationDef> = [
 export function DestinationsShowcase() {
   const t = useTranslations("home");
   const containerRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (containerRef.current) {
@@ -77,7 +79,7 @@ export function DestinationsShowcase() {
             scrollbar is hidden. Hidden on md+ where the grid layout shows
             everything at once. */}
         <div className="relative -mx-4 md:mx-auto md:max-w-4xl">
-          <div className="flex snap-x snap-mandatory gap-3.5 overflow-x-auto px-4 pb-3 scrollbar-hide md:grid md:auto-rows-fr md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
+          <div ref={scrollRef} className="flex snap-x snap-mandatory gap-3.5 overflow-x-auto px-4 pb-3 scrollbar-hide md:grid md:auto-rows-fr md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
             {DESTINATIONS.map((dest) => (
               <div
                 key={dest.id}
@@ -98,6 +100,7 @@ export function DestinationsShowcase() {
             className="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-white via-white/90 to-transparent md:hidden"
           />
         </div>
+        <SnapScrollDots containerRef={scrollRef} count={DESTINATIONS.length} />
       </div>
     </section>
   );

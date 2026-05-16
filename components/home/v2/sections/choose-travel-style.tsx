@@ -15,6 +15,7 @@ import { useTranslations } from "@/lib/i18n";
 import { useCurrency } from "@/lib/currency";
 import { getFeaturedJoinTourProduct } from "@/lib/home/featured-join-tour-offer";
 import { CHOOSE_STYLE_CARD_USD } from "@/lib/home/choose-style-card-usd";
+import { SnapScrollDots } from "@/components/home/v2/ui/SnapScrollDots";
 
 const chooseStyleFeaturedWhiteCtaStyle: CSSProperties = {
   boxShadow: "var(--home-shadow-btn-secondary)",
@@ -24,6 +25,7 @@ export function ChooseTravelStyle() {
   const t = useTranslations("home");
   const { formatPrice } = useCurrency();
   const containerRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const featuredJoin = useMemo(() => getFeaturedJoinTourProduct(), []);
 
   useEffect(() => {
@@ -52,7 +54,7 @@ export function ChooseTravelStyle() {
         {/* relative wrapper hosts the right-edge fade overlay so users see
             "more →" on mobile where the scrollbar is hidden. */}
         <div className="relative -mx-4 md:mx-0">
-        <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-none md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0 md:snap-none">
+        <div ref={scrollRef} className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-none md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0 md:snap-none">
           {/* Small Group — featured (dark navy, emerald accent) */}
           <div
             className="relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-slate-700/50 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 p-4 md:p-5 shadow-home-offer-smgroup transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-home-offer-smgroup-hover scroll-animate flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
@@ -214,6 +216,7 @@ export function ChooseTravelStyle() {
             className="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-slate-50 via-slate-50/90 to-transparent md:hidden"
           />
         </div>
+        <SnapScrollDots containerRef={scrollRef} count={3} />
       </div>
     </section>
   );
