@@ -1498,7 +1498,7 @@
         "headlineLine1": "済州の冬",
         "headlineLine2": "みかん、雪＆椿",
         "hero": {
-          "imageUrl": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1600",
+          "imageUrl": "",
           "imagePosition": "center 35%",
           "tagline": "雪・椿・柑橘——冬の済州だけが魅せる三つの顔",
           "pills": [
@@ -1557,7 +1557,7 @@
           },
           {
             "icon": "users",
-            "label": "グループ --- > **注記：** 9番・17番・22番（`TourHeroSection`、`TourTabsNav`、`TourAtAGlance`）はUIコンポーネント名のため、コード上の識別子として原文のまま維持しました。表示ラベルとして使用する場合は、それぞれ「ツアーメインビジュアル」「ツアーナビゲーション」「ツアー概要」などと訳すことも可能です。",
+            "label": "グループ",
             "value": "少人数グループ、英語・中国語対応ガイド"
           },
           {
@@ -1592,7 +1592,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+            "src": "",
             "alt": "南西側の展望スポットから見える雪化粧した漢拏山の稜線、手前には低い森が広がる",
             "caption": "南西側展望スポットから望む漢拏山の冬景色",
             "location": "漢拏山1100道路またはオリモク登山口（済州中部）",
@@ -1601,7 +1601,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "src": "",
             "alt": "真っ赤な椿が満開に咲き誇る庭園の小径",
             "caption": "冬のピーク開花期（12〜2月）のカメリアヒル",
             "location": "カメリアヒル、安徳（アンドク）、済州南部",
@@ -1610,7 +1610,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "src": "",
             "alt": "済州の果樹園で低い木から熟したオレンジ色のみかんをもぎ取る手",
             "caption": "済州ギュル（みかん）農園の冬の収穫",
             "location": "済州南西部のみかん農園（特定の農場はローテーションあり）",
@@ -1619,7 +1619,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "src": "",
             "alt": "冬の海から立ち上がる六角形の柱状節理の断崖",
             "caption": "大浦・柱状節理（チュサンジョルリ）の溶岩断崖",
             "location": "大浦（テポ）、中文（チュンムン）海岸、済州南部",
@@ -1628,7 +1628,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "src": "",
             "alt": "森の谷に流れる三段の滝と、その上に架かる仙臨橋（ソニムギョ）",
             "caption": "天帝淵（チョンジェヨン）の滝と、七人の天女が宿る仙臨橋",
             "location": "天帝淵の滝、西帰浦（ソグィポ）、済州島南部",
@@ -1650,7 +1650,7 @@
             "name": "ホテルピックアップ（済州市）",
             "category": "出発",
             "description": "済州市中心部のホテルへの無料送迎付き。済州市外からのピックアップは₩70,000が追加されます。冷暖房完備（冬季は暖房）の車両を使用します。",
-            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "image": "",
             "highlights": [
               "済州市送迎無料",
               "暖房付き車両",
@@ -1768,7 +1768,7 @@
             "name": "みかん（ギュル）狩り体験",
             "category": "季節限定体験 — 済州の冬",
             "description": "現役の済州農園でみかんの収穫体験ができます。12月から2月がピークシーズンで、済州のみかん（ギュル）は島を代表する特産品として知られ、歴史的にはほぼすべての家庭にみかんの木がありました。はさみとかごが渡され、その場での食べ放題も楽しめます。1kgをお土産に持ち帰れます（現地払い₩5,000）。",
-            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "image": "",
             "highlights": [
               "ギュル摘み取り体験（自分で収穫）",
               "その場で食べ放題",
@@ -1800,7 +1800,7 @@
             "name": "昼食（地元レストラン）",
             "category": "食事",
             "description": "ガイドおすすめの地元レストランでの自由時間。済州島南西部の定番メニューは、ヘクテジ（済州黒豚）BBQ、モムグク（よもぎとアワビのスープ）、またはチョンボクジュク（アワビ粥）。ベジタリアン対応も可能（要リクエスト）。",
-            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "image": "",
             "highlights": [
               "ヘクテジBBQ",
               "南西部の地元レストラン",
@@ -2101,7 +2101,7 @@
             "name": "降車（済州市）",
             "category": "帰路 > **Note:** Lines 11–13 are file paths and are left unchanged. The proper noun *Cheonjeyeon* (天帝淵/チョンジェヨン) is distinguished from *Cheonjiyeon* (天地淵/チョンジヨン) in line 10 to reflect the cautionary note in the source text.",
             "description": "ご要望に応じて、済州市内のホテル、東門（トンムン）伝統市場、または済州空港までお送りします。",
-            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "image": "",
             "highlights": [
               "ホテルへの送迎",
               "東門市場オプション",
@@ -2422,7 +2422,7 @@
           },
           {
             "timing": "ツアー中",
-            "title": "各スポットごとのヒント --- **注記：** - **5・8・11番**（`bg-emerald-50/80`・`bg-sky-50/80`・`bg-amber-50/80`）はTailwind CSSのクラス名のため、原文のまま維持しています。 - **2番**（`TourBookingSupportSection`）はコンポーネント名と思われますが、UI表示テキストとして使用する場合は「ツアー予約サポートセクション」を採用しています。コード内での識別子として使用する場合は原文のままにしてください。",
+            "title": "各スポットごとのヒント",
             "detail": "各スポットでのリアルタイムガイド"
           },
           {

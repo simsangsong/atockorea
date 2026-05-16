@@ -44,12 +44,12 @@
   "headlineLine1": "濟州島私人包車",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "249",
+    "amountLabel": "",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 249,
-    "originalPriceUsd": 249,
-    "discountPercent": 0
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
@@ -538,7 +538,7 @@
       "preview": "依據團體人數與行李數量配置適合的車輛",
       "content": [
         "車輛類型將依照確切的乘客人數與行李件數進行配對分配",
-        "預訂時請填寫確切的乘客人數與行李件數 > **備註：** 第8行「bg-slate-50/80」為CSS樣式類別名稱，屬技術代碼，保留原文不予翻譯。",
+        "預訂時請填寫確切的乘客人數與行李件數",
         "標準車型包括：1至3人適用轎車、4至5人適用中型SUV，以及6至9人適用的Staria或Carnival廂型車",
         "較大型團體可能分配至多輛車，或另行報價"
       ]
@@ -984,7 +984,7 @@
         "headlineLine1": "濟州島私人包車",
         "headlineLine2": "一日遊",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+          "imageUrl": "",
           "imagePosition": "center 45%",
           "tagline": "從城山日出峰到挾才海灘，再到天地淵瀑布——九小時私人專屬時光，您的路線，您的節奏，由持牌司機導遊全程陪同。",
           "pills": [
@@ -1060,7 +1060,7 @@
           {
             "icon": "ticket",
             "label": "入場費",
-            "value": "現場自付 > **備註：** 第 5、15、20 項（`TourHeroSection`、`TourTabsNav`、`TourAtAGlance`）為前端元件名稱，通常不翻譯；如需顯示中文標籤，請另行確認對應文案。"
+            "value": "現場自付"
           },
           {
             "icon": "utensils-crossed",
@@ -1079,7 +1079,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "src": "",
             "alt": "城山日出峰日出景點",
             "caption": "城山日出峰日出景點",
             "location": "城山日出峰",
@@ -1088,7 +1088,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "src": "",
             "alt": "柱狀節理帶玄武岩懸崖",
             "caption": "柱狀節理帶玄武岩懸崖",
             "location": "柱狀節理帶懸崖",
@@ -1097,7 +1097,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "src": "",
             "alt": "協才海灘 濟州西部",
             "caption": "協才海灘 濟州西部",
             "location": "協才海灘",
@@ -1106,7 +1106,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "src": "",
             "alt": "O'sulloc茶博物館與茶園",
             "caption": "O'sulloc茶博物館與茶園",
             "location": "O'sulloc茶田",
@@ -1115,7 +1115,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
+            "src": "",
             "alt": "西歸浦天地淵瀑布",
             "caption": "西歸浦天地淵瀑布",
             "location": "天地淵瀑布",
@@ -1137,7 +1137,7 @@
             "name": "東線：聯合國教科文組織遺產與韓劇海岸",
             "category": "城山、牛島、萬丈窟、涉地可支",
             "description": "景點最密集的路線選擇，涵蓋濟州最具代表性的聯合國教科文組織遺產與韓劇取景地。典型停靠站包括城山日出峰（聯合國教科文組織日出景點）、牛島（搭船前往的島嶼，擁有多處海灘）、萬丈窟熔岩隧道（聯合國教科文組織洞穴）、涉地可支（韓劇知名海岸岬角）、城邑民俗村及咸德海灘。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "",
             "highlights": [
               "城山日出峰：聯合國教科文組織世界自然遺產，濟州最具代表性的日出景點",
               "牛島：搭船前往的島嶼，擁有白沙海灘與燈塔美景",
@@ -1180,7 +1180,7 @@
             "name": "西部路線：海灘、茶園與咖啡海岸",
             "category": "協才海灘、翰林公園、O'sulloc茶博物館、涯月",
             "description": "最上鏡且步調悠閒的路線。主要景點包括協才海灘（濟州最具代表性的翡翠綠海水海灘）、翰林公園（亞熱帶花園與熔岩洞窟）、O'sulloc茶博物館（茶田與咖啡廳），以及涯月咖啡街（夕陽海岸咖啡文化）。非常適合情侶與攝影愛好者。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "",
             "highlights": [
               "協才海灘：翡翠綠海水、白色沙灘，並可遠眺飛揚島景致",
               "翰林公園：亞熱帶花園，園內設有兩處熔岩洞窟",
@@ -1223,7 +1223,7 @@
             "name": "南線：瀑布與火山海岸",
             "category": "天地淵、柱狀節理帶、山房山、偶來市場",
             "description": "風景最為壯觀的路線。典型景點包括：天地淵瀑布（森林瀑布）、柱狀節理帶（玄武岩柱狀海岸線）、藥泉寺（東亞最大寺廟之一）、山房山（可俯瞰海景的火山穹丘）、正房瀑布（亞洲少數直接流入大海的瀑布之一），以及西歸浦偶來市場。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "",
             "highlights": [
               "天地淵瀑布：西歸浦經典森林瀑布",
               "柱狀節理帶：南海岸六角形玄武岩柱地貌",
@@ -1266,7 +1266,7 @@
             "name": "自訂路線：打造您的專屬一日遊",
             "category": "傳送您的專屬行程給我們",
             "description": "除三條推薦路線外，您可自由組合景點或提交專屬行程。可選景點包括：濟州水族館Planet、ECO Land主題樂園、山君不離火山口、咸德海灘、山茶花之丘、泰迪熊Safari、西歸浦潛水艇（文島水中觀光）、海豚遊艇之旅、松岳山、懸崖咖啡館，以及亂打秀。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202311/22/c42559a5-c909-4603-ae16-24c2e03893a0.webp",
+            "image": "",
             "highlights": [
               "如時間允許，可將東海岸聯合國教科文組織景點與西海岸茶園相結合",
               "任意路線皆可加入海女（女性潛水員）海鮮午餐體驗",
@@ -1398,7 +1398,7 @@
                 },
                 {
                   "label": "全程接送的舒適體驗",
-                  "detail": "飯店接送意味著無需乘坐機場區間車、無需承受深夜搭車的壓力，也不必拖著行李在各轉乘點間奔波。 --- **備註：** 第 4、8、12 項為數字，第 6、10、14、24 項為 CSS 樣式類別名稱，第 17 項為元件名稱，均保留原文不譯。"
+                  "detail": "飯店接送意味著無需乘坐機場區間車、無需承受深夜搭車的壓力，也不必拖著行李在各轉乘點間奔波。"
                 }
               ]
             },
@@ -1663,7 +1663,7 @@
           },
           {
             "id": "seniors",
-            "question": "年長者可以舒適地參加嗎？ > **備註：** 第 1、4 項（`bg-sky-50/80`、`bg-amber-50/80`）為 CSS 樣式類別名稱，第 23 項（`TourFaqSection`）為程式元件名稱，均保留原文不予翻譯。",
+            "question": "年長者可以舒適地參加嗎？",
             "answer": "**是的 — 步調輕鬆，步行舒適，非常適合活力充沛的銀髮族。**"
           }
         ]

@@ -44,14 +44,14 @@
   "headlineLine1": "抱川",
   "headlineLine2": "山亭湖·香草岛·艺术谷",
   "price": {
-    "amountLabel": "49",
-    "originalPriceUsd": 62,
-    "salePriceUsd": 49,
-    "discountPercent": 21,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person",
     "priceSource": "getyourguide_t1168134",
-    "priceNote": "GetYourGuide 原价 $62，AtoC Korea 售价约低 21%。"
+    "priceNote": "原价 $62，AtoC Korea 售价约低 21%。"
   },
   "hero": {
     "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
@@ -724,7 +724,7 @@
     },
     {
       "timing": "出发前12小时",
-      "title": "12小时提醒 > **备注：** 第1、3行为破折号，原样保留；第19、22、25行为CSS类名，原样保留，不作翻译。",
+      "title": "12小时提醒",
       "detail": "天气更新及路线调整"
     },
     {
@@ -848,7 +848,7 @@
       "currency": "USD",
       "per": "person",
       "priceSource": "getyourguide_t1168134",
-      "priceNote": "GetYourGuide 原价 $62，AtoC Korea 售价约低 21%。"
+      "priceNote": "原价 $62，AtoC Korea 售价约低 21%。"
     }
   },
   "pickup_dropoff": {

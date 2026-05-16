@@ -45,12 +45,12 @@
   "headlineLine1": "부산 → 경주 고도 일일 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "39",
+    "amountLabel": "",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 39,
-    "originalPriceUsd": 50,
-    "discountPercent": 22
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
@@ -2259,7 +2259,7 @@
           },
           {
             "id": "q-bridge-night-view",
-            "question": "다리에 조명이 켜진 것을 볼 수 있나요? > **참고:** 항목 2, 5, 8은 Tailwind CSS 클래스명이고, 항목 27은 React 컴포넌트명이므로 원문 그대로 유지했습니다.",
+            "question": "다리에 조명이 켜진 것을 볼 수 있나요?",
             "answer": "일반적으로 이 투어에서는 어렵습니다. 다리 조명은 연중 매일 일몰부터 약 22:00까지 켜지지만, 이 코스는 16:30에 도착하므로 봄~가을에는 아직 낮입니다. 방문 시간대에 조명을 확실히 볼 수 있는 시기는 11월~2월뿐으로, 이 시기에는 일몰이 17:15~17:30 사이이며 정차 시간이 끝날 무렵 조명이 켜지기 시작합니다. 일몰 후 반영 사진이 목적이라면, 다리에 17:00에 도착하는 유네스코 유산 투어가 더 적합하며, 또는 일몰 후에 개별적으로 방문하시기 바랍니다."
           },
           {

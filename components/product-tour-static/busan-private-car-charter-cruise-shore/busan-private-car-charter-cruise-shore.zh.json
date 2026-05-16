@@ -45,12 +45,12 @@
   "headlineLine1": "釜山邮轮岸上私人包车",
   "headlineLine2": "一日游",
   "price": {
-    "amountLabel": "359",
+    "amountLabel": "",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 359,
-    "originalPriceUsd": 379,
-    "discountPercent": 5
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
@@ -1471,7 +1471,7 @@
             "id": "g2",
             "type": "photo",
             "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-            "alt": "柱状节理带玄武岩峭壁 --- **备注：** - 第 **7、12、25** 条（`TourTabsNav`、`TourAtAGlance`、`TourAtmosphereGallery`）为代码组件名称，通常建议在开发中保留英文原文，不作翻译。 - **城山日出峰**（성산일출봉）为标准中文译名，已被广泛使用。 - **柱状节理带**（주상절리대）为地质学标准术语，符合中文旅游资料惯例。",
+            "alt": "柱状节理带玄武岩峭壁",
             "caption": "柱状节理玄武岩峭壁",
             "location": "柱状节理峭壁",
             "atmosphere": "南海岸的六角形玄武岩岩柱"

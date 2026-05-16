@@ -44,12 +44,12 @@
   "headlineLine1": "济州岛私人包车",
   "headlineLine2": "一日游",
   "price": {
-    "amountLabel": "249",
+    "amountLabel": "",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 249,
-    "originalPriceUsd": 249,
-    "discountPercent": 0
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
@@ -984,7 +984,7 @@
         "headlineLine1": "济州岛私人包车",
         "headlineLine2": "一日游",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+          "imageUrl": "",
           "imagePosition": "center 45%",
           "tagline": "从城山日出峰到协才海滩，再到天地渊瀑布——九小时专属体验，您的路线，您的节奏，专业持牌司导全程相伴。",
           "pills": [
@@ -1079,7 +1079,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "src": "",
             "alt": "城山日出峰",
             "caption": "城山日出峰",
             "location": "城山日出峰",
@@ -1088,7 +1088,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "src": "",
             "alt": "柱状节理玄武岩悬崖",
             "caption": "柱状节理玄武岩悬崖",
             "location": "柱状节理带",
@@ -1097,7 +1097,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "src": "",
             "alt": "协才海滩 济州西部",
             "caption": "协才海滩 济州西部",
             "location": "协才海滩",
@@ -1106,7 +1106,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "src": "",
             "alt": "雪绿茶博物馆与茶田",
             "caption": "雪绿茶博物馆与茶田",
             "location": "雪绿茶田",
@@ -1115,7 +1115,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
+            "src": "",
             "alt": "西归浦天地渊瀑布",
             "caption": "西归浦天地渊瀑布",
             "location": "天地渊瀑布",
@@ -1137,7 +1137,7 @@
             "name": "东线：联合国教科文组织遗产与韩剧海岸",
             "category": "城山、牛岛、万丈窟、涉地可支",
             "description": "景点密度最高的路线，涵盖济州岛最具代表性的联合国教科文组织世界遗产与韩剧取景地。常规停靠点包括：城山日出峰（联合国教科文组织日出峰）、牛岛（可乘渡轮前往的海滩岛屿）、万丈窟熔岩洞（联合国教科文组织世界遗产洞窟）、涉地可支（韩剧著名海岸海角）、城邑民俗村及咸德海滩。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "",
             "highlights": [
               "城山日出峰：联合国教科文组织世界自然遗产，济州岛标志性日出胜地",
               "牛岛：可乘渡轮抵达的岛屿，坐拥白沙海滩与灯塔美景",
@@ -1180,7 +1180,7 @@
             "name": "西线路线：海滩、茶园与咖啡海岸",
             "category": "协才、翰林公园、O'sulloc、涯月",
             "description": "最具拍摄潜力且节奏最为轻松的路线。典型停留点包括协才海滩（济州最具代表性的翡翠碧水海滩）、翰林公园（亚热带花园及熔岩洞穴）、O'sulloc茶博物馆（茶园与咖啡馆）以及涯月咖啡街（日落海岸咖啡馆）。非常适合情侣与摄影爱好者。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "",
             "highlights": [
               "协才海滩：翡翠碧水、洁白沙滩与飞扬岛海岛景观",
               "翰林公园：亚热带花园，园内设有两处熔岩洞穴",
@@ -1223,7 +1223,7 @@
             "name": "南部路线：瀑布与火山海岸",
             "category": "天地渊、柱状节理带、山房山、奥莱市场",
             "description": "风景最为壮观的路线。常规景点包括：天地渊瀑布（森林瀑布）、柱状节理带悬崖（玄武岩柱状海岸线）、药泉寺（东亚最大寺庙之一）、山房山（可俯瞰海景的火山穹丘）、正房瀑布（亚洲少数几条直接流入大海的瀑布之一），以及西归浦奥莱市场。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "",
             "highlights": [
               "天地渊瀑布：西归浦经典森林瀑布",
               "柱状节理带悬崖：南海岸六边形玄武岩柱",
@@ -1266,7 +1266,7 @@
             "name": "自定义路线：打造专属一日游",
             "category": "发送您的专属行程",
             "description": "除三条推荐路线外，您可以自由组合景点或发送专属行程。可选景点包括：济州水族馆星球、ECO乐园主题公园、山君不离火山口、咸德海滩、山茶花之丘、泰迪熊野生园、西归浦潜水艇（文岛水下游览）、海豚游艇观光、松岳山、悬崖咖啡厅，以及乱打秀。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202311/22/c42559a5-c909-4603-ae16-24c2e03893a0.webp",
+            "image": "",
             "highlights": [
               "如时间允许，可将东海岸UNESCO景点与西海岸茶田相结合",
               "任意路线均可加入海女（女性潜水员）海鲜午餐体验",

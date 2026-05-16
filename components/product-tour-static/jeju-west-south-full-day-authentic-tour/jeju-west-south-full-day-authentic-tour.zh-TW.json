@@ -50,10 +50,10 @@
   "headlineLine1": "濟州西南深度一日遊",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "59",
-    "originalPriceUsd": 69,
-    "salePriceUsd": 59,
-    "discountPercent": 14,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person"
   },
@@ -2953,7 +2953,7 @@
             {
               "title": "天氣與季節的變化",
               "icon": "cloud-snow",
-              "iconBg": "bg-sky-50/80 > **備註：** 第 12、22、30 行為 CSS 樣式類別名稱（`bg-sky-50/80`、`bg-amber-50/80`），屬程式碼標記，已保留原文不予翻譯。",
+              "iconBg": "bg-sky-50/80",
               "iconColor": "text-sky-600",
               "items": [
                 {
@@ -3125,7 +3125,7 @@
           {
             "id": "q1",
             "question": "這與我們的南部UNESCO之旅有何不同？",
-            "answer": "同一業者。南部UNESCO之旅更著重文化遺址（魚乘生岳步道、山茶花之丘、天帝淵瀑布、柱狀節理帶、O'sulloc茶園）。這條西南道地之旅以木棧道濕地取代步道，並加入松岳山及挾才咖啡街——節奏更悠閒、沿海景點覆蓋更廣、更具「濟州在地生活」的氛圍。兩條路線皆為上選；追求文化遺址請選南部之旅，追求在地氛圍則選此行程。 --- **備註：** - 第 3、6、9 行為 Tailwind CSS 色彩類別名稱，保留原文不譯。 - 第 28 行為程式元件名稱，保留原文不譯。 - 地名（松岳山、挾才、天帝淵等）採用通行繁體中文慣用譯名。"
+            "answer": "同一業者。南部UNESCO之旅更著重文化遺址（魚乘生岳步道、山茶花之丘、天帝淵瀑布、柱狀節理帶、O'sulloc茶園）。這條西南道地之旅以木棧道濕地取代步道，並加入松岳山及挾才咖啡街——節奏更悠閒、沿海景點覆蓋更廣、更具「濟州在地生活」的氛圍。兩條路線皆為上選；追求文化遺址請選南部之旅，追求在地氛圍則選此行程。"
           },
           {
             "id": "q2",

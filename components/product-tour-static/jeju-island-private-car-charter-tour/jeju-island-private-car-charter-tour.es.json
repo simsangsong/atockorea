@@ -44,12 +44,12 @@
   "headlineLine1": "Jeju",
   "headlineLine2": "Coche Privado",
   "price": {
-    "amountLabel": "249",
+    "amountLabel": "",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 249,
-    "originalPriceUsd": 249,
-    "discountPercent": 0
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
@@ -984,7 +984,7 @@
         "headlineLine1": "Jeju",
         "headlineLine2": "Coche Privado",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+          "imageUrl": "",
           "imagePosition": "center 45%",
           "tagline": "Desde el Pico del Amanecer de Seongsan hasta la Playa de Hyeopjae y las Cataratas de Cheonjiyeon — nueve horas privadas, tu ruta, tu ritmo, con un conductor-guía autorizado.",
           "pills": [
@@ -1079,7 +1079,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "src": "",
             "alt": "Pico del amanecer de Seongsan Ilchulbong",
             "caption": "Pico del amanecer de Seongsan Ilchulbong",
             "location": "Seongsan Ilchulbong",
@@ -1088,7 +1088,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "src": "",
             "alt": "Acantilado de basalto de Jusangjeolli",
             "caption": "Acantilado de basalto de Jusangjeolli",
             "location": "Acantilado de Jusangjeolli",
@@ -1097,7 +1097,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "src": "",
             "alt": "Playa Hyeopjae, Jeju Oeste",
             "caption": "Playa Hyeopjae, Jeju Oeste",
             "location": "Playa Hyeopjae",
@@ -1106,7 +1106,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "src": "",
             "alt": "Museo y campos de té O'sulloc",
             "caption": "Museo y campos de té O'sulloc",
             "location": "Campos de Té O'sulloc",
@@ -1115,7 +1115,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
+            "src": "",
             "alt": "Cascada Cheonjiyeon en Seogwipo",
             "caption": "Cascada Cheonjiyeon en Seogwipo",
             "location": "Cascadas Cheonjiyeon",
@@ -1137,10 +1137,10 @@
             "name": "Ruta Este: UNESCO y Costa del K-Drama",
             "category": "Seongsan, Udo, Manjanggul, Seopjikoji",
             "description": "La opción de ruta con mayor densidad de lugares de interés, que cubre los mejores puntos UNESCO y de K-drama de Jeju. Las paradas habituales incluyen Seongsan Ilchulbong (pico del amanecer UNESCO), Isla Udo (isla accesible en ferry con playas), Tubo de Lava Manjanggul (cueva UNESCO), Seopjikoji (cabo costero famoso por dramas), Pueblo Popular de Seongeup y Playa Hamdeok.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "",
             "highlights": [
               "Seongsan Ilchulbong: Patrimonio Natural Mundial de la UNESCO y pico del amanecer insignia de Jeju",
-              "Isla Udo: isla accesible en ferry con playas de arena blanca y vistas al faro > **Nota:** Los ítems **3** (`TourAtmosphereGallery`) y **24** (`TourTimelineSection`) se han mantenido en su forma original por tratarse de identificadores técnicos de componentes de interfaz.",
+              "Isla Udo: isla accesible en ferry con playas de arena blanca y vistas al faro",
               "Manjanggul: una de las cuevas de tubo de lava más largas del mundo (UNESCO)",
               "Seopjikoji y Seongeup: atmósfera clásica de k-drama y aldea folclórica"
             ],
@@ -1180,7 +1180,7 @@
             "name": "Ruta oeste: Playas, Té y Costa de Cafeterías",
             "category": "Hyeopjae, Hallim Park, O'sulloc, Aewol",
             "description": "La ruta más fotogénica y relajada. Las paradas habituales incluyen la playa de Hyeopjae (la playa de aguas esmeralda más icónica de Jeju), Hallim Park (jardines subtropicales y cuevas de lava), el Museo del Té O'sulloc (campos de té y cafetería) y la calle de cafeterías de Aewol (cafeterías costeras al atardecer). Muy adecuada para parejas y fotógrafos.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "",
             "highlights": [
               "Playa de Hyeopjae: agua esmeralda, arena blanca y vistas a la isla de Biyangdo",
               "Hallim Park: jardín subtropical con dos cuevas de lava en el lugar",
@@ -1223,7 +1223,7 @@
             "name": "Ruta Sur: Cascadas y Costa Volcánica",
             "category": "Cheonjiyeon, Jusangjeolli, Sanbangsan, Mercado Olle",
             "description": "La ruta de mayor dramatismo paisajístico. Las paradas habituales incluyen las Cataratas Cheonjiyeon (cascada en bosque), el Acantilado Jusangjeolli (costa de columnas de basalto), el Templo Yakcheonsa (uno de los templos más grandes del Este de Asia), la Montaña Sanbangsan (domo volcánico con vistas al mar), la Cascada Jeongbang (una de las pocas cascadas de Asia que desemboca directamente en el mar) y el Mercado Olle de Seogwipo.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "",
             "highlights": [
               "Cataratas Cheonjiyeon: una clásica cascada en el bosque de Seogwipo",
               "Acantilado Jusangjeolli: columnas de basalto hexagonal en la costa sur",
@@ -1266,7 +1266,7 @@
             "name": "Ruta Personalizada: Crea Tu Propio Día",
             "category": "Envíanos Tu Propio Itinerario",
             "description": "Más allá de las tres rutas recomendadas, puedes combinar paradas o enviarnos tu propio itinerario. Las posibles incorporaciones incluyen el Acuario Planeta de Jeju, el Parque Temático ECO Land, el Cráter Sangumburi, la Playa Hamdeok, Camellia Hill, Teddy Bear Safari, el Submarino de Seogwipo (tour submarino de Munseom), tours en yate con delfines, Songaksan, Cafe the Cliff y el espectáculo Nanta.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202311/22/c42559a5-c909-4603-ae16-24c2e03893a0.webp",
+            "image": "",
             "highlights": [
               "Combina la costa este de la UNESCO con los campos de té de la costa oeste si el tiempo lo permite",
               "Añade un almuerzo de mariscos con haenyeo (buceadoras) a cualquier ruta",

@@ -47,12 +47,12 @@
   "headlineLine1": "부산 → 경주 유네스코 유산 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "39",
+    "amountLabel": "",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 39,
-    "originalPriceUsd": 50,
-    "discountPercent": 22
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
@@ -1555,7 +1555,7 @@
           {
             "icon": "footprints",
             "label": "도보",
-            "value": "보통 수준 — 총 ≈4~5km. 불국사는 계단식 지형; 박물관·한옥마을·다리는 평지. > **참고:** 7번(TourHeroSection), 11번(gyeongju), 15번(TourTabsNav), 20번(TourAtAGlance)은 코드 식별자(컴포넌트명/슬러그)로 번역 없이 원문 유지했습니다."
+            "value": "보통 수준 — 총 ≈4~5km. 불국사는 계단식 지형; 박물관·한옥마을·다리는 평지."
           },
           {
             "icon": "ticket",

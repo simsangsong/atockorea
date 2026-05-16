@@ -44,10 +44,10 @@
   "headlineLine1": "제주 서남부 수국 축제 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "59",
-    "originalPriceUsd": 69,
-    "salePriceUsd": 59,
-    "discountPercent": 14,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person"
   },
@@ -1016,7 +1016,7 @@
             "detail": "수국 시즌 외 날짜라면, 서부·남부 연중 코스가 동일 지역을 연중 방문 가능한 명소(한라산, 오설록, 애월)로 안내합니다."
           },
           {
-            "label": "카멜리아힐은 동백꽃 시즌이 아닙니다 > **참고:** 17번(`bg-amber-50/80`)과 25번(`bg-pink-50/80`)은 CSS/Tailwind 클래스명으로, 원문 그대로 유지했습니다.",
+            "label": "카멜리아힐은 동백꽃 시즌이 아닙니다",
             "detail": "이름과 달리, 이 투어는 수국을 보기 위해 카멜리아힐을 방문합니다 — 실제 동백꽃은 겨울에 핍니다."
           }
         ]
@@ -2677,7 +2677,7 @@
             "icon": "check-circle",
             "title": "공인 현지 가이드",
             "description": "제주 공인 가이드 서비스",
-            "iconBg": "bg-emerald-50/80 > **참고:** 14, 18, 22, 26, 27, 30번 항목은 CSS 클래스명 및 컴포넌트 식별자로, 원문 그대로 유지했습니다.",
+            "iconBg": "bg-emerald-50/80",
             "iconColor": "text-emerald-600"
           },
           {

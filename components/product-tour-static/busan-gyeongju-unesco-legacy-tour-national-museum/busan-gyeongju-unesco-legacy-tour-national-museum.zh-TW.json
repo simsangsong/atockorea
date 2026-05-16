@@ -47,12 +47,12 @@
   "headlineLine1": "釜山出發慶州UNESCO遺產一日遊",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "39",
+    "amountLabel": "",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 39,
-    "originalPriceUsd": 50,
-    "discountPercent": 22
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
@@ -2243,7 +2243,7 @@
             "detail": "確切接送時間及司機聯絡方式"
           },
           {
-            "timing": "出發當天早上 > **備註：** 第 1 項（破折號）、第 11 項（UI 元件名稱）及第 14、17、20 項（Tailwind CSS 樣式類別）均為程式碼標識符，依慣例保留英文原文不作翻譯。",
+            "timing": "出發當天早上",
             "title": "當日路線說明",
             "detail": "根據即時狀況的晨間簡報"
           },

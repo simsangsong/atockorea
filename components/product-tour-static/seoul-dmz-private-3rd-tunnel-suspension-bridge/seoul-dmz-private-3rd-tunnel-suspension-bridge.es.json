@@ -642,7 +642,7 @@
       {
         "title": "Cómo se siente realmente el nivel de caminata",
         "icon": "footprints",
-        "iconBg": "bg-amber-50/80 > **Nota:** Las líneas **17** y **25** (`bg-slate-50/80` y `bg-amber-50/80`) son clases de utilidad CSS (Tailwind) y se han dejado sin traducir, ya que son código técnico, no contenido textual.",
+        "iconBg": "bg-amber-50/80",
         "iconColor": "text-amber-600",
         "items": [
           {
@@ -697,7 +697,7 @@
         "La recogida gratuita en hotel está incluida para las zonas céntricas de Seúl (Myeongdong, Hongdae, Dongdaemun, Insadong, Itaewon)",
         "Los alojamientos fuera del centro de Seúl pueden conllevar un cargo adicional por recogida",
         "Por favor, espere en el vestíbulo del hotel 10 minutos antes de la hora de salida acordada",
-        "La recogida es habitualmente alrededor de las 08:00 porque el programa de traslados a la DMZ opera con un horario fijo > **Nota:** La línea 8 (`bg-rose-50/80`) es una clase de utilidad CSS (Tailwind) y se ha dejado sin traducir, ya que es código técnico, no contenido de texto.",
+        "La recogida es habitualmente alrededor de las 08:00 porque el programa de traslados a la DMZ opera con un horario fijo",
         "Regreso al hotel en Seúl generalmente entre las 16:30 y las 17:30",
         "El tiempo de conducción es de aproximadamente 70 minutos en cada sentido en condiciones normales de tráfico"
       ]
@@ -836,7 +836,7 @@
     {
       "icon": "users",
       "title": "Grupos de tamaño curado",
-      "description": "El tamaño justo para la ruta > **Nota:** Las líneas 20 y 23 (`bg-emerald-50/80`, `bg-sky-50/80`) son clases de CSS y se han dejado sin traducir, ya que son valores de código técnico.",
+      "description": "El tamaño justo para la ruta",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600"
     }
@@ -887,7 +887,7 @@
     {
       "id": "q3",
       "question": "¿Puedo hacer este tour un lunes?",
-      "answer": "La ruta del 3.er Túnel de Infiltración cierra los lunes por mantenimiento. Los lunes, el operador suele sustituirlo por el 2.º Túnel de Infiltración si el ejército surcoreano lo autoriza; de lo contrario, la ruta se realiza como DMZ-sin-túnel, con tiempo ampliado en Imjingak, el Observatorio Dora y Gamaksan. Confirme su fecha de viaje con el operador si necesita viajar un lunes. --- **Nota:** El ítem 1 (`bg-amber-50/80`) es un nombre de clase CSS/Tailwind y se ha dejado sin traducir."
+      "answer": "La ruta del 3.er Túnel de Infiltración cierra los lunes por mantenimiento. Los lunes, el operador suele sustituirlo por el 2.º Túnel de Infiltración si el ejército surcoreano lo autoriza; de lo contrario, la ruta se realiza como DMZ-sin-túnel, con tiempo ampliado en Imjingak, el Observatorio Dora y Gamaksan. Confirme su fecha de viaje con el operador si necesita viajar un lunes."
     },
     {
       "id": "q4",
@@ -1245,7 +1245,7 @@
         "headlineLine1": "DMZ Privado desde Seúl",
         "headlineLine2": "3.er Túnel y Puente",
         "hero": {
-          "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2493203_image2_1.JPG",
+          "imageUrl": "",
           "imagePosition": "center 40%",
           "tagline": "Desde la frontera más fortificada del mundo hasta un puente colgante de montaña de 220 metros: un día privado, dos caras completamente distintas de Corea.",
           "pills": [
@@ -1345,7 +1345,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/03/2493203_image2_1.JPG",
+            "src": "",
             "alt": "El Altar Mangbaedan y el Puente de la Libertad en Imjingak, con cintas y placas conmemorativas",
             "caption": "Parque de la Paz de Imjingak (sitio conmemorativo de 1972)",
             "location": "Parque de la Paz de Imjingak",
@@ -1354,7 +1354,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/98/1977698_image2_1.JPG",
+            "src": "",
             "alt": "Entrada de concreto a un túnel subterráneo con cascos de seguridad apilados en estantes",
             "caption": "Entrada al 3.er Túnel de Infiltración (descubierto en 1978)",
             "location": "3.er Túnel de Infiltración",
@@ -1363,7 +1363,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/03/2493203_image2_1.JPG",
+            "src": "",
             "alt": "Terraza de observación abierta con binoculares de alta potencia con vistas al paisaje de la DMZ",
             "caption": "Observatorio Dora con vistas al otro lado de la frontera hacia Corea del Norte",
             "location": "Observatorio Dora",
@@ -1372,7 +1372,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
+            "src": "",
             "alt": "Largo puente colgante rojo que se extiende a través de un valle montañoso boscoso",
             "caption": "Puente Colgante Rojo de Gamaksan — 220 metros, el puente colgante rojo más largo de Corea",
             "location": "Puente Colgante Rojo de Gamaksan",
@@ -1381,7 +1381,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://tong.visitkorea.or.kr/cms/resource/94/2614694_image2_1.JPG",
+            "src": "",
             "alt": "Campo abierto de Paju con caminos rurales y tierras de cultivo entre la DMZ y Gamaksan",
             "caption": "Campo de Paju — el trayecto en coche entre la DMZ y Gamaksan",
             "location": "Campo de Paju",
@@ -1907,7 +1907,7 @@
               "Los alojamientos fuera del centro de Seúl pueden conllevar un cargo adicional por recogida",
               "Por favor, espere en el vestíbulo del hotel 10 minutos antes de la hora de salida acordada",
               "La recogida suele ser alrededor de las 08:00 porque el programa de traslados a la DMZ funciona con un horario fijo",
-              "El regreso a su hotel en Seúl se realiza normalmente entre las 16:30 y las 17:30 > **Nota:** La línea **6** (`bg-rose-50/80`) y la línea **18** (`TourPracticalDetails`) son identificadores de código/sistema y se han dejado sin traducir, ya que no son contenido textual en lenguaje natural.",
+              "El regreso a su hotel en Seúl se realiza normalmente entre las 16:30 y las 17:30",
               "El tiempo de conducción es de aproximadamente 70 minutos en cada sentido en condiciones normales de tráfico"
             ]
           },

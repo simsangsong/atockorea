@@ -46,10 +46,10 @@
   "headlineLine1": "제주 서남부",
   "headlineLine2": "한라산·오설록·애월",
   "price": {
-    "amountLabel": "59",
-    "originalPriceUsd": 69,
-    "salePriceUsd": 59,
-    "discountPercent": 14,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person"
   },
@@ -1930,7 +1930,7 @@
             "id": 3,
             "type": "photo",
             "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-            "location": "화산 해안선 > **참고:** 항목 3(TourTabsNav), 8(TourAtAGlance), 21(TourAtmosphereGallery)은 UI 컴포넌트 이름으로 보여 원문 그대로 유지했습니다. 필요하다면 한국어 레이블로 별도 지정해 드릴 수 있습니다.",
+            "location": "화산 해안선",
             "atmosphere": "강렬한 현무암 해안선",
             "alt": "대포 주상절리의 현무암 해식 절벽",
             "caption": "대포 주상절리의 현무암 해식 절벽"
@@ -2285,7 +2285,7 @@
               ]
             },
             {
-              "title": "루트 설계 방식 > **참고:** 7번(1-2), 9번(3-4), 11번(5-6)은 코스 번호 구분자로, 14번(TourFitSection)과 23번(bg-amber-50/80)은 코드·CSS 클래스명으로 원문 그대로 유지했습니다.",
+              "title": "루트 설계 방식",
               "icon": "mountain",
               "iconBg": "bg-sky-50/80",
               "items": [

@@ -45,12 +45,12 @@
   "headlineLine1": "부산 크루즈 기항지 프라이빗 차량",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "359",
+    "amountLabel": "",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 359,
-    "originalPriceUsd": 379,
-    "discountPercent": 5
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
@@ -1551,7 +1551,7 @@
             "id": "g2",
             "type": "photo",
             "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-            "alt": "주상절리대 현무암 절벽 > **참고:** 7번(TourTabsNav), 12번(TourAtAGlance), 25번(TourAtmosphereGallery)은 코드 컴포넌트 식별자로 판단되어 원문 그대로 유지했습니다. 번역이 필요하시면 말씀해 주세요.",
+            "alt": "주상절리대 현무암 절벽",
             "caption": "주상절리 현무암 절벽",
             "location": "주상절리 절벽",
             "atmosphere": "남해안의 육각형 현무암 기둥"
@@ -1614,7 +1614,7 @@
             ],
             "whyOnRoute": "제주를 처음 방문하는 여행자에게 가장 강력히 추천되는 코스로, 성산일출봉은 제주에서 가장 많이 사진에 담기는 랜드마크이며, 만장굴은 유네스코 지하 체험이라는 특별한 경험을 더해 줍니다.",
             "visitBasics": {
-              "hours": "대부분의 명소 운영 시간 09:00~18:00; 만장굴은 매월 첫째 수요일 휴관 > **참고:** 16번 `TourTimelineSection`은 UI 컴포넌트 코드명으로 판단되어 원문 그대로 유지했습니다. 번역이 필요하다면 **\"투어 일정 섹션\"** 으로 사용하실 수 있습니다.",
+              "hours": "대부분의 명소 운영 시간 09:00~18:00; 만장굴은 매월 첫째 수요일 휴관",
               "closed": "성산은 매월 첫 번째 월요일, 만장굴은 매월 첫 번째 수요일 휴무",
               "admission": "현장 직접 결제: 성산 5,000원, 만장굴 4,000원, 섭지코지 4,000원, 우도 페리 왕복 10,500원부터",
               "walking": "중~고난도 (성산 정상 등반 구간이 가장 체력 소모가 큰 구간)"
@@ -2075,7 +2075,7 @@
             "detail": "일정 요약이 포함된 예약 확인서"
           },
           {
-            "timing": "출발 12시간 전 > **참고:** 4, 8, 12, 16번(CSS 클래스명), 17번(컴포넌트명), 20, 23, 26번(Tailwind 클래스명)은 코드 식별자이므로 원문 그대로 유지했습니다.",
+            "timing": "출발 12시간 전",
             "title": "12시간 전 알림",
             "detail": "날씨 업데이트 및 경로 조정 사항"
           },

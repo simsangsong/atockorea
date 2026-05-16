@@ -49,10 +49,10 @@
   "headlineLine1": "仁川→ソウル・クルーズプライベートカー",
   "headlineLine2": "ツアー",
   "price": {
-    "amountLabel": "419",
+    "amountLabel": "",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 419
+    "salePriceUsd": null
   },
   "hero": {
     "imageUrl": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
@@ -950,7 +950,7 @@
     {
       "icon": "route",
       "title": "ルートスペシャリスト",
-      "description": "一般的な周遊コースではなく、丁寧に作り込まれた旅程 > **注記：** 28番（`bg-emerald-50/80`）はCSSクラス名のため、翻訳せずそのまま記載しています。",
+      "description": "一般的な周遊コースではなく、丁寧に作り込まれた旅程",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600"
     },
@@ -2094,7 +2094,7 @@
           "currency": "USD",
           "per": "group",
           "priceSource": "getyourguide_t1249797",
-          "priceNote": "料金は未設定です。プライベートツアーの料金は車両サイズによって異なります（セダン：1〜3名、バン：4〜6名、大型バン：7〜9名）。確定後、AtoC Korea 販売価格に一律10%の割引が適用されます。 --- **翻訳メモ：** - **3・4番**はReactコンポーネント名（固有の識別子）のため、翻訳せず原文を保持しています。 - **5番**の `checkout_tour_id` はコード変数名なのでそのまま記載しています。 - **「pax」**（旅行業界用語）は自然な日本語の「名」に置き換えました。",
+          "priceNote": "料金は未設定です。プライベートツアーの料金は車両サイズによって異なります（セダン：1〜3名、バン：4〜6名、大型バン：7〜9名）。確定後、AtoC Korea 販売価格に一律10%の割引が適用されます。",
           "discountPercent": 10
         }
       }

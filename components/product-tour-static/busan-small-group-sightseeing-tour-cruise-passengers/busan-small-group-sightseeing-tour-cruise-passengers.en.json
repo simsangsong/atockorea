@@ -577,7 +577,7 @@
         "admission": "FREE village entry; **Stamp Tour Map ₩2,000** (optional, 9 numbered installations)",
         "walking": "Steep stair-streets and narrow alleys — **moderate-to-high** difficulty; **NOT stroller- or wheelchair-friendly**; grippy shoes essential"
       },
-      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "image": "/images/itinerary/jagalchi-harbor-sign.webp",
       "images": [
         "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
         "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
@@ -743,7 +743,8 @@
     {
       "name": "Jagalchi, BIFF Square & Gukje Market area",
       "type": "primary",
-      "theme": "Market / Downtown"
+      "theme": "Market / Downtown",
+      "image": "/images/itinerary/jagalchi-harbor-sign.webp"
     },
     {
       "name": "Gamcheon Culture Village",
@@ -1464,7 +1465,7 @@
         "headlineLine1": "Busan Cruise Shore",
         "headlineLine2": "Small-Group Tour",
         "hero": {
-          "imageUrl": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1600",
+          "imageUrl": "",
           "imagePosition": "center 35%",
           "tagline": "Five Busan signatures coordinated with your ship's schedule, on a shared van with other cruisers",
           "pills": [
@@ -1559,7 +1560,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1200",
+            "src": "",
             "alt": "Colorful houses cascading down a hillside in Gamcheon Culture Village",
             "caption": "Gamcheon Culture Village — painted in 2009 as part of Busan's public-art renewal of the postwar refugee neighborhood.",
             "location": "Gamcheon Culture Village, Saha-gu",
@@ -1568,7 +1569,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "src": "",
             "alt": "Sea cliffs with a white lighthouse on the horizon",
             "caption": "Taejongdae coastal park, southern tip of Yeongdo Island. Tsushima visible on clear winter days.",
             "location": "Taejongdae, Yeongdo-gu",
@@ -1577,7 +1578,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1601171291096-87099c2c4625?w=1200",
+            "src": "",
             "alt": "Rows of identical white headstones with national flags at the UN Memorial Cemetery",
             "caption": "UN Memorial Cemetery — the world's only UN cemetery, 2,300+ graves of soldiers from 21 nations.",
             "location": "UN Memorial Cemetery, Nam-gu",
@@ -1586,7 +1587,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1572883454114-1cf0031ede2a?w=1200",
+            "src": "",
             "alt": "Jagalchi Market vendors with displays of fresh fish on ice",
             "caption": "Jagalchi Market — Korea's largest seafood market, operated since 1889 on Busan's waterfront.",
             "location": "Jagalchi Market, Jung-gu",
@@ -1595,7 +1596,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1538485399081-7191377e8241?w=1200",
+            "src": "",
             "alt": "Busan Tower rising above Yongdusan Park's pines and mid-rise city skyline",
             "caption": "Yongdusan Park & Busan Tower (120 m, built 1973) — the central-Busan viewpoint.",
             "location": "Yongdusan Park, Jung-gu",
@@ -1823,7 +1824,7 @@
             "duration": "60–90 min",
             "name": "Jagalchi, BIFF Square & Gukje Market area",
             "category": "Market / Downtown",
-            "image": "",
+            "image": "/images/itinerary/jagalchi-harbor-sign.webp",
             "description": "This downtown area combines seafood-market energy, street-food lanes, shopping streets, and the older commercial heart of Busan. Exact walking time can be adjusted to the ship schedule and group pace.",
             "timeUsed": [
               "60–90 min",
@@ -1937,7 +1938,8 @@
           {
             "id": "rf_nampo",
             "name": "Nampo-dong + Jagalchi Market",
-            "theme": "Market & streetfood"
+            "theme": "Market & streetfood",
+            "image": "/images/itinerary/jagalchi-harbor-sign.webp"
           },
           {
             "id": "rf_return",

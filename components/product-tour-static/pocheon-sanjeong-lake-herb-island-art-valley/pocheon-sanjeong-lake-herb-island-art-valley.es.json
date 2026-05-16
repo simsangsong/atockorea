@@ -44,14 +44,14 @@
   "headlineLine1": "Pocheon",
   "headlineLine2": "Lago, Hierbas y Cantera",
   "price": {
-    "amountLabel": "49",
-    "originalPriceUsd": 62,
-    "salePriceUsd": 49,
-    "discountPercent": 21,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person",
     "priceSource": "getyourguide_t1168134",
-    "priceNote": "Precio original 62 USD en GetYourGuide; AtoC Korea ~21% más barato."
+    "priceNote": "Precio original 62 USD en ; AtoC Korea ~21% más barato."
   },
   "hero": {
     "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
@@ -848,7 +848,7 @@
       "currency": "USD",
       "per": "person",
       "priceSource": "getyourguide_t1168134",
-      "priceNote": "Precio original 62 USD en GetYourGuide; AtoC Korea ~21% más barato."
+      "priceNote": "AtoC Korea ~21% más barato que las tarifas estándar."
     }
   },
   "pickup_dropoff": {
@@ -1635,7 +1635,7 @@
                 },
                 {
                   "label": "Caminar por Art Valley es opcional",
-                  "detail": "El monorraíl se encarga del desnivel; recorrer el sendero a pie es para los viajeros que desean pasar más tiempo entre las esculturas. > **Nota:** Los elementos 2, 6, 9, 16 y 24 (`bg-emerald-50/70`, `bg-amber-50/70`, `TourFitSection`, `bg-emerald-50/80`, `bg-amber-50/80`) son clases CSS y nombres de componentes de código, por lo que se han conservado sin traducir."
+                  "detail": "El monorraíl se encarga del desnivel; recorrer el sendero a pie es para los viajeros que desean pasar más tiempo entre las esculturas."
                 }
               ]
             },

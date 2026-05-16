@@ -46,12 +46,12 @@
   "headlineLine1": "부산 크루즈 기항지 소그룹 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "79",
+    "amountLabel": "",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 79,
-    "originalPriceUsd": 85,
-    "discountPercent": 7
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
@@ -1119,7 +1119,7 @@
     {
       "timing": "투어 후",
       "title": "투어 후 지원",
-      "detail": "사후 연락 및 추천 정보 제공 > **참고:** 6번(bg-emerald-50/80), 9번(bg-sky-50/80), 12번(bg-amber-50/80)은 CSS/Tailwind 클래스명으로 번역 없이 원문 그대로 유지했습니다."
+      "detail": "사후 연락 및 추천 정보 제공"
     }
   ],
   "staticQuestions": [

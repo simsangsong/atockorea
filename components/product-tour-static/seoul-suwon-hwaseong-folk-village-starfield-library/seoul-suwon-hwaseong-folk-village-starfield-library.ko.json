@@ -1044,7 +1044,7 @@
     {
       "icon": "users",
       "title": "엄선된 그룹 규모",
-      "description": "노선에 최적화된 인원 구성 > **참고:** 20번(`bg-emerald-50/80`)과 23번(`bg-sky-50/80`)은 CSS 클래스명으로 보여 원문 그대로 유지했습니다. 번역이 필요하시면 말씀해 주세요.",
+      "description": "노선에 최적화된 인원 구성",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600"
     }
@@ -1564,7 +1564,7 @@
     {
       "id": "atmosphere",
       "section_html_id": null,
-      "component": "TourAtmosphereGallery > **참고:** 7번 (`TourTabsNav`), 12번 (`TourAtAGlance`), 25번 (`TourAtmosphereGallery`)은 UI 컴포넌트 식별자로 보여 원문 그대로 유지했습니다. 번역이 필요하다면 말씀해 주세요.",
+      "component": "TourAtmosphereGallery",
       "props": {
         "galleryItems": [
           {

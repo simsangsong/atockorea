@@ -45,12 +45,12 @@
   "headlineLine1": "Busan Crucero",
   "headlineLine2": "Coche Privado",
   "price": {
-    "amountLabel": "359",
+    "amountLabel": "",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 359,
-    "originalPriceUsd": 379,
-    "discountPercent": 5
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
@@ -2176,7 +2176,7 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar *(nombre de componente técnico — se mantiene igual)*",
       "props": {
-        "note": "`checkout_tour_id` se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático. > **Nota:** Los elementos 15, 24 y 25 son identificadores de componentes de código en PascalCase y se conservan sin traducir, ya que son nombres técnicos de sistema.",
+        "note": "`checkout_tour_id` se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
         "price": {
           "amountLabel": "",
           "currency": "USD",

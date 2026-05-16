@@ -46,12 +46,12 @@
   "headlineLine1": "釜山精華景點一日遊",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "29",
+    "amountLabel": "",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 29,
-    "originalPriceUsd": 41,
-    "discountPercent": 29
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
@@ -819,7 +819,7 @@
         "iconColor": "text-amber-600",
         "items": [
           {
-            "label": "趁精力充沛時優先前往東北部 > **備註：** 第 29 行 `bg-amber-50/80` 為 CSS class 名稱，保留原文不譯。",
+            "label": "趁精力充沛時優先前往東北部",
             "detail": "龍宮寺位於路線最東北端的機張郡，因其108級階梯與峭壁步道是當天體力消耗最大的景點，故排於行程首位。在午餐前先完成，可讓下午的行程保持在較平坦的地形與輕鬆的景點。"
           },
           {
@@ -1013,7 +1013,7 @@
     {
       "timing": "行程結束",
       "title": "彈性送達",
-      "detail": "可選擇於南浦洞、釜山站、西面或海雲台下車 > **備註：** 第9、12、15項（`bg-emerald-50/80`、`bg-pink-50/80`、`bg-sky-50/80`）為CSS樣式類別名稱，保留原文不予翻譯。"
+      "detail": "可選擇於南浦洞、釜山站、西面或海雲台下車"
     },
     {
       "timing": "行程結束後",
@@ -2099,7 +2099,7 @@
           },
           {
             "timing": "當天早上",
-            "title": "接送確認 > **備註：** 第1、3行為破折號，照原樣保留。第13、16、19、22行為程式碼識別符／CSS 類別名稱，保留原文不譯。",
+            "title": "接送確認",
             "detail": "司機於抵達前10分鐘報到"
           },
           {

@@ -45,12 +45,12 @@
   "headlineLine1": "釜山郵輪岸上私人包車",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "359",
+    "amountLabel": "",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 359,
-    "originalPriceUsd": 379,
-    "discountPercent": 5
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
@@ -1729,7 +1729,7 @@
           },
           {
             "label": "一日遊",
-            "range": "2–4 > **備註：** > - 第14條「TourDayFlowSection」為UI元件名稱（程式碼標籤），已翻譯為語意對應的中文；如需保留原始英文代碼名稱，請告知。 > - 第28條「bg-sky-50/70」為Tailwind CSS樣式類別名稱，屬技術代碼，保留原文。",
+            "range": "2–4",
             "theme": "選擇您的路線",
             "bgClass": "bg-emerald-50/70",
             "textClass": "text-emerald-700",
@@ -1869,7 +1869,7 @@
             "title": "9小時服務時段與超時費用",
             "preview": "自接送時間起嚴格執行9小時服務時段",
             "content": [
-              "9小時服務時段從飯店接送時間起算 > **備註：** 第2項（`bg-slate-50/80`）為 Tailwind CSS 樣式類別名稱，第13項（`TourPracticalDetails`）為程式元件識別名稱，兩者均保留原文不作翻譯。",
+              "9小時服務時段從飯店接送時間起算",
               "超時費用為每額外一小時 25,000 韓元，須以現金直接支付給司機",
               "超時服務須視司機檔期及適用的服務時數規定而定",
               "牛島渡輪往返時間計入9小時行程範圍內，除非另行協議"

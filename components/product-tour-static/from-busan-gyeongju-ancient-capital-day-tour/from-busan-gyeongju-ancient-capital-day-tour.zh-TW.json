@@ -45,12 +45,12 @@
   "headlineLine1": "釜山出發慶州千年古都一日遊",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "39",
+    "amountLabel": "",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 39,
-    "originalPriceUsd": 50,
-    "discountPercent": 22
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
@@ -1606,7 +1606,7 @@
             "id": "g2",
             "type": "photo",
             "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
-            "alt": "校村靜謐巷弄間的瓦頂韓屋 > **備註：** 第 7、12、25 行（`TourTabsNav`、`TourAtAGlance`、`TourAtmosphereGallery`）為前端元件名稱，保留原文不譯。",
+            "alt": "校村靜謐巷弄間的瓦頂韓屋",
             "caption": "校村韓屋村——崔氏家族宅邸與慶州鄉校儒學學堂。",
             "location": "慶州校村韓屋村",
             "atmosphere": "修復後的韓屋巷弄，人車稀少"

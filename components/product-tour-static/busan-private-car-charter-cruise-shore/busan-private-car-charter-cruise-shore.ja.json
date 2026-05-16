@@ -45,12 +45,12 @@
   "headlineLine1": "釜山クルーズ寄港地・プライベートカー",
   "headlineLine2": "ツアー",
   "price": {
-    "amountLabel": "359",
+    "amountLabel": "",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 359,
-    "originalPriceUsd": 379,
-    "discountPercent": 5
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
@@ -1471,7 +1471,7 @@
             "id": "g2",
             "type": "photo",
             "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-            "alt": "柱状節理の玄武岩断崖 > **注記：** 7番（TourTabsNav）、12番（TourAtAGlance）、25番（TourAtmosphereGallery）はUIコンポーネント名のため、原文のまま記載しています。",
+            "alt": "柱状節理の玄武岩断崖",
             "caption": "柱状節理の玄武岩断崖",
             "location": "柱状節理の断崖",
             "atmosphere": "南海岸の六角形玄武岩柱"
@@ -1729,7 +1729,7 @@
           },
           {
             "label": "終日外出",
-            "range": "2〜4 > **注記：** 14番（`TourDayFlowSection`）と28番（`bg-sky-50/70`）はUI・CSSのコード名のため、原文のまま保持しています。",
+            "range": "2〜4",
             "theme": "ルートをお選びください",
             "bgClass": "bg-emerald-50/70",
             "textClass": "text-emerald-700",
@@ -1800,7 +1800,7 @@
                 },
                 {
                   "label": "大地のダイナミズムを感じる南ルート",
-                  "detail": "滝・玄武岩の断崖・火山ドーム・寺院を一日で巡るこのルートは、済州島の「火山島」としての魅力を最も力強く体感できます。 --- > **注記：** 2・6・9・16・24 はCSSクラス名またはコンポーネント名のため、原文のまま記載しています。"
+                  "detail": "滝・玄武岩の断崖・火山ドーム・寺院を一日で巡るこのルートは、済州島の「火山島」としての魅力を最も力強く体感できます。"
                 }
               ]
             },
@@ -1995,7 +1995,7 @@
             "detail": "旅程サマリー付きの予約確認"
           },
           {
-            "timing": "12時間前 > **注記：** 項目 4・8・12・16・20・23・26（CSSクラス名）および項目 17（コンポーネント名）は技術的な識別子のため、原文のまま保持しています。",
+            "timing": "12時間前",
             "title": "**12時間前のリマインダー**",
             "detail": "**天気情報とルートの変更**"
           },

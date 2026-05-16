@@ -48,12 +48,12 @@
   "headlineLine1": "Excursión en tierra desde Busan en crucero",
   "headlineLine2": "Tour en autobús por la costa",
   "price": {
-    "amountLabel": "49",
+    "amountLabel": "",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 49,
-    "originalPriceUsd": 55,
-    "discountPercent": 11
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
@@ -371,7 +371,7 @@
         "Precio habitual ~₩8,000–12,000 por plato (gasto propio)",
         "Sustitución vegetariana / apta para halal disponible bajo petición al reservar"
       ],
-      "whyOnRoute": "El almuerzo está programado a las 12:30 para conectar el bloque matutino de costa y memoriales (Yonggungsa + Cementerio de la ONU) con el bloque vespertino del mercado de Nampo-dong (Jagalchi + Plaza BIFF + Mercado Gukje). Está **claramente indicado como opcional en el itinerario de GetYourGuide**: los pasajeros de crucero con horario ajustado pueden optar por saltar el almuerzo y subir al autocar con antelación para las paradas del centro. La elección del restaurante prioriza la gastronomía de herencia de la Guerra de Corea propia de Busan —dwaeji-gukbap o milmyeon— frente a la barbacoa coreana genérica, ya que es poco probable que los pasajeros de crucero encuentren alguno de estos platos en una excursión de un día a Seúl.",
+      "whyOnRoute": "El almuerzo está programado a las 12:30 para conectar el bloque matutino de costa y memoriales (Yonggungsa + Cementerio de la ONU) con el bloque vespertino del mercado de Nampo-dong (Jagalchi + Plaza BIFF + Mercado Gukje). Está **claramente indicado como opcional en nuestro itinerario**: los pasajeros de crucero con horario ajustado pueden optar por saltar el almuerzo y subir al autocar con antelación para las paradas del centro. La elección del restaurante prioriza la gastronomía de herencia de la Guerra de Corea propia de Busan —dwaeji-gukbap o milmyeon— frente a la barbacoa coreana genérica, ya que es poco probable que los pasajeros de crucero encuentren alguno de estos platos en una excursión de un día a Seúl.",
       "description": "El almuerzo tiene lugar en un restaurante local con acceso para autocares, de camino entre Nam-gu (Memorial de la ONU) y Jung-gu (Mercado Jagalchi). Dos opciones habituales según la ruta del autocar y la preferencia del grupo: (1) **Dwaeji Gukbap (돼지국밥)** — la emblemática sopa de arroz con caldo de huesos de cerdo de Busan, plato reconfortante de la clase trabajadora de la ciudad desde la época de los refugiados de la Guerra de Corea, servida con kimchi de rábano kkakdugi, pasta de gambas saeujeot, cebollino buchu y arroz (~9,000–12,000 KRW por bol), o (2) **Milmyeon (밀면)** — los fideos fríos de harina de trigo de Busan, una adaptación del naengmyeon de Pyongyang de Corea del Norte realizada por refugiados que no encontraban trigo sarraceno en el Busan de posguerra, servidos en caldo de ternera frío o al estilo bibim picante (~8,000–11,000 KRW). \n\nAmbos son **especialidades regionales únicas de Busan que no se encuentran habitualmente en Seúl o Jeju**. **El almuerzo corre por cuenta del huésped; la parada en sí es opcional** — los pasajeros de crucero con horario de salida ajustado pueden notificarlo al guía en el punto de recogida y se suprimirá la parada del almuerzo, liberando ~45 minutos para las paradas de la tarde. \n\nLas opciones vegetarianas y aptas para halal son limitadas en la mayoría de los restaurantes de dwaeji-gukbap — indíquelo al guía al reservar si se requieren adaptaciones dietéticas y se sustituirá por un restaurante alternativo (habitualmente un bufé de bibimbap o hansik)."
     },
     {
@@ -645,7 +645,7 @@
       "description": "**Songdo Beach (송도해수욕장)** is **Korea's first modern public beach** — opened **in 1913** during the Japanese colonial era, predating both Haeundae (1965) and Gwangalli as a designated bathing beach. The 800-meter crescent of fine sand sits on Busan's southwest coast in **Seo-gu**, sheltered from the open sea by a small headland and the offshore **Songdo-do (송도, 'Pine Island')** for which the beach is named. \n\nThe beach was Busan's premier seaside resort through the colonial period and post-war decades, hosting Korea's first beach festival in the 1920s. Modern Songdo's signature attractions are: (1) the **Songdo Marine Cable Car (송도해상케이블카)**, a 1.62-km roundtrip cable car over the bay that **reopened June 2017** after a 1988 closure — operating from **East Station (East Tower) to West Station (Songdo Sky Park)** at a maximum altitude of 86 meters, with both standard and **'Crystal cabin' (glass-floor) options**; (2) the **Songdo Cloud Trails (송도구름산책로)** — a curved 365-meter skywalk that extends from the eastern beach out over the open sea, opened **2016**, replacing the older Songdo Skywalk; and (3) the **Songdo Yonggungungu Suspension Bridge** (송도용궁구름다리), a 127-meter coastal suspension bridge that connects the western end of Songdo Marine Park to Amnam Park and the bordering Seonggol Pavilion viewpoint — opened **2020**. \n\nThe beach's **Songdo Beach Festival** runs **June through August** with sand sculpture competitions, night markets, and music performances. On this bus-tour the 30-min stop is intentionally a quick coastal-air reset — guests visit the **free Cloud Trails skywalk** and the cable-car station viewpoint but do not ride the cable car (which requires a separate ticket and longer time block).",
       "visitBasics": {
         "hours": "Playa abierta 24h GRATIS; horario del teleférico 09:00–21:00; Cloud Trails 24h",
-        "closed": "Playa disponible todo el año; teleférico cerrado en condiciones meteorológicas extremas > **Nota:** Las líneas 1–4 son rutas de archivos de imagen y se han conservado sin cambios, ya que son identificadores técnicos que no deben traducirse.",
+        "closed": "Playa disponible todo el año; teleférico cerrado en condiciones meteorológicas extremas",
         "walking": "Fácil — paseo marítimo plano y pasarela elevada Cloud Trails; escaleras del puente en el extremo occidental opcionales",
         "admission": "Playa + Cloud Trails gratis; **Teleférico Marino de Songdo ₩17,000 adulto ida y vuelta / ₩25,000 mejora a cabina Crystal (NO incluido)**"
       },
@@ -848,7 +848,7 @@
       {
         "title": "Ocho paradas en un día",
         "icon": "map",
-        "iconBg": "bg-emerald-50/80 > **Nota:** Las líneas 19 y 25 (`bg-sky-50/80` y `bg-emerald-50/80`) son clases CSS de Tailwind y se han conservado sin traducir, ya que son identificadores técnicos de código.",
+        "iconBg": "bg-emerald-50/80",
         "iconColor": "text-emerald-600",
         "items": [
           {

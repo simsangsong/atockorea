@@ -1343,7 +1343,7 @@
         "headlineLine1": "水原文化遺產日",
         "headlineLine2": "華城、臥牛精舍與Starfield",
         "hero": {
-          "imageUrl": "https://images.unsplash.com/photo-1742672633179-555fd10ced64?w=1920&q=85",
+          "imageUrl": "",
           "imagePosition": "center 50%",
           "tagline": "從18世紀的聯合國教科文組織世界遺產城堡，到韓國最受矚目的現代圖書館，再到靜謐的山中佛寺——一日盡覽韓國三種風貌。",
           "pills": [
@@ -1443,7 +1443,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1775883379078-e364d22908d4?w=1600&q=85",
+            "src": "",
             "alt": "水原華城城牆與城門，以石塊砌成，城門上方可見典型的翹簷",
             "caption": "華城城牆與城門",
             "location": "水原華城，水原市，京畿道",
@@ -1452,7 +1452,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1742743920246-dfa5cce0982e?w=1600&q=85",
+            "src": "",
             "alt": "星野圖書館中庭內高聳的書架——首爾COEX（與水原星野同一設計脈絡；Unsplash）",
             "caption": "星野圖書館——標誌性的多層書架",
             "location": "首爾江南COEX星野圖書館（概念與水原分館相同）",
@@ -1461,7 +1461,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1751820705348-386098a2c148?w=1600&q=85",
+            "src": "",
             "alt": "翠綠樹木間精緻的韓國佛教寺廟屋脊與簷角——代表臥牛精舍等景點的遺產氛圍（素材照片，群山市；Unsplash授權）",
             "caption": "韓國佛教寺廟建築——遺產氛圍",
             "location": "代表性韓國佛教寺廟意象（臥牛精舍：龍仁）",
@@ -1470,7 +1470,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1774156702267-9404e7f02802?w=1600&q=85",
+            "src": "",
             "alt": "華城城牆步道一段，石砌雉堞聳立，前方可見烽火臺，下方為水原市景",
             "caption": "華城城牆漫步——一覽城市全景",
             "location": "華城城牆，長安門段，水原",
@@ -1479,7 +1479,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1768006239286-6e85dc786bce?w=1600&q=85",
+            "src": "",
             "alt": "華城行宮以彩繪屋簷的韓式傳統木造建築為特色，環繞鋪石庭院而建",
             "caption": "華城行宮庭院",
             "location": "華城行宮，城廓內，水原",
@@ -2097,7 +2097,7 @@
     {
       "id": "booking_support",
       "section_html_id": null,
-      "component": "TourBookingSupportSection > **備註：** 第 12、16、20、24 行（`bg-spring` 等）及第 25 行（`TourBookingSupportSection`）為程式碼識別字／CSS 類別名稱，保留原文不譯。",
+      "component": "TourBookingSupportSection",
       "props": {
         "bookingTrustItems": [
           {

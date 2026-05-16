@@ -44,12 +44,12 @@
   "headlineLine1": "제주 프라이빗 차량 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "249",
+    "amountLabel": "",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 249,
-    "originalPriceUsd": 249,
-    "discountPercent": 0
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
@@ -473,7 +473,7 @@
       {
         "title": "동쪽, 서쪽, 남쪽 루트 선택 방법",
         "icon": "map",
-        "iconBg": "bg-amber-50/80 > **참고:** 22번과 30번(`bg-sky-50/80`, `bg-amber-50/80`)은 CSS 클래스명이므로 번역 없이 원문 그대로 유지했습니다.",
+        "iconBg": "bg-amber-50/80",
         "iconColor": "text-amber-600",
         "items": [
           {
@@ -984,7 +984,7 @@
         "headlineLine1": "제주 프라이빗 차량 투어",
         "headlineLine2": "투어",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+          "imageUrl": "",
           "imagePosition": "center 45%",
           "tagline": "성산일출봉부터 협재해수욕장, 천지연폭포까지—공인 드라이버 가이드와 함께하는 9시간의 프라이빗 투어, 내가 정하는 코스, 내가 정하는 속도로.",
           "pills": [
@@ -1079,7 +1079,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "src": "",
             "alt": "성산일출봉 일출 봉우리",
             "caption": "성산일출봉 일출 봉우리",
             "location": "성산일출봉",
@@ -1088,7 +1088,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "src": "",
             "alt": "주상절리 현무암 절벽",
             "caption": "주상절리 현무암 절벽",
             "location": "주상절리",
@@ -1097,7 +1097,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "src": "",
             "alt": "협재해수욕장 제주 서쪽",
             "caption": "협재해수욕장 제주 서쪽",
             "location": "협재해수욕장",
@@ -1106,7 +1106,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "src": "",
             "alt": "오설록 티 뮤지엄과 차밭",
             "caption": "오설록 티 뮤지엄과 차밭",
             "location": "오설록 차밭",
@@ -1115,7 +1115,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
+            "src": "",
             "alt": "서귀포 천지연 폭포",
             "caption": "서귀포 천지연 폭포",
             "location": "천지연 폭포",
@@ -1137,7 +1137,7 @@
             "name": "동쪽 코스: 유네스코 & K-드라마 해안",
             "category": "성산, 우도, 만장굴, 섭지코지",
             "description": "제주의 주요 유네스코 및 K-드라마 명소를 아우르는 랜드마크 밀도가 가장 높은 코스입니다. 주요 방문지로는 성산일출봉(유네스코 일출 봉우리), 우도(페리로 이동하는 해변 섬), 만장굴(유네스코 용암 동굴), 섭지코지(드라마 촬영지로 유명한 해안 곶), 성읍민속마을, 함덕해수욕장이 포함됩니다.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "",
             "highlights": [
               "성산일출봉: 유네스코 세계자연유산이자 제주를 대표하는 일출 명소",
               "우도: 페리로 이동하는 섬으로, 흰 모래 해변과 등대 전망이 아름다운 곳",
@@ -1180,7 +1180,7 @@
             "name": "서쪽 코스: 해변, 차(茶) & 카페 해안",
             "category": "협재, 한림공원, 오설록, 애월",
             "description": "가장 감성적이고 여유로운 코스입니다. 주요 방문지는 협재해수욕장(제주를 대표하는 에메랄드빛 해변), 한림공원(아열대 정원과 용암 동굴), 오설록 티 뮤지엄(차밭과 카페), 애월 카페 거리(해질녘 해안 카페)입니다. 커플 및 사진 애호가에게 특히 잘 맞는 코스입니다.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "",
             "highlights": [
               "협재해수욕장: 에메랄드빛 바다, 하얀 모래사장, 비양도 전망",
               "한림공원: 아열대 정원과 두 개의 용암 동굴 보유",
@@ -1223,7 +1223,7 @@
             "name": "남부 코스: 폭포 & 화산 해안",
             "category": "천지연, 주상절리, 산방산, 올레시장",
             "description": "경관이 가장 극적인 코스입니다. 주요 방문지로는 천지연폭포(숲속 폭포), 주상절리대(현무암 주상절리 해안), 약천사(동아시아 최대 규모의 사찰 중 하나), 산방산(바다 전망이 펼쳐지는 화산 돔), 정방폭포(아시아에서 바다로 직접 떨어지는 몇 안 되는 폭포 중 하나), 서귀포 올레시장이 있습니다.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "",
             "highlights": [
               "천지연폭포: 서귀포의 대표적인 숲속 폭포",
               "주상절리대: 남쪽 해안의 육각형 현무암 주상절리",
@@ -1266,7 +1266,7 @@
             "name": "맞춤 코스: 나만의 하루 일정 만들기",
             "category": "직접 일정을 보내주세요",
             "description": "추천 코스 세 가지 외에도, 방문지를 자유롭게 조합하거나 직접 일정을 보내주실 수 있습니다. 추가 가능한 명소로는 제주 아쿠아플라넷, 에코랜드 테마파크, 산굼부리 분화구, 함덕 해수욕장, 카멜리아 힐, 테디베어 사파리, 서귀포 잠수함(문섬 수중 투어), 돌핀 요트 투어, 송악산, 카페 더 클리프, 난타 공연 등이 있습니다.",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202311/22/c42559a5-c909-4603-ae16-24c2e03893a0.webp",
+            "image": "",
             "highlights": [
               "시간이 허락한다면 동쪽 유네스코 명소와 서쪽 차밭을 함께 묶어보세요",
               "어떤 코스에도 해녀 해산물 점심을 추가할 수 있습니다",
@@ -1594,7 +1594,7 @@
           {
             "icon": "route",
             "title": "루트 전문가",
-            "description": "획일적인 코스가 아닌, 직접 설계한 맞춤형 일정 > **참고:** 5번·7번(—), 12·16·20·24번(CSS 클래스명), 25번(컴포넌트명), 28번(Tailwind 클래스명)은 코드·기술 값으로 원문 그대로 유지했습니다.",
+            "description": "획일적인 코스가 아닌, 직접 설계한 맞춤형 일정",
             "iconBg": "bg-sky-50/80",
             "iconColor": "text-sky-600"
           },
@@ -1663,7 +1663,7 @@
           },
           {
             "id": "seniors",
-            "question": "어르신도 편안하게 참여하실 수 있나요? > **참고:** 1번(bg-sky-50/80), 4번(bg-amber-50/80), 23번(TourFaqSection)은 CSS 클래스명 및 컴포넌트명으로, 번역 없이 원문 그대로 유지했습니다.",
+            "question": "어르신도 편안하게 참여하실 수 있나요?",
             "answer": "**네 — 활동적인 시니어분들께서 편안하게 이동하고 걷기에 적합합니다.**"
           }
         ]
@@ -1714,7 +1714,7 @@
       "section_html_id": null,
       "component": "**투어 고정 예약 바** *(TourStickyBookingBar)*",
       "props": {
-        "note": "**`checkout_tour_id`는 런타임 시 Supabase / 환경 변수에서 확인되며, 정적 JSONB의 일부가 아닙니다.** --- > **참고:** 2번과 3번은 UI 컴포넌트 식별자이므로, 코드 내에서는 원문(`TourReviewsSection`, `TourStickyBookingBar`)을 그대로 사용하고 표시(레이블) 목적으로만 한국어 명칭을 활용하시기 바랍니다.",
+        "note": "**`checkout_tour_id`는 런타임 시 Supabase / 환경 변수에서 확인되며, 정적 JSONB의 일부가 아닙니다.**",
         "price": {
           "amountLabel": "",
           "currency": "USD",

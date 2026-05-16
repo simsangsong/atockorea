@@ -198,7 +198,7 @@
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
       "location": "天帝淵瀑布",
-      "alt": "天帝淵瀑布 — 圖庫圖片 2 --- **翻譯備註：** - **步調** — \"Pace\" 作為旅遊風格描述詞，譯為「步調」 - **招牌** — \"Signature\" 取「招牌／代表性」之意 - **圖庫圖片** vs **照片** — \"gallery image\" 與 \"photo\" 分別對應，保留語意區別 - 地名（大浦柱狀節理壁、天帝淵瀑布、山茶花之丘）採用通行繁體中文譯名",
+      "alt": "天帝淵瀑布 — 圖庫圖片 2",
       "caption": "天帝淵瀑布 — 照片 2"
     },
     {
@@ -1498,7 +1498,7 @@
         "headlineLine1": "濟州冬季",
         "headlineLine2": "柑橘、雪景與山茶花",
         "hero": {
-          "imageUrl": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1600",
+          "imageUrl": "",
           "imagePosition": "center 35%",
           "tagline": "冬日濟州三絕——雪景、山茶花與柑橘",
           "pills": [
@@ -1557,7 +1557,7 @@
           },
           {
             "icon": "users",
-            "label": "團體 > **備註：** 第9、17、22項（`TourHeroSection`、`TourTabsNav`、`TourAtAGlance`）為前端UI元件名稱，建議保留英文原文以利開發維護。",
+            "label": "團體",
             "value": "小型團體，提供英語／中文導遊服務"
           },
           {
@@ -1592,7 +1592,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+            "src": "",
             "alt": "從西南觀景台遠眺覆雪的漢拏山稜線，前景為低矮林木",
             "caption": "從西南觀景台望見的漢拏山冬季景色",
             "location": "漢拏山1100公路或御里牧登山口，濟州中部",
@@ -1601,7 +1601,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "src": "",
             "alt": "園區小徑兩旁，成熟的山茶花樹盛開著鮮紅花朵",
             "caption": "山茶花丘冬季盛開期（十二月至二月）",
             "location": "山茶花丘，安德，濟州南部",
@@ -1610,7 +1610,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "src": "",
             "alt": "雙手從濟州果園低矮樹上採摘成熟橙黃柑橘",
             "caption": "濟州橘（귤）果園冬季採收",
             "location": "濟州西南部柑橘果園（具體合作農場不定期更換）",
@@ -1619,7 +1619,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "src": "",
             "alt": "六角柱狀熔岩峭壁從冬日海面拔地而起",
             "caption": "大浦柱狀節理海岸柱狀熔岩峭壁",
             "location": "大浦，中文海岸，濟州南部",
@@ -1628,7 +1628,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "src": "",
             "alt": "森林山谷中的三層瀑布，仙人橋橫跨其上",
             "caption": "天帝淵瀑布與七仙女仙人橋",
             "location": "天帝淵瀑布，西歸浦，濟州南部",
@@ -1650,7 +1650,7 @@
             "name": "飯店接送（濟州市）",
             "category": "出發",
             "description": "濟州市中心提供免費飯店接送。濟州市外接送加收 ₩70,000。車輛配備空調（冬季附暖氣）。",
-            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "image": "",
             "highlights": [
               "免費濟州市接送",
               "暖氣車輛",
@@ -1768,7 +1768,7 @@
             "name": "柑橘（귤）採摘體驗",
             "category": "季節限定體驗 — 濟州冬季",
             "description": "在濟州運營中的果園親身體驗柑橘採摘。十二月至二月為盛產季節——濟州柑橘是島上最著名的出口農產品，歷史上幾乎家家戶戶都種有柑橘樹。您將獲得剪刀與籃子；可在現場隨意品嚐，並可帶走 1 公斤，費用為 ₩5,000（現場付款）。",
-            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "image": "",
             "highlights": [
               "自採柑橘（귤）",
               "現場品嚐，不限量",
@@ -1800,7 +1800,7 @@
             "name": "午餐（當地餐廳）",
             "category": "用餐",
             "description": "在導遊推薦的當地餐廳自由用餐。濟州西南部的典型選擇：黑豬肉（흑돼지）燒烤、艾草鮑魚湯（몸국）或鮑魚粥（전복죽）。如有需要可提供素食選項。",
-            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "image": "",
             "highlights": [
               "黑豬肉燒烤（흑돼지 BBQ）",
               "西南部當地餐廳",
@@ -1946,7 +1946,7 @@
             },
             "images": [
               "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp > **備註：** 第 7、24、25 項為系統檔案路徑，保留原文不譯。",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
             ],
@@ -2019,7 +2019,7 @@
             "timeUsed": [
               "抵達、購票及行程說明",
               "主要景點探索與拍照時間",
-              "結束集合並返回車輛 > **備註：** 第 1、2、19 行為圖片檔案路徑，保留原文不譯。"
+              "結束集合並返回車輛"
             ],
             "whyOnRoute": "三層瀑布與七仙女仙臨橋——濟州最多人拍攝的森林瀑布景點。冬季水量較少，但橋梁攝影效果最為清晰。",
             "visitBasics": {
@@ -2101,7 +2101,7 @@
             "name": "下車點（濟州市）",
             "category": "返回 **Translation notes:** - **Cheonjeyeon** → 天帝淵（天帝淵瀑布） - **Seonimgyo Bridge of Seven Nymphs** → 七仙女仙臨橋（仙臨橋） - **Cheonjiyeon Falls** (different site, line 10) → 天地淵瀑布 — kept distinct from 天帝淵 to preserve the warning - **Seogwipo** → 西歸浦 - File paths (lines 11–13) left unchanged as-is",
             "description": "可依需求送達濟州市酒店、東門傳統市場或濟州國際機場。",
-            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "image": "",
             "highlights": [
               "酒店送達",
               "東門市場選項",
@@ -2283,7 +2283,7 @@
                   "detail": "每個冬季通常封閉1至3天。導遊屆時會改換至附近的山房山或O'sulloc茶博物館。"
                 },
                 {
-                  "label": "山茶花丘在一月份進入年度盛花期 > **備註：** 第4條（`bg-sky-50/80`）與第14條（`bg-amber-50/80`）為CSS樣式類別名稱，屬技術性識別符，保留原文不譯。",
+                  "label": "山茶花丘在一月份進入年度盛花期",
                   "detail": "十二月花季開始；二月中旬依然盛放。一月是250個品種同步開花的絕對巔峰期。"
                 },
                 {
@@ -2422,7 +2422,7 @@
           },
           {
             "timing": "行程進行中",
-            "title": "各站點導覽小提示 > **備註：** 第 5、8、11 項（`bg-emerald-50/80`、`bg-sky-50/80`、`bg-amber-50/80`）為 Tailwind CSS 樣式類別名稱，屬程式碼字串，保留原文不予翻譯。",
+            "title": "各站點導覽小提示",
             "detail": "每個景點的即時導覽"
           },
           {

@@ -45,12 +45,12 @@
   "headlineLine1": "釜山発・慶州古都ツアー",
   "headlineLine2": "ツアー",
   "price": {
-    "amountLabel": "39",
+    "amountLabel": "",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 39,
-    "originalPriceUsd": 50,
-    "discountPercent": 22
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
@@ -1606,7 +1606,7 @@
             "id": "g2",
             "type": "photo",
             "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
-            "alt": "校村の静かな路地に並ぶ瓦屋根のハノク家屋 --- **注記：** 7番（TourTabsNav）、12番（TourAtAGlance）、25番（TourAtmosphereGallery）はUIコンポーネント名のため、原文のまま記載しています。",
+            "alt": "校村の静かな路地に並ぶ瓦屋根のハノク家屋",
             "caption": "校村韓屋村 — 崔家の屋敷と慶州郷校（儒教学校）。",
             "location": "校村韓屋村、慶州",
             "atmosphere": "修復されたハノクの小道、交通量が少ない"
@@ -2259,7 +2259,7 @@
           },
           {
             "id": "q-bridge-night-view",
-            "question": "橋のライトアップは見られますか？ > **注記：** 2・5・8番はCSSクラス名、27番はUIコンポーネント名のため、原文のまま保持しました。",
+            "question": "橋のライトアップは見られますか？",
             "answer": "基本的に、このツアーではお勧めできません。橋は年間を通じて日没から約22:00まで毎晩ライトアップされますが、このルートでは16:30頃に到着するため、春〜秋は日中の明るい時間帯となります。訪問時間帯にライトアップが確実に見られる唯一の時期は11月〜2月で、日没が17:15〜17:30の間となり、滞在終盤に向けてライトが点灯し始めます。日没後の橋の反射を撮影することが最優先であれば、橋に17:00頃到着する「UNESCOレガシーツアー」の方が適しています。あるいは、日没後に個人でご訪問ください。"
           },
           {

@@ -50,10 +50,10 @@
   "headlineLine1": "제주 서·남부 정통 일일 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "59",
-    "originalPriceUsd": 69,
-    "salePriceUsd": 59,
-    "discountPercent": 14,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person"
   },
@@ -1437,7 +1437,7 @@
     },
     {
       "id": "q3",
-      "question": "오후 내내 협재에서만 시간을 보낼 수 있나요? > **참고:** 1번·4번·7번(bg-emerald-50/80, bg-sky-50/80, bg-amber-50/80)은 Tailwind CSS 클래스명으로, 코드값이므로 번역하지 않고 원문 그대로 유지했습니다.",
+      "question": "오후 내내 협재에서만 시간을 보낼 수 있나요?",
       "answer": "아니요 — 이 상품은 협재에서 약 45분을 머무는 고정 코스입니다. 카페와 해변을 자유롭게 즐기는 하루를 원하신다면 개인 드라이버 가이드가 더 나은 선택입니다. 이 상품은 유산 방문지와 카페 문화를 모두 경험하고 싶은, 즉 둘 중 하나를 포기하고 싶지 않은 여행객을 위한 것입니다."
     },
     {

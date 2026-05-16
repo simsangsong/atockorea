@@ -52,10 +52,10 @@
   "headlineLine1": "제주 동부 수국 축제 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "59",
-    "originalPriceUsd": 69,
-    "salePriceUsd": 59,
-    "discountPercent": 14,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person"
   },
@@ -2076,7 +2076,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "src": "",
             "alt": "투어 중 방문하는 방문지의 풍경",
             "caption": "방문지",
             "location": "",
@@ -2085,7 +2085,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "src": "",
             "alt": "투어 중 방문하는 일출랜드 미천굴 용암동굴(폐쇄 중인 만장굴 대체지) 풍경",
             "caption": "일출랜드 미천굴 용암동굴(폐쇄 중인 만장굴 대체지)",
             "location": "",
@@ -2094,7 +2094,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "src": "",
             "alt": "투어 중 방문하는 성읍민속마을 전통 돌집의 풍경",
             "caption": "성읍민속마을 전통 돌집과 유네스코 유산 분위기",
             "location": "",
@@ -2103,7 +2103,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "src": "",
             "alt": "투어 중 방문하는 함덕해변의 풍경",
             "caption": "제주 대표 해변 중 하나로 꼽히는 함덕해변",
             "location": "",
@@ -2125,7 +2125,7 @@
             "name": "호텔 픽업 (제주시)",
             "category": "픽업 — 제주 시내 호텔/허브 순서",
             "description": "제주시 4개 주요 픽업 지점(공항·노형오거리·시청·중앙로터리)에서 픽업.",
-            "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+            "image": "",
             "highlights": [
               "**4개 픽업 포인트** — 공항, 시청, 하귀, 동문 (탑동)",
               "서→동 순서로 오전 코치 이동 최소화",
@@ -2392,7 +2392,7 @@
             "name": "점심 (제주 현지 식당)",
             "category": "운영 정류장 — 동제주 현지 점심",
             "description": "표선·성산 인근 현지 식당. 점심 식사비 별도(약 ₩12,000~18,000).",
-            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+            "image": "",
             "highlights": [
               "**동제주 현지 식당** — 표선 / 동성산 회랑",
               "미리 확인한 추천 목록: **영어 친화 메뉴** + 식이 요건 수용",
@@ -2795,7 +2795,7 @@
             "name": "하차 (제주시)",
             "category": "하차 — 역순 4개 지점",
             "description": "아침 픽업 역순으로 제주시 4개 지점 하차.",
-            "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+            "image": "",
             "highlights": [
               "**4개 하차 지점** — 동문, 시청, 공항, 하귀 (픽업 역순)",
               "동문 먼저 (약 17:50) — 저녁 길거리 음식 연장 방문자용",

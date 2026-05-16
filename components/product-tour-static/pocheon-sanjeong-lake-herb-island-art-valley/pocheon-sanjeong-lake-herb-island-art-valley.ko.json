@@ -44,14 +44,14 @@
   "headlineLine1": "포천",
   "headlineLine2": "산정호수·허브아일랜드·아트밸리",
   "price": {
-    "amountLabel": "49",
-    "originalPriceUsd": 62,
-    "salePriceUsd": 49,
-    "discountPercent": 21,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person",
     "priceSource": "getyourguide_t1168134",
-    "priceNote": "GetYourGuide 기준 정가 $62, AtoC Korea 판매가 약 21% 할인."
+    "priceNote": "정가 $62, AtoC Korea 판매가 약 21% 할인."
   },
   "hero": {
     "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
@@ -848,7 +848,7 @@
       "currency": "USD",
       "per": "person",
       "priceSource": "getyourguide_t1168134",
-      "priceNote": "GetYourGuide 기준 정가 $62, AtoC Korea 판매가 약 21% 할인."
+      "priceNote": "정가 $62, AtoC Korea 판매가 약 21% 할인."
     }
   },
   "pickup_dropoff": {
@@ -1635,7 +1635,7 @@
                 },
                 {
                   "label": "아트밸리 도보는 선택 사항",
-                  "detail": "모노레일이 오르막 구간을 대신해 주며, 산책로를 걷는 것은 조각 작품들 사이에서 더 많은 시간을 보내고 싶은 여행자를 위한 선택입니다. > **참고:** 2번(`bg-emerald-50/70`), 6번(`bg-amber-50/70`), 9번(`TourFitSection`), 16번(`bg-emerald-50/80`), 24번(`bg-amber-50/80`)은 CSS 클래스명 및 컴포넌트 식별자이므로 원문 그대로 유지했습니다."
+                  "detail": "모노레일이 오르막 구간을 대신해 주며, 산책로를 걷는 것은 조각 작품들 사이에서 더 많은 시간을 보내고 싶은 여행자를 위한 선택입니다."
                 }
               ]
             },
@@ -1825,7 +1825,7 @@
           },
           {
             "timing": "12시간 전",
-            "title": "12시간 전 알림 > **참고:** `bg-spring`, `bg-summer`, `bg-autumn`, `bg-winter`, `bg-emerald-50/80`, `bg-sky-50/80`, `bg-amber-50/80`, `TourBookingSupportSection`은 CSS 클래스명 및 컴포넌트 식별자이므로 원문 그대로 유지했습니다.",
+            "title": "12시간 전 알림",
             "detail": "날씨 업데이트 및 경로 조정 사항"
           },
           {

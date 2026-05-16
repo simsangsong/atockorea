@@ -354,7 +354,7 @@
           "type": "photo",
           "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
           "location": "Fortaleza Suwon Hwaseong",
-          "caption": "Fortaleza Suwon Hwaseong — foto 3 --- > **Nota:** Las rutas de archivo (líneas 12–17) se han dejado sin traducir, ya que son rutas técnicas de sistema que no deben modificarse.",
+          "caption": "Fortaleza Suwon Hwaseong — foto 3",
           "alt": "Fortaleza Hwaseong de Suwon — imagen de galería 3"
         },
         {
@@ -1343,7 +1343,7 @@
         "headlineLine1": "Día del Patrimonio de Suwon",
         "headlineLine2": "Hwaseong, Waujeongsa y Starfield",
         "hero": {
-          "imageUrl": "https://images.unsplash.com/photo-1742672633179-555fd10ced64?w=1920&q=85",
+          "imageUrl": "",
           "imagePosition": "center 50%",
           "tagline": "Desde una fortaleza UNESCO del siglo XVIII hasta una de las bibliotecas contemporáneas más fotografiadas de Corea, pasando por un tranquilo templo budista de montaña — tres facetas de Corea en un día equilibrado.",
           "pills": [
@@ -1443,7 +1443,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1775883379078-e364d22908d4?w=1600&q=85",
+            "src": "",
             "alt": "Muralla y puerta de la Fortaleza Hwaseong de Suwon construidas con bloques de piedra, con los característicos aleros curvados visibles sobre la entrada > **Notas:** Los ítems 4, 9 y 24 son nombres de componentes de interfaz de usuario y se mantienen sin traducir para preservar la integridad del código. El ítem 25 es texto alternativo de imagen (alt text) y se ha traducido de forma descriptiva y natural.",
             "caption": "Muralla y puerta de la Fortaleza de Hwaseong",
             "location": "Fortaleza de Suwon Hwaseong, Suwon, Gyeonggi-do",
@@ -1452,7 +1452,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1742743920246-dfa5cce0982e?w=1600&q=85",
+            "src": "",
             "alt": "Imponentes estanterías de la biblioteca en el atrio de la Biblioteca Starfield — COEX Seúl (misma línea de diseño que Starfield Suwon; Unsplash)",
             "caption": "Biblioteca Starfield — icónicas estanterías de varios pisos",
             "location": "Biblioteca Starfield COEX, Gangnam, Seúl (el concepto coincide con la sucursal de Suwon)",
@@ -1461,7 +1461,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1751820705348-386098a2c148?w=1600&q=85",
+            "src": "",
             "alt": "Ornamentados aleros y tejados de un templo budista coreano entre árboles verdes — ambiente patrimonial representativo para paradas como Waujeongsa (foto de archivo, Gunsan-si; licencia Unsplash)",
             "caption": "Arquitectura de templo budista coreano — ambiente patrimonial",
             "location": "Imágenes representativas de templos budistas coreanos (Waujeongsa: Yongin)",
@@ -1470,7 +1470,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1774156702267-9404e7f02802?w=1600&q=85",
+            "src": "",
             "alt": "Tramo del paseo por la muralla de la fortaleza de Hwaseong con parapetos de piedra, un montículo de señales visible al frente y la ciudad de Suwon abajo",
             "caption": "Paseo por la muralla de Hwaseong — amplias vistas de la ciudad",
             "location": "Muralla de Hwaseong, sección Janganmun, Suwon",
@@ -1479,7 +1479,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1768006239286-6e85dc786bce?w=1600&q=85",
+            "src": "",
             "alt": "Edificios tradicionales de madera coreana con aleros pintados del Palacio Hwaseong Haenggung, dispuestos alrededor de un patio empedrado",
             "caption": "Patios del Palacio Hwaseong Haenggung",
             "location": "Palacio Hwaseong Haenggung, dentro de la fortaleza, Suwon",
@@ -2129,7 +2129,7 @@
             "detail": "Confirmación de reserva con resumen del itinerario"
           },
           {
-            "timing": "12 horas antes > **Nota:** Los identificadores técnicos (clases CSS como `bg-summer`, `bg-autumn`, `bg-winter`, `bg-emerald-50/80`, `bg-sky-50/80`, `bg-amber-50/80` y el nombre de componente `TourBookingSupportSection`) se han mantenido sin traducir, ya que son valores de código que no deben modificarse.",
+            "timing": "12 horas antes",
             "title": "Recordatorio de 12 horas",
             "detail": "Actualización meteorológica y posibles ajustes de ruta"
           },

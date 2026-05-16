@@ -1498,7 +1498,7 @@
         "headlineLine1": "济州冬季",
         "headlineLine2": "橘子、雪与山茶花",
         "hero": {
-          "imageUrl": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1600",
+          "imageUrl": "",
           "imagePosition": "center 35%",
           "tagline": "冬日济州独有的三样——雪、山茶花与柑橘",
           "pills": [
@@ -1592,7 +1592,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+            "src": "",
             "alt": "从西南观景台眺望汉拿山覆雪的山脊线，前景为低矮的丛林",
             "caption": "从西南观景台拍摄的汉拿山冬季雪景",
             "location": "汉拿山1100公路或御里牧登山口，济州岛中部",
@@ -1601,7 +1601,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "src": "",
             "alt": "两侧种满盛开红色山茶花的成熟茶花树小径",
             "caption": "山茶花之丘冬季盛花期（12月至2月）",
             "location": "山茶花之丘，安德，济州岛南部",
@@ -1610,7 +1610,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "src": "",
             "alt": "在济州果园中从低矮果树上亲手采摘成熟橙黄色柑橘",
             "caption": "济州橘子（柑橘）果园冬季采摘",
             "location": "济州西南部柑橘果园（具体合作农场轮换）",
@@ -1619,7 +1619,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "src": "",
             "alt": "从冬日海面耸立而起的六边形柱状熔岩峭壁",
             "caption": "大浦柱状节理带柱状熔岩峭壁",
             "location": "大浦，中文海岸，济州岛南部",
@@ -1628,7 +1628,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "src": "",
             "alt": "森林山谷中的三级瀑布，仙人桥横架其上",
             "caption": "天帝渊瀑布与七仙女仙人桥",
             "location": "天帝渊瀑布，西归浦，济州岛南部",
@@ -1650,7 +1650,7 @@
             "name": "酒店接送（济州市）",
             "category": "出发",
             "description": "济州市中心免费酒店接送。济州市以外接送需加收 ₩70,000。车辆配备空调（冬季供暖）。",
-            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "image": "",
             "highlights": [
               "济州市免费接送",
               "车内供暖",
@@ -1768,7 +1768,7 @@
             "name": "橘子（gyul）采摘体验",
             "category": "季节性体验——济州冬季",
             "description": "在济州运营中的果园亲手采摘橘子。十二月至二月是旺季——济州蜜柑是岛上最著名的出口产品，历史上几乎每家每户都种有橘子树。您将获得剪刀和篮子，可在现场随意品尝，带1公斤回家只需₩5,000（现场付款）。",
-            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "image": "",
             "highlights": [
               "自采橘子（gyul）",
               "现场品尝，不限量",
@@ -1800,7 +1800,7 @@
             "name": "午餐（当地餐厅）",
             "category": "用餐",
             "description": "在导游推荐的当地餐厅自由用餐。济州西南部经典推荐：黑猪肉（heuk-dwaeji）烤肉、艾草鲍鱼汤（mom-guk）或鲍鱼粥（jeon-bok-juk）。可提前告知需要素食选项。",
-            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "image": "",
             "highlights": [
               "黑猪肉烤肉（heuk-dwaeji BBQ）",
               "西南部当地餐厅",
@@ -2101,7 +2101,7 @@
             "name": "落客（济州市）",
             "category": "返程",
             "description": "可按要求将您送至济州市酒店、东门传统市场或济州机场。",
-            "image": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=800",
+            "image": "",
             "highlights": [
               "酒店送达",
               "东门市场选项",
@@ -2176,7 +2176,7 @@
         ],
         "routePhases": [
           {
-            "phase": "去程 > **备注：** 第 8 条 `TourDayFlowSection` 为技术组件名称，保留原文不作翻译。",
+            "phase": "去程",
             "duration": "约 1 小时",
             "description": "济州市 → 向西南内陆行驶至汉拿山观景点。"
           },

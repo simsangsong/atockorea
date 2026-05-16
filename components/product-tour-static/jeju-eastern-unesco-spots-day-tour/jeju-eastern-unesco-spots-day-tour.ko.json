@@ -51,10 +51,10 @@
   "headlineLine1": "제주 동부 유네스코 일일 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "59",
-    "originalPriceUsd": 69,
-    "salePriceUsd": 59,
-    "discountPercent": 14,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person"
   },
@@ -2073,7 +2073,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "src": "",
             "alt": "투어 중 방문하는 Seongeup의 풍경",
             "caption": "Seongeup",
             "location": "서귀포시 표선면 성읍리",
@@ -2082,7 +2082,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "src": "",
             "alt": "투어 중 방문하는 성읍 민속마을 — 보존된 현무암 돌담과 초가지붕의 풍경",
             "caption": "성읍 민속마을 — 보존된 현무암 돌담과 초가지붕",
             "location": "일출랜드, Pyoseon-myeon",
@@ -2091,7 +2091,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "src": "",
             "alt": "투어 중 방문하는 미천굴 용암동굴의 풍경(만장굴 폐쇄 기간 대체 방문지)",
             "caption": "미천굴 용암동굴(만장굴 폐쇄 기간 대체 방문지)",
             "location": "성산일출봉 유네스코 세계자연유산",
@@ -2100,7 +2100,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "src": "",
             "alt": "투어 중 방문하는 해녀 박물관 — 제주 유네스코 등재 해녀를 기리는 곳의 풍경",
             "caption": "해녀 박물관 — 제주 유네스코 등재 해녀를 기리는 곳",
             "location": "제주시 구좌읍 하도리",
@@ -2122,7 +2122,7 @@
             "name": "픽업 (제주시 4개 지점)",
             "category": "픽업 — 제주 시내 호텔/허브 순서",
             "description": "아침 이동 최소화를 위해 제주시 4개 주요 지점에서 픽업이 이루어집니다: 제주공항 1번 게이트(국내선 1층), 노형오거리 인근, 제주시청 인근, 중앙로터리 인근. 서쪽에서 동쪽 순으로 탑승하여 약 09:50 함덕해변 도착(성수기 인파보다 이른 도착, 최적 조명 확보).",
-            "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+            "image": "",
             "highlights": [
               "**제주 시내 4개 픽업 포인트** — 공항, 시청, 하귀, 동문",
               "서→동 순서로 오전 코치 이동 최소화",
@@ -2559,7 +2559,7 @@
             "name": "점심 (제주 현지 식당)",
             "category": "점심 휴식 — 동제주 현지 음식",
             "description": "일출랜드와 성산일출봉 사이 약 60분 점심 시간입니다. 성산읍 항구 주변 식당에서 흑돼지, 전복죽, 갈치 등 제주 동부 향토 음식을 둘러볼 수 있습니다. 점심 식사비는 별도(약 ₩15,000)입니다.",
-            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+            "image": "",
             "highlights": [
               "**동제주 해산물 코리도** — 성산읍 항구 옆 거리",
               "**물회** 여름; **갈치조림** 겨울 로테이션",
@@ -2779,7 +2779,7 @@
             "name": "하차 (2개 지점 + 동문시장)",
             "category": "하차 — 제주 시내 허브 순서",
             "description": "귀환 시 아침 픽업 경로와 동일하게 2개 지점에서 하차하며, 동문재래시장 앞에서도 하차 가능합니다. 동문시장에서는 제주 특산물과 간식을 둘러볼 수 있습니다.",
-            "image": "https://images.unsplash.com/photo-1549144511-f099e773c147",
+            "image": "",
             "highlights": [
               "**3개 하차 포인트** — 동문 시장, 시청, 공항",
               "**동문전통시장** — 제주의 대표 야시장 분위기, 해산물·감귤·길거리 음식",

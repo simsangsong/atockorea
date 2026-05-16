@@ -1107,7 +1107,7 @@
           "meta": {
             "duration": "約11.5小時（08:10首班接送，約19:45最後送達）",
             "region": "慶州（從釜山出發）",
-            "stops": "8個站點 --- **翻譯備註：** - **第8條** 為技術性備注，程式碼術語（`checkout_tour_id`、`Supabase`、`JSONB`）保留原文。 - **第18條** 為前端元件名稱，保留原文。 - **第22條** 為系統識別碼／slug，保留原文。 - 地名對照：普門湖（보문호）、瞻星台（첨성대）、大陵苑（대릉원）、佛國寺（불국사）、皇龍苑（황룡원）、雞林（계림）、煌理團街（황리단길）、王京森林（왕경숲）、天馬塚（천마총）。",
+            "stops": "8個站點",
             "rating": 0,
             "ratingStars": 0
           }
@@ -1202,7 +1202,7 @@
             "type": "photo",
             "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "alt": "新羅金冠陳列於博物館燈光下的玻璃展櫃中",
-            "caption": "慶州國立博物館——出土自天馬塚的金冠（國寶第 188 號）。 --- **翻譯備註：** - **阿項山**（Ahopsan）、**達摩知嶺**（Dalmaji Hill）、**天馬塚**（Cheonmachong）、**校村**（Gyochon）均採用音譯或通用漢字名稱。 - UI 元件名稱（`TourTabsNav`、`TourAtAGlance`、`TourAtmosphereGallery`）保留英文原名，以免影響程式碼辨識。",
+            "caption": "慶州國立博物館——出土自天馬塚的金冠（國寶第 188 號）。",
             "location": "慶州國立博物館",
             "atmosphere": "靜謐展廳，單件展品聚焦"
           },

@@ -1564,7 +1564,7 @@
     {
       "id": "atmosphere",
       "section_html_id": null,
-      "component": "TourAtmosphereGallery *(UI 元件名稱，保留原文)* > **備註：** 第 7、12、25 項為程式碼元件名稱（component names），建議在程式碼中保留英文原名，僅在使用者介面顯示的標籤文字才套用中文翻譯。",
+      "component": "TourAtmosphereGallery *(UI 元件名稱，保留原文)*",
       "props": {
         "galleryItems": [
           {
@@ -2042,7 +2042,7 @@
                 "type": "photo",
                 "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
                 "location": "水原 Starfield 圖書館",
-                "caption": "水原 Starfield 圖書館——照片 2 > **備註：** 第 17–20 行為圖片路徑，保留原文不譯。品牌名稱「Starfield」及「COEX」維持英文原名。",
+                "caption": "水原 Starfield 圖書館——照片 2",
                 "alt": "水原星空圖書館 — 相簿圖片 2"
               },
               {
@@ -2121,7 +2121,7 @@
             "theme": "文化遺產村落"
           },
           {
-            "name": "水原星空圖書館 --- **備註：** - **第 16 項**「TourDayFlowSection」為系統元件代碼，保留原文不翻譯。 - **星空圖書館**（별마당 도서관）為水原星際購物中心內的知名地標，採繁中通用譯名。 - **水原華城**為 UNESCO 世界文化遺產，採通用中文正式名稱。",
+            "name": "水原星空圖書館",
             "type": "secondary",
             "theme": "現代韓國"
           },
@@ -2325,7 +2325,7 @@
         ],
         "bookingSupportSteps": [
           {
-            "timing": "立即 > **備註：** 第 15、18、21、24 行為程式碼技術識別符（元件名稱及 CSS 類名），保留原文不譯。",
+            "timing": "立即",
             "title": "即時確認",
             "detail": "含行程摘要的預訂確認通知"
           },

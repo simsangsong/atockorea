@@ -1564,7 +1564,7 @@
     {
       "id": "atmosphere",
       "section_html_id": null,
-      "component": "TourAtmosphereGallery --- **注記：** - **7・12・25番**（`TourTabsNav`、`TourAtAGlance`、`TourAtmosphereGallery`）はUIコンポーネント名のため、原文のまま保持しています。 - 地名は読み仮名を括弧内に併記しました（例：水원→水原（スウォン））。",
+      "component": "TourAtmosphereGallery",
       "props": {
         "galleryItems": [
           {

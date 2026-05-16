@@ -49,10 +49,10 @@
   "headlineLine1": "仁川→首爾 郵輪私人包車",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "419",
+    "amountLabel": "",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 419
+    "salePriceUsd": null
   },
   "hero": {
     "imageUrl": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
@@ -860,7 +860,7 @@
     },
     {
       "id": "customization",
-      "title": "行程客製化及飲食需求 > **備註：** 第 5 行 `bg-sky-50/80` 為 Tailwind CSS 樣式類別名稱，屬於程式碼，保留原文不予翻譯。",
+      "title": "行程客製化及飲食需求",
       "preview": "行程可完全客製化。",
       "content": [
         "行程可完全客製化。",

@@ -46,10 +46,10 @@
   "headlineLine1": "濟州西南",
   "headlineLine2": "漢拿山·Osulloc·涯月",
   "price": {
-    "amountLabel": "59",
-    "originalPriceUsd": 69,
-    "salePriceUsd": 59,
-    "discountPercent": 14,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person"
   },
@@ -1314,7 +1314,7 @@
     {
       "timing": "行程結束後",
       "title": "行程後續支援",
-      "detail": "事後可進一步提供指引與建議。 > **備註：** 第 6、9、12 行為 CSS 樣式類別名稱（`bg-emerald-50/80`、`bg-sky-50/80`、`bg-amber-50/80`），屬於程式碼技術值，保留原文不予翻譯。"
+      "detail": "事後可進一步提供指引與建議。"
     }
   ],
   "staticQuestions": [
@@ -1930,7 +1930,7 @@
             "id": 3,
             "type": "photo",
             "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-            "location": "火山海岸線 > **備註：** `TourTabsNav`、`TourAtAGlance`、`TourAtmosphereGallery` 為 UI 元件名稱，保留原文不譯。",
+            "location": "火山海岸線",
             "atmosphere": "壯觀的玄武岩海岸線",
             "alt": "大浦柱狀節理的玄武岩海崖",
             "caption": "大浦柱狀節理的玄武岩海崖"
@@ -2494,7 +2494,7 @@
           },
           {
             "icon": "route",
-            "title": "以濟州西南部為核心打造 > **備註：** > - 第 8 行（`TourBookingSupportSection`）為程式碼元件名稱，保留原文。 > - 第 29 行（`bg-emerald-50/80`）為 Tailwind CSS 樣式類別，保留原文。",
+            "title": "以濟州西南部為核心打造",
             "description": "專為西南路線設計",
             "iconBg": "bg-sky-50/80"
           },

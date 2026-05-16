@@ -37,6 +37,16 @@ export function isImageUrl(v: unknown): v is string {
  * `enSource` at the same structural path. Non-image strings, numbers, booleans,
  * and structurally-mismatched branches are left as-is.
  *
+ * Three cases the function handles:
+ * 1. Target has an image URL + EN has an image URL → use EN (locale photos
+ *    were auto-generated Unsplash placeholders; EN is the curator).
+ * 2. Target has an empty/missing/null image value + EN has an image URL →
+ *    populate from EN. This lets authoring write image paths only in the EN
+ *    file and have all other locales inherit at load time.
+ * 3. EN has an image URL at a key that does not exist in target at all →
+ *    add it to target. Same intent as case 2; supports "EN-only" authoring
+ *    where the locale JSON simply hasn't been touched to include the field.
+ *
  * The function returns a new object/array tree; the input is not mutated.
  */
 export function overrideImageFieldsFromEn<T>(target: T, enSource: unknown): T {
@@ -53,16 +63,32 @@ export function overrideImageFieldsFromEn<T>(target: T, enSource: unknown): T {
         ? (enSource as Record<string, unknown>)
         : undefined;
     const out: Record<string, unknown> = { ...(target as Record<string, unknown>) };
-    for (const k of Object.keys(target as object)) {
+    const localeKeys = new Set(Object.keys(target as object));
+
+    // Walk locale keys first — overrides (case 1) and fills (case 2).
+    for (const k of localeKeys) {
       const tv = (target as Record<string, unknown>)[k];
       const sv = enObj?.[k];
       if (isImageUrl(tv)) {
         if (isImageUrl(sv)) out[k] = sv;
         // EN doesn't have a value at this path → leave the locale value alone.
+      } else if (tv === "" || tv === null || tv === undefined) {
+        // Empty/missing image slot — populate from EN if EN has one.
+        if (isImageUrl(sv)) out[k] = sv;
       } else if (typeof tv === "object" && tv !== null) {
         out[k] = overrideImageFieldsFromEn(tv, sv);
       }
     }
+
+    // Walk EN-only keys (case 3) — keys present in EN but missing in target.
+    if (enObj) {
+      for (const k of Object.keys(enObj)) {
+        if (localeKeys.has(k)) continue;
+        const sv = enObj[k];
+        if (isImageUrl(sv)) out[k] = sv;
+      }
+    }
+
     return out as T;
   }
 

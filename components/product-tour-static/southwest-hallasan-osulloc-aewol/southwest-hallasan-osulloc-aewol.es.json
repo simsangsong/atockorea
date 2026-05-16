@@ -46,10 +46,10 @@
   "headlineLine1": "Jeju Suroeste",
   "headlineLine2": "Hallasan y Aewol",
   "price": {
-    "amountLabel": "59",
-    "originalPriceUsd": 69,
-    "salePriceUsd": 59,
-    "discountPercent": 14,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person"
   },
@@ -1314,7 +1314,7 @@
     {
       "timing": "Después del tour",
       "title": "Asistencia post-tour",
-      "detail": "Se puede compartir orientación y recomendaciones adicionales al finalizar. > **Nota:** Los elementos **6, 9 y 12** son nombres de clases CSS (`bg-emerald-50/80`, `bg-sky-50/80`, `bg-amber-50/80`) y se han dejado sin traducir por ser valores técnicos de código."
+      "detail": "Se puede compartir orientación y recomendaciones adicionales al finalizar."
     }
   ],
   "staticQuestions": [

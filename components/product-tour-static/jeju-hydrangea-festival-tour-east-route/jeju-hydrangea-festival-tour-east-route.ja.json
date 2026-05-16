@@ -51,10 +51,10 @@
   "headlineLine1": "済州アジサイ祭り・東ルート",
   "headlineLine2": "ツアー",
   "price": {
-    "amountLabel": "59",
-    "originalPriceUsd": 69,
-    "salePriceUsd": 59,
-    "discountPercent": 14,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person"
   },
@@ -2013,7 +2013,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "src": "",
             "alt": "ツアーで訪れる訪問地の風景",
             "caption": "訪問地",
             "location": "",
@@ -2022,7 +2022,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "src": "",
             "alt": "ツアーで訪れる日出ランド・ミチョン溶岩洞窟（閉鎖中の万丈窟の代替地）の風景",
             "caption": "日出ランド・ミチョン溶岩洞窟（閉鎖中の万丈窟の代替地）",
             "location": "",
@@ -2031,7 +2031,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "src": "",
             "alt": "ツアーで訪れる城邑民俗村の伝統石造家屋の風景",
             "caption": "城邑民俗村の伝統石造家屋とユネスコ遺産の雰囲気",
             "location": "",
@@ -2040,7 +2040,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "src": "",
             "alt": "ツアーで訪れる咸徳海水浴場の風景",
             "caption": "済州を代表するビーチの一つ、咸徳海水浴場",
             "location": "",
@@ -2062,7 +2062,7 @@
             "name": "ホテルピックアップ（済州市内）",
             "category": "出発 — 済州市内の標準ピックアップポイント4か所",
             "description": "済州市内の標準ピックアップポイント4か所（Ocean Suites・済州空港・LOTTEシティ・新羅免税店）から順次ピックアップ。少人数制ミニバン、英語対応ガイド付き。",
-            "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+            "image": "",
             "highlights": [
               "済州市内4か所のピックアップポイント",
               "少人数・英語対応ガイド付き"
@@ -2301,7 +2301,7 @@
             "name": "昼食（済州の地元レストラン）",
             "category": "昼食休憩",
             "description": "表善面/城山エリアの地元レストランで昼食（自己負担）。東済州の郷土料理。",
-            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+            "image": "",
             "highlights": [
               "東済州の郷土料理",
               "自己負担"
@@ -2667,7 +2667,7 @@
             "name": "解散（済州市内）",
             "category": "帰路 — 済州市内への解散",
             "description": "1132号線経由で済州市内へ帰路。朝のピックアップポイントへ順次解散。",
-            "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+            "image": "",
             "highlights": [
               "済州市内への帰路・解散"
             ],

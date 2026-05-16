@@ -44,10 +44,10 @@
   "headlineLine1": "Hortensias Jeju Suroeste",
   "headlineLine2": "Tour del Día",
   "price": {
-    "amountLabel": "59",
-    "originalPriceUsd": 69,
-    "salePriceUsd": 59,
-    "discountPercent": 14,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person"
   },
@@ -1147,7 +1147,7 @@
       "icon": "check-circle",
       "title": "Guía local certificado",
       "description": "Guía con licencia de Jeju",
-      "iconBg": "bg-emerald-50/80 > **Nota:** La línea 30 (`bg-emerald-50/80`) es una clase de utilidad CSS (Tailwind) y se ha dejado sin traducir, ya que es código técnico, no contenido textual.",
+      "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600"
     },
     {
@@ -1211,7 +1211,7 @@
     {
       "id": "rain",
       "question": "¿Qué pasa si llueve?",
-      "answer": "Lluvia ligera — operamos con normalidad (las hortensias en realidad se fotografían de manera hermosa con lluvia suave). Lluvia intensa — ofrecemos reprogramación gratuita dentro de la ventana de temporada. > **Nota:** Las líneas **3** y **6** (`bg-pink-50/80` y `bg-sky-50/80`) son clases de utilidad CSS (Tailwind CSS) y se han mantenido tal cual, ya que son código técnico y no requieren traducción."
+      "answer": "Lluvia ligera — operamos con normalidad (las hortensias en realidad se fotografían de manera hermosa con lluvia suave). Lluvia intensa — ofrecemos reprogramación gratuita dentro de la ventana de temporada."
     },
     {
       "id": "two-hydrangea-stops",
@@ -2540,7 +2540,7 @@
                   "detail": "Seis paradas variadas en 9 horas: el ritmo es más intenso que east-small. Mantén la energía con una hidratación constante."
                 },
                 {
-                  "label": "Algunas paradas tienen entrada > **Nota:** Los elementos **2, 5, 11, 19 y 27** son nombres de clases CSS o de componentes técnicos; se han dejado sin traducir para preservar su funcionalidad en el código.",
+                  "label": "Algunas paradas tienen entrada",
                   "detail": "Las entradas al Parque Hallim (15.000 KRW) y a Camellia Hill (10.000 KRW) se pagan en el lugar, no están incluidas en el precio del tour. Presupuesta aprox. 30.000 KRW por persona para todas las entradas (Jusangjeolli 2.000 + Cheonjeyeon 2.500 completan el total)."
                 },
                 {

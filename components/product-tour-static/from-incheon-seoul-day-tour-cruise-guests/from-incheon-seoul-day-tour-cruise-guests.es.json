@@ -45,12 +45,12 @@
   "headlineLine1": "Incheon→Seúl",
   "headlineLine2": "Tour de Crucero",
   "price": {
-    "amountLabel": "69",
+    "amountLabel": "",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 69,
-    "originalPriceUsd": 76,
-    "discountPercent": 9
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
@@ -954,7 +954,7 @@
     {
       "id": "q-hanbok",
       "question": "¿Dónde alquilamos hanbok?",
-      "answer": "La mayoría de las tiendas de alquiler de hanbok se concentran cerca de la puerta Gwanghwamun del Gyeongbokgung y alrededor de la estación Anguk — el distrito del palacio, no dentro de Bukchon como sugieren algunas guías. El alquiler estándar de 4 horas cuesta ₩15.000–₩25.000 (disponibles alquileres más largos); las tiendas suelen incluir peinado. El truco del hanbok: quienes lleven el conjunto completo obtienen entrada GRATUITA a los cuatro principales palacios reales, por lo que usarlo ahorra los ₩3.000 de admisión. El alquiler requiere un desvío de ≈30 minutos al inicio del día que no está incluido en la ruta estándar — informe al guía en el momento de la reserva si desea añadirlo. > **Nota:** Los elementos **2, 5 y 8** son clases de estilo CSS (Tailwind) y se han conservado sin traducir tal como aparecen en el código."
+      "answer": "La mayoría de las tiendas de alquiler de hanbok se concentran cerca de la puerta Gwanghwamun del Gyeongbokgung y alrededor de la estación Anguk — el distrito del palacio, no dentro de Bukchon como sugieren algunas guías. El alquiler estándar de 4 horas cuesta ₩15.000–₩25.000 (disponibles alquileres más largos); las tiendas suelen incluir peinado. El truco del hanbok: quienes lleven el conjunto completo obtienen entrada GRATUITA a los cuatro principales palacios reales, por lo que usarlo ahorra los ₩3.000 de admisión. El alquiler requiere un desvío de ≈30 minutos al inicio del día que no está incluido en la ruta estándar — informe al guía en el momento de la reserva si desea añadirlo."
     },
     {
       "id": "q-cruise-customize",

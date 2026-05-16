@@ -46,10 +46,10 @@
   "headlineLine1": "済州南西部",
   "headlineLine2": "漢拏山・O'sulloc・涯月",
   "price": {
-    "amountLabel": "59",
-    "originalPriceUsd": 69,
-    "salePriceUsd": 59,
-    "discountPercent": 14,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person"
   },
@@ -1314,7 +1314,7 @@
     {
       "timing": "ツアー終了後",
       "title": "ツアー後のサポート",
-      "detail": "ツアー終了後も、追加のガイダンスやおすすめ情報を共有できます。 > **注記：** 6・9・12（`bg-emerald-50/80`・`bg-sky-50/80`・`bg-amber-50/80`）はCSSクラス名のため、原文のまま維持しています。"
+      "detail": "ツアー終了後も、追加のガイダンスやおすすめ情報を共有できます。"
     }
   ],
   "staticQuestions": [
@@ -1930,7 +1930,7 @@
             "id": 3,
             "type": "photo",
             "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-            "location": "火山性海岸線 > **注記：** 3・8・21番（`TourTabsNav`・`TourAtAGlance`・`TourAtmosphereGallery`）はUIコンポーネント名のため、原文のまま保持しています。",
+            "location": "火山性海岸線",
             "atmosphere": "力強い玄武岩の海岸線",
             "alt": "大浦柱状節理の玄武岩の海食崖",
             "caption": "大浦柱状節理の玄武岩の海食崖"

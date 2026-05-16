@@ -50,10 +50,10 @@
   "headlineLine1": "Jeju Oeste-Sur",
   "headlineLine2": "Auténtico",
   "price": {
-    "amountLabel": "59",
-    "originalPriceUsd": 69,
-    "salePriceUsd": 59,
-    "discountPercent": 14,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person"
   },
@@ -1437,7 +1437,7 @@
     },
     {
       "id": "q3",
-      "question": "¿Puedo pasar toda la tarde en Hyeopjae? --- > **Nota:** Las líneas 1, 4 y 7 son clases de utilidad de Tailwind CSS (nombres técnicos) y no se traducen.",
+      "question": "¿Puedo pasar toda la tarde en Hyeopjae?",
       "answer": "No — el formato es un circuito fijo con aproximadamente 45 minutos en Hyeopjae. Si desea un día flexible de cafeterías y playa, un conductor-guía privado es la mejor opción. Este producto es para visitantes que quieren tanto las paradas de patrimonio como un vistazo a la escena de cafeterías sin tener que elegir entre ellas."
     },
     {

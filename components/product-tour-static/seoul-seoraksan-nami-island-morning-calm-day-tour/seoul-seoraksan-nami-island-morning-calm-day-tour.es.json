@@ -48,12 +48,12 @@
   "headlineLine1": "Tour de un día por Seúl",
   "headlineLine2": "Seoraksan + Nami + Morning Calm",
   "price": {
-    "amountLabel": "59",
+    "amountLabel": "",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 59,
-    "originalPriceUsd": 82,
-    "discountPercent": 28
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
@@ -534,7 +534,7 @@
             "detail": "El nivel del Templo Sinheungsa y el circuito opcional de Heundeulbawi tienen escaleras. El paseo Tongildaebul + Sinheungsa es llano y accesible; el ascenso en teleférico es en telesilla (sin escaleras en el propio teleférico), pero la plataforma de Gwongeumseong tiene escalones rocosos en la cima."
           },
           {
-            "label": "El teleférico no se puede reservar con antelación > **Nota:** Las cadenas de clase CSS (`bg-amber-50/80`, `bg-pink-50/80`, `bg-sky-50/80`) se han conservado tal cual en las líneas 6, 14 y 22, ya que son identificadores de código y no deben traducirse.",
+            "label": "El teleférico no se puede reservar con antelación",
             "detail": "Las entradas para el teleférico de Seorak se adquieren únicamente en el lugar y pueden generar colas de 1 a 2 horas durante el pico de octubre. Si el cielo está nublado o las colas son largas, la alternativa recomendada es el paseo junto al arroyo de Biseondae (llano, pavimentado, ~90 min de ida y vuelta), que se adapta al mismo presupuesto de 3 horas."
           },
           {

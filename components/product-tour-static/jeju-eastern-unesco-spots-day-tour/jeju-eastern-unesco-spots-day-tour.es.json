@@ -50,10 +50,10 @@
   "headlineLine1": "Jeju Este",
   "headlineLine2": "UNESCO Día",
   "price": {
-    "amountLabel": "59",
-    "originalPriceUsd": 69,
-    "salePriceUsd": 59,
-    "discountPercent": 14,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person"
   },
@@ -2051,7 +2051,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "src": "",
             "alt": "Imagen de Aldea Seongeup — ciudad amurallada joseonesa fundada en 1423",
             "caption": "Aldea Seongeup — ciudad amurallada joseonesa fundada en 1423",
             "location": "Seongeup, Pyoseon-myeon, Seogwipo",
@@ -2060,7 +2060,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "src": "",
             "alt": "Imagen de Cueva Micheon en Ilchul Land — tubo de lava alternativo al Manjanggul",
             "caption": "Cueva Micheon en Ilchul Land — tubo de lava alternativo al Manjanggul",
             "location": "Ilchul Land, Pyoseon-myeon",
@@ -2069,7 +2069,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "src": "",
             "alt": "Imagen de Seongsan Ilchulbong — Patrimonio Natural UNESCO",
             "caption": "Seongsan Ilchulbong — Patrimonio Natural UNESCO, el Pico del Amanecer",
             "location": "Seongsan Ilchulbong, Patrimonio Natural UNESCO, Jeju Este",
@@ -2078,7 +2078,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "src": "",
             "alt": "Imagen de Museo Haenyeo — Patrimonio Cultural Inmaterial UNESCO 2016",
             "caption": "Museo Haenyeo — Patrimonio Cultural Inmaterial UNESCO 2016",
             "location": "Hado-ri, Gujwa-eup, Jeju Norte",
@@ -2100,7 +2100,7 @@
             "name": "Recogida (4 puntos en Ciudad de Jeju)",
             "category": "Salida — 4 puntos de recogida en Ciudad de Jeju",
             "description": "La recogida se concentra en cuatro puntos centrales de Ciudad de Jeju para evitar desplazamientos innecesarios por la mañana: **Aeropuerto Internacional de Jeju** para huéspedes con llegadas ese mismo día u hoteles cerca del aeropuerto; **Ayuntamiento de Jeju**, zona de hoteles de Yongdong/Nohyeon/casco antiguo; **Hagwi-dong**, punto más occidental antes de partir hacia el este; **Mercado Tradicional Dongmun**, zona de hoteles de la costa este de Ciudad de Jeju. Orden de recogida: Hagwi → Aeropuerto → Ayuntamiento → Dongmun → Ruta 1132 en dirección este hacia Hamdeok. Minibús de **grupo pequeño (máx. aprox. 14 personas)** con guía de habla inglesa. Se reparte **tarjeta de itinerario bilingüe** en la primera parada.",
-            "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+            "image": "",
             "highlights": [
               "**4 puntos de recogida** en Ciudad de Jeju — Aeropuerto, Ayuntamiento, Hagwi, Dongmun",
               "Minibús de grupo pequeño (máx. aprox. 14 personas), guía certificado en inglés",
@@ -2521,7 +2521,7 @@
             "name": "Almuerzo (restaurante local de Jeju)",
             "category": "Pausa para comer — Zona del puerto de Seongsan-eup",
             "description": "**Pausa de 60 minutos** entre Ilchul Land y Seongsan Ilchulbong en el cinturón de restaurantes junto al puerto de Seongsan-eup, que recibe descargas diarias de pescado fresco. Rotación habitual: **mulhoe** en verano; **haemul jeongsik** en el resto de estaciones. Precio orientativo: ≈ ₩15.000 por persona. El guía recomienda el restaurante del día y ayuda con restricciones alimentarias. **Almuerzo no incluido — pago directo.**",
-            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+            "image": "",
             "highlights": [
               "**Mulhoe** — sopa fría de pescado crudo, especialidad del este de Jeju en verano",
               "**Haemul jeongsik** — menú completo de marisco fresco",
@@ -2727,7 +2727,7 @@
             "name": "Regreso (2 puntos + Mercado Dongmun)",
             "category": "Regreso — Ciudad de Jeju con parada opcional en Mercado Dongmun",
             "description": "**El regreso invierte el orden de las recogidas de la mañana**, con parada opcional en el Mercado Dongmun al final del día: **Mercado Tradicional Dongmun** se encuentra a ~25 min en autobús desde el Museo Haenyeo y ofrece el mercado nocturno más popular de Jeju, con puestos de comida hasta las 23:00 h aproximadamente. Especialidades del mercado: halabong (mandarinas de Jeju), galletas de gambas (saeu-pang), tteok (pasteles de arroz) y zumos de cítricos. Los huéspedes que prefieran volver directamente al hotel o al aeropuerto son dejados en sus puntos de recogida habituales. Hora estimada de llegada al aeropuerto: **18:00-18:30 h** según el tráfico.",
-            "image": "https://images.unsplash.com/photo-1549144511-f099e773c147",
+            "image": "",
             "highlights": [
               "Regreso a Ciudad de Jeju con parada opcional en **Mercado Tradicional Dongmun**",
               "Dongmun: mercado nocturno con puestos de comida hasta las 23:00 h",

@@ -741,7 +741,7 @@
           "id": 2,
           "type": "photo",
           "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
-          "location": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) > **Nota:** Las rutas de archivo (líneas 18–21) se han dejado sin traducir, ya que son rutas de imagen técnicas que no deben modificarse.",
+          "location": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo)",
           "caption": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — foto 2",
           "alt": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — imagen de galería 2"
         },
@@ -1848,7 +1848,7 @@
         "headlineLine1": "Jeju Sur UNESCO **Notes:** - **#24 `TourHeroSection`** — kept as-is (UI component/technical identifier, not translatable). - **#25** — \"South\" translated to \"Sur\"; proper nouns (Jeju, UNESCO) left unchanged.",
         "headlineLine2": "Tour de un día",
         "hero": {
-          "imageUrl": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1600",
+          "imageUrl": "",
           "imagePosition": "center 35%",
           "tagline": "El tour introductorio de Jeju con más reseñas — 4,9/5 en 648 reseñas, todas las entradas incluidas",
           "pills": [
@@ -1942,7 +1942,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "src": "",
             "alt": "**Jusangjeolli Cliff** — columnas volcánicas hexagonales en la costa sur de Jeju",
             "caption": "**Jusangjeolli Cliff** — columnas volcánicas hexagonales en la costa sur de Jeju",
             "location": "",
@@ -1951,7 +1951,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1577741314755-048d8525d31e?w=1200",
+            "src": "",
             "alt": "Sendero Eoseungsaengak a lo largo de Hallasan, la reserva de la biosfera de la UNESCO",
             "caption": "Sendero Eoseungsaengak a lo largo de Hallasan, la reserva de la biosfera de la UNESCO",
             "location": "",
@@ -1960,7 +1960,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "src": "",
             "alt": "**Camellia Hill** — más de 6.000 árboles de 250 variedades",
             "caption": "**Camellia Hill** — más de 6.000 árboles de 250 variedades",
             "location": "",
@@ -1969,7 +1969,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "src": "",
             "alt": "Cascadas Cheonjeyeon y el Puente Seonimgyo de las Siete Ninfas",
             "caption": "Cascadas Cheonjeyeon y el Puente Seonimgyo de las Siete Ninfas",
             "location": "",
@@ -1978,7 +1978,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "src": "",
             "alt": "Museo del Té O'sulloc y los campos de té verde circundantes",
             "caption": "Museo del Té O'sulloc y los campos de té verde circundantes",
             "location": "",
@@ -2000,7 +2000,7 @@
             "name": "Recogida (4 puntos en toda la ciudad de Jeju)",
             "category": "Recogida — Secuencia de hoteles/centros de la ciudad de Jeju",
             "description": "**La recogida está consolidada en cuatro puntos centrales de la ciudad de Jeju** para minimizar los recorridos cruzados matutinos: **Aeropuerto Internacional de Jeju (제주공항)** para huéspedes con llegadas el mismo día; **Ayuntamiento de Jeju (제주시청)** para el conjunto de hoteles de Yeon-dong / Nohyeong / Casco Antiguo; **Hagwi-dong (하귀동)** como punto de recogida más occidental antes de dirigirse al sur; y **Mercado Tradicional Dongmun (동문시장)** como punto de recogida opcional al este de la ciudad de Jeju, cerca del paseo marítimo de Tapdong. La secuencia es Hagwi → Aeropuerto → Ayuntamiento → Dongmun → Ruta 1100 hacia el sur en dirección a Hallasan. El minibús es de **grupos pequeños (máx. ~14 personas)** con guía de habla inglesa. **Tarjeta de itinerario impresa bilingüe** distribuida en el punto de recogida, con resumen meteorológico en la primera parada. La **verificación de cierre de la Ruta 1100** se realiza antes de la salida — si está cerrada por nieve/hielo, la parada en Hallasan se sustituye por una alternativa a menor altitud (generalmente Mysterious Road o el Museo Nacional de Jeju).",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+            "image": "",
             "highlights": [
               "4 puntos de recogida secuenciales",
               "Recogida adaptada para equipaje de aeropuerto",
@@ -2184,7 +2184,7 @@
             "name": "Almuerzo — Cocina local del sur de Jeju",
             "category": "Pausa de mediodía — Gastronomía local de Seogwipo / Andeok",
             "description": "**Pausa de 60 minutos entre Camellia Hill y las Cascadas de Cheonjeyeon** — la costa sur de Jeju es una de las principales zonas pesqueras de Corea, y el corredor Andeok-Seogwipo se encuentra a 10–15 min de la siguiente parada. Rotación habitual: **galchi-jorim (갈치조림, pez sable estofado)** — Jeju es el principal puerto de desembarco de pez sable de Corea, y la costa sur ofrece las capturas más frescas; **mulhoe (물회, sopa fría de pescado crudo)** en verano (junio–septiembre); o **heuk-doeji gui (흑돼지구이, barbacoa de cerdo negro de Jeju)** durante todo el año (raza patrimonial designada **Patrimonio Cultural Material n.º 5, 2015**). **Alternativa vegetariana**: bibim-guksu con verduras de temporada de Jeju. **Opciones aptas para halal** disponibles en uno de los establecimientos de la rotación — informar en el punto de recogida. El restaurante del almuerzo se encuentra a **10 min en autobús de la entrada a las Cascadas de Cheonjeyeon**.",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+            "image": "",
             "highlights": [
               "Cerdo negro heuk-dwaeji",
               "Opciones vegetarianas / veganas / halal",
@@ -2618,7 +2618,7 @@
             "name": "Punto de bajada (5 puntos en Jeju City)",
             "category": "Punto de bajada — Secuencia del centro de Jeju City",
             "description": "**El punto de bajada refleja la recogida matutina con una opción adicional**: Mercado Tradicional de Dongmun → Ayuntamiento de Jeju City → Hagwi-dong → Aeropuerto Internacional de Jeju, con una parada opcional antes del Ayuntamiento en **Yeon-dong / Nohyeong** para los huéspedes de esas zonas hoteleras (5.º punto de bajada). Hora estimada de llegada: Dongmun ~18:30, Ayuntamiento ~18:40, Yeon-dong ~18:45, Hagwi ~18:55, Aeropuerto ~19:05. **Los vuelos vespertinos del mismo día desde JIA** suelen ser viables (última salida ~21:30). Wi-Fi disponible en el autocar durante todo el trayecto. El conductor coordina cualquier ajuste de tienda/hotel indicado por los huéspedes en ruta.",
-            "image": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=800",
+            "image": "",
             "highlights": [
               "5 opciones de punto de bajada",
               "Bajada con visita libre en el Mercado de Dongmun",

@@ -47,12 +47,12 @@
   "headlineLine1": "釜山発・慶州ユネスコ遺産ツアー",
   "headlineLine2": "ツアー",
   "price": {
-    "amountLabel": "39",
+    "amountLabel": "",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 39,
-    "originalPriceUsd": 50,
-    "discountPercent": 22
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
@@ -1635,7 +1635,7 @@
             "description": "釜山地下鉄1号線沿いの順次ピックアップ：釜山駅4番出口（08:10）、西面駅4番出口（08:30）、海雲台駅5番出口（09:10）。海雲台でのピックアップは、車両が慶州へ北上する前に東方向へ迂回するため、釜山駅出発比で約30分余計にかかります。お宿に最も近い出口をお選びください。",
             "timeUsed": [
               "運営上の案内（ピックアップ／食事／移動／帰着）",
-              "簡単な案内または休憩 --- **注記：** - 項目3・24（`TourAtmosphereGallery` / `TourTimelineSection`）はUIコンポーネント名のため原文のまま保持しました。 - 「ハノク（hanok）」は「韓屋」と訳しています。 - 「アホプサン（Ahopsan）」はカタカナ表記としています。"
+              "簡単な案内または休憩"
             ],
             "whyOnRoute": "釜山中心部全域のゲストがタクシー代をかけずに集合バンまで来られるよう、3か所のピックアップポイントを設けています。",
             "_poi_meta": {

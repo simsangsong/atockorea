@@ -46,12 +46,12 @@
   "headlineLine1": "부산 핵심 명소 일일 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "29",
+    "amountLabel": "",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 29,
-    "originalPriceUsd": 41,
-    "discountPercent": 29
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
@@ -1519,7 +1519,7 @@
           },
           {
             "icon": "map-pin",
-            "label": "지역 > **참고:** 항목 7(`TourHeroSection`), 15(`TourTabsNav`), 21(`TourAtAGlance`), 11(`busan`)은 UI 컴포넌트명 또는 코드 슬러그로 원문 그대로 유지했습니다.",
+            "label": "지역",
             "value": "부산 (해운대 지역 + 부산 중심부)"
           },
           {

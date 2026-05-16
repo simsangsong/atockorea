@@ -406,7 +406,7 @@
           "type": "photo",
           "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
           "location": "El Jardín de la Calma Matutina",
-          "caption": "El Jardín de la Calma Matutina — foto 3 > **Nota:** Las líneas 13–17 son rutas de archivos de imagen y se han conservado sin cambios, ya que son valores técnicos que no se traducen.",
+          "caption": "El Jardín de la Calma Matutina — foto 3",
           "alt": "El Jardín de la Calma Matutina — imagen de galería 3"
         },
         {
@@ -1478,7 +1478,7 @@
                 "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
                 "location": "El Jardín de la Calma Matutina",
                 "caption": "El Jardín de la Calma Matutina — foto 1",
-                "alt": "El Jardín de la Calma Matutina — imagen de galería 1 > **Nota:** Las rutas de imagen (líneas 1, 19–22) se han dejado sin traducir, ya que son rutas de archivo técnicas que no deben modificarse."
+                "alt": "El Jardín de la Calma Matutina — imagen de galería 1"
               },
               {
                 "id": 2,
@@ -1674,7 +1674,7 @@
                   "detail": "Puede permanecer más tiempo en la parada que más le guste —generalmente la Isla Nami o Morning Calm— en lugar de estar sujeto al horario de regreso fijo de un grupo."
                 },
                 {
-                  "label": "Más cómodo con padres e hijos --- > **Nota:** Los ítems 2, 6, 10, 20 son clases de utilidad CSS (Tailwind) y el ítem 13 es un nombre de componente de código; se mantienen sin traducir para preservar su funcionalidad técnica.",
+                  "label": "Más cómodo con padres e hijos",
                   "detail": "El servicio de recogida puerta a puerta elimina los transbordos de metro a primera hora de la mañana y el estrés con los shuttles nocturnos, lo que hace que el recorrido sea significativamente más fácil para grupos multigeneracionales."
                 }
               ]
@@ -1889,7 +1889,7 @@
           {
             "timing": "**Inmediatamente**",
             "title": "**Confirmación instantánea**",
-            "detail": "**Confirmación de reserva con resumen del itinerario** > **Nota:** Los valores de clase CSS (`bg-summer`, `bg-autumn`, `bg-winter`, `bg-emerald-50/80`, `bg-sky-50/80`, `bg-amber-50/80`) y el nombre de componente (`TourBookingSupportSection`) se mantienen sin traducir, ya que son identificadores de código."
+            "detail": "**Confirmación de reserva con resumen del itinerario**"
           },
           {
             "timing": "12 horas antes",

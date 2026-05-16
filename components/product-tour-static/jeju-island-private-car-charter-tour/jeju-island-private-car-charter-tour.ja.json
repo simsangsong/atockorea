@@ -44,12 +44,12 @@
   "headlineLine1": "済州プライベートカーチャーター",
   "headlineLine2": "ツアー",
   "price": {
-    "amountLabel": "249",
+    "amountLabel": "",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 249,
-    "originalPriceUsd": 249,
-    "discountPercent": 0
+    "salePriceUsd": null,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
@@ -473,7 +473,7 @@
       {
         "title": "東・西・南ルートの選び方",
         "icon": "map",
-        "iconBg": "bg-amber-50/80 > **注記**：22番（`bg-sky-50/80`）と30番（`bg-amber-50/80`）はTailwind CSSのクラス名のため、翻訳せずそのまま記載しています。",
+        "iconBg": "bg-amber-50/80",
         "iconColor": "text-amber-600",
         "items": [
           {
@@ -984,7 +984,7 @@
         "headlineLine1": "済州プライベートカーチャーター",
         "headlineLine2": "ツアー",
         "hero": {
-          "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+          "imageUrl": "",
           "imagePosition": "center 45%",
           "tagline": "城山日出峰から協才海岸、天地淵瀑布へ―認定ドライバーガイドと巡る、プライベートな9時間。ルートもペースも、すべてあなた次第。",
           "pills": [
@@ -1079,7 +1079,7 @@
           {
             "id": "g1",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "src": "",
             "alt": "城山日出峰（ソンサンイルチュルボン）の日の出スポット",
             "caption": "城山日出峰（ソンサンイルチュルボン）の日の出スポット",
             "location": "城山日出峰（ソンサンイルチュルボン）",
@@ -1088,7 +1088,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/6a754887-ab09-410f-ad9d-9340571e4248.webp",
+            "src": "",
             "alt": "柱状節理（チュサンジョルリ）玄武岩の断崖",
             "caption": "柱状節理（チュサンジョルリ）玄武岩の断崖",
             "location": "柱状節理（チュサンジョルリ）の断崖",
@@ -1097,7 +1097,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/27/77cf6bb2-4d0d-4f46-8cfa-3f527a4d06b3.webp",
+            "src": "",
             "alt": "ヒョプジェビーチ（西済州）",
             "caption": "ヒョプジェビーチ（西済州）",
             "location": "ヒョプジェビーチ",
@@ -1106,7 +1106,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202110/20/003f420c-6efe-41e9-93b7-00fe6ac5e83b.webp",
+            "src": "",
             "alt": "オスルロック茶博物館とお茶畑",
             "caption": "オスルロック茶博物館とお茶畑",
             "location": "オスルロックのお茶畑",
@@ -1115,7 +1115,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://api.cdn.visitjeju.net/photomng/imgpath/202410/15/fb2d2739-5e8e-4a87-9d1d-0281d95efeb7.webp",
+            "src": "",
             "alt": "西帰浦（ソグィポ）の天地淵瀑布（チョンジヨンの滝）",
             "caption": "西帰浦（ソグィポ）の天地淵瀑布（チョンジヨンの滝）",
             "location": "天地淵瀑布（チョンジヨンの滝）",
@@ -1137,7 +1137,7 @@
             "name": "東ルート：ユネスコ遺産＆韓流ドラマの海岸",
             "category": "城山（ソンサン）、牛島（ウド）、万丈窟（マンジャングル）、渉地コジ（ソプジコジ）",
             "description": "最も観光名所が集中したルートで、済州島を代表するユネスコ遺産と韓流ドラマの舞台を網羅。主な立ち寄り先は、城山日出峰（ユネスコ日の出峰）、牛島（フェリーでアクセスするビーチの島）、万丈窟溶岩洞窟（ユネスコ洞窟）、渉地コジ（ドラマで有名な海岸の岬）、城邑民俗村、咸徳ビーチなど。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "",
             "highlights": [
               "城山日出峰（ソンサンイルチュルボン）：ユネスコ世界自然遺産、済州島随一の日の出スポット",
               "牛島（ウド）：フェリーでアクセスする島、白砂のビーチと灯台の絶景",
@@ -1180,7 +1180,7 @@
             "name": "西ルート：ビーチ・お茶＆カフェの海岸",
             "category": "協財（ヒョプジェ）、翰林公園（ハルリムパーク）、オソルロック、愛月（エウォル）",
             "description": "最もフォトジェニックでのんびりとしたルートです。主なスポットには、協財ビーチ（済州島を代表するエメラルドブルーの海岸）、翰林公園（亜熱帯庭園と溶岩洞窟）、オソルロック茶博物館（茶畑とカフェ）、愛月カフェストリート（夕暮れの海岸沿いのカフェ）が含まれます。カップルや写真愛好家に最適です。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "",
             "highlights": [
               "協財ビーチ：エメラルドグリーンの海、白い砂浜、飛揚島（ビヤンド）の眺め",
               "翰林公園：2つの溶岩洞窟を擁する亜熱帯庭園",
@@ -1223,7 +1223,7 @@
             "name": "南コース：滝と火山海岸",
             "category": "天地淵（チョンジヨン）、柱状節理（チュサンジョルリ）、山房山（サンバンサン）、オルレ市場",
             "description": "最も景観がドラマチックなコースです。主な立ち寄り先は、天地淵の滝（森の滝）、柱状節理帯（玄武岩柱状の海岸）、薬泉寺（東アジア最大級の寺院のひとつ）、山房山（海の眺めが広がる火山ドーム）、正房瀑布（アジアで珍しい海に直接落ちる滝）、西帰浦オルレ市場などです",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
+            "image": "",
             "highlights": [
               "天地淵の滝：西帰浦を代表する森の滝",
               "柱状節理帯：南海岸に連なる六角形の玄武岩柱",
@@ -1266,7 +1266,7 @@
             "name": "カスタムルート：自分だけの1日を作ろう",
             "category": "あなた自身の旅程をお送りください",
             "description": "3つのおすすめルート以外にも、立ち寄りスポットを自由に組み合わせたり、ご自身の旅程をお送りいただくことができます。追加可能なスポットには、済州水族館プラネット、エコランドテーマパーク、サングンブリクレーター、ハムドクビーチ、カメリアヒル、テディベアサファリ、西帰浦潜水艦（文島水中ツアー）、イルカヨットツアー、ソンアクサン、カフェ・ザ・クリフ、ナンタショーなどがあります。",
-            "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202311/22/c42559a5-c909-4603-ae16-24c2e03893a0.webp",
+            "image": "",
             "highlights": [
               "時間が許せば、東海岸のユネスコスポットと西海岸のお茶畑を組み合わせることもできます",
               "どのルートにも海女（ヘニョ）の海鮮ランチを追加できます",
@@ -1398,7 +1398,7 @@
                 },
                 {
                   "label": "ドアツードアの快適な移動",
-                  "detail": "ホテル送迎なので、空港周辺のシャトルも、夜遅いバスのストレスも、乗り換えの際の荷物移動も不要です。 --- **注記：** - **6, 10, 14, 24**（`bg-sky-50/70` など）はTailwind CSSのクラス名のため、翻訳せずそのまま保持しました。 - **4, 8, 12**は数字のためそのまま保持しました。 - **17**（`TourFitSection`）はコンポーネント名のためそのまま保持しました。"
+                  "detail": "ホテル送迎なので、空港周辺のシャトルも、夜遅いバスのストレスも、乗り換えの際の荷物移動も不要です。"
                 }
               ]
             },
@@ -1594,7 +1594,7 @@
           {
             "icon": "route",
             "title": "ルートスペシャリスト",
-            "description": "画一的なルートではなく、丁寧に調整されたオリジナルの旅程 > **注記：** 技術識別子（`bg-spring`、`bg-summer`、`bg-autumn`、`bg-winter`、`bg-emerald-50/80`、`TourBookingSupportSection`）はコード上の値のため、原文のまま維持しています。",
+            "description": "画一的なルートではなく、丁寧に調整されたオリジナルの旅程",
             "iconBg": "bg-sky-50/80 *(CSSクラス名のため原文のまま)*",
             "iconColor": "text-sky-600"
           },

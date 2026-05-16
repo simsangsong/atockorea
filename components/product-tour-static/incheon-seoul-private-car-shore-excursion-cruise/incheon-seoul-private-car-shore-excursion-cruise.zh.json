@@ -49,10 +49,10 @@
   "headlineLine1": "仁川→首尔 邮轮私人包车",
   "headlineLine2": "一日游",
   "price": {
-    "amountLabel": "419",
+    "amountLabel": "",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 419
+    "salePriceUsd": null
   },
   "hero": {
     "imageUrl": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
@@ -860,7 +860,7 @@
     },
     {
       "id": "customization",
-      "title": "定制化服务与饮食需求 --- **译注：** - 第5条 `bg-sky-50/80` 为 Tailwind CSS 样式类名，属技术代码，保留原文不译。 - 第20、21条原文相同，译文一致。 - 第25、26条原文相同，译文一致。",
+      "title": "定制化服务与饮食需求",
       "preview": "行程可完全定制。",
       "content": [
         "行程可完全定制。",

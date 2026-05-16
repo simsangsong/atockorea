@@ -1830,7 +1830,7 @@
         "headlineLine1": "Jeju Southwest",
         "headlineLine2": "Hallasan, O'Sulloc & Aewol",
         "hero": {
-          "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=80",
+          "imageUrl": "",
           "imagePosition": "center 35%",
           "tagline": "A short Hallasan walk, volcanic cliffs, a waterfall trail, tea fields, and a relaxed Aewol finish.",
           "pills": [
@@ -1921,7 +1921,7 @@
           {
             "id": 1,
             "type": "video",
-            "src": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&q=80",
+            "src": "",
             "location": "Overall Route",
             "atmosphere": "A full-day view of how the route flows",
             "alt": "Overall atmosphere of the Jeju southwest route",
@@ -1930,7 +1930,7 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "src": "",
             "location": "Hallasan Opening Stop",
             "atmosphere": "Fresh mountain air",
             "alt": "Hallasan Eoseungsaengak trail",
@@ -1939,7 +1939,7 @@
           {
             "id": 3,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "src": "",
             "location": "Volcanic Coastline",
             "atmosphere": "A powerful basalt shoreline",
             "alt": "Basalt sea cliffs at Daepo Jusangjeolli",
@@ -1948,7 +1948,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "src": "",
             "location": "Forest Trail and Waterfall",
             "atmosphere": "A cooler, calmer middle section",
             "alt": "Forest trail at Cheonjeyeon Waterfall",
@@ -1957,7 +1957,7 @@
           {
             "id": 5,
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+            "src": "",
             "location": "Tea Fields Break",
             "atmosphere": "Open green scenery with a softer mood",
             "alt": "Atmosphere around O’Sulloc Tea Museum and the tea fields",
@@ -1966,7 +1966,7 @@
           {
             "id": 6,
             "type": "video",
-            "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+            "src": "",
             "location": "Aewol Coastal Finale",
             "atmosphere": "A relaxed close to the day",
             "alt": "Aewol Cafe Street on the coast",
@@ -1987,7 +1987,7 @@
             "name": "Hallasan Eoseungsaengak",
             "category": "Short Hallasan Trail",
             "description": "The day starts at Hallasan while the air is at its freshest and the group still has full energy. Eoseungsaengak is one of the more approachable Hallasan walks, giving you a real sense of starting the day in Jeju’s mountains without turning the tour into a full-scale hike.",
-            "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+            "image": "",
             "highlights": [
               "A short Hallasan walk that still feels rewarding",
               "Open views toward Jeju City, oreum scenery, and Hallasan’s upper slopes",
@@ -2023,7 +2023,7 @@
             "name": "Daepo Jusangjeolli Cliff",
             "category": "Basalt Coastline",
             "description": "After starting at Hallasan, the view opens sharply to the sea. Daepo Jusangjeolli is a dramatic basalt cliff where volcanic rock meets the waves, and it delivers the day’s first major coastal highlight.",
-            "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
+            "image": "",
             "highlights": [
               "Jeju’s signature hexagonal basalt columns",
               "A stronger coastal contrast because it follows the mountain section",
@@ -2059,7 +2059,7 @@
             "name": "Lunch",
             "category": "Midday Reset",
             "description": "Lunch acts as the reset point between the more dramatic south-coast scenery of the morning and the softer tea-field-and-cafe tone of the afternoon. After the early walking sections, it helps the second half feel noticeably more comfortable.",
-            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+            "image": "",
             "highlights": [
               "A natural reset after Hallasan and Jusangjeolli",
               "Good pace control for groups with a wide age range",
@@ -2095,7 +2095,7 @@
             "name": "Cheonjeyeon Waterfall",
             "category": "Waterfall and Forest Walk",
             "description": "After the open coastline, Cheonjeyeon adds a cooler, greener layer to the route. Bridges, forest paths, and waterfall viewpoints create a softer change of tone before the route continues toward the tea fields and Aewol.",
-            "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            "image": "",
             "highlights": [
               "A shaded and calmer waterfall stop",
               "A change in rhythm created by bridges and forest paths",
@@ -2131,7 +2131,7 @@
             "name": "O’Sulloc Tea Museum",
             "category": "Tea Fields and Culture Stop",
             "description": "After the waterfall walk, O’Sulloc gives the route a clear emotional reset. The tea museum, shop, and wide green tea fields help the afternoon open up before the day finishes along the coast in Aewol.",
-            "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+            "image": "",
             "highlights": [
               "Jeju tea fields in a broad, open setting",
               "A tea-culture stop that feels especially light after the forest section",
@@ -2167,7 +2167,7 @@
             "name": "Aewol Cafe Street",
             "category": "Seaside Cafe Finale",
             "description": "Aewol closes the day on a lighter, more relaxed note. After mountain air, basalt cliffs, a waterfall walk, and tea fields, the sea view, cafe terraces, and easy coastal rhythm fit the final stop especially well.",
-            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+            "image": "",
             "highlights": [
               "A coastal cafe atmosphere that fits the end of the day perfectly",
               "A softer, lifestyle-oriented finish around the Handam coast area",

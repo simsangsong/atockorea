@@ -44,14 +44,14 @@
   "headlineLine1": "抱川",
   "headlineLine2": "山正湖・ハーブ・アートバレー",
   "price": {
-    "amountLabel": "49",
-    "originalPriceUsd": 62,
-    "salePriceUsd": 49,
-    "discountPercent": 21,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person",
     "priceSource": "getyourguide_t1168134",
-    "priceNote": "GetYourGuideでの定価$62、AtoC Korea販売価格は約21%オフ。"
+    "priceNote": "での定価$62、AtoC Korea販売価格は約21%オフ。"
   },
   "hero": {
     "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
@@ -543,7 +543,7 @@
       {
         "title": "実際の歩行負荷について",
         "icon": "footprints",
-        "iconBg": "bg-amber-50/80 > **注記：** 22番（`bg-emerald-50/80`）と30番（`bg-amber-50/80`）はCSSクラス名のため、翻訳せずそのまま記載しています。",
+        "iconBg": "bg-amber-50/80",
         "iconColor": "text-amber-600",
         "items": [
           {
@@ -848,7 +848,7 @@
       "currency": "USD",
       "per": "person",
       "priceSource": "getyourguide_t1168134",
-      "priceNote": "GetYourGuideでの定価$62、AtoC Korea販売価格は約21%オフ。"
+      "priceNote": "定価2より、AtoC Korea販売価格は約21%オフ。"
     }
   },
   "pickup_dropoff": {
@@ -1564,7 +1564,7 @@
           },
           {
             "label": "昼",
-            "range": "2 > **注記：** 18番（`TourDayFlowSection`）・28番（`bg-sky-50/70`）・26番・30番はUIコンポーネント名・CSSクラス・数字のため、そのまま保持しました。",
+            "range": "2",
             "theme": "ハーブガーデン＆ランチ",
             "bgClass": "bg-emerald-50/70",
             "textClass": "text-emerald-700",
@@ -1825,7 +1825,7 @@
           },
           {
             "timing": "出発12時間前",
-            "title": "12時間前リマインダー --- **注記：** 3・7・11・15・19・22・25・16 番はCSSクラス名またはコンポーネント識別子のため、原文のまま保持しています。",
+            "title": "12時間前リマインダー",
             "detail": "天気の最新情報とルートの変更点"
           },
           {

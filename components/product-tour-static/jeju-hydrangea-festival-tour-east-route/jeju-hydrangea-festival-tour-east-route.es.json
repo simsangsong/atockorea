@@ -51,10 +51,10 @@
   "headlineLine1": "Hortensias Jeju Este",
   "headlineLine2": "Tour del Día",
   "price": {
-    "amountLabel": "59",
-    "originalPriceUsd": 69,
-    "salePriceUsd": 59,
-    "discountPercent": 14,
+    "amountLabel": "",
+    "originalPriceUsd": null,
+    "salePriceUsd": null,
+    "discountPercent": null,
     "currency": "USD",
     "per": "person"
   },
@@ -2029,7 +2029,7 @@
           {
             "id": "g2",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=1200",
+            "src": "",
             "alt": "Imagen de Parque Natural Hueree — el mayor espectáculo de hortensias del sur de Jeju",
             "caption": "Parque Natural Hueree — el mayor espectáculo de hortensias del sur de Jeju",
             "location": "Parque Hueree, Seogwipo Sur",
@@ -2038,7 +2038,7 @@
           {
             "id": "g3",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200",
+            "src": "",
             "alt": "Imagen de Playa Hamdeok Seoubong — apertura costera del tour de verano",
             "caption": "Playa Hamdeok Seoubong — apertura costera del tour de verano",
             "location": "Hamdeok, Jocheon-eup, Jeju Norte",
@@ -2047,7 +2047,7 @@
           {
             "id": "g4",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1502175353174-a7a44e84da10?w=1200",
+            "src": "",
             "alt": "Imagen de Seongsan Ilchulbong — triple UNESCO",
             "caption": "Seongsan Ilchulbong — triple UNESCO, el cierre del tour de hortensias",
             "location": "Seongsan Ilchulbong, Jeju Este",
@@ -2056,7 +2056,7 @@
           {
             "id": "g5",
             "type": "photo",
-            "src": "https://images.unsplash.com/photo-1601471569526-2c7d5e1b7e5f?w=1200",
+            "src": "",
             "alt": "Imagen de playa Hamdeok",
             "caption": "Playa Hamdeok, una de las playas más representativas de Jeju",
             "location": "",
@@ -2078,7 +2078,7 @@
             "name": "Recogida en hotel (Ciudad de Jeju)",
             "category": "Salida — Recogida en los 4 puntos habituales de Ciudad de Jeju",
             "description": "Recogida en los cuatro puntos habituales de Ciudad de Jeju (Ocean Suites / Aeropuerto / Ayuntamiento / Dongmun) ~08:30-09:05.",
-            "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+            "image": "",
             "highlights": [
               "4 puntos de recogida en Ciudad de Jeju — ~08:30-09:05"
             ],
@@ -2315,7 +2315,7 @@
             "name": "Almuerzo (restaurante local de Jeju)",
             "category": "Pausa para comer — Zona Pyoseon/Seongsan",
             "description": "Almuerzo en restaurante local. **No incluido** (~₩15.000/persona).",
-            "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+            "image": "",
             "highlights": [
               "**No incluido** (~₩15.000/persona)"
             ],
@@ -2680,7 +2680,7 @@
             "name": "Llegada (Ciudad de Jeju)",
             "category": "Regreso — 4 puntos en Ciudad de Jeju",
             "description": "Regreso a los puntos de recogida de Ciudad de Jeju. Llegada estimada ~18:30-19:00.",
-            "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0",
+            "image": "",
             "highlights": [
               "Regreso a Ciudad de Jeju — ~18:30-19:00"
             ],
