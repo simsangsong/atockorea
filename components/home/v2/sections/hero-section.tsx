@@ -177,15 +177,16 @@ export function HeroSection() {
               aria-hidden
               className="pointer-events-none absolute -inset-x-10 -inset-y-6 -z-10 rounded-[3rem] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.72)_35%,rgba(0,0,0,0.45)_60%,rgba(0,0,0,0.18)_80%,transparent_95%)] md:-inset-x-16 md:-inset-y-8"
             />
-            {/* Hero H1 — Apple SF Pro Display (system) at medium weight.
-                Smaller sizes so the headline lands in one line on desktop
-                and feels mature rather than shouty. */}
+            {/* Hero H1 — Inter at medium weight via Next.js-loaded
+                --font-inter. Previously used a system SF Pro stack which
+                rendered as SF on Mac/iOS and Segoe/Roboto on Win/Android
+                — the brand looked like two different products depending
+                on the visitor's OS. Inter is web-loaded so every visitor
+                gets the same letterforms. Sizes preserved (user tuned). */}
             <h1
-              className="text-[1.35rem] leading-[1.15] text-white md:text-[1.75rem] lg:text-[2.15rem]"
+              className="text-[1.35rem] font-medium leading-[1.15] tracking-[-0.025em] text-white md:text-[1.75rem] lg:text-[2.15rem]"
               style={{
-                fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', var(--font-sans), Inter, system-ui, sans-serif",
-                fontWeight: 500,
-                letterSpacing: "-0.022em",
+                fontFamily: "var(--font-inter), Inter, system-ui, sans-serif",
                 textShadow: "0 2px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.45)",
               }}
             >
@@ -193,10 +194,9 @@ export function HeroSection() {
             </h1>
 
             <p
-              className="mx-auto mt-2 max-w-md text-caption font-normal text-white/85 md:mt-3"
+              className="mx-auto mt-2 max-w-md text-caption font-normal tracking-[-0.01em] text-white/85 md:mt-3"
               style={{
-                fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', var(--font-sans), Inter, system-ui, sans-serif",
-                letterSpacing: "-0.01em",
+                fontFamily: "var(--font-inter), Inter, system-ui, sans-serif",
                 textShadow: "0 1px 8px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.45)",
               }}
             >
