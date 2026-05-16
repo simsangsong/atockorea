@@ -497,9 +497,9 @@
       "hero": {
         "glassBrandPill": "BUSCADOR DE TOURS DE UN DÍA EN COREA",
         "matchEyebrow": "",
-        "headlineLine1": "Tours de Corea, adaptados a tu estilo de viaje.",
+        "headlineLine1": "Tu día en Corea, seleccionado a mano.",
         "headlineLine2": "",
-        "atfHeroSubhead": "Seleccionados por nuestro equipo. Compara cuando quieras.",
+        "atfHeroSubhead": "Cuéntanos tu estilo — el tour adecuado aparece en 30 segundos.",
         "intentInputAria": "Preferencias del viaje en una línea",
         "matchSubtitle": "Cuéntanos cómo te gusta viajar y qué tipo de día buscas. Recomendaremos el destino, el formato de tour y el plan que mejor encajen.\n\nJeju está disponible ahora. Seúl y Busán, próximamente.",
         "destinationSectionTitle": "Destino",
@@ -697,11 +697,11 @@
       "v2": {
         "hero": {
           "plannerTitle": "Dinos qué te importa",
-          "preCtaLine": "A continuación compara las opciones en grupo pequeño, privado y en autobús.",
-          "smartMatchMicrocopy": "Sin registro · Unos 30 segundos",
-          "matcherEyebrow": "SOLO EN ATOC",
-          "matcherHeadline": "Matching de tours de Corea, no búsqueda por palabras clave.",
-          "matcherSubline": "Los buscadores solo comparan palabras. Nosotros escuchamos lo que te gusta.",
+          "preCtaLine": "Mostramos opciones en grupo pequeño, privado y en autobús.",
+          "smartMatchMicrocopy": "Sin registro · Sin tarjeta · 30 segundos",
+          "matcherEyebrow": "LA FORMA INTELIGENTE",
+          "matcherHeadline": "Describe tu viaje. Recibe tu tour.",
+          "matcherSubline": "Sin palabras clave. Sin scroll de 200 tours. Solo lo que encaja contigo.",
           "trustMatched": "A tu medida",
           "trustPickup": "Recogida clara",
           "trustCompare": "Comparar tipos",
@@ -761,44 +761,39 @@
           }
         },
         "featuredProducts": {
-          "eyebrow": "MÁS QUERIDOS · ACTUALIZADO SEMANALMENTE",
-          "title": "Lo más",
-          "titleAccent": "querido esta semana",
-          "subtitle": "Reservas reales, frescas cada semana — seleccionadas por nuestro equipo de turismo receptivo en Corea.",
+          "eyebrow": "MÁS RESERVADOS ESTA SEMANA",
+          "title": "Lo que otros viajeros",
+          "titleAccent": "eligieron esta semana",
+          "subtitle": "Actualizado cada lunes por nuestro equipo en Seúl.",
           "viewAllCtaParam": "Ver los {count} tours",
           "viewAllCtaGeneric": "Ver todos los tours"
         },
         "whyAtockorea": {
-          "eyebrow": "DISEÑADO PARA VISITANTES INTERNACIONALES",
-          "title": "No escondemos.",
-          "titleAccent": "Te invitamos a comparar.",
-          "subtitle": "Los mismos tours están listados en las grandes plataformas. Nosotros elegimos a los operadores, validados por años de reservas reales, y los ofrecemos con soporte directo y ajustes flexibles.",
-          "tagline": "Mismo tour. Mismo operador. Precios transparentes.",
+          "eyebrow": "POR QUÉ SOMOS DIFERENTES",
+          "title": "El atajo a un tour",
+          "titleAccent": "que vale la pena reservar.",
+          "subtitle": "Corea tiene cientos de listados de tours de un día. Nosotros listamos solo los operadores que nuestro equipo en Seúl ha probado en persona y en los que confía.",
+          "tagline": "No listamos a todos. Listamos a los correctos.",
           "pillar1": {
-            "title": "por nuestro equipo",
-            "titleAccent": "Seleccionados",
-            "body": "Cada operador lo elige nuestro equipo en Corea — sin pago por listado, sin auto-postulaciones."
+            "title": "en persona",
+            "titleAccent": "Seleccionados,",
+            "body": "Cada operador verificado sobre el terreno por nuestro equipo en Seúl. Sin listados solo por algoritmo, sin pago por listado."
           },
           "pillar2": {
-            "title": "en Klook, GetYourGuide, Viator",
-            "titleAccent": "Validados",
-            "body": "Los mismos tours están listados en las grandes plataformas globales — respaldados por años de reservas reales."
+            "title": "globalmente",
+            "titleAccent": "Confiables",
+            "body": "Los mismos operadores que los viajeros encuentran en las grandes plataformas — nosotros los elegimos primero."
           },
           "pillar3": {
-            "title": "personas reales 9–21h",
-            "titleAccent": "Soporte directo,",
-            "body": "Concierge IA 24/7. Cuando la IA no puede decidir, una persona toma el relevo de 9:00 a 21:00 (KST)."
-          },
-          "pillar4": {
-            "title": "cuando quieras",
-            "titleAccent": "Compara precios",
-            "body": "Te enlazamos al mismo tour en otras plataformas. No escondemos — te invitamos a comparar."
+            "title": "9–21h KST",
+            "titleAccent": "Personas reales,",
+            "body": "Concierge IA 24/7. Cuando la IA llega a su límite, un equipo que habla coreano toma el relevo (9:00–21:00 KST)."
           }
         },
         "chooseStyle": {
-          "eyebrow": "Elige tu estilo",
-          "title": "Tres maneras de explorar",
-          "subtitle": "Recomendamos el grupo pequeño a muchos viajeros; el privado y el autobús clásico son alternativas sólidas según prioridades.",
+          "eyebrow": "CÓMO TE GUSTA VIAJAR",
+          "title": "Elige tu ritmo. Nosotros nos encargamos del resto.",
+          "subtitle": "La mayoría empieza con grupo pequeño. Privado y autobús están igualmente seleccionados — elige el que encaje con el día que quieres.",
           "recommended": "RECOMENDADO",
           "smallGroupTitle": "Tour en grupo pequeño",
           "smallGroupDesc": "Para parejas, viajeros solos y quienes quieren un ritmo relajado.",
@@ -833,14 +828,14 @@
           "step1Title": "Cuéntanos tu estilo",
           "step1Body": "Destino, ritmo, imprescindibles, con quién viajas — listo en menos de un minuto.",
           "step2Label": "Paso 2",
-          "step2Title": "Comparamos las opciones",
-          "step2Body": "Nuestro equipo y nuestro sistema de emparejamiento comparan los tours verificados con tu preferencia — el más adecuado aparece primero.",
+          "step2Title": "Nosotros hacemos el matching",
+          "step2Body": "Nuestro equipo en Seúl y el matcher muestran primero el tour más adecuado — sin scrollear 200 listados.",
           "step3Label": "Paso 3",
-          "step3Title": "Revisa, compara, decide",
-          "step3Body": "Precios, inclusiones, reseñas reales — todo en un lugar, sin cambiar de pestaña.",
+          "step3Title": "Decide en un lugar",
+          "step3Body": "Precios, inclusiones, reseñas reales — todo lo necesario, sin cambiar de pestaña.",
           "step4Label": "Paso 4",
-          "step4Title": "Reserva directo",
-          "step4Body": "Reserva directo con un operador local registrado. Pago seguro y seguimiento personal de nuestro equipo.",
+          "step4Title": "Reserva con confianza",
+          "step4Body": "Pago seguro, operador local registrado, seguimiento personal de una persona real de nuestro equipo.",
           "trustPanelTitle": "Por qué muchos se sienten más seguros aquí",
           "trust1Title": "Menos pasos en falso",
           "trust1Body": "Con demasiadas opciones, es más fácil equivocarse. Preseleccionamos tours con buen historial.",
@@ -889,15 +884,15 @@
           "reviewCardStarsAria": "{rating} de 5 estrellas"
         },
         "finalCtaBlock": {
-          "title": "Empieza con tu estilo. Encuentra tu tour de Corea — compara cuando quieras.",
-          "subtitle": "Operadores seleccionados, precios transparentes, soporte humano real.",
+          "title": "Tu día en Corea, elegido en 30 segundos.",
+          "subtitle": "Operadores seleccionados. Soporte humano real. Reserva directa.",
           "trust1RatedParam": "{rating} de valoración",
-          "trust1Fallback": "Tours verificados",
-          "trust2": "Cancelación gratis cuando esté disponible",
-          "trust3": "Soporte del equipo de operaciones",
-          "trust4": "Listados en Klook · GetYourGuide · Viator",
-          "primaryCta": "Diseñar tu tour a medida",
-          "secondaryCta": "Ver todos los estilos de tour",
+          "trust1Fallback": "4.9★ · 100k+ viajeros",
+          "trust2": "Cancelación gratis hasta 24h antes",
+          "trust3": "Equipo de Seúl 9–21h KST",
+          "trust4": "Reserva directa segura",
+          "primaryCta": "Encontrar mi tour",
+          "secondaryCta": "Ver todos los tours",
           "orDivider": "o"
         }
       }

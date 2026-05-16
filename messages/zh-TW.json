@@ -497,9 +497,9 @@
       "hero": {
         "glassBrandPill": "韓國一日遊查找",
         "matchEyebrow": "",
-        "headlineLine1": "依照您的旅行風格，匹配最合適的韓國行程",
+        "headlineLine1": "您的韓國一日，由我們親選。",
         "headlineLine2": "",
-        "atfHeroSubhead": "韓國團隊親選。隨時比價。",
+        "atfHeroSubhead": "告訴我們您的風格 — 合適的行程 30 秒內出現。",
         "intentInputAria": "用一行輸入旅行偏好",
         "matchSubtitle": "告訴我們您想如何旅行、想要怎樣的一天。我們會推薦最契合的目的地、行程形式與安排。\n\n濟州現已開放；首爾與釜山即將上線。",
         "destinationSectionTitle": "目的地",
@@ -697,11 +697,11 @@
       "v2": {
         "hero": {
           "plannerTitle": "告訴我們您最在意什麼",
-          "preCtaLine": "接著比較小團、私人包車與傳統巴士方案。",
-          "smartMatchMicrocopy": "無需註冊 · 約 30 秒",
-          "matcherEyebrow": "ATOC 獨家",
-          "matcherHeadline": "韓國行程匹配，而非關鍵字搜尋。",
-          "matcherSubline": "搜尋框只比對關鍵字，我們傾聽您的喜好。",
+          "preCtaLine": "小團、私人包車、巴士方案全部呈現。",
+          "smartMatchMicrocopy": "無需註冊 · 無需信用卡 · 30 秒",
+          "matcherEyebrow": "聰明的方式",
+          "matcherHeadline": "描述您的旅行，得到您的行程。",
+          "matcherSubline": "無需關鍵字。無需翻 200 條列表。只看最適合您的。",
           "trustMatched": "為您配對",
           "trustPickup": "接送清楚",
           "trustCompare": "比較所有類型",
@@ -761,44 +761,39 @@
           }
         },
         "featuredProducts": {
-          "eyebrow": "本週熱門 · 每週更新",
-          "title": "本週",
-          "titleAccent": "最受歡迎",
-          "subtitle": "基於真實預訂資料，韓國入境團隊每週親自精選。",
+          "eyebrow": "本週預訂最多",
+          "title": "其他旅人",
+          "titleAccent": "本週選擇了",
+          "subtitle": "首爾團隊每週一更新。",
           "viewAllCtaParam": "查看全部 {count} 個行程",
           "viewAllCtaGeneric": "查看全部行程"
         },
         "whyAtockorea": {
-          "eyebrow": "為海外旅客而生",
-          "title": "我們不隱藏，",
-          "titleAccent": "我們歡迎比價。",
-          "subtitle": "相同的行程也上架在全球主要平台。我們親自挑選營運商，經過多年實際預訂驗證，並提供直接支援與彈性調整。",
-          "tagline": "同樣的行程、同一營運商、透明的價格。",
+          "eyebrow": "我們為何不同",
+          "title": "通往值得預訂行程的",
+          "titleAccent": "捷徑。",
+          "subtitle": "韓國有數百個一日遊清單。我們只上架首爾團隊親自體驗、驗證並信任的營運商。",
+          "tagline": "我們不上架所有人，只上架對的人。",
           "pillar1": {
-            "title": "親選",
-            "titleAccent": "韓國團隊",
-            "body": "營運商均由韓國團隊親自挑選 — 無付費上架，無自我推薦。"
+            "title": "親自驗證",
+            "titleAccent": "實地",
+            "body": "每家營運商都由首爾團隊實地審核。沒有演算法掛牌，沒有付費上架。"
           },
           "pillar2": {
-            "title": "多年驗證",
-            "titleAccent": "Klook、GetYourGuide、Viator 上",
-            "body": "相同行程也上架在全球主要平台 — 多年真實預訂佐證。"
+            "title": "信任",
+            "titleAccent": "全球",
+            "body": "全球最大平台上的同一批營運商 — 我們更先一步選定。"
           },
           "pillar3": {
-            "title": "真人對應 9–21 點",
-            "titleAccent": "直接支援，",
-            "body": "AI 客服 24 小時回應。AI 難以判斷時，9:00–21:00（韓國時間）由真人處理。"
-          },
-          "pillar4": {
-            "title": "比價",
-            "titleAccent": "隨時",
-            "body": "我們直接連結到同一行程的其他平台。我們不隱藏 — 歡迎比價。"
+            "title": "9–21 點 KST",
+            "titleAccent": "真人對應，",
+            "body": "AI 客服 24 小時。AI 達到極限時，韓語團隊接手（9:00–21:00 KST）。"
           }
         },
         "chooseStyle": {
-          "eyebrow": "選擇出行方式",
-          "title": "三種探索方式",
-          "subtitle": "多數情況我們推薦小團；依需求不同，私人包車與經典巴士也是很好的替代。",
+          "eyebrow": "您喜歡的旅行方式",
+          "title": "選擇節奏，剩下交給我們。",
+          "subtitle": "多數旅人從小團開始。私人包車與巴士同樣精心策劃 — 依您想要的一天選擇。",
           "recommended": "推薦",
           "smallGroupTitle": "小團行程",
           "smallGroupDesc": "適合情侶、單獨旅行、想要從容節奏的旅人。",
@@ -833,14 +828,14 @@
           "step1Title": "告訴我們您的風格",
           "step1Body": "目的地、節奏、必去景點、同行者 — 一分鐘內完成。",
           "step2Label": "第2步",
-          "step2Title": "我們比較選項",
-          "step2Body": "團隊與匹配系統會將您的輸入與經驗證的行程進行比較 — 最合適的優先顯示。",
+          "step2Title": "配對由我們完成",
+          "step2Body": "首爾團隊與配對系統將最合適的行程優先呈現 — 無需翻 200 條列表。",
           "step3Label": "第3步",
-          "step3Title": "查看、比較、決定",
-          "step3Body": "價格、含項、真實評價 — 一站式，無需切換分頁。",
+          "step3Title": "一站決定",
+          "step3Body": "價格、含項、真實評價 — 所需一切，無需切換分頁。",
           "step4Label": "第4步",
-          "step4Title": "直接預訂",
-          "step4Body": "與正式登記的當地營運商直接預訂。安全支付，營運團隊提供後續協助。",
+          "step4Title": "安心預訂",
+          "step4Body": "安全支付、正式登記的當地營運商、我們團隊真人的後續協助。",
           "trustPanelTitle": "為什麼旅人更安心",
           "trust1Title": "更少的彎路",
           "trust1Body": "選擇太多時更容易選錯。我們先篩出口碑扎實的產品。",
@@ -889,15 +884,15 @@
           "reviewCardStarsAria": "滿分 5 分，{rating} 分"
         },
         "finalCtaBlock": {
-          "title": "從您的風格開始。找到您的韓國行程 - 隨時比價。",
-          "subtitle": "親選營運商、透明價格、真人客服支援。",
+          "title": "您的韓國一日，30 秒內為您挑選。",
+          "subtitle": "親選營運商。真人客服。直接預訂。",
           "trust1RatedParam": "{rating} 分",
-          "trust1Fallback": "經驗證的行程",
-          "trust2": "適用商品免費取消",
-          "trust3": "營運團隊支援",
-          "trust4": "Klook · GetYourGuide · Viator 上架",
-          "primaryCta": "客製行程諮詢",
-          "secondaryCta": "瀏覽所有行程類型",
+          "trust1Fallback": "4.9★ · 10 萬+ 旅人",
+          "trust2": "24 小時前免費取消",
+          "trust3": "首爾團隊 9–21 點 KST",
+          "trust4": "安全直接預訂",
+          "primaryCta": "尋找我的行程",
+          "secondaryCta": "瀏覽全部行程",
           "orDivider": "或"
         }
       }
