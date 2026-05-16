@@ -11,15 +11,15 @@ import {
   HOME_CTA_MATCHING_HREF,
 } from "@/lib/home/home-cta-routes";
 import { useTranslations } from "@/lib/i18n";
-import { homeBtnPrimary, homeBtnSecondary } from "@/lib/home/home-button-classes";
+import { homeBtnInverse } from "@/lib/home/home-button-classes";
+import { cn } from "@/lib/utils";
 
 const finalCtaPrimaryStyle: CSSProperties = {
   boxShadow: "var(--home-shadow-btn-primary)",
 };
 
-const finalCtaSecondaryStyle: CSSProperties = {
-  boxShadow: "var(--home-shadow-btn-secondary)",
-};
+const finalCtaSecondaryOutlineDarkClassName =
+  "h-auto w-full rounded-full border border-white/25 bg-transparent py-4 text-sm font-semibold text-white/90 transition-colors duration-300 hover:border-white/45 hover:bg-white/[0.06] hover:text-white";
 
 export function FinalCTA() {
   const t = useTranslations("home");
@@ -32,86 +32,86 @@ export function FinalCTA() {
   }, []);
 
   return (
-    <section data-home-final-cta className="section-py-lg px-4 bg-white">
+    <section
+      data-home-final-cta
+      className="section-py-lg px-4"
+      style={{ background: "linear-gradient(to bottom, #141008, #0E0B05)" }}
+    >
       <div className="max-w-2xl mx-auto">
-        <div ref={blockRef} className="relative scroll-animate">
-          <div className="home-panel-elevated relative overflow-hidden p-6 text-center md:p-10">
-            <h2 className="mb-3 text-balance text-display text-slate-900">
-              {t("premium.v2.finalCtaBlock.title")}
-            </h2>
-            <p className="mb-6 text-h3 font-medium text-slate-600">
-              {t("premium.v2.finalCtaBlock.subtitle")}
-            </p>
+        <div ref={blockRef} className="relative scroll-animate text-center">
+          <p className="mb-3 text-eyebrow text-amber-300 md:mb-4">
+            {t("premium.v2.finalCtaBlock.eyebrow")}
+          </p>
+          <h2 className="mb-3 text-balance text-display text-white">
+            {t("premium.v2.finalCtaBlock.title")}
+          </h2>
+          <p className="mb-8 text-h3 font-medium text-slate-300 md:mb-10">
+            {t("premium.v2.finalCtaBlock.subtitle")}
+          </p>
 
-            <div className="home-neutral-trust-tile home-neutral-trust-tile--compact mb-8 grid grid-cols-2 gap-3 p-4 md:flex md:flex-wrap md:items-center md:justify-center md:gap-5 md:p-5">
-              <div className="flex items-center gap-2 justify-center">
-                <Star className="w-4 h-4 text-slate-500" aria-hidden />
-                <span className="text-caption font-semibold text-slate-700">
-                  {t("premium.v2.finalCtaBlock.trust1Fallback")}
-                </span>
-              </div>
-              <div className="flex items-center gap-2 justify-center">
-                <CheckCircle className="w-4 h-4 text-slate-500" />
-                <span className="text-caption font-semibold text-slate-700">
-                  {t("premium.v2.finalCtaBlock.trust2")}
-                </span>
-              </div>
-              <div className="flex items-center gap-2 justify-center md:col-span-2 md:col-auto">
-                <Clock className="w-4 h-4 text-slate-500" />
-                <span className="text-caption font-semibold text-slate-700">
-                  {t("premium.v2.finalCtaBlock.trust3")}
-                </span>
-              </div>
-              <div className="flex items-center gap-2 justify-center md:col-span-2 md:col-auto">
-                <Users className="w-4 h-4 text-slate-500" />
-                <span className="text-caption font-semibold text-slate-700">
-                  {t("premium.v2.finalCtaBlock.trust4")}
-                </span>
-              </div>
+          {/* Trust strip — single horizontal row with hairline dividers,
+              below the headline but ABOVE the CTA so it primes the click
+              with credibility. Star gets the single amber accent (the page's
+              one universal rating-color convention). */}
+          <div className="mb-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 md:mb-10 md:gap-x-7">
+            <span className="inline-flex items-center gap-1.5 text-caption font-semibold text-white/85">
+              <Star className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden />
+              {t("premium.v2.finalCtaBlock.trust1Fallback")}
+            </span>
+            <span className="inline-flex items-center gap-1.5 text-caption font-semibold text-white/85">
+              <CheckCircle className="h-4 w-4 text-white/55" aria-hidden />
+              {t("premium.v2.finalCtaBlock.trust2")}
+            </span>
+            <span className="inline-flex items-center gap-1.5 text-caption font-semibold text-white/85">
+              <Clock className="h-4 w-4 text-white/55" aria-hidden />
+              {t("premium.v2.finalCtaBlock.trust3")}
+            </span>
+            <span className="inline-flex items-center gap-1.5 text-caption font-semibold text-white/85">
+              <Users className="h-4 w-4 text-white/55" aria-hidden />
+              {t("premium.v2.finalCtaBlock.trust4")}
+            </span>
+          </div>
+
+          <div className="space-y-3 mx-auto md:max-w-md">
+            <V0ShadcnButton
+              asChild
+              size="lg"
+              className={homeBtnInverse}
+              style={finalCtaPrimaryStyle}
+            >
+              <Link
+                href={HOME_CTA_MATCHING_HREF}
+                onClick={() => {
+                  analytics.homeCtaClick({ source: "final_cta_custom_join" });
+                }}
+              >
+                {t("premium.v2.finalCtaBlock.primaryCta")}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </V0ShadcnButton>
+
+            <div className="py-1.5 text-center">
+              <span className="text-micro font-medium uppercase tracking-wider text-white/40">
+                {t("premium.v2.finalCtaBlock.orDivider")}
+              </span>
             </div>
 
-            <div className="space-y-3">
-              <V0ShadcnButton
-                asChild
-                size="lg"
-                className={homeBtnPrimary}
-                style={finalCtaPrimaryStyle}
+            <V0ShadcnButton
+              asChild
+              variant="outline"
+              size="lg"
+              className={cn(finalCtaSecondaryOutlineDarkClassName)}
+            >
+              <Link
+                href={HOME_CTA_BROWSE_TOURS_HREF}
+                onClick={() => {
+                  analytics.homeCtaClick({ source: "final_cta_browse_styles" });
+                }}
               >
-                <Link
-                  href={HOME_CTA_MATCHING_HREF}
-                  onClick={() => {
-                    analytics.homeCtaClick({ source: "final_cta_custom_join" });
-                  }}
-                >
-                  {t("premium.v2.finalCtaBlock.primaryCta")}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </V0ShadcnButton>
-
-              <div className="py-1.5 text-center">
-                <span className="text-micro font-medium uppercase tracking-wider text-slate-400">
-                  {t("premium.v2.finalCtaBlock.orDivider")}
-                </span>
-              </div>
-
-              <V0ShadcnButton
-                asChild
-                variant="outline"
-                size="lg"
-                className={homeBtnSecondary}
-                style={finalCtaSecondaryStyle}
-              >
-                <Link
-                  href={HOME_CTA_BROWSE_TOURS_HREF}
-                  onClick={() => {
-                    analytics.homeCtaClick({ source: "final_cta_browse_styles" });
-                  }}
-                >
-                  {t("premium.v2.finalCtaBlock.secondaryCta")}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </V0ShadcnButton>
-            </div>
+                {t("premium.v2.finalCtaBlock.secondaryCta")}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </V0ShadcnButton>
           </div>
         </div>
       </div>
