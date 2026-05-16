@@ -54,6 +54,10 @@ function isRealPoi(meta) {
   if (!meta || typeof meta.poi_key !== "string") return false;
   if (meta.match === "transit_only") return false;
   if (meta.poi_key.startsWith("OPS_")) return false;
+  // route_variant_* keys are tour-design metadata (route choices), not visitable POIs.
+  // They were caught in the first Phase 1 seed and have been deleted from the catalog;
+  // exclude them here so re-runs don't re-introduce them.
+  if (meta.poi_key.startsWith("route_variant_")) return false;
   return true;
 }
 

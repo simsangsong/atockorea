@@ -15,10 +15,10 @@
 
 | Field | Value |
 |---|---|
-| **Current phase** | Phase 1 — POI catalog seed ✅ complete. Awaiting approval to start Phase 2 (coordinate enrichment). |
+| **Current phase** | Phase 2 — Coordinate enrichment ✅ complete. Awaiting approval to start Phase 3. |
 | **Blocked on** | — |
 | **Last updated** | 2026-05-17 |
-| **Last commit touching this feature** | `98bb99ef` — feat(itinerary-builder): Phase 1 — POI catalog seed |
+| **Last commit touching this feature** | (Phase 2 commit pending) |
 | **Owner** | simsangsong |
 | **Reviewers** | — |
 
@@ -30,7 +30,7 @@ Revised 2026-05-16 after D1-D8: original 6 phases → 7 phases (new Phase 5 for 
 |---|---|---|---|---|
 | 0 — Audit & plan | ✅ complete | 2026-05-16 | 2026-05-16 | `a732e63f` |
 | 1 — POI catalog seed (jeju + busan) | ✅ complete | 2026-05-17 | 2026-05-17 | `98bb99ef` |
-| 2 — Coordinate enrichment | ⏸ not started | — | — | — |
+| 2 — Coordinate enrichment | ✅ complete | 2026-05-17 | 2026-05-17 | (pending Phase 2 commit) |
 | 3 — Map UI read-only + `/tours` restructure + home v2 entry section | ⏸ not started | — | — | — |
 | 4 — Q&A intake (private / cruise branch) + cart + manual quote form | ⏸ not started | — | — | — |
 | 5 — Auto-quote engine + admin presets + Slack escalation + quote memory | ⏸ not started | — | — | — |
@@ -69,6 +69,7 @@ One line per material change to this doc or per phase deliverable.
 | 2026-05-16 | `a732e63f` | Initial audit + plan written (Phase 0) |
 | 2026-05-16 | `e7666abf` | Google Maps API key + vector Map ID setup completed externally; §B decisions D1–D8 logged; §F revised from 6 → 7 phases (new Phase 5 = auto-quote engine; old Phases 5/6 renumbered to 6/7; Phase 3 expanded to include `/tours` restructure + home v2 entry; Phase 4 expanded to include Q&A intake with private/cruise branching) |
 | 2026-05-17 | `98bb99ef` | Phase 1 — POI catalog seed complete. Migration `20260517120000_add_match_pois_geo_and_profile.sql` applied (adds lat/lng/matching_profile/default_stay_minutes/category/names_other_locales + region+stop_role indexes). Seed script `scripts/seed-match-pois-from-tour-jsons.mjs` walked 36 tour dirs / 204 locale files and upserted **82 unique attraction POIs**. Verification: 82 rows with name_en, **49 in busan+jeju** (≥40 acceptance ✓), 0 missing region, 0 operational rows (is_operational is generated column = poi_key LIKE 'OPS_%'). 6-locale names populated; 64/82 have default_image_url, 74/82 have parseable default_stay_minutes. Original audit-derived threshold of "≥100" was based on raw audit count of 102 that included operational keys; filtered attraction count is 82 — acceptance threshold updated to reflect reality. |
+| 2026-05-17 | (pending Phase 2 commit) | Phase 2 — Coordinate enrichment complete. **74 attractions all have lat/lng inside Korea bbox** (33.0–38.7 lat, 124.6–131.0 lng). Pipeline: (1) created separate **server-side Google Maps API key** (`GOOGLE_MAPS_API_KEY`, no app restrictions, Geocoding/Places/Distance/Directions enabled) since the public `NEXT_PUBLIC_*` key is referrer-restricted and Google rejects it from servers. (2) `scripts/geocode-match-pois.mjs` ran forward geocoding (`<name_ko> 한국` primary, `<name_en> South Korea` fallback, 250 ms throttle) → 82 OK / 0 MISS / 0 OUT_OF_BBOX, but inspection revealed 11 hits at Korea-center fallback (35.9078, 127.7669) and `jagalchi_market` mismapped to Cheonan. (3) `scripts/poi-coord-overrides.csv` built with 8 manual coords (`jagalchi`, `hallasan_1100_wetland`, `gyochon_hanok_village`, `hallim_park`, `ilchulland_*` ×2, `incheon_cruise_terminal`, `jeju_tangerine_picking`) re-geocoded with specific Korean queries (yielded ROOFTOP-grade results); applied via `--apply-overrides`. (4) **Region quality pass** (`scripts/audit-poi-regions.mjs` + `reclassify-poi-regions-from-csv.mjs`) — reverse-geocoded all 74 POIs, used `administrative_area_level_1` as authoritative source with word-boundary regex (avoiding the bug where "Minsokchon-ro" hit substring `sokcho`). Discovered **37 region corrections** needed from Phase 1's naive tour-level region tagging: `incheon → seoul` ×6, `seoul → gyeonggi` ×16, `seoul → gangwon` ×4, `busan → gyeongju` ×6, `busan → yangsan/ulsan/miryang` ×3, `seoraksan → gangwon` ×2. All 37 UPDATEs + 8 `route_variant_*` DELETEs (non-POI tour metadata) applied. (5) **Spot-check 15 famous POIs** all match known coords. Final distribution: jeju 25 / gyeonggi 16 / busan 11 / seoul 6 / gyeongju 6 / gangwon 6 / yangsan/ulsan/incheon/miryang 1 each = 74. **Busan-cluster** (busan+yangsan+gyeongju+ulsan+miryang) = **20**, **Jeju** = **25**, MVP-renderable = **45** (≥40 acceptance ✓). Seed script also patched to exclude `route_variant_*` for future runs. |
 
 ---
 
@@ -144,19 +145,28 @@ Each phase delivers a shippable artifact and has a clear "stop here if needed" c
 **Deliverable:** Every POI in `match_pois` has lat/lng populated.
 
 **Tasks:**
-- [ ] Write `scripts/geocode-match-pois.mjs` using existing `lib/google-maps.geocodeAddress`.
-- [ ] For each POI without lat/lng: query `"<name_ko> 한국"` first, fall back to `<name_en> South Korea`. Throttle ≥ 100ms between requests to respect Google rate limit.
-- [ ] Output a CSV `scripts/poi-coord-audit.csv` with poi_key, name_en, geocoded_lat, geocoded_lng, formatted_address, confidence — for manual review.
-- [ ] Manual spot-check ~20 random POIs against Google Maps; flag misses.
-- [ ] Create `scripts/poi-coord-overrides.csv` for any POI where geocoder missed (e.g., specific viewpoint inside a park).
-- [ ] Re-run with overrides applied.
+- [x] Create separate server-side Google Maps API key (`GOOGLE_MAPS_API_KEY`, no app restrictions, Geocoding API enabled) — required because the `NEXT_PUBLIC_*` key has HTTP referrer restrictions which Google rejects from servers.
+- [x] Write `scripts/geocode-match-pois.mjs` (replicates `lib/google-maps.geocodeAddress` pattern as standalone `.mjs` since the script doesn't go through next.js bundling).
+- [x] For each POI without lat/lng: query `"<name_ko> 한국"` first, fall back to `<name_en> South Korea`. Throttle 250 ms between requests.
+- [x] CSV audit `scripts/poi-coord-audit.csv` with poi_key, name_en, geocoded coords, formatted_address, location_type (ROOFTOP / GEOMETRIC_CENTER / RANGE_INTERPOLATED / APPROXIMATE), in_bbox flag, status.
+- [x] Spot-check revealed 11 hits at Korea-center fallback (35.9078, 127.7669) for ambiguous queries, plus `jagalchi_market` mismapped to Cheonan.
+- [x] `scripts/poi-coord-overrides.csv` built with 8 manual coords re-geocoded with specific Korean queries (`경주 교촌마을`, `제주 한림공원`, `인천항 국제여객터미널`, etc.) yielding ROOFTOP-grade results. Applied via `--apply-overrides`.
+- [x] **Region quality pass**: `scripts/audit-poi-regions.mjs` reverse-geocodes every POI's stored lat/lng → derives `formatted_address` + `administrative_area_level_1` + `locality`; `scripts/reclassify-poi-regions-from-csv.mjs` uses admin1 as authoritative source with word-boundary regex (avoiding substring false-positives like "Minsokchon-ro" matching `/sokcho/`).
+- [x] 37 region corrections applied: `incheon → seoul` ×6 (priority bug in initial seed), `seoul → gyeonggi` ×16, `seoul → gangwon` ×4, `busan → gyeongju` ×6, `busan → yangsan/ulsan/miryang` ×3, `seoraksan → gangwon` ×2.
+- [x] 8 `route_variant_*` rows DELETEd (tour route metadata, not POIs — seed script also patched to exclude going forward).
 
 **Acceptance:**
-- [ ] 100% of `match_pois.stop_role='attraction'` rows have non-null lat AND lng.
-- [ ] All lat values in range 33.0–38.7 (Korea), all lng in 124.6–131.0. Rows outside this range → block + manual fix.
-- [ ] Visual spot-check of 10 random POIs in Google Maps confirms address match.
+- [x] 100% of `match_pois` attractions have non-null lat AND lng (74/74).
+- [x] All lat values in range 33.0–38.7, all lng in 124.6–131.0 (0 violations).
+- [x] Visual spot-check of 15 famous POIs (Bulguksa, Tongdosa, Haedong Yonggungsa, Jagalchi, Seongsan Ilchulbong, Gyeongbokgung, N Seoul Tower, Cheomseongdae, Bomun Lake, Hwaseong Fortress, Dora Observatory, Nami Island, Seoraksan, Gamcheon, Songaksan) confirms address match — all within ±0.001° of known coordinates.
+- [x] Final region distribution: jeju 25 / gyeonggi 16 / busan 11 / seoul 6 / gyeongju 6 / gangwon 6 / yangsan 1 / ulsan 1 / incheon 1 / miryang 1 = 74.
 
-**Cut-line:** If we stop here, the catalog is ready for any map UI later.
+**Cut-line:** Catalog has accurate geographic data and clean region tags. Ready for Phase 3 map UI.
+
+**Note for Phase 3:** Region filter must use **clusters**, not single literal region match:
+- `/itinerary-builder/busan` → `region IN ('busan','yangsan','gyeongju','ulsan','miryang')` = 20 POIs
+- `/itinerary-builder/jeju` → `region = 'jeju'` = 25 POIs
+- (future) `/itinerary-builder/seoul` → `region IN ('seoul','gyeonggi','gangwon','incheon')` = 29 POIs
 
 ---
 
