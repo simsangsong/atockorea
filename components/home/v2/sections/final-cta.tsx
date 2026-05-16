@@ -34,14 +34,7 @@ export function FinalCTA() {
     <section data-home-final-cta className="section-py-lg px-4 bg-white">
       <div className="max-w-2xl mx-auto">
         <div ref={blockRef} className="relative scroll-animate">
-          <div
-            className="absolute -inset-2 rounded-card bg-amber-400/[0.04] opacity-60 blur-xl"
-            aria-hidden
-          />
-
           <div className="home-panel-elevated relative overflow-hidden p-6 text-center md:p-10">
-            <div className="absolute left-1/4 right-1/4 top-0 h-px bg-gradient-to-r from-transparent via-slate-300/40 to-transparent" />
-
             <h2 className="mb-2 text-balance text-h2 text-slate-900">
               {t("premium.v2.finalCtaBlock.title")}
             </h2>
@@ -94,12 +87,10 @@ export function FinalCTA() {
                 </Link>
               </V0ShadcnButton>
 
-              <div className="flex items-center gap-3 py-0.5">
-                <div className="h-px flex-1 bg-slate-200/70" />
-                <span className="text-[10px] font-medium uppercase tracking-wider text-slate-400">
+              <div className="py-1.5 text-center">
+                <span className="text-micro font-medium uppercase tracking-wider text-slate-400">
                   {t("premium.v2.finalCtaBlock.orDivider")}
                 </span>
-                <div className="h-px flex-1 bg-slate-200/70" />
               </div>
 
               <V0ShadcnButton

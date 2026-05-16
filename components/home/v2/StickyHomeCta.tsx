@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useTranslations } from "@/lib/i18n";
 
 /**
@@ -78,18 +78,17 @@ export function StickyHomeCta() {
           transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
           className="fixed bottom-3 left-3 right-3 z-40 mx-auto md:bottom-5 md:max-w-md"
         >
-          <div className="flex items-stretch gap-1.5 rounded-card bg-slate-900/95 p-1.5 shadow-2 ring-1 ring-white/10 backdrop-blur-md">
+          <div className="flex items-stretch gap-1.5 rounded-full bg-slate-900/95 p-1.5 shadow-2 ring-1 ring-white/10 backdrop-blur-md">
             <button
               type="button"
               onClick={focusMatcher}
-              className="focus-ring flex flex-1 items-center justify-center gap-1.5 rounded-button bg-white px-4 py-3 text-[13px] font-semibold text-slate-900 transition-transform hover:-translate-y-0.5 motion-reduce:hover:translate-y-0"
+              className="focus-ring flex flex-1 items-center justify-center gap-1.5 rounded-full bg-white px-4 py-3 text-[13px] font-semibold text-slate-900 transition-transform hover:-translate-y-0.5 motion-reduce:hover:translate-y-0"
             >
-              <Sparkles className="h-3.5 w-3.5 text-amber-500" />
               {t("premium.hero.findMatchCta")}
             </button>
             <Link
               href="/tours/list"
-              className="focus-ring inline-flex items-center justify-center gap-1 rounded-button px-3.5 py-3 text-[12.5px] font-medium text-white/90 transition-colors hover:text-white"
+              className="focus-ring inline-flex items-center justify-center gap-1 rounded-full px-3.5 py-3 text-[12.5px] font-medium text-white/90 transition-colors hover:text-white"
             >
               {t("premium.v2.featuredProducts.viewAllCtaGeneric")}
               <ArrowRight className="h-3.5 w-3.5" />

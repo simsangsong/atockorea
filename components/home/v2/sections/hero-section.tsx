@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
-import { ChevronRight, Sparkles } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import { appendIntentPhraseToIntentField } from "@/lib/home/services/hero-intent-append-chip";
 import type { HeroDestination } from "@/lib/home/types/hero-planner";
@@ -258,22 +258,7 @@ export function HeroSection() {
         </div>
 
         <div className="relative mx-auto max-w-lg">
-          <div
-            className="absolute -inset-1 rounded-[var(--home-radius-hero-planner)] bg-gradient-to-b from-white/55 via-amber-50/15 to-transparent opacity-50 blur-xl"
-            aria-hidden
-          />
-
-          <div className="relative home-panel-elevated p-4 md:p-5 before:pointer-events-none before:absolute before:inset-x-12 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-amber-300/40 before:to-transparent">
-            <div className="mb-4 md:mb-5">
-              <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-900 px-2.5 py-1">
-                <Sparkles className="h-2.5 w-2.5 text-amber-300" aria-hidden />
-                <span className="text-[10px] font-bold uppercase tracking-[0.13em] text-white">Smart Tour Matching</span>
-              </div>
-              <h2 className="text-lg font-semibold tracking-tight text-slate-900 md:text-xl">
-                {t("premium.v2.hero.plannerTitle")}
-              </h2>
-            </div>
-
+          <div className="relative home-panel-elevated p-4 md:p-5">
             <div className="mb-4 md:mb-5">
               <label
                 id="home-v2-destination-label"
