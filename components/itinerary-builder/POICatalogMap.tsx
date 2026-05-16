@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { GoogleMap, InfoWindow, useLoadScript } from "@react-google-maps/api";
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
+import { useTranslations } from "@/lib/i18n";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 import type { RegionSlug } from "@/lib/itinerary-builder/regions";
 import POIInfoWindowContent from "./POIInfoWindowContent";
@@ -23,6 +24,7 @@ interface Props {
 }
 
 export default function POICatalogMap({ region, pois, center, mapId, apiKey }: Props) {
+  const t = useTranslations("itineraryBuilder.map");
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: apiKey,
     libraries: LIBRARIES,
@@ -96,8 +98,8 @@ export default function POICatalogMap({ region, pois, center, mapId, apiKey }: P
     return (
       <div className="flex aspect-[16/10] items-center justify-center p-6 text-center md:aspect-[16/8]">
         <div>
-          <p className="text-base font-semibold text-slate-900">Map couldn't load</p>
-          <p className="mt-1 text-sm text-slate-600">Refresh the page or check your connection.</p>
+          <p className="text-base font-semibold text-slate-900">{t("errorTitle")}</p>
+          <p className="mt-1 text-sm text-slate-600">{t("errorBody")}</p>
         </div>
       </div>
     );
@@ -105,7 +107,7 @@ export default function POICatalogMap({ region, pois, center, mapId, apiKey }: P
   if (!isLoaded) {
     return (
       <div className="flex aspect-[16/10] items-center justify-center md:aspect-[16/8]">
-        <p className="text-sm text-slate-500">Loading map…</p>
+        <p className="text-sm text-slate-500">{t("loadingLabel")}</p>
       </div>
     );
   }

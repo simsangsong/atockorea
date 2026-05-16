@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "@/lib/i18n";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 
 interface Props {
@@ -12,6 +13,7 @@ interface Props {
  * Phase 4 will enable the Add button and wire to cart state.
  */
 export default function POIInfoWindowContent({ poi }: Props) {
+  const t = useTranslations("itineraryBuilder.map");
   const summary = (() => {
     const desc = poi.poi_meta && typeof poi.poi_meta === "object" ? (poi.poi_meta as Record<string, unknown>) : null;
     const raw = desc && typeof desc.summary === "string" ? (desc.summary as string) : "";
@@ -39,7 +41,7 @@ export default function POIInfoWindowContent({ poi }: Props) {
       ) : null}
       <div className="mt-2 flex items-center justify-between text-[11px] text-slate-500">
         {poi.default_stay_minutes ? (
-          <span>~{poi.default_stay_minutes} min suggested</span>
+          <span>{t("stayMinutesPattern", { minutes: poi.default_stay_minutes })}</span>
         ) : (
           <span>{poi.region}</span>
         )}
@@ -47,10 +49,10 @@ export default function POIInfoWindowContent({ poi }: Props) {
       <button
         type="button"
         disabled
-        title="Coming in Phase 4 (cart + manual quote)"
+        title={t("addCtaTooltip")}
         className="mt-3 w-full cursor-not-allowed rounded-md bg-slate-200 px-3 py-2 text-xs font-semibold text-slate-500"
       >
-        Add to itinerary — coming soon
+        {t("addCta")}
       </button>
     </div>
   );

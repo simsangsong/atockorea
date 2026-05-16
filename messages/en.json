@@ -2130,5 +2130,30 @@
       "address": "Address:"
     },
     "backToLegal": "Back to Legal"
+  },
+  "itineraryBuilder": {
+    "home": {
+      "eyebrow": "Custom itinerary builder",
+      "title": "Or build your own Korea day",
+      "subtitle": "Pick the stops you actually want on the map. We'll quote it.",
+      "busanName": "Busan",
+      "busanTagline": "Sea temples + ancient capitals + market crawls",
+      "busanStops": "20 curated stops",
+      "jejuName": "Jeju Island",
+      "jejuTagline": "UNESCO Triple Crown — sunrise peaks, lava caves, coastal drives",
+      "jejuStops": "25 curated stops",
+      "browseTheMap": "Browse the map",
+      "open": "Open",
+      "comingSoonNote": "Seoul + DMZ rollout planned after MVP."
+    },
+    "map": {
+      "loadingLabel": "Loading map…",
+      "errorTitle": "Map couldn't load",
+      "errorBody": "Refresh the page or check your connection.",
+      "addCta": "Add to itinerary — coming soon",
+      "addCtaTooltip": "Coming in Phase 4 (cart + manual quote)",
+      "stayMinutesPattern": "~{minutes} min suggested",
+      "regionFallback": "{region}"
+    }
   }
 }
