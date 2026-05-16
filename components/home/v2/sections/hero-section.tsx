@@ -128,7 +128,7 @@ export function HeroSection() {
           near-square on narrow viewports. */}
       <div
         ref={heroPanelRef}
-        className="relative min-h-[42vh] sm:min-h-[48vh] md:min-h-[52vh] lg:min-h-[56vh] flex flex-col justify-end overflow-hidden bg-black pb-3 md:pb-5"
+        className="relative min-h-[34vh] sm:min-h-[38vh] md:min-h-[52vh] lg:min-h-[56vh] flex flex-col justify-end overflow-hidden bg-black pb-3 md:pb-5"
       >
         <div className="absolute inset-0">
           {/* Photo crossfade — slides up under parallax as the user scrolls,
