@@ -121,14 +121,13 @@ export function HeroSection() {
           .hero-proof-badge { animation: none; }
         }
       `}</style>
-      {/* Hero height: balanced against the rest of the page rhythm. Desktop
-          50-56vh keeps the photo cinematic while leaving the trust panel +
-          matcher within first-fold reach (the page's primary conversion
-          path). Mobile 42-48vh avoids cropping the landscape photo to
-          near-square on narrow viewports. */}
+      {/* Hero height: bumped to give Korea's landscape genuine on-page
+          presence. Apple landing pages routinely use 70-90vh hero photos.
+          Mobile capped at 48vh so the inline-stats + matcher headline
+          still peek above the fold on iPhone-class viewports. */}
       <div
         ref={heroPanelRef}
-        className="relative min-h-[34vh] sm:min-h-[38vh] md:min-h-[52vh] lg:min-h-[56vh] flex flex-col justify-end overflow-hidden bg-black pb-3 md:pb-5"
+        className="relative min-h-[44vh] sm:min-h-[48vh] md:min-h-[64vh] lg:min-h-[72vh] flex flex-col justify-end overflow-hidden bg-black pb-3 md:pb-5"
       >
         <div className="absolute inset-0">
           {/* Photo crossfade — slides up under parallax as the user scrolls,

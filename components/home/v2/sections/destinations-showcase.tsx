@@ -83,7 +83,7 @@ export function DestinationsShowcase() {
             {DESTINATIONS.map((dest) => (
               <div
                 key={dest.id}
-                className="w-[39vw] flex-shrink-0 snap-start md:w-auto"
+                className="w-[70vw] flex-shrink-0 snap-start md:w-auto"
               >
                 <DestinationCard
                   name={t(dest.nameKey)}
