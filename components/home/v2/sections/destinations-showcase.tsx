@@ -53,11 +53,7 @@ export function DestinationsShowcase() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden px-4 md:px-6 section-py-md bg-white border-t border-slate-100">
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-200/60 to-transparent"
-        aria-hidden
-      />
+    <section className="relative overflow-hidden px-4 md:px-6 section-py-md bg-white">
       <div ref={containerRef} className="relative mx-auto max-w-6xl scroll-animate">
         <div className="mb-8 text-center md:mb-11">
           <p className="mb-3 text-eyebrow md:mb-4">

@@ -40,7 +40,7 @@ export function ChooseTravelStyle() {
   }, []);
 
   return (
-    <section className="section-py-sm px-4 md:px-6 bg-slate-50 border-t border-slate-100">
+    <section className="section-py-sm px-4 md:px-6 bg-slate-50">
       <div ref={containerRef} className="max-w-4xl mx-auto">
         <div className="text-center mb-7 md:mb-9">
           <p className="mb-3 text-eyebrow md:mb-4">

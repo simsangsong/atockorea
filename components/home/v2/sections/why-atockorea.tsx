@@ -60,7 +60,7 @@ export function WhyAtockorea() {
 
   return (
     <section
-      className="relative overflow-hidden border-t border-amber-100/70 px-4 section-py-sm"
+      className="relative overflow-hidden px-4 section-py-sm"
       style={{ background: "var(--surface-section-warm)" }}
     >
       <div ref={containerRef} className="relative z-[1] mx-auto max-w-5xl">
