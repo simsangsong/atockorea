@@ -155,7 +155,7 @@ export function BestMatchPreview() {
                 phase === "loading"
                   ? "bg-slate-500 animate-pulse"
                   : phase === "result"
-                    ? "bg-amber-600"
+                    ? "bg-slate-700"
                     : "bg-slate-400"
               }`}
             />
