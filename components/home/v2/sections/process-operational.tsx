@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Send, CheckCircle, MapIcon } from "lucide-react";
+import { Send, CheckCircle, MapIcon, CalendarCheck } from "lucide-react";
 import { useTranslations } from "@/lib/i18n";
 
 type ProcessStep = {
@@ -31,7 +31,7 @@ const STEPS: ReadonlyArray<ProcessStep> = [
     bodyKey: "premium.v2.process.step3Body",
   },
   {
-    Icon: CheckCircle,
+    Icon: CalendarCheck,
     labelKey: "premium.v2.process.step4Label",
     titleKey: "premium.v2.process.step4Title",
     bodyKey: "premium.v2.process.step4Body",
@@ -64,7 +64,7 @@ export function ProcessOperational() {
     >
       <div ref={containerRef} className="max-w-5xl mx-auto scroll-animate">
         <div className="text-center mb-8 md:mb-10">
-          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.14em] text-amber-400 md:mb-4">
+          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.14em] text-amber-300 md:mb-4">
             {t("premium.v2.process.eyebrow")}
           </p>
           <h2 className="text-h2 text-white">
@@ -97,12 +97,12 @@ export function ProcessOperational() {
                   {/* md+ inline icon + label */}
                   <div className="hidden md:flex items-center gap-2.5 mb-2.5">
                     <StepIconBadge step={step} />
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-amber-300/85">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-amber-300">
                       {t(step.labelKey)}
                     </span>
                   </div>
                   {/* Mobile: label without icon (icon lives on the rail) */}
-                  <span className="block md:hidden text-[10px] font-bold uppercase tracking-wider mb-1.5 text-amber-300/85">
+                  <span className="block md:hidden text-[10px] font-bold uppercase tracking-wider mb-1.5 text-amber-300">
                     {t(step.labelKey)}
                   </span>
                   <h4 className="text-[14px] font-semibold text-white mb-1">

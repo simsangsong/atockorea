@@ -327,12 +327,12 @@ export function HeroSection() {
                       </span>
                       <span
                         className={`mt-1 flex items-center justify-center gap-1 text-[10px] font-medium tracking-wide md:text-[11px] ${
-                          active ? "text-emerald-300" : "text-emerald-600"
+                          active ? "text-white/70" : "text-slate-500"
                         }`}
                       >
                         <span
                           className={`h-1 w-1 rounded-full md:h-1.5 md:w-1.5 ${
-                            active ? "bg-emerald-400" : "bg-emerald-500"
+                            active ? "bg-white/70" : "bg-slate-400"
                           }`}
                         />
                         {t("premium.hero.destSegmentLabelAvailable")}
@@ -442,7 +442,7 @@ export function HeroSection() {
           <span className="text-slate-300 mx-0.5">·</span>
           <span className="text-slate-500">Klook · GetYourGuide · Viator</span>
           <span className="text-slate-300 mx-0.5">·</span>
-          <span className="font-semibold text-emerald-700">Verified operators</span>
+          <span className="font-semibold text-slate-700">Verified operators</span>
         </div>
       </div>
     </section>

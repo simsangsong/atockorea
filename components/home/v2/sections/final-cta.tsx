@@ -51,7 +51,7 @@ export function FinalCTA() {
 
             <div className="home-neutral-trust-tile home-neutral-trust-tile--compact mb-8 grid grid-cols-2 gap-3 p-4 md:flex md:flex-wrap md:items-center md:justify-center md:gap-5 md:p-5">
               <div className="flex items-center gap-2 justify-center">
-                <Star className="w-4 h-4 fill-amber-400 text-amber-400" aria-hidden />
+                <Star className="w-4 h-4 text-slate-500" aria-hidden />
                 <span className="text-[12px] md:text-sm font-semibold text-slate-700">
                   {t("premium.v2.finalCtaBlock.trust1Fallback")}
                 </span>

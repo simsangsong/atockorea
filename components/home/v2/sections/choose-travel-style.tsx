@@ -55,19 +55,16 @@ export function ChooseTravelStyle() {
             "more →" on mobile where the scrollbar is hidden. */}
         <div className="relative -mx-4 md:mx-0">
         <div ref={scrollRef} className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-none md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0 md:snap-none">
-          {/* Small Group — featured (dark navy, emerald accent) */}
+          {/* Small Group — featured (dark slate, amber accent only) */}
           <div
-            className="relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-slate-700/50 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 p-4 md:p-5 shadow-home-offer-smgroup transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-home-offer-smgroup-hover scroll-animate flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
+            className="relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-slate-700/50 bg-slate-900 p-4 md:p-5 shadow-2 transition-all duration-300 ease-out hover:-translate-y-0.5 scroll-animate flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
             data-animate
           >
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-400" />
-            <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-emerald-500/10 to-transparent rounded-full -mr-20 -mt-20 pointer-events-none" />
-
             <div className="flex items-center justify-between mb-4 mt-1">
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center">
-                <Users className="w-4 h-4 md:w-5 md:h-5 text-emerald-400" />
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center">
+                <Users className="w-4 h-4 md:w-5 md:h-5 text-white" />
               </div>
-              <span className="text-[9px] md:text-[10px] font-bold text-emerald-400 bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-1 rounded-full tracking-wide flex items-center gap-1">
+              <span className="text-[9px] md:text-[10px] font-bold text-amber-300 bg-white/5 border border-white/15 px-2.5 py-1 rounded-full tracking-wide flex items-center gap-1">
                 <Award className="w-3 h-3" />
                 {t("premium.v2.chooseStyle.recommended")}
               </span>
@@ -91,7 +88,7 @@ export function ChooseTravelStyle() {
                 <span className="text-xl md:text-2xl font-bold text-white tracking-tight">
                   {formatPrice(featuredJoin.listPriceUsd)}
                 </span>
-                <span className="text-[11px] text-emerald-300 font-semibold">{t("premium.v2.chooseStyle.perPerson")}</span>
+                <span className="text-[11px] text-white/70 font-semibold">{t("premium.v2.chooseStyle.perPerson")}</span>
               </div>
             </div>
 
@@ -113,18 +110,16 @@ export function ChooseTravelStyle() {
             </V0ShadcnButton>
           </div>
 
-          {/* Private — amber accent */}
+          {/* Private — neutral white card */}
           <div
-            className="group relative w-[68vw] flex-none snap-start overflow-hidden scroll-animate rounded-card border border-slate-200/70 bg-white p-4 md:p-5 shadow-home-offer-private transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-slate-300/90 hover:shadow-home-offer-private-hover flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
+            className="group relative w-[68vw] flex-none snap-start overflow-hidden scroll-animate rounded-card border border-slate-200/70 bg-white p-4 md:p-5 shadow-2 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-slate-300/90 flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
             data-animate
           >
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-300" />
-
             <div className="flex items-center justify-between mb-4 mt-1">
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center">
-                <Car className="w-4 h-4 md:w-5 md:h-5 text-amber-700" />
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center">
+                <Car className="w-4 h-4 md:w-5 md:h-5 text-slate-700" />
               </div>
-              <span className="text-[9px] md:text-[10px] font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full tracking-wide">
+              <span className="text-[9px] md:text-[10px] font-bold text-slate-700 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full tracking-wide">
                 {t("premium.v2.chooseStyle.privateBadge")}
               </span>
             </div>
@@ -161,36 +156,34 @@ export function ChooseTravelStyle() {
             </V0ShadcnButton>
           </div>
 
-          {/* Bus — stone/amber warm */}
+          {/* Bus — neutral white card */}
           <div
-            className="group relative w-[68vw] flex-none snap-start overflow-hidden scroll-animate rounded-card border border-amber-200/60 bg-gradient-to-br from-amber-50/40 via-stone-50 to-orange-50/30 p-4 md:p-5 shadow-home-offer-bus transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-amber-300/70 hover:shadow-home-offer-bus-hover flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
+            className="group relative w-[68vw] flex-none snap-start overflow-hidden scroll-animate rounded-card border border-slate-200/70 bg-white p-4 md:p-5 shadow-2 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-slate-300/90 flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
             data-animate
           >
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-300/80 via-stone-400 to-amber-300/80" />
-
             <div className="flex items-center justify-between mb-4 mt-1">
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-gradient-to-br from-amber-100 to-stone-100 flex items-center justify-center border border-amber-200/60 shadow-1">
-                <Bus className="w-4 h-4 md:w-5 md:h-5 text-amber-700" />
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center">
+                <Bus className="w-4 h-4 md:w-5 md:h-5 text-slate-700" />
               </div>
-              <span className="text-[9px] md:text-[10px] font-bold text-amber-800 bg-amber-100/90 border border-amber-200/70 px-2.5 py-1 rounded-full tracking-wide shadow-sm">
+              <span className="text-[9px] md:text-[10px] font-bold text-slate-700 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full tracking-wide">
                 {t("premium.v2.chooseStyle.busBadge")}
               </span>
             </div>
 
-            <h3 className="text-base md:text-lg font-bold text-slate-800 tracking-tight mb-1">
+            <h3 className="text-base md:text-lg font-bold text-slate-900 tracking-tight mb-1">
               {t("premium.v2.chooseStyle.busTitle")}
             </h3>
-            <p className="text-[12.5px] text-stone-600 mb-3 leading-relaxed line-clamp-3 flex-1">
+            <p className="text-[12.5px] text-slate-600 mb-3 leading-relaxed line-clamp-3 flex-1">
               {t("premium.v2.chooseStyle.busDesc")}
             </p>
 
             <div className="mb-4">
               <p className="text-[10px] text-slate-400 mb-0.5 uppercase tracking-wider">{t("premium.v2.chooseStyle.from")}</p>
               <div className="flex items-baseline gap-1.5">
-                <span className="text-xl md:text-2xl font-bold text-slate-800 tracking-tight">
+                <span className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">
                   {formatPrice(CHOOSE_STYLE_CARD_USD.bus.from)}
                 </span>
-                <span className="text-amber-700/70 text-[11px] font-semibold">{t("premium.v2.chooseStyle.busPerPerson")}</span>
+                <span className="text-slate-500 text-[11px] font-semibold">{t("premium.v2.chooseStyle.busPerPerson")}</span>
               </div>
             </div>
 

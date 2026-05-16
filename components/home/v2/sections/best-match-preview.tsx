@@ -155,9 +155,9 @@ export function BestMatchPreview() {
             <span
               className={`w-1.5 h-1.5 rounded-full ${
                 phase === "loading"
-                  ? "bg-sky-500 animate-pulse"
+                  ? "bg-slate-500 animate-pulse"
                   : phase === "result"
-                    ? "bg-primary"
+                    ? "bg-amber-600"
                     : "bg-slate-400"
               }`}
             />
@@ -193,18 +193,17 @@ export function BestMatchPreview() {
                 3-step checklist below that lights up sequentially. Layout
                 still mirrors the result card so the transition into the
                 result has no shift. */}
-            <div className="relative aspect-[3/2] md:aspect-[16/9] overflow-hidden bg-gradient-to-br from-slate-50 via-sky-50/60 to-amber-50/40">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(56,189,248,0.18),transparent_55%),radial-gradient(circle_at_75%_70%,rgba(251,191,36,0.14),transparent_55%)]" />
+            <div className="relative aspect-[3/2] md:aspect-[16/9] overflow-hidden bg-slate-50">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative">
                   {/* Outer ring — spins */}
                   <div
-                    className="h-20 w-20 rounded-full border-2 border-sky-200 border-t-sky-500 animate-spin md:h-24 md:w-24"
+                    className="h-20 w-20 rounded-full border-2 border-slate-200 border-t-slate-700 animate-spin md:h-24 md:w-24"
                     aria-hidden
                   />
                   {/* Inner pulsing halo */}
                   <span
-                    className="pointer-events-none absolute inset-3 rounded-full bg-sky-400/15 animate-ping md:inset-4"
+                    className="pointer-events-none absolute inset-3 rounded-full bg-slate-400/15 animate-ping md:inset-4"
                     aria-hidden
                   />
                   {/* Sparkles icon centered */}
@@ -212,17 +211,17 @@ export function BestMatchPreview() {
                     className="pointer-events-none absolute inset-0 flex items-center justify-center"
                     aria-hidden
                   >
-                    <Sparkles className="h-7 w-7 text-sky-600 md:h-8 md:w-8" strokeWidth={1.8} />
+                    <Sparkles className="h-7 w-7 text-slate-700 md:h-8 md:w-8" strokeWidth={1.8} />
                   </span>
                 </div>
               </div>
             </div>
             <div className="p-4 md:p-5">
               <div className="mb-3 flex items-center gap-2">
-                <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-sky-700">
+                <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-700">
                   Smart Match
                 </span>
-                <span className="h-1 w-1 rounded-full bg-sky-400" aria-hidden />
+                <span className="h-1 w-1 rounded-full bg-slate-400" aria-hidden />
                 <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-slate-500">
                   analyzing
                 </span>
@@ -243,15 +242,15 @@ export function BestMatchPreview() {
                       {/* Step indicator */}
                       {state === "done" ? (
                         <span
-                          className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white"
+                          className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-slate-700 text-white"
                           aria-hidden
                         >
                           <Check className="h-3 w-3" strokeWidth={3} />
                         </span>
                       ) : state === "active" ? (
                         <span className="relative flex h-4 w-4 flex-shrink-0 items-center justify-center" aria-hidden>
-                          <span className="absolute inset-0 rounded-full bg-sky-400/40 animate-ping" />
-                          <span className="relative h-2.5 w-2.5 rounded-full bg-sky-500 shadow-[0_0_10px_rgba(56,189,248,0.55)]" />
+                          <span className="absolute inset-0 rounded-full bg-slate-400/40 animate-ping" />
+                          <span className="relative h-2.5 w-2.5 rounded-full bg-slate-700" />
                         </span>
                       ) : (
                         <span
@@ -280,7 +279,7 @@ export function BestMatchPreview() {
                 aria-hidden
               >
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-sky-400 via-sky-500 to-sky-600 transition-[width] duration-500 ease-out"
+                  className="h-full rounded-full bg-slate-700 transition-[width] duration-500 ease-out"
                   style={{ width: `${Math.min(loadingStep + 1, 3) * 33.33}%` }}
                 />
               </div>
@@ -355,22 +354,14 @@ export function BestMatchPreview() {
 
                 <div className="p-3 md:p-5">
                   <div className="flex flex-wrap gap-1.5 mb-3 md:mb-4">
-                    {resultVm.chipLabels.map((label: string, index: number) => {
-                      const tone =
-                        index === 0
-                          ? "bg-emerald-50 text-emerald-700"
-                          : index === 1
-                            ? "bg-sky-50 text-sky-700"
-                            : "bg-amber-50 text-amber-700";
-                      return (
-                        <span
-                          key={`${label}-${index}`}
-                          className={cn("px-2.5 py-1 text-[10px] font-medium rounded-full", tone)}
-                        >
-                          {label}
-                        </span>
-                      );
-                    })}
+                    {resultVm.chipLabels.map((label: string, index: number) => (
+                      <span
+                        key={`${label}-${index}`}
+                        className="px-2.5 py-1 text-[10px] font-medium rounded-full bg-slate-100 text-slate-700"
+                      >
+                        {label}
+                      </span>
+                    ))}
                   </div>
 
                   <p className="text-[13px] text-slate-600 mb-2 leading-relaxed">
