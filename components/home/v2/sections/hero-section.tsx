@@ -58,22 +58,22 @@ export function HeroSection() {
   const photoY = useTransform(
     scrollYProgress,
     [0, 1],
-    reduceMotion ? ["0%", "0%"] : ["0%", "-22%"],
+    reduceMotion ? ["0%", "0%"] : ["0%", "-12%"],
   );
   const darkenOpacity = useTransform(
     scrollYProgress,
     [0, 1],
-    reduceMotion ? [0, 0] : [0, 0.5],
+    reduceMotion ? [0, 0] : [0, 0.42],
   );
   const headlineY = useTransform(
     scrollYProgress,
     [0, 1],
-    reduceMotion ? [0, 0] : [0, 36],
+    reduceMotion ? [0, 0] : [0, 24],
   );
   const headlineOpacity = useTransform(
     scrollYProgress,
     [0, 0.6, 1],
-    reduceMotion ? [1, 1, 1] : [1, 0.85, 0.55],
+    reduceMotion ? [1, 1, 1] : [1, 0.92, 0.7],
   );
 
   const styleChipOptions = useMemo(
