@@ -2156,6 +2156,22 @@
       "stayMinutesPattern": "~{minutes} min suggested",
       "regionFallback": "{region}"
     },
+    "quote": {
+      "title": "Get a custom quote",
+      "intro": "{count} stops in {region}. We'll quote logistics + pricing.",
+      "nameLabel": "Your name",
+      "emailLabel": "Email",
+      "dateLabel": "Travel date",
+      "partyLabel": "Party size",
+      "notesLabel": "Anything else?",
+      "notesPlaceholder": "Hotel pickup, accessibility, food preferences…",
+      "submit": "Send request",
+      "submitting": "Sending…",
+      "close": "Close",
+      "responseHint": "We'll respond within 24 hours by email.",
+      "errorEmailRequired": "Please enter your email so we can reply.",
+      "errorGeneric": "Couldn't send the request — please try again or contact support."
+    },
     "intake": {
       "trackLegend": "How are you traveling?",
       "trackPrivateLabel": "Private car / land trip",

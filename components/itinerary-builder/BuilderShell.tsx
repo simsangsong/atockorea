@@ -1,12 +1,13 @@
 "use client";
 
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useCart } from "@/lib/itinerary-builder/cart";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 import type { RegionSlug } from "@/lib/itinerary-builder/regions";
 import POICatalogMap from "./POICatalogMap";
 import CartPanel from "./CartPanel";
+import QuoteModal from "./QuoteModal";
 
 interface Props {
   region: RegionSlug;
@@ -24,6 +25,7 @@ interface Props {
 export default function BuilderShell({ region, pois, center, mapId, apiKey }: Props) {
   const { cart, add, remove, reorder, has } = useCart();
   const searchParams = useSearchParams();
+  const [quoteOpen, setQuoteOpen] = useState(false);
 
   // Phase 4b — cruise track time budget: if `?track=cruise&hours=N` is set,
   // CartPanel renders the budget + warning when total exceeds.
@@ -36,10 +38,9 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
   }, [searchParams]);
 
   const handleGetQuote = useCallback(() => {
-    // Phase 4d wires the quote modal + POST /api/itinerary/quote here.
-    // Phase 4a leaves this as a no-op so the button is reachable but inert.
-    console.info("[BuilderShell] Get quote clicked. Cart:", cart);
-  }, [cart]);
+    if (cart.length === 0) return;
+    setQuoteOpen(true);
+  }, [cart.length]);
 
   return (
     <div className="flex h-[78vh] min-h-[600px] flex-col md:flex-row">
@@ -62,8 +63,14 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
         onRemove={remove}
         onReorder={reorder}
         onGetQuote={handleGetQuote}
-        getQuoteEnabled={false}
+        getQuoteEnabled={true}
         cruiseBudgetMinutes={cruiseBudgetMinutes}
+      />
+      <QuoteModal
+        open={quoteOpen}
+        onClose={() => setQuoteOpen(false)}
+        cart={cart}
+        region={region}
       />
     </div>
   );
