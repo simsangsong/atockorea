@@ -121,12 +121,13 @@ export function HeroSection() {
           .hero-proof-badge { animation: none; }
         }
       `}</style>
-      {/* Hero height: Apple-grade photography presence. Mobile 56vh keeps
-          the matcher panel hint visible just below the fold; desktop 68-72vh
-          lets the photo do the heavy lifting like apple.com/iphone. */}
+      {/* Hero height: Apple-grade photography presence on desktop (68/72vh)
+          while mobile stays at ~42vh so the landscape photo doesn't get
+          cropped into a near-square. Desktop widths render the same photo
+          as a wide cinematic crop, so the taller vh values look correct. */}
       <div
         ref={heroPanelRef}
-        className="relative min-h-[56vh] sm:min-h-[60vh] md:min-h-[68vh] lg:min-h-[72vh] flex flex-col justify-end overflow-hidden bg-black pb-3 md:pb-5"
+        className="relative min-h-[42vh] sm:min-h-[48vh] md:min-h-[64vh] lg:min-h-[72vh] flex flex-col justify-end overflow-hidden bg-black pb-3 md:pb-5"
       >
         <div className="absolute inset-0">
           {/* Photo crossfade — slides up under parallax as the user scrolls,
