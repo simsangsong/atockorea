@@ -259,16 +259,16 @@ export function HeroSection() {
         </div>
 
         <div className="relative mx-auto max-w-lg">
-          <div className="relative home-panel-elevated p-4 md:p-5">
-            <div className="mb-4 md:mb-5">
+          <div className="relative rounded-card border border-slate-200/70 bg-white p-4 shadow-1 md:p-5">
+            <div className="mb-3 md:mb-4">
               <label
                 id="home-v2-destination-label"
-                className="mb-3 block text-sm font-semibold text-slate-800 md:text-[15px]"
+                className="mb-2.5 block text-caption font-semibold text-slate-700"
               >
                 {t("premium.hero.destinationSectionTitle")}
               </label>
               <div
-                className="grid grid-cols-3 gap-2 md:gap-2.5"
+                className="grid grid-cols-3 gap-2"
                 role="radiogroup"
                 aria-labelledby="home-v2-destination-label"
               >
@@ -288,7 +288,7 @@ export function HeroSection() {
                       aria-checked={active}
                       onClick={() => setDestination(id)}
                       className={cn(
-                        "focus-ring rounded-button border px-2 py-3.5 text-center text-[15px] font-semibold tracking-tight transition-colors duration-200 md:py-4 md:text-base",
+                        "focus-ring rounded-button border px-2 py-3 text-center text-[14px] font-semibold tracking-tight transition-colors duration-200 md:py-3.5 md:text-[15px]",
                         active
                           ? "border-slate-900 bg-slate-900 text-white"
                           : "border-slate-200/70 bg-slate-50 text-slate-900 hover:bg-slate-100",
@@ -301,15 +301,17 @@ export function HeroSection() {
               </div>
             </div>
 
-            <div className="mb-4 md:mb-5">
+            <div className="mb-3 md:mb-4">
               <div className="relative">
                 {/*
                  * Expandable intent field.
-                 * Collapsed (blur + empty)  : looks like a single-line input (h-12 / md:h-14).
-                 * Expanded  (focus or typed): grows downward into a multi-line drawer
-                 *                             so users can describe their trip in detail.
-                 * A <textarea> is used so the expanded state can hold real line breaks.
-                 * External callers still query via [data-home-hero-intent] (tag-neutral).
+                 * Collapsed: single-line input height (h-12 / md:h-14) with a
+                 * compact 11px placeholder so the long EN copy stays on one line
+                 * even on narrow viewports. Truncates with ellipsis if it ever
+                 * overflows.
+                 * Expanded (focus or typed): grows downward into a multi-line
+                 * drawer with the standard text-caption scale for comfortable
+                 * typing. External callers still query via [data-home-hero-intent].
                  */}
                 <textarea
                   id="home-v2-hero-intent"
@@ -326,26 +328,21 @@ export function HeroSection() {
                   autoComplete="off"
                   aria-label={t("premium.hero.intentInputAria")}
                   className={cn(
-                    // Matcher form system: rounded-button (14px) + bg-slate-50
-                    // + border-slate-200/70 — same shell as the destination
-                    // radio above. Placeholder and content both render at the
-                    // same scale (text-caption) so users don't feel the input
-                    // "downshift" when they start typing.
-                    "w-full resize-none rounded-button border border-slate-200/70 bg-slate-50 px-3.5 text-caption text-slate-800 transition-[height,padding,border-color,background-color] duration-300 ease-out placeholder:text-slate-400 focus:border-slate-300 focus:bg-white focus-ring md:px-4",
+                    "w-full resize-none rounded-button border border-slate-200/70 bg-slate-50 px-3.5 text-slate-800 transition-[height,padding,border-color,background-color] duration-300 ease-out placeholder:text-slate-400 focus:border-slate-300 focus:bg-white focus-ring md:px-4",
                     intentExpanded
-                      ? "h-32 overflow-auto py-3 md:h-40 md:py-4"
-                      // Collapsed state must accommodate the long EN placeholder
-                      // ("Pace, sights, and who you're traveling with…", ~48 chars)
-                      // wrapping to 2 lines on narrow viewports without clipping.
-                      // h-16 (64px) = 2 lines of text-caption + py-3 (12px each).
-                      : "h-16 overflow-hidden py-3 md:h-14 md:py-4",
+                      ? "h-32 overflow-auto py-3 text-caption md:h-40 md:py-4"
+                      // Collapsed: single-line h-12 (48px) + text-[11px] so the
+                      // long EN placeholder fits on one line on a 390px viewport.
+                      // truncate (white-space:nowrap + overflow:hidden + ellipsis)
+                      // is the safety net if the locale string overflows anyway.
+                      : "h-12 overflow-hidden truncate py-3.5 text-[11px] leading-tight md:h-14 md:py-4 md:text-caption",
                   )}
                 />
               </div>
             </div>
 
-            <div className="mb-4 md:mb-5" role="group" aria-label={t("premium.comparison.chipsAria")}>
-              <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none md:gap-2.5">
+            <div className="mb-3 md:mb-4" role="group" aria-label={t("premium.comparison.chipsAria")}>
+              <div className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-none md:gap-2">
                 {styleChipOptions.map((tag) => {
                   const isSelected = chipLooksSelected(tag.label);
                   return (
@@ -355,7 +352,7 @@ export function HeroSection() {
                       aria-pressed={isSelected}
                       onClick={() => appendChip(tag.label)}
                       className={cn(
-                        "focus-ring flex-none rounded-full border px-3.5 py-2 text-caption font-medium transition-colors duration-200 md:px-4 md:py-2.5",
+                        "focus-ring flex-none rounded-full border px-3 py-1.5 text-[11px] font-medium transition-colors duration-200 md:px-3.5 md:py-2 md:text-caption",
                         isSelected
                           ? "border-slate-900 bg-slate-900 text-white"
                           : "border-slate-200/70 bg-slate-50 text-slate-600 hover:bg-slate-100",
