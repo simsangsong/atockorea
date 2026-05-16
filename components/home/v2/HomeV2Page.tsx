@@ -28,9 +28,7 @@ export default function HomeV2Page() {
           <ChooseTravelStyle />
           <FeaturedProductsShowcase />
           <WhyAtockorea />
-          <div className="h-10 bg-gradient-to-b from-[#FDF8F0] to-[#1C1810]" aria-hidden />
           <ProcessOperational />
-          <div className="h-10 bg-gradient-to-b from-[#141008] to-white" aria-hidden />
           <FinalCTA />
         </div>
         <StickyHomeCta />
