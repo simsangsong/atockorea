@@ -52,8 +52,13 @@ next-env.d.ts
 /ios
 /.capacitor
 
-# Claude Code agent data — worktrees + session transcripts (~3GB, never commit)
-/.claude/
+# Claude Code agent data — worktrees + session transcripts (~3GB)
+# Pattern: ignore directory CONTENTS (not the dir itself) so we can re-include
+# specific subpaths below. Once a directory is fully ignored, negation patterns
+# inside it stop working — known git limitation.
+/.claude/*
+# Exception: project-level skills are versioned alongside the code they describe
+!/.claude/skills/
 
 # generated / scratch script artifacts
 scripts/*.log

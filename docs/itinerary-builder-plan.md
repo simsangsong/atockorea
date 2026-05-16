@@ -1,274 +1,293 @@
-# Custom Itinerary Builder — Audit & Plan
+# Custom Itinerary Builder — Master Planner
 
-> Single source of truth for the "map + POI + AI-recommended day itinerary" feature.
-> Last reviewed: 2026-05-16.
+> **Single source of truth** for the map + POI + AI-itinerary feature.
+> This is a living document: status, decisions, change log, and the
+> 6-phase plan all live here. The `/itinerary-builder` skill is wired
+> to load this first before any work in this feature area.
+>
+> **Anyone (Claude or human) starting work on this feature MUST read
+> this whole doc, find the current phase, and either advance it or
+> update §A (status) and §B (decisions) before deviating.**
 
-## 0 · Executive summary
+---
 
-The user wants travelers to land on the private-tour page, see a **map with all curated POIs pinned**, click any pin to read details + photos, **build their own day-itinerary** by selecting/sequencing POIs, and optionally **let the matcher AI auto-propose a starting itinerary** from their preferences (reusing the existing Gemini intent parser + tour matching_profile scoring).
+## A · Status dashboard
 
-This is genuinely differentiated against Klook/GYG (packaged tours only) and Inspirock/TripIt (blank-canvas planner without curation). It is **also genuinely large** — ~2 weeks of focused work for an MVP, ~3-4 weeks for full polish across 3 regions.
-
-The plan below is intentionally split into 6 phases with clear acceptance criteria at each cut-line so we can pause / pivot / ship partially with confidence.
-
-## 1 · What already exists (audit results)
-
-### 1.1 — Matcher v2 (highly portable to POI-level)
-
-| Subsystem | State | POI-level reusability |
-|---|---|---|
-| `lib/tour-match-v2/parser.ts` + `parser-haiku.ts` + `parser-rule.ts` | Production, Gemini Haiku 4.5 + rule fallback | ✅ Reuse as-is. Output `ParsedQueryV2` is tour-agnostic (regions / season_locks / personas / themes / anchor_pois / pace / format / hard_constraints / boost_dimensions). |
-| `matching_dimensions_taxonomy.json` | Multilingual taxonomy (regions, seasons, personas, themes, anchor_pois) | ✅ Reuse as-is. |
-| `lib/tour-match-v2/matcher.ts` — `hardFilter` + `scoreTour` + `matchTours` | 8 score components (anchor_poi, themes, persona, sub_region, season_lock, format, slug_tokens, charter_intent) + negative_signals + a_grade bonus + signal-strength gating | ⚠️ Iteration pattern needs POI-aware wrapper. Score components are dimension-agnostic (read arbitrary `matching_profile[key]`), so adding POI-level dims = data work, not code work. |
-| `seasonal-gate.ts`, `signal-strength.ts` | Hard gates + match_status classification | ✅ Reuse — apply same filter to POI catalog instead of tours. |
-| `explainer-haiku.ts` | 2nd Haiku pass that writes natural-language "why this match" | ✅ Reuse for "why we recommended this POI sequence". |
-| `/api/tour-product/match` | Returns `top_matches[]` (tour-level), `match_status`, `notes`, telemetry | 🔧 Add sibling `/api/itinerary/match` that returns `top_pois[]` + auto-sequenced `itinerary_draft[]`. |
-
-**Verdict:** The matcher engine is portable. Adding POI-level matching ≈ 1-2 days of code + N days of data work (POI matching_profile authoring).
-
-### 1.2 — Tour content (POI extraction source)
-
-| Source | Quantity | Per-stop fields |
-|---|---|---|
-| `components/product-tour-static/<slug>/<slug>.<locale>.json` — `itineraryStops[]` | 34 tours × 6 locales = 204 files. ~150 stops in EN. **102 unique `_poi_meta.poi_key`** values. | name, time, duration, number, category, **_poi_meta** (poi_key, sources, verified, kb_version), highlights, smartNotes, visitBasics, convenience, description (1200-2100 chars), whyOnRoute (context-specific per parent tour), image, images[], imageCredits |
-| Same JSONs — `routeFlowStops[]` | Same length per tour | Minimal (`name, theme, type`). Derived UI layer. **Ignore for catalog.** |
-| `lat/lng` | None on itineraryStops. Only on `pickup_dropoff.departure[]/return[]` in 12 of 204 files. | ❌ Need to source. |
-
-**Cross-tour consistency:** Core POI fields (name / category / description / highlights / images) are identical across tours that reuse the same poi_key (verified Bulguksa, Tongdosa). `whyOnRoute` is per-tour (justifies why _this_ tour visits the POI in this order — not a stable POI attribute).
-
-### 1.3 — Supabase schema (POI infrastructure partially exists)
-
-| Table | Rows | Status | Notes |
-|---|---|---|---|
-| `match_tours` | 30 tours × ~6 locales | Populated. Per-tour `matching_profile` (jsonb), `primary_themes`, `secondary_themes`, `best_for`, `not_recommended_for`, `anchor_poi_keys`, `destination_region`, `pickup_region`, `duration_hours`, `vehicle_type`, `a_grade`, `is_cruise_excursion`, `is_charter_route_options`. `embedding vector` exists but unpopulated. | Core matcher reads from here. |
-| `match_pois` | 84 rows | **Schema exists, mostly empty** — only `poi_key` is set; `name_en/name_ko/region/stop_role/default_image_url/poi_meta` are null/empty. | Designed as POI catalog. Needs population. |
-| `match_itinerary_stops` | 208 rows | **Metadata-only** — `tour_slug, stop_index, poi_key, title, description_length, highlights_count, why_on_route_length, time_used_count, sources_count, is_operational`. No content body. | Designed as tour→POI junction. Sufficient for the matcher's "which tours visit this POI" lookup. |
-| `poi_search_profile` | 576 rows | KO-locale only, mostly empty tags. Keyed by TourAPI `content_id` (numeric, e.g. 1206420). | **Separate POI system** built for 한국관광공사 TourAPI search. Not linked to `match_pois`. Possible future merge; out of scope for MVP. |
-| `pickup_points` | 0 rows | Empty. Has `lat`, `lng`, `pickup_time`, `display_order`. | Adjacent infrastructure (per-tour pickup coords). Out of scope. |
-| PostGIS extension | Not enabled | `pgvector` is enabled (for embeddings); no PostGIS. | Not needed — numeric lat/lng + Haversine in JS is fine for our radius queries. |
-
-**Verdict:** `match_pois` is the right home for the POI catalog. We need to populate it: name (en/ko), region, lat/lng (new field in `poi_meta` or as columns), default_image_url, and the new `matching_profile` jsonb (which doesn't exist yet — to be added).
-
-### 1.4 — Private-tour surface (where the feature lives)
-
-| Route | Current state |
+| Field | Value |
 |---|---|
-| `/tour-product/busan-private-car-charter-cruise-shore` | Static JSON detail page. "Choose places that matter most" framing already in copy. |
-| `/tour-product/jeju-island-private-car-charter-tour` | Same. |
-| `/tour-product/seoul-suburbs-private-chartered-car-10hr` | Same. |
-| `/tour-product/incheon-seoul-private-car-shore-excursion-cruise` | Same. |
-| `/tour-product/seoul-dmz-private-3rd-tunnel-suspension-bridge` | Same. |
-| `/match` | Existing hero matcher result page (returns winning tour). |
-| `HOME_CTA_MATCHING_HREF = "/match"` | No dedicated "build your own itinerary" link in home config. |
+| **Current phase** | Phase 0 — audit & plan ✅ complete. Awaiting approval to start Phase 1. |
+| **Blocked on** | User decision on §B open questions (region scope, vendor, table shape, quote model, auth). |
+| **Last updated** | 2026-05-16 |
+| **Last commit touching this feature** | `a732e63f` — docs: itinerary-builder full audit + 6-phase plan |
+| **Owner** | simsangsong |
+| **Reviewers** | — |
 
-**Recommendation:** New route `/itinerary-builder/[region]?seed=<intent>` (e.g., `/itinerary-builder/busan`). Each existing private-tour detail page adds a prominent CTA → "Build my own itinerary on the map". Hero matcher gains a second CTA → "Or design my own day instead".
+### Phase progress
 
-### 1.5 — Map / geocoding (Google already integrated)
+| Phase | Status | Started | Done | Commit hash(es) |
+|---|---|---|---|---|
+| 0 — Audit & plan | ✅ complete | 2026-05-16 | 2026-05-16 | `a732e63f` |
+| 1 — POI catalog seed | ⏸ not started | — | — | — |
+| 2 — Coordinate enrichment | ⏸ not started | — | — | — |
+| 3 — Map UI read-only | ⏸ not started | — | — | — |
+| 4 — Cart + sequencing + quote | ⏸ not started | — | — | — |
+| 5 — POI matching_profile authoring | ⏸ not started | — | — | — |
+| 6 — AI recommendation engine | ⏸ not started | — | — | — |
 
-- `@react-google-maps/api v2.20.7` installed.
-- `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` env present.
-- `components/maps/HotelMapPicker.tsx` — modal map with Places Autocomplete + click-to-select. Reusable pattern for our cluster + popup + select UX.
-- `components/product-tour-static/_shared/TourPickupMapSection.tsx` — read-only pickup map at 260px height. Reference for embedded map sizing on detail pages.
-- `lib/google-maps.ts` — `geocodeAddress(text)`, `reverseGeocode(lat, lng)` already wrapped.
+Legend: ⏸ not started · 🔄 in progress · ✅ complete · ⚠️ blocked · ❌ abandoned
 
-**Verdict:** Google Maps is the path of least resistance. No vendor swap needed. (Kakao would be more accurate for Korean POI fuzzy-search, but we're using curator-supplied POIs so coordinate precision is what matters, and Google's geocoder is fine for that.)
+---
 
-## 2 · Architecture (target)
+## B · Decision log
 
-```
-┌────────────────────────────────────────────────────────────┐
-│  /itinerary-builder/[region]?seed=<intent>                 │
-│  ┌──────────────────────────────────────────────────────┐  │
-│  │ Top bar: intent input ─────────────── "AI 추천 받기" ▶ │  │
-│  └──────────────────────────────────────────────────────┘  │
-│  ┌─────────────────────────┐ ┌────────────────────────────┐│
-│  │                         │ │  Selected itinerary (cart) ││
-│  │  Google Map             │ │                            ││
-│  │  ─────────────          │ │  1. Tongdosa Temple   ⋮    ││
-│  │  • POI pins clustered   │ │  2. Bulguksa Temple   ⋮    ││
-│  │    by region            │ │  3. Bomun Lake        ⋮    ││
-│  │  • Click pin → popup    │ │                            ││
-│  │    speech bubble        │ │  Total: ~6h 20m            ││
-│  │    (photo + name +      │ │  Drive: ~85 km             ││
-│  │     short desc + ⊕)     │ │                            ││
-│  │  • Optional route       │ │  [ Get quote ]             ││
-│  │    polyline overlay     │ │                            ││
-│  └─────────────────────────┘ └────────────────────────────┘│
-│                                                            │
-│  Mobile: map ⇌ cart bottom-sheet, pin popup → modal       │
-└────────────────────────────────────────────────────────────┘
-                            │
-                            ▼
-┌────────────────────────────────────────────────────────────┐
-│ Data layer                                                 │
-│                                                            │
-│   match_pois  ─────────────────────► UI map markers        │
-│   (poi_key, name, region, lat, lng,                        │
-│    default_image, matching_profile)                        │
-│                                                            │
-│   GET /api/poi/catalog?region=busan&locale=ko              │
-│   POST /api/itinerary/match                                │
-│        body: { intent, region, locale }                    │
-│        out:  { recommended_sequence: poi_key[],            │
-│                rationale_per_poi, total_drive_time }       │
-│   POST /api/itinerary/quote                                │
-│        body: { poi_keys: [...], date, party_size, ... }   │
-│        out:  { quote_id, estimated_price, contact_link }   │
-└────────────────────────────────────────────────────────────┘
-```
+Append a new row whenever a §5 question gets answered or a new architectural call is made. Never silently change a decision — always log here with date + reason.
 
-## 3 · Phased plan
+| Date | Decision ID | Decision | Reason / context |
+|---|---|---|---|
+| 2026-05-16 | — | Audit complete; Google Maps confirmed as map vendor (already integrated) | `@react-google-maps/api 2.20.7` + env key already in place — switching cost zero |
+| | D1 | (region scope for MVP) | pending |
+| | D3 | (extend `match_pois` vs new tables) | pending — recommendation: extend |
+| | D4 | (quote endpoint model) | pending — recommendation: email + Slack + DB row |
+| | D5 | (auth requirement) | pending — recommendation: no auth, URL params carry state |
 
-Each phase delivers a shippable artifact and has a clear "stop here if needed" cut-line.
+---
+
+## C · Change log
+
+One line per material change to this doc or per phase deliverable.
+
+| Date | Commit | Change |
+|---|---|---|
+| 2026-05-16 | `a732e63f` | Initial audit + plan written (Phase 0) |
+
+---
+
+## D · Working protocol
+
+**Mandatory for anyone (Claude or human) about to touch this feature:**
+
+1. **Read this whole doc first.** Especially §A (status), §B (decisions), §F (phase plan).
+2. **Confirm which phase is in progress** (§A row marked 🔄). If no phase is active, halt and ask the user which phase to start — do NOT pick one yourself.
+3. **Within the active phase**, work on the next unchecked task (§F sub-checklists). Don't skip ahead.
+4. **If the user requests work that contradicts the plan** (e.g., "skip Phase 5 and go straight to AI") — first update §B with a logged decision, then update §F with the revised order, THEN execute. Never silently re-route.
+5. **After every commit in this feature area**, update:
+   - §A "Last commit" field
+   - §A phase status (start / progress / complete)
+   - §C change log (one line)
+   - The relevant §F sub-checklist
+6. **Scope discipline:**
+   - Do NOT silently bundle unrelated work into a phase commit. If new scope appears mid-phase, log it in §E (Scope creep registry) and ask.
+   - Do NOT abandon a phase mid-flight to switch to a "more interesting" piece. Finish or explicitly pause.
+7. **Acceptance criteria** at each phase cut-line MUST be verified before marking ✅ — see §F per-phase acceptance.
+
+---
+
+## E · Scope creep / parked ideas registry
+
+Things that came up during this work but aren't in the 6-phase plan. Park them here; don't sneak them into a phase.
+
+| Date | Idea | Why parked | Owner / next step |
+|---|---|---|---|
+| 2026-05-16 | Merge `poi_search_profile` (TourAPI 576-row table) with `match_pois` | Different ID scheme (TourAPI content_id vs poi_key); not blocking MVP | After Phase 6 ships and beta feedback in |
+| 2026-05-16 | `/admin/pois` browse + edit UI | Nice-to-have for tuning; not user-facing | Phase 7 (post-MVP) |
+| 2026-05-16 | Auto-pricing for quotes (vehicle + driver + distance) | Requires ops costing logic; out of scope | Real product call, post-MVP |
+| 2026-05-16 | Save itinerary to user account | Requires auth flow; URL params carry MVP value | Phase 8 (post-MVP) |
+
+---
+
+## F · 6-phase plan
+
+Each phase delivers a shippable artifact and has a clear "stop here if needed" cut-line. Sub-checklists are append-only — never delete completed items, just check them off so the change history is visible.
 
 ### Phase 1 — POI catalog seed (1-2 days)
 
-**Deliverable:** `match_pois` rows fully populated for all 102 unique poi_keys.
+**Deliverable:** `match_pois` rows fully populated for all ~102 unique poi_keys.
 
-Steps:
-1. Write a one-shot Node script `scripts/seed-match-pois-from-tour-jsons.mjs` that walks every `<slug>.en.json` + locale variants, dedupes by `_poi_meta.poi_key`, and writes to `match_pois`:
-   - `name_en`, `name_ko` (other locales held in a sibling `match_poi_translations` table OR jsonb `names: {ko, ja, zh, zh-TW, es}`)
-   - `region` derived from parent-tour `destination_region` (Busan / Jeju / Seoul / etc.)
-   - `default_image_url` from canonical tour's `itineraryStops[i].image`
-   - `poi_meta` = first occurrence's `_poi_meta` (poi_key, sources, kb_version, verified, verified_date)
-   - `stop_role` = "attraction" (operational stops excluded — `_poi_meta.poi_key` starts with `OPS_` filtered out)
-2. Verify: 84 → 100+ unique poi_keys; spot-check 5 POIs in 6 locales.
-3. NEW columns on `match_pois` (migration):
-   - `lat numeric`, `lng numeric` (NULL allowed)
-   - `matching_profile jsonb` (NULL allowed)
-   - `default_stay_minutes integer` (NULL allowed)
-   - `category text` (temple / beach / market / viewpoint / park / village / museum / nature / city_walk — small enum)
+**Migration to write first:** `supabase/migrations/<timestamp>_add_match_pois_geo_and_profile.sql`
+- `ALTER TABLE match_pois ADD COLUMN lat numeric, ADD COLUMN lng numeric, ADD COLUMN matching_profile jsonb, ADD COLUMN default_stay_minutes integer, ADD COLUMN category text;`
+
+**Tasks:**
+- [ ] Write migration `supabase/migrations/<timestamp>_add_match_pois_geo_and_profile.sql`
+- [ ] Apply migration via `mcp__atockorea__apply_migration`
+- [ ] Write `scripts/seed-match-pois-from-tour-jsons.mjs` — walk all `components/product-tour-static/**/<slug>.<locale>.json`, dedupe by `_poi_meta.poi_key`, write `name_en, name_ko, names_other_locales jsonb, region, default_image_url, poi_meta, stop_role='attraction'` to `match_pois`. Skip operational keys (prefix `OPS_`).
+- [ ] Run script; verify row count ≥ 100; spot-check 5 POIs across 6 locales.
+- [ ] Add a verification SQL block to the script that prints (a) total rows (b) per-region count (c) any poi_keys without name_en (should be 0).
+
+**Acceptance:**
+- [ ] `SELECT COUNT(DISTINCT poi_key) FROM match_pois WHERE name_en IS NOT NULL;` ≥ 100
+- [ ] Every populated row has `region IN ('seoul', 'busan', 'jeju', 'gyeongju', 'incheon', 'yangsan', ...)` (no nulls)
+- [ ] No row has `stop_role = 'operational'` (filtered at seed time)
 
 **Cut-line:** If we stop here, we have a clean POI inventory for any future product (admin browse, analytics).
+
+---
 
 ### Phase 2 — Coordinate enrichment (0.5-1 day)
 
 **Deliverable:** Every POI in `match_pois` has lat/lng populated.
 
-Approach:
-1. Write `scripts/geocode-match-pois.mjs` using existing `lib/google-maps.geocodeAddress`.
-2. For each POI without lat/lng: query `"<name_ko> 한국"` first (better Korean recall), fall back to `<name_en> South Korea`.
-3. Manual review pass (CSV export → spot-check ~20 POIs against Google Maps). 102 POIs is small enough to do this in 1-2 hours.
-4. Override file `scripts/poi-coord-overrides.csv` for any POI where geocoder misses (e.g., a specific viewpoint inside a park).
+**Tasks:**
+- [ ] Write `scripts/geocode-match-pois.mjs` using existing `lib/google-maps.geocodeAddress`.
+- [ ] For each POI without lat/lng: query `"<name_ko> 한국"` first, fall back to `<name_en> South Korea`. Throttle ≥ 100ms between requests to respect Google rate limit.
+- [ ] Output a CSV `scripts/poi-coord-audit.csv` with poi_key, name_en, geocoded_lat, geocoded_lng, formatted_address, confidence — for manual review.
+- [ ] Manual spot-check ~20 random POIs against Google Maps; flag misses.
+- [ ] Create `scripts/poi-coord-overrides.csv` for any POI where geocoder missed (e.g., specific viewpoint inside a park).
+- [ ] Re-run with overrides applied.
+
+**Acceptance:**
+- [ ] 100% of `match_pois.stop_role='attraction'` rows have non-null lat AND lng.
+- [ ] All lat values in range 33.0–38.7 (Korea), all lng in 124.6–131.0. Rows outside this range → block + manual fix.
+- [ ] Visual spot-check of 10 random POIs in Google Maps confirms address match.
 
 **Cut-line:** If we stop here, the catalog is ready for any map UI later.
 
-### Phase 3 — Map UI (read-only — pins + popups) (2-3 days)
+---
 
-**Deliverable:** `/itinerary-builder/[region]` page renders Google Map with all POI pins, click → popup with photo + name + short desc.
+### Phase 3 — Map UI read-only (2-3 days)
 
-Steps:
-1. New route `app/itinerary-builder/[region]/page.tsx`. Resolve `region` against `match_pois.region`.
-2. Build `<POICatalogMap />` component (client):
-   - Google Map centered on region (Seoul ≈ 37.5665,126.9780; Busan ≈ 35.1796,129.0756; Jeju ≈ 33.4996,126.5312)
-   - Marker per POI; cluster on zoom-out via `@react-google-maps/api`'s built-in clustering OR `@googlemaps/markerclusterer`.
-   - InfoWindow on marker click: image (default_image_url), name (locale-aware), `summary_line` (new column in Phase 1 or derive from description's first 140 chars), "추가" button.
-3. Sidebar / bottom-sheet: empty state initially. Adding a POI = local state only (no DB).
-4. i18n: page text + popup text use the existing next-intl pattern. POI names already in `match_pois` per locale.
+**Deliverable:** `/itinerary-builder/[region]` renders a map with all POI pins; click → popup with photo + name + short description + "Add" button (button no-op for now).
 
-**Cut-line:** If we stop here, users can browse the curated POI map but can't build/save.
+**Tasks:**
+- [ ] New route `app/itinerary-builder/[region]/page.tsx` (SSR shell, client child component)
+- [ ] Resolve `region` param against allowed list (`seoul | busan | jeju`); 404 otherwise.
+- [ ] Read `match_pois` for region via Supabase server client.
+- [ ] Build `<POICatalogMap />` client component:
+  - Google Map centered on region centroid (Seoul 37.5665,126.9780; Busan 35.1796,129.0756; Jeju 33.4996,126.5312)
+  - Marker per POI
+  - `@googlemaps/markerclusterer` for cluster behavior on zoom-out
+  - InfoWindow on marker click: image (`default_image_url`), name (locale-aware via next-intl pattern), summary line (first 140 chars of POI description), "Add to itinerary" button (disabled in Phase 3, enabled in Phase 4)
+- [ ] i18n keys under `messages/<locale>.json` key `itineraryBuilder.*`: page title, intro, marker popup labels.
+- [ ] Add CTA to existing private-tour detail pages (one new section component) → "Build your own itinerary on the map" link to `/itinerary-builder/<region>`.
+- [ ] Mobile-first sizing: map 100vh on mobile, side-by-side on md+.
 
-### Phase 4 — Itinerary cart + manual sequencing (2-3 days)
+**Acceptance:**
+- [ ] Page loads at `/itinerary-builder/busan`; map shows ≥ 20 pins (Busan catalog size).
+- [ ] Clicking any pin opens InfoWindow with image + name + 1-line desc + Add button.
+- [ ] Page is responsive (DevTools mobile + tablet + desktop tested).
+- [ ] No console errors; Lighthouse perf ≥ 70 on mobile.
 
-**Deliverable:** User can select POIs, drag-and-drop to reorder, see total drive time, request a quote.
+**Cut-line:** Users can browse the curated POI map. Can't build/save yet.
 
-Steps:
-1. Cart state in URL params (`?pois=tongdosa,bulguksa,bomun_lake&date=2026-05-20&party=4`) so itineraries are share-able without auth.
-2. Drag-and-drop with `@dnd-kit/core` (already installed if Next.js shadcn flow has it; otherwise install).
-3. Distance / drive-time row: compute straight-line distance from POI coords (Haversine) and multiply by 1.3 for road factor; or call Google Distance Matrix API (1 request per leg, batched). Start with Haversine — accurate enough for an estimate.
-4. Polyline overlay on the map showing the selected sequence.
-5. `POST /api/itinerary/quote` — minimal payload to `tour_quote_requests` (new table) with `pois[]`, `requested_date`, `party_size`, `contact_email`, `locale`, `notes`. Auto-email to ops + Slack webhook.
-6. Final CTA: "Get quote" → form modal → submit → success page.
+---
 
-**Cut-line:** End-to-end manual builder works. Ship-able as v1 even if AI recommendation (Phase 5-6) lags.
+### Phase 4 — Cart + manual sequencing + quote (2-3 days)
 
-### Phase 5 — POI matching_profile authoring (1-2 days, mostly data work)
+**Deliverable:** End-to-end manual builder. User picks POIs, reorders, sees drive estimate, submits a quote request.
 
-**Deliverable:** Every POI has a `matching_profile` jsonb in `match_pois`.
+**Tasks:**
+- [ ] Cart state in URL params: `?pois=tongdosa,bulguksa&date=2026-05-20&party=4` (so itineraries are share-able without auth).
+- [ ] Cart UI: side panel on desktop, bottom-sheet on mobile (snap points 30%/90%).
+- [ ] Drag-and-drop reorder via `@dnd-kit/core` (install if not present).
+- [ ] Drive estimate: Haversine distance × 1.3 road factor × 50 km/h average → ETA per leg. Show total drive minutes + summed POI `default_stay_minutes`.
+- [ ] Polyline overlay on map showing selected POI sequence in order.
+- [ ] Quote form modal: name / email / requested date / party size / language / notes.
+- [ ] `POST /api/itinerary/quote` route:
+  - Write to new `tour_quote_requests` table (migration in this phase)
+  - Send Slack webhook notification to ops channel
+  - Send confirmation email to user via existing email service (`lib/email.ts`)
+- [ ] Success page: "We'll respond within X hours" + saved URL of the itinerary.
 
-Two-step strategy:
-1. **Auto-derive** (script `scripts/derive-poi-matching-profiles.mjs`):
-   - For each poi_key, find all `match_tours` rows that reference it via `match_itinerary_stops` OR `anchor_poi_keys`.
-   - Weighted-average their `matching_profile` jsonbs (dimension-by-dimension).
-   - Drop dimensions that are tour-level only ("private_fit", "cruise_shore_excursion_fit", "one_day_fit") because they describe the wrapper, not the POI.
-   - Keep dimensions that are POI-relevant ("scenic_level", "cafe_fit", "nature_fit", "family_fit", "iconic_landmark_fit", "wheelchair_accessible_anchor_fit", "cherry_blossom_fit" — POI-specific season fits stay because the POI is what's bloomy).
-2. **Manual review** sheet — export to CSV, surface 5-10 obvious miscalibrations, hand-tune, re-import. (Optional second pass once we have real user click data.)
+**Migration:** `<timestamp>_create_tour_quote_requests.sql` — id uuid PK, poi_keys text[], requested_date date, party_size int, contact_email text, contact_name text, language text, notes text, locale text, region text, source_url text, created_at timestamptz.
 
-**Cut-line:** POI catalog is now matchable. Phase 6 (recommendation UI) becomes possible.
+**Acceptance:**
+- [ ] Add 3 POIs from map → cart shows them in order
+- [ ] Drag to reorder → URL updates → polyline redraws
+- [ ] "Get quote" → form submit → DB row appears → Slack notification fires → email sent
+- [ ] Share URL → reopen → cart restored from URL params
+
+**Cut-line:** Ship-able as v1 even if AI recommendation (Phases 5-6) lags.
+
+---
+
+### Phase 5 — POI matching_profile authoring (1-2 days)
+
+**Deliverable:** Every POI in `match_pois` has a `matching_profile` jsonb populated.
+
+**Strategy:** Auto-derive from parent tours, then manual review pass.
+
+**Tasks:**
+- [ ] Write `scripts/derive-poi-matching-profiles.mjs`:
+  - For each poi_key, find all `match_tours` rows that reference it via `anchor_poi_keys` OR via `match_itinerary_stops` join.
+  - Weighted-average their `matching_profile` jsonbs (dimension-by-dimension; weight = `1 / N` where N = stops in that tour, so a POI in a 7-stop tour contributes less than the same POI as anchor of a 3-stop tour).
+  - Filter to POI-relevant dimensions only — DROP tour-level dims (`private_fit`, `cruise_shore_excursion_fit`, `one_day_fit`, `family_pace_fit`, etc.) — KEEP `scenic_level`, `nature_fit`, `cafe_fit`, `family_fit`, `iconic_landmark_fit`, `cherry_blossom_fit`, `wheelchair_accessible_anchor_fit`, etc.
+- [ ] Run; CSV export `scripts/poi-matching-profile-audit.csv` (poi_key, name_en, derived profile dimensions).
+- [ ] Manual review — 10 obvious miscalibrations (gut check); hand-tune in an overrides JSON; re-import.
+
+**Acceptance:**
+- [ ] 100% of attraction POIs have non-empty `matching_profile` jsonb
+- [ ] Spot-check: `scenic_level` is high for viewpoints, `nature_fit` high for parks/mountains, `iconic_landmark_fit` high for UNESCO sites
+- [ ] No tour-wrapper dimensions leaked into POI profiles
+
+**Cut-line:** POI catalog is now matchable. Phase 6 becomes possible.
+
+---
 
 ### Phase 6 — AI recommendation engine (2-3 days)
 
-**Deliverable:** "AI 추천 받기" button calls Gemini Haiku, parses intent, returns a recommended 5-7 POI sequence with rationale.
+**Deliverable:** "AI 추천 받기" button calls Gemini Haiku, parses intent, returns a recommended 5-7 POI sequence with rationale + drive route.
 
-Steps:
-1. `POST /api/itinerary/match` route:
-   - Body: `{ intent: string, region: string, locale: string, max_pois?: 7, max_hours?: 6 }`
-   - Internally:
-     a. Call existing `parseQuery()` (parser-haiku) → `ParsedQueryV2`.
-     b. Hard-filter `match_pois` by region + (if season_locks set) season-relevant POIs.
-     c. Score each POI: reuse the v2 score components, applied to `poi.matching_profile` instead of tour's. Persona, theme, anchor_poi, season_lock, sub_region scoring all map directly.
-     d. Diversity pass: top-N candidates with a soft penalty for >2 same-category POIs (avoid 5 temples in a row).
-     e. Sequence: greedy nearest-neighbor TSP starting from region centroid; or call Google Distance Matrix for the top 7 if budget allows.
-     f. Time budget check: sum each POI's `default_stay_minutes` + drive time, trim from the tail until it fits `max_hours`.
-   - Output: `{ recommended_pois: poi_key[], per_poi_score_breakdown, total_drive_time_min, rationale }`.
-2. UI: pressing the AI button calls the endpoint → cart fills with the recommended POIs in order → map shows the polyline → user can swap/drop/reorder.
-3. Optional 2nd Haiku pass (reuse `explainer-haiku.ts`) → natural-language "why we picked these" shown above the cart.
+**Tasks:**
+- [ ] New route `app/api/itinerary/match/route.ts`:
+  - Body: `{ intent: string, region: string, locale: string, max_pois?: number = 7, max_hours?: number = 6 }`
+  - Pipeline:
+    1. Call existing `parseQuery()` (parser-haiku) → `ParsedQueryV2`
+    2. Hard-filter `match_pois` by region + season relevance
+    3. Score each POI: reuse v2 `scoreTour` logic — adapt to read `poi.matching_profile` instead of tour's
+    4. Diversity pass: top-N with soft penalty for >2 same-category POIs
+    5. Sequence: greedy nearest-neighbor TSP starting from region centroid
+    6. Time budget: trim from the tail until `sum(stay) + sum(drive) ≤ max_hours`
+  - Output: `{ recommended_pois: poi_key[], per_poi_score_breakdown, total_drive_time_min, rationale }`
+- [ ] UI: "AI 추천 받기" button on `/itinerary-builder/[region]` → calls endpoint → fills cart with recommended POIs in order → map polyline updates
+- [ ] Optional 2nd Haiku pass via `explainer-haiku.ts` for natural-language rationale shown above the cart
+- [ ] Telemetry: log to existing `match_queries` table with `flow='itinerary_builder'` tag
 
-**Cut-line:** Full feature. Ship internal beta, gather feedback, iterate POI matching_profile quality.
+**Acceptance:**
+- [ ] EN intent "first time / family / scenic / Busan" → returns 5-7 POIs in Busan, ≤6 hours, mix of UNESCO + nature + market
+- [ ] KO intent "벚꽃 시즌 / 커플 / 경주" → returns Gyeongju cherry-blossom POI set
+- [ ] Swap one POI manually → polyline updates; rationale section updates if Haiku 2nd-pass enabled
+- [ ] Cost telemetry shows Haiku spend per request (~$0.001-0.003)
 
-## 4 · Cross-phase concerns
+**Cut-line:** Full feature. Ship internal beta, gather feedback, iterate `match_pois.matching_profile` quality.
 
-### 4.1 — i18n
+---
 
-- POI catalog `name` is already per-locale in tour JSONs. Phase 1 script writes `name_en`, `name_ko` columns + a jsonb `names_other_locales: {ja, zh, zh-TW, es}` to keep `match_pois` slim.
-- UI strings (page chrome, button labels, "Get quote" form) go through standard next-intl flow under a new `messages/<locale>.json` key `itineraryBuilder.*`.
+## G · Cross-phase concerns
 
-### 4.2 — Mobile
+### G.1 — i18n
+- POI name jsonb structure: `name_en` (column), `name_ko` (column), `names_other_locales: {ja, zh, zh-TW, es}` jsonb (one column). Keeps `match_pois` slim.
+- UI strings under `messages/<locale>.json` key `itineraryBuilder.*`.
+- Per memory `feedback_home_visual_energy.md`: home v2 amber eyebrow / dark Process / restraint rules also apply to itinerary builder UI.
 
-- Side-by-side map+cart works on tablet/desktop only. Mobile = map fills viewport; cart slides up as a bottom-sheet (50%/90% snap points); pin popup = modal not InfoWindow.
-- iOS Safari quirks with Google Maps inside scroll containers — test early.
+### G.2 — Mobile
+- Map+cart side-by-side: tablet+ only. Mobile: map fills viewport; cart slides up as bottom-sheet (50%/90% snap points); pin popup → modal not InfoWindow.
+- Test iOS Safari quirks with Google Maps inside scroll containers early.
 
-### 4.3 — Performance
-
-- 100+ markers without clustering tanks initial paint. Use `@googlemaps/markerclusterer`.
+### G.3 — Performance
+- 100+ markers without clustering tanks initial paint → `@googlemaps/markerclusterer` mandatory.
 - Default image preload only for the first ~10 in-viewport markers.
 
-### 4.4 — Analytics
+### G.4 — Analytics
+- Reuse `src/design/analytics.ts`. New events: `itinerary_builder_open`, `poi_pin_click`, `poi_add_to_cart`, `poi_drag_reorder`, `itinerary_ai_request`, `itinerary_quote_submit`.
 
-- Reuse `src/design/analytics.ts`. New events: `itinerary_builder_open`, `poi_pin_click`, `poi_add_to_cart`, `itinerary_ai_request`, `itinerary_quote_submit`.
+### G.5 — Photo policy (per memory)
+- All new POI photos for `match_pois.default_image_url` follow `feedback_photo_quality_policy.md`: 16:9 / OTA bright / no AI feel / sharp quality 95 / no watermarked sources.
+- Photos already in `/public/images/itinerary/*.webp` (Jagalchi, Tongdosa, Bomun, Woljeonggyo, Seoraksan, Bukchon, Songdo, Songaksan) are reusable.
 
-### 4.5 — Admin
+---
 
-- `/admin/pois` browse view (Phase 1+) — list match_pois, edit lat/lng/category/matching_profile inline.
-- Not required for MVP user flow; nice-to-have for ongoing tuning.
+## H · Risks (carried from audit; update as we hit them)
 
-## 5 · Risks & open decisions
+| # | Risk | Mitigation | Realized? |
+|---|---|---|---|
+| R1 | POI profiles derived from tour profiles are lossy | Ship derived, instrument click-through, manually retune worst | — |
+| R2 | Mobile UX hard (map+cart+popup) | Phase 3 desktop-first to soft URL; Phase 4 adds mobile sheet | — |
+| R3 | Distance Matrix API cost at scale | Haversine for previews; Distance Matrix only at quote submit | — |
+| R4 | Manual tuning is long-tail | Ship Phase 6 derived-only; tune bottom 10% based on engagement | — |
+| R5 | `poi_search_profile` (TourAPI) overlap | Treat as separate; revisit post-MVP | — |
 
-| # | Risk / decision | Recommendation |
-|---|---|---|
-| R1 | POI profiles derived from tour profiles are lossy (a tour scores 5/5 scenic because of ONE viewpoint, but my derive script averages it across all that tour's stops) | Ship the derived version, instrument click-through, manually retune the worst miscalibrations. Tour-level scoring took years to settle; expect same. |
-| R2 | Mobile UX with map+cart+popup is genuinely hard. | Phase 3 ships desktop-first to a soft URL; Phase 4 adds mobile bottom-sheet. Don't try to nail both in one PR. |
-| R3 | Distance Matrix API cost at scale | Use Haversine × 1.3 for client-side preview; call Distance Matrix only when user submits "Get quote" (1 call per quote). |
-| R4 | Manual `matching_profile` tuning for 102 POIs is a tail of work | Ship Phase 6 with derived-only profiles. Tune the bottom 10% based on real engagement. |
-| R5 | `poi_search_profile` (TourAPI POIs) overlap or future merge | Out of scope for this feature. Treat the two systems as separate; revisit after this ships. |
-| D1 | Region scope for MVP | Recommend **Busan first** (smallest POI set ~25, most engaged user base based on Songdo / Jagalchi photo curation in flight). |
-| D2 | Map vendor | Recommend **Google Maps** — already integrated, lowest switching cost. |
-| D3 | New tables vs extend existing | Recommend **extend `match_pois`** (add lat, lng, matching_profile, default_stay_minutes, category columns). Avoid table proliferation. |
-| D4 | Quote endpoint output | Recommend **email + Slack webhook + DB row** — no auto-pricing in MVP. Real pricing requires per-vehicle costing logic; out of scope. |
-| D5 | Auth requirement | Recommend **no auth for MVP** — URL params carry the itinerary, email captures the lead. Adds auth later if save-to-account becomes a value. |
+---
 
-## 6 · Suggested commit cadence
-
-Each phase = its own PR. Inside each phase, prefer small commits with shipped Definition-of-Done:
-
-- Phase 1: 1 migration + 1 script + 1 verification query. ~3 commits.
-- Phase 2: 1 script + 1 CSV override file + smoke check. ~2 commits.
-- Phase 3: 1 route + 1 component + 1 marker module + i18n keys. ~6-8 commits.
-- Phase 4: cart state + DnD + polyline + quote API + form. ~8-12 commits.
-- Phase 5: 1 derive script + 1 override CSV + DB write. ~3 commits.
-- Phase 6: 1 API route + matcher adapter + UI hook + Haiku rationale. ~6-8 commits.
-
-## 7 · Total cost estimate
+## I · Cost estimate
 
 | Phase | Person-days | Cumulative |
 |---|---|---|
@@ -278,9 +297,61 @@ Each phase = its own PR. Inside each phase, prefer small commits with shipped De
 | 4 — Cart + manual sequencing + quote | 2-3 | 5.5-9 |
 | 5 — POI matching_profile derivation | 1-2 | 6.5-11 |
 | 6 — AI recommendation engine | 2-3 | 8.5-14 |
-| **Total (full feature)** | **8.5-14 days** | **~2 weeks focused** |
+| **Total (full feature, 1 region MVP)** | **8.5-14 days** | **~2 weeks focused** |
 | Polish + 3-region rollout | +3-7 days | **3-4 weeks total** |
 
-## 8 · Next step (when ready)
+---
 
-Approve this plan (or push back on specific decisions in §5). On approval, the first concrete commit is Phase 1 — `scripts/seed-match-pois-from-tour-jsons.mjs` + migration `2026XXXX_add_match_pois_geo_and_profile_columns.sql`.
+## J · Original audit findings (frozen — do not edit)
+
+Captured at audit completion. If facts change, write a new dated section below with `### J.2 audit update 2026-XX-XX` rather than mutating this section.
+
+### J.1 — 2026-05-16 audit
+
+**Matcher v2:**
+- `parser.ts` + `parser-haiku.ts` + `parser-rule.ts` — Gemini Haiku 4.5 + rule fallback; output `ParsedQueryV2` (regions, sub_regions, months, season_locks, personas, themes, anchor_pois_mentioned, pace, format, duration_constraint, user_max_hours, hard_constraints, wants_cruise, wants_charter_customization, is_multi_day_request, boost_dimensions, negative_signals, confidence, parser_notes, _telemetry).
+- `matcher.ts` — 8 score components: anchor_poi_match (6.0/POI), boost_dimension_sum, theme_overlap (Jaccard×3.0 + count×1.0), persona_alignment (±4.0 to ±6.0), sub_region_match, season_lock_match (2.0/lock), format_match (0.5-2.0), a_grade_bonus (0.5), slug_token_match (0.7/token), charter_intent_match (6.0), negative_signal_penalty (−4.0/match).
+- `matching_dimensions_taxonomy.json` — multilingual taxonomy (regions, sub_regions, seasons, season_locks, personas, themes, hard_constraints, anchor_pois).
+- Pipeline: `hardFilter` → `scoreTour` per tour → sort with tie-break → signal-strength gating → hybrid score floor → `match_status` classification.
+- Tests in `__tests__/lib/tour-match-v2/`: smoke, parser-rule-month-preserve, seasonal-gate, signal-strength. Stress corpus in `data/scenarios/a-*.ts` through `k-*.ts`.
+
+**Tour content:**
+- 34 tours × 6 locales = 204 JSON files under `components/product-tour-static/**/`.
+- 102 unique `_poi_meta.poi_key` values; 157 unique stop names.
+- itineraryStops fields: name, time, duration, number, category, _poi_meta (poi_key, sources, verified, kb_version), highlights, smartNotes, visitBasics, convenience, description, whyOnRoute, image, images, imageCredits, galleryItems, liveStatusWidget, timeUsed.
+- routeFlowStops = minimal derived view (name, theme, type only). Ignore for catalog.
+- POI consistency across parent tours: name/category/description/highlights identical; whyOnRoute is per-tour context.
+- 12 of 204 files have lat/lng — but only on `pickup_dropoff.departure/return`, NOT on itineraryStops.
+
+**Supabase:**
+- `match_tours` — 30 tours × ~6 locales. Per-tour `matching_profile` (jsonb), arrays for themes, best_for, anchor_poi_keys. Embedding column unpopulated.
+- `match_pois` — 84 rows, mostly EMPTY except poi_key. Designed as POI catalog.
+- `match_itinerary_stops` — 208 rows, metadata-only (no body content).
+- `poi_search_profile` — 576 rows, KO-locale, TourAPI content_id keyed, mostly empty tags. Separate system.
+- `pickup_points` — 0 rows. Has lat/lng columns ready.
+- PostGIS not enabled (pgvector is, for future semantic search).
+
+**Map:**
+- `@react-google-maps/api 2.20.7` installed. `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` configured.
+- `components/maps/HotelMapPicker.tsx` — modal Places Autocomplete picker.
+- `components/product-tour-static/_shared/TourPickupMapSection.tsx` — read-only pickup map.
+- `lib/google-maps.ts` — `geocodeAddress`, `reverseGeocode`.
+
+**Private-tour surface:**
+- 5 private-tour product pages live as static JSON detail routes (busan / jeju / seoul-suburbs / incheon-seoul / seoul-dmz).
+- `/match` page exists (hero matcher result).
+- No dedicated "build your own" route yet.
+
+---
+
+## K · Glossary
+
+| Term | Meaning |
+|---|---|
+| POI | Point of interest — an itinerary stop that's a real visitable place (vs. operational stops like pickup/lunch/return) |
+| `poi_key` | Stable slug identifier for a POI, e.g., `tongdosa_temple`. Lives in `_poi_meta.poi_key` and `match_pois.poi_key` |
+| matching_profile | A jsonb of numeric dimension scores (0-5) that describe how well a tour or POI satisfies different traveler preferences (scenic, family-friendly, cherry-blossom, accessible, etc.) |
+| Matcher v2 | The current production matcher in `lib/tour-match-v2/` — Gemini Haiku intent parser + dimension scoring |
+| Hard filter | Pre-scoring elimination based on hard constraints (region, season-gate, cruise, wheelchair) |
+| Signal strength | Classification of how confident the parsed intent is (strong/moderate/weak/empty), used to gate match aggressiveness |
+| Cut-line | The point at which a phase delivers a shippable artifact and we can pause without throwing work away |
