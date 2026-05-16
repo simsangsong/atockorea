@@ -1,0 +1,2366 @@
+[
+  {
+    "poi_key": "haedong_yonggungsa",
+    "name_en": "Haedong Yonggungsa Temple",
+    "name_ko": "해동 용궁사",
+    "names_other_locales": {
+      "ja": "海東龍宮寺",
+      "zh": "海东龙宫寺",
+      "zh-TW": "海東龍宮寺",
+      "es": "Templo Haedong Yonggungsa"
+    },
+    "region": "busan",
+    "default_image_url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+    "poi_meta": {
+      "sources": [
+        "Visit Busan",
+        "VisitKorea",
+        "Wikipedia",
+        "Korea Tourism Organization Official"
+      ],
+      "verified": true,
+      "kb_version": "1.24",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Buddhist Temple / Coastal",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "un_memorial_cemetery",
+    "name_en": "UN Memorial Cemetery in Korea",
+    "name_ko": "재한유엔기념공원",
+    "names_other_locales": {
+      "ja": "韓国国連記念公園",
+      "zh": "驻韩联合国纪念公墓",
+      "zh-TW": "韓國聯合國紀念公墓",
+      "es": "Cementerio Memorial de la ONU en Corea"
+    },
+    "region": "busan",
+    "default_image_url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    "poi_meta": {
+      "sources": [
+        "UNMCK official",
+        "Wikipedia",
+        "ABMC",
+        "Visit Busan",
+        "VisitKorea"
+      ],
+      "verified": true,
+      "kb_version": "1.24",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Memorial / War History",
+    "default_stay_minutes": 60
+  },
+  {
+    "poi_key": "jagalchi_market",
+    "name_en": "Jagalchi Fish Market",
+    "name_ko": "자갈치 어시장",
+    "names_other_locales": {
+      "ja": "ジャガルチ水産市場",
+      "zh": "札嘎其鱼市场",
+      "zh-TW": "札嘉其魚市場",
+      "es": "Mercado de Pescado Jagalchi"
+    },
+    "region": "busan",
+    "default_image_url": "/images/itinerary/jagalchi-harbor-sign.webp",
+    "poi_meta": {
+      "sources": [
+        "VisitKorea",
+        "Wikipedia",
+        "Visit Busan",
+        "Jagalchi.org",
+        "Korean Heritage Service"
+      ],
+      "verified": true,
+      "kb_version": "1.24",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Fish Market / Local Culture",
+    "default_stay_minutes": 40
+  },
+  {
+    "poi_key": "biff_square",
+    "name_en": "BIFF Square",
+    "name_ko": "BIFF 광장",
+    "names_other_locales": {
+      "ja": "BIFFスクエア",
+      "zh": "BIFF广场",
+      "zh-TW": "BIFF廣場",
+      "es": "Plaza BIFF"
+    },
+    "region": "busan",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [
+        "Visit Busan",
+        "VisitKorea",
+        "Busan International Film Festival official",
+        "Wikipedia"
+      ],
+      "verified": true,
+      "kb_version": "1.24",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Film District / Street Food",
+    "default_stay_minutes": 25
+  },
+  {
+    "poi_key": "gukje_market",
+    "name_en": "Gukje Market",
+    "name_ko": "국제시장",
+    "names_other_locales": {
+      "ja": "国際市場（クッチェシジャン）",
+      "zh": "国际市场",
+      "zh-TW": "國際市場",
+      "es": "Mercado Gukje"
+    },
+    "region": "busan",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [
+        "Visit Busan",
+        "VisitKorea",
+        "Wikipedia",
+        "Busan Metropolitan City heritage records"
+      ],
+      "verified": true,
+      "kb_version": "1.24",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Traditional Market / Korean War Heritage",
+    "default_stay_minutes": 30
+  },
+  {
+    "poi_key": "gamcheon_culture_village",
+    "name_en": "Gamcheon Culture Village",
+    "name_ko": "감천문화마을",
+    "names_other_locales": {
+      "ja": "甘川文化村",
+      "zh": "甘川文化村",
+      "zh-TW": "甘川文化村",
+      "es": "Pueblo Cultural de Gamcheon"
+    },
+    "region": "busan",
+    "default_image_url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+    "poi_meta": {
+      "sources": [
+        "Wikipedia",
+        "CNN",
+        "Visit Busan",
+        "Busan Cultural Foundation"
+      ],
+      "verified": true,
+      "kb_version": "1.24",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Cultural Village / Mural Art",
+    "default_stay_minutes": 90
+  },
+  {
+    "poi_key": "songdo_beach",
+    "name_en": "Songdo Beach",
+    "name_ko": "송도해수욕장",
+    "names_other_locales": {
+      "ja": "松島ビーチ",
+      "zh": "松岛海滩",
+      "zh-TW": "松島海水浴場",
+      "es": "Playa Songdo"
+    },
+    "region": "busan",
+    "default_image_url": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+    "poi_meta": {
+      "sources": [
+        "Visit Busan",
+        "VisitKorea",
+        "Songdo Marine Cable Car official",
+        "Busan Seo-gu Cultural Tourism"
+      ],
+      "verified": true,
+      "kb_version": "1.24",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Coastal Beach / Cable Car",
+    "default_stay_minutes": 30
+  },
+  {
+    "poi_key": "yongdusan_park",
+    "name_en": "Gamcheon Culture Village",
+    "name_ko": "용두산공원 & 부산타워",
+    "names_other_locales": {
+      "ja": "龍頭山公園＆釜山タワー",
+      "zh": "龙头山公园＆釜山塔",
+      "zh-TW": "龍頭山公園與釜山塔",
+      "es": "Parque Yongdusan y Torre de Busan"
+    },
+    "region": "busan",
+    "default_image_url": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+    "poi_meta": {
+      "sources": [
+        "Visit Busan official",
+        "Wikipedia",
+        "Busan Diamond Tower official (busandiamondtower.co.kr)",
+        "Korea Tourism Organization"
+      ],
+      "verified": true,
+      "kb_version": "1.25",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "City Viewpoint / Civic Park",
+    "default_stay_minutes": 30
+  },
+  {
+    "poi_key": "ahopsan_bamboo_forest",
+    "name_en": "Ahopsan Bamboo Forest (아홉산숲)",
+    "name_ko": "아홉산숲",
+    "names_other_locales": {
+      "ja": "アホプサン竹林（아홉산숲）",
+      "zh": "阿弘山竹林（아홉산숲）",
+      "zh-TW": "阿弘山竹林（아홉산숲）",
+      "es": "Bosque de Bambú Ahopsan (아홉산숲)"
+    },
+    "region": "busan",
+    "default_image_url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+    "poi_meta": {
+      "sources": [
+        "VisitKorea",
+        "Visit Busan official",
+        "Korea JoongAng Daily",
+        "K-drama filming location databases",
+        "Korea Tourism Organization (Ahopsan filming location designation)"
+      ],
+      "verified": true,
+      "kb_version": "1.24",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Private Heritage Forest",
+    "default_stay_minutes": 60
+  },
+  {
+    "poi_key": "bulguksa_temple",
+    "name_en": "Bulguksa Temple (UNESCO World Heritage)",
+    "name_ko": "불국사 (유네스코 세계문화유산)",
+    "names_other_locales": {
+      "ja": "仏国寺（ユネスコ世界遺産）",
+      "zh": "佛国寺（联合国教科文组织世界遗产）",
+      "zh-TW": "佛國寺（聯合國教科文組織世界遺產）",
+      "es": "Templo Bulguksa (Patrimonio Mundial de la UNESCO)"
+    },
+    "region": "busan",
+    "default_image_url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+    "poi_meta": {
+      "sources": [
+        "UNESCO World Heritage Centre",
+        "Wikipedia",
+        "World History Encyclopedia",
+        "VisitKorea",
+        "Visit Gyeongju official"
+      ],
+      "verified": true,
+      "kb_version": "1.24",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "UNESCO Buddhist Temple",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "gyeongju_national_museum",
+    "name_en": "Gyeongju National Museum",
+    "name_ko": "국립경주박물관",
+    "names_other_locales": {
+      "ja": "慶州国立博物館",
+      "zh": "庆州国立博物馆",
+      "zh-TW": "慶州國立博物館",
+      "es": "Museo Nacional de Gyeongju"
+    },
+    "region": "busan",
+    "default_image_url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+    "poi_meta": {
+      "sources": [
+        "Gyeongju National Museum official",
+        "Wikipedia",
+        "Korea JoongAng Daily APEC 2025 coverage",
+        "Cultural Heritage Administration (NT 29, NT 188)",
+        "National Museum of Korea (Gyeongju Branch)"
+      ],
+      "verified": true,
+      "kb_version": "1.24",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "National Museum / Silla Heritage",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "gyochon_hanok_village",
+    "name_en": "Gyochon Hanok Village",
+    "name_ko": "교촌 한옥마을",
+    "names_other_locales": {
+      "ja": "校村ハノク村（교촌마을）",
+      "zh": "校村韩屋村",
+      "zh-TW": "校村韓屋村",
+      "es": "Aldea Hanok de Gyochon"
+    },
+    "region": "busan",
+    "default_image_url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+    "poi_meta": {
+      "sources": [
+        "Visit Gyeongju official",
+        "VisitKorea",
+        "Wikipedia (Gyeongju Choi family)",
+        "Cultural Heritage Administration (Folklore Material No. 27, Intangible No. 86-3)",
+        "Cultural Heritage Administration of Korea (Gyeongju Choi Clan Family Designation)"
+      ],
+      "verified": true,
+      "kb_version": "1.24",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Heritage Hanok Village",
+    "default_stay_minutes": 60
+  },
+  {
+    "poi_key": "woljeonggyo_bridge",
+    "name_en": "Woljeonggyo Bridge",
+    "name_ko": "월정교",
+    "names_other_locales": {
+      "ja": "月精橋",
+      "zh": "月精桥",
+      "zh-TW": "月精橋",
+      "es": "Puente Woljeonggyo"
+    },
+    "region": "busan",
+    "default_image_url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+    "poi_meta": {
+      "sources": [
+        "Visit Gyeongju official",
+        "Cultural Heritage Administration",
+        "Wikipedia (Woljeonggyo)",
+        "MCST '100 Best Tourist Attractions 2025–2026' list",
+        "Korea Tourism Organization '100 Best 2025-2026' designation"
+      ],
+      "verified": true,
+      "kb_version": "1.24",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Reconstructed Silla Wooden Bridge",
+    "default_stay_minutes": 40
+  },
+  {
+    "poi_key": "tongdosa_temple",
+    "name_en": "Tongdosa Temple (UNESCO Sansa + Jajangmae plum tree)",
+    "name_ko": "통도사 (유네스코 산사 + 자장매)",
+    "names_other_locales": {
+      "ja": "通度寺（ユネスコ山寺＋慈藏梅）",
+      "zh": "通度寺（联合国教科文组织山寺 + 慈藏梅梅花树）",
+      "zh-TW": "通度寺（聯合國教科文組織山寺遺址 + 慈藏梅）",
+      "es": "Templo Tongdosa (UNESCO Sansa + ciruelo Jajangmae)"
+    },
+    "region": "busan",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [
+        "Korea Tourism Organization (VisitKorea — Tongdosa Temple official listing)",
+        "UNESCO World Heritage Centre (Sansa, Buddhist Mountain Monasteries in Korea — inscribed 2018)",
+        "Tongdosa Official (tongdosa.or.kr)",
+        "Wikipedia (Tongdosa — corpus on 646 CE founding + Three Jewel Temples + Geumgang Gyedan)",
+        "Jogye Order of Korean Buddhism (head temple records)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-05-14"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Buddhist Temple / UNESCO World Heritage",
+    "default_stay_minutes": 90
+  },
+  {
+    "poi_key": "amethyst_cave_themepark",
+    "name_en": "Amethyst Cave Theme Park (Ulsan)",
+    "name_ko": "자수정동굴나라 (울산)",
+    "names_other_locales": {
+      "ja": "アメジスト洞窟テーマパーク（蔚山）",
+      "zh": "紫水晶洞主题公园（蔚山）",
+      "zh-TW": "紫水晶洞主題公園（蔚山）",
+      "es": "Parque Temático de la Cueva de Amatista (Ulsan)"
+    },
+    "region": "busan",
+    "default_image_url": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+    "poi_meta": {
+      "sources": [
+        "Korea Tourism Organization (VisitKorea — Amethyst Cave Theme Park listing)",
+        "Ulju-gun Tourism (Ulsan Metropolitan City — official heritage records)",
+        "Amethyst Cave Theme Park Official (jasujungcave.com)",
+        "Wikipedia (Korean Amethyst — gemological corpus on the Eonyang mine)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-05-14"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Underground Mine / Theme Park",
+    "default_stay_minutes": 60
+  },
+  {
+    "poi_key": "yeongnam_alps_ice_valley_cable_car",
+    "name_en": "Yeongnam Alps Ice Valley Cable Car (Miryang)",
+    "name_ko": "영남알프스 얼음골 케이블카(밀양)",
+    "names_other_locales": {
+      "ja": "嶺南アルプス얼음골ケーブルカー（密陽）",
+      "zh": "岭南阿尔卑斯冰谷缆车（密阳）",
+      "zh-TW": "嶺南阿爾卑斯冰谷纜車（密陽）",
+      "es": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)"
+    },
+    "region": "busan",
+    "default_image_url": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+    "poi_meta": {
+      "sources": [
+        "Korea Tourism Organization (VisitKorea — Yeongnam Alps Ice Valley Cable Car listing)",
+        "Miryang City Tourism (Sannae-myeon area)",
+        "Yeongnam Alps Ice Valley Cable Car Official (yacablecar.co.kr)",
+        "Wikipedia (Yeongnam Alps — corpus on Gajisan/Cheonhwangsan/Sinbulsan peaks and Eoreumgol ice phenomenon)",
+        "Cultural Heritage Administration of Korea (Eoreumgol Natural Monument No. 224, designated 1970)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-05-14"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Cable Car / Mountain Scenery",
+    "default_stay_minutes": 90
+  },
+  {
+    "poi_key": "bomun_lake",
+    "name_en": "Bomun Lake (cherry blossom centerpiece)",
+    "name_ko": "보문호 (벚꽃 대표 명소)",
+    "names_other_locales": {
+      "ja": "普門湖（桜スポットの目玉）",
+      "zh": "普门湖（赏樱核心景点）",
+      "zh-TW": "普門湖（賞櫻核心景點）",
+      "es": "Lago Bomun (epicentro de la floración de los cerezos)"
+    },
+    "region": "busan",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [
+        "VisitKorea",
+        "Wikipedia",
+        "Visit Gyeongju official",
+        "MCST",
+        "Gyeongju.go.kr",
+        "Gyeongju Tourism Organization"
+      ],
+      "verified": true,
+      "kb_version": "1.24",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Lake / Cherry Blossom Spot",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "taejongdae",
+    "name_en": "East coast highlights option",
+    "name_ko": "태종대 해안 절벽",
+    "names_other_locales": {
+      "ja": "テジョンデ（太宗台）沿岸断崖",
+      "zh": "太宗台海岸悬崖",
+      "zh-TW": "太宗臺海岸懸崖",
+      "es": "Acantilados costeros de Taejongdae"
+    },
+    "region": "busan",
+    "default_image_url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+    "poi_meta": {
+      "sources": [
+        "Busan Geopark official",
+        "Visit Busan (visitbusan.net)",
+        "Wikipedia",
+        "Busan Metropolitan City",
+        "Yeongdo Lighthouse archive (1906 records)",
+        "Busan National Geopark official (busan.go.kr/geopark)"
+      ],
+      "verified": false,
+      "kb_version": "1.25",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Coastal / Temple / View",
+    "default_stay_minutes": 180
+  },
+  {
+    "poi_key": "cheomseongdae",
+    "name_en": "Cheomseongdae Observatory + Daereungwon Tomb Complex",
+    "name_ko": "첨성대 + 대릉원",
+    "names_other_locales": {
+      "ja": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群",
+      "zh": "瞻星台天文台 + 大陵苑古墓群",
+      "zh-TW": "瞻星臺天文台 + 大陵苑古墓群",
+      "es": "Observatorio Cheomseongdae + Complejo de Tumbas Daereungwon"
+    },
+    "region": "busan",
+    "default_image_url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+    "poi_meta": {
+      "sources": [
+        "VisitKorea",
+        "Wikipedia (Cheomseongdae + Cheonmachong + Daereungwon)",
+        "World History Encyclopedia",
+        "Korea Times",
+        "UNESCO Astronomical Heritage Portal"
+      ],
+      "verified": true,
+      "kb_version": "1.23",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "UNESCO Historic Area / Silla Heritage",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "cheongsapo_blue_line_park",
+    "name_en": "Cheongsapo & Haeundae Blue Line Park",
+    "name_ko": "청사포 & 해운대 블루라인파크",
+    "names_other_locales": {
+      "ja": "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+      "zh": "青沙浦 & 海云台蓝线公园",
+      "zh-TW": "青沙浦及海雲台藍線公園",
+      "es": "Cheongsapo y Haeundae Blue Line Park"
+    },
+    "region": "busan",
+    "default_image_url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+    "poi_meta": {
+      "sources": [
+        "Blue Line Park official",
+        "Visit Busan",
+        "Soul of Seoul",
+        "KoreaToDo",
+        "Tara O'Reilly travel",
+        "Busan Metropolitan City Tourism"
+      ],
+      "verified": true,
+      "kb_version": "1.24",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Coastal Park / Photo Spot",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "jeju_stone_park",
+    "name_en": "Jeju Stone Park (Stone Culture Park)",
+    "name_ko": "제주 돌문화공원 (석문화공원)",
+    "names_other_locales": {
+      "ja": "済州石文化公園（ストーン・カルチャー・パーク）",
+      "zh": "济州石头公园（石文化公园）",
+      "zh-TW": "濟州石頭公園（石文化公園）",
+      "es": "Parque de Piedras de Jeju (Parque de Cultura de la Piedra)"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+    "poi_meta": {
+      "sources": [
+        "Jeju Stone Park official site (jejustonepark.com)",
+        "Jeju Special Self-Governing Province Cultural Foundation",
+        "VisitJeju — Jeju Stone Culture Park",
+        "Korea Folklore Society — Seolmundae Halmang oral tradition records",
+        "Architectural Institute of Korea — Mother's Room sculpture/architecture documentation"
+      ],
+      "verified": false,
+      "kb_version": "1.19",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Mythology + Volcanic Stone Culture — 300,000-pyeong outdoor museum",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "seopjikoji",
+    "name_en": "Seopjikoji (East Cape)",
+    "name_ko": "섭지코지 (동쪽 곶)",
+    "names_other_locales": {
+      "ja": "摂地コジ（東岬）",
+      "zh": "涉地可支（东部海角）",
+      "zh-TW": "涉地可支（東岬角）",
+      "es": "Seopjikoji (Cabo Este)"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+    "poi_meta": {
+      "sources": [
+        "Jeju Provincial Cultural Heritage — Special Monument No. 23-2 designation",
+        "VisitJeju — Seopjikoji official listing",
+        "Korea Lighthouse Service — Bangdupo Lighthouse operation records",
+        "Tadao Ando Architect & Associates — Phoenix Island project documentation",
+        "SBS Drama Archive — 'All In' (2003) and 'My Girl' (2005) filming locations"
+      ],
+      "verified": false,
+      "kb_version": "1.19",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Volcanic Cape — Tadao Ando Architecture + Bangdupo Lighthouse + Drama Filming",
+    "default_stay_minutes": 60
+  },
+  {
+    "poi_key": "seongsan_ilchulbong",
+    "name_en": "Seongsan Ilchulbong",
+    "name_ko": "성산일출봉",
+    "names_other_locales": {
+      "ja": "城山日出峰（ソンサン・イルチュルボン）",
+      "zh": "城山日出峰",
+      "zh-TW": "城山日出峰",
+      "es": "Seongsan Ilchulbong (triple Patrimonio UNESCO)"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+    "poi_meta": {
+      "sources": [
+        "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
+        "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
+        "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
+        "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
+        "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
+      ],
+      "verified": false,
+      "kb_version": "1.19",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "UNESCO Tuff Cone — Sunrise Peak (Triple UNESCO Designation)",
+    "default_stay_minutes": 90
+  },
+  {
+    "poi_key": "ilchulland_micheon_cave",
+    "name_en": "Ilchul Land — Hydrangea Festival + Micheon Cave",
+    "name_ko": "일출랜드 — 수국 축제 + 미천굴",
+    "names_other_locales": {
+      "ja": "日出ランド — アジサイ祭り＋密川洞窟",
+      "zh": "日出乐园（米川窟熔岩洞穴）",
+      "zh-TW": "日出樂園（米川窟熔岩洞穴）",
+      "es": "Ilchul Land — Festival de Hortensias + Cueva Micheon"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+    "poi_meta": {
+      "sources": [
+        "Ilchul Land official site (ilchulland.com)",
+        "VisitJeju — Ilchul Land Micheon Cave",
+        "Korea Cave Research Institute — Manjanggul lava-tube system documentation",
+        "SBS Variety Archive — Running Man Episode 89 (2012)",
+        "Jeju Tourism Organization — accessibility-friendly attraction registry"
+      ],
+      "verified": false,
+      "kb_version": "1.19",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Lava Tube + Theme Park — Manjanggul Alternate (UNESCO-property adjacent)",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "seongeup_folk_village",
+    "name_en": "Seongeup Folk Village",
+    "name_ko": "성읍민속마을",
+    "names_other_locales": {
+      "ja": "城邑民俗村（ソンウプ・ミンソクマウル）",
+      "zh": "城邑民俗村",
+      "zh-TW": "城邑民俗村",
+      "es": "Aldea Folclórica Seongeup"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+    "poi_meta": {
+      "sources": [
+        "Cultural Heritage Administration — Important Folklore Cultural Heritage designation",
+        "Korea Cultural Heritage Foundation — Seongeup Folk Village historical records",
+        "VisitJeju — Seongeup Minsok Maeul",
+        "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
+        "Jeju Folklore Society — Omegisul brewing tradition documentation"
+      ],
+      "verified": false,
+      "kb_version": "1.19",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Joseon-era Walled Town — Important Folklore Cultural Heritage (1423 founding)",
+    "default_stay_minutes": 60
+  },
+  {
+    "poi_key": "incheon_cruise_terminal",
+    "name_en": "Cruise terminal gangway pickup",
+    "name_ko": "크루즈터미널 갱웨이 픽업",
+    "names_other_locales": {
+      "ja": "クルーズターミナル・ギャングウェイでのお迎え",
+      "zh": "邮轮码头舷梯接送",
+      "zh-TW": "郵輪碼頭舷梯接送",
+      "es": "Recogida en la pasarela de la terminal de cruceros"
+    },
+    "region": "incheon",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [
+        "Incheon Port Authority (incheonport.kr)",
+        "Korea Tourism Organization (VisitKorea — Incheon Cruise Terminal listing)",
+        "Korea Herald (April 26, 2019 opening coverage)",
+        "Visit Korea — Incheon Tourist Attraction official",
+        "Wikipedia (Incheon Port + Songdo International Business District)"
+      ],
+      "verified": true,
+      "kb_version": "1.26",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Departure",
+    "default_stay_minutes": 30
+  },
+  {
+    "poi_key": "gyeongbokgung_palace",
+    "name_en": "Gyeongbokgung Palace + Royal Guard ceremony",
+    "name_ko": "경복궁 + 왕궁 수문장 교대식",
+    "names_other_locales": {
+      "ja": "景福宮 ＋ 王宮守門将交代儀式",
+      "zh": "景福宫 + 王宫守卫换岗仪式",
+      "zh-TW": "景福宮 + 王宮守衛換崗儀式",
+      "es": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real"
+    },
+    "region": "incheon",
+    "default_image_url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+    "poi_meta": {
+      "sources": [
+        "Cultural Heritage Administration of Korea (Royal Palaces & Tombs Center)",
+        "Visit Seoul official (english.visitseoul.net)",
+        "Korea Tourism Organization (VisitKorea)",
+        "Korea.net (official ROK government portal)",
+        "Wikipedia (Gyeongbokgung Palace)"
+      ],
+      "verified": true,
+      "kb_version": "1.26",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Royal Palace",
+    "default_stay_minutes": 90
+  },
+  {
+    "poi_key": "bukchon_hanok_village",
+    "name_en": "Bukchon Hanok Village + Insadong",
+    "name_ko": "북촌 한옥마을 + 인사동",
+    "names_other_locales": {
+      "ja": "北村韓屋村 ＋ 仁寺洞",
+      "zh": "北村韩屋村 + 仁寺洞",
+      "zh-TW": "北村韓屋村 + 仁寺洞",
+      "es": "Pueblo Hanok de Bukchon + Insadong"
+    },
+    "region": "incheon",
+    "default_image_url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+    "poi_meta": {
+      "sources": [
+        "Visit Seoul official (english.visitseoul.net)",
+        "Bukchon Traditional Culture Center",
+        "Jongno-gu District Office (Bukchon Hanok Village preservation program)",
+        "Korea Tourism Organization (VisitKorea)",
+        "Wikipedia (Bukchon Hanok Village)"
+      ],
+      "verified": true,
+      "kb_version": "1.26",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Hanok Residential District",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "gwangjang_market",
+    "name_en": "Lunch at Gwangjang Market",
+    "name_ko": "광장시장에서 점심 식사",
+    "names_other_locales": {
+      "ja": "広蔵市場でランチ",
+      "zh": "广藏市场午餐",
+      "zh-TW": "廣藏市場午餐",
+      "es": "Almuerzo en el Mercado Gwangjang"
+    },
+    "region": "incheon",
+    "default_image_url": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+    "poi_meta": {
+      "sources": [
+        "Gwangjang Market Association (jangjeonjang.com)",
+        "Visit Seoul official",
+        "Korea Tourism Organization (VisitKorea)",
+        "Anthony Bourdain: Parts Unknown — Seoul (CNN, June 21, 2015)",
+        "Wikipedia (Gwangjang Market)"
+      ],
+      "verified": true,
+      "kb_version": "1.26",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Market & Streetfood Lunch",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "insadong",
+    "name_en": "Insadong cultural street",
+    "name_ko": "인사동 문화 거리",
+    "names_other_locales": {
+      "ja": "仁寺洞文化ストリート",
+      "zh": "仁寺洞文化街",
+      "zh-TW": "仁寺洞文化街",
+      "es": "Calle cultural de Insadong"
+    },
+    "region": "incheon",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [
+        "Visit Seoul official",
+        "Insa-dong Tourism Information Center",
+        "Korea Tourism Organization (VisitKorea)",
+        "Jongno-gu District Office",
+        "Wikipedia (Insadong)"
+      ],
+      "verified": true,
+      "kb_version": "1.26",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Crafts & Cultural Shopping Street",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "n_seoul_tower",
+    "name_en": "N Seoul Tower (Namsan)",
+    "name_ko": "N서울타워 (남산)",
+    "names_other_locales": {
+      "ja": "Nソウルタワー（南山）",
+      "zh": "N首尔塔（南山）",
+      "zh-TW": "N首爾塔（南山）",
+      "es": "Torre N de Seúl (Namsan)"
+    },
+    "region": "incheon",
+    "default_image_url": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
+    "poi_meta": {
+      "sources": [
+        "N Seoul Tower official (nseoultower.co.kr)",
+        "Visit Seoul official",
+        "Korea Tourism Organization (VisitKorea)",
+        "CJ Foodville (operator since 2005 rebrand)",
+        "Wikipedia (N Seoul Tower)"
+      ],
+      "verified": true,
+      "kb_version": "1.26",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Iconic Tower (Viewpoint)",
+    "default_stay_minutes": 60
+  },
+  {
+    "poi_key": "myeongdong",
+    "name_en": "Myeongdong OR Jogyesa Temple (your choice)",
+    "name_ko": "명동 또는 조계사 (선택)",
+    "names_other_locales": {
+      "ja": "明洞（ミョンドン）または曹渓寺（チョゲサ）（お好みでお選びください）",
+      "zh": "明洞 或 曹溪寺（您来选择）",
+      "zh-TW": "明洞 或 曹溪寺（自由選擇）",
+      "es": "Myeongdong O Templo Jogyesa (a su elección)"
+    },
+    "region": "incheon",
+    "default_image_url": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
+    "poi_meta": {
+      "sources": [
+        "Visit Seoul official",
+        "Korea Tourism Organization (VisitKorea)",
+        "Jung-gu District Office (Myeongdong Tourism)",
+        "Lotte Department Store official (Myeongdong main branch)",
+        "Wikipedia (Myeongdong)"
+      ],
+      "verified": true,
+      "kb_version": "1.26",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Shopping & Local Culture — Customizable",
+    "default_stay_minutes": 60
+  },
+  {
+    "poi_key": "jeonnong_ro_cherry_blossom_street",
+    "name_en": "Jeonnong-ro Cherry Blossom Street",
+    "name_ko": "전농로 벚꽃길",
+    "names_other_locales": {
+      "ja": "全農路（チョンノンノ）桜並木通り",
+      "zh": "全农路樱花街",
+      "zh-TW": "全農路櫻花街",
+      "es": "Calle de los Cerezos de Jeonnong-ro"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+    "poi_meta": {
+      "sources": [
+        "Visit Jeju official",
+        "Korea Tourism Organization 2026 forecast",
+        "Best of Korea 2026 cherry blossom guide",
+        "90DayKorean cherry blossom guide",
+        "Visit Jeju official (visitjeju.net — Jeonnong-ro Cherry Blossom Festival listing + 1.2 km corridor + Sin-jeju location)",
+        "Korea Tourism Organization (english.visitkorea.or.kr — Jeju Cherry Blossom Festival 2026 forecast + bloom timing)",
+        "Jeju Cherry Blossom Festival official organizing committee (Jeonnong-ro 19th edition 2026 — car-free corridor + lanterns + night illumination)",
+        "Korea Forest Service (forest.go.kr — King Cherry / Wangbeotnamu native species record + 1908 Émile Taquet Hallasan documentation)",
+        "Wikipedia (Prunus × yedoensis — King Cherry vs Yoshino Cherry botanical classification debate)"
+      ],
+      "verified": false,
+      "kb_version": "1.29",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "King Cherry Blossom corridor — Jeju City",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "noksan_ro_gasiri_blossom_road",
+    "name_en": "Noksan-ro (Gasi-ri 10 km Cherry + Canola Road)",
+    "name_ko": "녹산로 (가시리 10km 벚꽃 + 유채꽃 드라이브 코스)",
+    "names_other_locales": {
+      "ja": "ノクサンロ（녹산로）（ガシリ 10km 桜＋菜の花ロード）",
+      "zh": "绿山路（加时里10公里樱花+油菜花公路）",
+      "zh-TW": "녹산로（加時里10公里櫻花＋油菜花公路）",
+      "es": "Noksan-ro (Carretera de cerezos + canola de 10 km de Gasi-ri)"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+    "poi_meta": {
+      "sources": [
+        "Visit Korea (Korea Tourism Organization)",
+        "Jeju Horse Park official",
+        "The Soul of Seoul Jeju spring guide",
+        "Calm Chronicle Jeju guide",
+        "Visit Korea (Korea Tourism Organization — Noksan-ro 'Jeju's Most Beautiful Spring Road' + Korea's 100 Most Beautiful Roads listing)",
+        "Jeju Horse Park (jejuhorsepark.com — Jorangmal Experience Center + first community-run national museum in Korea)",
+        "Korea Forest Service (forest.go.kr — Korea's 100 Most Beautiful Roads designation methodology)",
+        "Visit Jeju official (visitjeju.net — Gasi-ri Village + Noksanjang/Gammajang royal horse pasture heritage + 600-year history)",
+        "Wikipedia (Gasi-ri — When Life Gives You Tangerines 2024 Netflix + Welcome to Samdal-ri 2023 JTBC filming credits)"
+      ],
+      "verified": false,
+      "kb_version": "1.29",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Cherry + canola country drive — Joseon horse pastures",
+    "default_stay_minutes": 90
+  },
+  {
+    "poi_key": "ilchulland_themed_gardens",
+    "name_en": "Ilchul Land Themed Gardens",
+    "name_ko": "일출랜드 테마 정원",
+    "names_other_locales": {
+      "ja": "イルチュルランド テーマガーデン",
+      "zh": "日出乐园主题花园",
+      "zh-TW": "日出樂園主題花園",
+      "es": "Jardines Temáticos de Ilchul Land"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+    "poi_meta": {
+      "sources": [
+        "Visit Korea Ilchul Land page",
+        "Creatrip Ilchul Land guide",
+        "Wanderlog Ilchul Land reviews",
+        "Ilchul Land listing",
+        "Visit Korea (Korea Tourism Organization — Ilchul Land themed-garden complex + Folk Village + Wild Flower Bonsai Garden)",
+        "Ilchul Land official (ilchulland.com — blue-line walking path + Folk Village + Cactus Greenhouse + Subyeon Park)",
+        "Visit Jeju official (visitjeju.net — Eung Tae-seok 'stones that lay eggs' fertility folklore + Sculpture Path)",
+        "Korea Tourism Organization Filming Locations Guide (Running Man Episode 89 2012 + What Star Do You Come From 2006 MBC)",
+        "Wikipedia (Jeju Black Pig — Cultural Heritage Material No. 5 designation 2015)"
+      ],
+      "verified": false,
+      "kb_version": "1.29",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Themed gardens — Folk Village + Cactus + Bonsai + Sculpture Path",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "jeju_cruise_port",
+    "name_en": "Return to Jeju Cruise Terminal (Jeju Port — north)",
+    "name_ko": "제주 크루즈 터미널(제주항 — 북쪽)로 귀환",
+    "names_other_locales": {
+      "ja": "済州クルーズターミナル（済州港 — 北部）へ帰還",
+      "zh": "返回济州邮轮码头（济州港——北部）",
+      "zh-TW": "返回濟州郵輪碼頭（濟州港——北側）",
+      "es": "Regreso a la Terminal de Cruceros de Jeju (Puerto de Jeju — norte)"
+    },
+    "region": "jeju",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [
+        "VisitKorea / english.visitkorea.or.kr (Jeju cruise terminal facilities + 100-bus parking)",
+        "South Korea Ministry of Oceans & Fisheries (terminal opening 2015; berth specifications)",
+        "Korea Cruise Port Sales / k-cruiseinfo.com (berth depths, tonnage capacity)",
+        "Ministry of Culture, Sports & Tourism (2024 cruise volume: 810,000 pax / 414 ships)",
+        "Jeju Provincial Government (Imhang-ro address, Geonip-dong; UN/LOCODE KRCHA)"
+      ],
+      "verified": false,
+      "kb_version": "1.21",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Pickup & Cruise Logistics",
+    "default_stay_minutes": 30
+  },
+  {
+    "poi_key": "hamdeok_seoubong_beach",
+    "name_en": "Hamdeok Seoubong Beach",
+    "name_ko": "함덕 서우봉해변",
+    "names_other_locales": {
+      "ja": "咸徳海岸（ハムドクSOWUBONG）",
+      "zh": "咸德西牛峰海滩",
+      "zh-TW": "鹹德西牛峰海灘",
+      "es": "Playa Hamdeok Seoubong"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+    "poi_meta": {
+      "sources": [
+        "Jeju Olle Foundation — Trail Course 19 official map",
+        "VisitJeju — Hamdeok Seoubong Beach",
+        "Jeju 4·3 Peace Foundation — Imperial Japanese Army tunnel records",
+        "Korea Tourism Organization — Top 3 Jeju Beaches ranking",
+        "Jocheon-eup local cultural office — Seoubong oreum trail records"
+      ],
+      "verified": false,
+      "kb_version": "1.19",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Top-3 Jeju Beach — Olle Trail 19 + WWII Coastal History",
+    "default_stay_minutes": 60
+  },
+  {
+    "poi_key": "jeju_haenyeo_museum",
+    "name_en": "Haenyeo Museum (women divers)",
+    "name_ko": "해녀박물관 (제주 해녀 문화)",
+    "names_other_locales": {
+      "ja": "海女博物館（海女の世界）",
+      "zh": "海女博物馆（女性潜水员）",
+      "zh-TW": "海女博物館（女性潛水員）",
+      "es": "Museo Haenyeo (buceadoras de Jeju)"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+    "poi_meta": {
+      "sources": [
+        "UNESCO Intangible Cultural Heritage — Culture of Jeju Haenyeo (2016 inscription)",
+        "Jeju Haenyeo Museum official site (haenyeo.go.kr)",
+        "VisitJeju — Haenyeo Museum",
+        "Korea Maritime History Society — Jamnyeo records (1629 onward)",
+        "Jeju Special Self-Governing Province — haenyeo population census records"
+      ],
+      "verified": false,
+      "kb_version": "1.19",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "UNESCO Intangible Cultural Heritage — Jeju Diving Culture (2016)",
+    "default_stay_minutes": 45
+  },
+  {
+    "poi_key": "hallasan_eoseungsaengak",
+    "name_en": "Hallasan Eoseungsaengak",
+    "name_ko": "한라산 어승생악",
+    "names_other_locales": {
+      "ja": "漢拏山（ハルラサン）御乗生岳（オスンセンアク）",
+      "zh": "汉拿山御乘生岳",
+      "zh-TW": "漢拿山魚乘生岳",
+      "es": "Hallasan Eoseungsaengak"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+    "poi_meta": {
+      "sources": [
+        "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007)",
+        "Hallasan National Park official site (hallasan.go.kr)",
+        "Korea National Park Service designation records",
+        "VisitKorea — Hallasan Eoseungsaengak trail",
+        "Korea Forest Service — Abies koreana red list status"
+      ],
+      "verified": false,
+      "kb_version": "1.18",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Hallasan Foothill Trail (Eorimok) — UNESCO World Heritage Taste",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "daepo_jusangjeolli_cliff",
+    "name_en": "Daepo Jusangjeolli Cliff",
+    "name_ko": "대포 주상절리 절벽",
+    "names_other_locales": {
+      "ja": "大浦柱状節理帯",
+      "zh": "大浦柱状节理壁",
+      "zh-TW": "大浦柱狀節理海岸",
+      "es": "Acantilado Daepo Jusangjeolli"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+    "poi_meta": {
+      "sources": [
+        "Cultural Heritage Administration — Natural Monument No. 443 designation (2005-01-06)",
+        "Jeju Global Geopark official site (geopark.jeju.go.kr)",
+        "UNESCO Global Geoparks Network — Jeju (2010 designation)",
+        "VisitJeju — Daepo Jusangjeolli",
+        "Korea Geological Survey — Jeju basalt formation studies"
+      ],
+      "verified": false,
+      "kb_version": "1.18",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Volcanic Coastline — Hexagonal Columnar-Jointed Lava",
+    "default_stay_minutes": 45
+  },
+  {
+    "poi_key": "jeongbang_falls",
+    "name_en": "Jeongbang Waterfall",
+    "name_ko": "정방폭포",
+    "names_other_locales": {
+      "ja": "正房瀑布（チョンバン滝）",
+      "zh": "正房瀑布",
+      "zh-TW": "正房瀑布",
+      "es": "Cascada Jeongbang"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+    "poi_meta": {
+      "sources": [
+        "Korea Cultural Heritage Foundation — Yeongjusipgyeong canon",
+        "VisitJeju — Jeongbang Pokpo official listing",
+        "Seogwipo City tourism office — admission and access",
+        "Korea Geological Survey — coastal waterfall inventory",
+        "Jeju Folklore Records — Xu Fu / Seobulgwacha inscription study"
+      ],
+      "verified": false,
+      "kb_version": "1.18",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Coastal Waterfall — Falls Directly Into Ocean (Asia Unique)",
+    "default_stay_minutes": 60
+  },
+  {
+    "poi_key": "hueree_natural_park",
+    "name_en": "Hueree Natural Park — Hydrangea highlight",
+    "name_ko": "휴애리 자연생활공원 — 수국 하이라이트",
+    "names_other_locales": {
+      "ja": "ヒュアリ自然公園 — アジサイの見どころ",
+      "zh": "惠裕园自然生活公园——绣球花亮点",
+      "zh-TW": "惠裕園自然生活公園——繡球花亮點",
+      "es": "Parque Natural Hueree — Hortensias del sur"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+    "poi_meta": {
+      "sources": [
+        "https://m.visitjeju.net/en/detail/view?contentsid=CNTS_000000000022860 — Hueree Hydrangea Festival, Visit Jeju official",
+        "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=80492 — Hueree Maehwa Festival, Visit Korea (KTO)",
+        "https://world.nol.com/en/content/articles/cc1d5d91-7a2f-4f2e-8615-d3898f88242a — NOL World Iconic Seasonal Festivals guide",
+        "https://www.trazy.com/experience/detail/jeju-island-hueree-natural-park-ticket — Trazy Hueree Natural Park ticket page",
+        "https://jeju-asean.org/notice/lets-follow-the-flower-path-to-find-out-what-flower-festivals-are-happening-in-jeju-this-spring/ — Jeju Business Agency Singapore official notice"
+      ],
+      "verified": false,
+      "kb_version": "1.21",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Hydrangea highlight + signature Jeju Black Pig Show",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "hyeopjae_beach",
+    "name_en": "Hyeopjae Beach + west-coast café strip",
+    "name_ko": "협재 해수욕장 + 서쪽 해안 카페 거리",
+    "names_other_locales": {
+      "ja": "ヒョプチェビーチ＋西海岸カフェ通り",
+      "zh": "협재海滩 + 西海岸咖啡街",
+      "zh-TW": "狹才海灘＋西海岸咖啡廳街",
+      "es": "Playa Hyeopjae + franja de cafés de la costa oeste"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+    "poi_meta": {
+      "sources": [
+        "VisitJeju — Hyeopjae Beach + Biyangdo Island official listings",
+        "Jeju Special Self-Governing Province — Top Jeju beaches ranking + amenity registry",
+        "Korea Maritime + Ports Office — Hallim Port ferry schedule to Biyangdo",
+        "Jeju Tourism Organization — west-coast sunset photography spots registry",
+        "Hallim-eup local cultural office — Geumneung twin-beach pairing documentation"
+      ],
+      "verified": false,
+      "kb_version": "1.20",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "West-coast emerald beach + Biyangdo Island view",
+    "default_stay_minutes": 40
+  },
+  {
+    "poi_key": "hallim_park",
+    "name_en": "Hallim Park (Hydrangea Festival)",
+    "name_ko": "한림공원 (수국 축제)",
+    "names_other_locales": {
+      "ja": "翰林公園（アジサイ祭り）",
+      "zh": "翰林公园（绣球花节）",
+      "zh-TW": "翰林公園（繡球花節）",
+      "es": "Parque Hallim (Festival de las Hortensias)"
+    },
+    "region": "jeju",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [
+        "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=104761 — Hallim Park, Visit Korea (KTO)",
+        "http://jejucvb.com/Hallim — Jeju CVB official Unique Venue page (founder Song Bong-gyu + diplomatic guest list)",
+        "https://www.tripadvisor.com/Attraction_Review-g297885-d2204895-Reviews-Hallim_Park-Jeju_Jeju_Island.html — Tripadvisor Hallim Park (annual visitors + 9 themed gardens + monthly festival calendar)",
+        "https://www.trazy.com/experience/detail/hallim-park-jeju-ticket — Trazy Hallim Park ticket page (cave system + 'two-dimensional caves' classification + Natural Monument designation)",
+        "https://www.expatolife.com/hallim-park-jeju-island-south-korea/ — Expatolife Hallim Park guide (cave dimensions + 17 km lava-tube system)"
+      ],
+      "verified": false,
+      "kb_version": "1.21",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Hydrangea highlight + 9 themed gardens + 2 lava-tube caves",
+    "default_stay_minutes": 120
+  },
+  {
+    "poi_key": "camellia_hill",
+    "name_en": "Camellia Hill (year-round signature flower garden)",
+    "name_ko": "카멜리아힐 (사계절 대표 꽃 정원)",
+    "names_other_locales": {
+      "ja": "カメリアヒル（年間を通じたシグネチャーフラワーガーデン）",
+      "zh": "山茶花山丘（四季特色花卉花园）",
+      "zh-TW": "山茶花丘（四季皆宜的招牌花卉園）",
+      "es": "Camellia Hill (jardín floral emblemático durante todo el año)"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+    "poi_meta": {
+      "sources": [
+        "Camellia Hill official site (camelliahill.co.kr)",
+        "VisitJeju — Camellia Hill official listing",
+        "Andeok-myeon cultural tourism office",
+        "Korea Tourism Organization — Top Korean botanical gardens registry",
+        "Kakao TV / Wavve programming archive — 'EXchange / Transit Love 3' filming locations"
+      ],
+      "verified": false,
+      "kb_version": "1.20",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Hydrangea tunnel + 172,000 m² largest camellia arboretum in the East",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "osulloc_tea_museum",
+    "name_en": "O'Sulloc Tea Museum",
+    "name_ko": "오설록 티 뮤지엄",
+    "names_other_locales": {
+      "ja": "オソルロック・ティーミュージアム",
+      "zh": "雪绿茶博物馆（O'Sulloc Tea Museum）",
+      "zh-TW": "O'Sulloc茶博物館",
+      "es": "Museo del Té O'Sulloc"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+    "poi_meta": {
+      "sources": [
+        "Amorepacific corporate history (amorepacific.com)",
+        "O'sulloc Tea Museum official site (osulloc.com)",
+        "designboom Top 10 art museums archival listing",
+        "Korea Tea Industry Association — production statistics",
+        "VisitJeju — Osulloc Tea Museum"
+      ],
+      "verified": false,
+      "kb_version": "1.20",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Amorepacific tea-culture flagship + green-tea fields finale",
+    "default_stay_minutes": 60
+  },
+  {
+    "poi_key": "route_variant_east",
+    "name_en": "East Route: UNESCO & K-Drama Coast",
+    "name_ko": "동쪽 루트: 유네스코 & K-드라마 해안",
+    "names_other_locales": {
+      "ja": "東ルート：ユネスコ＆韓流ドラマの海岸",
+      "zh": "东部路线：联合国教科文组织遗址与韩剧海岸",
+      "zh-TW": "東部路線：聯合國教科文組織世界遺產與韓劇海岸",
+      "es": "Ruta Este: Costa UNESCO y K-Drama"
+    },
+    "region": "jeju",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [],
+      "verified": true,
+      "kb_version": null,
+      "verified_date": null
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Seongsan, Udo, Manjanggul, Seopjikoji",
+    "default_stay_minutes": null
+  },
+  {
+    "poi_key": "route_variant_west",
+    "name_en": "West Route: Beaches, Tea & Cafe Coast",
+    "name_ko": "서쪽 루트: 해변, 차(茶) & 카페 해안",
+    "names_other_locales": {
+      "ja": "西ルート：ビーチ、お茶＆カフェ海岸",
+      "zh": "西部路线：海滩、茶园与咖啡海岸",
+      "zh-TW": "西部路線：海灘、茶園與咖啡海岸",
+      "es": "Ruta Oeste: Playas, Té y Costa de los Cafés"
+    },
+    "region": "jeju",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [],
+      "verified": true,
+      "kb_version": null,
+      "verified_date": null
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Hyeopjae, Hallim Park, O'sulloc, Aewol",
+    "default_stay_minutes": null
+  },
+  {
+    "poi_key": "route_variant_south",
+    "name_en": "South Route: Waterfalls & Volcanic Coast",
+    "name_ko": "남부 코스: 폭포 & 화산 해안",
+    "names_other_locales": {
+      "ja": "南ルート：滝と火山海岸",
+      "zh": "南线：瀑布与火山海岸",
+      "zh-TW": "南部路線：瀑布與火山海岸",
+      "es": "Ruta Sur: Cascadas y Costa Volcánica"
+    },
+    "region": "jeju",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [],
+      "verified": true,
+      "kb_version": null,
+      "verified_date": null
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Cheonjiyeon, Jusangjeolli, Sanbangsan, Olle Market",
+    "default_stay_minutes": null
+  },
+  {
+    "poi_key": "route_variant_custom",
+    "name_en": "Custom Route: Build Your Own Day",
+    "name_ko": "맞춤 코스: 나만의 하루 일정 만들기",
+    "names_other_locales": {
+      "ja": "カスタムルート：自分だけの1日を作ろう",
+      "zh": "自定义路线：打造专属一日游",
+      "zh-TW": "自訂路線：打造您的專屬一日遊",
+      "es": "Ruta personalizada: Diseña tu propio día"
+    },
+    "region": "jeju",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [],
+      "verified": true,
+      "kb_version": null,
+      "verified_date": null
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Send Us Your Own Itinerary",
+    "default_stay_minutes": null
+  },
+  {
+    "poi_key": "cheonjeyeon_falls",
+    "name_en": "Cheonjeyeon Waterfall",
+    "name_ko": "천제연폭포",
+    "names_other_locales": {
+      "ja": "天帝淵滝",
+      "zh": "天帝渊瀑布",
+      "zh-TW": "天帝淵瀑布",
+      "es": "Cascada Cheonjeyeon"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+    "poi_meta": {
+      "sources": [
+        "Cultural Heritage Administration — Natural Monument No. 378 designation",
+        "VisitJeju — Cheonjeyeon Falls official listing",
+        "Jeju Special Self-Governing Province — Seonimgyo Bridge construction records",
+        "Korea Plant Society — Mankyua chejuense IUCN Critically Endangered listing",
+        "Jeju Folklore Society — Daoist seven-nymph legend documentation"
+      ],
+      "verified": false,
+      "kb_version": "1.20",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Three-Tier Waterfall — Natural Monument No. 378 (1993)",
+    "default_stay_minutes": 60
+  },
+  {
+    "poi_key": "hallasan_1100_wetland",
+    "name_en": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
+    "name_ko": "한라산 1100고지 습지 (람사르 + 유네스코)",
+    "names_other_locales": {
+      "ja": "한라산1100高地湿地（ラムサール条約＋ユネスコ）",
+      "zh": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
+      "zh-TW": "漢拿山 1100 高地濕地（拉姆薩爾公約 + 聯合國教科文組織）",
+      "es": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "poi_meta": {
+      "sources": [
+        "Ramsar Sites Information Service — 1100 Altitude Wetland (Site No. 1893)",
+        "UNESCO Man and the Biosphere Programme — Jeju Island Biosphere Reserve",
+        "Korea National Park Service — Hallasan National Park 1100 Wetland records",
+        "Mt Halla Visitor Centre — visitor management documentation",
+        "Jeju Special Self-Governing Province — Wetland Protected Area designation 2009"
+      ],
+      "verified": false,
+      "kb_version": "1.20",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Alpine Wetland — Ramsar Site + within Hallasan UNESCO World Heritage",
+    "default_stay_minutes": 45
+  },
+  {
+    "poi_key": "songaksan",
+    "name_en": "Songaksan Mountain (panoramic viewpoint)",
+    "name_ko": "송악산 (파노라마 전망 포인트)",
+    "names_other_locales": {
+      "ja": "ソンアクサン山（パノラマ展望スポット）",
+      "zh": "松岳山（全景观景台）",
+      "zh-TW": "松岳山（全景觀景點）",
+      "es": "Monte Songaksan (mirador panorámico)"
+    },
+    "region": "jeju",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [
+        "Wikipedia — Songaksan (Jeju) volcanic structure documentation",
+        "Jeju Olle Foundation — Trail Course 10 official map",
+        "Jeju 4·3 Peace Foundation — Imperial Japanese Army WWII tunnel records",
+        "VisitJeju — Songaksan Mountain official listing",
+        "Korea Geological Survey — double-crater parasitic-cone geology"
+      ],
+      "verified": false,
+      "kb_version": "1.20",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Double-Crater Volcanic Cone — 99 Peaks + Olle Trail 10 + WWII History",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "hallasan_eorimok_trail",
+    "name_en": "Hallasan Eorimok Trail (Winter Snow Hike)",
+    "name_ko": "한라산 어리목 탐방로 (겨울 설경 하이킹)",
+    "names_other_locales": {
+      "ja": "漢拏山・御里牧トレイル（冬の雪山ハイク）",
+      "zh": "汉拿山御里牧登山道（冬季雪地徒步）",
+      "zh-TW": "漢拏山御里牧步道（冬季雪地健行）",
+      "es": "Sendero Eorimok del Hallasan (Excursión de nieve en invierno)"
+    },
+    "region": "jeju",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [
+        "Hallasan National Park / english.jeju.go.kr (trail length, elevation, hours)",
+        "AllTrails (Eorimok trail mileage variants 8.7 mi / 7 mi point-to-point with Yeongsil)",
+        "Hunting for Bliss / Fork and Foot (winter trail conditions, 'frozen guardian' landscape, hike timing)",
+        "VisitKorea / english.visitkorea.or.kr (FREE admission, no-reservation status)",
+        "Jeju Bus Information System (Bus 240 + Routes 1100/1100-1)"
+      ],
+      "verified": false,
+      "kb_version": "1.22",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "National Park & Winter Hike",
+    "default_stay_minutes": 120
+  },
+  {
+    "poi_key": "jeju_tangerine_picking_experience",
+    "name_en": "Tangerine (Gyul) Picking Experience — Winter Hallabong Peak",
+    "name_ko": "귤(Gyul) 따기 체험 — 겨울 한라봉 최성수기",
+    "names_other_locales": {
+      "ja": "みかん（ギュル）狩り体験 — 冬のハルラボンシーズン",
+      "zh": "柑橘（귤）采摘体验 — 冬季汉拿峰柑橘旺季",
+      "zh-TW": "橘子（귤）採摘體驗 — 冬季漢拏峰橘當季",
+      "es": "Experiencia de Recolección de Mandarinas (Gyul) — Temporada Pico de Hallabong en Invierno"
+    },
+    "region": "jeju",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [
+        "VisitKorea / english.visitkorea.or.kr (Jeju citrus history; royal-gift tradition since Baekje)",
+        "Visit Jeju (variety calendar; cultivation tradition)",
+        "Jeju Provincial Government (Hallabong + Cheonhyehyang + Hwanggeumhyang + Red Hyang varieties)",
+        "third-party booking site / / (farm rotation: Gyulhyangi, Bong Bong, Choenamdan, Jeju Southernmost, Jejue In; pricing ₩5,000–15,000)",
+        "Korea Agricultural GAP Certification (Jeju Southernmost Theme Park year-round greenhouse)"
+      ],
+      "verified": false,
+      "kb_version": "1.22",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Agritourism Experience",
+    "default_stay_minutes": 60
+  },
+  {
+    "poi_key": "sanjeong_lake",
+    "name_en": "Sanjeong Lake",
+    "name_ko": "산정호수",
+    "names_other_locales": {
+      "ja": "山井湖（サンジョン湖）",
+      "zh": "山井湖",
+      "zh-TW": "山井湖",
+      "es": "Lago Sanjeong"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "poi_meta": {
+      "sources": [
+        "Korea Tourism Organization (VisitKorea — Pocheon Sanjeonghosu Lake official listing + 3 km loop trail + Myeongseongsan silver-grass habitat)",
+        "Korea Rural Community Corporation / Ministry of Agriculture (1925 reservoir construction + ownership/management designation)",
+        "Pocheon City Tourism Office (pocheon.go.kr — National Tourist Site designation + Sledding Festival official organization)",
+        "Visit Gyeonggi (ggtour.or.kr — provincial tourism portal on Sanjeong Lake winter activities)",
+        "NamuWiki (en.namu.wiki/w/산정호수 — Korean-language verified facts on construction date + depth + 1945-armistice administrative history)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Mountain-Circled Walking Lake",
+    "default_stay_minutes": 90
+  },
+  {
+    "poi_key": "herb_island",
+    "name_en": "Pocheon Herb Island",
+    "name_ko": "포천 허브아일랜드",
+    "names_other_locales": {
+      "ja": "ポチョン・ハーブアイランド",
+      "zh": "抱川香草岛",
+      "zh-TW": "抱川香草島",
+      "es": "Isla de Hierbas de Pocheon"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+    "poi_meta": {
+      "sources": [
+        "Korea Tourism Organization (VisitKorea — Herb Island official listing + Wednesday closure note + admission schedule)",
+        "Pocheon City Tourism Office (pocheon.go.kr — Sinbuk-myeon attractions cluster including Herb Island + Hot Springs + Art Valley)",
+        "Gyeonggi Province Official Blog (gyeonggido-korea.com — Light Fairy Tale Festival 3M LED + 17:00-22:00 schedule)",
+        "Herb Island Operator Official Site (herbisland.co.kr — own corpus on 1998 opening + 340-herb museum)",
+        "Visit Gyeonggi (ggtour.or.kr — provincial tourism portal on Pocheon herb-themed attraction cluster)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Mediterranean-Style Herb Botanical Park",
+    "default_stay_minutes": 150
+  },
+  {
+    "poi_key": "pocheon_art_valley",
+    "name_en": "Pocheon Art Valley",
+    "name_ko": "포천 아트밸리",
+    "names_other_locales": {
+      "ja": "ポチョン・アートバレー",
+      "zh": "抱川艺术谷",
+      "zh-TW": "抱川藝術谷",
+      "es": "Valle de Arte de Pocheon"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+    "poi_meta": {
+      "sources": [
+        "Pocheon Art Valley Official Site (artvalley.pcfac.or.kr — own corpus on Hosur Concert Hall specs + monorail logistics + drama-filming history)",
+        "Korea Tourism Organization (VisitKorea — Pocheon Art Valley listing + ecological-restoration history)",
+        "Pocheon City Tourism Office (pocheon.go.kr — Sinbuk-myeon attractions + Pocheonseok granite history)",
+        "Hantan Geopark Official (hantangeopark.kr — UNESCO Global Geopark archive on 1980s Pocheon quarry photos)",
+        "Inquirer Lifestyle / Korea Times (Cheong Wa Dae + National Assembly + Incheon Airport granite-source historical reporting)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Quarry-Turned-Art-Park with Monorail",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "imjingak_peace_park",
+    "name_en": "Imjingak Peace Park",
+    "name_ko": "임진각 평화공원",
+    "names_other_locales": {
+      "ja": "臨津閣平和公園",
+      "zh": "临津阁和平公园",
+      "zh-TW": "臨津閣和平公園",
+      "es": "Parque de la Paz Imjingak"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+    "poi_meta": {
+      "sources": [
+        "Korea Tourism Organization (VisitKorea — Imjingak Resort/Pyeonghwa Nuri Park listing)",
+        "Paju City DMZ Peace Tourism Portal (dmz.paju.go.kr — official tourist site authority)",
+        "Gyeonggi Provincial Government (English Gyeonggi Global — DMZ/Imjingak section)",
+        "Cultural Heritage Administration (Jangdan Station Steam Locomotive — Cultural Heritage 78 designation 2004)",
+        "Wikipedia (Imjingak — open verifiable corpus on Freedom Bridge POW exchange + 2ID Memorial)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Korean War Memorial Park",
+    "default_stay_minutes": 30
+  },
+  {
+    "poi_key": "third_infiltration_tunnel",
+    "name_en": "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
+    "name_ko": "제3땅굴 (지하 침투 땅굴)",
+    "names_other_locales": {
+      "ja": "第3浸透トンネル（地下侵入トンネル）",
+      "zh": "第三条渗透隧道（地下入侵隧道）",
+      "zh-TW": "第三條滲透隧道（地下入侵隧道）",
+      "es": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo)"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+    "poi_meta": {
+      "sources": [
+        "Korea Tourism Organization (VisitKorea — The 3rd Tunnel official listing + reservation info)",
+        "Paju City DMZ Peace Tourism Portal (dmz.paju.go.kr — official tour reservation system)",
+        "Cultural Heritage Administration / Ministry of National Defense (DMZ Joint Security Area program)",
+        "Wikipedia (Third Tunnel of Aggression — open corpus verifying 1,635 m / 73 m / 1978 specs)",
+        "Korea Herald / Yonhap News archival coverage (Korean defector tip-off + 30,000 troops/hour estimate)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Underground Invasion Tunnel (1978)",
+    "default_stay_minutes": 70
+  },
+  {
+    "poi_key": "dora_observatory",
+    "name_en": "Dora Observatory",
+    "name_ko": "도라산 전망대",
+    "names_other_locales": {
+      "ja": "都羅展望台",
+      "zh": "都罗展望台",
+      "zh-TW": "都羅展望台",
+      "es": "Observatorio Dora"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+    "poi_meta": {
+      "sources": [
+        "Korea Tourism Organization (VisitKorea — Dora Observatory listing + capacity specs)",
+        "Paju City DMZ Peace Tourism Portal (dmz.paju.go.kr — official Dora Observatory tour course)",
+        "Stars and Stripes (October 16, 2024 — DMZ observatories reopen + photography restrictions reporting)",
+        "Joint Chiefs of Staff ROK / Ministry of National Defense (security advisory on rooftop closure)",
+        "Wikipedia (Dora Observatory — corpus on 304 ft² capacity + 500-person observatory replacement of Songaksan)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "DMZ Border Viewpoint",
+    "default_stay_minutes": 30
+  },
+  {
+    "poi_key": "gamaksan_red_bridge",
+    "name_en": "Gamaksan Red Suspension Bridge",
+    "name_ko": "감악산 빨간 출렁다리",
+    "names_other_locales": {
+      "ja": "カマクサン（紺岳山）レッド吊り橋",
+      "zh": "绀岳山红色悬索桥",
+      "zh-TW": "紺岳山紅色吊橋",
+      "es": "Puente Colgante Rojo de Gamaksan"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+    "poi_meta": {
+      "sources": [
+        "Korea Tourism Organization (VisitKorea — Gamaksan Suspension Bridge listing + 150 m towerless designation)",
+        "Paju City Tourism Office (Mayor Lee In-jae fundraising campaign coverage + Gloucester Hill Memorial complex)",
+        "Gloucestershire Regiment Museum / British Embassy Seoul (Battle of Imjin River April 22-25 1951 historical record)",
+        "Visit Korea Korea Foundation Cultural Heritage Bridges Series (Gloucester Heroes Bridge dedication official)",
+        "Wikipedia (Battle of the Imjin River — 1st Battalion Gloucester Regiment + 170th Mortar Battery courageous-stand record)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Mountain Suspension Bridge",
+    "default_stay_minutes": 90
+  },
+  {
+    "poi_key": "nami_island",
+    "name_en": "Nami Island (Namiseom)",
+    "name_ko": "남이섬 (나미섬)",
+    "names_other_locales": {
+      "ja": "南怡島（ナミソム）",
+      "zh": "南怡岛（南怡洲）",
+      "zh-TW": "南怡島（南怡洲）",
+      "es": "Isla Nami (Namiseom)"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+    "poi_meta": {
+      "sources": [
+        "Korea Tourism Organization (VisitKorea — Nami Island official listing + visa fee schedule)",
+        "Naminara Republic Official Site (namisum-en.imweb.me — own corpus on cultural-independence brand)",
+        "UNICEF Korea (Nami Island 2010 Child Friendly Park designation + International Children's Book Festival)",
+        "KBS / Korea Times (Winter Sonata 2002 production retrospectives + Japanese tourism boom coverage)",
+        "Wikipedia (Namiseom — open corpus on General Nami history + Cheongpyeong Dam 1944 origin)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Ferry-Access Island & K-Drama Landmark",
+    "default_stay_minutes": 180
+  },
+  {
+    "poi_key": "garden_of_morning_calm",
+    "name_en": "The Garden of Morning Calm",
+    "name_ko": "아침고요수목원",
+    "names_other_locales": {
+      "ja": "晨靜苑",
+      "zh": "晨静树木园",
+      "zh-TW": "晨靜樹木園",
+      "es": "Jardín de la Mañana Tranquila (Achimsogwon)"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+    "poi_meta": {
+      "sources": [
+        "Garden of Morning Calm Official Site (morningcalm.co.kr — own corpus on founder + 1996 opening + 20 sub-gardens)",
+        "Korea Tourism Organization (VisitKorea — Lighting Festival listing + lighting-fest schedule)",
+        "Gyeonggi Cultural Foundation (ggc.ggcf.kr — official cultural promotion entry on Sunken Garden + 200,000 LEDs)",
+        "Sahmyook University Department of Horticulture (Prof. Han Sang-kyung honorary professor profile + garden origin)",
+        "Wikipedia (Garden of Morning Calm — corpus on Tagore-derived name + 5,000 species + 330,000 m² total)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Themed Botanical Garden",
+    "default_stay_minutes": 120
+  },
+  {
+    "poi_key": "petite_france",
+    "name_en": "Petite France",
+    "name_ko": "쁘띠프랑스",
+    "names_other_locales": {
+      "ja": "プチフランス",
+      "zh": "小法国村",
+      "zh-TW": "小法國村",
+      "es": "Petite France"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+    "poi_meta": {
+      "sources": [
+        "Petite France Official Site (en.pfcamp.com — own corpus on founder + 16-building layout + Goseong Youth Training Center)",
+        "Korea Tourism Organization (VisitKorea — Petite France listing + 2025 'Bon Appétit, Your Majesty' filming-location verification)",
+        "Saint-Exupéry Foundation France (international license agreement — Le Petit Prince motif authorization)",
+        "Gapyeong County Tourism Office (gapyeong.go.kr — official local-government attractions listing)",
+        "Wikipedia (Petite France theme park — corpus on July 2008 opening + Le Petit Prince theme + organizational structure)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Le Petit Prince Themed Village",
+    "default_stay_minutes": 60
+  },
+  {
+    "poi_key": "seoraksan_national_park",
+    "name_en": "Seoraksan National Park",
+    "name_ko": "설악산 국립공원",
+    "names_other_locales": {
+      "ja": "雪岳山国立公園",
+      "zh": "雪岳山国家公园",
+      "zh-TW": "雪嶽山國家公園",
+      "es": "Parque Nacional de Seoraksan"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+    "poi_meta": {
+      "sources": [
+        "Korea Tourism Organization (VisitKorea — Seoraksan National Park (Outer Seorak) listing + IUCN Green List confirmation)",
+        "IUCN Green List of Protected and Conserved Areas (iucngreenlist.org — Seoraksan official entry + 2014 designation + 398.24 km² area)",
+        "Korea National Park Service (KNPS — Seoraksan National Park Office official site + endangered species management plan)",
+        "UNESCO World Heritage Centre (Mt. Sorak Biosphere Reserve 1982 designation + tentative World Heritage listing)",
+        "Wikipedia (Seoraksan National Park — corpus on 30 peaks, 2,000+ animal species, 1,400+ plant species)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "National Park (Mountain)",
+    "default_stay_minutes": 120
+  },
+  {
+    "poi_key": "naksansa_temple",
+    "name_en": "Naksansa Temple",
+    "name_ko": "낙산사",
+    "names_other_locales": {
+      "ja": "洛山寺",
+      "zh": "洛山寺",
+      "zh-TW": "洛山寺",
+      "es": "Templo de Naksansa"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
+    "poi_meta": {
+      "sources": [
+        "Korea Tourism Organization (VisitKorea English — Naksansa Temple listing, founding by Uisang 671 CE, key features)",
+        "Cultural Heritage Administration of Korea (Historic Site No. 495 designation 2008; Seven-Story Stone Pagoda and Naksansa heritage records)",
+        "Yangyang County official tourism (tour.yangyang.go.kr — Naksansa / Uisangdae, operating hours, parking)",
+        "Wikipedia (Naksansa + Naksansa bronze bell — corpus on 2005 Yangyang wildfire, reconstruction completed ~2015, bell recast 2006)",
+        "Korean travel reports 2023-2026 confirming free admission since the revised Cultural Heritage Protection Act (effective 2023-05-04)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-05-14"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Seaside Buddhist Temple",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "naksan_beach",
+    "name_en": "Naksan Beach",
+    "name_ko": "낙산해수욕장",
+    "names_other_locales": {
+      "ja": "ナクサン・ビーチ（洛山海水浴場）",
+      "zh": "洛山海滩",
+      "zh-TW": "洛山海水浴場",
+      "es": "Playa de Naksan"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/naksan-beach/naksan-beach-sign.webp",
+    "poi_meta": {
+      "sources": [
+        "Korea Tourism Organization (VisitKorea English — Naksan Beach listing: ~4 km length, water under 1.5 m deep, opened 1963, 1M+ annual visitors)",
+        "VisitKorea destination corpus (Naksanhang Port and Namdaecheon Stream delta bounding the beach; pine-forest backing)",
+        "Yangyang County official tourism + Yangyang Sunrise Festival records (New Year sunrise venue, bell-tolling and beach fireworks)",
+        "Korean and international travel guides 2023-2026 (free parking ~150 spaces, July-August swimming season, year-round sunrise destination)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-05-14"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "East Sea Beach",
+    "default_stay_minutes": 60
+  },
+  {
+    "poi_key": "sokcho_tourist_fishery_market",
+    "name_en": "Sokcho Tourist Fishery Market",
+    "name_ko": "속초관광수산시장",
+    "names_other_locales": {
+      "ja": "束草観光水産市場",
+      "zh": "束草观光水产市场",
+      "zh-TW": "束草觀光水產市場",
+      "es": "Mercado Pesquero Turístico de Sokcho"
+    },
+    "region": "seoraksan",
+    "default_image_url": "",
+    "poi_meta": {
+      "sources": [
+        "Korea Tourism Organization (VisitKorea — Sokcho Tourist & Fishery Market listing + Top 3 Eateries Dakgangjeong/Raw Fish/Abai Village)",
+        "Sokcho City Tourism Office (sokcho.go.kr — official market re-naming history Jungang → Tourist Fishery)",
+        "AJU Press / Korea Times (January 22, 2026 — Abai Village displaced-people heritage feature article)",
+        "Visit Gangwon (gangwon.to — official provincial tourism portal on Sokcho market specialties)",
+        "Wikipedia (Sokcho — corpus on Korean War Hamgyeong-province refugee settlement history + Abai Village formation)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Coastal Fishery Market",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "sokcho_beach",
+    "name_en": "Sokcho Beach",
+    "name_ko": "속초해수욕장",
+    "names_other_locales": {
+      "ja": "束草ビーチ",
+      "zh": "束草海水浴场",
+      "zh-TW": "束草海水浴場",
+      "es": "Playa de Sokcho"
+    },
+    "region": "seoraksan",
+    "default_image_url": "",
+    "poi_meta": {
+      "sources": [
+        "Korea Tourism Organization (VisitKorea — Sokcho Beach official listing + Sokcho Eye dedicated listing with 65 m specs)",
+        "Sokcho City Tourism Office (sokcho.go.kr — official beach + Sokcho Eye operating-hours page)",
+        "Visit Gangwon (gangwon.to — provincial tourism portal on Sokcho coastal attractions)",
+        "Sokcho Eye Operator Site (Angelus Wish Theme Park — combo-ticket package + reservation system)",
+        "Korea Times / Yonhap News (March 2022 Sokcho Eye opening coverage + 'Korea's first beach Ferris wheel' designation)"
+      ],
+      "verified": true,
+      "kb_version": "1.27",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Coastal Beach",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "route_variant_gapyeong_loop",
+    "name_en": "Route 1: Gapyeong Nature & Culture Loop",
+    "name_ko": "루트 1: 가평 자연 & 문화 순환 코스",
+    "names_other_locales": {
+      "ja": "ルート1：加平 自然＆文化ループ",
+      "zh": "路线1：加平自然与文化环线",
+      "zh-TW": "路線1：加平自然與文化環線",
+      "es": "Ruta 1: Circuito de Naturaleza y Cultura de Gapyeong"
+    },
+    "region": "seoul",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [],
+      "verified": true,
+      "kb_version": null,
+      "verified_date": null
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Nami Island + Morning Calm + Petite France + Gangchon Railbike",
+    "default_stay_minutes": null
+  },
+  {
+    "poi_key": "route_variant_dmz_paju",
+    "name_en": "Route 2: DMZ History & Paju Shopping",
+    "name_ko": "코스 2: DMZ 역사 & 파주 쇼핑",
+    "names_other_locales": {
+      "ja": "ルート2：DMZの歴史＆坡州ショッピング",
+      "zh": "路线二：非军事区历史游 & 坡州购物",
+      "zh-TW": "路線二：非武裝地帶歷史之旅與坡州購物",
+      "es": "Ruta 2: Historia de la DMZ y compras en Paju"
+    },
+    "region": "seoul",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [],
+      "verified": true,
+      "kb_version": null,
+      "verified_date": null
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "DMZ Tour + Paju Premium Outlets",
+    "default_stay_minutes": null
+  },
+  {
+    "poi_key": "route_variant_everland_folk",
+    "name_en": "Route 3: Everland + Korean Folk Village",
+    "name_ko": "루트 3: 에버랜드 + 한국민속촌",
+    "names_other_locales": {
+      "ja": "ルート3：エバーランド＋韓国民俗村",
+      "zh": "路线3：爱宝乐园 + 韩国民俗村",
+      "zh-TW": "路線三：愛寶樂園＋韓國民俗村",
+      "es": "Ruta 3: Everland + Aldea Popular Coreana"
+    },
+    "region": "seoul",
+    "default_image_url": "",
+    "poi_meta": {
+      "sources": [],
+      "verified": true,
+      "kb_version": null,
+      "verified_date": null
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Theme Park + Heritage Village",
+    "default_stay_minutes": null
+  },
+  {
+    "poi_key": "route_variant_custom_seoul",
+    "name_en": "Route 4: Custom Itinerary Option",
+    "name_ko": "코스 4: 맞춤 일정 옵션",
+    "names_other_locales": {
+      "ja": "ルート4：カスタムプランオプション",
+      "zh": "路线四：自定义行程方案",
+      "zh-TW": "路線四：自訂行程方案",
+      "es": "Ruta 4: Opción de Itinerario Personalizado"
+    },
+    "region": "seoul",
+    "default_image_url": null,
+    "poi_meta": {
+      "sources": [],
+      "verified": true,
+      "kb_version": null,
+      "verified_date": null
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Send Us Your Own Plan",
+    "default_stay_minutes": null
+  },
+  {
+    "poi_key": "hwaseong_fortress",
+    "name_en": "Suwon Hwaseong Fortress",
+    "name_ko": "수원 화성",
+    "names_other_locales": {
+      "ja": "水原華城",
+      "zh": "水原华城",
+      "zh-TW": "水原華城",
+      "es": "Fortaleza Suwon Hwaseong"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+    "poi_meta": {
+      "sources": [
+        "UNESCO WHC",
+        "VisitKorea",
+        "KoreaToDo",
+        "Suwon CVB",
+        "UNESCO World Heritage Centre — Suwon Hwaseong (Criteria ii/iii inscription, 1997)",
+        "Korea Heritage Service / Cultural Heritage Administration (cha.go.kr — Hwaseong Fortress + Hwaseong Seongyeok Uigwe Memory of the World 2007)",
+        "Korea Tourism Organization (english.visitkorea.or.kr — Suwon Hwaseong Fortress official listing)",
+        "Suwon City Tourism (suwon.go.kr/tour — Hwaseong Yeolcha trolley + admission + opening hours)",
+        "Wikipedia (Hwaseong Fortress — Jeong Yak-yong + Geojunggi crane + 5.74 km perimeter + 41 structures)"
+      ],
+      "verified": true,
+      "kb_version": "1.28",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "UNESCO Fortress",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "hwaseong_haenggung",
+    "name_en": "Hwaseong Haenggung Palace",
+    "name_ko": "화성행궁",
+    "names_other_locales": {
+      "ja": "華城行宮（ファソン・ヘングン）",
+      "zh": "华城行宫",
+      "zh-TW": "華城行宮",
+      "es": "Palacio Hwaseong Haenggung"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+    "poi_meta": {
+      "sources": [
+        "VisitKorea",
+        "Wikipedia",
+        "Suwon CVB",
+        "",
+        "Korea Tourism Organization (english.visitkorea.or.kr — Hwaseong Haenggung official listing)",
+        "Cultural Heritage Administration / Korea Heritage Service (cha.go.kr — Hwaseong Haenggung Historic Site No. 478)",
+        "Suwon City Tourism (suwon.go.kr/tour — Royal Guard Changing Ceremony + Mu-ye 24-gi schedule)",
+        "Wikipedia (Hwaseong Haenggung — Naknamheon-only-original-structure + 576-kan scale)",
+        "Visit Suwon CVB (visitsuwon.org — Suwon Pass combined ticket + Haenggung Square facilities)"
+      ],
+      "verified": true,
+      "kb_version": "1.28",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Joseon Royal Detached Palace",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "korean_folk_village_yongin",
+    "name_en": "Korean Folk Village (Yongin)",
+    "name_ko": "한국민속촌 (용인)",
+    "names_other_locales": {
+      "ja": "韓国民俗村（龍仁）",
+      "zh": "韩国民俗村（龙仁）",
+      "zh-TW": "韓國民俗村（龍仁）",
+      "es": "Pueblo Folclórico Coreano (Yongin)"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+    "poi_meta": {
+      "sources": [
+        "VisitKorea",
+        "HereKoreaTravel",
+        "Wikipedia",
+        "Korea Tourism Organization (english.visitkorea.or.kr — Korean Folk Village official listing)",
+        "Korean Folk Village Yongin (koreanfolk.co.kr — operating hours + festival schedule + admission)",
+        "UNESCO Intangible Cultural Heritage of Humanity (Jultagi tightrope walking — 2011 inscription)",
+        "Wikipedia (Korean Folk Village — 245 acres / 260 traditional houses / 1974 founding)",
+        "Visit Korea KTO Sageuk K-Drama Filming Locations Guide (Daejanggeum/Jewel-in-the-Palace + Sungkyunkwan Scandal)"
+      ],
+      "verified": true,
+      "kb_version": "1.28",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Folk Heritage Village",
+    "default_stay_minutes": 120
+  },
+  {
+    "poi_key": "starfield_library_suwon",
+    "name_en": "Starfield Suwon Library & Mall",
+    "name_ko": "스타필드 수원 도서관 & 몰",
+    "names_other_locales": {
+      "ja": "スターフィールド水原 ライブラリー＆モール",
+      "zh": "Starfield 水原图书馆与购物中心",
+      "zh-TW": "Starfield 水原圖書館與購物中心",
+      "es": "Biblioteca y Centro Comercial Starfield Suwon"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
+    "poi_meta": {
+      "sources": [
+        "Starfield official",
+        "VisitKorea",
+        "Shinsegae press release",
+        "BCHO Partners",
+        "Starfield Suwon official (starfield.co.kr/suwon — opening date 2024-01-26 + library 4F-7F + free admission)",
+        "Shinsegae Property press release (Jan 2024 grand opening + 5th Starfield mall + 2nd-generation flagship concept)",
+        "Korea Tourism Organization (english.visitkorea.or.kr — Starfield Library Suwon listing)",
+        "ArchDaily — BCHO Partners (Cho Byoung-soo) Starfield Suwon design review",
+        "Wikipedia (Starfield Suwon — 22m bookshelves + Douglas Coupland 'The Planets' rooftop installation)"
+      ],
+      "verified": true,
+      "kb_version": "1.28",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Modern Cultural Landmark",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "suwon_nammun_market",
+    "name_en": "Suwon Nammun Market — Lunch + streetfood",
+    "name_ko": "수원 남문시장 — 점심 + 길거리 음식",
+    "names_other_locales": {
+      "ja": "水原南門市場 — ランチ＋ストリートフード",
+      "zh": "水原南门市场 — 午餐 + 街头小吃",
+      "zh-TW": "水原南門市場 — 午餐 + 街頭小吃",
+      "es": "Mercado Nammun de Suwon — Almuerzo + comida callejera"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+    "poi_meta": {
+      "sources": [
+        "VisitKorea",
+        "Visit Suwon",
+        "Korea SBA Cultural Tourism Market",
+        "Wikipedia Suwon-style galbi",
+        "Korea Tourism Organization (english.visitkorea.or.kr — Suwon Paldalmun Market + Nammun Rodeo Market listings)",
+        "Visit Suwon CVB (visitsuwon.org — Nammun Market 9-sub-market network + Suwon Tongdak Galbi Street)",
+        "Korea Small & Medium Business Administration (kosbi.or.kr — Cultural Tourism Market 문화관광형시장 designation)",
+        "Wikipedia (Suwon-style galbi — wang-galbi origin + pear-and-ginger marinade)",
+        "Suwon City Tourism (suwon.go.kr/tour — Suwon Tongdak Galbi 거리 cluster + Reply 1988 filming credits)"
+      ],
+      "verified": true,
+      "kb_version": "1.28",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Traditional Market + Lunch",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "gwangmyeong_cave",
+    "name_en": "Gwangmyeong Cave",
+    "name_ko": "광명동굴",
+    "names_other_locales": {
+      "ja": "光明洞窟（クァンミョン洞窟）",
+      "zh": "光明洞窟",
+      "zh-TW": "光明洞窟",
+      "es": "Cueva de Gwangmyeong"
+    },
+    "region": "seoul",
+    "default_image_url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+    "poi_meta": {
+      "sources": [
+        "VisitKorea",
+        "Wikipedia",
+        "Gwangmyeong City",
+        "KoreaToDo",
+        "Korea Tourism Organization (english.visitkorea.or.kr — Gwangmyeong Cave official listing)",
+        "Gwangmyeong Cave official (gmcave.gm.go.kr — themed zones + operating hours + admission)",
+        "Gwangmyeong City Tourism (gm.go.kr/tour — 2011 city purchase 4.3 billion KRW + Korea's first govt-owned cave-tourism)",
+        "Wikipedia (Gwangmyeong Cave — 1912 Japanese colonial mine + 1972 closure + 7.8 km tunnel total)",
+        "Korea Tourism Star Award archive (Gwangmyeong Cave 2014 winner — Best New Tourist Attraction)"
+      ],
+      "verified": true,
+      "kb_version": "1.28",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Industrial-Heritage Themed Cave",
+    "default_stay_minutes": 100
+  },
+  {
+    "poi_key": "waujeongsa_temple",
+    "name_en": "Waujeongsa Temple",
+    "name_ko": "와우정사",
+    "names_other_locales": {
+      "ja": "ワウジョンサ（와우정사）",
+      "zh": "卧牛精舍",
+      "zh-TW": "臥牛精舍",
+      "es": "Templo Waujeongsa"
+    },
+    "region": "suwon",
+    "default_image_url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+    "poi_meta": {
+      "sources": [
+        "VisitKorea",
+        "Wikipedia",
+        "Visit Yongin",
+        "Templestay Korea",
+        "Korea Tourism Organization (english.visitkorea.or.kr — Waujeongsa Temple official listing)",
+        "Visit Yongin Tourism (yongin.go.kr/tour — Master Haedeung 1970 founding + reunification prayer temple)",
+        "Templestay Korea (templestay.com — Waujeongsa overnight program + 108-bow practice + sachal eumsik cuisine)",
+        "Wikipedia (Waujeongsa — pan-Asian Buddhist syncretism + Indravarna pagoda + Taepyeongjong 8-ton bell)",
+        "Korea Buddhism Yeonhwasan/Lotus-Mountain regional guide (Waujeongsa 와우 = 'reclining cow' + sandalwood reclining Buddha origin)"
+      ],
+      "verified": true,
+      "kb_version": "1.28",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Buddhist Temple (Modern Eclectic)",
+    "default_stay_minutes": 75
+  },
+  {
+    "poi_key": "aewol_cafe_street",
+    "name_en": "Aewol Cafe Street (Handam Coastal Trail)",
+    "name_ko": "애월 카페거리 (한담해안산책로)",
+    "names_other_locales": {
+      "ja": "愛月カフェ通り（翰潭海岸散策路）",
+      "zh": "涯月咖啡街（汉潭海岸步道）",
+      "zh-TW": "涯月咖啡街（翰潭海岸步道）",
+      "es": "Calle de Cafés de Aewol (Sendero Costero Handam)"
+    },
+    "region": "jeju",
+    "default_image_url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+    "poi_meta": {
+      "sources": [
+        "Jeju Olle Foundation — Trail 15A official map (Hallim → Gonae)",
+        "Aewol-eup Cultural Office — Jang Han Chul historical records",
+        "VisitJeju — Aewol Cafe Street",
+        "SBS Drama Archive — 'You Who Came From the Stars' filming locations",
+        "Joseon Wangjo Sillok / Korean Folklore Society — Pyohaerok textual study"
+      ],
+      "verified": false,
+      "kb_version": "1.18",
+      "verified_date": "2026-04-29"
+    },
+    "stop_role": "attraction",
+    "is_attraction": true,
+    "category": "Coastal Cafe Strip — Sunset Finale + Olle Trail 15A Segment",
+    "default_stay_minutes": 75
+  }
+]
