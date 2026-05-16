@@ -219,7 +219,7 @@ export function HeroSection() {
           with one clear lockup: headline + one-sentence body + 3 stats.
         */}
         <div className="mx-auto max-w-lg pt-5 pb-6">
-          <div className="rounded-card border border-amber-200/50 bg-gradient-to-br from-amber-50/90 via-orange-50/40 to-amber-50/60 px-5 py-5 shadow-1">
+          <div className="rounded-card border border-slate-200/70 bg-white px-5 py-5 shadow-1">
             <h2 className="mb-1.5 text-h3 text-slate-900">
               Stop searching. We already did it for you.
             </h2>
@@ -232,19 +232,19 @@ export function HeroSection() {
             {/* Stat cards — 3 equal columns. Only social-proof surface
                 above the matcher. */}
             <div className="grid grid-cols-3 gap-2">
-              <div className="rounded-image border border-amber-100 bg-white/80 px-2.5 py-3 text-center shadow-1">
+              <div className="rounded-image border border-slate-100 bg-slate-50/60 px-2.5 py-3 text-center">
                 <span className="block text-[18px] font-extrabold leading-none tracking-tight text-slate-900">
                   4.9<span className="text-[11px] text-amber-400">★</span>
                 </span>
                 <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-600">avg. rating</span>
               </div>
 
-              <div className="rounded-image border border-amber-100 bg-white/80 px-2.5 py-3 text-center shadow-1">
+              <div className="rounded-image border border-slate-100 bg-slate-50/60 px-2.5 py-3 text-center">
                 <span className="block text-[18px] font-extrabold leading-none tracking-tight text-slate-900">100K+</span>
                 <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-600">bookings</span>
               </div>
 
-              <div className="rounded-image border border-amber-100 bg-white/80 px-2.5 py-3 text-center shadow-1">
+              <div className="rounded-image border border-slate-100 bg-slate-50/60 px-2.5 py-3 text-center">
                 <span className="block text-[18px] font-extrabold leading-none tracking-tight text-slate-900">8</span>
                 <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-600">platforms</span>
                 <span className="mt-1 block text-micro font-medium leading-tight text-slate-500">Klook · GetYourGuide · Viator</span>
