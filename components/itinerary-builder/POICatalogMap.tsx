@@ -28,6 +28,8 @@ interface Props {
   hasInCart?: (key: string) => boolean;
   /** Phase 7 — when set, map pans to this POI and opens its InfoWindow. */
   focusedPoiKey?: string | null;
+  /** Phase E — expose reset-view to parent (BuilderShell's map header bar). */
+  resetViewRef?: React.MutableRefObject<(() => void) | null>;
 }
 
 export default function POICatalogMap({
@@ -41,6 +43,7 @@ export default function POICatalogMap({
   onRemove,
   hasInCart,
   focusedPoiKey,
+  resetViewRef,
 }: Props) {
   const t = useTranslations("itineraryBuilder.map");
   const { isLoaded, loadError } = useLoadScript({
@@ -70,6 +73,24 @@ export default function POICatalogMap({
     setMap(m);
   }, []);
 
+  /** Reset view back to region centroid + initial zoom. Exposed to parent
+   * via the small floating button below the map header. */
+  const handleResetView = useCallback(() => {
+    if (!map) return;
+    map.panTo({ lat: center.lat, lng: center.lng });
+    map.setZoom(center.zoom);
+    setSelected(null);
+  }, [map, center.lat, center.lng, center.zoom]);
+
+  // Expose reset-view to parent so the BuilderShell map header bar can wire it.
+  useEffect(() => {
+    if (!resetViewRef) return;
+    resetViewRef.current = handleResetView;
+    return () => {
+      if (resetViewRef.current === handleResetView) resetViewRef.current = null;
+    };
+  }, [resetViewRef, handleResetView]);
+
   const handleMapUnmount = useCallback(() => {
     setMap(null);
     clustererRef.current?.clearMarkers();
@@ -88,7 +109,9 @@ export default function POICatalogMap({
     if (typeof z === "number" && z < 12) map.setZoom(12);
   }, [focusedPoiKey, map, pois]);
 
-  // Build AdvancedMarkerElement instances + clusterer when map + pois ready.
+  // Build AdvancedMarkerElement instances + clusterer when map + pois (or
+  // cart membership) change. In-cart POIs get amber pins with a 1-indexed
+  // cart-order glyph; out-of-cart POIs get the default slate pin.
   useEffect(() => {
     if (!map || !pois.length) return;
     if (!("marker" in google.maps) || !google.maps.marker?.AdvancedMarkerElement) {
@@ -103,12 +126,17 @@ export default function POICatalogMap({
     });
     markersRef.current = [];
 
+    const cartIndex = new Map((cart ?? []).map((k, i) => [k, i + 1]));
+
     const markers = pois.map((poi) => {
+      const seq = cartIndex.get(poi.poi_key);
+      const inCart = seq != null;
       const pin = new google.maps.marker.PinElement({
-        background: "#0f172a",
+        background: inCart ? "#f59e0b" : "#0f172a",
         borderColor: "#ffffff",
-        glyphColor: "#fbbf24",
-        scale: 1.0,
+        glyph: inCart ? String(seq) : undefined,
+        glyphColor: inCart ? "#ffffff" : "#fbbf24",
+        scale: inCart ? 1.15 : 1.0,
       });
       const marker = new google.maps.marker.AdvancedMarkerElement({
         position: { lat: poi.lat, lng: poi.lng },
@@ -131,7 +159,7 @@ export default function POICatalogMap({
       markers.forEach((m) => (m.map = null));
       markersRef.current = [];
     };
-  }, [map, pois]);
+  }, [map, pois, cart]);
 
   // Outer container always renders with explicit dimensions so the page
   // doesn't collapse when Google Maps JS is still loading or fails. Inner

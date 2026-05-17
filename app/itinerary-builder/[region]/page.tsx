@@ -85,16 +85,14 @@ export default async function ItineraryBuilderRegionPage({
           </div>
         </header>
 
-        <section className="px-0 pb-12 md:px-6">
-          <div className="mx-auto max-w-7xl overflow-hidden border-y border-slate-200 bg-white md:rounded-2xl md:border md:shadow-md md:ring-1 md:ring-slate-200">
-            <BuilderShell
-              region={region}
-              pois={pois}
-              center={center}
-              mapId={process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID || ""}
-              apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}
-            />
-          </div>
+        <section className="pb-12">
+          <BuilderShell
+            region={region}
+            pois={pois}
+            center={center}
+            mapId={process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID || ""}
+            apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}
+          />
           <p className="mt-3 px-4 text-center text-micro text-slate-500 md:px-0">
             {pois.length} curated points of interest in this region.
           </p>
