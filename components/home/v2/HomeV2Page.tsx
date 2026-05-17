@@ -25,10 +25,10 @@ export default function HomeV2Page() {
         <div className="home-v2-body-isolate relative z-0">
           <HeroSection />
           <DeferredBestMatchPreview />
+          <FeaturedProductsShowcase />
           <DestinationsShowcase />
           <ItineraryBuilderEntry />
           <ChooseTravelStyle />
-          <FeaturedProductsShowcase />
           <WhyAtockorea />
           <ProcessOperational />
           <FinalCTA />
