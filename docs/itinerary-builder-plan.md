@@ -124,6 +124,7 @@ Things that came up during this work but aren't in the 6-phase plan. Park them h
 | 2026-05-16 | Admin UI for Phase 5 base-condition Q&A setup | Phase 5 may start with config-as-data (Supabase jsonb) before building an admin page | Decide during Phase 5 — escalate to admin UI only if rules get complex enough that JSON editing is error-prone |
 | 2026-05-16 | Cruise shore-excursion match flow detail (reuse `/match` page or new surface?) | D8 split cruise into a separate intake branch but the result surface is TBD | Phase 4 design step |
 | 2026-05-16 | Legacy private-tour static pages (busan, jeju, seoul-suburbs, incheon-seoul, seoul-dmz) — retirement timing & redirect map | D7 says remove from `/tours`; redirect mapping detail deferred | Phase 3 task — 301 redirects to `/itinerary-builder/<region>` (where region exists) or to `/itinerary-builder` landing |
+| 2026-05-18 | **UI/UX upgrade — builder surfaces visually mismatched with home v2** | Functional MVP (Phase 1–7) is done. Design polish is a separate track. | **Promoted to dedicated planner: [`docs/itinerary-builder-uiux-master-plan-2026-05-18.md`](./itinerary-builder-uiux-master-plan-2026-05-18.md)** — 10 phases (A–J), ~5 person-days. Phase B onward executed only after user sign-off. |
 
 ---
 
