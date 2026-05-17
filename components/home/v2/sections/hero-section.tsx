@@ -13,6 +13,7 @@ import { appendIntentPhraseToIntentField } from "@/lib/home/services/hero-intent
 import type { HeroDestination } from "@/lib/home/types/hero-planner";
 import { HOME_STYLE_OPTIONS } from "@/src/components/home/home-style-options";
 import { useHomeV2Match } from "@/components/home/v2/HomeV2MatchProvider";
+import { MatcherMorphingPanel } from "@/components/home/v2/MatcherMorphingPanel";
 import { analytics, getExperimentVariant } from "@/src/design/analytics";
 import { cn } from "@/lib/utils";
 
@@ -333,6 +334,9 @@ export function HeroSection() {
 
         <div className="relative mx-auto max-w-lg">
           <div className="relative rounded-card border border-slate-200/70 bg-white p-4 shadow-1 md:p-5">
+            {/* v3 Phase D.1 — desktop in-place result morphing. The panel
+                is no-op for variant A / mobile / idle phase. */}
+            <MatcherMorphingPanel />
             <div className="mb-3 md:mb-4">
               <label
                 id="home-v2-destination-label"
