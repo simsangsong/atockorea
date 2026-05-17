@@ -27,7 +27,7 @@ v3 만든 이유:
 | 0a — 계측 이벤트 정의 | ✅ 완료 | 2026-05-17 | 2026-05-17 | b6b73c07 | 7종 메서드 + 6개 호출부 와이어링 + `docs/analytics-events-home.md`. dev 콘솔 발화 7종 검증 통과 (Cloudflare Quick Tunnel) |
 | 0b — provider 연결 + baseline | ⏸ 보류 | — | — | — | provider 미결정 (별도 트랙) |
 | 0c — 모바일 fold 실측 | ✅ 완료 | 2026-05-17 | 2026-05-17 | 3fdb9359 | CDP 실측: 390x844 CTA -81px / 430x932 CTA -32px (모두 fold 아래). §2.6 + §3 P0-A 보강 |
-| B — 가장 안전한 전환 개선 | 🔄 진행 중 | 2026-05-17 | — | — | B.1 진행 중. 6 sub-task (B.1 swap → B.2 idle carousel → B.3 헤더 슬림+Trust 압축 → B.4 한글화 → B.5 CTA 카피 → B.6 Sticky QA) |
+| B — 가장 안전한 전환 개선 | 🔄 진행 중 | 2026-05-17 | — | d41628bf | B.1 ✅ swap 랜딩. 남은: B.2 idle carousel → B.3 헤더 슬림+Trust 압축 → B.4 한글화 → B.5 CTA 카피 → B.6 Sticky QA |
 | C — 상호작용 강화 | ⏳ 대기 | — | — | — | B 완료 후 |
 | D — 실험 (in-place + bottom-sheet + Sticky threshold A/B) | ⏳ 대기 | — | — | — | 0b baseline 후만 측정 의미 |
 | E — 시각 정체성 확장 | ⏳ 대기 | — | — | — | 마지막 |
@@ -40,7 +40,7 @@ v3 만든 이유:
 - ❌ 중단/롤백
 
 **현재 활성 Phase: B (가장 안전한 전환 개선).**
-**다음 액션: B.1 섹션 순서 swap (`HomeV2Page.tsx:24-35`) 진행 중.**
+**다음 액션: B.2 `DeferredBestMatchPreview` idle preview — 2-3장 cycling carousel (신규 `IdleMatchPreviewCarousel`).**
 
 ---
 
@@ -82,7 +82,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | Phase 0c 시작 — 모바일 fold 실측 | (pending) | 390x844 / 430x932 매처 CTA fold 위치 측정 |
 | 2026-05-17 | Phase 0c 완료 — CDP 실측: iPhone 14 CTA -81px / Pro Max -32px (둘 다 fold 아래). §2.6 + §3 P0-A 보강 | 3fdb9359 | B.3 단독으로 부족 → B.3 + Trust strip 압축 합산 회수 전략 명시 |
 | 2026-05-17 | 사실 수정 — §2.5 섹션 순서에 ItineraryBuilderEntry 반영 (Phase 3b 이후 누락). §B 결정 row 2건 추가 (ItineraryBuilderEntry 위치 + B.3+Trust 묶음) | (pending) | 코드 실사 우선 (skill rule 10) |
-| 2026-05-17 | Phase B 시작 — B.1 섹션 순서 swap | (pending) | `HomeV2Page.tsx:24-35` Featured ↔ Destinations swap, ItineraryBuilderEntry는 Destinations 인접 유지 |
+| 2026-05-17 | Phase B 시작 — B.1 섹션 순서 swap | 5f082374 | `HomeV2Page.tsx:24-35` Featured ↔ Destinations swap, ItineraryBuilderEntry는 Destinations 인접 유지 |
+| 2026-05-17 | B.1 ✅ — Featured slot 6 → 3 (Match preview 직후). Destinations/Builder/Style 한 칸씩 후퇴 | d41628bf | 빌드 클린. promise→proof 거리 5→1 섹션으로 축소 |
 
 ---
 
@@ -632,7 +633,7 @@ Phase D 후. 가장 낮은 우선순위. 측정으로 가치 입증된 뒤만.
 
 ### `components/home/v2/HomeV2Page.tsx`
 
-- [ ] **Phase B.1**: Featured ↔ Destinations 순서 swap (2줄)
+- [x] **Phase B.1**: Featured ↔ Destinations 순서 swap (d41628bf)
 
 ### `components/home/v2/StickyHomeCta.tsx`
 
