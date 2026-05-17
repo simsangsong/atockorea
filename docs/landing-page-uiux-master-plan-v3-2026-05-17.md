@@ -24,9 +24,9 @@ v3 만든 이유:
 
 | Phase | 상태 | 시작일 | 완료일 | 마지막 커밋 | 비고 |
 |---|---|---|---|---|---|
-| 0a — 계측 이벤트 정의 | 🔄 진행 중 (console 검증 대기) | 2026-05-17 | — | b6b73c07 | analytics.ts에 7종 메서드 + 6개 호출부 와이어링 (시즌 칩 제외) + `docs/analytics-events-home.md`. dev 콘솔 발화 검증 후 ✅ 전환 |
+| 0a — 계측 이벤트 정의 | ✅ 완료 | 2026-05-17 | 2026-05-17 | b6b73c07 | 7종 메서드 + 6개 호출부 와이어링 + `docs/analytics-events-home.md`. dev 콘솔 발화 7종 검증 통과 (Cloudflare Quick Tunnel) |
 | 0b — provider 연결 + baseline | ⏸ 보류 | — | — | — | provider 미결정 (별도 트랙) |
-| 0c — 모바일 fold 실측 | ⏳ 대기 | — | — | — | 0a와 병렬 가능 |
+| 0c — 모바일 fold 실측 | ✅ 완료 | 2026-05-17 | 2026-05-17 | (pending) | CDP 실측: 390x844 CTA -81px / 430x932 CTA -32px (모두 fold 아래). §2.6 + §3 P0-A 보강 |
 | B — 가장 안전한 전환 개선 | ⏳ 대기 | — | — | — | 0a 완료 후 시작 |
 | C — 상호작용 강화 | ⏳ 대기 | — | — | — | B 완료 후 |
 | D — 실험 (in-place + bottom-sheet + Sticky threshold A/B) | ⏳ 대기 | — | — | — | 0b baseline 후만 측정 의미 |
@@ -39,8 +39,8 @@ v3 만든 이유:
 - ✅ 완료
 - ❌ 중단/롤백
 
-**현재 활성 Phase: 0a (계측 이벤트 정의).**
-**다음 액션: analytics.ts 이벤트 7종 + 호출부 와이어링 + taxonomy doc.**
+**현재 활성 Phase: 없음 (Phase B 진입 대기).**
+**다음 액션: Phase B 시작 — B.1 섹션 순서 swap → B.2 idle carousel → B.3 매처 헤더 슬림 → B.4 Trust 한글화 → B.5 CTA 카피 → B.6 Sticky QA.**
 
 ---
 
@@ -76,6 +76,9 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | v3에 §A-§D 트래킹 섹션 추가 + 스킬 등록 | (pending) | `.claude/skills/landing-page-uiux/SKILL.md` |
 | 2026-05-17 | Phase 0a 시작 — 이벤트 7종 정의 + 호출부 와이어링 | 5e8348ca | sticky/featured/destination/match-visible/intent-focus/style-chip; 시즌 칩은 메서드만 정의 (Phase C 와이어링) |
 | 2026-05-17 | Phase 0a 코드 랜딩 — analytics.ts 7 메서드 + 6 호출부 + taxonomy doc | b6b73c07 | dev 콘솔 발화 검증 후 ✅. provider 미연결 (Phase 0b) |
+| 2026-05-17 | Phase 0a console 검증 통과 (Cloudflare Quick Tunnel) → ✅ | — | 사용자 확인. Phase 0c 진입 |
+| 2026-05-17 | Phase 0c 시작 — 모바일 fold 실측 | (pending) | 390x844 / 430x932 매처 CTA fold 위치 측정 |
+| 2026-05-17 | Phase 0c 완료 — CDP 실측: iPhone 14 CTA -81px / Pro Max -32px (둘 다 fold 아래). §2.6 + §3 P0-A 보강 | (pending) | B.3 단독으로 부족 → B.3 + Trust strip 압축 합산 회수 전략 명시 |
 
 ---
 
@@ -173,14 +176,28 @@ Hero → DeferredBestMatchPreview → Destinations → Style → Featured → Wh
 
 매처 약속 → null 영역 → 지역 분기 → 스타일 분기 → 실제 상품. 모멘텀 손실.
 
-### 2.6 모바일 first-screen fold — **측정 필요 (Phase 0a에 포함)**
+### 2.6 모바일 first-screen fold — **실측 완료 (Phase 0c, 2026-05-17)**
 
-390x844 (iPhone 14)에서:
-- 히어로 패널 `min-h-[44vh]` = ~371px
-- 그 아래 Trust strip + 매처 헤더 3단 + 매처 카드 = ~473px 안에 들어가야 함
-- 매처 카드 자체 (destination row + textarea + style chips + CTA + microcopy)가 ~340px 추정
+Headless Chrome + CDP `getBoundingClientRect` 실측 (`.tmp-fold/measure-fold.mjs`).
 
-→ Trust strip (~80px) + 매처 헤더 3단 (~60px) + 매처 카드 상단 (~340px) ≈ 480px. **fold 직전에 매처 CTA가 살짝 잘릴 위험** 있음. Phase 0a에서 실측 후 §3 진단 보강.
+| Viewport | Hero bottom | Intent textarea bottom | Matcher CTA top | Matcher CTA bottom | Fold (h) | Δ (CTA bottom − fold) |
+|---|---|---|---|---|---|---|
+| **iPhone 14 (390x844)** | 998px | 794px | **873px** | **925px** | 844px | **-81px (CTA 전체 fold 아래)** |
+| **iPhone 14 Pro Max (430x932)** | 1037px | 833px | **912px** | **964px** | 932px | **-32px (CTA 전체 fold 아래)** |
+
+핵심 발견:
+1. **iPhone 14에서 매처 CTA top(873)이 이미 fold(844) 아래.** 사용자는 CTA 자체를 보지 못함. v3 §2.6 추정 "살짝 잘릴 위험"보다 실측이 더 심각.
+2. **Pro Max에서도 CTA bottom이 fold 아래 32px.** 화면이 큰 기기에서도 CTA 잘림.
+3. Hero panel(`min-h-[44vh]` 등) 자체가 fold를 154-105px 넘어서 늘어남 — fold 안에 매처 카드 전체를 넣으려면 hero panel 자체 압축이 필요.
+4. Phase B.3 매처 헤더 슬림화 회수 추정 ~60px → iPhone 14는 여전히 ~21px 잘림. **B.3만으로 부족.** Trust strip 압축(추가 ~30-40px 회수) 또는 hero `min-h` 재조정 필요.
+5. 측정된 CTA 텍스트 "최적 매치 보기" — Phase B.5에서 "맞춤 추천 받기"로 교체 예정 (expectation inflation 가드).
+
+Phase B 진입 시 회수 전략:
+- **B.3 매처 헤더 슬림화** (~60px): matcherHeadline + matcherSubline 제거, eyebrow만 유지.
+- **B.3 + Trust strip 컴팩트화** (추가 ~30-40px): 가로 폭 활용으로 Trust strip 1줄 압축.
+- 합쳐도 부족하면 hero `min-h-[44vh]` 자체 재검토 (현재 모바일 ~371px 보장).
+
+§3 P0-A 진단 보강: 매처 CTA fold 아래 잘림 → "약속-증명 시차"가 단순 컴포넌트 순서 문제가 아닌 **CTA 자체 가시성 문제**임이 확인됨. Phase B.3 우선순위 ↑.
 
 ---
 
