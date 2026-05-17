@@ -113,7 +113,10 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
           ...(pinnedDestination ? { pinned_destination: pinnedDestination } : {}),
         }),
       });
-      const data = (await res.json()) as TourMatchApiResponse & { error?: string };
+      const data = (await res.json()) as TourMatchApiResponse & {
+        error?: string;
+        parsed_query?: unknown;
+      };
       if (!res.ok) {
         throw new Error(data.error ?? "Match request failed");
       }
@@ -122,6 +125,36 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
       setMatchResult(data);
       setPhase("result");
       setLoadingStep(2);
+
+      // Background — fetch the rich Haiku explanation off the critical path.
+      // Winner card paints immediately with the parser-notes fallback; when
+      // the explanation arrives we merge it into matchResult and the view-
+      // model recomputes its matchSummary. Fire-and-forget — failure is silent
+      // (matchSummary just stays as the fallback string).
+      const winnerSlug = data?.winner?.product_id ?? null;
+      if (winnerSlug && data?.parsed_query) {
+        void fetch("/api/tour-product/match-explanation", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            query: text,
+            locale,
+            parsed_query: data.parsed_query,
+            winner_slug: winnerSlug,
+          }),
+        })
+          .then((r) => (r.ok ? r.json() : null))
+          .then((j: { explanation?: string | null } | null) => {
+            const explanation = j?.explanation?.trim();
+            if (!explanation) return;
+            setMatchResult((prev) =>
+              prev ? { ...prev, matchExplanation: explanation } : prev,
+            );
+          })
+          .catch(() => {
+            // silent — UI keeps the fallback summary
+          });
+      }
       return data;
     } catch (e) {
       clearHomepageMatchTimeouts(timeoutsRef);

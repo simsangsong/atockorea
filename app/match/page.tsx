@@ -104,7 +104,10 @@ export default function MatchPage() {
       });
       const data = (await res
         .json()
-        .catch(() => ({}))) as TourMatchApiResponse & { error?: string };
+        .catch(() => ({}))) as TourMatchApiResponse & {
+        error?: string;
+        parsed_query?: unknown;
+      };
       if (!res.ok) {
         throw new Error(data.error || t('matchErrorGeneric'));
       }
@@ -120,6 +123,35 @@ export default function MatchPage() {
         matchedCount: data.matchedProducts.length,
         noMatchReason: data.noMatchReason,
       });
+
+      // Background fetch — Haiku explanation. /match endpoint returns
+      // matchExplanation = parser_notes fallback; this swap-in fades in the
+      // richer locale-specific summary once Haiku resolves.
+      const winnerSlugForExplain = data.winner?.product_id ?? null;
+      if (winnerSlugForExplain && data.parsed_query) {
+        void fetch('/api/tour-product/match-explanation', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            query: text,
+            locale,
+            parsed_query: data.parsed_query,
+            winner_slug: winnerSlugForExplain,
+          }),
+          signal: ctrl.signal,
+        })
+          .then((r) => (r.ok ? r.json() : null))
+          .then((j: { explanation?: string | null } | null) => {
+            const explanation = j?.explanation?.trim();
+            if (!explanation || ctrl.signal.aborted) return;
+            setResult((prev) =>
+              prev ? { ...prev, matchExplanation: explanation } : prev,
+            );
+          })
+          .catch(() => {
+            // silent — UI keeps the fallback summary
+          });
+      }
     } catch (e: unknown) {
       if (e instanceof DOMException && e.name === 'AbortError') return;
       clearStepTimeouts();

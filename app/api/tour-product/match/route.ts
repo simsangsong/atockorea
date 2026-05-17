@@ -94,15 +94,27 @@ export async function POST(req: NextRequest) {
     const v2 = matchTours(parsed, tourRows, 5);
     const matchMs = Date.now() - tMatch0;
 
-    // 4. Top-1 winner natural-language explanation (Haiku 2nd pass).
-    //    Skipped when no winner OR ANTHROPIC_API_KEY missing OR explainer disabled.
+    // 4. Winner natural-language explanation — DEFAULT: skip (moved to
+    //    /api/tour-product/match-explanation for non-blocking client fetch).
+    //    Inline path remains for callers that opt in via
+    //    TOUR_MATCH_EXPLAINER_INLINE=1 (e.g. server-rendered consumers).
+    //
+    //    Background: the Haiku explainer adds 1.5–3s to /match. Splitting it
+    //    out lets the home v2 winner card paint in 1–2s while the explanation
+    //    fades in asynchronously.
     let matchExplanation: string | null = null;
     let explainMs = 0;
     let explainCostUsd = 0;
     let explainerTelemetry: Awaited<ReturnType<typeof explainTopMatch>>["telemetry"] | null = null;
+    const explainerInline = process.env.TOUR_MATCH_EXPLAINER_INLINE === "1";
     const explainerDisabled = process.env.TOUR_MATCH_EXPLAINER_DISABLED === "1";
     const winnerV2 = v2.top_matches[0];
-    if (winnerV2 && !explainerDisabled && process.env.ANTHROPIC_API_KEY) {
+    if (
+      explainerInline &&
+      winnerV2 &&
+      !explainerDisabled &&
+      process.env.ANTHROPIC_API_KEY
+    ) {
       try {
         const winnerRow = tourRows.find((r) => r.slug === winnerV2.slug);
         if (winnerRow) {
