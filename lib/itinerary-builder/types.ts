@@ -21,6 +21,14 @@ export interface MatchPoiRow {
   lng: number;
   /** Mirrored from `poi_meta.sources` etc. */
   poi_meta: Record<string, unknown> | null;
+  /** Phase 6.5 enrichment — rich content from tour JSONs */
+  description?: string | null;
+  highlights?: string[] | null;
+  images?: string[] | null;
+  why_on_route?: string | null;
+  smart_notes?: Record<string, unknown> | null;
+  visit_basics?: Record<string, unknown> | null;
+  convenience?: Record<string, unknown> | null;
 }
 
 export interface POIMapContext {

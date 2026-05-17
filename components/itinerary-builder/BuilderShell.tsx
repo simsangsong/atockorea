@@ -9,6 +9,7 @@ import POICatalogMap from "./POICatalogMap";
 import CartPanel from "./CartPanel";
 import QuoteModal from "./QuoteModal";
 import AIRecommendPanel from "./AIRecommendPanel";
+import POICatalogGrid from "./POICatalogGrid";
 
 interface Props {
   region: RegionSlug;
@@ -70,38 +71,48 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
         onAccept={acceptRecommendation}
         onFocusPoi={focusPoi}
       />
-      <div className="flex h-[78vh] min-h-[600px] flex-col md:flex-row">
-      <div className="relative flex-1 overflow-hidden">
-        <POICatalogMap
-          region={region}
-          pois={pois}
-          center={center}
-          mapId={mapId}
-          apiKey={apiKey}
+      {/* POI cards grid — primary surface (photos in bulk) */}
+      <POICatalogGrid
+        pois={pois}
+        cart={cart}
+        onAdd={add}
+        onRemove={remove}
+        onFocus={focusPoi}
+      />
+      {/* Map below — preview canvas. Desktop: side-by-side with cart;
+          Mobile: full-width map + floating cart handle. */}
+      <div className="flex h-[60vh] min-h-[420px] flex-col border-t border-slate-200 md:h-[68vh] md:flex-row">
+        <div className="relative flex-1 overflow-hidden">
+          <POICatalogMap
+            region={region}
+            pois={pois}
+            center={center}
+            mapId={mapId}
+            apiKey={apiKey}
+            cart={cart}
+            onAdd={add}
+            onRemove={remove}
+            hasInCart={has}
+            focusedPoiKey={focusedPoiKey}
+          />
+        </div>
+        <CartPanel
           cart={cart}
-          onAdd={add}
+          pois={pois}
           onRemove={remove}
-          hasInCart={has}
-          focusedPoiKey={focusedPoiKey}
+          onReorder={reorder}
+          onGetQuote={handleGetQuote}
+          getQuoteEnabled={true}
+          cruiseBudgetMinutes={cruiseBudgetMinutes}
+          onFocusPoi={focusPoi}
         />
       </div>
-      <CartPanel
-        cart={cart}
-        pois={pois}
-        onRemove={remove}
-        onReorder={reorder}
-        onGetQuote={handleGetQuote}
-        getQuoteEnabled={true}
-        cruiseBudgetMinutes={cruiseBudgetMinutes}
-        onFocusPoi={focusPoi}
-      />
       <QuoteModal
         open={quoteOpen}
         onClose={() => setQuoteOpen(false)}
         cart={cart}
         region={region}
       />
-      </div>
     </div>
   );
 }
