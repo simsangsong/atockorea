@@ -15,8 +15,8 @@
 
 | Field | Value |
 |---|---|
-| **Current phase** | Phase 6 — POI matching_profile authoring 🔄 in progress → Phase 7 next |
-| **Blocked on** | — |
+| **Current phase** | Phase 7 — AI recommendation engine ✅ functionally complete. Itinerary builder MVP fully shipped (Phases 1-7). |
+| **Blocked on** | — (optional ops follow-ups: tune POI profile dimensions based on real recommendation quality; preset KRW tuning; admin page i18n) |
 | **Last updated** | 2026-05-17 |
 | **Last commit touching this feature** | `b4693a8e` — fix(itinerary-builder): restore ChevronUp import in CartPanel mobile sheet handle |
 | **Owner** | simsangsong |
@@ -34,8 +34,8 @@ Revised 2026-05-16 after D1-D8: original 6 phases → 7 phases (new Phase 5 for 
 | 3 — Map UI read-only + `/tours` restructure + home v2 entry section | ✅ complete | 2026-05-17 | 2026-05-17 | `2205e28f` · `27e58481` · `21559eb3` · `228f2073` |
 | 4 — Q&A intake (private / cruise branch) + cart + manual quote form | ✅ complete | 2026-05-17 | 2026-05-17 | `32817ace` · `e9f81bec` · `329a9ab6` · `517b3192` · `943aa17a` · `9be440f4` · `08f12a6f` · `b4693a8e` |
 | 5 — Auto-quote engine + admin presets + Slack escalation + quote memory | ✅ complete | 2026-05-17 | 2026-05-17 | `2d364359` · `4dc70106` |
-| 6 — POI matching_profile authoring | 🔄 in progress | 2026-05-17 | — | (pending) |
-| 7 — AI recommendation engine | ⏸ not started | — | — | — |
+| 6 — POI matching_profile authoring | ✅ complete | 2026-05-17 | 2026-05-17 | `02dcde58` |
+| 7 — AI recommendation engine | 🔄 in progress | 2026-05-17 | — | (pending) |
 
 Legend: ⏸ not started · 🔄 in progress · ✅ complete · ⚠️ blocked · ❌ abandoned
 

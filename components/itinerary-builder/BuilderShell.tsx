@@ -8,6 +8,7 @@ import type { RegionSlug } from "@/lib/itinerary-builder/regions";
 import POICatalogMap from "./POICatalogMap";
 import CartPanel from "./CartPanel";
 import QuoteModal from "./QuoteModal";
+import AIRecommendPanel from "./AIRecommendPanel";
 
 interface Props {
   region: RegionSlug;
@@ -23,9 +24,21 @@ interface Props {
  * full-bleed map + floating bottom-sheet handle.
  */
 export default function BuilderShell({ region, pois, center, mapId, apiKey }: Props) {
-  const { cart, add, remove, reorder, has } = useCart();
+  const { cart, add, remove, reorder, has, clear } = useCart();
   const searchParams = useSearchParams();
   const [quoteOpen, setQuoteOpen] = useState(false);
+
+  const acceptRecommendation = useCallback(
+    (poiKeys: string[]) => {
+      // Replace the cart with the recommended sequence
+      clear();
+      // Defer the bulk-add so the URL state has a chance to clear first
+      requestAnimationFrame(() => {
+        reorder(poiKeys);
+      });
+    },
+    [clear, reorder]
+  );
 
   // Phase 4b — cruise track time budget: if `?track=cruise&hours=N` is set,
   // CartPanel renders the budget + warning when total exceeds.
@@ -43,7 +56,9 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
   }, [cart.length]);
 
   return (
-    <div className="flex h-[78vh] min-h-[600px] flex-col md:flex-row">
+    <div className="flex flex-col">
+      <AIRecommendPanel region={region} onAccept={acceptRecommendation} />
+      <div className="flex h-[78vh] min-h-[600px] flex-col md:flex-row">
       <div className="relative flex-1 overflow-hidden">
         <POICatalogMap
           region={region}
@@ -72,6 +87,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
         cart={cart}
         region={region}
       />
+      </div>
     </div>
   );
 }
