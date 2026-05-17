@@ -22,7 +22,7 @@ v3 landing master plan §A Phase 0b는 "🔄 자체 빌드 (atockorea-analytics-
 
 | Phase | 상태 | 시작일 | 완료일 | 마지막 커밋 | 비고 |
 |---|---|---|---|---|---|
-| 1 — Foundation (ingestion + storage + 최소 dashboard) | ⏳ 대기 | — | — | — | atomic 묶음 (schema + endpoint + SDK + 첫 dashboard) |
+| 1 — Foundation (ingestion + storage + 최소 dashboard) | 🔄 진행 중 | 2026-05-17 | — | — | atomic 묶음 (schema + endpoint + SDK + 첫 dashboard) |
 | 2 — Events Explorer | ⏳ 대기 | — | — | — | 1 후. 이벤트별 시계열 + payload 분포 |
 | 3 — Funnels | ⏳ 대기 | — | — | — | 2 후. 5개 predefined funnel + breakdown |
 | 4 — Retention / Cohorts | ⏳ 대기 | — | — | — | 3 후. D+1/D+7/D+30 매트릭스 |
@@ -33,8 +33,8 @@ v3 landing master plan §A Phase 0b는 "🔄 자체 빌드 (atockorea-analytics-
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단
 
-**현재 활성 Phase: 없음 (착수 전).**
-**다음 액션: Phase 1 시작 — Supabase schema 마이그레이션 + ingestion endpoint + SDK 교체 + 최소 dashboard.**
+**현재 활성 Phase: 1 (Foundation).**
+**다음 액션: 1.1 schema 마이그레이션 → 1.2 SDK 확장 → 1.3 ingestion endpoint → 1.4 admin scaffold → 1.5 Overview 화면.**
 
 ---
 
@@ -66,7 +66,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 
 | 날짜 | 항목 | 커밋 | 비고 |
 |---|---|---|---|
-| 2026-05-17 | 자체 분석 마스터 플랜 작성 + v3 landing §A/§B/§C cross-ref | (pending) | `docs/atockorea-analytics-master-plan-2026-05-17.md` |
+| 2026-05-17 | 자체 분석 마스터 플랜 작성 + v3 landing §A/§B/§C cross-ref | 6848f06a | `docs/atockorea-analytics-master-plan-2026-05-17.md` |
+| 2026-05-17 | Phase 1 시작 — Foundation atomic 묶음 | (pending) | schema + SDK + ingestion + admin scaffold + Overview |
 
 ---
 
