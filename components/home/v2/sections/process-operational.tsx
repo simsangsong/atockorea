@@ -1,8 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { Send, CheckCircle, MapIcon, CalendarCheck } from "lucide-react";
 import { useTranslations } from "@/lib/i18n";
+import {
+  REVEAL_ITEM_VARIANTS,
+  useRevealContainerProps,
+} from "@/components/home/v2/ui/reveal";
 
 type ProcessStep = {
   Icon: React.ComponentType<{ className?: string }>;
@@ -49,28 +53,22 @@ function StepIconBadge({ step }: { step: ProcessStep }) {
 
 export function ProcessOperational() {
   const t = useTranslations("home");
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current.classList.add("visible");
-    }
-  }, []);
+  const reveal = useRevealContainerProps();
 
   return (
     <section
       className="section-py-md px-4"
       style={{ background: "linear-gradient(to bottom, #1C1810, #141008)" }}
     >
-      <div ref={containerRef} className="max-w-5xl mx-auto scroll-animate">
-        <div className="text-center mb-10 md:mb-12">
+      <motion.div {...reveal} className="max-w-5xl mx-auto">
+        <motion.div variants={REVEAL_ITEM_VARIANTS} className="text-center mb-10 md:mb-12">
           <p className="mb-3 text-eyebrow text-amber-300 md:mb-4">
             {t("premium.v2.process.eyebrow")}
           </p>
           <h2 className="text-balance text-display text-white">
             {t("premium.v2.process.title")}
           </h2>
-        </div>
+        </motion.div>
 
         <div className="relative">
           {/*
@@ -88,7 +86,7 @@ export function ProcessOperational() {
 
           <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-3 lg:grid-cols-4 relative z-10">
             {STEPS.map((step, i) => (
-              <div key={i} className="flex items-start gap-3.5 md:block">
+              <motion.div key={i} variants={REVEAL_ITEM_VARIANTS} className="flex items-start gap-3.5 md:block">
                 {/* Mobile-only icon — sits on the vertical rail as a node */}
                 <div className="md:hidden mt-0.5">
                   <StepIconBadge step={step} />
@@ -112,11 +110,11 @@ export function ProcessOperational() {
                     {t(step.bodyKey)}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

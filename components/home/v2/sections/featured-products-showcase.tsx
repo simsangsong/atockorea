@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import TourListCard from "@/components/tour/TourListCard";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
@@ -14,6 +15,10 @@ import { HOME_CTA_BROWSE_TOURS_HREF } from "@/lib/home/home-cta-routes";
 import { SnapScrollDots } from "@/components/home/v2/ui/SnapScrollDots";
 import { homeBtnSecondary } from "@/lib/home/home-button-classes";
 import { analytics } from "@/src/design/analytics";
+import {
+  REVEAL_ITEM_VARIANTS,
+  useRevealContainerProps,
+} from "@/components/home/v2/ui/reveal";
 import { cn } from "@/lib/utils";
 
 const FEATURED_LIMIT = 6;
@@ -32,8 +37,8 @@ export function FeaturedProductsShowcase() {
   const t = useTranslations("home");
   const { locale } = useI18n();
   const currencyCtx = useCurrencyOptional();
-  const containerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const reveal = useRevealContainerProps();
 
   const [tours, setTours] = useState<TourCardViewModel[] | null>(null);
   const [error, setError] = useState(false);
@@ -46,12 +51,6 @@ export function FeaturedProductsShowcase() {
     },
     [currencyCtx],
   );
-
-  useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current.classList.add("visible");
-    }
-  }, []);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -99,8 +98,8 @@ export function FeaturedProductsShowcase() {
   return (
     <section className="relative overflow-hidden px-4 md:px-6 section-py-md bg-white">
 
-      <div ref={containerRef} className="relative mx-auto max-w-6xl scroll-animate">
-        <div className="mb-7 text-center md:mb-9">
+      <motion.div {...reveal} className="relative mx-auto max-w-6xl">
+        <motion.div variants={REVEAL_ITEM_VARIANTS} className="mb-7 text-center md:mb-9">
           <p className="mb-3 text-eyebrow md:mb-4">
             {t("premium.v2.featuredProducts.eyebrow")}
           </p>
@@ -113,7 +112,7 @@ export function FeaturedProductsShowcase() {
           <p className="mx-auto max-w-lg text-body text-slate-600">
             {t("premium.v2.featuredProducts.subtitle")}
           </p>
-        </div>
+        </motion.div>
 
         {tours == null ? (
           <SkeletonGrid />
@@ -122,8 +121,9 @@ export function FeaturedProductsShowcase() {
             <div className="relative -mx-4 md:mx-0">
               <div ref={scrollRef} className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-hide md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
                 {tours.slice(0, FEATURED_LIMIT).map((tour) => (
-                  <div
+                  <motion.div
                     key={tour.id}
+                    variants={REVEAL_ITEM_VARIANTS}
                     className="w-[44vw] flex-shrink-0 snap-start md:w-auto"
                     onClick={() =>
                       analytics.homeFeaturedCardClick({
@@ -137,7 +137,7 @@ export function FeaturedProductsShowcase() {
                       detailHref={consumerTourDetailHref(tour.id, tour.slug)}
                       formatPriceFn={formatPrice}
                     />
-                  </div>
+                  </motion.div>
                 ))}
               </div>
               <div
@@ -152,7 +152,7 @@ export function FeaturedProductsShowcase() {
           </>
         )}
 
-        <div className="mt-8 text-center md:mt-10">
+        <motion.div variants={REVEAL_ITEM_VARIANTS} className="mt-8 text-center md:mt-10">
           <V0ShadcnButton
             asChild
             variant="outline"
@@ -165,8 +165,8 @@ export function FeaturedProductsShowcase() {
               <ArrowRight className="h-4 w-4" />
             </Link>
           </V0ShadcnButton>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

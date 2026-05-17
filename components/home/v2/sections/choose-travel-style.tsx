@@ -1,8 +1,9 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import { useEffect, useMemo, useRef } from "react";
+import { useMemo, useRef } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
 import { ArrowRight, Car, Bus, Award, Users } from "lucide-react";
 import { analytics } from "@/src/design/analytics";
@@ -17,6 +18,10 @@ import { getFeaturedJoinTourProduct } from "@/lib/home/featured-join-tour-offer"
 import { CHOOSE_STYLE_CARD_USD } from "@/lib/home/choose-style-card-usd";
 import { SnapScrollDots } from "@/components/home/v2/ui/SnapScrollDots";
 import { homeBtnInverse, homeBtnPrimary } from "@/lib/home/home-button-classes";
+import {
+  REVEAL_ITEM_VARIANTS,
+  useRevealContainerProps,
+} from "@/components/home/v2/ui/reveal";
 import { cn } from "@/lib/utils";
 
 const chooseStyleFeaturedWhiteCtaStyle: CSSProperties = {
@@ -26,41 +31,30 @@ const chooseStyleFeaturedWhiteCtaStyle: CSSProperties = {
 export function ChooseTravelStyle() {
   const t = useTranslations("home");
   const { formatPrice } = useCurrency();
-  const containerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const featuredJoin = useMemo(() => getFeaturedJoinTourProduct(), []);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      const children = containerRef.current.querySelectorAll("[data-animate]");
-      children.forEach((child, index) => {
-        window.setTimeout(() => {
-          child.classList.add("visible");
-        }, index * 100);
-      });
-    }
-  }, []);
+  const reveal = useRevealContainerProps();
 
   return (
     <section className="section-py-sm px-4 md:px-6 bg-slate-50">
-      <div ref={containerRef} className="max-w-4xl mx-auto">
-        <div className="text-center mb-7 md:mb-9">
+      <motion.div {...reveal} className="max-w-4xl mx-auto">
+        <motion.div variants={REVEAL_ITEM_VARIANTS} className="text-center mb-7 md:mb-9">
           <p className="mb-3 text-eyebrow md:mb-4">
             {t("premium.v2.chooseStyle.eyebrow")}
           </p>
           <h2 className="text-h2 text-slate-900">
             {t("premium.v2.chooseStyle.title")}
           </h2>
-        </div>
+        </motion.div>
 
         {/* relative wrapper hosts the right-edge fade overlay so users see
             "more →" on mobile where the scrollbar is hidden. */}
         <div className="relative -mx-4 md:mx-0">
         <div ref={scrollRef} className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-none md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0 md:snap-none">
           {/* Small Group — featured (dark slate, amber accent only) */}
-          <div
-            className="relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-slate-700/50 bg-slate-900 p-4 md:p-5 shadow-2 transition-all duration-300 ease-out hover:-translate-y-0.5 scroll-animate flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
-            data-animate
+          <motion.div
+            variants={REVEAL_ITEM_VARIANTS}
+            className="relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-slate-700/50 bg-slate-900 p-4 md:p-5 shadow-2 transition-all duration-300 ease-out hover:-translate-y-0.5 flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
           >
             <div className="flex items-center justify-between mb-4 mt-1">
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center">
@@ -110,12 +104,12 @@ export function ChooseTravelStyle() {
                 <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
               </Link>
             </V0ShadcnButton>
-          </div>
+          </motion.div>
 
           {/* Private — neutral white card */}
-          <div
-            className="group relative w-[68vw] flex-none snap-start overflow-hidden scroll-animate rounded-card border border-slate-200/70 bg-white p-4 md:p-5 shadow-2 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-slate-300/90 flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
-            data-animate
+          <motion.div
+            variants={REVEAL_ITEM_VARIANTS}
+            className="group relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-slate-200/70 bg-white p-4 md:p-5 shadow-2 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-slate-300/90 flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
           >
             <div className="flex items-center justify-between mb-4 mt-1">
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center">
@@ -156,12 +150,12 @@ export function ChooseTravelStyle() {
                 <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
               </Link>
             </V0ShadcnButton>
-          </div>
+          </motion.div>
 
           {/* Bus — neutral white card */}
-          <div
-            className="group relative w-[68vw] flex-none snap-start overflow-hidden scroll-animate rounded-card border border-slate-200/70 bg-white p-4 md:p-5 shadow-2 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-slate-300/90 flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
-            data-animate
+          <motion.div
+            variants={REVEAL_ITEM_VARIANTS}
+            className="group relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-slate-200/70 bg-white p-4 md:p-5 shadow-2 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-slate-300/90 flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
           >
             <div className="flex items-center justify-between mb-4 mt-1">
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center">
@@ -204,7 +198,7 @@ export function ChooseTravelStyle() {
                 <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
               </Link>
             </V0ShadcnButton>
-          </div>
+          </motion.div>
         </div>
           <div
             aria-hidden
@@ -212,7 +206,7 @@ export function ChooseTravelStyle() {
           />
         </div>
         <SnapScrollDots containerRef={scrollRef} count={3} />
-      </div>
+      </motion.div>
     </section>
   );
 }

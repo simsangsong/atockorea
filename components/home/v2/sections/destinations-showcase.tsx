@@ -1,10 +1,15 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import { motion } from "framer-motion";
 import { DestinationCard } from "@/components/home/v2/ui/destination-card";
 import { SnapScrollDots } from "@/components/home/v2/ui/SnapScrollDots";
 import { useTranslations } from "@/lib/i18n";
 import { analytics } from "@/src/design/analytics";
+import {
+  REVEAL_ITEM_VARIANTS,
+  useRevealContainerProps,
+} from "@/components/home/v2/ui/reveal";
 
 type DestinationDef = {
   id: "Seoul" | "Busan" | "Jeju";
@@ -44,19 +49,13 @@ const DESTINATIONS: ReadonlyArray<DestinationDef> = [
  */
 export function DestinationsShowcase() {
   const t = useTranslations("home");
-  const containerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current.classList.add("visible");
-    }
-  }, []);
+  const reveal = useRevealContainerProps();
 
   return (
     <section className="relative overflow-hidden px-4 md:px-6 section-py-md bg-white">
-      <div ref={containerRef} className="relative mx-auto max-w-6xl scroll-animate">
-        <div className="mb-8 text-center md:mb-11">
+      <motion.div {...reveal} className="relative mx-auto max-w-6xl">
+        <motion.div variants={REVEAL_ITEM_VARIANTS} className="mb-8 text-center md:mb-11">
           <p className="mb-3 text-eyebrow md:mb-4">
             {t("premium.v2.destinations.eyebrow")}
           </p>
@@ -69,7 +68,7 @@ export function DestinationsShowcase() {
           <p className="mx-auto max-w-md text-body text-slate-600 md:max-w-lg">
             {t("premium.v2.destinations.subtitle")}
           </p>
-        </div>
+        </motion.div>
 
         {/* Mobile snap-scroll wrapped in `relative` so the right-edge fade can
             absolutely position. The fade signals "more content →" since the
@@ -78,8 +77,9 @@ export function DestinationsShowcase() {
         <div className="relative -mx-4 md:mx-auto md:max-w-4xl">
           <div ref={scrollRef} className="flex snap-x snap-mandatory gap-3.5 overflow-x-auto px-4 pb-3 scrollbar-hide md:grid md:auto-rows-fr md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
             {DESTINATIONS.map((dest) => (
-              <div
+              <motion.div
                 key={dest.id}
+                variants={REVEAL_ITEM_VARIANTS}
                 className="w-[60vw] flex-shrink-0 snap-start md:w-auto"
               >
                 <DestinationCard
@@ -90,7 +90,7 @@ export function DestinationsShowcase() {
                   href={`/tours/list?destination=${encodeURIComponent(dest.id)}`}
                   onClick={() => analytics.homeDestinationCardClick({ destination: dest.id })}
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
           <div
@@ -99,7 +99,7 @@ export function DestinationsShowcase() {
           />
         </div>
         <SnapScrollDots containerRef={scrollRef} count={DESTINATIONS.length} />
-      </div>
+      </motion.div>
     </section>
   );
 }
