@@ -28,7 +28,7 @@ v3 만든 이유:
 | 0b — provider 연결 + baseline | ⏸ 보류 | — | — | — | provider 미결정 (별도 트랙) |
 | 0c — 모바일 fold 실측 | ✅ 완료 | 2026-05-17 | 2026-05-17 | 3fdb9359 | CDP 실측: 390x844 CTA -81px / 430x932 CTA -32px (모두 fold 아래). §2.6 + §3 P0-A 보강 |
 | B — 가장 안전한 전환 개선 | ✅ 완료 | 2026-05-17 | 2026-05-17 | a94d73b9 | B.1~B.6 모두 ✅. CDP QA: sticky top=hidden / mid=visible / deep=visible / footer=hidden. 사후 audit는 §2.6.1 (bottom nav overlay 발견 — Phase 0b 데이터로 재판단) |
-| C — 상호작용 강화 | 🔄 진행 중 | 2026-05-17 | — | — | C.1 시즌 칩 인터랙티브 (Phase 0a season chip 이벤트 와이어링 포함) + C.2 reason chips 동적 |
+| C — 상호작용 강화 | 🔄 진행 중 | 2026-05-17 | — | 90345fd6 | C.1 ✅ 시즌 칩 button + phrase 주입 + glow + analytics. 남은: C.2 reason chips 동적 |
 | D — 실험 (in-place + bottom-sheet + Sticky threshold A/B) | ⏳ 대기 | — | — | — | 0b baseline 후만 측정 의미 |
 | E — 시각 정체성 확장 | ⏳ 대기 | — | — | — | 마지막 |
 
@@ -40,7 +40,7 @@ v3 만든 이유:
 - ❌ 중단/롤백
 
 **현재 활성 Phase: C (상호작용 강화).**
-**다음 액션: C.1 시즌 칩 `<div>` → `<button>` + phrase 주입 + textarea glow 피드백 + analytics 와이어링.**
+**다음 액션: C.2 reason chips 동적 — `best-match-preview.tsx`에 1줄 추가 (`matchResult.reasons` 또는 product `badges` 활용).**
 
 ---
 
@@ -91,7 +91,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | B.5 ✅ — findMatchCta 6 locale 카피 교체. ko "최적 매치 보기" → "맞춤 추천 받기" (expectation inflation 가드) | a94d73b9 | §B 결정 준수. A/B는 Phase 0b 후 측정 |
 | 2026-05-17 | B.6 ✅ — StickyHomeCta CDP QA. top/mid/deep/footer 4 sample 모두 기대대로 동작. 코드 변경 없음 | — | gating logic intact (`StickyHomeCta.tsx:31-57`). threshold A/B는 Phase D.3로 분리 |
 | 2026-05-17 | **Phase B 완료** — 6 sub-task 모두 ✅ | a94d73b9 | 커밋: d41628bf / 741b3cd3 / 2472b0ae / a94d73b9. 다음: Phase C 또는 Phase 0b 의사결정 |
-| 2026-05-17 | Phase C 시작 — 시즌 칩 인터랙티브 + reason chips 동적 | (pending) | C.1 + C.2 분리 커밋 예정 |
+| 2026-05-17 | Phase C 시작 — 시즌 칩 인터랙티브 + reason chips 동적 | bcdf4027 | C.1 + C.2 분리 커밋 |
+| 2026-05-17 | C.1 ✅ — 시즌 칩 button + phrase 주입 + 200ms glow + analytics + 6 locale phrase/chipAria 키 | 90345fd6 | SeasonConfig.phraseKey 신규. analytics HomeHeroSeason 5 값으로 정렬 |
 
 ---
 
