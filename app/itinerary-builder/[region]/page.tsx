@@ -79,15 +79,9 @@ export default async function ItineraryBuilderRegionPage({
       <main className="min-h-screen bg-slate-50">
         <header className="px-4 pt-8 pb-4 md:px-6 md:pt-12">
           <div className="mx-auto max-w-7xl">
-            <p className="mb-1 text-xs font-bold uppercase tracking-[0.15em] text-amber-700">
-              {headline.eyebrow}
-            </p>
-            <h1 className="text-2xl font-bold tracking-tight text-slate-900 md:text-4xl">
-              {headline.title}
-            </h1>
-            <p className="mt-2 max-w-2xl text-sm text-slate-600 md:text-base">
-              {headline.subtitle} Click a pin to preview. (Cart & quote come in Phase 4.)
-            </p>
+            <p className="mb-1 text-eyebrow">{headline.eyebrow}</p>
+            <h1 className="text-display text-slate-900">{headline.title}</h1>
+            <p className="mt-2 max-w-2xl text-body text-slate-600">{headline.subtitle}</p>
           </div>
         </header>
 
@@ -101,7 +95,7 @@ export default async function ItineraryBuilderRegionPage({
               apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}
             />
           </div>
-          <p className="mt-3 px-4 text-center text-xs text-slate-500 md:px-0">
+          <p className="mt-3 px-4 text-center text-micro text-slate-500 md:px-0">
             {pois.length} curated points of interest in this region.
           </p>
         </section>

@@ -12,16 +12,12 @@ export default function ItineraryBuilderLanding() {
   return (
     <SitePageShell>
       <main className="min-h-screen bg-slate-50">
-        <section className="px-4 pb-16 pt-12 md:px-6 md:pb-24 md:pt-16">
+        <section className="section-py-sm px-4 md:px-6">
           <div className="mx-auto max-w-2xl">
             <header className="mb-8 text-center md:mb-12">
-              <p className="mb-3 text-xs font-bold uppercase tracking-[0.15em] text-amber-700">
-                Custom itinerary builder
-              </p>
-              <h1 className="mb-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-                Tell us about your trip
-              </h1>
-              <p className="mx-auto max-w-lg text-sm text-slate-600 md:text-base">
+              <p className="mb-3 text-eyebrow">Custom itinerary builder</p>
+              <h1 className="mb-3 text-display text-slate-900">Tell us about your trip</h1>
+              <p className="mx-auto max-w-lg text-body text-slate-600">
                 Two questions — then you'll be on a map of curated stops you can rearrange into
                 your day. No package required.
               </p>
@@ -31,7 +27,7 @@ export default function ItineraryBuilderLanding() {
               <IntakeForm />
             </div>
 
-            <p className="mt-8 text-center text-xs text-slate-500">
+            <p className="mt-8 text-center text-micro text-slate-500">
               Seoul + DMZ rollout planned after MVP launch.
             </p>
           </div>

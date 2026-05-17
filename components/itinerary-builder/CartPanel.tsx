@@ -19,6 +19,7 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { useTranslations } from "@/lib/i18n";
+import { homeBtnPrimary } from "@/lib/home/home-button-classes";
 import { formatMinutes, totalDriveMinutes } from "@/lib/itinerary-builder/distance";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 
@@ -86,12 +87,12 @@ function SortableRow({
         title="See on map"
         className="min-w-0 flex-1 cursor-pointer text-left disabled:cursor-default"
       >
-        <p className="truncate text-sm font-semibold text-slate-900">{poi.name_en}</p>
+        <p className="truncate text-caption font-semibold text-slate-900">{poi.name_en}</p>
         {poi.name_ko ? (
-          <p className="truncate text-[11px] text-slate-500">{poi.name_ko}</p>
+          <p className="truncate text-micro text-slate-500">{poi.name_ko}</p>
         ) : null}
         {poi.default_stay_minutes ? (
-          <p className="mt-0.5 text-[11px] text-slate-500">~{poi.default_stay_minutes} min</p>
+          <p className="mt-0.5 text-micro text-slate-500">~{poi.default_stay_minutes} min</p>
         ) : null}
       </button>
       <button
@@ -153,7 +154,7 @@ export default function CartPanel({
       {isEmpty ? (
         <div className="p-6 text-center">
           <MapPin className="mx-auto mb-3 h-8 w-8 text-slate-300" aria-hidden />
-          <p className="text-sm text-slate-500">{t("empty")}</p>
+          <p className="text-body text-slate-500">{t("empty")}</p>
         </div>
       ) : (
         <DndContext
@@ -182,7 +183,7 @@ export default function CartPanel({
 
   const footer = !isEmpty && (
     <div className="border-t border-slate-200 bg-slate-50/80 px-4 py-3">
-      <div className="mb-2 space-y-1 text-xs text-slate-600">
+      <div className="mb-2 space-y-1 text-caption text-slate-600">
         {stayMinutes > 0 ? (
           <div className="flex items-center justify-between">
             <span>{t("stayTotal")}</span>
@@ -204,7 +205,7 @@ export default function CartPanel({
           </div>
         ) : null}
         {cruiseBudgetMinutes != null && cruiseBudgetMinutes > 0 ? (
-          <div className="flex items-center justify-between text-[11px]">
+          <div className="flex items-center justify-between text-micro">
             <span className="text-slate-500">{t("cruiseBudget")}</span>
             <span className={overBudget ? "font-bold text-rose-700" : "font-semibold text-slate-700"}>
               {formatMinutes(cruiseBudgetMinutes)}
@@ -213,7 +214,7 @@ export default function CartPanel({
         ) : null}
       </div>
       {overBudget ? (
-        <p className="mb-3 rounded-md bg-rose-50 px-2 py-1.5 text-[11px] font-semibold text-rose-700 ring-1 ring-rose-100">
+        <p className="mb-3 rounded-md bg-rose-50 px-2 py-1.5 text-micro font-semibold text-rose-700 ring-1 ring-rose-100">
           {t("cruiseOverBudget", { over: formatMinutes(totalMin - (cruiseBudgetMinutes ?? 0)) })}
         </p>
       ) : null}
@@ -221,11 +222,11 @@ export default function CartPanel({
         type="button"
         onClick={onGetQuote}
         disabled={!getQuoteEnabled || isEmpty}
-        className="w-full rounded-full bg-slate-900 px-4 py-3 text-sm font-bold text-white shadow-md transition-all hover:bg-slate-800 disabled:cursor-not-allowed disabled:bg-slate-300"
+        className={`${homeBtnPrimary} disabled:cursor-not-allowed disabled:bg-slate-300`}
       >
         {t("getQuoteCta")}
       </button>
-      <p className="mt-2 text-center text-[10.5px] text-slate-500">{t("getQuoteHint")}</p>
+      <p className="mt-2 text-center text-micro text-slate-500">{t("getQuoteHint")}</p>
     </div>
   );
 
@@ -237,8 +238,8 @@ export default function CartPanel({
     >
       <header className="border-b border-slate-200 bg-white px-4 py-3">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm font-bold text-slate-900">{t("title")}</h2>
-          <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-bold text-amber-800">
+          <h2 className="text-caption font-bold uppercase tracking-wide text-slate-900">{t("title")}</h2>
+          <span className="rounded-full bg-amber-100 px-2 py-0.5 text-micro font-bold text-amber-800">
             {t("poiCount", { count: cartPois.length })}
           </span>
         </div>
@@ -256,11 +257,11 @@ export default function CartPanel({
         type="button"
         onClick={() => setMobileOpen(true)}
         aria-label={t("openLabel")}
-        className="fixed bottom-4 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-bold text-white shadow-2xl transition-transform active:scale-95"
+        className="fixed bottom-4 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-caption font-bold text-white shadow-2xl transition-transform active:scale-95"
       >
         <ChevronUp className="h-4 w-4" aria-hidden />
         {t("title")}
-        <span className="rounded-full bg-amber-400 px-2 py-0.5 text-[11px] font-bold text-slate-900">
+        <span className="rounded-full bg-amber-400 px-2 py-0.5 text-micro font-bold text-slate-900">
           {cartPois.length}
         </span>
       </button>
@@ -276,8 +277,8 @@ export default function CartPanel({
           <div className="absolute bottom-0 left-0 right-0 max-h-[85vh] overflow-hidden rounded-t-2xl bg-white shadow-2xl">
             <header className="flex items-center justify-between border-b border-slate-200 px-4 py-3">
               <div className="flex items-center gap-2">
-                <h2 className="text-sm font-bold text-slate-900">{t("title")}</h2>
-                <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-bold text-amber-800">
+                <h2 className="text-caption font-bold uppercase tracking-wide text-slate-900">{t("title")}</h2>
+                <span className="rounded-full bg-amber-100 px-2 py-0.5 text-micro font-bold text-amber-800">
                   {t("poiCount", { count: cartPois.length })}
                 </span>
               </div>

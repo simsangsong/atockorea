@@ -37,13 +37,13 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus }:
     <section className="px-4 py-5 md:px-6 md:py-7">
       <div className="mx-auto max-w-7xl">
         <header className="mb-4 flex items-baseline justify-between md:mb-5">
-          <h2 className="text-base font-bold text-slate-900 md:text-lg">
+          <h2 className="text-h3 text-slate-900">
             Curated stops
-            <span className="ml-2 text-sm font-normal text-slate-500">
+            <span className="ml-2 text-caption font-normal text-slate-500">
               ({ordered.length})
             </span>
           </h2>
-          <p className="text-xs text-slate-500">Tap a card → preview on the map below.</p>
+          <p className="text-micro text-slate-500">Tap a card → preview on the map below.</p>
         </header>
 
         <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4 lg:grid-cols-3 xl:grid-cols-4">
@@ -78,26 +78,26 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus }:
                       </div>
                     )}
                     {inCart ? (
-                      <span className="absolute left-2 top-2 inline-flex items-center gap-1 rounded-full bg-amber-500 px-2 py-0.5 text-[10.5px] font-bold text-white shadow">
+                      <span className="absolute left-2 top-2 inline-flex items-center gap-1 rounded-full bg-amber-500 px-2 py-0.5 text-micro font-bold text-white shadow">
                         <Check className="h-3 w-3" aria-hidden /> In cart
                       </span>
                     ) : null}
                     {poi.default_stay_minutes ? (
-                      <span className="absolute right-2 top-2 inline-flex items-center gap-1 rounded-full bg-slate-900/85 px-2 py-0.5 text-[10.5px] font-semibold text-white shadow">
+                      <span className="absolute right-2 top-2 inline-flex items-center gap-1 rounded-full bg-slate-900/85 px-2 py-0.5 text-micro font-semibold text-white shadow">
                         <Clock className="h-3 w-3" aria-hidden />
                         {poi.default_stay_minutes}m
                       </span>
                     ) : null}
                   </div>
                   <div className="p-3 md:p-3.5">
-                    <h3 className="text-sm font-bold leading-snug text-slate-900 line-clamp-2">
+                    <h3 className="text-caption font-bold leading-snug text-slate-900 line-clamp-2">
                       {poi.name_en}
                     </h3>
                     {poi.name_ko ? (
-                      <p className="mt-0.5 truncate text-[11px] text-slate-500">{poi.name_ko}</p>
+                      <p className="mt-0.5 truncate text-micro text-slate-500">{poi.name_ko}</p>
                     ) : null}
                     {poi.highlights && poi.highlights.length > 0 ? (
-                      <ul className="mt-2 space-y-0.5 text-[11px] text-slate-600">
+                      <ul className="mt-2 space-y-0.5 text-micro text-slate-600">
                         {poi.highlights.slice(0, 2).map((h, i) => (
                           <li key={i} className="line-clamp-1">
                             • {stripMd(h)}
@@ -105,7 +105,7 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus }:
                         ))}
                       </ul>
                     ) : poi.category ? (
-                      <p className="mt-1.5 line-clamp-1 text-[11px] text-slate-500">{poi.category}</p>
+                      <p className="mt-1.5 line-clamp-1 text-micro text-slate-500">{poi.category}</p>
                     ) : null}
                   </div>
                 </button>
@@ -116,7 +116,7 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus }:
                       e.stopPropagation();
                       setDetailPoi(poi);
                     }}
-                    className="text-[11px] font-semibold text-slate-500 underline-offset-2 hover:text-slate-900 hover:underline"
+                    className="text-micro font-semibold text-slate-500 underline-offset-2 hover:text-slate-900 hover:underline"
                   >
                     Details
                   </button>
@@ -126,7 +126,7 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus }:
                       e.stopPropagation();
                       inCart ? onRemove(poi.poi_key) : onAdd(poi.poi_key);
                     }}
-                    className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11.5px] font-bold transition-colors ${
+                    className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-micro font-bold transition-colors ${
                       inCart
                         ? "bg-rose-50 text-rose-700 ring-1 ring-rose-100 hover:bg-rose-100"
                         : "bg-amber-500 text-white shadow-sm hover:bg-amber-600"

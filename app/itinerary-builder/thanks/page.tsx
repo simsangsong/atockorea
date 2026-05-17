@@ -59,12 +59,12 @@ function BreakdownRows({ breakdown }: { breakdown: Record<string, unknown> }) {
   return (
     <dl className="space-y-1.5">
       {rows.map((r) => (
-        <div key={r.label} className="flex items-baseline justify-between text-sm">
+        <div key={r.label} className="flex items-baseline justify-between text-body">
           <dt className="text-slate-600">{r.label}</dt>
           <dd className="font-semibold text-slate-900">{fmtKrw(r.value)}</dd>
         </div>
       ))}
-      <div className="flex items-baseline justify-between border-t border-amber-200 pt-2 text-base">
+      <div className="flex items-baseline justify-between border-t border-amber-200 pt-2 text-h3">
         <dt className="font-bold text-slate-900">Total</dt>
         <dd className="font-bold text-amber-700">{fmtKrw(total)}</dd>
       </div>
@@ -86,7 +86,7 @@ export default async function ItineraryBuilderThanksPage({
   return (
     <SitePageShell>
       <main className="min-h-screen bg-slate-50">
-        <section className="px-4 pb-16 pt-12 md:px-6 md:pb-24 md:pt-16">
+        <section className="section-py-sm px-4 md:px-6">
           <div className="mx-auto max-w-xl">
             {isAuto ? (
               <div className="overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-slate-200">
@@ -94,26 +94,22 @@ export default async function ItineraryBuilderThanksPage({
                   <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-amber-400/95">
                     <Coins className="h-6 w-6 text-slate-900" aria-hidden />
                   </div>
-                  <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.15em] text-amber-300">
-                    Your quote is ready
-                  </p>
-                  <h1 className="text-3xl font-bold text-white">
+                  <p className="mb-1 text-eyebrow text-amber-300">Your quote is ready</p>
+                  <h1 className="text-display text-white">
                     {fmtKrw(quote!.auto_quote_amount_krw as number)}
                   </h1>
-                  <p className="mt-2 text-[13px] text-slate-300">
+                  <p className="mt-2 text-body text-slate-300">
                     Auto-priced from your selected stops + duration. Reply to the confirmation email to book.
                   </p>
                 </div>
                 <div className="px-7 py-6">
                   {breakdown ? (
                     <div className="rounded-lg bg-amber-50/60 px-5 py-4 ring-1 ring-amber-100">
-                      <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.15em] text-amber-800">
-                        Breakdown
-                      </p>
+                      <p className="mb-2 text-eyebrow text-amber-800">Breakdown</p>
                       <BreakdownRows breakdown={breakdown} />
                     </div>
                   ) : null}
-                  <ul className="mt-5 space-y-2 text-sm text-slate-700">
+                  <ul className="mt-5 space-y-2 text-body text-slate-700">
                     <li className="flex items-start gap-3">
                       <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-slate-500" aria-hidden />
                       <span>Confirmation email sent with full breakdown.</span>
@@ -124,20 +120,20 @@ export default async function ItineraryBuilderThanksPage({
                     </li>
                   </ul>
                   {quote_id ? (
-                    <p className="mt-5 text-[11px] text-slate-400">
+                    <p className="mt-5 text-micro text-slate-400">
                       Reference: <code className="rounded bg-slate-100 px-1.5 py-0.5">{quote_id}</code>
                     </p>
                   ) : null}
                   <div className="mt-6 flex flex-col items-stretch gap-2 sm:flex-row sm:justify-end">
                     <Link
                       href="/itinerary-builder"
-                      className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-sm font-bold text-slate-700 ring-1 ring-slate-200 hover:bg-slate-50"
+                      className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-caption font-bold text-slate-700 ring-1 ring-slate-200 hover:bg-slate-50"
                     >
                       Plan another day
                     </Link>
                     <Link
                       href="/"
-                      className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-bold text-white hover:bg-slate-800"
+                      className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-caption font-bold text-white hover:bg-slate-800"
                     >
                       Back to home
                     </Link>
@@ -149,17 +145,15 @@ export default async function ItineraryBuilderThanksPage({
                 <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100">
                   <CheckCircle2 className="h-8 w-8 text-emerald-600" aria-hidden />
                 </div>
-                <p className="mb-2 text-xs font-bold uppercase tracking-[0.15em] text-amber-700">
-                  Itinerary request received
-                </p>
-                <h1 className="mb-3 text-2xl font-bold text-slate-900 md:text-3xl">
+                <p className="mb-2 text-eyebrow">Itinerary request received</p>
+                <h1 className="mb-3 text-display text-slate-900">
                   We&apos;ll respond within 24 hours
                 </h1>
-                <p className="mx-auto mb-6 max-w-md text-sm text-slate-600">
+                <p className="mx-auto mb-6 max-w-md text-body text-slate-600">
                   Your request is a bit outside our auto-quote range. Our team is reviewing and will reply by
                   email with a custom price within the next 24 hours.
                 </p>
-                <ul className="mx-auto mb-6 max-w-sm space-y-3 text-left text-sm text-slate-700">
+                <ul className="mx-auto mb-6 max-w-sm space-y-3 text-left text-body text-slate-700">
                   <li className="flex items-start gap-3">
                     <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-slate-500" aria-hidden />
                     <span>Confirmation email sent — check spam if you don&apos;t see it.</span>
@@ -170,20 +164,20 @@ export default async function ItineraryBuilderThanksPage({
                   </li>
                 </ul>
                 {quote_id ? (
-                  <p className="mb-6 text-[11px] text-slate-400">
+                  <p className="mb-6 text-micro text-slate-400">
                     Reference: <code className="rounded bg-slate-100 px-1.5 py-0.5">{quote_id}</code>
                   </p>
                 ) : null}
                 <div className="flex flex-col items-stretch gap-2 sm:flex-row sm:justify-center">
                   <Link
                     href="/"
-                    className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-bold text-white hover:bg-slate-800"
+                    className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-caption font-bold text-white hover:bg-slate-800"
                   >
                     Back to home
                   </Link>
                   <Link
                     href="/itinerary-builder"
-                    className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-sm font-bold text-slate-700 ring-1 ring-slate-200 hover:bg-slate-50"
+                    className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-caption font-bold text-slate-700 ring-1 ring-slate-200 hover:bg-slate-50"
                   >
                     Plan another day
                   </Link>

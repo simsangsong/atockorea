@@ -29,8 +29,8 @@
 
 | Phase | Status | Started | Done | Commit hash(es) |
 |---|---|---|---|---|
-| A — Audit + tokenize | ✅ this doc | 2026-05-18 | 2026-05-18 | (this commit) |
-| B — Type scale + section padding wholesale | ⏸ not started | — | — | — |
+| A — Audit + tokenize | ✅ this doc | 2026-05-18 | 2026-05-18 | (initial commit) |
+| B — Type scale + section padding wholesale | ✅ complete | 2026-05-18 | 2026-05-18 | (this commit) |
 | C — `IntakeForm` polish | ⏸ not started | — | — | — |
 | D — `POICatalogGrid` restyle (mirror destinations-showcase) | ⏸ not started | — | — | — |
 | E — Map page chrome + `AIRecommendPanel` | ⏸ not started | — | — | — |
@@ -65,6 +65,7 @@ Append a new row whenever a design call is made. Never silently change a decisio
 | Date | Commit | Change |
 |---|---|---|
 | 2026-05-18 | (this commit) | UX master plan written (Phase A). 10 phases laid out; design tokens locked to home v2; audit findings frozen in §J. |
+| 2026-05-18 | (Phase B commit) | Phase B complete — type scale + section padding wholesale migration across 11 files (3 routes + 8 components). Removed `text-3xl/2xl/xl/lg/base/sm/[11px]/[10.5px]` etc. and replaced with `text-display/h3/body/caption/eyebrow/micro` per U1. Section paddings on landing + thanks switched to `section-py-sm`. Submit CTAs on intake form + cart + quote modal now use `homeBtnPrimary` from `lib/home/home-button-classes.ts`. Acceptance: 0 remaining `text-lg+` in builder surfaces; 8 remaining `text-sm` are all inside `<input>` / `<select>` (per acceptance criterion); all 3 routes 200 SSR; production build green. |
 
 ---
 

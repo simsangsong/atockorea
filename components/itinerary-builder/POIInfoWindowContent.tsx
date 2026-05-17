@@ -27,8 +27,8 @@ export default function POIInfoWindowContent({ poi, inCart = false, onAdd, onRem
   const buttonLabel = inCart ? t("removeFromItinerary") : t("addCta");
   const buttonHandler = inCart ? onRemove : onAdd;
   const buttonClass = inCart
-    ? "mt-3 w-full rounded-md bg-rose-50 px-3 py-2 text-xs font-semibold text-rose-700 ring-1 ring-rose-200 transition-colors hover:bg-rose-100"
-    : "mt-3 w-full rounded-md bg-amber-500 px-3 py-2 text-xs font-bold text-white shadow-sm transition-colors hover:bg-amber-600";
+    ? "mt-3 w-full rounded-md bg-rose-50 px-3 py-2 text-micro font-semibold text-rose-700 ring-1 ring-rose-200 transition-colors hover:bg-rose-100"
+    : "mt-3 w-full rounded-md bg-amber-500 px-3 py-2 text-micro font-bold text-white shadow-sm transition-colors hover:bg-amber-600";
 
   return (
     <div className="max-w-[280px] p-1 font-sans">
@@ -40,14 +40,14 @@ export default function POIInfoWindowContent({ poi, inCart = false, onAdd, onRem
           className="mb-2 aspect-[16/10] w-full rounded-md object-cover"
         />
       ) : null}
-      <h3 className="text-sm font-bold leading-snug text-slate-900">{poi.name_en}</h3>
+      <h3 className="text-caption font-bold leading-snug text-slate-900">{poi.name_en}</h3>
       {poi.name_ko ? (
-        <p className="mt-0.5 text-[11px] text-slate-500">{poi.name_ko}</p>
+        <p className="mt-0.5 text-micro text-slate-500">{poi.name_ko}</p>
       ) : null}
       {summary ? (
-        <p className="mt-1.5 text-[12px] leading-snug text-slate-700">{summary}</p>
+        <p className="mt-1.5 text-caption leading-snug text-slate-700">{summary}</p>
       ) : null}
-      <div className="mt-2 flex items-center justify-between text-[11px] text-slate-500">
+      <div className="mt-2 flex items-center justify-between text-micro text-slate-500">
         {poi.default_stay_minutes ? (
           <span>{t("stayMinutesPattern", { minutes: poi.default_stay_minutes })}</span>
         ) : (

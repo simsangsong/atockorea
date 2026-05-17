@@ -71,7 +71,7 @@ export default function AIRecommendPanel({ region, onAccept, onFocusPoi }: Props
       <div className="mx-auto max-w-5xl">
         <form onSubmit={onSubmit} className="flex flex-col gap-3 md:flex-row md:items-end">
           <div className="flex-1">
-            <label className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-amber-800">
+            <label className="mb-1.5 inline-flex items-center gap-1.5 text-eyebrow">
               <Sparkles className="h-3.5 w-3.5" aria-hidden />
               Get AI recommendations
             </label>
@@ -84,7 +84,7 @@ export default function AIRecommendPanel({ region, onAccept, onFocusPoi }: Props
             />
           </div>
           <label className="md:w-24">
-            <span className="mb-1.5 block text-xs font-semibold text-slate-700">Hours</span>
+            <span className="mb-1.5 block text-caption font-semibold text-slate-700">Hours</span>
             <select
               value={maxHours}
               onChange={(e) => setMaxHours(Number(e.target.value))}
@@ -98,7 +98,7 @@ export default function AIRecommendPanel({ region, onAccept, onFocusPoi }: Props
           <button
             type="submit"
             disabled={loading}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-sm font-bold text-white shadow-md transition-all hover:bg-slate-800 disabled:cursor-not-allowed disabled:bg-slate-300 md:w-auto"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-caption font-bold text-white shadow-md transition-all hover:bg-slate-800 disabled:cursor-not-allowed disabled:bg-slate-300 md:w-auto"
           >
             {loading ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : <Sparkles className="h-4 w-4" aria-hidden />}
             {loading ? "Matching..." : "Recommend"}
@@ -106,7 +106,7 @@ export default function AIRecommendPanel({ region, onAccept, onFocusPoi }: Props
         </form>
 
         {error ? (
-          <p className="mt-3 inline-flex items-center gap-1.5 rounded-md bg-rose-50 px-3 py-2 text-xs font-semibold text-rose-700 ring-1 ring-rose-100">
+          <p className="mt-3 inline-flex items-center gap-1.5 rounded-md bg-rose-50 px-3 py-2 text-caption font-semibold text-rose-700 ring-1 ring-rose-100">
             <AlertCircle className="h-3.5 w-3.5" aria-hidden />
             {error}
           </p>
@@ -115,18 +115,18 @@ export default function AIRecommendPanel({ region, onAccept, onFocusPoi }: Props
         {result?.ok && recommended.length > 0 ? (
           <div className="mt-3 rounded-lg bg-white px-4 py-3 ring-1 ring-amber-200">
             <div className="mb-2 flex items-center justify-between gap-2">
-              <p className="text-xs font-bold text-slate-900">
+              <p className="text-caption font-bold text-slate-900">
                 {recommended.length} stops matched · ~{totalH}h day
               </p>
               <button
                 type="button"
                 onClick={() => onAccept(recommended)}
-                className="rounded-full bg-amber-500 px-4 py-1.5 text-xs font-bold text-white hover:bg-amber-600"
+                className="rounded-full bg-amber-500 px-4 py-1.5 text-caption font-bold text-white hover:bg-amber-600"
               >
                 Load into cart
               </button>
             </div>
-            <ol className="flex flex-wrap gap-1.5 text-[11.5px]">
+            <ol className="flex flex-wrap gap-1.5 text-micro">
               {(result.per_poi_score ?? []).map((p, i) => (
                 <li key={p.poi_key} className="inline-flex">
                   <button
@@ -141,12 +141,12 @@ export default function AIRecommendPanel({ region, onAccept, onFocusPoi }: Props
                 </li>
               ))}
             </ol>
-            <p className="mt-2 text-[10.5px] text-slate-500">
+            <p className="mt-2 text-micro text-slate-500">
               Tap a stop to preview it on the map →
             </p>
           </div>
         ) : result?.ok && recommended.length === 0 ? (
-          <p className="mt-3 rounded-md bg-amber-50 px-3 py-2 text-xs text-amber-800 ring-1 ring-amber-100">
+          <p className="mt-3 rounded-md bg-amber-50 px-3 py-2 text-caption text-amber-800 ring-1 ring-amber-100">
             {result.message || "Try broader interests or a different region."}
           </p>
         ) : null}

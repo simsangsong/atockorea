@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight, MapPin, Ship, Car } from "lucide-react";
 import { useTranslations } from "@/lib/i18n";
+import { homeBtnPrimary } from "@/lib/home/home-button-classes";
 
 type Track = "private" | "cruise";
 type RegionSlug = "busan" | "jeju";
@@ -58,7 +59,7 @@ export default function IntakeForm() {
     <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
       {/* Track toggle (private vs cruise) */}
       <fieldset>
-        <legend className="mb-3 text-eyebrow text-amber-700">{t("trackLegend")}</legend>
+        <legend className="mb-3 text-eyebrow">{t("trackLegend")}</legend>
         <div className="grid grid-cols-2 gap-3">
           <label
             className={`group flex cursor-pointer flex-col items-center gap-2 rounded-xl border-2 p-4 text-center transition-all ${
@@ -79,8 +80,8 @@ export default function IntakeForm() {
               className={`h-6 w-6 ${track === "private" ? "text-amber-700" : "text-slate-500"}`}
               aria-hidden
             />
-            <span className="text-sm font-bold text-slate-900">{t("trackPrivateLabel")}</span>
-            <span className="text-[11px] text-slate-500">{t("trackPrivateHint")}</span>
+            <span className="text-caption font-bold text-slate-900">{t("trackPrivateLabel")}</span>
+            <span className="text-micro text-slate-500">{t("trackPrivateHint")}</span>
           </label>
           <label
             className={`group flex cursor-pointer flex-col items-center gap-2 rounded-xl border-2 p-4 text-center transition-all ${
@@ -101,15 +102,15 @@ export default function IntakeForm() {
               className={`h-6 w-6 ${track === "cruise" ? "text-sky-700" : "text-slate-500"}`}
               aria-hidden
             />
-            <span className="text-sm font-bold text-slate-900">{t("trackCruiseLabel")}</span>
-            <span className="text-[11px] text-slate-500">{t("trackCruiseHint")}</span>
+            <span className="text-caption font-bold text-slate-900">{t("trackCruiseLabel")}</span>
+            <span className="text-micro text-slate-500">{t("trackCruiseHint")}</span>
           </label>
         </div>
       </fieldset>
 
       {/* Region */}
       <fieldset>
-        <legend className="mb-3 text-eyebrow text-amber-700">{t("regionLegend")}</legend>
+        <legend className="mb-3 text-eyebrow">{t("regionLegend")}</legend>
         <div className="grid grid-cols-2 gap-3">
           {(["busan", "jeju"] as RegionSlug[]).map((r) => (
             <label
@@ -132,7 +133,7 @@ export default function IntakeForm() {
                 className={`h-4 w-4 ${region === r ? "text-slate-900" : "text-slate-400"}`}
                 aria-hidden
               />
-              <span className="text-sm font-bold capitalize text-slate-900">{r}</span>
+              <span className="text-caption font-bold capitalize text-slate-900">{r}</span>
             </label>
           ))}
         </div>
@@ -141,15 +142,15 @@ export default function IntakeForm() {
       {/* Cruise: hours window */}
       {track === "cruise" ? (
         <fieldset>
-          <legend className="mb-2 text-eyebrow text-amber-700">{t("cruiseHoursLegend")}</legend>
-          <p className="mb-3 text-xs text-slate-500">{t("cruiseHoursHint")}</p>
+          <legend className="mb-2 text-eyebrow">{t("cruiseHoursLegend")}</legend>
+          <p className="mb-3 text-micro text-slate-500">{t("cruiseHoursHint")}</p>
           <div className="flex flex-wrap gap-2">
             {[4, 6, 8, 10, 12].map((h) => (
               <button
                 key={h}
                 type="button"
                 onClick={() => setHours(String(h))}
-                className={`rounded-full px-4 py-2 text-sm font-semibold transition-all ${
+                className={`rounded-full px-4 py-2 text-caption font-semibold transition-all ${
                   hours === String(h)
                     ? "bg-sky-700 text-white shadow"
                     : "bg-white text-slate-700 ring-1 ring-slate-200 hover:bg-slate-50"
@@ -165,7 +166,7 @@ export default function IntakeForm() {
       {/* Cruise: ship name (optional) */}
       {track === "cruise" ? (
         <label className="block">
-          <span className="mb-1.5 block text-xs font-semibold text-slate-700">
+          <span className="mb-1.5 block text-caption font-semibold text-slate-700">
             {t("shipLabel")}{" "}
             <span className="text-slate-400">{t("optionalSuffix")}</span>
           </span>
@@ -179,19 +180,19 @@ export default function IntakeForm() {
         </label>
       ) : null}
 
-      <p className="text-center text-xs text-slate-500">
+      <p className="text-center text-micro text-slate-500">
         {t("dateAndPartyDeferredHint")}
       </p>
 
       <button
         type="submit"
-        className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-4 text-sm font-bold text-white shadow-lg transition-all hover:bg-slate-800 hover:gap-3"
+        className={`${homeBtnPrimary} group inline-flex items-center justify-center gap-2 shadow-lg hover:gap-3`}
       >
         {t("submit")}
         <ArrowRight className="h-4 w-4" aria-hidden />
       </button>
 
-      <p className="text-center text-xs text-slate-500">
+      <p className="text-center text-micro text-slate-500">
         <Link href="/tours" className="underline-offset-2 hover:underline">
           {t("browsePackagesInstead")}
         </Link>

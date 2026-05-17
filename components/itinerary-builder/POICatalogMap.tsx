@@ -143,8 +143,8 @@ export default function POICatalogMap({
     return (
       <div className={containerClasses + " flex items-center justify-center bg-slate-50 p-6 text-center"} data-region={region}>
         <div>
-          <p className="text-base font-semibold text-slate-900">{t("errorTitle")}</p>
-          <p className="mt-1 text-sm text-slate-600">{t("errorBody")}</p>
+          <p className="text-h3 text-slate-900">{t("errorTitle")}</p>
+          <p className="mt-1 text-body text-slate-600">{t("errorBody")}</p>
         </div>
       </div>
     );
@@ -152,7 +152,7 @@ export default function POICatalogMap({
   if (!isLoaded) {
     return (
       <div className={containerClasses + " flex items-center justify-center bg-slate-50"} data-region={region}>
-        <p className="text-sm text-slate-500">{t("loadingLabel")}</p>
+        <p className="text-body text-slate-500">{t("loadingLabel")}</p>
       </div>
     );
   }
