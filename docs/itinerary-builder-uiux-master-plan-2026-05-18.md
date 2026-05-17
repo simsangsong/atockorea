@@ -30,8 +30,8 @@
 | Phase | Status | Started | Done | Commit hash(es) |
 |---|---|---|---|---|
 | A — Audit + tokenize | ✅ this doc | 2026-05-18 | 2026-05-18 | (initial commit) |
-| B — Type scale + section padding wholesale | ✅ complete | 2026-05-18 | 2026-05-18 | (this commit) |
-| C — `IntakeForm` polish | ⏸ not started | — | — | — |
+| B — Type scale + section padding wholesale | ✅ complete | 2026-05-18 | 2026-05-18 | `58e3040b` |
+| C — `IntakeForm` polish | ✅ complete | 2026-05-18 | 2026-05-18 | (this commit) |
 | D — `POICatalogGrid` restyle (mirror destinations-showcase) | ⏸ not started | — | — | — |
 | E — Map page chrome + `AIRecommendPanel` | ⏸ not started | — | — | — |
 | F — `CartPanel` + mobile bottom-sheet polish | ⏸ not started | — | — | — |
@@ -65,7 +65,8 @@ Append a new row whenever a design call is made. Never silently change a decisio
 | Date | Commit | Change |
 |---|---|---|
 | 2026-05-18 | (this commit) | UX master plan written (Phase A). 10 phases laid out; design tokens locked to home v2; audit findings frozen in §J. |
-| 2026-05-18 | (Phase B commit) | Phase B complete — type scale + section padding wholesale migration across 11 files (3 routes + 8 components). Removed `text-3xl/2xl/xl/lg/base/sm/[11px]/[10.5px]` etc. and replaced with `text-display/h3/body/caption/eyebrow/micro` per U1. Section paddings on landing + thanks switched to `section-py-sm`. Submit CTAs on intake form + cart + quote modal now use `homeBtnPrimary` from `lib/home/home-button-classes.ts`. Acceptance: 0 remaining `text-lg+` in builder surfaces; 8 remaining `text-sm` are all inside `<input>` / `<select>` (per acceptance criterion); all 3 routes 200 SSR; production build green. |
+| 2026-05-18 | `58e3040b` | Phase B complete — type scale + section padding wholesale migration across 11 files (3 routes + 8 components). Removed `text-3xl/2xl/xl/lg/base/sm/[11px]/[10.5px]` etc. and replaced with `text-display/h3/body/caption/eyebrow/micro` per U1. Section paddings on landing + thanks switched to `section-py-sm`. Submit CTAs on intake form + cart + quote modal now use `homeBtnPrimary` from `lib/home/home-button-classes.ts`. Acceptance: 0 remaining `text-lg+` in builder surfaces; 8 remaining `text-sm` are all inside `<input>` / `<select>` (per acceptance criterion); all 3 routes 200 SSR; production build green. |
+| 2026-05-18 | (Phase C commit) | Phase C complete — `IntakeForm` polish. Selected track card now ships an amber (private) or sky (cruise) glow halo (`shadow-[0_0_0_3px_rgba(...)]`) on top of the previous border+ring; same shadow pattern applied to selected Region card (slate-900 halo). Cruise hours chips wrapped in `overflow-x-auto snap-x snap-mandatory scrollbar-hide md:flex-wrap md:overflow-visible` so they snap-scroll on mobile but stay wrapped on desktop. Selected chip got `shadow-md`. Submit CTA bumped to `md:max-w-sm md:mx-auto` (centered fixed width on desktop, full-width on mobile) per Phase C plan. New reassurance line with Sparkles icon below submit ("Eligible itineraries get an instant price — others reply within 24h" — key `autoQuoteReassurance` added to EN messages; 5-locale batch translate at end of UX track). Entrance animation: form wrapped in `motion.form` + `useRevealContainerProps()` + each fieldset/label/footer block as `motion.div/fieldset/label` with `REVEAL_ITEM_VARIANTS` — same pattern as home v2 `destinations-showcase.tsx`. Respects `useReducedMotion()` via the reveal helper. State transitions explicit `duration-200 ease-out` for the 200ms requirement in the plan acceptance. Tab order verified: track → region → (hours → ship if cruise) → submit. Build green; SSR 200. |
 
 ---
 

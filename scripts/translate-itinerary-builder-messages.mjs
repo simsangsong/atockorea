@@ -82,6 +82,7 @@ const EN_NAMESPACE = {
     submit: "Open the map",
     browsePackagesInstead: "Or browse fixed packages instead →",
     dateAndPartyDeferredHint: "We'll ask for travel date + party size when you submit your quote.",
+    autoQuoteReassurance: "Eligible itineraries get an instant price — others reply within 24h.",
   },
   cart: {
     title: "Your itinerary",
