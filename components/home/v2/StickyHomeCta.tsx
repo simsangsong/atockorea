@@ -5,7 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "@/lib/i18n";
-import { analytics } from "@/src/design/analytics";
+import { analytics, getExperimentVariant } from "@/src/design/analytics";
 
 /**
  * Sticky bottom CTA shown after the hero leaves the viewport and hidden once
@@ -23,20 +23,52 @@ export function StickyHomeCta() {
   const reduceMotion = useReducedMotion();
   const [heroOut, setHeroOut] = useState(false);
   const [footerIn, setFooterIn] = useState(false);
+  // v3 Phase D.3 — variant B fires the sticky earlier (when hero is 50% out
+  // instead of 100% out). Captured at observer-setup time so we don't have
+  // to dismount/recreate the IntersectionObserver if the variant resolves
+  // after first paint.
+  const [thresholdVariant, setThresholdVariant] = useState<string | null>(null);
+
+  useEffect(() => {
+    const first = getExperimentVariant("home_sticky_threshold");
+    if (first) setThresholdVariant(first);
+    else {
+      let tries = 0;
+      const id = setInterval(() => {
+        tries += 1;
+        const v = getExperimentVariant("home_sticky_threshold");
+        if (v) {
+          setThresholdVariant(v);
+          clearInterval(id);
+        } else if (tries >= 30) clearInterval(id);
+      }, 200);
+      return () => clearInterval(id);
+    }
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     const hero = document.querySelector("[data-home-hero]");
     const footer = document.querySelector("[data-home-final-cta]");
 
+    const heroOutCheck = (rect: DOMRectReadOnly) => {
+      if (thresholdVariant === "B") {
+        // Variant B — hero is "out" once its bottom is past half the viewport.
+        return rect.bottom < window.innerHeight * 0.5;
+      }
+      // Variant A (control) — hero must be 100% out.
+      return rect.bottom < 0;
+    };
+
+    // Multi-threshold so the observer fires repeatedly while the hero
+    // scrolls past — required for variant B's 50% trigger to flip without
+    // needing a separate scroll listener.
     const heroObs = hero
       ? new IntersectionObserver(
           ([entry]) => {
-            // Hero counts as "out" when its bottom edge is above the viewport.
-            const rect = entry.boundingClientRect;
-            setHeroOut(rect.bottom < 0);
+            setHeroOut(heroOutCheck(entry.boundingClientRect));
           },
-          { threshold: 0 },
+          { threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] },
         )
       : null;
     heroObs?.observe(hero!);
@@ -53,7 +85,7 @@ export function StickyHomeCta() {
       heroObs?.disconnect();
       footerObs?.disconnect();
     };
-  }, []);
+  }, [thresholdVariant]);
 
   const show = heroOut && !footerIn;
 
