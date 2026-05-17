@@ -35,10 +35,18 @@ import { useI18n, useTranslations } from '@/lib/i18n';
 import { MYPAGE_FOCUS_RING } from '@/lib/mypage-ui';
 import { supabase } from '@/lib/supabase';
 import { cn } from '@/lib/utils';
-import {
-  isReviewWriteWindowOpenForViewer,
-  normalizeBookingTourDateYmd,
-} from '@/lib/review-write-window';
+
+type MyPageSummaryResponse = {
+  profile: ProfileCompletionInput | null;
+  userName: string;
+  counts: Omit<QuickAccessCounts, 'settingsPct'>;
+  nextTrip: NextTripData | null;
+  pendingReviews: PendingReviewItem[];
+  wishlistItems: WishlistCarouselItem[];
+  wishlistTotal: number;
+  recommendations: RecommendedTour[];
+  error?: string;
+};
 
 /**
  * /mypage landing hub (Option A + mixed_premium).
@@ -87,186 +95,24 @@ export default function MyPageLandingPage() {
         return;
       }
 
-      const userId = session.user.id;
       const token = session.access_token;
       const headers = { Authorization: `Bearer ${token}` } as const;
 
-      const { data: profileRow } = await supabase
-        .from('user_profiles')
-        .select('full_name, phone, birth_year, nationality, language_preference, avatar_url')
-        .eq('id', userId)
-        .single();
-
-      if (profileRow) {
-        setProfile(profileRow as ProfileCompletionInput);
-        const display = (profileRow as any).full_name as string | null;
-        if (display && display.trim()) {
-          setUserName(display.trim().split(/\s+/)[0]);
-        } else if (session.user.email) {
-          setUserName(session.user.email.split('@')[0]);
-        }
-      } else if (session.user.email) {
-        setUserName(session.user.email.split('@')[0]);
+      const res = await fetch(`/api/mypage/summary?locale=${encodeURIComponent(locale)}`, { headers });
+      const data = (await res.json().catch(() => ({}))) as MyPageSummaryResponse;
+      if (!res.ok) {
+        throw new Error(data.error ?? 'Failed to load mypage summary');
       }
 
-      let sawError = false;
-      let reviewedBookingIds = new Set<string>();
-      let bookingsData: any[] = [];
-      let wishlistData: any[] = [];
-
-      const [bookingsRes, reviewsRes, wishlistRes] = await Promise.all([
-        fetch('/api/bookings', { headers }).catch(() => null),
-        fetch(`/api/reviews?userId=${userId}`, { headers }).catch(() => null),
-        fetch('/api/wishlist', { headers }).catch(() => null),
-      ]);
-
-      if (reviewsRes && reviewsRes.ok) {
-        const data = await reviewsRes.json();
-        const reviews = (data?.reviews ?? []) as any[];
-        reviewedBookingIds = new Set(
-          reviews.map((r) => r.booking_id).filter(Boolean),
-        );
-        setCounts((prev) => ({ ...prev, reviews: reviews.length }));
-      } else {
-        sawError = true;
-      }
-
-      if (bookingsRes && bookingsRes.ok) {
-        const data = await bookingsRes.json();
-        bookingsData = (data?.bookings ?? []) as any[];
-
-        const now = new Date();
-        const upcomingList = bookingsData
-          .filter((b) => {
-            const tourDate = new Date(b.tour_date || b.booking_date || b.created_at);
-            return (b.status === 'confirmed' || b.status === 'pending') && tourDate >= now;
-          })
-          .sort((a, b) => {
-            const da = new Date(a.tour_date || a.booking_date).getTime();
-            const db = new Date(b.tour_date || b.booking_date).getTime();
-            return da - db;
-          });
-
-        const completedOrCancelled = bookingsData.filter((b) =>
-          b.status === 'completed' || b.status === 'cancelled',
-        );
-
-        setCounts((prev) => ({
-          ...prev,
-          bookings: bookingsData.length,
-          upcoming: upcomingList.length,
-          history: completedOrCancelled.length,
-        }));
-
-        const first = upcomingList[0];
-        if (first) {
-          setNextTrip({
-            bookingId: first.id,
-            tourId: first.tour_id,
-            slug: first.tours?.slug ?? null,
-            title: first.tours?.title || 'Tour',
-            tourDate: first.tour_date || first.booking_date,
-            status: first.status,
-            guests: first.number_of_guests ?? null,
-            imageUrl: first.tours?.image_url ?? null,
-            city: first.tours?.city ?? null,
-            pickupName: first.pickup_points?.name ?? null,
-            pickupTime: first.pickup_points?.pickup_time ?? null,
-          });
-        } else {
-          setNextTrip(null);
-        }
-
-        const pending = bookingsData
-          .filter((b) => {
-            if (b.status !== 'completed') return false;
-            if (reviewedBookingIds.has(b.id)) return false;
-            const ymd = normalizeBookingTourDateYmd(b.tour_date || null);
-            const viewerEmail = session.user.email ?? null;
-            return ymd ? isReviewWriteWindowOpenForViewer(ymd, viewerEmail) : false;
-          })
-          .slice(0, 5)
-          .map((b) => ({
-            bookingId: b.id,
-            tourId: b.tour_id,
-            slug: b.tours?.slug ?? null,
-            title: b.tours?.title || 'Tour',
-          }));
-        setPendingReviews(pending);
-      } else {
-        sawError = true;
-      }
-
-      if (wishlistRes && wishlistRes.ok) {
-        const data = await wishlistRes.json();
-        wishlistData = (data?.wishlist ?? []) as any[];
-        setWishlistTotal(wishlistData.length);
-        setCounts((prev) => ({ ...prev, wishlist: wishlistData.length }));
-        setWishlistItems(
-          wishlistData.slice(0, 3).map((w) => ({
-            id: w.id,
-            tour_id: w.tour_id,
-            title: w.tours?.title ?? 'Tour',
-            slug: w.tours?.slug ?? null,
-            city: w.tours?.city ?? null,
-            duration: w.tours?.duration ?? null,
-            image_url: w.tours?.image_url ?? null,
-            price: typeof w.tours?.price === 'number' ? w.tours.price : null,
-            original_price:
-              typeof w.tours?.original_price === 'number' ? w.tours.original_price : null,
-          })),
-        );
-      } else {
-        sawError = true;
-      }
-
-      const bookedTourIds = new Set<string>(
-        bookingsData.map((b) => String(b.tour_id)).filter(Boolean),
-      );
-      const wishlistTourIds = new Set<string>(
-        wishlistData.map((w) => String(w.tour_id)).filter(Boolean),
-      );
-
-      try {
-        const tourRes = await fetch(
-          `/api/tours?sortBy=rating&sortOrder=desc&limit=12&compact=1&locale=${encodeURIComponent(locale)}`,
-        );
-        if (!tourRes.ok) {
-          sawError = true;
-        } else {
-          const data = await tourRes.json();
-          const list = (data?.tours ?? []) as any[];
-          const filtered = list
-            .filter((tour) => {
-              const id = String(tour.id ?? '');
-              if (!id) return false;
-              if (bookedTourIds.has(id)) return false;
-              if (wishlistTourIds.has(id)) return false;
-              return true;
-            })
-            .slice(0, 6);
-          const picked = filtered.length >= 3 ? filtered : list.slice(0, 6);
-          setRecommendations(
-            picked.map((tour) => ({
-              id: String(tour.id),
-              slug: tour.slug ?? null,
-              title: tour.title ?? 'Tour',
-              image: tour.image ?? null,
-              city: tour.city ?? tour.location ?? null,
-              duration: tour.duration ?? null,
-              price: typeof tour.price === 'number' ? tour.price : null,
-              rating: typeof tour.rating === 'number' ? tour.rating : null,
-              reviewCount:
-                typeof tour.reviewCount === 'number' ? tour.reviewCount : null,
-            })),
-          );
-        }
-      } catch (e) {
-        console.error('[mypage/landing] recommendations fetch failed', e);
-        sawError = true;
-      }
-
-      setHadError(sawError);
+      setProfile(data.profile);
+      setUserName(data.userName || session.user.email?.split('@')[0] || 'User');
+      setCounts((prev) => ({ ...prev, ...data.counts }));
+      setNextTrip(data.nextTrip);
+      setPendingReviews(data.pendingReviews);
+      setWishlistItems(data.wishlistItems);
+      setWishlistTotal(data.wishlistTotal);
+      setRecommendations(data.recommendations);
+      setHadError(false);
     } catch (e) {
       console.error('[mypage/landing] fetchAll failed', e);
       setHadError(true);
