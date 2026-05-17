@@ -1,0 +1,916 @@
+# 랜딩 페이지 UI/UX 마스터 플랜 v3
+
+작성일: 2026-05-17
+문서 상태: **표준 마스터 플랜 (v3가 유일한 실행 기준)**
+대상: AtoC Korea 메인 랜딩 `/`
+
+## 0. 이 문서의 위치
+
+| 문서 | 역할 |
+|---|---|
+| `docs/landing-page-uiux-audit-2026-05-16.md` | 1차 Codex audit. 입력 자료. |
+| `docs/landing-page-uiux-upgrade-plan-2026-05-17.md` | v2. 시니어 비평 기반 마스터 플랜. 사실 오류 2건 포함. **이 문서로 폐기.** |
+| `docs/landing-page-uiux-upgrade-plan-review-2026-05-17.md` | Codex의 v2 리뷰. 사실 오류 2건 잡음. 입력 자료. |
+| **이 문서 (v3)** | **표준. 모든 실행은 v3 기준.** |
+
+v3 만든 이유:
+1. v2에는 코드 실사 안 한 사실 오류 2건 (`StickyHomeCta`, `analytics.ts`) → Codex 리뷰가 잡음. 수정 반영.
+2. Codex 리뷰가 못 본 시니어 UI/UX 통찰 11건 (가변성 시그널, 모바일 fold, expectation inflation, bottom-sheet 패턴, A/B variant 다양성, phrase 길이, stagger 구체 값, 롤백 임계값, reason chip 동적 데이터, 성공 기준 정직화, Phase 0 기간) → v3에서 반영.
+3. v2가 결정 분포에서 약했던 부분("조건부 찬성" 다수)을 강한 accept/reject로 재정렬.
+
+---
+
+## §A. 상태 대시보드
+
+| Phase | 상태 | 시작일 | 완료일 | 마지막 커밋 | 비고 |
+|---|---|---|---|---|---|
+| 0a — 계측 이벤트 정의 | 🔄 진행 중 | 2026-05-17 | — | — | analytics.ts L15-22 console.log 상태. sticky/featured/destination/match-visible/intent-focus/style-chip 와이어링 + 시즌 칩은 메서드만 정의 (Phase C 와이어링) |
+| 0b — provider 연결 + baseline | ⏸ 보류 | — | — | — | provider 미결정 (별도 트랙) |
+| 0c — 모바일 fold 실측 | ⏳ 대기 | — | — | — | 0a와 병렬 가능 |
+| B — 가장 안전한 전환 개선 | ⏳ 대기 | — | — | — | 0a 완료 후 시작 |
+| C — 상호작용 강화 | ⏳ 대기 | — | — | — | B 완료 후 |
+| D — 실험 (in-place + bottom-sheet + Sticky threshold A/B) | ⏳ 대기 | — | — | — | 0b baseline 후만 측정 의미 |
+| E — 시각 정체성 확장 | ⏳ 대기 | — | — | — | 마지막 |
+
+상태 마커:
+- ⏳ 대기 (아직 시작 안 함)
+- 🔄 진행 중
+- ⏸ 보류 (의존성 미해소)
+- ✅ 완료
+- ❌ 중단/롤백
+
+**현재 활성 Phase: 0a (계측 이벤트 정의).**
+**다음 액션: analytics.ts 이벤트 7종 + 호출부 와이어링 + taxonomy doc.**
+
+---
+
+## §B. 결정 로그
+
+각 행은 binding decision. 번복 시 새 행으로 추가 (삭제 금지, 이력 보존).
+
+| 날짜 | 결정 | 이유 | 번복 |
+|---|---|---|---|
+| 2026-05-17 | v2 폐기, v3가 유일한 표준 실행 기준 | v2 사실 오류 2건 + 시니어 통찰 11건 누락 | — |
+| 2026-05-17 | idle preview는 단일 카드 금지, 2-3장 cycling 또는 stacked carousel | 단일 카드는 매칭 가변성 시그널 못 전달 | — |
+| 2026-05-17 | 매처 CTA 카피 "최적 매치 보기" → "맞춤 추천 받기" | expectation inflation 회피 | — |
+| 2026-05-17 | StickyHomeCta는 신규 구현 아님 (이미 게이팅됨). Phase B는 QA only, threshold 변경은 Phase D.3 A/B | 코드 실측 `StickyHomeCta.tsx:31-57` | — |
+| 2026-05-17 | Phase 0를 0a (정의) + 0b (baseline) + 0c (모바일 fold 실측) 분해 | analytics provider 미연결 (`analytics.ts:18-21`) | — |
+| 2026-05-17 | A/B variant는 Phase 0b baseline 확보 후만 시작 | baseline 없이 카피 변경 시 회귀 발견 불가 | — |
+| 2026-05-17 | 모바일 결과 = bottom-sheet (Phase D.2), 데스크톱 = in-place morphing (Phase D.1) 분리 | 모바일 레이아웃 흔들림 vs 데스크톱 single-surface 서사 | — |
+| 2026-05-17 | amber eyebrow 유지, Process 다크 섹션 라이트화 금지 | 사용자 명시 피드백 (premium > 절제) | — |
+| 2026-05-17 | 새 라이브러리 도입 금지 (carousel, bottom-sheet 모두 framer-motion 내) | 성능·번들 비용 | — |
+| 2026-05-17 | 가짜 추천 예시 카드 금지, 실제 Featured 데이터 재사용 | 신뢰 자산 보호 + 콘텐츠 관리 비용 ↓ | — |
+| 2026-05-17 | H1 즉시 교체 금지, A/B로만 측정 | 브랜드 보이스 손실 위험 | — |
+| 2026-05-17 | reason chips는 상품 메타 동적 데이터 (`tour.tags` / `tour.highlights`), 정적 카피 금지 | 상품 회전 시 미스매치 방지 | — |
+| 2026-05-17 | Trust 행 플랫폼명 (Klook · GetYourGuide · Viator) 무조건 유지, 라벨만 한글화 | 브랜드 신뢰 자산 | — |
+
+---
+
+## §C. 변경 로그
+
+Phase 진행 시 한 줄씩 추가. 커밋 단위.
+
+| 날짜 | 항목 | 커밋 | 비고 |
+|---|---|---|---|
+| 2026-05-17 | v3 마스터 플랜 작성 | (pending) | `docs/landing-page-uiux-master-plan-v3-2026-05-17.md` |
+| 2026-05-17 | v3에 §A-§D 트래킹 섹션 추가 + 스킬 등록 | (pending) | `.claude/skills/landing-page-uiux/SKILL.md` |
+| 2026-05-17 | Phase 0a 시작 — 이벤트 7종 정의 + 호출부 와이어링 | (pending) | sticky/featured/destination/match-visible/intent-focus/style-chip; 시즌 칩은 메서드만 정의 (Phase C 와이어링) |
+
+---
+
+## §D. 보류 아이디어 (Scope Creep Registry)
+
+Phase 안에 없지만 좋은 아이디어. Phase 끝나기 전엔 손대지 말 것. 추가 시 출처 + 보류 이유 명시.
+
+| 아이디어 | 출처 | 보류 이유 |
+|---|---|---|
+| 매처 결과 카드에 "비슷한 투어" 추천 줄 추가 | 일반 패턴 | Phase D 후만 의미 있음 |
+| 시즌 칩 외 "요일별 추천" 칩 추가 | 일반 패턴 | Phase C 완료 후 효과 검증 후 |
+| Trust 행에 실시간 예약 카운터 ("오늘 23명 예약") | — | 실시간 데이터 인프라 비용 검토 필요 |
+| BestMatchPreview를 다중 후보 비교 영역으로 재정의 | Phase D.1 부산물 | Phase D.1 결과 따라 결정 |
+| 매처 입력 음성 입력 | — | 우선순위 매우 낮음 |
+| 매처 결과 PDF/이미지 공유 기능 | — | 마케팅 가치 미검증 |
+
+---
+
+## 1. 한 줄 결론
+
+> **랜딩의 진짜 문제는 "기능 부족"이 아니라 "약속과 증명의 시차" + "매칭 가변성 시그널의 부재"다.** 매처는 약속만 하고, 증명은 빈 영역과 분기 카드 뒤에 있으며, 이마저도 "결과가 어떻게 다양해질 수 있는가"를 못 보여준다. 카피·디자인 리뉴얼이 아니라 **(a) 섹션 순서 + (b) idle preview 가변성 + (c) 계측 인프라** 세 가지가 핵심.
+
+---
+
+## 2. 코드 실사 스냅샷 (사실 검증 완료)
+
+### 2.1 히어로 — 이미 정교함
+
+`components/home/v2/sections/hero-section.tsx` (실측):
+
+- 스크롤 패럴럭스 + 다크닝 핸드오프 (`photoY` · `darkenOpacity` · `headlineY` · `headlineOpacity`)
+- Ken Burns 자동 줌 (20s ease-in-out alternate)
+- 시즌 칩 (월 기반 자동 회전, 표시 전용)
+- H1 + 서브카피 + radial-gradient 배경 패널 (L179-L224)
+- Trust 3-stat 행 — **`4.9★ · 100K+ bookings · 8 platforms` + 플랫폼명 `Klook · GetYourGuide · Viator`** (L240-L258, 라인 256에 플랫폼명 명시)
+- 매처 eyebrow + 매처 헤드라인 + 매처 서브라인 (L266-L275, 카드 위 3단 헤더)
+- 매처 카드 (L278-L401): destination 라디오그룹 + expandable intent textarea + style chips + primary CTA + microcopy
+- `prefers-reduced-motion` 대응 완비
+
+### 2.2 BestMatchPreview — idle에서 null
+
+`components/home/v2/DeferredBestMatchPreview.tsx:17` — `phase === "idle"`이면 `null`. 입력 전엔 영역 자체가 없음.
+
+dynamic + `ssr: false` (L6-L12) — 의도된 LCP 최적화.
+
+### 2.3 StickyHomeCta — **이미 게이팅됨** (v2 사실 오류 수정)
+
+`components/home/v2/StickyHomeCta.tsx` (실측):
+
+```ts
+// L31-L40
+const heroObs = new IntersectionObserver(
+  ([entry]) => {
+    const rect = entry.boundingClientRect;
+    setHeroOut(rect.bottom < 0);  // hero가 viewport 위로 완전히 지나갔을 때만 true
+  },
+  { threshold: 0 },
+);
+// L43-L48
+const footerObs = new IntersectionObserver(
+  ([entry]) => setFooterIn(entry.isIntersecting),
+  { threshold: 0.2 },
+);
+// L57
+const show = heroOut && !footerIn;
+```
+
++ AnimatePresence fade-in (L69-L99). reduced-motion 대응.
+
+**v2의 "Sticky 신규 게이팅 구현" 항목은 사실 오류. 이미 구현되어 있음. v3에서는 "노출 임계값 실험"으로 재정의.**
+
+### 2.4 analytics — **console.log 수준** (v2 사실 오류 수정)
+
+`src/design/analytics.ts:15-22` (실측):
+
+```ts
+export function trackEvent(event: string, payload: AnalyticsPayload = {}) {
+  const data = sanitizePayload(payload);
+  if (typeof window !== "undefined") {
+    console.log("[analytics]", event, data);
+    // replace later with actual analytics provider
+  }
+}
+```
+
+실제 provider 미연결. "1일 baseline 수집" 직접 불가능. **v3에서는 Phase 0를 0a(정의+provider 결정) + 0b(연결 후 baseline)로 분해.**
+
+### 2.5 섹션 순서
+
+`components/home/v2/HomeV2Page.tsx:25-33`:
+
+```
+Hero → DeferredBestMatchPreview → Destinations → Style → Featured → Why → Process → FinalCTA
+```
+
+매처 약속 → null 영역 → 지역 분기 → 스타일 분기 → 실제 상품. 모멘텀 손실.
+
+### 2.6 모바일 first-screen fold — **측정 필요 (Phase 0a에 포함)**
+
+390x844 (iPhone 14)에서:
+- 히어로 패널 `min-h-[44vh]` = ~371px
+- 그 아래 Trust strip + 매처 헤더 3단 + 매처 카드 = ~473px 안에 들어가야 함
+- 매처 카드 자체 (destination row + textarea + style chips + CTA + microcopy)가 ~340px 추정
+
+→ Trust strip (~80px) + 매처 헤더 3단 (~60px) + 매처 카드 상단 (~340px) ≈ 480px. **fold 직전에 매처 CTA가 살짝 잘릴 위험** 있음. Phase 0a에서 실측 후 §3 진단 보강.
+
+---
+
+## 3. 핵심 진단
+
+### P0-A. 약속-증명 시차
+
+매처는 "30초 안에 맞는 투어가 뜬다"고 약속하지만:
+- 입력 전: 결과 영역 **물리적으로 존재 안 함** (`null` 리턴)
+- 실제 상품 카드(`Featured`)는 4번째 섹션
+- 그 사이에 지역 + 스타일 = 2단계 분기
+
+→ 사용자는 약속 직후 "결과가 어떻게 생겼는가"를 못 봄.
+
+### P0-B. **매칭 가변성 시그널 부재 (v3 신규)**
+
+가설적 idle preview를 1장만 박으면 "이게 추천돼요"로 읽힘. 사용자는:
+- "내 입력에 따라 결과가 어떻게 달라지나?"
+- "정말 매처가 작동하나, 아니면 그냥 같은 상품 보여주나?"
+
+이 질문에 답이 없으면 매처 입력 동기 자체가 약화. **단일 카드 idle preview는 약속-증명 시차를 메우지만 가변성 시그널은 못 채움.** 이 부분은 Codex 리뷰가 못 봄.
+
+처방: idle preview는 **2-3장 cycling** 또는 **3장 stacked carousel**. 각각 다른 destination/style/season 조합으로.
+
+### P0-C. 포지셔닝 두 갈래 → 카드 위 헤더에서 중복
+
+- H1 "당신의 한국 하루, 직접 선별." = 큐레이션 약속
+- 서브카피 "스타일만 알려주세요 - 맞는 투어가 30초 안에 떠요." = 매칭 약속
+- 매처 eyebrow + headline + subline (`hero-section.tsx:266-275`) = **또 한 번 매칭 약속 반복**
+
+H1+서브카피가 이미 시 + 약속 조합을 완결시키는데, 매처 카드 위에 또 3단 헤더 = **메시지 중복 + 시선 분산.** 슬림화 대상.
+
+### P0-D. CTA 계층 (Codex 수정 반영)
+
+primary 무게 surface 6-7개. 단, **StickyHomeCta는 이미 게이팅되어 히어로 단계에서 안 보임**. 따라서 "첫 화면 경쟁"이 아니라 "스크롤 이후 단계에서의 source 분배" 문제로 재정의.
+
+남은 진짜 문제:
+- Destinations / Style / Featured 카드가 동시에 primary 시각 무게 가짐
+- FinalCTA + Sticky가 페이지 하단에서 동시 시야
+
+### P1-A. 매처 결과가 새 섹션으로 점프
+
+CTA 클릭 → 페이지 스크롤이 BestMatchPreview로. 매처 카드는 위, 포커스는 아래. 한 카드 안에서 결과 보는 강한 서사 깨짐.
+
+### P1-B. 시즌 칩이 표시 전용
+
+월 기반 자동 회전만. 인터랙티브 진입점 비활성. 입력 마찰 줄일 자연스러운 한 클릭이 죽어 있음.
+
+**단, 인터랙티브화 시 두 가지 위험 (Codex + v3 결합):**
+1. **affordance 강도** — 버튼처럼 보이면 사용자가 "여기 뭐가 일어나지?" 혼란. (Codex)
+2. **주입 phrase 길이** — "벚꽃 시즌 분위기로" 너무 김. 사용자 추가 입력 어색. (v3 self-review)
+
+→ 처방: 짧은 phrase ("벚꽃 시즌") + 약한 affordance (호버 시만 인디케이터) + 클릭 시 명시 피드백 (intent 입력란 글로우).
+
+### P1-C. 매처 CTA "최적 매치 보기"의 expectation inflation (v3 신규)
+
+"최적"이 약속 무게 큼. 실제 결과가 best가 아닐 때 (실제로 매칭 엔진은 score 기반 — best 보장 안 함) 실망. "맞춤 추천 받기" / "내 투어 찾기"가 부담 작음. 이 부분 Codex 리뷰 못 봄.
+
+### P1-D. 모션 정체성 단절
+
+히어로 = cinematic (parallax + Ken Burns + scroll darken). Destinations / Featured / Style = static cards. "프리미엄 도구" vs "범용 OTA"로 둘로 갈림.
+
+### P2-A. Trust 신호 밀도
+
+`4.9 · 100K+ · 8 platforms · Klook · GetYourGuide · Viator` — 텍스트만. 회색조 OTA 로고로 신호 밀도 ↑. 단 라이선스 확인 필요.
+
+### P2-B. 계측 공백 (Codex 수정 반영)
+
+provider 미연결 = **현재 측정 불가능**. v2의 "1일 baseline" 거짓. Phase 0를 두 단계로 분해해야 정직.
+
+### P2-C. 모바일 결과 인터랙션 (v3 신규)
+
+모바일에서 CTA 클릭 후 스크롤 점프는 컨텍스트 손실. **bottom-sheet 슬라이드업**이 모바일 네이티브 패턴. Phase D에 in-place morphing과 별도 트랙으로 둠. Codex 리뷰 못 봄.
+
+---
+
+## 4. 결정 매트릭스 — 강한 분포
+
+v2가 "조건부 찬성" 일색이었던 걸 강한 accept/reject로 재정렬.
+
+### Accept (즉시 실행, 단서 없음)
+
+| 항목 | 위치 | 추정 LOC |
+|---|---|---|
+| Featured ↔ Destinations 순서 swap | `HomeV2Page.tsx:25-33` | 2줄 |
+| 매처 헤더 3단 → 1단 슬림화 | `hero-section.tsx:266-275` | ~10줄 |
+| Trust 라벨 한글화 (플랫폼명 유지) | `hero-section.tsx:240-258` + i18n | ~15줄 |
+| 계측 이벤트 7종 정의 (provider 결정과 분리) | `src/design/analytics.ts` | ~80줄 |
+
+### Accept with Specific Design (수용, 단 구체 설계 명시)
+
+| 항목 | 구체 설계 |
+|---|---|
+| Idle preview | **단일 카드 아님. 2-3장 cycling** (5초 간격 fade) 또는 가로 stacked carousel. 실제 Featured 데이터 재사용 (`getFeaturedJoinTourProduct` 등). reason chips는 상품 메타에서 동적 |
+| 시즌 칩 인터랙티브 | 짧은 phrase (`벚꽃 시즌`) + 약한 affordance + 클릭 시 intent 글로우 피드백 + aria-label |
+| 매처 CTA 카피 | "최적 매치 보기" → "맞춤 추천 받기" (expectation inflation 회피) |
+| `StickyHomeCta` 노출 threshold 실험 | 현재 `rect.bottom < 0` (100% out) vs `rect.bottom < viewport*0.5` (50% out). A/B로만, 즉시 변경 금지 |
+
+### Reject (실행 안 함)
+
+| 항목 | 이유 |
+|---|---|
+| H1 즉시 기능형 교체 | 브랜드 보이스 손실. A/B로만 측정 |
+| 매처 카드 첫 화면 압축 | Phase 0a fold 실측 후 결정. 측정 없이 자르지 말 것 |
+| amber eyebrow 뮤트 / Process 다크 라이트화 | 사용자 명시 피드백 |
+| 새 배경비디오 / 라이브러리 / 캐러셀 (idle preview용은 inline JS로 처리) | 성능·번들 비용 |
+| 가짜 "추천 예시" 상품 카드 (제주 동부 자연 코스 등) | 실제 Featured 재사용으로 가짜 자산 회피 |
+| `console.log` 기반 baseline 수집 | 실측 불가능. provider 결정 후로 미룸 |
+| StickyHomeCta 게이팅 "신규 구현" | 이미 구현됨 (v2 사실 오류) |
+| in-place result morphing 즉시 적용 | Phase D A/B로만. Phase B에 절대 섞지 말 것 |
+
+### Defer / Investigate (조건부 — 결정 미룸)
+
+| 항목 | 결정 조건 |
+|---|---|
+| OTA 로고 strip | 라이선스 확인 결과 |
+| Trust strip 한글화 영어 locale 처리 | i18n 리소스 검토 후 |
+| Phase 0b baseline 기간 | provider 결정 후 트래픽 볼륨 따라 1-2주 결정 |
+
+---
+
+## 5. Phase별 실행 계획
+
+v2의 Day 0-9 일정을 분해. 각 Phase는 **독립 PR**로 분리. Phase 간 베이스라인 비교 가능하게.
+
+### Phase 0a — 계측 인프라 정의 (1일)
+
+목표: **provider 미연결 상태를 인정하고**, 그 위에서 할 수 있는 일만 한다.
+
+작업:
+
+1. 신규 이벤트 7종 정의 (`src/design/analytics.ts`):
+   - `home_hero_intent_focus` — intent textarea 첫 포커스
+   - `home_hero_style_chip_click` — `{ chipId: string }`
+   - `home_hero_season_chip_click` — `{ season: string }` (Phase C 의존)
+   - `home_sticky_cta_click` — 기존 `home_cta_click`과 source로 통합 결정
+   - `home_match_preview_visible` — IntersectionObserver, idle/loading/success 구분
+   - `home_featured_card_click` — `{ source: "idle_preview" | "regular_section", slug: string }`
+   - `home_destination_card_click` — `{ destination: string }`
+
+2. payload sanitization 확인 — **intent textarea 전문 절대 안 보냄**. 길이/언어만 (PII 보호).
+
+3. `home_cta_click`과 신규 이벤트 충돌 방지 — source enum 통합 vs 별도 이벤트 결정.
+
+4. **provider 결정 issue 별도 생성** — Mixpanel / GA4 / PostHog / Vercel Analytics 후보 검토. v3 범위 밖 (별도 의사결정).
+
+산출물:
+- 이벤트 taxonomy 문서 (`docs/analytics-events-home.md`)
+- analytics.ts 변경 PR (console.log 유지하되 호출부는 다 연결)
+
+검증: 콘솔에서 이벤트 발화 7종 모두 확인.
+
+### Phase 0b — provider 연결 + baseline (provider 결정 후 1-2주)
+
+**Phase 0a 끝난 뒤 별도 의사결정 후 시작.** Phase 1과 비동기.
+
+작업:
+- 결정된 provider SDK 도입
+- `trackEvent` 본문 교체
+- 1-2주 baseline 수집
+- 7개 이벤트 평일/주말 노이즈 포함 평균 기록
+
+이 단계 완료 후에만 Phase 2의 카피/순서 변경 "성과"를 정량 평가 가능.
+
+### Phase 0c — 모바일 fold 실측 (0.5일, Phase 0a와 병렬)
+
+목표: §2.6의 추정치를 실측으로 대체.
+
+작업:
+1. preview_start로 dev 띄우기
+2. 390x844 / 430x932 viewport에서 스크린샷
+3. 매처 CTA가 fold 위/아래/걸침 확인
+4. 결과를 §2.6에 박아넣고 P0 진단 보강
+
+만약 CTA가 fold 아래라면:
+- Trust strip 컴팩트화 OR
+- 매처 헤더 3단 → 1단 슬림화 (이미 Phase B 항목)로 회수
+
+### Phase B — 가장 안전한 전환 개선 (1-2일)
+
+가장 ROI 높고 위험 가장 낮음. 백엔드 무변경. Phase 0a 완료 후 즉시.
+
+#### B.1 섹션 순서 swap
+
+`HomeV2Page.tsx:25-33`:
+
+```tsx
+<HeroSection />
+<DeferredBestMatchPreview />
+<FeaturedProductsShowcase />   // ↑ Destinations 앞으로
+<DestinationsShowcase />        // ↓ Featured 뒤로
+<ChooseTravelStyle />
+<WhyAtockorea />
+<ProcessOperational />
+<FinalCTA />
+```
+
+#### B.2 DeferredBestMatchPreview idle preview — **cycling 카드 2-3장**
+
+`DeferredBestMatchPreview.tsx` 리팩토:
+
+```tsx
+"use client";
+import dynamic from "next/dynamic";
+import { useHomeV2Match } from "@/components/home/v2/HomeV2MatchProvider";
+import { IdleMatchPreviewCarousel } from "./IdleMatchPreviewCarousel"; // 정적 import
+
+const BestMatchPreview = dynamic(/* ... */, { ssr: false });
+
+export function DeferredBestMatchPreview() {
+  const { phase } = useHomeV2Match();
+  if (phase === "idle") return <IdleMatchPreviewCarousel />;
+  return <BestMatchPreview />;
+}
+```
+
+`IdleMatchPreviewCarousel.tsx` (신규):
+- 3장 cycling (5초 fade 또는 가로 stacked)
+- 각각 다른 destination/style/season 조합 — Featured 슬롯에서 가져옴
+- 라벨: "이런 식으로 추천돼요"
+- reason chips는 상품 메타에서 동적 (`tour.tags` 또는 `tour.highlights` 활용)
+- 이미지 `next/image` priority 안 줌, `loading="lazy"`
+- 모션: `useScroll` 안 씀. 단순 setInterval 또는 framer-motion variants
+- 클릭 시 실제 상품 페이지 이동 + analytics `{ source: "idle_preview" }`
+
+성능 가드:
+- 정적 import이지만 carousel 자체는 마운트 후 그림
+- 위치는 히어로 직하지만 LCP 영역 아님 (fold 아래)
+
+#### B.3 매처 헤더 3단 슬림화
+
+`hero-section.tsx:266-275`를 다음으로 축소:
+
+```tsx
+<div className="mx-auto mb-3 max-w-lg px-1 text-center md:mb-4">
+  <span className="text-eyebrow">{t("premium.v2.hero.matcherEyebrow")}</span>
+</div>
+```
+
+- eyebrow는 짧은 amber 라벨 유지 ("Smart Match" 또는 "맞춤 매칭")
+- matcherHeadline, matcherSubline 제거 (H1 + 서브카피와 중복)
+
+#### B.4 Trust 라벨 한글화 (한국어 locale only)
+
+i18n 리소스에서 `ko` 번들만:
+
+```
+4.9★ avg. rating       → 4.9★ 평균 평점
+100K+ bookings         → 100K+ 누적 예약
+8 platforms · Klook... → 8개 플랫폼 운영 · Klook · GetYourGuide · Viator
+```
+
+**플랫폼명 반드시 유지.** 영어 locale은 변경 없음.
+
+#### B.5 매처 CTA 카피 변경
+
+i18n `premium.hero.findMatchCta`:
+- 현재: "최적 매치 보기" / "Find My Best Match"
+- 변경: "맞춤 추천 받기" / "Get My Recommendation"
+
+이유: expectation inflation 회피. "최적"/"Best"가 실제 매칭 score 한계 넘는 약속.
+
+**A/B 옵션:** Phase 0b baseline 후 두 카피 비교 측정.
+
+#### B.6 StickyHomeCta QA (신규 구현 아님)
+
+`StickyHomeCta.tsx` 현재 동작 확인만:
+- 데스크톱 1440px / 모바일 390px 모두 히어로 단계 미노출 확인
+- 스크롤 후 정상 노출
+- FinalCTA 진입 시 사라짐
+- focus order / reduced-motion 동작
+
+**현재 threshold (`rect.bottom < 0`) vs 50% 변경 비교**는 Phase D 실험으로 분리.
+
+### Phase C — 상호작용 강화 (1-2일)
+
+Phase B 완료 후. 사용자 입력 진입 마찰 감소.
+
+#### C.1 시즌 칩 인터랙티브화
+
+`hero-section.tsx:188-197`에 onClick 추가:
+
+설계:
+- 칩을 `<button>`으로 (현재 `<div>`)
+- 약한 affordance — 호버 시만 ring 강도 ↑, 기본 상태에서 버튼 인상 안 줌
+- 클릭 시 `appendIntentPhraseToIntentField`로 짧은 phrase 주입:
+  - spring → `벚꽃 시즌` (영어 `cherry blossom season`)
+  - summer → `여름 시원하게` (영어 `cool summer`)
+  - autumn → `단풍 시즌` (영어 `autumn foliage`)
+  - winter → `겨울 야경` (영어 `winter night views`)
+- 클릭 후 intent textarea에 200ms glow ring (피드백)
+- aria-label: `"시즌 키워드 '벚꽃 시즌' 추가"`
+- 키보드 Enter/Space 동작 보장
+- analytics: `home_hero_season_chip_click({ season })`
+
+위험 가드:
+- 자동 포커스 이동 금지 (사용자 흐름 방해)
+- 자동 스크롤 금지
+
+#### C.2 reason chips 동적 데이터 연결
+
+`BestMatchPreview` 결과 카드에 reason chips 1줄 추가. 매칭 엔진의 `matchResult.reasons` 또는 상품 메타 (`tour.tags` / `tour.highlights`)에서 가져옴.
+
+idle preview의 reason chips도 같은 데이터 소스 — 정적 카피 만들지 말 것.
+
+### Phase D — 실험성 높은 제품 경험 (3-5일, A/B 필수)
+
+Phase B/C 안정화 후. 위험·보상 큼.
+
+#### D.1 in-place 매처 결과 morphing (데스크톱)
+
+설계:
+- 매처 카드 컨테이너에 framer-motion `LayoutGroup` + `motion.div layout`
+- phase=loading → 카드 내부 스켈레톤 (높이 자연 변형)
+- phase=success → 결과 (이미지 + 타이틀 + reason chips + secondary CTA "전체 보기") in-place 교체
+- 기존 `BestMatchPreview` 섹션은 "비교용 다중 후보" 영역으로 역할 재정의
+
+위험:
+- 카드 높이 변화로 모바일 레이아웃 흔들림 → **모바일은 D.2 패턴 사용, in-place는 데스크톱만**
+- "다시 수정" 흐름 복잡화 → 결과 카드 안에 "다시 매칭" 버튼 명시
+- framer-motion layout animation 성능 부담 → reduced-motion에서는 즉시 교체
+
+A/B:
+- A: 기존 점프 동작
+- B: in-place morphing (데스크톱) + bottom-sheet (모바일)
+- 측정: 매처 완료율, 결과 카드 클릭률, bounce rate
+
+#### D.2 모바일 bottom-sheet 결과 (v3 신규, Codex 못 본 패턴)
+
+설계:
+- 모바일 vw < 768px에서 CTA 클릭 시 페이지 스크롤 대신 bottom-sheet 슬라이드업
+- sheet 높이 70vh (handle bar로 dragable)
+- sheet 내부: BestMatchPreview 결과 카드 + reason + CTA
+- swipe down 또는 outside tap 닫힘
+- focus trap + escape key 대응
+
+이유: 모바일 네이티브 패턴. 매처 컨텍스트 (입력 카드) 위에 결과가 떠서, 사용자가 결과 보면서 "다시 입력 수정"으로 돌아가기 쉬움.
+
+라이브러리: framer-motion에 이미 dragable + AnimatePresence. **새 라이브러리 도입 금지** 가드 준수.
+
+A/B:
+- A: 기존 점프
+- B: bottom-sheet
+
+#### D.3 StickyHomeCta 노출 threshold A/B
+
+- A: 현재 `rect.bottom < 0` (히어로 100% out)
+- B: `rect.bottom < viewport*0.5` (히어로 50% out, Codex 제안)
+- 측정: sticky 클릭률, hero CTA 클릭률, 모두 합산한 매처 완료율
+
+### Phase E — 시각 정체성 확장 (2-3일)
+
+Phase D 후. 가장 낮은 우선순위. 측정으로 가치 입증된 뒤만.
+
+#### E.1 공통 scroll-reveal 모션 통일
+
+목표: 히어로 cinematic 톤이 Destinations / Featured / Style / Why / Process 진입까지 이어짐.
+
+**구체 값 (v2가 빠뜨린 부분):**
+- 패턴: framer-motion variants (useScroll 안 씀 — 성능 보호)
+- threshold: `IntersectionObserver` 15% (`useInView` `amount: 0.15`)
+- initial: `{ opacity: 0, y: 16 }`
+- animate: `{ opacity: 1, y: 0 }`
+- transition: `{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }` (히어로 sticky CTA와 동일 easing)
+- stagger (자식 카드): `0.08s` interval
+- `prefers-reduced-motion`: 즉시 `opacity: 1, y: 0` (애니메이션 0ms)
+
+피해야 할 것:
+- `useScroll` 추가 (히어로에 이미 사용 중. 추가 useScroll은 성능 부담)
+- 회전, scale, 튀어오름
+- 1초 이상 지연
+
+#### E.2 OTA 로고 strip (조건부)
+
+라이선스 확인 후만. 텍스트 `Klook · GetYourGuide · Viator`를 회색조 SVG 로고 4-6개로.
+
+- 모두 회색조 `#9ca3af` 톤
+- 모바일 2줄 또는 슬라이드
+- alt 텍스트 명기
+- contrast ratio 4.5:1 이상 (회색조 톤이 약하면 darker로 조정)
+
+라이선스 미확보 시 Phase E.2 스킵, 텍스트 유지.
+
+---
+
+## 6. 컴포넌트별 변경 요약
+
+### `components/home/v2/sections/hero-section.tsx`
+
+- [ ] **Phase B.3**: matcher 헤더 3단 → eyebrow 1단
+- [ ] **Phase B.4**: Trust 라벨 한글화 (i18n)
+- [ ] **Phase B.5**: 매처 CTA 카피 변경 (i18n)
+- [ ] **Phase C.1**: 시즌 칩 button 변환 + phrase 주입 + 피드백
+- [ ] **Phase D.1**: LayoutGroup wrap (in-place result 준비)
+- [ ] **Phase D.3**: data attribute 또는 prop 노출 (Sticky threshold 실험용)
+- **유지**: parallax, Ken Burns, scroll darken, 사진 비중, 모션 토큰
+
+### `components/home/v2/DeferredBestMatchPreview.tsx`
+
+- [ ] **Phase B.2**: idle 분기 → `IdleMatchPreviewCarousel` (신규 정적 컴포넌트)
+- [ ] dynamic + ssr:false 유지 (성공 결과만)
+
+### `components/home/v2/IdleMatchPreviewCarousel.tsx` (신규)
+
+- [ ] **Phase B.2**: 2-3장 cycling carousel
+- [ ] 실제 Featured 데이터 재사용 (정적 catalog 우선)
+- [ ] reason chips 동적 (Phase C.2)
+- [ ] LCP 영향 없음 — lazy image, priority 안 줌
+
+### `components/home/v2/sections/best-match-preview.tsx`
+
+- [ ] **Phase C.2**: reason chips 1줄 UI 추가
+- [ ] **Phase D.1**: 데스크톱에서 in-place morphing 대상 (또는 비교 영역 재정의)
+- [ ] **Phase D.2**: 모바일 bottom-sheet 컨테이너로 wrap
+
+### `components/home/v2/HomeV2Page.tsx`
+
+- [ ] **Phase B.1**: Featured ↔ Destinations 순서 swap (2줄)
+
+### `components/home/v2/StickyHomeCta.tsx`
+
+- [ ] **Phase B.6**: QA only — 신규 구현 없음
+- [ ] **Phase D.3**: threshold 실험 (A/B variant 지원)
+
+### `components/home/v2/HomeV2MatchProvider.tsx`
+
+- [ ] **Phase D.2**: 모바일 bottom-sheet 상태 추가 (`sheetOpen` 등)
+- [ ] **Phase C.2**: reason chips 데이터 전달
+
+### Destinations / Featured / Style 섹션
+
+- [ ] **Phase E.1**: scroll-reveal variants 적용 (구체 값 위 참조)
+- 외 변경 없음
+
+### `src/design/analytics.ts`
+
+- [ ] **Phase 0a**: 이벤트 7종 정의
+- [ ] **Phase 0b**: provider SDK 연결 (별도 의사결정 후)
+
+---
+
+## 7. 카피 가이드
+
+### 원칙
+
+1. **H1은 브랜드 시. 약속은 서브카피.**
+2. **CTA는 동사 + 부담 작은 단어.** "Best/최적" 금지. expectation inflation 회피.
+3. **Trust는 숫자 + 한국어 명사 + 플랫폼명 살리기.**
+4. **eyebrow는 짧고 amber 톤 유지.**
+5. **매처 카드 위 카피는 H1/서브카피와 중복 금지.**
+
+### 현재 H1 유지 (권장 기본)
+
+```
+H1: 당신의 한국 하루, 직접 선별.
+Sub: 스타일만 알려주세요 - 맞는 투어가 30초 안에 떠요.
+CTA: 맞춤 추천 받기  ← (B.5에서 변경)
+```
+
+### A/B 후보 (Phase 0b 후 측정)
+
+v2는 B/C가 너무 비슷한 기능형 두 개였음. v3는 더 도발적 후보 추가.
+
+```
+[A · 현재] 당신의 한국 하루, 직접 선별.
+[B · 기능형] 한국 투어, 많이 찾지 말고 맞게 고르세요.
+[C · 후기 인용] "30분 만에 제주 일정 완성됐어요." — 김O O, 2025
+[D · 결과 미리보기 inline] 당신의 한국 하루, [제주 동부 자연 코스]처럼.
+```
+
+운영 기준: baseline 대비 매처 완료율 **+10% 이상 + 5일 이상 지속**에서만 채택. p-value 0.05 이하.
+
+### eyebrow
+
+- 한국어 locale: `맞춤 매칭`
+- 영어 locale: `Smart Match`
+- amber 톤 유지 (사용자 피드백 가드)
+
+### CTA
+
+- 1차 (히어로): `맞춤 추천 받기` / `Get My Recommendation`
+- 2차 (Sticky): `지금 매칭 시작` / `Start Matching Now` — 의미 살짝 다르게
+- Final CTA: `내 투어 찾기` / `Find My Tour`
+
+### Trust 행 (한국어 locale)
+
+```
+4.9★ 평균 평점
+100K+ 누적 예약
+8개 플랫폼 운영 · Klook · GetYourGuide · Viator
+```
+
+영어 locale: 기존 영문 유지.
+
+### 시즌 칩 phrase (짧게)
+
+- spring → `벚꽃 시즌` / `cherry blossom`
+- summer → `여름 시원하게` / `cool summer`
+- autumn → `단풍 시즌` / `autumn foliage`
+- winter → `겨울 야경` / `winter night views`
+
+### idle preview 라벨
+
+- 한국어: `이런 식으로 추천돼요`
+- 영어: `Here's what your match might look like`
+
+---
+
+## 8. 모션 & 시각 정체성 — 구체 값
+
+### 유지
+
+- 히어로 패럴럭스 + Ken Burns + scroll darken
+- 시즌 칩 (Phase C에서 interactive로 업그레이드)
+- radial-gradient 헤드라인 패널
+- amber eyebrow (사용자 피드백)
+- Process 다크 섹션 (사용자 피드백)
+- 카드 그림자/라운드/타이포 스케일
+
+### 추가 — 구체 값 명시
+
+#### scroll-reveal (Phase E.1)
+
+```ts
+const revealVariants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+const containerVariants = {
+  visible: {
+    transition: { staggerChildren: 0.08 },
+  },
+};
+```
+
+- `useInView({ amount: 0.15, once: true })`
+- reduced-motion: variants 무시, 즉시 visible
+
+#### Idle preview carousel (Phase B.2)
+
+```ts
+const fadeInterval = 5000; // 5s per card
+const fadeDuration = 600;  // 600ms crossfade
+const cards = 3;           // 2-3장
+```
+
+- reduced-motion: cycling 일시 정지, 첫 카드만 표시 + dot navigation 노출
+
+#### Sticky CTA fade (이미 구현, Phase D.3 실험만)
+
+```ts
+// 현재 유지
+initial: { y: 64, opacity: 0 }
+animate: { y: 0, opacity: 1 }
+transition: { duration: 0.34, ease: [0.22, 1, 0.36, 1] }
+```
+
+### 금지
+
+- 새 useScroll 추가 (히어로 외)
+- 새 라이브러리 / 캐러셀 / 슬라이더
+- 회전, 튀어오름, 과한 scale
+- 카드 안 카드 중첩
+- 새 배경 비디오
+- 텍스트 가독성 해치는 사진 합성
+
+---
+
+## 9. 성능 가드레일
+
+### 메트릭 임계값 (Phase별 회귀 판정)
+
+| 메트릭 | 절대 임계값 | Phase별 허용 변화 |
+|---|---|---|
+| LCP (모바일 4G) | < 2.5s | +50ms 이내 |
+| TBT | < 200ms | +30ms 이내 |
+| CLS | < 0.1 | +0.02 이내 |
+| Bundle (home route) | 측정 후 baseline | +5% 이내 |
+
+### 가드
+
+- 히어로 신규 대용량 이미지 금지
+- idle preview carousel: 정적 import이나 priority 안 줌, `loading="lazy"`
+- 첫 화면 위쪽 클라이언트 상태 추가 금지
+- 매칭 결과 미리보기는 기존 데이터 (`getFeaturedJoinTourProduct`) 재사용
+- 새 폰트, 새 CSS 라이브러리 금지
+- 추가 API 호출 없음 (Phase 0-C 범위)
+- Phase D.1 layout animation은 reduced-motion에서 비활성
+
+---
+
+## 10. 접근성 가드레일
+
+- 시즌 칩 button 변환 시 aria-label 명시 (`"시즌 키워드 '벚꽃 시즌' 추가"`)
+- 매처 결과 morphing 시 `aria-live="polite"` announcement
+- 모바일 bottom-sheet: focus trap + escape key + handle drag + aria-modal
+- StickyHomeCta 첫 활성 시 포커스 이동 금지
+- 모든 신규 인터랙션 키보드 Enter/Space 지원
+- `focus-ring` 토큰 유지
+- Trust 행 OTA 로고 회색조: contrast ratio 4.5:1 이상
+- idle preview carousel: dot navigation 키보드 접근 (←→ 화살표)
+- reduced-motion: cycling, parallax, scroll-reveal 모두 무력화
+
+---
+
+## 11. 롤백 트리거 (v3 신규)
+
+각 Phase 종료 후 다음 임계값 위반 시 **직전 Phase로 즉시 롤백**.
+
+| 트리거 | 임계값 | 조치 |
+|---|---|---|
+| LCP 회귀 | +50ms 이상 (5일 평균) | 해당 Phase 롤백 + 원인 분석 |
+| TBT 회귀 | +30ms 이상 (5일 평균) | 동일 |
+| CLS 회귀 | +0.02 이상 (5일 평균) | 동일 |
+| 매처 CTA 클릭률 | -5% 이상 (7일) | 카피/UI 변경 롤백 |
+| Featured 카드 클릭률 | -10% 이상 (7일) | 순서 변경 또는 idle preview 영향 분석 |
+| 에러율 | +1% 이상 | 즉시 hotfix 또는 롤백 |
+| 사용자 클레임 | 같은 패턴 3건 이상 (7일) | UX 변경 재검토 |
+
+베이스라인 없는 항목 (Phase 0b 미완료)은 정성 + 직관 판단. 단 결정 시 문서화.
+
+---
+
+## 12. 성공 기준 — 정직화
+
+### 정량 (Phase 0b baseline 확보 후 임계값 확정)
+
+v2의 "+15%/+20%/+25%"는 baseline 없이 만들어진 추측이었음. v3는 다음과 같이 정직화.
+
+**Phase 0b 완료 전 (현재 상태)**: 정성 + 직관 판단만 가능.
+
+**Phase 0b 완료 후 (목표 임계값 가설):**
+
+| 지표 | 가설 목표 (baseline 후 확정) |
+|---|---|
+| `home_hero_cta_click` rate | baseline +10% 이상 |
+| `home_hero_intent_focus` rate | baseline +15% 이상 |
+| `home_match_preview_visible` rate | baseline +20% 이상 |
+| `home_featured_card_click` (`source: idle_preview`) | 전체 featured 클릭의 5% 이상 흡수 |
+| 모바일 스크롤 깊이 (>= Featured) | baseline +10% 이상 |
+| LCP | 회귀 없음 (위 §9 임계값 준수) |
+
+**baseline 측정 전엔 위 숫자를 약속하지 않는다.** 가설로만 유지.
+
+### 정성
+
+- 첫 화면만 보고 "스타일 입력 → 추천 받는 서비스"라는 인지 즉시 성립
+- 매처 약속과 idle preview의 가변성이 같이 읽힘 ("진짜 다양한 결과가 나오겠구나")
+- 첫 클릭 망설임 없음 (히트맵)
+- 사진/신뢰/상품/매칭이 한 흐름
+- 브랜드 premium 톤 유지 — 절제 audit에 끌려가 평탄해지지 않음
+- 모바일에서 매처 컨텍스트 손실 없이 결과 확인 가능 (Phase D.2 후)
+
+---
+
+## 13. 안 할 일 / 안티패턴
+
+v2 + v3 자체 비평 통합.
+
+- 전체 디자인 시스템 교체
+- 컬러 팔레트 대규모 변경
+- 매칭 로직 변경
+- 새 DB 스키마 도입
+- 새 외부 UI 라이브러리 도입 (idle carousel, bottom-sheet 모두 framer-motion 내에서)
+- 랜딩을 설명형 긴 페이지로 변환
+- 인기 상품 카드 UI 자체 갈아엎기
+- amber eyebrow 뮤트
+- Process 다크 섹션 라이트화
+- 시 H1을 기능 설명서 H1으로 일괄 교체 (A/B 외)
+- baseline 없이 카피만 바꾸기
+- "추천 예시"용 가짜 상품 카드 만들기 (실제 Featured 재사용)
+- **idle preview 단일 카드** (가변성 시그널 부재 — v3 신규 가드)
+- **"최적/Best" 류 expectation 인플레이션 카피** (v3 신규 가드)
+- **StickyHomeCta 게이팅 "신규 구현"** 일감 생성 (이미 있음)
+- **provider 없이 "baseline 수집" 약속** (Codex 수정 반영)
+- 시즌 칩 강한 affordance + 긴 phrase 주입
+- Phase B와 Phase D 섞기 (어떤 변경이 성과 냈는지 못 가림)
+
+---
+
+## 14. 실행 순서 요약
+
+```
+Day 0-0.5   Phase 0a + 0c (계측 정의 + 모바일 fold 실측, 병렬)
+Day 0.5-2   Phase B (순서 swap + idle carousel + 헤더 슬림 + Trust + CTA 카피 + Sticky QA)
+                    ↓ Phase 0b는 provider 결정 의사결정 트랙으로 분리, 비동기 진행
+Day 3-4     Phase C (시즌 칩 인터랙티브 + reason chips 동적)
+Day 5-9     Phase D (in-place morphing A/B + 모바일 bottom-sheet A/B + Sticky threshold A/B)
+Day 10-12   Phase E (scroll-reveal 통일 + OTA 로고 strip 조건부)
+
+병렬 트랙   Phase 0b (provider 결정 → 연결 → 1-2주 baseline 수집)
+            Phase D는 Phase 0b baseline 확보 후만 측정 의미 있음 → 시기 조정
+```
+
+Phase 간 의존:
+- Phase 0a → Phase B 시작 가능
+- Phase 0c → Phase B의 매처 헤더 슬림화 영향 판단
+- Phase B → Phase C → Phase D 순서 고정
+- Phase D는 Phase 0b 완료 시점과 sync (측정 가능해야 의미)
+- Phase E는 마지막 (가장 낮은 우선순위)
+
+---
+
+## 15. 결정 사항 / 거버넌스
+
+1. **v3가 유일한 표준 실행 기준.** v2 폐기. v1 audit + v2 review는 입력 자료 보존.
+2. 각 Phase는 독립 PR. 한 PR에 여러 Phase 섞기 금지.
+3. Phase 0b provider 결정은 v3 범위 밖. 별도 의사결정 후 진행.
+4. 롤백 트리거 (§11) 위반 시 자동 롤백 + 원인 분석 문서화.
+5. A/B variant는 Phase 0b baseline 확보 후만 시작. baseline 없이 카피 변경 금지.
+6. v3 자체도 살아있는 문서. Phase 진행하며 새 사실/측정 결과 반영해 업데이트.
+
+---
+
+## 16. 다음 액션
+
+**즉시:**
+1. Phase 0a 시작 — `src/design/analytics.ts`에 이벤트 7종 정의 PR
+2. Phase 0c — preview_start로 dev 띄워서 390x844 fold 실측 (§2.6 보강)
+3. Phase 0b — provider 후보 4종 (Mixpanel/GA4/PostHog/Vercel) 비교 issue 별도 생성
+
+**Phase B 진입 조건:** 0a 완료 + 0c 측정값 §2.6에 반영.
+
+**v3 완성도 한계 인정:**
+- Phase 0b provider 결정 안 됨 (out of scope)
+- 모바일 fold 실측 안 됨 (Phase 0c에서 곧 측정)
+- A/B variant 통계 모델 / 실험 도구 미정
+- OTA 라이선스 미확인
+
+이 4개는 별도 의사결정 트랙으로 분리. v3 실행 시작을 막지 않음.
