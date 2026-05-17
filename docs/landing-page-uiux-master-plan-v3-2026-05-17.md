@@ -30,7 +30,7 @@ v3 만든 이유:
 | B — 가장 안전한 전환 개선 | ✅ 완료 | 2026-05-17 | 2026-05-17 | a94d73b9 | B.1~B.6 모두 ✅. CDP QA: sticky top=hidden / mid=visible / deep=visible / footer=hidden. 사후 audit는 §2.6.1 (bottom nav overlay 발견 — Phase 0b 데이터로 재판단) |
 | C — 상호작용 강화 | ✅ 완료 | 2026-05-17 | 2026-05-17 | 90345fd6 | C.1 ✅ 시즌 칩 인터랙티브. C.2는 이미 코드에 반영(사실 수정) — result card는 product.badges 동적 (vm:112-117), idle preview는 card.badges (B.2) |
 | D — 실험 (in-place + bottom-sheet + Sticky threshold A/B) | ⏳ 대기 | — | — | — | 0b baseline 후만 측정 의미 |
-| E — 시각 정체성 확장 | 🔄 진행 중 | 2026-05-17 | — | — | E.1 scroll-reveal 5 섹션. E.2 OTA 로고는 라이선스 확인 필요 → §D 보류 |
+| E — 시각 정체성 확장 | ✅ 완료 | 2026-05-17 | 2026-05-17 | a162b7fc | E.1 ✅ scroll-reveal 5 섹션 + 공통 helper. E.2 OTA 로고는 §D 보류 (라이선스 의존) |
 
 상태 마커:
 - ⏳ 대기 (아직 시작 안 함)
@@ -39,8 +39,8 @@ v3 만든 이유:
 - ✅ 완료
 - ❌ 중단/롤백
 
-**현재 활성 Phase: E (시각 정체성 확장).**
-**다음 액션: E.1 scroll-reveal variants 5 섹션 적용 (Destinations/Featured/Style/Why/Process). E.2 OTA 로고는 §D 보류.**
+**현재 활성 Phase: 없음 (v3 본 실행 범위 종료).**
+**다음 액션: Phase 0b provider 의사결정 (별도 트랙). 그 후 Phase D 진입 가능. §D 보류 항목(B.3.3, E.2)은 데이터/라이선스 확보 후 재검토.**
 
 ---
 
@@ -95,7 +95,9 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | C.1 ✅ — 시즌 칩 button + phrase 주입 + 200ms glow + analytics + 6 locale phrase/chipAria 키 | 90345fd6 | SeasonConfig.phraseKey 신규. analytics HomeHeroSeason 5 값으로 정렬 |
 | 2026-05-17 | 사실 수정 — C.2 reason chips는 이미 dynamic 구현. result card는 `buildV2BestMatchResultViewModelFromApi:112-117`에서 `product.badges`, idle preview는 B.2에서 `card.badges`. 정적 fallback(joinChip1-3)은 no_match 시 브랜드 카피로 의도된 fallback이라 §B "정적 카피 금지" 위반 아님 | (pending) | 코드 변경 없음. §A C.2 ✅ 마감 |
 | 2026-05-17 | **Phase C 완료** — C.1 코드 랜딩 + C.2 사실 수정으로 마감 | — | 다음: Phase D는 0b baseline 의존 → Phase E 또는 일단 멈춤 결정 |
-| 2026-05-17 | Phase E 시작 — E.1 scroll-reveal 5 섹션. E.2 OTA 로고는 §D 보류 (라이선스 확인 필요) | (pending) | §8 motion spec 그대로 적용 |
+| 2026-05-17 | Phase E 시작 — E.1 scroll-reveal 5 섹션. E.2 OTA 로고는 §D 보류 (라이선스 확인 필요) | f91308a6 | §8 motion spec 그대로 적용 |
+| 2026-05-17 | E.1 ✅ — `reveal.ts` 공통 helper + 5 섹션(Destinations/Featured/Style/Why/Process) viewport-trigger 변환. legacy `scroll-animate` mount-trigger 패턴 제거 | a162b7fc | reduce-motion 가드, LCP-safe (fold 아래), 신규 lib 없음 |
+| 2026-05-17 | **Phase E 완료** — E.1 코드 랜딩 + E.2 §D 보류. v3 본 실행 범위 종료 | a162b7fc | 다음: Phase 0b provider 의사결정 → Phase D 진입 |
 
 ---
 
@@ -680,9 +682,9 @@ Phase D 후. 가장 낮은 우선순위. 측정으로 가치 입증된 뒤만.
 - [ ] **Phase D.2**: 모바일 bottom-sheet 상태 추가 (`sheetOpen` 등)
 - [ ] **Phase C.2**: reason chips 데이터 전달
 
-### Destinations / Featured / Style 섹션
+### Destinations / Featured / Style / Why / Process 섹션
 
-- [ ] **Phase E.1**: scroll-reveal variants 적용 (구체 값 위 참조)
+- [x] **Phase E.1**: scroll-reveal variants 적용 (a162b7fc, `reveal.ts` 공통 helper + 5 섹션)
 - 외 변경 없음
 
 ### `src/design/analytics.ts`
