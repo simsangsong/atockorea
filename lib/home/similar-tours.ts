@@ -17,7 +17,7 @@
 import {
   listStaticTourProducts,
   type StaticTourProductRegistration,
-} from "@/components/product-tour-static/catalog/staticTourProductRegistry";
+} from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 
 type BroadRegion =

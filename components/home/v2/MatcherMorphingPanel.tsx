@@ -24,7 +24,7 @@ import { useHomeV2Match } from "@/components/home/v2/HomeV2MatchProvider";
 import {
   getStaticTourProductBySlug,
   hrefStaticTourProductDetail,
-} from "@/components/product-tour-static/catalog/staticTourProductRegistry";
+} from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import { analytics, getExperimentVariant } from "@/src/design/analytics";
 

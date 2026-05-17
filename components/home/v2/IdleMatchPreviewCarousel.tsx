@@ -8,7 +8,7 @@ import { useI18n, useTranslations } from "@/lib/i18n";
 import {
   hrefStaticTourProductDetail,
   listStaticTourProducts,
-} from "@/components/product-tour-static/catalog/staticTourProductRegistry";
+} from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { analytics } from "@/src/design/analytics";
 import { cn } from "@/lib/utils";
 

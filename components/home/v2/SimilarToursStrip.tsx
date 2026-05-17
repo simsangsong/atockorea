@@ -10,7 +10,7 @@ import Link from "next/link";
 import {
   hrefStaticTourProductDetail,
   type StaticTourProductRegistration,
-} from "@/components/product-tour-static/catalog/staticTourProductRegistry";
+} from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { useTranslations } from "@/lib/i18n";
 import { analytics } from "@/src/design/analytics";
 

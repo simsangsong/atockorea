@@ -9,7 +9,7 @@ import Image from "next/image";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { analytics, type HomeCtaSource } from "@/src/design/analytics";
-import { getStaticTourProductBySlug } from "@/components/product-tour-static/catalog/staticTourProductRegistry";
+import { getStaticTourProductBySlug } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { useHomeV2Match } from "@/components/home/v2/HomeV2MatchProvider";
 import {
   buildV2BestMatchResultViewModel,

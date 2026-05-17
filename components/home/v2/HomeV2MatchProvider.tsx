@@ -54,7 +54,7 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
     }
 
     let cancelled = false;
-    import("@/components/product-tour-static/catalog/staticTourProductRegistry")
+    import("@/components/product-tour-static/catalog/staticTourCatalogCards")
       .then(({ getStaticTourProductBySlug }) => {
         if (cancelled) return;
         setMatchedJoinImageUrl(getStaticTourProductBySlug(slug)?.heroImage ?? null);
