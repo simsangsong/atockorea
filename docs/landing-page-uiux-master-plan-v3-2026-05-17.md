@@ -101,6 +101,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | **Phase E 완료** — E.1 코드 랜딩 + E.2 §D 보류. v3 본 실행 범위 종료 | a162b7fc | 다음: Phase 0b provider 의사결정 → Phase D 진입 |
 | 2026-05-17 | Phase 0b 자체 분석 시스템 빌드로 결정 + 마스터플랜 작성 | (pending) | `docs/atockorea-analytics-master-plan-2026-05-17.md`. 외부 SaaS 모두 §D 옵션으로 강등 |
 | 2026-05-17 | §D #1 — 매처 결과 카드 아래 "비슷한 투어" 3-카드 추천 strip 랜딩 | d6afd195 | `lib/home/similar-tours.ts` (region/badge score) + `components/home/v2/SimilarToursStrip.tsx` + `best-match-preview.tsx` 분기 + 6 locale `home.premium.v2.similarTours.heading`. analytics `home_featured_card_click` source `similar_recommendation` 신규 추가 |
+| 2026-05-17 | §D #1 매칭 로직 핫픽스 — 광역지역 정규화 + multi-region + 폴백 제거 | (pending) | **사용자 보고 버그**: 제주 winner인데 부산/크루즈 추천. 원인 (a) `broadRegion()`이 영문 키워드만 검사 → 한글 region 전부 미매칭 → score=0 fallback이 catalog 순서로 부산 시리즈 노출. (b) badge 1개 공유로 광역 다른 매물 추천 진입. 수정: 한국어+영문 키워드 룰 5종(jeju/gangwon/busan/gyeongju/seoul) + multi-region Set + 광역 교집합 없으면 score=0 게이트 + catalog 순서 폴백 제거 (strip은 1~3개 동적 grid). 검증: 30개 자연어 케이스 (jeju/busan/seoul 각 10개) production /api/tour-product/match 호출 → 30/30 광역 일치 ✅ |
 
 ---
 

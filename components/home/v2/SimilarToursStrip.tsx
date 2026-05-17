@@ -32,7 +32,15 @@ export function SimilarToursStrip({
       <p className="mb-2 text-eyebrow md:mb-3">
         {t("premium.v2.similarTours.heading")}
       </p>
-      <div className="grid grid-cols-3 gap-2 md:gap-3">
+      <div
+        className={`grid gap-2 md:gap-3 ${
+          tours.length === 1
+            ? "grid-cols-1 max-w-sm mx-auto"
+            : tours.length === 2
+              ? "grid-cols-2"
+              : "grid-cols-3"
+        }`}
+      >
         {tours.map((tour) => (
           <Link
             key={tour.slug}
