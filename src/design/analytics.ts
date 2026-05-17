@@ -385,8 +385,12 @@ export type MatchPageOutcome = "matched" | "no_match" | "error";
 export type HomeStickyCtaAction = "focus_matcher" | "browse_tours";
 
 /** v3 Phase 0a — featured product card click source. `idle_preview` = idle carousel (Phase B.2),
- *  `regular_section` = main FeaturedProductsShowcase rail. */
-export type HomeFeaturedCardSource = "idle_preview" | "regular_section";
+ *  `regular_section` = main FeaturedProductsShowcase rail.
+ *  v3 §D #1 — `similar_recommendation` = "비슷한 투어" strip under matcher winner. */
+export type HomeFeaturedCardSource =
+  | "idle_preview"
+  | "regular_section"
+  | "similar_recommendation";
 
 /** v3 Phase 0a — match preview region visibility states surfaced via IntersectionObserver.
  *  Mirrors `HomeV2MatchPhase` from the match provider so funnel queries can join cleanly. */

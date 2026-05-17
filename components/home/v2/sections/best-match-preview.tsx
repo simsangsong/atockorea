@@ -16,6 +16,8 @@ import {
   buildV2BestMatchResultViewModelFromApi,
 } from "@/lib/home/adapters/v2-best-match-result-vm";
 import { getFeaturedJoinTourProduct } from "@/lib/home/featured-join-tour-offer";
+import { getSimilarTours } from "@/lib/home/similar-tours";
+import { SimilarToursStrip } from "@/components/home/v2/SimilarToursStrip";
 import { homeBtnPrimary, homeBtnSecondary } from "@/lib/home/home-button-classes";
 
 /** Shell for idle + result cards — matches `home-premium` hero-match offer depth (group hover). */
@@ -137,6 +139,13 @@ export function BestMatchPreview() {
       groupMax: groupMaxFor(idle),
     };
   }, [matchResult, t, locale]);
+
+  // v3 §D #1 — similar-tours strip for the matched winner.
+  const similarTours = useMemo(() => {
+    const slug = matchResult?.winner?.product_id;
+    if (!slug) return [];
+    return getSimilarTours(slug, locale, 3);
+  }, [matchResult?.winner?.product_id, locale]);
 
   if (phase === "idle") return null;
 
@@ -387,6 +396,14 @@ export function BestMatchPreview() {
                 </div>
               </div>
             </div>
+
+            {/* v3 §D #1 — winner와 유사한 투어 3개 추천 (region/badge 기반 score) */}
+            {phase === "result" && matchResult?.winner?.product_id && similarTours.length > 0 ? (
+              <SimilarToursStrip
+                winnerSlug={matchResult.winner.product_id}
+                tours={similarTours}
+              />
+            ) : null}
 
             <p className="text-center text-caption font-medium text-slate-600 mt-3 px-1 md:mt-5">
               {resultVm.matchResultRecommendLine}

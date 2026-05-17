@@ -100,6 +100,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | E.1 ✅ — `reveal.ts` 공통 helper + 5 섹션(Destinations/Featured/Style/Why/Process) viewport-trigger 변환. legacy `scroll-animate` mount-trigger 패턴 제거 | a162b7fc | reduce-motion 가드, LCP-safe (fold 아래), 신규 lib 없음 |
 | 2026-05-17 | **Phase E 완료** — E.1 코드 랜딩 + E.2 §D 보류. v3 본 실행 범위 종료 | a162b7fc | 다음: Phase 0b provider 의사결정 → Phase D 진입 |
 | 2026-05-17 | Phase 0b 자체 분석 시스템 빌드로 결정 + 마스터플랜 작성 | (pending) | `docs/atockorea-analytics-master-plan-2026-05-17.md`. 외부 SaaS 모두 §D 옵션으로 강등 |
+| 2026-05-17 | §D #1 — 매처 결과 카드 아래 "비슷한 투어" 3-카드 추천 strip 랜딩 | (pending) | `lib/home/similar-tours.ts` (region/badge score) + `components/home/v2/SimilarToursStrip.tsx` + `best-match-preview.tsx` 분기 + 6 locale `home.premium.v2.similarTours.heading`. analytics `home_featured_card_click` source `similar_recommendation` 신규 추가 |
 
 ---
 
@@ -109,7 +110,7 @@ Phase 안에 없지만 좋은 아이디어. Phase 끝나기 전엔 손대지 말
 
 | 아이디어 | 출처 | 보류 이유 |
 |---|---|---|
-| 매처 결과 카드에 "비슷한 투어" 추천 줄 추가 | 일반 패턴 | Phase D 후만 의미 있음 |
+| ~~매처 결과 카드에 "비슷한 투어" 추천 줄 추가~~ ↗ **랜딩 2026-05-17** | 일반 패턴 | ~~Phase D 후만 의미 있음~~ — Phase D 완료 후 §D #1로 실행. §C 참조 |
 | 시즌 칩 외 "요일별 추천" 칩 추가 | 일반 패턴 | Phase C 완료 후 효과 검증 후 |
 | Trust 행에 실시간 예약 카운터 ("오늘 23명 예약") | — | 실시간 데이터 인프라 비용 검토 필요 |
 | BestMatchPreview를 다중 후보 비교 영역으로 재정의 | Phase D.1 부산물 | Phase D.1 결과 따라 결정 |
