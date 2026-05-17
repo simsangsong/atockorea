@@ -81,6 +81,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | Auto page_view + 첫 A/B 실험(home_cta_copy) 시드 | 1c817b1c | top-level usePathname listener + DB INSERT |
 | 2026-05-17 | E2E 검증 (localhost) — auto page_view + experiment variant attach 작동 확인 | (verified) | 5 events 1 batch / `home_cta_copy:A` 일관 할당 / SPA route 감지 / DB 저장. anonymous_id a14851c7... |
 | 2026-05-17 | **production Vercel deploy 이슈** — Phase 6+ endpoints 404 (Phase 1-5 정상). 빈 commit retrigger 후에도 미해결 | 2a31741b | local build 클린. Vercel dashboard 확인 필요 (다음 세션) |
+| 2026-05-17 | **원인 발견** — Vercel Hobby 플랜이 hourly cron 거부 ("Hobby accounts are limited to daily cron jobs"). vercel.json `5 * * * *` → `0 17 * * *` daily로 변경 | 63823cda | matview lag: 1h → 24h. 즉각 refresh는 manual (Postgres RPC 또는 cron endpoint hit) |
 
 ---
 

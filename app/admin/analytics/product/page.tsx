@@ -233,9 +233,10 @@ export default function AnalyticsOverviewPage() {
       </div>
 
       <div className="rounded-md border border-amber-200 bg-amber-50 p-3 text-xs text-amber-800">
-        <strong>현재 Phase 1 (Foundation).</strong> 데이터는 hourly materialized
-        view 기준 — 최신 이벤트 반영까지 ~1시간 지연. Phase 7에서 cron으로 자동
-        새로고침. Phase 2부터 이벤트 상세, Phase 3부터 펀널 분석이 활성화됨.
+        <strong>Materialized view 기준</strong> — Vercel Hobby 플랜 cron 제약(1×/day)으로
+        daily refresh. 즉각 반영이 필요하면 admin Health 탭에서 manual refresh
+        (또는 Postgres에서 <code>SELECT public.refresh_analytics_materialized_views()</code>).
+        Pro 플랜 업그레이드 시 hourly로 전환.
       </div>
     </div>
   );
