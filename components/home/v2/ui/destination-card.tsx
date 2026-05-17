@@ -10,6 +10,7 @@ type DestinationCardProps = {
   /** Short regional character line (e.g. palaces & night markets). */
   badge?: string;
   href: string;
+  onClick?: () => void;
 };
 
 /**
@@ -25,10 +26,12 @@ export function DestinationCard({
   imageAlt,
   badge,
   href,
+  onClick,
 }: DestinationCardProps) {
   return (
     <Link
       href={href}
+      onClick={onClick}
       className="group relative block aspect-[4/5] overflow-hidden rounded-card shadow-2 transition-[box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:shadow-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/35 motion-reduce:transition-shadow motion-reduce:hover:translate-y-0"
     >
       <div className="absolute inset-0">

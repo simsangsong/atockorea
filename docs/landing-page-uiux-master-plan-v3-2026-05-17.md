@@ -616,7 +616,7 @@ Phase D 후. 가장 낮은 우선순위. 측정으로 가치 입증된 뒤만.
 
 ### `src/design/analytics.ts`
 
-- [ ] **Phase 0a**: 이벤트 7종 정의
+- [x] **Phase 0a**: 이벤트 7종 정의 (시즌 칩은 메서드만 — Phase C.1 와이어링)
 - [ ] **Phase 0b**: provider SDK 연결 (별도 의사결정 후)
 
 ---

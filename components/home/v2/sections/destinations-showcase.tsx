@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { DestinationCard } from "@/components/home/v2/ui/destination-card";
 import { SnapScrollDots } from "@/components/home/v2/ui/SnapScrollDots";
 import { useTranslations } from "@/lib/i18n";
+import { analytics } from "@/src/design/analytics";
 
 type DestinationDef = {
   id: "Seoul" | "Busan" | "Jeju";
@@ -87,6 +88,7 @@ export function DestinationsShowcase() {
                   imageAlt={t(dest.altKey)}
                   badge={t(dest.taglineKey)}
                   href={`/tours/list?destination=${encodeURIComponent(dest.id)}`}
+                  onClick={() => analytics.homeDestinationCardClick({ destination: dest.id })}
                 />
               </div>
             ))}

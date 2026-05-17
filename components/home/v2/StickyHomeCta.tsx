@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "@/lib/i18n";
+import { analytics } from "@/src/design/analytics";
 
 /**
  * Sticky bottom CTA shown after the hero leaves the viewport and hidden once
@@ -81,13 +82,17 @@ export function StickyHomeCta() {
           <div className="flex items-stretch gap-1.5 rounded-full bg-slate-900/95 p-1.5 shadow-2 ring-1 ring-white/10 backdrop-blur-md">
             <button
               type="button"
-              onClick={focusMatcher}
+              onClick={() => {
+                analytics.homeStickyCtaClick({ action: "focus_matcher" });
+                focusMatcher();
+              }}
               className="focus-ring flex flex-1 items-center justify-center gap-1.5 rounded-full bg-white px-4 py-3 text-[13px] font-semibold text-slate-900 transition-transform hover:-translate-y-0.5 motion-reduce:hover:translate-y-0"
             >
               {t("premium.hero.findMatchCta")}
             </button>
             <Link
               href="/tours/list"
+              onClick={() => analytics.homeStickyCtaClick({ action: "browse_tours" })}
               className="focus-ring inline-flex items-center justify-center gap-1 rounded-full px-3.5 py-3 text-[12.5px] font-medium text-white/90 transition-colors hover:text-white"
             >
               {t("premium.v2.featuredProducts.viewAllCtaGeneric")}

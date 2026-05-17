@@ -13,6 +13,7 @@ import { appendIntentPhraseToIntentField } from "@/lib/home/services/hero-intent
 import type { HeroDestination } from "@/lib/home/types/hero-planner";
 import { HOME_STYLE_OPTIONS } from "@/src/components/home/home-style-options";
 import { useHomeV2Match } from "@/components/home/v2/HomeV2MatchProvider";
+import { analytics } from "@/src/design/analytics";
 import { cn } from "@/lib/utils";
 
 const VALID_DESTINATIONS: ReadonlyArray<HeroDestination> = ["jeju", "seoul", "busan"];
@@ -44,6 +45,7 @@ export function HeroSection() {
   const [intent, setIntent] = useState("");
   const [intentExpanded, setIntentExpanded] = useState(false);
   const intentInputRef = useRef<HTMLTextAreaElement>(null);
+  const intentFocusFiredRef = useRef(false);
 
   const heroSectionRef = useRef<HTMLElement>(null);
   const heroPanelRef = useRef<HTMLDivElement>(null);
@@ -336,7 +338,13 @@ export function HeroSection() {
                   data-home-hero-intent
                   value={intent}
                   onChange={(e) => setIntent(e.target.value)}
-                  onFocus={() => setIntentExpanded(true)}
+                  onFocus={() => {
+                    setIntentExpanded(true);
+                    if (!intentFocusFiredRef.current) {
+                      intentFocusFiredRef.current = true;
+                      analytics.homeHeroIntentFocus();
+                    }
+                  }}
                   onBlur={() => {
                     if (!intent.trim()) setIntentExpanded(false);
                   }}
@@ -367,7 +375,10 @@ export function HeroSection() {
                       key={tag.id}
                       type="button"
                       aria-pressed={isSelected}
-                      onClick={() => appendChip(tag.label)}
+                      onClick={() => {
+                        analytics.homeHeroStyleChipClick({ chipId: tag.id });
+                        appendChip(tag.label);
+                      }}
                       className={cn(
                         "focus-ring flex-none rounded-full border px-3 py-1.5 text-[11px] font-medium transition-colors duration-200 md:px-3.5 md:py-2 md:text-caption",
                         isSelected

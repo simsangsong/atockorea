@@ -13,6 +13,7 @@ import { useI18n, useTranslations } from "@/lib/i18n";
 import { HOME_CTA_BROWSE_TOURS_HREF } from "@/lib/home/home-cta-routes";
 import { SnapScrollDots } from "@/components/home/v2/ui/SnapScrollDots";
 import { homeBtnSecondary } from "@/lib/home/home-button-classes";
+import { analytics } from "@/src/design/analytics";
 import { cn } from "@/lib/utils";
 
 const FEATURED_LIMIT = 6;
@@ -124,6 +125,12 @@ export function FeaturedProductsShowcase() {
                   <div
                     key={tour.id}
                     className="w-[44vw] flex-shrink-0 snap-start md:w-auto"
+                    onClick={() =>
+                      analytics.homeFeaturedCardClick({
+                        source: "regular_section",
+                        slug: tour.slug ?? tour.id,
+                      })
+                    }
                   >
                     <TourListCard
                       tour={tour}
