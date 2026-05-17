@@ -12,6 +12,7 @@ import { CurrencyProvider } from "@/lib/currency";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { DevChunkRecoveryCleanup } from "@/components/DevChunkRecoveryCleanup";
 import { LocaleCurrencySync } from "@/components/LocaleCurrencySync";
+import { AnalyticsPageViewTracker } from "@/components/analytics/AnalyticsPageViewTracker";
 import { Toaster } from "@/components/ui/sonner";
 import { rootHtmlLangFromNextLocaleCookie } from "@/lib/rootHtmlLangFromCookie";
 
@@ -83,6 +84,7 @@ export default async function RootLayout({
               <CurrencyProvider>
                 <DevChunkRecoveryCleanup />
                 <LocaleCurrencySync />
+                <AnalyticsPageViewTracker />
                 <div className="relative z-[1] min-h-dvh min-h-[100dvh] flex flex-col">
                   {children}
                 </div>
