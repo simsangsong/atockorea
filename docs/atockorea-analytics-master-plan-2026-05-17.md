@@ -77,7 +77,10 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | Phase 5 ✅ 완료 — Session Timeline (list + detail event sequence) | 4af800b2 | recent/long/converted sort + per-session 이벤트 + payload pretty JSON |
 | 2026-05-17 | Phase 6 ✅ 완료 — A/B Experiments (shared hash + SDK auto-attach + admin UI + chi-square) | 2c435767 | **v3 landing Phase D unblock 완료.** 4 endpoints + 2 pages + lib/analytics/experiment-assignment.ts |
 | 2026-05-17 | Phase 7 ✅ 완료 — Health dashboard + 2 Vercel cron + 3 Postgres helpers | (pending) | refresh_analytics_materialized_views / anonymize_old_analytics / analytics_health_snapshot. Cron: hourly view refresh, daily 18:00 KST 90일 익명화 |
-| 2026-05-17 | **자체 분석 시스템 풀 빌드 완료** (Phase 1~7 ✅) | (pending) | 7개 dashboard 화면 + 11 endpoints + cron + RLS + cookies + SDK + experiments + PII guard. v3 landing 와 cross-integration 완비 |
+| 2026-05-17 | **자체 분석 시스템 풀 빌드 완료** (Phase 1~7 ✅) | b926941d | 7개 dashboard 화면 + 11 endpoints + cron + RLS + cookies + SDK + experiments + PII guard. v3 landing 와 cross-integration 완비 |
+| 2026-05-17 | Auto page_view + 첫 A/B 실험(home_cta_copy) 시드 | 1c817b1c | top-level usePathname listener + DB INSERT |
+| 2026-05-17 | E2E 검증 (localhost) — auto page_view + experiment variant attach 작동 확인 | (verified) | 5 events 1 batch / `home_cta_copy:A` 일관 할당 / SPA route 감지 / DB 저장. anonymous_id a14851c7... |
+| 2026-05-17 | **production Vercel deploy 이슈** — Phase 6+ endpoints 404 (Phase 1-5 정상). 빈 commit retrigger 후에도 미해결 | 2a31741b | local build 클린. Vercel dashboard 확인 필요 (다음 세션) |
 
 ---
 
