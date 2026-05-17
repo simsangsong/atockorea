@@ -238,7 +238,11 @@ export function HeroSection() {
           surfaces fighting for the eye. Flattened to a divider-separated row
           so the matcher reads as the single focal card on the hero.
         */}
-        <div className="mx-auto max-w-lg pt-6 pb-7 md:pt-7 md:pb-8">
+        {/* Phase B.3.2: compact Trust strip — vertical padding cut ~24px (mobile
+            pt-6 pb-7 → pt-3 pb-4) so the matcher CTA clears the iPhone 14
+            fold (Phase 0c measured -81px gap). Stats themselves keep full
+            text-h3 weight per §B "premium > 절제" decision. */}
+        <div className="mx-auto max-w-lg pt-3 pb-4 md:pt-4 md:pb-5">
           <div className="grid grid-cols-3 divide-x divide-slate-200/70 text-center">
             <div className="px-2">
               <span className="block text-h3 font-extrabold leading-none text-slate-900">
@@ -261,20 +265,15 @@ export function HeroSection() {
         </div>
         {/* ────────────────────────────────────────────────────────── */}
 
-        {/* Differentiator section header — sits above the planner card so the
-            "this is a new way, not on any OTA" message lands before the user
-            engages with the form. Outside the card on purpose so the planner
-            card itself stays clean and task-focused. */}
-        <div className="mx-auto mb-4 max-w-lg px-1 text-center md:mb-5">
+        {/* Phase B.3.1: matcher header slimmed from 3-line (eyebrow + headline
+            + subline) to eyebrow-only. The headline+subline duplicated H1's
+            promise — keeping only the amber eyebrow keeps the differentiator
+            cue (per §B "amber eyebrow 유지") while recovering ~60px toward
+            the iPhone 14 fold gap. */}
+        <div className="mx-auto mb-3 max-w-lg px-1 text-center md:mb-4">
           <span className="text-eyebrow">
             {t("premium.v2.hero.matcherEyebrow")}
           </span>
-          <h2 className="mt-2 text-balance text-h3 font-bold text-slate-900">
-            {t("premium.v2.hero.matcherHeadline")}
-          </h2>
-          <p className="mt-1.5 text-caption font-medium text-slate-600">
-            {t("premium.v2.hero.matcherSubline")}
-          </p>
         </div>
 
         <div className="relative mx-auto max-w-lg">
