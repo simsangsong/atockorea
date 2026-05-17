@@ -13,6 +13,7 @@ import { createAnonServerClient } from "@/lib/supabase";
 import { getTourProductCheckoutContext } from "@/lib/tour-product/eastSignatureCheckoutContext";
 import { loadTourProductViewModelBySlugFromSupabase } from "@/lib/tour-product/loadTourProductPage";
 import { resolveTourProductDbLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import { isTourSlugBlockedFromConsumerSurfaces } from "@/lib/tour-consumer-visibility";
 
 type RouteParams = { slug: string };
 type RouteSearchParams = { locale?: string | string[] };
@@ -41,6 +42,10 @@ async function resolveRegisteredSlug(params: Promise<RouteParams>): Promise<stri
     notFound();
   }
   if (!isStaticTourProductBundleRegistered(slug)) {
+    notFound();
+  }
+  // Retired / consumer-blocked products 404 instead of serving a stale detail page.
+  if (isTourSlugBlockedFromConsumerSurfaces(slug)) {
     notFound();
   }
   return slug;

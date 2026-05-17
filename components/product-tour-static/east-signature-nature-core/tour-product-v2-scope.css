@@ -511,6 +511,10 @@ html[lang="ko"] .tour-product-v2-static-root .tour-hero-headline-line {
   animation: tour-hero-ken-burns 9s ease-in-out 1300ms infinite alternate;
 }
 
+.tour-product-v2-static-root .tour-hero-slide--paused {
+  animation: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .tour-product-v2-static-root .tour-hero-slide--active {
     animation: none;

@@ -68,12 +68,29 @@ export function TourHeroSection({
 
   const slides = hero.images && hero.images.length > 0 ? hero.images : [hero.imageUrl];
   const [activeSlideIdx, setActiveSlideIdx] = useState(0);
+  const [heroInView, setHeroInView] = useState(true);
+  const heroImageRef = useRef<HTMLDivElement>(null);
   // Track the previous slide so its CSS class can pull it leftward as the new
   // slide enters from the right — gives the crossfade a real slide character.
   const prevSlideIdxRef = useRef(-1);
 
   useEffect(() => {
-    if (slides.length <= 1) return;
+    const el = heroImageRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setHeroInView(entry.isIntersecting);
+      },
+      { rootMargin: "200px 0px" },
+    );
+    observer.observe(el);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (slides.length <= 1 || !heroInView) return;
     const id = window.setInterval(() => {
       setActiveSlideIdx((i) => {
         prevSlideIdxRef.current = i;
@@ -81,12 +98,15 @@ export function TourHeroSection({
       });
     }, 6500);
     return () => window.clearInterval(id);
-  }, [slides.length]);
+  }, [slides.length, heroInView]);
 
   return (
     <section className="relative w-full">
       {/* Hero image — clean, no overlaid text. Save/share float top-right. */}
-      <div className="relative h-[29vh] min-h-[214px] max-h-[294px] sm:h-[33vh] sm:min-h-[266px] sm:max-h-[360px] w-full overflow-hidden rounded-b-2xl shadow-hero">
+      <div
+        ref={heroImageRef}
+        className="relative h-[29vh] min-h-[214px] max-h-[294px] sm:h-[33vh] sm:min-h-[266px] sm:max-h-[360px] w-full overflow-hidden rounded-b-2xl shadow-hero"
+      >
         {slides.map((url, idx) => (
           <div
             key={`${url}-${idx}`}
@@ -94,6 +114,7 @@ export function TourHeroSection({
             className={cn(
               "tour-hero-slide",
               idx === activeSlideIdx && "tour-hero-slide--active",
+              !heroInView && "tour-hero-slide--paused",
               idx === prevSlideIdxRef.current && idx !== activeSlideIdx && "tour-hero-slide--prev",
             )}
             style={{
