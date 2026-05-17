@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { CheckCircle2, Mail, Clock, Coins } from "lucide-react";
+import { CheckCircle2, Mail, Clock, Coins, Search, Send } from "lucide-react";
 import { SitePageShell } from "@/src/components/layout/SitePageShell";
 import { createServerClient } from "@/lib/supabase";
 
@@ -141,46 +141,79 @@ export default async function ItineraryBuilderThanksPage({
                 </div>
               </div>
             ) : (
-              <div className="rounded-2xl bg-white p-7 text-center shadow-md ring-1 ring-slate-200 md:p-10">
-                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100">
-                  <CheckCircle2 className="h-8 w-8 text-emerald-600" aria-hidden />
-                </div>
-                <p className="mb-2 text-eyebrow">Itinerary request received</p>
-                <h1 className="mb-3 text-display text-slate-900">
-                  We&apos;ll respond within 24 hours
-                </h1>
-                <p className="mx-auto mb-6 max-w-md text-body text-slate-600">
-                  Your request is a bit outside our auto-quote range. Our team is reviewing and will reply by
-                  email with a custom price within the next 24 hours.
-                </p>
-                <ul className="mx-auto mb-6 max-w-sm space-y-3 text-left text-body text-slate-700">
-                  <li className="flex items-start gap-3">
-                    <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-slate-500" aria-hidden />
-                    <span>Confirmation email sent — check spam if you don&apos;t see it.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Clock className="mt-0.5 h-4 w-4 flex-shrink-0 text-slate-500" aria-hidden />
-                    <span>Reply to that email to tweak anything — party size, date, or stops.</span>
-                  </li>
-                </ul>
-                {quote_id ? (
-                  <p className="mb-6 text-micro text-slate-400">
-                    Reference: <code className="rounded bg-slate-100 px-1.5 py-0.5">{quote_id}</code>
+              <div className="overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-slate-200">
+                <div className="bg-gradient-to-br from-emerald-50 via-white to-amber-50 px-7 pt-9 pb-7 text-center md:px-10 md:pt-11">
+                  <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 ring-4 ring-emerald-50">
+                    <CheckCircle2 className="h-8 w-8 text-emerald-600" aria-hidden />
+                  </div>
+                  <p className="mb-2 text-eyebrow">Itinerary request received</p>
+                  <h1 className="mb-3 text-display text-slate-900">
+                    We&apos;ll respond within 24 hours
+                  </h1>
+                  <p className="mx-auto max-w-md text-body text-slate-600">
+                    Your request is a bit outside our auto-quote range. Our team is reviewing and will reply by
+                    email with a custom price within the next 24 hours.
                   </p>
-                ) : null}
-                <div className="flex flex-col items-stretch gap-2 sm:flex-row sm:justify-center">
-                  <Link
-                    href="/"
-                    className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-caption font-bold text-white hover:bg-slate-800"
-                  >
-                    Back to home
-                  </Link>
-                  <Link
-                    href="/itinerary-builder"
-                    className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-caption font-bold text-slate-700 ring-1 ring-slate-200 hover:bg-slate-50"
-                  >
-                    Plan another day
-                  </Link>
+                </div>
+                <div className="px-7 py-6 md:px-10">
+                  <p className="mb-3 text-eyebrow !text-slate-500">What happens next?</p>
+                  <ol className="space-y-3">
+                    <li className="flex items-start gap-3 rounded-lg bg-slate-50 px-3.5 py-2.5 ring-1 ring-slate-100">
+                      <span className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-amber-100 text-caption font-bold text-amber-800">
+                        1
+                      </span>
+                      <div className="min-w-0">
+                        <p className="text-caption font-bold text-slate-900">Confirmation email sent</p>
+                        <p className="text-micro text-slate-500">
+                          Check spam if you don&apos;t see it in a few minutes.
+                        </p>
+                      </div>
+                      <Mail className="ml-auto mt-0.5 h-4 w-4 flex-shrink-0 text-slate-400" aria-hidden />
+                    </li>
+                    <li className="flex items-start gap-3 rounded-lg bg-slate-50 px-3.5 py-2.5 ring-1 ring-slate-100">
+                      <span className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-amber-100 text-caption font-bold text-amber-800">
+                        2
+                      </span>
+                      <div className="min-w-0">
+                        <p className="text-caption font-bold text-slate-900">Our team reviews your route</p>
+                        <p className="text-micro text-slate-500">
+                          We check logistics, pickup, and timing for your party size.
+                        </p>
+                      </div>
+                      <Search className="ml-auto mt-0.5 h-4 w-4 flex-shrink-0 text-slate-400" aria-hidden />
+                    </li>
+                    <li className="flex items-start gap-3 rounded-lg bg-slate-50 px-3.5 py-2.5 ring-1 ring-slate-100">
+                      <span className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-amber-100 text-caption font-bold text-amber-800">
+                        3
+                      </span>
+                      <div className="min-w-0">
+                        <p className="text-caption font-bold text-slate-900">Personalized quote by email</p>
+                        <p className="text-micro text-slate-500">
+                          Reply to adjust party size, date, or stops anytime.
+                        </p>
+                      </div>
+                      <Send className="ml-auto mt-0.5 h-4 w-4 flex-shrink-0 text-slate-400" aria-hidden />
+                    </li>
+                  </ol>
+                  {quote_id ? (
+                    <p className="mt-5 text-micro text-slate-400">
+                      Reference: <code className="rounded bg-slate-100 px-1.5 py-0.5">{quote_id}</code>
+                    </p>
+                  ) : null}
+                  <div className="mt-6 flex flex-col items-stretch gap-2 sm:flex-row sm:justify-center">
+                    <Link
+                      href="/"
+                      className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-caption font-bold text-white transition-colors hover:bg-slate-800"
+                    >
+                      Back to home
+                    </Link>
+                    <Link
+                      href="/itinerary-builder"
+                      className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-caption font-bold text-slate-700 ring-1 ring-slate-200 transition-colors hover:bg-slate-50"
+                    >
+                      Plan another day
+                    </Link>
+                  </div>
                 </div>
               </div>
             )}
