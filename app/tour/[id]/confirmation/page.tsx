@@ -9,6 +9,7 @@ import BottomNav from '@/components/BottomNav';
 import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
 import { supabase } from '@/lib/supabase';
 import { useCurrencyOptional } from '@/lib/currency';
+import { analytics } from '@/src/design/analytics';
 import {
   MYPAGE_FOCUS_RING,
   MYPAGE_SECTION_TITLE,
@@ -154,6 +155,18 @@ export default function ConfirmationPage() {
           const built = applyBookingPayload(b);
           setBookingData(built);
           sessionStorage.setItem('bookingData', JSON.stringify({ ...built, bookingId: b.id }));
+          // Fire booking_confirmed exactly once per booking_id. The Stripe
+          // redirect can land here twice (3DS callbacks, refresh) — sessionStorage
+          // flag prevents double-counting which would corrupt A/B CVR.
+          const firedKey = `analytics.booking_confirmed.fired:${b.id}`;
+          if (!sessionStorage.getItem(firedKey)) {
+            sessionStorage.setItem(firedKey, '1');
+            analytics.bookingConfirmed(String(b.id), {
+              tourId: built.tourId,
+              totalUsd: built.totalPrice,
+              guests: built.guests,
+            });
+          }
         } else {
           router.push(consumerTourDetailHref(String(params.id)));
         }

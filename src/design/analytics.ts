@@ -511,6 +511,18 @@ export const analytics = {
       pickupAreaLabel,
     }),
 
+  /** Strongest conversion signal — fires once per booking after the user lands
+   *  on the confirmation page (post-Stripe redirect). Drops the booking_id into
+   *  the payload so sessions can be joined to the bookings table later. */
+  bookingConfirmed: (
+    bookingId: string,
+    extra: { tourId?: number; totalUsd?: number; guests?: number } = {},
+  ) =>
+    trackEvent("booking_confirmed", {
+      bookingId,
+      ...extra,
+    }),
+
   balancePaid: (tourType: string, pickupAreaLabel: string) =>
     trackEvent("balance_paid", {
       tourType,
