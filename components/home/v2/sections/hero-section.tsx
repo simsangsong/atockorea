@@ -13,7 +13,7 @@ import { appendIntentPhraseToIntentField } from "@/lib/home/services/hero-intent
 import type { HeroDestination } from "@/lib/home/types/hero-planner";
 import { HOME_STYLE_OPTIONS } from "@/src/components/home/home-style-options";
 import { useHomeV2Match } from "@/components/home/v2/HomeV2MatchProvider";
-import { analytics } from "@/src/design/analytics";
+import { analytics, getExperimentVariant } from "@/src/design/analytics";
 import { cn } from "@/lib/utils";
 
 const VALID_DESTINATIONS: ReadonlyArray<HeroDestination> = ["jeju", "seoul", "busan"];
@@ -119,6 +119,34 @@ export function HeroSection() {
       if (intentGlowTimerRef.current) clearTimeout(intentGlowTimerRef.current);
     };
   }, []);
+
+  // home_cta_copy A/B — `getExperimentVariant` returns null until the SDK
+  // has loaded the active experiment registry. We poll briefly so first paint
+  // shows control copy and then re-renders with variant B when assigned.
+  const [ctaVariant, setCtaVariant] = useState<string | null>(null);
+  useEffect(() => {
+    const first = getExperimentVariant("home_cta_copy");
+    if (first) {
+      setCtaVariant(first);
+      return;
+    }
+    let tries = 0;
+    const id = setInterval(() => {
+      tries += 1;
+      const v = getExperimentVariant("home_cta_copy");
+      if (v) {
+        setCtaVariant(v);
+        clearInterval(id);
+      } else if (tries >= 30) {
+        // ~6s — registry probably failed to load; stick with control.
+        clearInterval(id);
+      }
+    }, 200);
+    return () => clearInterval(id);
+  }, []);
+
+  const ctaCopyKey =
+    ctaVariant === "B" ? "premium.hero.findMatchCtaB" : "premium.hero.findMatchCta";
 
   const handleSubmit = useCallback(() => {
     const raw = intent.trim() || t("premium.hero.defaultMatchIntent");
@@ -431,7 +459,7 @@ export function HeroSection() {
               className={homeBtnPrimary}
               style={{ boxShadow: "var(--home-shadow-btn-primary)", border: "none" }}
             >
-              {t("premium.hero.findMatchCta")}
+              {t(ctaCopyKey)}
               <ChevronRight className="w-4 h-4 ml-1.5" />
             </V0ShadcnButton>
 
