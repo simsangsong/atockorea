@@ -1,11 +1,17 @@
-// Self-built product analytics SDK (Phase 1 Foundation).
-// Master plan: docs/atockorea-analytics-master-plan-2026-05-17.md §5 Phase 1.2
+// Self-built product analytics SDK (Phase 1 Foundation + Phase 6 experiments).
+// Master plan: docs/atockorea-analytics-master-plan-2026-05-17.md §5 Phase 1.2 + §5 Phase 6
 //
 // The public surface (`analytics.*` methods + `trackEvent`) is unchanged so
 // all 25+ existing call sites flow into the new pipeline automatically.
 // `trackEvent` now batches into an in-memory queue, flushes to
 // /api/analytics/events every 5s (or once 5 events accumulate), and uses
 // sendBeacon on beforeunload as a last-mile safety net.
+//
+// Phase 6 — every batched event also carries the user's current variant
+// assignment for every running experiment. Variants are computed from the
+// stable hash in lib/analytics/experiment-assignment.ts so SSR/CSR agree.
+
+import { assignVariant, type ExperimentVariant } from "@/lib/analytics/experiment-assignment";
 
 type AnalyticsPayload = Record<string, string | number | boolean | null | undefined>;
 
@@ -166,7 +172,63 @@ type QueuedEvent = {
   context: ClientContext;
   anonymous_id: string;
   session_id: string;
+  experiment_assignments?: Record<string, string>;
 };
+
+// ===========================================================================
+// Experiment registry (Phase 6)
+// ===========================================================================
+
+type ExperimentConfig = { key: string; variants: ExperimentVariant[] };
+let experimentRegistry: ExperimentConfig[] | null = null;
+let experimentLoadPromise: Promise<void> | null = null;
+
+function ensureExperimentsLoaded(): Promise<void> {
+  if (experimentRegistry !== null) return Promise.resolve();
+  if (experimentLoadPromise) return experimentLoadPromise;
+  experimentLoadPromise = fetch("/api/analytics/experiments/active", {
+    headers: { Accept: "application/json" },
+  })
+    .then(async (res) => {
+      if (!res.ok) {
+        experimentRegistry = [];
+        return;
+      }
+      const json = (await res.json()) as { experiments?: ExperimentConfig[] };
+      experimentRegistry = Array.isArray(json.experiments) ? json.experiments : [];
+    })
+    .catch(() => {
+      experimentRegistry = [];
+    })
+    .finally(() => {
+      experimentLoadPromise = null;
+    });
+  return experimentLoadPromise!;
+}
+
+function computeAssignments(anonId: string): Record<string, string> {
+  const out: Record<string, string> = {};
+  if (!experimentRegistry || experimentRegistry.length === 0) return out;
+  for (const exp of experimentRegistry) {
+    const variant = assignVariant(anonId, exp.key, exp.variants);
+    if (variant) out[exp.key] = variant;
+  }
+  return out;
+}
+
+/** Phase 6 — read the current variant for one experiment. Returns null until
+ *  the registry has loaded or if the experiment isn't running. */
+export function getExperimentVariant(experimentKey: string): string | null {
+  if (typeof window === "undefined") return null;
+  if (!experimentRegistry) {
+    // Kick off load for future calls.
+    void ensureExperimentsLoaded();
+    return null;
+  }
+  const exp = experimentRegistry.find((e) => e.key === experimentKey);
+  if (!exp) return null;
+  return assignVariant(getAnonymousId(), experimentKey, exp.variants);
+}
 
 const FLUSH_INTERVAL_MS = 5_000;
 const FLUSH_BATCH_SIZE = 5;
@@ -226,13 +288,21 @@ async function flushQueue(): Promise<void> {
 function enqueueEvent(eventName: string, payload: AnalyticsPayload) {
   if (typeof window === "undefined") return;
   installBeforeUnload();
+  // Kick off registry load if not yet started — the very first event of a
+  // session typically lands before the registry resolves, which is fine
+  // (no variant attached). Subsequent events will have variants.
+  void ensureExperimentsLoaded();
+  const anonymousId = getAnonymousId();
+  const assignments = computeAssignments(anonymousId);
   const event: QueuedEvent = {
     event_name: eventName,
     payload,
     client_ts: new Date().toISOString(),
     context: captureContext(),
-    anonymous_id: getAnonymousId(),
+    anonymous_id: anonymousId,
     session_id: getSessionId(),
+    experiment_assignments:
+      Object.keys(assignments).length > 0 ? assignments : undefined,
   };
   queue.push(event);
   // Drop oldest if queue overflowed — keeps memory bounded under offline

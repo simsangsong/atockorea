@@ -47,6 +47,8 @@ const ClientEventSchema = z.object({
   context: ClientContextSchema,
   anonymous_id: z.string().min(8).max(128),
   session_id: z.string().min(8).max(128),
+  /** Phase 6 — { experimentKey: variantKey } stamped client-side per event. */
+  experiment_assignments: z.record(z.string()).optional(),
 });
 
 const RequestSchema = z.object({
@@ -174,6 +176,7 @@ function buildEventRow(ev: ClientEvent, serverTs: string, country: string | null
     payload: scrubPayload(ev.payload),
     anonymous_id: ev.anonymous_id,
     session_id: ev.session_id,
+    experiment_assignments: ev.experiment_assignments ?? {},
     page_path: c.page_path || null,
     page_query: c.page_query ?? null,
     referrer: c.referrer ?? null,

@@ -27,14 +27,14 @@ v3 landing master plan §A Phase 0b는 "🔄 자체 빌드 (atockorea-analytics-
 | 3 — Funnels | ✅ 완료 | 2026-05-17 | 2026-05-17 | (pending) | 5 seed funnel UI + 단계별 전환률 + 4 breakdown (locale/device/utm_source/country) + conversion window respect |
 | 4 — Retention / Cohorts | ✅ 완료 | 2026-05-17 | 2026-05-17 | (pending) | ISO 주별 cohort × W+0..W+N 히트맵 (anonymous_id or user_id) |
 | 5 — Session Timeline | ✅ 완료 | 2026-05-17 | 2026-05-17 | (pending) | list (recent/long/converted) + detail (chronological event sequence + payload, DOM 녹화 X) |
-| 6 — A/B Experiments | ⏳ 대기 | — | — | — | landing v3 Phase D unblock 트리거 |
+| 6 — A/B Experiments | ✅ 완료 | 2026-05-17 | 2026-05-17 | (pending) | shared cyrb53 hash + useGetExperimentVariant + SDK auto-attach + admin UI(list/create/detail) + chi-square p-value. v3 landing Phase D unblock 완료 |
 | 7 — 운영 / 헬스 / 익명화 | ⏳ 대기 | — | — | — | 6 후. 90일 익명화 cron + bot 필터 + CSV export |
 | 8 — 옵션 (heatmap / PostHog 보강 등) | ⏸ 보류 | — | — | — | 트래픽 의미 있게 늘어난 뒤만 |
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단
 
-**현재 활성 Phase: 없음 (Phase 1~5 ✅ 완료, Phase 6 진입 대기 — landing v3 Phase D unblock 직전).**
-**다음 액션: Phase 6 (A/B Experiments framework) — variant 할당 hook + experiment dashboard.**
+**현재 활성 Phase: 없음 (Phase 1~6 ✅ 완료. landing v3 Phase D unblock 완료, Phase 7 진입 대기).**
+**다음 액션: Phase 7 (운영 / 헬스 / 90일 익명화) — cron + bot 강화 + CSV export.**
 
 ---
 
@@ -74,7 +74,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | Phase 2 ✅ 완료 — Events Explorer (list + detail + filters) | d6e11898 | event auto-discover + 시계열 + payload top-10 분포 + 4 breakdown + 25 samples |
 | 2026-05-17 | Phase 3 ✅ 완료 — Funnels (5 seed + 단계별 전환률 + breakdown) | 66c788fe | server-side step walk per session with conversion window respect; UI: bar chart with retention from prev / from first |
 | 2026-05-17 | Phase 4 ✅ 완료 — Retention 주별 cohort 히트맵 (4/8/12주 토글) | 0c4e1dca | ISO Mon-Sun 주. user_id 머지 후 unique 카운트 |
-| 2026-05-17 | Phase 5 ✅ 완료 — Session Timeline (list + detail event sequence) | (pending) | recent/long/converted sort + per-session 이벤트 + payload pretty JSON |
+| 2026-05-17 | Phase 5 ✅ 완료 — Session Timeline (list + detail event sequence) | 4af800b2 | recent/long/converted sort + per-session 이벤트 + payload pretty JSON |
+| 2026-05-17 | Phase 6 ✅ 완료 — A/B Experiments (shared hash + SDK auto-attach + admin UI + chi-square) | (pending) | **v3 landing Phase D unblock 완료.** 4 endpoints + 2 pages + lib/analytics/experiment-assignment.ts |
 
 ---
 
