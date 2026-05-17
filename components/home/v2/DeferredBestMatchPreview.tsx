@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import { useHomeV2Match } from "@/components/home/v2/HomeV2MatchProvider";
+import { IdleMatchPreviewCarousel } from "@/components/home/v2/IdleMatchPreviewCarousel";
 import { analytics, type HomeMatchPreviewPhase } from "@/src/design/analytics";
 
 const BestMatchPreview = dynamic(
@@ -35,7 +36,7 @@ export function DeferredBestMatchPreview() {
     return () => obs.disconnect();
   }, [phase]);
 
-  if (phase === "idle") return null;
+  if (phase === "idle") return <IdleMatchPreviewCarousel />;
 
   return (
     <div ref={wrapperRef} data-home-match-preview>
