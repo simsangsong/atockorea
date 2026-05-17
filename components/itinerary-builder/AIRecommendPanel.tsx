@@ -7,6 +7,7 @@ import type { RegionSlug } from "@/lib/itinerary-builder/regions";
 interface Props {
   region: RegionSlug;
   onAccept: (poiKeys: string[]) => void;
+  onFocusPoi?: (poiKey: string) => void;
 }
 
 interface MatchResponse {
@@ -26,7 +27,7 @@ interface MatchResponse {
  * User types intent → /api/itinerary/match → recommended POI list →
  * "Load into cart" replaces the cart with the recommended sequence.
  */
-export default function AIRecommendPanel({ region, onAccept }: Props) {
+export default function AIRecommendPanel({ region, onAccept, onFocusPoi }: Props) {
   const [intent, setIntent] = useState("");
   const [maxHours, setMaxHours] = useState(8);
   const [loading, setLoading] = useState(false);
@@ -127,15 +128,22 @@ export default function AIRecommendPanel({ region, onAccept }: Props) {
             </div>
             <ol className="flex flex-wrap gap-1.5 text-[11.5px]">
               {(result.per_poi_score ?? []).map((p, i) => (
-                <li
-                  key={p.poi_key}
-                  className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-700"
-                >
-                  <span className="text-slate-400">{i + 1}.</span>
-                  {p.name_en}
+                <li key={p.poi_key} className="inline-flex">
+                  <button
+                    type="button"
+                    onClick={() => onFocusPoi?.(p.poi_key)}
+                    className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-700 transition-colors hover:bg-amber-100 hover:text-amber-800 focus:outline-none focus:ring-2 focus:ring-amber-300"
+                    title="See on map"
+                  >
+                    <span className="text-slate-400">{i + 1}.</span>
+                    {p.name_en}
+                  </button>
                 </li>
               ))}
             </ol>
+            <p className="mt-2 text-[10.5px] text-slate-500">
+              Tap a stop to preview it on the map →
+            </p>
           </div>
         ) : result?.ok && recommended.length === 0 ? (
           <p className="mt-3 rounded-md bg-amber-50 px-3 py-2 text-xs text-amber-800 ring-1 ring-amber-100">

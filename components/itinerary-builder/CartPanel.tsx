@@ -32,17 +32,21 @@ interface Props {
   getQuoteEnabled?: boolean;
   /** Cruise track time budget in minutes (e.g. 6h cruise window = 360). */
   cruiseBudgetMinutes?: number | null;
+  /** Click row → focus on map (Phase 7 UX). */
+  onFocusPoi?: (poiKey: string) => void;
 }
 
 function SortableRow({
   poi,
   index,
   onRemove,
+  onFocus,
   removeLabel,
 }: {
   poi: MatchPoiRow;
   index: number;
   onRemove: () => void;
+  onFocus?: () => void;
   removeLabel: string;
 }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
@@ -58,7 +62,7 @@ function SortableRow({
     <li
       ref={setNodeRef}
       style={style}
-      className="flex items-start gap-2 rounded-lg bg-slate-50 p-3 ring-1 ring-slate-100"
+      className="flex items-start gap-2 rounded-lg bg-slate-50 p-3 ring-1 ring-slate-100 transition-colors hover:bg-amber-50/60"
     >
       <button
         type="button"
@@ -75,7 +79,13 @@ function SortableRow({
       >
         {index + 1}
       </span>
-      <div className="min-w-0 flex-1">
+      <button
+        type="button"
+        onClick={onFocus}
+        disabled={!onFocus}
+        title="See on map"
+        className="min-w-0 flex-1 cursor-pointer text-left disabled:cursor-default"
+      >
         <p className="truncate text-sm font-semibold text-slate-900">{poi.name_en}</p>
         {poi.name_ko ? (
           <p className="truncate text-[11px] text-slate-500">{poi.name_ko}</p>
@@ -83,7 +93,7 @@ function SortableRow({
         {poi.default_stay_minutes ? (
           <p className="mt-0.5 text-[11px] text-slate-500">~{poi.default_stay_minutes} min</p>
         ) : null}
-      </div>
+      </button>
       <button
         type="button"
         onClick={onRemove}
@@ -104,6 +114,7 @@ export default function CartPanel({
   onGetQuote,
   getQuoteEnabled = false,
   cruiseBudgetMinutes,
+  onFocusPoi,
 }: Props) {
   const t = useTranslations("itineraryBuilder.cart");
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -158,6 +169,7 @@ export default function CartPanel({
                   poi={p}
                   index={idx}
                   onRemove={() => onRemove(p.poi_key)}
+                  onFocus={onFocusPoi ? () => onFocusPoi(p.poi_key) : undefined}
                   removeLabel={t("remove")}
                 />
               ))}

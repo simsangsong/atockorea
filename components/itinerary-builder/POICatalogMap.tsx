@@ -26,6 +26,8 @@ interface Props {
   onAdd?: (key: string) => void;
   onRemove?: (key: string) => void;
   hasInCart?: (key: string) => boolean;
+  /** Phase 7 — when set, map pans to this POI and opens its InfoWindow. */
+  focusedPoiKey?: string | null;
 }
 
 export default function POICatalogMap({
@@ -38,6 +40,7 @@ export default function POICatalogMap({
   onAdd,
   onRemove,
   hasInCart,
+  focusedPoiKey,
 }: Props) {
   const t = useTranslations("itineraryBuilder.map");
   const { isLoaded, loadError } = useLoadScript({
@@ -73,6 +76,17 @@ export default function POICatalogMap({
     clustererRef.current = null;
     markersRef.current = [];
   }, []);
+
+  // Phase 7 — external focus (AIRecommendPanel chip or CartPanel row click)
+  useEffect(() => {
+    if (!focusedPoiKey || !map || !pois.length) return;
+    const poi = pois.find((p) => p.poi_key === focusedPoiKey);
+    if (!poi) return;
+    setSelected(poi);
+    map.panTo({ lat: poi.lat, lng: poi.lng });
+    const z = map.getZoom();
+    if (typeof z === "number" && z < 12) map.setZoom(12);
+  }, [focusedPoiKey, map, pois]);
 
   // Build AdvancedMarkerElement instances + clusterer when map + pois ready.
   useEffect(() => {

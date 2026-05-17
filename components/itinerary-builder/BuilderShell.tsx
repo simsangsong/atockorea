@@ -27,6 +27,14 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
   const { cart, add, remove, reorder, has, clear } = useCart();
   const searchParams = useSearchParams();
   const [quoteOpen, setQuoteOpen] = useState(false);
+  const [focusedPoiKey, setFocusedPoiKey] = useState<string | null>(null);
+
+  // Bump key tracker so repeated clicks on the same POI re-open its InfoWindow
+  const focusPoi = useCallback((key: string) => {
+    // Set to null first to force the useEffect in POICatalogMap to refire
+    setFocusedPoiKey(null);
+    requestAnimationFrame(() => setFocusedPoiKey(key));
+  }, []);
 
   const acceptRecommendation = useCallback(
     (poiKeys: string[]) => {
@@ -57,7 +65,11 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
 
   return (
     <div className="flex flex-col">
-      <AIRecommendPanel region={region} onAccept={acceptRecommendation} />
+      <AIRecommendPanel
+        region={region}
+        onAccept={acceptRecommendation}
+        onFocusPoi={focusPoi}
+      />
       <div className="flex h-[78vh] min-h-[600px] flex-col md:flex-row">
       <div className="relative flex-1 overflow-hidden">
         <POICatalogMap
@@ -70,6 +82,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
           onAdd={add}
           onRemove={remove}
           hasInCart={has}
+          focusedPoiKey={focusedPoiKey}
         />
       </div>
       <CartPanel
@@ -80,6 +93,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
         onGetQuote={handleGetQuote}
         getQuoteEnabled={true}
         cruiseBudgetMinutes={cruiseBudgetMinutes}
+        onFocusPoi={focusPoi}
       />
       <QuoteModal
         open={quoteOpen}
