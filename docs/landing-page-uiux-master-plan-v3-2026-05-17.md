@@ -28,7 +28,7 @@ v3 만든 이유:
 | 0b — provider 연결 + baseline | ⏸ 보류 | — | — | — | provider 미결정 (별도 트랙) |
 | 0c — 모바일 fold 실측 | ✅ 완료 | 2026-05-17 | 2026-05-17 | 3fdb9359 | CDP 실측: 390x844 CTA -81px / 430x932 CTA -32px (모두 fold 아래). §2.6 + §3 P0-A 보강 |
 | B — 가장 안전한 전환 개선 | ✅ 완료 | 2026-05-17 | 2026-05-17 | a94d73b9 | B.1~B.6 모두 ✅. CDP QA: sticky top=hidden / mid=visible / deep=visible / footer=hidden. 사후 audit는 §2.6.1 (bottom nav overlay 발견 — Phase 0b 데이터로 재판단) |
-| C — 상호작용 강화 | 🔄 진행 중 | 2026-05-17 | — | 90345fd6 | C.1 ✅ 시즌 칩 button + phrase 주입 + glow + analytics. 남은: C.2 reason chips 동적 |
+| C — 상호작용 강화 | ✅ 완료 | 2026-05-17 | 2026-05-17 | 90345fd6 | C.1 ✅ 시즌 칩 인터랙티브. C.2는 이미 코드에 반영(사실 수정) — result card는 product.badges 동적 (vm:112-117), idle preview는 card.badges (B.2) |
 | D — 실험 (in-place + bottom-sheet + Sticky threshold A/B) | ⏳ 대기 | — | — | — | 0b baseline 후만 측정 의미 |
 | E — 시각 정체성 확장 | ⏳ 대기 | — | — | — | 마지막 |
 
@@ -39,8 +39,8 @@ v3 만든 이유:
 - ✅ 완료
 - ❌ 중단/롤백
 
-**현재 활성 Phase: C (상호작용 강화).**
-**다음 액션: C.2 reason chips 동적 — `best-match-preview.tsx`에 1줄 추가 (`matchResult.reasons` 또는 product `badges` 활용).**
+**현재 활성 Phase: 없음 (Phase C ✅ 완료).**
+**다음 액션: Phase D 진입 결정 — 단, Phase D는 0b baseline 후만 측정 의미 (§A 비고). 대안: Phase E (시각 정체성 확장) 또는 일단 멈춤.**
 
 ---
 
@@ -93,6 +93,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | **Phase B 완료** — 6 sub-task 모두 ✅ | a94d73b9 | 커밋: d41628bf / 741b3cd3 / 2472b0ae / a94d73b9. 다음: Phase C 또는 Phase 0b 의사결정 |
 | 2026-05-17 | Phase C 시작 — 시즌 칩 인터랙티브 + reason chips 동적 | bcdf4027 | C.1 + C.2 분리 커밋 |
 | 2026-05-17 | C.1 ✅ — 시즌 칩 button + phrase 주입 + 200ms glow + analytics + 6 locale phrase/chipAria 키 | 90345fd6 | SeasonConfig.phraseKey 신규. analytics HomeHeroSeason 5 값으로 정렬 |
+| 2026-05-17 | 사실 수정 — C.2 reason chips는 이미 dynamic 구현. result card는 `buildV2BestMatchResultViewModelFromApi:112-117`에서 `product.badges`, idle preview는 B.2에서 `card.badges`. 정적 fallback(joinChip1-3)은 no_match 시 브랜드 카피로 의도된 fallback이라 §B "정적 카피 금지" 위반 아님 | (pending) | 코드 변경 없음. §A C.2 ✅ 마감 |
+| 2026-05-17 | **Phase C 완료** — C.1 코드 랜딩 + C.2 사실 수정으로 마감 | — | 다음: Phase D는 0b baseline 의존 → Phase E 또는 일단 멈춤 결정 |
 
 ---
 
@@ -638,7 +640,7 @@ Phase D 후. 가장 낮은 우선순위. 측정으로 가치 입증된 뒤만.
 - [x] **Phase B.3.2**: Trust strip 패딩 컴팩트 (2472b0ae, +83px fold 회수)
 - [x] **Phase B.4**: Trust 라벨 i18n 추출 + 6 locale (a94d73b9)
 - [x] **Phase B.5**: 매처 CTA 카피 i18n 6 locale 교체 (a94d73b9)
-- [ ] **Phase C.1**: 시즌 칩 button 변환 + phrase 주입 + 피드백
+- [x] **Phase C.1**: 시즌 칩 button 변환 + phrase 주입 + glow + analytics (90345fd6)
 - [ ] **Phase D.1**: LayoutGroup wrap (in-place result 준비)
 - [ ] **Phase D.3**: data attribute 또는 prop 노출 (Sticky threshold 실험용)
 - **유지**: parallax, Ken Burns, scroll darken, 사진 비중, 모션 토큰
@@ -657,7 +659,7 @@ Phase D 후. 가장 낮은 우선순위. 측정으로 가치 입증된 뒤만.
 
 ### `components/home/v2/sections/best-match-preview.tsx`
 
-- [ ] **Phase C.2**: reason chips 1줄 UI 추가
+- [x] **Phase C.2**: reason chips 동적 — 이미 구현됨 (사실 수정, `vm:112-117` `product.badges` 사용)
 - [ ] **Phase D.1**: 데스크톱에서 in-place morphing 대상 (또는 비교 영역 재정의)
 - [ ] **Phase D.2**: 모바일 bottom-sheet 컨테이너로 wrap
 
