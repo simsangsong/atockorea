@@ -212,7 +212,24 @@ type SessionAccumulator = {
   viewport_width: number | null;
   locale: string | null;
   country_code: string | null;
+  // Conversion attribution — earliest-occurring high-intent event in this batch.
+  // Only the first conversion ts wins (later events don't overwrite).
+  conversion_event: string | null;
+  conversion_ts: string | null;
 };
+
+/**
+ * High-intent events that flip `analytics_sessions.converted = true`.
+ * Ordered roughly by funnel depth — `booking_confirmed` is the strongest signal.
+ * `checkout_started` covers reach-of-checkout (matches the matcher_funnel A/B
+ * primary metric currently active on 4 experiments).
+ *
+ * Sessions stay "converted" once flipped — never downgraded.
+ */
+const CONVERSION_EVENT_NAMES = new Set<string>([
+  "booking_confirmed",
+  "checkout_started",
+]);
 
 function accumulateSession(
   acc: Map<string, SessionAccumulator>,
@@ -221,6 +238,7 @@ function accumulateSession(
 ) {
   const existing = acc.get(ev.session_id);
   const isPageView = ev.event_name === "page_view";
+  const isConversion = CONVERSION_EVENT_NAMES.has(ev.event_name);
   if (!existing) {
     acc.set(ev.session_id, {
       session_id: ev.session_id,
@@ -229,6 +247,8 @@ function accumulateSession(
       last_event_ts: ev.client_ts,
       event_count: 1,
       page_view_count: isPageView ? 1 : 0,
+      conversion_event: isConversion ? ev.event_name : null,
+      conversion_ts: isConversion ? ev.client_ts : null,
       entry_path: ev.context.page_path || null,
       entry_referrer: ev.context.referrer ?? null,
       utm_source: ev.context.utm_source ?? null,
@@ -248,6 +268,14 @@ function accumulateSession(
     existing.first_event_ts = ev.client_ts;
     existing.entry_path = ev.context.page_path || existing.entry_path;
     existing.entry_referrer = ev.context.referrer ?? existing.entry_referrer;
+  }
+  // Conversion: earliest-occurring high-intent event wins within this batch.
+  // Cross-batch precedence is handled by the upsert merge (prev?.converted_at).
+  if (isConversion) {
+    if (!existing.conversion_ts || ev.client_ts < existing.conversion_ts) {
+      existing.conversion_event = ev.event_name;
+      existing.conversion_ts = ev.client_ts;
+    }
   }
 }
 
@@ -295,9 +323,21 @@ async function upsertSessions(
       locale: prev?.locale ?? a.locale,
       country_code: prev?.country_code ?? a.country_code,
       user_id: prev?.user_id ?? null,
-      converted: prev?.converted ?? false,
-      converted_at: prev?.converted_at ?? null,
-      converted_event: prev?.converted_event ?? null,
+      // Conversion: once flipped, never downgrade. Earliest conversion wins
+      // across batches (compare prev.converted_at vs this batch's conversion_ts).
+      converted: prev?.converted === true || a.conversion_event !== null,
+      converted_at:
+        prev?.converted_at && a.conversion_ts
+          ? prev.converted_at < a.conversion_ts
+            ? prev.converted_at
+            : a.conversion_ts
+          : (prev?.converted_at ?? a.conversion_ts),
+      converted_event:
+        prev?.converted_at && a.conversion_ts
+          ? prev.converted_at < a.conversion_ts
+            ? prev.converted_event
+            : a.conversion_event
+          : (prev?.converted_event ?? a.conversion_event),
     };
   });
 
