@@ -10,7 +10,7 @@ import {
 } from "@/components/home/v2/sections";
 import { DeferredBestMatchPreview } from "@/components/home/v2/DeferredBestMatchPreview";
 import { HomeV2MatchProvider } from "@/components/home/v2/HomeV2MatchProvider";
-import { MatcherBottomSheet } from "@/components/home/v2/MatcherBottomSheet";
+import { MatcherBottomSheetLazy } from "@/components/home/v2/MatcherBottomSheetLazy";
 import { StickyHomeCta } from "@/components/home/v2/StickyHomeCta";
 
 /**
@@ -35,7 +35,7 @@ export default function HomeV2Page() {
           <FinalCTA />
         </div>
         <StickyHomeCta />
-        <MatcherBottomSheet />
+        <MatcherBottomSheetLazy />
       </HomeV2MatchProvider>
     </div>
   );

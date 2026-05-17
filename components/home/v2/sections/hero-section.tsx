@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
@@ -13,9 +14,22 @@ import { appendIntentPhraseToIntentField } from "@/lib/home/services/hero-intent
 import type { HeroDestination } from "@/lib/home/types/hero-planner";
 import { HOME_STYLE_OPTIONS } from "@/src/components/home/home-style-options";
 import { useHomeV2Match } from "@/components/home/v2/HomeV2MatchProvider";
-import { MatcherMorphingPanel } from "@/components/home/v2/MatcherMorphingPanel";
 import { analytics, getExperimentVariant } from "@/src/design/analytics";
 import { cn } from "@/lib/utils";
+
+/** v3 Phase D.1 — desktop in-place morphing panel.
+ *
+ *  Dynamic + ssr:false so the heavy static-tour-product registry chain
+ *  (25MB of JSON across 204 locale files) stays OUT of the hero/LCP
+ *  bundle. The panel is no-op for variant A / mobile / idle phase, so
+ *  rendering it lazily after first paint has no UX cost for those users. */
+const MatcherMorphingPanel = dynamic(
+  () =>
+    import("@/components/home/v2/MatcherMorphingPanel").then(
+      (m) => m.MatcherMorphingPanel,
+    ),
+  { ssr: false, loading: () => null },
+);
 
 const VALID_DESTINATIONS: ReadonlyArray<HeroDestination> = ["jeju", "seoul", "busan"];
 const HERO_SLIDES = [
