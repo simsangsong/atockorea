@@ -255,10 +255,15 @@ async function upsertSessions(
   if (acc.size === 0) return { error: null } as const;
 
   const ids = Array.from(acc.keys());
-  // Pull existing rows so we can sum counts atomically (avoid clobbering).
+  // Pull existing rows so we can sum counts atomically (avoid clobbering)
+  // and so we can re-pass non-counter fields through to upsert without
+  // overwriting them with NULL — Supabase's upsert serialises every column
+  // we send, so anything left `undefined` becomes NULL on UPDATE.
   const { data: existing, error: selErr } = await supabase
     .from("analytics_sessions")
-    .select("id, started_at, last_event_at, event_count, page_view_count")
+    .select(
+      "id, anonymous_id, started_at, last_event_at, event_count, page_view_count, entry_path, entry_referrer, utm_source, utm_medium, utm_campaign, device_class, viewport_width, locale, country_code, user_id, converted, converted_at, converted_event",
+    )
     .in("id", ids);
   if (selErr) return { error: selErr } as const;
 
@@ -270,22 +275,26 @@ async function upsertSessions(
     const prev = existingById.get(id);
     return {
       id: a.session_id,
-      anonymous_id: a.anonymous_id,
+      anonymous_id: prev?.anonymous_id ?? a.anonymous_id,
       started_at:
         prev && prev.started_at < a.first_event_ts ? prev.started_at : a.first_event_ts,
       last_event_at:
         prev && prev.last_event_at > a.last_event_ts ? prev.last_event_at : a.last_event_ts,
       event_count: (prev?.event_count ?? 0) + a.event_count,
       page_view_count: (prev?.page_view_count ?? 0) + a.page_view_count,
-      entry_path: prev ? undefined : a.entry_path,
-      entry_referrer: prev ? undefined : a.entry_referrer,
-      utm_source: prev ? undefined : a.utm_source,
-      utm_medium: prev ? undefined : a.utm_medium,
-      utm_campaign: prev ? undefined : a.utm_campaign,
-      device_class: prev ? undefined : a.device_class,
-      viewport_width: prev ? undefined : a.viewport_width,
-      locale: prev ? undefined : a.locale,
-      country_code: prev ? undefined : a.country_code,
+      entry_path: prev?.entry_path ?? a.entry_path,
+      entry_referrer: prev?.entry_referrer ?? a.entry_referrer,
+      utm_source: prev?.utm_source ?? a.utm_source,
+      utm_medium: prev?.utm_medium ?? a.utm_medium,
+      utm_campaign: prev?.utm_campaign ?? a.utm_campaign,
+      device_class: prev?.device_class ?? a.device_class,
+      viewport_width: prev?.viewport_width ?? a.viewport_width,
+      locale: prev?.locale ?? a.locale,
+      country_code: prev?.country_code ?? a.country_code,
+      user_id: prev?.user_id ?? null,
+      converted: prev?.converted ?? false,
+      converted_at: prev?.converted_at ?? null,
+      converted_event: prev?.converted_event ?? null,
     };
   });
 
