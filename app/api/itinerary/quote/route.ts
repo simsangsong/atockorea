@@ -4,13 +4,26 @@ import { sendEmail } from "@/lib/email";
 import { buildQuoteConfirmationHtml } from "@/lib/email-templates/quote-confirmation";
 import { notifyQuoteRequested } from "@/lib/slack/notify-quote";
 import { isRegionSlug } from "@/lib/itinerary-builder/regions";
+import { totalDriveMinutes } from "@/lib/itinerary-builder/distance";
+import { loadActivePreset } from "@/lib/quote-engine/load-preset";
+import { classify } from "@/lib/quote-engine/classify";
+import { computeQuote } from "@/lib/quote-engine/compute";
+import { fingerprint } from "@/lib/quote-engine/fingerprint";
+import { lookupPrecedent } from "@/lib/quote-engine/memory-lookup";
+import type { QuoteIntake, Track } from "@/lib/quote-engine/types";
 
 /**
- * POST /api/itinerary/quote — accepts a manual quote request from the
- * itinerary builder. Writes to public.tour_quote_requests, fires a Slack
- * notification (fire-and-forget), and sends a confirmation email to the
- * customer (fire-and-forget). Phase 5 will layer the auto-quote engine
- * on top of this same endpoint.
+ * POST /api/itinerary/quote — itinerary builder quote endpoint.
+ *
+ * Phase 5 pipeline:
+ *   1. Validate input.
+ *   2. Fetch POI coords + stay minutes; compute total hours + drive km.
+ *   3. loadActivePreset(region, track).
+ *   4. classify(preset, intake).
+ *      - In-scope: computeQuote → status='auto_quoted', price emailed instantly.
+ *      - Out-of-scope (or no preset): lookupPrecedent → status='pending_manual',
+ *        Slack escalation with violations + precedent reference.
+ *   5. Email + Slack are fire-and-forget so the response is not blocked.
  *
  * Body shape (JSON):
  *  {
@@ -19,12 +32,12 @@ import { isRegionSlug } from "@/lib/itinerary-builder/regions";
  *    track: 'private' | 'cruise',
  *    contact_email: string,        // REQUIRED
  *    contact_name?: string | null,
- *    requested_date?: string | null,   // ISO date
+ *    requested_date?: string | null,
  *    party_size?: number | null,
  *    language?: string | null,
  *    notes?: string | null,
  *    locale?: string | null,
- *    intake?: Record<string, unknown>, // { hours, ship, ... } for cruise track
+ *    intake?: Record<string, unknown>,
  *    source_url?: string | null,
  *  }
  */
@@ -47,7 +60,6 @@ interface QuoteBody {
 function isEmail(s: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
 }
-
 function badRequest(field: string, why: string) {
   return NextResponse.json({ ok: false, error: `${field}: ${why}` }, { status: 400 });
 }
@@ -60,7 +72,6 @@ export async function POST(request: Request) {
     return badRequest("body", "not valid JSON");
   }
 
-  // Validate
   const region = typeof body.region === "string" ? body.region : "";
   if (!isRegionSlug(region)) return badRequest("region", "must be 'busan' or 'jeju'");
 
@@ -87,8 +98,77 @@ export async function POST(request: Request) {
   const intake = body.intake && typeof body.intake === "object" ? (body.intake as Record<string, unknown>) : {};
   const sourceUrl = typeof body.source_url === "string" ? body.source_url : null;
 
-  // Persist (service-role)
   const supabase = createServerClient();
+
+  // 1) Fetch POI coords + stay minutes (preserves cart order)
+  const { data: poiRows } = await supabase
+    .from("match_pois")
+    .select("poi_key, name_en, lat, lng, default_stay_minutes")
+    .in("poi_key", poiKeys);
+
+  const poiByKey = new Map(
+    (poiRows ?? []).map((r) => [
+      r.poi_key as string,
+      {
+        name: (r.name_en as string) ?? (r.poi_key as string),
+        lat: Number(r.lat),
+        lng: Number(r.lng),
+        stay: Number(r.default_stay_minutes ?? 0),
+      },
+    ])
+  );
+  const orderedPois = poiKeys.map((k) => poiByKey.get(k)).filter((p): p is NonNullable<typeof p> => !!p);
+  const poiNames = poiKeys.map((k) => poiByKey.get(k)?.name ?? k);
+
+  // 2) Drive + stay totals → hours; total km from haversine×1.3 chain
+  const driveMin = totalDriveMinutes(orderedPois.map((p) => ({ lat: p.lat, lng: p.lng })));
+  const stayMin = orderedPois.reduce((s, p) => s + p.stay, 0);
+  const totalMin = driveMin + stayMin;
+  const totalHours = totalMin / 60;
+  // Re-derive distance_km from drive_min @ 50km/h then back-multiply (= drive_min * 50/60)
+  const distanceKm = (driveMin * 50) / 60;
+
+  // Cruise time-budget hint from intake (if provided)
+  const cruiseHours = track === "cruise" && typeof intake.hours === "number" ? (intake.hours as number) : null;
+  const effectiveHours = cruiseHours && cruiseHours > 0 ? Math.min(totalHours, cruiseHours) : totalHours;
+
+  const engineIntake: QuoteIntake = {
+    region,
+    track: track as Track,
+    pax: partySize,
+    hours: effectiveHours,
+    distance_km: distanceKm,
+    language: language || locale || "en",
+    poi_keys: poiKeys,
+  };
+
+  // 3) Load active preset for (region, track)
+  const preset = await loadActivePreset(supabase, region, track as Track);
+  const presetVerdict = preset ? classify(preset, engineIntake) : { in_scope: false, violations: ["no_active_preset"] };
+
+  // 4) Branch — auto-quote vs pending
+  let autoQuoteAmountKrw: number | null = null;
+  let autoQuoteBreakdown: Record<string, unknown> | null = null;
+  let precedentId: string | null = null;
+  let precedentInfo: { amount_krw: number; confidence: "exact" | "loose"; sample_size: number } | null = null;
+  let finalStatus: "auto_quoted" | "pending_manual" = "pending_manual";
+
+  if (preset && presetVerdict.in_scope) {
+    const breakdown = computeQuote(preset, engineIntake);
+    autoQuoteAmountKrw = breakdown.total_krw;
+    autoQuoteBreakdown = breakdown as unknown as Record<string, unknown>;
+    finalStatus = "auto_quoted";
+  } else {
+    // Out-of-scope: try precedent
+    const fp = fingerprint(engineIntake);
+    const match = await lookupPrecedent(supabase, fp, region, track);
+    if (match) {
+      precedentId = match.precedent_id;
+      precedentInfo = { amount_krw: match.amount_krw, confidence: match.confidence, sample_size: match.sample_size };
+    }
+  }
+
+  // 5) Persist
   const { data: inserted, error: insertError } = await supabase
     .from("tour_quote_requests")
     .insert({
@@ -104,6 +184,10 @@ export async function POST(request: Request) {
       locale,
       intake,
       source_url: sourceUrl,
+      status: finalStatus,
+      auto_quote_amount_krw: autoQuoteAmountKrw,
+      auto_quote_breakdown: autoQuoteBreakdown,
+      precedent_quote_id: precedentId,
     })
     .select("id")
     .single();
@@ -113,16 +197,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "db_insert_failed" }, { status: 500 });
   }
 
-  // Look up POI display names for the Slack message + email
-  const { data: poiRows } = await supabase
-    .from("match_pois")
-    .select("poi_key, name_en")
-    .in("poi_key", poiKeys);
-  const nameByKey = new Map((poiRows ?? []).map((r) => [r.poi_key as string, r.name_en as string]));
-  // Preserve cart order
-  const poiNames = poiKeys.map((k) => nameByKey.get(k) ?? k);
-
-  // Fire-and-forget Slack + email (don't block the response on side effects)
+  // 6) Fire-and-forget Slack + email
   void notifyQuoteRequested({
     quoteId: inserted.id as string,
     track,
@@ -136,12 +211,19 @@ export async function POST(request: Request) {
     notes,
     sourceUrl,
     intake,
+    status: finalStatus,
+    autoQuoteAmountKrw,
+    autoQuoteBreakdown,
+    violations: presetVerdict.violations,
+    precedent: precedentInfo,
   });
 
   void sendEmail({
     to: contactEmail,
     subject:
-      track === "cruise"
+      finalStatus === "auto_quoted"
+        ? `Your AtoC Korea ${track === "cruise" ? "cruise" : ""} itinerary quote — ₩${autoQuoteAmountKrw?.toLocaleString()}`.replace("  ", " ")
+        : track === "cruise"
         ? "Your AtoC Korea cruise itinerary request — we'll respond within 24h"
         : "Your AtoC Korea itinerary request — we'll respond within 24h",
     html: buildQuoteConfirmationHtml({
@@ -153,13 +235,17 @@ export async function POST(request: Request) {
       poiNames,
       sourceUrl,
       responseWindowHours: 24,
+      autoQuoteAmountKrw,
+      autoQuoteBreakdown: autoQuoteBreakdown as Record<string, unknown> | null,
     }),
   });
 
   return NextResponse.json({
     ok: true,
     quote_id: inserted.id,
-    status: "pending_manual",
+    status: finalStatus,
     poi_count: poiKeys.length,
+    auto_quote_amount_krw: autoQuoteAmountKrw,
+    auto_quote_breakdown: autoQuoteBreakdown,
   });
 }

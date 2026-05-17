@@ -22,6 +22,14 @@ export interface QuoteNotificationData {
   notes: string | null;
   sourceUrl: string | null;
   intake: Record<string, unknown>;
+  /** Phase 5 — auto-quote vs pending manual escalation. */
+  status?: "auto_quoted" | "pending_manual";
+  autoQuoteAmountKrw?: number | null;
+  autoQuoteBreakdown?: Record<string, unknown> | null;
+  /** Reasons the request fell out of scope (for pending_manual messages). */
+  violations?: string[];
+  /** Precedent precedent — older similar quote, if any. */
+  precedent?: { amount_krw: number; confidence: "exact" | "loose"; sample_size: number } | null;
 }
 
 export async function notifyQuoteRequested(
@@ -34,8 +42,27 @@ export async function notifyQuoteRequested(
   }
 
   const trackEmoji = data.track === "cruise" ? ":cruise_ship:" : ":car:";
+  const statusEmoji =
+    data.status === "auto_quoted" ? ":white_check_mark:" : ":warning:";
+  const statusLabel =
+    data.status === "auto_quoted"
+      ? "AUTO-QUOTED"
+      : data.violations?.length
+      ? "MANUAL needed (out of scope)"
+      : "MANUAL needed";
   const lines: string[] = [];
-  lines.push(`${trackEmoji} *New ${data.track} quote request* — ${data.region.toUpperCase()}`);
+  lines.push(`${statusEmoji} ${trackEmoji} *${statusLabel}* — ${data.region.toUpperCase()} ${data.track}`);
+  if (data.status === "auto_quoted" && data.autoQuoteAmountKrw != null) {
+    lines.push(`*Auto-quote sent:* ₩${data.autoQuoteAmountKrw.toLocaleString()} KRW`);
+  }
+  if (data.violations && data.violations.length > 0) {
+    lines.push(`*Violations:* ${data.violations.join(", ")}`);
+  }
+  if (data.precedent) {
+    lines.push(
+      `*Precedent:* ~₩${data.precedent.amount_krw.toLocaleString()} (${data.precedent.confidence}, n=${data.precedent.sample_size})`
+    );
+  }
   if (data.contactName) lines.push(`*Name:* ${data.contactName}`);
   lines.push(`*Email:* ${data.contactEmail}`);
   if (data.partySize) lines.push(`*Party:* ${data.partySize}`);
