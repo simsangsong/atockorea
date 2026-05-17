@@ -181,7 +181,11 @@ export default function FloatingLanguageToggle() {
         <div
           role="menu"
           aria-label="Select language"
-          className="absolute bottom-full right-0 mb-2 w-44 rounded-2xl border border-gray-200 bg-white/98 py-1.5 shadow-[0_18px_40px_-10px_rgba(15,23,42,0.18),0_4px_10px_-4px_rgba(15,23,42,0.08)] backdrop-blur-md"
+          // Solid white (no alpha, no backdrop-blur) — translucent panels read
+          // as gray over dark hero photos and washed out the menu text. Strong
+          // drop shadow + 1px border keep the premium feel without depending
+          // on background blur.
+          className="absolute bottom-full right-0 mb-2 w-44 overflow-hidden rounded-2xl border border-slate-200 bg-white py-1.5 shadow-[0_22px_44px_-12px_rgba(15,23,42,0.42),0_6px_14px_-4px_rgba(15,23,42,0.18),0_0_0_1px_rgba(15,23,42,0.04)]"
         >
           {locales.map((loc) => (
             <button
@@ -193,7 +197,7 @@ export default function FloatingLanguageToggle() {
                 'flex w-full items-center gap-2.5 px-3.5 py-2 text-left text-[13px] font-medium transition-colors',
                 locale === loc
                   ? 'bg-blue-50 text-blue-700'
-                  : 'text-gray-800 hover:bg-gray-50 hover:text-gray-900',
+                  : 'text-slate-800 hover:bg-slate-50 hover:text-slate-900',
               )}
             >
               <span className="text-[15px] leading-none">{localeFlags[loc]}</span>
