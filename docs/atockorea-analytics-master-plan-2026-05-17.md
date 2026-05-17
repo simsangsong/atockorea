@@ -28,13 +28,13 @@ v3 landing master plan §A Phase 0b는 "🔄 자체 빌드 (atockorea-analytics-
 | 4 — Retention / Cohorts | ✅ 완료 | 2026-05-17 | 2026-05-17 | (pending) | ISO 주별 cohort × W+0..W+N 히트맵 (anonymous_id or user_id) |
 | 5 — Session Timeline | ✅ 완료 | 2026-05-17 | 2026-05-17 | (pending) | list (recent/long/converted) + detail (chronological event sequence + payload, DOM 녹화 X) |
 | 6 — A/B Experiments | ✅ 완료 | 2026-05-17 | 2026-05-17 | (pending) | shared cyrb53 hash + useGetExperimentVariant + SDK auto-attach + admin UI(list/create/detail) + chi-square p-value. v3 landing Phase D unblock 완료 |
-| 7 — 운영 / 헬스 / 익명화 | ⏳ 대기 | — | — | — | 6 후. 90일 익명화 cron + bot 필터 + CSV export |
+| 7 — 운영 / 헬스 / 익명화 | ✅ 완료 | 2026-05-17 | 2026-05-17 | (pending) | hourly matview refresh cron + daily 90일 익명화 cron + Postgres helpers (3) + admin /health 화면 |
 | 8 — 옵션 (heatmap / PostHog 보강 등) | ⏸ 보류 | — | — | — | 트래픽 의미 있게 늘어난 뒤만 |
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단
 
-**현재 활성 Phase: 없음 (Phase 1~6 ✅ 완료. landing v3 Phase D unblock 완료, Phase 7 진입 대기).**
-**다음 액션: Phase 7 (운영 / 헬스 / 90일 익명화) — cron + bot 강화 + CSV export.**
+**현재 활성 Phase: 없음 (Phase 1~7 ✅ 완료. v3 본 실행 + 자체 분석 시스템 풀 빌드 완료).**
+**다음 액션: 운영 — Phase 8 옵션(heatmap, PostHog 보강 등)은 트래픽 5x 도달 시 재검토 (§D). v3 landing Phase D 실험 정의 시작 가능.**
 
 ---
 
@@ -75,7 +75,9 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | Phase 3 ✅ 완료 — Funnels (5 seed + 단계별 전환률 + breakdown) | 66c788fe | server-side step walk per session with conversion window respect; UI: bar chart with retention from prev / from first |
 | 2026-05-17 | Phase 4 ✅ 완료 — Retention 주별 cohort 히트맵 (4/8/12주 토글) | 0c4e1dca | ISO Mon-Sun 주. user_id 머지 후 unique 카운트 |
 | 2026-05-17 | Phase 5 ✅ 완료 — Session Timeline (list + detail event sequence) | 4af800b2 | recent/long/converted sort + per-session 이벤트 + payload pretty JSON |
-| 2026-05-17 | Phase 6 ✅ 완료 — A/B Experiments (shared hash + SDK auto-attach + admin UI + chi-square) | (pending) | **v3 landing Phase D unblock 완료.** 4 endpoints + 2 pages + lib/analytics/experiment-assignment.ts |
+| 2026-05-17 | Phase 6 ✅ 완료 — A/B Experiments (shared hash + SDK auto-attach + admin UI + chi-square) | 2c435767 | **v3 landing Phase D unblock 완료.** 4 endpoints + 2 pages + lib/analytics/experiment-assignment.ts |
+| 2026-05-17 | Phase 7 ✅ 완료 — Health dashboard + 2 Vercel cron + 3 Postgres helpers | (pending) | refresh_analytics_materialized_views / anonymize_old_analytics / analytics_health_snapshot. Cron: hourly view refresh, daily 18:00 KST 90일 익명화 |
+| 2026-05-17 | **자체 분석 시스템 풀 빌드 완료** (Phase 1~7 ✅) | (pending) | 7개 dashboard 화면 + 11 endpoints + cron + RLS + cookies + SDK + experiments + PII guard. v3 landing 와 cross-integration 완비 |
 
 ---
 
