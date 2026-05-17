@@ -34,10 +34,13 @@ export default function IntakeForm() {
   const [track, setTrack] = useState<Track>(() => readInitialTrack(searchParams));
   const [region, setRegion] = useState<RegionSlug>(() => readInitialRegion(searchParams));
   const [hours, setHours] = useState<string>("6");
-  const [date, setDate] = useState<string>("");
-  const [party, setParty] = useState<string>("");
   const [ship, setShip] = useState<string>("");
-  const [language, setLanguage] = useState<string>("");
+
+  // Date + party were removed from the intake form (2026-05-17) — the native
+  // `<input type="date">` calendar popup was occluding the submit button on
+  // Korean Chrome mobile, and both fields are already collected (with
+  // proper UI) inside `<QuoteModal />` at quote-submit time. Keeping intake
+  // minimal: "what kind of trip" only.
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -48,12 +51,6 @@ export default function IntakeForm() {
       if (Number.isFinite(h) && h > 0) params.set("hours", String(h));
       if (ship.trim()) params.set("ship", ship.trim());
     }
-    if (date) params.set("date", date);
-    if (party) {
-      const p = Number(party);
-      if (Number.isFinite(p) && p > 0) params.set("party", String(p));
-    }
-    if (language) params.set("lang", language);
     router.push(`/itinerary-builder/${region}?${params.toString()}`);
   }
 
@@ -165,37 +162,6 @@ export default function IntakeForm() {
         </fieldset>
       ) : null}
 
-      {/* Date + party (optional) */}
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <label className="block">
-          <span className="mb-1.5 block text-xs font-semibold text-slate-700">
-            {t("dateLabel")}{" "}
-            <span className="text-slate-400">{t("optionalSuffix")}</span>
-          </span>
-          <input
-            type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-          />
-        </label>
-        <label className="block">
-          <span className="mb-1.5 block text-xs font-semibold text-slate-700">
-            {t("partyLabel")}{" "}
-            <span className="text-slate-400">{t("optionalSuffix")}</span>
-          </span>
-          <input
-            type="number"
-            min={1}
-            max={20}
-            value={party}
-            onChange={(e) => setParty(e.target.value)}
-            placeholder="2"
-            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-300 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-          />
-        </label>
-      </div>
-
       {/* Cruise: ship name (optional) */}
       {track === "cruise" ? (
         <label className="block">
@@ -212,6 +178,10 @@ export default function IntakeForm() {
           />
         </label>
       ) : null}
+
+      <p className="text-center text-xs text-slate-500">
+        {t("dateAndPartyDeferredHint")}
+      </p>
 
       <button
         type="submit"

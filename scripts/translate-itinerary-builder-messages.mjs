@@ -81,6 +81,7 @@ const EN_NAMESPACE = {
     optionalSuffix: "(optional)",
     submit: "Open the map",
     browsePackagesInstead: "Or browse fixed packages instead →",
+    dateAndPartyDeferredHint: "We'll ask for travel date + party size when you submit your quote.",
   },
   cart: {
     title: "Your itinerary",
