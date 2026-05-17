@@ -24,7 +24,7 @@ v3 만든 이유:
 
 | Phase | 상태 | 시작일 | 완료일 | 마지막 커밋 | 비고 |
 |---|---|---|---|---|---|
-| 0a — 계측 이벤트 정의 | 🔄 진행 중 | 2026-05-17 | — | — | analytics.ts L15-22 console.log 상태. sticky/featured/destination/match-visible/intent-focus/style-chip 와이어링 + 시즌 칩은 메서드만 정의 (Phase C 와이어링) |
+| 0a — 계측 이벤트 정의 | 🔄 진행 중 (console 검증 대기) | 2026-05-17 | — | b6b73c07 | analytics.ts에 7종 메서드 + 6개 호출부 와이어링 (시즌 칩 제외) + `docs/analytics-events-home.md`. dev 콘솔 발화 검증 후 ✅ 전환 |
 | 0b — provider 연결 + baseline | ⏸ 보류 | — | — | — | provider 미결정 (별도 트랙) |
 | 0c — 모바일 fold 실측 | ⏳ 대기 | — | — | — | 0a와 병렬 가능 |
 | B — 가장 안전한 전환 개선 | ⏳ 대기 | — | — | — | 0a 완료 후 시작 |
@@ -74,7 +74,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 |---|---|---|---|
 | 2026-05-17 | v3 마스터 플랜 작성 | (pending) | `docs/landing-page-uiux-master-plan-v3-2026-05-17.md` |
 | 2026-05-17 | v3에 §A-§D 트래킹 섹션 추가 + 스킬 등록 | (pending) | `.claude/skills/landing-page-uiux/SKILL.md` |
-| 2026-05-17 | Phase 0a 시작 — 이벤트 7종 정의 + 호출부 와이어링 | (pending) | sticky/featured/destination/match-visible/intent-focus/style-chip; 시즌 칩은 메서드만 정의 (Phase C 와이어링) |
+| 2026-05-17 | Phase 0a 시작 — 이벤트 7종 정의 + 호출부 와이어링 | 5e8348ca | sticky/featured/destination/match-visible/intent-focus/style-chip; 시즌 칩은 메서드만 정의 (Phase C 와이어링) |
+| 2026-05-17 | Phase 0a 코드 랜딩 — analytics.ts 7 메서드 + 6 호출부 + taxonomy doc | b6b73c07 | dev 콘솔 발화 검증 후 ✅. provider 미연결 (Phase 0b) |
 
 ---
 
