@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { X, Plus, Check, MapPin, Clock, Footprints, Ticket } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { X, Plus, Check, MapPin, Clock, Footprints, Ticket, ChevronDown, ChevronUp } from "lucide-react";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 
 interface Props {
@@ -28,6 +29,8 @@ function get(obj: Record<string, unknown> | null | undefined, key: string): stri
  * itineraryStop card. Image gallery, highlights, description, smartNotes,
  * visitBasics, convenience.
  */
+const HIGHLIGHTS_VISIBLE = 6;
+
 export default function POIDetailModal({ poi, inCart, onClose, onAdd, onRemove, onFocus }: Props) {
   const allImages = poi.images && poi.images.length > 0
     ? poi.images
@@ -35,15 +38,22 @@ export default function POIDetailModal({ poi, inCart, onClose, onAdd, onRemove, 
     ? [poi.default_image_url]
     : [];
   const [activeIdx, setActiveIdx] = useState(0);
+  const [showAllHighlights, setShowAllHighlights] = useState(false);
+  const [descExpanded, setDescExpanded] = useState(false);
 
-  // Lock body scroll while open
+  // Lock body scroll while open + close on Esc
   useEffect(() => {
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = prev;
+      document.removeEventListener("keydown", onKey);
     };
-  }, []);
+  }, [onClose]);
 
   const smartTip = get(poi.smart_notes, "tip");
   const smartPhoto = get(poi.smart_notes, "photo");
@@ -57,50 +67,78 @@ export default function POIDetailModal({ poi, inCart, onClose, onAdd, onRemove, 
   const cvParking = get(poi.convenience, "parking");
   const cvRestroom = get(poi.convenience, "restroom");
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center md:items-center md:p-6">
-      <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={onClose} aria-hidden />
-      <div className="relative z-10 max-h-[92vh] w-full max-w-2xl overflow-hidden rounded-t-2xl bg-white shadow-2xl md:rounded-2xl">
-        <header className="flex items-center justify-between border-b border-slate-200 px-5 py-3.5">
-          <div className="min-w-0">
-            <h2 className="truncate text-h3 text-slate-900">{poi.name_en}</h2>
-            {poi.name_ko ? (
-              <p className="truncate text-caption text-slate-500">{poi.name_ko}</p>
-            ) : null}
-          </div>
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close"
-            className="ml-3 flex-shrink-0 rounded p-1 text-slate-500 hover:bg-slate-100"
-          >
-            <X className="h-5 w-5" aria-hidden />
-          </button>
-        </header>
+  const highlights = poi.highlights ?? [];
+  const visibleHighlights = showAllHighlights ? highlights : highlights.slice(0, HIGHLIGHTS_VISIBLE);
+  const hasMoreHighlights = highlights.length > HIGHLIGHTS_VISIBLE;
 
-        <div className="max-h-[calc(92vh-180px)] overflow-y-auto">
-          {/* Gallery */}
+  return (
+    <AnimatePresence>
+      <div className="fixed inset-0 z-50 flex items-end justify-center md:items-center md:p-6" role="dialog" aria-modal="true">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
+          onClick={onClose}
+          aria-hidden
+        />
+        <motion.div
+          initial={{ opacity: 0, y: 24, scale: 0.97 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 12, scale: 0.97 }}
+          transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="relative z-10 max-h-[92vh] w-full max-w-2xl overflow-hidden rounded-t-2xl bg-white shadow-2xl md:rounded-2xl"
+        >
+          <header className="flex items-center justify-between border-b border-slate-200 px-5 py-3.5">
+            <div className="min-w-0">
+              <h2 className="truncate text-h3 text-slate-900">{poi.name_en}</h2>
+              {poi.name_ko ? (
+                <p className="truncate text-caption text-slate-500">{poi.name_ko}</p>
+              ) : null}
+            </div>
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="Close"
+              className="ml-3 flex-shrink-0 rounded-full p-1.5 text-slate-500 transition-colors hover:bg-slate-100"
+            >
+              <X className="h-5 w-5" aria-hidden />
+            </button>
+          </header>
+
+          <div className="max-h-[calc(92vh-180px)] overflow-y-auto">
+          {/* Hero gallery — 16:10 on mobile, 2:1 on desktop with bottom fade */}
           {allImages.length > 0 ? (
             <div className="bg-slate-100">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={allImages[activeIdx]}
-                alt={poi.name_en}
-                className="aspect-[16/10] w-full object-cover"
-              />
+              <div className="relative">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  key={allImages[activeIdx]}
+                  src={allImages[activeIdx]}
+                  alt={poi.name_en}
+                  className="aspect-[16/10] w-full object-cover md:aspect-[2/1]"
+                />
+                {/* Bottom fade so dark text on white card below reads cleanly */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-b from-transparent to-white"
+                />
+              </div>
               {allImages.length > 1 ? (
-                <div className="flex gap-1.5 overflow-x-auto p-2">
+                <div className="flex snap-x snap-mandatory gap-2 overflow-x-auto px-3 py-2 scrollbar-hide">
                   {allImages.map((img, i) => (
                     <button
                       key={img}
                       type="button"
                       onClick={() => setActiveIdx(i)}
-                      className={`relative flex-shrink-0 overflow-hidden rounded-md ring-2 ${
-                        i === activeIdx ? "ring-amber-500" : "ring-transparent hover:ring-slate-200"
+                      aria-label={`Image ${i + 1} of ${allImages.length}`}
+                      className={`relative h-12 w-16 flex-shrink-0 snap-start overflow-hidden rounded-md ring-2 transition-all duration-200 ease-out ${
+                        i === activeIdx ? "ring-amber-500" : "ring-transparent opacity-70 hover:opacity-100 hover:ring-slate-200"
                       }`}
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={img} alt="" className="h-12 w-16 object-cover md:h-14 md:w-20" />
+                      <img src={img} alt="" className="h-full w-full object-cover" />
                     </button>
                   ))}
                 </div>
@@ -128,19 +166,34 @@ export default function POIDetailModal({ poi, inCart, onClose, onAdd, onRemove, 
             </div>
 
             {/* Highlights */}
-            {poi.highlights && poi.highlights.length > 0 ? (
+            {highlights.length > 0 ? (
               <section>
                 <h3 className="mb-2 text-eyebrow">Highlights</h3>
                 <ul className="space-y-1.5 text-body text-slate-700">
-                  {poi.highlights.slice(0, 8).map((h, i) => (
+                  {visibleHighlights.map((h, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span aria-hidden className="mt-1 flex-shrink-0 text-amber-600">
-                        •
-                      </span>
+                      <Check className="mt-1 h-3.5 w-3.5 flex-shrink-0 text-amber-600" aria-hidden />
                       <span>{stripMd(h)}</span>
                     </li>
                   ))}
                 </ul>
+                {hasMoreHighlights ? (
+                  <button
+                    type="button"
+                    onClick={() => setShowAllHighlights((v) => !v)}
+                    className="mt-2 inline-flex items-center gap-1 text-caption font-semibold text-amber-700 underline-offset-2 hover:text-amber-800 hover:underline"
+                  >
+                    {showAllHighlights ? (
+                      <>
+                        Show less <ChevronUp className="h-3 w-3" aria-hidden />
+                      </>
+                    ) : (
+                      <>
+                        Show all {highlights.length} highlights <ChevronDown className="h-3 w-3" aria-hidden />
+                      </>
+                    )}
+                  </button>
+                ) : null}
               </section>
             ) : null}
 
@@ -148,11 +201,32 @@ export default function POIDetailModal({ poi, inCart, onClose, onAdd, onRemove, 
             {poi.description ? (
               <section>
                 <h3 className="mb-2 text-eyebrow !text-slate-500">About this stop</h3>
-                <div className="space-y-3 text-body leading-relaxed text-slate-700">
+                <div
+                  className={`space-y-3 text-body leading-relaxed text-slate-700 ${
+                    !descExpanded ? "line-clamp-5 [&>*]:contents" : ""
+                  }`}
+                >
                   {poi.description.split(/\n+/).map((p, i) => (
                     <p key={i}>{stripMd(p)}</p>
                   ))}
                 </div>
+                {poi.description.length > 320 ? (
+                  <button
+                    type="button"
+                    onClick={() => setDescExpanded((v) => !v)}
+                    className="mt-1 inline-flex items-center gap-1 text-caption font-semibold text-amber-700 underline-offset-2 hover:text-amber-800 hover:underline"
+                  >
+                    {descExpanded ? (
+                      <>
+                        Read less <ChevronUp className="h-3 w-3" aria-hidden />
+                      </>
+                    ) : (
+                      <>
+                        Read more <ChevronDown className="h-3 w-3" aria-hidden />
+                      </>
+                    )}
+                  </button>
+                ) : null}
               </section>
             ) : null}
 
@@ -208,39 +282,40 @@ export default function POIDetailModal({ poi, inCart, onClose, onAdd, onRemove, 
           </div>
         </div>
 
-        {/* Footer actions */}
-        <footer className="flex items-center justify-between border-t border-slate-200 bg-slate-50 px-5 py-3">
-          <button
-            type="button"
-            onClick={onFocus}
-            className="text-caption font-semibold text-slate-600 underline-offset-2 hover:text-slate-900 hover:underline"
-          >
-            Show on map
-          </button>
-          <button
-            type="button"
-            onClick={inCart ? onRemove : onAdd}
-            className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-caption font-bold transition-colors ${
-              inCart
-                ? "bg-rose-50 text-rose-700 ring-1 ring-rose-100 hover:bg-rose-100"
-                : "bg-amber-500 text-white shadow hover:bg-amber-600"
-            }`}
-          >
-            {inCart ? (
-              <>
-                <Check className="h-4 w-4" aria-hidden />
-                Remove from itinerary
-              </>
-            ) : (
-              <>
-                <Plus className="h-4 w-4" aria-hidden />
-                Add to itinerary
-              </>
-            )}
-          </button>
-        </footer>
+          {/* Footer actions */}
+          <footer className="flex items-center justify-between gap-3 border-t border-slate-200 bg-slate-50 px-5 py-3">
+            <button
+              type="button"
+              onClick={onFocus}
+              className="flex-shrink-0 text-caption font-semibold text-slate-600 underline-offset-2 transition-colors hover:text-slate-900 hover:underline"
+            >
+              Show on map
+            </button>
+            <button
+              type="button"
+              onClick={inCart ? onRemove : onAdd}
+              className={`inline-flex items-center justify-center gap-1.5 rounded-full px-5 py-2.5 text-caption font-bold transition-all duration-200 ease-out ${
+                inCart
+                  ? "bg-rose-50 text-rose-700 ring-1 ring-rose-100 hover:bg-rose-100"
+                  : "bg-slate-900 text-white shadow hover:bg-slate-800"
+              }`}
+            >
+              {inCart ? (
+                <>
+                  <Check className="h-4 w-4" aria-hidden />
+                  Remove from itinerary
+                </>
+              ) : (
+                <>
+                  <Plus className="h-4 w-4" aria-hidden />
+                  Add to itinerary
+                </>
+              )}
+            </button>
+          </footer>
+        </motion.div>
       </div>
-    </div>
+    </AnimatePresence>
   );
 }
 
