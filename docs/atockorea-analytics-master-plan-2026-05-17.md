@@ -23,7 +23,7 @@ v3 landing master plan §A Phase 0b는 "🔄 자체 빌드 (atockorea-analytics-
 | Phase | 상태 | 시작일 | 완료일 | 마지막 커밋 | 비고 |
 |---|---|---|---|---|---|
 | 1 — Foundation (ingestion + storage + 최소 dashboard) | ✅ 완료 | 2026-05-17 | 2026-05-17 | f140e82c | schema(5 tables + 2 mat views + 5 seed funnels) + SDK 확장(cookie/session/queue/sendBeacon) + ingestion + identify endpoints + admin Overview + 6 placeholder tabs |
-| 2 — Events Explorer | ⏳ 대기 | — | — | — | 1 후. 이벤트별 시계열 + payload 분포 |
+| 2 — Events Explorer | ✅ 완료 | 2026-05-17 | 2026-05-17 | d6e11898 | list (이벤트 자동 discover) + detail (시계열 + payload top-10 분포 + 4 breakdown + 25 샘플) |
 | 3 — Funnels | ⏳ 대기 | — | — | — | 2 후. 5개 predefined funnel + breakdown |
 | 4 — Retention / Cohorts | ⏳ 대기 | — | — | — | 3 후. D+1/D+7/D+30 매트릭스 |
 | 5 — Session Timeline | ⏳ 대기 | — | — | — | 4 후. 이벤트 시퀀스 (DOM 녹화 아님) |
@@ -33,8 +33,8 @@ v3 landing master plan §A Phase 0b는 "🔄 자체 빌드 (atockorea-analytics-
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단
 
-**현재 활성 Phase: 없음 (Phase 1 ✅ 완료, Phase 2 진입 대기).**
-**다음 액션: Phase 2 (Events Explorer) — `/admin/analytics/product/events` 활성화. 이벤트 리스트 + 시계열 + payload 분포.**
+**현재 활성 Phase: 없음 (Phase 1 + 2 ✅ 완료, Phase 3 진입 대기).**
+**다음 액션: Phase 3 (Funnels) — 5 seed funnel UI + 단계별 이탈률 + breakdown.**
 
 ---
 
@@ -69,6 +69,9 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | 자체 분석 마스터 플랜 작성 + v3 landing §A/§B/§C cross-ref | 6848f06a | `docs/atockorea-analytics-master-plan-2026-05-17.md` |
 | 2026-05-17 | Phase 1 시작 — Foundation atomic 묶음 | 51a6b352 | schema + SDK + ingestion + admin scaffold + Overview |
 | 2026-05-17 | Phase 1 ✅ 완료 — schema 적용(prod) + SDK 교체 + 2 endpoint + admin dashboard 1+6 화면 | f140e82c | dev → 이벤트 발화 시 console.log + Supabase insert + Overview에서 카운트 표시 |
+| 2026-05-17 | fix — 세션 upsert가 2nd batch에서 entry context를 NULL로 clobber하던 버그 | e04cda44 | End-to-end 검증 통과 (6/6 poll round) |
+| 2026-05-17 | Phase 1 E2E 검증 — bot UA filter / invalid schema / real Chrome → production / DB row | (verified) | home_hero_season_chip_click 1건 prod에 정상 저장 (locale=ko-KR, device=desktop, country=KR) |
+| 2026-05-17 | Phase 2 ✅ 완료 — Events Explorer (list + detail + filters) | d6e11898 | event auto-discover + 시계열 + payload top-10 분포 + 4 breakdown + 25 samples |
 
 ---
 
