@@ -27,7 +27,7 @@ v3 만든 이유:
 | 0a — 계측 이벤트 정의 | ✅ 완료 | 2026-05-17 | 2026-05-17 | b6b73c07 | 7종 메서드 + 6개 호출부 와이어링 + `docs/analytics-events-home.md`. dev 콘솔 발화 7종 검증 통과 (Cloudflare Quick Tunnel) |
 | 0b — provider 연결 + baseline | ⏸ 보류 | — | — | — | provider 미결정 (별도 트랙) |
 | 0c — 모바일 fold 실측 | ✅ 완료 | 2026-05-17 | 2026-05-17 | 3fdb9359 | CDP 실측: 390x844 CTA -81px / 430x932 CTA -32px (모두 fold 아래). §2.6 + §3 P0-A 보강 |
-| B — 가장 안전한 전환 개선 | ⏳ 대기 | — | — | — | 0a 완료 후 시작 |
+| B — 가장 안전한 전환 개선 | 🔄 진행 중 | 2026-05-17 | — | — | B.1 진행 중. 6 sub-task (B.1 swap → B.2 idle carousel → B.3 헤더 슬림+Trust 압축 → B.4 한글화 → B.5 CTA 카피 → B.6 Sticky QA) |
 | C — 상호작용 강화 | ⏳ 대기 | — | — | — | B 완료 후 |
 | D — 실험 (in-place + bottom-sheet + Sticky threshold A/B) | ⏳ 대기 | — | — | — | 0b baseline 후만 측정 의미 |
 | E — 시각 정체성 확장 | ⏳ 대기 | — | — | — | 마지막 |
@@ -39,8 +39,8 @@ v3 만든 이유:
 - ✅ 완료
 - ❌ 중단/롤백
 
-**현재 활성 Phase: 없음 (Phase B 진입 대기).**
-**다음 액션: Phase B 시작 — B.1 섹션 순서 swap → B.2 idle carousel → B.3 매처 헤더 슬림 → B.4 Trust 한글화 → B.5 CTA 카피 → B.6 Sticky QA.**
+**현재 활성 Phase: B (가장 안전한 전환 개선).**
+**다음 액션: B.1 섹션 순서 swap (`HomeV2Page.tsx:24-35`) 진행 중.**
 
 ---
 
@@ -63,6 +63,8 @@ v3 만든 이유:
 | 2026-05-17 | H1 즉시 교체 금지, A/B로만 측정 | 브랜드 보이스 손실 위험 | — |
 | 2026-05-17 | reason chips는 상품 메타 동적 데이터 (`tour.tags` / `tour.highlights`), 정적 카피 금지 | 상품 회전 시 미스매치 방지 | — |
 | 2026-05-17 | Trust 행 플랫폼명 (Klook · GetYourGuide · Viator) 무조건 유지, 라벨만 한글화 | 브랜드 신뢰 자산 | — |
+| 2026-05-17 | Phase 3b `ItineraryBuilderEntry`는 Destinations 직후 위치 유지. B.1 swap 후에도 Destinations와 함께 페이지 후반부로 이동 | 코드 실사 (`HomeV2Page.tsx:24-35`). v3 작성 시점에 §2.5에 미반영된 사실 — 사실 수정. ItineraryBuilderEntry는 "지역 분기 후 맞춤 빌더로 유도"라는 인접 관계 | — |
+| 2026-05-17 | B.3 매처 헤더 슬림은 단독 진행 금지. **Trust strip 컴팩트화와 묶음 처리** (B.3.1 헤더 슬림 + B.3.2 Trust 컴팩트) | Phase 0c 실측: iPhone 14 fold 회수 81px 필요, 헤더 슬림 단독은 ~60px만 회수 | — |
 
 ---
 
@@ -79,6 +81,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | Phase 0a console 검증 통과 (Cloudflare Quick Tunnel) → ✅ | — | 사용자 확인. Phase 0c 진입 |
 | 2026-05-17 | Phase 0c 시작 — 모바일 fold 실측 | (pending) | 390x844 / 430x932 매처 CTA fold 위치 측정 |
 | 2026-05-17 | Phase 0c 완료 — CDP 실측: iPhone 14 CTA -81px / Pro Max -32px (둘 다 fold 아래). §2.6 + §3 P0-A 보강 | 3fdb9359 | B.3 단독으로 부족 → B.3 + Trust strip 압축 합산 회수 전략 명시 |
+| 2026-05-17 | 사실 수정 — §2.5 섹션 순서에 ItineraryBuilderEntry 반영 (Phase 3b 이후 누락). §B 결정 row 2건 추가 (ItineraryBuilderEntry 위치 + B.3+Trust 묶음) | (pending) | 코드 실사 우선 (skill rule 10) |
+| 2026-05-17 | Phase B 시작 — B.1 섹션 순서 swap | (pending) | `HomeV2Page.tsx:24-35` Featured ↔ Destinations swap, ItineraryBuilderEntry는 Destinations 인접 유지 |
 
 ---
 
@@ -166,15 +170,23 @@ export function trackEvent(event: string, payload: AnalyticsPayload = {}) {
 
 실제 provider 미연결. "1일 baseline 수집" 직접 불가능. **v3에서는 Phase 0를 0a(정의+provider 결정) + 0b(연결 후 baseline)로 분해.**
 
-### 2.5 섹션 순서
+### 2.5 섹션 순서 — **사실 수정 (Phase B.1 진입 시 보강, 2026-05-17)**
 
-`components/home/v2/HomeV2Page.tsx:25-33`:
+`components/home/v2/HomeV2Page.tsx:24-35` 실측 현재 순서:
 
 ```
-Hero → DeferredBestMatchPreview → Destinations → Style → Featured → Why → Process → FinalCTA
+Hero
+DeferredBestMatchPreview
+DestinationsShowcase
+ItineraryBuilderEntry            ← Phase 3b에서 추가 (v3 작성 시점 미반영)
+ChooseTravelStyle
+FeaturedProductsShowcase
+WhyAtockorea
+ProcessOperational
+FinalCTA
 ```
 
-매처 약속 → null 영역 → 지역 분기 → 스타일 분기 → 실제 상품. 모멘텀 손실.
+매처 약속 → null 영역 (idle) → 지역 분기 → 빌더 진입점 → 스타일 분기 → 실제 상품. 모멘텀 손실 + Featured까지 5번째 섹션이라는 거리감 동일. v3 작성 시 §2.5 기재가 Phase 3b 이전 시점 기준이었던 사실 수정.
 
 ### 2.6 모바일 first-screen fold — **실측 완료 (Phase 0c, 2026-05-17)**
 
@@ -382,18 +394,23 @@ v2의 Day 0-9 일정을 분해. 각 Phase는 **독립 PR**로 분리. Phase 간 
 
 #### B.1 섹션 순서 swap
 
-`HomeV2Page.tsx:25-33`:
+`HomeV2Page.tsx:24-35` — Featured를 Match 직후로 끌어올림. ItineraryBuilderEntry는 §B 결정(2026-05-17)에 따라 Destinations와 함께 후반부로 이동:
 
 ```tsx
 <HeroSection />
 <DeferredBestMatchPreview />
-<FeaturedProductsShowcase />   // ↑ Destinations 앞으로
-<DestinationsShowcase />        // ↓ Featured 뒤로
+<FeaturedProductsShowcase />     // ↑ Match 직후로 이동
+<DestinationsShowcase />          // ↓ Featured 뒤로
+<ItineraryBuilderEntry />         // Destinations 인접 유지
 <ChooseTravelStyle />
 <WhyAtockorea />
 <ProcessOperational />
 <FinalCTA />
 ```
+
+결과 흐름: 매처 약속 → 결과 영역 → **실제 상품 (Featured)** → 지역 분기 → 빌더 진입 → 스타일 분기 → ...
+
+핵심 효과: Featured가 4→3 위치로 한 단계 위 (Match preview 직후). idle phase에선 Featured가 "실제 상품 미리보기" 역할도 함 (Phase B.2 IdleCarousel과 시너지).
 
 #### B.2 DeferredBestMatchPreview idle preview — **cycling 카드 2-3장**
 
