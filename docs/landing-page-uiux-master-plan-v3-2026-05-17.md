@@ -29,7 +29,7 @@ v3 만든 이유:
 | 0c — 모바일 fold 실측 | ✅ 완료 | 2026-05-17 | 2026-05-17 | 3fdb9359 | CDP 실측: 390x844 CTA -81px / 430x932 CTA -32px (모두 fold 아래). §2.6 + §3 P0-A 보강 |
 | B — 가장 안전한 전환 개선 | ✅ 완료 | 2026-05-17 | 2026-05-17 | a94d73b9 | B.1~B.6 모두 ✅. CDP QA: sticky top=hidden / mid=visible / deep=visible / footer=hidden. 사후 audit는 §2.6.1 (bottom nav overlay 발견 — Phase 0b 데이터로 재판단) |
 | C — 상호작용 강화 | ✅ 완료 | 2026-05-17 | 2026-05-17 | 90345fd6 | C.1 ✅ 시즌 칩 인터랙티브. C.2는 이미 코드에 반영(사실 수정) — result card는 product.badges 동적 (vm:112-117), idle preview는 card.badges (B.2) |
-| D — 실험 (in-place + bottom-sheet + Sticky threshold A/B) | 🔄 진행 중 | 2026-05-17 | — | — | 자체 분석 시스템 + home_cta_copy 실험 wired → 0b unblock 완료. D.1 / D.2 / D.3 순차 진행 |
+| D — 실험 (in-place + bottom-sheet + Sticky threshold A/B) | ✅ 완료 | 2026-05-17 | 2026-05-17 | 248169d4 | D.1 (desktop in-place morphing) + D.2 (mobile bottom-sheet) + D.3 (sticky threshold) 모두 wired + 3 실험 DB 등록. matcher_funnel primary metric 공통 |
 | E — 시각 정체성 확장 | ✅ 완료 | 2026-05-17 | 2026-05-17 | a162b7fc | E.1 ✅ scroll-reveal 5 섹션 + 공통 helper. E.2 OTA 로고는 §D 보류 (라이선스 의존) |
 
 상태 마커:
@@ -39,8 +39,8 @@ v3 만든 이유:
 - ✅ 완료
 - ❌ 중단/롤백
 
-**현재 활성 Phase: 없음 (v3 본 실행 범위 종료). Phase 0b는 자체 분석 빌드 트랙으로 분리.**
-**다음 액션: 자체 분석 시스템 Phase 1 (Foundation) — `docs/atockorea-analytics-master-plan-2026-05-17.md` 참조. Phase 6 완료 시 v3 Phase D unblock.**
+**현재 활성 Phase: 없음 (v3 본 실행 + Phase D 완료). 4개 실험 running (home_cta_copy, home_result_morphing, home_result_bottomsheet, home_sticky_threshold).**
+**다음 액션: traffic 누적 후 admin /admin/analytics/product/experiments 에서 variant 비교. 통계적 유의차 발견 시 winner 채택 → §B 결정 row 추가.**
 
 ---
 
