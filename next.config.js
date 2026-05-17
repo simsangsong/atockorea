@@ -67,6 +67,18 @@ const nextConfig = {
       { source: '/jeju/:slug', destination: '/tour-product/:slug', permanent: true },
       { source: '/seoul/:slug', destination: '/tour-product/:slug', permanent: true },
       { source: '/busan/:slug', destination: '/tour-product/:slug', permanent: true },
+      /**
+       * Legacy region-landing pages (`/busan`, `/jeju`, `/seoul`) were broken
+       * stubs ("Busan Tours" header with 2 hardcoded cards, one mislabeled as
+       * Jeju). The canonical region surfaces are now the tours hub
+       * (`/tours/list?destination=...`) and the itinerary builder
+       * (`/itinerary-builder?region=...`). Send users to the builder when they
+       * hit a region root, since that's where they'd be choosing region anyway.
+       */
+      { source: '/busan', destination: '/itinerary-builder?region=busan', permanent: true },
+      { source: '/jeju', destination: '/itinerary-builder?region=jeju', permanent: true },
+      // /seoul stays untouched until Seoul rollout (post-MVP) — it's at least
+      // not a dead end since the home + /tours still surface Seoul content.
       {
         source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/jeju/:slug',
         destination: '/:locale/tour-product/:slug',

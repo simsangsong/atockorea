@@ -2,12 +2,20 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight, MapPin, Ship, Car } from "lucide-react";
 import { useTranslations } from "@/lib/i18n";
 
 type Track = "private" | "cruise";
 type RegionSlug = "busan" | "jeju";
+
+function readInitialRegion(sp: URLSearchParams | null): RegionSlug {
+  const r = sp?.get("region");
+  return r === "jeju" ? "jeju" : "busan";
+}
+function readInitialTrack(sp: URLSearchParams | null): Track {
+  return sp?.get("track") === "cruise" ? "cruise" : "private";
+}
 
 /**
  * Phase 4c intake form. Two-branch flow:
@@ -21,9 +29,10 @@ type RegionSlug = "busan" | "jeju";
 export default function IntakeForm() {
   const t = useTranslations("itineraryBuilder.intake");
   const router = useRouter();
+  const searchParams = useSearchParams();
 
-  const [track, setTrack] = useState<Track>("private");
-  const [region, setRegion] = useState<RegionSlug>("busan");
+  const [track, setTrack] = useState<Track>(() => readInitialTrack(searchParams));
+  const [region, setRegion] = useState<RegionSlug>(() => readInitialRegion(searchParams));
   const [hours, setHours] = useState<string>("6");
   const [date, setDate] = useState<string>("");
   const [party, setParty] = useState<string>("");

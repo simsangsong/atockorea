@@ -66,7 +66,7 @@ export function ItineraryBuilderEntry() {
             return (
               <Link
                 key={card.slug}
-                href={`/itinerary-builder/${card.slug}`}
+                href={`/itinerary-builder?region=${card.slug}`}
                 className="group relative w-[88%] flex-shrink-0 snap-center overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl md:w-auto md:flex-shrink"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
