@@ -1,3 +1,12 @@
+// Self-built product analytics SDK (Phase 1 Foundation).
+// Master plan: docs/atockorea-analytics-master-plan-2026-05-17.md §5 Phase 1.2
+//
+// The public surface (`analytics.*` methods + `trackEvent`) is unchanged so
+// all 25+ existing call sites flow into the new pipeline automatically.
+// `trackEvent` now batches into an in-memory queue, flushes to
+// /api/analytics/events every 5s (or once 5 events accumulate), and uses
+// sendBeacon on beforeunload as a last-mile safety net.
+
 type AnalyticsPayload = Record<string, string | number | boolean | null | undefined>;
 
 function sanitizePayload(payload: AnalyticsPayload): AnalyticsPayload {
@@ -12,14 +21,277 @@ function sanitizePayload(payload: AnalyticsPayload): AnalyticsPayload {
   return sanitized;
 }
 
-export function trackEvent(event: string, payload: AnalyticsPayload = {}) {
-  const data = sanitizePayload(payload);
+// ===========================================================================
+// Cookie + identity helpers
+// ===========================================================================
 
-  if (typeof window !== "undefined") {
-    console.log("[analytics]", event, data);
-    // replace later with actual analytics provider
+const ANON_COOKIE = "atoc_anon_id";
+const SESSION_COOKIE = "atoc_session_id";
+const SESSION_SEEN_COOKIE = "atoc_session_seen";
+const ANON_MAX_AGE_SECONDS = 60 * 60 * 24 * 365; // 1년
+const SESSION_IDLE_MS = 30 * 60 * 1000; // 30분
+const SESSION_COOKIE_MAX_AGE_SECONDS = 60 * 60 * 12; // 12시간 (idle 리셋 따로)
+
+function readCookie(name: string): string | null {
+  if (typeof document === "undefined") return null;
+  const match = document.cookie.match(new RegExp(`(^|; )${name}=([^;]+)`));
+  return match ? decodeURIComponent(match[2]) : null;
+}
+
+function writeCookie(name: string, value: string, maxAgeSeconds: number): void {
+  if (typeof document === "undefined") return;
+  const secure = typeof location !== "undefined" && location.protocol === "https:" ? "; Secure" : "";
+  document.cookie = `${name}=${encodeURIComponent(value)}; max-age=${maxAgeSeconds}; path=/; SameSite=Lax${secure}`;
+}
+
+function newUuid(): string {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID();
+  }
+  // Fallback for older runtimes — RFC4122 v4
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0;
+    const v = c === "x" ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+}
+
+function getAnonymousId(): string {
+  let id = readCookie(ANON_COOKIE);
+  if (!id) {
+    id = newUuid();
+    writeCookie(ANON_COOKIE, id, ANON_MAX_AGE_SECONDS);
+  }
+  return id;
+}
+
+function getSessionId(): string {
+  const now = Date.now();
+  const lastSeenStr = readCookie(SESSION_SEEN_COOKIE);
+  const lastSeen = lastSeenStr ? parseInt(lastSeenStr, 10) : 0;
+  let id = readCookie(SESSION_COOKIE);
+
+  if (!id || !lastSeen || now - lastSeen > SESSION_IDLE_MS) {
+    id = newUuid();
+    writeCookie(SESSION_COOKIE, id, SESSION_COOKIE_MAX_AGE_SECONDS);
+  }
+  // Refresh "last seen" on every event so idle timeout counts from last activity.
+  writeCookie(SESSION_SEEN_COOKIE, String(now), SESSION_COOKIE_MAX_AGE_SECONDS);
+  return id;
+}
+
+// ===========================================================================
+// Context auto-collect
+// ===========================================================================
+
+type ClientContext = {
+  page_path: string;
+  page_query: Record<string, string> | null;
+  referrer: string | null;
+  locale: string | null;
+  viewport_width: number | null;
+  viewport_height: number | null;
+  device_class: "mobile" | "tablet" | "desktop" | "unknown";
+  user_agent_family: string | null;
+  utm_source: string | null;
+  utm_medium: string | null;
+  utm_campaign: string | null;
+  utm_term: string | null;
+  utm_content: string | null;
+};
+
+function detectDeviceClass(width: number): ClientContext["device_class"] {
+  if (width <= 768) return "mobile";
+  if (width <= 1024) return "tablet";
+  return "desktop";
+}
+
+function detectUserAgentFamily(ua: string): string {
+  if (/Edg\//.test(ua)) return "Edge";
+  if (/Chrome\//.test(ua) && !/Edg\//.test(ua)) return "Chrome";
+  if (/Firefox\//.test(ua)) return "Firefox";
+  if (/Safari\//.test(ua) && !/Chrome\//.test(ua)) return "Safari";
+  return "Other";
+}
+
+function captureContext(): ClientContext {
+  if (typeof window === "undefined") {
+    return {
+      page_path: "",
+      page_query: null,
+      referrer: null,
+      locale: null,
+      viewport_width: null,
+      viewport_height: null,
+      device_class: "unknown",
+      user_agent_family: null,
+      utm_source: null,
+      utm_medium: null,
+      utm_campaign: null,
+      utm_term: null,
+      utm_content: null,
+    };
+  }
+  const url = new URL(window.location.href);
+  const queryParams: Record<string, string> = {};
+  url.searchParams.forEach((v, k) => {
+    queryParams[k] = v;
+  });
+  const width = window.innerWidth;
+  return {
+    page_path: url.pathname,
+    page_query: Object.keys(queryParams).length ? queryParams : null,
+    referrer: document.referrer || null,
+    locale: navigator.language || null,
+    viewport_width: width,
+    viewport_height: window.innerHeight,
+    device_class: detectDeviceClass(width),
+    user_agent_family: detectUserAgentFamily(navigator.userAgent || ""),
+    utm_source: url.searchParams.get("utm_source"),
+    utm_medium: url.searchParams.get("utm_medium"),
+    utm_campaign: url.searchParams.get("utm_campaign"),
+    utm_term: url.searchParams.get("utm_term"),
+    utm_content: url.searchParams.get("utm_content"),
+  };
+}
+
+// ===========================================================================
+// Batch queue + flush
+// ===========================================================================
+
+type QueuedEvent = {
+  event_name: string;
+  payload: AnalyticsPayload;
+  client_ts: string;
+  context: ClientContext;
+  anonymous_id: string;
+  session_id: string;
+};
+
+const FLUSH_INTERVAL_MS = 5_000;
+const FLUSH_BATCH_SIZE = 5;
+const MAX_QUEUE_SIZE = 50;
+const ENDPOINT = "/api/analytics/events";
+
+let queue: QueuedEvent[] = [];
+let flushTimer: ReturnType<typeof setTimeout> | null = null;
+let beforeunloadInstalled = false;
+
+function installBeforeUnload() {
+  if (beforeunloadInstalled || typeof window === "undefined") return;
+  beforeunloadInstalled = true;
+  // sendBeacon survives navigation away — last-mile safety so the final few
+  // events in the queue don't vanish on tab close / link click.
+  window.addEventListener("beforeunload", () => {
+    if (queue.length === 0) return;
+    const body = JSON.stringify({ events: queue });
+    queue = [];
+    if (typeof navigator !== "undefined" && typeof navigator.sendBeacon === "function") {
+      try {
+        navigator.sendBeacon(ENDPOINT, new Blob([body], { type: "application/json" }));
+      } catch {
+        // ignore — best effort
+      }
+    }
+  });
+}
+
+function scheduleFlush() {
+  if (flushTimer) return;
+  flushTimer = setTimeout(() => {
+    flushTimer = null;
+    void flushQueue();
+  }, FLUSH_INTERVAL_MS);
+}
+
+async function flushQueue(): Promise<void> {
+  if (queue.length === 0) return;
+  const batch = queue.slice();
+  queue = [];
+  try {
+    await fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ events: batch }),
+      keepalive: true,
+    });
+  } catch {
+    // Network error — re-queue at the front (so order is preserved), but
+    // respect the max queue size to avoid unbounded memory.
+    const reattach = batch.slice(0, Math.max(0, MAX_QUEUE_SIZE - queue.length));
+    queue = [...reattach, ...queue];
   }
 }
+
+function enqueueEvent(eventName: string, payload: AnalyticsPayload) {
+  if (typeof window === "undefined") return;
+  installBeforeUnload();
+  const event: QueuedEvent = {
+    event_name: eventName,
+    payload,
+    client_ts: new Date().toISOString(),
+    context: captureContext(),
+    anonymous_id: getAnonymousId(),
+    session_id: getSessionId(),
+  };
+  queue.push(event);
+  // Drop oldest if queue overflowed — keeps memory bounded under offline
+  // streaks. The dropped count is reported via the queue-overflow self-event
+  // on next successful flush (Phase 7 wiring).
+  if (queue.length > MAX_QUEUE_SIZE) {
+    queue.splice(0, queue.length - MAX_QUEUE_SIZE);
+  }
+  if (queue.length >= FLUSH_BATCH_SIZE) {
+    if (flushTimer) {
+      clearTimeout(flushTimer);
+      flushTimer = null;
+    }
+    void flushQueue();
+  } else {
+    scheduleFlush();
+  }
+}
+
+// ===========================================================================
+// Public trackEvent (no signature change — all 25+ call sites unaffected)
+// ===========================================================================
+
+export function trackEvent(event: string, payload: AnalyticsPayload = {}) {
+  const data = sanitizePayload(payload);
+  if (typeof window === "undefined") return;
+  if (process.env.NODE_ENV !== "production") {
+    // Dev-only: keep the console log so existing manual verification flows
+    // (Cloudflare tunnel + DevTools) still see the event.
+    // eslint-disable-next-line no-console
+    console.log("[analytics]", event, data);
+  }
+  enqueueEvent(event, data);
+}
+
+/** Phase 1 helper — explicit anonymous → user identity merge. Call after
+ *  successful login so retroactive cohort analysis still works. */
+export function identifyUser(userId: string): void {
+  if (typeof window === "undefined" || !userId) return;
+  void fetch("/api/analytics/identify", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ anonymous_id: getAnonymousId(), user_id: userId }),
+    keepalive: true,
+  }).catch(() => {
+    // best-effort — analytics identity is non-critical
+  });
+}
+
+/** Phase 1 helper — page_view convenience for SPA route changes that the
+ *  static `usePathname` listener will surface in a later commit. Today,
+ *  call manually if needed. */
+export function trackPageView(extra: AnalyticsPayload = {}): void {
+  trackEvent("page_view", extra);
+}
+
+// ===========================================================================
+// Type definitions (unchanged from Phase 0a / Phase C.1)
+// ===========================================================================
 
 /** Homepage funnel: hero planner, style cards, best-match, final CTA (distinct from generic hero_form_start). */
 export type HomeCtaSource =
@@ -59,6 +331,10 @@ export type HomeHeroSeason =
   | "summer"
   | "autumn"
   | "winter";
+
+// ===========================================================================
+// Public API — unchanged signatures
+// ===========================================================================
 
 export const analytics = {
   homeCtaClick: (payload: { source: HomeCtaSource }) => trackEvent("home_cta_click", payload),
@@ -178,4 +454,11 @@ export const analytics = {
       tourType,
       pickupAreaLabel,
     }),
+
+  /** Page view convenience. Auto page-view tracking is wired in a follow-up
+   *  Phase 1 commit via a top-level useEffect+usePathname listener. */
+  pageView: (extra: AnalyticsPayload = {}) => trackPageView(extra),
+
+  /** Identity merge after login. Should be called once per auth transition. */
+  identify: (userId: string) => identifyUser(userId),
 };
