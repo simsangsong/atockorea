@@ -26,7 +26,7 @@ v3 만든 이유:
 |---|---|---|---|---|---|
 | 0a — 계측 이벤트 정의 | ✅ 완료 | 2026-05-17 | 2026-05-17 | b6b73c07 | 7종 메서드 + 6개 호출부 와이어링 + `docs/analytics-events-home.md`. dev 콘솔 발화 7종 검증 통과 (Cloudflare Quick Tunnel) |
 | 0b — provider 연결 + baseline | ⏸ 보류 | — | — | — | provider 미결정 (별도 트랙) |
-| 0c — 모바일 fold 실측 | ✅ 완료 | 2026-05-17 | 2026-05-17 | (pending) | CDP 실측: 390x844 CTA -81px / 430x932 CTA -32px (모두 fold 아래). §2.6 + §3 P0-A 보강 |
+| 0c — 모바일 fold 실측 | ✅ 완료 | 2026-05-17 | 2026-05-17 | 3fdb9359 | CDP 실측: 390x844 CTA -81px / 430x932 CTA -32px (모두 fold 아래). §2.6 + §3 P0-A 보강 |
 | B — 가장 안전한 전환 개선 | ⏳ 대기 | — | — | — | 0a 완료 후 시작 |
 | C — 상호작용 강화 | ⏳ 대기 | — | — | — | B 완료 후 |
 | D — 실험 (in-place + bottom-sheet + Sticky threshold A/B) | ⏳ 대기 | — | — | — | 0b baseline 후만 측정 의미 |
@@ -78,7 +78,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | Phase 0a 코드 랜딩 — analytics.ts 7 메서드 + 6 호출부 + taxonomy doc | b6b73c07 | dev 콘솔 발화 검증 후 ✅. provider 미연결 (Phase 0b) |
 | 2026-05-17 | Phase 0a console 검증 통과 (Cloudflare Quick Tunnel) → ✅ | — | 사용자 확인. Phase 0c 진입 |
 | 2026-05-17 | Phase 0c 시작 — 모바일 fold 실측 | (pending) | 390x844 / 430x932 매처 CTA fold 위치 측정 |
-| 2026-05-17 | Phase 0c 완료 — CDP 실측: iPhone 14 CTA -81px / Pro Max -32px (둘 다 fold 아래). §2.6 + §3 P0-A 보강 | (pending) | B.3 단독으로 부족 → B.3 + Trust strip 압축 합산 회수 전략 명시 |
+| 2026-05-17 | Phase 0c 완료 — CDP 실측: iPhone 14 CTA -81px / Pro Max -32px (둘 다 fold 아래). §2.6 + §3 P0-A 보강 | 3fdb9359 | B.3 단독으로 부족 → B.3 + Trust strip 압축 합산 회수 전략 명시 |
 
 ---
 
