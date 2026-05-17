@@ -133,15 +133,28 @@ export async function POST(req: NextRequest) {
         if (!bookingId) break;
 
         /** Capture happened — typically admin marked no-show. */
-        await supabase
+        const settleReason = pi.metadata?.settle_reason;
+        const update: Record<string, unknown> = {
+          payment_status: 'paid',
+          payment_intent_status: 'captured',
+          paid_at: new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+        };
+        if (settleReason === 'no_show') {
+          update.status = 'no_show';
+        } else if (settleReason === 'tour_completed') {
+          update.status = 'completed';
+        }
+
+        const { error: updateError } = await supabase
           .from('bookings')
-          .update({
-            payment_status: 'paid',
-            payment_intent_status: 'captured',
-            payment_date: new Date().toISOString(),
-            updated_at: new Date().toISOString(),
-          })
+          .update(update)
           .eq('id', bookingId);
+
+        if (updateError) {
+          console.error(`[webhook] capture sync failed for booking ${bookingId}:`, updateError);
+          throw updateError;
+        }
 
         console.log(`Booking ${bookingId} no-show fee captured: ${pi.amount_received} ${pi.currency}`);
         break;
@@ -170,14 +183,28 @@ export async function POST(req: NextRequest) {
         const bookingId = pi.metadata?.booking_id;
         if (!bookingId) break;
 
-        await supabase
+        const { data: updated } = await supabase
           .from('bookings')
           .update({
             payment_intent_status: 'failed',
             updated_at: new Date().toISOString(),
           })
           .eq('id', bookingId)
-          .in('payment_intent_status', ['auth_pending', 'setup_pending_hold']);
+          .in('payment_intent_status', ['auth_pending', 'setup_pending_hold'])
+          .select()
+          .single();
+
+        if (!updated) {
+          console.log(
+            `Booking ${bookingId} payment_failed already processed (idempotent), skipping email`,
+          );
+          break;
+        }
+
+        /** Tell the customer their card couldn't be authorized — booking not confirmed. */
+        await sendAuthFailedEmail(supabase, bookingId).catch((err) =>
+          console.error('Auth-failed email failed:', err),
+        );
 
         console.log(`Booking ${bookingId} card auth failed`);
         break;
@@ -228,14 +255,28 @@ export async function POST(req: NextRequest) {
         const bookingId = si.metadata?.booking_id;
         if (!bookingId) break;
 
-        await supabase
+        const { data: updated } = await supabase
           .from('bookings')
           .update({
             payment_intent_status: 'failed',
             updated_at: new Date().toISOString(),
           })
           .eq('id', bookingId)
-          .eq('payment_intent_status', 'setup_pending_hold');
+          .eq('payment_intent_status', 'setup_pending_hold')
+          .select()
+          .single();
+
+        if (!updated) {
+          console.log(
+            `Booking ${bookingId} setup_failed already processed (idempotent), skipping email`,
+          );
+          break;
+        }
+
+        /** Tell the customer their card couldn't be saved — booking not confirmed. */
+        await sendAuthFailedEmail(supabase, bookingId).catch((err) =>
+          console.error('Auth-failed email (setup) failed:', err),
+        );
 
         console.log(`Booking ${bookingId} card vault failed`);
         break;
@@ -258,13 +299,13 @@ export async function POST(req: NextRequest) {
           .single();
         if (existingBooking?.payment_status === 'paid') break;
 
-        const { data: updatedRow } = await supabase
+        const { data: updatedRow, error: updateError } = await supabase
           .from('bookings')
           .update({
             payment_status: 'paid',
             payment_method: 'stripe',
             payment_reference: session.id,
-            payment_date: new Date().toISOString(),
+            paid_at: new Date().toISOString(),
             status: 'confirmed',
             updated_at: new Date().toISOString(),
           })
@@ -273,6 +314,10 @@ export async function POST(req: NextRequest) {
           .select()
           .single();
 
+        if (updateError) {
+          console.error(`[webhook] legacy checkout sync failed for booking ${bookingId}:`, updateError);
+          throw updateError;
+        }
         if (!updatedRow) break;
 
         try {
@@ -489,4 +534,49 @@ async function sendLegacyConfirmationEmail(
       console.error('Error creating notification:', notificationError);
     }
   }
+}
+
+/**
+ * Card authorization / setup failed — notify the customer their booking is not
+ * confirmed and they need to re-enter a card. Fails open (logged, never throws).
+ */
+async function sendAuthFailedEmail(
+  supabase: ReturnType<typeof createServerClient>,
+  bookingId: string,
+) {
+  const { data: booking } = await supabase
+    .from('bookings')
+    .select(
+      `
+      id, booking_date, contact_email, contact_name,
+      tours ( title ),
+      user_profiles ( email, full_name )
+    `,
+    )
+    .eq('id', bookingId)
+    .single();
+
+  if (!booking) return;
+
+  const profile = (booking.user_profiles ?? null) as
+    | { email?: string; full_name?: string }
+    | null;
+  const customerEmail =
+    (booking as { contact_email?: string }).contact_email ?? profile?.email ?? null;
+  const customerName =
+    (booking as { contact_name?: string }).contact_name ?? profile?.full_name ?? 'Guest';
+  const tour = (Array.isArray(booking.tours) ? booking.tours[0] : booking.tours) as
+    | { title?: string }
+    | null;
+
+  if (!customerEmail) return;
+
+  const { sendCardAuthFailedEmail } = await import('@/lib/email');
+  await sendCardAuthFailedEmail({
+    to: customerEmail,
+    customerName,
+    bookingId: booking.id,
+    tourTitle: tour?.title ?? 'Your tour',
+    bookingDate: (booking.booking_date as string | null) ?? undefined,
+  });
 }

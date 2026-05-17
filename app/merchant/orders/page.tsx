@@ -6,7 +6,7 @@ interface Order {
   id: string;
   tour_date: string;
   number_of_people: number;
-  status: 'pending' | 'confirmed' | 'completed' | 'cancelled';
+  status: 'pending' | 'confirmed' | 'completed' | 'cancelled' | 'no_show';
   final_price: number;
   contact_name: string;
   contact_email: string;
@@ -150,4 +150,3 @@ export default function MerchantOrdersPage() {
     </div>
   );
 }
-

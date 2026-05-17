@@ -50,6 +50,38 @@ function ymdUtc(d: Date): string {
   return `${y}-${m}-${day}`;
 }
 
+/**
+ * Email the customer that the card on file couldn't be re-authorized before
+ * their upcoming tour. Only sent on the *first* transition to `failed` (the
+ * cron retries daily and would otherwise spam them). Fails open.
+ */
+async function notifyReauthFailed(booking: {
+  id: string;
+  payment_intent_status?: string | null;
+  contact_email?: string | null;
+  contact_name?: string | null;
+  tour_date?: string | null;
+  tours?: unknown;
+}) {
+  if (booking.payment_intent_status === 'failed') return; // already notified on a prior run
+  if (!booking.contact_email) return;
+  const tour = (Array.isArray(booking.tours) ? booking.tours[0] : booking.tours) as
+    | { title?: string }
+    | null;
+  try {
+    const { sendCardReauthFailedEmail } = await import('@/lib/email');
+    await sendCardReauthFailedEmail({
+      to: booking.contact_email,
+      customerName: booking.contact_name ?? 'Guest',
+      bookingId: booking.id,
+      tourTitle: tour?.title ?? 'Your tour',
+      tourDate: booking.tour_date ?? undefined,
+    });
+  } catch (err) {
+    console.error(`[recapture-holds] booking ${booking.id} reauth-failed email error:`, err);
+  }
+}
+
 export async function GET(req: NextRequest) {
   if (!isAuthorized(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
@@ -130,6 +162,7 @@ export async function GET(req: NextRequest) {
     }
     if (!paymentMethodId) {
       console.warn(`[recapture-holds] booking ${booking.id} has no saved payment method`);
+      await notifyReauthFailed(booking);
       await supabase
         .from('bookings')
         .update({
@@ -187,6 +220,7 @@ export async function GET(req: NextRequest) {
       const stripeErr = err as { code?: string; raw?: { code?: string } };
       const code = stripeErr?.code ?? stripeErr?.raw?.code;
       if (code === 'authentication_required') {
+        await notifyReauthFailed(booking);
         await supabase
           .from('bookings')
           .update({
@@ -201,6 +235,7 @@ export async function GET(req: NextRequest) {
         continue;
       }
 
+      await notifyReauthFailed(booking);
       await supabase
         .from('bookings')
         .update({

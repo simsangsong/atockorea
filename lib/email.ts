@@ -463,6 +463,191 @@ export async function sendMerchantWelcomeEmail({
   });
 }
 
+/**
+ * Card authorization failed at booking time (Stripe `payment_intent.payment_failed`
+ * or `setup_intent.setup_failed`). The booking is NOT confirmed — the customer
+ * needs to re-enter a card.
+ */
+export async function sendCardAuthFailedEmail({
+  to,
+  customerName,
+  bookingId,
+  tourTitle,
+  bookingDate,
+}: {
+  to: string;
+  customerName: string;
+  bookingId: string;
+  tourTitle: string;
+  bookingDate?: string;
+}) {
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
+  const displayBookingId = shortBookingId(bookingId);
+  const formattedDate = bookingDate
+    ? new Date(bookingDate).toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })
+    : null;
+
+  const html = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <style>${baseStyles}</style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header" style="background: linear-gradient(135deg, #f5576c 0%, #c81d4e 100%);">
+          <h1>Card Authorization Failed</h1>
+        </div>
+        <div class="content">
+          <p>Dear ${customerName},</p>
+          <p>We were unable to authorize your card for the booking below, so <strong>your reservation is not yet confirmed</strong>.</p>
+
+          <div class="content-box">
+            <h2 style="margin-top: 0; color: #f5576c;">Booking Details</h2>
+            <div class="info-row">
+              <span class="info-label">Booking ID:</span>
+              <span class="info-value">${displayBookingId}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Tour:</span>
+              <span class="info-value">${tourTitle}</span>
+            </div>
+            ${formattedDate ? `
+            <div class="info-row" style="border-bottom: none;">
+              <span class="info-label">Date:</span>
+              <span class="info-value">${formattedDate}</span>
+            </div>
+            ` : ''}
+          </div>
+
+          <p><strong>What to do next:</strong></p>
+          <ul>
+            <li>Your card was not charged.</li>
+            <li>Please re-enter your payment details to secure your booking.</li>
+            <li>Common causes: the card was declined, needs 3-D Secure verification, or has insufficient funds.</li>
+          </ul>
+
+          <p style="margin-top: 30px;">
+            <a href="${baseUrl}/mypage/mybookings" class="button">Review My Booking</a>
+          </p>
+
+          <p>If you continue to have trouble, simply reply to this email and our team will help you complete the reservation.</p>
+        </div>
+        <div class="footer">
+          <p>© 2026 AtoCKorea. All rights reserved.</p>
+          <p>This email was sent from ${fromEmail}</p>
+        </div>
+      </div>
+    </body>
+    </html>
+  `;
+
+  return sendEmail({
+    to,
+    subject: `Action needed: card not authorized — ${tourTitle}`,
+    html,
+  });
+}
+
+/**
+ * Re-authorization of the card on file failed (daily cron, ~5-6 days before the
+ * tour). The booking was confirmed earlier via SetupIntent, but the off-session
+ * hold could not be placed (e.g. 3-D Secure now required, card expired, declined).
+ * The customer must re-confirm their card before the tour.
+ */
+export async function sendCardReauthFailedEmail({
+  to,
+  customerName,
+  bookingId,
+  tourTitle,
+  tourDate,
+}: {
+  to: string;
+  customerName: string;
+  bookingId: string;
+  tourTitle: string;
+  tourDate?: string;
+}) {
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
+  const displayBookingId = shortBookingId(bookingId);
+  const formattedDate = tourDate
+    ? new Date(tourDate).toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })
+    : null;
+
+  const html = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <style>${baseStyles}</style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header" style="background: linear-gradient(135deg, #f7971e 0%, #e36209 100%);">
+          <h1>Card Re-confirmation Needed</h1>
+        </div>
+        <div class="content">
+          <p>Dear ${customerName},</p>
+          <p>Your tour is coming up soon, but we couldn't verify the card we have on file for your booking. <strong>Please re-confirm your card to keep your reservation secure.</strong></p>
+
+          <div class="content-box">
+            <h2 style="margin-top: 0; color: #e36209;">Booking Details</h2>
+            <div class="info-row">
+              <span class="info-label">Booking ID:</span>
+              <span class="info-value">${displayBookingId}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Tour:</span>
+              <span class="info-value">${tourTitle}</span>
+            </div>
+            ${formattedDate ? `
+            <div class="info-row" style="border-bottom: none;">
+              <span class="info-label">Tour Date:</span>
+              <span class="info-value">${formattedDate}</span>
+            </div>
+            ` : ''}
+          </div>
+
+          <p><strong>What to do next:</strong></p>
+          <ul>
+            <li>You have not been charged.</li>
+            <li>Please re-enter your card details so we can secure your spot.</li>
+            <li>Common causes: the card now needs 3-D Secure verification, has expired, or was declined.</li>
+          </ul>
+
+          <p style="margin-top: 30px;">
+            <a href="${baseUrl}/mypage/mybookings" class="button">Re-confirm My Card</a>
+          </p>
+
+          <p>Need help? Just reply to this email and our team will assist you right away.</p>
+        </div>
+        <div class="footer">
+          <p>© 2026 AtoCKorea. All rights reserved.</p>
+          <p>This email was sent from ${fromEmail}</p>
+        </div>
+      </div>
+    </body>
+    </html>
+  `;
+
+  return sendEmail({
+    to,
+    subject: `Action needed: confirm your card — ${tourTitle}`,
+    html,
+  });
+}
+
 
 
 

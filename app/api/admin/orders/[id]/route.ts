@@ -92,8 +92,19 @@ export async function PUT(
     }
 
     const updateData: Record<string, unknown> = {};
+    if (body.payment_status !== undefined) {
+      return NextResponse.json(
+        { error: 'payment_status must be changed through payment settlement or webhook flows' },
+        { status: 400 }
+      );
+    }
+    if (body.status === 'no_show') {
+      return NextResponse.json(
+        { error: 'Use the no-show settlement action to charge the penalty and mark no-show' },
+        { status: 400 }
+      );
+    }
     if (body.status !== undefined) updateData.status = body.status;
-    if (body.payment_status !== undefined) updateData.payment_status = body.payment_status;
 
     if (Object.keys(updateData).length === 0) {
       return NextResponse.json({ error: 'No fields to update' }, { status: 400 });

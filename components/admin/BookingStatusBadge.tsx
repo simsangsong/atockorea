@@ -10,20 +10,22 @@ const STATUS_COLORS: Record<string, string> = {
   pending: 'bg-yellow-100 text-yellow-800',
   completed: 'bg-blue-100 text-blue-800',
   cancelled: 'bg-red-100 text-red-800',
+  no_show: 'bg-rose-100 text-rose-800',
 };
 
 const DEFAULT_LABELS: Record<string, string> = {
-  confirmed: '확정',
-  pending: '대기',
-  completed: '완료',
-  cancelled: '취소',
+  confirmed: 'Confirmed',
+  pending: 'Pending',
+  completed: 'Completed',
+  cancelled: 'Cancelled',
+  no_show: 'No-show',
 };
 
 export interface BookingStatusBadgeProps {
   status: string;
-  /** Optional display label; if not set, uses default Korean label or raw status */
+  /** Optional display label; if not set, uses default label or raw status. */
   label?: string;
-  /** Optional extra class names (e.g. rounded-lg) */
+  /** Optional extra class names (e.g. rounded-lg). */
   className?: string;
 }
 

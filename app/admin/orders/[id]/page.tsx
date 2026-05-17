@@ -18,8 +18,16 @@ interface Booking {
   total_price: number;
   discount_amount: number;
   final_price: number;
-  status: 'pending' | 'confirmed' | 'completed' | 'cancelled';
+  status: 'pending' | 'confirmed' | 'completed' | 'cancelled' | 'no_show';
   payment_status: string;
+  payment_method: string | null;
+  paid_at: string | null;
+  payment_intent_id: string | null;
+  setup_intent_id: string | null;
+  payment_intent_status: string | null;
+  authorization_expires_at: string | null;
+  no_show_fee_usd_cents: number | null;
+  card_collection_method: string | null;
   cancelled_at: string | null;
   cancellation_reason: string | null;
   contact_name: string | null;
@@ -54,6 +62,7 @@ export default function OrderDetailPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [updating, setUpdating] = useState(false);
+  const [settling, setSettling] = useState(false);
 
   useEffect(() => {
     if (orderId) {
@@ -137,6 +146,59 @@ export default function OrderDetailPage() {
     }
   };
 
+  const handleSettle = async (
+    action: 'capture' | 'release',
+    reason: 'tour_completed' | 'no_show' | 'collected_offline',
+    confirmMsg: string,
+  ) => {
+    if (!booking) return;
+    if (!confirm(confirmMsg)) return;
+
+    try {
+      setSettling(true);
+
+      if (!supabase) {
+        alert('Supabase client not initialized');
+        return;
+      }
+
+      const { data: { session } } = await supabase.auth.getSession();
+
+      if (!session) {
+        alert('Please sign in');
+        return;
+      }
+
+      const response = await fetch(`/api/admin/orders/${orderId}/settle`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session.access_token}`,
+        },
+        credentials: 'include',
+        body: JSON.stringify({
+          action,
+          reason,
+          collectedOffline: reason === 'collected_offline',
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Settlement failed');
+      }
+
+      alert(data.message || 'Done');
+      fetchOrder();
+    } catch (err: any) {
+      console.error('Error settling order:', err);
+      alert(`Failed: ${err.message}`);
+    } finally {
+      setSettling(false);
+    }
+  };
+
   if (loading) {
     return (
       <div className="space-y-6">
@@ -174,10 +236,38 @@ export default function OrderDetailPage() {
         return 'bg-blue-100 text-blue-800';
       case 'cancelled':
         return 'bg-red-100 text-red-800';
+      case 'no_show':
+        return 'bg-rose-100 text-rose-800';
       default:
         return 'bg-gray-100 text-gray-800';
     }
   };
+
+  const getPiStatusColor = (status: string | null) => {
+    switch (status) {
+      case 'authorized':
+        return 'bg-emerald-100 text-emerald-800';
+      case 'captured':
+        return 'bg-green-100 text-green-800';
+      case 'setup_pending_hold':
+      case 'auth_pending':
+        return 'bg-yellow-100 text-yellow-800';
+      case 'failed':
+      case 'expired':
+        return 'bg-red-100 text-red-800';
+      default:
+        return 'bg-gray-100 text-gray-800';
+    }
+  };
+
+  const holdMsLeft = booking.authorization_expires_at
+    ? new Date(booking.authorization_expires_at).getTime() - Date.now()
+    : null;
+  const holdExpired = holdMsLeft !== null && holdMsLeft <= 0;
+  const holdHoursLeft =
+    holdMsLeft !== null ? Math.max(0, Math.floor(holdMsLeft / 3600000)) : null;
+  const holdExpiringSoon =
+    holdHoursLeft !== null && holdHoursLeft < 48 && !holdExpired;
 
   return (
     <div className="space-y-6">
@@ -203,6 +293,7 @@ export default function OrderDetailPage() {
             <option value="confirmed">Confirmed</option>
             <option value="completed">Completed</option>
             <option value="cancelled">Cancelled</option>
+            <option value="no_show">No-show</option>
           </select>
         </div>
       </div>
@@ -364,6 +455,188 @@ export default function OrderDetailPage() {
                 ₩{booking.final_price.toLocaleString()}
               </span>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Payment / Settlement — capture the held card or release the hold */}
+      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">Payment / Settlement</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-3">
+            <div className="flex justify-between">
+              <span className="text-gray-600">Hold Status:</span>
+              <span
+                className={`px-2 py-1 text-xs font-semibold rounded-full ${getPiStatusColor(
+                  booking.payment_intent_status,
+                )}`}
+              >
+                {booking.payment_intent_status || 'no hold'}
+              </span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-600">Payment Status:</span>
+              <span className="text-gray-900">{booking.payment_status || 'N/A'}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-600">Hold Amount:</span>
+              <span className="text-gray-900">
+                {booking.no_show_fee_usd_cents != null
+                  ? `$${(booking.no_show_fee_usd_cents / 100).toLocaleString()}`
+                  : '—'}
+              </span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-600">Card Collection:</span>
+              <span className="text-gray-900">
+                {booking.card_collection_method || '—'}
+              </span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-600">Payment Method:</span>
+              <span className="text-gray-900">{booking.payment_method || '—'}</span>
+            </div>
+            {booking.authorization_expires_at && (
+              <div className="flex justify-between">
+                <span className="text-gray-600">Hold Expires:</span>
+                <span
+                  className={
+                    holdExpired
+                      ? 'text-red-600 font-semibold'
+                      : holdExpiringSoon
+                        ? 'text-amber-600 font-semibold'
+                        : 'text-gray-900'
+                  }
+                >
+                  {new Date(booking.authorization_expires_at).toLocaleString()}
+                  {holdExpired
+                    ? ' (EXPIRED)'
+                    : holdExpiringSoon
+                      ? ` (${holdHoursLeft}h left)`
+                      : ''}
+                </span>
+              </div>
+            )}
+            {booking.paid_at && (
+              <div className="flex justify-between">
+                <span className="text-gray-600">Payment Date:</span>
+                <span className="text-gray-900">
+                  {new Date(booking.paid_at).toLocaleString()}
+                </span>
+              </div>
+            )}
+          </div>
+
+          <div className="space-y-3">
+            {booking.payment_intent_status === 'authorized' && (
+              <>
+                {holdExpired && (
+                  <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg p-3">
+                    This hold has passed its expiry — capture may be rejected by
+                    Stripe. If so, collect payment another way.
+                  </p>
+                )}
+                <button
+                  onClick={() =>
+                    handleSettle(
+                      'capture',
+                      'tour_completed',
+                      'Charge the card for a completed tour? This collects the full held amount.',
+                    )
+                  }
+                  disabled={settling}
+                  className="w-full px-4 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 disabled:opacity-50"
+                >
+                  카드로 청구 (투어 완료) · Charge card — tour completed
+                </button>
+                <button
+                  onClick={() =>
+                    handleSettle(
+                      'release',
+                      'collected_offline',
+                      'Release the hold and mark this booking as paid offline (cash/transfer received)?',
+                    )
+                  }
+                  disabled={settling}
+                  className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg font-semibold hover:bg-slate-800 disabled:opacity-50"
+                >
+                  현장 수금 완료 → hold 해제 · Collected offline — release hold
+                </button>
+                <button
+                  onClick={() =>
+                    handleSettle(
+                      'capture',
+                      'no_show',
+                      'Charge the no-show penalty? This captures the full held amount as a no-show fee.',
+                    )
+                  }
+                  disabled={settling}
+                  className="w-full px-4 py-3 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 disabled:opacity-50"
+                >
+                  노쇼 → 위약금 청구 · No-show — charge penalty
+                </button>
+              </>
+            )}
+
+            {booking.payment_intent_status === 'setup_pending_hold' && (
+              <>
+                <p className="text-sm text-gray-700 bg-gray-50 border border-gray-200 rounded-lg p-3">
+                  Card is on file. The no-show hold is placed automatically by the
+                  daily cron ~6 days before the tour. Capture becomes available once
+                  the hold is active.
+                </p>
+                <button
+                  onClick={() =>
+                    handleSettle(
+                      'release',
+                      'collected_offline',
+                      'Release the saved card and mark this booking as paid offline (cash/transfer received)?',
+                    )
+                  }
+                  disabled={settling}
+                  className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg font-semibold hover:bg-slate-800 disabled:opacity-50"
+                >
+                  현장 수금 완료 → 카드 해제 · Collected offline — release card
+                </button>
+              </>
+            )}
+
+            {booking.payment_intent_status === 'auth_pending' && (
+              <p className="text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded-lg p-3">
+                Waiting for the customer to confirm their card. No action available
+                yet.
+              </p>
+            )}
+
+            {booking.payment_intent_status === 'captured' && (
+              <p className="text-sm text-green-700 bg-green-50 border border-green-200 rounded-lg p-3">
+                Card charged — payment collected. Nothing more to do.
+              </p>
+            )}
+
+            {booking.payment_intent_status === 'canceled' && (
+              <p className="text-sm text-gray-700 bg-gray-50 border border-gray-200 rounded-lg p-3">
+                Hold released — the card was not charged
+                {booking.payment_status === 'paid'
+                  ? ' (booking marked paid offline).'
+                  : '.'}
+              </p>
+            )}
+
+            {(booking.payment_intent_status === 'failed' ||
+              booking.payment_intent_status === 'expired') && (
+              <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg p-3">
+                {booking.payment_intent_status === 'expired'
+                  ? 'The hold expired before it was captured. Collect payment another way.'
+                  : 'Card authorization failed. The customer needs to re-confirm their card, or collect payment another way.'}
+              </p>
+            )}
+
+            {!booking.payment_intent_status && (
+              <p className="text-sm text-gray-700 bg-gray-50 border border-gray-200 rounded-lg p-3">
+                No Stripe hold on this booking.
+              </p>
+            )}
           </div>
         </div>
       </div>

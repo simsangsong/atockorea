@@ -14,7 +14,7 @@ interface Booking {
   number_of_people?: number;
   total_price?: number;
   final_price: number;
-  status: 'pending' | 'confirmed' | 'completed' | 'cancelled';
+  status: 'pending' | 'confirmed' | 'completed' | 'cancelled' | 'no_show';
   payment_status: string;
   created_at: string;
   pickup_point_id?: string | null;
@@ -58,7 +58,7 @@ export default function OrdersPage() {
     try {
       setLoading(true);
       const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-      
+
       if (!session) {
         router.push('/signin?redirect=/admin/orders');
         return;
@@ -69,7 +69,7 @@ export default function OrdersPage() {
       params.set('orderBy', orderBy);
       params.set('order', orderDir);
       const response = await fetch(`/api/admin/orders?${params.toString()}`, {
-        headers: { 'Authorization': `Bearer ${session.access_token}` },
+        headers: { Authorization: `Bearer ${session.access_token}` },
         credentials: 'include',
       });
 
@@ -94,8 +94,8 @@ export default function OrdersPage() {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('ko-KR', { 
-      month: 'short', 
+    return date.toLocaleDateString('ko-KR', {
+      month: 'short',
       day: 'numeric',
       year: 'numeric',
       hour: '2-digit',
@@ -115,7 +115,9 @@ export default function OrdersPage() {
       if (!map.has(key)) map.set(key, []);
       map.get(key)!.push(b);
     });
-    const keys = Array.from(map.keys()).sort((a, b) => (orderDir === 'desc' ? b.localeCompare(a) : a.localeCompare(b)));
+    const keys = Array.from(map.keys()).sort((a, b) =>
+      orderDir === 'desc' ? b.localeCompare(a) : a.localeCompare(b),
+    );
     return keys.map((key) => ({ date: key, items: map.get(key)! }));
   }, [bookings, orderDir]);
 
@@ -124,14 +126,26 @@ export default function OrdersPage() {
     try {
       const BOM = '\uFEFF';
       const headers = [
-        '주문ID', '예약일시', '투어일', '투어명', '고객명', '이메일', '연락처', '인원', '픽업장소', '주소', '금액', '상태', '결제상태',
+        'Order ID',
+        'Created At',
+        'Tour Date',
+        'Tour',
+        'Customer',
+        'Email',
+        'Phone',
+        'Guests',
+        'Pickup',
+        'Address',
+        'Amount',
+        'Status',
+        'Payment Status',
       ];
       const rows = bookings.map((b) => [
         b.id,
         b.created_at ? formatDate(b.created_at) : '',
         b.tour_date || '',
         b.tours?.title || '',
-        b.user_profiles?.full_name || b.contact_name || '게스트',
+        b.user_profiles?.full_name || b.contact_name || 'Guest',
         b.user_profiles?.email || b.contact_email || '',
         b.contact_phone || '',
         String(b.number_of_guests ?? b.number_of_people ?? 1),
@@ -141,12 +155,14 @@ export default function OrdersPage() {
         b.status,
         b.payment_status || '',
       ]);
-      const csv = [headers, ...rows].map((r) => r.map((c) => `"${String(c).replace(/"/g, '""')}"`).join(',')).join('\r\n');
+      const csv = [headers, ...rows]
+        .map((r) => r.map((c) => `"${String(c).replace(/"/g, '""')}"`).join(','))
+        .join('\r\n');
       const blob = new Blob([BOM + csv], { type: 'text/csv;charset=utf-8' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `예약내역_${new Date().toISOString().slice(0, 10)}.csv`;
+      a.download = `orders_${new Date().toISOString().slice(0, 10)}.csv`;
       a.click();
       URL.revokeObjectURL(url);
     } finally {
@@ -159,7 +175,7 @@ export default function OrdersPage() {
       <div className="space-y-6">
         <div className="text-center py-12">
           <div className="animate-spin rounded-full h-10 w-10 border-2 border-indigo-600 border-t-transparent mx-auto mb-3"></div>
-          <p className="text-sm text-gray-600">주문 목록 로딩 중...</p>
+          <p className="text-sm text-gray-600">Loading orders...</p>
         </div>
       </div>
     );
@@ -169,12 +185,12 @@ export default function OrdersPage() {
     return (
       <div className="space-y-6">
         <div className="bg-red-50 border border-red-200 rounded-lg p-5">
-          <p className="text-sm text-red-800 font-medium">오류: {error}</p>
+          <p className="text-sm text-red-800 font-medium">Error: {error}</p>
           <button
             onClick={fetchBookings}
             className="mt-3 px-4 py-2 text-sm bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
           >
-            다시 시도
+            Retry
           </button>
         </div>
       </div>
@@ -185,8 +201,8 @@ export default function OrdersPage() {
     <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">주문 관리</h1>
-          <p className="text-sm text-gray-600 mt-1">전체 예약 조회 및 관리 (총 {bookings.length}건)</p>
+          <h1 className="text-2xl font-bold text-gray-900">Order Management</h1>
+          <p className="text-sm text-gray-600 mt-1">View and manage all bookings ({bookings.length})</p>
         </div>
         <button
           type="button"
@@ -194,70 +210,75 @@ export default function OrdersPage() {
           disabled={exporting || bookings.length === 0}
           className="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {exporting ? '내보내는 중…' : 'Excel(CSV)로 내보내기'}
+          {exporting ? 'Exporting...' : 'Export CSV'}
         </button>
       </div>
 
-      {/* Filters & Sort */}
       <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm p-4 flex flex-wrap items-center gap-4">
         <select
           value={statusFilter}
           onChange={(e) => setStatusFilter(e.target.value)}
           className="px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
         >
-          <option value="">전체 상태</option>
-          <option value="pending">대기</option>
-          <option value="confirmed">확정</option>
-          <option value="completed">완료</option>
-          <option value="cancelled">취소</option>
+          <option value="">All statuses</option>
+          <option value="pending">Pending</option>
+          <option value="confirmed">Confirmed</option>
+          <option value="completed">Completed</option>
+          <option value="cancelled">Cancelled</option>
+          <option value="no_show">No-show</option>
         </select>
-        <span className="text-sm text-gray-500">정렬</span>
+        <span className="text-sm text-gray-500">Sort</span>
         <select
           value={orderBy}
           onChange={(e) => setOrderBy(e.target.value as OrderBy)}
           className="px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
         >
-          <option value="created_at">예약 일시</option>
-          <option value="tour_date">투어 일자</option>
-          <option value="booking_date">예약 일자</option>
+          <option value="created_at">Created at</option>
+          <option value="tour_date">Tour date</option>
+          <option value="booking_date">Booking date</option>
         </select>
         <select
           value={orderDir}
           onChange={(e) => setOrderDir(e.target.value as OrderDir)}
           className="px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
         >
-          <option value="desc">최신순</option>
-          <option value="asc">오래된순</option>
+          <option value="desc">Newest first</option>
+          <option value="asc">Oldest first</option>
         </select>
       </div>
 
-      {/* Orders by Date */}
       <div className="space-y-8">
         {groupedByDate.length === 0 ? (
           <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm p-8 text-center text-gray-500">
-            주문이 없습니다 {statusFilter && `(상태: ${statusFilter})`}
+            No orders found {statusFilter && `(status: ${statusFilter})`}
           </div>
         ) : (
           groupedByDate.map(({ date, items }) => (
             <div key={date}>
               <h2 className="text-lg font-semibold text-gray-900 mb-3">
-                {date === 'no-date' ? '날짜 없음' : new Date(date + 'T12:00:00').toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' })}
-                <span className="ml-2 text-sm font-normal text-gray-500">({items.length}건)</span>
+                {date === 'no-date'
+                  ? 'No date'
+                  : new Date(date + 'T12:00:00').toLocaleDateString('ko-KR', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                <span className="ml-2 text-sm font-normal text-gray-500">({items.length})</span>
               </h2>
               <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead className="bg-gray-50 border-b border-gray-200">
                       <tr>
-                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">주문 ID</th>
-                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">투어</th>
-                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">고객</th>
-                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">날짜</th>
-                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">인원</th>
-                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">픽업장소</th>
-                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">금액</th>
-                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">상태</th>
-                        <th className="px-5 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">작업</th>
+                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Order ID</th>
+                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Tour</th>
+                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Customer</th>
+                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Date</th>
+                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Guests</th>
+                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Pickup</th>
+                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Amount</th>
+                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Status</th>
+                        <th className="px-5 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">Action</th>
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
@@ -265,17 +286,17 @@ export default function OrdersPage() {
                         <tr key={booking.id} className="hover:bg-gray-50/50 transition-colors">
                           <td className="px-5 py-4 whitespace-nowrap text-xs font-mono text-gray-500">{booking.id.substring(0, 8)}...</td>
                           <td className="px-5 py-4">
-                            <div className="text-sm font-medium text-gray-900">{booking.tours?.title || '투어'}</div>
+                            <div className="text-sm font-medium text-gray-900">{booking.tours?.title || 'Tour'}</div>
                           </td>
                           <td className="px-5 py-4">
-                            <div className="text-sm text-gray-900">{booking.user_profiles?.full_name || booking.contact_name || '게스트'}</div>
+                            <div className="text-sm text-gray-900">{booking.user_profiles?.full_name || booking.contact_name || 'Guest'}</div>
                             <div className="text-xs text-gray-500">{booking.user_profiles?.email || booking.contact_email || 'N/A'}</div>
                           </td>
                           <td className="px-5 py-4 whitespace-nowrap text-sm text-gray-500">
                             {formatDate(booking.tour_date || booking.created_at)}
                           </td>
                           <td className="px-5 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                            {booking.number_of_guests ?? booking.number_of_people ?? 1}명
+                            {booking.number_of_guests ?? booking.number_of_people ?? 1}
                           </td>
                           <td className="px-5 py-4">
                             {booking.pickup_points ? (
@@ -284,12 +305,12 @@ export default function OrdersPage() {
                                 <div className="text-gray-500 mt-0.5">{booking.pickup_points.address}</div>
                               </div>
                             ) : (
-                              <span className="text-xs text-gray-400">미선택</span>
+                              <span className="text-xs text-gray-400">Not selected</span>
                             )}
                           </td>
                           <td className="px-5 py-4 whitespace-nowrap">
                             <div className="text-sm font-semibold text-gray-900">
-                              ₩{parseFloat(String(booking.final_price)).toLocaleString()}
+                              ${parseFloat(String(booking.final_price)).toLocaleString()}
                             </div>
                           </td>
                           <td className="px-5 py-4 whitespace-nowrap">
@@ -297,7 +318,7 @@ export default function OrdersPage() {
                           </td>
                           <td className="px-5 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <Link href={`/admin/orders/${booking.id}`} className="text-indigo-600 hover:text-indigo-700 font-medium">
-                              보기
+                              View
                             </Link>
                           </td>
                         </tr>

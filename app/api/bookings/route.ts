@@ -288,6 +288,7 @@ export async function POST(req: NextRequest) {
     const bookingData: any = {
       tour_id: tourIdStr,
       merchant_id: tour.merchant_id || null,
+      booking_reference: `A2C-${crypto.randomUUID().slice(0, 8).toUpperCase()}`,
       booking_date: bookingDateFormatted,
       tour_date: bookingDateFormatted,
       number_of_guests: guestsCount,
