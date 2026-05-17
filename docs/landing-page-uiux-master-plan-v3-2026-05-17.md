@@ -102,6 +102,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | Phase 0b 자체 분석 시스템 빌드로 결정 + 마스터플랜 작성 | (pending) | `docs/atockorea-analytics-master-plan-2026-05-17.md`. 외부 SaaS 모두 §D 옵션으로 강등 |
 | 2026-05-17 | §D #1 — 매처 결과 카드 아래 "비슷한 투어" 3-카드 추천 strip 랜딩 | d6afd195 | `lib/home/similar-tours.ts` (region/badge score) + `components/home/v2/SimilarToursStrip.tsx` + `best-match-preview.tsx` 분기 + 6 locale `home.premium.v2.similarTours.heading`. analytics `home_featured_card_click` source `similar_recommendation` 신규 추가 |
 | 2026-05-17 | §D #1 매칭 로직 핫픽스 — 광역지역 정규화 + multi-region + 폴백 제거 | 47534209 | **사용자 보고 버그**: 제주 winner인데 부산/크루즈 추천. 원인 (a) `broadRegion()`이 영문 키워드만 검사 → 한글 region 전부 미매칭 → score=0 fallback이 catalog 순서로 부산 시리즈 노출. (b) badge 1개 공유로 광역 다른 매물 추천 진입. 수정: 한국어+영문 키워드 룰 5종(jeju/gangwon/busan/gyeongju/seoul) + multi-region Set + 광역 교집합 없으면 score=0 게이트 + catalog 순서 폴백 제거 (strip은 1~3개 동적 grid). 검증: 30개 자연어 케이스 (jeju/busan/seoul 각 10개) production /api/tour-product/match 호출 → 30/30 광역 일치 ✅ |
+| 2026-05-17 | 헤더 언어 토글 핫픽스 — i18n provider race 제거 (초기 ~5클릭 무시 버그) | (pending) | **사용자 보고 버그**: 랜딩 헤더 언어 버튼 첫 ~5번 클릭이 무시됨, 그 다음부터는 1클릭 OK. 원인 (a) `I18nProvider.loadLocale()` 비동기 체인(localStorage → dynamic supabase import → auth.getSession → user_profiles select → navigator.language fallback)이 첫 1-2초 안에 사용자의 `setLocale()` 호출을 silently revert. (b) `setLocale`이 useCallback 미적용이라 매 render마다 새 참조 → `LocaleHomeClient.useEffect([locale,setLocale])`가 URL-derived locale로 사용자 선택을 강제로 덮어씀. 수정 (`lib/i18n.ts`): (1) `userOverrideRef` 추가, 각 async 체크포인트 후 사용자 override 있으면 abort. (2) `setLocale`을 useCallback으로 stable ref. 검증 CDP: ko→ja→zh→ko→en 4회 연속 1클릭 전환 모두 즉시 반영 (URL/lang/localStorage/H1 일치). 영향 범위: 글로벌 헤더 — 랜딩 외 모든 페이지에서도 fix |
+| 2026-05-17 | §D 모바일 floating 언어 pill 랜딩 (옵션 A) | (pending) | 사용자 옵션 A 선택. `components/FloatingLanguageToggle.tsx` 신규 (md:hidden, bottom-[calc(env(safe-area-inset-bottom,0px)+80px)] right-4 z-40). Globe 아이콘 + 2글자 코드 pill, 상향 dropdown(`bottom-full right-0`), 기존 i18n 핸들러 재사용(LanguageSwitcher와 동일 navigateWithLocale 로직). Sticky competition 가드: `[data-home-hero]`+`[data-home-final-cta]` IntersectionObserver(StickyHomeCta와 동일 sentinel)로 heroOut&&!footerIn 시 `opacity-0 pointer-events-none`. 마운트: `SitePageShell.tsx` (showBottomNav=true일 때만) + `app/[locale]/page.tsx`. tour-product layout은 showBottomNav=false라 자동 제외 — sticky 예약 바와 충돌 없음. SSR 검증: iPhone UA 페이지 HTML에 `aria-label="Change language"` + `aria-haspopup="menu"` + `fixed right-4 z-40 md:hidden bottom-[calc(env(safe-area-inset-bottom,0px)+80px)] ... opacity-100` 정확히 출력 확인. 인터랙션 검증: Chrome MCP 세션 만료로 사용자 수기 테스트로 지연 — 동일 핸들러 사용(헤더 5-클릭 fix 검증분과 공유)이라 회귀 위험 낮음 |
 
 ---
 
@@ -120,6 +122,7 @@ Phase 안에 없지만 좋은 아이디어. Phase 끝나기 전엔 손대지 말
 | Phase E.2 OTA 로고 strip | Phase E 분할 결정 (2026-05-17) | OTA 4-6사 라이선스 확인 필요. §B "플랫폼명 텍스트 유지" 결정과 시너지 평가 후 진행 |
 | Phase B.3.3 hero `min-h-[44vh]` 축소 | Phase 0c audit (§2.6.1) | 모바일 bottom nav overlay로 user-visible CTA가 여전히 가려짐. 정량 데이터(0b) 후 결정 |
 | PostHog 무료 티어 보강 (세션 리플레이용) | 자체 분석 plan §B-3 부산물 | 자체 timeline으로 demo 충분. 필요 시 hybrid (자체 정량 + PostHog 정성) |
+| ~~화면 우하단 floating 언어 토글~~ ↗ **랜딩 2026-05-17 (옵션 A 채택)** | 사용자 요청 2026-05-17 | ~~옵션 A/B/C 대기~~ — 옵션 A로 랜딩 완료. §C 참조 |
 
 ---
 

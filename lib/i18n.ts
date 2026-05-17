@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useMemo, createContext, useContext, ReactNode } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef, createContext, useContext, ReactNode } from 'react';
 import { getCopy } from '@/lib/copy-messages';
 import type { Copy } from '@/src/design/copy';
 // Do not static-import supabase here: it triggers server bundle of @supabase/supabase-js
@@ -72,6 +72,11 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   // Initialize with default locale immediately to avoid SSR issues
   const [locale, setLocaleState] = useState<Locale>(defaultLocale);
   const [loading, setLoading] = useState(false); // Start with false for immediate context provision
+  // Tracks explicit user-initiated locale changes. Once true, the initial loadLocale()
+  // async chain (localStorage → supabase profile → navigator.language fallback) must
+  // NOT override the user's choice. Without this guard, a click made before the chain
+  // completes was being silently reverted — the "first ~5 clicks ignored" bug.
+  const userOverrideRef = useRef(false);
 
   useEffect(() => {
     // Update HTML lang attribute and body class based on locale
@@ -99,7 +104,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
         // Try to get from localStorage first
         const savedLocale = localStorage.getItem('locale') as Locale;
         if (savedLocale && locales.includes(savedLocale)) {
-          setLocaleState(savedLocale);
+          if (!userOverrideRef.current) setLocaleState(savedLocale);
           setLoading(false);
           return;
         }
@@ -107,14 +112,17 @@ export function I18nProvider({ children }: { children: ReactNode }) {
         // Try to get from user settings if logged in (dynamic import to avoid server bundle)
         try {
           const { supabase } = await import('./supabase');
+          if (userOverrideRef.current) { setLoading(false); return; }
           if (supabase) {
             const { data: { session } } = await supabase.auth.getSession();
+            if (userOverrideRef.current) { setLoading(false); return; }
             if (session) {
               const { data: profile } = await supabase
                 .from('user_profiles')
                 .select('language_preference')
                 .eq('id', session.user.id)
                 .single();
+              if (userOverrideRef.current) { setLoading(false); return; }
 
               if (profile?.language_preference && locales.includes(profile.language_preference as Locale)) {
                 const userLocale = profile.language_preference as Locale;
@@ -137,11 +145,12 @@ export function I18nProvider({ children }: { children: ReactNode }) {
           setLoading(false);
           return;
         }
-        
+        if (userOverrideRef.current) { setLoading(false); return; }
+
         const browserLang = navigator.language;
         const langCode = browserLang.split('-')[0];
         const fullLang = browserLang.toLowerCase();
-        
+
         // Check for specific locales
         if (fullLang.startsWith('zh-tw') || fullLang.startsWith('zh-hant')) {
           setLocaleState('zh-TW');
@@ -173,7 +182,10 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const setLocale = async (newLocale: Locale) => {
+  // Stable reference: prevents downstream useEffect deps (e.g. LocaleHomeClient) from
+  // re-firing on every provider render and clobbering the user's choice mid-click.
+  const setLocale = useCallback(async (newLocale: Locale) => {
+    userOverrideRef.current = true;
     setLocaleState(newLocale);
     if (typeof window !== 'undefined') {
       localStorage.setItem('locale', newLocale);
@@ -194,7 +206,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     } catch (error) {
       console.error('Error updating user language preference:', error);
     }
-  };
+  }, []);
 
   const t = (key: string, params?: Record<string, string | number>): string => {
     const keys = key.split('.');

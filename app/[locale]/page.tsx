@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
+import FloatingLanguageToggle from '@/components/FloatingLanguageToggle';
 import { HomeMainBody } from '@/components/home/HomeMainBody';
 import { LocaleHomeClient } from '@/components/LocaleHomeClient';
 
@@ -65,6 +66,7 @@ export default function LocaleHomePage() {
           <Footer />
           <BottomNav />
           <div className="h-16 md:hidden" aria-hidden />
+          <FloatingLanguageToggle />
         </div>
       </div>
     </LocaleHomeClient>

@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import FloatingLanguageToggle from "@/components/FloatingLanguageToggle";
 
 export type SitePageShellProps = {
   children: React.ReactNode;
@@ -22,6 +23,7 @@ export function SitePageShell({ children, showBottomNav = true }: SitePageShellP
           <>
             <BottomNav />
             <div className="h-16 md:hidden" aria-hidden />
+            <FloatingLanguageToggle />
           </>
         ) : null}
       </div>
