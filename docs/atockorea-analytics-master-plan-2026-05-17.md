@@ -25,7 +25,7 @@ v3 landing master plan §A Phase 0b는 "🔄 자체 빌드 (atockorea-analytics-
 | 1 — Foundation (ingestion + storage + 최소 dashboard) | ✅ 완료 | 2026-05-17 | 2026-05-17 | f140e82c | schema(5 tables + 2 mat views + 5 seed funnels) + SDK 확장(cookie/session/queue/sendBeacon) + ingestion + identify endpoints + admin Overview + 6 placeholder tabs |
 | 2 — Events Explorer | ✅ 완료 | 2026-05-17 | 2026-05-17 | d6e11898 | list (이벤트 자동 discover) + detail (시계열 + payload top-10 분포 + 4 breakdown + 25 샘플) |
 | 3 — Funnels | ✅ 완료 | 2026-05-17 | 2026-05-17 | (pending) | 5 seed funnel UI + 단계별 전환률 + 4 breakdown (locale/device/utm_source/country) + conversion window respect |
-| 4 — Retention / Cohorts | ⏳ 대기 | — | — | — | 3 후. D+1/D+7/D+30 매트릭스 |
+| 4 — Retention / Cohorts | ✅ 완료 | 2026-05-17 | 2026-05-17 | (pending) | ISO 주별 cohort × W+0..W+N 히트맵 (anonymous_id or user_id) |
 | 5 — Session Timeline | ⏳ 대기 | — | — | — | 4 후. 이벤트 시퀀스 (DOM 녹화 아님) |
 | 6 — A/B Experiments | ⏳ 대기 | — | — | — | landing v3 Phase D unblock 트리거 |
 | 7 — 운영 / 헬스 / 익명화 | ⏳ 대기 | — | — | — | 6 후. 90일 익명화 cron + bot 필터 + CSV export |
@@ -33,8 +33,8 @@ v3 landing master plan §A Phase 0b는 "🔄 자체 빌드 (atockorea-analytics-
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단
 
-**현재 활성 Phase: 없음 (Phase 1 + 2 + 3 ✅ 완료, Phase 4 진입 대기).**
-**다음 액션: Phase 4 (Retention / Cohorts) — D+1 / D+7 / D+30 매트릭스.**
+**현재 활성 Phase: 없음 (Phase 1 + 2 + 3 + 4 ✅ 완료, Phase 5 진입 대기).**
+**다음 액션: Phase 5 (Session Timeline) — 세션별 이벤트 시퀀스 viewer.**
 
 ---
 
@@ -72,7 +72,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | fix — 세션 upsert가 2nd batch에서 entry context를 NULL로 clobber하던 버그 | e04cda44 | End-to-end 검증 통과 (6/6 poll round) |
 | 2026-05-17 | Phase 1 E2E 검증 — bot UA filter / invalid schema / real Chrome → production / DB row | (verified) | home_hero_season_chip_click 1건 prod에 정상 저장 (locale=ko-KR, device=desktop, country=KR) |
 | 2026-05-17 | Phase 2 ✅ 완료 — Events Explorer (list + detail + filters) | d6e11898 | event auto-discover + 시계열 + payload top-10 분포 + 4 breakdown + 25 samples |
-| 2026-05-17 | Phase 3 ✅ 완료 — Funnels (5 seed + 단계별 전환률 + breakdown) | (pending) | server-side step walk per session with conversion window respect; UI: bar chart with retention from prev / from first |
+| 2026-05-17 | Phase 3 ✅ 완료 — Funnels (5 seed + 단계별 전환률 + breakdown) | 66c788fe | server-side step walk per session with conversion window respect; UI: bar chart with retention from prev / from first |
+| 2026-05-17 | Phase 4 ✅ 완료 — Retention 주별 cohort 히트맵 (4/8/12주 토글) | (pending) | ISO Mon-Sun 주. user_id 머지 후 unique 카운트 |
 
 ---
 
