@@ -18,7 +18,7 @@ import { AlertCircle, ChevronRight, Clock, MapPin, RefreshCw, Star } from 'lucid
 import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { useI18n, useTranslations } from '@/lib/i18n';
 import { getStaticTourProductBySlug } from '@/components/product-tour-static/catalog/staticTourProductRegistry';
-import type { ScoredProduct, TourMatchApiResponse } from '@/lib/tour-product-match/types';
+import type { ScoredProduct, TourMatchApiResponse } from '@/lib/tour-match-v2/api-types';
 import { cn } from '@/lib/utils';
 import { analytics } from '@/src/design/analytics';
 

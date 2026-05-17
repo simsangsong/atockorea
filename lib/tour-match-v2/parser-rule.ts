@@ -21,6 +21,36 @@ function matchAny(text: string, patterns: string[] | undefined): boolean {
   return patterns.some((p) => t.includes(p.toLowerCase()));
 }
 
+function escapeRegExp(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function isNegatedEnglishTerm(textLower: string, termLower: string): boolean {
+  if (!/^[a-z0-9\s'-]+$/.test(termLower)) return false;
+  const suffix = /^[a-z0-9'-]+$/.test(termLower) ? "(?:s|es)?" : "";
+  const re = new RegExp(`\\b${escapeRegExp(termLower)}${suffix}\\b`, "g");
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(textLower))) {
+    const before = textLower.slice(Math.max(0, m.index - 80), m.index);
+    if (
+      /(?:\bno\b|\bnot\b|\bwithout\b|\bavoid\b|\bskip\b|\bdon't\b|\bdont\b|\bdo not\b|\bdoesn't\b|\bnot interested in\b|\bnot just\b|\bnot only\b|\brather than\b|\binstead of\b)[\w\s,'-]{0,60}$/.test(before)
+    ) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function matchAnyPositive(text: string, patterns: string[] | undefined): boolean {
+  if (!patterns || !patterns.length) return false;
+  const t = text.toLowerCase();
+  return patterns.some((p) => {
+    const term = p.toLowerCase();
+    if (!t.includes(term)) return false;
+    return !isNegatedEnglishTerm(t, term);
+  });
+}
+
 function bumpDim(boost: Record<string, number>, dim: string, w: number) {
   boost[dim] = Math.max(boost[dim] ?? 0, w);
 }
@@ -29,6 +59,8 @@ const MONTH_MAP_EN: Record<string, number> = {
   jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6,
   jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12,
 };
+
+const GENERIC_ANCHOR_PRIMARY_TOKENS = new Set(["korean"]);
 
 const KR_ANCHOR_ALIASES: Record<string, string[]> = {
   seongsan_ilchulbong: ["성산", "일출봉"],
@@ -60,6 +92,14 @@ const KR_ANCHOR_ALIASES: Record<string, string[]> = {
   pocheon_art_valley: ["포천 아트밸리", "아트밸리"],
   herb_island_pocheon: ["허브아일랜드"],
   sanjeong_lake: ["산정호수"],
+};
+
+const EN_ANCHOR_ALIASES: Record<string, string[]> = {
+  seoraksan_national_park: ["seoraksan", "seoraksan national park"],
+  sokcho_tourist_fishery_market: ["sokcho market", "sokcho fishery market"],
+  gwangmyeong_cave: ["gwangmyeong cave"],
+  bulguksa_temple: ["bulguksa", "bulguksa temple"],
+  cheomseongdae: ["cheomseongdae"],
 };
 
 const DRAMA_LOCATION_BIAS: Record<string, string[]> = {
@@ -108,7 +148,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
 
   for (const [seasonKey, info] of Object.entries(TAXONOMY.seasons ?? {}) as any[]) {
     const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
-    if (matchAny(query, all)) {
+    if (matchAnyPositive(query, all)) {
       season = seasonKey as any;
       months = [...info.months];
       break;
@@ -118,7 +158,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   const season_locks: string[] = [];
   for (const [lockKey, info] of Object.entries(TAXONOMY.season_locks ?? {}) as any[]) {
     const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
-    if (matchAny(query, all)) {
+    if (matchAnyPositive(query, all)) {
       season_locks.push(lockKey);
       // Do NOT default-fill months from the season_lock here. The seasonal-gate
       // distinguishes "user explicit month" vs "season keyword only" via the
@@ -129,6 +169,13 @@ export function ruleParse(query: string): ParsedQueryV2 {
       for (const dim of info.boost_dims ?? []) bumpDim(boost, dim, 1.5);
     }
   }
+  if (/\bspring\b/.test(q) && /\b(flowers?|blossoms?)\b/.test(q) && !isNegatedEnglishTerm(q, "flower")) {
+    if (!season_locks.includes("cherry_blossom")) season_locks.push("cherry_blossom");
+    bumpDim(boost, "cherry_blossom_fit", 1.2);
+    bumpDim(boost, "spring_seasonal_fit", 1.2);
+    bumpDim(boost, "seasonal_festival_fit", 1.0);
+    bumpDim(boost, "plum_blossom_fit", 0.8);
+  }
 
   // Explicit month patterns
   const explicit: number[] = [];
@@ -136,8 +183,8 @@ export function ruleParse(query: string): ParsedQueryV2 {
     const i = parseInt(m[1], 10);
     if (i >= 1 && i <= 12) explicit.push(i);
   }
-  for (const m of q.matchAll(/\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\b/g)) {
-    const n = MONTH_MAP_EN[m[1]];
+  for (const m of q.matchAll(/\b(january|jan|february|feb|march|mar|april|apr|may|june|jun|july|jul|august|aug|september|sep|october|oct|november|nov|december|dec)\b/g)) {
+    const n = MONTH_MAP_EN[m[1].slice(0, 3)];
     if (n) explicit.push(n);
   }
   if (explicit.length) months = [...new Set(explicit)].sort((a, b) => a - b);
@@ -146,7 +193,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   const personas: string[] = [];
   for (const [key, info] of Object.entries(TAXONOMY.personas ?? {}) as any[]) {
     const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
-    if (matchAny(query, all)) {
+    if (matchAnyPositive(query, all)) {
       personas.push(key);
       const fit = info.fit_dim;
       if (fit) {
@@ -160,7 +207,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   const themes: string[] = [];
   for (const [key, info] of Object.entries(TAXONOMY.themes ?? {}) as any[]) {
     const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
-    if (matchAny(query, all)) {
+    if (matchAnyPositive(query, all)) {
       themes.push(key);
       for (const dim of info.boost_dims ?? []) bumpDim(boost, dim, 1.2);
     }
@@ -170,7 +217,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   let pace: ParsedQueryV2["pace"] = null;
   for (const [key, info] of Object.entries(TAXONOMY.pace_dimensions ?? {}) as any[]) {
     const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
-    if (matchAny(query, all)) {
+    if (matchAnyPositive(query, all)) {
       if (key.includes("relaxed")) pace = "relaxed";
       else if (key.includes("active")) pace = "active";
       for (const dim of info.boost_dims ?? []) bumpDim(boost, dim, 0.8);
@@ -181,7 +228,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   let fmt: ParsedQueryV2["format"] = null;
   for (const [key, info] of Object.entries(TAXONOMY.format_constraints ?? {}) as any[]) {
     const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
-    if (matchAny(query, all)) {
+    if (matchAnyPositive(query, all)) {
       fmt = key as any;
       const fit = info.fit_dim;
       if (fit) bumpDim(boost, fit, 1.0);
@@ -193,7 +240,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   let duration: ParsedQueryV2["duration_constraint"] = null;
   for (const [key, info] of Object.entries(TAXONOMY.duration_constraints ?? {}) as any[]) {
     const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
-    if (matchAny(query, all)) {
+    if (matchAnyPositive(query, all)) {
       duration = key as any;
       break;
     }
@@ -219,7 +266,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   const hard_constraints: string[] = [];
   for (const [key, info] of Object.entries(TAXONOMY.hard_constraints ?? {}) as any[]) {
     const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
-    if (matchAny(query, all)) {
+    if (matchAnyPositive(query, all)) {
       hard_constraints.push(key);
       const f = info.filter_dim;
       if (f) bumpDim(boost, f, 1.0);
@@ -231,6 +278,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   const popular = TAXONOMY.anchor_pois_index?.popular_anchors ?? [];
   for (const anchor of popular) {
     const primary = (anchor as string).split("_")[0];
+    if (GENERIC_ANCHOR_PRIMARY_TOKENS.has(primary)) continue;
     if (primary.length >= 4 && q.includes(primary)) {
       if (!anchor_pois.includes(anchor)) anchor_pois.push(anchor);
     }
@@ -240,18 +288,35 @@ export function ruleParse(query: string): ParsedQueryV2 {
       anchor_pois.push(ak);
     }
   }
+  for (const [ak, aliases] of Object.entries(EN_ANCHOR_ALIASES)) {
+    if (aliases.some((a) => q.includes(a)) && !anchor_pois.includes(ak)) {
+      anchor_pois.push(ak);
+    }
+  }
 
   // Cruise intent
   const cruiseEn = ["cruise", "shore excursion", "shore-excursion", "cruise port", "ship docked", "disembark", "reboard"];
   const cruiseKo = ["크루즈", "유람선", "정박", "재승선", "기항지", "선박"];
   const wants_cruise =
-    cruiseEn.some((kw) => q.includes(kw)) ||
+    cruiseEn.some((kw) => q.includes(kw) && !isNegatedEnglishTerm(q, kw)) ||
     cruiseKo.some((kw) => query.includes(kw)) ||
     personas.includes("cruise_passengers") ||
     hard_constraints.includes("cruise_reboard_5pm");
 
   // Charter intent
-  const charterEn = ["custom route", "customize", "customized", "private car charter", "design my own", "build my own"];
+  const charterEn = [
+    "custom route",
+    "custom itinerary",
+    "customize",
+    "customized",
+    "choose our own route",
+    "choose my own route",
+    "own route",
+    "flexible route",
+    "private car charter",
+    "design my own",
+    "build my own",
+  ];
   const charterKo = [
     "대절", "차량 대절", "맞춤", "맞춤형", "맞춤 일정", "원하는 대로",
     "우리 일정대로", "내 일정대로", "직접 짜", "직접 코스",
@@ -272,7 +337,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   }
 
   const wants_charter_customization =
-    charterEn.some((kw) => q.includes(kw)) ||
+    charterEn.some((kw) => q.includes(kw) && !isNegatedEnglishTerm(q, kw)) ||
     charterKo.some((kw) => query.includes(kw)) ||
     fmt === "charter";
   if (wants_charter_customization) {
@@ -283,7 +348,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   // Rain
   const rainEn = ["rain", "rainy", "rainy day", "wet weather"];
   const rainKo = ["비 오는 날", "비올때", "비 올 때", "비 와도", "우천", "비오는날", "비 오는날"];
-  if (rainEn.some((k) => q.includes(k)) || rainKo.some((k) => query.includes(k))) {
+  if (rainEn.some((k) => q.includes(k) && !isNegatedEnglishTerm(q, k)) || rainKo.some((k) => query.includes(k))) {
     bumpDim(boost, "rain_fit", 1.5);
     bumpDim(boost, "indoor_ratio", 1.0);
   }
@@ -291,12 +356,12 @@ export function ruleParse(query: string): ParsedQueryV2 {
   // Affordable / premium
   const aff = ["affordable", "저렴", "가성비", "값싸", "value", "budget", "cheap"];
   const prem = ["premium", "프리미엄", "럭셔리", "luxury", "고급", "최고급"];
-  if (aff.some((k) => q.includes(k)) || aff.some((k) => query.includes(k))) {
+  if (aff.some((k) => q.includes(k) && !isNegatedEnglishTerm(q, k)) || aff.some((k) => query.includes(k))) {
     bumpDim(boost, "affordable_cruise_excursion_fit", 1.3);
     bumpDim(boost, "value_cruise_excursion_fit", 1.3);
     bumpDim(boost, "budget_friendly_fit", 1.3);
   }
-  if (prem.some((k) => q.includes(k)) || prem.some((k) => query.includes(k))) {
+  if (prem.some((k) => q.includes(k) && !isNegatedEnglishTerm(q, k)) || prem.some((k) => query.includes(k))) {
     bumpDim(boost, "cruise_premium_segment_fit", 1.3);
     bumpDim(boost, "couples_premium_fit", 1.3);
     bumpDim(boost, "private_charter_fit", 1.0);

@@ -85,10 +85,15 @@ const OPERATIONAL_FRAGMENTS = ["_port", "cruise_port", "_pickup", "_dropoff", "_
 function inferDestinationRegion(slug, mp) {
   const s = (slug || "").toLowerCase();
   if (s.startsWith("jeju-") || s.includes("jeju")) return "jeju";
-  if (s.startsWith("busan-") || s.startsWith("from-busan-")) return "busan_gyeongju";
+  if (s.startsWith("busan-") || s.startsWith("from-busan-")) {
+    if (mp?.region_type === "busan_city") return "busan_city";
+    if (s.includes("gyeongju") || s.includes("yangsan") || s.includes("tongdosa")) return "busan_gyeongju";
+    return "busan_city";
+  }
   if (s.startsWith("from-incheon-") || s.includes("incheon")) return "incheon_seoul";
   if (s.startsWith("seoul-") || s.includes("seoul")) {
     if (s.includes("suwon")) return "suwon";
+    if (s.includes("seoraksan") || s.includes("sokcho") || s.includes("naksansa")) return "seoul_gangwon";
     return "seoul";
   }
   if (s.includes("pocheon")) return "pocheon";

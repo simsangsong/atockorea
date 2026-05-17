@@ -12,7 +12,7 @@ import {
   HOME_CTA_MATCHING_HREF,
 } from "@/lib/home/home-cta-routes";
 import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
-import type { TourMatchApiResponse } from "@/lib/tour-product-match/types";
+import type { TourMatchApiResponse } from "@/lib/tour-match-v2/api-types";
 
 function priceVmFromProduct(p: ReturnType<typeof getStaticTourProductBySlug> | undefined): {
   strikePriceLabel: string;

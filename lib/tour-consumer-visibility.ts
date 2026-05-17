@@ -91,6 +91,8 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   "jeju-island-full-day-tour-cruise-passengers",
   "jeju-eastern-unesco-spots-bus-tour",
   "east-jeju-signature-small-group",
+  // Retired 2026-05-14 — replaced by seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.
+  "seoul-seoraksan-national-park-sokcho-beach-day-trip",
 ]);
 
 function normalizeTourIdForBlocklist(id: string): string {

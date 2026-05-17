@@ -10,12 +10,11 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { getStaticTourProductBySlug } from "@/components/product-tour-static/catalog/staticTourProductRegistry";
 import { analytics } from "@/src/design/analytics";
 import { useHomepageJoinCardImage } from "@/hooks/home/useHomepageJoinCardImage";
 import { DEFAULT_HOMEPAGE_PRODUCT_CARD_IMAGES } from "@/lib/homepage-product-card-images.shared";
 import { clearHomepageMatchTimeouts } from "@/lib/home/services/hero-match-schedule";
-import type { TourMatchApiResponse } from "@/lib/tour-product-match/types";
+import type { TourMatchApiResponse } from "@/lib/tour-match-v2/api-types";
 
 export type HomeV2MatchPhase = "idle" | "loading" | "result";
 
@@ -42,15 +41,37 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
   const [loadingStep, setLoadingStep] = useState<0 | 1 | 2>(0);
   const [matchResult, setMatchResult] = useState<TourMatchApiResponse | null>(null);
   const [matchError, setMatchError] = useState<string | null>(null);
+  const [matchedJoinImageUrl, setMatchedJoinImageUrl] = useState<string | null>(null);
   const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => () => clearHomepageMatchTimeouts(timeoutsRef), []);
 
-  const joinImageUrl = useMemo(() => {
-    if (!matchResult?.winner?.product_id) return baseJoinImageUrl;
-    const p = getStaticTourProductBySlug(matchResult.winner.product_id);
-    return p?.heroImage ?? baseJoinImageUrl;
-  }, [matchResult, baseJoinImageUrl]);
+  useEffect(() => {
+    const slug = matchResult?.winner?.product_id;
+    if (!slug) {
+      setMatchedJoinImageUrl(null);
+      return;
+    }
+
+    let cancelled = false;
+    import("@/components/product-tour-static/catalog/staticTourProductRegistry")
+      .then(({ getStaticTourProductBySlug }) => {
+        if (cancelled) return;
+        setMatchedJoinImageUrl(getStaticTourProductBySlug(slug)?.heroImage ?? null);
+      })
+      .catch(() => {
+        if (!cancelled) setMatchedJoinImageUrl(null);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [matchResult?.winner?.product_id]);
+
+  const joinImageUrl = useMemo(
+    () => matchedJoinImageUrl ?? baseJoinImageUrl,
+    [matchedJoinImageUrl, baseJoinImageUrl],
+  );
 
   const resetMatchToIdle = useCallback(() => {
     clearHomepageMatchTimeouts(timeoutsRef);
@@ -58,6 +79,7 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
     setLoadingStep(0);
     setMatchResult(null);
     setMatchError(null);
+    setMatchedJoinImageUrl(null);
   }, []);
 
   const startInPageMatchFlow = useCallback(async (
@@ -68,6 +90,7 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
     analytics.homeCtaClick({ source: "hero_planner_match" });
     setMatchError(null);
     setMatchResult(null);
+    setMatchedJoinImageUrl(null);
     setPhase("loading");
     setLoadingStep(0);
 

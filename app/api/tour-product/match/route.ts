@@ -41,14 +41,15 @@ function makeServiceRoleClient() {
 }
 
 /**
- * Hero-card destination value → taxonomy region key. The card UI exposes
- * "jeju" / "seoul" / "busan"; the matching engine uses canonical region keys
- * (busan_gyeongju is the matching-profile key — there's no standalone "busan").
+ * Hero-card destination value -> taxonomy region keys.
+ * Top-level cards intentionally cover multiple sellable day-trip regions:
+ * Busan includes city tours plus Busan-origin Gyeongju heritage tours; Seoul
+ * includes city-origin day trips such as Gangwon/Seoraksan, Suwon, and Pocheon.
  */
-const PINNED_DESTINATION_TO_REGION: Record<string, string> = {
-  jeju: "jeju",
-  seoul: "seoul",
-  busan: "busan_gyeongju",
+const PINNED_DESTINATION_TO_REGIONS: Record<string, string[]> = {
+  jeju: ["jeju"],
+  seoul: ["seoul", "seoul_gangwon", "suwon", "pocheon"],
+  busan: ["busan_city", "busan_gyeongju"],
 };
 
 export async function POST(req: NextRequest) {
@@ -64,7 +65,7 @@ export async function POST(req: NextRequest) {
     // Pinned destination from the home hero card. When present, it takes
     // precedence over any region the parser extracts from the free-text intent.
     const pinnedRaw = typeof body.pinned_destination === "string" ? body.pinned_destination : null;
-    const pinnedRegion = pinnedRaw ? PINNED_DESTINATION_TO_REGION[pinnedRaw.toLowerCase()] ?? null : null;
+    const pinnedRegions = pinnedRaw ? PINNED_DESTINATION_TO_REGIONS[pinnedRaw.toLowerCase()] ?? null : null;
 
     // 1. Parse (Haiku → rule fallback)
     const parserModeEnv = (process.env.TOUR_MATCH_PARSER_MODE ?? "auto").toLowerCase();
@@ -78,8 +79,8 @@ export async function POST(req: NextRequest) {
     // Pinned region OVERRIDES parser-extracted regions (hard filter).
     // We replace the array (not union) so the user's card choice always wins,
     // even when the free-text intent mentioned a different city.
-    if (pinnedRegion) {
-      parsed.regions = [pinnedRegion];
+    if (pinnedRegions) {
+      parsed.regions = pinnedRegions;
     }
 
     // 2. Fetch match_tours rows

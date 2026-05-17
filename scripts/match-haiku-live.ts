@@ -42,9 +42,17 @@ function buildSimpleRow(slug: string, doc: any): MatchTourRow {
   const s = slug.toLowerCase();
   let region: string | null = mp?.destination_region ?? null;
   if (s.includes("jeju")) region = "jeju";
-  else if (s.startsWith("busan-") || s.startsWith("from-busan-")) region = "busan_gyeongju";
+  else if (s.startsWith("busan-") || s.startsWith("from-busan-")) {
+    if (mp?.region_type === "busan_city") region = "busan_city";
+    else if (s.includes("gyeongju") || s.includes("yangsan") || s.includes("tongdosa")) region = "busan_gyeongju";
+    else region = "busan_city";
+  }
   else if (s.includes("incheon")) region = "incheon_seoul";
-  else if (s.includes("seoul")) region = s.includes("suwon") ? "suwon" : "seoul";
+  else if (s.includes("seoul")) {
+    if (s.includes("suwon")) region = "suwon";
+    else if (s.includes("seoraksan") || s.includes("sokcho") || s.includes("naksansa")) region = "seoul_gangwon";
+    else region = "seoul";
+  }
   else if (s.includes("pocheon")) region = "pocheon";
 
   const isCruise = s.includes("cruise") || s.includes("shore-excursion");

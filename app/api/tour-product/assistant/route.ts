@@ -70,7 +70,7 @@ function localeFromRequest(req: NextRequest): TourProductPageLocale {
   return "en";
 }
 
-/** Default matches `lib/tour-product-match/gemini-match-explanation.ts`. Override with `GEMINI_TOUR_PRODUCT_ASSISTANT_MODEL`. */
+/** Override with `GEMINI_TOUR_PRODUCT_ASSISTANT_MODEL` when needed. */
 const DEFAULT_GEMINI_MODEL = "gemini-2.5-flash";
 
 export async function POST(req: NextRequest) {

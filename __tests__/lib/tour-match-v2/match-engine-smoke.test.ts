@@ -160,7 +160,7 @@ describe("match-engine smoke — v1.9 hardening", () => {
     expect(slugs).not.toContain("jeju-east-cherry-blossom");
   });
 
-  test("'4월 가족 제주 동부' → cherry tour top-1 (legacy path preserved)", () => {
+  test("'4월 가족 제주 동부' → cherry tour top-1 (rule parser path preserved)", () => {
     const parsed = ruleParse("4월 가족 제주 동부");
     const out = matchTours(parsed, TOURS, 5, false, { year: 2026, month: 3 });
     expect(out.top_matches.length).toBeGreaterThan(0);
@@ -210,5 +210,52 @@ describe("match-engine smoke — v1.9 hardening", () => {
     for (const m of out.top_matches) {
       expect(m.destination_region).toBe("busan_gyeongju");
     }
+  });
+
+  test("format scoring respects 0-1 profile values", () => {
+    const privateTour: MatchTourRow = {
+      ...evergreenJejuEast,
+      slug: "jeju-private-format",
+      matching_profile: { private_fit: 1 },
+    };
+    const weakPrivateTour: MatchTourRow = {
+      ...evergreenJejuEast,
+      slug: "jeju-weak-private-format",
+      matching_profile: { private_fit: 0.05 },
+    };
+    const parsed = ruleParse("private jeju tour");
+    parsed.format = "private";
+    parsed.regions = ["jeju"];
+
+    const out = matchTours(parsed, [weakPrivateTour, privateTour], 2, false, { year: 2026, month: 5 });
+
+    expect(out.top_matches[0]?.slug).toBe("jeju-private-format");
+    expect(out.top_matches[0]?.score_components.format_match).toBe(2);
+    expect(out.top_matches[1]?.score_components.format_match).toBe(0.1);
+  });
+
+  test("busan history intent can include Busan-origin Gyeongju heritage tours", () => {
+    const busanCityTour: MatchTourRow = {
+      ...evergreenJejuEast,
+      slug: "busan-city-history",
+      destination_region: "busan_city",
+      primary_themes: ["busan_city", "history_lovers"],
+      matching_profile: { culture_level: 0.7 },
+    };
+    const busanGyeongjuTour: MatchTourRow = {
+      ...evergreenJejuEast,
+      slug: "busan-gyeongju-heritage",
+      destination_region: "busan_gyeongju",
+      primary_themes: ["gyeongju", "unesco", "silla_kingdom"],
+      matching_profile: { culture_level: 1, unesco_fit: 1 },
+    };
+    const parsed = ruleParse("busan history unesco day tour");
+    parsed.regions = ["busan_city"];
+
+    const out = matchTours(parsed, [busanCityTour, busanGyeongjuTour], 5, false, { year: 2026, month: 5 });
+    const slugs = out.top_matches.map((m) => m.slug);
+
+    expect(slugs).toContain("busan-city-history");
+    expect(slugs).toContain("busan-gyeongju-heritage");
   });
 });

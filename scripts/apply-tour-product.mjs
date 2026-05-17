@@ -316,73 +316,6 @@ function buildPagesRow(doc, slug, locale, tourId) {
   };
 }
 
-function buildMatchingProfileRow(doc, slug) {
-  const mp = asRecord(doc.matching_profile);
-  const required = (k) => {
-    if (mp[k] === undefined) {
-      console.error(`[apply-tour-product] matching_profile.${k} is required for ${slug}`);
-      process.exit(1);
-    }
-    return mp[k];
-  };
-  const get = (k, dflt) => (mp[k] !== undefined ? mp[k] : dflt);
-
-  return {
-    product_id: slug,
-    product_type: required("product_type"),
-    route_type: required("route_type"),
-    region_type: required("region_type"),
-    region_tags: get("region_tags", []),
-    theme_tags: get("theme_tags", []),
-    poi_tags: get("poi_tags", []),
-    pace_level: Number(required("pace_level")),
-    walking_level: Number(required("walking_level")),
-    scenic_level: Number(required("scenic_level")),
-    photo_level: Number(required("photo_level")),
-    culture_level: Number(required("culture_level")),
-    relax_level: Number(required("relax_level")),
-    first_time_fit: Number(required("first_time_fit")),
-    family_fit: Number(required("family_fit")),
-    senior_fit: Number(required("senior_fit")),
-    couple_fit: Number(required("couple_fit")),
-    active_traveler_fit: Number(required("active_traveler_fit")),
-    one_day_fit: Number(required("one_day_fit")),
-    same_day_flight_fit: Number(required("same_day_flight_fit")),
-    rain_fit: Number(required("rain_fit")),
-    value_for_money_fit: Number(required("value_for_money_fit")),
-    iconic_landmark_fit: Number(required("iconic_landmark_fit")),
-    cafe_fit: Number(required("cafe_fit")),
-    adult_family_fit: Number(required("adult_family_fit")),
-    young_kids_fit: Number(required("young_kids_fit")),
-    senior_active_fit: Number(required("senior_active_fit")),
-    senior_general_fit: Number(required("senior_general_fit")),
-    mobility_friendly_fit: Number(required("mobility_friendly_fit")),
-    stroller_fit: Number(required("stroller_fit")),
-    indoor_ratio: Number(required("indoor_ratio")),
-    weather_sensitivity: Number(required("weather_sensitivity")),
-    local_culture_fit: Number(required("local_culture_fit")),
-    shopping_fit: Number(required("shopping_fit")),
-    storytelling_fit: Number(required("storytelling_fit")),
-    comfort_level: Number(required("comfort_level")),
-    budget_fit: Number(required("budget_fit")),
-    premium_fit: Number(required("premium_fit")),
-    small_group_fit: Number(required("small_group_fit")),
-    private_fit: Number(required("private_fit")),
-    bus_fit: Number(required("bus_fit")),
-    price_band: required("price_band"),
-    pickup_base: required("pickup_base"),
-    return_time_band: required("return_time_band"),
-    duration_band: required("duration_band"),
-    min_recommended_age: Number(required("min_recommended_age")),
-    hard_constraints: get("hard_constraints", { avoidIf: [], notIdealFor: [] }),
-    walking_notes: get("walking_notes", []),
-    keywords: get("keywords", []),
-    synonym_hints: get("synonym_hints", []),
-    profile_version: Number(get("profile_version", 1)),
-    is_active: get("is_active", true),
-  };
-}
-
 function usdMajorToMinor(major) {
   return Math.round(Number(major) * 100);
 }
@@ -487,16 +420,7 @@ async function apply(slug, locales) {
     }
   }
 
-  // 4) tour_matching_profiles
-  const mpRow = buildMatchingProfileRow(enDoc, slug);
-  const { error: mpErr } = await supabase
-    .from("tour_matching_profiles")
-    .upsert(mpRow, { onConflict: "product_id" });
-  if (mpErr) {
-    console.error(`[apply-tour-product] tour_matching_profiles upsert failed:`, mpErr);
-    process.exit(1);
-  }
-  console.log(`  ✓ tour_matching_profiles: region_type=${mpRow.region_type}`);
+  console.log("  • matching: handled by match_tours via scripts/import-match-v18.mjs");
 }
 
 const { slug, locales } = parseArgs(process.argv);

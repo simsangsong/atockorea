@@ -1,8 +1,6 @@
 /**
- * Runtime mirror of `lib/tour-product-match/matching-profile-schema.ts`
- * for Node (.mjs) generator scripts. Keep the enum/key lists in sync with:
- *  - `lib/tour-product-match/types.ts` (RegionAffinity, KNOWN_AVOID_IF_KEYS, KNOWN_NOT_IDEAL_FOR_KEYS)
- *  - `lib/tour-product-match/score-tour-products.ts#shouldHardExclude`
+ * Validator for tour JSON `matching_profile` blocks imported into
+ * `match_tours.matching_profile`.
  *
  * If zod is available in node_modules we use it; otherwise fall back to a
  * handwritten validator so the generators never block on dep-install races.
@@ -90,16 +88,9 @@ const REQUIRED_ARRAY_KEYS = ["region_tags", "theme_tags", "poi_tags", "walking_n
 
 function isInt(n) { return typeof n === "number" && Number.isInteger(n); }
 
-/**
- * Accept integer 1–5 (legacy scale) OR float 0–1 (v2 scale).
- * apply-tour-product.mjs normalises 0–1 → 1–5 before writing to Supabase,
- * so both forms are valid in source JSON.
- */
 function isValidLevelValue(n) {
   if (typeof n !== "number" || !isFinite(n)) return false;
-  if (isInt(n) && n >= 1 && n <= 5) return true; // legacy 1-5
-  if (n >= 0 && n <= 1) return true;              // v2 0-1
-  return false;
+  return n >= 0 && n <= 1;
 }
 
 /**
@@ -123,7 +114,7 @@ export function validateMatchingProfile(raw) {
     err("route_type", `expected one of ${ROUTE_TYPES.join(" | ")}, got ${JSON.stringify(raw.route_type)}`);
   }
   if (!REGION_TYPES.includes(raw.region_type)) {
-    err("region_type", `expected one of ${REGION_TYPES.join(" | ")}, got ${JSON.stringify(raw.region_type)} (legacy value "all_around" should be "full_island")`);
+    err("region_type", `expected one of ${REGION_TYPES.join(" | ")}, got ${JSON.stringify(raw.region_type)} (historical value "all_around" should be "full_island")`);
   }
   if (!PRICE_BANDS.includes(raw.price_band)) {
     err("price_band", `expected one of ${PRICE_BANDS.join(" | ")}, got ${JSON.stringify(raw.price_band)}`);
@@ -132,19 +123,18 @@ export function validateMatchingProfile(raw) {
   for (const k of REQUIRED_LEVEL_KEYS) {
     const v = raw[k];
     if (!isValidLevelValue(v)) {
-      err(k, `expected integer 1..5 or float 0..1, got ${JSON.stringify(v)}`);
+      err(k, `expected 0..1 score, got ${JSON.stringify(v)}`);
     }
   }
-  // v17 batch: indoor_ratio may be 0..1 float (preferred) OR 0..100 int (legacy).
-  // Generator stores raw value; DB column is numeric to accept both forms.
   {
     const v = raw.indoor_ratio;
     const ok =
       typeof v === "number" &&
       Number.isFinite(v) &&
-      ((Number.isInteger(v) && v >= 0 && v <= 100) || (v >= 0 && v <= 1));
+      v >= 0 &&
+      v <= 1;
     if (!ok) {
-      err("indoor_ratio", `expected integer 0..100 or float 0..1, got ${JSON.stringify(v)}`);
+      err("indoor_ratio", `expected 0..1 ratio, got ${JSON.stringify(v)}`);
     }
   }
   if (!isInt(raw.min_recommended_age) || raw.min_recommended_age < 0 || raw.min_recommended_age > 99) {
@@ -225,7 +215,7 @@ export function assertMatchingProfileOrExit(raw, { sourceLabel = "matching_profi
     console.error(`${tag} ${sourceLabel}.${issue.path}: ${issue.message}`);
   }
   if (!ok) {
-    console.error(`\nMatching profile validation failed for ${sourceLabel}. Fix the JSON or update the canonical key lists in lib/tour-product-match/types.ts before regenerating SQL.`);
+    console.error(`\nMatching profile validation failed for ${sourceLabel}. Fix the JSON before importing match_tours.`);
     process.exit(1);
   }
 }

@@ -124,6 +124,62 @@ function asNumber(v: unknown): number | null {
   return null;
 }
 
+function formatFitScore(value: number): number {
+  if (!Number.isFinite(value) || value <= 0) return 0;
+  if (value <= 1) return round(value * 2);
+  if (value >= 4) return 2.0;
+  return 1.0;
+}
+
+function isBusanHistoryIntent(parsed: ParsedQueryV2): boolean {
+  const historyThemes = new Set([
+    "history_lovers",
+    "culture_lovers",
+    "unesco_world_heritage",
+    "buddhist_temple",
+  ]);
+  if (parsed.themes.some((t) => historyThemes.has(t))) return true;
+  const dims = parsed.boost_dimensions ?? {};
+  return [
+    "culture_level",
+    "history_culture_fit",
+    "unesco_fit",
+    "world_heritage_fit",
+    "buddhist_temple_fit",
+  ].some((k) => (dims[k] ?? 0) > 0);
+}
+
+function isBusanGyeongjuExcursionIntent(parsed: ParsedQueryV2): boolean {
+  if (isBusanHistoryIntent(parsed)) return true;
+  const springKeys = new Set(["cherry_blossom", "plum_blossom", "canola_flower"]);
+  if (parsed.season_locks.some((s) => springKeys.has(s))) return true;
+  const dims = parsed.boost_dimensions ?? {};
+  return [
+    "cherry_blossom_fit",
+    "plum_blossom_fit",
+    "spring_seasonal_fit",
+    "seasonal_festival_fit",
+    "buddhist_temple_fit",
+    "silla_kingdom_fit",
+    "ancient_capital_fit",
+  ].some((k) => (dims[k] ?? 0) > 0);
+}
+
+function regionMatches(userRegion: string, tourRegion: string | null, parsed: ParsedQueryV2): boolean {
+  if (userRegion === tourRegion) return true;
+  if (userRegion === "busan_city" && tourRegion === "busan_gyeongju" && isBusanGyeongjuExcursionIntent(parsed)) {
+    return true;
+  }
+  if (
+    userRegion === "seoul" &&
+    parsed.regions.length === 1 &&
+    (tourRegion === "suwon" || tourRegion === "pocheon" || tourRegion === "seoul_gangwon")
+  ) {
+    return true;
+  }
+  return false;
+}
+
 export function hardFilter(
   tour: MatchTourRow,
   parsed: ParsedQueryV2,
@@ -144,7 +200,8 @@ export function hardFilter(
   if (parsed.regions.length) {
     const tourRegion = tour.destination_region;
     const inThemes = parsed.regions.some((r) => tour.primary_themes.includes(r));
-    if (!parsed.regions.includes(tourRegion ?? "") && !inThemes) {
+    const inRegions = parsed.regions.some((r) => regionMatches(r, tourRegion, parsed));
+    if (!inRegions && !inThemes) {
       rejects.push(`region mismatch (tour=${tourRegion}, user_wants=${JSON.stringify(parsed.regions)})`);
     }
   }
@@ -319,8 +376,14 @@ export function scoreTour(tour: MatchTourRow, parsed: ParsedQueryV2): {
     };
     for (const dim of fmtMap[parsed.format] ?? []) {
       const v = asNumber(mp[dim]);
-      if (v !== null && v >= 4) { components.format_match = 2.0; reasons.push(`포맷 매치: ${parsed.format}`); break; }
-      if (v !== null && v > 0) { components.format_match = 1.0; break; }
+      if (v !== null) {
+        const score = formatFitScore(v);
+        if (score > 0) {
+          components.format_match = score;
+          if (score >= 1.5) reasons.push(`포맷 매치: ${parsed.format}`);
+          break;
+        }
+      }
     }
   }
 

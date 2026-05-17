@@ -13,7 +13,7 @@ import type {
   TourMatchOutcome,
   TourMatchNoMatchReason,
   TravelerIntentV1,
-} from "@/lib/tour-product-match/types";
+} from "@/lib/tour-match-v2/api-types";
 import type { MatchResponseV2, ParsedQueryV2, ScoredMatchV2 } from "./types";
 
 function regionToAffinity(regions: string[]): TravelerIntentV1["region_affinity"] {
@@ -137,7 +137,7 @@ export function buildV1Response(
     resolvedProductTypeIntent: productTypeSnap,
     textParserProductTypeIntent: productTypeSnap,
     fallbackAvailable: matchOutcome === "no_match",
-    profileSource: "supabase",
+    profileSource: "match_tours",
     weightSet,
     matchExplanation,
   };

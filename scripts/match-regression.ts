@@ -47,9 +47,17 @@ const OP_FRAGS = ["_port", "cruise_port", "_pickup", "_dropoff", "_lunch", "_din
 function inferRegion(slug: string, mp: any): string | null {
   const s = slug.toLowerCase();
   if (s.includes("jeju")) return "jeju";
-  if (s.startsWith("busan-") || s.startsWith("from-busan-")) return "busan_gyeongju";
+  if (s.startsWith("busan-") || s.startsWith("from-busan-")) {
+    if (mp?.region_type === "busan_city") return "busan_city";
+    if (s.includes("gyeongju") || s.includes("yangsan") || s.includes("tongdosa")) return "busan_gyeongju";
+    return "busan_city";
+  }
   if (s.includes("incheon")) return "incheon_seoul";
-  if (s.includes("seoul")) return s.includes("suwon") ? "suwon" : "seoul";
+  if (s.includes("seoul")) {
+    if (s.includes("suwon")) return "suwon";
+    if (s.includes("seoraksan") || s.includes("sokcho") || s.includes("naksansa")) return "seoul_gangwon";
+    return "seoul";
+  }
   if (s.includes("pocheon")) return "pocheon";
   return mp?.destination_region ?? null;
 }
