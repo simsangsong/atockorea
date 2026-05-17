@@ -219,14 +219,18 @@ export default function FloatingLanguageToggle() {
         aria-haspopup="menu"
         className={cn(
           'flex h-11 min-w-[3.25rem] items-center justify-center gap-1.5 rounded-full',
-          'border border-gray-200/70 bg-white/95 px-3 text-[12px] font-semibold text-gray-800',
-          'shadow-[0_8px_24px_-6px_rgba(15,23,42,0.18),0_2px_4px_-1px_rgba(15,23,42,0.06)] backdrop-blur-md',
+          // Solid slate-900 (≥95% alpha) so the pill never disappears against
+          // dark hero photos or the Process dark section. Same visual language
+          // as StickyHomeCta so the bottom-fold stays cohesive.
+          'bg-slate-900/95 px-3 text-[12px] font-semibold text-white',
+          'ring-1 ring-white/12 backdrop-blur-md',
+          'shadow-[0_14px_32px_-10px_rgba(15,23,42,0.55),0_3px_6px_-2px_rgba(15,23,42,0.22)]',
           'transition-transform duration-150 active:scale-95',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/35 focus-visible:ring-offset-1',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/55 focus-visible:ring-offset-1',
         )}
       >
-        <Globe aria-hidden className="h-4 w-4 text-gray-700" />
-        <span>{localeShortLabels[locale]}</span>
+        <Globe aria-hidden className="h-4 w-4 text-white/95" />
+        <span className="tracking-wide">{localeShortLabels[locale]}</span>
       </button>
     </div>
   );
