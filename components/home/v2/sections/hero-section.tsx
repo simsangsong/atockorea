@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
@@ -94,9 +94,30 @@ export function HeroSection() {
   const season = useMemo(() => getCurrentSeason(), []);
   const SeasonIcon = season.Icon;
   const seasonLabel = t(season.labelKey);
+  const seasonPhrase = t(season.phraseKey);
+
+  // Phase C.1: 200ms glow ring on intent textarea after a season-chip click,
+  // so the user gets a visual confirmation that the phrase landed in the
+  // input. Auto-clears via setTimeout.
+  const [intentGlowing, setIntentGlowing] = useState(false);
+  const intentGlowTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const appendChip = useCallback((phrase: string) => {
     setIntent((prev) => appendIntentPhraseToIntentField(prev, phrase));
+  }, []);
+
+  const handleSeasonChipClick = useCallback(() => {
+    appendChip(seasonPhrase);
+    analytics.homeHeroSeasonChipClick({ season: season.key });
+    setIntentGlowing(true);
+    if (intentGlowTimerRef.current) clearTimeout(intentGlowTimerRef.current);
+    intentGlowTimerRef.current = setTimeout(() => setIntentGlowing(false), 200);
+  }, [appendChip, seasonPhrase, season.key]);
+
+  useEffect(() => {
+    return () => {
+      if (intentGlowTimerRef.current) clearTimeout(intentGlowTimerRef.current);
+    };
   }, []);
 
   const handleSubmit = useCallback(() => {
@@ -187,16 +208,22 @@ export function HeroSection() {
               aria-hidden
               className="pointer-events-none absolute -inset-x-10 -inset-y-6 -z-10 rounded-[3rem] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.72)_35%,rgba(0,0,0,0.45)_60%,rgba(0,0,0,0.18)_80%,transparent_95%)] md:-inset-x-16 md:-inset-y-8"
             />
-            {/* Season pill — auto-rotates by month. Tiny glassy chip over the
-                photo, just above the H1. Communicates "this is relevant
-                NOW" — Korea's strongest commercial signal is its seasonal
-                rhythm (cherry blossom, autumn foliage, winter). */}
-            <div className="mb-2.5 inline-flex items-center gap-1.5 rounded-full bg-white/15 px-2.5 py-1 ring-1 ring-white/25 backdrop-blur-md md:mb-3">
+            {/* Phase C.1: season pill upgraded from <div> to <button>. Click
+                injects a short phrase ({phraseKey} translation) into the
+                matcher intent textarea + triggers a 200ms glow ring as
+                visual confirmation. Weak hover affordance (no "buttoney"
+                rest state) to keep the cinematic feel — v3 §5 C.1 spec. */}
+            <button
+              type="button"
+              onClick={handleSeasonChipClick}
+              aria-label={t("premium.v2.season.chipAria", { phrase: seasonPhrase })}
+              className="focus-ring mb-2.5 inline-flex items-center gap-1.5 rounded-full bg-white/15 px-2.5 py-1 ring-1 ring-white/25 backdrop-blur-md transition-colors duration-200 hover:bg-white/20 hover:ring-white/40 md:mb-3"
+            >
               <SeasonIcon className="h-3 w-3 text-amber-200" aria-hidden />
               <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-white/95">
                 {seasonLabel}
               </span>
-            </div>
+            </button>
             {/* Hero H1 — Inter at medium weight via Next.js-loaded
                 --font-inter. Previously used a system SF Pro stack which
                 rendered as SF on Mac/iOS and Segoe/Roboto on Win/Android
@@ -352,7 +379,10 @@ export function HeroSection() {
                   autoComplete="off"
                   aria-label={t("premium.hero.intentInputAria")}
                   className={cn(
-                    "w-full resize-none rounded-button border border-slate-200/70 bg-slate-50 px-3.5 text-slate-800 transition-[height,padding,border-color,background-color] duration-300 ease-out placeholder:text-slate-400 focus:border-slate-300 focus:bg-white focus-ring md:px-4",
+                    "w-full resize-none rounded-button border bg-slate-50 px-3.5 text-slate-800 transition-[height,padding,border-color,background-color,box-shadow] duration-300 ease-out placeholder:text-slate-400 focus:border-slate-300 focus:bg-white focus-ring md:px-4",
+                    intentGlowing
+                      ? "border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.25)]"
+                      : "border-slate-200/70",
                     intentExpanded
                       ? "h-32 overflow-auto py-3 text-caption md:h-40 md:py-4"
                       // Collapsed: single-line h-12 (48px) + text-[11px] so the

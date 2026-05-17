@@ -50,9 +50,15 @@ export type HomeFeaturedCardSource = "idle_preview" | "regular_section";
  *  Mirrors `HomeV2MatchPhase` from the match provider so funnel queries can join cleanly. */
 export type HomeMatchPreviewPhase = "idle" | "loading" | "result";
 
-/** v3 Phase 0a — seasonal chip identifier. Wired in Phase C.1; event method defined now so
- *  taxonomy is stable. */
-export type HomeHeroSeason = "spring" | "summer" | "autumn" | "winter";
+/** v3 Phase 0a — seasonal chip identifier. Aligned with `SeasonKey` in
+ *  `lib/home/season.ts` so the analytics enum matches the code's source of
+ *  truth (Phase C.1 sync). */
+export type HomeHeroSeason =
+  | "springBlossom"
+  | "lateSpring"
+  | "summer"
+  | "autumn"
+  | "winter";
 
 export const analytics = {
   homeCtaClick: (payload: { source: HomeCtaSource }) => trackEvent("home_cta_click", payload),

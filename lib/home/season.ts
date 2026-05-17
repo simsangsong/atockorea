@@ -24,8 +24,14 @@ export type SeasonKey =
 
 export type SeasonConfig = {
   key: SeasonKey;
-  /** i18n key under `premium.v2.season.*` */
+  /** i18n key under `premium.v2.season.*` for the chip display label. */
   labelKey: string;
+  /** i18n key under `premium.v2.season.*` for the short phrase injected
+   *  into the matcher intent textarea when the chip is clicked (Phase C.1).
+   *  Kept distinct from `labelKey` because the display label may be longer
+   *  ("Autumn foliage · Peak season") than the phrase to inject
+   *  ("autumn foliage"). */
+  phraseKey: string;
   Icon: LucideIcon;
 };
 
@@ -53,26 +59,31 @@ const SEASON_CONFIG: Record<SeasonKey, SeasonConfig> = {
   springBlossom: {
     key: "springBlossom",
     labelKey: "premium.v2.season.springBlossom",
+    phraseKey: "premium.v2.season.springBlossomPhrase",
     Icon: Flower2,
   },
   lateSpring: {
     key: "lateSpring",
     labelKey: "premium.v2.season.lateSpring",
+    phraseKey: "premium.v2.season.lateSpringPhrase",
     Icon: Sprout,
   },
   summer: {
     key: "summer",
     labelKey: "premium.v2.season.summer",
+    phraseKey: "premium.v2.season.summerPhrase",
     Icon: Sun,
   },
   autumn: {
     key: "autumn",
     labelKey: "premium.v2.season.autumn",
+    phraseKey: "premium.v2.season.autumnPhrase",
     Icon: Leaf,
   },
   winter: {
     key: "winter",
     labelKey: "premium.v2.season.winter",
+    phraseKey: "premium.v2.season.winterPhrase",
     Icon: Snowflake,
   },
 };

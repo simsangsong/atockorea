@@ -44,12 +44,14 @@
 
 | 항목 | 값 |
 |---|---|
-| 발화 시점 | 시즌 칩이 인터랙티브화된 후 (Phase C.1) |
-| Payload | `{ season: "spring" \| "summer" \| "autumn" \| "winter" }` |
-| 와이어링 | **Phase C.1에서 와이어링.** Phase 0a는 메서드만 정의 |
+| 발화 시점 | 시즌 칩 클릭 시. 짧은 phrase 주입과 함께 발화 |
+| Payload | `{ season: "springBlossom" \| "lateSpring" \| "summer" \| "autumn" \| "winter" }` |
+| 와이어링 | `components/home/v2/sections/hero-section.tsx` season pill (`<button>`) onClick |
 | 메서드 | `analytics.homeHeroSeasonChipClick({ season })` |
 | 측정 의도 | 시즌 칩이 매처 입력 마찰 줄여주는 효과 |
-| Phase | 0a 정의 / Phase C.1 와이어링 |
+| Phase | 0a 정의 / Phase C.1 와이어링 완료 (2026-05-17) |
+
+**season enum 정렬:** 코드의 `SeasonKey` (`lib/home/season.ts`)와 일치. 5 값. 현재 `SEASON_BY_MONTH`는 `lateSpring`을 어느 월에도 매핑하지 않아 실제로 발화될 가능성은 낮지만 schema는 유지.
 
 ### 4. `home_sticky_cta_click`
 
