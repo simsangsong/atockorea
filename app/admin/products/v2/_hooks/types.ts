@@ -28,7 +28,7 @@ export const LOCALE_FLAGS: Record<Locale, string> = {
   es: 'ES',
 };
 
-/** Possible product types pulled from `tour_matching_profiles.product_type`. */
+/** Possible product types pulled from `match_tours.matching_profile.product_type`. */
 export type ProductType =
   | 'private'
   | 'small_group'

@@ -172,20 +172,24 @@ export async function GET(request: NextRequest) {
       return handleApiError(error);
     }
 
-    // Augment each tour with `product_type` from tour_matching_profiles
-    // (joined by product_id = slug). Used by the v2 list pane to show
-    // 소그룹 / 프라이빗 / 버스 badges at a glance.
+    // Augment each tour with product_type from the live matching snapshot
+    // (match_tours.matching_profile.product_type, joined by slug).
     let enriched = tours ?? [];
     if (enriched.length > 0) {
       const slugs = enriched.map((t: { slug: string }) => t.slug).filter(Boolean);
       const { data: profiles } = await supabase
-        .from('tour_matching_profiles')
-        .select('product_id, product_type')
-        .in('product_id', slugs);
+        .from('match_tours')
+        .select('slug, matching_profile')
+        .in('slug', slugs);
       const profileMap = new Map<string, string>();
       for (const p of profiles ?? []) {
-        if (p?.product_id && typeof p.product_type === 'string') {
-          profileMap.set(p.product_id, p.product_type);
+        const mp = p?.matching_profile;
+        const productType =
+          mp && typeof mp === 'object' && !Array.isArray(mp)
+            ? (mp as Record<string, unknown>).product_type
+            : null;
+        if (p?.slug && typeof productType === 'string') {
+          profileMap.set(p.slug, productType);
         }
       }
       enriched = enriched.map((t: { slug: string }) => ({
@@ -345,4 +349,3 @@ export async function PATCH(request: NextRequest) {
     return handleApiError(error);
   }
 }
-

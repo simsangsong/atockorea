@@ -123,9 +123,45 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
           lng,
           pickup_time
         )`;
+    const compactTourColumns = [
+      'id',
+      'slug',
+      'tag',
+      'title',
+      'description',
+      'city',
+      'location',
+      'price',
+      'original_price',
+      'price_currency',
+      'price_type',
+      'image_url',
+      'gallery_images',
+      'duration',
+      'difficulty',
+      'group_size',
+      'highlight',
+      'badges',
+      'translations',
+      'rating',
+      'review_count',
+      'pickup_points_count',
+      'dropoff_points_count',
+      'lunch_included',
+      'ticket_included',
+      'includes',
+      'excludes',
+      'schedule',
+      'highlights',
+      'pickup_info',
+      'notes',
+      'is_active',
+      'created_at',
+      'updated_at',
+    ].join(',');
     let query = supabase
       .from('tours')
-      .select(compactList ? '*' : `*,${pickupJoin}`)
+      .select(compactList ? compactTourColumns : `*,${pickupJoin}`)
       .eq('is_active', isActive);
 
     // Apply filters

@@ -26,7 +26,7 @@ type ProductTypeBadge = {
 };
 
 /**
- * Map `tour_matching_profiles.product_type` → visible badge. Slug-level
+ * Map `match_tours.matching_profile.product_type` → visible badge. Slug-level
  * overrides (e.g. the jeju cruise BUS variant) keep the family-level
  * type (`small_group_fixed_itinerary`) but show a more accurate label.
  */

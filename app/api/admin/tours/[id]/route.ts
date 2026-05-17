@@ -3,6 +3,47 @@ import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
 import { applyTourWriteRules } from '@/lib/admin/tour-write-rules';
 
+function parseNullableNumber(value: unknown): number | null {
+  if (value === null || value === undefined || value === '') return null;
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+function mapTourGuideSpot(tourId: string, item: any, index: number) {
+  return {
+    tour_id: tourId,
+    title: String(item?.title ?? '').trim(),
+    description: item?.description ?? null,
+    audio_url: item?.audio_url ?? null,
+    latitude: parseNullableNumber(item?.latitude),
+    longitude: parseNullableNumber(item?.longitude),
+    trigger_radius_m: parseNullableNumber(item?.trigger_radius_m) ?? 80,
+    sort_order: Number.isFinite(Number(item?.sort_order)) ? Number(item.sort_order) : index,
+  };
+}
+
+function mapTourFacility(tourId: string, item: any, index: number) {
+  const type = ['restroom', 'ticket_office', 'convenience', 'restaurant', 'other'].includes(item?.type)
+    ? item.type
+    : 'other';
+  const details = typeof item?.details === 'object' && item.details !== null ? item.details : {};
+
+  return {
+    tour_id: tourId,
+    type,
+    name: String(item?.name ?? item?.title ?? '').trim(),
+    latitude: parseNullableNumber(item?.latitude),
+    longitude: parseNullableNumber(item?.longitude),
+    details: {
+      ...details,
+      ...(item?.description ? { description: item.description } : {}),
+      ...(item?.icon ? { icon: item.icon } : {}),
+      ...(item?.image_url ? { image_url: item.image_url } : {}),
+    },
+    sort_order: Number.isFinite(Number(item?.sort_order)) ? Number(item.sort_order) : index,
+  };
+}
+
 /**
  * PATCH /api/admin/tours/[id]
  * Update a tour (admin only)
@@ -154,24 +195,118 @@ export async function PATCH(
     if (body.is_active !== undefined) updateData.is_active = body.is_active;
     if (body.is_featured !== undefined) updateData.is_featured = body.is_featured;
 
-    // Update tour
-    const { data: updatedTour, error } = await supabase
-      .from('tours')
-      .update(updateData)
-      .eq('id', tourId)
-      .select()
-      .single();
+    let updatedTour: any = existingTour;
+    if (Object.keys(updateData).length > 0) {
+      const { data, error } = await supabase
+        .from('tours')
+        .update(updateData)
+        .eq('id', tourId)
+        .select()
+        .single();
 
-    if (error) {
-      console.error('Error updating tour:', error);
-      return NextResponse.json(
-        { error: 'Failed to update tour', details: error.message },
-        { status: 400 }
-      );
+      if (error) {
+        console.error('Error updating tour:', error);
+        return NextResponse.json(
+          { error: 'Failed to update tour', details: error.message },
+          { status: 400 }
+        );
+      }
+      updatedTour = data;
+    } else {
+      const { data, error } = await supabase
+        .from('tours')
+        .select('*')
+        .eq('id', tourId)
+        .single();
+      if (error) throw error;
+      updatedTour = data;
+    }
+
+    let tourGuideSpots = null;
+    if (body.tour_guide_spots !== undefined) {
+      if (!Array.isArray(body.tour_guide_spots)) {
+        return NextResponse.json({ error: 'tour_guide_spots must be an array' }, { status: 400 });
+      }
+
+      const rows = body.tour_guide_spots
+        .map((item: any, index: number) => mapTourGuideSpot(tourId, item, index))
+        .filter((item: { title: string }) => item.title.length > 0);
+      const invalidGeo = rows.find((item: { latitude: number | null; longitude: number | null }) => (
+        item.latitude === null || item.longitude === null
+      ));
+      if (invalidGeo) {
+        return NextResponse.json(
+          { error: 'Each tour_guide_spots item requires latitude and longitude' },
+          { status: 400 }
+        );
+      }
+
+      const { error: deleteError } = await supabase
+        .from('tour_guide_spots')
+        .delete()
+        .eq('tour_id', tourId);
+      if (deleteError) throw deleteError;
+
+      if (rows.length > 0) {
+        const { data, error: insertError } = await supabase
+          .from('tour_guide_spots')
+          .insert(rows)
+          .select()
+          .order('sort_order', { ascending: true });
+        if (insertError) throw insertError;
+        tourGuideSpots = data ?? [];
+      } else {
+        tourGuideSpots = [];
+      }
+    }
+
+    let tourFacilities = null;
+    if (body.tour_facilities !== undefined) {
+      if (!Array.isArray(body.tour_facilities)) {
+        return NextResponse.json({ error: 'tour_facilities must be an array' }, { status: 400 });
+      }
+
+      const rows = body.tour_facilities
+        .map((item: any, index: number) => mapTourFacility(tourId, item, index))
+        .filter((item: { name: string }) => item.name.length > 0);
+      const invalidGeo = rows.find((item: { latitude: number | null; longitude: number | null }) => (
+        item.latitude === null || item.longitude === null
+      ));
+      if (invalidGeo) {
+        return NextResponse.json(
+          { error: 'Each tour_facilities item requires latitude and longitude' },
+          { status: 400 }
+        );
+      }
+
+      const { error: deleteError } = await supabase
+        .from('tour_facilities')
+        .delete()
+        .eq('tour_id', tourId);
+      if (deleteError) throw deleteError;
+
+      if (rows.length > 0) {
+        const { data, error: insertError } = await supabase
+          .from('tour_facilities')
+          .insert(rows)
+          .select()
+          .order('sort_order', { ascending: true });
+        if (insertError) throw insertError;
+        tourFacilities = data ?? [];
+      } else {
+        tourFacilities = [];
+      }
     }
 
     return NextResponse.json(
-      { data: updatedTour, message: 'Tour updated successfully' },
+      {
+        data: {
+          ...updatedTour,
+          ...(tourGuideSpots !== null ? { tour_guide_spots: tourGuideSpots } : {}),
+          ...(tourFacilities !== null ? { tour_facilities: tourFacilities } : {}),
+        },
+        message: 'Tour updated successfully',
+      },
       { status: 200 }
     );
   } catch (error: any) {
@@ -284,4 +419,3 @@ export async function GET(
     );
   }
 }
-
