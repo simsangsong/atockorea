@@ -86,6 +86,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | B.1 ✅ — Featured slot 6 → 3 (Match preview 직후). Destinations/Builder/Style 한 칸씩 후퇴 | d41628bf | 빌드 클린. promise→proof 거리 5→1 섹션으로 축소 |
 | 2026-05-17 | B.2 ✅ — IdleMatchPreviewCarousel 신규 (3장 cycling). DeferredBestMatchPreview idle 분기 연결. i18n 6 locale | 741b3cd3 | STATIC_TOUR_PRODUCTS 사용. analytics home_match_preview_visible(idle) + home_featured_card_click(idle_preview) 활성화 |
 | 2026-05-17 | B.3 ✅ — 매처 헤더 3단 → eyebrow 1단 + Trust strip 패딩 컴팩트. matcherHeadline/Subline i18n 6 locale 삭제 | 2472b0ae | CDP 재측정: iPhone 14 +2px / Pro Max +51px **ABOVE fold**. 83px 회수. §3 P0-A 가시성 문제 해결 |
+| 2026-05-17 | B.1+B.2+B.3 사후 audit — 모바일 fixed bottom nav가 viewport 하단 80px 오버레이. CDP fold(+2px)는 통과지만 user-visible effective fold(764px)로는 여전히 CTA -78px. §2.6.1 추가 | (pending) | 권장: 수용 + B.4/B.5 진행 (Phase 0b 데이터로 재판단). 대안: B.3.3 hero `min-h` 축소 |
 
 ---
 
@@ -213,6 +214,26 @@ Phase B 진입 시 회수 전략:
 - 합쳐도 부족하면 hero `min-h-[44vh]` 자체 재검토 (현재 모바일 ~371px 보장).
 
 §3 P0-A 진단 보강: 매처 CTA fold 아래 잘림 → "약속-증명 시차"가 단순 컴포넌트 순서 문제가 아닌 **CTA 자체 가시성 문제**임이 확인됨. Phase B.3 우선순위 ↑.
+
+#### 2.6.1 사후 audit 발견 (2026-05-17, B.3 랜딩 후)
+
+B.3 (2472b0ae) 랜딩 후 CDP 재측정에선 iPhone 14 CTA가 fold +2px 위로 올라옴. **그러나 실제 모바일 사용 환경에서는 fixed `MobileBottomNav`가 viewport 하단 ~80px를 오버레이로 덮음.** Phase 0c CDP 측정은 브라우저 viewport 기준이라 이 overlay를 카운트하지 못함.
+
+**실측 effective fold (overlay 적용):**
+
+| Viewport | CDP fold | bottom nav | effective fold | CTA bottom (B.3 후) | Δ |
+|---|---|---|---|---|---|
+| iPhone 14 (390x844) | 844px | ~80px | **~764px** | 842px | **-78px (overlay에 가려짐)** |
+| Pro Max (430x932) | 932px | ~80px | **~852px** | 881px | **-29px (overlay에 가려짐)** |
+
+즉 B.3는 CDP-기준 fold 회수는 통과했으나 user-visible 영역으론 여전히 가림.
+
+**옵션:**
+1. **B.3.3 hero `min-h` 축소** — `min-h-[44vh]` → `min-h-[38vh]` (~50px 회수). 위험: 히어로 시각 임팩트 감소.
+2. **수용** — 사용자가 조금만 스크롤하면 보임. 모바일 패턴상 흔한 트레이드오프.
+3. **MobileBottomNav 동적 hide** — 히어로 단계에서 nav 숨김 (별도 feature, B 범위 밖).
+
+권장: **옵션 2 수용 + B.4/B.5 진행.** 효과 측정은 Phase 0b baseline 후 정량 판단. 단, §C에 audit 발견 row를 남겨 추후 데이터로 재판단 가능하게 함.
 
 ---
 
