@@ -27,7 +27,7 @@ v3 만든 이유:
 | 0a — 계측 이벤트 정의 | ✅ 완료 | 2026-05-17 | 2026-05-17 | b6b73c07 | 7종 메서드 + 6개 호출부 와이어링 + `docs/analytics-events-home.md`. dev 콘솔 발화 7종 검증 통과 (Cloudflare Quick Tunnel) |
 | 0b — provider 연결 + baseline | ⏸ 보류 | — | — | — | provider 미결정 (별도 트랙) |
 | 0c — 모바일 fold 실측 | ✅ 완료 | 2026-05-17 | 2026-05-17 | 3fdb9359 | CDP 실측: 390x844 CTA -81px / 430x932 CTA -32px (모두 fold 아래). §2.6 + §3 P0-A 보강 |
-| B — 가장 안전한 전환 개선 | 🔄 진행 중 | 2026-05-17 | — | a94d73b9 | B.1~B.5 ✅. 남은: B.6 Sticky QA only |
+| B — 가장 안전한 전환 개선 | ✅ 완료 | 2026-05-17 | 2026-05-17 | a94d73b9 | B.1~B.6 모두 ✅. CDP QA: sticky top=hidden / mid=visible / deep=visible / footer=hidden. 사후 audit는 §2.6.1 (bottom nav overlay 발견 — Phase 0b 데이터로 재판단) |
 | C — 상호작용 강화 | ⏳ 대기 | — | — | — | B 완료 후 |
 | D — 실험 (in-place + bottom-sheet + Sticky threshold A/B) | ⏳ 대기 | — | — | — | 0b baseline 후만 측정 의미 |
 | E — 시각 정체성 확장 | ⏳ 대기 | — | — | — | 마지막 |
@@ -39,8 +39,8 @@ v3 만든 이유:
 - ✅ 완료
 - ❌ 중단/롤백
 
-**현재 활성 Phase: B (가장 안전한 전환 개선).**
-**다음 액션: B.6 StickyHomeCta QA only (코드 변경 없음 — 동작 확인만). 그 후 Phase B ✅ 마감.**
+**현재 활성 Phase: 없음 (Phase B ✅ 완료, Phase C 진입 대기).**
+**다음 액션: Phase C 시작 결정 — 시즌 칩 인터랙티브 (C.1) + reason chips 동적 (C.2). 또는 Phase 0b provider 결정 트랙 진행.**
 
 ---
 
@@ -89,6 +89,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | B.1+B.2+B.3 사후 audit — 모바일 fixed bottom nav가 viewport 하단 80px 오버레이. CDP fold(+2px)는 통과지만 user-visible effective fold(764px)로는 여전히 CTA -78px. §2.6.1 추가 | 3e73b8f7 | 권장: 수용 + B.4/B.5 진행 (Phase 0b 데이터로 재판단). 대안: B.3.3 hero `min-h` 축소 |
 | 2026-05-17 | B.4 ✅ — Trust 라벨 i18n 추출 + ko 한글화 + 5 locale 번역. 플랫폼명(Klook/GetYourGuide/Viator) 그대로 유지 | a94d73b9 | i18n key: home.premium.hero.trust{AvgRating,Bookings,Platforms} |
 | 2026-05-17 | B.5 ✅ — findMatchCta 6 locale 카피 교체. ko "최적 매치 보기" → "맞춤 추천 받기" (expectation inflation 가드) | a94d73b9 | §B 결정 준수. A/B는 Phase 0b 후 측정 |
+| 2026-05-17 | B.6 ✅ — StickyHomeCta CDP QA. top/mid/deep/footer 4 sample 모두 기대대로 동작. 코드 변경 없음 | — | gating logic intact (`StickyHomeCta.tsx:31-57`). threshold A/B는 Phase D.3로 분리 |
+| 2026-05-17 | **Phase B 완료** — 6 sub-task 모두 ✅ | a94d73b9 | 커밋: d41628bf / 741b3cd3 / 2472b0ae / a94d73b9. 다음: Phase C 또는 Phase 0b 의사결정 |
 
 ---
 
@@ -663,7 +665,7 @@ Phase D 후. 가장 낮은 우선순위. 측정으로 가치 입증된 뒤만.
 
 ### `components/home/v2/StickyHomeCta.tsx`
 
-- [ ] **Phase B.6**: QA only — 신규 구현 없음
+- [x] **Phase B.6**: QA only — CDP 4 sample 검증 통과 (코드 변경 없음)
 - [ ] **Phase D.3**: threshold 실험 (A/B variant 지원)
 
 ### `components/home/v2/HomeV2MatchProvider.tsx`
