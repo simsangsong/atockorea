@@ -27,7 +27,7 @@ v3 만든 이유:
 | 0a — 계측 이벤트 정의 | ✅ 완료 | 2026-05-17 | 2026-05-17 | b6b73c07 | 7종 메서드 + 6개 호출부 와이어링 + `docs/analytics-events-home.md`. dev 콘솔 발화 7종 검증 통과 (Cloudflare Quick Tunnel) |
 | 0b — provider 연결 + baseline | ⏸ 보류 | — | — | — | provider 미결정 (별도 트랙) |
 | 0c — 모바일 fold 실측 | ✅ 완료 | 2026-05-17 | 2026-05-17 | 3fdb9359 | CDP 실측: 390x844 CTA -81px / 430x932 CTA -32px (모두 fold 아래). §2.6 + §3 P0-A 보강 |
-| B — 가장 안전한 전환 개선 | 🔄 진행 중 | 2026-05-17 | — | 2472b0ae | B.1 + B.2 + B.3 ✅. fold 회수 검증 통과 (iPhone 14 +2px / Pro Max +51px ABOVE fold). 남은: B.4 한글화 → B.5 CTA 카피 → B.6 Sticky QA |
+| B — 가장 안전한 전환 개선 | 🔄 진행 중 | 2026-05-17 | — | a94d73b9 | B.1~B.5 ✅. 남은: B.6 Sticky QA only |
 | C — 상호작용 강화 | ⏳ 대기 | — | — | — | B 완료 후 |
 | D — 실험 (in-place + bottom-sheet + Sticky threshold A/B) | ⏳ 대기 | — | — | — | 0b baseline 후만 측정 의미 |
 | E — 시각 정체성 확장 | ⏳ 대기 | — | — | — | 마지막 |
@@ -40,7 +40,7 @@ v3 만든 이유:
 - ❌ 중단/롤백
 
 **현재 활성 Phase: B (가장 안전한 전환 개선).**
-**다음 액션: B.4 Trust 라벨 한글화 (avg. rating → 평균 평점 등, ko locale만, 플랫폼명 유지).**
+**다음 액션: B.6 StickyHomeCta QA only (코드 변경 없음 — 동작 확인만). 그 후 Phase B ✅ 마감.**
 
 ---
 
@@ -86,7 +86,9 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | B.1 ✅ — Featured slot 6 → 3 (Match preview 직후). Destinations/Builder/Style 한 칸씩 후퇴 | d41628bf | 빌드 클린. promise→proof 거리 5→1 섹션으로 축소 |
 | 2026-05-17 | B.2 ✅ — IdleMatchPreviewCarousel 신규 (3장 cycling). DeferredBestMatchPreview idle 분기 연결. i18n 6 locale | 741b3cd3 | STATIC_TOUR_PRODUCTS 사용. analytics home_match_preview_visible(idle) + home_featured_card_click(idle_preview) 활성화 |
 | 2026-05-17 | B.3 ✅ — 매처 헤더 3단 → eyebrow 1단 + Trust strip 패딩 컴팩트. matcherHeadline/Subline i18n 6 locale 삭제 | 2472b0ae | CDP 재측정: iPhone 14 +2px / Pro Max +51px **ABOVE fold**. 83px 회수. §3 P0-A 가시성 문제 해결 |
-| 2026-05-17 | B.1+B.2+B.3 사후 audit — 모바일 fixed bottom nav가 viewport 하단 80px 오버레이. CDP fold(+2px)는 통과지만 user-visible effective fold(764px)로는 여전히 CTA -78px. §2.6.1 추가 | (pending) | 권장: 수용 + B.4/B.5 진행 (Phase 0b 데이터로 재판단). 대안: B.3.3 hero `min-h` 축소 |
+| 2026-05-17 | B.1+B.2+B.3 사후 audit — 모바일 fixed bottom nav가 viewport 하단 80px 오버레이. CDP fold(+2px)는 통과지만 user-visible effective fold(764px)로는 여전히 CTA -78px. §2.6.1 추가 | 3e73b8f7 | 권장: 수용 + B.4/B.5 진행 (Phase 0b 데이터로 재판단). 대안: B.3.3 hero `min-h` 축소 |
+| 2026-05-17 | B.4 ✅ — Trust 라벨 i18n 추출 + ko 한글화 + 5 locale 번역. 플랫폼명(Klook/GetYourGuide/Viator) 그대로 유지 | a94d73b9 | i18n key: home.premium.hero.trust{AvgRating,Bookings,Platforms} |
+| 2026-05-17 | B.5 ✅ — findMatchCta 6 locale 카피 교체. ko "최적 매치 보기" → "맞춤 추천 받기" (expectation inflation 가드) | a94d73b9 | §B 결정 준수. A/B는 Phase 0b 후 측정 |
 
 ---
 
@@ -630,8 +632,8 @@ Phase D 후. 가장 낮은 우선순위. 측정으로 가치 입증된 뒤만.
 
 - [x] **Phase B.3.1**: matcher 헤더 3단 → eyebrow 1단 (2472b0ae)
 - [x] **Phase B.3.2**: Trust strip 패딩 컴팩트 (2472b0ae, +83px fold 회수)
-- [ ] **Phase B.4**: Trust 라벨 한글화 (i18n)
-- [ ] **Phase B.5**: 매처 CTA 카피 변경 (i18n)
+- [x] **Phase B.4**: Trust 라벨 i18n 추출 + 6 locale (a94d73b9)
+- [x] **Phase B.5**: 매처 CTA 카피 i18n 6 locale 교체 (a94d73b9)
 - [ ] **Phase C.1**: 시즌 칩 button 변환 + phrase 주입 + 피드백
 - [ ] **Phase D.1**: LayoutGroup wrap (in-place result 준비)
 - [ ] **Phase D.3**: data attribute 또는 prop 노출 (Sticky threshold 실험용)
