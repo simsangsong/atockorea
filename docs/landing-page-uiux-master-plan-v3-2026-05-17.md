@@ -29,7 +29,7 @@ v3 만든 이유:
 | 0c — 모바일 fold 실측 | ✅ 완료 | 2026-05-17 | 2026-05-17 | 3fdb9359 | CDP 실측: 390x844 CTA -81px / 430x932 CTA -32px (모두 fold 아래). §2.6 + §3 P0-A 보강 |
 | B — 가장 안전한 전환 개선 | ✅ 완료 | 2026-05-17 | 2026-05-17 | a94d73b9 | B.1~B.6 모두 ✅. CDP QA: sticky top=hidden / mid=visible / deep=visible / footer=hidden. 사후 audit는 §2.6.1 (bottom nav overlay 발견 — Phase 0b 데이터로 재판단) |
 | C — 상호작용 강화 | ✅ 완료 | 2026-05-17 | 2026-05-17 | 90345fd6 | C.1 ✅ 시즌 칩 인터랙티브. C.2는 이미 코드에 반영(사실 수정) — result card는 product.badges 동적 (vm:112-117), idle preview는 card.badges (B.2) |
-| D — 실험 (in-place + bottom-sheet + Sticky threshold A/B) | ⏳ 대기 | — | — | — | 0b baseline 후만 측정 의미 |
+| D — 실험 (in-place + bottom-sheet + Sticky threshold A/B) | 🔄 진행 중 | 2026-05-17 | — | — | 자체 분석 시스템 + home_cta_copy 실험 wired → 0b unblock 완료. D.1 / D.2 / D.3 순차 진행 |
 | E — 시각 정체성 확장 | ✅ 완료 | 2026-05-17 | 2026-05-17 | a162b7fc | E.1 ✅ scroll-reveal 5 섹션 + 공통 helper. E.2 OTA 로고는 §D 보류 (라이선스 의존) |
 
 상태 마커:
