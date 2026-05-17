@@ -25,7 +25,7 @@ v3 만든 이유:
 | Phase | 상태 | 시작일 | 완료일 | 마지막 커밋 | 비고 |
 |---|---|---|---|---|---|
 | 0a — 계측 이벤트 정의 | ✅ 완료 | 2026-05-17 | 2026-05-17 | b6b73c07 | 7종 메서드 + 6개 호출부 와이어링 + `docs/analytics-events-home.md`. dev 콘솔 발화 7종 검증 통과 (Cloudflare Quick Tunnel) |
-| 0b — provider 연결 + baseline | ⏸ 보류 | — | — | — | provider 미결정 (별도 트랙) |
+| 0b — provider 연결 + baseline | 🔄 진행 중 (자체 빌드 트랙) | 2026-05-17 | — | — | 외부 SaaS 보류, 자체 분석 시스템 빌드로 결정. 별도 마스터플랜 참조: `docs/atockorea-analytics-master-plan-2026-05-17.md` |
 | 0c — 모바일 fold 실측 | ✅ 완료 | 2026-05-17 | 2026-05-17 | 3fdb9359 | CDP 실측: 390x844 CTA -81px / 430x932 CTA -32px (모두 fold 아래). §2.6 + §3 P0-A 보강 |
 | B — 가장 안전한 전환 개선 | ✅ 완료 | 2026-05-17 | 2026-05-17 | a94d73b9 | B.1~B.6 모두 ✅. CDP QA: sticky top=hidden / mid=visible / deep=visible / footer=hidden. 사후 audit는 §2.6.1 (bottom nav overlay 발견 — Phase 0b 데이터로 재판단) |
 | C — 상호작용 강화 | ✅ 완료 | 2026-05-17 | 2026-05-17 | 90345fd6 | C.1 ✅ 시즌 칩 인터랙티브. C.2는 이미 코드에 반영(사실 수정) — result card는 product.badges 동적 (vm:112-117), idle preview는 card.badges (B.2) |
@@ -39,8 +39,8 @@ v3 만든 이유:
 - ✅ 완료
 - ❌ 중단/롤백
 
-**현재 활성 Phase: 없음 (v3 본 실행 범위 종료).**
-**다음 액션: Phase 0b provider 의사결정 (별도 트랙). 그 후 Phase D 진입 가능. §D 보류 항목(B.3.3, E.2)은 데이터/라이선스 확보 후 재검토.**
+**현재 활성 Phase: 없음 (v3 본 실행 범위 종료). Phase 0b는 자체 분석 빌드 트랙으로 분리.**
+**다음 액션: 자체 분석 시스템 Phase 1 (Foundation) — `docs/atockorea-analytics-master-plan-2026-05-17.md` 참조. Phase 6 완료 시 v3 Phase D unblock.**
 
 ---
 
@@ -65,6 +65,7 @@ v3 만든 이유:
 | 2026-05-17 | Trust 행 플랫폼명 (Klook · GetYourGuide · Viator) 무조건 유지, 라벨만 한글화 | 브랜드 신뢰 자산 | — |
 | 2026-05-17 | Phase 3b `ItineraryBuilderEntry`는 Destinations 직후 위치 유지. B.1 swap 후에도 Destinations와 함께 페이지 후반부로 이동 | 코드 실사 (`HomeV2Page.tsx:24-35`). v3 작성 시점에 §2.5에 미반영된 사실 — 사실 수정. ItineraryBuilderEntry는 "지역 분기 후 맞춤 빌더로 유도"라는 인접 관계 | — |
 | 2026-05-17 | B.3 매처 헤더 슬림은 단독 진행 금지. **Trust strip 컴팩트화와 묶음 처리** (B.3.1 헤더 슬림 + B.3.2 Trust 컴팩트) | Phase 0c 실측: iPhone 14 fold 회수 81px 필요, 헤더 슬림 단독은 ~60px만 회수 | — |
+| 2026-05-17 | **Phase 0b 외부 SaaS provider 모두 보류, 자체 분석 시스템 빌드로 진행** (`docs/atockorea-analytics-master-plan-2026-05-17.md`). DOM 세션 리플레이는 §D PostHog 옵션으로 분리 | PII 통제 + 매처 도메인 join + 비용 0 + 데이터 소유 + 기존 Supabase 인프라 재사용. 6.5일 풀빌드 | — |
 
 ---
 
@@ -98,6 +99,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | Phase E 시작 — E.1 scroll-reveal 5 섹션. E.2 OTA 로고는 §D 보류 (라이선스 확인 필요) | f91308a6 | §8 motion spec 그대로 적용 |
 | 2026-05-17 | E.1 ✅ — `reveal.ts` 공통 helper + 5 섹션(Destinations/Featured/Style/Why/Process) viewport-trigger 변환. legacy `scroll-animate` mount-trigger 패턴 제거 | a162b7fc | reduce-motion 가드, LCP-safe (fold 아래), 신규 lib 없음 |
 | 2026-05-17 | **Phase E 완료** — E.1 코드 랜딩 + E.2 §D 보류. v3 본 실행 범위 종료 | a162b7fc | 다음: Phase 0b provider 의사결정 → Phase D 진입 |
+| 2026-05-17 | Phase 0b 자체 분석 시스템 빌드로 결정 + 마스터플랜 작성 | (pending) | `docs/atockorea-analytics-master-plan-2026-05-17.md`. 외부 SaaS 모두 §D 옵션으로 강등 |
 
 ---
 
@@ -115,6 +117,7 @@ Phase 안에 없지만 좋은 아이디어. Phase 끝나기 전엔 손대지 말
 | 매처 결과 PDF/이미지 공유 기능 | — | 마케팅 가치 미검증 |
 | Phase E.2 OTA 로고 strip | Phase E 분할 결정 (2026-05-17) | OTA 4-6사 라이선스 확인 필요. §B "플랫폼명 텍스트 유지" 결정과 시너지 평가 후 진행 |
 | Phase B.3.3 hero `min-h-[44vh]` 축소 | Phase 0c audit (§2.6.1) | 모바일 bottom nav overlay로 user-visible CTA가 여전히 가려짐. 정량 데이터(0b) 후 결정 |
+| PostHog 무료 티어 보강 (세션 리플레이용) | 자체 분석 plan §B-3 부산물 | 자체 timeline으로 demo 충분. 필요 시 hybrid (자체 정량 + PostHog 정성) |
 
 ---
 
