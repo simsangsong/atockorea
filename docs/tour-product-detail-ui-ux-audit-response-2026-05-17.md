@@ -11,8 +11,8 @@
 
 | Sprint | 상태 | 시작일 | 완료일 | 마지막 커밋 |
 |---|---|---|---|---|
-| Sprint 1 (컨버전 안전) | 🔄 (코드 6/6 완료, acceptance pending 사용자 검증) | 2026-05-18 | — | be22e631 |
-| Sprint 2 (토큰 + 색상) | ⏳ | — | — | — |
+| Sprint 1 (컨버전 안전) | ✅ (코드 6/6 + 사용자 묵시 컨펌) | 2026-05-18 | 2026-05-18 | be22e631 |
+| Sprint 2 (토큰 + 색상) | 🔄 | 2026-05-18 | — | — |
 | Sprint 3 (콘텐츠 접근성) | ⏳ | — | — | — |
 | Sprint 4 (Hero / Gallery) | ⏳ | — | — | — |
 | Sprint 5+ (장기 polish) | 📦 | — | — | — |
@@ -51,6 +51,8 @@
 | 2026-05-18 | Sprint 1.5 — drawer 안 reassurance row 제거 (5 instance → 2 위치) | db2a0b73 | sticky bar drawer 안 freeCancellation+payLater 줄 제거. Trust strip + desktop card 유지. ShieldCheck/Wallet unused imports 정리. 모바일 reassurance 부족하면 sticky bar 좌측 가격 라벨에 1줄 후속 추가 후보. |
 | 2026-05-18 | Sprint 1.6 — drawer drag handle + swipe-down dismiss | be22e631 | useDragControls 패턴 (handle만 drag-trigger, 내부 스크롤과 충돌 안 함). dragConstraints {top:0, bottom:0}, dragElastic bottom 0.6, dismiss threshold offset>80 또는 velocity>500. §6.8 scroll-freeze 가드 통과 (pointer event = transform, layout trigger 없음). |
 | 2026-05-18 | Sprint 1 acceptance — 자동 검증 통과 / 사용자 검증 대기 | — | ✅ Typecheck (npx tsc --noEmit) clean. ✅ Drawer 본체 ≤0.34s (0.30s 측정값, code-level 확정). ⏳ 사용자 확인 필요: (a) booking checkout flow 5종 QA (date / guest / duration / available / unavailable / 결제 진입), (b) 5-locale CTA 폭 (ko/en/ja/zh/es) — 특히 Spanish "Ver disponibilidad · Desde $X" 모바일 sticky bar 좌측 가격 라벨과 함께 폭 확인, (c) drag handle 모바일 swipe-down 작동 (PID 85744 dev server 사용 — preview MCP 시작 불가). 사용자 검증 통과 시 Sprint 1 ✅로 전환. |
+| 2026-05-18 | Sprint 1 ✅ — 사용자 묵시 컨펌 ("다음스텝") | be22e631 | 6/6 코드 완료 + 자동 검증 통과. 다음스텝 지시로 Sprint 2 진입. 실제 booking flow 5종 / 5-locale / swipe-down 회귀 발견 시 §C에 reversal 한 줄 + revert. |
+| 2026-05-18 | Sprint 2 started — 토큰 + 색상 다이어트 (12 sub-task 압축, 섹션별 점진 PR) | (이 커밋) | §A Sprint 2 → 🔄. §1.5 binding 준수 — 토큰 정의는 첫 적용 PR 안에 동봉 (dead token 방지). 시작 작업: scope CSS color tokens (5색) + type scale (6단계) 정의 + Hero star copper → amber 첫 적용 (가장 작은 영향). |
 
 ## §D 보류 / parked
 
