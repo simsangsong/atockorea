@@ -345,12 +345,14 @@ export function TourPracticalDetails({
                 className="flex w-full items-center justify-between p-4 text-left hover:bg-muted/20 transition-colors"
               >
                 <div className="pr-4 min-w-0">
-                  <h3 className="text-[15px] font-bold tracking-tight text-slate-900">
+                  <h3 className="text-[15px] font-semibold tracking-tight text-foreground">
                     {item.title}
                   </h3>
-                  <p className="mt-1 truncate text-[12px] leading-snug text-slate-500">
-                    {item.preview}
-                  </p>
+                  {item.preview && (
+                    <p className="mt-0.5 line-clamp-2 text-[12.5px] leading-relaxed text-muted-foreground">
+                      {item.preview}
+                    </p>
+                  )}
                 </div>
                 <div
                   className={cn(
