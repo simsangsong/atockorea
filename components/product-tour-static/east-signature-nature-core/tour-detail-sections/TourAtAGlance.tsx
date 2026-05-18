@@ -1,16 +1,6 @@
-import { cn } from "@/lib/utils";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
 const MAX_LEVEL = 5;
-
-const ROW_ACCENT_COLORS = [
-  "bg-emerald-500",
-  "bg-amber-500",
-  "bg-orange-500",
-  "bg-rose-500",
-  "bg-violet-500",
-  "bg-sky-500",
-];
 
 function clampLevel(level: number | undefined): number {
   if (typeof level !== "number" || !Number.isFinite(level)) return 0;
@@ -19,6 +9,13 @@ function clampLevel(level: number | undefined): number {
 
 export type TourAtAGlanceProps = Pick<EastSignatureNatureCoreDetailViewModel, "glanceItems" | "sectionUi">;
 
+/*
+ * Sprint 3.1 / §B §2.5 binding: 6색 무지개 dots → text pill.
+ *   pill 디자인: bg-slate-50 + text-slate-900 + ring-slate-200 + font-bold tracking-wide
+ *   (Klook/Booking pattern — 즉시 이해 가능한 텍스트, decoration 색 0)
+ *   role-based radius (§1.3): rounded-[26px] → rounded-2xl (body card 12-16)
+ *   left 6-color cycle dot 제거 — typography weight + spacing이 row 시작점 신호.
+ */
 export function TourAtAGlance({ glanceItems, sectionUi }: TourAtAGlanceProps) {
   return (
     <div className="space-y-5">
@@ -31,56 +28,27 @@ export function TourAtAGlance({ glanceItems, sectionUi }: TourAtAGlanceProps) {
         </p>
       </div>
 
-      <div
-        className={cn(
-          "relative overflow-hidden rounded-[26px]",
-          "bg-white",
-          "shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]",
-        )}
-      >
+      <div className="relative overflow-hidden rounded-2xl bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
         <ul className="divide-y divide-slate-100 px-4">
-          {glanceItems.map((item, idx) => {
+          {glanceItems.map((item) => {
             const filled = clampLevel(item.level);
             const hasLevel = filled > 0;
-            const accentBg = ROW_ACCENT_COLORS[idx % ROW_ACCENT_COLORS.length];
             return (
               <li
                 key={item.label}
-                className="flex items-center justify-between gap-4 py-2.5"
+                className="flex items-center justify-between gap-4 py-3"
               >
-                <span className="flex items-center gap-2.5">
-                  <span aria-hidden className={cn("h-1.5 w-1.5 flex-shrink-0 rounded-full", accentBg)} />
-                  <span className="text-[13.5px] font-medium tracking-[-0.005em] text-slate-900">
-                    {item.label}
-                  </span>
+                <span className="text-[13.5px] font-medium tracking-[-0.005em] text-slate-900">
+                  {item.label}
                 </span>
 
-                {hasLevel ? (
-                  <span
-                    className="flex items-center gap-1"
-                    role="img"
-                    aria-label={`${item.value} (${filled}/${MAX_LEVEL})`}
-                  >
-                    {Array.from({ length: MAX_LEVEL }, (_, i) => {
-                      const isFilled = i < filled;
-                      return (
-                        <span
-                          key={i}
-                          aria-hidden
-                          className={
-                            isFilled
-                              ? cn("h-[6px] w-[6px] rounded-full", accentBg)
-                              : "h-[6px] w-[6px] rounded-full bg-slate-200"
-                          }
-                        />
-                      );
-                    })}
-                  </span>
-                ) : (
-                  <span className="text-[12px] font-medium tracking-[0.02em] text-slate-500">
-                    {item.value}
-                  </span>
-                )}
+                <span
+                  className="inline-flex items-center rounded-full bg-slate-50 px-2.5 py-1 text-[11.5px] font-bold tracking-wide text-slate-900 ring-1 ring-slate-200"
+                  role={hasLevel ? "img" : undefined}
+                  aria-label={hasLevel ? `${item.value} (${filled}/${MAX_LEVEL})` : undefined}
+                >
+                  {item.value}
+                </span>
               </li>
             );
           })}
