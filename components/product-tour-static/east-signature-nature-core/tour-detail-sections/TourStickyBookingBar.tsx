@@ -23,9 +23,7 @@ import {
   Loader2,
   Minus,
   Plus,
-  ShieldCheck,
   Ship,
-  Wallet,
   X,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -382,18 +380,7 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
                     </button>
                   </div>
 
-                  {/* Reassurance row — emphasises low-commitment, not italic, color + weight only */}
-                  <div className="mb-2.5 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg bg-emerald-50/60 px-2.5 py-1.5">
-                    <span className="flex items-center gap-1 text-[11px] font-semibold text-emerald-700">
-                      <ShieldCheck className="h-3.5 w-3.5" strokeWidth={2.25} aria-hidden />
-                      {t("tour.freeCancellation")}
-                    </span>
-                    <span aria-hidden className="h-3 w-px bg-emerald-700/20" />
-                    <span className="flex items-center gap-1 text-[11px] font-semibold text-emerald-700">
-                      <Wallet className="h-3.5 w-3.5" strokeWidth={2.25} aria-hidden />
-                      {t("tour.payLater")}
-                    </span>
-                  </div>
+                  {/* Sprint 1.5: drawer 안 reassurance row 제거 — trust strip + desktop card 안 유지로 5회 → 2 위치. */}
 
                   {/* Inline availability status — colored + bold, never italic */}
                   <div className="mb-2 min-h-[24px]">
