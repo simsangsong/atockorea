@@ -6,7 +6,6 @@ import {
   Building2,
   Bus,
   CheckCircle2,
-  ChevronDown,
   Navigation,
   Plane,
   ShoppingBag,
@@ -88,7 +87,7 @@ export function TourPickupDropoffSection({
   pickup_dropoff,
   sectionUi,
 }: TourPickupDropoffSectionProps) {
-  const [expandedOrder, setExpandedOrder] = useState<number | null>(null);
+  /* Sprint 3.4: pickup row expand 폐기 — note 있는 행만 항상 표시 (no toggle). */
   const [mapError, setMapError] = useState(false);
 
   if (!pickup_dropoff) return null;
@@ -187,24 +186,16 @@ export function TourPickupDropoffSection({
               )}
             </div>
 
-            {/* Pickup rows */}
+            {/* Sprint 3.4: pickup rows — flat list, note 있는 행만 row 아래에 항상 노출 */}
             <ul className="divide-y divide-stone-200/45">
               {pickupPoints.map((point) => {
-                const isExpanded = expandedOrder === point.order;
                 const Icon = pointTypeIcon(point.type);
+                const hasNote = Boolean(point.note);
                 return (
                   <li key={`pickup-${point.order}-${point.name}`}>
-                    <button
-                      type="button"
-                      onClick={() => setExpandedOrder(isExpanded ? null : point.order)}
-                      aria-expanded={isExpanded}
-                      className="group flex w-full items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-stone-50/60 sm:px-5"
-                    >
+                    <div className="flex w-full items-center gap-3 px-4 py-3 sm:px-5">
                       <span
                         className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-foreground text-[11px] font-bold tabular-nums text-white shadow-[0_3px_10px_-3px_rgba(15,23,42,0.28)]"
-                        style={{
-                          background: undefined,
-                        }}
                       >
                         {point.order}
                       </span>
@@ -223,40 +214,21 @@ export function TourPickupDropoffSection({
                           {point.time}
                         </span>
                       ) : null}
-                      <ChevronDown
-                        className={cn(
-                          "h-4 w-4 flex-shrink-0 text-muted-foreground/60 transition-transform duration-200 group-hover:text-foreground/70",
-                          isExpanded && "rotate-180 text-foreground/80",
-                        )}
-                        strokeWidth={2.25}
-                      />
-                    </button>
+                    </div>
 
-                    <div
-                      className={cn(
-                        "grid transition-all duration-300 ease-out",
-                        isExpanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
-                      )}
-                    >
-                      <div className="overflow-hidden">
-                        <div className="px-4 pb-3.5 sm:px-5">
-                          <div className="flex items-start gap-2.5 rounded-lg bg-stone-50/70 px-3 py-2.5 ring-1 ring-stone-200/55">
-                            <Icon
-                              className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-foreground"
-                              strokeWidth={2}
-                            />
-                            <div className="min-w-0 space-y-0.5">
-                              <p className="text-[12px] font-medium text-foreground">{point.name}</p>
-                              {point.note ? (
-                                <p className="text-[11.5px] leading-relaxed text-muted-foreground">
-                                  {point.note}
-                                </p>
-                              ) : null}
-                            </div>
-                          </div>
+                    {hasNote ? (
+                      <div className="px-4 pb-3.5 sm:px-5">
+                        <div className="flex items-start gap-2.5 rounded-lg bg-stone-50/70 px-3 py-2.5 ring-1 ring-stone-200/55">
+                          <Icon
+                            className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-foreground"
+                            strokeWidth={2}
+                          />
+                          <p className="text-[11.5px] leading-relaxed text-muted-foreground">
+                            {point.note}
+                          </p>
                         </div>
                       </div>
-                    </div>
+                    ) : null}
                   </li>
                 );
               })}
