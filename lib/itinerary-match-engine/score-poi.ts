@@ -46,11 +46,17 @@ export function scorePoi(poi: ScorablePoiRow, parsed: ParsedQueryV2): PoiScore {
   const components: Record<string, number> = {};
   const mp = poi.matching_profile ?? {};
 
-  // 1. boost_dimensions — direct multiplier per dim
+  // 1. boost_dimensions — direct multiplier per dim.
+  //    Per-dim floor 0.4: tiny tag values (e.g. matching_profile says
+  //    beach_fit=0.2 on a temple) don't accumulate into noise. Strong
+  //    matches are 0.7+; the 0.4 floor preserves "moderate" matches
+  //    without letting weak-noise polish a wrong category to relevance.
+  //    Defends against the matching_profile data-pollution pattern we
+  //    found in busan (UN Memorial Cemetery scoring on beach + cafe).
   let boostSum = 0;
   for (const [dim, weight] of Object.entries(parsed.boost_dimensions || {})) {
     const v = asNumber(mp[dim]);
-    if (v > 0) boostSum += v * Math.max(0, weight);
+    if (v >= 0.4) boostSum += v * Math.max(0, weight);
   }
   if (boostSum > 0) components.boost_dimensions = Number(boostSum.toFixed(3));
 
@@ -79,9 +85,21 @@ export function scorePoi(poi: ScorablePoiRow, parsed: ParsedQueryV2): PoiScore {
   }
   if (seasonScore > 0) components.season_lock = Number(seasonScore.toFixed(3));
 
-  // 5. iconic landmark base bonus (rewards canonical "must-see" POIs)
+  // 5. iconic landmark base bonus — gated by relevance.
+  //    The earlier version handed every famous POI a free 0.5, which
+  //    meant any iconic POI surfaced in any query — even when nothing
+  //    in the parsed intent actually fit it. Now we require at least
+  //    one real relevance signal (theme overlap, persona, season, or
+  //    a meaningful boost_sum) before the baseline fires.
   const iconic = asNumber(mp.iconic_landmark_fit);
-  if (iconic > 0.7) components.iconic_landmark_baseline = Number((iconic * 0.5).toFixed(3));
+  const hasRelevance =
+    (components.theme_overlap ?? 0) > 0 ||
+    (components.persona_align ?? 0) > 0 ||
+    (components.season_lock ?? 0) > 0 ||
+    boostSum >= 0.8;
+  if (iconic > 0.7 && hasRelevance) {
+    components.iconic_landmark_baseline = Number((iconic * 0.5).toFixed(3));
+  }
 
   // 6. anchor_poi mentioned directly by user
   if ((parsed.anchor_pois_mentioned || []).includes(poi.poi_key)) {
