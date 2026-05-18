@@ -69,8 +69,8 @@ export function TourRecommendationsSection({ recommendations, sectionUi }: TourR
                     className="h-full w-full bg-gradient-to-br from-muted via-muted/80 to-muted/60"
                   />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0c1622]/55 via-[#0c1622]/10 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-[#0c1622]/15" />
+                {/* Sprint 4.10: 2-layer dark gradient 약화 (55%+15% → 단일 20% 하단 vignette). 사진이 메인. */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c1622]/25 via-transparent to-transparent" />
                 <div aria-hidden className="absolute inset-0 pointer-events-none rounded-2xl ring-1 ring-inset ring-white/10" />
 
                 {tag && (
