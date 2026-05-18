@@ -164,9 +164,9 @@ export function TourPickupDropoffSection({
             <div className="flex items-center justify-between gap-3 border-b border-stone-200/50 px-4 py-3 sm:px-5">
               <div className="flex min-w-0 items-center gap-2.5">
                 <span
-                  className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full text-white shadow-[0_4px_12px_-4px_rgba(200,149,108,0.50)]"
+                  className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-foreground text-white shadow-[0_4px_12px_-4px_rgba(15,23,42,0.30)]"
                   style={{
-                    background: "linear-gradient(135deg, #d4a37e 0%, #c8956c 50%, #a67751 100%)",
+                    background: undefined,
                   }}
                 >
                   <Bus className="h-4 w-4" strokeWidth={1.9} />
@@ -201,10 +201,9 @@ export function TourPickupDropoffSection({
                       className="group flex w-full items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-stone-50/60 sm:px-5"
                     >
                       <span
-                        className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full text-[11px] font-bold tabular-nums text-white shadow-[0_3px_10px_-3px_rgba(200,149,108,0.45)]"
+                        className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-foreground text-[11px] font-bold tabular-nums text-white shadow-[0_3px_10px_-3px_rgba(15,23,42,0.28)]"
                         style={{
-                          background:
-                            "linear-gradient(135deg, #d4a37e 0%, #c8956c 50%, #a67751 100%)",
+                          background: undefined,
                         }}
                       >
                         {point.order}
@@ -243,7 +242,7 @@ export function TourPickupDropoffSection({
                         <div className="px-4 pb-3.5 sm:px-5">
                           <div className="flex items-start gap-2.5 rounded-lg bg-stone-50/70 px-3 py-2.5 ring-1 ring-stone-200/55">
                             <Icon
-                              className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-[#c8956c]"
+                              className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-foreground"
                               strokeWidth={2}
                             />
                             <div className="min-w-0 space-y-0.5">
@@ -267,7 +266,7 @@ export function TourPickupDropoffSection({
             {routeDepartsText && (
               <div className="flex items-center gap-1.5 border-t border-stone-200/50 bg-stone-50/40 px-4 py-2.5 text-[11.5px] text-muted-foreground sm:px-5">
                 <ArrowRight
-                  className="h-3.5 w-3.5 flex-shrink-0 text-[#c8956c]"
+                  className="h-3.5 w-3.5 flex-shrink-0 text-foreground"
                   strokeWidth={2.2}
                 />
                 <span>
@@ -287,48 +286,36 @@ export function TourPickupDropoffSection({
           </>
         )}
 
-        {/* ── DROP-OFF SECTION — integrated dark strip ── */}
+        {/* ── DROP-OFF SECTION — Sprint 2.5: dark gradient strip → light card (pickup과 동일 형태) ── */}
         {dropoffPoints.length > 0 && (
-          <div
-            className="relative overflow-hidden"
-            style={{
-              background: "linear-gradient(135deg, #111d31 0%, #0c1622 55%, #0a1320 100%)",
-            }}
-          >
-            {/* Subtle top-highlight shimmer */}
-            <span
-              aria-hidden
-              className="pointer-events-none absolute inset-x-0 top-0 h-px"
-              style={{ background: "rgba(255,255,255,0.08)" }}
-            />
-
+          <div className="relative overflow-hidden border-t border-stone-200/70 bg-white">
             <div className="flex items-center justify-between gap-3 px-4 py-3.5 sm:px-5">
               <div className="flex min-w-0 items-center gap-2.5">
-                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15">
-                  <Navigation className="h-4 w-4 text-white" strokeWidth={1.9} />
+                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-slate-100 ring-1 ring-slate-200">
+                  <Navigation className="h-4 w-4 text-slate-700" strokeWidth={1.9} />
                 </span>
                 <div className="min-w-0">
-                  <p className="text-[13px] font-semibold tracking-tight text-white">
+                  <p className="text-[13px] font-semibold tracking-tight text-foreground">
                     {sectionUi.dropoffCardTitle ?? "Drop-off"}
                   </p>
-                  <p className="text-[10.5px] text-white/55">
+                  <p className="text-[10.5px] text-muted-foreground">
                     {lastDropoff?.note ? lastDropoff.note.split(".")[0] : "Approximate"}
                   </p>
                 </div>
               </div>
               <div className="flex-shrink-0 text-right">
-                <p className="text-[13px] font-bold tabular-nums text-white sm:text-[13.5px]">
+                <p className="text-[13px] font-bold tabular-nums text-foreground sm:text-[13.5px]">
                   ~{returnBand ?? lastDropoff?.time ?? "17:30"}
                 </p>
-                <p className="text-[9.5px] uppercase tracking-[0.12em] text-white/45">
+                <p className="text-[9.5px] uppercase tracking-[0.12em] text-muted-foreground">
                   {sectionUi.dropoffApproxLabel ?? "approx."}
                 </p>
               </div>
             </div>
 
             {/* Return-to pills */}
-            <div className="border-t border-white/[0.08] px-4 py-3 sm:px-5">
-              <p className="mb-2 text-[9.5px] font-semibold uppercase tracking-[0.14em] text-white/45">
+            <div className="border-t border-stone-200/50 px-4 py-3 sm:px-5">
+              <p className="mb-2 text-[9.5px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
                 {sectionUi.dropoffReturnHeading ?? "Return available to"}
               </p>
               <div className="flex flex-wrap gap-1.5">
@@ -337,7 +324,7 @@ export function TourPickupDropoffSection({
                   return (
                     <span
                       key={`return-${p.order}`}
-                      className="inline-flex items-center rounded-full bg-white/10 px-2.5 py-1 text-[10.5px] font-medium text-white/85 ring-1 ring-white/15"
+                      className="inline-flex items-center rounded-full bg-slate-50 px-2.5 py-1 text-[10.5px] font-medium text-slate-700 ring-1 ring-slate-200"
                     >
                       {short}
                     </span>
@@ -351,7 +338,7 @@ export function TourPickupDropoffSection({
 
       {/* Trust footer */}
       <div className="flex items-center justify-center gap-2 pt-1">
-        <CheckCircle2 className="h-4 w-4 text-[#c8956c]" strokeWidth={2} />
+        <CheckCircle2 className="h-4 w-4 text-foreground" strokeWidth={2} />
         <span className="text-[12.5px] text-muted-foreground">
           {sectionUi.pickupTrustFooter ?? "Hotel pickup included · No extra charge"}
         </span>
