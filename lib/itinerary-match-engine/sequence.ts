@@ -117,6 +117,11 @@ export function trimToBudget(
       drive += driveMinutes(cursor, { lat: p.lat, lng: p.lng });
       cursor = { lat: p.lat, lng: p.lng };
     }
+    // Include the return leg from the last POI back to the region centroid.
+    // Without this, the matcher cheerfully greenlit one-way journeys to far
+    // POIs (Yeongnam Alps in Miryang, Bulguksa in Gyeongju) and the user
+    // would have run out of daylight returning to their hotel/cruise.
+    drive += driveMinutes(cursor, { lat: center.lat, lng: center.lng });
     const stay = trimmed.reduce((s, p) => s + (p.default_stay_minutes ?? 0), 0);
     if (drive + stay <= budgetMin) return trimmed;
     trimmed.pop();
