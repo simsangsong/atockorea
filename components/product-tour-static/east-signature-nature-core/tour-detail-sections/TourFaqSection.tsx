@@ -21,7 +21,7 @@ export function TourFaqSection({ staticQuestions, sectionUi }: TourFaqSectionPro
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-lg font-semibold text-foreground tracking-tight">{sectionUi.faqTitle}</h2>
+        <h2 className="text-title text-foreground">{sectionUi.faqTitle}</h2>
         <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{sectionUi.faqSubtitle}</p>
       </div>
 

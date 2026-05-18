@@ -68,8 +68,8 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
   return (
     <div className="space-y-4">
       <div>
-        <h2 className="text-[17px] font-semibold tracking-[-0.02em] text-foreground">{sectionUi.fitTitle}</h2>
-        <p className="mt-1.5 text-[13px] leading-relaxed tracking-wide text-muted-foreground">{sectionUi.fitSubtitle}</p>
+        <h2 className="text-title text-foreground">{sectionUi.fitTitle}</h2>
+        <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{sectionUi.fitSubtitle}</p>
       </div>
 
       <div className="overflow-hidden rounded-[20px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
@@ -87,7 +87,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
           <div className="grid gap-x-5 gap-y-4 sm:grid-cols-2">
             {/* Best For — left column */}
             <div>
-              <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.10em] text-[var(--success-soft-text)]">
+              <p className="mb-2 text-eyebrow text-[var(--success-soft-text)]">
                 {sectionUi.fitBestForLabel}
               </p>
               <ul className="grid grid-cols-1 gap-1.5">
@@ -111,7 +111,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
             {/* Less Ideal — right column (always visible, 2-col flat) */}
             {lessIdealItems.length > 0 && (
               <div>
-                <p className="mb-2 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.10em] text-muted-foreground">
+                <p className="mb-2 flex items-center gap-1.5 text-eyebrow text-muted-foreground">
                   <X className="h-3 w-3 text-muted-foreground" strokeWidth={2.5} />
                   {sectionUi.fitLessIdealLabel}
                 </p>

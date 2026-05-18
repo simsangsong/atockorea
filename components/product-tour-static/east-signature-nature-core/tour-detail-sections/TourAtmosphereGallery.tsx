@@ -95,7 +95,7 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
     <>
       <div className="space-y-3">
         <div>
-          <h2 className="text-lg font-semibold text-foreground tracking-tight">{sectionUi.atmosphereTitle}</h2>
+          <h2 className="text-title text-foreground">{sectionUi.atmosphereTitle}</h2>
           <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{sectionUi.atmosphereSubtitle}</p>
         </div>
 

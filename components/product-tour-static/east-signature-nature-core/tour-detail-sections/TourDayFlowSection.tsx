@@ -20,7 +20,7 @@ export function TourDayFlowSection({ routeFlowStops, routeShapeIntro, itineraryS
   return (
     <div className="space-y-5">
       <div>
-        <h2 className="text-lg font-semibold text-foreground tracking-tight">{routeShapeIntro.title}</h2>
+        <h2 className="text-title text-foreground">{routeShapeIntro.title}</h2>
       </div>
 
       {/* Premium-minimal flow card — same shell as TourAtAGlance / TourTimelineSection. */}

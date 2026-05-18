@@ -189,7 +189,7 @@ export function TourTimelineSection({
   return (
     <div className="space-y-7">
       <div>
-        <h2 className="text-lg font-semibold text-foreground tracking-tight">{sectionUi.itineraryTitle}</h2>
+        <h2 className="text-title text-foreground">{sectionUi.itineraryTitle}</h2>
         <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{sectionUi.itinerarySubtitle}</p>
       </div>
 

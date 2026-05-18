@@ -122,7 +122,7 @@ export function TourPickupDropoffSection({
   return (
     <div className="space-y-5">
       <div>
-        <h2 className="text-lg font-semibold tracking-tight text-foreground">
+        <h2 className="text-title text-foreground">
           {sectionUi.pickupDropoffTitle ?? "Pickup & Drop-off"}
         </h2>
         <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
@@ -287,7 +287,7 @@ export function TourPickupDropoffSection({
 
             {/* Return-to pills */}
             <div className="border-t border-stone-200/50 px-4 py-3 sm:px-5">
-              <p className="mb-2 text-[9.5px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+              <p className="mb-2 text-eyebrow text-muted-foreground">
                 {sectionUi.dropoffReturnHeading ?? "Return available to"}
               </p>
               <div className="flex flex-wrap gap-1.5">

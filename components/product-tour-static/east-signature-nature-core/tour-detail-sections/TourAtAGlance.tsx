@@ -20,10 +20,10 @@ export function TourAtAGlance({ glanceItems, sectionUi }: TourAtAGlanceProps) {
   return (
     <div className="space-y-5">
       <div>
-        <h2 className="text-[17px] font-semibold text-foreground tracking-[-0.02em]">
+        <h2 className="text-title text-foreground">
           {sectionUi.atAGlanceTitle}
         </h2>
-        <p className="mt-1.5 text-[13px] text-muted-foreground leading-relaxed">
+        <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
           {sectionUi.atAGlanceSubtitle}
         </p>
       </div>

@@ -322,7 +322,7 @@ export function TourDesktopBookingCard({
             <span>{selectedPortLabel}</span>
           </p>
         ) : null}
-        <p className="text-[10.5px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+        <p className="text-eyebrow text-muted-foreground">
           {t("tour.stickyPriceFrom")}
         </p>
         {showOriginalPrice && ctaOriginalFormatted ? (

@@ -27,8 +27,8 @@ export function TourRecommendationsSection({ recommendations, sectionUi }: TourR
   return (
     <div className="space-y-5">
       <div>
-        <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary/85">{eyebrow}</p>
-        <h2 className="mt-1 text-lg font-semibold text-foreground tracking-tight">{title}</h2>
+        <p className="text-eyebrow text-primary/85">{eyebrow}</p>
+        <h2 className="mt-1 text-title text-foreground">{title}</h2>
         <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{subtitle}</p>
       </div>
 

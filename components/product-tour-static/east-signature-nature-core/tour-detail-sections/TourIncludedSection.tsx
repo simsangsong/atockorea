@@ -46,7 +46,7 @@ export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSec
   return (
     <div className="space-y-4">
       <div>
-        <h2 className="text-lg font-semibold tracking-tight text-foreground">
+        <h2 className="text-title text-foreground">
           {item.title ?? "What's Included"}
         </h2>
         {item.preview && (
@@ -70,7 +70,7 @@ export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSec
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--success-soft-bg)] ring-1 ring-[var(--success)]/20">
               <Check className="h-3 w-3 text-[var(--success)]" strokeWidth={2.5} />
             </span>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.10em] text-[var(--success-soft-text)]">
+            <p className="text-eyebrow text-[var(--success-soft-text)]">
               Included
             </p>
           </div>
@@ -104,7 +104,7 @@ export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSec
               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--danger-soft-bg)] ring-1 ring-[var(--danger)]/20">
                 <X className="h-3 w-3 text-[var(--danger)]" strokeWidth={2.5} />
               </span>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.10em] text-[var(--danger-soft-text)]">
+              <p className="text-eyebrow text-[var(--danger-soft-text)]">
                 Not included
               </p>
             </div>

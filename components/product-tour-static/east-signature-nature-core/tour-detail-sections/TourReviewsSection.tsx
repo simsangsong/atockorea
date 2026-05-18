@@ -155,8 +155,8 @@ export function TourReviewsSection({ guestReviews, reviewsSummary, sectionUi }: 
   return (
     <div className="space-y-7">
       <div>
-        <h2 className="text-lg font-semibold text-foreground tracking-tight">{sectionUi.reviewsTitle}</h2>
-        <p className="mt-1 text-sm text-muted-foreground leading-snug">{sectionUi.reviewsSubtitle}</p>
+        <h2 className="text-title text-foreground">{sectionUi.reviewsTitle}</h2>
+        <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{sectionUi.reviewsSubtitle}</p>
       </div>
 
       {hasReviews ? (

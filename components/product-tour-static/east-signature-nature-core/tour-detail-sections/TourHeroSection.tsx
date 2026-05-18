@@ -162,7 +162,7 @@ export function TourHeroSection({
           <div className="flex items-center gap-2.5 mb-3 sm:mb-3.5">
             <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]/85" />
             <span aria-hidden className="h-px w-5 bg-gradient-to-r from-[var(--accent)]/55 via-[var(--accent)]/25 to-transparent sm:w-7" />
-            <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--accent)]/90 sm:text-[10.5px]">
+            <span className="text-eyebrow text-[var(--accent)]/90">
               {hero.meta.region}
             </span>
           </div>

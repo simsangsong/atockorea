@@ -127,7 +127,7 @@ export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSte
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-lg font-semibold text-foreground tracking-tight">{sectionUi.bookingSupportTitle}</h2>
+        <h2 className="text-title text-foreground">{sectionUi.bookingSupportTitle}</h2>
         <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{sectionUi.bookingSupportSubtitle}</p>
       </div>
 
@@ -190,7 +190,7 @@ export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSte
                           ) : null}
                         </div>
                         <div className={cn("min-w-0 flex-1", i < supportSteps.length - 1 ? "pb-4" : "pb-0")}>
-                          <p className={cn("text-[9.5px] font-semibold uppercase tracking-[0.14em]", theme.eyebrow)}>{step.timing}</p>
+                          <p className={cn("text-eyebrow", theme.eyebrow)}>{step.timing}</p>
                           <p className="text-[14px] font-semibold text-foreground mt-0.5 leading-snug tracking-tight">{step.title}</p>
                           <p className="text-[12px] text-muted-foreground mt-1 leading-snug line-clamp-2">{step.detail}</p>
                         </div>

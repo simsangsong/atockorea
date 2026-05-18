@@ -210,13 +210,13 @@ export function TourPracticalDetails({
   return (
     <div className="space-y-7">
       <div>
-        <h2 className="text-lg font-semibold text-foreground tracking-tight">{sectionUi.practicalTitle}</h2>
+        <h2 className="text-title text-foreground">{sectionUi.practicalTitle}</h2>
         <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{sectionUi.practicalSubtitle}</p>
       </div>
 
       {/* Sprint 2.8: weather 4-layer gradient → 단순 row (Apple weather pattern, §8.10) */}
       <div className="relative overflow-hidden rounded-2xl bg-white p-4 ring-1 ring-slate-200/70 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_4px_12px_-4px_rgba(26,35,50,0.08)]">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground mb-3">
+        <p className="text-eyebrow text-muted-foreground mb-3">
           {weatherStripTitle}
         </p>
         <div className="grid grid-cols-2 gap-2.5">
