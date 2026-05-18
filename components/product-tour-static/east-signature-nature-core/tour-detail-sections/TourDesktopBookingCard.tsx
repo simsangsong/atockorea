@@ -519,7 +519,7 @@ export function TourDesktopBookingCard({
         onClick={goToCheckout}
         disabled={ctaDisabled}
         title={!canBook ? "Tour checkout is not linked yet (missing tours row or env)." : undefined}
-        className="inline-flex h-11 w-full shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-foreground text-[15px] font-semibold text-white shadow-md transition-all outline-none hover:bg-foreground/90 hover:shadow-lg focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50"
+        className="inline-flex h-11 w-full shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-primary text-[15px] font-semibold text-primary-foreground shadow-md transition-all outline-none hover:bg-primary/90 hover:shadow-lg focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50"
       >
         {ctaLabel}
       </button>
