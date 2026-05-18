@@ -4,7 +4,6 @@ import { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   Bath,
-  BookOpen,
   Camera,
   Car,
   ChevronDown,
@@ -704,11 +703,12 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                 </span>
               )}
 
+              {/* §8.6 + §B-P3: close button bg/15 (사진 위 거의 안 보임) → bg/95 + ring (가시성 + premium elevation) */}
               <button
                 type="button"
                 onClick={onClose}
                 aria-label="Close"
-                className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-white/15 text-white backdrop-blur-md transition-all hover:bg-white/25 active:scale-95"
+                className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-foreground shadow-[0_2px_8px_-2px_rgba(15,23,42,0.20)] ring-1 ring-white/60 backdrop-blur-sm transition-all hover:bg-white hover:shadow-[0_4px_12px_-2px_rgba(15,23,42,0.28)] active:scale-95"
               >
                 <X className="h-5 w-5" strokeWidth={2} />
               </button>
@@ -736,10 +736,11 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                         aria-pressed={isActive}
                         aria-label={`Show photo ${i + 1}`}
                         className={cn(
-                          "flex-shrink-0 h-16 w-24 overflow-hidden rounded-lg bg-muted transition-all duration-300",
+                          /* §8.6 + §B-P3: ring 4중 (ring + offset + 2-layer shadow + translate) → ring + scale + single shadow tier. */
+                          "flex-shrink-0 h-16 w-24 overflow-hidden rounded-lg bg-muted transition-all duration-300 shadow-[0_1px_3px_rgba(15,23,42,0.06),0_6px_14px_-6px_rgba(15,23,42,0.18)]",
                           isActive
-                            ? "ring-2 ring-primary/85 ring-offset-2 ring-offset-white shadow-[0_2px_4px_rgba(26,35,50,0.08),0_10px_24px_-12px_rgba(26,35,50,0.30)] -translate-y-0.5"
-                            : "ring-1 ring-border/40 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_4px_10px_-4px_rgba(26,35,50,0.16)] hover:ring-border hover:-translate-y-0.5",
+                            ? "ring-2 ring-[var(--primary)] scale-[1.02]"
+                            : "ring-1 ring-border/40 hover:ring-border",
                         )}
                       >
                         <img
@@ -749,10 +750,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                           decoding="async"
                           draggable={false}
                           onContextMenu={(e) => e.preventDefault()}
-                          className={cn(
-                            "h-full w-full object-cover transition-transform duration-500 tour-photo-protected",
-                            isActive ? "scale-[1.04]" : "hover:scale-[1.05]",
-                          )}
+                          className="h-full w-full object-cover transition-transform duration-500 tour-photo-protected"
                         />
                       </button>
                     );
@@ -774,13 +772,14 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                       {stop.duration && <span>{stop.duration}</span>}
                     </div>
                   )}
-                  <h2 className="mt-2 text-xl font-semibold tracking-tight text-foreground">
+                  {/* §8.6 + §B-P3: stop name 20px → 24-26px (modal hero typography). category badge UI → eyebrow text. */}
+                  <h2 className="mt-2 text-[24px] sm:text-[26px] font-semibold tracking-tight text-foreground leading-[1.2]">
                     {stop.name}
                   </h2>
                   {stop.category && (
-                    <span className="mt-2 inline-block rounded-md bg-muted/80 px-2.5 py-0.5 text-[10.5px] font-medium text-muted-foreground">
+                    <p className="mt-2 text-eyebrow text-muted-foreground">
                       {stop.category}
-                    </span>
+                    </p>
                   )}
                 </div>
 
@@ -797,14 +796,14 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                         <h3 className="text-[10.5px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                           {sectionUi.stopHighlightsHeading}
                         </h3>
+                        {/* §8.6: pill button + BookOpen icon → underlined text-link (Klook 패턴, UI noise 0) */}
                         {stop.description && (
                           <button
                             type="button"
                             onClick={() => setDescModalOpen(true)}
-                            className="inline-flex items-center gap-1 rounded-full bg-primary/[0.08] px-2.5 py-1 text-[10.5px] font-semibold text-primary transition-colors hover:bg-primary/[0.14]"
+                            className="text-[12px] font-semibold text-primary underline decoration-[1.5px] underline-offset-[3px] transition-opacity hover:opacity-80"
                           >
-                            <BookOpen className="h-3 w-3" strokeWidth={2.25} />
-                            {sectionUi.stopFullDescriptionTitle ?? "Full description"}
+                            {sectionUi.stopFullDescriptionTitle ?? "Full description"} →
                           </button>
                         )}
                       </div>
@@ -816,7 +815,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                           >
                             <span
                               aria-hidden
-                              className="mt-[7px] h-1 w-1 flex-shrink-0 rounded-full bg-accent"
+                              className="mt-[7px] h-1 w-1 flex-shrink-0 rounded-full bg-[var(--star-color)]"
                             />
                             <span>{renderInlineMarkdown(highlight)}</span>
                           </li>
