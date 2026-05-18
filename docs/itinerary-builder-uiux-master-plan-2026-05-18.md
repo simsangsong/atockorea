@@ -17,8 +17,8 @@
 
 | Field | Value |
 |---|---|
-| **Current phase** | UI/UX upgrade track ✅ complete (Phases A–J landed). Awaiting manual Lighthouse + DevTools responsive sweep by ops. |
-| **Blocked on** | — |
+| **Current phase** | UI/UX upgrade track closed 2026-05-18. Phases A–E shipped (token + style cleanup); **Phases F–J SUPERSEDED** by V2 redesign plan at `docs/itinerary-builder-redesign-master-plan-2026-05-18.md` (structural pivot to sticky map + photo pins + vertical timeline + bi-sync). Do NOT start F–J from this doc — they were polish on a layout the redesign plan replaces. |
+| **Blocked on** | — (this plan is closed; V2 plan owns the next track) |
 | **Last updated** | 2026-05-18 |
 | **Last commit touching this track** | (plan-init commit pending) |
 | **Owner** | simsangsong |

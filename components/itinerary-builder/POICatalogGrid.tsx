@@ -80,7 +80,7 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus }:
                   <article
                     className={`group relative h-full overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md ${
                       inCart
-                        ? "ring-2 ring-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.16)]"
+                        ? "ring-2 ring-slate-700 shadow-[0_0_0_3px_rgba(15,23,42,0.10)]"
                         : "ring-1 ring-slate-200"
                     }`}
                   >
@@ -126,8 +126,9 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus }:
                         {poi.highlights && poi.highlights.length > 0 ? (
                           <ul className="mt-2 space-y-0.5 text-micro text-slate-600">
                             {poi.highlights.slice(0, 2).map((h, i) => (
-                              <li key={i} className="line-clamp-1">
-                                – {stripMd(h)}
+                              <li key={i} className="flex items-start gap-1.5 line-clamp-1">
+                                <span aria-hidden className="mt-1 inline-block h-1 w-1 flex-shrink-0 rounded-full bg-amber-500" />
+                                <span className="truncate">{stripMd(h)}</span>
                               </li>
                             ))}
                           </ul>
@@ -153,10 +154,10 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus }:
                           e.stopPropagation();
                           inCart ? onRemove(poi.poi_key) : onAdd(poi.poi_key);
                         }}
-                        className={`inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-micro font-bold transition-all duration-200 ease-out ${
+                        className={`group/btn inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-micro font-bold transition-colors duration-200 ease-out ${
                           inCart
-                            ? "bg-rose-50 text-rose-700 ring-1 ring-rose-100 hover:bg-rose-100"
-                            : "bg-amber-500 text-white shadow-sm hover:bg-amber-600 hover:shadow"
+                            ? "bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200 hover:bg-rose-50 hover:text-rose-700 hover:ring-rose-200"
+                            : "bg-white text-slate-900 ring-1 ring-slate-300 hover:bg-slate-50 hover:ring-slate-400"
                         }`}
                       >
                         {inCart ? (

@@ -26,6 +26,10 @@ const COMPONENT_SUBDIRS = [
 ];
 
 module.exports = {
+  // Phase D.1 (docs/app-shell-uiux-master-plan-2026-05-17.md): class-based dark
+  // mode so next-themes can switch by toggling `class="dark"` on <html>.
+  // Default `'media'` ignores user toggle and follows OS only — we want both.
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/*.{js,ts,jsx,tsx,mdx}',
