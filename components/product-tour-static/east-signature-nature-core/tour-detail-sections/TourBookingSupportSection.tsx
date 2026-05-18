@@ -43,46 +43,25 @@ type TrustTheme = {
   iconColor: string;
 };
 
-/** Trust card theme keyed by icon — gradient pastel surface + colored icon ring, matching Seasonal variation cards. */
+/*
+ * Sprint 2.10: 5색 trust + 6색 steps → 1색 (§8.11 Apple Card pattern).
+ *   trust card는 icon shape으로 차별화, 색은 단일 neutral.
+ */
+const TRUST_THEME_SHARED: TrustTheme = {
+  card: "bg-white",
+  ring: "ring-slate-200/70",
+  iconRing: "bg-slate-50 ring-slate-200/70",
+  iconColor: "text-foreground",
+};
 const TRUST_THEMES: Record<string, TrustTheme> = {
-  "check-circle": {
-    card: "bg-gradient-to-br from-emerald-50 via-white to-emerald-100/50",
-    ring: "ring-emerald-100/70",
-    iconRing: "bg-gradient-to-br from-emerald-100 to-emerald-200/60 ring-emerald-200/60",
-    iconColor: "text-emerald-600",
-  },
-  route: {
-    card: "bg-gradient-to-br from-sky-50 via-white to-sky-100/50",
-    ring: "ring-sky-100/70",
-    iconRing: "bg-gradient-to-br from-sky-100 to-sky-200/60 ring-sky-200/60",
-    iconColor: "text-sky-600",
-  },
-  users: {
-    card: "bg-gradient-to-br from-amber-50 via-white to-amber-100/50",
-    ring: "ring-amber-100/70",
-    iconRing: "bg-gradient-to-br from-amber-100 to-amber-200/70 ring-amber-200/60",
-    iconColor: "text-amber-600",
-  },
-  "clock-3": {
-    card: "bg-gradient-to-br from-orange-50 via-white to-orange-100/50",
-    ring: "ring-orange-100/70",
-    iconRing: "bg-gradient-to-br from-orange-100 to-orange-200/60 ring-orange-200/60",
-    iconColor: "text-orange-600",
-  },
-  mountain: {
-    card: "bg-gradient-to-br from-rose-50 via-white to-rose-100/50",
-    ring: "ring-rose-100/70",
-    iconRing: "bg-gradient-to-br from-rose-100 to-rose-200/60 ring-rose-200/60",
-    iconColor: "text-rose-600",
-  },
+  "check-circle": TRUST_THEME_SHARED,
+  route: TRUST_THEME_SHARED,
+  users: TRUST_THEME_SHARED,
+  "clock-3": TRUST_THEME_SHARED,
+  mountain: TRUST_THEME_SHARED,
 };
 
-const TRUST_THEME_FALLBACK: TrustTheme = {
-  card: "bg-gradient-to-br from-slate-50 via-white to-slate-100/40",
-  ring: "ring-border/60",
-  iconRing: "bg-gradient-to-br from-slate-100 to-slate-200/60 ring-border/60",
-  iconColor: "text-slate-600",
-};
+const TRUST_THEME_FALLBACK: TrustTheme = TRUST_THEME_SHARED;
 
 type LucideIcon = ComponentType<{ className?: string; strokeWidth?: number }>;
 
@@ -94,67 +73,42 @@ type StepTheme = {
   eyebrow: string;
 };
 
+/*
+ * Sprint 2.10: 6색 step phase → 1색 neutral. icon shape (MailCheck/BellRing/
+ * Moon/Sunrise/Compass/Sparkles)이 phase 차별화, 색은 단일.
+ */
+const STEP_NEUTRAL: Omit<StepTheme, "Icon"> = {
+  ringBg: "bg-slate-50 ring-slate-200/70",
+  iconColor: "text-foreground/80",
+  spineFrom: "from-slate-200/55",
+  eyebrow: "text-muted-foreground",
+};
+
 /** Match step phase from timing + title text across locales. Order matters: more specific first. */
 function pickStepTheme(timing: string, title: string, fallbackIndex: number): StepTheme {
   const t = `${timing} ${title}`.toLowerCase();
 
   if (/confirm|confirmación|확인|예약\s?완료|予約.*完了|预订.*确认|預訂.*確認|after\s?booking/.test(t))
-    return {
-      Icon: MailCheck,
-      ringBg: "bg-emerald-50/80 ring-emerald-100",
-      iconColor: "text-emerald-600/80",
-      spineFrom: "from-emerald-200/45",
-      eyebrow: "text-emerald-700/85",
-    };
+    return { Icon: MailCheck, ...STEP_NEUTRAL };
   if (/12\s?hour|reminder|recordatori|리마인|事前|提前\s?12|前\s?12|pre[-\s]?depart/.test(t))
-    return {
-      Icon: BellRing,
-      ringBg: "bg-amber-50/80 ring-amber-100",
-      iconColor: "text-amber-600/80",
-      spineFrom: "from-amber-200/40",
-      eyebrow: "text-amber-700/85",
-    };
+    return { Icon: BellRing, ...STEP_NEUTRAL };
   if (/night|noche|前夜|前夕|夜|밤|전날|hours?\s?before|final\s?pickup/.test(t))
-    return {
-      Icon: Moon,
-      ringBg: "bg-indigo-50/80 ring-indigo-100",
-      iconColor: "text-indigo-600/80",
-      spineFrom: "from-indigo-200/40",
-      eyebrow: "text-indigo-700/85",
-    };
+    return { Icon: Moon, ...STEP_NEUTRAL };
   if (/morning|day[-\s]?of|出発|当日|當日|아침|당일|mañana|departure/.test(t))
-    return {
-      Icon: Sunrise,
-      ringBg: "bg-orange-50/80 ring-orange-100",
-      iconColor: "text-orange-600/80",
-      spineFrom: "from-orange-200/40",
-      eyebrow: "text-orange-700/85",
-    };
+    return { Icon: Sunrise, ...STEP_NEUTRAL };
   if (/during|stop[-\s]?by|en\s?ruta|途中|沿途|투어\s?중|in[-\s]?tour|on[-\s]?route|guidance/.test(t))
-    return {
-      Icon: Compass,
-      ringBg: "bg-sky-50/80 ring-sky-100",
-      iconColor: "text-sky-600/80",
-      spineFrom: "from-sky-200/40",
-      eyebrow: "text-sky-700/85",
-    };
+    return { Icon: Compass, ...STEP_NEUTRAL };
   if (/after.*tour|post[-\s]?tour|follow[-\s]?up|마친\s?후|完了後|完成後|结束后|posterior|seguimiento/.test(t))
-    return {
-      Icon: Sparkles,
-      ringBg: "bg-rose-50/80 ring-rose-100",
-      iconColor: "text-rose-600/80",
-      spineFrom: "from-rose-200/40",
-      eyebrow: "text-rose-700/85",
-    };
+    return { Icon: Sparkles, ...STEP_NEUTRAL };
 
   // Generic fallback by position
   const fallbacks: StepTheme[] = [
-    { Icon: MailCheck, ringBg: "bg-emerald-50/80 ring-emerald-100", iconColor: "text-emerald-600/80", spineFrom: "from-emerald-200/45", eyebrow: "text-emerald-700/85" },
-    { Icon: BellRing, ringBg: "bg-amber-50/80 ring-amber-100", iconColor: "text-amber-600/80", spineFrom: "from-amber-200/40", eyebrow: "text-amber-700/85" },
-    { Icon: Moon, ringBg: "bg-indigo-50/80 ring-indigo-100", iconColor: "text-indigo-600/80", spineFrom: "from-indigo-200/40", eyebrow: "text-indigo-700/85" },
-    { Icon: Sunrise, ringBg: "bg-orange-50/80 ring-orange-100", iconColor: "text-orange-600/80", spineFrom: "from-orange-200/40", eyebrow: "text-orange-700/85" },
-    { Icon: Compass, ringBg: "bg-sky-50/80 ring-sky-100", iconColor: "text-sky-600/80", spineFrom: "from-sky-200/40", eyebrow: "text-sky-700/85" },
-    { Icon: Sparkles, ringBg: "bg-rose-50/80 ring-rose-100", iconColor: "text-rose-600/80", spineFrom: "from-rose-200/40", eyebrow: "text-rose-700/85" },
+    { Icon: MailCheck, ...STEP_NEUTRAL },
+    { Icon: BellRing, ...STEP_NEUTRAL },
+    { Icon: Moon, ...STEP_NEUTRAL },
+    { Icon: Sunrise, ...STEP_NEUTRAL },
+    { Icon: Compass, ...STEP_NEUTRAL },
+    { Icon: Sparkles, ...STEP_NEUTRAL },
   ];
   return fallbacks[fallbackIndex % fallbacks.length] ?? fallbacks[0];
 }
