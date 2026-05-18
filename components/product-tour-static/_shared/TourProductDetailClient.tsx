@@ -105,7 +105,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
         </section>
 
         {vm.pricingTiers && vm.pricingTiers.tiers.length > 0 ? (
-          <section id="pricing" className="mx-3 mt-4 lg:mx-0">
+          <section id="pricing" className="mx-3 mt-4 lg:hidden">
             <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
               <div className="rounded-2xl border border-slate-200/70 bg-white p-4 shadow-[var(--home-shadow-neutral-card)]">
                 <div className="mb-2 flex items-baseline justify-between gap-3">
