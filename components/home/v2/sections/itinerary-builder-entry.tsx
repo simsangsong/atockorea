@@ -68,42 +68,33 @@ export function ItineraryBuilderEntry() {
               <Link
                 key={card.slug}
                 href={`/itinerary-builder?region=${card.slug}`}
-                className="group relative w-[88%] flex-shrink-0 snap-center overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl md:w-auto md:flex-shrink"
+                className="group relative w-[68vw] flex-shrink-0 snap-center overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl md:w-auto md:flex-shrink"
               >
-                <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
-                  {/*
-                    next/image (vs raw <img>) — gives WebP/AVIF, responsive
-                    srcset, and lazy loading below the fold. Source jpegs are
-                    ~150-200KB at 1200px wide; without next/image the browser
-                    pulled the full source per card. `sizes` matches the
-                    layout (mobile snap-rail at 88vw, desktop 2-up grid inside
-                    max-w-6xl).
-                  */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
                   <Image
                     src={card.imageSrc}
                     alt={name}
                     fill
-                    sizes="(max-width: 768px) 88vw, 576px"
+                    sizes="(max-width: 768px) 68vw, 576px"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <div className="mb-1 inline-flex items-center gap-1 rounded-full bg-amber-400/95 px-2.5 py-0.5 text-[10.5px] font-bold uppercase tracking-wider text-slate-900">
-                      <MapPin className="h-3 w-3" aria-hidden />
-                      {t(card.stopsKey)}
-                    </div>
-                    <h3 className="text-2xl font-bold leading-tight text-white drop-shadow-md md:text-3xl">
-                      {name}
-                    </h3>
-                    <p className="mt-1 text-sm text-white/90 drop-shadow">{t(card.taglineKey)}</p>
-                  </div>
                 </div>
-                <div className="flex items-center justify-between p-5">
-                  <span className="text-sm font-semibold text-slate-700">{t("browseTheMap")}</span>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-bold text-amber-700 transition-all group-hover:gap-2.5 group-hover:text-amber-800">
-                    {t("open")}
-                    <ArrowRight className="h-4 w-4" aria-hidden />
-                  </span>
+                <div className="px-5 pt-4 pb-5">
+                  <div className="mb-2 inline-flex items-center gap-1 text-eyebrow text-amber-700">
+                    <MapPin className="h-3 w-3" aria-hidden />
+                    {t(card.stopsKey)}
+                  </div>
+                  <h3 className="text-xl font-bold leading-tight text-slate-900 md:text-2xl">
+                    {name}
+                  </h3>
+                  <p className="mt-1.5 text-sm text-slate-600">{t(card.taglineKey)}</p>
+                  <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-3">
+                    <span className="text-sm font-medium text-slate-500">{t("browseTheMap")}</span>
+                    <span className="inline-flex items-center gap-1.5 text-sm font-bold text-amber-700 transition-all group-hover:gap-2.5 group-hover:text-amber-800">
+                      {t("open")}
+                      <ArrowRight className="h-4 w-4" aria-hidden />
+                    </span>
+                  </div>
                 </div>
               </Link>
             );
