@@ -126,8 +126,9 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus }:
                         {poi.highlights && poi.highlights.length > 0 ? (
                           <ul className="mt-2 space-y-0.5 text-micro text-slate-600">
                             {poi.highlights.slice(0, 2).map((h, i) => (
-                              <li key={i} className="line-clamp-1">
-                                – {stripMd(h)}
+                              <li key={i} className="flex items-start gap-1.5 line-clamp-1">
+                                <span aria-hidden className="mt-1 inline-block h-1 w-1 flex-shrink-0 rounded-full bg-amber-500" />
+                                <span className="truncate">{stripMd(h)}</span>
                               </li>
                             ))}
                           </ul>
