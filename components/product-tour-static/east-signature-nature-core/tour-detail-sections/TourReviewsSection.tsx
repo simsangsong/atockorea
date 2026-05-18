@@ -24,7 +24,7 @@ function StarRating({ rating, size = "sm" }: { rating: number; size?: "sm" | "md
       {[1, 2, 3, 4, 5].map((star) => (
         <Star
           key={star}
-          className={cn(starSize, star <= rating ? "fill-amber-400 text-amber-400" : "fill-muted text-muted")}
+          className={cn(starSize, star <= rating ? "fill-[var(--star-color)] text-[var(--star-color)]" : "fill-muted text-muted")}
         />
       ))}
     </div>
@@ -161,13 +161,8 @@ export function TourReviewsSection({ guestReviews, reviewsSummary, sectionUi }: 
 
       {hasReviews ? (
         <>
-          <div
-            className="rounded-xl px-4 py-3 sm:px-4 sm:py-2.5"
-            style={{
-              background: "linear-gradient(135deg, rgba(46,92,138,0.03) 0%, rgba(200,149,108,0.02) 100%)",
-              border: "1px solid rgba(235,232,227,0.8)",
-            }}
-          >
+          {/* Sprint 2.11: 3% opacity gradient (invisible ghost) → solid pale bg + ring */}
+          <div className="rounded-xl bg-slate-50/70 px-4 py-3 ring-1 ring-slate-200/80 sm:px-4 sm:py-2.5">
             <div className="grid w-full grid-cols-2 items-center gap-4 sm:gap-5">
               <div className="flex min-w-0 justify-center px-0.5 sm:px-1">
                 <div className="inline-flex shrink-0 flex-col items-center justify-center gap-1 text-center">
@@ -189,10 +184,10 @@ export function TourReviewsSection({ guestReviews, reviewsSummary, sectionUi }: 
                   {reviewsSummary.ratingDistribution.map((item) => (
                     <div key={item.stars} className="flex items-center gap-2">
                       <span className="text-xs text-muted-foreground w-3 tabular-nums sm:text-[13px]">{item.stars}</span>
-                      <Star className="h-3 w-3 shrink-0 fill-amber-400 text-amber-400 sm:h-3.5 sm:w-3.5" />
+                      <Star className="h-3 w-3 shrink-0 fill-[var(--star-color)] text-[var(--star-color)] sm:h-3.5 sm:w-3.5" />
                       <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden min-w-0">
                         <div
-                          className="h-full bg-amber-500 rounded-full transition-all duration-500"
+                          className="h-full bg-[var(--star-color)] rounded-full transition-all duration-500"
                           style={{ width: `${item.percentage}%` }}
                         />
                       </div>
