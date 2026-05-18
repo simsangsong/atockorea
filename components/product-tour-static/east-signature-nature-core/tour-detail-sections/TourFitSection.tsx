@@ -80,7 +80,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
         <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{sectionUi.fitSubtitle}</p>
       </div>
 
-      {/* Sprint 5.7 (§B-P6 3+5): SEASON_THEME_SHARED card material — ring + single shadow tier + inner top highlight + micro-hover lift. */}
+      {/* 사용자 지시 (2026-05-18) reversal: amber metal → Sprint 5.7 neutral SEASON_THEME_SHARED 복원 (노랑/빨강 색 회피). */}
       <div className="group relative overflow-hidden rounded-[20px] bg-white ring-1 ring-slate-200/70 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_-4px_rgba(15,23,42,0.10)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-[1px] hover:shadow-[0_2px_6px_rgba(15,23,42,0.06),0_8px_20px_-4px_rgba(15,23,42,0.12)]">
         <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
         <div className="relative px-5 py-4">
@@ -197,7 +197,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
       </div>
 
       {/* 3차: Route Logic — §B-P2 default closed accordion (deep dive, optional) */}
-      {/* Sprint 5.7 (§B-P6 3+5): SEASON_THEME_SHARED card material — ring + single shadow tier + inner top highlight + micro-hover lift. */}
+      {/* 사용자 지시 (2026-05-18) reversal: orange metal → Sprint 5.7 neutral SEASON_THEME_SHARED 복원. */}
       <div className="group relative overflow-hidden rounded-[20px] bg-white ring-1 ring-slate-200/70 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_-4px_rgba(15,23,42,0.10)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-[1px] hover:shadow-[0_2px_6px_rgba(15,23,42,0.06),0_8px_20px_-4px_rgba(15,23,42,0.12)]">
         <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
         <button

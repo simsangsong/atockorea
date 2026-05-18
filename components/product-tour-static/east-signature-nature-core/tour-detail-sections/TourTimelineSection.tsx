@@ -45,13 +45,14 @@ function StopCard({
   };
 
   return (
-    <div className="relative -ml-2 pl-9">
+    /* 사용자 보고 (2026-05-18 screenshot): -ml-2 + left-0 badge → 모바일 viewport 왼쪽 짤림. -ml-2 제거 + z-10 추가 (card 위로 stacking). */
+    <div className="relative pl-9">
       {stop.number < totalStops && (
-        <div className="absolute left-[16px] top-[48px] bottom-0 w-px bg-gradient-to-b from-slate-200/40 to-transparent" />
+        <div className="absolute left-[18px] top-[48px] bottom-0 w-px bg-gradient-to-b from-slate-200/40 to-transparent" />
       )}
 
       <div
-        className="absolute left-0 top-1.5 flex h-9 w-9 items-center justify-center rounded-full text-[12px] font-medium tabular-nums tracking-[0.04em] ring-1 ring-white"
+        className="absolute left-0 top-1.5 z-10 flex h-9 w-9 items-center justify-center rounded-full text-[12px] font-medium tabular-nums tracking-[0.04em] ring-1 ring-white"
         style={{
           background: "#ffffff",
           boxShadow:

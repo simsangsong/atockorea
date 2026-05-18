@@ -161,7 +161,7 @@ export function TourReviewsSection({ guestReviews, reviewsSummary, sectionUi }: 
 
       {hasReviews ? (
         <>
-          {/* Sprint 2.11 + §B-P3 + Sprint 5.7 (§B-P6 3+5): solid pale + ring + single shadow tier + inner top highlight + micro-hover lift. */}
+          {/* 사용자 지시 (2026-05-18) reversal: sky metal → Sprint 5.7 neutral 복원 (파랑 색 회피). */}
           <div className="group relative overflow-hidden rounded-xl bg-slate-50/70 px-4 py-3 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_-4px_rgba(15,23,42,0.10)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-[1px] hover:shadow-[0_2px_6px_rgba(15,23,42,0.06),0_8px_20px_-4px_rgba(15,23,42,0.12)] sm:px-4 sm:py-2.5">
             <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/55 to-transparent" />
             <div className="relative grid w-full grid-cols-2 items-center gap-4 sm:gap-5">

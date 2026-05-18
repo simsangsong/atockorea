@@ -42,13 +42,14 @@ type TrustTheme = {
 };
 
 /*
- * Sprint 2.10: 5색 trust + 6색 steps → 1색 (§8.11 Apple Card pattern).
- *   trust card는 icon shape으로 차별화, 색은 단일 neutral.
+ * 사용자 지시 (2026-05-18) §B-P8: Booking Support Trust 3-grid 실험 카드 —
+ *   연한 민트 + 모던 메탈 + 디지털 科技感.
+ *   Sprint 2.10 (1색 neutral) 대신 mint gradient + 4-layer 메탈 sheen + 코너 cyan halo (sci-fi 깊이).
  */
 const TRUST_THEME_SHARED: TrustTheme = {
-  card: "bg-white",
-  ring: "ring-slate-200/70",
-  iconRing: "bg-slate-50 ring-slate-200/70",
+  card: "bg-gradient-to-br from-emerald-50/70 via-white to-teal-50/40",
+  ring: "ring-teal-100/55",
+  iconRing: "bg-white/80 ring-teal-200/50",
   iconColor: "text-foreground",
 };
 const TRUST_THEMES: Record<string, TrustTheme> = {
@@ -143,17 +144,30 @@ export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSte
             <div
               key={item.title}
               className={cn(
-                "group relative overflow-hidden rounded-xl p-3 ring-1 transition-all duration-300",
-                "shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_14px_-4px_rgba(0,0,0,0.07)]",
-                "hover:-translate-y-[1px] hover:shadow-[0_2px_6px_rgba(0,0,0,0.06),0_8px_20px_-4px_rgba(0,0,0,0.10)]",
+                "group relative overflow-hidden rounded-xl p-3 ring-1 transition-[transform,box-shadow] duration-300 ease-out",
+                /* mint shadow tier — single soft + tech-tinted depth (cyan glow) */
+                "shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_14px_-4px_rgba(15,23,42,0.07),0_10px_28px_-12px_rgba(20,184,166,0.18)]",
+                "hover:-translate-y-[1px] hover:shadow-[0_2px_6px_rgba(15,23,42,0.06),0_8px_20px_-4px_rgba(15,23,42,0.10),0_18px_36px_-14px_rgba(20,184,166,0.30)]",
                 theme.card,
                 theme.ring,
               )}
             >
-              <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
+              {/* (1) inner top white sheen — polished edge */}
+              <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/80 to-transparent" />
+              {/* (2) diagonal metal sheen — soft cross-surface reflection */}
+              <span aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-teal-200/10" />
+              {/* (3) bottom subtle mint shading — curve illusion */}
+              <span aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-teal-200/14 to-transparent" />
+              {/* (4) hairline top edge — polished metal edge */}
+              <span aria-hidden className="pointer-events-none absolute top-0 inset-x-[10%] h-px bg-gradient-to-r from-transparent via-white/85 to-transparent" />
+              {/* (5 sci-fi) bottom-right cyan halo blur — 科技感 holographic depth */}
+              <span aria-hidden className="pointer-events-none absolute -bottom-6 -right-6 h-16 w-16 rounded-full bg-cyan-200/22 blur-2xl" />
+              {/* (6 sci-fi) horizontal hairline tech accent — precision blade */}
+              <span aria-hidden className="pointer-events-none absolute top-[58%] left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-teal-300/30 to-transparent" />
               <div
                 className={cn(
                   "relative mb-2 flex h-7 w-7 items-center justify-center rounded-full ring-1 transition-transform duration-300 group-hover:scale-[1.06]",
+                  "shadow-[inset_0_1px_0_rgba(255,255,255,0.85)]",
                   theme.iconRing,
                 )}
               >
