@@ -3,11 +3,13 @@
 // Tailwind would scan that tree and dev compile of `/` can hang.
 const COMPONENT_SUBDIRS = [
   'admin',
+  'app-shell',
   'auth',
   'charts',
   'Detailpage',
   'home',
   'itinerary',
+  'itinerary-builder',
   'list',
   'maps',
   'mypage',
