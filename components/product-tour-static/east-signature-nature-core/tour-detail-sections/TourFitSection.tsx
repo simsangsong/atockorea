@@ -1,12 +1,10 @@
 "use client";
 
-import { useState, type ComponentType } from "react";
+import { type ComponentType } from "react";
 import {
   AlertTriangle,
   Baby,
   Bus,
-  Check,
-  ChevronDown,
   Clock3,
   CloudRain,
   Compass,
@@ -55,11 +53,14 @@ function pickPersonaIcon(raw: string): LucideIcon {
 
 export type TourFitSectionProps = Pick<EastSignatureNatureCoreDetailViewModel, "whyTourWorks" | "sectionUi">;
 
+/**
+ * Sprint 3.2: 3중 nested accordion 폐기 → 2-col flat (best left / less ideal right).
+ *   - Best For accordion (open) 폐기 → 항상 펼침
+ *   - Less Ideal nested accordion (showLessIdeal) 폐기 → 2-col 우측에 평면 표시
+ *   - Route Logic accordion (showLogic) 폐기 → 항상 펼침
+ *   §B accordion 8→2 binding (FAQ + Practical만 유지).
+ */
 export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps) {
-  const [open, setOpen] = useState(false);
-  const [showLessIdeal, setShowLessIdeal] = useState(false);
-  const [showLogic, setShowLogic] = useState(false);
-
   const lessIdealItems =
     (whyTourWorks as { lessIdealFor?: string[]; lessIdeal?: string[] }).lessIdealFor ?? whyTourWorks.lessIdeal ?? [];
   const bestForItems = whyTourWorks.bestFor ?? [];
@@ -71,45 +72,25 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
         <p className="mt-1.5 text-[13px] leading-relaxed tracking-wide text-muted-foreground">{sectionUi.fitSubtitle}</p>
       </div>
 
-      {/* Sprint 2.7: amber/copper wash 카드 → white + neutral container (§8.9, Sprint 3 flat 2-col 별개) */}
       <div className="overflow-hidden rounded-[20px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-slate-50"
-        >
-          <div>
-            <p className="text-[15px] font-semibold tracking-tight text-foreground">
-              {sectionUi.fitBestForLabel}
-            </p>
-            <p className="mt-0.5 text-[12.5px] leading-snug text-muted-foreground">
-              {bestForItems.length} traveler types
-              {lessIdealItems.length > 0 && ` · ${lessIdealItems.length} less ideal`}
-            </p>
-          </div>
-          <div
-            className={cn(
-              "flex-shrink-0 rounded-full p-1.5 transition-[transform,background-color] duration-200",
-              open ? "rotate-180 bg-slate-100" : "bg-slate-100/60",
-            )}
-          >
-            <ChevronDown
-              className={cn("h-3.5 w-3.5 transition-colors", open ? "text-foreground" : "text-muted-foreground")}
-              strokeWidth={2}
-            />
-          </div>
-        </button>
+        <div className="px-5 py-4">
+          <p className="text-[15px] font-semibold tracking-tight text-foreground">
+            {sectionUi.fitBestForLabel}
+          </p>
+          <p className="mt-0.5 text-[12.5px] leading-snug text-muted-foreground">
+            {bestForItems.length} traveler types
+            {lessIdealItems.length > 0 && ` · ${lessIdealItems.length} less ideal`}
+          </p>
+        </div>
 
-        <div
-          className={cn(
-            "grid transition-[grid-template-rows] duration-300 ease-out",
-            open ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
-          )}
-        >
-          <div className="overflow-hidden">
-            <div className="border-t border-slate-200/70 bg-white px-4 pt-4 pb-3 sm:px-5">
-              <ul className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
+        <div className="border-t border-slate-200/70 bg-white px-4 pt-4 pb-3 sm:px-5">
+          <div className="grid gap-x-5 gap-y-4 sm:grid-cols-2">
+            {/* Best For — left column */}
+            <div>
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.10em] text-[var(--success-soft-text)]">
+                {sectionUi.fitBestForLabel}
+              </p>
+              <ul className="grid grid-cols-1 gap-1.5">
                 {bestForItems.map((item, i) => {
                   const Icon = pickPersonaIcon(item);
                   return (
@@ -117,7 +98,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
                       key={i}
                       className="flex items-start gap-2.5 rounded-lg bg-slate-50 px-2.5 py-2 ring-1 ring-slate-200/70"
                     >
-                      <span className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-slate-100 text-foreground">
+                      <span className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-white text-foreground ring-1 ring-slate-200/70">
                         <Icon className="h-3 w-3" strokeWidth={2} />
                       </span>
                       <span className="text-[12.5px] leading-snug text-foreground">{item}</span>
@@ -125,109 +106,75 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
                   );
                 })}
               </ul>
-
-              {/* Less Ideal */}
-              {lessIdealItems.length > 0 && (
-                <div className="mt-3 border-t border-slate-200/60 pt-3">
-                  <button
-                    type="button"
-                    onClick={() => setShowLessIdeal((v) => !v)}
-                    aria-expanded={showLessIdeal}
-                    className="flex w-full items-center justify-between gap-2 text-left"
-                  >
-                    <div className="flex items-center gap-2">
-                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 ring-1 ring-slate-200/70">
-                        <X className="h-3 w-3 text-slate-400" strokeWidth={2.75} />
-                      </span>
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.10em] text-muted-foreground">
-                        {sectionUi.fitLessIdealLabel}
-                      </span>
-                      <span className="text-[10.5px] font-medium tabular-nums text-muted-foreground/70">
-                        {lessIdealItems.length}
-                      </span>
-                    </div>
-                    <ChevronDown
-                      className={cn("h-4 w-4 flex-shrink-0 text-muted-foreground/50 transition-transform duration-200", showLessIdeal && "rotate-180")}
-                      strokeWidth={2}
-                    />
-                  </button>
-
-                  <div className={cn("grid transition-[grid-template-rows] duration-300 ease-out", showLessIdeal ? "mt-2.5 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0")}>
-                    <div className="overflow-hidden">
-                      <ul className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
-                        {lessIdealItems.map((item, i) => {
-                          const Icon = pickPersonaIcon(item);
-                          return (
-                            <li key={i} className="flex items-start gap-2.5 rounded-lg bg-muted/45 px-2.5 py-2 ring-1 ring-border/50">
-                              <span className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-background text-muted-foreground ring-1 ring-border/60">
-                                <Icon className="h-3 w-3" strokeWidth={1.9} />
-                              </span>
-                              <span className="text-[12.5px] leading-snug text-muted-foreground">{item}</span>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              )}
             </div>
 
-            {/* Families / Seniors note */}
-            <div className="border-t border-slate-200/60 bg-slate-50 px-4 py-3 sm:px-5">
-              <p className="text-[11.5px] leading-relaxed text-muted-foreground">
-                <span className="font-semibold text-foreground">{sectionUi.fitFamiliesPrefix}</span>{" "}
-                {sectionUi.fitFamiliesText}
-                <span className="font-semibold text-foreground">{sectionUi.fitSeniorsPrefix}</span>{" "}
-                {sectionUi.fitSeniorsText}
-              </p>
-            </div>
+            {/* Less Ideal — right column (always visible, 2-col flat) */}
+            {lessIdealItems.length > 0 && (
+              <div>
+                <p className="mb-2 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.10em] text-muted-foreground">
+                  <X className="h-3 w-3 text-muted-foreground" strokeWidth={2.5} />
+                  {sectionUi.fitLessIdealLabel}
+                </p>
+                <ul className="grid grid-cols-1 gap-1.5">
+                  {lessIdealItems.map((item, i) => {
+                    const Icon = pickPersonaIcon(item);
+                    return (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2.5 rounded-lg bg-white px-2.5 py-2 ring-1 ring-slate-200/60"
+                      >
+                        <span className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-slate-50 text-muted-foreground ring-1 ring-slate-200/60">
+                          <Icon className="h-3 w-3" strokeWidth={1.9} />
+                        </span>
+                        <span className="text-[12.5px] leading-snug text-muted-foreground">{item}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
           </div>
+        </div>
+
+        {/* Families / Seniors note */}
+        <div className="border-t border-slate-200/60 bg-slate-50 px-4 py-3 sm:px-5">
+          <p className="text-[11.5px] leading-relaxed text-muted-foreground">
+            <span className="font-semibold text-foreground">{sectionUi.fitFamiliesPrefix}</span>{" "}
+            {sectionUi.fitFamiliesText}
+            <span className="font-semibold text-foreground">{sectionUi.fitSeniorsPrefix}</span>{" "}
+            {sectionUi.fitSeniorsText}
+          </p>
         </div>
       </div>
 
-      {/* ── Route logic — unchanged white ── */}
+      {/* Route logic — Sprint 3.2: accordion 폐기, 항상 펼침 */}
       <div className="overflow-hidden rounded-[20px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
-        <button
-          type="button"
-          onClick={() => setShowLogic(!showLogic)}
-          className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-muted/20"
-        >
-          <div>
-            <h3 className="text-[13px] font-semibold tracking-tight text-foreground">{sectionUi.fitRouteLogicTitle}</h3>
-            <p className="mt-0.5 text-[11px] leading-snug tracking-wide text-muted-foreground">{sectionUi.fitRouteLogicSubtitle}</p>
-          </div>
-          <div className={cn("flex-shrink-0 rounded-full p-1.5 transition-[transform,background-color] duration-200", showLogic ? "rotate-180 bg-primary/10" : "bg-muted/60")}>
-            <ChevronDown className={cn("h-3.5 w-3.5 transition-colors", showLogic ? "text-primary" : "text-muted-foreground")} />
-          </div>
-        </button>
-
-        <div className={cn("grid transition-[grid-template-rows] duration-300 ease-out", showLogic ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
-          <div className="overflow-hidden">
-            <div className="space-y-4 border-t border-border/60 p-4">
-              {(whyTourWorks.routeLogicSections ?? []).map((section) => {
-                const Icon = LOGIC_ICONS[section.icon as keyof typeof LOGIC_ICONS] ?? ROUTE_LOGIC_ICON_FALLBACK;
-                return (
-                  <div key={section.title}>
-                    <div className="mb-2 flex items-center gap-2">
-                      <div className={cn("flex h-6 w-6 items-center justify-center rounded-lg", section.iconBg)}>
-                        <Icon className={cn("h-3 w-3", section.iconColor)} />
-                      </div>
-                      <h4 className="text-[13px] font-semibold tracking-tight text-foreground">{section.title}</h4>
-                    </div>
-                    <div className="space-y-2 pl-8">
-                      {(section.items ?? []).map((item, i) => (
-                        <div key={i}>
-                          <p className="text-[12.5px] font-medium leading-snug tracking-tight text-foreground">{item.label}</p>
-                          <p className="text-[11.5px] leading-relaxed text-muted-foreground mt-0.5">{item.detail}</p>
-                        </div>
-                      ))}
-                    </div>
+        <div className="p-4">
+          <h3 className="text-[13px] font-semibold tracking-tight text-foreground">{sectionUi.fitRouteLogicTitle}</h3>
+          <p className="mt-0.5 text-[11px] leading-snug tracking-wide text-muted-foreground">{sectionUi.fitRouteLogicSubtitle}</p>
+        </div>
+        <div className="space-y-4 border-t border-border/60 p-4">
+          {(whyTourWorks.routeLogicSections ?? []).map((section) => {
+            const Icon = LOGIC_ICONS[section.icon as keyof typeof LOGIC_ICONS] ?? ROUTE_LOGIC_ICON_FALLBACK;
+            return (
+              <div key={section.title}>
+                <div className="mb-2 flex items-center gap-2">
+                  <div className={cn("flex h-6 w-6 items-center justify-center rounded-lg", section.iconBg)}>
+                    <Icon className={cn("h-3 w-3", section.iconColor)} />
                   </div>
-                );
-              })}
-            </div>
-          </div>
+                  <h4 className="text-[13px] font-semibold tracking-tight text-foreground">{section.title}</h4>
+                </div>
+                <div className="space-y-2 pl-8">
+                  {(section.items ?? []).map((item, i) => (
+                    <div key={i}>
+                      <p className="text-[12.5px] font-medium leading-snug tracking-tight text-foreground">{item.label}</p>
+                      <p className="text-[11.5px] leading-relaxed text-muted-foreground mt-0.5">{item.detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
