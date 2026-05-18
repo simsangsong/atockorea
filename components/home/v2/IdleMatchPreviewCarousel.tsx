@@ -49,6 +49,17 @@ export function IdleMatchPreviewCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
   const firedVisibleRef = useRef(false);
+  /**
+   * Hydration-safe gate: `useReducedMotion` returns null on SSR and resolves
+   * to true/false only after mount, which made the inline `transition` differ
+   * between server and first client render. Gate transition on mounted so SSR
+   * + first client render both emit `transition: "none"`; the real transition
+   * arrives after hydration completes.
+   */
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (reduceMotion || cards.length < 2) return;
@@ -118,9 +129,10 @@ export function IdleMatchPreviewCarousel() {
                 className="focus-ring absolute inset-0 block"
                 style={{
                   opacity: visible ? 1 : 0,
-                  transition: reduceMotion
-                    ? "none"
-                    : `opacity ${FADE_DURATION_MS}ms ease-in-out`,
+                  transition:
+                    mounted && !reduceMotion
+                      ? `opacity ${FADE_DURATION_MS}ms ease-in-out`
+                      : "none",
                   pointerEvents: visible ? "auto" : "none",
                 }}
               >
