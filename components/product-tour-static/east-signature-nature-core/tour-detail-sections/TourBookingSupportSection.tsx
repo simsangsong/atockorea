@@ -1,11 +1,12 @@
 "use client";
 
-import { type ComponentType } from "react";
+import { useState, type ComponentType } from "react";
 import {
   AlarmClock,
   ArrowRight,
   BellRing,
   CheckCircle,
+  ChevronDown,
   Clock3,
   Compass,
   Heart,
@@ -119,7 +120,12 @@ export type TourBookingSupportSectionProps = Pick<
 
 export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSteps, sectionUi }: TourBookingSupportSectionProps) {
   /** Flow is core content; open by default so travelers see the sequence without an extra click. */
-  /* Sprint 3.5: showTimeline state 폐기 — accordion 제거, 항상 펼침. */
+  /**
+   * Sprint 3.5 (§B-P2 partial reversal): default-open accordion 복귀.
+   * 1차 신뢰 신호 (예약 후 안내)는 default visible이지만, 6 step 길이
+   * 부담스러울 수 있는 사용자에게 toggle escape 제공.
+   */
+  const [showTimeline, setShowTimeline] = useState(true);
   const trustItems = bookingTrustItems ?? [];
   const supportSteps = bookingSupportSteps ?? [];
   const hasSupportSteps = supportSteps.length > 0;
@@ -162,12 +168,40 @@ export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSte
       </div>
 
       {hasSupportSteps ? (
-        /* Sprint 3.5: default-open accordion 폐기 → 항상 펼친 timeline (§8.11 Apple Card pattern) */
+        /* Sprint 3.5 (§B-P2): default-open accordion. 사용자가 닫을 수 있는 escape. */
         <div className="card-premium overflow-hidden">
-          <div className="p-5">
-            <h3 className="text-sm font-semibold text-foreground">{sectionUi.bookingAfterTitle}</h3>
-            <p className="text-xs text-muted-foreground mt-0.5 max-w-prose">{sectionUi.bookingAfterSubtitle}</p>
-          </div>
+          <button
+            type="button"
+            onClick={() => setShowTimeline((v) => !v)}
+            aria-expanded={showTimeline}
+            className="flex w-full items-center justify-between p-5 text-left transition-colors hover:bg-slate-50"
+          >
+            <div>
+              <h3 className="text-sm font-semibold text-foreground">{sectionUi.bookingAfterTitle}</h3>
+              <p className="text-xs text-muted-foreground mt-0.5 max-w-prose">{sectionUi.bookingAfterSubtitle}</p>
+            </div>
+            <div
+              className={cn(
+                "flex-shrink-0 rounded-full p-1.5 transition-[transform,background-color] duration-200",
+                showTimeline ? "rotate-180 bg-slate-100" : "bg-slate-100/60",
+              )}
+            >
+              <ChevronDown
+                className={cn(
+                  "h-4 w-4 transition-colors",
+                  showTimeline ? "text-foreground" : "text-muted-foreground",
+                )}
+                strokeWidth={2}
+              />
+            </div>
+          </button>
+          <div
+            className={cn(
+              "grid transition-[grid-template-rows] duration-300 ease-out",
+              showTimeline ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+            )}
+          >
+            <div className="overflow-hidden">
           <div className="border-t border-border/60 p-5 md:p-6">
                 {/* Mobile: vertical flowchart with phase-icon spine */}
                 <div className="md:hidden">
@@ -234,6 +268,8 @@ export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSte
                     })}
                   </div>
                 </div>
+              </div>
+            </div>
           </div>
         </div>
       ) : null}
