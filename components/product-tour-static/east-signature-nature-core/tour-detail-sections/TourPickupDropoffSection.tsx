@@ -6,6 +6,7 @@ import {
   Building2,
   Bus,
   CheckCircle2,
+  ChevronDown,
   Navigation,
   Plane,
   ShoppingBag,
@@ -87,8 +88,22 @@ export function TourPickupDropoffSection({
   pickup_dropoff,
   sectionUi,
 }: TourPickupDropoffSectionProps) {
-  /* Sprint 3.4: pickup row expand 폐기 — note 있는 행만 항상 표시 (no toggle). */
+  /**
+   * Sprint 5.3 (§B-P4 1차 visible scope 재정의): note inline 항상 표시 → per-row reveal.
+   *   Sprint 3.4에서 row expand 폐기 + note 자동 inline 도입했으나 5개 row × inline note = 단조 텍스트.
+   *   note 있는 row만 button (default closed) + ChevronDown affordance + 클릭 시 note card reveal.
+   *   row 자체가 4-layer preview (number badge + name + type eyebrow + time).
+   */
   const [mapError, setMapError] = useState(false);
+  const [expandedOrders, setExpandedOrders] = useState<Set<number>>(new Set());
+  const toggleRow = (order: number) => {
+    setExpandedOrders((prev) => {
+      const next = new Set(prev);
+      if (next.has(order)) next.delete(order);
+      else next.add(order);
+      return next;
+    });
+  };
 
   if (!pickup_dropoff) return null;
   const pickupPoints = pickup_dropoff.departure ?? [];
@@ -186,46 +201,84 @@ export function TourPickupDropoffSection({
               )}
             </div>
 
-            {/* Sprint 3.4: pickup rows — flat list, note 있는 행만 row 아래에 항상 노출 */}
+            {/* Sprint 5.3 (§B-P4+P5+P6): note 있는 row만 button + default closed reveal. */}
             <ul className="divide-y divide-stone-200/45">
               {pickupPoints.map((point) => {
                 const Icon = pointTypeIcon(point.type);
                 const hasNote = Boolean(point.note);
-                return (
-                  <li key={`pickup-${point.order}-${point.name}`}>
-                    <div className="flex w-full items-center gap-3 px-4 py-3 sm:px-5">
-                      <span
-                        className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-foreground text-[11px] font-bold tabular-nums text-white shadow-[0_3px_10px_-3px_rgba(15,23,42,0.28)]"
-                      >
-                        {point.order}
-                      </span>
-                      <div className="min-w-0 flex-1">
-                        <p className="truncate text-[13px] font-medium text-foreground">
-                          {point.name}
+                const isOpen = expandedOrders.has(point.order);
+
+                const rowInner = (
+                  <>
+                    <span
+                      className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-foreground text-[11px] font-bold tabular-nums text-white shadow-[0_3px_10px_-3px_rgba(15,23,42,0.28)]"
+                    >
+                      {point.order}
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-[13px] font-medium text-foreground">
+                        {point.name}
+                      </p>
+                      {point.type ? (
+                        <p className="mt-0.5 text-[10.5px] uppercase tracking-[0.08em] text-muted-foreground">
+                          {point.type}
                         </p>
-                        {point.type ? (
-                          <p className="mt-0.5 text-[10.5px] uppercase tracking-[0.08em] text-muted-foreground">
-                            {point.type}
-                          </p>
-                        ) : null}
-                      </div>
-                      {point.time ? (
-                        <span className="flex-shrink-0 text-[13px] font-semibold tabular-nums text-foreground">
-                          {point.time}
-                        </span>
                       ) : null}
                     </div>
+                    {point.time ? (
+                      <span className="flex-shrink-0 text-[13px] font-semibold tabular-nums text-foreground">
+                        {point.time}
+                      </span>
+                    ) : null}
+                    {hasNote ? (
+                      <ChevronDown
+                        className={cn(
+                          "h-4 w-4 flex-shrink-0 text-[var(--primary)] transition-transform duration-200",
+                          isOpen && "rotate-180",
+                        )}
+                        strokeWidth={2}
+                      />
+                    ) : null}
+                  </>
+                );
+
+                return (
+                  <li key={`pickup-${point.order}-${point.name}`}>
+                    {hasNote ? (
+                      <button
+                        type="button"
+                        onClick={() => toggleRow(point.order)}
+                        aria-expanded={isOpen}
+                        aria-label={point.name}
+                        className="flex w-full items-center gap-3 px-4 py-3 sm:px-5 text-left transition-colors hover:bg-stone-50/60"
+                      >
+                        {rowInner}
+                      </button>
+                    ) : (
+                      <div className="flex w-full items-center gap-3 px-4 py-3 sm:px-5">
+                        {rowInner}
+                      </div>
+                    )}
 
                     {hasNote ? (
-                      <div className="px-4 pb-3.5 sm:px-5">
-                        <div className="flex items-start gap-2.5 rounded-lg bg-stone-50/70 px-3 py-2.5 ring-1 ring-stone-200/55">
-                          <Icon
-                            className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-foreground"
-                            strokeWidth={2}
-                          />
-                          <p className="text-[11.5px] leading-relaxed text-muted-foreground">
-                            {point.note}
-                          </p>
+                      <div
+                        className={cn(
+                          "grid transition-[grid-template-rows] duration-300 ease-out",
+                          isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+                        )}
+                      >
+                        <div className="overflow-hidden">
+                          <div className="px-4 pb-3.5 sm:px-5">
+                            <div className="flex items-start gap-2.5 rounded-lg bg-stone-50/70 px-3 py-2.5 ring-1 ring-stone-200/55">
+                              <Icon
+                                className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-foreground"
+                                strokeWidth={2}
+                              />
+                              <p className="text-[11.5px] leading-relaxed text-muted-foreground">
+                                {point.note}
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     ) : null}
