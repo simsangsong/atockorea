@@ -230,6 +230,17 @@ export function getExperimentVariant(experimentKey: string): string | null {
   return assignVariant(getAnonymousId(), experimentKey, exp.variants);
 }
 
+/** Phase 6 — async variant lookup that awaits the shared registry fetch.
+ *  Callers (e.g. hero-section A/B copy) use this instead of polling: one
+ *  promise per page load, dedupe'd via `ensureExperimentsLoaded`. */
+export async function getExperimentVariantAsync(
+  experimentKey: string,
+): Promise<string | null> {
+  if (typeof window === "undefined") return null;
+  await ensureExperimentsLoaded();
+  return getExperimentVariant(experimentKey);
+}
+
 const FLUSH_INTERVAL_MS = 5_000;
 const FLUSH_BATCH_SIZE = 5;
 const MAX_QUEUE_SIZE = 50;
