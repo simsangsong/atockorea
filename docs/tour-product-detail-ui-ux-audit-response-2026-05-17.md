@@ -12,7 +12,7 @@
 | Sprint | 상태 | 시작일 | 완료일 | 마지막 커밋 |
 |---|---|---|---|---|
 | Sprint 1 (컨버전 안전) | ✅ (코드 6/6 + 사용자 묵시 컨펌) | 2026-05-18 | 2026-05-18 | be22e631 |
-| Sprint 2 (토큰 + 색상) | 🔄 (4/11 완료) | 2026-05-18 | — | 32f89419 |
+| Sprint 2 (토큰 + 색상) | ✅ (11/11 + acceptance 통과) | 2026-05-18 | 2026-05-18 | df4bf84e |
 | Sprint 3 (콘텐츠 접근성) | ⏳ | — | — | — |
 | Sprint 4 (Hero / Gallery) | ⏳ | — | — | — |
 | Sprint 5+ (장기 polish) | 📦 | — | — | — |
@@ -56,6 +56,13 @@
 | 2026-05-18 | Sprint 2.0+2.1 — scope CSS color tokens + type scale + Hero star copper → amber (foundation) | 2f026652 | §2.1 5색 토큰 (success/danger/star-color 신규 + brand/accent 유지). §2.2 type scale 6단계 utility class (clamp() responsive). Hero star #C8956C → var(--star-color). §1.5 binding 통과 (토큰 + 첫 적용 동시). |
 | 2026-05-18 | Sprint 2.3 — trust strip 3색 → success monochrome + 폰트 13px | c5af470f | ShieldCheck/Zap/Headphones 모두 var(--success). 폰트 11.5→13px (§1.4 binding "단색화 + 폰트 13-14px"). decoration overuse 누적 제거: copper 1 + amber 1. |
 | 2026-05-18 | Sprint 2.4 — Hero rose 분산 → neutral + region eyebrow accent 1회 | 32f89419 | rose 5+곳 (region/pills/메타 strip) → var(--accent) 1곳 + slate-700/200 neutral. Heart는 Sprint 4 binding 보류 ("rose-500 → brand red"). Pills 3중 효과 색만 변경, 구조는 Sprint 4 "flat chip" binding. |
+| 2026-05-18 | Sprint 2.5 — Pickup copper gradient + Dropoff dark strip → white cards | 2bf0ba22 | Pickup 5곳 copper (marker/row number gradient + 3 icon) + Dropoff dark slate-950 gradient → bg-foreground/bg-white + slate text. 두 카드 동일 형태 통일 (§8.7 geographic clarity). |
+| 2026-05-18 | Sprint 2.6 — Included emerald/rose wash → white + semantic icon (§2.1 success/danger token) | ae5ba674 | 카드 wash 3종 (#f6fcf8/#f0faf4/#fff5f5) → bg-white. Included: emerald-500/600 + emerald-50/100 → var(--success) + var(--success-soft-bg). Excluded: rose-500/600 → var(--danger). |
+| 2026-05-18 | Sprint 2.7 — Fit amber/copper wash → white + neutral container | d14a4789 | amber/copper 8 인스턴스 (#fdf8f2 bg + rgba(200,149,108) hover/ring/border/icon/note) → bg-white + slate-50/200. inline mouseenter handler 제거 (className hover 대체). 3중 nested accordion 폐기는 Sprint 3 별개. |
+| 2026-05-18 | Sprint 2.8+2.9 — Practical weather 4-layer + Seasonal 4계절 4색 → neutral | 5507d91f | 4-layer gradient (3-stop bg + 4 shadow layers + sky/amber sub-card gradients) → bg-white + 1 elevation. SEASON_THEMES rose/amber/orange/sky → SEASON_THEME_SHARED (bg-white + var(--accent) icon). today/tomorrow icon class sky/amber → muted/var(--star-color). 차별화 = icon shape (Flower2/Sun/Leaf/Snowflake). |
+| 2026-05-18 | Sprint 2.10 — Booking Support 5색 trust + 6색 steps → 1색 (Apple Card pattern) | f4980053 | TRUST_THEMES 5 variants (emerald/sky/amber/orange/rose grad) → TRUST_THEME_SHARED (bg-white + slate ring). pickStepTheme 6 variants (emerald/amber/indigo/orange/sky/rose) → STEP_NEUTRAL (slate-50 ring + foreground/80 icon). 차별화 = icon shape (TRUST_ICONS / MailCheck/BellRing/Moon/Sunrise/Compass/Sparkles). |
+| 2026-05-18 | Sprint 2.11 — Reviews summary 3% ghost gradient → solid pale + star token | 78559314 | rgba(46,92,138,0.03→200,149,108,0.02) ghost → bg-slate-50/70 + ring-slate-200/80. amber-400/500 (stars + progress bar) → var(--star-color) token. 통합 헤더 / 카테고리 bar는 Sprint 3+ 별개. |
+| 2026-05-18 | Sprint 2 acceptance — token화 residuals + ✅ closure | df4bf84e | matched-pax row amber-50/70 → var(--star-color)/[0.08]. unavailable badge rose-50/700 (Desktop + Sticky drawer) → var(--danger-soft-bg)/text. Recommendations star amber-400 + focus ring rose-300/60 → var(--star-color) + var(--ring)/40. ✅ typecheck clean. ✅ decoration usage in tour-detail-sections near-zero (남은 6 인스턴스는 모두 Sprint 3 binding At-A-Glance 6색 5개 + Sprint 4 binding Hero heart 1개). ✅ token count: 5 binding (brand/accent/success/danger/neutral) + 1 universal star = 6. Sprint 2 ✅. |
 
 ## §D 보류 / parked
 
@@ -318,13 +325,13 @@ Codex의 6 Phase는 방향은 옳지만 **너무 길다.** 실제 실행 가능�
 | ✅ Color tokens 정의 (§2.1) | `tour-product-v2-scope.css` | 신규 CSS 변수 추가, 기존 토큰 유지 (호환성) |
 | ✅ Type scale 6단계 정의 + utility class (`.text-display, .text-title, .text-section, .text-body, .text-caption, .text-eyebrow`) | scope CSS | 신규 class 추가 |
 | ✅ Hero rose → neutral + accent 1회 (region eyebrow만 accent) | `TourHeroSection.tsx` | 1 PR |
-| Pickup copper gradient → flat brand (drop-off dark → light pickup과 동일 카드) | `TourPickupDropoffSection.tsx` | 1 PR |
-| Included emerald/rose split → white card with green/red icon only | `TourIncludedSection.tsx` | 1 PR |
-| Fit amber/copper bg → white card | `TourFitSection.tsx` | 1 PR |
-| Practical weather 4-layer gradient → 단순 row | `TourPracticalDetails.tsx` | 1 PR |
-| Seasonal 4계절 4색 → 단일 카드 + season icon (색은 icon에만) | `TourPracticalDetails.tsx` | 1 PR |
-| Booking Support 5색 trust + 6색 steps → 1색 | `TourBookingSupportSection.tsx` | 1 PR |
-| Reviews summary gradient 3% opacity → solid pale bg | `TourReviewsSection.tsx` | 1 PR |
+| ✅ Pickup copper gradient → flat brand (drop-off dark → light pickup과 동일 카드) | `TourPickupDropoffSection.tsx` | 1 PR |
+| ✅ Included emerald/rose split → white card with green/red icon only | `TourIncludedSection.tsx` | 1 PR |
+| ✅ Fit amber/copper bg → white card | `TourFitSection.tsx` | 1 PR |
+| ✅ Practical weather 4-layer gradient → 단순 row | `TourPracticalDetails.tsx` | 1 PR |
+| ✅ Seasonal 4계절 4색 → 단일 카드 + season icon (색은 icon에만) | `TourPracticalDetails.tsx` | 1 PR |
+| ✅ Booking Support 5색 trust + 6색 steps → 1색 | `TourBookingSupportSection.tsx` | 1 PR |
+| ✅ Reviews summary gradient 3% opacity → solid pale bg | `TourReviewsSection.tsx` | 1 PR |
 | ✅ Hero star copper → amber (다른 모든 별과 통일) | `TourHeroSection.tsx` | 1 PR |
 | ✅ Trust strip 3색 → emerald-only monochrome | `TourProductDetailClient.tsx:77-97` | 1 PR |
 
