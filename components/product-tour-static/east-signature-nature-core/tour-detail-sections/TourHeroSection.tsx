@@ -178,7 +178,7 @@ export function TourHeroSection({
             {hero.pills.slice(0, 3).map((pill) => (
               <span
                 key={pill}
-                className="inline-flex items-center rounded-full bg-gradient-to-br from-white via-slate-50/60 to-white px-3 py-1 text-[11px] font-semibold tracking-[0.005em] text-foreground/90 ring-1 ring-slate-300/70 shadow-[0_1px_2px_rgba(26,35,50,0.06),0_4px_10px_-4px_rgba(26,35,50,0.12)] backdrop-blur-sm transition-all duration-200 hover:ring-slate-400/70 hover:shadow-[0_2px_4px_rgba(26,35,50,0.09),0_6px_14px_-4px_rgba(26,35,50,0.16)] sm:px-3.5 sm:py-1.5 sm:text-[11.5px]"
+                className="inline-flex items-center rounded-full bg-white px-3 py-1 text-[11px] font-semibold tracking-[0.005em] text-foreground/90 ring-1 ring-slate-200 transition-colors duration-200 hover:ring-slate-300 sm:px-3.5 sm:py-1.5 sm:text-[11.5px]"
               >
                 {pill}
               </span>
