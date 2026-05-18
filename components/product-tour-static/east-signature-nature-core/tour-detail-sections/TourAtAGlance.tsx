@@ -28,10 +28,23 @@ export function TourAtAGlance({ glanceItems, sectionUi }: TourAtAGlanceProps) {
         </p>
       </div>
 
-      {/* Sprint 5.7 (§B-P6 3+5): SEASON_THEME_SHARED card material — ring + single shadow tier + inner top highlight + micro-hover lift. */}
-      <div className="group relative overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200/70 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_-4px_rgba(15,23,42,0.10)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-[1px] hover:shadow-[0_2px_6px_rgba(15,23,42,0.06),0_8px_20px_-4px_rgba(15,23,42,0.12)]">
-        <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
-        <ul className="relative divide-y divide-slate-100 px-4">
+      {/*
+       * 사용자 요청 (2026-05-18): spring seasonal rose gradient base + 메탈 느낌 추가.
+       *   §B-P7 (Weather/Seasonal 4색 baseline) 정신 확장 — AtAGlance도 "첫인상 카드"로 같은 premium 색 다양성 적용.
+       *   메탈 레이어 4중: (1) inner top white sheen (polished edge), (2) diagonal soft sheen (reflection),
+       *   (3) bottom subtle rose darken (curve illusion), (4) hairline top edge highlight (polished metal edge).
+       *   Shadow에 rose-pink tint 추가 (메탈 카드 floating feel).
+       */}
+      <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-rose-50 via-white to-rose-100/50 ring-1 ring-rose-100/70 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_-4px_rgba(15,23,42,0.10),0_10px_28px_-12px_rgba(244,114,182,0.22)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-[1px] hover:shadow-[0_2px_6px_rgba(15,23,42,0.06),0_10px_24px_-4px_rgba(15,23,42,0.12),0_18px_36px_-14px_rgba(244,114,182,0.32)]">
+        {/* (1) Inner top white sheen — polished top edge */}
+        <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/75 to-transparent" />
+        {/* (2) Diagonal metallic sheen — soft reflection across surface */}
+        <span aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/35 via-transparent to-rose-200/12" />
+        {/* (3) Bottom subtle rose shading — metal curve illusion */}
+        <span aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-rose-200/18 to-transparent" />
+        {/* (4) Top edge hairline highlight — polished metal edge */}
+        <span aria-hidden className="pointer-events-none absolute top-0 inset-x-[8%] h-px bg-gradient-to-r from-transparent via-white/85 to-transparent" />
+        <ul className="relative divide-y divide-rose-100/60 px-4">
           {glanceItems.map((item) => {
             const filled = clampLevel(item.level);
             const hasLevel = filled > 0;
@@ -44,8 +57,9 @@ export function TourAtAGlance({ glanceItems, sectionUi }: TourAtAGlanceProps) {
                   {item.label}
                 </span>
 
+                {/* metal chip — translucent white over rose bg + inner top highlight */}
                 <span
-                  className="inline-flex items-center rounded-full bg-slate-50 px-2.5 py-1 text-[11.5px] font-bold tracking-wide text-slate-900 ring-1 ring-slate-200"
+                  className="inline-flex items-center rounded-full bg-white/85 px-2.5 py-1 text-[11.5px] font-bold tracking-wide text-slate-900 ring-1 ring-rose-200/60 shadow-[0_1px_1.5px_rgba(244,114,182,0.10),inset_0_1px_0_rgba(255,255,255,0.85)]"
                   role={hasLevel ? "img" : undefined}
                   aria-label={hasLevel ? `${item.value} (${filled}/${MAX_LEVEL})` : undefined}
                 >
