@@ -81,7 +81,8 @@ type SeasonTheme = {
  *   icon shape (Flower2/Sun/Leaf/Snowflake)이 계절 차별화, 색은 var(--accent) 단일.
  */
 const SEASON_THEME_SHARED: SeasonTheme = {
-  card: "bg-white",
+  /* §B-P3: bg-white + ring만 = flat-cheap. single soft shadow tier 추가 → premium card feel. */
+  card: "bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_-4px_rgba(15,23,42,0.10)]",
   ring: "ring-slate-200/70",
   iconRing: "bg-slate-50 ring-slate-200/70",
   iconColor: "text-[var(--accent)]",
@@ -94,7 +95,7 @@ const SEASON_THEMES: Record<string, SeasonTheme> = {
 };
 
 const SEASON_THEME_FALLBACK: SeasonTheme = {
-  card: "bg-white",
+  card: "bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_-4px_rgba(15,23,42,0.10)]",
   ring: "ring-slate-200/70",
   iconRing: "bg-slate-50 ring-slate-200/70",
   iconColor: "text-muted-foreground",

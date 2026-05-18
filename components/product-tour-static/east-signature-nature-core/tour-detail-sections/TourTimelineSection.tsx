@@ -76,7 +76,7 @@ function StopCard({
             accent.glowHover,
           )}
         >
-          {/* Sprint 4.12: photo strip carousel (80×56 thumbs) → 1장 cover 16:9 (§8.5 편집 격 1단계 UP) */}
+          {/* Sprint 4.12 + §B-P3: 1장 cover 16:9 + frame ring (사진 영역 premium frame 신호) */}
           {photos.length > 0 && photos[0] && (
             <div
               className="relative w-full overflow-hidden bg-slate-100"
@@ -92,6 +92,7 @@ function StopCard({
                 onContextMenu={(e) => e.preventDefault()}
                 className="absolute inset-0 h-full w-full object-cover tour-photo-grade tour-photo-protected"
               />
+              <div aria-hidden className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/[0.06]" />
             </div>
           )}
 

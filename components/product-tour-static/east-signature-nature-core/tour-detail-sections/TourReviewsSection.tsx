@@ -161,8 +161,8 @@ export function TourReviewsSection({ guestReviews, reviewsSummary, sectionUi }: 
 
       {hasReviews ? (
         <>
-          {/* Sprint 2.11: 3% opacity gradient (invisible ghost) → solid pale bg + ring */}
-          <div className="rounded-xl bg-slate-50/70 px-4 py-3 ring-1 ring-slate-200/80 sm:px-4 sm:py-2.5">
+          {/* Sprint 2.11 + §B-P3: ghost gradient → solid pale + single shadow tier (premium summary card) */}
+          <div className="rounded-xl bg-slate-50/70 px-4 py-3 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_-4px_rgba(15,23,42,0.08)] sm:px-4 sm:py-2.5">
             <div className="grid w-full grid-cols-2 items-center gap-4 sm:gap-5">
               <div className="flex min-w-0 justify-center px-0.5 sm:px-1">
                 <div className="inline-flex shrink-0 flex-col items-center justify-center gap-1 text-center">
