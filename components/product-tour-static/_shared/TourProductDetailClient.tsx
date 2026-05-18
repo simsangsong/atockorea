@@ -74,22 +74,22 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
             tourProductSlug={tourProductSlug}
           />
 
-          {/* Trust strip — converts on first scroll without overloading the hero */}
+          {/* Trust strip — §3 Sprint 2.3: 위치 유지, 3색 → success monochrome, 폰트 11.5→13px (§1.4 binding) */}
           <div className="border-b border-border/60 bg-white">
             <div className="mx-auto max-w-2xl px-4 sm:px-5 py-2.5 lg:max-w-2xl">
               <div className="flex items-center gap-x-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
-                <span className="flex items-center gap-1.5 text-[11.5px] font-medium text-foreground">
-                  <ShieldCheck className="h-3.5 w-3.5 flex-shrink-0 text-emerald-600" strokeWidth={2} />
+                <span className="flex items-center gap-1.5 text-[13px] font-medium text-foreground">
+                  <ShieldCheck className="h-3.5 w-3.5 flex-shrink-0 text-[var(--success)]" strokeWidth={2} />
                   {t("tour.freeCancellation")}
                 </span>
                 <span aria-hidden className="h-3 w-px flex-shrink-0 bg-border" />
-                <span className="flex items-center gap-1.5 text-[11.5px] font-medium text-foreground">
-                  <Zap className="h-3.5 w-3.5 flex-shrink-0 text-amber-500" strokeWidth={2} />
+                <span className="flex items-center gap-1.5 text-[13px] font-medium text-foreground">
+                  <Zap className="h-3.5 w-3.5 flex-shrink-0 text-[var(--success)]" strokeWidth={2} />
                   {t("tour.instantConfirmation")}
                 </span>
                 <span aria-hidden className="h-3 w-px flex-shrink-0 bg-border" />
-                <span className="flex items-center gap-1.5 text-[11.5px] font-medium text-foreground">
-                  <Headphones className="h-3.5 w-3.5 flex-shrink-0 text-primary" strokeWidth={2} />
+                <span className="flex items-center gap-1.5 text-[13px] font-medium text-foreground">
+                  <Headphones className="h-3.5 w-3.5 flex-shrink-0 text-[var(--success)]" strokeWidth={2} />
                   {t("tour.customerSupport")}
                 </span>
               </div>
