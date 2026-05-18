@@ -10,8 +10,16 @@
 export type LatLng = { lat: number; lng: number };
 
 const EARTH_RADIUS_KM = 6371;
-const ROAD_FACTOR = 1.3; // straight-line → road-distance multiplier
-const AVG_SPEED_KMH = 50;
+// Korea-realistic constants:
+//   • ROAD_FACTOR 1.55 — accounts for mountain detours, ramps, and the
+//     fact that POIs rarely sit on a straight-line highway path.
+//   • AVG_SPEED_KMH 38 — blended city + highway + parking + stop-light
+//     reality. 50 km/h was highway-only and lied about real day-trip pace.
+// Prior (1.3 / 50) under-estimated long legs by ~40-50%, which caused the
+// matcher to greenlight physically-impossible day trips like Busan→Ulsan→
+// Yeongnam Alps in a 6-hour window.
+const ROAD_FACTOR = 1.55;
+const AVG_SPEED_KMH = 38;
 
 function toRadians(deg: number): number {
   return (deg * Math.PI) / 180;
