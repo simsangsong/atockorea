@@ -80,8 +80,10 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
         <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{sectionUi.fitSubtitle}</p>
       </div>
 
-      <div className="overflow-hidden rounded-[20px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
-        <div className="px-5 py-4">
+      {/* Sprint 5.7 (§B-P6 3+5): SEASON_THEME_SHARED card material — ring + single shadow tier + inner top highlight + micro-hover lift. */}
+      <div className="group relative overflow-hidden rounded-[20px] bg-white ring-1 ring-slate-200/70 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_-4px_rgba(15,23,42,0.10)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-[1px] hover:shadow-[0_2px_6px_rgba(15,23,42,0.06),0_8px_20px_-4px_rgba(15,23,42,0.12)]">
+        <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
+        <div className="relative px-5 py-4">
           <p className="text-[15px] font-semibold tracking-tight text-foreground">
             {sectionUi.fitBestForLabel}
           </p>
@@ -92,7 +94,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
         </div>
 
         {/* 1차: Best For — always visible (Sprint 5.4: 5+ 인 경우 4 visible + "Show all" reveal) */}
-        <div className="border-t border-slate-200/70 bg-white px-4 pt-4 pb-3 sm:px-5">
+        <div className="relative border-t border-slate-200/70 bg-white px-4 pt-4 pb-3 sm:px-5">
           <div className="mb-2 flex items-center justify-between gap-2">
             <p className="text-eyebrow text-[var(--success-soft-text)]">
               {sectionUi.fitBestForLabel}
@@ -184,7 +186,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
         </div>
 
         {/* Families / Seniors note */}
-        <div className="border-t border-slate-200/60 bg-slate-50 px-4 py-3 sm:px-5">
+        <div className="relative border-t border-slate-200/60 bg-slate-50 px-4 py-3 sm:px-5">
           <p className="text-[11.5px] leading-relaxed text-muted-foreground">
             <span className="font-semibold text-foreground">{sectionUi.fitFamiliesPrefix}</span>{" "}
             {sectionUi.fitFamiliesText}
@@ -195,12 +197,14 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
       </div>
 
       {/* 3차: Route Logic — §B-P2 default closed accordion (deep dive, optional) */}
-      <div className="overflow-hidden rounded-[20px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
+      {/* Sprint 5.7 (§B-P6 3+5): SEASON_THEME_SHARED card material — ring + single shadow tier + inner top highlight + micro-hover lift. */}
+      <div className="group relative overflow-hidden rounded-[20px] bg-white ring-1 ring-slate-200/70 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_-4px_rgba(15,23,42,0.10)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-[1px] hover:shadow-[0_2px_6px_rgba(15,23,42,0.06),0_8px_20px_-4px_rgba(15,23,42,0.12)]">
+        <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
         <button
           type="button"
           onClick={() => setShowLogic(!showLogic)}
           aria-expanded={showLogic}
-          className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-slate-50"
+          className="relative flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-slate-50"
         >
           <div>
             <h3 className="text-[13px] font-semibold tracking-tight text-foreground">
@@ -228,7 +232,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
 
         <div
           className={cn(
-            "grid transition-[grid-template-rows] duration-300 ease-out",
+            "relative grid transition-[grid-template-rows] duration-300 ease-out",
             showLogic ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
           )}
         >

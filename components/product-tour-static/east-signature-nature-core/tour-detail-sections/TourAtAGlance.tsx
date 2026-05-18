@@ -28,8 +28,10 @@ export function TourAtAGlance({ glanceItems, sectionUi }: TourAtAGlanceProps) {
         </p>
       </div>
 
-      <div className="relative overflow-hidden rounded-2xl bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
-        <ul className="divide-y divide-slate-100 px-4">
+      {/* Sprint 5.7 (§B-P6 3+5): SEASON_THEME_SHARED card material — ring + single shadow tier + inner top highlight + micro-hover lift. */}
+      <div className="group relative overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200/70 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_-4px_rgba(15,23,42,0.10)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-[1px] hover:shadow-[0_2px_6px_rgba(15,23,42,0.06),0_8px_20px_-4px_rgba(15,23,42,0.12)]">
+        <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
+        <ul className="relative divide-y divide-slate-100 px-4">
           {glanceItems.map((item) => {
             const filled = clampLevel(item.level);
             const hasLevel = filled > 0;

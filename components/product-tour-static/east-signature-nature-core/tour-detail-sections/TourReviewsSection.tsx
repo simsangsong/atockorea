@@ -161,9 +161,10 @@ export function TourReviewsSection({ guestReviews, reviewsSummary, sectionUi }: 
 
       {hasReviews ? (
         <>
-          {/* Sprint 2.11 + §B-P3: ghost gradient → solid pale + single shadow tier (premium summary card) */}
-          <div className="rounded-xl bg-slate-50/70 px-4 py-3 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_-4px_rgba(15,23,42,0.08)] sm:px-4 sm:py-2.5">
-            <div className="grid w-full grid-cols-2 items-center gap-4 sm:gap-5">
+          {/* Sprint 2.11 + §B-P3 + Sprint 5.7 (§B-P6 3+5): solid pale + ring + single shadow tier + inner top highlight + micro-hover lift. */}
+          <div className="group relative overflow-hidden rounded-xl bg-slate-50/70 px-4 py-3 ring-1 ring-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_-4px_rgba(15,23,42,0.10)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-[1px] hover:shadow-[0_2px_6px_rgba(15,23,42,0.06),0_8px_20px_-4px_rgba(15,23,42,0.12)] sm:px-4 sm:py-2.5">
+            <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/55 to-transparent" />
+            <div className="relative grid w-full grid-cols-2 items-center gap-4 sm:gap-5">
               <div className="flex min-w-0 justify-center px-0.5 sm:px-1">
                 <div className="inline-flex shrink-0 flex-col items-center justify-center gap-1 text-center">
                   <div className="flex items-baseline justify-center gap-0.5">
@@ -201,7 +202,7 @@ export function TourReviewsSection({ guestReviews, reviewsSummary, sectionUi }: 
             </div>
 
             {reviewsSummary.highlights.length > 0 && (
-              <div className="mt-3 pt-2.5 border-t border-border/50 space-y-2">
+              <div className="relative mt-3 pt-2.5 border-t border-border/50 space-y-2">
                 {/* Sprint 5.6 (§B-P5 1 + §B-P6 1+6): editorial summary prose 1줄 — at-a-glance card narrative */}
                 <p className="text-[12.5px] leading-relaxed text-muted-foreground">
                   <span className="font-semibold text-foreground tabular-nums">
