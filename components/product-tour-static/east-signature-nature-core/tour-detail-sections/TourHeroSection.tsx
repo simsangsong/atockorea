@@ -218,8 +218,8 @@ export function TourHeroSection({
                         className="h-3 w-3"
                         strokeWidth={0}
                         style={{
-                          fill: filled ? "#C8956C" : "rgba(26,35,50,0.18)",
-                          color: filled ? "#C8956C" : "rgba(26,35,50,0.18)",
+                          fill: filled ? "var(--star-color)" : "rgba(26,35,50,0.18)",
+                          color: filled ? "var(--star-color)" : "rgba(26,35,50,0.18)",
                         }}
                       />
                     );
