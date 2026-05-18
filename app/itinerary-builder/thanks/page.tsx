@@ -142,18 +142,41 @@ export default async function ItineraryBuilderThanksPage({
               </div>
             ) : (
               <div className="overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-slate-200">
-                <div className="bg-gradient-to-br from-emerald-50 via-white to-amber-50 px-7 pt-9 pb-7 text-center md:px-10 md:pt-11">
-                  <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 ring-4 ring-emerald-50">
-                    <CheckCircle2 className="h-8 w-8 text-emerald-600" aria-hidden />
+                {/* V2 Phase 10 — pending variant now mirrors the auto-quoted
+                    hero (slate→amber dark gradient) so both branches of the
+                    thanks page feel equally premium. Resolves audit §J.15. */}
+                <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900 px-7 pt-7 pb-7 text-center md:px-10 md:pt-9 md:pb-8">
+                  <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-amber-400/95">
+                    <Clock className="h-6 w-6 text-slate-900" aria-hidden />
                   </div>
-                  <p className="mb-2 text-eyebrow">Itinerary request received</p>
-                  <h1 className="mb-3 text-display text-slate-900">
-                    We&apos;ll respond within 24 hours
+                  <p className="mb-1 text-eyebrow text-amber-300">Itinerary request received</p>
+                  <h1 className="text-display text-white">
+                    We&apos;ll come back within 24h
                   </h1>
-                  <p className="mx-auto max-w-md text-body text-slate-600">
+                  <p className="mx-auto mt-2 max-w-md text-body text-slate-300">
                     Your request is a bit outside our auto-quote range. Our team is reviewing and will reply by
-                    email with a custom price within the next 24 hours.
+                    email with a custom price.
                   </p>
+                </div>
+                {/* Status timeline — Submitted ✓ / Reviewing 🕒 / Quote sent */}
+                <div className="px-7 pt-5 md:px-10 md:pt-6">
+                  <ol className="grid grid-cols-3 gap-2 text-center">
+                    <li className="flex flex-col items-center gap-1.5">
+                      <span aria-hidden className="flex h-7 w-7 items-center justify-center rounded-full bg-amber-500 text-[12px] font-bold text-white shadow-[0_0_0_3px_rgba(251,191,36,0.18)]">✓</span>
+                      <span className="text-micro font-semibold text-slate-900">Submitted</span>
+                    </li>
+                    <li className="flex flex-col items-center gap-1.5">
+                      <span aria-hidden className="flex h-7 w-7 animate-pulse items-center justify-center rounded-full bg-slate-900 text-[11px] font-bold text-white">
+                        <Clock className="h-3.5 w-3.5" aria-hidden />
+                      </span>
+                      <span className="text-micro font-semibold text-slate-700">Reviewing</span>
+                    </li>
+                    <li className="flex flex-col items-center gap-1.5">
+                      <span aria-hidden className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-[12px] font-bold text-slate-400 ring-1 ring-slate-200">3</span>
+                      <span className="text-micro font-semibold text-slate-400">Quote sent</span>
+                    </li>
+                  </ol>
+                  <div className="mx-auto mt-3 h-0.5 max-w-[80%] bg-gradient-to-r from-amber-500 via-slate-300 to-slate-200" aria-hidden />
                 </div>
                 <div className="px-7 py-6 md:px-10">
                   <p className="mb-3 text-eyebrow !text-slate-500">What happens next?</p>
