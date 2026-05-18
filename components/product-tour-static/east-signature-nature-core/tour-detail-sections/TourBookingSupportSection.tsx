@@ -1,17 +1,15 @@
 "use client";
 
-import { useState, type ComponentType } from "react";
+import { Fragment, useState, type ComponentType } from "react";
 import {
-  AlarmClock,
   ArrowRight,
   BellRing,
   CheckCircle,
   ChevronDown,
+  ChevronRight,
   Clock3,
   Compass,
-  Heart,
   MailCheck,
-  MapPin,
   Moon,
   Mountain,
   Route,
@@ -119,13 +117,13 @@ export type TourBookingSupportSectionProps = Pick<
 >;
 
 export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSteps, sectionUi }: TourBookingSupportSectionProps) {
-  /** Flow is core content; open by default so travelers see the sequence without an extra click. */
   /**
-   * Sprint 3.5 (§B-P2 partial reversal): default-open accordion 복귀.
-   * 1차 신뢰 신호 (예약 후 안내)는 default visible이지만, 6 step 길이
-   * 부담스러울 수 있는 사용자에게 toggle escape 제공.
+   * Sprint 5.1 (§B-P4 1차 visible scope 재정의): default-closed.
+   * 6-step timeline = 2차 정보 (mobile vertical 600px+ text wall). Trust 3-grid가
+   * 1차 신뢰 신호 역할; 6-step은 §B-P5 미리보기 1줄 + §B-P6 4-layer hierarchy + 6 phase
+   * icon row inline + underlined reveal으로 재구성.
    */
-  const [showTimeline, setShowTimeline] = useState(true);
+  const [showTimeline, setShowTimeline] = useState(false);
   const trustItems = bookingTrustItems ?? [];
   const supportSteps = bookingSupportSteps ?? [];
   const hasSupportSteps = supportSteps.length > 0;
@@ -168,36 +166,71 @@ export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSte
       </div>
 
       {hasSupportSteps ? (
-        /* Sprint 3.5 (§B-P2): default-open accordion. 사용자가 닫을 수 있는 escape. */
-        <div className="card-premium overflow-hidden">
+        /* Sprint 5.1 (§B-P4+P5+P6): default-closed + 4-layer hierarchy + 6 phase icon row + underlined reveal. */
+        <div
+          className={cn(
+            "group relative overflow-hidden rounded-2xl bg-white",
+            "ring-1 ring-slate-200/70",
+            "shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_-4px_rgba(15,23,42,0.10)]",
+            "transition-[transform,box-shadow] duration-300 ease-out",
+            "hover:-translate-y-[1px] hover:shadow-[0_2px_6px_rgba(15,23,42,0.06),0_8px_20px_-4px_rgba(15,23,42,0.12)]",
+          )}
+        >
+          {/* §B-P6 (3): inner top highlight (top 1/3 white/65 gradient) */}
+          <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
+
           <button
             type="button"
             onClick={() => setShowTimeline((v) => !v)}
             aria-expanded={showTimeline}
-            className="flex w-full items-center justify-between p-5 text-left transition-colors hover:bg-slate-50"
+            aria-label={sectionUi.bookingAfterTitle}
+            className="relative block w-full text-left p-5 sm:p-6"
           >
-            <div>
-              <h3 className="text-sm font-semibold text-foreground">{sectionUi.bookingAfterTitle}</h3>
-              <p className="text-xs text-muted-foreground mt-0.5 max-w-prose">{sectionUi.bookingAfterSubtitle}</p>
+            {/* §B-P6 (1) layer 1: title */}
+            <h3 className="text-[15px] font-semibold tracking-tight text-foreground leading-snug">
+              {sectionUi.bookingAfterTitle}
+            </h3>
+            {/* §B-P6 (1) layer 2: preview prose (편집된 editorial subtitle) */}
+            <p className="mt-1 text-[12.5px] leading-relaxed text-muted-foreground">
+              {sectionUi.bookingAfterSubtitle}
+            </p>
+
+            {/* §B-P6 (4) layer 3: 6 phase icon row inline (sequence visible without expand) */}
+            <div className="mt-3.5 flex items-center gap-1.5 overflow-x-auto scrollbar-hide">
+              {supportSteps.map((step, i) => {
+                const phaseTheme = pickStepTheme(step.timing ?? "", step.title ?? "", i);
+                const PhaseIcon = phaseTheme.Icon;
+                return (
+                  <Fragment key={`closed-phase-${i}`}>
+                    <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-slate-50 ring-1 ring-slate-200/70 transition-transform duration-300 group-hover:scale-[1.05]">
+                      <PhaseIcon className="h-3 w-3 text-foreground/80" strokeWidth={1.7} />
+                    </span>
+                    {i < supportSteps.length - 1 ? (
+                      <ChevronRight aria-hidden className="h-3 w-3 flex-shrink-0 text-muted-foreground/40" strokeWidth={1.7} />
+                    ) : null}
+                  </Fragment>
+                );
+              })}
             </div>
-            <div
-              className={cn(
-                "flex-shrink-0 rounded-full p-1.5 transition-[transform,background-color] duration-200",
-                showTimeline ? "rotate-180 bg-slate-100" : "bg-slate-100/60",
-              )}
-            >
-              <ChevronDown
-                className={cn(
-                  "h-4 w-4 transition-colors",
-                  showTimeline ? "text-foreground" : "text-muted-foreground",
-                )}
-                strokeWidth={2}
-              />
+
+            {/* §B-P5 (2) layer 4: underlined chevron as reveal affordance (i18n-safe, no text) */}
+            <div className="mt-4 flex items-center justify-end border-t border-slate-200/60 pt-3">
+              <span className="inline-flex items-center gap-1 text-[12.5px] font-semibold text-[var(--primary)] underline decoration-[1.5px] underline-offset-[3px] group-hover:opacity-80 transition-opacity">
+                <ChevronDown
+                  className={cn(
+                    "h-4 w-4 transition-transform duration-200",
+                    showTimeline && "rotate-180",
+                  )}
+                  strokeWidth={2}
+                />
+              </span>
             </div>
           </button>
+
+          {/* §B-P5 (4): smooth grid-rows reveal transition (button 밖 — timeline 텍스트 selection 안전) */}
           <div
             className={cn(
-              "grid transition-[grid-template-rows] duration-300 ease-out",
+              "relative grid transition-[grid-template-rows] duration-300 ease-out",
               showTimeline ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
             )}
           >
