@@ -160,9 +160,9 @@ export function TourHeroSection({
 
         {hero.meta.region && (
           <div className="flex items-center gap-2.5 mb-3 sm:mb-3.5">
-            <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-rose-400/85" />
-            <span aria-hidden className="h-px w-5 bg-gradient-to-r from-rose-300/60 via-rose-300/30 to-transparent sm:w-7" />
-            <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-rose-600/85 sm:text-[10.5px]">
+            <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]/85" />
+            <span aria-hidden className="h-px w-5 bg-gradient-to-r from-[var(--accent)]/55 via-[var(--accent)]/25 to-transparent sm:w-7" />
+            <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--accent)]/90 sm:text-[10.5px]">
               {hero.meta.region}
             </span>
           </div>
@@ -182,7 +182,7 @@ export function TourHeroSection({
             {hero.pills.slice(0, 3).map((pill) => (
               <span
                 key={pill}
-                className="inline-flex items-center rounded-full bg-gradient-to-br from-white via-rose-50/60 to-white px-3 py-1 text-[11px] font-semibold tracking-[0.005em] text-foreground/90 ring-1 ring-rose-300/70 shadow-[0_1px_2px_rgba(244,63,94,0.08),0_4px_10px_-4px_rgba(244,63,94,0.18)] backdrop-blur-sm transition-all duration-200 hover:ring-rose-400/80 hover:shadow-[0_2px_4px_rgba(244,63,94,0.12),0_6px_14px_-4px_rgba(244,63,94,0.24)] sm:px-3.5 sm:py-1.5 sm:text-[11.5px]"
+                className="inline-flex items-center rounded-full bg-gradient-to-br from-white via-slate-50/60 to-white px-3 py-1 text-[11px] font-semibold tracking-[0.005em] text-foreground/90 ring-1 ring-slate-300/70 shadow-[0_1px_2px_rgba(26,35,50,0.06),0_4px_10px_-4px_rgba(26,35,50,0.12)] backdrop-blur-sm transition-all duration-200 hover:ring-slate-400/70 hover:shadow-[0_2px_4px_rgba(26,35,50,0.09),0_6px_14px_-4px_rgba(26,35,50,0.16)] sm:px-3.5 sm:py-1.5 sm:text-[11.5px]"
               >
                 {pill}
               </span>
@@ -190,19 +190,19 @@ export function TourHeroSection({
           </div>
         )}
 
-        <div className="mt-2.5 flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-rose-200/45 pt-2.5 sm:mt-3 sm:gap-x-5 sm:pt-3">
+        <div className="mt-2.5 flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-slate-200/55 pt-2.5 sm:mt-3 sm:gap-x-5 sm:pt-3">
           <div className="flex items-center gap-1.5 text-[12.5px] text-foreground/85 sm:text-[13px]">
-            <Clock className="h-3.5 w-3.5 text-rose-500/80" strokeWidth={1.8} />
+            <Clock className="h-3.5 w-3.5 text-slate-700" strokeWidth={1.8} />
             <span className="font-medium tabular-nums">{hero.meta.duration}</span>
           </div>
-          <span aria-hidden className="h-3 w-px bg-rose-200/60" />
+          <span aria-hidden className="h-3 w-px bg-slate-200/70" />
           <div className="flex items-center gap-1.5 text-[12.5px] text-foreground/85 sm:text-[13px]">
-            <Footprints className="h-3.5 w-3.5 text-rose-500/80" strokeWidth={1.8} />
+            <Footprints className="h-3.5 w-3.5 text-slate-700" strokeWidth={1.8} />
             <span className="tabular-nums">{hero.meta.stops}</span>
           </div>
           {showRating && (
             <>
-              <span aria-hidden className="h-3 w-px bg-rose-200/60" />
+              <span aria-hidden className="h-3 w-px bg-slate-200/70" />
               <button
                 type="button"
                 onClick={() => scrollToHash("reviews")}
