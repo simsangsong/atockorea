@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
@@ -39,13 +40,13 @@ export function TourDayFlowSection({ routeFlowStops, routeShapeIntro, itineraryS
               const fallbackLabel = String(i + 1).padStart(2, "0");
               return (
                 <div key={`${stop.name}-${i}`} className="flex items-start">
-                  <div className="flex w-[72px] flex-col items-center px-1">
+                  {/* Sprint 4.11: 48 → 80px photo + single elevation shadow (§8.4 Klook/Apple 표준) */}
+                  <div className="flex w-[104px] flex-col items-center px-1">
                     <div className="relative">
                       <div
                         className={cn(
-                          "h-12 w-12 rounded-full ring-1 ring-offset-2 ring-offset-white overflow-hidden bg-slate-50",
-                          "ring-slate-900/[0.08]",
-                          "shadow-[0_1px_2px_rgba(15,23,42,0.06),0_4px_10px_-3px_rgba(15,23,42,0.14),0_10px_20px_-8px_rgba(15,23,42,0.10)]",
+                          "h-20 w-20 rounded-full overflow-hidden bg-slate-50",
+                          "shadow-[0_4px_12px_-4px_rgba(15,23,42,0.18)]",
                         )}
                       >
                         {photoUrl ? (
@@ -59,24 +60,27 @@ export function TourDayFlowSection({ routeFlowStops, routeShapeIntro, itineraryS
                             className="h-full w-full object-cover tour-photo-protected"
                           />
                         ) : (
-                          <div className="flex h-full w-full items-center justify-center text-[11px] font-semibold text-muted-foreground">
+                          <div className="flex h-full w-full items-center justify-center text-[13px] font-semibold text-muted-foreground">
                             {fallbackLabel}
                           </div>
                         )}
                       </div>
                     </div>
-                    <span className="mt-2 w-full text-[11.5px] font-semibold text-slate-900 tracking-[-0.005em] text-center leading-tight line-clamp-2 break-words">
+                    <span className="mt-2.5 w-full text-[13px] font-bold tracking-tight text-foreground text-center leading-tight line-clamp-2 break-words">
                       {stop.name}
                     </span>
                     {stop.theme ? (
-                      <span className="mt-0.5 w-full text-[10.5px] text-slate-500 text-center leading-tight line-clamp-1 break-words">{stop.theme}</span>
+                      <span className="mt-0.5 w-full text-[11px] text-muted-foreground text-center leading-tight line-clamp-1 break-words">{stop.theme}</span>
                     ) : null}
                   </div>
                   {i < flexStops.length - 1 ? (
-                    <div className="flex h-12 items-center pt-2 gap-[3px] px-0.5">
-                      <span aria-hidden className="h-[3px] w-[3px] rounded-full bg-slate-300" />
-                      <span aria-hidden className="h-[3px] w-[3px] rounded-full bg-slate-300" />
-                      <span aria-hidden className="h-[3px] w-[3px] rounded-full bg-slate-300" />
+                    /* Sprint 4.11: 3-dot connector → ArrowRight (방향성 명확, §8.4 권고) */
+                    <div className="flex h-20 items-center px-1">
+                      <ArrowRight
+                        className="h-4 w-4 text-muted-foreground/45"
+                        strokeWidth={1.5}
+                        aria-hidden
+                      />
                     </div>
                   ) : null}
                 </div>
