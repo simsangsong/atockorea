@@ -1,12 +1,11 @@
 "use client";
 
-import { useState, type ComponentType } from "react";
+import { type ComponentType } from "react";
 import {
   AlarmClock,
   ArrowRight,
   BellRing,
   CheckCircle,
-  ChevronDown,
   Clock3,
   Compass,
   Heart,
@@ -120,7 +119,7 @@ export type TourBookingSupportSectionProps = Pick<
 
 export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSteps, sectionUi }: TourBookingSupportSectionProps) {
   /** Flow is core content; open by default so travelers see the sequence without an extra click. */
-  const [showTimeline, setShowTimeline] = useState(true);
+  /* Sprint 3.5: showTimeline state 폐기 — accordion 제거, 항상 펼침. */
   const trustItems = bookingTrustItems ?? [];
   const supportSteps = bookingSupportSteps ?? [];
   const hasSupportSteps = supportSteps.length > 0;
@@ -163,31 +162,13 @@ export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSte
       </div>
 
       {hasSupportSteps ? (
+        /* Sprint 3.5: default-open accordion 폐기 → 항상 펼친 timeline (§8.11 Apple Card pattern) */
         <div className="card-premium overflow-hidden">
-          <button
-            type="button"
-            onClick={() => setShowTimeline(!showTimeline)}
-            className="w-full flex items-center justify-between p-5 text-left hover:bg-muted/20 transition-colors"
-          >
-            <div>
-              <h3 className="text-sm font-semibold text-foreground">{sectionUi.bookingAfterTitle}</h3>
-              <p className="text-xs text-muted-foreground mt-0.5 max-w-prose">{sectionUi.bookingAfterSubtitle}</p>
-            </div>
-            <div
-              className={cn(
-                "flex-shrink-0 p-1.5 rounded-full transition-all duration-200",
-                showTimeline ? "bg-primary/10 rotate-180" : "bg-muted/60",
-              )}
-            >
-              <ChevronDown
-                className={cn("h-4 w-4 transition-colors", showTimeline ? "text-primary" : "text-muted-foreground")}
-              />
-            </div>
-          </button>
-
-          <div className={cn("grid transition-all duration-300 ease-out", showTimeline ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
-            <div className="overflow-hidden">
-              <div className="border-t border-border/60 p-5 md:p-6">
+          <div className="p-5">
+            <h3 className="text-sm font-semibold text-foreground">{sectionUi.bookingAfterTitle}</h3>
+            <p className="text-xs text-muted-foreground mt-0.5 max-w-prose">{sectionUi.bookingAfterSubtitle}</p>
+          </div>
+          <div className="border-t border-border/60 p-5 md:p-6">
                 {/* Mobile: vertical flowchart with phase-icon spine */}
                 <div className="md:hidden">
                   {supportSteps.map((step, i) => {
@@ -253,8 +234,6 @@ export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSte
                     })}
                   </div>
                 </div>
-              </div>
-            </div>
           </div>
         </div>
       ) : null}
