@@ -505,10 +505,21 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
 
     logger.info('Tours fetched successfully', { count: transformedTours.length });
 
-    return NextResponse.json({ 
-      tours: transformedTours,
-      total: transformedTours.length,
-      limit,
-      offset,
-    });
+    // Response is fully public — no auth, no per-user state. Caching by URL on
+    // the CDN edge eliminates the cold-path cost (Supabase tours read +
+    // bookings count + FX fetch + score sort) for every visitor after the
+    // first. Mirrors the existing `s-maxage` on `/api/tours/destinations`.
+    return NextResponse.json(
+      {
+        tours: transformedTours,
+        total: transformedTours.length,
+        limit,
+        offset,
+      },
+      {
+        headers: {
+          'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300',
+        },
+      }
+    );
   });
