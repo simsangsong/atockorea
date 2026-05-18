@@ -11,7 +11,7 @@
 
 | Sprint | 상태 | 시작일 | 완료일 | 마지막 커밋 |
 |---|---|---|---|---|
-| Sprint 1 (컨버전 안전) | ⏳ | — | — | — |
+| Sprint 1 (컨버전 안전) | 🔄 | 2026-05-18 | — | — |
 | Sprint 2 (토큰 + 색상) | ⏳ | — | — | — |
 | Sprint 3 (콘텐츠 접근성) | ⏳ | — | — | — |
 | Sprint 4 (Hero / Gallery) | ⏳ | — | — | — |
@@ -43,6 +43,7 @@
 |---|---|---|---|
 | 2026-05-17 | 마스터 플랜 v1 작성 (1차 Claude audit + Codex review 통합) | 초기 | 16개 결정, Sprint 1-4 정의 |
 | 2026-05-18 | §A 상태 대시보드 + §B 결정 로그 + §C 변경 로그 + §D parked + §8 세계최고 디자이너 audit 추가 | (이 커밋) | User 요청으로 픽셀단위 review 진행. 16 section + Drawer 분석. §B-P1 premium up-only 결정 신규. Sprint 1-4 작업 시작 전 단계. |
+| 2026-05-18 | Sprint 1 started — 컨버전 안전 PR group 진입 (drawer 속도 / CTA bg+price / 중복 제거 / drag handle) | (이 커밋) | §A Sprint 1 → 🔄. §1.8 사실 수정 1건 동반 (sticky bar / desktop booking card 파일 경로 + drawer animation 라인 2곳). |
 
 ## §D 보류 / parked
 
@@ -166,6 +167,22 @@ Codex가 추가한 가드: "사용자가 상세페이지 스크롤 도중 멈춤
 - Lightbox 안: watermark 제거 우선 (사용자가 가장 크게 보는 순간)
 - Hero/gallery 메인: 정책팀 확인 후
 - Card thumbnail: 유지해도 OK (작아서 거의 안 보임)
+
+### 1.8 코드 reality 사실 수정 (2026-05-18, Sprint 1 진입 시 검증)
+
+§3 Sprint 1 표에 적힌 파일 경로 / 라인 번호와 실제 코드의 차이:
+
+| 항목 | 마스터 플랜 표기 | 실제 코드 reality | 영향 |
+|---|---|---|---|
+| Sticky bar 파일 경로 | `_shared/TourStickyBookingBar.tsx` | `components/product-tour-static/east-signature-nature-core/tour-detail-sections/TourStickyBookingBar.tsx` | 경로만 다름, scope CSS 영향 X |
+| Desktop booking card 경로 | `_shared/TourDesktopBookingCard.tsx` | `components/product-tour-static/east-signature-nature-core/tour-detail-sections/TourDesktopBookingCard.tsx` | 동일 |
+| Drawer animation 라인 | `L319, L334` (한 라인) | L319 = backdrop fade (`duration 0.55`), L334 = drawer panel slide (`duration 0.78`) — **2곳 동시 단축 필요** | Sprint 1.1 작업 범위 확장 (백드롭도 함께) |
+| Sticky CTA bg 라인 | `L291` | L291 = `btnClass` 공용 string에 `bg-foreground` (실제 사용은 다른 라인에서 `btnClass` 통해) | 단일 string 교체로 양쪽 적용 가능 |
+| Desktop CTA bg 라인 | `L522` | L522 = `<button className="…bg-foreground…">` 인라인 | 인라인 교체 |
+| Trust strip 위치 | `TourProductDetailClient.tsx:77-97` | 동일 (L77-97 = trust strip JSX block) | 일치 |
+| Pricing tier 본문 중복 | `TourProductDetailClient.tsx:108-156` | L107-156 = `<section id="pricing">` block | 1행 off-by-one, 정정 |
+
+→ Sprint 1 작업 시 위 reality를 기준으로 진행. 추가로 발견되는 차이가 있으면 같은 표에 1줄 추가.
 
 ---
 
