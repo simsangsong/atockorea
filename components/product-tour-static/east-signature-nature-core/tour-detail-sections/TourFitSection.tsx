@@ -55,19 +55,23 @@ function pickPersonaIcon(raw: string): LucideIcon {
 export type TourFitSectionProps = Pick<EastSignatureNatureCoreDetailViewModel, "whyTourWorks" | "sectionUi">;
 
 /**
- * Sprint 3.2 (revised under §B-P2): 정보 과밀 회피 partial reversal.
- *   - Best For: 1차 정보 → 항상 펼침 (conversion-positive).
- *   - Less Ideal: 2차 정보 (negative) → default closed nested (사용자 선택).
- *   - Route Logic: 3차 정보 (deep dive) → default closed accordion.
- *   카드 wash 단색화 (Sprint 2.7)는 유지. 3중 nested는 "1차 펼침 + 2-3차 접힘"으로 재정렬.
+ * Sprint 5.4 (§B-P4 1차 visible scope 재정의): Best For 4 visible + 5+ "Show all" reveal.
+ *   4 이하면 그대로 (conditional). 4+ 인 경우 첫 4만 노출 + underlined link로 나머지 reveal.
  */
+const BEST_FOR_VISIBLE_LIMIT = 4;
+
 export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps) {
   const [showLessIdeal, setShowLessIdeal] = useState(false);
   const [showLogic, setShowLogic] = useState(false);
+  const [showAllBestFor, setShowAllBestFor] = useState(false);
 
   const lessIdealItems =
     (whyTourWorks as { lessIdealFor?: string[]; lessIdeal?: string[] }).lessIdealFor ?? whyTourWorks.lessIdeal ?? [];
   const bestForItems = whyTourWorks.bestFor ?? [];
+
+  const overflowBestFor = bestForItems.length > BEST_FOR_VISIBLE_LIMIT;
+  const visibleBestFor =
+    showAllBestFor || !overflowBestFor ? bestForItems : bestForItems.slice(0, BEST_FOR_VISIBLE_LIMIT);
 
   return (
     <div className="space-y-4">
@@ -87,13 +91,25 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
           </p>
         </div>
 
-        {/* 1차: Best For — always visible */}
+        {/* 1차: Best For — always visible (Sprint 5.4: 5+ 인 경우 4 visible + "Show all" reveal) */}
         <div className="border-t border-slate-200/70 bg-white px-4 pt-4 pb-3 sm:px-5">
-          <p className="mb-2 text-eyebrow text-[var(--success-soft-text)]">
-            {sectionUi.fitBestForLabel}
-          </p>
+          <div className="mb-2 flex items-center justify-between gap-2">
+            <p className="text-eyebrow text-[var(--success-soft-text)]">
+              {sectionUi.fitBestForLabel}
+            </p>
+            {overflowBestFor && (
+              <button
+                type="button"
+                onClick={() => setShowAllBestFor((v) => !v)}
+                aria-expanded={showAllBestFor}
+                className="text-[12.5px] font-semibold text-[var(--primary)] underline decoration-[1.5px] underline-offset-[3px] hover:opacity-80 transition-opacity"
+              >
+                {showAllBestFor ? "Show less" : `Show all ${bestForItems.length}`}
+              </button>
+            )}
+          </div>
           <ul className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
-            {bestForItems.map((item, i) => {
+            {visibleBestFor.map((item, i) => {
               const Icon = pickPersonaIcon(item);
               return (
                 <li
