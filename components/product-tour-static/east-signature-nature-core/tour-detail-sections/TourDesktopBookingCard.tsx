@@ -289,11 +289,24 @@ export function TourDesktopBookingCard({
 
   const guestDisplayValue = guestFieldEditing ? guestEditValue : String(guestCount);
 
+  /**
+   * Sprint 1.3: Airbnb-pattern price-integrated CTA.
+   *   Desktop CTA: "Reserve · {total|unit}"
+   */
+  const desktopReservePrice =
+    estimatedTotal != null &&
+    checkout?.priceType === "person" &&
+    estimatedTotalFormatted &&
+    guestCount > 1
+      ? estimatedTotalFormatted
+      : ctaUnitFormatted;
   const ctaLabel = (() => {
     if (busy) return "…";
     if (availability.status === "checking") return t("tour.checkingAvailability");
     if (availability.status === "unavailable") return t("tour.chooseAnotherDate");
-    return t("tour.reserve");
+    return desktopReservePrice
+      ? `${t("tour.reserve")} · ${desktopReservePrice}`
+      : t("tour.reserve");
   })();
   const ctaDisabled =
     !canBook || busy || availability.status === "checking" || availability.status === "unavailable";

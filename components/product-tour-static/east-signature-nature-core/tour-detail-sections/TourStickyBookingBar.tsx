@@ -294,13 +294,31 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
     ? "h-[calc(20rem+env(safe-area-inset-bottom,0px))] sm:h-[min(68vh,26rem)]"
     : "h-[calc(5.5rem+env(safe-area-inset-bottom,0px))] sm:h-24";
 
-  /** Resolved CTA label — progresses from check → reserve → choose-another based on availability state. */
+  /**
+   * Resolved CTA label — progresses from check → reserve → choose-another based on availability state.
+   * Sprint 1.3: Airbnb-pattern price-integrated CTA.
+   *   Pre-drawer  : "Check Availability · {From} {unit}"
+   *   In-drawer   : "Reserve · {total|unit}"
+   */
+  const inDrawerReservePrice =
+    estimatedTotal != null &&
+    checkout?.priceType === "person" &&
+    estimatedTotalFormatted &&
+    guestCount > 1
+      ? estimatedTotalFormatted
+      : ctaUnitFormatted;
   const ctaLabel = (() => {
     if (busy) return "…";
-    if (!drawerOpen) return t("tour.checkAvailability");
+    if (!drawerOpen) {
+      return ctaUnitFormatted
+        ? `${t("tour.checkAvailability")} · ${t("tour.stickyPriceFrom")} ${ctaUnitFormatted}`
+        : t("tour.checkAvailability");
+    }
     if (availability.status === "checking") return t("tour.checkingAvailability");
     if (availability.status === "unavailable") return t("tour.chooseAnotherDate");
-    return t("tour.reserve");
+    return inDrawerReservePrice
+      ? `${t("tour.reserve")} · ${inDrawerReservePrice}`
+      : t("tour.reserve");
   })();
   const ctaDisabled =
     !canBook || busy || availability.status === "checking" || availability.status === "unavailable";
