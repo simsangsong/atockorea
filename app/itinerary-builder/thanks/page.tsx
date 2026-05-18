@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { CheckCircle2, Mail, Clock, Coins, Search, Send } from "lucide-react";
 import { SitePageShell } from "@/src/components/layout/SitePageShell";
 import { createServerClient } from "@/lib/supabase";
+import PriceCounter from "@/components/itinerary-builder/PriceCounter";
 
 export const metadata: Metadata = {
   title: "Itinerary request received | AtoC Korea",
@@ -96,7 +97,7 @@ export default async function ItineraryBuilderThanksPage({
                   </div>
                   <p className="mb-1 text-eyebrow text-amber-300">Your quote is ready</p>
                   <h1 className="text-display text-white">
-                    {fmtKrw(quote!.auto_quote_amount_krw as number)}
+                    <PriceCounter value={quote!.auto_quote_amount_krw as number} />
                   </h1>
                   <p className="mt-2 text-body text-slate-300">
                     Auto-priced from your selected stops + duration. Reply to the confirmation email to book.
