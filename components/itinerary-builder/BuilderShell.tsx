@@ -4,6 +4,7 @@ import { useCallback, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { RotateCcw } from "lucide-react";
 import { useCart } from "@/lib/itinerary-builder/cart";
+import { ActiveStopProvider } from "@/lib/itinerary-builder/active-stop";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 import type { RegionSlug } from "@/lib/itinerary-builder/regions";
 import POICatalogMap from "./POICatalogMap";
@@ -82,7 +83,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
   }, [cart.length]);
 
   return (
-    <>
+    <ActiveStopProvider>
       {/* Two-column hero band — sticky map (left) + interaction rail (right).
           The rail holds only the surfaces that benefit from sticky proximity
           to the map: AI matcher + cart actions. The full POI catalog grid
@@ -167,6 +168,6 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
         cart={cart}
         region={region}
       />
-    </>
+    </ActiveStopProvider>
   );
 }

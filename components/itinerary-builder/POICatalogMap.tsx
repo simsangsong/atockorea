@@ -11,6 +11,7 @@ import {
   haversineMeters,
   setPhotoPinState,
 } from "@/lib/itinerary-builder/photo-pin";
+import { useActiveStop } from "@/lib/itinerary-builder/active-stop";
 import POIInfoWindowContent from "./POIInfoWindowContent";
 
 const LIBRARIES: ("places" | "marker")[] = ["places", "marker"];
@@ -51,6 +52,7 @@ export default function POICatalogMap({
   resetViewRef,
 }: Props) {
   const t = useTranslations("itineraryBuilder.map");
+  const { activeKey, setActive } = useActiveStop();
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: apiKey,
@@ -183,11 +185,21 @@ export default function POICatalogMap({
         // as off-anchor and can mis-handle clicks.
       }
 
-      // Hover → toggle state (CSS transition handles size + halo).
-      // Skip for out-of-cart 14px dots (no visual difference worth it).
+      // Hover → toggle state (CSS transition handles size + halo) + fire
+      // the bi-sync setActive so the matching timeline card highlights.
+      // Skip mouseenter sync for out-of-cart 14px dots (no visual cart
+      // counterpart to highlight). data-poi attribute lets the active-key
+      // effect below find this element by key.
+      content.dataset.poi = poi.poi_key;
       if (inCart) {
-        content.addEventListener("mouseenter", () => setPhotoPinState(content, "hover"));
-        content.addEventListener("mouseleave", () => setPhotoPinState(content, "cart"));
+        content.addEventListener("mouseenter", () => {
+          setPhotoPinState(content, "hover");
+          setActive(poi.poi_key, "map");
+        });
+        content.addEventListener("mouseleave", () => {
+          setPhotoPinState(content, "cart");
+          setActive(null, "map");
+        });
       }
 
       const marker = new google.maps.marker.AdvancedMarkerElement({
@@ -198,6 +210,26 @@ export default function POICatalogMap({
       marker.addListener("gmp-click", () => {
         setSelected(poi);
         map.panTo({ lat: poi.lat, lng: poi.lng });
+        if (inCart) {
+          setActive(poi.poi_key, "map");
+          // Scroll the matching timeline card into view. The card has
+          // data-poi-card={poi_key} (set in ResultTimeline).
+          const card = document.querySelector(
+            `[data-poi-card="${poi.poi_key}"]`
+          );
+          if (card && "scrollIntoView" in card) {
+            // V-R5 + a11y: instant scroll under prefers-reduced-motion;
+            // smooth otherwise.
+            const reduce =
+              typeof window !== "undefined" &&
+              window.matchMedia &&
+              window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            (card as HTMLElement).scrollIntoView({
+              behavior: reduce ? "auto" : "smooth",
+              block: "center",
+            });
+          }
+        }
       });
       return marker;
     });
@@ -212,6 +244,23 @@ export default function POICatalogMap({
       markersRef.current = [];
     };
   }, [map, pois, cart]);
+
+  // V2 Phase 4 — react to external activeKey changes (timeline hover/
+  // click). For in-cart markers, swap data-state to "hover" when their
+  // key matches activeKey, back to "cart" otherwise. Out-of-cart dots
+  // ignored — they have no hover variant.
+  useEffect(() => {
+    markersRef.current.forEach((marker) => {
+      const el = marker.content as HTMLElement | null;
+      if (!el) return;
+      const poiKey = el.dataset.poi;
+      // Only touch in-cart photo pins (those have data-state cart/hover).
+      const currentState = el.dataset.state;
+      if (currentState !== "cart" && currentState !== "hover") return;
+      const shouldHover = poiKey != null && poiKey === activeKey;
+      setPhotoPinState(el, shouldHover ? "hover" : "cart");
+    });
+  }, [activeKey]);
 
   // V2 Phase 2 — auto-fitBounds always-on (promoted from spike gate).
   //   • 0 POIs: do nothing, leave the initial region center.

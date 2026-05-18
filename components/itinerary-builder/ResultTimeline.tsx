@@ -34,6 +34,7 @@ import {
   formatMinutes,
   totalDriveMinutes,
 } from "@/lib/itinerary-builder/distance";
+import { useActiveStop } from "@/lib/itinerary-builder/active-stop";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 
 interface Props {
@@ -79,6 +80,7 @@ export default function ResultTimeline({
 }: Props) {
   const t = useTranslations("itineraryBuilder.cart");
   const tt = useTranslations("itineraryBuilder.timeline");
+  const { activeKey, setActive } = useActiveStop();
 
   const poiByKey = new Map(pois.map((p) => [p.poi_key, p]));
   const cartPois = cart.map((k) => poiByKey.get(k)).filter((x): x is MatchPoiRow => !!x);
@@ -142,6 +144,8 @@ export default function ResultTimeline({
                   <SortableStopCard
                     poi={poi}
                     seq={idx + 1}
+                    isActive={activeKey === poi.poi_key}
+                    onHover={(hover) => setActive(hover ? poi.poi_key : null, "timeline")}
                     onRemove={() => onRemove(poi.poi_key)}
                     onFocus={onFocusPoi ? () => onFocusPoi(poi.poi_key) : undefined}
                     removeLabel={t("remove")}
@@ -185,12 +189,16 @@ export default function ResultTimeline({
 function SortableStopCard({
   poi,
   seq,
+  isActive,
+  onHover,
   onRemove,
   onFocus,
   removeLabel,
 }: {
   poi: MatchPoiRow;
   seq: number;
+  isActive: boolean;
+  onHover: (hover: boolean) => void;
   onRemove: () => void;
   onFocus?: () => void;
   removeLabel: string;
@@ -208,7 +216,14 @@ function SortableStopCard({
     <li
       ref={setNodeRef}
       style={style}
-      className="relative flex items-center gap-3 rounded-2xl bg-white p-2.5 ring-1 ring-slate-200 transition-colors duration-200 ease-out hover:bg-amber-50/40 hover:ring-amber-200"
+      data-poi-card={poi.poi_key}
+      onMouseEnter={() => onHover(true)}
+      onMouseLeave={() => onHover(false)}
+      className={`relative flex items-center gap-3 rounded-2xl bg-white p-2.5 transition-all duration-200 ease-out motion-reduce:transition-none ${
+        isActive
+          ? "ring-2 ring-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.18)]"
+          : "ring-1 ring-slate-200 hover:bg-amber-50/40 hover:ring-amber-200"
+      }`}
     >
       {/* Sequence node on the connector (overlaps the dashed line) */}
       <span
