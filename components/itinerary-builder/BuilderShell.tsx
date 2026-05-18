@@ -7,11 +7,10 @@ import { useCart } from "@/lib/itinerary-builder/cart";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 import type { RegionSlug } from "@/lib/itinerary-builder/regions";
 import POICatalogMap from "./POICatalogMap";
-import CartPanel from "./CartPanel";
+import ResultTimeline from "./ResultTimeline";
 import QuoteModal from "./QuoteModal";
 import AIRecommendPanel from "./AIRecommendPanel";
 import POICatalogGrid from "./POICatalogGrid";
-import TimelineSpike from "./_spike/TimelineSpike";
 
 interface Props {
   region: RegionSlug;
@@ -44,9 +43,6 @@ interface Props {
 export default function BuilderShell({ region, pois, center, mapId, apiKey }: Props) {
   const { cart, add, remove, reorder, has, clear } = useCart();
   const searchParams = useSearchParams();
-  // V2 redesign Phase 0 spike gate (still used in Phase 1 for `?spike=1`
-  // additive previews like <TimelineSpike />).
-  const isSpike = searchParams?.get("spike") === "1";
   const [quoteOpen, setQuoteOpen] = useState(false);
   const [focusedPoiKey, setFocusedPoiKey] = useState<string | null>(null);
   const resetViewRef = useRef<(() => void) | null>(null);
@@ -128,8 +124,11 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
             </div>
           </div>
 
-          {/* Right rail (lg+) — AI matcher + cart panel. Renders in normal
-              flow below the sticky map on <lg. 400px fixed width on lg+. */}
+          {/* Right rail (lg+) — AI matcher + result timeline. On <lg the rail
+              falls to normal flow below the sticky-top map. Phase 3 replaced
+              the old `<CartPanel>` (with its mobile bottom-sheet variant)
+              with `<ResultTimeline>`, which is always-visible: scrolls
+              normally on mobile, sticks alongside the map on lg+. */}
           <div className="lg:w-[400px] lg:flex-shrink-0 lg:overflow-y-auto lg:self-stretch">
             <AIRecommendPanel
               region={region}
@@ -137,13 +136,12 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
               onAccept={acceptRecommendation}
               onFocusPoi={focusPoi}
             />
-            <CartPanel
+            <ResultTimeline
               cart={cart}
               pois={pois}
               onRemove={remove}
               onReorder={reorder}
               onGetQuote={handleGetQuote}
-              getQuoteEnabled={true}
               cruiseBudgetMinutes={cruiseBudgetMinutes}
               onFocusPoi={focusPoi}
             />
@@ -162,11 +160,6 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
         onRemove={remove}
         onFocus={focusPoi}
       />
-
-      {/* V2 redesign Phase 0 spike — throwaway timeline preview at the
-          very bottom. Active only when `?spike=1`. Phase 3 will replace
-          this (and CartPanel) with the real ResultTimeline. */}
-      {isSpike ? <TimelineSpike cart={cart} pois={pois} /> : null}
 
       <QuoteModal
         open={quoteOpen}
