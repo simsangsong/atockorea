@@ -26,10 +26,10 @@
 
 | Field | Value |
 |---|---|
-| **Current phase** | Phase 8 ✅ complete (2026-05-18). Magazine spread landed. **Awaiting user sign-off to start Phase 9 (QuoteModal trust upgrade — 0.5d).** |
-| **Blocked on** | User confirmation to advance to Phase 9. |
+| **Current phase** | Phase 9 ✅ complete (2026-05-18). QuoteModal trust upgrade shipped. **Awaiting user sign-off to start Phase 10 (Thanks pending parity — 0.5d).** |
+| **Blocked on** | User confirmation to advance to Phase 10. |
 | **Last updated** | 2026-05-18 |
-| **Last commit touching this track** | `15d59495` — feat(itinerary-builder-redesign): Phase 7 — IntakeForm honesty + density |
+| **Last commit touching this track** | `5aeeb5fe` — feat(itinerary-builder-redesign): Phase 8 — POIDetailModal magazine spread |
 | **Owner** | simsangsong |
 | **Reviewers** | — |
 | **Related planners** | `docs/itinerary-builder-plan.md` (feature/data — Phases 1-7 DONE), `docs/itinerary-builder-uiux-master-plan-2026-05-18.md` (Phases A–E DONE; F–J **superseded by this plan**), `docs/landing-page-uiux-master-plan-v3-2026-05-17.md` (design language reference) |
@@ -46,8 +46,8 @@
 | 5 — Color semantic + amber discipline | ✅ complete | 2026-05-18 | 2026-05-18 | `15e091a5` |
 | 6 — AI panel evolution (presets + merge into timeline) | ✅ complete | 2026-05-18 | 2026-05-18 | `1e3c56d9` |
 | 7 — IntakeForm honesty + density pass | ✅ complete | 2026-05-18 | 2026-05-18 | `15d59495` |
-| 8 — POIDetailModal magazine spread | ✅ complete | 2026-05-18 | 2026-05-18 | (uncommitted) |
-| 9 — QuoteModal trust upgrade | ⏸ not started | — | — | — |
+| 8 — POIDetailModal magazine spread | ✅ complete | 2026-05-18 | 2026-05-18 | `5aeeb5fe` |
+| 9 — QuoteModal trust upgrade | ✅ complete | 2026-05-18 | 2026-05-18 | (uncommitted) |
 | 10 — Thanks pending parity | ⏸ not started | — | — | — |
 | 11 — Micro-motion + Korean typography | ⏸ not started | — | — | — |
 | 12 — Responsive sweep + Lighthouse + a11y | ⏸ not started | — | — | — |

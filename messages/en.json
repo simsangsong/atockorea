@@ -2173,8 +2173,14 @@
       "regionFallback": "{region}"
     },
     "quote": {
-      "title": "Get a custom quote",
+      "title": "Send for a personalized quote",
       "intro": "{count} stops in {region}. We'll quote logistics + pricing.",
+      "cartHeader": "Quoting these stops",
+      "andNMore": "and {n} more",
+      "eligibilityInstantLabel": "Likely instant quote",
+      "eligibilityInstantHint": "Your day looks well within our auto-quote range.",
+      "eligibilityManualLabel": "Manual review",
+      "eligibilityManualHint": "Our team will reply within 24h with a custom price.",
       "nameLabel": "Your name",
       "emailLabel": "Email",
       "dateLabel": "Travel date",

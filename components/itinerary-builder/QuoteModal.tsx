@@ -1,18 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { AlertCircle, X, Loader2, Mail, Sparkles } from "lucide-react";
+import { AlertCircle, X, Loader2, Mail, Sparkles, Zap, ImageIcon } from "lucide-react";
 import { useTranslations, useI18n } from "@/lib/i18n";
 import { homeBtnPrimary } from "@/lib/home/home-button-classes";
 import type { RegionSlug } from "@/lib/itinerary-builder/regions";
+import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 
 interface Props {
   open: boolean;
   onClose: () => void;
   cart: string[];
   region: RegionSlug;
+  /** Phase 9 — pass POIs so the modal header can render a thumbnail
+   *  strip. Optional for backward compat; falls back to count-only when
+   *  not provided. */
+  pois?: MatchPoiRow[];
 }
 
 /**
@@ -21,7 +26,7 @@ interface Props {
  *
  * On submit -> POST /api/itinerary/quote -> redirect to /itinerary-builder/thanks
  */
-export default function QuoteModal({ open, onClose, cart, region }: Props) {
+export default function QuoteModal({ open, onClose, cart, region, pois }: Props) {
   const t = useTranslations("itineraryBuilder.quote");
   const { locale } = useI18n();
   const searchParams = useSearchParams();
@@ -43,6 +48,28 @@ export default function QuoteModal({ open, onClose, cart, region }: Props) {
   const [language, setLanguage] = useState(initialLang || locale);
   const [notes, setNotes] = useState("");
   const [submitting, setSubmitting] = useState(false);
+
+  // V2 Phase 9 — eligibility heuristic (client-side hint, not authoritative).
+  // The server in-scope rules engine in lib/quote-engine/classify.ts is the
+  // source of truth at submit time; this banner just sets expectation.
+  // Heuristic: 1-8 stops + numeric party 1-12 → likely instant; else manual.
+  const eligibility: "instant" | "manual" = useMemo(() => {
+    const partyN = Number(party);
+    const partyOk = !party || (Number.isFinite(partyN) && partyN >= 1 && partyN <= 12);
+    const sizeOk = cart.length >= 1 && cart.length <= 8;
+    return partyOk && sizeOk ? "instant" : "manual";
+  }, [cart.length, party]);
+
+  // Cart thumbnails — up to 5 visible; "+N more" badge if cart exceeds.
+  const cartThumbs = useMemo(() => {
+    if (!pois) return [];
+    const byKey = new Map(pois.map((p) => [p.poi_key, p]));
+    return cart
+      .map((k) => byKey.get(k))
+      .filter((p): p is MatchPoiRow => !!p)
+      .slice(0, 5);
+  }, [cart, pois]);
+  const cartOverflow = pois ? Math.max(0, cart.length - cartThumbs.length) : 0;
   const [error, setError] = useState<string | null>(null);
 
   if (!open) return null;
@@ -133,6 +160,70 @@ export default function QuoteModal({ open, onClose, cart, region }: Props) {
           </div>
 
           <form onSubmit={handleSubmit} className="max-h-[calc(90vh-90px)] space-y-4 overflow-y-auto p-5 md:p-6">
+            {/* V2 Phase 9 — cart thumbnail strip. Resolves audit §J.13
+                "user doesn't remember what they're quoting". */}
+            {cartThumbs.length > 0 ? (
+              <div className="rounded-xl bg-slate-50 px-3 py-2.5 ring-1 ring-slate-200">
+                <p className="mb-2 text-eyebrow !text-slate-500">{t("cartHeader")}</p>
+                <ul className="flex items-center gap-1.5">
+                  {cartThumbs.map((p) => {
+                    const img = p.default_image_url || p.images?.[0] || null;
+                    return (
+                      <li
+                        key={p.poi_key}
+                        title={p.name_en}
+                        className="relative h-8 w-8 flex-shrink-0 overflow-hidden rounded-full bg-slate-100 ring-2 ring-white"
+                      >
+                        {img ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img src={img} alt="" loading="lazy" className="h-full w-full object-cover" />
+                        ) : (
+                          <ImageIcon className="absolute inset-0 m-auto h-3 w-3 text-slate-400" aria-hidden />
+                        )}
+                      </li>
+                    );
+                  })}
+                  {cartOverflow > 0 ? (
+                    <li className="ml-1 text-micro font-semibold text-slate-500">
+                      {t("andNMore", { n: cartOverflow })}
+                    </li>
+                  ) : null}
+                </ul>
+              </div>
+            ) : null}
+
+            {/* V2 Phase 9 — eligibility indicator. Client heuristic only;
+                server in-scope engine is the source of truth at submit. */}
+            <div
+              className={`flex items-start gap-2 rounded-lg px-3 py-2 ring-1 ${
+                eligibility === "instant"
+                  ? "bg-emerald-50 ring-emerald-200"
+                  : "bg-slate-50 ring-slate-200"
+              }`}
+            >
+              {eligibility === "instant" ? (
+                <Zap className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-600" aria-hidden />
+              ) : (
+                <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-slate-500" aria-hidden />
+              )}
+              <div className="min-w-0">
+                <p
+                  className={`text-caption font-bold ${
+                    eligibility === "instant" ? "text-emerald-800" : "text-slate-800"
+                  }`}
+                >
+                  {eligibility === "instant"
+                    ? t("eligibilityInstantLabel")
+                    : t("eligibilityManualLabel")}
+                </p>
+                <p className="mt-0.5 text-micro text-slate-600">
+                  {eligibility === "instant"
+                    ? t("eligibilityInstantHint")
+                    : t("eligibilityManualHint")}
+                </p>
+              </div>
+            </div>
+
             <p className="text-caption text-slate-500">
               {t("intro", { count: cart.length, region })}
             </p>

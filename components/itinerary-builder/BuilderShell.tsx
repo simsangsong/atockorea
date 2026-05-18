@@ -167,6 +167,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
         onClose={() => setQuoteOpen(false)}
         cart={cart}
         region={region}
+        pois={pois}
       />
     </ActiveStopProvider>
   );
