@@ -13,7 +13,7 @@
 |---|---|---|---|---|
 | Sprint 1 (컨버전 안전) | ✅ (코드 6/6 + 사용자 묵시 컨펌) | 2026-05-18 | 2026-05-18 | be22e631 |
 | Sprint 2 (토큰 + 색상) | ✅ (11/11 + acceptance 통과) | 2026-05-18 | 2026-05-18 | df4bf84e |
-| Sprint 3 (콘텐츠 접근성) | ⏳ | — | — | — |
+| Sprint 3 (콘텐츠 접근성) | 🔄 | 2026-05-18 | — | — |
 | Sprint 4 (Hero / Gallery) | ⏳ | — | — | — |
 | Sprint 5+ (장기 polish) | 📦 | — | — | — |
 
@@ -63,6 +63,7 @@
 | 2026-05-18 | Sprint 2.10 — Booking Support 5색 trust + 6색 steps → 1색 (Apple Card pattern) | f4980053 | TRUST_THEMES 5 variants (emerald/sky/amber/orange/rose grad) → TRUST_THEME_SHARED (bg-white + slate ring). pickStepTheme 6 variants (emerald/amber/indigo/orange/sky/rose) → STEP_NEUTRAL (slate-50 ring + foreground/80 icon). 차별화 = icon shape (TRUST_ICONS / MailCheck/BellRing/Moon/Sunrise/Compass/Sparkles). |
 | 2026-05-18 | Sprint 2.11 — Reviews summary 3% ghost gradient → solid pale + star token | 78559314 | rgba(46,92,138,0.03→200,149,108,0.02) ghost → bg-slate-50/70 + ring-slate-200/80. amber-400/500 (stars + progress bar) → var(--star-color) token. 통합 헤더 / 카테고리 bar는 Sprint 3+ 별개. |
 | 2026-05-18 | Sprint 2 acceptance — token화 residuals + ✅ closure | df4bf84e | matched-pax row amber-50/70 → var(--star-color)/[0.08]. unavailable badge rose-50/700 (Desktop + Sticky drawer) → var(--danger-soft-bg)/text. Recommendations star amber-400 + focus ring rose-300/60 → var(--star-color) + var(--ring)/40. ✅ typecheck clean. ✅ decoration usage in tour-detail-sections near-zero (남은 6 인스턴스는 모두 Sprint 3 binding At-A-Glance 6색 5개 + Sprint 4 binding Hero heart 1개). ✅ token count: 5 binding (brand/accent/success/danger/neutral) + 1 universal star = 6. Sprint 2 ✅. |
+| 2026-05-18 | Sprint 3 started — 콘텐츠 접근성 (accordion 다이어트 + At-A-Glance text pill + Subnav + eyebrow 단일화) | (이 커밋) | §A Sprint 3 → 🔄. 9 sub-task. accordion 8 → 2 (FAQ + Practical) binding 실행. 시작 작업: At-A-Glance 6색 → text pill (Sprint 2 남은 last decoration). |
 
 ## §D 보류 / parked
 
