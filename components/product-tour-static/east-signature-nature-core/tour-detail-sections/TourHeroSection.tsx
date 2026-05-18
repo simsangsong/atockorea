@@ -89,23 +89,19 @@ export function TourHeroSection({
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (slides.length <= 1 || !heroInView) return;
-    const id = window.setInterval(() => {
-      setActiveSlideIdx((i) => {
-        prevSlideIdxRef.current = i;
-        return (i + 1) % slides.length;
-      });
-    }, 6500);
-    return () => window.clearInterval(id);
-  }, [slides.length, heroInView]);
+  /*
+   * Sprint 4.1: autoplay OFF (§3 row 4.1 binding).
+   * 자동 슬라이드는 user-initiated swipe + dot indicator로 대체. reduce-motion
+   * 친화 + scroll-freeze 가드 (motion 추가 X) + 컨버전 우선 (사용자가
+   * 보고 싶은 사진에 머무를 수 있음).
+   */
 
   return (
     <section className="relative w-full">
       {/* Hero image — clean, no overlaid text. Save/share float top-right. */}
       <div
         ref={heroImageRef}
-        className="relative h-[29vh] min-h-[214px] max-h-[294px] sm:h-[33vh] sm:min-h-[266px] sm:max-h-[360px] w-full overflow-hidden rounded-b-2xl shadow-hero"
+        className="relative h-[29vh] min-h-[214px] max-h-[294px] sm:h-[33vh] sm:min-h-[266px] sm:max-h-[360px] lg:max-h-[420px] w-full overflow-hidden"
       >
         {slides.map((url, idx) => (
           <div
@@ -133,7 +129,7 @@ export function TourHeroSection({
             className="flex h-9 w-9 items-center justify-center rounded-full border border-white/30 bg-white/10 backdrop-blur-md transition-all hover:bg-white/20 active:scale-95"
           >
             <Heart
-              className={cn("h-4 w-4 transition-colors", saved ? "fill-rose-500 text-rose-500" : "text-white")}
+              className={cn("h-4 w-4 transition-colors", saved ? "fill-[var(--danger)] text-[var(--danger)]" : "text-white")}
               strokeWidth={saved ? 0 : 1.8}
             />
           </button>
