@@ -7,6 +7,58 @@
 
 ---
 
+## §A 상태 대시보드
+
+| Sprint | 상태 | 시작일 | 완료일 | 마지막 커밋 |
+|---|---|---|---|---|
+| Sprint 1 (컨버전 안전) | ⏳ | — | — | — |
+| Sprint 2 (토큰 + 색상) | ⏳ | — | — | — |
+| Sprint 3 (콘텐츠 접근성) | ⏳ | — | — | — |
+| Sprint 4 (Hero / Gallery) | ⏳ | — | — | — |
+| Sprint 5+ (장기 polish) | 📦 | — | — | — |
+
+## §B 결정 로그 (binding)
+
+| 날짜 | 결정 | 이유 |
+|---|---|---|
+| 2026-05-17 | §1.1 — Phase 1 묶음 분리 (Codex 채택) | 컨버전/회귀 측정 단위 ↓, QA 회귀 70 → 10 미만 |
+| 2026-05-17 | §1.2 — Hero 60vh 금지, max 360 → 420 데스크탑만 | 상세는 booking info first-fold 필수 |
+| 2026-05-17 | §1.3 — Radius role-based 4-tier (chip 8 / control 10-12 / card 12-16 / booking 18-20 / modal 20) | 기계적 3단계 → 역할별 강제 |
+| 2026-05-17 | §1.4 — Trust strip 위치 유지, 단색화 + 반복 5→2회 | 첫 fold ≠ booking card인 사용자에게 reassurance 신호 |
+| 2026-05-17 | §1.5 — 토큰 정의는 해당 PR 안에서 즉시 사용 | "토큰 후 적용" 분리 = dead token |
+| 2026-05-17 | §1.7 — Watermark 정책 단계: lightbox 우선, hero/gallery 정책 확인 후 | 저작권 검토 의존 |
+| 2026-05-17 | §2.1 — 색상 17 → 5 (brand/accent/success/danger/neutral) 강제 | "premium = 색의 의미 1:1 매핑" 양보 X |
+| 2026-05-17 | §2.2 — Type scale 정의 + ESLint enforcement + PR template gate | 토큰만 정의해도 dead, 강제 필요 |
+| 2026-05-17 | §2.3 — Accordion 8 → 2 (FAQ + Practical만) | Included/Fit/Support/Pickup accordion 폐기, first-fold 정보량 +60% |
+| 2026-05-17 | §2.4 — CTA + total price 통합 (Airbnb 패턴) | 가격 인지 분산 (3군데 등장) 제거 |
+| 2026-05-17 | §2.5 — At-A-Glance text pill (Easy/Moderate/Vigorous) | 6색 무지개 폐기, 텍스트 명확성 |
+| 2026-05-17 | §6.1 — 토큰 enforcement: ESLint warn + PR template + single source of truth | dead token 방지 가드 |
+| 2026-05-17 | §6.3 — 다국어 5종 LCP 회귀 가드 (CTA/Hero overlay PR) | 일/한자 폭 vs 영문 mismatch |
+| 2026-05-17 | §6.8 — Scroll freeze 가드: 새 motion 추가 금지, backdrop blur stack 금지, IntersectionObserver layout read 금지 | 사용자 보고 freeze 재발 방지 |
+| 2026-05-18 | **§B-P1 — Premium feel은 항상 위로만, 절대 downgrade 금지** | User 직접 지시 2026-05-18. **모든 권고/실행은 "more premium" 방향이어야 함. 절제(restraint)는 premium의 표현이지 cheap의 표현이 아님 — 단순화·통일·flat 변경도 Apple/Airbnb/Hermès 같은 글로벌 premium 수준에서 합리화 가능해야 적용. "단순해졌다 = 가난해졌다"로 읽히면 거부.** 회색 단색 권고가 premium-cheaper 회색이 아닌 premium-disciplined slate-900인지 매 변경마다 자체 검증. 색을 빼는 변경은 그 자리에 *더 정확한 시각 가중치* (typography hierarchy / spacing / photo size / shadow tier)가 들어가야 함. |
+
+## §C 변경 로그
+
+| 날짜 | 작업 | 커밋 | 비고 |
+|---|---|---|---|
+| 2026-05-17 | 마스터 플랜 v1 작성 (1차 Claude audit + Codex review 통합) | 초기 | 16개 결정, Sprint 1-4 정의 |
+| 2026-05-18 | §A 상태 대시보드 + §B 결정 로그 + §C 변경 로그 + §D parked + §8 세계최고 디자이너 audit 추가 | (이 커밋) | User 요청으로 픽셀단위 review 진행. 16 section + Drawer 분석. §B-P1 premium up-only 결정 신규. Sprint 1-4 작업 시작 전 단계. |
+
+## §D 보류 / parked
+
+| 항목 | 이유 | 재검토 시점 |
+|---|---|---|
+| Hero overlay (title + price) | 다국어 폭 측정 필요, LCP 회귀 위험 | Sprint 4 acceptance 후 |
+| Hero/Gallery watermark 일괄 제거 | 정책팀 컨펌 대기 | 정책 확정 후 |
+| Interactive map (Mapbox/Google JS) | 성능·비용·scroll-freeze 가드 충돌 가능 | Sprint 5+ |
+| Dark mode | app-shell-uiux 트랙과 통합 검토 | app-shell Sprint 진행 시 |
+| Reviews avatar hash-based hue | Sprint 5+ polish | 분기별 |
+| Loading skeleton 통일 | Sprint 5+ | 분기별 |
+| Focus ring 통일 (현재 4가지) | Sprint 5+ | 분기별 |
+| Animation tempo 4-step scale 통일 | Sprint 5+ | 분기별 |
+
+---
+
 ## 0. 한 줄 입장
 
 > **Codex의 리뷰는 70% 맞다. 나머지 30%는 안전 우선 관점이라 옳은 견제이지만, "디자인 시스템 부채"의 본질을 약간 완화해서 본다.**
@@ -453,3 +505,297 @@ risk: 낮음 — 시각 시스템 변경 없음, 컨버전 흐름 측정 가능
 | 토큰 정의 자체 | | | O |
 
 총평: Codex 7 / Claude 6 / 동률 3 → 둘 다 비슷한 비중. 좋은 페어 리뷰.
+
+---
+
+## §8 세계최고 디자이너 audit — 섹션별 픽셀 단위 review (2026-05-18)
+
+> User 요청 (2026-05-18): "Apple, Airbnb, Klook 등 글로벌 사이트들과의 거리, 업그레이드 방법, 방향을 한 섹션씩 픽셀 단위로 review." 16 section + TourStopDetailDrawer 모두 커버. **§B-P1 binding 하에 — 모든 권고는 premium up 방향, downgrade 절대 금지.**
+
+### §8.0 한 줄 입장
+
+> "좋은 데이터 + 좋은 사진 + 좋은 의도가 있는데, 시각 언어가 사방으로 흩어져 있어서 페이지가 자기 자신과 싸우고 있다." Apple/Airbnb/Klook 대비 가장 큰 거리는 "어떤 색이 뭘 의미하는지" **시스템이 부재**한다는 것. 픽셀 디테일은 의외로 정성스러운데, 디테일의 모음이 한 페이지 안에서 **7개 디자이너가 따로 작업한 느낌**을 줌.
+
+**글로벌 기준 대비:**
+- **Airbnb 숙소 상세**: 자기-억제(self-restraint)가 미덕. 하나의 brand color (rose-500), 80% monochrome, **사진이 감정을 담당**.
+- **Apple 제품 페이지**: 흰 배경 + 검은 텍스트 + 1 accent. 색이 product를 leak 못하게 막음.
+- **Klook 투어 상세**: 브랜드 orange를 CTA 1군데에만 사용, 나머지는 ink/sub-text grey.
+- **atockorea 투어 상세 (현재)**: 한 화면 안에 17색 (rose, copper, amber, emerald, orange, violet, sky, ...). "여행 = 감정 = 색"이라는 **잘못된 가정**.
+
+> **§B-P1 가드 인지**: 색을 줄이는 권고 = monochrome으로 가난해지자는 게 아님. Apple/Hermès 디자인 = 색이 적기 때문에 **typography·spacing·photo·material**의 가중치가 올라가서 premium함. 색을 뺀 자리에 **더 정확한 시각 가중치**가 들어가야 함.
+
+### §8.1 Hero Section (`TourHeroSection.tsx`)
+
+**보이는 것**:
+- L108: `h-[29vh] max-h-[360px] rounded-b-2xl shadow-hero` — 모바일 29vh
+- L161-169: Region eyebrow `rose-400 dot + rose-300 gradient line + rose-600 text 10px`
+- L172-178: H1 `text-[19px] sm:text-[22px] lg:text-[24px]`
+- L180-191: Pills — **rose 그라데이션 + rose ring + rose shadow 3중**
+- L193-234: 메타 strip — rose-200 border / divider, rose-500 아이콘 × 2, Star **copper #C8956C**
+
+**진단**:
+1. **색이 5가지 다른 의미로 분산** — Region(rose-600), Pills(rose-300/400), Clock(rose-500/80), Star(copper), Border(rose-200). rose가 4역할 + copper 별개.
+2. **Pills의 3중 효과 (gradient + ring + shadow)** — Airbnb pill: ring 1줄, 끝.
+3. **Region eyebrow dot + gradient line + text 3-piece** — Apple eyebrow: 단순 텍스트 1줄.
+4. **Star copper #C8956C** vs 다른 별(reviews/recommendations) amber-500 — 별 universal amber 통일 (Sprint 4 binding 동의).
+5. **rounded-b-2xl + shadow-hero** — 글로벌 기준: edge-to-edge full bleed (Sprint 4 binding 동의).
+
+**업그레이드 방향 (premium up):**
+- Hero pill `gradient + ring + shadow` 3중 → **flat ring-1 + 무광 white + 좀 더 큰 padding (px-3.5 py-1.5)** — 절제로 premium UP
+- Region eyebrow 3-piece → **text-only eyebrow** + 위/아래 spacing 늘림 (premium은 breathing room)
+- Clock/Footprints rose → slate-700 + 아이콘 strokeWidth 1.5 (얇아짐 = premium)
+- Star copper → amber-500 + size ↑ (h-3 → h-3.5)
+- Hero edge-to-edge + shadow-hero 제거 + 사진 위 더 큰 dynamic range (가벼운 vignette gradient bottom)
+
+### §8.2 AtAGlance (`TourAtAGlance.tsx`)
+
+**보이는 것**:
+- L6-13: `ROW_ACCENT_COLORS = [emerald, amber, orange, rose, violet, sky]` — **6색 무지개**
+- L36: `rounded-[26px]` — 마법의 숫자
+- L64-77: 5단계 progress dots, 같은 색
+
+**진단**:
+1. **6색 무지개는 페이지에서 가장 명확한 디자인 실수.** 색은 의미가 있을 때만 색. Cycling color = decoration as data lie.
+2. **`rounded-[26px]`** — role-based scale 위반 (§B §1.3). Body card는 12-16.
+
+**업그레이드 방향 (premium up):**
+- 6색 dot → **text pill** "Easy / Moderate / Vigorous" (Sprint 3 binding 동의)
+- Pill 디자인: `text-[11.5px] font-bold tracking-wide bg-slate-50 text-slate-900 ring-1 ring-slate-200 px-2.5 py-1` — **모노톤이지만 typography weight + tracking으로 premium 인지**
+- `rounded-[26px]` → `rounded-2xl` (16px)
+- Section heading + subtitle 위계 강화: heading text-h2 (단일 token), subtitle muted-foreground
+
+### §8.3 Atmosphere Gallery (`TourAtmosphereGallery.tsx`)
+
+**보이는 것**:
+- L104: bento — `bg-[#e8e2d9] p-1.5 + gap 4px` cream gutter
+- Lightbox: `bg-[#1A2332/96]`, nav hover `bg/25%`
+
+**진단**:
+1. **Cream gutter `#e8e2d9`** — "1990년대 갤러리". Airbnb/Klook/Apple Photos = 흰색 1-2px 또는 0 gap.
+2. **gap 4px 너무 두꺼움.**
+3. **Lightbox bg slate-blue 96%** — 사진 main attraction일 때 배경은 disappear해야 = **순수 검은색**.
+4. **Bento 구조 자체는 좋음** (2×2 hero + 1×2 column). 비율 OK.
+
+**업그레이드 방향 (premium up):**
+- `bg-[#e8e2d9] p-1.5 + gap-4px` → **bg-white p-0 + gap-1.5px** (또는 완전 edge-to-edge `gap-0`)
+- Lightbox bg → **bg-black** (Sprint 4 binding 동의)
+- Lightbox nav hover → bg/85% (가시성 ↑)
+- Bento 사진 위 hover 시 **scale 1.02 + 100ms ease-out** (premium magazine 느낌)
+- Caption은 hover 시에만 fade-up (Apple Photos 패턴)
+
+### §8.4 Day Flow (`TourDayFlowSection.tsx`)
+
+**보이는 것**:
+- L44-49: 48×48 round photo + 3중 shadow + ring-slate-900/[0.08]
+- L68-72: 11.5px name + 10.5px theme
+- L76-80: connector = 3-dot 점점점
+
+**진단**:
+1. **48px round photo는 너무 작음** — V2 빌더 게이트에서 검증, 56-64px 임계점.
+2. **3-dot connector** — 방향성 부재. Klook/Airbnb timeline = arrow icon.
+3. **3중 shadow + ring** = 작은 사진에 과한 디테일.
+
+**업그레이드 방향 (premium up, Sprint 4 binding 동의):**
+- 48 → **80px** round photo (Apple/Klook 표준)
+- 3중 shadow → **1중 elevated shadow** (단일 elevation tier)
+- Ring 제거 → 사진 자체가 main, ring은 unnecessary frame
+- 3-dot → **ArrowRight 아이콘** (Lucide, strokeWidth 1.5) + 양쪽 가는 fade
+- name 11.5px → **13px font-bold tracking-tight** + theme 11px text-muted-foreground (위계 명확)
+
+### §8.5 Timeline Stop Card (`TourTimelineSection.tsx`)
+
+**보이는 것**:
+- L54-62: 번호 원 02 — h-9 흰 배경 + multi-shadow + slate-400
+- L80-103: 80×56 photo strip 가로 carousel **카드 안에**
+- L119-122: category 10px text-slate-400 — 거의 안 보임
+
+**진단**:
+1. **80×56 photo strip carousel + Card 클릭** = 2개 인터랙션 zone 충돌.
+2. **번호 02 흰 원 + slate-400** — Apple/Airbnb timeline = single solid color (slate-900 또는 brand) + 흰 number.
+3. **Category 10px slate-400** — 정보 있어도 못 읽음. Klook = 13-14px slate-700.
+4. **점선 connector `from-slate-200/40 to-transparent`** — fade-out으로 시퀀스 끝이 모호.
+
+**업그레이드 방향 (premium up, Sprint 4 binding 동의):**
+- Photo strip carousel → **1장 cover 16:9 풀너비** (편집 격 1단계 UP)
+- 번호 02 흰 원 → **slate-900 원 + 흰 02** OR **amber-500 시퀀스** (itinerary-builder V2와 통일)
+- Category 10px slate-400 → **eyebrow-style amber-700 12.5px** (premium up: monochrome 아니라 *의미 있는 색*)
+- Connector fade → **solid dashed amber-300 1px** (V2 정책 통일)
+
+### §8.6 TourStopDetailDrawer — 사용자가 픽셀 단위 요청
+
+**Hero 영역 (L656-722):**
+- 4개 floating elements (Number / Photo counter / Close / Duration) — 224px hero에 과다
+- Close `bg-white/15 backdrop-blur-md` — 사진 위 거의 안 보임
+- Photo counter `right-16 top-4` close 옆 — Apple Photos / Klook = bottom-center 또는 top-center 표준
+
+**Photo selector strip (L726-763):**
+- Active: `ring-2 + ring-offset-2 + shadow + -translate-y-0.5` — 3가지 시각 효과 동시
+- Inactive hover scale 1.05 vs active scale 1.04 — active < hover (직관 위반)
+- `h-16 w-24` 좁음 — Airbnb 갤러리 썸넬 80×56 또는 96×64
+
+**Body Header (L767-784):**
+- H2 stop name `text-xl` (20px) — modal hero에서 24-28px가 표준
+- Category badge `bg-muted/80 px-2.5 py-0.5 text-[10.5px]` — Klook = 14px slate-700 텍스트
+- Time/duration row text-xs muted — 너무 약함
+
+**Highlights (L787-844):**
+- Bullet `bg-accent` (copper) — Hero star도 copper, bullet도 copper, **의미 없는 분산**
+- "Full description" pill `bg-primary/[0.08] + BookOpen + 10.5px primary` — 버튼 디테일 과함
+- Heading 10.5px uppercase tracking 0.12em — eyebrow spec이 페이지에서 또 다른 변형
+
+**Practical accordion (L437-495):**
+- Chevron open state `bg-foreground text-white shadow-md` — 1개 열림이 그렇게 dramatic해야 하나
+- 2 shadow tier (`shadow-premium` vs `shadow-premium-elevated`) 동시 운영 = 카드 자체가 premium-feel 메시지를 3가지 방법으로 송신 (자기 자랑)
+
+**업그레이드 방향 (premium up):**
+
+```
+✗ Hero 4 floating elements
+✓ Number + Close 2개만 + Duration은 body header로 이동
+   (Apple Photos / Airbnb listing modal 패턴)
+
+✗ Close bg-white/15 backdrop-blur-md
+✓ bg-white/95 + text-slate-900 (가시성 = 사용성, 사용성도 premium)
+
+✗ Photo counter top-right next to close
+✓ Bottom-center "1/8" 또는 top-center
+   (Apple Photos 패턴)
+
+✗ Photo selector ring-2 + ring-offset + shadow + translate 4중
+✓ ring-2 ring-brand + 약한 scale 1.02 + 동일 elevation
+   (Apple Photos active = 최소한의 차이로 maximum 인지)
+
+✗ Stop name 20px
+✓ 24-26px font-semibold tracking-tight
+   (modal hero에서 typography가 voice — premium은 큰 글자)
+
+✗ Category bg-muted px-2.5 py-0.5 text-10.5px badge
+✓ text-[12.5px] eyebrow text-amber-700 uppercase tracking-wide
+   (badge UI 폐기 → 텍스트 위계로 — Apple/Klook 패턴)
+
+✗ Bullet bg-accent (copper)
+✓ bg-amber-500 (단일 brand identity color, V2 itinerary-builder와 통일)
+
+✗ "Full description" pill button with icon
+✓ Underlined text-link "Read full description →" 
+   (Klook 패턴 — 사이드 텍스트 링크, UI noise 0)
+
+✗ Practical accordion open: bg-foreground chevron, 2 shadow tier
+✓ chevron 회전만 + 단일 shadow tier
+   (Hermès UI: state change는 가장 작은 신호로)
+```
+
+### §8.7 Pickup/Dropoff (`TourPickupDropoffSection.tsx`)
+
+**진단**: Copper marker (#C8956C) 정책 — copper gradient carrier 폐기 (§B §2.1). **Google static map marker도 copper → slate-900 (pickup) + slate-500 (dropoff)** 으로 통일.
+
+**업그레이드 방향**: 흰 카드 + slate text + slate-900 marker icon (geographic clarity). 색은 0개에서 1개로 *추가*되는 게 premium, 5개에서 1개로 *줄어드는* 것도 premium — 핵심은 의미.
+
+### §8.8 Included Section (`TourIncludedSection.tsx`)
+
+**진단**:
+1. **2개 다른 emerald tint** (`#f6fcf8` accordion bg, `#f0faf4` inner panel) = 디자이너 결정 부재
+2. **Emerald wash 전체** — medical UI 느낌. Klook included = 흰 카드 + emerald checkmark만
+3. **accordion 닫힘 default** — critical info hiding (§B §2.3 binding으로 폐기)
+
+**업그레이드 방향 (premium up):**
+- 흰 카드 + emerald-600 Check 아이콘 only (색 의미: 검증된 포함)
+- "5개 always visible + Show all link" 패턴 (Klook 표준)
+- excluded 항목: rose-500 X 아이콘 (semantic only, 카드 전체에 색 없음)
+
+### §8.9 Fit (`TourFitSection.tsx`)
+
+**업그레이드**: amber/copper bg → 흰 카드 + 2-col flat (Best left / Less ideal right). 3중 nested accordion 폐기 (§B binding). **Premium**은 *fewer click required* 통해 표현됨.
+
+### §8.10 Practical (`TourPracticalDetails.tsx`)
+
+**진단**: weather 4-layer gradient (bank UI 수준), seasonal 4계절 4색.
+**업그레이드**: 1 row + season icon (색은 icon에만, 카드 전체는 white). Apple weather strip 패턴.
+
+### §8.11 Booking Support (`TourBookingSupportSection.tsx`)
+
+**진단**: 5색 trust + 6색 steps = 11색.
+**업그레이드**: 1색 + horizontal timeline mini (Apple Card 패턴) + 단일 elevation.
+
+### §8.12 Reviews (`TourReviewsSection.tsx`)
+
+**진단**: 3% opacity gradient = invisible ghost. Verified 10px 회색 = 신뢰의 가장 약한 표현.
+**업그레이드 (premium up)**:
+- **Airbnb-style 통합 헤더**: "9.7 · 12,453 reviews · 4.9 ★" 한 줄, font-size 28-32px
+- 분류 카테고리 (Communication / Value / Cleanliness 등) **시각 bar with brand color** (단일 색, 의미 있는 색)
+- Verified 표시 → **emerald check + 14px 정성 텍스트** (사회적 증거 ↑)
+
+### §8.13 Recommendations (`TourRecommendationsSection.tsx`)
+
+**진단**: 2-layer dark gradient 너무 무거움.
+**업그레이드**: 사진 그대로 + Title slide-up on hover (Klook 패턴) + 1-color price chip.
+
+### §8.14 FAQ (`TourFaqSection.tsx`)
+
+**진단**: 유지 (Sprint 3 binding).
+**업그레이드**: chevron container dramatic open state 제거 (Practical과 동일 정책).
+
+### §8.15 Tabs Nav (`TourTabsNav.tsx`)
+
+**업그레이드 (Sprint 3 binding)**: pill active → **underline 2px brand color** (Apple TabBar 패턴) + 양쪽 fade + IntersectionObserver top-most 정렬.
+
+### §8.16 Desktop Booking Card + Sticky Bar
+
+**업그레이드 (Sprint 1 binding)**: CTA `bg-foreground → bg-primary`, "Reserve · $1,247 total" 통합, drawer 0.30s, drag handle + swipe-down dismiss.
+
+### §8.17 페이지 전체 anti-pattern 정리
+
+1. **Radius 5종 혼용** (`rounded-[26px]`, `[20px]`, `xl`, `2xl`, `md`) → role-based 4종 (§B §1.3)
+2. **`text-[10.5/11.5/12.5/13.5]px` 0.5px granularity** → 6-step type scale 정의 + ESLint 강제 (§B §2.2)
+3. **Shadow 6-layer ad-hoc 정의** → 3-tier role-based (flat / elevated / deep)
+4. **opacity scaler 7-8개** (`/[0.06]`, `/[0.08]`, `/30`, `/85` ...) → 정의된 step 2-3개
+5. **Eyebrow class 10가지 spec** → 단일 `.eyebrow` utility
+6. **Icon strokeWidth 1.8 / 2 / 2.25 혼용** → 단일 strokeWidth
+7. **transition duration 10가지** (0.18 ~ 0.78) → 4-step scale (Sprint 5+, §6.4)
+
+### §8.18 글로벌 격차 한 줄
+
+| 기준 | 현재 (10점) | Sprint 1-4 완료 후 |
+|---|---|---|
+| 색상 시스템 | 3 | 8 |
+| 타이포 위계 | 4 | 7 |
+| Shadow/Elevation | 5 | 7 |
+| Radius scale | 4 | 8 |
+| Information hierarchy | 5 | 8 |
+| 사진 처리 (gallery/drawer) | 6 | 8 |
+| 컴포넌트 발견성 | 4 | 8 |
+| CTA 통일성 | 5 | 9 |
+| **종합** | **B-** | **A-** |
+
+### §8.19 §B-P1 적용 self-check 표
+
+§B-P1 binding ("premium up only, never downgrade")에 위 권고가 위배되지 않는지 self-check:
+
+| 권고 | "더 premium" 으로 읽히는 근거 | downgrade 위험? |
+|---|---|---|
+| Hero rose 분산 제거 | typography hierarchy + photo가 메인 (Airbnb pattern) | 없음 — 색이 줄어도 위계 정확성 ↑ |
+| Gallery cream gutter → white | Apple Photos / Klook 글로벌 표준 | 없음 — 매거진 spread 느낌 ↑ |
+| At-A-Glance 6색 → text pill | typography weight + tracking → premium typography | 있음 — *단색 fade 처리하면 cheaper로 읽힘*. 권고: pill의 ring 1px + slate-900 text는 mute가 아니라 *editorial weight* |
+| Bullet copper → amber 단일 | identity color 일관 → premium discipline | 없음 — 별 + bullet + ribbon 모두 같은 amber → 시스템 |
+| Photo 48 → 80px | 사진 = main → 사진을 더 크게 = 더 premium | 없음 — Klook/Apple 표준 |
+| Accordion 폐기 → 펼침 | "숨김"은 cheap, "정성 노출"이 premium | 없음 — first-fold +60% 정보 |
+| Practical 4-layer gradient → 1 row | bank UI 그라데이션 = cheap 정성, 통일된 typography = premium | 있음 — 권고: row가 *minimal*이 아니라 *editorial precise* (Apple weather 패턴) |
+| Chevron `bg-foreground` open state 제거 | Hermès UI = state change 최소 신호 = 우아함 | 없음 — drama 제거 = premium |
+| Drawer Close bg-white/15 → white/95 | usability ↑ = premium experience | 없음 — UI invisible은 cheap, **usable + invisible**이 premium |
+| Stop name 20 → 24-26px | modal hero typography weight = premium | 없음 — Airbnb 30px+ |
+
+**자체 검증 결과**: 모든 권고가 §B-P1 binding 통과. 단 2가지 (At-A-Glance text pill, Practical 1 row)는 *실행할 때 특히 typography weight + spacing이 premium editorial 격이도록* 주의 필요.
+
+### §8.20 권고 → Sprint 매핑
+
+§8 audit의 모든 권고가 §3 Sprint 1-4 안에 들어가는지 확인:
+
+- Sprint 1: §8.16 (Booking card / sticky bar / drawer 속도)
+- Sprint 2: §8.1 / §8.7 / §8.8 / §8.9 / §8.10 / §8.11 / §8.12 (색상 다이어트)
+- Sprint 3: §8.2 / §8.6 (drawer 일부) / §8.14 / §8.15 (콘텐츠 + accordion + tabs)
+- Sprint 4: §8.3 / §8.4 / §8.5 / §8.13 (Hero / Gallery / Day Flow / Stop card / Recommendations)
+- §8.17 anti-pattern: Sprint 2 (token enforcement) + Sprint 5+ (animation tempo)
+
+신규 항목 없음 — 모두 기존 Sprint scope 안. 추가 §C 변경 로그 1줄 + §A 대시보드 진행 추적만 하면 됨.
+
+---
