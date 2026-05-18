@@ -144,19 +144,47 @@ export function TourPracticalDetails({
   useEffect(() => {
     if (!useLiveWeather) return;
     let cancelled = false;
+
+    /**
+     * 2026-05-18 fix: 이전엔 silent fail (catch 빈 블록) — fetch 한 번 실패하면
+     * 사용자에게는 "—" 표시만 남고 dev/PM 모두 원인 알 수 없음. console.warn
+     * + 1회 retry (800ms backoff) 추가. retry도 실패하면 static fallback.
+     */
+    async function fetchOnce(): Promise<ForecastApiPayload | null> {
+      const qs = new URLSearchParams({ locale });
+      if (tourProductSlug) qs.set("slug", tourProductSlug);
+      const res = await fetch(`/api/weather/forecast?${qs.toString()}`, {
+        cache: "no-store",
+      });
+      if (!res.ok) {
+        console.warn(`[TourPracticalDetails] weather fetch HTTP ${res.status}`);
+        return null;
+      }
+      const data = (await res.json()) as ForecastApiPayload & { error?: string };
+      if (data.error) {
+        console.warn(`[TourPracticalDetails] weather API error: ${data.error}`);
+        return null;
+      }
+      if (!data?.current || !data?.days?.length) {
+        console.warn("[TourPracticalDetails] weather API returned no current/days");
+        return null;
+      }
+      return data;
+    }
+
     (async () => {
       try {
-        const qs = new URLSearchParams({ locale });
-        if (tourProductSlug) qs.set("slug", tourProductSlug);
-        const res = await fetch(`/api/weather/forecast?${qs.toString()}`, {
-          cache: "no-store",
-        });
-        if (!res.ok || cancelled) return;
-        const data = (await res.json()) as ForecastApiPayload & { error?: string };
-        if (cancelled || data.error || !data?.current || !data?.days?.length) return;
-        setLiveForecast(data);
-      } catch {
-        /* keep static strip */
+        let data = await fetchOnce();
+        if (!data && !cancelled) {
+          await new Promise((r) => setTimeout(r, 800));
+          if (cancelled) return;
+          data = await fetchOnce();
+        }
+        if (data && !cancelled) {
+          setLiveForecast(data);
+        }
+      } catch (err) {
+        console.warn("[TourPracticalDetails] weather fetch threw:", err);
       }
     })();
     return () => {
