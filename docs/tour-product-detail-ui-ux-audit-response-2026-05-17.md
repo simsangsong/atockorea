@@ -13,8 +13,8 @@
 |---|---|---|---|---|
 | Sprint 1 (컨버전 안전) | ✅ (코드 6/6 + 사용자 묵시 컨펌) | 2026-05-18 | 2026-05-18 | be22e631 |
 | Sprint 2 (토큰 + 색상) | ✅ (11/11 + acceptance 통과) | 2026-05-18 | 2026-05-18 | df4bf84e |
-| Sprint 3 (콘텐츠 접근성) | ✅ (9/9 + acceptance 통과) | 2026-05-18 | 2026-05-18 | 51d586ac |
-| Sprint 4 (Hero / Gallery) | ⏳ | — | — | — |
+| Sprint 3 (콘텐츠 접근성) | ✅ (9/9 + §B-P2 partial reversal Fit/Support) | 2026-05-18 | 2026-05-18 | c2e72479 |
+| Sprint 4 (Hero / Gallery) | 🔄 | 2026-05-18 | — | — |
 | Sprint 5+ (장기 polish) | 📦 | — | — | — |
 
 ## §B 결정 로그 (binding)
@@ -72,7 +72,10 @@
 | 2026-05-18 | Sprint 3.2 — Fit 3중 nested 해제 → 2-col flat + Route Logic 펼침 | 6fda4d78 | open / showLessIdeal / showLogic 3 state + 3 ChevronDown 폐기. Best For + Less Ideal 2-col grid (sm:grid-cols-2) + eyebrow per column. Route Logic 별개 card 항상 펼침. accordion count 6→3. |
 | 2026-05-18 | Sprint 3.5 — Support default-open accordion 폐기 → 항상 펼친 timeline | addff9d8 | showTimeline state + button + ChevronDown 폐기. card header (h3 + subtitle) + border-t로 분리된 timeline 영역. Mobile vertical + Desktop horizontal 유지. accordion count 3→2 (FAQ + Practical만 남음 ✅ binding). |
 | 2026-05-18 | Sprint 3.6+3.7 — section heading + eyebrow token 통일 (12 sections) | 51d586ac | 12 section heading variants → text-title (단일). subtitle 변이 → mt-1.5 text-sm muted leading-relaxed. eyebrow 10 인스턴스 (6 spec variants) → .text-eyebrow utility + color class 분리. Sprint 3 acceptance: ✅ typecheck clean / ✅ accordion count = 2 / ✅ eyebrow class count = 1. |
-| 2026-05-18 | Sprint 3 ✅ — 9/9 + acceptance 통과 | 29e42cde | accordion 8→2 binding 달성 (Pickup/Included/Fit Best+Less+Route/Support 5 폐기). eyebrow 10→1 spec. section heading 12 통일. At-A-Glance 6색 text pill. Subnav underline + 양쪽 fade + IO top-most. |
+| 2026-05-18 | Sprint 3 ✅ (first attempt) — 9/9 + acceptance 통과 | 29e42cde | accordion 8→2 binding 달성. 단 §B-P2 reversal 동반 (다음 row). |
+| 2026-05-18 | §B-P2 신규 + Sprint 3.2 partial reversal (Fit Less Ideal + Route Logic 접힘 복귀) | a549c540 | User 직접 지시 ("정보 과잉이라서 어떤 부분은 접어 놓은 상태였다 - 일괄로 펼치면 고객 입장에서는 읽고싶은 마음이 뚝 떨어진다"). §B-P2 binding: "1차 정보만 default 펼침, 2차/3차는 점진 노출". Less Ideal (negative) default closed nested + Route Logic (deep dive) default closed accordion 복귀. Best For는 1차로 default visible 유지. |
+| 2026-05-18 | Sprint 3.5 partial reversal — Support timeline default-open accordion 복귀 (§B-P2) | c2e72479 | 1차 신뢰 신호 default visible 유지하되 사용자 toggle escape 제공 (showTimeline default true). useState/ChevronDown import 복귀. Klook/Airbnb 표준 — default open + 사용자 선택형 토글. |
+| 2026-05-18 | Sprint 4 started — Hero / Gallery 안전 개선 (§B-P2 가드 적용, 정보 과밀 회피) | (이 커밋) | §A Sprint 4 → 🔄. 12 sub-task. Hero overlay (title+price)는 §D parked 유지 — 정보 과밀 위험. 시각 단순화 (autoplay OFF, pill 3중→flat, gutter white, gradient 약화) + 사진 크기 향상 (day-flow 80px, max-h 420) 위주. 한 번에 X — 작은 묶음 별 별도 PR + scroll-freeze 가드. |
 
 ## §D 보류 / parked
 
