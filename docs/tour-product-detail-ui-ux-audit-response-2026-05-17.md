@@ -86,6 +86,7 @@
 | 2026-05-18 | Sprint 4 ✅ — 12/12 + 자동 검증 통과 | (이 커밋) | typecheck clean. Hero overlay (title+price)는 §D parked 유지. Lightbox watermark는 정책 확정 대기 (§D). 사용자 시각 검증 필요: scroll-freeze 재테스트 + 5-locale LCP + 모바일 hero/gallery 회귀. |
 | 2026-05-18 | §B-P3 신규 + Sprint 4.3/4.4 partial reversal (Hero shadow-hero + pill 2-step shadow tier 복귀) | 6824bc58 | User 직접 지시 ("색상 단일화, 미니멀리즘 OK, 그러나 premium 디자인 느낌 버리고 flat만 추구하는 오류 금지, 고급스러운 레이아웃 유지"). §B-P3 binding: 색 단순화는 OK, layout premium (elevation/shadow/spacing) 절대 손상 금지. flat-only = cheap-flat ≠ premium-restraint. Hero shadow-hero 복귀 + pill에 single shadow tier 복귀. |
 | 2026-05-18 | §B-P3 follow-up — Seasonal + Reviews summary + Stop card 사진 frame elevation 보강 | ba3c712a | 3 영역 추가 보강: SEASON_THEME_SHARED + FALLBACK에 single shadow tier (premium card feel), Reviews summary card (reviews section hero block)에 single shadow tier, Stop card 1장 cover 사진 영역에 inner ring frame (gallery bento와 동일). 색 변경 0, elevation/frame만. |
+| 2026-05-18 | Hero region eyebrow dot+line 복구 + section heading 22-26→18-20px (density 회복) | fe8eaba6 | User 직접 지시 — "hero 밑 금색 글씨 앞 선이 사라져서 글씨만 오른쪽에 둥둥 떠 있다 + 다 펼쳐서 페이지가 복잡해진 부분 복구". 1) Hero region eyebrow dot h-1.5→h-2 + halo, line h-px→h-[2px] + rounded, opacity 강화 (3-piece editorial eyebrow 가시성 회복). 2) scope CSS .text-title clamp 22-26px → 18-20px (이전 text-lg 격, hero h1만 큰 typography로 강조). text-section도 16-18로 재정렬. 12 section heading 자동 적용, 모바일 vertical density ↓. |
 
 ## §D 보류 / parked
 
