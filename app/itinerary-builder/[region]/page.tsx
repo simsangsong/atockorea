@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { ChevronLeft } from "lucide-react";
 import { createServerClient } from "@/lib/supabase";
 import { SitePageShell } from "@/src/components/layout/SitePageShell";
 import {
@@ -77,26 +79,38 @@ export default async function ItineraryBuilderRegionPage({
   return (
     <SitePageShell>
       <main className="min-h-screen bg-slate-50">
-        <header className="px-4 pt-8 pb-4 md:px-6 md:pt-12">
-          <div className="mx-auto max-w-7xl">
-            <p className="mb-1 text-eyebrow">{headline.eyebrow}</p>
-            <h1 className="text-display text-slate-900">{headline.title}</h1>
-            <p className="mt-2 max-w-2xl text-body text-slate-600">{headline.subtitle}</p>
+        {/* V2 Phase 1 — thin breadcrumb bar replaces the old hero header
+            (display title + subtitle). The user already navigated here
+            from the intake form; a hero re-greeting is friction. The map
+            below and the AI panel speak for the region's character. */}
+        <nav
+          aria-label="Itinerary builder navigation"
+          className="border-b border-slate-200 bg-white/85 backdrop-blur-sm"
+        >
+          <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-6 lg:px-8">
+            <Link
+              href="/itinerary-builder"
+              className="inline-flex items-center gap-1 text-micro font-semibold text-slate-500 transition-colors hover:text-slate-900"
+            >
+              <ChevronLeft className="h-3.5 w-3.5" aria-hidden />
+              Plan a different region
+            </Link>
+            <div className="min-w-0 flex-shrink text-right">
+              <h1 className="truncate text-h3 leading-none text-slate-900">{headline.title}</h1>
+              <p className="mt-0.5 truncate text-micro text-slate-500">
+                {pois.length} stops · {headline.eyebrow}
+              </p>
+            </div>
           </div>
-        </header>
+        </nav>
 
-        <section className="pb-12">
-          <BuilderShell
-            region={region}
-            pois={pois}
-            center={center}
-            mapId={process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID || ""}
-            apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}
-          />
-          <p className="mt-3 px-4 text-center text-micro text-slate-500 md:px-0">
-            {pois.length} curated points of interest in this region.
-          </p>
-        </section>
+        <BuilderShell
+          region={region}
+          pois={pois}
+          center={center}
+          mapId={process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID || ""}
+          apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}
+        />
       </main>
     </SitePageShell>
   );

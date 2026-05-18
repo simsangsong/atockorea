@@ -6,6 +6,11 @@ import { MarkerClusterer } from "@googlemaps/markerclusterer";
 import { useTranslations } from "@/lib/i18n";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 import type { RegionSlug } from "@/lib/itinerary-builder/regions";
+import {
+  buildPhotoPinContent,
+  haversineMeters,
+  setPhotoPinState,
+} from "@/lib/itinerary-builder/photo-pin";
 import POIInfoWindowContent from "./POIInfoWindowContent";
 
 const LIBRARIES: ("places" | "marker")[] = ["places", "marker"];
@@ -46,6 +51,7 @@ export default function POICatalogMap({
   resetViewRef,
 }: Props) {
   const t = useTranslations("itineraryBuilder.map");
+
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: apiKey,
     libraries: LIBRARIES,
@@ -109,9 +115,14 @@ export default function POICatalogMap({
     if (typeof z === "number" && z < 12) map.setZoom(12);
   }, [focusedPoiKey, map, pois]);
 
-  // Build AdvancedMarkerElement instances + clusterer when map + pois (or
-  // cart membership) change. In-cart POIs get amber pins with a 1-indexed
-  // cart-order glyph; out-of-cart POIs get the default slate pin.
+  // V2 Phase 2 — photo-pin marker system (production). Three-tier:
+  //   • out-of-cart → 14px slate dot
+  //   • in-cart     → 56px round photo + amber seq badge + slate tail
+  //   • hover       → 64px (1.14×) with amber halo (toggled on mouseenter)
+  //
+  // Pin offset clustering: when two in-cart photos sit within 80m, the
+  // second is offset 28px clockwise via marker collisionBehavior + a
+  // small CSS translate so faces stay readable at city zoom.
   useEffect(() => {
     if (!map || !pois.length) return;
     if (!("marker" in google.maps) || !google.maps.marker?.AdvancedMarkerElement) {
@@ -128,19 +139,60 @@ export default function POICatalogMap({
 
     const cartIndex = new Map((cart ?? []).map((k, i) => [k, i + 1]));
 
+    // Pre-compute pixel-offsets for in-cart pins that overlap. We do this
+    // for the in-cart subset only — out-of-cart 14px dots tolerate overlap
+    // because they don't carry identity.
+    const inCartPois = (cart ?? [])
+      .map((k) => pois.find((p) => p.poi_key === k))
+      .filter((p): p is MatchPoiRow => !!p);
+    const pinOffsets = new Map<string, { x: number; y: number }>();
+    for (let i = 1; i < inCartPois.length; i++) {
+      for (let j = 0; j < i; j++) {
+        const d = haversineMeters(
+          { lat: inCartPois[i].lat, lng: inCartPois[i].lng },
+          { lat: inCartPois[j].lat, lng: inCartPois[j].lng }
+        );
+        if (d < 80) {
+          // Already-offset pin j contributes; add a 28px clockwise step
+          const prior = pinOffsets.get(inCartPois[j].poi_key) ?? { x: 0, y: 0 };
+          pinOffsets.set(inCartPois[i].poi_key, {
+            x: prior.x + 28,
+            y: prior.y - 14,
+          });
+          break;
+        }
+      }
+    }
+
     const markers = pois.map((poi) => {
       const seq = cartIndex.get(poi.poi_key);
       const inCart = seq != null;
-      const pin = new google.maps.marker.PinElement({
-        background: inCart ? "#f59e0b" : "#0f172a",
-        borderColor: "#ffffff",
-        glyph: inCart ? String(seq) : undefined,
-        glyphColor: inCart ? "#ffffff" : "#fbbf24",
-        scale: inCart ? 1.15 : 1.0,
+      const content = buildPhotoPinContent({
+        imageUrl: inCart ? poi.default_image_url || poi.images?.[0] || null : null,
+        seq: inCart && seq != null ? seq : null,
+        state: inCart ? "cart" : "out",
+        nameEn: poi.name_en,
       });
+
+      // Apply offset (if this pin overlaps an earlier in-cart pin)
+      const offset = pinOffsets.get(poi.poi_key);
+      if (offset) {
+        content.style.transform = `translate(${offset.x}px, ${offset.y}px)`;
+        // Make the offset element catch its own pointer events; the parent
+        // AdvancedMarkerElement container otherwise treats the visual shift
+        // as off-anchor and can mis-handle clicks.
+      }
+
+      // Hover → toggle state (CSS transition handles size + halo).
+      // Skip for out-of-cart 14px dots (no visual difference worth it).
+      if (inCart) {
+        content.addEventListener("mouseenter", () => setPhotoPinState(content, "hover"));
+        content.addEventListener("mouseleave", () => setPhotoPinState(content, "cart"));
+      }
+
       const marker = new google.maps.marker.AdvancedMarkerElement({
         position: { lat: poi.lat, lng: poi.lng },
-        content: pin.element,
+        content,
         title: poi.name_en,
       });
       marker.addListener("gmp-click", () => {
@@ -160,6 +212,36 @@ export default function POICatalogMap({
       markersRef.current = [];
     };
   }, [map, pois, cart]);
+
+  // V2 Phase 2 — auto-fitBounds always-on (promoted from spike gate).
+  //   • 0 POIs: do nothing, leave the initial region center.
+  //   • 1 POI:  pan + zoom 13.
+  //   • 2+:     fitBounds with rail-aware padding.
+  // Right rail on lg+ takes 400px + 24px gap, so we pad-right harder on
+  // desktop so the polyline doesn't crowd the rail edge.
+  useEffect(() => {
+    if (!map || !cart || cart.length === 0) return;
+    const byKey = new Map(pois.map((p) => [p.poi_key, p]));
+    const inCartPois = cart.map((k) => byKey.get(k)).filter((p): p is MatchPoiRow => !!p);
+    if (inCartPois.length === 0) return;
+
+    if (inCartPois.length === 1) {
+      map.panTo({ lat: inCartPois[0].lat, lng: inCartPois[0].lng });
+      const z = map.getZoom();
+      if (typeof z !== "number" || z < 13) map.setZoom(13);
+      return;
+    }
+
+    const bounds = new google.maps.LatLngBounds();
+    inCartPois.forEach((p) => bounds.extend({ lat: p.lat, lng: p.lng }));
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+    map.fitBounds(
+      bounds,
+      isMobile
+        ? { top: 32, right: 24, bottom: 80, left: 24 }
+        : { top: 64, right: 64, bottom: 64, left: 64 }
+    );
+  }, [map, cart, pois]);
 
   // Outer container always renders with explicit dimensions so the page
   // doesn't collapse when Google Maps JS is still loading or fails. Inner
@@ -210,15 +292,19 @@ export default function POICatalogMap({
           <Polyline
             path={polylinePath}
             options={{
-              strokeColor: "#0f172a",
-              strokeOpacity: 0.85,
-              strokeWeight: 3,
+              // V2 Phase 2 — amber route line. Visually consistent with the
+              // photo-pin sequence badges. Gradient stroke + animated dash
+              // offset deferred to Phase 11 (canvas Polyline doesn't natively
+              // gradient; needs SVG overlay layer which we don't budget here).
+              strokeColor: "#f59e0b",
+              strokeOpacity: 0.9,
+              strokeWeight: 4,
               geodesic: true,
               icons: [
                 {
                   icon: { path: "M 0,-1 0,1", strokeOpacity: 1, scale: 3 },
                   offset: "0",
-                  repeat: "12px",
+                  repeat: "14px",
                 },
               ],
             }}

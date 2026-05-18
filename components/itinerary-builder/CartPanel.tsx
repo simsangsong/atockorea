@@ -248,28 +248,31 @@ export default function CartPanel({
     </div>
   );
 
-  // Desktop side panel (md+) — sibling pane on the right of the map
-  const desktopPanel = (
-    <aside
-      className="hidden md:flex md:w-[360px] md:flex-shrink-0 md:flex-col md:border-l md:border-slate-200 md:bg-slate-50/60 xl:w-[380px]"
+  // V2 redesign Phase 1 — inline section in the right rail (lg+).
+  // No more fixed 360px sidebar, no more border-l splitting from the
+  // map; the surrounding rail in BuilderShell.tsx already constrains the
+  // width. Mobile + tablet (<lg) keep the bottom-sheet pattern below.
+  const inlinePanel = (
+    <section
+      className="hidden bg-white px-4 py-5 ring-1 ring-slate-200 md:px-6 md:py-6 lg:block lg:rounded-2xl"
       aria-label={t("title")}
     >
-      <header className="border-b border-slate-200 bg-white/80 px-4 py-2.5 backdrop-blur-sm">
-        <div className="flex items-center justify-between">
-          <h2 className="text-caption font-bold uppercase tracking-wide text-slate-900">{t("title")}</h2>
-          <span className="rounded-full bg-amber-100 px-2 py-0.5 text-micro font-bold text-amber-800">
-            {t("poiCount", { count: cartPois.length })}
-          </span>
-        </div>
+      <header className="mb-3 flex items-center justify-between">
+        <h2 className="text-caption font-bold uppercase tracking-wide text-slate-900">{t("title")}</h2>
+        <span className="rounded-full bg-amber-100 px-2 py-0.5 text-micro font-bold text-amber-800">
+          {t("poiCount", { count: cartPois.length })}
+        </span>
       </header>
-      <div className="flex-1 overflow-y-auto">{listBody}</div>
+      <div className="max-h-[460px] overflow-y-auto">{listBody}</div>
       {footer}
-    </aside>
+    </section>
   );
 
-  // Mobile bottom sheet — collapsed handle bar at bottom, expanded sheet covers ~85vh
+  // Mobile + tablet bottom sheet (<lg) — collapsed handle bar at bottom,
+  // expanded sheet covers ~85vh. Breakpoint flipped from md→lg in
+  // Phase 1 because lg+ now renders the inline panel inside the rail.
   const mobileSheet = (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       {/* Floating handle button — always visible */}
       <motion.button
         type="button"
@@ -342,7 +345,7 @@ export default function CartPanel({
 
   return (
     <>
-      {desktopPanel}
+      {inlinePanel}
       {mobileSheet}
     </>
   );
