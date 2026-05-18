@@ -125,7 +125,7 @@ export default function AIRecommendPanel({ region, pois, onAccept, onFocusPoi }:
           <button
             type="submit"
             disabled={loading}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-caption font-bold text-white shadow-md transition-all duration-200 ease-out hover:bg-slate-800 disabled:cursor-not-allowed disabled:bg-slate-300 md:w-auto"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-caption font-bold text-slate-900 shadow-sm ring-1 ring-slate-300 transition-colors duration-200 ease-out hover:bg-slate-50 hover:ring-slate-400 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-400 md:w-auto"
           >
             {loading ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : <Sparkles className="h-4 w-4" aria-hidden />}
             {loading ? "Matching…" : "Recommend"}
