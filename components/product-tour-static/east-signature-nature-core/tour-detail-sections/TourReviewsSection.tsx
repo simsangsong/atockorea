@@ -201,8 +201,20 @@ export function TourReviewsSection({ guestReviews, reviewsSummary, sectionUi }: 
             </div>
 
             {reviewsSummary.highlights.length > 0 && (
-              <div className="mt-3 pt-2.5 border-t border-border/50 flex flex-wrap items-center gap-x-2 gap-y-1.5">
-                <p className="text-[11px] font-medium text-muted-foreground shrink-0">{sectionUi.reviewsGuestsMention}</p>
+              <div className="mt-3 pt-2.5 border-t border-border/50 space-y-2">
+                {/* Sprint 5.6 (§B-P5 1 + §B-P6 1+6): editorial summary prose 1줄 — at-a-glance card narrative */}
+                <p className="text-[12.5px] leading-relaxed text-muted-foreground">
+                  <span className="font-semibold text-foreground tabular-nums">
+                    {reviewsSummary.averageRating.toFixed(1)}★
+                  </span>
+                  <span className="mx-1.5 text-border" aria-hidden>·</span>
+                  <span>{sectionUi.reviewsBasedOnTemplate.replace("{total}", String(reviewsSummary.totalReviews))}</span>
+                  <span className="mx-1.5 text-border" aria-hidden>·</span>
+                  <span>{sectionUi.reviewsGuestsMention}{" "}</span>
+                  <span className="font-medium text-foreground">
+                    {reviewsSummary.highlights.slice(0, 2).map((h) => h.label).join(" · ")}
+                  </span>
+                </p>
                 <div className="flex flex-wrap gap-1.5">
                   {reviewsSummary.highlights.map((tag) => (
                     <span
@@ -228,10 +240,18 @@ export function TourReviewsSection({ guestReviews, reviewsSummary, sectionUi }: 
             <button
               type="button"
               onClick={() => setShowAll(!showAll)}
-              className="w-full py-3 rounded-xl border border-border bg-white text-sm font-medium text-foreground hover:bg-muted/30 transition-colors flex items-center justify-center gap-1.5"
+              aria-expanded={showAll}
+              className={cn(
+                "w-full py-3.5 rounded-xl border border-slate-200/80 bg-white",
+                "text-[15px] font-semibold text-foreground",
+                "shadow-[0_1px_2px_rgba(15,23,42,0.04)]",
+                "transition-[transform,box-shadow,background-color] duration-300 ease-out",
+                "hover:bg-slate-50/80 hover:-translate-y-[1px] hover:shadow-[0_2px_6px_rgba(15,23,42,0.06),0_8px_20px_-4px_rgba(15,23,42,0.10)]",
+                "flex items-center justify-center gap-2",
+              )}
             >
-              {showAll ? sectionUi.reviewsShowFewerReviews : sectionUi.reviewsShowAllTemplate.replace("{count}", String(guestReviews.length))}
-              <ChevronDown className={cn("h-4 w-4 transition-transform duration-200", showAll && "rotate-180")} />
+              <span>{showAll ? sectionUi.reviewsShowFewerReviews : sectionUi.reviewsShowAllTemplate.replace("{count}", String(guestReviews.length))}</span>
+              <ChevronDown className={cn("h-4 w-4 text-muted-foreground transition-transform duration-300 ease-out", showAll && "rotate-180")} strokeWidth={2} />
             </button>
           )}
         </>
