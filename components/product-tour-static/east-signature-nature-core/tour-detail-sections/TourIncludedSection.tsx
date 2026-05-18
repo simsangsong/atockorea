@@ -47,16 +47,15 @@ export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSec
         )}
       </div>
 
-      {/* Route-logic style card — subtle green tint */}
+      {/* Sprint 2.6: emerald/rose wash 카드 → white card + semantic icon color only (§8.8 Apple/Klook 패턴) */}
       <div
-        className="overflow-hidden rounded-[20px] shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]"
-        style={{ background: "#f6fcf8" }}
+        className="overflow-hidden rounded-[20px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]"
       >
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
-          className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-emerald-50/40"
+          className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-slate-50"
         >
           <div>
             <p className="text-[15px] font-semibold tracking-tight text-foreground">
@@ -69,11 +68,11 @@ export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSec
           <div
             className={cn(
               "flex-shrink-0 rounded-full p-1.5 transition-[transform,background-color] duration-200",
-              open ? "rotate-180 bg-emerald-100/80" : "bg-muted/60",
+              open ? "rotate-180 bg-slate-100" : "bg-slate-100/60",
             )}
           >
             <ChevronDown
-              className={cn("h-3.5 w-3.5 transition-colors", open ? "text-emerald-700" : "text-muted-foreground")}
+              className={cn("h-3.5 w-3.5 transition-colors", open ? "text-foreground" : "text-muted-foreground")}
               strokeWidth={2}
             />
           </div>
@@ -86,13 +85,13 @@ export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSec
           )}
         >
           <div className="overflow-hidden">
-            {/* Included */}
-            <div className="border-t border-emerald-100/70 px-4 pt-4 pb-3 sm:px-5" style={{ background: "#f0faf4" }}>
+            {/* Included — semantic green icon only (§2.1 success token) */}
+            <div className="border-t border-slate-200/70 bg-white px-4 pt-4 pb-3 sm:px-5">
               <div className="mb-3 flex items-center gap-2">
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 ring-1 ring-emerald-200/60">
-                  <Check className="h-3 w-3 text-emerald-600" strokeWidth={2.5} />
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--success-soft-bg)] ring-1 ring-[var(--success)]/20">
+                  <Check className="h-3 w-3 text-[var(--success)]" strokeWidth={2.5} />
                 </span>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.10em] text-emerald-700">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.10em] text-[var(--success-soft-text)]">
                   Included
                 </p>
               </div>
@@ -100,23 +99,23 @@ export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSec
                 {includedItems.map((line, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-2.5 rounded-xl bg-white px-3 py-2.5 shadow-[0_1px_3px_rgba(0,0,0,0.05)] ring-1 ring-emerald-100/80"
+                    className="flex items-start gap-2.5 rounded-xl bg-white px-3 py-2.5 shadow-[0_1px_3px_rgba(0,0,0,0.04)] ring-1 ring-slate-200/70"
                   >
-                    <Check className="mt-[2px] h-3.5 w-3.5 flex-shrink-0 text-emerald-500" strokeWidth={2.5} />
+                    <Check className="mt-[2px] h-3.5 w-3.5 flex-shrink-0 text-[var(--success)]" strokeWidth={2.5} />
                     <span className="text-[13px] leading-snug text-foreground">{line}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Not included */}
+            {/* Not included — semantic red icon only (§2.1 danger token) */}
             {excludedItems.length > 0 && (
-              <div className="border-t border-rose-100/50 px-4 py-4 sm:px-5" style={{ background: "#fff5f5" }}>
+              <div className="border-t border-slate-200/55 bg-white px-4 py-4 sm:px-5">
                 <div className="mb-3 flex items-center gap-2">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-rose-50 ring-1 ring-rose-200/60">
-                    <X className="h-3 w-3 text-rose-500" strokeWidth={2.5} />
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--danger-soft-bg)] ring-1 ring-[var(--danger)]/20">
+                    <X className="h-3 w-3 text-[var(--danger)]" strokeWidth={2.5} />
                   </span>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.10em] text-rose-600/80">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.10em] text-[var(--danger-soft-text)]">
                     Not included
                   </p>
                 </div>
@@ -124,9 +123,9 @@ export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSec
                   {excludedItems.map((line, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-2.5 rounded-xl bg-white/80 px-3 py-2.5 shadow-[0_1px_2px_rgba(0,0,0,0.04)] ring-1 ring-rose-100/70"
+                      className="flex items-start gap-2.5 rounded-xl bg-white px-3 py-2.5 shadow-[0_1px_2px_rgba(0,0,0,0.04)] ring-1 ring-slate-200/60"
                     >
-                      <X className="mt-[2px] h-3.5 w-3.5 flex-shrink-0 text-rose-400/70" strokeWidth={2.5} />
+                      <X className="mt-[2px] h-3.5 w-3.5 flex-shrink-0 text-[var(--danger)]/70" strokeWidth={2.5} />
                       <span className="text-[13px] leading-snug text-muted-foreground">{line}</span>
                     </li>
                   ))}
