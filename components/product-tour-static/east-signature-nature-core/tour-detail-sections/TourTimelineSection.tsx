@@ -76,35 +76,27 @@ function StopCard({
             accent.glowHover,
           )}
         >
-          {/* Spot photos first — filled from English POI name search in authoring JSON */}
-          {photos.length > 0 && (
-            <div className="relative flex gap-1.5 px-3.5 pt-3.5 pb-1.5 overflow-x-auto scrollbar-hide">
-              {photos.map((src, i) => (
-                <div
-                  key={`${src}-${i}`}
-                  className="relative flex-shrink-0 w-20 h-14 rounded-md overflow-hidden bg-slate-100 ring-1 ring-slate-900/5"
-                  onContextMenu={(e) => e.preventDefault()}
-                >
-                  <img
-                    src={src}
-                    alt=""
-                    width={80}
-                    height={56}
-                    loading="lazy"
-                    decoding="async"
-                    draggable={false}
-                    onContextMenu={(e) => e.preventDefault()}
-                    className="w-full h-full object-cover tour-photo-grade tour-photo-protected"
-                  />
-                  {/* No region badge / stop name overlay on timeline mini thumbs —
-                      too small for either label to read cleanly. */}
-                </div>
-              ))}
+          {/* Sprint 4.12: photo strip carousel (80×56 thumbs) → 1장 cover 16:9 (§8.5 편집 격 1단계 UP) */}
+          {photos.length > 0 && photos[0] && (
+            <div
+              className="relative w-full overflow-hidden bg-slate-100"
+              style={{ aspectRatio: "16 / 9" }}
+              onContextMenu={(e) => e.preventDefault()}
+            >
+              <img
+                src={photos[0]}
+                alt=""
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+                onContextMenu={(e) => e.preventDefault()}
+                className="absolute inset-0 h-full w-full object-cover tour-photo-grade tour-photo-protected"
+              />
             </div>
           )}
 
           {/* Header info */}
-          <div className={cn("relative px-3.5 pb-3.5", photos.length > 0 ? "pt-2" : "pt-3.5")}>
+          <div className={cn("relative px-3.5 pb-3.5", photos.length > 0 ? "pt-3" : "pt-3.5")}>
             <div className="flex items-start justify-between gap-3">
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
