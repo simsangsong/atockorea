@@ -51,7 +51,7 @@ export function TourRecommendationsSection({ recommendations, sectionUi }: TourR
             <Link
               key={rec.slug}
               href={hrefStaticTourProductDetail(rec.slug)}
-              className="group relative flex-shrink-0 snap-start overflow-hidden rounded-2xl bg-white ring-1 ring-slate-900/[0.07] shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_10px_-2px_rgba(15,23,42,0.06),0_18px_36px_-14px_rgba(15,23,42,0.16)] transition-all duration-300 hover:-translate-y-1 hover:ring-slate-900/[0.11] hover:shadow-[0_2px_4px_rgba(15,23,42,0.05),0_6px_14px_-2px_rgba(15,23,42,0.09),0_24px_48px_-14px_rgba(15,23,42,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-300/60 focus-visible:ring-offset-2"
+              className="group relative flex-shrink-0 snap-start overflow-hidden rounded-2xl bg-white ring-1 ring-slate-900/[0.07] shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_10px_-2px_rgba(15,23,42,0.06),0_18px_36px_-14px_rgba(15,23,42,0.16)] transition-all duration-300 hover:-translate-y-1 hover:ring-slate-900/[0.11] hover:shadow-[0_2px_4px_rgba(15,23,42,0.05),0_6px_14px_-2px_rgba(15,23,42,0.09),0_24px_48px_-14px_rgba(15,23,42,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]/40 focus-visible:ring-offset-2"
               style={{ width: "calc(78vw - 16px)", maxWidth: "300px" }}
             >
               <div className="relative h-44 overflow-hidden bg-muted/40">
@@ -113,7 +113,7 @@ export function TourRecommendationsSection({ recommendations, sectionUi }: TourR
 
                 <div className="mt-3.5 flex items-center justify-between gap-2">
                   <div className="flex items-center gap-1.5">
-                    <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" strokeWidth={0} />
+                    <Star className="h-3.5 w-3.5 fill-[var(--star-color)] text-[var(--star-color)]" strokeWidth={0} />
                     <span className="text-[13px] font-semibold text-foreground tabular-nums">{rec.rating}</span>
                     <span className="text-[11px] text-muted-foreground tabular-nums">({rec.reviewCount})</span>
                   </div>

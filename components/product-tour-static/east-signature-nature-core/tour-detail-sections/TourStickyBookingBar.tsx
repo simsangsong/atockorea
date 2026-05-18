@@ -421,7 +421,7 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
                       </span>
                     )}
                     {availability.status === "unavailable" && (
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-50 px-2.5 py-1 text-[11px] font-semibold text-rose-700">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--danger-soft-bg)] px-2.5 py-1 text-[11px] font-semibold text-[var(--danger-soft-text)]">
                         <AlertCircle className="h-3 w-3" strokeWidth={2.5} aria-hidden />
                         {availability.reason}
                       </span>

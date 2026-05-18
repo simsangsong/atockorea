@@ -397,7 +397,7 @@ export function TourDesktopBookingCard({
                 {pricingTiers.tiers.map((tr) => {
                   const isMatchedPax = guestCount >= tr.paxMin && guestCount <= tr.paxMax;
                   return (
-                    <tr key={tr.paxLabel} className={isMatchedPax ? "bg-amber-50/70" : ""}>
+                    <tr key={tr.paxLabel} className={isMatchedPax ? "bg-[var(--star-color)]/[0.08]" : ""}>
                       <td className="px-2.5 py-1.5 font-medium text-foreground">
                         {tr.paxLabel}
                       </td>
@@ -519,7 +519,7 @@ export function TourDesktopBookingCard({
           </span>
         )}
         {availability.status === "unavailable" && (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-50 px-2.5 py-1 text-[11px] font-semibold text-rose-700">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--danger-soft-bg)] px-2.5 py-1 text-[11px] font-semibold text-[var(--danger-soft-text)]">
             <AlertCircle className="h-3 w-3" strokeWidth={2.5} aria-hidden />
             {availability.reason}
           </span>
