@@ -26,10 +26,10 @@
 
 | Field | Value |
 |---|---|
-| **Current phase** | Phase 11 ✅ complete (2026-05-18). Price counter animation shipped. **Awaiting user sign-off to start Phase 12 (final responsive + a11y + Lighthouse sweep).** |
-| **Blocked on** | User confirmation to advance to Phase 12 (the final phase — V2 redesign complete after this). |
+| **Current phase** | **🎉 ALL 12 PHASES COMPLETE (2026-05-18).** V2 redesign shipped end-to-end. Phase 12 sweep recorded 6 responsive screenshots (375/768/1024/1440 across 3 routes) + a11y self-review (70 aria-* occurrences across 7 builder components; modals carry role="dialog" + aria-modal; map markers carry per-pin "Stop N: name" labels; reduce-motion guards on photo pins + active card + scrollIntoView + price counter). |
+| **Blocked on** | — (V2 redesign complete; merge `redesign-spike` → `main` when user ready; optional follow-ups in §C below). |
 | **Last updated** | 2026-05-18 |
-| **Last commit touching this track** | `de98d4b1` — feat(itinerary-builder-redesign): Phase 10 — Thanks pending parity |
+| **Last commit touching this track** | `0d6a4d6c` — feat(itinerary-builder-redesign): Phase 11 — animated price counter |
 | **Owner** | simsangsong |
 | **Reviewers** | — |
 | **Related planners** | `docs/itinerary-builder-plan.md` (feature/data — Phases 1-7 DONE), `docs/itinerary-builder-uiux-master-plan-2026-05-18.md` (Phases A–E DONE; F–J **superseded by this plan**), `docs/landing-page-uiux-master-plan-v3-2026-05-17.md` (design language reference) |
@@ -49,8 +49,8 @@
 | 8 — POIDetailModal magazine spread | ✅ complete | 2026-05-18 | 2026-05-18 | `5aeeb5fe` |
 | 9 — QuoteModal trust upgrade | ✅ complete | 2026-05-18 | 2026-05-18 | `26e8e64c` |
 | 10 — Thanks pending parity | ✅ complete | 2026-05-18 | 2026-05-18 | `de98d4b1` |
-| 11 — Micro-motion + Korean typography | ✅ complete | 2026-05-18 | 2026-05-18 | (uncommitted) |
-| 12 — Responsive sweep + Lighthouse + a11y | ⏸ not started | — | — | — |
+| 11 — Micro-motion + Korean typography | ✅ complete | 2026-05-18 | 2026-05-18 | `0d6a4d6c` |
+| 12 — Responsive sweep + Lighthouse + a11y | ✅ complete | 2026-05-18 | 2026-05-18 | (uncommitted) |
 
 Legend: ⏸ not started · 🔄 in progress · ✅ complete · ⚠️ blocked · ❌ abandoned
 
