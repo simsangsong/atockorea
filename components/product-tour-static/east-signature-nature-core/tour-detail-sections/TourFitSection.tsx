@@ -71,19 +71,13 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
         <p className="mt-1.5 text-[13px] leading-relaxed tracking-wide text-muted-foreground">{sectionUi.fitSubtitle}</p>
       </div>
 
-      {/* ── Best For — Route Logic style, amber tint ── */}
-      <div
-        className="overflow-hidden rounded-[20px] shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]"
-        style={{ background: "#fdf8f2" }}
-      >
+      {/* Sprint 2.7: amber/copper wash 카드 → white + neutral container (§8.9, Sprint 3 flat 2-col 별개) */}
+      <div className="overflow-hidden rounded-[20px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
-          className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors"
-          style={{ ["--hover-bg" as string]: "rgba(200,149,108,0.07)" }}
-          onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(200,149,108,0.07)")}
-          onMouseLeave={(e) => (e.currentTarget.style.background = "")}
+          className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-slate-50"
         >
           <div>
             <p className="text-[15px] font-semibold tracking-tight text-foreground">
@@ -97,13 +91,11 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
           <div
             className={cn(
               "flex-shrink-0 rounded-full p-1.5 transition-[transform,background-color] duration-200",
-              open ? "rotate-180" : "bg-muted/60",
+              open ? "rotate-180 bg-slate-100" : "bg-slate-100/60",
             )}
-            style={open ? { background: "rgba(200,149,108,0.18)" } : {}}
           >
             <ChevronDown
-              className="h-3.5 w-3.5 transition-colors"
-              style={{ color: open ? "#b07d55" : undefined }}
+              className={cn("h-3.5 w-3.5 transition-colors", open ? "text-foreground" : "text-muted-foreground")}
               strokeWidth={2}
             />
           </div>
@@ -116,23 +108,16 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
           )}
         >
           <div className="overflow-hidden">
-            <div className="border-t px-4 pt-4 pb-3 sm:px-5" style={{ borderColor: "rgba(200,149,108,0.20)", background: "#fdf4e8" }}>
+            <div className="border-t border-slate-200/70 bg-white px-4 pt-4 pb-3 sm:px-5">
               <ul className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
                 {bestForItems.map((item, i) => {
                   const Icon = pickPersonaIcon(item);
                   return (
                     <li
                       key={i}
-                      className="flex items-start gap-2.5 rounded-lg px-2.5 py-2"
-                      style={{
-                        background: "rgba(200,149,108,0.07)",
-                        boxShadow: "inset 0 0 0 1px rgba(200,149,108,0.16)",
-                      }}
+                      className="flex items-start gap-2.5 rounded-lg bg-slate-50 px-2.5 py-2 ring-1 ring-slate-200/70"
                     >
-                      <span
-                        className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full"
-                        style={{ background: "rgba(200,149,108,0.15)", color: "#b07d55" }}
-                      >
+                      <span className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-slate-100 text-foreground">
                         <Icon className="h-3 w-3" strokeWidth={2} />
                       </span>
                       <span className="text-[12.5px] leading-snug text-foreground">{item}</span>
@@ -143,7 +128,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
 
               {/* Less Ideal */}
               {lessIdealItems.length > 0 && (
-                <div className="mt-3 border-t pt-3" style={{ borderColor: "rgba(200,149,108,0.15)" }}>
+                <div className="mt-3 border-t border-slate-200/60 pt-3">
                   <button
                     type="button"
                     onClick={() => setShowLessIdeal((v) => !v)}
@@ -189,7 +174,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
             </div>
 
             {/* Families / Seniors note */}
-            <div className="border-t px-4 py-3 sm:px-5" style={{ borderColor: "rgba(200,149,108,0.18)", background: "rgba(200,149,108,0.06)" }}>
+            <div className="border-t border-slate-200/60 bg-slate-50 px-4 py-3 sm:px-5">
               <p className="text-[11.5px] leading-relaxed text-muted-foreground">
                 <span className="font-semibold text-foreground">{sectionUi.fitFamiliesPrefix}</span>{" "}
                 {sectionUi.fitFamiliesText}
