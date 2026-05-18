@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useTranslations } from "@/lib/i18n";
 
 /**
@@ -62,32 +62,35 @@ export function ItineraryBuilderEntry() {
           className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:px-0 md:pb-0"
           aria-label="Itinerary builder regions"
         >
-          {CARDS.map((card) => {
+          {CARDS.map((card, idx) => {
             const name = t(card.nameKey);
+            const seq = String(idx + 1).padStart(2, "0");
             return (
               <Link
                 key={card.slug}
                 href={`/itinerary-builder?region=${card.slug}`}
-                className="group relative w-[68vw] flex-shrink-0 snap-center overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl md:w-auto md:flex-shrink"
+                className="group relative w-[62vw] flex-shrink-0 snap-center overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl md:w-auto md:flex-shrink"
               >
-                <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                <div className="relative aspect-square overflow-hidden bg-slate-100">
                   <Image
                     src={card.imageSrc}
                     alt={name}
                     fill
-                    sizes="(max-width: 768px) 68vw, 576px"
+                    sizes="(max-width: 768px) 62vw, 576px"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 <div className="px-5 pt-4 pb-5">
-                  <div className="mb-2 inline-flex items-center gap-1 text-eyebrow text-amber-700">
-                    <MapPin className="h-3 w-3" aria-hidden />
-                    {t(card.stopsKey)}
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="text-xl font-bold leading-tight text-slate-900 md:text-2xl">
+                      {name}
+                    </h3>
+                    <span className="mt-1.5 shrink-0 font-mono text-[11px] tabular-nums tracking-wider text-slate-400">
+                      — {seq}
+                    </span>
                   </div>
-                  <h3 className="text-xl font-bold leading-tight text-slate-900 md:text-2xl">
-                    {name}
-                  </h3>
                   <p className="mt-1.5 text-sm text-slate-600">{t(card.taglineKey)}</p>
+                  <p className="mt-2 text-xs text-slate-500">{t(card.stopsKey)}</p>
                   <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-3">
                     <span className="text-sm font-medium text-slate-500">{t("browseTheMap")}</span>
                     <span className="inline-flex items-center gap-1.5 text-sm font-bold text-amber-700 transition-all group-hover:gap-2.5 group-hover:text-amber-800">
