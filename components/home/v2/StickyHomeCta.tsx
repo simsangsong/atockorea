@@ -5,7 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "@/lib/i18n";
-import { analytics, getExperimentVariant } from "@/src/design/analytics";
+import { analytics, getExperimentVariantAsync } from "@/src/design/analytics";
 
 /**
  * Sticky bottom CTA shown after the hero leaves the viewport and hidden once
@@ -30,20 +30,14 @@ export function StickyHomeCta() {
   const [thresholdVariant, setThresholdVariant] = useState<string | null>(null);
 
   useEffect(() => {
-    const first = getExperimentVariant("home_sticky_threshold");
-    if (first) setThresholdVariant(first);
-    else {
-      let tries = 0;
-      const id = setInterval(() => {
-        tries += 1;
-        const v = getExperimentVariant("home_sticky_threshold");
-        if (v) {
-          setThresholdVariant(v);
-          clearInterval(id);
-        } else if (tries >= 30) clearInterval(id);
-      }, 200);
-      return () => clearInterval(id);
-    }
+    let cancelled = false;
+    void getExperimentVariantAsync("home_sticky_threshold").then((v) => {
+      if (cancelled) return;
+      if (v) setThresholdVariant(v);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   useEffect(() => {

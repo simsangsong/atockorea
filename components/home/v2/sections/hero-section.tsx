@@ -14,7 +14,7 @@ import { appendIntentPhraseToIntentField } from "@/lib/home/services/hero-intent
 import type { HeroDestination } from "@/lib/home/types/hero-planner";
 import { HOME_STYLE_OPTIONS } from "@/src/components/home/home-style-options";
 import { useHomeV2Match } from "@/components/home/v2/HomeV2MatchProvider";
-import { analytics, getExperimentVariant } from "@/src/design/analytics";
+import { analytics, getExperimentVariantAsync } from "@/src/design/analytics";
 import { cn } from "@/lib/utils";
 
 /** v3 Phase D.1 — desktop in-place morphing panel.
@@ -64,6 +64,20 @@ export function HeroSection() {
 
   const heroSectionRef = useRef<HTMLElement>(null);
   const heroPanelRef = useRef<HTMLDivElement>(null);
+
+  // Secondary hero slides (#1, #2) defer-mount after first paint. The
+  // crossfade keyframes only reveal slide #1 at t≈5.4s and slide #2 at
+  // t≈9.9s (animationDelay × cycle), so a sub-second mount delay is
+  // visually invisible — but it frees ~1MB of image bandwidth from the
+  // critical path. `next/image` with the slides absolutely stacked in the
+  // viewport ignores `loading="lazy"` (they're "above the fold"), so the
+  // only way to keep them out of the first-paint waterfall is to not
+  // render them at all initially.
+  const [secondarySlidesReady, setSecondarySlidesReady] = useState(false);
+  useEffect(() => {
+    const id = window.setTimeout(() => setSecondarySlidesReady(true), 800);
+    return () => window.clearTimeout(id);
+  }, []);
 
   // Scroll-linked parallax: as the user scrolls past the hero, the photo
   // slides up faster than the text, and a black overlay dims the photo —
@@ -135,29 +149,20 @@ export function HeroSection() {
     };
   }, []);
 
-  // home_cta_copy A/B — `getExperimentVariant` returns null until the SDK
-  // has loaded the active experiment registry. We poll briefly so first paint
-  // shows control copy and then re-renders with variant B when assigned.
+  // home_cta_copy A/B — first paint shows control copy and then re-renders
+  // with the assigned variant once the experiment registry loads. Replaced
+  // the previous `setInterval(200ms) × 30` poll with a one-shot promise
+  // (shared registry fetch, dedupe'd in analytics module).
   const [ctaVariant, setCtaVariant] = useState<string | null>(null);
   useEffect(() => {
-    const first = getExperimentVariant("home_cta_copy");
-    if (first) {
-      setCtaVariant(first);
-      return;
-    }
-    let tries = 0;
-    const id = setInterval(() => {
-      tries += 1;
-      const v = getExperimentVariant("home_cta_copy");
-      if (v) {
-        setCtaVariant(v);
-        clearInterval(id);
-      } else if (tries >= 30) {
-        // ~6s — registry probably failed to load; stick with control.
-        clearInterval(id);
-      }
-    }, 200);
-    return () => clearInterval(id);
+    let cancelled = false;
+    void getExperimentVariantAsync("home_cta_copy").then((v) => {
+      if (cancelled) return;
+      if (v) setCtaVariant(v);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const ctaCopyKey =
@@ -208,19 +213,22 @@ export function HeroSection() {
               creating depth between photo and headline. Ken Burns CSS
               animation still plays on the inner images. */}
           <motion.div className="absolute inset-0 overflow-hidden" aria-hidden style={{ y: photoY }}>
-            {HERO_SLIDES.map((slide, index) => (
-              <Image
-                key={slide.src}
-                src={slide.src}
-                alt={slide.alt}
-                fill
-                priority={index === 0}
-                loading={index === 0 ? "eager" : "lazy"}
-                sizes="100vw"
-                className="home-hero-slide object-cover object-center"
-                style={{ animationDelay: `${index * 4.5}s` }}
-              />
-            ))}
+            {HERO_SLIDES.map((slide, index) => {
+              if (index > 0 && !secondarySlidesReady) return null;
+              return (
+                <Image
+                  key={slide.src}
+                  src={slide.src}
+                  alt={slide.alt}
+                  fill
+                  priority={index === 0}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  sizes="100vw"
+                  className="home-hero-slide object-cover object-center"
+                  style={{ animationDelay: `${index * 4.5}s` }}
+                />
+              );
+            })}
           </motion.div>
           {/* Darken overlay — fades from 0 → 0.5 over the scroll range, giving
               a cinematic "lights fade" handoff into the trust panel below. */}

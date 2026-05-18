@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, MapPin } from "lucide-react";
 import { useTranslations } from "@/lib/i18n";
 
@@ -70,11 +71,20 @@ export function ItineraryBuilderEntry() {
                 className="group relative w-[88%] flex-shrink-0 snap-center overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl md:w-auto md:flex-shrink"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  {/*
+                    next/image (vs raw <img>) — gives WebP/AVIF, responsive
+                    srcset, and lazy loading below the fold. Source jpegs are
+                    ~150-200KB at 1200px wide; without next/image the browser
+                    pulled the full source per card. `sizes` matches the
+                    layout (mobile snap-rail at 88vw, desktop 2-up grid inside
+                    max-w-6xl).
+                  */}
+                  <Image
                     src={card.imageSrc}
                     alt={name}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 768px) 88vw, 576px"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
