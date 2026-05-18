@@ -84,6 +84,8 @@
 | 2026-05-18 | Sprint 4.11 — Day flow 48→80px photo + ArrowRight connector | 399712b0 | h-12 w-12 → h-20 w-20 (V2 빌더 게이트 통과). 3중 ring+shadow → single elevation shadow. 3-dot connector → ArrowRight (Klook/Airbnb timeline 표준). typography 11.5→13px font-bold (premium up). |
 | 2026-05-18 | Sprint 4.12 — Stop card photo strip → 1장 cover 16:9 | e37dd081 | gap-1.5 strip carousel (80×56 thumb) → 1장 풀너비 16:9 (편집격 magazine spread). 카드 클릭만 → drawer로 모든 사진 진입. inner-scroll zone 충돌 제거. |
 | 2026-05-18 | Sprint 4 ✅ — 12/12 + 자동 검증 통과 | (이 커밋) | typecheck clean. Hero overlay (title+price)는 §D parked 유지. Lightbox watermark는 정책 확정 대기 (§D). 사용자 시각 검증 필요: scroll-freeze 재테스트 + 5-locale LCP + 모바일 hero/gallery 회귀. |
+| 2026-05-18 | §B-P3 신규 + Sprint 4.3/4.4 partial reversal (Hero shadow-hero + pill 2-step shadow tier 복귀) | 6824bc58 | User 직접 지시 ("색상 단일화, 미니멀리즘 OK, 그러나 premium 디자인 느낌 버리고 flat만 추구하는 오류 금지, 고급스러운 레이아웃 유지"). §B-P3 binding: 색 단순화는 OK, layout premium (elevation/shadow/spacing) 절대 손상 금지. flat-only = cheap-flat ≠ premium-restraint. Hero shadow-hero 복귀 + pill에 single shadow tier 복귀. |
+| 2026-05-18 | §B-P3 follow-up — Seasonal + Reviews summary + Stop card 사진 frame elevation 보강 | ba3c712a | 3 영역 추가 보강: SEASON_THEME_SHARED + FALLBACK에 single shadow tier (premium card feel), Reviews summary card (reviews section hero block)에 single shadow tier, Stop card 1장 cover 사진 영역에 inner ring frame (gallery bento와 동일). 색 변경 0, elevation/frame만. |
 
 ## §D 보류 / parked
 
