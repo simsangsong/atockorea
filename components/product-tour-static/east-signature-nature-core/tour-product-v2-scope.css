@@ -818,11 +818,13 @@ html[lang="ko"] .tour-product-v2-static-root .tour-hero-headline-line {
 
 /*
  * §2.2 type scale (Sprint 2 binding) — 6단계 정의 + utility class.
- * 인라인 픽셀 클래스 (text-[10.5px], text-[11.5px], …) 폐기 대상.
+ * §B-P2 정보 과밀 회피 reversal (2026-05-18): 12 section heading 22-26px 통일
+ * 시 모바일 vertical density ↑ → cheap-overstuffed 느낌. .text-title을 18-20px
+ * (이전 text-lg 격)로 redefine. .text-display(hero h1)만 큰 typography로 강조.
  *
  *   .text-display   : Hero H1                         (28-36 / weight 800 / tracking tight)
- *   .text-title     : Section heading (h2)            (22-26 / weight 700 / tracking tight)
- *   .text-section   : Sub-section heading (h3)        (18-20 / weight 700 / tracking tight)
+ *   .text-title     : Section heading (h2)            (18-20 / weight 700 / tracking tight)
+ *   .text-section   : Sub-section heading (h3)        (16-18 / weight 700 / tracking tight)
  *   .text-body      : Body / paragraph                (14-16 / weight 400-500)
  *   .text-caption   : Captions / helper text          (12-13 / weight 400-500 / muted)
  *   .text-eyebrow   : Single eyebrow spec             (10.5 / weight 600 / uppercase 0.12em)
@@ -834,15 +836,15 @@ html[lang="ko"] .tour-product-v2-static-root .tour-hero-headline-line {
   line-height: 1.1;
 }
 .tour-product-v2-static-root .text-title {
-  font-size: clamp(1.375rem, 3vw, 1.625rem);
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  line-height: 1.2;
-}
-.tour-product-v2-static-root .text-section {
   font-size: clamp(1.125rem, 2vw, 1.25rem);
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.012em;
+  line-height: 1.25;
+}
+.tour-product-v2-static-root .text-section {
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  font-weight: 700;
+  letter-spacing: -0.008em;
   line-height: 1.3;
 }
 .tour-product-v2-static-root .text-body {

@@ -155,10 +155,11 @@ export function TourHeroSection({
         />
 
         {hero.meta.region && (
+          /* §B-P3 visibility fix: dot + gradient line이 사라져 보였던 issue. opacity + size 강화. */
           <div className="flex items-center gap-2.5 mb-3 sm:mb-3.5">
-            <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]/85" />
-            <span aria-hidden className="h-px w-5 bg-gradient-to-r from-[var(--accent)]/55 via-[var(--accent)]/25 to-transparent sm:w-7" />
-            <span className="text-eyebrow text-[var(--accent)]/90">
+            <span aria-hidden className="h-2 w-2 rounded-full bg-[var(--accent)] shadow-[0_0_0_1px_rgba(200,149,108,0.15)]" />
+            <span aria-hidden className="h-[2px] w-6 rounded-full bg-gradient-to-r from-[var(--accent)]/80 via-[var(--accent)]/50 to-transparent sm:w-8" />
+            <span className="text-eyebrow text-[var(--accent)]">
               {hero.meta.region}
             </span>
           </div>
