@@ -18,18 +18,14 @@ export default function ItineraryBuilderLanding() {
               <p className="mb-3 text-eyebrow">Custom itinerary builder</p>
               <h1 className="mb-3 text-display text-slate-900">Tell us about your trip</h1>
               <p className="mx-auto max-w-lg text-body text-slate-600">
-                Two questions — then you'll be on a map of curated stops you can rearrange into
-                your day. No package required.
+                Pick a region and trip type — we&apos;ll put you on a map of curated stops you
+                can rearrange into your day.
               </p>
             </header>
 
             <div className="rounded-2xl bg-white p-5 shadow-md ring-1 ring-slate-200 md:p-7">
               <IntakeForm />
             </div>
-
-            <p className="mt-8 text-center text-micro text-slate-500">
-              Seoul + DMZ rollout planned after MVP launch.
-            </p>
           </div>
         </section>
       </main>

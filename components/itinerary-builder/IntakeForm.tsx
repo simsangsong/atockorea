@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin, Ship, Car, Sparkles } from "lucide-react";
@@ -82,9 +81,12 @@ export default function IntakeForm() {
       {/* Track toggle (private vs cruise) */}
       <motion.fieldset variants={REVEAL_ITEM_VARIANTS}>
         <legend className="mb-3 text-eyebrow">{t("trackLegend")}</legend>
+        {/* V2 Phase 7 — track cards tightened: icon + label only.
+            Hint line dropped to equalize visual weight with the region
+            row below (which is single-line icon + label too). */}
         <div className="grid grid-cols-2 gap-3">
           <label
-            className={`group flex cursor-pointer flex-col items-center gap-2 rounded-xl border-2 p-4 text-center transition-all duration-200 ease-out ${trackCard(track === "private", "amber")}`}
+            className={`group flex cursor-pointer flex-col items-center gap-1.5 rounded-xl border-2 px-4 py-3 text-center transition-all duration-200 ease-out ${trackCard(track === "private", "amber")}`}
           >
             <input
               type="radio"
@@ -95,14 +97,13 @@ export default function IntakeForm() {
               className="sr-only"
             />
             <Car
-              className={`h-6 w-6 transition-colors duration-200 ${track === "private" ? "text-amber-700" : "text-slate-500"}`}
+              className={`h-5 w-5 transition-colors duration-200 ${track === "private" ? "text-amber-700" : "text-slate-500"}`}
               aria-hidden
             />
             <span className="text-caption font-bold text-slate-900">{t("trackPrivateLabel")}</span>
-            <span className="text-micro text-slate-500">{t("trackPrivateHint")}</span>
           </label>
           <label
-            className={`group flex cursor-pointer flex-col items-center gap-2 rounded-xl border-2 p-4 text-center transition-all duration-200 ease-out ${trackCard(track === "cruise", "sky")}`}
+            className={`group flex cursor-pointer flex-col items-center gap-1.5 rounded-xl border-2 px-4 py-3 text-center transition-all duration-200 ease-out ${trackCard(track === "cruise", "sky")}`}
           >
             <input
               type="radio"
@@ -113,11 +114,10 @@ export default function IntakeForm() {
               className="sr-only"
             />
             <Ship
-              className={`h-6 w-6 transition-colors duration-200 ${track === "cruise" ? "text-sky-700" : "text-slate-500"}`}
+              className={`h-5 w-5 transition-colors duration-200 ${track === "cruise" ? "text-sky-700" : "text-slate-500"}`}
               aria-hidden
             />
             <span className="text-caption font-bold text-slate-900">{t("trackCruiseLabel")}</span>
-            <span className="text-micro text-slate-500">{t("trackCruiseHint")}</span>
           </label>
         </div>
       </motion.fieldset>
@@ -194,11 +194,13 @@ export default function IntakeForm() {
         </motion.label>
       ) : null}
 
+      {/* V2 Phase 7 — submit area density. 3 helper lines collapsed
+          to 1 (the auto-quote reassurance — the line that earns trust).
+          dateAndPartyDeferredHint is implicit (date/party fields aren't
+          here so users won't expect them); browsePackagesInstead moved
+          to the page footer where alternative paths belong, not
+          adjacent to the primary submit. */}
       <motion.div variants={REVEAL_ITEM_VARIANTS} className="space-y-3">
-        <p className="text-center text-micro text-slate-500">
-          {t("dateAndPartyDeferredHint")}
-        </p>
-
         <button
           type="submit"
           className={`${homeBtnPrimary} group inline-flex items-center justify-center gap-2 shadow-lg hover:gap-3 md:mx-auto md:max-w-sm`}
@@ -210,12 +212,6 @@ export default function IntakeForm() {
         <p className="inline-flex w-full items-center justify-center gap-1.5 text-center text-micro text-slate-500">
           <Sparkles className="h-3 w-3 text-amber-600" aria-hidden />
           {t("autoQuoteReassurance")}
-        </p>
-
-        <p className="text-center text-micro text-slate-500">
-          <Link href="/tours" className="underline-offset-2 hover:underline">
-            {t("browsePackagesInstead")}
-          </Link>
         </p>
       </motion.div>
     </motion.form>
