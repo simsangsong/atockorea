@@ -166,7 +166,14 @@ export default function POICatalogMap({
       }
     }
 
-    const markers = pois.map((poi) => {
+    // V2 Phase 12+ resilience — wrap marker creation in try/catch so a
+    // partial Google Maps API failure (e.g. RefererNotAllowedMapError,
+    // quota exceeded, library partially loaded) degrades gracefully
+    // instead of crashing the whole region page. Each pin is built
+    // independently; one bad pin doesn't kill the rest.
+    const markers: google.maps.marker.AdvancedMarkerElement[] = [];
+    for (const poi of pois) {
+      try {
       const seq = cartIndex.get(poi.poi_key);
       const inCart = seq != null;
       const content = buildPhotoPinContent({
@@ -209,7 +216,12 @@ export default function POICatalogMap({
       });
       marker.addListener("gmp-click", () => {
         setSelected(poi);
-        map.panTo({ lat: poi.lat, lng: poi.lng });
+        try {
+          map.panTo({ lat: poi.lat, lng: poi.lng });
+        } catch {
+          // panTo fails when the map instance is in a broken state; the
+          // InfoWindow still opens via setSelected so the user gets info.
+        }
         if (inCart) {
           setActive(poi.poi_key, "map");
           // Scroll the matching timeline card into view. The card has
@@ -231,11 +243,24 @@ export default function POICatalogMap({
           }
         }
       });
-      return marker;
-    });
+      markers.push(marker);
+      } catch (err) {
+        console.warn("[POICatalogMap] marker build failed for", poi.poi_key, err);
+      }
+    }
+
+    if (markers.length === 0) {
+      console.warn("[POICatalogMap] zero markers built — likely a Google Maps API failure (referer / quota / network).");
+      return;
+    }
 
     markersRef.current = markers;
-    clustererRef.current = new MarkerClusterer({ map, markers });
+    try {
+      clustererRef.current = new MarkerClusterer({ map, markers });
+    } catch (err) {
+      console.warn("[POICatalogMap] MarkerClusterer init failed; markers rendered without clustering.", err);
+      markers.forEach((m) => (m.map = map));
+    }
 
     return () => {
       clustererRef.current?.clearMarkers();
@@ -359,12 +384,18 @@ export default function POICatalogMap({
             }}
           />
         ) : null}
-        {selected ? (
+        {selected &&
+        map &&
+        typeof selected.lat === "number" &&
+        typeof selected.lng === "number" &&
+        typeof window !== "undefined" &&
+        typeof google !== "undefined" &&
+        google.maps?.Size ? (
           <InfoWindow
             position={{ lat: selected.lat, lng: selected.lng }}
             onCloseClick={() => setSelected(null)}
             options={{
-              pixelOffset: typeof window !== "undefined" ? new google.maps.Size(0, -34) : undefined,
+              pixelOffset: new google.maps.Size(0, -34),
             }}
           >
             <POIInfoWindowContent
