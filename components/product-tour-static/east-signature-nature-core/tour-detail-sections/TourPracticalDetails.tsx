@@ -75,38 +75,29 @@ type SeasonTheme = {
   iconColor: string;
 };
 
+/*
+ * Sprint 2.9: 4계절 4색 (rose/amber/orange/sky) → 단일 neutral 카드 + season icon
+ *   §8.10 "1 row + season icon (색은 icon에만, 카드 전체는 white). Apple weather pattern."
+ *   icon shape (Flower2/Sun/Leaf/Snowflake)이 계절 차별화, 색은 var(--accent) 단일.
+ */
+const SEASON_THEME_SHARED: SeasonTheme = {
+  card: "bg-white",
+  ring: "ring-slate-200/70",
+  iconRing: "bg-slate-50 ring-slate-200/70",
+  iconColor: "text-[var(--accent)]",
+};
 const SEASON_THEMES: Record<string, SeasonTheme> = {
-  flower: {
-    card: "bg-gradient-to-br from-rose-50 via-white to-rose-100/50",
-    ring: "ring-rose-100/70",
-    iconRing: "bg-gradient-to-br from-rose-100 to-rose-200/60 ring-rose-200/60",
-    iconColor: "text-rose-500",
-  },
-  sun: {
-    card: "bg-gradient-to-br from-amber-50 via-white to-amber-100/50",
-    ring: "ring-amber-100/70",
-    iconRing: "bg-gradient-to-br from-amber-100 to-amber-200/70 ring-amber-200/60",
-    iconColor: "text-amber-500",
-  },
-  leaf: {
-    card: "bg-gradient-to-br from-orange-50 via-white to-orange-100/50",
-    ring: "ring-orange-100/70",
-    iconRing: "bg-gradient-to-br from-orange-100 to-orange-200/60 ring-orange-200/60",
-    iconColor: "text-orange-500",
-  },
-  snow: {
-    card: "bg-gradient-to-br from-sky-50 via-white to-sky-100/50",
-    ring: "ring-sky-100/70",
-    iconRing: "bg-gradient-to-br from-sky-100 to-sky-200/60 ring-sky-200/60",
-    iconColor: "text-sky-500",
-  },
+  flower: SEASON_THEME_SHARED,
+  sun: SEASON_THEME_SHARED,
+  leaf: SEASON_THEME_SHARED,
+  snow: SEASON_THEME_SHARED,
 };
 
 const SEASON_THEME_FALLBACK: SeasonTheme = {
-  card: "bg-gradient-to-br from-slate-50 via-white to-slate-100/40",
-  ring: "ring-border/70",
-  iconRing: "bg-gradient-to-br from-slate-100 to-slate-200/60 ring-border/60",
-  iconColor: "text-slate-500",
+  card: "bg-white",
+  ring: "ring-slate-200/70",
+  iconRing: "bg-slate-50 ring-slate-200/70",
+  iconColor: "text-muted-foreground",
 };
 
 /** Derive season theme + icon from name (schema v7 dropped explicit icon/bgClass fields). */
@@ -208,13 +199,13 @@ export function TourPracticalDetails({
   /** API 응답 전·실패 시 기존 정적 카드와 동일: 좌 CloudSun, 우 CloudRain */
   const isTodayRain = !!(liveForecast && cur != null && isWmoPrecipitationCode(cur.weatherCode));
   const TodayIcon = isTodayRain ? CloudRain : CloudSun;
-  const todayIconClass = isTodayRain ? "text-sky-500" : "text-amber-500";
+  const todayIconClass = isTodayRain ? "text-muted-foreground" : "text-[var(--star-color)]";
 
   const isTomorrowRain = !liveForecast || !tomorrowDay
     ? true
     : isWmoPrecipitationCode(tomorrowDay.weatherCode);
   const TomorrowIcon = isTomorrowRain ? CloudRain : CloudSun;
-  const tomorrowIconClass = isTomorrowRain ? "text-sky-500" : "text-amber-500";
+  const tomorrowIconClass = isTomorrowRain ? "text-muted-foreground" : "text-[var(--star-color)]";
 
   return (
     <div className="space-y-7">
@@ -223,63 +214,26 @@ export function TourPracticalDetails({
         <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{sectionUi.practicalSubtitle}</p>
       </div>
 
-      <div
-        className={cn(
-          "relative overflow-hidden rounded-2xl p-4 ring-1",
-          "bg-gradient-to-br from-[#fcf9f4] via-[#fefcf8] to-[#f8f4ec]",
-          "ring-amber-100/40",
-          "shadow-[0_2px_4px_rgba(26,35,50,0.05),0_6px_14px_-4px_rgba(26,35,50,0.08),0_22px_44px_-18px_rgba(26,35,50,0.20),0_12px_24px_-12px_rgba(26,35,50,0.12)]",
-        )}
-      >
-        <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/60 to-transparent" />
-        <p className="relative text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground mb-3">
+      {/* Sprint 2.8: weather 4-layer gradient → 단순 row (Apple weather pattern, §8.10) */}
+      <div className="relative overflow-hidden rounded-2xl bg-white p-4 ring-1 ring-slate-200/70 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_4px_12px_-4px_rgba(26,35,50,0.08)]">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground mb-3">
           {weatherStripTitle}
         </p>
-        <div className="relative grid grid-cols-2 gap-2.5">
-          <div
-            className={cn(
-              "relative flex items-center gap-3 overflow-hidden rounded-xl px-3.5 py-3 ring-1",
-              isTodayRain
-                ? "bg-gradient-to-br from-sky-50 via-white to-sky-100/55 ring-sky-100/70 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_24px_-14px_rgba(14,165,233,0.28)]"
-                : "bg-gradient-to-br from-amber-50 via-white to-amber-100/55 ring-amber-100/70 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_24px_-14px_rgba(245,158,11,0.28)]",
-            )}
-          >
-            <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
-            <div
-              className={cn(
-                "relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full ring-1",
-                isTodayRain
-                  ? "bg-gradient-to-br from-sky-100 to-sky-200/70 ring-sky-200/70"
-                  : "bg-gradient-to-br from-amber-100 to-amber-200/70 ring-amber-200/70",
-              )}
-            >
+        <div className="grid grid-cols-2 gap-2.5">
+          <div className="flex items-center gap-3 rounded-xl bg-slate-50 px-3.5 py-3 ring-1 ring-slate-200/70">
+            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white ring-1 ring-slate-200/70">
               <TodayIcon className={cn("h-5 w-5", todayIconClass)} strokeWidth={1.7} />
             </div>
-            <div className="relative">
+            <div>
               <p className="text-xl font-semibold text-foreground leading-none tabular-nums">{todayTemp}</p>
               <p className="text-[11px] text-muted-foreground mt-1">{todayLabel}</p>
             </div>
           </div>
-          <div
-            className={cn(
-              "relative flex items-center gap-3 overflow-hidden rounded-xl px-3.5 py-3 ring-1",
-              isTomorrowRain
-                ? "bg-gradient-to-br from-sky-50 via-white to-sky-100/55 ring-sky-100/70 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_24px_-14px_rgba(14,165,233,0.28)]"
-                : "bg-gradient-to-br from-amber-50 via-white to-amber-100/55 ring-amber-100/70 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_24px_-14px_rgba(245,158,11,0.28)]",
-            )}
-          >
-            <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
-            <div
-              className={cn(
-                "relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full ring-1",
-                isTomorrowRain
-                  ? "bg-gradient-to-br from-sky-100 to-sky-200/70 ring-sky-200/70"
-                  : "bg-gradient-to-br from-amber-100 to-amber-200/70 ring-amber-200/70",
-              )}
-            >
+          <div className="flex items-center gap-3 rounded-xl bg-slate-50 px-3.5 py-3 ring-1 ring-slate-200/70">
+            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white ring-1 ring-slate-200/70">
               <TomorrowIcon className={cn("h-5 w-5", tomorrowIconClass)} strokeWidth={1.7} />
             </div>
-            <div className="relative">
+            <div>
               <p className="text-xl font-semibold text-foreground leading-none tabular-nums">{tomorrowTemp}</p>
               <p className="text-[11px] text-muted-foreground mt-1">{tomorrowLabel}</p>
             </div>
@@ -393,7 +347,7 @@ export function TourPracticalDetails({
                 <div className="overflow-hidden">
                   <div className="px-4 pb-5">
                     {/* Left accent rail visually separates answer from question */}
-                    <ul className="ml-1 space-y-3 border-l-2 border-amber-200/60 pl-4">
+                    <ul className="ml-1 space-y-3 border-l-2 border-[var(--accent)]/40 pl-4">
                       {(item.content ?? []).flatMap((rawLine, i) => {
                         // included variant keeps its check/X iconography unchanged
                         if (item.variant === "included") {
