@@ -6,9 +6,11 @@ import { useRouter, usePathname } from "next/navigation";
 import Logo from "./Logo";
 import { SearchIcon, UserIcon } from "./Icons";
 import LanguageSwitcher from "./LanguageSwitcher";
+import BackButton from "./app-shell/BackButton";
 import { useTranslations } from "@/lib/i18n";
 import { useCurrency, CURRENCY_LIST, type CurrencyCode } from "@/lib/currency";
 import { supabase } from "@/lib/supabase";
+import { useIosBackbar } from "@/src/lib/device/use-ios-backbar";
 import { cn } from "@/lib/utils";
 
 interface UserProfile {
@@ -38,6 +40,15 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
   // Sign-in / sign-up / mypage use the same light frosted header as the rest of the site
   // (dark bar was jarring next to pastel page backgrounds and glass auth cards).
   const isDarkPage = false;
+
+  // Phase B.3 — iOS PWA / in-app browser back button gate.
+  // §B #8 → only iOS standalone or in-app browser (regular Safari has bottom ←).
+  // §B #9 → hidden on root `/`.
+  // §B #10 → hidden under `/admin/*` (admin has its own breadcrumb).
+  const showIosBackButton =
+    useIosBackbar() &&
+    pathname !== "/" &&
+    !pathname.startsWith("/admin");
 
   // Load user session and profile
   useEffect(() => {
@@ -169,6 +180,13 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
             pt ? "h-[3.25rem] sm:h-14 md:h-[3.75rem]" : "h-12 md:h-14"
           )}
         >
+          {/* Phase B.3 — iOS PWA / in-app browser back button (mobile only).
+              Visibility gated by §B #8/#9/#10 above. md:hidden so desktop layout
+              is untouched. */}
+          {showIosBackButton && (
+            <BackButton className="md:hidden -ml-1.5 flex-shrink-0" />
+          )}
+
           {/* Logo - Responsive sizing with text always visible */}
           <Link href="/" className="flex items-center flex-shrink-0 min-w-0 max-w-[65%] sm:max-w-none">
             <Logo

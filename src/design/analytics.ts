@@ -230,6 +230,15 @@ export function getExperimentVariant(experimentKey: string): string | null {
   return assignVariant(getAnonymousId(), experimentKey, exp.variants);
 }
 
+/** Phase 6 — promise-based variant lookup. Resolves once the registry has
+ *  loaded (one shared fetch, deduped by `ensureExperimentsLoaded`). Replaces
+ *  the previous client-side `setInterval(200ms) × 30` polling pattern that
+ *  ran independently in every consumer. SSR returns null synchronously. */
+export function getExperimentVariantAsync(experimentKey: string): Promise<string | null> {
+  if (typeof window === "undefined") return Promise.resolve(null);
+  return ensureExperimentsLoaded().then(() => getExperimentVariant(experimentKey));
+}
+
 const FLUSH_INTERVAL_MS = 5_000;
 const FLUSH_BATCH_SIZE = 5;
 const MAX_QUEUE_SIZE = 50;
@@ -547,4 +556,12 @@ export const analytics = {
 
   /** Identity merge after login. Should be called once per auth transition. */
   identify: (userId: string) => identifyUser(userId),
+
+  /** App shell — iOS PWA / in-app browser back button click (Phase B.2).
+   *  `routeFrom` = current pathname when the user pressed back.
+   *  `fallbackUsed` = true when history.length <= 1 so we routed to `/` instead
+   *  of calling router.back() — surface this so we can see how often deep
+   *  links from external referrers (Kakao/Insta) hit the fallback. */
+  appShellBackClick: (payload: { routeFrom: string; fallbackUsed: boolean }) =>
+    trackEvent("app_shell_back_clicked", payload),
 };

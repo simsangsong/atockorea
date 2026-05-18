@@ -9,6 +9,7 @@ import "./globals.css";
 // `--home-*` tokens are referenced by Tailwind shadow classes on /match and /mypage too.
 import { I18nProvider } from "@/lib/i18n";
 import { CurrencyProvider } from "@/lib/currency";
+import { ThemeProvider } from "@/components/app-shell/ThemeProvider";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { DevChunkRecoveryCleanup } from "@/components/DevChunkRecoveryCleanup";
 import { LocaleCurrencySync } from "@/components/LocaleCurrencySync";
@@ -43,6 +44,18 @@ export default async function RootLayout({
   return (
     <html lang={htmlLang} className="font-sans" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
+        {/* Phase B.5 — PWA manifest + Apple meta. Together with the iOS back
+            button (B.1–B.4) this lets users "Add to Home Screen" on iPhone and
+            get a real app-like standalone shell with our header back button as
+            the only way out (no browser chrome). theme_color tracks the
+            light-cream header background so the iOS status bar blends in. */}
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="AtoC Korea" />
+        <meta name="theme-color" content="#fffaf6" />
+
         {/* Preconnect to webfont CDNs so DNS + TLS finish before the stylesheet links resolve. */}
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="" />
@@ -80,16 +93,22 @@ export default async function RootLayout({
         />
         <Suspense fallback={null}>
           <ErrorBoundary>
-            <I18nProvider>
-              <CurrencyProvider>
-                <DevChunkRecoveryCleanup />
-                <LocaleCurrencySync />
-                <AnalyticsPageViewTracker />
-                <div className="relative z-[1] min-h-dvh min-h-[100dvh] flex flex-col">
-                  {children}
-                </div>
-              </CurrencyProvider>
-            </I18nProvider>
+            {/* Phase D.1 — ThemeProvider is mounted outermost (just inside
+                ErrorBoundary) so every consumer (I18n / Currency / shadcn /
+                future Header toggle in D.3) sees a stable theme value from
+                first paint. next-themes' inline head script handles FOUC. */}
+            <ThemeProvider>
+              <I18nProvider>
+                <CurrencyProvider>
+                  <DevChunkRecoveryCleanup />
+                  <LocaleCurrencySync />
+                  <AnalyticsPageViewTracker />
+                  <div className="relative z-[1] min-h-dvh min-h-[100dvh] flex flex-col">
+                    {children}
+                  </div>
+                </CurrencyProvider>
+              </I18nProvider>
+            </ThemeProvider>
           </ErrorBoundary>
         </Suspense>
         <Toaster position="top-center" closeButton richColors />
