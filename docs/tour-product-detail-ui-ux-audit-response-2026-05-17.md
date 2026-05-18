@@ -15,7 +15,7 @@
 | Sprint 2 (토큰 + 색상) | ✅ (11/11 + acceptance 통과) | 2026-05-18 | 2026-05-18 | df4bf84e |
 | Sprint 3 (콘텐츠 접근성) | ✅ (9/9 + §B-P2 partial reversal Fit/Support) | 2026-05-18 | 2026-05-18 | c2e72479 |
 | Sprint 4 (Hero / Gallery) | ✅ (12/12 + 자동 검증 통과, 사용자 시각 검증 대기) | 2026-05-18 | 2026-05-18 | e37dd081 |
-| **Sprint 5 (정보 과밀 reversal + Apple/Airbnb 럭셔리 미니멀 — §B-P4/P5/P6 가드)** | 🔄 (5.1-5.7 ✅ / 5.8 ready) | 2026-05-18 | — | (5.7 pending commit) |
+| **Sprint 5 (정보 과밀 reversal + Apple/Airbnb 럭셔리 미니멀 — §B-P4/P5/P6 가드)** | 🔄 (5.1-5.7 ✅ / 5.8 ready — conditional, 사용자 confirm 필요) | 2026-05-18 | — | f176b26b |
 | Sprint 6+ (장기 polish) | 📦 | — | — | — |
 
 ## §B 결정 로그 (binding)
