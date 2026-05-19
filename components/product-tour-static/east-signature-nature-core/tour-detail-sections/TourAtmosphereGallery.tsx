@@ -6,7 +6,24 @@ import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 /* Sprint 4.7: stripRef + scrollStrip 폐기 (썸네일 strip 제거). ChevronLeft/Right는 lightbox nav arrows에서 계속 사용. */
 import { cn } from "@/lib/utils";
 import { TourPhotoOverlay } from "@/components/tour/TourPhotoOverlay";
+import { deriveRegion } from "@/lib/tour-photo-overlay";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
+
+/* S Tier #1 — Film grain noise (Kodak Portra 400 입자감). SVG turbulence inline dataURI,
+   mix-blend-mode overlay로 사진 톤과 자연스럽게 blend. paint cost: 1회 raster, 이후 cache. */
+const FILM_GRAIN_BG = "url(\"data:image/svg+xml,%3Csvg xmlns='http%3A//www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")";
+
+/* S Tier #4 — Editorial pull-quote 후보 (region 기반 dynamic). Magazine spread title 임팩트. */
+function buildPullQuote(region: string | null | undefined): string {
+  if (!region) return "Through the lens of place.";
+  /* "Notes from Busan." 같은 NYT T Magazine / Italian Vogue 스타일 캡션 */
+  const titleCased = region
+    .toLowerCase()
+    .split(/\s+/)
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+  return `Notes from ${titleCased}.`;
+}
 
 const LIGHTBOX_EASE = [0.22, 1, 0.36, 1] as const;
 /** Open: gentle fade-up with a touch of scale + blur. Next/prev: short
@@ -94,12 +111,34 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
     return String((hash % 99) + 1).padStart(3, "0");
   })();
 
+  /* S Tier #4 — Hero 사진의 region에서 pull-quote 생성 ("Notes from Busan." 식). */
+  const heroRegion = deriveRegion(galleryItems[0]?.src);
+  const pullQuote = buildPullQuote(heroRegion);
+
   return (
     <>
       <div className="space-y-3">
         <div>
           <h2 className="text-[17px] font-semibold tracking-[-0.02em] text-foreground">{sectionUi.atmosphereTitle}</h2>
           <p className="mt-1.5 text-[13px] leading-relaxed tracking-wide text-muted-foreground">{sectionUi.atmosphereSubtitle}</p>
+        </div>
+
+        {/* S Tier #3 — Section eyebrow (잡지 chapter intro): "I · VIEWS · MMXXVI" with hairlines.
+            Bodoni Moda italic + tracking ↑ + 양쪽 horizontal rule. */}
+        <div className="flex items-center gap-3 pt-1">
+          <div aria-hidden className="h-px flex-1 bg-foreground/15" />
+          <span
+            className="italic font-normal uppercase text-muted-foreground"
+            style={{
+              fontFamily:
+                "var(--font-tour-v2-serif), 'Bodoni Moda', 'Bodoni 72', Didot, 'Times New Roman', serif",
+              fontSize: "10px",
+              letterSpacing: "0.36em",
+            }}
+          >
+            I · Views · MMXXVI
+          </span>
+          <div aria-hidden className="h-px flex-1 bg-foreground/15" />
         </div>
 
         {/* ── Editorial bento collage ── */}
@@ -146,6 +185,22 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                       filter: "saturate(1.08) contrast(1.06) brightness(0.99)",
                     }}
                   />
+                  {/* S Tier #1 — Film grain noise (Kodak Portra 400 입자감).
+                      mix-blend-mode overlay로 사진 톤과 자연스럽게. */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 mix-blend-overlay"
+                    style={{ backgroundImage: FILM_GRAIN_BG, opacity: 0.15 }}
+                  />
+                  {/* S Tier #2 — Soft vignette (radial corner darkening — Vogue editorial 표준). */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0"
+                    style={{
+                      background:
+                        "radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.22) 100%)",
+                    }}
+                  />
                   {/* Top-fade gradient — 상단 어둠 → 하단 명확 (Vogue 표지 표준).
                       region(BUSAN) text 가독성 ↑ + 사진 시선 중앙으로 모음. */}
                   <span
@@ -160,6 +215,24 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                     </div>
                   )}
                   <TourPhotoOverlay src={item.src} size={i === 0 ? "md" : "sm"} />
+                  {/* S Tier #4 — Hero tile pull-quote (잡지 spread title 임팩트). 첫 사진에만. */}
+                  {i === 0 && pullQuote ? (
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute bottom-3 left-3 max-w-[58%] italic font-normal text-white/95"
+                      style={{
+                        fontFamily:
+                          "var(--font-tour-v2-serif), 'Bodoni Moda', 'Bodoni 72', Didot, 'Times New Roman', serif",
+                        fontSize: "clamp(15px, 3.8vw, 22px)",
+                        lineHeight: "1.15",
+                        letterSpacing: "-0.01em",
+                        textShadow:
+                          "0 1px 8px rgba(0,0,0,0.65), 0 0 1px rgba(0,0,0,0.55)",
+                      }}
+                    >
+                      {pullQuote}
+                    </span>
+                  ) : null}
                   <div aria-hidden className="pointer-events-none absolute inset-0 rounded-lg ring-1 ring-inset ring-black/[0.05]" />
                 </button>
               );
