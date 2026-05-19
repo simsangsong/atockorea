@@ -87,6 +87,13 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
 
   const floatItems = galleryItems.slice(0, 5);
 
+  /* Magazine spread accent: stable per-tour issue number 좌상단 ("N° 047" Vogue 표준). */
+  const issueNumber = (() => {
+    const seed = (galleryItems[0]?.id ?? galleryItems[0]?.src ?? "001").toString();
+    const hash = seed.split("").reduce((a, c) => a + c.charCodeAt(0), 0);
+    return String((hash % 99) + 1).padStart(3, "0");
+  })();
+
   return (
     <>
       <div className="space-y-3">
@@ -129,8 +136,21 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                     decoding="async"
                     draggable={false}
                     onContextMenu={(e) => e.preventDefault()}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05] tour-photo-grade tour-photo-protected"
-                    style={{ objectPosition: tile.objectPos }}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05] tour-photo-protected"
+                    style={{
+                      objectPosition: tile.objectPos,
+                      /* Magazine editorial polish — Vogue subtle (사용자 요청 2026-05-19):
+                         saturation +8 / contrast +6 / brightness -1. 기존 .tour-photo-grade
+                         (saturate 0.78, contrast 0.91)는 muting 효과라 bento에서만 제거하고
+                         editorial polish로 교체. lightbox는 grade 그대로 유지. */
+                      filter: "saturate(1.08) contrast(1.06) brightness(0.99)",
+                    }}
+                  />
+                  {/* Top-fade gradient — 상단 어둠 → 하단 명확 (Vogue 표지 표준).
+                      region(BUSAN) text 가독성 ↑ + 사진 시선 중앙으로 모음. */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/35 to-transparent"
                   />
                   {item.type === "video" && (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -145,6 +165,21 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
               );
             })}
           </div>
+          {/* Magazine issue number — 좌상단 Bodoni italic 작게 (Vogue/Harper's "N° 047" 표준).
+              z-10 으로 모든 tile 위에 떠 있되 pointer-events-none으로 클릭 통과. */}
+          <span
+            aria-hidden
+            className="pointer-events-none absolute left-3 top-2.5 z-10 italic font-normal text-white/95"
+            style={{
+              fontFamily:
+                "var(--font-tour-v2-serif), 'Bodoni Moda', 'Bodoni 72', Didot, 'Times New Roman', serif",
+              fontSize: "10px",
+              letterSpacing: "0.04em",
+              textShadow: "0 1px 4px rgba(0,0,0,0.55), 0 0 1px rgba(0,0,0,0.4)",
+            }}
+          >
+            N° {issueNumber}
+          </span>
           <div aria-hidden className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/[0.06]" />
         </div>
 
