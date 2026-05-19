@@ -82,17 +82,17 @@ export function TourPhotoOverlay({
       className={cn("pointer-events-none absolute inset-0 z-10", insetClass, className)}
       aria-hidden="true"
     >
-      {/* top-right: region label — plain uppercase white text. No background,
-          no border, no SVG. Drop shadow keeps it legible on any photo. */}
+      {/* top-right: region label — uppercase serif (Playfair Display) for editorial feel.
+          잡지 화보 스타일 (사용자 요청 2026-05-19): SF Pro/Inter → Playfair Display. */}
       {!hideRegion && resolvedRegion ? (
         <span
           className={cn(
-            "absolute right-0 top-0 uppercase font-medium text-white/95",
+            "absolute right-0 top-0 uppercase font-normal text-white/95",
             regionClass,
           )}
           style={{
             fontFamily:
-              "-apple-system, BlinkMacSystemFont, 'SF Pro Display', var(--font-sans), Inter, system-ui, sans-serif",
+              "var(--font-tour-v2-serif), 'Playfair Display', Georgia, 'Times New Roman', serif",
             textShadow: "0 1px 4px rgba(0,0,0,0.55), 0 0 1px rgba(0,0,0,0.4)",
           }}
         >
@@ -100,17 +100,17 @@ export function TourPhotoOverlay({
         </span>
       ) : null}
 
-      {/* bottom-right: stop name — Inter medium, no italic. Hierarchy from
-          size + tight tracking + drop shadow only. */}
+      {/* bottom-right: stop name — Playfair Display italic for editorial magazine feel.
+          잡지 화보 스타일 (사용자 요청 2026-05-19): italic으로 art-direction 강화. */}
       {showStopName ? (
         <span
           className={cn(
-            "absolute bottom-0 right-0 whitespace-nowrap font-medium text-white",
+            "absolute bottom-0 right-0 whitespace-nowrap italic font-normal text-white",
             stopClass,
           )}
           style={{
             fontFamily:
-              "-apple-system, BlinkMacSystemFont, 'SF Pro Display', var(--font-sans), Inter, system-ui, sans-serif",
+              "var(--font-tour-v2-serif), 'Playfair Display', Georgia, 'Times New Roman', serif",
             textShadow: "0 1px 4px rgba(0,0,0,0.6), 0 0 1px rgba(0,0,0,0.45)",
           }}
         >

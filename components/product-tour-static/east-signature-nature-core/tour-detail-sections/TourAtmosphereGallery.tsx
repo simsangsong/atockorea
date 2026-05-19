@@ -163,7 +163,7 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.28, ease: "easeOut" }}
-            className="fixed inset-0 z-50 bg-black flex items-center justify-center"
+            className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
             onClick={closeLightbox}
           >
           <div className="absolute top-4 left-4 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold tabular-nums text-white">
