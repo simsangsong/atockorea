@@ -261,14 +261,13 @@ export function TourPickupDropoffSection({
                     )}
 
                     {hasNote ? (
+                      /* §B-P11 확장 #4: per-row note book-page cascade. N=1 fallback — stagger 무의미, 단일 카드 unfold 모션만. */
                       <div
-                        className={cn(
-                          "grid transition-[grid-template-rows] duration-300 ease-out",
-                          isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
-                        )}
+                        className="book-cascade"
+                        data-state={isOpen ? "open" : "closed"}
                       >
-                        <div className="overflow-hidden">
-                          <div className="px-4 pb-3.5 sm:px-5">
+                        <div>
+                          <div className="book-cascade-list px-4 pb-3.5 sm:px-5">
                             <div className="flex items-start gap-2.5 rounded-lg bg-stone-50/70 px-3 py-2.5 ring-1 ring-stone-200/55">
                               <Icon
                                 className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-foreground"

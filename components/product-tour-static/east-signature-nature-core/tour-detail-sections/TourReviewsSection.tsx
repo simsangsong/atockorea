@@ -144,7 +144,14 @@ function ReviewCard({ review, sectionUi }: { review: Review; sectionUi: TourProd
 export function TourReviewsSection({ guestReviews, reviewsSummary, sectionUi }: TourReviewsSectionProps) {
   const router = useRouter();
   const [showAll, setShowAll] = useState(false);
-  const displayedReviews = showAll ? guestReviews : guestReviews.slice(0, 3);
+  /* Sprint 5.9 확장 #2: core 3 (1차 visible) + extras (book-cascade reveal) 분리. */
+  const coreReviews = guestReviews.slice(0, 3);
+  const extraReviews = guestReviews.slice(3);
+  /* §B-P11 (3) catalog-size stagger 가이드. */
+  const cascadeStagger =
+    extraReviews.length <= 3 ? "0ms" :
+    extraReviews.length <= 6 ? "60ms" :
+    extraReviews.length <= 10 ? "40ms" : "28ms";
 
   const hasReviews = reviewsSummary.totalReviews > 0 && guestReviews.length > 0;
 
@@ -231,11 +238,29 @@ export function TourReviewsSection({ guestReviews, reviewsSummary, sectionUi }: 
             )}
           </div>
 
+          {/* Core 3 always visible — 1차 신뢰 신호 */}
           <div className="space-y-4">
-            {displayedReviews.map((review) => (
+            {coreReviews.map((review) => (
               <ReviewCard key={review.id} review={review} sectionUi={sectionUi} />
             ))}
           </div>
+
+          {/* §B-P11 Sprint 5.9 확장 #2: extras book-page cascade reveal */}
+          {extraReviews.length > 0 && (
+            <div
+              className="book-cascade"
+              data-state={showAll ? "open" : "closed"}
+            >
+              <div
+                className="book-cascade-list space-y-4"
+                style={{ ["--book-stagger" as string]: cascadeStagger }}
+              >
+                {extraReviews.map((review) => (
+                  <ReviewCard key={review.id} review={review} sectionUi={sectionUi} />
+                ))}
+              </div>
+            </div>
+          )}
 
           {guestReviews.length > 3 && (
             <button

@@ -70,8 +70,16 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
   const bestForItems = whyTourWorks.bestFor ?? [];
 
   const overflowBestFor = bestForItems.length > BEST_FOR_VISIBLE_LIMIT;
-  const visibleBestFor =
-    showAllBestFor || !overflowBestFor ? bestForItems : bestForItems.slice(0, BEST_FOR_VISIBLE_LIMIT);
+  /* Sprint 5.9 확장 #3: core 4 (1차 visible) + extras (cascade). */
+  const coreBestFor = bestForItems.slice(0, BEST_FOR_VISIBLE_LIMIT);
+  const extraBestFor = bestForItems.slice(BEST_FOR_VISIBLE_LIMIT);
+  /* §B-P11 (3) catalog-size stagger 가이드 — 각 reveal target별 동적. */
+  const stagger = (n: number) =>
+    n <= 3 ? "0ms" : n <= 6 ? "60ms" : n <= 10 ? "40ms" : "28ms";
+  const bestForStagger = stagger(extraBestFor.length);
+  const lessIdealStagger = stagger(lessIdealItems.length);
+  const routeLogicSections = whyTourWorks.routeLogicSections ?? [];
+  const routeLogicStagger = stagger(routeLogicSections.length);
 
   return (
     <div className="space-y-4">
@@ -110,12 +118,13 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
               </button>
             )}
           </div>
+          {/* Core 4 (1차 visible) — always rendered standalone grid */}
           <ul className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
-            {visibleBestFor.map((item, i) => {
+            {coreBestFor.map((item, i) => {
               const Icon = pickPersonaIcon(item);
               return (
                 <li
-                  key={i}
+                  key={`core-${i}`}
                   className="flex items-start gap-2.5 rounded-lg bg-slate-50 px-2.5 py-2 ring-1 ring-slate-200/70"
                 >
                   <span className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-white text-foreground ring-1 ring-slate-200/70">
@@ -126,6 +135,34 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
               );
             })}
           </ul>
+
+          {/* §B-P11 확장 #3a: BestFor extras book-page cascade reveal */}
+          {overflowBestFor && (
+            <div
+              className="book-cascade mt-1.5"
+              data-state={showAllBestFor ? "open" : "closed"}
+            >
+              <ul
+                className="book-cascade-list grid grid-cols-1 gap-1.5 sm:grid-cols-2"
+                style={{ ["--book-stagger" as string]: bestForStagger }}
+              >
+                {extraBestFor.map((item, i) => {
+                  const Icon = pickPersonaIcon(item);
+                  return (
+                    <li
+                      key={`extra-${i}`}
+                      className="flex items-start gap-2.5 rounded-lg bg-slate-50 px-2.5 py-2 ring-1 ring-slate-200/70"
+                    >
+                      <span className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-white text-foreground ring-1 ring-slate-200/70">
+                        <Icon className="h-3 w-3" strokeWidth={2} />
+                      </span>
+                      <span className="text-[12.5px] leading-snug text-foreground">{item}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
 
           {/* 2차: Less Ideal — §B-P2 default closed nested (negative signal, not blocking) */}
           {lessIdealItems.length > 0 && (
@@ -156,14 +193,16 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
                 />
               </button>
 
+              {/* §B-P11 확장 #3b: Less Ideal cascade reveal — mt-2.5는 inner pt-2.5로 변환 (grid-rows와 함께 부드럽게 transition). */}
               <div
-                className={cn(
-                  "grid transition-[grid-template-rows] duration-300 ease-out",
-                  showLessIdeal ? "mt-2.5 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
-                )}
+                className="book-cascade"
+                data-state={showLessIdeal ? "open" : "closed"}
               >
-                <div className="overflow-hidden">
-                  <ul className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
+                <div>
+                  <ul
+                    className="book-cascade-list grid grid-cols-1 gap-1.5 pt-2.5 sm:grid-cols-2"
+                    style={{ ["--book-stagger" as string]: lessIdealStagger }}
+                  >
                     {lessIdealItems.map((item, i) => {
                       const Icon = pickPersonaIcon(item);
                       return (
@@ -230,15 +269,17 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
           </div>
         </button>
 
+        {/* §B-P11 확장 #3c: Route Logic cascade reveal — 각 section block이 cascade child. */}
         <div
-          className={cn(
-            "relative grid transition-[grid-template-rows] duration-300 ease-out",
-            showLogic ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
-          )}
+          className="relative book-cascade"
+          data-state={showLogic ? "open" : "closed"}
         >
-          <div className="overflow-hidden">
-            <div className="space-y-4 border-t border-border/60 p-4">
-              {(whyTourWorks.routeLogicSections ?? []).map((section) => {
+          <div>
+            <div
+              className="book-cascade-list space-y-4 border-t border-border/60 p-4"
+              style={{ ["--book-stagger" as string]: routeLogicStagger }}
+            >
+              {routeLogicSections.map((section) => {
                 const Icon = LOGIC_ICONS[section.icon as keyof typeof LOGIC_ICONS] ?? ROUTE_LOGIC_ICON_FALLBACK;
                 return (
                   <div key={section.title}>

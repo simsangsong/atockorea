@@ -387,6 +387,12 @@ export function TourPracticalDetails({
       <div className="card-premium overflow-hidden divide-y divide-border/60">
         {practicalAccordionItems.map((item) => {
           const isOpen = expandedItems.includes(item.id);
+          /* §B-P11 확장 #5: per-item content count → 동적 stagger 가이드. */
+          const contentCount = item.content?.length ?? 0;
+          const itemStagger =
+            contentCount <= 3 ? "0ms" :
+            contentCount <= 6 ? "60ms" :
+            contentCount <= 10 ? "40ms" : "28ms";
           return (
             <div key={item.id}>
               <button
@@ -419,16 +425,18 @@ export function TourPracticalDetails({
                 </div>
               </button>
 
+              {/* §B-P11 확장 #5: FAQ accordion content book-page cascade. content lines가 cascade children. */}
               <div
-                className={cn(
-                  "grid transition-all duration-200 ease-out",
-                  isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
-                )}
+                className="book-cascade"
+                data-state={isOpen ? "open" : "closed"}
               >
-                <div className="overflow-hidden">
+                <div>
                   <div className="px-4 pb-5">
                     {/* Left accent rail visually separates answer from question */}
-                    <ul className="ml-1 space-y-3 border-l-2 border-[var(--accent)]/40 pl-4">
+                    <ul
+                      className="book-cascade-list ml-1 space-y-3 border-l-2 border-[var(--accent)]/40 pl-4"
+                      style={{ ["--book-stagger" as string]: itemStagger }}
+                    >
                       {(item.content ?? []).flatMap((rawLine, i) => {
                         // included variant keeps its check/X iconography unchanged
                         if (item.variant === "included") {
