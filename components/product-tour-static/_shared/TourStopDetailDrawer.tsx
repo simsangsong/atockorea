@@ -680,10 +680,32 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                       animate="center"
                       exit="exit"
                       transition={{ duration: 0.5, ease: drawerEase }}
-                      className="absolute inset-0 h-full w-full object-cover tour-photo-grade tour-photo-protected"
+                      className="absolute inset-0 h-full w-full object-cover tour-photo-protected"
+                      /* Editorial polish (atmosphere gallery와 동일) — Vogue subtle filter.
+                         tour-photo-grade muting 효과 제거 + saturation/contrast 미세 ↑. */
+                      style={{ filter: "saturate(1.08) contrast(1.06) brightness(0.99)" }}
                     />
                   </AnimatePresence>
                 ) : null}
+                {/* S Tier #1 — Film grain noise (Kodak Portra 400 입자감, mix-blend overlay 0.15) */}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 mix-blend-overlay"
+                  style={{
+                    backgroundImage:
+                      "url(\"data:image/svg+xml,%3Csvg xmlns='http%3A//www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+                    opacity: 0.15,
+                  }}
+                />
+                {/* S Tier #2 — Soft vignette (radial corner darkening) */}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      "radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.22) 100%)",
+                  }}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0c1622]/55 via-[#0c1622]/10 to-transparent pointer-events-none" />
               </button>
               {/* Editorial overlay — only stop name at bottom-right; top-right is

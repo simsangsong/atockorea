@@ -67,6 +67,12 @@ export function TourHeroSection({
   }, [headlineLine1, headlineLine2]);
 
   const slides = hero.images && hero.images.length > 0 ? hero.images : [hero.imageUrl];
+  /* Magazine issue number (stable per-tour, 좌상단 Bodoni italic). */
+  const issueNumber = (() => {
+    const seed = (slides[0] ?? tourProductSlug).toString();
+    const hash = seed.split("").reduce((a, c) => a + c.charCodeAt(0), 0);
+    return String((hash % 99) + 1).padStart(3, "0");
+  })();
   const [activeSlideIdx, setActiveSlideIdx] = useState(0);
   const [heroInView, setHeroInView] = useState(true);
   const heroImageRef = useRef<HTMLDivElement>(null);
@@ -120,9 +126,50 @@ export function TourHeroSection({
             style={{
               backgroundImage: safeCssBackgroundUrl(url),
               backgroundPosition: hero.imagePosition,
+              /* Editorial polish (atmosphere gallery + drawer와 동일) — Vogue subtle filter. */
+              filter: "saturate(1.08) contrast(1.06) brightness(0.99)",
             }}
           />
         ))}
+
+        {/* S Tier #1 — Film grain noise (Kodak Portra 400 입자감, mix-blend overlay 0.15) */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 mix-blend-overlay"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg xmlns='http%3A//www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+            opacity: 0.15,
+          }}
+        />
+        {/* S Tier #2 — Soft vignette (radial corner darkening) */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.22) 100%)",
+          }}
+        />
+        {/* Top-fade gradient — 상단 어둠 → save/share button 가독성 ↑ + 시선 모음 */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/35 to-transparent"
+        />
+        {/* Magazine issue number — 좌상단 "N° XXX" Bodoni italic (Vogue/Harper's 표준) */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute left-3 top-3 z-10 italic font-normal text-white/95 sm:left-4 sm:top-4"
+          style={{
+            fontFamily:
+              "var(--font-tour-v2-serif), 'Bodoni Moda', 'Bodoni 72', Didot, 'Times New Roman', serif",
+            fontSize: "10px",
+            letterSpacing: "0.04em",
+            textShadow: "0 1px 4px rgba(0,0,0,0.55), 0 0 1px rgba(0,0,0,0.4)",
+          }}
+        >
+          N° {issueNumber}
+        </span>
 
         <div className="absolute right-3 top-3 z-10 flex gap-1.5 sm:right-4 sm:top-4">
           <button
