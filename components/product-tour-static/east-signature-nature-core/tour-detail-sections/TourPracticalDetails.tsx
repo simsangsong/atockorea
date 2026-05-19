@@ -331,7 +331,10 @@ export function TourPracticalDetails({
           aria-label={sectionUi.seasonalTitle}
           className="-mx-5 px-5"
         >
-          <div className="flex gap-2.5 overflow-x-auto overscroll-x-contain scrollbar-hide scroll-smooth snap-x snap-mandatory touch-pan-x pb-1.5 [-webkit-overflow-scrolling:touch]">
+          {/* 사용자 보고 (2026-05-19 모바일): touch-pan-x가 y축 swipe를 차단해 vertical scroll이 이 carousel에서 멈춤.
+              제거 → browser default touch-action: auto. horizontal swipe = carousel scroll, vertical swipe = page scroll
+              (browser가 dominant axis 자동 판단). Apple Photos / Klook carousel 표준 동작. */}
+          <div className="flex gap-2.5 overflow-x-auto overscroll-x-contain scrollbar-hide scroll-smooth snap-x snap-mandatory pb-1.5 [-webkit-overflow-scrolling:touch]">
             {seasonalVariations.map((season, idx) => {
               // schema_version=1: { name, icon, tag, bgClass, iconColor, description }
               // schema_version=7: { season, description } (icon/tag/bgClass dropped)
