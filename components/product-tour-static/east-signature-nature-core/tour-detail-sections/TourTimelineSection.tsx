@@ -46,15 +46,16 @@ function StopCard({
 
   return (
     /* 사용자 보고 (2026-05-18 screenshot): -ml-2 + left-0 badge → 모바일 viewport 왼쪽 짤림. -ml-2 제거 + z-10 추가.
-       사용자 보고 (2026-05-19 모바일 스크린샷): pl-9 (36px) + badge w-9 (36px) → badge 우측 ring/shadow가 카드 좌측 모서리에 겹쳐 보임.
-       pl-9 → pl-11 (44px = 36 badge + 8 gap), spine left-[18px] → left-[22px] (44/2 중앙)로 시각적 분리. PortSelectorTimeline 동일 spec. */
+       사용자 보고 (2026-05-19 모바일 스크린샷): pl-9 + badge w-9 → 우측 ring이 카드 좌측 모서리 겹침. pl-11로 8px gap 부여.
+       사용자 보고 (2026-05-19 두번째 — "조금만 왼쪽"): badge를 parent left-0 → -left-1 (-4px) 이동 + spine left-[22px] → left-[14px] (badge 중앙: -4+18=14) 재정렬.
+       이전 spine left-[22px]는 pl-11 parent 중앙이라 badge 중앙(18px)과 4px 어긋남이었던 것도 같이 보정. */
     <div className="relative pl-11">
       {stop.number < totalStops && (
-        <div className="absolute left-[22px] top-[48px] bottom-0 w-px bg-gradient-to-b from-slate-200/40 to-transparent" />
+        <div className="absolute left-[14px] top-[48px] bottom-0 w-px bg-gradient-to-b from-slate-200/40 to-transparent" />
       )}
 
       <div
-        className="absolute left-0 top-1.5 z-10 flex h-9 w-9 items-center justify-center rounded-full text-[12px] font-medium tabular-nums tracking-[0.04em] ring-1 ring-white"
+        className="absolute -left-1 top-1.5 z-10 flex h-9 w-9 items-center justify-center rounded-full text-[12px] font-medium tabular-nums tracking-[0.04em] ring-1 ring-white"
         style={{
           background: "#ffffff",
           boxShadow:

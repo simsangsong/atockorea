@@ -47,7 +47,13 @@ export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSec
   }
 
   const overflow = includedItems.length > VISIBLE_LIMIT;
-  const visibleIncluded = showAll || !overflow ? includedItems : includedItems.slice(0, VISIBLE_LIMIT);
+  const coreIncluded = includedItems.slice(0, VISIBLE_LIMIT);
+  const extraIncluded = includedItems.slice(VISIBLE_LIMIT);
+  /* §B-P11 (3) catalog-size stagger 가이드 — N4-6 sweet spot 60ms, N7-10 40ms, N>10 28ms with auto-cap. */
+  const cascadeStagger =
+    extraIncluded.length <= 3 ? "0ms" :
+    extraIncluded.length <= 6 ? "60ms" :
+    extraIncluded.length <= 10 ? "40ms" : "28ms";
 
   return (
     <div className="space-y-4">
@@ -104,10 +110,11 @@ export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSec
               </button>
             )}
           </div>
+          {/* Core 3 (1차 visible) — always rendered as standalone grid */}
           <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-            {visibleIncluded.map((line, i) => (
+            {coreIncluded.map((line, i) => (
               <li
-                key={i}
+                key={`core-${i}`}
                 className="flex items-start gap-2.5 rounded-xl bg-white px-3 py-2.5 shadow-[0_1px_3px_rgba(0,0,0,0.04)] ring-1 ring-slate-200/70"
               >
                 <Check className="mt-[2px] h-3.5 w-3.5 flex-shrink-0 text-[var(--success)]" strokeWidth={2.5} />
@@ -115,6 +122,29 @@ export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSec
               </li>
             ))}
           </ul>
+
+          {/* §B-P11 Sprint 5.9 확장 #1: extras book-page cascade reveal — N별 stagger 자동 조정. */}
+          {overflow && (
+            <div
+              className="book-cascade mt-2"
+              data-state={showAll ? "open" : "closed"}
+            >
+              <ul
+                className="grid grid-cols-1 gap-2 sm:grid-cols-2 book-cascade-list"
+                style={{ ["--book-stagger" as string]: cascadeStagger }}
+              >
+                {extraIncluded.map((line, i) => (
+                  <li
+                    key={`extra-${i}`}
+                    className="flex items-start gap-2.5 rounded-xl bg-white px-3 py-2.5 shadow-[0_1px_3px_rgba(0,0,0,0.04)] ring-1 ring-slate-200/70"
+                  >
+                    <Check className="mt-[2px] h-3.5 w-3.5 flex-shrink-0 text-[var(--success)]" strokeWidth={2.5} />
+                    <span className="text-[13px] leading-snug text-foreground">{line}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
 
         {/* Not included — inline prose 1줄 (Sprint 5.2: grid 폐기, editorial inline) */}
