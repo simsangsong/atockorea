@@ -12,6 +12,7 @@ import {
   type RegionSlug,
 } from "@/lib/itinerary-builder/regions";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
+import { isBuilderAttraction } from "@/lib/itinerary-match-engine/poi-taxonomy";
 import BuilderShell from "@/components/itinerary-builder/BuilderShell";
 
 // Force runtime fetch — match_pois is small and refreshed rarely; serve from
@@ -65,7 +66,7 @@ export default async function ItineraryBuilderRegionPage({
   const { data, error } = await supabase
     .from("match_pois")
     .select(
-      "poi_key, name_en, name_ko, names_other_locales, region, category, default_image_url, default_stay_minutes, lat, lng, poi_meta, description, highlights, images, why_on_route, smart_notes, visit_basics, convenience"
+      "poi_key, name_en, name_ko, names_other_locales, region, category, default_image_url, default_stay_minutes, lat, lng, stop_role, is_attraction, is_operational, builder_profile_source, builder_profile_version, poi_meta, description, highlights, images, why_on_route, smart_notes, visit_basics, convenience"
     )
     .in("region", cluster as unknown as string[])
     .not("name_en", "is", null)
@@ -74,7 +75,9 @@ export default async function ItineraryBuilderRegionPage({
   if (error) {
     throw new Error(`Failed to load POIs for ${region}: ${error.message}`);
   }
-  const pois = (data ?? []) as MatchPoiRow[];
+  const pois = ((data ?? []) as MatchPoiRow[]).filter((p) =>
+    p.is_attraction === true || (p.is_attraction == null && isBuilderAttraction(p.poi_key))
+  );
 
   return (
     <SitePageShell>

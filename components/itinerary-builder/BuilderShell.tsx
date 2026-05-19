@@ -76,6 +76,8 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
     if (!Number.isFinite(hours) || hours <= 0) return null;
     return Math.round(hours * 60);
   }, [searchParams]);
+  const matcherTrack = searchParams?.get("track") ?? null;
+  const matcherOrigin = searchParams?.get("origin") ?? null;
 
   const handleGetQuote = useCallback(() => {
     if (cart.length === 0) return;
@@ -136,6 +138,8 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
               pois={pois}
               onAccept={acceptRecommendation}
               onFocusPoi={focusPoi}
+              track={matcherTrack}
+              origin={matcherOrigin}
             />
             <ResultTimeline
               cart={cart}

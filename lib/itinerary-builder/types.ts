@@ -19,6 +19,11 @@ export interface MatchPoiRow {
   default_stay_minutes: number | null;
   lat: number;
   lng: number;
+  stop_role?: string | null;
+  is_attraction?: boolean | null;
+  is_operational?: boolean | null;
+  builder_profile_source?: string | null;
+  builder_profile_version?: number | null;
   /** Mirrored from `poi_meta.sources` etc. */
   poi_meta: Record<string, unknown> | null;
   /** Phase 6.5 enrichment — rich content from tour JSONs */

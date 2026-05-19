@@ -24,11 +24,13 @@
 import { driveMinutes, type LatLng } from "@/lib/itinerary-builder/distance";
 import { REGION_CENTER, type RegionSlug } from "@/lib/itinerary-builder/regions";
 import type { ScorablePoiRow } from "./score-poi";
+import { resolveBuilderPoiMeta } from "./poi-taxonomy";
 
 interface SequenceOpts {
   maxPois: number;
   maxHours: number;
   region: RegionSlug;
+  origin?: LatLng;
 }
 
 const DIVERSITY_PENALTY = 1.0; // subtract from score for each prior POI sharing category
@@ -38,13 +40,13 @@ const DIVERSITY_PENALTY = 1.0; // subtract from score for each prior POI sharing
  * cost score so pickDiverse naturally favours a tight day. Tunable —
  * larger numbers = stricter geographic clustering.
  */
-function distancePenalty(poi: ScorablePoiRow, center: LatLng): number {
-  const km = haversineKm(center, { lat: poi.lat, lng: poi.lng });
+function distancePenalty(poi: ScorablePoiRow, base: LatLng): number {
+  const km = haversineKm(base, { lat: poi.lat, lng: poi.lng });
   if (km < 25) return 0;
-  if (km < 45) return 0.4;
-  if (km < 70) return 1.2;
-  if (km < 100) return 2.4;
-  return 4.0;
+  if (km < 45) return 0.8;
+  if (km < 70) return 4.5;
+  if (km < 100) return 7.0;
+  return 10.0;
 }
 
 /** Inline haversine (avoid circular import of the public helper). */
@@ -61,6 +63,8 @@ function haversineKm(a: LatLng, b: LatLng): number {
 }
 
 function categoryGroup(p: ScorablePoiRow): string {
+  const metaGroup = resolveBuilderPoiMeta(p).categoryGroup;
+  if (metaGroup !== "other") return metaGroup;
   const c = (p.category || "").toLowerCase();
   if (c.includes("temple") || c.includes("buddhist")) return "temple";
   if (c.includes("market") || c.includes("food")) return "market";
@@ -80,9 +84,10 @@ function categoryGroup(p: ScorablePoiRow): string {
 export function pickDiverse(
   scored: { poi: ScorablePoiRow; total: number }[],
   limit: number,
-  region: RegionSlug
+  region: RegionSlug,
+  origin?: LatLng
 ): ScorablePoiRow[] {
-  const center = REGION_CENTER[region];
+  const base = origin ?? REGION_CENTER[region];
   const sorted = [...scored].sort((a, b) => b.total - a.total);
   const picked: ScorablePoiRow[] = [];
   const groupCounts = new Map<string, number>();
@@ -96,7 +101,7 @@ export function pickDiverse(
       const c = candidates[i];
       const g = categoryGroup(c.poi);
       const seenInG = groupCounts.get(g) ?? 0;
-      const dist = distancePenalty(c.poi, center);
+      const dist = distancePenalty(c.poi, base);
       const eff = c.total - seenInG * DIVERSITY_PENALTY - dist;
       if (eff > bestEff) {
         bestEff = eff;
@@ -117,9 +122,13 @@ export function pickDiverse(
  * returning to it. Computes total drive time over every permutation and
  * picks the minimum. Safe for N ≤ 7 (5040 perms = ~40k ops).
  */
-export function tspRoute(pois: ScorablePoiRow[], region: RegionSlug): ScorablePoiRow[] {
+export function tspRoute(
+  pois: ScorablePoiRow[],
+  region: RegionSlug,
+  origin?: LatLng
+): ScorablePoiRow[] {
   if (pois.length <= 1) return pois;
-  const center = REGION_CENTER[region];
+  const center = origin ?? REGION_CENTER[region];
   const centerLL: LatLng = { lat: center.lat, lng: center.lng };
 
   // Cache pairwise drive minutes (POIs + center as index N).
@@ -166,9 +175,13 @@ export function tspRoute(pois: ScorablePoiRow[], region: RegionSlug): ScorablePo
  * the last POI back to the region centroid. This is the source-of-truth
  * for budget enforcement — `sequence()` calls it directly.
  */
-function tourTotalMin(pois: ScorablePoiRow[], region: RegionSlug): number {
+export function tourDriveMin(
+  pois: ScorablePoiRow[],
+  region: RegionSlug,
+  origin?: LatLng
+): number {
   if (pois.length === 0) return 0;
-  const center = REGION_CENTER[region];
+  const center = origin ?? REGION_CENTER[region];
   let drive = 0;
   let cursor: LatLng = { lat: center.lat, lng: center.lng };
   for (const p of pois) {
@@ -176,6 +189,16 @@ function tourTotalMin(pois: ScorablePoiRow[], region: RegionSlug): number {
     cursor = { lat: p.lat, lng: p.lng };
   }
   drive += driveMinutes(cursor, { lat: center.lat, lng: center.lng });
+  return drive;
+}
+
+export function tourTotalMin(
+  pois: ScorablePoiRow[],
+  region: RegionSlug,
+  origin?: LatLng
+): number {
+  if (pois.length === 0) return 0;
+  const drive = tourDriveMin(pois, region, origin);
   const stay = pois.reduce((s, p) => s + (p.default_stay_minutes ?? 0), 0);
   return drive + stay;
 }
@@ -186,12 +209,13 @@ function tourTotalMin(pois: ScorablePoiRow[], region: RegionSlug): number {
 export function trimToBudget(
   pois: ScorablePoiRow[],
   region: RegionSlug,
-  maxHours: number
+  maxHours: number,
+  origin?: LatLng
 ): ScorablePoiRow[] {
   if (pois.length === 0) return pois;
   const budgetMin = maxHours * 60;
   let trimmed = [...pois];
-  while (trimmed.length > 0 && tourTotalMin(trimmed, region) > budgetMin) {
+  while (trimmed.length > 0 && tourTotalMin(trimmed, region, origin) > budgetMin) {
     trimmed.pop();
   }
   return trimmed;
@@ -209,7 +233,8 @@ function backfill(
   scored: { poi: ScorablePoiRow; total: number }[],
   region: RegionSlug,
   maxHours: number,
-  maxPois: number
+  maxPois: number,
+  origin?: LatLng
 ): ScorablePoiRow[] {
   const budgetMin = maxHours * 60;
   const pickedKeys = new Set(picked.map((p) => p.poi_key));
@@ -226,7 +251,7 @@ function backfill(
     let bestCost = Infinity;
     for (let i = 0; i <= current.length; i++) {
       const trial = [...current.slice(0, i), cand, ...current.slice(i)];
-      const cost = tourTotalMin(trial, region);
+      const cost = tourTotalMin(trial, region, origin);
       if (cost <= budgetMin && cost < bestCost) {
         bestCost = cost;
         bestInsertIdx = i;
@@ -243,15 +268,15 @@ export function sequence(
   scored: { poi: ScorablePoiRow; total: number }[],
   opts: SequenceOpts
 ): ScorablePoiRow[] {
-  const diverse = pickDiverse(scored, opts.maxPois, opts.region);
-  const ordered = tspRoute(diverse, opts.region);
-  const trimmed = trimToBudget(ordered, opts.region, opts.maxHours);
+  const diverse = pickDiverse(scored, opts.maxPois, opts.region, opts.origin);
+  const ordered = tspRoute(diverse, opts.region, opts.origin);
+  const trimmed = trimToBudget(ordered, opts.region, opts.maxHours, opts.origin);
   // If there's budget left and we have fewer than maxPois, try to slot
   // more candidates in via insertion search.
   if (trimmed.length < opts.maxPois) {
-    const filled = backfill(trimmed, scored, opts.region, opts.maxHours, opts.maxPois);
+    const filled = backfill(trimmed, scored, opts.region, opts.maxHours, opts.maxPois, opts.origin);
     // Re-optimize the order after backfill
-    return tspRoute(filled, opts.region);
+    return tspRoute(filled, opts.region, opts.origin);
   }
   return trimmed;
 }

@@ -16,13 +16,15 @@ interface Props {
   pois: MatchPoiRow[];
   onAccept: (poiKeys: string[]) => void;
   onFocusPoi?: (poiKey: string) => void;
+  track?: string | null;
+  origin?: string | null;
 }
 
 interface MatchResponse {
   ok: boolean;
   region?: string;
   recommended_pois?: string[];
-  per_poi_score?: { poi_key: string; name_en: string; total: number }[];
+  per_poi_score?: { poi_key: string; name_en: string; total: number; rationale?: string[] }[];
   total_drive_min?: number;
   total_stay_min?: number;
   total_minutes?: number;
@@ -35,11 +37,11 @@ interface MatchResponse {
 // untranslated English seed text we send to the matcher (the backend
 // matches on free-text intent, not the localized label).
 const PRESETS: { key: string; intent: string }[] = [
-  { key: "firstTime", intent: "first time in Korea, must-see + UNESCO" },
-  { key: "family", intent: "family with kids, easy walking, no long hikes" },
-  { key: "unesco", intent: "UNESCO + history + culture" },
-  { key: "foodie", intent: "foodie day, markets + local eats" },
-  { key: "beachesCafes", intent: "beaches + cafes + relaxed pace" },
+  { key: "firstTime", intent: "first-time highlights, iconic must-see landmarks, balanced pace" },
+  { key: "family", intent: "family with kids, easy walking, stroller friendly, no hiking" },
+  { key: "unesco", intent: "UNESCO heritage, history, temples and culture" },
+  { key: "foodie", intent: "foodie day, traditional markets, seafood and street food" },
+  { key: "beachesCafes", intent: "beaches, ocean views, cafes, relaxed pace" },
 ];
 
 /**
@@ -55,7 +57,14 @@ const PRESETS: { key: string; intent: string }[] = [
  *     result stripe (recommended chips + Apply day CTA) renders inline
  *     so it visually reads as the prequel to the timeline below.
  */
-export default function AIRecommendPanel({ region, pois, onAccept, onFocusPoi }: Props) {
+export default function AIRecommendPanel({
+  region,
+  pois,
+  onAccept,
+  onFocusPoi,
+  track,
+  origin,
+}: Props) {
   const t = useTranslations("itineraryBuilder.ai");
   const reveal = useRevealContainerProps();
   const poiByKey = new Map(pois.map((p) => [p.poi_key, p]));
@@ -80,7 +89,13 @@ export default function AIRecommendPanel({ region, pois, onAccept, onFocusPoi }:
       const res = await fetch("/api/itinerary/match", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ intent: intentText.trim(), region, max_hours: maxHours }),
+        body: JSON.stringify({
+          intent: intentText.trim(),
+          region,
+          max_hours: maxHours,
+          track,
+          origin,
+        }),
       });
       const data = (await res.json()) as MatchResponse;
       if (!res.ok || !data.ok) {
@@ -279,6 +294,18 @@ export default function AIRecommendPanel({ region, pois, onAccept, onFocusPoi }:
                         {p.name_en}
                       </span>
                     </button>
+                    {p.rationale && p.rationale.length > 0 ? (
+                      <div className="mt-1 flex max-w-[220px] flex-wrap gap-1 pl-1">
+                        {p.rationale.slice(0, 3).map((label) => (
+                          <span
+                            key={`${p.poi_key}-${label}`}
+                            className="rounded-full bg-white/80 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-slate-500 ring-1 ring-amber-100"
+                          >
+                            {label}
+                          </span>
+                        ))}
+                      </div>
+                    ) : null}
                   </li>
                 );
               })}

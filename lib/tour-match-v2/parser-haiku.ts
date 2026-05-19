@@ -121,6 +121,16 @@ VOCABULARY (use ONLY these English canonical keys)
 
 ${JSON.stringify(compact)}
 
+ITINERARY BUILDER INTENT NORMALIZATION
+- "first-time", "first visit", "must-see", "highlights", "classic", "iconic" => themes includes "first_time_highlights"; boost_dimensions includes {"first_time_fit":1.2,"must_see_fit":1.2}.
+- "family with kids", "children", "baby", "stroller" => personas includes "family_with_young_kids"; boost_dimensions includes {"kid_friendly_fit":1.2,"stroller_friendly_fit":1.2}.
+- "easy walking", "gentle", "not much walking", "no hiking", "avoid stairs" => boost_dimensions includes {"easy_walking_fit":1.4,"mobility_friendly_fit":1.2}; negative_signals includes "active_traveler" when the user explicitly avoids hiking or hard walking.
+- "foodie", "local eats", "traditional markets", "street food", "seafood" => themes includes "food_market"; boost_dimensions includes {"food_market_fit":1.5,"market_fit":1.2,"street_food_fit":1.2,"seafood_market_fit":1.2}.
+- "beaches", "ocean views", "sea views", "coastal", "coast" => themes includes "beach"; boost_dimensions includes {"coastal_fit":1.2,"beach_fit":1.2}.
+- "cafes", "coffee", "tea house", "teahouse" => themes includes "cafe"; boost_dimensions includes {"cafe_fit":1.2}.
+- "UNESCO", "heritage", "temples", "history" => themes includes "unesco_world_heritage" when UNESCO is explicit; personas may include "history_lovers".
+- Do not emit "culture_lovers" just because the user says "traditional market" in a food query; preserve the food intent as "food_market".
+
 ═══════════════════════════════════════════════════════════════════════════
 PARSING RULES
 ═══════════════════════════════════════════════════════════════════════════
@@ -145,6 +155,22 @@ PARSING RULES
 ═══════════════════════════════════════════════════════════════════════════
 EXAMPLES
 ═══════════════════════════════════════════════════════════════════════════
+
+EXAMPLE A (builder first-time highlights):
+USER: "first-time highlights, iconic must-see landmarks, balanced pace"
+OUTPUT: {"raw_query":"first-time highlights, iconic must-see landmarks, balanced pace","raw_query_locale":"en","regions":[],"sub_regions":[],"season":null,"months":null,"season_locks":[],"personas":[],"themes":["first_time_highlights"],"anchor_pois_mentioned":[],"pace":"moderate","format":null,"duration_constraint":"day_trip","user_max_hours":null,"hard_constraints":[],"wants_cruise":false,"wants_charter_customization":false,"is_multi_day_request":false,"boost_dimensions":{"first_time_fit":1.2,"must_see_fit":1.2,"iconic_landmark_fit":1.2},"negative_signals":[],"confidence":0.78,"parser_notes":"First-time iconic highlights requested; no cruise intent."}
+
+EXAMPLE B (builder family easy walking):
+USER: "family with kids, easy walking, stroller friendly, no hiking"
+OUTPUT: {"raw_query":"family with kids, easy walking, stroller friendly, no hiking","raw_query_locale":"en","regions":[],"sub_regions":[],"season":null,"months":null,"season_locks":[],"personas":["family_with_young_kids"],"themes":[],"anchor_pois_mentioned":[],"pace":"relaxed","format":null,"duration_constraint":"day_trip","user_max_hours":null,"hard_constraints":[],"wants_cruise":false,"wants_charter_customization":false,"is_multi_day_request":false,"boost_dimensions":{"kid_friendly_fit":1.2,"stroller_friendly_fit":1.3,"easy_walking_fit":1.4,"mobility_friendly_fit":1.2},"negative_signals":["active_traveler"],"confidence":0.86,"parser_notes":"Family with young kids and explicit no-hiking constraint; no cruise intent."}
+
+EXAMPLE C (builder food market, not generic culture):
+USER: "foodie day, traditional markets, seafood and street food"
+OUTPUT: {"raw_query":"foodie day, traditional markets, seafood and street food","raw_query_locale":"en","regions":[],"sub_regions":[],"season":null,"months":null,"season_locks":[],"personas":[],"themes":["food_market"],"anchor_pois_mentioned":[],"pace":null,"format":null,"duration_constraint":"day_trip","user_max_hours":null,"hard_constraints":[],"wants_cruise":false,"wants_charter_customization":false,"is_multi_day_request":false,"boost_dimensions":{"food_market_fit":1.5,"market_fit":1.2,"street_food_fit":1.2,"seafood_market_fit":1.2},"negative_signals":[],"confidence":0.82,"parser_notes":"Food and market intent; traditional market does not imply broad culture intent."}
+
+EXAMPLE D (builder beaches and cafes):
+USER: "beaches, ocean views, cafes, relaxed pace"
+OUTPUT: {"raw_query":"beaches, ocean views, cafes, relaxed pace","raw_query_locale":"en","regions":[],"sub_regions":[],"season":null,"months":null,"season_locks":[],"personas":[],"themes":["beach","cafe"],"anchor_pois_mentioned":[],"pace":"relaxed","format":null,"duration_constraint":"day_trip","user_max_hours":null,"hard_constraints":[],"wants_cruise":false,"wants_charter_customization":false,"is_multi_day_request":false,"boost_dimensions":{"beach_fit":1.2,"coastal_fit":1.2,"cafe_fit":1.2,"relaxed_pace_fit":1.0},"negative_signals":[],"confidence":0.8,"parser_notes":"Coastal and cafe day requested; no cruise intent."}
 
 ${examples}
 

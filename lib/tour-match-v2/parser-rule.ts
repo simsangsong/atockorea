@@ -100,6 +100,7 @@ const EN_ANCHOR_ALIASES: Record<string, string[]> = {
   gwangmyeong_cave: ["gwangmyeong cave"],
   bulguksa_temple: ["bulguksa", "bulguksa temple"],
   cheomseongdae: ["cheomseongdae"],
+  jeju_stone_park: ["jeju stone park", "stone park"],
 };
 
 const DRAMA_LOCATION_BIAS: Record<string, string[]> = {
@@ -140,11 +141,41 @@ export function ruleParse(query: string): ParsedQueryV2 {
   for (const [key, patterns] of Object.entries(TAXONOMY.sub_regions ?? {})) {
     if (matchAny(query, patterns as string[])) sub_regions.push(key);
   }
+  if (/\b(jeju east|east jeju|east coast|eastern jeju|seongsan area)\b/.test(q)) {
+    if (!sub_regions.includes("jeju_east")) sub_regions.push("jeju_east");
+  }
+  if (/\b(jeju north|north jeju|northern jeju|jeju city|jeju-si|hamdeok area)\b/.test(q)) {
+    if (!sub_regions.includes("jeju_north")) sub_regions.push("jeju_north");
+    if (!sub_regions.includes("jeju_northwest")) sub_regions.push("jeju_northwest");
+  }
+  if (/\b(jeju northwest|northwest jeju|aewol area)\b/.test(q)) {
+    if (!sub_regions.includes("jeju_northwest")) sub_regions.push("jeju_northwest");
+  }
+  if (/\b(jeju west|west jeju|west coast|western jeju|hyeopjae area)\b/.test(q)) {
+    if (!sub_regions.includes("jeju_west")) sub_regions.push("jeju_west");
+  }
+  if (/\b(jeju south|south jeju|southern jeju|south coast|seogwipo area|jungmun area)\b/.test(q)) {
+    if (!sub_regions.includes("jeju_southern")) sub_regions.push("jeju_southern");
+  }
+  if (/\b(gyeongju|kyongju)\b/.test(q)) {
+    if (!sub_regions.includes("gyeongju")) sub_regions.push("gyeongju");
+  }
+  if (/\b(ulsan|yeongnam alps|amethyst cave)\b/.test(q)) {
+    if (!sub_regions.includes("ulsan")) sub_regions.push("ulsan");
+  }
+  if (/\b(nampo|jagalchi|gukje|biff)\b/.test(q)) {
+    if (!sub_regions.includes("busan_core")) sub_regions.push("busan_core");
+  }
+  if (/\bnear busan\b/.test(q)) {
+    if (!sub_regions.includes("busan_core")) sub_regions.push("busan_core");
+    if (!sub_regions.includes("yangsan")) sub_regions.push("yangsan");
+  }
 
   // Season + months + season_locks
   let season: ParsedQueryV2["season"] = null;
   let months: number[] | null = null;
   const boost: Record<string, number> = {};
+  const negative_signals: string[] = [];
 
   for (const [seasonKey, info] of Object.entries(TAXONOMY.seasons ?? {}) as any[]) {
     const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
@@ -202,7 +233,15 @@ export function ruleParse(query: string): ParsedQueryV2 {
       }
     }
   }
-
+  if (/\b(kid|kids|child|children|stroller|baby|babies)\b/.test(q)) {
+    if (!personas.includes("family_with_young_kids")) {
+      personas.push("family_with_young_kids");
+    }
+    bumpDim(boost, "family_fit", 1.0);
+    bumpDim(boost, "kid_friendly_fit", 1.2);
+    bumpDim(boost, "young_kids_fit", 1.2);
+    if (/\bstroller\b/.test(q)) bumpDim(boost, "stroller_friendly_fit", 1.2);
+  }
   // Themes
   const themes: string[] = [];
   for (const [key, info] of Object.entries(TAXONOMY.themes ?? {}) as any[]) {
@@ -211,6 +250,32 @@ export function ruleParse(query: string): ParsedQueryV2 {
       themes.push(key);
       for (const dim of info.boost_dims ?? []) bumpDim(boost, dim, 1.2);
     }
+  }
+  if (/\b(cafe|cafes|coffee|tea house|teahouse)\b/.test(q) && !isNegatedEnglishTerm(q, "cafe")) {
+    if (!themes.includes("cafe")) themes.push("cafe");
+    bumpDim(boost, "cafe_fit", 1.2);
+  }
+  if (/\b(first[-\s]?time|first visit|must[-\s]?see|highlights?|classic|iconic)\b/.test(q)) {
+    if (!themes.includes("first_time_highlights")) themes.push("first_time_highlights");
+    bumpDim(boost, "first_time_fit", 1.2);
+    bumpDim(boost, "must_see_fit", 1.0);
+    bumpDim(boost, "iconic_landmark_fit", 1.0);
+  }
+  if (/\b(foodie|local eats?|eat like a local|seafood)\b/.test(q)) {
+    if (!themes.includes("food_market")) themes.push("food_market");
+    bumpDim(boost, "food_market_fit", 1.2);
+    bumpDim(boost, "market_fit", 1.0);
+    bumpDim(boost, "street_food_fit", 1.0);
+    if (q.includes("seafood")) bumpDim(boost, "seafood_market_fit", 1.2);
+    const cultureIdx = personas.indexOf("culture_lovers");
+    if (cultureIdx >= 0 && /\b(traditional markets?|markets?|foodie|street food|seafood)\b/.test(q)) {
+      personas.splice(cultureIdx, 1);
+    }
+  }
+  if (/\b(ocean view|ocean views|sea view|sea views|coast|coastal)\b/.test(q)) {
+    if (!themes.includes("beach")) themes.push("beach");
+    bumpDim(boost, "coastal_fit", 1.2);
+    bumpDim(boost, "scenic_level", 1.0);
   }
 
   // Pace
@@ -222,6 +287,20 @@ export function ruleParse(query: string): ParsedQueryV2 {
       else if (key.includes("active")) pace = "active";
       for (const dim of info.boost_dims ?? []) bumpDim(boost, dim, 0.8);
     }
+  }
+  if (/\b(easy walking|little walking|less walking|low walking|not much walking|stroller friendly|accessible|mobility friendly)\b/.test(q)) {
+    pace = "relaxed";
+    bumpDim(boost, "easy_walking_fit", 1.2);
+    bumpDim(boost, "mobility_friendly_fit", 1.2);
+    bumpDim(boost, "stroller_friendly_fit", 0.9);
+    bumpDim(boost, "relaxed_pace_fit", 1.0);
+  }
+  if (/\b(no hiking|no long hike|no long hikes|without hiking|avoid hiking|skip hiking|no trekking|avoid stairs|few stairs)\b/.test(q)) {
+    if (!negative_signals.includes("active_traveler")) {
+      negative_signals.push("active_traveler");
+    }
+    bumpDim(boost, "easy_walking_fit", 1.2);
+    bumpDim(boost, "mobility_friendly_fit", 1.0);
   }
 
   // Format
@@ -398,15 +477,16 @@ export function ruleParse(query: string): ParsedQueryV2 {
     [/시즌\s*상품\s*(?:싫|말고)/, "no_seasonal"],
   ];
   const negPatsEn: [RegExp, string][] = [
-    [/no\s+shopping|without\s+shopping/i, "shopping"],
+    [/(?:no|not|without|avoid|skip)\s+(?:shopping|markets?|street food|market food)/i, "shopping"],
     [/no\s+museum/i, "museum"],
+    [/(?:not|no|without|avoid|skip)\s+(?:cafes?|coffee)/i, "cafe"],
+    [/(?:not|no|without|avoid|skip)\s+(?:beaches?|coast|coastal|ocean)/i, "beach"],
     [/not\s+interested\s+in\s+(?:flowers?|seasonal|blossoms?)/i, "no_seasonal"],
     [/skip\s+(?:the\s+)?(?:flowers?|seasonal|blossoms?)/i, "no_seasonal"],
     [/no\s+(?:flowers?|blossoms?|seasonal)\s+(?:stuff|tour|please|thanks)?/i, "no_seasonal"],
     [/don[''']?t\s+(?:like|want)\s+(?:flowers?|seasonal|blossoms?)/i, "no_seasonal"],
     [/no\s+hiking|no\s+trekking/i, "active_traveler"],
   ];
-  const negative_signals: string[] = [];
   for (const [pat, sig] of negPats) if (pat.test(query)) negative_signals.push(sig);
   for (const [pat, sig] of negPatsEn) if (pat.test(query)) negative_signals.push(sig);
 
@@ -444,7 +524,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
     wants_charter_customization,
     is_multi_day_request,
     boost_dimensions: Object.fromEntries(Object.entries(boost).sort()),
-    negative_signals,
+    negative_signals: [...new Set(negative_signals)],
     confidence,
     parser_notes: "rule-based deterministic fallback parser (no API call)",
   };
