@@ -129,6 +129,10 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
     // translation payload by ~75%. Locale codes like `zh-TW` are valid
     // path segments under PostgREST's `->` operator. When no locale is
     // requested, skip the column entirely.
+    // Card UIs only need the first gallery URL as a fallback when
+    // `image_url` is empty — the full ~13-URL array is dead weight in
+    // list responses. Pull only the first element via JSONB index
+    // (`thumb:gallery_images->>0`) for compact mode.
     const baseTourColumns = [
       'id',
       'slug',
@@ -142,7 +146,7 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       'price_currency',
       'price_type',
       'image_url',
-      'gallery_images',
+      'gallery_thumb:gallery_images->>0',
       'duration',
       'difficulty',
       'group_size',
@@ -310,12 +314,17 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       const localeForCard = (localeParam ?? 'en') as TourProductPageLocale;
       const staticCard = slugStr ? getStaticTourProductBySlug(slugStr, localeForCard) : undefined;
 
-      let listImage =
-        tour.image_url ||
-        (tour.gallery_images && Array.isArray(tour.gallery_images) && tour.gallery_images.length > 0
-          ? tour.gallery_images[0]
-          : '') ||
-        '';
+      // Compact mode pulls only the first gallery URL via
+      // `gallery_thumb` (a JSONB `->>0` selector); full mode keeps the
+      // entire array under `gallery_images`. Either way we land at the
+      // same fallback chain for the card hero.
+      const galleryFirst =
+        typeof tour.gallery_thumb === 'string' && tour.gallery_thumb
+          ? tour.gallery_thumb
+          : Array.isArray(tour.gallery_images) && tour.gallery_images.length > 0
+            ? tour.gallery_images[0]
+            : '';
+      let listImage = tour.image_url || galleryFirst || '';
       let galleryOut = Array.isArray(tour.gallery_images) ? [...tour.gallery_images] : [];
       if (staticCard?.thumbnail?.trim()) {
         const thumb = staticCard.thumbnail.trim();
@@ -360,7 +369,13 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
         originalPrice: originalOut,
         priceType: tour.price_type,
         image: listImage,
-        images: galleryOut,
+        // Compact mode never pulls the full gallery from the DB, so don't
+        // ship `images` either. Card consumers fall back through
+        // `tour.image || tour.images?.[0]` which still resolves correctly
+        // when `images` is absent — `image` is always populated when any
+        // hero exists. Full mode keeps the original array for detail/admin
+        // surfaces that genuinely use it.
+        ...(compactList ? {} : { images: galleryOut }),
         rating: tour.rating ? parseFloat(tour.rating.toString()) : 0,
         reviewCount: tour.review_count || 0,
         duration: durationStr,
