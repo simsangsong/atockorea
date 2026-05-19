@@ -25,8 +25,8 @@
 
 | Phase | 상태 | 시작일 | 완료일 | 마지막 커밋 | 비고 |
 |---|---|---|---|---|---|
-| 0 — 코드 실사 + 토큰 락 + Phase 1 사전 게이트 | ✅ 완료 (사용자 승인 대기) | 2026-05-20 | 2026-05-20 | 61e74569 | 7/7 sub-task 통과. 카드 baseline SHA `a931fe4e`. i18n 6/6×6/6=36 entry. Type-check clean. **사용자 "Phase 1 진입 승인" 대기 중** |
-| 1 — Catalogue Hero (240→88 collapsing magazine cover) + 푸터 strip | ⏳ | — | — | — | 매거진 톤 진입의 핵심 인상 — 단독으로 "격이 올라갔다" 통과되어야 함 |
+| 0 — 코드 실사 + 토큰 락 + Phase 1 사전 게이트 | ✅ 완료 | 2026-05-20 | 2026-05-20 | 649956fd | 7/7 sub-task 통과. 카드 baseline SHA `a931fe4e`. i18n 6/6×6/6=36 entry. Type-check clean. 사용자 "Phase 1 진입 승인" 완료 (2026-05-20) |
+| 1 — Catalogue Hero (240→88 collapsing magazine cover) + 푸터 strip | 🔄 진행 중 | 2026-05-20 | — | (pending) | 매거진 톤 진입의 핵심 인상 — 단독으로 "격이 올라갔다" 통과되어야 함. sub-task 1.1 (CatalogueHero 신규) 진입 |
 | 2 — Sticky Filter Rail 격상 (ivory + amber 톤, h-11, active filter chip strip) | ⏳ | — | — | — | slate-only form-tool 톤 → ivory+amber 매거진 톤 전환 |
 | 3 — Contextual Vignette Band + Results Meta Strip + Empty State 업그레이드 | ⏳ | — | — | — | 허브의 7-accent 시스템을 list가 이어받음 (volcano/harbor/palace/ocean/temple/blossom/signature) |
 | 4 — Editorial Grid (3-up vertical default + view toggle) + 6번째마다 Editorial Insert + Conversion Rescue Band | ⏳ | — | — | — | 그리드 시각 리듬 + 빌더 동선 분기 |
@@ -35,8 +35,8 @@
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단·롤백 / 📦 백로그
 
-**현재 활성 Phase: 없음 (Phase 0 ✅ 완료, Phase 1 진입 대기).**
-**다음 액션: 사용자가 "Phase 1 진입 승인"하면 §A Phase 1 시작일 fill + §C entry + planner commit → §6.1 sub-task 1.1 (CatalogueHero 신규) 진입.**
+**현재 활성 Phase: Phase 1 — Catalogue Hero + Footer Strip (🔄 진행 중).**
+**다음 액션: §6.1 sub-task 1.1 → 1.8 순차 실행. 각 sub-task 완료마다 §A 마지막 커밋 hash 갱신 + §C 한 줄 entry + 카드 SHA `a931fe4e` 재검증.**
 
 ---
 
@@ -82,6 +82,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-20 | Phase 0.6 ✅ — TourListCard baseline (B2 보호용) source-level 캡처 | (no commit, baseline) | **SHA1: a931fe4e8de9d02e3af235690ca78d86f8c089f9** / 347 줄 / 17358 byte. 핵심 시각 시그니처 9개 라인 박제: L102-103 spring 560/22 · L113-119 whileTap brightness 0.94 · L127 root border + 1.6rem radius + 흰색 gradient + warm shadow · L128 hover blue-200 ring · L130 motion-reduce guard · L158 Vogue 필터 saturate 1.08 contrast 1.06 brightness 0.99 · L161-170 film grain SVG fractalNoise baseFreq 0.9 + feColorMatrix 0.55 + opacity 0.12 · L171-178 vignette radial-gradient 0.15. **Phase 1-4 ✅ 시 `git hash-object components/tour/TourListCard.tsx`로 동일 SHA 검증** → 이게 변하면 B2 위반 자동 감지 |
 | 2026-05-20 | Phase 0.6 우회 — preview 탭 background visibility로 screenshot 30s timeout. SHA + 시각 시그니처 라인 박제로 더 엄격하게 baseline 확보 (screenshot은 JPEG 압축 노이즈로 byte-exact diff 불가능, SHA는 픽셀-정확) | — | preview MCP 한계 → source-level approach. 결과적으로 B2 검증이 강화됨 |
 | 2026-05-20 | Phase 0 ✅ — 7/7 sub-task 모두 통과. 사용자 "Phase 1 진입 승인" 대기 | 61e74569 | 다음: 사용자 승인 후 Phase 1 (Catalogue Hero + Footer Strip) §6.1 진입 |
+| 2026-05-20 | Phase 0 게이트 문서화 — Phase 1 진입 사용자 승인 완료 (사용자 "이어서 진행해줘" 메시지) | 649956fd | docs(tours-list): Phase 0 게이트 7/7 통과 — Phase 1 승인 대기 |
+| 2026-05-20 | Phase 1 시작 — §A 🔄 / §C entry / planner-first 커밋. sub-task 1.1 → 1.8 순차 실행 | (pending) | 카드 baseline SHA `a931fe4e8de9d02e3af235690ca78d86f8c089f9` 재확인 (Phase 0.6 baseline 일치). framer-motion ^12.38.0 확인 — useScroll + useTransform 사용 가능 |
 
 ---
 
