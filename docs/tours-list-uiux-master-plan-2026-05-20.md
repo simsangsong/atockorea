@@ -26,7 +26,7 @@
 | Phase | 상태 | 시작일 | 완료일 | 마지막 커밋 | 비고 |
 |---|---|---|---|---|---|
 | 0 — 코드 실사 + 토큰 락 + Phase 1 사전 게이트 | ✅ 완료 | 2026-05-20 | 2026-05-20 | 649956fd | 7/7 sub-task 통과. 카드 baseline SHA `a931fe4e`. i18n 6/6×6/6=36 entry. Type-check clean. 사용자 "Phase 1 진입 승인" 완료 (2026-05-20) |
-| 1 — Catalogue Hero (240→88 collapsing magazine cover) + 푸터 strip | 🔄 진행 중 | 2026-05-20 | — | (pending) | 매거진 톤 진입의 핵심 인상 — 단독으로 "격이 올라갔다" 통과되어야 함. sub-task 1.1 (CatalogueHero 신규) 진입 |
+| 1 — Catalogue Hero (240→88 collapsing magazine cover) + 푸터 strip | 🔄 진행 중 (사용자 "표지 격 통과" 승인 대기) | 2026-05-20 | — | 6ef3cb21 | sub-task 1.1 → 1.8 코드 완료. 카드 SHA `a931fe4e` 변경 0. slate-200/900 grep = 0. i18n 36/36. type-check + next build --webpack 통과. **사용자 "표지 격 통과" 확인 시 ✅** |
 | 2 — Sticky Filter Rail 격상 (ivory + amber 톤, h-11, active filter chip strip) | ⏳ | — | — | — | slate-only form-tool 톤 → ivory+amber 매거진 톤 전환 |
 | 3 — Contextual Vignette Band + Results Meta Strip + Empty State 업그레이드 | ⏳ | — | — | — | 허브의 7-accent 시스템을 list가 이어받음 (volcano/harbor/palace/ocean/temple/blossom/signature) |
 | 4 — Editorial Grid (3-up vertical default + view toggle) + 6번째마다 Editorial Insert + Conversion Rescue Band | ⏳ | — | — | — | 그리드 시각 리듬 + 빌더 동선 분기 |
@@ -35,8 +35,8 @@
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단·롤백 / 📦 백로그
 
-**현재 활성 Phase: Phase 1 — Catalogue Hero + Footer Strip (🔄 진행 중).**
-**다음 액션: §6.1 sub-task 1.1 → 1.8 순차 실행. 각 sub-task 완료마다 §A 마지막 커밋 hash 갱신 + §C 한 줄 entry + 카드 SHA `a931fe4e` 재검증.**
+**현재 활성 Phase: Phase 1 — Catalogue Hero + Footer Strip (🔄, 코드 완료, 사용자 시각 확인 대기).**
+**다음 액션: 사용자가 `/tours/list`에서 hero 표시·collapse·atmosphere·footer strip 시각 합격 "표지 격 통과" 확인 시 → §A Phase 1 ✅ 마킹 + Phase 2 (Sticky Filter Rail 격상) 진입 승인 요청.**
 
 ---
 
@@ -83,7 +83,10 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-20 | Phase 0.6 우회 — preview 탭 background visibility로 screenshot 30s timeout. SHA + 시각 시그니처 라인 박제로 더 엄격하게 baseline 확보 (screenshot은 JPEG 압축 노이즈로 byte-exact diff 불가능, SHA는 픽셀-정확) | — | preview MCP 한계 → source-level approach. 결과적으로 B2 검증이 강화됨 |
 | 2026-05-20 | Phase 0 ✅ — 7/7 sub-task 모두 통과. 사용자 "Phase 1 진입 승인" 대기 | 61e74569 | 다음: 사용자 승인 후 Phase 1 (Catalogue Hero + Footer Strip) §6.1 진입 |
 | 2026-05-20 | Phase 0 게이트 문서화 — Phase 1 진입 사용자 승인 완료 (사용자 "이어서 진행해줘" 메시지) | 649956fd | docs(tours-list): Phase 0 게이트 7/7 통과 — Phase 1 승인 대기 |
-| 2026-05-20 | Phase 1 시작 — §A 🔄 / §C entry / planner-first 커밋. sub-task 1.1 → 1.8 순차 실행 | (pending) | 카드 baseline SHA `a931fe4e8de9d02e3af235690ca78d86f8c089f9` 재확인 (Phase 0.6 baseline 일치). framer-motion ^12.38.0 확인 — useScroll + useTransform 사용 가능 |
+| 2026-05-20 | Phase 1 시작 — §A 🔄 / §C entry / planner-first 커밋. sub-task 1.1 → 1.8 순차 실행 | 0f48744b | 카드 baseline SHA `a931fe4e8de9d02e3af235690ca78d86f8c089f9` 재확인 (Phase 0.6 baseline 일치). framer-motion ^12.38.0 확인 — useScroll + useTransform 사용 가능 |
+| 2026-05-20 | Phase 1.1–1.7 ✅ — Catalogue Hero (240→88) + Footer Strip 코드 완료. page.tsx ivory(#faf8f3) 전환 + 단일 sticky parent로 hero+filter rail wrap (collapse window overlap 방지) | 6ef3cb21 | components/tours-list/CatalogueHero.tsx (147L) + CatalogueFooterStrip.tsx (45L) 신규. page.tsx 13 line edited. **검증 결과**: 카드 SHA `a931fe4e` 유지 (0 touch) · slate-200/900 grep in components/tours-list/ = 0 · amber/ivory/italic 토큰 11 occurrence · type-check clean · next build --webpack /tours/list 정상 컴파일 |
+| 2026-05-20 | Phase 1.8 ✅ — i18n 6 locale × 6 키 = 36 entry 재검증 (Phase 0.4 적층분 100% 사용, MISSING 0) | (verification only) | node script: `i18n gate: 36 present / 0 missing (target 36)` — heroIssue/heroTitle/heroAccent/heroSub/heroCurator/footerCuratorLine × en/ko/zh/zh-TW/es/ja |
+| 2026-05-20 | Phase 1 코드 완료 — 사용자 "표지 격 통과" 시각 확인 대기 (240/200px 매거진 cover + 88px collapse + ken burns + amber wash + 큐레이터 시그니처 + 풀블리드 사진). LCP/CLS 측정은 사용자 dev 환경 확인 후 §C 보강 예정 | (pending acceptance) | 사용자가 `/tours/list`에서 hero 표시·collapse·atmosphere·footer strip 시각 합격 시 §A Phase 1 ✅ 마킹 |
 
 ---
 
@@ -325,16 +328,16 @@ import type { StripAccent } from '@/components/tours-hub/TourCollectionStrip';
 
 **목적**: 단독으로 "이 사이트 격이 올라갔다" 통과되는 매거진 표지.
 
-| # | 작업 | 파일 | 통과 기준 |
-|---|---|---|---|
-| 1.1 | `components/tours-list/CatalogueHero.tsx` 신규 — 240px collapsing | 신규 | 데스크탑 240px / 모바일 200px 마운트, ken burns 16s 동작 |
-| 1.2 | scroll-driven collapse 88px (framer `useScroll` + `useTransform`) | CatalogueHero | scroll 200px↓ 시 88px로 reflow, masthead + tour count만 유지 |
-| 1.3 | masthead (`Issue 14 · Spring 2026`) + 메인 (`The Catalogue,` + italic serif `every tour, hand-picked.`) + sub + 큐레이터 라인 | CatalogueHero | 6 locale 카피 검증 |
-| 1.4 | 풀블리드 사진 + 어둠 그라데이션 + amber 워시 + 라디얼 비네트 (허브 hero와 같은 레이어 패턴) | CatalogueHero | 허브와 시각 가족감 일치 |
-| 1.5 | `app/tours/list/page.tsx`에 Hero 마운트 + `bg-white` → `bg-[#faf8f3]` | page.tsx | 페이지 베이스 ivory 전환 |
-| 1.6 | `components/tours-list/CatalogueFooterStrip.tsx` 신규 — "Curated since 2014 · 217 tours · KR team" 큐레이터 시그니처 | 신규 | grid 끝 + load-more 사이 마운트 |
-| 1.7 | 카드 베이스 색 verify — ivory 페이지 위에서 카드 white/97 그대로 자연스러움 확인 (회귀 없음) | page.tsx | B2 카드 보존 검증, screenshot diff vs Phase 0.6 |
-| 1.8 | i18n 6 locale 카피 정밀화 (`heroTitle/heroAccent/heroSub/heroCurator/footerCuratorLine`) | messages/*.json | 카피라이터 톤 PR로 분리 가능 |
+| # | 작업 | 파일 | 통과 기준 | 상태 |
+|---|---|---|---|---|
+| 1.1 | `components/tours-list/CatalogueHero.tsx` 신규 — 240px collapsing | 신규 | 데스크탑 240px / 모바일 200px 마운트, ken burns 16s 동작 | ✅ 6ef3cb21 |
+| 1.2 | scroll-driven collapse 88px (framer `useScroll` + `useTransform`) | CatalogueHero | scroll 200px↓ 시 88px로 reflow, masthead + tour count만 유지 | ✅ 6ef3cb21 |
+| 1.3 | masthead (`Issue 14 · Spring 2026`) + 메인 (`The Catalogue,` + italic serif `every tour, hand-picked.`) + sub + 큐레이터 라인 | CatalogueHero | 6 locale 카피 검증 | ✅ 6ef3cb21 |
+| 1.4 | 풀블리드 사진 + 어둠 그라데이션 + amber 워시 + 라디얼 비네트 (허브 hero와 같은 레이어 패턴) | CatalogueHero | 허브와 시각 가족감 일치 | ✅ 6ef3cb21 |
+| 1.5 | `app/tours/list/page.tsx`에 Hero 마운트 + `bg-white` → `bg-[#faf8f3]` | page.tsx | 페이지 베이스 ivory 전환 | ✅ 6ef3cb21 |
+| 1.6 | `components/tours-list/CatalogueFooterStrip.tsx` 신규 — "Curated since 2014 · 217 tours · KR team" 큐레이터 시그니처 | 신규 | grid 끝 + load-more 사이 마운트 | ✅ 6ef3cb21 |
+| 1.7 | 카드 베이스 색 verify — ivory 페이지 위에서 카드 white/97 그대로 자연스러움 확인 (회귀 없음) | page.tsx | B2 카드 보존 검증, screenshot diff vs Phase 0.6 | ✅ SHA a931fe4e 일치 |
+| 1.8 | i18n 6 locale 카피 정밀화 (`heroTitle/heroAccent/heroSub/heroCurator/footerCuratorLine`) | messages/*.json | 카피라이터 톤 PR로 분리 가능 | ✅ 36/36 entry |
 
 **Phase 1 ✅ 조건**: 사용자가 "표지 격 통과" 확인. Phase 0.6 카드 스크린샷과 Phase 1 후 카드 스크린샷 비교 시 카드 자체 변경 0. LCP regression ≤ +50ms (Hero 이미지 priority).
 
