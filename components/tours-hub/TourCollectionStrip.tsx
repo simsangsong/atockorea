@@ -6,60 +6,36 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import type { HubTourItem } from '@/app/api/tours/hub/route';
 import { cn } from '@/lib/utils';
+import { ACCENT, type StripAccent } from '@/lib/tours-hub-accents';
 
-interface TourCollectionStripProps {
-  title: string;
-  subtitle?: string;
-  icon?: string;
-  tours: HubTourItem[];
-  seeAllHref?: string;
-  seeAllLabel?: string;
-  accentColor?: 'blue' | 'emerald' | 'violet' | 'amber' | 'rose';
-}
-
-const ACCENT = {
-  blue: {
-    dot: 'bg-blue-500',
-    badge: 'bg-blue-50 text-blue-700 border-blue-200',
-    hover: 'group-hover:text-blue-700',
-    seeAll: 'text-blue-600 hover:text-blue-700',
-    line: 'bg-blue-500',
-  },
-  emerald: {
-    dot: 'bg-emerald-500',
-    badge: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-    hover: 'group-hover:text-emerald-700',
-    seeAll: 'text-emerald-600 hover:text-emerald-700',
-    line: 'bg-emerald-500',
-  },
-  violet: {
-    dot: 'bg-violet-500',
-    badge: 'bg-violet-50 text-violet-700 border-violet-200',
-    hover: 'group-hover:text-violet-700',
-    seeAll: 'text-violet-600 hover:text-violet-700',
-    line: 'bg-violet-500',
-  },
-  amber: {
-    dot: 'bg-amber-500',
-    badge: 'bg-amber-50 text-amber-700 border-amber-200',
-    hover: 'group-hover:text-amber-700',
-    seeAll: 'text-amber-600 hover:text-amber-700',
-    line: 'bg-amber-500',
-  },
-  rose: {
-    dot: 'bg-rose-500',
-    badge: 'bg-rose-50 text-rose-700 border-rose-200',
-    hover: 'group-hover:text-rose-700',
-    seeAll: 'text-rose-600 hover:text-rose-700',
-    line: 'bg-rose-500',
-  },
-} as const;
+// `StripAccent` + `ACCENT` were extracted to `lib/tours-hub-accents.ts` in
+// Phase 0.1 of the `/tours/list` UI/UX upgrade so the catalogue page's
+// `ContextualVignetteBand` (Phase 3) shares the same palette. Re-exported here
+// to keep existing imports (`@/components/tours-hub/TourCollectionStrip`)
+// working without touching call sites.
+export { type StripAccent } from '@/lib/tours-hub-accents';
 
 const FALLBACK_IMAGE =
   'https://images.unsplash.com/photo-1534008897995-27a23e859048?w=600&q=80';
 
-function HubTourCard({ tour, accentColor }: { tour: HubTourItem; accentColor: keyof typeof ACCENT }) {
-  const accent = ACCENT[accentColor];
+interface TourCollectionStripProps {
+  /** Small uppercase identifier above the headline — e.g. "BY ISLAND · JEJU". */
+  eyebrow: string;
+  title: string;
+  /** Optional italic-serif accent continuation, rendered in the strip's signature color. */
+  titleAccent?: string;
+  /** 2–3 sentence editorial note from the Korea team — why this collection exists. */
+  editorNote?: string;
+  /** Italic signature line below the editor's note, e.g. "— Curated by Min · Lead Jeju editor". */
+  curator?: string;
+  tours: HubTourItem[];
+  seeAllHref?: string;
+  seeAllLabel?: string;
+  accent?: StripAccent;
+}
+
+function HubTourCard({ tour, accent }: { tour: HubTourItem; accent: StripAccent }) {
+  const a = ACCENT[accent];
   const detailHref = tour.slug ? `/tour-product/${tour.slug}` : `/tour/${tour.id}`;
   const hasRating = tour.rating >= 4.0 && tour.reviewCount > 0;
   const hasPrice = tour.price > 0;
@@ -67,84 +43,108 @@ function HubTourCard({ tour, accentColor }: { tour: HubTourItem; accentColor: ke
 
   return (
     <motion.div
-      className="w-[260px] shrink-0 sm:w-[280px]"
-      whileHover={{ y: -4 }}
-      transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+      className="w-[280px] shrink-0 sm:w-[300px]"
+      whileHover={{ y: -6 }}
+      transition={{ type: 'spring', stiffness: 380, damping: 26 }}
     >
       <Link
         href={detailHref}
         className={cn(
-          'group block overflow-hidden rounded-2xl border border-white/80 bg-white shadow-[0_8px_28px_-12px_rgba(15,23,42,0.22),0_2px_8px_-4px_rgba(15,23,42,0.10)]',
-          'transition-[box-shadow,border-color] duration-300',
-          'hover:border-blue-200/70 hover:shadow-[0_20px_48px_-16px_rgba(15,23,42,0.32),0_8px_20px_-8px_rgba(59,130,246,0.18)]',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60 focus-visible:ring-offset-2',
+          'group relative block overflow-hidden rounded-2xl border border-white/85 bg-white',
+          'shadow-[0_12px_36px_-16px_rgba(15,23,42,0.24),0_2px_8px_-4px_rgba(15,23,42,0.10)]',
+          'ring-1 ring-slate-200/40 transition-[box-shadow,border-color] duration-300',
+          'hover:ring-2 hover:border-slate-200/80',
+          'hover:shadow-[0_32px_64px_-22px_rgba(15,23,42,0.32),0_10px_24px_-10px_rgba(15,23,42,0.18)]',
+          a.ringHover,
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/40 focus-visible:ring-offset-2',
         )}
       >
-        {/* Image */}
-        <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+        {/* Photo — 4:5 magazine crop, taller than the old 4:3 to push photography forward */}
+        <div className="relative aspect-[4/5] w-full overflow-hidden bg-slate-100">
           <Image
             src={tour.imageUrl ?? FALLBACK_IMAGE}
             alt={tour.title}
             fill
-            sizes="280px"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(min-width: 1024px) 320px, (min-width: 640px) 300px, 280px"
+            className="object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.08]"
             loading="lazy"
           />
-          {/* Gradient overlay */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-          {/* Badge top-left */}
+
+          {/* Subtle bottom gradient keeps the photo edge readable against the card body */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-slate-950/30 to-transparent" />
+
+          {/* Top-left main badge — always visible */}
           {mainBadge && (
-            <span className="absolute left-2.5 top-2.5 inline-flex items-center rounded-full border border-white/30 bg-black/40 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
+            <span className="absolute left-3 top-3 inline-flex items-center rounded-full border border-white/40 bg-slate-950/55 px-2.5 py-1 text-[9.5px] font-bold uppercase tracking-[0.12em] text-white backdrop-blur-md">
               {mainBadge}
             </span>
           )}
-          {/* Rating overlay bottom */}
-          {hasRating && (
-            <span className="absolute bottom-2.5 right-2.5 inline-flex items-center gap-1 rounded-full bg-black/50 px-2 py-0.5 text-[10px] font-bold text-white backdrop-blur-sm">
-              <svg className="h-3 w-3 text-amber-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.034 3.182a1 1 0 0 0 .95.69h3.347c.969 0 1.371 1.24.588 1.81l-2.708 1.967a1 1 0 0 0-.364 1.118l1.034 3.182c.3.922-.755 1.688-1.538 1.118l-2.708-1.967a1 1 0 0 0-1.176 0l-2.708 1.967c-.783.57-1.838-.196-1.539-1.118l1.035-3.182a1 1 0 0 0-.364-1.118L2.18 8.609c-.783-.57-.38-1.81.588-1.81h3.347a1 1 0 0 0 .951-.69l1.034-3.182Z" />
-              </svg>
-              {tour.rating.toFixed(1)}
-              <span className="font-normal opacity-80">({tour.reviewCount.toLocaleString()})</span>
-            </span>
-          )}
+
+          {/* Top-right "Korea team's pick" reveal on hover — the brand promise as surprise/delight */}
+          <span
+            className={cn(
+              'absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full',
+              'border border-white/40 bg-white/95 px-2.5 py-1',
+              'text-[9.5px] font-bold uppercase tracking-[0.14em] text-slate-900',
+              'opacity-0 scale-90 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]',
+              'group-hover:opacity-100 group-hover:scale-100',
+              'shadow-[0_4px_12px_-2px_rgba(15,23,42,0.18)]',
+            )}
+          >
+            <span className={cn('h-1.5 w-1.5 rounded-full', a.dot)} aria-hidden />
+            Korea team&rsquo;s pick
+          </span>
         </div>
 
-        {/* Content */}
-        <div className="p-3.5">
-          {/* Location */}
-          <p className="mb-1 flex items-center gap-1 text-[10px] font-medium text-slate-500">
-            <svg className="h-3 w-3 shrink-0 text-slate-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-              <path fillRule="evenodd" d="M10 2.5a5.5 5.5 0 0 0-5.5 5.5c0 3.744 4.34 8.313 5.054 9.034a.625.625 0 0 0 .892 0C11.16 16.313 15.5 11.744 15.5 8A5.5 5.5 0 0 0 10 2.5Zm0 7.188A1.688 1.688 0 1 1 10 6.31a1.688 1.688 0 0 1 0 3.377Z" clipRule="evenodd" />
-            </svg>
-            {tour.city}
+        {/* Content below photo — eyebrow · title · editorial line · price row */}
+        <div className="p-4">
+          {/* City + duration eyebrow */}
+          <p className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">
+            <span>{tour.city}</span>
             {tour.duration && (
-              <span className="ml-auto flex items-center gap-0.5 text-slate-400">
-                <svg className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-                  <path fillRule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.625-11.75a.625.625 0 1 0-1.25 0v4.009c0 .166.066.325.183.442l2.5 2.5a.625.625 0 1 0 .884-.884l-2.317-2.317V6.25Z" clipRule="evenodd" />
-                </svg>
-                {tour.duration}
-              </span>
+              <>
+                <span className="text-slate-300" aria-hidden>·</span>
+                <span className="font-medium tracking-[0.1em] text-slate-400">{tour.duration}</span>
+              </>
             )}
           </p>
 
           {/* Title */}
-          <h3
-            className={cn(
-              'line-clamp-2 min-h-[2.6em] text-[12.5px] font-semibold leading-[1.38] tracking-[-0.02em] text-slate-900',
-              'transition-colors duration-200',
-              accent.hover,
-            )}
-          >
+          <h3 className="mt-1.5 line-clamp-2 min-h-[2.6em] text-[15px] font-bold leading-[1.28] tracking-[-0.02em] text-slate-900">
             {tour.title}
           </h3>
 
-          {/* Price */}
-          <p className="mt-2.5 text-[13.5px] font-bold tracking-[-0.03em] text-slate-950">
-            {hasPrice ? `$${tour.price.toFixed(2)}` : (
-              <span className="text-[11px] font-medium text-slate-400 tracking-normal">Contact for price</span>
+          {/* Editorial line — rating + review count (★ 4.9 · 234 reviews) when data exists,
+              otherwise fall back to the brand-voice italic so every card has a signature line. */}
+          {hasRating ? (
+            <div className="mt-1.5 flex items-center gap-1.5 text-[11.5px] text-slate-600">
+              <svg className="h-3.5 w-3.5 text-amber-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.034 3.182a1 1 0 0 0 .95.69h3.347c.969 0 1.371 1.24.588 1.81l-2.708 1.967a1 1 0 0 0-.364 1.118l1.034 3.182c.3.922-.755 1.688-1.538 1.118l-2.708-1.967a1 1 0 0 0-1.176 0l-2.708 1.967c-.783.57-1.838-.196-1.539-1.118l1.035-3.182a1 1 0 0 0-.364-1.118L2.18 8.609c-.783-.57-.38-1.81.588-1.81h3.347a1 1 0 0 0 .951-.69l1.034-3.182Z" />
+              </svg>
+              <span className="font-semibold text-slate-800">{tour.rating.toFixed(1)}</span>
+              <span className="text-slate-300" aria-hidden>·</span>
+              <span className="italic text-slate-500">{tour.reviewCount.toLocaleString()} reviews</span>
+            </div>
+          ) : (
+            <p className="mt-1.5 text-[11.5px] italic text-slate-500">
+              Hand-picked by our Korea team
+            </p>
+          )}
+
+          {/* Price row — confident, From · $XX · / person */}
+          <div className="mt-3 flex items-baseline gap-1.5">
+            {hasPrice ? (
+              <>
+                <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-slate-400">From</span>
+                <span className="text-[18px] font-bold tracking-[-0.03em] text-slate-950">
+                  ${tour.price.toFixed(0)}
+                </span>
+                <span className="text-[11px] text-slate-500">/ person</span>
+              </>
+            ) : (
+              <span className="text-[11.5px] italic text-slate-500">Contact for price</span>
             )}
-          </p>
+          </div>
         </div>
       </Link>
     </motion.div>
@@ -152,81 +152,136 @@ function HubTourCard({ tour, accentColor }: { tour: HubTourItem; accentColor: ke
 }
 
 export function TourCollectionStrip({
+  eyebrow,
   title,
-  subtitle,
-  icon,
+  titleAccent,
+  editorNote,
+  curator,
   tours,
   seeAllHref,
   seeAllLabel = 'See all',
-  accentColor = 'blue',
+  accent: accentKey = 'signature',
 }: TourCollectionStripProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const accent = ACCENT[accentColor];
+  const a = ACCENT[accentKey];
 
   if (tours.length === 0) return null;
 
   return (
     <section className="w-full">
-      {/* Section Header */}
-      <div className="mb-5 flex items-end justify-between px-4 sm:px-6 lg:px-8">
-        <div className="flex items-start gap-3">
-          {icon && (
-            <span className="mt-0.5 text-2xl leading-none" aria-hidden>
-              {icon}
-            </span>
-          )}
-          <div>
-            <h2 className="text-[18px] font-bold tracking-[-0.03em] text-slate-900 sm:text-[20px]">
+      {/* Magazine-spread section header — eyebrow · headline · editor's note · curator */}
+      <div className="mb-6 px-4 sm:mb-7 sm:px-6 lg:mb-8 lg:px-8">
+        <div className="flex items-start justify-between gap-6">
+          <div className="max-w-2xl">
+            {/* Eyebrow row — accent hairline + uppercase identifier */}
+            <div className="mb-3 flex items-center gap-3">
+              <span className={cn('h-px w-10 shrink-0 rounded-full', a.line)} aria-hidden />
+              <span
+                className={cn(
+                  'text-[10.5px] font-bold uppercase tracking-[0.22em]',
+                  a.eyebrow,
+                )}
+              >
+                {eyebrow}
+              </span>
+            </div>
+
+            {/* Headline — large display weight, slight negative tracking */}
+            <h2 className="text-[24px] font-bold leading-[1.1] tracking-[-0.025em] text-slate-900 sm:text-[28px] lg:text-[32px]">
               {title}
+              {titleAccent && (
+                <>
+                  {' '}
+                  <span className={cn('font-serif italic font-medium', a.eyebrow)}>
+                    {titleAccent}
+                  </span>
+                </>
+              )}
             </h2>
-            {subtitle && (
-              <p className="mt-0.5 text-[12.5px] text-slate-500">{subtitle}</p>
+
+            {/* Editor's note — Korea-team voice */}
+            {editorNote && (
+              <p className="mt-3 max-w-[58ch] text-[13.5px] leading-[1.6] text-slate-600 sm:text-[14.5px]">
+                {editorNote}
+              </p>
+            )}
+
+            {/* Curator signature */}
+            {curator && (
+              <p className="mt-3 flex items-center gap-2 text-[11.5px] italic text-slate-500">
+                <span className="inline-block h-px w-6 bg-slate-300" aria-hidden />
+                {curator}
+              </p>
             )}
           </div>
+
+          {/* See-all link (desktop) — magazine TOC-style anchor */}
+          {seeAllHref && (
+            <Link
+              href={seeAllHref}
+              className={cn(
+                'hidden shrink-0 self-start items-center gap-1.5 pt-1 text-[12.5px] font-semibold underline-offset-4 hover:underline lg:inline-flex',
+                a.seeAll,
+              )}
+            >
+              {seeAllLabel} <span aria-hidden>→</span>
+            </Link>
+          )}
         </div>
-        {seeAllHref && (
-          <Link
-            href={seeAllHref}
-            className={cn(
-              'shrink-0 text-[12.5px] font-semibold underline-offset-2 hover:underline',
-              accent.seeAll,
-            )}
-          >
-            {seeAllLabel} →
-          </Link>
-        )}
       </div>
 
       {/* Horizontal scroll container */}
       <div
         ref={scrollRef}
-        className="flex snap-x snap-mandatory gap-3.5 overflow-x-auto px-4 pb-4 sm:gap-4 sm:px-6 lg:px-8"
+        className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 sm:gap-5 sm:px-6 lg:px-8"
         style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }}
       >
         {tours.map((tour) => (
           <div key={tour.id} className="snap-start">
-            <HubTourCard tour={tour} accentColor={accentColor} />
+            <HubTourCard tour={tour} accent={accentKey} />
           </div>
         ))}
 
         {/* "See all" tail card */}
         {seeAllHref && tours.length >= 4 && (
-          <div className="flex w-[120px] shrink-0 snap-start items-center justify-center">
+          <div className="flex w-[140px] shrink-0 snap-start items-center justify-center">
             <Link
               href={seeAllHref}
               className={cn(
-                'flex flex-col items-center gap-2 rounded-2xl border border-dashed border-slate-200 px-4 py-8 text-center transition-colors hover:border-slate-300 hover:bg-slate-50',
-                'h-full w-full justify-center',
+                'group flex h-full w-full flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-slate-300 px-4 py-8 text-center transition-colors',
+                'hover:border-slate-400 hover:bg-slate-50/70',
               )}
             >
-              <span className="text-2xl">→</span>
-              <span className={cn('text-[11px] font-semibold', accent.seeAll)}>
+              <span
+                className={cn('text-2xl transition-transform group-hover:translate-x-1', a.eyebrow)}
+                aria-hidden
+              >
+                →
+              </span>
+              <span
+                className={cn('text-[11px] font-bold uppercase tracking-[0.14em]', a.seeAll)}
+              >
                 {seeAllLabel}
               </span>
             </Link>
           </div>
         )}
       </div>
+
+      {/* Mobile see-all (desktop hidden) */}
+      {seeAllHref && (
+        <div className="px-4 pb-2 pt-1 sm:px-6 lg:hidden">
+          <Link
+            href={seeAllHref}
+            className={cn(
+              'inline-flex items-center gap-1.5 text-[12.5px] font-semibold underline-offset-4 hover:underline',
+              a.seeAll,
+            )}
+          >
+            {seeAllLabel} <span aria-hidden>→</span>
+          </Link>
+        </div>
+      )}
     </section>
   );
 }
