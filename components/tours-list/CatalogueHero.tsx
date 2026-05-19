@@ -35,7 +35,7 @@ const EXPANDED_DESKTOP = 240;
 const EXPANDED_MOBILE = 200;
 const COLLAPSE_SCROLL_RANGE = 200;
 
-const HERO_PHOTO_SRC = '/images/tours-list/catalogue-hero.png';
+const HERO_PHOTO_SRC = '/images/tours-list/catalogue-hero.jpg';
 
 interface CatalogueHeroProps {
   /** Total tour count — drives the sub line and 88px-mode badge. */
@@ -94,26 +94,45 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
       >
         <Image
           src={HERO_PHOTO_SRC}
-          alt="Korea tour catalogue cover — Hallasan framed by hydrangea and wisteria blooms"
+          alt="Korea tour catalogue cover — hanbok dancer at Gyeongbokgung Palace"
           fill
           priority
           sizes="100vw"
           quality={88}
-          className="object-cover object-center"
+          // object-position TOP — portrait photo: favor palace + sky framing, push
+          // the bottom (where a small source watermark sits) out of the visible
+          // wide-hero crop. With object-cover the photo is scaled to fill height;
+          // top-anchoring keeps the iconic eaves visible and trims the floor.
+          className="object-cover object-[center_top]"
         />
       </motion.div>
 
-      {/* Layered atmosphere — matches hub hero pattern (dark + radial + amber wash). */}
+      {/* Layered atmosphere — dark scrim heavily boosted (user 2026-05-20: "글씨 안 보여").
+          The new hanbok+palace photo has bright sky everywhere, so contrast for white
+          text demands a stronger bottom-anchored darkening than the previous layer. */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-slate-950/30 to-slate-950/75"
+        className="absolute inset-0 bg-gradient-to-b from-slate-950/55 via-slate-950/45 to-slate-950/90"
         aria-hidden
       />
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center_20%,transparent_45%,rgba(15,23,42,0.55)_100%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center_15%,transparent_25%,rgba(15,23,42,0.70)_100%)]"
         aria-hidden
       />
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_15%_95%,rgba(217,119,6,0.20)_0%,transparent_50%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_15%_95%,rgba(217,119,6,0.22)_0%,transparent_55%)]"
+        aria-hidden
+      />
+      {/* Bottom-half dedicated text scrim — guarantees the display block sits
+          on near-black regardless of what the photo crop shows. Crucial for the
+          sub-line and curator signature (smallest text). */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/75 via-black/45 to-transparent"
+        aria-hidden
+      />
+      {/* Top scrim — light, just enough to keep masthead + count badge
+          readable when the photo's top is bright sky. */}
+      <div
+        className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/55 via-black/20 to-transparent"
         aria-hidden
       />
 
@@ -123,7 +142,7 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
           className="h-px w-10 rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500"
           aria-hidden
         />
-        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-amber-200/95">
+        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-amber-200 [text-shadow:0_1px_8px_rgba(0,0,0,0.7)]">
           {heroIssue}
         </span>
       </div>
@@ -149,7 +168,7 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
         style={reducedMotion ? undefined : { opacity: displayOpacity }}
       >
         <div className="max-w-[820px]">
-          <h1 className="font-bold leading-[1.04] tracking-[-0.03em] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.4)] text-[26px] sm:text-[34px] lg:text-[40px]">
+          <h1 className="font-bold leading-[1.04] tracking-[-0.03em] text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.75),0_1px_3px_rgba(0,0,0,0.6)] text-[26px] sm:text-[34px] lg:text-[40px]">
             {heroTitle}{' '}
             {/* Upright serif accent (italic banned per user direction 2026-05-20).
                 Light serif weight + tight tracking reads premium without italic flair. */}
@@ -158,12 +177,12 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
             </span>
           </h1>
 
-          <p className="mt-2 max-w-[620px] text-[12.5px] leading-[1.55] text-white/85 sm:mt-2.5 sm:text-[13.5px]">
+          <p className="mt-2 max-w-[620px] text-[12.5px] leading-[1.55] text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.85)] sm:mt-2.5 sm:text-[13.5px]">
             {heroSub}
           </p>
 
-          <p className="mt-2 flex items-center gap-2 font-serif text-[10.5px] font-normal tracking-[0.02em] text-white/75 sm:mt-3 sm:text-[11.5px]">
-            <span className="inline-block h-px w-6 bg-white/40" aria-hidden />
+          <p className="mt-2 flex items-center gap-2 font-serif text-[10.5px] font-normal tracking-[0.02em] text-white/90 [text-shadow:0_1px_6px_rgba(0,0,0,0.85)] sm:mt-3 sm:text-[11.5px]">
+            <span className="inline-block h-px w-6 bg-white/60" aria-hidden />
             {heroCurator}
           </p>
         </div>
