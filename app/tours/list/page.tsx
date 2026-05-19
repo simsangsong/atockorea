@@ -9,6 +9,8 @@ import { CURRENCY_LIST, useCurrencyOptional, type CurrencyCode } from '@/lib/cur
 import { useTranslations, useCopy, useI18n } from '@/lib/i18n';
 import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
+import { CatalogueHero } from '@/components/tours-list/CatalogueHero';
+import { CatalogueFooterStrip } from '@/components/tours-list/CatalogueFooterStrip';
 
 const TOURS_LIMIT = 500;
 /** Client-side virtual pagination: render a first page, then stream more as the
@@ -439,10 +441,20 @@ export default function ToursListPage() {
 
   return (
     <SitePageShell>
-      <main className="pb-24">
-        {/* Sticky filter bar */}
-        <div className="sticky top-0 z-30 isolate border-b border-white/55 bg-white/72 backdrop-blur-md shadow-[0_1px_0_rgba(15,23,42,0.04)] [padding-top:env(safe-area-inset-top)]">
-          <div className="mx-auto max-w-5xl px-3 sm:px-4">
+      <main className="bg-[#faf8f3] pb-24">
+        {/*
+          Sticky header stack — Catalogue Hero (Phase 1) + filter rail share a
+          single sticky context so the hero's 240→88 collapse (driven by
+          useScroll inside CatalogueHero) does not collide with the rail's
+          natural position. Phase 2 will reskin the filter rail; the wrapper
+          stays.
+        */}
+        <div className="sticky top-0 z-30 isolate">
+          <CatalogueHero count={tours.length} />
+
+          {/* Filter bar (Phase 2 reskin pending). */}
+          <div className="relative border-b border-white/55 bg-white/72 backdrop-blur-md shadow-[0_1px_0_rgba(15,23,42,0.04)]">
+            <div className="mx-auto max-w-5xl px-3 sm:px-4">
             {/* Desktop: single row */}
             <div className="hidden h-[52px] items-center gap-2 lg:flex">
               <div className="flex shrink-0 items-center gap-1.5">
@@ -749,16 +761,18 @@ export default function ToursListPage() {
               </div>
             </div>
           </div>
-          {isRefetching ? (
-            <div
-              className="pointer-events-none absolute inset-x-0 bottom-0 h-0.5 overflow-hidden"
-              aria-hidden="true"
-            >
-              <div className="h-full w-1/3 animate-pulse bg-slate-900/50" />
-            </div>
-          ) : null}
+            {isRefetching ? (
+              <div
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-0.5 overflow-hidden"
+                aria-hidden="true"
+              >
+                <div className="h-full w-1/3 animate-pulse bg-slate-900/50" />
+              </div>
+            ) : null}
+          </div>
+          {/* End filter bar */}
         </div>
-        {/* End filter bar */}
+        {/* End sticky header stack (CatalogueHero + filter rail) */}
 
         <section className="mx-auto w-full max-w-5xl px-2 py-4 sm:px-4 sm:py-5">
           {isInitialLoading ? (
@@ -829,6 +843,13 @@ export default function ToursListPage() {
             </>
           )}
         </section>
+
+        {/* Catalogue editorial footer — closes the magazine bracket opened by
+            CatalogueHero. Only mounted once a populated catalogue is showing
+            (skip on initial load / error / empty state). */}
+        {!isInitialLoading && !error && tours.length > 0 ? (
+          <CatalogueFooterStrip count={tours.length} />
+        ) : null}
       </main>
     </SitePageShell>
   );
