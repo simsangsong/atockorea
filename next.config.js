@@ -167,7 +167,15 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     /** Allowed `quality` values for `next/image` (Next 16 rejects values not listed). */
     qualities: [75, 90],
-    minimumCacheTTL: 60,
+    /**
+     * Cache transformed variants for 1 year. Default 60s forces a re-transform
+     * of every `/_next/image?url=...` after a minute, which on cold cache for
+     * 33-card list pages (× 3 device sizes × 2 formats) becomes hundreds of
+     * sharp pipeline runs per visit. Source paths are stable (filename-based,
+     * versioned by the wire-poi-images script when content changes), so a long
+     * TTL is safe — content edits land on new filenames anyway.
+     */
+    minimumCacheTTL: 31536000,
   },
   compress: true,
   reactStrictMode: true,

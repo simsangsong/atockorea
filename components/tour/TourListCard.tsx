@@ -144,7 +144,11 @@ function TourListCard({ tour, detailHref, formatPriceFn, imageSizes, layout = 'v
               alt={displayTitle}
               fill
               sizes={imageSizes ?? (isHorizontal ? '180px' : '50vw')}
-              quality={90}
+              /* q=75 is visually indistinguishable from q=90 at card
+                 render sizes (~165–370px wide) but ~30–40% smaller per
+                 variant. The detail-page hero stays at q=90; this drop
+                 only applies to the list card surface. */
+              quality={75}
               className={cn(
                 'object-cover transition-transform duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03] motion-reduce:group-hover:scale-100',
                 'motion-reduce:transition-none',
