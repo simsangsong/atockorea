@@ -63,6 +63,8 @@
 | B15 | 2026-05-20 | **카드 자체 수정 시 별도 PR + 별도 결정 row 필요.** 이 플랜 범위는 카드 *외부* 표면. 만일 카드 수정이 불가피하면 §B에 reversal로 명시 후 진행 | B2 보호. 카드는 이미 검증된 자산, 부수 효과 위험 |  — |
 | B16 | 2026-05-20 | **랜딩 페이지·상세 페이지의 binding decisions은 list에서도 자동 적용.** (a) amber eyebrow 유지, (b) 새 라이브러리 금지, (c) 색상 다이어트 정신 — list 전용 토큰도 brand/accent/success/danger/neutral + ivory/amber 액센트 가족 내에서만 | 페이지 간 일관성. 사이트 전체 디자인 시스템 위반 금지 | — |
 | B17 | 2026-05-20 | **Phase 0 게이트 통과 전 Phase 1 시작 절대 금지.** §6.0 체크리스트 7개 모두 통과 + 사용자 승인 필수 | 코드 실사·토큰 정의·anti-downgrade 가드 확정 전 작업 시 다운그레이드 위험 |  — |
+| B18 | 2026-05-20 | **italic 전면 금지 (§9 italic-serif 가족 약속 번복).** Catalogue hero/footer/모든 list 컴포넌트의 모든 className에서 `italic` 사용 금지. 대체 — 업라이트 serif (`font-serif font-light tracking-[-0.005em]` for display accent / `font-serif text-[11.5px] tracking-[0.02em]` for curator). 토큰 `LIST_DISPLAY_ACCENT_CLS` + `LIST_CURATOR_CLS` 갱신, `LIST_REQUIRED_TOKENS`에서 `'italic'` → `'font-serif'` 교체, `LIST_BANNED_TYPOGRAPHY = ['italic']` 추가. | 사용자 2026-05-20 직접 지시 — "italic 절대 금지, 다른 고급스런 폰트로". italic은 fashion-editorial 톤이지만 사용자 기준 catalogue에는 어울리지 않음. Kinfolk/Vogue cover 업라이트 serif가 premium 톤의 다른 길 (메모리 룰 `feedback_premium_default_enrichment.md` — enrichment 방향) | — |
+| B19 | 2026-05-20 | **Hero 사진은 사용자 업로드 자산 사용 (`public/images/tours-list/catalogue-hero.png`).** Unsplash 외부 URL → 로컬 PNG. Next/Image `quality={88}`로 최적화. 대체 alt: "Korea tour catalogue cover — Hallasan framed by hydrangea and wisteria blooms" | 사용자가 2026-05-20에 직접 업로드 — Hallasan + 수국 + 등나무 (한국 여름·매거진 톤). 외부 Unsplash는 placeholder였음 | — |
 
 ---
 
@@ -87,6 +89,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-20 | Phase 1.1–1.7 ✅ — Catalogue Hero (240→88) + Footer Strip 코드 완료. page.tsx ivory(#faf8f3) 전환 + 단일 sticky parent로 hero+filter rail wrap (collapse window overlap 방지) | 6ef3cb21 | components/tours-list/CatalogueHero.tsx (147L) + CatalogueFooterStrip.tsx (45L) 신규. page.tsx 13 line edited. **검증 결과**: 카드 SHA `a931fe4e` 유지 (0 touch) · slate-200/900 grep in components/tours-list/ = 0 · amber/ivory/italic 토큰 11 occurrence · type-check clean · next build --webpack /tours/list 정상 컴파일 |
 | 2026-05-20 | Phase 1.8 ✅ — i18n 6 locale × 6 키 = 36 entry 재검증 (Phase 0.4 적층분 100% 사용, MISSING 0) | (verification only) | node script: `i18n gate: 36 present / 0 missing (target 36)` — heroIssue/heroTitle/heroAccent/heroSub/heroCurator/footerCuratorLine × en/ko/zh/zh-TW/es/ja |
 | 2026-05-20 | Phase 1 코드 완료 — 사용자 "표지 격 통과" 시각 확인 대기 (240/200px 매거진 cover + 88px collapse + ken burns + amber wash + 큐레이터 시그니처 + 풀블리드 사진). LCP/CLS 측정은 사용자 dev 환경 확인 후 §C 보강 예정 | (pending acceptance) | 사용자가 `/tours/list`에서 hero 표시·collapse·atmosphere·footer strip 시각 합격 시 §A Phase 1 ✅ 마킹 |
+| 2026-05-20 | **B18 + B19 §B reversal — italic 전면 금지 + hero 사진 교체.** 사용자 직접 지시: "표지 사진은 이걸로(업로드), 폰트는 italic 절대 금지, 다른 고급스런 폰트로". Catalogue 전체에서 italic 제거 (CatalogueHero.tsx · CatalogueFooterStrip.tsx · lib/tours-list-tokens.ts: `LIST_DISPLAY_ACCENT_CLS` `LIST_CURATOR_CLS` 토큰 갱신, `LIST_BANNED_TYPOGRAPHY` 신규). Hero 사진 → public/images/tours-list/catalogue-hero.png (Hallasan + 수국 + 등나무). §9 가족 약속 표에 list italic ~~strikethrough~~ + B18 참조 | (pending) | 다른 페이지 (허브 hero "hand-picked." 등) italic은 그대로 유지. type-check clean. 카드 SHA `a931fe4e` 여전히 유지 (0 touch) |
 
 ---
 
@@ -504,7 +507,7 @@ list 페이지의 색·톤·모션은 사이트의 다른 페이지와 가족이
 |---|---|---|
 | ivory base | 랜딩 home v2 (#faf9f7), 허브 (#faf9f7 gradient), 상세 (token 베이스), **list (#faf8f3 ← 신규 약속)** | 흰색 베이스 금지 |
 | amber accent | 랜딩 hero eyebrow (amber-200/700), 허브 masthead (amber-400/200), 빌더 CTA (amber-600), **list eyebrow + active chip (amber-700/900 ← 신규 약속)** | slate-900 active 톤 금지 |
-| italic serif | 허브 hero (`hand-picked.`), 상세 hero (`every detail.`), 빌더 (`map.`), **list hero (`every tour, hand-picked.` ← 신규 약속)** | 매거진 시그니처 |
+| italic serif | 허브 hero (`hand-picked.`), 상세 hero (`every detail.`), 빌더 (`map.`), ~~list hero~~ — **사용자 직접 지시로 list는 업라이트 serif (B18 reversal, 2026-05-20)**. 다른 페이지는 italic 유지. | 매거진 시그니처 (list 제외 — list는 upright serif Kinfolk 톤) |
 | 큐레이터 시그니처 | 허브 (`Edited from Seoul, since 2014`), 상세 (없음 — 추가 보류), 빌더 (`Itinerary desk — open 9–9 KST`), **list (`Edited from Seoul, since 2014` ← 신규 약속)** | 매거진 톤 |
 | ken burns | 허브 16s, 상세 (정책-pending), **list 16s ← 신규 약속** | 같은 호흡 |
 | destination 7-accent | 허브 TourCollectionStrip (volcano/harbor/palace/ocean/temple/blossom/signature), **list Contextual Vignette Band (동일 import) ← 신규 약속** | 신규 액센트 금지 |

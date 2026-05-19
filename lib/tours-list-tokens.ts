@@ -2,9 +2,10 @@
  * Design tokens for the `/tours/list` (tour catalogue) page.
  *
  * The catalogue page is being re-positioned from "admin-style search form" to
- * "magazine directory" — these tokens encode the ivory + amber + italic-serif
+ * "magazine directory" — these tokens encode the ivory + amber + upright-serif
  * family rules promised by `docs/tours-list-uiux-master-plan-2026-05-20.md`
- * (§5 디자인 토큰).
+ * (§5 디자인 토큰). NOTE: italic was banned across the catalogue per user
+ * direction 2026-05-20 — see §B reversal row.
  *
  * Phase 0.2 of the list UI/UX upgrade. Adding/removing a token here requires a
  * §B reversal row in the master plan — these are binding decisions, not free
@@ -51,11 +52,15 @@ export const LIST_EYEBROW_CLS =
   'text-[10.5px] font-bold uppercase tracking-[0.22em] text-amber-700/90';
 
 /**
- * Italic-serif curator signature (with the short amber rule prefix).
- * Mirrors the hub hero "Edited from Seoul, since 2014" treatment.
+ * Upright-serif curator signature (with the short amber rule prefix).
+ *
+ * NOTE: italic is BANNED across the catalogue per user direction
+ * 2026-05-20 — see §B reversal of the original italic-serif decision.
+ * Premium tone now comes from upright serif + tracking restraint
+ * (Kinfolk/Vogue-cover discipline rather than fashion-editorial italic).
  */
 export const LIST_CURATOR_CLS =
-  'inline-flex items-center gap-2 text-[11.5px] italic text-amber-700/80';
+  'inline-flex items-center gap-2 font-serif text-[11.5px] tracking-[0.02em] text-amber-700/80';
 
 /** Short amber rule placed before curator signatures. */
 export const LIST_CURATOR_RULE_CLS =
@@ -65,9 +70,14 @@ export const LIST_CURATOR_RULE_CLS =
 export const LIST_DISPLAY_CLS =
   'font-bold leading-[1.04] tracking-[-0.03em]';
 
-/** Italic-serif accent inside the display headline (e.g., "hand-picked."). */
+/**
+ * Upright-serif accent inside the display headline (e.g., "hand-picked.").
+ *
+ * NOTE: italic banned per user direction 2026-05-20. Light upright serif
+ * with tight tracking is the premium replacement (Vogue cover discipline).
+ */
 export const LIST_DISPLAY_ACCENT_CLS =
-  'font-serif italic font-medium';
+  'font-serif font-light tracking-[-0.005em]';
 
 /** Gold-line eyebrow accent (gradient amber rule used before eyebrow text). */
 export const LIST_ACCENT_LINE_CLS =
@@ -170,5 +180,14 @@ export const LIST_REQUIRED_TOKENS = [
   'amber-200/70', // Field/chip border
   'amber-900/95', // Active chip background
   'amber-700', // Eyebrow
-  'italic', // Serif accent + curator signature
+  'font-serif', // Upright serif accent + curator signature (italic banned 2026-05-20)
 ] as const;
+
+/**
+ * Tokens that are explicitly banned (user 2026-05-20 direction). The original
+ * italic-serif decision (§9 family promise) was overruled — italic must NOT
+ * appear in any catalogue surface. Grep gate:
+ *   grep -rE "italic" components/tours-list/ lib/tours-list-tokens.ts
+ *   → only comment mentions allowed, zero className usage.
+ */
+export const LIST_BANNED_TYPOGRAPHY = ['italic'] as const;

@@ -20,7 +20,8 @@ import {
  * Anti-downgrade guards honored:
  *  • B1 — ivory-amber family (no slate-only)
  *  • B14 — i18n 6 locales mandatory (single key, all 6 present)
- *  • B16 — italic-serif curator signature matches hub/list-hero family
+ *  • Upright-serif curator signature (italic banned 2026-05-20 — §B reversal).
+ *    Token `LIST_CURATOR_CLS` was updated; this consumer just inherits.
  */
 
 interface CatalogueFooterStripProps {

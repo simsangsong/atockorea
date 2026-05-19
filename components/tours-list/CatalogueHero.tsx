@@ -13,8 +13,12 @@ import { useTranslations } from '@/lib/i18n';
  *  • Sticky at top, 240px desktop / 200px mobile expanded
  *  • Collapses to 88px as the reader scrolls past 200px (masthead + count survive)
  *  • Ken Burns 16s drift on the photo (matches hub hero cadence)
- *  • Bottom-anchored display headline — sans for "The Catalogue," + italic serif accent
+ *  • Bottom-anchored display headline — sans bold for "The Catalogue," + upright
+ *    light serif accent ("every tour, hand-picked.") — italic banned per user
+ *    direction 2026-05-20 (§B reversal); upright premium reads Kinfolk/Vogue-cover.
  *  • Warm amber wash bottom-left mirrors the family color promise (§9)
+ *  • Hero photo: locally hosted (`public/images/tours-list/catalogue-hero.png`)
+ *    — Hallasan framed by hydrangea + wisteria, user-supplied 2026-05-20.
  *
  * Anti-downgrade guards honored:
  *  • B1 — ivory (#faf8f3) page base color + amber accents only (no slate-only)
@@ -23,7 +27,7 @@ import { useTranslations } from '@/lib/i18n';
  *    stacked blur, no video bg, no new libraries
  *  • B12 — framer-motion useScroll/useTransform (built-in), no carousel libs
  *  • B14 — all copy via 6-locale i18n keys (Phase 0.4 added)
- *  • B16 — italic serif accent matches hub/detail/builder family
+ *  • §9 italic family promise REVERSED 2026-05-20 — upright serif now the rule
  */
 
 const COLLAPSED_HEIGHT = 88;
@@ -31,8 +35,7 @@ const EXPANDED_DESKTOP = 240;
 const EXPANDED_MOBILE = 200;
 const COLLAPSE_SCROLL_RANGE = 200;
 
-const HERO_PHOTO_SRC =
-  'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1920&q=85&fm=jpg&fit=crop';
+const HERO_PHOTO_SRC = '/images/tours-list/catalogue-hero.png';
 
 interface CatalogueHeroProps {
   /** Total tour count — drives the sub line and 88px-mode badge. */
@@ -91,10 +94,11 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
       >
         <Image
           src={HERO_PHOTO_SRC}
-          alt="Korea tour catalogue cover"
+          alt="Korea tour catalogue cover — Hallasan framed by hydrangea and wisteria blooms"
           fill
           priority
           sizes="100vw"
+          quality={88}
           className="object-cover object-center"
         />
       </motion.div>
@@ -137,8 +141,9 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
         </span>
       </motion.div>
 
-      {/* Display block — sans heroTitle + italic-serif accent + sub + curator.
-          Fades out during the collapse so the 88px state is clean. */}
+      {/* Display block — sans-bold heroTitle + upright light-serif accent
+          + sub + curator. Fades out during the collapse so the 88px state
+          is clean. (italic banned 2026-05-20.) */}
       <motion.div
         className="relative z-10 flex h-full flex-col justify-end px-4 pb-6 sm:px-6 sm:pb-8 lg:px-8 lg:pb-10"
         style={reducedMotion ? undefined : { opacity: displayOpacity }}
@@ -146,7 +151,9 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
         <div className="max-w-[820px]">
           <h1 className="font-bold leading-[1.04] tracking-[-0.03em] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.4)] text-[26px] sm:text-[34px] lg:text-[40px]">
             {heroTitle}{' '}
-            <span className="font-serif italic font-medium text-amber-200">
+            {/* Upright serif accent (italic banned per user direction 2026-05-20).
+                Light serif weight + tight tracking reads premium without italic flair. */}
+            <span className="font-serif font-light tracking-[-0.005em] text-amber-100">
               {heroAccent}
             </span>
           </h1>
@@ -155,7 +162,7 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
             {heroSub}
           </p>
 
-          <p className="mt-2 flex items-center gap-2 text-[10.5px] italic text-white/70 sm:mt-3 sm:text-[11.5px]">
+          <p className="mt-2 flex items-center gap-2 font-serif text-[10.5px] font-normal tracking-[0.02em] text-white/75 sm:mt-3 sm:text-[11.5px]">
             <span className="inline-block h-px w-6 bg-white/40" aria-hidden />
             {heroCurator}
           </p>
