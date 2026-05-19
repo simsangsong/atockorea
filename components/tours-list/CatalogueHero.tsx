@@ -103,35 +103,51 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
           // hero band. (Previous portrait crop needed object-[center_top] to
           // hide a source watermark; this landscape variant has none.)
           className="object-cover object-center"
+          /* Editorial polish — identical Vogue filter as TourListCard image
+             (B2 family). saturate 1.08 contrast 1.06 brightness 0.99 gives
+             the photo Kodak Portra warmth without crushing highlights. */
+          style={{ filter: 'saturate(1.08) contrast(1.06) brightness(0.99)' }}
         />
       </motion.div>
 
-      {/* Layered atmosphere — dark scrim heavily boosted (user 2026-05-20: "글씨 안 보여").
-          The new hanbok+palace photo has bright sky everywhere, so contrast for white
-          text demands a stronger bottom-anchored darkening than the previous layer. */}
+      {/* Card-identical film grain (Kodak Portra 400 입자감) — fractalNoise SVG
+          baseFreq 0.9, octaves 2, stitchTiles + feColorMatrix 0.55, opacity 0.12
+          with mix-blend-overlay. Pixel-identical to TourListCard so the hero photo
+          and the cards below it read as the same image family. */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-0 mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg xmlns='http%3A//www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+          opacity: 0.12,
+        }}
+      />
+      {/* Card-identical soft vignette — radial corner darkening, transparent 60% → 0.15 alpha.
+          Subtle enough to not crush the photo; gives editorial corner roll-off. */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.15) 100%)',
+        }}
+      />
+      {/* Restrained atmosphere — light overall dim + amber wash bottom-left.
+          User 2026-05-20: "사진 많이 가리지 말고" — heavy scrim removed; text
+          contrast now comes from per-element [text-shadow] + minimal bottom band. */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-slate-950/55 via-slate-950/45 to-slate-950/90"
+        className="absolute inset-0 bg-gradient-to-b from-slate-950/10 via-transparent to-slate-950/35"
         aria-hidden
       />
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center_15%,transparent_25%,rgba(15,23,42,0.70)_100%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_15%_95%,rgba(217,119,6,0.18)_0%,transparent_55%)]"
         aria-hidden
       />
+      {/* Minimal bottom text-band — only the immediate region behind the display
+          block, not the full lower half. Keeps the photo dominant. */}
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_15%_95%,rgba(217,119,6,0.22)_0%,transparent_55%)]"
-        aria-hidden
-      />
-      {/* Bottom-half dedicated text scrim — guarantees the display block sits
-          on near-black regardless of what the photo crop shows. Crucial for the
-          sub-line and curator signature (smallest text). */}
-      <div
-        className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/75 via-black/45 to-transparent"
-        aria-hidden
-      />
-      {/* Top scrim — light, just enough to keep masthead + count badge
-          readable when the photo's top is bright sky. */}
-      <div
-        className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/55 via-black/20 to-transparent"
+        className="absolute inset-x-0 bottom-0 h-[42%] bg-gradient-to-t from-black/55 via-black/15 to-transparent"
         aria-hidden
       />
 
@@ -163,7 +179,12 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
           + sub + curator. Fades out during the collapse so the 88px state
           is clean. (italic banned 2026-05-20.) */}
       <motion.div
-        className="relative z-10 flex h-full flex-col justify-end px-4 pb-6 sm:px-6 sm:pb-8 lg:px-8 lg:pb-10"
+        // "카피 조금 아래로" (2026-05-20) — pb-6/8/10 → pb-3/4/5.
+        // Text now anchors close to the bottom edge of the photo (Vogue-cover
+        // deck feel — display sits ON the image, not above it) while leaving
+        // ~12px clearance over the slim ivory fade so the curator line stays
+        // crisp.
+        className="relative z-10 flex h-full flex-col justify-end px-4 pb-3 sm:px-6 sm:pb-4 lg:px-8 lg:pb-5"
         style={reducedMotion ? undefined : { opacity: displayOpacity }}
       >
         <div className="max-w-[820px]">
@@ -187,10 +208,11 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
         </div>
       </motion.div>
 
-      {/* Bottom fade — dissolves into the page's ivory bg, no hard edge.
-          Mirrors hub hero's bottom dissolve. */}
+      {/* Slim bottom fade — only the last ~24px dissolves into ivory page bg,
+          so the dropped-down copy (pb-3/4/5) sits cleanly on the photo without
+          getting washed out by an ivory wash on top of the curator line. */}
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#faf8f3] via-[#faf8f3]/70 to-transparent"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-[#faf8f3] via-[#faf8f3]/50 to-transparent"
         aria-hidden
       />
     </motion.header>
