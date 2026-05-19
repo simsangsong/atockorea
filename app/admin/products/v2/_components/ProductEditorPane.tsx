@@ -88,7 +88,7 @@ export function ProductEditorPane({
   // detail_payload's catalog_card/hero/galleryItems) so the live page renders
   // consistently regardless of which path it reads.
   const media: MediaState = (() => {
-    if (!draft) return { thumbnailUrl: null, heroUrl: null, gallery: [] };
+    if (!draft) return { thumbnailUrl: null, heroUrl: null, heroImages: [], gallery: [] };
     const payload = (draft.detail_payload || {}) as Record<string, unknown>;
     const galleryItems = Array.isArray(payload.galleryItems)
       ? (payload.galleryItems as Array<Record<string, unknown>>)
@@ -106,9 +106,17 @@ export function ProductEditorPane({
       });
     });
 
+    /* Multi-image hero slideshow (사용자 요청 2026-05-19) — payload.hero.images에서 load. */
+    const heroPayload = (payload.hero as Record<string, unknown>) || {};
+    const heroImagesRaw = heroPayload.images;
+    const heroImages: string[] = Array.isArray(heroImagesRaw)
+      ? (heroImagesRaw as unknown[]).filter((x): x is string => typeof x === 'string' && x.length > 0)
+      : [];
+
     return {
       thumbnailUrl: draft.thumbnail_url,
       heroUrl: draft.hero_image_url,
+      heroImages,
       gallery,
     };
   })();
@@ -241,6 +249,9 @@ export function ProductEditorPane({
     payload.catalog_card = catalog;
     const hero = { ...((payload.hero as Record<string, unknown>) || {}) };
     if (next.heroUrl) hero.imageUrl = next.heroUrl;
+    /* Multi-image hero slideshow — payload.hero.images에 배열 저장.
+       빈 배열이어도 저장 (사용자가 명시적으로 모두 제거한 경우 유지). */
+    hero.images = next.heroImages;
     payload.hero = hero;
     payload.galleryItems = next.gallery.map((g, i) => ({
       id: i + 1,

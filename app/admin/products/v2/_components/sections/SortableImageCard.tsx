@@ -9,6 +9,7 @@ import {
   ImageIcon,
   Crop,
   ExternalLink,
+  Layers,
 } from 'lucide-react';
 import type { GalleryEntry } from './MediaSection';
 
@@ -17,10 +18,16 @@ type Props = {
   entry: GalleryEntry;
   isThumbnail: boolean;
   isHero: boolean;
+  /** Multi-hero slideshow: 이 이미지가 hero.images 배열에 포함됐는지. */
+  isInHeroSlides: boolean;
+  /** Multi-hero slideshow 순서 (0 base, -1 = 미포함). */
+  heroSlideOrder: number;
   onChange: (next: GalleryEntry) => void;
   onRemove: () => void;
   onSetAsThumbnail: () => void;
   onSetAsHero: () => void;
+  /** Multi-hero slideshow toggle (push/remove from hero.images array). */
+  onToggleHeroSlide: () => void;
 };
 
 /**
@@ -35,10 +42,13 @@ export function SortableImageCard({
   entry,
   isThumbnail,
   isHero,
+  isInHeroSlides,
+  heroSlideOrder,
   onChange,
   onRemove,
   onSetAsThumbnail,
   onSetAsHero,
+  onToggleHeroSlide,
 }: Props) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
     useSortable({ id: entry.id });
@@ -84,8 +94,8 @@ export function SortableImageCard({
             <ImageIcon className="size-5" />
           </div>
         )}
-        {(isThumbnail || isHero) && (
-          <div className="absolute top-1 left-1 flex gap-1">
+        {(isThumbnail || isHero || isInHeroSlides) && (
+          <div className="absolute top-1 left-1 flex flex-wrap gap-1">
             {isThumbnail && (
               <span className="px-1 py-0.5 text-[9px] font-bold bg-amber-500 text-white rounded">
                 썸네일
@@ -94,6 +104,11 @@ export function SortableImageCard({
             {isHero && (
               <span className="px-1 py-0.5 text-[9px] font-bold bg-blue-600 text-white rounded">
                 히어로
+              </span>
+            )}
+            {isInHeroSlides && (
+              <span className="px-1 py-0.5 text-[9px] font-bold bg-violet-600 text-white rounded tabular-nums">
+                슬라이드 {heroSlideOrder + 1}
               </span>
             )}
           </div>
@@ -132,10 +147,22 @@ export function SortableImageCard({
           <ActionBtn
             onClick={onSetAsHero}
             active={isHero}
-            title={isHero ? '이미 히어로입니다' : '히어로로 설정'}
+            title={isHero ? '이미 히어로입니다' : '히어로로 설정 (단일 fallback)'}
           >
             <Star className="size-3" />
             히어로
+          </ActionBtn>
+          <ActionBtn
+            onClick={onToggleHeroSlide}
+            active={isInHeroSlides}
+            title={
+              isInHeroSlides
+                ? `히어로 슬라이드 ${heroSlideOrder + 1}번 — 클릭하여 제거`
+                : '히어로 슬라이드쇼에 추가 (복수 선택 가능)'
+            }
+          >
+            <Layers className="size-3" />
+            슬라이드{isInHeroSlides ? ` ${heroSlideOrder + 1}` : '+'}
           </ActionBtn>
           {entry.url && (
             <a

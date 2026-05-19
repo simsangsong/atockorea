@@ -43,6 +43,9 @@ export type GalleryEntry = {
 export type MediaState = {
   thumbnailUrl: string | null;
   heroUrl: string | null;
+  /** Multi-image hero slideshow (사용자 요청 2026-05-19). 비어있으면 heroUrl 단일로 fallback.
+      Frontend: `slides = hero.images.length > 0 ? hero.images : [hero.imageUrl]` */
+  heroImages: string[];
   gallery: GalleryEntry[];
 };
 
@@ -164,13 +167,27 @@ export function MediaSection({ state, onChange }: Props) {
     toast.info('히어로로 설정', { description: entry.title || entry.url });
   };
 
+  /* Multi-hero slideshow toggle (사용자 요청 2026-05-19). entry.url을 heroImages 배열에
+     push/remove. 첫 image가 자동 slideshow 시작점. heroUrl과 별개 — heroUrl은 fallback. */
+  const toggleHeroSlide = (entry: GalleryEntry) => {
+    const exists = state.heroImages.includes(entry.url);
+    const next = exists
+      ? state.heroImages.filter((u) => u !== entry.url)
+      : [...state.heroImages, entry.url];
+    onChange({ ...state, heroImages: next });
+    toast.info(exists ? '히어로 슬라이드에서 제거' : '히어로 슬라이드에 추가', {
+      description: entry.title || entry.url,
+    });
+  };
+
   const removeEntry = (entry: GalleryEntry) => {
     onChange({
       ...state,
       gallery: state.gallery.filter((g) => g.id !== entry.id),
-      // If we just removed the active thumb/hero, clear it
+      // If we just removed the active thumb/hero/heroSlide, clear it
       thumbnailUrl: state.thumbnailUrl === entry.url ? null : state.thumbnailUrl,
       heroUrl: state.heroUrl === entry.url ? null : state.heroUrl,
+      heroImages: state.heroImages.filter((u) => u !== entry.url),
     });
   };
 
@@ -293,10 +310,13 @@ export function MediaSection({ state, onChange }: Props) {
                   entry={entry}
                   isThumbnail={entry.url === state.thumbnailUrl}
                   isHero={entry.url === state.heroUrl}
+                  isInHeroSlides={state.heroImages.includes(entry.url)}
+                  heroSlideOrder={state.heroImages.indexOf(entry.url)}
                   onChange={updateEntry}
                   onRemove={() => removeEntry(entry)}
                   onSetAsThumbnail={() => setEntryAsThumbnail(entry)}
                   onSetAsHero={() => setEntryAsHero(entry)}
+                  onToggleHeroSlide={() => toggleHeroSlide(entry)}
                 />
               ))}
             </div>
