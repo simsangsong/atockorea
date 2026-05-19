@@ -45,32 +45,35 @@ export function TourPhotoOverlay({
 
   if (!resolvedRegion && !resolvedName) return null;
 
+  /* 사용자 피드백 (2026-05-19): bento collage에서 글씨가 사진을 너무 많이 가림.
+     "사진을 최소한으로 가리되 우측하단 구석에 깨알같이" + "펼쳤을때(lightbox)는 그대로".
+     sm + md를 깨알 사이즈로 축소, xs + lg는 유지. inset도 같이 줄여 코너에 바짝. */
   const regionClass =
     size === "xs"
       ? "text-[7.5px] tracking-[0.2em]"
       : size === "sm"
-        ? "text-[8.5px] tracking-[0.22em]"
+        ? "text-[6.5px] tracking-[0.18em] leading-none"
         : size === "lg"
           ? "text-[11px] tracking-[0.26em]"
-          : "text-[9.5px] tracking-[0.22em]";
+          : "text-[7.5px] tracking-[0.2em] leading-none";
 
   const stopClass =
     size === "xs"
       ? "text-[10px] tracking-[-0.005em]"
       : size === "sm"
-        ? "text-[12px] tracking-[-0.008em]"
+        ? "text-[7.5px] tracking-[-0.005em] leading-none"
         : size === "lg"
           ? "text-[18px] tracking-[-0.015em]"
-          : "text-[13px] tracking-[-0.01em]";
+          : "text-[8.5px] tracking-[-0.008em] leading-none";
 
   const insetClass =
     size === "xs"
       ? "p-2"
       : size === "sm"
-        ? "p-3"
+        ? "p-1.5"
         : size === "lg"
           ? "p-10"
-          : "p-4";
+          : "p-2";
 
   const showStopName = !hideStopName && resolvedName && size !== "xs";
 
