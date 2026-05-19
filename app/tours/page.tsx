@@ -137,161 +137,185 @@ export default async function ToursHubPage() {
 
   return (
     <SitePageShell>
-      <main className="min-h-screen bg-slate-50">
+      <main className="min-h-screen bg-gradient-to-b from-[#faf9f7] via-[#fdfcfb] to-white">
         {/* ── Hero ── */}
         <ToursHubHero />
 
         {/* ── Sections ── */}
-        <div className="mx-auto max-w-[1400px] space-y-14 py-12 pb-20">
+        <div className="mx-auto max-w-[1400px] space-y-16 py-12 pb-20 sm:space-y-20">
 
-          {/* Want a private tour? — Direct CTA to the itinerary builder.
-              Per D7 2026-05-17: legacy /tours/private section removed; users
-              wanting custom routes go to /itinerary-builder instead. */}
+          {/* Top Picks — house signature, opens the catalogue */}
+          {hub && hub.topPicks.length > 0 && (
+            <TourCollectionStrip
+              eyebrow="EDITOR'S BEST · THIS SEASON"
+              title="Our highest-rated"
+              titleAccent="tours of the year."
+              editorNote="When ratings, repeat bookings, and our team's own travel notes all align, a tour earns this list. These are the days we'd send our own family on."
+              curator="Curated by the AtoC Korea editorial team"
+              tours={hub.topPicks}
+              seeAllHref="/tours/list?sort=rating"
+              seeAllLabel="All top-rated"
+              accent="signature"
+            />
+          )}
+
+          {/* Want a private tour? — magazine-style editorial CTA placed AFTER top picks
+              so the dark hero doesn't stack with another dark block. Tone is now
+              ivory + amber line accent + serif accent (matches strip header language). */}
           <Link
             href="/itinerary-builder"
-            className="group relative block overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900 px-6 py-7 shadow-xl ring-1 ring-amber-700/30 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl md:px-10 md:py-9"
+            className="group relative mx-4 block overflow-hidden rounded-3xl border border-amber-200/60 bg-gradient-to-br from-[#fdfaf3] via-[#fbf6ea] to-[#f8efdb] px-6 py-8 shadow-[0_18px_48px_-22px_rgba(146,64,14,0.28)] ring-1 ring-amber-100/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_64px_-24px_rgba(146,64,14,0.36)] sm:mx-6 md:px-10 md:py-10 lg:mx-8"
           >
-            <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
+            <div className="flex flex-col items-start gap-5 md:flex-row md:items-center md:justify-between md:gap-8">
               <div className="max-w-2xl">
-                <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.2em] text-amber-300">
-                  Want a private tour?
-                </p>
-                <h2 className="text-xl font-bold leading-tight text-white md:text-2xl">
-                  Build your own day on the map — Busan or Jeju
+                <div className="mb-3 flex items-center gap-3">
+                  <span className="h-px w-10 shrink-0 rounded-full bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700" aria-hidden />
+                  <span className="text-[10.5px] font-bold uppercase tracking-[0.22em] text-amber-800">
+                    A different way to travel · Private
+                  </span>
+                </div>
+                <h2 className="text-[24px] font-bold leading-[1.12] tracking-[-0.025em] text-slate-900 md:text-[28px]">
+                  Build your own day on the map —{' '}
+                  <span className="font-serif italic font-medium text-amber-800">Busan or Jeju.</span>
                 </h2>
-                <p className="mt-2 text-[13.5px] text-slate-300 md:text-[14.5px]">
-                  Pick stops you actually want to visit. Drag-to-sequence with a custom quote. No package required.
+                <p className="mt-3 max-w-[58ch] text-[13.5px] leading-[1.6] text-slate-700 md:text-[14.5px]">
+                  Skip the package. Pick the stops you actually want, drag them into a sequence,
+                  and our Korea team returns a custom itinerary with transparent pricing — usually within a day.
+                </p>
+                <p className="mt-3 flex items-center gap-2 text-[11.5px] italic text-slate-500">
+                  <span className="inline-block h-px w-6 bg-slate-300" aria-hidden />
+                  Itinerary desk — open 9–9 KST
                 </p>
               </div>
-              <span className="inline-flex items-center gap-2 rounded-full bg-amber-400 px-5 py-2.5 text-[13px] font-bold text-slate-900 shadow-md transition-all group-hover:gap-3 group-hover:bg-amber-300">
+              <span className="inline-flex shrink-0 items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-[13px] font-bold text-white shadow-[0_8px_24px_-10px_rgba(15,23,42,0.45)] transition-all group-hover:gap-3 group-hover:bg-slate-800">
                 Open the map
                 <span aria-hidden>→</span>
               </span>
             </div>
           </Link>
 
-          {/* Top Picks */}
-          {hub && hub.topPicks.length > 0 && (
-            <TourCollectionStrip
-              icon="⭐"
-              title="Top Picks"
-              subtitle="Highest-rated tours with verified reviews"
-              tours={hub.topPicks}
-              seeAllHref="/tours/list?sort=rating"
-              seeAllLabel="All top-rated"
-              accentColor="amber"
-            />
-          )}
-
           {/* Destination Grid */}
           {hub && (
             <DestinationGrid counts={hub.counts} />
           )}
 
-          {/* Jeju Island */}
+          {/* Jeju Island — volcanic teal */}
           {hub && hub.jeju.length > 0 && (
             <TourCollectionStrip
-              icon="🌋"
-              title="Jeju Island Tours"
-              subtitle="Korea's volcanic island — UNESCO craters, waterfalls & coastal drives"
+              eyebrow="BY ISLAND · JEJU"
+              title="Volcanic coast,"
+              titleAccent="turquoise sea."
+              editorNote="Jeju holds Korea's only UNESCO Triple Crown — volcanic, marine, and lava-tube heritage on one island. Our editors live for the back-roads east coast at sunrise."
+              curator="Curated by Min · Lead Jeju editor"
               tours={hub.jeju}
               seeAllHref="/tours/list?destination=Jeju"
               seeAllLabel="All Jeju tours"
-              accentColor="emerald"
+              accent="volcano"
             />
           )}
 
-          {/* Busan Tours */}
+          {/* Busan — harbor indigo */}
           {hub && hub.busan.length > 0 && (
             <TourCollectionStrip
-              icon="⚓"
-              title="Busan Tours"
-              subtitle="Korea's port city — temples, beaches & street food culture"
+              eyebrow="BY CITY · BUSAN"
+              title="Harbor city,"
+              titleAccent="hillside villages."
+              editorNote="Port-life and temple-time within forty minutes of each other. Our Busan picks are built around the cable-car-to-coast rhythm locals actually use."
+              curator="Curated by Eunji · Lead Busan editor"
               tours={hub.busan}
               seeAllHref="/tours/list?destination=Busan"
               seeAllLabel="All Busan tours"
-              accentColor="blue"
+              accent="harbor"
             />
           )}
 
-          {/* Seoul & Day Trips */}
+          {/* Seoul & Day Trips — palace plum */}
           {hub && hub.seoul.length > 0 && (
             <TourCollectionStrip
-              icon="🏯"
-              title="Seoul & Day Trips"
-              subtitle="Palaces, hanok villages & countryside escapes from the capital"
+              eyebrow="BY CAPITAL · SEOUL & DAY TRIPS"
+              title="Palaces, hanok villages,"
+              titleAccent="& quiet countryside."
+              editorNote="Seoul rewards travelers who pace themselves. We curate day trips that pair palace mornings with countryside afternoons — no rushed two-stop sprints."
+              curator="Curated by Jaewon · Lead Seoul editor"
               tours={hub.seoul}
               seeAllHref="/tours/list?destination=Seoul"
               seeAllLabel="All Seoul tours"
-              accentColor="violet"
+              accent="palace"
             />
           )}
 
-          {/* Cruise Shore Excursions */}
+          {/* Cruise — deep ocean */}
           {hub && hub.cruise.length > 0 && (
-            <>
+            <div className="space-y-5">
               <TourCollectionStrip
-                icon="🚢"
-                title="Cruise Shore Excursions"
-                subtitle="Port-to-port tours with guaranteed return times — designed for cruise guests"
+                eyebrow="CRUISE-PORT TOURS · GUARANTEED RETURN"
+                title="Tours timed"
+                titleAccent="to your ship."
+                editorNote="Every cruise excursion here is built around your port hours, with onshore contingency time and ship-side return guarantees. No second-guessing the clock."
+                curator="Curated by the cruise desk"
                 tours={hub.cruise}
                 seeAllHref="/tours/list?features=Cruise+excursion"
                 seeAllLabel="All cruise tours"
-                accentColor="blue"
+                accent="ocean"
               />
               {/* Inline match CTA inside cruise — per D7: cruise guests get matched
                   via the same itinerary builder (cruise track will branch in Phase 4). */}
-              <div className="-mt-6 mx-4 rounded-xl bg-sky-50 px-5 py-4 ring-1 ring-sky-100 md:mx-0 md:flex md:items-center md:justify-between">
+              <div className="mx-4 rounded-2xl border border-sky-200/60 bg-sky-50/70 px-5 py-4 ring-1 ring-sky-100/50 sm:mx-6 md:flex md:items-center md:justify-between lg:mx-8">
                 <p className="text-[13.5px] text-slate-700 md:text-sm">
                   <span className="font-semibold text-slate-900">On a cruise?</span>{" "}
-                  Tell us your port + hours and we'll match an itinerary that gets you back to the ship.
+                  Tell us your port + hours and we&apos;ll match an itinerary that gets you back to the ship.
                 </p>
                 <Link
                   href="/itinerary-builder"
-                  className="mt-2 inline-flex items-center gap-1.5 text-[13px] font-bold text-sky-700 hover:text-sky-900 md:mt-0"
+                  className="mt-2 inline-flex items-center gap-1.5 text-[13px] font-bold text-sky-800 hover:text-sky-900 md:mt-0"
                 >
                   Match a cruise itinerary →
                 </Link>
               </div>
-            </>
+            </div>
           )}
 
-          {/* UNESCO & Heritage */}
+          {/* UNESCO & Heritage — oxblood */}
           {hub && hub.heritage.length > 0 && (
             <TourCollectionStrip
-              icon="🏛️"
-              title="UNESCO & Heritage"
-              subtitle="World Heritage sites, ancient capitals & 1,000-year-old temples"
+              eyebrow="UNESCO & HERITAGE"
+              title="Thousand-year temples,"
+              titleAccent="living traditions."
+              editorNote="Korea's World Heritage sites are still functioning places of practice, not museum pieces. These tours go in with monks, weavers, and guardians who know each stone."
+              curator="Curated by the heritage desk"
               tours={hub.heritage}
               seeAllHref="/tours/list?features=UNESCO"
               seeAllLabel="All heritage tours"
-              accentColor="rose"
+              accent="temple"
             />
           )}
 
-          {/* Seasonal Specials */}
+          {/* Seasonal — cherry blush */}
           {hub && hub.seasonal.length > 0 && (
             <TourCollectionStrip
-              icon="🌺"
-              title="Seasonal Specials"
-              subtitle="Limited-season tours — hydrangea festivals, winter landscapes & more"
+              eyebrow="IN SEASON · LIMITED RUN"
+              title="Cherry blossoms,"
+              titleAccent="hydrangea, & snow."
+              editorNote="A handful of tours that exist only for a few weeks each year. Once the petals drop or the snow clears, these dates close. We refresh the lineup every season."
+              curator="Curated by the seasonal desk"
               tours={hub.seasonal}
               seeAllHref="/tours/list"
               seeAllLabel="Browse all"
-              accentColor="rose"
+              accent="blossom"
             />
           )}
 
           {/* Browse All CTA */}
-          <div className="flex flex-col items-center gap-3 px-4 py-4 text-center">
-            <p className="text-[13px] text-slate-500">
-              {hub ? `Showing all ${hub.counts.total} available tours` : 'Browse our full catalogue'}
+          <div className="flex flex-col items-center gap-4 px-4 py-6 text-center">
+            <p className="text-[11.5px] italic text-slate-500">
+              <span className="inline-block h-px w-6 bg-slate-300 align-middle" aria-hidden />{' '}
+              {hub ? `${hub.counts.total} curated tours, all reviewed by our Korea team` : 'Curated by our Korea team'}
             </p>
             <Link
               href="/tours/list"
-              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-7 py-3.5 text-[13.5px] font-bold text-white shadow-lg transition-all duration-200 hover:bg-slate-800 hover:shadow-xl hover:gap-3"
+              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-7 py-3.5 text-[13.5px] font-bold text-white shadow-[0_12px_28px_-12px_rgba(15,23,42,0.45)] transition-all duration-200 hover:bg-slate-800 hover:gap-3 hover:shadow-[0_18px_36px_-14px_rgba(15,23,42,0.5)]"
             >
-              Browse All Tours
+              Browse the full catalogue
               <span aria-hidden>→</span>
             </Link>
           </div>
