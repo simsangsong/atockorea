@@ -59,6 +59,13 @@ export function FeaturedProductsShowcase() {
       limit: String(FEATURED_LIMIT),
       locale,
       compact: "1",
+      // Skip the recommendation score path on this rail — useScoreSort
+      // triggers an extra `bookings` SELECT keyed by every returned
+      // tour id, which on cold cache adds ~1–3s on top of the FX/query
+      // race. The "most booked this week" copy here is editorial, not
+      // a live ranking; sortBy=popular without score sort falls back
+      // to created_at desc, which approximates the curated intent.
+      useScoreSort: "0",
     });
     fetch(`/api/tours?${params.toString()}`, { signal: controller.signal })
       .then((r) => (r.ok ? r.json() : { tours: [] }))
