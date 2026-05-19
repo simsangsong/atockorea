@@ -99,11 +99,10 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
           priority
           sizes="100vw"
           quality={88}
-          // object-position TOP — portrait photo: favor palace + sky framing, push
-          // the bottom (where a small source watermark sits) out of the visible
-          // wide-hero crop. With object-cover the photo is scaled to fill height;
-          // top-anchoring keeps the iconic eaves visible and trims the floor.
-          className="object-cover object-[center_top]"
+          // Landscape source — object-center reads the dancer + eaves in the
+          // hero band. (Previous portrait crop needed object-[center_top] to
+          // hide a source watermark; this landscape variant has none.)
+          className="object-cover object-center"
         />
       </motion.div>
 
