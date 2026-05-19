@@ -45,10 +45,12 @@ function StopCard({
   };
 
   return (
-    /* 사용자 보고 (2026-05-18 screenshot): -ml-2 + left-0 badge → 모바일 viewport 왼쪽 짤림. -ml-2 제거 + z-10 추가 (card 위로 stacking). */
-    <div className="relative pl-9">
+    /* 사용자 보고 (2026-05-18 screenshot): -ml-2 + left-0 badge → 모바일 viewport 왼쪽 짤림. -ml-2 제거 + z-10 추가.
+       사용자 보고 (2026-05-19 모바일 스크린샷): pl-9 (36px) + badge w-9 (36px) → badge 우측 ring/shadow가 카드 좌측 모서리에 겹쳐 보임.
+       pl-9 → pl-11 (44px = 36 badge + 8 gap), spine left-[18px] → left-[22px] (44/2 중앙)로 시각적 분리. PortSelectorTimeline 동일 spec. */
+    <div className="relative pl-11">
       {stop.number < totalStops && (
-        <div className="absolute left-[18px] top-[48px] bottom-0 w-px bg-gradient-to-b from-slate-200/40 to-transparent" />
+        <div className="absolute left-[22px] top-[48px] bottom-0 w-px bg-gradient-to-b from-slate-200/40 to-transparent" />
       )}
 
       <div

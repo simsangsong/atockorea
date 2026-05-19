@@ -241,17 +241,17 @@ export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSte
             </div>
           </button>
 
-          {/* §B-P5 (4): smooth grid-rows reveal transition (button 밖 — timeline 텍스트 selection 안전) */}
+          {/* §B-P5 (4) + §B-P11 (Sprint 5.9): book-page cascade reveal.
+              Container = grid-rows 360ms ease-out-quint (CSS .book-cascade);
+              children = 480ms unfold with 60ms stagger (top-pivot rotateX -6°);
+              CSS-only via [data-state], reduced-motion CSS fallback. */}
           <div
-            className={cn(
-              "relative grid transition-[grid-template-rows] duration-300 ease-out",
-              showTimeline ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
-            )}
+            className="relative book-cascade"
+            data-state={showTimeline ? "open" : "closed"}
           >
-            <div className="overflow-hidden">
-          <div className="border-t border-border/60 p-5 md:p-6">
+            <div className="border-t border-border/60 p-5 md:p-6">
                 {/* Mobile: vertical flowchart with phase-icon spine */}
-                <div className="md:hidden">
+                <div className="md:hidden book-cascade-list">
                   {supportSteps.map((step, i) => {
                     const theme = pickStepTheme(step.timing ?? "", step.title ?? "", i);
                     const StepIcon = theme.Icon;
@@ -282,7 +282,7 @@ export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSte
 
                 {/* md+: left-to-right flow; scroll when many steps */}
                 <div className="hidden md:block overflow-x-auto pb-0.5 [-webkit-overflow-scrolling:touch]">
-                  <div className="flex min-w-0 items-stretch gap-2 md:min-w-min lg:gap-3">
+                  <div className="flex min-w-0 items-stretch gap-2 md:min-w-min lg:gap-3 book-cascade-list">
                     {supportSteps.map((step, i) => {
                       const theme = pickStepTheme(step.timing ?? "", step.title ?? "", i);
                       const StepIcon = theme.Icon;
@@ -316,7 +316,6 @@ export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSte
                   </div>
                 </div>
               </div>
-            </div>
           </div>
         </div>
       ) : null}

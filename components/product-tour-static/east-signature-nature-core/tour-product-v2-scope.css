@@ -865,3 +865,114 @@ html[lang="ko"] .tour-product-v2-static-root .tour-hero-headline-line {
   letter-spacing: 0.12em;
   line-height: 1.2;
 }
+
+/* ──────────────────────────────────────────────────────────────────────
+ * §B-P11 Book-page cascade reveal (Sprint 5.9 pilot — TourBookingSupportSection 6-step)
+ *
+ * Container opens via grid-rows 360ms (§6.4 "deliberate" tempo, ease-out-quint).
+ * Children unfold per book-page metaphor: top-pivot rotateX(-6deg) + translateY(-4px)
+ *   → flat, 480ms each, staggered by --book-stagger (default 60ms = N4-6 sweet spot).
+ * Cap: 6 children = 780ms total (well under §B-P11 (5) 900ms ceiling).
+ *
+ * Guards honored:
+ *   §B-P3 single shadow tier — children shadow fades with opacity, no per-child tier added.
+ *   §B-P5 (4) smooth transition — extended (not overwritten): 0.30s → 0.36s container.
+ *   §6.8 scroll-freeze — composite-only (opacity + transform). No JS, no IO, no new lib.
+ *   §B-P11 (7) reduced-motion — opacity-only 180ms simultaneous fade, no 3D transforms.
+ *   will-change intentionally omitted — modern browsers auto-promote opacity+transform
+ *     transitions; persistent will-change would leak GPU layers (same rationale as
+ *     .tour-hero-slide above, see line 518-523).
+ *
+ * Usage:
+ *   <div className="book-cascade" data-state={open ? "open" : "closed"}>
+ *     <div className="border-t p-5">  // immediate child gets overflow:hidden auto
+ *       <div className="book-cascade-list">  // children of this stagger
+ *         {items.map(item => <div key={...}>...</div>)}
+ *       </div>
+ *     </div>
+ *   </div>
+ *
+ *   Override stagger interval (per §B-P11 (3) catalog-size guide):
+ *     style={{ "--book-stagger": "40ms" }}  // N 7-10
+ *     style={{ "--book-stagger": "28ms" }}  // N > 10 (also rely on nth-child(n+11) cap)
+ */
+.tour-product-v2-static-root .book-cascade {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tour-product-v2-static-root .book-cascade > * {
+  overflow: hidden;
+  min-height: 0;
+}
+.tour-product-v2-static-root .book-cascade[data-state="open"] {
+  grid-template-rows: 1fr;
+}
+
+.tour-product-v2-static-root .book-cascade-list {
+  --book-stagger: 60ms;
+  perspective: 1400px;
+}
+.tour-product-v2-static-root .book-cascade-list > * {
+  opacity: 0;
+  transform: translateY(-4px) rotateX(-6deg);
+  transform-origin: top center;
+  transition:
+    opacity 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tour-product-v2-static-root .book-cascade[data-state="open"] .book-cascade-list > * {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+}
+/* Per-child stagger delay (N 4-6 sweet spot; larger N auto-caps via nth-child(n+11)) */
+.tour-product-v2-static-root .book-cascade[data-state="open"] .book-cascade-list > *:nth-child(1) {
+  transition-delay: calc(var(--book-stagger) * 0);
+}
+.tour-product-v2-static-root .book-cascade[data-state="open"] .book-cascade-list > *:nth-child(2) {
+  transition-delay: calc(var(--book-stagger) * 1);
+}
+.tour-product-v2-static-root .book-cascade[data-state="open"] .book-cascade-list > *:nth-child(3) {
+  transition-delay: calc(var(--book-stagger) * 2);
+}
+.tour-product-v2-static-root .book-cascade[data-state="open"] .book-cascade-list > *:nth-child(4) {
+  transition-delay: calc(var(--book-stagger) * 3);
+}
+.tour-product-v2-static-root .book-cascade[data-state="open"] .book-cascade-list > *:nth-child(5) {
+  transition-delay: calc(var(--book-stagger) * 4);
+}
+.tour-product-v2-static-root .book-cascade[data-state="open"] .book-cascade-list > *:nth-child(6) {
+  transition-delay: calc(var(--book-stagger) * 5);
+}
+.tour-product-v2-static-root .book-cascade[data-state="open"] .book-cascade-list > *:nth-child(7) {
+  transition-delay: calc(var(--book-stagger) * 6);
+}
+.tour-product-v2-static-root .book-cascade[data-state="open"] .book-cascade-list > *:nth-child(8) {
+  transition-delay: calc(var(--book-stagger) * 7);
+}
+.tour-product-v2-static-root .book-cascade[data-state="open"] .book-cascade-list > *:nth-child(9) {
+  transition-delay: calc(var(--book-stagger) * 8);
+}
+.tour-product-v2-static-root .book-cascade[data-state="open"] .book-cascade-list > *:nth-child(10) {
+  transition-delay: calc(var(--book-stagger) * 9);
+}
+.tour-product-v2-static-root .book-cascade[data-state="open"] .book-cascade-list > *:nth-child(n + 11) {
+  transition-delay: calc(var(--book-stagger) * 10);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-product-v2-static-root .book-cascade {
+    transition: grid-template-rows 180ms ease-out;
+  }
+  .tour-product-v2-static-root .book-cascade-list {
+    perspective: none;
+  }
+  .tour-product-v2-static-root .book-cascade-list > * {
+    transform: none !important;
+    transition: opacity 180ms ease-out !important;
+    transition-delay: 0ms !important;
+  }
+  .tour-product-v2-static-root .book-cascade[data-state="open"] .book-cascade-list > * {
+    transform: none !important;
+  }
+}
