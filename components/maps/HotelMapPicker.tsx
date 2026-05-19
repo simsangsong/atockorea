@@ -3,8 +3,14 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
-import { mapOptions, defaultCenter, libraries } from '@/lib/google-maps';
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import {
+  mapOptions,
+  defaultCenter,
+  libraries,
+  GOOGLE_MAPS_LOADER_ID,
+  GOOGLE_MAPS_LOADER_VERSION,
+} from '@/lib/google-maps';
 import { X, MapPin } from 'lucide-react';
 
 /** Basic UI Kit autocomplete — `gmp-select` carries the selected Place (not PlacePrediction). */
@@ -50,10 +56,11 @@ export default function HotelMapPicker({
   const searchContainerRef = useRef<HTMLDivElement>(null);
 
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
-  const { isLoaded, loadError } = useLoadScript({
+  const { isLoaded, loadError } = useJsApiLoader({
+    id: GOOGLE_MAPS_LOADER_ID,
     googleMapsApiKey: apiKey || '',
     libraries,
-    version: 'weekly',
+    version: GOOGLE_MAPS_LOADER_VERSION,
   });
 
   const onMapLoad = useCallback((m: google.maps.Map) => {

@@ -188,13 +188,17 @@ const nextConfig = {
      * Tree-shake named imports from large packages so unused exports are dropped at
      * build time. Without this, `import { ShieldCheck } from "lucide-react"` still
      * pulls the full barrel; with it, only the requested members ship to the client.
-     * Big wins here: framer-motion, recharts, lucide-react (577 icons), Google Maps.
+     *
+     * `@react-google-maps/api` is intentionally NOT in this list — Next's modular
+     * import transform splits its named exports across separate module instances,
+     * which breaks `useJsApiLoader`'s module-scope load cache. The result is that
+     * two consumers (e.g. POICatalogMap + TourPickupMapSection) each get their own
+     * "is loading" state and one or both stay stuck on the loading placeholder.
      */
     optimizePackageImports: [
       'lucide-react',
       'framer-motion',
       'recharts',
-      '@react-google-maps/api',
     ],
   },
 }

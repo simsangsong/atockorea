@@ -30,7 +30,28 @@ export const mapOptions: google.maps.MapOptions = {
 };
 
 // 需要加载的库
-export const libraries: ("places" | "drawing" | "geometry" | "visualization")[] = ['places'];
+// IMPORTANT: This array MUST be a module-level constant so its reference identity
+// is stable across all useJsApiLoader call sites. `@react-google-maps/api` compares
+// `libraries` by reference; if any consumer passes a new array on every render
+// (or a different array than another consumer), the loader treats them as a
+// mismatch — the second `useJsApiLoader` stays stuck on `isLoaded = false`.
+//
+// `marker` is required by POICatalogMap (AdvancedMarkerElement). It's harmless
+// for callers that only use the legacy Marker, so we ship it for everyone to
+// keep one shared `<script>` element across the app.
+export const libraries: ("places" | "marker" | "drawing" | "geometry" | "visualization")[] = ['places', 'marker'];
+
+/**
+ * Single source of truth for Google Maps JS loader options.
+ *
+ * Every `useJsApiLoader` / `useLoadScript` call in the app MUST spread this
+ * (and pass the same `id`) so they share a single `<script>` tag. Two callers
+ * with different `libraries` or `version` cause `@react-google-maps/api` to
+ * reload the script — which leaves one of them permanently stuck on the
+ * "Loading map…" placeholder.
+ */
+export const GOOGLE_MAPS_LOADER_ID = 'google-map-script';
+export const GOOGLE_MAPS_LOADER_VERSION = 'weekly';
 
 /**
  * 格式化地址为坐标

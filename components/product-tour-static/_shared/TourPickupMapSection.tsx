@@ -4,6 +4,11 @@ import { useCallback, useState } from "react";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import { Building2, ChevronDown, Clock3, MapPin, Plane, ShoppingBag, Store, TrainFront } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  GOOGLE_MAPS_LOADER_ID,
+  GOOGLE_MAPS_LOADER_VERSION,
+  libraries as GOOGLE_MAPS_LIBRARIES,
+} from "@/lib/google-maps";
 import type { PickupDropoffPoint, PickupDropoffSection } from "./pickupDropoffTypes";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
 
@@ -153,8 +158,10 @@ export function TourPickupMapSection({ pickupDropoff, sectionUi }: TourPickupMap
   const [map, setMap] = useState<google.maps.Map | null>(null);
 
   const { isLoaded } = useJsApiLoader({
-    id: "google-map-script",
+    id: GOOGLE_MAPS_LOADER_ID,
     googleMapsApiKey: GOOGLE_MAPS_API_KEY,
+    libraries: GOOGLE_MAPS_LIBRARIES,
+    version: GOOGLE_MAPS_LOADER_VERSION,
   });
 
   const onMapLoad = useCallback((m: google.maps.Map) => setMap(m), []);

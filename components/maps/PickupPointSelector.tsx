@@ -1,8 +1,14 @@
 'use client';
 
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
-import { mapOptions, defaultCenter, libraries } from '@/lib/google-maps';
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import {
+  mapOptions,
+  defaultCenter,
+  libraries,
+  GOOGLE_MAPS_LOADER_ID,
+  GOOGLE_MAPS_LOADER_VERSION,
+} from '@/lib/google-maps';
 
 // Places API (New) PlaceAutocompleteElement - gmp-select event type
 type GmpSelectEvent = Event & { placePrediction?: { toPlace: () => Promise<google.maps.places.Place> } };
@@ -40,9 +46,11 @@ export default function PickupPointSelector({
 
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
-  const { isLoaded, loadError } = useLoadScript({
+  const { isLoaded, loadError } = useJsApiLoader({
+    id: GOOGLE_MAPS_LOADER_ID,
     googleMapsApiKey: apiKey || '',
     libraries,
+    version: GOOGLE_MAPS_LOADER_VERSION,
   });
 
   const onMapLoad = useCallback((map: google.maps.Map) => {

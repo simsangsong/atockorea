@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { GoogleMap, InfoWindow, Polyline, useLoadScript } from "@react-google-maps/api";
+import { GoogleMap, InfoWindow, Polyline, useJsApiLoader } from "@react-google-maps/api";
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
 import { useTranslations } from "@/lib/i18n";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
@@ -12,9 +12,12 @@ import {
   setPhotoPinState,
 } from "@/lib/itinerary-builder/photo-pin";
 import { useActiveStop } from "@/lib/itinerary-builder/active-stop";
+import {
+  GOOGLE_MAPS_LOADER_ID,
+  GOOGLE_MAPS_LOADER_VERSION,
+  libraries as GOOGLE_MAPS_LIBRARIES,
+} from "@/lib/google-maps";
 import POIInfoWindowContent from "./POIInfoWindowContent";
-
-const LIBRARIES: ("places" | "marker")[] = ["places", "marker"];
 
 const CONTAINER_STYLE = {
   width: "100%",
@@ -54,10 +57,11 @@ export default function POICatalogMap({
   const t = useTranslations("itineraryBuilder.map");
   const { activeKey, setActive } = useActiveStop();
 
-  const { isLoaded, loadError } = useLoadScript({
+  const { isLoaded, loadError } = useJsApiLoader({
+    id: GOOGLE_MAPS_LOADER_ID,
     googleMapsApiKey: apiKey,
-    libraries: LIBRARIES,
-    version: "weekly",
+    libraries: GOOGLE_MAPS_LIBRARIES,
+    version: GOOGLE_MAPS_LOADER_VERSION,
   });
 
   const [map, setMap] = useState<google.maps.Map | null>(null);
