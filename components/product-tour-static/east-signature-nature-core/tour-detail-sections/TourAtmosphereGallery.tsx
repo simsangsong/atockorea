@@ -1,8 +1,9 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
+/* Sprint 4.7: stripRef + scrollStrip 폐기 (썸네일 strip 제거). ChevronLeft/Right는 lightbox nav arrows에서 계속 사용. */
 import { cn } from "@/lib/utils";
 import { TourPhotoOverlay } from "@/components/tour/TourPhotoOverlay";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
@@ -55,7 +56,6 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
   const [activeIndex, setActiveIndex] = useState(0);
   /** Direction of the most recent navigation: +1 next, -1 prev, 0 initial open. */
   const [navDirection, setNavDirection] = useState<1 | -1 | 0>(0);
-  const stripRef = useRef<HTMLDivElement>(null);
 
   const openLightbox = (index: number) => {
     setActiveIndex(index);
@@ -85,31 +85,28 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
     return () => { window.removeEventListener("keydown", onKey); document.body.style.overflow = prev; };
   }, [lightboxOpen, closeLightbox, goNext, goPrev]);
 
-  const scrollStrip = (dir: 1 | -1) => {
-    stripRef.current?.scrollBy({ left: dir * 180, behavior: "smooth" });
-  };
-
   const floatItems = galleryItems.slice(0, 5);
 
   return (
     <>
       <div className="space-y-3">
         <div>
-          <h2 className="text-lg font-semibold text-foreground tracking-tight">{sectionUi.atmosphereTitle}</h2>
-          <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{sectionUi.atmosphereSubtitle}</p>
+          <h2 className="text-[17px] font-semibold tracking-[-0.02em] text-foreground">{sectionUi.atmosphereTitle}</h2>
+          <p className="mt-1.5 text-[13px] leading-relaxed tracking-wide text-muted-foreground">{sectionUi.atmosphereSubtitle}</p>
         </div>
 
         {/* ── Editorial bento collage ── */}
         <div
-          className="relative w-full rounded-2xl overflow-hidden bg-[#e8e2d9] p-1.5 shadow-[0_2px_6px_rgba(26,35,50,0.06),0_16px_40px_-14px_rgba(26,35,50,0.20)]"
+          className="relative w-full rounded-2xl overflow-hidden bg-white shadow-[0_2px_6px_rgba(26,35,50,0.06),0_16px_40px_-14px_rgba(26,35,50,0.20)]"
           style={{ aspectRatio: "4/3" }}
         >
+          {/* Sprint 4.6: cream gutter #e8e2d9 → white + gap 4→2 (Apple Photos / Klook 표준) */}
           <div
             className="grid h-full w-full"
             style={{
               gridTemplateColumns: "repeat(3, 1fr)",
               gridTemplateRows: "repeat(3, 1fr)",
-              gap: "4px",
+              gap: "2px",
             }}
           >
             {floatItems.map((item, i) => {
@@ -151,73 +148,7 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
           <div aria-hidden className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/[0.06]" />
         </div>
 
-        {/* ── Thumbnail strip with nav arrows ── */}
-        {galleryItems.length > 1 && (
-          <div className="relative flex items-center gap-1.5">
-            <button
-              type="button"
-              onClick={() => scrollStrip(-1)}
-              aria-label="Scroll gallery left"
-              className="flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full bg-white ring-1 ring-slate-900/[0.08] shadow-sm hover:bg-slate-50 transition-colors"
-            >
-              <ChevronLeft className="h-4 w-4 text-foreground" strokeWidth={2.2} />
-            </button>
-
-            <div
-              ref={stripRef}
-              className="flex gap-2 overflow-x-auto scrollbar-hide flex-1"
-            >
-              {galleryItems.map((item, index) => (
-                <button
-                  type="button"
-                  key={item.id}
-                  onClick={() => openLightbox(index)}
-                  className={cn(
-                    "group relative flex-shrink-0 w-[84px] rounded-xl overflow-hidden",
-                    "ring-1 ring-border/50 shadow-[0_1px_2px_rgba(26,35,50,0.05),0_8px_20px_-10px_rgba(26,35,50,0.20)]",
-                    "transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5",
-                    "hover:ring-border hover:shadow-[0_2px_4px_rgba(26,35,50,0.06),0_14px_28px_-12px_rgba(26,35,50,0.26)]",
-                  )}
-                >
-                  <div
-                    className="aspect-[4/3] relative"
-                    onContextMenu={(e) => e.preventDefault()}
-                  >
-                    <img
-                      src={item.src}
-                      alt={item.alt ?? ""}
-                      loading="lazy"
-                      decoding="async"
-                      draggable={false}
-                      onContextMenu={(e) => e.preventDefault()}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06] tour-photo-grade tour-photo-protected"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0c1622]/65 via-[#0c1622]/10 to-transparent" />
-                    <div aria-hidden className="absolute inset-0 pointer-events-none rounded-xl ring-1 ring-inset ring-white/10" />
-                    {item.type === "video" && (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white/90 shadow-md">
-                          <Play className="h-2.5 w-2.5 text-foreground ml-px" fill="currentColor" />
-                        </div>
-                      </div>
-                    )}
-                    {/* Strip thumbs are too narrow for readable overlay text — keep clean */}
-                  </div>
-                </button>
-              ))}
-              <div className="flex-shrink-0 w-1" />
-            </div>
-
-            <button
-              type="button"
-              onClick={() => scrollStrip(1)}
-              aria-label="Scroll gallery right"
-              className="flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full bg-white ring-1 ring-slate-900/[0.08] shadow-sm hover:bg-slate-50 transition-colors"
-            >
-              <ChevronRight className="h-4 w-4 text-foreground" strokeWidth={2.2} />
-            </button>
-          </div>
-        )}
+        {/* Sprint 4.7: Thumbnail strip 제거 (collage와 중복). 사용자는 bento click → lightbox로 모든 사진 탐색. */}
       </div>
 
       {/* ── Lightbox ── */}
@@ -232,7 +163,7 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.28, ease: "easeOut" }}
-            className="fixed inset-0 z-50 bg-[#1A2332]/96 flex items-center justify-center backdrop-blur-sm"
+            className="fixed inset-0 z-50 bg-black flex items-center justify-center"
             onClick={closeLightbox}
           >
           <div className="absolute top-4 left-4 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold tabular-nums text-white">
@@ -243,26 +174,26 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
             type="button"
             onClick={closeLightbox}
             aria-label="Close gallery"
-            className="absolute top-4 right-4 p-2.5 rounded-full bg-white/15 hover:bg-white/25 transition-colors"
+            className="absolute top-4 right-4 p-2.5 rounded-full bg-white/85 hover:bg-white transition-colors"
           >
-            <X className="h-5 w-5 text-white" />
+            <X className="h-5 w-5 text-foreground" />
           </button>
 
           <button
             type="button"
             onClick={(e) => { e.stopPropagation(); goPrev(); }}
             aria-label="Previous image"
-            className="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/15 hover:bg-white/28 transition-colors shadow-lg"
+            className="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/85 hover:bg-white transition-colors shadow-lg"
           >
-            <ChevronLeft className="h-6 w-6 text-white" strokeWidth={2} />
+            <ChevronLeft className="h-6 w-6 text-foreground" strokeWidth={2} />
           </button>
           <button
             type="button"
             onClick={(e) => { e.stopPropagation(); goNext(); }}
             aria-label="Next image"
-            className="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/15 hover:bg-white/28 transition-colors shadow-lg"
+            className="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/85 hover:bg-white transition-colors shadow-lg"
           >
-            <ChevronRight className="h-6 w-6 text-white" strokeWidth={2} />
+            <ChevronRight className="h-6 w-6 text-foreground" strokeWidth={2} />
           </button>
 
           <motion.div
@@ -325,7 +256,7 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                 className={cn(
                   "w-10 h-7 rounded-md overflow-hidden transition-all",
                   activeIndex === index
-                    ? "ring-2 ring-white ring-offset-2 ring-offset-[#1A2332]"
+                    ? "ring-2 ring-white ring-offset-2 ring-offset-black"
                     : "opacity-45 hover:opacity-75",
                 )}
               >
