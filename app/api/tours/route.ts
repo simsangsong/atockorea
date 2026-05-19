@@ -123,7 +123,13 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
           lng,
           pickup_time
         )`;
-    const compactTourColumns = [
+    // `translations` is a 5-locale JSONB blob (~2.2KB/row). We only ever
+    // read one locale per request, so use a PostgREST JSONB path selector
+    // (aliased to `tx`) to pull just that subset — cuts the per-row
+    // translation payload by ~75%. Locale codes like `zh-TW` are valid
+    // path segments under PostgREST's `->` operator. When no locale is
+    // requested, skip the column entirely.
+    const baseTourColumns = [
       'id',
       'slug',
       'tag',
@@ -142,7 +148,6 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       'group_size',
       'highlight',
       'badges',
-      'translations',
       'rating',
       'review_count',
       'pickup_points_count',
@@ -158,10 +163,18 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       'is_active',
       'created_at',
       'updated_at',
+    ];
+    const localeTranslationCol = localeParam ? `tx:translations->${localeParam}` : null;
+    const compactTourColumns = [
+      ...baseTourColumns,
+      ...(localeTranslationCol ? [localeTranslationCol] : []),
     ].join(',');
+    const fullSelect = localeTranslationCol
+      ? `*,${localeTranslationCol},${pickupJoin}`
+      : `*,${pickupJoin}`;
     let query = supabase
       .from('tours')
-      .select(compactList ? compactTourColumns : `*,${pickupJoin}`)
+      .select(compactList ? compactTourColumns : fullSelect)
       .eq('is_active', isActive);
 
     // Apply filters
@@ -261,7 +274,16 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
         : Array.isArray(tour.pickup_points)
           ? tour.pickup_points
           : [];
-      const tr = (localeParam && tour.translations && typeof tour.translations === 'object' && tour.translations[localeParam]) || null;
+      // `tour.tx` is the pre-narrowed locale subset from the JSONB path
+      // selector above. Falls back to `tour.translations[localeParam]`
+      // when `tx` isn't present — defensive for callers using a custom
+      // select (e.g. tests) that still ship the full blob.
+      const tr =
+        (localeParam && tour.tx && typeof tour.tx === 'object'
+          ? tour.tx
+          : localeParam && tour.translations && typeof tour.translations === 'object'
+            ? tour.translations[localeParam]
+            : null) || null;
       const title = (tr?.title ?? tour.title) as string;
       const description = (tr?.description ?? tour.description ?? '') as string;
       const badgesRaw = tour.badges;
