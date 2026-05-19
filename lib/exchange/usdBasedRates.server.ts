@@ -28,7 +28,19 @@ const CACHE_MS = 10 * 60 * 1000;
 const FAILURE_COOLDOWN_MS = 30 * 60 * 1000;
 const FALLBACK_KRW_PER_USD = 1480;
 
-const upstreamFetchInit: RequestInit = { cache: 'no-store' };
+// 2s hard timeout — without this, a slow/hanging upstream blocks every
+// /api/tours request on the cold path (the rate is awaited before the
+// Supabase query runs), turning a transient FX outage into a 1-minute+
+// page stall. Signal must be created per-call (a module-level
+// AbortSignal.timeout would self-abort 2s after process start and
+// permanently fail every subsequent fetch).
+const FX_UPSTREAM_TIMEOUT_MS = 2000;
+function buildUpstreamFetchInit(): RequestInit {
+  return {
+    cache: 'no-store',
+    signal: AbortSignal.timeout(FX_UPSTREAM_TIMEOUT_MS),
+  };
+}
 
 type Cached = { rates: Record<string, number>; updatedAt: string; isFallback?: boolean };
 // Persist on globalThis so dev HMR module reloads don't reset the cache and
@@ -93,7 +105,7 @@ export async function getUsdBasedRates(): Promise<UsdBasedRatesResult> {
     if (apiKey) {
       const res = await fetch(
         `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`,
-        upstreamFetchInit
+        buildUpstreamFetchInit()
       );
       if (!res.ok) throw new Error(`ExchangeRate API error: ${res.status}`);
       const data = await res.json();
@@ -103,7 +115,7 @@ export async function getUsdBasedRates(): Promise<UsdBasedRatesResult> {
       rates = data.conversion_rates as Record<string, number>;
       updatedAt = new Date().toISOString();
     } else {
-      const res = await fetch('https://open.er-api.com/v6/latest/USD', upstreamFetchInit);
+      const res = await fetch('https://open.er-api.com/v6/latest/USD', buildUpstreamFetchInit());
       if (!res.ok) throw new Error(`Open ER API error: ${res.status}`);
       const data = await res.json();
       if (data.result !== 'success' || !data.rates) {
