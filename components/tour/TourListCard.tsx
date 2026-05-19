@@ -146,10 +146,32 @@ function TourListCard({ tour, detailHref, formatPriceFn, imageSizes, layout = 'v
               sizes={imageSizes ?? (isHorizontal ? '180px' : '50vw')}
               quality={90}
               className={cn(
-                'object-cover transition-[transform,filter] duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] brightness-100 group-hover:scale-[1.03] motion-reduce:group-hover:scale-100',
-                'motion-reduce:brightness-100 motion-reduce:transition-none',
+                'object-cover transition-transform duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03] motion-reduce:group-hover:scale-100',
+                'motion-reduce:transition-none',
               )}
+              /* Editorial polish (atmosphere gallery / hero / drawer와 동일) — Vogue subtle filter.
+                 inline filter는 Tailwind --tw-filter 변수 시스템을 override. */
+              style={{ filter: 'saturate(1.08) contrast(1.06) brightness(0.99)' }}
               loading="lazy"
+            />
+            {/* S Tier #1 — Film grain noise (Kodak Portra 400 입자감, mix-blend overlay 0.12) */}
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-0 mix-blend-overlay"
+              style={{
+                backgroundImage:
+                  "url(\"data:image/svg+xml,%3Csvg xmlns='http%3A//www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+                opacity: 0.12,
+              }}
+            />
+            {/* S Tier #2 — Soft vignette (radial corner darkening — 작은 카드라 0.15로 약하게) */}
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  'radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.15) 100%)',
+              }}
             />
             {!isHorizontal ? (
               <div
