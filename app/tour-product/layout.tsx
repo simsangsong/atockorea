@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Inter, Noto_Sans_JP, Noto_Sans_KR, Noto_Sans_SC, Noto_Sans_TC, Playfair_Display } from "next/font/google";
+import { Bodoni_Moda, Inter, Noto_Sans_JP, Noto_Sans_KR, Noto_Sans_SC, Noto_Sans_TC } from "next/font/google";
 import "@/components/product-tour-static/east-signature-nature-core/tour-product-v2-scope.css";
 import { SitePageShell } from "@/src/components/layout/SitePageShell";
 
@@ -10,10 +10,16 @@ const tourV2Sans = Inter({
   display: "swap",
 });
 
-const playfairSerif = Playfair_Display({
+/*
+ * Bodoni Moda — Harper's Bazaar / Vogue 표준 Didone, 100년 luxury fashion 잡지 폰트.
+ * italic이 절품, 사진 캡션·hero pull-quote에 압도적 화보 art-direction.
+ * Variable font, regular + italic 모두 지원. (2026-05-19: Playfair Display → Bodoni Moda)
+ */
+const bodoniSerif = Bodoni_Moda({
   subsets: ["latin"],
   variable: "--font-tour-v2-serif",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -50,7 +56,7 @@ const notoJp = Noto_Sans_JP({
 export default function TourProductLayout({ children }: { children: ReactNode }) {
   const fontVars = [
     tourV2Sans.variable,
-    playfairSerif.variable,
+    bodoniSerif.variable,
     notoKr.variable,
     notoSc.variable,
     notoTc.variable,

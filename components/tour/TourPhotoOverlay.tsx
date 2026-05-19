@@ -82,17 +82,18 @@ export function TourPhotoOverlay({
       className={cn("pointer-events-none absolute inset-0 z-10", insetClass, className)}
       aria-hidden="true"
     >
-      {/* top-right: region label — uppercase serif (Playfair Display) for editorial feel.
-          잡지 화보 스타일 (사용자 요청 2026-05-19): SF Pro/Inter → Playfair Display. */}
+      {/* top-right: region label — uppercase Bodoni Moda (Vogue/Harper's Bazaar 표준 Didone).
+          잡지 화보 art-direction (사용자 요청 2026-05-19). small overlay는 font-medium으로
+          Didone hairline stroke 가독성 보정. */}
       {!hideRegion && resolvedRegion ? (
         <span
           className={cn(
-            "absolute right-0 top-0 uppercase font-normal text-white/95",
+            "absolute right-0 top-0 uppercase font-medium text-white/95",
             regionClass,
           )}
           style={{
             fontFamily:
-              "var(--font-tour-v2-serif), 'Playfair Display', Georgia, 'Times New Roman', serif",
+              "var(--font-tour-v2-serif), 'Bodoni Moda', 'Bodoni 72', Didot, 'Times New Roman', serif",
             textShadow: "0 1px 4px rgba(0,0,0,0.55), 0 0 1px rgba(0,0,0,0.4)",
           }}
         >
@@ -100,17 +101,17 @@ export function TourPhotoOverlay({
         </span>
       ) : null}
 
-      {/* bottom-right: stop name — Playfair Display italic for editorial magazine feel.
-          잡지 화보 스타일 (사용자 요청 2026-05-19): italic으로 art-direction 강화. */}
+      {/* bottom-right: stop name — Bodoni Moda italic (Harper's Bazaar 화보 캡션 표준).
+          italic이 high-contrast Didone의 art-direction을 극대화. */}
       {showStopName ? (
         <span
           className={cn(
-            "absolute bottom-0 right-0 whitespace-nowrap italic font-normal text-white",
+            "absolute bottom-0 right-0 whitespace-nowrap italic font-medium text-white",
             stopClass,
           )}
           style={{
             fontFamily:
-              "var(--font-tour-v2-serif), 'Playfair Display', Georgia, 'Times New Roman', serif",
+              "var(--font-tour-v2-serif), 'Bodoni Moda', 'Bodoni 72', Didot, 'Times New Roman', serif",
             textShadow: "0 1px 4px rgba(0,0,0,0.6), 0 0 1px rgba(0,0,0,0.45)",
           }}
         >
