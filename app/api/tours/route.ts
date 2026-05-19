@@ -177,7 +177,6 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
     // DB `tours.price` is stored in KRW for most rows (some marked `price_currency=USD`).
     // Client sends `minPriceUsd`/`maxPriceUsd` so the API can convert with the live FX
     // rate; raw `minPrice`/`maxPrice` is kept for back-compat (assumed KRW).
-    const krwPerUsdForFilter = await getKrwPerUsd();
     const parsePositive = (raw: string | null): number | null => {
       if (!raw) return null;
       const n = parseFloat(raw);
@@ -187,15 +186,22 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
     const maxUsd = parsePositive(maxPriceUsd);
     const minKrwLegacy = parsePositive(minPrice);
     const maxKrwLegacy = parsePositive(maxPrice);
-    const minKrw = minUsd != null ? minUsd * krwPerUsdForFilter : minKrwLegacy;
-    const maxKrw = maxUsd != null ? maxUsd * krwPerUsdForFilter : maxKrwLegacy;
 
-    if (minKrw != null) {
-      query = query.gte('price', minKrw);
-    }
+    // Kick off FX fetch eagerly; only await it now if the SQL filter needs
+    // it (USD price bounds). Otherwise the Supabase query races it in
+    // parallel below, so the slower of the two — not the sum — drives p95.
+    const needFxForQueryFilter = minUsd != null || maxUsd != null;
+    const fxPromise = getKrwPerUsd();
 
-    if (maxKrw != null) {
-      query = query.lte('price', maxKrw);
+    if (needFxForQueryFilter) {
+      const krwForFilter = await fxPromise;
+      const minKrw = minUsd != null ? minUsd * krwForFilter : minKrwLegacy;
+      const maxKrw = maxUsd != null ? maxUsd * krwForFilter : maxKrwLegacy;
+      if (minKrw != null) query = query.gte('price', minKrw);
+      if (maxKrw != null) query = query.lte('price', maxKrw);
+    } else {
+      if (minKrwLegacy != null) query = query.gte('price', minKrwLegacy);
+      if (maxKrwLegacy != null) query = query.lte('price', maxKrwLegacy);
     }
 
     // Search filter (title, description, city) - escape ILIKE special chars
@@ -237,15 +243,16 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       : limit;
     query = query.range(offset, offset + fetchSpan - 1);
 
-    const { data: tours, error } = await query;
+    // Race the Supabase read against the FX upstream. When the SQL filter
+    // didn't need FX, this is a true parallel fan-out; when it did, the
+    // promise is already settled and we just collect the cached value.
+    const [queryResult, krwPerUsd] = await Promise.all([query, fxPromise]);
+    const { data: tours, error } = queryResult;
 
     if (error) {
       logger.error('Error fetching tours', undefined, { error: error.message });
       throw new AppError('Failed to fetch tours', 500, 'TOURS_FETCH_ERROR', error.message);
     }
-
-    // `krwPerUsdForFilter` is already resolved above for price range conversion.
-    const krwPerUsd = krwPerUsdForFilter;
 
     // Transform data to match frontend expectations; use translations[locale] when available
     let transformedTours = tours?.map((tour: any) => {
