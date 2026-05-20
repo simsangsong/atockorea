@@ -131,10 +131,10 @@ export default function AIRecommendPanel({
     : 0;
 
   return (
-    <section className="bg-slate-50 px-4 pt-4 pb-3 md:px-6 md:pt-5 md:pb-4">
+    <section className="px-4 pt-4 pb-3 md:px-6 md:pt-5 md:pb-4">
       <motion.div
         {...reveal}
-        className="relative mx-auto max-w-3xl overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200"
+        className="relative mx-auto max-w-3xl overflow-hidden rounded-2xl border border-white/80 bg-white/90 shadow-[0_16px_40px_-24px_rgba(15,23,42,0.28)] backdrop-blur-md"
       >
         {/* Header — always visible */}
         <motion.div variants={REVEAL_ITEM_VARIANTS} className="px-5 pt-5 pb-3 md:px-6 md:pt-5">

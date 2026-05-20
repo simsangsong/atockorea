@@ -93,13 +93,13 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
           for the rationale (a 400px rail can't host a 3-4 col card grid
           cleanly, and the grid is secondary browsing once the map is the
           primary canvas). */}
-      <section className="bg-slate-50 pb-6 md:pb-8">
+      <section className="pb-6 md:pb-8">
         <div className="mx-auto max-w-7xl px-4 md:px-6 lg:flex lg:items-start lg:gap-6 lg:px-8">
           {/* Map column — sticky on both mobile (top 16) and lg+ (top 20).
               On <lg the column has no width constraint; on lg+ it grows
               to fill the remaining space next to the 400px right rail. */}
           <div className="sticky top-16 z-20 -mx-4 mb-4 md:mx-0 lg:top-20 lg:z-10 lg:mb-0 lg:min-w-0 lg:flex-1 lg:self-start">
-            <div className="relative h-[40vh] min-h-[260px] overflow-hidden bg-white shadow-md ring-1 ring-slate-200 md:rounded-2xl lg:h-[calc(100vh-7rem)]">
+            <div className="relative h-[40vh] min-h-[260px] overflow-hidden border border-white/80 bg-white/85 shadow-[0_16px_40px_-24px_rgba(15,23,42,0.30)] backdrop-blur md:rounded-2xl lg:h-[calc(100vh-7rem)]">
               {/* Floating Reset View — bottom-right of the map. Replaces
                   the old "Map preview · N stops · M in cart" header bar. */}
               <button

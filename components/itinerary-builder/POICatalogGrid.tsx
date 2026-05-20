@@ -78,10 +78,10 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus }:
                   className="w-[72vw] flex-shrink-0 snap-start md:w-auto"
                 >
                   <article
-                    className={`group relative h-full overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md ${
+                    className={`group relative h-full overflow-hidden rounded-2xl border border-white/70 bg-white/85 shadow-[0_10px_28px_-18px_rgba(15,23,42,0.22)] backdrop-blur-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-22px_rgba(15,23,42,0.32)] ${
                       inCart
                         ? "ring-2 ring-slate-700 shadow-[0_0_0_3px_rgba(15,23,42,0.10)]"
-                        : "ring-1 ring-slate-200"
+                        : "ring-1 ring-slate-200/70"
                     }`}
                   >
                     <button
@@ -181,7 +181,7 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus }:
           {/* Right-edge fade (mobile only — signals "more cards →") */}
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-slate-50 via-slate-50/90 to-transparent md:hidden"
+            className="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-white via-white/80 to-transparent md:hidden"
           />
         </div>
         <SnapScrollDots containerRef={scrollRef} count={ordered.length} />

@@ -23,12 +23,12 @@ const REGION_HEADLINES: Record<RegionSlug, { eyebrow: string; title: string; sub
   busan: {
     eyebrow: "Busan + day-trip cluster",
     title: "Busan Map",
-    subtitle: "20 curated stops across Busan, Yangsan, Gyeongju, Ulsan, and Miryang.",
+    subtitle: "Curated stops across Busan, Yangsan, Gyeongju, Ulsan, and Miryang.",
   },
   jeju: {
     eyebrow: "Jeju Island",
     title: "Jeju Map",
-    subtitle: "25 curated stops across the whole UNESCO Triple Crown island.",
+    subtitle: "Curated stops across the whole UNESCO Triple Crown island.",
   },
 };
 
@@ -81,14 +81,14 @@ export default async function ItineraryBuilderRegionPage({
 
   return (
     <SitePageShell>
-      <main className="min-h-screen bg-slate-50">
+      <main className="min-h-screen bg-white/55">
         {/* V2 Phase 1 — thin breadcrumb bar replaces the old hero header
             (display title + subtitle). The user already navigated here
             from the intake form; a hero re-greeting is friction. The map
             below and the AI panel speak for the region's character. */}
         <nav
           aria-label="Itinerary builder navigation"
-          className="border-b border-slate-200 bg-white/85 backdrop-blur-sm"
+          className="border-b border-slate-200/70 bg-white/70 backdrop-blur-md"
         >
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-6 lg:px-8">
             <Link

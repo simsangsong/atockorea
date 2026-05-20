@@ -65,7 +65,7 @@ export default function IntakeForm() {
   // unselected stays minimal. Single source so private/cruise stay symmetric.
   const trackCard = (active: boolean, accent: "amber" | "sky") => {
     if (!active) {
-      return "border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm";
+      return "border-slate-200/70 bg-white/70 backdrop-blur-sm hover:border-slate-300 hover:bg-white/90";
     }
     return accent === "amber"
       ? "border-amber-500 bg-amber-50 ring-2 ring-amber-200 shadow-[0_0_0_3px_rgba(251,191,36,0.18)]"
@@ -131,8 +131,8 @@ export default function IntakeForm() {
               key={r}
               className={`flex cursor-pointer items-center justify-center gap-2 rounded-lg border-2 px-4 py-3.5 transition-all duration-200 ease-out ${
                 region === r
-                  ? "border-slate-900 bg-slate-50 ring-2 ring-slate-200 shadow-[0_0_0_3px_rgba(15,23,42,0.08)]"
-                  : "border-slate-200 bg-white hover:border-slate-400 hover:shadow-sm"
+                  ? "border-slate-900 bg-white/90 ring-2 ring-slate-200 shadow-[0_0_0_3px_rgba(15,23,42,0.08)] backdrop-blur-sm"
+                  : "border-slate-200/70 bg-white/70 backdrop-blur-sm hover:border-slate-400 hover:bg-white/90"
               }`}
             >
               <input
@@ -167,7 +167,7 @@ export default function IntakeForm() {
                 className={`flex-shrink-0 snap-start rounded-full px-4 py-2 text-caption font-semibold transition-all duration-200 ease-out ${
                   hours === String(h)
                     ? "bg-sky-700 text-white shadow-md"
-                    : "bg-white text-slate-700 ring-1 ring-slate-200 hover:bg-slate-50 hover:ring-slate-300"
+                    : "bg-white/70 text-slate-700 ring-1 ring-slate-200/80 backdrop-blur-sm hover:bg-white/90 hover:ring-slate-300"
                 }`}
               >
                 {h}h

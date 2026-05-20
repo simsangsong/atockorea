@@ -112,7 +112,7 @@ export default function ResultTimeline({
 
   return (
     <section
-      className="bg-white px-4 py-5 ring-1 ring-slate-200 md:px-6 md:py-6 lg:rounded-2xl"
+      className="border border-white/80 bg-white/90 px-4 py-5 shadow-[0_16px_40px_-24px_rgba(15,23,42,0.28)] backdrop-blur-md md:px-6 md:py-6 lg:rounded-2xl"
       aria-label={t("title")}
     >
       <header className="mb-4 flex items-center justify-between">
@@ -219,10 +219,10 @@ function SortableStopCard({
       data-poi-card={poi.poi_key}
       onMouseEnter={() => onHover(true)}
       onMouseLeave={() => onHover(false)}
-      className={`relative flex items-center gap-3 rounded-2xl bg-white p-2.5 transition-all duration-200 ease-out motion-reduce:transition-none ${
+      className={`relative flex items-center gap-3 rounded-2xl bg-white/70 p-2.5 backdrop-blur-sm transition-all duration-200 ease-out motion-reduce:transition-none ${
         isActive
           ? "ring-2 ring-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.18)]"
-          : "ring-1 ring-slate-200 hover:bg-amber-50/40 hover:ring-amber-200"
+          : "ring-1 ring-slate-200/70 hover:bg-amber-50/50 hover:ring-amber-200"
       }`}
     >
       {/* Sequence node on the connector (overlaps the dashed line) */}
@@ -316,7 +316,7 @@ function DriveChip({
   void to;
   return (
     <li className="relative -my-1 flex items-center pl-1" aria-hidden>
-      <span className="inline-flex items-center gap-1 rounded-full bg-slate-50 px-2.5 py-0.5 text-micro font-semibold text-slate-500 ring-1 ring-slate-200">
+      <span className="inline-flex items-center gap-1 rounded-full bg-white/70 px-2.5 py-0.5 text-micro font-semibold text-slate-500 ring-1 ring-slate-200/70 backdrop-blur-sm">
         <Car className="h-3 w-3" aria-hidden />
         {label}
       </span>
@@ -334,7 +334,7 @@ function EmptyState({
   lookLabel: string;
 }) {
   return (
-    <div className="rounded-2xl border-2 border-dashed border-slate-200 bg-slate-50/60 px-5 py-10 text-center">
+    <div className="rounded-2xl border-2 border-dashed border-slate-300/70 bg-white/50 px-5 py-10 text-center backdrop-blur-sm">
       <span className="mx-auto mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700">
         <MapPin className="h-6 w-6" aria-hidden />
       </span>
