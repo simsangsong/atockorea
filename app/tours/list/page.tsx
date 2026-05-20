@@ -15,6 +15,7 @@ import { CatalogueFooterStrip } from '@/components/tours-list/CatalogueFooterStr
 import { SortSegmented } from '@/components/tours-list/SortSegmented';
 import { DestinationPillSelect } from '@/components/tours-list/DestinationPillSelect';
 import { ActiveFilterStrip, type ActiveFilterChip } from '@/components/tours-list/ActiveFilterStrip';
+import { ContextualVignetteBand } from '@/components/tours-list/ContextualVignetteBand';
 import {
   LIST_FIELD_CLS,
   LIST_CHIP_ACTIVE_CLS,
@@ -779,6 +780,18 @@ export default function ToursListPage() {
           />
         </div>
         {/* End sticky header stack (CatalogueHero + filter rail) */}
+
+        {/* Contextual vignette band (Phase 3.2) — destination/feature 7-accent (B6). */}
+        <ContextualVignetteBand
+          destination={destination}
+          features={features}
+          contextLabel={destination !== 'all' ? translateCity(destination, t) : features.trim()}
+          line={t('toursList.contextBandLine', {
+            context: destination !== 'all' ? translateCity(destination, t) : features.trim(),
+          })}
+          resetLabel={t('toursList.contextBandReset')}
+          onReset={resetFilters}
+        />
 
         {/* Mobile full-sheet filter drawer (Phase 2.9) — framer bottom-sheet,
             0.3s ease (detail-page drawer policy). reduce-motion → instant. */}
