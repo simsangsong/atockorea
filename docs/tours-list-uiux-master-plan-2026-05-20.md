@@ -117,7 +117,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-20 | **B30 — 자연 single-layer 오버레이 복구 (B26 wash).** 사용자 12차: "자연스럽게 씌운 흰색 오버레이 복구". solid 패널 → full-width 연속 fade (0.92→0.72→0.38→0.12→투명@82%). 폰트는 B29 유지. | a1942b86 | type-check clean. 카드 SHA 유지. italic 0. |
 | 2026-05-20 | **B31 — Hero 큐레이터 라인 제거.** 사용자 13차: "edited from seoul 이것도 지워". CatalogueHero에서 큐레이터 `<p>` + heroCurator const 삭제. hero = masthead + h1 + sub 3요소만. 큐레이터 시그니처는 footer strip에만. heroCurator i18n 키는 보존. | 2d3041f2 | type-check clean. 카드 SHA `a931fe4e` 유지. italic = 0. |
 | 2026-05-20 | **Phase 1 ✅ 완료 — 사용자 "좋아 완벽해" 표지 격 통과.** Catalogue Hero (240→88 collapse, 한복+경복궁 사진, dark warm Kinfolk 톤, Noto Serif KR 본명조, text-deck-left + 자연 cream 오버레이, masthead+h1+sub 3요소) + Footer Strip. B18-B31 사용자 직접 디자인 반복 14회 반영. acceptance: 카드 SHA `a931fe4e` 변경 0 (B2) · slate grep 0 (B1) · i18n 6/6 (B14) · type-check clean. | 2d3041f2 | LCP Lighthouse 미측정 (Phase 6로 이월). 사용자 시각 승인이 1차 게이트 통과 |
-| 2026-05-20 | **Phase 2 시작 — Sticky Filter Rail 격상.** §A Phase 1 ✅ + Phase 2 🔄 / 시작일 fill / §C entry / planner-first 커밋. §6.2 sub-task 2.1 → 2.10 순차 실행 예정 (rail ivory+amber 베이스 · 필드 h-11 · DestinationPillSelect · SortSegmented · type chips amber · More 버튼 · ActiveFilterStrip · 모바일 drawer · refetch dot). | (pending) | 코드 전 planner 박기 (planner-first). 현재 filter rail은 Phase 1에서 단일 sticky parent 안에 hero와 함께 wrap됨 (sticky 제거 상태) — Phase 2에서 reskin |
+| 2026-05-20 | **Phase 2 시작 — Sticky Filter Rail 격상.** §A Phase 1 ✅ + Phase 2 🔄 / 시작일 fill / §C entry / planner-first 커밋. §6.2 sub-task 2.1 → 2.10 순차 실행 예정 (rail ivory+amber 베이스 · 필드 h-11 · DestinationPillSelect · SortSegmented · type chips amber · More 버튼 · ActiveFilterStrip · 모바일 drawer · refetch dot). | 8e74327f | 코드 전 planner 박기 (planner-first). 현재 filter rail은 Phase 1에서 단일 sticky parent 안에 hero와 함께 wrap됨 (sticky 제거 상태) — Phase 2에서 reskin |
+| 2026-05-20 | **Phase 2.1+2.2+2.6 ✅ — filter rail ivory+amber foundational reskin.** 토큰 import (LIST_FIELD_CLS/SELECT_CLS/CHIP_ACTIVE/INACTIVE/RAIL_BG/RAIL_BORDER/SHADOW_WARM). rail 베이스 bg-white/72 → ivory gradient + amber-100 border + warm shadow. fieldCls/selectCls h-8 slate → h-11 amber-200/70 text-[13.5px]. chipCls bg-slate-900 → amber-900/95 text-amber-50 (desktop+mobile). desktop row h-52 → h-64. eyebrow/dividers/reset/apply/refetch-bar 전부 amber. mobile 필드 height override 제거 (토큰 h-11 적용). | 28e90f38 | type-check clean. **filter rail 내 slate-200/900 = 0 (B1)** — 남은 slate는 empty/error/skeleton/load-more (Phase 3/4 scope) + em-dash 중립. 카드 SHA `a931fe4e` 유지. 남은 2.3/2.4/2.5/2.7/2.8/2.9/2.10 진행 예정 |
 
 ---
 
@@ -378,18 +379,18 @@ import type { StripAccent } from '@/components/tours-hub/TourCollectionStrip';
 
 **목적**: form-tool 톤 (slate-h8-12px) → 매거진 디렉터리 톤 (ivory-amber-h11-13.5px).
 
-| # | 작업 | 파일 | 통과 기준 |
-|---|---|---|---|
-| 2.1 | rail 베이스: `bg-white/72 backdrop-blur-md` → `bg-[linear-gradient(180deg,#fdfcf8,#faf9f4)] backdrop-blur-md` + `border-b border-amber-100/70` + warm shadow | page.tsx | 톤 검증 |
-| 2.2 | 모든 필터 필드 h-8 → h-11, text-[12px] → text-[13.5px], border slate-200 → amber-200/70 | page.tsx (`fieldCls`, `selectCls`) | 측정 |
-| 2.3 | search input — 좌측 돋보기 아이콘 추가, `rounded-2xl`, inner highlight shadow | page.tsx | input 좌측 16px 패딩 with 아이콘 |
-| 2.4 | destination select → **Pill select** with 핀 아이콘 + 도시명 + count badge | 신규 `components/tours-list/DestinationPillSelect.tsx` | 카운트 노출, 클릭 시 floating panel |
-| 2.5 | sort select → **Segmented control** (인기/최신/평점/판매/가격↑↓) | 신규 `components/tours-list/SortSegmented.tsx` | active = `bg-amber-900/95 text-amber-50 shadow-inner` |
-| 2.6 | type chips (all/private/join/bus) — chip 톤 amber로 격상 (active = `bg-amber-900/95 text-amber-50`, inactive = `bg-white/95 border-amber-200/70 text-slate-700`) | page.tsx (`chipCls`) | active 시 amber, slate-900 사용 금지 |
-| 2.7 | "More" 버튼 신규 — Tier B 펼치기 + 활성 카운터 배지 ("+ 3 more") | 신규 | floating panel 또는 expand row |
-| 2.8 | **Active Filter Chip Strip 신규** (`components/tours-list/ActiveFilterStrip.tsx`) — rail 바로 아래, `bg-amber-50 border-amber-200/70 text-amber-900`. dismissible 칩 + Clear all | 신규 | 각 필터별 칩 등장/해제 검증 |
-| 2.9 | 모바일: rail Tier A 단일 row → `Filter` 버튼 → full-sheet drawer (framer-motion bottom-sheet) | page.tsx (lg:hidden 분기) | 모바일 1탭으로 필터 전체 접근 |
-| 2.10 | refetch indicator: 하단 0.5px pulse → rail 내부 sort label 옆 spinning dot | page.tsx | 시각적으로 더 명확하되 layout shift 없음 |
+| # | 작업 | 파일 | 통과 기준 | 상태 |
+|---|---|---|---|---|
+| 2.1 | rail 베이스: `bg-white/72 backdrop-blur-md` → `bg-[linear-gradient(180deg,#fdfcf8,#faf9f4)] backdrop-blur-md` + `border-b border-amber-100/70` + warm shadow | page.tsx | 톤 검증 | ✅ 28e90f38 (LIST_RAIL_BG/BORDER/SHADOW 토큰) |
+| 2.2 | 모든 필터 필드 h-8 → h-11, text-[12px] → text-[13.5px], border slate-200 → amber-200/70 | page.tsx (`fieldCls`, `selectCls`) | 측정 | ✅ 28e90f38 (LIST_FIELD_CLS/SELECT_CLS, row h-64) |
+| 2.3 | search input — 좌측 돋보기 아이콘 추가, `rounded-2xl`, inner highlight shadow | page.tsx | input 좌측 16px 패딩 with 아이콘 | ⏳ |
+| 2.4 | destination select → **Pill select** with 핀 아이콘 + 도시명 + count badge | 신규 `components/tours-list/DestinationPillSelect.tsx` | 카운트 노출, 클릭 시 floating panel | ⏳ |
+| 2.5 | sort select → **Segmented control** (인기/최신/평점/판매/가격↑↓) | 신규 `components/tours-list/SortSegmented.tsx` | active = `bg-amber-900/95 text-amber-50 shadow-inner` | ⏳ |
+| 2.6 | type chips (all/private/join/bus) — chip 톤 amber로 격상 (active = `bg-amber-900/95 text-amber-50`, inactive = `bg-white/95 border-amber-200/70 text-slate-700`) | page.tsx (`chipCls`) | active 시 amber, slate-900 사용 금지 | ✅ 28e90f38 (desktop+mobile chips amber) |
+| 2.7 | "More" 버튼 신규 — Tier B 펼치기 + 활성 카운터 배지 ("+ 3 more") | 신규 | floating panel 또는 expand row | ⏳ |
+| 2.8 | **Active Filter Chip Strip 신규** (`components/tours-list/ActiveFilterStrip.tsx`) — rail 바로 아래, `bg-amber-50 border-amber-200/70 text-amber-900`. dismissible 칩 + Clear all | 신규 | 각 필터별 칩 등장/해제 검증 | ⏳ |
+| 2.9 | 모바일: rail Tier A 단일 row → `Filter` 버튼 → full-sheet drawer (framer-motion bottom-sheet) | page.tsx (lg:hidden 분기) | 모바일 1탭으로 필터 전체 접근 | ⏳ |
+| 2.10 | refetch indicator: 하단 0.5px pulse → rail 내부 sort label 옆 spinning dot | page.tsx | 시각적으로 더 명확하되 layout shift 없음 | 🔶 부분 (pulse bar amber, dot은 SortSegmented 2.5와 함께) |
 
 **Phase 2 ✅ 조건**: 필터 걸어도 admin form-tool 톤 안 나옴. 활성 필터 dismissible 칩 모든 시나리오에서 등장/해제. 모바일 full-sheet 0.30s 이내 (상세 페이지 drawer 정책과 동일). 색상 검증: `grep -E "(slate-200|slate-900)" components/tours-list/`에서 슬레이트 컬러 거의 0 (B1 적용).
 
