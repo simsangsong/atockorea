@@ -196,14 +196,14 @@ export default function FloatingLanguageToggle() {
               className={cn(
                 'flex w-full items-center gap-2.5 px-3.5 py-2 text-left text-[13px] font-medium transition-colors',
                 locale === loc
-                  ? 'bg-blue-50 text-blue-700'
+                  ? 'bg-slate-100 text-slate-900'
                   : 'text-slate-800 hover:bg-slate-50 hover:text-slate-900',
               )}
             >
               <span className="text-[15px] leading-none">{localeFlags[loc]}</span>
               <span className="flex-1">{localeNames[loc]}</span>
               {locale === loc && (
-                <svg className="h-3.5 w-3.5 text-blue-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden>
+                <svg className="h-3.5 w-3.5 text-slate-900" fill="currentColor" viewBox="0 0 20 20" aria-hidden>
                   <path
                     fillRule="evenodd"
                     d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -230,7 +230,7 @@ export default function FloatingLanguageToggle() {
           'ring-1 ring-white/12 backdrop-blur-md',
           'shadow-[0_14px_32px_-10px_rgba(15,23,42,0.55),0_3px_6px_-2px_rgba(15,23,42,0.22)]',
           'transition-transform duration-150 active:scale-95',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/55 focus-visible:ring-offset-1',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60 focus-visible:ring-offset-1',
         )}
       >
         <Globe aria-hidden className="h-4 w-4 text-white/95" />
