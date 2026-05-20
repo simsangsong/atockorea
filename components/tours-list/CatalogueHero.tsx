@@ -144,20 +144,20 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
       />
       {/*
         LEFT vertical cream wash — Vogue Korea / Bazaar cover convention.
-        User 2026-05-20 8차 진단: bottom horizontal wash (B24) put cream uniformly
-        across the bottom — text was still illegible on the bottom-right because
-        the dancer's hanbok (bright cream/pink) bleeds through the moderate
-        opacity. Fix: anchor the wash to the LEFT (where palace/sky/stone live —
-        contrast-friendly) and confine text to that left zone via max-w. The
-        dancer occupies the right side of the photo and remains untouched —
-        magazine "text-deck-left + subject-right" cover layout.
+        Width is bounded responsively (mobile 96% · sm 68% · lg 540px hard cap)
+        so the cream zone tracks the text container precisely — gradient stops
+        are relative to wash width, so the heavy-cream portion always sits
+        directly behind the constrained text below.
+        User 2026-05-20 9차 진단: B26 max-w-[50%] alone leaked on wide desktops
+        (text natural width fit in 50% on >1700px viewports → no wrap → bled
+        onto dancer). Fix combines: hard-pixel max-w cap + forced <br /> in h1.
       */}
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 right-0"
+        className="pointer-events-none absolute inset-y-0 left-0 w-[96%] sm:w-[68%] lg:w-[540px]"
         aria-hidden
         style={{
           background:
-            'linear-gradient(90deg, rgba(250,248,243,0.92) 0%, rgba(250,248,243,0.72) 28%, rgba(250,248,243,0.38) 52%, rgba(250,248,243,0.12) 70%, transparent 82%)',
+            'linear-gradient(90deg, rgba(250,248,243,0.92) 0%, rgba(250,248,243,0.88) 45%, rgba(250,248,243,0.55) 72%, rgba(250,248,243,0.18) 90%, transparent 100%)',
         }}
       />
 
@@ -196,23 +196,22 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
         style={reducedMotion ? undefined : { opacity: displayOpacity }}
       >
         {/*
-          Text confined to the LEFT zone of the LEFT cream wash above.
-          Dancer + hanbok occupy the right ~40% of photo — keeping text
-          out of that zone removes the contrast problem at its source
-          (no amount of halo can rescue serif on bright hanbok highlights).
-          Responsive widths track the wash gradient stops above.
+          Text confined to the LEFT zone. Responsive bounds (mobile 92% · sm 64%
+          · lg HARD CAP 500px) match the wash above. The hard pixel cap on lg
+          is critical — on wide viewports (≥1700px) a % bound let the long h1
+          fit in one line, leaking onto the dancer (B26 issue).
         */}
-        <div className="max-w-[78%] sm:max-w-[58%] lg:max-w-[50%]">
-          {/* Dark warm typography (B24, 2026-05-20). Cream halo text-shadow gives
-              Kinfolk press-print legibility on the cream deck wash without needing
-              a dark scrim. Stone-950 = warm near-black (not cold slate).
-              B25 (2026-05-20): Korean magazine-serif (Noto Serif KR / 본명조) — Latin
-              glyphs in the same line fall back to Cormorant Garamond → Georgia. */}
-          <h1 className="font-magazine-serif-ko font-bold leading-[1.05] tracking-[-0.025em] text-stone-950 [text-shadow:0_1px_2px_rgba(255,255,255,0.95),0_0_22px_rgba(255,252,240,0.7),0_0_3px_rgba(255,255,255,0.85)] text-[26px] sm:text-[34px] lg:text-[40px]">
-            {heroTitle}{' '}
-            {/* Warm amber light serif accent — premium magazine deck tone.
-                Latin-only span; inherits font-magazine-serif-ko from <h1>, so
-                Western glyphs render in Cormorant Garamond / Georgia at weight 300. */}
+        <div className="max-w-[92%] sm:max-w-[64%] lg:max-w-[500px]">
+          {/* Dark warm typography (B24) + Korean magazine-serif (B25).
+              Explicit <br /> in h1 (B27): forces the accent to always start on
+              its own line so the title never spills past the cream wash zone,
+              regardless of viewport width. */}
+          <h1 className="font-magazine-serif-ko font-bold leading-[1.12] tracking-[-0.025em] text-stone-950 [text-shadow:0_1px_2px_rgba(255,255,255,0.95),0_0_22px_rgba(255,252,240,0.7),0_0_3px_rgba(255,255,255,0.85)] text-[24px] sm:text-[30px] lg:text-[36px]">
+            {heroTitle}
+            <br />
+            {/* Warm amber light serif accent on its own line. Latin span —
+                inherits font-magazine-serif-ko, so Western glyphs render in
+                Cormorant Garamond / Georgia at weight 300. */}
             <span className="font-light tracking-[-0.005em] text-amber-800">
               {heroAccent}
             </span>
