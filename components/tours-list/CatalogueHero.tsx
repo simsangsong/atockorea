@@ -153,11 +153,14 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
         onto dancer). Fix combines: hard-pixel max-w cap + forced <br /> in h1.
       */}
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 w-[92%] sm:w-[60%] lg:w-[460px]"
+        className="pointer-events-none absolute inset-y-0 left-0 w-[88%] sm:w-[56%] lg:w-[440px]"
         aria-hidden
         style={{
+          // More defined cream PANEL (user 2026-05-20 11차: "흰색 필터 또렷하게").
+          // First ~62% holds near-solid cream so the (now much smaller) copy sits
+          // cleanly inside the panel; only the last third feathers into the photo.
           background:
-            'linear-gradient(90deg, rgba(250,248,243,0.92) 0%, rgba(250,248,243,0.88) 48%, rgba(250,248,243,0.52) 74%, rgba(250,248,243,0.16) 90%, transparent 100%)',
+            'linear-gradient(90deg, rgba(250,248,243,0.95) 0%, rgba(250,248,243,0.93) 62%, rgba(250,248,243,0.70) 82%, rgba(250,248,243,0.26) 94%, transparent 100%)',
         }}
       />
 
@@ -196,31 +199,29 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
         style={reducedMotion ? undefined : { opacity: displayOpacity }}
       >
         {/*
-          Text confined to the LEFT zone, wrapping NATURALLY (no forced <br/>).
-          User 2026-05-20 10차: B27's forced break + larger 2-line type killed
-          the elegant Vogue Korea flow they liked at B25. Fix = smaller refined
-          serif that wraps organically within a tight max-w (lg hard-cap 420px),
-          so the headline reads as a flowing magazine deck, not a stacked banner.
+          Text confined INSIDE the cream panel (user 2026-05-20 11차: "카피 사이즈
+          확 줄여서 그 흰색 필터 안에 넣어"). Drastically smaller refined serif sits
+          fully within the near-solid cream zone — flows naturally, never reaches
+          the photo. Tight max-w keeps every line inside the panel's solid portion.
         */}
-        <div className="max-w-[88%] sm:max-w-[56%] lg:max-w-[420px]">
+        <div className="max-w-[80%] sm:max-w-[50%] lg:max-w-[360px]">
           {/* Dark warm typography (B24) + Korean magazine-serif (B25).
-              Smaller refined sizes (B28) restore the Vogue Korea deck flow —
-              the headline wraps at word boundaries inside the cream zone. */}
-          <h1 className="font-magazine-serif-ko font-bold leading-[1.26] tracking-[-0.02em] text-stone-950 [text-shadow:0_1px_2px_rgba(255,255,255,0.95),0_0_18px_rgba(255,252,240,0.7),0_0_3px_rgba(255,255,255,0.85)] text-[19px] sm:text-[22px] lg:text-[26px]">
+              B29: copy sizes cut hard so the whole block nests inside the cream
+              panel — small editorial deck, not a banner. */}
+          <h1 className="font-magazine-serif-ko font-bold leading-[1.3] tracking-[-0.015em] text-stone-950 [text-shadow:0_1px_2px_rgba(255,255,255,0.95),0_0_14px_rgba(255,252,240,0.6)] text-[15px] sm:text-[17px] lg:text-[20px]">
             {heroTitle}{' '}
-            {/* Warm amber light serif accent — flows inline, wraps naturally.
-                Latin span inherits font-magazine-serif-ko (Cormorant/Georgia). */}
+            {/* Warm amber light serif accent — flows inline, wraps naturally. */}
             <span className="font-light tracking-[-0.005em] text-amber-800">
               {heroAccent}
             </span>
           </h1>
 
-          <p className="font-magazine-serif-ko mt-1.5 text-[11.5px] font-normal leading-[1.5] tracking-[-0.005em] text-stone-800 [text-shadow:0_1px_2px_rgba(255,255,255,0.95),0_0_10px_rgba(255,252,240,0.6)] sm:mt-2 sm:text-[12.5px]">
+          <p className="font-magazine-serif-ko mt-1.5 text-[10px] font-normal leading-[1.5] tracking-[-0.005em] text-stone-800 [text-shadow:0_1px_2px_rgba(255,255,255,0.95)] sm:text-[11px]">
             {heroSub}
           </p>
 
-          <p className="font-magazine-serif-ko mt-1.5 flex items-center gap-2 text-[10px] font-medium tracking-[0.02em] text-amber-900 [text-shadow:0_1px_2px_rgba(255,255,255,0.95),0_0_6px_rgba(255,252,240,0.5)] sm:mt-2.5 sm:text-[11px]">
-            <span className="inline-block h-px w-6 bg-amber-700/65" aria-hidden />
+          <p className="font-magazine-serif-ko mt-1.5 flex items-center gap-1.5 text-[9px] font-medium tracking-[0.02em] text-amber-900 [text-shadow:0_1px_2px_rgba(255,255,255,0.95)] sm:mt-2 sm:text-[9.5px]">
+            <span className="inline-block h-px w-5 bg-amber-700/65" aria-hidden />
             {heroCurator}
           </p>
         </div>
