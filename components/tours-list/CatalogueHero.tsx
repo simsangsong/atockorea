@@ -133,23 +133,25 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
             'radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.15) 100%)',
         }}
       />
-      {/* Atmosphere — slight overall dim + amber wash bottom-left.
-          Top stays clear (no top scrim) so sky + roof + dancer remain visible. */}
+      {/* Atmosphere — very light atmospheric tint to settle the photo.
+          User 2026-05-20 direction flip: text turns DARK warm, so the dim
+          layers also flip from slate-950 to a warm transparent (no cold cast). */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-slate-950/8 via-transparent to-slate-950/30"
+        className="absolute inset-0 bg-gradient-to-b from-amber-950/5 via-transparent to-amber-950/12"
         aria-hidden
       />
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_15%_95%,rgba(217,119,6,0.18)_0%,transparent_55%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_15%_95%,rgba(217,119,6,0.14)_0%,transparent_55%)]"
         aria-hidden
       />
-      {/* Magazine-cover deck shadow — bottom band only, smooth transition.
-          User 2026-05-20: "흰 카피 안 보임" → restoring stronger bottom darkening,
-          but limited to the lower portion so the photo dominates the upper 50%
-          (Vogue cover convention: photo top half pure, deck text bottom half).
-          Top of hero still pristine — sky/roof/dancer face all visible. */}
+      {/* Cream "page deck" wash — replaces the previous dark deck shadow.
+          User 2026-05-20 6차: "글씨 자체를 어두운색으로 고급지게" — Kinfolk/Cereal
+          convention. Bottom band fades the photo toward ivory paper so dark
+          warm text sits on a soft cream-tinted surface (not on raw photo
+          highlights). Light enough that the dancer's lower hanbok still shows
+          through (~35% photo retained in deck zone). */}
       <div
-        className="absolute inset-x-0 bottom-0 h-[58%] bg-gradient-to-t from-black/88 via-black/45 to-transparent"
+        className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-[#faf8f3]/82 via-[#faf8f3]/38 to-transparent"
         aria-hidden
       />
 
@@ -159,20 +161,20 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
           className="h-px w-10 rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500"
           aria-hidden
         />
-        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-amber-200 [text-shadow:0_1px_8px_rgba(0,0,0,0.7)]">
+        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-amber-900 [text-shadow:0_1px_2px_rgba(255,255,255,0.9),0_0_8px_rgba(255,252,240,0.55)]">
           {heroIssue}
         </span>
       </div>
 
       {/* Tour count badge — top-right. Fades in as display block fades out so 88px
           collapsed state still carries a readable signal (count + masthead).
-          reduce-motion: hide the badge (display block stays fully visible at base height). */}
+          Cream-tinted pill with dark amber text (B24 dark-text family). */}
       <motion.div
         className="absolute right-4 top-3 z-10 sm:right-6 sm:top-4 lg:right-8"
         style={reducedMotion ? { opacity: 0 } : { opacity: countBadgeOpacity }}
       >
-        <span className="inline-flex items-center gap-2 rounded-full border border-amber-200/40 bg-amber-900/40 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-100 backdrop-blur-sm">
-          <span className="h-1 w-1 rounded-full bg-amber-300" aria-hidden />
+        <span className="inline-flex items-center gap-2 rounded-full border border-amber-300/55 bg-[#faf8f3]/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-900 backdrop-blur-sm shadow-[0_2px_10px_rgba(120,90,40,0.18)]">
+          <span className="h-1 w-1 rounded-full bg-amber-700" aria-hidden />
           {count} tours
         </span>
       </motion.div>
@@ -190,21 +192,23 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
         style={reducedMotion ? undefined : { opacity: displayOpacity }}
       >
         <div className="max-w-[820px]">
-          <h1 className="font-bold leading-[1.04] tracking-[-0.03em] text-white [text-shadow:0_2px_22px_rgba(0,0,0,0.95),0_1px_6px_rgba(0,0,0,0.85),0_0_2px_rgba(0,0,0,0.5)] text-[26px] sm:text-[34px] lg:text-[40px]">
+          {/* Dark warm typography (B24, 2026-05-20). Cream halo text-shadow gives
+              Kinfolk press-print legibility on the cream deck wash without needing
+              a dark scrim. Stone-950 = warm near-black (not cold slate). */}
+          <h1 className="font-bold leading-[1.04] tracking-[-0.03em] text-stone-950 [text-shadow:0_1px_2px_rgba(255,255,255,0.95),0_0_22px_rgba(255,252,240,0.7),0_0_3px_rgba(255,255,255,0.85)] text-[26px] sm:text-[34px] lg:text-[40px]">
             {heroTitle}{' '}
-            {/* Upright serif accent (italic banned per user direction 2026-05-20).
-                Light serif weight + tight tracking reads premium without italic flair. */}
-            <span className="font-serif font-light tracking-[-0.005em] text-amber-100">
+            {/* Warm amber upright serif accent — premium magazine deck tone. */}
+            <span className="font-serif font-light tracking-[-0.005em] text-amber-800">
               {heroAccent}
             </span>
           </h1>
 
-          <p className="mt-2 max-w-[620px] text-[12.5px] leading-[1.55] text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.95),0_1px_3px_rgba(0,0,0,0.8)] sm:mt-2.5 sm:text-[13.5px]">
+          <p className="mt-2 max-w-[620px] text-[12.5px] leading-[1.55] text-stone-800 [text-shadow:0_1px_2px_rgba(255,255,255,0.95),0_0_10px_rgba(255,252,240,0.6)] sm:mt-2.5 sm:text-[13.5px]">
             {heroSub}
           </p>
 
-          <p className="mt-2 flex items-center gap-2 font-serif text-[10.5px] font-normal tracking-[0.02em] text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.95),0_1px_2px_rgba(0,0,0,0.7)] sm:mt-3 sm:text-[11.5px]">
-            <span className="inline-block h-px w-6 bg-white/70" aria-hidden />
+          <p className="mt-2 flex items-center gap-2 font-serif text-[10.5px] font-normal tracking-[0.02em] text-amber-900 [text-shadow:0_1px_2px_rgba(255,255,255,0.95),0_0_6px_rgba(255,252,240,0.5)] sm:mt-3 sm:text-[11.5px]">
+            <span className="inline-block h-px w-6 bg-amber-700/65" aria-hidden />
             {heroCurator}
           </p>
         </div>
