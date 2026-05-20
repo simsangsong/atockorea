@@ -18,6 +18,8 @@ import { ActiveFilterStrip, type ActiveFilterChip } from '@/components/tours-lis
 import { ContextualVignetteBand } from '@/components/tours-list/ContextualVignetteBand';
 import { EmptyStateRecovery } from '@/components/tours-list/EmptyStateRecovery';
 import { ResultsMetaStrip, type CatalogueViewMode } from '@/components/tours-list/ResultsMetaStrip';
+import { EditorialInsert } from '@/components/tours-list/EditorialInsert';
+import { insertForSlot } from '@/lib/tours-list-editorial-inserts';
 import {
   LIST_FIELD_CLS,
   LIST_CHIP_ACTIVE_CLS,
@@ -1083,20 +1085,26 @@ export default function ToursListPage() {
                 } ${isRefetching ? 'opacity-60' : 'opacity-100'}`}
                 aria-busy={isRefetching}
               >
-                {visibleTours.map((tour) => (
-                  <TourListCard
-                    key={tour.id}
-                    tour={tour}
-                    detailHref={consumerTourDetailHref(tour.id, tour.slug)}
-                    formatPriceFn={formatPrice}
-                    layout={viewMode === 'editorial' ? 'vertical' : 'horizontal'}
-                    imageSizes={
-                      viewMode === 'editorial'
-                        ? '(min-width: 1024px) 420px, (min-width: 768px) 46vw, 92vw'
-                        : '(min-width: 1024px) 240px, 38vw'
-                    }
-                  />
-                ))}
+                {visibleTours.map((tour, i) => {
+                  // Editorial insert after the 6th / 12th / 18th card (B8).
+                  const insert = insertForSlot(i + 1);
+                  return (
+                    <React.Fragment key={tour.id}>
+                      <TourListCard
+                        tour={tour}
+                        detailHref={consumerTourDetailHref(tour.id, tour.slug)}
+                        formatPriceFn={formatPrice}
+                        layout={viewMode === 'editorial' ? 'vertical' : 'horizontal'}
+                        imageSizes={
+                          viewMode === 'editorial'
+                            ? '(min-width: 1024px) 420px, (min-width: 768px) 46vw, 92vw'
+                            : '(min-width: 1024px) 240px, 38vw'
+                        }
+                      />
+                      {insert ? <EditorialInsert content={insert} t={t} /> : null}
+                    </React.Fragment>
+                  );
+                })}
               </div>
               {visibleCount < tours.length ? (
                 <div ref={sentinelRef} className="flex items-center justify-center py-8">
