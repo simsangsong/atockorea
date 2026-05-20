@@ -276,7 +276,7 @@ export default function HeaderMockupPage() {
                     </div>
                     <div className="mt-4 border-t border-stone-100 pt-3 flex items-center justify-between">
                       <span className="text-[12px] text-slate-500">
-                        30+ tours across 6 regions
+                        Tours across 6 regions
                       </span>
                       <a
                         href="/tours/list"

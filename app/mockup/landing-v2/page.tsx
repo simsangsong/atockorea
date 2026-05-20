@@ -135,7 +135,7 @@ export default function LandingV2MockupPage() {
                 className="mt-8 max-w-md text-[16px] sm:text-[17px] leading-[1.65]"
                 style={{ color: PALETTE.ink2 }}
               >
-                30+ hand-picked tours from the same operators trusted by Klook, GetYourGuide
+                Hand-picked tours from the same operators trusted by Klook, GetYourGuide
                 and Viator. Booked direct here, at direct prices. We don't search keywords —
                 we score fit.
               </p>
@@ -451,7 +451,7 @@ export default function LandingV2MockupPage() {
               className="inline-flex items-center gap-1.5 text-[13px] font-medium"
               style={{ color: PALETTE.ink }}
             >
-              Browse all 30+ tours
+              Browse all tours
               <svg className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24" aria-hidden>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
               </svg>
@@ -834,7 +834,6 @@ export default function LandingV2MockupPage() {
 
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-y-6 gap-x-4 max-w-2xl mx-auto">
             {[
-              { v: "30+", l: "Hand-picked tours" },
               { v: "4.9", l: "★ from 230 reviews" },
               { v: "6", l: "Languages" },
               { v: "9–9", l: "Human concierge KST" },
