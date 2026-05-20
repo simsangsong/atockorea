@@ -474,7 +474,12 @@
     "viewResults": "查看结果",
     "typeLabel": "行程类型",
     "contextBandLine": "为 {context} 精选",
-    "contextBandReset": "查看全部行程"
+    "contextBandReset": "查看全部行程",
+    "emptyRecoveryTitle": "没有符合条件的行程",
+    "emptyRecoveryHint": "可以试试这些",
+    "emptySuggestRemove": "移除 {filter} 筛选",
+    "emptyBuilderCta": "定制专属行程",
+    "emptyConciergeCta": "咨询礼宾团队"
   },
   "home": {
     "hero": {

@@ -16,6 +16,7 @@ import { SortSegmented } from '@/components/tours-list/SortSegmented';
 import { DestinationPillSelect } from '@/components/tours-list/DestinationPillSelect';
 import { ActiveFilterStrip, type ActiveFilterChip } from '@/components/tours-list/ActiveFilterStrip';
 import { ContextualVignetteBand } from '@/components/tours-list/ContextualVignetteBand';
+import { EmptyStateRecovery } from '@/components/tours-list/EmptyStateRecovery';
 import {
   LIST_FIELD_CLS,
   LIST_CHIP_ACTIVE_CLS,
@@ -513,6 +514,52 @@ export default function ToursListPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchInput, destination, tourType, hasPriceFilter, priceChipLabel, features, tourTypeOptions, t]);
 
+  // Most-constraining filter for empty-state recovery (Phase 3.7) — heuristic
+  // priority: price > destination > features > type > search (the filters most
+  // likely to zero out results, in order). Returns the single best filter to
+  // suggest removing, or null when only search is active.
+  const suggestedFilterToRemove = useMemo((): { label: string; onRemove: () => void } | null => {
+    if (hasPriceFilter) {
+      return {
+        label: priceChipLabel,
+        onRemove: () => {
+          setMinPrice('');
+          setMaxPrice('');
+          push({ minPrice: '', maxPrice: '' });
+        },
+      };
+    }
+    if (destination !== 'all') {
+      return {
+        label: translateCity(destination, t),
+        onRemove: () => {
+          setDestination('all');
+          push({ destination: 'all' });
+        },
+      };
+    }
+    if (features.trim() !== '') {
+      return {
+        label: features.trim(),
+        onRemove: () => {
+          setFeatures('');
+          push({ features: '' });
+        },
+      };
+    }
+    if (tourType !== 'all') {
+      return {
+        label: tourTypeOptions.find((o) => o.value === tourType)?.label ?? tourType,
+        onRemove: () => {
+          setTourType('all');
+          push({ type: 'all' });
+        },
+      };
+    }
+    return null;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hasPriceFilter, priceChipLabel, destination, features, tourType, tourTypeOptions, t]);
+
   const panelClass =
     'home-panel-refinement mx-auto w-full max-w-3xl px-5 py-10 text-center text-slate-600';
 
@@ -968,23 +1015,26 @@ export default function ToursListPage() {
               ) : null}
             </div>
           ) : tours.length === 0 ? (
-            <div className={panelClass}>
-              <p className="font-medium text-slate-800">
-                {hasActiveFilters ? t('toursList.emptyTitle') : copy.listDetail.noToursFound}
-              </p>
-              {hasActiveFilters ? (
-                <>
-                  <p className="mt-2 text-[13px] text-slate-500">{t('toursList.emptyHint')}</p>
-                  <button
-                    type="button"
-                    onClick={resetFilters}
-                    className="mt-5 inline-flex h-9 items-center rounded-full bg-slate-900 px-5 text-[13px] font-semibold text-white transition hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/40 focus-visible:ring-offset-2"
-                  >
-                    {t('toursList.resetFilters')}
-                  </button>
-                </>
-              ) : null}
-            </div>
+            hasActiveFilters ? (
+              <EmptyStateRecovery
+                title={t('toursList.emptyRecoveryTitle')}
+                hint={t('toursList.emptyRecoveryHint')}
+                suggestRemoveLabel={
+                  suggestedFilterToRemove
+                    ? t('toursList.emptySuggestRemove', { filter: suggestedFilterToRemove.label })
+                    : undefined
+                }
+                onRemoveSuggested={suggestedFilterToRemove?.onRemove}
+                builderHref="/itinerary-builder"
+                builderCta={t('toursList.emptyBuilderCta')}
+                conciergeHref="/support"
+                conciergeCta={t('toursList.emptyConciergeCta')}
+              />
+            ) : (
+              <div className={panelClass}>
+                <p className="font-medium text-slate-800">{copy.listDetail.noToursFound}</p>
+              </div>
+            )
           ) : (
             <>
               <div

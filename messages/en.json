@@ -831,7 +831,12 @@
     "viewResults": "View results",
     "typeLabel": "Tour type",
     "contextBandLine": "Curated for {context}",
-    "contextBandReset": "View all tours"
+    "contextBandReset": "View all tours",
+    "emptyRecoveryTitle": "No tours match these filters",
+    "emptyRecoveryHint": "Here are a few ways forward",
+    "emptySuggestRemove": "Remove the {filter} filter",
+    "emptyBuilderCta": "Build a custom day",
+    "emptyConciergeCta": "Ask our concierge"
   },
   "home": {
     "hero": {
