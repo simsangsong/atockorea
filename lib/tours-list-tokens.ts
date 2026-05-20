@@ -30,16 +30,19 @@
 /** Page base. Replaces the current `bg-white`. Matches hub `/tours` ivory. */
 export const LIST_PAGE_BG = '#faf8f3';
 
-/** Sticky filter rail vertical gradient (warm ivory → slightly deeper ivory). */
-export const LIST_RAIL_BG =
-  'bg-[linear-gradient(180deg,#fdfcf8_0%,#faf9f4_100%)] backdrop-blur-md';
+/**
+ * Sticky filter rail surface. B32 (2026-05-20): reverted from the ivory
+ * gradient to the SITE-NATIVE translucent white so the page's pastel mesh
+ * (body::before) reads through the rail — matching every other consumer page.
+ * The earlier ivory gradient covered the mesh and clashed with the site tone.
+ */
+export const LIST_RAIL_BG = 'bg-white/72 backdrop-blur-md';
 
-/** Rail bottom hairline. Replaces slate-200/55 — amber-100 keeps the warm family. */
-export const LIST_RAIL_BORDER = 'border-b border-amber-100/70';
+/** Rail bottom hairline — neutral slate (site-native, B32). */
+export const LIST_RAIL_BORDER = 'border-b border-slate-200/55';
 
-/** Warm drop shadow for rail / inserts / cards on rail surfaces. */
-export const LIST_SHADOW_WARM =
-  'shadow-[0_12px_32px_-20px_rgba(120,90,40,0.22)]';
+/** Soft neutral rail shadow (B32 — replaced the warm brown shadow). */
+export const LIST_SHADOW_WARM = 'shadow-[0_1px_0_rgba(15,23,42,0.04)]';
 
 // ─── Eyebrow / display typography (matches hub hero + tour-collection strip) ─
 
@@ -93,41 +96,44 @@ export const LIST_ACCENT_LINE_CLS =
  *   grep -E "h-8.*(border|bg-white|rounded)" components/tours-list/
  */
 export const LIST_FIELD_CLS =
-  'h-11 rounded-2xl border border-amber-200/70 bg-white/92 px-4 ' +
+  'h-11 rounded-2xl border border-slate-200/80 bg-white/85 px-4 ' +
   'text-[13.5px] text-slate-900 outline-none transition ' +
-  'shadow-[inset_0_1px_0_rgba(255,255,255,0.96)] ' +
-  'focus:border-amber-500/70 focus-visible:ring-2 focus-visible:ring-amber-500/30';
+  'shadow-[inset_0_1px_0_rgba(255,255,255,0.92)] ' +
+  'focus:border-slate-400 focus-visible:ring-2 focus-visible:ring-slate-900/15';
 
 /** Pill-style select (destination chooser). */
 export const LIST_SELECT_CLS =
-  'h-11 cursor-pointer rounded-2xl border border-amber-200/70 bg-white/92 px-4 ' +
+  'h-11 cursor-pointer rounded-2xl border border-slate-200/80 bg-white/85 px-4 ' +
   'text-[13.5px] text-slate-900 outline-none transition ' +
-  'shadow-[inset_0_1px_0_rgba(255,255,255,0.96)] ' +
-  'focus:border-amber-500/70 focus-visible:ring-2 focus-visible:ring-amber-500/30';
+  'shadow-[inset_0_1px_0_rgba(255,255,255,0.92)] ' +
+  'focus:border-slate-400 focus-visible:ring-2 focus-visible:ring-slate-900/15';
 
 // ─── Chip system (filter chips + active-filter strip + segmented control) ───
 
 /**
- * Active chip class — used for type chip selection, sort segmented active,
- * "More" filter expanded indicator, etc.
+ * Active chip class — type chip selection, sort segmented active, "More"
+ * expanded indicator, etc.
  *
- * Critical: this is `amber-900/95` background NOT `slate-900` — the slate
- * form-tool tone is what we're escaping. AP3 / B1 / B16.
+ * B32 (2026-05-20): reverted to `slate-900` — the SITE-NATIVE active tone
+ * (landing matcher chips use bg-slate-900 text-white). The earlier amber-900
+ * brown clashed with the pastel-mesh + charcoal palette of the rest of the
+ * site. The Phase-2 upgrade is structural (h-11, spacing, segmented control,
+ * dismissible chips), NOT a color change.
  */
 export const LIST_CHIP_ACTIVE_CLS =
-  'inline-flex items-center rounded-full bg-amber-900/95 px-3 ' +
-  'text-[11px] font-semibold uppercase tracking-[0.12em] text-amber-50 ' +
-  'shadow-[inset_0_-1px_0_rgba(0,0,0,0.18)] transition ' +
-  'focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40 ' +
-  'focus-visible:ring-offset-2 focus-visible:ring-offset-[#faf8f3]';
+  'inline-flex items-center rounded-full bg-slate-900 px-3 ' +
+  'text-[11px] font-semibold uppercase tracking-[0.12em] text-white ' +
+  'shadow-[0_2px_8px_-3px_rgba(15,23,42,0.4)] transition ' +
+  'focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/30 ' +
+  'focus-visible:ring-offset-2 focus-visible:ring-offset-white';
 
-/** Inactive chip class — ivory neutral with amber hairline border. */
+/** Inactive chip class — translucent white with neutral slate hairline. */
 export const LIST_CHIP_INACTIVE_CLS =
-  'inline-flex items-center rounded-full border border-amber-200/70 ' +
-  'bg-white/92 px-3 text-[11px] font-medium uppercase tracking-[0.12em] ' +
-  'text-slate-700 transition hover:border-amber-300/80 hover:bg-white ' +
-  'focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40 ' +
-  'focus-visible:ring-offset-2 focus-visible:ring-offset-[#faf8f3]';
+  'inline-flex items-center rounded-full border border-slate-200/80 ' +
+  'bg-white/85 px-3 text-[11px] font-medium uppercase tracking-[0.12em] ' +
+  'text-slate-600 transition hover:border-slate-300 hover:bg-white ' +
+  'focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/30 ' +
+  'focus-visible:ring-offset-2 focus-visible:ring-offset-white';
 
 /**
  * Active-filter dismissible chip (Phase 2.8 — `ActiveFilterStrip` consumer).
@@ -135,15 +141,15 @@ export const LIST_CHIP_INACTIVE_CLS =
  * that the user can dismiss, not a control state.
  */
 export const LIST_ACTIVE_FILTER_CHIP_CLS =
-  'inline-flex items-center gap-1.5 rounded-full border border-amber-200/70 ' +
-  'bg-amber-50 px-3 py-1 text-[11.5px] font-medium text-amber-900 ' +
-  'transition hover:border-amber-300/80 hover:bg-amber-100/80';
+  'inline-flex items-center gap-1.5 rounded-full border border-slate-200/80 ' +
+  'bg-white/85 px-3 py-1 text-[11.5px] font-medium text-slate-700 ' +
+  'transition hover:border-slate-300 hover:bg-white';
 
 /** "Clear all" link inside active filter strip. */
 export const LIST_CLEAR_ALL_CLS =
-  'text-[11.5px] font-semibold uppercase tracking-[0.12em] text-amber-700/90 ' +
-  'underline-offset-4 hover:text-amber-900 hover:underline ' +
-  'focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40';
+  'text-[11.5px] font-semibold uppercase tracking-[0.12em] text-slate-500 ' +
+  'underline-offset-4 hover:text-slate-900 hover:underline ' +
+  'focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/30';
 
 // ─── Field metrics (atomic — for places where the full *_CLS isn't reusable) ─
 
@@ -153,33 +159,33 @@ export const LIST_FIELD_HEIGHT = 'h-11';
 /** Text size token (currently text-[13.5px]). */
 export const LIST_FIELD_TEXT = 'text-[13.5px]';
 
-/** Border token (currently border-amber-200/70). */
-export const LIST_FIELD_BORDER = 'border border-amber-200/70';
+/** Border token (B32 — neutral slate, site-native). */
+export const LIST_FIELD_BORDER = 'border border-slate-200/80';
 
 // ─── Centralized invariants (used by tests / lint helpers) ──────────────────
 
 /**
- * Tokens that should NEVER appear in components/tours-list/. Used by the §10
- * rollback grep (B1 enforcement). Strings here are matched as literals.
+ * Tokens that should NEVER appear in components/tours-list/. B32 (2026-05-20):
+ * with the site-native palette, slate-900 is now the SANCTIONED active accent
+ * (not forbidden). What stays forbidden is the old form-tool *sizing* (h-8 /
+ * text-[12px]) — the structural downgrade — and the warm-brown amber-900
+ * active fill that clashed with the site.
  */
 export const LIST_FORBIDDEN_TOKENS = [
-  'slate-900', // Forbidden as background/active; allowed in `text-slate-900` for body text only — grep with context
-  'border-slate-200',
-  'border-slate-200/75',
-  'bg-slate-900', // Especially forbidden for active chips
-  'h-8', // Phase 2 raised filter fields to h-11
+  'amber-900/95', // B32: warm-brown active fill clashed with site charcoal tone
+  'h-8', // Phase 2 raised filter fields to h-11 (structural upgrade kept)
   'text-[12px]', // Phase 2 raised filter text to 13.5px
 ] as const;
 
 /**
  * Tokens that MUST appear somewhere in components/tours-list/. Used by Phase
- * acceptance checks — confirms the family color promise is being honored.
+ * acceptance checks. B32: the rail/page is site-native (translucent white +
+ * slate-900); amber survives only as the hero/footer magazine signature.
  */
 export const LIST_REQUIRED_TOKENS = [
-  '#faf8f3', // Page base (or via Tailwind arbitrary value)
-  'amber-200/70', // Field/chip border
-  'amber-900/95', // Active chip background
-  'amber-700', // Eyebrow
+  'bg-white/', // Translucent white surfaces (rail, chips, fields) over the mesh
+  'slate-900', // Site-native active accent (chips, sort, emphasis)
+  'amber-700', // Hero/footer magazine signature (eyebrow, curator) — retained
   'font-serif', // Upright serif accent + curator signature (italic banned 2026-05-20)
 ] as const;
 

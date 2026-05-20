@@ -450,7 +450,10 @@ export default function ToursListPage() {
 
   return (
     <SitePageShell>
-      <main className="bg-[#faf8f3] pb-24">
+      {/* B32: site-native — neutral white veil over the page's pastel mesh
+          (body::before), NOT a solid ivory that covers it. bg-white/55 keeps
+          the mesh faintly visible so list matches every other consumer page. */}
+      <main className="bg-white/55 pb-24">
         {/*
           Sticky header stack — Catalogue Hero (Phase 1) + filter rail share a
           single sticky context so the hero's 240→88 collapse (driven by
@@ -467,12 +470,12 @@ export default function ToursListPage() {
             {/* Desktop: single row */}
             <div className="hidden h-[64px] items-center gap-2.5 lg:flex">
               <div className="flex shrink-0 items-center gap-1.5">
-                <span className="text-[9px] font-black uppercase tracking-[0.28em] text-amber-700/80">
+                <span className="text-[9px] font-black uppercase tracking-[0.28em] text-slate-400">
                   {t('toursList.eyebrow')}
                 </span>
               </div>
 
-              <div className="mx-1 h-4 w-px shrink-0 bg-amber-200/70" />
+              <div className="mx-1 h-4 w-px shrink-0 bg-slate-200/70" />
 
               <input
                 value={searchInput}
@@ -519,7 +522,7 @@ export default function ToursListPage() {
                 ))}
               </select>
 
-              <div className="mx-0.5 h-4 w-px shrink-0 bg-amber-200/70" />
+              <div className="mx-0.5 h-4 w-px shrink-0 bg-slate-200/70" />
 
               <div className="flex shrink-0 items-center gap-1">
                 {tourTypeOptions.map((opt) => (
@@ -538,7 +541,7 @@ export default function ToursListPage() {
                 ))}
               </div>
 
-              <div className="mx-0.5 h-4 w-px shrink-0 bg-amber-200/70" />
+              <div className="mx-0.5 h-4 w-px shrink-0 bg-slate-200/70" />
 
               <div className="relative shrink-0" ref={priceAnchorRef}>
                 <button
@@ -593,7 +596,7 @@ export default function ToursListPage() {
                         push({ minPrice: minPrice.trim(), maxPrice: maxPrice.trim() });
                         setShowPricePanel(false);
                       }}
-                      className="inline-flex h-7 !min-h-0 !min-w-0 items-center rounded-xl bg-amber-900/95 px-3 text-[11px] font-semibold text-amber-50 transition hover:bg-amber-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#faf8f3]"
+                      className="inline-flex h-7 !min-h-0 !min-w-0 items-center rounded-xl bg-slate-900 px-3 text-[11px] font-semibold text-white transition hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/30 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                     >
                       {t('toursList.apply')}
                     </button>
@@ -606,7 +609,7 @@ export default function ToursListPage() {
                   type="button"
                   onClick={resetFilters}
                   aria-label={t('toursList.resetFilters')}
-                  className="inline-flex h-9 w-9 !min-h-0 !min-w-0 shrink-0 items-center justify-center rounded-full border border-amber-200/70 bg-white/92 text-amber-700 transition hover:border-amber-300/80 hover:bg-amber-50 hover:text-amber-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#faf8f3]"
+                  className="inline-flex h-9 w-9 !min-h-0 !min-w-0 shrink-0 items-center justify-center rounded-full border border-slate-200/80 bg-white/85 text-slate-500 transition hover:border-slate-300 hover:bg-white hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/30 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                 >
                   <svg
                     className="h-3 w-3"
@@ -644,7 +647,7 @@ export default function ToursListPage() {
                     type="button"
                     onClick={resetFilters}
                     aria-label={t('toursList.resetFilters')}
-                    className="inline-flex h-11 w-11 !min-h-0 !min-w-0 shrink-0 items-center justify-center rounded-2xl border border-amber-200/70 bg-white/92 text-amber-700 transition hover:border-amber-300/80 hover:bg-amber-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#faf8f3]"
+                    className="inline-flex h-11 w-11 !min-h-0 !min-w-0 shrink-0 items-center justify-center rounded-2xl border border-slate-200/80 bg-white/85 text-slate-500 transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/30 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                   >
                     <svg
                       className="h-3.5 w-3.5"
@@ -674,10 +677,10 @@ export default function ToursListPage() {
                       setTourType(opt.value);
                       push({ type: opt.value });
                     }}
-                    className={`inline-flex h-9 !min-h-0 !min-w-0 flex-1 items-center justify-center rounded-full px-1 text-[10px] font-semibold uppercase tracking-[0.08em] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#faf8f3] ${
+                    className={`inline-flex h-9 !min-h-0 !min-w-0 flex-1 items-center justify-center rounded-full px-1 text-[10px] font-semibold uppercase tracking-[0.08em] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/30 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
                       tourType === opt.value
-                        ? 'bg-amber-900/95 text-amber-50 shadow-[inset_0_-1px_0_rgba(0,0,0,0.18)]'
-                        : 'border border-amber-200/70 bg-white/92 text-slate-700 hover:border-amber-300/80 hover:bg-white'
+                        ? 'bg-slate-900 text-white shadow-[0_2px_8px_-3px_rgba(15,23,42,0.4)]'
+                        : 'border border-slate-200/80 bg-white/85 text-slate-600 hover:border-slate-300 hover:bg-white'
                     }`}
                   >
                     {opt.label}
@@ -761,7 +764,7 @@ export default function ToursListPage() {
                         push({ minPrice: minPrice.trim(), maxPrice: maxPrice.trim() });
                         setShowPricePanel(false);
                       }}
-                      className="inline-flex h-7 !min-h-0 !min-w-0 shrink-0 items-center rounded-xl bg-amber-900/95 px-3 text-[11px] font-semibold text-amber-50 transition hover:bg-amber-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#faf8f3]"
+                      className="inline-flex h-7 !min-h-0 !min-w-0 shrink-0 items-center rounded-xl bg-slate-900 px-3 text-[11px] font-semibold text-white transition hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/30 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                     >
                       {t('toursList.apply')}
                     </button>
@@ -775,7 +778,7 @@ export default function ToursListPage() {
                 className="pointer-events-none absolute inset-x-0 bottom-0 h-0.5 overflow-hidden"
                 aria-hidden="true"
               >
-                <div className="h-full w-1/3 animate-pulse bg-amber-500/60" />
+                <div className="h-full w-1/3 animate-pulse bg-slate-900/50" />
               </div>
             ) : null}
           </div>
