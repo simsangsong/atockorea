@@ -71,7 +71,7 @@ const NAV_ITEMS: NavItem[] = [
   },
   {
     key: "my",
-    labelKey: "nav.my",
+    labelKey: "nav.mypage",
     path: "/mypage",
     outline: (
       <path
