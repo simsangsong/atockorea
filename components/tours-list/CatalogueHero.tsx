@@ -153,14 +153,16 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
         onto dancer). Fix combines: hard-pixel max-w cap + forced <br /> in h1.
       */}
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 w-[88%] sm:w-[56%] lg:w-[440px]"
+        className="pointer-events-none absolute inset-y-0 left-0 right-0"
         aria-hidden
         style={{
-          // More defined cream PANEL (user 2026-05-20 11차: "흰색 필터 또렷하게").
-          // First ~62% holds near-solid cream so the (now much smaller) copy sits
-          // cleanly inside the panel; only the last third feathers into the photo.
+          // Natural single-layer left overlay (restored per user 2026-05-20 12차:
+          // "두세 대화 전 자연스럽게 씌운 그 흰색 오버레이 복구"). This is the B26
+          // version — full-width, continuous smooth fade (no hard panel edge).
+          // The defined B29 panel read too boxy; this gradual wash dissolves into
+          // the photo organically while still seating the small left copy on cream.
           background:
-            'linear-gradient(90deg, rgba(250,248,243,0.95) 0%, rgba(250,248,243,0.93) 62%, rgba(250,248,243,0.70) 82%, rgba(250,248,243,0.26) 94%, transparent 100%)',
+            'linear-gradient(90deg, rgba(250,248,243,0.92) 0%, rgba(250,248,243,0.72) 28%, rgba(250,248,243,0.38) 52%, rgba(250,248,243,0.12) 70%, transparent 82%)',
         }}
       />
 
