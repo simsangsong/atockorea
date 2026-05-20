@@ -92,7 +92,7 @@ export default function BottomNav() {
 
   return (
     <nav
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-900/[0.08] bg-white/85 backdrop-blur-xl shadow-[0_-1px_0_rgba(15,23,42,0.06),0_-8px_24px_-16px_rgba(15,23,42,0.18)] md:hidden [padding-bottom:env(safe-area-inset-bottom)]"
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-300 bg-white/85 backdrop-blur-xl shadow-[0_-1px_0_0_rgba(15,23,42,0.12),0_-8px_24px_-16px_rgba(15,23,42,0.18)] md:hidden [padding-bottom:env(safe-area-inset-bottom)]"
     >
       <div className="flex h-16 items-stretch justify-around">
         {NAV_ITEMS.map((item) => {
