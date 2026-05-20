@@ -11,6 +11,15 @@ import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
 import { CatalogueHero } from '@/components/tours-list/CatalogueHero';
 import { CatalogueFooterStrip } from '@/components/tours-list/CatalogueFooterStrip';
+import {
+  LIST_FIELD_CLS,
+  LIST_SELECT_CLS,
+  LIST_CHIP_ACTIVE_CLS,
+  LIST_CHIP_INACTIVE_CLS,
+  LIST_RAIL_BG,
+  LIST_RAIL_BORDER,
+  LIST_SHADOW_WARM,
+} from '@/lib/tours-list-tokens';
 
 const TOURS_LIMIT = 500;
 /** Client-side virtual pagination: render a first page, then stream more as the
@@ -423,17 +432,17 @@ export default function ToursListPage() {
   const panelClass =
     'home-panel-refinement mx-auto w-full max-w-3xl px-5 py-10 text-center text-slate-600';
 
-  /** Shared compact field style — inputs. Focus ring now uses slate-900/30 for visibility. */
-  const fieldCls =
-    'h-8 rounded-xl border border-slate-200/75 bg-white/88 px-3 text-[12px] text-slate-900 outline-none transition focus:border-slate-900/60 focus-visible:ring-2 focus-visible:ring-slate-900/30 shadow-[inset_0_1px_0_rgba(255,255,255,0.90)]';
-
-  const selectCls =
-    'h-8 cursor-pointer rounded-xl border border-slate-200/75 bg-white/88 px-2.5 text-[12px] text-slate-900 outline-none transition focus:border-slate-900/60 focus-visible:ring-2 focus-visible:ring-slate-900/30 shadow-[inset_0_1px_0_rgba(255,255,255,0.90)]';
+  /**
+   * Filter field / select / chip styles — Phase 2 (B4 + B1): h-11 + text-[13.5px]
+   * + amber-200/70 borders, sourced from lib/tours-list-tokens. The slate-200/
+   * slate-900 form-tool tone is gone (B1 enforcement). Chip variants append the
+   * height + shrink utilities the rail layout needs on top of the token base.
+   */
+  const fieldCls = LIST_FIELD_CLS;
+  const selectCls = LIST_SELECT_CLS;
 
   const chipCls = (active: boolean) =>
-    active
-      ? 'inline-flex h-7 !min-h-0 !min-w-0 shrink-0 items-center rounded-full bg-slate-900 px-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white'
-      : 'inline-flex h-7 !min-h-0 !min-w-0 shrink-0 items-center rounded-full border border-slate-200/85 bg-white/82 px-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-600 transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white';
+    `${active ? LIST_CHIP_ACTIVE_CLS : LIST_CHIP_INACTIVE_CLS} h-9 !min-h-0 !min-w-0 shrink-0`;
 
   const visibleTours = tours.slice(0, visibleCount);
   const isInitialLoading = loading && tours.length === 0;
@@ -452,18 +461,18 @@ export default function ToursListPage() {
         <div className="sticky top-0 z-30 isolate">
           <CatalogueHero count={tours.length} />
 
-          {/* Filter bar (Phase 2 reskin pending). */}
-          <div className="relative border-b border-white/55 bg-white/72 backdrop-blur-md shadow-[0_1px_0_rgba(15,23,42,0.04)]">
+          {/* Filter bar — Phase 2 ivory+amber rail (B1/B4). */}
+          <div className={`relative ${LIST_RAIL_BG} ${LIST_RAIL_BORDER} ${LIST_SHADOW_WARM}`}>
             <div className="mx-auto max-w-5xl px-3 sm:px-4">
             {/* Desktop: single row */}
-            <div className="hidden h-[52px] items-center gap-2 lg:flex">
+            <div className="hidden h-[64px] items-center gap-2.5 lg:flex">
               <div className="flex shrink-0 items-center gap-1.5">
-                <span className="text-[9px] font-black uppercase tracking-[0.28em] text-slate-400">
+                <span className="text-[9px] font-black uppercase tracking-[0.28em] text-amber-700/80">
                   {t('toursList.eyebrow')}
                 </span>
               </div>
 
-              <div className="mx-1 h-3.5 w-px shrink-0 bg-slate-200/80" />
+              <div className="mx-1 h-4 w-px shrink-0 bg-amber-200/70" />
 
               <input
                 value={searchInput}
@@ -510,7 +519,7 @@ export default function ToursListPage() {
                 ))}
               </select>
 
-              <div className="mx-0.5 h-3.5 w-px shrink-0 bg-slate-200/80" />
+              <div className="mx-0.5 h-4 w-px shrink-0 bg-amber-200/70" />
 
               <div className="flex shrink-0 items-center gap-1">
                 {tourTypeOptions.map((opt) => (
@@ -529,7 +538,7 @@ export default function ToursListPage() {
                 ))}
               </div>
 
-              <div className="mx-0.5 h-3.5 w-px shrink-0 bg-slate-200/80" />
+              <div className="mx-0.5 h-4 w-px shrink-0 bg-amber-200/70" />
 
               <div className="relative shrink-0" ref={priceAnchorRef}>
                 <button
@@ -584,7 +593,7 @@ export default function ToursListPage() {
                         push({ minPrice: minPrice.trim(), maxPrice: maxPrice.trim() });
                         setShowPricePanel(false);
                       }}
-                      className="inline-flex h-7 !min-h-0 !min-w-0 items-center rounded-xl bg-slate-900 px-3 text-[11px] font-semibold text-white transition hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                      className="inline-flex h-7 !min-h-0 !min-w-0 items-center rounded-xl bg-amber-900/95 px-3 text-[11px] font-semibold text-amber-50 transition hover:bg-amber-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#faf8f3]"
                     >
                       {t('toursList.apply')}
                     </button>
@@ -597,7 +606,7 @@ export default function ToursListPage() {
                   type="button"
                   onClick={resetFilters}
                   aria-label={t('toursList.resetFilters')}
-                  className="inline-flex h-7 w-7 !min-h-0 !min-w-0 shrink-0 items-center justify-center rounded-full border border-slate-200/85 bg-white/82 text-slate-500 transition hover:bg-white hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                  className="inline-flex h-9 w-9 !min-h-0 !min-w-0 shrink-0 items-center justify-center rounded-full border border-amber-200/70 bg-white/92 text-amber-700 transition hover:border-amber-300/80 hover:bg-amber-50 hover:text-amber-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#faf8f3]"
                 >
                   <svg
                     className="h-3 w-3"
@@ -628,14 +637,14 @@ export default function ToursListPage() {
                   }}
                   placeholder={t('home.proposedTours.filterSearchPlaceholder')}
                   aria-label={t('toursList.searchAriaLabel')}
-                  className={`${fieldCls} h-9 min-w-0 flex-1 text-[13px]`}
+                  className={`${fieldCls} min-w-0 flex-1`}
                 />
                 {hasActiveFilters ? (
                   <button
                     type="button"
                     onClick={resetFilters}
                     aria-label={t('toursList.resetFilters')}
-                    className="inline-flex h-9 w-9 !min-h-0 !min-w-0 shrink-0 items-center justify-center rounded-xl border border-slate-200/85 bg-white/82 text-slate-500 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                    className="inline-flex h-11 w-11 !min-h-0 !min-w-0 shrink-0 items-center justify-center rounded-2xl border border-amber-200/70 bg-white/92 text-amber-700 transition hover:border-amber-300/80 hover:bg-amber-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#faf8f3]"
                   >
                     <svg
                       className="h-3.5 w-3.5"
@@ -665,10 +674,10 @@ export default function ToursListPage() {
                       setTourType(opt.value);
                       push({ type: opt.value });
                     }}
-                    className={`inline-flex h-7 !min-h-0 !min-w-0 flex-1 items-center justify-center rounded-full px-1 text-[9.5px] font-semibold uppercase tracking-[0.06em] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
+                    className={`inline-flex h-9 !min-h-0 !min-w-0 flex-1 items-center justify-center rounded-full px-1 text-[10px] font-semibold uppercase tracking-[0.08em] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#faf8f3] ${
                       tourType === opt.value
-                        ? 'bg-slate-900 text-white'
-                        : 'border border-slate-200/85 bg-white/82 text-slate-600 hover:border-slate-300 hover:bg-white'
+                        ? 'bg-amber-900/95 text-amber-50 shadow-[inset_0_-1px_0_rgba(0,0,0,0.18)]'
+                        : 'border border-amber-200/70 bg-white/92 text-slate-700 hover:border-amber-300/80 hover:bg-white'
                     }`}
                   >
                     {opt.label}
@@ -684,7 +693,7 @@ export default function ToursListPage() {
                     push({ destination: e.target.value });
                   }}
                   aria-label={t('toursList.destinationAriaLabel')}
-                  className={`${selectCls} h-8 min-w-0 flex-1 text-[12px]`}
+                  className={`${selectCls} min-w-0 flex-1`}
                 >
                   <option value="all">{t('home.proposedTours.filterRegionAll')}</option>
                   {destinationOptions.map(({ city }) => (
@@ -700,7 +709,7 @@ export default function ToursListPage() {
                     push({ sort: e.target.value as SortFilter });
                   }}
                   aria-label={t('toursList.sortAriaLabel')}
-                  className={`${selectCls} h-8 min-w-0 flex-1 text-[12px]`}
+                  className={`${selectCls} min-w-0 flex-1`}
                 >
                   {sortOptions.map((opt) => (
                     <option key={opt.value} value={opt.value}>
@@ -717,7 +726,7 @@ export default function ToursListPage() {
                   onClick={() => setShowPricePanel((v) => !v)}
                   aria-label={t('toursList.priceAriaLabel')}
                   aria-expanded={showPricePanel}
-                  className={`${chipCls(hasPriceFilter)} h-8 flex-1 justify-center text-[11px]`}
+                  className={`${chipCls(hasPriceFilter)} flex-1 justify-center`}
                 >
                   {priceChipLabel}
                 </button>
@@ -752,7 +761,7 @@ export default function ToursListPage() {
                         push({ minPrice: minPrice.trim(), maxPrice: maxPrice.trim() });
                         setShowPricePanel(false);
                       }}
-                      className="inline-flex h-7 !min-h-0 !min-w-0 shrink-0 items-center rounded-xl bg-slate-900 px-3 text-[11px] font-semibold text-white transition hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                      className="inline-flex h-7 !min-h-0 !min-w-0 shrink-0 items-center rounded-xl bg-amber-900/95 px-3 text-[11px] font-semibold text-amber-50 transition hover:bg-amber-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#faf8f3]"
                     >
                       {t('toursList.apply')}
                     </button>
@@ -766,7 +775,7 @@ export default function ToursListPage() {
                 className="pointer-events-none absolute inset-x-0 bottom-0 h-0.5 overflow-hidden"
                 aria-hidden="true"
               >
-                <div className="h-full w-1/3 animate-pulse bg-slate-900/50" />
+                <div className="h-full w-1/3 animate-pulse bg-amber-500/60" />
               </div>
             ) : null}
           </div>
