@@ -28,15 +28,15 @@
 | 0 — 코드 실사 + 토큰 락 + Phase 1 사전 게이트 | ✅ 완료 | 2026-05-20 | 2026-05-20 | 649956fd | 7/7 sub-task 통과. 카드 baseline SHA `a931fe4e`. i18n 6/6×6/6=36 entry. Type-check clean. 사용자 "Phase 1 진입 승인" 완료 (2026-05-20) |
 | 1 — Catalogue Hero (240→88 collapsing magazine cover) + 푸터 strip | ✅ 완료 | 2026-05-20 | 2026-05-20 | 2d3041f2 | 사용자 "좋아 완벽해" 표지 격 통과 (2026-05-20). 카드 SHA `a931fe4e` 변경 0 (B2). slate-200/900 grep = 0 (B1). i18n 6/6. type-check clean. B18-B31 사용자 직접 디자인 반복 14회 반영 (italic 금지 / 사진 3회 교체 / dark warm Kinfolk 톤 / Noto Serif KR / text-deck-left layout / 자연 cream 오버레이 / 큐레이터 라인 제거) |
 | 2 — Sticky Filter Rail 격상 (site-native: 화이트+slate, h-11, active filter chip strip) | ✅ 완료 | 2026-05-20 | 2026-05-20 | 407aa8e2 | B32로 ivory+amber → site-native(반투명 화이트 + slate-900) 전환. 2.1/2.2/2.3/2.4/2.5/2.6/2.8/2.9/2.10 완료. **2.7 More는 Tier B 필터(Phase 4.10)와 함께로 이관**. acceptance: amber-900 grep=0 · 카드 SHA `a931fe4e` · ActiveFilterStrip dismissible · 모바일 drawer 0.3s · type-check clean. 사용자 모바일 확인 완료 |
-| 3 — Contextual Vignette Band + Empty State 업그레이드 | 🔄 (코어 완료, 사용자 확인 대기) | 2026-05-20 | — | 31dcef0e | ContextualVignetteBand(7-accent) + EmptyStateRecovery(3-action) 완료. 3.4/3.5(ResultsMeta+view toggle)는 Editorial 그리드 의존으로 Phase 4 이관. 카드 SHA `a931fe4e`. 사용자 모바일 확인 대기 |
-| 4 — Editorial Grid (3-up vertical default + view toggle) + 6번째마다 Editorial Insert + Conversion Rescue Band | ⏳ | — | — | — | 그리드 시각 리듬 + 빌더 동선 분기 |
+| 3 — Contextual Vignette Band + Empty State 업그레이드 | ✅ 완료 | 2026-05-20 | 2026-05-20 | 31dcef0e | ContextualVignetteBand(7-accent) + EmptyStateRecovery(3-action) 완료. 3.4/3.5(ResultsMeta+view toggle)는 Editorial 그리드 의존으로 Phase 4 이관. 카드 SHA `a931fe4e`. 사용자 "계속" 진행 |
+| 4 — Editorial Grid (3-up vertical default + view toggle) + 6번째마다 Editorial Insert + Conversion Rescue Band | 🔄 진행 중 | 2026-05-20 | — | (pending) | 그리드 시각 리듬 + 빌더 동선 분기. §6.4 4.0→4.11. 카드 layout='vertical' call-site만 변경(B2/B15 허용) |
 | 5 — Tier B 필터 (Duration·Time·Group·Language) — **API 확장 의존** | 📦 보류 | — | — | — | time/group/language는 DB 컬럼 부재. 백엔드 스프린트 필요. Phase 0 게이트에서 재평가 |
 | 6 — 모션 폴리시 (hero scroll-collapse·card stagger·refetch shimmer·editorial insert reveal) | ⏳ | — | — | — | scroll-freeze 가드 (상세페이지 트라우마 동일 적용) |
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단·롤백 / 📦 백로그
 
-**현재 활성 Phase: Phase 3 — Contextual Vignette Band + Results Meta + Empty State (🔄 진행 중).**
-**다음 액션: §6.3 sub-task 3.1 → 3.9. lib/tours-hub-accents(Phase 0.1 완료) 활용 → ContextualVignetteBand(destination 7-accent) → ResultsMetaStrip → view toggle(Editorial↔Compact, localStorage) → EmptyStateRecovery 3-action → 가장 제약 큰 필터 감지 → 컨시어지 동선 → i18n 6 locale.**
+**현재 활성 Phase: Phase 4 — Editorial Grid + view toggle + Editorial Insert + Rescue Band + Tier B 필터 (🔄 진행 중).**
+**다음 액션: §6.4 4.0(ResultsMeta+view toggle 이관분) → 4.1 Editorial 3-up 그리드 → 4.2 카드 layout='vertical' → 4.3 Compact toggle → 4.4-4.6 EditorialInsert → 4.7-4.9 RescueBand + End-of-results → 4.10 Tier B 필터 + More(2.7) → 4.11 i18n. 카드 SHA `a931fe4e` 매 커밋 재검증 (call-site layout prop만 변경).**
 
 **참고: B32로 B1(ivory+amber)이 site-native(파스텔 메시 + 반투명 화이트 + slate-900)로 번복됨. Phase 3 신규 컴포넌트도 site-native 톤. 단, ContextualVignetteBand의 destination accent(volcano teal 등 7색)는 B6 약속이라 유지 — accent는 컨텍스트 강조용이지 base 톤 아님.**
 
@@ -92,7 +92,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 날짜 | 항목 | 커밋 | 비고 |
 |---|---|---|---|
 | 2026-05-20 | **Phase 3.2/3.3 — ContextualVignetteBand (destination 7-accent, B6).** mapContextToAccent+ACCENT(lib/tours-hub-accents) 활용. destination/feature 컨텍스트에서만 등장, accent 그라데이션 rule + 틴트 eyebrow + reset. base는 site-native, accent는 컨텍스트 강조. i18n 6 locale 2키. | b707eeaa | Jeju→teal 등 7-accent 계승. 카드 SHA `a931fe4e` |
-| 2026-05-20 | **Phase 3.6/3.7/3.8 — EmptyStateRecovery 3-action (B10).** (a) 최제약 필터 자동 감지·해제(휴리스틱 price>dest>features>type>search), (b) /itinerary-builder, (c) /support 컨시어지. page.tsx empty 브랜치 교체. i18n 6 locale 5키. 3.4/3.5(ResultsMeta+view toggle)는 Phase 4 이관. | 31dcef0e | Phase 3 코어 완료, 사용자 모바일 확인 대기. 카드 SHA `a931fe4e` |
+| 2026-05-20 | **Phase 3.6/3.7/3.8 — EmptyStateRecovery 3-action (B10).** (a) 최제약 필터 자동 감지·해제(휴리스틱 price>dest>features>type>search), (b) /itinerary-builder, (c) /support 컨시어지. page.tsx empty 브랜치 교체. i18n 6 locale 5키. 3.4/3.5(ResultsMeta+view toggle)는 Phase 4 이관. | 31dcef0e | Phase 3 코어 완료. 카드 SHA `a931fe4e` |
+| 2026-05-20 | **Phase 3 ✅ + Phase 4 시작 (planner-first).** 사용자 "계속" 진행. Phase 3 acceptance: Jeju teal band · empty 3-action · 카드 diff 0 (3.4/3.5는 Phase 4 이관). Phase 4 (Editorial Grid + view toggle + Insert + Rescue Band + Tier B) 🔄. | (pending) | 카드 layout='vertical'은 call-site prop만 변경 (B2/B15 허용 — 카드 파일 SHA 유지). §6.4 4.0→4.11 |
 | 2026-05-20 | 마스터 플랜 v1 작성 | (pending) | `docs/tours-list-uiux-master-plan-2026-05-20.md` + `.claude/skills/tours-list-uiux/SKILL.md` + MEMORY.md pointer |
 | 2026-05-20 | Phase 0 시작 — §A 🔄 / §C entry / planner-first 커밋 | 3525e2b0 | sub-task 0.1 → 0.7 순차 실행 |
 | 2026-05-20 | Phase 0.1 ✅ — StripAccent + ACCENT + mapContextToAccent를 lib/tours-hub-accents로 추출. TourCollectionStrip은 새 lib에서 import + StripAccent re-export로 기존 call site 보존 | c3160d2e | `npx tsc --noEmit -p . → errors 0`. B6 (7-accent 약속) 기술적 전제 마련 |
