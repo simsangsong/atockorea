@@ -28,7 +28,7 @@
 | 0 — 코드 실사 + 토큰 락 + Phase 1 사전 게이트 | ✅ 완료 | 2026-05-20 | 2026-05-20 | 649956fd | 7/7 sub-task 통과. 카드 baseline SHA `a931fe4e`. i18n 6/6×6/6=36 entry. Type-check clean. 사용자 "Phase 1 진입 승인" 완료 (2026-05-20) |
 | 1 — Catalogue Hero (240→88 collapsing magazine cover) + 푸터 strip | ✅ 완료 | 2026-05-20 | 2026-05-20 | 2d3041f2 | 사용자 "좋아 완벽해" 표지 격 통과 (2026-05-20). 카드 SHA `a931fe4e` 변경 0 (B2). slate-200/900 grep = 0 (B1). i18n 6/6. type-check clean. B18-B31 사용자 직접 디자인 반복 14회 반영 (italic 금지 / 사진 3회 교체 / dark warm Kinfolk 톤 / Noto Serif KR / text-deck-left layout / 자연 cream 오버레이 / 큐레이터 라인 제거) |
 | 2 — Sticky Filter Rail 격상 (site-native: 화이트+slate, h-11, active filter chip strip) | ✅ 완료 | 2026-05-20 | 2026-05-20 | 407aa8e2 | B32로 ivory+amber → site-native(반투명 화이트 + slate-900) 전환. 2.1/2.2/2.3/2.4/2.5/2.6/2.8/2.9/2.10 완료. **2.7 More는 Tier B 필터(Phase 4.10)와 함께로 이관**. acceptance: amber-900 grep=0 · 카드 SHA `a931fe4e` · ActiveFilterStrip dismissible · 모바일 drawer 0.3s · type-check clean. 사용자 모바일 확인 완료 |
-| 3 — Contextual Vignette Band + Results Meta Strip + Empty State 업그레이드 | 🔄 진행 중 | 2026-05-20 | — | (pending) | 허브의 7-accent 시스템을 list가 이어받음 (volcano/harbor/palace/ocean/temple/blossom/signature). §6.3 sub-task 3.1 → 3.9 |
+| 3 — Contextual Vignette Band + Empty State 업그레이드 | 🔄 (코어 완료, 사용자 확인 대기) | 2026-05-20 | — | 31dcef0e | ContextualVignetteBand(7-accent) + EmptyStateRecovery(3-action) 완료. 3.4/3.5(ResultsMeta+view toggle)는 Editorial 그리드 의존으로 Phase 4 이관. 카드 SHA `a931fe4e`. 사용자 모바일 확인 대기 |
 | 4 — Editorial Grid (3-up vertical default + view toggle) + 6번째마다 Editorial Insert + Conversion Rescue Band | ⏳ | — | — | — | 그리드 시각 리듬 + 빌더 동선 분기 |
 | 5 — Tier B 필터 (Duration·Time·Group·Language) — **API 확장 의존** | 📦 보류 | — | — | — | time/group/language는 DB 컬럼 부재. 백엔드 스프린트 필요. Phase 0 게이트에서 재평가 |
 | 6 — 모션 폴리시 (hero scroll-collapse·card stagger·refetch shimmer·editorial insert reveal) | ⏳ | — | — | — | scroll-freeze 가드 (상세페이지 트라우마 동일 적용) |
@@ -91,6 +91,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 
 | 날짜 | 항목 | 커밋 | 비고 |
 |---|---|---|---|
+| 2026-05-20 | **Phase 3.2/3.3 — ContextualVignetteBand (destination 7-accent, B6).** mapContextToAccent+ACCENT(lib/tours-hub-accents) 활용. destination/feature 컨텍스트에서만 등장, accent 그라데이션 rule + 틴트 eyebrow + reset. base는 site-native, accent는 컨텍스트 강조. i18n 6 locale 2키. | b707eeaa | Jeju→teal 등 7-accent 계승. 카드 SHA `a931fe4e` |
+| 2026-05-20 | **Phase 3.6/3.7/3.8 — EmptyStateRecovery 3-action (B10).** (a) 최제약 필터 자동 감지·해제(휴리스틱 price>dest>features>type>search), (b) /itinerary-builder, (c) /support 컨시어지. page.tsx empty 브랜치 교체. i18n 6 locale 5키. 3.4/3.5(ResultsMeta+view toggle)는 Phase 4 이관. | 31dcef0e | Phase 3 코어 완료, 사용자 모바일 확인 대기. 카드 SHA `a931fe4e` |
 | 2026-05-20 | 마스터 플랜 v1 작성 | (pending) | `docs/tours-list-uiux-master-plan-2026-05-20.md` + `.claude/skills/tours-list-uiux/SKILL.md` + MEMORY.md pointer |
 | 2026-05-20 | Phase 0 시작 — §A 🔄 / §C entry / planner-first 커밋 | 3525e2b0 | sub-task 0.1 → 0.7 순차 실행 |
 | 2026-05-20 | Phase 0.1 ✅ — StripAccent + ACCENT + mapContextToAccent를 lib/tours-hub-accents로 추출. TourCollectionStrip은 새 lib에서 import + StripAccent re-export로 기존 call site 보존 | c3160d2e | `npx tsc --noEmit -p . → errors 0`. B6 (7-accent 약속) 기술적 전제 마련 |
@@ -412,14 +414,17 @@ import type { StripAccent } from '@/components/tours-hub/TourCollectionStrip';
 | 3.1 | `lib/tours-hub-accents.ts`로 `StripAccent` + `ACCENT` 추출 (Phase 0.1 완료분 활용) | 신규 lib | 허브 page + list 양쪽에서 import 동작 |
 | 3.2 | `components/tours-list/ContextualVignetteBand.tsx` 신규 — 56px, accent 그라데이션, 큐레이터 한 줄, reset | 신규 | destination/feature/tourType 강한 컨텍스트에서만 등장 |
 | 3.3 | accent 매핑 룰 — destination=Jeju→volcano / Busan→harbor / Seoul→palace / features=Cruise→ocean / features=UNESCO→temple / features=Seasonal→blossom / 그 외→signature | 신규 helper `mapContextToAccent()` | 단위 테스트 (jest 또는 vitest 기존 setup) |
-| 3.4 | `components/tours-list/ResultsMetaStrip.tsx` 신규 — "Showing X–Y of N · Sorted by Z" + italic 큐레이터 라인 + view toggle 자리 | 신규 | 카운트 정확성, sort label localized |
-| 3.5 | view toggle (Editorial 3-up ↔ Compact 2-up) — localStorage persist | 신규 + page.tsx | refresh 후 선택 유지 |
-| 3.6 | Empty state 3-action recovery (`components/tours-list/EmptyStateRecovery.tsx`) | 신규 | 가장 제약 큰 필터 자동 감지 로직 + 빌더/컨시어지 동선 |
-| 3.7 | 가장 제약 큰 필터 감지 — 각 필터를 임시 해제하고 API 호출 수 비교, 결과 가장 많이 늘어나는 1개 추천 (또는 휴리스틱: priceMax > destination > features > type > duration > search) | 신규 helper | 시뮬레이션 5-7 케이스 통과 |
-| 3.8 | 컨시어지 동선 — WhatsApp deep link (`https://wa.me/{KR_NUM}?text=...`) + 카톡 채널 (기존 footer 링크 재사용 확인) | EmptyStateRecovery | 클릭 시 정상 이동 |
-| 3.9 | i18n 6 locale 카피 (resultsMeta·viewToggle·emptyRecovery 신규 키) | messages/*.json | 36 entry 추가 |
+| 3.1 | `lib/tours-hub-accents.ts` accent 추출 | 신규 lib | ✅ Phase 0.1 (c3160d2e) |
+| 3.2 | `ContextualVignetteBand.tsx` 신규 | 신규 | ✅ b707eeaa (7-accent, 컨텍스트에서만 등장) |
+| 3.3 | accent 매핑 룰 `mapContextToAccent()` | lib | ✅ Phase 0.1 (lib/tours-hub-accents) |
+| 3.4 | ~~`ResultsMetaStrip.tsx` — "Showing X–Y of N · Sorted by Z"~~ → **Phase 4 이관**. 총 개수("of N")는 count 미노출 정책으로 제외, view toggle은 Editorial 그리드(4.1)와 상호의존이라 함께 구현 | 신규 | 📦 Phase 4 |
+| 3.5 | ~~view toggle (Editorial 3-up ↔ Compact 2-up)~~ → **Phase 4 이관** (전환 대상 Editorial 그리드가 4.1) | 신규 | 📦 Phase 4 |
+| 3.6 | Empty state 3-action recovery (`EmptyStateRecovery.tsx`) | 신규 | ✅ 31dcef0e |
+| 3.7 | 가장 제약 큰 필터 감지 — 휴리스틱: price > destination > features > type > search | page.tsx `suggestedFilterToRemove` | ✅ 31dcef0e |
+| 3.8 | 컨시어지 동선 — 공개 WhatsApp/카톡 deep link 부재 → **내부 `/support` 라우트**로 (전화번호/채널 임의 생성 안 함) | EmptyStateRecovery | ✅ 31dcef0e (/support) |
+| 3.9 | i18n 6 locale (contextBand·emptyRecovery 키) | messages/*.json | ✅ (contextBandLine/Reset + emptyRecovery 5키 × 6 locale) |
 
-**Phase 3 ✅ 조건**: `?destination=Jeju`로 진입 시 volcano teal band 노출. empty state에 reset 단일 동선 아닌 3-action 모두 노출. view toggle persist. 카드 자체 변경 0.
+**Phase 3 ✅ 조건**: `?destination=Jeju`로 진입 시 volcano teal band 노출 ✅. empty state에 reset 단일 동선 아닌 3-action 모두 노출 ✅. ~~view toggle persist~~ → Phase 4. 카드 자체 변경 0 ✅. **3.4/3.5(ResultsMeta+view toggle)는 Phase 4.1 Editorial 그리드와 함께 구현하기로 이관.**
 
 ---
 
@@ -429,6 +434,7 @@ import type { StripAccent } from '@/components/tours-hub/TourCollectionStrip';
 
 | # | 작업 | 파일 | 통과 기준 |
 |---|---|---|---|
+| 4.0 | (Phase 3에서 이관) **ResultsMetaStrip** (총 개수 제외 — sort label + 큐레이터 라인) + **view toggle** (Editorial 3-up ↔ Compact, localStorage persist) — Editorial 그리드와 함께 구현 | 신규 + page.tsx | sort label localized, toggle persist |
 | 4.1 | 그리드 기본 Editorial 3-up (vertical) — `grid-cols-1 md:grid-cols-2 lg:grid-cols-3`, `max-w-[1320px]`, gap-y-8 lg:gap-x-8 lg:gap-y-10 | page.tsx | view toggle Editorial 선택 시 적용 |
 | 4.2 | `TourListCard layout="vertical"` 사용 — B2 카드 자산 그대로 (수정 0) | page.tsx | screenshot diff 카드 부분 0 |
 | 4.3 | Compact 2-up (horizontal) — 현재 디자인 그대로 toggle 분기에 유지 | page.tsx | toggle 시 매끄러운 전환 |
