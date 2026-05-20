@@ -20,44 +20,52 @@ const localeNames: Record<Locale, string> = {
   ja: '日本語',
 };
 
-// Import translations directly (Next.js handles JSON imports)
+/**
+ * Locale messages — code-split for bundle diet (2026-05-20).
+ *
+ * Previously all 6 locale JSON files (~865KB total) were static-imported into
+ * every page bundle. Now ONLY English (~152KB) is bundled synchronously — it's
+ * required for SSR (the provider always renders `defaultLocale` server-side) and
+ * as the universal fallback. The other 5 locales are lazy-loaded via dynamic
+ * import the first time their locale becomes active, so a visitor only ever
+ * downloads English + (at most) their own language, never the other four.
+ *
+ * `t()` reads from this mutable map and falls back to English for any locale
+ * whose chunk hasn't resolved yet (a brief, graceful fallback during the async
+ * load — the same en→locale transition that already happened on hydration).
+ */
 import enMessages from '@/messages/en.json';
-import koMessages from '@/messages/ko.json';
-import zhMessages from '@/messages/zh.json';
 
-// Import new language files - Next.js should handle these
-// If import fails, we'll use fallback in the messages object
-let zhTWMessages: any = zhMessages;
-let esMessages: any = enMessages;
-let jaMessages: any = enMessages;
+const messages: Partial<Record<Locale, any>> = { en: enMessages };
 
-try {
-  // @ts-ignore - Dynamic import for files with hyphens
-  zhTWMessages = require('@/messages/zh-TW.json');
-} catch (e) {
-  console.warn('Could not load zh-TW.json, using zh.json as fallback');
-}
-
-try {
-  esMessages = require('@/messages/es.json');
-} catch (e) {
-  console.warn('Could not load es.json, using en.json as fallback');
-}
-
-try {
-  jaMessages = require('@/messages/ja.json');
-} catch (e) {
-  console.warn('Could not load ja.json, using en.json as fallback');
-}
-
-const messages: Record<Locale, any> = {
-  en: enMessages,
-  ko: koMessages,
-  zh: zhMessages,
-  'zh-TW': zhTWMessages,
-  es: esMessages,
-  ja: jaMessages,
+const localeLoaders: Record<Exclude<Locale, 'en'>, () => Promise<{ default: any }>> = {
+  ko: () => import('@/messages/ko.json'),
+  zh: () => import('@/messages/zh.json'),
+  // @ts-ignore — hyphenated filename resolves fine at runtime
+  'zh-TW': () => import('@/messages/zh-TW.json'),
+  es: () => import('@/messages/es.json'),
+  ja: () => import('@/messages/ja.json'),
 };
+
+const localeLoadPromises: Partial<Record<Locale, Promise<void>>> = {};
+
+/** Ensure a locale's messages are loaded. Resolves immediately if already present. */
+function ensureLocaleMessages(loc: Locale): Promise<void> {
+  if (messages[loc]) return Promise.resolve();
+  if (localeLoadPromises[loc]) return localeLoadPromises[loc]!;
+  const loader = localeLoaders[loc as Exclude<Locale, 'en'>];
+  if (!loader) return Promise.resolve();
+  const p = loader()
+    .then((mod) => {
+      messages[loc] = (mod as any).default ?? mod;
+    })
+    .catch(() => {
+      // Network/parse failure — keep English fallback (graceful, no crash).
+      console.warn(`[i18n] failed to load ${loc} messages — using English fallback`);
+    });
+  localeLoadPromises[loc] = p;
+  return p;
+}
 
 interface I18nContextType {
   locale: Locale;
@@ -77,6 +85,21 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   // NOT override the user's choice. Without this guard, a click made before the chain
   // completes was being silently reverted — the "first ~5 clicks ignored" bug.
   const userOverrideRef = useRef(false);
+  // Bumped when a lazily-loaded locale chunk resolves, forcing a re-render so
+  // `t()` picks up the now-populated messages (until then it falls back to en).
+  const [, setMsgVersion] = useState(0);
+
+  // Lazy-load the active locale's messages (code-split). en is always present.
+  useEffect(() => {
+    if (locale === 'en' || messages[locale]) return;
+    let alive = true;
+    void ensureLocaleMessages(locale).then(() => {
+      if (alive) setMsgVersion((v) => v + 1);
+    });
+    return () => {
+      alive = false;
+    };
+  }, [locale]);
 
   useEffect(() => {
     // Update HTML lang attribute and body class based on locale
