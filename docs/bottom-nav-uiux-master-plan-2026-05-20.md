@@ -17,13 +17,13 @@
 
 | Phase | 상태 | 시작일 | 완료일 | 마지막 커밋 | 비고 |
 |---|---|---|---|---|---|
-| 0 — 게이트 (코드 실사 + 토큰 + i18n 키 + cart 카운트 소스 확인 + 결정 로그) | ⏳ | — | — | — | Phase 1 전 안전장치 확정 |
-| 1 — 비주얼/구조 리스킨 (frosted white · slate-900 active · 상단 인디케이터 바 + fill 아이콘 · safe-area · i18n 라벨 · a11y) | ⏳ | — | — | — | 가족 톤 진입 핵심 |
-| 2 — Cart 배지 + 모션 폴리시 (카운트 배지 · spring tap · active 전환 · reduce-motion 가드) | ⏳ | — | — | — | 마이크로 인터랙션 |
+| 0 — 게이트 (코드 실사 + 토큰 + i18n 키 + cart 카운트 소스 확인 + 결정 로그) | ✅ 완료 | 2026-05-20 | 2026-05-20 | (pending) | **i18n nav.* 키 6 locale 이미 존재(재사용)** · **cart 배지는 글로벌 카운트 스토어 부재로 보류(N6)** · 토큰/결정 확정 |
+| 1 — 비주얼/구조 리스킨 (frosted white · slate-900 active · 상단 인디케이터 바 + fill 아이콘 · safe-area · i18n 라벨 · a11y) | 🔄 진행 중 | 2026-05-20 | — | — | 가족 톤 진입 핵심 |
+| 2 — 모션 폴리시 (spring tap · active 전환 · reduce-motion 가드). ~~cart 배지~~ N6 보류 | ⏳ | — | — | — | cart 배지는 글로벌 cart context 도입 시 별도 |
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ✅ 완료 / ❌ 중단 / 📦 보류
 
-**현재 활성 Phase: 없음 (플랜 작성 완료, 사용자 Phase 0 진입 승인 대기).**
+**현재 활성 Phase: Phase 1 — 비주얼/구조 리스킨 (🔄). Phase 0 ✅ (키 재사용, 배지 보류).**
 
 ---
 
@@ -50,7 +50,8 @@
 
 | 날짜 | 항목 | 커밋 | 비고 |
 |---|---|---|---|
-| 2026-05-20 | 마스터 플랜 작성 | (pending) | `docs/bottom-nav-uiux-master-plan-2026-05-20.md` |
+| 2026-05-20 | 마스터 플랜 작성 | 4b7a0007 | `docs/bottom-nav-uiux-master-plan-2026-05-20.md` |
+| 2026-05-20 | **Phase 0 ✅ — 게이트.** 실사 결과: (a) `nav.home/tours/cart/my` i18n 키 6 locale **이미 존재**(Header 사용 중) → 재사용. (b) cart 카운트 — Header도 배지 없음, 메인 cart는 비동기(게스트 sessionStorage/로그인 API), 글로벌 client 카운트 스토어 부재 → **N6대로 배지 보류**(가짜 숫자 금지). Phase 2는 모션만. | (pending) | planner-first |
 
 ---
 
