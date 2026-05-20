@@ -455,6 +455,38 @@ export default function ToursListPage() {
     [t],
   );
 
+  // Tier B Features multi-select (Phase 4.10). Keywords substring-match the
+  // tour `badges` server-side; values verified against live data (UNESCO/Cruise/
+  // Seasonal/Hotel pickup/Customizable all present). Duration filter was dropped
+  // — every active tour is an 8–13h full-day tour, so Half/Full/Multi-day has no
+  // useful split (B13: never ship a filter that can't meaningfully narrow).
+  const featureOptions = useMemo(
+    () => [
+      { value: 'unesco', label: t('toursList.featUnesco') },
+      { value: 'cruise', label: t('toursList.featCruise') },
+      { value: 'seasonal', label: t('toursList.featSeasonal') },
+      { value: 'hotel pickup', label: t('toursList.featPickup') },
+      { value: 'customizable', label: t('toursList.featCustom') },
+    ],
+    [t],
+  );
+  const activeFeatures = useMemo(
+    () => features.split(',').map((f) => f.trim().toLowerCase()).filter(Boolean),
+    [features],
+  );
+  const toggleFeature = useCallback(
+    (val: string) => {
+      const set = new Set(activeFeatures);
+      if (set.has(val)) set.delete(val);
+      else set.add(val);
+      const next = Array.from(set).join(',');
+      setFeatures(next);
+      push({ features: next });
+    },
+    [activeFeatures, push],
+  );
+  const [showTierB, setShowTierB] = useState(false);
+
   const hasActiveFilters =
     searchInput.trim() !== '' ||
     destination !== 'all' ||
@@ -525,19 +557,18 @@ export default function ToursListPage() {
         },
       });
     }
-    if (features.trim() !== '') {
+    // One dismissible chip per active feature (Phase 4.10 multi-select).
+    for (const fv of activeFeatures) {
+      const label = featureOptions.find((o) => o.value === fv)?.label ?? fv;
       chips.push({
-        key: 'features',
-        label: features.trim(),
-        onRemove: () => {
-          setFeatures('');
-          push({ features: '' });
-        },
+        key: `feature:${fv}`,
+        label,
+        onRemove: () => toggleFeature(fv),
       });
     }
     return chips;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchInput, destination, tourType, hasPriceFilter, priceChipLabel, features, tourTypeOptions, t]);
+  }, [searchInput, destination, tourType, hasPriceFilter, priceChipLabel, activeFeatures, featureOptions, tourTypeOptions, t]);
 
   // Most-constraining filter for empty-state recovery (Phase 3.7) — heuristic
   // priority: price > destination > features > type > search (the filters most
@@ -771,6 +802,21 @@ export default function ToursListPage() {
                 ) : null}
               </div>
 
+              {/* More — toggles Tier B (Features) row (Phase 4.10 / 2.7). */}
+              <button
+                type="button"
+                onClick={() => setShowTierB((v) => !v)}
+                aria-expanded={showTierB}
+                className={`${chipCls(showTierB || activeFeatures.length > 0)} gap-1`}
+              >
+                {t('toursList.moreFilters')}
+                {activeFeatures.length > 0 ? (
+                  <span className="ml-0.5 inline-flex h-3.5 min-w-3.5 items-center justify-center rounded-full bg-white/25 px-1 text-[9px] font-bold">
+                    {activeFeatures.length}
+                  </span>
+                ) : null}
+              </button>
+
               {hasActiveFilters ? (
                 <button
                   type="button"
@@ -795,6 +841,27 @@ export default function ToursListPage() {
                 </button>
               ) : null}
             </div>
+
+            {/* Desktop Tier B row — Features (Phase 4.10), revealed by More. */}
+            {showTierB ? (
+              <div className="hidden items-center gap-2 border-t border-slate-200/55 py-2.5 lg:flex">
+                <span className="text-[9px] font-black uppercase tracking-[0.28em] text-slate-400">
+                  {t('toursList.featuresLabel')}
+                </span>
+                <div className="mx-1 h-4 w-px shrink-0 bg-slate-200/70" />
+                {featureOptions.map((opt) => (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    aria-pressed={activeFeatures.includes(opt.value)}
+                    onClick={() => toggleFeature(opt.value)}
+                    className={chipCls(activeFeatures.includes(opt.value))}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
+            ) : null}
 
             {/* Mobile: compact row — search + Filter button (Phase 2.9). */}
             <div className="flex items-center gap-2 py-2.5 lg:hidden">
@@ -992,6 +1059,26 @@ export default function ToursListPage() {
                         className={`${fieldCls} min-w-0 flex-1`}
                         inputMode="decimal"
                       />
+                    </div>
+                  </div>
+
+                  {/* Features (Tier B, Phase 4.10) */}
+                  <div>
+                    <span className="mb-2 block text-[11px] font-bold uppercase tracking-[0.14em] text-slate-400">
+                      {t('toursList.featuresLabel')}
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {featureOptions.map((opt) => (
+                        <button
+                          key={opt.value}
+                          type="button"
+                          aria-pressed={activeFeatures.includes(opt.value)}
+                          onClick={() => toggleFeature(opt.value)}
+                          className={`${chipCls(activeFeatures.includes(opt.value))} h-9`}
+                        >
+                          {opt.label}
+                        </button>
+                      ))}
                     </div>
                   </div>
                 </div>
