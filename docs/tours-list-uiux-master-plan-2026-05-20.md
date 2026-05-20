@@ -27,16 +27,18 @@
 |---|---|---|---|---|---|
 | 0 — 코드 실사 + 토큰 락 + Phase 1 사전 게이트 | ✅ 완료 | 2026-05-20 | 2026-05-20 | 649956fd | 7/7 sub-task 통과. 카드 baseline SHA `a931fe4e`. i18n 6/6×6/6=36 entry. Type-check clean. 사용자 "Phase 1 진입 승인" 완료 (2026-05-20) |
 | 1 — Catalogue Hero (240→88 collapsing magazine cover) + 푸터 strip | ✅ 완료 | 2026-05-20 | 2026-05-20 | 2d3041f2 | 사용자 "좋아 완벽해" 표지 격 통과 (2026-05-20). 카드 SHA `a931fe4e` 변경 0 (B2). slate-200/900 grep = 0 (B1). i18n 6/6. type-check clean. B18-B31 사용자 직접 디자인 반복 14회 반영 (italic 금지 / 사진 3회 교체 / dark warm Kinfolk 톤 / Noto Serif KR / text-deck-left layout / 자연 cream 오버레이 / 큐레이터 라인 제거) |
-| 2 — Sticky Filter Rail 격상 (ivory + amber 톤, h-11, active filter chip strip) | 🔄 진행 중 | 2026-05-20 | — | (pending) | slate-only form-tool 톤 → ivory+amber 매거진 톤 전환. §6.2 sub-task 2.1 → 2.10 |
-| 3 — Contextual Vignette Band + Results Meta Strip + Empty State 업그레이드 | ⏳ | — | — | — | 허브의 7-accent 시스템을 list가 이어받음 (volcano/harbor/palace/ocean/temple/blossom/signature) |
+| 2 — Sticky Filter Rail 격상 (site-native: 화이트+slate, h-11, active filter chip strip) | ✅ 완료 | 2026-05-20 | 2026-05-20 | 407aa8e2 | B32로 ivory+amber → site-native(반투명 화이트 + slate-900) 전환. 2.1/2.2/2.3/2.4/2.5/2.6/2.8/2.9/2.10 완료. **2.7 More는 Tier B 필터(Phase 4.10)와 함께로 이관**. acceptance: amber-900 grep=0 · 카드 SHA `a931fe4e` · ActiveFilterStrip dismissible · 모바일 drawer 0.3s · type-check clean. 사용자 모바일 확인 완료 |
+| 3 — Contextual Vignette Band + Results Meta Strip + Empty State 업그레이드 | 🔄 진행 중 | 2026-05-20 | — | (pending) | 허브의 7-accent 시스템을 list가 이어받음 (volcano/harbor/palace/ocean/temple/blossom/signature). §6.3 sub-task 3.1 → 3.9 |
 | 4 — Editorial Grid (3-up vertical default + view toggle) + 6번째마다 Editorial Insert + Conversion Rescue Band | ⏳ | — | — | — | 그리드 시각 리듬 + 빌더 동선 분기 |
 | 5 — Tier B 필터 (Duration·Time·Group·Language) — **API 확장 의존** | 📦 보류 | — | — | — | time/group/language는 DB 컬럼 부재. 백엔드 스프린트 필요. Phase 0 게이트에서 재평가 |
 | 6 — 모션 폴리시 (hero scroll-collapse·card stagger·refetch shimmer·editorial insert reveal) | ⏳ | — | — | — | scroll-freeze 가드 (상세페이지 트라우마 동일 적용) |
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단·롤백 / 📦 백로그
 
-**현재 활성 Phase: Phase 2 — Sticky Filter Rail 격상 (🔄 진행 중).**
-**다음 액션: §6.2 sub-task 2.1 → 2.10 순차 실행. rail 베이스 ivory+amber 전환 → 필터 필드 h-11/13.5px → DestinationPillSelect → SortSegmented → type chips amber 격상 → More 버튼 → ActiveFilterStrip 신규 → 모바일 drawer → refetch indicator. 각 sub-task 후 grep `(slate-200|slate-900)` count 보고 (B1).**
+**현재 활성 Phase: Phase 3 — Contextual Vignette Band + Results Meta + Empty State (🔄 진행 중).**
+**다음 액션: §6.3 sub-task 3.1 → 3.9. lib/tours-hub-accents(Phase 0.1 완료) 활용 → ContextualVignetteBand(destination 7-accent) → ResultsMetaStrip → view toggle(Editorial↔Compact, localStorage) → EmptyStateRecovery 3-action → 가장 제약 큰 필터 감지 → 컨시어지 동선 → i18n 6 locale.**
+
+**참고: B32로 B1(ivory+amber)이 site-native(파스텔 메시 + 반투명 화이트 + slate-900)로 번복됨. Phase 3 신규 컴포넌트도 site-native 톤. 단, ContextualVignetteBand의 destination accent(volcano teal 등 7색)는 B6 약속이라 유지 — accent는 컨텍스트 강조용이지 base 톤 아님.**
 
 **Phase 1 종료 노트 (LCP)**: 사용자 "표지 격 통과" 시각 승인이 1차 게이트. LCP는 Lighthouse 정밀 측정 미실시 — hero는 Next/Image `priority` + `quality=88` + 자동 WebP 변환. 원본 jpg 2.0MB는 Next 최적화로 실제 전송은 훨씬 작음. Phase 6(모션 폴리시)에서 Lighthouse pass + 필요 시 소스 WebP 사전 변환 권장 (§D 후보).
 
@@ -116,6 +118,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-20 | **B28 §B reversal — 자연 wrap + 폰트 축소 (Vogue Korea 흐름 복원).** 사용자 10차 지시: "제목 포함 카피를 그냥 왼쪽에 자연스럽게 가두면 안돼? 폰트 좀 줄여. 지금 폰트 너무 커지고 아까 코리아보그 스타일 없어졌어 그게 좋은데". B27 강제 br + 큰 폰트가 stacked banner 톤 되어 B25 elegant flow 잃음. 해결: ① h1 강제 br 제거 → 자연 inline flow. ② h1 font 24/30/36 → 19/22/26 (대폭 축소). ③ line-height 1.12 → 1.26. ④ max-w `92%/64%/500px` → `88%/56%/420px`. ⑤ sub 13/14 → 11.5/12.5, curator 11/12 → 10/11. ⑥ 요소 간격 tighter. ⑦ wash width `96%/68%/540px` → `92%/60%/460px`. | b80b575f | type-check clean. 카드 SHA `a931fe4e` 유지. italic = 0. 작은 refined serif + 자연 wrap = 진짜 코리아보그 deck 톤. |
 | 2026-05-20 | **B29 — 흰색 패널 또렷화 + 카피 확 축소.** 사용자 11차. wash solid 패널(0.95/62% near-opaque) + 폰트 15/17/20·10/11·9/9.5 + max-w 80%/50%/360px. | 484193bb | type-check clean. 카드 SHA 유지. italic 0. |
 | 2026-05-20 | **B30 — 자연 single-layer 오버레이 복구 (B26 wash).** 사용자 12차: "자연스럽게 씌운 흰색 오버레이 복구". solid 패널 → full-width 연속 fade (0.92→0.72→0.38→0.12→투명@82%). 폰트는 B29 유지. | a1942b86 | type-check clean. 카드 SHA 유지. italic 0. |
+| 2026-05-20 | **Phase 2 ✅ 완료 + Phase 3 시작 (planner-first).** Phase 2 (Sticky Filter Rail 격상): 2.1/2.2/2.3/2.4/2.5/2.6/2.8/2.9/2.10 완료, 2.7(More)은 Phase 4.10(Tier B 필터)로 이관. B32로 site-native(반투명 화이트+slate-900) 전환. acceptance: amber-900 grep=0 · 카드 SHA `a931fe4e` · ActiveFilterStrip dismissible · 모바일 drawer 0.3s · type-check clean · 사용자 모바일 확인. Phase 3 (Contextual Vignette Band + Results Meta + Empty State) 🔄 진입. | 407aa8e2 | §D에 2.7 등록. Phase 3 §6.3 sub-task 3.1→3.9 |
 | 2026-05-20 | **B31 — Hero 큐레이터 라인 제거.** 사용자 13차: "edited from seoul 이것도 지워". CatalogueHero에서 큐레이터 `<p>` + heroCurator const 삭제. hero = masthead + h1 + sub 3요소만. 큐레이터 시그니처는 footer strip에만. heroCurator i18n 키는 보존. | 2d3041f2 | type-check clean. 카드 SHA `a931fe4e` 유지. italic = 0. |
 | 2026-05-20 | **Phase 1 ✅ 완료 — 사용자 "좋아 완벽해" 표지 격 통과.** Catalogue Hero (240→88 collapse, 한복+경복궁 사진, dark warm Kinfolk 톤, Noto Serif KR 본명조, text-deck-left + 자연 cream 오버레이, masthead+h1+sub 3요소) + Footer Strip. B18-B31 사용자 직접 디자인 반복 14회 반영. acceptance: 카드 SHA `a931fe4e` 변경 0 (B2) · slate grep 0 (B1) · i18n 6/6 (B14) · type-check clean. | 2d3041f2 | LCP Lighthouse 미측정 (Phase 6로 이월). 사용자 시각 승인이 1차 게이트 통과 |
 | 2026-05-20 | **Phase 2 시작 — Sticky Filter Rail 격상.** §A Phase 1 ✅ + Phase 2 🔄 / 시작일 fill / §C entry / planner-first 커밋. §6.2 sub-task 2.1 → 2.10 순차 실행 예정 (rail ivory+amber 베이스 · 필드 h-11 · DestinationPillSelect · SortSegmented · type chips amber · More 버튼 · ActiveFilterStrip · 모바일 drawer · refetch dot). | 8e74327f | 코드 전 planner 박기 (planner-first). 현재 filter rail은 Phase 1에서 단일 sticky parent 안에 hero와 함께 wrap됨 (sticky 제거 상태) — Phase 2에서 reskin |
@@ -140,6 +143,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | Hero에 video 배경 | 매거진 fashion | scroll-freeze 가드 + LCP 위협. 정지 사진 + ken burns가 ceiling |
 | Infinite scroll → pagination 회귀 | SEO 의견 | 현재 sentinel + manual "load more" 하이브리드가 best practice |
 | Filter rail 좌측 사이드바 (Booking.com 식) | 데스크탑 패턴 | 모바일 호환 비용 ↑, 현재 sticky top rail이 모바일-친화. Phase 4까지 보류 |
+| 2.7 "More" 버튼 (Tier B 펼치기 + 활성 카운터) | Phase 2.7 | Tier B 필터(Duration/Features)가 Phase 4.10이라 펼칠 내용 부재. Phase 4에서 Tier B 필터와 함께 구현 |
 
 ---
 
@@ -390,10 +394,10 @@ import type { StripAccent } from '@/components/tours-hub/TourCollectionStrip';
 | 2.4 | destination select → **Pill select** with 핀 아이콘 + 도시명 + count badge | 신규 `components/tours-list/DestinationPillSelect.tsx` | 카운트 노출, 클릭 시 floating panel | ⏳ |
 | 2.5 | sort select → **Segmented control** (인기/최신/평점/판매/가격↑↓) | 신규 `components/tours-list/SortSegmented.tsx` | active = `bg-amber-900/95 text-amber-50 shadow-inner` | ⏳ |
 | 2.6 | type chips (all/private/join/bus) — chip 톤 amber로 격상 (active = `bg-amber-900/95 text-amber-50`, inactive = `bg-white/95 border-amber-200/70 text-slate-700`) | page.tsx (`chipCls`) | active 시 amber, slate-900 사용 금지 | ✅ 28e90f38 (desktop+mobile chips amber) |
-| 2.7 | "More" 버튼 신규 — Tier B 펼치기 + 활성 카운터 배지 ("+ 3 more") | 신규 | floating panel 또는 expand row | ⏳ |
+| 2.7 | ~~"More" 버튼 신규 — Tier B 펼치기 + 활성 카운터 배지~~ → **Phase 4.10 (Tier B Duration/Features 필터)와 함께로 이관**. 지금은 펼칠 Tier B 내용이 없어 placeholder가 됨 | 신규 | (Phase 4로 이관) | 📦 Phase 4 |
 | 2.8 | **Active Filter Chip Strip 신규** (`components/tours-list/ActiveFilterStrip.tsx`) — rail 바로 아래, `bg-amber-50 border-amber-200/70 text-amber-900`. dismissible 칩 + Clear all | 신규 | 각 필터별 칩 등장/해제 검증 | ⏳ |
-| 2.9 | 모바일: rail Tier A 단일 row → `Filter` 버튼 → full-sheet drawer (framer-motion bottom-sheet) | page.tsx (lg:hidden 분기) | 모바일 1탭으로 필터 전체 접근 | ⏳ |
-| 2.10 | refetch indicator: 하단 0.5px pulse → rail 내부 sort label 옆 spinning dot | page.tsx | 시각적으로 더 명확하되 layout shift 없음 | 🔶 부분 (pulse bar amber, dot은 SortSegmented 2.5와 함께) |
+| 2.9 | 모바일: rail Tier A 단일 row → `Filter` 버튼 → full-sheet drawer (framer-motion bottom-sheet) | page.tsx (lg:hidden 분기) | 모바일 1탭으로 필터 전체 접근 | ✅ 407aa8e2 (bottom-sheet 0.3s, scroll lock, ESC) |
+| 2.10 | refetch indicator: 하단 0.5px pulse → rail 내부 sort label 옆 spinning dot | page.tsx | 시각적으로 더 명확하되 layout shift 없음 | ✅ e6b04b91 (pulse bar 제거 → spinning dot) |
 
 **Phase 2 ✅ 조건**: 필터 걸어도 admin form-tool 톤 안 나옴. 활성 필터 dismissible 칩 모든 시나리오에서 등장/해제. 모바일 full-sheet 0.30s 이내 (상세 페이지 drawer 정책과 동일). 색상 검증: `grep -E "(slate-200|slate-900)" components/tours-list/`에서 슬레이트 컬러 거의 0 (B1 적용).
 
