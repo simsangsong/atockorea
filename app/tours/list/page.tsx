@@ -11,6 +11,9 @@ import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
 import { CatalogueHero } from '@/components/tours-list/CatalogueHero';
 import { CatalogueFooterStrip } from '@/components/tours-list/CatalogueFooterStrip';
+import { SortSegmented } from '@/components/tours-list/SortSegmented';
+import { DestinationPillSelect } from '@/components/tours-list/DestinationPillSelect';
+import { ActiveFilterStrip, type ActiveFilterChip } from '@/components/tours-list/ActiveFilterStrip';
 import {
   LIST_FIELD_CLS,
   LIST_SELECT_CLS,
@@ -429,6 +432,68 @@ export default function ToursListPage() {
     return t('toursList.price');
   }, [hasPriceFilter, minPrice, maxPrice, currencySymbol, t]);
 
+  // Active-filter chips (Phase 2.8 / B5) — one dismissible chip per applied
+  // filter; each removes only itself + syncs the URL. Sort is excluded (it's a
+  // view preference, not a filter that narrows results).
+  const activeFilterChips: ActiveFilterChip[] = useMemo(() => {
+    const chips: ActiveFilterChip[] = [];
+    if (searchInput.trim() !== '') {
+      chips.push({
+        key: 'search',
+        label: `"${searchInput.trim()}"`,
+        onRemove: () => {
+          setSearchInput('');
+          setDebouncedSearch('');
+          push({ q: '' });
+        },
+      });
+    }
+    if (destination !== 'all') {
+      chips.push({
+        key: 'destination',
+        label: translateCity(destination, t),
+        onRemove: () => {
+          setDestination('all');
+          push({ destination: 'all' });
+        },
+      });
+    }
+    if (tourType !== 'all') {
+      const label = tourTypeOptions.find((o) => o.value === tourType)?.label ?? tourType;
+      chips.push({
+        key: 'type',
+        label,
+        onRemove: () => {
+          setTourType('all');
+          push({ type: 'all' });
+        },
+      });
+    }
+    if (hasPriceFilter) {
+      chips.push({
+        key: 'price',
+        label: priceChipLabel,
+        onRemove: () => {
+          setMinPrice('');
+          setMaxPrice('');
+          push({ minPrice: '', maxPrice: '' });
+        },
+      });
+    }
+    if (features.trim() !== '') {
+      chips.push({
+        key: 'features',
+        label: features.trim(),
+        onRemove: () => {
+          setFeatures('');
+          push({ features: '' });
+        },
+      });
+    }
+    return chips;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchInput, destination, tourType, hasPriceFilter, priceChipLabel, features, tourTypeOptions, t]);
+
   const panelClass =
     'home-panel-refinement mx-auto w-full max-w-3xl px-5 py-10 text-center text-slate-600';
 
@@ -477,50 +542,62 @@ export default function ToursListPage() {
 
               <div className="mx-1 h-4 w-px shrink-0 bg-slate-200/70" />
 
-              <input
-                value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') push({ q: e.currentTarget.value.trim() });
+              {/* Search with leading magnifier icon (Phase 2.3). */}
+              <div className="relative min-w-0 flex-1">
+                <svg
+                  className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  aria-hidden
+                >
+                  <circle cx="11" cy="11" r="7" strokeWidth={2} />
+                  <path strokeLinecap="round" strokeWidth={2} d="M20 20l-3.5-3.5" />
+                </svg>
+                <input
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') push({ q: e.currentTarget.value.trim() });
+                  }}
+                  placeholder={t('home.proposedTours.filterSearchPlaceholder')}
+                  aria-label={t('toursList.searchAriaLabel')}
+                  className={`${fieldCls} w-full !pl-10`}
+                />
+              </div>
+
+              <DestinationPillSelect
+                value={destination}
+                options={destinationOptions.map(({ city }) => ({
+                  value: city,
+                  label: translateCity(city, t),
+                }))}
+                onChange={(v) => {
+                  setDestination(v);
+                  push({ destination: v });
                 }}
-                placeholder={t('home.proposedTours.filterSearchPlaceholder')}
-                aria-label={t('toursList.searchAriaLabel')}
-                className={`${fieldCls} min-w-0 flex-1`}
+                ariaLabel={t('toursList.destinationAriaLabel')}
+                allLabel={t('home.proposedTours.filterRegionAll')}
               />
 
-              <select
-                value={destination}
-                onChange={(e) => {
-                  setDestination(e.target.value);
-                  push({ destination: e.target.value });
-                }}
-                aria-label={t('toursList.destinationAriaLabel')}
-                className={`${selectCls} w-32`}
-              >
-                <option value="all">{t('home.proposedTours.filterRegionAll')}</option>
-                {destinationOptions.map(({ city }) => (
-                  <option key={city} value={city}>
-                    {translateCity(city, t)}
-                  </option>
-                ))}
-              </select>
-
-              <select
+              <SortSegmented
                 value={sortBy}
-                onChange={(e) => {
-                  setSortBy(e.target.value as SortFilter);
-                  push({ sort: e.target.value as SortFilter });
+                options={sortOptions}
+                onChange={(v) => {
+                  setSortBy(v);
+                  push({ sort: v });
                 }}
-                aria-label={t('toursList.sortAriaLabel')}
-                title={sortBy === 'popular' ? t('toursList.popularHint') : undefined}
-                className={`${selectCls} w-36`}
-              >
-                {sortOptions.map((opt) => (
-                  <option key={opt.value} value={opt.value}>
-                    {opt.label}
-                  </option>
-                ))}
-              </select>
+                ariaLabel={t('toursList.sortAriaLabel')}
+                activeTitle={sortBy === 'popular' ? t('toursList.popularHint') : undefined}
+              />
+
+              {/* Refetch indicator (Phase 2.10) — spinning dot, no layout shift. */}
+              {isRefetching ? (
+                <span
+                  className="h-2 w-2 shrink-0 animate-spin rounded-full border-2 border-slate-300 border-t-slate-900"
+                  aria-hidden
+                />
+              ) : null}
 
               <div className="mx-0.5 h-4 w-px shrink-0 bg-slate-200/70" />
 
@@ -773,16 +850,18 @@ export default function ToursListPage() {
               </div>
             </div>
           </div>
-            {isRefetching ? (
-              <div
-                className="pointer-events-none absolute inset-x-0 bottom-0 h-0.5 overflow-hidden"
-                aria-hidden="true"
-              >
-                <div className="h-full w-1/3 animate-pulse bg-slate-900/50" />
-              </div>
-            ) : null}
+          {/* Refetch indicator moved into the rail as a spinning dot (Phase 2.10). */}
           </div>
           {/* End filter bar */}
+
+          {/* Active filter chip strip (Phase 2.8 / B5) — sticks with the rail. */}
+          <ActiveFilterStrip
+            chips={activeFilterChips}
+            onClearAll={resetFilters}
+            clearAllLabel={t('toursList.clearAll')}
+            ariaLabel={t('toursList.activeFilters')}
+            removeAriaLabel={t('toursList.removeFilter')}
+          />
         </div>
         {/* End sticky header stack (CatalogueHero + filter rail) */}
 
