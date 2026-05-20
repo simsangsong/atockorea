@@ -1170,7 +1170,7 @@ export default function ToursListPage() {
                   viewMode === 'editorial'
                     ? 'grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-4 md:grid-cols-2 md:gap-x-6 md:gap-y-8 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10'
                     : 'grid-cols-1 gap-y-5 sm:gap-y-6 lg:grid-cols-2 lg:gap-x-6 lg:gap-y-7'
-                } ${isRefetching ? 'opacity-60' : 'opacity-100'}`}
+                } ${isRefetching ? 'opacity-70' : 'opacity-100'}`}
                 aria-busy={isRefetching}
               >
                 {visibleTours.map((tour, i) => {

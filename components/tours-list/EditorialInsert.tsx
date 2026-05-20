@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { motion, useReducedMotion } from 'framer-motion';
 import {
   LIST_EYEBROW_CLS,
   LIST_ACCENT_LINE_CLS,
@@ -23,8 +24,15 @@ interface EditorialInsertProps {
 }
 
 export function EditorialInsert({ content, t }: EditorialInsertProps) {
+  const reduce = useReducedMotion() === true;
   return (
-    <div className="col-span-full">
+    <motion.div
+      className="col-span-full"
+      initial={reduce ? false : { opacity: 0, y: 12 }}
+      whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+    >
       <div className="relative overflow-hidden rounded-2xl border border-amber-200/50 bg-gradient-to-br from-amber-50/70 via-white to-white px-5 py-6 sm:px-8 sm:py-7">
         {/* Thin gold rule, top-left */}
         <span className={`mb-3 block h-px w-10 ${LIST_ACCENT_LINE_CLS}`} aria-hidden />
@@ -45,6 +53,6 @@ export function EditorialInsert({ content, t }: EditorialInsertProps) {
           </Link>
         ) : null}
       </div>
-    </div>
+    </motion.div>
   );
 }

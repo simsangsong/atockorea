@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { motion, useReducedMotion } from 'framer-motion';
 import { LIST_EYEBROW_CLS, LIST_ACCENT_LINE_CLS, LIST_DISPLAY_ACCENT_CLS } from '@/lib/tours-list-tokens';
 
 /**
@@ -19,8 +20,15 @@ interface ConversionRescueBandProps {
 }
 
 export function ConversionRescueBand({ title, body, cta, href, eyebrow }: ConversionRescueBandProps) {
+  const reduce = useReducedMotion() === true;
   return (
-    <div className="mx-auto my-8 w-full max-w-[1320px] px-3 sm:px-4">
+    <motion.div
+      className="mx-auto my-8 w-full max-w-[1320px] px-3 sm:px-4"
+      initial={reduce ? false : { opacity: 0, y: 14 }}
+      whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+    >
       <div className="relative overflow-hidden rounded-3xl border border-amber-200/50 bg-gradient-to-br from-amber-50 via-amber-50/40 to-white px-6 py-8 text-center sm:px-10 sm:py-10">
         <span className={`mx-auto mb-3 block h-px w-12 ${LIST_ACCENT_LINE_CLS}`} aria-hidden />
         <span className={LIST_EYEBROW_CLS}>{eyebrow}</span>
@@ -36,6 +44,6 @@ export function ConversionRescueBand({ title, body, cta, href, eyebrow }: Conver
           <span aria-hidden>→</span>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }
