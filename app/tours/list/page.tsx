@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useMemo, useState, useEffect, useRef, useCallback } from 'react';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { useRouter, useSearchParams } from 'next/navigation';
 import TourListCard from '@/components/tour/TourListCard';
 import { adaptToursListResponse } from '@/src/lib/adapters/tours-adapter';
@@ -16,7 +17,6 @@ import { DestinationPillSelect } from '@/components/tours-list/DestinationPillSe
 import { ActiveFilterStrip, type ActiveFilterChip } from '@/components/tours-list/ActiveFilterStrip';
 import {
   LIST_FIELD_CLS,
-  LIST_SELECT_CLS,
   LIST_CHIP_ACTIVE_CLS,
   LIST_CHIP_INACTIVE_CLS,
   LIST_RAIL_BG,
@@ -114,6 +114,7 @@ export default function ToursListPage() {
   const rates = currencyCtx?.rates ?? null;
   const krwRate = rates?.KRW ?? DEFAULT_KRW_RATE;
   const currencySymbol = getCurrencySymbol(currencyCode);
+  const reducedMotion = useReducedMotion() === true;
 
   /**
    * `useTranslations()` returns a fresh function reference every render, so we must
@@ -140,6 +141,8 @@ export default function ToursListPage() {
   const [maxPrice, setMaxPrice] = useState('');
   const [features, setFeatures] = useState('');
   const [showPricePanel, setShowPricePanel] = useState(false);
+  /** Mobile full-sheet filter drawer (Phase 2.9). */
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
 
   const priceAnchorRef = useRef<HTMLDivElement>(null);
   const abortRef = useRef<AbortController | null>(null);
@@ -367,6 +370,21 @@ export default function ToursListPage() {
     };
   }, [showPricePanel]);
 
+  // --- Mobile filter drawer: body scroll lock + ESC ------------------------------------
+  useEffect(() => {
+    if (!showMobileFilters) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setShowMobileFilters(false);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [showMobileFilters]);
+
   // --- Infinite scroll sentinel --------------------------------------------------------
   useEffect(() => {
     const el = sentinelRef.current;
@@ -498,13 +516,12 @@ export default function ToursListPage() {
     'home-panel-refinement mx-auto w-full max-w-3xl px-5 py-10 text-center text-slate-600';
 
   /**
-   * Filter field / select / chip styles — Phase 2 (B4 + B1): h-11 + text-[13.5px]
-   * + amber-200/70 borders, sourced from lib/tours-list-tokens. The slate-200/
-   * slate-900 form-tool tone is gone (B1 enforcement). Chip variants append the
-   * height + shrink utilities the rail layout needs on top of the token base.
+   * Filter field / chip styles — Phase 2 (B4 + B32): h-11 + text-[13.5px] +
+   * site-native translucent-white + slate, sourced from lib/tours-list-tokens.
+   * (The destination/sort `<select>`s were replaced by DestinationPillSelect +
+   * SortSegmented, so LIST_SELECT_CLS is no longer consumed here.)
    */
   const fieldCls = LIST_FIELD_CLS;
-  const selectCls = LIST_SELECT_CLS;
 
   const chipCls = (active: boolean) =>
     `${active ? LIST_CHIP_ACTIVE_CLS : LIST_CHIP_INACTIVE_CLS} h-9 !min-h-0 !min-w-0 shrink-0`;
@@ -706,9 +723,19 @@ export default function ToursListPage() {
               ) : null}
             </div>
 
-            {/* Mobile: 3 rows */}
-            <div className="lg:hidden">
-              <div className="flex items-center gap-2 pt-2.5 pb-1.5">
+            {/* Mobile: compact row — search + Filter button (Phase 2.9). */}
+            <div className="flex items-center gap-2 py-2.5 lg:hidden">
+              <div className="relative min-w-0 flex-1">
+                <svg
+                  className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  aria-hidden
+                >
+                  <circle cx="11" cy="11" r="7" strokeWidth={2} />
+                  <path strokeLinecap="round" strokeWidth={2} d="M20 20l-3.5-3.5" />
+                </svg>
                 <input
                   value={searchInput}
                   onChange={(e) => setSearchInput(e.target.value)}
@@ -717,137 +744,25 @@ export default function ToursListPage() {
                   }}
                   placeholder={t('home.proposedTours.filterSearchPlaceholder')}
                   aria-label={t('toursList.searchAriaLabel')}
-                  className={`${fieldCls} min-w-0 flex-1`}
+                  className={`${fieldCls} w-full !pl-10`}
                 />
-                {hasActiveFilters ? (
-                  <button
-                    type="button"
-                    onClick={resetFilters}
-                    aria-label={t('toursList.resetFilters')}
-                    className="inline-flex h-11 w-11 !min-h-0 !min-w-0 shrink-0 items-center justify-center rounded-2xl border border-slate-200/80 bg-white/85 text-slate-500 transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/30 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-                  >
-                    <svg
-                      className="h-3.5 w-3.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2.5}
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
-                  </button>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowMobileFilters(true)}
+                aria-label={t('toursList.filtersTitle')}
+                className="relative inline-flex h-11 shrink-0 items-center gap-1.5 rounded-2xl border border-slate-200/80 bg-white/85 px-3.5 text-[13px] font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/30"
+              >
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
+                  <path strokeLinecap="round" strokeWidth={2} d="M3 6h18M6 12h12M10 18h4" />
+                </svg>
+                {t('toursList.filters')}
+                {activeFilterChips.length > 0 ? (
+                  <span className="inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-slate-900 px-1 text-[10px] font-bold text-white">
+                    {activeFilterChips.length}
+                  </span>
                 ) : null}
-              </div>
-
-              <div className="flex items-center gap-1 py-1">
-                {tourTypeOptions.map((opt) => (
-                  <button
-                    key={opt.value}
-                    type="button"
-                    aria-pressed={tourType === opt.value}
-                    onClick={() => {
-                      setTourType(opt.value);
-                      push({ type: opt.value });
-                    }}
-                    className={`inline-flex h-9 !min-h-0 !min-w-0 flex-1 items-center justify-center rounded-full px-1 text-[10px] font-semibold uppercase tracking-[0.08em] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/30 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
-                      tourType === opt.value
-                        ? 'bg-slate-900 text-white shadow-[0_2px_8px_-3px_rgba(15,23,42,0.4)]'
-                        : 'border border-slate-200/80 bg-white/85 text-slate-600 hover:border-slate-300 hover:bg-white'
-                    }`}
-                  >
-                    {opt.label}
-                  </button>
-                ))}
-              </div>
-
-              <div className="flex gap-2 pb-2 pt-1">
-                <select
-                  value={destination}
-                  onChange={(e) => {
-                    setDestination(e.target.value);
-                    push({ destination: e.target.value });
-                  }}
-                  aria-label={t('toursList.destinationAriaLabel')}
-                  className={`${selectCls} min-w-0 flex-1`}
-                >
-                  <option value="all">{t('home.proposedTours.filterRegionAll')}</option>
-                  {destinationOptions.map(({ city }) => (
-                    <option key={city} value={city}>
-                      {translateCity(city, t)}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  value={sortBy}
-                  onChange={(e) => {
-                    setSortBy(e.target.value as SortFilter);
-                    push({ sort: e.target.value as SortFilter });
-                  }}
-                  aria-label={t('toursList.sortAriaLabel')}
-                  className={`${selectCls} min-w-0 flex-1`}
-                >
-                  {sortOptions.map((opt) => (
-                    <option key={opt.value} value={opt.value}>
-                      {opt.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Mobile price row */}
-              <div className="relative flex gap-2 pb-2.5 pt-0.5" ref={priceAnchorRef}>
-                <button
-                  type="button"
-                  onClick={() => setShowPricePanel((v) => !v)}
-                  aria-label={t('toursList.priceAriaLabel')}
-                  aria-expanded={showPricePanel}
-                  className={`${chipCls(hasPriceFilter)} flex-1 justify-center`}
-                >
-                  {priceChipLabel}
-                </button>
-                {showPricePanel ? (
-                  <div
-                    role="dialog"
-                    aria-label={t('toursList.priceAriaLabel')}
-                    className="absolute left-0 right-0 top-[calc(100%+6px)] z-40 flex items-center gap-2 rounded-2xl border border-white/85 bg-white/95 p-3 shadow-[0_24px_56px_-22px_rgba(15,23,42,0.36)] backdrop-blur-md"
-                  >
-                    <input
-                      value={minPrice}
-                      onChange={(e) => setMinPrice(e.target.value.replace(/[^0-9.]/g, ''))}
-                      placeholder={`${t('toursList.minPlaceholder')} (${currencySymbol})`}
-                      aria-label={`${t('toursList.priceAriaLabel')} ${t('toursList.minPlaceholder')}`}
-                      className={`${fieldCls} min-w-0 flex-1`}
-                      inputMode="decimal"
-                    />
-                    <span className="text-[11px] text-slate-400" aria-hidden>
-                      —
-                    </span>
-                    <input
-                      value={maxPrice}
-                      onChange={(e) => setMaxPrice(e.target.value.replace(/[^0-9.]/g, ''))}
-                      placeholder={`${t('toursList.maxPlaceholder')} (${currencySymbol})`}
-                      aria-label={`${t('toursList.priceAriaLabel')} ${t('toursList.maxPlaceholder')}`}
-                      className={`${fieldCls} min-w-0 flex-1`}
-                      inputMode="decimal"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => {
-                        push({ minPrice: minPrice.trim(), maxPrice: maxPrice.trim() });
-                        setShowPricePanel(false);
-                      }}
-                      className="inline-flex h-7 !min-h-0 !min-w-0 shrink-0 items-center rounded-xl bg-slate-900 px-3 text-[11px] font-semibold text-white transition hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/30 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-                    >
-                      {t('toursList.apply')}
-                    </button>
-                  </div>
-                ) : null}
-              </div>
+              </button>
             </div>
           </div>
           {/* Refetch indicator moved into the rail as a spinning dot (Phase 2.10). */}
@@ -864,6 +779,164 @@ export default function ToursListPage() {
           />
         </div>
         {/* End sticky header stack (CatalogueHero + filter rail) */}
+
+        {/* Mobile full-sheet filter drawer (Phase 2.9) — framer bottom-sheet,
+            0.3s ease (detail-page drawer policy). reduce-motion → instant. */}
+        <AnimatePresence>
+          {showMobileFilters ? (
+            <motion.div
+              className="fixed inset-0 z-[60] lg:hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: reducedMotion ? 0 : 0.2 }}
+            >
+              <div
+                className="absolute inset-0 bg-slate-900/40 backdrop-blur-[2px]"
+                onClick={() => setShowMobileFilters(false)}
+                aria-hidden
+              />
+              <motion.div
+                role="dialog"
+                aria-modal="true"
+                aria-label={t('toursList.filtersTitle')}
+                className="absolute inset-x-0 bottom-0 max-h-[85vh] overflow-y-auto rounded-t-3xl bg-white pb-[max(1rem,env(safe-area-inset-bottom))] shadow-[0_-20px_60px_-24px_rgba(15,23,42,0.4)]"
+                initial={reducedMotion ? { y: 0 } : { y: '100%' }}
+                animate={{ y: 0 }}
+                exit={reducedMotion ? { y: 0 } : { y: '100%' }}
+                transition={{ duration: reducedMotion ? 0 : 0.3, ease: [0.22, 1, 0.36, 1] }}
+              >
+                {/* Grab handle + header */}
+                <div className="sticky top-0 z-10 flex items-center justify-between border-b border-slate-200/70 bg-white/95 px-5 pb-3 pt-3 backdrop-blur-md">
+                  <span className="text-[15px] font-bold tracking-[-0.01em] text-slate-900">
+                    {t('toursList.filtersTitle')}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setShowMobileFilters(false)}
+                    aria-label={t('toursList.filtersTitle')}
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-full text-slate-500 transition hover:bg-slate-100 hover:text-slate-900"
+                  >
+                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+
+                <div className="space-y-5 px-5 py-5">
+                  {/* Sort */}
+                  <div>
+                    <span className="mb-2 block text-[11px] font-bold uppercase tracking-[0.14em] text-slate-400">
+                      {t('toursList.sortAriaLabel')}
+                    </span>
+                    <SortSegmented
+                      value={sortBy}
+                      options={sortOptions}
+                      onChange={(v) => {
+                        setSortBy(v);
+                        push({ sort: v });
+                      }}
+                      ariaLabel={t('toursList.sortAriaLabel')}
+                      className="w-full"
+                    />
+                  </div>
+
+                  {/* Destination */}
+                  <div>
+                    <span className="mb-2 block text-[11px] font-bold uppercase tracking-[0.14em] text-slate-400">
+                      {t('toursList.destinationAriaLabel')}
+                    </span>
+                    <DestinationPillSelect
+                      value={destination}
+                      options={destinationOptions.map(({ city }) => ({
+                        value: city,
+                        label: translateCity(city, t),
+                      }))}
+                      onChange={(v) => {
+                        setDestination(v);
+                        push({ destination: v });
+                      }}
+                      ariaLabel={t('toursList.destinationAriaLabel')}
+                      allLabel={t('home.proposedTours.filterRegionAll')}
+                    />
+                  </div>
+
+                  {/* Tour type */}
+                  <div>
+                    <span className="mb-2 block text-[11px] font-bold uppercase tracking-[0.14em] text-slate-400">
+                      {t('toursList.typeLabel')}
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {tourTypeOptions.map((opt) => (
+                        <button
+                          key={opt.value}
+                          type="button"
+                          aria-pressed={tourType === opt.value}
+                          onClick={() => {
+                            setTourType(opt.value);
+                            push({ type: opt.value });
+                          }}
+                          className={`${chipCls(tourType === opt.value)} h-9`}
+                        >
+                          {opt.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Price */}
+                  <div>
+                    <span className="mb-2 block text-[11px] font-bold uppercase tracking-[0.14em] text-slate-400">
+                      {t('toursList.priceAriaLabel')}
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <input
+                        value={minPrice}
+                        onChange={(e) => setMinPrice(e.target.value.replace(/[^0-9.]/g, ''))}
+                        placeholder={`${t('toursList.minPlaceholder')} (${currencySymbol})`}
+                        aria-label={`${t('toursList.priceAriaLabel')} ${t('toursList.minPlaceholder')}`}
+                        className={`${fieldCls} min-w-0 flex-1`}
+                        inputMode="decimal"
+                      />
+                      <span className="text-[13px] text-slate-400" aria-hidden>—</span>
+                      <input
+                        value={maxPrice}
+                        onChange={(e) => setMaxPrice(e.target.value.replace(/[^0-9.]/g, ''))}
+                        placeholder={`${t('toursList.maxPlaceholder')} (${currencySymbol})`}
+                        aria-label={`${t('toursList.priceAriaLabel')} ${t('toursList.maxPlaceholder')}`}
+                        className={`${fieldCls} min-w-0 flex-1`}
+                        inputMode="decimal"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Footer CTA */}
+                <div className="sticky bottom-0 flex gap-2 border-t border-slate-200/70 bg-white/95 px-5 py-3 backdrop-blur-md">
+                  {hasActiveFilters ? (
+                    <button
+                      type="button"
+                      onClick={resetFilters}
+                      className="inline-flex h-12 items-center justify-center rounded-2xl border border-slate-200/80 bg-white px-5 text-[14px] font-semibold text-slate-700 transition hover:bg-slate-50"
+                    >
+                      {t('toursList.resetFilters')}
+                    </button>
+                  ) : null}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      push({ minPrice: minPrice.trim(), maxPrice: maxPrice.trim() });
+                      setShowMobileFilters(false);
+                    }}
+                    className="inline-flex h-12 flex-1 items-center justify-center rounded-2xl bg-slate-900 px-5 text-[14px] font-bold text-white shadow-[0_8px_24px_-10px_rgba(15,23,42,0.5)] transition hover:bg-slate-800"
+                  >
+                    {t('toursList.viewResults')}
+                  </button>
+                </div>
+              </motion.div>
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
 
         <section className="mx-auto w-full max-w-5xl px-2 py-4 sm:px-4 sm:py-5">
           {isInitialLoading ? (
