@@ -73,7 +73,9 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
   const heroTitle = t('toursList.heroTitle');
   const heroAccent = t('toursList.heroAccent');
   const heroSub = t('toursList.heroSub', { count });
-  const heroCurator = t('toursList.heroCurator');
+  // heroCurator ("Edited from Seoul") removed from the hero per user direction
+  // 2026-05-20 — the curator signature now lives only in the footer strip
+  // (toursList.footerCuratorLine). The i18n key is retained for reuse.
 
   return (
     // Not sticky — the parent header in `app/tours/list/page.tsx` is the sticky
@@ -220,11 +222,6 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
 
           <p className="font-magazine-serif-ko mt-1.5 text-[10px] font-normal leading-[1.5] tracking-[-0.005em] text-stone-800 [text-shadow:0_1px_2px_rgba(255,255,255,0.95)] sm:text-[11px]">
             {heroSub}
-          </p>
-
-          <p className="font-magazine-serif-ko mt-1.5 flex items-center gap-1.5 text-[9px] font-medium tracking-[0.02em] text-amber-900 [text-shadow:0_1px_2px_rgba(255,255,255,0.95)] sm:mt-2 sm:text-[9.5px]">
-            <span className="inline-block h-px w-5 bg-amber-700/65" aria-hidden />
-            {heroCurator}
           </p>
         </div>
       </motion.div>
