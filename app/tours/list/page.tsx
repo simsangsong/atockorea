@@ -20,6 +20,7 @@ import { EmptyStateRecovery } from '@/components/tours-list/EmptyStateRecovery';
 import { ResultsMetaStrip, type CatalogueViewMode } from '@/components/tours-list/ResultsMetaStrip';
 import { EditorialInsert } from '@/components/tours-list/EditorialInsert';
 import { insertForSlot } from '@/lib/tours-list-editorial-inserts';
+import { ConversionRescueBand } from '@/components/tours-list/ConversionRescueBand';
 import {
   LIST_FIELD_CLS,
   LIST_CHIP_ACTIVE_CLS,
@@ -1106,6 +1107,17 @@ export default function ToursListPage() {
                   );
                 })}
               </div>
+              {/* Conversion rescue band — only after 28+ cards browsed (B9). */}
+              {visibleCount >= 28 ? (
+                <ConversionRescueBand
+                  eyebrow={t('toursList.insertCuratorEyebrow')}
+                  title={t('toursList.rescueTitle')}
+                  body={t('toursList.rescueBody')}
+                  cta={t('toursList.rescueCta')}
+                  href="/itinerary-builder"
+                />
+              ) : null}
+
               {visibleCount < tours.length ? (
                 <div ref={sentinelRef} className="flex items-center justify-center py-8">
                   <button
@@ -1118,7 +1130,12 @@ export default function ToursListPage() {
                     {t('toursList.loadMore')}
                   </button>
                 </div>
-              ) : null}
+              ) : (
+                /* End-of-results signature (Phase 4.9). */
+                <p className="py-8 text-center text-[12.5px] text-slate-400">
+                  {t('toursList.endOfResults')}
+                </p>
+              )}
             </>
           )}
         </section>
