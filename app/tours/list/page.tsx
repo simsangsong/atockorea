@@ -462,7 +462,7 @@ export default function ToursListPage() {
           stays.
         */}
         <div className="sticky top-0 z-30 isolate">
-          <CatalogueHero count={tours.length} />
+          <CatalogueHero />
 
           {/* Filter bar — Phase 2 ivory+amber rail (B1/B4). */}
           <div className={`relative ${LIST_RAIL_BG} ${LIST_RAIL_BORDER} ${LIST_SHADOW_WARM}`}>
@@ -860,7 +860,7 @@ export default function ToursListPage() {
             CatalogueHero. Only mounted once a populated catalogue is showing
             (skip on initial load / error / empty state). */}
         {!isInitialLoading && !error && tours.length > 0 ? (
-          <CatalogueFooterStrip count={tours.length} />
+          <CatalogueFooterStrip />
         ) : null}
       </main>
     </SitePageShell>

@@ -37,12 +37,7 @@ const COLLAPSE_SCROLL_RANGE = 200;
 
 const HERO_PHOTO_SRC = '/images/tours-list/catalogue-hero.jpg';
 
-interface CatalogueHeroProps {
-  /** Total tour count — drives the sub line and 88px-mode badge. */
-  count: number;
-}
-
-export function CatalogueHero({ count }: CatalogueHeroProps) {
+export function CatalogueHero() {
   const t = useTranslations();
   const reducedMotion = useReducedMotion() === true;
 
@@ -62,20 +57,15 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
   // Display block fades out over the first half of the collapse window so the
   // masthead has visual room when the hero reaches its 88px end state.
   const displayOpacity = useTransform(scrollY, [0, COLLAPSE_SCROLL_RANGE * 0.5], [1, 0]);
-  // Count badge fades IN as the display fades out — directly readable in 88px mode.
-  const countBadgeOpacity = useTransform(
-    scrollY,
-    [COLLAPSE_SCROLL_RANGE * 0.4, COLLAPSE_SCROLL_RANGE * 0.85],
-    [0, 1],
-  );
 
   const heroIssue = t('toursList.heroIssue');
   const heroTitle = t('toursList.heroTitle');
   const heroAccent = t('toursList.heroAccent');
-  const heroSub = t('toursList.heroSub', { count });
-  // heroCurator ("Edited from Seoul") removed from the hero per user direction
-  // 2026-05-20 — the curator signature now lives only in the footer strip
-  // (toursList.footerCuratorLine). The i18n key is retained for reuse.
+  const heroSub = t('toursList.heroSub');
+  // heroCurator ("Edited from Seoul") + the tour-count badge were both removed
+  // per user direction 2026-05-20 — the curator signature lives only in the
+  // footer strip, and the catalogue does not advertise its total tour count
+  // anywhere. Retained i18n keys are kept for potential reuse.
 
   return (
     // Not sticky — the parent header in `app/tours/list/page.tsx` is the sticky
@@ -179,18 +169,8 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
         </span>
       </div>
 
-      {/* Tour count badge — top-right. Fades in as display block fades out so 88px
-          collapsed state still carries a readable signal (count + masthead).
-          Cream-tinted pill with dark amber text (B24 dark-text family). */}
-      <motion.div
-        className="absolute right-4 top-3 z-10 sm:right-6 sm:top-4 lg:right-8"
-        style={reducedMotion ? { opacity: 0 } : { opacity: countBadgeOpacity }}
-      >
-        <span className="inline-flex items-center gap-2 rounded-full border border-amber-300/55 bg-[#faf8f3]/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-900 backdrop-blur-sm shadow-[0_2px_10px_rgba(120,90,40,0.18)]">
-          <span className="h-1 w-1 rounded-full bg-amber-700" aria-hidden />
-          {count} tours
-        </span>
-      </motion.div>
+      {/* (Tour-count badge removed 2026-05-20 — the catalogue does not advertise
+          its total tour count anywhere.) */}
 
       {/* Display block — sans-bold heroTitle + upright light-serif accent
           + sub + curator. Fades out during the collapse so the 88px state

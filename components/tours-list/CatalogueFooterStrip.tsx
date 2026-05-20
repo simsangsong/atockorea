@@ -24,14 +24,9 @@ import {
  *    Token `LIST_CURATOR_CLS` was updated; this consumer just inherits.
  */
 
-interface CatalogueFooterStripProps {
-  /** Total tour count — interpolates into the curator signature line. */
-  count: number;
-}
-
-export function CatalogueFooterStrip({ count }: CatalogueFooterStripProps) {
+export function CatalogueFooterStrip() {
   const t = useTranslations();
-  const footerLine = t('toursList.footerCuratorLine', { count });
+  const footerLine = t('toursList.footerCuratorLine');
 
   return (
     <footer
