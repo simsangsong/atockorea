@@ -11,7 +11,7 @@ import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 export const metadata = generateSEOMetadata({
   title: 'AtoC Korea - Korea Day Tours, Hand-Picked by Our Team',
-  description: 'Korea day tours hand-picked by our team. Same operators trusted by Klook, GetYourGuide, and Viator — book direct here, compare prices anytime.',
+  description: "Korea day tours hand-picked by our team — the same operators listed on the world's leading travel platforms, booked direct here at direct prices.",
   url: '/',
   tags: ['Korea tours', 'Seoul tours', 'Busan tours', 'Jeju tours', 'day tours', 'travel Korea'],
 });
