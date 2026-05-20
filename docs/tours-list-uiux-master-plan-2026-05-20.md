@@ -31,12 +31,12 @@
 | 3 — Contextual Vignette Band + Empty State 업그레이드 | ✅ 완료 | 2026-05-20 | 2026-05-20 | 31dcef0e | ContextualVignetteBand(7-accent) + EmptyStateRecovery(3-action) 완료. 3.4/3.5(ResultsMeta+view toggle)는 Editorial 그리드 의존으로 Phase 4 이관. 카드 SHA `a931fe4e`. 사용자 "계속" 진행 |
 | 4 — Editorial Grid (3-up vertical default + view toggle) + 6번째마다 Editorial Insert + Conversion Rescue Band | ✅ 완료 | 2026-05-20 | 2026-05-20 | 6e758dc2 | 4.0-4.11 완료. Editorial 그리드(모바일 2열)·view toggle·Insert(6/12/18)·RescueBand(28+)·End-of-results·Tier B Features 멀티셀렉트·More 버튼(2.7). **Duration은 DROP**(전 투어 종일, B13). 카드 SHA `a931fe4e` 전구간 유지. type-check clean |
 | 5 — Tier B 필터 (Duration·Time·Group·Language) — **API 확장 의존** | 📦 보류 | — | — | — | time/group/language는 DB 컬럼 부재. 백엔드 스프린트 필요. Phase 0 게이트에서 재평가 |
-| 6 — 모션 폴리시 (hero scroll-collapse·card stagger·refetch shimmer·editorial insert reveal) | 🔄 진행 중 | 2026-05-20 | — | (pending) | scroll-freeze 가드(B11). hero ken burns/collapse는 Phase 1 완료. 카드 sacred(B2) → wrapper만 모션, above-fold 정적·below-fold fade (LCP/CLS 안전). reduce-motion 가드 전면 |
+| 6 — 모션 폴리시 (hero scroll-collapse·card stagger·refetch shimmer·editorial insert reveal) | ✅ 완료 | 2026-05-20 | 2026-05-20 | d9badcc8 | insert/band whileInView fade-up · active filter chip AnimatePresence fade-scale · refetch opacity 70 · reduce-motion 가드 전면. hero ken burns/collapse Phase 1 완료. **6.3 per-card stagger는 LCP/CLS·B2·B11 리스크로 의도적 생략**. next build ✓. 카드 SHA `a931fe4e` |
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단·롤백 / 📦 백로그
 
-**현재 활성 Phase: Phase 6 — 모션 폴리시 (🔄 진행 중).**
-**다음 액션: §6.6 — 6.5 editorial insert/band viewport reveal · 6.6 active filter chip AnimatePresence dismiss · 6.3 below-fold 카드 fade(opacity-only, LCP-safe) · 6.4 refetch opacity · reduce-motion 가드 전면. hero(6.1/6.2)는 Phase 1 완료. B11 scroll-freeze 가드 — 신규 scroll-linked 금지, viewport-trigger(whileInView once)만.**
+**현재 활성 Phase: 없음 — Phase 0·1·2·3·4·6 ✅ 완료. Phase 5(시간/그룹/언어 필터)만 📦 보류 (DB 컬럼 부재, 백엔드 스프린트 필요).**
+**프로젝트 상태: /tours/list 매거진 톤 업그레이드 핵심 완료. Phase 5는 DB 확장 합의 시 진입 (§6.5). 잔여 폴리시/측정(Lighthouse LCP, 60fps 실측)은 사용자 dev 환경에서 확인 권장.**
 
 **참고: B32로 B1(ivory+amber)이 site-native(파스텔 메시 + 반투명 화이트 + slate-900)로 번복됨. Phase 3 신규 컴포넌트도 site-native 톤. 단, ContextualVignetteBand의 destination accent(volcano teal 등 7색)는 B6 약속이라 유지 — accent는 컨텍스트 강조용이지 base 톤 아님.**
 
