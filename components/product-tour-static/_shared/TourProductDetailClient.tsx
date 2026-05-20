@@ -30,6 +30,13 @@ import { getTourCompareLinks } from "@/lib/tour/platform-compare-registry";
 import { pickAssistantQuickChipsFromViewModel } from "@/lib/tour-product/assistantQuickChips";
 import { useTranslations } from "@/lib/i18n";
 
+/**
+ * Platform price-compare widget hidden per user direction 2026-05-20 — the site
+ * no longer surfaces named OTA platforms (Klook/GYG/Viator) anywhere. Flip back
+ * to `true` to restore the comparison strategy (registry + component intact).
+ */
+const SHOW_PLATFORM_COMPARE = false;
+
 export type TourProductDetailClientProps = {
   viewModel: TourProductDetailViewModel;
   checkout?: TourProductCheckoutContext | null;
@@ -260,9 +267,10 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           </div>
         </section>
 
-        {/* Same tour on Klook · GetYourGuide · Viator — renders only when the
-            registry has verified OTA links for this slug. */}
-        {hasPlatformCompareLinks ? (
+        {/* Price-compare widget — hidden 2026-05-20 (SHOW_PLATFORM_COMPARE=false).
+            Previously: same tour on global OTA platforms, shown when the registry
+            had verified links for this slug. */}
+        {SHOW_PLATFORM_COMPARE && hasPlatformCompareLinks ? (
           <section className="mx-3 mt-4 lg:mx-0">
             <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
               <PlatformCompareBlock tourProductSlug={tourProductSlug} />
