@@ -18,12 +18,13 @@
 | Phase | 상태 | 시작일 | 완료일 | 마지막 커밋 | 비고 |
 |---|---|---|---|---|---|
 | 0 — 게이트 (코드 실사 + 토큰 + i18n 키 + cart 카운트 소스 확인 + 결정 로그) | ✅ 완료 | 2026-05-20 | 2026-05-20 | (pending) | **i18n nav.* 키 6 locale 이미 존재(재사용)** · **cart 배지는 글로벌 카운트 스토어 부재로 보류(N6)** · 토큰/결정 확정 |
-| 1 — 비주얼/구조 리스킨 (frosted white · slate-900 active · 상단 인디케이터 바 + fill 아이콘 · safe-area · i18n 라벨 · a11y) | 🔄 진행 중 | 2026-05-20 | — | — | 가족 톤 진입 핵심 |
-| 2 — 모션 폴리시 (spring tap · active 전환 · reduce-motion 가드). ~~cart 배지~~ N6 보류 | ⏳ | — | — | — | cart 배지는 글로벌 cart context 도입 시 별도 |
+| 1 — 비주얼/구조 리스킨 (frosted white · slate-900 active · 상단 인디케이터 바 + fill 아이콘 · safe-area · i18n 라벨 · a11y) | ✅ 완료 | 2026-05-20 | 2026-05-20 | df8de825 | frosted+slate+인디케이터바+fill+i18n+safe-area+aria-current. type-check clean |
+| 2 — 모션 폴리시 (spring tap · active 전환 · reduce-motion 가드). ~~cart 배지~~ N6 보류 | ✅ 완료 | 2026-05-20 | 2026-05-20 | df8de825 | whileTap spring(560/22) + layoutId 인디케이터 + reduce-motion 가드. cart 배지는 N6 보류(글로벌 cart context 도입 시 별도) |
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ✅ 완료 / ❌ 중단 / 📦 보류
 
-**현재 활성 Phase: Phase 1 — 비주얼/구조 리스킨 (🔄). Phase 0 ✅ (키 재사용, 배지 보류).**
+**현재 활성 Phase: 없음 — Phase 0·1·2 ✅ 완료. (cart 배지만 N6 보류 — 글로벌 cart context 도입 시 별도.)**
+**사용자 모바일 확인 권장: nav frosted+slate 톤 · active 상단 바+fill · i18n 라벨 · safe-area · 탭 spring.**
 
 ---
 
@@ -51,6 +52,7 @@
 | 날짜 | 항목 | 커밋 | 비고 |
 |---|---|---|---|
 | 2026-05-20 | 마스터 플랜 작성 | 4b7a0007 | `docs/bottom-nav-uiux-master-plan-2026-05-20.md` |
+| 2026-05-20 | **Phase 1+2 ✅ — BottomNav 전면 리스킨 + 모션.** frosted white(bg-white/85 backdrop-blur-xl, Header와 동일) · blue-600→slate-900 · active 상단 인디케이터 바+fill 아이콘+bold(N3) · i18n nav.*(기존 키 재사용) · safe-area · aria-current · whileTap spring(560/22) + layoutId 인디케이터 + reduce-motion 가드. FloatingLanguageToggle blue→slate(보텀 영역 일관성). cart 배지 N6 보류. | df8de825 · 57624547 | type-check clean. 4탭 유지(N4), 신규 라이브러리 없음(N11), md:hidden 유지(N12) |
 | 2026-05-20 | **Phase 0 ✅ — 게이트.** 실사 결과: (a) `nav.home/tours/cart/my` i18n 키 6 locale **이미 존재**(Header 사용 중) → 재사용. (b) cart 카운트 — Header도 배지 없음, 메인 cart는 비동기(게스트 sessionStorage/로그인 API), 글로벌 client 카운트 스토어 부재 → **N6대로 배지 보류**(가짜 숫자 금지). Phase 2는 모션만. | (pending) | planner-first |
 
 ---
