@@ -2,67 +2,143 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "@/lib/i18n";
 
-const navItems = [
+/**
+ * Mobile sticky bottom nav (md:hidden). Site-native upgrade (master plan
+ * docs/bottom-nav-uiux-master-plan-2026-05-20.md):
+ *  • frosted white surface matching the global Header (N2)
+ *  • slate-900 active accent — blue retired (N1)
+ *  • active = top indicator bar + filled icon + bold label (N3)
+ *  • 4 tabs, no center FAB (N4); i18n labels (N5); safe-area (N7);
+ *    reduce-motion-gated spring tap (N8); aria-current (N9)
+ * Cart count badge intentionally deferred — no global client cart-count store
+ * yet; showing a fabricated number would violate N6.
+ */
+
+type NavItem = {
+  key: string;
+  labelKey: string;
+  path: string;
+  /** outline (inactive) + solid (active) icon paths share the same 24x24 box. */
+  outline: React.ReactNode;
+  solid: React.ReactNode;
+};
+
+const NAV_ITEMS: NavItem[] = [
   {
-    name: "Home",
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-      </svg>
-    ),
+    key: "home",
+    labelKey: "nav.home",
     path: "/",
+    outline: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.8}
+        d="M3 11.5 12 4l9 7.5M5.5 10v9.5a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5V10"
+      />
+    ),
+    solid: <path d="M11.3 3.3a1 1 0 0 1 1.4 0l8 7.1a1 1 0 0 1-.66 1.75H19v7.35a.5.5 0 0 1-.5.5h-4.1v-5.2h-4.8v5.2H5.5a.5.5 0 0 1-.5-.5V12.15h-1.04a1 1 0 0 1-.66-1.75l8-7.1Z" />,
   },
   {
-    name: "Tours",
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-      </svg>
-    ),
+    key: "tours",
+    labelKey: "nav.tours",
     path: "/tours/list",
+    outline: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.8}
+        d="M9 19.5 3.8 17a1 1 0 0 1-.55-.9V5.7a1 1 0 0 1 1.45-.9L9 7m0 12.5 6-3m-6 3V7m6 9.5 4.75 2.4a1 1 0 0 0 1.45-.9V6.9a1 1 0 0 0-.55-.9L15 4m0 12.5V4m0 0L9 7"
+      />
+    ),
+    solid: <path d="M8.6 6.2 3.9 4.9A1.4 1.4 0 0 0 2 6.25v10.4a1.4 1.4 0 0 0 .9 1.3l5.7 2.1V6.2Zm1.8 13.6 4-2V4.4l-4 2v13.4Zm5.8-15.6v13.6l4.9 1.3a1.4 1.4 0 0 0 1.9-1.3V7.35a1.4 1.4 0 0 0-.9-1.3l-5.8-2.05Z" />,
   },
   {
-    name: "Cart",
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    ),
+    key: "cart",
+    labelKey: "nav.cart",
     path: "/cart",
+    outline: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.8}
+        d="M3 4h2l1.2 11.2a1 1 0 0 0 1 .9h8.9a1 1 0 0 0 1-.82L19.5 7H6M9.5 20a1 1 0 1 0 0-.01M17 20a1 1 0 1 0 0-.01"
+      />
+    ),
+    solid: <path d="M3 3.2a.9.9 0 0 0 0 1.8h1.3l1.27 10.5a1.6 1.6 0 0 0 1.6 1.4h9.16a1.6 1.6 0 0 0 1.57-1.27L19.9 7.1a.8.8 0 0 0-.78-.96H6.05l-.2-1.67A1.6 1.6 0 0 0 4.26 3.2H3Zm6.4 15.3a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3Zm7.4 0a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3Z" />,
   },
   {
-    name: "My Page",
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-      </svg>
-    ),
+    key: "my",
+    labelKey: "nav.my",
     path: "/mypage",
+    outline: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.8}
+        d="M15.5 8.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0ZM5 20a7 7 0 0 1 14 0"
+      />
+    ),
+    solid: <path d="M12 12.4a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 1.4c-4.2 0-7.6 2.8-7.6 6.2 0 .55.45 1 1 1h13.2c.55 0 1-.45 1-1 0-3.4-3.4-6.2-7.6-6.2Z" />,
   },
 ];
 
 export default function BottomNav() {
   const pathname = usePathname();
+  const t = useTranslations();
+  const reduce = useReducedMotion() === true;
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-white/40 z-50 md:hidden shadow-lg">
-      <div className="flex items-center justify-around h-16">
-        {navItems.map((item) => {
-          const isActive = item.path === "/tours/list"
-            ? pathname.startsWith("/tours")
-            : pathname === item.path;
+    <nav
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-200/60 bg-white/85 backdrop-blur-xl shadow-[0_-8px_24px_-16px_rgba(15,23,42,0.18)] md:hidden [padding-bottom:env(safe-area-inset-bottom)]"
+    >
+      <div className="flex h-16 items-stretch justify-around">
+        {NAV_ITEMS.map((item) => {
+          const isActive =
+            item.path === "/tours/list"
+              ? pathname.startsWith("/tours")
+              : item.path === "/"
+                ? pathname === "/"
+                : pathname.startsWith(item.path);
           return (
             <Link
-              key={item.name}
+              key={item.key}
               href={item.path}
-              className={`flex flex-col items-center justify-center flex-1 h-full transition-colors ${
-                isActive ? "text-blue-600" : "text-gray-500"
+              aria-current={isActive ? "page" : undefined}
+              className={`group relative flex flex-1 flex-col items-center justify-center gap-0.5 transition-colors ${
+                isActive ? "text-slate-900" : "text-slate-400 hover:text-slate-600"
               }`}
             >
-              <div className={isActive ? "text-blue-600" : ""}>{item.icon}</div>
-              <span className={`text-xs mt-1 ${isActive ? "font-semibold" : ""}`}>
-                {item.name}
+              {/* Active top indicator bar (N3) */}
+              {isActive ? (
+                <motion.span
+                  layoutId={reduce ? undefined : "bottomnav-indicator"}
+                  className="absolute top-0 h-0.5 w-8 rounded-full bg-slate-900"
+                  transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                  aria-hidden
+                />
+              ) : null}
+
+              <motion.svg
+                viewBox="0 0 24 24"
+                className="h-[22px] w-[22px]"
+                fill={isActive ? "currentColor" : "none"}
+                stroke={isActive ? "none" : "currentColor"}
+                aria-hidden
+                whileTap={reduce ? undefined : { scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 560, damping: 22 }}
+              >
+                {isActive ? item.solid : item.outline}
+              </motion.svg>
+
+              <span
+                className={`text-[10.5px] leading-none tracking-tight ${
+                  isActive ? "font-semibold" : "font-medium"
+                }`}
+              >
+                {t(item.labelKey)}
               </span>
             </Link>
           );
@@ -71,4 +147,3 @@ export default function BottomNav() {
     </nav>
   );
 }
-
