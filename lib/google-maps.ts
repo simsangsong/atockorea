@@ -51,7 +51,13 @@ export const libraries: ("places" | "marker" | "drawing" | "geometry" | "visuali
  * "Loading map…" placeholder.
  */
 export const GOOGLE_MAPS_LOADER_ID = 'google-map-script';
-export const GOOGLE_MAPS_LOADER_VERSION = 'weekly';
+// Channel choice: `weekly` re-rolls every week (a moving target — a fresh
+// weekly build can regress AdvancedMarkerElement / loader behavior, which is
+// what broke the builder map after the loader was pinned to it). `quarterly`
+// is the stable, still-current production channel Google recommends for apps
+// that don't want weekly churn — NOT a legacy/old version. AdvancedMarkerElement
+// is fully supported on quarterly.
+export const GOOGLE_MAPS_LOADER_VERSION = 'quarterly';
 
 /**
  * 格式化地址为坐标
