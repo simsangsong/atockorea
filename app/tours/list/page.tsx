@@ -17,6 +17,7 @@ import { DestinationPillSelect } from '@/components/tours-list/DestinationPillSe
 import { ActiveFilterStrip, type ActiveFilterChip } from '@/components/tours-list/ActiveFilterStrip';
 import { ContextualVignetteBand } from '@/components/tours-list/ContextualVignetteBand';
 import { EmptyStateRecovery } from '@/components/tours-list/EmptyStateRecovery';
+import { ResultsMetaStrip, type CatalogueViewMode } from '@/components/tours-list/ResultsMetaStrip';
 import {
   LIST_FIELD_CLS,
   LIST_CHIP_ACTIVE_CLS,
@@ -145,6 +146,8 @@ export default function ToursListPage() {
   const [showPricePanel, setShowPricePanel] = useState(false);
   /** Mobile full-sheet filter drawer (Phase 2.9). */
   const [showMobileFilters, setShowMobileFilters] = useState(false);
+  /** Grid view mode (Phase 4.0 — B7: Editorial 3-up is default). Persisted. */
+  const [viewMode, setViewMode] = useState<CatalogueViewMode>('editorial');
 
   const priceAnchorRef = useRef<HTMLDivElement>(null);
   const abortRef = useRef<AbortController | null>(null);
@@ -371,6 +374,25 @@ export default function ToursListPage() {
       document.removeEventListener('keydown', onKey);
     };
   }, [showPricePanel]);
+
+  // --- View mode: hydrate from localStorage (Phase 4.0/3.5) ----------------------------
+  useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem('toursList.view');
+      if (saved === 'editorial' || saved === 'compact') setViewMode(saved);
+    } catch {
+      /* localStorage unavailable — keep default */
+    }
+  }, []);
+
+  const changeViewMode = useCallback((v: CatalogueViewMode) => {
+    setViewMode(v);
+    try {
+      window.localStorage.setItem('toursList.view', v);
+    } catch {
+      /* ignore persistence failure */
+    }
+  }, []);
 
   // --- Mobile filter drawer: body scroll lock + ESC ------------------------------------
   useEffect(() => {
@@ -998,7 +1020,11 @@ export default function ToursListPage() {
           ) : null}
         </AnimatePresence>
 
-        <section className="mx-auto w-full max-w-5xl px-2 py-4 sm:px-4 sm:py-5">
+        <section
+          className={`mx-auto w-full px-2 py-4 transition-[max-width] duration-300 sm:px-4 sm:py-5 ${
+            viewMode === 'editorial' ? 'max-w-[1320px]' : 'max-w-5xl'
+          }`}
+        >
           {isInitialLoading ? (
             <SkeletonGrid count={INITIAL_PAGE_SIZE} />
           ) : error ? (
@@ -1037,10 +1063,24 @@ export default function ToursListPage() {
             )
           ) : (
             <>
+              {/* Results meta + view toggle (Phase 4.0). */}
+              <ResultsMetaStrip
+                sortLabel={t('toursList.sortedBy', {
+                  sort: sortOptions.find((o) => o.value === sortBy)?.label ?? '',
+                })}
+                view={viewMode}
+                onViewChange={changeViewMode}
+                editorialLabel={t('toursList.viewEditorial')}
+                compactLabel={t('toursList.viewCompact')}
+                viewAriaLabel={t('toursList.viewEditorial')}
+              />
+
               <div
-                className={`grid grid-cols-1 gap-y-5 transition-opacity duration-200 sm:gap-y-6 lg:grid-cols-2 lg:gap-x-6 lg:gap-y-7 ${
-                  isRefetching ? 'opacity-60' : 'opacity-100'
-                }`}
+                className={`grid transition-opacity duration-200 ${
+                  viewMode === 'editorial'
+                    ? 'grid-cols-1 gap-y-8 md:grid-cols-2 md:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10'
+                    : 'grid-cols-1 gap-y-5 sm:gap-y-6 lg:grid-cols-2 lg:gap-x-6 lg:gap-y-7'
+                } ${isRefetching ? 'opacity-60' : 'opacity-100'}`}
                 aria-busy={isRefetching}
               >
                 {visibleTours.map((tour) => (
@@ -1049,8 +1089,12 @@ export default function ToursListPage() {
                     tour={tour}
                     detailHref={consumerTourDetailHref(tour.id, tour.slug)}
                     formatPriceFn={formatPrice}
-                    layout="horizontal"
-                    imageSizes="(min-width: 1024px) 240px, 38vw"
+                    layout={viewMode === 'editorial' ? 'vertical' : 'horizontal'}
+                    imageSizes={
+                      viewMode === 'editorial'
+                        ? '(min-width: 1024px) 420px, (min-width: 768px) 46vw, 92vw'
+                        : '(min-width: 1024px) 240px, 38vw'
+                    }
                   />
                 ))}
               </div>
