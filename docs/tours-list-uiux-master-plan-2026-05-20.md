@@ -29,14 +29,14 @@
 | 1 — Catalogue Hero (240→88 collapsing magazine cover) + 푸터 strip | ✅ 완료 | 2026-05-20 | 2026-05-20 | 2d3041f2 | 사용자 "좋아 완벽해" 표지 격 통과 (2026-05-20). 카드 SHA `a931fe4e` 변경 0 (B2). slate-200/900 grep = 0 (B1). i18n 6/6. type-check clean. B18-B31 사용자 직접 디자인 반복 14회 반영 (italic 금지 / 사진 3회 교체 / dark warm Kinfolk 톤 / Noto Serif KR / text-deck-left layout / 자연 cream 오버레이 / 큐레이터 라인 제거) |
 | 2 — Sticky Filter Rail 격상 (site-native: 화이트+slate, h-11, active filter chip strip) | ✅ 완료 | 2026-05-20 | 2026-05-20 | 407aa8e2 | B32로 ivory+amber → site-native(반투명 화이트 + slate-900) 전환. 2.1/2.2/2.3/2.4/2.5/2.6/2.8/2.9/2.10 완료. **2.7 More는 Tier B 필터(Phase 4.10)와 함께로 이관**. acceptance: amber-900 grep=0 · 카드 SHA `a931fe4e` · ActiveFilterStrip dismissible · 모바일 drawer 0.3s · type-check clean. 사용자 모바일 확인 완료 |
 | 3 — Contextual Vignette Band + Empty State 업그레이드 | ✅ 완료 | 2026-05-20 | 2026-05-20 | 31dcef0e | ContextualVignetteBand(7-accent) + EmptyStateRecovery(3-action) 완료. 3.4/3.5(ResultsMeta+view toggle)는 Editorial 그리드 의존으로 Phase 4 이관. 카드 SHA `a931fe4e`. 사용자 "계속" 진행 |
-| 4 — Editorial Grid (3-up vertical default + view toggle) + 6번째마다 Editorial Insert + Conversion Rescue Band | 🔄 (시각 코어 완료, 4.10 Tier B 남음) | 2026-05-20 | — | 70f965ba | 4.0-4.9 완료 (Editorial 그리드·view toggle·Insert·RescueBand·End-of-results). acceptance 충족. **4.10 Tier B(Duration/Features)+More(2.7)는 durations API 계약 확인 필요.** 카드 SHA `a931fe4e` 유지 |
+| 4 — Editorial Grid (3-up vertical default + view toggle) + 6번째마다 Editorial Insert + Conversion Rescue Band | ✅ 완료 | 2026-05-20 | 2026-05-20 | 6e758dc2 | 4.0-4.11 완료. Editorial 그리드(모바일 2열)·view toggle·Insert(6/12/18)·RescueBand(28+)·End-of-results·Tier B Features 멀티셀렉트·More 버튼(2.7). **Duration은 DROP**(전 투어 종일, B13). 카드 SHA `a931fe4e` 전구간 유지. type-check clean |
 | 5 — Tier B 필터 (Duration·Time·Group·Language) — **API 확장 의존** | 📦 보류 | — | — | — | time/group/language는 DB 컬럼 부재. 백엔드 스프린트 필요. Phase 0 게이트에서 재평가 |
 | 6 — 모션 폴리시 (hero scroll-collapse·card stagger·refetch shimmer·editorial insert reveal) | ⏳ | — | — | — | scroll-freeze 가드 (상세페이지 트라우마 동일 적용) |
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단·롤백 / 📦 백로그
 
-**현재 활성 Phase: Phase 4 — Editorial Grid + view toggle + Editorial Insert + Rescue Band + Tier B 필터 (🔄 진행 중).**
-**다음 액션: §6.4 4.0(ResultsMeta+view toggle 이관분) → 4.1 Editorial 3-up 그리드 → 4.2 카드 layout='vertical' → 4.3 Compact toggle → 4.4-4.6 EditorialInsert → 4.7-4.9 RescueBand + End-of-results → 4.10 Tier B 필터 + More(2.7) → 4.11 i18n. 카드 SHA `a931fe4e` 매 커밋 재검증 (call-site layout prop만 변경).**
+**현재 활성 Phase: 없음 (Phase 1·2·3·4 ✅ 완료). Phase 5(📦 보류, DB 확장) / Phase 6(모션 폴리시) 남음.**
+**다음 액션: 사용자 확인 후 Phase 6(모션 폴리시 — ken burns·card stagger·insert reveal·refetch shimmer·reduce-motion 가드·60fps) 진입 또는 마감. Phase 5는 DB 확장 의존이라 백엔드 스프린트 합의 시.**
 
 **참고: B32로 B1(ivory+amber)이 site-native(파스텔 메시 + 반투명 화이트 + slate-900)로 번복됨. Phase 3 신규 컴포넌트도 site-native 톤. 단, ContextualVignetteBand의 destination accent(volcano teal 등 7색)는 B6 약속이라 유지 — accent는 컨텍스트 강조용이지 base 톤 아님.**
 
@@ -93,6 +93,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 |---|---|---|---|
 | 2026-05-20 | **Phase 3.2/3.3 — ContextualVignetteBand (destination 7-accent, B6).** mapContextToAccent+ACCENT(lib/tours-hub-accents) 활용. destination/feature 컨텍스트에서만 등장, accent 그라데이션 rule + 틴트 eyebrow + reset. base는 site-native, accent는 컨텍스트 강조. i18n 6 locale 2키. | b707eeaa | Jeju→teal 등 7-accent 계승. 카드 SHA `a931fe4e` |
 | 2026-05-20 | **Phase 3.6/3.7/3.8 — EmptyStateRecovery 3-action (B10).** (a) 최제약 필터 자동 감지·해제(휴리스틱 price>dest>features>type>search), (b) /itinerary-builder, (c) /support 컨시어지. page.tsx empty 브랜치 교체. i18n 6 locale 5키. 3.4/3.5(ResultsMeta+view toggle)는 Phase 4 이관. | 31dcef0e | Phase 3 코어 완료. 카드 SHA `a931fe4e` |
+| 2026-05-20 | **Phase 4.10/4.11 ✅ + Phase 4 마감 — Tier B Features + More(2.7).** More 버튼 → Tier B Features 행 토글(데스크탑) + 모바일 drawer Features 섹션. 멀티셀렉트(UNESCO/Cruise/Seasonal/Hotel pickup/Customizable, badge 실데이터 검증). features CSV 토글 + ActiveFilterStrip feature별 개별 칩. Duration DROP(전 투어 종일, B13 — §D). 모바일 그리드 2열로 카드 크기 정상화. | 6e758dc2 | Phase 4 ✅. 카드 SHA `a931fe4e` 전구간 유지. type-check clean. Phase 1·2·3·4 모두 완료 |
 | 2026-05-20 | **Phase 4.0–4.9 — Editorial Grid + view toggle + Insert + Rescue Band.** 4.0 ResultsMetaStrip(count 제외) + view toggle(localStorage). 4.1/4.2/4.3 Editorial 3-up(vertical, max-w-1320) ↔ Compact 2-up, 카드 layout prop만 변경(SHA 유지). 4.4/4.5/4.6 EditorialInsert 3변형 6/12/18 슬롯(B8). 4.7/4.8/4.9 ConversionRescueBand(visibleCount>=28, B9) + End-of-results 시그니처. i18n 6 locale 다수 키. | 9e218a1e · 7c0e882f · 70f965ba | Phase 4 ✅ acceptance(그리드 리듬·rescue 28+·view toggle·카드 diff 0) 충족. **4.10 Tier B 필터(Duration/Features)+More(2.7)는 durations API 계약 확인 필요 — 별도 진행.** 카드 SHA `a931fe4e` |
 | 2026-05-20 | **Phase 3 ✅ + Phase 4 시작 (planner-first).** 사용자 "계속" 진행. Phase 3 acceptance: Jeju teal band · empty 3-action · 카드 diff 0 (3.4/3.5는 Phase 4 이관). Phase 4 (Editorial Grid + view toggle + Insert + Rescue Band + Tier B) 🔄. | (pending) | 카드 layout='vertical'은 call-site prop만 변경 (B2/B15 허용 — 카드 파일 SHA 유지). §6.4 4.0→4.11 |
 | 2026-05-20 | 마스터 플랜 v1 작성 | (pending) | `docs/tours-list-uiux-master-plan-2026-05-20.md` + `.claude/skills/tours-list-uiux/SKILL.md` + MEMORY.md pointer |
@@ -147,7 +148,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | Hero에 video 배경 | 매거진 fashion | scroll-freeze 가드 + LCP 위협. 정지 사진 + ken burns가 ceiling |
 | Infinite scroll → pagination 회귀 | SEO 의견 | 현재 sentinel + manual "load more" 하이브리드가 best practice |
 | Filter rail 좌측 사이드바 (Booking.com 식) | 데스크탑 패턴 | 모바일 호환 비용 ↑, 현재 sticky top rail이 모바일-친화. Phase 4까지 보류 |
-| 2.7 "More" 버튼 (Tier B 펼치기 + 활성 카운터) | Phase 2.7 | Tier B 필터(Duration/Features)가 Phase 4.10이라 펼칠 내용 부재. Phase 4에서 Tier B 필터와 함께 구현 |
+| 2.7 "More" 버튼 (Tier B 펼치기 + 활성 카운터) | Phase 2.7 | ✅ Phase 4.10에서 구현 완료 (6e758dc2) |
+| Duration 필터 (Half/Full/Multi-day) | Phase 4.10 | **DROP** — 실 데이터 확인 결과 전 활성 투어가 8~13h 종일 데이투어. 구분 무의미(전부 매칭 or 0). B13(동작 안 하는 필터 금지). 향후 멀티데이/반나절 인벤토리 생기면 재고 |
 
 ---
 
