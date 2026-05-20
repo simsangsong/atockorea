@@ -1081,7 +1081,7 @@ export default function ToursListPage() {
               <div
                 className={`grid transition-opacity duration-200 ${
                   viewMode === 'editorial'
-                    ? 'grid-cols-1 gap-y-8 md:grid-cols-2 md:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10'
+                    ? 'grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-4 md:grid-cols-2 md:gap-x-6 md:gap-y-8 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10'
                     : 'grid-cols-1 gap-y-5 sm:gap-y-6 lg:grid-cols-2 lg:gap-x-6 lg:gap-y-7'
                 } ${isRefetching ? 'opacity-60' : 'opacity-100'}`}
                 aria-busy={isRefetching}
@@ -1098,7 +1098,7 @@ export default function ToursListPage() {
                         layout={viewMode === 'editorial' ? 'vertical' : 'horizontal'}
                         imageSizes={
                           viewMode === 'editorial'
-                            ? '(min-width: 1024px) 420px, (min-width: 768px) 46vw, 92vw'
+                            ? '(min-width: 1024px) 420px, (min-width: 768px) 46vw, 47vw'
                             : '(min-width: 1024px) 240px, 38vw'
                         }
                       />
