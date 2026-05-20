@@ -194,20 +194,24 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
         <div className="max-w-[820px]">
           {/* Dark warm typography (B24, 2026-05-20). Cream halo text-shadow gives
               Kinfolk press-print legibility on the cream deck wash without needing
-              a dark scrim. Stone-950 = warm near-black (not cold slate). */}
-          <h1 className="font-bold leading-[1.04] tracking-[-0.03em] text-stone-950 [text-shadow:0_1px_2px_rgba(255,255,255,0.95),0_0_22px_rgba(255,252,240,0.7),0_0_3px_rgba(255,255,255,0.85)] text-[26px] sm:text-[34px] lg:text-[40px]">
+              a dark scrim. Stone-950 = warm near-black (not cold slate).
+              B25 (2026-05-20): Korean magazine-serif (Noto Serif KR / 본명조) — Latin
+              glyphs in the same line fall back to Cormorant Garamond → Georgia. */}
+          <h1 className="font-magazine-serif-ko font-bold leading-[1.05] tracking-[-0.025em] text-stone-950 [text-shadow:0_1px_2px_rgba(255,255,255,0.95),0_0_22px_rgba(255,252,240,0.7),0_0_3px_rgba(255,255,255,0.85)] text-[26px] sm:text-[34px] lg:text-[40px]">
             {heroTitle}{' '}
-            {/* Warm amber upright serif accent — premium magazine deck tone. */}
-            <span className="font-serif font-light tracking-[-0.005em] text-amber-800">
+            {/* Warm amber light serif accent — premium magazine deck tone.
+                Latin-only span; inherits font-magazine-serif-ko from <h1>, so
+                Western glyphs render in Cormorant Garamond / Georgia at weight 300. */}
+            <span className="font-light tracking-[-0.005em] text-amber-800">
               {heroAccent}
             </span>
           </h1>
 
-          <p className="mt-2 max-w-[620px] text-[12.5px] leading-[1.55] text-stone-800 [text-shadow:0_1px_2px_rgba(255,255,255,0.95),0_0_10px_rgba(255,252,240,0.6)] sm:mt-2.5 sm:text-[13.5px]">
+          <p className="font-magazine-serif-ko mt-2 max-w-[620px] text-[13px] font-normal leading-[1.55] tracking-[-0.005em] text-stone-800 [text-shadow:0_1px_2px_rgba(255,255,255,0.95),0_0_10px_rgba(255,252,240,0.6)] sm:mt-2.5 sm:text-[14px]">
             {heroSub}
           </p>
 
-          <p className="mt-2 flex items-center gap-2 font-serif text-[10.5px] font-normal tracking-[0.02em] text-amber-900 [text-shadow:0_1px_2px_rgba(255,255,255,0.95),0_0_6px_rgba(255,252,240,0.5)] sm:mt-3 sm:text-[11.5px]">
+          <p className="font-magazine-serif-ko mt-2 flex items-center gap-2 text-[11px] font-medium tracking-[0.02em] text-amber-900 [text-shadow:0_1px_2px_rgba(255,255,255,0.95),0_0_6px_rgba(255,252,240,0.5)] sm:mt-3 sm:text-[12px]">
             <span className="inline-block h-px w-6 bg-amber-700/65" aria-hidden />
             {heroCurator}
           </p>

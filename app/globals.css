@@ -246,6 +246,23 @@ body.lang-ja {
   -webkit-font-smoothing: antialiased;
 }
 
+/*
+ * Magazine-serif typography for Korean catalogue surfaces (CatalogueHero, etc.).
+ * Noto Serif KR (본명조 / Source Han Serif KR equivalent) renders Korean glyphs
+ * in a Vogue Korea / Kinfolk Korea premium myeongjo. Western fallback chain
+ * (Cormorant Garamond → Georgia) handles Latin glyphs in the same line so a
+ * Korean+Latin mixed headline doesn't read as two fonts.
+ *
+ * Added 2026-05-20 (Phase 1 B25 — user "한글폰트" direction). Scope: catalogue
+ * only — do not extend to landing / hub / detail without master plan §B reversal.
+ */
+.font-magazine-serif-ko {
+  font-family: "Noto Serif KR", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ss01" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

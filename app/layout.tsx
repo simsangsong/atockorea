@@ -59,10 +59,14 @@ export default async function RootLayout({
         {/*
          * CJK full weights for ja / zh-CN / zh-TW. Google Fonts splits each language's
          * woff2 by unicode-range, so a Korean visitor doesn't pay for Japanese glyphs.
+         *
+         * Noto Serif KR — Korean myeongjo (Source Han Serif KR equivalent) for premium
+         * magazine display surfaces (Catalogue hero etc.). Same unicode-range strategy
+         * means non-Korean visitors don't download it.
          */}
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+KR:wght@300;400;500;600;700;900&display=swap"
         />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
