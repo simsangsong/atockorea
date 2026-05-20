@@ -133,9 +133,7 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
             'radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.15) 100%)',
         }}
       />
-      {/* Atmosphere — very light atmospheric tint to settle the photo.
-          User 2026-05-20 direction flip: text turns DARK warm, so the dim
-          layers also flip from slate-950 to a warm transparent (no cold cast). */}
+      {/* Atmosphere — very light atmospheric tint to settle the photo. */}
       <div
         className="absolute inset-0 bg-gradient-to-b from-amber-950/5 via-transparent to-amber-950/12"
         aria-hidden
@@ -144,15 +142,23 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_15%_95%,rgba(217,119,6,0.14)_0%,transparent_55%)]"
         aria-hidden
       />
-      {/* Cream "page deck" wash — replaces the previous dark deck shadow.
-          User 2026-05-20 6차: "글씨 자체를 어두운색으로 고급지게" — Kinfolk/Cereal
-          convention. Bottom band fades the photo toward ivory paper so dark
-          warm text sits on a soft cream-tinted surface (not on raw photo
-          highlights). Light enough that the dancer's lower hanbok still shows
-          through (~35% photo retained in deck zone). */}
+      {/*
+        LEFT vertical cream wash — Vogue Korea / Bazaar cover convention.
+        User 2026-05-20 8차 진단: bottom horizontal wash (B24) put cream uniformly
+        across the bottom — text was still illegible on the bottom-right because
+        the dancer's hanbok (bright cream/pink) bleeds through the moderate
+        opacity. Fix: anchor the wash to the LEFT (where palace/sky/stone live —
+        contrast-friendly) and confine text to that left zone via max-w. The
+        dancer occupies the right side of the photo and remains untouched —
+        magazine "text-deck-left + subject-right" cover layout.
+      */}
       <div
-        className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-[#faf8f3]/82 via-[#faf8f3]/38 to-transparent"
+        className="pointer-events-none absolute inset-y-0 left-0 right-0"
         aria-hidden
+        style={{
+          background:
+            'linear-gradient(90deg, rgba(250,248,243,0.92) 0%, rgba(250,248,243,0.72) 28%, rgba(250,248,243,0.38) 52%, rgba(250,248,243,0.12) 70%, transparent 82%)',
+        }}
       />
 
       {/* Masthead — top-left, always visible (survives the 88px collapse). */}
@@ -184,14 +190,19 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
           is clean. (italic banned 2026-05-20.) */}
       <motion.div
         // "카피 조금 아래로" (2026-05-20) — pb-6/8/10 → pb-3/4/5.
-        // Text now anchors close to the bottom edge of the photo (Vogue-cover
-        // deck feel — display sits ON the image, not above it) while leaving
-        // ~12px clearance over the slim ivory fade so the curator line stays
-        // crisp.
+        // Text anchors close to the bottom edge of the photo (Vogue-cover
+        // deck feel — display sits ON the image, not above it).
         className="relative z-10 flex h-full flex-col justify-end px-4 pb-3 sm:px-6 sm:pb-4 lg:px-8 lg:pb-5"
         style={reducedMotion ? undefined : { opacity: displayOpacity }}
       >
-        <div className="max-w-[820px]">
+        {/*
+          Text confined to the LEFT zone of the LEFT cream wash above.
+          Dancer + hanbok occupy the right ~40% of photo — keeping text
+          out of that zone removes the contrast problem at its source
+          (no amount of halo can rescue serif on bright hanbok highlights).
+          Responsive widths track the wash gradient stops above.
+        */}
+        <div className="max-w-[78%] sm:max-w-[58%] lg:max-w-[50%]">
           {/* Dark warm typography (B24, 2026-05-20). Cream halo text-shadow gives
               Kinfolk press-print legibility on the cream deck wash without needing
               a dark scrim. Stone-950 = warm near-black (not cold slate).
