@@ -133,21 +133,23 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
             'radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.15) 100%)',
         }}
       />
-      {/* Restrained atmosphere — light overall dim + amber wash bottom-left.
-          User 2026-05-20: "사진 많이 가리지 말고" — heavy scrim removed; text
-          contrast now comes from per-element [text-shadow] + minimal bottom band. */}
+      {/* Atmosphere — slight overall dim + amber wash bottom-left.
+          Top stays clear (no top scrim) so sky + roof + dancer remain visible. */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-slate-950/10 via-transparent to-slate-950/35"
+        className="absolute inset-0 bg-gradient-to-b from-slate-950/8 via-transparent to-slate-950/30"
         aria-hidden
       />
       <div
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_15%_95%,rgba(217,119,6,0.18)_0%,transparent_55%)]"
         aria-hidden
       />
-      {/* Minimal bottom text-band — only the immediate region behind the display
-          block, not the full lower half. Keeps the photo dominant. */}
+      {/* Magazine-cover deck shadow — bottom band only, smooth transition.
+          User 2026-05-20: "흰 카피 안 보임" → restoring stronger bottom darkening,
+          but limited to the lower portion so the photo dominates the upper 50%
+          (Vogue cover convention: photo top half pure, deck text bottom half).
+          Top of hero still pristine — sky/roof/dancer face all visible. */}
       <div
-        className="absolute inset-x-0 bottom-0 h-[42%] bg-gradient-to-t from-black/55 via-black/15 to-transparent"
+        className="absolute inset-x-0 bottom-0 h-[58%] bg-gradient-to-t from-black/88 via-black/45 to-transparent"
         aria-hidden
       />
 
@@ -188,7 +190,7 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
         style={reducedMotion ? undefined : { opacity: displayOpacity }}
       >
         <div className="max-w-[820px]">
-          <h1 className="font-bold leading-[1.04] tracking-[-0.03em] text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.75),0_1px_3px_rgba(0,0,0,0.6)] text-[26px] sm:text-[34px] lg:text-[40px]">
+          <h1 className="font-bold leading-[1.04] tracking-[-0.03em] text-white [text-shadow:0_2px_22px_rgba(0,0,0,0.95),0_1px_6px_rgba(0,0,0,0.85),0_0_2px_rgba(0,0,0,0.5)] text-[26px] sm:text-[34px] lg:text-[40px]">
             {heroTitle}{' '}
             {/* Upright serif accent (italic banned per user direction 2026-05-20).
                 Light serif weight + tight tracking reads premium without italic flair. */}
@@ -197,12 +199,12 @@ export function CatalogueHero({ count }: CatalogueHeroProps) {
             </span>
           </h1>
 
-          <p className="mt-2 max-w-[620px] text-[12.5px] leading-[1.55] text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.85)] sm:mt-2.5 sm:text-[13.5px]">
+          <p className="mt-2 max-w-[620px] text-[12.5px] leading-[1.55] text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.95),0_1px_3px_rgba(0,0,0,0.8)] sm:mt-2.5 sm:text-[13.5px]">
             {heroSub}
           </p>
 
-          <p className="mt-2 flex items-center gap-2 font-serif text-[10.5px] font-normal tracking-[0.02em] text-white/90 [text-shadow:0_1px_6px_rgba(0,0,0,0.85)] sm:mt-3 sm:text-[11.5px]">
-            <span className="inline-block h-px w-6 bg-white/60" aria-hidden />
+          <p className="mt-2 flex items-center gap-2 font-serif text-[10.5px] font-normal tracking-[0.02em] text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.95),0_1px_2px_rgba(0,0,0,0.7)] sm:mt-3 sm:text-[11.5px]">
+            <span className="inline-block h-px w-6 bg-white/70" aria-hidden />
             {heroCurator}
           </p>
         </div>
