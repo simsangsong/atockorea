@@ -90,11 +90,12 @@ export default function BottomNav() {
   const t = useTranslations();
   const reduce = useReducedMotion() === true;
 
+  // Premium glass: top highlight edge (inset white) + hairline + soft lift shadow.
   return (
     <nav
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-300 bg-white/85 backdrop-blur-xl shadow-[0_-1px_0_0_rgba(15,23,42,0.12),0_-8px_24px_-16px_rgba(15,23,42,0.18)] md:hidden [padding-bottom:env(safe-area-inset-bottom)]"
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-900/[0.07] bg-white/80 backdrop-blur-2xl shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_-1px_0_0_rgba(15,23,42,0.05),0_-12px_32px_-20px_rgba(15,23,42,0.28)] md:hidden [padding-bottom:env(safe-area-inset-bottom)]"
     >
-      <div className="flex h-16 items-stretch justify-around">
+      <div className="flex h-[60px] items-stretch justify-around px-1">
         {NAV_ITEMS.map((item) => {
           const isActive =
             item.path === "/tours/list"
@@ -107,39 +108,48 @@ export default function BottomNav() {
               key={item.key}
               href={item.path}
               aria-current={isActive ? "page" : undefined}
-              className={`group relative flex flex-1 flex-col items-center justify-center gap-0.5 transition-colors ${
-                isActive ? "text-slate-900" : "text-slate-400 hover:text-slate-600"
-              }`}
+              className="group relative flex flex-1 flex-col items-center justify-center"
             >
-              {/* Active top indicator bar (N3) */}
+              {/* Active indicator — refined soft-glow bar with shared-layout slide. */}
               {isActive ? (
                 <motion.span
                   layoutId={reduce ? undefined : "bottomnav-indicator"}
-                  className="absolute top-0 h-0.5 w-8 rounded-full bg-slate-900"
-                  transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute top-0 h-[3px] w-7 rounded-full bg-gradient-to-r from-slate-700 via-slate-900 to-slate-700 shadow-[0_1px_6px_-1px_rgba(15,23,42,0.5)]"
+                  transition={{ type: "spring", stiffness: 480, damping: 34 }}
                   aria-hidden
                 />
               ) : null}
 
-              <motion.svg
-                viewBox="0 0 24 24"
-                className="h-[22px] w-[22px]"
-                fill={isActive ? "currentColor" : "none"}
-                stroke={isActive ? "none" : "currentColor"}
-                aria-hidden
-                whileTap={reduce ? undefined : { scale: 0.9 }}
-                transition={{ type: "spring", stiffness: 560, damping: 22 }}
+              {/* Icon lifts subtly when active for depth. */}
+              <motion.span
+                className="flex flex-col items-center gap-[3px]"
+                animate={reduce ? undefined : { y: isActive ? -1 : 0 }}
+                transition={{ type: "spring", stiffness: 420, damping: 30 }}
               >
-                {isActive ? item.solid : item.outline}
-              </motion.svg>
+                <motion.svg
+                  viewBox="0 0 24 24"
+                  className={`h-[23px] w-[23px] transition-colors duration-200 ${
+                    isActive ? "text-slate-900" : "text-slate-400 group-hover:text-slate-600"
+                  }`}
+                  fill={isActive ? "currentColor" : "none"}
+                  stroke={isActive ? "none" : "currentColor"}
+                  aria-hidden
+                  whileTap={reduce ? undefined : { scale: 0.88 }}
+                  transition={{ type: "spring", stiffness: 600, damping: 20 }}
+                >
+                  {isActive ? item.solid : item.outline}
+                </motion.svg>
 
-              <span
-                className={`text-[10.5px] leading-none tracking-tight ${
-                  isActive ? "font-semibold" : "font-medium"
-                }`}
-              >
-                {t(item.labelKey)}
-              </span>
+                <span
+                  className={`text-[10px] leading-none transition-all duration-200 ${
+                    isActive
+                      ? "font-semibold tracking-[0.01em] text-slate-900"
+                      : "font-medium tracking-[0.02em] text-slate-400 group-hover:text-slate-600"
+                  }`}
+                >
+                  {t(item.labelKey)}
+                </span>
+              </motion.span>
             </Link>
           );
         })}
