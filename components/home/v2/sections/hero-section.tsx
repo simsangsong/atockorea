@@ -337,7 +337,6 @@ export function HeroSection() {
             <div className="px-2">
               <span className="block text-h3 font-extrabold leading-none text-slate-900">8</span>
               <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-500">{t("premium.hero.trustPlatforms")}</span>
-              <span className="mt-1 block text-micro font-medium leading-tight text-slate-400">Klook · GetYourGuide · Viator</span>
             </div>
           </div>
         </div>
