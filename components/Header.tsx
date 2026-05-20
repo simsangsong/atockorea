@@ -154,7 +154,7 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
           ? "border-b border-white/10 bg-gray-900/80 backdrop-blur-md shadow-sm"
           : pt
             ? "border-b border-stone-900/[0.06] bg-[#fdfdfc]/[0.92] backdrop-blur-md shadow-[0_1px_0_rgba(255,255,255,0.65)_inset,0_10px_40px_-24px_rgba(15,23,42,0.07)]"
-            : "border-b border-stone-400/22 bg-[rgba(238,242,239,0.48)] shadow-[0_1px_0_rgba(255,255,255,0.45)_inset] backdrop-blur-md backdrop-saturate-[0.92]"
+            : "border-b border-stone-900/[0.06] bg-[#fdfdfc]/[0.85] backdrop-blur-md shadow-[0_1px_0_rgba(255,255,255,0.65)_inset,0_8px_30px_-24px_rgba(15,23,42,0.06)]"
       )}
     >
       <div

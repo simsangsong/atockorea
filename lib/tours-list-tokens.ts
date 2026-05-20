@@ -36,7 +36,7 @@ export const LIST_PAGE_BG = '#faf8f3';
  * (body::before) reads through the rail — matching every other consumer page.
  * The earlier ivory gradient covered the mesh and clashed with the site tone.
  */
-export const LIST_RAIL_BG = 'bg-white/72 backdrop-blur-md';
+export const LIST_RAIL_BG = 'bg-[#fdfdfc]/82 backdrop-blur-md';
 
 /** Rail bottom hairline — neutral slate (site-native, B32). */
 export const LIST_RAIL_BORDER = 'border-b border-slate-200/55';
