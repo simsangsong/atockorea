@@ -77,9 +77,9 @@ export default function BottomNav() {
                 >
                   <item.Icon
                     size={23}
-                    strokeWidth={isActive ? 2.3 : 1.7}
+                    strokeWidth={isActive ? 2.3 : 1.9}
                     className={`transition-colors duration-200 ${
-                      isActive ? "text-slate-900" : "text-slate-400 group-hover:text-slate-600"
+                      isActive ? "text-slate-900" : "text-slate-500 group-hover:text-slate-800"
                     }`}
                   />
                 </motion.span>
@@ -88,7 +88,7 @@ export default function BottomNav() {
                   className={`text-[10px] leading-none transition-all duration-200 ${
                     isActive
                       ? "font-semibold tracking-[0.01em] text-slate-900"
-                      : "font-medium tracking-[0.02em] text-slate-400 group-hover:text-slate-600"
+                      : "font-medium tracking-[0.02em] text-slate-500 group-hover:text-slate-800"
                   }`}
                 >
                   {t(item.labelKey)}
