@@ -261,6 +261,18 @@ from-busan-gyeongju-ancient-capital-day-tour.en.json
   woljeonggyo_bridge -> NO image field present  (NOT a JSON fix — orphan in DB)
 ```
 
+### Surfaced by the Phase 1 audit (2026-05-21)
+
+```text
+un_memorial_cemetery   tour-JSON stop borrows haedong-yonggungsa/* + taejongdae/*
+                       gallery images (cross-POI). DB default_image_url is its OWN
+                       (AI) folder so NOT a strict fail; seed Signal-A rejects the
+                       borrowed ones. Gallery/source hygiene only.
+_metadata              two NON-POI rows in match_pois (KB top-level metadata keys
+_kb_metadata           seeded as POIs). Not visible (no region/name) so the builder
+                       UI is unaffected — catalog junk, candidate DELETE.
+```
+
 ## Data Quality Rules
 
 ### POI Visibility Contract
@@ -346,11 +358,54 @@ otherwise those edits may target a pipeline that does not feed prod.
 
 ### Phase 1: Add POI Audit Script
 
-Create `scripts/audit-itinerary-builder-pois.mjs` and add:
+**STATUS: DONE 2026-05-21** (commit `00b2c17b`). Built as **`.ts`** (not `.mjs`)
+so it imports the real `isBuilderAttraction` taxonomy + the override map; run via
+tsx. Added:
 
 ```json
-"itinerary:poi-audit": "node --env-file=.env.local scripts/audit-itinerary-builder-pois.mjs"
+"itinerary:poi-audit": "node --env-file=.env.local --import tsx scripts/audit-itinerary-builder-pois.ts"
 ```
+
+First run (post-Track-A, busan+jeju) — confirms Track A landed and sets the
+Track B baseline:
+
+```text
+match_pois total ........ 91      visible builder POIs ... 44   (matches measured scope)
+missing image ........... 6       = the exact Track B targets (biff_square,
+                                    hallasan_eorimok_trail, hallim_park,
+                                    jeju_tangerine, jeonnong_ro, noksan_ro)
+Signal A orphan wrong ... 0       Track A fixed the woljeonggyo->ahopsan orphan
+Signal B AI/unverified .. 17      chatgpt-image-* backlog (warning, never strict)
+source-JSON image wrong . 3       jeonnong_ro + noksan_ro (ilchulland) + NEW un_memorial_cemetery
+empty vb/conv/sn (1 POI)  3       jeju_tangerine_picking_experience (null after A3)
+--strict ................ FAIL on 9 (6 photos + 3 jeju_tangerine fields) — expected until Track B
+```
+
+Determinism fix: the script sets `process.exitCode` + closes the fetch
+dispatcher instead of calling `process.exit()`, which raced libuv socket teardown
+on Windows and produced a spurious exit 127 (a flaky `--strict` is useless as a
+CI gate).
+
+**Two findings the earlier defect surface missed (logged in Known Issues):**
+
+1. `un_memorial_cemetery` — its tour-JSON stop borrows haedong-yonggungsa +
+   taejongdae gallery images (cross-POI). Its DB representative image is its own
+   (AI) folder, so NOT a strict fail and the seed Signal-A already rejects the
+   borrowed ones from `default_image_url`. Source/gallery hygiene, not a
+   builder-image bug.
+2. `_metadata` + `_kb_metadata` — two NON-POI rows sit in `match_pois` (KB
+   top-level metadata keys seeded as POIs). Not visible (no region/name), so the
+   builder UI is unaffected, but they are catalog junk → candidate DELETE.
+
+**Provenance correction (verified 2026-05-21, supersedes the write-paths note):**
+the KB (`poi_knowledge_base_v1.29.json`) carries **NO** image field on any of its
+82 entries (only `visitBasics`/`convenience`/`smartNotes`). `import-match-v18.mjs:345`
+reads `kbEntry.default_image_url` (always undefined -> writes `null`). So
+import-match-v18 is **not** a real KB->image source — it is a no-op, and worse a
+potential null-wiper, for `default_image_url`. The KB contributes only
+key-presence + structured facts to the audit; the only image sources are
+tour-JSON stops + the override map + out-of-band writes. (Phase 6 must neutralise
+import-match-v18's null image write before any re-run.)
 
 Inputs: local static tour JSONs, **the KB JSON**, `public.match_pois`, builder
 region cluster, builder taxonomy (`isBuilderAttraction`).
