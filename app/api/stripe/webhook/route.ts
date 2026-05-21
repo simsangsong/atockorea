@@ -424,9 +424,9 @@ async function sendCardOnFileEmail(
   }
 
   const tour = booking.tours as { id?: number; title?: string; image_url?: string } | null;
-  const { sendBookingConfirmationEmail, sendBookingAdminNotificationEmail } = await import('@/lib/email');
+  const { sendBookingConfirmationEmail } = await import('@/lib/email');
   if (customerEmail) {
-    await sendBookingConfirmationEmail({
+    const customerEmailResult = await sendBookingConfirmationEmail({
       to: customerEmail,
       bookingId: booking.id,
       tourTitle: tour?.title ?? '',
@@ -440,9 +440,14 @@ async function sendCardOnFileEmail(
       tourId: tour?.id != null ? String(tour.id) : undefined,
       tourImageUrl: tour?.image_url,
     });
+    if (!customerEmailResult.success) {
+      console.error('Customer booking confirmation email failed:', customerEmailResult.error);
+    } else {
+      console.log(`Customer booking confirmation email sent: ${customerEmailResult.messageId}`);
+    }
   }
 
-  await sendBookingAdminNotificationEmail({
+  await notifyBookingAdminChannels(supabase, {
     bookingId: booking.id,
     bookingReference: (booking as { booking_reference?: string | null }).booking_reference ?? null,
     tourTitle: tour?.title ?? 'Booking',
@@ -518,9 +523,9 @@ async function sendLegacyConfirmationEmail(
   }
 
   const tour = booking.tours as { id?: number; title?: string; image_url?: string } | null;
-  const { sendBookingConfirmationEmail, sendBookingAdminNotificationEmail } = await import('@/lib/email');
+  const { sendBookingConfirmationEmail } = await import('@/lib/email');
   if (customerEmail) {
-    await sendBookingConfirmationEmail({
+    const customerEmailResult = await sendBookingConfirmationEmail({
       to: customerEmail,
       bookingId: booking.id,
       tourTitle: tour?.title ?? '',
@@ -534,9 +539,14 @@ async function sendLegacyConfirmationEmail(
       tourId: tour?.id != null ? String(tour.id) : undefined,
       tourImageUrl: tour?.image_url,
     });
+    if (!customerEmailResult.success) {
+      console.error('Customer booking confirmation email failed:', customerEmailResult.error);
+    } else {
+      console.log(`Customer booking confirmation email sent: ${customerEmailResult.messageId}`);
+    }
   }
 
-  await sendBookingAdminNotificationEmail({
+  await notifyBookingAdminChannels(supabase, {
     bookingId: booking.id,
     bookingReference: (booking as { booking_reference?: string | null }).booking_reference ?? null,
     tourTitle: tour?.title ?? 'Booking',
@@ -567,6 +577,48 @@ async function sendLegacyConfirmationEmail(
     } catch (notificationError) {
       console.error('Error creating notification:', notificationError);
     }
+  }
+}
+
+async function notifyBookingAdminChannels(
+  supabase: ReturnType<typeof createServerClient>,
+  payload: {
+    bookingId: string;
+    bookingReference?: string | null;
+    tourTitle: string;
+    bookingDate: string;
+    numberOfGuests: number;
+    totalPrice: number;
+    pickupPoint?: string;
+    paymentMethod: string;
+    paymentStatus: string;
+    customerName?: string | null;
+    customerEmail?: string | null;
+    customerPhone?: string | null;
+  },
+) {
+  try {
+    const { sendBookingAdminNotificationEmail } = await import('@/lib/email');
+    const adminEmailResult = await sendBookingAdminNotificationEmail(payload);
+    if (!adminEmailResult.success) {
+      console.error('Admin booking notification email failed:', adminEmailResult.error);
+    } else {
+      console.log(`Admin booking notification email sent: ${adminEmailResult.messageId}`);
+    }
+  } catch (error) {
+    console.error('Admin booking notification email failed:', error);
+  }
+
+  try {
+    const { notifyTelegramBookingConfirmed } = await import('@/lib/booking-telegram');
+    const telegramResult = await notifyTelegramBookingConfirmed(supabase, payload);
+    if (!telegramResult.delivered && telegramResult.reason !== 'telegram_env_unset') {
+      console.error('Telegram booking notification failed:', telegramResult.reason);
+    } else if (telegramResult.delivered) {
+      console.log(`Telegram booking notification sent: ${telegramResult.messageId ?? 'ok'}`);
+    }
+  } catch (error) {
+    console.error('Telegram booking notification failed:', error);
   }
 }
 

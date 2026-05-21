@@ -24,6 +24,8 @@ function snapshot() {
     anthropic_set: !!process.env.ANTHROPIC_API_KEY,
     gemini_set: !!process.env.GEMINI_API_KEY,
     telegram_set: !!process.env.TELEGRAM_BOT_TOKEN,
+    telegram_admin_chat_id_set: !!process.env.TELEGRAM_ADMIN_CHAT_ID,
+    telegram_booking_chat_id_set: !!process.env.TELEGRAM_BOOKING_CHAT_ID,
     next_public_app_url: process.env.NEXT_PUBLIC_APP_URL ?? null,
     notes: [
       "Verification emails sent during signup go through SUPABASE Auth, not via our direct Resend client.",
