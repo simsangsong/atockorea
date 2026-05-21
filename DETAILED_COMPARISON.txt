@@ -1,0 +1,241 @@
+============================================================================================================================================
+DETAILED FILE-BY-FILE STRUCTURE COMPARISON
+============================================================================================================================================
+
+FILE: jeju-west-south-full-day-authentic-tour
+Path: jeju-west-south-full-day-authentic-tour/jeju-west-south-full-day-authentic-tour.en.json
+Schema Version: 7
+Top-Level Keys: 34
+
+EXTRA KEYS (not in pocheon reference):
+  + galleryItems
+
+ITINERARY STOPS SUB-FIELD ISSUES:
+  Missing keys: _poi_meta
+
+STATUS: Compatible at top-level (may have sub-field issues)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+FILE: busan-small-group-sightseeing-tour-cruise-passengers
+Path: busan-small-group-sightseeing-tour-cruise-passengers/busan-small-group-sightseeing-tour-cruise-passengers.en.json
+Schema Version: 7
+Top-Level Keys: 34
+
+EXTRA KEYS (not in pocheon reference):
+  + galleryItems
+
+ITINERARY STOPS SUB-FIELD ISSUES:
+  Missing keys: convenience, smartNotes, timeUsed, visitBasics
+
+STATUS: Compatible at top-level (may have sub-field issues)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+FILE: busan-private-car-charter-cruise-shore
+Path: busan-private-car-charter-cruise-shore/busan-private-car-charter-cruise-shore.en.json
+Schema Version: 7
+Top-Level Keys: 34
+
+EXTRA KEYS (not in pocheon reference):
+  + galleryItems
+
+ITINERARY STOPS SUB-FIELD ISSUES:
+  Missing keys: convenience, smartNotes, timeUsed, visitBasics
+
+STATUS: Compatible at top-level (may have sub-field issues)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+FILE: busan-top-attractions-day-tour
+Path: busan-top-attractions-day-tour/busan-top-attractions-day-tour.en.json
+Schema Version: 7
+Top-Level Keys: 35
+
+EXTRA KEYS (not in pocheon reference):
+  + galleryItems
+  + priceSource
+
+ITINERARY STOPS SUB-FIELD ISSUES:
+  Missing keys: convenience, image, smartNotes, visitBasics
+
+STATUS: Compatible at top-level (may have sub-field issues)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+FILE: incheon-seoul-private-car-shore-excursion-cruise
+Path: incheon-seoul-private-car-shore-excursion-cruise/incheon-seoul-private-car-shore-excursion-cruise.en.json
+Schema Version: 7
+Top-Level Keys: 34
+
+EXTRA KEYS (not in pocheon reference):
+  + galleryItems
+
+ITINERARY STOPS SUB-FIELD ISSUES:
+  Missing keys: image
+
+STATUS: Compatible at top-level (may have sub-field issues)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+FILE: busan-gyeongju-unesco-legacy-tour-national-museum
+Path: busan-gyeongju-unesco-legacy-tour-national-museum/busan-gyeongju-unesco-legacy-tour-national-museum.en.json
+Schema Version: 7
+Top-Level Keys: 34
+
+EXTRA KEYS (not in pocheon reference):
+  + galleryItems
+
+ITINERARY STOPS SUB-FIELD ISSUES:
+  Missing keys: convenience, image, smartNotes, visitBasics
+
+STATUS: Compatible at top-level (may have sub-field issues)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+FILE: from-busan-gyeongju-ancient-capital-day-tour
+Path: from-busan-gyeongju-ancient-capital-day-tour/from-busan-gyeongju-ancient-capital-day-tour.en.json
+Schema Version: 7
+Top-Level Keys: 34
+
+EXTRA KEYS (not in pocheon reference):
+  + galleryItems
+
+ITINERARY STOPS SUB-FIELD ISSUES:
+  Missing keys: convenience, image, smartNotes, visitBasics
+
+STATUS: Compatible at top-level (may have sub-field issues)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+FILE: jeju-hydrangea-festival-tour-east-route
+Path: jeju-hydrangea-festival-tour-east-route/jeju-hydrangea-festival-tour-east-route.en.json
+Schema Version: 7
+Top-Level Keys: 34
+
+EXTRA KEYS (not in pocheon reference):
+  + galleryItems
+
+STATUS: Compatible at top-level (may have sub-field issues)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+FILE: from-incheon-seoul-day-tour-cruise-guests
+Path: from-incheon-seoul-day-tour-cruise-guests/from-incheon-seoul-day-tour-cruise-guests.en.json
+Schema Version: 7
+Top-Level Keys: 34
+
+EXTRA KEYS (not in pocheon reference):
+  + galleryItems
+
+ITINERARY STOPS SUB-FIELD ISSUES:
+  Missing keys: image
+
+STATUS: Compatible at top-level (may have sub-field issues)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+FILE: jeju-eastern-unesco-spots-day-tour
+Path: jeju-eastern-unesco-spots-day-tour/jeju-eastern-unesco-spots-day-tour.en.json
+Schema Version: 7
+Top-Level Keys: 34
+
+EXTRA KEYS (not in pocheon reference):
+  + galleryItems
+
+ITINERARY STOPS SUB-FIELD ISSUES:
+  Missing keys: _poi_meta
+
+STATUS: Compatible at top-level (may have sub-field issues)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+FILE: southwest-hallasan-osulloc-aewol
+Path: southwest-hallasan-osulloc-aewol/southwest-hallasan-osulloc-aewol.en.json
+Schema Version: 7
+Top-Level Keys: 34
+
+EXTRA KEYS (not in pocheon reference):
+  + galleryItems
+
+PAGE SECTIONS SUB-FIELD ISSUES:
+  Missing 'section_html_id' in first item
+
+STATUS: Compatible at top-level (may have sub-field issues)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+FILE: jeju-hydrangea-festival-tour-southwest-route
+Path: jeju-hydrangea-festival-tour-southwest-route/jeju-hydrangea-festival-tour-southwest-route.en.json
+Schema Version: 7
+Top-Level Keys: 35
+
+EXTRA KEYS (not in pocheon reference):
+  + galleryItems
+  + priceSource
+
+STATUS: Compatible at top-level (may have sub-field issues)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+FILE: jeju-cruise-shore-excursion-small-group-tour
+Path: jeju-cruise-shore-excursion-small-group-tour/jeju-cruise-shore-excursion-small-group-tour.en.json
+Schema Version: 7
+Top-Level Keys: 35
+
+EXTRA KEYS (not in pocheon reference):
+  + galleryItems
+  + priceSource
+
+ITINERARY STOPS SUB-FIELD ISSUES:
+  Missing keys: image, timeUsed
+
+STATUS: Compatible at top-level (may have sub-field issues)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+FILE: jeju-grand-highlights-loop
+Path: jeju-grand-highlights-loop/jeju-grand-highlights-loop.en.json
+Schema Version: 7
+Top-Level Keys: 34
+
+EXTRA KEYS (not in pocheon reference):
+  + galleryItems
+
+ITINERARY STOPS SUB-FIELD ISSUES:
+  Uses 'images' (plural) instead of 'image'
+
+PAGE SECTIONS SUB-FIELD ISSUES:
+  Missing 'section_html_id' in first item
+
+STATUS: Compatible at top-level (may have sub-field issues)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+FILE: jeju-island-private-car-charter-tour
+Path: jeju-island-private-car-charter-tour/jeju-island-private-car-charter-tour.en.json
+Schema Version: 7
+Top-Level Keys: 34
+
+EXTRA KEYS (not in pocheon reference):
+  + galleryItems
+
+ITINERARY STOPS SUB-FIELD ISSUES:
+  Missing keys: duration, image, time
+
+STATUS: Compatible at top-level (may have sub-field issues)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+FILE: pocheon-sanjeong-lake-herb-island-art-valley
+Path: pocheon-sanjeong-lake-herb-island-art-valley/pocheon-sanjeong-lake-herb-island-art-valley.en.json
+Schema Version: 7
+Top-Level Keys: 34
+
+EXTRA KEYS (not in pocheon reference):
+  + galleryItems
+
+STATUS: Compatible at top-level (may have sub-field issues)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+

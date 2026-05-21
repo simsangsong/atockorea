@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3)",
+      "Bash(python3 -c ' *)",
+      "Bash(python translate_tours.py --dry-run --tour pocheon-sanjeong-lake-herb-island-art-valley --lang ko)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\sangsong\\\\atockorea\\\\.claude\\\\worktrees\\\\wonderful-tharp-297074\\\\components\\\\product-tour-static\\\\\" -Directory | Select-Object -ExpandProperty Name)",
+      "Bash(python -m json.tool)"
+    ]
+  }
+}

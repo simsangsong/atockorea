@@ -1,0 +1,192 @@
+========================================================================================================================
+STRUCTURE AUDIT: 16 ENGLISH TOUR JSON FILES
+Reference: pocheon-sanjeong-lake-herb-island-art-valley.en.json
+========================================================================================================================
+
+FILE LIST AUDITED (16 files):
+------------------------------------------------------------------------------------------------------------------------
+   1. jeju-west-south-full-day-authentic-tour
+   2. busan-small-group-sightseeing-tour-cruise-passengers
+   3. busan-private-car-charter-cruise-shore
+   4. busan-top-attractions-day-tour
+   5. incheon-seoul-private-car-shore-excursion-cruise
+   6. busan-gyeongju-unesco-legacy-tour-national-museum
+   7. from-busan-gyeongju-ancient-capital-day-tour
+   8. jeju-hydrangea-festival-tour-east-route
+   9. from-incheon-seoul-day-tour-cruise-guests
+  10. jeju-eastern-unesco-spots-day-tour
+  11. southwest-hallasan-osulloc-aewol
+  12. jeju-hydrangea-festival-tour-southwest-route
+  13. jeju-cruise-shore-excursion-small-group-tour
+  14. jeju-grand-highlights-loop
+  15. jeju-island-private-car-charter-tour
+  16. pocheon-sanjeong-lake-herb-island-art-valley
+
+========================================================================================================================
+KEY FINDINGS
+========================================================================================================================
+
+[1] TOP-LEVEL STRUCTURE COMPARISON
+------------------------------------------------------------------------------------------------------------------------
+
+REFERENCE SCHEMA (pocheon) HAS 33 TOP-LEVEL KEYS:
+  document_kind, schema_version, slug, locale, product_id, seo, catalog_card,
+  headlineLine1, headlineLine2, price, hero, subnavItems, glanceItems,
+  itineraryStops, routeFlowStops, routePhases, routeShapeIntro, whyTourWorks,
+  practicalAccordionItems, practicalWeatherStatic, seasonalVariations,
+  bookingTrustItems, bookingSupportSteps, staticQuestions, guestReviews,
+  reviewsSummary, sticky_booking_bar, pickup_dropoff, matching_profile,
+  matching_metadata, page_sections, itinerary_variants, _publication
+
+ACTUAL FILES:
+  All 16 files have 34-35 keys (not 33)
+  ALL files have the 33 reference keys present
+  NO files are missing any required keys
+
+EXTRA KEYS FOUND:
+  [+] galleryItems: appears in ALL 16 files (100%)
+    - This key is NOT in the reference pocheon structure
+    - It should be formally added to the schema_version 7 definition
+    
+  [+] priceSource: appears in only 3 files (19%)
+    - busan-top-attractions-day-tour
+    - jeju-hydrangea-festival-tour-southwest-route
+    - jeju-cruise-shore-excursion-small-group-tour
+    - This is inconsistently applied across tours
+
+CONCLUSION: All 16 files are STRUCTURALLY COMPATIBLE with pocheon's baseline,
+but galleryItems is a universal addition that should be documented.
+
+
+[2] MISSING TOP-LEVEL KEYS
+------------------------------------------------------------------------------------------------------------------------
+
+RESULT: ZERO FILES missing required keys from pocheon reference
+
+All 16 files include every single top-level key that pocheon has.
+[OK] Complete compatibility at the top level
+
+
+[3] EXTRA TOP-LEVEL KEYS BY FILE
+------------------------------------------------------------------------------------------------------------------------
+
+FILES WITH EXTRA KEYS NOT IN POCHEON:
+
+(A) galleryItems only (13 files):
+  - jeju-west-south-full-day-authentic-tour
+  - busan-small-group-sightseeing-tour-cruise-passengers
+  - busan-private-car-charter-cruise-shore
+  - incheon-seoul-private-car-shore-excursion-cruise
+  - busan-gyeongju-unesco-legacy-tour-national-museum
+  - from-busan-gyeongju-ancient-capital-day-tour
+  - jeju-hydrangea-festival-tour-east-route
+  - from-incheon-seoul-day-tour-cruise-guests
+  - jeju-eastern-unesco-spots-day-tour
+  - southwest-hallasan-osulloc-aewol
+  - jeju-grand-highlights-loop
+  - jeju-island-private-car-charter-tour
+  - pocheon-sanjeong-lake-herb-island-art-valley
+
+(B) galleryItems + priceSource (3 files):
+  - busan-top-attractions-day-tour
+  - jeju-hydrangea-festival-tour-southwest-route
+  - jeju-cruise-shore-excursion-small-group-tour
+
+
+[4] SUB-FIELD STRUCTURE DIFFERENCES
+------------------------------------------------------------------------------------------------------------------------
+
+ITINERARY STOPS - FIRST ITEM KEY ANALYSIS:
+
+Reference Schema expects these keys in itinerary stop objects:
+  _poi_meta, category, convenience, description, duration, highlights,
+  image, name, number, smartNotes, time, timeUsed, visitBasics, whyOnRoute
+
+FINDING: 12 out of 16 files have missing sub-keys in itineraryStops
+
+Missing Key Distribution:
+  - image (missing in 44%):          7 files lack this
+  - convenience (missing in 31%):    5 files lack this
+  - smartNotes (missing in 31%):     5 files lack this
+  - visitBasics (missing in 31%):    5 files lack this
+  - timeUsed (missing in 19%):       3 files lack this
+  - _poi_meta (missing in 12%):      2 files lack this
+  - duration (missing in 6%):        1 file lacks this
+  - time (missing in 6%):            1 file lacks this
+
+FILES WITH MISSING SUB-KEYS:
+  - busan-gyeongju-unesco-legacy-tour-national-museum: -4 keys
+  - busan-private-car-charter-cruise-shore: -4 keys
+  - busan-small-group-sightseeing-tour-cruise-passengers: -4 keys
+  - busan-top-attractions-day-tour: -4 keys
+  - from-busan-gyeongju-ancient-capital-day-tour: -4 keys
+  - from-incheon-seoul-day-tour-cruise-guests: -1 key (image only)
+  - incheon-seoul-private-car-shore-excursion-cruise: -1 key (image only)
+  - jeju-cruise-shore-excursion-small-group-tour: -2 keys
+  - jeju-eastern-unesco-spots-day-tour: -1 key (_poi_meta only)
+  - jeju-island-private-car-charter-tour: -3 keys
+  - jeju-west-south-full-day-authentic-tour: -1 key (_poi_meta only)
+
+SPECIAL CASE - jeju-grand-highlights-loop:
+  Uses 'images' (plural) instead of 'image' in itineraryStops objects
+  This is a data model divergence that needs investigation
+
+PAGE SECTIONS - FIRST ITEM KEY ANALYSIS:
+
+2 files missing 'section_html_id':
+  - southwest-hallasan-osulloc-aewol
+  - jeju-grand-highlights-loop
+
+
+========================================================================================================================
+RECOMMENDATIONS
+========================================================================================================================
+
+1. SCHEMA DEFINITION ISSUE
+   Current Reference: 33 keys declared
+   Actual Reality: 34+ keys in all files
+   ACTION: Update schema_version 7 definition to include galleryItems as standard
+
+2. INCONSISTENT priceSource FIELD
+   Current: Only 3 out of 16 files include this field
+   ACTION: Decide if this should be:
+           (a) Required in all tour files
+           (b) Optional and documented as such
+           (c) Removed and consolidated into price field
+
+3. STANDARDIZE itineraryStops SUB-KEYS
+   Current: 12/16 files missing various keys like 'image', 'smartNotes', etc.
+   ACTION: Clarify which itineraryStops keys are REQUIRED vs OPTIONAL
+           Consider making 'image' required (currently missing in 44% of files)
+           Provide migration guidance for data that's missing these fields
+
+4. FIX jeju-grand-highlights-loop DIVERGENCE
+   Current: Uses 'images' (plural) instead of 'image'
+   ACTION: Standardize to singular 'image' to match all other tours
+           Also missing 'section_html_id' in page_sections
+
+5. MISSING section_html_id IN page_sections
+   Current: 2 files lack this field
+   ACTION: Add 'section_html_id' to page_sections first items in:
+           - southwest-hallasan-osulloc-aewol
+           - jeju-grand-highlights-loop
+
+
+========================================================================================================================
+COMPATIBILITY SUMMARY
+========================================================================================================================
+
+TOP-LEVEL KEYS:
+  Status: FULLY COMPATIBLE (all 16 files have all 33 reference keys)
+  Issues: 16/16 files have extra 'galleryItems' key (should be standardized)
+          3/16 files have inconsistent 'priceSource' key
+
+SUB-FIELD KEYS:
+  Status: PARTIALLY COMPATIBLE
+  itineraryStops: 12/16 files have missing sub-keys
+  page_sections: 2/16 files missing 'section_html_id'
+  Special: 1 file (jeju-grand-highlights-loop) uses non-standard 'images' field
+
+OVERALL: All 16 files are FUNCTIONALLY COMPATIBLE with the base pocheon
+structure, but need schema refinement and data standardization.
+
