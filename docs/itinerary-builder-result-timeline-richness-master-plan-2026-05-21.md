@@ -29,11 +29,11 @@
 
 | Field | Value |
 |---|---|
-| **Current phase** | **⏸ NOT STARTED — plan authored 2026-05-21, awaiting Phase R1 kickoff next session.** |
+| **Current phase** | **R0 ✅ complete 2026-05-21 (data-reality GO). R1 (CORE) — timeline card → tour-product StopCard + tap→drawer — is next.** |
 | **Active track** | Result Timeline Richness (RR1–RR7 decisions; Phases R0–R3) |
 | **Blocked on** | — (ready to start R0/R1) |
 | **Last updated** | 2026-05-21 |
-| **Last commit touching this track** | — (none yet) |
+| **Last commit touching this track** | (this commit — R0 data-reality planner sync, 2026-05-21) |
 | **Owner** | simsangsong |
 | **Parent plan** | `docs/itinerary-builder-redesign-master-plan-2026-05-18.md` (V2 redesign, COMPLETE — V1–V13 binding decisions still apply as the floor) |
 | **Skill** | reuse the existing `itinerary-builder-redesign` skill (it governs `components/itinerary-builder/*`); this plan is the active sub-track. |
@@ -42,7 +42,7 @@
 
 | Phase | Status | Started | Done | Commit |
 |---|---|---|---|---|
-| R0 — Data reality check (images[] depth) — GATE-lite | ⏸ not started | — | — | — |
+| R0 — Data reality check (images[] depth) — GATE-lite | ✅ complete | 2026-05-21 | 2026-05-21 | (R0 planner sync) |
 | R1 — Timeline card → tour-product `StopCard` pattern + tap→drawer | ⏸ not started | — | — | — |
 | R2 — AI suggest result → same large timeline (kill badge rail) | ⏸ not started | — | — | — |
 | R3 — Page tone/layout unification with main site + curated-stops cleanup | ⏸ not started | — | — | — |
@@ -71,6 +71,8 @@ These extend, never override, the parent plan's V1–V13. Append reversal rows; 
 
 | Date | Commit | Change |
 |---|---|---|
+| 2026-05-21 | (R0 planner sync) | **Phase R0 ✅ — data-reality measured (builder-cluster accurate).** `jeju` (25 POIs): 3+ imgs ×16, 2 imgs ×2, 1 img ×1, 0 imgs ×6 (24% no-image), `default_image_url` ×19, avg 3.36, max 12. `busan` cluster (busan/yangsan/gyeongju/ulsan/miryang = 20 POIs): 3+ imgs ×15, 2 imgs ×3, 1 img ×1, 0 imgs ×1, default ×19, avg 3.75, max 14. **Combined 45 POIs: 69% ≥3 imgs, 80% ≥2 imgs, 16% (7) no-image. VERDICT = GO** — compose strip (RR1) justified by real data; RR4 fallback (letter/icon) covers the 7 no-image POIs; drawer carries full gallery regardless. No code shipped (gate-lite). |
+| 2026-05-21 | (R0 fact corrections) | **Fact corrections to §J/RR4 (logged here; §J frozen rows untouched):** (1) `match_pois.images` is **jsonb**, NOT `string[]`/text[] — measure via `jsonb_array_length(...)`; R1 card must coerce jsonb→`string[]` safely (guard `Array.isArray`). (2) Builder **busan page = 5-region cluster** `["busan","yangsan","gyeongju","ulsan","miryang"]` = 20 POIs (`lib/itinerary-builder/regions.ts:17–20`), NOT just `busan` (11). `jeju` cluster = `["jeju"]` = 25. (3) Long-form orphan regions ("Jeju East — …", attraction=false) do NOT leak into the builder (cluster matches exact `jeju`). (4) `is_operational` is false for ALL rows — not a builder filter (builder uses `.in("region", cluster)` only). (5) The 7 no-image POIs (`biff_square`, `hallasan_eorimok_trail`, `hallim_park`, `jeju_cruise_port`, `jeju_tangerine_picking_experience`, `jeonnong_ro_cherry_blossom_street`, `noksan_ro_gasiri_blossom_road`) — 6 overlap the existing POI data-quality Track B backlog; `jeju_cruise_port` is an intentional return-marker. Photo backfill stays on that separate track (RR4 + §E). |
 | 2026-05-21 | (this doc) | Plan authored. Diagnosis frozen in §J. RR1–RR7 logged. Phases R0–R3 laid out. No code yet. |
 
 ---
@@ -103,10 +105,10 @@ Same discipline as the parent plan:
 ### Phase R0 — Data reality check (½ day) — GATE-lite
 **Deliverable:** Know how many photos real builder POIs actually have, so RR1's compose strip isn't designed for data that doesn't exist.
 **Tasks:**
-- [ ] Query `match_pois` for jeju + busan: distribution of `array_length(images, 1)` (0 / 1 / 2 / 3+) and `default_image_url` presence. (read-only SQL via mcp__atockorea, or inspect the builder POI fetch.)
-- [ ] Verdict: if most POIs have ≥2 images → compose strip is worth it as-is. If most have ≤1 → R1 still proceeds (single photo shown large + drawer carries the rest), and the photo-quality backfill is flagged to its own track.
-**Acceptance:** distribution numbers pasted into §C + a go/proceed note for R1.
-**Cut-line:** informs R1's photo layout; no code shipped.
+- [x] Query `match_pois` for jeju + busan: distribution of image count (0 / 1 / 2 / 3+) and `default_image_url` presence. ⚠ `images` is **jsonb** → measured via `jsonb_array_length` (not `array_length`). Measured against the real builder **clusters** (busan = 5 regions), not raw `region='busan'`. Numbers in §C.
+- [x] Verdict: **most POIs have ≥2 images (80%), 69% have ≥3 → compose strip is worth it as-is.** R1 proceeds with the multi-photo strip; RR4 fallback (letter/icon) handles the 16% (7) no-image POIs; photo backfill flagged to the POI data-quality track.
+**Acceptance:** ✅ distribution numbers + fact corrections pasted into §C (2026-05-21 rows); ✅ GO note for R1 below.
+**Cut-line:** informs R1's photo layout; no code shipped. **→ R1 photo layout = compose strip when `images.length ≥ 1`, fallback letter/icon when 0; drawer always carries full gallery.**
 
 ### Phase R1 — Timeline card → tour-product StopCard pattern + tap→drawer (1.5 day) — CORE
 **Deliverable:** `ResultTimeline` cards become the large compose-photo card; tapping a card opens `POIDetailModal`.
