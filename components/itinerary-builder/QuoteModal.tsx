@@ -12,6 +12,7 @@ import {
   quote,
   tierForLocale,
   jejuZone,
+  type CruisePort,
   type JejuPickupZone,
   type PriceLine,
   type PricingTrack,
@@ -61,6 +62,8 @@ export default function QuoteModal({ open, onClose, cart, region, pois }: Props)
   const initialDuration = searchParams?.get("duration") ?? searchParams?.get("hours") ?? "8";
   const initialShip = searchParams?.get("ship") ?? "";
   const initialPickup = (searchParams?.get("pickup") as JejuPickupZone) ?? "city";
+  const initialPort = (searchParams?.get("port") as CruisePort) ?? "gangjeong";
+  const isCruise = track === "cruise";
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -72,6 +75,9 @@ export default function QuoteModal({ open, onClose, cart, region, pois }: Props)
   const [duration, setDuration] = useState(initialDuration);
   const [pickup, setPickup] = useState<JejuPickupZone>(
     PICKUP_ZONES.includes(initialPickup) ? initialPickup : "city"
+  );
+  const [cruisePort, setCruisePort] = useState<CruisePort>(
+    initialPort === "jeju_port" ? "jeju_port" : "gangjeong"
   );
   const [notes, setNotes] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -104,11 +110,12 @@ export default function QuoteModal({ open, onClose, cart, region, pois }: Props)
       durationHours: durationNum,
       pax: paxNum,
       requestedDate: date || null,
-      jejuPickupZone: region === "jeju" ? pickup : null,
+      jejuPickupZone: region === "jeju" && !isCruise ? pickup : null,
+      cruisePort: isCruise && region === "jeju" ? cruisePort : null,
       poiRegions,
       jejuPoiZones,
     });
-  }, [track, region, guideLang, durationNum, paxNum, date, pickup, cartPois]);
+  }, [track, region, guideLang, durationNum, paxNum, date, pickup, cruisePort, isCruise, cartPois]);
 
   const cartThumbs = useMemo(() => cartPois.slice(0, 5), [cartPois]);
   const cartOverflow = Math.max(0, cartPois.length - cartThumbs.length);
@@ -132,6 +139,10 @@ export default function QuoteModal({ open, onClose, cart, region, pois }: Props)
         return t("pricing.lines.jejuPickup", { zone: t(`pricing.pickupZones.${meta.zone ?? "city"}`) });
       case "dmz_base":
         return t("pricing.lines.dmzBase", { pax: Number(meta.pax ?? paxNum) });
+      case "cruise_excursion":
+        return t("pricing.lines.cruiseExcursion");
+      case "gangjeong_port":
+        return t("pricing.lines.gangjeongPort");
       default:
         return line.code;
     }
@@ -153,7 +164,8 @@ export default function QuoteModal({ open, onClose, cart, region, pois }: Props)
         guide_language: guideLang,
         duration_hours: isDmz ? undefined : durationNum,
         party_size: party ? Number(party) : null,
-        jeju_pickup_zone: region === "jeju" && !isDmz ? pickup : undefined,
+        jeju_pickup_zone: region === "jeju" && !isDmz && !isCruise ? pickup : undefined,
+        cruise_port: isCruise && region === "jeju" ? cruisePort : undefined,
         requested_date: date || null,
         contact_email: email.trim(),
         contact_name: name.trim() || null,
@@ -311,8 +323,8 @@ export default function QuoteModal({ open, onClose, cart, region, pois }: Props)
               </label>
             ) : null}
 
-            {/* Jeju pickup zone */}
-            {region === "jeju" && !isDmz ? (
+            {/* Jeju hotel pickup zone (land tours only) */}
+            {region === "jeju" && !isDmz && !isCruise ? (
               <label className="block">
                 <span className="mb-1.5 block text-caption font-semibold text-slate-700">
                   {t("pickupLabel")}
@@ -327,6 +339,23 @@ export default function QuoteModal({ open, onClose, cart, region, pois }: Props)
                       {t(`pricing.pickupZones.${z}`)}
                     </option>
                   ))}
+                </select>
+              </label>
+            ) : null}
+
+            {/* Cruise embarkation port (Jeju cruise — Gangjeong adds a surcharge) */}
+            {isCruise && region === "jeju" ? (
+              <label className="block">
+                <span className="mb-1.5 block text-caption font-semibold text-slate-700">
+                  {t("cruisePortLabel")}
+                </span>
+                <select
+                  value={cruisePort}
+                  onChange={(e) => setCruisePort(e.target.value as CruisePort)}
+                  className={inputCls}
+                >
+                  <option value="gangjeong">{t("pricing.cruisePorts.gangjeong")}</option>
+                  <option value="jeju_port">{t("pricing.cruisePorts.jeju_port")}</option>
                 </select>
               </label>
             ) : null}

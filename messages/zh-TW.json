@@ -2052,15 +2052,22 @@
           "region": "市區外附加費",
           "jejuCrossRegion": "跨兩區附加費",
           "jejuPickup": "接送區域（{zone}）",
-          "dmzBase": "DMZ私人之旅（{pax}人）"
+          "dmzBase": "DMZ私人之旅（{pax}人）",
+          "cruiseExcursion": "郵輪岸上觀光",
+          "gangjeongPort": "江汀港"
         },
         "pickupZones": {
           "city": "濟州市區 — 無附加費",
           "north": "北部（涯月、三陽）+₩40,000",
           "outer": "外圍（城山、西歸浦）+₩60,000",
           "cross_island": "跨島（150公里以上）+₩30,000"
+        },
+        "cruisePorts": {
+          "gangjeong": "江汀港（西歸浦）+₩70,000",
+          "jeju_port": "濟州港（市區）"
         }
-      }
+      },
+      "cruisePortLabel": "郵輪港口"
     },
     "intake": {
       "trackLegend": "您如何旅行？",

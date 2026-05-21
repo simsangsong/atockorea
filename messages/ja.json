@@ -2052,15 +2052,22 @@
           "region": "市外追加料金",
           "jejuCrossRegion": "2エリア追加料金",
           "jejuPickup": "送迎エリア（{zone}）",
-          "dmzBase": "DMZプライベートツアー（{pax}名）"
+          "dmzBase": "DMZプライベートツアー（{pax}名）",
+          "cruiseExcursion": "クルーズ寄港地ツアー",
+          "gangjeongPort": "江汀港（カンジョン）"
         },
         "pickupZones": {
           "city": "済州市内 — 追加料金なし",
           "north": "北部（涯月・三陽）+₩40,000",
           "outer": "郊外（城山・西帰浦）+₩60,000",
           "cross_island": "島横断（150km以上）+₩30,000"
+        },
+        "cruisePorts": {
+          "gangjeong": "江汀港（西帰浦）+₩70,000",
+          "jeju_port": "済州港（済州市）"
         }
-      }
+      },
+      "cruisePortLabel": "クルーズ寄港地"
     },
     "intake": {
       "trackLegend": "移動手段をお選びください",

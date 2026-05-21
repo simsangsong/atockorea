@@ -2052,15 +2052,22 @@
           "region": "Recargo fuera de la ciudad",
           "jejuCrossRegion": "Recargo por dos regiones",
           "jejuPickup": "Zona de recogida ({zone})",
-          "dmzBase": "Tour privado DMZ ({pax} pers.)"
+          "dmzBase": "Tour privado DMZ ({pax} pers.)",
+          "cruiseExcursion": "Excursión de crucero",
+          "gangjeongPort": "Puerto de Gangjeong"
         },
         "pickupZones": {
           "city": "Ciudad de Jeju — sin recargo",
           "north": "Costa norte (Aewol, Samyang) +₩40,000",
           "outer": "Zonas exteriores (Seongsan, Seogwipo) +₩60,000",
           "cross_island": "Cruce de la isla (150 km+) +₩30,000"
+        },
+        "cruisePorts": {
+          "gangjeong": "Puerto de Gangjeong (Seogwipo) +₩70,000",
+          "jeju_port": "Puerto de Jeju (ciudad)"
         }
-      }
+      },
+      "cruisePortLabel": "Puerto del crucero"
     },
     "intake": {
       "trackLegend": "¿Cómo viajas?",

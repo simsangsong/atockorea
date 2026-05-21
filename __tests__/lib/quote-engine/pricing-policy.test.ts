@@ -175,6 +175,43 @@ describe("Jeju zones + cross-region + pickup (§6, §7)", () => {
   });
 });
 
+describe("cruise shore-excursion surcharges", () => {
+  it("cruise track adds a flat ₩40,000", () => {
+    const r = quote(input({ track: "cruise", region: "busan", durationHours: 8, pax: 2 }));
+    expect(r.total).toBe(340000 + 40000);
+    expect(r.lines.find((l) => l.code === "cruise_excursion")?.amount).toBe(40000);
+  });
+
+  it("Gangjeong port adds ₩70,000 on top of the cruise add", () => {
+    const r = quote(
+      input({ track: "cruise", region: "jeju", durationHours: 6, pax: 2, cruisePort: "gangjeong" })
+    );
+    // base 280k + cruise 40k + gangjeong 70k
+    expect(r.total).toBe(280000 + 40000 + 70000);
+    expect(r.lines.find((l) => l.code === "gangjeong_port")?.amount).toBe(70000);
+  });
+
+  it("non-Gangjeong Jeju cruise gets only the ₩40,000 cruise add", () => {
+    const r = quote(
+      input({ track: "cruise", region: "jeju", durationHours: 6, pax: 2, cruisePort: "jeju_port" })
+    );
+    expect(r.total).toBe(280000 + 40000);
+    expect(r.lines.find((l) => l.code === "gangjeong_port")).toBeUndefined();
+  });
+
+  it("cruise ignores the hotel pickup-zone surcharge (pickup is the port)", () => {
+    const r = quote(
+      input({ track: "cruise", region: "jeju", durationHours: 6, jejuPickupZone: "outer" })
+    );
+    expect(r.lines.find((l) => l.code === "jeju_pickup")).toBeUndefined();
+  });
+
+  it("private/land tours never get the cruise add", () => {
+    const r = quote(input({ track: "private", region: "busan" }));
+    expect(r.lines.find((l) => l.code === "cruise_excursion")).toBeUndefined();
+  });
+});
+
 describe("region tag normalization", () => {
   it("strips verbose region strings to the province slug", () => {
     expect(normalizeRegion("Gyeonggi — Pogok-eup, Cheoin-gu, Yongin-si")).toBe("gyeonggi");

@@ -125,6 +125,10 @@ function lineLabel(line: BreakdownLine): string {
       return "Pickup-area surcharge";
     case "dmz_base":
       return `DMZ private tour (${meta.pax ?? ""} pax)`;
+    case "cruise_excursion":
+      return "Cruise shore-excursion";
+    case "gangjeong_port":
+      return "Gangjeong Port surcharge";
     case "manual":
       return "Custom quote";
     default:

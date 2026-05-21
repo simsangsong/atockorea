@@ -30,6 +30,8 @@ export type VehicleClass = "sedan" | "van" | "solati" | "multi";
 
 /** Customer-facing pickup-zone selector for Jeju (drives a pickup surcharge). */
 export type JejuPickupZone = "city" | "north" | "outer" | "cross_island";
+/** Cruise embarkation port — only Gangjeong (Jeju) carries a surcharge. */
+export type CruisePort = "gangjeong" | "jeju_port";
 /** Per-POI Jeju tour-region classification (drives the cross-region surcharge). */
 export type JejuZone = "east" | "west" | "south" | "city";
 
@@ -53,8 +55,10 @@ export interface PriceInput {
   pax: number;
   /** ISO date (yyyy-mm-dd) for peak-season detection. Optional. */
   requestedDate?: string | null;
-  /** Jeju only — customer-selected pickup zone. */
+  /** Jeju only — customer-selected pickup zone (private/land tours). */
   jejuPickupZone?: JejuPickupZone | null;
+  /** Cruise track only — embarkation port (Gangjeong adds a surcharge). */
+  cruisePort?: CruisePort | null;
   /** Admin-region tags of the cart POIs (for sub-region surcharge). */
   poiRegions?: string[];
   /** Pre-classified Jeju zones of the cart POIs (for cross-region surcharge). */
@@ -160,6 +164,11 @@ export const SUBREGION_SURCHARGE: Record<string, number> = {
 
 /** Jeju covering ≥2 of {East, West, South} in one day. */
 export const JEJU_CROSS_REGION_SURCHARGE = 60000;
+
+/** Cruise shore-excursion private tour — flat add on top of the day rate. */
+export const CRUISE_EXCURSION_SURCHARGE = 40000;
+/** Gangjeong (Seogwipo) cruise terminal — extra on top of the cruise add. */
+export const GANGJEONG_PORT_SURCHARGE = 70000;
 
 /** Jeju pickup-zone surcharge (customer-selected). */
 export const JEJU_PICKUP_SURCHARGE: Record<JejuPickupZone, number> = {
@@ -385,14 +394,33 @@ export function quote(input: PriceInput): PriceResult {
         amount: JEJU_CROSS_REGION_SURCHARGE,
       });
     }
-    const pickup = input.jejuPickupZone ?? "city";
-    const pickupAmt = JEJU_PICKUP_SURCHARGE[pickup] ?? 0;
-    if (pickupAmt > 0) {
+    // Hotel pickup zone applies to land tours; cruise pickup is the port.
+    if (input.track !== "cruise") {
+      const pickup = input.jejuPickupZone ?? "city";
+      const pickupAmt = JEJU_PICKUP_SURCHARGE[pickup] ?? 0;
+      if (pickupAmt > 0) {
+        lines.push({
+          code: "jeju_pickup",
+          labelKey: "lines.jejuPickup",
+          amount: pickupAmt,
+          meta: { zone: pickup },
+        });
+      }
+    }
+  }
+
+  // Cruise shore-excursion: flat add, plus a Gangjeong-terminal surcharge.
+  if (input.track === "cruise") {
+    lines.push({
+      code: "cruise_excursion",
+      labelKey: "lines.cruiseExcursion",
+      amount: CRUISE_EXCURSION_SURCHARGE,
+    });
+    if (input.cruisePort === "gangjeong") {
       lines.push({
-        code: "jeju_pickup",
-        labelKey: "lines.jejuPickup",
-        amount: pickupAmt,
-        meta: { zone: pickup },
+        code: "gangjeong_port",
+        labelKey: "lines.gangjeongPort",
+        amount: GANGJEONG_PORT_SURCHARGE,
       });
     }
   }

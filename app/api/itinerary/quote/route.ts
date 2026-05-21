@@ -51,6 +51,7 @@ interface QuoteBody {
   duration_hours?: unknown;
   party_size?: unknown;
   jeju_pickup_zone?: unknown;
+  cruise_port?: unknown;
   requested_date?: unknown;
   contact_email?: unknown;
   contact_name?: unknown;
@@ -133,6 +134,11 @@ export async function POST(request: Request) {
       ? (body.jeju_pickup_zone as JejuPickupZone)
       : null;
 
+  const cruisePort =
+    body.cruise_port === "gangjeong" || body.cruise_port === "jeju_port"
+      ? (body.cruise_port as "gangjeong" | "jeju_port")
+      : null;
+
   const supabase = createServerClient();
 
   // 1) Fetch cart POI region + coords (preserves cart order)
@@ -172,6 +178,7 @@ export async function POST(request: Request) {
     pax: partySize ?? 2,
     requestedDate,
     jejuPickupZone,
+    cruisePort,
     poiRegions,
     jejuPoiZones,
   };
@@ -216,6 +223,7 @@ export async function POST(request: Request) {
     peak_season: result.peakSeason,
     ...(durationHours != null ? { duration_hours: durationHours } : {}),
     ...(jejuPickupZone ? { jeju_pickup_zone: jejuPickupZone } : {}),
+    ...(cruisePort ? { cruise_port: cruisePort } : {}),
   };
 
   const { data: inserted, error: insertError } = await supabase
