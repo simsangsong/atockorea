@@ -10,16 +10,27 @@
  * - First-seen-wins for image/category/duration/region (en read first).
  * - Locale names spread across `name_en` / `name_ko` / `names_other_locales`.
  *
+ * Image selection (POI Data Quality master plan, Phase 4):
+ *   1. curated override (lib/itinerary-builder/poi-image-overrides.mjs) — wins
+ *   2. first VALID stop.images[] item (non-empty, not Signal-A wrong-POI)
+ *   3. first VALID stop.image
+ *   4. null (a no-image POI is reported for the Track B photo backlog)
+ * "Signal A" rejects a /images/tours/<folder>/ image whose folder token shares
+ * no overlap with the POI key/name (e.g. jeonnong_ro -> /tours/ilchulland/...),
+ * so a re-seed cannot reintroduce known cross-POI image pollution.
+ *
  * Usage:
  *   SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... \
  *   node scripts/seed-match-pois-from-tour-jsons.mjs [--dry-run]
  *
- * See docs/itinerary-builder-plan.md §F Phase 1.
+ * See docs/itinerary-builder-plan.md §F Phase 1 +
+ *     docs/itinerary-builder-poi-data-quality-master-plan-2026-05-20.md.
  */
 import { readFileSync, readdirSync, existsSync, statSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import { createClient } from "@supabase/supabase-js";
+import { BUILDER_POI_IMAGE_OVERRIDES } from "../lib/itinerary-builder/poi-image-overrides.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -59,6 +70,47 @@ function isRealPoi(meta) {
   // exclude them here so re-runs don't re-introduce them.
   if (meta.poi_key.startsWith("route_variant_")) return false;
   return true;
+}
+
+// --- Image validity (POI Data Quality master plan, Phase 4 / Signal A) ---
+
+function isValidImageUrl(url) {
+  return typeof url === "string" && url.trim().length > 0;
+}
+
+/**
+ * Signal A — a `/images/tours/<folder>/` image whose folder token shares no
+ * overlap with the POI's key/name is probably the wrong POI's image
+ * (e.g. jeonnong_ro_cherry_blossom_street pointing at /tours/ilchulland/...).
+ * Scoped to the shared tours-folder convention; returns false for anything else.
+ */
+function isProbablyWrongPoiImage(poiKey, name, url) {
+  if (!isValidImageUrl(url)) return false;
+  const m = url.match(/^\/images\/tours\/([^/]+)\//);
+  if (!m) return false; // only judge the shared tours-folder convention
+  const folderTokens = m[1].toLowerCase().split(/[^a-z0-9]+/).filter((t) => t.length >= 3);
+  if (folderTokens.length === 0) return false;
+  const poiTokens = `${poiKey} ${name || ""}`
+    .toLowerCase()
+    .split(/[^a-z0-9]+/)
+    .filter((t) => t.length >= 3);
+  const overlap = folderTokens.some((ft) =>
+    poiTokens.some((pt) => pt === ft || pt.includes(ft) || ft.includes(pt))
+  );
+  return !overlap;
+}
+
+/** First valid, non-wrong-POI image from a stop (override + KB handled elsewhere). */
+function firstValidImage(stop, poiKey, name) {
+  const candidates = [];
+  if (Array.isArray(stop.images)) candidates.push(...stop.images);
+  if (typeof stop.image === "string") candidates.push(stop.image);
+  for (const url of candidates) {
+    if (!isValidImageUrl(url)) continue;
+    if (isProbablyWrongPoiImage(poiKey, name, url)) continue;
+    return url;
+  }
+  return null;
 }
 
 function listTourDirs() {
@@ -107,8 +159,11 @@ function mergeStop(stop, region, locale) {
     acc.names_other_locales[locale] = stop.name;
   }
 
-  if (!acc.default_image_url && typeof stop.image === "string") {
-    acc.default_image_url = stop.image;
+  // Prefer the first VALID, non-wrong-POI image. The curated override (if any)
+  // is applied at shapeForUpsert and always wins over whatever is found here.
+  if (!acc.default_image_url) {
+    const img = firstValidImage(stop, key, acc.name_en || stop.name || key);
+    if (img) acc.default_image_url = img;
   }
   if (!acc.category && typeof stop.category === "string") {
     acc.category = stop.category;
@@ -163,13 +218,15 @@ function shapeForUpsert(acc) {
   const namesOther = Object.keys(acc.names_other_locales).length
     ? acc.names_other_locales
     : null;
+  const override = BUILDER_POI_IMAGE_OVERRIDES[acc.poi_key];
   return {
     poi_key: acc.poi_key,
     name_en: acc.name_en,
     name_ko: acc.name_ko,
     names_other_locales: namesOther,
     region: acc.region,
-    default_image_url: acc.default_image_url,
+    // Curated override wins; otherwise the validated stop image (or null).
+    default_image_url: override?.defaultImageUrl ?? acc.default_image_url,
     poi_meta: acc.poi_meta,
     stop_role: acc.stop_role,
     is_attraction: acc.is_attraction,
@@ -196,6 +253,14 @@ async function main() {
   const missingNameEn = [...pois.values()].filter((p) => !p.name_en).map((p) => p.poi_key);
   if (missingNameEn.length) {
     console.warn(`WARNING: ${missingNameEn.length} POIs missing name_en:`, missingNameEn);
+  }
+
+  // POIs that end up with no image even after the override — Track B photo backlog.
+  const noImage = [...pois.values()]
+    .filter((p) => !BUILDER_POI_IMAGE_OVERRIDES[p.poi_key]?.defaultImageUrl && !p.default_image_url)
+    .map((p) => p.poi_key);
+  if (noImage.length) {
+    console.warn(`NOTE: ${noImage.length} POIs have no default_image_url (need a real photo):`, noImage);
   }
 
   const rows = [...pois.values()].map(shapeForUpsert);
