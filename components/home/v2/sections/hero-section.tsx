@@ -140,13 +140,11 @@ export function HeroSection() {
           .hero-proof-badge { animation: none; }
         }
       `}</style>
-      {/* Hero height: bumped to give Korea's landscape genuine on-page
-          presence. Apple landing pages routinely use 70-90vh hero photos.
-          Mobile capped at 48vh so the inline-stats + matcher headline
-          still peek above the fold on iPhone-class viewports. */}
+      {/* Keep the landscape cinematic without letting tall desktop viewports
+          turn the homepage into a single oversized hero image. */}
       <div
         ref={heroPanelRef}
-        className="relative min-h-[44vh] sm:min-h-[48vh] md:min-h-[64vh] lg:min-h-[72vh] flex flex-col justify-end overflow-hidden bg-black pb-3 md:pb-5"
+        className="relative flex min-h-[38vh] flex-col justify-end overflow-hidden bg-black pb-3 sm:min-h-[40vh] md:min-h-[46vh] md:pb-5 lg:min-h-[clamp(420px,48vh,580px)]"
       >
         <div className="absolute inset-0">
           {/* Photo crossfade — slides up under parallax as the user scrolls,
