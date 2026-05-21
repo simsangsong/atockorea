@@ -19,7 +19,7 @@
   "catalog_card": {
     "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
     "title": "Busan to Gyeongju: UNESCO Legacy Tour with National Museum",
-    "priceLabel": "Price TBD — confirm small-group rate from GetYourGuide listing",
+    "priceLabel": "Price TBD — confirm small-group rate at booking",
     "shortCardDescription": "Small-group day tour from Busan to Gyeongju, the Silla kingdom's capital for 992 years (57 BCE–935 CE) and the densest concentration of UNESCO World Heritage sites in Korea. Route: Ahopsan Bamboo Forest → Bulguksa Temple (UNESCO) → Gyeongju ssambap lunch → Gyeongju National Museum → Gyochon Hanok Village → Woljeonggyo Bridge. English/Chinese-speaking certified guide; mini-van; admissions to Bulguksa and the museum are free.",
     "tags": [
       "small_group",
@@ -51,13 +51,13 @@
     "currency": "USD",
     "per": "person",
     "priceSource": "getyourguide_t1031312",
-    "priceNote": "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across packages and operators. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+    "priceNote": "Final small-group price confirmed at booking; AtoC Korea sale price applies a flat 10% discount.",
     "discountPercent": 10
   },
   "hero": {
     "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
     "imagePosition": "center 35%",
-    "tagline": "Korea's 'museum without walls' — Gyeongju, where seven UNESCO sites cluster within 15 km",
+    "tagline": "Korea's 'museum without walls' — Gyeongju, home to Korea's densest cluster of UNESCO Silla heritage sites",
     "pills": [
       "small_group",
       "gyeongju",
@@ -185,7 +185,7 @@
       "duration": "60 min",
       "name": "Busan pickup (3 subway stations)",
       "category": "Transit / Pickup",
-      "description": "Pickup runs in sequence from three central Busan subway stations: **Busan Station (Line 1)** at ~08:10 for guests staying near Choryang/Nampo-dong, **Seomyeon Station (Lines 1 & 2)** at ~08:25 for the central business hotel district, and **Haeundae Station (Line 2)** at ~08:45 for the eastern beachfront resort area. From the final pickup the coach takes the **Donghae Expressway** north toward Gijang-gun — the route's first stop, **Ahopsan Bamboo Forest**, sits just ~30 km / ~25 min from Haeundae in the foothills of northeastern Busan. The early start is intentional: this 8-stop UNESCO-legacy tour is the catalog's most content-dense Gyeongju route, ending at sunset with **Woljeonggyo Bridge illuminated against Namcheon River** before the return drive. Guests should pre-load coffee, water and any motion-sickness preparation at the first pickup, since the coach makes only one comfort stop before reaching Bulguksa around 11:30.",
+      "description": "Pickup runs in sequence from three central Busan subway stations: **Busan Station (Line 1)** at ~08:10 for guests staying near Choryang/Nampo-dong, **Seomyeon Station (Lines 1 & 2)** at ~08:25 for the central business hotel district, and **Haeundae Station (Line 2)** at ~08:45 for the eastern beachfront resort area. From the final pickup the coach takes the **Donghae Expressway** north toward Gijang-gun — the route's first stop, **Ahopsan Bamboo Forest**, sits just ~30 km / ~25 min from Haeundae in the foothills of northeastern Busan. The early start is intentional: this 8-stop UNESCO-legacy tour is one of the most content-dense Gyeongju routes available, ending at sunset with **Woljeonggyo Bridge illuminated against Namcheon River** before the return drive. Guests should pre-load coffee, water and any motion-sickness preparation at the first pickup, since the coach makes only one comfort stop before reaching Bulguksa around 11:30.",
       "highlights": [
         "Three Busan pickup options: Busan Station, Seomyeon, Haeundae",
         "Coach transit Busan → Ahopsan ~30 km / ~25 min via Donghae Expressway",
@@ -199,7 +199,7 @@
         "Drive to Haeundae Station (~18 min)",
         "Haeundae pickup + departure to Donghae Expressway (~08:45, ~20 min)"
       ],
-      "whyOnRoute": "Three-station pickup is the standard Busan small-group format for Gyeongju routes and matches the staging used by competing operators. Starting from Haeundae as the final pickup minimizes deadhead distance to the Gijang-gun bamboo forest (the day's first content stop), preserving the carefully-built sunset finale at Woljeonggyo Bridge.",
+      "whyOnRoute": "Three-station pickup is the standard Busan small-group format for Gyeongju routes and matches the staging used by other day-tour operators. Starting from Haeundae as the final pickup minimizes deadhead distance to the Gijang-gun bamboo forest (the day's first content stop), preserving the carefully-built sunset finale at Woljeonggyo Bridge.",
       "_poi_meta": {
         "poi_key": "OPS_busan_subway_pickup",
         "verified": true,
@@ -227,7 +227,7 @@
         "Featured in **Kundo (2014), Memories of the Sword (2015), Moon Lovers: Scarlet Heart Ryeo (2016), 100 Days My Prince (2018), The King: Eternal Monarch (2020)**",
         "**116 designated 400-year-old red pine trees** along lower paths",
         "**Admission: Adult ₩8,000 / Child ₩5,000**, hours 09:00–18:00, **closed Mondays**",
-        "**Filming location for The King: Eternal Monarch (2020)** + Moon Lovers (2016) + Kundo (2014) + 100 Days My Prince (2018) — Korean drama heritage anchor",
+        "**Filming location for The King: Eternal Monarch (2020)** + Moon Lovers (2016) + Kundo (2014) + 100 Days My Prince (2018) — a Korean drama heritage stop",
         "**Closed Mondays** (operational note for itinerary planning); ₩8,000 adult / ₩5,000 under-18 admission (private property — no senior or group discount)"
       ],
       "timeUsed": [
@@ -293,7 +293,7 @@
         "Birojeon Vairocana Hall + Geuknakjeon Pure Land Hall (~15 min)",
         "Free time + reassemble at coach (~10 min)"
       ],
-      "whyOnRoute": "Bulguksa is **the non-negotiable UNESCO anchor of any Gyeongju day tour** and the most-recognized Buddhist heritage site in Korea. The 11:30 arrival is timed to **finish the temple before lunch hunger sets in** and to free the afternoon for the Gyeongju National Museum (paired conceptually as 'temple + treasures'). The 75-minute window is calibrated so guests can complete the full pilgrimage axis without rushing the photogenic Dabotap/Seokgatap pairing in the courtyard. The afternoon arrival window also avoids the morning Korean school-group crowds that fill the temple courtyards before 11:00.",
+      "whyOnRoute": "Bulguksa is **the essential UNESCO highlight of any Gyeongju day tour** and the most-recognized Buddhist heritage site in Korea. The 11:30 arrival is timed to **finish the temple before lunch hunger sets in** and to free the afternoon for the Gyeongju National Museum (paired conceptually as 'temple + treasures'). The 75-minute window is set so guests can complete the full pilgrimage axis without rushing the photogenic Dabotap/Seokgatap pairing in the courtyard. The afternoon arrival window also avoids the morning Korean school-group crowds that fill the temple courtyards before 11:00.",
       "visitBasics": {
         "hours": "Daily 09:00–18:00 (last admission 17:00)",
         "closed": "Open year-round",
@@ -382,7 +382,7 @@
         "Wolji Hall — Anapji palace artifacts (~15 min)",
         "Special exhibition or museum shop + reassemble (~15 min)"
       ],
-      "whyOnRoute": "The museum is **the catalog's strongest indoor cultural anchor in Gyeongju** and the **only stop on this route that is fully weather-proof** — when rain or heat hits, the 75-minute slot can extend without harming the day. Pairing Bulguksa (the temple) with the museum (the temple's contemporaneous artifacts in their original political context) is a deliberate **'see it, then understand it'** sequence that no competing Gyeongju tour matches. The 14:15 timing is chosen so the **Sacred Bell pavilion catches mid-afternoon side-light** for photographers, before the museum's final-hour rush.",
+      "whyOnRoute": "The museum is **the route's strongest indoor cultural stop in Gyeongju** and the **only stop on this route that is fully weather-proof** — when rain or heat hits, the 75-minute slot can extend without harming the day. Pairing Bulguksa (the temple) with the museum (the temple's contemporaneous artifacts in their original political context) is a deliberate **'see it, then understand it'** sequence that few other Gyeongju day tours offer. The 14:15 timing is chosen so the **Sacred Bell pavilion catches mid-afternoon side-light** for photographers, before the museum's final-hour rush.",
       "visitBasics": {
         "hours": "Tue–Sun 10:00–18:00 (last admission 17:30); extended hours Sat & last Wed of month until 21:00",
         "closed": "Mondays + Jan 1 + Lunar New Year + Chuseok",
@@ -439,7 +439,7 @@
         "Hyanggyo Confucian school + village lanes (~15 min)",
         "Reassemble at coach (~5 min)"
       ],
-      "whyOnRoute": "Gyochon is the route's **'living Silla' anchor** — while Bulguksa shows Silla Buddhism and the museum shows Silla artifacts, Gyochon shows the **continuous Korean lifeway that descends from Silla** through the Joseon scholar-gentry to today's protected Choi clan estate. Placing Gyochon at 15:50 catches the **golden-hour side-light on the hanok tile roofs and the Gyodong Beopju brewery's wooden gates**, the village's most photogenic time. The compact walking layout also fits well between the indoor museum and the upcoming bridge stop.",
+      "whyOnRoute": "Gyochon is the route's **'living Silla' chapter** — while Bulguksa shows Silla Buddhism and the museum shows Silla artifacts, Gyochon shows the **continuous Korean lifeway that descends from Silla** through the Joseon scholar-gentry to today's protected Choi clan estate. Placing Gyochon at 15:50 catches the **golden-hour side-light on the hanok tile roofs and the Gyodong Beopju brewery's wooden gates**, the village's most photogenic time. The compact walking layout also fits well between the indoor museum and the upcoming bridge stop.",
       "visitBasics": {
         "hours": "Daily during daylight; most heritage houses 09:00–18:00",
         "closed": "Some individual houses close on Mondays — main lanes always open",
@@ -479,7 +479,7 @@
       "category": "Reconstructed Silla Wooden Bridge",
       "description": "**Woljeonggyo Bridge (월정교)** is the **reconstructed Silla-era wooden bridge spanning the Namcheon River**, today **Korea's largest wooden bridge** at **60.57 m original length**, reopened to the public in **April 2018** after a **multi-decade reconstruction project (2008–2013 for the bridge deck, 2016–2018 for the gatehouses)**. The bridge was **first built in 760 CE under King Gyeongdeok (35th king of Silla)** as recorded in the *Samguk Sagi* — connecting the **Wolseong (Half-Moon Palace)** of the Silla royal court to the south settlement. **Lost during the Joseon Dynasty**, it was **rediscovered in the 1984–1986 archaeological excavation** which uncovered the original stone foundations preserved in the riverbed; the modern reconstruction matches Silla construction methods using interlocking wooden joinery without nails. The bridge was designated a **Historic Site of Korea on November 27, 2004** and was selected as one of **Korea's '100 Best Tourist Attractions' for 2025–2026 by the Ministry of Culture, Sports and Tourism**. **The most spectacular time to visit is the 30-minute window after sunset**, when the bridge's nightly illumination casts warm reflections on the Namcheon River — the reason this stop closes the day. **Admission is FREE**, **the bridge is open 24 hours**, and there is a **wheelchair-accessible path from the north bank**. Photo composition tip: the **south-bank gatehouse** with the bridge spanning toward Wolseong creates the most photographed Gyeongju nightscape after Donggung Palace.",
       "highlights": [
-        "**Korea's largest wooden bridge** — 60.57 m original length",
+        "**Korea's largest reconstructed wooden covered bridge** — 66.15 m long (Silla-style reconstruction completed 2018)",
         "**First built 760 CE** by King Gyeongdeok (35th Silla king) — recorded in *Samguk Sagi*",
         "**Lost during Joseon → excavated 1984–1986 → reconstructed 2008–2018**",
         "Reopened **April 2018** after gatehouse completion",
@@ -487,7 +487,7 @@
         "**'100 Best Tourist Attractions in Korea 2025–2026'** by MCST",
         "**Sunset / dusk illumination = most photographed Gyeongju nightscape after Donggung**",
         "**FREE**, open 24 hours, wheelchair-accessible from north bank",
-        "**Selected '100 Best Tourist Attractions in Korea 2025-2026'** by Korea Tourism Organization — recognizing the 2018-reopened reconstruction of King Gyeongdeok's original 760 CE wooden bridge as a national heritage anchor"
+        "**Selected '100 Best Tourist Attractions in Korea 2025-2026'** by Korea Tourism Organization — recognizing the 2018-reopened reconstruction of King Gyeongdeok's original 760 CE wooden bridge as a national heritage landmark"
       ],
       "timeUsed": [
         "Coach drop-off at north bank parking (~5 min)",
@@ -495,7 +495,7 @@
         "Photo time at south bank composition (~15 min)",
         "Walk back + reassemble at coach (~10 min)"
       ],
-      "whyOnRoute": "Woljeonggyo is **the catalog's signature 'sunset finale'** — a deliberately-built closer that lets the day end on a high emotional note rather than dribbling out at Gyochon. The 17:00 arrival is **timed to the seasonal sunset window** — in spring and autumn the illumination kicks in around 18:00, but the **40-minute slot captures the magic-hour transition** with both daylight and the first illumination glow. No competing Busan-Gyeongju day tour ends here; this is the route's strongest differentiation against **busan-top-attractions**, **from-busan-gyeongju-ancient-capital**, and other day tours that close earlier.",
+      "whyOnRoute": "Woljeonggyo is **the route's signature 'sunset finale'** — a deliberately-built closer that lets the day end on a high emotional note rather than dribbling out at Gyochon. The 17:00 arrival is **timed to the seasonal sunset window** — in spring and autumn the illumination kicks in around 18:00, but the **40-minute slot captures the magic-hour transition** with both daylight and the first illumination glow. Few other Busan-Gyeongju day tours end here; it's a deliberate point of difference for guests who want a memorable closing image.",
       "visitBasics": {
         "hours": "Open 24 hours (illumination runs roughly sunset → 23:00)",
         "closed": "Open year-round",
@@ -546,7 +546,7 @@
         "First drop-off at Haeundae Station (~5 min)",
         "Drive to Seomyeon + Busan Station drop-offs (~5 min)"
       ],
-      "whyOnRoute": "Reverse-order drop-off is standard small-group operations practice — first drop-off is the geographically nearest (Haeundae) which minimizes total transit. Avoiding a packaged dinner is a deliberate price/flexibility choice and matches competing Busan-Gyeongju products.",
+      "whyOnRoute": "Reverse-order drop-off is standard small-group practice — first drop-off is the geographically nearest (Haeundae) which minimizes total transit. Skipping a packaged dinner is a deliberate price-and-flexibility choice and matches the typical Busan-Gyeongju day-tour format.",
       "_poi_meta": {
         "poi_key": "OPS_busan_return",
         "verified": true,
@@ -947,7 +947,7 @@
       "currency": "USD",
       "per": "person",
       "priceSource": "getyourguide_t1031312",
-      "priceNote": "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across packages and operators. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+      "priceNote": "Final small-group price confirmed at booking; AtoC Korea sale price applies a flat 10% discount.",
       "discountPercent": 10
     }
   },
@@ -1229,7 +1229,7 @@
         "hero": {
           "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/26/3083926_image2_1.JPG",
           "imagePosition": "center 35%",
-          "tagline": "Korea's 'museum without walls' — Gyeongju, where seven UNESCO sites cluster within 15 km",
+          "tagline": "Korea's 'museum without walls' — Gyeongju, home to Korea's densest cluster of UNESCO Silla heritage sites",
           "pills": [
             "small_group",
             "gyeongju",
@@ -1424,7 +1424,7 @@
               "Main attraction exploration with photo time",
               "Wrap-up and reassembly at vehicle"
             ],
-            "whyOnRoute": "The architectural anchor of the day. Without Bulguksa, no Gyeongju day tour can claim 'UNESCO heritage'.",
+            "whyOnRoute": "The architectural highlight of the day. Without Bulguksa, no Gyeongju day tour can claim 'UNESCO heritage'.",
             "_poi_meta": {
               "poi_key": "bulguksa_temple",
               "is_attraction": true,
@@ -1945,7 +1945,7 @@
           "currency": "USD",
           "per": "person",
           "priceSource": "getyourguide_t1031312",
-          "priceNote": "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across packages and operators. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+          "priceNote": "Final small-group price confirmed at booking; AtoC Korea sale price applies a flat 10% discount.",
           "discountPercent": 10
         }
       }

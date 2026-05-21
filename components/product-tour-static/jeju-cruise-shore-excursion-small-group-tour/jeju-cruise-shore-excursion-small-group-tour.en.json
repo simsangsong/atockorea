@@ -20,7 +20,7 @@
   "catalog_card": {
     "slug": "jeju-cruise-shore-excursion-small-group-tour",
     "title": "Jeju Cruise Shore Excursion — Small Group Tour",
-    "subtitle": "Port-aware cruise day tour with Jeju and Gangjeong route variants",
+    "subtitle": "Port-aware cruise day tour with Jeju and Gangjeong route options",
     "region": "Jeju (port-dependent)",
     "duration": "8 hours",
     "stopsCount": 6,
@@ -44,7 +44,7 @@
     ]
   },
   "headlineLine1": "Jeju Cruise Shore Excursion — Small Group Tour",
-  "headlineLine2": "Two route variants — pick the one that matches your cruise port",
+  "headlineLine2": "Two route options — pick the one that matches your cruise port",
   "price": {
     "amountLabel": "",
     "currency": "USD",
@@ -1013,7 +1013,7 @@
             "**Natural Monument No. 443** — designated **2005-01-06**, the most recent Jeju coastal NM",
             "Columns rise **30–40 m**, packed in **5- to 7-sided polygons** (mostly hexagons) along **1 km** of coastline",
             "Formation: **Hallasan flank lava cooled in the sea ~250,000–140,000 years ago**, contracting perpendicular to cooling face",
-            "**East Asia's premier columnar-jointing site** — peer to Giant's Causeway, Devils Postpile, Fingal's Cave",
+            "**One of East Asia's most accessible columnar-jointing sites** — peer to Giant's Causeway, Devils Postpile, Fingal's Cave",
             "**Spray up to 20 m on high-tide days** — wave-fountain photography window",
             "**0.8 km boardwalk loop**, ~15 min walk — barrier-free deck, wheelchair/stroller accessible",
             "Part of **Jeju Global Geopark (UNESCO 2010-10)** — 13 island-wide geosites",
@@ -1056,7 +1056,7 @@
         {
           "name": "Lunch near Olle Maeil Market (Seogwipo)",
           "category": "Lunch",
-          "description": "**Seogwipo lunch stop** at a guide-vetted sit-down restaurant **inside or adjacent to Seogwipo Maeil Olle Market**, taking advantage of the market's food density before the afternoon Cheonjiyeon Falls visit (5-min walk). **Two typical options** depending on group preference: **(1) Hairtail (galchi) sashimi or grilled galchi** — eastern coast's daily catch sold dockside-fresh at the market's seafood stalls, with sit-down preparations inside the arcade; or **(2) Black Pork BBQ** (제주 흑돼지) — Jeju's signature ingredient (Natural Monument 2015 indigenous Black Pig). **Bibimbap** with seasonal Jeju vegetables and **Mom-guk** (Jeju seaweed soup) are the standard vegetarian-friendly defaults. Lunch duration is **~60 minutes**, fitting the cruise day-trip timeline. Beverages: barley tea (free), **Jeju Beer** (~₩6,000), **Hallasan Soju** (~₩5,000), or **Omegisul rice-millet liquor** (Seongeup family recipe — sold at the market's licensed vendors). All venues in the rotation accept **major cards + cash KRW**; bilingual photo menus (English/Chinese) standard. Lunch is **NOT included** in cruise tour pricing — typical out-of-pocket **₩15,000–25,000/pax**; inclusive lunch upgrade available on booking. After lunch, the natural flow is **5-min walk → Cheonjiyeon Falls trailhead → 1 km gentle gorge walk** — making this the catalog's most efficient lunch-to-attraction transition for cruise day-trips.",
+          "description": "**Seogwipo lunch stop** at a guide-vetted sit-down restaurant **inside or adjacent to Seogwipo Maeil Olle Market**, taking advantage of the market's food density before the afternoon Cheonjiyeon Falls visit (5-min walk). **Two typical options** depending on group preference: **(1) Hairtail (galchi) sashimi or grilled galchi** — eastern coast's daily catch sold dockside-fresh at the market's seafood stalls, with sit-down preparations inside the arcade; or **(2) Black Pork BBQ** (제주 흑돼지) — Jeju's signature ingredient (Natural Monument 2015 indigenous Black Pig). **Bibimbap** with seasonal Jeju vegetables and **Mom-guk** (Jeju seaweed soup) are the standard vegetarian-friendly defaults. Lunch duration is **~60 minutes**, fitting the cruise day-trip timeline. Beverages: barley tea (free), **Jeju Beer** (~₩6,000), **Hallasan Soju** (~₩5,000), or **Omegisul rice-millet liquor** (Seongeup family recipe — sold at the market's licensed vendors). All venues in the rotation accept **major cards + cash KRW**; bilingual photo menus (English/Chinese) standard. Lunch is **NOT included** in cruise tour pricing — typical out-of-pocket **₩15,000–25,000/pax**; inclusive lunch upgrade available on booking. After lunch, the natural flow is **5-min walk → Cheonjiyeon Falls trailhead → 1 km gentle gorge walk** — making this one of the day's most efficient lunch-to-attraction transitions for cruise day-trips.",
           "highlights": [
             "Guide-vetted sit-down inside / adjacent to **Olle Maeil Market**",
             "**Galchi sashimi**, **black pork BBQ**, or vegetarian Bibimbap + Mom-guk options",
@@ -1280,7 +1280,7 @@
     ],
     "routeLogicSections": [
       {
-        "title": "Why two port variants",
+        "title": "Why two port routes",
         "icon": "route",
         "iconBg": "bg-sky-50/80",
         "iconColor": "text-sky-600",
@@ -1317,7 +1317,7 @@
     {
       "id": "pickup",
       "title": "Pickup & drop-off",
-      "preview": "Cruise terminal pickup — variant by port",
+      "preview": "Cruise terminal pickup — depends on your port",
       "content": [
         "Jeju Port pickup: Jeju cruise terminal (north Jeju)",
         "Gangjeong Port pickup: Gangjeong cruise terminal (Seogwipo, south Jeju)",
@@ -1328,7 +1328,7 @@
     {
       "id": "walking",
       "title": "Walking & terrain",
-      "preview": "Moderate; varies by port variant",
+      "preview": "Moderate; varies by port route",
       "content": [
         "Jeju port: Seongsan Ilchulbong rim climb is steepest (optional)",
         "Gangjeong port: Hallasan 1100 is easy boardwalk; Cheonjiyeon path is short",
@@ -1340,10 +1340,10 @@
       "title": "Weather policy",
       "preview": "Cruise schedule is fixed — route adjusts",
       "content": [
-        "Heavy rain: Seongsan rim climb may be skipped (Jeju port variant)",
-        "Hallasan weather: 1100 highland may be substituted with lower-elevation stop (Gangjeong port variant)",
+        "Heavy rain: Seongsan rim climb may be skipped (Jeju Port route)",
+        "Hallasan weather: 1100 highland may be substituted with a lower-elevation stop (Gangjeong Port route)",
         "Strong wind: coastal exposure shortens at Jusangjeolli and Seopjikoji",
-        "Cruise return is non-negotiable — route adjusts, schedule does not"
+        "Cruise return is fixed — the route adjusts, the schedule doesn't move"
       ]
     },
     {
@@ -1352,7 +1352,7 @@
       "preview": "Comfortable walking shoes + layers + passport for cruise re-entry",
       "content": [
         "Comfortable walking shoes",
-        "Light jacket (especially Hallasan 1100 / Gangjeong variant)",
+        "Light jacket (especially Hallasan 1100 / Gangjeong Port route)",
         "Hat and sunscreen",
         "Cruise ID + passport for terminal re-entry"
       ]
@@ -1958,7 +1958,7 @@
       "component": "TourHeroSection",
       "props": {
         "headlineLine1": "Jeju Cruise Shore Excursion — Small Group Tour",
-        "headlineLine2": "Two route variants — pick the one that matches your cruise port",
+        "headlineLine2": "Two route options — pick the one that matches your cruise port",
         "hero": {
           "imageUrl": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
           "imagePosition": "center 35%",
@@ -2181,7 +2181,7 @@
               "Main attraction exploration with photo time",
               "Wrap-up and reassembly at vehicle"
             ],
-            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "whyOnRoute": "The day's UNESCO highlight — a 5,000-year-old hydrovolcanic tuff cone with both an optional rim climb and a level coastal walk so cruise guests of any fitness can take part.",
             "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
             "images": [
               "https://api.cdn.visitjeju.net/photomng/imgpath/202409/20/c8bf6191-832c-4605-a948-96f07f6112d2.webp",
@@ -2228,7 +2228,7 @@
               "Main attraction exploration with photo time",
               "Wrap-up and reassembly at vehicle"
             ],
-            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "whyOnRoute": "Paired with Seongsan a few minutes away — an easy coastal walkway with K-drama filming sites, a lighthouse, and back-views of the Sunrise Peak we just left.",
             "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/9df6665f-e0cf-4b8a-8d1c-2ec895745448.webp",
             "images": [
               "https://api.cdn.visitjeju.net/photomng/imgpath/202408/16/9df6665f-e0cf-4b8a-8d1c-2ec895745448.webp",
@@ -2306,7 +2306,7 @@
               "Main attraction exploration with photo time",
               "Wrap-up and reassembly at vehicle"
             ],
-            "whyOnRoute": "Featured anchor stop on this route — chosen for its cultural/scenic significance and fit with the day's pacing.",
+            "whyOnRoute": "The cultural-heritage half of the day — a 600-year continuously inhabited Joseon-era village so cruise guests leave with real Jeju folk-life context, not just volcanoes.",
             "image": "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/cf7e9f6b-178f-4d3d-b978-91beb5145a10.webp",
             "images": [
               "https://api.cdn.visitjeju.net/photomng/imgpath/202409/06/cf7e9f6b-178f-4d3d-b978-91beb5145a10.webp",
@@ -2440,7 +2440,7 @@
           ],
           "routeLogicSections": [
             {
-              "title": "Why two port variants",
+              "title": "Why two port routes",
               "icon": "route",
               "iconBg": "bg-sky-50/80",
               "iconColor": "text-sky-600",
@@ -2484,7 +2484,7 @@
           {
             "id": "pickup",
             "title": "Pickup & drop-off",
-            "preview": "Cruise terminal pickup — variant by port",
+            "preview": "Cruise terminal pickup — depends on your port",
             "content": [
               "Jeju Port pickup: Jeju cruise terminal (north Jeju)",
               "Gangjeong Port pickup: Gangjeong cruise terminal (Seogwipo, south Jeju)",
@@ -2495,7 +2495,7 @@
           {
             "id": "walking",
             "title": "Walking & terrain",
-            "preview": "Moderate; varies by port variant",
+            "preview": "Moderate; varies by port route",
             "content": [
               "Jeju port: Seongsan Ilchulbong rim climb is steepest (optional)",
               "Gangjeong port: Hallasan 1100 is easy boardwalk; Cheonjiyeon path is short",
@@ -2507,10 +2507,10 @@
             "title": "Weather policy",
             "preview": "Cruise schedule is fixed — route adjusts",
             "content": [
-              "Heavy rain: Seongsan rim climb may be skipped (Jeju port variant)",
-              "Hallasan weather: 1100 highland may be substituted with lower-elevation stop (Gangjeong port variant)",
+              "Heavy rain: Seongsan rim climb may be skipped (Jeju Port route)",
+              "Hallasan weather: 1100 highland may be substituted with a lower-elevation stop (Gangjeong Port route)",
               "Strong wind: coastal exposure shortens at Jusangjeolli and Seopjikoji",
-              "Cruise return is non-negotiable — route adjusts, schedule does not"
+              "Cruise return is fixed — the route adjusts, the schedule doesn't move"
             ]
           },
           {
@@ -2519,7 +2519,7 @@
             "preview": "Comfortable walking shoes + layers + passport for cruise re-entry",
             "content": [
               "Comfortable walking shoes",
-              "Light jacket (especially Hallasan 1100 / Gangjeong variant)",
+              "Light jacket (especially Hallasan 1100 / Gangjeong Port route)",
               "Hat and sunscreen",
               "Cruise ID + passport for terminal re-entry"
             ]

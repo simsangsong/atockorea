@@ -181,7 +181,7 @@
       "highlights": [
         "Seongsan Ilchulbong: triple-UNESCO site (World Natural Heritage 2007 + Biosphere Reserve + Global Geopark) — 30-40 min summit climb to the 99-rock crater rim, summit closes the first Monday of each month; admission 5,000 KRW",
         "Udo Island: 15-min ferry from Seongsan, ~370 residents, 132 m Udobong peak, signature peanut ice cream and white-coral-sand Hagosudong Beach; rental cars restricted unless overnight stay",
-        "Manjanggul Lava Tube: world's largest 7.6 m lava column, 1 km accessible passage of a 7.4 km UNESCO tube, year-round 11-13°C interior; admission 4,000 KRW; closed first Wednesday — verify post-March 2026 reopening status",
+        "Manjanggul Lava Tube: world's tallest known lava column (7.6 m), 1 km accessible passage of a 7.4 km UNESCO tube, year-round 11-13°C interior; admission 4,000 KRW; closed first Wednesday — verify post-March 2026 reopening status",
         "Seopjikoji and Seongeup: K-drama 'All In' (2003) coast + Joseon-era thatched-roof folk village; Seongeup designated National Folklore Cultural Heritage"
       ],
       "timeUsed": [
@@ -275,7 +275,7 @@
       "highlights": [
         "Cheonjiyeon Falls: 22 m single-tier waterfall with daily night illumination, 1 km flat subtropical-forest trail; Mutae eel (Natural Monument 27) habitat; admission 2,000 KRW",
         "Daepo Jusangjeolli Cliff: 1 km of hexagonal basalt columns up to 30-40 m tall, UNESCO Global Geopark; admission ~2,000 KRW",
-        "Sanbangsan + Yakcheonsa: 395 m trachytic lava dome + Asia's largest Buddhist temple complex; cave-temple climb to 150 m elevation; combined ~1,000-2,500 KRW",
+        "Sanbangsan + Yakcheonsa: 395 m trachytic lava dome + one of the largest Buddhist temple complexes in East Asia (122,100 m²); cave-temple climb to 150 m elevation; combined ~1,000-2,500 KRW",
         "Olle Maeil Market: 620 m covered arcade, ~200 shops + ~140 vendors + 20-stall night market; signature Hallabong tangerines, black pork, octopus buns"
       ],
       "timeUsed": [
@@ -516,7 +516,7 @@
     {
       "id": "duration",
       "title": "9-Hour Window and Overtime",
-      "preview": "Strict 9-hour service window from pickup",
+      "preview": "9-hour booking from pickup",
       "content": [
         "The 9-hour window starts from your hotel pickup time",
         "Overtime is charged at 25,000 KRW per additional hour, paid in cash directly to the driver",
@@ -740,11 +740,11 @@
       {
         "name": "Jeju Airport",
         "approx_time": "≈ 17:00–18:00",
-        "note": "Same-day departure drop-off available; counts inside the service window."
+        "note": "Same-day departure drop-off available; counts inside the 9-hour booking."
       }
     ],
     "hotel_pickup_available": true,
-    "notes": "Please wait at the hotel lobby 10 minutes before the agreed departure time. The 9-hour service window starts from your pickup time. Reschedule requests should be made at least 2 days before the original reservation date. Overtime is charged at 25,000 KRW per hour, cash to driver, subject to driver availability."
+    "notes": "Please wait at the hotel lobby 10 minutes before the agreed departure time. The 9-hour booking starts from your pickup time. Reschedule requests should be made at least 2 days before the original reservation date. Overtime is charged at 25,000 KRW per hour, cash to driver, subject to driver availability."
   },
   "matching_profile": {
     "profile_version": 6,
@@ -1455,7 +1455,7 @@
           {
             "id": "duration",
             "title": "9-Hour Window and Overtime",
-            "preview": "Strict 9-hour service window from pickup",
+            "preview": "9-hour booking from pickup",
             "content": [
               "The 9-hour window starts from your hotel pickup time",
               "Overtime is charged at 25,000 KRW per additional hour, paid in cash directly to the driver",

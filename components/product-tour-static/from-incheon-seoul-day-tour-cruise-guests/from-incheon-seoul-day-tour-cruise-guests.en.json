@@ -18,8 +18,8 @@
   "catalog_card": {
     "thumbnail": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
     "title": "From Incheon: Seoul Day Tour for Cruise Guests (Small Group)",
-    "priceLabel": "Price TBD — confirm small-group rate from GetYourGuide listing",
-    "shortCardDescription": "Shared-van day tour from Incheon Cruise Terminal hitting Seoul's headline central-city stops in a single 9-hour window: Gyeongbokgung Palace (or Changdeokgung on Tuesdays), Bukchon Hanok Village, lunch at Gwangjang Market (the city's most-photographed streetfood alley), and Insadong cultural street. Pickup calibrated to your specific ship's disembarkation; certified English/Chinese-speaking guide; ≈75 min return drive built in.",
+    "priceLabel": "Price TBD — confirm small-group rate at booking",
+    "shortCardDescription": "Shared-van day tour from Incheon Cruise Terminal hitting Seoul's headline central-city stops in a single 9-hour window: Gyeongbokgung Palace (or Changdeokgung on Tuesdays), Bukchon Hanok Village, lunch at Gwangjang Market (the city's most-photographed streetfood alley), and Insadong cultural street. Pickup timed to your specific ship's disembarkation; certified English/Chinese-speaking guide; ≈75 min return drive built in.",
     "tags": [
       "small_group",
       "seoul",
@@ -49,7 +49,7 @@
     "currency": "USD",
     "per": "person",
     "priceSource": "getyourguide_t1051171",
-    "priceNote": "Cruise excursion price not yet confirmed from operator listing. Comparable Seoul-from-Incheon shared cruise tours range $90–$120 per person. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+    "priceNote": "Final cruise excursion price confirmed at booking; AtoC Korea sale price applies a flat 10% discount.",
     "discountPercent": 10
   },
   "hero": {
@@ -62,7 +62,7 @@
       "seoul"
     ],
     "meta": {
-      "duration": "≈ 9 hours, calibrated to your cruise's port-call window",
+      "duration": "≈ 9 hours, timed to your cruise's port-call window",
       "region": "Seoul (from Incheon cruise terminal)",
       "stops": "7 stops",
       "rating": 0,
@@ -597,7 +597,7 @@
       "preview": "Group meets at the Incheon Port International Passenger Terminal arrival hall in Songdo.",
       "content": [
         "Group meets at the Incheon Port International Passenger Terminal arrival hall in Songdo.",
-        "Pickup time is calibrated to your ship's actual disembarkation, not a fixed start.",
+        "Pickup time is timed to your ship's actual disembarkation, not a fixed start.",
         "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking.",
         "Drop-off at the terminal with at least a 60-minute buffer before your stated all-aboard time."
       ]
@@ -853,7 +853,7 @@
       "currency": "USD",
       "per": "person",
       "priceSource": "getyourguide_t1051171",
-      "priceNote": "Cruise excursion price not yet confirmed from operator listing. Comparable Seoul-from-Incheon shared cruise tours range $90–$120 per person. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+      "priceNote": "Final cruise excursion price confirmed at booking; AtoC Korea sale price applies a flat 10% discount.",
       "discountPercent": 10
     }
   },
@@ -1120,7 +1120,7 @@
             "seoul"
           ],
           "meta": {
-            "duration": "≈ 9 hours, calibrated to your cruise's port-call window",
+            "duration": "≈ 9 hours, timed to your cruise's port-call window",
             "region": "Seoul (from Incheon cruise terminal)",
             "stops": "7 stops",
             "rating": 0,
@@ -1167,7 +1167,7 @@
           {
             "icon": "clock",
             "label": "Duration",
-            "value": "≈ 9 hours, ship-to-ship (calibrated to your cruise schedule)"
+            "value": "≈ 9 hours, ship-to-ship (timed to your cruise schedule)"
           },
           {
             "icon": "users",
@@ -1264,11 +1264,11 @@
             "name": "Incheon Cruise Terminal pickup",
             "category": "Departure",
             "image": "https://tong.visitkorea.or.kr/cms/resource/06/2735806_image2_1.JPG",
-            "description": "Group meets the guide in the Incheon Port International Passenger Terminal arrival hall (Songdo). Pickup is calibrated to your ship's actual disembarkation, not a fixed start — the 09:00 here is a typical example. Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking; the guide tracks the schedule and adjusts pickup automatically. ≈30 minutes covers terminal buffer (immigration variability, group assembly).",
+            "description": "Group meets the guide in the Incheon Port International Passenger Terminal arrival hall (Songdo). Pickup is timed to your ship's actual disembarkation, not a fixed start — the 09:00 here is a typical example. Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking; the guide tracks the schedule and adjusts pickup automatically. ≈30 minutes covers terminal buffer (immigration variability, group assembly).",
             "timeUsed": [
               "Operational logistics (pickup, terminal buffer)"
             ],
-            "whyOnRoute": "Calibrated to your specific cruise.",
+            "whyOnRoute": "Timed to your specific cruise.",
             "_poi_meta": {
               "poi_key": "incheon_cruise_pickup",
               "is_attraction": false
@@ -1500,7 +1500,7 @@
           {
             "title": "Pickup & drop-off",
             "id": "pickup",
-            "content": "Group meets at the Incheon Port International Passenger Terminal arrival hall in Songdo. Pickup time is calibrated to your ship's actual disembarkation, not a fixed start. Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Drop-off at the terminal with at least a 60-minute buffer before your stated all-aboard time."
+            "content": "Group meets at the Incheon Port International Passenger Terminal arrival hall in Songdo. Pickup time is timed to your ship's actual disembarkation, not a fixed start. Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Drop-off at the terminal with at least a 60-minute buffer before your stated all-aboard time."
           },
           {
             "title": "Sail-away timing",
@@ -1751,7 +1751,7 @@
           "currency": "USD",
           "per": "person",
           "priceSource": "getyourguide_t1051171",
-          "priceNote": "Cruise excursion price not yet confirmed from operator listing. Comparable Seoul-from-Incheon shared cruise tours range $90–$120 per person. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+          "priceNote": "Final cruise excursion price confirmed at booking; AtoC Korea sale price applies a flat 10% discount.",
           "discountPercent": 10
         }
       }
