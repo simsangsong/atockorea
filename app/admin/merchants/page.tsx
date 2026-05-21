@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { Building2, CheckCircle2, Eye, Plus, RefreshCw, Search, Trash2 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 
 interface Merchant {
@@ -63,7 +64,8 @@ export default function MerchantsPage() {
           router.push('/');
           return;
         }
-        throw new Error('Failed to fetch merchants');
+        const data = await response.json().catch(() => null);
+        throw new Error(data?.details || data?.error || '업체 목록을 불러오지 못했습니다');
       }
 
       const data = await response.json();
@@ -160,13 +162,13 @@ export default function MerchantsPage() {
   const getStatusLabel = (status: string) => {
     switch (status) {
       case 'active':
-        return 'Active';
+        return '운영중';
       case 'pending':
-        return 'Pending';
+        return '대기';
       case 'suspended':
-        return 'Suspended';
+        return '중지';
       case 'inactive':
-        return 'Inactive';
+        return '비활성';
       default:
         return status;
     }
@@ -184,7 +186,7 @@ export default function MerchantsPage() {
       <div className="space-y-6">
         <div className="text-center py-12">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading merchants...</p>
+          <p className="text-gray-600">업체 목록을 불러오는 중...</p>
         </div>
       </div>
     );
@@ -194,12 +196,13 @@ export default function MerchantsPage() {
     return (
       <div className="space-y-6">
         <div className="bg-red-50 border border-red-200 rounded-lg p-6">
-          <p className="text-red-800">Error: {error}</p>
+          <p className="text-red-800">오류: {error}</p>
           <button
             onClick={fetchMerchants}
-            className="mt-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
+            className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
           >
-            Retry
+            <RefreshCw className="size-4" />
+            다시 시도
           </button>
         </div>
       </div>
@@ -210,48 +213,56 @@ export default function MerchantsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Merchant Management</h1>
-          <p className="text-gray-600 mt-2">Manage all registered merchants</p>
+          <div className="flex items-center gap-2">
+            <Building2 className="size-6 text-blue-600" />
+            <h1 className="text-2xl font-bold text-gray-900">업체 관리</h1>
+          </div>
+          <p className="text-gray-600 mt-2">등록된 여행사 계정과 운영 상태를 관리합니다.</p>
         </div>
         <Link
           href="/admin/merchants/create"
-          className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors inline-block"
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
         >
-          ➕ Add New Merchant
+          <Plus className="size-4" />
+          업체 추가
         </Link>
       </div>
 
       {/* Search and Filters */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4">
         <div className="flex gap-4">
-          <input
-            type="text"
-            placeholder="Search by company name, email, or contact person..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                fetchMerchants();
-              }
-            }}
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
+          <div className="relative flex-1">
+            <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-gray-400" />
+            <input
+              type="text"
+              placeholder="회사명, 이메일, 담당자로 검색"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  fetchMerchants();
+                }
+              }}
+              className="w-full px-4 py-2 pl-9 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            <option value="">All Status</option>
-            <option value="active">Active</option>
-            <option value="pending">Pending</option>
-            <option value="suspended">Suspended</option>
-            <option value="inactive">Inactive</option>
+            <option value="">전체 상태</option>
+            <option value="active">운영중</option>
+            <option value="pending">대기</option>
+            <option value="suspended">중지</option>
+            <option value="inactive">비활성</option>
           </select>
           <button
             onClick={fetchMerchants}
-            className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors"
           >
-            Search
+            <Search className="size-4" />
+            검색
           </button>
         </div>
       </div>
@@ -263,22 +274,22 @@ export default function MerchantsPage() {
             <thead className="bg-gray-50 border-b border-gray-200">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Company Name
+                  업체명
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Contact Person
+                  담당자
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Contact Info
+                  연락처
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Status
+                  상태
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Registered
+                  등록일
                 </th>
                 <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Actions
+                  작업
                 </th>
               </tr>
             </thead>
@@ -286,7 +297,7 @@ export default function MerchantsPage() {
               {filteredMerchants.length === 0 ? (
                 <tr>
                   <td colSpan={6} className="px-6 py-8 text-center text-gray-500">
-                    No merchants found
+                    등록된 업체가 없습니다
                   </td>
                 </tr>
               ) : (
@@ -299,7 +310,10 @@ export default function MerchantsPage() {
                             {merchant.company_name}
                           </div>
                           {merchant.is_verified && (
-                            <span className="text-xs text-blue-600">✓ Verified</span>
+                            <span className="inline-flex items-center gap-1 text-xs text-blue-600">
+                              <CheckCircle2 className="size-3" />
+                              인증됨
+                            </span>
                           )}
                         </div>
                       </div>
@@ -317,10 +331,10 @@ export default function MerchantsPage() {
                         onChange={(e) => handleStatusChange(merchant.id, e.target.value)}
                         className={`px-2 py-1 text-xs font-semibold rounded-full border-0 ${getStatusColor(merchant.status)}`}
                       >
-                        <option value="pending">Pending</option>
-                        <option value="active">Active</option>
-                        <option value="suspended">Suspended</option>
-                        <option value="inactive">Inactive</option>
+                        <option value="pending">대기</option>
+                        <option value="active">운영중</option>
+                        <option value="suspended">중지</option>
+                        <option value="inactive">비활성</option>
                       </select>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -329,15 +343,17 @@ export default function MerchantsPage() {
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <Link
                         href={`/admin/merchants/${merchant.id}`}
-                        className="text-indigo-600 hover:text-indigo-900 mr-4"
+                        className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-900 mr-4"
                       >
-                        View
+                        <Eye className="size-4" />
+                        보기
                       </Link>
                       <button
                         onClick={() => handleDelete(merchant.id)}
-                        className="text-red-600 hover:text-red-900"
+                        className="inline-flex items-center gap-1 text-red-600 hover:text-red-900"
                       >
-                        Delete
+                        <Trash2 className="size-4" />
+                        삭제
                       </button>
                     </td>
                   </tr>

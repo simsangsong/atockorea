@@ -15,8 +15,7 @@
  */
 
 import { useCallback, useEffect, useState } from 'react';
-import Link from 'next/link';
-import { Sparkles, ArrowLeft } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { ProductsListPane } from './_components/ProductsListPane';
 import { ProductEditorPane } from './_components/ProductEditorPane';
 import { ProductPreviewPane } from './_components/ProductPreviewPane';
@@ -135,13 +134,6 @@ function EmptyEditorPane() {
       <p className="text-sm text-slate-500 mb-4 max-w-md text-center">
         왼쪽에서 상품을 선택하면 편집기와 라이브 미리보기가 함께 열립니다.
       </p>
-      <Link
-        href="/admin/products"
-        className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-900"
-      >
-        <ArrowLeft className="size-3.5" />
-        구버전(v1)으로 돌아가기
-      </Link>
     </section>
   );
 }

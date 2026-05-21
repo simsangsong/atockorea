@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
-import { requireAdmin } from '@/lib/auth';
+import { AdminAuthFailure, adminAuthJsonResponse, requireAdmin } from '@/lib/auth';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
+import { getMerchantProfileMap } from '@/lib/admin/merchant-profiles';
 
 /**
  * GET /api/admin/merchants/[id]
@@ -19,23 +20,7 @@ export async function GET(
 
     const { data: merchant, error } = await supabase
       .from('merchants')
-      .select(`
-        *,
-        user_profiles (
-          id,
-          full_name,
-          email,
-          avatar_url
-        ),
-        tours (
-          id,
-          title,
-          city,
-          price,
-          is_active,
-          created_at
-        )
-      `)
+      .select('*')
       .eq('id', merchantId)
       .single();
 
@@ -52,10 +37,37 @@ export async function GET(
       );
     }
 
-    return NextResponse.json({ merchant });
+    const [profileMap, toursResult] = await Promise.all([
+      getMerchantProfileMap(supabase, [merchant.user_id], { includeAvatar: true }),
+      supabase
+        .from('tours')
+        .select('id, title, city, price, is_active, created_at')
+        .eq('merchant_id', merchantId)
+        .order('created_at', { ascending: false }),
+    ]);
+
+    if (toursResult.error) {
+      console.error('Error fetching merchant tours:', toursResult.error);
+      return NextResponse.json(
+        { error: 'Failed to fetch merchant tours', details: toursResult.error.message },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({
+      merchant: {
+        ...merchant,
+        user_profiles: merchant.user_id ? profileMap.get(merchant.user_id) ?? null : null,
+        tours: toursResult.data || [],
+      },
+    });
   } catch (error: any) {
     console.error('Error fetching merchant:', error);
     
+    if (error instanceof AdminAuthFailure) {
+      return adminAuthJsonResponse(error);
+    }
+
     if (error.message === 'Unauthorized' || error.message.includes('Forbidden')) {
       return NextResponse.json(
         { error: 'Admin access required' },
@@ -106,14 +118,7 @@ export async function PUT(
       .from('merchants')
       .update(updateData)
       .eq('id', merchantId)
-      .select(`
-        *,
-        user_profiles (
-          id,
-          full_name,
-          email
-        )
-      `)
+      .select('*')
       .single();
 
     if (error) {
@@ -124,10 +129,38 @@ export async function PUT(
       );
     }
 
-    return NextResponse.json({ merchant, message: 'Merchant updated successfully' });
+    const [profileMap, toursResult] = await Promise.all([
+      getMerchantProfileMap(supabase, [merchant.user_id], { includeAvatar: true }),
+      supabase
+        .from('tours')
+        .select('id, title, city, price, is_active, created_at')
+        .eq('merchant_id', merchantId)
+        .order('created_at', { ascending: false }),
+    ]);
+
+    if (toursResult.error) {
+      console.error('Error fetching merchant tours:', toursResult.error);
+      return NextResponse.json(
+        { error: 'Failed to fetch merchant tours', details: toursResult.error.message },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({
+      merchant: {
+        ...merchant,
+        user_profiles: merchant.user_id ? profileMap.get(merchant.user_id) ?? null : null,
+        tours: toursResult.data || [],
+      },
+      message: 'Merchant updated successfully',
+    });
   } catch (error: any) {
     console.error('Error updating merchant:', error);
     
+    if (error instanceof AdminAuthFailure) {
+      return adminAuthJsonResponse(error);
+    }
+
     if (error.message === 'Unauthorized' || error.message.includes('Forbidden')) {
       return NextResponse.json(
         { error: 'Admin access required' },
@@ -204,6 +237,10 @@ export async function DELETE(
   } catch (error: any) {
     console.error('Error deleting merchant:', error);
     
+    if (error instanceof AdminAuthFailure) {
+      return adminAuthJsonResponse(error);
+    }
+
     if (error.message === 'Unauthorized' || error.message.includes('Forbidden')) {
       return NextResponse.json(
         { error: 'Admin access required' },

@@ -1,32 +1,56 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import type { LucideIcon } from 'lucide-react';
+import {
+  BarChart3,
+  Building2,
+  ChevronDown,
+  CircleHelp,
+  ClipboardList,
+  ImageUp,
+  LayoutDashboard,
+  LogOut,
+  Mail,
+  MapPin,
+  MessageSquareText,
+  Package,
+  Settings,
+  Sparkles,
+} from 'lucide-react';
+import Logo from '@/components/Logo';
 import { supabase } from '@/lib/supabase';
-import { useTranslations } from '@/lib/i18n';
 
 const ADMIN_SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'zh-TW', 'ja', 'es'];
 
-const adminMenuItems = [
-  { path: '/admin', label: '대시보드', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
-  { path: '/admin/merchants', label: '업체 관리', icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' },
-  { path: '/admin/products/v2', label: '상품 관리', badge: 'NEW', icon: 'M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z' },
-  { path: '/admin/products', label: '상품 관리 (v1)', icon: 'M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z' },
-  { path: '/admin/orders', label: '주문 관리', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01' },
-  { path: '/admin/contacts', label: '문의 관리', icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
-  { path: '/admin/emails', label: '받은 메일', icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
-  { path: '/admin/upload', label: '이미지 업로드', icon: 'M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z' },
-  { path: '/admin/cms', label: '콘텐츠 CMS', icon: 'M12 6.253v11.494m-5.747-8.62l11.494 5.746M6.253 14.873l11.494-5.746' },
-  { path: '/admin/match-pois', label: '매칭 POI 관리', badge: 'NEW', icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z' },
-  { path: '/admin/analytics', label: '데이터 분석', icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' },
-  { path: '/admin/settings', label: '시스템 설정', icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z' },
+type AdminMenuItem = {
+  path: string;
+  label: string;
+  icon: LucideIcon;
+  badge?: string;
+};
+
+const adminMenuItems: AdminMenuItem[] = [
+  { path: '/admin', label: '대시보드', icon: LayoutDashboard },
+  { path: '/admin/merchants', label: '업체 관리', icon: Building2 },
+  { path: '/admin/products/v2', label: '상품 관리', icon: Package, badge: 'NEW' },
+  { path: '/admin/orders', label: '주문 관리', icon: ClipboardList },
+  { path: '/admin/contacts', label: '문의 관리', icon: MessageSquareText },
+  { path: '/admin/emails', label: '받은 메일', icon: Mail },
+  { path: '/admin/upload', label: '이미지 업로드', icon: ImageUp },
+  { path: '/admin/cms', label: '콘텐츠 CMS', icon: Sparkles },
+  { path: '/admin/match-pois', label: '매칭 POI 관리', icon: MapPin, badge: 'NEW' },
+  { path: '/admin/analytics', label: '데이터 분석', icon: BarChart3 },
+  { path: '/admin/settings', label: '시스템 설정', icon: Settings },
 ];
 
 const pathToBreadcrumb: Record<string, string> = {
   '/admin': '대시보드',
   '/admin/merchants': '업체 관리',
-  '/admin/products': '상품 관리 (v1)',
+  '/admin/merchants/create': '업체 추가',
+  '/admin/products': '상품 관리 (구버전)',
   '/admin/products/v2': '상품 관리',
   '/admin/orders': '주문 관리',
   '/admin/contacts': '문의 관리',
@@ -56,20 +80,22 @@ function normalizeAdminPathname(pathname: string): string {
 function getBreadcrumbs(pathname: string): { path: string; label: string }[] {
   const normalized = normalizeAdminPathname(pathname);
   if (normalized === '/admin') return [{ path: '/admin', label: '대시보드' }];
+
   const segments = normalized.replace(/^\/admin\/?/, '').split('/').filter(Boolean);
   const crumbs: { path: string; label: string }[] = [{ path: '/admin', label: '대시보드' }];
   let acc = '/admin';
+
   for (const seg of segments) {
     acc += `/${seg}`;
-    crumbs.push({ path: acc, label: pathToBreadcrumb[acc] || seg });
+    crumbs.push({ path: acc, label: pathToBreadcrumb[acc] || decodeURIComponent(seg) });
   }
+
   return crumbs;
 }
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
-  const t = useTranslations();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState<any>(null);
@@ -94,12 +120,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         router.push('/signin?redirect=/admin');
         return;
       }
+
       const { data: { session }, error: sessionError } = await supabase.auth.getSession();
       if (sessionError || !session) {
         setIsAuthenticated(false);
         router.push('/signin?redirect=/admin');
         return;
       }
+
       const { data: profile, error: profileError } = await supabase
         .from('user_profiles')
         .select('id, full_name, role')
@@ -115,26 +143,39 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           router.push('/signin?redirect=/admin');
           return;
         }
+
         if (profileError.code === 'PGRST116') {
           const meta = session.user.user_metadata || {};
-          const displayName = meta.name || meta.full_name || [meta.given_name, meta.family_name].filter(Boolean).join(' ').trim() || session.user.email?.split('@')[0] || 'User';
-          await supabase.from('user_profiles').insert({ id: session.user.id, full_name: displayName, role: 'customer' }).select().single();
-          alert('프로필이 생성되었지만 admin 권한이 없습니다.');
+          const displayName =
+            meta.name ||
+            meta.full_name ||
+            [meta.given_name, meta.family_name].filter(Boolean).join(' ').trim() ||
+            session.user.email?.split('@')[0] ||
+            'User';
+          await supabase
+            .from('user_profiles')
+            .insert({ id: session.user.id, full_name: displayName, role: 'customer' })
+            .select()
+            .single();
+          alert('프로필은 생성했지만 admin 권한이 없습니다.');
           setIsAuthenticated(false);
           router.push('/');
           return;
         }
+
         alert(`프로필 조회 실패: ${profileError.message}`);
         setIsAuthenticated(false);
         router.push('/');
         return;
       }
+
       if (!profile || profile.role !== 'admin') {
         setIsAuthenticated(false);
-        alert(profile ? `${t('admin.accessDenied')}\n\n${t('admin.currentRole')}: ${profile.role}` : t('admin.profileNotFound'));
+        alert(profile ? `관리자 권한이 필요합니다.\n\n현재 권한: ${profile.role}` : '프로필을 찾을 수 없습니다.');
         router.push('/');
         return;
       }
+
       setUser(session.user);
       setIsAuthenticated(true);
     } catch (err: any) {
@@ -150,8 +191,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-100">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-2 border-blue-600 border-t-transparent mx-auto mb-4"></div>
-          <p className="text-slate-600 text-sm">Loading...</p>
+          <div className="animate-spin rounded-full h-11 w-11 border-2 border-blue-600 border-t-transparent mx-auto mb-4" />
+          <p className="text-sm text-slate-600">관리자 화면을 불러오는 중...</p>
         </div>
       </div>
     );
@@ -160,13 +201,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-100 p-4">
-        <div className="max-w-sm w-full bg-white rounded-2xl border border-slate-200 shadow-xl p-8 text-center">
-          <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center">
-            <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-          </div>
-          <h2 className="text-lg font-semibold text-slate-900 mb-1">Admin access</h2>
-          <p className="text-slate-500 text-sm mb-6">Sign in to access the admin panel.</p>
-          <Link href="/signin?redirect=/admin" className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors">
+        <div className="max-w-sm w-full bg-white rounded-xl border border-slate-200 shadow-xl p-8 text-center">
+          <Logo className="mx-auto mb-5 h-12 justify-center" markOnly />
+          <h2 className="text-lg font-semibold text-slate-950 mb-1">Admin access</h2>
+          <p className="text-sm text-slate-500 mb-6">관리자 계정으로 로그인해 주세요.</p>
+          <Link
+            href="/signin?redirect=/admin"
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-colors"
+          >
             Sign In
           </Link>
         </div>
@@ -176,101 +218,119 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   const adminPathname = normalizeAdminPathname(pathname);
   const breadcrumbs = getBreadcrumbs(adminPathname);
+  const bestMatch = adminMenuItems
+    .filter((m) => adminPathname === m.path || (m.path !== '/admin' && adminPathname.startsWith(`${m.path}/`)))
+    .sort((a, b) => b.path.length - a.path.length)[0]?.path;
 
   return (
-    <div className="min-h-screen bg-slate-100 flex">
-      {/* Sidebar - Klook-style dark navy */}
-      <aside className="fixed inset-y-0 left-0 w-60 flex flex-col bg-slate-800 text-white z-40">
-        <div className="flex items-center gap-2 h-16 px-4 border-b border-slate-700/80">
-          <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center flex-shrink-0">
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-          </div>
-          <span className="font-bold text-white">AtoC Korea</span>
-          <span className="px-2 py-0.5 text-xs font-medium bg-slate-600 text-slate-200 rounded">Admin</span>
+    <div className="min-h-screen bg-[#eef2f7] flex text-slate-900">
+      <aside className="fixed inset-y-0 left-0 z-40 flex w-[216px] flex-col bg-[#111827] text-white shadow-xl">
+        <div className="flex h-14 items-center gap-2 border-b border-white/10 px-3">
+          <Logo className="h-9 min-w-0 flex-1" variant="onDark" compact />
+          <span className="rounded-md border border-white/10 bg-white/10 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-200">
+            Admin
+          </span>
         </div>
-        <nav className="flex-1 py-4 px-2 overflow-y-auto">
-          {(() => {
-            // Pick the BEST-matching menu item (longest matching path) so that
-            // `/admin/products/v2` doesn't also light up `/admin/products`.
-            const bestMatch = adminMenuItems
-              .filter((m) => adminPathname === m.path || (m.path !== '/admin' && adminPathname.startsWith(`${m.path}/`)))
-              .sort((a, b) => b.path.length - a.path.length)[0]?.path;
-            return adminMenuItems.map((item) => {
-              const isActive = item.path === bestMatch;
-              const badge = (item as { badge?: string }).badge;
-              return (
-                <Link
-                  key={item.path}
-                  href={item.path}
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                    isActive ? 'bg-blue-600 text-white' : 'text-slate-300 hover:bg-slate-700/80 hover:text-white'
-                  }`}
-                >
-                  <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon.startsWith('M') ? item.icon : 'M9 12l2 2 4-4m6 2a9 5 0 11-10 0 5 5 0 0110 0z'} /></svg>
-                  <span className="flex-1">{item.label}</span>
-                  {badge && (
-                    <span className="px-1.5 py-0.5 text-[9px] font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded">
-                      {badge}
-                    </span>
-                  )}
-                </Link>
-              );
-            });
-          })()}
+
+        <nav className="flex-1 space-y-0.5 overflow-y-auto px-2 py-3">
+          {adminMenuItems.map((item) => {
+            const isActive = item.path === bestMatch;
+            const Icon = item.icon;
+
+            return (
+              <Link
+                key={item.path}
+                href={item.path}
+                aria-current={isActive ? 'page' : undefined}
+                className={`group flex h-9 items-center gap-2.5 rounded-lg px-2.5 text-[13px] font-medium transition-colors ${
+                  isActive
+                    ? 'bg-white text-slate-950 shadow-sm'
+                    : 'text-slate-300 hover:bg-white/[0.08] hover:text-white'
+                }`}
+              >
+                <Icon className={`size-4 flex-shrink-0 ${isActive ? 'text-blue-600' : 'text-slate-400 group-hover:text-slate-200'}`} />
+                <span className="min-w-0 flex-1 truncate">{item.label}</span>
+                {item.badge ? (
+                  <span
+                    className={`rounded px-1.5 py-0.5 text-[9px] font-bold leading-none ${
+                      isActive ? 'bg-blue-100 text-blue-700' : 'bg-blue-500/90 text-white'
+                    }`}
+                  >
+                    {item.badge}
+                  </span>
+                ) : null}
+              </Link>
+            );
+          })}
         </nav>
-        <div className="p-3 border-t border-slate-700/80">
-          <p className="text-xs text-slate-400 truncate px-2" title={user?.email}>{user?.email || 'Admin'}</p>
+
+        <div className="border-t border-white/10 p-3">
+          <p className="truncate text-[11px] text-slate-400" title={user?.email}>
+            {user?.email || 'Admin'}
+          </p>
         </div>
       </aside>
 
-      {/* Main: top bar + content */}
-      <div className="flex-1 flex flex-col pl-60 min-h-screen">
-        {/* Top header bar - Klook style */}
-        <header className="flex-shrink-0 h-14 px-6 flex items-center justify-between bg-white border-b border-slate-200/80 shadow-sm">
-          <nav className="flex items-center gap-2 text-sm text-slate-600">
+      <div className="flex min-h-screen flex-1 flex-col pl-[216px]">
+        <header className="sticky top-0 z-30 flex h-[52px] items-center justify-between border-b border-slate-200/90 bg-white/95 px-5 shadow-sm backdrop-blur">
+          <nav className="flex min-w-0 items-center gap-2 text-sm text-slate-500">
             {breadcrumbs.map((crumb, i) => (
-              <span key={crumb.path} className="flex items-center gap-2">
-                {i > 0 && <span className="text-slate-400">/</span>}
+              <span key={crumb.path} className="flex min-w-0 items-center gap-2">
+                {i > 0 ? <span className="text-slate-300">/</span> : null}
                 {i === breadcrumbs.length - 1 ? (
-                  <span className="font-semibold text-slate-900">{crumb.label}</span>
+                  <span className="truncate font-semibold text-slate-950">{crumb.label}</span>
                 ) : (
-                  <Link href={crumb.path} className="hover:text-blue-600 transition-colors">{crumb.label}</Link>
+                  <Link href={crumb.path} className="truncate hover:text-blue-600 transition-colors">
+                    {crumb.label}
+                  </Link>
                 )}
               </span>
             ))}
           </nav>
-          <div className="flex items-center gap-4">
-            <a href="mailto:support@atockorea.com" className="text-sm text-slate-600 hover:text-blue-600 transition-colors flex items-center gap-1.5">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              Get help
+
+          <div className="flex items-center gap-2.5">
+            <a
+              href="mailto:support@atockorea.com"
+              className="inline-flex h-8 items-center gap-1.5 rounded-lg px-2.5 text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-950 transition-colors"
+            >
+              <CircleHelp className="size-4" />
+              Help
             </a>
-            <span className="text-sm text-slate-500">English</span>
+
             <div className="relative">
               <button
-                onClick={() => setUserMenuOpen(!userMenuOpen)}
-                className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-slate-100 transition-colors text-sm text-slate-700"
+                type="button"
+                onClick={() => setUserMenuOpen((open) => !open)}
+                className="flex h-8 items-center gap-2 rounded-lg px-2.5 text-xs text-slate-700 hover:bg-slate-100 transition-colors"
               >
-                <span className="font-medium truncate max-w-[160px]">{user?.email || 'Admin'}</span>
-                <svg className={`w-4 h-4 text-slate-500 transition-transform ${userMenuOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                <span className="max-w-[180px] truncate font-medium">{user?.email || 'Admin'}</span>
+                <ChevronDown className={`size-4 text-slate-400 transition-transform ${userMenuOpen ? 'rotate-180' : ''}`} />
               </button>
-              {userMenuOpen && (
+
+              {userMenuOpen ? (
                 <>
                   <div className="fixed inset-0 z-10" onClick={() => setUserMenuOpen(false)} aria-hidden />
-                  <div className="absolute right-0 top-full mt-1 py-1 w-48 bg-white rounded-xl border border-slate-200 shadow-lg z-20">
+                  <div className="absolute right-0 top-full z-20 mt-1 w-48 overflow-hidden rounded-lg border border-slate-200 bg-white py-1 shadow-lg">
                     <button
-                      onClick={async () => { await supabase?.auth.signOut(); setUserMenuOpen(false); router.push('/'); }}
-                      className="w-full px-4 py-2.5 text-left text-sm text-slate-700 hover:bg-slate-50 rounded-lg"
+                      type="button"
+                      onClick={async () => {
+                        await supabase?.auth.signOut();
+                        setUserMenuOpen(false);
+                        router.push('/');
+                      }}
+                      className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-50"
                     >
+                      <LogOut className="size-4 text-slate-400" />
                       로그아웃
                     </button>
                   </div>
                 </>
-              )}
+              ) : null}
             </div>
           </div>
         </header>
 
-        <main className="flex-1 p-6 overflow-auto">
+        <main className="flex-1 overflow-auto p-5">
           {children}
         </main>
       </div>

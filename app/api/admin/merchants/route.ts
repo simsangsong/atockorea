@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
-import { requireAdmin } from '@/lib/auth';
+import { AdminAuthFailure, adminAuthJsonResponse, requireAdmin } from '@/lib/auth';
+import { getMerchantProfileMap } from '@/lib/admin/merchant-profiles';
 
 /**
  * GET /api/admin/merchants
@@ -19,13 +20,7 @@ export async function GET(req: NextRequest) {
 
     let query = supabase
       .from('merchants')
-      .select(`
-        *,
-        user_profiles (
-          id,
-          full_name
-        )
-      `)
+      .select('*')
       .order('created_at', { ascending: false });
 
     if (status) {
@@ -46,10 +41,24 @@ export async function GET(req: NextRequest) {
       );
     }
 
-    return NextResponse.json({ merchants: merchants || [] });
+    const merchantRows = merchants || [];
+    const profileMap = await getMerchantProfileMap(
+      supabase,
+      merchantRows.map((merchant: any) => merchant.user_id),
+    );
+    const enrichedMerchants = merchantRows.map((merchant: any) => ({
+      ...merchant,
+      user_profiles: merchant.user_id ? profileMap.get(merchant.user_id) ?? null : null,
+    }));
+
+    return NextResponse.json({ merchants: enrichedMerchants });
   } catch (error: any) {
     console.error('Error fetching merchants:', error);
     
+    if (error instanceof AdminAuthFailure) {
+      return adminAuthJsonResponse(error);
+    }
+
     if (error.message === 'Unauthorized' || error.message.includes('Forbidden')) {
       return NextResponse.json(
         { error: 'Admin access required' },
@@ -100,15 +109,16 @@ export async function POST(req: NextRequest) {
     }
 
     let finalUserId = userId;
+    let temporaryPassword: string | null = null;
 
     // Create user account if requested
     if (createUser && !userId) {
       // Generate temporary password
-      const tempPassword = `Temp${Math.random().toString(36).slice(-8)}!`;
+      temporaryPassword = `Temp${Math.random().toString(36).slice(-8)}!`;
       
       const { data: authData, error: authError } = await supabase.auth.admin.createUser({
         email: contactEmail,
-        password: tempPassword,
+        password: temporaryPassword,
         email_confirm: true,
       });
 
@@ -122,13 +132,21 @@ export async function POST(req: NextRequest) {
       finalUserId = authData.user.id;
 
       // Create user profile
-      await supabase
+      const { error: profileInsertError } = await supabase
         .from('user_profiles')
-        .insert({
+        .upsert({
           id: finalUserId,
           full_name: contactPerson,
+          email: contactEmail,
           role: 'merchant',
-        });
+        }, { onConflict: 'id' });
+
+      if (profileInsertError) {
+        return NextResponse.json(
+          { error: 'Failed to create user profile', details: profileInsertError.message },
+          { status: 500 }
+        );
+      }
     } else if (userId) {
       // Check if user exists
       const { data: user } = await supabase.auth.admin.getUserById(userId);
@@ -164,13 +182,7 @@ export async function POST(req: NextRequest) {
         status: 'pending',
         is_verified: false,
       })
-      .select(`
-        *,
-        user_profiles (
-          id,
-          full_name
-        )
-      `)
+      .select('*')
       .single();
 
     if (error) {
@@ -184,17 +196,18 @@ export async function POST(req: NextRequest) {
     // Update user profile role to merchant
     await supabase
       .from('user_profiles')
-      .update({ role: 'merchant' })
+      .update({ role: 'merchant', email: contactEmail })
       .eq('id', finalUserId);
 
+    const profileMap = await getMerchantProfileMap(supabase, [merchant.user_id]);
+    const merchantWithProfile = {
+      ...merchant,
+      user_profiles: merchant.user_id ? profileMap.get(merchant.user_id) ?? null : null,
+    };
+
     // Send welcome email with login credentials
-    if (createUser) {
+    if (createUser && temporaryPassword) {
       try {
-        const { data: authData } = await supabase.auth.admin.getUserById(finalUserId);
-        // Note: Supabase doesn't return the password after creation, so we need to generate a new one
-        // In production, you might want to use a password reset link instead
-        const temporaryPassword = `Temp${Math.random().toString(36).slice(-8)}!`;
-        
         const { sendMerchantWelcomeEmail } = await import('@/lib/email');
         await sendMerchantWelcomeEmail({
           to: contactEmail,
@@ -211,12 +224,16 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json(
-      { merchant, message: 'Merchant created successfully' },
+      { merchant: merchantWithProfile, message: 'Merchant created successfully' },
       { status: 201 }
     );
   } catch (error: any) {
     console.error('Error creating merchant:', error);
     
+    if (error instanceof AdminAuthFailure) {
+      return adminAuthJsonResponse(error);
+    }
+
     if (error.message === 'Unauthorized' || error.message.includes('Forbidden')) {
       return NextResponse.json(
         { error: 'Admin access required' },
