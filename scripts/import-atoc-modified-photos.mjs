@@ -55,6 +55,7 @@ const FOLDER_MAP = {
   광명동굴: { assetSlug: "gwangmyeong-cave", poiKeys: ["gwangmyeong_cave"] },
   광장시장: { assetSlug: "gwangjang-market", poiKeys: ["gwangjang_market"] },
   남이섬: { assetSlug: "nami-island", poiKeys: ["nami_island"] },
+  녹산로: { assetSlug: "noksan-ro", poiKeys: ["noksan_ro_gasiri_blossom_road"] },
   대릉원: { assetSlug: "daereungwon", poiKeys: ["daereungwon_tomb_complex"] },
   돌문화공원: { assetSlug: "jeju-stone-park", poiKeys: ["jeju_stone_park"] },
   부산타워: {
@@ -104,6 +105,7 @@ const FOLDER_MAP = {
     poiKeys: ["imjingak_peace_park"],
     nameGuard: /imjingak|임진각|peace park|평화/i,
   },
+  전농로: { assetSlug: "jeonnong-ro", poiKeys: ["jeonnong_ro_cherry_blossom_street"] },
   정방폭포: { assetSlug: "jeongbang-falls", poiKeys: ["jeongbang_falls"] },
   주상절리: {
     assetSlug: "jusangjeolli",
