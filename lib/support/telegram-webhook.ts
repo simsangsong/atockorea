@@ -1,18 +1,9 @@
 /**
- * Telegram bot notification — fires when a new support_ticket is created.
+ * Telegram bot notification for escalated customer support tickets.
  *
- * Activation:
- *   - Set TELEGRAM_BOT_TOKEN (from BotFather) and TELEGRAM_ADMIN_CHAT_ID
- *     (admin's user chat id; get via @userinfobot or via /start the bot
- *     and read updates).
- *   - When either env var is missing, this module is a no-op (safe stub).
- *
- * Production-ready behaviour:
- *   - Logs every attempt to telegram_webhook_log (success or failure).
- *   - Never throws — chat reply path must not break on notification errors.
- *
- * Future hook for KakaoTalk 알림톡: same interface, different
- * provider implementation (requires NHN/Aligo/etc. business channel).
+ * Required env:
+ * - TELEGRAM_BOT_TOKEN
+ * - TELEGRAM_ADMIN_CHAT_ID, with TELEGRAM_BOOKING_CHAT_ID as a fallback
  */
 
 import type { SupabaseClient } from "@supabase/supabase-js";
@@ -27,25 +18,46 @@ export type TicketNotificationPayload = {
   userLocale: string | null;
 };
 
+function publicBaseUrl(): string {
+  const configured = process.env.NEXT_PUBLIC_APP_URL || "https://atockorea.com";
+  if (/^https?:\/\/(localhost|127\.0\.0\.1|0\.0\.0\.0)(:\d+)?/i.test(configured)) {
+    return "https://atockorea.com";
+  }
+  return configured.replace(/\/+$/, "");
+}
+
 function adminInboxUrl(ticketId: number): string {
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? "https://atockorea.com";
-  return `${base.replace(/\/+$/, "")}/admin/support/${ticketId}`;
+  return `${publicBaseUrl()}/admin/support/${ticketId}`;
+}
+
+function escapeTelegramHtml(value: unknown): string {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
 
 function buildMessage(p: TicketNotificationPayload): string {
-  const lines: string[] = [];
-  lines.push(`🆘 *새 고객 문의 #${p.ticketId}*`);
-  lines.push(`*Reason:* ${p.reason}`);
-  if (p.tourSlug) lines.push(`*Tour:* \`${p.tourSlug}\``);
-  if (p.pageTitle) lines.push(`*Page:* ${p.pageTitle}`);
-  if (p.userLocale) lines.push(`*Locale:* ${p.userLocale}`);
+  const trimmed =
+    p.initialUserMessage.length > 500
+      ? `${p.initialUserMessage.slice(0, 497)}...`
+      : p.initialUserMessage;
+
+  const lines = [
+    `<b>New customer inquiry #${escapeTelegramHtml(p.ticketId)}</b>`,
+    "",
+    `<b>Reason:</b> ${escapeTelegramHtml(p.reason)}`,
+  ];
+
+  if (p.tourSlug) lines.push(`<b>Tour:</b> ${escapeTelegramHtml(p.tourSlug)}`);
+  if (p.pageTitle) lines.push(`<b>Page:</b> ${escapeTelegramHtml(p.pageTitle)}`);
+  if (p.userLocale) lines.push(`<b>Locale:</b> ${escapeTelegramHtml(p.userLocale)}`);
+
   lines.push("");
-  const trimmed = p.initialUserMessage.length > 500
-    ? p.initialUserMessage.slice(0, 497) + "…"
-    : p.initialUserMessage;
-  lines.push(`💬 ${trimmed}`);
+  lines.push(escapeTelegramHtml(trimmed));
   lines.push("");
-  lines.push(`👉 [Open in admin inbox](${adminInboxUrl(p.ticketId)})`);
+  lines.push(`<a href="${adminInboxUrl(p.ticketId)}">Open support ticket in admin</a>`);
+
   return lines.join("\n");
 }
 
@@ -54,51 +66,49 @@ export async function notifyTelegramNewTicket(
   sb: SupabaseClient,
   payload: TicketNotificationPayload,
 ): Promise<{ delivered: boolean; reason: string }> {
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_ADMIN_CHAT_ID;
+  const token = process.env.TELEGRAM_BOT_TOKEN?.trim();
+  const chatId = (process.env.TELEGRAM_ADMIN_CHAT_ID || process.env.TELEGRAM_BOOKING_CHAT_ID)?.trim();
   if (!token || !chatId) {
     return { delivered: false, reason: "telegram_env_unset" };
   }
 
-  const url = `https://api.telegram.org/bot${token}/sendMessage`;
   const body = {
     chat_id: chatId,
     text: buildMessage(payload),
-    parse_mode: "Markdown",
-    disable_web_page_preview: false,
+    parse_mode: "HTML",
+    disable_web_page_preview: true,
   };
 
   let status = 0;
   let respBody: unknown = null;
   let error: string | null = null;
   try {
-    const r = await fetch(url, {
+    const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     });
-    status = r.status;
-    respBody = await r.json().catch(() => null);
+    status = response.status;
+    respBody = await response.json().catch(() => null);
   } catch (e) {
-    error = (e as Error).message;
+    error = e instanceof Error ? e.message : String(e);
   }
 
-  // Audit log
   try {
     await sb.from("telegram_webhook_log").insert({
       ticket_id: payload.ticketId,
       endpoint: "telegram",
       request_payload: body,
       response_status: status,
-      response_body: respBody as object,
+      response_body: respBody as object | null,
       error_message: error,
     });
   } catch {
-    // never break delivery on audit failure
+    // Never break chat escalation because audit logging failed.
   }
 
   if (status >= 200 && status < 300) {
-    const messageId = (respBody as any)?.result?.message_id;
+    const messageId = (respBody as { result?: { message_id?: number } } | null)?.result?.message_id;
     await sb
       .from("support_tickets")
       .update({
@@ -109,5 +119,6 @@ export async function notifyTelegramNewTicket(
       .eq("id", payload.ticketId);
     return { delivered: true, reason: "ok" };
   }
+
   return { delivered: false, reason: error ?? `status_${status}` };
 }

@@ -85,8 +85,8 @@ export async function notifyTelegramBookingConfirmed(
   sb: SupabaseClient,
   payload: BookingTelegramPayload,
 ): Promise<{ delivered: boolean; reason: string; messageId?: number }> {
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_BOOKING_CHAT_ID || process.env.TELEGRAM_ADMIN_CHAT_ID;
+  const token = process.env.TELEGRAM_BOT_TOKEN?.trim();
+  const chatId = (process.env.TELEGRAM_BOOKING_CHAT_ID || process.env.TELEGRAM_ADMIN_CHAT_ID)?.trim();
 
   if (!token || !chatId) {
     return { delivered: false, reason: 'telegram_env_unset' };

@@ -165,7 +165,7 @@ async function sendAutoReplyEmail(toEmail: string, fullName: string) {
             <p>Thank you,<br>ATOC KOREA Support Team<br><a href="mailto:support@atockorea.com">support@atockorea.com</a></p>
           </div>
           <div class="footer">
-            <p>© 2024 ATOC KOREA LLC. All rights reserved.</p>
+            <p>&copy; 2026 ATOC KOREA LLC. All rights reserved.</p>
             <p>This email was sent from support@atockorea.com</p>
           </div>
         </div>
@@ -193,7 +193,7 @@ Thank you,
 ATOC KOREA Support Team
 support@atockorea.com
 
-© 2024 ATOC KOREA LLC. All rights reserved.
+(c) 2026 ATOC KOREA LLC. All rights reserved.
 This email was sent from support@atockorea.com`;
 
     await resend.emails.send({

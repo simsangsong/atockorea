@@ -317,7 +317,7 @@ export async function sendBookingConfirmationEmail(params: SendBookingConfirmati
                       <td style="padding:0;color:#4b5563;font-size:14px;line-height:22px;">
                         <span style="color:#111827;font-weight:700;">1.</span> A reminder email arrives 24 hours before departure.<br>
                         <span style="color:#111827;font-weight:700;">2.</span> Please arrive at the pickup point 10 minutes early.<br>
-                        <span style="color:#111827;font-weight:700;">3.</span> Questions are welcome at <a href="mailto:support@atockorea.com" style="color:#111827;font-weight:700;text-decoration:underline;">support@atockorea.com</a>.
+                        <span style="color:#111827;font-weight:700;">3.</span> For questions, email <a href="mailto:support@atockorea.com" style="color:#111827;font-weight:700;text-decoration:underline;">support@atockorea.com</a> or use the chatbot on our website. If needed, our human support team can contact you directly.
                       </td>
                     </tr>
                   </table>
@@ -915,6 +915,5 @@ export async function sendCardReauthFailedEmail({
     html,
   });
 }
-
 
 

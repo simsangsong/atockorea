@@ -103,7 +103,7 @@ async function sendReply(req: NextRequest, user: any) {
             </div>
           </div>
           <div class="footer">
-            <p>© 2024 AtoCKorea. All rights reserved.</p>
+            <p>&copy; 2026 AtoCKorea. All rights reserved.</p>
             <p>This email was sent from support@atockorea.com</p>
           </div>
         </div>
@@ -171,4 +171,3 @@ async function sendReply(req: NextRequest, user: any) {
 }
 
 export const POST = withAuth(sendReply, ['admin']);
-

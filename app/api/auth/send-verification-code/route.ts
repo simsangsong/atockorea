@@ -101,14 +101,14 @@ export async function POST(req: NextRequest) {
                   <p>If you didn't request this code, please ignore this email.</p>
                 </div>
                 <div class="footer">
-                  <p>© 2024 AtoCKorea. All rights reserved.</p>
+                  <p>&copy; 2026 AtoCKorea. All rights reserved.</p>
                   <p>This email was sent from support@atockorea.com</p>
                 </div>
               </div>
             </body>
             </html>
           `,
-          text: `Hello,\n\nAtoCKorea sent you a verification code, please confirm:\n\n${verificationCode}\n\nThis code will expire in 10 minutes.\n\nIf you didn't request this code, please ignore this email.\n\n© 2024 AtoCKorea. All rights reserved.\nThis email was sent from support@atockorea.com`,
+          text: `Hello,\n\nAtoCKorea sent you a verification code, please confirm:\n\n${verificationCode}\n\nThis code will expire in 10 minutes.\n\nIf you didn't request this code, please ignore this email.\n\n(c) 2026 AtoCKorea. All rights reserved.\nThis email was sent from support@atockorea.com`,
         });
 
         if (emailError) {
