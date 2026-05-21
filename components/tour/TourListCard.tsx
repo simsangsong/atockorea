@@ -104,21 +104,20 @@ function TourListCard({ tour, detailHref, formatPriceFn, imageSizes, layout = 'v
     damping: 22,
     mass: 0.72,
   };
+  const tapTarget = reduceMotion
+    ? { scale: 1 }
+    : {
+        scale: 0.958,
+        y: 4,
+        filter: 'brightness(0.94)',
+      };
 
   return (
     <div className="relative h-full [-webkit-tap-highlight-color:transparent]">
       <motion.div
         className="h-full origin-center"
         initial={false}
-        whileTap={
-          reduceMotion
-            ? undefined
-            : {
-                scale: 0.958,
-                y: 4,
-                filter: 'brightness(0.94)',
-              }
-        }
+        whileTap={tapTarget}
         transition={tapTransition}
       >
         <Link

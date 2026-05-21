@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import TourListCard from "@/components/tour/TourListCard";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
@@ -21,10 +20,6 @@ import {
   type StaticTourProductRegistration,
 } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
-import {
-  REVEAL_ITEM_VARIANTS,
-  useRevealContainerProps,
-} from "@/components/home/v2/ui/reveal";
 import { cn } from "@/lib/utils";
 
 const FEATURED_LIMIT = 6;
@@ -43,7 +38,14 @@ type DestinationsApiResponse = {
 };
 
 function isTourProductLocale(locale: string): locale is TourProductPageLocale {
-  return locale === "en" || locale === "ko" || locale === "zh" || locale === "zh-TW" || locale === "es" || locale === "ja";
+  return (
+    locale === "en" ||
+    locale === "ko" ||
+    locale === "zh" ||
+    locale === "zh-TW" ||
+    locale === "es" ||
+    locale === "ja"
+  );
 }
 
 function productToCard(product: StaticTourProductRegistration): TourCardViewModel {
@@ -83,7 +85,9 @@ function productToCard(product: StaticTourProductRegistration): TourCardViewMode
 
 function buildStaticFeaturedTours(locale: string): TourCardViewModel[] {
   const productLocale = isTourProductLocale(locale) ? locale : "en";
-  const bySlug = new Map(listStaticTourProducts(productLocale).map((product) => [product.slug, product]));
+  const bySlug = new Map(
+    listStaticTourProducts(productLocale).map((product) => [product.slug, product]),
+  );
 
   return FEATURED_FALLBACK_SLUGS
     .map((slug) => bySlug.get(slug))
@@ -98,26 +102,37 @@ function buildStaticFeaturedTours(locale: string): TourCardViewModel[] {
 }
 
 /**
- * "Most loved this week" popular product rail.
- * Reuses production `<TourListCard>` so
- * card pricing/currency/wishlist behaviour matches `/tours/list`. Hides itself
- * silently when fewer than 3 tours are returned (avoids a sad half-row).
+ * "Most loved this week" product rail.
+ *
+ * The rail starts with static catalog cards so a slow live API cannot leave a
+ * blank white section. When /api/tours responds quickly, the cards are swapped
+ * to live list data.
  */
 export function FeaturedProductsShowcase() {
   const t = useTranslations("home");
   const { locale } = useI18n();
   const currencyCtx = useCurrencyOptional();
   const scrollRef = useRef<HTMLDivElement>(null);
-  const reveal = useRevealContainerProps();
   const fallbackTours = useMemo(() => buildStaticFeaturedTours(locale), [locale]);
 
-  const [tours, setTours] = useState<TourCardViewModel[]>(fallbackTours);
+  const [liveTours, setLiveTours] = useState<{
+    locale: string;
+    tours: TourCardViewModel[];
+  } | null>(null);
   const [totalCount, setTotalCount] = useState<number | null>(null);
+  const tours =
+    liveTours?.locale === locale && liveTours.tours.length >= 3
+      ? liveTours.tours
+      : fallbackTours;
 
   const formatPrice = useCallback(
     (priceUsd: number) => {
       if (currencyCtx) return currencyCtx.formatPrice(priceUsd);
-      return `₩${Math.round(priceUsd).toLocaleString("ko-KR")}`;
+      return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 0,
+      }).format(priceUsd);
     },
     [currencyCtx],
   );
@@ -130,36 +145,27 @@ export function FeaturedProductsShowcase() {
       limit: String(FEATURED_LIMIT),
       locale,
       compact: "1",
-      // Skip the recommendation score path on this rail — useScoreSort
-      // triggers an extra `bookings` SELECT keyed by every returned
-      // tour id, which on cold cache adds ~1–3s on top of the FX/query
-      // race. The "most booked this week" copy here is editorial, not
-      // a live ranking; sortBy=popular without score sort falls back
-      // to created_at desc, which approximates the curated intent.
+      // Keep this rail out of the booking-score path. The copy is editorial,
+      // and waiting on score enrichment is not worth blocking the home page.
       useScoreSort: "false",
     });
-
-    setTours(fallbackTours);
 
     fetch(`/api/tours?${params.toString()}`, { signal: controller.signal })
       .then((r) => (r.ok ? r.json() : { tours: [] }))
       .then((data) => {
         if (controller.signal.aborted) return;
         const adapted = adaptToursListResponse(data);
-        // Data guard — only render tours that have a real price, image, and title.
-        // Half-populated cards (₩0, missing thumbnail) erode trust on the homepage.
         const validTours = adapted.filter((tour) => {
           const hasPrice = typeof tour.priceFrom === "number" && tour.priceFrom > 0;
           const hasImage = Boolean(tour.imageUrl);
           const hasTitle = Boolean(tour.title && tour.title.trim());
           return hasPrice && hasImage && hasTitle;
         });
-        if (validTours.length >= 3) setTours(validTours);
+        if (validTours.length >= 3) setLiveTours({ locale, tours: validTours });
       })
       .catch((err) => {
         if (controller.signal.aborted) return;
         if (err && (err.name === "AbortError" || err.code === 20)) return;
-        setTours(fallbackTours);
       });
 
     fetch("/api/tours/destinations", { signal: controller.signal })
@@ -174,15 +180,14 @@ export function FeaturedProductsShowcase() {
       window.clearTimeout(timeoutId);
       controller.abort();
     };
-  }, [fallbackTours, locale]);
+  }, [locale]);
 
   if (tours.length < 3) return null;
 
   return (
-    <section className="relative overflow-hidden px-4 md:px-6 section-py-md bg-white">
-
-      <motion.div {...reveal} className="relative mx-auto max-w-6xl">
-        <motion.div variants={REVEAL_ITEM_VARIANTS} className="mb-7 text-center md:mb-9">
+    <section className="relative overflow-hidden bg-white px-4 section-py-md md:px-6">
+      <div className="relative mx-auto max-w-6xl">
+        <div className="mb-7 text-center md:mb-9">
           <p className="mb-3 text-eyebrow md:mb-4">
             {t("premium.v2.featuredProducts.eyebrow")}
           </p>
@@ -195,14 +200,16 @@ export function FeaturedProductsShowcase() {
           <p className="mx-auto max-w-lg text-body text-slate-600">
             {t("premium.v2.featuredProducts.subtitle")}
           </p>
-        </motion.div>
+        </div>
 
         <div className="relative -mx-4 md:mx-0">
-          <div ref={scrollRef} className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-hide md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
+          <div
+            ref={scrollRef}
+            className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-hide md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0"
+          >
             {tours.slice(0, FEATURED_LIMIT).map((tour) => (
-              <motion.div
+              <div
                 key={tour.id}
-                variants={REVEAL_ITEM_VARIANTS}
                 className="w-[44vw] flex-shrink-0 snap-start md:w-auto"
                 onClick={() =>
                   analytics.homeFeaturedCardClick({
@@ -217,7 +224,7 @@ export function FeaturedProductsShowcase() {
                   formatPriceFn={formatPrice}
                   imageSizes="(min-width: 768px) 352px, 44vw"
                 />
-              </motion.div>
+              </div>
             ))}
           </div>
           <div
@@ -230,7 +237,7 @@ export function FeaturedProductsShowcase() {
           count={Math.min(tours.length, FEATURED_LIMIT)}
         />
 
-        <motion.div variants={REVEAL_ITEM_VARIANTS} className="mt-8 text-center md:mt-10">
+        <div className="mt-8 text-center md:mt-10">
           <V0ShadcnButton
             asChild
             variant="outline"
@@ -243,8 +250,8 @@ export function FeaturedProductsShowcase() {
               <ArrowRight className="h-4 w-4" />
             </Link>
           </V0ShadcnButton>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 }
