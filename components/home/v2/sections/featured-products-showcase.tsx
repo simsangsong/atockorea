@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -9,6 +9,7 @@ import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
 import { adaptToursListResponse } from "@/src/lib/adapters/tours-adapter";
 import type { TourCardViewModel } from "@/src/types/tours";
 import { consumerTourDetailHref } from "@/lib/tour-consumer-visibility";
+import { inferTourCatalogType, tagsForCatalogType } from "@/lib/tour-catalog-type-infer";
 import { useCurrencyOptional } from "@/lib/currency";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import { HOME_CTA_BROWSE_TOURS_HREF } from "@/lib/home/home-cta-routes";
@@ -16,16 +17,85 @@ import { SnapScrollDots } from "@/components/home/v2/ui/SnapScrollDots";
 import { homeBtnSecondary } from "@/lib/home/home-button-classes";
 import { analytics } from "@/src/design/analytics";
 import {
+  listStaticTourProducts,
+  type StaticTourProductRegistration,
+} from "@/components/product-tour-static/catalog/staticTourCatalogCards";
+import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import {
   REVEAL_ITEM_VARIANTS,
   useRevealContainerProps,
 } from "@/components/home/v2/ui/reveal";
 import { cn } from "@/lib/utils";
 
 const FEATURED_LIMIT = 6;
+const FEATURED_FETCH_TIMEOUT_MS = 4500;
+const FEATURED_FALLBACK_SLUGS = [
+  "east-signature-nature-core",
+  "jeju-grand-highlights-loop",
+  "southwest-hallasan-osulloc-aewol",
+  "busan-small-group-sightseeing-tour-cruise-passengers",
+  "busan-gyeongju-unesco-legacy-tour-national-museum",
+  "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+] as const;
 
 type DestinationsApiResponse = {
   total?: number;
 };
+
+function isTourProductLocale(locale: string): locale is TourProductPageLocale {
+  return locale === "en" || locale === "ko" || locale === "zh" || locale === "zh-TW" || locale === "es" || locale === "ja";
+}
+
+function productToCard(product: StaticTourProductRegistration): TourCardViewModel {
+  const type = inferTourCatalogType({
+    title: product.title,
+    badges: [...product.badges],
+    slug: product.slug,
+  });
+  const originalPrice =
+    typeof product.compareAtPriceUsd === "number" && product.compareAtPriceUsd > product.listPriceUsd
+      ? product.compareAtPriceUsd
+      : null;
+
+  return {
+    id: product.slug,
+    slug: product.slug,
+    title: product.title,
+    type,
+    tags: tagsForCatalogType([...product.badges], type),
+    priceFrom: product.listPriceUsd,
+    originalPrice,
+    currency: "USD",
+    pickup: {
+      areaLabel: product.region,
+      surchargeLabel: null,
+      surchargeAmount: 0,
+      surchargeFinal: false,
+      joinAvailable: type === "join",
+    },
+    imageUrl: product.thumbnail || product.heroImage,
+    duration: product.duration,
+    city: product.region,
+    rating: product.rating > 0 ? product.rating : undefined,
+    reviewCount: product.reviewCount > 0 ? product.reviewCount : undefined,
+  };
+}
+
+function buildStaticFeaturedTours(locale: string): TourCardViewModel[] {
+  const productLocale = isTourProductLocale(locale) ? locale : "en";
+  const bySlug = new Map(listStaticTourProducts(productLocale).map((product) => [product.slug, product]));
+
+  return FEATURED_FALLBACK_SLUGS
+    .map((slug) => bySlug.get(slug))
+    .filter((product): product is StaticTourProductRegistration => {
+      if (!product) return false;
+      if (product.listPriceUsd <= 0) return false;
+      if (!product.thumbnail && !product.heroImage) return false;
+      return consumerTourDetailHref(product.slug, product.slug) !== "/tours/list";
+    })
+    .map(productToCard)
+    .slice(0, FEATURED_LIMIT);
+}
 
 /**
  * "Most loved this week" popular product rail.
@@ -39,9 +109,9 @@ export function FeaturedProductsShowcase() {
   const currencyCtx = useCurrencyOptional();
   const scrollRef = useRef<HTMLDivElement>(null);
   const reveal = useRevealContainerProps();
+  const fallbackTours = useMemo(() => buildStaticFeaturedTours(locale), [locale]);
 
-  const [tours, setTours] = useState<TourCardViewModel[] | null>(null);
-  const [error, setError] = useState(false);
+  const [tours, setTours] = useState<TourCardViewModel[]>(fallbackTours);
   const [totalCount, setTotalCount] = useState<number | null>(null);
 
   const formatPrice = useCallback(
@@ -54,6 +124,7 @@ export function FeaturedProductsShowcase() {
 
   useEffect(() => {
     const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), FEATURED_FETCH_TIMEOUT_MS);
     const params = new URLSearchParams({
       sortBy: "popular",
       limit: String(FEATURED_LIMIT),
@@ -65,8 +136,11 @@ export function FeaturedProductsShowcase() {
       // race. The "most booked this week" copy here is editorial, not
       // a live ranking; sortBy=popular without score sort falls back
       // to created_at desc, which approximates the curated intent.
-      useScoreSort: "0",
+      useScoreSort: "false",
     });
+
+    setTours(fallbackTours);
+
     fetch(`/api/tours?${params.toString()}`, { signal: controller.signal })
       .then((r) => (r.ok ? r.json() : { tours: [] }))
       .then((data) => {
@@ -80,12 +154,12 @@ export function FeaturedProductsShowcase() {
           const hasTitle = Boolean(tour.title && tour.title.trim());
           return hasPrice && hasImage && hasTitle;
         });
-        setTours(validTours);
+        if (validTours.length >= 3) setTours(validTours);
       })
       .catch((err) => {
         if (controller.signal.aborted) return;
         if (err && (err.name === "AbortError" || err.code === 20)) return;
-        setError(true);
+        setTours(fallbackTours);
       });
 
     fetch("/api/tours/destinations", { signal: controller.signal })
@@ -96,11 +170,13 @@ export function FeaturedProductsShowcase() {
       })
       .catch(() => {});
 
-    return () => controller.abort();
-  }, [locale]);
+    return () => {
+      window.clearTimeout(timeoutId);
+      controller.abort();
+    };
+  }, [fallbackTours, locale]);
 
-  if (error) return null;
-  if (tours != null && tours.length < 3) return null;
+  if (tours.length < 3) return null;
 
   return (
     <section className="relative overflow-hidden px-4 md:px-6 section-py-md bg-white">
@@ -121,43 +197,38 @@ export function FeaturedProductsShowcase() {
           </p>
         </motion.div>
 
-        {tours == null ? (
-          <SkeletonGrid />
-        ) : (
-          <>
-            <div className="relative -mx-4 md:mx-0">
-              <div ref={scrollRef} className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-hide md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
-                {tours.slice(0, FEATURED_LIMIT).map((tour) => (
-                  <motion.div
-                    key={tour.id}
-                    variants={REVEAL_ITEM_VARIANTS}
-                    className="w-[44vw] flex-shrink-0 snap-start md:w-auto"
-                    onClick={() =>
-                      analytics.homeFeaturedCardClick({
-                        source: "regular_section",
-                        slug: tour.slug ?? tour.id,
-                      })
-                    }
-                  >
-                    <TourListCard
-                      tour={tour}
-                      detailHref={consumerTourDetailHref(tour.id, tour.slug)}
-                      formatPriceFn={formatPrice}
-                    />
-                  </motion.div>
-                ))}
-              </div>
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-white via-white/90 to-transparent md:hidden"
-              />
-            </div>
-            <SnapScrollDots
-              containerRef={scrollRef}
-              count={Math.min(tours.length, FEATURED_LIMIT)}
-            />
-          </>
-        )}
+        <div className="relative -mx-4 md:mx-0">
+          <div ref={scrollRef} className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-hide md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
+            {tours.slice(0, FEATURED_LIMIT).map((tour) => (
+              <motion.div
+                key={tour.id}
+                variants={REVEAL_ITEM_VARIANTS}
+                className="w-[44vw] flex-shrink-0 snap-start md:w-auto"
+                onClick={() =>
+                  analytics.homeFeaturedCardClick({
+                    source: "regular_section",
+                    slug: tour.slug ?? tour.id,
+                  })
+                }
+              >
+                <TourListCard
+                  tour={tour}
+                  detailHref={consumerTourDetailHref(tour.id, tour.slug)}
+                  formatPriceFn={formatPrice}
+                  imageSizes="(min-width: 768px) 352px, 44vw"
+                />
+              </motion.div>
+            ))}
+          </div>
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-white via-white/90 to-transparent md:hidden"
+          />
+        </div>
+        <SnapScrollDots
+          containerRef={scrollRef}
+          count={Math.min(tours.length, FEATURED_LIMIT)}
+        />
 
         <motion.div variants={REVEAL_ITEM_VARIANTS} className="mt-8 text-center md:mt-10">
           <V0ShadcnButton
@@ -175,25 +246,5 @@ export function FeaturedProductsShowcase() {
         </motion.div>
       </motion.div>
     </section>
-  );
-}
-
-function SkeletonGrid() {
-  return (
-    <div className="-mx-4 flex gap-3 overflow-x-hidden px-4 pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-5 md:px-0 md:pb-0">
-      {Array.from({ length: 6 }).map((_, i) => (
-        <div
-          key={i}
-          className="w-[44vw] flex-shrink-0 animate-pulse overflow-hidden rounded-card border border-white/80 bg-white shadow-2 md:w-auto"
-        >
-          <div className="aspect-[4/3.15] w-full bg-slate-200/70 sm:aspect-[4/3.35]" />
-          <div className="space-y-2 p-3">
-            <div className="h-2.5 w-3/4 rounded bg-slate-200/70" />
-            <div className="h-2.5 w-1/2 rounded bg-slate-200/70" />
-            <div className="mt-2 h-4 w-1/3 rounded bg-slate-200/70" />
-          </div>
-        </div>
-      ))}
-    </div>
   );
 }

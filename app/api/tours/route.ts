@@ -19,6 +19,8 @@ const SUPPORTED_LOCALES = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'] as const;
 type SupportedLocale = typeof SUPPORTED_LOCALES[number];
 type TourTypeFilter = 'private' | 'join' | 'bus';
 
+const FALSE_SEARCH_PARAM_VALUES = new Set(['false', '0', 'no', 'off']);
+
 type TourLocaleTranslation = {
   title?: string;
   description?: string;
@@ -84,6 +86,11 @@ function parseLocale(value: string | null): SupportedLocale | null {
   const normalized = value.trim();
   if (SUPPORTED_LOCALES.includes(normalized as SupportedLocale)) return normalized as SupportedLocale;
   return null;
+}
+
+function searchParamFlagEnabled(value: string | null): boolean {
+  if (value == null) return true;
+  return !FALSE_SEARCH_PARAM_VALUES.has(value.trim().toLowerCase());
 }
 
 /** Escape ILIKE special characters (%, _) to avoid injection or unintended wildcards */
@@ -156,7 +163,7 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       sortOrder = 'desc';
     }
     const useScoreSort = searchParams.has('useScoreSort')
-      ? searchParams.get('useScoreSort') !== 'false'
+      ? searchParamFlagEnabled(searchParams.get('useScoreSort'))
       : !explicitSortRequested || sortAlias === 'popular' || searchParams.get('sortBy') === 'popular';
     const typeParam = searchParams.get('tourType') ?? searchParams.get('type');
     const tourTypeFilter: TourTypeFilter | null =
