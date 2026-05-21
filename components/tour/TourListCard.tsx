@@ -33,13 +33,25 @@ export interface TourListCardProps {
    */
   imageSizes?: string;
   /**
+   * Next image quality for card thumbnails. Dense lists keep the default lean;
+   * large editorial home cards can opt into a sharper encode.
+   */
+  imageQuality?: number;
+  /**
    * `vertical` (default): image on top, content below — used in home/3-up rails.
    * `horizontal`: GYG-style square image on left, content on right — for list/search.
    */
   layout?: 'vertical' | 'horizontal';
 }
 
-function TourListCard({ tour, detailHref, formatPriceFn, imageSizes, layout = 'vertical' }: TourListCardProps) {
+function TourListCard({
+  tour,
+  detailHref,
+  formatPriceFn,
+  imageSizes,
+  imageQuality = 75,
+  layout = 'vertical',
+}: TourListCardProps) {
   const isHorizontal = layout === 'horizontal';
   const t = useTranslations();
   const { locale } = useI18n();
@@ -54,8 +66,11 @@ function TourListCard({ tour, detailHref, formatPriceFn, imageSizes, layout = 'v
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
-    if (!tourKey) return;
-    setSaved(isInWishlistLocal(tourKey));
+    const syncWishlistState = window.setTimeout(() => {
+      setSaved(tourKey ? isInWishlistLocal(tourKey) : false);
+    }, 0);
+
+    return () => window.clearTimeout(syncWishlistState);
   }, [tourKey]);
 
   const handleWishlistClick = (e: React.MouseEvent) => {
@@ -143,11 +158,9 @@ function TourListCard({ tour, detailHref, formatPriceFn, imageSizes, layout = 'v
               alt={displayTitle}
               fill
               sizes={imageSizes ?? (isHorizontal ? '180px' : '50vw')}
-              /* q=75 is visually indistinguishable from q=90 at card
-                 render sizes (~165–370px wide) but ~30–40% smaller per
-                 variant. The detail-page hero stays at q=90; this drop
-                 only applies to the list card surface. */
-              quality={75}
+              /* The default stays lean for dense lists; large home cards
+                 can opt into a sharper encode via imageQuality. */
+              quality={imageQuality}
               className={cn(
                 'object-cover transition-transform duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03] motion-reduce:group-hover:scale-100',
                 'motion-reduce:transition-none',

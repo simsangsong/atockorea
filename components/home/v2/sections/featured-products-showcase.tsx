@@ -222,7 +222,8 @@ export function FeaturedProductsShowcase() {
                   tour={tour}
                   detailHref={consumerTourDetailHref(tour.id, tour.slug)}
                   formatPriceFn={formatPrice}
-                  imageSizes="(min-width: 768px) 352px, 44vw"
+                  imageSizes="(min-width: 768px) 384px, 44vw"
+                  imageQuality={90}
                 />
               </div>
             ))}
