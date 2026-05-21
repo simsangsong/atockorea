@@ -19,7 +19,7 @@
  * legitimate identifier when the source photo is missing.
  */
 
-export type PhotoPinState = "cart" | "out" | "hover";
+export type PhotoPinState = "cart" | "out" | "hover" | "preview";
 
 interface BuildPhotoPinArgs {
   /** Image URL for cart/hover variants. Ignored when state is "out". */
@@ -136,9 +136,10 @@ function injectPhotoPinStyles(): void {
       transition: transform 200ms ease-out, filter 200ms ease-out;
       cursor: pointer;
     }
-    .ib-photo-pin[data-state="cart"]  { width: 56px; height: 56px; }
-    .ib-photo-pin[data-state="hover"] { width: 64px; height: 64px; transform: scale(1.02); filter: drop-shadow(0 6px 14px rgba(15,23,42,.28)); z-index: 2; }
-    .ib-photo-pin[data-state="out"]   { width: 14px; height: 14px; }
+    .ib-photo-pin[data-state="cart"]    { width: 56px; height: 56px; }
+    .ib-photo-pin[data-state="preview"] { width: 54px; height: 54px; }
+    .ib-photo-pin[data-state="hover"]   { width: 64px; height: 64px; transform: scale(1.02); filter: drop-shadow(0 6px 14px rgba(15,23,42,.28)); z-index: 2; }
+    .ib-photo-pin[data-state="out"]     { width: 14px; height: 14px; }
 
     /* Slate dot (out-of-cart) */
     .ib-photo-pin__dot {
@@ -168,6 +169,14 @@ function injectPhotoPinStyles(): void {
         0 0 0 3px #ffffff,
         0 0 0 6px rgba(245, 158, 11, .55),
         0 12px 22px -4px rgba(15,23,42,.32);
+    }
+    /* Preview (AI suggestion, not yet adopted) — soft amber outer ring so the
+       customer sees WHERE the matched stops sit before pressing Apply. */
+    .ib-photo-pin[data-state="preview"] .ib-photo-pin__ring {
+      box-shadow:
+        0 0 0 2px #ffffff,
+        0 0 0 5px rgba(245, 158, 11, .42),
+        0 8px 18px -2px rgba(15,23,42,.26);
     }
     .ib-photo-pin__img {
       display: block;

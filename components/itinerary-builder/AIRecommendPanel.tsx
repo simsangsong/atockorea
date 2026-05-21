@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Sparkles, Loader2, AlertCircle, Clock, ChevronRight } from "lucide-react";
+import { Loader2, AlertCircle, Clock, ChevronRight } from "lucide-react";
 import {
   REVEAL_ITEM_VARIANTS,
   useRevealContainerProps,
@@ -19,6 +19,9 @@ interface Props {
    *  Map focus is now accessible via the drawer's "See on map" button,
    *  so the old `onFocusPoi` prop has been retired. */
   onOpenDetail?: (poi: MatchPoiRow) => void;
+  /** R4 — surface the matched stops to the map as a PREVIEW before the user
+   *  presses Apply, so they can see where the suggested stops are. null clears it. */
+  onPreview?: (poiKeys: string[] | null) => void;
   track?: string | null;
   origin?: string | null;
 }
@@ -78,6 +81,7 @@ export default function AIRecommendPanel({
   pois,
   onAccept,
   onOpenDetail,
+  onPreview,
   track,
   origin,
 }: Props) {
@@ -109,6 +113,7 @@ export default function AIRecommendPanel({
   async function runMatch(intentText: string) {
     setError(null);
     setResult(null);
+    onPreview?.(null);
     if (intentText.trim().length < 2) {
       setError(t("errorMin"));
       return;
@@ -134,6 +139,9 @@ export default function AIRecommendPanel({
       }
       setResult(data);
       setCollapsed(true);
+      // R4 — project the matched stops onto the map immediately (preview),
+      // before the user presses "Apply this day".
+      onPreview?.(data.recommended_pois ?? null);
     } catch (e) {
       setError(e instanceof Error ? e.message : "request_failed");
     } finally {
@@ -167,10 +175,7 @@ export default function AIRecommendPanel({
       >
         {/* Header — always visible */}
         <motion.div variants={REVEAL_ITEM_VARIANTS} className="px-5 pt-5 pb-3 md:px-6 md:pt-5">
-          <p className="mb-2 inline-flex items-center gap-1.5 text-eyebrow text-amber-700">
-            <Sparkles className="h-3.5 w-3.5" aria-hidden />
-            {t("eyebrow")}
-          </p>
+          <p className="mb-2 text-eyebrow text-amber-700">{t("eyebrow")}</p>
           {!collapsed ? (
             <p className="text-body text-slate-600">{t("intro")}</p>
           ) : null}
@@ -184,7 +189,6 @@ export default function AIRecommendPanel({
               onClick={() => setCollapsed(false)}
               className="inline-flex items-center gap-1.5 rounded-full bg-slate-50 px-3 py-1.5 text-micro font-semibold text-slate-700 ring-1 ring-slate-200 transition-colors duration-200 ease-out hover:bg-white hover:ring-slate-300"
             >
-              <Sparkles className="h-3 w-3 text-amber-600" aria-hidden />
               {t("getAnother")}
             </button>
           </div>
@@ -205,7 +209,7 @@ export default function AIRecommendPanel({
                     type="button"
                     onClick={() => handlePreset(p.intent)}
                     disabled={loading}
-                    className="inline-flex items-center rounded-full bg-amber-50 px-3 py-1 text-micro font-semibold text-amber-800 ring-1 ring-amber-100 transition-colors duration-150 ease-out hover:bg-amber-100 hover:ring-amber-200 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="inline-flex items-center rounded-full bg-slate-50 px-3 py-1 text-micro font-semibold text-slate-700 ring-1 ring-slate-200 transition-colors duration-150 ease-out hover:bg-slate-100 hover:ring-slate-300 disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {t(`presets.${p.key}`)}
                   </button>
@@ -251,11 +255,7 @@ export default function AIRecommendPanel({
                 disabled={loading}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-caption font-bold text-slate-900 shadow-sm ring-1 ring-slate-300 transition-colors duration-200 ease-out hover:bg-slate-50 hover:ring-slate-400 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-400 md:w-auto"
               >
-                {loading ? (
-                  <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
-                ) : (
-                  <Sparkles className="h-4 w-4 text-amber-600" aria-hidden />
-                )}
+                {loading ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : null}
                 {loading ? t("submitting") : t("submit")}
               </button>
             </motion.form>
@@ -281,7 +281,7 @@ export default function AIRecommendPanel({
             variants={REVEAL_ITEM_VARIANTS}
             initial="hidden"
             animate="visible"
-            className="border-t border-amber-100 bg-amber-50/40 px-5 py-4 md:px-6"
+            className="border-t border-slate-100 bg-white px-5 py-4 md:px-6"
           >
             <div className="mb-3 flex items-center justify-between gap-2">
               <p className="text-caption font-bold text-slate-900">
@@ -290,7 +290,7 @@ export default function AIRecommendPanel({
               <button
                 type="button"
                 onClick={() => onAccept(recommended)}
-                className="inline-flex items-center gap-1 rounded-full bg-amber-500 px-3 py-1.5 text-micro font-bold text-white shadow-sm transition-colors hover:bg-amber-600"
+                className="inline-flex items-center gap-1 rounded-full bg-slate-900 px-3 py-1.5 text-micro font-bold text-white shadow-sm transition-colors hover:bg-slate-800"
               >
                 {t("loadIntoCart")}
                 <ChevronRight className="h-3 w-3" aria-hidden />
@@ -304,7 +304,14 @@ export default function AIRecommendPanel({
                 V5: amber = sequence only; V4: no bi-sync needed here (map
                 focus available via drawer's focus button). RR6: previewHint
                 i18n'd via translate-itinerary-builder-messages.mjs. */}
-            <ol className="flex flex-col gap-2.5">
+            <ol className="relative space-y-2.5 pl-9">
+              {/* Subtle slate connector — same tour-detail timeline language
+                  as ResultTimeline so the suggestion reads as a preview of the
+                  day. Amber sequence identity lives on the map photo-pins. */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute left-[17px] top-5 bottom-5 w-px bg-slate-200"
+              />
               {(result.per_poi_score ?? []).map((p, i) => {
                 const poi = poiByKey.get(p.poi_key) ?? null;
                 const photos =
@@ -315,21 +322,25 @@ export default function AIRecommendPanel({
                     : [];
                 return (
                   <li key={p.poi_key} className="relative">
-                    {/* Amber sequence node — on <li> (relative), above card
-                        button's overflow-hidden boundary (V5 amber = sequence
-                        identity only). */}
+                    {/* White/slate sequence node in the left gutter — tour-detail
+                        parity (amber sequence identity now lives on the map). */}
                     <span
                       aria-hidden
-                      className="absolute left-3 top-3 z-10 inline-flex h-6 w-6 items-center justify-center rounded-full bg-amber-500 text-[11px] font-bold leading-none text-white ring-2 ring-white shadow-sm"
+                      className="absolute -left-9 top-2 z-10 flex h-9 w-9 items-center justify-center rounded-full text-[12px] font-medium tabular-nums tracking-[0.04em] text-slate-600 ring-1 ring-white"
+                      style={{
+                        background: "#ffffff",
+                        boxShadow:
+                          "0 1px 2px rgba(15,23,42,0.06), 0 4px 12px -4px rgba(15,23,42,0.10), inset 0 0.5px 0 rgba(255,255,255,0.9)",
+                      }}
                     >
-                      {i + 1}
+                      {String(i + 1).padStart(2, "0")}
                     </span>
 
                     {/* Card body — tap opens shared detail drawer (RR2). */}
                     <button
                       type="button"
                       onClick={() => { if (poi && onOpenDetail) onOpenDetail(poi); }}
-                      className="group block w-full overflow-hidden rounded-2xl bg-white text-left ring-1 ring-slate-200/70 shadow-[0_4px_14px_-6px_rgba(15,23,42,0.16)] transition-shadow duration-200 ease-out hover:shadow-[0_8px_22px_-8px_rgba(15,23,42,0.24)]"
+                      className="group block w-full overflow-hidden rounded-2xl bg-white text-left ring-1 ring-slate-200/60 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_-2px_rgba(15,23,42,0.06)] transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-px hover:shadow-[0_2px_6px_rgba(15,23,42,0.06),0_8px_20px_-4px_rgba(15,23,42,0.10)] motion-reduce:transition-none"
                     >
                       {/* Compose photo strip */}
                       {photos.length > 0 ? (

@@ -7,6 +7,8 @@ import { useCart } from "@/lib/itinerary-builder/cart";
 import { ActiveStopProvider } from "@/lib/itinerary-builder/active-stop";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 import type { RegionSlug } from "@/lib/itinerary-builder/regions";
+import { localizePoiRow, normalizeBuilderLocale } from "@/lib/itinerary-builder/locale-content";
+import { useI18n } from "@/lib/i18n";
 import POICatalogMap from "./POICatalogMap";
 import ResultTimeline from "./ResultTimeline";
 import QuoteModal from "./QuoteModal";
@@ -43,6 +45,7 @@ interface Props {
  * and quote modal flow are all preserved exactly.
  */
 export default function BuilderShell({ region, pois, center, mapId, apiKey }: Props) {
+  const { locale } = useI18n();
   const { cart, add, remove, reorder, has, clear } = useCart();
   const searchParams = useSearchParams();
   const [quoteOpen, setQuoteOpen] = useState(false);
@@ -50,6 +53,9 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
   // R1 — single shared detail drawer for BOTH the timeline and the catalog
   // grid (RR2/RR-R3). Lifted here so there is exactly one modal instance.
   const [detailPoi, setDetailPoi] = useState<MatchPoiRow | null>(null);
+  // R4 — AI-matched stops projected onto the map as a preview BEFORE the user
+  // presses Apply, so they can see where the suggested stops actually are.
+  const [previewKeys, setPreviewKeys] = useState<string[] | null>(null);
   const resetViewRef = useRef<(() => void) | null>(null);
 
   // Bump key tracker so repeated clicks on the same POI re-open its InfoWindow
@@ -63,6 +69,8 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
     (poiKeys: string[]) => {
       // Replace the cart with the recommended sequence
       clear();
+      // The preview is now the real cart — drop the preview overlay.
+      setPreviewKeys(null);
       // Defer the bulk-add so the URL state has a chance to clear first
       requestAnimationFrame(() => {
         reorder(poiKeys);
@@ -82,6 +90,11 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
   }, [searchParams]);
   const matcherTrack = searchParams?.get("track") ?? null;
   const matcherOrigin = searchParams?.get("origin") ?? null;
+  const activeLocale = normalizeBuilderLocale(searchParams?.get("locale")) ?? locale;
+  const localizedPois = useMemo(
+    () => pois.map((poi) => localizePoiRow(poi, activeLocale)),
+    [activeLocale, pois]
+  );
 
   const handleGetQuote = useCallback(() => {
     if (cart.length === 0) return;
@@ -117,11 +130,12 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
               </button>
               <POICatalogMap
                 region={region}
-                pois={pois}
+                pois={localizedPois}
                 center={center}
                 mapId={mapId}
                 apiKey={apiKey}
                 cart={cart}
+                previewKeys={previewKeys}
                 onAdd={add}
                 onRemove={remove}
                 hasInCart={has}
@@ -139,15 +153,16 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
           <div className="lg:w-[400px] lg:flex-shrink-0 lg:overflow-y-auto lg:self-stretch">
             <AIRecommendPanel
               region={region}
-              pois={pois}
+              pois={localizedPois}
               onAccept={acceptRecommendation}
               onOpenDetail={setDetailPoi}
+              onPreview={setPreviewKeys}
               track={matcherTrack}
               origin={matcherOrigin}
             />
             <ResultTimeline
               cart={cart}
-              pois={pois}
+              pois={localizedPois}
               onRemove={remove}
               onReorder={reorder}
               onGetQuote={handleGetQuote}
@@ -163,7 +178,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
           page-width breathing room; cramming it into a 400px rail breaks
           the card density home v2 set as the reference. */}
       <POICatalogGrid
-        pois={pois}
+        pois={localizedPois}
         cart={cart}
         onAdd={add}
         onRemove={remove}
@@ -176,7 +191,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
         onClose={() => setQuoteOpen(false)}
         cart={cart}
         region={region}
-        pois={pois}
+        pois={localizedPois}
       />
 
       {/* R1 — one shared detail drawer for the timeline + the catalog grid.

@@ -55,13 +55,12 @@ interface Props {
  * rail (lg+) and in normal flow below the sticky map on mobile.
  *
  * Structure:
- *   • dashed amber connector running left-edge through the whole stack
+ *   • subtle slate connector running left-edge through the whole stack
  *   • each stop card = sequence node + thumbnail + name + stay/category
  *     chips + remove
  *   • between cards = per-leg drive-time chip (Car icon + minutes)
  *   • footer = stay total + drive total + grand total + cruise budget
- *     (if applicable) + Get-Quote CTA (the page's sole amber primary,
- *     per V5)
+ *     (if applicable) + Get-Quote CTA
  *
  * Drag-and-drop reorder preserved via `@dnd-kit`. URL state untouched —
  * `useCart()` in the parent (`BuilderShell`) owns the persistence layer.
@@ -119,7 +118,7 @@ export default function ResultTimeline({
         <h2 className="text-caption font-bold uppercase tracking-wide text-slate-900">
           {t("title")}
         </h2>
-        <span className="rounded-full bg-amber-100 px-2 py-0.5 text-micro font-bold text-amber-800">
+        <span className="rounded-full bg-white/85 px-2 py-0.5 text-micro font-bold text-slate-500 ring-1 ring-slate-200/80">
           {t("poiCount", { count: cartPois.length })}
         </span>
       </header>
@@ -133,11 +132,12 @@ export default function ResultTimeline({
           onDragEnd={handleDragEnd}
         >
           <SortableContext items={cart} strategy={verticalListSortingStrategy}>
-            <ol className="relative space-y-2 pl-7">
-              {/* Dashed amber connector behind the sequence nodes */}
+            <ol className="relative space-y-2 pl-9">
+              {/* Subtle slate connector behind the sequence nodes (tour-detail
+                  parity). Amber sequence identity now lives on the map pins. */}
               <span
                 aria-hidden
-                className="pointer-events-none absolute left-[10px] top-4 bottom-4 w-px border-l-2 border-dashed border-amber-300"
+                className="pointer-events-none absolute left-[17px] top-5 bottom-5 w-px bg-slate-200"
               />
               {cartPois.map((poi, idx) => (
                 <Fragment key={poi.poi_key}>
@@ -229,12 +229,19 @@ function SortableStopCard({
       onMouseLeave={() => onHover(false)}
       className="relative"
     >
-      {/* Sequence node on the connector (V5 sequence identity) */}
+      {/* Sequence node — white/slate tour-detail node. Amber sequence
+          identity is carried by the map photo-pins + route line (V5/V13
+          re-scope; see plan §B). */}
       <span
         aria-hidden
-        className="absolute -left-7 top-10 z-10 inline-flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full bg-amber-500 text-[11px] font-bold leading-none text-white shadow-[0_0_0_3px_rgba(251,191,36,0.20)] ring-2 ring-white"
+        className="absolute -left-9 top-2 z-10 flex h-9 w-9 items-center justify-center rounded-full text-[12px] font-medium tabular-nums tracking-[0.04em] text-slate-600 ring-1 ring-white"
+        style={{
+          background: "#ffffff",
+          boxShadow:
+            "0 1px 2px rgba(15,23,42,0.06), 0 4px 12px -4px rgba(15,23,42,0.10), inset 0 0.5px 0 rgba(255,255,255,0.9)",
+        }}
       >
-        {seq}
+        {String(seq).padStart(2, "0")}
       </span>
 
       {/* Card body — tap opens the shared detail drawer (RR2/RR7). The body is
@@ -243,10 +250,10 @@ function SortableStopCard({
       <button
         type="button"
         onClick={onOpenDetail}
-        className={`group block w-full overflow-hidden rounded-2xl bg-white/95 text-left backdrop-blur-sm transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-px motion-reduce:transition-none ${
+        className={`group block w-full overflow-hidden rounded-2xl bg-white text-left transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-px motion-reduce:transition-none ${
           isActive
-            ? "shadow-[0_0_0_3px_rgba(251,191,36,0.18)] ring-2 ring-amber-400"
-            : "shadow-[0_10px_28px_-18px_rgba(15,23,42,0.22)] ring-1 ring-slate-200/70 hover:shadow-[0_18px_40px_-22px_rgba(15,23,42,0.32)]"
+            ? "shadow-[0_2px_8px_rgba(15,23,42,0.08),0_12px_28px_-6px_rgba(15,23,42,0.16)] ring-2 ring-slate-300"
+            : "shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_-2px_rgba(15,23,42,0.06)] ring-1 ring-slate-200/60 hover:shadow-[0_2px_6px_rgba(15,23,42,0.06),0_8px_20px_-4px_rgba(15,23,42,0.10)]"
         }`}
       >
         {/* Compose photo strip (RR1) — every image, horizontally scrollable. */}
@@ -370,13 +377,13 @@ function EmptyState({
   lookLabel: string;
 }) {
   return (
-    <div className="rounded-2xl border-2 border-dashed border-slate-300/70 bg-white/50 px-5 py-10 text-center backdrop-blur-sm">
-      <span className="mx-auto mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-700">
-        <MapPin className="h-6 w-6" aria-hidden />
+    <div className="rounded-xl border border-slate-200/80 bg-slate-50/65 px-5 py-9 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
+      <span className="mx-auto mb-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white text-slate-500 shadow-sm ring-1 ring-slate-200/80">
+        <MapPin className="h-4 w-4" strokeWidth={2} aria-hidden />
       </span>
       <p className="text-caption font-bold text-slate-900">{headline}</p>
-      <p className="mx-auto mt-1.5 max-w-[26ch] text-micro text-slate-600">{body}</p>
-      <p className="mt-3 inline-flex items-center gap-1 text-micro font-semibold text-amber-700">
+      <p className="mx-auto mt-1.5 max-w-[26ch] text-micro leading-relaxed text-slate-500">{body}</p>
+      <p className="mt-3 inline-flex items-center gap-1 text-micro font-medium text-slate-500">
         {/* Mobile: rail is below sticky map → arrow points up.
             lg+: rail is right of map → arrow points left. */}
         <ArrowUp className="h-3 w-3 lg:hidden" aria-hidden />

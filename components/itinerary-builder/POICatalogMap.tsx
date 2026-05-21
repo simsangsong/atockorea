@@ -1,7 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { GoogleMap, InfoWindow, Polyline, useJsApiLoader } from "@react-google-maps/api";
+import { Loader } from "@googlemaps/js-api-loader";
+import { createRoot, type Root } from "react-dom/client";
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
 import { useTranslations } from "@/lib/i18n";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
@@ -13,7 +14,6 @@ import {
 } from "@/lib/itinerary-builder/photo-pin";
 import { useActiveStop } from "@/lib/itinerary-builder/active-stop";
 import {
-  GOOGLE_MAPS_LOADER_ID,
   GOOGLE_MAPS_LOADER_VERSION,
   libraries as GOOGLE_MAPS_LIBRARIES,
 } from "@/lib/google-maps";
@@ -48,6 +48,10 @@ interface Props {
   apiKey: string;
   /** Phase 4a wiring — cart state owned by parent (`BuilderShell`). */
   cart?: string[];
+  /** R4 — AI-matched stops to PREVIEW on the map before they're adopted into
+   *  the cart. Rendered as soft-amber "preview" photo-pins + a lighter route
+   *  line + auto-fit, only while the cart is still empty. */
+  previewKeys?: string[] | null;
   onAdd?: (key: string) => void;
   onRemove?: (key: string) => void;
   hasInCart?: (key: string) => boolean;
@@ -64,6 +68,7 @@ export default function POICatalogMap({
   mapId,
   apiKey,
   cart,
+  previewKeys,
   onAdd,
   onRemove,
   hasInCart,
@@ -73,32 +78,120 @@ export default function POICatalogMap({
   const t = useTranslations("itineraryBuilder.map");
   const { activeKey, setActive } = useActiveStop();
 
-  const { isLoaded, loadError } = useJsApiLoader({
-    id: GOOGLE_MAPS_LOADER_ID,
-    googleMapsApiKey: apiKey,
-    libraries: GOOGLE_MAPS_LIBRARIES,
-    version: GOOGLE_MAPS_LOADER_VERSION,
-  });
-
+  // Imperative Google Maps load — the @react-google-maps/api <GoogleMap> +
+  // useJsApiLoader wrapper is unstable on React 19 / Next 16: it re-injects the
+  // <script> repeatedly (10+ tags), `isLoaded` stalls, and the map never
+  // instantiates (.gm-style absent → blank map). We load via the official
+  // @googlemaps/js-api-loader and create the map ourselves.
   const [map, setMap] = useState<google.maps.Map | null>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [loadError, setLoadError] = useState(false);
   const [selected, setSelected] = useState<MatchPoiRow | null>(null);
+  const mapDivRef = useRef<HTMLDivElement | null>(null);
+  // StrictMode-safe one-shot guard so the map is created exactly once even
+  // though React dev double-invokes effects.
+  const mapInitStartedRef = useRef(false);
   const clustererRef = useRef<MarkerClusterer | null>(null);
   const markersRef = useRef<google.maps.marker.AdvancedMarkerElement[]>([]);
+  // Imperative InfoWindow (the wrapper <InfoWindow> needs the <GoogleMap>
+  // context we no longer use). Renders the React content into a detached root.
+  const infoWindowRef = useRef<google.maps.InfoWindow | null>(null);
+  const infoRootRef = useRef<Root | null>(null);
+  const infoDivRef = useRef<HTMLDivElement | null>(null);
+  // Route line drawn IMPERATIVELY (not via the @react-google-maps <Polyline>
+  // component, whose setAt-on-update crashes the GoogleMap subtree on React 19
+  // / Next 16 and blanks the whole map).
+  const polylineRef = useRef<google.maps.Polyline | null>(null);
 
   const initialCenter = useMemo(() => ({ lat: center.lat, lng: center.lng }), [center.lat, center.lng]);
 
-  // Polyline path: cart POIs in order. Empty when cart < 2 items.
+  // R4 — "route" = the adopted cart if any, otherwise the AI preview (so the
+  // map shows the suggested day BEFORE the user presses Apply). previewMode is
+  // true only while the cart is empty and a preview exists.
+  const cartActive = !!cart && cart.length > 0;
+  const previewMode = !cartActive && (previewKeys?.length ?? 0) > 0;
+
+  // Polyline path: route POIs (cart or preview) in order. Empty when < 2.
   const polylinePath = useMemo(() => {
-    if (!cart || cart.length < 2) return [];
+    const keys = cartActive ? cart! : previewKeys ?? [];
+    if (keys.length < 2) return [];
     const byKey = new Map(pois.map((p) => [p.poi_key, p]));
-    return cart
+    return keys
       .map((k) => byKey.get(k))
       .filter((p): p is MatchPoiRow => !!p)
       .map((p) => ({ lat: p.lat, lng: p.lng }));
-  }, [cart, pois]);
+  }, [cartActive, cart, previewKeys, pois]);
 
-  const handleMapLoad = useCallback((m: google.maps.Map) => {
-    setMap(m);
+  // Imperative route polyline — created/updated on the loaded map directly,
+  // bypassing the @react-google-maps <Polyline> wrapper (React-19 setAt crash
+  // that blanked the map). Recreated on each path/preview change; torn down on
+  // unmount via handleMapUnmount.
+  useEffect(() => {
+    if (!map || polylinePath.length < 2) {
+      polylineRef.current?.setMap(null);
+      polylineRef.current = null;
+      return;
+    }
+    const line =
+      polylineRef.current ??
+      new google.maps.Polyline({
+        geodesic: true,
+        // Amber dotted route line — matches the photo-pin sequence badges.
+        icons: [
+          { icon: { path: "M 0,-1 0,1", strokeOpacity: 1, scale: 3 }, offset: "0", repeat: "14px" },
+        ],
+      });
+    line.setOptions({
+      path: polylinePath,
+      strokeColor: "#f59e0b",
+      strokeOpacity: previewMode ? 0.5 : 0.9,
+      strokeWeight: 4,
+      map,
+    });
+    polylineRef.current = line;
+    return () => {
+      line.setMap(null);
+      polylineRef.current = null;
+    };
+  }, [map, polylinePath, previewMode]);
+
+  // Load Maps + Marker libs via the official loader, then create the map ONCE.
+  // StrictMode double-invokes effects in dev; we guard with a ref (not a
+  // cancellation flag) so the async creation always completes — a cancellation
+  // race was leaving `isLoaded` stuck and the map uncreated.
+  useEffect(() => {
+    if (mapInitStartedRef.current || !mapDivRef.current) return;
+    mapInitStartedRef.current = true;
+    const loader = new Loader({
+      apiKey,
+      version: GOOGLE_MAPS_LOADER_VERSION,
+      libraries: GOOGLE_MAPS_LIBRARIES as ("places" | "marker")[],
+    });
+    Promise.all([loader.importLibrary("maps"), loader.importLibrary("marker")])
+      .then(([{ Map }]) => {
+        const div = mapDivRef.current;
+        if (!div) return;
+        const m = new Map(div, {
+          center: initialCenter,
+          zoom: center.zoom,
+          mapId: mapId || undefined,
+          disableDefaultUI: false,
+          mapTypeControl: false,
+          streetViewControl: false,
+          fullscreenControl: true,
+          zoomControl: true,
+          tilt: 0,
+          heading: 0,
+          gestureHandling: "greedy",
+        });
+        setMap(m);
+        setIsLoaded(true);
+      })
+      .catch((err) => {
+        console.warn("[POICatalogMap] Google Maps load failed", err);
+        setLoadError(true);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /** Reset view back to region centroid + initial zoom. Exposed to parent
@@ -119,11 +212,44 @@ export default function POICatalogMap({
     };
   }, [resetViewRef, handleResetView]);
 
-  const handleMapUnmount = useCallback(() => {
-    setMap(null);
-    clustererRef.current?.clearMarkers();
-    clustererRef.current = null;
-    markersRef.current = [];
+  // Imperative InfoWindow open/close driven by `selected` (pin click).
+  useEffect(() => {
+    if (!map) return;
+    if (!selected || typeof selected.lat !== "number" || typeof selected.lng !== "number") {
+      infoWindowRef.current?.close();
+      return;
+    }
+    if (!infoWindowRef.current) {
+      infoWindowRef.current = new google.maps.InfoWindow({
+        pixelOffset: new google.maps.Size(0, -34),
+      });
+      infoWindowRef.current.addListener("closeclick", () => setSelected(null));
+    }
+    if (!infoDivRef.current) {
+      infoDivRef.current = document.createElement("div");
+      infoRootRef.current = createRoot(infoDivRef.current);
+    }
+    infoRootRef.current?.render(
+      <POIInfoWindowContent
+        poi={selected}
+        inCart={hasInCart?.(selected.poi_key) ?? false}
+        onAdd={onAdd ? () => onAdd(selected.poi_key) : undefined}
+        onRemove={onRemove ? () => onRemove(selected.poi_key) : undefined}
+      />
+    );
+    infoWindowRef.current.setContent(infoDivRef.current);
+    infoWindowRef.current.setPosition({ lat: selected.lat, lng: selected.lng });
+    infoWindowRef.current.open(map);
+  }, [map, selected, hasInCart, onAdd, onRemove]);
+
+  // Tear down the InfoWindow + its React root on unmount.
+  useEffect(() => {
+    return () => {
+      infoWindowRef.current?.close();
+      const root = infoRootRef.current;
+      infoRootRef.current = null;
+      if (root) setTimeout(() => root.unmount(), 0);
+    };
   }, []);
 
   // Phase 7 — external focus (AIRecommendPanel chip or CartPanel row click)
@@ -161,25 +287,28 @@ export default function POICatalogMap({
     markersRef.current.forEach(detachMarker);
     markersRef.current = [];
 
-    const cartIndex = new Map((cart ?? []).map((k, i) => [k, i + 1]));
+    // R4 — sequence source = the adopted cart if any, else the AI preview keys.
+    const routeKeys = cartActive ? cart! : previewKeys ?? [];
+    const baseState: "cart" | "preview" = previewMode ? "preview" : "cart";
+    const seqIndex = new Map(routeKeys.map((k, i) => [k, i + 1]));
 
-    // Pre-compute pixel-offsets for in-cart pins that overlap. We do this
-    // for the in-cart subset only — out-of-cart 14px dots tolerate overlap
-    // because they don't carry identity.
-    const inCartPois = (cart ?? [])
+    // Pre-compute pixel-offsets for route pins that overlap. We do this for the
+    // route subset only — out-of-route 14px dots tolerate overlap because they
+    // don't carry identity.
+    const routePois = routeKeys
       .map((k) => pois.find((p) => p.poi_key === k))
       .filter((p): p is MatchPoiRow => !!p);
     const pinOffsets = new Map<string, { x: number; y: number }>();
-    for (let i = 1; i < inCartPois.length; i++) {
+    for (let i = 1; i < routePois.length; i++) {
       for (let j = 0; j < i; j++) {
         const d = haversineMeters(
-          { lat: inCartPois[i].lat, lng: inCartPois[i].lng },
-          { lat: inCartPois[j].lat, lng: inCartPois[j].lng }
+          { lat: routePois[i].lat, lng: routePois[i].lng },
+          { lat: routePois[j].lat, lng: routePois[j].lng }
         );
         if (d < 80) {
           // Already-offset pin j contributes; add a 28px clockwise step
-          const prior = pinOffsets.get(inCartPois[j].poi_key) ?? { x: 0, y: 0 };
-          pinOffsets.set(inCartPois[i].poi_key, {
+          const prior = pinOffsets.get(routePois[j].poi_key) ?? { x: 0, y: 0 };
+          pinOffsets.set(routePois[i].poi_key, {
             x: prior.x + 28,
             y: prior.y - 14,
           });
@@ -196,14 +325,16 @@ export default function POICatalogMap({
     const markers: google.maps.marker.AdvancedMarkerElement[] = [];
     for (const poi of pois) {
       try {
-      const seq = cartIndex.get(poi.poi_key);
-      const inCart = seq != null;
+      const seq = seqIndex.get(poi.poi_key);
+      const inRoute = seq != null;
       const content = buildPhotoPinContent({
-        imageUrl: inCart ? poi.default_image_url || poi.images?.[0] || null : null,
-        seq: inCart && seq != null ? seq : null,
-        state: inCart ? "cart" : "out",
+        imageUrl: inRoute ? poi.default_image_url || poi.images?.[0] || null : null,
+        seq: inRoute && seq != null ? seq : null,
+        state: inRoute ? baseState : "out",
         nameEn: poi.name_en,
       });
+      // Remember the resting state so hover/active toggles return to it.
+      content.dataset.base = inRoute ? baseState : "out";
 
       // Apply offset (if this pin overlaps an earlier in-cart pin)
       const offset = pinOffsets.get(poi.poi_key);
@@ -220,13 +351,13 @@ export default function POICatalogMap({
       // counterpart to highlight). data-poi attribute lets the active-key
       // effect below find this element by key.
       content.dataset.poi = poi.poi_key;
-      if (inCart) {
+      if (inRoute) {
         content.addEventListener("mouseenter", () => {
           setPhotoPinState(content, "hover");
           setActive(poi.poi_key, "map");
         });
         content.addEventListener("mouseleave", () => {
-          setPhotoPinState(content, "cart");
+          setPhotoPinState(content, baseState);
           setActive(null, "map");
         });
       }
@@ -244,10 +375,10 @@ export default function POICatalogMap({
           // panTo fails when the map instance is in a broken state; the
           // InfoWindow still opens via setSelected so the user gets info.
         }
-        if (inCart) {
+        if (inRoute) {
           setActive(poi.poi_key, "map");
-          // Scroll the matching timeline card into view. The card has
-          // data-poi-card={poi_key} (set in ResultTimeline).
+          // Scroll the matching timeline card into view (data-poi-card set in
+          // ResultTimeline). In preview mode there is no card yet → null.
           const card = document.querySelector(
             `[data-poi-card="${poi.poi_key}"]`
           );
@@ -294,7 +425,7 @@ export default function POICatalogMap({
       markers.forEach(detachMarker);
       markersRef.current = [];
     };
-  }, [map, pois, cart]);
+  }, [map, pois, cart, previewKeys, cartActive, previewMode]);
 
   // V2 Phase 4 — react to external activeKey changes (timeline hover/
   // click). For in-cart markers, swap data-state to "hover" when their
@@ -305,11 +436,12 @@ export default function POICatalogMap({
       const el = marker.content as HTMLElement | null;
       if (!el) return;
       const poiKey = el.dataset.poi;
-      // Only touch in-cart photo pins (those have data-state cart/hover).
-      const currentState = el.dataset.state;
-      if (currentState !== "cart" && currentState !== "hover") return;
+      // Only touch route photo pins (cart or preview). Out-of-route dots have
+      // no hover variant. dataset.base records the resting state to return to.
+      const base = el.dataset.base;
+      if (base !== "cart" && base !== "preview") return;
       const shouldHover = poiKey != null && poiKey === activeKey;
-      setPhotoPinState(el, shouldHover ? "hover" : "cart");
+      setPhotoPinState(el, shouldHover ? "hover" : (base as "cart" | "preview"));
     });
   }, [activeKey]);
 
@@ -320,20 +452,24 @@ export default function POICatalogMap({
   // Right rail on lg+ takes 400px + 24px gap, so we pad-right harder on
   // desktop so the polyline doesn't crowd the rail edge.
   useEffect(() => {
-    if (!map || !cart || cart.length === 0) return;
+    if (!map) return;
+    // Fit to the adopted cart if any, else to the AI preview (so the suggested
+    // day is framed on the map before the user presses Apply).
+    const keys = cartActive ? cart! : previewKeys ?? [];
+    if (keys.length === 0) return;
     const byKey = new Map(pois.map((p) => [p.poi_key, p]));
-    const inCartPois = cart.map((k) => byKey.get(k)).filter((p): p is MatchPoiRow => !!p);
-    if (inCartPois.length === 0) return;
+    const routePois = keys.map((k) => byKey.get(k)).filter((p): p is MatchPoiRow => !!p);
+    if (routePois.length === 0) return;
 
-    if (inCartPois.length === 1) {
-      map.panTo({ lat: inCartPois[0].lat, lng: inCartPois[0].lng });
+    if (routePois.length === 1) {
+      map.panTo({ lat: routePois[0].lat, lng: routePois[0].lng });
       const z = map.getZoom();
       if (typeof z !== "number" || z < 13) map.setZoom(13);
       return;
     }
 
     const bounds = new google.maps.LatLngBounds();
-    inCartPois.forEach((p) => bounds.extend({ lat: p.lat, lng: p.lng }));
+    routePois.forEach((p) => bounds.extend({ lat: p.lat, lng: p.lng }));
     const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
     map.fitBounds(
       bounds,
@@ -341,7 +477,7 @@ export default function POICatalogMap({
         ? { top: 32, right: 24, bottom: 80, left: 24 }
         : { top: 64, right: 64, bottom: 64, left: 64 }
     );
-  }, [map, cart, pois]);
+  }, [map, cart, previewKeys, cartActive, pois]);
 
   // Outer container always renders with explicit dimensions so the page
   // doesn't collapse when Google Maps JS is still loading or fails. Inner
@@ -349,90 +485,23 @@ export default function POICatalogMap({
   const containerClasses =
     "relative h-[70vh] min-h-[420px] w-full md:h-full md:min-h-[600px]";
 
-  if (loadError) {
-    return (
-      <div className={containerClasses + " flex items-center justify-center bg-white/60 p-6 text-center backdrop-blur"} data-region={region}>
-        <div>
-          <p className="text-h3 text-slate-900">{t("errorTitle")}</p>
-          <p className="mt-1 text-body text-slate-600">{t("errorBody")}</p>
-        </div>
-      </div>
-    );
-  }
-  if (!isLoaded) {
-    return (
-      <div className={containerClasses + " flex items-center justify-center bg-white/60 backdrop-blur"} data-region={region}>
-        <p className="text-body text-slate-500">{t("loadingLabel")}</p>
-      </div>
-    );
-  }
-
   return (
     <div className={containerClasses} data-region={region}>
-      <GoogleMap
-        mapContainerStyle={CONTAINER_STYLE}
-        center={initialCenter}
-        zoom={center.zoom}
-        onLoad={handleMapLoad}
-        onUnmount={handleMapUnmount}
-        options={{
-          mapId: mapId || undefined,
-          disableDefaultUI: false,
-          mapTypeControl: false,
-          streetViewControl: false,
-          fullscreenControl: true,
-          zoomControl: true,
-          // Top-down clarity for itinerary planning (tilt/rotation OFF per Map ID config + here).
-          tilt: 0,
-          heading: 0,
-          gestureHandling: "greedy",
-        }}
-      >
-        {polylinePath.length >= 2 ? (
-          <Polyline
-            path={polylinePath}
-            options={{
-              // V2 Phase 2 — amber route line. Visually consistent with the
-              // photo-pin sequence badges. Gradient stroke + animated dash
-              // offset deferred to Phase 11 (canvas Polyline doesn't natively
-              // gradient; needs SVG overlay layer which we don't budget here).
-              strokeColor: "#f59e0b",
-              strokeOpacity: 0.9,
-              strokeWeight: 4,
-              geodesic: true,
-              icons: [
-                {
-                  icon: { path: "M 0,-1 0,1", strokeOpacity: 1, scale: 3 },
-                  offset: "0",
-                  repeat: "14px",
-                },
-              ],
-            }}
-          />
-        ) : null}
-        {selected &&
-        map &&
-        typeof selected.lat === "number" &&
-        typeof selected.lng === "number" &&
-        typeof window !== "undefined" &&
-        typeof google !== "undefined" &&
-        google.maps?.Size ? (
-          <InfoWindow
-            position={{ lat: selected.lat, lng: selected.lng }}
-            onCloseClick={() => setSelected(null)}
-            options={{
-              pixelOffset: new google.maps.Size(0, -34),
-            }}
-          >
-            <POIInfoWindowContent
-              poi={selected}
-              inCart={hasInCart?.(selected.poi_key) ?? false}
-              onAdd={onAdd ? () => onAdd(selected.poi_key) : undefined}
-              onRemove={onRemove ? () => onRemove(selected.poi_key) : undefined}
-            />
-          </InfoWindow>
-        ) : null}
-      </GoogleMap>
+      {/* Google map mounts here imperatively — must always be in the DOM so the
+          loader effect can attach to it. */}
+      <div ref={mapDivRef} style={CONTAINER_STYLE} />
+      {loadError ? (
+        <div className="absolute inset-0 flex items-center justify-center bg-white/60 p-6 text-center backdrop-blur">
+          <div>
+            <p className="text-h3 text-slate-900">{t("errorTitle")}</p>
+            <p className="mt-1 text-body text-slate-600">{t("errorBody")}</p>
+          </div>
+        </div>
+      ) : !isLoaded ? (
+        <div className="absolute inset-0 flex items-center justify-center bg-white/60 backdrop-blur">
+          <p className="text-body text-slate-500">{t("loadingLabel")}</p>
+        </div>
+      ) : null}
     </div>
   );
 }
