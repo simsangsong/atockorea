@@ -58,6 +58,10 @@ export default function IntakeForm() {
       if (Number.isFinite(h) && h > 0) params.set("hours", String(h));
       if (ship.trim()) params.set("ship", ship.trim());
     }
+    // Unified planner Phase 4 — carry the free-text intent typed in the home
+    // planner's "Build" mode through to the builder's AI panel (prefill only).
+    const carriedIntent = searchParams?.get("intent")?.trim();
+    if (carriedIntent) params.set("intent", carriedIntent);
     router.push(`/itinerary-builder/${region}?${params.toString()}`);
   }
 

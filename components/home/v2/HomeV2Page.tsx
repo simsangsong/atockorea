@@ -6,7 +6,6 @@ import {
   WhyAtockorea,
   ProcessOperational,
   FinalCTA,
-  ItineraryBuilderEntry,
 } from "@/components/home/v2/sections";
 import { DeferredBestMatchPreview } from "@/components/home/v2/DeferredBestMatchPreview";
 import { HomeV2MatchProvider } from "@/components/home/v2/HomeV2MatchProvider";
@@ -28,7 +27,6 @@ export default function HomeV2Page() {
           <DeferredBestMatchPreview />
           <FeaturedProductsShowcase />
           <DestinationsShowcase />
-          <ItineraryBuilderEntry />
           <ChooseTravelStyle />
           <WhyAtockorea />
           <ProcessOperational />

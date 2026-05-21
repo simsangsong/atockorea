@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Sparkles, Loader2, AlertCircle, ImageIcon, ChevronRight } from "lucide-react";
 import {
@@ -76,6 +76,19 @@ export default function AIRecommendPanel({
   // Collapse the form panel once the user has a result. Re-expand when
   // they click the "Get another suggestion" pill (or another preset).
   const [collapsed, setCollapsed] = useState(false);
+
+  // Unified planner Phase 4 — prefill the intent input from the URL when the
+  // user arrives from the home planner's "Build" mode (`?intent=...`). Read
+  // client-side after mount so the ISR-static page stays cacheable and there
+  // is no SSR hydration mismatch. Prefill ONLY — never auto-submit (avoids
+  // surprise API spend and a jarring auto-result on arrival).
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const carried = new URLSearchParams(window.location.search).get("intent");
+    if (carried && carried.trim()) {
+      setIntent((prev) => (prev ? prev : carried.trim()));
+    }
+  }, []);
 
   async function runMatch(intentText: string) {
     setError(null);

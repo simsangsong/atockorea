@@ -2,34 +2,14 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
-import { ChevronRight } from "lucide-react";
-import { homeBtnPrimary } from "@/lib/home/home-button-classes";
 import { getCurrentSeason } from "@/lib/home/season";
-import { useI18n, useTranslations } from "@/lib/i18n";
+import { useTranslations } from "@/lib/i18n";
 import { appendIntentPhraseToIntentField } from "@/lib/home/services/hero-intent-append-chip";
 import type { HeroDestination } from "@/lib/home/types/hero-planner";
-import { HOME_STYLE_OPTIONS } from "@/src/components/home/home-style-options";
-import { useHomeV2Match } from "@/components/home/v2/HomeV2MatchProvider";
-import { analytics, getExperimentVariantAsync } from "@/src/design/analytics";
-import { cn } from "@/lib/utils";
-
-/** v3 Phase D.1 — desktop in-place morphing panel.
- *
- *  Dynamic + ssr:false so the heavy static-tour-product registry chain
- *  (25MB of JSON across 204 locale files) stays OUT of the hero/LCP
- *  bundle. The panel is no-op for variant A / mobile / idle phase, so
- *  rendering it lazily after first paint has no UX cost for those users. */
-const MatcherMorphingPanel = dynamic(
-  () =>
-    import("@/components/home/v2/MatcherMorphingPanel").then(
-      (m) => m.MatcherMorphingPanel,
-    ),
-  { ssr: false, loading: () => null },
-);
+import { analytics } from "@/src/design/analytics";
+import { LandingPlannerCard } from "./landing-planner-card";
 
 const VALID_DESTINATIONS: ReadonlyArray<HeroDestination> = ["jeju", "seoul", "busan"];
 const HERO_SLIDES = [
@@ -48,8 +28,6 @@ function readDestinationFromParams(value: string | null): HeroDestination | null
 
 export function HeroSection() {
   const t = useTranslations("home");
-  const { locale } = useI18n();
-  const { startInPageMatchFlow, phase: matchPhase } = useHomeV2Match();
   const searchParams = useSearchParams();
 
   const initialDestination = useMemo(
@@ -58,9 +36,6 @@ export function HeroSection() {
   );
   const [destination, setDestination] = useState<HeroDestination>(initialDestination);
   const [intent, setIntent] = useState("");
-  const [intentExpanded, setIntentExpanded] = useState(false);
-  const intentInputRef = useRef<HTMLTextAreaElement>(null);
-  const intentFocusFiredRef = useRef(false);
 
   const heroSectionRef = useRef<HTMLElement>(null);
   const heroPanelRef = useRef<HTMLDivElement>(null);
@@ -109,15 +84,6 @@ export function HeroSection() {
     reduceMotion ? [1, 1, 1] : [1, 0.92, 0.7],
   );
 
-  const styleChipOptions = useMemo(
-    () =>
-      HOME_STYLE_OPTIONS.map((opt) => ({
-        id: opt.id,
-        label: t(`premium.comparison.${opt.labelKey}`),
-      })),
-    [t],
-  );
-
   // Season pill — auto-rotates by current month. Initialized lazily so the
   // server-rendered HTML matches whatever month the request lands in.
   const season = useMemo(() => getCurrentSeason(), []);
@@ -148,32 +114,6 @@ export function HeroSection() {
       if (intentGlowTimerRef.current) clearTimeout(intentGlowTimerRef.current);
     };
   }, []);
-
-  // home_cta_copy A/B — first paint shows control copy and then re-renders
-  // with the assigned variant once the experiment registry loads. Replaced
-  // the previous `setInterval(200ms) × 30` poll with a one-shot promise
-  // (shared registry fetch, dedupe'd in analytics module).
-  const [ctaVariant, setCtaVariant] = useState<string | null>(null);
-  useEffect(() => {
-    let cancelled = false;
-    void getExperimentVariantAsync("home_cta_copy").then((v) => {
-      if (cancelled) return;
-      if (v) setCtaVariant(v);
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  const ctaCopyKey =
-    ctaVariant === "B" ? "premium.hero.findMatchCtaB" : "premium.hero.findMatchCta";
-
-  const handleSubmit = useCallback(() => {
-    const raw = intent.trim() || t("premium.hero.defaultMatchIntent");
-    void startInPageMatchFlow(raw, locale, destination);
-  }, [intent, locale, startInPageMatchFlow, t, destination]);
-
-  const chipLooksSelected = useCallback((label: string) => intent.includes(label), [intent]);
 
   return (
     <section ref={heroSectionRef} className="relative flex flex-col" data-home-hero>
@@ -342,157 +282,31 @@ export function HeroSection() {
         </div>
         {/* ────────────────────────────────────────────────────────── */}
 
-        {/* Phase B.3.1: matcher header slimmed from 3-line (eyebrow + headline
-            + subline) to eyebrow-only. The headline+subline duplicated H1's
-            promise — keeping only the amber eyebrow keeps the differentiator
-            cue (per §B "amber eyebrow 유지") while recovering ~60px toward
-            the iPhone 14 fold gap. */}
+        {/* Unified planner header (responsive — Gate 0.2). Mobile keeps the
+            eyebrow-only slim header (B.3 fold recovery: the matcher CTA
+            already sits below the effective fold, so no extra height here).
+            Desktop has vertical room, so it adds the planner headline +
+            subhead that frame the Match / Build modes. */}
         <div className="mx-auto mb-3 max-w-lg px-1 text-center md:mb-4">
           <span className="text-eyebrow">
             {t("premium.v2.hero.matcherEyebrow")}
           </span>
+          <h2 className="mt-1.5 hidden text-h3 font-bold tracking-tight text-slate-900 md:block">
+            {t("premium.v2.planner.headline")}
+          </h2>
+          <p className="mt-1 hidden text-caption text-slate-500 md:block">
+            {t("premium.v2.planner.subhead")}
+          </p>
         </div>
 
-        <div className="relative mx-auto max-w-lg">
-          <div className="relative rounded-card border border-slate-200/70 bg-white p-4 shadow-1 md:p-5">
-            {/* v3 Phase D.1 — desktop in-place result morphing. The panel
-                is no-op for variant A / mobile / idle phase. */}
-            <MatcherMorphingPanel />
-            <div className="mb-3 md:mb-4">
-              <label
-                id="home-v2-destination-label"
-                className="mb-2.5 block text-caption font-semibold text-slate-700"
-              >
-                {t("premium.hero.destinationSectionTitle")}
-              </label>
-              <div
-                className="grid grid-cols-3 gap-2"
-                role="radiogroup"
-                aria-labelledby="home-v2-destination-label"
-              >
-                {(
-                  [
-                    ["jeju", "destJeju"] as const,
-                    ["seoul", "destSeoul"] as const,
-                    ["busan", "destBusan"] as const,
-                  ] as const
-                ).map(([id, labelKey]) => {
-                  const active = destination === id;
-                  return (
-                    <button
-                      key={id}
-                      type="button"
-                      role="radio"
-                      aria-checked={active}
-                      onClick={() => setDestination(id)}
-                      className={cn(
-                        "focus-ring rounded-button border px-2 py-3 text-center text-[14px] font-semibold tracking-tight transition-colors duration-200 md:py-3.5 md:text-[15px]",
-                        active
-                          ? "border-slate-900 bg-slate-900 text-white"
-                          : "border-slate-200/70 bg-slate-50 text-slate-900 hover:bg-slate-100",
-                      )}
-                    >
-                      {t(`premium.hero.${labelKey}`)}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div className="mb-3 md:mb-4">
-              <div className="relative">
-                {/*
-                 * Expandable intent field.
-                 * Collapsed: single-line input height (h-12 / md:h-14) with a
-                 * compact 11px placeholder so the long EN copy stays on one line
-                 * even on narrow viewports. Truncates with ellipsis if it ever
-                 * overflows.
-                 * Expanded (focus or typed): grows downward into a multi-line
-                 * drawer with the standard text-caption scale for comfortable
-                 * typing. External callers still query via [data-home-hero-intent].
-                 */}
-                <textarea
-                  id="home-v2-hero-intent"
-                  ref={intentInputRef}
-                  data-home-hero-intent
-                  value={intent}
-                  onChange={(e) => setIntent(e.target.value)}
-                  onFocus={() => {
-                    setIntentExpanded(true);
-                    if (!intentFocusFiredRef.current) {
-                      intentFocusFiredRef.current = true;
-                      analytics.homeHeroIntentFocus();
-                    }
-                  }}
-                  onBlur={() => {
-                    if (!intent.trim()) setIntentExpanded(false);
-                  }}
-                  rows={1}
-                  placeholder={t("premium.hero.inputPlaceholder")}
-                  autoComplete="off"
-                  aria-label={t("premium.hero.intentInputAria")}
-                  className={cn(
-                    "w-full resize-none rounded-button border bg-slate-50 px-3.5 text-slate-800 transition-[height,padding,border-color,background-color,box-shadow] duration-300 ease-out placeholder:text-slate-400 focus:border-slate-300 focus:bg-white focus-ring md:px-4",
-                    intentGlowing
-                      ? "border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.25)]"
-                      : "border-slate-200/70",
-                    intentExpanded
-                      ? "h-32 overflow-auto py-3 text-caption md:h-40 md:py-4"
-                      // Collapsed: single-line h-12 (48px) + text-[11px] so the
-                      // long EN placeholder fits on one line on a 390px viewport.
-                      // truncate (white-space:nowrap + overflow:hidden + ellipsis)
-                      // is the safety net if the locale string overflows anyway.
-                      : "h-12 overflow-hidden truncate py-3.5 text-[11px] leading-tight md:h-14 md:py-4 md:text-caption",
-                  )}
-                />
-              </div>
-            </div>
-
-            <div className="mb-3 md:mb-4" role="group" aria-label={t("premium.comparison.chipsAria")}>
-              <div className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-none md:gap-2">
-                {styleChipOptions.map((tag) => {
-                  const isSelected = chipLooksSelected(tag.label);
-                  return (
-                    <button
-                      key={tag.id}
-                      type="button"
-                      aria-pressed={isSelected}
-                      onClick={() => {
-                        analytics.homeHeroStyleChipClick({ chipId: tag.id });
-                        appendChip(tag.label);
-                      }}
-                      className={cn(
-                        "focus-ring flex-none rounded-full border px-3 py-1.5 text-[11px] font-medium transition-colors duration-200 md:px-3.5 md:py-2 md:text-caption",
-                        isSelected
-                          ? "border-slate-900 bg-slate-900 text-white"
-                          : "border-slate-200/70 bg-slate-50 text-slate-600 hover:bg-slate-100",
-                      )}
-                    >
-                      {tag.label}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            <V0ShadcnButton
-              type="button"
-              size="lg"
-              disabled={matchPhase === "loading"}
-              aria-busy={matchPhase === "loading"}
-              onClick={handleSubmit}
-              className={homeBtnPrimary}
-              style={{ boxShadow: "var(--home-shadow-btn-primary)", border: "none" }}
-            >
-              {t(ctaCopyKey)}
-              <ChevronRight className="w-4 h-4 ml-1.5" />
-            </V0ShadcnButton>
-
-            <p className="mt-2.5 text-center text-micro font-medium text-slate-500">
-              {t("premium.v2.hero.smartMatchMicrocopy")}
-            </p>
-          </div>
-        </div>
+        <LandingPlannerCard
+          destination={destination}
+          onDestinationChange={setDestination}
+          intent={intent}
+          onIntentChange={setIntent}
+          onAppendChip={appendChip}
+          intentGlowing={intentGlowing}
+        />
       </div>
     </section>
   );
