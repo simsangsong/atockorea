@@ -105,7 +105,7 @@ export default function ConfirmationPage() {
       const sessionId = urlParams.get('session_id');
       const bookingId = urlParams.get('booking_id');
 
-      if (sessionId && bookingId) {
+      if (bookingId) {
         const headers: Record<string, string> = {};
         if (supabase) {
           const { data: { session } } = await supabase.auth.getSession();
@@ -113,19 +113,24 @@ export default function ConfirmationPage() {
             headers['Authorization'] = `Bearer ${session.access_token}`;
           }
         }
-        let url = `/api/bookings/${encodeURIComponent(bookingId)}?session_id=${encodeURIComponent(sessionId)}`;
+        const storedEmail = (() => {
+          const raw = sessionStorage.getItem('bookingData');
+          if (!raw) return null;
+          try {
+            return (JSON.parse(raw) as { customerInfo?: { email?: string } })?.customerInfo?.email;
+          } catch {
+            return null;
+          }
+        })();
+        const query = sessionId
+          ? `session_id=${encodeURIComponent(sessionId)}`
+          : storedEmail
+            ? `email=${encodeURIComponent(storedEmail)}`
+            : '';
+        let url = `/api/bookings/${encodeURIComponent(bookingId)}${query ? `?${query}` : ''}`;
         let res = await fetch(url, { headers });
         if (!res.ok) {
-          const storedEmail = (() => {
-            const raw = sessionStorage.getItem('bookingData');
-            if (!raw) return null;
-            try {
-              return (JSON.parse(raw) as { customerInfo?: { email?: string } })?.customerInfo?.email;
-            } catch {
-              return null;
-            }
-          })();
-          if (storedEmail) {
+          if (storedEmail && sessionId) {
             url = `/api/bookings/${encodeURIComponent(bookingId)}?email=${encodeURIComponent(storedEmail)}`;
             res = await fetch(url, { headers: {} });
           }
@@ -420,4 +425,3 @@ export default function ConfirmationPage() {
     </div>
   );
 }
-

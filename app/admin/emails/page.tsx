@@ -3,8 +3,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import DOMPurify from 'isomorphic-dompurify';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { supabase } from '@/lib/supabase';
 
 const SANITIZE_CONFIG = {
   ALLOWED_TAGS: [
@@ -74,9 +73,21 @@ export default function AdminEmailsPage() {
     fetchEmails();
   }, [filters, pagination.page]);
 
+  const getAuthHeaders = async (): Promise<HeadersInit | null> => {
+    const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
+    if (!session) {
+      router.push('/signin?redirect=/admin/emails');
+      return null;
+    }
+    return { Authorization: `Bearer ${session.access_token}` };
+  };
+
   const fetchEmails = async () => {
     try {
       setLoading(true);
+      const authHeaders = await getAuthHeaders();
+      if (!authHeaders) return;
+
       const params = new URLSearchParams({
         page: pagination.page.toString(),
         limit: pagination.limit.toString(),
@@ -85,7 +96,7 @@ export default function AdminEmailsPage() {
         ...(filters.search && { search: filters.search }),
       });
 
-      const response = await fetch(`/api/admin/emails?${params}`, { credentials: 'include' });
+      const response = await fetch(`/api/admin/emails?${params}`, { headers: authHeaders });
       const data = await response.json();
 
       if (response.ok) {
@@ -96,6 +107,11 @@ export default function AdminEmailsPage() {
           total_pages: data.pagination?.total_pages || 0,
         }));
       } else {
+        if (response.status === 403) {
+          alert('Admin access required');
+          router.push('/');
+          return;
+        }
         console.error('Failed to fetch emails:', data.error);
       }
     } catch (error) {
@@ -111,10 +127,12 @@ export default function AdminEmailsPage() {
     // 标记为已读
     if (!email.is_read) {
       try {
+        const authHeaders = await getAuthHeaders();
+        if (!authHeaders) return;
+
         await fetch(`/api/admin/emails`, {
           method: 'PATCH',
-          credentials: 'include',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { ...authHeaders, 'Content-Type': 'application/json' },
           body: JSON.stringify({
             email_id: email.id,
             updates: { is_read: true },
@@ -132,10 +150,12 @@ export default function AdminEmailsPage() {
 
   const handleArchive = async (emailId: string) => {
     try {
+      const authHeaders = await getAuthHeaders();
+      if (!authHeaders) return;
+
       await fetch(`/api/admin/emails`, {
         method: 'PATCH',
-        credentials: 'include',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { ...authHeaders, 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email_id: emailId,
           updates: { is_archived: true },
@@ -158,10 +178,12 @@ export default function AdminEmailsPage() {
 
     try {
       setSendingReply(true);
+      const authHeaders = await getAuthHeaders();
+      if (!authHeaders) return;
+
       const response = await fetch(`/api/admin/emails/${selectedEmail.id}/reply`, {
         method: 'POST',
-        credentials: 'include',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { ...authHeaders, 'Content-Type': 'application/json' },
         body: JSON.stringify({
           subject: replySubject,
           content: replyContent,
@@ -207,9 +229,7 @@ export default function AdminEmailsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-100 via-neutral-50 to-slate-100">
-      <Header />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="space-y-6">
         <div className="mb-6">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">받은 메일</h1>
           <p className="text-gray-600">support@atockorea.com으로 수신된 메일입니다. Resend Inbound + 웹훅 설정 시 여기에 표시됩니다.</p>
@@ -452,8 +472,6 @@ export default function AdminEmailsPage() {
             )}
           </div>
         </div>
-      </main>
-      <Footer />
     </div>
   );
 }
@@ -467,4 +485,3 @@ function SanitizedEmailHtml({ html }: { html: string }) {
     />
   );
 }
-

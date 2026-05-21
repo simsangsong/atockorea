@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 import { useTranslations } from '@/lib/i18n';
 
+const ADMIN_SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'zh-TW', 'ja', 'es'];
+
 const adminMenuItems = [
   { path: '/admin', label: '대시보드', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
   { path: '/admin/merchants', label: '업체 관리', icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' },
@@ -36,6 +38,14 @@ const pathToBreadcrumb: Record<string, string> = {
   '/admin/settings': '시스템 설정',
 };
 
+function normalizeAdminPathname(pathname: string): string {
+  const parts = pathname.split('/').filter(Boolean);
+  if (parts.length >= 2 && ADMIN_SUPPORTED_LOCALES.includes(parts[0]!) && parts[1] === 'admin') {
+    return `/${parts.slice(1).join('/')}`;
+  }
+  return pathname || '/admin';
+}
+
 function getBreadcrumbs(pathname: string): { path: string; label: string }[] {
   if (pathname === '/admin') return [{ path: '/admin', label: '대시보드' }];
   const segments = pathname.replace(/^\/admin\/?/, '').split('/').filter(Boolean);
@@ -60,6 +70,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   useEffect(() => {
     checkAuth();
   }, []);
+
+  useEffect(() => {
+    const normalized = normalizeAdminPathname(pathname);
+    if (pathname !== normalized) {
+      router.replace(normalized);
+    }
+  }, [pathname, router]);
 
   const checkAuth = async () => {
     try {
@@ -149,7 +166,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     );
   }
 
-  const breadcrumbs = getBreadcrumbs(pathname);
+  const adminPathname = normalizeAdminPathname(pathname);
+  const breadcrumbs = getBreadcrumbs(adminPathname);
 
   return (
     <div className="min-h-screen bg-slate-100 flex">
@@ -167,7 +185,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             // Pick the BEST-matching menu item (longest matching path) so that
             // `/admin/products/v2` doesn't also light up `/admin/products`.
             const bestMatch = adminMenuItems
-              .filter((m) => pathname === m.path || (m.path !== '/admin' && pathname.startsWith(`${m.path}/`)))
+              .filter((m) => adminPathname === m.path || (m.path !== '/admin' && adminPathname.startsWith(`${m.path}/`)))
               .sort((a, b) => b.path.length - a.path.length)[0]?.path;
             return adminMenuItems.map((item) => {
               const isActive = item.path === bestMatch;

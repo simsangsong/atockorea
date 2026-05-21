@@ -3,8 +3,10 @@ import { createServerClient } from '@/lib/supabase';
 import crypto from 'crypto';
 import { Webhook } from 'svix';
 
-/** Resend sends from/to as "Name <email@domain.com>" - parse to { name, email } */
-function parseEmailAddress(value: string | undefined): { email: string; name: string | null } {
+type ParsedEmailAddress = { email: string; name: string | null };
+
+/** Resend can send addresses as strings or objects, depending on the event version. */
+function parseEmailAddress(value: unknown): ParsedEmailAddress {
   if (!value || typeof value !== 'string') return { email: '', name: null };
   const match = value.trim().match(/^(.+?)\s*<([^>]+)>$/);
   if (match) {
@@ -13,6 +15,52 @@ function parseEmailAddress(value: string | undefined): { email: string; name: st
     return { email, name: name || null };
   }
   return { email: value.trim().toLowerCase(), name: null };
+}
+
+function extractEmailAddresses(value: unknown): ParsedEmailAddress[] {
+  if (!value) return [];
+
+  if (Array.isArray(value)) {
+    return value.flatMap((item) => extractEmailAddresses(item));
+  }
+
+  if (typeof value === 'object') {
+    const record = value as Record<string, unknown>;
+    const parsed = parseEmailAddress(record.email ?? record.address ?? record.value);
+    const name = typeof record.name === 'string' && record.name.trim()
+      ? record.name.trim()
+      : parsed.name;
+    return parsed.email ? [{ email: parsed.email, name }] : [];
+  }
+
+  const parsed = parseEmailAddress(value);
+  return parsed.email ? [parsed] : [];
+}
+
+function firstEmailAddress(...values: unknown[]): ParsedEmailAddress {
+  for (const value of values) {
+    const [parsed] = extractEmailAddresses(value);
+    if (parsed?.email) return parsed;
+  }
+  return { email: '', name: null };
+}
+
+const DEFAULT_SUPPORT_INBOUND_ADDRESSES = [
+  'support@atockorea.com',
+  'support@atcokorea.com',
+];
+
+function supportInboundAddresses(): Set<string> {
+  const configured = process.env.SUPPORT_INBOUND_ADDRESSES;
+  const source = configured
+    ? configured.split(',')
+    : DEFAULT_SUPPORT_INBOUND_ADDRESSES;
+  return new Set(source.map((email) => email.trim().toLowerCase()).filter(Boolean));
+}
+
+function isSupportRecipient(email: string): boolean {
+  const normalized = email.trim().toLowerCase();
+  return supportInboundAddresses().has(normalized);
 }
 
 /**
@@ -64,31 +112,33 @@ export async function POST(req: NextRequest) {
 
     const emailData = body.data || body;
 
-    // Resend 문서: from = "Name <email@domain.com>", to = ["delivered@resend.dev"], email_id 사용
+    // Resend 문서: from/to can be strings or structured address objects, email_id 사용
     const messageId = emailData.email_id || emailData.message_id || emailData.id || crypto.randomUUID();
-    const fromParsed = parseEmailAddress(
-      typeof emailData.from === 'string' ? emailData.from : (emailData.from?.email || emailData.from_email)
-    );
-    const fromEmail = fromParsed.email || (emailData.from?.email ?? emailData.from_email ?? '');
-    const fromName = fromParsed.name ?? emailData.from?.name ?? emailData.from_name ?? null;
+    const fromParsed = firstEmailAddress(emailData.from, emailData.from_email);
+    const fromEmail = fromParsed.email || 'unknown@unknown';
+    const fromName = fromParsed.name ?? emailData.from_name ?? null;
 
-    const toRaw = emailData.to?.[0] ?? emailData.to_email ?? emailData.to;
-    const toParsed = parseEmailAddress(typeof toRaw === 'string' ? toRaw : toRaw?.[0]);
-    const toEmail = toParsed.email || (Array.isArray(emailData.to) ? emailData.to[0] : toRaw) || '';
+    const toRecipients = [
+      ...extractEmailAddresses(emailData.to),
+      ...extractEmailAddresses(emailData.to_email),
+      ...extractEmailAddresses(emailData.recipients),
+    ];
+    const supportRecipient = toRecipients.find((recipient) => isSupportRecipient(recipient.email));
+    const toEmail = supportRecipient?.email || '';
 
     const subject = emailData.subject ?? '(No Subject)';
     const textContent = emailData.text ?? emailData.text_content ?? '';
     const htmlContent = emailData.html ?? emailData.html_content ?? '';
-    const attachments = emailData.attachments ?? [];
+    const attachments = Array.isArray(emailData.attachments) ? emailData.attachments : [];
 
-    if (!toEmail || !toEmail.includes('support@atockorea.com')) {
-      return NextResponse.json({ message: 'Email not for support@atockorea.com, ignoring' }, { status: 200 });
+    if (!toEmail) {
+      return NextResponse.json({ message: 'Email not for support inbox, ignoring' }, { status: 200 });
     }
     const supabase = createServerClient();
 
     const insertPayload = {
       message_id: String(messageId),
-      from_email: fromEmail || 'unknown@unknown',
+      from_email: fromEmail,
       from_name: fromName,
       to_email: toEmail,
       subject,
@@ -190,4 +240,3 @@ function categorizeEmail(subject: string, content: string): string {
 export async function GET() {
   return new NextResponse(null, { status: 405 });
 }
-

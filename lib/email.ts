@@ -102,6 +102,85 @@ function shortBookingId(bookingId: string): string {
   return `ATK-${hex}`;
 }
 
+function formatUsdAmount(amount: number): string {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(amount);
+}
+
+function getAdminBookingRecipients(): string[] {
+  const configured = process.env.ADMIN_BOOKING_NOTIFICATION_EMAILS;
+  const raw = configured || 'simsangsong@gmail.com,support@atockorea.com';
+  return raw
+    .split(',')
+    .map((email) => email.trim())
+    .filter(Boolean);
+}
+
+function getEmailBaseUrl(): string {
+  const configured =
+    process.env.EMAIL_PUBLIC_BASE_URL ||
+    process.env.NEXT_PUBLIC_APP_URL ||
+    'https://atockorea.com';
+  if (/^https?:\/\/(localhost|127\.0\.0\.1|0\.0\.0\.0)(:\d+)?/i.test(configured)) {
+    return 'https://atockorea.com';
+  }
+  return configured.replace(/\/$/, '');
+}
+
+function toAbsoluteUrl(url: string | undefined, baseUrl: string): string | undefined {
+  if (!url) return undefined;
+  if (/^https?:\/\//i.test(url)) return url;
+  const base = baseUrl.replace(/\/$/, '');
+  const path = url.startsWith('/') ? url : `/${url}`;
+  return `${base}${path}`;
+}
+
+function getEmailLogoUrl(baseUrl: string): string {
+  return process.env.EMAIL_LOGO_URL || `${baseUrl}/atoc-oauth-logo-240.png`;
+}
+
+function escapeHtml(value: unknown): string {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function emailDetailRow(label: string, value: string, options?: { emphasize?: boolean }): string {
+  const valueStyle = options?.emphasize
+    ? 'font-size:18px;line-height:26px;font-weight:700;color:#111827;'
+    : 'font-size:14px;line-height:20px;font-weight:500;color:#111827;';
+
+  return `
+    <tr>
+      <td style="padding:11px 0;border-bottom:1px solid #ebe7df;color:#7b746b;font-size:12px;line-height:18px;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;vertical-align:top;width:150px;">${escapeHtml(label)}</td>
+      <td style="padding:11px 0;border-bottom:1px solid #ebe7df;${valueStyle}vertical-align:top;">${value}</td>
+    </tr>
+  `;
+}
+
+function emailBrandLockup(logoUrl: string): string {
+  return `
+    <table role="presentation" cellpadding="0" cellspacing="0">
+      <tr>
+        <td style="vertical-align:middle;width:42px;">
+          <img src="${escapeHtml(logoUrl)}" width="40" height="40" alt="AtoC Korea" style="width:40px;height:40px;border-radius:10px;">
+        </td>
+        <td style="vertical-align:middle;padding-left:10px;">
+          <div style="color:#111827;font-size:18px;line-height:20px;font-weight:750;letter-spacing:0;">AtoC <span style="color:#3a4656;font-weight:500;">Korea</span></div>
+          <div style="margin-top:4px;color:#697381;font-size:9px;line-height:11px;font-weight:800;letter-spacing:0.14em;">CURATED KOREA, DIRECT</div>
+        </td>
+      </tr>
+    </table>
+  `;
+}
+
 export async function sendBookingConfirmationEmail(params: SendBookingConfirmationEmailParams) {
   const {
     to,
@@ -119,7 +198,9 @@ export async function sendBookingConfirmationEmail(params: SendBookingConfirmati
   const paymentStatus = params.paymentStatus ?? 'pending';
   const paymentStatusLabel = PAYMENT_STATUS_LABELS[paymentStatus] ?? PAYMENT_STATUS_LABELS.pending;
   const displayBookingId = shortBookingId(bookingId);
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
+  const baseUrl = getEmailBaseUrl();
+  const logoUrl = getEmailLogoUrl(baseUrl);
+  const emailTourImageUrl = toAbsoluteUrl(tourImageUrl, baseUrl);
   const reviewWriteUrl = tourId
     ? `${baseUrl}/mypage/reviews/write?tourId=${encodeURIComponent(tourId)}&bookingId=${encodeURIComponent(bookingId)}&tour=${encodeURIComponent(tourTitle)}`
     : `${baseUrl}/mypage/reviews`;
@@ -131,91 +212,134 @@ export async function sendBookingConfirmationEmail(params: SendBookingConfirmati
     day: 'numeric',
   });
 
+  const safeCustomerName = escapeHtml(customerName || 'Guest');
+  const safeTourTitle = escapeHtml(tourTitle);
+  const safePickupPoint = pickupPoint ? escapeHtml(pickupPoint) : null;
+  const safePaymentMethod = escapeHtml(paymentMethod === 'stripe' ? 'Stripe card authorization' : paymentMethod);
+  const safePaymentStatus = escapeHtml(paymentStatusLabel);
+  const safeHeroAlt = escapeHtml(tourTitle);
+  const totalAmount = formatUsdAmount(totalPrice);
+  const paymentNote =
+    paymentStatus === 'authorized'
+      ? 'Your card is securely authorized. You are not charged now; the no-show policy applies only if needed.'
+      : paymentStatus === 'paid'
+        ? 'Your payment has been completed.'
+        : 'Your booking is being processed. We will notify you as soon as payment is finalized.';
+
   const html = `
     <!DOCTYPE html>
     <html>
     <head>
       <meta charset="UTF-8">
-      <style>${baseStyles}
-  .tour-thumb { width: 100%; max-width: 320px; height: auto; border-radius: 8px; margin: 0 0 16px 0; display: block; }
-  .review-link { margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; }
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+  body { margin:0; padding:0; background:#f5f3ee; color:#111827; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; }
+  table { border-collapse:collapse; }
+  img { border:0; outline:none; text-decoration:none; display:block; }
+  a { color:#111827; }
+  .preheader { display:none!important; visibility:hidden; opacity:0; color:transparent; height:0; width:0; overflow:hidden; mso-hide:all; }
+  .shell { width:100%; background:#f5f3ee; }
+  .card { width:640px; max-width:640px; background:#ffffff; border:1px solid #e7e0d4; border-radius:14px; overflow:hidden; }
+  .px { padding-left:34px; padding-right:34px; }
+  .button { display:inline-block; background:#111827; color:#ffffff!important; text-decoration:none; border-radius:8px; padding:13px 18px; font-weight:700; font-size:14px; line-height:18px; }
+  .muted { color:#6b7280; }
+  @media only screen and (max-width: 680px) {
+    .outer-pad { padding:14px!important; }
+    .card { width:100%!important; border-radius:10px!important; }
+    .px { padding-left:20px!important; padding-right:20px!important; }
+    .stack { display:block!important; width:100%!important; }
+    .hero-img { height:auto!important; }
+  }
       </style>
     </head>
     <body>
-      <div class="container">
-        <div class="header">
-          <h1>🎉 Booking Confirmed!</h1>
-        </div>
-        <div class="content">
-          <p>Dear ${customerName},</p>
-          <p>Thank you for your booking! We're excited to have you join us.</p>
-          ${tourImageUrl ? `
-          <p style="margin: 0 0 16px 0;">
-            <img src="${tourImageUrl}" alt="${tourTitle.replace(/"/g, '&quot;')}" class="tour-thumb" />
-          </p>
-          ` : ''}
-          <div class="content-box">
-            <h2 style="margin-top: 0; color: #667eea;">Booking Details</h2>
-            <div class="info-row">
-              <span class="info-label">Booking ID:</span>
-              <span class="info-value">${displayBookingId}</span>
-            </div>
-            <div class="info-row">
-              <span class="info-label">Tour:</span>
-              <span class="info-value">${tourTitle}</span>
-            </div>
-            <div class="info-row">
-              <span class="info-label">Date:</span>
-              <span class="info-value">${formattedDate}</span>
-            </div>
-            <div class="info-row">
-              <span class="info-label">Number of Guests:</span>
-              <span class="info-value">${numberOfGuests}</span>
-            </div>
-            ${pickupPoint ? `
-            <div class="info-row">
-              <span class="info-label">Pickup Point:</span>
-              <span class="info-value">${pickupPoint}</span>
-            </div>
-            ` : ''}
-            <div class="info-row">
-              <span class="info-label">Payment Method:</span>
-              <span class="info-value">${paymentMethod}</span>
-            </div>
-            <div class="info-row">
-              <span class="info-label">결제상태 (Payment Status):</span>
-              <span class="info-value">${paymentStatusLabel}</span>
-            </div>
-            <div class="info-row" style="border-bottom: none; padding-top: 15px;">
-              <span class="info-label" style="font-size: 18px;">Total Amount:</span>
-              <span class="info-value" style="font-size: 18px; color: #667eea; font-weight: bold;">₩${totalPrice.toLocaleString()}</span>
-            </div>
-          </div>
-
-          <p><strong>What's Next?</strong></p>
-          <ul>
-            <li>You will receive a reminder email 24 hours before your tour</li>
-            <li>Please arrive at the pickup point 10 minutes before the scheduled time</li>
-            <li>If you have any questions, feel free to contact us</li>
-          </ul>
-
-          <p style="margin-top: 30px;">
-            <a href="${baseUrl}/mypage/mybookings" class="button">View My Bookings</a>
-          </p>
-
-          <div class="review-link">
-            <p><strong>Enjoyed your tour?</strong></p>
-            <p>Share your experience and help other travelers — write a review for <strong>${tourTitle}</strong>.</p>
-            <p>
-              <a href="${reviewWriteUrl}" class="button" style="background: #10b981;">Write a Review / 리뷰 작성</a>
-            </p>
-          </div>
-        </div>
-        <div class="footer">
-          <p>© 2026 AtoCKorea. All rights reserved.</p>
-          <p>This email was sent from ${fromEmail}</p>
-        </div>
-      </div>
+      <div class="preheader">Your AtoC Korea reservation is confirmed for ${safeTourTitle}.</div>
+      <table role="presentation" class="shell" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="center" class="outer-pad" style="padding:28px 16px;">
+            <table role="presentation" class="card" cellpadding="0" cellspacing="0">
+              <tr>
+                <td class="px" style="padding-top:26px;padding-bottom:18px;">
+                  <table role="presentation" width="100%">
+                    <tr>
+                      <td class="stack" style="vertical-align:middle;">
+                        ${emailBrandLockup(logoUrl)}
+                      </td>
+                      <td class="stack" align="right" style="vertical-align:middle;">
+                        <span style="display:inline-block;border:1px solid #d9d1c2;border-radius:999px;padding:6px 10px;color:#7a5d2c;background:#fbf8f1;font-size:11px;line-height:14px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;">Confirmed</span>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="px" style="padding-top:2px;padding-bottom:22px;">
+                  <h1 style="margin:0;color:#111827;font-size:28px;line-height:34px;font-weight:750;letter-spacing:0;">Your Korea tour is confirmed.</h1>
+                  <p style="margin:12px 0 0;color:#4b5563;font-size:15px;line-height:23px;">Dear ${safeCustomerName}, your reservation is secured. We will take care of the details so you can simply arrive ready to enjoy the day.</p>
+                </td>
+              </tr>
+              ${emailTourImageUrl ? `
+              <tr>
+                <td style="padding:0 18px 8px;">
+                  <img src="${emailTourImageUrl}" alt="${safeHeroAlt}" class="hero-img" style="width:100%;height:208px;object-fit:cover;border-radius:12px;">
+                </td>
+              </tr>
+              ` : ''}
+              <tr>
+                <td class="px" style="padding-top:20px;padding-bottom:8px;">
+                  <table role="presentation" width="100%" style="background:#fbfaf7;border:1px solid #ebe7df;border-radius:12px;">
+                    <tr>
+                      <td style="padding:20px 22px 8px;">
+                        <p style="margin:0 0 8px;color:#7b746b;font-size:12px;line-height:16px;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;">Booking summary</p>
+                        <table role="presentation" width="100%">
+                          ${emailDetailRow('Booking ID', escapeHtml(displayBookingId))}
+                          ${emailDetailRow('Tour', safeTourTitle)}
+                          ${emailDetailRow('Date', escapeHtml(formattedDate))}
+                          ${emailDetailRow('Guests', escapeHtml(numberOfGuests))}
+                          ${safePickupPoint ? emailDetailRow('Pickup', safePickupPoint) : ''}
+                          ${emailDetailRow('Payment', safePaymentMethod)}
+                          ${emailDetailRow('Status', safePaymentStatus)}
+                          ${emailDetailRow('Total', escapeHtml(totalAmount), { emphasize: true })}
+                        </table>
+                        <p style="margin:14px 0 8px;color:#6b7280;font-size:12px;line-height:18px;">${escapeHtml(paymentNote)}</p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="px" style="padding-top:16px;padding-bottom:8px;">
+                  <table role="presentation" width="100%">
+                    <tr>
+                      <td style="padding:0 0 10px;color:#111827;font-size:15px;line-height:22px;font-weight:750;">Before your tour</td>
+                    </tr>
+                    <tr>
+                      <td style="padding:0;color:#4b5563;font-size:14px;line-height:22px;">
+                        <span style="color:#111827;font-weight:700;">1.</span> A reminder email arrives 24 hours before departure.<br>
+                        <span style="color:#111827;font-weight:700;">2.</span> Please arrive at the pickup point 10 minutes early.<br>
+                        <span style="color:#111827;font-weight:700;">3.</span> Questions are welcome at <a href="mailto:support@atockorea.com" style="color:#111827;font-weight:700;text-decoration:underline;">support@atockorea.com</a>.
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="px" style="padding-top:18px;padding-bottom:28px;">
+                  <a href="${baseUrl}/mypage/mybookings" class="button">View booking</a>
+                  <p style="margin:14px 0 0;color:#6b7280;font-size:12px;line-height:18px;">After the tour, you can share your experience here: <a href="${reviewWriteUrl}" style="color:#111827;font-weight:700;text-decoration:underline;">write a review</a>.</p>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:18px 34px 24px;background:#111827;color:#d1d5db;">
+                  <p style="margin:0;color:#ffffff;font-size:13px;line-height:20px;font-weight:700;">AtoC Korea</p>
+                  <p style="margin:4px 0 0;color:#aeb6c2;font-size:12px;line-height:18px;">Curated Korea tours, direct local support.</p>
+                  <p style="margin:12px 0 0;color:#7f8997;font-size:11px;line-height:16px;">© 2026 AtoC Korea LLC. This confirmation was sent to ${escapeHtml(to)}.</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
     </body>
     </html>
   `;
@@ -223,6 +347,150 @@ export async function sendBookingConfirmationEmail(params: SendBookingConfirmati
   return sendEmail({
     to,
     subject: `Booking Confirmed: ${tourTitle}`,
+    html,
+  });
+}
+
+export async function sendBookingAdminNotificationEmail({
+  bookingId,
+  bookingReference,
+  tourTitle,
+  bookingDate,
+  numberOfGuests,
+  totalPrice,
+  pickupPoint,
+  paymentMethod,
+  paymentStatus,
+  customerName,
+  customerEmail,
+  customerPhone,
+}: {
+  bookingId: string;
+  bookingReference?: string | null;
+  tourTitle: string;
+  bookingDate: string;
+  numberOfGuests: number;
+  totalPrice: number;
+  pickupPoint?: string;
+  paymentMethod: string;
+  paymentStatus: string;
+  customerName?: string | null;
+  customerEmail?: string | null;
+  customerPhone?: string | null;
+}) {
+  const normalizedCustomerEmail = (customerEmail || '').trim().toLowerCase();
+  const recipients = getAdminBookingRecipients().filter(
+    (email) => email.trim().toLowerCase() !== normalizedCustomerEmail,
+  );
+  if (recipients.length === 0) {
+    return { success: false, error: 'No admin booking recipients configured' };
+  }
+
+  const displayBookingId = bookingReference || shortBookingId(bookingId);
+  const formattedDate = new Date(bookingDate).toLocaleDateString('en-US', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+  const baseUrl = getEmailBaseUrl();
+  const logoUrl = getEmailLogoUrl(baseUrl);
+  const safeTourTitle = escapeHtml(tourTitle);
+  const safeCustomerName = escapeHtml(customerName || 'Guest');
+  const safeCustomerEmail = escapeHtml(customerEmail || 'N/A');
+  const safeCustomerPhone = escapeHtml(customerPhone || 'N/A');
+  const safePickupPoint = pickupPoint ? escapeHtml(pickupPoint) : null;
+
+  const html = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+  body { margin:0; padding:0; background:#f5f3ee; color:#111827; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; }
+  table { border-collapse:collapse; }
+  img { border:0; outline:none; text-decoration:none; display:block; }
+  .shell { width:100%; background:#f5f3ee; }
+  .card { width:640px; max-width:640px; background:#ffffff; border:1px solid #e7e0d4; border-radius:14px; overflow:hidden; }
+  .px { padding-left:34px; padding-right:34px; }
+  @media only screen and (max-width: 680px) {
+    .outer-pad { padding:14px!important; }
+    .card { width:100%!important; border-radius:10px!important; }
+    .px { padding-left:20px!important; padding-right:20px!important; }
+  }
+      </style>
+    </head>
+    <body>
+      <table role="presentation" class="shell" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="center" class="outer-pad" style="padding:28px 16px;">
+            <table role="presentation" class="card" cellpadding="0" cellspacing="0">
+              <tr>
+                <td class="px" style="padding-top:26px;padding-bottom:18px;">
+                  ${emailBrandLockup(logoUrl)}
+                </td>
+              </tr>
+              <tr>
+                <td class="px" style="padding-top:0;padding-bottom:18px;">
+                  <p style="margin:0 0 8px;color:#7a5d2c;font-size:12px;line-height:16px;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;">Internal booking alert</p>
+                  <h1 style="margin:0;color:#111827;font-size:26px;line-height:32px;font-weight:750;letter-spacing:0;">New booking confirmed</h1>
+                  <p style="margin:10px 0 0;color:#4b5563;font-size:14px;line-height:22px;">A guest booking was confirmed and is ready to review in the admin dashboard.</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="px" style="padding-top:0;padding-bottom:10px;">
+                  <table role="presentation" width="100%" style="background:#fbfaf7;border:1px solid #ebe7df;border-radius:12px;">
+                    <tr>
+                      <td style="padding:20px 22px 8px;">
+                        <p style="margin:0 0 8px;color:#7b746b;font-size:12px;line-height:16px;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;">Booking summary</p>
+                        <table role="presentation" width="100%">
+                          ${emailDetailRow('Booking ID', escapeHtml(displayBookingId))}
+                          ${emailDetailRow('Tour', safeTourTitle)}
+                          ${emailDetailRow('Tour date', escapeHtml(formattedDate))}
+                          ${emailDetailRow('Guests', escapeHtml(numberOfGuests))}
+                          ${safePickupPoint ? emailDetailRow('Pickup', safePickupPoint) : ''}
+                          ${emailDetailRow('Payment', `${escapeHtml(paymentMethod)} / ${escapeHtml(paymentStatus)}`)}
+                          ${emailDetailRow('Total', escapeHtml(formatUsdAmount(totalPrice)), { emphasize: true })}
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="px" style="padding-top:10px;padding-bottom:28px;">
+                  <table role="presentation" width="100%" style="background:#ffffff;border:1px solid #ebe7df;border-radius:12px;">
+                    <tr>
+                      <td style="padding:18px 22px 8px;">
+                        <p style="margin:0 0 8px;color:#7b746b;font-size:12px;line-height:16px;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;">Guest contact</p>
+                        <table role="presentation" width="100%">
+                          ${emailDetailRow('Name', safeCustomerName)}
+                          ${emailDetailRow('Email', `<a href="mailto:${safeCustomerEmail}" style="color:#111827;font-weight:700;text-decoration:underline;">${safeCustomerEmail}</a>`)}
+                          ${emailDetailRow('Phone', safeCustomerPhone)}
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:18px 34px 24px;background:#111827;color:#d1d5db;">
+                  <p style="margin:0;color:#ffffff;font-size:13px;line-height:20px;font-weight:700;">AtoC Korea admin notification</p>
+                  <p style="margin:4px 0 0;color:#7f8997;font-size:11px;line-height:16px;">© 2026 AtoC Korea LLC.</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </body>
+    </html>
+  `;
+
+  return sendEmail({
+    to: recipients,
+    subject: `[ADMIN] New booking confirmed: ${tourTitle}`,
     html,
   });
 }
@@ -308,7 +576,7 @@ export async function sendBookingCancellationEmail({
           `}
 
           <p style="margin-top: 30px;">
-            <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com'}/mypage/mybookings" class="button">View My Bookings</a>
+            <a href="${getEmailBaseUrl()}/mypage/mybookings" class="button">View My Bookings</a>
           </p>
 
           <p>We're sorry to see you go. If you have any questions or would like to book another tour, please don't hesitate to contact us.</p>
@@ -357,7 +625,7 @@ export async function sendBookingReminderEmail({
   customerName: string;
   contactPhone?: string;
 }) {
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
+  const appUrl = getEmailBaseUrl();
   const html = buildReminderEmailHtml({
     baseStyles,
     fromEmail,
@@ -481,7 +749,7 @@ export async function sendCardAuthFailedEmail({
   tourTitle: string;
   bookingDate?: string;
 }) {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
+  const baseUrl = getEmailBaseUrl();
   const displayBookingId = shortBookingId(bookingId);
   const formattedDate = bookingDate
     ? new Date(bookingDate).toLocaleDateString('en-US', {
@@ -574,7 +842,7 @@ export async function sendCardReauthFailedEmail({
   tourTitle: string;
   tourDate?: string;
 }) {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
+  const baseUrl = getEmailBaseUrl();
   const displayBookingId = shortBookingId(bookingId);
   const formattedDate = tourDate
     ? new Date(tourDate).toLocaleDateString('en-US', {
@@ -647,15 +915,6 @@ export async function sendCardReauthFailedEmail({
     html,
   });
 }
-
-
-
-
-
-
-
-
-
 
 
 

@@ -202,6 +202,20 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Admin is a locale-neutral operational area. Keep it out of /ko, /ja, etc.
+  // Otherwise the admin layout can read the locale segment as part of the admin
+  // path and generate URLs like /ko/admin/ko/admin/orders.
+  const parts = pathname.split('/').filter(Boolean);
+  if (parts.length >= 2 && LOCALE_SET.has(parts[0]!) && parts[1] === 'admin') {
+    const url = request.nextUrl.clone();
+    url.pathname = `/${parts.slice(1).join('/')}`;
+    return NextResponse.redirect(url, 307);
+  }
+
+  if (pathname === '/admin' || pathname.startsWith('/admin/')) {
+    return NextResponse.next();
+  }
+
   const eastDupRedirect = redirectEastSignatureLegacyMarketingPaths(request);
   if (eastDupRedirect) return eastDupRedirect;
 

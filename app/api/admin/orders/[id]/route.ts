@@ -4,6 +4,42 @@ import { requireAdmin } from '@/lib/auth';
 
 export const dynamic = 'force-dynamic';
 
+async function hydrateBookingRelations(
+  supabase: ReturnType<typeof createServerClient>,
+  booking: any,
+) {
+  const [tourRes, profileRes, pickupRes] = await Promise.all([
+    booking.tour_id
+      ? supabase
+          .from('tours')
+          .select('id, title, slug, city, image_url, price, price_type')
+          .eq('id', booking.tour_id)
+          .maybeSingle()
+      : Promise.resolve({ data: null }),
+    booking.user_id
+      ? supabase
+          .from('user_profiles')
+          .select('id, full_name, email, phone')
+          .eq('id', booking.user_id)
+          .maybeSingle()
+      : Promise.resolve({ data: null }),
+    booking.pickup_point_id
+      ? supabase
+          .from('pickup_points')
+          .select('id, name, address')
+          .eq('id', booking.pickup_point_id)
+          .maybeSingle()
+      : Promise.resolve({ data: null }),
+  ]);
+
+  return {
+    ...booking,
+    tours: tourRes.data ?? null,
+    user_profiles: profileRes.data ?? null,
+    pickup_points: pickupRes.data ?? null,
+  };
+}
+
 /**
  * GET /api/admin/orders/[id]
  * Get a single order (booking) by ID. Admin only.
@@ -19,28 +55,7 @@ export async function GET(
 
     const { data: booking, error } = await supabase
       .from('bookings')
-      .select(`
-        *,
-        tours (
-          id,
-          title,
-          slug,
-          city,
-          image_url,
-          price,
-          price_type
-        ),
-        user_profiles (
-          id,
-          full_name,
-          phone
-        ),
-        pickup_points (
-          id,
-          name,
-          address
-        )
-      `)
+      .select('*')
       .eq('id', id)
       .single();
 
@@ -54,7 +69,7 @@ export async function GET(
       );
     }
 
-    return NextResponse.json({ booking });
+    return NextResponse.json({ booking: await hydrateBookingRelations(supabase, booking) });
   } catch (err: any) {
     if (err.message === 'Unauthorized' || err.message?.includes('Forbidden')) {
       return NextResponse.json({ error: 'Admin access required' }, { status: 403 });
@@ -114,12 +129,7 @@ export async function PUT(
       .from('bookings')
       .update(updateData)
       .eq('id', id)
-      .select(`
-        *,
-        tours ( id, title, slug, city, image_url, price, price_type ),
-        user_profiles ( id, full_name, phone ),
-        pickup_points ( id, name, address )
-      `)
+      .select('*')
       .single();
 
     if (error) {
@@ -157,12 +167,13 @@ export async function PUT(
       try {
         const { data: b } = await supabase
           .from('bookings')
-          .select('*, tours(title), user_profiles(full_name)')
+          .select('*')
           .eq('id', id)
           .single();
         if (b) {
-          const tour = b.tours as { title?: string } | null;
-          const profile = b.user_profiles as { email?: string; full_name?: string } | null;
+          const hydrated = await hydrateBookingRelations(supabase, b);
+          const tour = hydrated.tours as { title?: string } | null;
+          const profile = hydrated.user_profiles as { email?: string; full_name?: string } | null;
           let customerEmail = profile?.email;
           let customerName = profile?.full_name || 'Guest';
           if (!customerEmail && (b as any).contact_email) {
@@ -196,7 +207,10 @@ export async function PUT(
       }
     }
 
-    return NextResponse.json({ booking, message: 'Order updated successfully' });
+    return NextResponse.json({
+      booking: await hydrateBookingRelations(supabase, booking),
+      message: 'Order updated successfully',
+    });
   } catch (err: any) {
     if (err.message === 'Unauthorized' || err.message?.includes('Forbidden')) {
       return NextResponse.json({ error: 'Admin access required' }, { status: 403 });

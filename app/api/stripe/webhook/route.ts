@@ -389,7 +389,7 @@ async function sendCardOnFileEmail(
     .select(
       `
       id, tour_id, user_id, booking_date, tour_date, number_of_guests, final_price,
-      pickup_point_id, contact_email, contact_name,
+      pickup_point_id, contact_email, contact_name, contact_phone, booking_reference,
       tours ( id, title, image_url ),
       user_profiles ( email, full_name )
     `,
@@ -411,7 +411,7 @@ async function sendCardOnFileEmail(
     profile?.full_name ??
     'Guest';
 
-  if (!customerEmail || !booking.tours) return;
+  if (!booking.tours) return;
 
   let pickupPointName: string | null = null;
   if (booking.pickup_point_id) {
@@ -424,11 +424,28 @@ async function sendCardOnFileEmail(
   }
 
   const tour = booking.tours as { id?: number; title?: string; image_url?: string } | null;
-  const { sendBookingConfirmationEmail } = await import('@/lib/email');
-  await sendBookingConfirmationEmail({
-    to: customerEmail,
+  const { sendBookingConfirmationEmail, sendBookingAdminNotificationEmail } = await import('@/lib/email');
+  if (customerEmail) {
+    await sendBookingConfirmationEmail({
+      to: customerEmail,
+      bookingId: booking.id,
+      tourTitle: tour?.title ?? '',
+      bookingDate: booking.booking_date,
+      numberOfGuests: booking.number_of_guests,
+      totalPrice: parseFloat(String(booking.final_price ?? 0)),
+      pickupPoint: pickupPointName ?? undefined,
+      paymentMethod: 'stripe',
+      paymentStatus: 'authorized',
+      customerName,
+      tourId: tour?.id != null ? String(tour.id) : undefined,
+      tourImageUrl: tour?.image_url,
+    });
+  }
+
+  await sendBookingAdminNotificationEmail({
     bookingId: booking.id,
-    tourTitle: tour?.title ?? '',
+    bookingReference: (booking as { booking_reference?: string | null }).booking_reference ?? null,
+    tourTitle: tour?.title ?? 'Booking',
     bookingDate: booking.booking_date,
     numberOfGuests: booking.number_of_guests,
     totalPrice: parseFloat(String(booking.final_price ?? 0)),
@@ -436,8 +453,8 @@ async function sendCardOnFileEmail(
     paymentMethod: 'stripe',
     paymentStatus: 'authorized',
     customerName,
-    tourId: tour?.id != null ? String(tour.id) : undefined,
-    tourImageUrl: tour?.image_url,
+    customerEmail,
+    customerPhone: (booking as { contact_phone?: string | null }).contact_phone ?? null,
   });
 
   if (booking.user_id) {
@@ -464,7 +481,7 @@ async function sendLegacyConfirmationEmail(
     .select(
       `
       id, tour_id, user_id, booking_date, number_of_guests, final_price, pickup_point_id,
-      contact_email, contact_name,
+      contact_email, contact_name, contact_phone, booking_reference,
       tours ( id, title, image_url ),
       user_profiles ( email, full_name )
     `,
@@ -488,7 +505,7 @@ async function sendLegacyConfirmationEmail(
     customerName = (booking as { contact_name: string }).contact_name;
   }
 
-  if (!customerEmail || !booking.tours) return;
+  if (!booking.tours) return;
 
   let pickupPointName: string | null = null;
   if (booking.pickup_point_id) {
@@ -501,11 +518,28 @@ async function sendLegacyConfirmationEmail(
   }
 
   const tour = booking.tours as { id?: number; title?: string; image_url?: string } | null;
-  const { sendBookingConfirmationEmail } = await import('@/lib/email');
-  await sendBookingConfirmationEmail({
-    to: customerEmail,
+  const { sendBookingConfirmationEmail, sendBookingAdminNotificationEmail } = await import('@/lib/email');
+  if (customerEmail) {
+    await sendBookingConfirmationEmail({
+      to: customerEmail,
+      bookingId: booking.id,
+      tourTitle: tour?.title ?? '',
+      bookingDate: booking.booking_date,
+      numberOfGuests: booking.number_of_guests,
+      totalPrice: parseFloat(String(booking.final_price ?? 0)),
+      pickupPoint: pickupPointName ?? undefined,
+      paymentMethod: 'stripe',
+      paymentStatus: 'paid',
+      customerName,
+      tourId: tour?.id != null ? String(tour.id) : undefined,
+      tourImageUrl: tour?.image_url,
+    });
+  }
+
+  await sendBookingAdminNotificationEmail({
     bookingId: booking.id,
-    tourTitle: tour?.title ?? '',
+    bookingReference: (booking as { booking_reference?: string | null }).booking_reference ?? null,
+    tourTitle: tour?.title ?? 'Booking',
     bookingDate: booking.booking_date,
     numberOfGuests: booking.number_of_guests,
     totalPrice: parseFloat(String(booking.final_price ?? 0)),
@@ -513,8 +547,8 @@ async function sendLegacyConfirmationEmail(
     paymentMethod: 'stripe',
     paymentStatus: 'paid',
     customerName,
-    tourId: tour?.id != null ? String(tour.id) : undefined,
-    tourImageUrl: tour?.image_url,
+    customerEmail,
+    customerPhone: (booking as { contact_phone?: string | null }).contact_phone ?? null,
   });
 
   if (booking.user_id) {
