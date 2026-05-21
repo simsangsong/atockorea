@@ -141,7 +141,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
               region={region}
               pois={pois}
               onAccept={acceptRecommendation}
-              onFocusPoi={focusPoi}
+              onOpenDetail={setDetailPoi}
               track={matcherTrack}
               origin={matcherOrigin}
             />

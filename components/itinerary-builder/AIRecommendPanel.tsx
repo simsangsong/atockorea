@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Sparkles, Loader2, AlertCircle, ImageIcon, ChevronRight } from "lucide-react";
+import { Sparkles, Loader2, AlertCircle, Clock, ChevronRight } from "lucide-react";
 import {
   REVEAL_ITEM_VARIANTS,
   useRevealContainerProps,
@@ -15,7 +15,10 @@ interface Props {
   region: RegionSlug;
   pois: MatchPoiRow[];
   onAccept: (poiKeys: string[]) => void;
-  onFocusPoi?: (poiKey: string) => void;
+  /** R2 — open the shared detail drawer lifted to BuilderShell (RR2/RR-R3).
+   *  Map focus is now accessible via the drawer's "See on map" button,
+   *  so the old `onFocusPoi` prop has been retired. */
+  onOpenDetail?: (poi: MatchPoiRow) => void;
   track?: string | null;
   origin?: string | null;
 }
@@ -46,6 +49,11 @@ const PRESETS: { key: string; intent: string }[] = [
 
 /**
  * V2 redesign Phase 6 — AI matcher evolved.
+ * R2 (2026-05-21): result stripe upgraded from badge horizontal-scroll chips
+ * to the R1 large card stack (compose photo strip + sequence node + header +
+ * rationale pills). No drag/remove — preview-only. Tap card → shared
+ * POIDetailModal via onOpenDetail lifted to BuilderShell. "Apply this day"
+ * CTA kept. Sequence amber nodes obey V5 amber discipline.
  *
  * Layout changes from earlier phases:
  *   • Gradient amber card → plain `bg-white ring-slate-200` (aligns
@@ -54,14 +62,22 @@ const PRESETS: { key: string; intent: string }[] = [
  *     chip fills the intent input + auto-submits.
  *   • After a successful match, the input form collapses to a small
  *     "✨ Get another suggestion" pill. Clicking re-expands. The
- *     result stripe (recommended chips + Apply day CTA) renders inline
- *     so it visually reads as the prequel to the timeline below.
+ *     result stripe (large preview cards + Apply day CTA) renders
+ *     inline so it visually reads as the prequel to the timeline below.
  */
+/** Format stay minutes into a compact string, e.g. 90 → "1h 30m", 45 → "45m". */
+function formatMinutes(min: number): string {
+  if (min < 60) return `${min}m`;
+  const h = Math.floor(min / 60);
+  const m = min % 60;
+  return m ? `${h}h ${m}m` : `${h}h`;
+}
+
 export default function AIRecommendPanel({
   region,
   pois,
   onAccept,
-  onFocusPoi,
+  onOpenDetail,
   track,
   origin,
 }: Props) {
@@ -280,50 +296,121 @@ export default function AIRecommendPanel({
                 <ChevronRight className="h-3 w-3" aria-hidden />
               </button>
             </div>
-            <ol className="-mx-2 flex gap-2 overflow-x-auto px-2 pb-1 snap-x snap-mandatory scrollbar-hide md:flex-wrap md:overflow-visible">
+            {/* R2 — large card stack (preview / Apply variant).
+                No drag, no remove. Tap card → shared POIDetailModal via
+                onOpenDetail (lifted to BuilderShell). Sequence amber node
+                sits on the relative <li> so overflow-hidden on the card
+                button does not clip it. Rationale labels inside card footer.
+                V5: amber = sequence only; V4: no bi-sync needed here (map
+                focus available via drawer's focus button). RR6: previewHint
+                i18n'd via translate-itinerary-builder-messages.mjs. */}
+            <ol className="flex flex-col gap-2.5">
               {(result.per_poi_score ?? []).map((p, i) => {
-                const poi = poiByKey.get(p.poi_key);
-                const img = poi?.default_image_url || poi?.images?.[0] || null;
+                const poi = poiByKey.get(p.poi_key) ?? null;
+                const photos =
+                  Array.isArray(poi?.images) && poi!.images!.length > 0
+                    ? (poi!.images as string[])
+                    : poi?.default_image_url
+                    ? [poi.default_image_url]
+                    : [];
                 return (
-                  <li key={p.poi_key} className="flex-shrink-0 snap-start">
+                  <li key={p.poi_key} className="relative">
+                    {/* Amber sequence node — on <li> (relative), above card
+                        button's overflow-hidden boundary (V5 amber = sequence
+                        identity only). */}
+                    <span
+                      aria-hidden
+                      className="absolute left-3 top-3 z-10 inline-flex h-6 w-6 items-center justify-center rounded-full bg-amber-500 text-[11px] font-bold leading-none text-white ring-2 ring-white shadow-sm"
+                    >
+                      {i + 1}
+                    </span>
+
+                    {/* Card body — tap opens shared detail drawer (RR2). */}
                     <button
                       type="button"
-                      onClick={() => onFocusPoi?.(p.poi_key)}
-                      title="See on map"
-                      className="group flex items-center gap-2 rounded-full bg-white py-1 pl-1 pr-3 ring-1 ring-slate-200 transition-all duration-200 ease-out hover:bg-amber-50 hover:ring-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-400"
+                      onClick={() => { if (poi && onOpenDetail) onOpenDetail(poi); }}
+                      className="group block w-full overflow-hidden rounded-2xl bg-white text-left ring-1 ring-slate-200/70 shadow-[0_4px_14px_-6px_rgba(15,23,42,0.16)] transition-shadow duration-200 ease-out hover:shadow-[0_8px_22px_-8px_rgba(15,23,42,0.24)]"
                     >
-                      <span className="relative h-8 w-8 flex-shrink-0 overflow-hidden rounded-full bg-slate-100">
-                        {img ? (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img src={img} alt="" loading="lazy" className="h-full w-full object-cover" />
-                        ) : (
-                          <ImageIcon className="absolute inset-0 m-auto h-4 w-4 text-slate-400" aria-hidden />
-                        )}
-                        <span className="absolute -bottom-0.5 -right-0.5 inline-flex h-4 w-4 items-center justify-center rounded-full bg-amber-500 text-[9px] font-bold text-white shadow-sm ring-1 ring-white">
-                          {i + 1}
-                        </span>
-                      </span>
-                      <span className="text-micro font-semibold text-slate-700 group-hover:text-amber-800">
-                        {p.name_en}
-                      </span>
-                    </button>
-                    {p.rationale && p.rationale.length > 0 ? (
-                      <div className="mt-1 flex max-w-[220px] flex-wrap gap-1 pl-1">
-                        {p.rationale.slice(0, 3).map((label) => (
-                          <span
-                            key={`${p.poi_key}-${label}`}
-                            className="rounded-full bg-white/80 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-slate-500 ring-1 ring-amber-100"
-                          >
-                            {label}
+                      {/* Compose photo strip */}
+                      {photos.length > 0 ? (
+                        <div className="flex gap-1.5 overflow-x-auto px-3 pb-1.5 pt-3 scrollbar-hide">
+                          {photos.map((src, pi) => (
+                            <span
+                              key={`${src}-${pi}`}
+                              className="relative h-14 w-20 flex-shrink-0 overflow-hidden rounded-md bg-slate-100 ring-1 ring-slate-900/5"
+                            >
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={src}
+                                alt=""
+                                width={80}
+                                height={56}
+                                loading="lazy"
+                                decoding="async"
+                                className="h-full w-full object-cover"
+                              />
+                            </span>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="flex px-3 pb-1.5 pt-3">
+                          <span className="flex h-14 w-20 items-center justify-center rounded-md bg-slate-100 text-2xl font-bold text-slate-300 ring-1 ring-slate-900/5">
+                            {(poi?.name_en?.[0] ?? p.name_en?.[0] ?? "?").toUpperCase()}
                           </span>
-                        ))}
+                        </div>
+                      )}
+
+                      {/* Header: duration + name + category + chevron */}
+                      <div className="px-3.5 pb-3 pt-2">
+                        <div className="flex items-start justify-between gap-2.5">
+                          <div className="min-w-0 flex-1">
+                            {poi?.default_stay_minutes ? (
+                              <div className="flex items-center gap-1 text-micro text-slate-500">
+                                <Clock className="h-3 w-3" aria-hidden />
+                                <span className="tabular-nums">
+                                  {formatMinutes(poi.default_stay_minutes)}
+                                </span>
+                              </div>
+                            ) : null}
+                            <h3 className="mt-1 truncate text-caption font-semibold leading-snug tracking-tight text-slate-900">
+                              {poi?.name_en ?? p.name_en}
+                            </h3>
+                            {poi?.name_ko ? (
+                              <p className="mt-0.5 truncate text-micro text-slate-500">
+                                {poi.name_ko}
+                              </p>
+                            ) : null}
+                            {poi?.category ? (
+                              <p className="mt-1 truncate text-[10px] font-medium uppercase tracking-wide text-slate-400">
+                                {poi.category}
+                              </p>
+                            ) : null}
+                          </div>
+                          <ChevronRight
+                            className="mt-1 h-4 w-4 flex-shrink-0 text-slate-400 group-hover:text-slate-600"
+                            aria-hidden
+                          />
+                        </div>
+                        {/* Rationale pills — slate (not amber), V5 compliant */}
+                        {p.rationale && p.rationale.length > 0 ? (
+                          <div className="mt-2 flex flex-wrap gap-1">
+                            {p.rationale.slice(0, 3).map((label) => (
+                              <span
+                                key={`${p.poi_key}-${label}`}
+                                className="rounded-full bg-slate-50 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-slate-500 ring-1 ring-slate-200"
+                              >
+                                {label}
+                              </span>
+                            ))}
+                          </div>
+                        ) : null}
                       </div>
-                    ) : null}
+                    </button>
                   </li>
                 );
               })}
             </ol>
-            <p className="mt-2 text-micro text-slate-500">{t("previewHint")}</p>
+            <p className="mt-3 text-micro text-slate-500">{t("previewHint")}</p>
           </motion.div>
         ) : result?.ok && recommended.length === 0 ? (
           <div className="border-t border-slate-100 px-5 py-3 md:px-6">

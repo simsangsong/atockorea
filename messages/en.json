@@ -2212,10 +2212,10 @@
       "subtitle": "Pick the stops you actually want on the map. We'll quote it.",
       "busanName": "Busan",
       "busanTagline": "Sea temples + ancient capitals + market crawls",
-      "busanStops": "Curated stops",
+      "busanStops": "20 curated stops",
       "jejuName": "Jeju Island",
       "jejuTagline": "UNESCO Triple Crown — sunrise peaks, lava caves, coastal drives",
-      "jejuStops": "Curated stops",
+      "jejuStops": "25 curated stops",
       "browseTheMap": "Browse the map",
       "open": "Open",
       "comingSoonNote": "Seoul + DMZ rollout planned after MVP."
@@ -2231,14 +2231,8 @@
       "regionFallback": "{region}"
     },
     "quote": {
-      "title": "Send for a personalized quote",
+      "title": "Get a custom quote",
       "intro": "{count} stops in {region}. We'll quote logistics + pricing.",
-      "cartHeader": "Quoting these stops",
-      "andNMore": "and {n} more",
-      "eligibilityInstantLabel": "Likely instant quote",
-      "eligibilityInstantHint": "Your day looks well within our auto-quote range.",
-      "eligibilityManualLabel": "Manual review",
-      "eligibilityManualHint": "Our team will reply within 24h with a custom price.",
       "nameLabel": "Your name",
       "emailLabel": "Email",
       "dateLabel": "Travel date",
@@ -2285,12 +2279,6 @@
       "getQuoteCta": "Get a custom quote",
       "getQuoteHint": "We'll respond within 24 hours"
     },
-    "timeline": {
-      "emptyHeadline": "Build your day, stop by stop",
-      "emptyBody": "Tap a pin on the map or use the AI matcher to start dropping stops in.",
-      "lookAtMap": "Look at the map",
-      "driveBetween": "{duration} drive"
-    },
     "ai": {
       "eyebrow": "Let AI suggest your day",
       "intro": "Tell us what you like — we'll sequence a route from the stops in this region.",
@@ -2310,7 +2298,7 @@
       "errorMin": "Tell us a little more about your trip.",
       "resultsSummary": "{count} stops matched · ~{hours}h day",
       "loadIntoCart": "Apply this day",
-      "previewHint": "Tap a stop to preview it on the map →",
+      "previewHint": "Tap any stop to see details →",
       "noMatchFallback": "Try broader interests or a different region.",
       "getAnother": "Get another suggestion"
     }
