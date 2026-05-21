@@ -213,10 +213,7 @@ export function middleware(request: NextRequest) {
     pathname === CANONICAL_EAST_SIGNATURE_PRODUCT_PATH ||
     pathname.startsWith(`${CANONICAL_EAST_SIGNATURE_PRODUCT_PATH}/`) ||
     pathname === "/tour-product/jeju-grand-highlights-loop" ||
-    pathname.startsWith("/tour-product/jeju-grand-highlights-loop/") ||
-    /^\/(en|ko|zh-CN|zh-TW|ja|es)\/tour-product\/(east-signature-nature-core|jeju-grand-highlights-loop)(\/|$)/.test(
-      pathname,
-    );
+    pathname.startsWith("/tour-product/jeju-grand-highlights-loop/");
   if (isFlagshipTourProductPath) {
     return NextResponse.next();
   }

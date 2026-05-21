@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import { createServerClient } from '@/lib/supabase';
-import { STATIC_TOUR_PRODUCTS } from '@/components/product-tour-static/catalog/staticTourProductRegistry';
+import { STATIC_TOUR_PRODUCTS } from '@/components/product-tour-static/catalog/staticTourCatalogCards';
 import { isTourRowHiddenFromPublicTourApi } from '@/lib/tour-consumer-visibility';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -70,7 +70,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return staticPages;
   }
 }
-
 
 
 

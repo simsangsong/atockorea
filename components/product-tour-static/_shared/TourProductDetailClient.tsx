@@ -22,7 +22,7 @@ import {
   TourTabsNav,
   TourTimelineSection,
 } from "@/components/product-tour-static/east-signature-nature-core/tour-detail-sections";
-import type { StaticTourProductRegistration } from "@/components/product-tour-static/catalog/staticTourProductRegistry";
+import type { StaticTourProductRegistration } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { TourProductAiAssistantWidget } from "@/components/product-tour-static/_shared/TourProductAiAssistantWidget";
 import { HaenyeoStatusButton } from "@/components/product-tour-static/_shared/HaenyeoStatusButton";
 import { PlatformCompareBlock } from "@/components/tour/PlatformCompareBlock";
@@ -156,7 +156,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
                   </p>
                 ) : null}
                 <p className="mt-2 text-[11.5px] text-muted-foreground">
-                  Tap "Check Availability" to pick guests and confirm the live total.
+                  Tap &quot;Check Availability&quot; to pick guests and confirm the live total.
                 </p>
               </div>
             </div>

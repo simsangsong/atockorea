@@ -6,7 +6,7 @@ import {
   getStaticTourProductFullPageJson,
   isStaticTourProductBundleRegistered,
 } from "@/components/product-tour-static/_shared/tourProductBundleRegistry";
-import { listStaticTourProducts } from "@/components/product-tour-static/catalog/staticTourProductRegistry";
+import { listStaticTourProducts } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { TourProductDetailClient } from "@/components/product-tour-static/_shared/TourProductDetailClient";
 import { tourProductJsonLdScripts } from "@/lib/seo/tourProductJsonLd";
 import { createAnonServerClient } from "@/lib/supabase";

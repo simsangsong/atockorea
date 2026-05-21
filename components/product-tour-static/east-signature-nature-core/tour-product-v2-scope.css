@@ -793,3 +793,7 @@ html[lang="ko"] .tour-product-v2-static-root .tour-hero-headline-line {
   background: color-mix(in srgb, var(--muted-foreground) 32%, transparent);
   border-radius: 100px;
 }
+
+.tour-product-v2-static-root .tour-itinerary-preview-thumb img {
+  filter: saturate(0.78) brightness(0.94) contrast(0.96) !important;
+}

@@ -17,7 +17,7 @@ import Image from 'next/image';
 import { AlertCircle, ChevronRight, Clock, MapPin, RefreshCw, Star } from 'lucide-react';
 import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { useI18n, useTranslations } from '@/lib/i18n';
-import { getStaticTourProductBySlug } from '@/components/product-tour-static/catalog/staticTourProductRegistry';
+import { getStaticTourProductBySlug } from '@/components/product-tour-static/catalog/staticTourCatalogCards';
 import type { ScoredProduct, TourMatchApiResponse } from '@/lib/tour-match-v2/api-types';
 import { cn } from '@/lib/utils';
 import { analytics } from '@/src/design/analytics';

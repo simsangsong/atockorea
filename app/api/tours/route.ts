@@ -12,12 +12,66 @@ import {
   tagsForCatalogType,
   titleForCatalogType,
 } from '@/lib/tour-catalog-type-infer';
-import { getStaticTourProductBySlug } from '@/components/product-tour-static/catalog/staticTourProductRegistry';
+import { getStaticTourProductBySlug } from '@/components/product-tour-static/catalog/staticTourCatalogCards';
 import type { TourProductPageLocale } from '@/lib/tour-product/resolveTourProductDbLocale';
 
 const SUPPORTED_LOCALES = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'] as const;
 type SupportedLocale = typeof SUPPORTED_LOCALES[number];
 type TourTypeFilter = 'private' | 'join' | 'bus';
+
+type TourLocaleTranslation = {
+  title?: string;
+  description?: string;
+  badges?: unknown;
+  duration?: unknown;
+  highlight?: unknown;
+  includes?: unknown;
+  excludes?: unknown;
+  schedule?: unknown;
+  highlights?: unknown;
+  pickup_info?: unknown;
+  notes?: unknown;
+};
+
+type TourListRow = {
+  id?: string | number | null;
+  slug?: string | null;
+  tag?: string | null;
+  title?: string | null;
+  description?: string | null;
+  city?: string | null;
+  location?: string | null;
+  price?: string | number | null;
+  original_price?: string | number | null;
+  price_currency?: string | null;
+  price_type?: string | null;
+  image_url?: string | null;
+  gallery_thumb?: string | null;
+  gallery_images?: string[] | null;
+  pickup_points?: unknown;
+  tx?: TourLocaleTranslation | null;
+  translations?: Partial<Record<SupportedLocale, TourLocaleTranslation>> | null;
+  badges?: unknown;
+  duration?: string | null;
+  difficulty?: string | null;
+  group_size?: string | null;
+  highlight?: string | null;
+  rating?: string | number | null;
+  review_count?: number | null;
+  pickup_points_count?: number | null;
+  dropoff_points_count?: number | null;
+  lunch_included?: boolean | null;
+  ticket_included?: boolean | null;
+  includes?: unknown[] | null;
+  excludes?: unknown[] | null;
+  schedule?: unknown[] | null;
+  highlights?: unknown[] | null;
+  pickup_info?: string | null;
+  notes?: string | null;
+  is_active?: boolean | null;
+  created_at?: string | null;
+  updated_at?: string | null;
+};
 
 function parseLocale(value: string | null): SupportedLocale | null {
   if (!value) return null;
@@ -272,7 +326,8 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
     }
 
     // Transform data to match frontend expectations; use translations[locale] when available
-    let transformedTours = tours?.map((tour: any) => {
+    const tourRows = (tours ?? []) as unknown as TourListRow[];
+    let transformedTours = tourRows.map((tour) => {
       const pickupPoints = compactList
         ? []
         : Array.isArray(tour.pickup_points)
@@ -403,7 +458,7 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
         createdAt: tour.created_at,
         updatedAt: tour.updated_at,
       };
-    }) || [];
+    });
 
     transformedTours = transformedTours.filter(
       (tour) => !isTourRowHiddenFromPublicTourApi({ id: String(tour.id ?? ''), slug: tour.slug })
@@ -486,7 +541,7 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
 
           if (!bookingsError && bookings) {
             for (const b of bookings) {
-              const tid = String((b as any).tour_id);
+              const tid = String((b as { tour_id?: unknown }).tour_id);
               bookingCounts[tid] = (bookingCounts[tid] || 0) + 1;
             }
           } else if (bookingsError) {

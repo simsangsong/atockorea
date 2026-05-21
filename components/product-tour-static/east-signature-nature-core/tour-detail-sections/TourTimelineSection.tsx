@@ -82,7 +82,7 @@ function StopCard({
               {photos.map((src, i) => (
                 <div
                   key={`${src}-${i}`}
-                  className="relative flex-shrink-0 w-20 h-14 rounded-md overflow-hidden bg-slate-100 ring-1 ring-slate-900/5"
+                  className="tour-itinerary-preview-thumb relative flex-shrink-0 w-20 h-14 rounded-md overflow-hidden bg-slate-100 ring-1 ring-slate-900/5"
                   onContextMenu={(e) => e.preventDefault()}
                 >
                   <img

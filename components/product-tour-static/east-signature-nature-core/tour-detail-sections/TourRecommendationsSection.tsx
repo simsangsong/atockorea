@@ -1,9 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Clock, Star } from "lucide-react";
-import type { StaticTourProductRegistration } from "@/components/product-tour-static/catalog/staticTourProductRegistry";
-import { hrefStaticTourProductDetail } from "@/components/product-tour-static/catalog/staticTourProductRegistry";
+import {
+  hrefStaticTourProductDetail,
+  type StaticTourProductRegistration,
+} from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { useCurrencyOptional } from "@/lib/currency";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
 
@@ -56,11 +59,11 @@ export function TourRecommendationsSection({ recommendations, sectionUi }: TourR
             >
               <div className="relative h-44 overflow-hidden bg-muted/40">
                 {imageSrc ? (
-                  <img
+                  <Image
                     src={imageSrc}
                     alt={rec.title}
-                    loading="lazy"
-                    decoding="async"
+                    fill
+                    sizes="(max-width: 640px) 78vw, 300px"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                   />
                 ) : (
