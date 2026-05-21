@@ -94,6 +94,20 @@ export function IdleMatchPreviewCarousel() {
       aria-label={t("premium.v2.idlePreview.label")}
       className="px-4 py-8 md:py-10"
     >
+      {/* Crossfade transition lives in CSS (not inline style) so the
+          reduced-motion branch resolves at the CSS layer. Driving it from
+          framer-motion's `useReducedMotion()` inside the render produced a
+          server/client hydration mismatch on the inline `transition` (server
+          rendered the animated value, the reduce-motion client rendered
+          "none"). The JS `reduceMotion` still gates the auto-cycle interval. */}
+      <style>{`
+        .idle-preview-crossfade {
+          transition: opacity ${FADE_DURATION_MS}ms ease-in-out;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .idle-preview-crossfade { transition: none; }
+        }
+      `}</style>
       <div className="mx-auto max-w-md md:max-w-xl">
         <p className="mb-3 text-center text-eyebrow md:mb-4">
           {t("premium.v2.idlePreview.label")}
@@ -115,12 +129,9 @@ export function IdleMatchPreviewCarousel() {
                     slug: card.slug,
                   })
                 }
-                className="focus-ring absolute inset-0 block"
+                className="focus-ring idle-preview-crossfade absolute inset-0 block"
                 style={{
                   opacity: visible ? 1 : 0,
-                  transition: reduceMotion
-                    ? "none"
-                    : `opacity ${FADE_DURATION_MS}ms ease-in-out`,
                   pointerEvents: visible ? "auto" : "none",
                 }}
               >

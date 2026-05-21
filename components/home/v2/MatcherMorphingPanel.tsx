@@ -21,12 +21,13 @@ import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Sparkles, ChevronRight, RotateCcw } from "lucide-react";
 import { useHomeV2Match } from "@/components/home/v2/HomeV2MatchProvider";
+import { useMediaQuery } from "@/components/home/v2/use-media-query";
 import {
   getStaticTourProductBySlug,
   hrefStaticTourProductDetail,
 } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { useI18n, useTranslations } from "@/lib/i18n";
-import { analytics, getExperimentVariant } from "@/src/design/analytics";
+import { analytics, getExperimentVariantAsync } from "@/src/design/analytics";
 
 export function MatcherMorphingPanel() {
   const t = useTranslations("home");
@@ -35,32 +36,21 @@ export function MatcherMorphingPanel() {
   const reduceMotion = useReducedMotion();
 
   const [variant, setVariant] = useState<string | null>(null);
-  const [isDesktop, setIsDesktop] = useState(false);
+  const isDesktop = useMediaQuery("(min-width: 768px)");
 
+  // home_result_morphing A/B — variant resolves once the shared experiment
+  // registry fetch settles. Async `.then(setVariant)` keeps the assignment off
+  // the synchronous effect body (no setState-in-effect); the experiment key and
+  // assignment logic are unchanged.
   useEffect(() => {
-    const first = getExperimentVariant("home_result_morphing");
-    if (first) setVariant(first);
-    else {
-      let tries = 0;
-      const id = setInterval(() => {
-        tries += 1;
-        const v = getExperimentVariant("home_result_morphing");
-        if (v) {
-          setVariant(v);
-          clearInterval(id);
-        } else if (tries >= 30) clearInterval(id);
-      }, 200);
-      return () => clearInterval(id);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const mq = window.matchMedia("(min-width: 768px)");
-    setIsDesktop(mq.matches);
-    const onChange = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
+    let cancelled = false;
+    void getExperimentVariantAsync("home_result_morphing").then((v) => {
+      if (cancelled) return;
+      if (v) setVariant(v);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // Hidden cases:

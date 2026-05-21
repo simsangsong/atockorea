@@ -17,7 +17,8 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useHomeV2Match } from "@/components/home/v2/HomeV2MatchProvider";
-import { getExperimentVariant } from "@/src/design/analytics";
+import { useMediaQuery } from "@/components/home/v2/use-media-query";
+import { getExperimentVariantAsync } from "@/src/design/analytics";
 
 const BestMatchPreview = dynamic(
   () =>
@@ -32,32 +33,21 @@ export function MatcherBottomSheet() {
   const reduceMotion = useReducedMotion();
 
   const [variant, setVariant] = useState<string | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useMediaQuery("(max-width: 767px)");
 
+  // home_result_bottomsheet A/B — variant resolves once the shared experiment
+  // registry fetch settles. Async `.then(setVariant)` keeps the assignment off
+  // the synchronous effect body (no setState-in-effect); the experiment key and
+  // assignment logic are unchanged.
   useEffect(() => {
-    const first = getExperimentVariant("home_result_bottomsheet");
-    if (first) setVariant(first);
-    else {
-      let tries = 0;
-      const id = setInterval(() => {
-        tries += 1;
-        const v = getExperimentVariant("home_result_bottomsheet");
-        if (v) {
-          setVariant(v);
-          clearInterval(id);
-        } else if (tries >= 30) clearInterval(id);
-      }, 200);
-      return () => clearInterval(id);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const mq = window.matchMedia("(max-width: 767px)");
-    setIsMobile(mq.matches);
-    const onChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
+    let cancelled = false;
+    void getExperimentVariantAsync("home_result_bottomsheet").then((v) => {
+      if (cancelled) return;
+      if (v) setVariant(v);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // Escape key closes

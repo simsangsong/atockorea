@@ -25,7 +25,7 @@ v3 만든 이유:
 | Phase | 상태 | 시작일 | 완료일 | 마지막 커밋 | 비고 |
 |---|---|---|---|---|---|
 | 0a — 계측 이벤트 정의 | ✅ 완료 | 2026-05-17 | 2026-05-17 | b6b73c07 | 7종 메서드 + 6개 호출부 와이어링 + `docs/analytics-events-home.md`. dev 콘솔 발화 7종 검증 통과 (Cloudflare Quick Tunnel) |
-| 0b — provider 연결 + baseline | 🔄 진행 중 (자체 빌드 트랙) | 2026-05-17 | — | — | 외부 SaaS 보류, 자체 분석 시스템 빌드로 결정. 별도 마스터플랜 참조: `docs/atockorea-analytics-master-plan-2026-05-17.md` |
+| 0b — provider 연결 + baseline | 🔄 baseline 대기 (시스템 ✅) | 2026-05-17 | — | — | 자체 분석 시스템 풀빌드 ✅ (`atockorea-analytics-master-plan` Phase 1~7). provider 연결 ✅. **baseline 미수집** — 2026-05-21 실측: 47 visitors / 100 sessions / 838 events / 3.3일(~14/day). A/B 변이당 10-15명(min 200)로 검정력 없음. 사실 수정 §C 2026-05-21 |
 | 0c — 모바일 fold 실측 | ✅ 완료 | 2026-05-17 | 2026-05-17 | 3fdb9359 | CDP 실측: 390x844 CTA -81px / 430x932 CTA -32px (모두 fold 아래). §2.6 + §3 P0-A 보강 |
 | B — 가장 안전한 전환 개선 | ✅ 완료 | 2026-05-17 | 2026-05-17 | a94d73b9 | B.1~B.6 모두 ✅. CDP QA: sticky top=hidden / mid=visible / deep=visible / footer=hidden. 사후 audit는 §2.6.1 (bottom nav overlay 발견 — Phase 0b 데이터로 재판단) |
 | C — 상호작용 강화 | ✅ 완료 | 2026-05-17 | 2026-05-17 | 90345fd6 | C.1 ✅ 시즌 칩 인터랙티브. C.2는 이미 코드에 반영(사실 수정) — result card는 product.badges 동적 (vm:112-117), idle preview는 card.badges (B.2) |
@@ -39,8 +39,9 @@ v3 만든 이유:
 - ✅ 완료
 - ❌ 중단/롤백
 
-**현재 활성 Phase: 없음 (v3 본 실행 + Phase D 완료). 4개 실험 running (home_cta_copy, home_result_morphing, home_result_bottomsheet, home_sticky_threshold).**
-**다음 액션: traffic 누적 후 admin /admin/analytics/product/experiments 에서 variant 비교. 통계적 유의차 발견 시 winner 채택 → §B 결정 row 추가.**
+**현재 활성 Phase: 없음 (v3 본 실행 + Phase D 완료). 후속 트랙으로 통합 플래너 플랜(`docs/landing-matcher-builder-unified-plan-2026-05-20.md`) Phase 1 진행 중.**
+**실험 상태 (2026-05-21): 4종 모두 running이나 검정력 없음 (변이당 10-15명 / min 200). home_cta_copy / home_result_morphing / home_result_bottomsheet는 통합 플래너가 surface를 대체하므로 conclude 권장 — 단 production DB write는 사용자 승인 대기 (Phase 2 CTA 재구성 전 처리). home_sticky_threshold는 미충돌로 running 유지.**
+**다음 액션: 통합 플래너 Phase 1 (LandingPlannerCard 추출, behavior-neutral). traffic 누적 전까지 정성 판단 (v3 §12).**
 
 ---
 
@@ -66,6 +67,8 @@ v3 만든 이유:
 | 2026-05-17 | Phase 3b `ItineraryBuilderEntry`는 Destinations 직후 위치 유지. B.1 swap 후에도 Destinations와 함께 페이지 후반부로 이동 | 코드 실사 (`HomeV2Page.tsx:24-35`). v3 작성 시점에 §2.5에 미반영된 사실 — 사실 수정. ItineraryBuilderEntry는 "지역 분기 후 맞춤 빌더로 유도"라는 인접 관계 | — |
 | 2026-05-17 | B.3 매처 헤더 슬림은 단독 진행 금지. **Trust strip 컴팩트화와 묶음 처리** (B.3.1 헤더 슬림 + B.3.2 Trust 컴팩트) | Phase 0c 실측: iPhone 14 fold 회수 81px 필요, 헤더 슬림 단독은 ~60px만 회수 | — |
 | 2026-05-17 | **Phase 0b 외부 SaaS provider 모두 보류, 자체 분석 시스템 빌드로 진행** (`docs/atockorea-analytics-master-plan-2026-05-17.md`). DOM 세션 리플레이는 §D PostHog 옵션으로 분리 | PII 통제 + 매처 도메인 join + 비용 0 + 데이터 소유 + 기존 Supabase 인프라 재사용. 6.5일 풀빌드 | — |
+| 2026-05-21 | **ItineraryBuilderEntry "Destinations 직후 위치 유지" 결정(2026-05-17) 번복 → 홈에서 제거.** 통합 플래너(`docs/landing-matcher-builder-unified-plan-2026-05-20.md`) Phase 3로 홈에서 제거(파일은 레포 임시 존치) | 매처+빌더를 단일 segmented planning surface로 통합 → 경쟁하는 두 플래닝 CTA 제거. 사용자 결정 2026-05-21. 통합 플랜 Gate 0.3 충족 | ← 2026-05-17 "인접 위치 유지" row 대체 |
+| 2026-05-21 | **B.3 매처 헤더 제거(2472b0ae) 부분 번복 → 데스크톱 한정 headline+subhead 재도입, 모바일은 eyebrow-only 유지** (반응형 헤더) | 모바일 fold 보호(현 CTA effective -78px, §2.6.1) + 데스크톱은 수직 여유로 프리미엄 프레이밍 허용. 사용자 결정 2026-05-21. 통합 플랜 Gate 0.1/0.2 충족 | ← B.3 eyebrow-only(2472b0ae) 부분 대체 (모바일만 유지) |
 
 ---
 
@@ -104,6 +107,10 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-05-17 | §D #1 매칭 로직 핫픽스 — 광역지역 정규화 + multi-region + 폴백 제거 | 47534209 | **사용자 보고 버그**: 제주 winner인데 부산/크루즈 추천. 원인 (a) `broadRegion()`이 영문 키워드만 검사 → 한글 region 전부 미매칭 → score=0 fallback이 catalog 순서로 부산 시리즈 노출. (b) badge 1개 공유로 광역 다른 매물 추천 진입. 수정: 한국어+영문 키워드 룰 5종(jeju/gangwon/busan/gyeongju/seoul) + multi-region Set + 광역 교집합 없으면 score=0 게이트 + catalog 순서 폴백 제거 (strip은 1~3개 동적 grid). 검증: 30개 자연어 케이스 (jeju/busan/seoul 각 10개) production /api/tour-product/match 호출 → 30/30 광역 일치 ✅ |
 | 2026-05-17 | 헤더 언어 토글 핫픽스 — i18n provider race 제거 (초기 ~5클릭 무시 버그) | (pending) | **사용자 보고 버그**: 랜딩 헤더 언어 버튼 첫 ~5번 클릭이 무시됨, 그 다음부터는 1클릭 OK. 원인 (a) `I18nProvider.loadLocale()` 비동기 체인(localStorage → dynamic supabase import → auth.getSession → user_profiles select → navigator.language fallback)이 첫 1-2초 안에 사용자의 `setLocale()` 호출을 silently revert. (b) `setLocale`이 useCallback 미적용이라 매 render마다 새 참조 → `LocaleHomeClient.useEffect([locale,setLocale])`가 URL-derived locale로 사용자 선택을 강제로 덮어씀. 수정 (`lib/i18n.ts`): (1) `userOverrideRef` 추가, 각 async 체크포인트 후 사용자 override 있으면 abort. (2) `setLocale`을 useCallback으로 stable ref. 검증 CDP: ko→ja→zh→ko→en 4회 연속 1클릭 전환 모두 즉시 반영 (URL/lang/localStorage/H1 일치). 영향 범위: 글로벌 헤더 — 랜딩 외 모든 페이지에서도 fix |
 | 2026-05-17 | §D 모바일 floating 언어 pill 랜딩 (옵션 A) | (pending) | 사용자 옵션 A 선택. `components/FloatingLanguageToggle.tsx` 신규 (md:hidden, bottom-[calc(env(safe-area-inset-bottom,0px)+80px)] right-4 z-40). Globe 아이콘 + 2글자 코드 pill, 상향 dropdown(`bottom-full right-0`), 기존 i18n 핸들러 재사용(LanguageSwitcher와 동일 navigateWithLocale 로직). Sticky competition 가드: `[data-home-hero]`+`[data-home-final-cta]` IntersectionObserver(StickyHomeCta와 동일 sentinel)로 heroOut&&!footerIn 시 `opacity-0 pointer-events-none`. 마운트: `SitePageShell.tsx` (showBottomNav=true일 때만) + `app/[locale]/page.tsx`. tour-product layout은 showBottomNav=false라 자동 제외 — sticky 예약 바와 충돌 없음. SSR 검증: iPhone UA 페이지 HTML에 `aria-label="Change language"` + `aria-haspopup="menu"` + `fixed right-4 z-40 md:hidden bottom-[calc(env(safe-area-inset-bottom,0px)+80px)] ... opacity-100` 정확히 출력 확인. 인터랙션 검증: Chrome MCP 세션 만료로 사용자 수기 테스트로 지연 — 동일 핸들러 사용(헤더 5-클릭 fix 검증분과 공유)이라 회귀 위험 낮음 |
+| 2026-05-21 | 통합 플래너 플랜 실행 진입 — Phase 0 Gate 정합 | (pending) | `docs/landing-matcher-builder-unified-plan-2026-05-20.md`. Gate 0.5(빌더재설계 완료·main) 해소, 0.6(정직성) 적용. §B 번복 2건 추가(ItineraryBuilderEntry 제거 / 매처 헤더 데스크톱 한정 재도입) |
+| 2026-05-21 | 사실 수정 — §A Phase 0b "baseline 미수집" | (pending) | 실측: 47 visitors / 100 sessions / 838 events / 3.3일(~14/day). A/B 4종 변이당 10-15명(min 200)→검정력 없음. §A 0b row + 활성 Phase note 갱신 |
+| 2026-05-21 | Gate 0.4 — 실험 conclude 보류 (승인 대기) | — | home_cta_copy/morphing/bottomsheet conclude 권장하나 production DB write 자동 거부됨(명시 승인 필요). Phase 1(추출)은 실험 wiring 보존이라 미차단; Phase 2 CTA 재구성 전 처리 |
+| 2026-05-21 | lint 위생 — `react-hooks/set-state-in-effect` 4건 제거 + IdleMatchPreviewCarousel hydration mismatch 수정 (behavior-neutral) | (pending) | 통합 플래너 Phase 1 중 발견된 pre-existing 부채(스킬 rule 1c, in-flight bug-fix). (a) matchMedia setState-in-effect 2건(MatcherBottomSheet/MatcherMorphingPanel) → `useSyncExternalStore` 훅 신규(`components/home/v2/use-media-query.ts`, getServerSnapshot=false로 기존 `useState(false)` 초기값 보존), 브레이크포인트(max-767/min-768) 불변. (b) 실험 변이 폴링 setState 2건 → `getExperimentVariantAsync().then(setVariant)` (landing-planner-card `home_cta_copy` 패턴), 실험 키/할당 로직 불변. (c) IdleMatchPreviewCarousel: `reduceMotion` 의존 inline `transition` → CSS class + `@media (prefers-reduced-motion: reduce)`로 이전(hydration mismatch 원인 제거, `reduceMotion`은 auto-cycle 게이트로 유지). `hooks/useMediaQuery.ts`는 site-diet 삭제 후보라 미사용. 검증: `npm run lint` exit 0 + `tsc --noEmit` 터치 파일 클린 + 프리뷰 reload 콘솔 error 0 (직전 hydration-mismatch 6건 → 0, prefersReducedMotion=true 환경) |
 
 ---
 
