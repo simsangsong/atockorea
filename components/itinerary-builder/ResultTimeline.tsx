@@ -5,9 +5,9 @@ import {
   ArrowLeft,
   ArrowUp,
   Car,
+  ChevronRight,
   Clock,
   GripVertical,
-  ImageIcon,
   MapPin,
   Trash2,
 } from "lucide-react";
@@ -45,8 +45,8 @@ interface Props {
   onGetQuote: () => void;
   /** Cruise track time budget in minutes (e.g. 6h cruise = 360). */
   cruiseBudgetMinutes?: number | null;
-  /** Click thumbnail/name → focus pin on map (Phase 4 will add reverse sync). */
-  onFocusPoi?: (poiKey: string) => void;
+  /** R1 — card body tap opens the shared POIDetailModal (lifted to BuilderShell). */
+  onOpenDetail?: (poi: MatchPoiRow) => void;
 }
 
 /**
@@ -76,7 +76,7 @@ export default function ResultTimeline({
   onReorder,
   onGetQuote,
   cruiseBudgetMinutes,
-  onFocusPoi,
+  onOpenDetail,
 }: Props) {
   const t = useTranslations("itineraryBuilder.cart");
   const tt = useTranslations("itineraryBuilder.timeline");
@@ -147,7 +147,7 @@ export default function ResultTimeline({
                     isActive={activeKey === poi.poi_key}
                     onHover={(hover) => setActive(hover ? poi.poi_key : null, "timeline")}
                     onRemove={() => onRemove(poi.poi_key)}
-                    onFocus={onFocusPoi ? () => onFocusPoi(poi.poi_key) : undefined}
+                    onOpenDetail={onOpenDetail ? () => onOpenDetail(poi) : undefined}
                     removeLabel={t("remove")}
                   />
                   {idx < cartPois.length - 1 ? (
@@ -192,7 +192,7 @@ function SortableStopCard({
   isActive,
   onHover,
   onRemove,
-  onFocus,
+  onOpenDetail,
   removeLabel,
 }: {
   poi: MatchPoiRow;
@@ -200,7 +200,7 @@ function SortableStopCard({
   isActive: boolean;
   onHover: (hover: boolean) => void;
   onRemove: () => void;
-  onFocus?: () => void;
+  onOpenDetail?: () => void;
   removeLabel: string;
 }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
@@ -210,7 +210,15 @@ function SortableStopCard({
     transition,
     opacity: isDragging ? 0.6 : 1,
   };
-  const thumb = poi.default_image_url || poi.images?.[0] || null;
+
+  // RR4 — compose strip uses every photo the POI has (jsonb→array at runtime);
+  // fall back to default_image_url, then to a slate letter thumb (no amber, V5).
+  const photos =
+    Array.isArray(poi.images) && poi.images.length > 0
+      ? poi.images
+      : poi.default_image_url
+        ? [poi.default_image_url]
+        : [];
 
   return (
     <li
@@ -219,83 +227,111 @@ function SortableStopCard({
       data-poi-card={poi.poi_key}
       onMouseEnter={() => onHover(true)}
       onMouseLeave={() => onHover(false)}
-      className={`relative flex items-center gap-3 rounded-2xl bg-white/70 p-2.5 backdrop-blur-sm transition-all duration-200 ease-out motion-reduce:transition-none ${
-        isActive
-          ? "ring-2 ring-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.18)]"
-          : "ring-1 ring-slate-200/70 hover:bg-amber-50/50 hover:ring-amber-200"
-      }`}
+      className="relative"
     >
-      {/* Sequence node on the connector (overlaps the dashed line) */}
+      {/* Sequence node on the connector (V5 sequence identity) */}
       <span
         aria-hidden
-        className="absolute -left-7 top-1/2 inline-flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full bg-amber-500 text-[11px] font-bold leading-none text-white shadow-[0_0_0_3px_rgba(251,191,36,0.20)] ring-2 ring-white"
+        className="absolute -left-7 top-10 z-10 inline-flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full bg-amber-500 text-[11px] font-bold leading-none text-white shadow-[0_0_0_3px_rgba(251,191,36,0.20)] ring-2 ring-white"
       >
         {seq}
       </span>
 
-      {/* Drag handle (subtle, hover-emphasised) */}
+      {/* Card body — tap opens the shared detail drawer (RR2/RR7). The body is
+          a single button; the drag handle + remove are ABSOLUTE siblings (not
+          nested) so gestures don't conflict. */}
+      <button
+        type="button"
+        onClick={onOpenDetail}
+        className={`group block w-full overflow-hidden rounded-2xl bg-white/95 text-left backdrop-blur-sm transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-px motion-reduce:transition-none ${
+          isActive
+            ? "shadow-[0_0_0_3px_rgba(251,191,36,0.18)] ring-2 ring-amber-400"
+            : "shadow-[0_10px_28px_-18px_rgba(15,23,42,0.22)] ring-1 ring-slate-200/70 hover:shadow-[0_18px_40px_-22px_rgba(15,23,42,0.32)]"
+        }`}
+      >
+        {/* Compose photo strip (RR1) — every image, horizontally scrollable. */}
+        {photos.length > 0 ? (
+          <div className="flex gap-1.5 overflow-x-auto px-3 pb-1.5 pt-3 scrollbar-hide">
+            {photos.map((src, i) => (
+              <span
+                key={`${src}-${i}`}
+                className="relative h-14 w-20 flex-shrink-0 overflow-hidden rounded-md bg-slate-100 ring-1 ring-slate-900/5"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={src}
+                  alt=""
+                  width={80}
+                  height={56}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
+              </span>
+            ))}
+          </div>
+        ) : (
+          <div className="flex px-3 pb-1.5 pt-3">
+            <span className="flex h-14 w-20 flex-shrink-0 items-center justify-center rounded-md bg-slate-100 text-2xl font-bold text-slate-300 ring-1 ring-slate-900/5">
+              {(poi.name_en?.[0] ?? "?").toUpperCase()}
+            </span>
+          </div>
+        )}
+
+        {/* Header — duration · title · ko · category · chevron. No clock-time:
+            builder has no scheduled time, only default_stay_minutes (R1 §C). */}
+        <div className="px-3.5 pb-3.5 pt-2">
+          <div className="flex items-start justify-between gap-2.5">
+            <div className="min-w-0 flex-1">
+              {poi.default_stay_minutes ? (
+                <div className="flex items-center gap-1 text-micro text-slate-500">
+                  <Clock className="h-3 w-3" aria-hidden />
+                  <span className="tabular-nums">{formatMinutes(poi.default_stay_minutes)}</span>
+                </div>
+              ) : null}
+              <h3 className="mt-1 truncate text-caption font-semibold leading-snug tracking-tight text-slate-900">
+                {poi.name_en}
+              </h3>
+              {poi.name_ko ? (
+                <p className="mt-0.5 truncate text-micro text-slate-500">{poi.name_ko}</p>
+              ) : null}
+              {poi.category ? (
+                <p className="mt-1 truncate text-[10px] font-medium uppercase tracking-wide text-slate-400">
+                  {poi.category}
+                </p>
+              ) : null}
+            </div>
+            <ChevronRight
+              className="mt-0.5 h-4 w-4 flex-shrink-0 text-slate-400 transition-colors group-hover:text-slate-600"
+              aria-hidden
+            />
+          </div>
+        </div>
+      </button>
+
+      {/* Drag handle — owns drag (RR7); absolute sibling so it isn't nested. */}
       <button
         type="button"
         {...attributes}
         {...listeners}
         aria-label="Reorder"
-        className="-ml-0.5 touch-none cursor-grab rounded p-1 text-slate-300 transition-colors duration-150 hover:bg-slate-100 hover:text-slate-500 active:cursor-grabbing"
+        onClick={(e) => e.stopPropagation()}
+        className="absolute left-2 top-2 z-10 touch-none cursor-grab rounded-full bg-white/85 p-1 text-slate-400 shadow-sm ring-1 ring-slate-200/80 backdrop-blur-sm transition-colors duration-150 hover:text-slate-700 active:cursor-grabbing"
       >
-        <GripVertical className="h-4 w-4" aria-hidden />
+        <GripVertical className="h-3.5 w-3.5" aria-hidden />
       </button>
 
-      {/* Thumbnail */}
+      {/* Remove — absolute sibling top-right. */}
       <button
         type="button"
-        onClick={onFocus}
-        disabled={!onFocus}
-        title="See on map"
-        className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded-xl bg-slate-100 disabled:cursor-default"
-      >
-        {thumb ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={thumb}
-            alt=""
-            loading="lazy"
-            className="h-full w-full object-cover"
-          />
-        ) : (
-          <ImageIcon className="absolute inset-0 m-auto h-5 w-5 text-slate-400" aria-hidden />
-        )}
-      </button>
-
-      {/* Content */}
-      <button
-        type="button"
-        onClick={onFocus}
-        disabled={!onFocus}
-        className="min-w-0 flex-1 cursor-pointer text-left disabled:cursor-default"
-      >
-        <p className="truncate text-caption font-bold leading-snug text-slate-900">
-          {poi.name_en}
-        </p>
-        {poi.name_ko ? (
-          <p className="mt-0.5 truncate text-micro text-slate-500">{poi.name_ko}</p>
-        ) : null}
-        <div className="mt-1 flex flex-wrap items-center gap-1.5">
-          {poi.default_stay_minutes ? (
-            <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 text-micro font-semibold text-slate-700">
-              <Clock className="h-2.5 w-2.5" aria-hidden />
-              {poi.default_stay_minutes}m
-            </span>
-          ) : null}
-        </div>
-      </button>
-
-      {/* Remove */}
-      <button
-        type="button"
-        onClick={onRemove}
+        onClick={(e) => {
+          e.stopPropagation();
+          onRemove();
+        }}
         aria-label={removeLabel}
-        className="flex-shrink-0 rounded-full p-1.5 text-slate-300 transition-colors duration-150 hover:bg-rose-50 hover:text-rose-600"
+        className="absolute right-2 top-2 z-10 rounded-full bg-white/85 p-1.5 text-slate-400 shadow-sm ring-1 ring-slate-200/80 backdrop-blur-sm transition-colors duration-150 hover:bg-rose-50 hover:text-rose-600"
       >
-        <Trash2 className="h-4 w-4" aria-hidden />
+        <Trash2 className="h-3.5 w-3.5" aria-hidden />
       </button>
     </li>
   );

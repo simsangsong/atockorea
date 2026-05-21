@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Plus, Check, Clock, ImageIcon } from "lucide-react";
 import { SnapScrollDots } from "@/components/home/v2/ui/SnapScrollDots";
@@ -9,7 +9,6 @@ import {
   useRevealContainerProps,
 } from "@/components/home/v2/ui/reveal";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
-import POIDetailModal from "./POIDetailModal";
 
 interface Props {
   pois: MatchPoiRow[];
@@ -17,6 +16,8 @@ interface Props {
   onAdd: (key: string) => void;
   onRemove: (key: string) => void;
   onFocus: (key: string) => void;
+  /** R1 — open the shared detail drawer lifted to BuilderShell (RR2/RR-R3). */
+  onOpenDetail: (poi: MatchPoiRow) => void;
 }
 
 /**
@@ -27,10 +28,9 @@ interface Props {
  * thicker amber ring + sequence ribbon (so users see "this is stop #3"
  * at a glance).
  */
-export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus }: Props) {
+export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus, onOpenDetail }: Props) {
   const reveal = useRevealContainerProps();
   const scrollRef = useRef<HTMLUListElement>(null);
-  const [detailPoi, setDetailPoi] = useState<MatchPoiRow | null>(null);
 
   // Map poi_key → 1-indexed cart position; null when not in cart.
   const cartPosition = new Map(cart.map((k, i) => [k, i + 1]));
@@ -142,7 +142,7 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus }:
                         type="button"
                         onClick={(e) => {
                           e.stopPropagation();
-                          setDetailPoi(poi);
+                          onOpenDetail(poi);
                         }}
                         className="text-micro font-semibold text-slate-500 underline-offset-2 transition-colors hover:text-slate-900 hover:underline"
                       >
@@ -152,7 +152,8 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus }:
                         type="button"
                         onClick={(e) => {
                           e.stopPropagation();
-                          inCart ? onRemove(poi.poi_key) : onAdd(poi.poi_key);
+                          if (inCart) onRemove(poi.poi_key);
+                          else onAdd(poi.poi_key);
                         }}
                         className={`group/btn inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-micro font-bold transition-colors duration-200 ease-out ${
                           inCart
@@ -186,25 +187,6 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus }:
         </div>
         <SnapScrollDots containerRef={scrollRef} count={ordered.length} />
       </motion.div>
-
-      {detailPoi ? (
-        <POIDetailModal
-          poi={detailPoi}
-          inCart={cartPosition.has(detailPoi.poi_key)}
-          onClose={() => setDetailPoi(null)}
-          onAdd={() => {
-            onAdd(detailPoi.poi_key);
-            setDetailPoi(null);
-          }}
-          onRemove={() => {
-            onRemove(detailPoi.poi_key);
-          }}
-          onFocus={() => {
-            onFocus(detailPoi.poi_key);
-            setDetailPoi(null);
-          }}
-        />
-      ) : null}
     </section>
   );
 }

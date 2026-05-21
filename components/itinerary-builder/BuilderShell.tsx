@@ -12,6 +12,7 @@ import ResultTimeline from "./ResultTimeline";
 import QuoteModal from "./QuoteModal";
 import AIRecommendPanel from "./AIRecommendPanel";
 import POICatalogGrid from "./POICatalogGrid";
+import POIDetailModal from "./POIDetailModal";
 
 interface Props {
   region: RegionSlug;
@@ -46,6 +47,9 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
   const searchParams = useSearchParams();
   const [quoteOpen, setQuoteOpen] = useState(false);
   const [focusedPoiKey, setFocusedPoiKey] = useState<string | null>(null);
+  // R1 — single shared detail drawer for BOTH the timeline and the catalog
+  // grid (RR2/RR-R3). Lifted here so there is exactly one modal instance.
+  const [detailPoi, setDetailPoi] = useState<MatchPoiRow | null>(null);
   const resetViewRef = useRef<(() => void) | null>(null);
 
   // Bump key tracker so repeated clicks on the same POI re-open its InfoWindow
@@ -148,7 +152,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
               onReorder={reorder}
               onGetQuote={handleGetQuote}
               cruiseBudgetMinutes={cruiseBudgetMinutes}
-              onFocusPoi={focusPoi}
+              onOpenDetail={setDetailPoi}
             />
           </div>
         </div>
@@ -164,6 +168,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
         onAdd={add}
         onRemove={remove}
         onFocus={focusPoi}
+        onOpenDetail={setDetailPoi}
       />
 
       <QuoteModal
@@ -173,6 +178,27 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
         region={region}
         pois={pois}
       />
+
+      {/* R1 — one shared detail drawer for the timeline + the catalog grid.
+          onAdd/onFocus close it; onRemove keeps it open (inCart recomputes). */}
+      {detailPoi ? (
+        <POIDetailModal
+          poi={detailPoi}
+          inCart={has(detailPoi.poi_key)}
+          onClose={() => setDetailPoi(null)}
+          onAdd={() => {
+            add(detailPoi.poi_key);
+            setDetailPoi(null);
+          }}
+          onRemove={() => {
+            remove(detailPoi.poi_key);
+          }}
+          onFocus={() => {
+            focusPoi(detailPoi.poi_key);
+            setDetailPoi(null);
+          }}
+        />
+      ) : null}
     </ActiveStopProvider>
   );
 }
