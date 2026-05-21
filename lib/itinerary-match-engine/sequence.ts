@@ -264,6 +264,32 @@ function backfill(
   return current;
 }
 
+/** A POI that represents a sit-down/street-food meal (lunch etc.). */
+export function isMealStop(p: ScorablePoiRow): boolean {
+  const hay = `${p.category ?? ""} ${p.name_en ?? ""}`.toLowerCase();
+  return /\b(lunch|brunch|dinner|meal|food court)\b/.test(hay) || /점심|식사/.test(hay);
+}
+
+/**
+ * Reposition meal stops toward the middle of the day.
+ *
+ * `tspRoute` minimizes drive time only, so a lunch stop can land first or last
+ * — a meal at 9am reads as broken (user-reported). This keeps the non-meal
+ * stops in their drive-optimized order and re-inserts meal stops around the
+ * midpoint so the day flows morning sights → lunch → afternoon sights. The
+ * geographic delta is small because the day is already clustered (distance
+ * penalty + TSP); meal-timing realism is worth it.
+ */
+export function placeMealsMidday(ordered: ScorablePoiRow[]): ScorablePoiRow[] {
+  if (ordered.length < 3) return ordered; // 1-2 stops: nothing to reposition
+  const meals = ordered.filter(isMealStop);
+  if (meals.length === 0) return ordered;
+  const rest = ordered.filter((p) => !isMealStop(p));
+  if (rest.length === 0) return ordered; // all meals — leave as-is
+  const mid = Math.floor(rest.length / 2);
+  return [...rest.slice(0, mid), ...meals, ...rest.slice(mid)];
+}
+
 export function sequence(
   scored: { poi: ScorablePoiRow; total: number }[],
   opts: SequenceOpts
@@ -275,10 +301,10 @@ export function sequence(
   // more candidates in via insertion search.
   if (trimmed.length < opts.maxPois) {
     const filled = backfill(trimmed, scored, opts.region, opts.maxHours, opts.maxPois, opts.origin);
-    // Re-optimize the order after backfill
-    return tspRoute(filled, opts.region, opts.origin);
+    // Re-optimize the order after backfill, then float meals to midday.
+    return placeMealsMidday(tspRoute(filled, opts.region, opts.origin));
   }
-  return trimmed;
+  return placeMealsMidday(trimmed);
 }
 
 /** @deprecated — use tspRoute. Kept for older callsites if any. */
