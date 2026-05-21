@@ -36,9 +36,12 @@ const EN_NAMESPACE = {
     jejuName: "Jeju Island",
     jejuTagline: "UNESCO Triple Crown — sunrise peaks, lava caves, coastal drives",
     jejuStops: "25 curated stops",
+    seoulName: "Seoul",
+    seoulTagline: "Palaces + street food + Han River districts",
+    seoulStops: "22 curated stops",
     browseTheMap: "Browse the map",
     open: "Open",
-    comingSoonNote: "Seoul + DMZ rollout planned after MVP.",
+    comingSoonNote: "More Korea regions coming soon.",
   },
   map: {
     loadingLabel: "Loading map…",
