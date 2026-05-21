@@ -28,12 +28,27 @@ import {
 } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import { analytics, getExperimentVariantAsync } from "@/src/design/analytics";
+import {
+  asPlannerDestination,
+  dispatchPlannerBuild,
+  PLANNER_DEST_LABEL_KEY,
+} from "@/lib/home/planner-build-bridge";
 
 export function MatcherMorphingPanel() {
   const t = useTranslations("home");
   const { locale } = useI18n();
-  const { phase, loadingStep, matchResult, resetMatchToIdle } = useHomeV2Match();
+  const { phase, loadingStep, matchResult, matchedDestination, resetMatchToIdle } = useHomeV2Match();
   const reduceMotion = useReducedMotion();
+
+  // Phase 5 bridge — offered only when the match was pinned to a known builder
+  // destination. Closes the morph result and flips the planner into build mode.
+  const bridgeDestination = asPlannerDestination(matchedDestination);
+  const handleCustomizeFromMatch = () => {
+    if (!bridgeDestination) return;
+    analytics.unifiedPlannerCustomizeFromMatch({ destination: bridgeDestination });
+    resetMatchToIdle();
+    dispatchPlannerBuild();
+  };
 
   const [variant, setVariant] = useState<string | null>(null);
   const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -170,6 +185,18 @@ export function MatcherMorphingPanel() {
                 <ChevronRight className="h-3.5 w-3.5" aria-hidden />
               </Link>
             </div>
+
+            {bridgeDestination ? (
+              <button
+                type="button"
+                onClick={handleCustomizeFromMatch}
+                className="focus-ring border-t border-slate-100 px-4 py-2.5 text-center text-caption font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-900"
+              >
+                {t("premium.v2.planner.customizeThisDay", {
+                  destination: t(PLANNER_DEST_LABEL_KEY[bridgeDestination]),
+                })}
+              </button>
+            ) : null}
           </motion.div>
         )}
       </AnimatePresence>

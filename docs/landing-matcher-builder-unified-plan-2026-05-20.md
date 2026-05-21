@@ -2,7 +2,7 @@
 
 Date: 2026-05-20
 
-Status: **Phase 0 gate cleared + Phases 1–4 shipped & verified (2026-05-21); planner i18n complete in all 6 locales; `unified_planner_*` analytics events wired (2026-05-21).** The unified planner (matcher + `Match me` / `Build myself` modes) is live in the hero, and the separate `ItineraryBuilderEntry` section has been removed from the homepage. **Phase 5 (match→build bridge) is now 🔄 IN PROGRESS** — user gave explicit approval to edit the match-result surfaces (2026-05-21). v3 (`docs/landing-page-uiux-master-plan-v3-2026-05-17.md`) remains the binding source of truth for the landing surface; this plan reconciled with its §B decisions (reversal rows logged 2026-05-21), it did not override them silently.
+Status: **Phase 0 gate cleared + Phases 1–4 shipped & verified (2026-05-21); planner i18n complete in all 6 locales; `unified_planner_*` analytics events wired (2026-05-21).** The unified planner (matcher + `Match me` / `Build myself` modes) is live in the hero, and the separate `ItineraryBuilderEntry` section has been removed from the homepage. **Phase 5 (match→build bridge) is now ✅ DONE** — the honest `Build your own day in {destination}` CTA on match results flips the planner into build mode (2026-05-21). All planned phases complete; remaining items are user actions (conclude experiments, confirm Seoul target) + push. v3 (`docs/landing-page-uiux-master-plan-v3-2026-05-17.md`) remains the binding source of truth for the landing surface; this plan reconciled with its §B decisions (reversal rows logged 2026-05-21), it did not override them silently.
 
 History — reviewed against v3 + verified code reality (2026-05-20); Phase 0 gate + Governance section added and route / i18n / bridge-copy honesty fixes applied in the 2026-05-21 revision; gate cleared and Phases 1–4 executed 2026-05-21 (see the Phase 0 Resolution log + per-phase ✅ DONE notes). Outstanding user actions: conclude the 3 power-empty experiments (Gate 0.4, DB write needs explicit auth), confirm the Seoul "Request a Seoul day" target, and (optional) approve Phase 5. Planner i18n for es/ja/zh/zh-TW shipped 2026-05-21.
 
@@ -703,7 +703,7 @@ Acceptance criteria:
 
 ### Phase 5: Recommendation-To-Builder Bridge
 
-**🔄 IN PROGRESS (started 2026-05-21).** User gave explicit approval to edit the match-result surfaces ("Phase 5 브릿지 시작"), which clears the deferral gate (the directive guarded against *silent* edits; this is an authorized one). The still-running result experiments are power-empty (Gate 0.4: 10–15 participants/variant vs ≥200), so adding an additive secondary CTA does not meaningfully contaminate attribution.
+**✅ DONE (2026-05-21).** User gave explicit approval to edit the match-result surfaces ("Phase 5 브릿지 시작"), which cleared the deferral gate (the directive guarded against *silent* edits; this was an authorized one). The still-running result experiments are power-empty (Gate 0.4: 10–15 participants/variant vs ≥200), so the additive secondary CTA does not meaningfully contaminate attribution. (Full ✅ detail at the end of this section.)
 
 *(Prior state — kept for history: ⏸ DEFERRED 2026-05-21, gated on explicit approval; overlapped by running result experiments.)*
 
@@ -738,6 +738,15 @@ Recommended:
 - Keep initial implementation local.
 - Add a custom DOM event only if avoiding provider changes is important.
 - Better long-term: create a small `HomePlannerProvider` if multiple components need mode control.
+
+**✅ DONE (2026-05-21).** Shipped the honest bridge (`Build your own day in {destination}`, NOT "Customize this day" — Gate 0.6, no product→POI carry-over claimed):
+
+- New shared helper `lib/home/planner-build-bridge.ts` — `PLANNER_BUILD_EVENT` (`atoc:planner-build`), `PLANNER_DEST_LABEL_KEY` (reuses `premium.hero.dest{Jeju|Seoul|Busan}`), `asPlannerDestination()` (narrows `string|null` → `HeroDestination|null`), `dispatchPlannerBuild()`. Centralised so the event name can't drift between dispatcher and listener.
+- `HomeV2MatchProvider` — added `matchedDestination: string|null` (set from `pinnedDestination` in `startInPageMatchFlow`, cleared in `resetMatchToIdle`).
+- `BestMatchPreview` (covers desktop slot-2 **and** mobile bottom-sheet — it renders `BestMatchPreview` internally) + `MatcherMorphingPanel` (desktop morph variant B) — render the bridge CTA in the result footer **only when `matchedDestination` narrows to a known builder destination**. Click → `analytics.unifiedPlannerCustomizeFromMatch({ destination })` + `resetMatchToIdle()` (closes the result surface) + `dispatchPlannerBuild()`.
+- `LandingPlannerCard` — listens for `PLANNER_BUILD_EVENT`, flips `setMode("build")`, and `scrollIntoView`s the card (reduced-motion → `auto`). destination/intent are its current props, so the same destination carries into the build preview.
+
+Verified: all 6 touched files pass `eslint --max-warnings 0` (analytics.ts retains its one PRE-EXISTING line-346 `no-console` warning) + `tsc --noEmit`; 6-locale `customizeThisDay` parity confirmed with `{destination}` placeholder intact. Live click-through (result → bridge → build mode + scroll) remains a manual browser check (same basis as Phase 4).
 
 ## Analytics
 
@@ -808,7 +817,7 @@ Proposed keys:
 - The match microcopy ("No sign-up · No card · 30 seconds") likely already exists under `home.premium.hero.*` — check before adding a planner copy.
 - `customizeThisDay` uses `{destination}` interpolation — localize the destination noun per locale.
 
-**✅ i18n DONE (2026-05-21).** Shipped `home.premium.v2.planner` in all 6 locales. Actual shipped key set is **11 keys**: `headline`, `subhead`, `modeMatch`, `modeBuild`, `modeSwitchAria`, `buildCta`, `buildMicrocopy`, `buildPreviewMicrocopy`, `seoulBuildTitle`, `seoulBuildBody`, `seoulBuildCta`. The proposed-keys block above predates the build (사실 수정): `modeSwitchAria` + `buildPreviewMicrocopy` were added during Phase 2, and `customizeThisDay` is **deferred to Phase 5** (intentionally not yet present — match-mode CTA reuses `home.premium.hero.findMatchCta` per Gate 0.6). en/ko authored in Phase 2; es/ja/zh/zh-TW added 2026-05-21, anchored on existing house terms (`getQuoteCta` → presupuesto / お見積もり / 报价 / 報價; `findMatchCta` → recomendación / おすすめ / 推荐 / 推薦; stops → paradas / スポット / 景点 / 景點). Verified: all 6 files parse + exact 11-key parity (no missing/extra).
+**✅ i18n DONE (2026-05-21).** Shipped `home.premium.v2.planner` in all 6 locales. Actual shipped key set is **11 keys**: `headline`, `subhead`, `modeMatch`, `modeBuild`, `modeSwitchAria`, `buildCta`, `buildMicrocopy`, `buildPreviewMicrocopy`, `seoulBuildTitle`, `seoulBuildBody`, `seoulBuildCta`. The proposed-keys block above predates the build (사실 수정): `modeSwitchAria` + `buildPreviewMicrocopy` were added during Phase 2; `customizeThisDay` shipped later in **Phase 5** (2026-05-21, 6 locales, `{destination}` interpolation) — match-mode CTA still reuses `home.premium.hero.findMatchCta` per Gate 0.6. en/ko authored in Phase 2; es/ja/zh/zh-TW added 2026-05-21, anchored on existing house terms (`getQuoteCta` → presupuesto / お見積もり / 报价 / 報價; `findMatchCta` → recomendación / おすすめ / 推荐 / 推薦; stops → paradas / スポット / 景点 / 景點). Verified: all 6 files parse + exact 11-key parity (no missing/extra).
 
 ## Accessibility
 

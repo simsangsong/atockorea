@@ -485,6 +485,13 @@ export const analytics = {
   unifiedPlannerSeoulRequest: (payload: { hasIntent: boolean }) =>
     trackEvent("unified_planner_seoul_request", payload),
 
+  /** Unified planner (Phase 5 bridge) — "Build your own day in {destination}"
+   *  click on a match result. Flips the planner into build mode for the same
+   *  destination (no product→POI carry-over claimed). */
+  unifiedPlannerCustomizeFromMatch: (payload: {
+    destination: UnifiedPlannerDestination;
+  }) => trackEvent("unified_planner_customize_from_match", payload),
+
   matchPageSubmit: (payload: { textLength: number; locale: string }) =>
     trackEvent("match_page_submit", payload),
 

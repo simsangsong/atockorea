@@ -25,6 +25,10 @@ export type HomeV2MatchContextValue = {
   joinImageUrl: string;
   matchResult: TourMatchApiResponse | null;
   matchError: string | null;
+  /** The destination pinned for the current match (jeju/seoul/busan), or null.
+   *  Phase 5 bridge reads this so the result surfaces know which destination to
+   *  offer "Build your own day in {destination}" for. */
+  matchedDestination: string | null;
   startInPageMatchFlow: (
     text: string,
     locale: string,
@@ -42,6 +46,7 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
   const [matchResult, setMatchResult] = useState<TourMatchApiResponse | null>(null);
   const [matchError, setMatchError] = useState<string | null>(null);
   const [matchedJoinImageUrl, setMatchedJoinImageUrl] = useState<string | null>(null);
+  const [matchedDestination, setMatchedDestination] = useState<string | null>(null);
   const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => () => clearHomepageMatchTimeouts(timeoutsRef), []);
@@ -80,6 +85,7 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
     setMatchResult(null);
     setMatchError(null);
     setMatchedJoinImageUrl(null);
+    setMatchedDestination(null);
   }, []);
 
   const startInPageMatchFlow = useCallback(async (
@@ -91,6 +97,7 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
     setMatchError(null);
     setMatchResult(null);
     setMatchedJoinImageUrl(null);
+    setMatchedDestination(pinnedDestination ?? null);
     setPhase("loading");
     setLoadingStep(0);
 
@@ -174,10 +181,11 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
       joinImageUrl,
       matchResult,
       matchError,
+      matchedDestination,
       startInPageMatchFlow,
       resetMatchToIdle,
     }),
-    [phase, loadingStep, joinImageUrl, matchResult, matchError, startInPageMatchFlow, resetMatchToIdle],
+    [phase, loadingStep, joinImageUrl, matchResult, matchError, matchedDestination, startInPageMatchFlow, resetMatchToIdle],
   );
 
   return <HomeV2MatchContext.Provider value={value}>{children}</HomeV2MatchContext.Provider>;

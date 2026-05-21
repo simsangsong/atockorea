@@ -14,6 +14,7 @@ import { HOME_STYLE_OPTIONS } from "@/src/components/home/home-style-options";
 import { PLANNER_BUILD_PREVIEW } from "@/lib/home/planner-builder-preview";
 import { useHomeV2Match } from "@/components/home/v2/HomeV2MatchProvider";
 import { analytics, getExperimentVariantAsync } from "@/src/design/analytics";
+import { PLANNER_BUILD_EVENT } from "@/lib/home/planner-build-bridge";
 import { cn } from "@/lib/utils";
 
 /** v3 Phase D.1 — desktop in-place morphing panel.
@@ -80,6 +81,26 @@ export function LandingPlannerCard({
   const [intentExpanded, setIntentExpanded] = useState(false);
   const intentInputRef = useRef<HTMLTextAreaElement>(null);
   const intentFocusFiredRef = useRef(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  // Phase 5 bridge — a match-result surface dispatches PLANNER_BUILD_EVENT when
+  // the user picks "Build your own day in {destination}". The result surface has
+  // already reset the match to idle (closing itself), so here we just flip into
+  // build mode and bring the card into view. destination/intent are unchanged
+  // (current props), so the same destination carries over.
+  useEffect(() => {
+    const onBuildRequest = () => {
+      setMode("build");
+      requestAnimationFrame(() => {
+        cardRef.current?.scrollIntoView({
+          behavior: reduceMotion ? "auto" : "smooth",
+          block: "center",
+        });
+      });
+    };
+    window.addEventListener(PLANNER_BUILD_EVENT, onBuildRequest);
+    return () => window.removeEventListener(PLANNER_BUILD_EVENT, onBuildRequest);
+  }, [reduceMotion]);
 
   const styleChipOptions = useMemo(
     () =>
@@ -165,7 +186,7 @@ export function LandingPlannerCard({
   };
 
   return (
-    <div className="relative mx-auto max-w-lg">
+    <div ref={cardRef} className="relative mx-auto max-w-lg">
       <div className="relative rounded-card border border-slate-200/70 bg-white p-4 shadow-1 md:p-5">
         {/* Desktop in-place result morphing — match mode only (no-op for
             variant A / mobile / idle phase). */}

@@ -19,6 +19,11 @@ import { getFeaturedJoinTourProduct } from "@/lib/home/featured-join-tour-offer"
 import { getSimilarTours } from "@/lib/home/similar-tours";
 import { SimilarToursStrip } from "@/components/home/v2/SimilarToursStrip";
 import { homeBtnPrimary, homeBtnSecondary } from "@/lib/home/home-button-classes";
+import {
+  asPlannerDestination,
+  dispatchPlannerBuild,
+  PLANNER_DEST_LABEL_KEY,
+} from "@/lib/home/planner-build-bridge";
 
 /** Shell for idle + result cards — matches `home-premium` hero-match offer depth (group hover). */
 const bestMatchCardShellClassName =
@@ -97,7 +102,18 @@ function MatchResultHeroImageSlot({
 export function BestMatchPreview() {
   const t = useTranslations("home");
   const { locale } = useI18n();
-  const { phase, loadingStep, joinImageUrl, matchResult, matchError, resetMatchToIdle } = useHomeV2Match();
+  const { phase, loadingStep, joinImageUrl, matchResult, matchError, matchedDestination, resetMatchToIdle } = useHomeV2Match();
+
+  // Phase 5 bridge — only offered when we know which builder destination the
+  // match was pinned to (jeju/seoul/busan). Honest copy: switches the planner
+  // into build mode for the same destination; no product→POI carry-over.
+  const bridgeDestination = asPlannerDestination(matchedDestination);
+  const handleCustomizeFromMatch = () => {
+    if (!bridgeDestination) return;
+    analytics.unifiedPlannerCustomizeFromMatch({ destination: bridgeDestination });
+    resetMatchToIdle();
+    dispatchPlannerBuild();
+  };
 
   const revealRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -421,6 +437,18 @@ export function BestMatchPreview() {
               <V0ShadcnButton asChild variant="outline" className={cn(homeBtnSecondary, "sm:w-auto sm:px-5")}>
                 <Link href={resultVm.browseToursHref}>{resultVm.seeOtherToursCta}</Link>
               </V0ShadcnButton>
+              {bridgeDestination ? (
+                <V0ShadcnButton
+                  type="button"
+                  variant="outline"
+                  className={cn(homeBtnSecondary, "sm:w-auto sm:px-5")}
+                  onClick={handleCustomizeFromMatch}
+                >
+                  {t("premium.v2.planner.customizeThisDay", {
+                    destination: t(PLANNER_DEST_LABEL_KEY[bridgeDestination]),
+                  })}
+                </V0ShadcnButton>
+              ) : null}
             </div>
 
             <p className="text-center text-micro text-slate-500 mt-3 leading-relaxed md:mt-5">
