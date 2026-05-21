@@ -2026,7 +2026,48 @@
       "close": "Cerrar",
       "responseHint": "Te responderemos por correo electrónico en un plazo de 24 horas.",
       "errorEmailRequired": "Por favor, ingresa tu correo electrónico para que podamos responderte.",
-      "errorGeneric": "No se pudo enviar la solicitud — por favor, inténtalo de nuevo o contacta a soporte."
+      "errorGeneric": "No se pudo enviar la solicitud — por favor, inténtalo de nuevo o contacta a soporte.",
+      "eyebrow": "Itinerario a medida",
+      "guideLanguageLabel": "Idioma del guía",
+      "durationLabel": "Duración del tour",
+      "hoursOption": "{hours} h",
+      "solatiUnavailable": "10–13 requiere 6 h+",
+      "pickupLabel": "Zona de recogida en Jeju",
+      "cartHeader": "Tus paradas",
+      "andNMore": "+{n} más",
+      "pricing": {
+        "title": "Precio estimado",
+        "total": "Total estimado",
+        "estimateNote": "Estimación en vivo: confirmamos el precio final por correo.",
+        "manualTitle": "Lo confirmamos por correo",
+        "manualNote": "El tamaño de tu grupo o las opciones requieren una revisión rápida; te responderemos en 24 horas con el precio exacto.",
+        "solatiMinHint": "Los grupos de 10–13 (furgoneta Solati) parten de 6 horas.",
+        "notIncluded": "Los costos de comidas y entradas a atracciones NO están incluidos en el precio del tour y se pagarán por separado el día del recorrido.",
+        "jejuSingleRegion": "Cada tour cubre UNA región de Jeju (Este, Oeste o Sur). Visitar dos regiones conlleva un cargo adicional de ₩60,000.",
+        "lines": {
+          "base": "Base — tour privado de {hours} h",
+          "van": "Vehículo — furgoneta (7–9 pers.)",
+          "solati": "Vehículo — Solati (10–13 pers.)",
+          "solatiPeak": "Vehículo — Solati (10–13, temporada alta)",
+          "region": "Recargo fuera de la ciudad",
+          "jejuCrossRegion": "Recargo por dos regiones",
+          "jejuPickup": "Zona de recogida ({zone})",
+          "dmzBase": "Tour privado DMZ ({pax} pers.)",
+          "cruiseExcursion": "Excursión de crucero",
+          "gangjeongPort": "Puerto de Gangjeong"
+        },
+        "pickupZones": {
+          "city": "Ciudad de Jeju — sin recargo",
+          "north": "Costa norte (Aewol, Samyang) +₩40,000",
+          "outer": "Zonas exteriores (Seongsan, Seogwipo) +₩60,000",
+          "cross_island": "Cruce de la isla (150 km+) +₩30,000"
+        },
+        "cruisePorts": {
+          "gangjeong": "Puerto de Gangjeong (Seogwipo) +₩70,000",
+          "jeju_port": "Puerto de Jeju (ciudad)"
+        }
+      },
+      "cruisePortLabel": "Puerto del crucero"
     },
     "intake": {
       "trackLegend": "¿Cómo viajas?",
@@ -2044,7 +2085,12 @@
       "submit": "Abrir el mapa",
       "browsePackagesInstead": "O explora nuestros tours ya armados →",
       "dateAndPartyDeferredHint": "Te preguntaremos la fecha de viaje + el número de personas al enviar tu cotización.",
-      "autoQuoteReassurance": "Algunos itinerarios tienen precio inmediato — para el resto te respondemos en 24h."
+      "autoQuoteReassurance": "Algunos itinerarios tienen precio inmediato — para el resto te respondemos en 24h.",
+      "trackDmzLabel": "Tour de la DMZ",
+      "guideLanguageLegend": "Idioma del guía",
+      "durationLegend": "Duración del tour",
+      "durationHint": "Elige cuántas horas dura tu día: el precio varía según las horas.",
+      "dmzHint": "El tour de la DMZ sigue un itinerario fijo (Tercer Túnel, observatorio, puente colgante) con precio cerrado según el tamaño del grupo. Elige el número de personas en el siguiente paso."
     },
     "cart": {
       "title": "Tu itinerario",
@@ -2097,6 +2143,11 @@
       "emptyBody": "Agrega paradas desde el mapa o la lista seleccionada — se alinearán aquí según tu ruta.",
       "lookAtMap": "Volver al mapa",
       "driveBetween": "{duration} en auto"
+    },
+    "dmz": {
+      "title": "Tour Privado de la DMZ",
+      "body": "Un itinerario fijo de día completo hasta la frontera más fortificada de la península coreana: Imjingak, el Tercer Túnel, el Observatorio Dora y el puente colgante de Gamaksan. Precio cerrado según el tamaño del grupo, con coche y guía privados.",
+      "cta": "Ver mi precio"
     }
   }
 }

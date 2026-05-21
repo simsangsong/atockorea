@@ -18,8 +18,10 @@ export const REGION_CLUSTER: Record<RegionSlug, readonly string[]> = {
   busan: ["busan", "yangsan", "gyeongju", "ulsan", "miryang"],
   jeju: ["jeju"],
   // Seoul cluster: central Seoul POIs + Gyeonggi day-trip corridors
-  // (Suwon, Nami Island, Hwaseong Fortress, etc.)
-  seoul: ["seoul", "gyeonggi"],
+  // (Suwon, Nami Island, Hwaseong Fortress) + Gangwon (Seoraksan, Chuncheon,
+  // Gangneung) + Incheon (cruise terminal). Phase 9 surcharge model prices the
+  // Gyeonggi (+₩30k) / Gangwon (+₩50k) day-trips.
+  seoul: ["seoul", "gyeonggi", "gangwon", "incheon"],
 };
 
 /** Map centroid per region for initial camera. */

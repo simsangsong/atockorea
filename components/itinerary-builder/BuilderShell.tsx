@@ -2,13 +2,14 @@
 
 import { useCallback, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { RotateCcw } from "lucide-react";
+import { RotateCcw, ShieldAlert, ArrowRight } from "lucide-react";
 import { useCart } from "@/lib/itinerary-builder/cart";
 import { ActiveStopProvider } from "@/lib/itinerary-builder/active-stop";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 import type { RegionSlug } from "@/lib/itinerary-builder/regions";
 import { localizePoiRow, normalizeBuilderLocale } from "@/lib/itinerary-builder/locale-content";
-import { useI18n } from "@/lib/i18n";
+import { useI18n, useTranslations } from "@/lib/i18n";
+import { homeBtnPrimary } from "@/lib/home/home-button-classes";
 import POICatalogMap from "./POICatalogMap";
 import ResultTimeline from "./ResultTimeline";
 import QuoteModal from "./QuoteModal";
@@ -90,6 +91,8 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
   }, [searchParams]);
   const matcherTrack = searchParams?.get("track") ?? null;
   const matcherOrigin = searchParams?.get("origin") ?? null;
+  const isDmz = matcherTrack === "dmz";
+  const dmzT = useTranslations("itineraryBuilder.dmz");
   const activeLocale = normalizeBuilderLocale(searchParams?.get("locale")) ?? locale;
   const localizedPois = useMemo(
     () => pois.map((poi) => localizePoiRow(poi, activeLocale)),
@@ -100,6 +103,45 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
     if (cart.length === 0) return;
     setQuoteOpen(true);
   }, [cart.length]);
+
+  // DMZ is a fixed-price-by-pax product — no POI building. Short-circuit the
+  // map/cart builder and show a product panel that opens the quote modal in
+  // DMZ mode (the modal prices by party size). Phase 9 §F task 9g.
+  if (isDmz) {
+    return (
+      <ActiveStopProvider>
+        <section className="mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-16 lg:px-8">
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_16px_40px_-24px_rgba(15,23,42,0.30)]">
+            <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900 px-6 py-8 md:px-10 md:py-10">
+              <p className="mb-2 inline-flex items-center gap-1.5 text-eyebrow text-amber-300">
+                <ShieldAlert className="h-3.5 w-3.5" aria-hidden />
+                DMZ
+              </p>
+              <h1 className="text-h3 text-white">{dmzT("title")}</h1>
+            </div>
+            <div className="px-6 py-7 md:px-10 md:py-9">
+              <p className="text-sm leading-relaxed text-slate-600">{dmzT("body")}</p>
+              <button
+                type="button"
+                onClick={() => setQuoteOpen(true)}
+                className={`${homeBtnPrimary} group mt-6 inline-flex items-center justify-center gap-2 shadow-md hover:gap-3`}
+              >
+                {dmzT("cta")}
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </button>
+            </div>
+          </div>
+        </section>
+        <QuoteModal
+          open={quoteOpen}
+          onClose={() => setQuoteOpen(false)}
+          cart={[]}
+          region={region}
+          pois={localizedPois}
+        />
+      </ActiveStopProvider>
+    );
+  }
 
   return (
     <ActiveStopProvider>
