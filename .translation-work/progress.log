@@ -1,0 +1,51 @@
+[2026-05-07] Translation run started. Target: 16 tours × 5 locales = 80 files.
+Locales: ko, ja, zh, zh-TW, es. Source: *.en.json. Validation: validate-translation.mjs.
+[2026-05-07 18:39:14] All 16 extracts ready. Total translatable strings:
+  busan-gyeongju-unesco-legacy-tour-national-museum: 766
+  busan-private-car-charter-cruise-shore: 747
+  busan-small-group-sightseeing-tour-cruise-passengers: 760
+  busan-top-attractions-day-tour: 768
+  from-busan-gyeongju-ancient-capital-day-tour: 713
+  from-incheon-seoul-day-tour-cruise-guests: 682
+  incheon-seoul-private-car-shore-excursion-cruise: 794
+  jeju-cruise-shore-excursion-small-group-tour: 1152
+  jeju-eastern-unesco-spots-day-tour: 874
+  jeju-grand-highlights-loop: 801
+  jeju-hydrangea-festival-tour-east-route: 841
+  jeju-hydrangea-festival-tour-southwest-route: 879
+  jeju-island-private-car-charter-tour: 674
+  jeju-west-south-full-day-authentic-tour: 988
+  pocheon-sanjeong-lake-herb-island-art-valley: 710
+  southwest-hallasan-osulloc-aewol: 910
+
+[2026-05-07] Phase 0 cleanup done — 72 audit user-facing hits remaining
+  Genuine leaks cleaned: 152 → 72 (-80)
+  Remaining 72 breakdown (mostly false positives):
+    23 SCHEMA_INTERNAL: word "legacy" in "UNESCO Legacy Tour" tour names — legitimate heritage term
+    17 CONFIDENTIAL_PARTNER_NAME: Lotte/Shilla/Hanwha hotel names in pickup/drop-off — required tourist info
+    24 INTERNAL_JARGON: "segment" as "portion of tour day" in itinerary descriptions — legitimate EN
+     6 AI_TONE_OVERUSE: "must-see", "bucket-list" — normal travel marketing, not removed per spec
+     1 OTA: TripAdvisor in _poi_meta.sources (internal attribution, nested under page_sections)
+     1 SOURCING: "sourced from 80 countries" in botanical garden description — false positive
+  Genuine uncleaned: ~2 (both minor, content-damage risk if forced)
+  Phase 0 COMPLETE — proceeding to Phase 1.
+
+[2026-05-07] Phase 1 re-extract done — 16 files
+  jeju-west-south-full-day-authentic-tour: 862 strings
+  busan-small-group-sightseeing-tour-cruise-passengers: 700 strings
+  busan-private-car-charter-cruise-shore: 685 strings
+  busan-top-attractions-day-tour: 691 strings
+  incheon-seoul-private-car-shore-excursion-cruise: 715 strings
+  busan-gyeongju-unesco-legacy-tour-national-museum: 703 strings
+  from-busan-gyeongju-ancient-capital-day-tour: 660 strings
+  jeju-hydrangea-festival-tour-east-route: 734 strings
+  from-incheon-seoul-day-tour-cruise-guests: 607 strings
+  jeju-eastern-unesco-spots-day-tour: 771 strings
+  southwest-hallasan-osulloc-aewol: 811 strings
+  jeju-hydrangea-festival-tour-southwest-route: 767 strings
+  jeju-cruise-shore-excursion-small-group-tour: 946 strings
+  jeju-grand-highlights-loop: 716 strings
+  jeju-island-private-car-charter-tour: 626 strings
+  pocheon-sanjeong-lake-herb-island-art-valley: 641 strings
+  Total: 11635 strings across 16 tours
+  Phase 1 COMPLETE — proceeding to Phase 2.

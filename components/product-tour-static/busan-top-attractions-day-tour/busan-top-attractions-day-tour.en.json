@@ -49,7 +49,7 @@
     "amountLabel": "",
     "currency": "USD",
     "per": "person",
-    "priceNote": "Small-group price not yet confirmed from operator listing. Comparable Busan one-day tours range $41–$70 across operators. Once confirmed, AtoC Korea sale price applies a flat 10% discount."
+    "priceNote": "Price not yet confirmed. Confirm current price at booking.$70 across operators. AtoC Korea sale price."
   },
   "hero": {
     "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/03/2592103_image2_1.JPG",
@@ -315,7 +315,7 @@
       "smartNotes": {
         "photo": "Cheongsapo Station crosswalk for the famous Slam Dunk-style frame; Daritdol Skywalk for glass-bottom sea view; Mipo→Cheongsapo direction on Sky Capsule has the best afternoon light",
         "facilities": "In-person ticketing at Mipo, Cheongsapo and Songjeong only (automated kiosks at Dalmaji Tunnel, Daritdol, Gudeokpo); convenience store and food at Mipo plaza",
-        "tip": "Sky Capsule books out fast at sunset slots — reserve 1-2 weeks in advance via Klook or bluelinepark.com; bring backup for refunds — no refunds/changes for missed slots"
+        "tip": "Sky Capsule books out fast at sunset slots — reserve 1-2 weeks in advance via the official site; bring backup for refunds — no refunds/changes for missed slots"
       },
       "_poi_meta": {
         "poi_key": "cheongsapo_blue_line_park",
@@ -949,7 +949,7 @@
       "amountLabel": "",
       "currency": "USD",
       "per": "person",
-      "priceNote": "Small-group price not yet confirmed from operator listing. Comparable Busan one-day tours range $41–$70 across operators. Once confirmed, AtoC Korea sale price applies a flat 10% discount."
+      "priceNote": "Price not yet confirmed. Confirm current price at booking.$70 across operators. AtoC Korea sale price."
     }
   },
   "matching_profile": {
@@ -1115,7 +1115,7 @@
   "matching_metadata": {
     "matching_schema": "tour_matching_profiles_embedded_v2",
     "embedded_for": "atockorea_tour_marketplace",
-    "source_of_truth_note": "matching_profile fields scored against atockorea matching algorithm v2. island=busan introduces new island filter. Single fixed route; no variant overrides.",
+    "source_of_truth_note": "matching_profile fields scored against AtoC Korea matching algorithm v2. island=busan introduces new island filter. Single fixed route; no variant overrides.",
     "audit_summary": "Year-round Busan classic 5-stop route. First Busan product in catalog — establishes busan_ region_tag prefix convention parallel to jeju_ used elsewhere. value_for_money_fit=5 reflects $41-47 GetYourGuide market rate.",
     "score_rationale": {
       "high_scores": {
@@ -1920,7 +1920,7 @@
           "amountLabel": "",
           "currency": "USD",
           "per": "person",
-          "priceNote": "Small-group price not yet confirmed from operator listing. Comparable Busan one-day tours range $41–$70 across operators. Once confirmed, AtoC Korea sale price applies a flat 10% discount."
+          "priceNote": "Price not yet confirmed. Confirm current price at booking.$70 across operators. AtoC Korea sale price."
         }
       }
     }

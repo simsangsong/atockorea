@@ -1,0 +1,365 @@
+═══════════════════════════════════════════════════════════════════════
+AUDIT REPORT — 16 EN tour files
+═══════════════════════════════════════════════════════════════════════
+
+## [OTA_NAME_IN_VALUE] — 42 hits
+  • busan-gyeongju-unesco-legacy-tour-national-museum (1)
+      ⚠️  USER-FACING catalog_card.priceLabel: "Price TBD — confirm small-group rate from GetYourGuide listing"
+  • busan-private-car-charter-cruise-shore (2)
+         (other) matching_metadata.external_source: "GetYourGuide t899592"
+         (other) matching_metadata.external_source_url: "https://www.getyourguide.com/-t899592/"
+  • busan-small-group-sightseeing-tour-cruise-passengers (2)
+      ⚠️  USER-FACING itineraryStops[3].description: "**Lunch is included** at a local Busan restaurant pre-arranged by the operator — typically a **Dwaeji Gukbap (Busan pork..."
+      ⚠️  USER-FACING page_sections[10].props.reviewsSummary.source_attribution: "Aggregate metric from operator's GetYourGuide listing; individual review text not yet imported."
+  • busan-top-attractions-day-tour (3)
+      ⚠️  USER-FACING itineraryStops[2].description: "**Haeundae Blue Line Park (해운대 블루라인파크)** is an eco-friendly redevelopment of the **abandoned Donghae Nambu coastal railw..."
+      ⚠️  USER-FACING itineraryStops[2].smartNotes.tip: "Sky Capsule books out fast at sunset slots — reserve 1-2 weeks in advance via Klook or bluelinepark.com; bring backup fo..."
+         (other) matching_metadata.audit_summary: "Year-round Busan classic 5-stop route. First Busan product in catalog — establishes busan_ region_tag prefix convention ..."
+  • from-busan-gyeongju-ancient-capital-day-tour (1)
+      ⚠️  USER-FACING catalog_card.priceLabel: "Price TBD — confirm small-group rate from GetYourGuide listing"
+  • from-incheon-seoul-day-tour-cruise-guests (1)
+      ⚠️  USER-FACING catalog_card.priceLabel: "Price TBD — confirm small-group rate from GetYourGuide listing"
+  • jeju-cruise-shore-excursion-small-group-tour (4)
+         (other) itinerary_variants[1].stops[4]._poi_meta.sources[4]: "Trip.com / Tripmoments (night illumination 19:00–22:00; Mutae eel nocturnal habitat)"
+         (other) itinerary_variants[1].stops[5]._poi_meta.sources[2]: "Klook / Mindtrip (vendor count ~140; opening hours)"
+         internal _publication.fix_passes.v17_batch6_enhancement.sources[7]: "Trip.com"
+      ... +1 more
+  • jeju-eastern-unesco-spots-day-tour (2)
+         (other) matching_metadata.reviews_attribution: "Aggregate rating 4.9/5 (1,148 reviews) from the operator's GetYourGuide listing. Individual review snippets are not pull..."
+      ⚠️  USER-FACING page_sections[10].props.reviewsAttribution: "Aggregate rating from the operator's GetYourGuide listing — read individual reviews there."
+  • jeju-grand-highlights-loop (2)
+         internal _publication.fix_passes.v17_batch1_enhancement.sources[4]: "Trazy"
+         internal _publication.fix_passes.v17_batch1_enhancement.sources[7]: "Trip.com Korea"
+  • jeju-hydrangea-festival-tour-east-route (3)
+         (other) itineraryStops[6]._poi_meta.sources[3]: "https://www.trazy.com/experience/detail/jeju-island-hueree-natural-park-ticket — Trazy Hueree Natural Park ticket page"
+         internal _publication.fix_passes.v17_batch4_enhancement.sources[3]: "Trazy"
+         internal _publication.fix_passes.v17_batch4_enhancement.sources[4]: "KKday"
+  • jeju-hydrangea-festival-tour-southwest-route (11)
+         (other) itineraryStops[1]._poi_meta.sources[2]: "https://www.tripadvisor.com/Attraction_Review-g297885-d2204895-Reviews-Hallim_Park-Jeju_Jeju_Island.html — Tripadvisor H..."
+         (other) itineraryStops[1]._poi_meta.sources[3]: "https://www.trazy.com/experience/detail/hallim-park-jeju-ticket — Trazy Hallim Park ticket page (cave system + 'two-dime..."
+      ⚠️  USER-FACING page_sections[4].props.itineraryStops[1]._poi_meta.sources[1]: "Trazy"
+      ... +8 more
+  • jeju-west-south-full-day-authentic-tour (4)
+      ⚠️  USER-FACING page_sections[4].props.itineraryStops[2]._poi_meta.sources[0]: "Trip.com"
+      ⚠️  USER-FACING page_sections[4].props.itineraryStops[6]._poi_meta.sources[2]: "Trazy"
+      ⚠️  USER-FACING page_sections[4].props.itineraryStops[6]._poi_meta.sources[3]: "Trip.com"
+      ... +1 more
+  • pocheon-sanjeong-lake-herb-island-art-valley (4)
+      ⚠️  USER-FACING price.priceNote: "Original price 62 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+      ⚠️  USER-FACING itineraryStops[0].highlights[8]: "**Sanjeong Lake Sledding Festival since 2010** (Klook + Trip.com confirmed): every winter the frozen lake becomes Korea'..."
+         (other) sticky_booking_bar.price.priceNote: "Original price 62 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+      ... +1 more
+  • southwest-hallasan-osulloc-aewol (2)
+         internal _publication.fix_passes.v17_batch1_enhancement.sources[4]: "Trazy"
+         internal _publication.fix_passes.v17_batch1_enhancement.sources[7]: "Trip.com Korea"
+
+## [GETYOURGUIDE_URL] — 3 hits
+  • busan-private-car-charter-cruise-shore (2)
+         (other) matching_metadata.external_source_url: "https://www.getyourguide.com/-t899592/"
+         internal _publication.fix_passes.v15.4_new_tour_creation: "Created new tour from GYG product ID t899592 (Busan private car charter for cruise shore). Structural template: jeju-isl..."
+  • jeju-eastern-unesco-spots-day-tour (1)
+         (other) matching_metadata.reviews_attribution: "Aggregate rating 4.9/5 (1,148 reviews) from the operator's GetYourGuide listing. Individual review snippets are not pull..."
+
+## [INTERNAL_JARGON] — 88 hits
+  • busan-gyeongju-unesco-legacy-tour-national-museum (3)
+      ⚠️  USER-FACING itineraryStops[0].description: "Pickup runs in sequence from three central Busan subway stations: **Busan Station (Line 1)** at ~08:10 for guests stayin..."
+      ⚠️  USER-FACING itineraryStops[4].whyOnRoute: "The museum is **the catalog's strongest indoor cultural anchor in Gyeongju** and the **only stop on this route that is f..."
+      ⚠️  USER-FACING itineraryStops[6].whyOnRoute: "Woljeonggyo is **the catalog's signature 'sunset finale'** — a deliberately-built closer that lets the day end on a high..."
+  • busan-small-group-sightseeing-tour-cruise-passengers (1)
+      ⚠️  USER-FACING itineraryStops[6].whyOnRoute: "Jagalchi is **the most authentic 'Busan flavor' on a single-day tour** and the small-group's afternoon free-time anchor...."
+  • busan-top-attractions-day-tour (4)
+      ⚠️  USER-FACING itineraryStops[2].whyOnRoute: "The route's **most-Instagrammed** segment — the pastel Sky Capsule has become a viral Korea-travel symbol since 2020. Ch..."
+         (other) matching_metadata.source_of_truth_note: "matching_profile fields scored against atockorea matching algorithm v2. island=busan introduces new island filter. Singl..."
+         (other) matching_metadata.audit_summary: "Year-round Busan classic 5-stop route. First Busan product in catalog — establishes busan_ region_tag prefix convention ..."
+      ... +1 more
+  • from-busan-gyeongju-ancient-capital-day-tour (3)
+      ⚠️  USER-FACING itineraryStops[1].whyOnRoute: "Ahopsan opens the day with the calmest, most contemplative stop — a meditative bamboo walk before the more architectural..."
+      ⚠️  USER-FACING itineraryStops[3].whyOnRoute: "Lunch is positioned right after Bulguksa to reset before the afternoon's slower-paced museum and hanok village segment. ..."
+         (other) matching_metadata.differentiation_vs_unesco_legacy_sister: "Same 5 substantive POIs but **15-min longer dwell at each substantive stop** + **lunch is 60 min vs. 45 min** + framing ..."
+  • from-incheon-seoul-day-tour-cruise-guests (4)
+         internal _publication.fix_passes.v17_batch10_enhancement._score_audit._methodology: "Tour 1 = small-group shared-van fixed-itinerary (Batch 9 formula): private_tour_fit=0.05, customizable_route_fit=0.05 (t..."
+         internal _publication.fix_passes.v17_batch10_enhancement._score_audit.deltas_applied.cruise_passenger_fit.reasoning: "VERIFIED — purpose-built shore excursion for cruise guests. Was unset. Catalog-leading."
+         internal _publication.fix_passes.v17_batch10_enhancement._score_audit.deltas_applied.indoor_ratio.reasoning: "VERIFIED — Fix 1 time-weighted: Pickup 30 × 1.0 = 30, Gyeongbokgung 90 × 0.05 = 4.5, Bukchon 75 × 0.1 = 7.5, Gwangjang 7..."
+      ... +1 more
+  • incheon-seoul-private-car-shore-excursion-cruise (4)
+         (other) matching_metadata.cruise_context_note: "This product is cruise-only. The relevant operational metric is sail-away buffer (60 min built into Return stop), not fl..."
+         internal _publication.fix_passes.v17_batch10_enhancement._score_audit._methodology: "Tour 1 = small-group shared-van fixed-itinerary (Batch 9 formula): private_tour_fit=0.05, customizable_route_fit=0.05 (t..."
+         internal _publication.fix_passes.v17_batch10_enhancement._score_audit.deltas_applied.indoor_ratio.reasoning: "VERIFIED — Fix 1 time-weighted: Pickup 30 × 1.0 = 30, Gyeongbokgung 75 × 0.05 = 3.75, Bukchon+Insadong 75 × 0.15 = 11.25..."
+      ... +1 more
+  • jeju-cruise-shore-excursion-small-group-tour (5)
+         (other) itinerary_variants[1].stops[3].description: "**Seogwipo lunch stop** at a guide-vetted sit-down restaurant **inside or adjacent to Seogwipo Maeil Olle Market**, taki..."
+         (other) itinerary_variants[1].stops[6].whyOnRoute: "**Catalog's shortest cruise return** — Olle Market to Gangjeong port is **~15 minutes** by minicoach. The south route's ..."
+         internal _publication.fix_passes.v17_batch6_enhancement._score_audit.deltas_applied.scenic_level.reasoning: "VERIFIED — Variant 0: volcanic crater + coastal cape + folk village. Variant 1: alpine wetland + columnar basalt + water..."
+      ... +2 more
+  • jeju-eastern-unesco-spots-day-tour (6)
+      ⚠️  USER-FACING itineraryStops[1].description: "**Hamdeok Seoubong Beach (함덕 서우봉 해변)** is consistently ranked among **Jeju's top 3 beaches**, defined by the contrast be..."
+      ⚠️  USER-FACING itineraryStops[5].whyOnRoute: "**Triple UNESCO climax of the eastern UNESCO route**. Where the nature-core sister tour places Seongsan as the day's aft..."
+         (other) matching_metadata.reviews_attribution: "Aggregate rating 4.9/5 (1,148 reviews) from the operator's GetYourGuide listing. Individual review snippets are not pull..."
+      ... +3 more
+  • jeju-grand-highlights-loop (4)
+      ⚠️  USER-FACING itineraryStops[0].whyOnRoute: "**Opening anchor of the highlights loop**. Starting at Hallasan establishes Jeju's geological identity *first* — the ent..."
+         (other) matching_metadata.score_rationale.high_scores.unesco_taste_fit=1.0: "Hallasan UNESCO + Seongsan Triple UNESCO in same day = unmatched in catalog"
+      ⚠️  USER-FACING page_sections[4].props.itineraryStops[1].whyOnRoute: "It captures the visual identity of Jeju’s south coast without adding another long walking segment to the morning."
+      ... +1 more
+  • jeju-hydrangea-festival-tour-east-route (6)
+      ⚠️  USER-FACING itineraryStops[1].description: "**Hamdeok Seoubong Beach (함덕 서우봉 해변)** is consistently ranked among **Jeju's top 3 beaches**, defined by the contrast be..."
+      ⚠️  USER-FACING itineraryStops[4].whyOnRoute: "**The day's UNESCO summit-anchor and east-route hero stop.** Three reasons Seongsan is the afternoon-1 anchor at 12:50. ..."
+         internal _publication.fix_passes.v17_batch4_enhancement._score_audit.deltas_applied.scenic_level.reasoning: "Verified: 6 distinct landscapes (turquoise beach, Joseon walled town, UNESCO peak, lava tube + gardens, hydrangea fields..."
+      ... +3 more
+  • jeju-hydrangea-festival-tour-southwest-route (11)
+      ⚠️  USER-FACING itineraryStops[0].description: "**Hyeopjae Beach (협재 해수욕장)** is one of **Jeju's Top 3 west-coast beaches** and broadly ranked among the island's overall..."
+      ⚠️  USER-FACING itineraryStops[0].highlights[4]: "**Sunset behind Biyangdo** — catalog's premier west-coast sunset framing"
+      ⚠️  USER-FACING itineraryStops[4].whyOnRoute: "**The afternoon's hydrangea-tunnel anchor — and the day's photographic centerpiece.** Three southwest-route reasons Came..."
+      ... +8 more
+  • jeju-island-private-car-charter-tour (1)
+         internal _publication.fix_passes.v17_batch7_enhancement._score_audit.deltas_applied.scenic_level.reasoning: "VERIFIED — all 3 named routes deliver catalog-leading scenic content (volcanic crater, beach, basalt cliff, waterfall, t..."
+  • jeju-west-south-full-day-authentic-tour (16)
+      ⚠️  USER-FACING itineraryStops[3].whyOnRoute: "Daejeong-eup positioning = 10-min hop to Songaksan. **Galchi from Daejeong harbor + gosari yukgaejang** are both regiona..."
+      ⚠️  USER-FACING itineraryStops[4].description: "**Songaksan Mountain (송악산)** is a **104 m double-crater parasitic volcanic cone** rising from Jeju's southwest tip in Da..."
+      ⚠️  USER-FACING itineraryStops[4].highlights[3]: "**Olle Trail Course 10** central segment (Hwasun → Moseulpo)"
+      ... +13 more
+  • pocheon-sanjeong-lake-herb-island-art-valley (6)
+      ⚠️  USER-FACING itineraryStops[0].whyOnRoute: "Sanjeong Lake opens the Pocheon day with the gentlest walking experience — a 50-60 min easy loop that warms up the legs ..."
+      ⚠️  USER-FACING itineraryStops[1].whyOnRoute: "Placing Herb Island at 13:30 captures the daytime herb gardens AND the 16:00 illumination start within a single 2.5-hour..."
+      ⚠️  USER-FACING itineraryStops[2].whyOnRoute: "Pocheon Art Valley closes the day with the catalog's most dramatic single landscape — emerald lake + vertical granite cl..."
+      ... +3 more
+  • southwest-hallasan-osulloc-aewol (14)
+      ⚠️  USER-FACING itineraryStops[2].whyOnRoute: "Jungmun positioning means **5-minute hops to both Jusangjeolli (before) and Cheonjeyeon (after)** — recovers ~15 min vs...."
+      ⚠️  USER-FACING itineraryStops[3].whyOnRoute: "**Mid-afternoon contrast anchor** — after Hallasan's wide alpine vista and Jusangjeolli's exposed coast, Cheonjeyeon's e..."
+      ⚠️  USER-FACING itineraryStops[4].description: "**O'Sulloc Tea Museum (오설록 티 뮤지엄, '오설록' meaning 'meeting snow + green')** is the tea-culture flagship of **Amorepacific ..."
+      ... +11 more
+
+## [SISTER_PRODUCT_REF] — 8 hits
+  • jeju-eastern-unesco-spots-day-tour (1)
+         (other) matching_metadata._internal_competing_products_note: "Comp set (internal only): Southern UNESCO sister product, same operator, $43/pax small-group rate as ceiling reference."
+  • jeju-west-south-full-day-authentic-tour (7)
+      ⚠️  USER-FACING price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, our Southern UNESCO tour, sam..."
+         (other) whyTourWorks.routeLogicSections[0].items[3].detail: "This tour is run by the same operator as our Southern UNESCO tour — Love Korea Tours. The 'no shopping' clause and the 4..."
+         (other) staticQuestions[0].question: "How is this different from our Southern UNESCO tour?"
+      ... +4 more
+
+## [TBD_PLACEHOLDER] — 4 hits
+  • busan-gyeongju-unesco-legacy-tour-national-museum (1)
+      ⚠️  USER-FACING catalog_card.priceLabel: "Price TBD — confirm small-group rate from GetYourGuide listing"
+  • from-busan-gyeongju-ancient-capital-day-tour (1)
+      ⚠️  USER-FACING catalog_card.priceLabel: "Price TBD — confirm small-group rate from GetYourGuide listing"
+  • from-incheon-seoul-day-tour-cruise-guests (1)
+      ⚠️  USER-FACING catalog_card.priceLabel: "Price TBD — confirm small-group rate from GetYourGuide listing"
+  • jeju-hydrangea-festival-tour-southwest-route (1)
+         (other) matching_metadata.locale_adaptation.ko_localization_status: "TODO"
+
+## [PRICING_INTERNAL] — 35 hits
+  • busan-gyeongju-unesco-legacy-tour-national-museum (3)
+      ⚠️  USER-FACING price.priceNote: "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across pack..."
+         (other) sticky_booking_bar.price.priceNote: "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across pack..."
+      ⚠️  USER-FACING page_sections[11].props.price.priceNote: "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across pack..."
+  • busan-small-group-sightseeing-tour-cruise-passengers (3)
+      ⚠️  USER-FACING price.priceNote: "Original price USD 65 on the operator's listing. AtoC Korea sale price applies a flat 10% discount."
+         (other) sticky_booking_bar.price.priceNote: "Original price USD 65 on the operator's listing. AtoC Korea sale price applies a flat 10% discount."
+      ⚠️  USER-FACING page_sections[11].props.price.priceNote: "Original price USD 65 on the operator's listing. AtoC Korea sale price applies a flat 10% discount."
+  • busan-top-attractions-day-tour (6)
+      ⚠️  USER-FACING price.priceNote: "Small-group price not yet confirmed from operator listing. Comparable Busan one-day tours range $41–$70 across operators..."
+         (other) sticky_booking_bar.price.priceNote: "Small-group price not yet confirmed from operator listing. Comparable Busan one-day tours range $41–$70 across operators..."
+         (other) matching_metadata.audit_summary: "Year-round Busan classic 5-stop route. First Busan product in catalog — establishes busan_ region_tag prefix convention ..."
+      ... +3 more
+  • from-busan-gyeongju-ancient-capital-day-tour (3)
+      ⚠️  USER-FACING price.priceNote: "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across pack..."
+         (other) sticky_booking_bar.price.priceNote: "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across pack..."
+      ⚠️  USER-FACING page_sections[11].props.price.priceNote: "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across pack..."
+  • from-incheon-seoul-day-tour-cruise-guests (3)
+      ⚠️  USER-FACING price.priceNote: "Cruise excursion price not yet confirmed from operator listing. Comparable Seoul-from-Incheon shared cruise tours range ..."
+         (other) sticky_booking_bar.price.priceNote: "Cruise excursion price not yet confirmed from operator listing. Comparable Seoul-from-Incheon shared cruise tours range ..."
+      ⚠️  USER-FACING page_sections[11].props.price.priceNote: "Cruise excursion price not yet confirmed from operator listing. Comparable Seoul-from-Incheon shared cruise tours range ..."
+  • incheon-seoul-private-car-shore-excursion-cruise (3)
+      ⚠️  USER-FACING price.priceNote: "Price not yet set. Private tour pricing varies by vehicle size (sedan 1–3 pax, van 4–6 pax, large van 7–9 pax). Once con..."
+         (other) sticky_booking_bar.price.priceNote: "Price not yet set. Private tour pricing varies by vehicle size (sedan 1–3 pax, van 4–6 pax, large van 7–9 pax). Once con..."
+      ⚠️  USER-FACING page_sections[11].props.price.priceNote: "Price not yet set. Private tour pricing varies by vehicle size (sedan 1–3 pax, van 4–6 pax, large van 7–9 pax). Once con..."
+  • jeju-cruise-shore-excursion-small-group-tour (1)
+         internal _publication.fix_passes.v17_batch6_enhancement._score_audit.deltas_applied.value_for_money_fit_smallgroup.field: "value_for_money_fit"
+  • jeju-eastern-unesco-spots-day-tour (4)
+      ⚠️  USER-FACING price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, same operator) is $43 per per..."
+         (other) sticky_booking_bar.price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, same operator) is $43 per per..."
+         (other) matching_metadata._internal_competing_products_note: "Comp set (internal only): Southern UNESCO sister product, same operator, $43/pax small-group rate as ceiling reference."
+      ... +1 more
+  • jeju-hydrangea-festival-tour-east-route (3)
+      ⚠️  USER-FACING price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister tour (our West & South Hydrangea route) is approximatel..."
+         (other) sticky_booking_bar.price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister tour (our West & South Hydrangea route) is approximatel..."
+      ⚠️  USER-FACING page_sections[11].props.price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister tour (our West & South Hydrangea route) is approximatel..."
+  • jeju-west-south-full-day-authentic-tour (3)
+      ⚠️  USER-FACING price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, our Southern UNESCO tour, sam..."
+         (other) sticky_booking_bar.price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, our Southern UNESCO tour, sam..."
+      ⚠️  USER-FACING page_sections[11].props.price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, our Southern UNESCO tour, sam..."
+  • pocheon-sanjeong-lake-herb-island-art-valley (3)
+      ⚠️  USER-FACING price.priceNote: "Original price 62 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+         (other) sticky_booking_bar.price.priceNote: "Original price 62 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+      ⚠️  USER-FACING page_sections[11].props.price.priceNote: "Original price 62 USD on GetYourGuide; AtoC Korea sale price is a flat 10% discount."
+
+## [OPERATOR_NAME_LEAK] — 19 hits
+  • busan-gyeongju-unesco-legacy-tour-national-museum (3)
+      ⚠️  USER-FACING price.priceNote: "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across pack..."
+         (other) sticky_booking_bar.price.priceNote: "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across pack..."
+      ⚠️  USER-FACING page_sections[11].props.price.priceNote: "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across pack..."
+  • busan-small-group-sightseeing-tour-cruise-passengers (5)
+      ⚠️  USER-FACING price.priceNote: "Original price USD 65 on the operator's listing. AtoC Korea sale price applies a flat 10% discount."
+         (other) sticky_booking_bar.price.priceNote: "Original price USD 65 on the operator's listing. AtoC Korea sale price applies a flat 10% discount."
+      ⚠️  USER-FACING page_sections[2].props.glanceItems[5].value: "4.9 / 5 across 32 reviews on the operator's listing"
+      ... +2 more
+  • busan-top-attractions-day-tour (3)
+      ⚠️  USER-FACING price.priceNote: "Small-group price not yet confirmed from operator listing. Comparable Busan one-day tours range $41–$70 across operators..."
+         (other) sticky_booking_bar.price.priceNote: "Small-group price not yet confirmed from operator listing. Comparable Busan one-day tours range $41–$70 across operators..."
+      ⚠️  USER-FACING page_sections[11].props.price.priceNote: "Small-group price not yet confirmed from operator listing. Comparable Busan one-day tours range $41–$70 across operators..."
+  • from-busan-gyeongju-ancient-capital-day-tour (3)
+      ⚠️  USER-FACING price.priceNote: "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across pack..."
+         (other) sticky_booking_bar.price.priceNote: "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across pack..."
+      ⚠️  USER-FACING page_sections[11].props.price.priceNote: "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across pack..."
+  • from-incheon-seoul-day-tour-cruise-guests (3)
+      ⚠️  USER-FACING price.priceNote: "Cruise excursion price not yet confirmed from operator listing. Comparable Seoul-from-Incheon shared cruise tours range ..."
+         (other) sticky_booking_bar.price.priceNote: "Cruise excursion price not yet confirmed from operator listing. Comparable Seoul-from-Incheon shared cruise tours range ..."
+      ⚠️  USER-FACING page_sections[11].props.price.priceNote: "Cruise excursion price not yet confirmed from operator listing. Comparable Seoul-from-Incheon shared cruise tours range ..."
+  • jeju-eastern-unesco-spots-day-tour (2)
+         (other) matching_metadata.reviews_attribution: "Aggregate rating 4.9/5 (1,148 reviews) from the operator's GetYourGuide listing. Individual review snippets are not pull..."
+      ⚠️  USER-FACING page_sections[10].props.reviewsAttribution: "Aggregate rating from the operator's GetYourGuide listing — read individual reviews there."
+
+## [SOURCING_NOTE] — 11 hits
+  • busan-private-car-charter-cruise-shore (1)
+         internal _publication.fix_passes.v15.4_new_tour_creation: "Created new tour from GYG product ID t899592 (Busan private car charter for cruise shore). Structural template: jeju-isl..."
+  • jeju-eastern-unesco-spots-day-tour (3)
+      ⚠️  USER-FACING price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, same operator) is $43 per per..."
+         (other) sticky_booking_bar.price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, same operator) is $43 per per..."
+      ⚠️  USER-FACING page_sections[11].props.price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, same operator) is $43 per per..."
+  • jeju-hydrangea-festival-tour-east-route (3)
+      ⚠️  USER-FACING price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister tour (our West & South Hydrangea route) is approximatel..."
+         (other) sticky_booking_bar.price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister tour (our West & South Hydrangea route) is approximatel..."
+      ⚠️  USER-FACING page_sections[11].props.price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister tour (our West & South Hydrangea route) is approximatel..."
+  • jeju-hydrangea-festival-tour-southwest-route (1)
+      ⚠️  USER-FACING itineraryStops[4].description: "**Camellia Hill (카멜리아힐, Jeju Camellia Arboretum)** is a **172,000 m² botanical garden** in Andeok, **the largest camelli..."
+  • jeju-west-south-full-day-authentic-tour (3)
+      ⚠️  USER-FACING price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, our Southern UNESCO tour, sam..."
+         (other) sticky_booking_bar.price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, our Southern UNESCO tour, sam..."
+      ⚠️  USER-FACING page_sections[11].props.price.priceNote: "Small-group price not yet confirmed from listing snippet. Sister product (Southern UNESCO, our Southern UNESCO tour, sam..."
+
+## [AUDIT_SUMMARY_FIELD] — 23 hits
+  • busan-private-car-charter-cruise-shore (2)
+         internal whyTourWorks.sourcing: "Tour design and operational details are based on AtoC Korea's standard private-charter cruise-shore product. Specific cr..."
+         internal matching_metadata.external_source: "GetYourGuide t899592"
+  • busan-top-attractions-day-tour (1)
+         internal matching_metadata.audit_summary: "Year-round Busan classic 5-stop route. First Busan product in catalog — establishes busan_ region_tag prefix convention ..."
+  • jeju-cruise-shore-excursion-small-group-tour (11)
+         internal matching_metadata.audit_summary.kept_from_product_json[0]: "product_type"
+         internal matching_metadata.audit_summary.kept_from_product_json[1]: "route_type=fixed_route_with_port_variants"
+         internal matching_metadata.audit_summary.kept_from_product_json[2]: "vehicle_type"
+      ... +8 more
+  • jeju-eastern-unesco-spots-day-tour (2)
+         internal matching_metadata.reviews_attribution: "Aggregate rating 4.9/5 (1,148 reviews) from the operator's GetYourGuide listing. Individual review snippets are not pull..."
+         internal matching_metadata.audit_summary: "East Jeju UNESCO-focused loop covering 5 distinct UNESCO heritage layers in one day: Olle Trail walking heritage (Hamdeo..."
+  • jeju-grand-highlights-loop (2)
+         internal matching_metadata.reviews_attribution: "Reviews curated from AtoC Korea operator feedback. 4.7/5 average across 168 verified bookings."
+         internal matching_metadata.audit_summary: "Highlights loop covers Jeju's NORTH (Hallasan UNESCO Triple-stack at Eoseungsaengak), SOUTH (Daepo Jusangjeolli columnar..."
+  • jeju-hydrangea-festival-tour-east-route (1)
+         internal matching_metadata.audit_summary: "East-Jeju Hydrangea Festival route — 9-hr small-group minicoach loop. 5 substantive POI anchors: 1 emerald-coast beach (..."
+  • jeju-hydrangea-festival-tour-southwest-route (1)
+         internal matching_metadata.audit_summary: "Southwest-Jeju Hydrangea Festival route — 9-hr small-group minicoach loop. 5 substantive POI anchors + 1 compound-stop p..."
+  • jeju-west-south-full-day-authentic-tour (1)
+         internal matching_metadata.audit_summary: "West-south Jeju authentic loop covering 4 distinct international/national designation layers in one day: Ramsar Wetland ..."
+  • southwest-hallasan-osulloc-aewol (2)
+         internal matching_metadata.reviews_attribution: "Reviews curated from AtoC Korea operator feedback. 4.8/5 average across 142 verified bookings."
+         internal matching_metadata.audit_summary: "Southwest Jeju loop covering UNESCO Hallasan (Eoseungsaengak), south-coast volcanic geology (Daepo Jusangjeolli), Joseon..."
+
+## [SCHEMA_INTERNAL] — 23 hits
+  • busan-gyeongju-unesco-legacy-tour-national-museum (6)
+      ⚠️  USER-FACING catalog_card.title: "Busan to Gyeongju: UNESCO Legacy Tour with National Museum"
+      ⚠️  USER-FACING catalog_card.slug: "busan-gyeongju-unesco-legacy-tour-national-museum"
+      ⚠️  USER-FACING itineraryStops[0].description: "Pickup runs in sequence from three central Busan subway stations: **Busan Station (Line 1)** at ~08:10 for guests stayin..."
+      ... +3 more
+  • from-busan-gyeongju-ancient-capital-day-tour (14)
+      ⚠️  USER-FACING catalog_card.shortCardDescription: "Small-group day tour from Busan to Gyeongju, the Silla kingdom's ancient capital (57 BCE–935 CE). Same classic six-attra..."
+      ⚠️  USER-FACING itineraryStops[0].description: "Pickup is consolidated at three central Busan subway hubs to minimize morning crisscrossing: **Busan Station (Line 1)** ..."
+      ⚠️  USER-FACING itineraryStops[2].whyOnRoute: "Bulguksa is **the non-negotiable UNESCO anchor of any Gyeongju day tour** and the most-recognized Buddhist heritage site..."
+      ... +11 more
+  • incheon-seoul-private-car-shore-excursion-cruise (1)
+      ⚠️  USER-FACING itineraryStops[4].description: "N Seoul Tower (Namsan Seoul Tower) is Seoul's most iconic landmark — a 236.7-meter broadcasting and observation tower at..."
+  • jeju-island-private-car-charter-tour (1)
+      ⚠️  USER-FACING itineraryStops[2].smartNotes.tip: "For a rainy day on Jeju, this is the strongest of the three named routes — Yakcheonsa main hall, Sanbanggulsa cave, and ..."
+  • pocheon-sanjeong-lake-herb-island-art-valley (1)
+      ⚠️  USER-FACING itineraryStops[2].whyOnRoute: "Pocheon Art Valley closes the day with the catalog's most dramatic single landscape — emerald lake + vertical granite cl..."
+
+## [AI_TONE_OVERUSE] — 8 hits
+  • busan-gyeongju-unesco-legacy-tour-national-museum (1)
+      ⚠️  USER-FACING itineraryStops[6].description: "**Woljeonggyo Bridge (월정교)** is the **reconstructed Silla-era wooden bridge spanning the Namcheon River**, today **Korea..."
+  • busan-top-attractions-day-tour (1)
+         (other) matching_profile.synonym_hints[1]: "busan must-see day trip"
+  • from-incheon-seoul-day-tour-cruise-guests (1)
+      ⚠️  USER-FACING itineraryStops[1].whyOnRoute: "Gyeongbokgung is Seoul's #1 must-see and the natural opener for any first-day-in-Seoul itinerary. Picked over Deoksugung..."
+  • incheon-seoul-private-car-shore-excursion-cruise (1)
+      ⚠️  USER-FACING itineraryStops[1].whyOnRoute: "Gyeongbokgung is Seoul's #1 must-see and the natural opener for a private cruise excursion. The flexible private-tour pa..."
+  • jeju-island-private-car-charter-tour (1)
+         internal _publication.fix_passes.v17_batch7_enhancement._score_audit.deltas_applied.first_time_fit.reasoning: "VERIFIED — strongest first-time-Jeju option because Route 1 alone covers the bucket-list UNESCO sites. 0.95 reflects tha..."
+  • pocheon-sanjeong-lake-herb-island-art-valley (3)
+      ⚠️  USER-FACING itineraryStops[1].description: "About 30 minutes east of Sanjeong Lake, Pocheon Herb Island (포천 허브아일랜드) is a hybrid Mediterranean-themed botanical garde..."
+      ⚠️  USER-FACING itineraryStops[1].highlights[2]: "Year-round Lighting Festival — most spectacular Nov-Feb with pink wish tunnel + Santa light show"
+      ⚠️  USER-FACING itineraryStops[1].smartNotes.tip: "Best visit time: arrive by 14:00-15:00 to see daylight herb gardens, then stay through 16:00 illumination start to peak ..."
+
+## [CONFIDENTIAL_PARTNER_NAME] — 31 hits
+  • busan-private-car-charter-cruise-shore (1)
+         (other) itineraryStops[6].convenience.parking: "Use Lotte Department Store or BIFF Square public lots; market itself has no on-site parking"
+  • busan-small-group-sightseeing-tour-cruise-passengers (1)
+         (other) itineraryStops[6].convenience.parking: "Use Lotte Department Store or BIFF Square public lots; market itself has no on-site parking"
+  • busan-top-attractions-day-tour (1)
+      ⚠️  USER-FACING itineraryStops[0].description: "Pickup is consolidated at three central Busan transit hubs to keep the day manageable without crisscrossing the city: **..."
+  • from-busan-gyeongju-ancient-capital-day-tour (1)
+      ⚠️  USER-FACING itineraryStops[0].description: "Pickup is consolidated at three central Busan subway hubs to minimize morning crisscrossing: **Busan Station (Line 1)** ..."
+  • incheon-seoul-private-car-shore-excursion-cruise (8)
+      ⚠️  USER-FACING itineraryStops[4].whyOnRoute: "N Seoul Tower is Seoul's #1 'photo this means I was in Korea' landmark — and the 360° view orientates first-time visitor..."
+      ⚠️  USER-FACING itineraryStops[5].description: "The day's final substantive stop is YOUR CHOICE between two distinct Seoul finales: **OPTION A — Myeongdong**: Seoul's #..."
+      ⚠️  USER-FACING itineraryStops[5].highlights[8]: "**Lotte Department Store Myeongdong main branch** — Korea's flagship department store with **rooftop garden + observatio..."
+      ... +5 more
+  • jeju-eastern-unesco-spots-day-tour (6)
+         (other) practicalAccordionItems[1].content[0]: "Sequential pickup at four points: Ocean Suites Jeju (08:30), Jeju Airport Gate 1, 1F Domestic Arrivals (08:45 — note: di..."
+         (other) pickup_dropoff.meeting_points[3].name: "Shilla Duty-Free Jeju Store"
+         (other) pickup_dropoff.dropoff_points[0].name: "Shilla Duty-Free Jeju Store"
+      ... +3 more
+  • jeju-hydrangea-festival-tour-east-route (1)
+      ⚠️  USER-FACING itineraryStops[0].description: "**Pickup is consolidated across the four standard Jeju City pickup points** to keep the morning compact and the eastboun..."
+  • jeju-west-south-full-day-authentic-tour (10)
+         (other) practicalAccordionItems[1].content[0]: "Sequential pickup at four points: Ocean Suites Jeju (08:30), Jeju Airport Gate 3 (08:45), LOTTE City (08:55), Shilla Dut..."
+         (other) practicalAccordionItems[4].preview: "Five drop-off points: Shilla Duty-Free, LOTTE City Hotel, Jeju Airport, Ocean Suites,…"
+         (other) practicalAccordionItems[4].content[0]: "Five drop-off points: Shilla Duty-Free, LOTTE City Hotel, Jeju Airport, Ocean Suites, Dongmun Traditional Market."
+      ... +7 more
+  • pocheon-sanjeong-lake-herb-island-art-valley (2)
+      ⚠️  USER-FACING itineraryStops[0].whyOnRoute: "Sanjeong Lake opens the Pocheon day with the gentlest walking experience — a 50-60 min easy loop that warms up the legs ..."
+      ⚠️  USER-FACING page_sections[4].props.itineraryStops[0].smartNotes.facilities: "Lakeside cafés and restaurants; Hanwha Resort Annecy nearby"
+
+## [OPERATOR_COMPANY_NAME] — 2 hits
+  • jeju-west-south-full-day-authentic-tour (2)
+         (other) whyTourWorks.routeLogicSections[0].items[3].detail: "This tour is run by the same operator as our Southern UNESCO tour — Love Korea Tours. The 'no shopping' clause and the 4..."
+      ⚠️  USER-FACING page_sections[6].props.whyTourWorks.routeLogicSections[0].items[3].detail: "This tour is run by the same operator as our Southern UNESCO tour — Love Korea Tours. The 'no shopping' clause and the 4..."
+
+## [BRAND_CASING_INCONSISTENT] — 4 hits
+  • busan-top-attractions-day-tour (1)
+         (other) matching_metadata.source_of_truth_note: "matching_profile fields scored against atockorea matching algorithm v2. island=busan introduces new island filter. Singl..."
+  • jeju-hydrangea-festival-tour-southwest-route (1)
+         (other) matching_metadata.source_of_truth_note: "matching_profile fields scored against atockorea matching algorithm v2. Single fixed route; no variant overrides."
+  • pocheon-sanjeong-lake-herb-island-art-valley (2)
+      ⚠️  USER-FACING itineraryStops[0].whyOnRoute: "Sanjeong Lake opens the Pocheon day with the gentlest walking experience — a 50-60 min easy loop that warms up the legs ..."
+      ⚠️  USER-FACING itineraryStops[2].whyOnRoute: "Pocheon Art Valley closes the day with the catalog's most dramatic single landscape — emerald lake + vertical granite cl..."
+
+═══════════════════════════════════════════════════════════════════════
+TOTALS:
+  OTA_NAME_IN_VALUE            total=  42  user-facing=  21  internal=  11
+  GETYOURGUIDE_URL             total=   3  user-facing=   0  internal=   1
+  INTERNAL_JARGON              total=  88  user-facing=  35  internal=  27
+  SISTER_PRODUCT_REF           total=   8  user-facing=   4  internal=   0
+  TBD_PLACEHOLDER              total=   4  user-facing=   3  internal=   0
+  PRICING_INTERNAL             total=  35  user-facing=  20  internal=   1
+  OPERATOR_NAME_LEAK           total=  19  user-facing=  13  internal=   0
+  SOURCING_NOTE                total=  11  user-facing=   7  internal=   1
+  AUDIT_SUMMARY_FIELD          total=  23  user-facing=   0  internal=  23
+  SCHEMA_INTERNAL              total=  23  user-facing=  23  internal=   0
+  AI_TONE_OVERUSE              total=   8  user-facing=   6  internal=   1
+  CONFIDENTIAL_PARTNER_NAME    total=  31  user-facing=  17  internal=   0
+  OPERATOR_COMPANY_NAME        total=   2  user-facing=   1  internal=   0
+  BRAND_CASING_INCONSISTENT    total=   4  user-facing=   2  internal=   0
+  EM_DASH_ISSUE                total=   0  user-facing=   0  internal=   0
+
+  GRAND user-facing leaks:  152
+  GRAND internal-field hits: 65
