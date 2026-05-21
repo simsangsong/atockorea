@@ -73,6 +73,12 @@ type TourListRow = {
   updated_at?: string | null;
 };
 
+type TourProductPageMedia = {
+  slug?: string | null;
+  thumbnail_url?: string | null;
+  hero_image_url?: string | null;
+};
+
 function parseLocale(value: string | null): SupportedLocale | null {
   if (!value) return null;
   const normalized = value.trim();
@@ -327,6 +333,32 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
 
     // Transform data to match frontend expectations; use translations[locale] when available
     const tourRows = (tours ?? []) as unknown as TourListRow[];
+    const localeForCards = (localeParam ?? 'en') as TourProductPageLocale;
+    const slugsForMedia = Array.from(
+      new Set(
+        tourRows
+          .map((tour) => (typeof tour.slug === 'string' ? tour.slug.trim() : ''))
+          .filter(Boolean)
+      )
+    );
+    const productPageMediaBySlug = new Map<string, TourProductPageMedia>();
+    if (slugsForMedia.length > 0) {
+      const { data: pageMedia, error: pageMediaError } = await supabase
+        .from('tour_product_pages')
+        .select('slug, thumbnail_url, hero_image_url')
+        .eq('locale', localeForCards)
+        .in('slug', slugsForMedia);
+
+      if (pageMediaError) {
+        logger.warn?.('Failed to load tour product page card media', { error: pageMediaError.message });
+      } else {
+        for (const row of (pageMedia ?? []) as TourProductPageMedia[]) {
+          const s = typeof row.slug === 'string' ? row.slug.trim() : '';
+          if (s) productPageMediaBySlug.set(s, row);
+        }
+      }
+    }
+
     let transformedTours = tourRows.map((tour) => {
       const pickupPoints = compactList
         ? []
@@ -366,8 +398,8 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       );
 
       const slugStr = typeof tour.slug === 'string' ? tour.slug.trim() : '';
-      const localeForCard = (localeParam ?? 'en') as TourProductPageLocale;
-      const staticCard = slugStr ? getStaticTourProductBySlug(slugStr, localeForCard) : undefined;
+      const staticCard = slugStr ? getStaticTourProductBySlug(slugStr, localeForCards) : undefined;
+      const productPageMedia = slugStr ? productPageMediaBySlug.get(slugStr) : undefined;
 
       // Compact mode pulls only the first gallery URL via
       // `gallery_thumb` (a JSONB `->>0` selector); full mode keeps the
@@ -379,11 +411,13 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
           : Array.isArray(tour.gallery_images) && tour.gallery_images.length > 0
             ? tour.gallery_images[0]
             : '';
-      let listImage = tour.image_url || galleryFirst || '';
+      const productPageThumb = productPageMedia?.thumbnail_url?.trim() || '';
+      const productPageHero = productPageMedia?.hero_image_url?.trim() || '';
+      const staticThumb = staticCard?.thumbnail?.trim() || '';
+      let listImage = productPageThumb || tour.image_url || galleryFirst || productPageHero || staticThumb || '';
       let galleryOut = Array.isArray(tour.gallery_images) ? [...tour.gallery_images] : [];
-      if (staticCard?.thumbnail?.trim()) {
-        const thumb = staticCard.thumbnail.trim();
-        listImage = thumb;
+      const thumb = productPageThumb || staticThumb;
+      if (thumb) {
         if (galleryOut.length === 0) galleryOut = [thumb];
         else if (galleryOut[0] !== thumb) {
           galleryOut = [thumb, ...galleryOut.filter((u: string) => u !== thumb)];
@@ -604,10 +638,9 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
 
     logger.info('Tours fetched successfully', { count: transformedTours.length });
 
-    // Response is fully public — no auth, no per-user state. Caching by URL on
-    // the CDN edge eliminates the cold-path cost (Supabase tours read +
-    // bookings count + FX fetch + score sort) for every visitor after the
-    // first. Mirrors the existing `s-maxage` on `/api/tours/destinations`.
+    // Response is public and cheap enough to keep very fresh. Admin product
+    // edits should surface on list cards quickly, while a short edge cache
+    // still absorbs bursty browse traffic.
     return NextResponse.json(
       {
         tours: transformedTours,
@@ -617,7 +650,7 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       },
       {
         headers: {
-          'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300',
+          'Cache-Control': 'public, s-maxage=15, stale-while-revalidate=30',
         },
       }
     );

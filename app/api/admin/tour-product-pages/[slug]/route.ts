@@ -229,6 +229,7 @@ export async function PATCH(
     try {
       revalidatePath(`/tour-product/${slug}`);
       revalidatePath('/tour-product/[slug]', 'page');
+      revalidatePath('/api/tours');
       revalidatePath('/');
       revalidatePath('/tours/list');
     } catch (e) {
