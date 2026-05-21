@@ -15,12 +15,13 @@
 
 | Field | Value |
 |---|---|
-| **Current phase** | Phase 7 — AI recommendation engine ✅ functionally complete. Itinerary builder MVP fully shipped (Phases 1-7). |
+| **Current phase** | Phase 8 — Admin `match_pois` editor 🔄 (admin-tooling track; itinerary builder MVP Phases 1-7 already shipped) |
 | **Blocked on** | — (optional ops follow-ups: tune POI profile dimensions based on real recommendation quality; preset KRW tuning; admin page i18n) |
-| **Last updated** | 2026-05-17 |
-| **Last commit touching this feature** | `b4693a8e` — fix(itinerary-builder): restore ChevronUp import in CartPanel mobile sheet handle |
+| **Last updated** | 2026-05-21 |
+| **Last commit touching this feature** | `b4693a8e` — fix(itinerary-builder): restore ChevronUp import in CartPanel mobile sheet handle (pre-Phase-8; updated on first Phase 8 commit) |
 | **Owner** | simsangsong |
 | **Reviewers** | — |
+| **Branch** | `feat/admin-match-pois-editor` (off `main`; independent of `fix/itinerary-builder-poi-data-quality` + `feat/unified-landing-planner`) |
 
 ### Phase progress
 
@@ -36,8 +37,11 @@ Revised 2026-05-16 after D1-D8: original 6 phases → 7 phases (new Phase 5 for 
 | 5 — Auto-quote engine + admin presets + Slack escalation + quote memory | ✅ complete | 2026-05-17 | 2026-05-17 | `2d364359` · `4dc70106` |
 | 6 — POI matching_profile authoring | ✅ complete | 2026-05-17 | 2026-05-17 | `02dcde58` |
 | 7 — AI recommendation engine | ✅ complete | 2026-05-17 | 2026-05-17 | `7aa60f0a` |
+| 8 — Admin `match_pois` editor (tooling track) | 🔄 in progress | 2026-05-21 | — | (planner commit first) |
 
 Legend: ⏸ not started · 🔄 in progress · ✅ complete · ⚠️ blocked · ❌ abandoned
+
+> **Phase 8 is an admin-tooling track**, not a continuation of the user-facing MVP. It promotes the §E parked idea "/admin/pois browse + edit UI" (D10). It does not block or depend on the two spun-off planners (UI/UX upgrade, V2 redesign) or the POI-data-quality branch.
 
 ---
 
@@ -58,6 +62,8 @@ Append a new row whenever a §5 question gets answered or a new architectural ca
 | 2026-05-16 | D7 | Entry points: (a) new **home v2 section** linking to builder; (b) restructure `/tours` — **remove busan/seoul/jeju private-tour static pages**, keep only shore excursions (with match CTA inside); (c) add "Want a private tour?" **CTA card on top of `/tours`** linking to Q&A intake | Single canonical path to the builder; legacy 5 private-tour static pages superseded. Retirement strategy: 301 redirects to `/itinerary-builder/<region>` to preserve SEO (see §H R7). |
 | 2026-05-16 | D8 | Q&A intake has **two branches**: (i) **private-tour track** = land itinerary builder (our main flow), (ii) **cruise track** = shore excursion sequencer with shorter time window (back-to-ship constraint). Branched at first form question | Cruise has a distinct price model + hard time constraint; separate pricing presets in Phase 5 |
 | 2026-05-17 | D9 | **Defer 301 redirects from 6 legacy private-tour `/tour-product/<slug>` pages → `/itinerary-builder`** until Phase 4 ships (cart + manual quote ready). Phase 3 only removes the "Private & Charter" section from `/tours` hub navigation. Legacy product pages stay accessible at their canonical URLs (still bookable). | Redirecting now would leave users stranded — the builder has no booking/quote flow yet. Affected slugs: `busan-private-car-charter-cruise-shore`, `jeju-island-private-car-charter-tour`, `incheon-seoul-private-car-shore-excursion-cruise`, `seoul-dmz-private-3rd-tunnel-suspension-bridge`, `seoul-private-nami-morning-calm-petite-france`, `seoul-suburbs-private-chartered-car-10hr`. The two cruise-overlap slugs (busan + incheon-seoul) remain visible under `/tours` "Cruise Shore Excursions" section per user request "쇼어 익스커션만 남기되". |
+| 2026-05-21 | D10 | **Promote §E parked idea "/admin/pois browse + edit UI" → Phase 8 (Admin `match_pois` editor).** Build a list+editor admin surface at `/admin/match-pois` mirroring `/admin/products/v2` (상품편집), backed by an **auto-upsert** `PATCH /api/admin/match-pois/[poi_key]` (differs from the product API, which is update-only) so a new `poi_key` INSERTs and an existing one UPDATEs. Editable column whitelist excludes generated/DB-managed cols (`is_operational`, `created_at`, `updated_at`, `embedding`). | User requested 2026-05-21. Ops needs to tune the POI catalog (images, structured content, matching profiles) without hand-writing SQL. Self-contained enough to live as a phase in this planner rather than a spun-off doc. New fresh branch `feat/admin-match-pois-editor` off `main`. |
+| 2026-05-21 | D11 | **Code-reality drift handled (verified on `main` 2026-05-21):** (a) `match_pois.highlights` + `match_pois.images` are **jsonb arrays**, NOT `text[]` as the original brief assumed — editor treats them as string arrays, stores as jsonb. (b) `poi_meta` is **`jsonb NOT NULL` with no default** — the upsert defaults it to `{}` on a brand-new INSERT so the NOT-NULL constraint can't fail. (c) `lib/itinerary-builder/poi-image-overrides.mjs` + `scripts/audit-itinerary-builder-pois.ts` + `npm run itinerary:poi-audit` **do NOT exist on `main`** (they live on `fix/itinerary-builder-poi-data-quality`). The "override-pinned" indicator is therefore implemented **defensively** (reads the override map only if the file is present; no-op + no build break when absent; auto-activates once the dq branch merges). The `itinerary:poi-audit` acceptance step is substituted with an inline SQL data-quality self-check on this branch. | The brief's "respect the data-quality track" guardrails referenced files not on the base branch; verifying code reality (per the brief's own instruction) surfaced this. Do NOT pull dq-branch files into this branch — keep tracks independent. |
 
 ---
 
@@ -87,6 +93,7 @@ One line per material change to this doc or per phase deliverable.
 | 2026-05-17 | `27e58481` | Phase 3b — `/tours` restructure + home v2 entry. **`/tours`**: removed "Private & Charter Tours" section, added prominent dark-gradient "Want a private tour?" CTA card at the top linking to `/itinerary-builder`, added inline cruise-match CTA inside Cruise Shore Excursions. The 6 private-tour `/tour-product/<slug>` pages stay accessible. **Home v2**: new `<ItineraryBuilderEntry />` section between `<DestinationsShowcase />` and `<ChooseTravelStyle />` with amber eyebrow + display title + 2-up Busan/Jeju region cards (mobile snap, desktop grid). **D9** logged: 301 redirects from 6 legacy private slugs deferred to Phase 4 close-out — redirecting now would strand users since builder has no booking flow yet. SSR verified: `/`, `/tours`, `/itinerary-builder/*` all 200 with expected markers; no regression. |
 | 2026-05-17 | `2205e28f` | Phase 3a — Map UI scaffold landed. New routes `/itinerary-builder` (region selector landing) and `/itinerary-builder/[region]` (SSR shell with cluster-filtered Supabase fetch). Client `<POICatalogMap />` uses `useLoadScript` with marker+places libraries, renders `<GoogleMap mapId>` for vector, creates `AdvancedMarkerElement` + `PinElement` in useEffect, wraps with `MarkerClusterer`, opens InfoWindow on pin click with image + name (en+ko) + summary + disabled Add CTA. New deps: `@googlemaps/markerclusterer`. Middleware patch: added `itinerary-builder` to `RESERVED_ROOT_SEGMENTS` to prevent the bare-segment-to-tour-slug rewrite from redirecting `/itinerary-builder` → `/tour/itinerary-builder` (307). SSR-level verification via curl: all 3 routes (`/itinerary-builder`, `/busan`, `/jeju`) return 200 with expected content markers (Busan Map, Haedong, Tongdosa, Yangsan, Hallasan, Seongsan, UNESCO, etc.). Client-side Google Maps JS rendering not auto-verified (user's existing dev server held the `.next/dev` lock so a parallel preview server couldn't start) — user to verify in browser at `localhost:3000/itinerary-builder/busan`. Remaining Phase 3 work: i18n EN keys + auto-translate, `/tours` restructure, home v2 entry section, final visual + Lighthouse pass. |
 | 2026-05-17 | `e84d15ba` | Phase 2 — Coordinate enrichment complete. **74 attractions all have lat/lng inside Korea bbox** (33.0–38.7 lat, 124.6–131.0 lng). Pipeline: (1) created separate **server-side Google Maps API key** (`GOOGLE_MAPS_API_KEY`, no app restrictions, Geocoding/Places/Distance/Directions enabled) since the public `NEXT_PUBLIC_*` key is referrer-restricted and Google rejects it from servers. (2) `scripts/geocode-match-pois.mjs` ran forward geocoding (`<name_ko> 한국` primary, `<name_en> South Korea` fallback, 250 ms throttle) → 82 OK / 0 MISS / 0 OUT_OF_BBOX, but inspection revealed 11 hits at Korea-center fallback (35.9078, 127.7669) and `jagalchi_market` mismapped to Cheonan. (3) `scripts/poi-coord-overrides.csv` built with 8 manual coords (`jagalchi`, `hallasan_1100_wetland`, `gyochon_hanok_village`, `hallim_park`, `ilchulland_*` ×2, `incheon_cruise_terminal`, `jeju_tangerine_picking`) re-geocoded with specific Korean queries (yielded ROOFTOP-grade results); applied via `--apply-overrides`. (4) **Region quality pass** (`scripts/audit-poi-regions.mjs` + `reclassify-poi-regions-from-csv.mjs`) — reverse-geocoded all 74 POIs, used `administrative_area_level_1` as authoritative source with word-boundary regex (avoiding the bug where "Minsokchon-ro" hit substring `sokcho`). Discovered **37 region corrections** needed from Phase 1's naive tour-level region tagging: `incheon → seoul` ×6, `seoul → gyeonggi` ×16, `seoul → gangwon` ×4, `busan → gyeongju` ×6, `busan → yangsan/ulsan/miryang` ×3, `seoraksan → gangwon` ×2. All 37 UPDATEs + 8 `route_variant_*` DELETEs (non-POI tour metadata) applied. (5) **Spot-check 15 famous POIs** all match known coords. Final distribution: jeju 25 / gyeonggi 16 / busan 11 / seoul 6 / gyeongju 6 / gangwon 6 / yangsan/ulsan/incheon/miryang 1 each = 74. **Busan-cluster** (busan+yangsan+gyeongju+ulsan+miryang) = **20**, **Jeju** = **25**, MVP-renderable = **45** (≥40 acceptance ✓). Seed script also patched to exclude `route_variant_*` for future runs. |
+| 2026-05-21 | (Phase 8 start) | **Phase 8 started — Admin `match_pois` editor.** Promotes §E "/admin/pois browse + edit UI" (D10). Fresh branch `feat/admin-match-pois-editor` off `main`. Implementation plan: (8a) sidebar + breadcrumb entry for `/admin/match-pois` in `app/admin/layout.tsx`; (8b) `GET /api/admin/match-pois` collection list (requireAdmin, trimmed rows, `_`-prefixed junk filtered out); (8c) `GET + PATCH /api/admin/match-pois/[poi_key]` — GET fetches one row, PATCH **auto-upserts** (`onConflict: 'poi_key'`) with a column whitelist (excludes generated `is_operational` + DB-managed `created_at`/`updated_at` + `embedding`), validation (lat 33.0–38.7 / lng 124.6–131.0; highlights/images = string arrays; visit_basics/convenience/smart_notes object-or-null with `{}`→null Empty-Object Rule; reject unknown cols), and `poi_meta` defaulted to `{}` on a brand-new INSERT (NOT-NULL col); (8d) `app/admin/match-pois/page.tsx` list+editor mirroring `/admin/products/v2` — list pane (search + busan-cluster/jeju region filter + is_attraction filter + thumbnail/poi_key/name), editor pane grouped Identity / Location / Image / Content / Matching-profile with structured sub-forms + validated JSON textareas, dirty-tracking + Save + Sonner toasts; (8e) defensive override-pinned indicator (D11 — degrades to no-op since `poi-image-overrides.mjs` is absent on `main`). **Code reality verified on `main` 2026-05-21** (see D11): highlights/images are jsonb arrays (not text[]); poi_meta is NOT NULL; override map + `itinerary:poi-audit` live only on the dq branch. match_pois has 91 rows (2 `_`-prefixed junk → filtered, 84 attractions, 0 OPS_), 1 empty-`{}` visit_basics + 1 empty-`{}` convenience already present. Land in small commits per the planner-after-every-commit rule. |
 
 ---
 
@@ -117,7 +124,7 @@ Things that came up during this work but aren't in the 6-phase plan. Park them h
 | Date | Idea | Why parked | Owner / next step |
 |---|---|---|---|
 | 2026-05-16 | Merge `poi_search_profile` (TourAPI 576-row table) with `match_pois` | Different ID scheme (TourAPI content_id vs poi_key); not blocking MVP | Post-MVP, after Phase 7 ships and beta feedback in |
-| 2026-05-16 | `/admin/pois` browse + edit UI | Nice-to-have for tuning; not user-facing | Post-MVP |
+| 2026-05-16 | ~~`/admin/pois` browse + edit UI~~ **PROMOTED → Phase 8 (D10 2026-05-21)** | Originally parked as post-MVP tuning nicety; user promoted it to a build on 2026-05-21 | Built as `/admin/match-pois` (list+editor + auto-upsert API) — see §F Phase 8 |
 | 2026-05-16 | ~~Auto-pricing for quotes (vehicle + driver + distance)~~ **PROMOTED → Phase 5 (D4 revised 2026-05-16)** | Originally parked as out-of-scope; D4 revision made it core | — |
 | 2026-05-16 | Save itinerary to user account | Requires auth flow; URL params carry MVP value | Post-MVP |
 | 2026-05-16 | Seoul region rollout (DMZ + suburbs + main) | D1 limited MVP to jeju + busan | After Phase 7 beta validates jeju/busan |
@@ -407,6 +414,41 @@ POST /api/admin/quotes/[id]/respond  (ops manually responds via admin route)
 - [ ] Recommended itinerary auto-quotes via Phase 5 engine without manual step
 
 **Cut-line:** Full feature. Ship internal beta, gather feedback, iterate `match_pois.matching_profile` quality.
+
+---
+
+### Phase 8 — Admin `match_pois` editor (admin-tooling track) (1-2 days)
+
+**Per D10 2026-05-21:** promotion of the §E parked idea "/admin/pois browse + edit UI". Lets ops browse + tune the POI catalog (names, region/category, coords, image, structured content, matching profile) without hand-writing SQL. Mirrors the `/admin/products/v2` (상품편집) list+editor composition; backed by an **auto-upsert** API (new `poi_key` INSERTs, existing UPDATEs) — this differs from the product API, which is update-only.
+
+**Deliverable:** `/admin/match-pois` admin page (list + editor) reading/editing `public.match_pois`, behind the existing `requireAdmin` gate, with a column-whitelisted auto-upsert save.
+
+**Code-reality notes (verified on `main` 2026-05-21 — see D11):**
+- `highlights` + `images` are **jsonb arrays** (not `text[]`); `visit_basics`/`convenience`/`smart_notes`/`names_other_locales`/`matching_profile`/`poi_meta` are **jsonb objects**.
+- `poi_meta` is **`jsonb NOT NULL`, no default** → upsert defaults it to `{}` on a fresh INSERT.
+- NEVER write: `is_operational` (GENERATED = `poi_key LIKE 'OPS_%'`), `created_at`, `updated_at`, `embedding` (vector).
+- `lib/itinerary-builder/poi-image-overrides.mjs` + `scripts/audit-itinerary-builder-pois.ts` are **absent on `main`** (dq branch only) → override-pinned indicator is defensive/no-op here; audit step substituted with inline SQL self-check.
+- Table state: 91 rows, 2 `_`-prefixed junk (`_metadata`, `_kb_metadata`) → filtered out of the list, 84 attractions, 0 `OPS_`, 1 empty-`{}` visit_basics + 1 empty-`{}` convenience already present.
+- Reuse `REGION_CLUSTER` from `lib/itinerary-builder/regions.ts` (busan = busan+yangsan+gyeongju+ulsan+miryang; jeju = jeju) for the region filter.
+
+**Tasks:**
+- [ ] (8a) Sidebar + breadcrumb: add `{ path: '/admin/match-pois', label: '매칭 POI 관리' }` to `adminMenuItems` + `pathToBreadcrumb` in `app/admin/layout.tsx`.
+- [ ] (8b) `GET /api/admin/match-pois` — collection list route. `requireAdmin`; returns trimmed rows (poi_key, name_en, name_ko, region, category, default_image_url, is_attraction, stop_role); `_`-prefixed junk filtered out server-side; `override_pinned` flag per row.
+- [ ] (8c) `GET /api/admin/match-pois/[poi_key]` — fetch one full row (`requireAdmin`, `maybeSingle`), include `override_pinned`.
+- [ ] (8d) `PATCH /api/admin/match-pois/[poi_key]` — auto-upsert. `requireAdmin` → validate → whitelist columns (exclude `is_operational`/`created_at`/`updated_at`/`embedding`) → default `poi_meta` to `{}` if a brand-new row → `supabase.from('match_pois').upsert(payload, { onConflict: 'poi_key' })` → return `{ data, message }` (message says "created" vs "updated").
+- [ ] (8e) Validation: lat ∈ 33.0–38.7, lng ∈ 124.6–131.0 (when non-null); highlights/images = arrays of non-empty strings; visit_basics/convenience/smart_notes = object-or-null (treat `{}` as null, Empty-Object Rule); names_other_locales/matching_profile/poi_meta = object; integers for default_stay_minutes/builder_profile_version; reject unknown columns.
+- [ ] (8f) Defensive override-pin helper `lib/admin/poi-override-pins.ts` — reads `poi-image-overrides.mjs` only if present; returns empty `Set` on `main`; activates when dq branch merges.
+- [ ] (8g) `app/admin/match-pois/page.tsx` + `_components/` (list pane + editor pane) + `_hooks/` (list hook + single-row hook + save). List pane: search + region-cluster filter (busan/jeju) + is_attraction filter + thumbnail/poi_key/name. Editor pane: sticky header + Save + dirty-tracking + Sonner toasts; sections **Identity / Location / Image / Content / Matching profile**; jsonb rendered as structured sub-forms (names_other_locales, highlights/images string-list) + validated JSON textareas (visit_basics, convenience, smart_notes, matching_profile, poi_meta); override-pinned badge + "a re-seed wins" note in the Image section.
+
+**Acceptance:**
+- [ ] `npm run build` green.
+- [ ] `/admin/match-pois` loads behind admin gate; lists `match_pois` (84 attractions, junk `_`-rows excluded); search + region + is_attraction filters work.
+- [ ] Editing a row + Save round-trips through the upsert API and persists (re-fetch shows the change).
+- [ ] A brand-new `poi_key` INSERTs via the same auto-upsert PATCH; an existing one UPDATEs.
+- [ ] SQL data-quality self-check after edits: no new out-of-range lat/lng, no new empty-`{}` structured fields introduced by the editor (Empty-Object Rule applied), `is_operational`/`created_at`/`updated_at` never written.
+- [ ] (deferred) `npm run itinerary:poi-audit --strict` once the dq branch merges to confirm no Signal-A defects — not runnable on `main`.
+
+**Cut-line:** Ops can browse + edit the POI catalog from the admin dashboard. Image edits to override-pinned POIs are flagged as re-seed-overridable. No schema changes; no impact on the live builder beyond the data it already reads.
 
 ---
 
