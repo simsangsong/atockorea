@@ -8,11 +8,29 @@
 
 import type { RegionSlug } from "./regions";
 
+export type PoiLocalizedContent = Record<string, unknown> & {
+  name?: string;
+  category?: string;
+  description?: string;
+  highlights?: string[];
+  smart_notes?: Record<string, unknown>;
+  visit_basics?: Record<string, unknown>;
+  convenience?: Record<string, unknown>;
+  why_on_route?: string;
+  image?: string;
+  images?: string[];
+  duration?: string;
+  time_used?: string[];
+  source_tour_slug?: string;
+};
+
 export interface MatchPoiRow {
   poi_key: string;
   name_en: string;
   name_ko: string | null;
   names_other_locales: Record<string, string> | null;
+  /** Per-locale rich stop content copied from static tour itineraryStops. */
+  content_locales?: Record<string, PoiLocalizedContent> | null;
   region: string;
   category: string | null;
   default_image_url: string | null;
