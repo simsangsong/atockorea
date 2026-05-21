@@ -13,24 +13,27 @@
  * Strategy:
  *   - Walk components/product-tour-static/**\/<slug>.en.json
  *   - Index by `_poi_meta.poi_key`
- *   - For each POI's first-seen tour, capture:
- *       description (long text)
- *       highlights (array)
- *       smartNotes (object)
- *       visitBasics (object)
- *       convenience (object)
- *       whyOnRoute (per-tour but useful as fallback)
- *       images (gallery)
+ *   - For each POI's first-seen tour, capture description / highlights /
+ *     smartNotes / visitBasics / convenience / whyOnRoute / images.
  *   - For subsequent tours: merge images union; keep first description.
  *   - Skip operational stops + route_variant_*.
+ *
+ * Data-quality rules (POI Data Quality master plan, Phase 5):
+ *   - Empty structured objects ({}) and empty arrays are treated as MISSING
+ *     (normalized to null), never written as "field exists".
+ *   - Signal-A wrong-POI images are filtered out of the images union.
+ *   - Curated override images (poi-image-overrides.mjs) are prepended.
+ *   - The UPDATE payload OMITS empty fields, so enrich never wipes good DB
+ *     data with null when a source happens to be empty.
  *
  * Usage:
  *   node --env-file=.env.local scripts/enrich-match-pois-from-tour-jsons.mjs [--dry-run]
  */
-import { readFileSync, readdirSync, existsSync, statSync, writeFileSync } from "fs";
+import { readFileSync, readdirSync, existsSync, statSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import { createClient } from "@supabase/supabase-js";
+import { BUILDER_POI_IMAGE_OVERRIDES } from "../lib/itinerary-builder/poi-image-overrides.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -43,6 +46,34 @@ function isRealPoi(meta) {
   if (meta.poi_key.startsWith("OPS_")) return false;
   if (meta.poi_key.startsWith("route_variant_")) return false;
   return true;
+}
+
+// --- Data-quality helpers (shared semantics with the seed script) ---
+
+function isValidImageUrl(url) {
+  return typeof url === "string" && url.trim().length > 0;
+}
+
+/** Signal A — see seed-match-pois-from-tour-jsons.mjs for the full rationale. */
+function isProbablyWrongPoiImage(poiKey, name, url) {
+  if (!isValidImageUrl(url)) return false;
+  const m = url.match(/^\/images\/tours\/([^/]+)\//);
+  if (!m) return false;
+  const folderTokens = m[1].toLowerCase().split(/[^a-z0-9]+/).filter((t) => t.length >= 3);
+  if (folderTokens.length === 0) return false;
+  const poiTokens = `${poiKey} ${name || ""}`
+    .toLowerCase()
+    .split(/[^a-z0-9]+/)
+    .filter((t) => t.length >= 3);
+  const overlap = folderTokens.some((ft) =>
+    poiTokens.some((pt) => pt === ft || pt.includes(ft) || ft.includes(pt))
+  );
+  return !overlap;
+}
+
+/** Returns the object only if it has meaningful keys, else null ({} -> null). */
+function meaningfulObject(o) {
+  return o && typeof o === "object" && !Array.isArray(o) && Object.keys(o).length > 0 ? o : null;
 }
 
 function listTourDirs() {
@@ -68,14 +99,21 @@ function mergeImagesArray(existing, incoming) {
   return [...seen];
 }
 
-function takeImageList(stop) {
+/** Valid, non-wrong-POI images only (drops "" placeholders + cross-POI pollution). */
+function takeImageList(stop, poiKey) {
   const arr = [];
   if (Array.isArray(stop.images)) {
-    for (const img of stop.images) if (typeof img === "string") arr.push(img);
+    for (const img of stop.images) {
+      if (isValidImageUrl(img) && !isProbablyWrongPoiImage(poiKey, null, img)) arr.push(img);
+    }
   }
-  if (typeof stop.image === "string") arr.push(stop.image);
+  if (isValidImageUrl(stop.image) && !isProbablyWrongPoiImage(poiKey, null, stop.image)) {
+    arr.push(stop.image);
+  }
   if (Array.isArray(stop.galleryItems)) {
-    for (const g of stop.galleryItems) if (g && typeof g.src === "string") arr.push(g.src);
+    for (const g of stop.galleryItems) {
+      if (g && isValidImageUrl(g.src) && !isProbablyWrongPoiImage(poiKey, null, g.src)) arr.push(g.src);
+    }
   }
   return arr;
 }
@@ -119,22 +157,27 @@ function walkTours() {
         acc.description = stop.description.trim();
       }
       if (!acc.highlights && Array.isArray(stop.highlights) && stop.highlights.length > 0) {
-        acc.highlights = stop.highlights.filter((h) => typeof h === "string");
+        const hs = stop.highlights.filter((h) => typeof h === "string" && h.trim());
+        if (hs.length) acc.highlights = hs;
       }
-      if (!acc.smart_notes && stop.smartNotes && typeof stop.smartNotes === "object") {
-        acc.smart_notes = stop.smartNotes;
+      // Empty {} is treated as missing — never captured.
+      if (!acc.smart_notes) {
+        const v = meaningfulObject(stop.smartNotes);
+        if (v) acc.smart_notes = v;
       }
-      if (!acc.visit_basics && stop.visitBasics && typeof stop.visitBasics === "object") {
-        acc.visit_basics = stop.visitBasics;
+      if (!acc.visit_basics) {
+        const v = meaningfulObject(stop.visitBasics);
+        if (v) acc.visit_basics = v;
       }
-      if (!acc.convenience && stop.convenience && typeof stop.convenience === "object") {
-        acc.convenience = stop.convenience;
+      if (!acc.convenience) {
+        const v = meaningfulObject(stop.convenience);
+        if (v) acc.convenience = v;
       }
       if (!acc.why_on_route && typeof stop.whyOnRoute === "string" && stop.whyOnRoute.trim()) {
         acc.why_on_route = stop.whyOnRoute.trim();
       }
-      // Images: union across all tours that include this POI
-      acc.images = mergeImagesArray(acc.images, takeImageList(stop));
+      // Images: union across all tours that include this POI (valid + non-wrong only)
+      acc.images = mergeImagesArray(acc.images, takeImageList(stop, key));
     }
   }
   return filesScanned;
@@ -162,19 +205,29 @@ async function main() {
   let withHighlights = 0;
 
   for (const acc of pois.values()) {
-    const payload = {
-      description: acc.description,
-      highlights: acc.highlights,
-      smart_notes: acc.smart_notes,
-      visit_basics: acc.visit_basics,
-      convenience: acc.convenience,
-      why_on_route: acc.why_on_route,
-      images: acc.images.length > 0 ? acc.images : null,
-    };
+    // Prepend curated override images (assets-not-in-source) ahead of the union.
+    let imgs = acc.images;
+    const override = BUILDER_POI_IMAGE_OVERRIDES[acc.poi_key];
+    if (override?.images?.length) {
+      imgs = mergeImagesArray(override.images, imgs);
+    }
+
+    // Build payload with ONLY non-empty fields — never wipe good DB data with null.
+    const payload = {};
+    if (acc.description) payload.description = acc.description;
+    if (acc.highlights && acc.highlights.length) payload.highlights = acc.highlights;
+    if (meaningfulObject(acc.smart_notes)) payload.smart_notes = acc.smart_notes;
+    if (meaningfulObject(acc.visit_basics)) payload.visit_basics = acc.visit_basics;
+    if (meaningfulObject(acc.convenience)) payload.convenience = acc.convenience;
+    if (acc.why_on_route) payload.why_on_route = acc.why_on_route;
+    if (imgs.length) payload.images = imgs;
+
     if (payload.description) withDescription++;
     if (payload.images) withImages++;
     if (payload.highlights) withHighlights++;
     if (DRY_RUN) continue;
+    if (Object.keys(payload).length === 0) continue; // nothing to write for this POI
+
     const { error } = await sb.from("match_pois").update(payload).eq("poi_key", acc.poi_key);
     if (error) {
       console.error(`  UPDATE error ${acc.poi_key}:`, error);

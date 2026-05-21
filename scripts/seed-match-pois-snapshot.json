@@ -352,7 +352,7 @@
       "es": "Puente Woljeonggyo"
     },
     "region": "busan",
-    "default_image_url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+    "default_image_url": "/images/itinerary/woljeonggyo-front-day.webp",
     "poi_meta": {
       "sources": [
         "Visit Gyeongju official",
@@ -381,7 +381,7 @@
       "es": "Templo Tongdosa (UNESCO Sansa + ciruelo Jajangmae)"
     },
     "region": "busan",
-    "default_image_url": null,
+    "default_image_url": "/images/itinerary/tongdosa-iljumun.webp",
     "poi_meta": {
       "sources": [
         "Korea Tourism Organization (VisitKorea — Tongdosa Temple official listing)",
@@ -934,7 +934,7 @@
       "es": "Calle de los Cerezos de Jeonnong-ro"
     },
     "region": "jeju",
-    "default_image_url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+    "default_image_url": null,
     "poi_meta": {
       "sources": [
         "Visit Jeju official",
@@ -967,7 +967,7 @@
       "es": "Noksan-ro (Carretera de cerezos + canola de 10 km de Gasi-ri)"
     },
     "region": "jeju",
-    "default_image_url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+    "default_image_url": null,
     "poi_meta": {
       "sources": [
         "Visit Korea (Korea Tourism Organization)",
@@ -1401,98 +1401,6 @@
     ]
   },
   {
-    "poi_key": "route_variant_east",
-    "name_en": "East Route: UNESCO & K-Drama Coast",
-    "name_ko": "동쪽 루트: 유네스코 & K-드라마 해안",
-    "names_other_locales": {
-      "ja": "東ルート：ユネスコ＆韓流ドラマの海岸",
-      "zh": "东部路线：联合国教科文组织遗址与韩剧海岸",
-      "zh-TW": "東部路線：聯合國教科文組織世界遺產與韓劇海岸",
-      "es": "Ruta Este: Costa UNESCO y K-Drama"
-    },
-    "region": "jeju",
-    "default_image_url": null,
-    "poi_meta": {
-      "sources": [],
-      "verified": true,
-      "kb_version": null,
-      "verified_date": null
-    },
-    "stop_role": "attraction",
-    "is_attraction": true,
-    "category": "Seongsan, Udo, Manjanggul, Seopjikoji",
-    "default_stay_minutes": null
-  },
-  {
-    "poi_key": "route_variant_west",
-    "name_en": "West Route: Beaches, Tea & Cafe Coast",
-    "name_ko": "서쪽 루트: 해변, 차(茶) & 카페 해안",
-    "names_other_locales": {
-      "ja": "西ルート：ビーチ、お茶＆カフェ海岸",
-      "zh": "西部路线：海滩、茶园与咖啡海岸",
-      "zh-TW": "西部路線：海灘、茶園與咖啡海岸",
-      "es": "Ruta Oeste: Playas, Té y Costa de los Cafés"
-    },
-    "region": "jeju",
-    "default_image_url": null,
-    "poi_meta": {
-      "sources": [],
-      "verified": true,
-      "kb_version": null,
-      "verified_date": null
-    },
-    "stop_role": "attraction",
-    "is_attraction": true,
-    "category": "Hyeopjae, Hallim Park, O'sulloc, Aewol",
-    "default_stay_minutes": null
-  },
-  {
-    "poi_key": "route_variant_south",
-    "name_en": "South Route: Waterfalls & Volcanic Coast",
-    "name_ko": "남부 코스: 폭포 & 화산 해안",
-    "names_other_locales": {
-      "ja": "南ルート：滝と火山海岸",
-      "zh": "南线：瀑布与火山海岸",
-      "zh-TW": "南部路線：瀑布與火山海岸",
-      "es": "Ruta Sur: Cascadas y Costa Volcánica"
-    },
-    "region": "jeju",
-    "default_image_url": null,
-    "poi_meta": {
-      "sources": [],
-      "verified": true,
-      "kb_version": null,
-      "verified_date": null
-    },
-    "stop_role": "attraction",
-    "is_attraction": true,
-    "category": "Cheonjiyeon, Jusangjeolli, Sanbangsan, Olle Market",
-    "default_stay_minutes": null
-  },
-  {
-    "poi_key": "route_variant_custom",
-    "name_en": "Custom Route: Build Your Own Day",
-    "name_ko": "맞춤 코스: 나만의 하루 일정 만들기",
-    "names_other_locales": {
-      "ja": "カスタムルート：自分だけの1日を作ろう",
-      "zh": "自定义路线：打造专属一日游",
-      "zh-TW": "自訂路線：打造您的專屬一日遊",
-      "es": "Ruta personalizada: Diseña tu propio día"
-    },
-    "region": "jeju",
-    "default_image_url": null,
-    "poi_meta": {
-      "sources": [],
-      "verified": true,
-      "kb_version": null,
-      "verified_date": null
-    },
-    "stop_role": "attraction",
-    "is_attraction": true,
-    "category": "Send Us Your Own Itinerary",
-    "default_stay_minutes": null
-  },
-  {
     "poi_key": "cheonjeyeon_falls",
     "name_en": "Cheonjeyeon Waterfall",
     "name_ko": "천제연폭포",
@@ -1764,7 +1672,7 @@
       "es": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo)"
     },
     "region": "seoul",
-    "default_image_url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+    "default_image_url": null,
     "poi_meta": {
       "sources": [
         "Korea Tourism Organization (VisitKorea — The 3rd Tunnel official listing + reservation info)",
@@ -1793,7 +1701,7 @@
       "es": "Observatorio Dora"
     },
     "region": "seoul",
-    "default_image_url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+    "default_image_url": null,
     "poi_meta": {
       "sources": [
         "Korea Tourism Organization (VisitKorea — Dora Observatory listing + capacity specs)",
@@ -1822,7 +1730,7 @@
       "es": "Puente Colgante Rojo de Gamaksan"
     },
     "region": "seoul",
-    "default_image_url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+    "default_image_url": null,
     "poi_meta": {
       "sources": [
         "Korea Tourism Organization (VisitKorea — Gamaksan Suspension Bridge listing + 150 m towerless designation)",
@@ -2024,7 +1932,7 @@
       "es": "Mercado Pesquero Turístico de Sokcho"
     },
     "region": "seoraksan",
-    "default_image_url": "",
+    "default_image_url": null,
     "poi_meta": {
       "sources": [
         "Korea Tourism Organization (VisitKorea — Sokcho Tourist & Fishery Market listing + Top 3 Eateries Dakgangjeong/Raw Fish/Abai Village)",
@@ -2053,7 +1961,7 @@
       "es": "Playa de Sokcho"
     },
     "region": "seoraksan",
-    "default_image_url": "",
+    "default_image_url": null,
     "poi_meta": {
       "sources": [
         "Korea Tourism Organization (VisitKorea — Sokcho Beach official listing + Sokcho Eye dedicated listing with 65 m specs)",
@@ -2070,98 +1978,6 @@
     "is_attraction": true,
     "category": "Coastal Beach",
     "default_stay_minutes": 75
-  },
-  {
-    "poi_key": "route_variant_gapyeong_loop",
-    "name_en": "Route 1: Gapyeong Nature & Culture Loop",
-    "name_ko": "루트 1: 가평 자연 & 문화 순환 코스",
-    "names_other_locales": {
-      "ja": "ルート1：加平 自然＆文化ループ",
-      "zh": "路线1：加平自然与文化环线",
-      "zh-TW": "路線1：加平自然與文化環線",
-      "es": "Ruta 1: Circuito de Naturaleza y Cultura de Gapyeong"
-    },
-    "region": "seoul",
-    "default_image_url": null,
-    "poi_meta": {
-      "sources": [],
-      "verified": true,
-      "kb_version": null,
-      "verified_date": null
-    },
-    "stop_role": "attraction",
-    "is_attraction": true,
-    "category": "Nami Island + Morning Calm + Petite France + Gangchon Railbike",
-    "default_stay_minutes": null
-  },
-  {
-    "poi_key": "route_variant_dmz_paju",
-    "name_en": "Route 2: DMZ History & Paju Shopping",
-    "name_ko": "코스 2: DMZ 역사 & 파주 쇼핑",
-    "names_other_locales": {
-      "ja": "ルート2：DMZの歴史＆坡州ショッピング",
-      "zh": "路线二：非军事区历史游 & 坡州购物",
-      "zh-TW": "路線二：非武裝地帶歷史之旅與坡州購物",
-      "es": "Ruta 2: Historia de la DMZ y compras en Paju"
-    },
-    "region": "seoul",
-    "default_image_url": null,
-    "poi_meta": {
-      "sources": [],
-      "verified": true,
-      "kb_version": null,
-      "verified_date": null
-    },
-    "stop_role": "attraction",
-    "is_attraction": true,
-    "category": "DMZ Tour + Paju Premium Outlets",
-    "default_stay_minutes": null
-  },
-  {
-    "poi_key": "route_variant_everland_folk",
-    "name_en": "Route 3: Everland + Korean Folk Village",
-    "name_ko": "루트 3: 에버랜드 + 한국민속촌",
-    "names_other_locales": {
-      "ja": "ルート3：エバーランド＋韓国民俗村",
-      "zh": "路线3：爱宝乐园 + 韩国民俗村",
-      "zh-TW": "路線三：愛寶樂園＋韓國民俗村",
-      "es": "Ruta 3: Everland + Aldea Popular Coreana"
-    },
-    "region": "seoul",
-    "default_image_url": "",
-    "poi_meta": {
-      "sources": [],
-      "verified": true,
-      "kb_version": null,
-      "verified_date": null
-    },
-    "stop_role": "attraction",
-    "is_attraction": true,
-    "category": "Theme Park + Heritage Village",
-    "default_stay_minutes": null
-  },
-  {
-    "poi_key": "route_variant_custom_seoul",
-    "name_en": "Route 4: Custom Itinerary Option",
-    "name_ko": "코스 4: 맞춤 일정 옵션",
-    "names_other_locales": {
-      "ja": "ルート4：カスタムプランオプション",
-      "zh": "路线四：自定义行程方案",
-      "zh-TW": "路線四：自訂行程方案",
-      "es": "Ruta 4: Opción de Itinerario Personalizado"
-    },
-    "region": "seoul",
-    "default_image_url": null,
-    "poi_meta": {
-      "sources": [],
-      "verified": true,
-      "kb_version": null,
-      "verified_date": null
-    },
-    "stop_role": "attraction",
-    "is_attraction": true,
-    "category": "Send Us Your Own Plan",
-    "default_stay_minutes": null
   },
   {
     "poi_key": "hwaseong_fortress",
