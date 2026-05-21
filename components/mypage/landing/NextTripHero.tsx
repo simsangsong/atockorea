@@ -7,9 +7,9 @@ import { CalendarDateIcon, ClockIcon, MapIcon } from '@/components/Icons';
 import { useTranslations } from '@/lib/i18n';
 import { buildIcsEvent, downloadIcsFile } from '@/lib/ics';
 import { MYPAGE_FOCUS_RING, MYPAGE_SURFACE_PAGE } from '@/lib/mypage-ui';
-import { supabase } from '@/lib/supabase';
 import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
 import { cn } from '@/lib/utils';
+import { useMyPageSession } from '../MyPageSessionProvider';
 
 export interface NextTripData {
   bookingId: string;
@@ -84,6 +84,7 @@ function EmptyHero() {
 
 export function NextTripHero({ trip }: NextTripHeroProps) {
   const t = useTranslations();
+  const { getAccessToken } = useMyPageSession();
 
   if (!trip) return <EmptyHero />;
 
@@ -116,14 +117,13 @@ export function NextTripHero({ trip }: NextTripHeroProps) {
 
   const handleReceipt = async () => {
     try {
-      if (!supabase) return;
-      const { data: { session } } = await supabase.auth.getSession();
-      if (!session) {
+      const token = await getAccessToken();
+      if (!token) {
         toast.error(t('mypage.common.toast.signInRequired'));
         return;
       }
       const res = await fetch(`/api/bookings/${trip.bookingId}/receipt`, {
-        headers: { Authorization: `Bearer ${session.access_token}` },
+        headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) {
         toast.error(t('mypage.common.toast.saveFailed'));

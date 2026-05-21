@@ -8,10 +8,10 @@ import { ClockIcon, HeartSolidIcon, MapIcon } from '@/components/Icons';
 import { ConfirmDialog } from '@/components/mypage/ConfirmDialog';
 import { useTranslations } from '@/lib/i18n';
 import { useCurrency } from '@/lib/currency';
-import { supabase } from '@/lib/supabase';
 import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
 import { MYPAGE_FOCUS_RING, MYPAGE_SECTION_TITLE, MYPAGE_SURFACE_PAGE } from '@/lib/mypage-ui';
 import { cn } from '@/lib/utils';
+import { useMyPageSession } from '../MyPageSessionProvider';
 
 export interface WishlistCarouselItem {
   id: string;
@@ -35,6 +35,7 @@ interface WishlistCarouselProps {
 export function WishlistCarousel({ items, totalCount, onRemoved }: WishlistCarouselProps) {
   const t = useTranslations();
   const { formatPrice } = useCurrency();
+  const { getAccessToken } = useMyPageSession();
   const [removeTarget, setRemoveTarget] = useState<WishlistCarouselItem | null>(null);
   const [removeBusy, setRemoveBusy] = useState(false);
 
@@ -44,15 +45,14 @@ export function WishlistCarousel({ items, totalCount, onRemoved }: WishlistCarou
     if (!removeTarget) return;
     try {
       setRemoveBusy(true);
-      if (!supabase) return;
-      const { data: { session } } = await supabase.auth.getSession();
-      if (!session) {
+      const token = await getAccessToken();
+      if (!token) {
         toast.error(t('mypage.common.toast.signInRequired'));
         return;
       }
       const res = await fetch(`/api/wishlist?tourId=${removeTarget.tour_id}`, {
         method: 'DELETE',
-        headers: { Authorization: `Bearer ${session.access_token}` },
+        headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));

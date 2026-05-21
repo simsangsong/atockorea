@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { CalendarDateIcon } from '@/components/Icons';
-import { supabase } from '@/lib/supabase';
 import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
 import { useTranslations } from '@/lib/i18n';
 import {
@@ -24,6 +23,7 @@ import {
   MyPageHeaderSkeleton,
   MyPageListSkeleton,
 } from '@/components/mypage/MyPageSkeletons';
+import { useMyPageSession } from '@/components/mypage/MyPageSessionProvider';
 
 interface Booking {
   id: string;
@@ -42,6 +42,7 @@ interface Booking {
 export default function BookingHistoryPage() {
   const router = useRouter();
   const t = useTranslations();
+  const { user, getAccessToken } = useMyPageSession();
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -55,17 +56,16 @@ export default function BookingHistoryPage() {
   const fetchHistory = async () => {
     try {
       setLoading(true);
-      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-
-      if (!session) {
+      const token = await getAccessToken();
+      if (!token) {
         router.push('/signin');
         return;
       }
 
-      setViewerEmail(session.user.email ?? null);
+      setViewerEmail(user?.email ?? null);
 
-      const response = await fetch('/api/bookings', {
-        headers: { Authorization: `Bearer ${session.access_token}` },
+      const response = await fetch('/api/bookings?scope=history&limit=50', {
+        headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
 
@@ -73,17 +73,7 @@ export default function BookingHistoryPage() {
         throw new Error(data.error || 'Failed to fetch booking history');
       }
 
-      const historyBookings = (data.bookings || []).filter(
-        (booking: any) => booking.status === 'completed' || booking.status === 'cancelled',
-      );
-
-      historyBookings.sort((a: any, b: any) => {
-        const dateA = new Date(a.booking_date || a.created_at).getTime();
-        const dateB = new Date(b.booking_date || b.created_at).getTime();
-        return dateB - dateA;
-      });
-
-      setBookings(historyBookings);
+      setBookings(data.bookings || []);
     } catch (err: any) {
       console.error('Error fetching booking history:', err);
       setError(err.message);

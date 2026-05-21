@@ -10,11 +10,13 @@ import { supabase } from '@/lib/supabase';
 import { useTranslations } from '@/lib/i18n';
 import { MYPAGE_SURFACE_PAGE, MYPAGE_FOCUS_RING } from '@/lib/mypage-ui';
 import { cn } from '@/lib/utils';
+import { useMyPageSession } from '@/components/mypage/MyPageSessionProvider';
 
 function WriteReviewContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const t = useTranslations();
+  const { user, getAccessToken } = useMyPageSession();
   const tourId = searchParams?.get('tourId');
   const bookingId = searchParams?.get('bookingId');
   const reviewId = searchParams?.get('reviewId');
@@ -41,11 +43,10 @@ function WriteReviewContent() {
     let cancelled = false;
     const load = async () => {
       try {
-        if (!supabase) return;
-        const { data: { session } } = await supabase.auth.getSession();
-        if (!session) return;
+        const token = await getAccessToken();
+        if (!token) return;
         const res = await fetch(`/api/reviews/${reviewId}`, {
-          headers: { Authorization: `Bearer ${session.access_token}` },
+          headers: { Authorization: `Bearer ${token}` },
         });
         if (!res.ok) return;
         const data = await res.json();
@@ -65,7 +66,7 @@ function WriteReviewContent() {
     return () => {
       cancelled = true;
     };
-  }, [reviewId]);
+  }, [getAccessToken, reviewId]);
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -73,15 +74,14 @@ function WriteReviewContent() {
 
     try {
       if (!supabase) throw new Error('supabase unavailable');
-      const { data: { session } } = await supabase.auth.getSession();
-      if (!session) {
+      if (!user) {
         toast.error(t('mypage.reviews.write.signInToUpload'));
         return;
       }
 
       const uploadPromises = Array.from(files).map(async (file) => {
         const fileExt = file.name.split('.').pop();
-        const fileName = `${session.user.id}/${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`;
+        const fileName = `${user.id}/${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`;
         const filePath = `reviews/${fileName}`;
 
         const uploadResult = await supabase!.storage.from('reviews').upload(filePath, file);
@@ -123,9 +123,9 @@ function WriteReviewContent() {
       setError(null);
 
       if (!supabase) throw new Error('supabase unavailable');
-      const { data: { session } } = await supabase.auth.getSession();
+      const token = await getAccessToken();
 
-      if (!session) {
+      if (!token) {
         toast.error(t('mypage.reviews.write.signInToSubmit'));
         router.push('/signin');
         return;
@@ -138,7 +138,7 @@ function WriteReviewContent() {
         method,
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${session.access_token}`,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
           tourId,

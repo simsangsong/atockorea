@@ -8,7 +8,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { toast } from 'sonner';
 import { HeartSolidIcon, MapIcon, ClockIcon, StarIcon } from '@/components/Icons';
-import { supabase } from '@/lib/supabase';
 import { useTranslations } from '@/lib/i18n';
 import { useCurrency } from '@/lib/currency';
 import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
@@ -20,6 +19,7 @@ import {
 import { cn } from '@/lib/utils';
 import { ConfirmDialog } from '@/components/mypage/ConfirmDialog';
 import { MyPageHeaderSkeleton, MyPageWishlistCardSkeleton } from '@/components/mypage/MyPageSkeletons';
+import { useMyPageSession } from '@/components/mypage/MyPageSessionProvider';
 
 interface WishlistItem {
   id: string;
@@ -45,6 +45,7 @@ export default function WishlistPage() {
   const router = useRouter();
   const t = useTranslations();
   const { formatPrice } = useCurrency();
+  const { getAccessToken } = useMyPageSession();
   const [wishlistItems, setWishlistItems] = useState<WishlistItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -60,16 +61,15 @@ export default function WishlistPage() {
     try {
       setLoading(true);
       setError(null);
-      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-
-      if (!session) {
+      const token = await getAccessToken();
+      if (!token) {
         router.push('/signin?redirect=/mypage/wishlist');
         return;
       }
 
       const response = await fetch('/api/wishlist', {
         headers: {
-          Authorization: `Bearer ${session.access_token}`,
+          Authorization: `Bearer ${token}`,
         },
       });
 
@@ -97,9 +97,8 @@ export default function WishlistPage() {
 
     try {
       setRemoveBusy(true);
-      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-
-      if (!session) {
+      const token = await getAccessToken();
+      if (!token) {
         toast.error(t('mypage.common.toast.signInRequired'));
         return;
       }
@@ -107,7 +106,7 @@ export default function WishlistPage() {
       const response = await fetch(`/api/wishlist?tourId=${removeTarget.tour_id}`, {
         method: 'DELETE',
         headers: {
-          Authorization: `Bearer ${session.access_token}`,
+          Authorization: `Bearer ${token}`,
         },
       });
 

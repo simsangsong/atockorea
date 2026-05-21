@@ -13,7 +13,6 @@ import {
   HistoryIcon,
   StarIcon,
 } from '@/components/Icons';
-import { supabase } from '@/lib/supabase';
 import { useTranslations } from '@/lib/i18n';
 import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
 import {
@@ -23,10 +22,7 @@ import {
   MYPAGE_FOCUS_RING,
 } from '@/lib/mypage-ui';
 import { cn } from '@/lib/utils';
-import {
-  isReviewWriteWindowOpenForViewer,
-  normalizeBookingTourDateYmd,
-} from '@/lib/review-write-window';
+import { useMyPageSession } from '@/components/mypage/MyPageSessionProvider';
 
 interface Activity {
   action: 'completed' | 'cancelled' | 'booked';
@@ -55,6 +51,7 @@ interface PendingReview {
 export default function DashboardPage() {
   const router = useRouter();
   const t = useTranslations();
+  const { user, getAccessToken } = useMyPageSession();
   const [upcomingTours, setUpcomingTours] = useState(0);
   const [totalBookings, setTotalBookings] = useState(0);
   const [reviews, setReviews] = useState(0);
@@ -75,134 +72,40 @@ export default function DashboardPage() {
       setLoading(true);
       setDataError(null);
 
-      if (!supabase) {
-        console.error('Supabase client not initialized');
+      const token = await getAccessToken();
+
+      if (!token) {
         router.push('/signin');
         return;
       }
 
-      const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+      const summaryResponse = await fetch('/api/mypage/summary', {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const summaryData = await summaryResponse.json();
 
-      if (sessionError || !session) {
-        console.error('Session error:', sessionError);
-        router.push('/signin');
-        return;
+      if (!summaryResponse.ok) {
+        throw new Error(summaryData.error || 'Failed to fetch dashboard summary');
       }
 
-      const { data: profile, error: profileError } = await supabase
-        .from('user_profiles')
-        .select('full_name')
-        .eq('id', session.user.id)
-        .single();
-
-      if (!profileError && profile?.full_name) {
-        setUserName(profile.full_name);
-      } else if (session.user.email) {
-        setUserName(session.user.email.split('@')[0]);
-      }
-
-      let bookingsOk = true;
-      let reviewsOk = true;
-      let reviewedBookingIds = new Set<string>();
-
-      try {
-        const reviewsResponse = await fetch('/api/reviews?userId=' + session.user.id, {
-          headers: { Authorization: `Bearer ${session.access_token}` },
-        });
-        const reviewsData = await reviewsResponse.json();
-        if (reviewsResponse.ok && reviewsData.reviews) {
-          setReviews(reviewsData.reviews.length);
-          reviewedBookingIds = new Set(
-            reviewsData.reviews.map((r: any) => r.booking_id).filter(Boolean),
-          );
-        } else {
-          reviewsOk = false;
-        }
-      } catch (reviewError) {
-        console.error('Error fetching reviews:', reviewError);
-        reviewsOk = false;
-      }
-
-      try {
-        const bookingsResponse = await fetch('/api/bookings', {
-          headers: { Authorization: `Bearer ${session.access_token}` },
-        });
-        const bookingsData = await bookingsResponse.json();
-
-        if (bookingsResponse.ok && bookingsData.bookings) {
-          const bookings = bookingsData.bookings;
-          const now = new Date();
-
-          const upcomingList = bookings
-            .filter((booking: any) => {
-              const tourDate = new Date(booking.tour_date || booking.booking_date || booking.created_at);
-              return (booking.status === 'confirmed' || booking.status === 'pending') && tourDate >= now;
-            })
-            .sort((a: any, b: any) => {
-              const dateA = new Date(a.tour_date || a.booking_date).getTime();
-              const dateB = new Date(b.tour_date || b.booking_date).getTime();
-              return dateA - dateB;
-            });
-
-          setUpcomingTours(upcomingList.length);
-          setTotalBookings(bookings.length);
-
-          const first = upcomingList[0];
-          if (first) {
-            setNextTrip({
-              id: first.id,
-              title: first.tours?.title || 'Tour',
-              tourId: first.tour_id,
-              slug: first.tours?.slug ?? null,
-              tourDate: first.tour_date || first.booking_date,
-            });
-          } else {
-            setNextTrip(null);
-          }
-
-          setRecentActivity(
-            bookings.slice(0, 5).map((booking: any) => ({
-              action:
-                booking.status === 'completed'
-                  ? 'completed'
-                  : booking.status === 'cancelled'
-                    ? 'cancelled'
-                    : 'booked',
-              tour: booking.tours?.title || 'Tour',
-              createdAt: booking.created_at,
-              tourId: booking.tour_id,
-              slug: booking.tours?.slug ?? null,
-            })),
-          );
-
-          const pending = bookings
-            .filter((booking: any) => {
-              if (booking.status !== 'completed') return false;
-              if (reviewedBookingIds.has(booking.id)) return false;
-              const ymd = normalizeBookingTourDateYmd(booking.tour_date || null);
-              const viewerEmail = session.user.email ?? null;
-              return ymd ? isReviewWriteWindowOpenForViewer(ymd, viewerEmail) : false;
-            })
-            .slice(0, 3)
-            .map((booking: any) => ({
-              bookingId: booking.id,
-              tourId: booking.tour_id,
-              slug: booking.tours?.slug ?? null,
-              title: booking.tours?.title || 'Tour',
-              tourDate: booking.tour_date || booking.booking_date,
-            }));
-          setPendingReviews(pending);
-        } else {
-          bookingsOk = false;
-        }
-      } catch (err) {
-        console.error('Error fetching bookings:', err);
-        bookingsOk = false;
-      }
-
-      if (!bookingsOk || !reviewsOk) {
-        setDataError(t('mypage.dashboard.errorBanner'));
-      }
+      setUserName(summaryData.userName || user?.email?.split('@')[0] || 'User');
+      setUpcomingTours(summaryData.counts?.upcoming ?? 0);
+      setTotalBookings(summaryData.counts?.bookings ?? 0);
+      setReviews(summaryData.counts?.reviews ?? 0);
+      setRecentActivity(summaryData.recentActivity ?? []);
+      setPendingReviews((summaryData.pendingReviews ?? []).slice(0, 3));
+      const first = summaryData.nextTrip;
+      setNextTrip(
+        first
+          ? {
+              id: first.bookingId,
+              title: first.title || 'Tour',
+              tourId: first.tourId,
+              slug: first.slug ?? null,
+              tourDate: first.tourDate,
+            }
+          : null,
+      );
     } catch (err: any) {
       console.error('Error fetching dashboard data:', err);
       if (err?.message?.includes('session') || err?.message?.includes('auth')) {

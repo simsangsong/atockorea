@@ -27,6 +27,7 @@ import {
   MYPAGE_SIDEBAR_ICON,
 } from '@/lib/mypage-ui';
 import { cn } from '@/lib/utils';
+import { MyPageSessionProvider, useMyPageSession } from '@/components/mypage/MyPageSessionProvider';
 
 function getInitials(name: string) {
   return name
@@ -83,14 +84,18 @@ function UserProfileCard({
   );
 }
 
-export default function MyPageLayout({ children }: { children: React.ReactNode }) {
+function MyPageLayoutContent({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
   const t = useTranslations();
-  const [avatar, setAvatar] = useState<string | null>(null);
-  const [userInfo, setUserInfo] = useState({ name: 'Guest', email: '' });
+  const { user, profile, refreshProfile } = useMyPageSession();
   const [signOutOpen, setSignOutOpen] = useState(false);
   const [signOutLoading, setSignOutLoading] = useState(false);
+  const avatar = profile?.avatar_url ?? null;
+  const userInfo = {
+    name: profile?.full_name?.trim() || user?.email?.split('@')[0] || 'Guest',
+    email: user?.email || '',
+  };
 
   const menuItems = [
     { id: 'dashboard', label: t('mypage.dashboard'), icon: DashboardIcon, path: '/mypage/dashboard' },
@@ -103,75 +108,10 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
   ];
 
   useEffect(() => {
-    const loadUserData = async () => {
-      try {
-        const { supabase } = await import('@/lib/supabase');
-        if (!supabase) return;
-        const { data: { session } } = await supabase.auth.getSession();
-
-        if (session?.user) {
-          const { data: profile } = await supabase
-            .from('user_profiles')
-            .select('full_name, avatar_url, phone, birth_year, nationality')
-            .eq('id', session.user.id)
-            .single();
-
-          if (profile) {
-            setUserInfo({
-              name: profile.full_name || session.user.email?.split('@')[0] || 'User',
-              email: session.user.email || '',
-            });
-            if (profile.avatar_url) setAvatar(profile.avatar_url);
-
-            const meta = session.user.user_metadata || {};
-            const supplement: Record<string, string | number | null> = {};
-            if (!profile.full_name?.trim() && meta.full_name != null && String(meta.full_name).trim())
-              supplement.full_name = String(meta.full_name).trim();
-            if (!profile.phone?.trim() && meta.phone != null && String(meta.phone).trim())
-              supplement.phone = String(meta.phone).trim();
-            if (profile.birth_year == null && meta.birth_year != null) {
-              const y = Number(meta.birth_year);
-              if (!Number.isNaN(y)) supplement.birth_year = y;
-            }
-            if (!profile.nationality?.trim() && meta.nationality != null && String(meta.nationality).trim())
-              supplement.nationality = String(meta.nationality).trim();
-            if (Object.keys(supplement).length > 0 && session.access_token) {
-              try {
-                await fetch('/api/auth/update-profile', {
-                  method: 'PATCH',
-                  headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${session.access_token}` },
-                  body: JSON.stringify(supplement),
-                });
-              } catch (e) {
-                if (process.env.NODE_ENV === 'development') {
-                  console.warn('[mypage/layout] Failed to supplement profile:', e);
-                }
-              }
-            }
-          } else {
-            setUserInfo({
-              name: session.user.email?.split('@')[0] || 'User',
-              email: session.user.email || '',
-            });
-          }
-        } else {
-          const savedAvatar = localStorage.getItem('userAvatar');
-          const savedName = localStorage.getItem('userName');
-          const savedEmail = localStorage.getItem('userEmail');
-          if (savedAvatar) setAvatar(savedAvatar);
-          if (savedName) setUserInfo((prev) => ({ ...prev, name: savedName }));
-          if (savedEmail) setUserInfo((prev) => ({ ...prev, email: savedEmail }));
-        }
-      } catch (error) {
-        console.error('Error loading user data:', error);
-      }
-    };
-
-    loadUserData();
-    const handleUpdate = () => void loadUserData();
+    const handleUpdate = () => void refreshProfile();
     window.addEventListener('userDataUpdated', handleUpdate);
     return () => window.removeEventListener('userDataUpdated', handleUpdate);
-  }, []);
+  }, [refreshProfile]);
 
   const handleLogout = () => {
     setSignOutOpen(true);
@@ -307,5 +247,13 @@ export default function MyPageLayout({ children }: { children: React.ReactNode }
         />
       </MyPageAuthGate>
     </SitePageShell>
+  );
+}
+
+export default function MyPageLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <MyPageSessionProvider>
+      <MyPageLayoutContent>{children}</MyPageLayoutContent>
+    </MyPageSessionProvider>
   );
 }

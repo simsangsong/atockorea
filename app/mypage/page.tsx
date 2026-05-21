@@ -33,8 +33,8 @@ import {
 } from '@/components/mypage/MyPageSkeletons';
 import { useI18n, useTranslations } from '@/lib/i18n';
 import { MYPAGE_FOCUS_RING } from '@/lib/mypage-ui';
-import { supabase } from '@/lib/supabase';
 import { cn } from '@/lib/utils';
+import { useMyPageSession } from '@/components/mypage/MyPageSessionProvider';
 
 type MyPageSummaryResponse = {
   profile: ProfileCompletionInput | null;
@@ -44,6 +44,12 @@ type MyPageSummaryResponse = {
   pendingReviews: PendingReviewItem[];
   wishlistItems: WishlistCarouselItem[];
   wishlistTotal: number;
+  recommendations: RecommendedTour[];
+  error?: string;
+};
+
+type MyPageExtrasResponse = {
+  wishlistItems: WishlistCarouselItem[];
   recommendations: RecommendedTour[];
   error?: string;
 };
@@ -59,6 +65,7 @@ export default function MyPageLandingPage() {
   const router = useRouter();
   const t = useTranslations();
   const { locale } = useI18n();
+  const { user, getAccessToken } = useMyPageSession();
 
   const [userName, setUserName] = useState('User');
   const [profile, setProfile] = useState<ProfileCompletionInput | null>(null);
@@ -78,6 +85,7 @@ export default function MyPageLandingPage() {
   const [recommendations, setRecommendations] = useState<RecommendedTour[]>([]);
 
   const [loading, setLoading] = useState(true);
+  const [extrasLoading, setExtrasLoading] = useState(false);
   const [hadError, setHadError] = useState(false);
 
   const fetchAll = useCallback(async () => {
@@ -85,17 +93,12 @@ export default function MyPageLandingPage() {
     setHadError(false);
 
     try {
-      if (!supabase) {
-        router.push('/signin?redirect=/mypage');
-        return;
-      }
-      const { data: { session } } = await supabase.auth.getSession();
-      if (!session) {
+      const token = await getAccessToken();
+      if (!token) {
         router.push('/signin?redirect=/mypage');
         return;
       }
 
-      const token = session.access_token;
       const headers = { Authorization: `Bearer ${token}` } as const;
 
       const res = await fetch(`/api/mypage/summary?locale=${encodeURIComponent(locale)}`, { headers });
@@ -105,7 +108,7 @@ export default function MyPageLandingPage() {
       }
 
       setProfile(data.profile);
-      setUserName(data.userName || session.user.email?.split('@')[0] || 'User');
+      setUserName(data.userName || user?.email?.split('@')[0] || 'User');
       setCounts((prev) => ({ ...prev, ...data.counts }));
       setNextTrip(data.nextTrip);
       setPendingReviews(data.pendingReviews);
@@ -113,13 +116,27 @@ export default function MyPageLandingPage() {
       setWishlistTotal(data.wishlistTotal);
       setRecommendations(data.recommendations);
       setHadError(false);
+
+      setExtrasLoading(true);
+      void fetch(`/api/mypage/extras?locale=${encodeURIComponent(locale)}`, { headers })
+        .then(async (extrasRes) => {
+          const extras = (await extrasRes.json().catch(() => ({}))) as MyPageExtrasResponse;
+          if (!extrasRes.ok) throw new Error(extras.error ?? 'Failed to load mypage extras');
+          setWishlistItems(extras.wishlistItems ?? []);
+          setRecommendations(extras.recommendations ?? []);
+        })
+        .catch((extrasError) => {
+          console.error('[mypage/landing] fetch extras failed', extrasError);
+        })
+        .finally(() => setExtrasLoading(false));
     } catch (e) {
       console.error('[mypage/landing] fetchAll failed', e);
       setHadError(true);
+      setExtrasLoading(false);
     } finally {
       setLoading(false);
     }
-  }, [locale, router]);
+  }, [getAccessToken, locale, router, user?.email]);
 
   useEffect(() => {
     void fetchAll();
@@ -181,7 +198,9 @@ export default function MyPageLandingPage() {
         onRemoved={handleWishlistRemoved}
       />
 
-      <RecommendedTours tours={recommendations} />
+      {extrasLoading && <MyPageLandingCarouselSkeleton count={3} />}
+
+      {(!extrasLoading || recommendations.length > 0) && <RecommendedTours tours={recommendations} />}
     </div>
   );
 }

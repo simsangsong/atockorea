@@ -9,6 +9,7 @@ import { validateAppPassword } from '@/lib/password-policy';
 import { MyPageSection } from '@/components/mypage/MyPageSection';
 import { MYPAGE_SURFACE_PAGE, MYPAGE_FOCUS_RING } from '@/lib/mypage-ui';
 import { cn } from '@/lib/utils';
+import { useMyPageSession } from '@/components/mypage/MyPageSessionProvider';
 
 type NotificationsState = {
   email: boolean;
@@ -67,6 +68,7 @@ const savedBtnClass = cn(
 
 export default function AccountSettingsPage() {
   const t = useTranslations();
+  const { user, profile, getAccessToken } = useMyPageSession();
   const [formData, setFormData] = useState({
     name: 'Guest',
     email: '',
@@ -115,13 +117,6 @@ export default function AccountSettingsPage() {
   });
   const avatarInputRef = useRef<HTMLInputElement | null>(null);
 
-  const getAccessToken = useCallback(async () => {
-    const { supabase } = await import('@/lib/supabase');
-    if (!supabase) return null;
-    const { data: { session } } = await supabase.auth.getSession();
-    return session?.access_token ?? null;
-  }, []);
-
   const flagSaved = useCallback((section: SectionKey) => {
     setSavedFlags((prev) => ({ ...prev, [section]: true }));
     window.setTimeout(() => {
@@ -133,22 +128,13 @@ export default function AccountSettingsPage() {
     let cancelled = false;
     const loadProfile = async () => {
       try {
-        const { supabase } = await import('@/lib/supabase');
-        if (!supabase) return;
-        const { data: { session } } = await supabase.auth.getSession();
-        if (!session?.user || cancelled) return;
-        setUserId(session.user.id);
+        if (!user || cancelled) return;
+        setUserId(user.id);
         setIdentities(
-          ((session.user.identities || []) as Array<{ provider: string; identity_data?: { email?: string } }>).map(
+          ((user.identities || []) as Array<{ provider: string; identity_data?: { email?: string } }>).map(
             (i) => ({ provider: i.provider, email: i.identity_data?.email ?? null }),
           ),
         );
-
-        const { data: profile } = await supabase
-          .from('user_profiles')
-          .select('full_name, phone, birth_year, nationality, language_preference, avatar_url, mypage_preferences')
-          .eq('id', session.user.id)
-          .single();
 
         if (cancelled) return;
 
@@ -160,8 +146,8 @@ export default function AccountSettingsPage() {
         setAvatarUrl(profile?.avatar_url ?? null);
         setFormData((prev) => ({
           ...prev,
-          name: profile?.full_name?.trim() || session.user.email?.split('@')[0] || 'Guest',
-          email: session.user.email ?? '',
+          name: profile?.full_name?.trim() || user.email?.split('@')[0] || 'Guest',
+          email: user.email ?? '',
           phone: profile?.phone?.trim() ?? '',
           birthday: profile?.birth_year ? `${profile.birth_year}-01-01` : '',
           country: profile?.nationality?.trim() || 'South Korea',
@@ -186,7 +172,7 @@ export default function AccountSettingsPage() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [profile, user]);
 
   const handleSavePersonalInfo = async () => {
     if (!formData.name?.trim()) {

@@ -8,7 +8,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { toast } from 'sonner';
 import { CalendarDateIcon, ClockIcon } from '@/components/Icons';
-import { supabase } from '@/lib/supabase';
 import { StatusBanner } from '@/src/components/ui/status-banner';
 import { rawBookingStatusToDisplayStatus } from '@/src/design/status';
 import type { BookingStatus } from '@/src/types/booking';
@@ -27,6 +26,7 @@ import {
   MyPageListSkeleton,
 } from '@/components/mypage/MyPageSkeletons';
 import { buildIcsEvent, downloadIcsFile } from '@/lib/ics';
+import { useMyPageSession } from '@/components/mypage/MyPageSessionProvider';
 
 interface UpcomingTour {
   id: string;
@@ -51,6 +51,7 @@ export default function UpcomingToursPage() {
   const router = useRouter();
   const copy = useCopy();
   const t = useTranslations();
+  const { getAccessToken } = useMyPageSession();
   const [tours, setTours] = useState<UpcomingTour[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -65,15 +66,14 @@ export default function UpcomingToursPage() {
   const fetchUpcomingTours = async () => {
     try {
       setLoading(true);
-      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-
-      if (!session) {
+      const token = await getAccessToken();
+      if (!token) {
         router.push('/signin');
         return;
       }
 
-      const response = await fetch('/api/bookings', {
-        headers: { Authorization: `Bearer ${session.access_token}` },
+      const response = await fetch('/api/bookings?scope=upcoming&limit=50', {
+        headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
 
@@ -81,19 +81,7 @@ export default function UpcomingToursPage() {
         throw new Error(data.error || 'Failed to fetch upcoming tours');
       }
 
-      const now = new Date();
-      const upcoming = (data.bookings || []).filter((booking: any) => {
-        const tourDate = new Date(booking.tour_date || booking.booking_date);
-        return (booking.status === 'confirmed' || booking.status === 'pending') && tourDate >= now;
-      });
-
-      upcoming.sort((a: any, b: any) => {
-        const dateA = new Date(a.tour_date || a.booking_date).getTime();
-        const dateB = new Date(b.tour_date || b.booking_date).getTime();
-        return dateA - dateB;
-      });
-
-      setTours(upcoming);
+      setTours(data.bookings || []);
     } catch (err: any) {
       console.error('Error fetching upcoming tours:', err);
       setError(err.message);
@@ -121,8 +109,8 @@ export default function UpcomingToursPage() {
     if (!cancelTarget) return;
     try {
       setCancelBusy(true);
-      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-      if (!session) {
+      const token = await getAccessToken();
+      if (!token) {
         toast.error(t('mypage.common.toast.signInRequired'));
         return;
       }
@@ -131,7 +119,7 @@ export default function UpcomingToursPage() {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${session.access_token}`,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({ status: 'cancelled' }),
       });

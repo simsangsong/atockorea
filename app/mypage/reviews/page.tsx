@@ -7,13 +7,13 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { CalendarDateIcon, StarIcon } from '@/components/Icons';
-import { supabase } from '@/lib/supabase';
 import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
 import { useTranslations, useI18n } from '@/lib/i18n';
 import { MYPAGE_SURFACE_PAGE, MYPAGE_SECTION_TITLE, MYPAGE_FOCUS_RING } from '@/lib/mypage-ui';
 import { cn } from '@/lib/utils';
 import { ConfirmDialog } from '@/components/mypage/ConfirmDialog';
 import { MyPageHeaderSkeleton, MyPageListSkeleton, MyPageReviewCardSkeleton } from '@/components/mypage/MyPageSkeletons';
+import { useMyPageSession } from '@/components/mypage/MyPageSessionProvider';
 
 interface Review {
   id: string;
@@ -35,6 +35,7 @@ export default function ReviewsPage() {
   const router = useRouter();
   const t = useTranslations();
   const { locale } = useI18n();
+  const { user, getAccessToken } = useMyPageSession();
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -47,15 +48,14 @@ export default function ReviewsPage() {
     const fetchReviews = async () => {
       try {
         setLoading(true);
-        const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-
-        if (!session) {
+        const token = await getAccessToken();
+        if (!token || !user) {
           router.push('/signin');
           return;
         }
 
-        const response = await fetch(`/api/reviews?userId=${session.user.id}`, {
-          headers: { Authorization: `Bearer ${session.access_token}` },
+        const response = await fetch(`/api/reviews?userId=${user.id}`, {
+          headers: { Authorization: `Bearer ${token}` },
         });
         const data = await response.json();
 
@@ -73,7 +73,7 @@ export default function ReviewsPage() {
     };
 
     fetchReviews();
-  }, [router]);
+  }, [getAccessToken, router, user]);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -110,14 +110,14 @@ export default function ReviewsPage() {
     if (!deleteTarget) return;
     setDeleting(true);
     try {
-      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-      if (!session) {
+      const token = await getAccessToken();
+      if (!token) {
         toast.error(t('mypage.common.toast.signInRequired'));
         return;
       }
       const res = await fetch(`/api/reviews/${deleteTarget.id}`, {
         method: 'DELETE',
-        headers: { Authorization: `Bearer ${session.access_token}` },
+        headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {

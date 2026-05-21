@@ -30,6 +30,12 @@ export async function GET(req: NextRequest) {
     const supabase = createServerClient();
     const { searchParams } = new URL(req.url);
     const status = searchParams.get('status');
+    const scope = searchParams.get('scope');
+    const requestedLimit = Number(searchParams.get('limit'));
+    const limit = Number.isFinite(requestedLimit)
+      ? Math.min(Math.max(Math.trunc(requestedLimit), 1), 100)
+      : null;
+    const today = new Date().toISOString().slice(0, 10);
 
     // Build query
     let query = supabase
@@ -54,11 +60,28 @@ export async function GET(req: NextRequest) {
           pickup_time
         )
       `)
-      .eq('user_id', user.id)
-      .order('created_at', { ascending: false });
+      .eq('user_id', user.id);
 
     if (status) {
       query = query.eq('status', status);
+    }
+
+    if (scope === 'upcoming') {
+      query = query
+        .in('status', ['confirmed', 'pending'])
+        .gte('tour_date', today)
+        .order('tour_date', { ascending: true });
+    } else if (scope === 'history') {
+      query = query
+        .in('status', ['completed', 'cancelled'])
+        .order('tour_date', { ascending: false, nullsFirst: false })
+        .order('created_at', { ascending: false });
+    } else {
+      query = query.order('created_at', { ascending: false });
+    }
+
+    if (limit) {
+      query = query.limit(limit);
     }
 
     const { data: bookings, error } = await query;

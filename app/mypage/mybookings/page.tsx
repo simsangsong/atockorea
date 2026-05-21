@@ -8,7 +8,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { toast } from 'sonner';
 import { CalendarDateIcon, MapIcon } from '@/components/Icons';
-import { supabase } from '@/lib/supabase';
 import { StatusBanner } from '@/src/components/ui/status-banner';
 import { rawBookingStatusToDisplayStatus } from '@/src/design/status';
 import type { BookingStatus } from '@/src/types/booking';
@@ -24,6 +23,7 @@ import {
 } from '@/lib/review-write-window';
 import { ConfirmDialog } from '@/components/mypage/ConfirmDialog';
 import { MyPageHeaderSkeleton, MyPageListSkeleton } from '@/components/mypage/MyPageSkeletons';
+import { useMyPageSession } from '@/components/mypage/MyPageSessionProvider';
 
 interface Booking {
   id: string;
@@ -52,6 +52,7 @@ export default function MyBookingsPage() {
   const copy = useCopy();
   const t = useTranslations();
   const { formatPrice } = useCurrency();
+  const { user, getAccessToken } = useMyPageSession();
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -67,17 +68,16 @@ export default function MyBookingsPage() {
   const fetchBookings = async () => {
     try {
       setLoading(true);
-      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-
-      if (!session) {
+      const token = await getAccessToken();
+      if (!token) {
         router.push('/signin');
         return;
       }
 
-      setViewerEmail(session.user.email ?? null);
+      setViewerEmail(user?.email ?? null);
 
       const response = await fetch('/api/bookings', {
-        headers: { Authorization: `Bearer ${session.access_token}` },
+        headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
 
@@ -113,8 +113,8 @@ export default function MyBookingsPage() {
     if (!cancelTarget) return;
     try {
       setCancelBusy(true);
-      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-      if (!session) {
+      const token = await getAccessToken();
+      if (!token) {
         toast.error(t('mypage.common.toast.signInRequired'));
         return;
       }
@@ -123,7 +123,7 @@ export default function MyBookingsPage() {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${session.access_token}`,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({ status: 'cancelled' }),
       });
@@ -151,13 +151,13 @@ export default function MyBookingsPage() {
 
   const handleOpenReceipt = async (bookingId: string) => {
     try {
-      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-      if (!session) {
+      const token = await getAccessToken();
+      if (!token) {
         toast.error(t('mypage.common.toast.signInRequired'));
         return;
       }
       const res = await fetch(`/api/bookings/${bookingId}/receipt`, {
-        headers: { Authorization: `Bearer ${session.access_token}` },
+        headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) {
         toast.error(t('mypage.common.toast.saveFailed'));
