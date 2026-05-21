@@ -92,6 +92,18 @@ function getLocaleFromCookie(request: NextRequest): string | null {
 
 const LOCALE_SET = new Set(SUPPORTED_LOCALES);
 
+function normalizeAdminPath(parts: string[]): string | null {
+  const adminIndex = parts.indexOf('admin');
+  if (adminIndex === -1) return null;
+
+  const rest = parts.slice(adminIndex + 1);
+  while (rest.length >= 2 && LOCALE_SET.has(rest[0]!) && rest[1] === 'admin') {
+    rest.splice(0, 2);
+  }
+
+  return `/${['admin', ...rest].join('/')}`;
+}
+
 /** Duplicate flagship marketing URLs → canonical product (runs before site-private rewrite so redirects always win). */
 function redirectEastSignatureLegacyMarketingPaths(request: NextRequest): NextResponse | null {
   const parts = request.nextUrl.pathname.split('/').filter(Boolean);
@@ -206,9 +218,10 @@ export function middleware(request: NextRequest) {
   // Otherwise the admin layout can read the locale segment as part of the admin
   // path and generate URLs like /ko/admin/ko/admin/orders.
   const parts = pathname.split('/').filter(Boolean);
-  if (parts.length >= 2 && LOCALE_SET.has(parts[0]!) && parts[1] === 'admin') {
+  const normalizedAdminPath = normalizeAdminPath(parts);
+  if (normalizedAdminPath && pathname !== normalizedAdminPath) {
     const url = request.nextUrl.clone();
-    url.pathname = `/${parts.slice(1).join('/')}`;
+    url.pathname = normalizedAdminPath;
     return NextResponse.redirect(url, 307);
   }
 
