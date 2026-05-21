@@ -99,6 +99,17 @@ const EN_NAMESPACE = {
     getQuoteCta: "Get a custom quote",
     getQuoteHint: "We'll respond within 24 hours",
   },
+  // R3 (2026-05-21): grid section for POICatalogGrid (previously hardcoded).
+  // V5: amber dot bullet removed from highlights list; hints updated for
+  // R1/R2 tap-to-drawer behaviour.
+  grid: {
+    title: "Curated stops",
+    hint: "Tap any card to preview details or add to your itinerary.",
+    inCartBadge: "In cart · #{number}",
+    details: "Details",
+    added: "Added",
+    add: "Add",
+  },
   // R2 (2026-05-21): ai section added to EN_NAMESPACE so all 6 locales are
   // auto-translated. previewHint updated: map focus → drawer details.
   ai: {
