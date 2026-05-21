@@ -3,18 +3,18 @@ import Stripe from 'stripe';
 import { createServerClient } from '@/lib/supabase';
 
 /**
- * No-show payment hold checkout — replaces the legacy "Checkout Session" flow.
+ * Card-on-file checkout — authorizes now and collects automatically on tour day.
  *
  * Branches on lead time:
  *   - tour ≤ 7 days away → PaymentIntent with `capture_method: 'manual'`
- *     (full amount authorized but not charged; auth expires in ~7 days).
+ *     (full amount authorized but not charged until tour-day auto capture).
  *   - tour > 7 days away → SetupIntent (saves card to a Stripe Customer; no
  *     hold today). The daily re-auth cron creates the manual-capture PI
  *     ~5 days before the tour.
  *
  * Both paths return a `clientSecret` the browser confirms via Stripe Elements.
- * Card-on-file UX: customer is never charged at booking time. We only capture
- * if the customer no-shows (admin action).
+ * Card-on-file UX: customer is never charged at booking time. We capture
+ * automatically at 10:00 AM Korea time on the tour date after pickup has passed.
  */
 
 const HOLD_WINDOW_DAYS = 7;
@@ -108,7 +108,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Booking has no valid price' }, { status: 400 });
     }
 
-    /** No-show fee = full tour amount (business policy). */
+    /** Authorized amount = full tour amount, captured on tour day at 10:00 AM KST. */
     const noShowFeeUsdCents = Math.round(finalPriceUsd * 100);
 
     const customerEmail =
@@ -181,13 +181,13 @@ export async function POST(req: NextRequest) {
         setup_future_usage: 'off_session',
         payment_method_types: ['card'],
         receipt_email: customerEmail ?? undefined,
-        description: `No-show hold: ${tourTitle} (booking ${bookingId})`,
+        description: `Tour-day auto charge authorization: ${tourTitle} (booking ${bookingId})`,
         statement_descriptor_suffix: 'TOUR HOLD',
         metadata: {
           booking_id: bookingId,
           tour_id: String(booking.tour_id),
           ...(customerName ? { customer_name: customerName } : {}),
-          kind: 'no_show_hold',
+          kind: 'tour_day_auto_charge_hold',
         },
       });
 
@@ -220,17 +220,17 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    /* === Path B — tour > 7 days away: vault the card now, hold it 4-5 days before tour. === */
+    /* === Path B — tour > 7 days away: vault the card now, authorize it before tour. === */
     const setupIntent = await stripe.setupIntents.create({
       customer: customerId,
       payment_method_types: ['card'],
       usage: 'off_session',
-      description: `Card on file for ${tourTitle} (booking ${bookingId})`,
+      description: `Card on file for tour-day auto charge: ${tourTitle} (booking ${bookingId})`,
       metadata: {
         booking_id: bookingId,
         tour_id: String(booking.tour_id),
         ...(customerName ? { customer_name: customerName } : {}),
-        kind: 'no_show_setup',
+        kind: 'tour_day_auto_charge_setup',
       },
     });
 

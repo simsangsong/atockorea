@@ -74,7 +74,7 @@ export async function sendEmail({
 /** 결제상태 표시 라벨 (Payment status labels) */
 const PAYMENT_STATUS_LABELS: Record<string, string> = {
   pending: '결제대기 (Payment Pending)',
-  authorized: '카드 등록 완료 — 노쇼 시에만 청구 (Card on file — charged only on no-show)',
+  authorized: '카드 등록 완료 — 투어 당일 한국시간 오전 10시 자동 청구 (Card on file — automatically charged at 10:00 AM KST on tour day)',
   paid: '결제 완료 (Payment Completed)',
   failed: '결제실패 (Payment Failed)',
   refunded: '환불됨 (Refunded)',
@@ -221,7 +221,7 @@ export async function sendBookingConfirmationEmail(params: SendBookingConfirmati
   const totalAmount = formatUsdAmount(totalPrice);
   const paymentNote =
     paymentStatus === 'authorized'
-      ? 'Your card is securely authorized. You are not charged now; the no-show policy applies only if needed.'
+      ? 'Your card is securely authorized. You are not charged now; it will be charged automatically at 10:00 AM Korea time on the tour date after the pickup window has passed.'
       : paymentStatus === 'paid'
         ? 'Your payment has been completed.'
         : 'Your booking is being processed. We will notify you as soon as payment is finalized.';
@@ -915,7 +915,6 @@ export async function sendCardReauthFailedEmail({
     html,
   });
 }
-
 
 
 

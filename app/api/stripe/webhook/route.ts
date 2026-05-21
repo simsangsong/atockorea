@@ -16,8 +16,9 @@ const getStripe = () => {
  *
  * Handles two payment flows:
  *
- *   1. **No-show authorization hold (current)** — booking confirmed once card
- *      is authorized; charge only happens on no-show capture.
+ *   1. **Card-on-file authorization hold (current)** — booking confirmed once card
+ *      is authorized; charge is captured automatically at 10:00 AM Korea time
+ *      on the tour date after pickup has passed.
  *        - `payment_intent.amount_capturable_updated` → status='confirmed',
  *          payment_intent_status='authorized', payment_status='authorized'
  *        - `payment_intent.succeeded`                 → payment_intent_status='captured',
@@ -29,7 +30,7 @@ const getStripe = () => {
  *        - `setup_intent.setup_failed`                → payment_intent_status='failed'
  *
  *   2. **Legacy Checkout Session (kept for backward compat)** — pre-existing
- *      bookings created before the no-show hold rollout.
+ *      bookings created before the card-on-file authorization rollout.
  *        - `checkout.session.completed`, async variants
  *
  * Signature verified with STRIPE_WEBHOOK_SECRET.
@@ -132,7 +133,7 @@ export async function POST(req: NextRequest) {
         const bookingId = pi.metadata?.booking_id;
         if (!bookingId) break;
 
-        /** Capture happened — typically admin marked no-show. */
+        /** Capture happened — either tour-day auto capture or an admin settlement action. */
         const settleReason = pi.metadata?.settle_reason;
         const update: Record<string, unknown> = {
           payment_status: 'paid',
@@ -156,7 +157,7 @@ export async function POST(req: NextRequest) {
           throw updateError;
         }
 
-        console.log(`Booking ${bookingId} no-show fee captured: ${pi.amount_received} ${pi.currency}`);
+        console.log(`Booking ${bookingId} card charge captured: ${pi.amount_received} ${pi.currency}`);
         break;
       }
 

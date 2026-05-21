@@ -14,7 +14,7 @@ import { createServerClient } from '@/lib/supabase';
  *     the next REAUTH_WINDOW_DAYS days but still has no PaymentIntent.
  *   - For each, it creates an off-session PaymentIntent with
  *     `capture_method: 'manual'` using the saved payment method, placing
- *     the no-show hold ~5 days before the tour.
+ *     the tour-day auto-charge authorization ~5 days before the tour.
  *
  * Failures (e.g. card declined, 3DS required) are logged and the booking
  * is flagged `payment_intent_status='failed'`. Future iterations should
@@ -188,12 +188,12 @@ export async function GET(req: NextRequest) {
         off_session: true,
         payment_method_types: ['card'],
         receipt_email: booking.contact_email ?? undefined,
-        description: `No-show hold (re-auth): ${tourTitle} (booking ${booking.id})`,
+        description: `Tour-day auto charge authorization (re-auth): ${tourTitle} (booking ${booking.id})`,
         statement_descriptor_suffix: 'TOUR HOLD',
         metadata: {
           booking_id: booking.id,
           tour_id: String(booking.tour_id),
-          kind: 'no_show_hold_reauth',
+          kind: 'tour_day_auto_charge_reauth',
         },
       });
 

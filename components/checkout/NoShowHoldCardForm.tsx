@@ -28,7 +28,7 @@ export type NoShowHoldCardFormProps = {
   intentType: 'payment_intent' | 'setup_intent';
   /** Where to land after a successful confirmation. Stripe appends its own params. */
   returnUrl: string;
-  /** USD-cent amount of the no-show fee — displayed inside the card panel. */
+  /** USD-cent amount authorized for tour-day automatic capture. */
   amountUsdCents: number;
   /** Days from today to tour date — controls the disclosure copy ("hold today" vs "hold ~5 days before"). */
   leadDays: number;
@@ -142,11 +142,11 @@ function CardFormInner({
     leadDays <= 7
       ? tt(
           'checkout.holdDisclosureNow',
-          `${formatUsd(amountUsdCents)} hold placed today, charged only on no-show.`,
+          `${formatUsd(amountUsdCents)} authorization placed today. It will be charged automatically at 10:00 AM Korea time on the tour date after pickup time has passed.`,
         ).replace('{amount}', formatUsd(amountUsdCents))
       : tt(
           'checkout.holdDisclosureLater',
-          `${formatUsd(amountUsdCents)} hold placed ~5 days before your tour, charged only on no-show.`,
+          `Card saved today. A ${formatUsd(amountUsdCents)} authorization is placed about 5 days before your tour and charged automatically at 10:00 AM Korea time on the tour date.`,
         ).replace('{amount}', formatUsd(amountUsdCents));
 
   return (

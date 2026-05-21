@@ -567,13 +567,13 @@ export default function OrderDetailPage() {
                     handleSettle(
                       'capture',
                       'no_show',
-                      'Charge the no-show penalty? This captures the full held amount as a no-show fee.',
+                      'Charge the held card manually as a no-show? Auto charge normally runs at 10:00 AM Korea time on the tour date.',
                     )
                   }
                   disabled={settling}
                   className="w-full px-4 py-3 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 disabled:opacity-50"
                 >
-                  노쇼 → 위약금 청구 · No-show — charge penalty
+                  노쇼 수동 청구 · No-show — manual charge
                 </button>
               </>
             )}
@@ -581,9 +581,9 @@ export default function OrderDetailPage() {
             {booking.payment_intent_status === 'setup_pending_hold' && (
               <>
                 <p className="text-sm text-gray-700 bg-gray-50 border border-gray-200 rounded-lg p-3">
-                  Card is on file. The no-show hold is placed automatically by the
-                  daily cron ~6 days before the tour. Capture becomes available once
-                  the hold is active.
+                  Card is on file. The tour-day authorization is placed automatically
+                  about 6 days before the tour, then charged automatically at 10:00 AM
+                  Korea time on the tour date.
                 </p>
                 <button
                   onClick={() =>
