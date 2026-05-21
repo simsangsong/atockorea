@@ -29,11 +29,11 @@
 
 | Field | Value |
 |---|---|
-| **Current phase** | **R0 ✅ complete 2026-05-21 (data-reality GO). R1 (CORE) — timeline card → tour-product StopCard + tap→drawer — is next.** |
+| **Current phase** | **🔄 R1 (CORE) in progress — timeline card → tour-product StopCard + tap→drawer (started 2026-05-21). R0 ✅.** |
 | **Active track** | Result Timeline Richness (RR1–RR7 decisions; Phases R0–R3) |
 | **Blocked on** | — (ready to start R0/R1) |
 | **Last updated** | 2026-05-21 |
-| **Last commit touching this track** | (this commit — R0 data-reality planner sync, 2026-05-21) |
+| **Last commit touching this track** | `aeb296b0` (R0 data-reality verdict, 2026-05-21) |
 | **Owner** | simsangsong |
 | **Parent plan** | `docs/itinerary-builder-redesign-master-plan-2026-05-18.md` (V2 redesign, COMPLETE — V1–V13 binding decisions still apply as the floor) |
 | **Skill** | reuse the existing `itinerary-builder-redesign` skill (it governs `components/itinerary-builder/*`); this plan is the active sub-track. |
@@ -43,7 +43,7 @@
 | Phase | Status | Started | Done | Commit |
 |---|---|---|---|---|
 | R0 — Data reality check (images[] depth) — GATE-lite | ✅ complete | 2026-05-21 | 2026-05-21 | (R0 planner sync) |
-| R1 — Timeline card → tour-product `StopCard` pattern + tap→drawer | ⏸ not started | — | — | — |
+| R1 — Timeline card → tour-product `StopCard` pattern + tap→drawer | 🔄 in progress | 2026-05-21 | — | — |
 | R2 — AI suggest result → same large timeline (kill badge rail) | ⏸ not started | — | — | — |
 | R3 — Page tone/layout unification with main site + curated-stops cleanup | ⏸ not started | — | — | — |
 
@@ -71,6 +71,7 @@ These extend, never override, the parent plan's V1–V13. Append reversal rows; 
 
 | Date | Commit | Change |
 |---|---|---|
+| 2026-05-21 | (R1 start) | **Phase R1 started + VERIFY-FIRST confirmed.** (1) `POIDetailModal` currently mounts **inside `POICatalogGrid`** (`detailPoi` state L33, `<POIDetailModal>` L190–207, opened by the "Details" button L141–150); `BuilderShell` has NO modal/state. → R1 lifts ONE modal to `BuilderShell` + passes `onOpenDetail(poi)` to BOTH `ResultTimeline` and `POICatalogGrid` (RR-R3 single-instance). (2) Modal props = `{poi, inCart, onClose, onAdd, onRemove, onFocus}` — self-contained (own gallery from `images`/`default_image_url`, Esc-close, body-scroll-lock); `onAdd`/`onFocus` close, `onRemove` stays open. (3) `AIRecommendPanel` result = badge `<ol>` rail (L283–325) over `result.per_poi_score[]` (`{poi_key,name_en,total,rationale[]}`) + "Load into cart"→`onAccept(recommended)` — R2 swaps the rail for the R1 card via `poiByKey` lookup (data sufficient). **R1 design decisions:** (a) *time→duration* — builder has no `time`/`duration` string, only `default_stay_minutes` → card shows `formatMinutes(stay)` in the duration row, NO fake clock-time. (b) *gesture (RR7)* — card body = `<button onClick=onOpenDetail(poi)>` (compose strip + header); drag handle + remove are ABSOLUTE siblings (not nested) with `stopPropagation`; handle owns drag (dnd-kit listeners), body owns tap. (c) *bi-sync (V4)* — `<li>` keeps `data-poi-card`, `onMouseEnter/Leave`→`setActive(...,"timeline")`, `activeKey===poi_key`→amber ring-2. (d) *fallback (RR4)* — 0 images → one slate first-letter thumb (NOT amber, per V5). (e) *no new user-facing copy* → translate script not required for R1 (RR6 satisfied; card uses data + existing `formatMinutes` / `t("remove")`). (f) Footer / EmptyState / DriveChip / connector / sequence node / dnd wiring preserved verbatim. |
 | 2026-05-21 | (R0 planner sync) | **Phase R0 ✅ — data-reality measured (builder-cluster accurate).** `jeju` (25 POIs): 3+ imgs ×16, 2 imgs ×2, 1 img ×1, 0 imgs ×6 (24% no-image), `default_image_url` ×19, avg 3.36, max 12. `busan` cluster (busan/yangsan/gyeongju/ulsan/miryang = 20 POIs): 3+ imgs ×15, 2 imgs ×3, 1 img ×1, 0 imgs ×1, default ×19, avg 3.75, max 14. **Combined 45 POIs: 69% ≥3 imgs, 80% ≥2 imgs, 16% (7) no-image. VERDICT = GO** — compose strip (RR1) justified by real data; RR4 fallback (letter/icon) covers the 7 no-image POIs; drawer carries full gallery regardless. No code shipped (gate-lite). |
 | 2026-05-21 | (R0 fact corrections) | **Fact corrections to §J/RR4 (logged here; §J frozen rows untouched):** (1) `match_pois.images` is **jsonb**, NOT `string[]`/text[] — measure via `jsonb_array_length(...)`; R1 card must coerce jsonb→`string[]` safely (guard `Array.isArray`). (2) Builder **busan page = 5-region cluster** `["busan","yangsan","gyeongju","ulsan","miryang"]` = 20 POIs (`lib/itinerary-builder/regions.ts:17–20`), NOT just `busan` (11). `jeju` cluster = `["jeju"]` = 25. (3) Long-form orphan regions ("Jeju East — …", attraction=false) do NOT leak into the builder (cluster matches exact `jeju`). (4) `is_operational` is false for ALL rows — not a builder filter (builder uses `.in("region", cluster)` only). (5) The 7 no-image POIs (`biff_square`, `hallasan_eorimok_trail`, `hallim_park`, `jeju_cruise_port`, `jeju_tangerine_picking_experience`, `jeonnong_ro_cherry_blossom_street`, `noksan_ro_gasiri_blossom_road`) — 6 overlap the existing POI data-quality Track B backlog; `jeju_cruise_port` is an intentional return-marker. Photo backfill stays on that separate track (RR4 + §E). |
 | 2026-05-21 | (this doc) | Plan authored. Diagnosis frozen in §J. RR1–RR7 logged. Phases R0–R3 laid out. No code yet. |
