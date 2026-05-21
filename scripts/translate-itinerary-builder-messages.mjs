@@ -99,6 +99,31 @@ const EN_NAMESPACE = {
     getQuoteCta: "Get a custom quote",
     getQuoteHint: "We'll respond within 24 hours",
   },
+  // R2 (2026-05-21): ai section added to EN_NAMESPACE so all 6 locales are
+  // auto-translated. previewHint updated: map focus → drawer details.
+  ai: {
+    eyebrow: "Let AI suggest your day",
+    intro: "Tell us what you like — we'll sequence a route from the stops in this region.",
+    presetsLabel: "Or start from a preset",
+    presets: {
+      firstTime: "First time in Korea",
+      family: "Family with kids",
+      unesco: "UNESCO + history",
+      foodie: "Foodie day",
+      beachesCafes: "Beaches + cafes",
+    },
+    intentLabel: "Your interests",
+    intentPlaceholder: "e.g. first time, family, UNESCO + beaches, relaxed pace",
+    hoursLabel: "Hours",
+    submit: "Recommend",
+    submitting: "Matching…",
+    errorMin: "Tell us a little more about your trip.",
+    resultsSummary: "{count} stops matched · ~{hours}h day",
+    loadIntoCart: "Apply this day",
+    previewHint: "Tap any stop to see details →",
+    noMatchFallback: "Try broader interests or a different region.",
+    getAnother: "Get another suggestion",
+  },
 };
 
 const TARGET_LOCALES = [
