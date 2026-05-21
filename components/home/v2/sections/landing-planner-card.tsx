@@ -57,8 +57,8 @@ export type LandingPlannerCardProps = {
  *
  * Two modes share the same destination / intent / style controls:
  *  - "match" → the smart matcher (existing in-page flow + cta-copy A/B).
- *  - "build" → routes into the itinerary builder for jeju/busan, or shows a
- *    manual-request fallback for seoul (builder map supports jeju+busan only).
+ *  - "build" → routes into the itinerary builder for all three regions
+ *    (jeju/busan/seoul; Seoul added with the Phase 9 pricing overhaul).
  *
  * Shared controls live OUTSIDE the AnimatePresence; only the mode body (the
  * CTA area) cross-fades on switch, so destination/intent never reset.
@@ -356,7 +356,7 @@ export function LandingPlannerCard({
                   {t("premium.v2.hero.smartMatchMicrocopy")}
                 </p>
               </>
-            ) : destination === "jeju" || destination === "busan" ? (
+            ) : (
               <>
                 <div className="overflow-hidden rounded-button border border-slate-200/70">
                   <div className="relative h-24 w-full md:h-28">
@@ -396,36 +396,6 @@ export function LandingPlannerCard({
                 <p className="mt-2.5 text-center text-micro font-medium text-slate-500">
                   {t("premium.v2.planner.buildMicrocopy")}
                 </p>
-              </>
-            ) : (
-              <>
-                <div className="rounded-button border border-slate-200/70 bg-slate-50 p-4 text-center">
-                  <p className="text-caption font-semibold text-slate-900">
-                    {t("premium.v2.planner.seoulBuildTitle")}
-                  </p>
-                  <p className="mt-1.5 text-micro text-slate-600">
-                    {t("premium.v2.planner.seoulBuildBody")}
-                  </p>
-                </div>
-                <V0ShadcnButton
-                  type="button"
-                  size="lg"
-                  onClick={() => {
-                    analytics.unifiedPlannerSeoulRequest({
-                      hasIntent: intent.trim().length > 0,
-                    });
-                    // Placeholder behaviour (no Seoul request endpoint yet):
-                    // flip back to Match mode. setMode directly, not via
-                    // handleModeSwitch, so this logs a seoul_request rather than
-                    // a misleading mode_switch.
-                    setMode("match");
-                  }}
-                  className={cn(homeBtnPrimary, "mt-3")}
-                  style={BTN_PRIMARY_STYLE}
-                >
-                  {t("premium.v2.planner.seoulBuildCta")}
-                  <ChevronRight className="w-4 h-4 ml-1.5" />
-                </V0ShadcnButton>
               </>
             )}
           </motion.div>
