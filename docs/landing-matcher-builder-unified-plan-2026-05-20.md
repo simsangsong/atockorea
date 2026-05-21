@@ -2,7 +2,7 @@
 
 Date: 2026-05-20
 
-Status: **Phase 0 gate cleared + Phases 1–4 shipped & verified (2026-05-21); planner i18n complete in all 6 locales; `unified_planner_*` analytics events wired (2026-05-21).** The unified planner (matcher + `Match me` / `Build myself` modes) is live in the hero, and the separate `ItineraryBuilderEntry` section has been removed from the homepage. Remaining: Phase 5 (match→build bridge) — optional, gated on explicit user approval per the don't-touch-other-landing-design rule. v3 (`docs/landing-page-uiux-master-plan-v3-2026-05-17.md`) remains the binding source of truth for the landing surface; this plan reconciled with its §B decisions (reversal rows logged 2026-05-21), it did not override them silently.
+Status: **Phase 0 gate cleared + Phases 1–4 shipped & verified (2026-05-21); planner i18n complete in all 6 locales; `unified_planner_*` analytics events wired (2026-05-21).** The unified planner (matcher + `Match me` / `Build myself` modes) is live in the hero, and the separate `ItineraryBuilderEntry` section has been removed from the homepage. **Phase 5 (match→build bridge) is now 🔄 IN PROGRESS** — user gave explicit approval to edit the match-result surfaces (2026-05-21). v3 (`docs/landing-page-uiux-master-plan-v3-2026-05-17.md`) remains the binding source of truth for the landing surface; this plan reconciled with its §B decisions (reversal rows logged 2026-05-21), it did not override them silently.
 
 History — reviewed against v3 + verified code reality (2026-05-20); Phase 0 gate + Governance section added and route / i18n / bridge-copy honesty fixes applied in the 2026-05-21 revision; gate cleared and Phases 1–4 executed 2026-05-21 (see the Phase 0 Resolution log + per-phase ✅ DONE notes). Outstanding user actions: conclude the 3 power-empty experiments (Gate 0.4, DB write needs explicit auth), confirm the Seoul "Request a Seoul day" target, and (optional) approve Phase 5. Planner i18n for es/ja/zh/zh-TW shipped 2026-05-21.
 
@@ -703,10 +703,19 @@ Acceptance criteria:
 
 ### Phase 5: Recommendation-To-Builder Bridge
 
-**⏸ DEFERRED (2026-05-21, user decision).** Optional; not built. Gated on explicit approval to edit the match-result surfaces (`MatcherMorphingPanel` / `MatcherBottomSheet`) — protected by the don't-touch-other-landing directive and overlapped by the still-running result experiments. Revisit after ship / once real usage justifies the cross-component mode plumbing.
+**🔄 IN PROGRESS (started 2026-05-21).** User gave explicit approval to edit the match-result surfaces ("Phase 5 브릿지 시작"), which clears the deferral gate (the directive guarded against *silent* edits; this is an authorized one). The still-running result experiments are power-empty (Gate 0.4: 10–15 participants/variant vs ≥200), so adding an additive secondary CTA does not meaningfully contaminate attribution.
+
+*(Prior state — kept for history: ⏸ DEFERRED 2026-05-21, gated on explicit approval; overlapped by running result experiments.)*
+
+**Approach (decided after code reality 2026-05-21):**
+
+- **Result surfaces — 2 files, not 3.** `MatcherBottomSheet` renders `BestMatchPreview` internally (line 125), so editing `BestMatchPreview` covers BOTH the desktop slot-2 section AND the mobile bottom-sheet. Only `MatcherMorphingPanel` (desktop morph variant B) needs a separate edit. Matches the file list below; bottom-sheet untouched.
+- **`{destination}` source = provider, not region guess.** Chose option 2 (extend `HomeV2MatchProvider`) over region-string mapping: add `matchedDestination: string | null` (set from `pinnedDestination` in `startInPageMatchFlow`, cleared in `resetMatchToIdle`). Result surfaces read the exact jeju/seoul/busan key → localize via existing `premium.hero.dest{Jeju|Seoul|Busan}`. (HomeV2MatchProvider added to the touched-files set — within the plan's allowed option 2.)
+- **Bridge signal = CustomEvent** (`atoc:planner-build`), per the plan's "custom DOM event to avoid provider mode-plumbing" recommendation. Click → `analytics.unifiedPlannerCustomizeFromMatch` + `resetMatchToIdle()` (closes the result so the planner is visible again) + dispatch event. `LandingPlannerCard` listens → `setMode("build")` + scroll/focus. destination/intent are already its current props, so they're preserved (honest bridge — no product→POI carry-over claimed).
 
 Files:
 
+- `components/home/v2/HomeV2MatchProvider.tsx` (added — matchedDestination, option 2)
 - `components/home/v2/MatcherMorphingPanel.tsx`
 - `components/home/v2/sections/best-match-preview.tsx`
 - `components/home/v2/sections/landing-planner-card.tsx`
