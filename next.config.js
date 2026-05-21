@@ -10,8 +10,21 @@ const nextConfig = {
     const eastUuid = 'c5d60898-a167-4b88-ac9f-62a910921866';
     return [
       /** Admin is locale-neutral. Collapse stale localized admin URLs before they 404. */
-      { source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/admin', destination: '/admin', permanent: false },
-      { source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/admin/:path*', destination: '/admin/:path*', permanent: false },
+      {
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/admin/:innerLocale(en|ko|zh-CN|zh-TW|ja|es)/admin/:path*',
+        destination: '/admin/:path*',
+        permanent: false,
+      },
+      {
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/admin/:innerLocale(en|ko|zh-CN|zh-TW|ja|es)/admin',
+        destination: '/admin',
+        permanent: false,
+      },
+      {
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/admin/:innerLocale(en|ko|zh-CN|zh-TW|ja|es)',
+        destination: '/admin',
+        permanent: false,
+      },
       {
         source: '/admin/:locale(en|ko|zh-CN|zh-TW|ja|es)/admin',
         destination: '/admin',
@@ -23,15 +36,12 @@ const nextConfig = {
         permanent: false,
       },
       {
-        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/admin/:innerLocale(en|ko|zh-CN|zh-TW|ja|es)/admin',
+        source: '/admin/:locale(en|ko|zh-CN|zh-TW|ja|es)',
         destination: '/admin',
         permanent: false,
       },
-      {
-        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/admin/:innerLocale(en|ko|zh-CN|zh-TW|ja|es)/admin/:path*',
-        destination: '/admin/:path*',
-        permanent: false,
-      },
+      { source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/admin', destination: '/admin', permanent: false },
+      { source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/admin/:path*', destination: '/admin/:path*', permanent: false },
       /** Legacy My Page paths — canonical is `/mypage`. */
       { source: '/my', destination: '/mypage', permanent: true },
       { source: '/my/:path*', destination: '/mypage/:path*', permanent: true },
