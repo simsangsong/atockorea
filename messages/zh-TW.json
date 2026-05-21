@@ -1986,8 +1986,8 @@
   },
   "itineraryBuilder": {
     "home": {
-      "eyebrow": "自訂行程規劃器",
-      "title": "或打造您的韓國專屬行程",
+      "eyebrow": "自訂行程規劃",
+      "title": "或打造您的韓國專屬一日遊",
       "subtitle": "在地圖上選擇您真正想去的地點，我們將為您報價。",
       "busanName": "Busan",
       "busanTagline": "海邊古剎 + 歷史古都 + 尋味市集",
@@ -2014,7 +2014,7 @@
     },
     "quote": {
       "title": "取得自訂報價",
-      "intro": "在{region}有{count}個景點。我們將為您安排行程並提供報價。",
+      "intro": "{region}精選{count}個景點，我們將為您量身報價。",
       "nameLabel": "您的姓名",
       "emailLabel": "電子郵件",
       "dateLabel": "旅行日期",
@@ -2042,9 +2042,9 @@
       "shipLabel": "郵輪名稱",
       "optionalSuffix": "(選填)",
       "submit": "打開地圖",
-      "browsePackagesInstead": "或改為瀏覽固定行程 →",
+      "browsePackagesInstead": "瀏覽套裝行程 →",
       "dateAndPartyDeferredHint": "我們將在您提交報價時詢問旅行日期和人數。",
-      "autoQuoteReassurance": "符合條件的行程可立即報價 — 其他將在24小時內回覆。"
+      "autoQuoteReassurance": "部分行程即時報價 — 其餘在24小時內回覆。"
     },
     "cart": {
       "title": "您的行程",
@@ -2054,8 +2054,8 @@
       "closeLabel": "關閉",
       "stayTotal": "總停留時間",
       "driveTotal": "總交通時間",
-      "totalDuration": "一天總時長",
-      "cruiseBudget": "郵輪岸上時間",
+      "totalDuration": "全天合計",
+      "cruiseBudget": "岸上遊玩時間",
       "cruiseOverBudget": "超出預算{over} — 請減少景點或縮短停留時間",
       "remove": "移除",
       "getQuoteCta": "取得自訂報價",
@@ -2064,33 +2064,39 @@
     "grid": {
       "title": "精選景點",
       "hint": "點擊任何卡片即可預覽詳情或加入行程。",
-      "inCartBadge": "已加入行程 · 第{number}項",
+      "inCartBadge": "已加入行程 · #{number}",
       "details": "詳情",
       "added": "已加入",
       "add": "加入"
     },
     "ai": {
       "eyebrow": "讓AI為您建議行程",
-      "intro": "告訴我們您的喜好 — 我們將根據本地區的景點為您規劃路線。",
+      "intro": "告訴我們您的興趣 — 我們將從本地區景點為您規劃路線。",
       "presetsLabel": "或從預設選項開始",
       "presets": {
         "firstTime": "韓國初體驗",
         "family": "親子同樂",
         "unesco": "UNESCO + 歷史古蹟",
-        "foodie": "美食饗宴",
+        "foodie": "美食探索",
         "beachesCafes": "沙灘 + 咖啡館"
       },
       "intentLabel": "您的興趣",
       "intentPlaceholder": "例如：初訪、親子、UNESCO + 沙灘、悠閒步調…",
       "hoursLabel": "時數",
-      "submit": "建議行程",
+      "submit": "為我規劃",
       "submitting": "正在配對中…",
       "errorMin": "請告訴我們更多關於您的旅程資訊。",
-      "resultsSummary": "配對{count}個景點 · 約{hours}小時行程",
+      "resultsSummary": "精選{count}個景點 · 約{hours}小時行程",
       "loadIntoCart": "套用此行程",
       "previewHint": "點擊任何景點即可查看詳情 →",
       "noMatchFallback": "請嘗試更廣泛的興趣或選擇其他地區。",
-      "getAnother": "取得其他建議"
+      "getAnother": "換個方案"
+    },
+    "timeline": {
+      "emptyHeadline": "逐站打造你的行程",
+      "emptyBody": "從地圖或精選清單新增景點，它們會依路線順序排列在這裡。",
+      "lookAtMap": "返回地圖",
+      "driveBetween": "{duration} 車程"
     }
   }
 }

@@ -28,7 +28,7 @@ const MESSAGES_DIR = join(ROOT, "messages");
 const EN_NAMESPACE = {
   home: {
     eyebrow: "Custom itinerary builder",
-    title: "Or build your own Korea day",
+    title: "Or design your own day in Korea",
     subtitle: "Pick the stops you actually want on the map. We'll quote it.",
     busanName: "Busan",
     busanTagline: "Sea temples + ancient capitals + market crawls",
@@ -77,15 +77,15 @@ const EN_NAMESPACE = {
     trackCruiseHint: "Back-to-ship before sail",
     regionLegend: "Which region?",
     cruiseHoursLegend: "How many hours ashore?",
-    cruiseHoursHint: "Pick the window between your ship's arrival and last-call.",
+    cruiseHoursHint: "Pick your window from arrival to final boarding call.",
     dateLabel: "Travel date",
     partyLabel: "Party size",
     shipLabel: "Ship name",
     optionalSuffix: "(optional)",
     submit: "Open the map",
-    browsePackagesInstead: "Or browse fixed packages instead →",
+    browsePackagesInstead: "Or explore our ready-made tours →",
     dateAndPartyDeferredHint: "We'll ask for travel date + party size when you submit your quote.",
-    autoQuoteReassurance: "Eligible itineraries get an instant price — others reply within 24h.",
+    autoQuoteReassurance: "Some itineraries get an instant price — we reply within 24h for the rest.",
   },
   cart: {
     title: "Your itinerary",
@@ -95,7 +95,7 @@ const EN_NAMESPACE = {
     closeLabel: "Close",
     stayTotal: "Total visit time",
     driveTotal: "Drive time",
-    totalDuration: "Total day",
+    totalDuration: "Day total",
     cruiseBudget: "Cruise time window",
     cruiseOverBudget: "Over budget by {over} — trim a stop or shorten visits",
     remove: "Remove",
@@ -117,7 +117,7 @@ const EN_NAMESPACE = {
   // auto-translated. previewHint updated: map focus → drawer details.
   ai: {
     eyebrow: "Let AI suggest your day",
-    intro: "Tell us what you like — we'll sequence a route from the stops in this region.",
+    intro: "Tell us what you like — we'll build you a route from the stops in this region.",
     presetsLabel: "Or start from a preset",
     presets: {
       firstTime: "First time in Korea",
@@ -137,6 +137,15 @@ const EN_NAMESPACE = {
     previewHint: "Tap any stop to see details →",
     noMatchFallback: "Try broader interests or a different region.",
     getAnother: "Get another suggestion",
+  },
+  // R4 (2026-05-21): timeline section for ResultTimeline empty-state + per-leg
+  // drive chip. These keys were missing entirely, so they leaked as raw key
+  // paths (itineraryBuilder.timeline.emptyHeadline …) in the UI.
+  timeline: {
+    emptyHeadline: "Build your day, stop by stop",
+    emptyBody: "Add stops from the map or the curated list — they'll line up here as your route.",
+    lookAtMap: "Look at the map",
+    driveBetween: "{duration} drive",
   },
 };
 

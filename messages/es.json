@@ -1990,7 +1990,7 @@
       "title": "O diseña tu día ideal en Corea",
       "subtitle": "Elige las paradas que realmente quieres en el mapa. Nosotros te lo cotizamos.",
       "busanName": "Busan",
-      "busanTagline": "Templos marinos + capitales antiguas + exploración de mercados",
+      "busanTagline": "Templos marinos + capitales históricas + paseos por mercados",
       "busanStops": "20 paradas seleccionadas",
       "jejuName": "Jeju Island",
       "jejuTagline": "UNESCO Triple Crown — cumbres al amanecer, cuevas de lava, paseos costeros",
@@ -2036,15 +2036,15 @@
       "trackCruiseHint": "De regreso al barco antes de zarpar",
       "regionLegend": "¿Qué región?",
       "cruiseHoursLegend": "¿Cuántas horas en tierra?",
-      "cruiseHoursHint": "Elige el lapso entre la llegada de tu barco y la última llamada para embarcar.",
+      "cruiseHoursHint": "Elige el tiempo entre la llegada de tu barco y el último embarque.",
       "dateLabel": "Fecha de viaje",
       "partyLabel": "Número de personas",
       "shipLabel": "Nombre del barco",
       "optionalSuffix": "(opcional)",
       "submit": "Abrir el mapa",
-      "browsePackagesInstead": "O explora paquetes preestablecidos en su lugar →",
+      "browsePackagesInstead": "O explora nuestros tours ya armados →",
       "dateAndPartyDeferredHint": "Te preguntaremos la fecha de viaje + el número de personas al enviar tu cotización.",
-      "autoQuoteReassurance": "Los itinerarios elegibles obtienen un precio instantáneo — otros reciben respuesta en 24h."
+      "autoQuoteReassurance": "Algunos itinerarios tienen precio inmediato — para el resto te respondemos en 24h."
     },
     "cart": {
       "title": "Tu itinerario",
@@ -2055,7 +2055,7 @@
       "stayTotal": "Tiempo total de visita",
       "driveTotal": "Tiempo de conducción",
       "totalDuration": "Duración total del día",
-      "cruiseBudget": "Ventana de tiempo de crucero",
+      "cruiseBudget": "Tiempo disponible en tierra",
       "cruiseOverBudget": "Excede el presupuesto por {over} — elimina una parada o acorta las visitas",
       "remove": "Eliminar",
       "getQuoteCta": "Obtener una cotización personalizada",
@@ -2064,7 +2064,7 @@
     "grid": {
       "title": "Paradas seleccionadas",
       "hint": "Toca cualquier tarjeta para previsualizar detalles o añadir a tu itinerario.",
-      "inCartBadge": "En el carrito · #{number}",
+      "inCartBadge": "En tu ruta · #{number}",
       "details": "Detalles",
       "added": "Añadido",
       "add": "Añadir"
@@ -2077,20 +2077,26 @@
         "firstTime": "Primera vez en Corea",
         "family": "Familia con niños",
         "unesco": "UNESCO + historia",
-        "foodie": "Día de experiencias gastronómicas",
+        "foodie": "Ruta gastronómica",
         "beachesCafes": "Playas + cafés"
       },
       "intentLabel": "Tus intereses",
       "intentPlaceholder": "ej. primera vez, familia, UNESCO + playas, ritmo relajado",
       "hoursLabel": "Horas",
-      "submit": "Recomendar",
+      "submit": "Ver sugerencias",
       "submitting": "Buscando coincidencias…",
       "errorMin": "Cuéntanos un poco más sobre tu viaje.",
-      "resultsSummary": "{count} paradas encontradas · día de ~{hours}h",
+      "resultsSummary": "{count} paradas · ~{hours}h de recorrido",
       "loadIntoCart": "Aplicar este día",
       "previewHint": "Toca cualquier parada para ver detalles →",
       "noMatchFallback": "Intenta con intereses más amplios o una región diferente.",
-      "getAnother": "Obtener otra sugerencia"
+      "getAnother": "Ver otra opción"
+    },
+    "timeline": {
+      "emptyHeadline": "Arma tu día, parada por parada",
+      "emptyBody": "Agrega paradas desde el mapa o la lista seleccionada — se alinearán aquí según tu ruta.",
+      "lookAtMap": "Volver al mapa",
+      "driveBetween": "{duration} en auto"
     }
   }
 }
