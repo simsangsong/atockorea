@@ -8,7 +8,7 @@
 export interface QuoteConfirmationEmailInput {
   contactName: string | null;
   region: string;
-  track: "private" | "cruise";
+  track: "private" | "cruise" | "dmz";
   partySize: number | null;
   requestedDate: string | null;
   poiNames: string[];
@@ -22,7 +22,12 @@ export interface QuoteConfirmationEmailInput {
 
 export function buildQuoteConfirmationHtml(input: QuoteConfirmationEmailInput): string {
   const hello = input.contactName ? `Hi ${escapeHtml(input.contactName)},` : "Hello,";
-  const trackLabel = input.track === "cruise" ? "cruise shore excursion" : "private day trip";
+  const trackLabel =
+    input.track === "cruise"
+      ? "cruise shore excursion"
+      : input.track === "dmz"
+      ? "DMZ private tour"
+      : "private day trip";
   const stops = input.poiNames
     .map((n, i) => `<li style="margin: 4px 0; padding: 0; color: #1f2937;">${i + 1}. ${escapeHtml(n)}</li>`)
     .join("");
@@ -98,22 +103,44 @@ export function buildQuoteConfirmationHtml(input: QuoteConfirmationEmailInput): 
 </html>`.trim();
 }
 
+interface BreakdownLine {
+  code?: string;
+  amount?: number;
+  meta?: Record<string, unknown>;
+}
+
+/** Human label for a pricing line code (ops/customer-readable English). */
+function lineLabel(line: BreakdownLine): string {
+  const meta = line.meta ?? {};
+  switch (line.code) {
+    case "base":
+      return `Base fare (${meta.hours ?? ""}h${meta.tier === "chinese" ? ", Chinese-speaking guide" : meta.tier === "smart_guide" ? ", Smart Guide" : ""})`;
+    case "pax_tier":
+      return `Vehicle (${meta.vehicle === "solati" ? "Solati 10–13 pax" : meta.vehicle === "van" ? "van 7–9 pax" : meta.vehicle ?? ""}${meta.peak ? ", peak season" : ""})`;
+    case "region":
+      return "Out-of-city surcharge";
+    case "jeju_cross_region":
+      return "Two-region surcharge (Jeju)";
+    case "jeju_pickup":
+      return "Pickup-area surcharge";
+    case "dmz_base":
+      return `DMZ private tour (${meta.pax ?? ""} pax)`;
+    case "cruise_excursion":
+      return "Cruise shore-excursion";
+    case "gangjeong_port":
+      return "Gangjeong Port surcharge";
+    case "manual":
+      return "Custom quote";
+    default:
+      return line.code ?? "Surcharge";
+  }
+}
+
 function renderBreakdown(breakdown: Record<string, unknown> | null): string {
-  if (!breakdown) return "";
-  const rows: { label: string; value: number }[] = [];
-  const get = (k: string) => (typeof breakdown[k] === "number" ? (breakdown[k] as number) : 0);
-  rows.push({ label: "Base", value: get("base_krw") });
-  if (get("vehicle_tier_krw") > 0)
-    rows.push({ label: `Vehicle (${breakdown.vehicle_tier_label ?? ""})`, value: get("vehicle_tier_krw") });
-  if (get("duration_surcharge_krw") > 0)
-    rows.push({ label: "Extra hours", value: get("duration_surcharge_krw") });
-  if (get("distance_surcharge_krw") > 0)
-    rows.push({ label: "Extra distance", value: get("distance_surcharge_krw") });
-  if (get("poi_surcharge_krw") > 0)
-    rows.push({ label: "Extra stops", value: get("poi_surcharge_krw") });
-  if (get("language_premium_krw") > 0)
-    rows.push({ label: `Language premium (${breakdown.language ?? ""})`, value: get("language_premium_krw") });
-  const total = get("total_krw");
+  if (!breakdown || !Array.isArray(breakdown.lines)) return "";
+  const lines = breakdown.lines as BreakdownLine[];
+  const rows = lines.map((l) => ({ label: lineLabel(l), value: typeof l.amount === "number" ? l.amount : 0 }));
+  const total = typeof breakdown.total === "number" ? breakdown.total : rows.reduce((s, r) => s + r.value, 0);
   const rowsHtml = rows
     .map(
       (r) =>

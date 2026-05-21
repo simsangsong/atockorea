@@ -2026,7 +2026,48 @@
       "close": "關閉",
       "responseHint": "我們將在24小時內以電子郵件回覆您。",
       "errorEmailRequired": "請輸入您的電子郵件，以便我們回覆。",
-      "errorGeneric": "無法送出請求 — 請再試一次或聯絡客服。"
+      "errorGeneric": "無法送出請求 — 請再試一次或聯絡客服。",
+      "eyebrow": "客製行程",
+      "guideLanguageLabel": "導遊語言",
+      "durationLabel": "行程時長",
+      "hoursOption": "{hours}小時",
+      "solatiUnavailable": "10–13人需6小時起",
+      "pickupLabel": "濟州接送區域",
+      "cartHeader": "您選擇的景點",
+      "andNMore": "+{n}個",
+      "pricing": {
+        "title": "預估價格",
+        "total": "預估總計",
+        "estimateNote": "即時預估——最終價格將以電子郵件確認。",
+        "manualTitle": "我們將以電子郵件確認",
+        "manualNote": "您的人數或選項需要人工確認——我們將在24小時內回覆確切價格。",
+        "solatiMinHint": "10–13人（Solati商務車）最少預訂6小時。",
+        "notIncluded": "餐飲費用及景點門票不含於行程費用中，請於當日現場另行支付。",
+        "jejuSingleRegion": "濟州一日遊僅限遊覽一個區域（東部、西部或南部）。若需跨越兩個區域，需加收₩60,000。",
+        "lines": {
+          "base": "基本 — {hours}小時私人包車",
+          "van": "車輛 — 商務車（7–9人）",
+          "solati": "車輛 — Solati（10–13人）",
+          "solatiPeak": "車輛 — Solati（10–13人，旺季）",
+          "region": "市區外附加費",
+          "jejuCrossRegion": "跨兩區附加費",
+          "jejuPickup": "接送區域（{zone}）",
+          "dmzBase": "DMZ私人之旅（{pax}人）",
+          "cruiseExcursion": "郵輪岸上觀光",
+          "gangjeongPort": "江汀港"
+        },
+        "pickupZones": {
+          "city": "濟州市區 — 無附加費",
+          "north": "北部（涯月、三陽）+₩40,000",
+          "outer": "外圍（城山、西歸浦）+₩60,000",
+          "cross_island": "跨島（150公里以上）+₩30,000"
+        },
+        "cruisePorts": {
+          "gangjeong": "江汀港（西歸浦）+₩70,000",
+          "jeju_port": "濟州港（市區）"
+        }
+      },
+      "cruisePortLabel": "郵輪港口"
     },
     "intake": {
       "trackLegend": "您如何旅行？",
@@ -2044,7 +2085,12 @@
       "submit": "打開地圖",
       "browsePackagesInstead": "瀏覽套裝行程 →",
       "dateAndPartyDeferredHint": "我們將在您提交報價時詢問旅行日期和人數。",
-      "autoQuoteReassurance": "部分行程即時報價 — 其餘在24小時內回覆。"
+      "autoQuoteReassurance": "部分行程即時報價 — 其餘在24小時內回覆。",
+      "trackDmzLabel": "DMZ之旅",
+      "guideLanguageLegend": "導遊語言",
+      "durationLegend": "行程時長",
+      "durationHint": "選擇您一天的行程時長——價格依小時計算。",
+      "dmzHint": "DMZ之旅為固定行程（第三隧道、展望台、吊橋），依團隊人數收取固定費用。請於下一步選擇人數。"
     },
     "cart": {
       "title": "您的行程",
@@ -2097,6 +2143,11 @@
       "emptyBody": "從地圖或精選清單新增景點，它們會依路線順序排列在這裡。",
       "lookAtMap": "返回地圖",
       "driveBetween": "{duration} 車程"
+    },
+    "dmz": {
+      "title": "DMZ私人之旅",
+      "body": "前往臨津閣、第三隧道、都羅展望台與紺岳山吊橋——探訪朝鮮半島最前線的一日固定行程。專車與導遊全程陪同，依團隊人數收取固定費用。",
+      "cta": "查看價格"
     }
   }
 }

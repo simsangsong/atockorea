@@ -4,41 +4,42 @@ import { sendEmail } from "@/lib/email";
 import { buildQuoteConfirmationHtml } from "@/lib/email-templates/quote-confirmation";
 import { notifyQuoteRequested } from "@/lib/slack/notify-quote";
 import { isRegionSlug } from "@/lib/itinerary-builder/regions";
-import { totalDriveMinutes } from "@/lib/itinerary-builder/distance";
-import { loadActivePreset } from "@/lib/quote-engine/load-preset";
-import { classify } from "@/lib/quote-engine/classify";
-import { computeQuote } from "@/lib/quote-engine/compute";
+import {
+  quote,
+  tierForLocale,
+  jejuZone,
+  type JejuPickupZone,
+  type PriceInput,
+  type PricingTrack,
+} from "@/lib/quote-engine/pricing-policy";
 import { fingerprint } from "@/lib/quote-engine/fingerprint";
 import { lookupPrecedent } from "@/lib/quote-engine/memory-lookup";
-import type { QuoteIntake, Track } from "@/lib/quote-engine/types";
+import type { QuoteIntake } from "@/lib/quote-engine/types";
 
 /**
  * POST /api/itinerary/quote — itinerary builder quote endpoint.
  *
- * Phase 5 pipeline:
+ * Phase 9 pipeline (replaces the Phase 5 preset model — see §B D13/D14):
  *   1. Validate input.
- *   2. Fetch POI coords + stay minutes; compute total hours + drive km.
- *   3. loadActivePreset(region, track).
- *   4. classify(preset, intake).
- *      - In-scope: computeQuote → status='auto_quoted', price emailed instantly.
- *      - Out-of-scope (or no preset): lookupPrecedent → status='pending_manual',
- *        Slack escalation with violations + precedent reference.
- *   5. Email + Slack are fire-and-forget so the response is not blocked.
+ *   2. Fetch cart POI regions + coords → sub-region surcharge + Jeju zones.
+ *   3. quote(PriceInput) via lib/quote-engine/pricing-policy (the SAME module
+ *      the client uses for the live estimate → numbers match by construction).
+ *      - autoQuotable (and kill-switch on): status='auto_quoted', price emailed.
+ *      - else: lookupPrecedent → status='pending_manual' + Slack escalation.
+ *   4. Email + Slack are fire-and-forget so the response is not blocked.
  *
- * Body shape (JSON):
+ * Body (JSON):
  *  {
- *    poi_keys: string[],          // ordered cart
- *    region: 'busan' | 'jeju',
- *    track: 'private' | 'cruise',
- *    contact_email: string,        // REQUIRED
- *    contact_name?: string | null,
- *    requested_date?: string | null,
- *    party_size?: number | null,
- *    language?: string | null,
- *    notes?: string | null,
- *    locale?: string | null,
- *    intake?: Record<string, unknown>,
- *    source_url?: string | null,
+ *    poi_keys: string[],                    // ordered cart (empty allowed for dmz)
+ *    region: 'busan'|'jeju'|'seoul',
+ *    track: 'private'|'cruise'|'dmz',
+ *    guide_language?: string,               // en/ja/es/zh/zh-TW/ko (→ price tier)
+ *    duration_hours?: number,               // customer-chosen 4-12h (private/cruise)
+ *    party_size?: number,
+ *    jeju_pickup_zone?: 'city'|'north'|'outer'|'cross_island',
+ *    requested_date?: string,
+ *    contact_email: string,                 // REQUIRED
+ *    contact_name?, language?, notes?, locale?, intake?, source_url?
  *  }
  */
 
@@ -46,16 +47,22 @@ interface QuoteBody {
   poi_keys?: unknown;
   region?: unknown;
   track?: unknown;
+  guide_language?: unknown;
+  duration_hours?: unknown;
+  party_size?: unknown;
+  jeju_pickup_zone?: unknown;
+  cruise_port?: unknown;
+  requested_date?: unknown;
   contact_email?: unknown;
   contact_name?: unknown;
-  requested_date?: unknown;
-  party_size?: unknown;
   language?: unknown;
   notes?: unknown;
   locale?: unknown;
   intake?: unknown;
   source_url?: unknown;
 }
+
+const PICKUP_ZONES: JejuPickupZone[] = ["city", "north", "outer", "cross_island"];
 
 function isEmail(s: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
@@ -73,11 +80,11 @@ export async function POST(request: Request) {
   }
 
   const region = typeof body.region === "string" ? body.region : "";
-  if (!isRegionSlug(region)) return badRequest("region", "must be 'busan' or 'jeju'");
+  if (!isRegionSlug(region)) return badRequest("region", "must be 'busan', 'jeju', or 'seoul'");
 
   const track = typeof body.track === "string" ? body.track : "";
-  if (track !== "private" && track !== "cruise") {
-    return badRequest("track", "must be 'private' or 'cruise'");
+  if (track !== "private" && track !== "cruise" && track !== "dmz") {
+    return badRequest("track", "must be 'private', 'cruise', or 'dmz'");
   }
 
   const contactEmail = typeof body.contact_email === "string" ? body.contact_email.trim() : "";
@@ -87,79 +94,118 @@ export async function POST(request: Request) {
   const poiKeys: string[] = poiKeysRaw
     .filter((k): k is string => typeof k === "string" && k.trim().length > 0)
     .slice(0, 30);
-  if (poiKeys.length === 0) return badRequest("poi_keys", "must include at least 1 POI");
+  // DMZ is a fixed product with no POI building; everything else needs ≥1 stop.
+  if (track !== "dmz" && poiKeys.length === 0) {
+    return badRequest("poi_keys", "must include at least 1 POI");
+  }
 
   const contactName = typeof body.contact_name === "string" ? body.contact_name.trim() : null;
-  const requestedDate = typeof body.requested_date === "string" && body.requested_date.trim() ? body.requested_date.trim() : null;
-  const partySize = typeof body.party_size === "number" && Number.isFinite(body.party_size) && body.party_size > 0 ? Math.round(body.party_size) : null;
-  const language = typeof body.language === "string" ? body.language.trim() : null;
+  const requestedDate =
+    typeof body.requested_date === "string" && body.requested_date.trim()
+      ? body.requested_date.trim()
+      : null;
+  const partySize =
+    typeof body.party_size === "number" && Number.isFinite(body.party_size) && body.party_size > 0
+      ? Math.round(body.party_size)
+      : null;
   const notes = typeof body.notes === "string" ? body.notes.trim().slice(0, 2000) : null;
   const locale = typeof body.locale === "string" ? body.locale : null;
-  const intake = body.intake && typeof body.intake === "object" ? (body.intake as Record<string, unknown>) : {};
+  const bodyIntake =
+    body.intake && typeof body.intake === "object" ? (body.intake as Record<string, unknown>) : {};
   const sourceUrl = typeof body.source_url === "string" ? body.source_url : null;
+
+  // Guide language → price tier. Prefer an explicit guide_language, then the
+  // legacy `language` field, then the UI locale.
+  const guideLanguage =
+    (typeof body.guide_language === "string" && body.guide_language.trim()) ||
+    (typeof body.language === "string" && body.language.trim()) ||
+    locale ||
+    "en";
+  const tier = tierForLocale(guideLanguage);
+
+  const durationHours =
+    typeof body.duration_hours === "number" && Number.isFinite(body.duration_hours)
+      ? Math.round(body.duration_hours)
+      : null;
+
+  const jejuPickupZone =
+    typeof body.jeju_pickup_zone === "string" &&
+    PICKUP_ZONES.includes(body.jeju_pickup_zone as JejuPickupZone)
+      ? (body.jeju_pickup_zone as JejuPickupZone)
+      : null;
+
+  const cruisePort =
+    body.cruise_port === "gangjeong" || body.cruise_port === "jeju_port"
+      ? (body.cruise_port as "gangjeong" | "jeju_port")
+      : null;
 
   const supabase = createServerClient();
 
-  // 1) Fetch POI coords + stay minutes (preserves cart order)
-  const { data: poiRows } = await supabase
-    .from("match_pois")
-    .select("poi_key, name_en, lat, lng, default_stay_minutes")
-    .in("poi_key", poiKeys);
+  // 1) Fetch cart POI region + coords (preserves cart order)
+  let poiNames: string[] = [];
+  let poiRegions: string[] = [];
+  let jejuPoiZones: ReturnType<typeof jejuZone>[] | undefined;
+  if (poiKeys.length > 0) {
+    const { data: poiRows } = await supabase
+      .from("match_pois")
+      .select("poi_key, name_en, region, lat, lng")
+      .in("poi_key", poiKeys);
+    const poiByKey = new Map(
+      (poiRows ?? []).map((r) => [
+        r.poi_key as string,
+        {
+          name: (r.name_en as string) ?? (r.poi_key as string),
+          region: (r.region as string) ?? "",
+          lat: Number(r.lat),
+          lng: Number(r.lng),
+        },
+      ])
+    );
+    const orderedPois = poiKeys
+      .map((k) => poiByKey.get(k))
+      .filter((p): p is NonNullable<typeof p> => !!p);
+    poiNames = poiKeys.map((k) => poiByKey.get(k)?.name ?? k);
+    poiRegions = orderedPois.map((p) => p.region);
+    if (region === "jeju") jejuPoiZones = orderedPois.map((p) => jejuZone(p.lat, p.lng));
+  }
 
-  const poiByKey = new Map(
-    (poiRows ?? []).map((r) => [
-      r.poi_key as string,
-      {
-        name: (r.name_en as string) ?? (r.poi_key as string),
-        lat: Number(r.lat),
-        lng: Number(r.lng),
-        stay: Number(r.default_stay_minutes ?? 0),
-      },
-    ])
-  );
-  const orderedPois = poiKeys.map((k) => poiByKey.get(k)).filter((p): p is NonNullable<typeof p> => !!p);
-  const poiNames = poiKeys.map((k) => poiByKey.get(k)?.name ?? k);
-
-  // 2) Drive + stay totals → hours; total km from haversine×1.3 chain
-  const driveMin = totalDriveMinutes(orderedPois.map((p) => ({ lat: p.lat, lng: p.lng })));
-  const stayMin = orderedPois.reduce((s, p) => s + p.stay, 0);
-  const totalMin = driveMin + stayMin;
-  const totalHours = totalMin / 60;
-  // Re-derive distance_km from drive_min @ 50km/h then back-multiply (= drive_min * 50/60)
-  const distanceKm = (driveMin * 50) / 60;
-
-  // Cruise time-budget hint from intake (if provided)
-  const cruiseHours = track === "cruise" && typeof intake.hours === "number" ? (intake.hours as number) : null;
-  const effectiveHours = cruiseHours && cruiseHours > 0 ? Math.min(totalHours, cruiseHours) : totalHours;
-
-  const engineIntake: QuoteIntake = {
+  // 2) Authoritative compute via the shared pricing policy
+  const priceInput: PriceInput = {
+    track: track as PricingTrack,
     region,
-    track: track as Track,
-    pax: partySize,
-    hours: effectiveHours,
-    distance_km: distanceKm,
-    language: language || locale || "en",
-    poi_keys: poiKeys,
+    guideLanguageTier: tier,
+    durationHours: durationHours ?? (track === "dmz" ? 0 : 8),
+    pax: partySize ?? 2,
+    requestedDate,
+    jejuPickupZone,
+    cruisePort,
+    poiRegions,
+    jejuPoiZones,
   };
+  const result = quote(priceInput);
 
-  // 3) Load active preset for (region, track)
-  const preset = await loadActivePreset(supabase, region, track as Track);
-  const presetVerdict = preset ? classify(preset, engineIntake) : { in_scope: false, violations: ["no_active_preset"] };
+  // Kill-switch (R6): ops can force everything to manual without a deploy.
+  const autoQuoteEnabled = process.env.PRICING_AUTOQUOTE_ENABLED !== "false";
 
-  // 4) Branch — auto-quote vs pending
   let autoQuoteAmountKrw: number | null = null;
   let autoQuoteBreakdown: Record<string, unknown> | null = null;
   let precedentId: string | null = null;
   let precedentInfo: { amount_krw: number; confidence: "exact" | "loose"; sample_size: number } | null = null;
   let finalStatus: "auto_quoted" | "pending_manual" = "pending_manual";
 
-  if (preset && presetVerdict.in_scope) {
-    const breakdown = computeQuote(preset, engineIntake);
-    autoQuoteAmountKrw = breakdown.total_krw;
-    autoQuoteBreakdown = breakdown as unknown as Record<string, unknown>;
+  if (result.autoQuotable && autoQuoteEnabled) {
+    autoQuoteAmountKrw = result.total;
+    autoQuoteBreakdown = result as unknown as Record<string, unknown>;
     finalStatus = "auto_quoted";
   } else {
-    // Out-of-scope: try precedent
+    const engineIntake: QuoteIntake = {
+      region,
+      track: track as PricingTrack,
+      pax: partySize,
+      hours: durationHours,
+      language: guideLanguage,
+      poi_keys: poiKeys,
+    };
     const fp = fingerprint(engineIntake);
     const match = await lookupPrecedent(supabase, fp, region, track);
     if (match) {
@@ -168,7 +214,18 @@ export async function POST(request: Request) {
     }
   }
 
-  // 5) Persist
+  // 3) Persist. New pricing inputs live in the `intake` jsonb (no schema churn).
+  const intakeOut: Record<string, unknown> = {
+    ...bodyIntake,
+    guide_language: guideLanguage,
+    guide_language_tier: tier,
+    vehicle: result.vehicle,
+    peak_season: result.peakSeason,
+    ...(durationHours != null ? { duration_hours: durationHours } : {}),
+    ...(jejuPickupZone ? { jeju_pickup_zone: jejuPickupZone } : {}),
+    ...(cruisePort ? { cruise_port: cruisePort } : {}),
+  };
+
   const { data: inserted, error: insertError } = await supabase
     .from("tour_quote_requests")
     .insert({
@@ -179,10 +236,10 @@ export async function POST(request: Request) {
       party_size: partySize,
       contact_email: contactEmail,
       contact_name: contactName,
-      language,
+      language: guideLanguage,
       notes,
       locale,
-      intake,
+      intake: intakeOut,
       source_url: sourceUrl,
       status: finalStatus,
       auto_quote_amount_krw: autoQuoteAmountKrw,
@@ -197,24 +254,25 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "db_insert_failed" }, { status: 500 });
   }
 
-  // 6) Fire-and-forget Slack + email
+  // 4) Fire-and-forget Slack + email
+  const trackWord = track === "cruise" ? "cruise " : track === "dmz" ? "DMZ " : "";
   void notifyQuoteRequested({
     quoteId: inserted.id as string,
-    track,
+    track: track as PricingTrack,
     region,
     partySize,
     requestedDate,
     contactName,
     contactEmail,
-    language,
+    language: guideLanguage,
     poiNames,
     notes,
     sourceUrl,
-    intake,
+    intake: intakeOut,
     status: finalStatus,
     autoQuoteAmountKrw,
     autoQuoteBreakdown,
-    violations: presetVerdict.violations,
+    violations: result.violations,
     precedent: precedentInfo,
   });
 
@@ -222,21 +280,19 @@ export async function POST(request: Request) {
     to: contactEmail,
     subject:
       finalStatus === "auto_quoted"
-        ? `Your AtoC Korea ${track === "cruise" ? "cruise" : ""} itinerary quote — ₩${autoQuoteAmountKrw?.toLocaleString()}`.replace("  ", " ")
-        : track === "cruise"
-        ? "Your AtoC Korea cruise itinerary request — we'll respond within 24h"
-        : "Your AtoC Korea itinerary request — we'll respond within 24h",
+        ? `Your AtoC Korea ${trackWord}itinerary quote — ₩${autoQuoteAmountKrw?.toLocaleString()}`
+        : `Your AtoC Korea ${trackWord}itinerary request — we'll respond within 24h`,
     html: buildQuoteConfirmationHtml({
       contactName,
       region,
-      track,
+      track: track as PricingTrack,
       partySize,
       requestedDate,
       poiNames,
       sourceUrl,
       responseWindowHours: 24,
       autoQuoteAmountKrw,
-      autoQuoteBreakdown: autoQuoteBreakdown as Record<string, unknown> | null,
+      autoQuoteBreakdown,
     }),
   });
 
@@ -247,5 +303,6 @@ export async function POST(request: Request) {
     poi_count: poiKeys.length,
     auto_quote_amount_krw: autoQuoteAmountKrw,
     auto_quote_breakdown: autoQuoteBreakdown,
+    violations: result.violations,
   });
 }

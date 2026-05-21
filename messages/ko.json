@@ -2236,7 +2236,48 @@
       "close": "닫기",
       "responseHint": "24시간 이내 이메일로 답변드립니다.",
       "errorEmailRequired": "답변을 위해 이메일을 입력해 주세요.",
-      "errorGeneric": "요청을 보낼 수 없습니다 — 다시 시도하거나 고객 지원팀에 문의해 주세요."
+      "errorGeneric": "요청을 보낼 수 없습니다 — 다시 시도하거나 고객 지원팀에 문의해 주세요.",
+      "eyebrow": "맞춤 일정",
+      "guideLanguageLabel": "가이드 언어",
+      "durationLabel": "투어 시간",
+      "hoursOption": "{hours}시간",
+      "solatiUnavailable": "10~13인 6시간 이상",
+      "pickupLabel": "제주 픽업 지역",
+      "cartHeader": "선택한 장소",
+      "andNMore": "+{n}곳",
+      "pricing": {
+        "title": "예상 금액",
+        "total": "예상 합계",
+        "estimateNote": "실시간 예상가입니다 — 최종 금액은 이메일로 확정해 드립니다.",
+        "manualTitle": "이메일로 확인해 드릴게요",
+        "manualNote": "인원수나 옵션이 담당자 확인이 필요합니다 — 24시간 이내에 정확한 금액으로 회신드립니다.",
+        "solatiMinHint": "10~13인(쏠라티 차량)은 6시간부터 예약 가능합니다.",
+        "notIncluded": "식사 비용 및 관광지 입장료는 투어 요금에 포함되지 않으며 현장에서 별도 결제합니다.",
+        "jejuSingleRegion": "제주 투어는 하루에 동쪽, 서쪽, 남쪽 중 한 구역만 방문 가능합니다. 두 구역 방문 시 ₩60,000이 추가됩니다.",
+        "lines": {
+          "base": "기본 — {hours}시간 프라이빗 투어",
+          "van": "차량 — 밴 (7~9인)",
+          "solati": "차량 — 쏠라티 (10~13인)",
+          "solatiPeak": "차량 — 쏠라티 (10~13인, 성수기)",
+          "region": "시외 할증",
+          "jejuCrossRegion": "두 구역 방문 할증",
+          "jejuPickup": "픽업 지역 ({zone})",
+          "dmzBase": "DMZ 프라이빗 투어 ({pax}인)",
+          "cruiseExcursion": "크루즈 기항지 투어",
+          "gangjeongPort": "강정항"
+        },
+        "pickupZones": {
+          "city": "제주시내 — 할증 없음",
+          "north": "북쪽 (애월·삼양) +₩40,000",
+          "outer": "외곽 (성산·서귀포) +₩60,000",
+          "cross_island": "크로스 아일랜드 (150km 이상) +₩30,000"
+        },
+        "cruisePorts": {
+          "gangjeong": "강정항 (서귀포) +₩70,000",
+          "jeju_port": "제주항 (제주시)"
+        }
+      },
+      "cruisePortLabel": "크루즈 항구"
     },
     "intake": {
       "trackLegend": "어떻게 여행하시나요?",
@@ -2254,7 +2295,12 @@
       "submit": "지도 열기",
       "browsePackagesInstead": "패키지 투어 보러가기 →",
       "dateAndPartyDeferredHint": "견적 요청 시 여행 날짜와 인원을 다시 여쭤봅니다.",
-      "autoQuoteReassurance": "일부 일정은 즉시 견적 — 나머지는 24시간 내 답변드립니다."
+      "autoQuoteReassurance": "일부 일정은 즉시 견적 — 나머지는 24시간 내 답변드립니다.",
+      "trackDmzLabel": "DMZ 투어",
+      "guideLanguageLegend": "가이드 언어",
+      "durationLegend": "투어 시간",
+      "durationHint": "하루 일정 길이를 선택하세요 — 시간에 따라 요금이 책정됩니다.",
+      "dmzHint": "DMZ 투어는 제3땅굴·전망대·출렁다리를 둘러보는 고정 일정이며, 인원수에 따른 고정 요금이 적용됩니다. 다음 단계에서 인원을 선택해 주세요."
     },
     "cart": {
       "title": "내 여행 일정",
@@ -2307,6 +2353,11 @@
       "emptyBody": "지도나 추천 목록에서 장소를 추가하면 여기에 동선 순서대로 정리됩니다.",
       "lookAtMap": "지도로 돌아가기",
       "driveBetween": "{duration} 이동"
+    },
+    "dmz": {
+      "title": "DMZ 프라이빗 투어",
+      "body": "임진각, 제3땅굴, 도라전망대, 감악산 출렁다리까지 — 한반도 최전방을 둘러보는 하루 고정 일정입니다. 전용 차량과 가이드가 함께하며, 인원수에 따른 고정 요금으로 안내합니다.",
+      "cta": "요금 확인하기"
     }
   }
 }

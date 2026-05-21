@@ -11,7 +11,7 @@
 
 export interface QuoteNotificationData {
   quoteId: string;
-  track: "private" | "cruise";
+  track: "private" | "cruise" | "dmz";
   region: string;
   partySize: number | null;
   requestedDate: string | null;
@@ -41,7 +41,8 @@ export async function notifyQuoteRequested(
     return { ok: false, error: "webhook_not_configured" };
   }
 
-  const trackEmoji = data.track === "cruise" ? ":cruise_ship:" : ":car:";
+  const trackEmoji =
+    data.track === "cruise" ? ":cruise_ship:" : data.track === "dmz" ? ":round_pushpin:" : ":car:";
   const statusEmoji =
     data.status === "auto_quoted" ? ":white_check_mark:" : ":warning:";
   const statusLabel =

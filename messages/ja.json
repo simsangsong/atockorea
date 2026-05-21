@@ -2026,7 +2026,48 @@
       "close": "閉じる",
       "responseHint": "24時間以内にメールでご連絡いたします。",
       "errorEmailRequired": "返信のためにメールアドレスをご入力ください。",
-      "errorGeneric": "リクエストを送信できませんでした — もう一度お試しいただくか、サポートにご連絡ください。"
+      "errorGeneric": "リクエストを送信できませんでした — もう一度お試しいただくか、サポートにご連絡ください。",
+      "eyebrow": "オーダーメイド旅程",
+      "guideLanguageLabel": "ガイドの言語",
+      "durationLabel": "ツアー時間",
+      "hoursOption": "{hours}時間",
+      "solatiUnavailable": "10〜13名は6時間〜",
+      "pickupLabel": "済州の送迎エリア",
+      "cartHeader": "選んだスポット",
+      "andNMore": "他{n}件",
+      "pricing": {
+        "title": "概算料金",
+        "total": "概算合計",
+        "estimateNote": "リアルタイムの概算です。最終料金はメールで確定します。",
+        "manualTitle": "メールでご案内します",
+        "manualNote": "人数やオプションの確認が必要です。24時間以内に正確な料金をご返信します。",
+        "solatiMinHint": "10〜13名（ソラティ）は6時間からのご予約となります。",
+        "notIncluded": "食事代および観光地の入場料はツアー料金に含まれておらず、当日現地にて別途お支払いいただきます。",
+        "jejuSingleRegion": "済州ツアーは1日につき東部・西部・南部のいずれか1エリアのみを巡ります。2エリアを巡る場合は₩60,000が追加されます。",
+        "lines": {
+          "base": "基本 — {hours}時間プライベートツアー",
+          "van": "車両 — バン（7〜9名）",
+          "solati": "車両 — ソラティ（10〜13名）",
+          "solatiPeak": "車両 — ソラティ（10〜13名・繁忙期）",
+          "region": "市外追加料金",
+          "jejuCrossRegion": "2エリア追加料金",
+          "jejuPickup": "送迎エリア（{zone}）",
+          "dmzBase": "DMZプライベートツアー（{pax}名）",
+          "cruiseExcursion": "クルーズ寄港地ツアー",
+          "gangjeongPort": "江汀港（カンジョン）"
+        },
+        "pickupZones": {
+          "city": "済州市内 — 追加料金なし",
+          "north": "北部（涯月・三陽）+₩40,000",
+          "outer": "郊外（城山・西帰浦）+₩60,000",
+          "cross_island": "島横断（150km以上）+₩30,000"
+        },
+        "cruisePorts": {
+          "gangjeong": "江汀港（西帰浦）+₩70,000",
+          "jeju_port": "済州港（済州市）"
+        }
+      },
+      "cruisePortLabel": "クルーズ寄港地"
     },
     "intake": {
       "trackLegend": "移動手段をお選びください",
@@ -2044,7 +2085,12 @@
       "submit": "地図を開く",
       "browsePackagesInstead": "パッケージツアーを見る →",
       "dateAndPartyDeferredHint": "旅行日と人数は、見積もりを依頼する際にお伺いします。",
-      "autoQuoteReassurance": "即時見積もり対応の旅程もあります — その他は24時間以内にご返信します。"
+      "autoQuoteReassurance": "即時見積もり対応の旅程もあります — その他は24時間以内にご返信します。",
+      "trackDmzLabel": "DMZツアー",
+      "guideLanguageLegend": "ガイドの言語",
+      "durationLegend": "ツアー時間",
+      "durationHint": "1日の所要時間を選んでください。料金は時間に応じて変わります。",
+      "dmzHint": "DMZツアーは第3トンネル・展望台・吊り橋を巡る固定行程で、人数に応じた定額制です。次のステップで人数をお選びください。"
     },
     "cart": {
       "title": "あなたの旅程",
@@ -2097,6 +2143,11 @@
       "emptyBody": "地図や厳選リストからスポットを追加すると、ここにルート順に並びます。",
       "lookAtMap": "地図に戻る",
       "driveBetween": "{duration} 移動"
+    },
+    "dmz": {
+      "title": "DMZプライベートツアー",
+      "body": "臨津閣、第3トンネル、都羅展望台、紺岳山の吊り橋まで——朝鮮半島の最前線を巡る1日固定行程です。専用車とガイドが同行し、人数に応じた定額料金でご案内します。",
+      "cta": "料金を見る"
     }
   }
 }
