@@ -1987,7 +1987,7 @@
   "itineraryBuilder": {
     "home": {
       "eyebrow": "自定义行程规划",
-      "title": "或规划您专属的韩国一日游",
+      "title": "或打造您的韩国专属一日游",
       "subtitle": "在地图上挑选您心仪的景点。我们将为您报价。",
       "busanName": "Busan",
       "busanTagline": "海边寺庙 + 古都风韵 + 逛市集寻味",
@@ -2014,7 +2014,7 @@
     },
     "quote": {
       "title": "获取定制报价",
-      "intro": "{region} 的 {count} 个景点。我们将为您提供行程安排和价格。",
+      "intro": "{region}精选{count}个景点，我们将为您量身定制报价。",
       "nameLabel": "您的姓名",
       "emailLabel": "电子邮件",
       "dateLabel": "旅行日期",
@@ -2042,9 +2042,9 @@
       "shipLabel": "邮轮名称",
       "optionalSuffix": "(选填)",
       "submit": "打开地图",
-      "browsePackagesInstead": "或浏览固定行程套餐 →",
+      "browsePackagesInstead": "或浏览我们的精选套餐 →",
       "dateAndPartyDeferredHint": "提交报价时，我们会询问旅行日期和人数。",
-      "autoQuoteReassurance": "符合条件的行程将即时报价 — 其他行程将在24小时内回复。"
+      "autoQuoteReassurance": "部分行程即时报价 — 其余在24小时内回复。"
     },
     "cart": {
       "title": "您的行程",
@@ -2054,8 +2054,8 @@
       "closeLabel": "关闭",
       "stayTotal": "总游览时间",
       "driveTotal": "总车程",
-      "totalDuration": "一日总时长",
-      "cruiseBudget": "邮轮时间窗口",
+      "totalDuration": "全天合计",
+      "cruiseBudget": "在港游玩时间",
       "cruiseOverBudget": "超出预算 {over} — 请删减景点或缩短游览时间",
       "remove": "移除",
       "getQuoteCta": "获取定制报价",
@@ -2071,7 +2071,7 @@
     },
     "ai": {
       "eyebrow": "让AI为您规划一日游",
-      "intro": "告诉我们您的喜好 — 我们将根据该地区的景点为您规划路线。",
+      "intro": "告诉我们您的兴趣 — 我们将从该地区景点为您规划路线。",
       "presetsLabel": "或从预设方案开始",
       "presets": {
         "firstTime": "韩国初体验",
@@ -2083,14 +2083,20 @@
       "intentLabel": "您的兴趣",
       "intentPlaceholder": "例如：初次旅行、亲子游、UNESCO + 海滩、悠闲节奏",
       "hoursLabel": "小时",
-      "submit": "推荐",
+      "submit": "为我推荐",
       "submitting": "正在匹配…",
       "errorMin": "请告诉我们更多关于您行程的信息。",
-      "resultsSummary": "已匹配 {count} 个景点 · 约 {hours} 小时行程",
-      "loadIntoCart": "应用此行程",
+      "resultsSummary": "精选{count}个景点 · 约{hours}小时行程",
+      "loadIntoCart": "使用此行程",
       "previewHint": "点击任意景点查看详情 →",
       "noMatchFallback": "尝试更宽泛的兴趣或选择其他地区。",
-      "getAnother": "获取其他建议"
+      "getAnother": "换个方案"
+    },
+    "timeline": {
+      "emptyHeadline": "逐站打造你的行程",
+      "emptyBody": "从地图或精选清单添加景点，它们会按路线顺序排列在这里。",
+      "lookAtMap": "返回地图",
+      "driveBetween": "{duration} 车程"
     }
   }
 }
