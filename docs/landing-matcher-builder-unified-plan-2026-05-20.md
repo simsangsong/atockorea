@@ -2,7 +2,7 @@
 
 Date: 2026-05-20
 
-Status: **Phase 0 gate cleared + Phases 1–4 shipped & verified (2026-05-21); planner i18n now complete in all 6 locales.** The unified planner (matcher + `Match me` / `Build myself` modes) is live in the hero, and the separate `ItineraryBuilderEntry` section has been removed from the homepage. Remaining: Phase 5 (match→build bridge) — optional, gated on explicit user approval per the don't-touch-other-landing-design rule. v3 (`docs/landing-page-uiux-master-plan-v3-2026-05-17.md`) remains the binding source of truth for the landing surface; this plan reconciled with its §B decisions (reversal rows logged 2026-05-21), it did not override them silently.
+Status: **Phase 0 gate cleared + Phases 1–4 shipped & verified (2026-05-21); planner i18n complete in all 6 locales; `unified_planner_*` analytics events wired (2026-05-21).** The unified planner (matcher + `Match me` / `Build myself` modes) is live in the hero, and the separate `ItineraryBuilderEntry` section has been removed from the homepage. Remaining: Phase 5 (match→build bridge) — optional, gated on explicit user approval per the don't-touch-other-landing-design rule. v3 (`docs/landing-page-uiux-master-plan-v3-2026-05-17.md`) remains the binding source of truth for the landing surface; this plan reconciled with its §B decisions (reversal rows logged 2026-05-21), it did not override them silently.
 
 History — reviewed against v3 + verified code reality (2026-05-20); Phase 0 gate + Governance section added and route / i18n / bridge-copy honesty fixes applied in the 2026-05-21 revision; gate cleared and Phases 1–4 executed 2026-05-21 (see the Phase 0 Resolution log + per-phase ✅ DONE notes). Outstanding user actions: conclude the 3 power-empty experiments (Gate 0.4, DB write needs explicit auth), confirm the Seoul "Request a Seoul day" target, and (optional) approve Phase 5. Planner i18n for es/ja/zh/zh-TW shipped 2026-05-21.
 
@@ -641,7 +641,7 @@ Acceptance criteria:
 
 **Gate 0.1 re-measure — corrects the resolution-log "mobile needs none" note:** the 52px segmented control pushed the match CTA to **-110px below the effective fold** at iPhone 14 (was -78px post-B.3; hero panel 371px). **RESOLVED 2026-05-21: accept -110px; hero untouched.** User directive ("절대 랜딩페이지 다른부분 디자인은 건드리지 말 것") rules out the B.3.3 hero `min-h` trim (it would alter the hero). Consistent with v3 §2.6.1, which already accepted -78px. Mobile users scroll slightly to reach the primary CTA — a common pattern; revisit only if real traffic shows a drop.
 
-**Open placeholders:** (a) Seoul "Request a Seoul day" currently switches to Match mode — no request endpoint exists yet; confirm the real target. (b) analytics `unified_planner_*` events deferred to build-order step 7. (c) Gate 0.4 experiment conclusion still awaits a user DB action (admin UI or permission rule).
+**Open placeholders:** (a) Seoul "Request a Seoul day" currently switches to Match mode — no request endpoint exists yet; confirm the real target. (b) ✅ analytics `unified_planner_*` events wired 2026-05-21 (see Analytics section below). (c) Gate 0.4 experiment conclusion still awaits a user DB action (admin UI or permission rule).
 
 ### Phase 3: Remove Or Repurpose Separate Builder Entry
 
@@ -754,6 +754,14 @@ Minimum payload:
 ```
 
 Do not log raw free-text intent unless the analytics policy already permits it. The existing match endpoint can receive raw query for functionality; analytics should avoid storing unnecessary user text.
+
+**✅ Analytics DONE (2026-05-21).** Wired **3** net-new events in `src/design/analytics.ts` (typed methods → `trackEvent`, identical pipeline to the existing 25+ events) + call sites in `landing-planner-card.tsx`:
+
+- `unified_planner_mode_switch` `{ mode, destination }` — segmented-control toggle; fires only on an actual mode change (re-clicking the active segment is a no-op), via new `handleModeSwitch`.
+- `unified_planner_build_start` `{ destination, hasIntent, selectedChipCount }` — "Start Building" click (jeju/busan), just before the builder route push.
+- `unified_planner_seoul_request` `{ hasIntent }` — "Request a Seoul day" click in the Seoul fallback (fires the event, then the placeholder flips to Match mode via `setMode` directly — not `handleModeSwitch` — so it logs a `seoul_request`, not a misleading `mode_switch`).
+
+**사실 수정 vs the 5-event list above:** `unified_planner_match_submit` was **intentionally NOT added** — match submit already fires `home_cta_click { source: "hero_planner_match" }` in `HomeV2MatchProvider` (line 90), which the `home_cta_copy` A/B attributes off; a second event for the same click would double-count. `unified_planner_customize_from_match` stays out (Phase 5, deferred). PII-safe: payloads carry only `mode`/`destination` enums, a `hasIntent` boolean, and `selectedChipCount` number — no free text (matches `sanitizePayload`). Verified: `landing-planner-card.tsx` + `analytics.ts` additions pass `eslint --max-warnings 0` and `tsc --noEmit` (analytics.ts retains one PRE-EXISTING line-346 `no-console` directive warning, unrelated to these additions). Live console-fire check (dev `[analytics]` log) remains a manual browser step.
 
 ## i18n
 
@@ -924,7 +932,7 @@ Mitigation:
 4. Remove or demote the separate `ItineraryBuilderEntry` section from `HomeV2Page` — only after the v3 §B reversal row is logged (Gate 0.3).
 5. Add `intent` query handoff into the builder (incl. `IntakeForm` forwarding).
 6. Add the honest post-match bridge CTA (`Build your own day in {destination}`).
-7. Add analytics and i18n translations (reuse `findMatchCta`).
+7. ✅ Add analytics and i18n translations (reuse `findMatchCta`). — i18n shipped (6 locales); 3 `unified_planner_*` events wired 2026-05-21.
 8. Run regression, visual QA, and mobile screenshot checks (incl. CDP fold re-measure).
 
 ## Definition Of Done

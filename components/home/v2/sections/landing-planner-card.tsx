@@ -113,17 +113,38 @@ export function LandingPlannerCard({
     void startInPageMatchFlow(raw, locale, destination);
   }, [intent, locale, startInPageMatchFlow, t, destination]);
 
+  // Derived analytics payload bits — no free text leaves the page, only the
+  // chip count + a hasIntent boolean (PII-safe, matches sanitize policy).
+  const selectedChipCount = useMemo(
+    () => styleChipOptions.filter((opt) => intent.includes(opt.label)).length,
+    [styleChipOptions, intent],
+  );
+
   const handleStartBuilding = useCallback(() => {
+    analytics.unifiedPlannerBuildStart({
+      destination,
+      hasIntent: intent.trim().length > 0,
+      selectedChipCount,
+    });
     // ?region=... (not the direct /[region] route) so the builder IntakeForm
     // pre-fills and keeps its track/date step. intent rides along for Phase 4.
     router.push(
       `/itinerary-builder?region=${destination}&intent=${encodeURIComponent(intent)}`,
     );
-  }, [router, destination, intent]);
+  }, [router, destination, intent, selectedChipCount]);
 
   const chipLooksSelected = useCallback(
     (label: string) => intent.includes(label),
     [intent],
+  );
+
+  const handleModeSwitch = useCallback(
+    (next: PlannerMode) => {
+      if (next === mode) return;
+      analytics.unifiedPlannerModeSwitch({ mode: next, destination });
+      setMode(next);
+    },
+    [mode, destination],
   );
 
   // `animate` (the at-rest state AnimatePresence renders on first mount, since
@@ -166,7 +187,7 @@ export function LandingPlannerCard({
               key={m}
               type="button"
               aria-pressed={mode === m}
-              onClick={() => setMode(m)}
+              onClick={() => handleModeSwitch(m)}
               className={cn(
                 "focus-ring rounded-full px-3 py-2 text-[13px] font-semibold tracking-tight transition-colors duration-200 md:text-caption",
                 mode === m
@@ -368,7 +389,16 @@ export function LandingPlannerCard({
                 <V0ShadcnButton
                   type="button"
                   size="lg"
-                  onClick={() => setMode("match")}
+                  onClick={() => {
+                    analytics.unifiedPlannerSeoulRequest({
+                      hasIntent: intent.trim().length > 0,
+                    });
+                    // Placeholder behaviour (no Seoul request endpoint yet):
+                    // flip back to Match mode. setMode directly, not via
+                    // handleModeSwitch, so this logs a seoul_request rather than
+                    // a misleading mode_switch.
+                    setMode("match");
+                  }}
                   className={cn(homeBtnPrimary, "mt-3")}
                   style={BTN_PRIMARY_STYLE}
                 >

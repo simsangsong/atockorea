@@ -417,6 +417,15 @@ export type HomeHeroSeason =
   | "autumn"
   | "winter";
 
+/** Unified landing planner (matcher + builder modes) — net-new events for the
+ *  "Match me / Build myself" surface (LandingPlannerCard).
+ *  NOTE: match-submit is intentionally NOT a unified_planner event — it already
+ *  fires `home_cta_click { source: "hero_planner_match" }` in HomeV2MatchProvider,
+ *  and the home_cta_copy A/B attributes off that. Adding a second event for the
+ *  same click would double-count (사실 수정 vs plan's 5-event list, 2026-05-21). */
+export type UnifiedPlannerMode = "match" | "build";
+export type UnifiedPlannerDestination = "jeju" | "seoul" | "busan";
+
 // ===========================================================================
 // Public API — unchanged signatures
 // ===========================================================================
@@ -454,6 +463,27 @@ export const analytics = {
   /** v3 Phase 0a — destination card click (Seoul/Busan/Jeju 3-up rail). */
   homeDestinationCardClick: (payload: { destination: string }) =>
     trackEvent("home_destination_card_click", payload),
+
+  /** Unified planner — user toggled the Match me / Build myself segmented
+   *  control. `mode` is the mode being switched TO. Fires only on an actual
+   *  change, not on re-clicking the active segment. */
+  unifiedPlannerModeSwitch: (payload: {
+    mode: UnifiedPlannerMode;
+    destination: UnifiedPlannerDestination;
+  }) => trackEvent("unified_planner_mode_switch", payload),
+
+  /** Unified planner — "Start Building" click in build mode (jeju/busan), the
+   *  moment before routing into the itinerary builder. */
+  unifiedPlannerBuildStart: (payload: {
+    destination: UnifiedPlannerDestination;
+    hasIntent: boolean;
+    selectedChipCount: number;
+  }) => trackEvent("unified_planner_build_start", payload),
+
+  /** Unified planner — "Request a Seoul day" click in the Seoul build
+   *  fallback (no builder map exists for Seoul yet). */
+  unifiedPlannerSeoulRequest: (payload: { hasIntent: boolean }) =>
+    trackEvent("unified_planner_seoul_request", payload),
 
   matchPageSubmit: (payload: { textLength: number; locale: string }) =>
     trackEvent("match_page_submit", payload),
