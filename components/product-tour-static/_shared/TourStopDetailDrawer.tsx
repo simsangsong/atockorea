@@ -74,45 +74,91 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
 
 /** Premium-styled inline markdown for the description modal. Restraint over
  *  saturation: only the FIRST `**bold**` per paragraph reads as a key-term
- *  highlight (soft amber wash). Subsequent bolds stay as plain `<strong>` —
- *  weight only, no color noise. Measurements get tabular-nums but no underline. */
+ *  highlight (soft sky-blue wash). Subsequent bolds stay as plain `<strong>` —
+ *  weight only, no color noise. Single `\n` becomes a `<br>` so authors can
+ *  insert intra-paragraph line breaks without forcing a paragraph split. */
 function renderModalInline(text: string): React.ReactNode[] {
   if (!text) return [];
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  const lines = text.split("\n");
+  const nodes: React.ReactNode[] = [];
   let boldIndex = 0;
-  return parts.map((part, i) => {
-    if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
-      const inner = part.slice(2, -2);
-      const isFirstBold = boldIndex === 0;
-      boldIndex += 1;
-      const isMeasurement = /^[0-9][\d.,\s/–-]*\s*(?:m²|m|km|hr|min|%|kg|₩|\$|€|¥|°C|°F|pyeong|평)?\s*$/i.test(inner.trim());
-      return (
-        <strong
-          key={i}
-          className={cn(
-            "font-semibold text-foreground",
-            isMeasurement && "tabular-nums",
-            isFirstBold && "rounded-[3px] bg-amber-100/55 px-[3px] py-[1px]",
-          )}
-        >
-          {inner}
-        </strong>
-      );
+  lines.forEach((line, lineIdx) => {
+    const parts = line.split(/(\*\*[^*]+\*\*)/g);
+    parts.forEach((part, i) => {
+      const key = `${lineIdx}-${i}`;
+      if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
+        const inner = part.slice(2, -2);
+        const isFirstBold = boldIndex === 0;
+        boldIndex += 1;
+        const isMeasurement = /^[0-9][\d.,\s/–-]*\s*(?:m²|m|km|hr|min|%|kg|₩|\$|€|¥|°C|°F|pyeong|평)?\s*$/i.test(inner.trim());
+        nodes.push(
+          <strong
+            key={key}
+            className={cn(
+              "font-semibold text-foreground",
+              isMeasurement && "tabular-nums",
+              isFirstBold &&
+                "rounded-[3px] bg-sky-100 px-[3px] py-[1px] text-sky-900 ring-1 ring-sky-200/60",
+            )}
+          >
+            {inner}
+          </strong>,
+        );
+      } else if (part) {
+        nodes.push(<Fragment key={key}>{part}</Fragment>);
+      }
+    });
+    if (lineIdx < lines.length - 1) {
+      nodes.push(<br key={`br-${lineIdx}`} />);
     }
-    return <Fragment key={i}>{part}</Fragment>;
   });
+  return nodes;
 }
 
-/** Splits the long-form description into readable paragraphs at natural topic
- *  transitions: end-of-sentence followed by a bold-led phrase or a numbered
- *  marker like `(1)`. Falls back to a single block for short descriptions. */
+/** Splits the long-form description into readable paragraphs.
+ *
+ *  Priority order:
+ *   1. Honour explicit `\n\n` paragraph breaks if the author already wrote them.
+ *   2. Otherwise auto-segment a single long block: split into sentences, then
+ *      greedy-merge into ~250-char paragraphs (never crossing ~340) so dense
+ *      walls of text become 3–5 readable chunks. Each chunk gets its own
+ *      first-bold highlight via `renderModalInline`, giving the modal a
+ *      visual rhythm without requiring any data-side rewrite.
+ */
 function splitDescriptionToParagraphs(text: string): string[] {
   if (!text) return [];
-  const segments = text
-    .split(/(?<=\.)\s+(?=\*\*|\(\d+\))/g)
+  const explicit = text.split(/\n{2,}/).map((s) => s.trim()).filter(Boolean);
+  if (explicit.length > 1) return explicit;
+
+  const block = (explicit[0] ?? text).trim();
+  // Sentence boundary: `.`, `!`, or `?` followed by whitespace and a capital
+  // letter, opening parenthesis, or opening quote. CJK-friendly: also splits
+  // on `。`, `！`, `？` followed by a non-space.
+  const sentences = block
+    .split(/(?<=[.!?])\s+(?=[A-Z(["“『「])|(?<=[。！？])\s*/g)
     .map((s) => s.trim())
     .filter(Boolean);
-  return segments.length > 0 ? segments : [text];
+  if (sentences.length <= 1) return [block];
+
+  const SOFT = 250;
+  const HARD = 340;
+  const out: string[] = [];
+  let cur = "";
+  for (const s of sentences) {
+    if (!cur) {
+      cur = s;
+      continue;
+    }
+    const next = `${cur} ${s}`;
+    if (cur.length >= SOFT || next.length > HARD) {
+      out.push(cur);
+      cur = s;
+    } else {
+      cur = next;
+    }
+  }
+  if (cur) out.push(cur);
+  return out;
 }
 
 /** Strip a trailing colon / fullwidth colon / Japanese colon for use as a
