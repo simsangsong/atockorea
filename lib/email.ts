@@ -79,6 +79,7 @@ const PAYMENT_STATUS_LABELS: Record<string, string> = {
   failed: '결제실패 (Payment Failed)',
   refunded: '환불됨 (Refunded)',
 };
+PAYMENT_STATUS_LABELS.authorized = 'Card registered';
 
 /** Parameters for booking confirmation email (exported for type safety across dynamic imports) */
 export interface SendBookingConfirmationEmailParams {
@@ -159,8 +160,10 @@ function emailDetailRow(label: string, value: string, options?: { emphasize?: bo
 
   return `
     <tr>
-      <td style="padding:11px 0;border-bottom:1px solid #ebe7df;color:#7b746b;font-size:12px;line-height:18px;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;vertical-align:top;width:150px;">${escapeHtml(label)}</td>
-      <td style="padding:11px 0;border-bottom:1px solid #ebe7df;${valueStyle}vertical-align:top;">${value}</td>
+      <td style="padding:12px 0;border-bottom:1px solid #ebe7df;">
+        <div style="margin:0 0 4px;color:#7b746b;font-size:10px;line-height:13px;text-transform:uppercase;letter-spacing:0.12em;font-weight:800;">${escapeHtml(label)}</div>
+        <div style="margin:0;${valueStyle}word-break:normal;overflow-wrap:break-word;">${value}</div>
+      </td>
     </tr>
   `;
 }
@@ -174,7 +177,6 @@ function emailBrandLockup(logoUrl: string): string {
         </td>
         <td style="vertical-align:middle;padding-left:10px;">
           <div style="color:#111827;font-size:18px;line-height:20px;font-weight:750;letter-spacing:0;">AtoC <span style="color:#3a4656;font-weight:500;">Korea</span></div>
-          <div style="margin-top:4px;color:#697381;font-size:9px;line-height:11px;font-weight:800;letter-spacing:0.14em;">CURATED KOREA, DIRECT</div>
         </td>
       </tr>
     </table>
@@ -915,5 +917,4 @@ export async function sendCardReauthFailedEmail({
     html,
   });
 }
-
 
