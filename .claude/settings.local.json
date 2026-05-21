@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/sangsong/atockorea/.claude/worktrees/compassionate-ritchie-2937ce/**)",
+      "Bash(claude --dangerously-skip-permissions)",
+      "Bash(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\sangsong\\\\atockorea\\\\.claude\\\\worktrees\\\\compassionate-ritchie-2937ce\\\\.translation-work\")",
+      "Bash(Out-Null)",
+      "Bash(Set-Content -Path \"C:\\\\Users\\\\sangsong\\\\atockorea\\\\.claude\\\\worktrees\\\\compassionate-ritchie-2937ce\\\\.translation-work\\\\test.txt\" -Value \"permission_test_ok\" -Encoding utf8)",
+      "Bash(mkdir -p \"C:/Users/sangsong/atockorea/.claude/worktrees/compassionate-ritchie-2937ce/.translation-work\")",
+      "Bash(printf 'permission_test_ok')",
+      "Bash(find \"C:\\\\Users\\\\sangsong\\\\atockorea\" -name \"*.ko.json\" -newer \"C:\\\\Users\\\\sangsong\\\\atockorea\\\\.claude\\\\worktrees\\\\compassionate-ritchie-2937ce\\\\components\\\\product-tour-static\\\\jeju-west-south-full-day-authentic-tour\\\\jeju-west-south-full-day-authentic-tour.en.json\" 2>/dev/null | head -10)",
+      "Bash(node -e \"console.log\\('ANTHROPIC_API_KEY:', process.env.ANTHROPIC_API_KEY ? 'SET \\(' + process.env.ANTHROPIC_API_KEY.slice\\(0,8\\) + '...\\)' : 'NOT SET'\\)\")"
+    ]
+  }
+}
