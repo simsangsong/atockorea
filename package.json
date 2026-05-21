@@ -32,6 +32,7 @@
     "itinerary:profiles:migration": "npx tsx scripts/generate-itinerary-builder-poi-profile-migration.ts",
     "itinerary:profiles:migration:check": "npx tsx scripts/generate-itinerary-builder-poi-profile-migration.ts --check",
     "itinerary:pressure": "npx tsx scripts/itinerary-builder-pressure-test.ts",
+    "itinerary:poi-audit": "node --env-file=.env.local --import tsx scripts/audit-itinerary-builder-pois.ts",
     "visitjeju:search": "npx tsx scripts/visitjeju-search.ts",
     "jeju:unsplash-fill": "npx tsx scripts/jeju-tour-fill-unsplash-images.ts",
     "atoc:apply-locale-zip": "npx tsx scripts/apply-atoc-locale-bundle.ts",
