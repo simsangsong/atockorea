@@ -24,6 +24,22 @@ const CONTAINER_STYLE = {
   height: "100%",
 } as const;
 
+/**
+ * Detach an AdvancedMarkerElement from the map. Setting `map = null` makes the
+ * Maps SDK call `getRootNode()` on the marker's content element; when the
+ * MarkerClusterer has already removed the marker (or React unmounted its DOM),
+ * that element is detached and the setter throws "Cannot read properties of
+ * undefined (reading 'getRootNode')". The marker is being torn down anyway, so
+ * swallow it rather than crash the region page.
+ */
+function detachMarker(m: google.maps.marker.AdvancedMarkerElement): void {
+  try {
+    if (m && "map" in m) m.map = null;
+  } catch {
+    // already detached — safe to ignore
+  }
+}
+
 interface Props {
   region: RegionSlug;
   pois: MatchPoiRow[];
@@ -137,10 +153,12 @@ export default function POICatalogMap({
     }
 
     // Tear down prior clusterer + markers (in case of hot-reload or pois change)
-    clustererRef.current?.clearMarkers();
-    markersRef.current.forEach((m) => {
-      if ("map" in m) m.map = null;
-    });
+    try {
+      clustererRef.current?.clearMarkers();
+    } catch {
+      // clearMarkers can throw if the clusterer is mid-teardown — ignore.
+    }
+    markersRef.current.forEach(detachMarker);
     markersRef.current = [];
 
     const cartIndex = new Map((cart ?? []).map((k, i) => [k, i + 1]));
@@ -267,9 +285,13 @@ export default function POICatalogMap({
     }
 
     return () => {
-      clustererRef.current?.clearMarkers();
+      try {
+        clustererRef.current?.clearMarkers();
+      } catch {
+        // ignore — clusterer may be mid-teardown
+      }
       clustererRef.current = null;
-      markers.forEach((m) => (m.map = null));
+      markers.forEach(detachMarker);
       markersRef.current = [];
     };
   }, [map, pois, cart]);
