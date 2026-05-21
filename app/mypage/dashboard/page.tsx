@@ -106,9 +106,10 @@ export default function DashboardPage() {
             }
           : null,
       );
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Error fetching dashboard data:', err);
-      if (err?.message?.includes('session') || err?.message?.includes('auth')) {
+      const message = err instanceof Error ? err.message : '';
+      if (message.includes('session') || message.includes('auth')) {
         router.push('/signin');
         return;
       }
@@ -220,7 +221,7 @@ export default function DashboardPage() {
     <div className="space-y-4">
       <div className={cn(MYPAGE_SURFACE_PAGE, 'p-6 md:p-7')}>
         <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
-          {t('mypage.dashboard')}
+          {t('mypage.dashboardLabel')}
         </p>
         <h1 className="text-[1.35rem] font-bold tracking-tight text-[#0f172a] md:text-[1.5rem]">
           {t('mypage.welcomeBack', { name: userName })}

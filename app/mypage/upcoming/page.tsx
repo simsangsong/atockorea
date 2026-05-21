@@ -82,9 +82,9 @@ export default function UpcomingToursPage() {
       }
 
       setTours(data.bookings || []);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Error fetching upcoming tours:', err);
-      setError(err.message);
+      setError(err instanceof Error ? err.message : 'Failed to fetch upcoming tours');
     } finally {
       setLoading(false);
     }
@@ -132,9 +132,11 @@ export default function UpcomingToursPage() {
       toast.success(t('mypage.common.toast.bookingCancelled'));
       setCancelTarget(null);
       fetchUpcomingTours();
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Error cancelling booking:', err);
-      toast.error(t('mypage.common.toast.bookingCancelFailed'), { description: err.message });
+      toast.error(t('mypage.common.toast.bookingCancelFailed'), {
+        description: err instanceof Error ? err.message : 'Failed to cancel booking',
+      });
     } finally {
       setCancelBusy(false);
     }

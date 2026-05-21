@@ -100,6 +100,18 @@ export default function MyPageLandingPage() {
       }
 
       const headers = { Authorization: `Bearer ${token}` } as const;
+      setExtrasLoading(true);
+      const extrasPromise = fetch(`/api/mypage/extras?locale=${encodeURIComponent(locale)}`, { headers })
+        .then(async (extrasRes) => {
+          const extras = (await extrasRes.json().catch(() => ({}))) as MyPageExtrasResponse;
+          if (!extrasRes.ok) throw new Error(extras.error ?? 'Failed to load mypage extras');
+          setWishlistItems(extras.wishlistItems ?? []);
+          setRecommendations(extras.recommendations ?? []);
+        })
+        .catch((extrasError) => {
+          console.error('[mypage/landing] fetch extras failed', extrasError);
+        })
+        .finally(() => setExtrasLoading(false));
 
       const res = await fetch(`/api/mypage/summary?locale=${encodeURIComponent(locale)}`, { headers });
       const data = (await res.json().catch(() => ({}))) as MyPageSummaryResponse;
@@ -112,23 +124,10 @@ export default function MyPageLandingPage() {
       setCounts((prev) => ({ ...prev, ...data.counts }));
       setNextTrip(data.nextTrip);
       setPendingReviews(data.pendingReviews);
-      setWishlistItems(data.wishlistItems);
       setWishlistTotal(data.wishlistTotal);
-      setRecommendations(data.recommendations);
       setHadError(false);
 
-      setExtrasLoading(true);
-      void fetch(`/api/mypage/extras?locale=${encodeURIComponent(locale)}`, { headers })
-        .then(async (extrasRes) => {
-          const extras = (await extrasRes.json().catch(() => ({}))) as MyPageExtrasResponse;
-          if (!extrasRes.ok) throw new Error(extras.error ?? 'Failed to load mypage extras');
-          setWishlistItems(extras.wishlistItems ?? []);
-          setRecommendations(extras.recommendations ?? []);
-        })
-        .catch((extrasError) => {
-          console.error('[mypage/landing] fetch extras failed', extrasError);
-        })
-        .finally(() => setExtrasLoading(false));
+      void extrasPromise;
     } catch (e) {
       console.error('[mypage/landing] fetchAll failed', e);
       setHadError(true);

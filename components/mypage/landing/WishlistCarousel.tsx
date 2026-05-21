@@ -61,7 +61,7 @@ export function WishlistCarousel({ items, totalCount, onRemoved }: WishlistCarou
       onRemoved?.(removeTarget.id);
       toast.success(t('mypage.common.toast.wishlistRemoved'));
       setRemoveTarget(null);
-    } catch (e: any) {
+    } catch (e: unknown) {
       console.error('[landing/WishlistCarousel] remove failed', e);
       toast.error(t('mypage.common.toast.wishlistRemoveFailed'));
     } finally {

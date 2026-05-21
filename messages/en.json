@@ -278,6 +278,9 @@
   },
   "mypage": {
     "title": "My Page",
+    "dashboardLabel": "Dashboard",
+    "reviewsLabel": "Reviews",
+    "settingsLabel": "Settings",
     "dashboard": {
       "errorBanner": "We couldn't load some of your dashboard data",
       "retry": "Retry",

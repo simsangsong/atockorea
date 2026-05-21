@@ -84,9 +84,9 @@ export default function WishlistPage() {
 
       const data = await response.json();
       setWishlistItems(data.wishlist || []);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Error fetching wishlist:', err);
-      setError(err.message);
+      setError(err instanceof Error ? err.message : 'Failed to fetch wishlist');
     } finally {
       setLoading(false);
     }
@@ -118,9 +118,11 @@ export default function WishlistPage() {
       setWishlistItems((items) => items.filter((item) => item.id !== removeTarget.id));
       toast.success(t('mypage.common.toast.wishlistRemoved'));
       setRemoveTarget(null);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Error removing from wishlist:', err);
-      toast.error(t('mypage.common.toast.wishlistRemoveFailed'), { description: err.message });
+      toast.error(t('mypage.common.toast.wishlistRemoveFailed'), {
+        description: err instanceof Error ? err.message : 'Failed to remove from wishlist',
+      });
     } finally {
       setRemoveBusy(false);
     }

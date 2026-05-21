@@ -3,13 +3,42 @@ import { createServerClient } from '@/lib/supabase';
 import { getAuthUser } from '@/lib/auth';
 import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
 import {
-  mapNestedTourRowsToUsd,
+  mapNestedTourToUsdRow,
   tourListPricesToUsdSync,
 } from '@/lib/tour-list-price-usd.server';
 import { isTourRowHiddenFromPublicTourApi } from '@/lib/tour-consumer-visibility';
 
 const SUPPORTED_LOCALES = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'] as const;
 type SupportedLocale = typeof SUPPORTED_LOCALES[number];
+
+type BookedTourRow = {
+  tour_id?: string | null;
+};
+
+type NestedTour = {
+  id?: string | null;
+  slug?: string | null;
+  title?: string | null;
+  city?: string | null;
+  price?: number | string | null;
+  original_price?: number | string | null;
+  price_currency?: string | null;
+  image_url?: string | null;
+  duration?: string | null;
+};
+
+type WishlistRow = {
+  id: string;
+  tour_id?: string | null;
+  created_at?: string | null;
+  tours?: NestedTour | null;
+};
+
+type TourRow = NestedTour & {
+  translations?: unknown;
+  rating?: number | string | null;
+  review_count?: number | string | null;
+};
 
 function parseLocale(value: string | null): SupportedLocale {
   if (value && SUPPORTED_LOCALES.includes(value as SupportedLocale)) return value as SupportedLocale;
@@ -43,7 +72,7 @@ export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
     const locale = parseLocale(searchParams.get('locale'));
 
-    const [bookedToursRes, wishlistRes, tourRowsRes] = await Promise.all([
+    const [bookedToursRes, wishlistRes, tourRowsRes, krwPerUsd] = await Promise.all([
       supabase
         .from('bookings')
         .select('tour_id')
@@ -79,24 +108,29 @@ export async function GET(req: NextRequest) {
         .eq('is_active', true)
         .order('rating', { ascending: false })
         .limit(18),
+      getKrwPerUsd(),
     ]);
 
     if (bookedToursRes.error) throw bookedToursRes.error;
     if (wishlistRes.error) throw wishlistRes.error;
     if (tourRowsRes.error) throw tourRowsRes.error;
 
-    const wishlistData = await mapNestedTourRowsToUsd(wishlistRes.data ?? []);
+    const bookedTourRows = (bookedToursRes.data ?? []) as BookedTourRow[];
+    const wishlistData = ((wishlistRes.data ?? []) as WishlistRow[]).map((row) =>
+      mapNestedTourToUsdRow(row, krwPerUsd),
+    );
+    const tourRows = (tourRowsRes.data ?? []) as TourRow[];
+
     const bookedTourIds = new Set<string>(
-      (bookedToursRes.data ?? []).map((b: any) => String(b.tour_id)).filter(Boolean),
+      bookedTourRows.map((b) => String(b.tour_id ?? '')).filter(Boolean),
     );
     const wishlistTourIds = new Set<string>(
-      wishlistData.map((w: any) => String(w.tour_id)).filter(Boolean),
+      wishlistData.map((w) => String(w.tour_id ?? '')).filter(Boolean),
     );
 
-    const krwPerUsd = await getKrwPerUsd();
-    const recommendationPool = (tourRowsRes.data ?? [])
-      .filter((tour: any) => !isTourRowHiddenFromPublicTourApi({ id: String(tour.id ?? ''), slug: tour.slug }))
-      .map((tour: any) => {
+    const recommendationPool = tourRows
+      .filter((tour) => !isTourRowHiddenFromPublicTourApi({ id: String(tour.id ?? ''), slug: tour.slug ?? null }))
+      .map((tour) => {
         const { priceUsd } = tourListPricesToUsdSync(
           {
             price: tour.price,
@@ -118,15 +152,19 @@ export async function GET(req: NextRequest) {
         };
       });
 
-    const filteredRecommendations = recommendationPool
+    const pricedRecommendationPool = recommendationPool.filter((tour) => {
+      return typeof tour.price === 'number' && Number.isFinite(tour.price) && tour.price > 0;
+    });
+
+    const filteredRecommendations = pricedRecommendationPool
       .filter((tour) => !bookedTourIds.has(tour.id) && !wishlistTourIds.has(tour.id))
       .slice(0, 6);
     const recommendations =
-      filteredRecommendations.length >= 3 ? filteredRecommendations : recommendationPool.slice(0, 6);
+      filteredRecommendations.length >= 3 ? filteredRecommendations : pricedRecommendationPool.slice(0, 6);
 
     return NextResponse.json(
       {
-        wishlistItems: wishlistData.slice(0, 3).map((w: any) => ({
+        wishlistItems: wishlistData.slice(0, 3).map((w) => ({
           id: w.id,
           tour_id: w.tour_id,
           title: w.tours?.title ?? 'Tour',

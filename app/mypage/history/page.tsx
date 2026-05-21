@@ -74,9 +74,9 @@ export default function BookingHistoryPage() {
       }
 
       setBookings(data.bookings || []);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Error fetching booking history:', err);
-      setError(err.message);
+      setError(err instanceof Error ? err.message : 'Failed to fetch booking history');
     } finally {
       setLoading(false);
     }

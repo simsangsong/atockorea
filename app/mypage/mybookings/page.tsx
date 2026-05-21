@@ -86,9 +86,9 @@ export default function MyBookingsPage() {
       }
 
       setBookings(data.bookings || []);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Error fetching bookings:', err);
-      setError(err.message);
+      setError(err instanceof Error ? err.message : 'Failed to fetch bookings');
     } finally {
       setLoading(false);
     }
@@ -136,9 +136,11 @@ export default function MyBookingsPage() {
       toast.success(t('mypage.common.toast.bookingCancelled'));
       setCancelTarget(null);
       fetchBookings();
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Error cancelling booking:', err);
-      toast.error(t('mypage.common.toast.bookingCancelFailed'), { description: err.message });
+      toast.error(t('mypage.common.toast.bookingCancelFailed'), {
+        description: err instanceof Error ? err.message : 'Failed to cancel booking',
+      });
     } finally {
       setCancelBusy(false);
     }

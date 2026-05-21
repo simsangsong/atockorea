@@ -33,6 +33,16 @@ type MyPageSessionContextValue = {
 };
 
 const MyPageSessionContext = createContext<MyPageSessionContextValue | null>(null);
+const PROFILE_COLUMNS =
+  'full_name, avatar_url, phone, birth_year, nationality, language_preference, mypage_preferences';
+const PROFILE_COLUMNS_WITHOUT_PREFS =
+  'full_name, avatar_url, phone, birth_year, nationality, language_preference';
+
+function isMissingMypagePreferencesColumn(error: unknown) {
+  if (!error || typeof error !== 'object') return false;
+  const maybeError = error as { message?: string; details?: string };
+  return `${maybeError.message ?? ''} ${maybeError.details ?? ''}`.includes('mypage_preferences');
+}
 
 async function getSessionWithRetry() {
   const { supabase } = await import('@/lib/supabase');
@@ -67,11 +77,29 @@ export function MyPageSessionProvider({ children }: { children: ReactNode }) {
     const { supabase } = await import('@/lib/supabase');
     if (!supabase) return;
 
-    const { data } = await supabase
+    let { data, error } = await supabase
       .from('user_profiles')
-      .select('full_name, avatar_url, phone, birth_year, nationality, language_preference, mypage_preferences')
+      .select(PROFILE_COLUMNS)
       .eq('id', activeSession.user.id)
       .single();
+
+    if (error && isMissingMypagePreferencesColumn(error)) {
+      const fallback = await supabase
+        .from('user_profiles')
+        .select(PROFILE_COLUMNS_WITHOUT_PREFS)
+        .eq('id', activeSession.user.id)
+        .single();
+      data = fallback.data ? { ...fallback.data, mypage_preferences: {} } : null;
+      error = fallback.error;
+    }
+
+    if (error) {
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('[mypage/session] Failed to load profile:', error.message);
+      }
+      setProfile(null);
+      return;
+    }
 
     setProfile((data as MyPageProfile | null) ?? null);
 

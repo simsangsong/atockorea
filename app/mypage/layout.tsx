@@ -98,13 +98,13 @@ function MyPageLayoutContent({ children }: { children: React.ReactNode }) {
   };
 
   const menuItems = [
-    { id: 'dashboard', label: t('mypage.dashboard'), icon: DashboardIcon, path: '/mypage/dashboard' },
+    { id: 'dashboard', label: t('mypage.dashboardLabel'), icon: DashboardIcon, path: '/mypage/dashboard' },
     { id: 'mybookings', label: t('mypage.myBookings'), icon: MapIcon, path: '/mypage/mybookings' },
     { id: 'upcoming', label: t('mypage.upcomingTours'), icon: CalendarIcon, path: '/mypage/upcoming' },
     { id: 'history', label: t('mypage.history'), icon: HistoryIcon, path: '/mypage/history' },
-    { id: 'reviews', label: t('mypage.reviews'), icon: StarIcon, path: '/mypage/reviews' },
+    { id: 'reviews', label: t('mypage.reviewsLabel'), icon: StarIcon, path: '/mypage/reviews' },
     { id: 'wishlist', label: t('mypage.wishlist'), icon: HeartIcon, path: '/mypage/wishlist' },
-    { id: 'settings', label: t('mypage.settings'), icon: SettingsIcon, path: '/mypage/settings' },
+    { id: 'settings', label: t('mypage.settingsLabel'), icon: SettingsIcon, path: '/mypage/settings' },
   ];
 
   useEffect(() => {

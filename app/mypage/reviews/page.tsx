@@ -64,9 +64,9 @@ export default function ReviewsPage() {
         }
 
         setReviews(data.reviews || []);
-      } catch (err: any) {
+      } catch (err: unknown) {
         console.error('Error fetching reviews:', err);
-        setError(err.message);
+        setError(err instanceof Error ? err.message : 'Failed to fetch reviews');
       } finally {
         setLoading(false);
       }
@@ -127,8 +127,9 @@ export default function ReviewsPage() {
       setReviews((prev) => prev.filter((r) => r.id !== deleteTarget.id));
       toast.success(t('mypage.common.toast.reviewDeleted'));
       setDeleteTarget(null);
-    } catch (e: any) {
-      toast.error(t('mypage.common.toast.reviewFailed', { message: e?.message || 'unknown' }));
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : 'unknown';
+      toast.error(t('mypage.common.toast.reviewFailed', { message }));
     } finally {
       setDeleting(false);
     }
@@ -159,7 +160,7 @@ export default function ReviewsPage() {
     <div className="space-y-4">
       <div className={cn(MYPAGE_SURFACE_PAGE, 'p-6 md:p-7')}>
         <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
-          {t('mypage.reviews')}
+          {t('mypage.reviewsLabel')}
         </p>
         <h1 className="text-[1.35rem] font-bold tracking-tight text-[#0f172a] md:text-[1.5rem]">
           {t('mypage.reviewsPageTitle')}

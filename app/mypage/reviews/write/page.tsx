@@ -95,7 +95,7 @@ function WriteReviewContent() {
 
       const uploadedUrls = await Promise.all(uploadPromises);
       setImages([...images, ...(uploadedUrls.filter((url) => url !== null) as string[])]);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Error uploading images:', err);
       toast.error(t('mypage.reviews.write.photosUploadFailed'));
     }
@@ -165,9 +165,9 @@ function WriteReviewContent() {
 
       toast.success(isEdit ? t('mypage.common.toast.reviewUpdated') : t('mypage.common.toast.reviewSubmitted'));
       router.push('/mypage/reviews');
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Error creating review:', err);
-      const msg = err?.message || t('mypage.reviews.write.genericError');
+      const msg = err instanceof Error ? err.message : t('mypage.reviews.write.genericError');
       setError(msg);
     } finally {
       setLoading(false);
