@@ -1,76 +1,71 @@
 import { MetadataRoute } from 'next';
-import { createServerClient } from '@/lib/supabase';
 import { STATIC_TOUR_PRODUCTS } from '@/components/product-tour-static/catalog/staticTourCatalogCards';
-import { isTourRowHiddenFromPublicTourApi } from '@/lib/tour-consumer-visibility';
+import { isTourSlugBlockedFromConsumerSurfaces } from '@/lib/tour-consumer-visibility';
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
+const LOCALE_HOME_PATHS = ['/ko', '/zh-CN', '/zh-TW', '/ja', '/es'] as const;
+
+function siteUrl(): string {
+  const raw =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    process.env.NEXT_PUBLIC_APP_URL ||
+    'https://www.atockorea.com';
+  const normalized = raw.replace(/\/+$/, '');
+
+  // Production redirects apex -> www, so sitemap/robots should advertise the
+  // canonical host Google actually indexes.
+  return normalized === 'https://atockorea.com'
+    ? 'https://www.atockorea.com'
+    : normalized;
+}
+
+function entry(
+  baseUrl: string,
+  path: string,
+  options: Omit<MetadataRoute.Sitemap[number], 'url' | 'lastModified'>,
+): MetadataRoute.Sitemap[number] {
+  return {
+    url: `${baseUrl}${path === '/' ? '' : path}`,
+    lastModified: new Date(),
+    ...options,
+  };
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = siteUrl();
 
   const staticTourProductPages: MetadataRoute.Sitemap = [
-    ...STATIC_TOUR_PRODUCTS.map((p) => ({
+    ...STATIC_TOUR_PRODUCTS.filter(
+      (p) => !isTourSlugBlockedFromConsumerSurfaces(p.slug),
+    ).map((p) => ({
       url: `${baseUrl}/tour-product/${p.slug}`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
-      priority: 0.65,
+      priority: 0.8,
     })),
   ];
 
-  // Static pages
   const staticPages: MetadataRoute.Sitemap = [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/tours`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/search`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.8,
-    },
-    ...staticTourProductPages,
+    entry(baseUrl, '/', { changeFrequency: 'daily', priority: 1 }),
+    entry(baseUrl, '/tours/list', { changeFrequency: 'daily', priority: 0.9 }),
+    entry(baseUrl, '/search', { changeFrequency: 'daily', priority: 0.75 }),
+    entry(baseUrl, '/itinerary-builder', { changeFrequency: 'weekly', priority: 0.75 }),
+    entry(baseUrl, '/itinerary-builder/busan', { changeFrequency: 'weekly', priority: 0.7 }),
+    entry(baseUrl, '/itinerary-builder/jeju', { changeFrequency: 'weekly', priority: 0.7 }),
+    entry(baseUrl, '/itinerary-builder/seoul', { changeFrequency: 'weekly', priority: 0.65 }),
+    entry(baseUrl, '/contact', { changeFrequency: 'monthly', priority: 0.45 }),
+    entry(baseUrl, '/support', { changeFrequency: 'monthly', priority: 0.45 }),
+    entry(baseUrl, '/about', { changeFrequency: 'monthly', priority: 0.4 }),
+    entry(baseUrl, '/privacy', { changeFrequency: 'yearly', priority: 0.2 }),
+    entry(baseUrl, '/terms', { changeFrequency: 'yearly', priority: 0.2 }),
+    entry(baseUrl, '/refund-policy', { changeFrequency: 'yearly', priority: 0.2 }),
+    entry(baseUrl, '/cookies', { changeFrequency: 'yearly', priority: 0.2 }),
+    ...LOCALE_HOME_PATHS.map((path) =>
+      entry(baseUrl, path, { changeFrequency: 'daily', priority: 0.85 }),
+    ),
   ];
 
-  // Dynamic tour pages
-  try {
-    const supabase = createServerClient();
-    const { data: tours } = await supabase
-      .from('tours')
-      .select('id, slug, updated_at')
-      .eq('is_active', true)
-      .limit(1000); // Limit to prevent excessive data
-
-    const tourPages: MetadataRoute.Sitemap =
-      tours
-        ?.filter(
-          (tour) =>
-            tour.id != null &&
-            !isTourRowHiddenFromPublicTourApi({
-              id: String(tour.id),
-              slug: (tour as { slug?: string | null }).slug,
-            })
-        )
-        .map((tour) => ({
-          url: `${baseUrl}/tour/${tour.id}`,
-          lastModified: tour.updated_at ? new Date(tour.updated_at) : new Date(),
-          changeFrequency: 'weekly' as const,
-          priority: 0.7,
-        })) || [];
-
-    return [...staticPages, ...tourPages];
-  } catch (error) {
-    console.error('Error generating sitemap:', error);
-    return staticPages;
-  }
+  return [...staticPages, ...staticTourProductPages];
 }
-
 
 
 

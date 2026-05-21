@@ -124,7 +124,7 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      router.push(`/tours?search=${encodeURIComponent(searchQuery.trim())}`);
+      router.push(`/tours/list?search=${encodeURIComponent(searchQuery.trim())}`);
       setIsSearchOpen(false);
       setSearchQuery("");
     }
@@ -490,5 +490,4 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
     </header>
   );
 }
-
 
