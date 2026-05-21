@@ -2,9 +2,9 @@
 
 Date: 2026-05-20
 
-Status: **Phase 0 gate cleared + Phases 1–3 shipped & verified (2026-05-21).** The unified planner (matcher + `Match me` / `Build myself` modes) is live in the hero, and the separate `ItineraryBuilderEntry` section has been removed from the homepage. Remaining: Phase 4 (intent handoff into the builder) and Phase 5 (match→build bridge) — both optional. v3 (`docs/landing-page-uiux-master-plan-v3-2026-05-17.md`) remains the binding source of truth for the landing surface; this plan reconciled with its §B decisions (reversal rows logged 2026-05-21), it did not override them silently.
+Status: **Phase 0 gate cleared + Phases 1–4 shipped & verified (2026-05-21); planner i18n now complete in all 6 locales.** The unified planner (matcher + `Match me` / `Build myself` modes) is live in the hero, and the separate `ItineraryBuilderEntry` section has been removed from the homepage. Remaining: Phase 5 (match→build bridge) — optional, gated on explicit user approval per the don't-touch-other-landing-design rule. v3 (`docs/landing-page-uiux-master-plan-v3-2026-05-17.md`) remains the binding source of truth for the landing surface; this plan reconciled with its §B decisions (reversal rows logged 2026-05-21), it did not override them silently.
 
-History — reviewed against v3 + verified code reality (2026-05-20); Phase 0 gate + Governance section added and route / i18n / bridge-copy honesty fixes applied in the 2026-05-21 revision; gate cleared and Phases 1–3 executed 2026-05-21 (see the Phase 0 Resolution log + per-phase ✅ DONE notes). Outstanding user actions: conclude the 3 power-empty experiments (Gate 0.4, DB write needs explicit auth), translate es/ja/zh/zh-TW planner keys, confirm the Seoul "Request a Seoul day" target.
+History — reviewed against v3 + verified code reality (2026-05-20); Phase 0 gate + Governance section added and route / i18n / bridge-copy honesty fixes applied in the 2026-05-21 revision; gate cleared and Phases 1–4 executed 2026-05-21 (see the Phase 0 Resolution log + per-phase ✅ DONE notes). Outstanding user actions: conclude the 3 power-empty experiments (Gate 0.4, DB write needs explicit auth), confirm the Seoul "Request a Seoul day" target, and (optional) approve Phase 5. Planner i18n for es/ja/zh/zh-TW shipped 2026-05-21.
 
 ## Goal
 
@@ -703,6 +703,8 @@ Acceptance criteria:
 
 ### Phase 5: Recommendation-To-Builder Bridge
 
+**⏸ DEFERRED (2026-05-21, user decision).** Optional; not built. Gated on explicit approval to edit the match-result surfaces (`MatcherMorphingPanel` / `MatcherBottomSheet`) — protected by the don't-touch-other-landing directive and overlapped by the still-running result experiments. Revisit after ship / once real usage justifies the cross-component mode plumbing.
+
 Files:
 
 - `components/home/v2/MatcherMorphingPanel.tsx`
@@ -788,6 +790,8 @@ Proposed keys:
 - The match-mode primary CTA already exists as `home.premium.hero.findMatchCta` ("Get My Recommendation" / "맞춤 추천 받기", shipped 6 locales in v3 B.5). **Reuse that key — do NOT create a `planner.matchCta` duplicate** (a second source of truth for the same button drifts).
 - The match microcopy ("No sign-up · No card · 30 seconds") likely already exists under `home.premium.hero.*` — check before adding a planner copy.
 - `customizeThisDay` uses `{destination}` interpolation — localize the destination noun per locale.
+
+**✅ i18n DONE (2026-05-21).** Shipped `home.premium.v2.planner` in all 6 locales. Actual shipped key set is **11 keys**: `headline`, `subhead`, `modeMatch`, `modeBuild`, `modeSwitchAria`, `buildCta`, `buildMicrocopy`, `buildPreviewMicrocopy`, `seoulBuildTitle`, `seoulBuildBody`, `seoulBuildCta`. The proposed-keys block above predates the build (사실 수정): `modeSwitchAria` + `buildPreviewMicrocopy` were added during Phase 2, and `customizeThisDay` is **deferred to Phase 5** (intentionally not yet present — match-mode CTA reuses `home.premium.hero.findMatchCta` per Gate 0.6). en/ko authored in Phase 2; es/ja/zh/zh-TW added 2026-05-21, anchored on existing house terms (`getQuoteCta` → presupuesto / お見積もり / 报价 / 報價; `findMatchCta` → recomendación / おすすめ / 推荐 / 推薦; stops → paradas / スポット / 景点 / 景點). Verified: all 6 files parse + exact 11-key parity (no missing/extra).
 
 ## Accessibility
 
