@@ -1,19 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { AdminAuthFailure, adminAuthJsonResponse, requireAdmin } from '@/lib/auth';
 import { createServerClient } from '@/lib/supabase';
-import { withAuth } from '@/lib/middleware';
 
 /**
  * POST /api/admin/emails/[id]/reply
  * 发送邮件回复（仅管理员）
  */
-async function sendReply(req: NextRequest, user: any) {
+async function sendReply(req: NextRequest) {
   try {
-    if (user.role !== 'admin') {
-      return NextResponse.json(
-        { error: 'Unauthorized. Admin access required.' },
-        { status: 403 }
-      );
-    }
+    await requireAdmin(req);
 
     const emailId = req.nextUrl.pathname.split('/').slice(0, -1).pop();
     
@@ -162,6 +157,9 @@ async function sendReply(req: NextRequest, user: any) {
       reply_id: replyRecord?.id,
     });
   } catch (error: any) {
+    if (error instanceof AdminAuthFailure) {
+      return adminAuthJsonResponse(error);
+    }
     console.error('Send reply error:', error);
     return NextResponse.json(
       { error: 'Internal server error', details: error.message },
@@ -170,4 +168,4 @@ async function sendReply(req: NextRequest, user: any) {
   }
 }
 
-export const POST = withAuth(sendReply, ['admin']);
+export const POST = sendReply;

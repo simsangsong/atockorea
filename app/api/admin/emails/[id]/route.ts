@@ -1,19 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { AdminAuthFailure, adminAuthJsonResponse, requireAdmin } from '@/lib/auth';
 import { createServerClient } from '@/lib/supabase';
-import { withAuth } from '@/lib/middleware';
 
 /**
  * GET /api/admin/emails/[id]
  * 获取单封邮件的详细信息
  */
-async function getEmail(req: NextRequest, user: any) {
+async function getEmail(req: NextRequest) {
   try {
-    if (user.role !== 'admin') {
-      return NextResponse.json(
-        { error: 'Unauthorized. Admin access required.' },
-        { status: 403 }
-      );
-    }
+    await requireAdmin(req);
 
     const emailId = req.nextUrl.pathname.split('/').pop();
     
@@ -56,6 +51,9 @@ async function getEmail(req: NextRequest, user: any) {
     
     return NextResponse.json({ email: data });
   } catch (error: any) {
+    if (error instanceof AdminAuthFailure) {
+      return adminAuthJsonResponse(error);
+    }
     console.error('Get email error:', error);
     return NextResponse.json(
       { error: 'Internal server error', details: error.message },
@@ -64,5 +62,4 @@ async function getEmail(req: NextRequest, user: any) {
   }
 }
 
-export const GET = withAuth(getEmail, ['admin']);
-
+export const GET = getEmail;

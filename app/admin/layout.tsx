@@ -40,15 +40,23 @@ const pathToBreadcrumb: Record<string, string> = {
 
 function normalizeAdminPathname(pathname: string): string {
   const parts = pathname.split('/').filter(Boolean);
-  if (parts.length >= 2 && ADMIN_SUPPORTED_LOCALES.includes(parts[0]!) && parts[1] === 'admin') {
-    return `/${parts.slice(1).join('/')}`;
+  const adminIndex = parts.indexOf('admin');
+  if (adminIndex === -1) {
+    return '/admin';
   }
-  return pathname || '/admin';
+
+  const rest = parts.slice(adminIndex + 1);
+  while (rest.length >= 2 && ADMIN_SUPPORTED_LOCALES.includes(rest[0]!) && rest[1] === 'admin') {
+    rest.splice(0, 2);
+  }
+
+  return `/${['admin', ...rest].join('/')}`;
 }
 
 function getBreadcrumbs(pathname: string): { path: string; label: string }[] {
-  if (pathname === '/admin') return [{ path: '/admin', label: '대시보드' }];
-  const segments = pathname.replace(/^\/admin\/?/, '').split('/').filter(Boolean);
+  const normalized = normalizeAdminPathname(pathname);
+  if (normalized === '/admin') return [{ path: '/admin', label: '대시보드' }];
+  const segments = normalized.replace(/^\/admin\/?/, '').split('/').filter(Boolean);
   const crumbs: { path: string; label: string }[] = [{ path: '/admin', label: '대시보드' }];
   let acc = '/admin';
   for (const seg of segments) {

@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import DOMPurify from 'isomorphic-dompurify';
-import { supabase } from '@/lib/supabase';
+import { adminFetch } from '@/lib/admin-fetch';
 
 const SANITIZE_CONFIG = {
   ALLOWED_TAGS: [
@@ -73,20 +73,22 @@ export default function AdminEmailsPage() {
     fetchEmails();
   }, [filters, pagination.page]);
 
-  const getAuthHeaders = async (): Promise<HeadersInit | null> => {
-    const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-    if (!session) {
+  const handleAdminResponse = (response: Response): boolean => {
+    if (response.status === 401) {
       router.push('/signin?redirect=/admin/emails');
-      return null;
+      return false;
     }
-    return { Authorization: `Bearer ${session.access_token}` };
+    if (response.status === 403) {
+      alert('Admin access required');
+      router.push('/');
+      return false;
+    }
+    return true;
   };
 
   const fetchEmails = async () => {
     try {
       setLoading(true);
-      const authHeaders = await getAuthHeaders();
-      if (!authHeaders) return;
 
       const params = new URLSearchParams({
         page: pagination.page.toString(),
@@ -96,7 +98,8 @@ export default function AdminEmailsPage() {
         ...(filters.search && { search: filters.search }),
       });
 
-      const response = await fetch(`/api/admin/emails?${params}`, { headers: authHeaders });
+      const response = await adminFetch(`/api/admin/emails?${params}`);
+      if (!handleAdminResponse(response)) return;
       const data = await response.json();
 
       if (response.ok) {
@@ -107,11 +110,6 @@ export default function AdminEmailsPage() {
           total_pages: data.pagination?.total_pages || 0,
         }));
       } else {
-        if (response.status === 403) {
-          alert('Admin access required');
-          router.push('/');
-          return;
-        }
         console.error('Failed to fetch emails:', data.error);
       }
     } catch (error) {
@@ -127,17 +125,15 @@ export default function AdminEmailsPage() {
     // 标记为已读
     if (!email.is_read) {
       try {
-        const authHeaders = await getAuthHeaders();
-        if (!authHeaders) return;
-
-        await fetch(`/api/admin/emails`, {
+        const response = await adminFetch(`/api/admin/emails`, {
           method: 'PATCH',
-          headers: { ...authHeaders, 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             email_id: email.id,
             updates: { is_read: true },
           }),
         });
+        if (!handleAdminResponse(response) || !response.ok) return;
         // 更新本地状态
         setEmails(prev => prev.map(e => 
           e.id === email.id ? { ...e, is_read: true } : e
@@ -150,17 +146,15 @@ export default function AdminEmailsPage() {
 
   const handleArchive = async (emailId: string) => {
     try {
-      const authHeaders = await getAuthHeaders();
-      if (!authHeaders) return;
-
-      await fetch(`/api/admin/emails`, {
+      const response = await adminFetch(`/api/admin/emails`, {
         method: 'PATCH',
-        headers: { ...authHeaders, 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email_id: emailId,
           updates: { is_archived: true },
         }),
       });
+      if (!handleAdminResponse(response) || !response.ok) return;
       setEmails(prev => prev.filter(e => e.id !== emailId));
       if (selectedEmail?.id === emailId) {
         setSelectedEmail(null);
@@ -178,18 +172,17 @@ export default function AdminEmailsPage() {
 
     try {
       setSendingReply(true);
-      const authHeaders = await getAuthHeaders();
-      if (!authHeaders) return;
 
-      const response = await fetch(`/api/admin/emails/${selectedEmail.id}/reply`, {
+      const response = await adminFetch(`/api/admin/emails/${selectedEmail.id}/reply`, {
         method: 'POST',
-        headers: { ...authHeaders, 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           subject: replySubject,
           content: replyContent,
         }),
       });
 
+      if (!handleAdminResponse(response)) return;
       const data = await response.json();
 
       if (response.ok) {

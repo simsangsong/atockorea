@@ -1,20 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { AdminAuthFailure, adminAuthJsonResponse, requireAdmin } from '@/lib/auth';
 import { createServerClient } from '@/lib/supabase';
-import { withAuth } from '@/lib/middleware';
 
 /**
  * GET /api/admin/emails
  * 获取所有收到的邮件（仅管理员）
  */
-async function getEmails(req: NextRequest, user: any) {
+async function getEmails(req: NextRequest) {
   try {
-    // 检查是否为管理员
-    if (user.role !== 'admin') {
-      return NextResponse.json(
-        { error: 'Unauthorized. Admin access required.' },
-        { status: 403 }
-      );
-    }
+    await requireAdmin(req);
 
     const supabase = createServerClient();
     const searchParams = req.nextUrl.searchParams;
@@ -73,6 +67,9 @@ async function getEmails(req: NextRequest, user: any) {
       },
     });
   } catch (error: any) {
+    if (error instanceof AdminAuthFailure) {
+      return adminAuthJsonResponse(error);
+    }
     console.error('Get emails error:', error);
     return NextResponse.json(
       { error: 'Internal server error', details: error.message },
@@ -85,14 +82,9 @@ async function getEmails(req: NextRequest, user: any) {
  * PATCH /api/admin/emails
  * 更新邮件状态（标记已读、归档等）
  */
-async function updateEmail(req: NextRequest, user: any) {
+async function updateEmail(req: NextRequest) {
   try {
-    if (user.role !== 'admin') {
-      return NextResponse.json(
-        { error: 'Unauthorized. Admin access required.' },
-        { status: 403 }
-      );
-    }
+    await requireAdmin(req);
 
     const { email_id, updates } = await req.json();
     
@@ -125,6 +117,9 @@ async function updateEmail(req: NextRequest, user: any) {
       email: data,
     });
   } catch (error: any) {
+    if (error instanceof AdminAuthFailure) {
+      return adminAuthJsonResponse(error);
+    }
     console.error('Update email error:', error);
     return NextResponse.json(
       { error: 'Internal server error', details: error.message },
@@ -133,6 +128,5 @@ async function updateEmail(req: NextRequest, user: any) {
   }
 }
 
-export const GET = withAuth(getEmails, ['admin']);
-export const PATCH = withAuth(updateEmail, ['admin']);
-
+export const GET = getEmails;
+export const PATCH = updateEmail;

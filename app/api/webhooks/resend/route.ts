@@ -63,6 +63,35 @@ function isSupportRecipient(email: string): boolean {
   return supportInboundAddresses().has(normalized);
 }
 
+async function hydrateReceivedEmail(emailData: Record<string, unknown>): Promise<Record<string, unknown>> {
+  const resendApiKey = process.env.RESEND_API_KEY;
+  const receivedEmailId = emailData.email_id ?? emailData.id;
+
+  if (!resendApiKey || typeof receivedEmailId !== 'string' || !receivedEmailId) {
+    return emailData;
+  }
+
+  try {
+    const { Resend } = await import('resend');
+    const resend = new Resend(resendApiKey);
+    const { data, error } = await resend.emails.receiving.get(receivedEmailId);
+
+    if (error || !data) {
+      console.warn('Unable to hydrate received email from Resend:', error);
+      return emailData;
+    }
+
+    return {
+      ...emailData,
+      ...data,
+      email_id: emailData.email_id ?? data.id,
+    };
+  } catch (error) {
+    console.warn('Unable to fetch received email content from Resend:', error);
+    return emailData;
+  }
+}
+
 /**
  * POST /api/webhooks/resend
  * Resend Inbound 수신 메일 웹훅 (email.received)
@@ -110,25 +139,34 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: 'Webhook received', event_type: eventType }, { status: 200 });
     }
 
-    const emailData = body.data || body;
+    const emailData = await hydrateReceivedEmail((body.data || body) as Record<string, unknown>);
 
     // Resend 문서: from/to can be strings or structured address objects, email_id 사용
-    const messageId = emailData.email_id || emailData.message_id || emailData.id || crypto.randomUUID();
+    const messageId = emailData.message_id || emailData.email_id || emailData.id || crypto.randomUUID();
     const fromParsed = firstEmailAddress(emailData.from, emailData.from_email);
     const fromEmail = fromParsed.email || 'unknown@unknown';
-    const fromName = fromParsed.name ?? emailData.from_name ?? null;
+    const fromName = fromParsed.name ?? (typeof emailData.from_name === 'string' ? emailData.from_name : null);
 
     const toRecipients = [
       ...extractEmailAddresses(emailData.to),
       ...extractEmailAddresses(emailData.to_email),
       ...extractEmailAddresses(emailData.recipients),
+      ...extractEmailAddresses((emailData.headers as Record<string, unknown> | undefined)?.to),
     ];
     const supportRecipient = toRecipients.find((recipient) => isSupportRecipient(recipient.email));
     const toEmail = supportRecipient?.email || '';
 
-    const subject = emailData.subject ?? '(No Subject)';
-    const textContent = emailData.text ?? emailData.text_content ?? '';
-    const htmlContent = emailData.html ?? emailData.html_content ?? '';
+    const subject = typeof emailData.subject === 'string' ? emailData.subject : '(No Subject)';
+    const textContent = typeof emailData.text === 'string'
+      ? emailData.text
+      : typeof emailData.text_content === 'string'
+        ? emailData.text_content
+        : '';
+    const htmlContent = typeof emailData.html === 'string'
+      ? emailData.html
+      : typeof emailData.html_content === 'string'
+        ? emailData.html_content
+        : '';
     const attachments = Array.isArray(emailData.attachments) ? emailData.attachments : [];
 
     if (!toEmail) {
