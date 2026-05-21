@@ -16,7 +16,7 @@ interface QuoteRow {
   auto_quote_amount_krw: number | null;
   auto_quote_breakdown: Record<string, unknown> | null;
   region: string;
-  track: "private" | "cruise";
+  track: "private" | "cruise" | "dmz";
 }
 
 async function loadQuote(quoteId: string): Promise<QuoteRow | null> {
@@ -38,25 +38,42 @@ function fmtKrw(n: number): string {
   return `₩${n.toLocaleString()}`;
 }
 
+interface BreakdownLine {
+  code?: string;
+  amount?: number;
+  meta?: Record<string, unknown>;
+}
+
+/** English label for a price line code (server-rendered breakdown). */
+function lineLabel(line: BreakdownLine): string {
+  const meta = line.meta ?? {};
+  switch (line.code) {
+    case "base":
+      return `Base — ${meta.hours ?? ""}h tour`;
+    case "pax_tier":
+      return meta.vehicle === "van"
+        ? "Vehicle — van (7–9)"
+        : meta.peak
+        ? "Vehicle — Solati (10–13, peak)"
+        : "Vehicle — Solati (10–13)";
+    case "region":
+      return "Out-of-city surcharge";
+    case "jeju_cross_region":
+      return "Two-region surcharge";
+    case "jeju_pickup":
+      return "Pickup-area surcharge";
+    case "dmz_base":
+      return `DMZ private tour (${meta.pax ?? ""} pax)`;
+    default:
+      return line.code ?? "Surcharge";
+  }
+}
+
 function BreakdownRows({ breakdown }: { breakdown: Record<string, unknown> }) {
-  const get = (k: string) => (typeof breakdown[k] === "number" ? (breakdown[k] as number) : 0);
-  const rows: { label: string; value: number }[] = [];
-  rows.push({ label: "Base", value: get("base_krw") });
-  if (get("vehicle_tier_krw") > 0) {
-    const lbl = typeof breakdown.vehicle_tier_label === "string" ? (breakdown.vehicle_tier_label as string) : "Vehicle";
-    rows.push({ label: `Vehicle (${lbl})`, value: get("vehicle_tier_krw") });
-  }
-  if (get("duration_surcharge_krw") > 0)
-    rows.push({ label: "Extra hours", value: get("duration_surcharge_krw") });
-  if (get("distance_surcharge_krw") > 0)
-    rows.push({ label: "Extra distance", value: get("distance_surcharge_krw") });
-  if (get("poi_surcharge_krw") > 0)
-    rows.push({ label: "Extra stops", value: get("poi_surcharge_krw") });
-  if (get("language_premium_krw") > 0) {
-    const lang = typeof breakdown.language === "string" ? breakdown.language : "";
-    rows.push({ label: `Language premium (${lang})`, value: get("language_premium_krw") });
-  }
-  const total = get("total_krw");
+  const lines = Array.isArray(breakdown.lines) ? (breakdown.lines as BreakdownLine[]) : [];
+  const rows = lines.map((l) => ({ label: lineLabel(l), value: typeof l.amount === "number" ? l.amount : 0 }));
+  const total =
+    typeof breakdown.total === "number" ? breakdown.total : rows.reduce((s, r) => s + r.value, 0);
   return (
     <dl className="space-y-1.5">
       {rows.map((r) => (

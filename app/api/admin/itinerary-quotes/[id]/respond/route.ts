@@ -63,16 +63,19 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
       );
     }
 
-    // Re-derive engine intake (for fingerprint stability) using stored
-    // intake.hours / intake.distance_km if present, else 0 fallbacks.
+    // Re-derive engine intake (for fingerprint stability) using the stored
+    // intake.duration_hours / intake.hours if present.
     const intakeJson = (quote.intake as Record<string, unknown>) ?? {};
     const engineIntake: QuoteIntake = {
       region: quote.region as string,
       track: quote.track as Track,
       pax: typeof quote.party_size === "number" ? quote.party_size : null,
-      hours: typeof intakeJson.hours === "number" ? (intakeJson.hours as number) : null,
-      distance_km:
-        typeof intakeJson.distance_km === "number" ? (intakeJson.distance_km as number) : null,
+      hours:
+        typeof intakeJson.duration_hours === "number"
+          ? (intakeJson.duration_hours as number)
+          : typeof intakeJson.hours === "number"
+          ? (intakeJson.hours as number)
+          : null,
       language: (quote.language as string) || "en",
       poi_keys: (quote.poi_keys as string[]) ?? [],
     };
@@ -141,7 +144,7 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
         sourceUrl: (quote.source_url as string) ?? null,
         responseWindowHours: 24,
         autoQuoteAmountKrw: amount,
-        autoQuoteBreakdown: response ?? { base_krw: amount, total_krw: amount, language: engineIntake.language },
+        autoQuoteBreakdown: response ?? { lines: [{ code: "manual", amount, meta: {} }], total: amount },
       }),
     });
 
