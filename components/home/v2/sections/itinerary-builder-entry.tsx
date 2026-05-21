@@ -36,6 +36,13 @@ const CARDS = [
     stopsKey: "jejuStops",
     imageSrc: "/images/destinations/jeju-card.jpg",
   },
+  {
+    slug: "seoul" as const,
+    nameKey: "seoulName",
+    taglineKey: "seoulTagline",
+    stopsKey: "seoulStops",
+    imageSrc: "/images/destinations/seoul-card.jpg",
+  },
 ];
 
 export function ItineraryBuilderEntry() {
@@ -57,9 +64,9 @@ export function ItineraryBuilderEntry() {
           <p className="mx-auto max-w-2xl text-h3 font-medium text-slate-600">{t("subtitle")}</p>
         </header>
 
-        {/* Mobile snap rail + desktop 2-up grid */}
+        {/* Mobile snap rail + desktop 3-up grid */}
         <div
-          className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:px-0 md:pb-0"
+          className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 md:pb-0"
           aria-label="Itinerary builder regions"
         >
           {CARDS.map((card) => {
@@ -75,7 +82,7 @@ export function ItineraryBuilderEntry() {
                     src={card.imageSrc}
                     alt={name}
                     fill
-                    sizes="(max-width: 768px) 68vw, 576px"
+                    sizes="(max-width: 768px) 68vw, 380px"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
@@ -101,7 +108,6 @@ export function ItineraryBuilderEntry() {
           })}
         </div>
 
-        <p className="mt-6 text-center text-xs text-slate-500 md:mt-8">{t("comingSoonNote")}</p>
       </div>
     </section>
   );

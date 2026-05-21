@@ -111,13 +111,16 @@ export function isBuilderAttraction(poiKey: string): boolean {
 }
 
 export function resolveBuilderOrigin(
-  region: "busan" | "jeju",
+  region: "busan" | "jeju" | "seoul",
   track?: string | null,
   originKey?: string | null
 ): LatLng | undefined {
   if (originKey && BUILDER_ORIGINS[originKey]) return BUILDER_ORIGINS[originKey];
   if (track !== "cruise") return undefined;
-  return region === "jeju" ? BUILDER_ORIGINS.jeju_cruise_port : BUILDER_ORIGINS.busan_cruise_port;
+  // Seoul is not a cruise-port region; fall back to undefined (no port anchor).
+  if (region === "jeju") return BUILDER_ORIGINS.jeju_cruise_port;
+  if (region === "busan") return BUILDER_ORIGINS.busan_cruise_port;
+  return undefined;
 }
 
 export function metadataScoreAdjustment(

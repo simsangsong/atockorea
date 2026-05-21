@@ -30,6 +30,11 @@ const REGION_HEADLINES: Record<RegionSlug, { eyebrow: string; title: string; sub
     title: "Jeju Map",
     subtitle: "Curated stops across the whole UNESCO Triple Crown island.",
   },
+  seoul: {
+    eyebrow: "Seoul + Gyeonggi day-trips",
+    title: "Seoul Map",
+    subtitle: "Curated stops across central Seoul, Gyeonggi palaces, and day-trip corridors.",
+  },
 };
 
 export async function generateStaticParams() {
