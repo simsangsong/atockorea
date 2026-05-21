@@ -6,15 +6,16 @@
  * older one's manual amount can be reused as a precedent estimate. Cuts
  * down on ops-typed-the-same-quote-twice noise (R9 mitigation).
  *
- * Format: `region|track|pax≤N|hours≤H|km≤D|pois≤P|lang`
- *   e.g.  `busan|cruise|pax≤4|hours≤6|km≤100|pois≤3|en`
+ * Format: `region|track|pax≤N|hours≤H|pois≤P|lang`
+ *   e.g.  `busan|cruise|pax≤4|hours≤6|pois≤3|en`
+ *
+ * Distance dropped in Phase 9 (the new pricing model has no per-km term).
  */
 
 import type { QuoteIntake } from "./types";
 
-const PAX_BREAKS = [4, 7, 12] as const;
+const PAX_BREAKS = [6, 9, 13] as const;
 const HOURS_BREAKS = [4, 6, 8, 10, 12] as const;
-const DISTANCE_BREAKS = [100, 250, 400, 600] as const;
 const POI_BREAKS = [3, 5, 7, 10] as const;
 
 function bucket(value: number | null, breaks: readonly number[]): string {
@@ -28,8 +29,7 @@ function bucket(value: number | null, breaks: readonly number[]): string {
 export function fingerprint(intake: QuoteIntake): string {
   const pax = bucket(intake.pax, PAX_BREAKS);
   const hours = bucket(intake.hours, HOURS_BREAKS);
-  const km = bucket(intake.distance_km, DISTANCE_BREAKS);
   const pois = bucket(intake.poi_keys.length, POI_BREAKS);
   const lang = intake.language || "en";
-  return `${intake.region}|${intake.track}|pax${pax}|hours${hours}|km${km}|pois${pois}|${lang}`;
+  return `${intake.region}|${intake.track}|pax${pax}|hours${hours}|pois${pois}|${lang}`;
 }

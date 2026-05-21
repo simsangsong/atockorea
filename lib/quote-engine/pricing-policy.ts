@@ -212,18 +212,22 @@ export function normalizeRegion(region: string | null | undefined): string {
 }
 
 /**
- * Classify a Jeju coordinate into a tour zone. Thresholds are approximate and
- * ops-tunable; borderline POIs only shift a +₩60k cross-region surcharge.
- *   south: south coast (Seogwipo/Jungmun/Daepo), lat < 33.31
- *   east:  Seongsan/Gimnyeong/Manjanggul, lng ≥ 126.66
- *   west:  Hyeopjae/Hallim/Aewol, lng ≤ 126.38
- *   city:  Jeju-si north-central (neutral pickup band)
+ * Classify a Jeju coordinate into a tour zone. The dominant cross-island axis
+ * is longitude (E↔W), so we split on lng first; the south-central coast is the
+ * low-latitude middle band. Thresholds are approximate and ops-tunable;
+ * borderline POIs only shift a +₩60k cross-region surcharge. Validated against
+ * real match_pois coords (Seongsan→east, Hallim/Aewol/O'Sulloc→west,
+ * Seogwipo/Jungmun→south, Jeju-si/Hallasan→city).
+ *   east:  lng ≥ 126.64  (Seongsan, Seopjikoji, Seongeup, Hamdeok…)
+ *   west:  lng ≤ 126.42  (Hallim, Hyeopjae, Aewol, O'Sulloc, Songaksan…)
+ *   south: middle band, lat ≤ 33.30  (Seogwipo, Jungmun, Daepo, Jeongbang…)
+ *   city:  middle band, lat > 33.30  (Jeju-si, Hallasan — neutral)
  */
 export function jejuZone(lat: number, lng: number): JejuZone {
   if (!Number.isFinite(lat) || !Number.isFinite(lng)) return "city";
-  if (lat < 33.31) return "south";
-  if (lng >= 126.66) return "east";
-  if (lng <= 126.38) return "west";
+  if (lng >= 126.64) return "east";
+  if (lng <= 126.42) return "west";
+  if (lat <= 33.3) return "south";
   return "city";
 }
 
