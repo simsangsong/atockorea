@@ -1323,7 +1323,7 @@
       "es": "Museo del Té O'Sulloc"
     },
     "region": "jeju",
-    "default_image_url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+    "default_image_url": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
     "poi_meta": {
       "sources": [
         "Amorepacific corporate history (amorepacific.com)",
@@ -1339,7 +1339,66 @@
     "stop_role": "attraction",
     "is_attraction": true,
     "category": "Amorepacific tea-culture flagship + green-tea fields finale",
-    "default_stay_minutes": 60
+    "default_stay_minutes": 60,
+    "image": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+    "images": [
+      "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+      "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+      "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+      "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp"
+    ],
+    "galleryItems": [
+      {
+        "id": 1,
+        "type": "photo",
+        "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+        "location": "O'Sulloc Tea Museum & Tea Fields",
+        "alt": "O'Sulloc Tea Museum & Tea Fields ? photo 1",
+        "caption": "O'Sulloc Tea Museum & Tea Fields ? photo 1"
+      },
+      {
+        "id": 2,
+        "type": "photo",
+        "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+        "location": "O'Sulloc Tea Museum & Tea Fields",
+        "alt": "O'Sulloc Tea Museum & Tea Fields ? photo 2",
+        "caption": "O'Sulloc Tea Museum & Tea Fields ? photo 2"
+      },
+      {
+        "id": 3,
+        "type": "photo",
+        "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+        "location": "O'Sulloc Tea Museum & Tea Fields",
+        "alt": "O'Sulloc Tea Museum & Tea Fields ? photo 3",
+        "caption": "O'Sulloc Tea Museum & Tea Fields ? photo 3"
+      },
+      {
+        "id": 4,
+        "type": "photo",
+        "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+        "location": "O'Sulloc Tea Museum & Tea Fields",
+        "alt": "O'Sulloc Tea Museum & Tea Fields ? photo 4",
+        "caption": "O'Sulloc Tea Museum & Tea Fields ? photo 4"
+      }
+    ],
+    "imageCredits": [
+      {
+        "url": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+        "source": "atoc-korea"
+      },
+      {
+        "url": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+        "source": "atoc-korea"
+      },
+      {
+        "url": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+        "source": "atoc-korea"
+      },
+      {
+        "url": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+        "source": "atoc-korea"
+      }
+    ]
   },
   {
     "poi_key": "route_variant_east",

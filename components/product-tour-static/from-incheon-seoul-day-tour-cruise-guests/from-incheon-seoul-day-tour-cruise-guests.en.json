@@ -246,8 +246,16 @@
         "Free port shuttle option check at terminal lobby (~5 min if applicable)"
       ],
       "whyOnRoute": "Incheon Cruise Terminal pickup is the day's logistical anchor — without a pre-arranged transfer, cruise passengers face a 7-km gap from terminal to nearest metro station and a 60-90 min taxi to Seoul. The shared-van format keeps cost competitive while preserving the directness of door-to-door service. For cruise guests this pickup is the day's hard-cost-deciding stop — pre-arranged transfers eliminate the 7-km port-to-metro gap and the 60-90-min taxi alternative. Sharing the van with up to 7 other passengers keeps cost competitive (~30-50% of private-charter price) while preserving door-to-door directness; the all-aboard time is built into the day's schedule with a 90-minute reboarding buffer.",
-      "visitBasics": {},
-      "convenience": {},
+      "visitBasics": {
+        "hours": "Cruise-call dependent; pickup is after immigration clearance at the terminal.",
+        "closed": "Available only when the cruise ship calls at Incheon.",
+        "admission": "No attraction admission; terminal access follows port and cruise security rules.",
+        "walking": "Easy - short walk from gangway/arrival hall to curbside pickup."
+      },
+      "convenience": {
+        "restroom": "Inside the terminal arrival/departure halls.",
+        "parking": "Tour bus and taxi stands outside the terminal; driver-guide meets at the assigned curbside point."
+      },
       "smartNotes": {
         "tip": "Allow 30 min minimum for Korean immigration. Keep passport + cruise card accessible. The terminal address in Korean is 인천항 크루즈터미널 (연수구 국제항만대로 438) — DO NOT confuse with the older Incheon International Ferry Terminal."
       },
@@ -256,7 +264,7 @@
         "verified": true,
         "match": "operational_pickup",
         "kb_version": "1.26",
-        "verified_date": "2026-04-29",
+        "verified_date": "2026-05-21",
         "note": "Operational pickup stop; references KB POI for terminal facts but kept brief as transit",
         "sources": [
           "Incheon Port Authority (incheonport.kr)",
@@ -453,7 +461,7 @@
       "duration": "75 min",
       "name": "Bukchon Hanok Village",
       "category": "Hanok Residential District",
-      "description": "Bukchon literally means 'Northern Village' — a 600-year-old hanok (traditional Korean tile-roofed house) residential district nestled between Gyeongbokgung Palace and Changdeokgung Palace, originally home to high-ranking Joseon Dynasty government officials and aristocracy. \n\nToday Bukchon is Seoul's largest concentration of preserved hanok homes — approximately 900 traditional houses arrayed along eight famous viewpoints (Bukchon 8 Gyeong / Bukchon 8 Views) — with sloping alleys giving views of N Seoul Tower in the distance and the curved tile-roof rooflines layering down toward the city below. \n\nThe signature view is Gye-dong-gil (Hanok Roofline Alley near Bukchon No. 6 viewpoint) where photographers gather for the iconic shot of cascading hanok rooftops with N Seoul Tower in the distance. Many hanok along the route are private residences (residents have asked tourists to stay quiet — signs request silence after 22:00 and limited photography of doorways). \n\nCultural workshops scattered through the village offer hands-on experiences in Korean knot-tying, hanji (mulberry paper) crafts, traditional tea ceremonies, embroidery, and Korean cooking. Hanbok rental shops cluster at the village edge (~15,000-20,000 KRW for 4 hours) — the standard photo-trip pairing with Gyeongbokgung. \n\nInsadong, the cultural and crafts shopping street, sits a 5-10 minute walk south. The village's preservation is overseen by **Jongno-gu District Office's Bukchon Hanok Village preservation program** — strict zoning rules limit commercial signage, renovation must use traditional materials (handmade hanji paper screens, wooden frames, tile roofs), and resident-quiet hours 22:00–10:00 are enforced by signage and community wardens during peak season.",
+      "description": "Bukchon literally means 'Northern Village' — a 600-year-old hanok (traditional Korean tile-roofed house) residential district nestled between Gyeongbokgung Palace and Changdeokgung Palace, originally home to high-ranking Joseon Dynasty government officials and aristocracy. \n\nToday Bukchon is Seoul's largest concentration of preserved hanok homes — approximately 900 traditional houses arrayed along eight famous viewpoints (Bukchon 8 Gyeong / Bukchon 8 Views) — with sloping alleys giving views of N Seoul Tower in the distance and the curved tile-roof rooflines layering down toward the city below. \n\nThe signature view is Gye-dong-gil (Hanok Roofline Alley near Bukchon No. 6 viewpoint) where photographers gather for the iconic shot of cascading hanok rooftops with N Seoul Tower in the distance. Many hanok along the route are private residences (residents have asked tourists to stay quiet — the busiest residential Red Zone now restricts tourist entry from 17:00 to 10:00 the next day, with fines enforced from March 2025). \n\nCultural workshops scattered through the village offer hands-on experiences in Korean knot-tying, hanji (mulberry paper) crafts, traditional tea ceremonies, embroidery, and Korean cooking. Hanbok rental shops cluster at the village edge (~15,000-20,000 KRW for 4 hours) — the standard photo-trip pairing with Gyeongbokgung. \n\nInsadong, the cultural and crafts shopping street, sits a 5-10 minute walk south. The village's preservation is overseen by **Jongno-gu District Office's Bukchon Hanok Village preservation program** — strict zoning rules limit commercial signage, renovation must use traditional materials (handmade hanji paper screens, wooden frames, tile roofs), and the Red Zone entry restriction from 17:00 to 10:00 is enforced by signage and community wardens during peak season.",
       "highlights": [
         "Seoul's largest preserved hanok district — ~900 traditional homes in a single compact area",
         "Bukchon 8 Gyeong (8 famous viewpoints) — the iconic hanok-roofline-with-N-Seoul-Tower view at #6",
@@ -462,7 +470,7 @@
         "Hanbok rental shops at village edge for free Gyeongbokgung admission combo",
         "5-10 min walk to Insadong cultural street",
         "**~600 years old** — historic district between Gyeongbokgung and Changdeokgung Palaces, originally home to Joseon Dynasty high-ranking officials and aristocracy",
-        "**Resident-quiet hours 22:00–10:00 enforced** — village is a LIVING residential community (not a museum); cultural respect protocol critical (no flash photography in alleys, voices down, no drones)",
+        "**Red Zone entry restriction 17:00–10:00 enforced** — village is a LIVING residential community (not a museum); cultural respect protocol critical (no flash photography in alleys, voices down, no drones)",
         "**Combination Royal Palaces Ticket ₩10,000 adult / ₩5,000 child** covers all 4 royal palaces (Gyeongbokgung + Changdeokgung incl. Secret Garden + Changgyeonggung + Deoksugung) + Jongmyo Shrine — 3-month validity; savings vs single tickets if pairing with private hanok-tour day"
       ],
       "timeUsed": [
@@ -474,7 +482,7 @@
       ],
       "whyOnRoute": "Bukchon is the natural pivot from Gyeongbokgung's grand-scale royal architecture to a domestic-scale Joseon-era streetscape — completing the 'how kings AND aristocrats lived 500 years ago' narrative within walking distance. Picked over Namsangol Hanok Village (a curated open-air museum) because Bukchon is a LIVING village with residents — far more authentic for the story-driven cruise passenger window. For cruise guests on a one-day-in-Seoul window, Bukchon delivers the day's strongest 'period-set' photo opportunity — hanok rooflines + Insadong-bound alley vistas + the Bukchon 8 Gyeong viewpoints make this a 75-min Instagram-grade stop within walking distance of both Gyeongbokgung and Insadong.",
       "visitBasics": {
-        "hours": "24 hours (lanes always accessible); residents request quiet 22:00-10:00",
+        "hours": "24 hours (lanes always accessible); Red Zone restricts tourist entry 17:00-10:00; quiet conduct requested throughout residential lanes",
         "closed": "Open year-round; some private hanok museums may close on Mondays",
         "admission": "Free entry to lanes (workshops + private museums charge 5,000-10,000 KRW)",
         "walking": "Moderate — cobbled, sloped alleys; comfortable shoes essential"
@@ -493,7 +501,7 @@
         "verified": true,
         "match": "single_poi",
         "kb_version": "1.26",
-        "verified_date": "2026-04-29",
+        "verified_date": "2026-05-21",
         "sources": [
           "Visit Seoul official (english.visitseoul.net)",
           "Bukchon Traditional Culture Center",
@@ -979,7 +987,7 @@
     {
       "id": "q-bukchon-residents",
       "question": "Is Bukchon a tourist village or a residential area?",
-      "answer": "Residential. Most of the ≈600 hanoks in Bukchon are private homes; only some are tea houses, craft workshops, or small museums. Quiet hours are observed 22:00–10:00, but the city asks visitors to keep voices down at all hours. Don't enter private courtyards or photograph people without consent. The eight officially designated 'Bukchon Hanok 8 Views' are the photo-OK spots."
+      "answer": "Residential. Most of the ≈600 hanoks in Bukchon are private homes; only some are tea houses, craft workshops, or small museums. The Red Zone tourist entry restriction applies 17:00–10:00 in the busiest residential area, but the city asks visitors to keep voices down at all hours. Don't enter private courtyards or photograph people without consent. The eight officially designated 'Bukchon Hanok 8 Views' are the photo-OK spots."
     },
     {
       "id": "q-vegetarian",
@@ -1637,7 +1645,7 @@
             "name": "Bukchon Hanok Village",
             "category": "Hanok Residential District",
             "image": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
-            "description": "Hanok district between Gyeongbokgung and Changdeokgung palaces, designated a Hanok Conservation Area since 1976. Approximately 600 traditional houses; most are still private residences (some are tea houses, craft workshops, and small museums) and the city asks visitors to keep voices low — quiet hours are observed 22:00–10:00. The eight 'Bukchon Hanok 8 Views' are the officially designated photo spots; the best-known is the Bukchon-ro 11-gil viewpoint where the hanok rooflines slope down toward the Seoul cityscape with N Seoul Tower in the background. Most houses date from the late 1920s–1930s, when Korean elite built modernized hanoks during the Japanese colonial period. Free to walk through; flat hanok lanes with some gentle slopes.",
+            "description": "Hanok district between Gyeongbokgung and Changdeokgung palaces, designated a Hanok Conservation Area since 1976. Approximately 600 traditional houses; most are still private residences (some are tea houses, craft workshops, and small museums) and the city asks visitors to keep voices low — the Red Zone tourist entry restriction applies 17:00–10:00 in the busiest residential area. The eight 'Bukchon Hanok 8 Views' are the officially designated photo spots; the best-known is the Bukchon-ro 11-gil viewpoint where the hanok rooflines slope down toward the Seoul cityscape with N Seoul Tower in the background. Most houses date from the late 1920s–1930s, when Korean elite built modernized hanoks during the Japanese colonial period. Free to walk through; flat hanok lanes with some gentle slopes.",
             "timeUsed": [
               "Photo viewpoints walk",
               "Optional tea house or craft workshop visit"
@@ -2032,7 +2040,7 @@
           {
             "id": "q-bukchon-residents",
             "question": "Is Bukchon a tourist village or a residential area?",
-            "answer": "Residential. Most of the ≈600 hanoks in Bukchon are private homes; only some are tea houses, craft workshops, or small museums. Quiet hours are observed 22:00–10:00, but the city asks visitors to keep voices down at all hours. Don't enter private courtyards or photograph people without consent. The eight officially designated 'Bukchon Hanok 8 Views' are the photo-OK spots."
+            "answer": "Residential. Most of the ≈600 hanoks in Bukchon are private homes; only some are tea houses, craft workshops, or small museums. The Red Zone tourist entry restriction applies 17:00–10:00 in the busiest residential area, but the city asks visitors to keep voices down at all hours. Don't enter private courtyards or photograph people without consent. The eight officially designated 'Bukchon Hanok 8 Views' are the photo-OK spots."
           },
           {
             "id": "q-vegetarian",

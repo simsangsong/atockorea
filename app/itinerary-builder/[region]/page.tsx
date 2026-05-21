@@ -71,7 +71,7 @@ export default async function ItineraryBuilderRegionPage({
   const { data, error } = await supabase
     .from("match_pois")
     .select(
-      "poi_key, name_en, name_ko, names_other_locales, region, category, default_image_url, default_stay_minutes, lat, lng, stop_role, is_attraction, is_operational, builder_profile_source, builder_profile_version, poi_meta, description, highlights, images, why_on_route, smart_notes, visit_basics, convenience"
+      "poi_key, name_en, name_ko, names_other_locales, content_locales, region, category, default_image_url, default_stay_minutes, lat, lng, stop_role, is_attraction, is_operational, builder_profile_source, builder_profile_version, poi_meta, description, highlights, images, why_on_route, smart_notes, visit_basics, convenience"
     )
     .in("region", cluster as unknown as string[])
     .not("name_en", "is", null)

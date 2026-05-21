@@ -240,8 +240,16 @@
         "Desvío opcional al Parque Central de Songdo como alternativa en caso de mal tiempo (~15 min si aplica)"
       ],
       "whyOnRoute": "La recogida privada en la pasarela es la garantía fundamental del día — el conductor-guía está comprometido exclusivamente con su grupo, la hora de embarque del barco está integrada en el itinerario, y se elimina la barrera del idioma con taxis y transporte público. Para los pasajeros de cruceros que priorizan la flexibilidad sobre el coste, el alquiler privado elimina la espera en la furgoneta compartida en la pasarela, la hora de recogida con salida fija y la rigidez ante cambios de itinerario a mitad del día. El conductor-guía puede añadir o eliminar paradas según el interés en tiempo real (p. ej., cambiar Myeongdong por Hongdae si su grupo prefiere un ambiente más joven) y la hora de embarque está integrada en un margen de reembarque de 90 minutos.",
-      "visitBasics": {},
-      "convenience": {},
+      "visitBasics": {
+        "hours": "Depende de la escala del crucero; la recogida se realiza tras el control migratorio en la terminal.",
+        "closed": "Disponible solo cuando el crucero hace escala en Incheon.",
+        "admission": "Sin entrada turística; el acceso a la terminal sigue las normas de seguridad portuaria y del crucero.",
+        "walking": "Fácil - caminata corta desde la pasarela/sala de llegadas hasta el punto de recogida junto a la acera."
+      },
+      "convenience": {
+        "restroom": "Dentro de las salas de llegada/salida de la terminal.",
+        "parking": "Paradas de buses turísticos y taxis fuera de la terminal; el conductor-guía espera en el punto asignado."
+      },
       "smartNotes": {
         "tip": "Proporcione el nombre del barco + hora de llegada programada + hora de embarque al reservar. El conductor-guía llegará entre 30 y 60 minutos después de su atraque programado para permitir el paso por inmigración. Dirección en coreano de la terminal de cruceros: 인천항 크루즈터미널 (연수구 국제항만대로 438)."
       },
@@ -250,7 +258,7 @@
         "verified": true,
         "match": "operational_pickup",
         "kb_version": "1.26",
-        "verified_date": "2026-04-29",
+        "verified_date": "2026-05-21",
         "note": "Operational pickup stop; references KB POI for terminal facts",
         "sources": [
           "Incheon Port Authority (incheonport.kr)",
@@ -447,7 +455,7 @@
       "duration": "75 min",
       "name": "Pueblo Hanok de Bukchon + Insadong",
       "category": "Pueblo Patrimonial Hanok + Calle de Artesanía",
-      "description": "Bukchon ('Aldea del Norte') es un barrio residencial de hanok (casas tradicionales coreanas con tejado de tejas) de 600 años de antigüedad, enclavado entre los Palacios Gyeongbokgung y Changdeokgung — históricamente hogar de altos funcionarios y aristócratas de la Dinastía Joseon — y actualmente la mayor concentración de casas hanok preservadas de Seúl (~900 casas tradicionales). \n\nLa ruta emblemática recorre las **Bukchon 8 Gyeong (8 Vistas Famosas)**, con el icónico punto de observación n.º 6 en Gye-dong-gil, que enmarca los tejados en cascada de los hanok con la Torre N Seoul al fondo — la escena de arquitectura tradicional más fotografiada de Seúl. Bukchon es una aldea VIVA (no un museo) — los residentes han solicitado públicamente un comportamiento respetuoso, con horarios de silencio y fotografía limitada de los portales. \n\nDesde el extremo sur de Bukchon, **Insadong** (인사동) — la principal calle de artesanía tradicional y cultura de Seúl — se encuentra a 5-10 minutos a pie. Insadong combina el complejo espiral de 4 plantas **Ssamzigil** (más de 70 tiendas de artesanía, galerías, cafés y terraza en la azotea), casas de té tradicionales (Mokyeon, Suyeonsanbang), talleres de hanji (papel de morera), galerías de cerámica con celadón Goryeo y porcelana blanca Joseon, y vendedores de souvenirs coreanos. \n\nSolo peatonal los fines de semana (sáb-dom). La flexibilidad de su guía-conductor le permite pasar más tiempo donde el interés del grupo lo lleve — fotografía en Bukchon frente a compras en Insadong es una elección natural en el momento. \n\nLa preservación de la aldea está supervisada por el **Programa de Preservación del Pueblo Hanok de Bukchon de la Oficina del Distrito de Jongno-gu** — estrictas normas de zonificación limitan la señalización comercial, las renovaciones deben utilizar materiales tradicionales (pantallas de papel hanji hecho a mano, marcos de madera, tejados de tejas), y el horario de silencio para los residentes de 22:00 a 10:00 se hace cumplir mediante señalización y guardias comunitarios durante la temporada alta.",
+      "description": "Bukchon ('Aldea del Norte') es un barrio residencial de hanok (casas tradicionales coreanas con tejado de tejas) de 600 años de antigüedad, enclavado entre los Palacios Gyeongbokgung y Changdeokgung — históricamente hogar de altos funcionarios y aristócratas de la Dinastía Joseon — y actualmente la mayor concentración de casas hanok preservadas de Seúl (~900 casas tradicionales). \n\nLa ruta emblemática recorre las **Bukchon 8 Gyeong (8 Vistas Famosas)**, con el icónico punto de observación n.º 6 en Gye-dong-gil, que enmarca los tejados en cascada de los hanok con la Torre N Seoul al fondo — la escena de arquitectura tradicional más fotografiada de Seúl. Bukchon es una aldea VIVA (no un museo) — los residentes han solicitado públicamente un comportamiento respetuoso, con horarios de silencio y fotografía limitada de los portales. \n\nDesde el extremo sur de Bukchon, **Insadong** (인사동) — la principal calle de artesanía tradicional y cultura de Seúl — se encuentra a 5-10 minutos a pie. Insadong combina el complejo espiral de 4 plantas **Ssamzigil** (más de 70 tiendas de artesanía, galerías, cafés y terraza en la azotea), casas de té tradicionales (Mokyeon, Suyeonsanbang), talleres de hanji (papel de morera), galerías de cerámica con celadón Goryeo y porcelana blanca Joseon, y vendedores de souvenirs coreanos. \n\nSolo peatonal los fines de semana (sáb-dom). La flexibilidad de su guía-conductor le permite pasar más tiempo donde el interés del grupo lo lleve — fotografía en Bukchon frente a compras en Insadong es una elección natural en el momento. \n\nLa preservación de la aldea está supervisada por el **Programa de Preservación del Pueblo Hanok de Bukchon de la Oficina del Distrito de Jongno-gu** — estrictas normas de zonificación limitan la señalización comercial, las renovaciones deben utilizar materiales tradicionales (pantallas de papel hanji hecho a mano, marcos de madera, tejados de tejas), y el horario de silencio para los residentes de 17:00 a 10:00 en la Zona Roja se hace cumplir mediante señalización y guardias comunitarios durante la temporada alta.",
       "highlights": [
         "Bukchon 8 Gyeong (8 Vistas Famosas) — icónicos tejados de hanok + Torre N Seoul en el punto n.º 6",
         "~900 casas hanok preservadas — el mayor barrio residencial tradicional de Seúl",
@@ -456,7 +464,7 @@
         "5-10 min a pie entre Bukchon e Insadong",
         "Solo peatonal los fines de semana (sáb-dom)",
         "**~600 años de antigüedad** — barrio histórico entre los Palacios Gyeongbokgung y Changdeokgung, originalmente hogar de altos funcionarios y la aristocracia de la Dinastía Joseon",
-        "**Horario de silencio para residentes de 22:00 a 10:00 (de cumplimiento obligatorio)** — la aldea es una comunidad residencial VIVA (no un museo); el protocolo de respeto cultural es fundamental (sin flash en los callejones, hablar en voz baja, sin drones)",
+        "**Horario de silencio para residentes de 17:00 a 10:00 en la Zona Roja (de cumplimiento obligatorio)** — la aldea es una comunidad residencial VIVA (no un museo); el protocolo de respeto cultural es fundamental (sin flash en los callejones, hablar en voz baja, sin drones)",
         "**Entrada combinada a los Palacios Reales ₩10.000 adultos / ₩5.000 niños** — cubre los 4 palacios reales + Santuario Jongmyo — validez de 3 meses; ahorro frente a las entradas individuales si se combina con un día de visita privada a hanok"
       ],
       "timeUsed": [
@@ -468,7 +476,7 @@
       ],
       "whyOnRoute": "Combinar Bukchon e Insadong en una sola parada de 75 min refleja la flexibilidad del tour privado — su guía-conductor le deja en el extremo norte de Bukchon y le recoge en el extremo sur de Insadong, eliminando retrocesos. Se eligió esta opción frente al museo al aire libre del Pueblo Hanok de Namsangol porque la autenticidad del pueblo vivo de Bukchon, junto con el atractivo comercial de las compras de artesanía de Insadong, abarca tanto el relato de 'residencia tradicional' como el de 'artesanía tradicional' en un solo recorrido. El formato de charter privado permite al guía-conductor dejar al grupo en el extremo norte de Bukchon (Calle Bukchongil) y recogerlo en el extremo sur cerca de Insadong, eliminando retrocesos y ahorrando ~10 min en comparación con el patrón de llegada y regreso de los tours en autobús.",
       "visitBasics": {
-        "hours": "Bukchon abierto 24/7 (los residentes solicitan silencio de 22:00 a 10:00); tiendas de Insadong de 10:00 a 22:00",
+        "hours": "Bukchon abierto 24/7 (los residentes solicitan silencio de 17:00 a 10:00 en la Zona Roja); tiendas de Insadong de 10:00 a 22:00",
         "closed": "Abierto todo el año (algunas galerías de Insadong cerradas los lunes)",
         "admission": "Entrada gratuita; pago por consumo en compras, casas de té y talleres",
         "walking": "Moderado — Bukchon tiene callejones empedrados y con pendiente; Insadong es llano"
@@ -487,7 +495,7 @@
         "verified": true,
         "match": "multi_poi_bundle",
         "kb_version": "1.26",
-        "verified_date": "2026-04-29",
+        "verified_date": "2026-05-21",
         "secondary_pois": [
           "insadong"
         ],

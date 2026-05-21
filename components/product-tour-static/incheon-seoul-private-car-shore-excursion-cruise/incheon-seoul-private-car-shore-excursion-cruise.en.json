@@ -240,8 +240,16 @@
         "Optional Songdo Central Park weather-fallback detour (~15 min if applicable)"
       ],
       "whyOnRoute": "Private gangway pickup is the day's foundational guarantee — the driver-guide is committed to your group only, the ship all-aboard time is built into the schedule, and the language-barrier challenge of taxis and public transit is eliminated. For cruise guests prioritizing flexibility over cost, private charter eliminates the shared-van waiting window at the gangway, the fixed-departure pickup time, and the inflexibility of itinerary changes mid-day. The driver-guide can add or remove stops based on real-time interest (e.g. swap Myeongdong for Hongdae if your group leans young-traveler) and the all-aboard time is built into a 90-minute reboarding buffer.",
-      "visitBasics": {},
-      "convenience": {},
+      "visitBasics": {
+        "hours": "Cruise-call dependent; pickup is after immigration clearance at the terminal.",
+        "closed": "Available only when the cruise ship calls at Incheon.",
+        "admission": "No attraction admission; terminal access follows port and cruise security rules.",
+        "walking": "Easy - short walk from gangway/arrival hall to curbside pickup."
+      },
+      "convenience": {
+        "restroom": "Inside the terminal arrival/departure halls.",
+        "parking": "Tour bus and taxi stands outside the terminal; driver-guide meets at the assigned curbside point."
+      },
       "smartNotes": {
         "tip": "Provide ship name + scheduled arrival + all-aboard time at booking. The driver-guide will arrive 30-60 min after your scheduled docking to allow immigration clearance. Cruise terminal Korean address: 인천항 크루즈터미널 (연수구 국제항만대로 438)."
       },
@@ -250,7 +258,7 @@
         "verified": true,
         "match": "operational_pickup",
         "kb_version": "1.26",
-        "verified_date": "2026-04-29",
+        "verified_date": "2026-05-21",
         "note": "Operational pickup stop; references KB POI for terminal facts",
         "sources": [
           "Incheon Port Authority (incheonport.kr)",
@@ -447,7 +455,7 @@
       "duration": "75 min",
       "name": "Bukchon Hanok Village + Insadong",
       "category": "Hanok Heritage Village + Crafts Street",
-      "description": "Bukchon ('Northern Village') is a 600-year-old hanok (traditional Korean tile-roofed house) residential district nestled between Gyeongbokgung and Changdeokgung Palaces — historically home to high-ranking Joseon Dynasty officials and aristocrats — and today Seoul's largest concentration of preserved hanok homes (~900 traditional houses). \n\nThe signature route walks the **Bukchon 8 Gyeong (8 Famous Views)** with the iconic #6 viewpoint at Gye-dong-gil framing cascading hanok rooftops with N Seoul Tower in the distance — Seoul's most-photographed traditional architecture scene. Bukchon is a LIVING village (not a museum) — residents have publicly requested respectful behavior including quiet hours and limited photography of doorways. \n\nFrom Bukchon's southern edge, **Insadong** (인사동) — Seoul's premier traditional crafts and cultural street — is a 5-10 minute walk. Insadong combines the 4-story spiral **Ssamzigil** complex (70+ craft shops, galleries, cafes, rooftop terrace), traditional teahouses (Mokyeon, Suyeonsanbang), hanji (mulberry paper) workshops, ceramic galleries showing Goryeo celadon and Joseon white porcelain, and Korean souvenir vendors. \n\nPedestrian-only on weekends (Sat-Sun). Your driver-guide's flexibility lets you spend more time wherever the group's interest pulls — Bukchon photography vs. Insadong shopping is a natural in-the-moment choice. \n\nThe village's preservation is overseen by **Jongno-gu District Office's Bukchon Hanok Village preservation program** — strict zoning rules limit commercial signage, renovation must use traditional materials (handmade hanji paper screens, wooden frames, tile roofs), and resident-quiet hours 22:00–10:00 are enforced by signage and community wardens during peak season.",
+      "description": "Bukchon ('Northern Village') is a 600-year-old hanok (traditional Korean tile-roofed house) residential district nestled between Gyeongbokgung and Changdeokgung Palaces — historically home to high-ranking Joseon Dynasty officials and aristocrats — and today Seoul's largest concentration of preserved hanok homes (~900 traditional houses). \n\nThe signature route walks the **Bukchon 8 Gyeong (8 Famous Views)** with the iconic #6 viewpoint at Gye-dong-gil framing cascading hanok rooftops with N Seoul Tower in the distance — Seoul's most-photographed traditional architecture scene. Bukchon is a LIVING village (not a museum) — residents have publicly requested respectful behavior including quiet hours and limited photography of doorways. \n\nFrom Bukchon's southern edge, **Insadong** (인사동) — Seoul's premier traditional crafts and cultural street — is a 5-10 minute walk. Insadong combines the 4-story spiral **Ssamzigil** complex (70+ craft shops, galleries, cafes, rooftop terrace), traditional teahouses (Mokyeon, Suyeonsanbang), hanji (mulberry paper) workshops, ceramic galleries showing Goryeo celadon and Joseon white porcelain, and Korean souvenir vendors. \n\nPedestrian-only on weekends (Sat-Sun). Your driver-guide's flexibility lets you spend more time wherever the group's interest pulls — Bukchon photography vs. Insadong shopping is a natural in-the-moment choice. \n\nThe village's preservation is overseen by **Jongno-gu District Office's Bukchon Hanok Village preservation program** — strict zoning rules limit commercial signage, renovation must use traditional materials (handmade hanji paper screens, wooden frames, tile roofs), and the Red Zone entry restriction from 17:00 to 10:00 is enforced by signage and community wardens during peak season.",
       "highlights": [
         "Bukchon 8 Gyeong (8 Famous Views) — iconic hanok-roofline + N Seoul Tower at #6",
         "~900 preserved hanok homes — Seoul's largest traditional residential district",
@@ -456,7 +464,7 @@
         "5-10 min walk between Bukchon and Insadong",
         "Pedestrian-only weekends (Sat-Sun)",
         "**~600 years old** — historic district between Gyeongbokgung and Changdeokgung Palaces, originally home to Joseon Dynasty high-ranking officials and aristocracy",
-        "**Resident-quiet hours 22:00–10:00 enforced** — village is a LIVING residential community (not a museum); cultural respect protocol critical (no flash photography in alleys, voices down, no drones)",
+        "**Red Zone entry restriction 17:00–10:00 enforced** — village is a LIVING residential community (not a museum); cultural respect protocol critical (no flash photography in alleys, voices down, no drones)",
         "**Combination Royal Palaces Ticket ₩10,000 adult / ₩5,000 child** covers all 4 royal palaces + Jongmyo Shrine — 3-month validity; savings vs single tickets if pairing with private hanok-tour day"
       ],
       "timeUsed": [
@@ -468,7 +476,7 @@
       ],
       "whyOnRoute": "Pairing Bukchon and Insadong in a single 75-min stop reflects the private-tour flexibility — your driver-guide drops at Bukchon's north end and picks up at Insadong's south end, eliminating backtracking. Picked over the Namsangol Hanok Village curated open-air museum because Bukchon's living-village authenticity plus Insadong's craft-shopping commercial appeal cover both 'traditional residential' and 'traditional crafts' narratives in one walk. The private-charter format means the driver-guide can drop at Bukchon's north end (Bukchongil Road) and pick up at the south end near Insadong, eliminating backtracking and saving ~10 min vs the bus-tour drop-and-return pattern.",
       "visitBasics": {
-        "hours": "Bukchon 24/7 (residents request quiet 22:00-10:00); Insadong shops 10:00-22:00",
+        "hours": "Bukchon 24/7 (Red Zone restricts tourist entry 17:00-10:00; quiet conduct requested throughout residential lanes); Insadong shops 10:00-22:00",
         "closed": "Open year-round (some Insadong galleries closed Mondays)",
         "admission": "Free; pay-as-you-go for purchases, teahouses, workshops",
         "walking": "Moderate — Bukchon has cobbled, sloped alleys; Insadong is flat"
@@ -487,7 +495,7 @@
         "verified": true,
         "match": "multi_poi_bundle",
         "kb_version": "1.26",
-        "verified_date": "2026-04-29",
+        "verified_date": "2026-05-21",
         "secondary_pois": [
           "insadong"
         ],

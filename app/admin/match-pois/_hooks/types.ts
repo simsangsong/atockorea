@@ -30,6 +30,7 @@ export type PoiRow = {
   name_en: string | null;
   name_ko: string | null;
   names_other_locales: Record<string, unknown> | null;
+  content_locales: Record<string, unknown> | null;
   region: string | null;
   category: string | null;
   lat: number | null;
@@ -61,6 +62,7 @@ export const EDITABLE_KEYS = [
   'name_en',
   'name_ko',
   'names_other_locales',
+  'content_locales',
   'region',
   'category',
   'lat',
@@ -92,6 +94,7 @@ export function emptyPoiRow(poiKey: string): PoiRow {
     name_en: '',
     name_ko: null,
     names_other_locales: null,
+    content_locales: null,
     region: null,
     category: null,
     lat: null,

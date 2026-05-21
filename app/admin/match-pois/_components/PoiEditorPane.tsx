@@ -247,6 +247,13 @@ export function PoiEditorPane({ poiKey, initialRow, isNew, onSaved, onBackToList
             />
             <TextArea label="why_on_route" rows={2} value={draft.why_on_route} onChange={(v) => set('why_on_route', v)} />
             <JsonField
+              label="content_locales"
+              hint="JSON object · locale별 rich stop copy"
+              value={draft.content_locales}
+              onChange={(v) => set('content_locales', v as PoiRow['content_locales'])}
+              onValidity={(ok) => setValidity('content_locales', ok)}
+            />
+            <JsonField
               label="visit_basics"
               hint="JSON object · 빈 {} 는 저장 시 null 처리"
               value={draft.visit_basics}

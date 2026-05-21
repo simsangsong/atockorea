@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
  * (`is_operational`, `created_at`, `updated_at`) so the UI can show them.
  */
 const SELECT_COLUMNS =
-  'poi_key, name_en, name_ko, names_other_locales, region, category, lat, lng, ' +
+  'poi_key, name_en, name_ko, names_other_locales, content_locales, region, category, lat, lng, ' +
   'default_image_url, default_stay_minutes, stop_role, is_attraction, is_operational, ' +
   'description, highlights, images, why_on_route, visit_basics, convenience, smart_notes, ' +
   'matching_profile, poi_meta, builder_profile_source, builder_profile_version, kb_version, ' +
@@ -28,6 +28,7 @@ const UPSERTABLE_COLUMNS = [
   'name_en',
   'name_ko',
   'names_other_locales',
+  'content_locales',
   'region',
   'category',
   'lat',
@@ -67,7 +68,7 @@ const TEXT_COLUMNS = new Set([
 ]);
 
 /** jsonb object columns where an empty object `{}` is normalised to null (Empty-Object Rule). */
-const EMPTY_OBJ_TO_NULL = new Set(['visit_basics', 'convenience', 'smart_notes', 'names_other_locales', 'matching_profile']);
+const EMPTY_OBJ_TO_NULL = new Set(['visit_basics', 'convenience', 'smart_notes', 'names_other_locales', 'content_locales', 'matching_profile']);
 
 /** Validation bounds for Korea (planner §F Phase 2 acceptance). */
 const LAT_MIN = 33.0;

@@ -161,13 +161,37 @@
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+      "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
       "location": "O'Sulloc茶博物館＋綠茶田",
-      "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 1",
-      "caption": "O'Sulloc茶博物館＋綠茶田 — photo 1"
+      "alt": "O'Sulloc茶博物館＋綠茶田 ? photo 1",
+      "caption": "O'Sulloc茶博物館＋綠茶田 ? photo 1"
     },
     {
       "id": 5,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+      "location": "O'Sulloc茶博物館＋綠茶田",
+      "alt": "O'Sulloc茶博物館＋綠茶田 ? photo 2",
+      "caption": "O'Sulloc茶博物館＋綠茶田 ? photo 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+      "location": "O'Sulloc茶博物館＋綠茶田",
+      "alt": "O'Sulloc茶博物館＋綠茶田 ? photo 3",
+      "caption": "O'Sulloc茶博物館＋綠茶田 ? photo 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+      "location": "O'Sulloc茶博物館＋綠茶田",
+      "alt": "O'Sulloc茶博物館＋綠茶田 ? photo 4",
+      "caption": "O'Sulloc茶博物館＋綠茶田 ? photo 4"
+    },
+    {
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
       "location": "狹才海灘＋西海岸咖啡廳街",
@@ -175,7 +199,7 @@
       "caption": "狹才海灘＋西海岸咖啡廳街 — photo 1"
     },
     {
-      "id": 6,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
       "location": "漢拿山 1100 高地濕地（拉姆薩爾公約 + 聯合國教科文組織）",
@@ -183,7 +207,7 @@
       "caption": "漢拿山 1100 高地濕地（拉姆薩爾公約 + 聯合國教科文組織） — photo 2"
     },
     {
-      "id": 7,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
       "location": "漢拿山 1100 高地濕地（拉姆薩爾公約 + 聯合國教科文組織）",
@@ -191,7 +215,7 @@
       "caption": "漢拿山 1100 高地濕地（拉姆薩爾公約 + 聯合國教科文組織） — photo 3"
     },
     {
-      "id": 8,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "柱狀節理峭壁（UNESCO地質公園）",
@@ -199,7 +223,7 @@
       "caption": "柱狀節理峭壁（UNESCO地質公園） — photo 2"
     },
     {
-      "id": 9,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "柱狀節理峭壁（UNESCO地質公園）",
@@ -207,7 +231,7 @@
       "caption": "柱狀節理峭壁（UNESCO地質公園） — photo 3"
     },
     {
-      "id": 10,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "柱狀節理峭壁（UNESCO地質公園）",
@@ -215,7 +239,7 @@
       "caption": "柱狀節理峭壁（UNESCO地質公園） — photo 4"
     },
     {
-      "id": 11,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
       "location": "天帝淵瀑布（天神之池）",
@@ -223,7 +247,7 @@
       "caption": "天帝淵瀑布（天神之池） — photo 2"
     },
     {
-      "id": 12,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
       "location": "天帝淵瀑布（天神之池）",
@@ -231,95 +255,7 @@
       "caption": "天帝淵瀑布（天神之池） — photo 3"
     },
     {
-      "id": 13,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
-      "location": "O'Sulloc茶博物館＋綠茶田",
-      "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 2",
-      "caption": "O'Sulloc茶博物館＋綠茶田 — photo 2"
-    },
-    {
-      "id": 14,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
-      "location": "O'Sulloc茶博物館＋綠茶田",
-      "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 3",
-      "caption": "O'Sulloc茶博物館＋綠茶田 — photo 3"
-    },
-    {
-      "id": 15,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
-      "location": "O'Sulloc茶博物館＋綠茶田",
-      "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 4",
-      "caption": "O'Sulloc茶博物館＋綠茶田 — photo 4"
-    },
-    {
       "id": 16,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
-      "location": "O'Sulloc茶博物館＋綠茶田",
-      "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 5",
-      "caption": "O'Sulloc茶博物館＋綠茶田 — photo 5"
-    },
-    {
-      "id": 17,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
-      "location": "O'Sulloc茶博物館＋綠茶田",
-      "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 6",
-      "caption": "O'Sulloc茶博物館＋綠茶田 — photo 6"
-    },
-    {
-      "id": 18,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
-      "location": "O'Sulloc茶博物館＋綠茶田",
-      "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 7",
-      "caption": "O'Sulloc茶博物館＋綠茶田 — photo 7"
-    },
-    {
-      "id": 19,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
-      "location": "O'Sulloc茶博物館＋綠茶田",
-      "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 8",
-      "caption": "O'Sulloc茶博物館＋綠茶田 — photo 8"
-    },
-    {
-      "id": 20,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
-      "location": "O'Sulloc茶博物館＋綠茶田",
-      "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 9",
-      "caption": "O'Sulloc茶博物館＋綠茶田 — photo 9"
-    },
-    {
-      "id": 21,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
-      "location": "O'Sulloc茶博物館＋綠茶田",
-      "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 10",
-      "caption": "O'Sulloc茶博物館＋綠茶田 — photo 10"
-    },
-    {
-      "id": 22,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
-      "location": "O'Sulloc茶博物館＋綠茶田",
-      "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 11",
-      "caption": "O'Sulloc茶博物館＋綠茶田 — photo 11"
-    },
-    {
-      "id": 23,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
-      "location": "O'Sulloc茶博物館＋綠茶田",
-      "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 12",
-      "caption": "O'Sulloc茶博物館＋綠茶田 — photo 12"
-    },
-    {
-      "id": 24,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
       "location": "狹才海灘＋西海岸咖啡廳街",
@@ -327,7 +263,7 @@
       "caption": "狹才海灘＋西海岸咖啡廳街 — photo 2"
     },
     {
-      "id": 25,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
       "location": "狹才海灘＋西海岸咖啡廳街",
@@ -609,7 +545,7 @@
       "name": "松岳山（全景觀景點）",
       "category": "雙火山口火山錐 — 九十九峰＋偶來小路第10號＋二戰歷史",
       "description": "**松岳山（송악산）**是一座**104公尺高的雙火山口寄生火山錐**，聳立於濟州島西南端大靜邑。此山以**「九十九峰」（구십구봉）**的民間稱謂聞名——這是對從主山向外輻射之密集小火山錐群的詩意命名，由多次連續噴發事件所形成，火山口邊緣內至今仍可見**黑色與紅色火山灰堆積層**。從地質學角度來看，松岳山呈現**雙火山口構造**：**外火山口（直徑約500公尺，周長約1.7公里）**與**內火山口（直徑約400公尺，深約69公尺）**，後者由後期次級噴發在第一個火山口內部形成。\n\n遊客體驗的核心是沿懸崖邊緣延伸的**2.8公里海岸環形步道**，幾乎全程鋪設**保養完善的木棧道與和緩階梯**，以適中步伐約需**75分鐘**完成。此步道為**濟州偶來小路第10號路線（花順→摩瑟浦）**的中央路段。環形步道上的全景視野涵蓋：向南可見**馬羅島（韓國最南端，距岸1.7公里）**與**加波島（平坦麥田島嶼，距岸5.5公里）**；向東南可見**兄弟島（擁有獨特柱狀節理雙岩的小島）**；向東北可見**山房山（395公尺，凝灰岩熔岩錐）**與**漢拏山（1,950公尺，全島最高峰）**。\n\n**歷史層面**：南側海岸懸崖中保存有**二戰日本帝國陸軍佔領期間開鑿的隧道**——神風特攻隊自殺艇掩體與彈藥庫，與城山日出峰的18處洞窟性質相似。這些隧道對外開放並設有解說標示。野生動物方面：**自由放牧的馬匹與矮種馬**在山坡上悠然吃草（此為濟州島的視覺標誌，源於傳統牧場用地的使用習慣）。**山頂步道偶爾因環境保育輪休而關閉**；海岸環形步道則全年開放。**免費入場**；停車場較小（尖峰時段常客滿）。即使晴天海風依然強勁——全年建議攜帶防風外套。",
-      "image": null,
+      "image": "/images/itinerary/songaksan-coastal-monument.webp",
       "highlights": [
         "**104公尺雙火山口火山** — 外火山口直徑500公尺×周長1.7公里，內火山口直徑400公尺×深69公尺",
         "**「九十九峰」（구십구봉）**民間稱謂 — 密集分布的次級火山錐群",
@@ -656,7 +592,12 @@
         "photo": "山頂全景可遠眺山房山；沿海步道旁有海蝕柱岩石",
         "facilities": "夏季山腳設有小型咖啡廳與餐車",
         "tip": "山頂風力強勁——請備防風外套；山腳可額外付費體驗騎馬"
-      }
+      },
+      "images": [
+        "/images/itinerary/songaksan-coastal-monument.webp",
+        "/images/itinerary/songaksan-cliff-trail-sunset.webp",
+        "/images/itinerary/songaksan-crater-aerial.webp"
+      ]
     },
     {
       "number": 6,
@@ -765,7 +706,7 @@
       "name": "O'Sulloc茶博物館＋綠茶田",
       "category": "茶文化遺產博物館 — 韓國最大綠茶田（西廣茶園）",
       "description": "**O'Sulloc茶博物館（오설록 티 뮤지엄，「오설록」意為「邂逅白雪與綠意」）**是**愛茉莉太平洋集團**——韓國最大美容企業——旗下的茶文化旗艦館。創辦人**徐成煥於1979年親自開拓此計畫**，在當時普遍認為韓國不具商業種茶條件的情況下，開墾濟州西廣高原上的火山灰農地。如今，**西廣茶園（서광다원）**已成為**韓國最大的綠茶田**，橫跨愛茉莉太平洋在濟州的三處茶園，**年產量約700噸**。\n\n博物館建築於**2001年**在茶園中心落成，以其坐落於茶田間的極簡主義綠色屋頂館舍設計，榮登**designboom全球十大藝術博物館**。**免費入場**，每日開放時間**09:00–18:00**，年訪客量約**200萬人次**。參觀行程自然分為三個段落：**(1) 館內展覽** — 茶葉生產流程、唐代（618–907年）以降的古代茶器典藏，以及可俯瞰整片茶園的頂層觀景台；**(2) 茶館咖啡廳** — 以當年採收茶葉製作的招牌**綠茶瑞士捲（오설록 롤케이크）**與**綠茶冰淇淋**；**(3) 茶園步道** — 茶樹列間的碎石小徑，西側邊緣尤為夕陽攝影的熱門地點。\n\n對品牌生態系感興趣的旅客，步行**5分鐘**即可抵達**Innisfree濟州之家**（愛茉莉太平洋旗下天然美妝品牌）——同樣免費入場，並提供可選的橘子香皂DIY工作坊（₩15,000）。博物館建築由韓國建築師**Mass Studies（趙敏碩）**操刀設計，刻意採用低調的水平量體，呼應茶田的幾何秩序，而非與農業景觀形成競爭——這份建築上的謙遜姿態，使其同時榮獲designboom十大榜單肯定，並持續被引用為韓國當代博物館設計的標竿案例。\n\n可選附加行程：**O'Sulloc品茶課程（每人₩30,000，60分鐘，需提前預訂）** — 在韓式陶瓷器皿上進行導覽式多款茶葉品飲，並示範沖泡技法，每日**10:00–16:00**開課，週三及週六場次提供英語教學。",
-      "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+      "image": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
       "highlights": [
         "**愛茉莉太平洋** 旗艦品牌——韓國最大美妝集團；創辦人徐成煥於 **1979年** 在濟州開拓茶園",
         "**西廣茶園＝韓國最大綠茶茶園**；年產量約 700 公噸",
@@ -795,6 +736,65 @@
           "Architectural Institute of Korea — 2009 Korea Architecture Award records",
           "designboom — Top 10 art museums feature",
           "VisitJeju — Osulloc Tea Museum official listing"
+        ],
+        "image": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+        "images": [
+          "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+          "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+          "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+          "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp"
+        ],
+        "galleryItems": [
+          {
+            "id": 1,
+            "type": "photo",
+            "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+            "location": "O'Sulloc Tea Museum & Tea Fields",
+            "alt": "O'Sulloc Tea Museum & Tea Fields ? photo 1",
+            "caption": "O'Sulloc Tea Museum & Tea Fields ? photo 1"
+          },
+          {
+            "id": 2,
+            "type": "photo",
+            "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+            "location": "O'Sulloc Tea Museum & Tea Fields",
+            "alt": "O'Sulloc Tea Museum & Tea Fields ? photo 2",
+            "caption": "O'Sulloc Tea Museum & Tea Fields ? photo 2"
+          },
+          {
+            "id": 3,
+            "type": "photo",
+            "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+            "location": "O'Sulloc Tea Museum & Tea Fields",
+            "alt": "O'Sulloc Tea Museum & Tea Fields ? photo 3",
+            "caption": "O'Sulloc Tea Museum & Tea Fields ? photo 3"
+          },
+          {
+            "id": 4,
+            "type": "photo",
+            "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+            "location": "O'Sulloc Tea Museum & Tea Fields",
+            "alt": "O'Sulloc Tea Museum & Tea Fields ? photo 4",
+            "caption": "O'Sulloc Tea Museum & Tea Fields ? photo 4"
+          }
+        ],
+        "imageCredits": [
+          {
+            "url": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+            "source": "atoc-korea"
+          },
+          {
+            "url": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+            "source": "atoc-korea"
+          },
+          {
+            "url": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+            "source": "atoc-korea"
+          },
+          {
+            "url": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+            "source": "atoc-korea"
+          }
         ]
       },
       "visitBasics": {
@@ -813,66 +813,26 @@
         "tip": "建議 10:30 前抵達，以避開旅遊巴士人潮；含咖啡廳與茶園步道，請預留 1.5–2 小時"
       },
       "images": [
-        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
-        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
-        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
-        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
-        "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
-        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
-        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
-        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
-        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
-        "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
-        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
-        "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+        "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+        "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+        "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+        "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "url": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "url": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "url": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+          "url": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
           "source": "atoc-korea"
         }
       ],
@@ -880,98 +840,34 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+          "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
           "location": "O'Sulloc茶博物館＋綠茶田",
-          "caption": "O'Sulloc茶博物館＋綠茶田 — photo 1",
-          "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 1"
+          "alt": "O'Sulloc茶博物館＋綠茶田 ? photo 1",
+          "caption": "O'Sulloc茶博物館＋綠茶田 ? photo 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+          "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
           "location": "O'Sulloc茶博物館＋綠茶田",
-          "caption": "O'Sulloc茶博物館＋綠茶田 — photo 2",
-          "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 2"
+          "alt": "O'Sulloc茶博物館＋綠茶田 ? photo 2",
+          "caption": "O'Sulloc茶博物館＋綠茶田 ? photo 2"
         },
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+          "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
           "location": "O'Sulloc茶博物館＋綠茶田",
-          "caption": "O'Sulloc茶博物館＋綠茶田 — photo 3",
-          "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 3"
+          "alt": "O'Sulloc茶博物館＋綠茶田 ? photo 3",
+          "caption": "O'Sulloc茶博物館＋綠茶田 ? photo 3"
         },
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+          "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
           "location": "O'Sulloc茶博物館＋綠茶田",
-          "caption": "O'Sulloc茶博物館＋綠茶田 — photo 4",
-          "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 4"
-        },
-        {
-          "id": 5,
-          "type": "photo",
-          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
-          "location": "O'Sulloc茶博物館＋綠茶田",
-          "caption": "O'Sulloc茶博物館＋綠茶田 — photo 5",
-          "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 5"
-        },
-        {
-          "id": 6,
-          "type": "photo",
-          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
-          "location": "O'Sulloc茶博物館＋綠茶田",
-          "caption": "O'Sulloc茶博物館＋綠茶田 — photo 6",
-          "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 6"
-        },
-        {
-          "id": 7,
-          "type": "photo",
-          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
-          "location": "O'Sulloc茶博物館＋綠茶田",
-          "caption": "O'Sulloc茶博物館＋綠茶田 — photo 7",
-          "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 7"
-        },
-        {
-          "id": 8,
-          "type": "photo",
-          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
-          "location": "O'Sulloc茶博物館＋綠茶田",
-          "caption": "O'Sulloc茶博物館＋綠茶田 — photo 8",
-          "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 8"
-        },
-        {
-          "id": 9,
-          "type": "photo",
-          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
-          "location": "O'Sulloc茶博物館＋綠茶田",
-          "caption": "O'Sulloc茶博物館＋綠茶田 — photo 9",
-          "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 9"
-        },
-        {
-          "id": 10,
-          "type": "photo",
-          "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
-          "location": "O'Sulloc茶博物館＋綠茶田",
-          "caption": "O'Sulloc茶博物館＋綠茶田 — photo 10",
-          "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 10"
-        },
-        {
-          "id": 11,
-          "type": "photo",
-          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
-          "location": "O'Sulloc茶博物館＋綠茶田",
-          "caption": "O'Sulloc茶博物館＋綠茶田 — photo 11",
-          "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 11"
-        },
-        {
-          "id": 12,
-          "type": "photo",
-          "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
-          "location": "O'Sulloc茶博物館＋綠茶田",
-          "caption": "O'Sulloc茶博物館＋綠茶田 — photo 12",
-          "alt": "O'Sulloc茶博物館＋綠茶田 — gallery image 12"
+          "alt": "O'Sulloc茶博物館＋綠茶田 ? photo 4",
+          "caption": "O'Sulloc茶博物館＋綠茶田 ? photo 4"
         }
       ]
     },
@@ -2479,7 +2375,7 @@
             "name": "奧雪綠茶博物館 + 綠茶田",
             "category": "茶文化博物館",
             "description": "濟州代表性綠茶莊園，創立於1979年。博物館詳述韓國茶文化；周圍茶田是極具代表性的拍照背景。免費入場。園區內咖啡廳供應綠茶冰淇淋、茶葉蛋糕及抹茶拿鐵。",
-            "image": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+            "image": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
             "highlights": [
               "韓國茶文化博物館",
               "綠茶田拍照背景",
@@ -2515,69 +2411,88 @@
                 "Trazy",
                 ""
               ],
-              "verified_date": "2026-04-27"
+              "verified_date": "2026-04-27",
+              "image": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+              "images": [
+                "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+                "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+                "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+                "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp"
+              ],
+              "galleryItems": [
+                {
+                  "id": 1,
+                  "type": "photo",
+                  "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+                  "location": "O'Sulloc Tea Museum & Tea Fields",
+                  "alt": "O'Sulloc Tea Museum & Tea Fields ? photo 1",
+                  "caption": "O'Sulloc Tea Museum & Tea Fields ? photo 1"
+                },
+                {
+                  "id": 2,
+                  "type": "photo",
+                  "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+                  "location": "O'Sulloc Tea Museum & Tea Fields",
+                  "alt": "O'Sulloc Tea Museum & Tea Fields ? photo 2",
+                  "caption": "O'Sulloc Tea Museum & Tea Fields ? photo 2"
+                },
+                {
+                  "id": 3,
+                  "type": "photo",
+                  "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+                  "location": "O'Sulloc Tea Museum & Tea Fields",
+                  "alt": "O'Sulloc Tea Museum & Tea Fields ? photo 3",
+                  "caption": "O'Sulloc Tea Museum & Tea Fields ? photo 3"
+                },
+                {
+                  "id": 4,
+                  "type": "photo",
+                  "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+                  "location": "O'Sulloc Tea Museum & Tea Fields",
+                  "alt": "O'Sulloc Tea Museum & Tea Fields ? photo 4",
+                  "caption": "O'Sulloc Tea Museum & Tea Fields ? photo 4"
+                }
+              ],
+              "imageCredits": [
+                {
+                  "url": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+                  "source": "atoc-korea"
+                },
+                {
+                  "url": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+                  "source": "atoc-korea"
+                },
+                {
+                  "url": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+                  "source": "atoc-korea"
+                },
+                {
+                  "url": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+                  "source": "atoc-korea"
+                }
+              ]
             },
             "images": [
-              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
-              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
-              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
-              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
-              "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
-              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
-              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
-              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
-              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
-              "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
-              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
-              "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp"
+              "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+              "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+              "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+              "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "url": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "url": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "url": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
+                "url": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2585,98 +2500,34 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+                "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
                 "location": "奧雪綠茶博物館 + 綠茶田",
-                "caption": "奧雪綠茶博物館 + 綠茶田 — photo 1",
-                "alt": "奧雪綠茶博物館 + 綠茶田 — gallery image 1"
+                "alt": "奧雪綠茶博物館 + 綠茶田 ? photo 1",
+                "caption": "奧雪綠茶博物館 + 綠茶田 ? photo 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+                "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
                 "location": "奧雪綠茶博物館 + 綠茶田",
-                "caption": "奧雪綠茶博物館 + 綠茶田 — photo 2",
-                "alt": "奧雪綠茶博物館 + 綠茶田 — gallery image 2"
+                "alt": "奧雪綠茶博物館 + 綠茶田 ? photo 2",
+                "caption": "奧雪綠茶博物館 + 綠茶田 ? photo 2"
               },
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+                "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
                 "location": "奧雪綠茶博物館 + 綠茶田",
-                "caption": "奧雪綠茶博物館 + 綠茶田 — photo 3",
-                "alt": "奧雪綠茶博物館 + 綠茶田 — gallery image 3"
+                "alt": "奧雪綠茶博物館 + 綠茶田 ? photo 3",
+                "caption": "奧雪綠茶博物館 + 綠茶田 ? photo 3"
               },
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+                "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
                 "location": "奧雪綠茶博物館 + 綠茶田",
-                "caption": "奧雪綠茶博物館 + 綠茶田 — photo 4",
-                "alt": "奧雪綠茶博物館 + 綠茶田 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-8-08-14-49.webp",
-                "location": "奧雪綠茶博物館 + 綠茶田",
-                "caption": "奧雪綠茶博物館 + 綠茶田 — photo 5",
-                "alt": "奧雪綠茶博物館 + 綠茶田 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-16-16.webp",
-                "location": "奧雪綠茶博物館 + 綠茶田",
-                "caption": "奧雪綠茶博物館 + 綠茶田 — photo 6",
-                "alt": "奧雪綠茶博物館 + 綠茶田 — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-01-14-03.webp",
-                "location": "奧雪綠茶博物館 + 綠茶田",
-                "caption": "奧雪綠茶博物館 + 綠茶田 — photo 7",
-                "alt": "奧雪綠茶博物館 + 綠茶田 — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-19.webp",
-                "location": "奧雪綠茶博物館 + 綠茶田",
-                "caption": "奧雪綠茶博物館 + 綠茶田 — photo 8",
-                "alt": "奧雪綠茶博物館 + 綠茶田 — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-25.webp",
-                "location": "奧雪綠茶博物館 + 綠茶田",
-                "caption": "奧雪綠茶博物館 + 綠茶田 — photo 9",
-                "alt": "奧雪綠茶博物館 + 綠茶田 — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/osulloc-tea/chatgpt-image-2026-5-11-12-23-51.webp",
-                "location": "奧雪綠茶博物館 + 綠茶田",
-                "caption": "奧雪綠茶博物館 + 綠茶田 — photo 10",
-                "alt": "奧雪綠茶博物館 + 綠茶田 — gallery image 10"
-              },
-              {
-                "id": 11,
-                "type": "photo",
-                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-04.webp",
-                "location": "奧雪綠茶博物館 + 綠茶田",
-                "caption": "奧雪綠茶博物館 + 綠茶田 — photo 11",
-                "alt": "奧雪綠茶博物館 + 綠茶田 — gallery image 11"
-              },
-              {
-                "id": 12,
-                "type": "photo",
-                "src": "/images/tours/osulloc-tea/kakaotalk-20260511-005035505-05.webp",
-                "location": "奧雪綠茶博物館 + 綠茶田",
-                "caption": "奧雪綠茶博物館 + 綠茶田 — photo 12",
-                "alt": "奧雪綠茶博物館 + 綠茶田 — gallery image 12"
+                "alt": "奧雪綠茶博物館 + 綠茶田 ? photo 4",
+                "caption": "奧雪綠茶博物館 + 綠茶田 ? photo 4"
               }
             ]
           },

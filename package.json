@@ -18,6 +18,8 @@
     "analyze": "ANALYZE=true next build",
     "create-merchant": "node scripts/create-merchant.js",
     "seed:places": "echo Run: curl -X POST http://localhost:3000/api/admin/seed-places-overviews -H \"x-seed-secret: $SEED_PLACES_SECRET\"",
+    "poi:locales:enrich": "node --env-file=.env.local scripts/enrich-match-pois-locales-from-tour-jsons.mjs",
+    "poi:photos:sync": "node --env-file=.env.local scripts/sync-match-poi-photos-with-tour-jsons.mjs",
     "mobile:setup": "node scripts/setup-react-native.sh",
     "android:add": "npx cap add android",
     "android:sync": "npx cap sync android",

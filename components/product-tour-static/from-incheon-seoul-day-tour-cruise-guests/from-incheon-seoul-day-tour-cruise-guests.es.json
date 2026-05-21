@@ -246,8 +246,16 @@
         "Comprobación de la opción de lanzadera gratuita del puerto en el vestíbulo de la terminal (~5 min si aplica)"
       ],
       "whyOnRoute": "La recogida en la Terminal de Cruceros de Incheon es el ancla logística del día — sin un traslado preorganizado, los pasajeros de cruceros se enfrentan a una distancia de 7 km desde la terminal hasta la estación de metro más cercana y a un taxi de 60-90 min hasta Seúl. El formato de furgoneta compartida mantiene el coste competitivo preservando la comodidad del servicio puerta a puerta. Para los pasajeros de cruceros, esta recogida es la parada que determina el coste fijo del día — los traslados preorganizados eliminan la brecha de 7 km entre el puerto y el metro y la alternativa del taxi de 60-90 min. Compartir la furgoneta con hasta 7 pasajeros más mantiene el coste competitivo (~30-50% del precio del charter privado) preservando la comodidad puerta a puerta; la hora de regreso a bordo está integrada en el programa del día con un margen de 90 minutos para el reembarque.",
-      "visitBasics": {},
-      "convenience": {},
+      "visitBasics": {
+        "hours": "Depende de la escala del crucero; la recogida se realiza tras el control migratorio en la terminal.",
+        "closed": "Disponible solo cuando el crucero hace escala en Incheon.",
+        "admission": "Sin entrada turística; el acceso a la terminal sigue las normas de seguridad portuaria y del crucero.",
+        "walking": "Fácil - caminata corta desde la pasarela/sala de llegadas hasta el punto de recogida junto a la acera."
+      },
+      "convenience": {
+        "restroom": "Dentro de las salas de llegada/salida de la terminal.",
+        "parking": "Paradas de buses turísticos y taxis fuera de la terminal; el conductor-guía espera en el punto asignado."
+      },
       "smartNotes": {
         "tip": "Calcule un mínimo de 30 min para inmigración coreana. Tenga el pasaporte y la tarjeta de crucero a mano. La dirección de la terminal en coreano es 인천항 크루즈터미널 (연수구 국제항만대로 438) — NO confundir con la antigua Terminal Internacional de Ferries de Incheon."
       },
@@ -256,7 +264,7 @@
         "verified": true,
         "match": "operational_pickup",
         "kb_version": "1.26",
-        "verified_date": "2026-04-29",
+        "verified_date": "2026-05-21",
         "note": "Operational pickup stop; references KB POI for terminal facts but kept brief as transit",
         "sources": [
           "Incheon Port Authority (incheonport.kr)",
@@ -453,7 +461,7 @@
       "duration": "75 min",
       "name": "Bukchon Hanok Village",
       "category": "Distrito Residencial Hanok",
-      "description": "Bukchon significa literalmente 'Aldea del Norte' — un distrito residencial hanok (casas tradicionales coreanas con tejado de tejas) de 600 años de antigüedad situado entre el Palacio Gyeongbokgung y el Palacio Changdeokgung, originalmente hogar de altos funcionarios del gobierno y la aristocracia de la dinastía Joseon. \n\nHoy en día, Bukchon es la mayor concentración de casas hanok conservadas de Seúl — aproximadamente 900 casas tradicionales distribuidas a lo largo de ocho famosos miradores (Bukchon 8 Gyeong / 8 Vistas de Bukchon) — con callejuelas en pendiente que ofrecen vistas de la Torre N de Seúl a lo lejos y las líneas de tejados de tejas curvadas descendiendo hacia la ciudad. \n\nLa vista emblemática es Gye-dong-gil (Callejón de los tejados hanok, cerca del mirador n.° 6 de Bukchon), donde los fotógrafos se congregan para capturar la icónica imagen de los tejados hanok en cascada con la Torre N de Seúl al fondo. Muchos hanok a lo largo del recorrido son residencias privadas (los residentes han pedido a los turistas que guarden silencio — hay señales que solicitan silencio después de las 22:00 y limitan la fotografía de las puertas). \n\nA lo largo del pueblo hay talleres culturales que ofrecen experiencias prácticas en nudos coreanos, artesanía de hanji (papel de morera), ceremonias tradicionales del té, bordado y cocina coreana. \n\nLas tiendas de alquiler de hanbok se agrupan en el borde del pueblo (~15.000-20.000 KRW durante 4 horas) — la combinación estándar de recorrido fotográfico junto con Gyeongbokgung. Insadong, la calle cultural y de artesanías, se encuentra a 5-10 minutos a pie hacia el sur. \n\nLa preservación del pueblo está supervisada por el **programa de preservación de Bukchon Hanok Village de la Oficina del Distrito de Jongno-gu** — estrictas normas de zonificación limitan la señalización comercial, las renovaciones deben utilizar materiales tradicionales (pantallas de papel hanji artesanal, marcos de madera, tejados de tejas), y el horario de silencio para los residentes de 22:00 a 10:00 se hace cumplir mediante señalización y vigilantes comunitarios durante la temporada alta.",
+      "description": "Bukchon significa literalmente 'Aldea del Norte' — un distrito residencial hanok (casas tradicionales coreanas con tejado de tejas) de 600 años de antigüedad situado entre el Palacio Gyeongbokgung y el Palacio Changdeokgung, originalmente hogar de altos funcionarios del gobierno y la aristocracia de la dinastía Joseon. \n\nHoy en día, Bukchon es la mayor concentración de casas hanok conservadas de Seúl — aproximadamente 900 casas tradicionales distribuidas a lo largo de ocho famosos miradores (Bukchon 8 Gyeong / 8 Vistas de Bukchon) — con callejuelas en pendiente que ofrecen vistas de la Torre N de Seúl a lo lejos y las líneas de tejados de tejas curvadas descendiendo hacia la ciudad. \n\nLa vista emblemática es Gye-dong-gil (Callejón de los tejados hanok, cerca del mirador n.° 6 de Bukchon), donde los fotógrafos se congregan para capturar la icónica imagen de los tejados hanok en cascada con la Torre N de Seúl al fondo. Muchos hanok a lo largo del recorrido son residencias privadas (los residentes han pedido a los turistas que guarden silencio — hay señales que solicitan silencio después de las 22:00 y limitan la fotografía de las puertas). \n\nA lo largo del pueblo hay talleres culturales que ofrecen experiencias prácticas en nudos coreanos, artesanía de hanji (papel de morera), ceremonias tradicionales del té, bordado y cocina coreana. \n\nLas tiendas de alquiler de hanbok se agrupan en el borde del pueblo (~15.000-20.000 KRW durante 4 horas) — la combinación estándar de recorrido fotográfico junto con Gyeongbokgung. Insadong, la calle cultural y de artesanías, se encuentra a 5-10 minutos a pie hacia el sur. \n\nLa preservación del pueblo está supervisada por el **programa de preservación de Bukchon Hanok Village de la Oficina del Distrito de Jongno-gu** — estrictas normas de zonificación limitan la señalización comercial, las renovaciones deben utilizar materiales tradicionales (pantallas de papel hanji artesanal, marcos de madera, tejados de tejas), y el horario de silencio para los residentes de 17:00 a 10:00 en la Zona Roja se hace cumplir mediante señalización y vigilantes comunitarios durante la temporada alta.",
       "highlights": [
         "El mayor distrito hanok preservado de Seúl — ~900 casas tradicionales en una sola área compacta",
         "Bukchon 8 Gyeong (8 famosos miradores) — la icónica vista de tejados hanok con la Torre N de Seúl en el mirador n.° 6",
@@ -462,7 +470,7 @@
         "Tiendas de alquiler de hanbok en el borde del pueblo para la combinación con entrada gratuita a Gyeongbokgung",
         "5-10 min a pie hasta la calle cultural de Insadong",
         "**~600 años de antigüedad** — distrito histórico entre los palacios Gyeongbokgung y Changdeokgung, originalmente hogar de altos funcionarios y aristocracia de la dinastía Joseon",
-        "**Horario de silencio para residentes de 22:00 a 10:00 en vigor** — el pueblo es una comunidad residencial VIVA (no un museo); el protocolo de respeto cultural es fundamental (sin flash en los callejones, voz baja, sin drones)",
+        "**Horario de silencio para residentes de 17:00 a 10:00 en la Zona Roja en vigor** — el pueblo es una comunidad residencial VIVA (no un museo); el protocolo de respeto cultural es fundamental (sin flash en los callejones, voz baja, sin drones)",
         "**Entrada Combinada Palacios Reales ₩10,000 adulto / ₩5,000 niño** incluye los 4 palacios reales (Gyeongbokgung + Changdeokgung incl. Jardín Secreto + Changgyeonggung + Deoksugung) + Santuario Jongmyo — validez de 3 meses; ahorro frente a entradas individuales si se combina con un día de tour privado por hanoks"
       ],
       "timeUsed": [
@@ -474,7 +482,7 @@
       ],
       "whyOnRoute": "Bukchon es el punto de transición natural entre la arquitectura real a gran escala de Gyeongbokgung y el paisaje urbano doméstico de la época Joseon, completando así la narrativa de «cómo vivían reyes Y aristócratas hace 500 años» a escasa distancia a pie. Se eligió frente al Pueblo Hanok de Namsangol (un museo al aire libre curado) porque Bukchon es un pueblo VIVO con residentes, mucho más auténtico para el pasajero de crucero que busca una experiencia con historia. Para los visitantes de crucero con una sola jornada en Seúl, Bukchon ofrece la mejor oportunidad fotográfica «de época» del día: tejados de hanok + vistas a los callejones con destino a Insadong + los 8 miradores Gyeong de Bukchon convierten este lugar en una parada de 75 min digna de Instagram, a distancia a pie tanto de Gyeongbokgung como de Insadong.",
       "visitBasics": {
-        "hours": "24 horas (los callejones están siempre accesibles); los residentes solicitan silencio de 22:00 a 10:00",
+        "hours": "24 horas (los callejones están siempre accesibles); los residentes solicitan silencio de 17:00 a 10:00 en la Zona Roja",
         "closed": "Abierto todo el año; algunos museos hanok privados pueden cerrar los lunes",
         "admission": "Entrada gratuita a los callejones (los talleres y museos privados cobran entre 5.000 y 10.000 KRW)",
         "walking": "Moderado — callejones empedrados y con pendiente; calzado cómodo imprescindible"
@@ -493,7 +501,7 @@
         "verified": true,
         "match": "single_poi",
         "kb_version": "1.26",
-        "verified_date": "2026-04-29",
+        "verified_date": "2026-05-21",
         "sources": [
           "Visit Seoul official (english.visitseoul.net)",
           "Bukchon Traditional Culture Center",
