@@ -74,6 +74,14 @@ export default function BottomNav() {
                   whileTap={reduce ? undefined : { scale: 0.88 }}
                   transition={{ type: "spring", stiffness: 600, damping: 20 }}
                   aria-hidden
+                  // Explicit tabIndex makes the rendered attribute deterministic:
+                  // framer-motion auto-adds tabIndex={0} to gesture elements
+                  // (whileTap) unless one is set, and whileTap is reduce-gated —
+                  // so the server (reduce=false) emitted tabindex="0" while the
+                  // reduce-motion client emitted none → hydration mismatch. -1 is
+                  // also correct here: this is an aria-hidden decorative wrapper,
+                  // not a focus target (the parent <Link> is).
+                  tabIndex={-1}
                 >
                   <item.Icon
                     size={23}
