@@ -73,6 +73,13 @@ export default function IntakeForm() {
   const [hours, setHours] = useState<string>("6");
   const [duration, setDuration] = useState<string>("8");
   const [ship, setShip] = useState<string>("");
+  // Travel date is required (drives peak-season pricing + the T-7 booking
+  // deadline downstream); party size drives the pax-tier surcharge + vehicle
+  // class. Both used to live in QuoteModal — pulled up so the first quote is
+  // accurate. QuoteModal still reads them from `?date=` / `?party=`.
+  const [date, setDate] = useState<string>(() => searchParams?.get("date") ?? "");
+  const [party, setParty] = useState<string>(() => searchParams?.get("party") ?? "2");
+  const today = new Date().toISOString().slice(0, 10);
   const [guideLang, setGuideLang] = useState<string>(() => {
     const initial = searchParams?.get("lang") || locale;
     return GUIDE_LANGS.some((g) => g.code === initial) ? initial : "en";
@@ -85,6 +92,9 @@ export default function IntakeForm() {
     const params = new URLSearchParams();
     params.set("track", track);
     params.set("lang", guideLang);
+    if (date) params.set("date", date);
+    const paxNum = Number(party);
+    if (Number.isFinite(paxNum) && paxNum > 0) params.set("party", String(Math.round(paxNum)));
     const destRegion: RegionSlug = track === "dmz" ? "seoul" : region;
     if (track === "private") {
       const d = Number(duration);
@@ -107,10 +117,10 @@ export default function IntakeForm() {
         <legend className={FIELD_LABEL}>{t("trackLegend")}</legend>
         <div className="grid grid-cols-3 gap-2">
           {([
-            { value: "private", label: t("trackPrivateLabel"), Icon: Car },
-            { value: "cruise", label: t("trackCruiseLabel"), Icon: Ship },
-            { value: "dmz", label: t("trackDmzLabel"), Icon: ShieldAlert },
-          ]).map(({ value, label, Icon }) => {
+            { value: "private", label: t("trackPrivateLabel"), Icon: Car, sub: null },
+            { value: "cruise", label: t("trackCruiseLabel"), Icon: Ship, sub: t("trackCruiseSub") },
+            { value: "dmz", label: t("trackDmzLabel"), Icon: ShieldAlert, sub: null },
+          ]).map(({ value, label, Icon, sub }) => {
             const active = track === value;
             return (
               <label
@@ -134,6 +144,16 @@ export default function IntakeForm() {
                   aria-hidden
                 />
                 <span className="text-[13px] font-semibold tracking-tight md:text-caption">{label}</span>
+                {sub ? (
+                  <span
+                    className={cn(
+                      "text-[10px] font-medium leading-tight tracking-tight",
+                      active ? "text-white/70" : "text-slate-400"
+                    )}
+                  >
+                    {sub}
+                  </span>
+                ) : null}
               </label>
             );
           })}
@@ -273,6 +293,37 @@ export default function IntakeForm() {
           {t("dmzHint")}
         </motion.p>
       ) : null}
+
+      {/* Travel date (required) + party size — both feed the live quote
+          (peak-season + pax-tier). Pulled up from QuoteModal. */}
+      <motion.div variants={REVEAL_ITEM_VARIANTS} className="grid grid-cols-2 gap-2">
+        <label className="block">
+          <span className={FIELD_LABEL}>
+            {t("dateLabel")} <span className="font-normal text-rose-500">*</span>
+          </span>
+          <input
+            type="date"
+            required
+            min={today}
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            className={INPUT_BASE}
+          />
+        </label>
+        <label className="block">
+          <span className={FIELD_LABEL}>{t("partyLabel")}</span>
+          <input
+            type="number"
+            min={1}
+            max={30}
+            inputMode="numeric"
+            value={party}
+            onChange={(e) => setParty(e.target.value)}
+            placeholder="2"
+            className={INPUT_BASE}
+          />
+        </label>
+      </motion.div>
 
       <motion.div variants={REVEAL_ITEM_VARIANTS} className="space-y-2.5 pt-1">
         <button
