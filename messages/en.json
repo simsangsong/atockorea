@@ -2247,48 +2247,7 @@
       "close": "Close",
       "responseHint": "We'll respond within 24 hours by email.",
       "errorEmailRequired": "Please enter your email so we can reply.",
-      "errorGeneric": "Couldn't send the request — please try again or contact support.",
-      "eyebrow": "Custom itinerary",
-      "guideLanguageLabel": "Guide language",
-      "durationLabel": "Tour length",
-      "hoursOption": "{hours}h",
-      "solatiUnavailable": "10–13 needs 6h+",
-      "pickupLabel": "Jeju pickup area",
-      "cartHeader": "Your stops",
-      "andNMore": "+{n} more",
-      "pricing": {
-        "title": "Estimated price",
-        "total": "Estimated total",
-        "estimateNote": "Live estimate — we confirm the final price by email.",
-        "manualTitle": "We'll confirm by email",
-        "manualNote": "Your group size or options need a quick human check — we'll reply within 24 hours with the exact price.",
-        "solatiMinHint": "Groups of 10–13 (Solati van) start from 6 hours.",
-        "notIncluded": "Meal costs and attraction entrance tickets are NOT included in the tour price and will be paid separately on the day.",
-        "jejuSingleRegion": "Each tour covers ONE region of Jeju (East, West, or South). Covering two regions incurs an additional fee of ₩60,000.",
-        "lines": {
-          "base": "Base — {hours}h private tour",
-          "van": "Vehicle — van (7–9 guests)",
-          "solati": "Vehicle — Solati (10–13 guests)",
-          "solatiPeak": "Vehicle — Solati (10–13, peak season)",
-          "region": "Out-of-city surcharge",
-          "jejuCrossRegion": "Two-region surcharge",
-          "jejuPickup": "Pickup area ({zone})",
-          "dmzBase": "DMZ private tour ({pax} guests)",
-          "cruiseExcursion": "Cruise shore-excursion",
-          "gangjeongPort": "Gangjeong Port"
-        },
-        "pickupZones": {
-          "city": "Jeju City — no surcharge",
-          "north": "North coast (Aewol, Samyang) +₩40,000",
-          "outer": "Outer areas (Seongsan, Seogwipo) +₩60,000",
-          "cross_island": "Cross-island (150 km+) +₩30,000"
-        },
-        "cruisePorts": {
-          "gangjeong": "Gangjeong Port (Seogwipo) +₩70,000",
-          "jeju_port": "Jeju Port (city, north)"
-        }
-      },
-      "cruisePortLabel": "Cruise port"
+      "errorGeneric": "Couldn't send the request — please try again or contact support."
     },
     "intake": {
       "trackLegend": "How are you traveling?",
@@ -2306,12 +2265,7 @@
       "submit": "Open the map",
       "browsePackagesInstead": "Or explore our ready-made tours →",
       "dateAndPartyDeferredHint": "We'll ask for travel date + party size when you submit your quote.",
-      "autoQuoteReassurance": "Some itineraries get an instant price — we reply within 24h for the rest.",
-      "trackDmzLabel": "DMZ Tour",
-      "guideLanguageLegend": "Guide language",
-      "durationLegend": "Tour length",
-      "durationHint": "Pick how long your day runs — pricing scales with the hours.",
-      "dmzHint": "The DMZ tour follows a fixed itinerary (3rd Tunnel, observatory, suspension bridge) at a flat price by group size. Choose your party size on the next step."
+      "autoQuoteReassurance": "Some itineraries get an instant price — we reply within 24h for the rest."
     },
     "cart": {
       "title": "Your itinerary",
@@ -2362,13 +2316,8 @@
     "timeline": {
       "emptyHeadline": "Build your day, stop by stop",
       "emptyBody": "Add stops from the map or the curated list — they'll line up here as your route.",
-      "lookAtMap": "Back to the map",
+      "lookAtMap": "Look at the map",
       "driveBetween": "{duration} drive"
-    },
-    "dmz": {
-      "title": "DMZ Private Tour",
-      "body": "A fixed full-day itinerary to the edge of the Korean peninsula's most fortified border — Imjingak, the 3rd Infiltration Tunnel, Dora Observatory, and the Gamaksan suspension bridge. Flat price by group size, with your own car + guide.",
-      "cta": "See my price"
     }
   },
   "appShell": {
