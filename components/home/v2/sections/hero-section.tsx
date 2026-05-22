@@ -246,37 +246,61 @@ export function HeroSection() {
         className="relative px-4 md:px-8 pt-0 pb-8 md:pb-10"
         style={{ background: "linear-gradient(to bottom, #faf9f7, #fdfcfb, #ffffff)" }}
       >
-        {/* ── Value Bridge ─────────────────────────────────────────── */}
-        {/*
-          Inline 3-stat row sitting on the page background. Earlier this was
-          wrapped in its own white card, which created a stacked-panel
-          composition with the matcher card directly below — two equal-weight
-          surfaces fighting for the eye. Flattened to a divider-separated row
-          so the matcher reads as the single focal card on the hero.
-        */}
-        {/* Phase B.3.2: compact Trust strip — vertical padding cut ~24px (mobile
-            pt-6 pb-7 → pt-3 pb-4) so the matcher CTA clears the iPhone 14
-            fold (Phase 0c measured -81px gap). Stats themselves keep full
-            text-h3 weight per §B "premium > 절제" decision. */}
-        <div className="mx-auto max-w-lg pt-3 pb-4 md:pt-4 md:pb-5">
-          <div className="grid grid-cols-3 divide-x divide-slate-200/70 text-center">
-            <div className="px-2">
-              <span className="block text-h3 font-extrabold leading-none text-slate-900">
-                4.9<span className="text-[11px] text-amber-400">★</span>
+        {/* ── Curation Proof ───────────────────────────────────────────
+            Replaces the old 4.9★ / 100K+ / 8 stat row. The headline's two
+            clauses map 1:1 to the two stats — "Curated by humans" → the
+            shortlist count, "Proven by travelers" → combined OTA bookings —
+            so the value proposition lands at a glance. The proof line carries
+            the breadth-of-review signal qualitatively (no fabricated count).
+            Fold-aware: mobile keeps tight padding and hides the longer proof
+            line so the matcher CTA stays close to the iPhone 14 fold (Phase
+            0c). Headline uses the hero's Inter family — no serif departure —
+            to preserve the established premium type voice. */}
+        <div className="mx-auto max-w-xl px-1 pt-3 pb-4 md:pt-5 md:pb-6">
+          <h2
+            className="text-center text-[0.98rem] font-bold leading-snug tracking-[-0.015em] text-slate-900 md:text-[1.2rem]"
+            style={{ fontFamily: "var(--font-inter), Inter, system-ui, sans-serif" }}
+          >
+            {t("premium.hero.curationHeadline")}
+          </h2>
+
+          {/* Three stats under the two-clause headline: "Curated by humans"
+              → 30 curated tours; "Proven by travelers" → 100K+ OTA bookings
+              + 4.9★ average rating. The star rating is kept as the strongest
+              single conversion signal; the amber star ties to the brand
+              accent. Concise labels keep all three readable in 3 columns. */}
+          <div className="mx-auto mt-3 grid max-w-md grid-cols-3 divide-x divide-slate-200/70 text-center md:mt-4">
+            <div className="px-2.5">
+              <span className="block text-h3 font-extrabold leading-none text-slate-900 md:text-[1.5rem]">
+                {t("premium.hero.curationShortlistValue")}
               </span>
-              <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-500">{t("premium.hero.trustAvgRating")}</span>
+              <span className="mt-1.5 block text-caption font-medium leading-tight text-slate-500">
+                {t("premium.hero.curationShortlistLabel")}
+              </span>
             </div>
 
-            <div className="px-2">
-              <span className="block text-h3 font-extrabold leading-none text-slate-900">100K+</span>
-              <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-500">{t("premium.hero.trustBookings")}</span>
+            <div className="px-2.5">
+              <span className="block text-h3 font-extrabold leading-none text-slate-900 md:text-[1.5rem]">
+                {t("premium.hero.curationBookingsValue")}
+              </span>
+              <span className="mt-1.5 block text-caption font-medium leading-tight text-slate-500">
+                {t("premium.hero.curationBookingsLabel")}
+              </span>
             </div>
 
-            <div className="px-2">
-              <span className="block text-h3 font-extrabold leading-none text-slate-900">8</span>
-              <span className="mt-1.5 block text-micro font-semibold uppercase tracking-wide text-slate-500">{t("premium.hero.trustPlatforms")}</span>
+            <div className="px-2.5">
+              <span className="block text-h3 font-extrabold leading-none text-slate-900 md:text-[1.5rem]">
+                {t("premium.hero.curationRatingValue")}<span className="text-[0.6em] text-amber-400">★</span>
+              </span>
+              <span className="mt-1.5 block text-caption font-medium leading-tight text-slate-500">
+                {t("premium.hero.curationRatingLabel")}
+              </span>
             </div>
           </div>
+
+          <p className="mx-auto mt-3 hidden max-w-md text-center text-caption leading-relaxed text-slate-500 md:mt-4 md:block">
+            {t("premium.hero.curationProof")}
+          </p>
         </div>
         {/* ────────────────────────────────────────────────────────── */}
 
