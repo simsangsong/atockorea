@@ -2,15 +2,13 @@
 
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { ArrowRight, MapPin, Ship, Car, Sparkles, ShieldAlert } from "lucide-react";
 import { useTranslations, useI18n } from "@/lib/i18n";
 import { homeBtnPrimary } from "@/lib/home/home-button-classes";
 import { cn } from "@/lib/utils";
-import {
-  REVEAL_ITEM_VARIANTS,
-  useRevealContainerProps,
-} from "@/components/home/v2/ui/reveal";
+import { REVEAL_ITEM_VARIANTS } from "@/components/home/v2/ui/reveal";
+import IntakeDateField from "./IntakeDateField";
 
 type Track = "private" | "cruise" | "dmz";
 type RegionSlug = "busan" | "jeju" | "seoul";
@@ -79,16 +77,34 @@ export default function IntakeForm() {
   // accurate. QuoteModal still reads them from `?date=` / `?party=`.
   const [date, setDate] = useState<string>(() => searchParams?.get("date") ?? "");
   const [party, setParty] = useState<string>(() => searchParams?.get("party") ?? "2");
+  const [dateError, setDateError] = useState(false);
   const today = new Date().toISOString().slice(0, 10);
   const [guideLang, setGuideLang] = useState<string>(() => {
     const initial = searchParams?.get("lang") || locale;
     return GUIDE_LANGS.some((g) => g.code === initial) ? initial : "en";
   });
 
-  const reveal = useRevealContainerProps();
+  // Mount-reveal (NOT scroll-reveal). The shared whileInView container left
+  // conditional fields (region / cruise hours / ship) that mount on track
+  // change stuck at opacity:0 — they revealed once, never re-fired, and showed
+  // as blank gaps. Animating on mount makes the parent's "visible" state
+  // propagate to any child that mounts later, so conditional fields appear.
+  const reduceMotion = useReducedMotion();
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: reduceMotion
+        ? { duration: 0 }
+        : { staggerChildren: 0.06, duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!date) {
+      setDateError(true);
+      return;
+    }
     const params = new URLSearchParams();
     params.set("track", track);
     params.set("lang", guideLang);
@@ -111,7 +127,13 @@ export default function IntakeForm() {
   }
 
   return (
-    <motion.form {...reveal} onSubmit={handleSubmit} className="space-y-5">
+    <motion.form
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      onSubmit={handleSubmit}
+      className="space-y-5"
+    >
       {/* Track toggle (private / cruise / DMZ) */}
       <motion.fieldset variants={REVEAL_ITEM_VARIANTS}>
         <legend className={FIELD_LABEL}>{t("trackLegend")}</legend>
@@ -296,20 +318,31 @@ export default function IntakeForm() {
 
       {/* Travel date (required) + party size — both feed the live quote
           (peak-season + pax-tier). Pulled up from QuoteModal. */}
-      <motion.div variants={REVEAL_ITEM_VARIANTS} className="grid grid-cols-2 gap-2">
-        <label className="block">
-          <span className={FIELD_LABEL}>
+      <motion.div variants={REVEAL_ITEM_VARIANTS} className="space-y-4">
+        <div className="block">
+          <span className={FIELD_LABEL} id="intake-date-label">
             {t("dateLabel")} <span className="font-normal text-rose-500">*</span>
           </span>
-          <input
-            type="date"
-            required
-            min={today}
+          <IntakeDateField
+            id="intake-date"
             value={date}
-            onChange={(e) => setDate(e.target.value)}
-            className={INPUT_BASE}
+            onChange={(v) => {
+              setDate(v);
+              setDateError(false);
+            }}
+            min={today}
+            locale={locale}
+            invalid={dateError}
+            placeholder={t("dateSelect")}
+            todayLabel={t("dateToday")}
+            tomorrowLabel={t("dateTomorrow")}
           />
-        </label>
+          {dateError ? (
+            <span className="mt-1 block text-micro font-medium text-rose-600">
+              {t("dateRequired")}
+            </span>
+          ) : null}
+        </div>
         <label className="block">
           <span className={FIELD_LABEL}>{t("partyLabel")}</span>
           <input
@@ -320,7 +353,7 @@ export default function IntakeForm() {
             value={party}
             onChange={(e) => setParty(e.target.value)}
             placeholder="2"
-            className={INPUT_BASE}
+            className={cn(INPUT_BASE, "max-w-[7.5rem] tabular-nums")}
           />
         </label>
       </motion.div>
