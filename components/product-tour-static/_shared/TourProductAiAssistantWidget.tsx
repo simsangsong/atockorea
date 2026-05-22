@@ -86,9 +86,39 @@ function ChatBotAvatar({ className }: { className?: string }) {
   );
 }
 
-type ChatMessage = { role: "user" | "assistant"; content: string };
+type ChatMessage = {
+  role: "user" | "assistant";
+  content: string;
+  origin?: "ai" | "admin" | "support_user" | "system";
+  supportMessageId?: number;
+};
+type AssistantResponse = {
+  reply?: string;
+  error?: string;
+  message?: string;
+  ticket_id?: number | null;
+  escalated?: boolean;
+  escalation_reason?: string | null;
+  handoff_offered?: boolean;
+};
+type LiveSupportMessage = {
+  id: number;
+  ticket_id: number;
+  message_index: number;
+  sender: "user" | "admin" | "system";
+  content: string;
+  created_at: string;
+};
+type LiveSupportResponse = {
+  ticket?: { id: number; status: string } | null;
+  messages?: LiveSupportMessage[];
+  message?: LiveSupportMessage;
+  ticket_id?: number;
+  error?: string;
+};
 
 const STORAGE_PREFIX = "tour-product-assistant:";
+const LIVE_TICKET_PREFIX = "tour-product-assistant-live-ticket:";
 
 const MSG_EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -126,6 +156,14 @@ export function TourProductAiAssistantWidget({
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [handoffOffer, setHandoffOffer] = useState<{ question: string } | null>(null);
+  const [activeTicketId, setActiveTicketId] = useState<number | null>(() => {
+    if (typeof window === "undefined") return null;
+    const raw = window.sessionStorage.getItem(`${LIVE_TICKET_PREFIX}${tourProductSlug}`);
+    const parsed = raw ? Number(raw) : NaN;
+    return Number.isSafeInteger(parsed) && parsed > 0 ? parsed : null;
+  });
+  const [liveStatus, setLiveStatus] = useState<string | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>(() => {
     if (typeof window === "undefined") return [];
     try {
@@ -139,13 +177,36 @@ export function TourProductAiAssistantWidget({
           typeof m === "object" &&
           (m as ChatMessage).role &&
           typeof (m as ChatMessage).content === "string",
-      ) as ChatMessage[];
+      ).map((m) => ({
+        role: (m as ChatMessage).role,
+        content: (m as ChatMessage).content,
+        origin: (m as ChatMessage).origin,
+        supportMessageId:
+          typeof (m as ChatMessage).supportMessageId === "number"
+            ? (m as ChatMessage).supportMessageId
+            : undefined,
+      })) as ChatMessage[];
     } catch {
       return [];
     }
   });
   const listRef = useRef<HTMLDivElement>(null);
   const inputId = useId();
+  const lastSupportMessageIdRef = useRef(0);
+  const liveSupportActive = activeTicketId !== null && liveStatus !== "resolved" && liveStatus !== "closed";
+
+  const pageContext = useCallback(
+    () =>
+      typeof window !== "undefined"
+        ? {
+            url: window.location.href.slice(0, 2000),
+            title: document.title?.slice(0, 400) ?? undefined,
+            // best-effort current section: read [#fragment] or document scroll
+            section: window.location.hash ? window.location.hash.replace(/^#/, "").slice(0, 80) : undefined,
+          }
+        : undefined,
+    [],
+  );
 
   const runAssistant = useCallback(
     async (next: ChatMessage[]) => {
@@ -157,19 +218,13 @@ export function TourProductAiAssistantWidget({
           body: JSON.stringify({
             tourProductSlug,
             messages: next,
-            pageContext: typeof window !== "undefined"
-              ? {
-                  url: window.location.href.slice(0, 2000),
-                  title: document.title?.slice(0, 400) ?? undefined,
-                  // best-effort current section: read [#fragment] or document scroll
-                  section: window.location.hash ? window.location.hash.replace(/^#/, "").slice(0, 80) : undefined,
-                }
-              : undefined,
+            pageContext: pageContext(),
           }),
         });
-        const data = (await res.json()) as { reply?: string; error?: string; message?: string };
+        const data = (await res.json()) as AssistantResponse;
         if (!res.ok) {
           const err = data.message || data.error || "Request failed";
+          setHandoffOffer(null);
           setMessages((prev) => [
             ...prev,
             {
@@ -183,9 +238,16 @@ export function TourProductAiAssistantWidget({
           return;
         }
         if (data.reply) {
-          setMessages([...next, { role: "assistant", content: data.reply! }]);
+          setMessages([...next, { role: "assistant", content: data.reply!, origin: "ai" }]);
+          const lastUserQuestion = [...next].reverse().find((m) => m.role === "user")?.content ?? "";
+          setHandoffOffer(data.handoff_offered ? { question: lastUserQuestion } : null);
+          if (data.ticket_id && data.escalated) {
+            setActiveTicketId(data.ticket_id);
+            setLiveStatus("open");
+          }
         }
       } catch {
+        setHandoffOffer(null);
         setMessages((prev) => [
           ...prev,
           {
@@ -197,27 +259,160 @@ export function TourProductAiAssistantWidget({
         setLoading(false);
       }
     },
-    [tourProductSlug],
+    [pageContext, tourProductSlug],
   );
+
+  const applyLiveSupportMessages = useCallback((incoming: LiveSupportMessage[]) => {
+    if (incoming.length === 0) return;
+    setMessages((prev) => {
+      const seen = new Set(prev.map((m) => m.supportMessageId).filter((id): id is number => typeof id === "number"));
+      const nextMessages = incoming
+        .filter((m) => !seen.has(m.id))
+        .map<ChatMessage>((m) => ({
+          role: m.sender === "user" ? "user" : "assistant",
+          content: m.content,
+          origin: m.sender === "admin" ? "admin" : m.sender === "system" ? "system" : "support_user",
+          supportMessageId: m.id,
+        }));
+      return nextMessages.length > 0 ? [...prev, ...nextMessages] : prev;
+    });
+  }, []);
+
+  const sendLiveSupportMessage = useCallback(
+    async (text: string) => {
+      if (!activeTicketId) return;
+      setLoading(true);
+      try {
+        const res = await fetch("/api/tour-product/assistant/live", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ticketId: activeTicketId,
+            content: text,
+          }),
+        });
+        const data = (await res.json()) as LiveSupportResponse;
+        if (!res.ok) {
+          const err = data.error || "Request failed";
+          setMessages((prev) => [
+            ...prev,
+            {
+              role: "assistant",
+              content: `담당자에게 메시지를 전달하지 못했습니다 (${err}). 잠시 후 다시 시도해 주세요.`,
+              origin: "system",
+            },
+          ]);
+          return;
+        }
+        if (data.ticket_id) setActiveTicketId(data.ticket_id);
+        if (data.message) {
+          setMessages((prev) => {
+            let updated = false;
+            const nextMessages = prev.map((m, idx) => {
+              if (!updated && idx === prev.length - 1 && m.role === "user" && m.content === text && !m.supportMessageId) {
+                updated = true;
+                return { ...m, origin: "support_user" as const, supportMessageId: data.message!.id };
+              }
+              return m;
+            });
+            return updated ? nextMessages : nextMessages;
+          });
+        }
+      } catch {
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: "assistant",
+            content: "네트워크 오류로 담당자에게 메시지를 전달하지 못했습니다. 연결을 확인한 뒤 다시 시도해 주세요.",
+            origin: "system",
+          },
+        ]);
+      } finally {
+        setLoading(false);
+      }
+    },
+    [activeTicketId],
+  );
+
+  const requestHumanSupport = useCallback(async () => {
+    if (loading || !handoffOffer) return;
+    const handoffMessage = "네, 담당자 고객센터로 연결해주세요.";
+    const next: ChatMessage[] = [...messages, { role: "user", content: handoffMessage }];
+    setHandoffOffer(null);
+    setMessages(next);
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/tour-product/assistant", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          tourProductSlug,
+          messages: next,
+          handoffRequested: true,
+          handoffQuestion: handoffOffer.question,
+          pageContext: pageContext(),
+        }),
+      });
+      const data = (await res.json()) as AssistantResponse;
+      if (!res.ok) {
+        const err = data.message || data.error || "Request failed";
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: "assistant",
+            content: `고객센터 연결을 접수하지 못했습니다 (${err}). 잠시 후 다시 시도하거나 contact 페이지를 이용해 주세요.`,
+          },
+        ]);
+        return;
+      }
+      if (data.reply) {
+        setMessages([...next, { role: "assistant", content: data.reply, origin: "system" }]);
+      }
+      if (data.ticket_id) {
+        setActiveTicketId(data.ticket_id);
+        setLiveStatus("open");
+      }
+    } catch {
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content: "네트워크 오류로 고객센터 연결을 접수하지 못했습니다. 연결을 확인한 뒤 다시 시도해 주세요.",
+        },
+      ]);
+    } finally {
+      setLoading(false);
+    }
+  }, [handoffOffer, loading, messages, pageContext, tourProductSlug]);
 
   const send = useCallback(async () => {
     const text = input.trim();
     if (!text || loading) return;
     setInput("");
-    const next: ChatMessage[] = [...messages, { role: "user", content: text }];
+    setHandoffOffer(null);
+    const next: ChatMessage[] = [
+      ...messages,
+      { role: "user", content: text, origin: liveSupportActive ? "support_user" : undefined },
+    ];
     setMessages(next);
+    if (liveSupportActive) {
+      await sendLiveSupportMessage(text);
+      return;
+    }
     await runAssistant(next);
-  }, [input, loading, messages, runAssistant]);
+  }, [input, liveSupportActive, loading, messages, runAssistant, sendLiveSupportMessage]);
 
   const sendPreset = useCallback(
     async (text: string) => {
       const t = text.trim();
-      if (!t || loading) return;
+      if (!t || loading || liveSupportActive) return;
+      setHandoffOffer(null);
       const next: ChatMessage[] = [...messages, { role: "user", content: t }];
       setMessages(next);
       await runAssistant(next);
     },
-    [loading, messages, runAssistant],
+    [liveSupportActive, loading, messages, runAssistant],
   );
 
   useEffect(() => {
@@ -229,13 +424,73 @@ export function TourProductAiAssistantWidget({
   }, [messages, tourProductSlug]);
 
   useEffect(() => {
+    try {
+      if (activeTicketId) {
+        window.sessionStorage.setItem(`${LIVE_TICKET_PREFIX}${tourProductSlug}`, String(activeTicketId));
+      } else {
+        window.sessionStorage.removeItem(`${LIVE_TICKET_PREFIX}${tourProductSlug}`);
+      }
+    } catch {
+      /* ignore */
+    }
+  }, [activeTicketId, tourProductSlug]);
+
+  useEffect(() => {
+    lastSupportMessageIdRef.current = messages.reduce(
+      (max, m) => Math.max(max, typeof m.supportMessageId === "number" ? m.supportMessageId : 0),
+      0,
+    );
+  }, [messages]);
+
+  useEffect(() => {
+    if (!activeTicketId) return;
+    let cancelled = false;
+    let timer: number | null = null;
+
+    const poll = async () => {
+      try {
+        const params = new URLSearchParams({
+          ticketId: String(activeTicketId),
+          afterId: String(lastSupportMessageIdRef.current),
+        });
+        const res = await fetch(`/api/tour-product/assistant/live?${params.toString()}`, {
+          credentials: "same-origin",
+        });
+        const data = (await res.json()) as LiveSupportResponse;
+        if (cancelled || !res.ok) return;
+        if (data.ticket === null) {
+          setActiveTicketId(null);
+          setLiveStatus(null);
+          return;
+        }
+        if (data.messages) applyLiveSupportMessages(data.messages);
+        if (data.ticket?.status) {
+          setLiveStatus(data.ticket.status);
+          if (data.ticket.status === "resolved" || data.ticket.status === "closed") {
+            setActiveTicketId(null);
+          }
+        }
+      } catch {
+        // Keep polling; transient network drops should not end the chat.
+      }
+    };
+
+    void poll();
+    timer = window.setInterval(() => void poll(), 1500);
+    return () => {
+      cancelled = true;
+      if (timer) window.clearInterval(timer);
+    };
+  }, [activeTicketId, applyLiveSupportMessages]);
+
+  useEffect(() => {
     if (open && listRef.current) {
       listRef.current.scrollTop = listRef.current.scrollHeight;
     }
-  }, [open, messages, loading]);
+  }, [open, messages, loading, handoffOffer, activeTicketId]);
 
   const showChips = supportQuickChips.length > 0;
-  const chipsDisabled = loading;
+  const chipsDisabled = loading || liveSupportActive;
 
   return (
     <div
@@ -276,6 +531,12 @@ export function TourProductAiAssistantWidget({
                 <h2 className="mt-1.5 text-sm font-bold leading-tight tracking-tight text-[var(--foreground)]">
                   Ask about this tour
                 </h2>
+                {liveSupportActive && (
+                  <div className="mt-1 inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 ring-1 ring-emerald-200">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
+                    담당자 상담 연결됨
+                  </div>
+                )}
                 <p
                   className="mt-0.5 line-clamp-2 text-[11px] leading-snug text-[var(--muted-foreground)]"
                   title={productTitle}
@@ -298,7 +559,7 @@ export function TourProductAiAssistantWidget({
                   Get quick answers in your language. Tap a common question below or type your own—responses follow
                   this product page and general travel guidance.
                 </p>
-                {showChips && (
+                {showChips && !liveSupportActive && (
                   <div className="mt-3 flex flex-col gap-2">
                     <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">
                       Popular questions
@@ -344,6 +605,11 @@ export function TourProductAiAssistantWidget({
                     transition={{ duration: 0.62, ease: MSG_EASE }}
                   >
                     <div className="max-w-[96%] rounded-2xl rounded-bl-md border border-white/90 bg-white px-3.5 py-2.5 text-[13px] leading-[1.55] text-[var(--foreground)]/95 shadow-[var(--shadow-card)] ring-1 ring-[var(--border)]/45">
+                      {(m.origin === "admin" || m.origin === "system") && (
+                        <span className="mb-1 block text-[10px] font-semibold uppercase tracking-wide text-[var(--primary)]/75">
+                          {m.origin === "admin" ? "담당자" : "Support"}
+                        </span>
+                      )}
                       <span className="whitespace-pre-wrap break-words">{m.content}</span>
                     </div>
                   </motion.div>
@@ -363,10 +629,39 @@ export function TourProductAiAssistantWidget({
                 </div>
               </motion.div>
             )}
+
+            {handoffOffer && !loading && (
+              <motion.div
+                className="flex justify-start pr-2"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, ease: MSG_EASE }}
+              >
+                <div className="max-w-[96%] rounded-2xl border border-[var(--primary)]/20 bg-white px-3.5 py-3 text-[12px] leading-relaxed text-[var(--foreground)] shadow-[var(--shadow-card)]">
+                  <p className="font-semibold">담당자 고객센터로 연결해 드릴까요?</p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    <button
+                      type="button"
+                      onClick={() => void requestHumanSupport()}
+                      className="rounded-full bg-[var(--primary)] px-3 py-1.5 text-[11px] font-semibold text-white shadow-sm transition hover:brightness-110"
+                    >
+                      네, 연결해주세요
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setHandoffOffer(null)}
+                      className="rounded-full border border-[var(--border)] bg-white px-3 py-1.5 text-[11px] font-semibold text-[var(--muted-foreground)] transition hover:bg-[var(--muted)]/60"
+                    >
+                      아니요
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            )}
           </div>
 
           {/* Suggested questions — after chat started */}
-          {messages.length > 0 && showChips && (
+          {messages.length > 0 && showChips && !liveSupportActive && (
             <div className="shrink-0 border-t border-[var(--border)]/50 bg-white/90 px-2.5 pb-1 pt-2">
               <p className="mb-1.5 px-1 text-[9px] font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">
                 Suggested
@@ -404,7 +699,7 @@ export function TourProductAiAssistantWidget({
                     void send();
                   }
                 }}
-                placeholder="Type your question…"
+                placeholder={liveSupportActive ? "담당자에게 보낼 메시지…" : "Type your question…"}
                 className="min-h-10 min-w-0 flex-1 border-0 bg-transparent py-1.5 text-[13px] text-[var(--foreground)] outline-none ring-0 placeholder:text-[var(--muted-foreground)]/85"
                 disabled={loading}
                 autoComplete="off"
@@ -420,7 +715,9 @@ export function TourProductAiAssistantWidget({
               </button>
             </div>
             <p className="mt-1.5 text-center text-[10px] text-[var(--muted-foreground)]/90">
-              AI can make mistakes · confirm details on this page before booking
+              {liveSupportActive
+                ? "담당자 상담 중입니다. 입력한 메시지는 Telegram으로 전달됩니다."
+                : "AI can make mistakes · confirm details on this page before booking"}
             </p>
           </div>
         </div>

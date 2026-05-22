@@ -1,6 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import type { SupabaseClient } from "@supabase/supabase-js";
 import { z } from "zod";
 import { randomUUID } from "crypto";
 
@@ -9,10 +10,18 @@ import {
   getStaticTourProductFullPageJson,
   isStaticTourProductBundleRegistered,
 } from "@/components/product-tour-static/_shared/tourProductBundleRegistry";
+import { buildApprovedQaContextText } from "@/lib/chatbot/qaKnowledge";
+import { buildSiteKnowledgeContextText } from "@/lib/chatbot/siteKnowledge";
 import { buildTourProductAssistantContextText } from "@/lib/tour-product/tourProductAssistantContext";
 import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import { logChatTurn, type ChatLogContext } from "@/lib/support/chat-logger";
 import { detectEscalation, buildAdminSummary } from "@/lib/support/escalation";
+import {
+  assistantReplyShouldOfferHandoff,
+  ensureHandoffPrompt,
+  handoffRequestText,
+  humanHandoffAcknowledgement,
+} from "@/lib/support/handoff";
 import { notifyTelegramNewTicket } from "@/lib/support/telegram-webhook";
 
 const bodySchema = z.object({
@@ -34,6 +43,8 @@ const bodySchema = z.object({
       section: z.string().max(80).optional(),
     })
     .optional(),
+  handoffRequested: z.boolean().optional(),
+  handoffQuestion: z.string().max(8000).optional(),
 });
 
 const SESSION_COOKIE = "atc_chat_sid";
@@ -70,18 +81,99 @@ function localeFromRequest(req: NextRequest): TourProductPageLocale {
   return "en";
 }
 
+function inferLocaleFromText(text: string): TourProductPageLocale | null {
+  if (/\p{Script=Hangul}/u.test(text)) return "ko";
+  if (/[\p{Script=Hiragana}\p{Script=Katakana}]/u.test(text)) return "ja";
+  if (/\p{Script=Han}/u.test(text)) return "zh";
+  if (/[¿¡ñáéíóúü]/i.test(text)) return "es";
+  return null;
+}
+
 /** Override with `GEMINI_TOUR_PRODUCT_ASSISTANT_MODEL` when needed. */
 const DEFAULT_GEMINI_MODEL = "gemini-2.5-flash";
 
-export async function POST(req: NextRequest) {
-  const key = process.env.GEMINI_API_KEY?.trim();
-  if (!key) {
-    return NextResponse.json(
-      { error: "assistant_unconfigured", message: "AI assistant is not configured." },
-      { status: 503 },
-    );
+function applySessionCookie(resp: NextResponse, session: { token: string; setCookie: boolean }): NextResponse {
+  if (session.setCookie) {
+    resp.cookies.set(SESSION_COOKIE, session.token, {
+      httpOnly: true,
+      sameSite: "lax",
+      path: "/",
+      maxAge: 60 * 60 * 24 * 30,
+    });
   }
+  return resp;
+}
 
+async function createSupportTicketAndNotify(
+  sb: SupabaseClient,
+  ctx: ChatLogContext,
+  input: {
+    userMessage: string;
+    assistantReply: string;
+    reason: "user_requested_human" | "sensitive_topic" | "keyword_match";
+    priority?: "normal" | "high";
+    model?: string;
+    elapsedMs?: number;
+  },
+): Promise<number | null> {
+  const log = await logChatTurn(sb, ctx, {
+    userMessage: input.userMessage,
+    assistantReply: input.assistantReply,
+    model: input.model,
+    elapsedMs: input.elapsedMs,
+  });
+
+  const summary = buildAdminSummary(input.userMessage, {
+    escalate: true,
+    reason: input.reason,
+    category: input.reason === "user_requested_human" ? "human_handoff" : null,
+  });
+
+  const { data: ticket } = await sb
+    .from("support_tickets")
+    .insert({
+      session_id: log.sessionId,
+      trigger_message_id: log.assistantMessageId,
+      user_locale: ctx.userLocale ?? null,
+      tour_slug: ctx.tourSlug ?? null,
+      page_url: ctx.pageUrl ?? null,
+      page_title: ctx.pageTitle ?? null,
+      escalation_reason: input.reason,
+      initial_user_message: input.userMessage,
+      initial_summary: summary,
+      status: "open",
+      priority: input.priority ?? "normal",
+      unread_for_admin: true,
+    })
+    .select("id")
+    .single();
+
+  if (!ticket) return null;
+  const ticketId = ticket.id as number;
+
+  await sb
+    .from("chat_messages")
+    .update({
+      escalated: true,
+      escalation_reason: input.reason,
+      ticket_id: ticketId,
+    })
+    .eq("id", log.assistantMessageId);
+
+  await notifyTelegramNewTicket(sb, {
+    ticketId,
+    reason: input.reason,
+    initialUserMessage: input.userMessage,
+    tourSlug: ctx.tourSlug ?? null,
+    pageUrl: ctx.pageUrl ?? null,
+    pageTitle: ctx.pageTitle ?? null,
+    userLocale: ctx.userLocale ?? null,
+  });
+
+  return ticketId;
+}
+
+export async function POST(req: NextRequest) {
   let json: unknown;
   try {
     json = await req.json();
@@ -111,17 +203,122 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "bundle_missing" }, { status: 500 });
   }
 
+  const session = getOrCreateSessionToken(req);
+  const ctx: ChatLogContext = {
+    sessionToken: session.token,
+    userLocale: locale,
+    userAgent: req.headers.get("user-agent"),
+    ip: bestEffortIp(req),
+    tourSlug: tourProductSlug,
+    pageUrl: pageContext?.url ?? null,
+    pageTitle: pageContext?.title ?? null,
+    pageSection: pageContext?.section ?? null,
+  };
+
+  if (parsed.data.handoffRequested) {
+    const sb = makeServiceRoleClient();
+    if (!sb) {
+      return applySessionCookie(
+        NextResponse.json(
+          { error: "support_unconfigured", message: "Customer support handoff is not configured." },
+          { status: 503 },
+        ),
+        session,
+      );
+    }
+
+    const lastUserMessage =
+      [...messages].reverse().find((m) => m.role === "user")?.content ?? handoffRequestText(locale);
+    const originalQuestion =
+      parsed.data.handoffQuestion?.trim() ||
+      [...messages]
+        .reverse()
+        .find((m) => m.role === "user" && m.content !== lastUserMessage)
+        ?.content ||
+      lastUserMessage;
+    const handoffLocale = inferLocaleFromText(originalQuestion) ?? locale;
+
+    try {
+      const ticketId = await createSupportTicketAndNotify(sb, ctx, {
+        userMessage: originalQuestion,
+        assistantReply: humanHandoffAcknowledgement(handoffLocale, null),
+        reason: "user_requested_human",
+      });
+
+      return applySessionCookie(
+        NextResponse.json({
+          reply: humanHandoffAcknowledgement(handoffLocale, ticketId),
+          ticket_id: ticketId,
+          escalated: ticketId !== null,
+          escalation_reason: "user_requested_human",
+          handoff_offered: false,
+        }),
+        session,
+      );
+    } catch (handoffErr) {
+      console.error("[tour-product/assistant] handoff error:", (handoffErr as Error).message);
+      return applySessionCookie(
+        NextResponse.json({ error: "support_handoff_failed" }, { status: 500 }),
+        session,
+      );
+    }
+  }
+
+  const key = process.env.GEMINI_API_KEY?.trim();
+  if (!key) {
+    return applySessionCookie(
+      NextResponse.json(
+        { error: "assistant_unconfigured", message: "AI assistant is not configured." },
+        { status: 503 },
+      ),
+      session,
+    );
+  }
+
   const vm = buildTourProductViewModelFromFullPageJson(doc, locale);
   const productContext = buildTourProductAssistantContextText(vm, locale);
+  const last = messages[messages.length - 1];
+  if (last?.role !== "user") {
+    return NextResponse.json({ error: "last_message_must_be_user" }, { status: 400 });
+  }
+  const answerLocale = inferLocaleFromText(last.content) ?? locale;
+  const siteKnowledgeContext = buildSiteKnowledgeContextText({
+    locale: answerLocale,
+    query: last.content,
+    maxChunks: 8,
+    maxChars: 7000,
+  });
+  let learnedQaContext = "";
+  const qaSb = makeServiceRoleClient();
+  if (qaSb) {
+    try {
+      learnedQaContext = await buildApprovedQaContextText(qaSb, {
+        locale: answerLocale,
+        query: last.content,
+        tourSlug: tourProductSlug,
+        limit: 5,
+        maxChars: 3500,
+      });
+    } catch (qaErr) {
+      console.error("[tour-product/assistant] approved QA lookup error:", (qaErr as Error).message);
+    }
+  }
 
   const systemInstruction = [
     "You are a helpful customer assistant for a specific tour on AtoC Korea (atockorea.com).",
-    "Answer only using the PRODUCT CONTEXT and polite general travel logic.",
-    "Do not invent policies, prices, or included items that are not in the context.",
+    "Answer using the PRODUCT CONTEXT first for this tour, then APPROVED ADMIN Q&A if directly relevant, then SITE KNOWLEDGE for company, legal, footer, policy, and POI questions.",
+    "Approved Admin Q&A is curated from previous human support conversations. Use it only when it clearly matches the user's question and does not conflict with the product or site context.",
+    "Do not invent policies, prices, included items, operating hours, or POI facts that are not in the context.",
+    "When answering legal or policy questions, summarize the site policy plainly; do not give legal advice.",
+    "If the verified context does not answer the user's question, say that clearly and ask whether to connect them to customer support. Do not guess.",
     "If the user should book or get a definitive answer from staff, say so clearly.",
     "Keep replies under about 12 sentences unless the user asks for detail.",
     "\n--- PRODUCT CONTEXT ---\n",
     productContext,
+    "\n--- APPROVED ADMIN Q&A ---\n",
+    learnedQaContext || "No approved learned Q&A matched this question.",
+    "\n--- SITE KNOWLEDGE ---\n",
+    siteKnowledgeContext || "No additional sitewide knowledge matched this question.",
   ].join("\n");
 
   const modelName = process.env.GEMINI_TOUR_PRODUCT_ASSISTANT_MODEL?.trim() || DEFAULT_GEMINI_MODEL;
@@ -131,10 +328,6 @@ export async function POST(req: NextRequest) {
     systemInstruction,
   });
 
-  const last = messages[messages.length - 1];
-  if (last?.role !== "user") {
-    return NextResponse.json({ error: "last_message_must_be_user" }, { status: 400 });
-  }
   const prior = messages.slice(0, -1);
   const history = prior.map((m) => ({
     role: m.role === "user" ? ("user" as const) : ("model" as const),
@@ -163,23 +356,16 @@ export async function POST(req: NextRequest) {
   // Side-effects: chat log + escalation + ticket + telegram. Failures NEVER
   // break the user-facing reply (try/catch each; log and move on).
   // ──────────────────────────────────────────────────────────────────────
-  const session = getOrCreateSessionToken(req);
   let ticketCreated: number | null = null;
   let escalationReason: string | null = null;
+  let handoffOffered = assistantReplyShouldOfferHandoff(replyText);
+  if (handoffOffered) {
+    replyText = ensureHandoffPrompt(replyText, answerLocale);
+  }
 
   if (process.env.TOUR_MATCH_AUDIT_LOG === "1" || process.env.CHAT_AUDIT_LOG === "1") {
     const sb = makeServiceRoleClient();
     if (sb) {
-      const ctx: ChatLogContext = {
-        sessionToken: session.token,
-        userLocale: locale,
-        userAgent: req.headers.get("user-agent"),
-        ip: bestEffortIp(req),
-        tourSlug: tourProductSlug,
-        pageUrl: pageContext?.url ?? null,
-        pageTitle: pageContext?.title ?? null,
-        pageSection: pageContext?.section ?? null,
-      };
       try {
         const log = await logChatTurn(sb, ctx, {
           userMessage: last.content,
@@ -189,51 +375,61 @@ export async function POST(req: NextRequest) {
         });
 
         // Escalation detection
-        const decision = await detectEscalation(sb, last.content, replyText, locale);
+        const decision = await detectEscalation(sb, last.content, replyText, answerLocale);
         if (decision.escalate) {
           escalationReason = decision.reason;
-          const summary = buildAdminSummary(last.content, decision);
-          const { data: ticket } = await sb
-            .from("support_tickets")
-            .insert({
-              session_id: log.sessionId,
-              trigger_message_id: log.assistantMessageId,
-              user_locale: locale,
-              tour_slug: tourProductSlug,
-              page_url: pageContext?.url ?? null,
-              page_title: pageContext?.title ?? null,
-              escalation_reason: decision.reason ?? "unknown",
-              initial_user_message: last.content,
-              initial_summary: summary,
-              status: "open",
-              priority: decision.reason === "sensitive_topic" ? "high" : "normal",
-              unread_for_admin: true,
-            })
-            .select("id")
-            .single();
-
-          if (ticket) {
-            ticketCreated = ticket.id as number;
-            // Mark the triggering chat message as escalated and link to ticket
-            await sb
-              .from("chat_messages")
-              .update({
-                escalated: true,
-                escalation_reason: decision.reason ?? "unknown",
-                ticket_id: ticketCreated,
+          if (decision.reason === "low_confidence") {
+            handoffOffered = true;
+            replyText = ensureHandoffPrompt(replyText, answerLocale);
+          } else if (
+            decision.reason === "user_requested_human" ||
+            decision.reason === "sensitive_topic" ||
+            decision.reason === "keyword_match"
+          ) {
+            const summary = buildAdminSummary(last.content, decision);
+            const { data: ticket } = await sb
+              .from("support_tickets")
+              .insert({
+                session_id: log.sessionId,
+                trigger_message_id: log.assistantMessageId,
+                user_locale: locale,
+                tour_slug: tourProductSlug,
+                page_url: pageContext?.url ?? null,
+                page_title: pageContext?.title ?? null,
+                escalation_reason: decision.reason,
+                initial_user_message: last.content,
+                initial_summary: summary,
+                status: "open",
+                priority: decision.reason === "sensitive_topic" ? "high" : "normal",
+                unread_for_admin: true,
               })
-              .eq("id", log.assistantMessageId);
+              .select("id")
+              .single();
 
-            // Fire Telegram notification (no-op if env missing)
-            await notifyTelegramNewTicket(sb, {
-              ticketId: ticketCreated,
-              reason: decision.reason ?? "unknown",
-              initialUserMessage: last.content,
-              tourSlug: tourProductSlug,
-              pageUrl: pageContext?.url ?? null,
-              pageTitle: pageContext?.title ?? null,
-              userLocale: locale,
-            });
+            if (ticket) {
+              ticketCreated = ticket.id as number;
+              handoffOffered = false;
+              // Mark the triggering chat message as escalated and link to ticket
+              await sb
+                .from("chat_messages")
+                .update({
+                  escalated: true,
+                  escalation_reason: decision.reason,
+                  ticket_id: ticketCreated,
+                })
+                .eq("id", log.assistantMessageId);
+
+              // Fire Telegram notification (no-op if env missing)
+              await notifyTelegramNewTicket(sb, {
+                ticketId: ticketCreated,
+                reason: decision.reason,
+                initialUserMessage: last.content,
+                tourSlug: tourProductSlug,
+                pageUrl: pageContext?.url ?? null,
+                pageTitle: pageContext?.title ?? null,
+                userLocale: locale,
+              });
+            }
           }
         }
       } catch (logErr) {
@@ -247,14 +443,7 @@ export async function POST(req: NextRequest) {
     ticket_id: ticketCreated,
     escalated: ticketCreated !== null,
     escalation_reason: escalationReason,
+    handoff_offered: handoffOffered && ticketCreated === null,
   });
-  if (session.setCookie) {
-    resp.cookies.set(SESSION_COOKIE, session.token, {
-      httpOnly: true,
-      sameSite: "lax",
-      path: "/",
-      maxAge: 60 * 60 * 24 * 30,
-    });
-  }
-  return resp;
+  return applySessionCookie(resp, session);
 }

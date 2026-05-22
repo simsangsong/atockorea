@@ -9,6 +9,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from "@/lib/auth";
 import { createServerClient } from "@/lib/supabase";
+import { insertSupportMessage, markTicketAfterAdminMessage } from "@/lib/support/live-chat";
+import { createQaDraftFromSupportReply } from "@/lib/support/qa-learning";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -95,35 +97,27 @@ export async function POST(req: NextRequest, { params }: RouteParams) {
 
     const sb = createServerClient();
 
-    const { data: existing } = await sb
-      .from("support_messages")
-      .select("message_index")
-      .eq("ticket_id", id)
-      .order("message_index", { ascending: false })
-      .limit(1)
-      .maybeSingle();
-    const nextIdx = ((existing?.message_index as number) ?? 0) + 1;
-
-    const { error: insErr } = await sb.from("support_messages").insert({
-      ticket_id: id,
-      message_index: nextIdx,
+    const supportMessage = await insertSupportMessage(sb, {
+      ticketId: id,
       sender: "admin",
-      sender_user_id: adminUser.id,
+      senderUserId: adminUser.id,
       content: parsed.data.content,
     });
-    if (insErr) return NextResponse.json({ error: insErr.message }, { status: 500 });
+    await markTicketAfterAdminMessage(sb, id, parsed.data.status ?? "awaiting_user");
 
-    await sb
-      .from("support_tickets")
-      .update({
-        status: parsed.data.status ?? "awaiting_user",
-        unread_for_user: true,
-        unread_for_admin: false,
-        resolved_at: parsed.data.status === "resolved" ? new Date().toISOString() : null,
-      })
-      .eq("id", id);
+    let qaDraftId: number | null = null;
+    try {
+      const qaDraft = await createQaDraftFromSupportReply(sb, {
+        ticketId: id,
+        supportMessageId: supportMessage.id,
+        adminAnswer: parsed.data.content,
+      });
+      qaDraftId = qaDraft.qaId ?? null;
+    } catch (qaErr) {
+      console.error("[POST /api/admin/support/tickets/[id]] qa draft error:", (qaErr as Error).message);
+    }
 
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true, message: supportMessage, qa_draft_id: qaDraftId });
   } catch (e) {
     if (e instanceof AdminAuthFailure) return adminAuthJsonResponse(e);
     console.error("[POST /api/admin/support/tickets/[id]] error:", e);
