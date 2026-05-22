@@ -88,6 +88,12 @@ export type ItineraryStop = {
   smartNotes?: ItineraryStopSmartNotes;
   /** v17 batch: per-stop POI verification metadata. Renderer ignores. */
   _poi_meta?: ItineraryStopPoiMeta;
+  /**
+   * Marks a stop as a pickup / return pseudo-stop that is already shown by the
+   * dedicated PickupOnlyCards / DropoffOnlyCard. The timeline strips these so they
+   * don't render twice. Locale-independent (set by array position), unlike name/category text.
+   */
+  _role?: "pickup" | "dropoff";
 };
 
 export type RouteFlowStop = {

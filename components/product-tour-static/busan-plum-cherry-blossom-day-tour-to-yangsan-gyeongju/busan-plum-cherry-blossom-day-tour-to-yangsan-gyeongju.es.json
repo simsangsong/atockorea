@@ -188,7 +188,8 @@
           "Busan Metro",
           "Korea Expressway Corporation"
         ]
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -480,7 +481,8 @@
           "Korea Expressway Corporation",
           "Busan Metro"
         ]
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -794,43 +796,62 @@
   "pickup_dropoff": {
     "departure": [
       {
-        "order": 1,
-        "time": "08:00",
+        "lat": 35.11449,
+        "lng": 129.03933,
         "name": "Estación de Busan (salida principal KTX)",
         "type": "station",
-        "note": "Punto de encuentro del grupo en la salida principal; personal con letrero de AtoC Korea.",
-        "lat": 35.1152,
-        "lng": 129.0421
+        "order": 1,
+        "time": "08:00"
       },
       {
-        "order": 2,
-        "time": "08:15",
+        "lat": 35.15782,
+        "lng": 129.06003,
         "name": "Estación de Seomyeon (Salida 7)",
         "type": "station",
-        "note": "Segundo punto de recogida a la salida del centro de Busan.",
-        "lat": 35.1577,
-        "lng": 129.0592
+        "order": 2,
+        "time": "08:15"
       },
       {
-        "order": 3,
-        "time": "08:30",
+        "lat": 35.28359,
+        "lng": 129.09482,
         "name": "Estación de Nopo (Salida 3)",
         "type": "station",
-        "note": "Tercera recogida — Nopo es la estación de metro de Busan más cercana a Tongdosa (~25 min en coche), por lo que este punto encaja en el día con inicio en Yangsan.",
-        "lat": 35.2285,
-        "lng": 129.0784
+        "order": 3,
+        "time": "08:30"
       }
     ],
     "return": [
       {
-        "order": 1,
-        "name": "Las mismas tres estaciones (en orden inverso)",
+        "lat": 35.09663,
+        "lng": 129.0308,
+        "name": "Nampo-dong / zona de Jagalchi",
         "type": "station",
-        "note": "Bajada en cualquiera de las tres estaciones de recogida bajo petición; tour total ~8,5 horas desde la recogida en la Estación de Busan hasta el regreso a la Estación de Busan."
+        "order": 1
+      },
+      {
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "Estación de Busan (Salida 4)",
+        "type": "station",
+        "order": 2
+      },
+      {
+        "lat": 35.15782,
+        "lng": 129.06003,
+        "name": "Estación de Seomyeon (Salida 4)",
+        "type": "station",
+        "order": 3
+      },
+      {
+        "lat": 35.16396,
+        "lng": 129.15853,
+        "name": "Estación de Haeundae (Salida 5)",
+        "type": "station",
+        "order": 4
       }
     ],
     "notes": [
-      "Este tour opera ÚNICAMENTE durante la ventana de floración primaveral — aproximadamente del 25 de febrero al 10 de abril de 2026. Es un producto de DOBLE TEMPORADA: la floración del ciruelo (매화, pico ~1–15 de marzo en Tongdosa Jajangmae y Yangsan Wondong) se fusiona con la floración del cerezo (벚꽃, pico ~28 de marzo–10 de abril en Bulguksa y el Lago Bomun). La ruta diaria se ajusta según la temporada: las fechas tempranas hacen énfasis en Yangsan (Tongdosa + Wondong); las fechas posteriores pivotan hacia Gyeongju (Bulguksa + Lago Bomun). Los días de mediados de temporada cubren ambos destinos. La salida es un transporte colectivo fijo (producto small_group), por lo que los horarios de recogida no son flexibles. El almuerzo corre por cuenta propia (~10.000–20.000 KRW); durante la temporada del ciruelo, el almuerzo recomendado es el Minari Samgyeopsal de Wondong (cerdo a la plancha con perejil de agua limpia, disponible solo en esta temporada). Viajeros en silla de ruedas y con cochecito — comuníquelo al reservar; Tongdosa cuenta con un paseo fluvial de 1,2 km con pendientes suaves, Bulguksa tiene escaleras."
+      "This tour operates ONLY during the spring blossom window — approximately Feb 25 to Apr 10, 2026. It is a DUAL-SEASON product: plum blossom (매화, peak ~Mar 1–15 at Tongdosa Jajangmae and Yangsan Wondong) blends into cherry blossom (벚꽃, peak ~Mar 28–Apr 10 at Bulguksa and Bomun Lake). Daily route is adjusted by season: early dates emphasize Yangsan (Tongdosa + Wondong); later dates pivot to Gyeongju (Bulguksa + Bomun Lake). Mid-season days cover both. Departure is a fixed group shuttle (small_group product) so pickup times are not flexible. Lunch is at own expense (~10,000–20,000 KRW); during plum season the recommended lunch is Wondong's Minari Samgyeopsal (clean-water parsley grilled with pork belly, only available this season). Wheelchair and stroller travelers — please notify at booking; Tongdosa has a 1.2 km riverside walk and gentle slopes, Bulguksa has stairs."
     ]
   },
   "matching_profile": {

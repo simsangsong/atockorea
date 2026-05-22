@@ -2693,39 +2693,6 @@
       }
     }
   ],
-  "pickup_dropoff": {
-    "type": "hotel_pickup",
-    "meeting_points": [
-      {
-        "name": "제주시 내 호텔",
-        "time": "≈08:30 (free)"
-      },
-      {
-        "name": "제주시 외 호텔 (서귀포 / 애월 / 성산)",
-        "time": "Earlier pickup; +₩70,000 surcharge"
-      },
-      {
-        "name": "제주국제공항",
-        "time": "≈08:30"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "제주시 내 호텔",
-        "approx_time": "≈18:00"
-      },
-      {
-        "name": "동문전통시장",
-        "approx_time": "≈18:00"
-      },
-      {
-        "name": "제주공항",
-        "approx_time": "≈18:00"
-      }
-    ],
-    "hotel_pickup_available": true,
-    "notes": "제주시 내 픽업 무료. 시외 픽업 시 ₩70,000 추가. 수국 명소는 5월 하순~7월 중순에만 개화 (절정: 6월 중순); 예약 전 반드시 확인하세요."
-  },
   "itinerary_variants": [],
   "priceSource": {
     "discountPct": 10,

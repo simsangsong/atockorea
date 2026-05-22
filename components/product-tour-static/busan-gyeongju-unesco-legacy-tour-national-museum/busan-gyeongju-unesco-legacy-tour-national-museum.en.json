@@ -271,7 +271,8 @@
         "Light snacks (water, banana) provided on the coach; lunch own expense"
       ],
       "whyOnRoute": "Three-station pickup is the standard Busan small-group format for Gyeongju routes and matches the staging used by competing operators. Starting from Haeundae as the final pickup minimizes deadhead distance to the Gijang-gun bamboo forest (the day's first content stop), preserving the carefully-built sunset finale at Woljeonggyo Bridge.",
-      "description": "Pickup runs in sequence from three central Busan subway stations: **Busan Station (Line 1)** at ~08:10 for guests staying near Choryang/Nampo-dong, **Seomyeon Station (Lines 1 & 2)** at ~08:25 for the central business hotel district, and **Haeundae Station (Line 2)** at ~08:45 for the eastern beachfront resort area. \n\nFrom the final pickup the coach takes the **Donghae Expressway** north toward Gijang-gun — the route's first stop, **Ahopsan Bamboo Forest**, sits just ~30 km / ~25 min from Haeundae in the foothills of northeastern Busan. \n\nThe early start is intentional: this 8-stop UNESCO-legacy tour is the catalog's most content-dense Gyeongju route, ending at sunset with **Woljeonggyo Bridge illuminated against Namcheon River** before the return drive. \n\nGuests should pre-load coffee, water and any motion-sickness preparation at the first pickup, since the coach makes only one comfort stop before reaching Bulguksa around 11:30."
+      "description": "Pickup runs in sequence from three central Busan subway stations: **Busan Station (Line 1)** at ~08:10 for guests staying near Choryang/Nampo-dong, **Seomyeon Station (Lines 1 & 2)** at ~08:25 for the central business hotel district, and **Haeundae Station (Line 2)** at ~08:45 for the eastern beachfront resort area. \n\nFrom the final pickup the coach takes the **Donghae Expressway** north toward Gijang-gun — the route's first stop, **Ahopsan Bamboo Forest**, sits just ~30 km / ~25 min from Haeundae in the foothills of northeastern Busan. \n\nThe early start is intentional: this 8-stop UNESCO-legacy tour is the catalog's most content-dense Gyeongju route, ending at sunset with **Woljeonggyo Bridge illuminated against Namcheon River** before the return drive. \n\nGuests should pre-load coffee, water and any motion-sickness preparation at the first pickup, since the coach makes only one comfort stop before reaching Bulguksa around 11:30.",
+      "_role": "pickup"
     },
     {
       "name": "Ahopsan Bamboo Forest (아홉산숲)",
@@ -816,7 +817,8 @@
         "No dinner provided — guests should eat snacks bought earlier or after drop-off"
       ],
       "whyOnRoute": "Reverse-order drop-off is standard small-group operations practice — first drop-off is the geographically nearest (Haeundae) which minimizes total transit. Avoiding a packaged dinner is a deliberate price/flexibility choice and matches competing Busan-Gyeongju products.",
-      "description": "The coach departs Woljeonggyo's north bank at **~17:45** and takes the **Gyeongbu + Donghae Expressways** south back to Busan. **Drop-offs reverse the morning pickup order**: **Haeundae Station first** (~18:50), then **Seomyeon** (~19:05), then **Busan Station** (~19:20), depending on traffic. \n\nLate-evening Friday or Sunday returns can extend the run by 20–30 minutes due to weekend traffic on the Donghae corridor; the guide updates ETA via the group chat. Light dinner snacks (rice cake, water) are not provided — guests are advised to **eat hwangnam-bbang or rice cake purchased at Gyochon**, or to arrange a late dinner near their drop-off station."
+      "description": "The coach departs Woljeonggyo's north bank at **~17:45** and takes the **Gyeongbu + Donghae Expressways** south back to Busan. **Drop-offs reverse the morning pickup order**: **Haeundae Station first** (~18:50), then **Seomyeon** (~19:05), then **Busan Station** (~19:20), depending on traffic. \n\nLate-evening Friday or Sunday returns can extend the run by 20–30 minutes due to weekend traffic on the Donghae corridor; the guide updates ETA via the group chat. Light dinner snacks (rice cake, water) are not provided — guests are advised to **eat hwangnam-bbang or rice cake purchased at Gyochon**, or to arrange a late dinner near their drop-off station.",
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1222,51 +1224,58 @@
   "pickup_dropoff": {
     "departure": [
       {
-        "order": 1,
-        "time": "08:10",
+        "lat": 35.11449,
+        "lng": 129.03933,
         "name": "Busan Station (Exit 4)",
         "type": "station",
-        "lat": 35.1152,
-        "lng": 129.0421
+        "order": 1,
+        "time": "08:10"
       },
       {
-        "order": 2,
-        "time": "08:30",
+        "lat": 35.15782,
+        "lng": 129.06003,
         "name": "Seomyeon Station (Exit 4)",
         "type": "station",
-        "lat": 35.1577,
-        "lng": 129.0592
+        "order": 2,
+        "time": "08:30"
       },
       {
-        "order": 3,
-        "time": "09:10",
+        "lat": 35.16396,
+        "lng": 129.15853,
         "name": "Haeundae Station (Exit 5)",
         "type": "station",
-        "lat": 35.1628,
-        "lng": 129.1603
+        "order": 3,
+        "time": "09:10"
       }
     ],
     "return": [
       {
-        "order": 1,
-        "name": "Haeundae Station (Exit 5)",
+        "lat": 35.09663,
+        "lng": 129.0308,
+        "name": "Nampo-dong / Jagalchi area",
         "type": "station",
-        "lat": 35.1628,
-        "lng": 129.1603
+        "order": 1
       },
       {
-        "order": 2,
-        "name": "Seomyeon Station (Exit 4)",
-        "type": "station",
-        "lat": 35.1577,
-        "lng": 129.0592
-      },
-      {
-        "order": 3,
+        "lat": 35.11449,
+        "lng": 129.03933,
         "name": "Busan Station (Exit 4)",
         "type": "station",
-        "lat": 35.1152,
-        "lng": 129.0421
+        "order": 2
+      },
+      {
+        "lat": 35.15782,
+        "lng": 129.06003,
+        "name": "Seomyeon Station (Exit 4)",
+        "type": "station",
+        "order": 3
+      },
+      {
+        "lat": 35.16396,
+        "lng": 129.15853,
+        "name": "Haeundae Station (Exit 5)",
+        "type": "station",
+        "order": 4
       }
     ],
     "notes": [

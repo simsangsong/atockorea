@@ -127,7 +127,7 @@ export function TourPickupDropoffSection({
           {sectionUi.pickupDropoffTitle ?? "Pickup & Drop-off"}
         </h2>
         <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-          {sectionUi.pickupDropoffSubtitle ?? "Hotel pickup included. Tap any location for details."}
+          {sectionUi.pickupDropoffSubtitle ?? "Pickup included. Tap any location for details."}
         </p>
       </div>
 
@@ -176,7 +176,7 @@ export function TourPickupDropoffSection({
                     {sectionUi.pickupCardTitle ?? "Pickup"}
                   </p>
                   <p className="text-[10.5px] text-muted-foreground">
-                    {pickupPoints.length} locations
+                    {(sectionUi.pickupPointsTemplate ?? "{count} pickup points").replace("{count}", String(pickupPoints.length))}
                   </p>
                 </div>
               </div>
@@ -312,7 +312,7 @@ export function TourPickupDropoffSection({
                     {sectionUi.dropoffCardTitle ?? "Drop-off"}
                   </p>
                   <p className="text-[10.5px] text-white/55">
-                    {lastDropoff?.note ? lastDropoff.note.split(".")[0] : "Approximate"}
+                    {lastDropoff?.note ? lastDropoff.note.split(".")[0] : (sectionUi.pickupApproximateLabel ?? "Approximate")}
                   </p>
                 </div>
               </div>
@@ -353,7 +353,7 @@ export function TourPickupDropoffSection({
       <div className="flex items-center justify-center gap-2 pt-1">
         <CheckCircle2 className="h-4 w-4 text-[#c8956c]" strokeWidth={2} />
         <span className="text-[12.5px] text-muted-foreground">
-          {sectionUi.pickupTrustFooter ?? "Hotel pickup included · No extra charge"}
+          {sectionUi.pickupTrustFooter ?? "Pickup included · No extra charge"}
         </span>
       </div>
     </div>

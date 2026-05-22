@@ -2693,39 +2693,6 @@
       }
     }
   ],
-  "pickup_dropoff": {
-    "type": "hotel_pickup",
-    "meeting_points": [
-      {
-        "name": "Hotel dentro de la ciudad de Jeju",
-        "time": "≈08:30 (free)"
-      },
-      {
-        "name": "Hotel fuera de la ciudad de Jeju (Seogwipo/Aewol/Seongsan)",
-        "time": "Earlier pickup; +₩70,000 surcharge"
-      },
-      {
-        "name": "Aeropuerto Internacional de Jeju",
-        "time": "≈08:30"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "Hotel en la ciudad de Jeju",
-        "approx_time": "≈18:00"
-      },
-      {
-        "name": "Mercado Tradicional Dongmun",
-        "approx_time": "≈18:00"
-      },
-      {
-        "name": "Aeropuerto de Jeju",
-        "approx_time": "≈18:00"
-      }
-    ],
-    "hotel_pickup_available": true,
-    "notes": "Recogida gratuita en la ciudad de Jeju. La recogida fuera de la ciudad añade ₩70.000. Las paradas de hortensias solo están disponibles en temporada de floración, de finales de mayo a mediados de julio (pico a mediados de junio); consulte antes de reservar."
-  },
   "itinerary_variants": [],
   "priceSource": {
     "discountPct": 10,

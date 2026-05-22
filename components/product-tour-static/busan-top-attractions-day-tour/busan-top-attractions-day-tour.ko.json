@@ -260,7 +260,8 @@
           "Visit Busan",
           "Busan Metro"
         ]
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -2368,43 +2369,6 @@
       }
     }
   ],
-  "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
-      {
-        "name": "서면역 4번 출구",
-        "time": "08:30"
-      },
-      {
-        "name": "부산역 4번 출구 (KTX 게이트 아님)",
-        "time": "08:50"
-      },
-      {
-        "name": "해운대역 5번 출구",
-        "time": "09:30"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "남포동 / 자갈치 (마지막 관광지 하차)",
-        "approx_time": "≈ 17:50"
-      },
-      {
-        "name": "부산역 4번 출구",
-        "approx_time": "≈ 18:10"
-      },
-      {
-        "name": "서면역 4번 출구",
-        "approx_time": "≈ 18:30"
-      },
-      {
-        "name": "해운대역 5번 출구",
-        "approx_time": "≈ 19:00"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "예약 시 숙소에서 가장 가까운 픽업 출구를 선택해 주세요. 하차 지점은 귀환 경로를 따라 순차적으로 진행됩니다. 서면(08:30) 탑승 승객의 하루가 가장 길고(≈10시간), 해운대 탑승 승객이 가장 짧습니다(≈9.5시간)."
-  },
   "itinerary_variants": [],
   "_publication": {
     "schema_version": "v4_canonical",

@@ -203,7 +203,8 @@
           "Busan Metro",
           "Korea Expressway Corporation"
         ]
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -526,7 +527,8 @@
           "Korea Expressway Corporation",
           "Busan Metro"
         ]
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -825,43 +827,62 @@
   "pickup_dropoff": {
     "departure": [
       {
-        "order": 1,
-        "time": "08:00",
-        "name": "釜山駅（KTX中央出口）",
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "釜山駅（KTX正面出口）",
         "type": "station",
-        "note": "中央出口が集合場所。AtoC Koreaの看板を持つスタッフがお待ちしています。",
-        "lat": 35.1152,
-        "lng": 129.0421
+        "order": 1,
+        "time": "08:00"
       },
       {
-        "order": 2,
-        "time": "08:15",
+        "lat": 35.15782,
+        "lng": 129.06003,
         "name": "西面駅（7番出口）",
         "type": "station",
-        "note": "釜山中心部からの途中にある2番目のピックアップ地点。",
-        "lat": 35.1577,
-        "lng": 129.0592
+        "order": 2,
+        "time": "08:15"
       },
       {
-        "order": 3,
-        "time": "08:30",
+        "lat": 35.16396,
+        "lng": 129.15853,
         "name": "海雲台駅（5番出口）",
         "type": "station",
-        "note": "海雲台にご宿泊のお客様向け、3番目のピックアップ地点。",
-        "lat": 35.1628,
-        "lng": 129.1603
+        "order": 3,
+        "time": "08:30"
       }
     ],
     "return": [
       {
-        "order": 1,
-        "name": "同じ3駅（逆順）",
+        "lat": 35.09663,
+        "lng": 129.0308,
+        "name": "南浦洞・ジャガルチ周辺",
         "type": "station",
-        "note": "ご希望の乗車駅いずれかで降車可能。釜山駅での乗車から降車まで、ツアー総所要時間は約8.5時間。"
+        "order": 1
+      },
+      {
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "釜山駅（4番出口）",
+        "type": "station",
+        "order": 2
+      },
+      {
+        "lat": 35.15782,
+        "lng": 129.06003,
+        "name": "西面駅（4番出口）",
+        "type": "station",
+        "order": 3
+      },
+      {
+        "lat": 35.16396,
+        "lng": 129.15853,
+        "name": "海雲台駅（5番出口）",
+        "type": "station",
+        "order": 4
       }
     ],
     "notes": [
-      "このツアーは桜のシーズン（2026年3月28日頃〜4月10日頃 — 正確な日程は開花予報により異なり、毎年確定）のみ実施されます。出発は固定グループシャトル（少人数制）のため、ピックアップ時間の変更はできません。開花の遅れや終了の場合、3日前の通知でキャンセルとなり全額返金されます。ランチはお客様のご負担（約10,000〜20,000ウォン）で、ガイドがその日のルートに応じて慶州の地元レストランを選定します。車いす・ベビーカーをご利用の方はご予約時にお知らせください。一部のスポットには段差や不整地があります（仏国寺の石段、大陵苑の芝生の小道）。"
+      "This tour operates ONLY during cherry blossom season (approximately March 28 to April 10, 2026 — exact dates depend on bloom forecast and confirmed annually). Departure is a fixed group shuttle (small_group product) so pickup times are not flexible. If bloom is delayed or finished, the tour may be cancelled with 3 days' notice and full refund. Lunch is at own expense (~10,000–20,000 KRW) at a Gyeongju local restaurant chosen by the guide based on the day's route. Wheelchair and stroller travelers — please notify at booking; some stops involve uneven ground (Bulguksa stairs, grass paths at Daereungwon)."
     ]
   },
   "matching_profile": {

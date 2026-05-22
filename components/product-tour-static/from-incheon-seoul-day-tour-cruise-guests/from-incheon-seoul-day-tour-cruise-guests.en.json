@@ -273,7 +273,8 @@
           "Visit Korea — Incheon Tourist Attraction official",
           "Wikipedia (Incheon Port + Songdo International Business District)"
         ]
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -692,7 +693,8 @@
         "verified": false,
         "match": "operational_implicit",
         "note": "Operational return stop"
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1076,8 +1078,8 @@
         "time": "Calibrated to ship disembarkation",
         "name": "Incheon Cruise Terminal (Songdo)",
         "type": "station",
-        "lat": 37.4703,
-        "lng": 126.64
+        "lat": 37.42414,
+        "lng": 126.60557
       }
     ],
     "return": [
@@ -1085,8 +1087,8 @@
         "order": 1,
         "name": "Incheon Cruise Terminal",
         "type": "station",
-        "lat": 37.4703,
-        "lng": 126.64
+        "lat": 37.42414,
+        "lng": 126.60557
       }
     ],
     "notes": [

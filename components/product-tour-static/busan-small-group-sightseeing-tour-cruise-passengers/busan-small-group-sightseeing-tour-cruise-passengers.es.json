@@ -277,7 +277,8 @@
           "CruiseMapper"
         ]
       },
-      "image": null
+      "image": null,
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -819,7 +820,8 @@
         "kb_version": "1.15",
         "verified_date": "2026-04-29"
       },
-      "image": null
+      "image": null,
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1234,23 +1236,6 @@
       "originalPriceUsd": 85,
       "discountPercent": 7
     }
-  },
-  "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
-      {
-        "name": "Terminal Internacional de Pasajeros del Puerto de Busan — sala de llegadas",
-        "time": "Calibrated to ship disembarkation"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "Terminal Internacional de Pasajeros del Puerto de Busan",
-        "approx_time": "Mínimo 60 minutos antes del embarque final"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "Proporcione el nombre del barco, la fecha de escala en puerto, la hora prevista de desembarco y la hora de embarque final al reservar. Furgoneta compartida con otros pasajeros de crucero de distintos barcos. La recogida temprana (antes de las 08:00) añade ₩10,000 por persona para compensar al guía por el inicio anticipado."
   },
   "matching_profile": {
     "profile_version": 6,

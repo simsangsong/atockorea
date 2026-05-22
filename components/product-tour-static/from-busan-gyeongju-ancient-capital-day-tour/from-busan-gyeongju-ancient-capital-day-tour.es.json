@@ -261,7 +261,8 @@
         "poi_key": "OPS_busan_subway_pickup",
         "kb_version": "1.16",
         "verified_date": "2026-04-29"
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -783,7 +784,8 @@
         "poi_key": "OPS_busan_return",
         "kb_version": "1.16",
         "verified_date": "2026-04-29"
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1147,37 +1149,65 @@
     }
   },
   "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "Estación de Busan, Salida 4",
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "Estación de Busan (Salida 4)",
+        "type": "station",
+        "order": 1,
         "time": "08:10"
       },
       {
-        "name": "Estación de Seomyeon, Salida 4",
+        "lat": 35.15782,
+        "lng": 129.06003,
+        "name": "Estación de Seomyeon (Salida 4)",
+        "type": "station",
+        "order": 2,
         "time": "08:30"
       },
       {
-        "name": "Estación de Haeundae, Salida 5",
+        "lat": 35.16396,
+        "lng": 129.15853,
+        "name": "Estación de Haeundae (Salida 5)",
+        "type": "station",
+        "order": 3,
         "time": "09:10"
       }
     ],
-    "dropoff_points": [
+    "return": [
       {
-        "name": "Estación de Haeundae, Salida 5",
-        "approx_time": "≈ 18:15"
+        "lat": 35.09663,
+        "lng": 129.0308,
+        "name": "Nampo-dong / zona de Jagalchi",
+        "type": "station",
+        "order": 1
       },
       {
-        "name": "Estación de Seomyeon, Salida 4",
-        "approx_time": "≈ 18:35"
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "Estación de Busan (Salida 4)",
+        "type": "station",
+        "order": 2
       },
       {
-        "name": "Estación de Busan, Salida 4",
-        "approx_time": "≈ 18:50"
+        "lat": 35.15782,
+        "lng": 129.06003,
+        "name": "Estación de Seomyeon (Salida 4)",
+        "type": "station",
+        "order": 3
+      },
+      {
+        "lat": 35.16396,
+        "lng": 129.15853,
+        "name": "Estación de Haeundae (Salida 5)",
+        "type": "station",
+        "order": 4
       }
     ],
-    "hotel_pickup_available": false,
-    "notes": "El mismo recorrido de seis atracciones durante todo el año (Bulguksa, museo, Gyochon, puente, más el Bosque de Bambú de Ahopsan como apertura matutina). Durante la temporada de flores de cerezo (de mediados de marzo a mediados de abril) se sustituye Ahopsan por la Colina Dalmaji de Haeundae. Elija la salida de recogida más cercana a su hotel."
+    "notes": [
+      "Same six-attraction route year-round (Bulguksa, museum, Gyochon, bridge, plus Ahopsan Bamboo Forest as morning opener). Cherry blossom season (mid-March to mid-April) swaps Ahopsan for Haeundae Dalmaji Hill. Choose the pickup exit closest to your hotel."
+    ]
   },
   "matching_profile": {
     "profile_version": 6,

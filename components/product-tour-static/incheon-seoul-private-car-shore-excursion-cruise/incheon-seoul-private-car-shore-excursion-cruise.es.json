@@ -267,7 +267,8 @@
           "Visit Korea — Incheon Tourist Attraction official",
           "Wikipedia (Incheon Port + Songdo International Business District)"
         ]
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -792,7 +793,8 @@
         "verified": false,
         "match": "operational_implicit",
         "note": "Operational return stop with sail-away buffer"
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1168,23 +1170,6 @@
       "per": "vehicle",
       "salePriceUsd": 419
     }
-  },
-  "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
-      {
-        "name": "Terminal de Cruceros de Incheon — sala de llegadas (el conductor sostendrá un letrero con su nombre)",
-        "time": "Calibrated to your disembarkation time"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "Terminal de Cruceros de Incheon — puerta de la terminal",
-        "approx_time": "Mínimo 60 minutos antes del horario de abordar"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "Proporcione el nombre del barco, la fecha de escala, la hora de llegada estimada y el horario de abordar al momento de la reserva. El conductor mantiene un margen de 60 minutos por tráfico antes del horario de abordar. Existen varias terminales en Incheon — confirme con su línea de cruceros en cuál atracará su barco (Yeongjong-do o Songdo)."
   },
   "matching_profile": {
     "profile_version": 6,

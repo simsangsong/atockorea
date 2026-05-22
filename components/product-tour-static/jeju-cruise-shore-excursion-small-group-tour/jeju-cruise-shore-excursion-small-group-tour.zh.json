@@ -314,7 +314,8 @@
       },
       "smartNotes": {
         "tip": "请于预定接送时间前5至10分钟到达；参加邮轮/非军事区游览请携带附照片的证件"
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -815,7 +816,8 @@
       },
       "smartNotes": {
         "tip": "出发前请与导游确认准确的送抵地点；邮轮游览行程将与船只出发时间协调配合"
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1811,35 +1813,6 @@
       "originalPriceUsd": 85,
       "discountPercent": 7
     }
-  },
-  "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
-      {
-        "name": "济州邮轮码头（北部）",
-        "note": "在海关出口处集合",
-        "port_id": "jeju_port"
-      },
-      {
-        "name": "江汀邮轮码头（南部，西归浦）",
-        "note": "在海关出口处集合",
-        "port_id": "gangjeong_port"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "济州邮轮码头（北部）",
-        "note": "在与接送相同的邮轮码头送达",
-        "port_id": "jeju_port"
-      },
-      {
-        "name": "江汀邮轮码头（南部，西归浦）",
-        "note": "在与接送相同的邮轮码头送达",
-        "port_id": "gangjeong_port"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "港口在预订时根据邮轮行程确定；路线将对应至匹配的方案。"
   },
   "matching_profile": {
     "profile_version": 6,

@@ -298,7 +298,8 @@
       "whyOnRoute": "Los cuatro puntos de recogida cubren las zonas hoteleras de la ciudad de Jeju (aeropuerto, centro urbano, ciudad antigua, distrito del mercado) sin obligar a los huéspedes a cruzar la ciudad. La secuencia oeste→este sitúa el autobús en el Humedal 1100 a las ~10:20 — con tiempo suficiente para disfrutar de la claridad alpina matutina antes de la neblina del mediodía. **El protocolo de cierre de la Ruta 1100** garantiza que los huéspedes sean informados sobre la contingencia invernal antes de la salida — la única carretera nacional de mayor altitud de Jeju permanece cerrada ~5–10 días al año por hielo.",
       "visitBasics": {},
       "convenience": {},
-      "smartNotes": {}
+      "smartNotes": {},
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -994,7 +995,8 @@
       "whyOnRoute": "La secuencia comienza en Hagwi porque la Ruta 1132 regresa desde Hyeopjae a través de los suburbios occidentales de la Ciudad de Jeju. **Vuelo vespertino el mismo día** — viabilidad indicada explícitamente: este es el tour con el margen más ajustado para vuelos vespertinos del catálogo, y los huéspedes deben comunicarlo en el momento de la recogida para que la ventana del atardecer pueda ajustarse en consecuencia.",
       "visitBasics": {},
       "convenience": {},
-      "smartNotes": {}
+      "smartNotes": {},
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1420,51 +1422,6 @@
       "currency": "USD",
       "per": "person"
     }
-  },
-  "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
-      {
-        "name": "Ocean Suites Jeju Hotel",
-        "time": "08:30"
-      },
-      {
-        "name": "Aeropuerto Internacional de Jeju, Puerta 3, 3.er piso (Salidas Nacionales)",
-        "time": "08:45"
-      },
-      {
-        "name": "LOTTE City Hotel Jeju",
-        "time": "08:55"
-      },
-      {
-        "name": "Tienda Shilla Duty-Free Jeju",
-        "time": "09:05"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "Tienda Shilla Duty-Free Jeju",
-        "approx_time": "≈ 19:00"
-      },
-      {
-        "name": "LOTTE City Hotel Jeju",
-        "approx_time": "≈ 19:00"
-      },
-      {
-        "name": "Aeropuerto Internacional de Jeju",
-        "approx_time": "≈ 19:00"
-      },
-      {
-        "name": "Ocean Suites Jeju Hotel",
-        "approx_time": "≈ 19:05"
-      },
-      {
-        "name": "Mercado Tradicional Dongmun (solo bajada)",
-        "approx_time": "≈ 19:15"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "Mismo patrón de 4 recogidas que en los otros tours de Jeju del operador. El final en la costa oeste en Hyeopjae implica una bajada ligeramente más tarde (≈19:00) que el tour UNESCO del sur."
   },
   "matching_profile": {
     "profile_version": 6,

@@ -269,7 +269,8 @@
           "Busan Metro official",
           "Operator schedule"
         ]
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -814,7 +815,8 @@
           "Operator schedule",
           "Korea Expressway Corporation traffic data"
         ]
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1209,37 +1211,65 @@
     }
   },
   "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "釜山站4号出口",
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "釜山站（4号出口）",
+        "type": "station",
+        "order": 1,
         "time": "08:10"
       },
       {
-        "name": "西面站4号出口",
+        "lat": 35.15782,
+        "lng": 129.06003,
+        "name": "西面站（4号出口）",
+        "type": "station",
+        "order": 2,
         "time": "08:30"
       },
       {
-        "name": "海云台站5号出口",
+        "lat": 35.16396,
+        "lng": 129.15853,
+        "name": "海云台站（5号出口）",
+        "type": "station",
+        "order": 3,
         "time": "09:10"
       }
     ],
-    "dropoff_points": [
+    "return": [
       {
-        "name": "海云台站5号出口",
-        "approx_time": "≈ 19:00"
+        "lat": 35.09663,
+        "lng": 129.0308,
+        "name": "南浦洞 / 札嘎其一带",
+        "type": "station",
+        "order": 1
       },
       {
-        "name": "西面站4号出口",
-        "approx_time": "≈ 19:25"
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "釜山站（4号出口）",
+        "type": "station",
+        "order": 2
       },
       {
-        "name": "釜山站4号出口",
-        "approx_time": "≈ 19:45"
+        "lat": 35.15782,
+        "lng": 129.06003,
+        "name": "西面站（4号出口）",
+        "type": "station",
+        "order": 3
+      },
+      {
+        "lat": 35.16396,
+        "lng": 129.15853,
+        "name": "海云台站（5号出口）",
+        "type": "station",
+        "order": 4
       }
     ],
-    "hotel_pickup_available": false,
-    "notes": "预订时请选择距您酒店最近的上车出口。全年均可出行；樱花季（通常为3月中旬至4月中旬）将阿虎山竹林替换为海云台达摩吉山。"
+    "notes": [
+      "Choose the pickup exit closest to your hotel at booking. Year-round itinerary; cherry-blossom season (typically mid-March to mid-April) swaps Ahopsan Bamboo Forest for Haeundae Dalmaji Hill."
+    ]
   },
   "matching_profile": {
     "profile_version": 6,

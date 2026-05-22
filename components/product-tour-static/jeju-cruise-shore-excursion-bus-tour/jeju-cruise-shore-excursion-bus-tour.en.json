@@ -320,7 +320,8 @@
       },
       "visitBasics": {
         "walking": "Minimal"
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -821,7 +822,8 @@
         "closed": "N/A",
         "admission": "N/A",
         "walking": "Minimal — direct vehicle disembarking"
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1750,8 +1752,8 @@
         "name": "Ocean Suites Jeju Hotel",
         "type": "hotel",
         "note": "Meet in the hotel lobby — guide holds an AtoCKorea sign.",
-        "lat": 33.4944,
-        "lng": 126.4808
+        "lat": 33.51823,
+        "lng": 126.52317
       },
       {
         "order": 2,
@@ -1759,8 +1761,8 @@
         "name": "Jeju International Airport (3F, Gate 3)",
         "type": "airport",
         "note": "3rd floor departures area. Follow signs to Gate 3.",
-        "lat": 33.5108,
-        "lng": 126.4932
+        "lat": 33.50708,
+        "lng": 126.49343
       },
       {
         "order": 3,
@@ -1768,8 +1770,8 @@
         "name": "LOTTE City Hotel Jeju",
         "type": "hotel",
         "note": "Wait in the main lobby — guide will call you by name.",
-        "lat": 33.4963,
-        "lng": 126.4865
+        "lat": 33.4906,
+        "lng": 126.48643
       },
       {
         "order": 4,
@@ -1777,8 +1779,8 @@
         "name": "Shilla Duty Free (Jeju Store)",
         "type": "shopping",
         "note": "Meet outside the main entrance of Shilla Duty Free, Jeju branch.",
-        "lat": 33.4958,
-        "lng": 126.5252
+        "lat": 33.48631,
+        "lng": 126.48739
       }
     ],
     "return": [
@@ -1786,36 +1788,36 @@
         "order": 1,
         "name": "Ocean Suites Jeju Hotel",
         "type": "hotel",
-        "lat": 33.4944,
-        "lng": 126.4808
+        "lat": 33.51823,
+        "lng": 126.52317
       },
       {
         "order": 2,
         "name": "Jeju International Airport (3F, Gate 3)",
         "type": "airport",
-        "lat": 33.5108,
-        "lng": 126.4932
+        "lat": 33.50708,
+        "lng": 126.49343
       },
       {
         "order": 3,
         "name": "LOTTE City Hotel Jeju",
         "type": "hotel",
-        "lat": 33.4963,
-        "lng": 126.4865
+        "lat": 33.4906,
+        "lng": 126.48643
       },
       {
         "order": 4,
         "name": "Shilla Duty Free (Jeju Store)",
         "type": "shopping",
-        "lat": 33.4958,
-        "lng": 126.5252
+        "lat": 33.48631,
+        "lng": 126.48739
       },
       {
         "order": 5,
         "name": "Dongmun Traditional Market",
         "type": "market",
-        "lat": 33.5136,
-        "lng": 126.5296
+        "lat": 33.51204,
+        "lng": 126.52828
       }
     ],
     "notes": [

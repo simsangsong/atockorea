@@ -279,7 +279,8 @@
           "CruiseMapper"
         ]
       },
-      "image": null
+      "image": null,
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -741,7 +742,8 @@
         "kb_version": "1.15",
         "verified_date": "2026-04-29"
       },
-      "image": null
+      "image": null,
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1178,8 +1180,8 @@
         "order": 1,
         "name": "Busan Port International Passenger Terminal",
         "type": "station",
-        "lat": 35.1067,
-        "lng": 129.0365
+        "lat": 35.11744,
+        "lng": 129.04869
       }
     ],
     "return": [
@@ -1187,8 +1189,8 @@
         "order": 1,
         "name": "Busan Port International Passenger Terminal",
         "type": "station",
-        "lat": 35.1067,
-        "lng": 129.0365
+        "lat": 35.11744,
+        "lng": 129.04869
       }
     ],
     "notes": [

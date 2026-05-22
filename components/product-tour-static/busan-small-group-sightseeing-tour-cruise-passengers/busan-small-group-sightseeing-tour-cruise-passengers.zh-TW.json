@@ -277,7 +277,8 @@
           "CruiseMapper"
         ]
       },
-      "image": null
+      "image": null,
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -766,7 +767,8 @@
         "kb_version": "1.15",
         "verified_date": "2026-04-29"
       },
-      "image": null
+      "image": null,
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1181,23 +1183,6 @@
       "originalPriceUsd": 85,
       "discountPercent": 7
     }
-  },
-  "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
-      {
-        "name": "釜山港國際旅客碼頭 — 入境大廳",
-        "time": "Calibrated to ship disembarkation"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "釜山港國際旅客碼頭",
-        "approx_time": "至少於全員返船截止時間前 60 分鐘"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "訂購時請提供船名、靠港日期、預計上岸時間及返船截止時間。與來自各船的其他郵輪旅客共乘廂型車。08:00 前的提早接送每人加收 ₩10,000，作為導遊提早出勤的補貼。"
   },
   "matching_profile": {
     "profile_version": 6,

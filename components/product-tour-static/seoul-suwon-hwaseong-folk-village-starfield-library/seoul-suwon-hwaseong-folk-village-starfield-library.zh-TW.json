@@ -255,7 +255,8 @@
         "kb_version": "v1.14",
         "verified_date": "2026-04-29",
         "note": "Operational pickup — Seoul departure; not a sightseeing POI"
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -762,7 +763,8 @@
         "kb_version": "v1.14",
         "verified_date": "2026-04-29",
         "note": "Operational stop (return)"
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1189,16 +1191,16 @@
         "time": "08:00",
         "name": "弘大入口站（8號出口）",
         "type": "station",
-        "lat": 37.5573,
-        "lng": 126.925
+        "lat": 37.55753,
+        "lng": 126.92447
       },
       {
         "order": 2,
         "time": "08:30",
         "name": "明洞站（2號或4號出口）",
         "type": "station",
-        "lat": 37.5636,
-        "lng": 126.9847
+        "lat": 37.56099,
+        "lng": 126.98619
       }
     ],
     "return": [
@@ -1206,15 +1208,15 @@
         "order": 1,
         "name": "弘大入口站（8號出口）",
         "type": "station",
-        "lat": 37.5573,
-        "lng": 126.925
+        "lat": 37.55753,
+        "lng": 126.92447
       },
       {
         "order": 2,
         "name": "明洞站（4號出口）",
         "type": "station",
-        "lat": 37.5636,
-        "lng": 126.9847
+        "lat": 37.56099,
+        "lng": 126.98619
       }
     ],
     "notes": [

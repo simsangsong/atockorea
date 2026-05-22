@@ -2251,23 +2251,6 @@
       }
     }
   ],
-  "pickup_dropoff": {
-    "type": "hotel_lobby",
-    "meeting_points": [
-      {
-        "name": "济州市酒店大堂",
-        "time": "08:00–08:30"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "济州市酒店（返程）",
-        "approx_time": "≈ 18:00–18:30"
-      }
-    ],
-    "hotel_pickup_available": true,
-    "notes": "因全岛路线行程约10小时，接送时间较早（08:00–08:30）；具体时间于前一晚确认。视情况而定，可提供机场接送服务。"
-  },
   "itinerary_variants": [],
   "_publication": {
     "schema_version": "v4_canonical",

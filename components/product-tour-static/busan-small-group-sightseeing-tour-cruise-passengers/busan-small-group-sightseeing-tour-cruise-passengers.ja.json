@@ -277,7 +277,8 @@
           "CruiseMapper"
         ]
       },
-      "image": null
+      "image": null,
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -766,7 +767,8 @@
         "kb_version": "1.15",
         "verified_date": "2026-04-29"
       },
-      "image": null
+      "image": null,
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1181,23 +1183,6 @@
       "originalPriceUsd": 85,
       "discountPercent": 7
     }
-  },
-  "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
-      {
-        "name": "釜山港国際旅客ターミナル — 到着ホール",
-        "time": "Calibrated to ship disembarkation"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "釜山港国際旅客ターミナル",
-        "approx_time": "乗船締め切りの最低60分前"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "ご予約の際は、船名・寄港日・下船予定時刻・全員乗船時刻をお知らせください。他のクルーズ船の乗客との相乗りバンです。早朝お迎え（08:00以前）は、ガイドの早出補償として1名につき₩10,000が加算されます。"
   },
   "matching_profile": {
     "profile_version": 6,

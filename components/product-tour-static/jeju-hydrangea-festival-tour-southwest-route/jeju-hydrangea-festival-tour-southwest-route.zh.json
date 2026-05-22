@@ -2693,39 +2693,6 @@
       }
     }
   ],
-  "pickup_dropoff": {
-    "type": "hotel_pickup",
-    "meeting_points": [
-      {
-        "name": "济州市内酒店",
-        "time": "≈08:30 (free)"
-      },
-      {
-        "name": "济州市外酒店（西归浦/涯月/城山）",
-        "time": "Earlier pickup; +₩70,000 surcharge"
-      },
-      {
-        "name": "济州国际机场",
-        "time": "≈08:30"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "济州市内酒店",
-        "approx_time": "≈18:00"
-      },
-      {
-        "name": "东门传统市场",
-        "approx_time": "≈18:00"
-      },
-      {
-        "name": "济州机场",
-        "approx_time": "≈18:00"
-      }
-    ],
-    "hotel_pickup_available": true,
-    "notes": "济州市内免费接送。市外接送需额外收取₩70,000。绣球花景点仅在5月下旬至7月中旬盛开（6月中旬为花期高峰）；预订前请确认花期。"
-  },
   "itinerary_variants": [],
   "priceSource": {
     "discountPct": 10,

@@ -314,7 +314,8 @@
       },
       "smartNotes": {
         "tip": "Llegar 5–10 minutos antes de la hora de recogida programada; traer identificación con foto para tours de crucero/DMZ"
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -815,7 +816,8 @@
       },
       "smartNotes": {
         "tip": "Confirme la ubicación exacta de entrega con el guía antes de comenzar el recorrido; los tours de crucero se coordinan con el horario de salida del barco"
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1811,35 +1813,6 @@
       "originalPriceUsd": 85,
       "discountPercent": 7
     }
-  },
-  "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
-      {
-        "name": "Terminal de cruceros de Jeju (norte)",
-        "note": "Encuentro a la salida de la aduana",
-        "port_id": "jeju_port"
-      },
-      {
-        "name": "Terminal de cruceros de Gangjeong (sur, Seogwipo)",
-        "note": "Encuentro a la salida de la aduana",
-        "port_id": "gangjeong_port"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "Terminal de cruceros de Jeju (norte)",
-        "note": "Regreso a la misma terminal de cruceros que el punto de recogida",
-        "port_id": "jeju_port"
-      },
-      {
-        "name": "Terminal de cruceros de Gangjeong (sur, Seogwipo)",
-        "note": "Regreso a la misma terminal de cruceros que el punto de recogida",
-        "port_id": "gangjeong_port"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "El puerto se determina en el momento de la reserva según el itinerario del crucero; la ruta se dirige a la variante correspondiente."
   },
   "matching_profile": {
     "profile_version": 6,

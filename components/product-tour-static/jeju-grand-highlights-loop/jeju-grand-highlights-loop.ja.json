@@ -2251,23 +2251,6 @@
       }
     }
   ],
-  "pickup_dropoff": {
-    "type": "hotel_lobby",
-    "meeting_points": [
-      {
-        "name": "済州市内ホテルのロビー",
-        "time": "08:00–08:30"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "済州市内ホテル（帰路）",
-        "approx_time": "≈ 18:00〜18:30"
-      }
-    ],
-    "hotel_pickup_available": true,
-    "notes": "10時間の全島ルートのため、早めのピックアップ（08:00〜08:30）；最終時刻は前夜に確定します。状況によっては空港でのピックアップも対応可能な場合があります。"
-  },
   "itinerary_variants": [],
   "_publication": {
     "schema_version": "v4_canonical",

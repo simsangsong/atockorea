@@ -260,7 +260,8 @@
           "Visit Busan",
           "Busan Metro"
         ]
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -2283,43 +2284,6 @@
       }
     }
   ],
-  "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
-      {
-        "name": "西面站4號出口",
-        "time": "08:30"
-      },
-      {
-        "name": "釜山站4號出口（非KTX閘口）",
-        "time": "08:50"
-      },
-      {
-        "name": "海雲台站5號出口",
-        "time": "09:30"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "南浦洞／札嘎其（最後景點站）",
-        "approx_time": "≈ 17:50"
-      },
-      {
-        "name": "釜山站4號出口",
-        "approx_time": "≈ 18:10"
-      },
-      {
-        "name": "西面站4號出口",
-        "approx_time": "≈ 18:30"
-      },
-      {
-        "name": "海雲台站5號出口",
-        "approx_time": "≈ 19:00"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "訂票時請選擇最靠近您飯店的上車出口。下車站點依回程順序依序排列；從西面（08:30）搭車的旅客全程最長（約10小時），從海雲台搭車的旅客則全程最短（約9.5小時）。"
-  },
   "itinerary_variants": [],
   "_publication": {
     "schema_version": "v4_canonical",

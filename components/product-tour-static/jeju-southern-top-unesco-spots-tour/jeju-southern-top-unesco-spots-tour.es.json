@@ -284,7 +284,8 @@
       "whyOnRoute": "Los cuatro puntos de recogida cubren las zonas hoteleras y de transporte de la Ciudad de Jeju (aeropuerto, zona central, casco antiguo, distrito del mercado) sin obligar a los huéspedes a cruzar la ciudad. La secuencia oeste→este lleva el autobús a Hallasan ~10:20 — suficientemente temprano para recorrer el sendero matutino de Eoseungsaengak antes de la neblina del mediodía y las aglomeraciones. El **protocolo de cierre de la Ruta 1100** garantiza que los huéspedes estén informados sobre la contingencia invernal antes de la salida — la única carretera nacional de mayor altitud de Jeju permanece cerrada ~5–10 días/año por hielo.",
       "smartNotes": {},
       "convenience": {},
-      "visitBasics": {}
+      "visitBasics": {},
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -895,7 +896,8 @@
       "whyOnRoute": "La bajada está planificada siguiendo la carretera de regreso hacia Jeju City. Los huéspedes con vuelos vespertinos deben informar al guía con antelación para que el equipo pueda gestionar cuidadosamente el tiempo de la última parada.",
       "smartNotes": {},
       "convenience": {},
-      "visitBasics": {}
+      "visitBasics": {},
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1305,8 +1307,8 @@
         "name": "Ocean Suites Jeju Hotel",
         "type": "hotel",
         "note": "Reúnanse en el lobby del hotel — el guía llevará un cartel de AtoCKorea.",
-        "lat": 33.4944,
-        "lng": 126.4808
+        "lat": 33.51823,
+        "lng": 126.52317
       },
       {
         "order": 2,
@@ -1314,8 +1316,8 @@
         "name": "Aeropuerto Internacional de Jeju (3.ª planta, Puerta 3)",
         "type": "airport",
         "note": "Área de salidas en el tercer piso. Siga las señales hacia la Puerta 3.",
-        "lat": 33.5108,
-        "lng": 126.4932
+        "lat": 33.50708,
+        "lng": 126.49343
       },
       {
         "order": 3,
@@ -1323,8 +1325,8 @@
         "name": "LOTTE City Hotel Jeju",
         "type": "hotel",
         "note": "Espere en el lobby principal — el guía lo llamará por su nombre.",
-        "lat": 33.4963,
-        "lng": 126.4865
+        "lat": 33.4906,
+        "lng": 126.48643
       },
       {
         "order": 4,
@@ -1332,8 +1334,8 @@
         "name": "Shilla Duty Free (tienda de Jeju)",
         "type": "shopping",
         "note": "Reúnanse fuera de la entrada principal de Shilla Duty Free, sucursal de Jeju.",
-        "lat": 33.4958,
-        "lng": 126.5252
+        "lat": 33.48631,
+        "lng": 126.48739
       }
     ],
     "return": [
@@ -1341,36 +1343,36 @@
         "order": 1,
         "name": "Ocean Suites Jeju Hotel",
         "type": "hotel",
-        "lat": 33.4944,
-        "lng": 126.4808
+        "lat": 33.51823,
+        "lng": 126.52317
       },
       {
         "order": 2,
         "name": "Aeropuerto Internacional de Jeju (3.ª planta, Puerta 3)",
         "type": "airport",
-        "lat": 33.5108,
-        "lng": 126.4932
+        "lat": 33.50708,
+        "lng": 126.49343
       },
       {
         "order": 3,
         "name": "LOTTE City Hotel Jeju",
         "type": "hotel",
-        "lat": 33.4963,
-        "lng": 126.4865
+        "lat": 33.4906,
+        "lng": 126.48643
       },
       {
         "order": 4,
         "name": "Shilla Duty Free (tienda de Jeju)",
         "type": "shopping",
-        "lat": 33.4958,
-        "lng": 126.5252
+        "lat": 33.48631,
+        "lng": 126.48739
       },
       {
         "order": 5,
         "name": "Mercado Tradicional de Dongmun",
         "type": "market",
-        "lat": 33.5136,
-        "lng": 126.5296
+        "lat": 33.51204,
+        "lng": 126.52828
       }
     ],
     "notes": [

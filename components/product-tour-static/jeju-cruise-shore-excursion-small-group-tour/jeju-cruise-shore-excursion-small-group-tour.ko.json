@@ -314,7 +314,8 @@
       },
       "smartNotes": {
         "tip": "예정된 픽업 시간 5~10분 전 도착; 크루즈/DMZ 투어 시 사진이 부착된 신분증 지참"
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -815,7 +816,8 @@
       },
       "smartNotes": {
         "tip": "출발 전 가이드와 정확한 하차 위치를 확인하세요; 크루즈 투어는 선박 출항 일정에 맞춰 조율됩니다"
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1811,35 +1813,6 @@
       "originalPriceUsd": 85,
       "discountPercent": 7
     }
-  },
-  "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
-      {
-        "name": "제주 크루즈 터미널 (북부)",
-        "note": "세관 출구에서 만남",
-        "port_id": "jeju_port"
-      },
-      {
-        "name": "강정 크루즈 터미널 (남부, 서귀포)",
-        "note": "세관 출구에서 만남",
-        "port_id": "gangjeong_port"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "제주 크루즈 터미널 (북부)",
-        "note": "픽업과 동일한 크루즈 터미널에서 하차",
-        "port_id": "jeju_port"
-      },
-      {
-        "name": "강정 크루즈 터미널 (남부, 서귀포)",
-        "note": "픽업과 동일한 크루즈 터미널에서 하차",
-        "port_id": "gangjeong_port"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "항구는 크루즈 일정에서 예약 시 결정되며, 경로는 해당 변형으로 안내됩니다."
   },
   "matching_profile": {
     "profile_version": 6,

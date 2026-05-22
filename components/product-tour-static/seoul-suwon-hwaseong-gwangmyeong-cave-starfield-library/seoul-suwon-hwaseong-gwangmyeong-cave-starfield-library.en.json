@@ -279,7 +279,8 @@
         "kb_version": "v1.14",
         "verified_date": "2026-04-29",
         "note": "Operational pickup — Seoul departure"
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -886,7 +887,8 @@
         "kb_version": "v1.14",
         "verified_date": "2026-04-29",
         "note": "Operational stop (return)"
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1318,16 +1320,16 @@
         "time": "08:00",
         "name": "Hongik Univ. Station (Exit 8)",
         "type": "station",
-        "lat": 37.5573,
-        "lng": 126.925
+        "lat": 37.55753,
+        "lng": 126.92447
       },
       {
         "order": 2,
         "time": "08:30",
         "name": "Myeongdong Station (Exit 2 or 4)",
         "type": "station",
-        "lat": 37.5636,
-        "lng": 126.9847
+        "lat": 37.56099,
+        "lng": 126.98619
       }
     ],
     "return": [
@@ -1335,15 +1337,15 @@
         "order": 1,
         "name": "Hongik Univ. Station (Exit 8)",
         "type": "station",
-        "lat": 37.5573,
-        "lng": 126.925
+        "lat": 37.55753,
+        "lng": 126.92447
       },
       {
         "order": 2,
         "name": "Myeongdong Station (Exit 4)",
         "type": "station",
-        "lat": 37.5636,
-        "lng": 126.9847
+        "lat": 37.56099,
+        "lng": 126.98619
       }
     ],
     "notes": [
