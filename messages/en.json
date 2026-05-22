@@ -26,6 +26,7 @@
     "adding": "Adding..."
   },
   "nav": {
+    "tourRoom": "Tour Room",
     "home": "Home",
     "tours": "Tours",
     "about": "About",
@@ -38,6 +39,31 @@
     "wishlist": "Wishlist",
     "whyAtoc": "Why AtoC",
     "support": "Support"
+  },
+  "tourRoom": {
+    "title": "Tour Room",
+    "liveNow": "Live now",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "date": "Date",
+    "time": "Time",
+    "guests": "Guests",
+    "reference": "Booking ref",
+    "chatHeading": "Messages with your guide",
+    "chatPlaceholder": "Type a message…",
+    "send": "Send",
+    "chatEmpty": "No messages yet. Say hello to your guide!",
+    "sendError": "Couldn’t send. Please try again.",
+    "senderGuide": "Guide",
+    "senderTeam": "AtoC",
+    "noActiveTitle": "No tour in progress",
+    "noActiveDesc": "Your Tour Room opens the day before your tour.",
+    "opensSoon": "Your Tour Room opens the day before your tour. We’ll have everything ready for you here.",
+    "viewUpcoming": "View upcoming tours",
+    "browseTours": "Browse tours",
+    "signInTitle": "Sign in to open your Tour Room",
+    "signInDesc": "Log in to see your tour details and chat with your guide.",
+    "loadError": "We couldn’t open this Tour Room."
   },
   "tour": {
     "title": "Tours",

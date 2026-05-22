@@ -26,6 +26,7 @@
     "adding": "追加中..."
   },
   "nav": {
+    "tourRoom": "ツアールーム",
     "home": "ホーム",
     "tours": "ツアー",
     "about": "について",
@@ -38,6 +39,31 @@
     "wishlist": "ウィッシュリスト",
     "whyAtoc": "AtoCについて",
     "support": "サポート"
+  },
+  "tourRoom": {
+    "title": "ツアールーム",
+    "liveNow": "ライブ中",
+    "today": "今日",
+    "tomorrow": "明日",
+    "date": "日付",
+    "time": "時刻",
+    "guests": "人数",
+    "reference": "予約番号",
+    "chatHeading": "ガイドとのメッセージ",
+    "chatPlaceholder": "メッセージを入力…",
+    "send": "送信",
+    "chatEmpty": "まだメッセージがありません。ガイドに挨拶してみましょう！",
+    "sendError": "送信できませんでした。もう一度お試しください。",
+    "senderGuide": "ガイド",
+    "senderTeam": "AtoC",
+    "noActiveTitle": "進行中のツアーはありません",
+    "noActiveDesc": "ツアールームはツアー前日に開きます。",
+    "opensSoon": "ツアールームはツアー前日に開きます。すべてをここにご用意します。",
+    "viewUpcoming": "予定のツアーを見る",
+    "browseTours": "ツアーを探す",
+    "signInTitle": "ログインしてツアールームを開く",
+    "signInDesc": "ログインするとツアー詳細の確認とガイドとのチャットができます。",
+    "loadError": "このツアールームを開けませんでした。"
   },
   "tour": {
     "title": "ツアー",

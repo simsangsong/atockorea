@@ -26,6 +26,7 @@
     "adding": "Añadiendo..."
   },
   "nav": {
+    "tourRoom": "Sala Tour",
     "home": "Inicio",
     "tours": "Tours",
     "about": "Acerca de",
@@ -38,6 +39,31 @@
     "wishlist": "Lista de deseos",
     "whyAtoc": "Sobre AtoC",
     "support": "Soporte"
+  },
+  "tourRoom": {
+    "title": "Sala del Tour",
+    "liveNow": "En directo",
+    "today": "Hoy",
+    "tomorrow": "Mañana",
+    "date": "Fecha",
+    "time": "Hora",
+    "guests": "Personas",
+    "reference": "Nº de reserva",
+    "chatHeading": "Mensajes con tu guía",
+    "chatPlaceholder": "Escribe un mensaje…",
+    "send": "Enviar",
+    "chatEmpty": "Aún no hay mensajes. ¡Saluda a tu guía!",
+    "sendError": "No se pudo enviar. Inténtalo de nuevo.",
+    "senderGuide": "Guía",
+    "senderTeam": "AtoC",
+    "noActiveTitle": "No hay ningún tour en curso",
+    "noActiveDesc": "Tu Sala del Tour se abre el día antes del tour.",
+    "opensSoon": "Tu Sala del Tour se abre el día antes del tour. Aquí tendremos todo listo para ti.",
+    "viewUpcoming": "Ver próximos tours",
+    "browseTours": "Explorar tours",
+    "signInTitle": "Inicia sesión para abrir tu Sala del Tour",
+    "signInDesc": "Inicia sesión para ver los detalles de tu tour y chatear con tu guía.",
+    "loadError": "No pudimos abrir esta Sala del Tour."
   },
   "tour": {
     "title": "Tours",
