@@ -260,7 +260,8 @@
           "Visit Busan",
           "Busan Metro"
         ]
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -2368,43 +2369,6 @@
       }
     }
   ],
-  "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
-      {
-        "name": "Salida 4 de la Estación Seomyeon",
-        "time": "08:30"
-      },
-      {
-        "name": "Salida 4 de la Estación de Busan (no la puerta del KTX)",
-        "time": "08:50"
-      },
-      {
-        "name": "Salida 5 de la Estación Haeundae",
-        "time": "09:30"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "Nampo-dong / Jagalchi (parada final de atracción)",
-        "approx_time": "≈ 17:50"
-      },
-      {
-        "name": "Salida 4 de la Estación de Busan",
-        "approx_time": "≈ 18:10"
-      },
-      {
-        "name": "Salida 4 de la Estación Seomyeon",
-        "approx_time": "≈ 18:30"
-      },
-      {
-        "name": "Salida 5 de la Estación Haeundae",
-        "approx_time": "≈ 19:00"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "Elija la salida de recogida más cercana a su hotel al momento de reservar. Las bajadas son secuenciales a lo largo de la ruta de regreso; los pasajeros que aborden en Seomyeon (08:30) tendrán el día más largo (≈10 horas), y los de Haeundae, el más corto (≈9,5 horas)."
-  },
   "itinerary_variants": [],
   "_publication": {
     "schema_version": "v4_canonical",

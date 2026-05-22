@@ -2251,23 +2251,6 @@
       }
     }
   ],
-  "pickup_dropoff": {
-    "type": "hotel_lobby",
-    "meeting_points": [
-      {
-        "name": "濟州市飯店大廳",
-        "time": "08:00–08:30"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "濟州市飯店（回程）",
-        "approx_time": "≈ 18:00–18:30"
-      }
-    ],
-    "hotel_pickup_available": true,
-    "notes": "因全島路線約需 10 小時，接送時間較早（08:00–08:30）；最終時間於前一晚確認。視情況而定，亦可能提供機場接送服務。"
-  },
   "itinerary_variants": [],
   "_publication": {
     "schema_version": "v4_canonical",

@@ -277,7 +277,8 @@
           "CruiseMapper"
         ]
       },
-      "image": null
+      "image": null,
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -766,7 +767,8 @@
         "kb_version": "1.15",
         "verified_date": "2026-04-29"
       },
-      "image": null
+      "image": null,
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1181,23 +1183,6 @@
       "originalPriceUsd": 85,
       "discountPercent": 7
     }
-  },
-  "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
-      {
-        "name": "釜山港国际客运站 — 到达大厅",
-        "time": "Calibrated to ship disembarkation"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "釜山港国际客运站",
-        "approx_time": "全体登船前至少 60 分钟"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "预订时请提供船名、靠港日期、预计下船时间及全体登船时间。与来自不同船只的其他邮轮旅客共乘面包车。提前接送（08:00 前）每人加收 ₩10,000，以补偿导游提前出发。"
   },
   "matching_profile": {
     "profile_version": 6,

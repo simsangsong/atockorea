@@ -298,7 +298,8 @@
       "whyOnRoute": "四個上車地點涵蓋濟州市各飯店區域（機場、市中心、舊市區、市場區），無需讓旅客橫跨全城。由西向東的接送順序使巴士約於 10:20 抵達 1100 高地濕地——足以在午間霧霾前欣賞清晨的高山清澈景致。**1100 號公路封路處理程序**確保旅客於出發前獲悉冬季備案——濟州唯一的最高海拔國道每年因結冰封路約 5 至 10 天。",
       "visitBasics": {},
       "convenience": {},
-      "smartNotes": {}
+      "smartNotes": {},
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -994,7 +995,8 @@
       "whyOnRoute": "行程以下貴為優先停靠點，原因是1132號路線從協才返回時途經濟州市西部郊區。**當日晚班航班**可行性已特別說明：此為目錄中時間最緊湊的晚班機行程，旅客須於接送時主動告知，以便相應調整日落時段安排。",
       "visitBasics": {},
       "convenience": {},
-      "smartNotes": {}
+      "smartNotes": {},
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1420,51 +1422,6 @@
       "currency": "USD",
       "per": "person"
     }
-  },
-  "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
-      {
-        "name": "濟州海洋套房酒店（Ocean Suites Jeju Hotel）",
-        "time": "08:30"
-      },
-      {
-        "name": "濟州國際機場3號門，3樓（國內出發大廳）",
-        "time": "08:45"
-      },
-      {
-        "name": "樂天城市酒店濟州（LOTTE City Hotel Jeju）",
-        "time": "08:55"
-      },
-      {
-        "name": "新羅免稅店濟州店（Shilla Duty-Free Jeju Store）",
-        "time": "09:05"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "新羅免稅店濟州店（Shilla Duty-Free Jeju Store）",
-        "approx_time": "約19:00"
-      },
-      {
-        "name": "樂天城市酒店濟州（LOTTE City Hotel Jeju）",
-        "approx_time": "約19:00"
-      },
-      {
-        "name": "濟州國際機場",
-        "approx_time": "約19:00"
-      },
-      {
-        "name": "濟州海洋套房酒店（Ocean Suites Jeju Hotel）",
-        "approx_time": "約19:05"
-      },
-      {
-        "name": "東門傳統市場（僅下客）",
-        "approx_time": "≈ 19:15"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "與業者其他濟州行程相同的4個接送點模式。以協才作為西海岸終點，下車時間（≈19:00）略晚於南部世界遺產行程。"
   },
   "matching_profile": {
     "profile_version": 6,

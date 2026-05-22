@@ -2693,39 +2693,6 @@
       }
     }
   ],
-  "pickup_dropoff": {
-    "type": "hotel_pickup",
-    "meeting_points": [
-      {
-        "name": "済州市内のホテル",
-        "time": "≈08:30 (free)"
-      },
-      {
-        "name": "済州市外のホテル（西帰浦／愛月／城山）",
-        "time": "Earlier pickup; +₩70,000 surcharge"
-      },
-      {
-        "name": "済州国際空港",
-        "time": "≈08:30"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "済州市内のホテル",
-        "approx_time": "≈18:00"
-      },
-      {
-        "name": "東門伝統市場",
-        "approx_time": "≈18:00"
-      },
-      {
-        "name": "済州空港",
-        "approx_time": "≈18:00"
-      }
-    ],
-    "hotel_pickup_available": true,
-    "notes": "済州市内は無料ピックアップ。市外からのピックアップは₩70,000が追加されます。紫陽花スポットの見頃は5月下旬〜7月中旬（ピークは6月中旬）のみです。ご予約前にご確認ください。"
-  },
   "itinerary_variants": [],
   "priceSource": {
     "discountPct": 10,

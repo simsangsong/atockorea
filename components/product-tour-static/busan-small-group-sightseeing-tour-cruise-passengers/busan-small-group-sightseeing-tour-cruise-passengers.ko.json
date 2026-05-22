@@ -277,7 +277,8 @@
           "CruiseMapper"
         ]
       },
-      "image": null
+      "image": null,
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -846,7 +847,8 @@
         "kb_version": "1.15",
         "verified_date": "2026-04-29"
       },
-      "image": null
+      "image": null,
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1261,23 +1263,6 @@
       "originalPriceUsd": 85,
       "discountPercent": 7
     }
-  },
-  "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
-      {
-        "name": "부산항 국제여객터미널 — 입국장",
-        "time": "Calibrated to ship disembarkation"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "부산항 국제여객터미널",
-        "approx_time": "최종 승선(All-Aboard) 최소 60분 전"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "예약 시 선박명, 기항일, 예상 하선 시간, 최종 승선 시간을 알려주세요. 다양한 선박의 크루즈 승객들과 함께하는 합승 밴입니다. 이른 픽업(08:00 이전)의 경우 가이드의 조기 출근 보상을 위해 1인당 ₩10,000이 추가됩니다."
   },
   "matching_profile": {
     "profile_version": 6,

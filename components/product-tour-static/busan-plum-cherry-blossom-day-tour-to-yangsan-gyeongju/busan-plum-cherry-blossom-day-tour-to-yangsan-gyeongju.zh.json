@@ -188,7 +188,8 @@
           "Busan Metro",
           "Korea Expressway Corporation"
         ]
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -480,7 +481,8 @@
           "Korea Expressway Corporation",
           "Busan Metro"
         ]
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -794,43 +796,62 @@
   "pickup_dropoff": {
     "departure": [
       {
-        "order": 1,
-        "time": "08:00",
-        "name": "釜山站（KTX主出口）",
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "釜山站（KTX正门）",
         "type": "station",
-        "note": "团体集合点位于主出口；工作人员手持 AtoC Korea 接牌。",
-        "lat": 35.1152,
-        "lng": 129.0421
+        "order": 1,
+        "time": "08:00"
       },
       {
-        "order": 2,
-        "time": "08:15",
+        "lat": 35.15782,
+        "lng": 129.06003,
         "name": "西面站（7号出口）",
         "type": "station",
-        "note": "离开釜山市中心途中的第二个接送点。",
-        "lat": 35.1577,
-        "lng": 129.0592
+        "order": 2,
+        "time": "08:15"
       },
       {
-        "order": 3,
-        "time": "08:30",
+        "lat": 35.28359,
+        "lng": 129.09482,
         "name": "老圃站（3号出口）",
         "type": "station",
-        "note": "第三个接送点——老圃站是距通度寺最近的釜山地铁站（约25分钟车程），因此该站点适合以梁山为首站的行程安排。",
-        "lat": 35.2285,
-        "lng": 129.0784
+        "order": 3,
+        "time": "08:30"
       }
     ],
     "return": [
       {
-        "order": 1,
-        "name": "同样三个站点（反向顺序）",
+        "lat": 35.09663,
+        "lng": 129.0308,
+        "name": "南浦洞 / 札嘎其一带",
         "type": "station",
-        "note": "可按需在三个接送站中任意一站下车；从釜山站上车至釜山站送达，全程约8.5小时。"
+        "order": 1
+      },
+      {
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "釜山站（4号出口）",
+        "type": "station",
+        "order": 2
+      },
+      {
+        "lat": 35.15782,
+        "lng": 129.06003,
+        "name": "西面站（4号出口）",
+        "type": "station",
+        "order": 3
+      },
+      {
+        "lat": 35.16396,
+        "lng": 129.15853,
+        "name": "海云台站（5号出口）",
+        "type": "station",
+        "order": 4
       }
     ],
     "notes": [
-      "本次行程仅在春季花季期间运营——约2026年2月25日至4月10日。这是一款双花季产品：梅花（매화，高峰期约3月1日至15日，地点为通度寺慈藏梅园及梁山元东村）与樱花（벚꽃，高峰期约3月28日至4月10日，地点为佛国寺及普门湖）相互衔接。每日线路根据季节灵活调整：前期以梁山（通度寺＋元东村）为重点；后期转向庆州（佛国寺＋普门湖）；中段两地均有涵盖。出发采用固定团体班车（小团产品），接送时间不可更改。午餐自费（约10,000–20,000韩元）；梅花季期间推荐元东村水芹五花肉（水芹与五花肉同烤，仅限本季供应）。乘坐轮椅或推婴儿车的旅客——请于预订时提前告知；通度寺设有1.2公里河畔步道及平缓坡道，佛国寺设有台阶。"
+      "This tour operates ONLY during the spring blossom window — approximately Feb 25 to Apr 10, 2026. It is a DUAL-SEASON product: plum blossom (매화, peak ~Mar 1–15 at Tongdosa Jajangmae and Yangsan Wondong) blends into cherry blossom (벚꽃, peak ~Mar 28–Apr 10 at Bulguksa and Bomun Lake). Daily route is adjusted by season: early dates emphasize Yangsan (Tongdosa + Wondong); later dates pivot to Gyeongju (Bulguksa + Bomun Lake). Mid-season days cover both. Departure is a fixed group shuttle (small_group product) so pickup times are not flexible. Lunch is at own expense (~10,000–20,000 KRW); during plum season the recommended lunch is Wondong's Minari Samgyeopsal (clean-water parsley grilled with pork belly, only available this season). Wheelchair and stroller travelers — please notify at booking; Tongdosa has a 1.2 km riverside walk and gentle slopes, Bulguksa has stairs."
     ]
   },
   "matching_profile": {

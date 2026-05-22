@@ -16,6 +16,9 @@ import {
 const FREE_ADMISSION_PATTERNS = /\bfree\b|무료|à la carte|included|포함/i;
 // EN + KO + ZH + JA pickup/departure category patterns
 const PICKUP_STOP_RX = /pickup|departure|transit|hotel.*pickup|pick.up|픽업|出発|出発地|출발|接送|接机/i;
+// Trailing return/drop-off pseudo-stop patterns (EN/ES/KO/JA/ZH). Fallback only — the
+// authoritative signal is the `_role` marker on the stop; this catches legacy/unmarked data.
+const DROPOFF_STOP_RX = /drop.?off|return|regreso|귀환|하차|복귀|帰路|帰還|帰港|戻|解散|返程|返回|下车|下車/i;
 
 function StopCard({
   stop,
@@ -159,17 +162,34 @@ export function TourTimelineSection({
   const [internalPortIndex, setInternalPortIndex] = useState(0);
   const hasRouteVariants = Array.isArray(routeVariants) && routeVariants.length > 0;
 
-  // If stop #1 is a pickup stop and a pickup_dropoff card already renders above,
-  // strip it from the numbered timeline and renumber remaining stops from 1.
+  // Pickup / return pseudo-stops are already rendered by the dedicated PickupOnlyCards
+  // (above) and DropoffOnlyCard (below). Strip them from the numbered timeline so they
+  // don't appear twice. The authoritative signal is the locale-independent `_role` marker;
+  // the multilingual regex is a back-compat fallback for stops authored before the marker.
   const firstStop = itineraryStops[0];
+  const lastStop = itineraryStops[itineraryStops.length - 1];
+  const hasPickupCard =
+    !hasRouteVariants && !!pickup_dropoff && (pickup_dropoff.departure?.length ?? 0) > 0;
+  const hasDropoffCard =
+    !hasRouteVariants && !!pickup_dropoff && (pickup_dropoff.return?.length ?? 0) > 0;
   const firstIsPickup =
-    !hasRouteVariants &&
-    !!pickup_dropoff &&
+    hasPickupCard &&
     !!firstStop &&
-    PICKUP_STOP_RX.test((firstStop.category ?? "") + " " + (firstStop.name ?? ""));
-  const displayStops = firstIsPickup
-    ? itineraryStops.slice(1).map((s, i) => ({ ...s, number: i + 1 }))
-    : itineraryStops;
+    (firstStop._role === "pickup" ||
+      PICKUP_STOP_RX.test((firstStop.category ?? "") + " " + (firstStop.name ?? "")));
+  const lastIsDropoff =
+    hasDropoffCard &&
+    !!lastStop &&
+    lastStop !== firstStop &&
+    (lastStop._role === "dropoff" ||
+      DROPOFF_STOP_RX.test((lastStop.category ?? "") + " " + (lastStop.name ?? "")));
+  let working = itineraryStops;
+  if (lastIsDropoff && working.length > 1) working = working.slice(0, -1);
+  if (firstIsPickup && working.length > 1) working = working.slice(1);
+  const displayStops =
+    firstIsPickup || lastIsDropoff
+      ? working.map((s, i) => ({ ...s, number: i + 1 }))
+      : working;
   const total = displayStops.length;
   const effectivePortIndex = onPortChange ? selectedPortIndex : internalPortIndex;
 

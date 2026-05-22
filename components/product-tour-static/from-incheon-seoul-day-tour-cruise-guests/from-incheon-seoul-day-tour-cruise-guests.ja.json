@@ -273,7 +273,8 @@
           "Visit Korea — Incheon Tourist Attraction official",
           "Wikipedia (Incheon Port + Songdo International Business District)"
         ]
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -692,7 +693,8 @@
         "verified": false,
         "match": "operational_implicit",
         "note": "Operational return stop"
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1068,23 +1070,6 @@
       "originalPriceUsd": 76,
       "discountPercent": 9
     }
-  },
-  "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
-      {
-        "name": "仁川港国際旅客ターミナル — 到着ホール（松島）",
-        "time": "Calibrated to ship disembarkation"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "仁川港国際旅客ターミナル",
-        "approx_time": "最終乗船時刻の60分前以上"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "ご予約時に船名、寄港日、予定下船時刻、最終乗船時刻をお知らせください。さまざまな船のクルーズ乗船客と相乗りするシェアードバンです。ガイドは各乗客の個別の船のスケジュールを把握しており、複数の船が異なる時刻に出航する場合は、最も早く出航する乗客から順に送り届けます。"
   },
   "matching_profile": {
     "profile_version": 6,

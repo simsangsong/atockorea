@@ -2251,23 +2251,6 @@
       }
     }
   ],
-  "pickup_dropoff": {
-    "type": "hotel_lobby",
-    "meeting_points": [
-      {
-        "name": "제주시 호텔 로비",
-        "time": "08:00–08:30"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "제주시 호텔 (복귀)",
-        "approx_time": "≈ 18:00–18:30 *(시간 표기 — 원문 유지)*"
-      }
-    ],
-    "hotel_pickup_available": true,
-    "notes": "10시간 전도 코스 특성상 픽업이 일찍 시작됩니다 (08:00–08:30). 최종 픽업 시간은 전날 밤 확정됩니다. 상황에 따라 공항 픽업도 가능할 수 있습니다."
-  },
   "itinerary_variants": [],
   "_publication": {
     "schema_version": "v4_canonical",

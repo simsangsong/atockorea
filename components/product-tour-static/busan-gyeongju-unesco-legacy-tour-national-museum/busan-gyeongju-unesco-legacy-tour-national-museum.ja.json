@@ -269,7 +269,8 @@
           "Busan Metro official",
           "Operator schedule"
         ]
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -814,7 +815,8 @@
           "Operator schedule",
           "Korea Expressway Corporation traffic data"
         ]
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1209,37 +1211,65 @@
     }
   },
   "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "釜山駅4番出口",
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "釜山駅（4番出口）",
+        "type": "station",
+        "order": 1,
         "time": "08:10"
       },
       {
-        "name": "西面駅4番出口",
+        "lat": 35.15782,
+        "lng": 129.06003,
+        "name": "西面駅（4番出口）",
+        "type": "station",
+        "order": 2,
         "time": "08:30"
       },
       {
-        "name": "海雲台駅5番出口",
+        "lat": 35.16396,
+        "lng": 129.15853,
+        "name": "海雲台駅（5番出口）",
+        "type": "station",
+        "order": 3,
         "time": "09:10"
       }
     ],
-    "dropoff_points": [
+    "return": [
       {
-        "name": "海雲台駅5番出口",
-        "approx_time": "≈ 19:00"
+        "lat": 35.09663,
+        "lng": 129.0308,
+        "name": "南浦洞・ジャガルチ周辺",
+        "type": "station",
+        "order": 1
       },
       {
-        "name": "西面（ソミョン）駅 4番出口",
-        "approx_time": "≈ 19:25"
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "釜山駅（4番出口）",
+        "type": "station",
+        "order": 2
       },
       {
-        "name": "釜山駅 4番出口",
-        "approx_time": "≈ 19:45"
+        "lat": 35.15782,
+        "lng": 129.06003,
+        "name": "西面駅（4番出口）",
+        "type": "station",
+        "order": 3
+      },
+      {
+        "lat": 35.16396,
+        "lng": 129.15853,
+        "name": "海雲台駅（5番出口）",
+        "type": "station",
+        "order": 4
       }
     ],
-    "hotel_pickup_available": false,
-    "notes": "ご予約時にホテルに最も近いピックアップ出口をお選びください。通年ツアーです。桜のシーズン（例年3月中旬〜4月中旬）は、アホプサン竹林の代わりに海雲台ダルマジの丘に変更されます。"
+    "notes": [
+      "Choose the pickup exit closest to your hotel at booking. Year-round itinerary; cherry-blossom season (typically mid-March to mid-April) swaps Ahopsan Bamboo Forest for Haeundae Dalmaji Hill."
+    ]
   },
   "matching_profile": {
     "profile_version": 6,

@@ -403,7 +403,8 @@
       },
       "convenience": {},
       "smartNotes": {},
-      "visitBasics": {}
+      "visitBasics": {},
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -1163,7 +1164,8 @@
       },
       "convenience": {},
       "smartNotes": {},
-      "visitBasics": {}
+      "visitBasics": {},
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1549,8 +1551,8 @@
         "name": "濟州海洋套房飯店",
         "type": "hotel",
         "note": "請在飯店大廳等候，導遊持有AtoCKorea標牌。",
-        "lat": 33.4944,
-        "lng": 126.4808
+        "lat": 33.51823,
+        "lng": 126.52317
       },
       {
         "order": 2,
@@ -1558,8 +1560,8 @@
         "name": "濟州國際機場（3F，3號門）",
         "type": "airport",
         "note": "3樓出發區，請跟隨指示牌前往3號門。",
-        "lat": 33.5108,
-        "lng": 126.4932
+        "lat": 33.50708,
+        "lng": 126.49343
       },
       {
         "order": 3,
@@ -1567,8 +1569,8 @@
         "name": "樂天城市飯店濟州",
         "type": "hotel",
         "note": "請在主大廳等候，導遊會呼叫您的姓名。",
-        "lat": 33.4963,
-        "lng": 126.4865
+        "lat": 33.4906,
+        "lng": 126.48643
       },
       {
         "order": 4,
@@ -1576,8 +1578,8 @@
         "name": "新羅免稅店（濟州店）",
         "type": "shopping",
         "note": "在新羅免稅店濟州店正門外與導遊會合。",
-        "lat": 33.4958,
-        "lng": 126.5252
+        "lat": 33.48631,
+        "lng": 126.48739
       }
     ],
     "return": [
@@ -1585,36 +1587,36 @@
         "order": 1,
         "name": "濟州海洋套房飯店",
         "type": "hotel",
-        "lat": 33.4944,
-        "lng": 126.4808
+        "lat": 33.51823,
+        "lng": 126.52317
       },
       {
         "order": 2,
         "name": "濟州國際機場（3F，3號門）",
         "type": "airport",
-        "lat": 33.5108,
-        "lng": 126.4932
+        "lat": 33.50708,
+        "lng": 126.49343
       },
       {
         "order": 3,
         "name": "樂天城市飯店濟州",
         "type": "hotel",
-        "lat": 33.4963,
-        "lng": 126.4865
+        "lat": 33.4906,
+        "lng": 126.48643
       },
       {
         "order": 4,
         "name": "新羅免稅店（濟州店）",
         "type": "shopping",
-        "lat": 33.4958,
-        "lng": 126.5252
+        "lat": 33.48631,
+        "lng": 126.48739
       },
       {
         "order": 5,
         "name": "東門傳統市場",
         "type": "market",
-        "lat": 33.5136,
-        "lng": 126.5296
+        "lat": 33.51204,
+        "lng": 126.52828
       }
     ],
     "notes": [

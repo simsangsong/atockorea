@@ -314,7 +314,8 @@
       },
       "smartNotes": {
         "tip": "請於預定接送時間前5至10分鐘抵達；郵輪／非軍事區行程請攜帶附照片之身分證件"
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -815,7 +816,8 @@
       },
       "smartNotes": {
         "tip": "出發前請與導覽員確認確切送達地點；郵輪行程將配合船舶出發時間表協調安排"
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1811,35 +1813,6 @@
       "originalPriceUsd": 85,
       "discountPercent": 7
     }
-  },
-  "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
-      {
-        "name": "濟州郵輪碼頭（北部）",
-        "note": "於海關出口處會合",
-        "port_id": "jeju_port"
-      },
-      {
-        "name": "江汀郵輪碼頭（南部，西歸浦）",
-        "note": "於海關出口處會合",
-        "port_id": "gangjeong_port"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "濟州郵輪碼頭（北部）",
-        "note": "於原接送郵輪碼頭下車",
-        "port_id": "jeju_port"
-      },
-      {
-        "name": "江汀郵輪碼頭（南部，西歸浦）",
-        "note": "於原接送郵輪碼頭下車",
-        "port_id": "gangjeong_port"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "港口於預訂時依據郵輪行程確定；路線將對應至相符的方案。"
   },
   "matching_profile": {
     "profile_version": 6,

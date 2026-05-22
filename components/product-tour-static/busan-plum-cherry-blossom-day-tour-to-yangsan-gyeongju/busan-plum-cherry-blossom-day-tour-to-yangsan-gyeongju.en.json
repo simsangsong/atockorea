@@ -188,7 +188,8 @@
           "Busan Metro",
           "Korea Expressway Corporation"
         ]
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -480,7 +481,8 @@
           "Korea Expressway Corporation",
           "Busan Metro"
         ]
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -794,39 +796,61 @@
   "pickup_dropoff": {
     "departure": [
       {
-        "order": 1,
-        "time": "08:00",
+        "lat": 35.11449,
+        "lng": 129.03933,
         "name": "Busan Station (KTX main exit)",
         "type": "station",
+        "order": 1,
         "note": "Group meeting point at the main exit; staff with AtoC Korea sign.",
-        "lat": 35.1152,
-        "lng": 129.0421
+        "time": "08:00"
       },
       {
-        "order": 2,
-        "time": "08:15",
+        "lat": 35.15782,
+        "lng": 129.06003,
         "name": "Seomyeon Station (Exit 7)",
         "type": "station",
+        "order": 2,
         "note": "Second pickup point on the way out of central Busan.",
-        "lat": 35.1577,
-        "lng": 129.0592
+        "time": "08:15"
       },
       {
-        "order": 3,
-        "time": "08:30",
+        "lat": 35.28359,
+        "lng": 129.09482,
         "name": "Nopo Station (Exit 3)",
         "type": "station",
+        "order": 3,
         "note": "Third pickup — Nopo is the closest Busan subway station to Tongdosa (~25 min drive), so this point fits the Yangsan-first day.",
-        "lat": 35.2285,
-        "lng": 129.0784
+        "time": "08:30"
       }
     ],
     "return": [
       {
-        "order": 1,
-        "name": "Same three stations (reverse order)",
+        "lat": 35.09663,
+        "lng": 129.0308,
+        "name": "Nampo-dong / Jagalchi area",
         "type": "station",
-        "note": "Drop-off at any of the three pickup stations on request; total tour ~8.5 hours from Busan Station pickup to Busan Station drop-off."
+        "order": 1
+      },
+      {
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "Busan Station (Exit 4)",
+        "type": "station",
+        "order": 2
+      },
+      {
+        "lat": 35.15782,
+        "lng": 129.06003,
+        "name": "Seomyeon Station (Exit 4)",
+        "type": "station",
+        "order": 3
+      },
+      {
+        "lat": 35.16396,
+        "lng": 129.15853,
+        "name": "Haeundae Station (Exit 5)",
+        "type": "station",
+        "order": 4
       }
     ],
     "notes": [

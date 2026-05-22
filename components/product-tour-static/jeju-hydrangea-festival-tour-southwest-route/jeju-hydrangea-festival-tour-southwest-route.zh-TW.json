@@ -2693,39 +2693,6 @@
       }
     }
   ],
-  "pickup_dropoff": {
-    "type": "hotel_pickup",
-    "meeting_points": [
-      {
-        "name": "濟州市區內飯店",
-        "time": "≈08:30 (free)"
-      },
-      {
-        "name": "濟州市區外飯店（西歸浦／涯月／城山）",
-        "time": "Earlier pickup; +₩70,000 surcharge"
-      },
-      {
-        "name": "濟州國際機場",
-        "time": "≈08:30"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "濟州市區飯店",
-        "approx_time": "約18:00"
-      },
-      {
-        "name": "東門傳統市場",
-        "approx_time": "約18:00"
-      },
-      {
-        "name": "濟州機場",
-        "approx_time": "約18:00"
-      }
-    ],
-    "hotel_pickup_available": true,
-    "notes": "濟州市區內免費接送。市區外接送需另加₩70,000。繡球花景點僅於五月下旬至七月中旬盛開（高峰期為六月中旬），訂購前請先確認花況。"
-  },
   "itinerary_variants": [],
   "priceSource": {
     "discountPct": 10,

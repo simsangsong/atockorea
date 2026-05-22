@@ -1014,8 +1014,8 @@
         "name": "Hongik Univ. Station (Exit 4)",
         "type": "station",
         "note": "First Seoul meeting point; please arrive 10 minutes early.",
-        "lat": 37.5573,
-        "lng": 126.925
+        "lat": 37.55753,
+        "lng": 126.92447
       },
       {
         "order": 2,
@@ -1023,8 +1023,8 @@
         "name": "Myeongdong Station",
         "type": "station",
         "note": "Second Seoul meeting point.",
-        "lat": 37.5636,
-        "lng": 126.9847
+        "lat": 37.56099,
+        "lng": 126.98619
       }
     ],
     "return": [
@@ -1033,16 +1033,16 @@
         "name": "Myeongdong Station",
         "type": "station",
         "note": "Standard Seoul drop-off point.",
-        "lat": 37.5636,
-        "lng": 126.9847
+        "lat": 37.56099,
+        "lng": 126.98619
       },
       {
         "order": 2,
         "name": "Hongik Univ. Station",
         "type": "station",
         "note": "Standard Seoul drop-off point.",
-        "lat": 37.5573,
-        "lng": 126.925
+        "lat": 37.55753,
+        "lng": 126.92447
       }
     ],
     "notes": [

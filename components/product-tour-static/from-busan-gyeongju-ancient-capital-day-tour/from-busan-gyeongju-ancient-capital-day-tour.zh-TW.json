@@ -261,7 +261,8 @@
         "poi_key": "OPS_busan_subway_pickup",
         "kb_version": "1.16",
         "verified_date": "2026-04-29"
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -783,7 +784,8 @@
         "poi_key": "OPS_busan_return",
         "kb_version": "1.16",
         "verified_date": "2026-04-29"
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1147,37 +1149,65 @@
     }
   },
   "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "釜山站4號出口",
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "釜山站（4號出口）",
+        "type": "station",
+        "order": 1,
         "time": "08:10"
       },
       {
-        "name": "西面站4號出口",
+        "lat": 35.15782,
+        "lng": 129.06003,
+        "name": "西面站（4號出口）",
+        "type": "station",
+        "order": 2,
         "time": "08:30"
       },
       {
-        "name": "海雲台站5號出口",
+        "lat": 35.16396,
+        "lng": 129.15853,
+        "name": "海雲台站（5號出口）",
+        "type": "station",
+        "order": 3,
         "time": "09:10"
       }
     ],
-    "dropoff_points": [
+    "return": [
       {
-        "name": "海雲台站5號出口",
-        "approx_time": "約 18:15"
+        "lat": 35.09663,
+        "lng": 129.0308,
+        "name": "南浦洞 / 札嘉其一帶",
+        "type": "station",
+        "order": 1
       },
       {
-        "name": "西面站4號出口",
-        "approx_time": "約 18:35"
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "釜山站（4號出口）",
+        "type": "station",
+        "order": 2
       },
       {
-        "name": "釜山站4號出口",
-        "approx_time": "約 18:50"
+        "lat": 35.15782,
+        "lng": 129.06003,
+        "name": "西面站（4號出口）",
+        "type": "station",
+        "order": 3
+      },
+      {
+        "lat": 35.16396,
+        "lng": 129.15853,
+        "name": "海雲台站（5號出口）",
+        "type": "station",
+        "order": 4
       }
     ],
-    "hotel_pickup_available": false,
-    "notes": "全年固定六大景點路線（佛國寺、博物館、校村、石橋，加上阿虎山竹林作為上午首站）。櫻花季（三月中旬至四月中旬）將阿虎山替換為海雲台達摩地丘。請選擇距離您住宿最近的上車出口。"
+    "notes": [
+      "Same six-attraction route year-round (Bulguksa, museum, Gyochon, bridge, plus Ahopsan Bamboo Forest as morning opener). Cherry blossom season (mid-March to mid-April) swaps Ahopsan for Haeundae Dalmaji Hill. Choose the pickup exit closest to your hotel."
+    ]
   },
   "matching_profile": {
     "profile_version": 6,

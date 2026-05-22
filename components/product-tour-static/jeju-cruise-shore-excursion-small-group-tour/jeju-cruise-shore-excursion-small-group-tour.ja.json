@@ -314,7 +314,8 @@
       },
       "smartNotes": {
         "tip": "集合時刻の5〜10分前にお集まりください。クルーズ・DMZツアーの場合は写真付き身分証明書をご持参ください"
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -815,7 +816,8 @@
       },
       "smartNotes": {
         "tip": "出発前にガイドと正確なドロップオフ場所を確認してください。クルーズツアーは船の出港スケジュールに合わせて調整されます。"
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1811,35 +1813,6 @@
       "originalPriceUsd": 85,
       "discountPercent": 7
     }
-  },
-  "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
-      {
-        "name": "済州クルーズターミナル（北）",
-        "note": "税関出口にてお待ちしております",
-        "port_id": "jeju_port"
-      },
-      {
-        "name": "江汀クルーズターミナル（南・西帰浦）",
-        "note": "税関出口にてお待ちしております",
-        "port_id": "gangjeong_port"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "済州クルーズターミナル（北）",
-        "note": "お迎えと同じクルーズターミナルにてお送りします",
-        "port_id": "jeju_port"
-      },
-      {
-        "name": "江汀クルーズターミナル（南・西帰浦）",
-        "note": "お迎えと同じクルーズターミナルにてお送りします",
-        "port_id": "gangjeong_port"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "寄港地は予約時にクルーズ旅程から決定されます。ルートは対応するバリアントに振り分けられます。"
   },
   "matching_profile": {
     "profile_version": 6,

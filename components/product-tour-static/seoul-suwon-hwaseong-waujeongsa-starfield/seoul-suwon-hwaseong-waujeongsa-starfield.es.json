@@ -1014,8 +1014,8 @@
         "name": "Estación Hongik Univ. (Salida 4)",
         "type": "station",
         "note": "Primer punto de encuentro en Seúl; por favor llegue con 10 minutos de antelación.",
-        "lat": 37.5573,
-        "lng": 126.925
+        "lat": 37.55753,
+        "lng": 126.92447
       },
       {
         "order": 2,
@@ -1023,8 +1023,8 @@
         "name": "Estación Myeongdong",
         "type": "station",
         "note": "Segundo punto de encuentro en Seúl.",
-        "lat": 37.5636,
-        "lng": 126.9847
+        "lat": 37.56099,
+        "lng": 126.98619
       }
     ],
     "return": [
@@ -1033,16 +1033,16 @@
         "name": "Estación Myeongdong",
         "type": "station",
         "note": "Punto estándar de llegada en Seúl.",
-        "lat": 37.5636,
-        "lng": 126.9847
+        "lat": 37.56099,
+        "lng": 126.98619
       },
       {
         "order": 2,
         "name": "Estación Hongik Univ.",
         "type": "station",
         "note": "Punto estándar de llegada en Seúl.",
-        "lat": 37.5573,
-        "lng": 126.925
+        "lat": 37.55753,
+        "lng": 126.92447
       }
     ],
     "notes": [

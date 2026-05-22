@@ -298,7 +298,8 @@
       "whyOnRoute": "四个接送点覆盖济州市各酒店区（机场、市中心、旧城区、市场区），无需让旅客横穿全市。由西向东的接送顺序使客车约10:20抵达1100湿地——时间足够早，可在午间雾霾出现前欣赏清晨的高山清透风光。**1100号国道封路预案**确保旅客在出发前了解冬季应急方案——济州最高海拔国道每年约有5至10天因结冰封路。",
       "visitBasics": {},
       "convenience": {},
-      "smartNotes": {}
+      "smartNotes": {},
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -994,7 +995,8 @@
       "whyOnRoute": "行程安排翰贵优先，因为1132路线从协才返回时途经济州市西部郊区。**当天傍晚航班**可行性已特别注明：这是目录中与傍晚航班衔接最紧张的行程，宾客必须在接车时告知，以便相应调整日落观赏时间窗口。",
       "visitBasics": {},
       "convenience": {},
-      "smartNotes": {}
+      "smartNotes": {},
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1420,51 +1422,6 @@
       "currency": "USD",
       "per": "person"
     }
-  },
-  "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
-      {
-        "name": "济州海洋套房酒店",
-        "time": "08:30"
-      },
-      {
-        "name": "济州国际机场3号门，3楼（国内出发层）",
-        "time": "08:45"
-      },
-      {
-        "name": "济州乐天城市酒店",
-        "time": "08:55"
-      },
-      {
-        "name": "新罗免税店济州店",
-        "time": "09:05"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "新罗免税店济州店",
-        "approx_time": "约 19:00"
-      },
-      {
-        "name": "济州乐天城市酒店",
-        "approx_time": "约 19:00"
-      },
-      {
-        "name": "济州国际机场",
-        "approx_time": "约 19:00"
-      },
-      {
-        "name": "济州海洋套房酒店",
-        "approx_time": "约 19:05"
-      },
-      {
-        "name": "东门传统市场（仅下车）",
-        "approx_time": "≈ 19:15"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "与该运营商其他济州游览线路相同的4个上车点模式。以协涯作为西海岸终点，意味着下车时间（约19:00）略晚于南部世界遗产线路。"
   },
   "matching_profile": {
     "profile_version": 6,

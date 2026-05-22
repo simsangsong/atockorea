@@ -267,7 +267,8 @@
           "Visit Korea — Incheon Tourist Attraction official",
           "Wikipedia (Incheon Port + Songdo International Business District)"
         ]
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -792,7 +793,8 @@
         "verified": false,
         "match": "operational_implicit",
         "note": "Operational return stop with sail-away buffer"
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1168,23 +1170,6 @@
       "per": "vehicle",
       "salePriceUsd": 419
     }
-  },
-  "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
-      {
-        "name": "인천 크루즈 터미널 — 도착 홀 (드라이버가 이름 팻말을 들고 대기)",
-        "time": "Calibrated to your disembarkation time"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "인천 크루즈 터미널 — 터미널 게이트",
-        "approx_time": "전체 승선 마감 60분 전까지"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "예약 시 선박 이름, 기항 날짜, 예상 도착 시각, 전체 승선 마감 시각을 알려주세요. 드라이버는 승선 마감 시각 기준 60분의 교통 여유 시간을 확보합니다. 인천에는 여러 터미널이 있으니, 귀하의 선박이 이용하는 터미널(영종도 또는 송도)을 크루즈사에 반드시 확인하시기 바랍니다."
   },
   "matching_profile": {
     "profile_version": 6,

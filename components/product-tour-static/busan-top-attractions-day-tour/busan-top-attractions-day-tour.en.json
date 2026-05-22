@@ -262,7 +262,8 @@
         "Printed Korean-English itinerary card distributed at pickup"
       ],
       "whyOnRoute": "Three pickup points cover Busan's three main hotel zones (KTX/Nampo, Seomyeon mid-city, Haeundae beachfront) without forcing guests to transit across the city in the morning. Sequencing northwest→east minimizes coach distance and lands the group at Haedong Yonggungsa around 10:00 — early enough to beat the busiest tour-bus arrivals.",
-      "description": "Pickup is consolidated at three central Busan transit hubs to keep the day manageable without crisscrossing the city: **Busan Station (Line 1)** for guests staying near the KTX terminal or in the Choryang/Nampo-dong area; **Seomyeon Station (Lines 1 & 2)** — Busan's busiest subway interchange, central for guests in mid-city hotels around Lotte Hotel Busan or the Seomyeon Medical Street; and **Haeundae Station (Line 2)** for guests in the beachfront resort district near Westin Josun, Park Hyatt, or Signiel Busan. \n\nThe coach picks up at all three in sequence (typically Busan Station first ~09:00, Seomyeon ~09:15, Haeundae ~09:30) and then heads northeast along the coastal Gwangan Bridge route toward Gijang-gun for the day's first stop. \n\nTotal transit from final pickup to Haedong Yonggungsa: ~30-40 minutes depending on traffic. Driver will share a printed Korean-English itinerary card with timings; please be at your pickup point 5 minutes before the scheduled time to keep the day on track for the later UN Memorial Cemetery and Gamcheon stops, which have stricter operating windows."
+      "description": "Pickup is consolidated at three central Busan transit hubs to keep the day manageable without crisscrossing the city: **Busan Station (Line 1)** for guests staying near the KTX terminal or in the Choryang/Nampo-dong area; **Seomyeon Station (Lines 1 & 2)** — Busan's busiest subway interchange, central for guests in mid-city hotels around Lotte Hotel Busan or the Seomyeon Medical Street; and **Haeundae Station (Line 2)** for guests in the beachfront resort district near Westin Josun, Park Hyatt, or Signiel Busan. \n\nThe coach picks up at all three in sequence (typically Busan Station first ~09:00, Seomyeon ~09:15, Haeundae ~09:30) and then heads northeast along the coastal Gwangan Bridge route toward Gijang-gun for the day's first stop. \n\nTotal transit from final pickup to Haedong Yonggungsa: ~30-40 minutes depending on traffic. Driver will share a printed Korean-English itinerary card with timings; please be at your pickup point 5 minutes before the scheduled time to keep the day on track for the later UN Memorial Cemetery and Gamcheon stops, which have stricter operating windows.",
+      "_role": "pickup"
     },
     {
       "name": "Haedong Yonggungsa Temple",
@@ -2398,24 +2399,24 @@
         "time": "08:30",
         "name": "Seomyeon Station (Exit 4)",
         "type": "station",
-        "lat": 35.1577,
-        "lng": 129.0592
+        "lat": 35.15782,
+        "lng": 129.06003
       },
       {
         "order": 2,
         "time": "08:50",
         "name": "Busan Station Exit 4 (not the KTX gate)",
         "type": "station",
-        "lat": 35.1152,
-        "lng": 129.0421
+        "lat": 35.11449,
+        "lng": 129.03933
       },
       {
         "order": 3,
         "time": "09:30",
         "name": "Haeundae Station (Exit 5)",
         "type": "station",
-        "lat": 35.1628,
-        "lng": 129.1603
+        "lat": 35.16396,
+        "lng": 129.15853
       }
     ],
     "return": [
@@ -2423,29 +2424,29 @@
         "order": 1,
         "name": "Nampo-dong / Jagalchi area",
         "type": "station",
-        "lat": 35.0978,
-        "lng": 129.0286
+        "lat": 35.09663,
+        "lng": 129.0308
       },
       {
         "order": 2,
         "name": "Busan Station (Exit 4)",
         "type": "station",
-        "lat": 35.1152,
-        "lng": 129.0421
+        "lat": 35.11449,
+        "lng": 129.03933
       },
       {
         "order": 3,
         "name": "Seomyeon Station (Exit 4)",
         "type": "station",
-        "lat": 35.1577,
-        "lng": 129.0592
+        "lat": 35.15782,
+        "lng": 129.06003
       },
       {
         "order": 4,
         "name": "Haeundae Station (Exit 5)",
         "type": "station",
-        "lat": 35.1628,
-        "lng": 129.1603
+        "lat": 35.16396,
+        "lng": 129.15853
       }
     ],
     "notes": [

@@ -267,7 +267,8 @@
           "Visit Korea — Incheon Tourist Attraction official",
           "Wikipedia (Incheon Port + Songdo International Business District)"
         ]
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -724,7 +725,8 @@
         "verified": false,
         "match": "operational_implicit",
         "note": "Operational return stop with sail-away buffer"
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1100,23 +1102,6 @@
       "per": "vehicle",
       "salePriceUsd": 419
     }
-  },
-  "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
-      {
-        "name": "仁川邮轮码头——到达大厅（司机举名牌迎接）",
-        "time": "Calibrated to your disembarkation time"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "仁川邮轮码头——候船楼出口",
-        "approx_time": "最迟于全员登船前60分钟返回"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "预订时请提供船名、靠港日期、预计抵达时间及全员登船时间。司机将在全员登船时间前预留60分钟的交通缓冲时间。仁川设有多个码头——请向邮轮公司确认您的船只使用哪个码头（永宗岛或松岛）。"
   },
   "matching_profile": {
     "profile_version": 6,

@@ -131,12 +131,9 @@ function PickupCard({
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 <span className="font-semibold text-foreground">{range}</span>
                 <span className="text-border">·</span>
-                <span>{formatTemplate(sectionUi.pickupLocationsTemplate ?? "{count} locations", pickupPoints.length)}</span>
+                <span>{formatTemplate(sectionUi.pickupPointsTemplate ?? "{count} pickup points", pickupPoints.length)}</span>
               </div>
               <h3 className="mt-2 text-base font-semibold tracking-tight text-foreground">{sectionUi.pickupCardTitle ?? "Pickup"}</h3>
-              <span className="mt-2 inline-block rounded-md bg-muted/80 px-2.5 py-0.5 text-[10px] font-medium text-muted-foreground">
-                {sectionUi.pickupCategoryLabel ?? "Hotel pickup"}
-              </span>
             </div>
             <div className={cn("mt-1 rounded-full p-1.5 transition-all duration-200", isExpanded ? "rotate-180 bg-primary/10" : "bg-muted/60")}>
               <ChevronDown className={cn("h-4 w-4", isExpanded ? "text-primary" : "text-muted-foreground")} />

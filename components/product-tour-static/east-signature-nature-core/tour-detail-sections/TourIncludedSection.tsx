@@ -16,7 +16,7 @@ export type TourIncludedSectionProps = {
 const NOT_INCLUDED_RX =
   /^(not included|excluded|excludes|not include|excl\.|does not include|불포함|미포함|不含|不包含|费用不含|含まれないもの|no incluye|no incluido|excluido)/i;
 
-export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSectionProps) {
+export function TourIncludedSection({ practicalAccordionItems, sectionUi }: TourIncludedSectionProps) {
   const [open, setOpen] = useState(false);
 
   const item = practicalAccordionItems.find(
@@ -93,7 +93,7 @@ export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSec
                   <Check className="h-3 w-3 text-emerald-600" strokeWidth={2.5} />
                 </span>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.10em] text-emerald-700">
-                  Included
+                  {sectionUi.includedLabel ?? "Included"}
                 </p>
               </div>
               <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
@@ -117,7 +117,7 @@ export function TourIncludedSection({ practicalAccordionItems }: TourIncludedSec
                     <X className="h-3 w-3 text-rose-500" strokeWidth={2.5} />
                   </span>
                   <p className="text-[11px] font-semibold uppercase tracking-[0.10em] text-rose-600/80">
-                    Not included
+                    {sectionUi.notIncludedLabel ?? "Not included"}
                   </p>
                 </div>
                 <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">

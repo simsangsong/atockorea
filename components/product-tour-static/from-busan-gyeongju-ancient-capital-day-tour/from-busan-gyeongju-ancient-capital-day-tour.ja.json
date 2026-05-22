@@ -261,7 +261,8 @@
         "poi_key": "OPS_busan_subway_pickup",
         "kb_version": "1.16",
         "verified_date": "2026-04-29"
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -783,7 +784,8 @@
         "poi_key": "OPS_busan_return",
         "kb_version": "1.16",
         "verified_date": "2026-04-29"
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1147,37 +1149,65 @@
     }
   },
   "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
+    "departure": [
       {
-        "name": "釜山駅 4番出口",
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "釜山駅（4番出口）",
+        "type": "station",
+        "order": 1,
         "time": "08:10"
       },
       {
-        "name": "西面（ソミョン）駅 4番出口",
+        "lat": 35.15782,
+        "lng": 129.06003,
+        "name": "西面駅（4番出口）",
+        "type": "station",
+        "order": 2,
         "time": "08:30"
       },
       {
-        "name": "海雲台（ヘウンデ）駅 5番出口",
+        "lat": 35.16396,
+        "lng": 129.15853,
+        "name": "海雲台駅（5番出口）",
+        "type": "station",
+        "order": 3,
         "time": "09:10"
       }
     ],
-    "dropoff_points": [
+    "return": [
       {
-        "name": "海雲台（ヘウンデ）駅 5番出口",
-        "approx_time": "約18:15"
+        "lat": 35.09663,
+        "lng": 129.0308,
+        "name": "南浦洞・ジャガルチ周辺",
+        "type": "station",
+        "order": 1
       },
       {
-        "name": "西面（ソミョン）駅 4番出口",
-        "approx_time": "約18:35"
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "釜山駅（4番出口）",
+        "type": "station",
+        "order": 2
       },
       {
-        "name": "釜山駅 4番出口",
-        "approx_time": "約18:50"
+        "lat": 35.15782,
+        "lng": 129.06003,
+        "name": "西面駅（4番出口）",
+        "type": "station",
+        "order": 3
+      },
+      {
+        "lat": 35.16396,
+        "lng": 129.15853,
+        "name": "海雲台駅（5番出口）",
+        "type": "station",
+        "order": 4
       }
     ],
-    "hotel_pickup_available": false,
-    "notes": "年間を通じて同じ6スポットのルートです（仏国寺、博物館、校村、橋、さらに朝のオープニングとして阿含山竹林）。桜のシーズン（3月中旬〜4月中旬）は、阿含山が海雲台の達摩山（タルマジ）の丘に変更されます。お泊まりのホテルに最も近い乗車場所の出口をお選びください。"
+    "notes": [
+      "Same six-attraction route year-round (Bulguksa, museum, Gyochon, bridge, plus Ahopsan Bamboo Forest as morning opener). Cherry blossom season (mid-March to mid-April) swaps Ahopsan for Haeundae Dalmaji Hill. Choose the pickup exit closest to your hotel."
+    ]
   },
   "matching_profile": {
     "profile_version": 6,

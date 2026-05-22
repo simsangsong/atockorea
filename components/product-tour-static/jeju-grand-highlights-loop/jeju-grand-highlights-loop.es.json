@@ -2251,23 +2251,6 @@
       }
     }
   ],
-  "pickup_dropoff": {
-    "type": "hotel_lobby",
-    "meeting_points": [
-      {
-        "name": "Vestíbulos de hoteles en la ciudad de Jeju",
-        "time": "08:00–08:30"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "Hoteles de la ciudad de Jeju (regreso)",
-        "approx_time": "≈ 18:00–18:30"
-      }
-    ],
-    "hotel_pickup_available": true,
-    "notes": "Recogida más temprana (08:00–08:30) por la ruta de 10 horas por toda la isla; hora definitiva confirmada la noche anterior. La recogida en el aeropuerto podría ser posible según las circunstancias."
-  },
   "itinerary_variants": [],
   "_publication": {
     "schema_version": "v4_canonical",

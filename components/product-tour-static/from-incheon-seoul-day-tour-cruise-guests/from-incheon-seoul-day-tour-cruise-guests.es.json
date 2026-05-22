@@ -273,7 +273,8 @@
           "Visit Korea — Incheon Tourist Attraction official",
           "Wikipedia (Incheon Port + Songdo International Business District)"
         ]
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -692,7 +693,8 @@
         "verified": false,
         "match": "operational_implicit",
         "note": "Operational return stop"
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1068,23 +1070,6 @@
       "originalPriceUsd": 76,
       "discountPercent": 9
     }
-  },
-  "pickup_dropoff": {
-    "type": "cruise_terminal_pickup",
-    "meeting_points": [
-      {
-        "name": "Terminal Internacional de Pasajeros del Puerto de Incheon — sala de llegadas (Songdo)",
-        "time": "Calibrated to ship disembarkation"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "Terminal Internacional de Pasajeros del Puerto de Incheon",
-        "approx_time": "Mínimo 60 minutos antes de la hora de regreso a bordo"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "Proporcione el nombre del barco, la fecha de escala en el puerto, la hora prevista de desembarco y la hora de regreso a bordo al realizar la reserva. Furgoneta compartida con otros pasajeros de crucero de distintos barcos. El guía hace seguimiento del horario individual de cada pasajero; si varios barcos zarpan a distintas horas, los pasajeros con salida más temprana son los primeros en ser llevados de regreso."
   },
   "matching_profile": {
     "profile_version": 6,

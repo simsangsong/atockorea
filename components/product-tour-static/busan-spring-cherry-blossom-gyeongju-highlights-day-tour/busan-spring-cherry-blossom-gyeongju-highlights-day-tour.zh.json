@@ -203,7 +203,8 @@
           "Busan Metro",
           "Korea Expressway Corporation"
         ]
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -526,7 +527,8 @@
           "Korea Expressway Corporation",
           "Busan Metro"
         ]
-      }
+      },
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -825,43 +827,62 @@
   "pickup_dropoff": {
     "departure": [
       {
-        "order": 1,
-        "time": "08:00",
-        "name": "釜山站（KTX主出口）",
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "釜山站（KTX正门）",
         "type": "station",
-        "note": "集合地点在主出口；工作人员持 AtoC Korea 接车牌迎接。",
-        "lat": 35.1152,
-        "lng": 129.0421
+        "order": 1,
+        "time": "08:00"
       },
       {
-        "order": 2,
-        "time": "08:15",
+        "lat": 35.15782,
+        "lng": 129.06003,
         "name": "西面站（7号出口）",
         "type": "station",
-        "note": "离开釜山市中心途中的第二个上车点。",
-        "lat": 35.1577,
-        "lng": 129.0592
+        "order": 2,
+        "time": "08:15"
       },
       {
-        "order": 3,
-        "time": "08:30",
+        "lat": 35.16396,
+        "lng": 129.15853,
         "name": "海云台站（5号出口）",
         "type": "station",
-        "note": "为入住海云台的客人设置的第三个上车点。",
-        "lat": 35.1628,
-        "lng": 129.1603
+        "order": 3,
+        "time": "08:30"
       }
     ],
     "return": [
       {
-        "order": 1,
-        "name": "相同的三个站点（顺序相反）",
+        "lat": 35.09663,
+        "lng": 129.0308,
+        "name": "南浦洞 / 札嘎其一带",
         "type": "station",
-        "note": "可按需在三个上车站点中任一站下车；从釜山站接客至釜山站送达，全程约8.5小时。"
+        "order": 1
+      },
+      {
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "釜山站（4号出口）",
+        "type": "station",
+        "order": 2
+      },
+      {
+        "lat": 35.15782,
+        "lng": 129.06003,
+        "name": "西面站（4号出口）",
+        "type": "station",
+        "order": 3
+      },
+      {
+        "lat": 35.16396,
+        "lng": 129.15853,
+        "name": "海云台站（5号出口）",
+        "type": "station",
+        "order": 4
       }
     ],
     "notes": [
-      "本行程仅在樱花季期间运营（约2026年3月28日至4月10日——具体日期依花期预报而定，每年确认）。出发为固定团体班车（小团产品），上车时间不可更改。若花期推迟或已结束，行程可能提前3天通知取消并全额退款。午餐费用自理（约10,000至20,000韩元），在导游根据当日路线选定的庆州当地餐厅用餐。轮椅及婴儿车用户——请于预订时提前告知；部分景点路面不平整（佛国寺台阶、大陵苑草地路径）。"
+      "This tour operates ONLY during cherry blossom season (approximately March 28 to April 10, 2026 — exact dates depend on bloom forecast and confirmed annually). Departure is a fixed group shuttle (small_group product) so pickup times are not flexible. If bloom is delayed or finished, the tour may be cancelled with 3 days' notice and full refund. Lunch is at own expense (~10,000–20,000 KRW) at a Gyeongju local restaurant chosen by the guide based on the day's route. Wheelchair and stroller travelers — please notify at booking; some stops involve uneven ground (Bulguksa stairs, grass paths at Daereungwon)."
     ]
   },
   "matching_profile": {

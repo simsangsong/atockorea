@@ -239,7 +239,8 @@
       },
       "smartNotes": {},
       "convenience": {},
-      "visitBasics": {}
+      "visitBasics": {},
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -682,7 +683,8 @@
       },
       "smartNotes": {},
       "convenience": {},
-      "visitBasics": {}
+      "visitBasics": {},
+      "_role": "dropoff"
     }
   ],
   "routeFlowStops": [
@@ -1117,8 +1119,8 @@
         "name": "济州海洋套房酒店",
         "type": "hotel",
         "note": "在酒店大堂集合——导游手持AtoCKorea指示牌。",
-        "lat": 33.4944,
-        "lng": 126.4808
+        "lat": 33.51823,
+        "lng": 126.52317
       },
       {
         "order": 2,
@@ -1126,8 +1128,8 @@
         "name": "济州国际机场（3楼，3号门）",
         "type": "airport",
         "note": "3楼出发区，按指示牌前往3号门。",
-        "lat": 33.5108,
-        "lng": 126.4932
+        "lat": 33.50708,
+        "lng": 126.49343
       },
       {
         "order": 3,
@@ -1135,8 +1137,8 @@
         "name": "乐天城市酒店济州",
         "type": "hotel",
         "note": "在主大堂等候——导游将点名呼叫您。",
-        "lat": 33.4963,
-        "lng": 126.4865
+        "lat": 33.4906,
+        "lng": 126.48643
       },
       {
         "order": 4,
@@ -1144,8 +1146,8 @@
         "name": "新罗免税店（济州店）",
         "type": "shopping",
         "note": "在新罗免税店济州分店正门外集合。",
-        "lat": 33.4958,
-        "lng": 126.5252
+        "lat": 33.48631,
+        "lng": 126.48739
       }
     ],
     "return": [
@@ -1153,36 +1155,36 @@
         "order": 1,
         "name": "济州海洋套房酒店",
         "type": "hotel",
-        "lat": 33.4944,
-        "lng": 126.4808
+        "lat": 33.51823,
+        "lng": 126.52317
       },
       {
         "order": 2,
         "name": "济州国际机场（3楼，3号门）",
         "type": "airport",
-        "lat": 33.5108,
-        "lng": 126.4932
+        "lat": 33.50708,
+        "lng": 126.49343
       },
       {
         "order": 3,
         "name": "乐天城市酒店济州",
         "type": "hotel",
-        "lat": 33.4963,
-        "lng": 126.4865
+        "lat": 33.4906,
+        "lng": 126.48643
       },
       {
         "order": 4,
         "name": "新罗免税店（济州店）",
         "type": "shopping",
-        "lat": 33.4958,
-        "lng": 126.5252
+        "lat": 33.48631,
+        "lng": 126.48739
       },
       {
         "order": 5,
         "name": "东门传统市场",
         "type": "market",
-        "lat": 33.5136,
-        "lng": 126.5296
+        "lat": 33.51204,
+        "lng": 126.52828
       }
     ],
     "notes": [

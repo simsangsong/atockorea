@@ -260,7 +260,8 @@
           "Visit Busan",
           "Busan Metro"
         ]
-      }
+      },
+      "_role": "pickup"
     },
     {
       "number": 2,
@@ -2283,43 +2284,6 @@
       }
     }
   ],
-  "pickup_dropoff": {
-    "type": "meeting_point",
-    "meeting_points": [
-      {
-        "name": "西面駅4番出口",
-        "time": "08:30"
-      },
-      {
-        "name": "釜山駅4番出口（KTX改札口ではありません）",
-        "time": "08:50"
-      },
-      {
-        "name": "海雲台駅5番出口",
-        "time": "09:30"
-      }
-    ],
-    "dropoff_points": [
-      {
-        "name": "南浦洞／チャガルチ（最終観光地ストップ）",
-        "approx_time": "約17:50"
-      },
-      {
-        "name": "釜山駅4番出口",
-        "approx_time": "約18:10"
-      },
-      {
-        "name": "西面駅4番出口",
-        "approx_time": "約18:30"
-      },
-      {
-        "name": "海雲台駅5番出口",
-        "approx_time": "約19:00"
-      }
-    ],
-    "hotel_pickup_available": false,
-    "notes": "ご予約時に、宿泊ホテルに最も近い乗車出口をお選びください。降車は帰路の順番通りに行われます。西面（08:30）乗車のお客様が最も長い一日（約10時間）、海雲台乗車のお客様が最も短い一日（約9.5時間）となります。"
-  },
   "itinerary_variants": [],
   "_publication": {
     "schema_version": "v4_canonical",
