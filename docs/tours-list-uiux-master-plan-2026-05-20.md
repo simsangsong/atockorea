@@ -97,7 +97,10 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 
 | 날짜 | 항목 | 커밋 | 비고 |
 |---|---|---|---|
-| 2026-05-23 | **Phase 7 시작 — Curated Themed Shelves (planner-first commit).** §A에 Phase 7 🔄 row 추가, §B에 B33-B37 binding decisions 박음 (셸프 IA / multi-shelf / 시즌 윈도우 / Editor's Pick / carry-over 가드), §D에 4개 추가 보류 아이디어 등록 (admin 시즌 입력 UI / in-between strip / wishlist 카운트 / personalized 셸프), §6.7 sub-task 표 신설 (7.0 게이트 → 7.8 ship). 사용자 4-question AskUserQuestion + 3-question 결정 후 진행 승인. 워크트리 `atockorea-shelves` + 브랜치 `feat/tours-list-curated-shelves` from origin/main `bb351316`. | (pending — planner commit) | 코드 변경 0. 사용자 "Phase 7.1 진입 승인" 후 7.1부터 실행 |
+| 2026-05-23 | **Phase 7 시작 — Curated Themed Shelves (planner-first commit).** §A에 Phase 7 🔄 row 추가, §B에 B33-B37 binding decisions 박음 (셸프 IA / multi-shelf / 시즌 윈도우 / Editor's Pick / carry-over 가드), §D에 4개 추가 보류 아이디어 등록 (admin 시즌 입력 UI / in-between strip / wishlist 카운트 / personalized 셸프), §6.7 sub-task 표 신설 (7.0 게이트 → 7.8 ship). 사용자 4-question AskUserQuestion + 3-question 결정 후 진행 승인. 워크트리 `atockorea-shelves` + 브랜치 `feat/tours-list-curated-shelves` from origin/main `bb351316`. | 53e1aa99 | 코드 변경 0. 사용자 "Phase 7.1 진입 승인" 후 7.1부터 실행 |
+| 2026-05-23 | **Phase 7.0 게이트 — 사실 수정 1: 카드 SHA drift.** `git hash-object components/tour/TourListCard.tsx` = `81822e85...` (이전 baseline `a931fe4e`). Phase 1-4 종료 후 다른 트랙 (home featured polish + editorial polish + image cache perf 등) 4-5 commits로 변경. §1.5에 "사실 수정" entry 추가, Phase 7 B2/B37 carry-over 의미 = "현재 시점 baseline 유지" (절대 SHA 박지 않음). Phase 7 acceptance baseline = `81822e85`. | (이번 commit) | code reality > planner assertion (skill 룰 11) 적용 |
+| 2026-05-23 | **Phase 7.0 게이트 — 사실 수정 2: i18n locale 갭 발견.** `messages/en.json`·`ko.json` toursList 키 = 65개, `zh/zh-TW/es/ja` = 45개. 20 키 (eyebrow/resultsCount/price/priceFrom/priceUpTo/priceRange/minPlaceholder/maxPlaceholder/apply/reset 등) 누락. B14 carry-over 위반 상태이나 Phase 7 작업 이전 발생 (Phase 5 또는 다른 트랙의 부분 적층). **Phase 7 결정**: 신규 키(`toursList.shelves.*`)는 6 locale 모두 동시 적층 의무 (B14 신규 작업 적용). 기존 갭(20 키)은 별도 정합 phase로 분리 (§D 신규 행으로 등록 필요). | (이번 commit) | Phase 7 acceptance가 기존 갭 해소를 의무로 보지 않음 — Phase 7 PR 자체는 깨끗 |
+| 2026-05-23 | **Phase 7.0 게이트 ✅ — 7/7 통과.** 7.0.1 워크트리(C:/Users/sangsong/atockorea-shelves) + 브랜치(feat/tours-list-curated-shelves from origin/main `bb351316`) ✅. 7.0.2 planner-first commit `53e1aa99` ✅. 7.0.3 카드 SHA `81822e85` baseline 갱신 + §1.5 사실 수정 ✅. 7.0.4 page.tsx Phase 4 grid 진입점 확인 (filter 분기 위치 정합) ✅. 7.0.5 components/tours-list/ slate-200/900 grep = 20 occurrences (모두 의도적 B32 site-native accent) ✅. 7.0.6 deps install(node_modules/.bin/jest + next 존재) ✅. 7.0.7 toursList i18n baseline 키 검증 + 신규 작업 정책 결정 ✅. 사용자 "Phase 7.1 진입 승인" 대기. | (이번 commit) | Phase 7.1부터 코드 작성 가능 |
 | 2026-05-20 | **Phase 3.2/3.3 — ContextualVignetteBand (destination 7-accent, B6).** mapContextToAccent+ACCENT(lib/tours-hub-accents) 활용. destination/feature 컨텍스트에서만 등장, accent 그라데이션 rule + 틴트 eyebrow + reset. base는 site-native, accent는 컨텍스트 강조. i18n 6 locale 2키. | b707eeaa | Jeju→teal 등 7-accent 계승. 카드 SHA `a931fe4e` |
 | 2026-05-20 | **Phase 3.6/3.7/3.8 — EmptyStateRecovery 3-action (B10).** (a) 최제약 필터 자동 감지·해제(휴리스틱 price>dest>features>type>search), (b) /itinerary-builder, (c) /support 컨시어지. page.tsx empty 브랜치 교체. i18n 6 locale 5키. 3.4/3.5(ResultsMeta+view toggle)는 Phase 4 이관. | 31dcef0e | Phase 3 코어 완료. 카드 SHA `a931fe4e` |
 | 2026-05-20 | **후속 — hero 이미지 LCP 최적화.** catalogue-hero.jpg 실제 PNG 1672x941 2099KB → 실제 JPEG q82(mozjpeg) 178KB (-92%). 치수·시각 동일. hero priority 이미지라 LCP 직결 (Phase 1 LCP 노트 이행). | 5195d3be | Lighthouse 정밀 측정은 사용자 dev 환경 권장 — 소스 경량화로 LCP 전송량 대폭 감소 |
@@ -164,6 +167,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 셸프 사이 큐레이션 노트(작은 in-between strip) | Phase 7 / B36 | Phase 7 핵심 셸프 8개 안정 후 추가 가능. 지금 추가하면 Phase 7 첫 ship 부피만 커짐 |
 | 위시리스트 카운트 미니 뱃지 셸프 카드에 ("3 picked") | Phase 7 | wishlist API 통합 비용. Phase 7 핵심 ship 후 |
 | Personalized "추천: 너만의 픽" 셸프 (홈 matcher 결과 활용) | Phase 7 | 사용자 행동 데이터(home matcher result session 등) 누적 후 — 이미 §D에 등록된 상위 보류 항목과 동일 |
+| toursList i18n 20 키 누락(zh/zh-TW/es/ja) 정합 phase | Phase 7.0 게이트 발견 | 별도 phase. en/ko 65 vs 비EN 4 locale 45. eyebrow/resultsCount/price/priceFrom/etc 20 키 적층 필요. 시점 미상(Phase 5 또는 다른 트랙). Phase 7 ship 후 cleanup phase로 진행 |
 
 ---
 
@@ -245,6 +249,8 @@ SitePageShell
 - Wishlist heart overlay
 
 → 이 자산을 깨는 어떤 변경도 §B15 reversal 없이는 금지.
+
+**사실 수정 (2026-05-23, Phase 7.0 게이트 발견)**: 카드 SHA가 Phase 0.6/Phase 1-4 acceptance 시점 `a931fe4e8de9d02e3af235690ca78d86f8c089f9`에서 **`81822e8573933866a0e4fa5f64e24d79c6cded04`**로 변경. git log 분석 — Phase 1-4 종료 후 다른 트랙들에서 카드 폴리시 4-5 commits (`2d7a1349 fix(home): sharpen featured tour thumbnails`, `ac8ad7af feat(tour-list-card): editorial polish`, `6f262980 fix(home): keep featured tour rail visible`, `7a95b1d1 perf(image): cache TTL 1년 + quality 75`). 이는 위 시각 시그니처 9개를 깬 게 아니라 보강한 것(editorial polish + image quality cache). **Phase 7의 B2/B37 carry-over 의미는 "절대 SHA 박지 않음, 현재 시점 baseline 유지"로 재해석.** Phase 7.0 시작 시점 baseline = `81822e85...`. Phase 7 acceptance 시 이 SHA와 비교 (변동 없으면 통과).
 
 ---
 
