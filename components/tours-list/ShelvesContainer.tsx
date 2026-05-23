@@ -61,7 +61,7 @@ export function ShelvesContainer({ now }: ShelvesContainerProps) {
   if (shelves.length === 0) return null;
 
   return (
-    <div className="space-y-10 sm:space-y-12">
+    <div className="space-y-16 pt-2 sm:space-y-20 lg:space-y-24">
       {shelves.map((shelf) => (
         <TourShelf
           key={`${shelf.key}:${shelf.labelI18nKey}`}
