@@ -1178,23 +1178,41 @@
     "departure": [
       {
         "order": 1,
-        "name": "Busan Port International Passenger Terminal",
-        "type": "station",
-        "lat": 35.11744,
-        "lng": 129.04869
+        "time": "Confirmed at booking (≈30 min after ship docking)",
+        "name": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)",
+        "type": "cruise_terminal",
+        "note": "Primary terminal for large cruise ships. Meet your guide at the arrival hall — guide holds an AtoC Korea sign with your name.",
+        "lat": 35.0747,
+        "lng": 129.0884
+      },
+      {
+        "order": 2,
+        "time": "Confirmed at booking (≈30 min after ship docking)",
+        "name": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)",
+        "type": "cruise_terminal",
+        "note": "For smaller cruise ships and ferries that dock at the Choryang passenger terminal. Meet your guide at the arrival hall.",
+        "lat": 35.1149,
+        "lng": 129.0455
       }
     ],
     "return": [
       {
         "order": 1,
-        "name": "Busan Port International Passenger Terminal",
-        "type": "station",
-        "lat": 35.11744,
-        "lng": 129.04869
+        "name": "Busan International Cruise Terminal (영도 크루즈항)",
+        "type": "cruise_terminal",
+        "lat": 35.0747,
+        "lng": 129.0884
+      },
+      {
+        "order": 2,
+        "name": "Busan Port International Passenger Terminal (Choryang)",
+        "type": "cruise_terminal",
+        "lat": 35.1149,
+        "lng": 129.0455
       }
     ],
     "notes": [
-      "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Shared van with other cruise passengers from various ships. Early pickup (before 08:00) adds ₩10,000 per person to compensate the guide for the early start."
+      "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Pickup terminal (Yeongdo Cruise Terminal or Choryang Passenger Terminal) is set by where your ship docks. Shared van with other cruise passengers; on-time return is the product."
     ]
   },
   "matching_profile": {
