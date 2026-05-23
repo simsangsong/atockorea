@@ -7,7 +7,7 @@ export interface TourRelation {
   id?: number | string;
   title?: string;
   image_url?: string;
-  price_type?: 'person' | 'group';
+  price_type?: 'person' | 'group' | 'vehicle';
 }
 
 export interface UserProfileRelation {
