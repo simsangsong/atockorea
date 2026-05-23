@@ -35,23 +35,25 @@
 
 ---
 
-## 1. Phase 개요
+## 1. Phase 개요 (revised 2026-05-23 — Phase A/B/C/D/Z 추가 후)
 
-| Phase | 내용 | 위험 | 6-locale 작업량(대략) | 상태 |
+| Phase | 내용 | 위험 | 작업량(대략) | 상태 |
 |---|---|---|---|---|
 | 0 | 플랜 + 브랜치 셋업 (본 문서) | 없음 | — | ✅ done |
 | 1a EN | 가짜 후기 + 위험 카피 + 작성자 메모 제거 | 낮음 | 16 files / ~50 edits | ✅ PR #10 (`0fe21c98`) |
-| 1b–f locales | ko/ja/zh/zh-TW/es 동기화 | 낮음 | ~80 files | ⏳ |
 | 2a EN | 크루즈 픽업 → 항구로 재구성 | 중 | 7 tours / ~30 edits | ✅ PR #11 (`28d68626`) |
-| 2b–f locales | 동기화 | 중 | ~35 files | ⏳ |
-| 3 EN | 부산 스톱 회전 재매핑 | 중-높음 | 2 tours × 5 stops × 6 fields | ⏳ |
 | 4a EN | UNESCO 사실 정정 | 낮음-중 | 10 tours / 93 edits | ✅ PR #12 (`98a34706`) |
-| 4b–f locales | 동기화 | 중 | ~50 files | ⏳ |
 | 5a EN | 수치 정정 (high-confidence) | 낮음 | 6 tours / 24 edits | ✅ PR #13 (`117b8f26`) |
+| **A (NEW, P0)** | **catalog/page vs offer/checkout 가격 불일치 ($59↔$69 9개 투어)** | **높음 — 결제 사기 리스크** | **DB + JSON sync** | **⏳ NEXT** |
+| **B (NEW, P0)** | **시즌 종료 투어 $0 노출 + 시즌 가용성 게이팅** | **중-높음** | **2 tours + API/recommend filter** | **⏳** |
+| **C (NEW, P0)** | **`vehicle` price type 코드 버그 (per-guest로 곱해짐)** | **중 — 결제 금액 오류** | **체크아웃·카트·예약 API + 부킹카드** | **⏳** |
+| **D (NEW, P1)** | **Jeju 크루즈 `itinerary_variants` → `routeVariants` 스키마 마이그레이션** | **중 — 포트 변형 itinerary 미렌더 가능성** | **2 tours JSON or backward map** | **⏳** |
+| 3 EN | 부산 스톱 회전 재매핑 | 중-높음 | 2 tours × 5 stops × 6 fields | ⏳ |
 | 5b EN | 수치 정정 (verify 필요 항목) | 중 | ~10 항목 × tours | ⏳ |
-| 5 locales | 동기화 | 중 | ~30 files | ⏳ |
-| 6 | 갤러리 사진-지명 재매핑 | 중 | ~9 tours × galleryItems × 6 = ~150 | ⏳ |
-| 7 | DMZ 다리 150m + 잡정리 | 낮음 | ~30 edits × 6 = ~180 | ⏳ |
+| 6 EN | 갤러리 사진-지명 재매핑 | 중 | ~9 tours × galleryItems | ⏳ |
+| 7 EN | DMZ 다리 150m + 타이포(A easy/the our/? photo) + DMZ refund tone + 잡정리 | 낮음 | ~30 edits | ⏳ |
+| **Z (NEW)** | **Verification harness — 33 EN URL fetch + grep 검증 + JSON-LD 일치** | **낮음** | **post-ship smoke test** | **⏳** |
+| 1b–f / 2b–f / 4b–f / 5 locales | ko/ja/zh/zh-TW/es 동기화 (모든 EN phase 종료 후) | 낮음-중 | ~200 files | ⏳ |
 | 8 | per-phase commit + PR + merge + push | 낮음 | per phase | 🔄 ongoing (4 PRs shipped) |
 
 **총량**: 수정 약 **1,300+ JSON 편집 across ~200 files**. 한 세션에 다 끝낼 수 없음 → phase 단위로 ship.
@@ -59,6 +61,35 @@
 ---
 
 ## 2. Phase별 상세 (Source-of-truth: 매 phase 시작 시 본 문서 §2 X.x 와 audit 문서 §2-5 를 함께 확인)
+
+### 2bis. Parallel-session plan cross-reference (2026-05-23)
+
+A parallel session produced [`docs/tour-product-en-content-fix-plan-2026-05-23.md`](./tour-product-en-content-fix-plan-2026-05-23.md) (note different filename from this plan — both files now sit in this worktree). It frames the same audit through a **booking-integrity-first** lens and surfaced 4 high-severity items I had missed.
+
+**Adopted into the phase table above (as Phase A / B / C / D / Z):**
+
+| Other plan item | My response | New phase |
+|---|---|---|
+| Catalog/page vs offer/checkout price mismatch ($59 vs $69 in 8 Jeju tours + $79/$69 in jeju-grand) | **Adopt — P0**. Customer-pricing-fraud risk. Decide canonical per tour, align `public.tours.price`+`tour_product_offers.amount_minor`+`tour_product_pages.price_amount_label`+JSON `price.amountLabel`/`catalog_card.priceLabel`. | **Phase A** |
+| Empty `price.amountLabel`/`catalog_card.priceLabel` on busan-plum, busan-spring → recommendations render `$0`; seasonal window passed | **Adopt — P0**. Decide closed-until-next-season vs. set real price. Filter `$0` in `TourRecommendationsSection.tsx` + `staticTourCatalogCards.ts` + JSON-LD. Add seasonal gate to `app/api/tours/[id]/availability/route.ts`. | **Phase B** |
+| `vehicle` price type silently converted to `person` → vehicle-priced private charters multiply by guest count | **Adopt — P0 code fix**. Touch `lib/tour-product/eastSignatureCheckoutContext.ts`, `TourDesktopBookingCard.tsx`, `TourStickyBookingBar.tsx`, `app/api/bookings/route.ts`, `app/checkout/page.tsx`, `app/cart/page.tsx`, type files. Affected: jeju-island-private-car-charter, seoul-suburbs-private-chartered-car-10hr, busan-private-car-charter-cruise-shore, seoul-dmz-private, seoul-private-nami-morning-calm-petite-france (per-vehicle in DB). | **Phase C** |
+| Jeju cruise `itinerary_variants` populated but renderer expects `routeVariants` → port-variant itineraries may not render at all | **Adopt — P1**. Phase 2 (shipped) only fixed `pickup_dropoff`. Need to either migrate JSON to `routeVariants` or add backwards-compatible mapping in `buildTourProductViewModelFromJson.ts`/`loadTourProductPage.ts`. | **Phase D** |
+| Typos & polish: "A easy" (east-signature), "the our … tour tour" (jeju-cherry FAQ), "? photo" mojibake (southwest, jeju-hydrangea-southwest) | Adopt — fold into Phase 7 | Phase 7 |
+| DMZ "No passport, no DMZ entry, no refund" tone | Adopt — fold into Phase 7. **Substance preserved** (military access is real), only tone softened. | Phase 7 |
+| End-to-end verification harness — fetch all 33 EN URLs, grep HTML for `$0`/known-bad strings/`Ocean Suites`/cruise residuals/`Steven`/etc., confirm Jeju cruise renders both port variants, JSON-LD = booking card | **Adopt — Phase Z final smoke test** | **Phase Z** |
+
+**Rejected (divergent decision):**
+
+| Other plan item | Reason rejected |
+|---|---|
+| Soften cruise "return guaranteed" / "never missed a sail-away" language | **User directive #4 explicitly says keep cruise return guarantee STRONG.** "이게 애매해지면 불안함 때문에 크루즈 손님들이 안 사" — softening costs sales. Kept and strengthened in Phase 2a. |
+
+**Reference docs in this worktree:**
+- [`docs/tour-product-en-content-audit-2026-05-23.md`](./tour-product-en-content-audit-2026-05-23.md) — original audit (input to this plan)
+- [`docs/tour-product-en-content-fix-plan-2026-05-23.md`](./tour-product-en-content-fix-plan-2026-05-23.md) — parallel-session plan (cross-referenced here)
+- [`docs/pickup-dropoff-weather-data-correctness-plan-2026-05-23.md`](./pickup-dropoff-weather-data-correctness-plan-2026-05-23.md) — PR #9 merged; this track's Phase 2 supersedes its Phase 3/4 for the Jeju cruise "hotel vs port" category error.
+
+---
 
 ### Phase 1 — 가짜 후기 + 위험 카피 + 작성자 메모 (Critical fast wins)
 
