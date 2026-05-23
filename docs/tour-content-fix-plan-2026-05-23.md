@@ -39,15 +39,20 @@
 
 | Phase | 내용 | 위험 | 6-locale 작업량(대략) | 상태 |
 |---|---|---|---|---|
-| 0 | 플랜 + 브랜치 셋업 (본 문서) | 없음 | — | 🔄 in_progress |
-| 1 | 가짜 후기 + 위험 카피 + 작성자 메모 제거 | 낮음(텍스트 strip) | ~25 edits × 6 = ~150 | ⏳ |
-| 2 | 크루즈 픽업 → 항구로 재구성 | 중(데이터 구조 변경) | ~7 tours × pickup_dropoff + FAQ + 트러스트 × 6 = ~120 | ⏳ |
-| 3 | 부산 스톱 회전 재매핑 | 중(여러 필드 동시 스왑) | ~2 tours × 5 stops × 6 fields × 6 = ~360 | ⏳ |
-| 4 | UNESCO 사실 정정 | 낮음-중 | ~6 tours × 3-5 instances × 6 = ~120 | ⏳ |
-| 5 | 수치 정정 | 중(verify 단계 필요) | ~12 항목 × tours × 6 = ~200 | ⏳ |
-| 6 | 갤러리 사진-지명 재매핑 | 중(스왑 위험) | ~9 tours × galleryItems × 6 = ~150 | ⏳ |
+| 0 | 플랜 + 브랜치 셋업 (본 문서) | 없음 | — | ✅ done |
+| 1a EN | 가짜 후기 + 위험 카피 + 작성자 메모 제거 | 낮음 | 16 files / ~50 edits | ✅ PR #10 (`0fe21c98`) |
+| 1b–f locales | ko/ja/zh/zh-TW/es 동기화 | 낮음 | ~80 files | ⏳ |
+| 2a EN | 크루즈 픽업 → 항구로 재구성 | 중 | 7 tours / ~30 edits | ✅ PR #11 (`28d68626`) |
+| 2b–f locales | 동기화 | 중 | ~35 files | ⏳ |
+| 3 EN | 부산 스톱 회전 재매핑 | 중-높음 | 2 tours × 5 stops × 6 fields | ⏳ |
+| 4a EN | UNESCO 사실 정정 | 낮음-중 | 10 tours / 93 edits | ✅ PR #12 (`98a34706`) |
+| 4b–f locales | 동기화 | 중 | ~50 files | ⏳ |
+| 5a EN | 수치 정정 (high-confidence) | 낮음 | 6 tours / 24 edits | ✅ PR #13 (`117b8f26`) |
+| 5b EN | 수치 정정 (verify 필요 항목) | 중 | ~10 항목 × tours | ⏳ |
+| 5 locales | 동기화 | 중 | ~30 files | ⏳ |
+| 6 | 갤러리 사진-지명 재매핑 | 중 | ~9 tours × galleryItems × 6 = ~150 | ⏳ |
 | 7 | DMZ 다리 150m + 잡정리 | 낮음 | ~30 edits × 6 = ~180 | ⏳ |
-| 8 | 각 phase별 build + commit + PR + merge + push | 낮음 | per phase | ⏳ |
+| 8 | per-phase commit + PR + merge + push | 낮음 | per phase | 🔄 ongoing (4 PRs shipped) |
 
 **총량**: 수정 약 **1,300+ JSON 편집 across ~200 files**. 한 세션에 다 끝낼 수 없음 → phase 단위로 ship.
 
@@ -206,15 +211,16 @@
 ---
 
 ## 4. 변경 로그 (commits)
-(각 phase 머지 시 채움)
 
-| Phase | Commit | PR | Merged |
+| Phase | Commit | PR | Merged into main |
 |---|---|---|---|
-| 0 | (본 문서) | — | — |
-| 1 | — | — | ⏳ |
-| 2 | — | — | ⏳ |
-| 3 | — | — | ⏳ |
-| 4 | — | — | ⏳ |
-| 5 | — | — | ⏳ |
-| 6 | — | — | ⏳ |
-| 7 | — | — | ⏳ |
+| 0 plan | `ca578b7c` (in PR #10) | #10 | ✅ 2026-05-23 |
+| 1a EN | `ca578b7c` | [#10](https://github.com/simsangsong/atockorea/pull/10) | ✅ `0fe21c98` |
+| 2a EN | `2ac8c80f` | [#11](https://github.com/simsangsong/atockorea/pull/11) | ✅ `28d68626` |
+| 4a EN | `09de681b` | [#12](https://github.com/simsangsong/atockorea/pull/12) | ✅ `98a34706` |
+| 5a EN | `b8e8afa9` | [#13](https://github.com/simsangsong/atockorea/pull/13) | ✅ `117b8f26` |
+| 3 EN | — | — | ⏳ next |
+| 5b EN | — | — | ⏳ |
+| 6 EN | — | — | ⏳ |
+| 7 EN | — | — | ⏳ |
+| 1b–f / 2b–f / 4b–f / 5 locales | — | — | ⏳ |
