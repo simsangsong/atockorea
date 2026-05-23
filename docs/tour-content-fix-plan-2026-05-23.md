@@ -45,8 +45,8 @@
 | 4a EN | UNESCO 사실 정정 | 낮음-중 | 10 tours / 93 edits | ✅ PR #12 (`98a34706`) |
 | 5a EN | 수치 정정 (high-confidence) | 낮음 | 6 tours / 24 edits | ✅ PR #13 (`117b8f26`) |
 | A (NEW, P0) | catalog/page vs offer/checkout 가격 불일치 ($59↔$69 9개 투어) | 높음 — 결제 사기 리스크 | DB-only (tours + tour_product_offers) | ✅ DB written 2026-05-23 |
-| **B (NEW, P0)** | **시즌 종료 투어 $0 노출 + 시즌 가용성 게이팅** | **중-높음** | **2 tours + API/recommend filter** | **⏳ NEXT** |
-| **C (NEW, P0)** | **`vehicle` price type 코드 버그 (per-guest로 곱해짐)** | **중 — 결제 금액 오류** | **체크아웃·카트·예약 API + 부킹카드** | **⏳** |
+| B (NEW, P0) | 시즌 종료 투어 $0 노출 + 시즌 가용성 게이팅 | 중-높음 | 2 tours + API/recommend filter | ✅ code shipped 2026-05-23 |
+| **C (NEW, P0)** | **`vehicle` price type 코드 버그 (per-guest로 곱해짐)** | **중 — 결제 금액 오류** | **체크아웃·카트·예약 API + 부킹카드** | **⏳ NEXT** |
 | **D (NEW, P1)** | **Jeju 크루즈 `itinerary_variants` → `routeVariants` 스키마 마이그레이션** | **중 — 포트 변형 itinerary 미렌더 가능성** | **2 tours JSON or backward map** | **⏳** |
 | 3 EN | 부산 스톱 회전 재매핑 | 중-높음 | 2 tours × 5 stops × 6 fields | ⏳ |
 | 5b EN | 수치 정정 (verify 필요 항목) | 중 | ~10 항목 × tours | ⏳ |
@@ -139,6 +139,41 @@ AND tour_product_page_id IN (SELECT id FROM tour_product_pages WHERE slug = 'jej
 - JSON-LD — `vm.price.amountLabel` 에서 가져오므로 자동 정합.
 
 **남은 작업**: Phase B 시작 — busan-plum / busan-spring 의 빈 가격 + `$0` 추천카드 + 시즌 가용성 게이팅.
+
+---
+
+### Phase B 상세 — 시즌 종료 투어 `$0` 노출 + 시즌 가용성 게이팅 (✅ code shipped 2026-05-23)
+
+**문제 (P0):**
+- `busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju` (운영: 02-25 – 04-10) 및 `busan-spring-cherry-blossom-gyeongju-highlights-day-tour` (운영: 03-28 – 04-10) 가 DB·offer·JSON 모두 빈 가격 (`tours.price=0`, `amount_minor=0`, `price.amountLabel=""`).
+- 추천 카드 (`TourRecommendationsSection`) 에서 `$0` 으로 렌더 — 신뢰 손상.
+- `availability API` 가 시즌 윈도우 무방어 → 시즌 외 날짜 예약 가능 (`available_spots=999` 디폴트).
+
+**Canonical 결정 (made 2026-05-23):**
+2027 시즌 가격이 미결정 → 임의 가격 설정 거부. 대신 **노출/예약 차단 인프라**만 적용. 가격 결정 시 후속 phase 에서 데이터 채움.
+
+**적용:**
+
+1. **`lib/tour-seasonal-windows.ts` (신규)** — 슬러그 → MM-DD 윈도우 레지스트리 + `getSeasonalOperatingWindow` + `isDateOutsideSeasonalWindow`. 연도 무관 매년 자동 반복.
+   - busan-plum: `02-25 – 04-10`
+   - busan-spring: `03-28 – 04-10`
+
+2. **`app/api/tours/[id]/availability/route.ts`** — Jeju East Monday 룰 직후, 시즌 윈도우 외 날짜 → `available:false, reason:"This is a season-locked tour..."` 반환. POST 도 GET 결과 의존이므로 자동 차단.
+
+3. **`app/tour-product/[slug]/page.tsx`** — `otherTours.filter(p => p.slug !== slug && p.listPriceUsd > 0)` 추가. 가격 0 인 카드는 추천에서 자동 제외. 홈페이지 featured grid (`featured-products-showcase.tsx`) 가 이미 같은 패턴 사용 — 일관성 확보.
+
+4. **`__tests__/lib/tour-seasonal-windows.test.ts` (신규)** — 8 케이스: 인사이드/아웃사이드/경계일/null slug/malformed date.
+
+**범위 제외 (의도적):**
+- DB price write — 2027 시즌 가격 결정 시 별도 phase.
+- JSON-LD — 이미 `safePrice()` 에서 amountLabel 비면 Offer 미생성 (방어 완료).
+- `staticTourCatalogCards.ts` `SLUG_OVERRIDES` 항목 추가 — 가격 결정 후.
+- `homepage featured grid` — 이미 `listPriceUsd <= 0` 필터링 보유.
+- 페이지 자체 (`/tour-product/busan-plum-...`) 렌더 — 빈 가격으로 노출 (다음 시즌 마케팅 카피는 별도 phase).
+
+**검증:**
+- `jest __tests__/lib/tour-seasonal-windows.test.ts` → 8/8 pass.
+- `tsc --noEmit` → 0 errors.
 
 ---
 
@@ -301,7 +336,8 @@ AND tour_product_page_id IN (SELECT id FROM tour_product_pages WHERE slug = 'jej
 | 2a EN | `2ac8c80f` | [#11](https://github.com/simsangsong/atockorea/pull/11) | ✅ `28d68626` |
 | 4a EN | `09de681b` | [#12](https://github.com/simsangsong/atockorea/pull/12) | ✅ `98a34706` |
 | 5a EN | `b8e8afa9` | [#13](https://github.com/simsangsong/atockorea/pull/13) | ✅ `117b8f26` |
-| A (DB price reconcile) | doc-only commit (pending) | (pending) | DB writes applied 2026-05-23 (out-of-band via mcp__atockorea__execute_sql) |
+| A (DB price reconcile) | `6ea957a3` | [#15](https://github.com/simsangsong/atockorea/pull/15) | ✅ `76b27417` |
+| B (seasonal $0 + window gate) | (pending) | (pending) | code change; see Phase B detail below |
 | 3 EN | — | — | ⏳ |
 | 5b EN | — | — | ⏳ |
 | 6 EN | — | — | ⏳ |

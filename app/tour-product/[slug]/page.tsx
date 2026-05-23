@@ -144,9 +144,11 @@ export default async function RegisteredTourProductPage({
   const jsonLdScripts = tourProductJsonLdScripts(viewModel, slug);
 
   // Recommendations: pick up to 6 other tours for this locale, prioritizing same region.
+  // Drop entries without a parseable price so off-season / unpriced products don't
+  // render as "$0" cards (mirrors the homepage featured-grid filter).
   const allCatalog = listStaticTourProducts(locale);
   const currentRegion = allCatalog.find((p) => p.slug === slug)?.region ?? "";
-  const otherTours = allCatalog.filter((p) => p.slug !== slug);
+  const otherTours = allCatalog.filter((p) => p.slug !== slug && p.listPriceUsd > 0);
   const sameRegion = otherTours.filter((p) => p.region === currentRegion);
   const otherRegions = otherTours.filter((p) => p.region !== currentRegion);
   const recommendations = [...sameRegion, ...otherRegions].slice(0, 6);
