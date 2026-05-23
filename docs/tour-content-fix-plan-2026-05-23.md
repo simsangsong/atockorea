@@ -53,7 +53,9 @@
 | 6 EN | 갤러리 사진-지명 재매핑 | 중 | ~9 tours × galleryItems | ⏳ |
 | 7 EN | DMZ 다리 150m + 타이포(A easy/the our/? photo) + DMZ refund tone + 잡정리 | 낮음 | ~30 edits | ⏳ |
 | **Z (NEW)** | **Verification harness — jest known-bad strings sweep across 33 EN bundles** | **낮음** | **post-ship smoke test** | **✅ shipped 2026-05-23 (this commit)** — caught 3 residual review-aggregate leaks (east-signature-nature-core ×2 + busan-small-group-sightseeing-tour-cruise-passengers ×1), cleaned via `scripts/phase-z-review-aggregate-cleanup.mjs`. CI now blocks re-introduction. |
-| 1b–f / 2b–f / 4b–f / 5 locales | ko/ja/zh/zh-TW/es 동기화 (모든 EN phase 종료 후) | 낮음-중 | ~200 files | ⏳ |
+| **loc-A** | ko/ja/zh/zh-TW/es mechanical sweep — 인코딩(? photo), 영문 잔존(world's largest seated bronze, 3 km loop), 리뷰 집계 제거(4 슬러그) | 낮음 | 50 swaps × 26 files | **✅ shipped 2026-05-23 (this commit)** |
+| **loc-B (NEW)** | 가이드 이름·운영사 누출 sentence rewrite + DMZ 220→150 + 크루즈 호텔 픽업 누출 + Bukchon 600→900 잔여 locale | 중 | ~40 swaps × ~15 files | ⏳ next |
+| 1b–f / 2b–f / 4b–f / 5 locales | 잔여 locale 동기화 | 낮음-중 | ~50 files | ⏳ |
 | 8 | per-phase commit + PR + merge + push | 낮음 | per phase | 🔄 ongoing (4 PRs shipped) |
 
 **총량**: 수정 약 **1,300+ JSON 편집 across ~200 files**. 한 세션에 다 끝낼 수 없음 → phase 단위로 ship.
@@ -416,7 +418,8 @@ AND tour_product_page_id IN (SELECT id FROM tour_product_pages WHERE slug = 'jej
 | 7 EN | `64501a61` | [#34](https://github.com/simsangsong/atockorea/pull/34) | ✅ `33818d55` |
 | 6 EN (gallery EN-residual cleanup) | (이번 commit) | (이번 commit) | 4 tours × galleryItems language swaps (75 fields). "(아홉산숲)" / "태종대 해안 절벽" / "감천문화마을" / "용두산공원 & 부산타워" / "용두산공원" / "Templo Waujeongsa" → EN equivalents. description body informational parenthetical 보존 (galleryItems 만 sweep). src↔location attribution mismatch 143개는 photo verify 필요 — 별도 phase. |
 | **Z (verification harness)** | (this commit) | (this commit) | `__tests__/tour-content/phase-z-known-bad-strings.test.ts` jest sweep — 6 assertions pass, scans all 33 EN bundles for known-bad strings (Phase 1a fabrications + Phase 4a over-claims + Phase 7 typos/encoding + guide name leaks via `\bSteven\b`/`\bChloe\b`/`\bJina\b`/`\bHays\b`/`\bSunny\b` + cruise-only hotel-pickup leaks). Caught 3 residual review-aggregate leaks ("4.8/5 (127 reviews)" ×2 in east-signature-nature-core + "4.9/5 rating across 32 reviews" in busan-small-group-sightseeing-tour-cruise-passengers), cleaned via `scripts/phase-z-review-aggregate-cleanup.mjs`. Test broadens needle list to catch the "X.X/5 rating across" variant the original Phase 1a sweep missed. |
-| 5b EN | — | — | ⏳ |
-| 6 EN | — | — | ⏳ |
-| 7 EN | — | — | ⏳ |
-| 1b–f / 2b–f / 4b–f / 5 locales | — | — | ⏳ |
+| **loc-A (locale propagation)** | (this commit) | (this commit) | Mechanical sweeps mirrored EN Phase 1a/4a/5b/7/Z fixes into ko/ja/zh/zh-TW/es bundles. **50 swaps × 26 files**: ① 30 × `? photo` → `— photo` (6 slugs × 5 locales = 30 encoding fixes), ② 5 × `world's largest seated bronze` → `Korea's largest seated bronze` (seoul-seoraksan internal reasoning), ③ 5 × `3 km loop` → `4 km loop` (pocheon-sanjeong), ④ 24 review-aggregate sentence removals across 4 slugs × 5 locales (east-signature, busan-small-group, jeju-southern, jeju-eastern). Audit before/after: cross-locale offenders 74 → 41. Per `feedback_data_preservation` — surgical needle-and-replace, JSON.parse round-trip per file. `scripts/phase-locale-audit.mjs` + `scripts/phase-loc-a-mechanical.mjs`. |
+| loc-B (guide names + DMZ + cruise hotels + Bukchon residual) | — | — | ⏳ next |
+| 5b EN deferred | — | — | ⏳ |
+| 6 EN deferred (143 attribution) | — | — | ⏳ |
+| 1b–f / 2b–f / 4b–f / 5 locales 잔여 | — | — | ⏳ |
