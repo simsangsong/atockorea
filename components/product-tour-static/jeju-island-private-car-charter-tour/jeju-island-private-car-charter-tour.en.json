@@ -229,7 +229,7 @@
         ]
       },
       "highlights": [
-        "Seongsan Ilchulbong: triple-UNESCO site (World Natural Heritage 2007 + Biosphere Reserve + Global Geopark) — 30-40 min summit climb to the 99-rock crater rim, summit closes the first Monday of each month; admission 5,000 KRW",
+        "Seongsan Ilchulbong: UNESCO World Natural Heritage component (2007); also within Jeju's island-wide UNESCO Biosphere Reserve (2002) and UNESCO Global Geopark (2010) — 30-40 min summit climb to the 99-rock crater rim, summit closes the first Monday of each month; admission 5,000 KRW",
         "Udo Island: 15-min ferry from Seongsan, ~370 residents, 132 m Udobong peak, signature peanut ice cream and white-coral-sand Hagosudong Beach; rental cars restricted unless overnight stay",
         "Manjanggul Lava Tube: world's largest 7.6 m lava column, 1 km accessible passage of a 7.4 km UNESCO tube, year-round 11-13°C interior; admission 4,000 KRW; closed first Wednesday — verify post-March 2026 reopening status",
         "Seopjikoji and Seongeup: K-drama 'All In' (2003) coast + Joseon-era thatched-roof folk village; Seongeup designated National Folklore Cultural Heritage"
@@ -1793,7 +1793,7 @@
             "unesco_fit": {
               "old": 1,
               "new": 0.65,
-              "reasoning": "VERIFIED weighted average across routes. Route 1 (East): max UNESCO — Seongsan Ilchulbong is triple-UNESCO + Manjanggul UNESCO 2007. Route 2 (West): minimal UNESCO content. Route 3 (South): partial UNESCO — Jusangjeolli is Global Geopark, Sanbangsan is Geopark. Weighted across routes = ~0.65, significantly lower than the previous 1.0 which assumed Route 1 always selected. Custom Route can max UNESCO if the traveler picks specifically — but the average traveler will not."
+              "reasoning": "VERIFIED weighted average across routes. Route 1 (East): max UNESCO — Seongsan Ilchulbong is UNESCO World Heritage + Manjanggul UNESCO 2007. Route 2 (West): minimal UNESCO content. Route 3 (South): partial UNESCO — Jusangjeolli is Global Geopark, Sanbangsan is Geopark. Weighted across routes = ~0.65, significantly lower than the previous 1.0 which assumed Route 1 always selected. Custom Route can max UNESCO if the traveler picks specifically — but the average traveler will not."
             },
             "scenic_level": {
               "old": 1,
