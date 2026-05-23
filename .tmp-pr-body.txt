@@ -1,0 +1,37 @@
+## Admin v1 → v2 promotion: v2 module becomes `/admin/products`
+
+Promotes the Phase 2 admin product editor (three-pane: list + editor + live preview) from `/admin/products/v2` to the root `/admin/products` route, and removes the 2881-LOC v1 page in the process.
+
+### Why this PR
+
+Agreed on 2026-05-22 but never shipped — the v2 module was committed under `app/admin/products/v2/` but the v1 single-file page stayed at the root route. Two side effects:
+
+1. **Production still served v1** — sidebar still pointed at `/admin/products/v2`, but anyone who typed `/admin/products` (or had it bookmarked) hit the legacy 2881-LOC monolith.
+2. **Two routes for the same feature** — the v2 path also lived under `/admin/products/v2`, with a "구버전" breadcrumb label on the root.
+
+This PR settles the migration: v2 becomes the canonical `/admin/products`, the v2 subdirectory disappears, and every internal link points at the root.
+
+### Changes
+
+| File | Change |
+|---|---|
+| **`app/admin/products/page.tsx`** | Replaced the 2881-LOC v1 monolith with the v2 three-pane shell (was at `v2/page.tsx`, 139 LOC). localStorage keys renamed `admin.products.v2.*` → `admin.products.*` with a one-time read-fallback to the legacy keys so admins who already set preferences don't lose them. |
+| **`app/admin/products/_components/`** | Moved from `v2/_components/` (8 files: 3 pane components + 5 section components — `ProductsListPane`, `ProductEditorPane`, `ProductPreviewPane`, `FAQSection`, `HeroSection`, `ItinerarySection`, `MediaSection`, `SortableImageCard`). |
+| **`app/admin/products/_hooks/`** | Moved from `v2/_hooks/` (4 files: `types`, `useImageUpload`, `useProductPage`, `useProductsList`). |
+| **`app/admin/products/v2/`** | Directory removed. |
+| **`app/admin/layout.tsx`** | Sidebar menu item path `/admin/products/v2` → `/admin/products`, NEW badge dropped (no longer the new variant — it's the only one). Breadcrumb mapping: `/admin/products` no longer labeled "구버전"; `/admin/products/v2` entry removed. |
+| **`app/admin/page.tsx`** | Dashboard "전체 상품" card link `/admin/products/v2` → `/admin/products`. |
+| **`app/admin/match-pois/page.tsx`** | Cosmetic comment update: `mirroring /admin/products/v2` → `mirroring /admin/products`. |
+
+### Out of scope
+
+- Replacing the localStorage legacy fallback once we're confident every admin browser has rolled forward (low priority — the fallback adds 5 lines).
+- Further v2 polish (additional editor sections, image uploader UX, etc.) — already lives in this branch; no scope creep here.
+
+### Verification
+
+- `npx tsc --noEmit -p tsconfig.json` → 0 errors.
+- Internal grep: `admin/products/v2` paths cleared except for the two `LEGACY_*_STORAGE_KEY` constants (intentional).
+- v1 page no longer referenced anywhere outside its own (removed) directory.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)

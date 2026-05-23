@@ -35,7 +35,7 @@ type AdminMenuItem = {
 const adminMenuItems: AdminMenuItem[] = [
   { path: '/admin', label: '대시보드', icon: LayoutDashboard },
   { path: '/admin/merchants', label: '업체 관리', icon: Building2 },
-  { path: '/admin/products/v2', label: '상품 관리', icon: Package, badge: 'NEW' },
+  { path: '/admin/products', label: '상품 관리', icon: Package },
   { path: '/admin/orders', label: '주문 관리', icon: ClipboardList },
   { path: '/admin/contacts', label: '문의 관리', icon: MessageSquareText },
   { path: '/admin/emails', label: '받은 메일', icon: Mail },
@@ -50,8 +50,7 @@ const pathToBreadcrumb: Record<string, string> = {
   '/admin': '대시보드',
   '/admin/merchants': '업체 관리',
   '/admin/merchants/create': '업체 추가',
-  '/admin/products': '상품 관리 (구버전)',
-  '/admin/products/v2': '상품 관리',
+  '/admin/products': '상품 관리',
   '/admin/orders': '주문 관리',
   '/admin/contacts': '문의 관리',
   '/admin/emails': '받은 메일',

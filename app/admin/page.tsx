@@ -144,7 +144,7 @@ export default function AdminDashboard() {
       value: stats.totalProducts,
       change: null,
       subtitle: '활성 투어',
-      link: '/admin/products/v2',
+      link: '/admin/products',
     },
     {
       title: '전체 주문',
