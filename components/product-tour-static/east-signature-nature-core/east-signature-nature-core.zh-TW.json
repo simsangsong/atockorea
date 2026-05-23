@@ -14,7 +14,7 @@
       "城山日出峰遊覽",
       "城邑民俗村遊覽"
     ],
-    "ogImage": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
     "title": "濟州東部自然之旅：UNESCO世界遺產＋熔岩隧道＋民俗村 | AtoC",
     "description": "濟州東部經典小團體一日遊：濟州石文化公園 → 涉地可支東岬角 → 城山日出峰（UNESCO） → 米川窟熔岩隧道 → 城邑民俗村。9小時，含所有入場費。"
   },
@@ -32,8 +32,8 @@
       "適合初次造訪",
       "濟州東部經典"
     ],
-    "heroImage": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
-    "thumbnail": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+    "heroImage": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+    "thumbnail": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
     "priceLabel": "",
     "shortCardDescription": "這條簡單易懂的濟州東部一日路線，從石文化與火山地貌出發，途經海岸線與城山日出峰，最後以日出樂園和城邑民俗村作結，打造更完整的一日遊體驗。",
     "tags": [
@@ -56,7 +56,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+    "imageUrl": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
     "imagePosition": "center 35%",
     "images": [
       "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
@@ -141,265 +141,505 @@
       "id": 1,
       "type": "photo",
       "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
-      "location": "濟州石頭文化公園",
-      "alt": "濟州石頭文化公園 — 圖庫圖片",
-      "caption": "濟州石頭文化公園 — 照片 1"
+      "location": "濟州石頭公園（石文化公園）",
+      "alt": "濟州石頭公園（石文化公園） — gallery image 1",
+      "caption": "濟州石頭公園（石文化公園） — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
       "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
-      "location": "涉地可支（東角）",
-      "alt": "涉地可支（東角）— 圖庫圖片 1",
-      "caption": "涉地可支（東角）— 照片 1"
+      "location": "涉地可支（東部海岬）",
+      "alt": "涉地可支（東部海岬） — gallery image 1",
+      "caption": "涉地可支（東部海岬） — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
       "location": "城山日出峰",
-      "alt": "城山日出峰 — 圖庫圖片",
-      "caption": "城山日出峰 — 照片 1"
+      "alt": "城山日出峰 — gallery image 1",
+      "caption": "城山日出峰 — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-      "location": "日出樂園",
-      "alt": "日出樂園 — 圖庫圖片",
-      "caption": "日出樂園 — 照片 1"
+      "location": "日出樂園（美川窟熔岩管）",
+      "alt": "日出樂園（美川窟熔岩管） — gallery image 1",
+      "caption": "日出樂園（美川窟熔岩管） — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
       "location": "城邑民俗村",
-      "alt": "城邑民俗村 — 圖庫圖片",
-      "caption": "城邑民俗村 — 照片 2"
+      "alt": "城邑民俗村 — gallery image 1",
+      "caption": "城邑民俗村 — photo 1"
     },
     {
       "id": 6,
       "type": "photo",
       "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
-      "location": "濟州石頭文化公園",
-      "alt": "濟州石頭文化公園 — 圖庫圖片",
-      "caption": "濟州石頭文化公園 — 照片 3"
+      "location": "濟州石頭公園（石文化公園）",
+      "alt": "濟州石頭公園（石文化公園） — gallery image 2",
+      "caption": "濟州石頭公園（石文化公園） — photo 2"
     },
     {
       "id": 7,
       "type": "photo",
       "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
-      "location": "濟州石頭文化公園",
-      "alt": "濟州石頭文化公園 — 圖庫圖片",
-      "caption": "濟州石頭文化公園 — 照片 4"
+      "location": "濟州石頭公園（石文化公園）",
+      "alt": "濟州石頭公園（石文化公園） — gallery image 3",
+      "caption": "濟州石頭公園（石文化公園） — photo 3"
     },
     {
       "id": 8,
       "type": "photo",
       "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
-      "location": "濟州石頭文化公園",
-      "alt": "濟州石頭文化公園 — 圖庫圖片",
-      "caption": "濟州石頭文化公園 — 照片 5"
+      "location": "濟州石頭公園（石文化公園）",
+      "alt": "濟州石頭公園（石文化公園） — gallery image 4",
+      "caption": "濟州石頭公園（石文化公園） — photo 4"
     },
     {
       "id": 9,
       "type": "photo",
       "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp",
-      "location": "濟州石頭文化公園",
-      "alt": "濟州石頭文化公園 — 圖庫圖片",
-      "caption": "濟州石頭文化公園 — 照片 2"
+      "location": "濟州石頭公園（石文化公園）",
+      "alt": "濟州石頭公園（石文化公園） — gallery image 5",
+      "caption": "濟州石頭公園（石文化公園） — photo 5"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
-      "location": "涉地可支（東岬）",
-      "alt": "涉地可支（東岬）— 圖庫圖片 3",
-      "caption": "涉地可支（東岬）— 照片 3"
+      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19-2.webp",
+      "location": "濟州石頭公園（石文化公園）",
+      "alt": "濟州石頭公園（石文化公園） — gallery image 6",
+      "caption": "濟州石頭公園（石文化公園） — photo 6"
     },
     {
       "id": 11,
       "type": "photo",
-      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
-      "location": "涉地可支（東岬）",
-      "alt": "涉地可支（東岬）— 圖庫圖片 4",
-      "caption": "涉地可支（東岬）— 照片 4"
+      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20-2.webp",
+      "location": "濟州石頭公園（石文化公園）",
+      "alt": "濟州石頭公園（石文化公園） — gallery image 7",
+      "caption": "濟州石頭公園（石文化公園） — photo 7"
     },
     {
       "id": 12,
       "type": "photo",
-      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
-      "location": "涉地可支（東岬）",
-      "alt": "涉地可支（東岬）— 圖庫圖片 5",
-      "caption": "涉地可支（東岬）— 照片 5"
+      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21-2.webp",
+      "location": "濟州石頭公園（石文化公園）",
+      "alt": "濟州石頭公園（石文化公園） — gallery image 8",
+      "caption": "濟州石頭公園（石文化公園） — photo 8"
     },
     {
       "id": 13,
       "type": "photo",
-      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
-      "location": "涉地可支（東岬）",
-      "alt": "涉地可支（東岬）— 圖庫圖片 6",
-      "caption": "涉地可支（東岬）— 照片 6"
+      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22-2.webp",
+      "location": "濟州石頭公園（石文化公園）",
+      "alt": "濟州石頭公園（石文化公園） — gallery image 9",
+      "caption": "濟州石頭公園（石文化公園） — photo 9"
     },
     {
       "id": 14,
       "type": "photo",
-      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
-      "location": "涉地可支",
-      "alt": "涉地可支 — 圖庫圖片",
-      "caption": "涉地可支 — 照片 2"
+      "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23-2.webp",
+      "location": "濟州石頭公園（石文化公園）",
+      "alt": "濟州石頭公園（石文化公園） — gallery image 10",
+      "caption": "濟州石頭公園（石文化公園） — photo 10"
     },
     {
       "id": 15,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — 圖庫圖片 3",
-      "caption": "城山日出峰 — 照片 3"
+      "src": "/images/tours/jeju-stone-park/photo-006.webp",
+      "location": "濟州石頭公園（石文化公園）",
+      "alt": "濟州石頭公園（石文化公園） — gallery image 11",
+      "caption": "濟州石頭公園（石文化公園） — photo 11"
     },
     {
       "id": 16,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — 圖庫圖片 4",
-      "caption": "城山日出峰 — 照片 4"
+      "src": "/images/tours/jeju-stone-park/photo-007.webp",
+      "location": "濟州石頭公園（石文化公園）",
+      "alt": "濟州石頭公園（石文化公園） — gallery image 12",
+      "caption": "濟州石頭公園（石文化公園） — photo 12"
     },
     {
       "id": 17,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — 圖庫圖片 5",
-      "caption": "城山日出峰 — 照片 5"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
+      "location": "涉地可支（東部海岬）",
+      "alt": "涉地可支（東部海岬） — gallery image 2",
+      "caption": "涉地可支（東部海岬） — photo 2"
     },
     {
       "id": 18,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — 圖庫圖片",
-      "caption": "城山日出峰 — 照片 2"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
+      "location": "涉地可支（東部海岬）",
+      "alt": "涉地可支（東部海岬） — gallery image 3",
+      "caption": "涉地可支（東部海岬） — photo 3"
     },
     {
       "id": 19,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-      "location": "日出樂園（米千洞熔岩隧道）",
-      "alt": "日出樂園（米千洞熔岩隧道）— 圖庫圖片 3",
-      "caption": "日出樂園（米千洞熔岩隧道）— 照片 3"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
+      "location": "涉地可支（東部海岬）",
+      "alt": "涉地可支（東部海岬） — gallery image 4",
+      "caption": "涉地可支（東部海岬） — photo 4"
     },
     {
       "id": 20,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-      "location": "日出樂園（米千洞熔岩隧道）",
-      "alt": "日出樂園（米千洞熔岩隧道）— 圖庫圖片 4",
-      "caption": "日出樂園（米千洞熔岩隧道）— 照片 4"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
+      "location": "涉地可支（東部海岬）",
+      "alt": "涉地可支（東部海岬） — gallery image 5",
+      "caption": "涉地可支（東部海岬） — photo 5"
     },
     {
       "id": 21,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-      "location": "日出樂園（米千洞熔岩隧道）",
-      "alt": "日出樂園（米千洞熔岩隧道）— 圖庫圖片 5",
-      "caption": "日出樂園（米千洞熔岩隧道）— 照片 5"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
+      "location": "涉地可支（東部海岬）",
+      "alt": "涉地可支（東部海岬） — gallery image 6",
+      "caption": "涉地可支（東部海岬） — photo 6"
     },
     {
       "id": 22,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-      "location": "日出樂園（米千洞熔岩隧道）",
-      "alt": "日出樂園（米千洞熔岩隧道）— 圖庫圖片 6",
-      "caption": "日出樂園（米千洞熔岩隧道）— 照片 6"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10-2.webp",
+      "location": "涉地可支（東部海岬）",
+      "alt": "涉地可支（東部海岬） — gallery image 7",
+      "caption": "涉地可支（東部海岬） — photo 7"
     },
     {
       "id": 23,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-      "location": "日出樂園（米千洞熔岩隧道）",
-      "alt": "日出樂園（米千洞熔岩隧道）— 圖庫圖片 7",
-      "caption": "日出樂園（米千洞熔岩隧道）— 照片 7"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11-2.webp",
+      "location": "涉地可支（東部海岬）",
+      "alt": "涉地可支（東部海岬） — gallery image 8",
+      "caption": "涉地可支（東部海岬） — photo 8"
     },
     {
       "id": 24,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-      "location": "日出樂園（米千洞熔岩隧道）",
-      "alt": "日出樂園（米千洞熔岩隧道）— 圖庫圖片 8",
-      "caption": "日出樂園（米千洞熔岩隧道）— 照片 8"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12-2.webp",
+      "location": "涉地可支（東部海岬）",
+      "alt": "涉地可支（東部海岬） — gallery image 9",
+      "caption": "涉地可支（東部海岬） — photo 9"
     },
     {
       "id": 25,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
-      "location": "日出樂園（米千洞熔岩隧道）",
-      "alt": "日出樂園（米千洞熔岩隧道）— 圖庫圖片 9",
-      "caption": "日出樂園（米千洞熔岩隧道）— 照片 9"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13-2.webp",
+      "location": "涉地可支（東部海岬）",
+      "alt": "涉地可支（東部海岬） — gallery image 10",
+      "caption": "涉地可支（東部海岬） — photo 10"
     },
     {
       "id": 26,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
-      "location": "日出樂園（米千洞熔岩洞窟）",
-      "alt": "日出樂園（米千洞熔岩洞窟）— 圖庫圖片 10",
-      "caption": "日出樂園（米千洞熔岩洞窟）— 照片 10"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14-2.webp",
+      "location": "涉地可支（東部海岬）",
+      "alt": "涉地可支（東部海岬） — gallery image 11",
+      "caption": "涉地可支（東部海岬） — photo 11"
     },
     {
       "id": 27,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
-      "location": "日出樂園",
-      "alt": "日出樂園 — 圖庫圖片",
-      "caption": "日出樂園 — 照片 2"
+      "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15-2.webp",
+      "location": "涉地可支（東部海岬）",
+      "alt": "涉地可支（東部海岬） — gallery image 12",
+      "caption": "涉地可支（東部海岬） — photo 12"
     },
     {
       "id": 28,
       "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
-      "location": "城邑民俗村",
-      "alt": "城邑民俗村 — 圖庫圖片 3",
-      "caption": "城邑民俗村 — 照片 3"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 2",
+      "caption": "城山日出峰 — photo 2"
     },
     {
       "id": 29,
       "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
-      "location": "城邑民俗村",
-      "alt": "城邑民俗村 — 圖庫圖片 4",
-      "caption": "城邑民俗村 — 照片 4"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 3",
+      "caption": "城山日出峰 — photo 3"
     },
     {
       "id": 30,
       "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
-      "location": "城邑民俗村",
-      "alt": "城邑民俗村 — 圖庫圖片 5",
-      "caption": "城邑民俗村 — 照片 5"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 4",
+      "caption": "城山日出峰 — photo 4"
     },
     {
       "id": 31,
       "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
-      "location": "城邑民俗村",
-      "alt": "城邑民俗村 — 圖庫圖片 6",
-      "caption": "城邑民俗村 — 照片 6"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 5",
+      "caption": "城山日出峰 — photo 5"
     },
     {
       "id": 32,
       "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
-      "location": "城邑民俗村",
-      "alt": "城邑民俗村 — 圖庫圖片 7",
-      "caption": "城邑民俗村 — 照片 7"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 6",
+      "caption": "城山日出峰 — photo 6"
     },
     {
       "id": 33,
       "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 7",
+      "caption": "城山日出峰 — photo 7"
+    },
+    {
+      "id": 34,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 8",
+      "caption": "城山日出峰 — photo 8"
+    },
+    {
+      "id": 35,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 9",
+      "caption": "城山日出峰 — photo 9"
+    },
+    {
+      "id": 36,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 10",
+      "caption": "城山日出峰 — photo 10"
+    },
+    {
+      "id": 37,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 11",
+      "caption": "城山日出峰 — photo 11"
+    },
+    {
+      "id": 38,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+      "location": "日出樂園（美川窟熔岩管）",
+      "alt": "日出樂園（美川窟熔岩管） — gallery image 2",
+      "caption": "日出樂園（美川窟熔岩管） — photo 2"
+    },
+    {
+      "id": 39,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+      "location": "日出樂園（美川窟熔岩管）",
+      "alt": "日出樂園（美川窟熔岩管） — gallery image 3",
+      "caption": "日出樂園（美川窟熔岩管） — photo 3"
+    },
+    {
+      "id": 40,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+      "location": "日出樂園（美川窟熔岩管）",
+      "alt": "日出樂園（美川窟熔岩管） — gallery image 4",
+      "caption": "日出樂園（美川窟熔岩管） — photo 4"
+    },
+    {
+      "id": 41,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+      "location": "日出樂園（美川窟熔岩管）",
+      "alt": "日出樂園（美川窟熔岩管） — gallery image 5",
+      "caption": "日出樂園（美川窟熔岩管） — photo 5"
+    },
+    {
+      "id": 42,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+      "location": "日出樂園（美川窟熔岩管）",
+      "alt": "日出樂園（美川窟熔岩管） — gallery image 6",
+      "caption": "日出樂園（美川窟熔岩管） — photo 6"
+    },
+    {
+      "id": 43,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+      "location": "日出樂園（美川窟熔岩管）",
+      "alt": "日出樂園（美川窟熔岩管） — gallery image 7",
+      "caption": "日出樂園（美川窟熔岩管） — photo 7"
+    },
+    {
+      "id": 44,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+      "location": "日出樂園（美川窟熔岩管）",
+      "alt": "日出樂園（美川窟熔岩管） — gallery image 8",
+      "caption": "日出樂園（美川窟熔岩管） — photo 8"
+    },
+    {
+      "id": 45,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+      "location": "日出樂園（美川窟熔岩管）",
+      "alt": "日出樂園（美川窟熔岩管） — gallery image 9",
+      "caption": "日出樂園（美川窟熔岩管） — photo 9"
+    },
+    {
+      "id": 46,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+      "location": "日出樂園（美川窟熔岩管）",
+      "alt": "日出樂園（美川窟熔岩管） — gallery image 10",
+      "caption": "日出樂園（美川窟熔岩管） — photo 10"
+    },
+    {
+      "id": 47,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+      "location": "日出樂園（美川窟熔岩管）",
+      "alt": "日出樂園（美川窟熔岩管） — gallery image 11",
+      "caption": "日出樂園（美川窟熔岩管） — photo 11"
+    },
+    {
+      "id": 48,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+      "location": "日出樂園（美川窟熔岩管）",
+      "alt": "日出樂園（美川窟熔岩管） — gallery image 12",
+      "caption": "日出樂園（美川窟熔岩管） — photo 12"
+    },
+    {
+      "id": 49,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+      "location": "日出樂園（美川窟熔岩管）",
+      "alt": "日出樂園（美川窟熔岩管） — gallery image 13",
+      "caption": "日出樂園（美川窟熔岩管） — photo 13"
+    },
+    {
+      "id": 50,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+      "location": "日出樂園（美川窟熔岩管）",
+      "alt": "日出樂園（美川窟熔岩管） — gallery image 14",
+      "caption": "日出樂園（美川窟熔岩管） — photo 14"
+    },
+    {
+      "id": 51,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+      "location": "日出樂園（美川窟熔岩管）",
+      "alt": "日出樂園（美川窟熔岩管） — gallery image 15",
+      "caption": "日出樂園（美川窟熔岩管） — photo 15"
+    },
+    {
+      "id": 52,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+      "location": "日出樂園（美川窟熔岩管）",
+      "alt": "日出樂園（美川窟熔岩管） — gallery image 16",
+      "caption": "日出樂園（美川窟熔岩管） — photo 16"
+    },
+    {
+      "id": 53,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+      "location": "日出樂園（美川窟熔岩管）",
+      "alt": "日出樂園（美川窟熔岩管） — gallery image 17",
+      "caption": "日出樂園（美川窟熔岩管） — photo 17"
+    },
+    {
+      "id": 54,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 2",
+      "caption": "城邑民俗村 — photo 2"
+    },
+    {
+      "id": 55,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 3",
+      "caption": "城邑民俗村 — photo 3"
+    },
+    {
+      "id": 56,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 4",
+      "caption": "城邑民俗村 — photo 4"
+    },
+    {
+      "id": 57,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 5",
+      "caption": "城邑民俗村 — photo 5"
+    },
+    {
+      "id": 58,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 6",
+      "caption": "城邑民俗村 — photo 6"
+    },
+    {
+      "id": 59,
+      "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
       "location": "城邑民俗村",
-      "alt": "城邑民俗村 — 圖庫圖片 7",
-      "caption": "城邑民俗村 — 照片 7"
+      "alt": "城邑民俗村 — gallery image 7",
+      "caption": "城邑民俗村 — photo 7"
+    },
+    {
+      "id": 60,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 8",
+      "caption": "城邑民俗村 — photo 8"
+    },
+    {
+      "id": 61,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 9",
+      "caption": "城邑民俗村 — photo 9"
+    },
+    {
+      "id": 62,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 10",
+      "caption": "城邑民俗村 — photo 10"
+    },
+    {
+      "id": 63,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
+      "location": "城邑民俗村",
+      "alt": "城邑民俗村 — gallery image 11",
+      "caption": "城邑民俗村 — photo 11"
     }
   ],
   "itineraryStops": [
@@ -469,6 +709,34 @@
         {
           "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-stone-park/photo-006.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-stone-park/photo-007.webp",
+          "source": "atoc-korea"
         }
       ],
       "smartNotes": {
@@ -491,41 +759,97 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
-          "location": "濟州石頭文化公園",
-          "caption": "濟州石頭文化公園 — 照片 1",
-          "alt": "濟州石頭文化公園 — 圖庫圖片"
+          "location": "濟州石頭公園（石文化公園）",
+          "caption": "濟州石頭公園（石文化公園） — photo 1",
+          "alt": "濟州石頭公園（石文化公園） — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20.webp",
-          "location": "濟州石頭文化公園",
-          "caption": "濟州石頭文化公園 — 照片 2",
-          "alt": "濟州石頭文化公園 — 圖庫圖片"
+          "location": "濟州石頭公園（石文化公園）",
+          "caption": "濟州石頭公園（石文化公園） — photo 2",
+          "alt": "濟州石頭公園（石文化公園） — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21.webp",
-          "location": "濟州石頭文化公園",
-          "caption": "濟州石頭文化公園 — 照片 3",
-          "alt": "濟州石頭文化公園 — 圖庫圖片"
+          "location": "濟州石頭公園（石文化公園）",
+          "caption": "濟州石頭公園（石文化公園） — photo 3",
+          "alt": "濟州石頭公園（石文化公園） — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22.webp",
-          "location": "濟州石頭文化公園",
-          "caption": "濟州石頭文化公園 — 照片 4",
-          "alt": "濟州石頭文化公園 — 圖庫圖片"
+          "location": "濟州石頭公園（石文化公園）",
+          "caption": "濟州石頭公園（石文化公園） — photo 4",
+          "alt": "濟州石頭公園（石文化公園） — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23.webp",
-          "location": "濟州石頭文化公園",
-          "caption": "濟州石頭文化公園 — 照片 5",
-          "alt": "濟州石頭文化公園 — 圖庫圖片"
+          "location": "濟州石頭公園（石文化公園）",
+          "caption": "濟州石頭公園（石文化公園） — photo 5",
+          "alt": "濟州石頭公園（石文化公園） — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19-2.webp",
+          "location": "濟州石頭公園（石文化公園）",
+          "caption": "濟州石頭公園（石文化公園） — photo 6",
+          "alt": "濟州石頭公園（石文化公園） — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-20-2.webp",
+          "location": "濟州石頭公園（石文化公園）",
+          "caption": "濟州石頭公園（石文化公園） — photo 7",
+          "alt": "濟州石頭公園（石文化公園） — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-21-2.webp",
+          "location": "濟州石頭公園（石文化公園）",
+          "caption": "濟州石頭公園（石文化公園） — photo 8",
+          "alt": "濟州石頭公園（石文化公園） — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-22-2.webp",
+          "location": "濟州石頭公園（石文化公園）",
+          "caption": "濟州石頭公園（石文化公園） — photo 9",
+          "alt": "濟州石頭公園（石文化公園） — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-23-2.webp",
+          "location": "濟州石頭公園（石文化公園）",
+          "caption": "濟州石頭公園（石文化公園） — photo 10",
+          "alt": "濟州石頭公園（石文化公園） — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/jeju-stone-park/photo-006.webp",
+          "location": "濟州石頭公園（石文化公園）",
+          "caption": "濟州石頭公園（石文化公園） — photo 11",
+          "alt": "濟州石頭公園（石文化公園） — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/jeju-stone-park/photo-007.webp",
+          "location": "濟州石頭公園（石文化公園）",
+          "caption": "濟州石頭公園（石文化公園） — photo 12",
+          "alt": "濟州石頭公園（石文化公園） — gallery image 12"
         }
       ]
     },
@@ -600,6 +924,30 @@
         {
           "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "smartNotes": {
@@ -622,49 +970,97 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
-          "location": "涉地可支（東岬）",
-          "caption": "涉地可支（東岬）— 照片 1",
-          "alt": "涉地可支（東岬）— 相簿圖片 1"
+          "location": "涉地可支（東部海岬）",
+          "caption": "涉地可支（東部海岬） — photo 1",
+          "alt": "涉地可支（東部海岬） — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11.webp",
-          "location": "涉地可支（東岬）",
-          "caption": "涉地可支（東岬）— 照片 2",
-          "alt": "涉地可支（東岬）— 相簿圖片 2"
+          "location": "涉地可支（東部海岬）",
+          "caption": "涉地可支（東部海岬） — photo 2",
+          "alt": "涉地可支（東部海岬） — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12.webp",
-          "location": "涉地可支（東岬）",
-          "caption": "涉地可支（東岬）— 照片 3",
-          "alt": "涉地可支（東岬）— 相簿圖片 3"
+          "location": "涉地可支（東部海岬）",
+          "caption": "涉地可支（東部海岬） — photo 3",
+          "alt": "涉地可支（東部海岬） — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13.webp",
-          "location": "涉地可支（東岬）",
-          "caption": "涉地可支（東岬）— 照片 4",
-          "alt": "涉地可支（東岬）— 相簿圖片 4"
+          "location": "涉地可支（東部海岬）",
+          "caption": "涉地可支（東部海岬） — photo 4",
+          "alt": "涉地可支（東部海岬） — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14.webp",
-          "location": "涉地可支（東岬）",
-          "caption": "涉地可支（東岬）— 照片 5",
-          "alt": "涉地可支（東岬）— 相簿圖片 5"
+          "location": "涉地可支（東部海岬）",
+          "caption": "涉地可支（東部海岬） — photo 5",
+          "alt": "涉地可支（東部海岬） — gallery image 5"
         },
         {
           "id": 6,
           "type": "photo",
           "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15.webp",
-          "location": "涉地可支（東岬）",
-          "caption": "涉地可支（東岬）— 照片 6",
-          "alt": "涉地可支（東岬）— 相簿圖片 6"
+          "location": "涉地可支（東部海岬）",
+          "caption": "涉地可支（東部海岬） — photo 6",
+          "alt": "涉地可支（東部海岬） — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10-2.webp",
+          "location": "涉地可支（東部海岬）",
+          "caption": "涉地可支（東部海岬） — photo 7",
+          "alt": "涉地可支（東部海岬） — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-11-2.webp",
+          "location": "涉地可支（東部海岬）",
+          "caption": "涉地可支（東部海岬） — photo 8",
+          "alt": "涉地可支（東部海岬） — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-12-2.webp",
+          "location": "涉地可支（東部海岬）",
+          "caption": "涉地可支（東部海岬） — photo 9",
+          "alt": "涉地可支（東部海岬） — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-13-2.webp",
+          "location": "涉地可支（東部海岬）",
+          "caption": "涉地可支（東部海岬） — photo 10",
+          "alt": "涉地可支（東部海岬） — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-14-2.webp",
+          "location": "涉地可支（東部海岬）",
+          "caption": "涉地可支（東部海岬） — photo 11",
+          "alt": "涉地可支（東部海岬） — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-15-2.webp",
+          "location": "涉地可支（東部海岬）",
+          "caption": "涉地可支（東部海岬） — photo 12",
+          "alt": "涉地可支（東部海岬） — gallery image 12"
         }
       ]
     },
@@ -772,6 +1168,30 @@
         {
           "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+          "source": "atoc-korea"
         }
       ],
       "smartNotes": {
@@ -795,40 +1215,88 @@
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
           "location": "城山日出峰",
-          "caption": "城山日出峰 — 照片 1",
-          "alt": "城山日出峰 — 圖庫圖片 1"
+          "caption": "城山日出峰 — photo 1",
+          "alt": "城山日出峰 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
           "location": "城山日出峰",
-          "caption": "城山日出峰 — 照片 2",
-          "alt": "城山日出峰 — 圖庫圖片 2"
+          "caption": "城山日出峰 — photo 2",
+          "alt": "城山日出峰 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
           "location": "城山日出峰",
-          "caption": "城山日出峰 — 照片 3",
-          "alt": "城山日出峰 — 圖庫圖片 3"
+          "caption": "城山日出峰 — photo 3",
+          "alt": "城山日出峰 — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
           "location": "城山日出峰",
-          "caption": "城山日出峰 — 照片 4",
-          "alt": "城山日出峰 — 圖庫圖片 4"
+          "caption": "城山日出峰 — photo 4",
+          "alt": "城山日出峰 — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
           "location": "城山日出峰",
-          "caption": "城山日出峰 — 照片 5",
-          "alt": "城山日出峰 — 圖庫圖片 5"
+          "caption": "城山日出峰 — photo 5",
+          "alt": "城山日出峰 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 6",
+          "alt": "城山日出峰 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 7",
+          "alt": "城山日出峰 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 8",
+          "alt": "城山日出峰 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 9",
+          "alt": "城山日出峰 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 10",
+          "alt": "城山日出峰 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+          "location": "城山日出峰",
+          "caption": "城山日出峰 — photo 11",
+          "alt": "城山日出峰 — gallery image 11"
         }
       ],
       "liveStatusWidget": "海女"
@@ -924,6 +1392,34 @@
         {
           "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "smartNotes": {
@@ -946,81 +1442,137 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-          "location": "日出樂園（米千洞熔岩管道）",
-          "caption": "日出樂園（米千洞熔岩管道）— 照片 1",
-          "alt": "日出樂園（米千洞熔岩管道）— 圖庫圖片 1"
+          "location": "日出樂園（美川窟熔岩管）",
+          "caption": "日出樂園（美川窟熔岩管） — photo 1",
+          "alt": "日出樂園（美川窟熔岩管） — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-          "location": "日出樂園（米千洞熔岩管道）",
-          "caption": "日出樂園（米千洞熔岩管道）— 照片 2",
-          "alt": "日出樂園（米千洞熔岩管道）— 圖庫圖片 2"
+          "location": "日出樂園（美川窟熔岩管）",
+          "caption": "日出樂園（美川窟熔岩管） — photo 2",
+          "alt": "日出樂園（美川窟熔岩管） — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-          "location": "日出樂園（米千洞熔岩管道）",
-          "caption": "日出樂園（米千洞熔岩管道）— 照片 3",
-          "alt": "日出樂園（米千洞熔岩管道）— 圖庫圖片 3"
+          "location": "日出樂園（美川窟熔岩管）",
+          "caption": "日出樂園（美川窟熔岩管） — photo 3",
+          "alt": "日出樂園（美川窟熔岩管） — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-          "location": "日出樂園（米千洞熔岩管道）",
-          "caption": "日出樂園（米千洞熔岩管道）— 照片 4",
-          "alt": "日出樂園（米千洞熔岩管道）— 圖庫圖片 4"
+          "location": "日出樂園（美川窟熔岩管）",
+          "caption": "日出樂園（美川窟熔岩管） — photo 4",
+          "alt": "日出樂園（美川窟熔岩管） — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-          "location": "日出樂園（米千洞熔岩管道）",
-          "caption": "日出樂園（米千洞熔岩管道）— 照片 5",
-          "alt": "日出樂園（米千洞熔岩管道）— 圖庫圖片 5 **Notes:** - **Line 1** — file path kept as-is (not translatable content). - **Lines 7–8** — times and \"Open year-round\" rendered as 全年開放; numerals unchanged. - **\"Ilchul Land\"** → 日出樂園 (日出 = sunrise, literal meaning of 일출; 樂園 = land/park). - **\"Micheon Cave Lava Tube\"** → 米千洞熔岩管道 (米千洞 = phonetic transliteration of 미천굴; 熔岩管道 = lava tube, geological standard term)."
+          "location": "日出樂園（美川窟熔岩管）",
+          "caption": "日出樂園（美川窟熔岩管） — photo 5",
+          "alt": "日出樂園（美川窟熔岩管） — gallery image 5"
         },
         {
           "id": 6,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-          "location": "日出樂園（米川洞熔岩管）",
-          "caption": "日出樂園（米川洞熔岩管）— 照片 6",
-          "alt": "日出樂園（米川洞熔岩管）— 相冊圖片 6"
+          "location": "日出樂園（美川窟熔岩管）",
+          "caption": "日出樂園（美川窟熔岩管） — photo 6",
+          "alt": "日出樂園（美川窟熔岩管） — gallery image 6"
         },
         {
           "id": 7,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-          "location": "日出樂園（米川洞熔岩管）",
-          "caption": "日出樂園（米川洞熔岩管）— 照片 7",
-          "alt": "日出樂園（米川洞熔岩管）— 相冊圖片 7"
+          "location": "日出樂園（美川窟熔岩管）",
+          "caption": "日出樂園（美川窟熔岩管） — photo 7",
+          "alt": "日出樂園（美川窟熔岩管） — gallery image 7"
         },
         {
           "id": 8,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
-          "location": "日出樂園（米川洞熔岩管）",
-          "caption": "日出樂園（米川洞熔岩管）— 照片 8",
-          "alt": "日出樂園（米川洞熔岩管）— 相冊圖片 8"
+          "location": "日出樂園（美川窟熔岩管）",
+          "caption": "日出樂園（美川窟熔岩管） — photo 8",
+          "alt": "日出樂園（美川窟熔岩管） — gallery image 8"
         },
         {
           "id": 9,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
-          "location": "日出樂園（米川洞熔岩管）",
-          "caption": "日出樂園（米川洞熔岩管）— 照片 9",
-          "alt": "日出樂園（米川洞熔岩管）— 相冊圖片 9"
+          "location": "日出樂園（美川窟熔岩管）",
+          "caption": "日出樂園（美川窟熔岩管） — photo 9",
+          "alt": "日出樂園（美川窟熔岩管） — gallery image 9"
         },
         {
           "id": 10,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
-          "location": "日出樂園（米川洞熔岩管）",
-          "caption": "日出樂園（米川洞熔岩管）— 照片 10",
-          "alt": "日出樂園（米川洞熔岩管）— 相冊圖片 10"
+          "location": "日出樂園（美川窟熔岩管）",
+          "caption": "日出樂園（美川窟熔岩管） — photo 10",
+          "alt": "日出樂園（美川窟熔岩管） — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+          "location": "日出樂園（美川窟熔岩管）",
+          "caption": "日出樂園（美川窟熔岩管） — photo 11",
+          "alt": "日出樂園（美川窟熔岩管） — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+          "location": "日出樂園（美川窟熔岩管）",
+          "caption": "日出樂園（美川窟熔岩管） — photo 12",
+          "alt": "日出樂園（美川窟熔岩管） — gallery image 12"
+        },
+        {
+          "id": 13,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+          "location": "日出樂園（美川窟熔岩管）",
+          "caption": "日出樂園（美川窟熔岩管） — photo 13",
+          "alt": "日出樂園（美川窟熔岩管） — gallery image 13"
+        },
+        {
+          "id": 14,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+          "location": "日出樂園（美川窟熔岩管）",
+          "caption": "日出樂園（美川窟熔岩管） — photo 14",
+          "alt": "日出樂園（美川窟熔岩管） — gallery image 14"
+        },
+        {
+          "id": 15,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+          "location": "日出樂園（美川窟熔岩管）",
+          "caption": "日出樂園（美川窟熔岩管） — photo 15",
+          "alt": "日出樂園（美川窟熔岩管） — gallery image 15"
+        },
+        {
+          "id": 16,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+          "location": "日出樂園（美川窟熔岩管）",
+          "caption": "日出樂園（美川窟熔岩管） — photo 16",
+          "alt": "日出樂園（美川窟熔岩管） — gallery image 16"
+        },
+        {
+          "id": 17,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+          "location": "日出樂園（美川窟熔岩管）",
+          "caption": "日出樂園（美川窟熔岩管） — photo 17",
+          "alt": "日出樂園（美川窟熔岩管） — gallery image 17"
         }
       ]
     },
@@ -1101,6 +1653,22 @@
         {
           "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "smartNotes": {
@@ -1124,56 +1692,88 @@
           "type": "photo",
           "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
           "location": "城邑民俗村",
-          "caption": "城邑民俗村 — 照片 1",
-          "alt": "城邑民俗村 — 圖庫圖片 1"
+          "caption": "城邑民俗村 — photo 1",
+          "alt": "城邑民俗村 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
           "location": "城邑民俗村",
-          "caption": "城邑民俗村 — 照片 2",
-          "alt": "城邑民俗村 — 圖庫圖片 2"
+          "caption": "城邑民俗村 — photo 2",
+          "alt": "城邑民俗村 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
           "location": "城邑民俗村",
-          "caption": "城邑民俗村 — 照片 3",
-          "alt": "城邑民俗村 — 圖庫圖片 3"
+          "caption": "城邑民俗村 — photo 3",
+          "alt": "城邑民俗村 — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
           "location": "城邑民俗村",
-          "caption": "城邑民俗村 — 照片 4",
-          "alt": "城邑民俗村 — 圖庫圖片 4"
+          "caption": "城邑民俗村 — photo 4",
+          "alt": "城邑民俗村 — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
           "location": "城邑民俗村",
-          "caption": "城邑民俗村 — 照片 5",
-          "alt": "城邑民俗村 — 圖庫圖片 5"
+          "caption": "城邑民俗村 — photo 5",
+          "alt": "城邑民俗村 — gallery image 5"
         },
         {
           "id": 6,
           "type": "photo",
           "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
           "location": "城邑民俗村",
-          "caption": "城邑民俗村 — 照片 6",
-          "alt": "城邑民俗村 — 圖庫圖片 6"
+          "caption": "城邑民俗村 — photo 6",
+          "alt": "城邑民俗村 — gallery image 6"
         },
         {
           "id": 7,
           "type": "photo",
           "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
           "location": "城邑民俗村",
-          "caption": "城邑民俗村 — 照片 7",
-          "alt": "城邑民俗村 — 圖庫圖片 7"
+          "caption": "城邑民俗村 — photo 7",
+          "alt": "城邑民俗村 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 8",
+          "alt": "城邑民俗村 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 9",
+          "alt": "城邑民俗村 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 10",
+          "alt": "城邑民俗村 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
+          "location": "城邑民俗村",
+          "caption": "城邑民俗村 — photo 11",
+          "alt": "城邑民俗村 — gallery image 11"
         }
       ]
     }

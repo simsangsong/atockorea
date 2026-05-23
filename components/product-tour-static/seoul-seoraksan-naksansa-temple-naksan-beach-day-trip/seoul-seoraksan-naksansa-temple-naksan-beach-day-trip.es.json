@@ -14,7 +14,7 @@
       "Tour a la Playa de Naksan",
       "Tour de un día a Seoraksan y Naksansa"
     ],
-    "ogImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "Tour de un día a Gangwon-do desde Seúl · Seoraksan + Templo Naksansa + Playa de Naksan | AtoC Korea",
     "description": "Excursión en autocar desde Seúl al parque nacional más icónico de Corea (Seoraksan), un templo milenario sobre los acantilados frente al mar (Naksansa) y las arenas bordeadas de pinos de la Playa de Naksan — un día de la montaña al océano en la costa del Mar del Este."
   },
@@ -143,56 +143,64 @@
       "type": "photo",
       "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "location": "Parque Nacional Seoraksan",
-      "alt": "Parque Nacional Seoraksan — vista panorámica de la cresta",
-      "caption": "Parque Nacional Seoraksan — vista panorámica de la cresta de granito"
+      "alt": "Parque Nacional Seoraksan — gallery image 1",
+      "caption": "Parque Nacional Seoraksan — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
-      "location": "Parque Nacional Seoraksan",
-      "alt": "Parque Nacional Seoraksan — Templo Sinheungsa y Ulsanbawi",
-      "caption": "Parque Nacional Seoraksan — Templo Sinheungsa bajo los picos de granito"
+      "src": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
+      "location": "Templo de Naksansa",
+      "alt": "Templo de Naksansa — on-route photo",
+      "caption": "Templo de Naksansa"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
-      "location": "Templo Naksansa",
-      "alt": "Templo Naksansa — pabellón Uisangdae sobre el Mar del Este",
-      "caption": "Templo Naksansa — pabellón Uisangdae en el acantilado"
+      "src": "/images/tours/naksan-beach/naksan-beach-sign.webp",
+      "location": "Playa de Naksan",
+      "alt": "Playa de Naksan — on-route photo",
+      "caption": "Playa de Naksan"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/naksansa-temple/naksansa-main-hall.webp",
-      "location": "Templo Naksansa",
-      "alt": "Templo Naksansa — salón principal Wontongbojeon",
-      "caption": "Templo Naksansa — colorido salón principal Wontongbojeon"
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "Parque Nacional Seoraksan",
+      "alt": "Parque Nacional Seoraksan — gallery image 2",
+      "caption": "Parque Nacional Seoraksan — photo 2"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/naksansa-temple/naksansa-haesu-gwaneum.webp",
-      "location": "Templo Naksansa",
-      "alt": "Templo Naksansa — estatua del Bodhisattva Haesu Gwaneum sobre el mar",
-      "caption": "Templo Naksansa — estatua Haesu Gwaneum mirando al mar"
+      "src": "/images/tours/seoraksan/photo-001.webp",
+      "location": "Parque Nacional Seoraksan",
+      "alt": "Parque Nacional Seoraksan — gallery image 3",
+      "caption": "Parque Nacional Seoraksan — photo 3"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/naksan-beach/naksan-beach-sign.webp",
-      "location": "Playa Naksan",
-      "alt": "Playa Naksan — playa del Mar del Este con bosque de pinos",
-      "caption": "Playa Naksan — arena fina y bosque de pinos"
+      "src": "/images/tours/naksansa-temple/naksansa-main-hall.webp",
+      "location": "Templo de Naksansa",
+      "alt": "Templo de Naksansa — on-route photo",
+      "caption": "Templo de Naksansa"
     },
     {
       "id": 7,
       "type": "photo",
+      "src": "/images/tours/naksansa-temple/naksansa-haesu-gwaneum.webp",
+      "location": "Templo de Naksansa",
+      "alt": "Templo de Naksansa — on-route photo",
+      "caption": "Templo de Naksansa"
+    },
+    {
+      "id": 8,
+      "type": "photo",
       "src": "/images/tours/naksan-beach/naksan-beach-summer-crowd.webp",
-      "location": "Playa Naksan",
-      "alt": "Playa Naksan — costa del Mar del Este",
-      "caption": "Playa Naksan — costa del Mar del Este"
+      "location": "Playa de Naksan",
+      "alt": "Playa de Naksan — on-route photo",
+      "caption": "Playa de Naksan"
     }
   ],
   "itineraryStops": [
@@ -276,6 +284,46 @@
       "images": [
         "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan/photo-001.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "location": "Parque Nacional Seoraksan",
+          "caption": "Parque Nacional Seoraksan — photo 1",
+          "alt": "Parque Nacional Seoraksan — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "location": "Parque Nacional Seoraksan",
+          "caption": "Parque Nacional Seoraksan — photo 2",
+          "alt": "Parque Nacional Seoraksan — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seoraksan/photo-001.webp",
+          "location": "Parque Nacional Seoraksan",
+          "caption": "Parque Nacional Seoraksan — photo 3",
+          "alt": "Parque Nacional Seoraksan — gallery image 3"
+        }
       ]
     },
     {
@@ -688,7 +736,7 @@
       "description": "Sin tarifas de entrada ni colas para billetes",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
-      "body": "La entrada al Parque Nacional de Seoraksan (recientemente abolida), el Templo de Naksansa (gratuito desde mayo de 2023) y la playa de Naksan no tienen cuota de admisión. El único artículo de pago opcional es el teleférico de Seorak (₩16.000 ida y vuelta, gasto propio)."
+      "body": "La entrada al Parque Nacional de Seoraksan (abolida en mayo de 2023), el Templo de Naksansa (gratuito desde mayo de 2023) y la playa de Naksan no tienen cuota de admisión. El único artículo de pago opcional es el teleférico de Seorak (₩16.000 ida y vuelta, gasto propio)."
     },
     {
       "icon": "users",
@@ -769,7 +817,7 @@
     {
       "id": "admissions",
       "question": "¿Las entradas están incluidas?",
-      "answer": "Sí — y en la práctica las tres paradas son de ingreso gratuito. La entrada al Parque Nacional Seoraksan fue recientemente abolida, el Templo Naksansa es gratuito desde mayo de 2023, y la Playa Naksan no tiene tarifa de entrada. El **único ítem opcional de pago es el Teleférico de Seorak** (₩16,000 ida y vuelta), que se compra en taquilla y corre por cuenta propia."
+      "answer": "Sí — y en la práctica las tres paradas son de ingreso gratuito. La entrada al Parque Nacional Seoraksan fue abolida en mayo de 2023, el Templo Naksansa es gratuito desde mayo de 2023, y la Playa Naksan no tiene tarifa de entrada. El **único ítem opcional de pago es el Teleférico de Seorak** (₩16,000 ida y vuelta), que se compra en taquilla y corre por cuenta propia."
     },
     {
       "id": "cable-car",

@@ -13,11 +13,11 @@
       "Traslado privado en auto del puerto de Incheon a Seúl",
       "Tour en tierra de crucero en Corea"
     ],
-    "ogImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "title": "Incheon → Seúl Excursión Privada en Tierra desde Crucero · Día Puerta a Puerta de 8 Horas"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
+    "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "title": "Incheon→Seúl: Coche Privado Crucero",
     "priceLabel": "Desde US$419 por vehículo",
     "shortCardDescription": "Un alquiler de auto privado de 8 horas diseñado en torno a la hora de embarque de su crucero, no a un horario fijo. Recogida en la pasarela de la Terminal de Cruceros de Incheon, guía-conductor de habla inglesa e itinerario personalizable por el Palacio Gyeongbokgung, el Pueblo Hanok de Bukchon + Insadong, almuerzo a su elección, la Torre N de Seúl y Myeongdong o el Templo Jogyesa. El guía-conductor mantiene un margen de 60 minutos antes del zarpe para que nunca pierda el barco.",
@@ -44,7 +44,7 @@
       "Personalizable",
       "Regreso garantizado"
     ],
-    "heroImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp"
+    "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
   "headlineLine1": "Incheon→Seúl",
   "headlineLine2": "Coche Privado Crucero",
@@ -55,7 +55,7 @@
     "salePriceUsd": null
   },
   "hero": {
-    "imageUrl": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
+    "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "imagePosition": "center 35%",
     "tagline": "De la pasarela al Gyeongbokgung en 60 minutos — un día privado en Seúl calibrado según su hora de zarpe",
     "pills": [
@@ -135,82 +135,162 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
-      "location": "Terminal de Cruceros de Incheon",
-      "alt": "Terminal de Cruceros de Incheon — recogida en pasarela con tu KIA Carnival privado",
-      "caption": "Terminal de Cruceros de Incheon — recogida en pasarela con tu KIA Carnival privado"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
+      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 1",
+      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
-      "location": "Río Han y Torre N Seoul",
-      "alt": "Vehículo privado junto al río Han — Torre N Seoul de noche",
-      "caption": "Vehículo privado junto al río Han — Torre N Seoul de noche"
+      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "location": "Pueblo Hanok de Bukchon + Insadong",
+      "alt": "Pueblo Hanok de Bukchon + Insadong — gallery image 1",
+      "caption": "Pueblo Hanok de Bukchon + Insadong — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
-      "location": "Palacio Gyeongbokgung",
-      "alt": "Palacio Gyeongbokgung — arquitectura real en el corazón de Seúl",
-      "caption": "Palacio Gyeongbokgung — arquitectura real en el corazón de Seúl"
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
+      "location": "Torre N de Seúl (Namsan)",
+      "alt": "Torre N de Seúl (Namsan) — gallery image 1",
+      "caption": "Torre N de Seúl (Namsan) — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/seoul-private-charter/seoul-private-gyeongbokgung-heungnyemun.webp",
-      "location": "Palacio Gyeongbokgung",
-      "alt": "Palacio Gyeongbokgung — puerta Heungnyemun con visitantes en hanbok",
-      "caption": "Palacio Gyeongbokgung — puerta Heungnyemun con visitantes en hanbok"
+      "src": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
+      "location": "Myeongdong O Templo Jogyesa (a su elección)",
+      "alt": "Myeongdong O Templo Jogyesa (a su elección) — gallery image 1",
+      "caption": "Myeongdong O Templo Jogyesa (a su elección) — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
-      "location": "Aldea Hanok de Bukchon",
-      "alt": "Aldea Hanok de Bukchon — callejones tradicionales coreanos",
-      "caption": "Aldea Hanok de Bukchon — callejones tradicionales coreanos"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
+      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 2",
+      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 2"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
-      "location": "Torre N Seoul (Namsan)",
-      "alt": "Torre N Seoul en la cima de Namsan",
-      "caption": "Torre N Seoul en la cima de Namsan"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
+      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 3",
+      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 3"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/seoul-private-charter/seoul-private-n-seoul-tower-treat.webp",
-      "location": "Torre N Seoul (Namsan)",
-      "alt": "Torre N Seoul — un dulce al pie de la torre",
-      "caption": "Torre N Seoul — un dulce al pie de la torre"
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
+      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 4",
+      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 4"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
-      "location": "Mercado Gwangjang",
-      "alt": "Mercado Gwangjang — legendaria calle de comida callejera",
-      "caption": "Mercado Gwangjang — legendaria calle de comida callejera"
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
+      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 5",
+      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 5"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
-      "location": "Myeongdong",
-      "alt": "Myeongdong — vibrante distrito comercial de Seúl",
-      "caption": "Myeongdong — vibrante distrito comercial de Seúl"
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
+      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 6",
+      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 6"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/seoul-private-charter/seoul-private-lotte-tower-songpa.webp",
-      "location": "Torre Lotte World (Songpa)",
-      "alt": "Torre Lotte World — el rascacielos más alto de Corea sobre Songpa",
-      "caption": "Torre Lotte World — el rascacielos más alto de Corea sobre Songpa"
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
+      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 7",
+      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 7"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
+      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 8",
+      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 8"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
+      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 9",
+      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 9"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-2.webp",
+      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
+      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 10",
+      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 10"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10-2.webp",
+      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
+      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 11",
+      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 11"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11-2.webp",
+      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
+      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 12",
+      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 12"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/photo-004.webp",
+      "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
+      "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 13",
+      "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 13"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-2.webp",
+      "location": "Pueblo Hanok de Bukchon + Insadong",
+      "alt": "Pueblo Hanok de Bukchon + Insadong — gallery image 2",
+      "caption": "Pueblo Hanok de Bukchon + Insadong — photo 2"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-57-27.webp",
+      "location": "Torre N de Seúl (Namsan)",
+      "alt": "Torre N de Seúl (Namsan) — gallery image 2",
+      "caption": "Torre N de Seúl (Namsan) — photo 2"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-06.webp",
+      "location": "Torre N de Seúl (Namsan)",
+      "alt": "Torre N de Seúl (Namsan) — gallery image 3",
+      "caption": "Torre N de Seúl (Namsan) — photo 3"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-10.webp",
+      "location": "Torre N de Seúl (Namsan)",
+      "alt": "Torre N de Seúl (Namsan) — gallery image 4",
+      "caption": "Torre N de Seúl (Namsan) — photo 4"
     }
   ],
   "itineraryStops": [
@@ -373,6 +453,22 @@
         {
           "url": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/photo-004.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -447,6 +543,38 @@
           "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
           "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 9",
           "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-2.webp",
+          "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
+          "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 10",
+          "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10-2.webp",
+          "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
+          "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 11",
+          "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11-2.webp",
+          "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
+          "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 12",
+          "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 12"
+        },
+        {
+          "id": 13,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/photo-004.webp",
+          "location": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real",
+          "caption": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — photo 13",
+          "alt": "Palacio Gyeongbokgung + Ceremonia de la Guardia Real — gallery image 13"
         }
       ]
     },
@@ -517,6 +645,10 @@
         {
           "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -527,6 +659,14 @@
           "location": "Pueblo Hanok de Bukchon + Insadong",
           "caption": "Pueblo Hanok de Bukchon + Insadong — photo 1",
           "alt": "Pueblo Hanok de Bukchon + Insadong — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-2.webp",
+          "location": "Pueblo Hanok de Bukchon + Insadong",
+          "caption": "Pueblo Hanok de Bukchon + Insadong — photo 2",
+          "alt": "Pueblo Hanok de Bukchon + Insadong — gallery image 2"
         }
       ]
     },

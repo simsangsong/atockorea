@@ -1271,7 +1271,9 @@
             },
             "images": [
               "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02-2.webp",
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp"
             ],
             "imageCredits": [
               {
@@ -1281,6 +1283,14 @@
               {
                 "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1288,17 +1298,33 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "location": "路線3：愛寶樂園 + 韓國民俗村",
-                "caption": "路線3：愛寶樂園 + 韓國民俗村 — 照片1",
-                "alt": "路線3：愛寶樂園 + 韓國民俗村 — 相冊圖片1"
+                "location": "路線三：愛寶樂園 + 韓國民俗村",
+                "caption": "路線三：愛寶樂園 + 韓國民俗村 — photo 1",
+                "alt": "路線三：愛寶樂園 + 韓國民俗村 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
-                "location": "路線3：愛寶樂園 + 韓國民俗村",
-                "caption": "路線3：愛寶樂園 + 韓國民俗村 — 照片2",
-                "alt": "路線3：愛寶樂園 + 韓國民俗村 — 圖庫圖片2"
+                "location": "路線三：愛寶樂園 + 韓國民俗村",
+                "caption": "路線三：愛寶樂園 + 韓國民俗村 — photo 2",
+                "alt": "路線三：愛寶樂園 + 韓國民俗村 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02-2.webp",
+                "location": "路線三：愛寶樂園 + 韓國民俗村",
+                "caption": "路線三：愛寶樂園 + 韓國民俗村 — photo 3",
+                "alt": "路線三：愛寶樂園 + 韓國民俗村 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
+                "location": "路線三：愛寶樂園 + 韓國民俗村",
+                "caption": "路線三：愛寶樂園 + 韓國民俗村 — photo 4",
+                "alt": "路線三：愛寶樂園 + 韓國民俗村 — gallery image 4"
               }
             ]
           },

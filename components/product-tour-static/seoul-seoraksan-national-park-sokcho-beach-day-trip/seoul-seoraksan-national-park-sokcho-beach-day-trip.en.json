@@ -13,11 +13,11 @@
       "east coast Korea",
       "Seoraksan Sokcho day trip"
     ],
-    "ogImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "Seoraksan National Park & Sokcho Beach Day Trip from Seoul | AtoC Korea"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "Seoraksan & Sokcho Beach Day Trip",
     "priceLabel": "From US$49 per person (was $57, 14% off)",
     "shortCardDescription": "A small-group day-trip from Seoul to Korea's most-loved national park and the East Sea coastal city of Sokcho. The route pairs Seoraksan's granite peaks, valleys, and Buddhist heritage with the seafood market and beach of Sokcho — a mountain-and-ocean combination only the east coast offers. 12 hours with English-speaking guide and round-trip transport.",
@@ -46,7 +46,7 @@
       "Autumn Foliage",
       "Day Trip"
     ],
-    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
+    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp"
   },
   "headlineLine1": "Seoraksan & Sokcho",
   "headlineLine2": "Beach Day Trip",
@@ -59,7 +59,7 @@
     "discountPercent": 14
   },
   "hero": {
-    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "imagePosition": "center 35%",
     "tagline": "Korea's most iconic national park, plus the East Sea's friendliest port",
     "pills": [
@@ -138,10 +138,26 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "location": "Seoraksan National Park",
-      "alt": "Seoraksan National Park — on-route photo",
-      "caption": "Seoraksan National Park"
+      "alt": "Seoraksan National Park — gallery image 1",
+      "caption": "Seoraksan National Park — photo 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "Seoraksan National Park",
+      "alt": "Seoraksan National Park — gallery image 2",
+      "caption": "Seoraksan National Park — photo 2"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/seoraksan/photo-001.webp",
+      "location": "Seoraksan National Park",
+      "alt": "Seoraksan National Park — gallery image 3",
+      "caption": "Seoraksan National Park — photo 3"
     }
   ],
   "itineraryStops": [
@@ -183,14 +199,14 @@
       "duration": "180 min",
       "name": "Seoraksan National Park",
       "category": "National Park (Mountain)",
-      "description": "Seoraksan was **Korea's 5th national park** — **designated March 1970** — and remains the country's **first UNESCO Biosphere Reserve**, recognized in August 1982 for its exceptional mountain biodiversity. \n\nThe park spans approximately **398 km²** across four cities and counties, with 30 named peaks anchored by **Daecheongbong (1,708 m, Korea's 3rd highest peak)** and the famous six-pillared granite formation of **Ulsanbawi Rock**. **Park entrance is FREE** since the recent abolition of the 3,500-KRW fee that was historically collected on behalf of **Sinheungsa Temple** — now public funds maintain the temple instead. \n\nFrom the Sogongwon (Outer Seorak / Oeseorak) main entrance, the typical 3-hour visit covers three highlights: the **Tongildaebul (Great Unification Buddha)** — at 14.6 m and 108 tons of bronze, the Korea's largest seated bronze Buddha, erected 1997 in prayer for Korean reunification, with a small Bodhisattva Guan Yin shrine inside its base; Sinheungsa Temple itself, founded 652 by Jajangyulsa during the Silla Kingdom and considered the one of Korea's oldest active Buddhist temples plus a Jogye Order temple; and the optional **Seorak Cable Car** (1,132 m travel distance, ~10 min one-way to the 700 m Gwongeumseong Fortress platform — round-trip Adult 16,000 KRW / Child 12,000 KRW, on-site ticketing only, no advance reservation, often hours-long queues during October autumn-foliage peak). \n\nGwongeumseong Fortress at the top carries a vivid legend: erected in a single day during the 1253 Mongolian invasion of the Goryeo Dynasty by two generals named Kwon and Kim — hence Gwon-geum-seong. Active hikers who skip the cable car can instead choose the easy 1.5 km Biseondae Rock streamside walk (paved most of the way), the Heundeulbawi 'rocking rock' loop (1.5 hr each way with stone steps), or the 600 m Geumganggul Cave climb (~1hr 40 min round trip).",
+      "description": "Seoraksan was **Korea's 5th national park** — **designated March 1970** — and remains the country's **first UNESCO Biosphere Reserve**, recognized in August 1982 for its exceptional mountain biodiversity. \n\nThe park spans approximately **398 km²** across four cities and counties, with 30 named peaks anchored by **Daecheongbong (1,708 m, Korea's 3rd highest peak)** and the famous six-pillared granite formation of **Ulsanbawi Rock**. **Park entrance is FREE** since the May 2023 abolition of the 3,500-KRW fee that was historically collected on behalf of **Sinheungsa Temple** — now public funds maintain the temple instead. \n\nFrom the Sogongwon (Outer Seorak / Oeseorak) main entrance, the typical 3-hour visit covers three highlights: the **Tongildaebul (Great Unification Buddha)** — at 14.6 m and 108 tons of bronze, the Korea's largest seated bronze Buddha, erected 1997 in prayer for Korean reunification, with a small Bodhisattva Guan Yin shrine inside its base; Sinheungsa Temple itself, founded 652 by Jajangyulsa during the Silla Kingdom and considered the one of Korea's oldest active Buddhist temples plus a Jogye Order temple; and the optional **Seorak Cable Car** (1,132 m travel distance, ~10 min one-way to the 700 m Gwongeumseong Fortress platform — round-trip Adult 16,000 KRW / Child 12,000 KRW, on-site ticketing only, no advance reservation, often hours-long queues during October autumn-foliage peak). \n\nGwongeumseong Fortress at the top carries a vivid legend: erected in a single day during the 1253 Mongolian invasion of the Goryeo Dynasty by two generals named Kwon and Kim — hence Gwon-geum-seong. Active hikers who skip the cable car can instead choose the easy 1.5 km Biseondae Rock streamside walk (paved most of the way), the Heundeulbawi 'rocking rock' loop (1.5 hr each way with stone steps), or the 600 m Geumganggul Cave climb (~1hr 40 min round trip).",
       "highlights": [
         "Korea's 5th national park (1970) and first UNESCO Biosphere Reserve (Aug 1982)",
         "Tongildaebul: 14.6 m / 108 tons bronze — Korea's largest seated bronze Buddha (1997)",
         "Sinheungsa Temple (652 CE Silla) — one of Korea's oldest active Buddhist temples and a Jogye Order monastery",
         "Optional Seorak Cable Car 1,132 m to Gwongeumseong Fortress platform (700 m, 1253 legend)",
         "30 peaks, 2,000+ animal species, 1,400-1,562 plant species; rare wildlife (musk deer, goral, Asian black bear)",
-        "Park entrance FREE since recent abolition (was 3,500 KRW); cable car still paid",
+        "Park entrance FREE since May 2023 (was 3,500 KRW); cable car still paid",
         "**IUCN Category II (National Park) since 2005 + IUCN Green List of Protected Areas since 2014** — Korea's first national park to enter the Green List during the Pilot Phase, alongside Odaesan and Jirisan",
         "**Korea's first UNESCO Biosphere Reserve since August 1982** + **listed as UNESCO World Heritage tentative site** — combined recognition unmatched by any other Korean national park",
         "**Long-tailed goral conservation centerpiece**: stable population of ~260 individuals (vulnerable on IUCN Red List) — the park manages 10 Special Protection Zones covering 39 km² (10% of total park area) for endangered species"
@@ -206,7 +222,7 @@
       "visitBasics": {
         "hours": "Park always open; Cable car typically 08:00-17:30 (weather-dependent); Sinheungsa Temple 06:00-sunset",
         "closed": "Open year-round; some trails may close periodically for restoration",
-        "admission": "Park entrance FREE (was 3,500 KRW until recent abolition); Cable car RT Adult 16,000 / Child 12,000 KRW (on-site only, no advance booking)",
+        "admission": "Park entrance FREE (was 3,500 KRW until May 2023 abolition); Cable car RT Adult 16,000 / Child 12,000 KRW (on-site only, no advance booking)",
         "walking": "Easy paths at base (Sinheungsa, cable-car base); moderate to challenging hikes (Biseondae 3 km, Ulsanbawi steep stairs, Heundeulbawi 1.5 hr each way)"
       },
       "convenience": {
@@ -236,6 +252,46 @@
       "images": [
         "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan/photo-001.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "location": "Seoraksan National Park",
+          "caption": "Seoraksan National Park — photo 1",
+          "alt": "Seoraksan National Park — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "location": "Seoraksan National Park",
+          "caption": "Seoraksan National Park — photo 2",
+          "alt": "Seoraksan National Park — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seoraksan/photo-001.webp",
+          "location": "Seoraksan National Park",
+          "caption": "Seoraksan National Park — photo 3",
+          "alt": "Seoraksan National Park — gallery image 3"
+        }
       ]
     },
     {
@@ -1254,7 +1310,7 @@
             "name": "Seoraksan National Park",
             "category": "National Park (Mountain)",
             "description": "About three hours of free time at Korea's most-loved national park — its 5th national park (designated March 1970) and Korea's first UNESCO Biosphere Reserve (1982). From the Sogongwon main entrance you can walk the paved path past Sinheungsa Temple's Great Bronze Buddha to Biseondae Rock (1.5 km each way along a stream), or take the optional Gwongeumseong cable car (not included, ~₩15,000) for a high-ridge view.",
-            "image": "",
+            "image": "/images/tours/seoraksan/photo-001.webp",
             "highlights": [
               "Sinheungsa Temple & Great Bronze Buddha",
               "Biseondae Rock & stream trail",
@@ -1288,7 +1344,26 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details verified via established knowledge"
-            }
+            },
+            "images": [
+              "/images/tours/seoraksan/photo-001.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seoraksan/photo-001.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seoraksan/photo-001.webp",
+                "location": "Seoraksan National Park",
+                "caption": "Seoraksan National Park — photo 1",
+                "alt": "Seoraksan National Park — gallery image 1"
+              }
+            ]
           },
           {
             "number": 3,

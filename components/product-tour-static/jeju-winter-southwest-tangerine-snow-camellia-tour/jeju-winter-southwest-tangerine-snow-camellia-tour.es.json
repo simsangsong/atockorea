@@ -14,12 +14,12 @@
       "Nieve en Hallasan, Jeju",
       "Tour por Jeju en diciembre"
     ],
-    "ogImage": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/jeju-tangerine-farm/photo-001.webp",
     "title": "Tour de Invierno por Jeju: Mandarinas, Nieve y Camelias | AtoC Korea",
     "description": "Tour en grupo reducido por el suroeste de Jeju en invierno: senderismo por la nieve en Hallasan → recolección en granja de mandarinas (temporada alta de Hallabong, dic–feb) → temporada de camelias en Camellia Hill → acantilado de Jusangjeolli → Cascada de Cheonjeyeon. Solo dic–feb."
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+    "thumbnail": "/images/tours/jeju-tangerine-farm/photo-001.webp",
     "title": "Jeju en Invierno: Mandarinas, Nieve y Camelias",
     "priceLabel": "",
     "shortCardDescription": "Un recorrido de día de temporada invernal por el suroeste de Jeju (de diciembre a febrero) centrado en las tres experiencias únicas de Jeju en invierno: nieve en las laderas de Hallasan, camelias rojas en plena floración en Camellia Hill y recolección propia de mandarinas de Jeju (gyul) en un huerto en activo. El itinerario también incluye las Cascadas de Cheonjeyeon, los acantilados de columnas basálticas de Jusangjeolli y el Museo del Té Osulloc. Recogida en hotel en Jeju City; guía oficial con habla inglesa y china.",
@@ -48,7 +48,7 @@
       "Camelia",
       "Nieve"
     ],
-    "heroImage": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp"
+    "heroImage": "/images/tours/jeju-tangerine-farm/photo-001.webp"
   },
   "headlineLine1": "Invierno en Jeju",
   "headlineLine2": "Mandarina, Nieve y Camelia",
@@ -61,7 +61,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+    "imageUrl": "/images/tours/jeju-tangerine-farm/photo-001.webp",
     "imagePosition": "center 35%",
     "tagline": "Las tres cosas que solo Jeju hace bien en invierno: nieve, camelia y cítricos",
     "pills": [
@@ -140,74 +140,178 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-      "location": "Camellia Hill",
-      "alt": "Camellia Hill — imagen de galería 1",
-      "caption": "Camellia Hill — foto 1"
+      "src": "/images/tours/jeju-tangerine-farm/photo-001.webp",
+      "location": "Experiencia de Recolección de Mandarinas (Gyul) — Temporada Pico de Hallabong en Invierno",
+      "alt": "Experiencia de Recolección de Mandarinas (Gyul) — Temporada Pico de Hallabong en Invierno — gallery image 1",
+      "caption": "Experiencia de Recolección de Mandarinas (Gyul) — Temporada Pico de Hallabong en Invierno — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-      "location": "Acantilado Daepo Jusangjeolli",
-      "alt": "Acantilado Daepo Jusangjeolli — imagen de galería 1",
-      "caption": "Acantilado Daepo Jusangjeolli — foto 1"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "Camellia Hill (jardín floral emblemático durante todo el año)",
+      "alt": "Camellia Hill (jardín floral emblemático durante todo el año) — gallery image 1",
+      "caption": "Camellia Hill (jardín floral emblemático durante todo el año) — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-      "location": "Cascada Cheonjeyeon",
-      "alt": "Cascada Cheonjeyeon — imagen de galería 1",
-      "caption": "Cascada Cheonjeyeon — foto 1"
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "Acantilado Daepo Jusangjeolli",
+      "alt": "Acantilado Daepo Jusangjeolli — gallery image 1",
+      "caption": "Acantilado Daepo Jusangjeolli — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
-      "location": "Camellia Hill",
-      "alt": "Camellia Hill — imagen de galería 2",
-      "caption": "Camellia Hill — foto 2"
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "Cascada Cheonjeyeon",
+      "alt": "Cascada Cheonjeyeon — gallery image 1",
+      "caption": "Cascada Cheonjeyeon — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
-      "location": "Acantilado Daepo Jusangjeolli",
-      "alt": "Acantilado Daepo Jusangjeolli — imagen de galería 2",
-      "caption": "Acantilado Daepo Jusangjeolli — foto 2"
+      "src": "/images/tours/jeju-tangerine-farm/photo-002.webp",
+      "location": "Experiencia de Recolección de Mandarinas (Gyul) — Temporada Pico de Hallabong en Invierno",
+      "alt": "Experiencia de Recolección de Mandarinas (Gyul) — Temporada Pico de Hallabong en Invierno — gallery image 2",
+      "caption": "Experiencia de Recolección de Mandarinas (Gyul) — Temporada Pico de Hallabong en Invierno — photo 2"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-      "location": "Acantilado Daepo Jusangjeolli",
-      "alt": "Acantilado Daepo Jusangjeolli — imagen de galería 3",
-      "caption": "Acantilado Daepo Jusangjeolli — foto 3"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+      "location": "Camellia Hill (jardín floral emblemático durante todo el año)",
+      "alt": "Camellia Hill (jardín floral emblemático durante todo el año) — gallery image 2",
+      "caption": "Camellia Hill (jardín floral emblemático durante todo el año) — photo 2"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
-      "location": "Acantilado Daepo Jusangjeolli",
-      "alt": "Acantilado Daepo Jusangjeolli — imagen de galería 4",
-      "caption": "Acantilado Daepo Jusangjeolli — foto 4"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+      "location": "Camellia Hill (jardín floral emblemático durante todo el año)",
+      "alt": "Camellia Hill (jardín floral emblemático durante todo el año) — gallery image 3",
+      "caption": "Camellia Hill (jardín floral emblemático durante todo el año) — photo 3"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-      "location": "Cascada Cheonjeyeon",
-      "alt": "Cascada Cheonjeyeon — imagen de galería 2",
-      "caption": "Cascada Cheonjeyeon — foto 2"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+      "location": "Camellia Hill (jardín floral emblemático durante todo el año)",
+      "alt": "Camellia Hill (jardín floral emblemático durante todo el año) — gallery image 4",
+      "caption": "Camellia Hill (jardín floral emblemático durante todo el año) — photo 4"
     },
     {
       "id": 9,
       "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "Acantilado Daepo Jusangjeolli",
+      "alt": "Acantilado Daepo Jusangjeolli — gallery image 2",
+      "caption": "Acantilado Daepo Jusangjeolli — photo 2"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "Acantilado Daepo Jusangjeolli",
+      "alt": "Acantilado Daepo Jusangjeolli — gallery image 3",
+      "caption": "Acantilado Daepo Jusangjeolli — photo 3"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "Acantilado Daepo Jusangjeolli",
+      "alt": "Acantilado Daepo Jusangjeolli — gallery image 4",
+      "caption": "Acantilado Daepo Jusangjeolli — photo 4"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+      "location": "Acantilado Daepo Jusangjeolli",
+      "alt": "Acantilado Daepo Jusangjeolli — gallery image 5",
+      "caption": "Acantilado Daepo Jusangjeolli — photo 5"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+      "location": "Acantilado Daepo Jusangjeolli",
+      "alt": "Acantilado Daepo Jusangjeolli — gallery image 6",
+      "caption": "Acantilado Daepo Jusangjeolli — photo 6"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+      "location": "Acantilado Daepo Jusangjeolli",
+      "alt": "Acantilado Daepo Jusangjeolli — gallery image 7",
+      "caption": "Acantilado Daepo Jusangjeolli — photo 7"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+      "location": "Acantilado Daepo Jusangjeolli",
+      "alt": "Acantilado Daepo Jusangjeolli — gallery image 8",
+      "caption": "Acantilado Daepo Jusangjeolli — photo 8"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/photo-005.webp",
+      "location": "Acantilado Daepo Jusangjeolli",
+      "alt": "Acantilado Daepo Jusangjeolli — gallery image 9",
+      "caption": "Acantilado Daepo Jusangjeolli — photo 9"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "location": "Cascada Cheonjeyeon",
+      "alt": "Cascada Cheonjeyeon — gallery image 2",
+      "caption": "Cascada Cheonjeyeon — photo 2"
+    },
+    {
+      "id": 18,
+      "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
       "location": "Cascada Cheonjeyeon",
-      "alt": "Cascada Cheonjeyeon — imagen de galería 3",
-      "caption": "Cascada Cheonjeyeon — foto 3"
+      "alt": "Cascada Cheonjeyeon — gallery image 3",
+      "caption": "Cascada Cheonjeyeon — photo 3"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+      "location": "Cascada Cheonjeyeon",
+      "alt": "Cascada Cheonjeyeon — gallery image 4",
+      "caption": "Cascada Cheonjeyeon — photo 4"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+      "location": "Cascada Cheonjeyeon",
+      "alt": "Cascada Cheonjeyeon — gallery image 5",
+      "caption": "Cascada Cheonjeyeon — photo 5"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+      "location": "Cascada Cheonjeyeon",
+      "alt": "Cascada Cheonjeyeon — gallery image 6",
+      "caption": "Cascada Cheonjeyeon — photo 6"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+      "location": "Cascada Cheonjeyeon",
+      "alt": "Cascada Cheonjeyeon — gallery image 7",
+      "caption": "Cascada Cheonjeyeon — photo 7"
     }
   ],
   "itineraryStops": [
@@ -322,7 +426,40 @@
       },
       "smartNotes": {},
       "convenience": {},
-      "visitBasics": {}
+      "visitBasics": {},
+      "image": "/images/tours/jeju-tangerine-farm/photo-001.webp",
+      "images": [
+        "/images/tours/jeju-tangerine-farm/photo-001.webp",
+        "/images/tours/jeju-tangerine-farm/photo-002.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jeju-tangerine-farm/photo-001.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-tangerine-farm/photo-002.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jeju-tangerine-farm/photo-001.webp",
+          "location": "Experiencia de Recolección de Mandarinas (Gyul) — Temporada Pico de Hallabong en Invierno",
+          "caption": "Experiencia de Recolección de Mandarinas (Gyul) — Temporada Pico de Hallabong en Invierno — photo 1",
+          "alt": "Experiencia de Recolección de Mandarinas (Gyul) — Temporada Pico de Hallabong en Invierno — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jeju-tangerine-farm/photo-002.webp",
+          "location": "Experiencia de Recolección de Mandarinas (Gyul) — Temporada Pico de Hallabong en Invierno",
+          "caption": "Experiencia de Recolección de Mandarinas (Gyul) — Temporada Pico de Hallabong en Invierno — photo 2",
+          "alt": "Experiencia de Recolección de Mandarinas (Gyul) — Temporada Pico de Hallabong en Invierno — gallery image 2"
+        }
+      ]
     },
     {
       "number": 4,
@@ -421,6 +558,14 @@
         {
           "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -428,17 +573,33 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-          "location": "Camellia Hill (jardín de flores emblemático, abierto todo el año)",
-          "caption": "Camellia Hill (jardín de flores emblemático, abierto todo el año) — foto 1",
-          "alt": "Camellia Hill (jardín de flores emblemático, abierto todo el año) — imagen de galería 1"
+          "location": "Camellia Hill (jardín floral emblemático durante todo el año)",
+          "caption": "Camellia Hill (jardín floral emblemático durante todo el año) — photo 1",
+          "alt": "Camellia Hill (jardín floral emblemático durante todo el año) — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
-          "location": "Camellia Hill (jardín de flores emblemático, abierto todo el año)",
-          "caption": "Camellia Hill (jardín de flores emblemático, abierto todo el año) — foto 2",
-          "alt": "Camellia Hill (jardín floral emblemático durante todo el año) — imagen de galería 2"
+          "location": "Camellia Hill (jardín floral emblemático durante todo el año)",
+          "caption": "Camellia Hill (jardín floral emblemático durante todo el año) — photo 2",
+          "alt": "Camellia Hill (jardín floral emblemático durante todo el año) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+          "location": "Camellia Hill (jardín floral emblemático durante todo el año)",
+          "caption": "Camellia Hill (jardín floral emblemático durante todo el año) — photo 3",
+          "alt": "Camellia Hill (jardín floral emblemático durante todo el año) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+          "location": "Camellia Hill (jardín floral emblemático durante todo el año)",
+          "caption": "Camellia Hill (jardín floral emblemático durante todo el año) — photo 4",
+          "alt": "Camellia Hill (jardín floral emblemático durante todo el año) — gallery image 4"
         }
       ]
     },
@@ -518,6 +679,26 @@
         {
           "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/photo-005.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -526,32 +707,72 @@
           "type": "photo",
           "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
           "location": "Acantilado Daepo Jusangjeolli",
-          "caption": "Acantilado Daepo Jusangjeolli — foto 1",
-          "alt": "Acantilado Daepo Jusangjeolli — imagen de galería 1"
+          "caption": "Acantilado Daepo Jusangjeolli — photo 1",
+          "alt": "Acantilado Daepo Jusangjeolli — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
           "location": "Acantilado Daepo Jusangjeolli",
-          "caption": "Acantilado Daepo Jusangjeolli — foto 2",
-          "alt": "Acantilado Daepo Jusangjeolli — imagen de galería 2"
+          "caption": "Acantilado Daepo Jusangjeolli — photo 2",
+          "alt": "Acantilado Daepo Jusangjeolli — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
           "location": "Acantilado Daepo Jusangjeolli",
-          "caption": "Acantilado Daepo Jusangjeolli — foto 3",
-          "alt": "Acantilado Daepo Jusangjeolli — imagen de galería 3"
+          "caption": "Acantilado Daepo Jusangjeolli — photo 3",
+          "alt": "Acantilado Daepo Jusangjeolli — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
           "location": "Acantilado Daepo Jusangjeolli",
-          "caption": "Acantilado Daepo Jusangjeolli — foto 4",
-          "alt": "Acantilado Daepo Jusangjeolli — imagen de galería 4"
+          "caption": "Acantilado Daepo Jusangjeolli — photo 4",
+          "alt": "Acantilado Daepo Jusangjeolli — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "location": "Acantilado Daepo Jusangjeolli",
+          "caption": "Acantilado Daepo Jusangjeolli — photo 5",
+          "alt": "Acantilado Daepo Jusangjeolli — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "location": "Acantilado Daepo Jusangjeolli",
+          "caption": "Acantilado Daepo Jusangjeolli — photo 6",
+          "alt": "Acantilado Daepo Jusangjeolli — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "location": "Acantilado Daepo Jusangjeolli",
+          "caption": "Acantilado Daepo Jusangjeolli — photo 7",
+          "alt": "Acantilado Daepo Jusangjeolli — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "location": "Acantilado Daepo Jusangjeolli",
+          "caption": "Acantilado Daepo Jusangjeolli — photo 8",
+          "alt": "Acantilado Daepo Jusangjeolli — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/photo-005.webp",
+          "location": "Acantilado Daepo Jusangjeolli",
+          "caption": "Acantilado Daepo Jusangjeolli — photo 9",
+          "alt": "Acantilado Daepo Jusangjeolli — gallery image 9"
         }
       ]
     },
@@ -626,6 +847,22 @@
         {
           "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -633,25 +870,57 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-          "location": "Cascada de Cheonjeyeon",
-          "caption": "Cascada de Cheonjeyeon — foto 1",
-          "alt": "Cascada de Cheonjeyeon — imagen de galería 1"
+          "location": "Cascada Cheonjeyeon",
+          "caption": "Cascada Cheonjeyeon — photo 1",
+          "alt": "Cascada Cheonjeyeon — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-          "location": "Cascada de Cheonjeyeon",
-          "caption": "Cascada de Cheonjeyeon — foto 2",
-          "alt": "Cascada de Cheonjeyeon — imagen de galería 2"
+          "location": "Cascada Cheonjeyeon",
+          "caption": "Cascada Cheonjeyeon — photo 2",
+          "alt": "Cascada Cheonjeyeon — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-          "location": "Cascada de Cheonjeyeon",
-          "caption": "Cascada de Cheonjeyeon — foto 3",
-          "alt": "Cascada de Cheonjeyeon — imagen de galería 3"
+          "location": "Cascada Cheonjeyeon",
+          "caption": "Cascada Cheonjeyeon — photo 3",
+          "alt": "Cascada Cheonjeyeon — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+          "location": "Cascada Cheonjeyeon",
+          "caption": "Cascada Cheonjeyeon — photo 4",
+          "alt": "Cascada Cheonjeyeon — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+          "location": "Cascada Cheonjeyeon",
+          "caption": "Cascada Cheonjeyeon — photo 5",
+          "alt": "Cascada Cheonjeyeon — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+          "location": "Cascada Cheonjeyeon",
+          "caption": "Cascada Cheonjeyeon — photo 6",
+          "alt": "Cascada Cheonjeyeon — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+          "location": "Cascada Cheonjeyeon",
+          "caption": "Cascada Cheonjeyeon — photo 7",
+          "alt": "Cascada Cheonjeyeon — gallery image 7"
         }
       ]
     },
@@ -1720,7 +1989,10 @@
             "images": [
               "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
               "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp"
             ],
             "imageCredits": [
               {
@@ -1734,6 +2006,18 @@
               {
                 "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1742,24 +2026,48 @@
                 "type": "photo",
                 "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
                 "location": "Mirador del Hallasan (Eorimok o Humedal 1100)",
-                "caption": "Mirador del Hallasan (Eorimok o Humedal 1100) — foto 1",
-                "alt": "Mirador del Hallasan (Eorimok o Humedal 1100) — imagen de galería 1"
+                "caption": "Mirador del Hallasan (Eorimok o Humedal 1100) — photo 1",
+                "alt": "Mirador del Hallasan (Eorimok o Humedal 1100) — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
                 "location": "Mirador del Hallasan (Eorimok o Humedal 1100)",
-                "caption": "Mirador del Hallasan (Eorimok o Humedal 1100) — foto 2",
-                "alt": "Mirador del Hallasan (Eorimok o Humedal 1100) — imagen de galería 2"
+                "caption": "Mirador del Hallasan (Eorimok o Humedal 1100) — photo 2",
+                "alt": "Mirador del Hallasan (Eorimok o Humedal 1100) — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
                 "location": "Mirador del Hallasan (Eorimok o Humedal 1100)",
-                "caption": "Mirador del Hallasan (Eorimok o Humedal 1100) — foto 3",
-                "alt": "Mirador del Hallasan (Eorimok o Humedal 1100) — imagen de galería 3"
+                "caption": "Mirador del Hallasan (Eorimok o Humedal 1100) — photo 3",
+                "alt": "Mirador del Hallasan (Eorimok o Humedal 1100) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+                "location": "Mirador del Hallasan (Eorimok o Humedal 1100)",
+                "caption": "Mirador del Hallasan (Eorimok o Humedal 1100) — photo 4",
+                "alt": "Mirador del Hallasan (Eorimok o Humedal 1100) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+                "location": "Mirador del Hallasan (Eorimok o Humedal 1100)",
+                "caption": "Mirador del Hallasan (Eorimok o Humedal 1100) — photo 5",
+                "alt": "Mirador del Hallasan (Eorimok o Humedal 1100) — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp",
+                "location": "Mirador del Hallasan (Eorimok o Humedal 1100)",
+                "caption": "Mirador del Hallasan (Eorimok o Humedal 1100) — photo 6",
+                "alt": "Mirador del Hallasan (Eorimok o Humedal 1100) — gallery image 6"
               }
             ]
           },
@@ -1872,7 +2180,9 @@
             },
             "images": [
               "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp"
             ],
             "imageCredits": [
               {
@@ -1882,6 +2192,14 @@
               {
                 "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1889,17 +2207,33 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-                "location": "Camellia Hill — Pico Invernal",
-                "caption": "Camellia Hill — Pico Invernal — foto 1",
-                "alt": "Camellia Hill — Pico Invernal — imagen de galería 1"
+                "location": "Camellia Hill — Punto álgido del invierno",
+                "caption": "Camellia Hill — Punto álgido del invierno — photo 1",
+                "alt": "Camellia Hill — Punto álgido del invierno — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
-                "location": "Camellia Hill — Pico Invernal > **Notes:** Image paths (lines 2, 20, 21) were left unchanged as they are file paths. Proper nouns such as *Camellia Hill*, *Snoopy Garden*, *Osulloc*, and *Jeju* were kept in their original form.",
-                "caption": "Camellia Hill — Pico de Invierno — foto 2",
-                "alt": "Camellia Hill — Pico de Invierno — imagen de galería 2"
+                "location": "Camellia Hill — Punto álgido del invierno",
+                "caption": "Camellia Hill — Punto álgido del invierno — photo 2",
+                "alt": "Camellia Hill — Punto álgido del invierno — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+                "location": "Camellia Hill — Punto álgido del invierno",
+                "caption": "Camellia Hill — Punto álgido del invierno — photo 3",
+                "alt": "Camellia Hill — Punto álgido del invierno — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+                "location": "Camellia Hill — Punto álgido del invierno",
+                "caption": "Camellia Hill — Punto álgido del invierno — photo 4",
+                "alt": "Camellia Hill — Punto álgido del invierno — gallery image 4"
               }
             ]
           },
@@ -1950,7 +2284,12 @@
               "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+              "/images/tours/jusangjeolli/photo-005.webp"
             ],
             "imageCredits": [
               {
@@ -1968,6 +2307,26 @@
               {
                 "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/photo-005.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1976,32 +2335,72 @@
                 "type": "photo",
                 "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
                 "location": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo)",
-                "caption": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — foto 1",
-                "alt": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — imagen de galería 1"
+                "caption": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — photo 1",
+                "alt": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
                 "location": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo)",
-                "caption": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — foto 2",
-                "alt": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — imagen de galería 2"
+                "caption": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — photo 2",
+                "alt": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
                 "location": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo)",
-                "caption": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — foto 3",
-                "alt": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — imagen de galería 3"
+                "caption": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — photo 3",
+                "alt": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
                 "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
                 "location": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo)",
-                "caption": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — foto 4",
-                "alt": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — imagen de galería 4"
+                "caption": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — photo 4",
+                "alt": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+                "location": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo)",
+                "caption": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — photo 5",
+                "alt": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+                "location": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo)",
+                "caption": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — photo 6",
+                "alt": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "location": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo)",
+                "caption": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — photo 7",
+                "alt": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "location": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo)",
+                "caption": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — photo 8",
+                "alt": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/photo-005.webp",
+                "location": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo)",
+                "caption": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — photo 9",
+                "alt": "Acantilado de Jusangjeolli (Juntas Columnares de Daepo) — gallery image 9"
               }
             ]
           },
@@ -2053,7 +2452,11 @@
             "images": [
               "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
               "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+              "/images/tours/cheonjeyeon-falls/photo-004.webp"
             ],
             "imageCredits": [
               {
@@ -2067,6 +2470,22 @@
               {
                 "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -2074,25 +2493,57 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-                "location": "Cataratas Cheonjeyeon + Puente Seonimgyo",
-                "caption": "Cataratas Cheonjeyeon + Puente Seonimgyo — foto 1",
-                "alt": "Cataratas Cheonjeyeon + Puente Seonimgyo — imagen de galería 1"
+                "location": "Cataratas de Cheonjeyeon + Puente Seonimgyo",
+                "caption": "Cataratas de Cheonjeyeon + Puente Seonimgyo — photo 1",
+                "alt": "Cataratas de Cheonjeyeon + Puente Seonimgyo — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-                "location": "Cataratas Cheonjeyeon + Puente Seonimgyo",
-                "caption": "Cataratas Cheonjeyeon + Puente Seonimgyo — foto 2",
-                "alt": "Cataratas Cheonjeyeon + Puente Seonimgyo — imagen de galería 2"
+                "location": "Cataratas de Cheonjeyeon + Puente Seonimgyo",
+                "caption": "Cataratas de Cheonjeyeon + Puente Seonimgyo — photo 2",
+                "alt": "Cataratas de Cheonjeyeon + Puente Seonimgyo — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-                "location": "Cataratas Cheonjeyeon + Puente Seonimgyo",
-                "caption": "Cataratas Cheonjeyeon + Puente Seonimgyo — foto 3",
-                "alt": "Cataratas Cheonjeyeon + Puente Seonimgyo — imagen de galería 3"
+                "location": "Cataratas de Cheonjeyeon + Puente Seonimgyo",
+                "caption": "Cataratas de Cheonjeyeon + Puente Seonimgyo — photo 3",
+                "alt": "Cataratas de Cheonjeyeon + Puente Seonimgyo — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+                "location": "Cataratas de Cheonjeyeon + Puente Seonimgyo",
+                "caption": "Cataratas de Cheonjeyeon + Puente Seonimgyo — photo 4",
+                "alt": "Cataratas de Cheonjeyeon + Puente Seonimgyo — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+                "location": "Cataratas de Cheonjeyeon + Puente Seonimgyo",
+                "caption": "Cataratas de Cheonjeyeon + Puente Seonimgyo — photo 5",
+                "alt": "Cataratas de Cheonjeyeon + Puente Seonimgyo — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+                "location": "Cataratas de Cheonjeyeon + Puente Seonimgyo",
+                "caption": "Cataratas de Cheonjeyeon + Puente Seonimgyo — photo 6",
+                "alt": "Cataratas de Cheonjeyeon + Puente Seonimgyo — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+                "location": "Cataratas de Cheonjeyeon + Puente Seonimgyo",
+                "caption": "Cataratas de Cheonjeyeon + Puente Seonimgyo — photo 7",
+                "alt": "Cataratas de Cheonjeyeon + Puente Seonimgyo — gallery image 7"
               }
             ]
           },

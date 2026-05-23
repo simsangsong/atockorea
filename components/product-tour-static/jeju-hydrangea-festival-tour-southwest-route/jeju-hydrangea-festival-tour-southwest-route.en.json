@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Jeju Southwest Hydrangea Festival Day Tour | AtoC Korea",
     "metaDescription": "Summer-only southwest Jeju day tour: Hyeopjae Beach, Hallim Park hydrangea festival, Jusangjeolli Cliff, Cheonjeyeon Falls, Camellia Hill, Osulloc tea fields.",
-    "ogImage": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "primaryKeywords": [
       "Jeju hydrangea festival tour",
       "Jeju summer flower tour",
@@ -137,13 +137,21 @@
     {
       "id": 2,
       "type": "photo",
+      "src": "/images/tours/hallim-park/photo-001.webp",
+      "location": "Hallim Park (Hydrangea Festival)",
+      "alt": "Hallim Park (Hydrangea Festival) — gallery image 1",
+      "caption": "Hallim Park (Hydrangea Festival) — photo 1"
+    },
+    {
+      "id": 3,
+      "type": "photo",
       "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
       "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 1",
       "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 1"
     },
     {
-      "id": 3,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "location": "Camellia Hill (Hydrangea Tunnel)",
@@ -151,7 +159,7 @@
       "caption": "Camellia Hill (Hydrangea Tunnel) — photo 1"
     },
     {
-      "id": 4,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
       "location": "Osulloc Tea Museum & Tea Fields",
@@ -159,31 +167,7 @@
       "caption": "Osulloc Tea Museum & Tea Fields — photo 1"
     },
     {
-      "id": 5,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-      "location": "Osulloc Tea Museum & Tea Fields",
-      "alt": "Osulloc Tea Museum & Tea Fields — photo 2",
-      "caption": "Osulloc Tea Museum & Tea Fields — photo 2"
-    },
-    {
       "id": 6,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-      "location": "Osulloc Tea Museum & Tea Fields",
-      "alt": "Osulloc Tea Museum & Tea Fields — photo 3",
-      "caption": "Osulloc Tea Museum & Tea Fields — photo 3"
-    },
-    {
-      "id": 7,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
-      "location": "Osulloc Tea Museum & Tea Fields",
-      "alt": "Osulloc Tea Museum & Tea Fields — photo 4",
-      "caption": "Osulloc Tea Museum & Tea Fields — photo 4"
-    },
-    {
-      "id": 8,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
       "location": "Hyeopjae Beach",
@@ -191,7 +175,7 @@
       "caption": "Hyeopjae Beach — photo 2"
     },
     {
-      "id": 9,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
       "location": "Hyeopjae Beach",
@@ -199,7 +183,55 @@
       "caption": "Hyeopjae Beach — photo 3"
     },
     {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+      "location": "Hyeopjae Beach",
+      "alt": "Hyeopjae Beach — gallery image 4",
+      "caption": "Hyeopjae Beach — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+      "location": "Hyeopjae Beach",
+      "alt": "Hyeopjae Beach — gallery image 5",
+      "caption": "Hyeopjae Beach — photo 5"
+    },
+    {
       "id": 10,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+      "location": "Hyeopjae Beach",
+      "alt": "Hyeopjae Beach — gallery image 6",
+      "caption": "Hyeopjae Beach — photo 6"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/hallim-park/photo-002.webp",
+      "location": "Hallim Park (Hydrangea Festival)",
+      "alt": "Hallim Park (Hydrangea Festival) — gallery image 2",
+      "caption": "Hallim Park (Hydrangea Festival) — photo 2"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/hallim-park/photo-003.webp",
+      "location": "Hallim Park (Hydrangea Festival)",
+      "alt": "Hallim Park (Hydrangea Festival) — gallery image 3",
+      "caption": "Hallim Park (Hydrangea Festival) — photo 3"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/hallim-park/photo-004.webp",
+      "location": "Hallim Park (Hydrangea Festival)",
+      "alt": "Hallim Park (Hydrangea Festival) — gallery image 4",
+      "caption": "Hallim Park (Hydrangea Festival) — photo 4"
+    },
+    {
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
@@ -207,7 +239,7 @@
       "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 2"
     },
     {
-      "id": 11,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
@@ -215,7 +247,7 @@
       "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 3"
     },
     {
-      "id": 12,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
@@ -223,12 +255,92 @@
       "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 4"
     },
     {
-      "id": 13,
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+      "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
+      "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 5",
+      "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 5"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+      "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
+      "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 6",
+      "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 6"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+      "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
+      "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 7",
+      "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 7"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+      "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
+      "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 8",
+      "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 8"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/photo-005.webp",
+      "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
+      "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 9",
+      "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 9"
+    },
+    {
+      "id": 22,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
       "location": "Camellia Hill (Hydrangea Tunnel)",
       "alt": "Camellia Hill (Hydrangea Tunnel) — gallery image 2",
       "caption": "Camellia Hill (Hydrangea Tunnel) — photo 2"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+      "location": "Camellia Hill (Hydrangea Tunnel)",
+      "alt": "Camellia Hill (Hydrangea Tunnel) — gallery image 3",
+      "caption": "Camellia Hill (Hydrangea Tunnel) — photo 3"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+      "location": "Camellia Hill (Hydrangea Tunnel)",
+      "alt": "Camellia Hill (Hydrangea Tunnel) — gallery image 4",
+      "caption": "Camellia Hill (Hydrangea Tunnel) — photo 4"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+      "location": "Osulloc Tea Museum & Tea Fields",
+      "alt": "Osulloc Tea Museum & Tea Fields — photo 2",
+      "caption": "Osulloc Tea Museum & Tea Fields — photo 2"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+      "location": "Osulloc Tea Museum & Tea Fields",
+      "alt": "Osulloc Tea Museum & Tea Fields — photo 3",
+      "caption": "Osulloc Tea Museum & Tea Fields — photo 3"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+      "location": "Osulloc Tea Museum & Tea Fields",
+      "alt": "Osulloc Tea Museum & Tea Fields — photo 4",
+      "caption": "Osulloc Tea Museum & Tea Fields — photo 4"
     }
   ],
   "itineraryStops": [
@@ -303,6 +415,18 @@
         {
           "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -329,6 +453,30 @@
           "location": "Hyeopjae Beach",
           "caption": "Hyeopjae Beach — photo 3",
           "alt": "Hyeopjae Beach — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+          "location": "Hyeopjae Beach",
+          "caption": "Hyeopjae Beach — photo 4",
+          "alt": "Hyeopjae Beach — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+          "location": "Hyeopjae Beach",
+          "caption": "Hyeopjae Beach — photo 5",
+          "alt": "Hyeopjae Beach — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+          "location": "Hyeopjae Beach",
+          "caption": "Hyeopjae Beach — photo 6",
+          "alt": "Hyeopjae Beach — gallery image 6"
         }
       ]
     },
@@ -339,7 +487,7 @@
       "name": "Hallim Park (Hydrangea Festival)",
       "category": "Hydrangea highlight + 9 themed gardens + 2 lava-tube caves",
       "description": "**Hallim Park (한림공원, founded 1971)** is one of the southwest coast's major botanical parks — a **~99,000 m² (originally 100,000 pyeong / 330,580 sqm) garden complex** that **founder Song Bong-gyu transformed from a sandy wasteland into a green paradise** by importing soil and planting palm seeds across a half-century. \n\nThe park draws **~1.2 million visitors annually** and organizes its space into **nine themed gardens**: the **Subtropical Botanic Garden**, the **Palm Tree Avenue**, the **Wild Grass and Flower Garden**, the **Hyeopjaegul + Ssangyonggul Caves**, the **Jeju Stone and Bonsai Garden**, the **Jae-Am Folk Village** (Joseon-era stone-walled hanok with on-site Dolharubang Restaurant), the **Bird Garden**, the **Jeju Stone Exhibit Hall**, and the **Water Garden**. \n\nHallim's defining structural decision is its **monthly festival calendar** — **January Daffodil → February Plum Flower → March Tulip → April Cherry Blossom → May Wild Flower / Bougainvillea → **June Hydrangea** → July–September Lotus + Water Lily → October Cosmos / Pink Muhly → November Chrysanthemum → December Camellia** — a 12-month cycle that usually offers a **named seasonal flower theme throughout the year**. \n\nThe park's two geological landmarks are **Hyeopjaegul Cave (~200m × 10m × 5m, ~250,000 years old)** and **Ssangyonggul Cave (~400m × 6m × 3m, 'Two Dragons')** — both part of the same **17 km lava-tube system** but uniquely classified as **'lava-tube and limestone cave features'** because lava-tube walls were later coated with **limestone (calcium carbonate) leached from shells in the soil above**, producing the rare global combination of **lava-tube morphology + limestone stalactites/stalagmites** in a single cave area. \n\nCave temperature holds at **17–18°C year-round**, making them natural summer refuges. The park's guest list reflects its diplomatic stature: former Chinese President Jiang Zemin, former Japanese Prime Minister Nakasone Yasuhiro, former Korean President Kim Dae-jung, former Samsung Chairman Lee Kun-hee, and former Hyundai Group Chairman Chung Ju-yung have all visited.",
-      "image": null,
+      "image": "/images/tours/hallim-park/photo-001.webp",
       "highlights": [
         "**Founded 1971** by Song Bong-gyu — sandy wasteland transformed into a green paradise",
         "**~99,000 m² / 80 acres** — 9 themed gardens + ~1.2 million visitors per year",
@@ -385,7 +533,65 @@
         "closed": "Open year-round",
         "admission": "Adult 15,000 KRW / Teen 10,000 KRW / Child 9,000 KRW (online discount: ≈13,500 / 9,000 / 8,100)",
         "walking": "Moderate — 2–3 hours of walking through 9 garden zones; mostly flat"
-      }
+      },
+      "images": [
+        "/images/tours/hallim-park/photo-001.webp",
+        "/images/tours/hallim-park/photo-002.webp",
+        "/images/tours/hallim-park/photo-003.webp",
+        "/images/tours/hallim-park/photo-004.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hallim-park/photo-001.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallim-park/photo-002.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallim-park/photo-003.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallim-park/photo-004.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hallim-park/photo-001.webp",
+          "location": "Hallim Park (Hydrangea Festival)",
+          "caption": "Hallim Park (Hydrangea Festival) — photo 1",
+          "alt": "Hallim Park (Hydrangea Festival) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hallim-park/photo-002.webp",
+          "location": "Hallim Park (Hydrangea Festival)",
+          "caption": "Hallim Park (Hydrangea Festival) — photo 2",
+          "alt": "Hallim Park (Hydrangea Festival) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/hallim-park/photo-003.webp",
+          "location": "Hallim Park (Hydrangea Festival)",
+          "caption": "Hallim Park (Hydrangea Festival) — photo 3",
+          "alt": "Hallim Park (Hydrangea Festival) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hallim-park/photo-004.webp",
+          "location": "Hallim Park (Hydrangea Festival)",
+          "caption": "Hallim Park (Hydrangea Festival) — photo 4",
+          "alt": "Hallim Park (Hydrangea Festival) — gallery image 4"
+        }
+      ]
     },
     {
       "number": 3,
@@ -511,6 +717,26 @@
         {
           "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/photo-005.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -545,6 +771,46 @@
           "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
           "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 4",
           "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
+          "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 5",
+          "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
+          "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 6",
+          "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
+          "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 7",
+          "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
+          "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 8",
+          "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/photo-005.webp",
+          "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
+          "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 9",
+          "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 9"
         }
       ]
     },
@@ -614,6 +880,14 @@
         {
           "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -632,6 +906,22 @@
           "location": "Camellia Hill (Hydrangea Tunnel)",
           "caption": "Camellia Hill (Hydrangea Tunnel) — photo 2",
           "alt": "Camellia Hill (Hydrangea Tunnel) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+          "location": "Camellia Hill (Hydrangea Tunnel)",
+          "caption": "Camellia Hill (Hydrangea Tunnel) — photo 3",
+          "alt": "Camellia Hill (Hydrangea Tunnel) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+          "location": "Camellia Hill (Hydrangea Tunnel)",
+          "caption": "Camellia Hill (Hydrangea Tunnel) — photo 4",
+          "alt": "Camellia Hill (Hydrangea Tunnel) — gallery image 4"
         }
       ]
     },
@@ -1787,7 +2077,10 @@
             "images": [
               "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
               "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
-              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp"
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp"
             ],
             "imageCredits": [
               {
@@ -1800,6 +2093,18 @@
               },
               {
                 "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1827,6 +2132,30 @@
                 "location": "Hyeopjae Beach",
                 "caption": "Hyeopjae Beach — photo 3",
                 "alt": "Hyeopjae Beach — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+                "location": "Hyeopjae Beach",
+                "caption": "Hyeopjae Beach — photo 4",
+                "alt": "Hyeopjae Beach — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+                "location": "Hyeopjae Beach",
+                "caption": "Hyeopjae Beach — photo 5",
+                "alt": "Hyeopjae Beach — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+                "location": "Hyeopjae Beach",
+                "caption": "Hyeopjae Beach — photo 6",
+                "alt": "Hyeopjae Beach — gallery image 6"
               }
             ]
           },
@@ -1837,7 +2166,7 @@
             "name": "Hallim Park (Hydrangea Festival)",
             "category": "Hydrangea highlight + 9 themed gardens + 2 lava-tube caves",
             "description": "**Hallim Park (한림공원, founded 1971)** is one of the southwest coast's major botanical parks — a **~99,000 m² (originally 100,000 pyeong / 330,580 sqm) garden complex** that **founder Song Bong-gyu transformed from a sandy wasteland into a green paradise** by importing soil and planting palm seeds across a half-century. The park draws **~1.2 million visitors annually** and organizes its space into **nine themed gardens**: the **Subtropical Botanic Garden**, the **Palm Tree Avenue**, the **Wild Grass and Flower Garden**, the **Hyeopjaegul + Ssangyonggul Caves**, the **Jeju Stone and Bonsai Garden**, the **Jae-Am Folk Village** (Joseon-era stone-walled hanok with on-site Dolharubang Restaurant), the **Bird Garden**, the **Jeju Stone Exhibit Hall**, and the **Water Garden**. Hallim's defining structural decision is its **monthly festival calendar** — **January Daffodil → February Plum Flower → March Tulip → April Cherry Blossom → May Wild Flower / Bougainvillea → **June Hydrangea** → July–September Lotus + Water Lily → October Cosmos / Pink Muhly → November Chrysanthemum → December Camellia** — a 12-month cycle that usually offers a **named seasonal flower theme throughout the year**. The park's two geological landmarks are **Hyeopjaegul Cave (~200m × 10m × 5m, ~250,000 years old)** and **Ssangyonggul Cave (~400m × 6m × 3m, 'Two Dragons')** — both part of the same **17 km lava-tube system** but uniquely classified as **'lava-tube and limestone cave features'** because lava-tube walls were later coated with **limestone (calcium carbonate) leached from shells in the soil above**, producing the rare global combination of **lava-tube morphology + limestone stalactites/stalagmites** in a single cave area. Cave temperature holds at **17–18°C year-round**, making them natural summer refuges. The park's guest list reflects its diplomatic stature: former Chinese President Jiang Zemin, former Japanese Prime Minister Nakasone Yasuhiro, former Korean President Kim Dae-jung, former Samsung Chairman Lee Kun-hee, and former Hyundai Group Chairman Chung Ju-yung have all visited.",
-            "image": "",
+            "image": "/images/tours/hallim-park/photo-001.webp",
             "highlights": [
               "Hydrangea festival main gardens",
               "On-site lava tube cave system",
@@ -1874,7 +2203,65 @@
                 "third-party booking site"
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/hallim-park/photo-001.webp",
+              "/images/tours/hallim-park/photo-002.webp",
+              "/images/tours/hallim-park/photo-003.webp",
+              "/images/tours/hallim-park/photo-004.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hallim-park/photo-001.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallim-park/photo-002.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallim-park/photo-003.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallim-park/photo-004.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hallim-park/photo-001.webp",
+                "location": "Hallim Park (Hydrangea Festival)",
+                "caption": "Hallim Park (Hydrangea Festival) — photo 1",
+                "alt": "Hallim Park (Hydrangea Festival) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hallim-park/photo-002.webp",
+                "location": "Hallim Park (Hydrangea Festival)",
+                "caption": "Hallim Park (Hydrangea Festival) — photo 2",
+                "alt": "Hallim Park (Hydrangea Festival) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/hallim-park/photo-003.webp",
+                "location": "Hallim Park (Hydrangea Festival)",
+                "caption": "Hallim Park (Hydrangea Festival) — photo 3",
+                "alt": "Hallim Park (Hydrangea Festival) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hallim-park/photo-004.webp",
+                "location": "Hallim Park (Hydrangea Festival)",
+                "caption": "Hallim Park (Hydrangea Festival) — photo 4",
+                "alt": "Hallim Park (Hydrangea Festival) — gallery image 4"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1961,7 +2348,12 @@
               "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+              "/images/tours/jusangjeolli/photo-005.webp"
             ],
             "imageCredits": [
               {
@@ -1978,6 +2370,26 @@
               },
               {
                 "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/photo-005.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2013,6 +2425,46 @@
                 "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
                 "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 4",
                 "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+                "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
+                "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 5",
+                "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+                "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
+                "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 6",
+                "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
+                "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 7",
+                "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
+                "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 8",
+                "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/photo-005.webp",
+                "location": "Jusangjeolli Cliff & Cheonjeyeon Falls",
+                "caption": "Jusangjeolli Cliff & Cheonjeyeon Falls — photo 9",
+                "alt": "Jusangjeolli Cliff & Cheonjeyeon Falls — gallery image 9"
               }
             ]
           },
@@ -2062,7 +2514,9 @@
             },
             "images": [
               "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp"
             ],
             "imageCredits": [
               {
@@ -2071,6 +2525,14 @@
               },
               {
                 "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2090,6 +2552,22 @@
                 "location": "Camellia Hill (Hydrangea Tunnel)",
                 "caption": "Camellia Hill (Hydrangea Tunnel) — photo 2",
                 "alt": "Camellia Hill (Hydrangea Tunnel) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+                "location": "Camellia Hill (Hydrangea Tunnel)",
+                "caption": "Camellia Hill (Hydrangea Tunnel) — photo 3",
+                "alt": "Camellia Hill (Hydrangea Tunnel) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+                "location": "Camellia Hill (Hydrangea Tunnel)",
+                "caption": "Camellia Hill (Hydrangea Tunnel) — photo 4",
+                "alt": "Camellia Hill (Hydrangea Tunnel) — gallery image 4"
               }
             ]
           },

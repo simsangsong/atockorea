@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "水原華城・臥牛精舎＆スターフィールド日帰りツアー | AtoC Korea",
     "metaDescription": "ソウル発9〜10時間の日帰り旅行：ユネスコ世界遺産・水原華城、スターフィールド水原図書館、巨大な野外仏像で知られる臥牛精舎を訪問。英語ガイド・送迎付き。",
-    "ogImage": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "primaryKeywords": [
       "水原華城日帰りツアー",
       "龍仁 臥牛精舎",
@@ -31,8 +31,8 @@
       "世界遺産＋現代文化の日帰り旅行",
       "入場料込み"
     ],
-    "heroImage": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
-    "thumbnail": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+    "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+    "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "priceLabel": "",
     "shortCardDescription": "ソウル発の少人数制日帰りツアーで、対照的な韓国の3つの魅力を巡ります：ユネスコ世界遺産に登録された水原華城（18世紀の軍事建築）、フォトジェニックなスターフィールド水原図書館（現代の文化的名所）、龍仁の臥牛精舎（巨大な野外仏像と石鐘）。交通・入場料込みで、充実した世界遺産体験をお届けします。",
     "tags": [
@@ -52,7 +52,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+    "imageUrl": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "imagePosition": "center 50%",
     "tagline": "18世紀のユネスコ登録城郭から、韓国で最も撮影される現代図書館の一つ、そして静寂な山の仏教寺院へ——バランスの取れた一日で韓国の3つの顔を体験できます。",
     "pills": [
@@ -141,105 +141,177 @@
       "id": 2,
       "type": "photo",
       "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
-      "location": "スターフィールド水原ライブラリー",
-      "alt": "スターフィールド水原ライブラリー — ギャラリー画像 1",
-      "caption": "スターフィールド水原ライブラリー — 写真 1"
+      "location": "スターフィールド水原 ライブラリー＆モール",
+      "alt": "スターフィールド水原 ライブラリー＆モール — gallery image 1",
+      "caption": "スターフィールド水原 ライブラリー＆モール — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
       "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
-      "location": "臥牛精舍",
-      "alt": "臥牛精舍 — ギャラリー画像 2",
-      "caption": "臥牛精舍 — 写真 2"
+      "location": "ワウジョンサ（와우정사）",
+      "alt": "ワウジョンサ（와우정사） — gallery image 1",
+      "caption": "ワウジョンサ（와우정사） — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
       "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
       "location": "水原華城",
-      "alt": "水原華城 — ギャラリー画像 3",
-      "caption": "水原華城 — 写真 3"
+      "alt": "水原華城 — ギャラリー画像 2",
+      "caption": "水原華城 — 写真 2"
     },
     {
       "id": 5,
       "type": "photo",
       "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
       "location": "水原華城",
-      "alt": "水原華城 — ギャラリー画像 4",
-      "caption": "水原華城 — 写真 4"
+      "alt": "水原華城 — ギャラリー画像 3",
+      "caption": "水原華城 — 写真 3"
     },
     {
       "id": 6,
       "type": "photo",
       "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
       "location": "水原華城",
-      "alt": "水原華城 — ギャラリー画像 5",
-      "caption": "水原華城 — 写真 5"
+      "alt": "水原華城 — ギャラリー画像 4",
+      "caption": "水原華城 — 写真 4"
     },
     {
       "id": 7,
       "type": "photo",
       "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
       "location": "水原華城",
-      "alt": "水原華城 — ギャラリー画像 2",
-      "caption": "水原華城 — 写真 2"
+      "alt": "水原華城 — ギャラリー画像 5",
+      "caption": "水原華城 — 写真 5"
     },
     {
       "id": 8,
       "type": "photo",
       "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
-      "location": "スターフィールド水原ライブラリー",
-      "alt": "スターフィールド水原ライブラリー — ギャラリー画像 3",
-      "caption": "スターフィールド水原ライブラリー — 写真 3"
+      "location": "スターフィールド水原 ライブラリー＆モール",
+      "alt": "スターフィールド水原 ライブラリー＆モール — gallery image 2",
+      "caption": "スターフィールド水原 ライブラリー＆モール — photo 2"
     },
     {
       "id": 9,
       "type": "photo",
       "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
-      "location": "スターフィールド水原ライブラリー",
-      "alt": "スターフィールド水原ライブラリー — ギャラリー画像 4",
-      "caption": "スターフィールド水原ライブラリー — 写真 4"
+      "location": "スターフィールド水原 ライブラリー＆モール",
+      "alt": "スターフィールド水原 ライブラリー＆モール — gallery image 3",
+      "caption": "スターフィールド水原 ライブラリー＆モール — photo 3"
     },
     {
       "id": 10,
       "type": "photo",
       "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
-      "location": "スターフィールド水原ライブラリー",
-      "alt": "スターフィールド水原ライブラリー — ギャラリー画像 5",
-      "caption": "スターフィールド水原ライブラリー — 写真 5"
+      "location": "スターフィールド水原 ライブラリー＆モール",
+      "alt": "スターフィールド水原 ライブラリー＆モール — gallery image 4",
+      "caption": "スターフィールド水原 ライブラリー＆モール — photo 4"
     },
     {
       "id": 11,
       "type": "photo",
-      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
-      "location": "Templo Waujeongsa",
-      "alt": "Templo Waujeongsa — gallery image 2",
-      "caption": "Templo Waujeongsa — photo 2"
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+      "location": "スターフィールド水原 ライブラリー＆モール",
+      "alt": "スターフィールド水原 ライブラリー＆モール — gallery image 5",
+      "caption": "スターフィールド水原 ライブラリー＆モール — photo 5"
     },
     {
       "id": 12,
       "type": "photo",
-      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
-      "location": "Templo Waujeongsa",
-      "alt": "Templo Waujeongsa — gallery image 3",
-      "caption": "Templo Waujeongsa — photo 3"
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+      "location": "スターフィールド水原 ライブラリー＆モール",
+      "alt": "スターフィールド水原 ライブラリー＆モール — gallery image 6",
+      "caption": "スターフィールド水原 ライブラリー＆モール — photo 6"
     },
     {
       "id": 13,
       "type": "photo",
-      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
-      "location": "Templo Waujeongsa",
-      "alt": "Templo Waujeongsa — gallery image 4",
-      "caption": "Templo Waujeongsa — photo 4"
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+      "location": "スターフィールド水原 ライブラリー＆モール",
+      "alt": "スターフィールド水原 ライブラリー＆モール — gallery image 7",
+      "caption": "スターフィールド水原 ライブラリー＆モール — photo 7"
     },
     {
       "id": 14,
       "type": "photo",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+      "location": "スターフィールド水原 ライブラリー＆モール",
+      "alt": "スターフィールド水原 ライブラリー＆モール — gallery image 8",
+      "caption": "スターフィールド水原 ライブラリー＆モール — photo 8"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+      "location": "ワウジョンサ（와우정사）",
+      "alt": "ワウジョンサ（와우정사） — gallery image 2",
+      "caption": "ワウジョンサ（와우정사） — photo 2"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+      "location": "ワウジョンサ（와우정사）",
+      "alt": "ワウジョンサ（와우정사） — gallery image 3",
+      "caption": "ワウジョンサ（와우정사） — photo 3"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+      "location": "ワウジョンサ（와우정사）",
+      "alt": "ワウジョンサ（와우정사） — gallery image 4",
+      "caption": "ワウジョンサ（와우정사） — photo 4"
+    },
+    {
+      "id": 18,
+      "type": "photo",
       "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
-      "location": "Templo Waujeongsa",
-      "alt": "Templo Waujeongsa — gallery image 5",
-      "caption": "Templo Waujeongsa — photo 5"
+      "location": "ワウジョンサ（와우정사）",
+      "alt": "ワウジョンサ（와우정사） — gallery image 5",
+      "caption": "ワウジョンサ（와우정사） — photo 5"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-2.webp",
+      "location": "ワウジョンサ（와우정사）",
+      "alt": "ワウジョンサ（와우정사） — gallery image 6",
+      "caption": "ワウジョンサ（와우정사） — photo 6"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-2.webp",
+      "location": "ワウジョンサ（와우정사）",
+      "alt": "ワウジョンサ（와우정사） — gallery image 7",
+      "caption": "ワウジョンサ（와우정사） — photo 7"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03-2.webp",
+      "location": "ワウジョンサ（와우정사）",
+      "alt": "ワウジョンサ（와우정사） — gallery image 8",
+      "caption": "ワウジョンサ（와우정사） — photo 8"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-2.webp",
+      "location": "ワウジョンサ（와우정사）",
+      "alt": "ワウジョンサ（와우정사） — gallery image 9",
+      "caption": "ワウジョンサ（와우정사） — photo 9"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-2.webp",
+      "location": "ワウジョンサ（와우정사）",
+      "alt": "ワウジョンサ（와우정사） — gallery image 10",
+      "caption": "ワウジョンサ（와우정사） — photo 10"
     }
   ],
   "itineraryStops": [
@@ -458,6 +530,22 @@
         {
           "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -465,33 +553,65 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
-          "location": "スターフィールド水原ライブラリー",
-          "caption": "スターフィールド水原ライブラリー — 写真 1",
-          "alt": "スターフィールド水原ライブラリー — ギャラリー画像 1"
+          "location": "スターフィールド水原 ライブラリー＆モール",
+          "caption": "スターフィールド水原 ライブラリー＆モール — photo 1",
+          "alt": "スターフィールド水原 ライブラリー＆モール — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
-          "location": "スターフィールド水原ライブラリー",
-          "caption": "スターフィールド水原ライブラリー — 写真 2",
-          "alt": "スターフィールド水原ライブラリー — ギャラリー画像 2"
+          "location": "スターフィールド水原 ライブラリー＆モール",
+          "caption": "スターフィールド水原 ライブラリー＆モール — photo 2",
+          "alt": "スターフィールド水原 ライブラリー＆モール — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
-          "location": "スターフィールド水原ライブラリー",
-          "caption": "スターフィールド水原ライブラリー — 写真 3",
-          "alt": "スターフィールド水原ライブラリー — ギャラリー画像 3"
+          "location": "スターフィールド水原 ライブラリー＆モール",
+          "caption": "スターフィールド水原 ライブラリー＆モール — photo 3",
+          "alt": "スターフィールド水原 ライブラリー＆モール — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
-          "location": "スターフィールド水原ライブラリー",
-          "caption": "スターフィールド水原ライブラリー — 写真 4",
-          "alt": "スターフィールド水原ライブラリー — ギャラリー画像 4"
+          "location": "スターフィールド水原 ライブラリー＆モール",
+          "caption": "スターフィールド水原 ライブラリー＆モール — photo 4",
+          "alt": "スターフィールド水原 ライブラリー＆モール — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+          "location": "スターフィールド水原 ライブラリー＆モール",
+          "caption": "スターフィールド水原 ライブラリー＆モール — photo 5",
+          "alt": "スターフィールド水原 ライブラリー＆モール — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+          "location": "スターフィールド水原 ライブラリー＆モール",
+          "caption": "スターフィールド水原 ライブラリー＆モール — photo 6",
+          "alt": "スターフィールド水原 ライブラリー＆モール — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+          "location": "スターフィールド水原 ライブラリー＆モール",
+          "caption": "スターフィールド水原 ライブラリー＆モール — photo 7",
+          "alt": "スターフィールド水原 ライブラリー＆モール — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+          "location": "スターフィールド水原 ライブラリー＆モール",
+          "caption": "スターフィールド水原 ライブラリー＆モール — photo 8",
+          "alt": "スターフィールド水原 ライブラリー＆モール — gallery image 8"
         }
       ]
     },
@@ -583,6 +703,26 @@
         {
           "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -590,41 +730,81 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
-          "location": "臥牛精舍",
-          "caption": "臥牛精舍",
-          "alt": "臥牛精舍 — ギャラリー画像"
+          "location": "ワウジョンサ（와우정사）",
+          "caption": "ワウジョンサ（와우정사） — photo 1",
+          "alt": "ワウジョンサ（와우정사） — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
-          "location": "臥牛精舍",
-          "caption": "臥牛精舍",
-          "alt": "臥牛精舍 — ギャラリー画像"
+          "location": "ワウジョンサ（와우정사）",
+          "caption": "ワウジョンサ（와우정사） — photo 2",
+          "alt": "ワウジョンサ（와우정사） — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
-          "location": "臥牛精舍",
-          "caption": "臥牛精舍",
-          "alt": "臥牛精舍 — ギャラリー画像"
+          "location": "ワウジョンサ（와우정사）",
+          "caption": "ワウジョンサ（와우정사） — photo 3",
+          "alt": "ワウジョンサ（와우정사） — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
-          "location": "臥牛精舍",
-          "caption": "臥牛精舍",
-          "alt": "臥牛精舍 — ギャラリー画像"
+          "location": "ワウジョンサ（와우정사）",
+          "caption": "ワウジョンサ（와우정사） — photo 4",
+          "alt": "ワウジョンサ（와우정사） — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
-          "location": "臥牛精舍",
-          "caption": "臥牛精舍",
-          "alt": "臥牛精舍 — ギャラリー画像"
+          "location": "ワウジョンサ（와우정사）",
+          "caption": "ワウジョンサ（와우정사） — photo 5",
+          "alt": "ワウジョンサ（와우정사） — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-2.webp",
+          "location": "ワウジョンサ（와우정사）",
+          "caption": "ワウジョンサ（와우정사） — photo 6",
+          "alt": "ワウジョンサ（와우정사） — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-2.webp",
+          "location": "ワウジョンサ（와우정사）",
+          "caption": "ワウジョンサ（와우정사） — photo 7",
+          "alt": "ワウジョンサ（와우정사） — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03-2.webp",
+          "location": "ワウジョンサ（와우정사）",
+          "caption": "ワウジョンサ（와우정사） — photo 8",
+          "alt": "ワウジョンサ（와우정사） — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-2.webp",
+          "location": "ワウジョンサ（와우정사）",
+          "caption": "ワウジョンサ（와우정사） — photo 9",
+          "alt": "ワウジョンサ（와우정사） — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-2.webp",
+          "location": "ワウジョンサ（와우정사）",
+          "caption": "ワウジョンサ（와우정사） — photo 10",
+          "alt": "ワウジョンサ（와우정사） — gallery image 10"
         }
       ]
     }
@@ -1661,7 +1841,11 @@
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp"
             ],
             "imageCredits": [
               {
@@ -1679,6 +1863,22 @@
               {
                 "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1686,33 +1886,65 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
-                "location": "スターフィールド水原ライブラリー",
-                "caption": "スターフィールド水原ライブラリー",
-                "alt": "スターフィールド水原ライブラリー — ギャラリー画像"
+                "location": "スターフィールド水原ライブラリー＆モール",
+                "caption": "スターフィールド水原ライブラリー＆モール — photo 1",
+                "alt": "スターフィールド水原ライブラリー＆モール — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
-                "location": "スターフィールド水原ライブラリー",
-                "caption": "スターフィールド水原ライブラリー",
-                "alt": "スターフィールド水原ライブラリー — ギャラリー画像"
+                "location": "スターフィールド水原ライブラリー＆モール",
+                "caption": "スターフィールド水原ライブラリー＆モール — photo 2",
+                "alt": "スターフィールド水原ライブラリー＆モール — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
-                "location": "スターフィールド水原ライブラリー",
-                "caption": "スターフィールド水原ライブラリー",
-                "alt": "スターフィールド水原ライブラリー — ギャラリー画像"
+                "location": "スターフィールド水原ライブラリー＆モール",
+                "caption": "スターフィールド水原ライブラリー＆モール — photo 3",
+                "alt": "スターフィールド水原ライブラリー＆モール — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
                 "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
-                "location": "スターフィールド水原ライブラリー",
-                "caption": "スターフィールド水原ライブラリー",
-                "alt": "スターフィールド水原ライブラリー — ギャラリー画像"
+                "location": "スターフィールド水原ライブラリー＆モール",
+                "caption": "スターフィールド水原ライブラリー＆モール — photo 4",
+                "alt": "スターフィールド水原ライブラリー＆モール — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+                "location": "スターフィールド水原ライブラリー＆モール",
+                "caption": "スターフィールド水原ライブラリー＆モール — photo 5",
+                "alt": "スターフィールド水原ライブラリー＆モール — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+                "location": "スターフィールド水原ライブラリー＆モール",
+                "caption": "スターフィールド水原ライブラリー＆モール — photo 6",
+                "alt": "スターフィールド水原ライブラリー＆モール — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+                "location": "スターフィールド水原ライブラリー＆モール",
+                "caption": "スターフィールド水原ライブラリー＆モール — photo 7",
+                "alt": "スターフィールド水原ライブラリー＆モール — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+                "location": "スターフィールド水原ライブラリー＆モール",
+                "caption": "スターフィールド水原ライブラリー＆モール — photo 8",
+                "alt": "スターフィールド水原ライブラリー＆モール — gallery image 8"
               }
             ]
           },
@@ -1765,7 +1997,12 @@
               "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
               "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
               "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
-              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp"
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-2.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-2.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03-2.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-2.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-2.webp"
             ],
             "imageCredits": [
               {
@@ -1787,6 +2024,26 @@
               {
                 "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1794,41 +2051,81 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
-                "location": "ワウジョンサ（臥牛精舍）",
-                "caption": "ワウジョンサ（臥牛精舍） — 写真1",
-                "alt": "ワウジョンサ（臥牛精舍） — ギャラリー画像1"
+                "location": "ワウジョンサ（臥牛精舎）",
+                "caption": "ワウジョンサ（臥牛精舎） — photo 1",
+                "alt": "ワウジョンサ（臥牛精舎） — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
-                "location": "ワウジョンサ（臥牛精舍）",
-                "caption": "ワウジョンサ（臥牛精舍） — 写真2",
-                "alt": "ワウジョンサ（臥牛精舍） — ギャラリー画像2"
+                "location": "ワウジョンサ（臥牛精舎）",
+                "caption": "ワウジョンサ（臥牛精舎） — photo 2",
+                "alt": "ワウジョンサ（臥牛精舎） — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
-                "location": "ワウジョンサ（臥牛精舍） > **注:** 14〜18（画像パス）は翻訳不要のためそのまま記載しています。",
-                "caption": "ワウジョンサ寺 — 写真 3",
-                "alt": "ワウジョンサ寺 — ギャラリー画像 3"
+                "location": "ワウジョンサ（臥牛精舎）",
+                "caption": "ワウジョンサ（臥牛精舎） — photo 3",
+                "alt": "ワウジョンサ（臥牛精舎） — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
                 "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
-                "location": "臥牛精舍",
-                "caption": "臥牛精舍 — 写真 4",
-                "alt": "臥牛精舍 — ギャラリー画像 4"
+                "location": "ワウジョンサ（臥牛精舎）",
+                "caption": "ワウジョンサ（臥牛精舎） — photo 4",
+                "alt": "ワウジョンサ（臥牛精舎） — gallery image 4"
               },
               {
                 "id": 5,
                 "type": "photo",
                 "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
-                "location": "臥牛精舍",
-                "caption": "臥牛精舍 — 写真 5",
-                "alt": "臥牛精舍 — ギャラリー画像 5"
+                "location": "ワウジョンサ（臥牛精舎）",
+                "caption": "ワウジョンサ（臥牛精舎） — photo 5",
+                "alt": "ワウジョンサ（臥牛精舎） — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-2.webp",
+                "location": "ワウジョンサ（臥牛精舎）",
+                "caption": "ワウジョンサ（臥牛精舎） — photo 6",
+                "alt": "ワウジョンサ（臥牛精舎） — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-2.webp",
+                "location": "ワウジョンサ（臥牛精舎）",
+                "caption": "ワウジョンサ（臥牛精舎） — photo 7",
+                "alt": "ワウジョンサ（臥牛精舎） — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03-2.webp",
+                "location": "ワウジョンサ（臥牛精舎）",
+                "caption": "ワウジョンサ（臥牛精舎） — photo 8",
+                "alt": "ワウジョンサ（臥牛精舎） — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-2.webp",
+                "location": "ワウジョンサ（臥牛精舎）",
+                "caption": "ワウジョンサ（臥牛精舎） — photo 9",
+                "alt": "ワウジョンサ（臥牛精舎） — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-2.webp",
+                "location": "ワウジョンサ（臥牛精舎）",
+                "caption": "ワウジョンサ（臥牛精舎） — photo 10",
+                "alt": "ワウジョンサ（臥牛精舎） — gallery image 10"
               }
             ]
           }

@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "부산 핵심 명소 소그룹 당일 투어 | AtoC Korea",
     "metaDescription": "10.5시간 부산 소그룹 클래식: 해동 용궁사, 청사포 블루라인, UN 기념관, 감천문화마을, 자갈치 시장. 픽업 포인트 3곳.",
-    "ogImage": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "primaryKeywords": [
       "부산 당일 투어",
       "해동 용궁사",
@@ -31,8 +31,8 @@
       "부산 클래식",
       "연중 운영"
     ],
-    "heroImage": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-    "thumbnail": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+    "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+    "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "priceLabel": "1인 US$29 (정가 $41, 29% 할인)",
     "shortCardDescription": "해동 용궁사 해변 사원, 청사포 & 블루라인 파크(스카이 캡슐 선택 가능), 부산 현지 점심식사, UN 기념 공원, 감천문화마을 알록달록 산비탈, 자갈치 수산시장을 포함한 7개 코스 소그룹 당일 투어. 부산 중심부 3개 픽업 포인트 제공, 공인 영어 가이드 동행, 미니버스 운행(최대 약 12명). 모든 관광지 입장료 무료; 점심 및 선택 티켓만 현장 결제.",
     "tags": [
@@ -54,7 +54,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+    "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "imagePosition": "center 40%",
     "tagline": "소그룹 당일 투어로 즐기는 부산 인기 7대 명소",
     "pills": [
@@ -134,13 +134,29 @@
     {
       "id": 1,
       "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "location": "해동 용궁사",
+      "alt": "해동 용궁사 — on-route photo",
+      "caption": "해동 용궁사"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+      "location": "청사포 & 해운대 블루라인파크",
+      "alt": "청사포 & 해운대 블루라인파크 — gallery image 1",
+      "caption": "청사포 & 해운대 블루라인파크 — photo 1"
+    },
+    {
+      "id": 3,
+      "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
       "location": "재한유엔기념공원",
       "alt": "재한유엔기념공원 — gallery image 1",
       "caption": "재한유엔기념공원 — photo 1"
     },
     {
-      "id": 2,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
       "location": "감천문화마을",
@@ -148,55 +164,151 @@
       "caption": "감천문화마을 — photo 1"
     },
     {
-      "id": 3,
-      "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-      "location": "청사포 다릿돌 전망대 (블루라인파크)",
-      "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 3",
-      "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 3"
-    },
-    {
-      "id": 4,
-      "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
-      "location": "청사포 다릿돌 전망대 (블루라인파크)",
-      "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 4",
-      "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 4"
-    },
-    {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
-      "location": "청사포 다릿돌 전망대 (블루라인파크)",
-      "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 5",
-      "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 5"
+      "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "location": "자갈치 어시장",
+      "alt": "자갈치 어시장 — gallery image 1",
+      "caption": "자갈치 어시장 — photo 1"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
-      "location": "청사포 다릿돌 전망대 (블루라인파크)",
-      "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 6",
-      "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 6"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+      "location": "해동 용궁사",
+      "alt": "해동 용궁사 — on-route photo",
+      "caption": "해동 용궁사"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
-      "location": "청사포 다릿돌 전망대 (블루라인파크)",
-      "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 7",
-      "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 7"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "location": "해동 용궁사",
+      "alt": "해동 용궁사 — on-route photo",
+      "caption": "해동 용궁사"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
-      "location": "청사포 다릿돌 전망대 (블루라인파크)",
-      "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 8",
-      "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 8"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+      "location": "해동 용궁사",
+      "alt": "해동 용궁사 — on-route photo",
+      "caption": "해동 용궁사"
     },
     {
       "id": 9,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+      "location": "해동 용궁사",
+      "alt": "해동 용궁사 — on-route photo",
+      "caption": "해동 용궁사"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+      "location": "청사포 & 해운대 블루라인파크",
+      "alt": "청사포 & 해운대 블루라인파크 — gallery image 2",
+      "caption": "청사포 & 해운대 블루라인파크 — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+      "location": "청사포 & 해운대 블루라인파크",
+      "alt": "청사포 & 해운대 블루라인파크 — gallery image 3",
+      "caption": "청사포 & 해운대 블루라인파크 — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+      "location": "청사포 & 해운대 블루라인파크",
+      "alt": "청사포 & 해운대 블루라인파크 — gallery image 4",
+      "caption": "청사포 & 해운대 블루라인파크 — photo 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+      "location": "청사포 & 해운대 블루라인파크",
+      "alt": "청사포 & 해운대 블루라인파크 — gallery image 5",
+      "caption": "청사포 & 해운대 블루라인파크 — photo 5"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+      "location": "청사포 & 해운대 블루라인파크",
+      "alt": "청사포 & 해운대 블루라인파크 — gallery image 6",
+      "caption": "청사포 & 해운대 블루라인파크 — photo 6"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+      "location": "청사포 & 해운대 블루라인파크",
+      "alt": "청사포 & 해운대 블루라인파크 — gallery image 7",
+      "caption": "청사포 & 해운대 블루라인파크 — photo 7"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+      "location": "청사포 & 해운대 블루라인파크",
+      "alt": "청사포 & 해운대 블루라인파크 — gallery image 8",
+      "caption": "청사포 & 해운대 블루라인파크 — photo 8"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18-2.webp",
+      "location": "청사포 & 해운대 블루라인파크",
+      "alt": "청사포 & 해운대 블루라인파크 — gallery image 9",
+      "caption": "청사포 & 해운대 블루라인파크 — photo 9"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39-2.webp",
+      "location": "청사포 & 해운대 블루라인파크",
+      "alt": "청사포 & 해운대 블루라인파크 — gallery image 10",
+      "caption": "청사포 & 해운대 블루라인파크 — photo 10"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19-2.webp",
+      "location": "청사포 & 해운대 블루라인파크",
+      "alt": "청사포 & 해운대 블루라인파크 — gallery image 11",
+      "caption": "청사포 & 해운대 블루라인파크 — photo 11"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23-2.webp",
+      "location": "청사포 & 해운대 블루라인파크",
+      "alt": "청사포 & 해운대 블루라인파크 — gallery image 12",
+      "caption": "청사포 & 해운대 블루라인파크 — photo 12"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26-2.webp",
+      "location": "청사포 & 해운대 블루라인파크",
+      "alt": "청사포 & 해운대 블루라인파크 — gallery image 13",
+      "caption": "청사포 & 해운대 블루라인파크 — photo 13"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19-2.webp",
+      "location": "청사포 & 해운대 블루라인파크",
+      "alt": "청사포 & 해운대 블루라인파크 — gallery image 14",
+      "caption": "청사포 & 해운대 블루라인파크 — photo 14"
+    },
+    {
+      "id": 23,
       "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
       "location": "재한유엔기념공원",
@@ -204,7 +316,7 @@
       "caption": "재한유엔기념공원 — photo 2"
     },
     {
-      "id": 10,
+      "id": 24,
       "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
       "location": "재한유엔기념공원",
@@ -212,7 +324,79 @@
       "caption": "재한유엔기념공원 — photo 3"
     },
     {
-      "id": 11,
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+      "location": "재한유엔기념공원",
+      "alt": "재한유엔기념공원 — gallery image 9",
+      "caption": "재한유엔기념공원 — photo 9"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+      "location": "재한유엔기념공원",
+      "alt": "재한유엔기념공원 — gallery image 10",
+      "caption": "재한유엔기념공원 — photo 10"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+      "location": "재한유엔기념공원",
+      "alt": "재한유엔기념공원 — gallery image 11",
+      "caption": "재한유엔기념공원 — photo 11"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+      "location": "재한유엔기념공원",
+      "alt": "재한유엔기념공원 — gallery image 12",
+      "caption": "재한유엔기념공원 — photo 12"
+    },
+    {
+      "id": 29,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+      "location": "재한유엔기념공원",
+      "alt": "재한유엔기념공원 — gallery image 13",
+      "caption": "재한유엔기념공원 — photo 13"
+    },
+    {
+      "id": 30,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+      "location": "재한유엔기념공원",
+      "alt": "재한유엔기념공원 — gallery image 14",
+      "caption": "재한유엔기념공원 — photo 14"
+    },
+    {
+      "id": 31,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+      "location": "재한유엔기념공원",
+      "alt": "재한유엔기념공원 — gallery image 15",
+      "caption": "재한유엔기념공원 — photo 15"
+    },
+    {
+      "id": 32,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+      "location": "재한유엔기념공원",
+      "alt": "재한유엔기념공원 — gallery image 16",
+      "caption": "재한유엔기념공원 — photo 16"
+    },
+    {
+      "id": 33,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+      "location": "재한유엔기념공원",
+      "alt": "재한유엔기념공원 — gallery image 17",
+      "caption": "재한유엔기념공원 — photo 17"
+    },
+    {
+      "id": 34,
       "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
       "location": "감천문화마을",
@@ -220,12 +404,68 @@
       "caption": "감천문화마을 — photo 2"
     },
     {
-      "id": 12,
+      "id": 35,
       "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
       "location": "감천문화마을",
       "alt": "감천문화마을 — gallery image 3",
       "caption": "감천문화마을 — photo 3"
+    },
+    {
+      "id": 36,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-market-interior.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 5",
+      "caption": "감천문화마을 — photo 5"
+    },
+    {
+      "id": 37,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-night-building.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 6",
+      "caption": "감천문화마을 — photo 6"
+    },
+    {
+      "id": 38,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 7",
+      "caption": "감천문화마을 — photo 7"
+    },
+    {
+      "id": 39,
+      "type": "photo",
+      "src": "/images/tours/jagalchi-market/photo-001.webp",
+      "location": "자갈치 어시장",
+      "alt": "자갈치 어시장 — gallery image 4",
+      "caption": "자갈치 어시장 — photo 4"
+    },
+    {
+      "id": 40,
+      "type": "photo",
+      "src": "/images/tours/jagalchi-market/photo-002.webp",
+      "location": "자갈치 어시장",
+      "alt": "자갈치 어시장 — gallery image 5",
+      "caption": "자갈치 어시장 — photo 5"
+    },
+    {
+      "id": 41,
+      "type": "photo",
+      "src": "/images/tours/jagalchi-market/photo-003.webp",
+      "location": "자갈치 어시장",
+      "alt": "자갈치 어시장 — gallery image 6",
+      "caption": "자갈치 어시장 — photo 6"
+    },
+    {
+      "id": 42,
+      "type": "photo",
+      "src": "/images/tours/jagalchi-market/photo-004.webp",
+      "location": "자갈치 어시장",
+      "alt": "자갈치 어시장 — gallery image 7",
+      "caption": "자갈치 어시장 — photo 7"
     }
   ],
   "itineraryStops": [
@@ -399,14 +639,6 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-          "source": "atoc-korea"
-        },
-        {
           "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
           "source": "atoc-korea"
         },
@@ -425,56 +657,152 @@
         {
           "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
         {
-          "id": 3,
+          "id": 1,
           "type": "photo",
           "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-          "location": "청사포 다릿돌 전망대 (블루라인파크)",
-          "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 3",
-          "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 3"
+          "location": "청사포 & 해운대 블루라인파크",
+          "caption": "청사포 & 해운대 블루라인파크 — photo 1",
+          "alt": "청사포 & 해운대 블루라인파크 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+          "location": "청사포 & 해운대 블루라인파크",
+          "caption": "청사포 & 해운대 블루라인파크 — photo 2",
+          "alt": "청사포 & 해운대 블루라인파크 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "location": "청사포 & 해운대 블루라인파크",
+          "caption": "청사포 & 해운대 블루라인파크 — photo 3",
+          "alt": "청사포 & 해운대 블루라인파크 — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
-          "location": "청사포 다릿돌 전망대 (블루라인파크)",
-          "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 4",
-          "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 4"
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+          "location": "청사포 & 해운대 블루라인파크",
+          "caption": "청사포 & 해운대 블루라인파크 — photo 4",
+          "alt": "청사포 & 해운대 블루라인파크 — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
-          "location": "청사포 다릿돌 전망대 (블루라인파크)",
-          "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 5",
-          "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 5"
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+          "location": "청사포 & 해운대 블루라인파크",
+          "caption": "청사포 & 해운대 블루라인파크 — photo 5",
+          "alt": "청사포 & 해운대 블루라인파크 — gallery image 5"
         },
         {
           "id": 6,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
-          "location": "청사포 다릿돌 전망대 (블루라인파크)",
-          "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 6",
-          "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 6"
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+          "location": "청사포 & 해운대 블루라인파크",
+          "caption": "청사포 & 해운대 블루라인파크 — photo 6",
+          "alt": "청사포 & 해운대 블루라인파크 — gallery image 6"
         },
         {
           "id": 7,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
-          "location": "청사포 다릿돌 전망대 (블루라인파크)",
-          "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 7",
-          "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 7"
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+          "location": "청사포 & 해운대 블루라인파크",
+          "caption": "청사포 & 해운대 블루라인파크 — photo 7",
+          "alt": "청사포 & 해운대 블루라인파크 — gallery image 7"
         },
         {
           "id": 8,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
-          "location": "청사포 다릿돌 전망대 (블루라인파크)",
-          "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 8",
-          "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 8"
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+          "location": "청사포 & 해운대 블루라인파크",
+          "caption": "청사포 & 해운대 블루라인파크 — photo 8",
+          "alt": "청사포 & 해운대 블루라인파크 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18-2.webp",
+          "location": "청사포 & 해운대 블루라인파크",
+          "caption": "청사포 & 해운대 블루라인파크 — photo 9",
+          "alt": "청사포 & 해운대 블루라인파크 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39-2.webp",
+          "location": "청사포 & 해운대 블루라인파크",
+          "caption": "청사포 & 해운대 블루라인파크 — photo 10",
+          "alt": "청사포 & 해운대 블루라인파크 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19-2.webp",
+          "location": "청사포 & 해운대 블루라인파크",
+          "caption": "청사포 & 해운대 블루라인파크 — photo 11",
+          "alt": "청사포 & 해운대 블루라인파크 — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23-2.webp",
+          "location": "청사포 & 해운대 블루라인파크",
+          "caption": "청사포 & 해운대 블루라인파크 — photo 12",
+          "alt": "청사포 & 해운대 블루라인파크 — gallery image 12"
+        },
+        {
+          "id": 13,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26-2.webp",
+          "location": "청사포 & 해운대 블루라인파크",
+          "caption": "청사포 & 해운대 블루라인파크 — photo 13",
+          "alt": "청사포 & 해운대 블루라인파크 — gallery image 13"
+        },
+        {
+          "id": 14,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19-2.webp",
+          "location": "청사포 & 해운대 블루라인파크",
+          "caption": "청사포 & 해운대 블루라인파크 — photo 14",
+          "alt": "청사포 & 해운대 블루라인파크 — gallery image 14"
         }
       ]
     },
@@ -584,6 +912,62 @@
         {
           "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -610,6 +994,118 @@
           "location": "재한유엔기념공원",
           "caption": "재한유엔기념공원 — photo 3",
           "alt": "재한유엔기념공원 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "location": "재한유엔기념공원",
+          "caption": "재한유엔기념공원 — photo 4",
+          "alt": "재한유엔기념공원 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "location": "재한유엔기념공원",
+          "caption": "재한유엔기념공원 — photo 5",
+          "alt": "재한유엔기념공원 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+          "location": "재한유엔기념공원",
+          "caption": "재한유엔기념공원 — photo 6",
+          "alt": "재한유엔기념공원 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+          "location": "재한유엔기념공원",
+          "caption": "재한유엔기념공원 — photo 7",
+          "alt": "재한유엔기념공원 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+          "location": "재한유엔기념공원",
+          "caption": "재한유엔기념공원 — photo 8",
+          "alt": "재한유엔기념공원 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+          "location": "재한유엔기념공원",
+          "caption": "재한유엔기념공원 — photo 9",
+          "alt": "재한유엔기념공원 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+          "location": "재한유엔기념공원",
+          "caption": "재한유엔기념공원 — photo 10",
+          "alt": "재한유엔기념공원 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+          "location": "재한유엔기념공원",
+          "caption": "재한유엔기념공원 — photo 11",
+          "alt": "재한유엔기념공원 — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+          "location": "재한유엔기념공원",
+          "caption": "재한유엔기념공원 — photo 12",
+          "alt": "재한유엔기념공원 — gallery image 12"
+        },
+        {
+          "id": 13,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+          "location": "재한유엔기념공원",
+          "caption": "재한유엔기념공원 — photo 13",
+          "alt": "재한유엔기념공원 — gallery image 13"
+        },
+        {
+          "id": 14,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+          "location": "재한유엔기념공원",
+          "caption": "재한유엔기념공원 — photo 14",
+          "alt": "재한유엔기념공원 — gallery image 14"
+        },
+        {
+          "id": 15,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+          "location": "재한유엔기념공원",
+          "caption": "재한유엔기념공원 — photo 15",
+          "alt": "재한유엔기념공원 — gallery image 15"
+        },
+        {
+          "id": 16,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+          "location": "재한유엔기념공원",
+          "caption": "재한유엔기념공원 — photo 16",
+          "alt": "재한유엔기념공원 — gallery image 16"
+        },
+        {
+          "id": 17,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+          "location": "재한유엔기념공원",
+          "caption": "재한유엔기념공원 — photo 17",
+          "alt": "재한유엔기념공원 — gallery image 17"
         }
       ]
     },
@@ -691,6 +1187,22 @@
         {
           "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-market-interior.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-night-building.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -717,6 +1229,38 @@
           "location": "감천문화마을",
           "caption": "감천문화마을 — photo 3",
           "alt": "감천문화마을 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 4",
+          "alt": "감천문화마을 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-market-interior.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 5",
+          "alt": "감천문화마을 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-night-building.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 6",
+          "alt": "감천문화마을 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 7",
+          "alt": "감천문화마을 — gallery image 7"
         }
       ]
     },
@@ -782,6 +1326,94 @@
         "/images/itinerary/jagalchi-harbor-sign.webp",
         "/images/itinerary/jagalchi-market-interior.webp",
         "/images/itinerary/jagalchi-night-building.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-market-interior.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-night-building.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jagalchi-market/photo-001.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jagalchi-market/photo-002.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jagalchi-market/photo-003.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jagalchi-market/photo-004.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "location": "자갈치 어시장",
+          "caption": "자갈치 어시장 — photo 1",
+          "alt": "자갈치 어시장 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-market-interior.webp",
+          "location": "자갈치 어시장",
+          "caption": "자갈치 어시장 — photo 2",
+          "alt": "자갈치 어시장 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-night-building.webp",
+          "location": "자갈치 어시장",
+          "caption": "자갈치 어시장 — photo 3",
+          "alt": "자갈치 어시장 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jagalchi-market/photo-001.webp",
+          "location": "자갈치 어시장",
+          "caption": "자갈치 어시장 — photo 4",
+          "alt": "자갈치 어시장 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jagalchi-market/photo-002.webp",
+          "location": "자갈치 어시장",
+          "caption": "자갈치 어시장 — photo 5",
+          "alt": "자갈치 어시장 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/jagalchi-market/photo-003.webp",
+          "location": "자갈치 어시장",
+          "caption": "자갈치 어시장 — photo 6",
+          "alt": "자갈치 어시장 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/jagalchi-market/photo-004.webp",
+          "location": "자갈치 어시장",
+          "caption": "자갈치 어시장 — photo 7",
+          "alt": "자갈치 어시장 — gallery image 7"
+        }
       ]
     }
   ],
@@ -1678,17 +2310,17 @@
               "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
               "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
               "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
-              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp"
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18-2.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39-2.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19-2.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23-2.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26-2.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19-2.webp"
             ],
             "imageCredits": [
-              {
-                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-                "source": "atoc-korea"
-              },
               {
                 "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
                 "source": "atoc-korea"
@@ -1712,56 +2344,152 @@
               {
                 "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
               {
-                "id": 3,
+                "id": 1,
                 "type": "photo",
                 "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-                "location": "청사포 다릿돌 전망대 (블루라인파크)",
-                "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 3",
-                "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 3"
+                "location": "청사포 & 해운대 블루라인파크",
+                "caption": "청사포 & 해운대 블루라인파크 — photo 1",
+                "alt": "청사포 & 해운대 블루라인파크 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+                "location": "청사포 & 해운대 블루라인파크",
+                "caption": "청사포 & 해운대 블루라인파크 — photo 2",
+                "alt": "청사포 & 해운대 블루라인파크 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "location": "청사포 & 해운대 블루라인파크",
+                "caption": "청사포 & 해운대 블루라인파크 — photo 3",
+                "alt": "청사포 & 해운대 블루라인파크 — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
-                "location": "청사포 다릿돌 전망대 (블루라인파크)",
-                "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 4",
-                "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 4"
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+                "location": "청사포 & 해운대 블루라인파크",
+                "caption": "청사포 & 해운대 블루라인파크 — photo 4",
+                "alt": "청사포 & 해운대 블루라인파크 — gallery image 4"
               },
               {
                 "id": 5,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
-                "location": "청사포 다릿돌 전망대 (블루라인파크)",
-                "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 5",
-                "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 5"
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+                "location": "청사포 & 해운대 블루라인파크",
+                "caption": "청사포 & 해운대 블루라인파크 — photo 5",
+                "alt": "청사포 & 해운대 블루라인파크 — gallery image 5"
               },
               {
                 "id": 6,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
-                "location": "청사포 다릿돌 전망대 (블루라인파크)",
-                "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 6",
-                "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 6"
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+                "location": "청사포 & 해운대 블루라인파크",
+                "caption": "청사포 & 해운대 블루라인파크 — photo 6",
+                "alt": "청사포 & 해운대 블루라인파크 — gallery image 6"
               },
               {
                 "id": 7,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
-                "location": "청사포 다릿돌 전망대 (블루라인파크)",
-                "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 7",
-                "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 7"
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+                "location": "청사포 & 해운대 블루라인파크",
+                "caption": "청사포 & 해운대 블루라인파크 — photo 7",
+                "alt": "청사포 & 해운대 블루라인파크 — gallery image 7"
               },
               {
                 "id": 8,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
-                "location": "청사포 다릿돌 전망대 (블루라인파크)",
-                "caption": "청사포 다릿돌 전망대 (블루라인파크) — 사진 8",
-                "alt": "청사포 다릿돌 전망대 (블루라인파크) — 갤러리 이미지 8"
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+                "location": "청사포 & 해운대 블루라인파크",
+                "caption": "청사포 & 해운대 블루라인파크 — photo 8",
+                "alt": "청사포 & 해운대 블루라인파크 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18-2.webp",
+                "location": "청사포 & 해운대 블루라인파크",
+                "caption": "청사포 & 해운대 블루라인파크 — photo 9",
+                "alt": "청사포 & 해운대 블루라인파크 — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39-2.webp",
+                "location": "청사포 & 해운대 블루라인파크",
+                "caption": "청사포 & 해운대 블루라인파크 — photo 10",
+                "alt": "청사포 & 해운대 블루라인파크 — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19-2.webp",
+                "location": "청사포 & 해운대 블루라인파크",
+                "caption": "청사포 & 해운대 블루라인파크 — photo 11",
+                "alt": "청사포 & 해운대 블루라인파크 — gallery image 11"
+              },
+              {
+                "id": 12,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23-2.webp",
+                "location": "청사포 & 해운대 블루라인파크",
+                "caption": "청사포 & 해운대 블루라인파크 — photo 12",
+                "alt": "청사포 & 해운대 블루라인파크 — gallery image 12"
+              },
+              {
+                "id": 13,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26-2.webp",
+                "location": "청사포 & 해운대 블루라인파크",
+                "caption": "청사포 & 해운대 블루라인파크 — photo 13",
+                "alt": "청사포 & 해운대 블루라인파크 — gallery image 13"
+              },
+              {
+                "id": 14,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19-2.webp",
+                "location": "청사포 & 해운대 블루라인파크",
+                "caption": "청사포 & 해운대 블루라인파크 — photo 14",
+                "alt": "청사포 & 해운대 블루라인파크 — gallery image 14"
               }
             ]
           },
@@ -1804,7 +2532,10 @@
             "images": [
               "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
               "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp"
             ],
             "imageCredits": [
               {
@@ -1818,6 +2549,18 @@
               {
                 "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1825,25 +2568,49 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-                "location": "유엔기념공원",
-                "caption": "유엔기념공원 — 사진 1",
-                "alt": "유엔기념공원 — 갤러리 이미지 1"
+                "location": "UN기념공원",
+                "caption": "UN기념공원 — photo 1",
+                "alt": "UN기념공원 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-                "location": "유엔기념공원",
-                "caption": "유엔기념공원 — 사진 2",
-                "alt": "유엔기념공원 — 갤러리 이미지 2"
+                "location": "UN기념공원",
+                "caption": "UN기념공원 — photo 2",
+                "alt": "UN기념공원 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
-                "location": "유엔기념공원",
-                "caption": "유엔기념공원 — 사진 3",
-                "alt": "유엔기념공원 — 갤러리 이미지 3"
+                "location": "UN기념공원",
+                "caption": "UN기념공원 — photo 3",
+                "alt": "UN기념공원 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+                "location": "UN기념공원",
+                "caption": "UN기념공원 — photo 4",
+                "alt": "UN기념공원 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+                "location": "UN기념공원",
+                "caption": "UN기념공원 — photo 5",
+                "alt": "UN기념공원 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+                "location": "UN기념공원",
+                "caption": "UN기념공원 — photo 6",
+                "alt": "UN기념공원 — gallery image 6"
               }
             ]
           },
@@ -1870,7 +2637,8 @@
             "images": [
               "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
               "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-              "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp"
+              "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+              "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp"
             ],
             "imageCredits": [
               {
@@ -1883,6 +2651,10 @@
               },
               {
                 "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1910,6 +2682,14 @@
                 "location": "감천문화마을",
                 "caption": "감천문화마을 — photo 3",
                 "alt": "감천문화마을 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+                "location": "감천문화마을",
+                "caption": "감천문화마을 — photo 4",
+                "alt": "감천문화마을 — gallery image 4"
               }
             ]
           },
@@ -1931,7 +2711,65 @@
               "is_attraction": true,
               "fee_krw": 0,
               "closed": "1st and 3rd Tuesdays of month"
-            }
+            },
+            "images": [
+              "/images/tours/jagalchi-market/photo-001.webp",
+              "/images/tours/jagalchi-market/photo-002.webp",
+              "/images/tours/jagalchi-market/photo-003.webp",
+              "/images/tours/jagalchi-market/photo-004.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jagalchi-market/photo-001.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jagalchi-market/photo-002.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jagalchi-market/photo-003.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jagalchi-market/photo-004.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jagalchi-market/photo-001.webp",
+                "location": "자갈치 시장",
+                "caption": "자갈치 시장 — photo 1",
+                "alt": "자갈치 시장 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jagalchi-market/photo-002.webp",
+                "location": "자갈치 시장",
+                "caption": "자갈치 시장 — photo 2",
+                "alt": "자갈치 시장 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jagalchi-market/photo-003.webp",
+                "location": "자갈치 시장",
+                "caption": "자갈치 시장 — photo 3",
+                "alt": "자갈치 시장 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jagalchi-market/photo-004.webp",
+                "location": "자갈치 시장",
+                "caption": "자갈치 시장 — photo 4",
+                "alt": "자갈치 시장 — gallery image 4"
+              }
+            ]
           }
         ]
       }

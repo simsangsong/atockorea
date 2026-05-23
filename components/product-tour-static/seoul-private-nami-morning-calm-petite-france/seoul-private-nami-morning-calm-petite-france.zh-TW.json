@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "南怡島、晨靜苑及小法國村私人旅遊 | AtoC Korea",
     "metaDescription": "從首爾出發的私人一日遊，歷時9至10小時，探訪加平三大地標：南怡島、晨靜苑及小法國村。提供首爾市區飯店免費接送，英語導遊隨行。",
-    "ogImage": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
     "primaryKeywords": [
       "南怡島私人旅遊",
       "晨靜苑旅遊",
@@ -31,8 +31,8 @@
       "韓劇拍攝地",
       "情侶及家庭適合"
     ],
-    "heroImage": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
-    "thumbnail": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+    "heroImage": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+    "thumbnail": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
     "priceLabel": "",
     "shortCardDescription": "從首爾出發的私人一日遊，涵蓋南怡島林蔭大道的渡輪體驗、晨靜苑的主題花園漫步，以及色彩繽紛的小王子村莊小法國村。飯店接送、私人座駕及悠閒節奏，讓您以最舒適的方式體驗經典加平環線之旅。",
     "tags": [
@@ -50,7 +50,7 @@
     "salePriceUsd": null
   },
   "hero": {
-    "imageUrl": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+    "imageUrl": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
     "imagePosition": "center 45%",
     "tagline": "從南怡島的渡輪橫渡，到晨靜苑的主題花園，再到色彩繽紛的小法國村——以全程私人包車的形式，體驗經典加平環線之旅。",
     "pills": [
@@ -132,72 +132,136 @@
       "type": "photo",
       "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
       "location": "南怡島（Namiseom）",
-      "alt": "南怡島（Namiseom）— 圖庫圖片 1",
-      "caption": "南怡島（Namiseom）— 照片 1"
+      "alt": "南怡島（Namiseom） — gallery image 1",
+      "caption": "南怡島（Namiseom） — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
       "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
-      "location": "晨靜苑",
-      "alt": "晨靜苑 — 圖庫圖片 1",
-      "caption": "晨靜苑 — 照片 1"
+      "location": "晨靜樹木園",
+      "alt": "晨靜樹木園 — gallery image 1",
+      "caption": "晨靜樹木園 — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
       "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
       "location": "小法國村",
-      "alt": "小法國村 — 圖庫圖片 1",
-      "caption": "小法國村 — 照片 1"
+      "alt": "小法國村 — gallery image 1",
+      "caption": "小法國村 — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
       "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
       "location": "南怡島（Namiseom）",
-      "alt": "南怡島（Namiseom）— 圖庫圖片 2",
-      "caption": "南怡島（Namiseom）— 照片 2"
+      "alt": "南怡島（Namiseom） — gallery image 2",
+      "caption": "南怡島（Namiseom） — photo 2"
     },
     {
       "id": 5,
       "type": "photo",
       "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
       "location": "南怡島（Namiseom）",
-      "alt": "南怡島（Namiseom）— 圖庫圖片 3",
-      "caption": "南怡島（Namiseom）— 照片 3"
+      "alt": "南怡島（Namiseom） — gallery image 3",
+      "caption": "南怡島（Namiseom） — photo 3"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
-      "location": "晨靜樹木園",
-      "alt": "晨靜樹木園 — 圖庫圖片 2",
-      "caption": "晨靜樹木園 — 照片 2"
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+      "location": "南怡島（Namiseom）",
+      "alt": "南怡島（Namiseom） — gallery image 4",
+      "caption": "南怡島（Namiseom） — photo 4"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
-      "location": "晨靜樹木園",
-      "alt": "晨靜樹木園 — 圖庫圖片 3",
-      "caption": "晨靜樹木園 — 照片 3"
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+      "location": "南怡島（Namiseom）",
+      "alt": "南怡島（Namiseom） — gallery image 5",
+      "caption": "南怡島（Namiseom） — photo 5"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
       "location": "晨靜樹木園",
-      "alt": "晨靜樹木園 — 圖庫圖片 4",
-      "caption": "晨靜樹木園 — 照片 4"
+      "alt": "晨靜樹木園 — gallery image 2",
+      "caption": "晨靜樹木園 — photo 2"
     },
     {
       "id": 9,
       "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+      "location": "晨靜樹木園",
+      "alt": "晨靜樹木園 — gallery image 3",
+      "caption": "晨靜樹木園 — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+      "location": "晨靜樹木園",
+      "alt": "晨靜樹木園 — gallery image 4",
+      "caption": "晨靜樹木園 — photo 4"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+      "location": "晨靜樹木園",
+      "alt": "晨靜樹木園 — gallery image 5",
+      "caption": "晨靜樹木園 — photo 5"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+      "location": "晨靜樹木園",
+      "alt": "晨靜樹木園 — gallery image 6",
+      "caption": "晨靜樹木園 — photo 6"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+      "location": "晨靜樹木園",
+      "alt": "晨靜樹木園 — gallery image 7",
+      "caption": "晨靜樹木園 — photo 7"
+    },
+    {
+      "id": 14,
+      "type": "photo",
       "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp",
       "location": "小法國村",
-      "alt": "小法國村 — 圖庫圖片 2",
-      "caption": "小法國村 — 照片 2"
+      "alt": "小法國村 — gallery image 2",
+      "caption": "小法國村 — photo 2"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02-2.webp",
+      "location": "小法國村",
+      "alt": "小法國村 — gallery image 3",
+      "caption": "小法國村 — photo 3"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-03-2.webp",
+      "location": "小法國村",
+      "alt": "小法國村 — gallery image 4",
+      "caption": "小法國村 — photo 4"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/petite-france/photo-003.webp",
+      "location": "小法國村",
+      "alt": "小法國村 — gallery image 5",
+      "caption": "小法國村 — photo 5"
     }
   ],
   "itineraryStops": [
@@ -274,6 +338,14 @@
         {
           "url": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -282,24 +354,40 @@
           "type": "photo",
           "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
           "location": "南怡島（Namiseom）",
-          "caption": "南怡島（Namiseom）— 照片 1",
-          "alt": "南怡島（Namiseom）— 圖庫圖片 1"
+          "caption": "南怡島（Namiseom） — photo 1",
+          "alt": "南怡島（Namiseom） — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
           "location": "南怡島（Namiseom）",
-          "caption": "南怡島（Namiseom）— 照片 2",
-          "alt": "南怡島（Namiseom）— 圖庫圖片 2"
+          "caption": "南怡島（Namiseom） — photo 2",
+          "alt": "南怡島（Namiseom） — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
           "location": "南怡島（Namiseom）",
-          "caption": "南怡島（Namiseom）— 照片 3",
-          "alt": "南怡島（Namiseom）— 圖庫圖片 3"
+          "caption": "南怡島（Namiseom） — photo 3",
+          "alt": "南怡島（Namiseom） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+          "location": "南怡島（Namiseom）",
+          "caption": "南怡島（Namiseom） — photo 4",
+          "alt": "南怡島（Namiseom） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+          "location": "南怡島（Namiseom）",
+          "caption": "南怡島（Namiseom） — photo 5",
+          "alt": "南怡島（Namiseom） — gallery image 5"
         }
       ]
     },
@@ -382,6 +470,18 @@
         {
           "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -389,33 +489,57 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
-          "location": "晨靜苑",
-          "caption": "晨靜苑——照片 1",
-          "alt": "晨靜苑——圖庫圖片 1"
+          "location": "晨靜樹木園",
+          "caption": "晨靜樹木園 — photo 1",
+          "alt": "晨靜樹木園 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
-          "location": "晨靜苑",
-          "caption": "晨靜苑——照片 2",
-          "alt": "晨靜苑——圖庫圖片 2"
+          "location": "晨靜樹木園",
+          "caption": "晨靜樹木園 — photo 2",
+          "alt": "晨靜樹木園 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
-          "location": "晨靜苑",
-          "caption": "晨靜苑——照片 3 > **譯注：** 第13–17行為圖片檔案路徑，保留原文不譯。「The Garden of Morning Calm」統一譯為**晨靜苑**（韓語：아침고요수목원），為繁體中文旅遊內容中最通行的對應譯名。",
-          "alt": "晨靜之苑 — 圖庫圖片 3"
+          "location": "晨靜樹木園",
+          "caption": "晨靜樹木園 — photo 3",
+          "alt": "晨靜樹木園 — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
-          "location": "晨靜之苑",
-          "caption": "晨靜之苑 — 照片 4",
-          "alt": "晨靜之苑 — 圖庫圖片 4"
+          "location": "晨靜樹木園",
+          "caption": "晨靜樹木園 — photo 4",
+          "alt": "晨靜樹木園 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+          "location": "晨靜樹木園",
+          "caption": "晨靜樹木園 — photo 5",
+          "alt": "晨靜樹木園 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+          "location": "晨靜樹木園",
+          "caption": "晨靜樹木園 — photo 6",
+          "alt": "晨靜樹木園 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+          "location": "晨靜樹木園",
+          "caption": "晨靜樹木園 — photo 7",
+          "alt": "晨靜樹木園 — gallery image 7"
         }
       ]
     },
@@ -488,6 +612,18 @@
         {
           "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-02-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-03-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/petite-france/photo-003.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -496,16 +632,40 @@
           "type": "photo",
           "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
           "location": "小法國村",
-          "caption": "小法國村 — 照片 1",
-          "alt": "小法國村 — 圖庫圖片 1"
+          "caption": "小法國村 — photo 1",
+          "alt": "小法國村 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp",
           "location": "小法國村",
-          "caption": "小法國村 — 照片 2",
-          "alt": "小法國村 — 圖庫圖片 2"
+          "caption": "小法國村 — photo 2",
+          "alt": "小法國村 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02-2.webp",
+          "location": "小法國村",
+          "caption": "小法國村 — photo 3",
+          "alt": "小法國村 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-03-2.webp",
+          "location": "小法國村",
+          "caption": "小法國村 — photo 4",
+          "alt": "小法國村 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/petite-france/photo-003.webp",
+          "location": "小法國村",
+          "caption": "小法國村 — photo 5",
+          "alt": "小法國村 — gallery image 5"
         }
       ]
     }
@@ -1360,7 +1520,9 @@
             "images": [
               "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
               "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
-              "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp"
+              "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+              "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+              "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp"
             ],
             "imageCredits": [
               {
@@ -1374,6 +1536,14 @@
               {
                 "url": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1381,25 +1551,41 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
-                "location": "南怡島（남이섬）",
-                "caption": "南怡島（남이섬）— 照片 1",
-                "alt": "南怡島（남이섬）— 圖庫圖片 1"
+                "location": "南怡島（Namiseom）",
+                "caption": "南怡島（Namiseom） — photo 1",
+                "alt": "南怡島（Namiseom） — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
-                "location": "南怡島（남이섬）",
-                "caption": "南怡島（남이섬）— 照片 2",
-                "alt": "南怡島（남이섬）— 圖庫圖片 2"
+                "location": "南怡島（Namiseom）",
+                "caption": "南怡島（Namiseom） — photo 2",
+                "alt": "南怡島（Namiseom） — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
-                "location": "南怡島（남이섬）",
-                "caption": "南怡島（남이섬）— 照片 3",
-                "alt": "南怡島（남이섬）— 圖庫圖片 3"
+                "location": "南怡島（Namiseom）",
+                "caption": "南怡島（Namiseom） — photo 3",
+                "alt": "南怡島（Namiseom） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+                "location": "南怡島（Namiseom）",
+                "caption": "南怡島（Namiseom） — photo 4",
+                "alt": "南怡島（Namiseom） — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+                "location": "南怡島（Namiseom）",
+                "caption": "南怡島（Namiseom） — photo 5",
+                "alt": "南怡島（Namiseom） — gallery image 5"
               }
             ]
           },
@@ -1451,7 +1637,10 @@
               "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
               "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
               "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
-              "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp"
+              "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+              "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+              "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+              "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp"
             ],
             "imageCredits": [
               {
@@ -1469,6 +1658,18 @@
               {
                 "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1476,33 +1677,57 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
-                "location": "晨靜庭園",
-                "caption": "晨靜庭園 — 照片 1",
-                "alt": "晨靜庭園 — 藝廊圖片 1"
+                "location": "晨靜樹木園",
+                "caption": "晨靜樹木園 — photo 1",
+                "alt": "晨靜樹木園 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
-                "location": "晨靜園",
-                "caption": "晨靜園 — 照片 2",
-                "alt": "晨靜園 — 圖庫圖片 2"
+                "location": "晨靜樹木園",
+                "caption": "晨靜樹木園 — photo 2",
+                "alt": "晨靜樹木園 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
-                "location": "晨靜園",
-                "caption": "晨靜園 — 照片 3",
-                "alt": "晨靜園 — 圖庫圖片 3"
+                "location": "晨靜樹木園",
+                "caption": "晨靜樹木園 — photo 3",
+                "alt": "晨靜樹木園 — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
                 "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
-                "location": "晨靜園",
-                "caption": "晨靜園 — 照片 4",
-                "alt": "晨靜園 — 圖庫圖片 4"
+                "location": "晨靜樹木園",
+                "caption": "晨靜樹木園 — photo 4",
+                "alt": "晨靜樹木園 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+                "location": "晨靜樹木園",
+                "caption": "晨靜樹木園 — photo 5",
+                "alt": "晨靜樹木園 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+                "location": "晨靜樹木園",
+                "caption": "晨靜樹木園 — photo 6",
+                "alt": "晨靜樹木園 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+                "location": "晨靜樹木園",
+                "caption": "晨靜樹木園 — photo 7",
+                "alt": "晨靜樹木園 — gallery image 7"
               }
             ]
           },
@@ -1552,7 +1777,10 @@
             },
             "images": [
               "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
-              "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp"
+              "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp",
+              "/images/tours/petite-france/kakaotalk-20260510-222949305-02-2.webp",
+              "/images/tours/petite-france/kakaotalk-20260510-222949305-03-2.webp",
+              "/images/tours/petite-france/photo-003.webp"
             ],
             "imageCredits": [
               {
@@ -1562,6 +1790,18 @@
               {
                 "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-02-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-03-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/petite-france/photo-003.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1570,16 +1810,40 @@
                 "type": "photo",
                 "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
                 "location": "小法國村",
-                "caption": "小法國村 — 照片 1",
-                "alt": "小法國村 — 藝廊圖片 1"
+                "caption": "小法國村 — photo 1",
+                "alt": "小法國村 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp",
                 "location": "小法國村",
-                "caption": "小法國村 — 照片 2",
-                "alt": "小法國村 — 藝廊圖片 2"
+                "caption": "小法國村 — photo 2",
+                "alt": "小法國村 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02-2.webp",
+                "location": "小法國村",
+                "caption": "小法國村 — photo 3",
+                "alt": "小法國村 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-03-2.webp",
+                "location": "小法國村",
+                "caption": "小法國村 — photo 4",
+                "alt": "小法國村 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/petite-france/photo-003.webp",
+                "location": "小法國村",
+                "caption": "小法國村 — photo 5",
+                "alt": "小法國村 — gallery image 5"
               }
             ]
           }

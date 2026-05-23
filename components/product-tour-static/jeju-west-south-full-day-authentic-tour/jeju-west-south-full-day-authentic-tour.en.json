@@ -14,12 +14,12 @@
       "Hyeopjae Beach tour",
       "Jeju café strip tour"
     ],
-    "ogImage": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "title": "Jeju West & South Authentic Day Tour · Small Group | AtoC",
     "description": "West and south Jeju authentic small-group day tour: Hallasan 1100 Road wetland → Jusangjeolli cliff (UNESCO Geopark) → Cheonjeyeon Waterfall → Osulloc Tea Museum → Aewol cafe coast. 9 hours, certified guide."
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+    "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "title": "Jeju West & South: Authentic Day Tour",
     "priceLabel": "From US$59 per person (was $69, 14% off)",
     "shortCardDescription": "A small-group day tour pairing Jeju's western and southern coasts in a single loop — Hallasan's 1100 Altitude Wetland (UNESCO), the hexagonal Jusangjeolli Cliff, Songaksan's panoramic viewpoint, Cheonjeyeon Waterfall, O'sulloc Tea Museum, and the Hyeopjae Beach café strip on the west coast. A lifestyle-oriented framing — 'volcanic landscapes meet dramatic coastlines and trendy seaside cafés.'",
@@ -46,7 +46,7 @@
       "Café Culture",
       "Coastal"
     ],
-    "heroImage": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp"
+    "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp"
   },
   "headlineLine1": "Jeju West & South",
   "headlineLine2": "Authentic Day Tour",
@@ -59,7 +59,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+    "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "imagePosition": "center 35%",
     "tagline": "Volcanic landscapes meet dramatic coastlines and trendy seaside cafés — Jeju's west-south circuit done right",
     "pills": [
@@ -139,137 +139,281 @@
       "id": 1,
       "type": "photo",
       "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-      "location": "Hallasan 1100 Altitude Wetland",
-      "alt": "Hallasan 1100 Altitude Wetland — gallery image 1",
-      "caption": "Hallasan 1100 Altitude Wetland — photo 1"
+      "location": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
+      "alt": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — gallery image 1",
+      "caption": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-      "location": "Jusangjeolli Cliff",
-      "alt": "Jusangjeolli Cliff — gallery image",
-      "caption": "Jusangjeolli Cliff"
+      "location": "Jusangjeolli Cliff (UNESCO Geopark)",
+      "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 1",
+      "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-      "location": "Cheonjeyeon Waterfall",
-      "alt": "Cheonjeyeon Waterfall — gallery image 1",
-      "caption": "Cheonjeyeon Waterfall — photo 1"
+      "src": "/images/itinerary/songaksan-coastal-monument.webp",
+      "location": "Songaksan Mountain (panoramic viewpoint)",
+      "alt": "Songaksan Mountain (panoramic viewpoint) — on-route photo",
+      "caption": "Songaksan Mountain (panoramic viewpoint)"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
-      "location": "O'sulloc Tea Museum",
-      "alt": "O'sulloc Tea Museum — gallery image 1",
-      "caption": "O'sulloc Tea Museum — photo 1"
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+      "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 1",
+      "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-      "location": "O'sulloc Tea Museum",
-      "alt": "O'sulloc Tea Museum — gallery image 2",
-      "caption": "O'sulloc Tea Museum — photo 2"
+      "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — photo 1",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 1"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-      "location": "O'sulloc Tea Museum",
-      "alt": "O'sulloc Tea Museum — gallery image 3",
-      "caption": "O'sulloc Tea Museum — photo 3"
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+      "location": "Hyeopjae Beach + west-coast café strip",
+      "alt": "Hyeopjae Beach + west-coast café strip — gallery image 1",
+      "caption": "Hyeopjae Beach + west-coast café strip — photo 1"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
-      "location": "O'sulloc Tea Museum",
-      "alt": "O'sulloc Tea Museum — gallery image 4",
-      "caption": "O'sulloc Tea Museum — photo 4"
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+      "location": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
+      "alt": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — gallery image 2",
+      "caption": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — photo 2"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
-      "location": "Hyeopjae Beach",
-      "alt": "Hyeopjae Beach — gallery image 2",
-      "caption": "Hyeopjae Beach — photo 2"
-    },
-    {
-      "id": 9,
-      "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
       "location": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
       "alt": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — gallery image 3",
       "caption": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — photo 3"
     },
     {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+      "location": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
+      "alt": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — gallery image 4",
+      "caption": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — photo 4"
+    },
+    {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
-      "location": "Hallasan 1100 Altitude Wetland",
-      "alt": "Hallasan 1100 Altitude Wetland — gallery image 2",
-      "caption": "Hallasan 1100 Altitude Wetland — photo 2"
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+      "location": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
+      "alt": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — gallery image 5",
+      "caption": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — photo 5"
     },
     {
       "id": 11,
       "type": "photo",
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp",
+      "location": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
+      "alt": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — gallery image 6",
+      "caption": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — photo 6"
+    },
+    {
+      "id": 12,
+      "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "Jusangjeolli Cliff (UNESCO Geopark)",
+      "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 2",
+      "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "Jusangjeolli Cliff (UNESCO Geopark)",
       "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 3",
       "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 3"
     },
     {
-      "id": 12,
+      "id": 14,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "Jusangjeolli Cliff (UNESCO Geopark)",
       "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 4",
       "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 4"
     },
     {
-      "id": 13,
+      "id": 15,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
-      "location": "Jusangjeolli Cliff",
-      "alt": "Jusangjeolli Cliff — gallery image 2",
-      "caption": "Jusangjeolli Cliff — photo 2"
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+      "location": "Jusangjeolli Cliff (UNESCO Geopark)",
+      "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 5",
+      "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 5"
     },
     {
-      "id": 14,
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+      "location": "Jusangjeolli Cliff (UNESCO Geopark)",
+      "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 6",
+      "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 6"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+      "location": "Jusangjeolli Cliff (UNESCO Geopark)",
+      "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 7",
+      "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 7"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+      "location": "Jusangjeolli Cliff (UNESCO Geopark)",
+      "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 8",
+      "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 8"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/photo-005.webp",
+      "location": "Jusangjeolli Cliff (UNESCO Geopark)",
+      "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 9",
+      "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 9"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/itinerary/songaksan-cliff-trail-sunset.webp",
+      "location": "Songaksan Mountain (panoramic viewpoint)",
+      "alt": "Songaksan Mountain (panoramic viewpoint) — on-route photo",
+      "caption": "Songaksan Mountain (panoramic viewpoint)"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/itinerary/songaksan-crater-aerial.webp",
+      "location": "Songaksan Mountain (panoramic viewpoint)",
+      "alt": "Songaksan Mountain (panoramic viewpoint) — on-route photo",
+      "caption": "Songaksan Mountain (panoramic viewpoint)"
+    },
+    {
+      "id": 22,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+      "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 2",
+      "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 2"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
       "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
       "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 3",
       "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 3"
     },
     {
-      "id": 15,
+      "id": 24,
       "type": "photo",
-      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-      "location": "Cheonjeyeon Waterfall",
-      "alt": "Cheonjeyeon Waterfall — gallery image 2",
-      "caption": "Cheonjeyeon Waterfall — photo 2"
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+      "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+      "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 4",
+      "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 4"
     },
     {
-      "id": 16,
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+      "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+      "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 5",
+      "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 5"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+      "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+      "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 6",
+      "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 6"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+      "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+      "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 7",
+      "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 7"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — photo 2",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 2"
+    },
+    {
+      "id": 29,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — photo 3",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 3"
+    },
+    {
+      "id": 30,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — photo 4",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 4"
+    },
+    {
+      "id": 31,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
+      "location": "Hyeopjae Beach + west-coast café strip",
+      "alt": "Hyeopjae Beach + west-coast café strip — gallery image 2",
+      "caption": "Hyeopjae Beach + west-coast café strip — photo 2"
+    },
+    {
+      "id": 32,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
       "location": "Hyeopjae Beach + west-coast café strip",
       "alt": "Hyeopjae Beach + west-coast café strip — gallery image 3",
       "caption": "Hyeopjae Beach + west-coast café strip — photo 3"
     },
     {
-      "id": 17,
+      "id": 33,
       "type": "photo",
-      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
       "location": "Hyeopjae Beach + west-coast café strip",
-      "alt": "Hyeopjae Beach + west-coast café strip — gallery image 2",
-      "caption": "Hyeopjae Beach + west-coast café strip — photo 2"
+      "alt": "Hyeopjae Beach + west-coast café strip — gallery image 4",
+      "caption": "Hyeopjae Beach + west-coast café strip — photo 4"
+    },
+    {
+      "id": 34,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+      "location": "Hyeopjae Beach + west-coast café strip",
+      "alt": "Hyeopjae Beach + west-coast café strip — gallery image 5",
+      "caption": "Hyeopjae Beach + west-coast café strip — photo 5"
+    },
+    {
+      "id": 35,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+      "location": "Hyeopjae Beach + west-coast café strip",
+      "alt": "Hyeopjae Beach + west-coast café strip — gallery image 6",
+      "caption": "Hyeopjae Beach + west-coast café strip — photo 6"
     }
   ],
   "itineraryStops": [
@@ -372,6 +516,18 @@
         {
           "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -398,6 +554,30 @@
           "location": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
           "caption": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — photo 3",
           "alt": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+          "location": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
+          "caption": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — photo 4",
+          "alt": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+          "location": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
+          "caption": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — photo 5",
+          "alt": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp",
+          "location": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
+          "caption": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — photo 6",
+          "alt": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — gallery image 6"
         }
       ]
     },
@@ -477,6 +657,26 @@
         {
           "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/photo-005.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -511,6 +711,46 @@
           "location": "Jusangjeolli Cliff (UNESCO Geopark)",
           "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 4",
           "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "location": "Jusangjeolli Cliff (UNESCO Geopark)",
+          "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 5",
+          "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "location": "Jusangjeolli Cliff (UNESCO Geopark)",
+          "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 6",
+          "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "location": "Jusangjeolli Cliff (UNESCO Geopark)",
+          "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 7",
+          "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "location": "Jusangjeolli Cliff (UNESCO Geopark)",
+          "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 8",
+          "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/photo-005.webp",
+          "location": "Jusangjeolli Cliff (UNESCO Geopark)",
+          "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 9",
+          "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 9"
         }
       ]
     },
@@ -672,6 +912,22 @@
         {
           "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -698,6 +954,38 @@
           "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
           "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 3",
           "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+          "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+          "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 4",
+          "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+          "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+          "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 5",
+          "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+          "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+          "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 6",
+          "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+          "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+          "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 7",
+          "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 7"
         }
       ]
     },
@@ -944,6 +1232,18 @@
         {
           "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -970,6 +1270,30 @@
           "location": "Hyeopjae Beach + west-coast café strip",
           "caption": "Hyeopjae Beach + west-coast café strip — photo 3",
           "alt": "Hyeopjae Beach + west-coast café strip — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+          "location": "Hyeopjae Beach + west-coast café strip",
+          "caption": "Hyeopjae Beach + west-coast café strip — photo 4",
+          "alt": "Hyeopjae Beach + west-coast café strip — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+          "location": "Hyeopjae Beach + west-coast café strip",
+          "caption": "Hyeopjae Beach + west-coast café strip — photo 5",
+          "alt": "Hyeopjae Beach + west-coast café strip — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+          "location": "Hyeopjae Beach + west-coast café strip",
+          "caption": "Hyeopjae Beach + west-coast café strip — photo 6",
+          "alt": "Hyeopjae Beach + west-coast café strip — gallery image 6"
         }
       ]
     },
@@ -2105,7 +2429,10 @@
             "images": [
               "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
               "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp"
             ],
             "imageCredits": [
               {
@@ -2118,6 +2445,18 @@
               },
               {
                 "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2145,6 +2484,30 @@
                 "location": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
                 "caption": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — photo 3",
                 "alt": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+                "location": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
+                "caption": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — photo 4",
+                "alt": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+                "location": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
+                "caption": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — photo 5",
+                "alt": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp",
+                "location": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
+                "caption": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — photo 6",
+                "alt": "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO) — gallery image 6"
               }
             ]
           },
@@ -2196,7 +2559,12 @@
               "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+              "/images/tours/jusangjeolli/photo-005.webp"
             ],
             "imageCredits": [
               {
@@ -2213,6 +2581,26 @@
               },
               {
                 "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/photo-005.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2248,6 +2636,46 @@
                 "location": "Jusangjeolli Cliff (UNESCO Geopark)",
                 "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 4",
                 "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+                "location": "Jusangjeolli Cliff (UNESCO Geopark)",
+                "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 5",
+                "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+                "location": "Jusangjeolli Cliff (UNESCO Geopark)",
+                "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 6",
+                "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "location": "Jusangjeolli Cliff (UNESCO Geopark)",
+                "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 7",
+                "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "location": "Jusangjeolli Cliff (UNESCO Geopark)",
+                "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 8",
+                "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/photo-005.webp",
+                "location": "Jusangjeolli Cliff (UNESCO Geopark)",
+                "caption": "Jusangjeolli Cliff (UNESCO Geopark) — photo 9",
+                "alt": "Jusangjeolli Cliff (UNESCO Geopark) — gallery image 9"
               }
             ]
           },
@@ -2372,7 +2800,11 @@
             "images": [
               "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
               "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+              "/images/tours/cheonjeyeon-falls/photo-004.webp"
             ],
             "imageCredits": [
               {
@@ -2385,6 +2817,22 @@
               },
               {
                 "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/photo-004.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2412,6 +2860,38 @@
                 "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
                 "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 3",
                 "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+                "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+                "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 4",
+                "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+                "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+                "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 5",
+                "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+                "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+                "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 6",
+                "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+                "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
+                "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 7",
+                "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 7"
               }
             ]
           },
@@ -2623,7 +3103,10 @@
             "images": [
               "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
               "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
-              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp"
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp"
             ],
             "imageCredits": [
               {
@@ -2636,6 +3119,18 @@
               },
               {
                 "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2663,6 +3158,30 @@
                 "location": "Hyeopjae Beach + west-coast café strip",
                 "caption": "Hyeopjae Beach + west-coast café strip — photo 3",
                 "alt": "Hyeopjae Beach + west-coast café strip — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+                "location": "Hyeopjae Beach + west-coast café strip",
+                "caption": "Hyeopjae Beach + west-coast café strip — photo 4",
+                "alt": "Hyeopjae Beach + west-coast café strip — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+                "location": "Hyeopjae Beach + west-coast café strip",
+                "caption": "Hyeopjae Beach + west-coast café strip — photo 5",
+                "alt": "Hyeopjae Beach + west-coast café strip — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+                "location": "Hyeopjae Beach + west-coast café strip",
+                "caption": "Hyeopjae Beach + west-coast café strip — photo 6",
+                "alt": "Hyeopjae Beach + west-coast café strip — gallery image 6"
               }
             ]
           },

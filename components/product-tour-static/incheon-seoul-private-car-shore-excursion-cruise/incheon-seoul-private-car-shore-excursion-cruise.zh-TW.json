@@ -13,11 +13,11 @@
       "仁川港至首爾私人包車",
       "韓國郵輪岸上觀光"
     ],
-    "ogImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "title": "仁川 → 首爾私人郵輪岸上觀光・8小時全程接送之旅"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
+    "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "title": "仁川→首爾 郵輪私人包車",
     "priceLabel": "每車 US$419 起",
     "shortCardDescription": "以您的郵輪返航時間為基準安排的8小時私人包車，而非固定行程。在仁川郵輪碼頭舷梯處接送，配備英語導遊兼司機，行程可彈性調整，途經景福宮、北村韓屋村＋仁寺洞、自選午餐、N首爾塔，以及明洞或曹溪寺。導遊兼司機會在返航前預留60分鐘的交通緩衝時間，確保您絕不錯過郵輪。",
@@ -44,7 +44,7 @@
       "可客製化",
       "保證返船"
     ],
-    "heroImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp"
+    "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
   "headlineLine1": "仁川→首爾 郵輪私人包車",
   "headlineLine2": "一日遊",
@@ -55,7 +55,7 @@
     "salePriceUsd": null
   },
   "hero": {
-    "imageUrl": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
+    "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "imagePosition": "center 35%",
     "tagline": "從舷梯出發60分鐘直達景福宮——一段以您的返航時間為基準的私人首爾之旅",
     "pills": [
@@ -135,82 +135,162 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
-      "location": "仁川郵輪碼頭",
-      "alt": "仁川郵輪碼頭 — 私家車舷梯接送",
-      "caption": "仁川郵輪碼頭 — 私家車舷梯接送"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "location": "景福宮 + 王宮守衛換崗儀式",
+      "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 1",
+      "caption": "景福宮 + 王宮守衛換崗儀式 — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
-      "location": "漢江 & N首爾塔",
-      "alt": "漢江畔的私家車 — N首爾塔夜景",
-      "caption": "漢江畔的私家車 — N首爾塔夜景"
+      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+      "location": "北村韓屋村 + 仁寺洞",
+      "alt": "北村韓屋村 + 仁寺洞 — gallery image 1",
+      "caption": "北村韓屋村 + 仁寺洞 — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
-      "location": "景福宮",
-      "alt": "景福宮 — 首爾市中心王宮",
-      "caption": "景福宮 — 首爾市中心王宮"
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
+      "location": "N首爾塔（南山）",
+      "alt": "N首爾塔（南山） — on-route photo",
+      "caption": "N首爾塔（南山）"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/seoul-private-charter/seoul-private-gyeongbokgung-heungnyemun.webp",
-      "location": "景福宮",
-      "alt": "景福宮 興禮門 — 韓服訪客",
-      "caption": "景福宮 興禮門 — 韓服訪客"
+      "src": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
+      "location": "明洞 或 曹溪寺（自由選擇）",
+      "alt": "明洞 或 曹溪寺（自由選擇） — on-route photo",
+      "caption": "明洞 或 曹溪寺（自由選擇）"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
-      "location": "北村韓屋村",
-      "alt": "北村韓屋村 — 韓國傳統巷道",
-      "caption": "北村韓屋村 — 韓國傳統巷道"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
+      "location": "景福宮 + 王宮守衛換崗儀式",
+      "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 2",
+      "caption": "景福宮 + 王宮守衛換崗儀式 — photo 2"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-01-09-25.webp",
-      "location": "N首爾塔（南山）",
-      "alt": "南山的N首爾塔",
-      "caption": "南山的N首爾塔"
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
+      "location": "景福宮 + 王宮守衛換崗儀式",
+      "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 3",
+      "caption": "景福宮 + 王宮守衛換崗儀式 — photo 3"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/seoul-private-charter/seoul-private-n-seoul-tower-treat.webp",
-      "location": "N首爾塔（南山）",
-      "alt": "N首爾塔 — 塔下的甜蜜時刻",
-      "caption": "N首爾塔 — 塔下的甜蜜時刻"
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
+      "location": "景福宮 + 王宮守衛換崗儀式",
+      "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 4",
+      "caption": "景福宮 + 王宮守衛換崗儀式 — photo 4"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
-      "location": "廣藏市場",
-      "alt": "廣藏市場 — 首爾傳統美食街",
-      "caption": "廣藏市場 — 首爾傳統美食街"
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
+      "location": "景福宮 + 王宮守衛換崗儀式",
+      "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 5",
+      "caption": "景福宮 + 王宮守衛換崗儀式 — photo 5"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/myeongdong/chatgpt-image-2026-5-11-01-04-33.webp",
-      "location": "明洞",
-      "alt": "明洞 — 首爾熱鬧購物街",
-      "caption": "明洞 — 首爾熱鬧購物街"
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
+      "location": "景福宮 + 王宮守衛換崗儀式",
+      "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 6",
+      "caption": "景福宮 + 王宮守衛換崗儀式 — photo 6"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/seoul-private-charter/seoul-private-lotte-tower-songpa.webp",
-      "location": "樂天世界塔（松坡）",
-      "alt": "樂天世界塔 — 高聳於松坡的韓國第一高樓",
-      "caption": "樂天世界塔 — 高聳於松坡的韓國第一高樓"
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+      "location": "景福宮 + 王宮守衛換崗儀式",
+      "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 7",
+      "caption": "景福宮 + 王宮守衛換崗儀式 — photo 7"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
+      "location": "景福宮 + 王宮守衛換崗儀式",
+      "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 8",
+      "caption": "景福宮 + 王宮守衛換崗儀式 — photo 8"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+      "location": "景福宮 + 王宮守衛換崗儀式",
+      "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 9",
+      "caption": "景福宮 + 王宮守衛換崗儀式 — photo 9"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-2.webp",
+      "location": "景福宮 + 王宮守衛換崗儀式",
+      "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 10",
+      "caption": "景福宮 + 王宮守衛換崗儀式 — photo 10"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10-2.webp",
+      "location": "景福宮 + 王宮守衛換崗儀式",
+      "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 11",
+      "caption": "景福宮 + 王宮守衛換崗儀式 — photo 11"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11-2.webp",
+      "location": "景福宮 + 王宮守衛換崗儀式",
+      "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 12",
+      "caption": "景福宮 + 王宮守衛換崗儀式 — photo 12"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/photo-004.webp",
+      "location": "景福宮 + 王宮守衛換崗儀式",
+      "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 13",
+      "caption": "景福宮 + 王宮守衛換崗儀式 — photo 13"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-2.webp",
+      "location": "北村韓屋村 + 仁寺洞",
+      "alt": "北村韓屋村 + 仁寺洞 — gallery image 2",
+      "caption": "北村韓屋村 + 仁寺洞 — photo 2"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-57-27.webp",
+      "location": "N首爾塔（南山）",
+      "alt": "N首爾塔（南山） — on-route photo",
+      "caption": "N首爾塔（南山）"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-06.webp",
+      "location": "N首爾塔（南山）",
+      "alt": "N首爾塔（南山） — on-route photo",
+      "caption": "N首爾塔（南山）"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/n-seoul-tower/chatgpt-image-2026-5-11-12-58-10.webp",
+      "location": "N首爾塔（南山）",
+      "alt": "N首爾塔（南山） — on-route photo",
+      "caption": "N首爾塔（南山）"
     }
   ],
   "itineraryStops": [
@@ -373,6 +453,22 @@
         {
           "url": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/photo-004.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -447,6 +543,38 @@
           "location": "景福宮 + 王宮守衛換崗儀式",
           "caption": "景福宮 + 王宮守衛換崗儀式 — photo 9",
           "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-2.webp",
+          "location": "景福宮 + 王宮守衛換崗儀式",
+          "caption": "景福宮 + 王宮守衛換崗儀式 — photo 10",
+          "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10-2.webp",
+          "location": "景福宮 + 王宮守衛換崗儀式",
+          "caption": "景福宮 + 王宮守衛換崗儀式 — photo 11",
+          "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11-2.webp",
+          "location": "景福宮 + 王宮守衛換崗儀式",
+          "caption": "景福宮 + 王宮守衛換崗儀式 — photo 12",
+          "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 12"
+        },
+        {
+          "id": 13,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/photo-004.webp",
+          "location": "景福宮 + 王宮守衛換崗儀式",
+          "caption": "景福宮 + 王宮守衛換崗儀式 — photo 13",
+          "alt": "景福宮 + 王宮守衛換崗儀式 — gallery image 13"
         }
       ]
     },
@@ -517,6 +645,10 @@
         {
           "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -527,6 +659,14 @@
           "location": "北村韓屋村 + 仁寺洞",
           "caption": "北村韓屋村 + 仁寺洞 — photo 1",
           "alt": "北村韓屋村 + 仁寺洞 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-2.webp",
+          "location": "北村韓屋村 + 仁寺洞",
+          "caption": "北村韓屋村 + 仁寺洞 — photo 2",
+          "alt": "北村韓屋村 + 仁寺洞 — gallery image 2"
         }
       ]
     },

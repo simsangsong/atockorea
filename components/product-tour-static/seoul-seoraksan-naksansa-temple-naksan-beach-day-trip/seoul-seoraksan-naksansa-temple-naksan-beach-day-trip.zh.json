@@ -14,7 +14,7 @@
       "洛山海水浴场游览",
       "雪岳山洛山寺一日游"
     ],
-    "ogImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "首尔出发 江原道一日游 · 雪岳山 + 洛山寺 + 洛山海水浴场 | AtoC Korea",
     "description": "从首尔出发的大巴一日游，游览韩国最具代表性的国家公园（雪岳山）、矗立于海崖之上的千年古寺（洛山寺），以及松林环抱的洛山海水浴场——在东海海岸体验一段从山脉到大海的精彩旅程。"
   },
@@ -143,56 +143,56 @@
       "type": "photo",
       "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "location": "雪岳山国家公园",
-      "alt": "雪岳山国家公园 — 山脊全景",
-      "caption": "雪岳山国家公园 — 花岗岩山脊全景"
+      "alt": "雪岳山国家公园 — on-route photo",
+      "caption": "雪岳山国家公园"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
-      "location": "雪岳山国家公园",
-      "alt": "雪岳山国家公园 — 新兴寺与蔚山岩",
-      "caption": "雪岳山国家公园 — 山下新兴寺与花岗岩峰"
+      "src": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
+      "location": "洛山寺",
+      "alt": "洛山寺 — on-route photo",
+      "caption": "洛山寺"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
-      "location": "洛山寺",
-      "alt": "洛山寺 — 俯瞰东海的义湘台",
-      "caption": "洛山寺 — 临海悬崖上的义湘台"
+      "src": "/images/tours/naksan-beach/naksan-beach-sign.webp",
+      "location": "洛山海滩",
+      "alt": "洛山海滩 — on-route photo",
+      "caption": "洛山海滩"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/naksansa-temple/naksansa-main-hall.webp",
-      "location": "洛山寺",
-      "alt": "洛山寺 — 圆通宝殿正殿",
-      "caption": "洛山寺 — 彩绘华丽的圆通宝殿"
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "雪岳山国家公园",
+      "alt": "雪岳山国家公园 — on-route photo",
+      "caption": "雪岳山国家公园"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/naksansa-temple/naksansa-haesu-gwaneum.webp",
+      "src": "/images/tours/naksansa-temple/naksansa-main-hall.webp",
       "location": "洛山寺",
-      "alt": "洛山寺 — 凝望东海的海水观音像",
-      "caption": "洛山寺 — 守望大海的海水观音像"
+      "alt": "洛山寺 — on-route photo",
+      "caption": "洛山寺"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/naksan-beach/naksan-beach-sign.webp",
-      "location": "洛山海滩",
-      "alt": "洛山海滩 — 背倚松林的东海海滩",
-      "caption": "洛山海滩 — 细软沙滩与松树林"
+      "src": "/images/tours/naksansa-temple/naksansa-haesu-gwaneum.webp",
+      "location": "洛山寺",
+      "alt": "洛山寺 — on-route photo",
+      "caption": "洛山寺"
     },
     {
       "id": 7,
       "type": "photo",
       "src": "/images/tours/naksan-beach/naksan-beach-summer-crowd.webp",
       "location": "洛山海滩",
-      "alt": "洛山海滩 — 东海海岸线",
-      "caption": "洛山海滩 — 东海海岸线"
+      "alt": "洛山海滩 — on-route photo",
+      "caption": "洛山海滩"
     }
   ],
   "itineraryStops": [
@@ -769,7 +769,7 @@
     {
       "id": "admissions",
       "question": "门票是否包含在内？",
-      "answer": "包含——实际上三个景点均免费入场。雪岳山国家公园入场费已于近期取消，洛山寺自2023年5月起免费开放，洛山海水浴场无需门票。**唯一可选的付费项目为雪岳山缆车**（往返₩16,000），仅限现场购票，费用自理。"
+      "answer": "包含——实际上三个景点均免费入场。雪岳山国家公园入场费已于2023年5月取消，洛山寺自2023年5月起免费开放，洛山海水浴场无需门票。**唯一可选的付费项目为雪岳山缆车**（往返₩16,000），仅限现场购票，费用自理。"
     },
     {
       "id": "cable-car",

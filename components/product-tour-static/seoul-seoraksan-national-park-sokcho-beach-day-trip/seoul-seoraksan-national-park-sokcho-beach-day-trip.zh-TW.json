@@ -13,11 +13,11 @@
       "韓國東海岸",
       "雪嶽山束草一日遊"
     ],
-    "ogImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "首爾出發・雪嶽山國家公園與束草海灘一日遊｜AtoC Korea"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "雪嶽山與束草海灘一日遊",
     "priceLabel": "",
     "shortCardDescription": "從首爾出發的小團體一日遊，前往韓國最受歡迎的國家公園及東海岸城市束草。行程結合雪嶽山的花崗岩山峰、幽深山谷與佛教文化遺跡，以及束草的海鮮市場與海灘——這種山海共融的絕妙體驗，唯有東海岸方能實現。全程12小時，附英語導遊及來回接送服務。",
@@ -46,7 +46,7 @@
       "秋季楓葉",
       "一日遊"
     ],
-    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
+    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp"
   },
   "headlineLine1": "雪嶽山與束草",
   "headlineLine2": "海灘一日遊",
@@ -59,7 +59,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "imagePosition": "center 35%",
     "tagline": "韓國最具代表性的國家公園，搭配東海岸最親切的港口城市",
     "pills": [
@@ -138,9 +138,17 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "location": "雪嶽山國家公園",
-      "alt": "雪嶽山國家公園 — 途中攝影",
+      "alt": "雪嶽山國家公園 — on-route photo",
+      "caption": "雪嶽山國家公園"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "雪嶽山國家公園",
+      "alt": "雪嶽山國家公園 — on-route photo",
       "caption": "雪嶽山國家公園"
     }
   ],
@@ -206,7 +214,7 @@
       "visitBasics": {
         "hours": "公園全天開放；纜車通常08:00-17:30（視天氣而定）；神興寺06:00至日落",
         "closed": "全年開放；部分步道可能定期關閉以進行生態修復",
-        "admission": "公園入場免費（近期廢除前票價為3,500韓元）；纜車來回票成人16,000韓元／兒童12,000韓元（僅限現場購票，不接受預訂）",
+        "admission": "公園入場免費（2023年5月廢除前票價為3,500韓元）；纜車來回票成人16,000韓元／兒童12,000韓元（僅限現場購票，不接受預訂）",
         "walking": "山腳路線平坦易行（神興寺、纜車站一帶）；中等至困難健行路線（飛仙台3公里、蔚山岩陡峭石階、搖晃岩單程1.5小時）"
       },
       "convenience": {

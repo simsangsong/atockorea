@@ -14,12 +14,12 @@
       "Hueree Jeju hortensias",
       "tour azul Jeju Este"
     ],
-    "ogImage": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "Tour Hortensias Jeju Este: Festival y Seongsan | AtoC",
     "description": "Tour de hortensias de verano en el este de Jeju: Playa Hamdeok → Aldea Seongeup → Seongsan UNESCO. Junio-julio, grupo pequeño."
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+    "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "Hortensias Jeju Este",
     "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
     "shortCardDescription": "El azul del verano de Jeju en un día: Playa Hamdeok (aguas esmeralda) → Aldea Folclórica Seongeup (1423) → Seongsan Ilchulbong (triple UNESCO) → Ilchul Land (Festival de Hortensias + Cueva Micheon) → Parque Natural Hueree (el mayor espectáculo de hortensias del sur de Jeju). Solo temporada de hortensias (junio-agosto). Grupo pequeño, recogida en hotel.",
@@ -46,7 +46,7 @@
       "Seongsan UNESCO",
       "Grupo pequeño"
     ],
-    "heroImage": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp"
+    "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp"
   },
   "headlineLine1": "Hortensias Jeju Este",
   "headlineLine2": "Tour del Día",
@@ -59,7 +59,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+    "imageUrl": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "imagePosition": "center 35%",
     "tagline": "Hortensias en Ilchul Land, hortensias en Hueree, Seongsan UNESCO al fondo — el verano azul del este de Jeju",
     "pills": [
@@ -203,13 +203,45 @@
     {
       "id": 9,
       "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+      "location": "Playa Hamdeok Seoubong",
+      "alt": "Playa Hamdeok Seoubong — gallery image 5",
+      "caption": "Playa Hamdeok Seoubong — photo 5"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+      "location": "Playa Hamdeok Seoubong",
+      "alt": "Playa Hamdeok Seoubong — gallery image 6",
+      "caption": "Playa Hamdeok Seoubong — photo 6"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+      "location": "Playa Hamdeok Seoubong",
+      "alt": "Playa Hamdeok Seoubong — gallery image 7",
+      "caption": "Playa Hamdeok Seoubong — photo 7"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp",
+      "location": "Playa Hamdeok Seoubong",
+      "alt": "Playa Hamdeok Seoubong — gallery image 8",
+      "caption": "Playa Hamdeok Seoubong — photo 8"
+    },
+    {
+      "id": 13,
+      "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
       "location": "Aldea Folclórica Seongeup",
       "alt": "Aldea Folclórica Seongeup — gallery image 2",
       "caption": "Aldea Folclórica Seongeup — photo 2"
     },
     {
-      "id": 10,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
       "location": "Aldea Folclórica Seongeup",
@@ -217,7 +249,7 @@
       "caption": "Aldea Folclórica Seongeup — photo 3"
     },
     {
-      "id": 11,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
       "location": "Aldea Folclórica Seongeup",
@@ -225,7 +257,7 @@
       "caption": "Aldea Folclórica Seongeup — photo 4"
     },
     {
-      "id": 12,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
       "location": "Aldea Folclórica Seongeup",
@@ -233,7 +265,7 @@
       "caption": "Aldea Folclórica Seongeup — photo 5"
     },
     {
-      "id": 13,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
       "location": "Aldea Folclórica Seongeup",
@@ -241,7 +273,7 @@
       "caption": "Aldea Folclórica Seongeup — photo 6"
     },
     {
-      "id": 14,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
       "location": "Aldea Folclórica Seongeup",
@@ -249,7 +281,39 @@
       "caption": "Aldea Folclórica Seongeup — photo 7"
     },
     {
-      "id": 15,
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+      "location": "Aldea Folclórica Seongeup",
+      "alt": "Aldea Folclórica Seongeup — gallery image 8",
+      "caption": "Aldea Folclórica Seongeup — photo 8"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+      "location": "Aldea Folclórica Seongeup",
+      "alt": "Aldea Folclórica Seongeup — gallery image 9",
+      "caption": "Aldea Folclórica Seongeup — photo 9"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+      "location": "Aldea Folclórica Seongeup",
+      "alt": "Aldea Folclórica Seongeup — gallery image 10",
+      "caption": "Aldea Folclórica Seongeup — photo 10"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
+      "location": "Aldea Folclórica Seongeup",
+      "alt": "Aldea Folclórica Seongeup — gallery image 11",
+      "caption": "Aldea Folclórica Seongeup — photo 11"
+    },
+    {
+      "id": 23,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
       "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
@@ -257,7 +321,7 @@
       "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 2"
     },
     {
-      "id": 16,
+      "id": 24,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
       "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
@@ -265,7 +329,7 @@
       "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 3"
     },
     {
-      "id": 17,
+      "id": 25,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
       "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
@@ -273,7 +337,7 @@
       "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 4"
     },
     {
-      "id": 18,
+      "id": 26,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
       "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
@@ -281,7 +345,55 @@
       "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 5"
     },
     {
-      "id": 19,
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+      "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+      "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 6",
+      "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 6"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+      "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+      "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 7",
+      "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 7"
+    },
+    {
+      "id": 29,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+      "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+      "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 8",
+      "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 8"
+    },
+    {
+      "id": 30,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+      "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+      "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 9",
+      "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 9"
+    },
+    {
+      "id": 31,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+      "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+      "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 10",
+      "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 10"
+    },
+    {
+      "id": 32,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+      "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+      "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 11",
+      "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 11"
+    },
+    {
+      "id": 33,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
       "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
@@ -289,7 +401,7 @@
       "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 2"
     },
     {
-      "id": 20,
+      "id": 34,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
       "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
@@ -297,7 +409,7 @@
       "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 3"
     },
     {
-      "id": 21,
+      "id": 35,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
       "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
@@ -305,7 +417,7 @@
       "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 4"
     },
     {
-      "id": 22,
+      "id": 36,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
       "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
@@ -313,7 +425,7 @@
       "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 5"
     },
     {
-      "id": 23,
+      "id": 37,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
       "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
@@ -321,7 +433,7 @@
       "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 6"
     },
     {
-      "id": 24,
+      "id": 38,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
       "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
@@ -329,7 +441,7 @@
       "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 7"
     },
     {
-      "id": 25,
+      "id": 39,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
       "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
@@ -337,7 +449,7 @@
       "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 8"
     },
     {
-      "id": 26,
+      "id": 40,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
       "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
@@ -345,7 +457,7 @@
       "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 9"
     },
     {
-      "id": 27,
+      "id": 41,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
       "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
@@ -353,7 +465,63 @@
       "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 10"
     },
     {
-      "id": 28,
+      "id": 42,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+      "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+      "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 11",
+      "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 11"
+    },
+    {
+      "id": 43,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+      "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+      "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 12",
+      "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 12"
+    },
+    {
+      "id": 44,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+      "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+      "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 13",
+      "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 13"
+    },
+    {
+      "id": 45,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+      "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+      "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 14",
+      "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 14"
+    },
+    {
+      "id": 46,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+      "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+      "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 15",
+      "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 15"
+    },
+    {
+      "id": 47,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+      "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+      "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 16",
+      "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 16"
+    },
+    {
+      "id": 48,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+      "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+      "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 17",
+      "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 17"
+    },
+    {
+      "id": 49,
       "type": "photo",
       "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43.webp",
       "location": "Parque Natural Hueree — Hortensias del sur",
@@ -361,12 +529,36 @@
       "caption": "Parque Natural Hueree — Hortensias del sur — photo 2"
     },
     {
-      "id": 29,
+      "id": 50,
       "type": "photo",
       "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46.webp",
       "location": "Parque Natural Hueree — Hortensias del sur",
       "alt": "Parque Natural Hueree — Hortensias del sur — gallery image 3",
       "caption": "Parque Natural Hueree — Hortensias del sur — photo 3"
+    },
+    {
+      "id": 51,
+      "type": "photo",
+      "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23-2.webp",
+      "location": "Parque Natural Hueree — Hortensias del sur",
+      "alt": "Parque Natural Hueree — Hortensias del sur — gallery image 4",
+      "caption": "Parque Natural Hueree — Hortensias del sur — photo 4"
+    },
+    {
+      "id": 52,
+      "type": "photo",
+      "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43-2.webp",
+      "location": "Parque Natural Hueree — Hortensias del sur",
+      "alt": "Parque Natural Hueree — Hortensias del sur — gallery image 5",
+      "caption": "Parque Natural Hueree — Hortensias del sur — photo 5"
+    },
+    {
+      "id": 53,
+      "type": "photo",
+      "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46-2.webp",
+      "location": "Parque Natural Hueree — Hortensias del sur",
+      "alt": "Parque Natural Hueree — Hortensias del sur — gallery image 6",
+      "caption": "Parque Natural Hueree — Hortensias del sur — photo 6"
     }
   ],
   "itineraryStops": [
@@ -473,6 +665,22 @@
         {
           "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -507,6 +715,38 @@
           "location": "Playa Hamdeok Seoubong",
           "caption": "Playa Hamdeok Seoubong — photo 4",
           "alt": "Playa Hamdeok Seoubong — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+          "location": "Playa Hamdeok Seoubong",
+          "caption": "Playa Hamdeok Seoubong — photo 5",
+          "alt": "Playa Hamdeok Seoubong — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+          "location": "Playa Hamdeok Seoubong",
+          "caption": "Playa Hamdeok Seoubong — photo 6",
+          "alt": "Playa Hamdeok Seoubong — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+          "location": "Playa Hamdeok Seoubong",
+          "caption": "Playa Hamdeok Seoubong — photo 7",
+          "alt": "Playa Hamdeok Seoubong — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp",
+          "location": "Playa Hamdeok Seoubong",
+          "caption": "Playa Hamdeok Seoubong — photo 8",
+          "alt": "Playa Hamdeok Seoubong — gallery image 8"
         }
       ]
     },
@@ -591,6 +831,22 @@
         {
           "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -649,6 +905,38 @@
           "location": "Aldea Folclórica Seongeup",
           "caption": "Aldea Folclórica Seongeup — photo 7",
           "alt": "Aldea Folclórica Seongeup — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+          "location": "Aldea Folclórica Seongeup",
+          "caption": "Aldea Folclórica Seongeup — photo 8",
+          "alt": "Aldea Folclórica Seongeup — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+          "location": "Aldea Folclórica Seongeup",
+          "caption": "Aldea Folclórica Seongeup — photo 9",
+          "alt": "Aldea Folclórica Seongeup — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+          "location": "Aldea Folclórica Seongeup",
+          "caption": "Aldea Folclórica Seongeup — photo 10",
+          "alt": "Aldea Folclórica Seongeup — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
+          "location": "Aldea Folclórica Seongeup",
+          "caption": "Aldea Folclórica Seongeup — photo 11",
+          "alt": "Aldea Folclórica Seongeup — gallery image 11"
         }
       ]
     },
@@ -763,6 +1051,30 @@
         {
           "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -805,6 +1117,54 @@
           "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
           "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 5",
           "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+          "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+          "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 6",
+          "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+          "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+          "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 7",
+          "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+          "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+          "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 8",
+          "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+          "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+          "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 9",
+          "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+          "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+          "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 10",
+          "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+          "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+          "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 11",
+          "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 11"
         }
       ],
       "liveStatusWidget": "haenyeo"
@@ -911,6 +1271,34 @@
         {
           "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -993,6 +1381,62 @@
           "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
           "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 10",
           "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+          "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+          "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 11",
+          "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+          "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+          "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 12",
+          "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 12"
+        },
+        {
+          "id": 13,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+          "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+          "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 13",
+          "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 13"
+        },
+        {
+          "id": 14,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+          "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+          "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 14",
+          "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 14"
+        },
+        {
+          "id": 15,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+          "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+          "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 15",
+          "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 15"
+        },
+        {
+          "id": 16,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+          "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+          "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 16",
+          "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 16"
+        },
+        {
+          "id": 17,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+          "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+          "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 17",
+          "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 17"
         }
       ]
     },
@@ -1063,6 +1507,18 @@
         {
           "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -1089,6 +1545,30 @@
           "location": "Parque Natural Hueree — Hortensias del sur",
           "caption": "Parque Natural Hueree — Hortensias del sur — photo 3",
           "alt": "Parque Natural Hueree — Hortensias del sur — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23-2.webp",
+          "location": "Parque Natural Hueree — Hortensias del sur",
+          "caption": "Parque Natural Hueree — Hortensias del sur — photo 4",
+          "alt": "Parque Natural Hueree — Hortensias del sur — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43-2.webp",
+          "location": "Parque Natural Hueree — Hortensias del sur",
+          "caption": "Parque Natural Hueree — Hortensias del sur — photo 5",
+          "alt": "Parque Natural Hueree — Hortensias del sur — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46-2.webp",
+          "location": "Parque Natural Hueree — Hortensias del sur",
+          "caption": "Parque Natural Hueree — Hortensias del sur — photo 6",
+          "alt": "Parque Natural Hueree — Hortensias del sur — gallery image 6"
         }
       ]
     },
@@ -2128,7 +2608,11 @@
               "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
               "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
               "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp"
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp"
             ],
             "imageCredits": [
               {
@@ -2145,6 +2629,22 @@
               },
               {
                 "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2180,6 +2680,38 @@
                 "location": "Playa Hamdeok Seoubong",
                 "caption": "Playa Hamdeok Seoubong — photo 4",
                 "alt": "Playa Hamdeok Seoubong — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+                "location": "Playa Hamdeok Seoubong",
+                "caption": "Playa Hamdeok Seoubong — photo 5",
+                "alt": "Playa Hamdeok Seoubong — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+                "location": "Playa Hamdeok Seoubong",
+                "caption": "Playa Hamdeok Seoubong — photo 6",
+                "alt": "Playa Hamdeok Seoubong — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+                "location": "Playa Hamdeok Seoubong",
+                "caption": "Playa Hamdeok Seoubong — photo 7",
+                "alt": "Playa Hamdeok Seoubong — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp",
+                "location": "Playa Hamdeok Seoubong",
+                "caption": "Playa Hamdeok Seoubong — photo 8",
+                "alt": "Playa Hamdeok Seoubong — gallery image 8"
               }
             ]
           },
@@ -2219,7 +2751,11 @@
               "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
               "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
               "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
-              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp"
             ],
             "imageCredits": [
               {
@@ -2248,6 +2784,22 @@
               },
               {
                 "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2307,6 +2859,38 @@
                 "location": "Aldea Folclórica Seongeup",
                 "caption": "Aldea Folclórica Seongeup — photo 7",
                 "alt": "Aldea Folclórica Seongeup — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+                "location": "Aldea Folclórica Seongeup",
+                "caption": "Aldea Folclórica Seongeup — photo 8",
+                "alt": "Aldea Folclórica Seongeup — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+                "location": "Aldea Folclórica Seongeup",
+                "caption": "Aldea Folclórica Seongeup — photo 9",
+                "alt": "Aldea Folclórica Seongeup — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+                "location": "Aldea Folclórica Seongeup",
+                "caption": "Aldea Folclórica Seongeup — photo 10",
+                "alt": "Aldea Folclórica Seongeup — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
+                "location": "Aldea Folclórica Seongeup",
+                "caption": "Aldea Folclórica Seongeup — photo 11",
+                "alt": "Aldea Folclórica Seongeup — gallery image 11"
               }
             ]
           },
@@ -2367,7 +2951,13 @@
               "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
               "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
               "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+              "/images/tours/seongsan-ilchulbong/photo-006.webp"
             ],
             "imageCredits": [
               {
@@ -2388,6 +2978,30 @@
               },
               {
                 "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2431,6 +3045,54 @@
                 "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
                 "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 5",
                 "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+                "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+                "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 6",
+                "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+                "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+                "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 7",
+                "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+                "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+                "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 8",
+                "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+                "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+                "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 9",
+                "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+                "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+                "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 10",
+                "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+                "location": "Seongsan Ilchulbong (triple Patrimonio UNESCO)",
+                "caption": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — photo 11",
+                "alt": "Seongsan Ilchulbong (triple Patrimonio UNESCO) — gallery image 11"
               }
             ]
           },
@@ -2473,7 +3135,14 @@
               "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
               "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
               "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp"
+              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp"
             ],
             "imageCredits": [
               {
@@ -2514,6 +3183,34 @@
               },
               {
                 "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2597,6 +3294,62 @@
                 "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
                 "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 10",
                 "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+                "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+                "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 11",
+                "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 11"
+              },
+              {
+                "id": 12,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+                "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+                "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 12",
+                "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 12"
+              },
+              {
+                "id": 13,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+                "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+                "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 13",
+                "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 13"
+              },
+              {
+                "id": 14,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+                "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+                "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 14",
+                "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 14"
+              },
+              {
+                "id": 15,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+                "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+                "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 15",
+                "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 15"
+              },
+              {
+                "id": 16,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+                "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+                "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 16",
+                "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 16"
+              },
+              {
+                "id": 17,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+                "location": "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+                "caption": "Ilchul Land — Festival de Hortensias + Cueva Micheon — photo 17",
+                "alt": "Ilchul Land — Festival de Hortensias + Cueva Micheon — gallery image 17"
               }
             ]
           },
@@ -2632,7 +3385,10 @@
             "images": [
               "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
               "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43.webp",
-              "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46.webp"
+              "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46.webp",
+              "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23-2.webp",
+              "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43-2.webp",
+              "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46-2.webp"
             ],
             "imageCredits": [
               {
@@ -2645,6 +3401,18 @@
               },
               {
                 "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2672,6 +3440,30 @@
                 "location": "Parque Natural Hueree — Hortensias del sur",
                 "caption": "Parque Natural Hueree — Hortensias del sur — photo 3",
                 "alt": "Parque Natural Hueree — Hortensias del sur — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23-2.webp",
+                "location": "Parque Natural Hueree — Hortensias del sur",
+                "caption": "Parque Natural Hueree — Hortensias del sur — photo 4",
+                "alt": "Parque Natural Hueree — Hortensias del sur — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43-2.webp",
+                "location": "Parque Natural Hueree — Hortensias del sur",
+                "caption": "Parque Natural Hueree — Hortensias del sur — photo 5",
+                "alt": "Parque Natural Hueree — Hortensias del sur — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46-2.webp",
+                "location": "Parque Natural Hueree — Hortensias del sur",
+                "caption": "Parque Natural Hueree — Hortensias del sur — photo 6",
+                "alt": "Parque Natural Hueree — Hortensias del sur — gallery image 6"
               }
             ]
           },

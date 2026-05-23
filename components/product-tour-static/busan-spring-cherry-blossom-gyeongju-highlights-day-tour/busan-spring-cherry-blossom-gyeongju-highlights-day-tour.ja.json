@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "釜山発・慶州桜日帰りツアー（3月28日〜4月10日）| AtoC Korea",
     "metaDescription": "釜山発・慶州への8.5時間・春の桜シャトルツアー。普門湖、大陵苑石垣道、仏国寺。3月28日〜4月10日限定運行。",
-    "ogImage": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+    "ogImage": "https://www.atockorea.com/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
     "primaryKeywords": [
       "釜山発・慶州桜ツアー",
       "普門湖桜日帰りツアー",
@@ -32,8 +32,8 @@
       "ユネスコ世界遺産",
       "釜山発着"
     ],
-    "heroImage": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
-    "thumbnail": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+    "heroImage": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
+    "thumbnail": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
     "priceLabel": "",
     "shortCardDescription": "慶州の主要な春の桜スポットを巡る、釜山発8.5時間のシャトルツアー。基本ルートは、普門湖（桜並木が続く8kmの湖畔散策）、瞻星台＋大陵苑の歴史エリア（ユネスコ・慶州歴史地区）、仏国寺（ユネスコ世界遺産・4月中旬には八重桜が見頃を迎える）をカバーします。当日の開花情報をもとに、毎朝2〜3か所の立ち寄りスポットを確定します。ツアーは3月28日〜4月10日限定運行——開花が大幅に遅れる、またはすでに終了している場合は全額返金いたします。",
     "tags": [
@@ -52,7 +52,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+    "imageUrl": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
     "imagePosition": "center 50%",
     "tagline": "普門湖の8kmにわたる桜のトンネルから、大陵苑の石垣道に咲く桜、そして仏国寺の4月下旬の八重桜まで——慶州の主要な春の開花スポットを8時間半かけて巡ります。その日のルートは当朝の開花情報をもとに確定します。",
     "pills": [
@@ -132,42 +132,98 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
-      "location": "瞻星台天文台＋大陵苑古墳群",
-      "alt": "瞻星台天文台＋大陵苑古墳群 ― ギャラリー画像 1",
-      "caption": "瞻星台天文台＋大陵苑古墳群 ― 写真 1"
+      "src": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
+      "location": "普門湖（桜スポットの目玉）",
+      "alt": "普門湖（桜スポットの目玉） — on-route photo",
+      "caption": "普門湖（桜スポットの目玉）"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
-      "location": "仏国寺（ユネスコ世界遺産）",
-      "alt": "仏国寺（ユネスコ世界遺産）― ギャラリー画像 1",
-      "caption": "仏国寺（ユネスコ世界遺産）— 写真1"
+      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+      "location": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群",
+      "alt": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群 — gallery image 1",
+      "caption": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群 — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
-      "location": "瞻星台天文台＋大陵苑古墳群",
-      "alt": "瞻星台天文台＋大陵苑古墳群 — ギャラリー画像2",
-      "caption": "瞻星台天文台＋大陵苑古墳群 — 写真2"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "location": "仏国寺（ユネスコ世界遺産）",
+      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 1",
+      "caption": "仏国寺（ユネスコ世界遺産） — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
-      "location": "仏国寺（ユネスコ世界遺産）",
-      "alt": "仏国寺（ユネスコ世界遺産）— ギャラリー画像2",
-      "caption": "仏国寺（ユネスコ世界遺産）— 写真2"
+      "src": "/images/itinerary/bomun-lake-cherry-blossoms-with-coasters.webp",
+      "location": "普門湖（桜スポットの目玉）",
+      "alt": "普門湖（桜スポットの目玉） — on-route photo",
+      "caption": "普門湖（桜スポットの目玉）"
     },
     {
       "id": 5,
       "type": "photo",
+      "src": "/images/itinerary/bomun-lake-lakeside-pavilion-reflection.webp",
+      "location": "普門湖（桜スポットの目玉）",
+      "alt": "普門湖（桜スポットの目玉） — on-route photo",
+      "caption": "普門湖（桜スポットの目玉）"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
+      "location": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群",
+      "alt": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群 — gallery image 2",
+      "caption": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群 — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21-2.webp",
+      "location": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群",
+      "alt": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群 — gallery image 3",
+      "caption": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群 — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26-2.webp",
+      "location": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群",
+      "alt": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群 — gallery image 4",
+      "caption": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群 — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+      "location": "仏国寺（ユネスコ世界遺産）",
+      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 2",
+      "caption": "仏国寺（ユネスコ世界遺産） — photo 2"
+    },
+    {
+      "id": 10,
+      "type": "photo",
       "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
       "location": "仏国寺（ユネスコ世界遺産）",
-      "alt": "仏国寺（ユネスコ世界遺産）— ギャラリー画像3",
-      "caption": "仏国寺（ユネスコ世界遺産）— 写真3"
+      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 3",
+      "caption": "仏国寺（ユネスコ世界遺産） — photo 3"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/bulguksa-temple/photo-001.webp",
+      "location": "仏国寺（ユネスコ世界遺産）",
+      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 4",
+      "caption": "仏国寺（ユネスコ世界遺産） — photo 4"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/bulguksa-temple/photo-002.webp",
+      "location": "仏国寺（ユネスコ世界遺産）",
+      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 5",
+      "caption": "仏国寺（ユネスコ世界遺産） — photo 5"
     }
   ],
   "itineraryStops": [
@@ -222,7 +278,7 @@
         "**BTS「Butterfly」ミュージックビデオ**のロケ地",
         "HICOコンベンションセンターにて**2025年APECサミットを開催**",
         "湖へのアクセスは無料；ペダルボート／タンデム自転車は別途約₩10,000／3時間",
-        "**普門湖畔のHICOコンベンションセンターが2025年APECサミットを開催** — 1979年4月6日に開業した韓国初の総合リゾートとしての地位を改めて世界に示した近年の国際的マイルストーン"
+        "**普門湖畔のHICOコンベンションセンターが2025年APECサミットを開催** — 1979年4月6日に開業した韓国初の総合リゾートとしての地位を改めて世界に示した2025年の国際的マイルストーン"
       ],
       "timeUsed": [
         "ホバン広場または普門亭付近にバス下車（約5分）",
@@ -343,6 +399,14 @@
         {
           "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -350,17 +414,33 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
-          "location": "瞻星台＋大陵苑古墳群",
-          "caption": "瞻星台＋大陵苑古墳群 — 写真1",
-          "alt": "瞻星台＋大陵苑古墳群 — ギャラリー画像1"
+          "location": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群",
+          "caption": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群 — photo 1",
+          "alt": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26.webp",
-          "location": "瞻星台＋大陵苑古墳群",
-          "caption": "瞻星台＋大陵苑古墳群 — 写真2",
-          "alt": "瞻星台＋大陵苑古墳群 — ギャラリー画像2"
+          "location": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群",
+          "caption": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群 — photo 2",
+          "alt": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21-2.webp",
+          "location": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群",
+          "caption": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群 — photo 3",
+          "alt": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-26-2.webp",
+          "location": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群",
+          "caption": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群 — photo 4",
+          "alt": "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群 — gallery image 4"
         }
       ]
     },
@@ -469,6 +549,14 @@
         {
           "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/photo-001.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/photo-002.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -477,24 +565,40 @@
           "type": "photo",
           "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
           "location": "仏国寺（ユネスコ世界遺産）",
-          "caption": "仏国寺（ユネスコ世界遺産）― 写真1",
-          "alt": "仏国寺（ユネスコ世界遺産）― ギャラリー画像1"
+          "caption": "仏国寺（ユネスコ世界遺産） — photo 1",
+          "alt": "仏国寺（ユネスコ世界遺産） — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
           "location": "仏国寺（ユネスコ世界遺産）",
-          "caption": "仏国寺（ユネスコ世界遺産）― 写真2",
-          "alt": "仏国寺（ユネスコ世界遺産）― ギャラリー画像2"
+          "caption": "仏国寺（ユネスコ世界遺産） — photo 2",
+          "alt": "仏国寺（ユネスコ世界遺産） — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
           "location": "仏国寺（ユネスコ世界遺産）",
-          "caption": "仏国寺（ユネスコ世界遺産）― 写真3",
-          "alt": "仏国寺（ユネスコ世界遺産）― ギャラリー画像3"
+          "caption": "仏国寺（ユネスコ世界遺産） — photo 3",
+          "alt": "仏国寺（ユネスコ世界遺産） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/photo-001.webp",
+          "location": "仏国寺（ユネスコ世界遺産）",
+          "caption": "仏国寺（ユネスコ世界遺産） — photo 4",
+          "alt": "仏国寺（ユネスコ世界遺産） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/photo-002.webp",
+          "location": "仏国寺（ユネスコ世界遺産）",
+          "caption": "仏国寺（ユネスコ世界遺産） — photo 5",
+          "alt": "仏国寺（ユネスコ世界遺産） — gallery image 5"
         }
       ]
     },
@@ -1308,7 +1412,10 @@
             "images": [
               "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
               "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
-              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp"
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47-2.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03-2.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07-2.webp"
             ],
             "imageCredits": [
               {
@@ -1322,6 +1429,18 @@
               {
                 "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1330,24 +1449,48 @@
                 "type": "photo",
                 "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
                 "location": "アホプサン竹林",
-                "caption": "アホプサン竹林 — 写真1",
-                "alt": "アホプサン竹林 — ギャラリー画像1"
+                "caption": "アホプサン竹林 — photo 1",
+                "alt": "アホプサン竹林 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
                 "location": "アホプサン竹林",
-                "caption": "アホプサン竹林 — 写真2",
-                "alt": "アホプサン竹林 — ギャラリー画像2"
+                "caption": "アホプサン竹林 — photo 2",
+                "alt": "アホプサン竹林 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
                 "location": "アホプサン竹林",
-                "caption": "アホプサン竹林 — 写真3",
-                "alt": "アホプサン竹林 — ギャラリー画像3"
+                "caption": "アホプサン竹林 — photo 3",
+                "alt": "アホプサン竹林 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47-2.webp",
+                "location": "アホプサン竹林",
+                "caption": "アホプサン竹林 — photo 4",
+                "alt": "アホプサン竹林 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03-2.webp",
+                "location": "アホプサン竹林",
+                "caption": "アホプサン竹林 — photo 5",
+                "alt": "アホプサン竹林 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07-2.webp",
+                "location": "アホプサン竹林",
+                "caption": "アホプサン竹林 — photo 6",
+                "alt": "アホプサン竹林 — gallery image 6"
               }
             ]
           },
@@ -1378,7 +1521,9 @@
             "images": [
               "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
               "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
-              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+              "/images/tours/bulguksa-temple/photo-001.webp",
+              "/images/tours/bulguksa-temple/photo-002.webp"
             ],
             "imageCredits": [
               {
@@ -1392,6 +1537,14 @@
               {
                 "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/photo-001.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/photo-002.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1400,24 +1553,40 @@
                 "type": "photo",
                 "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
                 "location": "仏国寺（ユネスコ世界遺産）",
-                "caption": "仏国寺（ユネスコ世界遺産）— 写真1",
-                "alt": "仏国寺（ユネスコ世界遺産）— ギャラリー画像1"
+                "caption": "仏国寺（ユネスコ世界遺産） — photo 1",
+                "alt": "仏国寺（ユネスコ世界遺産） — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
                 "location": "仏国寺（ユネスコ世界遺産）",
-                "caption": "仏国寺（ユネスコ世界遺産）— 写真2",
-                "alt": "仏国寺（ユネスコ世界遺産）— ギャラリー画像2"
+                "caption": "仏国寺（ユネスコ世界遺産） — photo 2",
+                "alt": "仏国寺（ユネスコ世界遺産） — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
                 "location": "仏国寺（ユネスコ世界遺産）",
-                "caption": "仏国寺（ユネスコ世界遺産）— 写真3",
-                "alt": "仏国寺（ユネスコ世界遺産）— ギャラリー画像3"
+                "caption": "仏国寺（ユネスコ世界遺産） — photo 3",
+                "alt": "仏国寺（ユネスコ世界遺産） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/photo-001.webp",
+                "location": "仏国寺（ユネスコ世界遺産）",
+                "caption": "仏国寺（ユネスコ世界遺産） — photo 4",
+                "alt": "仏国寺（ユネスコ世界遺産） — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/photo-002.webp",
+                "location": "仏国寺（ユネスコ世界遺産）",
+                "caption": "仏国寺（ユネスコ世界遺産） — photo 5",
+                "alt": "仏国寺（ユネスコ世界遺産） — gallery image 5"
               }
             ]
           },
@@ -1533,7 +1702,13 @@
               "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
               "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
               "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
-              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp"
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+              "/images/tours/gyochon-hanok-village/photo-001.webp",
+              "/images/tours/gyochon-hanok-village/photo-002.webp",
+              "/images/tours/gyochon-hanok-village/photo-003.webp",
+              "/images/tours/gyochon-hanok-village/photo-004.webp",
+              "/images/tours/gyochon-hanok-village/photo-005.webp",
+              "/images/tours/gyochon-hanok-village/photo-006.webp"
             ],
             "imageCredits": [
               {
@@ -1551,6 +1726,30 @@
               {
                 "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-001.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-002.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-003.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-004.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-005.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-006.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1558,33 +1757,81 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
-                "location": "校村韓屋村（キョチョン・ハノクマウル）",
-                "caption": "校村韓屋村 — 写真1",
-                "alt": "校村韓屋村 — ギャラリー画像1"
+                "location": "校村韓屋村",
+                "caption": "校村韓屋村 — photo 1",
+                "alt": "校村韓屋村 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
                 "location": "校村韓屋村",
-                "caption": "校村韓屋村 — 写真2",
-                "alt": "校村韓屋村 — ギャラリー画像2"
+                "caption": "校村韓屋村 — photo 2",
+                "alt": "校村韓屋村 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
                 "location": "校村韓屋村",
-                "caption": "校村韓屋村 — 写真3",
-                "alt": "校村韓屋村 — ギャラリー画像3"
+                "caption": "校村韓屋村 — photo 3",
+                "alt": "校村韓屋村 — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
                 "location": "校村韓屋村",
-                "caption": "校村韓屋村 — 写真4",
-                "alt": "校村韓屋村 — ギャラリー画像4"
+                "caption": "校村韓屋村 — photo 4",
+                "alt": "校村韓屋村 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-001.webp",
+                "location": "校村韓屋村",
+                "caption": "校村韓屋村 — photo 5",
+                "alt": "校村韓屋村 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-002.webp",
+                "location": "校村韓屋村",
+                "caption": "校村韓屋村 — photo 6",
+                "alt": "校村韓屋村 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-003.webp",
+                "location": "校村韓屋村",
+                "caption": "校村韓屋村 — photo 7",
+                "alt": "校村韓屋村 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-004.webp",
+                "location": "校村韓屋村",
+                "caption": "校村韓屋村 — photo 8",
+                "alt": "校村韓屋村 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-005.webp",
+                "location": "校村韓屋村",
+                "caption": "校村韓屋村 — photo 9",
+                "alt": "校村韓屋村 — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-006.webp",
+                "location": "校村韓屋村",
+                "caption": "校村韓屋村 — photo 10",
+                "alt": "校村韓屋村 — gallery image 10"
               }
             ]
           },
@@ -1606,7 +1853,39 @@
               "is_attraction": true,
               "fee_krw": 0,
               "illumination": "sunset to ≈22:00 daily"
-            }
+            },
+            "images": [
+              "/images/tours/woljeonggyo/photo-001.webp",
+              "/images/tours/woljeonggyo/photo-002.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/woljeonggyo/photo-001.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/woljeonggyo/photo-002.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/woljeonggyo/photo-001.webp",
+                "location": "月精橋（ウォルジョンギョ）",
+                "caption": "月精橋（ウォルジョンギョ） — photo 1",
+                "alt": "月精橋（ウォルジョンギョ） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/woljeonggyo/photo-002.webp",
+                "location": "月精橋（ウォルジョンギョ）",
+                "caption": "月精橋（ウォルジョンギョ） — photo 2",
+                "alt": "月精橋（ウォルジョンギョ） — gallery image 2"
+              }
+            ]
           },
           {
             "number": 8,

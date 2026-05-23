@@ -174,6 +174,47 @@ const FOLDER_MAP = {
     poiKeys: [],
     skipJson: true,
   },
+  /** 2026-05-24 atoc-photos batch — new POIs / locations */
+  한림공원: { assetSlug: "hallim-park", poiKeys: ["hallim_park"] },
+  자갈치시장: {
+    assetSlug: "jagalchi-market",
+    poiKeys: ["jagalchi_market"],
+    nameGuard: /jagalchi|자갈치/i,
+  },
+  인사동: {
+    assetSlug: "insadong",
+    poiKeys: ["insadong"],
+    nameGuard: /insadong|인사동/i,
+  },
+  산방산: {
+    assetSlug: "sanbangsan",
+    poiKeys: ["sanbangsan_mountain", "yongmeori_coast"],
+  },
+  월정교: { assetSlug: "woljeonggyo", poiKeys: ["woljeonggyo_bridge"] },
+  약천사: { assetSlug: "yakcheonsa", poiKeys: ["yakcheonsa_temple"] },
+  설악산: {
+    assetSlug: "seoraksan",
+    poiKeys: ["seoraksan_national_park"],
+    nameGuard: /seoraksan|설악/i,
+  },
+  청산도: { assetSlug: "cheongsando", poiKeys: ["cheongsando_slow_road"] },
+  석촌호수: { assetSlug: "seokchon-lake", poiKeys: ["seokchon_lake"] },
+  진해여좌천: {
+    assetSlug: "jinhae-yeojwacheon",
+    poiKeys: ["jinhae_yeojwacheon"],
+  },
+  진해경화역: {
+    assetSlug: "jinhae-gyeonghwa-station",
+    poiKeys: ["jinhae_gyeonghwa_station"],
+  },
+  감귤농장: {
+    assetSlug: "jeju-tangerine-farm",
+    poiKeys: ["jeju_tangerine_picking_experience"],
+  },
+  /** 부산 매화 — placeholder asset for plum-blossom tour gallery; no POI yet. */
+  부산매화: { assetSlug: "busan-plum-blossom", poiKeys: [], skipJson: true },
+  /** 경주 황남빵 본점 — bakery/food spot, not a POI; assets only. */
+  황남빵: { assetSlug: "hwangnam-bread", poiKeys: [], skipJson: true },
 };
 
 const SKIP_FOLDERS = new Set(["미적용", "미배정", "새 폴더"]);

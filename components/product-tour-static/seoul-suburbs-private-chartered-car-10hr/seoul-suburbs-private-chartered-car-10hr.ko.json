@@ -1271,7 +1271,9 @@
             },
             "images": [
               "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02-2.webp",
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp"
             ],
             "imageCredits": [
               {
@@ -1281,6 +1283,14 @@
               {
                 "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1289,16 +1299,32 @@
                 "type": "photo",
                 "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
                 "location": "코스 3: 에버랜드 + 한국민속촌",
-                "caption": "코스 3: 에버랜드 + 한국민속촌 — 사진 1",
-                "alt": "코스 3: 에버랜드 + 한국민속촌 — 갤러리 이미지 1"
+                "caption": "코스 3: 에버랜드 + 한국민속촌 — photo 1",
+                "alt": "코스 3: 에버랜드 + 한국민속촌 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "location": "코스 3: 에버랜드 + 한국민속촌",
-                "caption": "코스 3: 에버랜드 + 한국민속촌 — 사진 2",
-                "alt": "루트 3: 에버랜드 + 한국민속촌 — 갤러리 이미지 2"
+                "caption": "코스 3: 에버랜드 + 한국민속촌 — photo 2",
+                "alt": "코스 3: 에버랜드 + 한국민속촌 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02-2.webp",
+                "location": "코스 3: 에버랜드 + 한국민속촌",
+                "caption": "코스 3: 에버랜드 + 한국민속촌 — photo 3",
+                "alt": "코스 3: 에버랜드 + 한국민속촌 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
+                "location": "코스 3: 에버랜드 + 한국민속촌",
+                "caption": "코스 3: 에버랜드 + 한국민속촌 — photo 4",
+                "alt": "코스 3: 에버랜드 + 한국민속촌 — gallery image 4"
               }
             ]
           },

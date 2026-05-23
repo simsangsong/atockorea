@@ -14,12 +14,12 @@
       "ソウル日帰りツアー 雪岳山",
       "雪岳山・南怡島 1日ツアー"
     ],
-    "ogImage": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "ソウル日帰りツアー · 雪岳山 ＋ 南怡島 ＋ 晨静苑 | AtoC Korea",
     "description": "ソウル発バスツアーで、韓国で最も名高い山（雪岳山）、最も写真に撮られる島（南怡島）、そして唯一無二のプライベートガーデン（晨静苑）を、わずか13時間で巡る日帰りツアーです。"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "ソウル発：雪岳山 ＋ 南怡島 ＋ 晨静苑",
     "priceLabel": "お一人様 US$59〜（通常$82、28%割引）",
     "shortCardDescription": "ソウル発13時間バス日帰りツアーで、韓国で最も写真に撮られる3大スポットを訪問：雪岳山国立公園（韓国唯一のユネスコ生物圏保護区）、南怡島（冬のソナタのメタセコイア並木）、晨静苑（5,000種類の植物を誇る韓国を代表するプライベート樹木園）。入場料すべて込み、英語ガイド付き、弘大入口駅または明洞駅よりピックアップ。",
@@ -43,7 +43,7 @@
       "入場料すべて込み",
       "13時間の行程"
     ],
-    "heroImage": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp"
+    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp"
   },
   "headlineLine1": "ソウル日帰りツアー",
   "headlineLine2": "雪岳山（ソラクサン）＋南怡島（ナミ島）＋モーニングカーム",
@@ -56,7 +56,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "imagePosition": "center 40%",
     "tagline": "ソウルから13時間のバスツアーで巡る、韓国で最も写真に収められる日帰りスポット3選：雪岳山、南怡島の並木道、そして晨静苑（ガーデン・オブ・モーニングカーム）",
     "pills": [
@@ -141,58 +141,114 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
-      "location": "南怡島（ナミソム）",
-      "alt": "南怡島 — ギャラリー画像 1",
-      "caption": "南怡島 — メタセコイア並木道"
+      "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "location": "雪岳山国立公園",
+      "alt": "雪岳山国立公園 — on-route photo",
+      "caption": "雪岳山国立公園"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
       "location": "南怡島（ナミソム）",
-      "alt": "南怡島 — ギャラリー画像 2",
-      "caption": "南怡島 — イチョウ並木"
+      "alt": "南怡島（ナミソム） — gallery image 1",
+      "caption": "南怡島（ナミソム） — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
-      "location": "南怡島（ナミソム）",
-      "alt": "南怡島 — ギャラリー画像 3",
-      "caption": "南怡島 — 川沿いの散歩道"
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+      "location": "晨靜苑",
+      "alt": "晨靜苑 — gallery image 1",
+      "caption": "晨靜苑 — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
-      "location": "朝の静けさの庭園",
-      "alt": "朝の静けさの庭園 — ギャラリー画像 1",
-      "caption": "朝の静けさの庭園 — テーマガーデン"
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "雪岳山国立公園",
+      "alt": "雪岳山国立公園 — on-route photo",
+      "caption": "雪岳山国立公園"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
-      "location": "朝の静けさの庭園",
-      "alt": "朝の静けさの庭園 — ギャラリー画像 2",
-      "caption": "朝の静けさの庭園 — サンクンガーデン"
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+      "location": "南怡島（ナミソム）",
+      "alt": "南怡島（ナミソム） — gallery image 2",
+      "caption": "南怡島（ナミソム） — photo 2"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
-      "location": "朝の静けさの庭園",
-      "alt": "朝の静けさの庭園 — ギャラリー画像 3",
-      "caption": "朝の静けさの庭園 — イルミネーションフェスティバル"
+      "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+      "location": "南怡島（ナミソム）",
+      "alt": "南怡島（ナミソム） — gallery image 3",
+      "caption": "南怡島（ナミソム） — photo 3"
     },
     {
       "id": 7,
       "type": "photo",
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+      "location": "南怡島（ナミソム）",
+      "alt": "南怡島（ナミソム） — gallery image 4",
+      "caption": "南怡島（ナミソム） — photo 4"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+      "location": "南怡島（ナミソム）",
+      "alt": "南怡島（ナミソム） — gallery image 5",
+      "caption": "南怡島（ナミソム） — photo 5"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+      "location": "晨靜苑",
+      "alt": "晨靜苑 — gallery image 2",
+      "caption": "晨靜苑 — photo 2"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+      "location": "晨靜苑",
+      "alt": "晨靜苑 — gallery image 3",
+      "caption": "晨靜苑 — photo 3"
+    },
+    {
+      "id": 11,
+      "type": "photo",
       "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
-      "location": "朝の静けさの庭園",
-      "alt": "朝の静けさの庭園 — ギャラリー画像 4",
-      "caption": "朝の静けさの庭園 — 植物園の散策路"
+      "location": "晨靜苑",
+      "alt": "晨靜苑 — gallery image 4",
+      "caption": "晨靜苑 — photo 4"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+      "location": "晨靜苑",
+      "alt": "晨靜苑 — gallery image 5",
+      "caption": "晨靜苑 — photo 5"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+      "location": "晨靜苑",
+      "alt": "晨靜苑 — gallery image 6",
+      "caption": "晨靜苑 — photo 6"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+      "location": "晨靜苑",
+      "alt": "晨靜苑 — gallery image 7",
+      "caption": "晨靜苑 — photo 7"
     }
   ],
   "itineraryStops": [
@@ -244,7 +300,7 @@
         "Replace 新興寺 → 神興寺 to match glossary and accurate Hanja.",
         "オプション 雪岳山ロープウェイ1,132mで権金城プラットフォーム(700m、1253年伝説)",
         "30峰、2,000以上の動物種、1,400~1,562の植物種、希少野生動物(ジャコウジカ、ゴーラル、ツキノワグマ)",
-        "公園入場料は最近廃止で無料(以前3,500ウォン)、ロープウェイは引き続き有料",
+        "公園入場料は2023年5月廃止で無料（以前3,500ウォン）、ロープウェイは引き続き有料",
         "**2005年からIUCNカテゴリーII(国立公園)+2014年からIUCN保護地域グリーンリスト** — 五台山・智異山と並びパイロットフェーズで初めてグリーンリスト入りした韓国国立公園",
         "**1982年8月から韓国唯一のユネスコ生物圏保存地域** + **ユネスコ世界遺産暫定リスト掲載** — 韓国の他の国立公園に類例のない複合認定",
         "**ヒマラヤゴーラル保全の中核**: 約260頭の安定個体群(IUCNレッドリストで危急種) — 公園は絶滅危惧種のため特別保護区10カ所、計39km²(公園総面積の10%)を管理"
@@ -259,11 +315,11 @@
         "restroom": "Glossary 'Sinheungsa Temple' → 神興寺. Translator used WRONG kanji 新興寺 (新 = new) instead of correct 神興寺 (神 = god, matches Korean Hanja 神興). Replace 新興寺 → 神興寺 across all 3 occurrences.",
         "parking": "小公園メインゲートに駐車場(有料)"
       },
-      "description": "**雪岳山**は**韓国第5の国立公園**で1970年3月に指定、1982年8月にはその卓越した山岳生物多様性によりユネスコ生物圏保存地域として認定された、**韓国唯一の同認定地**です。公園は4市郡にまたがる約398km²、30の名峰を擁し、最高峰は**大青峰(1,708m、韓国第3位)**、有名な**蔚山岩(ウルサンバウィ)**の6本柱の花崗岩岩塊もここにあります。公園入場料は無料 — **神興寺**に代わって徴収されていた3,500ウォンの料金が最近廃止されました(現在は公的資金で寺院を維持)。\n\n小公園(外雪岳)メインゲートからの典型的な3時間訪問は3つのハイライトを網羅します: **統一大仏**(高さ14.6m、108トンの青銅で世界最大級の坐像青銅仏、1997年に韓国統一を祈念して建立、内部に観音菩薩堂)、神興寺(西暦652年に新羅時代の慈蔵律師が創建した世界最古の禅(ソン)寺院で曹渓宗の総本山)、オプションの**雪岳山ロープウェイ**(片道約10分、1,132mで標高700mの権金城プラットフォームへ — **大人往復16,000ウォン / 子ども12,000ウォン**、現地販売のみで予約不可、10月の紅葉ピーク時は数時間待ちもあり)。\n\n山頂の権金城には鮮やかな伝説 — 1253年のモンゴル軍による高麗侵攻時、権・金という2人の将軍が一日で築いたとされる名前の由来があります。ロープウェイを使わない健脚派には、1.5kmの飛仙台渓流脇散策(ほぼ舗装路)、揺れ岩のループ(片道1.5時間、石段あり)、600mの金剛窟洞窟登り(往復約1時間40分)などのコースもあります。",
+      "description": "**雪岳山**は**韓国第5の国立公園**で1970年3月に指定、1982年8月にはその卓越した山岳生物多様性によりユネスコ生物圏保存地域として認定された、**韓国唯一の同認定地**です。公園は4市郡にまたがる約398km²、30の名峰を擁し、最高峰は**大青峰(1,708m、韓国第3位)**、有名な**蔚山岩(ウルサンバウィ)**の6本柱の花崗岩岩塊もここにあります。公園入場料は無料 — **神興寺**に代わって徴収されていた3,500ウォンの料金が2023年5月に廃止されました(現在は公的資金で寺院を維持)。\n\n小公園(外雪岳)メインゲートからの典型的な3時間訪問は3つのハイライトを網羅します: **統一大仏**(高さ14.6m、108トンの青銅で世界最大級の坐像青銅仏、1997年に韓国統一を祈念して建立、内部に観音菩薩堂)、神興寺(西暦652年に新羅時代の慈蔵律師が創建した世界最古の禅(ソン)寺院で曹渓宗の総本山)、オプションの**雪岳山ロープウェイ**(片道約10分、1,132mで標高700mの権金城プラットフォームへ — **大人往復16,000ウォン / 子ども12,000ウォン**、現地販売のみで予約不可、10月の紅葉ピーク時は数時間待ちもあり)。\n\n山頂の権金城には鮮やかな伝説 — 1253年のモンゴル軍による高麗侵攻時、権・金という2人の将軍が一日で築いたとされる名前の由来があります。ロープウェイを使わない健脚派には、1.5kmの飛仙台渓流脇散策(ほぼ舗装路)、揺れ岩のループ(片道1.5時間、石段あり)、600mの金剛窟洞窟登り(往復約1時間40分)などのコースもあります。",
       "visitBasics": {
         "hours": "公園は常時開放、ロープウェイは通常8:00~17:30(天候次第)、神興寺は6:00~日没",
         "closed": "通年開園、一部トレイルが復元のため期間休止することあり",
-        "admission": "公園入場無料(以前は3,500ウォン、最近廃止)、ロープウェイ往復 大人16,000 / 子ども12,000ウォン(現地販売のみ、事前予約不可)",
+        "admission": "公園入場無料（以前は3,500ウォン、2023年5月廃止）、ロープウェイ往復 大人16,000 / 子ども12,000ウォン（現地販売のみ、事前予約不可）",
         "walking": "麓は易しい(神興寺、ロープウェイ駅)、中~高難易度のハイキング(飛仙台3km、蔚山岩の急階段、揺れ岩は片道1.5時間)"
       },
       "image": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
@@ -328,6 +384,70 @@
         "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
         "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
         "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+          "location": "南怡島（ナミソム）",
+          "caption": "南怡島（ナミソム） — photo 1",
+          "alt": "南怡島（ナミソム） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+          "location": "南怡島（ナミソム）",
+          "caption": "南怡島（ナミソム） — photo 2",
+          "alt": "南怡島（ナミソム） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+          "location": "南怡島（ナミソム）",
+          "caption": "南怡島（ナミソム） — photo 3",
+          "alt": "南怡島（ナミソム） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+          "location": "南怡島（ナミソム）",
+          "caption": "南怡島（ナミソム） — photo 4",
+          "alt": "南怡島（ナミソム） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+          "location": "南怡島（ナミソム）",
+          "caption": "南怡島（ナミソム） — photo 5",
+          "alt": "南怡島（ナミソム） — gallery image 5"
+        }
       ]
     },
     {
@@ -392,6 +512,94 @@
         "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
         "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
         "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+          "location": "晨靜苑",
+          "caption": "晨靜苑 — photo 1",
+          "alt": "晨靜苑 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+          "location": "晨靜苑",
+          "caption": "晨靜苑 — photo 2",
+          "alt": "晨靜苑 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+          "location": "晨靜苑",
+          "caption": "晨靜苑 — photo 3",
+          "alt": "晨靜苑 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+          "location": "晨靜苑",
+          "caption": "晨靜苑 — photo 4",
+          "alt": "晨靜苑 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+          "location": "晨靜苑",
+          "caption": "晨靜苑 — photo 5",
+          "alt": "晨靜苑 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+          "location": "晨靜苑",
+          "caption": "晨靜苑 — photo 6",
+          "alt": "晨靜苑 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+          "location": "晨靜苑",
+          "caption": "晨靜苑 — photo 7",
+          "alt": "晨靜苑 — gallery image 7"
+        }
       ]
     },
     {
@@ -565,7 +773,7 @@
         "10月〜3月は重ね着をお勧めします。雪岳山は標高が高いため、ソウルより5〜7°C気温が低くなります。",
         "カメラまたはスマートフォン（南怡島のメタセコイア並木と晨靜樹木園が写真スポットのハイライトです）。",
         "昼食（約₩10,000〜15,000）と、乗車をご予定の方は雪岳ケーブルカー（₩16,000）のために現金またはカードをご準備ください。",
-        "朝食なしで出発される場合は軽食をご持参ください。最初の食事休憩は南怡島への途中、12:00〜12:30頃です。"
+        "朝食なしで出発される場合は軽食をご持参ください。最初の食事休憩は南怡島への途中、13:00〜13:30頃です。"
       ]
     },
     {
@@ -587,7 +795,7 @@
         "ソウル2か所の乗降地点、空調完備の大型コーチ、有資格英語ガイド。",
         "**ナミ島フェリー往復 ＋ ナミナラ共和国VISAフィー（₩19,000）— 料金に含まれます**。",
         "**モーニングカームガーデン入場料（₩11,000）— 料金に含まれます**。",
-        "**雪岳山（ソラクサン）国立公園入場料 — 無料（最近廃止されました）**。",
+        "**雪岳山（ソラクサン）国立公園入場料 — 無料（2023年5月廃止）**。",
         "**含まれないもの**：途中の昼食（約₩10,000〜15,000）、任意の雪岳ケーブルカー（₩16,000往復、現地チケット購入のみ）。"
       ]
     },
@@ -617,9 +825,9 @@
     {
       "id": "lunch",
       "title": "昼食（各自負担）",
-      "preview": "昼食は雪岳山からナミ島への移動途中、12:30頃に…",
+      "preview": "昼食は雪岳山からナミ島への移動途中、13:30頃に…",
       "content": [
-        "昼食は雪岳山からナミ島への移動途中、12:30頃にインジェ〜春川（チュンチョン）回廊沿いの地元レストランでお取りいただきます。",
+        "昼食は雪岳山からナミ島への移動途中、13:30頃にインジェ〜春川（チュンチョン）回廊沿いの地元レストランでお取りいただきます。",
         "定番メニュー：春川ダッカルビ（地域で最も有名な料理 — キャベツとトッポギを加えた甘辛炒め鶏肉）、カルグクス（手打ち麺スープ）、ビビンバ（約₩10,000〜15,000）。",
         "事前にご連絡いただければ、ベジタリアンおよびハラール対応が可能です — ご予約時にお知らせください。"
       ]
@@ -671,7 +879,7 @@
       "description": "南怡島フェリー＋モーニングカームがセット",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
-      "body": "南怡島フェリー（₩19,000）とモーニングカーム（₩11,000）の入場料はツアー料金に含まれており、各スポットでのチケット購入は不要です。雪嶽山の入場料は無料（最近廃止）。入場料の総節約額：約₩30,000。"
+      "body": "南怡島フェリー（₩19,000）とモーニングカーム（₩11,000）の入場料はツアー料金に含まれており、各スポットでのチケット購入は不要です。雪嶽山の入場料は無料（2023年5月廃止）。入場料の総節約額：約₩30,000。"
     },
     {
       "icon": "users",
@@ -747,7 +955,7 @@
     {
       "id": "admissions",
       "question": "入場料は含まれていますか？",
-      "answer": "有料施設2か所については含まれています。**南怡島フェリー往復（₩19,000）とア침고요樹木園（朝の静けさ）の入場料（₩11,000）は料金に含まれています**。**雪岳山国立公園の入場は無料**です（以前の₩3,500の入場料は最近廃止されました）。**唯一の有料オプションは雪岳山ケーブルカー**（往復₩16,000）で、現地購入のみ・自己負担となります。"
+      "answer": "有料施設2か所については含まれています。**南怡島フェリー往復（₩19,000）とア침고요樹木園（朝の静けさ）の入場料（₩11,000）は料金に含まれています**。**雪岳山国立公園の入場は無料**です（以前の₩3,500の入場料は2023年5月に廃止されました）。**唯一の有料オプションは雪岳山ケーブルカー**（往復₩16,000）で、現地購入のみ・自己負担となります。"
     },
     {
       "id": "cable-car",
@@ -777,7 +985,7 @@
     {
       "id": "lunch",
       "question": "昼食は含まれていますか？",
-      "answer": "いいえ、昼食はお客様のご負担となります（目安：お一人様₩10,000〜15,000程度）。12:30頃、雪岳山から南怡島へ向かう途中、江原道の地元レストランに立ち寄ります。代表的なメニューは、**春川ダッカルビ**（鶏肉とキャベツ・餅を甘辛く炒めた料理）、**カルグクス**（手打ち麺スープ）、またはビビンバです。ベジタリアンやハラール対応は、事前にご連絡いただければ可能です。"
+      "answer": "いいえ、昼食はお客様のご負担となります（目安：お一人様₩10,000〜15,000程度）。13:30頃、雪岳山から南怡島へ向かう途中、江原道の地元レストランに立ち寄ります。代表的なメニューは、**春川ダッカルビ**（鶏肉とキャベツ・餅を甘辛く炒めた料理）、**カルグクス**（手打ち麺スープ）、またはビビンバです。ベジタリアンやハラール対応は、事前にご連絡いただければ可能です。"
     },
     {
       "id": "language",

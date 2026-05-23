@@ -14,7 +14,7 @@
       "Tour a las cascadas Cheonjiyeon",
       "Tour a Jusangjeolli"
     ],
-    "ogImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "Gran Circuito de Jeju · Grupo Reducido 10 horas · UNESCO + Cascadas + Acantilados"
   },
   "catalog_card": {
@@ -31,8 +31,8 @@
       "Ideal para Visitantes de un Solo Día",
       "Atractivos a Ritmo Acelerado"
     ],
-    "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-    "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+    "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+    "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "priceLabel": "Desde US$79 por persona (antes $89, 11% descuento)",
     "shortCardDescription": "Una ruta de alta eficiencia por toda la isla de Jeju para viajeros con tiempo limitado, que une Hallasan, la costa sur y Seongsan Ilchulbong en un solo día.",
     "tags": [
@@ -55,7 +55,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+    "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "imagePosition": "center 35%",
     "tagline": "Diseñado para viajeros con tiempo limitado, este itinerario de alta densidad cubre Hallasan, los espectaculares paisajes de la costa sur, una cascada y Seongsan Ilchulbong en un solo día.",
     "pills": [
@@ -175,13 +175,37 @@
     {
       "id": 6,
       "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-2.webp",
+      "location": "Hallasan Eoseungsaengak",
+      "alt": "Hallasan Eoseungsaengak — gallery image 3",
+      "caption": "Hallasan Eoseungsaengak — photo 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-2.webp",
+      "location": "Hallasan Eoseungsaengak",
+      "alt": "Hallasan Eoseungsaengak — gallery image 4",
+      "caption": "Hallasan Eoseungsaengak — photo 4"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+      "location": "Hallasan Eoseungsaengak",
+      "alt": "Hallasan Eoseungsaengak — gallery image 5",
+      "caption": "Hallasan Eoseungsaengak — photo 5"
+    },
+    {
+      "id": 9,
+      "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "Acantilado de Daepo Jusangjeolli",
       "alt": "Acantilado de Daepo Jusangjeolli — gallery image 2",
       "caption": "Acantilado de Daepo Jusangjeolli — photo 2"
     },
     {
-      "id": 7,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "Acantilado de Daepo Jusangjeolli",
@@ -189,7 +213,7 @@
       "caption": "Acantilado de Daepo Jusangjeolli — photo 3"
     },
     {
-      "id": 8,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "Acantilado de Daepo Jusangjeolli",
@@ -197,7 +221,47 @@
       "caption": "Acantilado de Daepo Jusangjeolli — photo 4"
     },
     {
-      "id": 9,
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+      "location": "Acantilado de Daepo Jusangjeolli",
+      "alt": "Acantilado de Daepo Jusangjeolli — gallery image 5",
+      "caption": "Acantilado de Daepo Jusangjeolli — photo 5"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+      "location": "Acantilado de Daepo Jusangjeolli",
+      "alt": "Acantilado de Daepo Jusangjeolli — gallery image 6",
+      "caption": "Acantilado de Daepo Jusangjeolli — photo 6"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+      "location": "Acantilado de Daepo Jusangjeolli",
+      "alt": "Acantilado de Daepo Jusangjeolli — gallery image 7",
+      "caption": "Acantilado de Daepo Jusangjeolli — photo 7"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+      "location": "Acantilado de Daepo Jusangjeolli",
+      "alt": "Acantilado de Daepo Jusangjeolli — gallery image 8",
+      "caption": "Acantilado de Daepo Jusangjeolli — photo 8"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/photo-005.webp",
+      "location": "Acantilado de Daepo Jusangjeolli",
+      "alt": "Acantilado de Daepo Jusangjeolli — gallery image 9",
+      "caption": "Acantilado de Daepo Jusangjeolli — photo 9"
+    },
+    {
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
       "location": "Cascada Jeongbang",
@@ -205,7 +269,7 @@
       "caption": "Cascada Jeongbang — photo 2"
     },
     {
-      "id": 10,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
       "location": "Cascada Jeongbang",
@@ -213,7 +277,31 @@
       "caption": "Cascada Jeongbang — photo 3"
     },
     {
-      "id": 11,
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15-2.webp",
+      "location": "Cascada Jeongbang",
+      "alt": "Cascada Jeongbang — gallery image 4",
+      "caption": "Cascada Jeongbang — photo 4"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16-2.webp",
+      "location": "Cascada Jeongbang",
+      "alt": "Cascada Jeongbang — gallery image 5",
+      "caption": "Cascada Jeongbang — photo 5"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17-2.webp",
+      "location": "Cascada Jeongbang",
+      "alt": "Cascada Jeongbang — gallery image 6",
+      "caption": "Cascada Jeongbang — photo 6"
+    },
+    {
+      "id": 22,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
       "location": "Seongsan Ilchulbong",
@@ -221,7 +309,7 @@
       "caption": "Seongsan Ilchulbong — photo 2"
     },
     {
-      "id": 12,
+      "id": 23,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
       "location": "Seongsan Ilchulbong",
@@ -229,7 +317,7 @@
       "caption": "Seongsan Ilchulbong — photo 3"
     },
     {
-      "id": 13,
+      "id": 24,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
       "location": "Seongsan Ilchulbong",
@@ -237,12 +325,60 @@
       "caption": "Seongsan Ilchulbong — photo 4"
     },
     {
-      "id": 14,
+      "id": 25,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
       "location": "Seongsan Ilchulbong",
       "alt": "Seongsan Ilchulbong — gallery image 5",
       "caption": "Seongsan Ilchulbong — photo 5"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 6",
+      "caption": "Seongsan Ilchulbong — photo 6"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 7",
+      "caption": "Seongsan Ilchulbong — photo 7"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 8",
+      "caption": "Seongsan Ilchulbong — photo 8"
+    },
+    {
+      "id": 29,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 9",
+      "caption": "Seongsan Ilchulbong — photo 9"
+    },
+    {
+      "id": 30,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 10",
+      "caption": "Seongsan Ilchulbong — photo 10"
+    },
+    {
+      "id": 31,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 11",
+      "caption": "Seongsan Ilchulbong — photo 11"
     }
   ],
   "itineraryStops": [
@@ -312,6 +448,18 @@
         {
           "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -330,6 +478,30 @@
           "location": "Hallasan Eoseungsaengak",
           "caption": "Hallasan Eoseungsaengak — photo 2",
           "alt": "Hallasan Eoseungsaengak — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-2.webp",
+          "location": "Hallasan Eoseungsaengak",
+          "caption": "Hallasan Eoseungsaengak — photo 3",
+          "alt": "Hallasan Eoseungsaengak — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-2.webp",
+          "location": "Hallasan Eoseungsaengak",
+          "caption": "Hallasan Eoseungsaengak — photo 4",
+          "alt": "Hallasan Eoseungsaengak — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+          "location": "Hallasan Eoseungsaengak",
+          "caption": "Hallasan Eoseungsaengak — photo 5",
+          "alt": "Hallasan Eoseungsaengak — gallery image 5"
         }
       ]
     },
@@ -409,6 +581,26 @@
         {
           "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/photo-005.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -443,6 +635,46 @@
           "location": "Acantilado de Daepo Jusangjeolli",
           "caption": "Acantilado de Daepo Jusangjeolli — photo 4",
           "alt": "Acantilado de Daepo Jusangjeolli — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "location": "Acantilado de Daepo Jusangjeolli",
+          "caption": "Acantilado de Daepo Jusangjeolli — photo 5",
+          "alt": "Acantilado de Daepo Jusangjeolli — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "location": "Acantilado de Daepo Jusangjeolli",
+          "caption": "Acantilado de Daepo Jusangjeolli — photo 6",
+          "alt": "Acantilado de Daepo Jusangjeolli — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "location": "Acantilado de Daepo Jusangjeolli",
+          "caption": "Acantilado de Daepo Jusangjeolli — photo 7",
+          "alt": "Acantilado de Daepo Jusangjeolli — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "location": "Acantilado de Daepo Jusangjeolli",
+          "caption": "Acantilado de Daepo Jusangjeolli — photo 8",
+          "alt": "Acantilado de Daepo Jusangjeolli — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/photo-005.webp",
+          "location": "Acantilado de Daepo Jusangjeolli",
+          "caption": "Acantilado de Daepo Jusangjeolli — photo 9",
+          "alt": "Acantilado de Daepo Jusangjeolli — gallery image 9"
         }
       ]
     },
@@ -557,6 +789,18 @@
         {
           "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -583,6 +827,30 @@
           "location": "Cascada Jeongbang",
           "caption": "Cascada Jeongbang — photo 3",
           "alt": "Cascada Jeongbang — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15-2.webp",
+          "location": "Cascada Jeongbang",
+          "caption": "Cascada Jeongbang — photo 4",
+          "alt": "Cascada Jeongbang — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16-2.webp",
+          "location": "Cascada Jeongbang",
+          "caption": "Cascada Jeongbang — photo 5",
+          "alt": "Cascada Jeongbang — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17-2.webp",
+          "location": "Cascada Jeongbang",
+          "caption": "Cascada Jeongbang — photo 6",
+          "alt": "Cascada Jeongbang — gallery image 6"
         }
       ]
     },
@@ -667,6 +935,30 @@
         {
           "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -709,6 +1001,54 @@
           "location": "Seongsan Ilchulbong",
           "caption": "Seongsan Ilchulbong — photo 5",
           "alt": "Seongsan Ilchulbong — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+          "location": "Seongsan Ilchulbong",
+          "caption": "Seongsan Ilchulbong — photo 6",
+          "alt": "Seongsan Ilchulbong — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+          "location": "Seongsan Ilchulbong",
+          "caption": "Seongsan Ilchulbong — photo 7",
+          "alt": "Seongsan Ilchulbong — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+          "location": "Seongsan Ilchulbong",
+          "caption": "Seongsan Ilchulbong — photo 8",
+          "alt": "Seongsan Ilchulbong — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+          "location": "Seongsan Ilchulbong",
+          "caption": "Seongsan Ilchulbong — photo 9",
+          "alt": "Seongsan Ilchulbong — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+          "location": "Seongsan Ilchulbong",
+          "caption": "Seongsan Ilchulbong — photo 10",
+          "alt": "Seongsan Ilchulbong — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+          "location": "Seongsan Ilchulbong",
+          "caption": "Seongsan Ilchulbong — photo 11",
+          "alt": "Seongsan Ilchulbong — gallery image 11"
         }
       ],
       "liveStatusWidget": "haenyeo"

@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "首尔非军事区私人游：第三隧道 + 悬索桥 | AtoC Korea",
     "metaDescription": "首尔出发8–9小时非军事区私人一日游：临津阁和平公园、第三渗透隧道、都罗展望台及150米甘岳山红色悬索桥。",
-    "ogImage": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
     "primaryKeywords": [
       "首尔非军事区私人游",
       "非军事区第三隧道游",
@@ -133,40 +133,64 @@
       "type": "photo",
       "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
       "location": "临津阁和平公园",
-      "alt": "临津阁和平公园 — 图库图片 1",
-      "caption": "临津阁和平公园 — 照片 1"
+      "alt": "临津阁和平公园 — 图库图片1",
+      "caption": "临津阁和平公园 — 图片1"
     },
     {
       "id": 2,
       "type": "photo",
       "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-      "location": "第三渗透隧道（地下入侵隧道）",
-      "alt": "第三渗透隧道（地下入侵隧道）— 图库图片 1",
-      "caption": "第三渗透隧道（地下入侵隧道）— 照片 1"
+      "location": "第三条渗透隧道（地下入侵隧道）",
+      "alt": "第三条渗透隧道（地下入侵隧道） — gallery image 1",
+      "caption": "第三条渗透隧道（地下入侵隧道） — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
       "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
       "location": "临津阁和平公园",
-      "alt": "临津阁和平公园 — 图库图片 2",
-      "caption": "临津阁和平公园 — 照片 2"
+      "alt": "临津阁和平公园 — 图库图片2",
+      "caption": "临津阁和平公园 — 图片2"
     },
     {
       "id": 4,
       "type": "photo",
       "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
       "location": "第三条渗透隧道（地下入侵隧道）",
-      "alt": "第三条渗透隧道（地下入侵隧道）——图库图片2",
-      "caption": "第三条渗透隧道（地下入侵隧道）——照片2"
+      "alt": "第三条渗透隧道（地下入侵隧道） — gallery image 2",
+      "caption": "第三条渗透隧道（地下入侵隧道） — photo 2"
     },
     {
       "id": 5,
       "type": "photo",
       "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
       "location": "第三条渗透隧道（地下入侵隧道）",
-      "alt": "第三条渗透隧道（地下入侵隧道）——图库图片3",
-      "caption": "第三条渗透隧道（地下入侵隧道）——照片3"
+      "alt": "第三条渗透隧道（地下入侵隧道） — gallery image 3",
+      "caption": "第三条渗透隧道（地下入侵隧道） — photo 3"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+      "location": "第三条渗透隧道（地下入侵隧道）",
+      "alt": "第三条渗透隧道（地下入侵隧道） — gallery image 4",
+      "caption": "第三条渗透隧道（地下入侵隧道） — photo 4"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00-2.webp",
+      "location": "第三条渗透隧道（地下入侵隧道）",
+      "alt": "第三条渗透隧道（地下入侵隧道） — gallery image 5",
+      "caption": "第三条渗透隧道（地下入侵隧道） — photo 5"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+      "location": "第三条渗透隧道（地下入侵隧道）",
+      "alt": "第三条渗透隧道（地下入侵隧道） — gallery image 6",
+      "caption": "第三条渗透隧道（地下入侵隧道） — photo 6"
     }
   ],
   "itineraryStops": [
@@ -332,6 +356,18 @@
         {
           "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -339,25 +375,49 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-          "location": "第三渗透隧道（地下入侵隧道）",
-          "caption": "第三渗透隧道（地下入侵隧道）— 照片 1",
-          "alt": "第三渗透隧道（地下入侵隧道）— 图库图片 1"
+          "location": "第三条渗透隧道（地下入侵隧道）",
+          "caption": "第三条渗透隧道（地下入侵隧道） — photo 1",
+          "alt": "第三条渗透隧道（地下入侵隧道） — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-          "location": "第三渗透隧道（地下入侵隧道）",
-          "caption": "第三渗透隧道（地下入侵隧道）— 照片 2",
-          "alt": "第三渗透隧道（地下入侵隧道）— 图库图片 2"
+          "location": "第三条渗透隧道（地下入侵隧道）",
+          "caption": "第三条渗透隧道（地下入侵隧道） — photo 2",
+          "alt": "第三条渗透隧道（地下入侵隧道） — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-          "location": "第三渗透隧道（地下入侵隧道）",
-          "caption": "第三渗透隧道（地下入侵隧道）— 照片 3",
-          "alt": "第三渗透隧道（地下入侵隧道）— 图库图片 3"
+          "location": "第三条渗透隧道（地下入侵隧道）",
+          "caption": "第三条渗透隧道（地下入侵隧道） — photo 3",
+          "alt": "第三条渗透隧道（地下入侵隧道） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+          "location": "第三条渗透隧道（地下入侵隧道）",
+          "caption": "第三条渗透隧道（地下入侵隧道） — photo 4",
+          "alt": "第三条渗透隧道（地下入侵隧道） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00-2.webp",
+          "location": "第三条渗透隧道（地下入侵隧道）",
+          "caption": "第三条渗透隧道（地下入侵隧道） — photo 5",
+          "alt": "第三条渗透隧道（地下入侵隧道） — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+          "location": "第三条渗透隧道（地下入侵隧道）",
+          "caption": "第三条渗透隧道（地下入侵隧道） — photo 6",
+          "alt": "第三条渗透隧道（地下入侵隧道） — gallery image 6"
         }
       ]
     },
@@ -434,6 +494,18 @@
         {
           "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -441,25 +513,49 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-          "location": "都拉展望台",
-          "caption": "都拉展望台 — 照片 1",
-          "alt": "都拉展望台 — 图库图片 1"
+          "location": "都罗展望台",
+          "caption": "都罗展望台 — photo 1",
+          "alt": "都罗展望台 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-          "location": "都拉展望台",
-          "caption": "都拉展望台 — 照片 2",
-          "alt": "都拉展望台 — 图库图片 2"
+          "location": "都罗展望台",
+          "caption": "都罗展望台 — photo 2",
+          "alt": "都罗展望台 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-          "location": "都拉展望台",
-          "caption": "都拉展望台 — 照片 3",
-          "alt": "都拉展望台 — 图库图片 3"
+          "location": "都罗展望台",
+          "caption": "都罗展望台 — photo 3",
+          "alt": "都罗展望台 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+          "location": "都罗展望台",
+          "caption": "都罗展望台 — photo 4",
+          "alt": "都罗展望台 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00-2.webp",
+          "location": "都罗展望台",
+          "caption": "都罗展望台 — photo 5",
+          "alt": "都罗展望台 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+          "location": "都罗展望台",
+          "caption": "都罗展望台 — photo 6",
+          "alt": "都罗展望台 — gallery image 6"
         }
       ]
     },
@@ -533,6 +629,18 @@
         {
           "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -540,25 +648,49 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-          "location": "紺岳山红色悬索桥",
-          "caption": "紺岳山红色悬索桥 — 照片 1",
-          "alt": "紺岳山红色悬索桥 — 图库图片 1"
+          "location": "绀岳山红色悬索桥",
+          "caption": "绀岳山红色悬索桥 — photo 1",
+          "alt": "绀岳山红色悬索桥 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-          "location": "紺岳山红色悬索桥",
-          "caption": "紺岳山红色悬索桥 — 照片 2",
-          "alt": "紺岳山红色悬索桥 — 图库图片 2"
+          "location": "绀岳山红色悬索桥",
+          "caption": "绀岳山红色悬索桥 — photo 2",
+          "alt": "绀岳山红色悬索桥 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-          "location": "紺岳山红色悬索桥",
-          "caption": "紺岳山红色悬索桥 — 照片 3",
-          "alt": "紺岳山红色悬索桥 — 图库图片 3"
+          "location": "绀岳山红色悬索桥",
+          "caption": "绀岳山红色悬索桥 — photo 3",
+          "alt": "绀岳山红色悬索桥 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+          "location": "绀岳山红色悬索桥",
+          "caption": "绀岳山红色悬索桥 — photo 4",
+          "alt": "绀岳山红色悬索桥 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00-2.webp",
+          "location": "绀岳山红色悬索桥",
+          "caption": "绀岳山红色悬索桥 — photo 5",
+          "alt": "绀岳山红色悬索桥 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+          "location": "绀岳山红色悬索桥",
+          "caption": "绀岳山红色悬索桥 — photo 6",
+          "alt": "绀岳山红色悬索桥 — gallery image 6"
         }
       ]
     }
@@ -1519,7 +1651,10 @@
             "images": [
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00-2.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp"
             ],
             "imageCredits": [
               {
@@ -1533,6 +1668,18 @@
               {
                 "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1541,24 +1688,48 @@
                 "type": "photo",
                 "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
                 "location": "第三渗透隧道",
-                "caption": "第三渗透隧道——照片 1",
-                "alt": "第三渗透隧道——相册图片 1"
+                "caption": "第三渗透隧道 — photo 1",
+                "alt": "第三渗透隧道 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
                 "location": "第三渗透隧道",
-                "caption": "第三渗透隧道——照片 2",
-                "alt": "第三渗透隧道——相册图片 2"
+                "caption": "第三渗透隧道 — photo 2",
+                "alt": "第三渗透隧道 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
                 "location": "第三渗透隧道",
-                "caption": "第三渗透隧道——照片 3",
-                "alt": "第三渗透隧道——相册图片 3"
+                "caption": "第三渗透隧道 — photo 3",
+                "alt": "第三渗透隧道 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+                "location": "第三渗透隧道",
+                "caption": "第三渗透隧道 — photo 4",
+                "alt": "第三渗透隧道 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00-2.webp",
+                "location": "第三渗透隧道",
+                "caption": "第三渗透隧道 — photo 5",
+                "alt": "第三渗透隧道 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+                "location": "第三渗透隧道",
+                "caption": "第三渗透隧道 — photo 6",
+                "alt": "第三渗透隧道 — gallery image 6"
               }
             ]
           },
@@ -1609,7 +1780,10 @@
             "images": [
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00-2.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp"
             ],
             "imageCredits": [
               {
@@ -1623,6 +1797,18 @@
               {
                 "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1630,25 +1816,49 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "location": "都罗山瞭望台",
-                "caption": "都罗山瞭望台 — 照片 1",
-                "alt": "都罗山瞭望台 — 图库图片 1"
+                "location": "都罗山观望台",
+                "caption": "都罗山观望台 — photo 1",
+                "alt": "都罗山观望台 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "location": "都罗山瞭望台",
-                "caption": "都罗山瞭望台 — 照片 2",
-                "alt": "都罗山瞭望台 — 图库图片 2"
+                "location": "都罗山观望台",
+                "caption": "都罗山观望台 — photo 2",
+                "alt": "都罗山观望台 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "location": "都罗山瞭望台",
-                "caption": "都罗山瞭望台 — 照片 3",
-                "alt": "都罗山瞭望台 — 图库图片 3"
+                "location": "都罗山观望台",
+                "caption": "都罗山观望台 — photo 3",
+                "alt": "都罗山观望台 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+                "location": "都罗山观望台",
+                "caption": "都罗山观望台 — photo 4",
+                "alt": "都罗山观望台 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00-2.webp",
+                "location": "都罗山观望台",
+                "caption": "都罗山观望台 — photo 5",
+                "alt": "都罗山观望台 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+                "location": "都罗山观望台",
+                "caption": "都罗山观望台 — photo 6",
+                "alt": "都罗山观望台 — gallery image 6"
               }
             ]
           },
@@ -1698,7 +1908,10 @@
             "images": [
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00-2.webp",
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp"
             ],
             "imageCredits": [
               {
@@ -1712,6 +1925,18 @@
               {
                 "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1719,25 +1944,49 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "location": "伽岳山红色悬索桥",
-                "caption": "伽岳山红色悬索桥 — 照片 1",
-                "alt": "伽岳山红色悬索桥 — 图库图片 1"
+                "location": "感岳山红色悬索桥",
+                "caption": "感岳山红色悬索桥 — photo 1",
+                "alt": "感岳山红色悬索桥 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "location": "伽岳山红色悬索桥",
-                "caption": "伽岳山红色悬索桥 — 照片 2",
-                "alt": "伽岳山红色悬索桥 — 图库图片 2"
+                "location": "感岳山红色悬索桥",
+                "caption": "感岳山红色悬索桥 — photo 2",
+                "alt": "感岳山红色悬索桥 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "location": "伽岳山红色悬索桥",
-                "caption": "伽岳山红色悬索桥 — 照片 3",
-                "alt": "伽岳山红色悬索桥 — 图库图片 3"
+                "location": "感岳山红色悬索桥",
+                "caption": "感岳山红色悬索桥 — photo 3",
+                "alt": "感岳山红色悬索桥 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+                "location": "感岳山红色悬索桥",
+                "caption": "感岳山红色悬索桥 — photo 4",
+                "alt": "感岳山红色悬索桥 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00-2.webp",
+                "location": "感岳山红色悬索桥",
+                "caption": "感岳山红色悬索桥 — photo 5",
+                "alt": "感岳山红色悬索桥 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+                "location": "感岳山红色悬索桥",
+                "caption": "感岳山红色悬索桥 — photo 6",
+                "alt": "感岳山红色悬索桥 — gallery image 6"
               }
             ]
           }
