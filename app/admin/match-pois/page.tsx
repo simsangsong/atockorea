@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Admin match_pois editor — list + editor, mirroring /admin/products/v2.
+ * Admin match_pois editor — list + editor, mirroring /admin/products.
  *
  * Reads/edits the `public.match_pois` POI catalog behind the admin gate.
  * Saving goes through the auto-upsert PATCH /api/admin/match-pois/[poi_key]
