@@ -18,9 +18,10 @@ import { AlertCircle, ChevronRight, Clock, MapPin, RefreshCw, Star } from 'lucid
 import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { useI18n, useTranslations } from '@/lib/i18n';
 import { getStaticTourProductBySlug } from '@/components/product-tour-static/catalog/staticTourCatalogCards';
-import type { ScoredProduct, TourMatchApiResponse } from '@/lib/tour-match-v2/api-types';
+import type { TourMatchApiResponse } from '@/lib/tour-match-v2/api-types';
 import { cn } from '@/lib/utils';
 import { analytics } from '@/src/design/analytics';
+import { MatchResultNextSteps } from '@/components/home/v2/MatchResultNextSteps';
 
 type Phase = 'idle' | 'loading' | 'result';
 
@@ -190,10 +191,6 @@ export default function MatchPage() {
     () => (winner ? getStaticTourProductBySlug(winner.product_id, locale) : undefined),
     [winner, locale],
   );
-  const alsoConsider = useMemo<ScoredProduct[]>(
-    () => (result?.matchedProducts ?? []).slice(1, 4),
-    [result],
-  );
   const winnerHref = winner ? safeDetailHrefForSlug(winner.product_id) : '/tours/list';
 
   const noMatchMessage = useMemo(() => {
@@ -327,14 +324,14 @@ export default function MatchPage() {
                       })
                     }
                   />
-                  {alsoConsider.length > 0 ? (
-                    <AlsoConsiderList
-                      heading={t('matchAlsoConsiderHeading')}
-                      items={alsoConsider}
-                      detailLabel={t('matchViewDetailCta')}
-                      locale={locale}
-                    />
-                  ) : null}
+                  <MatchResultNextSteps
+                    browseHref="/tours/list"
+                    buildAction={{
+                      kind: "link",
+                      label: locale === "ko" ? "나만의 하루 만들기" : "Build my own day",
+                      href: "/itinerary-builder",
+                    }}
+                  />
                 </>
               ) : (
                 <>
@@ -503,69 +500,6 @@ function WinnerCard({
           <ChevronRight className="ml-1 h-4 w-4" aria-hidden />
         </Link>
       </div>
-    </div>
-  );
-}
-
-function AlsoConsiderList({
-  heading,
-  items,
-  detailLabel,
-  locale,
-}: {
-  heading: string;
-  items: ScoredProduct[];
-  detailLabel: string;
-  locale: import('@/lib/tour-product/resolveTourProductDbLocale').TourProductPageLocale;
-}) {
-  return (
-    <div className="mt-6 border-t border-slate-200/70 pt-5">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
-        {heading}
-      </p>
-      <ul className="flex flex-col gap-2">
-        {items.map((p) => {
-          const staticP = getStaticTourProductBySlug(p.product_id, locale);
-          const href = staticP ? `/tour-product/${p.product_id}` : '/tours/list';
-          return (
-            <li key={p.product_id}>
-              <Link
-                href={href}
-                className="group flex items-center gap-3 rounded-xl border border-slate-200/70 bg-white/70 p-3 transition hover:border-slate-300 hover:bg-white"
-              >
-                {staticP?.thumbnail ? (
-                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg">
-                    <Image
-                      src={staticP.thumbnail}
-                      alt=""
-                      fill
-                      sizes="56px"
-                      className="object-cover"
-                    />
-                  </div>
-                ) : (
-                  <div className="h-14 w-14 shrink-0 rounded-lg bg-slate-100" aria-hidden />
-                )}
-                <div className="min-w-0 flex-1">
-                  <p className="line-clamp-2 text-sm font-semibold text-slate-900">
-                    {staticP?.title ?? p.product_id}
-                  </p>
-                  {staticP?.priceLabel ? (
-                    <p className="mt-0.5 text-xs text-slate-500">{staticP.priceLabel}</p>
-                  ) : null}
-                </div>
-                <span className="text-xs font-medium text-slate-500 transition group-hover:text-slate-800">
-                  {detailLabel}
-                </span>
-                <ChevronRight
-                  className="h-4 w-4 text-slate-400 transition group-hover:text-slate-700"
-                  aria-hidden
-                />
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
     </div>
   );
 }
